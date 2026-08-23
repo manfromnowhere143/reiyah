@@ -1,0 +1,15 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.study-optional-stopping-allowed",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/study-design-preregistration.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/study-design-preregistration.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/stopping_rule/optional_stopping_prohibited", "value": false}],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "instance_pointer": "/stopping_rule/optional_stopping_prohibited",
+    "schema_keyword": "const",
+    "reason": "Outcome-driven optional stopping is outside the preregistered stopping contract."
+  },
+  "runtime_execution_authorized": false
+}

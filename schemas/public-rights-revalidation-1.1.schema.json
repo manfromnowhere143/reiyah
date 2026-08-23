@@ -1,0 +1,323 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-rights-revalidation.schema.json",
+  "title": "Reiyah public payload rights-basis revalidation 1.1",
+  "description": "A fail-closed, pre-distribution observation of the mutable official pages named by the public distribution inventory. This record tests only whether an observed page contradicts the inventory basis. It is not legal advice, legal clearance, operator authentication, or Gate A acceptance.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "observation_id",
+    "version",
+    "observed_at",
+    "lifecycle_status",
+    "purpose",
+    "observer",
+    "basis_observations",
+    "covered_payload_source_ids",
+    "excluded_pointer_source_ids",
+    "freshness_policy",
+    "all_included_payloads_covered",
+    "preflight_outcome",
+    "distribution_authorization_created",
+    "qualified_legal_review_performed",
+    "legal_conclusion_created",
+    "gate_a_acceptance_conferred",
+    "ga17_status",
+    "limitations"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-rights-revalidation.schema.json"
+    },
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "artifact_id": {
+      "const": "reiyah.artifact.public-rights-revalidation-2026-08-23"
+    },
+    "observation_id": {
+      "const": "reiyah.public-rights-revalidation.initial-publication"
+    },
+    "version": {
+      "const": "1.0.0"
+    },
+    "observed_at": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/timestamp"
+    },
+    "lifecycle_status": {
+      "const": "proposed"
+    },
+    "purpose": {
+      "const": "pre_distribution_observation_of_mutable_official_rights_pages"
+    },
+    "observer": {
+      "type": "object",
+      "required": [
+        "observer_id",
+        "observer_kind",
+        "authority"
+      ],
+      "properties": {
+        "observer_id": {
+          "const": "reiyah.adapter.web-research"
+        },
+        "observer_kind": {
+          "const": "untrusted_research_adapter"
+        },
+        "authority": {
+          "const": "observation_only_no_legal_or_operator_authority"
+        }
+      },
+      "additionalProperties": false
+    },
+    "basis_observations": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/isoObservation"
+        },
+        {
+          "$ref": "#/$defs/nistObservation"
+        }
+      ]
+    },
+    "covered_payload_source_ids": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {
+          "const": "src.iso.26262-1.2018.open-data"
+        },
+        {
+          "const": "src.iso.21448.2022.open-data"
+        },
+        {
+          "const": "src.iso-tr.21959-1.2020.open-data"
+        },
+        {
+          "const": "src.iso-pas.8800.2024.open-data"
+        }
+      ],
+      "uniqueItems": true
+    },
+    "excluded_pointer_source_ids": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "const": "src.nist.ai-100-1.2023.pdf"
+        },
+        {
+          "const": "src.nist.ai-100-1.2023.publication-page"
+        }
+      ],
+      "uniqueItems": true
+    },
+    "freshness_policy": {
+      "type": "object",
+      "required": [
+        "maximum_age_seconds",
+        "comparison",
+        "new_observation_required_for_each_payload_distribution_event",
+        "clock"
+      ],
+      "properties": {
+        "maximum_age_seconds": {"const": 3600},
+        "comparison": {
+          "const": "zero_lte_published_at_minus_observed_at_lte_maximum"
+        },
+        "new_observation_required_for_each_payload_distribution_event": {"const": true},
+        "clock": {"const": "UTC"}
+      },
+      "additionalProperties": false
+    },
+    "all_included_payloads_covered": {
+      "const": true
+    },
+    "preflight_outcome": {
+      "const": "included_iso_basis_consistent_nist_payload_excluded"
+    },
+    "distribution_authorization_created": {
+      "const": false
+    },
+    "qualified_legal_review_performed": {
+      "const": false
+    },
+    "legal_conclusion_created": {
+      "const": false
+    },
+    "gate_a_acceptance_conferred": {
+      "const": false
+    },
+    "ga17_status": {
+      "const": "not_evaluated"
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "sharedObservation": {
+      "type": "object",
+      "required": [
+        "basis_id",
+        "publisher",
+        "official_url",
+        "page_scope",
+        "observed_at",
+        "retrieval_state",
+        "observation_state",
+        "observed_facts",
+        "caveats",
+        "related_source_ids"
+      ],
+      "properties": {
+        "basis_id": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        "publisher": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+        },
+        "official_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "page_scope": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+        },
+        "observed_at": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/timestamp"
+        },
+        "retrieval_state": {
+          "const": "reachable"
+        },
+        "observation_state": {
+          "enum": [
+            "consistent_with_recorded_inventory_basis",
+            "unresolved_document_specific_caveat_payload_excluded"
+          ]
+        },
+        "observed_facts": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "caveats": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "related_source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "isoObservation": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sharedObservation"
+        },
+        {
+          "properties": {
+            "basis_id": {
+              "const": "rights.iso-open-data.odc-by-1.0"
+            },
+            "publisher": {
+              "const": "International Organization for Standardization"
+            },
+            "official_url": {
+              "const": "https://www.iso.org/open-data.html#iso_deliverables_metadata"
+            },
+            "page_scope": {
+              "const": "ISO Deliverables Metadata license and attribution statement"
+            },
+            "observation_state": {
+              "const": "consistent_with_recorded_inventory_basis"
+            },
+            "related_source_ids": {
+              "minItems": 4,
+              "maxItems": 4,
+              "prefixItems": [
+                {
+                  "const": "src.iso.26262-1.2018.open-data"
+                },
+                {
+                  "const": "src.iso.21448.2022.open-data"
+                },
+                {
+                  "const": "src.iso-tr.21959-1.2020.open-data"
+                },
+                {
+                  "const": "src.iso-pas.8800.2024.open-data"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "nistObservation": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sharedObservation"
+        },
+        {
+          "properties": {
+            "basis_id": {
+              "const": "rights.nist-technical-series-publications"
+            },
+            "publisher": {
+              "const": "National Institute of Standards and Technology"
+            },
+            "official_url": {
+              "const": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications"
+            },
+            "page_scope": {
+              "const": "NIST Technical Series Publications rights and citation statement"
+            },
+            "observation_state": {
+              "const": "unresolved_document_specific_caveat_payload_excluded"
+            },
+            "related_source_ids": {
+              "minItems": 2,
+              "maxItems": 2,
+              "prefixItems": [
+                {
+                  "const": "src.nist.ai-100-1.2023.pdf"
+                },
+                {
+                  "const": "src.nist.ai-100-1.2023.publication-page"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

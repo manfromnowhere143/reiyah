@@ -1,0 +1,28 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-noncanonical-index-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.noncanonical-index",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The saved evidence-index version is changed while its artifact inventory is left intact.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-005", "TM-019", "TM-021"],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-INDEX-NONCANONICAL"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "evidence_index",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "gate/GATE_A_EVIDENCE_INDEX.json",
+        "json_pointer": "/version",
+        "value": "999.0.0"
+      }
+    ]
+  }
+}

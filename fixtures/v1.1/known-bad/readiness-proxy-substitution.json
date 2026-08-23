@@ -1,0 +1,21 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.readiness-proxy-substitution",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/human-automation-assessment.json",
+  "mutations": [
+    {
+      "operation": "replace",
+      "json_pointer": "/readiness_assessment/proxy_substitution_prohibited",
+      "value": false
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "instance_pointer": "/readiness_assessment/proxy_substitution_prohibited",
+    "schema_keyword": "const",
+    "reason": "A typed readiness construct may not be silently replaced by an attention or other proxy label."
+  },
+  "runtime_execution_authorized": false
+}

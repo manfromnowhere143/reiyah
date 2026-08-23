@@ -1,0 +1,269 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/sequential-off-policy-evaluation.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "reiyah.fixture.sequential-ope.good",
+  "version": "1.1.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.event.sequential-ope.proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-23T02:00:00Z",
+      "actor": {
+        "actor_id": "reiyah.actor.fixture-author",
+        "actor_type": "derived_process",
+        "version": "1.1.0",
+        "role": "deterministic fixture author"
+      },
+      "rationale": "Synthetic trajectory example; no estimator is executed.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+  "created_at": "2026-08-23T02:00:00Z",
+  "runtime_execution_authorized": false,
+  "evaluation_id": "reiyah.evaluation.synthetic-sequential-ope",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "study_ref": {
+    "record_id": "reiyah.study.synthetic-policy-effect",
+    "record_kind": "study_design",
+    "version": "1.1.0"
+  },
+  "dataset_ref": {
+    "record_id": "reiyah.dataset.synthetic-evaluation",
+    "record_kind": "dataset",
+    "version": "1.1.0"
+  },
+  "odd_ref": {
+    "record_id": "reiyah.odd.synthetic-daylight",
+    "record_kind": "odd",
+    "version": "1.1.0"
+  },
+  "frozen_at": "2026-08-23T01:59:59Z",
+  "behavior_policy": {
+    "policy_ref": {
+      "availability_state": "not_available_in_gate_a",
+      "expected_record_id": "reiyah.policy.synthetic-behavior",
+      "expected_record_kind": "policy",
+      "expected_version": "1.1.0",
+      "reason": "No immutable behavior policy definition is retained by this static Gate A fixture.",
+      "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+      "gate_b_authorized": false,
+      "runtime_execution_authorized": false
+    },
+    "policy_artifact": {
+      "availability_state": "not_available_in_gate_a",
+      "expected_artifact_id": "reiyah.artifact.synthetic-behavior-policy",
+      "expected_artifact_kind": "policy",
+      "expected_schema_id": null,
+      "expected_version": null,
+      "reason": "No behavior policy artifact is executed or retained by this Gate A architecture fixture.",
+      "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+      "gate_b_authorized": false,
+      "runtime_execution_authorized": false
+    },
+    "action_space_id": "reiyah.action-space.synthetic-alerts",
+    "information_set_schema_id": "reiyah.information-schema.synthetic-policy-input",
+    "stochasticity_declared": true
+  },
+  "target_policy": {
+    "policy_ref": {
+      "availability_state": "not_available_in_gate_a",
+      "expected_record_id": "reiyah.policy.synthetic-target",
+      "expected_record_kind": "policy",
+      "expected_version": "1.1.0",
+      "reason": "No immutable target policy definition is retained by this static Gate A fixture.",
+      "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+      "gate_b_authorized": false,
+      "runtime_execution_authorized": false
+    },
+    "policy_artifact": {
+      "availability_state": "not_available_in_gate_a",
+      "expected_artifact_id": "reiyah.artifact.synthetic-target-policy",
+      "expected_artifact_kind": "policy",
+      "expected_schema_id": null,
+      "expected_version": null,
+      "reason": "No target policy artifact is executed or retained by this Gate A architecture fixture.",
+      "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+      "gate_b_authorized": false,
+      "runtime_execution_authorized": false
+    },
+    "action_space_id": "reiyah.action-space.synthetic-alerts",
+    "information_set_schema_id": "reiyah.information-schema.synthetic-policy-input",
+    "stochasticity_declared": true
+  },
+  "policy_versions_exact": true,
+  "horizon": {
+    "horizon_type": "fixed",
+    "maximum_steps": 1,
+    "discount_factor": 1,
+    "termination_rule_id": "reiyah.rule.synthetic-one-step"
+  },
+  "reward_definition": {
+    "signal_id": "reiyah.reward.synthetic-readiness",
+    "name": "synthetic readiness reward",
+    "unit": "utility units",
+    "direction": "higher_is_better",
+    "aggregation_rule_id": "reiyah.rule.synthetic-discounted-sum"
+  },
+  "cost_definitions": [
+    {
+      "signal_id": "reiyah.cost.synthetic-silent-miss",
+      "name": "synthetic silent-miss cost",
+      "unit": "events",
+      "direction": "lower_is_better",
+      "aggregation_rule_id": "reiyah.rule.synthetic-discounted-sum"
+    }
+  ],
+  "safety_constraints": [
+    {
+      "constraint_id": "reiyah.constraint.synthetic-silent-miss",
+      "cost_signal_id": "reiyah.cost.synthetic-silent-miss",
+      "operator": "less_than_or_equal",
+      "threshold": {"state": "observed", "value": 0.1},
+      "confidence_requirement": {"state": "observed", "value": 0.95},
+      "violation_disposition": "failed"
+    }
+  ],
+  "trajectories": [
+    {
+      "trajectory_id": "reiyah.trajectory.synthetic-001",
+      "encounter_ref": {
+        "availability_state": "not_available_in_gate_a",
+        "expected_record_id": "reiyah.encounter.synthetic-ope-001",
+        "expected_record_kind": "encounter",
+        "expected_version": "1.1.0",
+        "reason": "No encounter record or operational trajectory data exists in this static Gate A fixture.",
+        "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+        "gate_b_authorized": false,
+        "runtime_execution_authorized": false
+      },
+      "subject_ref": {
+        "actor_id": "reiyah.actor.synthetic-driver",
+        "actor_type": "human",
+        "version": "1.1.0",
+        "role": "synthetic OPE subject"
+      },
+      "behavior_policy_ref": {
+        "availability_state": "not_available_in_gate_a",
+        "expected_record_id": "reiyah.policy.synthetic-behavior",
+        "expected_record_kind": "policy",
+        "expected_version": "1.1.0",
+        "reason": "The trajectory cannot bind an unavailable behavior policy definition in Gate A.",
+        "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+        "gate_b_authorized": false,
+        "runtime_execution_authorized": false
+      },
+      "target_policy_ref": {
+        "availability_state": "not_available_in_gate_a",
+        "expected_record_id": "reiyah.policy.synthetic-target",
+        "expected_record_kind": "policy",
+        "expected_version": "1.1.0",
+        "reason": "The trajectory cannot bind an unavailable target policy definition in Gate A.",
+        "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+        "gate_b_authorized": false,
+        "runtime_execution_authorized": false
+      },
+      "started_at": "2026-08-22T12:00:00Z",
+      "ended_at": "2026-08-22T12:00:01Z",
+      "steps": [
+        {
+          "step_index": 0,
+          "observed_at": "2026-08-22T12:00:00Z",
+        "information_set": {
+          "information_set_id": "reiyah.information-set.synthetic-ope-input",
+          "version": "1.1.0",
+          "frozen_at": "2026-08-22T11:59:59Z",
+          "items": [],
+          "complete_as_declared": true,
+          "post_freeze_additions_prohibited": true
+        },
+          "action_id": "reiyah.action.synthetic-alert",
+          "behavior_propensity": {"state": "observed", "value": 0.5},
+          "target_propensity": {"state": "observed", "value": 0.7},
+          "reward": {"state": "observed", "value": 1, "unit": "utility units"},
+          "costs": [
+            {
+              "cost_signal_id": "reiyah.cost.synthetic-silent-miss",
+              "value": {"state": "observed", "value": 0, "unit": "events"}
+            }
+          ],
+          "terminal": {"state": "observed", "value": true},
+          "availability_state": "observed",
+          "unavailability_reason": null
+        }
+      ],
+      "trajectory_status": "complete"
+    }
+  ],
+  "support_assessment": {
+    "support_state": "observed",
+    "positivity_rule_id": "reiyah.rule.synthetic-positive-support",
+    "overlap_metric": {"state": "observed", "value": 0.7},
+    "minimum_behavior_propensity": {"state": "observed", "value": 0.5},
+    "unsupported_action_count": {"state": "observed", "value": 0},
+    "unsupported_actions": [],
+    "extrapolation_prohibited": true
+  },
+  "importance_weight_policy": {
+    "weight_type": "per_decision",
+    "normalization": "self_normalized",
+    "clipping": false,
+    "clipping_threshold": null,
+    "maximum_observed_weight": {"state": "observed", "value": 1.4},
+    "tail_quantiles": [
+      {
+        "quantile": 0.95,
+        "weight": {"state": "observed", "value": 1.4}
+      }
+    ],
+    "zero_behavior_propensity_prohibited": true
+  },
+  "effective_sample_size": {
+    "method_id": "reiyah.method.synthetic-kish-ess",
+    "value": {"state": "observed", "value": 1},
+    "trajectory_count": 1,
+    "minimum_rule_id": "reiyah.rule.synthetic-minimum-ess",
+    "disposition": "insufficient"
+  },
+  "estimators": [
+    {
+      "estimator_id": "reiyah.estimator.synthetic-wis",
+      "estimator_family": "WIS",
+      "estimator_version": "1.1.0",
+      "target_signal_id": "reiyah.reward.synthetic-readiness",
+      "estimate": {"state": "unmeasured", "reason": "One synthetic trajectory is insufficient for interpretation."},
+      "uncertainty": {
+        "method_id": "reiyah.method.synthetic-bootstrap",
+        "confidence_level": {"state": "unmeasured", "reason": "No interval was estimated."},
+        "lower": {"state": "unmeasured", "reason": "No interval was estimated."},
+        "upper": {"state": "unmeasured", "reason": "No interval was estimated."}
+      },
+      "assumption_ids": ["reiyah.assumption.synthetic-sequential-ignorability"],
+      "support_required": true,
+      "safety_constraint_results": [
+        {
+          "constraint_id": "reiyah.constraint.synthetic-silent-miss",
+          "estimate": {"state": "unmeasured", "reason": "Insufficient effective sample size."},
+          "uncertainty": {
+            "method_id": "reiyah.method.synthetic-bootstrap",
+            "confidence_level": {"state": "unmeasured", "reason": "No interval was estimated."},
+            "lower": {"state": "unmeasured", "reason": "No interval was estimated."},
+            "upper": {"state": "unmeasured", "reason": "No interval was estimated."}
+          },
+          "disposition": "inconclusive"
+        }
+      ],
+      "interpretation_status": "inconclusive"
+    }
+  ],
+  "evidence_binding": {
+    "state": "evidence_gap",
+    "evidence_refs": [],
+    "gap_reason": "The trajectory and estimator values are synthetic schema examples."
+  },
+  "scientific_claim_authorized": false
+}

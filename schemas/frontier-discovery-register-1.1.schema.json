@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json",
+  "title": "Reiyah frontier discovery register 1.1",
+  "description": "A public, pointer-only register of officially identified company materials, standards pages, specifications, patents, and primary research publication pages. Every entry is evidence-ineligible until separately retained under a successor custody decision.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "register_id",
+    "version",
+    "as_of_date",
+    "lifecycle_status",
+    "runtime_execution_authorized",
+    "custody_profile_ref",
+    "operator_distribution_authorized",
+    "distribution_authorization",
+    "distribution_authorization_scope",
+    "pointer_metadata_distribution_authorized",
+    "payload_distribution_authorized",
+    "claims_admitted",
+    "records",
+    "invariants"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json"
+    },
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "artifact_id": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+    },
+    "register_id": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "const": "1.1.0"
+    },
+    "as_of_date": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/calendarDate"
+    },
+    "lifecycle_status": {
+      "const": "proposed"
+    },
+    "runtime_execution_authorized": {
+      "const": false
+    },
+    "custody_profile_ref": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+    },
+    "operator_distribution_authorized": {
+      "const": true
+    },
+    "distribution_authorization": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-evidence-custody-profile.schema.json#/$defs/distributionAuthorization"
+    },
+    "distribution_authorization_scope": {
+      "const": "static_public_repository_distribution"
+    },
+    "pointer_metadata_distribution_authorized": {
+      "const": true
+    },
+    "payload_distribution_authorized": {
+      "const": false
+    },
+    "claims_admitted": {
+      "const": false
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/discoveryRecord"
+      },
+      "uniqueItems": true
+    },
+    "invariants": {
+      "const": [
+        "Every record is pointer-only, evidence-ineligible, and payload-free.",
+        "A precise URL, title, identifier, or observed publication fact is discovery metadata, not retained evidence.",
+        "Company materials remain self-reports; patents describe disclosed possibilities; publication pages do not establish independent replication or Reiyah applicability.",
+        "No record may support a scientific, safety, standards, benchmark, compliance, deployment, or superiority claim.",
+        "Static pointer-metadata distribution authorization is distinct from payload reuse permission, Gate A acceptance, GA-17 evaluation, and scientific-publication acceptance."
+      ]
+    }
+  },
+  "$defs": {
+    "topic": {
+      "enum": [
+        "tesla_autonomy",
+        "mobileye_autonomy",
+        "driver_vehicle_state",
+        "driver_monitoring",
+        "safety_architecture",
+        "data_engine_mapping",
+        "simulation",
+        "human_ai_complementarity",
+        "readiness_situation_awareness",
+        "object_set_coverage",
+        "off_policy_evaluation",
+        "missingness_history_model_selection",
+        "uncertainty_ood_abstention",
+        "group_conditional_validation",
+        "dataset_benchmark_governance",
+        "scenario_odd"
+      ]
+    },
+    "sourceKind": {
+      "enum": [
+        "official_company_disclosure",
+        "official_company_technical_page",
+        "patent_publication",
+        "official_standard_page",
+        "official_specification",
+        "primary_research_publication"
+      ]
+    },
+    "discoveryRecord": {
+      "type": "object",
+      "required": [
+        "record_schema_id",
+        "schema_version",
+        "artifact_id",
+        "discovery_id",
+        "version",
+        "lifecycle_status",
+        "source_kind",
+        "title",
+        "publisher",
+        "persistent_identifier",
+        "exact_version",
+        "publication_date",
+        "scope",
+        "source_url",
+        "recorded_at",
+        "topics",
+        "custody_state",
+        "redistribution_state",
+        "evidence_eligibility",
+        "retained_payload",
+        "payload_redistribution_authorized",
+        "claims_admitted",
+        "limitations"
+      ],
+      "properties": {
+        "record_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord"
+        },
+        "schema_version": {
+          "const": "1.1.0"
+        },
+        "artifact_id": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        "discovery_id": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        "version": {
+          "const": "1.1.0"
+        },
+        "lifecycle_status": {
+          "const": "proposed"
+        },
+        "source_kind": {
+          "$ref": "#/$defs/sourceKind"
+        },
+        "title": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+        },
+        "publisher": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+        },
+        "persistent_identifier": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+        },
+        "exact_version": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+        },
+        "publication_date": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/dateMeasurement"
+        },
+        "scope": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "recorded_at": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/timestamp"
+        },
+        "topics": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/topic"
+          },
+          "uniqueItems": true
+        },
+        "custody_state": {
+          "const": "pointer_only"
+        },
+        "redistribution_state": {
+          "const": "pointer_metadata_only"
+        },
+        "evidence_eligibility": {
+          "const": "ineligible_pointer_only"
+        },
+        "retained_payload": {
+          "type": "null"
+        },
+        "payload_redistribution_authorized": {
+          "const": false
+        },
+        "claims_admitted": {
+          "const": false
+        },
+        "limitations": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

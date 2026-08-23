@@ -1,0 +1,11 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.assurance-instruction-binding-mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/evaluation-assurance-bundle.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/evaluation-assurance-bundle.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/dataset_governance/0/label_governance/instruction_artifact/expected_artifact_kind", "value": "policy"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"instance_pointer": "/dataset_governance/0/label_governance/instruction_artifact/expected_artifact_kind", "schema_keyword": "semantic", "reason": "The unavailable label instruction identity and artifact must retain the exact label-instruction role."},
+  "runtime_execution_authorized": false
+}

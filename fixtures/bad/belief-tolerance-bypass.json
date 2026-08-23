@@ -1,0 +1,38 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-belief-tolerance-bypass-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.belief-tolerance-bypass",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "An invalid probability sum is paired with a looser record-local tolerance in an attempt to bypass the exact protocol normalization policy.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-006",
+    "TM-017",
+    "TM-019"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-BELIEF-POLICY-MISMATCH"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/latent-belief.json",
+        "json_pointer": "/belief/sum_tolerance",
+        "value": 0.01
+      },
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/latent-belief.json",
+        "json_pointer": "/belief/components/1/probability",
+        "value": 0.255
+      }
+    ]
+  }
+}

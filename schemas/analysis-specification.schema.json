@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/analysis-specification.schema.json",
+  "title": "Immutable analysis specification",
+  "description": "Static typed analysis contract for preregistration binding. It performs no analysis and authorizes no runtime execution.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "analysis_specification_id",
+    "version",
+    "protocol_release_id",
+    "lifecycle_status",
+    "target_population",
+    "unit_of_analysis",
+    "sampling_frame",
+    "observation_window",
+    "exposure",
+    "comparator",
+    "estimand_ids",
+    "outcome_definition_ids",
+    "inclusion_rules",
+    "exclusion_rules",
+    "assignment_mechanism",
+    "identification_assumptions",
+    "validity_boundaries",
+    "subgroup_plan",
+    "analysis_plan",
+    "primary_metric_id",
+    "metric_specifications",
+    "observation_boundary_id",
+    "epistemic_policy",
+    "runtime_execution_authorized",
+    "prohibited_interpretation"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/analysis-specification.schema.json"
+    },
+    "schema_version": {"$ref": "common.schema.json#/$defs/schemaVersion"},
+    "artifact_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "analysis_specification_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+    "protocol_release_id": {"$ref": "common.schema.json#/$defs/releaseIdentifier"},
+    "lifecycle_status": {"const": "proposed"},
+    "target_population": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+    "unit_of_analysis": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+    "sampling_frame": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+    "observation_window": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+    "exposure": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+    "comparator": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+    "estimand_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+      "uniqueItems": true
+    },
+    "outcome_definition_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+      "uniqueItems": true
+    },
+    "inclusion_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+      "uniqueItems": true
+    },
+    "exclusion_rules": {
+      "type": "array",
+      "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+      "uniqueItems": true
+    },
+    "assignment_mechanism": {"$ref": "common.schema.json#/$defs/assignmentMechanism"},
+    "identification_assumptions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "common.schema.json#/$defs/identificationAssumption"}
+    },
+    "validity_boundaries": {"$ref": "common.schema.json#/$defs/completeValidityBoundaries"},
+    "subgroup_plan": {"$ref": "common.schema.json#/$defs/subgroupPlan"},
+    "analysis_plan": {"$ref": "common.schema.json#/$defs/analysisPlan"},
+    "primary_metric_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "metric_specifications": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": [
+          "metric_id",
+          "estimand_id",
+          "metric_class",
+          "outcome_definition_id",
+          "direction",
+          "decision_rule_id",
+          "abstention_rule_id",
+          "uncertainty_method_id",
+          "confidence_level",
+          "target_population",
+          "comparator"
+        ],
+        "properties": {
+          "metric_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "estimand_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "metric_class": {
+            "enum": ["object_belief_quality", "readiness", "recoverability", "joint_silent_miss", "causal_policy_effect", "transfer", "worst_group"]
+          },
+          "outcome_definition_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "direction": {"enum": ["higher_is_better", "lower_is_better", "signed_contrast"]},
+          "decision_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "abstention_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uncertainty_method_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "confidence_level": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1},
+          "target_population": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+          "comparator": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "observation_boundary_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "epistemic_policy": {"$ref": "common.schema.json#/$defs/epistemicPolicy"},
+    "runtime_execution_authorized": {"const": false},
+    "prohibited_interpretation": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+  },
+  "additionalProperties": false
+}

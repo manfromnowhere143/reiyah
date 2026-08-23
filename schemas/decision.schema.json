@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/decision.schema.json",
+  "title": "Research decision object",
+  "description": "An analytic record only; it is not an operational or physical-control command.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "object_id",
+    "object_kind",
+    "version",
+    "lifecycle_status",
+    "lifecycle_history",
+    "protocol_release_id",
+    "context_rules",
+    "encounter_id",
+    "event_time",
+    "belief_refs",
+    "observation_refs",
+    "choice_set_id",
+    "selected_action",
+    "decision_rule_id",
+    "research_only",
+    "validity",
+    "provenance"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/decision.schema.json"
+    },
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "object_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "object_kind": {
+      "const": "decision"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "lifecycle_status": {
+      "$ref": "common.schema.json#/$defs/lifecycleStatus"
+    },
+    "lifecycle_history": {
+      "$ref": "common.schema.json#/$defs/lifecycleHistory"
+    },
+    "protocol_release_id": {
+      "$ref": "common.schema.json#/$defs/releaseIdentifier"
+    },
+    "context_rules": {"$ref": "common.schema.json#/$defs/contextRules"},
+    "encounter_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "event_time": {
+      "$ref": "common.schema.json#/$defs/timePoint"
+    },
+    "belief_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "allOf": [
+          {
+            "$ref": "common.schema.json#/$defs/objectReference"
+          },
+          {
+            "properties": {
+              "object_kind": {
+                "const": "latent_belief"
+              }
+            }
+          }
+        ]
+      },
+      "uniqueItems": true
+    },
+    "observation_refs": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "common.schema.json#/$defs/objectReference"
+          },
+          {
+            "properties": {
+              "object_kind": {
+                "const": "observation"
+              }
+            }
+          }
+        ]
+      },
+      "uniqueItems": true
+    },
+    "choice_set_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "selected_action": {
+      "$ref": "common.schema.json#/$defs/stringMeasurement"
+    },
+    "decision_rule_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "research_only": {
+      "const": true
+    },
+    "validity": {
+      "$ref": "common.schema.json#/$defs/validityAssessment"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycle_status": {
+            "enum": ["corrected", "retracted"]
+          }
+        },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "lifecycle_history": {
+            "contains": {
+              "properties": {
+                "status": {
+                  "enum": ["corrected", "retracted"]
+                },
+                "prior_artifact": {
+                  "allOf": [
+                    {
+                      "$ref": "common.schema.json#/$defs/priorArtifactReference"
+                    },
+                    {
+                      "properties": {
+                        "record_kind": {
+                          "const": "decision"
+                        },
+                        "schema_id": {
+                          "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/decision.schema.json"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": ["status", "prior_artifact"]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

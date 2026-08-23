@@ -1,0 +1,17 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.omitted-group",
+  "fixture_id": "reiyah.fixture.bad.omitted-group",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A declared low-information synthetic group is omitted from result coverage.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-015"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-GROUP-OMITTED"},
+  "payload": {"kind": "production_mutation", "production_check": "scientific_semantics", "mutations": [
+    {"operation": "remove", "path": "fixtures/good/result.json", "json_pointer": "/metric_results/0/group_results/1"},
+    {"operation": "replace", "path": "fixtures/good/result.json", "json_pointer": "/metric_results/0/group_results/0/sample_size", "value": 10}
+  ]}
+}

@@ -1,0 +1,20 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.conformal-missing-exchangeability-disposition",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/joint-performance-evaluation.json",
+  "mutations": [
+    {
+      "operation": "remove",
+      "json_pointer": "/conformal_evaluation/exchangeability_assessment"
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "instance_pointer": "/conformal_evaluation",
+    "schema_keyword": "required",
+    "reason": "A conformal coverage report must state the disposition of its exchangeability assumption rather than imply an unqualified guarantee."
+  },
+  "runtime_execution_authorized": false
+}

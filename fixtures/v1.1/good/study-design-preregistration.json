@@ -1,0 +1,275 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/study-design-preregistration.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "reiyah.fixture.study-design.good",
+  "version": "1.1.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.event.study-design.proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-23T01:00:00Z",
+      "actor": {
+        "actor_id": "reiyah.actor.fixture-author",
+        "actor_type": "derived_process",
+        "version": "1.1.0",
+        "role": "deterministic fixture author"
+      },
+      "rationale": "Synthetic preregistration contract for schema validation only.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+  "created_at": "2026-08-23T01:00:00Z",
+  "runtime_execution_authorized": false,
+  "study_id": "reiyah.study.synthetic-policy-effect",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "design_type": "synthetic_contract_test",
+  "target_population": "Synthetic driver-automation encounters in a declared fixture domain.",
+  "unit_of_analysis": "synthetic encounter",
+  "treatment_definition_ids": ["reiyah.treatment.synthetic-alert-policy"],
+  "outcome_definition_ids": ["reiyah.outcome.synthetic-joint-miss"],
+  "estimand_ids": ["reiyah.estimand.synthetic-risk-difference"],
+  "preregistration": {
+    "registration_id": "reiyah.preregistration.synthetic-policy-effect",
+    "status": "proposed",
+    "registered_at": {
+      "state": "unmeasured",
+      "reason": "No study preregistration is executed by this Gate A architecture fixture."
+    },
+    "observation_boundary": {
+      "window_id": "reiyah.window.synthetic-observation-boundary",
+      "opens_at": {"state": "observed", "value": "2026-08-24T00:00:00Z"},
+      "closes_at": {"state": "observed", "value": "2026-09-24T00:00:00Z"},
+      "clock_id": "reiyah.clock.synthetic-utc"
+    },
+    "retained_artifact": {
+      "availability_state": "not_available_in_gate_a",
+      "expected_artifact_id": "reiyah.artifact.synthetic-preregistration",
+      "expected_artifact_kind": "preregistration",
+      "expected_schema_id": null,
+      "expected_version": null,
+      "reason": "This architecture fixture is proposed and no executed preregistration artifact exists in Gate A.",
+      "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+      "gate_b_authorized": false,
+      "runtime_execution_authorized": false
+    },
+    "immutable_after_registration": true,
+    "outcome_access_before_registration_prohibited": true
+  },
+  "power_analysis": {
+    "state": "observed",
+    "power_analysis_id": "reiyah.power.synthetic-policy-effect",
+    "estimand_id": "reiyah.estimand.synthetic-risk-difference",
+    "method_id": "reiyah.method.synthetic-analytic-power",
+    "effect_size_assumption": 0.1,
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "required_sample_size": 200,
+    "assumption_ids": ["reiyah.assumption.synthetic-independent-encounters"],
+    "simulation_seed_policy": "No simulation is executed by this fixture; a future deterministic analysis must preregister its seed."
+  },
+  "stopping_rule": {
+    "stopping_rule_id": "reiyah.rule.synthetic-fixed-horizon",
+    "type": "fixed_horizon",
+    "maximum_sample_size": {"state": "observed", "value": 200},
+    "maximum_duration": {"state": "observed", "value": 31, "unit": "days"},
+    "success_rule_id": "reiyah.rule.synthetic-success",
+    "futility_rule_id": "reiyah.rule.synthetic-futility",
+    "safety_stop_rule_ids": ["reiyah.rule.synthetic-safety-stop"],
+    "optional_stopping_prohibited": true
+  },
+  "interim_analyses": [],
+  "causal_graph": {
+    "dag_id": "reiyah.dag.synthetic-policy-effect",
+    "version": "1.1.0",
+    "nodes": [
+      {
+        "node_id": "reiyah.node.synthetic-alert-policy",
+        "node_type": "exposure",
+        "temporal_role": "exposure",
+        "observability": "observed"
+      },
+    {
+      "node_id": "reiyah.node.synthetic-joint-miss",
+      "node_type": "outcome",
+      "temporal_role": "outcome",
+      "observability": "observed"
+    },
+    {
+      "node_id": "reiyah.node.synthetic-post-treatment",
+      "node_type": "mediator",
+      "temporal_role": "post_exposure",
+      "observability": "observed"
+      }
+    ],
+    "edges": [
+    {
+      "from_node_id": "reiyah.node.synthetic-alert-policy",
+      "to_node_id": "reiyah.node.synthetic-post-treatment",
+      "edge_type": "causal"
+    },
+    {
+      "from_node_id": "reiyah.node.synthetic-post-treatment",
+      "to_node_id": "reiyah.node.synthetic-joint-miss",
+      "edge_type": "causal"
+      }
+    ],
+    "acyclicity_asserted": true,
+    "treatment_node_ids": ["reiyah.node.synthetic-alert-policy"],
+    "outcome_node_ids": ["reiyah.node.synthetic-joint-miss"],
+    "adjustment_sets": [],
+    "identification_assumption_ids": ["reiyah.assumption.synthetic-consistency"]
+  },
+  "control_strategy": {
+    "adjustment_variable_ids": [],
+    "negative_control_exposure_ids": [],
+    "negative_control_outcome_ids": [],
+    "prohibited_control_ids": ["reiyah.node.synthetic-post-treatment"],
+    "post_treatment_control_prohibited": true,
+    "collider_control_prohibited": true
+  },
+  "missingness_plan": {
+    "mechanism_hypotheses": ["unknown"],
+    "missingness_indicator_ids": ["reiyah.indicator.synthetic-outcome-missing"],
+    "handling_rule_id": "reiyah.rule.synthetic-explicit-missingness",
+    "sensitivity_analysis_ids": ["reiyah.sensitivity.synthetic-mnar-bounds"],
+    "missing_not_at_random_explicit": true,
+    "coercion_to_zero_prohibited": true,
+    "complete_case_default_prohibited": true
+  },
+  "data_splits": {
+    "split_specification_id": "reiyah.split.synthetic-policy-effect",
+    "split_unit_id": "reiyah.unit.synthetic-encounter",
+    "assignment_rule_id": "reiyah.rule.synthetic-hash-split",
+    "partitions": [
+      {
+        "partition_id": "reiyah.partition.synthetic-development",
+        "role": "training",
+        "selection_rule_id": "reiyah.rule.synthetic-development-split",
+        "artifact_ref": {
+        "availability_state": "not_available_in_gate_a",
+        "expected_artifact_id": "reiyah.artifact.synthetic-development-split",
+        "expected_artifact_kind": "split",
+        "expected_schema_id": null,
+        "expected_version": null,
+        "reason": "No dataset split is created or ingested by this Gate A architecture fixture.",
+        "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+        "gate_b_authorized": false,
+        "runtime_execution_authorized": false
+        },
+        "frozen_at": "2026-08-23T00:30:00Z"
+      },
+      {
+        "partition_id": "reiyah.partition.synthetic-test",
+        "role": "test",
+        "selection_rule_id": "reiyah.rule.synthetic-test-split",
+        "artifact_ref": {
+        "availability_state": "not_available_in_gate_a",
+        "expected_artifact_id": "reiyah.artifact.synthetic-test-split",
+        "expected_artifact_kind": "split",
+        "expected_schema_id": null,
+        "expected_version": null,
+        "reason": "No dataset split is created or ingested by this Gate A architecture fixture.",
+        "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+        "gate_b_authorized": false,
+        "runtime_execution_authorized": false
+        },
+        "frozen_at": "2026-08-23T00:30:00Z"
+      }
+    ],
+    "group_leakage_prohibited": true,
+    "temporal_leakage_prohibited": true,
+    "test_reuse_prohibited": true
+  },
+  "access_chronology": [
+    {
+      "access_event_id": "reiyah.access.synthetic-data-registered",
+      "sequence": 1,
+      "actor": {
+        "actor_id": "reiyah.actor.synthetic-custodian",
+        "actor_type": "human",
+        "version": "1.1.0",
+        "role": "dataset custodian"
+      },
+      "action": "data_registered",
+      "recorded_at": "2026-08-23T00:10:00Z",
+      "artifact_refs": [
+        {
+          "availability_state": "not_available_in_gate_a",
+          "expected_artifact_id": "reiyah.artifact.synthetic-data-registration",
+          "expected_artifact_kind": "access_record",
+          "expected_schema_id": null,
+          "expected_version": null,
+          "reason": "The event is a synthetic chronology fixture; no executed data-registration artifact exists in Gate A.",
+          "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+          "gate_b_authorized": false,
+          "runtime_execution_authorized": false
+        }
+      ],
+      "rationale": "Synthetic data identity recorded before analysis access."
+    },
+    {
+      "access_event_id": "reiyah.access.synthetic-split-frozen",
+      "sequence": 2,
+      "actor": {
+        "actor_id": "reiyah.actor.synthetic-custodian",
+        "actor_type": "human",
+        "version": "1.1.0",
+        "role": "dataset custodian"
+      },
+      "action": "split_frozen",
+      "recorded_at": "2026-08-23T00:30:00Z",
+      "artifact_refs": [
+        {
+          "availability_state": "not_available_in_gate_a",
+          "expected_artifact_id": "reiyah.artifact.synthetic-split-freeze",
+          "expected_artifact_kind": "access_record",
+          "expected_schema_id": null,
+          "expected_version": null,
+          "reason": "The event is a synthetic chronology fixture; no executed split-freeze artifact exists in Gate A.",
+          "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+          "gate_b_authorized": false,
+          "runtime_execution_authorized": false
+        }
+      ],
+      "rationale": "Synthetic split assignment frozen before preregistration."
+    },
+    {
+      "access_event_id": "reiyah.access.synthetic-architecture-contract-frozen",
+      "sequence": 3,
+      "actor": {
+        "actor_id": "reiyah.actor.synthetic-researcher",
+        "actor_type": "human",
+        "version": "1.1.0",
+        "role": "synthetic researcher"
+      },
+      "action": "architecture_contract_frozen",
+      "recorded_at": "2026-08-23T01:00:00Z",
+      "artifact_refs": [
+        {
+          "availability_state": "not_available_in_gate_a",
+          "expected_artifact_id": "reiyah.artifact.synthetic-architecture-contract-freeze",
+          "expected_artifact_kind": "access_record",
+          "expected_schema_id": null,
+          "expected_version": null,
+          "reason": "The event freezes a synthetic architecture contract only; no executed study preregistration artifact exists in Gate A.",
+          "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+          "gate_b_authorized": false,
+          "runtime_execution_authorized": false
+        }
+      ],
+      "rationale": "Synthetic architecture contract frozen without claiming study preregistration."
+    }
+  ],
+  "deviations": [],
+  "evidence_binding": {
+    "state": "evidence_gap",
+    "evidence_refs": [],
+    "gap_reason": "The study is a schema fixture and has no retained scientific evidence."
+  },
+  "scientific_claim_authorized": false
+}

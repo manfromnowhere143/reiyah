@@ -1,0 +1,74 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/outcome.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.chain.outcome",
+  "object_id": "reiyah.fixture.outcome-001",
+  "object_kind": "outcome",
+  "version": "1.0.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.lifecycle-event.fixture-outcome-proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-21T21:00:10Z",
+      "actor": {"actor_type": "software", "actor_id": "reiyah.producer.fixture-generator"},
+      "rationale": "Created as a deterministic synthetic Gate A structure fixture.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.0.0",
+  "context_rules": {
+    "encounter_construction_rule_id": "reiyah.rule.fixture-encounter-construction",
+    "object_identity_rule_id": "reiyah.rule.fixture-object-identity",
+    "temporal_correspondence_rule_id": "reiyah.rule.fixture-temporal-correspondence"
+  },
+  "encounter_id": "reiyah.fixture.encounter-001",
+  "physical_object_id": "reiyah.fixture.object-001",
+  "measurement_window": {
+    "start": {
+      "clock_id": "reiyah.clock.fixture",
+      "offset": {"state": "observed", "value": 4},
+      "unit": "seconds",
+      "origin": {"state": "observed", "value": "Synthetic fixture origin"}
+    },
+    "end": {
+      "clock_id": "reiyah.clock.fixture",
+      "offset": {"state": "observed", "value": 10},
+      "unit": "seconds",
+      "origin": {"state": "observed", "value": "Synthetic fixture origin"}
+    }
+  },
+  "decision_refs": [
+    {"object_id": "reiyah.fixture.decision-001", "object_kind": "decision", "version": "1.0.0"}
+  ],
+  "intervention_refs": [
+    {"object_id": "reiyah.fixture.intervention-001", "object_kind": "intervention", "version": "1.0.0"}
+  ],
+  "outcome_definition_id": "reiyah.outcome.fixture-only",
+  "measurements": [
+    {
+      "measurement_id": "reiyah.measurement.synthetic-count",
+      "value": {"state": "observed", "value": 0, "unit": "count"}
+    }
+  ],
+  "censoring": {
+    "state": "not_censored",
+    "reason": {"state": "observed", "value": "The synthetic window is complete."}
+  },
+  "validity": {
+    "state": "valid",
+    "rule_ids": ["reiyah.rule.fixture-outcome-valid"]
+  },
+  "provenance": {
+    "producer_type": "software",
+    "producer_id": "reiyah.producer.fixture-generator",
+    "method_id": "reiyah.method.static-fixture",
+    "recorded_at": "2026-08-22T00:00:10+03:00",
+    "input_refs": [
+      {"object_id": "reiyah.fixture.intervention-001", "object_kind": "intervention", "version": "1.0.0"}
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.observation-available-after-decision",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/human-automation-assessment.json",
+  "mutations": [
+    {
+      "operation": "replace",
+      "json_pointer": "/observation_availability/0/available_at/value",
+      "value": "2026-08-23T00:00:08Z"
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "instance_pointer": "/observation_availability/0/available_at/value",
+    "schema_keyword": "semantic",
+    "reason": "Information recorded as available only after the decision cannot be represented as decision-time information; production validation must recompute this assertion from timestamps."
+  },
+  "runtime_execution_authorized": false
+}

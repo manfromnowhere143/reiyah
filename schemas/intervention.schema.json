@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/intervention.schema.json",
+  "title": "Research intervention object",
+  "description": "A protocol or study record only; Gate A prohibits physical-control integration.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "object_id",
+    "object_kind",
+    "version",
+    "lifecycle_status",
+    "lifecycle_history",
+    "protocol_release_id",
+    "context_rules",
+    "encounter_id",
+    "event_time",
+    "decision_ref",
+    "assignment_mechanism_id",
+    "assigned_level",
+    "delivered_level",
+    "received_level",
+    "adherence",
+    "research_only",
+    "physical_control_enabled",
+    "validity",
+    "provenance"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/intervention.schema.json"
+    },
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "object_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "object_kind": {
+      "const": "intervention"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "lifecycle_status": {
+      "$ref": "common.schema.json#/$defs/lifecycleStatus"
+    },
+    "lifecycle_history": {
+      "$ref": "common.schema.json#/$defs/lifecycleHistory"
+    },
+    "protocol_release_id": {
+      "$ref": "common.schema.json#/$defs/releaseIdentifier"
+    },
+    "context_rules": {"$ref": "common.schema.json#/$defs/contextRules"},
+    "encounter_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "event_time": {
+      "$ref": "common.schema.json#/$defs/timePoint"
+    },
+    "decision_ref": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/objectReference"
+        },
+        {
+          "properties": {
+            "object_kind": {
+              "const": "decision"
+            }
+          }
+        }
+      ]
+    },
+    "assignment_mechanism_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "assigned_level": {
+      "$ref": "common.schema.json#/$defs/stringMeasurement"
+    },
+    "delivered_level": {
+      "$ref": "common.schema.json#/$defs/stringMeasurement"
+    },
+    "received_level": {
+      "$ref": "common.schema.json#/$defs/stringMeasurement"
+    },
+    "adherence": {
+      "$ref": "common.schema.json#/$defs/probabilityMeasurement"
+    },
+    "research_only": {
+      "const": true
+    },
+    "physical_control_enabled": {
+      "const": false
+    },
+    "validity": {
+      "$ref": "common.schema.json#/$defs/validityAssessment"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycle_status": {
+            "enum": ["corrected", "retracted"]
+          }
+        },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "lifecycle_history": {
+            "contains": {
+              "properties": {
+                "status": {
+                  "enum": ["corrected", "retracted"]
+                },
+                "prior_artifact": {
+                  "allOf": [
+                    {
+                      "$ref": "common.schema.json#/$defs/priorArtifactReference"
+                    },
+                    {
+                      "properties": {
+                        "record_kind": {
+                          "const": "intervention"
+                        },
+                        "schema_id": {
+                          "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/intervention.schema.json"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": ["status", "prior_artifact"]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

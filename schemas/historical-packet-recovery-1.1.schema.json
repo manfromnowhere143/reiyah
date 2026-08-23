@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.0/historical-packet-recovery.schema.json",
+  "title": "Gate A predecessor packet recovery record",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "record_id",
+    "version",
+    "as_of_date",
+    "predecessor_release",
+    "predecessor_status",
+    "recovery_method",
+    "private_recovery_source_included",
+    "custody_continuity",
+    "recovered_artifacts",
+    "packet_bindings",
+    "public_dispositions"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/historical-packet-recovery.schema.json"
+    },
+    "schema_version": {"const": "1.1.0"},
+    "artifact_id": {"const": "reiyah.artifact.gate-a-1.0.0-recovery-1.1.0"},
+    "record_id": {"const": "reiyah.history.gate-a-1.0.0-recovery"},
+    "version": {"const": "1.1.0"},
+    "as_of_date": {"$ref": "common.schema.json#/$defs/calendarDate"},
+    "predecessor_release": {"const": "reiyah.gate-a-evidence-index@1.0.0"},
+    "predecessor_status": {"const": "unaccepted_never_published_local_candidate"},
+    "recovery_method": {"const": "private_local_session_transcript_digest_reconstruction"},
+    "private_recovery_source_included": {"const": false},
+    "custody_continuity": {"const": "interrupted_and_disclosed"},
+    "recovered_artifacts": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "original_path",
+          "expected_sha256",
+          "expected_byte_size",
+          "recovered_binding",
+          "recovery_class",
+          "digest_matches_predecessor_index"
+        ],
+        "properties": {
+          "original_path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+          "expected_sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+          "expected_byte_size": {"type": "integer", "minimum": 1},
+          "recovered_binding": {"$ref": "common.schema.json#/$defs/artifactReference"},
+          "recovery_class": {
+            "enum": ["digest_verified_reconstruction", "pre_overwrite_archival_copy"]
+          },
+          "digest_matches_predecessor_index": {"const": true}
+        },
+        "additionalProperties": false
+      },
+      "allOf": [
+        {"contains": {"properties": {"original_path": {"const": "AGENTS.md"}}, "required": ["original_path"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"properties": {"original_path": {"const": "README.md"}}, "required": ["original_path"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"properties": {"original_path": {"const": "gate/decisions/OPERATOR_DECISION.template.json"}}, "required": ["original_path"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"properties": {"original_path": {"const": "manifests/manifest-release-ledger.json"}}, "required": ["original_path"]}, "minContains": 1, "maxContains": 1}
+      ]
+    },
+    "packet_bindings": {
+      "type": "object",
+      "required": ["index", "sidecar", "validation_report"],
+      "properties": {
+        "index": {"$ref": "common.schema.json#/$defs/artifactReference"},
+        "sidecar": {"$ref": "common.schema.json#/$defs/artifactReference"},
+        "validation_report": {"$ref": "common.schema.json#/$defs/artifactReference"}
+      },
+      "additionalProperties": false
+    },
+    "public_dispositions": {
+      "type": "object",
+      "required": [
+        "exact_bytes_publicly_verifiable",
+        "recovery_derivation_publicly_replayable",
+        "uninterrupted_custody_claimed",
+        "predecessor_operator_accepted",
+        "predecessor_published",
+        "scientific_support_created",
+        "current_gate_acceptance_created"
+      ],
+      "properties": {
+        "exact_bytes_publicly_verifiable": {"const": true},
+        "recovery_derivation_publicly_replayable": {"const": false},
+        "uninterrupted_custody_claimed": {"const": false},
+        "predecessor_operator_accepted": {"const": false},
+        "predecessor_published": {"const": false},
+        "scientific_support_created": {"const": false},
+        "current_gate_acceptance_created": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

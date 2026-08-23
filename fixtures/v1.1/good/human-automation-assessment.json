@@ -1,0 +1,380 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/human-automation-assessment.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "reiyah.fixture.human-automation-assessment.good",
+  "version": "1.1.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.event.human-automation-assessment.proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "actor": {
+        "actor_id": "reiyah.actor.fixture-author",
+        "actor_type": "derived_process",
+        "version": "1.1.0",
+        "role": "deterministic fixture author"
+      },
+      "rationale": "Schema-only positive example; no scientific result is asserted.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+  "created_at": "2026-08-23T00:00:00Z",
+  "runtime_execution_authorized": false,
+  "assessment_id": "reiyah.assessment.synthetic-encounter",
+  "encounter_ref": {
+    "availability_state": "not_available_in_gate_a",
+    "expected_record_id": "reiyah.encounter.synthetic-001",
+    "expected_record_kind": "encounter",
+    "expected_version": "1.1.0",
+    "reason": "No encounter record or operational encounter data exists in this static Gate A fixture.",
+    "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+    "gate_b_authorized": false,
+    "runtime_execution_authorized": false
+  },
+  "belief_assessment": {
+    "belief_id": "reiyah.belief.synthetic-readiness",
+    "belief_holder": {
+      "actor_id": "reiyah.actor.synthetic-automation",
+      "actor_type": "automation_system",
+      "version": "1.1.0",
+      "role": "assessor"
+    },
+    "target": {
+      "target_agent_ref": {
+        "actor_id": "reiyah.actor.synthetic-driver",
+        "actor_type": "human",
+        "version": "1.1.0",
+        "role": "belief target"
+      },
+      "target_object_ref": null
+    },
+    "assessed_at": {
+      "state": "observed",
+      "value": "2026-08-23T00:00:05Z"
+    },
+    "conditioning_information_set": {
+      "information_set_id": "reiyah.information-set.belief-inputs",
+      "version": "1.1.0",
+      "frozen_at": "2026-08-23T00:00:04Z",
+      "items": [
+        {
+          "item_ref": {
+            "record_id": "reiyah.observation.synthetic-attention",
+            "record_kind": "observation",
+            "version": "1.1.0"
+          },
+          "availability_state": "observed",
+          "available_at": {
+            "state": "observed",
+            "value": "2026-08-23T00:00:03Z"
+          },
+      "source_ref": {
+        "actor_id": "reiyah.actor.synthetic-sensor",
+        "actor_type": "instrument",
+        "version": "1.1.0",
+        "role": "synthetic information source"
+          },
+          "unavailability_reason": null
+        }
+      ],
+      "complete_as_declared": true,
+      "post_freeze_additions_prohibited": true
+    },
+    "applicability_domain": {
+      "domain_id": "reiyah.domain.synthetic-daylight",
+      "version": "1.1.0",
+      "odd_ref": {
+        "record_id": "reiyah.odd.synthetic-daylight",
+        "record_kind": "odd",
+        "version": "1.1.0"
+      },
+      "dimensions": [
+        {
+          "dimension_id": "reiyah.dimension.synthetic-driver-population",
+          "dimension": "population",
+          "criterion": "Synthetic adult driver fixture population."
+        },
+        {
+          "dimension_id": "reiyah.dimension.synthetic-sensor-valid",
+          "dimension": "sensor",
+          "criterion": "Synthetic sensor status is observed and valid."
+        }
+      ],
+      "outside_domain_policy": {
+        "state": "out_of_distribution",
+        "rule_id": "reiyah.rule.explicit-ood",
+        "coercion_prohibited": true
+      }
+    },
+    "calibration_target": {
+      "calibration_target_id": "reiyah.calibration.synthetic-takeover",
+      "outcome_definition_id": "reiyah.outcome.synthetic-recovery",
+      "target_event_description": "Driver meets the synthetic recovery criterion within the evaluation window.",
+      "target_state_space_id": "reiyah.state-space.synthetic-binary-recovery",
+      "evaluation_window": {
+        "window_id": "reiyah.window.synthetic-calibration",
+        "opens_at": {"state": "observed", "value": "2026-08-23T00:00:05Z"},
+        "closes_at": {"state": "observed", "value": "2026-08-23T00:00:15Z"},
+        "clock_id": "reiyah.clock.synthetic-monotonic"
+      },
+      "scoring_rule_id": "reiyah.rule.synthetic-brier",
+    "reference_process_ref": {
+      "actor_id": "reiyah.actor.synthetic-reference-process",
+      "actor_type": "derived_process",
+      "version": "1.1.0",
+      "role": "synthetic recovery reference process"
+      },
+      "decision_loss_rule_id": "reiyah.rule.synthetic-decision-loss"
+    },
+    "distribution": {
+      "state": "observed",
+      "components": [
+        {"state_id": "reiyah.state.recovers", "probability": 0.7},
+        {"state_id": "reiyah.state.does-not-recover", "probability": 0.3}
+      ],
+      "normalization_tolerance": 0.000001
+    },
+    "inference_method_id": "reiyah.method.synthetic-belief-assessment",
+    "abstention_policy": {
+      "rule_id": "reiyah.rule.synthetic-belief-abstention",
+      "eligible_states": [
+        "missing",
+        "unmeasured",
+        "out_of_distribution",
+        "sensor_invalid",
+        "abstained"
+      ],
+      "forced_confidence_prohibited": true
+    }
+  },
+  "observation_definitions": [
+    {
+      "observation_id": "reiyah.observation.synthetic-attention",
+      "version": "1.1.0",
+      "observation_type": "human_state",
+      "construct_description": "Synthetic attention availability observation used only to exercise the static contract.",
+      "value_domain_description": "A schema-only categorical observation with no retained participant, sensor, or vehicle data.",
+      "data_retained": false
+    }
+  ],
+  "observation_availability": [
+    {
+      "observation_ref": {
+        "record_id": "reiyah.observation.synthetic-attention",
+        "record_kind": "observation",
+        "version": "1.1.0"
+      },
+      "event_time": {"state": "observed", "value": "2026-08-23T00:00:02Z"},
+      "recorded_at": {"state": "observed", "value": "2026-08-23T00:00:02Z"},
+      "available_at": {"state": "observed", "value": "2026-08-23T00:00:03Z"},
+      "availability_source": {
+        "actor_id": "reiyah.actor.synthetic-sensor",
+        "actor_type": "instrument",
+        "version": "1.1.0",
+        "role": "observation source"
+      },
+    "capture_source_ref": {
+      "actor_id": "reiyah.actor.synthetic-sensor",
+      "actor_type": "instrument",
+      "version": "1.1.0",
+      "role": "synthetic capture source"
+      },
+      "availability_state": "observed",
+      "measurement_state": "observed",
+      "availability_before_decision": true
+    }
+  ],
+  "decision_record": {
+    "decision_ref": {
+      "record_id": "reiyah.decision.synthetic-handoff",
+      "record_kind": "decision",
+      "version": "1.1.0"
+    },
+    "decision_actor": {
+      "actor_id": "reiyah.actor.synthetic-supervisor",
+      "actor_type": "human",
+      "version": "1.1.0",
+      "role": "synthetic decision actor"
+    },
+    "authority": {
+      "authority_id": "reiyah.authority.synthetic-review-only",
+      "authority_state": {"state": "unmeasured", "reason": "No operator authority was evaluated for this schema-only fixture."},
+      "scope_ids": ["reiyah.scope.synthetic-evaluation"],
+      "basis_ref": null
+    },
+    "information_set": {
+      "information_set_id": "reiyah.information-set.decision-inputs",
+      "version": "1.1.0",
+      "frozen_at": "2026-08-23T00:00:06Z",
+      "items": [
+        {
+          "item_ref": {
+            "record_id": "reiyah.observation.synthetic-attention",
+            "record_kind": "observation",
+            "version": "1.1.0"
+          },
+          "availability_state": "observed",
+          "available_at": {
+            "state": "observed",
+            "value": "2026-08-23T00:00:03Z"
+          },
+        "source_ref": {
+          "actor_id": "reiyah.actor.synthetic-sensor",
+          "actor_type": "instrument",
+          "version": "1.1.0",
+          "role": "synthetic information source"
+          },
+          "unavailability_reason": null
+        }
+      ],
+      "complete_as_declared": true,
+      "post_freeze_additions_prohibited": true
+    },
+    "decided_at": {"state": "observed", "value": "2026-08-23T00:00:07Z"},
+    "choice_set_id": "reiyah.choice-set.synthetic-handoff",
+    "selected_action": {"state": "observed", "value": "reiyah.choice.synthetic-review-only"},
+    "disclosure": {
+      "state": "unmeasured",
+      "reason": "Disclosure was not evaluated in this schema-only fixture."
+    }
+  },
+  "readiness_assessment": {
+    "assessment_id": "reiyah.readiness.synthetic-driver",
+    "assessment_type": "readiness",
+    "subject_agent_ref": {
+      "actor_id": "reiyah.actor.synthetic-driver",
+      "actor_type": "human",
+      "version": "1.1.0",
+      "role": "readiness subject"
+    },
+    "construct_id": "reiyah.construct.synthetic-readiness",
+    "as_of_time": {"state": "observed", "value": "2026-08-23T00:00:05Z"},
+    "information_set_ref": {
+      "information_set_id": "reiyah.information-set.belief-inputs",
+      "version": "1.1.0"
+    },
+    "applicability_domain": {
+      "domain_id": "reiyah.domain.synthetic-readiness",
+      "version": "1.1.0",
+      "odd_ref": null,
+      "dimensions": [
+        {
+          "dimension_id": "reiyah.dimension.synthetic-time",
+          "dimension": "time",
+          "criterion": "Assessment applies only at the recorded synthetic time."
+        }
+      ],
+      "outside_domain_policy": {
+        "state": "out_of_distribution",
+        "rule_id": "reiyah.rule.explicit-ood",
+        "coercion_prohibited": true
+      }
+    },
+    "dimensions": [
+      {
+        "dimension_id": "reiyah.readiness-dimension.synthetic-attention",
+        "dimension": "attention_availability",
+        "estimate": {"state": "observed", "value": 0.8},
+        "threshold_rule_id": "reiyah.rule.synthetic-readiness-threshold"
+      }
+    ],
+    "aggregate_estimate": {"state": "unmeasured", "reason": "No registered aggregation rule was applied."},
+    "proxy_substitution_prohibited": true,
+    "task_definition": {
+      "task_id": "reiyah.task.synthetic-hazard-response",
+      "description": "Recognize the declared synthetic hazard and initiate the registered response.",
+      "required_capability_ids": [
+        "reiyah.capability.synthetic-attention"
+      ]
+    },
+    "assessment_window": {
+      "window_id": "reiyah.window.synthetic-readiness",
+      "opens_at": {"state": "observed", "value": "2026-08-23T00:00:04Z"},
+      "closes_at": {"state": "observed", "value": "2026-08-23T00:00:05Z"},
+      "clock_id": "reiyah.clock.synthetic-monotonic"
+    },
+    "capability_estimates": [
+      {
+        "capability_id": "reiyah.capability.synthetic-attention",
+        "estimate": {"state": "observed", "value": 0.8}
+      }
+    ],
+    "decision_rule_id": "reiyah.rule.synthetic-readiness-decision",
+    "loss_function_id": "reiyah.loss.synthetic-readiness"
+  },
+  "recoverability_assessment": {
+    "assessment_id": "reiyah.recoverability.synthetic-driver",
+    "assessment_type": "recoverability",
+    "subject_agent_ref": {
+      "actor_id": "reiyah.actor.synthetic-driver",
+      "actor_type": "human",
+      "version": "1.1.0",
+      "role": "recoverability subject"
+    },
+    "precipitating_condition_id": "reiyah.condition.synthetic-takeover",
+    "opportunity_window": {
+      "window_id": "reiyah.window.synthetic-recovery",
+      "opens_at": {"state": "observed", "value": "2026-08-23T00:00:05Z"},
+      "closes_at": {"state": "observed", "value": "2026-08-23T00:00:15Z"},
+      "clock_id": "reiyah.clock.synthetic-monotonic"
+    },
+    "recovery_criterion_id": "reiyah.rule.synthetic-recovery",
+    "information_set_ref": {
+      "information_set_id": "reiyah.information-set.belief-inputs",
+      "version": "1.1.0"
+    },
+    "applicability_domain": {
+      "domain_id": "reiyah.domain.synthetic-recoverability",
+      "version": "1.1.0",
+      "odd_ref": null,
+      "dimensions": [
+        {
+          "dimension_id": "reiyah.dimension.synthetic-support",
+          "dimension": "support",
+          "criterion": "Synthetic recovery opportunity is observable."
+        }
+      ],
+      "outside_domain_policy": {
+        "state": "out_of_distribution",
+        "rule_id": "reiyah.rule.explicit-ood",
+        "coercion_prohibited": true
+      }
+    },
+    "recovery_probability": {"state": "unmeasured", "reason": "No outcome observations are retained."},
+    "time_to_recovery": {"state": "unmeasured", "reason": "No recovery event is observed."},
+    "terminal_state": {"state": "unmeasured", "reason": "Terminal state is intentionally unknown."},
+    "competing_event_policy": {
+      "rule_id": "reiyah.rule.synthetic-competing-event",
+      "competing_event_ids": ["reiyah.event-type.synthetic-opportunity-ended"],
+      "disposition": "separate_outcome",
+      "omission_prohibited": true
+    },
+    "recovery_events": [
+      {
+        "event_id": "reiyah.recovery-event.synthetic-opportunity-opened",
+        "event_type": "opportunity_opened",
+        "occurred_at": {"state": "observed", "value": "2026-08-23T00:00:05Z"},
+        "disposition": "observed"
+      }
+    ],
+    "censoring_policy": {
+      "rule_id": "reiyah.rule.synthetic-recovery-censoring",
+      "censoring_event_ids": [
+        "reiyah.event-type.synthetic-opportunity-ended"
+      ],
+      "informative_censoring_disposition": "explicit_unknown",
+      "omission_prohibited": true
+    }
+  },
+  "evidence_binding": {
+    "state": "evidence_gap",
+    "evidence_refs": [],
+    "gap_reason": "This is a structural fixture, not scientific evidence."
+  },
+  "scientific_claim_authorized": false
+}

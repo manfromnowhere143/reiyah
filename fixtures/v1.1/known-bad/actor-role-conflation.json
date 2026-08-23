@@ -1,0 +1,11 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.actor-role-conflation",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/human-automation-assessment.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/belief_assessment/belief_holder", "value": {"actor_id": "reiyah.actor.synthetic-driver", "actor_type": "human", "version": "1.1.0", "role": "belief target"}}],
+  "expected_outcome": "reject",
+  "expected_failure": {"instance_pointer": "/belief_assessment/belief_holder", "schema_keyword": "semantic", "reason": "The belief holder and target must remain distinct typed actor roles."},
+  "runtime_execution_authorized": false
+}

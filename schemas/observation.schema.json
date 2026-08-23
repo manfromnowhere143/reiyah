@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/observation.schema.json",
+  "title": "Observation object",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "object_id",
+    "object_kind",
+    "version",
+    "lifecycle_status",
+    "lifecycle_history",
+    "protocol_release_id",
+    "context_rules",
+    "encounter_id",
+    "physical_object_id",
+    "event_time",
+    "measurements",
+    "validity",
+    "provenance"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/observation.schema.json"
+    },
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "object_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "object_kind": {
+      "const": "observation"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "lifecycle_status": {
+      "$ref": "common.schema.json#/$defs/lifecycleStatus"
+    },
+    "lifecycle_history": {
+      "$ref": "common.schema.json#/$defs/lifecycleHistory"
+    },
+    "protocol_release_id": {
+      "$ref": "common.schema.json#/$defs/releaseIdentifier"
+    },
+    "context_rules": {"$ref": "common.schema.json#/$defs/contextRules"},
+    "encounter_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "physical_object_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "event_time": {
+      "$ref": "common.schema.json#/$defs/timePoint"
+    },
+    "measurements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["measurement_id", "construct_id", "value"],
+        "properties": {
+          "measurement_id": {
+            "$ref": "common.schema.json#/$defs/stableIdentifier"
+          },
+          "construct_id": {
+            "$ref": "common.schema.json#/$defs/stableIdentifier"
+          },
+          "value": {
+            "$ref": "common.schema.json#/$defs/scalarMeasurement"
+          },
+          "sensor_id": {
+            "$ref": "common.schema.json#/$defs/stableIdentifier"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "validity": {
+      "$ref": "common.schema.json#/$defs/validityAssessment"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycle_status": {
+            "enum": ["corrected", "retracted"]
+          }
+        },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "lifecycle_history": {
+            "contains": {
+              "properties": {
+                "status": {
+                  "enum": ["corrected", "retracted"]
+                },
+                "prior_artifact": {
+                  "allOf": [
+                    {
+                      "$ref": "common.schema.json#/$defs/priorArtifactReference"
+                    },
+                    {
+                      "properties": {
+                        "record_kind": {
+                          "const": "observation"
+                        },
+                        "schema_id": {
+                          "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/observation.schema.json"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": ["status", "prior_artifact"]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

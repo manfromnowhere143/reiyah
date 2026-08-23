@@ -1,0 +1,24 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.good.epistemic-states",
+  "fixture_id": "reiyah.fixture.good.epistemic-states",
+  "version": "1.0.0",
+  "classification": "known_good",
+  "description": "Every epistemic state remains explicit; only observed carries a value and every non-observed state carries a reason.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [],
+  "expected": {"outcome": "pass", "primary_rule_id": null},
+  "payload": {
+    "kind": "epistemic_measurements",
+    "measurements": [
+      {"measurement_id": "reiyah.measurement.observed", "source_state": "observed", "emitted_state": "observed", "emitted_value": 0},
+      {"measurement_id": "reiyah.measurement.missing", "source_state": "missing", "emitted_state": "missing", "reason": "Expected synthetic value absent."},
+      {"measurement_id": "reiyah.measurement.unmeasured", "source_state": "unmeasured", "emitted_state": "unmeasured", "reason": "Synthetic protocol did not measure this field."},
+      {"measurement_id": "reiyah.measurement.ood", "source_state": "out_of_distribution", "emitted_state": "out_of_distribution", "reason": "Outside declared synthetic support."},
+      {"measurement_id": "reiyah.measurement.sensor-invalid", "source_state": "sensor_invalid", "emitted_state": "sensor_invalid", "reason": "Synthetic validity check failed."},
+      {"measurement_id": "reiyah.measurement.abstained", "source_state": "abstained", "emitted_state": "abstained", "reason": "Synthetic abstention rule fired."}
+    ]
+  }
+}

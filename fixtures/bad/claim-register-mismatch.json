@@ -1,0 +1,26 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-claim-register-mismatch-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.claim-register-mismatch",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The machine-readable claim/non-claim register is removed while the narrative register remains.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-004", "TM-008", "TM-019"],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-CLAIM-REGISTER-MISMATCH"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "claim_register",
+    "mutations": [
+      {
+        "operation": "remove",
+        "path": "manifests/claims/proposed-claims-and-non-claims-1.0.0.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-dangling-result-lineage-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.dangling-result-lineage",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A proposed synthetic result illegally declares a dangling replication target.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-008", "TM-019", "TM-027"],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-RESULT-LINEAGE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "fixtures/good/result.json",
+        "json_pointer": "/replicates_result",
+        "value": {
+          "artifact_id": "reiyah.artifact.result-does-not-exist",
+          "record_id": "reiyah.result.does-not-exist",
+          "record_kind": "result",
+          "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/result.schema.json",
+          "version": "1.0.0",
+          "path": "fixtures/good/result-does-not-exist.json",
+          "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      }
+    ]
+  }
+}

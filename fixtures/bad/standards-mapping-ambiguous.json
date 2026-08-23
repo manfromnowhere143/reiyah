@@ -1,0 +1,32 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-standards-mapping-ambiguous-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.standards-mapping-ambiguous",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "Two standards crosswalk entries are assigned the same stable mapping identifier.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-019",
+    "TM-022",
+    "TM-026"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-STANDARDS-MAPPING-AMBIGUOUS"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "sources_crosswalk",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "evidence/standards-crosswalk.json",
+        "json_pointer": "/entries/1/mapping_id",
+        "value": "map.iso.26262-1.2018.scope-boundary"
+      }
+    ]
+  }
+}

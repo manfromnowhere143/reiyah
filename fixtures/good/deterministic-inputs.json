@@ -1,0 +1,14 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.good.determinism",
+  "fixture_id": "reiyah.fixture.good.determinism",
+  "version": "1.0.0",
+  "classification": "known_good",
+  "description": "Validation depends only on immutable repository bytes and pinned local toolchain inputs.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [],
+  "expected": {"outcome": "pass", "primary_rule_id": null},
+  "payload": {"kind": "determinism", "input_sources": ["repository_bytes", "interpreter", "local_schema_library"]}
+}

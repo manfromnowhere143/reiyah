@@ -1,0 +1,20 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.identity-authority",
+  "fixture_id": "reiyah.fixture.bad.identity-authority",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "Synthetic request names Reiyah while the working directory, Git root, and loaded authority identify Odeya.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-001", "TM-002"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-IDENTITY-AUTHORITY-MISMATCH"},
+  "payload": {
+    "kind": "identity",
+    "named_project": "Reiyah",
+    "working_directory": "/Users/danielwahnich/workspace/odeya",
+    "git_root": "/Users/danielwahnich/workspace/odeya",
+    "instruction_project": "Odeya"
+  }
+}

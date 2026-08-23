@@ -1,0 +1,54 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/manifest-release-ledger.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.manifest-release-ledger-1.0.0",
+  "ledger_id": "reiyah.manifest-release-ledger",
+  "version": "1.0.0",
+  "as_of_date": "2026-08-22",
+  "append_only": true,
+  "identifier_reuse_prohibited": true,
+  "entries": [
+    {
+      "manifest_kind": "mission",
+      "release_id": "reiyah.mission@1.0.0",
+      "version": "1.0.0",
+      "release_stage": "candidate",
+      "lifecycle_status": "proposed",
+      "relation": {
+        "type": "initial"
+      },
+      "artifact_binding": {
+        "artifact_id": "reiyah.artifact.mission-1.0.0",
+        "path": "manifests/mission/reiyah-mission-1.0.0.json",
+        "sha256": "sha256:5acb0cea515b294d98a073cc36155622037731007c498d93141eadbaf0b97b8c",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/mission-manifest.schema.json",
+        "version": "1.0.0"
+      },
+      "operator_acceptance": {
+        "state": "unaccepted",
+        "record_id": null
+      }
+    },
+    {
+      "manifest_kind": "protocol",
+      "release_id": "reiyah.protocol.harbor-gate-a@1.0.0",
+      "version": "1.0.0",
+      "release_stage": "candidate",
+      "lifecycle_status": "proposed",
+      "relation": {
+        "type": "initial"
+      },
+      "artifact_binding": {
+        "artifact_id": "reiyah.artifact.protocol-1.0.0",
+        "path": "manifests/protocol/harbor-gate-a-protocol-1.0.0.json",
+        "sha256": "sha256:2e64bd49b9289f62c1afb1a8aed8483533deaade67fc4b1fc899ce1765d43e53",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/protocol-manifest.schema.json",
+        "version": "1.0.0"
+      },
+      "operator_acceptance": {
+        "state": "unaccepted",
+        "record_id": null
+      }
+    }
+  ]
+}

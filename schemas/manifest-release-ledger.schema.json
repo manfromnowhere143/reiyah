@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/manifest-release-ledger.schema.json",
+  "title": "Append-only mission and protocol release ledger",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "ledger_id",
+    "version",
+    "as_of_date",
+    "append_only",
+    "identifier_reuse_prohibited",
+    "entries"
+  ],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.0.0/manifest-release-ledger.schema.json"},
+    "schema_version": {"const": "1.0.0"},
+    "artifact_id": {"const": "reiyah.artifact.manifest-release-ledger-1.0.0"},
+    "ledger_id": {"const": "reiyah.manifest-release-ledger"},
+    "version": {"const": "1.0.0"},
+    "as_of_date": {"$ref": "common.schema.json#/$defs/calendarDate"},
+    "append_only": {"const": true},
+    "identifier_reuse_prohibited": {"const": true},
+    "entries": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "manifest_kind",
+          "release_id",
+          "version",
+          "release_stage",
+          "lifecycle_status",
+          "relation",
+          "artifact_binding",
+          "operator_acceptance"
+        ],
+        "properties": {
+          "manifest_kind": {"enum": ["mission", "protocol"]},
+          "release_id": {"$ref": "common.schema.json#/$defs/releaseIdentifier"},
+          "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+          "release_stage": {"enum": ["candidate", "superseded", "corrected", "retracted"]},
+          "lifecycle_status": {"$ref": "common.schema.json#/$defs/lifecycleStatus"},
+          "relation": {"$ref": "common.schema.json#/$defs/releaseRelation"},
+          "artifact_binding": {"$ref": "common.schema.json#/$defs/artifactReference"},
+          "operator_acceptance": {
+            "type": "object",
+            "required": ["state", "record_id"],
+            "properties": {
+              "state": {"enum": ["unaccepted", "accepted", "rejected", "deferred"]},
+              "record_id": {
+                "oneOf": [
+                  {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+                  {"type": "null"}
+                ]
+              }
+            },
+            "allOf": [
+              {
+                "if": {"properties": {"state": {"const": "unaccepted"}}, "required": ["state"]},
+                "then": {"properties": {"record_id": {"type": "null"}}},
+                "else": {"properties": {"record_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"}}}
+              }
+            ],
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      "allOf": [
+        {
+          "contains": {
+            "type": "object",
+            "required": ["manifest_kind", "release_id", "version", "relation"],
+            "properties": {
+              "manifest_kind": {"const": "mission"},
+              "release_id": {"const": "reiyah.mission@1.0.0"},
+              "version": {"const": "1.0.0"},
+              "relation": {
+                "type": "object",
+                "required": ["type"],
+                "properties": {"type": {"const": "initial"}}
+              }
+            }
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "required": ["manifest_kind", "release_id", "version", "relation"],
+            "properties": {
+              "manifest_kind": {"const": "protocol"},
+              "release_id": {"const": "reiyah.protocol.harbor-gate-a@1.0.0"},
+              "version": {"const": "1.0.0"},
+              "relation": {
+                "type": "object",
+                "required": ["type"],
+                "properties": {"type": {"const": "initial"}}
+              }
+            }
+          },
+          "minContains": 1,
+          "maxContains": 1
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

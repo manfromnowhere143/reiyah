@@ -1,0 +1,75 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-joint-standards-identity-forgery-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.joint-standards-identity-forgery",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The source ledger and crosswalk are forged together to agree on replacement ISO identity metadata while the retained JSONL bytes and digest still contain the original exact record.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-003",
+    "TM-004",
+    "TM-022",
+    "TM-023"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-STANDARDS-EVIDENCE-INCOMPLETE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "sources_crosswalk",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "evidence/source-ledger.json",
+        "json_pointer": "/records/0/title",
+        "value": "ISO 99999:2099 Fabricated replacement identity"
+      },
+      {
+        "operation": "replace",
+        "path": "evidence/source-ledger.json",
+        "json_pointer": "/records/0/document_identifier/value",
+        "value": "ISO 99999:2099"
+      },
+      {
+        "operation": "replace",
+        "path": "evidence/source-ledger.json",
+        "json_pointer": "/records/0/exact_version/value",
+        "value": "ISO 99999:2099, edition 99"
+      },
+      {
+        "operation": "replace",
+        "path": "evidence/source-ledger.json",
+        "json_pointer": "/records/0/publication_date/value",
+        "value": "2099-01-01"
+      },
+      {
+        "operation": "replace",
+        "path": "evidence/standards-crosswalk.json",
+        "json_pointer": "/entries/0/external_reference/title/value",
+        "value": "ISO 99999:2099 Fabricated replacement identity"
+      },
+      {
+        "operation": "replace",
+        "path": "evidence/standards-crosswalk.json",
+        "json_pointer": "/entries/0/external_reference/document_identifier/value",
+        "value": "ISO 99999:2099"
+      },
+      {
+        "operation": "replace",
+        "path": "evidence/standards-crosswalk.json",
+        "json_pointer": "/entries/0/external_reference/exact_version/value",
+        "value": "ISO 99999:2099, edition 99"
+      },
+      {
+        "operation": "replace",
+        "path": "evidence/standards-crosswalk.json",
+        "json_pointer": "/entries/0/external_reference/publication_date/value",
+        "value": "2099-01-01"
+      }
+    ]
+  }
+}

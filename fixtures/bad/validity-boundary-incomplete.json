@@ -1,0 +1,32 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-validity-boundary-incomplete-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.validity-boundary-incomplete",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The support validity boundary is removed from an experiment, leaving only six of the seven required dimensions.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-011",
+    "TM-014",
+    "TM-015",
+    "TM-019"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-VALIDITY-BOUNDARY-INCOMPLETE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "remove",
+        "path": "fixtures/good/experiment.json",
+        "json_pointer": "/validity_boundaries/6"
+      }
+    ]
+  }
+}

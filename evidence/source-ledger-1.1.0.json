@@ -1,0 +1,638 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "reiyah.artifact.source-ledger-1.1.0",
+  "ledger_id": "reiyah.source-ledger.gate-a",
+  "version": "1.1.0",
+  "as_of_date": "2026-08-23",
+  "lifecycle_status": "proposed",
+  "runtime_execution_authorized": false,
+  "custody_profile_ref": {
+    "artifact_id": "reiyah.artifact.public-evidence-custody-profile-1.1.0",
+    "version": "1.1.0",
+    "path": "evidence/public-evidence-custody-profile-1.1.0.json",
+    "sha256": "sha256:80bc6f977ca8810b18cc077976c4c8517dc6f93d70b5ebbf455b433d73e3978b",
+    "byte_size": 5296
+  },
+  "predecessor": {
+    "artifact_id": "reiyah.artifact.source-ledger-1.0.0",
+    "version": "1.0.0",
+    "path": "evidence/source-ledger.json",
+    "sha256": "sha256:02000d76611f719884ddebc29d4dc48ca31781af474c086c8ea00bfb0ce6b4c0",
+    "byte_size": 23378
+  },
+  "records": [
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.source.iso-26262-1-2018-open-data-1.1.0",
+      "source_id": "src.iso.26262-1.2018.open-data",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "record_role": "retained_source",
+      "title": "ISO 26262-1:2018 Road vehicles — Functional safety — Part 1: Vocabulary",
+      "publisher": {
+        "state": "observed",
+        "value": "International Organization for Standardization (ISO)"
+      },
+      "document_identifier": {
+        "state": "observed",
+        "value": "ISO 26262-1:2018"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "ISO 26262-1:2018, edition 2"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2018-12-17"
+      },
+      "scope": {
+        "state": "observed",
+        "value": "ISO Open Data deliverable record 68383 supplies the reference, title, publication date, edition, stage, replacement links, classification, committee, page count, languages, and publisher scope summary for Part 1 of the ISO 26262 series."
+      },
+      "source_url": "https://isopublicstorageprod.blob.core.windows.net/opendata/_latest/iso_deliverables_metadata/json/iso_deliverables_metadata.jsonl",
+      "recorded_at": "2026-08-22T09:05:56Z",
+      "custody_state": "retained_payload",
+      "redistribution_state": "permitted_with_attribution",
+      "evidence_eligibility": "eligible_for_proposed_mapping",
+      "evidence_class": "official_catalog_metadata",
+      "normative_text_available": false,
+      "retained_payload": {
+        "path": "evidence/sources/iso-open-data-68383-20260819.jsonl",
+        "sha256": "sha256:305ca3de040b5d216fc5ae9a79100ac2aaab470b41b0b2e6a0a32d653be04e1d",
+        "byte_size": 2606,
+        "media_type": "application/octet-stream"
+      },
+      "prior_observed_payload": null,
+      "redistribution_basis": {
+        "state": "observed",
+        "basis_url": "https://www.iso.org/open-data.html#iso_deliverables_metadata",
+        "basis_title": "ISO Open Data — ISO Deliverables Metadata",
+        "basis_version": "Publisher page observed 2026-08-23; dataset updated daily",
+        "terms_summary": "ISO identifies iso_deliverables_metadata as released under the ODC Attribution License (ODC-By) v1.0 and permits sharing and adaptation with ISO attribution.",
+        "obligations": [
+          "Attribute ISO and identify the iso_deliverables_metadata dataset.",
+          "Identify the ODC Attribution License (ODC-By) v1.0."
+        ],
+        "caveats": [
+          "The permission covers ISO Open Data metadata, not the ISO 26262 publication text.",
+          "The mutable licensing page is not retained in this packet and requires rechecking before later redistribution."
+        ]
+      },
+      "access_constraints": {
+        "state": "observed",
+        "value": "Anonymous HTTPS byte-range access was available. The mutable _latest object, last modified 2026-08-19T00:40:16Z, was pinned during retrieval by ETag 0x8DEFD8A701E4A6C and a complete-record byte interval."
+      },
+      "license_constraints": {
+        "state": "observed",
+        "value": "The ISO Open Data publisher page identifies iso_deliverables_metadata under ODC-By 1.0 and requires ISO attribution; the exact attribution obligations are recorded in redistribution_basis."
+      },
+      "limitations": [
+        "This is one complete JSON Lines catalog record, not any part of the paid ISO 26262 normative publication.",
+        "No clause, requirement, conformity assessment, or compliance conclusion can be derived from this record.",
+        "The record reports currentStage 9092 and replacement identifier 90020; the successor record and its text are not retained."
+      ],
+      "upstream_etag": {
+        "state": "observed",
+        "value": "0x8DEFD8A701E4A6C"
+      },
+      "upstream_range": {
+        "state": "observed",
+        "value": "bytes 48969622-48972227/79303891"
+      }
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.source.iso-21448-2022-open-data-1.1.0",
+      "source_id": "src.iso.21448.2022.open-data",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "record_role": "retained_source",
+      "title": "ISO 21448:2022 Road vehicles — Safety of the intended functionality",
+      "publisher": {
+        "state": "observed",
+        "value": "International Organization for Standardization (ISO)"
+      },
+      "document_identifier": {
+        "state": "observed",
+        "value": "ISO 21448:2022"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "ISO 21448:2022, edition 1"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2022-06-30"
+      },
+      "scope": {
+        "state": "observed",
+        "value": "ISO Open Data deliverable record 77490 describes edition 1 as guidance and an argument framework for risks from intended-function specification or performance insufficiencies, including complex sensing and processing, foreseeable misuse, and declared exclusions."
+      },
+      "source_url": "https://isopublicstorageprod.blob.core.windows.net/opendata/_latest/iso_deliverables_metadata/json/iso_deliverables_metadata.jsonl",
+      "recorded_at": "2026-08-22T09:05:57Z",
+      "custody_state": "retained_payload",
+      "redistribution_state": "permitted_with_attribution",
+      "evidence_eligibility": "eligible_for_proposed_mapping",
+      "evidence_class": "official_catalog_metadata",
+      "normative_text_available": false,
+      "retained_payload": {
+        "path": "evidence/sources/iso-open-data-77490-20260819.jsonl",
+        "sha256": "sha256:4c172bebc38e108d7b9568dcea8eb1a13252cd13f5e48cf46a9e18e4a12fbb86",
+        "byte_size": 2814,
+        "media_type": "application/octet-stream"
+      },
+      "prior_observed_payload": null,
+      "redistribution_basis": {
+        "state": "observed",
+        "basis_url": "https://www.iso.org/open-data.html#iso_deliverables_metadata",
+        "basis_title": "ISO Open Data — ISO Deliverables Metadata",
+        "basis_version": "Publisher page observed 2026-08-23; dataset updated daily",
+        "terms_summary": "ISO identifies iso_deliverables_metadata as released under the ODC Attribution License (ODC-By) v1.0 and permits sharing and adaptation with ISO attribution.",
+        "obligations": [
+          "Attribute ISO and identify the iso_deliverables_metadata dataset.",
+          "Identify the ODC Attribution License (ODC-By) v1.0."
+        ],
+        "caveats": [
+          "The permission covers ISO Open Data metadata, not the ISO 21448 publication text.",
+          "The mutable licensing page is not retained in this packet and requires rechecking before later redistribution."
+        ]
+      },
+      "access_constraints": {
+        "state": "observed",
+        "value": "Anonymous HTTPS byte-range access was available. The mutable _latest object, last modified 2026-08-19T00:40:16Z, was pinned during retrieval by ETag 0x8DEFD8A701E4A6C and a complete-record byte interval."
+      },
+      "license_constraints": {
+        "state": "observed",
+        "value": "The ISO Open Data publisher page identifies iso_deliverables_metadata under ODC-By 1.0 and requires ISO attribution; the exact attribution obligations are recorded in redistribution_basis."
+      },
+      "limitations": [
+        "This is one complete JSON Lines catalog record, not the 181-page ISO 21448 normative publication.",
+        "Only publisher metadata and the scope summary are retained; no requirement locator or conformity conclusion is available.",
+        "The record reports currentStage 9092 and replacement identifier 93071; the successor record and its text are not retained."
+      ],
+      "upstream_etag": {
+        "state": "observed",
+        "value": "0x8DEFD8A701E4A6C"
+      },
+      "upstream_range": {
+        "state": "observed",
+        "value": "bytes 58558889-58561702/79303891"
+      }
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.source.iso-tr-21959-1-2020-open-data-1.1.0",
+      "source_id": "src.iso-tr.21959-1.2020.open-data",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "record_role": "retained_source",
+      "title": "ISO/TR 21959-1:2020 Road vehicles — Human performance and state in the context of automated driving — Part 1: Common underlying concepts",
+      "publisher": {
+        "state": "observed",
+        "value": "International Organization for Standardization (ISO)"
+      },
+      "document_identifier": {
+        "state": "observed",
+        "value": "ISO/TR 21959-1:2020"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "ISO/TR 21959-1:2020, edition 2"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2020-01-09"
+      },
+      "scope": {
+        "state": "observed",
+        "value": "ISO Open Data deliverable record 78088 describes informative common concepts for driver performance and state in automated-driving functions that require engagement, fallback readiness, or later manual resumption, and notes both consensus and research gaps."
+      },
+      "source_url": "https://isopublicstorageprod.blob.core.windows.net/opendata/_latest/iso_deliverables_metadata/json/iso_deliverables_metadata.jsonl",
+      "recorded_at": "2026-08-22T09:05:56Z",
+      "custody_state": "retained_payload",
+      "redistribution_state": "permitted_with_attribution",
+      "evidence_eligibility": "eligible_for_proposed_mapping",
+      "evidence_class": "official_catalog_metadata",
+      "normative_text_available": false,
+      "retained_payload": {
+        "path": "evidence/sources/iso-open-data-78088-20260819.jsonl",
+        "sha256": "sha256:b92adcf7a8203d4e141057163c2d42b7bc79686542255d4a81962116326db223",
+        "byte_size": 1671,
+        "media_type": "application/octet-stream"
+      },
+      "prior_observed_payload": null,
+      "redistribution_basis": {
+        "state": "observed",
+        "basis_url": "https://www.iso.org/open-data.html#iso_deliverables_metadata",
+        "basis_title": "ISO Open Data — ISO Deliverables Metadata",
+        "basis_version": "Publisher page observed 2026-08-23; dataset updated daily",
+        "terms_summary": "ISO identifies iso_deliverables_metadata as released under the ODC Attribution License (ODC-By) v1.0 and permits sharing and adaptation with ISO attribution.",
+        "obligations": [
+          "Attribute ISO and identify the iso_deliverables_metadata dataset.",
+          "Identify the ODC Attribution License (ODC-By) v1.0."
+        ],
+        "caveats": [
+          "The permission covers ISO Open Data metadata, not the ISO/TR 21959-1 publication text.",
+          "The mutable licensing page is not retained in this packet and requires rechecking before later redistribution."
+        ]
+      },
+      "access_constraints": {
+        "state": "observed",
+        "value": "Anonymous HTTPS byte-range access was available. The mutable _latest object, last modified 2026-08-19T00:40:16Z, was pinned during retrieval by ETag 0x8DEFD8A701E4A6C and a complete-record byte interval."
+      },
+      "license_constraints": {
+        "state": "observed",
+        "value": "The ISO Open Data publisher page identifies iso_deliverables_metadata under ODC-By 1.0 and requires ISO attribution; the exact attribution obligations are recorded in redistribution_basis."
+      },
+      "limitations": [
+        "This is one complete JSON Lines catalog record, not the 24-page ISO technical report.",
+        "The publisher scope expressly characterizes the report as informative rather than normative.",
+        "No definition, protocol, threshold, experimental design, or clause text from the report is retained."
+      ],
+      "upstream_etag": {
+        "state": "observed",
+        "value": "0x8DEFD8A701E4A6C"
+      },
+      "upstream_range": {
+        "state": "observed",
+        "value": "bytes 59264564-59266234/79303891"
+      }
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.source.iso-pas-8800-2024-open-data-1.1.0",
+      "source_id": "src.iso-pas.8800.2024.open-data",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "record_role": "retained_source",
+      "title": "ISO/PAS 8800:2024 Road vehicles — Safety and artificial intelligence",
+      "publisher": {
+        "state": "observed",
+        "value": "International Organization for Standardization (ISO)"
+      },
+      "document_identifier": {
+        "state": "observed",
+        "value": "ISO/PAS 8800:2024"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "ISO/PAS 8800:2024, edition 1"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2024-12-13"
+      },
+      "scope": {
+        "state": "observed",
+        "value": "ISO Open Data deliverable record 83303 describes a publicly available specification concerned with safety-related road-vehicle systems using AI, including output insufficiencies, systematic errors, random hardware errors, and safety-related properties for assurance arguments."
+      },
+      "source_url": "https://isopublicstorageprod.blob.core.windows.net/opendata/_latest/iso_deliverables_metadata/json/iso_deliverables_metadata.jsonl",
+      "recorded_at": "2026-08-22T09:05:57Z",
+      "custody_state": "retained_payload",
+      "redistribution_state": "permitted_with_attribution",
+      "evidence_eligibility": "eligible_for_proposed_mapping",
+      "evidence_class": "official_catalog_metadata",
+      "normative_text_available": false,
+      "retained_payload": {
+        "path": "evidence/sources/iso-open-data-83303-20260819.jsonl",
+        "sha256": "sha256:55b96ac98610215c67189fb758be9aba9224d9409dfdb09dad0ed0aeb03e5d45",
+        "byte_size": 2920,
+        "media_type": "application/octet-stream"
+      },
+      "prior_observed_payload": null,
+      "redistribution_basis": {
+        "state": "observed",
+        "basis_url": "https://www.iso.org/open-data.html#iso_deliverables_metadata",
+        "basis_title": "ISO Open Data — ISO Deliverables Metadata",
+        "basis_version": "Publisher page observed 2026-08-23; dataset updated daily",
+        "terms_summary": "ISO identifies iso_deliverables_metadata as released under the ODC Attribution License (ODC-By) v1.0 and permits sharing and adaptation with ISO attribution.",
+        "obligations": [
+          "Attribute ISO and identify the iso_deliverables_metadata dataset.",
+          "Identify the ODC Attribution License (ODC-By) v1.0."
+        ],
+        "caveats": [
+          "The permission covers ISO Open Data metadata, not the ISO/PAS 8800 publication text.",
+          "The mutable licensing page is not retained in this packet and requires rechecking before later redistribution."
+        ]
+      },
+      "access_constraints": {
+        "state": "observed",
+        "value": "Anonymous HTTPS byte-range access was available. The mutable _latest object, last modified 2026-08-19T00:40:16Z, was pinned during retrieval by ETag 0x8DEFD8A701E4A6C and a complete-record byte interval."
+      },
+      "license_constraints": {
+        "state": "observed",
+        "value": "The ISO Open Data publisher page identifies iso_deliverables_metadata under ODC-By 1.0 and requires ISO attribution; the exact attribution obligations are recorded in redistribution_basis."
+      },
+      "limitations": [
+        "This is one complete JSON Lines catalog record, not the 172-page ISO/PAS 8800 publication.",
+        "No safety property, process requirement, assurance method, clause, or compliance conclusion is available from the retained metadata alone.",
+        "The record lists replacement identifiers 94041 and 94042; those successor records and texts are not retained."
+      ],
+      "upstream_etag": {
+        "state": "observed",
+        "value": "0x8DEFD8A701E4A6C"
+      },
+      "upstream_range": {
+        "state": "observed",
+        "value": "bytes 65859873-65862792/79303891"
+      }
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.source.nist-ai-100-1-pdf-1.1.0",
+      "source_id": "src.nist.ai-100-1.2023.pdf",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "record_role": "historical_pointer",
+      "title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+      "publisher": {
+        "state": "observed",
+        "value": "National Institute of Standards and Technology (NIST)"
+      },
+      "document_identifier": {
+        "state": "observed",
+        "value": "NIST AI 100-1"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "AI RMF 1.0"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2023-01-26"
+      },
+      "scope": {
+        "state": "observed",
+        "value": "AI RMF 1.0 is a voluntary, rights-preserving, non-sector-specific, use-case-agnostic framework for managing AI risks through GOVERN, MAP, MEASURE, and MANAGE, with trustworthiness characteristics and human-AI interaction considerations."
+      },
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "recorded_at": "2026-08-22T09:12:54Z",
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "evidence_class": "guidance_research",
+      "normative_text_available": false,
+      "retained_payload": null,
+      "prior_observed_payload": {
+        "path": "evidence/sources/nist-ai-100-1-2023.pdf",
+        "sha256": "sha256:7576edb531d9848825814ee88e28b1795d3a84b435b4b797d3670eafdc4a89f1",
+        "byte_size": 1946127,
+        "media_type": "application/pdf",
+        "observed_at": "2026-08-22T09:12:54Z",
+        "observed_in_artifact": {
+          "artifact_id": "reiyah.artifact.source-ledger-1.0.0",
+          "version": "1.0.0",
+          "path": "evidence/source-ledger.json",
+          "sha256": "sha256:02000d76611f719884ddebc29d4dc48ca31781af474c086c8ea00bfb0ce6b4c0",
+          "byte_size": 23378
+        },
+        "admissible_under_this_profile": false,
+        "distribution_payload_authorized": false
+      },
+      "redistribution_basis": {
+        "state": "unmeasured",
+        "reason": "The general NIST Technical Series statement preserves a caveat for third-party-authored material, and no qualified review cleared every element of this PDF for the initial public packet. Only pointer and custody metadata may be distributed."
+      },
+      "access_constraints": {
+        "state": "observed",
+        "value": "Public anonymous HTTPS download was available from the NIST publications host."
+      },
+      "license_constraints": {
+        "state": "unmeasured",
+        "reason": "The observed general NIST statement was not sufficient to resolve the document-specific third-party-material caveat for this public release."
+      },
+      "limitations": [
+        "AI RMF 1.0 is voluntary, non-sector-specific, and use-case agnostic; it is not an automotive safety or driver-readiness standard.",
+        "The framework does not supply a Reiyah benchmark protocol, performance threshold, safety case, or compliance result.",
+        "The prior PDF identity, digest, size, and inspection metadata remain custody history only; the payload bytes are absent from the public worktree and recovered history.",
+        "No NIST mapping in the public profile may use this pointer as positive evidence.",
+        "Qualified rights review or a publisher-supplied document-specific clearance would be required before a later successor could reconsider payload distribution."
+      ],
+      "upstream_etag": {
+        "state": "observed",
+        "value": "327b21f74d5db1:0"
+      },
+      "upstream_range": null
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.source.nist-ai-100-1-publication-page-1.1.0",
+      "source_id": "src.nist.ai-100-1.2023.publication-page",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "record_role": "historical_pointer",
+      "title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+      "publisher": {
+        "state": "observed",
+        "value": "National Institute of Standards and Technology (NIST)"
+      },
+      "document_identifier": {
+        "state": "observed",
+        "value": "NIST AI 100-1"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "AI RMF 1.0"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2023-01-26"
+      },
+      "scope": {
+        "state": "observed",
+        "value": "The official mutable page identifies the AI RMF 1.0 title, date, report number, citation, DOI, keywords, and PDF target."
+      },
+      "source_url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "evidence_class": "official_catalog_metadata",
+      "normative_text_available": false,
+      "retained_payload": null,
+      "prior_observed_payload": {
+        "path": "evidence/sources/nist-ai-rmf-1.0-publication-page-20260822.html",
+        "sha256": "sha256:d0dc9896118eef5dbd8feb7be09fd43fd3882b80df47afa8f7031dc2ae4f0e47",
+        "byte_size": 80457,
+        "media_type": "text/html",
+        "observed_at": "2026-08-22T09:14:24Z",
+        "observed_in_artifact": {
+          "artifact_id": "reiyah.artifact.source-ledger-1.0.0",
+          "version": "1.0.0",
+          "path": "evidence/source-ledger.json",
+          "sha256": "sha256:02000d76611f719884ddebc29d4dc48ca31781af474c086c8ea00bfb0ce6b4c0",
+          "byte_size": 23378
+        },
+        "admissible_under_this_profile": false,
+        "distribution_payload_authorized": false
+      },
+      "redistribution_basis": {
+        "state": "unmeasured",
+        "reason": "The historical HTML payload is excluded from the v1.1 public payload set; only its official URL and custody history may be distributed."
+      },
+      "access_constraints": {
+        "state": "observed",
+        "value": "The publisher page was publicly accessible when captured for the predecessor ledger, but it is mutable."
+      },
+      "license_constraints": {
+        "state": "unmeasured",
+        "reason": "No source-specific permission for redistribution of the captured HTML was established."
+      },
+      "limitations": [
+        "The predecessor index and ledger preserve the old HTML identity, digest, and size, but the payload bytes are absent from the public worktree and recovered history and are excluded from v1.1 evidence and distribution.",
+        "The prior digest and size preserve custody history only and do not re-admit the payload.",
+        "The NIST AI 100-1 PDF pointer, not this page pointer, is the selected identity reference for the v1.1 NIST mapping; neither pointer is eligible evidence."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.source.unece-r157-rev1-documentation-1.1.0",
+      "source_id": "src.unece.r157.rev1.2025.documentation",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "record_role": "historical_pointer",
+      "title": "Addendum 156 — UN Regulation No. 157, Revision 1, 01 series of amendments",
+      "publisher": {
+        "state": "observed",
+        "value": "United Nations Economic Commission for Europe (UNECE)"
+      },
+      "document_identifier": {
+        "state": "observed",
+        "value": "E/ECE/TRANS/505/Rev.3/Add.156/Rev.1"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "E/ECE/TRANS/505/Rev.3/Add.156/Rev.1"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2025-03-27"
+      },
+      "scope": {
+        "state": "observed",
+        "value": "Official regulatory documentation for the 01 series of amendments to UN Regulation No. 157; the document states that it is a documentation tool and points to a separate authentic text."
+      },
+      "source_url": "https://documents.un.org/api/symbol/access?l=en&s=E%2FECE%2FTRANS%2F505%2FREV.3%2FADD.156%2FREV.1&t=pdf",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "evidence_class": "official_regulatory_documentation",
+      "normative_text_available": false,
+      "retained_payload": null,
+      "prior_observed_payload": {
+        "path": "evidence/sources/unece-r157-rev1-2025.pdf",
+        "sha256": "sha256:552b579225f98f66d97019d5712fe8ea26bb5e369943c34328c46537a1de537c",
+        "byte_size": 6382157,
+        "media_type": "application/pdf",
+        "observed_at": "2026-08-22T09:12:54Z",
+        "observed_in_artifact": {
+          "artifact_id": "reiyah.artifact.source-ledger-1.0.0",
+          "version": "1.0.0",
+          "path": "evidence/source-ledger.json",
+          "sha256": "sha256:02000d76611f719884ddebc29d4dc48ca31781af474c086c8ea00bfb0ce6b4c0",
+          "byte_size": 23378
+        },
+        "admissible_under_this_profile": false,
+        "distribution_payload_authorized": false
+      },
+      "redistribution_basis": {
+        "state": "unmeasured",
+        "reason": "No source-specific redistribution permission was retained or independently established for this UN PDF."
+      },
+      "access_constraints": {
+        "state": "observed",
+        "value": "Public anonymous HTTPS download was available through the United Nations documents API when the predecessor payload was captured."
+      },
+      "license_constraints": {
+        "state": "unmeasured",
+        "reason": "No explicit source-specific reuse licence was identified; no legal inference is made."
+      },
+      "limitations": [
+        "The predecessor index and ledger preserve the old PDF identity, digest, and size, but the payload bytes are absent from the public worktree and recovered history and are excluded from v1.1 evidence and distribution.",
+        "It expressly identifies itself as a documentation tool rather than the authentic legally binding text.",
+        "The pointer does not establish current amendments, contracting-party scope, jurisdictional effect, legal interpretation, approval, or compliance."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.source.unece-wp29-2022-59-rev1-1.1.0",
+      "source_id": "src.unece.wp29.2022-59-rev1.authentic-text",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "record_role": "historical_pointer",
+      "title": "Proposal for the 01 series of amendments to UN Regulation No. 157 (Automated Lane Keeping Systems), Revision 1",
+      "publisher": {
+        "state": "observed",
+        "value": "United Nations Economic Commission for Europe (UNECE)"
+      },
+      "document_identifier": {
+        "state": "observed",
+        "value": "ECE/TRANS/WP.29/2022/59/Rev.1"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "ECE/TRANS/WP.29/2022/59/Rev.1"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2022-05-30"
+      },
+      "scope": {
+        "state": "observed",
+        "value": "A published proposal containing the 01-series text for UN Regulation No. 157; the predecessor ledger relied on a separate 2025 documentation copy to characterize its authentic-text status."
+      },
+      "source_url": "https://documents.un.org/api/symbol/access?l=en&s=ECE%2FTRANS%2FWP.29%2F2022%2F59%2FREV.1&t=pdf",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "evidence_class": "full_normative_text",
+      "normative_text_available": false,
+      "retained_payload": null,
+      "prior_observed_payload": {
+        "path": "evidence/sources/unece-wp29-2022-59-rev1.pdf",
+        "sha256": "sha256:ff2a05d9cdb6501dbe4d4b730a5457efadc5724f6b5d2dc7f3bc194472743a23",
+        "byte_size": 12651747,
+        "media_type": "application/pdf",
+        "observed_at": "2026-08-22T09:12:48Z",
+        "observed_in_artifact": {
+          "artifact_id": "reiyah.artifact.source-ledger-1.0.0",
+          "version": "1.0.0",
+          "path": "evidence/source-ledger.json",
+          "sha256": "sha256:02000d76611f719884ddebc29d4dc48ca31781af474c086c8ea00bfb0ce6b4c0",
+          "byte_size": 23378
+        },
+        "admissible_under_this_profile": false,
+        "distribution_payload_authorized": false
+      },
+      "redistribution_basis": {
+        "state": "unmeasured",
+        "reason": "No source-specific redistribution permission was retained or independently established for this UN PDF."
+      },
+      "access_constraints": {
+        "state": "observed",
+        "value": "Public anonymous HTTPS download was available through the United Nations documents API when the predecessor payload was captured."
+      },
+      "license_constraints": {
+        "state": "unmeasured",
+        "reason": "No explicit source-specific reuse licence was identified; no legal inference is made."
+      },
+      "limitations": [
+        "The predecessor index and ledger preserve the old PDF identity, digest, and size, but the payload bytes are absent from the public worktree and recovered history and are excluded from v1.1 evidence and distribution.",
+        "The document was issued as a proposal; without admissible retained custody and qualified review, its legal status, applicability, amendments, and exact clauses cannot support a v1.1 mapping.",
+        "Prior digest and size are custody history only, not retained evidence under this profile."
+      ]
+    }
+  ],
+  "evidence_gap_statement": "This v1.1 custody successor admits exactly four retained payloads for proposed mappings: the four ISO Open Data JSON Lines records. The prior NIST PDF, NIST publication HTML, and two UN PDFs are pointer-only and evidence-ineligible; NIST and UN mappings are therefore open evidence gaps. Frontier company, patent, standards-page, specification, and primary-research URLs are isolated in the separately bound pointer-only discovery register. No record supports a scientific, safety, legal, standards, benchmark, certification, compliance, superiority, or operator-acceptance claim."
+}

@@ -1,0 +1,283 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-receipt.schema.json",
+  "title": "Reiyah public distribution receipt 1.1",
+  "description": "Append-only evidence that a previously immutable, operator-authorized static public packet was pushed. A receipt binds the pre-push inventory and exact four payloads; it does not mutate the packet, evaluate GA-17, or confer Gate A, scientific, safety, compliance, or publication acceptance.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "receipt_id",
+    "version",
+    "recorded_at",
+    "lifecycle_status",
+    "custody_profile_ref",
+    "source_ledger_ref",
+    "frontier_discovery_register_ref",
+    "distribution_inventory_ref",
+    "rights_revalidation_ref",
+    "published_index_ref",
+    "published_repository_url",
+    "published_ref",
+    "published_git_commit",
+    "published_at",
+    "rights_observation_age_seconds",
+    "distributed_payloads",
+    "attribution_fulfillment",
+    "remote_readback",
+    "receipt_sequence",
+    "history_policy",
+    "prior_receipt_ref",
+    "operator_distribution_authorized",
+    "distribution_authorization",
+    "distribution_authorization_scope",
+    "distribution_executed",
+    "receipt_is_append_only_successor",
+    "runtime_execution_authorized",
+    "ga17_status",
+    "gate_a_acceptance_conferred",
+    "scientific_publication_acceptance_conferred",
+    "scientific_support_claimed",
+    "compliance_claimed",
+    "limitations"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-receipt.schema.json"
+    },
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "artifact_id": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+    },
+    "receipt_id": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/semanticVersion"
+    },
+    "recorded_at": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/timestamp"
+    },
+    "lifecycle_status": {
+      "const": "proposed"
+    },
+    "custody_profile_ref": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+    },
+    "source_ledger_ref": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+    },
+    "frontier_discovery_register_ref": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+    },
+    "distribution_inventory_ref": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+    },
+    "rights_revalidation_ref": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+    },
+    "published_index_ref": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+    },
+    "published_repository_url": {
+      "const": "https://github.com/manfromnowhere143/reiyah"
+    },
+    "published_ref": {
+      "const": "refs/heads/main"
+    },
+    "published_git_commit": {
+      "type": "string",
+      "pattern": "^(?:[0-9a-f]{40}|[0-9a-f]{64})$"
+    },
+    "published_at": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/timestamp"
+    },
+    "rights_observation_age_seconds": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3600
+    },
+    "distributed_payloads": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/$defs/distributedPayload"
+      },
+      "uniqueItems": true
+    },
+    "attribution_fulfillment": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/$defs/attributionFulfillment"
+      },
+      "uniqueItems": true
+    },
+    "remote_readback": {
+      "type": "object",
+      "required": [
+        "verified_at",
+        "verification_method",
+        "repository_visibility",
+        "default_branch",
+        "commit_reachable",
+        "tree_contains_exact_index",
+        "all_distributed_payloads_retrievable"
+      ],
+      "properties": {
+        "verified_at": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/timestamp"
+        },
+        "verification_method": {
+          "const": "authenticated_github_api_and_git_remote"
+        },
+        "repository_visibility": {
+          "const": "public"
+        },
+        "default_branch": {
+          "const": "main"
+        },
+        "commit_reachable": {
+          "const": true
+        },
+        "tree_contains_exact_index": {
+          "const": true
+        },
+        "all_distributed_payloads_retrievable": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "receipt_sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "history_policy": {
+      "const": "append_only_linear"
+    },
+    "prior_receipt_ref": {
+      "oneOf": [
+        {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "operator_distribution_authorized": {
+      "const": true
+    },
+    "distribution_authorization": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-evidence-custody-profile.schema.json#/$defs/distributionAuthorization"
+    },
+    "distribution_authorization_scope": {
+      "const": "static_public_repository_distribution"
+    },
+    "distribution_executed": {
+      "const": true
+    },
+    "receipt_is_append_only_successor": {
+      "const": true
+    },
+    "runtime_execution_authorized": {
+      "const": false
+    },
+    "ga17_status": {
+      "const": "not_evaluated"
+    },
+    "gate_a_acceptance_conferred": {
+      "const": false
+    },
+    "scientific_publication_acceptance_conferred": {
+      "const": false
+    },
+    "scientific_support_claimed": {
+      "const": false
+    },
+    "compliance_claimed": {
+      "const": false
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "attributionFulfillment": {
+      "type": "object",
+      "required": [
+        "source_ref",
+        "notice_path",
+        "attribution_present"
+      ],
+      "properties": {
+        "source_ref": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceReference"
+        },
+        "notice_path": {
+          "const": "NOTICE"
+        },
+        "attribution_present": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "distributedPayload": {
+      "type": "object",
+      "required": [
+        "source_ref",
+        "payload"
+      ],
+      "properties": {
+        "source_ref": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceReference"
+        },
+        "payload": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/payloadBinding"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "receipt_sequence": {
+            "const": 1
+          }
+        },
+        "required": [
+          "receipt_sequence"
+        ]
+      },
+      "then": {
+        "properties": {
+          "prior_receipt_ref": {
+            "type": "null"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "prior_receipt_ref": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

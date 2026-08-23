@@ -1,0 +1,95 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/historical-packet-recovery.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "reiyah.artifact.gate-a-1.0.0-recovery-1.1.0",
+  "record_id": "reiyah.history.gate-a-1.0.0-recovery",
+  "version": "1.1.0",
+  "as_of_date": "2026-08-23",
+  "predecessor_release": "reiyah.gate-a-evidence-index@1.0.0",
+  "predecessor_status": "unaccepted_never_published_local_candidate",
+  "recovery_method": "private_local_session_transcript_digest_reconstruction",
+  "private_recovery_source_included": false,
+  "custody_continuity": "interrupted_and_disclosed",
+  "recovered_artifacts": [
+    {
+      "original_path": "AGENTS.md",
+      "expected_sha256": "sha256:a321190bf0ac231b60f5d312db8c38227f146f9e13f739335023c85d209fa180",
+      "expected_byte_size": 6111,
+      "recovered_binding": {
+        "artifact_id": "reiyah.artifact.historical-gate-a-1.0.0-agents",
+        "path": "history/gate-a-1.0.0/AGENTS.md",
+        "sha256": "sha256:a321190bf0ac231b60f5d312db8c38227f146f9e13f739335023c85d209fa180"
+      },
+      "recovery_class": "digest_verified_reconstruction",
+      "digest_matches_predecessor_index": true
+    },
+    {
+      "original_path": "README.md",
+      "expected_sha256": "sha256:e8315228f576a5b02adbc18ce44ffa97cc5c6b0ee1710d33eb77ca6d2264389a",
+      "expected_byte_size": 1556,
+      "recovered_binding": {
+        "artifact_id": "reiyah.artifact.historical-gate-a-1.0.0-readme",
+        "path": "history/gate-a-1.0.0/README.md",
+        "sha256": "sha256:e8315228f576a5b02adbc18ce44ffa97cc5c6b0ee1710d33eb77ca6d2264389a"
+      },
+      "recovery_class": "digest_verified_reconstruction",
+      "digest_matches_predecessor_index": true
+    },
+    {
+      "original_path": "gate/decisions/OPERATOR_DECISION.template.json",
+      "expected_sha256": "sha256:5e96f3c7a4298660e5e131a4f479639e34bedb9b87007d4dde8dd8282ee5455b",
+      "expected_byte_size": 3358,
+      "recovered_binding": {
+        "artifact_id": "reiyah.artifact.historical-gate-a-1.0.0-operator-template",
+        "path": "history/gate-a-1.0.0/gate/decisions/OPERATOR_DECISION.template.json",
+        "sha256": "sha256:5e96f3c7a4298660e5e131a4f479639e34bedb9b87007d4dde8dd8282ee5455b"
+      },
+      "recovery_class": "digest_verified_reconstruction",
+      "digest_matches_predecessor_index": true
+    },
+    {
+      "original_path": "manifests/manifest-release-ledger.json",
+      "expected_sha256": "sha256:f48fdbf0bf314dbcbbcac38a88ca77c38f12ab0429919ecc0536f6ffcbe9c4c9",
+      "expected_byte_size": 1835,
+      "recovered_binding": {
+        "artifact_id": "reiyah.artifact.historical-manifest-release-ledger-1.0.0",
+        "path": "manifests/history/manifest-release-ledger-1.0.0.json",
+        "sha256": "sha256:f48fdbf0bf314dbcbbcac38a88ca77c38f12ab0429919ecc0536f6ffcbe9c4c9",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/manifest-release-ledger.schema.json",
+        "version": "1.0.0"
+      },
+      "recovery_class": "pre_overwrite_archival_copy",
+      "digest_matches_predecessor_index": true
+    }
+  ],
+  "packet_bindings": {
+    "index": {
+      "artifact_id": "reiyah.artifact.historical-gate-a-index-1.0.0",
+      "path": "history/gate-a-1.0.0/gate/GATE_A_EVIDENCE_INDEX.json",
+      "sha256": "sha256:3341696a730d2c4a4788f19612fc547eff926715b321e6d6bea99e2850c11944",
+      "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/gate-a-index.schema.json",
+      "version": "1.0.0"
+    },
+    "sidecar": {
+      "artifact_id": "reiyah.artifact.historical-gate-a-index-sidecar-1.0.0",
+      "path": "history/gate-a-1.0.0/gate/GATE_A_EVIDENCE_INDEX.sha256",
+      "sha256": "sha256:74ac3f7d258f7a277b2ee67fd88f5d010f171c416576035547d2f22a8721420d"
+    },
+    "validation_report": {
+      "artifact_id": "reiyah.artifact.historical-gate-a-validation-report-1.0.0",
+      "path": "gate/validation-reports/gate-a-validation-1.0.0.json",
+      "sha256": "sha256:19c624a97ff6518863e83fa9de8a383cca72003521dc1aac55f63e8574bbeaab",
+      "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/validation-report.schema.json",
+      "version": "1.0.0"
+    }
+  },
+  "public_dispositions": {
+    "exact_bytes_publicly_verifiable": true,
+    "recovery_derivation_publicly_replayable": false,
+    "uninterrupted_custody_claimed": false,
+    "predecessor_operator_accepted": false,
+    "predecessor_published": false,
+    "scientific_support_created": false,
+    "current_gate_acceptance_created": false
+  }
+}

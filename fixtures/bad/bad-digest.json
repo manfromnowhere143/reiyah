@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.digest",
+  "fixture_id": "reiyah.fixture.bad.digest",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The retained source ledger is mutated to declare an all-zero SHA-256 for unchanged retained bytes.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-003", "TM-005", "TM-023"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-DIGEST-MISMATCH"},
+  "payload": {"kind": "production_mutation", "production_check": "sources_crosswalk", "mutations": [
+    {"operation": "replace", "path": "evidence/source-ledger.json", "json_pointer": "/records/0/sha256", "value": "sha256:0000000000000000000000000000000000000000000000000000000000000000"}
+  ]}
+}

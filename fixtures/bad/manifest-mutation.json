@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.manifest-mutation",
+  "fixture_id": "reiyah.fixture.bad.manifest-mutation",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A frozen release binding is replayed against changed manifest bytes.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-005", "TM-020"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-MANIFEST-MUTATION"},
+  "payload": {"kind": "production_mutation", "production_check": "manifest_releases", "mutations": [
+    {"operation": "replace", "path": "manifests/mission/reiyah-mission-1.0.0.json", "json_pointer": "/mission_id", "value": "reiyah.mission.mutated-without-release"}
+  ]}
+}

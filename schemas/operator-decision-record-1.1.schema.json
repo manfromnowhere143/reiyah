@@ -1,0 +1,496 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.0/operator-decision-record.schema.json",
+  "title": "Hash-bound Gate A public operator decision record",
+  "description": "A placeholder or template is deliberately invalid. This decision is independent of scientific lifecycle statuses.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "record_id",
+    "version",
+    "record_kind",
+    "is_template",
+    "gate_id",
+    "decision",
+    "operator_identity",
+    "authority_basis",
+    "decided_at",
+    "rationale",
+    "risk_acknowledgements",
+    "artifact_bindings",
+    "manifest_release_bindings",
+    "architecture_completeness_binding",
+    "validation_report_binding",
+    "scientific_claims_accepted",
+    "decision_sequence",
+    "history_policy",
+    "supersedes_record_id",
+    "supersedes_record_sha256"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/operator-decision-record.schema.json"
+    },
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "record_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "record_kind": {
+      "const": "operator_gate_decision"
+    },
+    "is_template": {
+      "const": false
+    },
+    "gate_id": {
+      "const": "reiyah.gate-a"
+    },
+    "decision": {
+      "enum": [
+        "accepted",
+        "rejected",
+        "deferred"
+      ]
+    },
+    "operator_identity": {
+      "description": "Stable, independently verifiable operator identifier; schema validity does not authenticate it.",
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        {
+          "pattern": "^operator\\.[a-z0-9][a-z0-9._-]+$"
+        }
+      ]
+    },
+    "authority_basis": {
+      "description": "Exact human-authored basis for authority over this Gate A decision.",
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 2000,
+      "pattern": "\\S",
+      "not": {
+        "pattern": "(?:[Rr][Ee][Pp][Ll][Aa][Cc][Ee]|[Pp][Ll][Aa][Cc][Ee][Hh][Oo][Ll][Dd][Ee][Rr]|[Tt][Oo][Dd][Oo]|[Tt][Bb][Dd])"
+      }
+    },
+    "decided_at": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        {
+          "pattern": "Z$"
+        }
+      ]
+    },
+    "rationale": {
+      "description": "Decision-specific reasoning, including the effect of unresolved risks.",
+      "type": "string",
+      "minLength": 80,
+      "maxLength": 8000,
+      "pattern": "\\S",
+      "not": {
+        "pattern": "(?:[Rr][Ee][Pp][Ll][Aa][Cc][Ee]|[Pp][Ll][Aa][Cc][Ee][Hh][Oo][Ll][Dd][Ee][Rr]|[Tt][Oo][Dd][Oo]|[Tt][Bb][Dd])"
+      }
+    },
+    "risk_acknowledgements": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "Validation is an integrity signal, not operator acceptance.",
+          "Architecture acceptance does not support scientific, safety, compliance, or performance claims.",
+          "Retained external material remains an untrusted evidence source, not Reiyah authority.",
+          "Gate A acceptance does not authorize runtime, deployment, private-data ingestion, or physical control."
+        ]
+      },
+      "allOf": [
+        {
+          "contains": {
+            "const": "Validation is an integrity signal, not operator acceptance."
+          }
+        },
+        {
+          "contains": {
+            "const": "Architecture acceptance does not support scientific, safety, compliance, or performance claims."
+          }
+        },
+        {
+          "contains": {
+            "const": "Retained external material remains an untrusted evidence source, not Reiyah authority."
+          }
+        },
+        {
+          "contains": {
+            "const": "Gate A acceptance does not authorize runtime, deployment, private-data ingestion, or physical control."
+          }
+        }
+      ]
+    },
+    "artifact_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "$ref": "#/$defs/indexBinding"
+      },
+      "uniqueItems": true
+    },
+    "manifest_release_bindings": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/missionReleaseBinding1_0"
+          },
+          {
+            "$ref": "#/$defs/missionReleaseBinding1_1"
+          },
+          {
+            "$ref": "#/$defs/protocolReleaseBinding1_0"
+          },
+          {
+            "$ref": "#/$defs/protocolReleaseBinding1_1"
+          }
+        ]
+      },
+      "uniqueItems": true,
+      "allOf": [
+        {
+          "contains": {
+            "$ref": "#/$defs/missionReleaseBinding1_0"
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "$ref": "#/$defs/missionReleaseBinding1_1"
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "$ref": "#/$defs/protocolReleaseBinding1_0"
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "$ref": "#/$defs/protocolReleaseBinding1_1"
+          },
+          "minContains": 1,
+          "maxContains": 1
+        }
+      ]
+    },
+    "architecture_completeness_binding": {
+      "$ref": "#/$defs/indexBinding"
+    },
+    "validation_report_binding": {
+      "$ref": "#/$defs/validationReportBinding"
+    },
+    "scientific_claims_accepted": {
+      "description": "Gate A architecture acceptance never by itself accepts a scientific claim.",
+      "const": false
+    },
+    "decision_sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "history_policy": {
+      "const": "append_only_linear"
+    },
+    "supersedes_record_id": {
+      "description": "Required append-only link to the immediately prior decision; null only for sequence one.",
+      "oneOf": [
+        {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "supersedes_record_sha256": {
+      "description": "Digest of the immediately prior decision record; null only for sequence one.",
+      "oneOf": [
+        {
+          "$ref": "common.schema.json#/$defs/sha256Digest"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "indexBinding": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/artifactReference"
+        },
+        {
+          "required": [
+            "schema_id",
+            "version"
+          ],
+          "properties": {
+            "artifact_id": {
+              "const": "reiyah.artifact.gate-a-index-1.1.0"
+            },
+            "path": {
+              "const": "gate/GATE_A_EVIDENCE_INDEX.json"
+            },
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/gate-a-index.schema.json"
+            },
+            "version": {
+              "const": "1.1.0"
+            }
+          }
+        }
+      ]
+    },
+    "validationReportBinding": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/artifactReference"
+        },
+        {
+          "required": [
+            "schema_id",
+            "version"
+          ],
+          "properties": {
+            "artifact_id": {
+              "const": "reiyah.validation-report.gate-a-1.1.0"
+            },
+            "path": {
+              "const": "gate/validation-reports/gate-a-validation-1.1.0.json"
+            },
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/validation-report.schema.json"
+            },
+            "version": {
+              "const": "1.1.0"
+            }
+          }
+        }
+      ]
+    },
+    "missionReleaseBinding1_0": {
+      "type": "object",
+      "required": [
+        "release_id",
+        "artifact"
+      ],
+      "properties": {
+        "release_id": {
+          "const": "reiyah.mission@1.0.0"
+        },
+        "artifact": {
+          "allOf": [
+            {
+              "$ref": "common.schema.json#/$defs/artifactReference"
+            },
+            {
+              "required": [
+                "schema_id",
+                "version"
+              ],
+              "properties": {
+                "artifact_id": {
+                  "const": "reiyah.artifact.mission-1.0.0"
+                },
+                "path": {
+                  "const": "manifests/mission/reiyah-mission-1.0.0.json"
+                },
+                "schema_id": {
+                  "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/mission-manifest.schema.json"
+                },
+                "version": {
+                  "const": "1.0.0"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "missionReleaseBinding1_1": {
+      "type": "object",
+      "required": [
+        "release_id",
+        "artifact"
+      ],
+      "properties": {
+        "release_id": {
+          "const": "reiyah.mission@1.1.0"
+        },
+        "artifact": {
+          "allOf": [
+            {
+              "$ref": "common.schema.json#/$defs/artifactReference"
+            },
+            {
+              "required": [
+                "schema_id",
+                "version"
+              ],
+              "properties": {
+                "artifact_id": {
+                  "const": "reiyah.artifact.mission-1.1.0"
+                },
+                "path": {
+                  "const": "manifests/mission/reiyah-mission-1.1.0.json"
+                },
+                "schema_id": {
+                  "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/mission-manifest.schema.json"
+                },
+                "version": {
+                  "const": "1.1.0"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "protocolReleaseBinding1_0": {
+      "type": "object",
+      "required": [
+        "release_id",
+        "artifact"
+      ],
+      "properties": {
+        "release_id": {
+          "const": "reiyah.protocol.harbor-gate-a@1.0.0"
+        },
+        "artifact": {
+          "allOf": [
+            {
+              "$ref": "common.schema.json#/$defs/artifactReference"
+            },
+            {
+              "required": [
+                "schema_id",
+                "version"
+              ],
+              "properties": {
+                "artifact_id": {
+                  "const": "reiyah.artifact.protocol-1.0.0"
+                },
+                "path": {
+                  "const": "manifests/protocol/harbor-gate-a-protocol-1.0.0.json"
+                },
+                "schema_id": {
+                  "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/protocol-manifest.schema.json"
+                },
+                "version": {
+                  "const": "1.0.0"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "protocolReleaseBinding1_1": {
+      "type": "object",
+      "required": [
+        "release_id",
+        "artifact"
+      ],
+      "properties": {
+        "release_id": {
+          "const": "reiyah.protocol.harbor-gate-a@1.1.0"
+        },
+        "artifact": {
+          "allOf": [
+            {
+              "$ref": "common.schema.json#/$defs/artifactReference"
+            },
+            {
+              "required": [
+                "schema_id",
+                "version"
+              ],
+              "properties": {
+                "artifact_id": {
+                  "const": "reiyah.artifact.protocol-1.1.0"
+                },
+                "path": {
+                  "const": "manifests/protocol/harbor-gate-a-protocol-1.1.0.json"
+                },
+                "schema_id": {
+                  "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/protocol-manifest.schema.json"
+                },
+                "version": {
+                  "const": "1.1.0"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "decision_sequence": {
+            "const": 1
+          }
+        },
+        "required": [
+          "decision_sequence"
+        ]
+      },
+      "then": {
+        "properties": {
+          "supersedes_record_id": {
+            "type": "null"
+          },
+          "supersedes_record_sha256": {
+            "type": "null"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "decision_sequence": {
+            "minimum": 2
+          },
+          "supersedes_record_id": {
+            "$ref": "common.schema.json#/$defs/stableIdentifier"
+          },
+          "supersedes_record_sha256": {
+            "$ref": "common.schema.json#/$defs/sha256Digest"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

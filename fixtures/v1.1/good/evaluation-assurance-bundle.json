@@ -1,0 +1,361 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/evaluation-assurance-bundle.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "reiyah.fixture.evaluation-assurance.good",
+  "version": "1.1.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.event.evaluation-assurance.proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-23T03:00:00Z",
+      "actor": {
+        "actor_id": "reiyah.actor.fixture-author",
+        "actor_type": "derived_process",
+        "version": "1.1.0",
+        "role": "deterministic fixture author"
+      },
+      "rationale": "Static proposed assurance interface; no safety, deployment, acceptance, or compliance claim is made.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+  "created_at": "2026-08-23T03:00:00Z",
+  "runtime_execution_authorized": false,
+  "assurance_bundle_id": "reiyah.assurance.synthetic-bundle",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "odd_specification": {
+    "odd_id": "reiyah.odd.synthetic-daylight",
+    "version": "1.1.0",
+    "domain_dimensions": [
+      {
+        "dimension_id": "reiyah.odd-dimension.synthetic-road",
+        "dimension": "road_type",
+        "in_scope_criterion": "Synthetic closed-course straight road.",
+        "boundary_state": "specified",
+        "measurement_rule_id": "reiyah.rule.synthetic-road-classification",
+        "unknown_reason": null
+      }
+    ],
+    "entry_conditions": ["reiyah.condition.synthetic-entry"],
+    "exit_conditions": ["reiyah.condition.synthetic-exit"],
+    "minimal_risk_condition": "No physical control is implemented; the synthetic case ends in an explicit non-runtime stop state.",
+    "outside_domain_policy": {
+      "state": "out_of_distribution",
+      "rule_id": "reiyah.rule.synthetic-ood",
+      "continued_confident_operation_prohibited": true
+    },
+    "unknown_dimension_policy": {
+      "rule_id": "reiyah.rule.synthetic-unknown-domain",
+      "unknown_not_in_scope": true,
+      "coercion_prohibited": true
+    },
+    "validation_state": "proposed"
+  },
+  "dataset_governance": [
+    {
+      "dataset_id": "reiyah.dataset.synthetic-evaluation",
+      "version": "1.1.0",
+      "artifact": {
+        "availability_state": "not_available_in_gate_a",
+        "expected_artifact_id": "reiyah.artifact.synthetic-dataset",
+        "expected_artifact_kind": "dataset",
+        "expected_schema_id": null,
+        "expected_version": null,
+        "reason": "No dataset payload is created or ingested by this Gate A architecture fixture.",
+        "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+        "gate_b_authorized": false,
+        "runtime_execution_authorized": false
+      },
+      "sources": [
+        {
+          "source_id": "reiyah.source.synthetic-generator",
+          "source_type": "synthetic",
+        "provenance_ref": {
+          "actor_id": "reiyah.actor.synthetic-generator",
+          "actor_type": "derived_process",
+          "version": "1.1.0",
+          "role": "synthetic fixture data generator"
+        },
+          "license_or_access_terms": {"state": "observed", "value": "Synthetic fixture use only."},
+          "consent_or_authority_state": "not_required"
+        }
+      ],
+      "collection_window": {
+        "window_id": "reiyah.window.synthetic-collection",
+        "opens_at": {"state": "observed", "value": "2026-08-20T00:00:00Z"},
+        "closes_at": {"state": "observed", "value": "2026-08-21T00:00:00Z"},
+        "clock_id": "reiyah.clock.synthetic-utc"
+      },
+      "odd_ref": {
+        "record_id": "reiyah.odd.synthetic-daylight",
+        "record_kind": "odd",
+        "version": "1.1.0"
+      },
+      "label_governance": {
+        "label_schema_id": "reiyah.label-schema.synthetic-events",
+        "labeler_types": ["derived_process"],
+        "instruction_ref": {
+          "availability_state": "not_available_in_gate_a",
+          "expected_record_id": "reiyah.label-instruction.synthetic-events",
+          "expected_record_kind": "label_instruction",
+          "expected_version": "1.1.0",
+          "reason": "No label instruction record is authored or executed by this static Gate A fixture.",
+          "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+          "gate_b_authorized": false,
+          "runtime_execution_authorized": false
+        },
+        "instruction_artifact": {
+          "availability_state": "not_available_in_gate_a",
+          "expected_artifact_id": "reiyah.artifact.synthetic-label-instruction",
+          "expected_artifact_kind": "label_instruction",
+          "expected_schema_id": null,
+          "expected_version": null,
+          "reason": "No label instruction artifact bytes exist in Gate A.",
+          "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+          "gate_b_authorized": false,
+          "runtime_execution_authorized": false
+        },
+        "adjudication_rule_id": "reiyah.rule.synthetic-adjudication",
+        "quality_measurement": {"state": "unmeasured", "reason": "No label-quality study was run."},
+        "uncertain_label_policy": "reiyah.rule.synthetic-uncertain-label",
+        "post_outcome_label_leakage_prohibited": true
+      },
+      "partitions": [
+        {
+          "partition_id": "reiyah.partition.assurance-synthetic-development",
+          "purpose": "development",
+          "selection_rule_id": "reiyah.rule.synthetic-development-split",
+          "record_count": {"state": "observed", "value": 80},
+          "available_from": {"state": "observed", "value": "2026-08-21T01:00:00Z"},
+          "access_restriction": "Synthetic fixture maintainers only."
+        },
+        {
+          "partition_id": "reiyah.partition.assurance-synthetic-test",
+          "purpose": "test",
+          "selection_rule_id": "reiyah.rule.synthetic-test-split",
+          "record_count": {"state": "observed", "value": 20},
+          "available_from": {"state": "observed", "value": "2026-08-23T02:00:00Z"},
+          "access_restriction": "Unavailable until the frozen benchmark permits access."
+        }
+      ],
+      "split_frozen_at": "2026-08-21T00:30:00Z",
+      "access_chronology": [
+        {
+          "event_id": "reiyah.dataset-access.synthetic-registered",
+          "event_type": "registered",
+          "occurred_at": "2026-08-21T00:00:00Z",
+          "actor": {
+            "actor_id": "reiyah.actor.synthetic-custodian",
+            "actor_type": "human",
+            "version": "1.1.0",
+            "role": "synthetic dataset custodian"
+          },
+          "partition_ids": []
+        }
+      ],
+      "ethics_review": {
+        "review_state": "not_required",
+        "basis": {"state": "observed", "value": "The fixture contains only authored synthetic records and no human-subject data."},
+        "reviewed_at": {"state": "observed", "value": "2026-08-21T00:00:00Z"},
+        "scope": "This determination applies only to the synthetic fixture bytes."
+      },
+      "privacy_classification": "synthetic",
+      "private_data_ingestion_authorized": false,
+      "partition_leakage_prohibited": true,
+      "retention_policy": "Retain only the public synthetic fixture contract; no private records.",
+      "known_limitations": ["Synthetic records do not establish real-world validity."],
+      "dataset_status": "proposed"
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "reiyah.scenario.synthetic-hazard",
+      "version": "1.1.0",
+      "source_type": "synthetic",
+      "odd_ref": {
+        "record_id": "reiyah.odd.synthetic-daylight",
+        "record_kind": "odd",
+        "version": "1.1.0"
+      },
+      "preconditions": ["Synthetic system and human actor are declared but no runtime is executed."],
+      "actors": [
+        {
+          "actor_id": "reiyah.actor.synthetic-driver",
+          "actor_type": "human",
+          "version": "1.1.0",
+          "role": "synthetic driver"
+        }
+      ],
+      "timeline": [
+        {
+          "event_id": "reiyah.scenario-event.synthetic-hazard",
+          "sequence": 1,
+          "event": "A synthetic hazard opportunity is declared.",
+          "relative_time": {"state": "observed", "value": 0, "unit": "seconds"}
+        }
+      ],
+      "hazards": ["reiyah.hazard.synthetic-silent-miss"],
+      "expected_outcomes": ["reiyah.outcome.synthetic-explicit-unknown"],
+      "unknowns": [
+        {
+          "state": "unmeasured",
+          "reason": "Real-world actor response is outside this fixture."
+        }
+      ],
+      "scenario_status": "proposed"
+    }
+  ],
+  "test_cases": [
+    {
+      "test_case_id": "reiyah.test-case.synthetic-hazard",
+      "version": "1.1.0",
+      "scenario_ref": {
+        "record_id": "reiyah.scenario.synthetic-hazard",
+      "record_kind": "scenario",
+      "version": "1.1.0"
+    },
+    "system_ref": {
+      "actor_id": "reiyah.actor.synthetic-automation",
+      "actor_type": "automation_system",
+      "version": "1.1.0",
+      "role": "synthetic unexecuted system under test"
+    },
+    "system_version": "1.1.0",
+      "setup": "Static fixture validation only; no system or physical control is executed.",
+      "oracle": {
+        "oracle_id": "reiyah.oracle.synthetic-rule",
+        "version": "1.1.0",
+        "authority_type": "formal_rule",
+        "known_limitations": ["The oracle checks schema structure, not safety performance."]
+      },
+      "tolerances": [{"state": "observed", "value": 0}],
+      "pass_criteria": ["reiyah.rule.synthetic-schema-pass"],
+      "fail_criteria": ["reiyah.rule.synthetic-schema-fail"],
+      "abstention_criteria": ["reiyah.rule.synthetic-schema-abstain"],
+      "execution_status": "not_run",
+      "result": {"state": "unmeasured", "reason": "The test is a static contract and was not run."}
+    }
+  ],
+  "benchmark_specification": {
+    "benchmark_id": "reiyah.benchmark.synthetic-assurance",
+    "version": "1.1.0",
+    "task_definition": "Evaluate explicit synthetic readiness and silent-miss contract outputs without runtime execution.",
+    "odd_refs": [
+      {
+        "record_id": "reiyah.odd.synthetic-daylight",
+        "record_kind": "odd",
+        "version": "1.1.0"
+      }
+    ],
+    "dataset_refs": [
+      {
+        "record_id": "reiyah.dataset.synthetic-evaluation",
+        "record_kind": "dataset",
+        "version": "1.1.0"
+      }
+    ],
+    "comparator_refs": [
+      {
+        "comparator_id": "reiyah.comparator.synthetic-baseline",
+        "version": "1.1.0",
+        "artifact": {
+          "availability_state": "not_available_in_gate_a",
+          "expected_artifact_id": "reiyah.artifact.synthetic-comparator",
+          "expected_artifact_kind": "comparator",
+          "expected_schema_id": null,
+          "expected_version": null,
+          "reason": "No benchmark comparator artifact is created or retained by this Gate A architecture fixture.",
+          "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+          "gate_b_authorized": false,
+          "runtime_execution_authorized": false
+        }
+      }
+    ],
+    "metrics": [
+      {
+        "metric_id": "reiyah.metric.synthetic-joint-silent-miss",
+        "version": "1.1.0",
+        "outcome_definition_id": "reiyah.outcome.synthetic-joint-miss",
+        "direction": "lower_is_better",
+        "estimator_id": "reiyah.estimator.synthetic-rate",
+        "uncertainty_method_id": "reiyah.method.synthetic-wilson",
+        "decision_rule_id": "reiyah.rule.synthetic-benchmark-decision",
+        "primary": true,
+        "subgroup_rule_id": "reiyah.rule.synthetic-all-declared-groups"
+      }
+    ],
+    "primary_metric_id": "reiyah.metric.synthetic-joint-silent-miss",
+    "selective_prediction_rule_id": "reiyah.rule.synthetic-selective",
+    "ood_rule_id": "reiyah.rule.synthetic-ood",
+    "conformal_rule_id": "reiyah.rule.synthetic-conformal",
+    "transfer_rule_id": "reiyah.rule.synthetic-transfer",
+    "worst_group_rule_id": "reiyah.rule.synthetic-worst-group",
+    "frozen_at": "2026-08-23T02:30:00Z",
+    "post_hoc_relabeling_prohibited": true,
+    "benchmark_status": "proposed"
+  },
+  "safety_case": {
+    "safety_case_id": "reiyah.safety-argument.synthetic-interface",
+    "version": "1.1.0",
+    "claims": [
+      {
+        "claim_id": "reiyah.safety-claim.synthetic-explicit-unknown",
+        "claim_text": "Proposed interface claim: unknown and out-of-domain states remain explicit in this fixture.",
+        "claim_status": "proposed",
+        "scope_odd_ref": {
+          "record_id": "reiyah.odd.synthetic-daylight",
+          "record_kind": "odd",
+          "version": "1.1.0"
+        },
+        "falsifier": "A schema-valid fixture silently coerces an unknown or out-of-domain state into a confident value.",
+        "evidence_binding": {
+          "state": "evidence_gap",
+          "evidence_refs": [],
+          "gap_reason": "A schema example is not independent safety evidence."
+        }
+      }
+    ],
+    "hazards": [
+      {
+        "hazard_id": "reiyah.hazard.synthetic-silent-miss",
+        "description": "Both human and automation omit a synthetic hazard opportunity without an explicit alert.",
+        "severity": {"state": "unmeasured", "reason": "Severity is not established by this fixture."},
+        "exposure": {"state": "unmeasured", "reason": "Exposure is not established by this fixture."},
+        "controllability": {"state": "unmeasured", "reason": "Controllability is not established by this fixture."},
+        "mitigations": ["reiyah.mitigation.synthetic-explicit-abstention"],
+        "residual_risk": {"state": "unmeasured", "reason": "Residual risk is not established by this fixture."},
+        "evidence_binding": {
+          "state": "evidence_gap",
+          "evidence_refs": [],
+          "gap_reason": "No safety evidence is retained for the synthetic hazard."
+        }
+      }
+    ],
+    "argument_links": [
+      {
+        "argument_id": "reiyah.argument.synthetic-explicit-unknown",
+        "claim_id": "reiyah.safety-claim.synthetic-explicit-unknown",
+        "hazard_ids": ["reiyah.hazard.synthetic-silent-miss"],
+        "reasoning": "This is a proposed static argument link whose evidence set is intentionally empty.",
+        "evidence_refs": []
+      }
+    ],
+    "assumptions": ["Static schema validation does not establish operational safety."],
+    "out_of_scope": ["Deployment, physical control, runtime behavior, standards compliance, and operator acceptance."],
+    "independent_review_state": "not_requested",
+    "operator_acceptance_state": "not_evaluated",
+    "compliance_claimed": false,
+    "safety_case_status": "proposed"
+  },
+  "evidence_binding": {
+    "state": "evidence_gap",
+    "evidence_refs": [],
+    "gap_reason": "The bundle is a structural fixture, not retained scientific or safety evidence."
+  },
+  "deployment_authorized": false,
+  "compliance_claimed": false
+}

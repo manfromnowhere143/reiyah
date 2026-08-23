@@ -1,0 +1,92 @@
+{
+  "template_notice": "NON-NORMATIVE AND DELIBERATELY INVALID: remove this field and replace every placeholder; a completed file still requires independently verified operator authority",
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/operator-decision-record.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "replace.with.stable-artifact-id",
+  "record_id": "replace.with.stable-record-id",
+  "version": "1.1.0",
+  "record_kind": "operator_gate_decision",
+  "is_template": true,
+  "gate_id": "reiyah.gate-a",
+  "decision": "REPLACE_WITH_accepted_OR_rejected_OR_deferred",
+  "operator_identity": "REPLACE_BY_OPERATOR",
+  "authority_basis": "REPLACE_BY_OPERATOR",
+  "decided_at": "REPLACE_WITH_RFC3339_UTC_TIME_ENDING_IN_Z",
+  "rationale": "REPLACE_BY_OPERATOR",
+  "risk_acknowledgements": [
+    "Validation is an integrity signal, not operator acceptance.",
+    "Architecture acceptance does not support scientific, safety, compliance, or performance claims.",
+    "Retained external material remains an untrusted evidence source, not Reiyah authority.",
+    "Gate A acceptance does not authorize runtime, deployment, private-data ingestion, or physical control."
+  ],
+  "artifact_bindings": [
+    {
+      "artifact_id": "reiyah.artifact.gate-a-index-1.1.0",
+      "path": "gate/GATE_A_EVIDENCE_INDEX.json",
+      "sha256": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_DIGEST",
+      "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/gate-a-index.schema.json",
+      "version": "1.1.0"
+    }
+  ],
+  "manifest_release_bindings": [
+    {
+      "release_id": "reiyah.mission@1.0.0",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.mission-1.0.0",
+        "path": "manifests/mission/reiyah-mission-1.0.0.json",
+        "sha256": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_DIGEST",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/mission-manifest.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "release_id": "reiyah.protocol.harbor-gate-a@1.0.0",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.protocol-1.0.0",
+        "path": "manifests/protocol/harbor-gate-a-protocol-1.0.0.json",
+        "sha256": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_DIGEST",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/protocol-manifest.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "release_id": "reiyah.mission@1.1.0",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.mission-1.1.0",
+        "path": "manifests/mission/reiyah-mission-1.1.0.json",
+        "sha256": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_DIGEST",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/mission-manifest.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.protocol-1.1.0",
+        "path": "manifests/protocol/harbor-gate-a-protocol-1.1.0.json",
+        "sha256": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_DIGEST",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/protocol-manifest.schema.json",
+        "version": "1.1.0"
+      }
+    }
+  ],
+  "architecture_completeness_binding": {
+    "artifact_id": "reiyah.artifact.gate-a-index-1.1.0",
+    "path": "gate/GATE_A_EVIDENCE_INDEX.json",
+    "sha256": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_DIGEST",
+    "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/gate-a-index.schema.json",
+    "version": "1.1.0"
+  },
+  "validation_report_binding": {
+    "artifact_id": "reiyah.validation-report.gate-a-1.1.0",
+    "path": "gate/validation-reports/gate-a-validation-1.1.0.json",
+    "sha256": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_DIGEST",
+    "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/validation-report.schema.json",
+    "version": "1.1.0"
+  },
+  "scientific_claims_accepted": false,
+  "decision_sequence": "REPLACE_WITH_POSITIVE_INTEGER",
+  "history_policy": "append_only_linear",
+  "supersedes_record_id": "REPLACE_WITH_IMMEDIATE_PRIOR_RECORD_ID_OR_null_FOR_SEQUENCE_1",
+  "supersedes_record_sha256": "sha256:REPLACE_WITH_PRIOR_RECORD_DIGEST_OR_null_FOR_SEQUENCE_1"
+}

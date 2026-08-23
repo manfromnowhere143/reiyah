@@ -1,0 +1,32 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-belief-policy-mismatch-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.belief-policy-mismatch",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "An observed belief selects a looser record-local normalization tolerance than the exact protocol-owned policy.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-006",
+    "TM-017",
+    "TM-019"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-BELIEF-POLICY-MISMATCH"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/latent-belief.json",
+        "json_pointer": "/belief/sum_tolerance",
+        "value": 0.01
+      }
+    ]
+  }
+}

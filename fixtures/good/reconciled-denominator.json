@@ -1,0 +1,18 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.good.denominator",
+  "fixture_id": "reiyah.fixture.good.denominator",
+  "version": "1.0.0",
+  "classification": "known_good",
+  "description": "Observed and all five non-observed counts reconcile exactly to the synthetic eligible total.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [],
+  "expected": {"outcome": "pass", "primary_rule_id": null},
+  "payload": {
+    "kind": "denominator",
+    "eligible_total": 10,
+    "state_counts": {"observed": 5, "missing": 1, "unmeasured": 1, "out_of_distribution": 1, "sensor_invalid": 1, "abstained": 1}
+  }
+}

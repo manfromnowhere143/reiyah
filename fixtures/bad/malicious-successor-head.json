@@ -1,0 +1,59 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-malicious-successor-head-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.malicious-successor-head",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A digest-bound extra mission successor attempts to replace the immutable Gate A 1.0.0 architecture-only boundary with live driver classification and physical-control runtime authority.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-002",
+    "TM-005",
+    "TM-025",
+    "TM-027"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-MANIFEST-LINEAGE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "manifest_releases",
+    "mutations": [
+      {
+        "operation": "add_file",
+        "path": "manifests/mission/reiyah-mission-malicious-2.0.0.json",
+        "content_utf8": "{\"schema_id\":\"https://schemas.reiyah.invalid/gate-a/1.0.0/mission-manifest.schema.json\",\"schema_version\":\"1.0.0\",\"artifact_id\":\"reiyah.artifact.mission-malicious-2.0.0\",\"manifest_kind\":\"mission\",\"release_id\":\"reiyah.mission@2.0.0\",\"mission_id\":\"reiyah.mission\",\"version\":\"2.0.0\",\"release_stage\":\"candidate\",\"lifecycle_status\":\"proposed\",\"created_on\":\"2026-08-22\",\"relation\":{\"type\":\"supersedes\",\"prior_release_id\":\"reiyah.mission@1.0.0\"},\"immutability\":{\"policy\":\"append_only_release\",\"identifier_reuse_prohibited\":true,\"in_place_changes_prohibited\":true,\"corrections_require_new_release\":true},\"operator_acceptance\":{\"state\":\"unaccepted\",\"record_id\":null},\"repository_identity\":{\"project\":\"Reiyah\",\"canonical_root\":\"/Users/danielwahnich/workspace/reiyah\",\"remote_assumption\":\"none\",\"independent_from_siblings\":true},\"program_identity\":{\"working_name\":\"HARBOR\",\"expansion\":\"Human-Automation Readiness, Belief & Operational Risk\",\"name_status\":\"proposed\"},\"mission_statement\":\"Deploy a live driver-monitoring classifier that directly controls vehicle actuation.\",\"thesis\":{\"is\":\"A product runtime for driver classification and physical vehicle control.\",\"is_not\":\"An architecture-only evidence engine.\",\"target_topics\":[\"object-level driver-vehicle belief\",\"human-automation readiness\",\"recoverability\",\"joint silent misses\",\"causal policy effects\",\"explicit unknowns and abstention\",\"transfer validation\",\"worst-group validation\"]},\"scientific_invariants\":[{\"invariant_id\":\"reiyah.invariant.layer-separation\",\"proposition\":\"Observation, latent belief, decision, intervention, outcome, and evidence remain separate in identifiers, schemas, provenance, and time.\",\"lifecycle_status\":\"proposed\"},{\"invariant_id\":\"reiyah.invariant.explicit-unknowns\",\"proposition\":\"Missing, unmeasured, out-of-distribution, sensor-invalid, and abstained states never become zero, false, negative, normal, or a confident label.\",\"lifecycle_status\":\"proposed\"},{\"invariant_id\":\"reiyah.invariant.status-preservation\",\"proposition\":\"All fourteen repository lifecycle statuses retain distinct spellings and meanings.\",\"lifecycle_status\":\"proposed\"},{\"invariant_id\":\"reiyah.invariant.integrity-not-evidence\",\"proposition\":\"Generated prose, model review, signatures, checksums, tests, and consensus are proposals or integrity signals rather than independent scientific evidence.\",\"lifecycle_status\":\"proposed\"},{\"invariant_id\":\"reiyah.invariant.retained-source\",\"proposition\":\"Standards and benchmark claims bind exact versions, publication dates, scope, comparators, and retained source bytes with metadata and digest.\",\"lifecycle_status\":\"proposed\"},{\"invariant_id\":\"reiyah.invariant.no-silent-transformation\",\"proposition\":\"Validity boundaries, exclusions, imputation, aggregation, subgroup coverage, and outcome labels are explicit and auditable.\",\"lifecycle_status\":\"proposed\"},{\"invariant_id\":\"reiyah.invariant.external-nonauthority\",\"proposition\":\"External models, services, sources, datasets, standards, and sibling systems never hold Reiyah scientific, safety, acceptance, or publication authority.\",\"lifecycle_status\":\"proposed\"}],\"gate_a_scope\":{\"authorized\":[\"product runtime\",\"live model inference\",\"physical-control integration\"],\"prohibited\":[\"offline architecture-only limitation\"],\"advancement_requires\":[\"retained evidence sufficient for every advancement criterion\",\"explicit operator acceptance bound to exact artifact paths and SHA-256 digests\"]}}\n"
+      },
+      {
+        "operation": "add",
+        "path": "manifests/manifest-release-ledger.json",
+        "json_pointer": "/entries/-",
+        "value": {
+          "manifest_kind": "mission",
+          "release_id": "reiyah.mission@2.0.0",
+          "version": "2.0.0",
+          "release_stage": "candidate",
+          "lifecycle_status": "proposed",
+          "relation": {
+            "type": "supersedes",
+            "prior_release_id": "reiyah.mission@1.0.0"
+          },
+          "artifact_binding": {
+            "artifact_id": "reiyah.artifact.mission-malicious-2.0.0",
+            "path": "manifests/mission/reiyah-mission-malicious-2.0.0.json",
+            "sha256": "sha256:3869032c324d63f1dd3a0c0b057afe950320076cd6ca916233396cb3ce5c8e98",
+            "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/mission-manifest.schema.json",
+            "version": "2.0.0"
+          },
+          "operator_acceptance": {
+            "state": "unaccepted",
+            "record_id": null
+          }
+        }
+      }
+    ]
+  }
+}

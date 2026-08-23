@@ -1,0 +1,1317 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/protocol-definition-registry.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "reiyah.artifact.protocol-definition-registry-1.1.0",
+  "registry_id": "reiyah.protocol-definition-registry.harbor-gate-a",
+  "version": "1.1.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+  "definitions": [
+    {
+      "definition_id": "reiyah.producer.fixture-generator",
+      "kind": "producer",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Static fixture producer identity; it has no scientific or operator authority."
+    },
+    {
+      "definition_id": "reiyah.method.static-fixture",
+      "kind": "method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Deterministic construction of static Gate A schema examples without runtime execution."
+    },
+    {
+      "definition_id": "reiyah.clock.fixture",
+      "kind": "clock",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Synthetic monotonic fixture clock whose origin is declared in each time point."
+    },
+    {
+      "definition_id": "reiyah.construct.relative-speed",
+      "kind": "construct",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Synthetic relative-speed measurement construct used only for structure validation."
+    },
+    {
+      "definition_id": "reiyah.construct.object-color",
+      "kind": "construct",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Synthetic object-color construct intentionally left unmeasured in the canonical chain."
+    },
+    {
+      "definition_id": "reiyah.sensor.synthetic-001",
+      "kind": "sensor",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Fictional fixture sensor identifier; no physical sensor or data collection exists."
+    },
+    {
+      "definition_id": "reiyah.state-space.fixture-relevance",
+      "kind": "state_space",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Two-member synthetic relevance state space for belief normalization checks.",
+      "member_ids": [
+        "reiyah.state.relevant",
+        "reiyah.state.not-relevant"
+      ]
+    },
+    {
+      "definition_id": "reiyah.inference.static-fixture",
+      "kind": "inference_specification",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Static, non-executing inference specification that fixes the example belief vector."
+    },
+    {
+      "definition_id": "reiyah.choice-set.fixture",
+      "kind": "choice_set",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Synthetic research-only choice set for the canonical decision record.",
+      "member_ids": [
+        "reiyah.choice.record-candidate-prompt"
+      ]
+    },
+    {
+      "definition_id": "reiyah.rule.fixture-decision",
+      "kind": "decision_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Fixture-only rule selecting a research record; it cannot issue an operational command."
+    },
+    {
+      "definition_id": "reiyah.assignment.fixture-only",
+      "kind": "assignment_mechanism",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Synthetic assignment identifier used only to demonstrate intervention structure."
+    },
+    {
+      "definition_id": "reiyah.assignment.not-applicable",
+      "kind": "assignment_mechanism",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Explicit non-assignment mechanism for the static experiment fixture."
+    },
+    {
+      "definition_id": "reiyah.outcome.fixture-only",
+      "kind": "outcome_definition",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Synthetic structure-only outcome definition for the canonical object chain."
+    },
+    {
+      "definition_id": "reiyah.outcome-definition.synthetic-recovery",
+      "kind": "outcome_definition",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Synthetic recovery outcome definition for experiment schema validation only."
+    },
+    {
+      "definition_id": "reiyah.rule.fixture-unmeasured",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Declares the fixture color construct unmeasured."
+    },
+    {
+      "definition_id": "reiyah.rule.fixture-encounter-construction",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Defines construction and continuity of the canonical synthetic encounter context."
+    },
+    {
+      "definition_id": "reiyah.rule.fixture-object-identity",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Defines identity continuity for canonical synthetic physical-object references."
+    },
+    {
+      "definition_id": "reiyah.rule.fixture-temporal-correspondence",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Defines temporal correspondence across canonical synthetic records and references."
+    },
+    {
+      "definition_id": "reiyah.rule.fixture-observation-valid",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Structure-only validity rule for the canonical observation."
+    },
+    {
+      "definition_id": "reiyah.rule.fixture-belief-valid",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Structure-only validity rule for the canonical latent belief."
+    },
+    {
+      "definition_id": "reiyah.rule.fixture-decision-valid",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Structure-only validity rule for the canonical research decision."
+    },
+    {
+      "definition_id": "reiyah.rule.no-runtime",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Requires static Gate A records to preserve the absence of runtime delivery and receipt."
+    },
+    {
+      "definition_id": "reiyah.rule.fixture-intervention-valid",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Structure-only validity rule for the canonical non-executing intervention record."
+    },
+    {
+      "definition_id": "reiyah.rule.fixture-outcome-valid",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Structure-only validity rule for the canonical outcome."
+    },
+    {
+      "definition_id": "reiyah.rule.fixture-not-evidence",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Marks the canonical evidence object as a non-evidentiary schema fixture."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-eligible",
+      "kind": "inclusion_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Synthetic inclusion rule for the exact static experiment fixtures."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-invalid-sensor",
+      "kind": "exclusion_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Synthetic exclusion rule for an explicitly invalid fixture sensor state."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-abstention",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Synthetic abstention rule preserving explicit non-observed dispositions."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-minimum-information",
+      "kind": "minimum_information_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Synthetic minimum-information rule for complete group reporting."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-structure-only",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Restricts the result fixture to structural validation with no empirical interpretation."
+    },
+    {
+      "definition_id": "reiyah.rule.direction-aware-all-ties",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Selects every direction-aware tied extremum among the complete eligible group result set."
+    },
+    {
+      "definition_id": "reiyah.assumption.synthetic-only",
+      "kind": "assumption",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Assumes only that the fixture is synthetic and ineligible for empirical interpretation."
+    },
+    {
+      "definition_id": "reiyah.boundary.synthetic-protocol",
+      "kind": "validity_boundary",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Limits eligibility to exact static synthetic identifiers and values."
+    },
+    {
+      "definition_id": "reiyah.boundary.synthetic-population",
+      "kind": "validity_boundary",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Limits eligibility to the declared synthetic fixture population."
+    },
+    {
+      "definition_id": "reiyah.boundary.synthetic-object",
+      "kind": "validity_boundary",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Limits eligibility to exact canonical synthetic object identities."
+    },
+    {
+      "definition_id": "reiyah.boundary.synthetic-time",
+      "kind": "validity_boundary",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Limits eligibility to the declared fixture clock interval."
+    },
+    {
+      "definition_id": "reiyah.boundary.synthetic-sensor",
+      "kind": "validity_boundary",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Limits eligibility to the declared synthetic sensor and epistemic-state contract."
+    },
+    {
+      "definition_id": "reiyah.boundary.synthetic-reference",
+      "kind": "validity_boundary",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Limits eligibility to exact typed synthetic references and definitions."
+    },
+    {
+      "definition_id": "reiyah.boundary.no-runtime",
+      "kind": "validity_boundary",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Excludes runtime, deployment, inference, and operational interpretation."
+    },
+    {
+      "definition_id": "reiyah.boundary.synthetic-observation-open",
+      "kind": "validity_boundary",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "UTC opening boundary for the static preregistration and analysis-specification fixtures."
+    },
+    {
+      "definition_id": "reiyah.group.synthetic-a",
+      "kind": "group",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "First deterministic synthetic reporting group."
+    },
+    {
+      "definition_id": "reiyah.group.synthetic-b",
+      "kind": "group",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Second deterministic synthetic reporting group."
+    },
+    {
+      "definition_id": "reiyah.analysis.synthetic-worst-group",
+      "kind": "analysis_specification",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Static worst-group analysis specification for schema and resolver checks."
+    },
+    {
+      "definition_id": "reiyah.uncertainty.synthetic-fixed-interval",
+      "kind": "uncertainty_method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Fixed synthetic interval values used without statistical interpretation."
+    },
+    {
+      "definition_id": "reiyah.multiplicity.synthetic-complete-set",
+      "kind": "multiplicity_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Requires the complete declared synthetic metric and group set."
+    },
+    {
+      "definition_id": "reiyah.decision-rule.synthetic-no-claim",
+      "kind": "decision_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Forbids scientific or operational claims from the synthetic result fixture."
+    },
+    {
+      "definition_id": "reiyah.estimand.object-belief-quality",
+      "kind": "estimand",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned object-level belief quality estimand definition."
+    },
+    {
+      "definition_id": "reiyah.estimand.readiness",
+      "kind": "estimand",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned task- and horizon-relative readiness estimand definition."
+    },
+    {
+      "definition_id": "reiyah.estimand.recoverability",
+      "kind": "estimand",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned recoverability estimand definition."
+    },
+    {
+      "definition_id": "reiyah.estimand.joint-silent-miss",
+      "kind": "estimand",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned joint silent-miss estimand definition."
+    },
+    {
+      "definition_id": "reiyah.estimand.transfer",
+      "kind": "estimand",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned transfer-gap estimand definition."
+    },
+    {
+      "definition_id": "reiyah.estimand.worst-group",
+      "kind": "estimand",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned worst-group estimand definition."
+    },
+    {
+      "definition_id": "reiyah.metric.synthetic-worst-group",
+      "kind": "metric",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Synthetic metric instance definition for the worst-group result fixture."
+    },
+    {
+      "definition_id": "reiyah.construct.actor-role",
+      "kind": "construct",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Typed identity for the human, automation, reference process, fallback, or joint procedure that holds a belief or makes a decision."
+    },
+    {
+      "definition_id": "reiyah.construct.information-set-availability",
+      "kind": "construct",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Decision-time information set with source, measurement time, availability time, disclosure state, and actor membership."
+    },
+    {
+      "definition_id": "reiyah.construct.belief-calibration-target",
+      "kind": "construct",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Versioned reference event, horizon, applicability domain, and scoring target used to evaluate a named belief holder."
+    },
+    {
+      "definition_id": "reiyah.construct.readiness-phase-model",
+      "kind": "construct",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Phase-resolved readiness contract for perception, comprehension, projection, decision, motor initiation, and stabilization."
+    },
+    {
+      "definition_id": "reiyah.construct.recoverability-event-process",
+      "kind": "construct",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Recovery challenge, feasible window, attempts, safe-recovery event, censoring, and competing-event contract."
+    },
+    {
+      "definition_id": "reiyah.construct.joint-opportunity",
+      "kind": "construct",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Common object-time opportunity with valid human, automation, fallback, disclosure, effort, and dependence channels."
+    },
+    {
+      "definition_id": "reiyah.method.sequential-off-policy-evaluation",
+      "kind": "method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Static contract for trajectory-based policy evaluation with policy versions, propensities, support, weights, estimator selection, missingness, and safety costs."
+    },
+    {
+      "definition_id": "reiyah.method.selective-conformal-evaluation",
+      "kind": "method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Static contract separating novelty, ambiguity, sensor invalidity, abstention, calibration assumptions, accepted coverage, and conditional error."
+    },
+    {
+      "definition_id": "reiyah.method.transfer-validation",
+      "kind": "method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Static contract for source and target releases, shift taxonomy, adaptation, access chronology, support overlap, measurement invariance, and target reporting."
+    },
+    {
+      "definition_id": "reiyah.method.worst-group-validation",
+      "kind": "method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Static contract for a frozen group universe, membership validity, intersections, effective sample size, simultaneous uncertainty, and complete group reporting."
+    },
+    {
+      "definition_id": "reiyah.method.dataset-benchmark-governance",
+      "kind": "method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Static contract for dataset provenance, ethics, consent, synchronization, annotation, splits, leakage, contamination, maintenance, and benchmark risk."
+    },
+    {
+      "definition_id": "reiyah.method.odd-scenario-test-governance",
+      "kind": "method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Static contract for versioned operational domains, scenarios, test cases, coverage, oracles, expected results, and change impact."
+    },
+    {
+      "definition_id": "reiyah.method.safety-argument-interface",
+      "kind": "method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Static interface for safety claims, assumptions, defeaters, evidence credibility, and review without claiming that Gate A is a safety case."
+    },
+    {
+      "definition_id": "reiyah.assumption.no-proxy-substitution",
+      "kind": "assumption",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Attention, gaze, drowsiness, workload, reaction time, or confidence cannot substitute for readiness, belief, or recovery without a validated measurement argument."
+    },
+    {
+      "definition_id": "reiyah.actor.fixture-author",
+      "kind": "actor",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned fixture-author actor identity for the static fixture set; it has no operational authority.",
+      "actor_type": "derived_process"
+    },
+    {
+      "definition_id": "reiyah.actor.synthetic-automation",
+      "kind": "actor",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic-automation actor identity for the static fixture set; it has no operational authority.",
+      "actor_type": "automation_system"
+    },
+    {
+      "definition_id": "reiyah.actor.synthetic-custodian",
+      "kind": "actor",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic-custodian actor identity for the static fixture set; it has no operational authority.",
+      "actor_type": "human"
+    },
+    {
+      "definition_id": "reiyah.actor.synthetic-driver",
+      "kind": "actor",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic-driver actor identity for the static fixture set; it has no operational authority.",
+      "actor_type": "human"
+    },
+    {
+      "definition_id": "reiyah.actor.synthetic-generator",
+      "kind": "actor",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic-generator actor identity for the static fixture set; it has no operational authority.",
+      "actor_type": "derived_process"
+    },
+    {
+      "definition_id": "reiyah.actor.synthetic-reference-process",
+      "kind": "actor",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic-reference-process actor identity for the static fixture set; it has no operational authority.",
+      "actor_type": "derived_process"
+    },
+    {
+      "definition_id": "reiyah.actor.synthetic-researcher",
+      "kind": "actor",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic-researcher actor identity for the static fixture set; it has no operational authority.",
+      "actor_type": "human"
+    },
+    {
+      "definition_id": "reiyah.actor.synthetic-sensor",
+      "kind": "actor",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic-sensor actor identity for the static fixture set; it has no operational authority.",
+      "actor_type": "instrument"
+    },
+    {
+      "definition_id": "reiyah.actor.synthetic-supervisor",
+      "kind": "actor",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic-supervisor actor identity for the static fixture set; it has no operational authority.",
+      "actor_type": "human"
+    },
+    {
+      "definition_id": "reiyah.action-space.synthetic-alerts",
+      "kind": "action_space",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "One-action synthetic alert space for static OPE reconciliation.",
+      "member_ids": [
+        "reiyah.action.synthetic-alert"
+      ]
+    },
+    {
+      "definition_id": "reiyah.choice-set.synthetic-handoff",
+      "kind": "choice_set",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Synthetic review-only handoff choice set.",
+      "member_ids": [
+        "reiyah.choice.synthetic-review-only"
+      ]
+    },
+    {
+      "definition_id": "reiyah.state-space.synthetic-binary-recovery",
+      "kind": "state_space",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Binary synthetic recovery state space for probability reconciliation.",
+      "member_ids": [
+        "reiyah.state.recovers",
+        "reiyah.state.does-not-recover"
+      ]
+    },
+    {
+      "definition_id": "reiyah.authority.synthetic-review-only",
+      "kind": "authority",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic authority synthetic review only definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.scope.synthetic-evaluation",
+      "kind": "scope",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic scope synthetic evaluation definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.capability.synthetic-attention",
+      "kind": "capability",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic capability synthetic attention definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.construct.synthetic-readiness",
+      "kind": "construct",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic construct synthetic readiness definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.loss.synthetic-readiness",
+      "kind": "loss_function",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic loss synthetic readiness definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.clock.synthetic-monotonic",
+      "kind": "clock",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic clock synthetic monotonic definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.clock.synthetic-utc",
+      "kind": "clock",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic clock synthetic utc definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.label-schema.synthetic-events",
+      "kind": "label_schema",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic label schema synthetic events definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.oracle.synthetic-rule",
+      "kind": "oracle",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic oracle synthetic rule definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.outcome.synthetic-explicit-unknown",
+      "kind": "outcome_definition",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic outcome synthetic explicit unknown definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.outcome.synthetic-joint-miss",
+      "kind": "outcome_definition",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic outcome synthetic joint miss definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.outcome.synthetic-recovery",
+      "kind": "outcome_definition",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic outcome synthetic recovery definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.treatment.synthetic-alert-policy",
+      "kind": "treatment_definition",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic treatment synthetic alert policy definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.estimand.synthetic-risk-difference",
+      "kind": "estimand",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic estimand synthetic risk difference definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.condition.synthetic-entry",
+      "kind": "condition",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic condition synthetic entry definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.condition.synthetic-exit",
+      "kind": "condition",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic condition synthetic exit definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.condition.synthetic-takeover",
+      "kind": "condition",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic condition synthetic takeover definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.event-type.synthetic-opportunity-ended",
+      "kind": "event_type",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic event type synthetic opportunity ended definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.information-schema.synthetic-policy-input",
+      "kind": "information_set_schema",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic information schema synthetic policy input definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.unit.synthetic-encounter",
+      "kind": "unit",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic unit synthetic encounter definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.metric.synthetic-performance",
+      "kind": "metric",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic metric synthetic performance definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.assumption.synthetic-consistency",
+      "kind": "assumption",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic assumption synthetic consistency definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.assumption.synthetic-independent-encounters",
+      "kind": "assumption",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic assumption synthetic independent encounters definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.assumption.synthetic-sequential-ignorability",
+      "kind": "assumption",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic assumption synthetic sequential ignorability definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.assumption.synthetic-transport",
+      "kind": "assumption",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic assumption synthetic transport definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.method.synthetic-analytic-power",
+      "kind": "method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic method synthetic analytic power definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.method.synthetic-belief-assessment",
+      "kind": "inference_specification",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic method synthetic belief assessment definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.method.synthetic-bootstrap",
+      "kind": "uncertainty_method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic method synthetic bootstrap definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.method.synthetic-dependence-ratio",
+      "kind": "method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic method synthetic dependence ratio definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.method.synthetic-kish-ess",
+      "kind": "method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic method synthetic kish ess definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.method.synthetic-split-conformal",
+      "kind": "method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic method synthetic split conformal definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.method.synthetic-wilson",
+      "kind": "uncertainty_method",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic method synthetic wilson definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.estimator.synthetic-rate",
+      "kind": "estimator",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic estimator synthetic rate definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.estimator.synthetic-wis",
+      "kind": "estimator",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic estimator synthetic wis definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.detector.synthetic-ood",
+      "kind": "detector",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic detector synthetic ood definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.selector.synthetic-confidence",
+      "kind": "selector",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic selector synthetic confidence definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.sensitivity.synthetic-dependence",
+      "kind": "sensitivity_analysis",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic sensitivity synthetic dependence definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.sensitivity.synthetic-mnar-bounds",
+      "kind": "sensitivity_analysis",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned synthetic sensitivity synthetic mnar bounds definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.definition.synthetic-ood",
+      "kind": "ood_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned definition synthetic ood definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.definition.synthetic-silent-miss",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned definition synthetic silent miss definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.mitigation.synthetic-explicit-abstention",
+      "kind": "abstention_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned mitigation synthetic explicit abstention definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.explicit-ood",
+      "kind": "ood_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule explicit ood definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-adjudication",
+      "kind": "adjudication_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic adjudication definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-all-declared-groups",
+      "kind": "selection_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic all declared groups definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-all-ties-minimum",
+      "kind": "selection_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic all ties minimum definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-belief-abstention",
+      "kind": "abstention_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic belief abstention definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-benchmark-decision",
+      "kind": "decision_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic benchmark decision definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-brier",
+      "kind": "scoring_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic brier definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-competing-event",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic competing event definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-conformal",
+      "kind": "conformal_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic conformal definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-decision-loss",
+      "kind": "decision_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic decision loss definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-development-split",
+      "kind": "selection_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic development split definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-discounted-sum",
+      "kind": "aggregation_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic discounted sum definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-explicit-missingness",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic explicit missingness definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-fixed-horizon",
+      "kind": "stopping_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic fixed horizon definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-futility",
+      "kind": "stopping_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic futility definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-hash-split",
+      "kind": "assignment_mechanism",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic hash split definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-minimum-ess",
+      "kind": "minimum_information_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic minimum ess definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-no-adaptation",
+      "kind": "transfer_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic no adaptation definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-one-step",
+      "kind": "stopping_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic one step definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-ood",
+      "kind": "ood_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic ood definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-ood-threshold",
+      "kind": "decision_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic ood threshold definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-opportunity",
+      "kind": "inclusion_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic opportunity definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-positive-support",
+      "kind": "inclusion_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic positive support definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-readiness-decision",
+      "kind": "decision_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic readiness decision definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-readiness-threshold",
+      "kind": "decision_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic readiness threshold definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-recovery",
+      "kind": "decision_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic recovery definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-recovery-censoring",
+      "kind": "rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic recovery censoring definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-road-classification",
+      "kind": "measurement_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic road classification definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-safety-stop",
+      "kind": "safety_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic safety stop definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-schema-abstain",
+      "kind": "abstention_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic schema abstain definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-schema-fail",
+      "kind": "decision_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic schema fail definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-schema-pass",
+      "kind": "decision_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic schema pass definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-selective",
+      "kind": "selection_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic selective definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-selective-threshold",
+      "kind": "decision_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic selective threshold definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-success",
+      "kind": "stopping_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic success definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-test-split",
+      "kind": "selection_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic test split definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-transfer",
+      "kind": "transfer_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic transfer definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-uncertain-label",
+      "kind": "adjudication_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic uncertain label definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-unknown-domain",
+      "kind": "ood_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic unknown domain definition used by the static fixture set."
+    },
+    {
+      "definition_id": "reiyah.rule.synthetic-worst-group",
+      "kind": "selection_rule",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "owner_protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "description": "Protocol-owned rule synthetic worst group definition used by the static fixture set."
+    }
+  ],
+  "runtime_execution_authorized": false
+}

@@ -1,0 +1,40 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-reference-cycle-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.reference-cycle",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The root observation is changed to depend on the downstream outcome, closing a cycle through the canonical scientific object chain.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-004",
+    "TM-006",
+    "TM-019",
+    "TM-021",
+    "TM-026"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-REFERENCE-CYCLE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/observation.json",
+        "json_pointer": "/provenance/input_refs",
+        "value": [
+          {
+            "object_id": "reiyah.fixture.outcome-001",
+            "object_kind": "outcome",
+            "version": "1.0.0"
+          }
+        ]
+      }
+    ]
+  }
+}

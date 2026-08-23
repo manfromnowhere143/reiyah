@@ -1,0 +1,32 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-standards-identity-mismatch-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.standards-identity-mismatch",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A standards mapping changes its observed title while retaining an identity_source_id whose exact source-ledger title differs.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-003",
+    "TM-022",
+    "TM-023"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-STANDARDS-EVIDENCE-INCOMPLETE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "sources_crosswalk",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "evidence/standards-crosswalk.json",
+        "json_pointer": "/entries/0/external_reference/title/value",
+        "value": "Fabricated replacement title not present in the exact identity source record"
+      }
+    ]
+  }
+}

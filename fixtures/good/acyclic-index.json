@@ -1,0 +1,21 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.good.acyclic-index",
+  "fixture_id": "reiyah.fixture.good.acyclic-index",
+  "version": "1.0.0",
+  "classification": "known_good",
+  "description": "A synthetic index inventory excludes itself, sidecar, validation report, and decision record.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [],
+  "expected": {"outcome": "pass", "primary_rule_id": null},
+  "payload": {
+    "kind": "evidence_index",
+    "index_path": "gate/GATE_A_EVIDENCE_INDEX.json",
+    "sidecar_path": "gate/GATE_A_EVIDENCE_INDEX.sha256",
+    "validation_report_path": "gate/validation-reports/synthetic.json",
+    "operator_decision_paths": ["gate/decisions/GATE-A-DECISION-20260822T000000Z.json"],
+    "indexed_paths": ["AGENTS.md", "schemas/gate-a-index.schema.json", "tools/validate_gate_a.py"]
+  }
+}

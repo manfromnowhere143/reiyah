@@ -1,0 +1,131 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/mission-manifest.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "reiyah.artifact.mission-1.1.0",
+  "manifest_kind": "mission",
+  "release_id": "reiyah.mission@1.1.0",
+  "mission_id": "reiyah.mission",
+  "version": "1.1.0",
+  "release_stage": "candidate",
+  "lifecycle_status": "proposed",
+  "created_on": "2026-08-23",
+  "relation": {
+    "type": "supersedes",
+    "prior_release_id": "reiyah.mission@1.0.0",
+    "rationale": "Records the verified public Reiyah remote, the Apache 2.0 release boundary, and the lawful separation of third party source payloads without changing the scientific mission."
+  },
+  "immutability": {
+    "policy": "append_only_release",
+    "identifier_reuse_prohibited": true,
+    "in_place_changes_prohibited": true,
+    "corrections_require_new_release": true
+  },
+  "operator_acceptance": {
+    "state": "unaccepted",
+    "record_id": null
+  },
+  "repository_identity": {
+    "project": "Reiyah",
+    "canonical_root": "/Users/danielwahnich/workspace/reiyah",
+    "remote": {
+      "state": "verified",
+      "url": "https://github.com/manfromnowhere143/reiyah",
+      "host": "github.com",
+      "owner": "manfromnowhere143",
+      "repository": "reiyah",
+      "node_id": "R_kgDOUBXgyQ",
+      "visibility": "public",
+      "created_at": "2026-08-23T09:48:46Z",
+      "verified_on": "2026-08-23",
+      "verification_method": "authenticated_github_api",
+      "authority": "distribution_channel_only"
+    },
+    "independent_from_siblings": true
+  },
+  "program_identity": {
+    "working_name": "HARBOR",
+    "expansion": "Human-Automation Readiness, Belief & Operational Risk",
+    "name_status": "proposed"
+  },
+  "mission_statement": "Develop an evidence and benchmark engine for object-level driver-vehicle belief, human-automation readiness, recoverability, joint silent misses, causal policy effects, explicit unknowns, transfer, and worst-group validation.",
+  "thesis": {
+    "is": "A versioned, evidence-bound research architecture for specifying and evaluating driver-vehicle belief and readiness questions under explicit uncertainty.",
+    "is_not": "A driver-monitoring classifier, product runtime, deployment system, physical controller, compliance claim, or publication authority.",
+    "target_topics": [
+      "object-level driver-vehicle belief",
+      "human-automation readiness",
+      "recoverability",
+      "joint silent misses",
+      "causal policy effects",
+      "explicit unknowns and abstention",
+      "transfer validation",
+      "worst-group validation"
+    ]
+  },
+  "scientific_invariants": [
+    {
+      "invariant_id": "reiyah.invariant.layer-separation",
+      "proposition": "Observation, latent belief, decision, intervention, outcome, and evidence remain separate in identifiers, schemas, provenance, and time.",
+      "lifecycle_status": "proposed"
+    },
+    {
+      "invariant_id": "reiyah.invariant.explicit-unknowns",
+      "proposition": "Missing, unmeasured, out-of-distribution, sensor-invalid, and abstained states never become zero, false, negative, normal, or a confident label.",
+      "lifecycle_status": "proposed"
+    },
+    {
+      "invariant_id": "reiyah.invariant.status-preservation",
+      "proposition": "All fourteen repository lifecycle statuses retain distinct spellings and meanings.",
+      "lifecycle_status": "proposed"
+    },
+    {
+      "invariant_id": "reiyah.invariant.integrity-not-evidence",
+      "proposition": "Generated prose, model review, signatures, checksums, tests, and consensus are proposals or integrity signals rather than independent scientific evidence.",
+      "lifecycle_status": "proposed"
+    },
+    {
+      "invariant_id": "reiyah.invariant.retained-source",
+      "proposition": "Standards and benchmark claims bind exact versions, publication dates, scope, comparators, and retained source bytes with metadata and digest.",
+      "lifecycle_status": "proposed"
+    },
+    {
+      "invariant_id": "reiyah.invariant.no-silent-transformation",
+      "proposition": "Validity boundaries, exclusions, imputation, aggregation, subgroup coverage, and outcome labels are explicit and auditable.",
+      "lifecycle_status": "proposed"
+    },
+    {
+      "invariant_id": "reiyah.invariant.external-nonauthority",
+      "proposition": "External models, services, sources, datasets, standards, and sibling systems never hold Reiyah scientific, safety, acceptance, or publication authority.",
+      "lifecycle_status": "proposed"
+    }
+  ],
+  "gate_a_scope": {
+    "authorized": [
+      "architecture documents and diagrams",
+      "deterministic offline evaluation fixtures and validators",
+      "public distribution of the static Gate A candidate under explicit source custody and license boundaries"
+    ],
+    "prohibited": [
+      "product runtime",
+      "deployment",
+      "physical-control integration",
+      "private-data ingestion",
+      "empirical publication machinery",
+      "model training or live inference",
+      "live network dependencies",
+      "operational safety or compliance claims"
+    ],
+    "advancement_requires": [
+      "retained evidence sufficient for every advancement criterion",
+      "explicit operator acceptance bound to exact artifact paths and SHA-256 digests"
+    ]
+  },
+  "open_source_release": {
+    "license_spdx": "Apache-2.0",
+    "repository_visibility": "public",
+    "reiyah_authored_work_covered": true,
+    "third_party_material_separately_governed": true,
+    "restricted_payloads_prohibited": true,
+    "scientific_authority_conferred": false
+  }
+}

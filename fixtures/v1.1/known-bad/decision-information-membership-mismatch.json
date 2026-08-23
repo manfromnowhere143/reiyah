@@ -1,0 +1,11 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.decision-information-membership-mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/human-automation-assessment.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/decision_record/information_set/items/0/item_ref/record_id", "value": "reiyah.observation.synthetic-unavailable"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"instance_pointer": "/decision_record/information_set/items/0/item_ref/record_id", "schema_keyword": "semantic", "reason": "Decision and belief information sets must reconcile to the same available observations."},
+  "runtime_execution_authorized": false
+}

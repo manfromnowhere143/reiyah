@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.missing-provenance",
+  "fixture_id": "reiyah.fixture.bad.missing-provenance",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A synthetic scientific record omits provenance entirely.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-003", "TM-004", "TM-019"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-PROVENANCE-MISSING"},
+  "payload": {"kind": "production_mutation", "production_check": "scientific_semantics", "mutations": [
+    {"operation": "remove", "path": "manifests/examples/object-chain/observation.json", "json_pointer": "/provenance"}
+  ]}
+}

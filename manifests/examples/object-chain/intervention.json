@@ -1,0 +1,56 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/intervention.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.chain.intervention",
+  "object_id": "reiyah.fixture.intervention-001",
+  "object_kind": "intervention",
+  "version": "1.0.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.lifecycle-event.fixture-intervention-proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-21T21:00:03Z",
+      "actor": {"actor_type": "software", "actor_id": "reiyah.producer.fixture-generator"},
+      "rationale": "Created as a deterministic synthetic Gate A structure fixture; no intervention was executed.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.0.0",
+  "context_rules": {
+    "encounter_construction_rule_id": "reiyah.rule.fixture-encounter-construction",
+    "object_identity_rule_id": "reiyah.rule.fixture-object-identity",
+    "temporal_correspondence_rule_id": "reiyah.rule.fixture-temporal-correspondence"
+  },
+  "encounter_id": "reiyah.fixture.encounter-001",
+  "event_time": {
+    "clock_id": "reiyah.clock.fixture",
+    "offset": {"state": "observed", "value": 3},
+    "unit": "seconds",
+    "origin": {"state": "observed", "value": "Synthetic fixture origin"}
+  },
+  "decision_ref": {"object_id": "reiyah.fixture.decision-001", "object_kind": "decision", "version": "1.0.0"},
+  "assignment_mechanism_id": "reiyah.assignment.fixture-only",
+  "assigned_level": {"state": "observed", "value": "synthetic_candidate_prompt"},
+  "delivered_level": {"state": "unmeasured", "reason": "Static Gate A fixture performs no delivery.", "rule_id": "reiyah.rule.no-runtime"},
+  "received_level": {"state": "unmeasured", "reason": "Static Gate A fixture has no recipient.", "rule_id": "reiyah.rule.no-runtime"},
+  "adherence": {"state": "unmeasured", "reason": "No runtime intervention occurred.", "rule_id": "reiyah.rule.no-runtime"},
+  "research_only": true,
+  "physical_control_enabled": false,
+  "validity": {
+    "state": "valid",
+    "rule_ids": ["reiyah.rule.fixture-intervention-valid"]
+  },
+  "provenance": {
+    "producer_type": "software",
+    "producer_id": "reiyah.producer.fixture-generator",
+    "method_id": "reiyah.method.static-fixture",
+    "recorded_at": "2026-08-22T00:00:03+03:00",
+    "input_refs": [
+      {"object_id": "reiyah.fixture.decision-001", "object_kind": "decision", "version": "1.0.0"}
+    ]
+  }
+}

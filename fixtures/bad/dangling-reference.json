@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.dangling-reference",
+  "fixture_id": "reiyah.fixture.bad.dangling-reference",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A typed decision reference names an object version absent from the synthetic registry.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-019", "TM-026"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-REFERENCE-DANGLING"},
+  "payload": {"kind": "production_mutation", "production_check": "scientific_semantics", "mutations": [
+    {"operation": "replace", "path": "manifests/examples/object-chain/latent-belief.json", "json_pointer": "/observation_refs/0/object_id", "value": "reiyah.object.does-not-exist"}
+  ]}
+}

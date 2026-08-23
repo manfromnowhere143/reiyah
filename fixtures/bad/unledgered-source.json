@@ -1,0 +1,27 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-unledgered-source-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.unledgered-source",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A synthetic unledgered executable-looking file is added under the retained-source directory.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-003", "TM-023", "TM-025"],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-UNLEDGERED-SOURCE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "repository_inventory",
+    "mutations": [
+      {
+        "operation": "add_file",
+        "path": "evidence/sources/unledgered-network-service.py",
+        "content_utf8": "import socket\n"
+      }
+    ]
+  }
+}

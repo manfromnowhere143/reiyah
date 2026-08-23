@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.0/protocol-definition-registry.schema.json",
+  "title": "Protocol-owned typed definition registry 1.1",
+  "description": "Versioned definitions for every protocol-owned identifier used by the Gate A 1.1 scientific contract fixtures. Definitions remain proposed and authorize no runtime behavior.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "registry_id",
+    "version",
+    "protocol_release_id",
+    "definitions",
+    "runtime_execution_authorized"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/protocol-definition-registry.schema.json"
+    },
+    "schema_version": {"const": "1.1.0"},
+    "artifact_id": {"const": "reiyah.artifact.protocol-definition-registry-1.1.0"},
+    "registry_id": {"const": "reiyah.protocol-definition-registry.harbor-gate-a"},
+    "version": {"const": "1.1.0"},
+    "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.1.0"},
+    "definitions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/definition"},
+      "uniqueItems": true
+    },
+    "runtime_execution_authorized": {"const": false}
+  },
+  "$defs": {
+    "definitionKind": {
+      "type": "string",
+      "enum": [
+        "rule",
+        "measurement_rule",
+        "scoring_rule",
+        "stopping_rule",
+        "selection_rule",
+        "aggregation_rule",
+        "adjudication_rule",
+        "abstention_rule",
+        "ood_rule",
+        "conformal_rule",
+        "transfer_rule",
+        "safety_rule",
+        "method",
+        "estimator",
+        "outcome_definition",
+        "treatment_definition",
+        "group",
+        "clock",
+        "sensor",
+        "actor",
+        "construct",
+        "state_space",
+        "choice_set",
+        "action_space",
+        "information_set_schema",
+        "inference_specification",
+        "analysis_specification",
+        "uncertainty_method",
+        "multiplicity_rule",
+        "assignment_mechanism",
+        "inclusion_rule",
+        "exclusion_rule",
+        "minimum_information_rule",
+        "decision_rule",
+        "producer",
+        "assumption",
+        "validity_boundary",
+        "estimand",
+        "metric",
+        "oracle",
+        "label_schema",
+        "authority",
+        "scope",
+        "loss_function",
+        "event_type",
+        "condition",
+        "capability",
+        "reference_process",
+        "external_source",
+        "sensitivity_analysis",
+        "constraint",
+        "reward_signal",
+        "cost_signal",
+        "unit",
+        "selector",
+        "detector"
+      ]
+    },
+    "actorType": {
+      "enum": [
+        "human",
+        "automation_system",
+        "organization",
+        "software",
+        "model",
+        "instrument",
+        "derived_process",
+        "external_source"
+      ]
+    },
+    "definition": {
+      "type": "object",
+      "required": [
+        "definition_id",
+        "kind",
+        "version",
+        "lifecycle_status",
+        "owner_protocol_release_id",
+        "description"
+      ],
+      "properties": {
+        "definition_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "kind": {"$ref": "#/$defs/definitionKind"},
+        "version": {"const": "1.1.0"},
+        "lifecycle_status": {"const": "proposed"},
+        "owner_protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.1.0"},
+        "description": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "member_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "actor_type": {"$ref": "#/$defs/actorType"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {"enum": ["state_space", "choice_set", "action_space"]}
+            },
+            "required": ["kind"]
+          },
+          "then": {"required": ["member_ids"]}
+        },
+        {
+          "if": {
+            "properties": {"kind": {"const": "actor"}},
+            "required": ["kind"]
+          },
+          "then": {"required": ["actor_type"]},
+          "else": {"not": {"required": ["actor_type"]}}
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

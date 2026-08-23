@@ -1,0 +1,23 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.good.experiment-result",
+  "fixture_id": "reiyah.fixture.good.experiment-result",
+  "version": "1.0.0",
+  "classification": "known_good",
+  "description": "Synthetic proposed records and one append-only preregistered experiment successor validate without runtime authority or evidentiary interpretation.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [],
+  "expected": {"outcome": "pass", "primary_rule_id": null},
+  "payload": {
+    "kind": "schema_instances",
+    "paths": [
+      "fixtures/good/analysis-specification.json",
+      "fixtures/good/preregistration-record.json",
+      "fixtures/good/experiment.json",
+      "fixtures/good/experiment-preregistered.json",
+      "fixtures/good/result.json"
+    ]
+  }
+}

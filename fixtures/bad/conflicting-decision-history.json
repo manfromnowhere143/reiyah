@@ -1,0 +1,32 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-conflicting-decision-history-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.conflicting-decision-history",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "Two synthetic operator decisions create independent conflicting roots instead of one supersession chain.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-020", "TM-027"],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-DECISION-HISTORY"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "decision_history",
+    "mutations": [
+      {
+        "operation": "add_file",
+        "path": "gate/decisions/reiyah.gate-a-decision-20260822t000000z.json",
+        "content_utf8": "{\"artifact_id\":\"reiyah.artifact.fixture-decision-a\",\"record_id\":\"reiyah.fixture.decision-a\",\"decided_at\":\"2026-08-22T00:00:00Z\",\"decision\":\"accepted\",\"supersedes_record_id\":null}\n"
+      },
+      {
+        "operation": "add_file",
+        "path": "gate/decisions/reiyah.gate-a-decision-20260822t000001z.json",
+        "content_utf8": "{\"artifact_id\":\"reiyah.artifact.fixture-decision-b\",\"record_id\":\"reiyah.fixture.decision-b\",\"decided_at\":\"2026-08-22T00:00:01Z\",\"decision\":\"rejected\",\"supersedes_record_id\":null}\n"
+      }
+    ]
+  }
+}

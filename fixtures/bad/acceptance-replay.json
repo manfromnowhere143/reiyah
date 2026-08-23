@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.acceptance-replay",
+  "fixture_id": "reiyah.fixture.bad.acceptance-replay",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The candidate evidence index is relabeled accepted while its required external operator-decision binding remains null.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-020"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-ACCEPTANCE-REPLAY"},
+  "payload": {"kind": "production_mutation", "production_check": "evidence_index", "mutations": [
+    {"operation": "replace", "path": "gate/GATE_A_EVIDENCE_INDEX.json", "json_pointer": "/operator_acceptance_state", "value": "accepted"}
+  ]}
+}

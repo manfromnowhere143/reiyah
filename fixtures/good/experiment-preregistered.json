@@ -1,0 +1,139 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/experiment.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.experiment.good-2",
+  "experiment_id": "reiyah.experiment.synthetic-gate-a",
+  "version": "2.0.0",
+  "lifecycle_status": "preregistered",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.lifecycle-event.fixture-experiment-proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-21T23:59:57Z",
+      "actor": {"actor_type": "software", "actor_id": "reiyah.producer.fixture-generator"},
+      "rationale": "Synthetic static Gate A positive fixture; not preregistered and not evidentiary.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    },
+    {
+      "event_id": "reiyah.lifecycle-event.fixture-experiment-preregistered",
+      "sequence": 2,
+      "prior_status": "proposed",
+      "status": "preregistered",
+      "recorded_at": "2026-08-21T23:59:58Z",
+      "actor": {"actor_type": "software", "actor_id": "reiyah.producer.fixture-generator"},
+      "rationale": "The typed synthetic analysis and preregistration records were frozen before the declared observation boundary; no execution is authorized.",
+      "evidence_refs": [],
+      "prior_artifact": {
+        "artifact_id": "reiyah.fixture.experiment.good-1",
+        "record_id": "reiyah.experiment.synthetic-gate-a",
+        "record_kind": "experiment",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/experiment.schema.json",
+        "version": "1.0.0",
+        "path": "fixtures/good/experiment.json",
+        "sha256": "sha256:1f7b6c8f7f9d55cb441df7932fdc16cd79288048f2629ccad9421aadbb860e53"
+      }
+    }
+  ],
+  "mission_release_id": "reiyah.mission@1.0.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.0.0",
+  "preregistration": {
+    "status": "preregistered",
+    "registered_at": "2026-08-21T23:59:58Z",
+    "observation_boundary": {
+      "boundary_id": "reiyah.boundary.synthetic-observation-open",
+      "opens_at": "2026-08-21T23:59:59Z"
+    },
+    "retained_artifact": {
+      "artifact_id": "reiyah.fixture.preregistration-record.good-1",
+      "path": "fixtures/good/preregistration-record.json",
+      "sha256": "sha256:0f43b12b2d1cbd406465a03b819b793cc264b035be99e4bd2270de85546f6f9d",
+      "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/preregistration-record.schema.json",
+      "version": "1.0.0"
+    }
+  },
+  "target_population": "Synthetic Gate A encounter fixtures only; no human or vehicle records.",
+  "unit_of_analysis": "One synthetic encounter-object fixture.",
+  "sampling_frame": "Deterministic static fixture identifiers declared in this file.",
+  "observation_window": "Synthetic offsets zero through ten seconds on reiyah.clock.fixture.",
+  "exposure": "No operational exposure; static research-variable example only.",
+  "comparator": "Synthetic comparator level fixture.control@1.0.0.",
+  "outcome_definition_ids": ["reiyah.outcome-definition.synthetic-recovery"],
+  "estimand_ids": ["reiyah.estimand.worst-group"],
+  "inclusion_rules": ["reiyah.rule.synthetic-eligible"],
+  "exclusion_rules": ["reiyah.rule.synthetic-invalid-sensor"],
+  "assignment_mechanism": {
+    "mechanism_id": "reiyah.assignment.not-applicable",
+    "type": "not_applicable",
+    "versions_distinct": true
+  },
+  "identification_assumptions": [
+    {
+      "assumption_id": "reiyah.assumption.synthetic-only",
+      "statement": "The fixture checks architecture structure only and has no empirical interpretation.",
+      "test_or_sensitivity": "Reject any use outside deterministic schema and semantic replay."
+    }
+  ],
+  "validity_boundaries": [
+    {
+      "boundary_id": "reiyah.boundary.synthetic-population",
+      "dimension": "population",
+      "criterion": "Only the declared synthetic Gate A encounter fixtures are eligible."
+    },
+    {
+      "boundary_id": "reiyah.boundary.synthetic-object",
+      "dimension": "object",
+      "criterion": "Only exact canonical synthetic object identifiers are eligible."
+    },
+    {
+      "boundary_id": "reiyah.boundary.synthetic-time",
+      "dimension": "time",
+      "criterion": "Only offsets zero through ten seconds on the declared fixture clock are eligible."
+    },
+    {
+      "boundary_id": "reiyah.boundary.synthetic-sensor",
+      "dimension": "sensor",
+      "criterion": "Only explicit valid or non-observed states from the synthetic sensor contract are eligible."
+    },
+    {
+      "boundary_id": "reiyah.boundary.synthetic-reference",
+      "dimension": "reference",
+      "criterion": "Only the exact synthetic definitions and typed object references are eligible."
+    },
+    {
+      "boundary_id": "reiyah.boundary.synthetic-protocol",
+      "dimension": "protocol",
+      "criterion": "Only exact synthetic fixture identifiers and static values are eligible."
+    },
+    {
+      "boundary_id": "reiyah.boundary.no-runtime",
+      "dimension": "support",
+      "criterion": "No inference, deployment, or operational interpretation is authorized."
+    }
+  ],
+  "epistemic_policy": {
+    "non_observed_states_retained": true,
+    "coercion_to_zero_prohibited": true,
+    "abstention_rule_id": "reiyah.rule.synthetic-abstention"
+  },
+  "subgroup_plan": {
+    "group_definition_ids": ["reiyah.group.synthetic-a", "reiyah.group.synthetic-b"],
+    "intersection_policy": "The two synthetic groups are complete and disjoint for this fixture.",
+    "minimum_information_rule_id": "reiyah.rule.synthetic-minimum-information",
+    "omission_prohibited": true
+  },
+  "analysis_plan": {
+    "analysis_specification_id": "reiyah.analysis.synthetic-worst-group",
+    "uncertainty_method_id": "reiyah.uncertainty.synthetic-fixed-interval",
+    "multiplicity_rule_id": "reiyah.multiplicity.synthetic-complete-set",
+    "decision_rule_ids": ["reiyah.decision-rule.synthetic-no-claim"]
+  },
+  "evidence_binding": {
+    "state": "evidence_gap",
+    "evidence_refs": [],
+    "gap_reason": "Synthetic preregistration fixture has no empirical evidence and cannot support a claim."
+  },
+  "runtime_execution_authorized": false
+}

@@ -1,0 +1,25 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-historical-recovery-class-mismatch-1.1.0",
+  "fixture_id": "reiyah.fixture.bad.historical-recovery-class-mismatch",
+  "version": "1.1.0",
+  "classification": "known_bad",
+  "description": "A digest-verified reconstruction is relabeled as a pre-overwrite archival copy.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-003", "TM-005", "TM-020", "TM-027"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-HISTORICAL-RECOVERY-INELIGIBLE"},
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "historical_recovery",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "history/gate-a-1.0.0/RECOVERY.json",
+        "json_pointer": "/recovered_artifacts/0/recovery_class",
+        "value": "pre_overwrite_archival_copy"
+      }
+    ]
+  }
+}

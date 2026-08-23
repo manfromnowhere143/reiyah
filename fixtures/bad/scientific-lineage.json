@@ -1,0 +1,32 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-scientific-lineage-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.scientific-lineage",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A preregistered experiment successor changes the logical record identity in its otherwise exact predecessor binding.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-008",
+    "TM-019",
+    "TM-027"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-SCIENTIFIC-LINEAGE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "fixtures/good/experiment-preregistered.json",
+        "json_pointer": "/lifecycle_history/1/prior_artifact/record_id",
+        "value": "reiyah.experiment.synthetic-replacement"
+      }
+    ]
+  }
+}

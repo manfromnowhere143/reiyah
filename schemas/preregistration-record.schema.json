@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/preregistration-record.schema.json",
+  "title": "Immutable experiment preregistration record",
+  "description": "A retained freeze record only. It does not authorize execution, runtime behavior, scientific support, or Gate acceptance.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "preregistration_id",
+    "version",
+    "experiment",
+    "protocol_release_id",
+    "analysis_specification",
+    "frozen_at",
+    "observation_boundary",
+    "runtime_execution_authorized"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/preregistration-record.schema.json"
+    },
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "preregistration_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "experiment": {
+      "type": "object",
+      "required": ["experiment_id", "version"],
+      "properties": {
+        "experiment_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "version": {
+          "$ref": "common.schema.json#/$defs/semanticVersion"
+        }
+      },
+      "additionalProperties": false
+    },
+    "protocol_release_id": {
+      "$ref": "common.schema.json#/$defs/releaseIdentifier"
+    },
+    "analysis_specification": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "analysis_specification_id",
+        "schema_id",
+        "version",
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "artifact_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "analysis_specification_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/analysis-specification.schema.json"
+        },
+        "version": {
+          "$ref": "common.schema.json#/$defs/semanticVersion"
+        },
+        "path": {
+          "$ref": "common.schema.json#/$defs/relativeArtifactPath"
+        },
+        "sha256": {
+          "$ref": "common.schema.json#/$defs/sha256Digest"
+        }
+      },
+      "additionalProperties": false
+    },
+    "frozen_at": {
+      "$ref": "common.schema.json#/$defs/utcTimestamp"
+    },
+    "observation_boundary": {
+      "$ref": "#/$defs/observationBoundary"
+    },
+    "runtime_execution_authorized": {
+      "const": false
+    }
+  },
+  "$defs": {
+    "observationBoundary": {
+      "type": "object",
+      "required": ["boundary_id", "opens_at"],
+      "properties": {
+        "boundary_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "opens_at": {
+          "$ref": "common.schema.json#/$defs/utcTimestamp"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

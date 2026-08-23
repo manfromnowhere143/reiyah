@@ -1,0 +1,11 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope-horizon-mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/sequential-off-policy-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/horizon/maximum_steps", "value": 2}],
+  "expected_outcome": "reject",
+  "expected_failure": {"instance_pointer": "/horizon/maximum_steps", "schema_keyword": "semantic", "reason": "A fixed-horizon trajectory must contain exactly the frozen number of contiguous steps."},
+  "runtime_execution_authorized": false
+}

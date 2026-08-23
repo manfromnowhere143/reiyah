@@ -1,0 +1,69 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-ineligible-result-evidence-binding-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.ineligible-result-evidence-binding",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A result actively binds a proposed evidence object even though the protocol universally disallows proposed evidence as a current binding.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-004", "TM-008", "TM-019"],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-EVIDENCE-BINDING-INELIGIBLE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/evidence.json",
+        "json_pointer": "/target_object_refs",
+        "value": []
+      },
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/evidence.json",
+        "json_pointer": "/target_record_refs",
+        "value": [
+          {
+            "target_kind": "result",
+            "target_id": "reiyah.result.synthetic-gate-a",
+            "version": "1.0.0"
+          }
+        ]
+      },
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/evidence.json",
+        "json_pointer": "/basis",
+        "value": {
+          "state": "retained",
+          "source_record_ids": ["src.nist.ai-100-1.2023.pdf"]
+        }
+      },
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/evidence.json",
+        "json_pointer": "/validity",
+        "value": {
+          "state": "valid",
+          "rule_ids": ["reiyah.rule.synthetic-structure-only"]
+        }
+      },
+      {
+        "operation": "replace",
+        "path": "fixtures/good/result.json",
+        "json_pointer": "/evidence_binding",
+        "value": {
+          "state": "retained",
+          "evidence_refs": [
+            {"evidence_id": "reiyah.fixture.evidence-001", "version": "1.0.0"}
+          ]
+        }
+      }
+    ]
+  }
+}

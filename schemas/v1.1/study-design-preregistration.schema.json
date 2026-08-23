@@ -1,0 +1,614 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/study-design-preregistration.schema.json",
+  "title": "Study design and immutable preregistration contract",
+  "description": "Binds power, stopping and interim rules, causal graph and controls, missingness, frozen splits, access chronology, and append-only deviations before outcomes are inspected.",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/recordHeader"
+    },
+    {
+      "type": "object",
+      "required": [
+        "study_id",
+        "mission_release_id",
+        "design_type",
+        "target_population",
+        "unit_of_analysis",
+        "treatment_definition_ids",
+        "outcome_definition_ids",
+        "estimand_ids",
+        "preregistration",
+        "power_analysis",
+        "stopping_rule",
+        "interim_analyses",
+        "causal_graph",
+        "control_strategy",
+        "missingness_plan",
+        "data_splits",
+        "access_chronology",
+        "deviations",
+        "evidence_binding",
+        "scientific_claim_authorized"
+      ],
+      "properties": {
+        "schema_id": {
+          "const": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/study-design-preregistration.schema.json"
+        },
+        "study_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "mission_release_id": {
+          "$ref": "common.schema.json#/$defs/releaseIdentifier"
+        },
+        "design_type": {
+          "enum": [
+            "randomized",
+            "quasi_experimental",
+            "observational",
+            "simulation_only",
+            "synthetic_contract_test"
+          ]
+        },
+        "target_population": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "unit_of_analysis": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "treatment_definition_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "outcome_definition_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "estimand_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "preregistration": {
+          "$ref": "#/$defs/preregistration"
+        },
+        "power_analysis": {
+          "$ref": "#/$defs/powerAnalysis"
+        },
+        "stopping_rule": {
+          "$ref": "#/$defs/stoppingRule"
+        },
+        "interim_analyses": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/interimAnalysis"},
+          "uniqueItems": true
+        },
+        "causal_graph": {
+          "$ref": "#/$defs/causalGraph"
+        },
+        "control_strategy": {
+          "$ref": "#/$defs/controlStrategy"
+        },
+        "missingness_plan": {
+          "$ref": "#/$defs/missingnessPlan"
+        },
+        "data_splits": {
+          "$ref": "#/$defs/dataSplits"
+        },
+        "access_chronology": {
+          "$ref": "#/$defs/accessChronology"
+        },
+        "deviations": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/deviation"},
+          "uniqueItems": true
+        },
+        "evidence_binding": {
+          "$ref": "common.schema.json#/$defs/evidenceBinding"
+        },
+        "scientific_claim_authorized": {
+          "const": false
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "preregistration": {
+            "properties": {"status": {"const": "preregistered"}},
+            "required": ["status"]
+          }
+        },
+        "required": ["preregistration"]
+      },
+      "then": {
+        "properties": {
+          "access_chronology": {
+            "contains": {
+              "properties": {"action": {"const": "analysis_preregistered"}},
+              "required": ["action"]
+            },
+            "minContains": 1
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "access_chronology": {
+            "contains": {
+              "properties": {"action": {"const": "architecture_contract_frozen"}},
+              "required": ["action"]
+            },
+            "minContains": 1
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "preregistration": {
+      "type": "object",
+      "required": [
+        "registration_id",
+        "status",
+        "registered_at",
+        "observation_boundary",
+        "retained_artifact",
+        "immutable_after_registration",
+        "outcome_access_before_registration_prohibited"
+      ],
+      "properties": {
+        "registration_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "status": {
+          "enum": ["proposed", "exploratory", "preregistered"]
+        },
+        "registered_at": {
+          "$ref": "common.schema.json#/$defs/timestampMeasurement"
+        },
+        "observation_boundary": {
+          "$ref": "common.schema.json#/$defs/temporalWindow"
+        },
+        "retained_artifact": {
+          "oneOf": [
+            {"$ref": "common.schema.json#/$defs/artifactBinding"},
+            {"type": "null"}
+          ]
+        },
+        "immutable_after_registration": {
+          "const": true
+        },
+        "outcome_access_before_registration_prohibited": {
+          "const": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"status": {"const": "preregistered"}},
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "registered_at": {
+                "properties": {"state": {"const": "observed"}},
+                "required": ["state"]
+              },
+              "retained_artifact": {
+                "$ref": "common.schema.json#/$defs/artifactReference"
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "powerAnalysis": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "state",
+            "power_analysis_id",
+            "estimand_id",
+            "method_id",
+            "effect_size_assumption",
+            "alpha",
+            "target_power",
+            "required_sample_size",
+            "assumption_ids",
+            "simulation_seed_policy"
+          ],
+          "properties": {
+            "state": {"const": "observed"},
+            "power_analysis_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "estimand_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "method_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "effect_size_assumption": {"type": "number"},
+            "alpha": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1},
+            "target_power": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1},
+            "required_sample_size": {"type": "integer", "minimum": 1},
+            "assumption_ids": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+              "uniqueItems": true
+            },
+            "simulation_seed_policy": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+          },
+          "additionalProperties": false
+        },
+        {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "stoppingRule": {
+      "type": "object",
+      "required": [
+        "stopping_rule_id",
+        "type",
+        "maximum_sample_size",
+        "maximum_duration",
+        "success_rule_id",
+        "futility_rule_id",
+        "safety_stop_rule_ids",
+        "optional_stopping_prohibited"
+      ],
+      "properties": {
+        "stopping_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "type": {"enum": ["fixed_horizon", "group_sequential", "precision", "safety", "not_applicable"]},
+        "maximum_sample_size": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "maximum_duration": {"$ref": "common.schema.json#/$defs/nonNegativeNumberMeasurement"},
+        "success_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "futility_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "safety_stop_rule_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "optional_stopping_prohibited": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "interimAnalysis": {
+      "type": "object",
+      "required": [
+        "look_id",
+        "sequence",
+        "information_fraction",
+        "planned_at_sample_size",
+        "alpha_spend",
+        "permitted_decisions",
+        "blinding_rule_id"
+      ],
+      "properties": {
+        "look_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "sequence": {"type": "integer", "minimum": 1},
+        "information_fraction": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "planned_at_sample_size": {"type": "integer", "minimum": 1},
+        "alpha_spend": {"type": "number", "minimum": 0, "exclusiveMaximum": 1},
+        "permitted_decisions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"enum": ["continue", "stop_success", "stop_futility", "stop_safety"]},
+          "uniqueItems": true
+        },
+        "blinding_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"}
+      },
+      "additionalProperties": false
+    },
+    "dagNode": {
+      "type": "object",
+      "required": ["node_id", "node_type", "temporal_role", "observability"],
+      "properties": {
+        "node_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "node_type": {
+          "enum": [
+            "exposure",
+            "outcome",
+            "confounder",
+            "mediator",
+            "collider",
+            "selection",
+            "measurement",
+            "unobserved"
+          ]
+        },
+        "temporal_role": {"enum": ["pre_exposure", "exposure", "post_exposure", "outcome"]},
+        "observability": {"$ref": "common.schema.json#/$defs/epistemicState"}
+      },
+      "additionalProperties": false
+    },
+    "dagEdge": {
+      "type": "object",
+      "required": ["from_node_id", "to_node_id", "edge_type"],
+      "properties": {
+        "from_node_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "to_node_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "edge_type": {"enum": ["causal", "measurement", "selection", "assumed_absent"]}
+      },
+      "additionalProperties": false
+    },
+    "causalGraph": {
+      "type": "object",
+      "required": [
+        "dag_id",
+        "version",
+        "nodes",
+        "edges",
+        "acyclicity_asserted",
+        "treatment_node_ids",
+        "outcome_node_ids",
+        "adjustment_sets",
+        "identification_assumption_ids"
+      ],
+      "properties": {
+        "dag_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+        "nodes": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/dagNode"},
+          "uniqueItems": true
+        },
+        "edges": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/dagEdge"},
+          "uniqueItems": true
+        },
+        "acyclicity_asserted": {"const": true},
+        "treatment_node_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "outcome_node_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "adjustment_sets": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/adjustmentSet"},
+          "uniqueItems": true
+        },
+        "identification_assumption_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "adjustmentSet": {
+      "type": "object",
+      "required": ["adjustment_set_id", "node_ids"],
+      "properties": {
+        "adjustment_set_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "node_ids": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "controlStrategy": {
+      "type": "object",
+      "required": [
+        "adjustment_variable_ids",
+        "negative_control_exposure_ids",
+        "negative_control_outcome_ids",
+        "prohibited_control_ids",
+        "post_treatment_control_prohibited",
+        "collider_control_prohibited"
+      ],
+      "properties": {
+        "adjustment_variable_ids": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "negative_control_exposure_ids": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "negative_control_outcome_ids": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "prohibited_control_ids": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "post_treatment_control_prohibited": {"const": true},
+        "collider_control_prohibited": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "missingnessPlan": {
+      "type": "object",
+      "required": [
+        "mechanism_hypotheses",
+        "missingness_indicator_ids",
+        "handling_rule_id",
+        "sensitivity_analysis_ids",
+        "missing_not_at_random_explicit",
+        "coercion_to_zero_prohibited",
+        "complete_case_default_prohibited"
+      ],
+      "properties": {
+        "mechanism_hypotheses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"enum": ["MCAR", "MAR", "MNAR", "unknown"]},
+          "uniqueItems": true
+        },
+        "missingness_indicator_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "handling_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "sensitivity_analysis_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "missing_not_at_random_explicit": {"const": true},
+        "coercion_to_zero_prohibited": {"const": true},
+        "complete_case_default_prohibited": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "dataPartition": {
+      "type": "object",
+      "required": ["partition_id", "role", "selection_rule_id", "artifact_ref", "frozen_at"],
+      "properties": {
+        "partition_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "role": {"enum": ["training", "calibration", "validation", "test", "audit_holdout"]},
+        "selection_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "artifact_ref": {"$ref": "common.schema.json#/$defs/artifactBinding"},
+        "frozen_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"}
+      },
+      "additionalProperties": false
+    },
+    "dataSplits": {
+      "type": "object",
+      "required": [
+        "split_specification_id",
+        "split_unit_id",
+        "assignment_rule_id",
+        "partitions",
+        "group_leakage_prohibited",
+        "temporal_leakage_prohibited",
+        "test_reuse_prohibited"
+      ],
+      "properties": {
+        "split_specification_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "split_unit_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "assignment_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "partitions": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/dataPartition"},
+          "contains": {
+            "properties": {"role": {"const": "test"}},
+            "required": ["role"]
+          },
+          "uniqueItems": true
+        },
+        "group_leakage_prohibited": {"const": true},
+        "temporal_leakage_prohibited": {"const": true},
+        "test_reuse_prohibited": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "accessEvent": {
+      "type": "object",
+      "required": ["access_event_id", "sequence", "actor", "action", "recorded_at", "artifact_refs", "rationale"],
+      "properties": {
+        "access_event_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "sequence": {"type": "integer", "minimum": 1},
+        "actor": {"$ref": "common.schema.json#/$defs/actorReference"},
+        "action": {
+          "enum": [
+            "data_registered",
+            "split_frozen",
+            "architecture_contract_frozen",
+            "analysis_preregistered",
+            "outcome_unblinded",
+            "test_accessed",
+            "analysis_run",
+            "deviation_logged"
+          ]
+        },
+        "recorded_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "artifact_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/artifactBinding"},
+          "uniqueItems": true
+        },
+        "rationale": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+      },
+      "additionalProperties": false
+    },
+    "accessChronology": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"$ref": "#/$defs/accessEvent"},
+      "allOf": [
+        {
+          "contains": {
+            "properties": {"action": {"const": "data_registered"}},
+            "required": ["action"]
+          }
+        },
+        {
+          "contains": {
+            "properties": {"action": {"const": "split_frozen"}},
+            "required": ["action"]
+          }
+        }
+      ],
+      "uniqueItems": true
+    },
+    "deviation": {
+      "type": "object",
+      "required": [
+        "deviation_id",
+        "status",
+        "discovered_at",
+        "logged_at",
+        "description",
+        "affected_contract_paths",
+        "impact_assessment",
+        "authorization_ref",
+        "evidence_refs"
+      ],
+      "properties": {
+        "deviation_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "status": {"$ref": "common.schema.json#/$defs/lifecycleStatus"},
+        "discovered_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "logged_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "description": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "affected_contract_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "impact_assessment": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "authorization_ref": {
+          "oneOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"type": "null"}
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/evidenceReference"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "unevaluatedProperties": false
+}

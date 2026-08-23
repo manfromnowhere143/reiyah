@@ -1,0 +1,269 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.0/gate-a-index.schema.json",
+  "title": "Hash-bearing Gate A public architecture index",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "index_id",
+    "version",
+    "as_of_date",
+    "lifecycle_status",
+    "architecture_status",
+    "operator_acceptance_state",
+    "operator_decision_binding",
+    "mission_release_id",
+    "protocol_release_id",
+    "distribution_profile",
+    "source_ledger_version",
+    "prior_candidate_observation",
+    "artifacts",
+    "exclusions",
+    "validation_profile",
+    "known_good_expectation",
+    "known_bad_expectation",
+    "runtime_authorized"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/gate-a-index.schema.json"
+    },
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "artifact_id": {
+      "const": "reiyah.artifact.gate-a-index-1.1.0"
+    },
+    "index_id": {
+      "const": "reiyah.gate-a-evidence-index"
+    },
+    "version": {
+      "const": "1.1.0"
+    },
+    "as_of_date": {
+      "const": "2026-08-23"
+    },
+    "lifecycle_status": {
+      "const": "proposed"
+    },
+    "architecture_status": {
+      "const": "architecture_complete"
+    },
+    "operator_acceptance_state": {
+      "description": "The hash-bound candidate index remains unaccepted; any later decision is an external append-only record that binds these bytes.",
+      "const": "unaccepted"
+    },
+    "operator_decision_binding": {
+      "description": "Null prevents a decision/index digest cycle. External decision records are intentionally excluded from this index.",
+      "type": "null"
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "media_type",
+          "digest_algorithm",
+          "artifact"
+        ],
+        "properties": {
+          "role": {
+            "enum": [
+              "acceptance_procedure",
+              "architecture_diagram",
+              "architecture_specification",
+              "attribution_notice",
+              "citation_metadata",
+              "claims_and_non_claims",
+              "contribution_policy",
+              "evidence_custody_documentation",
+              "fixture_catalog",
+              "frontier_baseline",
+              "frontier_discovery_register",
+              "glossary",
+              "historical_candidate_artifact",
+              "historical_manifest_release_ledger",
+              "historical_packet_recovery",
+              "historical_source_ledger",
+              "historical_standards_crosswalk",
+              "index_builder",
+              "known_bad_fixture",
+              "known_good_fixture",
+              "manifest_release_ledger",
+              "mathematical_specification",
+              "mission_manifest",
+              "offline_validator",
+              "open_source_license",
+              "operator_decision_template",
+              "preimplementation_gate",
+              "protocol_definition_registry",
+              "protocol_manifest",
+              "public_distribution_inventory",
+              "public_evidence_custody_profile",
+              "public_rights_revalidation",
+              "repository_contract",
+              "repository_metadata",
+              "repository_overview",
+              "research_function_registry",
+              "research_gap_register",
+              "research_operating_model",
+              "retained_source",
+              "schema",
+              "scientific_charter",
+              "scientific_contract_profile",
+              "security_policy",
+              "session_handoff",
+              "source_ledger",
+              "source_policy",
+              "standards_crosswalk",
+              "status_model",
+              "threat_model",
+              "validation_report",
+              "validation_specification"
+            ]
+          },
+          "media_type": {
+            "type": "string",
+            "pattern": "^[a-z0-9.+-]+/[a-z0-9.+-]+$"
+          },
+          "digest_algorithm": {
+            "const": "sha256"
+          },
+          "artifact": {
+            "allOf": [
+              {
+                "$ref": "common.schema.json#/$defs/artifactReference"
+              },
+              {
+                "required": [
+                  "version"
+                ]
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "exclusions": {
+      "description": "Acyclic inventory exclusions. Exclusion never implies scientific or operator authority.",
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "exclusion_id",
+          "match_kind",
+          "path",
+          "reason"
+        ],
+        "properties": {
+          "exclusion_id": {
+            "$ref": "common.schema.json#/$defs/stableIdentifier"
+          },
+          "match_kind": {
+            "enum": [
+              "exact",
+              "prefix"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512,
+            "pattern": "^[A-Za-z0-9._/-]+$",
+            "not": {
+              "pattern": "(^|/)\\.\\.?(/|$)"
+            }
+          },
+          "reason": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "validation_profile": {
+      "type": "object",
+      "required": [
+        "entrypoint",
+        "offline_required",
+        "deterministic_required",
+        "fail_closed_required"
+      ],
+      "properties": {
+        "entrypoint": {
+          "const": "tools/validate_gate_a.py"
+        },
+        "offline_required": {
+          "const": true
+        },
+        "deterministic_required": {
+          "const": true
+        },
+        "fail_closed_required": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "known_good_expectation": {
+      "const": "all_pass"
+    },
+    "known_bad_expectation": {
+      "const": "all_fail_for_declared_reason"
+    },
+    "runtime_authorized": {
+      "const": false
+    },
+    "mission_release_id": {
+      "const": "reiyah.mission@1.1.0"
+    },
+    "protocol_release_id": {
+      "const": "reiyah.protocol.harbor-gate-a@1.1.0"
+    },
+    "distribution_profile": {
+      "const": "public_open_source"
+    },
+    "source_ledger_version": {
+      "const": "1.1.0"
+    },
+    "prior_candidate_observation": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "version",
+        "sha256",
+        "observed_on",
+        "distribution_state",
+        "evidence_eligible"
+      ],
+      "properties": {
+        "artifact_id": {
+          "const": "reiyah.artifact.gate-a-index-1.0.0"
+        },
+        "version": {
+          "const": "1.0.0"
+        },
+        "sha256": {
+          "const": "sha256:3341696a730d2c4a4788f19612fc547eff926715b321e6d6bea99e2850c11944"
+        },
+        "observed_on": {
+          "const": "2026-08-22"
+        },
+        "distribution_state": {
+          "const": "internal_candidate_not_published"
+        },
+        "evidence_eligible": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

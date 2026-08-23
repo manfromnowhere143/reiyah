@@ -1,0 +1,11 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.assurance-dangling-hazard-reference",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/evaluation-assurance-bundle.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/evaluation-assurance-bundle.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/scenarios/0/hazards/0", "value": "reiyah.hazard.synthetic-absent"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"instance_pointer": "/scenarios/0/hazards/0", "schema_keyword": "semantic", "reason": "Scenario hazards must resolve to the static safety-argument hazard inventory."},
+  "runtime_execution_authorized": false
+}

@@ -1,0 +1,15 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.test-case-missing-oracle",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/evaluation-assurance-bundle.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/evaluation-assurance-bundle.json",
+  "mutations": [{"operation": "remove", "json_pointer": "/test_cases/0/oracle"}],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "instance_pointer": "/test_cases/0",
+    "schema_keyword": "required",
+    "reason": "A test case cannot define pass, fail, or abstention without an explicit versioned oracle contract."
+  },
+  "runtime_execution_authorized": false
+}

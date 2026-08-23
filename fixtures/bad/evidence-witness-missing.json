@@ -1,0 +1,77 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-evidence-witness-missing-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.evidence-witness-missing",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A support-like outcome lifecycle event cites exact active retained evidence whose inconclusive disposition is not a support-compatible witness.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-004",
+    "TM-008",
+    "TM-019"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-EVIDENCE-WITNESS-MISSING"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/outcome.json",
+        "json_pointer": "/lifecycle_history/0/status",
+        "value": "supported"
+      },
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/outcome.json",
+        "json_pointer": "/lifecycle_history/0/evidence_refs",
+        "value": [
+          {
+            "evidence_id": "reiyah.fixture.evidence-001",
+            "version": "1.0.0"
+          }
+        ]
+      },
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/evidence.json",
+        "json_pointer": "/lifecycle_status",
+        "value": "inconclusive"
+      },
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/evidence.json",
+        "json_pointer": "/lifecycle_history/0/status",
+        "value": "inconclusive"
+      },
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/evidence.json",
+        "json_pointer": "/basis",
+        "value": {
+          "state": "retained",
+          "source_record_ids": [
+            "src.nist.ai-100-1.2023.pdf"
+          ]
+        }
+      },
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/evidence.json",
+        "json_pointer": "/validity",
+        "value": {
+          "state": "valid",
+          "rule_ids": [
+            "reiyah.rule.fixture-not-evidence"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/claim-register.schema.json",
+  "title": "Proposed claim and non-claim register",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "register_id",
+    "release_id",
+    "version",
+    "as_of_date",
+    "lifecycle_status",
+    "relation",
+    "operator_acceptance",
+    "items"
+  ],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.0.0/claim-register.schema.json"},
+    "schema_version": {"$ref": "common.schema.json#/$defs/schemaVersion"},
+    "artifact_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "register_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "release_id": {"$ref": "common.schema.json#/$defs/releaseIdentifier"},
+    "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+    "as_of_date": {"$ref": "common.schema.json#/$defs/calendarDate"},
+    "lifecycle_status": {"const": "proposed"},
+    "relation": {"$ref": "common.schema.json#/$defs/releaseRelation"},
+    "operator_acceptance": {
+      "type": "object",
+      "required": ["state", "record_id"],
+      "properties": {
+        "state": {"const": "unaccepted"},
+        "record_id": {"type": "null"}
+      },
+      "additionalProperties": false
+    },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "item_id",
+          "kind",
+          "version",
+          "lifecycle_status",
+          "proposition",
+          "scope",
+          "falsifier_or_decision_rule",
+          "evidence_binding",
+          "prohibited_interpretation"
+        ],
+        "properties": {
+          "item_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "kind": {"enum": ["claim", "non_claim"]},
+          "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+          "lifecycle_status": {"const": "proposed"},
+          "proposition": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+          "scope": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+          "falsifier_or_decision_rule": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+          "decision_rule_id": {
+            "oneOf": [
+              {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+              {"type": "null"}
+            ]
+          },
+          "evidence_binding": {
+            "oneOf": [
+              {
+                "type": "object",
+                "required": ["state", "evidence_refs", "gap_reason"],
+                "properties": {
+                  "state": {"const": "evidence_gap"},
+                  "evidence_refs": {"type": "array", "maxItems": 0},
+                  "gap_reason": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "required": ["state", "evidence_refs", "rationale"],
+                "properties": {
+                  "state": {"const": "not_applicable"},
+                  "evidence_refs": {"type": "array", "maxItems": 0},
+                  "rationale": {"const": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."}
+                },
+                "additionalProperties": false
+              }
+            ]
+          },
+          "prohibited_interpretation": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {"kind": {"const": "non_claim"}},
+              "required": ["kind"]
+            },
+            "then": {
+              "properties": {
+                "lifecycle_status": {"const": "proposed"},
+                "evidence_binding": {
+                  "properties": {"state": {"const": "not_applicable"}},
+                  "required": ["state"]
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "evidence_binding": {
+                  "properties": {"state": {"const": "evidence_gap"}},
+                  "required": ["state"]
+                }
+              }
+            }
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

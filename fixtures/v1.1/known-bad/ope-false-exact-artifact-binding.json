@@ -1,0 +1,11 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope-false-exact-artifact-binding",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/sequential-off-policy-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/behavior_policy/policy_artifact", "value": {"artifact_id": "reiyah.artifact.synthetic-behavior-policy", "path": "fixtures/v1.1/good/nonexistent-policy.json", "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000", "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/policy.schema.json", "version": "1.1.0"}}],
+  "expected_outcome": "reject",
+  "expected_failure": {"instance_pointer": "/behavior_policy/policy_artifact", "schema_keyword": "semantic", "reason": "An exact artifact branch must resolve retained bytes with exact identity, schema, version, and digest."},
+  "runtime_execution_authorized": false
+}

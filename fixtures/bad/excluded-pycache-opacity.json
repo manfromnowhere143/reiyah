@@ -1,0 +1,31 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-excluded-pycache-opacity-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.excluded-pycache-opacity",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "Arbitrary opaque bytes are inserted under the excluded validator pycache path even though the corresponding source exists.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-019",
+    "TM-021",
+    "TM-025"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-EXCLUDED-PATH-INTRUSION"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "repository_inventory",
+    "mutations": [
+      {
+        "operation": "add_file",
+        "path": "tools/__pycache__/validate_gate_a.cpython-314.pyc",
+        "content_utf8": "synthetic opaque executable cache bytes"
+      }
+    ]
+  }
+}

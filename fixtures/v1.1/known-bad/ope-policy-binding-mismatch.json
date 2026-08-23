@@ -1,0 +1,11 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope-policy-binding-mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/sequential-off-policy-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/trajectories/0/target_policy_ref/expected_record_id", "value": "reiyah.policy.synthetic-unregistered"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"instance_pointer": "/trajectories/0/target_policy_ref/expected_record_id", "schema_keyword": "semantic", "reason": "Trajectory policy identities must exactly repeat the unavailable root policy bindings."},
+  "runtime_execution_authorized": false
+}

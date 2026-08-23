@@ -1,0 +1,30 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-non-python-runtime-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.non-python-runtime",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A JavaScript product-runtime module is inserted into a prohibited runtime directory.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-019",
+    "TM-025"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-RUNTIME-SCOPE-INTRUSION"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "repository_inventory",
+    "mutations": [
+      {
+        "operation": "add_file",
+        "path": "runtime/server.js",
+        "content_utf8": "export const runtimeAuthorized = true;\n"
+      }
+    ]
+  }
+}

@@ -1,0 +1,3421 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/gate-a-index.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "reiyah.artifact.gate-a-index-1.1.0",
+  "index_id": "reiyah.gate-a-evidence-index",
+  "version": "1.1.0",
+  "as_of_date": "2026-08-23",
+  "lifecycle_status": "proposed",
+  "architecture_status": "architecture_complete",
+  "operator_acceptance_state": "unaccepted",
+  "operator_decision_binding": null,
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+  "distribution_profile": "public_open_source",
+  "source_ledger_version": "1.1.0",
+  "prior_candidate_observation": {
+    "artifact_id": "reiyah.artifact.gate-a-index-1.0.0",
+    "version": "1.0.0",
+    "sha256": "sha256:3341696a730d2c4a4788f19612fc547eff926715b321e6d6bea99e2850c11944",
+    "observed_on": "2026-08-22",
+    "distribution_state": "internal_candidate_not_published",
+    "evidence_eligible": false
+  },
+  "artifacts": [
+    {
+      "role": "repository_metadata",
+      "media_type": "text/plain",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-gitattributes",
+        "path": ".gitattributes",
+        "sha256": "sha256:4611b4488511b5da659dc7dab92ad08f2a4e63cfe7def7fd5e2ea0152e6fe3d6",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "repository_metadata",
+      "media_type": "text/plain",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-gitignore",
+        "path": ".gitignore",
+        "sha256": "sha256:4647af9a530ab1c16255a274529f8c9c948e08cfc44371486c056f693a78ad77",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "repository_contract",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-agents-md",
+        "path": "AGENTS.md",
+        "sha256": "sha256:946b0a2176b28b3c354b86c5c4ba91b54dcb0a026edcc48f9103b4b0488818ff",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "citation_metadata",
+      "media_type": "application/yaml",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-citation-cff",
+        "path": "CITATION.cff",
+        "sha256": "sha256:5d87269d38429152504a08b2063e84c885d8e4fa8fbb4aa99a6597243ca96202",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "contribution_policy",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-contributing-md",
+        "path": "CONTRIBUTING.md",
+        "sha256": "sha256:5a8f9725e4a0739d71a597595f3a78a611c2c6a5a5ce4795ee0e3aaf5abdc4ae",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "open_source_license",
+      "media_type": "text/plain",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-license",
+        "path": "LICENSE",
+        "sha256": "sha256:c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "attribution_notice",
+      "media_type": "text/plain",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-notice",
+        "path": "NOTICE",
+        "sha256": "sha256:399e9755a8da1c350fefebb018efc107f67365238c48ac63101a7a15a60a3b29",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "repository_overview",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-readme-md",
+        "path": "README.md",
+        "sha256": "sha256:16f2c234e5a2f6d68e7deaf3eca6351d7bef03c64dcf1ac92bb45662a2da1eff",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "security_policy",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-security-md",
+        "path": "SECURITY.md",
+        "sha256": "sha256:96258d55ac6fd9e9b11e6054b82a7e611c60f89b9ef90f01ee35e862d630991a",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "architecture_specification",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-architecture-md",
+        "path": "docs/ARCHITECTURE.md",
+        "sha256": "sha256:410d887173e662da95c998a09669ea68898902a792aa8690576f0651e8687cae",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "claims_and_non_claims",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-claims-and-non-claims-md",
+        "path": "docs/CLAIMS_AND_NON_CLAIMS.md",
+        "sha256": "sha256:2f19f8c61a719ceab109fe437087e7f29d16a378d34c58d9e2db249f5308f8d1",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "frontier_baseline",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-frontier-baseline-2026-md",
+        "path": "docs/FRONTIER_BASELINE_2026.md",
+        "sha256": "sha256:dc982531dfe9586faa047007408e025f676a69d0711c54ead941790f79127b86",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "glossary",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-glossary-md",
+        "path": "docs/GLOSSARY.md",
+        "sha256": "sha256:413b798167144c98762bc2721f51cfa7ceda1000d0c5488e0224637ea7a61ba5",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "mathematical_specification",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-mathematical-specification-md",
+        "path": "docs/MATHEMATICAL_SPECIFICATION.md",
+        "sha256": "sha256:5999d4f3f7097fa363cf69a95bf7aaadc2cc2b7bc5bc8f28aef63a0901b68efc",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "preimplementation_gate",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-pre-implementation-gate-md",
+        "path": "docs/PRE_IMPLEMENTATION_GATE.md",
+        "sha256": "sha256:bf8557fe4a7d6460025919a29a90191c056b9b10a9909bfef75cb7e5cfc1b2f7",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "research_gap_register",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-research-gap-register-md",
+        "path": "docs/RESEARCH_GAP_REGISTER.md",
+        "sha256": "sha256:4c1eabf63ef4ef1ee688e9bdeef42b097cf85ab8a8f26481318e6f2e83be2d33",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "research_operating_model",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-research-operating-model-md",
+        "path": "docs/RESEARCH_OPERATING_MODEL.md",
+        "sha256": "sha256:1f356d9e7df561fb010bf05bbf36ca216312530e88adb2340b27310a83ec91b5",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "scientific_charter",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-scientific-charter-md",
+        "path": "docs/SCIENTIFIC_CHARTER.md",
+        "sha256": "sha256:b408ecd825084ea60bac6983c70cbeb508a2012855101c6cfc576a1c0db003de",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "session_handoff",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-session-handoff-md",
+        "path": "docs/SESSION_HANDOFF.md",
+        "sha256": "sha256:24e977fd10ab5c6737996222e339252a5c7bd5ca26a2a06223f693717ba54ba4",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "source_policy",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-source-policy-md",
+        "path": "docs/SOURCE_POLICY.md",
+        "sha256": "sha256:cf6bd5d43b16506643c2e715a4b4c73548f779eea01481f28d867891a9190df9",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "standards_crosswalk",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-standards-crosswalk-md",
+        "path": "docs/STANDARDS_CROSSWALK.md",
+        "sha256": "sha256:074eca674d98bd186392d75f3e6abfe1a0e03aaf397da4057dbc32feecd1745d",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "status_model",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-status-model-md",
+        "path": "docs/STATUS_MODEL.md",
+        "sha256": "sha256:6ca4b50bd47eec9671bdffd98aec60b244c907b0effa1da1105999f09041acdf",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "threat_model",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-threat-model-md",
+        "path": "docs/THREAT_MODEL.md",
+        "sha256": "sha256:74ef14d61e8c12f0548ac02bb1a50f567a94490de835a3dccc1a97e958489a5c",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "validation_specification",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-docs-validation-md",
+        "path": "docs/VALIDATION.md",
+        "sha256": "sha256:63d0dc8ee730efc9f4d78dcfc1dc8f84293b371633839f0550816f5a1397636d",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "evidence_custody_documentation",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-evidence-readme-md",
+        "path": "evidence/README.md",
+        "sha256": "sha256:58ea40f5019160cd22f6c598bf86a111ac07e6518f07886660c7b8cdc2461c1b",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "frontier_discovery_register",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.frontier-discovery-register-1.1.0",
+        "path": "evidence/frontier-discovery-register-1.1.0.json",
+        "sha256": "sha256:0567b9d00f50783574201bc367869094ca8383fce3e6dd9f56b6108a764c3093",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "public_distribution_inventory",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.public-distribution-inventory-1.1.0",
+        "path": "evidence/public-distribution-inventory-1.1.0.json",
+        "sha256": "sha256:e77b6f7d0403eb94a4664f850cdc0f7a57796bc542cf4e4e8092f30f31762502",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-inventory.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "public_evidence_custody_profile",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.public-evidence-custody-profile-1.1.0",
+        "path": "evidence/public-evidence-custody-profile-1.1.0.json",
+        "sha256": "sha256:80bc6f977ca8810b18cc077976c4c8517dc6f93d70b5ebbf455b433d73e3978b",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-evidence-custody-profile.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "public_rights_revalidation",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.public-rights-revalidation-2026-08-23",
+        "path": "evidence/public-rights-revalidation-2026-08-23.json",
+        "sha256": "sha256:e77ac2c02232211ec980ccceab7a09d345bb8035d26ac9207bd467d74407a6c1",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-rights-revalidation.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "source_ledger",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.source-ledger-1.1.0",
+        "path": "evidence/source-ledger-1.1.0.json",
+        "sha256": "sha256:61ea0ba90cba3bd68dba3283560c16b699f1e5d954062e1d53a18846c10d774c",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "historical_source_ledger",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.source-ledger-1.0.0",
+        "path": "evidence/source-ledger.json",
+        "sha256": "sha256:02000d76611f719884ddebc29d4dc48ca31781af474c086c8ea00bfb0ce6b4c0",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/source-ledger.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "retained_source",
+      "media_type": "application/x-ndjson",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.retained-src-iso-26262-1-2018-open-data",
+        "path": "evidence/sources/iso-open-data-68383-20260819.jsonl",
+        "sha256": "sha256:305ca3de040b5d216fc5ae9a79100ac2aaab470b41b0b2e6a0a32d653be04e1d",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "retained_source",
+      "media_type": "application/x-ndjson",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.retained-src-iso-21448-2022-open-data",
+        "path": "evidence/sources/iso-open-data-77490-20260819.jsonl",
+        "sha256": "sha256:4c172bebc38e108d7b9568dcea8eb1a13252cd13f5e48cf46a9e18e4a12fbb86",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "retained_source",
+      "media_type": "application/x-ndjson",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.retained-src-iso-tr-21959-1-2020-open-data",
+        "path": "evidence/sources/iso-open-data-78088-20260819.jsonl",
+        "sha256": "sha256:b92adcf7a8203d4e141057163c2d42b7bc79686542255d4a81962116326db223",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "retained_source",
+      "media_type": "application/x-ndjson",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.retained-src-iso-pas-8800-2024-open-data",
+        "path": "evidence/sources/iso-open-data-83303-20260819.jsonl",
+        "sha256": "sha256:55b96ac98610215c67189fb758be9aba9224d9409dfdb09dad0ed0aeb03e5d45",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "standards_crosswalk",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.standards-crosswalk-1.1.0",
+        "path": "evidence/standards-crosswalk-1.1.0.json",
+        "sha256": "sha256:82c034b57434d5242a2a09fac9b2c0d4442987cfe925a7631a737508681d5d7d",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/standards-crosswalk.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "historical_standards_crosswalk",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.standards-crosswalk-1.0.0",
+        "path": "evidence/standards-crosswalk.json",
+        "sha256": "sha256:1d1cf810b1cc5dfaf812e54c99925666f924e532d7550083f846119b3ed3d0e6",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/standards-crosswalk.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.abstained-coercion",
+        "path": "fixtures/bad/abstained-coercion.json",
+        "sha256": "sha256:8465c13ff9d97d8e7e31b4ac2a67afe132a1b2664d1c6607d58d45c15b863bc6",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.acceptance-replay",
+        "path": "fixtures/bad/acceptance-replay.json",
+        "sha256": "sha256:21ea21482588c767d4987c19a93296cdf974a430279e8ab14d98e84b4ab30ad0",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-analysis-specification-inconsistent-1.0.0",
+        "path": "fixtures/bad/analysis-specification-inconsistent.json",
+        "sha256": "sha256:6a9828a9215da1398a4e28b709626ea0d682975fea578d8c9eabd59e723dd6d7",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.digest",
+        "path": "fixtures/bad/bad-digest.json",
+        "sha256": "sha256:cabd9674ef9645611baf30e4ff96a193b0d086e884f6d6f7a72f0a9caa32e4ab",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-belief-policy-mismatch-1.0.0",
+        "path": "fixtures/bad/belief-policy-mismatch.json",
+        "sha256": "sha256:c3f3c3ca1f3ae500883fb3c92c2075de1bb865430ed8fc17e36fac689174496e",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-belief-tolerance-bypass-1.0.0",
+        "path": "fixtures/bad/belief-tolerance-bypass.json",
+        "sha256": "sha256:29e88bc2060368a0e367dc75f62c3c5878864e0aabd562b1df30ab900f0642bd",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-builder-write-network-tamper-1.0.0",
+        "path": "fixtures/bad/builder-write-network-tamper.json",
+        "sha256": "sha256:62da3f37d3122bdcb2daef2c9ad12c5fb1b5642e7a55b2c5c09930760325833c",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.circular-index",
+        "path": "fixtures/bad/circular-evidence-index.json",
+        "sha256": "sha256:e51c761249fe46f879d953a92b3f8154a431848bf5f60a15a243dad739b64347",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-claim-register-mismatch-1.0.0",
+        "path": "fixtures/bad/claim-register-mismatch.json",
+        "sha256": "sha256:19393eaf1359ecef9eaad5e56c7d78ff9cfd8fb220f0828cca0b261c422de286",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-cobound-tool-alias-tamper-1.0.0",
+        "path": "fixtures/bad/cobound-tool-alias-tamper.json",
+        "sha256": "sha256:73335c12011e754b393c26a12ae5bc5dcf49da27e2416ab9841ce17d182080f8",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-conflicting-decision-history-1.0.0",
+        "path": "fixtures/bad/conflicting-decision-history.json",
+        "sha256": "sha256:280f6bde18949c30d28fab5b482f3fb0d2054ce26f603b7e23da8b422048cc8b",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-context-mismatch-1.0.0",
+        "path": "fixtures/bad/context-mismatch.json",
+        "sha256": "sha256:6152a7d4d53c0bc446dad10277fdcd034a68f985b0f6f36baac21fba7a08d13b",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.dangling-reference",
+        "path": "fixtures/bad/dangling-reference.json",
+        "sha256": "sha256:f892b60476c32765a3dab129783c517dcb8f671a4ddfd7feb0bb0237c0f72c8a",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-dangling-result-lineage-1.0.0",
+        "path": "fixtures/bad/dangling-result-lineage.json",
+        "sha256": "sha256:39cfa717c2017b960fd00b74763aa3c8d97a4ffe106748ea3652d9b7210535a3",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.denominator",
+        "path": "fixtures/bad/denominator-mismatch.json",
+        "sha256": "sha256:65c2ade2b78003bffd55a7f4656b0363f9b49beae6f761533c8231091e6dd80a",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-evidence-policy-incomplete-1.0.0",
+        "path": "fixtures/bad/evidence-policy-incomplete.json",
+        "sha256": "sha256:55c1708b37986b139890b840d03587467abcded0fbbd02604649efd47e4c177c",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-evidence-witness-missing-1.0.0",
+        "path": "fixtures/bad/evidence-witness-missing.json",
+        "sha256": "sha256:d528d59e259d242a4b79de5ea6efbb62b0739ff4b20a62f6d25cab710c929150",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-excluded-canonical-report-private-bytes-1.0.0",
+        "path": "fixtures/bad/excluded-canonical-report-private-bytes.json",
+        "sha256": "sha256:cbdda91758ae61865af0628541be819c0b745999e0489e39d04e623ed5bb1bbe",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-excluded-decision-private-marker-1.0.0",
+        "path": "fixtures/bad/excluded-decision-private-marker.json",
+        "sha256": "sha256:e1641dc175064079cef30c419883807c33e0efa023696e7013d669ac2d5a4b3c",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-excluded-path-intrusion-1.0.0",
+        "path": "fixtures/bad/excluded-path-intrusion.json",
+        "sha256": "sha256:ec72eb4961d406915c8ddf4252138c5b2ace170578d9e3c3366b8635851742f9",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-excluded-pycache-opacity-1.0.0",
+        "path": "fixtures/bad/excluded-pycache-opacity.json",
+        "sha256": "sha256:7de27168170fe3e20d61940921db2aae3425a68a791aa9b04ed2705374ba1f9e",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-forged-external-control-pass-1.0.0",
+        "path": "fixtures/bad/forged-external-control-pass.json",
+        "sha256": "sha256:924b458c3a5a1e87f83ad118813a3029e880d8bf087e6eab13a526c8b24d959e",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-historical-recovery-class-mismatch-1.1.0",
+        "path": "fixtures/bad/historical-recovery-class-mismatch.json",
+        "sha256": "sha256:f79ffed78077c11f214992bde04a53fe809c9fb810083b065b645d154c111e4e",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.identity-authority",
+        "path": "fixtures/bad/identity-authority-mismatch.json",
+        "sha256": "sha256:867624a02cd2eed5f5b9cb04393929ff9ced7cf121d09937dcaa32f75259e581",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.illegal-status",
+        "path": "fixtures/bad/illegal-status.json",
+        "sha256": "sha256:6499ef1de8ff9787c176111fceff046dd49232e1b22b29ab9e218a8ce0d9e965",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.illegal-transition",
+        "path": "fixtures/bad/illegal-transition.json",
+        "sha256": "sha256:41a6439e51b48becd7cf573ea109f9729708504869b7176dcac12aec3e8e136c",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-incoherent-result-uncertainty-1.0.0",
+        "path": "fixtures/bad/incoherent-result-uncertainty.json",
+        "sha256": "sha256:5ae889053bd92c752c943a3de562a1ad49e3191eba4b28fb2e969921740c0ef3",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-index-role-ineligible-1.0.0",
+        "path": "fixtures/bad/index-role-ineligible.json",
+        "sha256": "sha256:1568209362d26f477e13e33c9e2ee2804872b338d20d343b5ef57f12c79a6790",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-ineligible-evidence-basis-1.0.0",
+        "path": "fixtures/bad/ineligible-evidence-basis.json",
+        "sha256": "sha256:2c9d4b08c7b1ca4318297f54cce9ad0c395848e7bdf98d9a3c4eef3491749974",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-ineligible-result-evidence-binding-1.0.0",
+        "path": "fixtures/bad/ineligible-result-evidence-binding.json",
+        "sha256": "sha256:e9db55a88a06f0a77a98ef17255e92f27ae3876fe8f7b4f7a7ca2270e328ea76",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-invalid-manifest-lineage-1.0.0",
+        "path": "fixtures/bad/invalid-manifest-lineage.json",
+        "sha256": "sha256:3be45cf167ebd14e1b3bcc57d098dd9a443eab7062d7fecb4a5d16826ce518e4",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-joint-standards-identity-forgery-1.0.0",
+        "path": "fixtures/bad/joint-standards-identity-forgery.json",
+        "sha256": "sha256:a3d32e0cd6cc188b73f724f5647f949cfe75b0985e2c5c7cb938f4a7c574e010",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-json-duplicate-key-1.0.0",
+        "path": "fixtures/bad/json-duplicate-key.json",
+        "sha256": "sha256:f94c50af7d1f9bf4be7fb8ba22c593f308fe995b4e53b38039a859acad618350",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.kind-conflation",
+        "path": "fixtures/bad/kind-conflation.json",
+        "sha256": "sha256:90d7a945bc0091dddbe9348d9aff57e402d9ead651a7f85c5933aad91fc59f04",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-malicious-successor-head-1.0.0",
+        "path": "fixtures/bad/malicious-successor-head.json",
+        "sha256": "sha256:f249da56ef2bddfbd894878cb4747a00e68e9f79ac108b996d4e5da4ff6774f1",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-manifest-logical-id-replacement-1.0.0",
+        "path": "fixtures/bad/manifest-logical-id-replacement.json",
+        "sha256": "sha256:25867490aa4085e608c4148d43b0bbad336dab19d60d2550fd1f04b73fb94fd2",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.manifest-mutation",
+        "path": "fixtures/bad/manifest-mutation.json",
+        "sha256": "sha256:b85bac6fb8fefdff7fc9bb8654a86ee0fc61017e123ab5c798371f5d91e8e9ac",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.missing-coercion",
+        "path": "fixtures/bad/missing-coercion.json",
+        "sha256": "sha256:8d6ff07977a42cb5bee0a85ce528053efd28926be863f3b8c0e9721876ab92fa",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-missing-epistemic-rule-1.0.0",
+        "path": "fixtures/bad/missing-epistemic-rule.json",
+        "sha256": "sha256:7b92751334e99aef3ab79b7275f990c01530ada37ab554146e408a46d3bb2acf",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-missing-mission-boundary-1.0.0",
+        "path": "fixtures/bad/missing-mission-boundary.json",
+        "sha256": "sha256:c1c427a1d51ffb739b10ab30290a1383b57aadd569d922359b7fa58dab1fe6a4",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.missing-provenance",
+        "path": "fixtures/bad/missing-provenance.json",
+        "sha256": "sha256:78900b058e2073a4c4135f1282f34977e3d80209a723764db5dd4fc3f4d0e844",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-narrative-binding-mismatch-1.0.0",
+        "path": "fixtures/bad/narrative-binding-mismatch.json",
+        "sha256": "sha256:e303ead7114795fbe120ee2f41a4b2d054f67d9ac2bc0d67e23caf8f198f6bf8",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-non-python-runtime-1.0.0",
+        "path": "fixtures/bad/non-python-runtime.json",
+        "sha256": "sha256:5f2e9ee5641d3252a592134418341ec2727ba29d7e3362e54631d4bef52c88b5",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-noncanonical-index-1.0.0",
+        "path": "fixtures/bad/noncanonical-index.json",
+        "sha256": "sha256:01a1ba76b354a1c1316696130d46ff95c6f448f4be14e6ae4a8b1ba9ff01e351",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.nondeterminism",
+        "path": "fixtures/bad/nondeterministic-input.json",
+        "sha256": "sha256:fb255b678377a8f4dc3075c00a90fba35a537feb9832266a4cef903991051355",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-nonfinite-number-1.0.0",
+        "path": "fixtures/bad/nonfinite-number.json",
+        "sha256": "sha256:99e2d4aeefebc072d13816ba2595dfb7401f8d257f7da9870de633702307f72e",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-nonmonotone-status-history-1.0.0",
+        "path": "fixtures/bad/nonmonotone-status-history.json",
+        "sha256": "sha256:486149bc910ff448f71246aec3066390a371af9714b749d71ed62dc40490ab78",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-nonnormalized-belief-1.0.0",
+        "path": "fixtures/bad/nonnormalized-belief.json",
+        "sha256": "sha256:b5de51f3b6f9213e25232896c331cff670873401cd5aed993a96942877fb06af",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.omitted-group",
+        "path": "fixtures/bad/omitted-group.json",
+        "sha256": "sha256:bc40f027c31d5ebed40275cd0e9f320d59e4154bddbbc9a518f23b352546657d",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.ood-coercion",
+        "path": "fixtures/bad/ood-coercion.json",
+        "sha256": "sha256:896ead119f2e514ed586a8bd45f826e3f1286eb1d2d74b53c5630e25bb471ed3",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-preregistration-chronology-1.0.0",
+        "path": "fixtures/bad/preregistration-chronology.json",
+        "sha256": "sha256:11bba27900343a2f62870d61db5a4ee9a6a622d5d77e0c50ee74388b2c7ad6d3",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-preregistration-freeze-mismatch-1.0.0",
+        "path": "fixtures/bad/preregistration-freeze-mismatch.json",
+        "sha256": "sha256:731934b5d602cbf74fcb9aa8c8324c46499de2e8109d5082c4f84d794c61e688",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.private-data",
+        "path": "fixtures/bad/prohibited-private-data.json",
+        "sha256": "sha256:2f2e6a1da477c84045bb3bd2d809ef03a9f172ab9c55423a8d4a2099e3f14e7e",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-protocol-stale-mission-head-1.0.0",
+        "path": "fixtures/bad/protocol-stale-mission-head.json",
+        "sha256": "sha256:51dc39f0b97073230d86b66a60acf507dda7107ffb45f53918ddcc34b7e41a2a",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-public-custody-action-mismatch-1.1.0",
+        "path": "fixtures/bad/public-custody-action-mismatch.json",
+        "sha256": "sha256:cb9ffdaa65470e5f9750c2eb1204238bed0881bb98329f3fd1e524ffc857c36b",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-public-distribution-receipt-malformed-1.1.0",
+        "path": "fixtures/bad/public-distribution-receipt-malformed.json",
+        "sha256": "sha256:730fe6c91703306a49e12f13568a2e90112b49eaa04f0037b16c6b3a37226cc7",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-reference-chain-incoherent-1.0.0",
+        "path": "fixtures/bad/reference-chain-incoherent.json",
+        "sha256": "sha256:4b5285c8c380491ece3e325a1c6b18acae9d5c61d0d9b09b7ec8e15ec84c1367",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-reference-cycle-1.0.0",
+        "path": "fixtures/bad/reference-cycle.json",
+        "sha256": "sha256:aff9c05a787272702f4f7ec549ca21fe1446ebf1dbc9979ae7e01c1ef14e23d0",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.release-id-reuse",
+        "path": "fixtures/bad/release-id-reuse.json",
+        "sha256": "sha256:413bae689a91c53abe3988797dbeed9335b48eb3486270fc4b9aa88f23d58673",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-replication-same-experiment-1.0.0",
+        "path": "fixtures/bad/replication-same-experiment.json",
+        "sha256": "sha256:a1c7df25871f0e41fa633466fef7d956faab55ee6316c24b16a521bcdf2c1879",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-research-registry-order-mismatch-1.1.0",
+        "path": "fixtures/bad/research-registry-order-mismatch.json",
+        "sha256": "sha256:7fa128a1bf9c2b2ad1b5680fd5dcde5e6d1b2874ead96abe5ca54529513a37b2",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-result-experiment-ineligible-1.0.0",
+        "path": "fixtures/bad/result-experiment-ineligible.json",
+        "sha256": "sha256:aee49e2768352b573d66c65070d5375a8bc5b22f9f1dcff8752da3f7fbdfcd51",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-result-metric-lineage-status-1.0.0",
+        "path": "fixtures/bad/result-metric-lineage-status.json",
+        "sha256": "sha256:db6a8c380f75b438ddae5304cb53a4f747726dae97475215c27bcad7bc250e12",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-result-metric-replicated-without-lineage-1.0.0",
+        "path": "fixtures/bad/result-metric-replicated-without-lineage.json",
+        "sha256": "sha256:9be39eaaba0d2f2b691216aa1681d4e1aba50daf8e5a2515c10e8e31e12350c6",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-result-specification-mismatch-1.0.0",
+        "path": "fixtures/bad/result-specification-mismatch.json",
+        "sha256": "sha256:76f8cb24465d83072f971d6b65a389fa128323a088323f93cc62925cba24aac0",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-result-status-mismatch-1.0.0",
+        "path": "fixtures/bad/result-status-mismatch.json",
+        "sha256": "sha256:e636354a6b1dd68e4071540d2630613f2d7c18e94b31d02f717ee42adb35d0f0",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.runtime-intrusion",
+        "path": "fixtures/bad/runtime-scope-intrusion.json",
+        "sha256": "sha256:3a604cc8445a4892162d47d76095b844eaa4f18991a6b5b11a63e8e396ba612b",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-scientific-contract-profile-incomplete-1.1.0",
+        "path": "fixtures/bad/scientific-contract-profile-incomplete.json",
+        "sha256": "sha256:cf6b485cf54a7f70fe033f45b7cef866282073cefb110aebf274ee4475dc2a9c",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-scientific-lineage-1.0.0",
+        "path": "fixtures/bad/scientific-lineage.json",
+        "sha256": "sha256:b171bada1c74131950fdeec551aefcc00716ec84aa3b973378c9eea69ac90cb7",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-scientific-reference-unresolved-1.1.0",
+        "path": "fixtures/bad/scientific-reference-unresolved.json",
+        "sha256": "sha256:6b24859cee9cc3234459d97a4a57f91d0753aa16a1d317e100215d5a6d7c267a",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.sensor-invalid-coercion",
+        "path": "fixtures/bad/sensor-invalid-coercion.json",
+        "sha256": "sha256:db557f27ee82adc840d31ff65f7497bf66694d52138e4136b211c96f2bb8f842",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-standards-evidence-incomplete-1.0.0",
+        "path": "fixtures/bad/standards-evidence-incomplete.json",
+        "sha256": "sha256:64f91996dad4e2def2ffec488850c5c187ab42b175cccfacc6dda3ad83be6580",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-standards-identity-mismatch-1.0.0",
+        "path": "fixtures/bad/standards-identity-mismatch.json",
+        "sha256": "sha256:05d5780d480f9434b1627570819d751b7f206dfa23bc81969fd1ce3f068868f5",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-standards-mapping-ambiguous-1.0.0",
+        "path": "fixtures/bad/standards-mapping-ambiguous.json",
+        "sha256": "sha256:a916b0cf6194d5630be41e490ddd2aacf497795d512d0c54a1328a4e5208be4c",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-status-history-mismatch-1.0.0",
+        "path": "fixtures/bad/status-history-mismatch.json",
+        "sha256": "sha256:c2c0cef706f47f0da7a068ae2be2f5d3867cb7ce299864cf5e0c0256cc99d10d",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.temporal-leakage",
+        "path": "fixtures/bad/temporal-leakage.json",
+        "sha256": "sha256:723338f2bb275a9949b4c9e3c9b6f29d3e4ab578f2cb3c27394209c663e8f411",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-threat-coverage-incomplete-1.0.0",
+        "path": "fixtures/bad/threat-coverage-incomplete.json",
+        "sha256": "sha256:c368cea4109e405bfb2b92d225e30063e6a516b456e5dfbf1e9da8c579f1699e",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-unbound-metric-policy-1.0.0",
+        "path": "fixtures/bad/unbound-metric-policy.json",
+        "sha256": "sha256:f2df0c91f08f7f3a9e52ac434c33706a0dfbc891f41ea1c399b7a67ae901e67b",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-unledgered-source-1.0.0",
+        "path": "fixtures/bad/unledgered-source.json",
+        "sha256": "sha256:d809fd4dd4cf9a7f6c62b2344303d2bfce9510291c4a3166de692576421e8ee6",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.unmeasured-coercion",
+        "path": "fixtures/bad/unmeasured-coercion.json",
+        "sha256": "sha256:ad9c8a4701b7f778fdab65c301713f6d9c898f2745187f2acd19adcdaabe114b",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-unresolved-preregistration-artifact-1.0.0",
+        "path": "fixtures/bad/unresolved-preregistration-artifact.json",
+        "sha256": "sha256:c4a828e32a395b1d43cac357e620cce16344ecb8d1f537c1142f430907a11855",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-unresolved-protocol-definition-1.0.0",
+        "path": "fixtures/bad/unresolved-protocol-definition.json",
+        "sha256": "sha256:896ac580aff021f2b133794f66c02f0bfe58bf3664bb2cac3dc95f9122925a27",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.standards-claim",
+        "path": "fixtures/bad/unsupported-standards-claim.json",
+        "sha256": "sha256:c49279e59f8660b038ec55fd947df677de91e822f1c1055abddce7e233c066eb",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-validator-write-network-tamper-1.0.0",
+        "path": "fixtures/bad/validator-write-network-tamper.json",
+        "sha256": "sha256:f91f8eb0c439887cb1d5937e51c240c645140dc6f93ccad61a72576821e7ca4c",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-validity-boundary-incomplete-1.0.0",
+        "path": "fixtures/bad/validity-boundary-incomplete.json",
+        "sha256": "sha256:5c213a07d1c7c9b2af58fe4dc8c79c6cd6c9ccc5a6fdda2297a174be208cb9bf",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-worst-group-mismatch-1.0.0",
+        "path": "fixtures/bad/worst-group-mismatch.json",
+        "sha256": "sha256:1f91ae823c4927359bd50f5311bc515a6e410b79ee35d6c92551ff63b21a3153",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.bad.wrong-kind-reference",
+        "path": "fixtures/bad/wrong-type-reference.json",
+        "sha256": "sha256:138e6b67f54d94f9a45adc6cb2ecb1f0e0e01482749b45ee50a9f05700e9bd5d",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-zero-coverage-report-1.0.0",
+        "path": "fixtures/bad/zero-coverage-validation-report.json",
+        "sha256": "sha256:a59bbbb26cb2c14b0cf4f6cf052ebcf89cb884a5c90a598b400cdd8dad7fd067",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-bad-zero-coverage-worst-group-confidence-1.0.0",
+        "path": "fixtures/bad/zero-coverage-worst-group-confidence.json",
+        "sha256": "sha256:f6a6c70cd6576928d536242d78285c7f04e4af1410dfd61865c9410cd0f6aaf3",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "fixture_catalog",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.fixture-catalog-1.1.0",
+        "path": "fixtures/fixture-catalog.json",
+        "sha256": "sha256:e76e02e3bbeb7149ede2a6c23e1dc91f3fa8fbecfd452d6f938ad4423b3ad410",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/fixture-catalog.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.good.acyclic-index",
+        "path": "fixtures/good/acyclic-index.json",
+        "sha256": "sha256:9d2c3d68d8d214b1b34dd65e94d044fa96699252570ab2c359d7dfc8dfb3e0ad",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.analysis-specification.good-1",
+        "path": "fixtures/good/analysis-specification.json",
+        "sha256": "sha256:3abb06019f2626fc9ee37424c4d20264639009dece5b888afdfb8c23a5941c71",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/analysis-specification.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.good.canonical-chain",
+        "path": "fixtures/good/canonical-object-chain.json",
+        "sha256": "sha256:d92b8761ab8a758b9c8dfc251486232cc46a918536614a176114129e793ff57c",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.good.groups",
+        "path": "fixtures/good/complete-group-coverage.json",
+        "sha256": "sha256:31fb29425b3a3fde231383bc5b551fe556a718a32124e97374f53aa55d021613",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.good.determinism",
+        "path": "fixtures/good/deterministic-inputs.json",
+        "sha256": "sha256:aa66e58beaa76049b4f864285b2871d509f2022835122852f7242bd3aebc6a1a",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.experiment.good-2",
+        "path": "fixtures/good/experiment-preregistered.json",
+        "sha256": "sha256:89b0a589fe6f4df74c90f0d3e029ae4c05f5f2900c9832d9144c45d85f640e69",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/experiment.schema.json",
+        "version": "2.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.good.experiment-result",
+        "path": "fixtures/good/experiment-result-schema-instances.json",
+        "sha256": "sha256:3331e6ac5357c9c179238d727de3c4b515724ac2b16af0cafcb11d083ab15180",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.experiment.good-1",
+        "path": "fixtures/good/experiment.json",
+        "sha256": "sha256:1f7b6c8f7f9d55cb441df7932fdc16cd79288048f2629ccad9421aadbb860e53",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/experiment.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.good.epistemic-states",
+        "path": "fixtures/good/explicit-epistemic-states.json",
+        "sha256": "sha256:17717304b429af5ac7ebc9cb2787642a1e559118102f3aee2bd0e2cef65d476d",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.good.lifecycle",
+        "path": "fixtures/good/legal-lifecycle-transition.json",
+        "sha256": "sha256:6469f5e3f2fdb954e0952ea9e4503c706099de68b192851c970d43b5e3be55e5",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.preregistration-record.good-1",
+        "path": "fixtures/good/preregistration-record.json",
+        "sha256": "sha256:0f43b12b2d1cbd406465a03b819b793cc264b035be99e4bd2270de85546f6f9d",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/preregistration-record.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.good.denominator",
+        "path": "fixtures/good/reconciled-denominator.json",
+        "sha256": "sha256:1606682a01b2a968e76c8f35115b57ad115d8c110d65dffbd54ae847c4549231",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.result.good-1",
+        "path": "fixtures/good/result.json",
+        "sha256": "sha256:a5524a5336e53f356869cd5cb43da3461350dbb1af2f52cdda271defa63f5368",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/result.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.evaluation-assurance.good",
+        "path": "fixtures/v1.1/good/evaluation-assurance-bundle.json",
+        "sha256": "sha256:a6db1445261d8f8c1f944a07b02ab4101916addd7bbc28f022d4efa43b026023",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/evaluation-assurance-bundle.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.human-automation-assessment.good",
+        "path": "fixtures/v1.1/good/human-automation-assessment.json",
+        "sha256": "sha256:300e507edcf84a16ce76a4500ba1bfe268fc821a4150a66b440bce17e37b8ad9",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/human-automation-assessment.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.joint-performance.good",
+        "path": "fixtures/v1.1/good/joint-performance-evaluation.json",
+        "sha256": "sha256:bcad2f69f35de06e235645a83515cb5eeebd4cb1cb9cdd42bc3c210975f7fc92",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/joint-performance-evaluation.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.sequential-ope.good",
+        "path": "fixtures/v1.1/good/sequential-off-policy-evaluation.json",
+        "sha256": "sha256:990b88c62f11b72be2503f18d0ce5b03b3585efd7af176bb78dfdc1a5433d15c",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/sequential-off-policy-evaluation.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.study-design.good",
+        "path": "fixtures/v1.1/good/study-design-preregistration.json",
+        "sha256": "sha256:2956e87508c3be5f5dec3f14bd812f2cb78c8fb4c7fd42ccec639335aab3f969",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/study-design-preregistration.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-actor-role-conflation-json",
+        "path": "fixtures/v1.1/known-bad/actor-role-conflation.json",
+        "sha256": "sha256:c4faf87aa4d2f6f4c12a27476adba74dfb55f504020cb85cf971d555b905b04f",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-assurance-dangling-hazard-reference-json",
+        "path": "fixtures/v1.1/known-bad/assurance-dangling-hazard-reference.json",
+        "sha256": "sha256:448a8e53145138670a011a9a62c3ea6597a34b93402be2982435a1dbd5562a3c",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-assurance-instruction-binding-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/assurance-instruction-binding-mismatch.json",
+        "sha256": "sha256:22b48fe4a5cd7236180f3db59d18ac489adce4a15b5a6feb5fd2a89531b9d386",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-belief-missing-calibration-target-json",
+        "path": "fixtures/v1.1/known-bad/belief-missing-calibration-target.json",
+        "sha256": "sha256:054520d20344037d82806867ade35d36dada2752754e87e5a7540dbcca6ed829",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-belief-missing-holder-json",
+        "path": "fixtures/v1.1/known-bad/belief-missing-holder.json",
+        "sha256": "sha256:88c9e5970ab09ad163a9091c460d3b73f5f77a170f70b235761b7ce8f9644654",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-belief-state-space-membership-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/belief-state-space-membership-mismatch.json",
+        "sha256": "sha256:4c3a092c1df4321d8d80630b64c06ba5a80baf7cd1711faa689a842241a3ba29",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-benchmark-post-hoc-relabeling-json",
+        "path": "fixtures/v1.1/known-bad/benchmark-post-hoc-relabeling.json",
+        "sha256": "sha256:f6818b259ea186ba520ef42d96c412d102de6be2c554e389c4dc3cfb3c5af3d9",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-conformal-group-universe-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/conformal-group-universe-mismatch.json",
+        "sha256": "sha256:fdc63ad95d494c4ad0a53a6629d2e43d54ad645379d4b71adcefb31b90cce7b1",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-conformal-missing-exchangeability-disposition-json",
+        "path": "fixtures/v1.1/known-bad/conformal-missing-exchangeability-disposition.json",
+        "sha256": "sha256:f96960c2ddae7579f4f22248b65d8287d339f33a29f5f2b135adf7d249977250",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-dataset-missing-ethics-review-json",
+        "path": "fixtures/v1.1/known-bad/dataset-missing-ethics-review.json",
+        "sha256": "sha256:149b02f0d208707a61b270eed229b1ae484dd98a161f9b62f24df20fd6d3133b",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-decision-information-membership-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/decision-information-membership-mismatch.json",
+        "sha256": "sha256:d3ab45236225b9b51d4fa65b213f0f708c3e2f00d366c9c288ef596d387d587d",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-decision-information-set-mutable-json",
+        "path": "fixtures/v1.1/known-bad/decision-information-set-mutable.json",
+        "sha256": "sha256:773855a6000f301fc79bd06a93696873550620a32edde126c1fd85188d45afca",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-decision-missing-actor-json",
+        "path": "fixtures/v1.1/known-bad/decision-missing-actor.json",
+        "sha256": "sha256:1f7c850e8bfcec8935da895c80ed04f287186983c14d6d0b4b4cf1fd697318b8",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-deployment-authorized-by-assurance-bundle-json",
+        "path": "fixtures/v1.1/known-bad/deployment-authorized-by-assurance-bundle.json",
+        "sha256": "sha256:9dff09baf9231cee7f59847edcd5f04d673dcf261ad951f3c00f0900ce73145f",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-false-available-encounter-reference-json",
+        "path": "fixtures/v1.1/known-bad/false-available-encounter-reference.json",
+        "sha256": "sha256:399f846e2677b4c6a820dac4b5994d1d6fa9833b1c2e6235b9f9c60dc5682556",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-joint-arithmetic-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/joint-arithmetic-mismatch.json",
+        "sha256": "sha256:eac76463c5d94e5be4e72541e819393baf64ad7fa92c7d35f83d06c1917672de",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-lifecycle-prior-chain-unresolved-json",
+        "path": "fixtures/v1.1/known-bad/lifecycle-prior-chain-unresolved.json",
+        "sha256": "sha256:b51d8876eaf649ae851e30be3e96a276956b22884bc3198c6762d9488f88cc40",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-observation-available-after-decision-json",
+        "path": "fixtures/v1.1/known-bad/observation-available-after-decision.json",
+        "sha256": "sha256:706aa22734cc9dcacad4f00ce48ce246e719ab1aa2f6bcca238f1be042e6d7d9",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-observed-authority-without-basis-json",
+        "path": "fixtures/v1.1/known-bad/observed-authority-without-basis.json",
+        "sha256": "sha256:47214e67c4d7dd69f3e41ca9cbb3f3d68e8a41a663e187bdc5e8b779c22240e6",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-odd-missing-exit-conditions-json",
+        "path": "fixtures/v1.1/known-bad/odd-missing-exit-conditions.json",
+        "sha256": "sha256:31a97103e31071e12c4424600dec18af7460b94ca4b3169b77e5c24ccabcbe1a",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-ood-unresolved-items-dropped-json",
+        "path": "fixtures/v1.1/known-bad/ood-unresolved-items-dropped.json",
+        "sha256": "sha256:c8e20f424ce32c807c3c3dce4d78dff406ea92935ccdee293f43f397e3174c53",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-ope-action-space-membership-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/ope-action-space-membership-mismatch.json",
+        "sha256": "sha256:5255659417b69b5692c031673f2ba85887bbce7df6f42ac35d306a51caf0a4cb",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-ope-ess-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/ope-ess-mismatch.json",
+        "sha256": "sha256:57e16640a10db7b774eb7e4960d17d1132f085ebe6335fb476936471f3073d9f",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-ope-estimator-binding-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/ope-estimator-binding-mismatch.json",
+        "sha256": "sha256:f0c2b08e9baef9d0c59f16f3c63797ae475af9d50d0d5eb6c23713417864929b",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-ope-extrapolation-permitted-json",
+        "path": "fixtures/v1.1/known-bad/ope-extrapolation-permitted.json",
+        "sha256": "sha256:2b471bf75f1a6975f21763d42066c2d3e8019ba5d41cf4df6335f036a0581daf",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-ope-false-exact-artifact-binding-json",
+        "path": "fixtures/v1.1/known-bad/ope-false-exact-artifact-binding.json",
+        "sha256": "sha256:fb1f8ded8fa8424965f623bdf6901c11c55d67f167c86a8ad34a97b63dfe03d0",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-ope-horizon-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/ope-horizon-mismatch.json",
+        "sha256": "sha256:ac01b11c60c3f3da34c973c518c7b8785b464e6ba2cac0124951665226f922fc",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-ope-policy-binding-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/ope-policy-binding-mismatch.json",
+        "sha256": "sha256:5dc6c10712581273d2e23c41fe1a167bf8c4b7760176bae580568ecb78fd0089",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-ope-policy-versions-not-exact-json",
+        "path": "fixtures/v1.1/known-bad/ope-policy-versions-not-exact.json",
+        "sha256": "sha256:859086ad71d608078b83273092be5ac0429c2c9e814a9fa776f3b3ac367747e9",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-ope-zero-behavior-propensity-json",
+        "path": "fixtures/v1.1/known-bad/ope-zero-behavior-propensity.json",
+        "sha256": "sha256:e104b673ac187ca006e12e7a5df1051433b6eb3fe835c1fc0b50a54cb771d9f8",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-readiness-capability-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/readiness-capability-mismatch.json",
+        "sha256": "sha256:3b4ce17072b1ffb9da3c354e4542ab18cffc75446f2e5e2b013bb94cd79a83a0",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-readiness-proxy-substitution-json",
+        "path": "fixtures/v1.1/known-bad/readiness-proxy-substitution.json",
+        "sha256": "sha256:edbb1add2824e5129554c2b1e10f12e0f11e2ba0ef62534a8312d0050ec84df4",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-readiness-window-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/readiness-window-mismatch.json",
+        "sha256": "sha256:39c3bc5e1e07ccb88d28b71e388c6f32b033edd8e54a1f7e96be95bf7607cd6d",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-recoverability-missing-competing-event-policy-json",
+        "path": "fixtures/v1.1/known-bad/recoverability-missing-competing-event-policy.json",
+        "sha256": "sha256:ab6dea55dd2e6eb128c5bc2e346c7097583cbf0321be8bf259de426d2422c6d3",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-recovery-event-outside-window-json",
+        "path": "fixtures/v1.1/known-bad/recovery-event-outside-window.json",
+        "sha256": "sha256:6f69b300e9b70f49c9a63928f6d34cdec13233fb4a21c97b4b0c23b13f4b440a",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-selected-choice-membership-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/selected-choice-membership-mismatch.json",
+        "sha256": "sha256:3401782054eefd04afb61f9e6ab9689536c3e5de6c29930a0e38f91bab3cc84a",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-selective-threshold-not-preregistered-json",
+        "path": "fixtures/v1.1/known-bad/selective-threshold-not-preregistered.json",
+        "sha256": "sha256:5591fe87f4e17b583e00ec2dba4fc713766e6657b3a5e5cc11245d0d3225eb42",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-silent-miss-without-opportunity-json",
+        "path": "fixtures/v1.1/known-bad/silent-miss-without-opportunity.json",
+        "sha256": "sha256:c803be86eaa298d3a3516d3697e14e1332052c13e6435b8bf7323e2f101bbf96",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-study-actual-causal-cycle-json",
+        "path": "fixtures/v1.1/known-bad/study-actual-causal-cycle.json",
+        "sha256": "sha256:8670175ae98846a58d294173c3bd810bfe3bd8a777685f3a2c7f71567c5f2b2f",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-study-causal-cycles-allowed-json",
+        "path": "fixtures/v1.1/known-bad/study-causal-cycles-allowed.json",
+        "sha256": "sha256:0d16d822df75fd056d20fa08f407727da0e0d320a51b4cf2331b77ed01a31861",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-study-missing-access-chronology-json",
+        "path": "fixtures/v1.1/known-bad/study-missing-access-chronology.json",
+        "sha256": "sha256:438a649bc0c8b3c4ca4224846adf3ad22ae2345d4e108bfc35a6cb94bc3aceb3",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-study-missing-power-analysis-json",
+        "path": "fixtures/v1.1/known-bad/study-missing-power-analysis.json",
+        "sha256": "sha256:161f1b35ed676fe64ab139dca87cf30afe0049194f54d6c20e9830d2cbb8f224",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-study-missingness-zero-coercion-json",
+        "path": "fixtures/v1.1/known-bad/study-missingness-zero-coercion.json",
+        "sha256": "sha256:cf2fb7f816e04d59142de487815ecf450fe8e59dab2d1d2ec4390e9cc2e1fa64",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-study-optional-stopping-allowed-json",
+        "path": "fixtures/v1.1/known-bad/study-optional-stopping-allowed.json",
+        "sha256": "sha256:77ddaae26da4578cb5ec351842822568b6f7e087ce7ead62b70ba0c5c07ee8bc",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-study-split-leakage-allowed-json",
+        "path": "fixtures/v1.1/known-bad/study-split-leakage-allowed.json",
+        "sha256": "sha256:a3a3f5c0f0ac925dced53b21fa2e3442bac5390a9b572e8d315c8b86f5e371a6",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-supported-safety-claim-json",
+        "path": "fixtures/v1.1/known-bad/supported-safety-claim.json",
+        "sha256": "sha256:8b3caa3b528316ce52a5c0b165085d49d8ba86b804850f206b3441e7ca386ed5",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-test-case-missing-oracle-json",
+        "path": "fixtures/v1.1/known-bad/test-case-missing-oracle.json",
+        "sha256": "sha256:af75eac721897ad3bcd530f554089b5efc36a7ed1aa8a79364e3aee9f25cb63d",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-transfer-gap-arithmetic-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/transfer-gap-arithmetic-mismatch.json",
+        "sha256": "sha256:f44441f182591ad644ec358d9ebbb922ce5fa4fe71df171b717f6dd7bf0576b3",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-transfer-missing-target-access-chronology-json",
+        "path": "fixtures/v1.1/known-bad/transfer-missing-target-access-chronology.json",
+        "sha256": "sha256:98b781dedda47fd18f5fd2f29a8a9d5fdbd0b45bda1eacfff3b0d53a6818db8a",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-worst-group-omission-permitted-json",
+        "path": "fixtures/v1.1/known-bad/worst-group-omission-permitted.json",
+        "sha256": "sha256:c4ff987f58053f77e460624c1abdb332fbda8b12d3d4effe4668f1b8c51b5371",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_bad_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-fixtures-v1-1-known-bad-worst-group-tie-mismatch-json",
+        "path": "fixtures/v1.1/known-bad/worst-group-tie-mismatch.json",
+        "sha256": "sha256:3f4ba3fceb589b3544bb6c19a537264a7235da09e4a58dce649d3903fbc93892",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "acceptance_procedure",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-gate-readme-md",
+        "path": "gate/README.md",
+        "sha256": "sha256:e6d95845ae140e9c5d71794a61310aaf3394e8bfc9079d11ac3562a5a1bf7363",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "operator_decision_template",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.operator-decision-template",
+        "path": "gate/decisions/OPERATOR_DECISION.template.json",
+        "sha256": "sha256:545f6c7183aee55482751003a2a0de871b24c18f75ca5c5b2124ad474e74303f",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/operator-decision-record.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "historical_candidate_artifact",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.validation-report.gate-a",
+        "path": "gate/validation-reports/gate-a-validation-1.0.0.json",
+        "sha256": "sha256:19c624a97ff6518863e83fa9de8a383cca72003521dc1aac55f63e8574bbeaab",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/validation-report.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "historical_candidate_artifact",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-history-gate-a-1-0-0-agents-md",
+        "path": "history/gate-a-1.0.0/AGENTS.md",
+        "sha256": "sha256:a321190bf0ac231b60f5d312db8c38227f146f9e13f739335023c85d209fa180",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "historical_candidate_artifact",
+      "media_type": "text/markdown",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-history-gate-a-1-0-0-readme-md",
+        "path": "history/gate-a-1.0.0/README.md",
+        "sha256": "sha256:e8315228f576a5b02adbc18ce44ffa97cc5c6b0ee1710d33eb77ca6d2264389a",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "historical_packet_recovery",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.gate-a-1.0.0-recovery-1.1.0",
+        "path": "history/gate-a-1.0.0/RECOVERY.json",
+        "sha256": "sha256:79f28e226740987c5ad0fcdf3831fde8874e71acdfc810ea206a50b32dc1e87e",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/historical-packet-recovery.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "historical_candidate_artifact",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.gate-a-index-1.0.0",
+        "path": "history/gate-a-1.0.0/gate/GATE_A_EVIDENCE_INDEX.json",
+        "sha256": "sha256:3341696a730d2c4a4788f19612fc547eff926715b321e6d6bea99e2850c11944",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/gate-a-index.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "historical_candidate_artifact",
+      "media_type": "text/plain",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-history-gate-a-1-0-0-gate-gate-a-evidence-index-sha256",
+        "path": "history/gate-a-1.0.0/gate/GATE_A_EVIDENCE_INDEX.sha256",
+        "sha256": "sha256:74ac3f7d258f7a277b2ee67fd88f5d010f171c416576035547d2f22a8721420d",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "historical_candidate_artifact",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-history-gate-a-1-0-0-gate-decisions-operator-decision-template-json",
+        "path": "history/gate-a-1.0.0/gate/decisions/OPERATOR_DECISION.template.json",
+        "sha256": "sha256:5e96f3c7a4298660e5e131a4f479639e34bedb9b87007d4dde8dd8282ee5455b",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/operator-decision-record.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "claims_and_non_claims",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.claim-register-1.0.0",
+        "path": "manifests/claims/proposed-claims-and-non-claims-1.0.0.json",
+        "sha256": "sha256:2015d7302333399cd234d070a7a3b6d8be98ae27945b9296810604558b286940",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/claim-register.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "protocol_definition_registry",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.protocol-definition-registry-1.0.0",
+        "path": "manifests/definitions/harbor-gate-a-definition-registry-1.0.0.json",
+        "sha256": "sha256:bd128bbc898e1937c5845debf3c2dc24b99199cab2a627b2d3cb45f4f2fd6218",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/protocol-definition-registry.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "protocol_definition_registry",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.protocol-definition-registry-1.1.0",
+        "path": "manifests/definitions/harbor-gate-a-definition-registry-1.1.0.json",
+        "sha256": "sha256:4e8036a6c20025ebec5dd47e36683992aae03df5d8579ff2f24f012870be14da",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/protocol-definition-registry.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.chain.decision",
+        "path": "manifests/examples/object-chain/decision.json",
+        "sha256": "sha256:4d9097609fbbd097131b6067278260cb70b72baf2d41ef6f7e8f18391fc019f3",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/decision.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.chain.evidence",
+        "path": "manifests/examples/object-chain/evidence.json",
+        "sha256": "sha256:1c1695f5c4cdab8b220b5055957b24597d227c204a6f9fd5156ea013245ea2b1",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/evidence-object.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.chain.intervention",
+        "path": "manifests/examples/object-chain/intervention.json",
+        "sha256": "sha256:9545edb9335c2a873a562e8d30654464d4d2aa73f52ab0d0cc6f9a0362a320a8",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/intervention.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.chain.latent-belief",
+        "path": "manifests/examples/object-chain/latent-belief.json",
+        "sha256": "sha256:edfa22b055055b330ce4e665b831d3a570e02ad9f8c09ca7ba17b4d0d6d0e86d",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/latent-belief.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.chain.observation",
+        "path": "manifests/examples/object-chain/observation.json",
+        "sha256": "sha256:02353ddd3f5f07db29266ee835961607e5151c1426f909e70dbc375e8fab1b58",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/observation.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "known_good_fixture",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.fixture.chain.outcome",
+        "path": "manifests/examples/object-chain/outcome.json",
+        "sha256": "sha256:a10f770744f7fedd94796ad55bab4e9f5a35ffe68f724a386e125ec95147ec97",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/outcome.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "historical_manifest_release_ledger",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.manifest-release-ledger-1.0.0",
+        "path": "manifests/history/manifest-release-ledger-1.0.0.json",
+        "sha256": "sha256:f48fdbf0bf314dbcbbcac38a88ca77c38f12ab0429919ecc0536f6ffcbe9c4c9",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/manifest-release-ledger.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "manifest_release_ledger",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.manifest-release-ledger-1.1.0",
+        "path": "manifests/manifest-release-ledger.json",
+        "sha256": "sha256:ed330555348a3e4893843a625501635e0b727a6335463140aba14ece926f98be",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/manifest-release-ledger.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "mission_manifest",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.mission-1.0.0",
+        "path": "manifests/mission/reiyah-mission-1.0.0.json",
+        "sha256": "sha256:5acb0cea515b294d98a073cc36155622037731007c498d93141eadbaf0b97b8c",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/mission-manifest.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "mission_manifest",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.mission-1.1.0",
+        "path": "manifests/mission/reiyah-mission-1.1.0.json",
+        "sha256": "sha256:1d49a990391c8629c4dd919e73786f12de6c63092e43608d53d41dee4f52d4ed",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/mission-manifest.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "protocol_manifest",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.protocol-1.0.0",
+        "path": "manifests/protocol/harbor-gate-a-protocol-1.0.0.json",
+        "sha256": "sha256:2e64bd49b9289f62c1afb1a8aed8483533deaade67fc4b1fc899ce1765d43e53",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/protocol-manifest.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "protocol_manifest",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.protocol-1.1.0",
+        "path": "manifests/protocol/harbor-gate-a-protocol-1.1.0.json",
+        "sha256": "sha256:6170bb4b3c21d56c5428e8b8afdfe7e7860b1ae360bf8cc520a6ea8938f268de",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/protocol-manifest.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "research_function_registry",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.research-function-registry-1.1.0",
+        "path": "manifests/research/harbor-research-function-registry-1.1.0.json",
+        "sha256": "sha256:9a9d20276cfe821907b8ceee60a0c3f53d423af6686de67f4c384a396b2afd97",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/research-function-registry.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "scientific_contract_profile",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.scientific-contract-profile-1.1.0",
+        "path": "manifests/scientific/harbor-scientific-contract-profile-1.1.0.json",
+        "sha256": "sha256:e24f0da63e4220092847b9e2c5617622e91b6cc212205807d948917224b43a92",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/scientific-contract-profile.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-analysis-specification-schema-json",
+        "path": "schemas/analysis-specification.schema.json",
+        "sha256": "sha256:c77508a2c250e08a80d8fffb16a04d6205f0307d699414b253d72b1cc91bf837",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/analysis-specification.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-claim-register-schema-json",
+        "path": "schemas/claim-register.schema.json",
+        "sha256": "sha256:a2e3de13861155ce6da85125f18cc15a89491569e01374098a7c4a19d23008a4",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/claim-register.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-common-1-1-schema-json",
+        "path": "schemas/common-1.1.schema.json",
+        "sha256": "sha256:42a492975d47c63278a9bec0895f3afe7203feca2cccb67b87bd35297f920260",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/common.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-common-schema-json",
+        "path": "schemas/common.schema.json",
+        "sha256": "sha256:4a338668abf83d9e13c76bb3448ced295be577606a5b051ae85d095622558e6d",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-decision-schema-json",
+        "path": "schemas/decision.schema.json",
+        "sha256": "sha256:8f5183488112f27b7833454c789216284da1d3067ceb83e1c2fbe72145b3adc8",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/decision.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-evidence-object-schema-json",
+        "path": "schemas/evidence-object.schema.json",
+        "sha256": "sha256:1dc723738d1786b037afa9fac54a6c30ad9bdc5da87197a6ee5ffdf21485805e",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/evidence-object.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-experiment-schema-json",
+        "path": "schemas/experiment.schema.json",
+        "sha256": "sha256:b04db091ed77cfc81cd72802ea94d3d8233615f4ec05b264a5a9053d66c99c4e",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/experiment.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-fixture-case-schema-json",
+        "path": "schemas/fixture-case.schema.json",
+        "sha256": "sha256:09f939d8a126e9dcaa059c71d027a1d2f89ae1a193f0719c6929940804c710eb",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-fixture-catalog-1-1-schema-json",
+        "path": "schemas/fixture-catalog-1.1.schema.json",
+        "sha256": "sha256:5898c519799a5bc8126761ab4e02ca1b0facc24567ca493c5b44f19c20a13650",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/fixture-catalog.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-fixture-catalog-schema-json",
+        "path": "schemas/fixture-catalog.schema.json",
+        "sha256": "sha256:4b435ded93eef3f45526bddfe2c5034dac1d08c68776a9f57f3b0333843635a2",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-catalog.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-frontier-discovery-register-1-1-schema-json",
+        "path": "schemas/frontier-discovery-register-1.1.schema.json",
+        "sha256": "sha256:722b12709dba204dd38773b6f89e97fed76127996d7e5103b50b710cfc349b68",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-gate-a-index-1-1-schema-json",
+        "path": "schemas/gate-a-index-1.1.schema.json",
+        "sha256": "sha256:1f199e4a7c465d22d5c676a4d2f20cf6c407177f372e50fe74d999df1bf2072f",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/gate-a-index.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-gate-a-index-schema-json",
+        "path": "schemas/gate-a-index.schema.json",
+        "sha256": "sha256:504be65bd89ebda1c02f87ad8211a206664368eaed4d1deefb53792ea2afd90f",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/gate-a-index.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-historical-packet-recovery-1-1-schema-json",
+        "path": "schemas/historical-packet-recovery-1.1.schema.json",
+        "sha256": "sha256:49ba90bff4983e01294c0e53bbf8bc838c62b7f074e64fb3567157b2b89b4e11",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/historical-packet-recovery.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-intervention-schema-json",
+        "path": "schemas/intervention.schema.json",
+        "sha256": "sha256:bdc3c3f3ef9443a62ac265d66f49f364f31240e5cd4444b80536c6f8045c7420",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/intervention.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-latent-belief-schema-json",
+        "path": "schemas/latent-belief.schema.json",
+        "sha256": "sha256:7304b421c6d6c67e2a3fd0b16864535466e1a86e63f36d704abefd7495cf6e6d",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/latent-belief.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-manifest-release-ledger-1-1-schema-json",
+        "path": "schemas/manifest-release-ledger-1.1.schema.json",
+        "sha256": "sha256:b0f5ff8bf9526562507318b5ae9820bb4f3079ba1cb097af9ed93e1ce4fa8d8d",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/manifest-release-ledger.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-manifest-release-ledger-schema-json",
+        "path": "schemas/manifest-release-ledger.schema.json",
+        "sha256": "sha256:c04d41f1452b73ed21fde0bbfaf82a001ed6095a59eae5bc1e69d66214b4e949",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/manifest-release-ledger.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-mission-manifest-1-1-schema-json",
+        "path": "schemas/mission-manifest-1.1.schema.json",
+        "sha256": "sha256:9cbed03d2e8b937210a02c5842a137ed7773d61e0186a90b398960937b94a478",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/mission-manifest.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-mission-manifest-schema-json",
+        "path": "schemas/mission-manifest.schema.json",
+        "sha256": "sha256:b04dacd8fc43f4504b7b13d3c79cc9ebf2ad88f37f53ea5f4285290335fb2e30",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/mission-manifest.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-observation-schema-json",
+        "path": "schemas/observation.schema.json",
+        "sha256": "sha256:51db0338f3e69af340dead7878d952dbe9f5a4c7fca5bc929687242223b5a133",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/observation.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-operator-decision-record-1-1-schema-json",
+        "path": "schemas/operator-decision-record-1.1.schema.json",
+        "sha256": "sha256:691cda1d8cc088abef364116b7d5651bba8f4f9905a9ff10372d1d7339ccb4cc",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/operator-decision-record.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-operator-decision-record-schema-json",
+        "path": "schemas/operator-decision-record.schema.json",
+        "sha256": "sha256:cb728a9fa6f73313498811cfbf81f6a73f7969ff2911bdf31608e87df5041a21",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/operator-decision-record.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-outcome-schema-json",
+        "path": "schemas/outcome.schema.json",
+        "sha256": "sha256:33f83058723418425a0c44f1b66e84c625954e74d575d0401553976ba7c969bc",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/outcome.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-preregistration-record-schema-json",
+        "path": "schemas/preregistration-record.schema.json",
+        "sha256": "sha256:6d119c575a045354c82ad77ee7fd259732e8654a5976a05ef0ead487ffd983e7",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/preregistration-record.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-protocol-definition-registry-1-1-schema-json",
+        "path": "schemas/protocol-definition-registry-1.1.schema.json",
+        "sha256": "sha256:5ec562177b6713a7e17bcac50a2dbe88d272cb93b7cb3f8c01e1b05602cd945b",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/protocol-definition-registry.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-protocol-definition-registry-schema-json",
+        "path": "schemas/protocol-definition-registry.schema.json",
+        "sha256": "sha256:6dc5454613c3b74580f6f1c4e83e11abdb78d97151aec8243575a6c8fbdde83a",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/protocol-definition-registry.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-protocol-manifest-1-1-schema-json",
+        "path": "schemas/protocol-manifest-1.1.schema.json",
+        "sha256": "sha256:e3268b5a48baf7514462ee68d02297a9f3047dcccb197c9a7c012a4b3b463340",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/protocol-manifest.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-protocol-manifest-schema-json",
+        "path": "schemas/protocol-manifest.schema.json",
+        "sha256": "sha256:497b4640e3a415107e12009da8327617cc56427d6a766f9af34fcf5c504f67c4",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/protocol-manifest.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-public-distribution-inventory-1-1-schema-json",
+        "path": "schemas/public-distribution-inventory-1.1.schema.json",
+        "sha256": "sha256:ddd704fb81f25f448f558dd75e605c00d6f7b7b10a7c8344fc02bff9d1adc0be",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-inventory.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-public-distribution-receipt-1-1-schema-json",
+        "path": "schemas/public-distribution-receipt-1.1.schema.json",
+        "sha256": "sha256:92e1581bb22dcc9eac40daa4bfd166960efb5b379943dbbfc9cb7f8cc766e9da",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-receipt.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-public-evidence-custody-profile-1-1-schema-json",
+        "path": "schemas/public-evidence-custody-profile-1.1.schema.json",
+        "sha256": "sha256:9479d448837ab50e157f66fee57a37a1fc82ed334b98bde7872164df187f89c1",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-evidence-custody-profile.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-public-rights-revalidation-1-1-schema-json",
+        "path": "schemas/public-rights-revalidation-1.1.schema.json",
+        "sha256": "sha256:3b8ee4ade56edc91c2e213829f5382d2579f3fde449e69226ad1e9c2e7fe0ceb",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-rights-revalidation.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-research-function-registry-schema-json",
+        "path": "schemas/research-function-registry.schema.json",
+        "sha256": "sha256:91b9d537660fde2696cb6875923bb525850f5a934da0dd8c014c559e3b4fea91",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/research-function-registry.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-result-schema-json",
+        "path": "schemas/result.schema.json",
+        "sha256": "sha256:a76a35ed5b1622a77def403cd31bbacef0445fb06a25a96879d647ef127a88df",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/result.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-scientific-contract-profile-schema-json",
+        "path": "schemas/scientific-contract-profile.schema.json",
+        "sha256": "sha256:5fa9ec4d6ed64712f318ba2ce6bbe9f4e1699a9cb2fb4112054edb64535ec768",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/scientific-contract-profile.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-source-ledger-1-1-schema-json",
+        "path": "schemas/source-ledger-1.1.schema.json",
+        "sha256": "sha256:50e691b642884418c1ca3fc23a381d8b9c8abb01376a9417bae78a3f029396bb",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-source-ledger-schema-json",
+        "path": "schemas/source-ledger.schema.json",
+        "sha256": "sha256:c03ff1df65360fcabea77dd0aa15572a8ceaeda7364654a0f12df6a112de203b",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/source-ledger.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-source-record-schema-json",
+        "path": "schemas/source-record.schema.json",
+        "sha256": "sha256:c7d6e5c7db76306c9b5854299d8976d1ecf0a40a78ff42145e1e70bd554f846b",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/source-record.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-standards-crosswalk-1-1-schema-json",
+        "path": "schemas/standards-crosswalk-1.1.schema.json",
+        "sha256": "sha256:8595dc1843fabbeb8dffd9a610f70c6d5909c2b1510692cb3f9ec7df27fcafc2",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/standards-crosswalk.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-standards-crosswalk-schema-json",
+        "path": "schemas/standards-crosswalk.schema.json",
+        "sha256": "sha256:ff99c13a2525a775f91abd75901553883c26dd6f8b8d05b021a8af94c67d7194",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/standards-crosswalk.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-v1-1-evaluation-assurance-bundle-schema-json",
+        "path": "schemas/v1.1/evaluation-assurance-bundle.schema.json",
+        "sha256": "sha256:b42813c957a097d5491ca3ccfd2a978bc31b3e3e134ed3fb631fcd9666611cae",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/evaluation-assurance-bundle.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-v1-1-human-automation-assessment-schema-json",
+        "path": "schemas/v1.1/human-automation-assessment.schema.json",
+        "sha256": "sha256:4da045cad2111e22cb576c2bba36da7c85bc48d507c30eade895263bf37432bd",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/human-automation-assessment.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-v1-1-joint-performance-evaluation-schema-json",
+        "path": "schemas/v1.1/joint-performance-evaluation.schema.json",
+        "sha256": "sha256:30aefad37bf35ab44dfc8bacf1f6551e858fabf262404818b3686918f84f9839",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/joint-performance-evaluation.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-v1-1-scientific-contract-common-schema-json",
+        "path": "schemas/v1.1/scientific-contract-common.schema.json",
+        "sha256": "sha256:485265a5014adf2bbff48c70d2c5ea21f226bb5c1747b6f4cf1740e0ce749d11",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/common.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-v1-1-scientific-contract-mutation-fixture-schema-json",
+        "path": "schemas/v1.1/scientific-contract-mutation-fixture.schema.json",
+        "sha256": "sha256:442e41891c44566dc6687ecfe338024af197e8931dce021ba793bfd743b4e2ce",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-v1-1-sequential-off-policy-evaluation-schema-json",
+        "path": "schemas/v1.1/sequential-off-policy-evaluation.schema.json",
+        "sha256": "sha256:99c0d00a708cb9094a0fc6727242b9b8a1de80bdba8aed115bf8327732fb2673",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/sequential-off-policy-evaluation.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-v1-1-study-design-preregistration-schema-json",
+        "path": "schemas/v1.1/study-design-preregistration.schema.json",
+        "sha256": "sha256:15c0af5a5b958481518c3a78a50636d5f3ee0688ea81af74dc9feb4b4b553653",
+        "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/study-design-preregistration.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-validation-plan-1-1-schema-json",
+        "path": "schemas/validation-plan-1.1.schema.json",
+        "sha256": "sha256:f8ad28985075103d9d25efd0e720c099e4284238eee99a60adece657a8b217be",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/validation-plan.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-validation-plan-schema-json",
+        "path": "schemas/validation-plan.schema.json",
+        "sha256": "sha256:d02aec36ae8e2b137c268b63a4cae5829eb2a30a82f984a0e5a692a9b58f91d1",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/validation-plan.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-validation-report-1-1-schema-json",
+        "path": "schemas/validation-report-1.1.schema.json",
+        "sha256": "sha256:8c887f003dc2fdce18de123b3ff483d1870bfd614831549359fb18170c9e48c4",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/validation-report.schema.json",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "schema",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-schemas-validation-report-schema-json",
+        "path": "schemas/validation-report.schema.json",
+        "sha256": "sha256:96e806ff19bcb567fc96ec76c3424d03ede716ab9756d5239aec478ebd996769",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/validation-report.schema.json",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "role": "index_builder",
+      "media_type": "text/x-python",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-tools-build-gate-a-index-py",
+        "path": "tools/build_gate_a_index.py",
+        "sha256": "sha256:f43b27cf691402552637f8505df36c0f0ac1fe2af16b3c47621ea5a9470ae8e4",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "offline_validator",
+      "media_type": "text/x-python",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-tools-validate-gate-a-py",
+        "path": "tools/validate_gate_a.py",
+        "sha256": "sha256:aeb7bf628c2b0bda859bd3fbbf5d8100521b55db46fe97b0343afafcaf687ebd",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "repository_metadata",
+      "media_type": "text/plain",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.indexed-validation-requirements-lock",
+        "path": "validation/requirements.lock",
+        "sha256": "sha256:0677ff55c00f0cdc47c611673fb9cd43b0e35740da4ea8f0c273d160e039df3e",
+        "version": "1.1.0"
+      }
+    },
+    {
+      "role": "validation_specification",
+      "media_type": "application/json",
+      "digest_algorithm": "sha256",
+      "artifact": {
+        "artifact_id": "reiyah.artifact.validation-plan-1.1.0",
+        "path": "validation/validation-plan.json",
+        "sha256": "sha256:891defa30efac808b8a3575a76f411707fe81f983e89615f68973deeb6c7756c",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/validation-plan.schema.json",
+        "version": "1.1.0"
+      }
+    }
+  ],
+  "exclusions": [
+    {
+      "exclusion_id": "reiyah.exclusion.index-self",
+      "match_kind": "exact",
+      "path": "gate/GATE_A_EVIDENCE_INDEX.json",
+      "reason": "The evidence index cannot hash itself without a circular identity."
+    },
+    {
+      "exclusion_id": "reiyah.exclusion.index-sidecar",
+      "match_kind": "exact",
+      "path": "gate/GATE_A_EVIDENCE_INDEX.sha256",
+      "reason": "The sidecar is derived from the index bytes and cannot be an indexed input."
+    },
+    {
+      "exclusion_id": "reiyah.exclusion.validation-reports",
+      "match_kind": "exact",
+      "path": "gate/validation-reports/gate-a-validation-1.1.0.json",
+      "reason": "The canonical validation report is an output bound to the index, not an index input."
+    },
+    {
+      "exclusion_id": "reiyah.exclusion.operator-decisions",
+      "match_kind": "prefix",
+      "path": "gate/decisions/reiyah.gate-a-decision-",
+      "reason": "Append-only operator decisions bind an index digest and therefore remain outside it."
+    },
+    {
+      "exclusion_id": "reiyah.exclusion.public-distribution-receipts",
+      "match_kind": "prefix",
+      "path": "gate/public-distribution-receipts/reiyah.public-distribution-receipt-",
+      "reason": "Append-only post-distribution receipts bind the published packet and therefore remain outside the pre-distribution index."
+    },
+    {
+      "exclusion_id": "reiyah.exclusion.git-metadata",
+      "match_kind": "prefix",
+      "path": ".git/",
+      "reason": "Git implementation metadata is transient and is not part of the reviewed architecture surface."
+    },
+    {
+      "exclusion_id": "reiyah.exclusion.macos-metadata",
+      "match_kind": "exact",
+      "path": ".DS_Store",
+      "reason": "Finder metadata is transient and non-normative."
+    },
+    {
+      "exclusion_id": "reiyah.exclusion.pytest-cache",
+      "match_kind": "prefix",
+      "path": ".pytest_cache/",
+      "reason": "Test-run cache bytes are nondeterministic validation outputs."
+    },
+    {
+      "exclusion_id": "reiyah.exclusion.root-pycache",
+      "match_kind": "prefix",
+      "path": "__pycache__/",
+      "reason": "Interpreter bytecode cache is transient toolchain output."
+    },
+    {
+      "exclusion_id": "reiyah.exclusion.tools-pycache",
+      "match_kind": "prefix",
+      "path": "tools/__pycache__/",
+      "reason": "Interpreter bytecode cache is transient toolchain output."
+    },
+    {
+      "exclusion_id": "reiyah.exclusion.validation-pycache",
+      "match_kind": "prefix",
+      "path": "validation/__pycache__/",
+      "reason": "Interpreter bytecode cache is transient toolchain output."
+    },
+    {
+      "exclusion_id": "reiyah.exclusion.fixtures-pycache",
+      "match_kind": "prefix",
+      "path": "fixtures/__pycache__/",
+      "reason": "Interpreter bytecode cache is transient toolchain output."
+    },
+    {
+      "exclusion_id": "reiyah.exclusion.good-fixtures-pycache",
+      "match_kind": "prefix",
+      "path": "fixtures/good/__pycache__/",
+      "reason": "Interpreter bytecode cache is transient toolchain output."
+    },
+    {
+      "exclusion_id": "reiyah.exclusion.bad-fixtures-pycache",
+      "match_kind": "prefix",
+      "path": "fixtures/bad/__pycache__/",
+      "reason": "Interpreter bytecode cache is transient toolchain output."
+    }
+  ],
+  "validation_profile": {
+    "entrypoint": "tools/validate_gate_a.py",
+    "offline_required": true,
+    "deterministic_required": true,
+    "fail_closed_required": true
+  },
+  "known_good_expectation": "all_pass",
+  "known_bad_expectation": "all_fail_for_declared_reason",
+  "runtime_authorized": false
+}

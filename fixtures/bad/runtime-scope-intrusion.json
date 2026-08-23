@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.runtime-intrusion",
+  "fixture_id": "reiyah.fixture.bad.runtime-intrusion",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The canonical synthetic experiment is mutated to authorize runtime execution.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-025"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-RUNTIME-SCOPE-INTRUSION"},
+  "payload": {"kind": "production_mutation", "production_check": "scientific_semantics", "mutations": [
+    {"operation": "replace", "path": "fixtures/good/experiment.json", "json_pointer": "/runtime_execution_authorized", "value": true}
+  ]}
+}

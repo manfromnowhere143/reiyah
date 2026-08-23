@@ -1,0 +1,26 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-missing-mission-boundary-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.missing-mission-boundary",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The canonical mission manifest is removed from an in-memory repository view.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-002", "TM-019", "TM-025"],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-MISSION-BOUNDARY-INCOMPLETE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "mission_boundary",
+    "mutations": [
+      {
+        "operation": "remove",
+        "path": "manifests/mission/reiyah-mission-1.0.0.json"
+      }
+    ]
+  }
+}

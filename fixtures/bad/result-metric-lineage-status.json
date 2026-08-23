@@ -1,0 +1,32 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-result-metric-lineage-status-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.result-metric-lineage-status",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "An embedded metric asserts the lineage-only retracted status without owning a lifecycle history or predecessor artifact.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-008",
+    "TM-019",
+    "TM-027"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-RESULT-STATUS-MISMATCH"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "fixtures/good/result.json",
+        "json_pointer": "/metric_results/0/interpretation_status",
+        "value": "retracted"
+      }
+    ]
+  }
+}

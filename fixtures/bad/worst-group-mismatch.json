@@ -1,0 +1,35 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-worst-group-mismatch-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.worst-group-mismatch",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The typed worst-group disposition selects the higher-performing group even though higher values are declared better.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-011",
+    "TM-014",
+    "TM-015",
+    "TM-019"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-WORST-GROUP-MISMATCH"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "fixtures/good/result.json",
+        "json_pointer": "/metric_results/0/worst_group_disposition/group_ids",
+        "value": [
+          "reiyah.group.synthetic-b"
+        ]
+      }
+    ]
+  }
+}

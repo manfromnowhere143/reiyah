@@ -1,0 +1,277 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.0/standards-crosswalk.schema.json",
+  "title": "Reiyah custody-aware standards crosswalk 1.1",
+  "description": "A proposed mapping successor in which only retained, eligible source versions may support mappings and pointer-only sources can identify evidence gaps only.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "crosswalk_id",
+    "version",
+    "as_of_date",
+    "lifecycle_status",
+    "runtime_execution_authorized",
+    "compliance_claimed",
+    "predecessor",
+    "source_ledger_ref",
+    "entries"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/standards-crosswalk.schema.json"
+    },
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "artifact_id": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+    },
+    "crosswalk_id": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "const": "1.1.0"
+    },
+    "as_of_date": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/calendarDate"
+    },
+    "lifecycle_status": {
+      "const": "proposed"
+    },
+    "runtime_execution_authorized": {
+      "const": false
+    },
+    "compliance_claimed": {
+      "const": false
+    },
+    "predecessor": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+    },
+    "source_ledger_ref": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/crosswalkEntry"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "measurementStateObserved": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "const": "observed"
+        }
+      },
+      "required": [
+        "state"
+      ]
+    },
+    "crosswalkEntry": {
+      "type": "object",
+      "required": [
+        "mapping_id",
+        "lifecycle_status",
+        "mapping_state",
+        "external_reference",
+        "identity_source_ref",
+        "scope",
+        "comparator",
+        "requirement_locator",
+        "evidence_source_refs",
+        "discovery_source_refs",
+        "proposed_relevance",
+        "gap",
+        "prohibited_interpretation"
+      ],
+      "properties": {
+        "mapping_id": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        "lifecycle_status": {
+          "const": "proposed"
+        },
+        "mapping_state": {
+          "enum": [
+            "proposed_mapping",
+            "partial_mapping",
+            "evidence_gap",
+            "not_applicable"
+          ]
+        },
+        "external_reference": {
+          "type": "object",
+          "required": [
+            "publisher",
+            "title",
+            "document_identifier",
+            "exact_version",
+            "publication_date"
+          ],
+          "properties": {
+            "publisher": {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+            },
+            "title": {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+            },
+            "document_identifier": {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+            },
+            "exact_version": {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+            },
+            "publication_date": {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/dateMeasurement"
+            }
+          },
+          "additionalProperties": false
+        },
+        "identity_source_ref": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceReference"
+        },
+        "scope": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+        },
+        "comparator": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+        },
+        "requirement_locator": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+        },
+        "evidence_source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceReference"
+          },
+          "uniqueItems": true
+        },
+        "discovery_source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceReference"
+          },
+          "uniqueItems": true
+        },
+        "proposed_relevance": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+        },
+        "gap": {
+          "type": "object",
+          "required": [
+            "state",
+            "description",
+            "closure_requirements"
+          ],
+          "properties": {
+            "state": {
+              "enum": [
+                "open",
+                "partially_closed",
+                "closed",
+                "not_applicable"
+              ]
+            },
+            "description": {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+            },
+            "closure_requirements": {
+              "type": "array",
+              "items": {
+                "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+              },
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "prohibited_interpretation": {
+          "const": "This mapping is not a legal, safety, conformance, certification, compliance, scientific-support, benchmark-superiority, or operator-acceptance conclusion."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mapping_state": {
+                "enum": [
+                  "proposed_mapping",
+                  "partial_mapping"
+                ]
+              }
+            },
+            "required": [
+              "mapping_state"
+            ]
+          },
+          "then": {
+            "properties": {
+              "evidence_source_refs": {
+                "minItems": 1
+              },
+              "external_reference": {
+                "properties": {
+                  "exact_version": {
+                    "$ref": "#/$defs/measurementStateObserved"
+                  },
+                  "publication_date": {
+                    "$ref": "#/$defs/measurementStateObserved"
+                  }
+                }
+              },
+              "scope": {
+                "$ref": "#/$defs/measurementStateObserved"
+              },
+              "comparator": {
+                "$ref": "#/$defs/measurementStateObserved"
+              },
+              "requirement_locator": {
+                "$ref": "#/$defs/measurementStateObserved"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "mapping_state": {
+                "const": "evidence_gap"
+              }
+            },
+            "required": [
+              "mapping_state"
+            ]
+          },
+          "then": {
+            "properties": {
+              "evidence_source_refs": {
+                "maxItems": 0
+              },
+              "discovery_source_refs": {
+                "minItems": 1
+              },
+              "gap": {
+                "properties": {
+                  "state": {
+                    "enum": [
+                      "open",
+                      "partially_closed"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

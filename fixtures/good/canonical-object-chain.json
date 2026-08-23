@@ -1,0 +1,24 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.good.canonical-chain",
+  "fixture_id": "reiyah.fixture.good.canonical-chain",
+  "version": "1.0.0",
+  "classification": "known_good",
+  "description": "The canonical synthetic six-layer chain validates with typed references, provenance, normalized belief, and ordered time.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [],
+  "expected": {"outcome": "pass", "primary_rule_id": null},
+  "payload": {
+    "kind": "canonical_chain",
+    "paths": [
+      "manifests/examples/object-chain/observation.json",
+      "manifests/examples/object-chain/latent-belief.json",
+      "manifests/examples/object-chain/decision.json",
+      "manifests/examples/object-chain/intervention.json",
+      "manifests/examples/object-chain/outcome.json",
+      "manifests/examples/object-chain/evidence.json"
+    ]
+  }
+}

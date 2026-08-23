@@ -1,0 +1,91 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-rights-revalidation.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "reiyah.artifact.public-rights-revalidation-2026-08-23",
+  "observation_id": "reiyah.public-rights-revalidation.initial-publication",
+  "version": "1.0.0",
+  "observed_at": "2026-08-23T13:17:20Z",
+  "lifecycle_status": "proposed",
+  "purpose": "pre_distribution_observation_of_mutable_official_rights_pages",
+  "observer": {
+    "observer_id": "reiyah.adapter.web-research",
+    "observer_kind": "untrusted_research_adapter",
+    "authority": "observation_only_no_legal_or_operator_authority"
+  },
+  "basis_observations": [
+    {
+      "basis_id": "rights.iso-open-data.odc-by-1.0",
+      "publisher": "International Organization for Standardization",
+      "official_url": "https://www.iso.org/open-data.html#iso_deliverables_metadata",
+      "page_scope": "ISO Deliverables Metadata license and attribution statement",
+      "observed_at": "2026-08-23T13:17:20Z",
+      "retrieval_state": "reachable",
+      "observation_state": "consistent_with_recorded_inventory_basis",
+      "observed_facts": [
+        "The page identified the ISO Deliverables Metadata dataset as released under ODC Attribution License (ODC-By) v1.0.",
+        "The page supplied an attribution form for reuse of the dataset and distinguished ISO Open Data from the site's broader copyright restrictions."
+      ],
+      "caveats": [
+        "The observation covers the named ISO Open Data records only, not ISO normative publications or their full text.",
+        "The page is mutable and this observation does not replace legal review."
+      ],
+      "related_source_ids": [
+        "src.iso.26262-1.2018.open-data",
+        "src.iso.21448.2022.open-data",
+        "src.iso-tr.21959-1.2020.open-data",
+        "src.iso-pas.8800.2024.open-data"
+      ]
+    },
+    {
+      "basis_id": "rights.nist-technical-series-publications",
+      "publisher": "National Institute of Standards and Technology",
+      "official_url": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+      "page_scope": "NIST Technical Series Publications rights and citation statement",
+      "observed_at": "2026-08-23T13:17:20Z",
+      "retrieval_state": "reachable",
+      "observation_state": "unresolved_document_specific_caveat_payload_excluded",
+      "observed_facts": [
+        "The NIST Technical Series section described a worldwide right to reprint covered NIST-authored works and requested the stated NIST citation courtesy line.",
+        "The same section warned that some NIST-published works may contain third-party-authored material subject to copyright."
+      ],
+      "caveats": [
+        "This observation does not independently clear every possible third-party element in NIST AI 100-1.",
+        "The page is mutable and this observation does not replace legal review."
+      ],
+      "related_source_ids": [
+        "src.nist.ai-100-1.2023.pdf",
+        "src.nist.ai-100-1.2023.publication-page"
+      ]
+    }
+  ],
+  "covered_payload_source_ids": [
+    "src.iso.26262-1.2018.open-data",
+    "src.iso.21448.2022.open-data",
+    "src.iso-tr.21959-1.2020.open-data",
+    "src.iso-pas.8800.2024.open-data"
+  ],
+  "excluded_pointer_source_ids": [
+    "src.nist.ai-100-1.2023.pdf",
+    "src.nist.ai-100-1.2023.publication-page"
+  ],
+  "freshness_policy": {
+    "maximum_age_seconds": 3600,
+    "comparison": "zero_lte_published_at_minus_observed_at_lte_maximum",
+    "new_observation_required_for_each_payload_distribution_event": true,
+    "clock": "UTC"
+  },
+  "all_included_payloads_covered": true,
+  "preflight_outcome": "included_iso_basis_consistent_nist_payload_excluded",
+  "distribution_authorization_created": false,
+  "qualified_legal_review_performed": false,
+  "legal_conclusion_created": false,
+  "gate_a_acceptance_conferred": false,
+  "ga17_status": "not_evaluated",
+  "limitations": [
+    "This record is a time-bounded observation of two public pages, not legal advice or a legal opinion.",
+    "The observer is an untrusted research adapter and has no operator, scientific, standards, safety, or publication authority.",
+    "No source-page bytes or cryptographic snapshot of either mutable page are retained by this record.",
+    "The observation cannot authorize distribution, authenticate the operator, evaluate GA-17, or confer Gate A acceptance.",
+    "Any contradiction, unreachable page, changed scope, or missing attribution at a later publication event requires a new observation and fail-closed review."
+  ]
+}

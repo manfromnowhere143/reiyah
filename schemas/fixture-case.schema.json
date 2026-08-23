@@ -1,0 +1,553 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "title": "Synthetic Gate A validation fixture case",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "fixture_id",
+    "version",
+    "classification",
+    "description",
+    "synthetic",
+    "contains_empirical_data",
+    "threat_ids",
+    "expected",
+    "payload"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json"
+    },
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "fixture_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "classification": {
+      "enum": ["known_good", "known_bad"]
+    },
+    "description": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "synthetic": {
+      "const": true
+    },
+    "contains_empirical_data": {
+      "const": false
+    },
+    "threat_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^TM-[0-9]{3}$"
+      },
+      "uniqueItems": true
+    },
+    "expected": {
+      "type": "object",
+      "required": ["outcome", "primary_rule_id"],
+      "properties": {
+        "outcome": {
+          "enum": ["pass", "reject"]
+        },
+        "primary_rule_id": {
+          "oneOf": [
+            {"$ref": "#/$defs/ruleId"},
+            {"type": "null"}
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "payload": {
+      "oneOf": [
+        {"$ref": "#/$defs/identityCase"},
+        {"$ref": "#/$defs/canonicalChainCase"},
+        {"$ref": "#/$defs/schemaInstancesCase"},
+        {"$ref": "#/$defs/kindCase"},
+        {"$ref": "#/$defs/measurementCase"},
+        {"$ref": "#/$defs/statusCase"},
+        {"$ref": "#/$defs/temporalCase"},
+        {"$ref": "#/$defs/provenanceCase"},
+        {"$ref": "#/$defs/digestCase"},
+        {"$ref": "#/$defs/referenceCase"},
+        {"$ref": "#/$defs/manifestBindingCase"},
+        {"$ref": "#/$defs/releaseLedgerCase"},
+        {"$ref": "#/$defs/denominatorCase"},
+        {"$ref": "#/$defs/groupCase"},
+        {"$ref": "#/$defs/determinismCase"},
+        {"$ref": "#/$defs/standardsCase"},
+        {"$ref": "#/$defs/acceptanceCase"},
+        {"$ref": "#/$defs/dataCase"},
+        {"$ref": "#/$defs/scopeCase"},
+        {"$ref": "#/$defs/indexCase"},
+        {"$ref": "#/$defs/productionMutationCase"}
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"classification": {"const": "known_good"}},
+        "required": ["classification"]
+      },
+      "then": {
+        "properties": {
+          "expected": {
+            "properties": {
+              "outcome": {"const": "pass"},
+              "primary_rule_id": {"type": "null"}
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "threat_ids": {"minItems": 1},
+          "expected": {
+            "properties": {
+              "outcome": {"const": "reject"},
+              "primary_rule_id": {"$ref": "#/$defs/ruleId"}
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "ruleId": {
+      "type": "string",
+      "pattern": "^GA-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+    },
+    "objectKind": {
+      "enum": ["observation", "latent_belief", "decision", "intervention", "outcome", "evidence"]
+    },
+    "epistemicState": {
+      "enum": ["observed", "missing", "unmeasured", "out_of_distribution", "sensor_invalid", "abstained"]
+    },
+    "identityCase": {
+      "type": "object",
+      "required": ["kind", "named_project", "working_directory", "git_root", "instruction_project"],
+      "properties": {
+        "kind": {"const": "identity"},
+        "named_project": {"type": "string", "minLength": 1},
+        "working_directory": {"type": "string", "minLength": 1},
+        "git_root": {"type": "string", "minLength": 1},
+        "instruction_project": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "canonicalChainCase": {
+      "type": "object",
+      "required": ["kind", "paths"],
+      "properties": {
+        "kind": {"const": "canonical_chain"},
+        "paths": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "schemaInstancesCase": {
+      "type": "object",
+      "required": ["kind", "paths"],
+      "properties": {
+        "kind": {"const": "schema_instances"},
+        "paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "kindCase": {
+      "type": "object",
+      "required": ["kind", "declared_kind", "payload_kind"],
+      "properties": {
+        "kind": {"const": "kind_separation"},
+        "declared_kind": {"$ref": "#/$defs/objectKind"},
+        "payload_kind": {"$ref": "#/$defs/objectKind"}
+      },
+      "additionalProperties": false
+    },
+    "measurementCase": {
+      "type": "object",
+      "required": ["kind", "measurements"],
+      "properties": {
+        "kind": {"const": "epistemic_measurements"},
+        "measurements": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["measurement_id", "source_state", "emitted_state"],
+            "properties": {
+              "measurement_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+              "source_state": {"$ref": "#/$defs/epistemicState"},
+              "emitted_state": {"$ref": "#/$defs/epistemicState"},
+              "emitted_value": {
+                "type": ["number", "boolean", "string"]
+              },
+              "reason": {"type": "string", "minLength": 1}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "statusCase": {
+      "type": "object",
+      "required": ["kind", "status_history"],
+      "properties": {
+        "kind": {"const": "lifecycle_status"},
+        "status_history": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "additionalProperties": false
+    },
+    "temporalCase": {
+      "type": "object",
+      "required": ["kind", "input_available_at", "index_time", "unit"],
+      "properties": {
+        "kind": {"const": "temporal_information_set"},
+        "input_available_at": {"type": "number"},
+        "index_time": {"type": "number"},
+        "unit": {"enum": ["seconds", "milliseconds", "microseconds", "nanoseconds"]}
+      },
+      "additionalProperties": false
+    },
+    "provenanceCase": {
+      "type": "object",
+      "required": ["kind", "record_id", "provenance_present"],
+      "properties": {
+        "kind": {"const": "provenance"},
+        "record_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "provenance_present": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "digestCase": {
+      "type": "object",
+      "required": ["kind", "declared_sha256", "actual_utf8"],
+      "properties": {
+        "kind": {"const": "digest"},
+        "declared_sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "actual_utf8": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "referenceCase": {
+      "type": "object",
+      "required": ["kind", "objects", "reference", "expected_kind"],
+      "properties": {
+        "kind": {"const": "typed_reference"},
+        "objects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["object_id", "object_kind", "version"],
+            "properties": {
+              "object_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+              "object_kind": {"$ref": "#/$defs/objectKind"},
+              "version": {"$ref": "common.schema.json#/$defs/semanticVersion"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "reference": {"$ref": "common.schema.json#/$defs/objectReference"},
+        "expected_kind": {"$ref": "#/$defs/objectKind"}
+      },
+      "additionalProperties": false
+    },
+    "manifestBindingCase": {
+      "type": "object",
+      "required": ["kind", "release_id", "bound_sha256", "current_sha256"],
+      "properties": {
+        "kind": {"const": "manifest_binding"},
+        "release_id": {"$ref": "common.schema.json#/$defs/releaseIdentifier"},
+        "bound_sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "current_sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "releaseLedgerCase": {
+      "type": "object",
+      "required": ["kind", "entries"],
+      "properties": {
+        "kind": {"const": "release_ledger"},
+        "entries": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["release_id", "sha256"],
+            "properties": {
+              "release_id": {"$ref": "common.schema.json#/$defs/releaseIdentifier"},
+              "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "epistemicCounts": {
+      "type": "object",
+      "required": ["observed", "missing", "unmeasured", "out_of_distribution", "sensor_invalid", "abstained"],
+      "properties": {
+        "observed": {"type": "integer", "minimum": 0},
+        "missing": {"type": "integer", "minimum": 0},
+        "unmeasured": {"type": "integer", "minimum": 0},
+        "out_of_distribution": {"type": "integer", "minimum": 0},
+        "sensor_invalid": {"type": "integer", "minimum": 0},
+        "abstained": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "denominatorCase": {
+      "type": "object",
+      "required": ["kind", "eligible_total", "state_counts"],
+      "properties": {
+        "kind": {"const": "denominator"},
+        "eligible_total": {"type": "integer", "minimum": 0},
+        "state_counts": {"$ref": "#/$defs/epistemicCounts"}
+      },
+      "additionalProperties": false
+    },
+    "groupCase": {
+      "type": "object",
+      "required": ["kind", "declared_group_ids", "result_group_ids"],
+      "properties": {
+        "kind": {"const": "group_coverage"},
+        "declared_group_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "result_group_ids": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "determinismCase": {
+      "type": "object",
+      "required": ["kind", "input_sources"],
+      "properties": {
+        "kind": {"const": "determinism"},
+        "input_sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "repository_bytes",
+              "interpreter",
+              "local_schema_library",
+              "wall_clock",
+              "locale",
+              "randomness",
+              "network",
+              "absolute_working_path"
+            ]
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "standardsCase": {
+      "type": "object",
+      "required": ["kind", "compliance_claimed", "retained_exact_version", "retained_publication_date", "retained_scope", "retained_comparator", "retained_source_bytes"],
+      "properties": {
+        "kind": {"const": "standards_claim"},
+        "compliance_claimed": {"type": "boolean"},
+        "retained_exact_version": {"type": "boolean"},
+        "retained_publication_date": {"type": "boolean"},
+        "retained_scope": {"type": "boolean"},
+        "retained_comparator": {"type": "boolean"},
+        "retained_source_bytes": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "acceptanceCase": {
+      "type": "object",
+      "required": ["kind", "bound_index_sha256", "current_index_sha256", "operator_authorized", "architecture_complete"],
+      "properties": {
+        "kind": {"const": "acceptance_binding"},
+        "bound_index_sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "current_index_sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "operator_authorized": {"type": "boolean"},
+        "architecture_complete": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "dataCase": {
+      "type": "object",
+      "required": ["kind", "data_classification", "contains_real_records"],
+      "properties": {
+        "kind": {"const": "data_boundary"},
+        "data_classification": {"enum": ["synthetic", "public_evidence", "private", "secret", "operational"]},
+        "contains_real_records": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "scopeCase": {
+      "type": "object",
+      "required": ["kind", "capabilities"],
+      "properties": {
+        "kind": {"const": "scope_boundary"},
+        "capabilities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "documentation",
+              "schema_validation",
+              "synthetic_fixtures",
+              "offline_digest_checking",
+              "retained_public_evidence",
+              "network_service",
+              "live_inference",
+              "model_training",
+              "deployment",
+              "physical_control",
+              "private_data_ingestion",
+              "publication_machinery"
+            ]
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "indexCase": {
+      "type": "object",
+      "required": ["kind", "index_path", "sidecar_path", "validation_report_path", "operator_decision_paths", "indexed_paths"],
+      "properties": {
+        "kind": {"const": "evidence_index"},
+        "index_path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+        "sidecar_path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+        "validation_report_path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+        "operator_decision_paths": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+          "uniqueItems": true
+        },
+        "indexed_paths": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "productionMutationCase": {
+      "type": "object",
+      "required": ["kind", "production_check", "mutations"],
+      "properties": {
+        "kind": {"const": "production_mutation"},
+        "production_check": {
+          "enum": [
+            "mission_boundary",
+            "claim_register",
+            "scientific_semantics",
+            "normative_measurements",
+            "sources_crosswalk",
+            "manifest_releases",
+            "scope_inventory",
+            "actual_decisions",
+            "repository_inventory",
+            "threat_coverage",
+            "validation_report",
+            "evidence_index",
+            "decision_history",
+            "narrative_bindings",
+            "public_custody",
+            "historical_recovery",
+            "research_registry",
+            "scientific_contract_profile"
+          ]
+        },
+        "mutations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "required": ["operation", "path"],
+                "properties": {
+                  "operation": {"const": "remove"},
+                  "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"}
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "required": ["operation", "path", "content_utf8"],
+                "properties": {
+                  "operation": {"const": "add_file"},
+                  "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+                  "content_utf8": {"type": "string"}
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "required": ["operation", "path", "json_pointer", "value"],
+                "properties": {
+                  "operation": {"enum": ["add", "replace"]},
+                  "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+                  "json_pointer": {
+                    "type": "string",
+                    "pattern": "^(?:/(?:[^~/]|~[01])*)+$"
+                  },
+                  "value": true
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "required": ["operation", "path", "json_pointer"],
+                "properties": {
+                  "operation": {"const": "remove"},
+                  "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+                  "json_pointer": {
+                    "type": "string",
+                    "pattern": "^(?:/(?:[^~/]|~[01])*)+$"
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,17 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.illegal-status",
+  "fixture_id": "reiyah.fixture.bad.illegal-status",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "An undeclared lifecycle alias replaces a required distinct status.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-008", "TM-019"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-STATUS-UNKNOWN"},
+  "payload": {"kind": "production_mutation", "production_check": "scientific_semantics", "mutations": [
+    {"operation": "replace", "path": "fixtures/good/experiment.json", "json_pointer": "/lifecycle_status", "value": "successful"},
+    {"operation": "replace", "path": "fixtures/good/experiment.json", "json_pointer": "/lifecycle_history/0/status", "value": "successful"}
+  ]}
+}

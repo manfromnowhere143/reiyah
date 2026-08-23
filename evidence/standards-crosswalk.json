@@ -1,0 +1,393 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/standards-crosswalk.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.standards-crosswalk-1.0.0",
+  "crosswalk_id": "reiyah.standards-crosswalk.gate-a",
+  "version": "1.0.0",
+  "as_of_date": "2026-08-22",
+  "lifecycle_status": "proposed",
+  "compliance_claimed": false,
+  "entries": [
+    {
+      "mapping_id": "map.iso.26262-1.2018.scope-boundary",
+      "lifecycle_status": "proposed",
+      "mapping_state": "partial_mapping",
+      "external_reference": {
+        "publisher": {
+          "state": "observed",
+          "value": "International Organization for Standardization (ISO)"
+        },
+        "title": {
+          "state": "observed",
+          "value": "ISO 26262-1:2018 Road vehicles — Functional safety — Part 1: Vocabulary"
+        },
+        "document_identifier": {
+          "state": "observed",
+          "value": "ISO 26262-1:2018"
+        },
+        "exact_version": {
+          "state": "observed",
+          "value": "ISO 26262-1:2018, edition 2"
+        },
+        "publication_date": {
+          "state": "observed",
+          "value": "2018-12-17"
+        }
+      },
+      "scope": {
+        "state": "observed",
+        "value": "Publisher catalog metadata scopes Part 1 to vocabulary for a functional-safety framework addressing hazards caused by malfunctioning behaviour of safety-related road-vehicle E/E systems and identifies exclusions."
+      },
+      "comparator": {
+        "state": "observed",
+        "value": "ISO 21448:2022 catalog scope for intended-function insufficiency, plus proposed Reiyah protocol reiyah.protocol.harbor-gate-a@1.0.0 as an architecture-only target with no conformance baseline."
+      },
+      "requirement_locator": {
+        "state": "observed",
+        "value": "ISO Open Data record 68383 fields reference, publicationDate, edition, currentStage, replacedBy, and scope; no normative clause locator is retained."
+      },
+      "identity_source_id": "src.iso.26262-1.2018.open-data",
+      "source_ids": [
+        "src.iso.26262-1.2018.open-data"
+      ],
+      "proposed_relevance": "The metadata suggests a useful architecture boundary between evidence about malfunctioning behaviour and evidence about intended-function or model insufficiency. Reiyah proposes to preserve that distinction; it does not implement an ISO 26262 lifecycle or claim alignment.",
+      "gap": {
+        "state": "open",
+        "description": "Only a publisher catalog record for Part 1 is retained, while the ISO 26262 series text, relevant clauses, interpretations, later parts, and in-development successor are absent.",
+        "closure_requirements": [
+          "Lawfully obtain and retain the exact normative editions and parts selected for a future mapping, including licence and access constraints.",
+          "Have a qualified independent reviewer identify exact clauses, applicability, exclusions, and the relationship to the then-current ISO revision.",
+          "Define a separately authorized protocol-level comparator before evaluating any alignment or conformance question."
+        ]
+      },
+      "prohibited_interpretation": "This mapping is not a legal, safety, conformance, certification, or compliance conclusion."
+    },
+    {
+      "mapping_id": "map.iso.21448.2022.scope-boundary",
+      "lifecycle_status": "proposed",
+      "mapping_state": "partial_mapping",
+      "external_reference": {
+        "publisher": {
+          "state": "observed",
+          "value": "International Organization for Standardization (ISO)"
+        },
+        "title": {
+          "state": "observed",
+          "value": "ISO 21448:2022 Road vehicles — Safety of the intended functionality"
+        },
+        "document_identifier": {
+          "state": "observed",
+          "value": "ISO 21448:2022"
+        },
+        "exact_version": {
+          "state": "observed",
+          "value": "ISO 21448:2022, edition 1"
+        },
+        "publication_date": {
+          "state": "observed",
+          "value": "2022-06-30"
+        }
+      },
+      "scope": {
+        "state": "observed",
+        "value": "Publisher catalog metadata describes an argument framework and guidance for hazards from intended-function specification or performance insufficiencies, including situational awareness derived from complex sensors and processing, foreseeable misuse, and declared exclusions."
+      },
+      "comparator": {
+        "state": "observed",
+        "value": "ISO 26262-1:2018 publisher scope for malfunctioning E/E behaviour, plus proposed Reiyah protocol reiyah.protocol.harbor-gate-a@1.0.0 with no implementation or conformance target."
+      },
+      "requirement_locator": {
+        "state": "observed",
+        "value": "ISO Open Data record 77490 fields reference, publicationDate, edition, currentStage, replacedBy, and scope; no normative clause locator is retained."
+      },
+      "identity_source_id": "src.iso.21448.2022.open-data",
+      "source_ids": [
+        "src.iso.21448.2022.open-data"
+      ],
+      "proposed_relevance": "The retained scope summary suggests that unknown scenarios, functional insufficiencies, situational-awareness limits, and foreseeable misuse are relevant boundary categories for an evidence engine. Reiyah proposes only to keep those categories distinguishable from faults and outcomes.",
+      "gap": {
+        "state": "open",
+        "description": "The full 181-page standard, its clauses, evidence expectations, and pending successor are not retained, so no requirements-level mapping is possible.",
+        "closure_requirements": [
+          "Lawfully obtain and retain the exact ISO 21448 edition selected for review and its applicable successor status.",
+          "Commission an independent clause-level review that distinguishes SOTIF terminology from Reiyah's proposed constructs and validity states.",
+          "Define falsifiable protocol comparisons without converting a scope similarity into a safety or compliance claim."
+        ]
+      },
+      "prohibited_interpretation": "This mapping is not a legal, safety, conformance, certification, or compliance conclusion."
+    },
+    {
+      "mapping_id": "map.iso-pas.8800.2024.ai-safety-scope",
+      "lifecycle_status": "proposed",
+      "mapping_state": "partial_mapping",
+      "external_reference": {
+        "publisher": {
+          "state": "observed",
+          "value": "International Organization for Standardization (ISO)"
+        },
+        "title": {
+          "state": "observed",
+          "value": "ISO/PAS 8800:2024 Road vehicles — Safety and artificial intelligence"
+        },
+        "document_identifier": {
+          "state": "observed",
+          "value": "ISO/PAS 8800:2024"
+        },
+        "exact_version": {
+          "state": "observed",
+          "value": "ISO/PAS 8800:2024, edition 1"
+        },
+        "publication_date": {
+          "state": "observed",
+          "value": "2024-12-13"
+        }
+      },
+      "scope": {
+        "state": "observed",
+        "value": "Publisher catalog metadata scopes the PAS to safety-related road-vehicle systems using AI and describes output insufficiencies, systematic errors, random hardware errors, external AI interactions, and safety-related properties for assurance arguments."
+      },
+      "comparator": {
+        "state": "observed",
+        "value": "ISO 21448:2022 publisher scope for intended-function insufficiency, compared only at metadata level with proposed Reiyah protocol reiyah.protocol.harbor-gate-a@1.0.0."
+      },
+      "requirement_locator": {
+        "state": "observed",
+        "value": "ISO Open Data record 83303 fields reference, publicationDate, edition, currentStage, replacedBy, and scope; no PAS clause locator is retained."
+      },
+      "identity_source_id": "src.iso-pas.8800.2024.open-data",
+      "source_ids": [
+        "src.iso-pas.8800.2024.open-data"
+      ],
+      "proposed_relevance": "The metadata suggests future evidence categories for AI output insufficiency, systematic error, hardware error, and external-element interaction. Gate A proposes provenance and explicit-invalidity structures that may later be compared with those categories; it authorizes no AI runtime or safety assurance claim.",
+      "gap": {
+        "state": "open",
+        "description": "The 172-page PAS and its safety-related properties are not retained, and the catalog record lists two unretained replacement projects.",
+        "closure_requirements": [
+          "Lawfully retain the exact PAS text and metadata for any successor selected at the time of future review.",
+          "Obtain independent automotive AI-safety review of exact clauses, scope exclusions, assurance semantics, and successor relationships.",
+          "Keep any future mapping separate from an assurance, certification, safety, or compliance conclusion."
+        ]
+      },
+      "prohibited_interpretation": "This mapping is not a legal, safety, conformance, certification, or compliance conclusion."
+    },
+    {
+      "mapping_id": "map.iso-tr.21959-1.2020.human-state-concepts",
+      "lifecycle_status": "proposed",
+      "mapping_state": "partial_mapping",
+      "external_reference": {
+        "publisher": {
+          "state": "observed",
+          "value": "International Organization for Standardization (ISO)"
+        },
+        "title": {
+          "state": "observed",
+          "value": "ISO/TR 21959-1:2020 Road vehicles — Human performance and state in the context of automated driving — Part 1: Common underlying concepts"
+        },
+        "document_identifier": {
+          "state": "observed",
+          "value": "ISO/TR 21959-1:2020"
+        },
+        "exact_version": {
+          "state": "observed",
+          "value": "ISO/TR 21959-1:2020, edition 2"
+        },
+        "publication_date": {
+          "state": "observed",
+          "value": "2020-01-09"
+        }
+      },
+      "scope": {
+        "state": "observed",
+        "value": "Publisher catalog metadata describes informative common concepts for driver performance and state where a driver is engaged, fallback-ready, or able to resume manual control, including simulator, restricted-road, and public-road evaluations."
+      },
+      "comparator": {
+        "state": "observed",
+        "value": "The proposed Reiyah readiness estimand in reiyah.protocol.harbor-gate-a@1.0.0; the external report's concepts and Reiyah's protocol-bound readiness construct are not treated as equivalent."
+      },
+      "requirement_locator": {
+        "state": "observed",
+        "value": "ISO Open Data record 78088 fields reference, publicationDate, edition, currentStage, and scope; the retained metadata explicitly says the report is informative, and no report clause is retained."
+      },
+      "identity_source_id": "src.iso-tr.21959-1.2020.open-data",
+      "source_ids": [
+        "src.iso-tr.21959-1.2020.open-data"
+      ],
+      "proposed_relevance": "The scope is directly adjacent to human-automation readiness terminology and experimental contexts. It is retained to prevent Reiyah from inventing a confident one-score synonym for driver state, not as evidence that Reiyah's readiness definition is valid or standardized.",
+      "gap": {
+        "state": "open",
+        "description": "Only metadata and the informative scope summary are available; the report's definitions, research gaps, evaluation considerations, and cited evidence are absent.",
+        "closure_requirements": [
+          "Lawfully retain the full exact technical report and any directly relevant companion parts.",
+          "Have a qualified human-factors reviewer map definitions and experimental boundaries to the Reiyah mathematical specification.",
+          "Empirically validate any retained construct under a preregistered protocol before making a scientific claim."
+        ]
+      },
+      "prohibited_interpretation": "This mapping is not a legal, safety, conformance, certification, or compliance conclusion."
+    },
+    {
+      "mapping_id": "map.unece.r157.driver-availability",
+      "lifecycle_status": "proposed",
+      "mapping_state": "partial_mapping",
+      "external_reference": {
+        "publisher": {
+          "state": "observed",
+          "value": "United Nations Economic Commission for Europe (UNECE)"
+        },
+        "title": {
+          "state": "observed",
+          "value": "Proposal for the 01 series of amendments to UN Regulation No. 157 (Automated Lane Keeping Systems), Revision 1"
+        },
+        "document_identifier": {
+          "state": "observed",
+          "value": "ECE/TRANS/WP.29/2022/59/Rev.1"
+        },
+        "exact_version": {
+          "state": "observed",
+          "value": "ECE/TRANS/WP.29/2022/59/Rev.1"
+        },
+        "publication_date": {
+          "state": "observed",
+          "value": "2022-05-30"
+        }
+      },
+      "scope": {
+        "state": "observed",
+        "value": "ALKS type-approval provisions for driver presence, safety-belt state, monitored driver availability, availability criteria, warnings, and transition demand within the regulation's declared vehicle and operating scope."
+      },
+      "comparator": {
+        "state": "observed",
+        "value": "UN R157 driver-availability recognition under sections 6.1.1-6.1.3.1 versus the proposed protocol-bound Reiyah readiness estimand in reiyah.protocol.harbor-gate-a@1.0.0; the constructs are expressly non-equivalent."
+      },
+      "requirement_locator": {
+        "state": "observed",
+        "value": "ECE/TRANS/WP.29/2022/59/Rev.1 sections 6.1.1 through 6.1.3.1; activation linkage in 6.2.3; documentation items in Annex 1 sections 7.1 and 7.3 and Annex 4 section 3.2.5."
+      },
+      "identity_source_id": "src.unece.wp29.2022-59-rev1.authentic-text",
+      "source_ids": [
+        "src.unece.wp29.2022-59-rev1.authentic-text",
+        "src.unece.r157.rev1.2025.documentation"
+      ],
+      "proposed_relevance": "The clauses provide an exact external example of availability-related observations and a decision rule linked to warnings and transition demand. Reiyah proposes to keep those observations, latent belief, decision, intervention, and outcome separate and to avoid equating regulatory availability criteria with readiness.",
+      "gap": {
+        "state": "open",
+        "description": "No independent regulatory or human-factors review has established current applicability, later amendments, construct validity, or a lawful comparison between UN R157 availability recognition and HARBOR readiness.",
+        "closure_requirements": [
+          "Resolve current amendments, contracting-party scope, and legal effect through qualified independent review using retained authentic texts.",
+          "Preregister a construct-comparison protocol that preserves measurement validity and does not treat observed availability criteria as latent readiness ground truth.",
+          "Obtain independent empirical evidence and operator review before any scientific or standards-related conclusion."
+        ]
+      },
+      "prohibited_interpretation": "This mapping is not a legal, safety, conformance, certification, or compliance conclusion."
+    },
+    {
+      "mapping_id": "map.unece.r157.transition-recoverability",
+      "lifecycle_status": "proposed",
+      "mapping_state": "partial_mapping",
+      "external_reference": {
+        "publisher": {
+          "state": "observed",
+          "value": "United Nations Economic Commission for Europe (UNECE)"
+        },
+        "title": {
+          "state": "observed",
+          "value": "Proposal for the 01 series of amendments to UN Regulation No. 157 (Automated Lane Keeping Systems), Revision 1"
+        },
+        "document_identifier": {
+          "state": "observed",
+          "value": "ECE/TRANS/WP.29/2022/59/Rev.1"
+        },
+        "exact_version": {
+          "state": "observed",
+          "value": "ECE/TRANS/WP.29/2022/59/Rev.1"
+        },
+        "publication_date": {
+          "state": "observed",
+          "value": "2022-05-30"
+        }
+      },
+      "scope": {
+        "state": "observed",
+        "value": "ALKS provisions defining transition demand and minimum-risk manoeuvre and specifying recognition, initiation, escalation, driver non-response handling, risk minimization, HMI, documentation, and testing within the regulation's declared scope."
+      },
+      "comparator": {
+        "state": "observed",
+        "value": "UN R157 transition-demand and minimum-risk-manoeuvre provisions versus the proposed Reiyah recoverability estimand and decision/intervention/outcome separation in reiyah.protocol.harbor-gate-a@1.0.0; no type-approval test comparator is implemented."
+      },
+      "requirement_locator": {
+        "state": "observed",
+        "value": "ECE/TRANS/WP.29/2022/59/Rev.1 definitions 2.2 and 2.7; sections 5.1.4-5.1.6, 5.4, 5.5, and 6.4.3; related documentation and tests in Annexes 4 through 6."
+      },
+      "identity_source_id": "src.unece.wp29.2022-59-rev1.authentic-text",
+      "source_ids": [
+        "src.unece.wp29.2022-59-rev1.authentic-text",
+        "src.unece.r157.rev1.2025.documentation"
+      ],
+      "proposed_relevance": "The exact provisions give a bounded external case in which a system decision, transition intervention, driver response, fallback manoeuvre, and resulting state must not be collapsed. They may inform later counterexample design, but they do not validate Reiyah's broader recoverability construct.",
+      "gap": {
+        "state": "open",
+        "description": "No current-jurisdiction review, test execution, ALKS implementation, or empirical mapping to Reiyah recoverability exists; Gate A authorizes none of those activities.",
+        "closure_requirements": [
+          "Independently verify the applicable R157 series, supplements, contracting-party scope, and exact test interpretation at the time of any future study.",
+          "Define a separately authorized, preregistered comparison with dynamics, horizon, uncertainty, constraints, outcomes, and abstention rules.",
+          "Retain test evidence and qualified review without converting a conceptual mapping into approval or compliance."
+        ]
+      },
+      "prohibited_interpretation": "This mapping is not a legal, safety, conformance, certification, or compliance conclusion."
+    },
+    {
+      "mapping_id": "map.nist.ai-rmf-1.0.risk-governance",
+      "lifecycle_status": "proposed",
+      "mapping_state": "proposed_mapping",
+      "external_reference": {
+        "publisher": {
+          "state": "observed",
+          "value": "National Institute of Standards and Technology (NIST)"
+        },
+        "title": {
+          "state": "observed",
+          "value": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)"
+        },
+        "document_identifier": {
+          "state": "observed",
+          "value": "NIST AI 100-1"
+        },
+        "exact_version": {
+          "state": "observed",
+          "value": "AI RMF 1.0"
+        },
+        "publication_date": {
+          "state": "observed",
+          "value": "2023-01-26"
+        }
+      },
+      "scope": {
+        "state": "observed",
+        "value": "Voluntary, rights-preserving, non-sector-specific, use-case-agnostic AI risk-management guidance organized around GOVERN, MAP, MEASURE, and MANAGE, with trustworthiness and human-AI interaction considerations."
+      },
+      "comparator": {
+        "state": "observed",
+        "value": "NIST AI RMF 1.0 generic voluntary risk framework versus the proposed automotive evidence protocol reiyah.protocol.harbor-gate-a@1.0.0; no framework implementation or profile is claimed."
+      },
+      "requirement_locator": {
+        "state": "observed",
+        "value": "NIST AI 100-1 Part 2 Core: GOVERN 1.5, MAP 1.1, MEASURE 2.5-2.6, MANAGE 4.1; Appendix C on human-AI interaction."
+      },
+      "identity_source_id": "src.nist.ai-100-1.2023.publication-page",
+      "source_ids": [
+        "src.nist.ai-100-1.2023.publication-page",
+        "src.nist.ai-100-1.2023.pdf"
+      ],
+      "proposed_relevance": "The framework offers a general governance vocabulary for context, limitations, measurement, ongoing review, and human roles. Reiyah proposes only a high-level comparison to its evidence inventory, explicit validity domains, threat model, and change controls.",
+      "gap": {
+        "state": "open",
+        "description": "No NIST profile, independent framework assessment, automotive tailoring, or evidence that the Gate A packet achieves AI RMF outcomes has been produced; later versions are not retained.",
+        "closure_requirements": [
+          "Independently confirm the current NIST framework version and retain any selected profile or revision.",
+          "Define an explicit automotive scope and assess each selected outcome against retained evidence rather than prose similarity.",
+          "Keep voluntary risk-governance mapping separate from scientific validity, vehicle safety, certification, and compliance."
+        ]
+      },
+      "prohibited_interpretation": "This mapping is not a legal, safety, conformance, certification, or compliance conclusion."
+    }
+  ]
+}

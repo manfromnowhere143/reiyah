@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.denominator",
+  "fixture_id": "reiyah.fixture.bad.denominator",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "Synthetic state counts total nine while the declared eligible denominator is ten.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-007", "TM-014"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-DENOMINATOR-MISMATCH"},
+  "payload": {"kind": "production_mutation", "production_check": "scientific_semantics", "mutations": [
+    {"operation": "replace", "path": "fixtures/good/result.json", "json_pointer": "/metric_results/0/coverage/value", "value": 0.7}
+  ]}
+}

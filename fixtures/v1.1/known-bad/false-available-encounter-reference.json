@@ -1,0 +1,11 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.false-available-encounter-reference",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/human-automation-assessment.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/encounter_ref", "value": {"record_id": "reiyah.encounter.synthetic-001", "record_kind": "encounter", "version": "1.1.0"}}],
+  "expected_outcome": "reject",
+  "expected_failure": {"instance_pointer": "/encounter_ref", "schema_keyword": "semantic", "reason": "A typed reference cannot imply that an absent Gate A encounter record resolves."},
+  "runtime_execution_authorized": false
+}

@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.private-data",
+  "fixture_id": "reiyah.fixture.bad.private-data",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A synthetic credentials-named artifact is inserted into the in-memory repository view.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-024"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-PRIVATE-DATA-PROHIBITED"},
+  "payload": {"kind": "production_mutation", "production_check": "repository_inventory", "mutations": [
+    {"operation": "add_file", "path": "credentials.json", "content_utf8": "{\"synthetic\":true,\"contains_real_records\":false}\n"}
+  ]}
+}

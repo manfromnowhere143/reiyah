@@ -1,0 +1,341 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.0/scientific-contract-profile.schema.json",
+  "title": "HARBOR Gate A scientific contract profile",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "profile_id",
+    "version",
+    "as_of_date",
+    "protocol_release_id",
+    "lifecycle_status",
+    "profile_status",
+    "operator_acceptance_state",
+    "architecture_only",
+    "runtime_authorized",
+    "gate_b_authorized",
+    "scientific_support_claimed",
+    "safety_case_claimed",
+    "schema_bindings",
+    "application_schema_ids",
+    "fixture_bindings",
+    "production_rule_ids",
+    "reference_resolution_contract",
+    "semantic_invariants",
+    "gap_closures"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/scientific-contract-profile.schema.json"
+    },
+    "schema_version": {"const": "1.1.0"},
+    "artifact_id": {"const": "reiyah.artifact.scientific-contract-profile-1.1.0"},
+    "profile_id": {"const": "reiyah.scientific-contract-profile.harbor-gate-a"},
+    "version": {"const": "1.1.0"},
+    "as_of_date": {"$ref": "common.schema.json#/$defs/calendarDate"},
+    "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.1.0"},
+    "lifecycle_status": {"const": "proposed"},
+    "profile_status": {"const": "candidate"},
+    "operator_acceptance_state": {"const": "unaccepted"},
+    "architecture_only": {"const": true},
+    "runtime_authorized": {"const": false},
+    "gate_b_authorized": {"const": false},
+    "scientific_support_claimed": {"const": false},
+    "safety_case_claimed": {"const": false},
+    "schema_bindings": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "allOf": [
+          {"$ref": "common.schema.json#/$defs/artifactReference"},
+          {"required": ["schema_id", "version"]}
+        ]
+      },
+      "uniqueItems": true
+    },
+    "application_schema_ids": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "format": "uri"},
+      "uniqueItems": true
+    },
+    "fixture_bindings": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["fixture_id", "classification", "path", "sha256", "expected_rule_id"],
+        "properties": {
+          "fixture_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "classification": {"enum": ["known_good", "known_bad"]},
+          "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+          "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+          "expected_rule_id": {
+            "oneOf": [
+              {"type": "string", "pattern": "^GA-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+              {"type": "null"}
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {"classification": {"const": "known_good"}},
+              "required": ["classification"]
+            },
+            "then": {"properties": {"expected_rule_id": {"type": "null"}}},
+            "else": {"properties": {"expected_rule_id": {"type": "string"}}}
+          }
+        ],
+        "additionalProperties": false
+      }
+    },
+    "production_rule_ids": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "pattern": "^GA-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+      "uniqueItems": true
+    },
+    "reference_resolution_contract": {
+      "type": "object",
+      "required": [
+        "pointer_syntax",
+        "classification_exhaustive",
+        "unclassified_reference_policy",
+        "multiple_classification_policy",
+        "exact_version_required",
+        "version_binding_contract",
+        "pointer_classes"
+      ],
+      "properties": {
+        "pointer_syntax": {"const": "json_pointer_glob_v1"},
+        "classification_exhaustive": {"const": true},
+        "unclassified_reference_policy": {"const": "reject"},
+        "multiple_classification_policy": {"const": "reject"},
+        "exact_version_required": {"const": true},
+        "version_binding_contract": {"$ref": "#/$defs/versionBindingContract"},
+        "pointer_classes": {
+          "type": "array",
+          "minItems": 20,
+          "items": {"$ref": "#/$defs/pointerClass"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "semantic_invariants": {
+      "type": "array",
+      "minItems": 12,
+      "items": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+      "uniqueItems": true
+    },
+    "gap_closures": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["gap_id", "disposition", "closure_kind", "evidence_paths", "scientific_claim_created"],
+        "properties": {
+          "gap_id": {"enum": ["RGA-001", "RGA-002", "RGA-003"]},
+          "disposition": {"const": "closed_for_static_architecture"},
+          "closure_kind": {"const": "schema_fixture_and_production_validation"},
+          "evidence_paths": {
+            "type": "array",
+            "minItems": 3,
+            "items": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+            "uniqueItems": true
+          },
+          "scientific_claim_created": {"const": false}
+        },
+        "additionalProperties": false
+      },
+      "allOf": [
+        {"contains": {"properties": {"gap_id": {"const": "RGA-001"}}, "required": ["gap_id"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"properties": {"gap_id": {"const": "RGA-002"}}, "required": ["gap_id"]}, "minContains": 1, "maxContains": 1},
+        {"contains": {"properties": {"gap_id": {"const": "RGA-003"}}, "required": ["gap_id"]}, "minContains": 1, "maxContains": 1}
+      ]
+    }
+  },
+  "$defs": {
+    "pointerClass": {
+      "type": "object",
+      "required": [
+        "class_id",
+        "application_schema_id",
+        "pointer_patterns",
+        "semantic_role",
+        "value_shape",
+        "owner_class",
+        "target_kinds",
+        "cardinality",
+        "expected_version",
+        "resolution_rule"
+      ],
+      "properties": {
+        "class_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "application_schema_id": {"type": "string", "format": "uri"},
+        "pointer_patterns": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^/(?:[^/~]|~[01]|\\*)+(?:/(?:[^/~]|~[01]|\\*)+)*$"
+          },
+          "uniqueItems": true
+        },
+        "semantic_role": {
+          "enum": [
+            "definition",
+            "reference",
+            "manifest_binding",
+            "schema_binding",
+            "artifact_binding",
+            "explicit_unavailable"
+          ]
+        },
+        "value_shape": {
+          "enum": [
+            "stable_identifier",
+            "release_identifier",
+            "schema_identifier",
+            "actor_reference",
+            "versioned_reference",
+            "versioned_reference_binding",
+            "named_version_reference",
+            "artifact_binding",
+            "record_artifact_reference",
+            "evidence_reference",
+            "artifact_reference"
+          ]
+        },
+        "owner_class": {
+          "enum": [
+            "application_document",
+            "application_graph",
+            "protocol_definition_registry",
+            "manifest_release_ledger",
+            "schema_catalog",
+            "canonical_repository",
+            "explicit_unavailable"
+          ]
+        },
+        "target_kinds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "cardinality": {
+          "description": "Target-resolution cardinality for each concrete pointer occurrence matched by a pointer pattern. A wildcard classifies each concrete member independently; this value does not state whether a schema property, array, or list is present. Use exactly_one for a non-null exact reference and zero_or_one only when the matched value admits null or an explicit-unavailable branch.",
+          "enum": ["exactly_one", "zero_or_one", "one_or_more", "zero_or_more"]
+        },
+        "expected_version": {
+          "oneOf": [
+            {"const": "1.1.0"},
+            {"type": "null"}
+          ]
+        },
+        "membership_binding": {
+          "oneOf": [
+            {"$ref": "#/$defs/membershipBinding"},
+            {"type": "null"}
+          ]
+        },
+        "resolution_rule": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+      },
+      "additionalProperties": false
+    },
+    "versionBindingContract": {
+      "type": "object",
+      "required": [
+        "binding_exhaustive",
+        "missing_version_policy",
+        "multiple_version_policy",
+        "wildcard_alignment_policy",
+        "bindings"
+      ],
+      "properties": {
+        "binding_exhaustive": {"const": true},
+        "missing_version_policy": {"const": "reject"},
+        "multiple_version_policy": {"const": "reject"},
+        "wildcard_alignment_policy": {"const": "same_capture_tuple"},
+        "bindings": {
+          "type": "array",
+          "minItems": 5,
+          "items": {"$ref": "#/$defs/versionBinding"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "versionBinding": {
+      "type": "object",
+      "required": [
+        "binding_id",
+        "application_schema_id",
+        "identity_pointer_patterns",
+        "version_pointer_pattern",
+        "version_source",
+        "wildcard_alignment_required",
+        "cardinality",
+        "resolution_rule"
+      ],
+      "properties": {
+        "binding_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "application_schema_id": {"type": "string", "format": "uri"},
+        "identity_pointer_patterns": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^/(?:[^/~]|~[01]|\\*)+(?:/(?:[^/~]|~[01]|\\*)+)*$"
+          },
+          "uniqueItems": true
+        },
+        "version_pointer_pattern": {
+          "type": "string",
+          "pattern": "^/(?:[^/~]|~[01]|\\*)+(?:/(?:[^/~]|~[01]|\\*)+)*$"
+        },
+        "version_source": {"enum": ["sibling", "inherited"]},
+        "wildcard_alignment_required": {"type": "boolean"},
+        "cardinality": {"const": "exactly_one"},
+        "resolution_rule": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+      },
+      "additionalProperties": false
+    },
+    "membershipBinding": {
+      "type": "object",
+      "required": [
+        "container_id_pointer_patterns",
+        "container_target_kind",
+        "member_ids_field",
+        "container_identity_policy",
+        "wildcard_alignment_required",
+        "resolution_rule"
+      ],
+      "properties": {
+        "container_id_pointer_patterns": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^/(?:[^/~]|~[01]|\\*)+(?:/(?:[^/~]|~[01]|\\*)+)*$"
+          },
+          "uniqueItems": true
+        },
+        "container_target_kind": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "member_ids_field": {"const": "member_ids"},
+        "container_identity_policy": {
+          "enum": ["exact_single_container", "all_declared_containers_same_identity"]
+        },
+        "wildcard_alignment_required": {"type": "boolean"},
+        "resolution_rule": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

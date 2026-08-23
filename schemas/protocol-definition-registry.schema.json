@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/protocol-definition-registry.schema.json",
+  "title": "Protocol-owned typed definition registry",
+  "description": "Versioned definitions for identifiers governed by one exact protocol release. Definitions remain proposed and authorize no runtime behavior.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "registry_id",
+    "version",
+    "protocol_release_id",
+    "definitions",
+    "runtime_execution_authorized"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/protocol-definition-registry.schema.json"
+    },
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "registry_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "protocol_release_id": {
+      "$ref": "common.schema.json#/$defs/releaseIdentifier"
+    },
+    "definitions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/definition"
+      }
+    },
+    "runtime_execution_authorized": {
+      "const": false
+    }
+  },
+  "$defs": {
+    "definitionKind": {
+      "type": "string",
+      "enum": [
+        "rule",
+        "method",
+        "outcome_definition",
+        "group",
+        "clock",
+        "sensor",
+        "construct",
+        "state_space",
+        "choice_set",
+        "inference_specification",
+        "analysis_specification",
+        "uncertainty_method",
+        "multiplicity_rule",
+        "assignment_mechanism",
+        "inclusion_rule",
+        "exclusion_rule",
+        "minimum_information_rule",
+        "decision_rule",
+        "producer",
+        "assumption",
+        "validity_boundary",
+        "estimand",
+        "metric"
+      ]
+    },
+    "definition": {
+      "type": "object",
+      "required": [
+        "definition_id",
+        "kind",
+        "version",
+        "lifecycle_status",
+        "owner_protocol_release_id",
+        "description"
+      ],
+      "properties": {
+        "definition_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "kind": {
+          "$ref": "#/$defs/definitionKind"
+        },
+        "version": {
+          "$ref": "common.schema.json#/$defs/semanticVersion"
+        },
+        "lifecycle_status": {
+          "const": "proposed"
+        },
+        "owner_protocol_release_id": {
+          "$ref": "common.schema.json#/$defs/releaseIdentifier"
+        },
+        "description": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "member_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "common.schema.json#/$defs/stableIdentifier"
+          },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": ["state_space", "choice_set"]
+              }
+            },
+            "required": ["kind"]
+          },
+          "then": {
+            "required": ["member_ids"]
+          },
+          "else": {
+            "not": {
+              "required": ["member_ids"]
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

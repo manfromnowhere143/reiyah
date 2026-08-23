@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/standards-crosswalk.schema.json",
+  "title": "Dated evidence-gap standards crosswalk",
+  "description": "This structure cannot express a compliance conclusion.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "crosswalk_id",
+    "version",
+    "as_of_date",
+    "lifecycle_status",
+    "compliance_claimed",
+    "entries"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/standards-crosswalk.schema.json"
+    },
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "crosswalk_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "as_of_date": {
+      "$ref": "common.schema.json#/$defs/calendarDate"
+    },
+    "lifecycle_status": {
+      "const": "proposed"
+    },
+    "compliance_claimed": {
+      "const": false
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/crosswalkEntry"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "crosswalkEntry": {
+      "type": "object",
+      "required": [
+        "mapping_id",
+        "lifecycle_status",
+        "mapping_state",
+        "external_reference",
+        "identity_source_id",
+        "scope",
+        "comparator",
+        "requirement_locator",
+        "source_ids",
+        "proposed_relevance",
+        "gap",
+        "prohibited_interpretation"
+      ],
+      "properties": {
+        "mapping_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "lifecycle_status": {
+          "const": "proposed"
+        },
+        "mapping_state": {
+          "enum": ["proposed_mapping", "partial_mapping", "evidence_gap", "not_applicable"]
+        },
+        "external_reference": {
+          "type": "object",
+          "required": [
+            "publisher",
+            "title",
+            "document_identifier",
+            "exact_version",
+            "publication_date"
+          ],
+          "properties": {
+            "publisher": {
+              "$ref": "common.schema.json#/$defs/stringMeasurement"
+            },
+            "title": {
+              "$ref": "common.schema.json#/$defs/stringMeasurement"
+            },
+            "document_identifier": {
+              "$ref": "common.schema.json#/$defs/stringMeasurement"
+            },
+            "exact_version": {
+              "$ref": "common.schema.json#/$defs/stringMeasurement"
+            },
+            "publication_date": {
+              "$ref": "common.schema.json#/$defs/dateMeasurement"
+            }
+          },
+          "additionalProperties": false
+        },
+        "identity_source_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "scope": {
+          "$ref": "common.schema.json#/$defs/stringMeasurement"
+        },
+        "comparator": {
+          "$ref": "common.schema.json#/$defs/stringMeasurement"
+        },
+        "requirement_locator": {
+          "$ref": "common.schema.json#/$defs/stringMeasurement"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/stableIdentifier"
+          },
+          "uniqueItems": true
+        },
+        "proposed_relevance": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "gap": {
+          "type": "object",
+          "required": ["state", "description", "closure_requirements"],
+          "properties": {
+            "state": {
+              "enum": ["open", "partially_closed", "closed", "not_applicable"]
+            },
+            "description": {
+              "$ref": "common.schema.json#/$defs/nonEmptyString"
+            },
+            "closure_requirements": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/nonEmptyString"
+              },
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "prohibited_interpretation": {
+          "const": "This mapping is not a legal, safety, conformance, certification, or compliance conclusion."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mapping_state": {
+                "enum": ["proposed_mapping", "partial_mapping"]
+              }
+            },
+            "required": ["mapping_state"]
+          },
+          "then": {
+            "properties": {
+              "source_ids": {
+                "minItems": 1
+              },
+              "external_reference": {
+                "properties": {
+                  "exact_version": {
+                    "properties": {"state": {"const": "observed"}},
+                    "required": ["state"]
+                  },
+                  "publication_date": {
+                    "properties": {"state": {"const": "observed"}},
+                    "required": ["state"]
+                  }
+                }
+              },
+              "scope": {
+                "properties": {"state": {"const": "observed"}},
+                "required": ["state"]
+              },
+              "comparator": {
+                "properties": {"state": {"const": "observed"}},
+                "required": ["state"]
+              },
+              "requirement_locator": {
+                "properties": {"state": {"const": "observed"}},
+                "required": ["state"]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {"mapping_state": {"const": "evidence_gap"}},
+            "required": ["mapping_state"]
+          },
+          "then": {
+            "properties": {
+              "gap": {
+                "properties": {"state": {"enum": ["open", "partially_closed"]}}
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

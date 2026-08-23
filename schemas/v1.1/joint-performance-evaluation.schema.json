@@ -1,0 +1,581 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/joint-performance-evaluation.schema.json",
+  "title": "Joint human-automation, selective, OOD, conformal, transfer, and worst-group evaluation contract",
+  "description": "Keeps human, automation, and joint outcomes distinct; binds silent misses to explicit opportunities and dependence analysis; and retains selective, OOD, conformal, transfer, and worst-group uncertainty.",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/recordHeader"
+    },
+    {
+      "type": "object",
+      "required": [
+        "evaluation_id",
+        "mission_release_id",
+        "study_ref",
+        "odd_ref",
+        "dataset_ref",
+        "benchmark_ref",
+        "opportunity_definition",
+        "actor_performance",
+        "joint_silent_miss",
+        "selective_prediction",
+        "ood_evaluation",
+        "conformal_evaluation",
+        "transfer_evaluation",
+        "worst_group_evaluation",
+        "evidence_binding",
+        "scientific_claim_authorized"
+      ],
+      "properties": {
+        "schema_id": {
+          "const": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/joint-performance-evaluation.schema.json"
+        },
+        "evaluation_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "mission_release_id": {
+          "$ref": "common.schema.json#/$defs/releaseIdentifier"
+        },
+        "study_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "study_design"}}}
+          ]
+        },
+        "odd_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "odd"}}}
+          ]
+        },
+        "dataset_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "dataset"}}}
+          ]
+        },
+        "benchmark_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "benchmark"}}}
+          ]
+        },
+        "opportunity_definition": {
+          "$ref": "#/$defs/opportunityDefinition"
+        },
+        "actor_performance": {
+          "type": "object",
+          "required": ["human", "automation"],
+          "properties": {
+            "human": {
+              "allOf": [
+                {"$ref": "#/$defs/actorPerformance"},
+                {
+                  "properties": {
+                    "actor_kind": {"const": "human"},
+                    "actor_ref": {
+                      "properties": {"actor_type": {"const": "human"}},
+                      "required": ["actor_type"]
+                    }
+                  }
+                }
+              ]
+            },
+            "automation": {
+              "allOf": [
+                {"$ref": "#/$defs/actorPerformance"},
+                {
+                  "properties": {
+                    "actor_kind": {"const": "automation"},
+                    "actor_ref": {
+                      "properties": {"actor_type": {"const": "automation_system"}},
+                      "required": ["actor_type"]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "joint_silent_miss": {
+          "$ref": "#/$defs/jointSilentMiss"
+        },
+        "selective_prediction": {
+          "$ref": "#/$defs/selectivePrediction"
+        },
+        "ood_evaluation": {
+          "$ref": "#/$defs/oodEvaluation"
+        },
+        "conformal_evaluation": {
+          "$ref": "#/$defs/conformalEvaluation"
+        },
+        "transfer_evaluation": {
+          "$ref": "#/$defs/transferEvaluation"
+        },
+        "worst_group_evaluation": {
+          "$ref": "#/$defs/worstGroupEvaluation"
+        },
+        "evidence_binding": {
+          "$ref": "common.schema.json#/$defs/evidenceBinding"
+        },
+        "scientific_claim_authorized": {
+          "const": false
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle_status": {
+            "enum": ["supported", "contradicted", "replicated", "corrected"]
+          }
+        },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "evidence_binding": {
+            "properties": {"state": {"const": "retained"}},
+            "required": ["state"]
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "opportunityDefinition": {
+      "type": "object",
+      "required": [
+        "opportunity_definition_id",
+        "eligibility_rule_id",
+        "exposure_unit",
+        "observation_window",
+        "eligible_opportunities",
+        "excluded_opportunities",
+        "ascertainment_state",
+        "denominator_reconciliation_required"
+      ],
+      "properties": {
+        "opportunity_definition_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "eligibility_rule_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "exposure_unit": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "observation_window": {
+          "$ref": "common.schema.json#/$defs/temporalWindow"
+        },
+        "eligible_opportunities": {
+          "$ref": "common.schema.json#/$defs/integerMeasurement"
+        },
+        "excluded_opportunities": {
+          "$ref": "common.schema.json#/$defs/integerMeasurement"
+        },
+        "ascertainment_state": {
+          "$ref": "common.schema.json#/$defs/epistemicState"
+        },
+        "denominator_reconciliation_required": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "actorPerformance": {
+      "type": "object",
+      "required": [
+        "actor_kind",
+        "actor_ref",
+        "opportunity_definition_id",
+        "eligible_opportunities",
+        "detections",
+        "misses",
+        "abstentions",
+        "invalid_observations",
+        "miss_rate",
+        "uncertainty"
+      ],
+      "properties": {
+        "actor_kind": {
+          "enum": ["human", "automation"]
+        },
+        "actor_ref": {
+          "$ref": "common.schema.json#/$defs/actorReference"
+        },
+        "opportunity_definition_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "eligible_opportunities": {
+          "$ref": "common.schema.json#/$defs/integerMeasurement"
+        },
+        "detections": {
+          "$ref": "common.schema.json#/$defs/integerMeasurement"
+        },
+        "misses": {
+          "$ref": "common.schema.json#/$defs/integerMeasurement"
+        },
+        "abstentions": {
+          "$ref": "common.schema.json#/$defs/integerMeasurement"
+        },
+        "invalid_observations": {
+          "$ref": "common.schema.json#/$defs/integerMeasurement"
+        },
+        "miss_rate": {
+          "$ref": "common.schema.json#/$defs/probabilityMeasurement"
+        },
+        "uncertainty": {
+          "$ref": "common.schema.json#/$defs/uncertaintyInterval"
+        }
+      },
+      "additionalProperties": false
+    },
+    "dependenceAnalysis": {
+      "type": "object",
+      "required": [
+        "method_id",
+        "independence_assumption",
+        "expected_joint_rate_under_independence",
+        "observed_joint_rate",
+        "excess_joint_rate",
+        "dependence_ratio",
+        "uncertainty",
+        "sensitivity_analysis_ids"
+      ],
+      "properties": {
+        "method_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "independence_assumption": {
+          "$ref": "common.schema.json#/$defs/booleanMeasurement"
+        },
+        "expected_joint_rate_under_independence": {
+          "$ref": "common.schema.json#/$defs/probabilityMeasurement"
+        },
+        "observed_joint_rate": {
+          "$ref": "common.schema.json#/$defs/probabilityMeasurement"
+        },
+        "excess_joint_rate": {
+          "$ref": "common.schema.json#/$defs/numberMeasurement"
+        },
+        "dependence_ratio": {
+          "$ref": "common.schema.json#/$defs/nonNegativeNumberMeasurement"
+        },
+        "uncertainty": {
+          "$ref": "common.schema.json#/$defs/uncertaintyInterval"
+        },
+        "sensitivity_analysis_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "jointSilentMiss": {
+      "type": "object",
+      "required": [
+        "opportunity_definition_id",
+        "eligible_opportunities",
+        "human_misses",
+        "automation_misses",
+        "joint_silent_misses",
+        "joint_silent_miss_rate",
+        "silent_definition_id",
+        "dependence_analysis"
+      ],
+      "properties": {
+        "opportunity_definition_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "eligible_opportunities": {
+          "$ref": "common.schema.json#/$defs/integerMeasurement"
+        },
+        "human_misses": {
+          "$ref": "common.schema.json#/$defs/integerMeasurement"
+        },
+        "automation_misses": {
+          "$ref": "common.schema.json#/$defs/integerMeasurement"
+        },
+        "joint_silent_misses": {
+          "$ref": "common.schema.json#/$defs/integerMeasurement"
+        },
+        "joint_silent_miss_rate": {
+          "$ref": "common.schema.json#/$defs/probabilityMeasurement"
+        },
+        "silent_definition_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "dependence_analysis": {
+          "$ref": "#/$defs/dependenceAnalysis"
+        }
+      },
+      "additionalProperties": false
+    },
+    "selectivePrediction": {
+      "type": "object",
+      "required": [
+        "selector_id",
+        "selector_version",
+        "threshold_rule_id",
+        "threshold_preregistered",
+        "total_predictions",
+        "accepted_predictions",
+        "abstentions",
+        "ood_predictions",
+        "sensor_invalid_predictions",
+        "coverage",
+        "selective_risk",
+        "unconditional_risk"
+      ],
+      "properties": {
+        "selector_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "selector_version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+        "threshold_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "threshold_preregistered": {"const": true},
+        "total_predictions": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "accepted_predictions": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "abstentions": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "ood_predictions": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "sensor_invalid_predictions": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "coverage": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "selective_risk": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "unconditional_risk": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"}
+      },
+      "additionalProperties": false
+    },
+    "oodEvaluation": {
+      "type": "object",
+      "required": [
+        "detector_id",
+        "detector_version",
+        "ood_definition_id",
+        "threshold_rule_id",
+        "in_domain_count",
+        "out_of_distribution_count",
+        "unknown_domain_count",
+        "ood_detection_rate",
+        "ood_false_alarm_rate",
+        "unresolved_items_retained"
+      ],
+      "properties": {
+        "detector_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "detector_version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+        "ood_definition_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "threshold_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "in_domain_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "out_of_distribution_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "unknown_domain_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "ood_detection_rate": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "ood_false_alarm_rate": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "unresolved_items_retained": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "conformalEvaluation": {
+      "type": "object",
+      "required": [
+        "method_id",
+        "method_version",
+        "calibration_dataset_ref",
+        "alpha",
+        "exchangeability_assessment",
+        "empirical_coverage",
+        "average_set_size",
+        "guarantee_scope",
+        "conditional_group_results"
+      ],
+      "properties": {
+        "method_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "method_version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+        "calibration_dataset_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "dataset"}}}
+          ]
+        },
+        "alpha": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "exchangeability_assessment": {"$ref": "common.schema.json#/$defs/booleanMeasurement"},
+        "empirical_coverage": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "average_set_size": {"$ref": "common.schema.json#/$defs/positiveNumberMeasurement"},
+        "guarantee_scope": {"$ref": "common.schema.json#/$defs/stringMeasurement"},
+        "conditional_group_results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["group_id", "sample_size", "coverage"],
+            "properties": {
+              "group_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+              "sample_size": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+              "coverage": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"}
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "transferEvaluation": {
+      "type": "object",
+      "required": [
+        "source_domain",
+        "target_domain",
+        "shift_dimensions",
+        "adaptation_rule_id",
+        "transport_assumption_ids",
+        "target_label_access",
+        "target_access_chronology",
+        "source_performance",
+        "target_performance",
+        "transfer_gap",
+        "uncertainty"
+      ],
+      "properties": {
+        "source_domain": {"$ref": "common.schema.json#/$defs/applicabilityDomain"},
+        "target_domain": {"$ref": "common.schema.json#/$defs/applicabilityDomain"},
+        "shift_dimensions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "population",
+              "agent",
+              "object",
+              "time",
+              "geography",
+              "road",
+              "traffic",
+              "weather",
+              "illumination",
+              "sensor",
+              "map",
+              "policy"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "adaptation_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "transport_assumption_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "target_label_access": {"$ref": "common.schema.json#/$defs/booleanMeasurement"},
+        "target_access_chronology": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["event_id", "event_type", "occurred_at", "actor", "artifact_refs"],
+            "properties": {
+              "event_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+              "event_type": {"enum": ["target_registered", "target_labels_requested", "target_labels_accessed", "target_access_revoked"]},
+              "occurred_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+              "actor": {"$ref": "common.schema.json#/$defs/actorReference"},
+              "artifact_refs": {
+                "type": "array",
+                "minItems": 1,
+                "items": {"$ref": "common.schema.json#/$defs/artifactBinding"},
+                "uniqueItems": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        },
+        "source_performance": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "target_performance": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "transfer_gap": {"$ref": "common.schema.json#/$defs/numberMeasurement"},
+        "uncertainty": {"$ref": "common.schema.json#/$defs/uncertaintyInterval"}
+      },
+      "additionalProperties": false
+    },
+    "groupResult": {
+      "type": "object",
+      "required": [
+        "group_id",
+        "sample_size",
+        "information_disposition",
+        "performance",
+        "uncertainty",
+        "abstention_rate",
+        "ood_rate"
+      ],
+      "properties": {
+        "group_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "sample_size": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "information_disposition": {
+          "enum": ["sufficient", "insufficient", "unknown"]
+        },
+        "performance": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "uncertainty": {"$ref": "common.schema.json#/$defs/uncertaintyInterval"},
+        "abstention_rate": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "ood_rate": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"}
+      },
+      "additionalProperties": false
+    },
+    "worstGroupDisposition": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "group_ids", "selection_rule_id"],
+          "properties": {
+            "state": {"const": "observed"},
+            "group_ids": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+              "uniqueItems": true
+            },
+            "selection_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"}
+          },
+          "additionalProperties": false
+        },
+        {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "worstGroupEvaluation": {
+      "type": "object",
+      "required": [
+        "group_definition_ids",
+        "group_results",
+        "metric_id",
+        "direction",
+        "minimum_information_rule_id",
+        "selection_rule_id",
+        "all_ties_required",
+        "omission_prohibited",
+        "worst_group_disposition"
+      ],
+      "properties": {
+        "group_definition_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "group_results": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/groupResult"},
+          "uniqueItems": true
+        },
+        "metric_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "direction": {"enum": ["higher_is_better", "lower_is_better"]},
+        "minimum_information_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "selection_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "all_ties_required": {"const": true},
+        "omission_prohibited": {"const": true},
+        "worst_group_disposition": {"$ref": "#/$defs/worstGroupDisposition"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "unevaluatedProperties": false
+}

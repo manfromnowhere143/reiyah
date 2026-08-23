@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.missing-coercion",
+  "fixture_id": "reiyah.fixture.bad.missing-coercion",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A missing synthetic source is silently emitted as observed numeric zero.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-007", "TM-014"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-EPISTEMIC-MISSING-COERCION"},
+  "payload": {"kind": "production_mutation", "production_check": "normative_measurements", "mutations": [
+    {"operation": "replace", "path": "manifests/examples/object-chain/observation.json", "json_pointer": "/measurements/1/value", "value": {"state": "missing", "reason": "Synthetic missing input was unavailable.", "value": 0}}
+  ]}
+}

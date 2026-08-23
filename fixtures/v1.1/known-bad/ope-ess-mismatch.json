@@ -1,0 +1,11 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope-ess-mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/sequential-off-policy-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/effective_sample_size/value/value", "value": 0.5}],
+  "expected_outcome": "reject",
+  "expected_failure": {"instance_pointer": "/effective_sample_size/value/value", "schema_keyword": "semantic", "reason": "Effective sample size must equal the exact Kish reconstruction from importance weights."},
+  "runtime_execution_authorized": false
+}

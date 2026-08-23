@@ -1,0 +1,312 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/joint-performance-evaluation.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "reiyah.fixture.joint-performance.good",
+  "version": "1.1.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.event.joint-performance.proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-23T00:10:00Z",
+      "actor": {
+        "actor_id": "reiyah.actor.fixture-author",
+        "actor_type": "derived_process",
+        "version": "1.1.0",
+        "role": "deterministic fixture author"
+      },
+      "rationale": "Schema-only positive example; reported numbers are synthetic.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+  "created_at": "2026-08-23T00:10:00Z",
+  "runtime_execution_authorized": false,
+  "evaluation_id": "reiyah.evaluation.synthetic-joint-performance",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "study_ref": {
+    "record_id": "reiyah.study.synthetic-policy-effect",
+    "record_kind": "study_design",
+    "version": "1.1.0"
+  },
+  "odd_ref": {
+    "record_id": "reiyah.odd.synthetic-daylight",
+    "record_kind": "odd",
+    "version": "1.1.0"
+  },
+  "dataset_ref": {
+    "record_id": "reiyah.dataset.synthetic-evaluation",
+    "record_kind": "dataset",
+    "version": "1.1.0"
+  },
+  "benchmark_ref": {
+    "record_id": "reiyah.benchmark.synthetic-assurance",
+    "record_kind": "benchmark",
+    "version": "1.1.0"
+  },
+  "opportunity_definition": {
+    "opportunity_definition_id": "reiyah.opportunity.synthetic-hazard",
+    "eligibility_rule_id": "reiyah.rule.synthetic-opportunity",
+    "exposure_unit": "synthetic encounter",
+    "observation_window": {
+      "window_id": "reiyah.window.synthetic-evaluation",
+      "opens_at": {"state": "observed", "value": "2026-08-23T00:00:00Z"},
+      "closes_at": {"state": "observed", "value": "2026-08-23T00:09:59Z"},
+      "clock_id": "reiyah.clock.synthetic-monotonic"
+    },
+    "eligible_opportunities": {"state": "observed", "value": 100},
+    "excluded_opportunities": {"state": "observed", "value": 10},
+    "ascertainment_state": "observed",
+    "denominator_reconciliation_required": true
+  },
+  "actor_performance": {
+    "human": {
+      "actor_kind": "human",
+      "actor_ref": {
+        "actor_id": "reiyah.actor.synthetic-driver",
+        "actor_type": "human",
+        "version": "1.1.0",
+        "role": "synthetic human-side assessor"
+      },
+      "opportunity_definition_id": "reiyah.opportunity.synthetic-hazard",
+      "eligible_opportunities": {"state": "observed", "value": 100},
+      "detections": {"state": "observed", "value": 80},
+      "misses": {"state": "observed", "value": 15},
+      "abstentions": {"state": "observed", "value": 3},
+      "invalid_observations": {"state": "observed", "value": 2},
+      "miss_rate": {"state": "observed", "value": 0.15},
+      "uncertainty": {
+        "method_id": "reiyah.method.synthetic-wilson",
+        "confidence_level": {"state": "observed", "value": 0.95},
+        "lower": {"state": "observed", "value": 0.09},
+        "upper": {"state": "observed", "value": 0.23}
+      }
+    },
+    "automation": {
+      "actor_kind": "automation",
+      "actor_ref": {
+        "actor_id": "reiyah.actor.synthetic-automation",
+        "actor_type": "automation_system",
+        "version": "1.1.0",
+        "role": "synthetic automation-side assessor"
+      },
+      "opportunity_definition_id": "reiyah.opportunity.synthetic-hazard",
+      "eligible_opportunities": {"state": "observed", "value": 100},
+      "detections": {"state": "observed", "value": 85},
+      "misses": {"state": "observed", "value": 10},
+      "abstentions": {"state": "observed", "value": 4},
+      "invalid_observations": {"state": "observed", "value": 1},
+      "miss_rate": {"state": "observed", "value": 0.1},
+      "uncertainty": {
+        "method_id": "reiyah.method.synthetic-wilson",
+        "confidence_level": {"state": "observed", "value": 0.95},
+        "lower": {"state": "observed", "value": 0.05},
+        "upper": {"state": "observed", "value": 0.18}
+      }
+    }
+  },
+  "joint_silent_miss": {
+    "opportunity_definition_id": "reiyah.opportunity.synthetic-hazard",
+    "eligible_opportunities": {"state": "observed", "value": 100},
+    "human_misses": {"state": "observed", "value": 15},
+    "automation_misses": {"state": "observed", "value": 10},
+    "joint_silent_misses": {"state": "observed", "value": 5},
+    "joint_silent_miss_rate": {"state": "observed", "value": 0.05},
+    "silent_definition_id": "reiyah.definition.synthetic-silent-miss",
+    "dependence_analysis": {
+      "method_id": "reiyah.method.synthetic-dependence-ratio",
+      "independence_assumption": {"state": "observed", "value": false},
+      "expected_joint_rate_under_independence": {"state": "observed", "value": 0.015},
+      "observed_joint_rate": {"state": "observed", "value": 0.05},
+      "excess_joint_rate": {"state": "observed", "value": 0.035},
+      "dependence_ratio": {"state": "observed", "value": 3.3333333333},
+      "uncertainty": {
+        "method_id": "reiyah.method.synthetic-bootstrap",
+        "confidence_level": {"state": "observed", "value": 0.95},
+        "lower": {"state": "observed", "value": 1.1},
+        "upper": {"state": "observed", "value": 7.2}
+      },
+      "sensitivity_analysis_ids": ["reiyah.sensitivity.synthetic-dependence"]
+    }
+  },
+  "selective_prediction": {
+    "selector_id": "reiyah.selector.synthetic-confidence",
+    "selector_version": "1.1.0",
+    "threshold_rule_id": "reiyah.rule.synthetic-selective-threshold",
+    "threshold_preregistered": true,
+    "total_predictions": {"state": "observed", "value": 100},
+    "accepted_predictions": {"state": "observed", "value": 90},
+    "abstentions": {"state": "observed", "value": 4},
+    "ood_predictions": {"state": "observed", "value": 5},
+    "sensor_invalid_predictions": {"state": "observed", "value": 1},
+    "coverage": {"state": "observed", "value": 0.9},
+    "selective_risk": {"state": "observed", "value": 0.08},
+    "unconditional_risk": {"state": "observed", "value": 0.12}
+  },
+  "ood_evaluation": {
+    "detector_id": "reiyah.detector.synthetic-ood",
+    "detector_version": "1.1.0",
+    "ood_definition_id": "reiyah.definition.synthetic-ood",
+    "threshold_rule_id": "reiyah.rule.synthetic-ood-threshold",
+    "in_domain_count": {"state": "observed", "value": 90},
+    "out_of_distribution_count": {"state": "observed", "value": 5},
+    "unknown_domain_count": {"state": "observed", "value": 5},
+    "ood_detection_rate": {"state": "observed", "value": 0.8},
+    "ood_false_alarm_rate": {"state": "observed", "value": 0.03},
+    "unresolved_items_retained": true
+  },
+  "conformal_evaluation": {
+    "method_id": "reiyah.method.synthetic-split-conformal",
+    "method_version": "1.1.0",
+    "calibration_dataset_ref": {
+      "record_id": "reiyah.dataset.synthetic-evaluation",
+      "record_kind": "dataset",
+      "version": "1.1.0"
+    },
+    "alpha": {"state": "observed", "value": 0.1},
+    "exchangeability_assessment": {"state": "unmeasured", "reason": "Exchangeability was not established."},
+    "empirical_coverage": {"state": "observed", "value": 0.89},
+    "average_set_size": {"state": "observed", "value": 1.4},
+    "guarantee_scope": {"state": "observed", "value": "Marginal synthetic calibration population only."},
+    "conditional_group_results": [
+      {
+        "group_id": "reiyah.group.synthetic-a",
+        "sample_size": {"state": "observed", "value": 50},
+        "coverage": {"state": "observed", "value": 0.88}
+      },
+      {
+        "group_id": "reiyah.group.synthetic-b",
+        "sample_size": {"state": "observed", "value": 50},
+        "coverage": {"state": "observed", "value": 0.9}
+      }
+    ]
+  },
+  "transfer_evaluation": {
+    "source_domain": {
+      "domain_id": "reiyah.domain.synthetic-source",
+      "version": "1.1.0",
+      "odd_ref": null,
+      "dimensions": [
+        {
+          "dimension_id": "reiyah.dimension.synthetic-source-weather",
+          "dimension": "weather",
+          "criterion": "Synthetic clear weather."
+        }
+      ],
+      "outside_domain_policy": {
+        "state": "out_of_distribution",
+        "rule_id": "reiyah.rule.explicit-ood",
+        "coercion_prohibited": true
+      }
+    },
+    "target_domain": {
+      "domain_id": "reiyah.domain.synthetic-target",
+      "version": "1.1.0",
+      "odd_ref": null,
+      "dimensions": [
+        {
+          "dimension_id": "reiyah.dimension.synthetic-target-weather",
+          "dimension": "weather",
+          "criterion": "Synthetic rain weather."
+        }
+      ],
+      "outside_domain_policy": {
+        "state": "out_of_distribution",
+        "rule_id": "reiyah.rule.explicit-ood",
+        "coercion_prohibited": true
+      }
+    },
+    "shift_dimensions": ["weather"],
+    "adaptation_rule_id": "reiyah.rule.synthetic-no-adaptation",
+    "transport_assumption_ids": ["reiyah.assumption.synthetic-transport"],
+    "target_label_access": {"state": "observed", "value": true},
+    "target_access_chronology": [
+      {
+        "event_id": "reiyah.transfer-access.synthetic-target-registered",
+        "event_type": "target_registered",
+        "occurred_at": "2026-08-22T00:00:00Z",
+        "actor": {
+          "actor_id": "reiyah.actor.synthetic-custodian",
+          "actor_type": "human",
+          "version": "1.1.0",
+          "role": "synthetic target-data custodian"
+        },
+        "artifact_refs": [
+          {
+            "availability_state": "not_available_in_gate_a",
+            "expected_artifact_id": "reiyah.artifact.synthetic-target-registration",
+            "expected_artifact_kind": "access_record",
+            "expected_schema_id": null,
+            "expected_version": null,
+            "reason": "The event is a synthetic chronology fixture; no executed target-registration artifact exists in Gate A.",
+            "earliest_permitted_gate": "B_after_explicit_operator_acceptance",
+            "gate_b_authorized": false,
+            "runtime_execution_authorized": false
+          }
+        ]
+      }
+    ],
+    "source_performance": {"state": "observed", "value": 0.92},
+    "target_performance": {"state": "observed", "value": 0.81},
+    "transfer_gap": {"state": "observed", "value": -0.11},
+    "uncertainty": {
+      "method_id": "reiyah.method.synthetic-bootstrap",
+      "confidence_level": {"state": "observed", "value": 0.95},
+      "lower": {"state": "observed", "value": -0.2},
+      "upper": {"state": "observed", "value": -0.02}
+    }
+  },
+  "worst_group_evaluation": {
+    "group_definition_ids": ["reiyah.group.synthetic-a", "reiyah.group.synthetic-b"],
+    "group_results": [
+      {
+        "group_id": "reiyah.group.synthetic-a",
+        "sample_size": {"state": "observed", "value": 50},
+        "information_disposition": "sufficient",
+        "performance": {"state": "observed", "value": 0.88},
+        "uncertainty": {
+          "method_id": "reiyah.method.synthetic-wilson",
+          "confidence_level": {"state": "observed", "value": 0.95},
+          "lower": {"state": "observed", "value": 0.78},
+          "upper": {"state": "observed", "value": 0.94}
+        },
+        "abstention_rate": {"state": "observed", "value": 0.04},
+        "ood_rate": {"state": "observed", "value": 0.05}
+      },
+      {
+        "group_id": "reiyah.group.synthetic-b",
+        "sample_size": {"state": "observed", "value": 50},
+        "information_disposition": "sufficient",
+        "performance": {"state": "observed", "value": 0.82},
+        "uncertainty": {
+          "method_id": "reiyah.method.synthetic-wilson",
+          "confidence_level": {"state": "observed", "value": 0.95},
+          "lower": {"state": "observed", "value": 0.7},
+          "upper": {"state": "observed", "value": 0.9}
+        },
+        "abstention_rate": {"state": "observed", "value": 0.04},
+        "ood_rate": {"state": "observed", "value": 0.05}
+      }
+    ],
+    "metric_id": "reiyah.metric.synthetic-performance",
+    "direction": "higher_is_better",
+    "minimum_information_rule_id": "reiyah.rule.synthetic-minimum-information",
+    "selection_rule_id": "reiyah.rule.synthetic-all-ties-minimum",
+    "all_ties_required": true,
+    "omission_prohibited": true,
+    "worst_group_disposition": {
+      "state": "observed",
+      "group_ids": ["reiyah.group.synthetic-b"],
+      "selection_rule_id": "reiyah.rule.synthetic-all-ties-minimum"
+    }
+  },
+  "evidence_binding": {
+    "state": "evidence_gap",
+    "evidence_refs": [],
+    "gap_reason": "All values are synthetic schema examples and are not scientific evidence."
+  },
+  "scientific_claim_authorized": false
+}

@@ -1,0 +1,60 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/observation.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.chain.observation",
+  "object_id": "reiyah.fixture.observation-001",
+  "object_kind": "observation",
+  "version": "1.0.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.lifecycle-event.fixture-observation-proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-21T21:00:00Z",
+      "actor": {"actor_type": "software", "actor_id": "reiyah.producer.fixture-generator"},
+      "rationale": "Created as a deterministic synthetic Gate A structure fixture.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.0.0",
+  "context_rules": {
+    "encounter_construction_rule_id": "reiyah.rule.fixture-encounter-construction",
+    "object_identity_rule_id": "reiyah.rule.fixture-object-identity",
+    "temporal_correspondence_rule_id": "reiyah.rule.fixture-temporal-correspondence"
+  },
+  "encounter_id": "reiyah.fixture.encounter-001",
+  "physical_object_id": "reiyah.fixture.object-001",
+  "event_time": {
+    "clock_id": "reiyah.clock.fixture",
+    "offset": {"state": "observed", "value": 0},
+    "unit": "seconds",
+    "origin": {"state": "observed", "value": "Synthetic fixture origin"}
+  },
+  "measurements": [
+    {
+      "measurement_id": "reiyah.measurement.relative-speed",
+      "construct_id": "reiyah.construct.relative-speed",
+      "value": {"state": "observed", "value": 0, "unit": "meters_per_second"},
+      "sensor_id": "reiyah.sensor.synthetic-001"
+    },
+    {
+      "measurement_id": "reiyah.measurement.object-color",
+      "construct_id": "reiyah.construct.object-color",
+      "value": {"state": "unmeasured", "reason": "The synthetic fixture protocol does not measure color.", "rule_id": "reiyah.rule.fixture-unmeasured"}
+    }
+  ],
+  "validity": {
+    "state": "valid",
+    "rule_ids": ["reiyah.rule.fixture-observation-valid"]
+  },
+  "provenance": {
+    "producer_type": "software",
+    "producer_id": "reiyah.producer.fixture-generator",
+    "method_id": "reiyah.method.static-fixture",
+    "recorded_at": "2026-08-22T00:00:00+03:00",
+    "input_refs": []
+  }
+}

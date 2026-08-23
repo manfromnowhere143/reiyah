@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/evidence-object.schema.json",
+  "title": "Evidence object",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "object_id",
+    "object_kind",
+    "version",
+    "lifecycle_status",
+    "lifecycle_history",
+    "protocol_release_id",
+    "target_object_refs",
+    "target_record_refs",
+    "basis",
+    "method_id",
+    "criterion_ids",
+    "integrity_signals",
+    "validity",
+    "provenance",
+    "prohibited_interpretation"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/evidence-object.schema.json"
+    },
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "object_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "object_kind": {
+      "const": "evidence"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "lifecycle_status": {
+      "$ref": "common.schema.json#/$defs/lifecycleStatus"
+    },
+    "lifecycle_history": {
+      "$ref": "common.schema.json#/$defs/lifecycleHistory"
+    },
+    "protocol_release_id": {
+      "$ref": "common.schema.json#/$defs/releaseIdentifier"
+    },
+    "target_object_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/objectReference"
+      },
+      "uniqueItems": true
+    },
+    "target_record_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["target_kind", "target_id", "version"],
+        "properties": {
+          "target_kind": {
+            "enum": ["claim", "experiment", "result", "metric"]
+          },
+          "target_id": {
+            "$ref": "common.schema.json#/$defs/stableIdentifier"
+          },
+          "version": {
+            "$ref": "common.schema.json#/$defs/semanticVersion"
+          }
+        },
+        "additionalProperties": false
+      },
+      "uniqueItems": true
+    },
+    "basis": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "source_record_ids"],
+          "properties": {
+            "state": {
+              "const": "retained"
+            },
+            "source_record_ids": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "common.schema.json#/$defs/stableIdentifier"
+              },
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["state", "source_record_ids", "gap_reason"],
+          "properties": {
+            "state": {
+              "const": "evidence_gap"
+            },
+            "source_record_ids": {
+              "type": "array",
+              "maxItems": 0
+            },
+            "gap_reason": {
+              "$ref": "common.schema.json#/$defs/nonEmptyString"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "method_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "criterion_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/stableIdentifier"
+      },
+      "uniqueItems": true
+    },
+    "integrity_signals": {
+      "type": "array",
+      "items": {
+        "enum": ["checksum", "signature", "test", "model_review", "human_review", "consensus"]
+      },
+      "uniqueItems": true
+    },
+    "validity": {
+      "$ref": "common.schema.json#/$defs/validityAssessment"
+    },
+    "provenance": {
+      "$ref": "common.schema.json#/$defs/provenance"
+    },
+    "prohibited_interpretation": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    }
+  },
+  "anyOf": [
+    {
+      "properties": {
+        "target_object_refs": {
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "properties": {
+        "target_record_refs": {
+          "minItems": 1
+        }
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycle_status": {
+            "not": {
+              "enum": ["proposed", "exploratory", "preregistered", "running", "blocked"]
+            }
+          }
+        },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "basis": {
+            "properties": {
+              "state": {"const": "retained"}
+            },
+            "required": ["state"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle_status": {
+            "enum": ["supported", "contradicted", "replicated"]
+          }
+        },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "criterion_ids": {
+            "minItems": 1
+          },
+          "validity": {
+            "properties": {
+              "state": {"const": "valid"}
+            },
+            "required": ["state"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle_status": {
+            "enum": ["corrected", "retracted"]
+          }
+        },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "lifecycle_history": {
+            "contains": {
+              "properties": {
+                "status": {
+                  "enum": ["corrected", "retracted"]
+                },
+                "prior_artifact": {
+                  "allOf": [
+                    {
+                      "$ref": "common.schema.json#/$defs/priorArtifactReference"
+                    },
+                    {
+                      "properties": {
+                        "record_kind": {
+                          "const": "evidence"
+                        },
+                        "schema_id": {
+                          "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/evidence-object.schema.json"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": ["status", "prior_artifact"]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

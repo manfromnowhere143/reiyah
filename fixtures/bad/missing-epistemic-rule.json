@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-missing-epistemic-rule-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.missing-epistemic-rule",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "An out-of-distribution measurement names no governing support-boundary rule.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-006", "TM-007", "TM-019"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-EPISTEMIC-RULE-MISSING"},
+  "payload": {"kind": "production_mutation", "production_check": "normative_measurements", "mutations": [
+    {"operation": "replace", "path": "manifests/examples/object-chain/observation.json", "json_pointer": "/measurements/1/value", "value": {"state": "out_of_distribution", "reason": "Synthetic input is outside declared support."}}
+  ]}
+}

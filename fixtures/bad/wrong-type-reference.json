@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.wrong-kind-reference",
+  "fixture_id": "reiyah.fixture.bad.wrong-kind-reference",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A resolved observation is used where a latent-belief reference is required.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-006", "TM-019", "TM-026"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-REFERENCE-WRONG-KIND"},
+  "payload": {"kind": "production_mutation", "production_check": "scientific_semantics", "mutations": [
+    {"operation": "replace", "path": "manifests/examples/object-chain/latent-belief.json", "json_pointer": "/observation_refs/0/object_id", "value": "reiyah.fixture.decision-001"}
+  ]}
+}

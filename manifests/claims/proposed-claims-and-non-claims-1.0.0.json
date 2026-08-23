@@ -1,0 +1,419 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/claim-register.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.claim-register-1.0.0",
+  "register_id": "reiyah.claim-register",
+  "release_id": "reiyah.claim-register@1.0.0",
+  "version": "1.0.0",
+  "as_of_date": "2026-08-22",
+  "lifecycle_status": "proposed",
+  "relation": {
+    "type": "initial"
+  },
+  "operator_acceptance": {
+    "state": "unaccepted",
+    "record_id": null
+  },
+  "items": [
+    {
+      "item_id": "reiyah.claim.repository.kind-separation",
+      "kind": "claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Gate A defines observation, latent belief, decision, intervention, outcome, and evidence as separate object kinds.",
+      "scope": "Repository assertion limited to the exact Gate A evidence-index-bound schemas and semantic validation report.",
+      "falsifier_or_decision_rule": "Any eligible record can validate while omitting a kind, impersonating another kind, or using an untyped cross-kind reference.",
+      "evidence_binding": {
+        "state": "evidence_gap",
+        "evidence_refs": [],
+        "gap_reason": "No exact evidence-index-bound schema and semantic-validation report is linked."
+      },
+      "prohibited_interpretation": "Future data or a future system necessarily respects the separation."
+    },
+    {
+      "item_id": "reiyah.claim.repository.epistemic-separation",
+      "kind": "claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Gate A represents `observed`, `missing`, `unmeasured`, `out_of_distribution`, `sensor_invalid`, and `abstained` as distinct epistemic states.",
+      "scope": "Repository assertion limited to the exact bound schema and complete reason-specific fixture report.",
+      "falsifier_or_decision_rule": "Any non-observed state can validate as a zero/false/negative/default, without a reason, or as an alias of another state.",
+      "evidence_binding": {
+        "state": "evidence_gap",
+        "evidence_refs": [],
+        "gap_reason": "No bound schema plus complete reason-specific fixture report is linked."
+      },
+      "prohibited_interpretation": "Measurements are valid or the missingness assumptions are correct."
+    },
+    {
+      "item_id": "reiyah.claim.repository.lifecycle-separation",
+      "kind": "claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Gate A preserves every required lifecycle status without aliasing.",
+      "scope": "Repository assertion limited to the exact bound status schema and transition-fixture report.",
+      "falsifier_or_decision_rule": "A required status is absent/aliased, an illegal transition passes, or prior status history can be overwritten.",
+      "evidence_binding": {
+        "state": "evidence_gap",
+        "evidence_refs": [],
+        "gap_reason": "No bound status-schema and transition-fixture report is linked."
+      },
+      "prohibited_interpretation": "Any specific scientific status assignment is valid."
+    },
+    {
+      "item_id": "reiyah.claim.repository.offline-validation",
+      "kind": "claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Gate A validation is deterministic, offline, and fail-closed for its declared static inputs.",
+      "scope": "Repository assertion limited to repeated, network-disabled, byte-compared validation of the indexed static inputs.",
+      "falsifier_or_decision_rule": "An unchanged replay changes comparable diagnostics/exit status, uses the network, or accepts an unknown/error condition.",
+      "evidence_binding": {
+        "state": "evidence_gap",
+        "evidence_refs": [],
+        "gap_reason": "No repeated, network-disabled, byte-compared validation report is linked."
+      },
+      "prohibited_interpretation": "The architecture is scientifically correct, secure in every environment, or safe."
+    },
+    {
+      "item_id": "reiyah.claim.repository.acceptance-binding",
+      "kind": "claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Gate A operator-decision records are digest-bound and separate from validation results.",
+      "scope": "Repository assertion limited to the exact acceptance schema and positive/negative fixtures.",
+      "falsifier_or_decision_rule": "A stale/mismatched digest validates, a validator can self-accept, or a record without exact operator identity, authority basis, UTC time, rationale, risk acknowledgement, manifest releases, or matching architecture-completeness evidence validates.",
+      "evidence_binding": {
+        "state": "evidence_gap",
+        "evidence_refs": [],
+        "gap_reason": "No bound operator-decision-schema positive/negative fixture report is linked."
+      },
+      "prohibited_interpretation": "An authorized operator has accepted Gate A."
+    },
+    {
+      "item_id": "reiyah.claim.scientific.joint-belief-readiness",
+      "kind": "claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Under a frozen task and horizon, an uncertainty-bearing object-level joint driver–vehicle belief yields better readiness decisions than a declared non-joint comparator.",
+      "scope": "Comparator: Versioned non-joint and/or driver-only comparator with identical eligible information. Primary estimand: Pre-specified difference in task loss, including abstention and invalid-state costs.",
+      "falsifier_or_decision_rule": "An eligible pre-specified estimate crosses the contradiction boundary in favor of the non-joint comparator after required validity and abstention accounting.",
+      "evidence_binding": {
+        "state": "evidence_gap",
+        "evidence_refs": [],
+        "gap_reason": "No frozen task, comparator, eligible dataset, decision-loss threshold, or retained result evidence."
+      },
+      "prohibited_interpretation": "Joint belief is universally better, establishes safety, or describes latent truth."
+    },
+    {
+      "item_id": "reiyah.claim.scientific.explicit-unknowns",
+      "kind": "claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Explicit epistemic-state handling materially changes estimated readiness error relative to silent coercion or complete-case analysis.",
+      "scope": "Comparator: Frozen missingness/invalidity handling strategies. Primary estimand: Pre-specified paired difference in error and coverage, stratified by state.",
+      "falsifier_or_decision_rule": "A valid estimate and uncertainty interval fall within the pre-specified equivalence region for no material change across required state strata.",
+      "evidence_binding": {
+        "state": "evidence_gap",
+        "evidence_refs": [],
+        "gap_reason": "No frozen missingness mechanism, coercion comparator, materiality bound, or retained result evidence."
+      },
+      "prohibited_interpretation": "Explicit states eliminate missing-data bias or justify any imputation."
+    },
+    {
+      "item_id": "reiyah.claim.scientific.joint-silent-miss",
+      "kind": "claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Modeling dependence between human and automation miss events changes estimated joint silent-miss risk relative to a declared independence model.",
+      "scope": "Comparator: Versioned independence and dependence models on identical opportunities. Primary estimand: Difference in calibrated joint-event risk under a frozen event definition.",
+      "falsifier_or_decision_rule": "A valid estimate falls within the pre-specified equivalence region between declared dependence and independence risk estimates.",
+      "evidence_binding": {
+        "state": "evidence_gap",
+        "evidence_refs": [],
+        "gap_reason": "No frozen joint-opportunity definition, dependence model, event sample, materiality bound, or retained result evidence."
+      },
+      "prohibited_interpretation": "Human and automation misses are independent, or either marginal rate is safe."
+    },
+    {
+      "item_id": "reiyah.claim.scientific.causal-policy-recoverability",
+      "kind": "claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "A named policy or intervention changes a named recoverability outcome relative to a frozen comparator policy in a declared target population.",
+      "scope": "Comparator: Exact policy versions and assignment mechanism. Primary estimand: Pre-specified causal contrast over protocol-defined potential outcomes.",
+      "falsifier_or_decision_rule": "Under an eligible design, the causal contrast and uncertainty meet the protocol's contradiction/equivalence rule for no material policy change or the opposite pre-specified direction.",
+      "evidence_binding": {
+        "state": "evidence_gap",
+        "evidence_refs": [],
+        "gap_reason": "No named policy versions, assignment evidence, identified target population, identification assessment, or retained outcome evidence."
+      },
+      "prohibited_interpretation": "Association, simulation, or policy recommendation establishes causality or deployment benefit."
+    },
+    {
+      "item_id": "reiyah.claim.scientific.recoverability-distribution",
+      "kind": "claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "A pre-specified recoverability distribution identifies failure modes hidden by a single binary readiness label.",
+      "scope": "Comparator: Binary-label summary defined before outcome inspection. Primary estimand: Difference in protocol-defined decision loss or detected failure strata.",
+      "falsifier_or_decision_rule": "The eligible comparison meets the pre-specified contradiction/equivalence rule: no additional valid failure stratum and no material decision-loss difference.",
+      "evidence_binding": {
+        "state": "evidence_gap",
+        "evidence_refs": [],
+        "gap_reason": "No recovered-state definition, binary comparator, failure-stratum rule, censoring rule, or retained result evidence."
+      },
+      "prohibited_interpretation": "Binary readiness labels are always inadequate or recovery is guaranteed."
+    },
+    {
+      "item_id": "reiyah.claim.scientific.transfer-failure",
+      "kind": "claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Pre-declared target-domain evaluation identifies transfer failures not visible in pooled source-domain performance.",
+      "scope": "Comparator: Frozen source, target, adaptation, and pooled comparators. Primary estimand: Target-domain performance delta and uncertainty under declared validity rules.",
+      "falsifier_or_decision_rule": "All declared target-domain gaps and failure criteria remain within their pre-specified equivalence/acceptability bounds under valid target coverage.",
+      "evidence_binding": {
+        "state": "evidence_gap",
+        "evidence_refs": [],
+        "gap_reason": "No frozen source/target domains, access chronology, adaptation allowance, transfer comparator, or retained result evidence."
+      },
+      "prohibited_interpretation": "Successful evaluation in one target proves generalization to other domains."
+    },
+    {
+      "item_id": "reiyah.claim.scientific.worst-group-gap",
+      "kind": "claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Pre-declared worst-group validation identifies materially worse valid-group performance than aggregate reporting alone.",
+      "scope": "Comparator: Aggregate metric and complete eligible group set. Primary estimand: Worst valid-group metric, aggregate-to-worst gap, uncertainty, and group validity.",
+      "falsifier_or_decision_rule": "With every eligible group represented, the aggregate-to-worst valid-group gap remains within the pre-specified equivalence bound.",
+      "evidence_binding": {
+        "state": "evidence_gap",
+        "evidence_refs": [],
+        "gap_reason": "No frozen group universe, membership validity, minimum support rule, materiality bound, or retained result evidence."
+      },
+      "prohibited_interpretation": "A small gap establishes fairness, safety, or adequacy for missing/invalid groups."
+    },
+    {
+      "item_id": "reiyah.nonclaim.driver-monitoring-classifier",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that it is a driver-monitoring classifier or a replacement for one.",
+      "scope": "The mission is an evidence and benchmark engine with a joint object-level scope.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "it is a driver-monitoring classifier or a replacement for one."
+    },
+    {
+      "item_id": "reiyah.nonclaim.context-free-readiness",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that it measures a person's universal, intrinsic, or context-free readiness.",
+      "scope": "Readiness must be task-, horizon-, context-, and loss-relative.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "it measures a person's universal, intrinsic, or context-free readiness."
+    },
+    {
+      "item_id": "reiyah.nonclaim.live-operation",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that it performs live sensing, monitoring, inference, intervention, alerting, or vehicle control.",
+      "scope": "No runtime or physical-control integration is authorized.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "it performs live sensing, monitoring, inference, intervention, alerting, or vehicle control."
+    },
+    {
+      "item_id": "reiyah.nonclaim.safety-or-deployment",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that it is safe, safer, validated for safety, fail-safe, or suitable for deployment.",
+      "scope": "Gate A contains architecture checks, not operational safety evidence.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "it is safe, safer, validated for safety, fail-safe, or suitable for deployment."
+    },
+    {
+      "item_id": "reiyah.nonclaim.compliance-or-certification",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that it complies with, is certified under, or satisfies any law, regulation, or standard.",
+      "scope": "Crosswalks expose mappings and gaps only; no compliance determination exists.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "it complies with, is certified under, or satisfies any law, regulation, or standard."
+    },
+    {
+      "item_id": "reiyah.nonclaim.benchmark-superiority",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that any benchmark, model, policy, or representation is superior.",
+      "scope": "No accepted protocol or eligible benchmark result exists.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "any benchmark, model, policy, or representation is superior."
+    },
+    {
+      "item_id": "reiyah.nonclaim.association-is-causation",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that an association, prediction, simulation, or retrospective comparison is a causal policy effect.",
+      "scope": "Causal claims require explicit estimands and identification assumptions.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "an association, prediction, simulation, or retrospective comparison is a causal policy effect."
+    },
+    {
+      "item_id": "reiyah.nonclaim.absence-is-negative",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that absence of an observation means zero, false, normal, safe, or a negative class.",
+      "scope": "Epistemic states must remain explicit and distinct.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "absence of an observation means zero, false, normal, safe, or a negative class."
+    },
+    {
+      "item_id": "reiyah.nonclaim.belief-is-truth",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that a latent belief is ground truth or a calibrated probability merely because it is numeric.",
+      "scope": "Beliefs require target, method, uncertainty, validity, and calibration evidence.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "a latent belief is ground truth or a calibrated probability merely because it is numeric."
+    },
+    {
+      "item_id": "reiyah.nonclaim.decision-is-intervention",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that a decision occurred as an intervention, or an intervention caused a later outcome.",
+      "scope": "Decision, exposure, outcome, and causal effect are separate constructs.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "a decision occurred as an intervention, or an intervention caused a later outcome."
+    },
+    {
+      "item_id": "reiyah.nonclaim.aggregate-establishes-transfer-fairness",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that aggregate performance establishes transfer, fairness, or worst-group adequacy.",
+      "scope": "Domains and all eligible groups require separate validity and uncertainty reporting.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "aggregate performance establishes transfer, fairness, or worst-group adequacy."
+    },
+    {
+      "item_id": "reiyah.nonclaim.omit-invalid-group",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that a missing or invalid group may be omitted from worst-group analysis.",
+      "scope": "Omission changes the target and can conceal uncertainty or harm.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "a missing or invalid group may be omitted from worst-group analysis."
+    },
+    {
+      "item_id": "reiyah.nonclaim.integrity-signal-is-evidence",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that generated prose, model review, consensus, a signature, a checksum, or a passing test is scientific evidence.",
+      "scope": "These are proposals, reviews, integrity signals, or acceptance signals only.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "generated prose, model review, consensus, a signature, a checksum, or a passing test is scientific evidence."
+    },
+    {
+      "item_id": "reiyah.nonclaim.external-authority",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that an external model, dataset, paper, MCP server, standard, or sibling repository has Reiyah authority.",
+      "scope": "External systems are untrusted adapters or evidence sources.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "an external model, dataset, paper, MCP server, standard, or sibling repository has Reiyah authority."
+    },
+    {
+      "item_id": "reiyah.nonclaim.validation-is-acceptance",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that Gate A is accepted because its architecture is complete or validators pass.",
+      "scope": "Acceptance requires a separate authorized, digest-bound operator record.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "Gate A is accepted because its architecture is complete or validators pass."
+    },
+    {
+      "item_id": "reiyah.nonclaim.harbor-name-final",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that the HARBOR name or expansion is final.",
+      "scope": "It remains a proposed working name pending explicit operator review.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "the HARBOR name or expansion is final."
+    },
+    {
+      "item_id": "reiyah.nonclaim.retention-is-truth",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that retained evidence is true merely because its bytes and digest are recorded.",
+      "scope": "Retention establishes identity and provenance, not truth or applicability.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "retained evidence is true merely because its bytes and digest are recorded."
+    },
+    {
+      "item_id": "reiyah.nonclaim.adverse-status-is-support",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that a `null`, `inconclusive`, `failed`, `invalid`, `contradicted`, or `retracted` result supports a proposition.",
+      "scope": "These statuses have distinct meanings and cannot be laundered into support.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "a `null`, `inconclusive`, `failed`, `invalid`, `contradicted`, or `retracted` result supports a proposition."
+    },
+    {
+      "item_id": "reiyah.nonclaim.private-data-authorized",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that Gate A authorizes collection or ingestion of private human or vehicle data.",
+      "scope": "Only static architecture artifacts and deterministic fixtures are authorized.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "Gate A authorizes collection or ingestion of private human or vehicle data."
+    },
+    {
+      "item_id": "reiyah.nonclaim.publication-ready",
+      "kind": "non_claim",
+      "version": "1.0.0",
+      "lifecycle_status": "proposed",
+      "proposition": "Reiyah/HARBOR does not claim that Reiyah is ready for publication or public benchmark release.",
+      "scope": "Publication machinery and public claims are outside Gate A.",
+      "falsifier_or_decision_rule": "Not applicable: this is a normative Gate A scope boundary; only a superseding, operator-authorized contract version can change it.",
+      "evidence_binding": {"state": "not_applicable", "evidence_refs": [], "rationale": "This non-claim is a normative Gate A scope boundary; evidence cannot falsify it."},
+      "prohibited_interpretation": "Reiyah is ready for publication or public benchmark release."
+    }
+  ]
+}

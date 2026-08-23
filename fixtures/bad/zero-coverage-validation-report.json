@@ -1,0 +1,28 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-zero-coverage-report-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.zero-coverage-report",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "An architecture-complete report is mutated to claim zero schema coverage.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-017", "TM-019", "TM-020"],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-VALIDATION-REPORT-COVERAGE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "validation_report",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "gate/validation-reports/gate-a-validation-1.0.0.json",
+        "json_pointer": "/check_summary/schemas_checked",
+        "value": 0
+      }
+    ]
+  }
+}

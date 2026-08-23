@@ -1,0 +1,15 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope-extrapolation-permitted",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/sequential-off-policy-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/support_assessment/extrapolation_prohibited", "value": false}],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "instance_pointer": "/support_assessment/extrapolation_prohibited",
+    "schema_keyword": "const",
+    "reason": "Unsupported target-policy actions cannot be silently extrapolated into an OPE estimate."
+  },
+  "runtime_execution_authorized": false
+}

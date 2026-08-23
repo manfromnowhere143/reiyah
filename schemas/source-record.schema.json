@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/source-record.schema.json",
+  "title": "Retained source record",
+  "description": "A URL is discovery metadata only. This record requires retained bytes, metadata, constraints, and digest.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "source_id",
+    "version",
+    "lifecycle_status",
+    "title",
+    "publisher",
+    "document_identifier",
+    "exact_version",
+    "publication_date",
+    "retrieved_at",
+    "source_url",
+    "retained_path",
+    "sha256",
+    "byte_size",
+    "media_type",
+    "evidence_class",
+    "normative_text_available",
+    "scope",
+    "access_constraints",
+    "license_constraints",
+    "limitations"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/source-record.schema.json"
+    },
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "source_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "lifecycle_status": {
+      "const": "proposed"
+    },
+    "title": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "publisher": {
+      "$ref": "common.schema.json#/$defs/stringMeasurement"
+    },
+    "document_identifier": {
+      "$ref": "common.schema.json#/$defs/stringMeasurement"
+    },
+    "exact_version": {
+      "$ref": "common.schema.json#/$defs/stringMeasurement"
+    },
+    "publication_date": {
+      "$ref": "common.schema.json#/$defs/dateMeasurement"
+    },
+    "retrieved_at": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "retained_path": {
+      "$ref": "common.schema.json#/$defs/relativeArtifactPath"
+    },
+    "sha256": {
+      "$ref": "common.schema.json#/$defs/sha256Digest"
+    },
+    "byte_size": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "media_type": {
+      "type": "string",
+      "pattern": "^[a-z0-9.+-]+/[a-z0-9.+-]+$"
+    },
+    "evidence_class": {
+      "enum": [
+        "full_normative_text",
+        "official_regulatory_documentation",
+        "official_catalog_metadata",
+        "guidance_research"
+      ]
+    },
+    "normative_text_available": {
+      "type": "boolean"
+    },
+    "scope": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "access_constraints": {
+      "$ref": "common.schema.json#/$defs/stringMeasurement"
+    },
+    "license_constraints": {
+      "$ref": "common.schema.json#/$defs/stringMeasurement"
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/nonEmptyString"
+      },
+      "uniqueItems": true
+    },
+    "upstream_etag": {
+      "$ref": "common.schema.json#/$defs/stringMeasurement"
+    },
+    "upstream_range": {
+      "$ref": "common.schema.json#/$defs/stringMeasurement"
+    }
+  },
+  "additionalProperties": false
+}

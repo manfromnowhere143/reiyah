@@ -1,0 +1,11 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.readiness-window-mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/human-automation-assessment.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/readiness_assessment/as_of_time/value", "value": "2026-08-23T00:00:06Z"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"instance_pointer": "/readiness_assessment/as_of_time/value", "schema_keyword": "semantic", "reason": "A readiness assessment as-of time must lie within its registered window."},
+  "runtime_execution_authorized": false
+}

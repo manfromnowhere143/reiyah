@@ -1,0 +1,50 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-incoherent-result-uncertainty-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.incoherent-result-uncertainty",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The aggregate metric and one group both retain observed intervals with lower bounds above their upper bounds and observed estimates outside those intervals.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-011",
+    "TM-017",
+    "TM-019"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-RESULT-SPECIFICATION-MISMATCH"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "fixtures/good/result.json",
+        "json_pointer": "/metric_results/0/uncertainty/lower/value",
+        "value": 0.9
+      },
+      {
+        "operation": "replace",
+        "path": "fixtures/good/result.json",
+        "json_pointer": "/metric_results/0/uncertainty/upper/value",
+        "value": 0.8
+      },
+      {
+        "operation": "replace",
+        "path": "fixtures/good/result.json",
+        "json_pointer": "/metric_results/0/group_results/0/uncertainty/lower/value",
+        "value": 0.9
+      },
+      {
+        "operation": "replace",
+        "path": "fixtures/good/result.json",
+        "json_pointer": "/metric_results/0/group_results/0/uncertainty/upper/value",
+        "value": 0.8
+      }
+    ]
+  }
+}

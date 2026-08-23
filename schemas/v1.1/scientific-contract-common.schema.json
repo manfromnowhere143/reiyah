@@ -1,0 +1,792 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/common.schema.json",
+  "title": "Reiyah scientific contract common definitions",
+  "description": "Additive v1.1 research-contract types. These definitions authorize no runtime, control, deployment, scientific claim, or operator acceptance.",
+  "$defs": {
+    "schemaVersion": {
+      "const": "1.1.0"
+    },
+    "semanticVersion": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "stableIdentifier": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 200,
+      "pattern": "^[a-z][a-z0-9]*(?:[._:-][a-z0-9][a-z0-9._-]*)+$"
+    },
+    "releaseIdentifier": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 220,
+      "pattern": "^[a-z][a-z0-9]*(?:[._:-][a-z0-9][a-z0-9._-]*)+@[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "utcTimestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "calendarDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "relativeArtifactPath": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512,
+      "pattern": "^[.A-Za-z0-9][A-Za-z0-9._/-]*$",
+      "not": {
+        "pattern": "(^|/)\\.\\.?(/|$)"
+      }
+    },
+    "sha256Digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "lifecycleStatus": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "exploratory",
+        "preregistered",
+        "running",
+        "blocked",
+        "invalid",
+        "null",
+        "inconclusive",
+        "failed",
+        "supported",
+        "contradicted",
+        "replicated",
+        "corrected",
+        "retracted"
+      ]
+    },
+    "epistemicState": {
+      "type": "string",
+      "enum": [
+        "observed",
+        "missing",
+        "unmeasured",
+        "out_of_distribution",
+        "sensor_invalid",
+        "abstained"
+      ]
+    },
+    "actorReference": {
+      "type": "object",
+      "required": ["actor_id", "actor_type", "version"],
+      "properties": {
+        "actor_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "actor_type": {
+          "enum": [
+            "human",
+            "automation_system",
+            "organization",
+            "software",
+            "model",
+            "instrument",
+            "derived_process",
+            "external_source"
+          ]
+        },
+        "version": {
+          "$ref": "#/$defs/semanticVersion"
+        },
+        "role": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      },
+      "additionalProperties": false
+    },
+    "artifactReference": {
+      "type": "object",
+      "required": ["artifact_id", "schema_id", "version", "path", "sha256"],
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "schema_id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "version": {
+          "$ref": "#/$defs/semanticVersion"
+        },
+        "path": {
+          "$ref": "#/$defs/relativeArtifactPath"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256Digest"
+        }
+      },
+      "additionalProperties": false
+    },
+    "unavailableArtifactReference": {
+      "type": "object",
+      "required": [
+        "availability_state",
+        "expected_artifact_id",
+        "expected_artifact_kind",
+        "expected_schema_id",
+        "expected_version",
+        "reason",
+        "earliest_permitted_gate",
+        "gate_b_authorized",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "availability_state": {
+          "enum": [
+            "not_available_in_gate_a",
+            "not_authorized_in_gate_a"
+          ]
+        },
+        "expected_artifact_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "expected_artifact_kind": {
+          "enum": [
+            "dataset",
+            "comparator",
+            "policy",
+            "label_instruction",
+            "preregistration",
+            "split",
+            "access_record"
+          ]
+        },
+        "expected_schema_id": {
+          "oneOf": [
+            {"type": "string", "format": "uri"},
+            {"type": "null"}
+          ]
+        },
+        "expected_version": {
+          "oneOf": [
+            {"$ref": "#/$defs/semanticVersion"},
+            {"type": "null"}
+          ]
+        },
+        "reason": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "earliest_permitted_gate": {
+          "const": "B_after_explicit_operator_acceptance"
+        },
+        "gate_b_authorized": {
+          "const": false
+        },
+        "runtime_execution_authorized": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "artifactBinding": {
+      "oneOf": [
+        {"$ref": "#/$defs/artifactReference"},
+        {"$ref": "#/$defs/unavailableArtifactReference"}
+      ]
+    },
+    "recordArtifactReference": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "record_id",
+        "record_kind",
+        "schema_id",
+        "version",
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "artifact_id": {"$ref": "#/$defs/stableIdentifier"},
+        "record_id": {"$ref": "#/$defs/stableIdentifier"},
+        "record_kind": {"$ref": "#/$defs/stableIdentifier"},
+        "schema_id": {"type": "string", "format": "uri"},
+        "version": {"$ref": "#/$defs/semanticVersion"},
+        "path": {"$ref": "#/$defs/relativeArtifactPath"},
+        "sha256": {"$ref": "#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "versionedReference": {
+      "type": "object",
+      "required": ["record_id", "record_kind", "version"],
+      "properties": {
+        "record_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "record_kind": {
+          "enum": [
+            "observation",
+            "belief_assessment",
+            "decision",
+            "readiness_assessment",
+            "recoverability_assessment",
+            "study_design",
+            "trajectory",
+            "policy",
+            "odd",
+            "dataset",
+            "scenario",
+            "test_case",
+            "benchmark",
+            "safety_case",
+            "evidence",
+            "external_source",
+            "encounter",
+            "encounter_object",
+            "information_set",
+            "reference_process",
+            "label_instruction",
+            "operator_authority"
+          ]
+        },
+        "version": {
+          "$ref": "#/$defs/semanticVersion"
+        }
+      },
+      "additionalProperties": false
+    },
+    "unavailableVersionedReference": {
+      "type": "object",
+      "required": [
+        "availability_state",
+        "expected_record_id",
+        "expected_record_kind",
+        "expected_version",
+        "reason",
+        "earliest_permitted_gate",
+        "gate_b_authorized",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "availability_state": {
+          "enum": [
+            "not_available_in_gate_a",
+            "not_authorized_in_gate_a"
+          ]
+        },
+        "expected_record_id": {"$ref": "#/$defs/stableIdentifier"},
+        "expected_record_kind": {
+          "enum": [
+            "observation",
+            "belief_assessment",
+            "decision",
+            "readiness_assessment",
+            "recoverability_assessment",
+            "study_design",
+            "trajectory",
+            "policy",
+            "odd",
+            "dataset",
+            "scenario",
+            "test_case",
+            "benchmark",
+            "safety_case",
+            "evidence",
+            "external_source",
+            "encounter",
+            "encounter_object",
+            "information_set",
+            "reference_process",
+            "label_instruction",
+            "operator_authority"
+          ]
+        },
+        "expected_version": {"$ref": "#/$defs/semanticVersion"},
+        "reason": {"$ref": "#/$defs/nonEmptyString"},
+        "earliest_permitted_gate": {
+          "const": "B_after_explicit_operator_acceptance"
+        },
+        "gate_b_authorized": {"const": false},
+        "runtime_execution_authorized": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "versionedReferenceBinding": {
+      "oneOf": [
+        {"$ref": "#/$defs/versionedReference"},
+        {"$ref": "#/$defs/unavailableVersionedReference"}
+      ]
+    },
+    "evidenceReference": {
+      "type": "object",
+      "required": ["evidence_id", "version"],
+      "properties": {
+        "evidence_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "version": {
+          "$ref": "#/$defs/semanticVersion"
+        }
+      },
+      "additionalProperties": false
+    },
+    "lifecycleEvent": {
+      "type": "object",
+      "required": [
+        "event_id",
+        "sequence",
+        "prior_status",
+        "status",
+        "recorded_at",
+        "actor",
+        "rationale",
+        "evidence_refs",
+        "prior_artifact"
+      ],
+      "properties": {
+        "event_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "prior_status": {
+          "oneOf": [
+            {"$ref": "#/$defs/lifecycleStatus"},
+            {"type": "null"}
+          ]
+        },
+        "status": {
+          "$ref": "#/$defs/lifecycleStatus"
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/utcTimestamp"
+        },
+        "actor": {
+          "$ref": "#/$defs/actorReference"
+        },
+        "rationale": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidenceReference"
+          },
+          "uniqueItems": true
+        },
+        "prior_artifact": {
+          "oneOf": [
+            {"$ref": "#/$defs/recordArtifactReference"},
+            {"type": "null"}
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"sequence": {"const": 1}},
+            "required": ["sequence"]
+          },
+          "then": {
+            "properties": {
+              "prior_status": {"type": "null"},
+              "status": {"const": "proposed"},
+              "prior_artifact": {"type": "null"}
+            }
+          },
+          "else": {
+            "properties": {
+              "prior_status": {"$ref": "#/$defs/lifecycleStatus"},
+              "prior_artifact": {"$ref": "#/$defs/recordArtifactReference"}
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "lifecycleHistory": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/lifecycleEvent"
+      },
+      "uniqueItems": true
+    },
+    "nonObservedMeasurement": {
+      "type": "object",
+      "required": ["state", "reason"],
+      "properties": {
+        "state": {
+          "enum": [
+            "missing",
+            "unmeasured",
+            "out_of_distribution",
+            "sensor_invalid",
+            "abstained"
+          ]
+        },
+        "reason": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "rule_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "enum": ["out_of_distribution", "sensor_invalid", "abstained"]
+              }
+            },
+            "required": ["state"]
+          },
+          "then": {
+            "required": ["rule_id"]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "numberMeasurement": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "value"],
+          "properties": {
+            "state": {"const": "observed"},
+            "value": {"type": "number"},
+            "unit": {"$ref": "#/$defs/nonEmptyString"}
+          },
+          "additionalProperties": false
+        },
+        {"$ref": "#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "nonNegativeNumberMeasurement": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "value"],
+          "properties": {
+            "state": {"const": "observed"},
+            "value": {"type": "number", "minimum": 0},
+            "unit": {"$ref": "#/$defs/nonEmptyString"}
+          },
+          "additionalProperties": false
+        },
+        {"$ref": "#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "positiveNumberMeasurement": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "value"],
+          "properties": {
+            "state": {"const": "observed"},
+            "value": {"type": "number", "exclusiveMinimum": 0},
+            "unit": {"$ref": "#/$defs/nonEmptyString"}
+          },
+          "additionalProperties": false
+        },
+        {"$ref": "#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "integerMeasurement": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "value"],
+          "properties": {
+            "state": {"const": "observed"},
+            "value": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": false
+        },
+        {"$ref": "#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "probabilityMeasurement": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "value"],
+          "properties": {
+            "state": {"const": "observed"},
+            "value": {"type": "number", "minimum": 0, "maximum": 1}
+          },
+          "additionalProperties": false
+        },
+        {"$ref": "#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "strictlyPositiveProbability": {
+      "type": "object",
+      "required": ["state", "value"],
+      "properties": {
+        "state": {"const": "observed"},
+        "value": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}
+      },
+      "additionalProperties": false
+    },
+    "booleanMeasurement": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "value"],
+          "properties": {
+            "state": {"const": "observed"},
+            "value": {"type": "boolean"}
+          },
+          "additionalProperties": false
+        },
+        {"$ref": "#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "stringMeasurement": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "value"],
+          "properties": {
+            "state": {"const": "observed"},
+            "value": {"$ref": "#/$defs/nonEmptyString"}
+          },
+          "additionalProperties": false
+        },
+        {"$ref": "#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "stableIdentifierMeasurement": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "value"],
+          "properties": {
+            "state": {"const": "observed"},
+            "value": {"$ref": "#/$defs/stableIdentifier"}
+          },
+          "additionalProperties": false
+        },
+        {"$ref": "#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "timestampMeasurement": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "value"],
+          "properties": {
+            "state": {"const": "observed"},
+            "value": {"$ref": "#/$defs/utcTimestamp"}
+          },
+          "additionalProperties": false
+        },
+        {"$ref": "#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "uncertaintyInterval": {
+      "type": "object",
+      "required": ["method_id", "confidence_level", "lower", "upper"],
+      "properties": {
+        "method_id": {"$ref": "#/$defs/stableIdentifier"},
+        "confidence_level": {"$ref": "#/$defs/probabilityMeasurement"},
+        "lower": {"$ref": "#/$defs/numberMeasurement"},
+        "upper": {"$ref": "#/$defs/numberMeasurement"}
+      },
+      "additionalProperties": false
+    },
+    "temporalWindow": {
+      "type": "object",
+      "required": ["window_id", "opens_at", "closes_at", "clock_id"],
+      "properties": {
+        "window_id": {"$ref": "#/$defs/stableIdentifier"},
+        "opens_at": {"$ref": "#/$defs/timestampMeasurement"},
+        "closes_at": {"$ref": "#/$defs/timestampMeasurement"},
+        "clock_id": {"$ref": "#/$defs/stableIdentifier"}
+      },
+      "additionalProperties": false
+    },
+    "informationItem": {
+      "type": "object",
+      "required": ["item_ref", "availability_state", "available_at", "source_ref"],
+      "properties": {
+        "item_ref": {"$ref": "#/$defs/versionedReference"},
+        "availability_state": {"$ref": "#/$defs/epistemicState"},
+        "available_at": {"$ref": "#/$defs/timestampMeasurement"},
+        "source_ref": {"$ref": "#/$defs/actorReference"},
+        "unavailability_reason": {
+          "oneOf": [
+            {"$ref": "#/$defs/nonObservedMeasurement"},
+            {"type": "null"}
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"availability_state": {"const": "observed"}},
+            "required": ["availability_state"]
+          },
+          "then": {
+            "properties": {
+              "available_at": {
+                "properties": {"state": {"const": "observed"}},
+                "required": ["state"]
+              },
+              "unavailability_reason": {"type": "null"}
+            }
+          },
+          "else": {
+            "properties": {
+              "available_at": {"$ref": "#/$defs/nonObservedMeasurement"},
+              "unavailability_reason": {"$ref": "#/$defs/nonObservedMeasurement"}
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "informationSet": {
+      "type": "object",
+      "required": [
+        "information_set_id",
+        "version",
+        "frozen_at",
+        "items",
+        "complete_as_declared",
+        "post_freeze_additions_prohibited"
+      ],
+      "properties": {
+        "information_set_id": {"$ref": "#/$defs/stableIdentifier"},
+        "version": {"$ref": "#/$defs/semanticVersion"},
+        "frozen_at": {"$ref": "#/$defs/utcTimestamp"},
+        "items": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/informationItem"},
+          "uniqueItems": true
+        },
+        "complete_as_declared": {"type": "boolean"},
+        "post_freeze_additions_prohibited": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "applicabilityDomain": {
+      "type": "object",
+      "required": ["domain_id", "version", "odd_ref", "dimensions", "outside_domain_policy"],
+      "properties": {
+        "domain_id": {"$ref": "#/$defs/stableIdentifier"},
+        "version": {"$ref": "#/$defs/semanticVersion"},
+        "odd_ref": {
+          "oneOf": [
+            {"$ref": "#/$defs/versionedReference"},
+            {"type": "null"}
+          ]
+        },
+        "dimensions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["dimension_id", "dimension", "criterion"],
+            "properties": {
+              "dimension_id": {"$ref": "#/$defs/stableIdentifier"},
+              "dimension": {
+                "enum": [
+                  "population",
+                  "agent",
+                  "object",
+                  "time",
+                  "geography",
+                  "road",
+                  "traffic",
+                  "weather",
+                  "illumination",
+                  "sensor",
+                  "map",
+                  "support",
+                  "protocol"
+                ]
+              },
+              "criterion": {"$ref": "#/$defs/nonEmptyString"}
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        },
+        "outside_domain_policy": {
+          "type": "object",
+          "required": ["state", "rule_id", "coercion_prohibited"],
+          "properties": {
+            "state": {"const": "out_of_distribution"},
+            "rule_id": {"$ref": "#/$defs/stableIdentifier"},
+            "coercion_prohibited": {"const": true}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidenceBinding": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "evidence_refs"],
+          "properties": {
+            "state": {"const": "retained"},
+            "evidence_refs": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "#/$defs/evidenceReference"},
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["state", "evidence_refs", "gap_reason"],
+          "properties": {
+            "state": {"const": "evidence_gap"},
+            "evidence_refs": {"type": "array", "maxItems": 0},
+            "gap_reason": {"$ref": "#/$defs/nonEmptyString"}
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "recordHeader": {
+      "type": "object",
+      "required": [
+        "schema_id",
+        "schema_version",
+        "artifact_id",
+        "version",
+        "lifecycle_status",
+        "lifecycle_history",
+        "protocol_release_id",
+        "created_at",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "schema_id": {"type": "string", "format": "uri"},
+        "schema_version": {"$ref": "#/$defs/schemaVersion"},
+        "artifact_id": {"$ref": "#/$defs/stableIdentifier"},
+        "version": {"$ref": "#/$defs/semanticVersion"},
+        "lifecycle_status": {"$ref": "#/$defs/lifecycleStatus"},
+        "lifecycle_history": {"$ref": "#/$defs/lifecycleHistory"},
+        "protocol_release_id": {"$ref": "#/$defs/releaseIdentifier"},
+        "created_at": {"$ref": "#/$defs/utcTimestamp"},
+        "runtime_execution_authorized": {"const": false}
+      }
+    }
+  }
+}

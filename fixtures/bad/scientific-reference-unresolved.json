@@ -1,0 +1,25 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-scientific-reference-unresolved-1.1.0",
+  "fixture_id": "reiyah.fixture.bad.scientific-reference-unresolved",
+  "version": "1.1.0",
+  "classification": "known_bad",
+  "description": "A selected action is changed to an identifier absent from the exact protocol-owned choice-set members.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-006", "TM-017", "TM-019", "TM-026"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-SCIENTIFIC-REFERENCE-RESOLUTION"},
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_contract_profile",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "fixtures/v1.1/good/human-automation-assessment.json",
+        "json_pointer": "/decision_record/selected_action/value",
+        "value": "reiyah.choice.synthetic-unregistered"
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/evidence-object.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.chain.evidence",
+  "object_id": "reiyah.fixture.evidence-001",
+  "object_kind": "evidence",
+  "version": "1.0.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.lifecycle-event.fixture-evidence-proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-21T21:00:11Z",
+      "actor": {"actor_type": "software", "actor_id": "reiyah.producer.fixture-generator"},
+      "rationale": "Created as a deterministic synthetic Gate A structure fixture; it is not scientific evidence.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.0.0",
+  "target_object_refs": [
+    {"object_id": "reiyah.fixture.outcome-001", "object_kind": "outcome", "version": "1.0.0"}
+  ],
+  "target_record_refs": [],
+  "basis": {
+    "state": "evidence_gap",
+    "source_record_ids": [],
+    "gap_reason": "This synthetic chain demonstrates structure only and is not scientific evidence."
+  },
+  "method_id": "reiyah.method.static-fixture",
+  "criterion_ids": [],
+  "integrity_signals": ["test"],
+  "validity": {
+    "state": "unknown",
+    "reason": "No scientific evidence is attached to this structural fixture.",
+    "rule_ids": ["reiyah.rule.fixture-not-evidence"]
+  },
+  "provenance": {
+    "producer_type": "software",
+    "producer_id": "reiyah.producer.fixture-generator",
+    "method_id": "reiyah.method.static-fixture",
+    "recorded_at": "2026-08-22T00:00:11+03:00",
+    "input_refs": [
+      {"object_id": "reiyah.fixture.outcome-001", "object_kind": "outcome", "version": "1.0.0"}
+    ]
+  },
+  "prohibited_interpretation": "Schema validity or fixture integrity is not scientific support, safety evidence, or operator acceptance."
+}

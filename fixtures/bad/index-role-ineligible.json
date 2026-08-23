@@ -1,0 +1,32 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-index-role-ineligible-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.index-role-ineligible",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "An untyped Markdown file is inserted into the protocol-manifest production path, where canonical role ownership requires a typed ledger-bound protocol manifest.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-005",
+    "TM-019",
+    "TM-021",
+    "TM-026"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-INDEX-ROLE-INELIGIBLE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "evidence_index",
+    "mutations": [
+      {
+        "operation": "add_file",
+        "path": "manifests/protocol/rogue.md",
+        "content_utf8": "# Synthetic rogue protocol prose\n\nThis file is not a typed protocol manifest.\n"
+      }
+    ]
+  }
+}

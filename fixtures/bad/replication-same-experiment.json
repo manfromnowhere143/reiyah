@@ -1,0 +1,31 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-replication-same-experiment-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.replication-same-experiment",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A distinct result declares replication of an exact target produced by the same experiment version, so it does not represent a distinct replication study.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-008",
+    "TM-019",
+    "TM-027"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-RESULT-LINEAGE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "add_file",
+        "path": "fixtures/good/result-replication-same-experiment.json",
+        "content_utf8": "{\"schema_id\":\"https://schemas.reiyah.invalid/gate-a/1.0.0/result.schema.json\",\"schema_version\":\"1.0.0\",\"artifact_id\":\"reiyah.artifact.result-replication-same-experiment-1.0.0\",\"result_id\":\"reiyah.result.synthetic-replication-same-experiment\",\"version\":\"1.0.0\",\"experiment_ref\":{\"experiment_id\":\"reiyah.experiment.synthetic-gate-a\",\"version\":\"1.0.0\"},\"protocol_release_id\":\"reiyah.protocol.harbor-gate-a@1.0.0\",\"lifecycle_status\":\"replicated\",\"lifecycle_history\":[{\"event_id\":\"reiyah.lifecycle-event.fixture-result-replicated-without-distinct-study\",\"sequence\":1,\"prior_status\":null,\"status\":\"replicated\",\"recorded_at\":\"2026-08-22T00:00:01Z\",\"actor\":{\"actor_type\":\"software\",\"actor_id\":\"reiyah.producer.fixture-generator\"},\"rationale\":\"Synthetic negative fixture attempts to replicate a result produced by the same exact experiment.\",\"evidence_refs\":[],\"prior_artifact\":null}],\"analysis_specification_id\":\"reiyah.analysis.synthetic-worst-group\",\"primary_metric_id\":\"reiyah.metric.synthetic-worst-group\",\"metric_results\":[{\"metric_id\":\"reiyah.metric.synthetic-worst-group\",\"estimand_id\":\"reiyah.estimand.worst-group\",\"metric_class\":\"worst_group\",\"outcome_definition_id\":\"reiyah.outcome-definition.synthetic-recovery\",\"target_population\":\"Synthetic Gate A encounter fixtures only; no human or vehicle records.\",\"comparator\":\"Synthetic comparator level fixture.control@1.0.0.\",\"direction\":\"higher_is_better\",\"estimate\":{\"state\":\"observed\",\"value\":0.5},\"coverage\":{\"state\":\"observed\",\"value\":0.8},\"uncertainty\":{\"method_id\":\"reiyah.uncertainty.synthetic-fixed-interval\",\"confidence_level\":0.95,\"lower\":{\"state\":\"observed\",\"value\":0.25},\"upper\":{\"state\":\"observed\",\"value\":0.75}},\"epistemic_counts\":{\"observed\":8,\"missing\":1,\"unmeasured\":0,\"out_of_distribution\":0,\"sensor_invalid\":1,\"abstained\":0},\"validity\":{\"state\":\"valid\",\"rule_ids\":[\"reiyah.rule.synthetic-structure-only\"]},\"abstention_rule_id\":\"reiyah.rule.synthetic-abstention\",\"decision_rule_id\":\"reiyah.decision-rule.synthetic-no-claim\",\"interpretation_status\":\"replicated\",\"group_results\":[{\"group_id\":\"reiyah.group.synthetic-a\",\"sample_size\":6,\"estimate\":{\"state\":\"observed\",\"value\":0.5},\"coverage\":{\"state\":\"observed\",\"value\":0.8333333333333334},\"uncertainty\":{\"method_id\":\"reiyah.uncertainty.synthetic-fixed-interval\",\"confidence_level\":0.95,\"lower\":{\"state\":\"observed\",\"value\":0.2},\"upper\":{\"state\":\"observed\",\"value\":0.8}},\"information_disposition\":\"sufficient\"},{\"group_id\":\"reiyah.group.synthetic-b\",\"sample_size\":4,\"estimate\":{\"state\":\"observed\",\"value\":0.6},\"coverage\":{\"state\":\"observed\",\"value\":0.75},\"uncertainty\":{\"method_id\":\"reiyah.uncertainty.synthetic-fixed-interval\",\"confidence_level\":0.95,\"lower\":{\"state\":\"observed\",\"value\":0.3},\"upper\":{\"state\":\"observed\",\"value\":0.9}},\"information_disposition\":\"sufficient\"}],\"worst_group_disposition\":{\"state\":\"observed\",\"group_ids\":[\"reiyah.group.synthetic-a\"],\"selection_rule_id\":\"reiyah.rule.direction-aware-all-ties\"}}],\"evidence_binding\":{\"state\":\"evidence_gap\",\"evidence_refs\":[],\"gap_reason\":\"Synthetic schema fixture is non-evidentiary and supports no scientific claim.\"},\"replicates_result\":{\"artifact_id\":\"reiyah.fixture.result.good-1\",\"record_id\":\"reiyah.result.synthetic-gate-a\",\"record_kind\":\"result\",\"schema_id\":\"https://schemas.reiyah.invalid/gate-a/1.0.0/result.schema.json\",\"version\":\"1.0.0\",\"path\":\"fixtures/good/result.json\",\"sha256\":\"sha256:a5524a5336e53f356869cd5cb43da3461350dbb1af2f52cdda271defa63f5368\"},\"provenance\":{\"producer_type\":\"software\",\"producer_id\":\"reiyah.producer.fixture-generator\",\"method_id\":\"reiyah.method.static-fixture\",\"recorded_at\":\"2026-08-22T00:00:00Z\",\"input_refs\":[]}}\n"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-evidence-policy-incomplete-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.evidence-policy-incomplete",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The exact protocol evidence policy is weakened by removing retracted evidence from its universally disallowed lifecycle set.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-004",
+    "TM-008",
+    "TM-019"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-EVIDENCE-POLICY-INCOMPLETE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "remove",
+        "path": "manifests/protocol/harbor-gate-a-protocol-1.0.0.json",
+        "json_pointer": "/evidence_binding_policy/universally_disallowed_evidence_statuses/6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,557 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json",
+  "title": "Reiyah public-custody source ledger 1.1",
+  "description": "An append-only successor ledger that separates retained payload custody, payload redistribution, pointer metadata, and evidentiary eligibility.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "ledger_id",
+    "version",
+    "as_of_date",
+    "lifecycle_status",
+    "runtime_execution_authorized",
+    "custody_profile_ref",
+    "predecessor",
+    "records",
+    "evidence_gap_statement"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json"
+    },
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "artifact_id": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+    },
+    "ledger_id": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "const": "1.1.0"
+    },
+    "as_of_date": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/calendarDate"
+    },
+    "lifecycle_status": {
+      "const": "proposed"
+    },
+    "runtime_execution_authorized": {
+      "const": false
+    },
+    "custody_profile_ref": {
+      "$ref": "#/$defs/artifactReference"
+    },
+    "predecessor": {
+      "$ref": "#/$defs/artifactReference"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/sourceRecord"
+      },
+      "uniqueItems": true
+    },
+    "evidence_gap_statement": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+    }
+  },
+  "$defs": {
+    "artifactReference": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "version",
+        "path",
+        "sha256",
+        "byte_size"
+      ],
+      "properties": {
+        "artifact_id": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        "version": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/semanticVersion"
+        },
+        "path": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/relativeArtifactPath"
+        },
+        "sha256": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/sha256Digest"
+        },
+        "byte_size": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "sourceReference": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "version"
+      ],
+      "properties": {
+        "source_id": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        "version": {
+          "const": "1.1.0"
+        }
+      },
+      "additionalProperties": false
+    },
+    "payloadBinding": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256",
+        "byte_size",
+        "media_type"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/relativeArtifactPath"
+        },
+        "sha256": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/sha256Digest"
+        },
+        "byte_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "media_type": {
+          "type": "string",
+          "pattern": "^[a-z0-9.+-]+/[a-z0-9.+-]+$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "priorObservedPayload": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256",
+        "byte_size",
+        "media_type",
+        "observed_at",
+        "observed_in_artifact",
+        "admissible_under_this_profile",
+        "distribution_payload_authorized"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/relativeArtifactPath"
+        },
+        "sha256": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/sha256Digest"
+        },
+        "byte_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "media_type": {
+          "type": "string",
+          "pattern": "^[a-z0-9.+-]+/[a-z0-9.+-]+$"
+        },
+        "observed_at": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/timestamp"
+        },
+        "observed_in_artifact": {
+          "$ref": "#/$defs/artifactReference"
+        },
+        "admissible_under_this_profile": {
+          "const": false
+        },
+        "distribution_payload_authorized": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "observedRedistributionBasis": {
+      "type": "object",
+      "required": [
+        "state",
+        "basis_url",
+        "basis_title",
+        "basis_version",
+        "terms_summary",
+        "obligations",
+        "caveats"
+      ],
+      "properties": {
+        "state": {
+          "const": "observed"
+        },
+        "basis_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "basis_title": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+        },
+        "basis_version": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+        },
+        "terms_summary": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+        },
+        "obligations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "caveats": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "unmeasuredRedistributionBasis": {
+      "type": "object",
+      "required": [
+        "state",
+        "reason"
+      ],
+      "properties": {
+        "state": {
+          "const": "unmeasured"
+        },
+        "reason": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+        }
+      },
+      "additionalProperties": false
+    },
+    "sourceRecord": {
+      "type": "object",
+      "required": [
+        "record_schema_id",
+        "schema_version",
+        "artifact_id",
+        "source_id",
+        "version",
+        "lifecycle_status",
+        "record_role",
+        "title",
+        "publisher",
+        "document_identifier",
+        "exact_version",
+        "publication_date",
+        "scope",
+        "source_url",
+        "recorded_at",
+        "custody_state",
+        "redistribution_state",
+        "evidence_eligibility",
+        "evidence_class",
+        "normative_text_available",
+        "retained_payload",
+        "prior_observed_payload",
+        "redistribution_basis",
+        "access_constraints",
+        "license_constraints",
+        "limitations"
+      ],
+      "properties": {
+        "record_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceRecord"
+        },
+        "schema_version": {
+          "const": "1.1.0"
+        },
+        "artifact_id": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        "source_id": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        "version": {
+          "const": "1.1.0"
+        },
+        "lifecycle_status": {
+          "const": "proposed"
+        },
+        "record_role": {
+          "enum": [
+            "retained_source",
+            "historical_pointer",
+            "discovery_pointer",
+            "permission_pointer",
+            "retention_pending"
+          ]
+        },
+        "title": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+        },
+        "publisher": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+        },
+        "document_identifier": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+        },
+        "exact_version": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+        },
+        "publication_date": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/dateMeasurement"
+        },
+        "scope": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "recorded_at": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/timestamp"
+        },
+        "custody_state": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-evidence-custody-profile.schema.json#/$defs/custodyState"
+        },
+        "redistribution_state": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-evidence-custody-profile.schema.json#/$defs/redistributionState"
+        },
+        "evidence_eligibility": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-evidence-custody-profile.schema.json#/$defs/evidenceEligibility"
+        },
+        "evidence_class": {
+          "enum": [
+            "official_catalog_metadata",
+            "guidance_research",
+            "official_regulatory_documentation",
+            "full_normative_text",
+            "official_company_disclosure",
+            "patent_publication",
+            "permission_statement"
+          ]
+        },
+        "normative_text_available": {
+          "type": "boolean"
+        },
+        "retained_payload": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/payloadBinding"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "prior_observed_payload": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/priorObservedPayload"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redistribution_basis": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/observedRedistributionBasis"
+            },
+            {
+              "$ref": "#/$defs/unmeasuredRedistributionBasis"
+            }
+          ]
+        },
+        "access_constraints": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+        },
+        "license_constraints": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+        },
+        "limitations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "upstream_etag": {
+          "oneOf": [
+            {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "upstream_range": {
+          "oneOf": [
+            {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stringMeasurement"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "record_role": {
+                "const": "retained_source"
+              }
+            },
+            "required": [
+              "record_role"
+            ]
+          },
+          "then": {
+            "properties": {
+              "custody_state": {
+                "const": "retained_payload"
+              },
+              "redistribution_state": {
+                "enum": [
+                  "permitted_with_attribution",
+                  "permitted_with_conditions",
+                  "retention_only_not_cleared"
+                ]
+              },
+              "evidence_eligibility": {
+                "const": "eligible_for_proposed_mapping"
+              },
+              "retained_payload": {
+                "$ref": "#/$defs/payloadBinding"
+              },
+              "prior_observed_payload": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "record_role": {
+                "enum": [
+                  "historical_pointer",
+                  "discovery_pointer",
+                  "permission_pointer"
+                ]
+              }
+            },
+            "required": [
+              "record_role"
+            ]
+          },
+          "then": {
+            "properties": {
+              "custody_state": {
+                "const": "pointer_only"
+              },
+              "redistribution_state": {
+                "const": "pointer_metadata_only"
+              },
+              "evidence_eligibility": {
+                "const": "ineligible_pointer_only"
+              },
+              "retained_payload": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "record_role": {
+                "const": "historical_pointer"
+              }
+            },
+            "required": [
+              "record_role"
+            ]
+          },
+          "then": {
+            "properties": {
+              "prior_observed_payload": {
+                "$ref": "#/$defs/priorObservedPayload"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "record_role": {
+                "enum": [
+                  "discovery_pointer",
+                  "permission_pointer"
+                ]
+              }
+            },
+            "required": [
+              "record_role"
+            ]
+          },
+          "then": {
+            "properties": {
+              "prior_observed_payload": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "record_role": {
+                "const": "retention_pending"
+              }
+            },
+            "required": [
+              "record_role"
+            ]
+          },
+          "then": {
+            "properties": {
+              "custody_state": {
+                "const": "pending_retention"
+              },
+              "redistribution_state": {
+                "const": "pending_review"
+              },
+              "evidence_eligibility": {
+                "const": "ineligible_pending_retention"
+              },
+              "retained_payload": {
+                "type": "null"
+              },
+              "prior_observed_payload": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

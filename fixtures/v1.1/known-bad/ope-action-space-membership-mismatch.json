@@ -1,0 +1,11 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope-action-space-membership-mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/sequential-off-policy-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/trajectories/0/steps/0/action_id", "value": "reiyah.choice.synthetic-review-only"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"instance_pointer": "/trajectories/0/steps/0/action_id", "schema_keyword": "semantic", "reason": "Every observed trajectory action must belong to the exact frozen action space."},
+  "runtime_execution_authorized": false
+}

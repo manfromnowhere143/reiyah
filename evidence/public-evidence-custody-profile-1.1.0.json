@@ -1,0 +1,100 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-evidence-custody-profile.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "reiyah.artifact.public-evidence-custody-profile-1.1.0",
+  "profile_id": "reiyah.public-evidence-custody-profile",
+  "version": "1.1.0",
+  "as_of_date": "2026-08-23",
+  "lifecycle_status": "proposed",
+  "gate_scope": "public_evidence_custody",
+  "runtime_execution_authorized": false,
+  "operator_distribution_authorized": true,
+  "distribution_authorization": {
+    "basis_state": "observed_current_operator_instruction",
+    "recorded_date": "2026-08-23",
+    "authorized_action": "create_open_source_public_repository_and_push_static_packet",
+    "scope_limit": "Exact four eligible retained payloads, custody metadata, evidence-gap crosswalk, schemas, and pointer-only frontier discovery metadata; no private data or unauthorized source payloads.",
+    "operator_identity_authentication": "not_evaluated",
+    "ga17_effect": "not_evaluated",
+    "gate_a_acceptance_effect": "none",
+    "scientific_publication_acceptance_effect": "none"
+  },
+  "distribution_authorization_scope": "static_public_repository_distribution",
+  "authorized_payload_count": 4,
+  "distribution_executed": false,
+  "execution_tracking_mode": "append_only_post_distribution_receipt",
+  "post_distribution_receipt_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-receipt.schema.json",
+  "ga17_status": "not_evaluated",
+  "gate_a_acceptance_conferred": false,
+  "scientific_publication_acceptance_conferred": false,
+  "scientific_support_claimed": false,
+  "compliance_claimed": false,
+  "state_definitions": {
+    "custody_states": [
+      {
+        "state": "retained_payload",
+        "meaning": "Exact local payload bytes are present and bound by path, media type, byte size, and SHA-256."
+      },
+      {
+        "state": "pointer_only",
+        "meaning": "Only source identity and discovery metadata are admitted by this profile; any historically observed payload is excluded from current evidentiary and distribution use."
+      },
+      {
+        "state": "pending_retention",
+        "meaning": "A payload is expected but no exact admissible local bytes are currently bound."
+      }
+    ],
+    "redistribution_states": [
+      {
+        "state": "permitted_with_attribution",
+        "meaning": "Observed source terms permit payload redistribution when the recorded attribution obligations are met."
+      },
+      {
+        "state": "permitted_with_conditions",
+        "meaning": "Observed source terms permit payload redistribution subject to all recorded obligations and caveats."
+      },
+      {
+        "state": "retention_only_not_cleared",
+        "meaning": "Local retention is allowed, but payload redistribution is not established by the recorded basis."
+      },
+      {
+        "state": "pointer_metadata_only",
+        "meaning": "Only the pointer and custody metadata may be distributed; no source payload is included."
+      },
+      {
+        "state": "redistribution_prohibited",
+        "meaning": "The recorded basis prohibits payload redistribution."
+      },
+      {
+        "state": "pending_review",
+        "meaning": "No redistribution determination has been made."
+      }
+    ],
+    "evidence_eligibility_states": [
+      {
+        "state": "eligible_for_proposed_mapping",
+        "meaning": "Exact retained bytes may support only a proposed, scope-bounded mapping; they do not establish scientific support, legal interpretation, safety, conformance, certification, compliance, or acceptance."
+      },
+      {
+        "state": "ineligible_pointer_only",
+        "meaning": "The record is discovery or custody metadata only and cannot support a standards, scientific, safety, benchmark, or compliance proposition."
+      },
+      {
+        "state": "ineligible_pending_retention",
+        "meaning": "No admissible retained payload is available, so the record cannot support an evidentiary proposition."
+      }
+    ]
+  },
+  "invariants": [
+    "Custody does not imply redistribution permission.",
+    "Redistribution permission does not imply evidentiary eligibility.",
+    "A pointer, URL, prior digest, checksum, or generated record is not retained source evidence.",
+    "Only exact retained payloads marked eligible_for_proposed_mapping may appear in evidence_source_refs.",
+    "Pointer-only and pending records must remain evidence-ineligible and may appear only in discovery_source_refs or custody permission bases.",
+    "Prior observed payload metadata preserves audit history but does not re-admit excluded bytes.",
+    "Operator authorization is limited to static public repository distribution of the exact four inventory-bound payloads and pointer metadata.",
+    "Distribution authorization is not Gate A acceptance, GA-17 evaluation, scientific support, safety authority, compliance, or scientific-publication acceptance.",
+    "The profile and inventory remain immutable with distribution_executed false; a separate append-only receipt binds their exact digests after a successful push and records distribution_executed true.",
+    "No custody state supports a scientific, safety, legal, standards, benchmark, certification, compliance, or operator-acceptance conclusion."
+  ]
+}

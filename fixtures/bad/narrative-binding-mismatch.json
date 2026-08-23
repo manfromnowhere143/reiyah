@@ -1,0 +1,34 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-narrative-binding-mismatch-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.narrative-binding-mismatch",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A validation-plan narrative digest is replaced with an all-zero digest while the bound narrative bytes remain unchanged.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-004",
+    "TM-008",
+    "TM-017",
+    "TM-019",
+    "TM-022"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-NARRATIVE-BINDING-MISMATCH"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "narrative_bindings",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "validation/validation-plan.json",
+        "json_pointer": "/narrative_bindings/0/narrative/sha256",
+        "value": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ]
+  }
+}

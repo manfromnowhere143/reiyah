@@ -1,0 +1,58 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/decision.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.chain.decision",
+  "object_id": "reiyah.fixture.decision-001",
+  "object_kind": "decision",
+  "version": "1.0.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.lifecycle-event.fixture-decision-proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-21T21:00:02Z",
+      "actor": {"actor_type": "derived_process", "actor_id": "reiyah.producer.fixture-generator"},
+      "rationale": "Created as a deterministic synthetic Gate A structure fixture.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.0.0",
+  "context_rules": {
+    "encounter_construction_rule_id": "reiyah.rule.fixture-encounter-construction",
+    "object_identity_rule_id": "reiyah.rule.fixture-object-identity",
+    "temporal_correspondence_rule_id": "reiyah.rule.fixture-temporal-correspondence"
+  },
+  "encounter_id": "reiyah.fixture.encounter-001",
+  "event_time": {
+    "clock_id": "reiyah.clock.fixture",
+    "offset": {"state": "observed", "value": 2},
+    "unit": "seconds",
+    "origin": {"state": "observed", "value": "Synthetic fixture origin"}
+  },
+  "belief_refs": [
+    {"object_id": "reiyah.fixture.belief-001", "object_kind": "latent_belief", "version": "1.0.0"}
+  ],
+  "observation_refs": [
+    {"object_id": "reiyah.fixture.observation-001", "object_kind": "observation", "version": "1.0.0"}
+  ],
+  "choice_set_id": "reiyah.choice-set.fixture",
+  "selected_action": {"state": "observed", "value": "reiyah.choice.record-candidate-prompt"},
+  "decision_rule_id": "reiyah.rule.fixture-decision",
+  "research_only": true,
+  "validity": {
+    "state": "valid",
+    "rule_ids": ["reiyah.rule.fixture-decision-valid"]
+  },
+  "provenance": {
+    "producer_type": "derived_process",
+    "producer_id": "reiyah.producer.fixture-generator",
+    "method_id": "reiyah.method.static-fixture",
+    "recorded_at": "2026-08-22T00:00:02+03:00",
+    "input_refs": [
+      {"object_id": "reiyah.fixture.belief-001", "object_kind": "latent_belief", "version": "1.0.0"}
+    ]
+  }
+}

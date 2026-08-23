@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/source-ledger.schema.json",
+  "title": "Reiyah retained source ledger",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "ledger_id",
+    "version",
+    "as_of_date",
+    "lifecycle_status",
+    "offline_retention_required",
+    "records",
+    "evidence_gap_statement"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/source-ledger.schema.json"
+    },
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "ledger_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "as_of_date": {
+      "$ref": "common.schema.json#/$defs/calendarDate"
+    },
+    "lifecycle_status": {
+      "const": "proposed"
+    },
+    "offline_retention_required": {
+      "const": true
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "source-record.schema.json"
+      }
+    },
+    "evidence_gap_statement": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    }
+  },
+  "additionalProperties": false
+}

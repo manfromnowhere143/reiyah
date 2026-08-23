@@ -1,0 +1,32 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-analysis-specification-inconsistent-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.analysis-specification-inconsistent",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The frozen analysis primary metric is changed to an identifier absent from its metric specification inventory.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-011",
+    "TM-017",
+    "TM-019"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-ANALYSIS-SPECIFICATION-INCONSISTENT"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "fixtures/good/analysis-specification.json",
+        "json_pointer": "/primary_metric_id",
+        "value": "reiyah.metric.synthetic-missing"
+      }
+    ]
+  }
+}

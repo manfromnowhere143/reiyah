@@ -1,0 +1,20 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.study-missing-access-chronology",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/study-design-preregistration.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/study-design-preregistration.json",
+  "mutations": [
+    {
+      "operation": "remove",
+      "json_pointer": "/access_chronology"
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "instance_pointer": "",
+    "schema_keyword": "required",
+    "reason": "A preregistration cannot establish its temporal boundary without retained data, split, and analysis-access chronology."
+  },
+  "runtime_execution_authorized": false
+}

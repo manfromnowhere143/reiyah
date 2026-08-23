@@ -1,0 +1,446 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/sequential-off-policy-evaluation.schema.json",
+  "title": "Sequential off-policy evaluation contract",
+  "description": "A non-runtime contract for trajectory-level sequential policy evaluation with frozen policy versions, propensities, support, weights, effective sample size, horizons, rewards, costs, safety constraints, estimators, and explicit unknowns.",
+  "allOf": [
+    {"$ref": "common.schema.json#/$defs/recordHeader"},
+    {
+      "type": "object",
+      "required": [
+        "evaluation_id",
+        "mission_release_id",
+        "study_ref",
+        "dataset_ref",
+        "odd_ref",
+        "frozen_at",
+        "behavior_policy",
+        "target_policy",
+        "policy_versions_exact",
+        "horizon",
+        "reward_definition",
+        "cost_definitions",
+        "safety_constraints",
+        "trajectories",
+        "support_assessment",
+        "importance_weight_policy",
+        "effective_sample_size",
+        "estimators",
+        "evidence_binding",
+        "scientific_claim_authorized"
+      ],
+      "properties": {
+        "schema_id": {
+          "const": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/sequential-off-policy-evaluation.schema.json"
+        },
+        "evaluation_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "mission_release_id": {"$ref": "common.schema.json#/$defs/releaseIdentifier"},
+        "study_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "study_design"}}}
+          ]
+        },
+        "dataset_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "dataset"}}}
+          ]
+        },
+        "odd_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "odd"}}}
+          ]
+        },
+        "frozen_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "behavior_policy": {"$ref": "#/$defs/policyBinding"},
+        "target_policy": {"$ref": "#/$defs/policyBinding"},
+        "policy_versions_exact": {"const": true},
+        "horizon": {"$ref": "#/$defs/horizon"},
+        "reward_definition": {"$ref": "#/$defs/signalDefinition"},
+        "cost_definitions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/signalDefinition"},
+          "uniqueItems": true
+        },
+        "safety_constraints": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/safetyConstraint"},
+          "uniqueItems": true
+        },
+        "trajectories": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/trajectory"},
+          "uniqueItems": true
+        },
+        "support_assessment": {"$ref": "#/$defs/supportAssessment"},
+        "importance_weight_policy": {"$ref": "#/$defs/importanceWeightPolicy"},
+        "effective_sample_size": {"$ref": "#/$defs/effectiveSampleSize"},
+        "estimators": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/estimatorResult"},
+          "uniqueItems": true
+        },
+        "evidence_binding": {"$ref": "common.schema.json#/$defs/evidenceBinding"},
+        "scientific_claim_authorized": {"const": false}
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle_status": {
+            "enum": ["supported", "contradicted", "replicated", "corrected"]
+          }
+        },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "evidence_binding": {
+            "properties": {"state": {"const": "retained"}},
+            "required": ["state"]
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "policyBinding": {
+      "type": "object",
+      "required": [
+        "policy_ref",
+        "policy_artifact",
+        "action_space_id",
+        "information_set_schema_id",
+        "stochasticity_declared"
+      ],
+      "properties": {
+        "policy_ref": {
+          "$ref": "#/$defs/policyReferenceBinding"
+        },
+        "policy_artifact": {"$ref": "common.schema.json#/$defs/artifactBinding"},
+        "action_space_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "information_set_schema_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "stochasticity_declared": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "policyReferenceBinding": {
+      "oneOf": [
+        {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {
+              "properties": {"record_kind": {"const": "policy"}},
+              "required": ["record_kind"]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/unavailableVersionedReference"},
+            {
+              "properties": {"expected_record_kind": {"const": "policy"}},
+              "required": ["expected_record_kind"]
+            }
+          ]
+        }
+      ]
+    },
+    "encounterReferenceBinding": {
+      "oneOf": [
+        {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {
+              "properties": {"record_kind": {"const": "encounter"}},
+              "required": ["record_kind"]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/unavailableVersionedReference"},
+            {
+              "properties": {"expected_record_kind": {"const": "encounter"}},
+              "required": ["expected_record_kind"]
+            }
+          ]
+        }
+      ]
+    },
+    "horizon": {
+      "type": "object",
+      "required": ["horizon_type", "maximum_steps", "discount_factor", "termination_rule_id"],
+      "properties": {
+        "horizon_type": {"enum": ["fixed", "variable"]},
+        "maximum_steps": {"type": "integer", "minimum": 1},
+        "discount_factor": {"type": "number", "minimum": 0, "maximum": 1},
+        "termination_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"}
+      },
+      "additionalProperties": false
+    },
+    "signalDefinition": {
+      "type": "object",
+      "required": ["signal_id", "name", "unit", "direction", "aggregation_rule_id"],
+      "properties": {
+        "signal_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "name": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "unit": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "direction": {"enum": ["higher_is_better", "lower_is_better"]},
+        "aggregation_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"}
+      },
+      "additionalProperties": false
+    },
+    "safetyConstraint": {
+      "type": "object",
+      "required": [
+        "constraint_id",
+        "cost_signal_id",
+        "operator",
+        "threshold",
+        "confidence_requirement",
+        "violation_disposition"
+      ],
+      "properties": {
+        "constraint_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "cost_signal_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "operator": {"enum": ["less_than", "less_than_or_equal", "greater_than", "greater_than_or_equal"]},
+        "threshold": {"$ref": "common.schema.json#/$defs/numberMeasurement"},
+        "confidence_requirement": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "violation_disposition": {"enum": ["invalid", "inconclusive", "failed", "blocked"]}
+      },
+      "additionalProperties": false
+    },
+    "stepCost": {
+      "type": "object",
+      "required": ["cost_signal_id", "value"],
+      "properties": {
+        "cost_signal_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "value": {"$ref": "common.schema.json#/$defs/numberMeasurement"}
+      },
+      "additionalProperties": false
+    },
+    "trajectoryStep": {
+      "type": "object",
+      "required": [
+        "step_index",
+        "observed_at",
+        "information_set",
+        "action_id",
+        "behavior_propensity",
+        "target_propensity",
+        "reward",
+        "costs",
+        "terminal",
+        "availability_state"
+      ],
+      "properties": {
+        "step_index": {"type": "integer", "minimum": 0},
+        "observed_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "information_set": {"$ref": "common.schema.json#/$defs/informationSet"},
+        "action_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "behavior_propensity": {"$ref": "common.schema.json#/$defs/strictlyPositiveProbability"},
+        "target_propensity": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "reward": {"$ref": "common.schema.json#/$defs/numberMeasurement"},
+        "costs": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/stepCost"},
+          "uniqueItems": true
+        },
+        "terminal": {"$ref": "common.schema.json#/$defs/booleanMeasurement"},
+        "availability_state": {"$ref": "common.schema.json#/$defs/epistemicState"},
+        "unavailability_reason": {
+          "oneOf": [
+            {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"},
+            {"type": "null"}
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"availability_state": {"const": "observed"}},
+            "required": ["availability_state"]
+          },
+          "then": {
+            "properties": {"unavailability_reason": {"type": "null"}}
+          },
+          "else": {
+            "required": ["unavailability_reason"],
+            "properties": {
+              "unavailability_reason": {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "trajectory": {
+      "type": "object",
+      "required": [
+        "trajectory_id",
+        "encounter_ref",
+        "subject_ref",
+        "behavior_policy_ref",
+        "target_policy_ref",
+        "started_at",
+        "ended_at",
+        "steps",
+        "trajectory_status"
+      ],
+      "properties": {
+        "trajectory_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "encounter_ref": {"$ref": "#/$defs/encounterReferenceBinding"},
+        "subject_ref": {"$ref": "common.schema.json#/$defs/actorReference"},
+        "behavior_policy_ref": {
+          "$ref": "#/$defs/policyReferenceBinding"
+        },
+        "target_policy_ref": {
+          "$ref": "#/$defs/policyReferenceBinding"
+        },
+        "started_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "ended_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/trajectoryStep"},
+          "uniqueItems": true
+        },
+        "trajectory_status": {"enum": ["complete", "right_censored", "invalid", "out_of_distribution"]}
+      },
+      "additionalProperties": false
+    },
+    "supportAssessment": {
+      "type": "object",
+      "required": [
+        "support_state",
+        "positivity_rule_id",
+        "overlap_metric",
+        "minimum_behavior_propensity",
+        "unsupported_action_count",
+        "unsupported_actions",
+        "extrapolation_prohibited"
+      ],
+      "properties": {
+        "support_state": {
+          "enum": ["observed", "missing", "unmeasured", "out_of_distribution", "sensor_invalid", "abstained"]
+        },
+        "positivity_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "overlap_metric": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "minimum_behavior_propensity": {"$ref": "common.schema.json#/$defs/strictlyPositiveProbability"},
+        "unsupported_action_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "unsupported_actions": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "extrapolation_prohibited": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "importanceWeightPolicy": {
+      "type": "object",
+      "required": [
+        "weight_type",
+        "normalization",
+        "clipping",
+        "clipping_threshold",
+        "maximum_observed_weight",
+        "tail_quantiles",
+        "zero_behavior_propensity_prohibited"
+      ],
+      "properties": {
+        "weight_type": {"enum": ["trajectory", "per_decision", "marginalized"]},
+        "normalization": {"enum": ["none", "self_normalized"]},
+        "clipping": {"type": "boolean"},
+        "clipping_threshold": {
+          "oneOf": [
+            {"$ref": "common.schema.json#/$defs/positiveNumberMeasurement"},
+            {"type": "null"}
+          ]
+        },
+        "maximum_observed_weight": {"$ref": "common.schema.json#/$defs/nonNegativeNumberMeasurement"},
+        "tail_quantiles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["quantile", "weight"],
+            "properties": {
+              "quantile": {"type": "number", "minimum": 0, "maximum": 1},
+              "weight": {"$ref": "common.schema.json#/$defs/nonNegativeNumberMeasurement"}
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        },
+        "zero_behavior_propensity_prohibited": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "effectiveSampleSize": {
+      "type": "object",
+      "required": ["method_id", "value", "trajectory_count", "minimum_rule_id", "disposition"],
+      "properties": {
+        "method_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "value": {"$ref": "common.schema.json#/$defs/positiveNumberMeasurement"},
+        "trajectory_count": {"type": "integer", "minimum": 1},
+        "minimum_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "disposition": {"enum": ["sufficient", "insufficient", "unknown"]}
+      },
+      "additionalProperties": false
+    },
+    "estimatorResult": {
+      "type": "object",
+      "required": [
+        "estimator_id",
+        "estimator_family",
+        "estimator_version",
+        "target_signal_id",
+        "estimate",
+        "uncertainty",
+        "assumption_ids",
+        "support_required",
+        "safety_constraint_results",
+        "interpretation_status"
+      ],
+      "properties": {
+        "estimator_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "estimator_family": {"enum": ["IS", "WIS", "PDIS", "DR", "sequential_DR", "MAGIC", "FQE"]},
+        "estimator_version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+        "target_signal_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "estimate": {"$ref": "common.schema.json#/$defs/numberMeasurement"},
+        "uncertainty": {"$ref": "common.schema.json#/$defs/uncertaintyInterval"},
+        "assumption_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "support_required": {"const": true},
+        "safety_constraint_results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["constraint_id", "estimate", "uncertainty", "disposition"],
+            "properties": {
+              "constraint_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+              "estimate": {"$ref": "common.schema.json#/$defs/numberMeasurement"},
+              "uncertainty": {"$ref": "common.schema.json#/$defs/uncertaintyInterval"},
+              "disposition": {"enum": ["satisfied", "violated", "inconclusive", "invalid"]}
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        },
+        "interpretation_status": {"$ref": "common.schema.json#/$defs/lifecycleStatus"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "unevaluatedProperties": false
+}

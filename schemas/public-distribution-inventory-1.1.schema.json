@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-inventory.schema.json",
+  "title": "Reiyah public evidence distribution inventory 1.1",
+  "description": "An immutable static inventory of the exact four authorized public payloads, standards-custody pointers, and a separately bound frontier discovery register. Distribution authorization does not execute a push or confer Gate A, GA-17, scientific, safety, compliance, or publication acceptance.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "inventory_id",
+    "version",
+    "as_of_date",
+    "lifecycle_status",
+    "runtime_execution_authorized",
+    "distribution_executed",
+    "operator_distribution_authorized",
+    "distribution_authorization",
+    "distribution_authorization_scope",
+    "authorized_payload_count",
+    "execution_tracking_mode",
+    "post_distribution_receipt_schema_id",
+    "ga17_status",
+    "gate_a_acceptance_conferred",
+    "scientific_publication_acceptance_conferred",
+    "source_ledger_ref",
+    "frontier_discovery_register_ref",
+    "rights_revalidation_ref",
+    "public_payload_count",
+    "pointer_only_count",
+    "discovery_pointer_count",
+    "entries"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-inventory.schema.json"
+    },
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "artifact_id": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+    },
+    "inventory_id": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "const": "1.1.0"
+    },
+    "as_of_date": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/calendarDate"
+    },
+    "lifecycle_status": {
+      "const": "proposed"
+    },
+    "runtime_execution_authorized": {
+      "const": false
+    },
+    "distribution_executed": {
+      "const": false
+    },
+    "operator_distribution_authorized": {
+      "const": true
+    },
+    "distribution_authorization": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-evidence-custody-profile.schema.json#/$defs/distributionAuthorization"
+    },
+    "distribution_authorization_scope": {
+      "const": "static_public_repository_distribution"
+    },
+    "authorized_payload_count": {
+      "const": 4
+    },
+    "execution_tracking_mode": {
+      "const": "append_only_post_distribution_receipt"
+    },
+    "post_distribution_receipt_schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-receipt.schema.json"
+    },
+    "ga17_status": {
+      "const": "not_evaluated"
+    },
+    "gate_a_acceptance_conferred": {
+      "const": false
+    },
+    "scientific_publication_acceptance_conferred": {
+      "const": false
+    },
+    "source_ledger_ref": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+    },
+    "frontier_discovery_register_ref": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+    },
+    "rights_revalidation_ref": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/artifactReference"
+    },
+    "public_payload_count": {
+      "const": 4
+    },
+    "pointer_only_count": {
+      "const": 4
+    },
+    "discovery_pointer_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "$ref": "#/$defs/inventoryEntry"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "inventoryEntry": {
+      "type": "object",
+      "required": [
+        "source_ref",
+        "distribution_action",
+        "payload",
+        "attribution",
+        "caveats",
+        "reason"
+      ],
+      "properties": {
+        "source_ref": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/sourceReference"
+        },
+        "distribution_action": {
+          "enum": [
+            "include_payload",
+            "publish_pointer_only",
+            "exclude"
+          ]
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/payloadBinding"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "attribution": {
+          "type": "array",
+          "items": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "caveats": {
+          "type": "array",
+          "items": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "reason": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/common.schema.json#/$defs/nonEmptyString"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "distribution_action": {
+                "const": "include_payload"
+              }
+            },
+            "required": [
+              "distribution_action"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json#/$defs/payloadBinding"
+              },
+              "attribution": {
+                "minItems": 1
+              },
+              "caveats": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "distribution_action": {
+                "enum": [
+                  "publish_pointer_only",
+                  "exclude"
+                ]
+              }
+            },
+            "required": [
+              "distribution_action"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

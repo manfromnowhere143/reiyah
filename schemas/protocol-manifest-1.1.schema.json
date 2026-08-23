@@ -1,0 +1,1363 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.0/protocol-manifest.schema.json",
+  "title": "Immutable HARBOR Gate A public protocol manifest release",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "manifest_kind",
+    "release_id",
+    "protocol_id",
+    "version",
+    "mission_release_id",
+    "release_stage",
+    "lifecycle_status",
+    "created_on",
+    "relation",
+    "immutability",
+    "operator_acceptance",
+    "scope",
+    "scientific_layers",
+    "epistemic_states",
+    "lifecycle_vocabulary",
+    "belief_normalization_policy",
+    "lifecycle_transition_policy",
+    "evidence_binding_policy",
+    "result_binding_policy",
+    "scientific_dependency_policy",
+    "definition_registry",
+    "estimands",
+    "validity_policy",
+    "preregistration",
+    "gate_constraints",
+    "scientific_contract_profile",
+    "research_function_registry",
+    "public_evidence_profile"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/protocol-manifest.schema.json"
+    },
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "manifest_kind": {
+      "const": "protocol"
+    },
+    "release_id": {
+      "$ref": "common.schema.json#/$defs/releaseIdentifier"
+    },
+    "protocol_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "mission_release_id": {
+      "$ref": "common.schema.json#/$defs/releaseIdentifier"
+    },
+    "release_stage": {
+      "enum": [
+        "candidate",
+        "superseded",
+        "corrected",
+        "retracted"
+      ]
+    },
+    "lifecycle_status": {
+      "$ref": "common.schema.json#/$defs/lifecycleStatus"
+    },
+    "created_on": {
+      "$ref": "common.schema.json#/$defs/calendarDate"
+    },
+    "relation": {
+      "$ref": "common.schema.json#/$defs/releaseRelation"
+    },
+    "immutability": {
+      "type": "object",
+      "required": [
+        "policy",
+        "identifier_reuse_prohibited",
+        "in_place_changes_prohibited",
+        "corrections_require_new_release"
+      ],
+      "properties": {
+        "policy": {
+          "const": "append_only_release"
+        },
+        "identifier_reuse_prohibited": {
+          "const": true
+        },
+        "in_place_changes_prohibited": {
+          "const": true
+        },
+        "corrections_require_new_release": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "operator_acceptance": {
+      "type": "object",
+      "required": [
+        "state",
+        "record_id"
+      ],
+      "properties": {
+        "state": {
+          "const": "unaccepted"
+        },
+        "record_id": {
+          "type": "null"
+        }
+      },
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "gate",
+        "objective",
+        "unit_of_analysis",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "gate": {
+          "const": "A"
+        },
+        "objective": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "unit_of_analysis": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "runtime_execution_authorized": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "scientific_layers": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "$ref": "common.schema.json#/$defs/objectKind"
+      },
+      "uniqueItems": true,
+      "allOf": [
+        {
+          "contains": {
+            "const": "observation"
+          }
+        },
+        {
+          "contains": {
+            "const": "latent_belief"
+          }
+        },
+        {
+          "contains": {
+            "const": "decision"
+          }
+        },
+        {
+          "contains": {
+            "const": "intervention"
+          }
+        },
+        {
+          "contains": {
+            "const": "outcome"
+          }
+        },
+        {
+          "contains": {
+            "const": "evidence"
+          }
+        }
+      ]
+    },
+    "epistemic_states": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "$ref": "common.schema.json#/$defs/epistemicState"
+      },
+      "uniqueItems": true,
+      "allOf": [
+        {
+          "contains": {
+            "const": "observed"
+          }
+        },
+        {
+          "contains": {
+            "const": "missing"
+          }
+        },
+        {
+          "contains": {
+            "const": "unmeasured"
+          }
+        },
+        {
+          "contains": {
+            "const": "out_of_distribution"
+          }
+        },
+        {
+          "contains": {
+            "const": "sensor_invalid"
+          }
+        },
+        {
+          "contains": {
+            "const": "abstained"
+          }
+        }
+      ]
+    },
+    "lifecycle_vocabulary": {
+      "type": "array",
+      "minItems": 14,
+      "maxItems": 14,
+      "items": {
+        "$ref": "common.schema.json#/$defs/lifecycleStatus"
+      },
+      "uniqueItems": true
+    },
+    "belief_normalization_policy": {
+      "type": "object",
+      "required": [
+        "policy_id",
+        "version",
+        "protocol_release_id",
+        "applies_to",
+        "sum_target",
+        "absolute_tolerance",
+        "comparison",
+        "record_tolerance_must_equal_policy",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "policy_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "version": {
+          "$ref": "common.schema.json#/$defs/semanticVersion"
+        },
+        "protocol_release_id": {
+          "$ref": "common.schema.json#/$defs/releaseIdentifier"
+        },
+        "applies_to": {
+          "const": "observed_categorical_belief_components"
+        },
+        "sum_target": {
+          "const": 1
+        },
+        "absolute_tolerance": {
+          "const": 0.000001
+        },
+        "comparison": {
+          "const": "absolute_error_lte"
+        },
+        "record_tolerance_must_equal_policy": {
+          "const": true
+        },
+        "runtime_execution_authorized": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "lifecycle_transition_policy": {
+      "type": "object",
+      "required": [
+        "policy_id",
+        "version",
+        "protocol_release_id",
+        "initial_status",
+        "history_policy",
+        "entity_scopes",
+        "transitions",
+        "correction_retraction_rule",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "policy_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "version": {
+          "$ref": "common.schema.json#/$defs/semanticVersion"
+        },
+        "protocol_release_id": {
+          "$ref": "common.schema.json#/$defs/releaseIdentifier"
+        },
+        "initial_status": {
+          "const": "proposed"
+        },
+        "history_policy": {
+          "const": "append_only_immutable_successor"
+        },
+        "entity_scopes": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": [
+              "record_kind",
+              "allowed_statuses"
+            ],
+            "properties": {
+              "record_kind": {
+                "$ref": "common.schema.json#/$defs/lifecycleRecordKind"
+              },
+              "allowed_statuses": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "common.schema.json#/$defs/lifecycleStatus"
+                },
+                "uniqueItems": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true,
+          "allOf": [
+            {
+              "contains": {
+                "properties": {
+                  "record_kind": {
+                    "const": "observation"
+                  }
+                },
+                "required": [
+                  "record_kind"
+                ]
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "record_kind": {
+                    "const": "latent_belief"
+                  }
+                },
+                "required": [
+                  "record_kind"
+                ]
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "record_kind": {
+                    "const": "decision"
+                  }
+                },
+                "required": [
+                  "record_kind"
+                ]
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "record_kind": {
+                    "const": "intervention"
+                  }
+                },
+                "required": [
+                  "record_kind"
+                ]
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "record_kind": {
+                    "const": "outcome"
+                  }
+                },
+                "required": [
+                  "record_kind"
+                ]
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "record_kind": {
+                    "const": "evidence"
+                  }
+                },
+                "required": [
+                  "record_kind"
+                ]
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "record_kind": {
+                    "const": "experiment"
+                  }
+                },
+                "required": [
+                  "record_kind"
+                ]
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "record_kind": {
+                    "const": "result"
+                  }
+                },
+                "required": [
+                  "record_kind"
+                ]
+              }
+            }
+          ]
+        },
+        "transitions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "transition_id",
+              "entity_kinds",
+              "from_status",
+              "to_status",
+              "requires_immutable_successor"
+            ],
+            "properties": {
+              "transition_id": {
+                "$ref": "common.schema.json#/$defs/stableIdentifier"
+              },
+              "entity_kinds": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "common.schema.json#/$defs/lifecycleRecordKind"
+                },
+                "uniqueItems": true
+              },
+              "from_status": {
+                "$ref": "common.schema.json#/$defs/lifecycleStatus"
+              },
+              "to_status": {
+                "$ref": "common.schema.json#/$defs/lifecycleStatus"
+              },
+              "requires_immutable_successor": {
+                "const": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        },
+        "correction_retraction_rule": {
+          "type": "object",
+          "required": [
+            "entity_kinds",
+            "eligible_prior_statuses",
+            "correction_status",
+            "retraction_status",
+            "same_logical_record_id_required",
+            "same_record_kind_required",
+            "same_schema_id_required",
+            "predecessor_artifact_required",
+            "predecessor_artifact_must_exist",
+            "predecessor_artifact_must_be_distinct",
+            "predecessor_version_must_be_older",
+            "predecessor_path_and_digest_must_match",
+            "retracted_is_terminal"
+          ],
+          "properties": {
+            "entity_kinds": {
+              "type": "array",
+              "minItems": 8,
+              "maxItems": 8,
+              "items": {
+                "$ref": "common.schema.json#/$defs/lifecycleRecordKind"
+              },
+              "uniqueItems": true
+            },
+            "eligible_prior_statuses": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "common.schema.json#/$defs/lifecycleStatus"
+              },
+              "uniqueItems": true,
+              "not": {
+                "contains": {
+                  "const": "retracted"
+                }
+              }
+            },
+            "correction_status": {
+              "const": "corrected"
+            },
+            "retraction_status": {
+              "const": "retracted"
+            },
+            "same_logical_record_id_required": {
+              "const": true
+            },
+            "same_record_kind_required": {
+              "const": true
+            },
+            "same_schema_id_required": {
+              "const": true
+            },
+            "predecessor_artifact_required": {
+              "const": true
+            },
+            "predecessor_artifact_must_exist": {
+              "const": true
+            },
+            "predecessor_artifact_must_be_distinct": {
+              "const": true
+            },
+            "predecessor_version_must_be_older": {
+              "const": true
+            },
+            "predecessor_path_and_digest_must_match": {
+              "const": true
+            },
+            "retracted_is_terminal": {
+              "const": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "runtime_execution_authorized": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_binding_policy": {
+      "type": "object",
+      "required": [
+        "policy_id",
+        "version",
+        "protocol_release_id",
+        "terminal_consumer_statuses",
+        "allowed_active_evidence_statuses",
+        "support_like_consumer_statuses",
+        "universally_disallowed_evidence_statuses",
+        "evidence_ref_version_required",
+        "support_like_requires_valid_evidence",
+        "witness_status_rules",
+        "null_witness_decision_criterion_match_required",
+        "corrected_evidence_support_like_sole_witness_allowed",
+        "correction_retraction_events_allow_any_eligible_active_evidence",
+        "corrected_evidence_requires_current_successor",
+        "prior_artifact_versions_current_bindable",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "policy_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "version": {
+          "$ref": "common.schema.json#/$defs/semanticVersion"
+        },
+        "protocol_release_id": {
+          "$ref": "common.schema.json#/$defs/releaseIdentifier"
+        },
+        "terminal_consumer_statuses": {
+          "const": [
+            "invalid",
+            "null",
+            "inconclusive",
+            "failed",
+            "supported",
+            "contradicted",
+            "replicated",
+            "corrected",
+            "retracted"
+          ]
+        },
+        "allowed_active_evidence_statuses": {
+          "const": [
+            "invalid",
+            "inconclusive",
+            "failed",
+            "supported",
+            "contradicted",
+            "replicated",
+            "corrected"
+          ]
+        },
+        "support_like_consumer_statuses": {
+          "const": [
+            "supported",
+            "contradicted",
+            "replicated"
+          ]
+        },
+        "universally_disallowed_evidence_statuses": {
+          "const": [
+            "proposed",
+            "exploratory",
+            "preregistered",
+            "running",
+            "blocked",
+            "null",
+            "retracted"
+          ]
+        },
+        "evidence_ref_version_required": {
+          "const": true
+        },
+        "support_like_requires_valid_evidence": {
+          "const": true
+        },
+        "witness_status_rules": {
+          "const": [
+            {
+              "consumer_status": "invalid",
+              "eligible_evidence_statuses": [
+                "invalid"
+              ],
+              "minimum_witnesses": 1
+            },
+            {
+              "consumer_status": "null",
+              "eligible_evidence_statuses": [
+                "supported"
+              ],
+              "minimum_witnesses": 1
+            },
+            {
+              "consumer_status": "inconclusive",
+              "eligible_evidence_statuses": [
+                "inconclusive"
+              ],
+              "minimum_witnesses": 1
+            },
+            {
+              "consumer_status": "failed",
+              "eligible_evidence_statuses": [
+                "failed"
+              ],
+              "minimum_witnesses": 1
+            },
+            {
+              "consumer_status": "supported",
+              "eligible_evidence_statuses": [
+                "supported",
+                "replicated"
+              ],
+              "minimum_witnesses": 1
+            },
+            {
+              "consumer_status": "contradicted",
+              "eligible_evidence_statuses": [
+                "contradicted"
+              ],
+              "minimum_witnesses": 1
+            },
+            {
+              "consumer_status": "replicated",
+              "eligible_evidence_statuses": [
+                "replicated"
+              ],
+              "minimum_witnesses": 1
+            }
+          ]
+        },
+        "null_witness_decision_criterion_match_required": {
+          "const": true
+        },
+        "corrected_evidence_support_like_sole_witness_allowed": {
+          "const": false
+        },
+        "correction_retraction_events_allow_any_eligible_active_evidence": {
+          "const": true
+        },
+        "corrected_evidence_requires_current_successor": {
+          "const": true
+        },
+        "prior_artifact_versions_current_bindable": {
+          "const": false
+        },
+        "runtime_execution_authorized": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "result_binding_policy": {
+      "type": "object",
+      "required": [
+        "policy_id",
+        "version",
+        "protocol_release_id",
+        "scientific_disposition_result_statuses",
+        "metric_derived_result_statuses",
+        "eligible_exact_experiment_statuses",
+        "required_experiment_history_status",
+        "preregistered_experiment_required_for_statuses",
+        "preregistered_before_running_required",
+        "disallowed_experiment_statuses",
+        "exact_experiment_version_required",
+        "protocol_release_parity_required",
+        "analysis_specification_parity_required",
+        "primary_metric_parity_required",
+        "current_experiment_head_required",
+        "current_replication_target_required",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "policy_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "version": {
+          "$ref": "common.schema.json#/$defs/semanticVersion"
+        },
+        "protocol_release_id": {
+          "$ref": "common.schema.json#/$defs/releaseIdentifier"
+        },
+        "scientific_disposition_result_statuses": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "$ref": "common.schema.json#/$defs/lifecycleStatus"
+          },
+          "uniqueItems": true,
+          "allOf": [
+            {
+              "contains": {
+                "const": "null"
+              }
+            },
+            {
+              "contains": {
+                "const": "inconclusive"
+              }
+            },
+            {
+              "contains": {
+                "const": "supported"
+              }
+            },
+            {
+              "contains": {
+                "const": "contradicted"
+              }
+            },
+            {
+              "contains": {
+                "const": "replicated"
+              }
+            }
+          ]
+        },
+        "metric_derived_result_statuses": {
+          "const": [
+            "invalid",
+            "null",
+            "inconclusive",
+            "failed",
+            "supported",
+            "contradicted",
+            "replicated"
+          ]
+        },
+        "eligible_exact_experiment_statuses": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "$ref": "common.schema.json#/$defs/lifecycleStatus"
+          },
+          "uniqueItems": true,
+          "allOf": [
+            {
+              "contains": {
+                "const": "running"
+              }
+            },
+            {
+              "contains": {
+                "const": "corrected"
+              }
+            }
+          ]
+        },
+        "required_experiment_history_status": {
+          "const": "running"
+        },
+        "preregistered_experiment_required_for_statuses": {
+          "const": [
+            "null",
+            "inconclusive",
+            "supported",
+            "contradicted",
+            "replicated"
+          ]
+        },
+        "preregistered_before_running_required": {
+          "const": true
+        },
+        "disallowed_experiment_statuses": {
+          "type": "array",
+          "minItems": 7,
+          "items": {
+            "$ref": "common.schema.json#/$defs/lifecycleStatus"
+          },
+          "uniqueItems": true,
+          "allOf": [
+            {
+              "contains": {
+                "const": "proposed"
+              }
+            },
+            {
+              "contains": {
+                "const": "exploratory"
+              }
+            },
+            {
+              "contains": {
+                "const": "preregistered"
+              }
+            },
+            {
+              "contains": {
+                "const": "blocked"
+              }
+            },
+            {
+              "contains": {
+                "const": "invalid"
+              }
+            },
+            {
+              "contains": {
+                "const": "failed"
+              }
+            },
+            {
+              "contains": {
+                "const": "retracted"
+              }
+            }
+          ]
+        },
+        "exact_experiment_version_required": {
+          "const": true
+        },
+        "protocol_release_parity_required": {
+          "const": true
+        },
+        "analysis_specification_parity_required": {
+          "const": true
+        },
+        "primary_metric_parity_required": {
+          "const": true
+        },
+        "current_experiment_head_required": {
+          "const": true
+        },
+        "current_replication_target_required": {
+          "const": true
+        },
+        "runtime_execution_authorized": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "scientific_dependency_policy": {
+      "type": "object",
+      "required": [
+        "policy_id",
+        "version",
+        "protocol_release_id",
+        "record_kind_rules",
+        "global_acyclicity_required",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "policy_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "version": {
+          "$ref": "common.schema.json#/$defs/semanticVersion"
+        },
+        "protocol_release_id": {
+          "$ref": "common.schema.json#/$defs/releaseIdentifier"
+        },
+        "record_kind_rules": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "required": [
+              "owner_record_kind",
+              "allowed_input_kinds"
+            ],
+            "properties": {
+              "owner_record_kind": {
+                "$ref": "common.schema.json#/$defs/objectKind"
+              },
+              "allowed_input_kinds": {
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/objectKind"
+                },
+                "uniqueItems": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "allOf": [
+            {
+              "contains": {
+                "properties": {
+                  "owner_record_kind": {
+                    "const": "observation"
+                  }
+                },
+                "required": [
+                  "owner_record_kind"
+                ]
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "owner_record_kind": {
+                    "const": "latent_belief"
+                  }
+                },
+                "required": [
+                  "owner_record_kind"
+                ]
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "owner_record_kind": {
+                    "const": "decision"
+                  }
+                },
+                "required": [
+                  "owner_record_kind"
+                ]
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "owner_record_kind": {
+                    "const": "intervention"
+                  }
+                },
+                "required": [
+                  "owner_record_kind"
+                ]
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "owner_record_kind": {
+                    "const": "outcome"
+                  }
+                },
+                "required": [
+                  "owner_record_kind"
+                ]
+              }
+            },
+            {
+              "contains": {
+                "properties": {
+                  "owner_record_kind": {
+                    "const": "evidence"
+                  }
+                },
+                "required": [
+                  "owner_record_kind"
+                ]
+              }
+            }
+          ]
+        },
+        "global_acyclicity_required": {
+          "const": true
+        },
+        "runtime_execution_authorized": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "definition_registry": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/artifactReference"
+        },
+        {
+          "required": [
+            "schema_id",
+            "version"
+          ],
+          "properties": {
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/protocol-definition-registry.schema.json"
+            },
+            "version": {
+              "const": "1.1.0"
+            }
+          }
+        }
+      ]
+    },
+    "estimands": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": [
+          "estimand_id",
+          "metric_class",
+          "direction",
+          "symbol",
+          "lifecycle_status",
+          "target_population",
+          "unit_of_analysis",
+          "exposure",
+          "comparator",
+          "outcome",
+          "aggregation",
+          "identification_assumptions",
+          "validity_conditions",
+          "abstention_rule",
+          "uncertainty_method",
+          "required_reporting"
+        ],
+        "properties": {
+          "estimand_id": {
+            "$ref": "common.schema.json#/$defs/stableIdentifier"
+          },
+          "metric_class": {
+            "enum": [
+              "object_belief_quality",
+              "readiness",
+              "recoverability",
+              "joint_silent_miss",
+              "causal_policy_effect",
+              "transfer",
+              "worst_group"
+            ]
+          },
+          "direction": {
+            "enum": [
+              "higher_is_better",
+              "lower_is_better",
+              "signed_contrast"
+            ]
+          },
+          "symbol": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "lifecycle_status": {
+            "const": "proposed"
+          },
+          "target_population": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "unit_of_analysis": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "exposure": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "comparator": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "outcome": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "aggregation": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "identification_assumptions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "common.schema.json#/$defs/nonEmptyString"
+            }
+          },
+          "validity_conditions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "common.schema.json#/$defs/nonEmptyString"
+            }
+          },
+          "abstention_rule": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "uncertainty_method": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "required_reporting": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "$ref": "common.schema.json#/$defs/nonEmptyString"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "allOf": [
+        {
+          "contains": {
+            "properties": {
+              "metric_class": {
+                "const": "object_belief_quality"
+              }
+            },
+            "required": [
+              "metric_class"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "metric_class": {
+                "const": "readiness"
+              }
+            },
+            "required": [
+              "metric_class"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "metric_class": {
+                "const": "recoverability"
+              }
+            },
+            "required": [
+              "metric_class"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "metric_class": {
+                "const": "joint_silent_miss"
+              }
+            },
+            "required": [
+              "metric_class"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "metric_class": {
+                "const": "causal_policy_effect"
+              }
+            },
+            "required": [
+              "metric_class"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "metric_class": {
+                "const": "transfer"
+              }
+            },
+            "required": [
+              "metric_class"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "metric_class": {
+                "const": "worst_group"
+              }
+            },
+            "required": [
+              "metric_class"
+            ]
+          }
+        }
+      ]
+    },
+    "validity_policy": {
+      "type": "object",
+      "required": [
+        "unknowns_explicit",
+        "silent_coercion_prohibited",
+        "post_hoc_relabeling_prohibited",
+        "subgroup_omission_prohibited",
+        "coverage_reporting_required"
+      ],
+      "properties": {
+        "unknowns_explicit": {
+          "const": true
+        },
+        "silent_coercion_prohibited": {
+          "const": true
+        },
+        "post_hoc_relabeling_prohibited": {
+          "const": true
+        },
+        "subgroup_omission_prohibited": {
+          "const": true
+        },
+        "coverage_reporting_required": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "preregistration": {
+      "type": "object",
+      "required": [
+        "current_status",
+        "outcome_accessed",
+        "amendment_policy"
+      ],
+      "properties": {
+        "current_status": {
+          "const": "proposed"
+        },
+        "outcome_accessed": {
+          "const": false
+        },
+        "amendment_policy": {
+          "const": "append_only_new_release"
+        }
+      },
+      "additionalProperties": false
+    },
+    "gate_constraints": {
+      "type": "object",
+      "required": [
+        "allowed",
+        "prohibited",
+        "advance_requires_operator_acceptance"
+      ],
+      "properties": {
+        "allowed": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "prohibited": {
+          "type": "array",
+          "minItems": 7,
+          "items": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "advance_requires_operator_acceptance": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "scientific_contract_profile": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/artifactReference"
+        },
+        {
+          "required": [
+            "schema_id",
+            "version"
+          ],
+          "properties": {
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/scientific-contract-profile.schema.json"
+            },
+            "version": {"const": "1.1.0"}
+          }
+        }
+      ]
+    },
+    "research_function_registry": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/artifactReference"
+        },
+        {
+          "required": [
+            "schema_id",
+            "version"
+          ],
+          "properties": {
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/research-function-registry.schema.json"
+            },
+            "version": {"const": "1.1.0"}
+          }
+        }
+      ]
+    },
+    "public_evidence_profile": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/artifactReference"
+        },
+        {
+          "required": [
+            "schema_id",
+            "version"
+          ],
+          "properties": {
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/public-evidence-custody-profile.schema.json"
+            },
+            "version": {"const": "1.1.0"}
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.benchmark-post-hoc-relabeling",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/evaluation-assurance-bundle.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/evaluation-assurance-bundle.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/benchmark_specification/post_hoc_relabeling_prohibited", "value": false}],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "instance_pointer": "/benchmark_specification/post_hoc_relabeling_prohibited",
+    "schema_keyword": "const",
+    "reason": "Benchmark outcomes, directions, primary metrics, and groups cannot be relabeled after freeze."
+  },
+  "runtime_execution_authorized": false
+}

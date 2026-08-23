@@ -1,0 +1,436 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/result.schema.json",
+  "title": "Versioned experiment result",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "result_id",
+    "version",
+    "experiment_ref",
+    "protocol_release_id",
+    "lifecycle_status",
+    "lifecycle_history",
+    "analysis_specification_id",
+    "primary_metric_id",
+    "metric_results",
+    "evidence_binding",
+    "provenance"
+  ],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.0.0/result.schema.json"},
+    "schema_version": {"$ref": "common.schema.json#/$defs/schemaVersion"},
+    "artifact_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "result_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+    "experiment_ref": {
+      "type": "object",
+      "required": ["experiment_id", "version"],
+      "properties": {
+        "experiment_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"$ref": "common.schema.json#/$defs/semanticVersion"}
+      },
+      "additionalProperties": false
+    },
+    "protocol_release_id": {"$ref": "common.schema.json#/$defs/releaseIdentifier"},
+    "lifecycle_status": {"$ref": "common.schema.json#/$defs/lifecycleStatus"},
+    "lifecycle_history": {"$ref": "common.schema.json#/$defs/lifecycleHistory"},
+    "analysis_specification_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "primary_metric_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "metric_results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/metricResult"}
+    },
+    "evidence_binding": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "evidence_refs"],
+          "properties": {
+            "state": {"const": "retained"},
+            "evidence_refs": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "common.schema.json#/$defs/evidenceReference"},
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["state", "evidence_refs", "gap_reason"],
+          "properties": {
+            "state": {"const": "evidence_gap"},
+            "evidence_refs": {"type": "array", "maxItems": 0},
+            "gap_reason": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "replicates_result": {
+      "oneOf": [
+        {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/artifactRecordReference"},
+            {
+              "properties": {
+                "record_kind": {"const": "result"},
+                "schema_id": {
+                  "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/result.schema.json"
+                }
+              }
+            }
+          ]
+        },
+        {"type": "null"}
+      ]
+    },
+    "provenance": {"$ref": "common.schema.json#/$defs/provenance"}
+  },
+  "$defs": {
+    "epistemicCounts": {
+      "type": "object",
+      "required": ["observed", "missing", "unmeasured", "out_of_distribution", "sensor_invalid", "abstained"],
+      "properties": {
+        "observed": {"type": "integer", "minimum": 0},
+        "missing": {"type": "integer", "minimum": 0},
+        "unmeasured": {"type": "integer", "minimum": 0},
+        "out_of_distribution": {"type": "integer", "minimum": 0},
+        "sensor_invalid": {"type": "integer", "minimum": 0},
+        "abstained": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "groupResult": {
+      "type": "object",
+      "required": ["group_id", "sample_size", "estimate", "coverage", "uncertainty", "information_disposition"],
+      "properties": {
+        "group_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "sample_size": {"type": "integer", "minimum": 0},
+        "estimate": {"$ref": "common.schema.json#/$defs/numberMeasurement"},
+        "coverage": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "uncertainty": {
+          "oneOf": [
+            {"$ref": "common.schema.json#/$defs/uncertaintyInterval"},
+            {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+          ]
+        },
+        "information_disposition": {"enum": ["sufficient", "insufficient", "unknown"]}
+      },
+      "additionalProperties": false
+    },
+    "metricResult": {
+      "type": "object",
+      "required": [
+        "metric_id",
+        "estimand_id",
+        "metric_class",
+        "outcome_definition_id",
+        "target_population",
+        "comparator",
+        "direction",
+        "estimate",
+        "coverage",
+        "uncertainty",
+        "epistemic_counts",
+        "validity",
+        "abstention_rule_id",
+        "decision_rule_id",
+        "interpretation_status",
+        "group_results",
+        "worst_group_disposition"
+      ],
+      "properties": {
+        "metric_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "estimand_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "metric_class": {
+          "enum": ["object_belief_quality", "readiness", "recoverability", "joint_silent_miss", "causal_policy_effect", "transfer", "worst_group"]
+        },
+        "outcome_definition_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "target_population": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "comparator": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "direction": {"enum": ["higher_is_better", "lower_is_better", "signed_contrast"]},
+        "estimate": {"$ref": "common.schema.json#/$defs/numberMeasurement"},
+        "coverage": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "uncertainty": {
+          "oneOf": [
+            {"$ref": "common.schema.json#/$defs/uncertaintyInterval"},
+            {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+          ]
+        },
+        "epistemic_counts": {"$ref": "#/$defs/epistemicCounts"},
+        "validity": {"$ref": "common.schema.json#/$defs/validityAssessment"},
+        "abstention_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "decision_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "interpretation_status": {
+          "enum": [
+            "proposed",
+            "exploratory",
+            "blocked",
+            "invalid",
+            "null",
+            "inconclusive",
+            "failed",
+            "supported",
+            "contradicted",
+            "replicated"
+          ]
+        },
+        "group_results": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/groupResult"}
+        },
+        "worst_group_disposition": {
+          "oneOf": [
+            {"$ref": "#/$defs/observedWorstGroupDisposition"},
+            {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"},
+            {"type": "null"}
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"metric_class": {"const": "worst_group"}},
+            "required": ["metric_class"]
+          },
+          "then": {
+            "properties": {
+              "group_results": {"minItems": 1},
+              "worst_group_disposition": {
+                "oneOf": [
+                  {"$ref": "#/$defs/observedWorstGroupDisposition"},
+                  {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+                ]
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "worst_group_disposition": {"type": "null"}
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "interpretation_status": {
+                "enum": ["null", "inconclusive", "supported", "contradicted", "replicated"]
+              }
+            },
+            "required": ["interpretation_status"]
+          },
+          "then": {
+            "properties": {
+              "estimate": {
+                "properties": {"state": {"const": "observed"}},
+                "required": ["state"]
+              },
+              "coverage": {
+                "properties": {"state": {"const": "observed"}},
+                "required": ["state"]
+              },
+              "uncertainty": {"$ref": "#/$defs/observedUncertaintyInterval"},
+              "epistemic_counts": {
+                "properties": {"observed": {"minimum": 1}}
+              },
+              "validity": {
+                "properties": {"state": {"const": "valid"}},
+                "required": ["state"]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {"interpretation_status": {"const": "invalid"}},
+            "required": ["interpretation_status"]
+          },
+          "then": {
+            "properties": {
+              "validity": {
+                "properties": {"state": {"const": "invalid"}},
+                "required": ["state"]
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "observedUncertaintyInterval": {
+      "allOf": [
+        {"$ref": "common.schema.json#/$defs/uncertaintyInterval"},
+        {
+          "properties": {
+            "lower": {
+              "properties": {"state": {"const": "observed"}},
+              "required": ["state"]
+            },
+            "upper": {
+              "properties": {"state": {"const": "observed"}},
+              "required": ["state"]
+            }
+          }
+        }
+      ]
+    },
+    "observedWorstGroupDisposition": {
+      "type": "object",
+      "required": ["state", "group_ids", "selection_rule_id"],
+      "properties": {
+        "state": {"const": "observed"},
+        "group_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "selection_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycle_status": {
+            "enum": [
+              "invalid", "null", "inconclusive", "failed", "supported", "contradicted",
+              "replicated", "corrected", "retracted"
+            ]
+          }
+        },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "evidence_binding": {
+            "properties": {"state": {"const": "retained"}},
+            "required": ["state"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "metric_results": {
+            "contains": {
+              "properties": {
+                "interpretation_status": {
+                  "enum": [
+                    "invalid", "null", "inconclusive", "failed", "supported", "contradicted",
+                    "replicated", "corrected", "retracted"
+                  ]
+                }
+              },
+              "required": ["interpretation_status"]
+            }
+          }
+        },
+        "required": ["metric_results"]
+      },
+      "then": {
+        "properties": {
+          "evidence_binding": {
+            "properties": {"state": {"const": "retained"}},
+            "required": ["state"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"lifecycle_status": {"enum": ["corrected", "retracted"]}},
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "lifecycle_history": {
+            "contains": {
+              "properties": {
+                "status": {
+                  "enum": ["corrected", "retracted"]
+                },
+                "prior_artifact": {
+                  "allOf": [
+                    {
+                      "$ref": "common.schema.json#/$defs/priorArtifactReference"
+                    },
+                    {
+                      "properties": {
+                        "record_kind": {
+                          "const": "result"
+                        },
+                        "schema_id": {
+                          "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/result.schema.json"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": ["status", "prior_artifact"]
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"lifecycle_status": {"const": "replicated"}},
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "required": ["replicates_result"],
+        "properties": {
+          "replicates_result": {
+            "allOf": [
+              {"$ref": "common.schema.json#/$defs/artifactRecordReference"},
+              {
+                "properties": {
+                  "record_kind": {"const": "result"},
+                  "schema_id": {
+                    "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/result.schema.json"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle_status": {
+            "enum": ["null", "inconclusive", "supported", "contradicted", "replicated"]
+          }
+        },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "metric_results": {
+            "contains": {
+              "properties": {
+                "interpretation_status": {
+                  "enum": ["null", "inconclusive", "supported", "contradicted", "replicated"]
+                }
+              },
+              "required": ["interpretation_status"]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

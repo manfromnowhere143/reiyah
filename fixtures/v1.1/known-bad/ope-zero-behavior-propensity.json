@@ -1,0 +1,21 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope-zero-behavior-propensity",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/sequential-off-policy-evaluation.json",
+  "mutations": [
+    {
+      "operation": "replace",
+      "json_pointer": "/trajectories/0/steps/0/behavior_propensity/value",
+      "value": 0
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "instance_pointer": "/trajectories/0/steps/0/behavior_propensity/value",
+    "schema_keyword": "exclusiveMinimum",
+    "reason": "An observed action with zero behavior-policy propensity violates the explicit support contract and cannot be importance weighted."
+  },
+  "runtime_execution_authorized": false
+}

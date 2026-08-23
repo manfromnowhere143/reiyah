@@ -1,0 +1,34 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-reference-chain-incoherent-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.reference-chain-incoherent",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The outcome retains an intervention derived from a decision but removes that exact decision from its declared decision references.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-006",
+    "TM-010",
+    "TM-012",
+    "TM-019",
+    "TM-026"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-REFERENCE-CHAIN-INCOHERENT"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "manifests/examples/object-chain/outcome.json",
+        "json_pointer": "/decision_refs",
+        "value": []
+      }
+    ]
+  }
+}

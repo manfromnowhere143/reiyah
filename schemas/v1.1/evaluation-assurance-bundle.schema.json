@@ -1,0 +1,709 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/evaluation-assurance-bundle.schema.json",
+  "title": "ODD, dataset, scenario, benchmark, and proposed safety-argument contract",
+  "description": "A non-runtime bundle that binds an operational design domain, governed datasets, scenarios, tests, benchmark specifications, and a static proposed safety-argument interface without asserting safety, deployment authority, operator acceptance, or compliance.",
+  "allOf": [
+    {"$ref": "common.schema.json#/$defs/recordHeader"},
+    {
+      "type": "object",
+      "required": [
+        "assurance_bundle_id",
+        "mission_release_id",
+        "odd_specification",
+        "dataset_governance",
+        "scenarios",
+        "test_cases",
+        "benchmark_specification",
+        "safety_case",
+        "evidence_binding",
+        "deployment_authorized",
+        "compliance_claimed"
+      ],
+      "properties": {
+        "schema_id": {
+          "const": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/evaluation-assurance-bundle.schema.json"
+        },
+        "lifecycle_status": {"const": "proposed"},
+        "assurance_bundle_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "mission_release_id": {"$ref": "common.schema.json#/$defs/releaseIdentifier"},
+        "odd_specification": {"$ref": "#/$defs/oddSpecification"},
+        "dataset_governance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/datasetGovernance"},
+          "uniqueItems": true
+        },
+        "scenarios": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/scenario"},
+          "uniqueItems": true
+        },
+        "test_cases": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/testCase"},
+          "uniqueItems": true
+        },
+        "benchmark_specification": {"$ref": "#/$defs/benchmarkSpecification"},
+        "safety_case": {"$ref": "#/$defs/safetyCase"},
+        "evidence_binding": {"$ref": "common.schema.json#/$defs/evidenceBinding"},
+        "deployment_authorized": {"const": false},
+        "compliance_claimed": {"const": false}
+      }
+    }
+  ],
+  "$defs": {
+    "domainDimension": {
+      "type": "object",
+      "required": ["dimension_id", "dimension", "in_scope_criterion", "boundary_state"],
+      "properties": {
+        "dimension_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "dimension": {
+          "enum": [
+            "geography",
+            "road_type",
+            "speed",
+            "weather",
+            "illumination",
+            "traffic",
+            "road_users",
+            "driver_state",
+            "vehicle_state",
+            "sensor_state",
+            "map_state",
+            "connectivity",
+            "temporal"
+          ]
+        },
+        "in_scope_criterion": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "boundary_state": {"enum": ["specified", "unknown", "unmeasured", "out_of_distribution"]},
+        "measurement_rule_id": {
+          "oneOf": [
+            {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            {"type": "null"}
+          ]
+        },
+        "unknown_reason": {
+          "oneOf": [
+            {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"},
+            {"type": "null"}
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"boundary_state": {"const": "specified"}},
+            "required": ["boundary_state"]
+          },
+          "then": {
+            "properties": {"unknown_reason": {"type": "null"}}
+          },
+          "else": {"required": ["unknown_reason"]}
+        }
+      ],
+      "additionalProperties": false
+    },
+    "oddSpecification": {
+      "type": "object",
+      "required": [
+        "odd_id",
+        "version",
+        "domain_dimensions",
+        "entry_conditions",
+        "exit_conditions",
+        "minimal_risk_condition",
+        "outside_domain_policy",
+        "unknown_dimension_policy",
+        "validation_state"
+      ],
+      "properties": {
+        "odd_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+        "domain_dimensions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/domainDimension"},
+          "uniqueItems": true
+        },
+        "entry_conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "exit_conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "minimal_risk_condition": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "outside_domain_policy": {
+          "type": "object",
+          "required": ["state", "rule_id", "continued_confident_operation_prohibited"],
+          "properties": {
+            "state": {"const": "out_of_distribution"},
+            "rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "continued_confident_operation_prohibited": {"const": true}
+          },
+          "additionalProperties": false
+        },
+        "unknown_dimension_policy": {
+          "type": "object",
+          "required": ["rule_id", "unknown_not_in_scope", "coercion_prohibited"],
+          "properties": {
+            "rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "unknown_not_in_scope": {"const": true},
+            "coercion_prohibited": {"const": true}
+          },
+          "additionalProperties": false
+        },
+        "validation_state": {"$ref": "common.schema.json#/$defs/lifecycleStatus"}
+      },
+      "additionalProperties": false
+    },
+    "datasetSource": {
+      "type": "object",
+      "required": ["source_id", "source_type", "provenance_ref", "license_or_access_terms", "consent_or_authority_state"],
+      "properties": {
+        "source_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "source_type": {"enum": ["retained_public", "licensed", "consented", "synthetic", "derived", "unknown"]},
+        "provenance_ref": {"$ref": "common.schema.json#/$defs/actorReference"},
+        "license_or_access_terms": {"$ref": "common.schema.json#/$defs/stringMeasurement"},
+        "consent_or_authority_state": {
+          "enum": ["documented", "not_required", "restricted", "unknown", "prohibited"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "labelGovernance": {
+      "type": "object",
+      "required": [
+        "label_schema_id",
+        "labeler_types",
+        "instruction_ref",
+        "instruction_artifact",
+        "adjudication_rule_id",
+        "quality_measurement",
+        "uncertain_label_policy",
+        "post_outcome_label_leakage_prohibited"
+      ],
+      "properties": {
+        "label_schema_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "labeler_types": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"enum": ["human", "automation", "instrument", "derived_process"]},
+          "uniqueItems": true
+        },
+        "instruction_ref": {
+          "oneOf": [
+            {
+              "allOf": [
+                {"$ref": "common.schema.json#/$defs/versionedReference"},
+                {
+                  "properties": {"record_kind": {"const": "label_instruction"}},
+                  "required": ["record_kind"]
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {"$ref": "common.schema.json#/$defs/unavailableVersionedReference"},
+                {
+                  "properties": {"expected_record_kind": {"const": "label_instruction"}},
+                  "required": ["expected_record_kind"]
+                }
+              ]
+            }
+          ]
+        },
+        "instruction_artifact": {"$ref": "common.schema.json#/$defs/artifactBinding"},
+        "adjudication_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "quality_measurement": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "uncertain_label_policy": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "post_outcome_label_leakage_prohibited": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "datasetPartition": {
+      "type": "object",
+      "required": ["partition_id", "purpose", "selection_rule_id", "record_count", "available_from", "access_restriction"],
+      "properties": {
+        "partition_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "purpose": {"enum": ["development", "calibration", "validation", "test", "audit_holdout"]},
+        "selection_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "record_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "available_from": {"$ref": "common.schema.json#/$defs/timestampMeasurement"},
+        "access_restriction": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+      },
+      "additionalProperties": false
+    },
+    "datasetGovernance": {
+      "type": "object",
+      "required": [
+        "dataset_id",
+        "version",
+        "artifact",
+        "sources",
+        "collection_window",
+        "odd_ref",
+        "label_governance",
+        "partitions",
+        "split_frozen_at",
+        "access_chronology",
+        "ethics_review",
+        "privacy_classification",
+        "private_data_ingestion_authorized",
+        "partition_leakage_prohibited",
+        "retention_policy",
+        "known_limitations",
+        "dataset_status"
+      ],
+      "properties": {
+        "dataset_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+        "artifact": {"$ref": "common.schema.json#/$defs/artifactBinding"},
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/datasetSource"},
+          "uniqueItems": true
+        },
+        "collection_window": {"$ref": "common.schema.json#/$defs/temporalWindow"},
+        "odd_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "odd"}}}
+          ]
+        },
+        "label_governance": {"$ref": "#/$defs/labelGovernance"},
+        "partitions": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/datasetPartition"},
+          "uniqueItems": true
+        },
+        "split_frozen_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "access_chronology": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["event_id", "event_type", "occurred_at", "actor", "partition_ids"],
+            "properties": {
+              "event_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+              "event_type": {"enum": ["registered", "split_frozen", "access_granted", "access_revoked", "destroyed"]},
+              "occurred_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+              "actor": {"$ref": "common.schema.json#/$defs/actorReference"},
+              "partition_ids": {
+                "type": "array",
+                "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+                "uniqueItems": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        },
+        "ethics_review": {
+          "type": "object",
+          "required": ["review_state", "basis", "reviewed_at", "scope"],
+          "properties": {
+            "review_state": {"enum": ["not_required", "approved", "restricted", "unknown", "prohibited"]},
+            "basis": {"$ref": "common.schema.json#/$defs/stringMeasurement"},
+            "reviewed_at": {"$ref": "common.schema.json#/$defs/timestampMeasurement"},
+            "scope": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+          },
+          "additionalProperties": false
+        },
+        "privacy_classification": {"enum": ["public", "synthetic", "restricted", "private", "unknown"]},
+        "private_data_ingestion_authorized": {"const": false},
+        "partition_leakage_prohibited": {"const": true},
+        "retention_policy": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "known_limitations": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+          "uniqueItems": true
+        },
+        "dataset_status": {"$ref": "common.schema.json#/$defs/lifecycleStatus"}
+      },
+      "additionalProperties": false
+    },
+    "scenario": {
+      "type": "object",
+      "required": [
+        "scenario_id",
+        "version",
+        "source_type",
+        "odd_ref",
+        "preconditions",
+        "actors",
+        "timeline",
+        "hazards",
+        "expected_outcomes",
+        "unknowns",
+        "scenario_status"
+      ],
+      "properties": {
+        "scenario_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+        "source_type": {"enum": ["retained_observation", "synthetic", "counterfactual", "expert_proposed"]},
+        "odd_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "odd"}}}
+          ]
+        },
+        "preconditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+          "uniqueItems": true
+        },
+        "actors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/actorReference"},
+          "uniqueItems": true
+        },
+        "timeline": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["event_id", "sequence", "event", "relative_time"],
+            "properties": {
+              "event_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+              "sequence": {"type": "integer", "minimum": 1},
+              "event": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+              "relative_time": {"$ref": "common.schema.json#/$defs/numberMeasurement"}
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        },
+        "hazards": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "expected_outcomes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "unknowns": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"},
+          "uniqueItems": true
+        },
+        "scenario_status": {"$ref": "common.schema.json#/$defs/lifecycleStatus"}
+      },
+      "additionalProperties": false
+    },
+    "testCase": {
+      "type": "object",
+      "required": [
+        "test_case_id",
+        "version",
+        "scenario_ref",
+        "system_ref",
+        "system_version",
+        "setup",
+        "oracle",
+        "tolerances",
+        "pass_criteria",
+        "fail_criteria",
+        "abstention_criteria",
+        "execution_status",
+        "result"
+      ],
+      "properties": {
+        "test_case_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+        "scenario_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "scenario"}}}
+          ]
+        },
+        "system_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/actorReference"},
+            {
+              "properties": {"actor_type": {"const": "automation_system"}},
+              "required": ["actor_type"]
+            }
+          ]
+        },
+        "system_version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+        "setup": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "oracle": {
+          "type": "object",
+          "required": ["oracle_id", "version", "authority_type", "known_limitations"],
+          "properties": {
+            "oracle_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+            "authority_type": {"enum": ["retained_measurement", "adjudicated_label", "formal_rule", "expert_proposal", "unknown"]},
+            "known_limitations": {
+              "type": "array",
+              "items": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "tolerances": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/nonNegativeNumberMeasurement"}
+        },
+        "pass_criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "fail_criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "abstention_criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "execution_status": {"enum": ["not_run", "running", "complete", "invalid", "blocked"]},
+        "result": {
+          "oneOf": [
+            {"enum": ["pass", "fail", "abstained", "inconclusive"]},
+            {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "benchmarkMetric": {
+      "type": "object",
+      "required": [
+        "metric_id",
+        "version",
+        "outcome_definition_id",
+        "direction",
+        "estimator_id",
+        "uncertainty_method_id",
+        "decision_rule_id",
+        "primary",
+        "subgroup_rule_id"
+      ],
+      "properties": {
+        "metric_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+        "outcome_definition_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "direction": {"enum": ["higher_is_better", "lower_is_better"]},
+        "estimator_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "uncertainty_method_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "decision_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "primary": {"type": "boolean"},
+        "subgroup_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"}
+      },
+      "additionalProperties": false
+    },
+    "benchmarkSpecification": {
+      "type": "object",
+      "required": [
+        "benchmark_id",
+        "version",
+        "task_definition",
+        "odd_refs",
+        "dataset_refs",
+        "comparator_refs",
+        "metrics",
+        "primary_metric_id",
+        "selective_prediction_rule_id",
+        "ood_rule_id",
+        "conformal_rule_id",
+        "transfer_rule_id",
+        "worst_group_rule_id",
+        "frozen_at",
+        "post_hoc_relabeling_prohibited",
+        "benchmark_status"
+      ],
+      "properties": {
+        "benchmark_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+        "task_definition": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "odd_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/versionedReference"},
+          "uniqueItems": true
+        },
+        "dataset_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/versionedReference"},
+          "uniqueItems": true
+        },
+        "comparator_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["comparator_id", "version", "artifact"],
+            "properties": {
+              "comparator_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+              "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+              "artifact": {"$ref": "common.schema.json#/$defs/artifactBinding"}
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        },
+        "metrics": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/benchmarkMetric"},
+          "uniqueItems": true
+        },
+        "primary_metric_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "selective_prediction_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "ood_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "conformal_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "transfer_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "worst_group_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "frozen_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "post_hoc_relabeling_prohibited": {"const": true},
+        "benchmark_status": {"$ref": "common.schema.json#/$defs/lifecycleStatus"}
+      },
+      "additionalProperties": false
+    },
+    "safetyClaim": {
+      "type": "object",
+      "required": [
+        "claim_id",
+        "claim_text",
+        "claim_status",
+        "scope_odd_ref",
+        "falsifier",
+        "evidence_binding"
+      ],
+      "properties": {
+        "claim_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "claim_text": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "claim_status": {"const": "proposed"},
+        "scope_odd_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "odd"}}}
+          ]
+        },
+        "falsifier": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "evidence_binding": {"$ref": "common.schema.json#/$defs/evidenceBinding"}
+      },
+      "additionalProperties": false
+    },
+    "hazard": {
+      "type": "object",
+      "required": ["hazard_id", "description", "severity", "exposure", "controllability", "mitigations", "residual_risk", "evidence_binding"],
+      "properties": {
+        "hazard_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "description": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "severity": {"$ref": "common.schema.json#/$defs/stringMeasurement"},
+        "exposure": {"$ref": "common.schema.json#/$defs/stringMeasurement"},
+        "controllability": {"$ref": "common.schema.json#/$defs/stringMeasurement"},
+        "mitigations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "residual_risk": {"$ref": "common.schema.json#/$defs/stringMeasurement"},
+        "evidence_binding": {"$ref": "common.schema.json#/$defs/evidenceBinding"}
+      },
+      "additionalProperties": false
+    },
+    "safetyCase": {
+      "type": "object",
+      "required": [
+        "safety_case_id",
+        "version",
+        "claims",
+        "hazards",
+        "argument_links",
+        "assumptions",
+        "out_of_scope",
+        "independent_review_state",
+        "operator_acceptance_state",
+        "compliance_claimed",
+        "safety_case_status"
+      ],
+      "properties": {
+        "safety_case_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"$ref": "common.schema.json#/$defs/semanticVersion"},
+        "claims": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/safetyClaim"},
+          "uniqueItems": true
+        },
+        "hazards": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/hazard"},
+          "uniqueItems": true
+        },
+        "argument_links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["argument_id", "claim_id", "hazard_ids", "reasoning", "evidence_refs"],
+            "properties": {
+              "argument_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+              "claim_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+              "hazard_ids": {
+                "type": "array",
+                "minItems": 1,
+                "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+                "uniqueItems": true
+              },
+              "reasoning": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+              "evidence_refs": {
+                "type": "array",
+                "items": {"$ref": "common.schema.json#/$defs/evidenceReference"},
+                "uniqueItems": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+          "uniqueItems": true
+        },
+        "out_of_scope": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+          "uniqueItems": true
+        },
+        "independent_review_state": {"enum": ["not_requested", "pending", "completed_with_gaps", "completed"]},
+        "operator_acceptance_state": {"const": "not_evaluated"},
+        "compliance_claimed": {"const": false},
+        "safety_case_status": {"const": "proposed"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "unevaluatedProperties": false
+}

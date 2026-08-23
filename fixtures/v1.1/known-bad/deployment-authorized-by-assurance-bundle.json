@@ -1,0 +1,15 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.deployment-authorized-by-assurance-bundle",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/evaluation-assurance-bundle.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/evaluation-assurance-bundle.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/deployment_authorized", "value": true}],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "instance_pointer": "/deployment_authorized",
+    "schema_keyword": "const",
+    "reason": "A static Gate A assurance interface cannot authorize deployment or physical control."
+  },
+  "runtime_execution_authorized": false
+}

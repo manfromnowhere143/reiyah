@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.bad.temporal-leakage",
+  "fixture_id": "reiyah.fixture.bad.temporal-leakage",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "An input available after the decision index is included in its information set.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-009", "TM-011", "TM-016"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-TEMPORAL-LEAKAGE"},
+  "payload": {"kind": "production_mutation", "production_check": "scientific_semantics", "mutations": [
+    {"operation": "replace", "path": "manifests/examples/object-chain/latent-belief.json", "json_pointer": "/event_time/offset/value", "value": -1}
+  ]}
+}

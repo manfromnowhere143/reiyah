@@ -1,0 +1,33 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-preregistration-chronology-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.preregistration-chronology",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The retained preregistration freeze time is moved to the exact observation-boundary opening rather than strictly before it.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-009",
+    "TM-011",
+    "TM-016",
+    "TM-019"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-PREREGISTRATION-CHRONOLOGY"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "fixtures/good/preregistration-record.json",
+        "json_pointer": "/frozen_at",
+        "value": "2026-08-21T23:59:59Z"
+      }
+    ]
+  }
+}

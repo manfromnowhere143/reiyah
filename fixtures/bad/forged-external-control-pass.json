@@ -1,0 +1,37 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-forged-external-control-pass-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.forged-external-control-pass",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A repository-authored validation report attempts to mark external operator control GA-17 passed and names a fabricated accepted-decision record, even though offline bytes cannot authenticate operator identity or authority.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-017",
+    "TM-019",
+    "TM-020"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-VALIDATION-REPORT-COVERAGE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "validation_report",
+    "mutations": [
+      {
+        "operation": "add",
+        "path": "gate/validation-reports/gate-a-validation-1.0.0.json",
+        "json_pointer": "/control_summary/external_control_summary",
+        "value": {
+          "control_id": "GA-17",
+          "status": "passed",
+          "decision_record_id": "reiyah.gate-a-decision.self-authored-accepted",
+          "diagnostics": []
+        }
+      }
+    ]
+  }
+}

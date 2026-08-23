@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/mission-manifest.schema.json",
+  "title": "Immutable Reiyah mission manifest release",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "manifest_kind",
+    "release_id",
+    "mission_id",
+    "version",
+    "release_stage",
+    "lifecycle_status",
+    "created_on",
+    "relation",
+    "immutability",
+    "operator_acceptance",
+    "repository_identity",
+    "program_identity",
+    "mission_statement",
+    "thesis",
+    "scientific_invariants",
+    "gate_a_scope"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/mission-manifest.schema.json"
+    },
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "manifest_kind": {
+      "const": "mission"
+    },
+    "release_id": {
+      "$ref": "common.schema.json#/$defs/releaseIdentifier"
+    },
+    "mission_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "release_stage": {
+      "enum": ["candidate", "superseded", "corrected", "retracted"]
+    },
+    "lifecycle_status": {
+      "$ref": "common.schema.json#/$defs/lifecycleStatus"
+    },
+    "created_on": {
+      "$ref": "common.schema.json#/$defs/calendarDate"
+    },
+    "relation": {
+      "$ref": "common.schema.json#/$defs/releaseRelation"
+    },
+    "immutability": {
+      "type": "object",
+      "required": [
+        "policy",
+        "identifier_reuse_prohibited",
+        "in_place_changes_prohibited",
+        "corrections_require_new_release"
+      ],
+      "properties": {
+        "policy": {
+          "const": "append_only_release"
+        },
+        "identifier_reuse_prohibited": {
+          "const": true
+        },
+        "in_place_changes_prohibited": {
+          "const": true
+        },
+        "corrections_require_new_release": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "operator_acceptance": {
+      "type": "object",
+      "required": ["state", "record_id"],
+      "properties": {
+        "state": {
+          "const": "unaccepted"
+        },
+        "record_id": {
+          "type": "null"
+        }
+      },
+      "additionalProperties": false
+    },
+    "repository_identity": {
+      "type": "object",
+      "required": ["project", "canonical_root", "remote_assumption", "independent_from_siblings"],
+      "properties": {
+        "project": {
+          "const": "Reiyah"
+        },
+        "canonical_root": {
+          "const": "/Users/danielwahnich/workspace/reiyah"
+        },
+        "remote_assumption": {
+          "const": "none"
+        },
+        "independent_from_siblings": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "program_identity": {
+      "type": "object",
+      "required": ["working_name", "expansion", "name_status"],
+      "properties": {
+        "working_name": {
+          "const": "HARBOR"
+        },
+        "expansion": {
+          "const": "Human-Automation Readiness, Belief & Operational Risk"
+        },
+        "name_status": {
+          "const": "proposed"
+        }
+      },
+      "additionalProperties": false
+    },
+    "mission_statement": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "thesis": {
+      "type": "object",
+      "required": ["is", "is_not", "target_topics"],
+      "properties": {
+        "is": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "is_not": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "target_topics": {
+          "type": "array",
+          "minItems": 7,
+          "items": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "scientific_invariants": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "type": "object",
+        "required": ["invariant_id", "proposition", "lifecycle_status"],
+        "properties": {
+          "invariant_id": {
+            "$ref": "common.schema.json#/$defs/stableIdentifier"
+          },
+          "proposition": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "lifecycle_status": {
+            "const": "proposed"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "gate_a_scope": {
+      "type": "object",
+      "required": ["authorized", "prohibited", "advancement_requires"],
+      "properties": {
+        "authorized": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "prohibited": {
+          "type": "array",
+          "minItems": 7,
+          "items": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "advancement_requires": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

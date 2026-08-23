@@ -1,0 +1,25 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-public-custody-action-mismatch-1.1.0",
+  "fixture_id": "reiyah.fixture.bad.public-custody-action-mismatch",
+  "version": "1.1.0",
+  "classification": "known_bad",
+  "description": "A retained, redistributable ISO payload is silently changed from inclusion to pointer-only publication.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-003", "TM-005", "TM-022", "TM-023"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-PUBLIC-CUSTODY-CONTRACT"},
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "public_custody",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "evidence/public-distribution-inventory-1.1.0.json",
+        "json_pointer": "/entries/0/distribution_action",
+        "value": "publish_pointer_only"
+      }
+    ]
+  }
+}

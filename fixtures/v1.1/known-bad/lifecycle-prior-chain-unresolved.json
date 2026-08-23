@@ -1,0 +1,11 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.lifecycle-prior-chain-unresolved",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/human-automation-assessment.json",
+  "mutations": [{"operation": "add", "json_pointer": "/lifecycle_history/-", "value": {"event_id": "reiyah.event.human-automation-assessment.synthetic-successor", "sequence": 2, "prior_status": "proposed", "status": "proposed", "recorded_at": "2026-08-23T00:00:01Z", "actor": {"actor_id": "reiyah.actor.fixture-author", "actor_type": "derived_process", "version": "1.1.0", "role": "deterministic fixture author"}, "rationale": "Synthetic successor without a resolvable immutable predecessor.", "evidence_refs": [], "prior_artifact": {"artifact_id": "reiyah.artifact.synthetic-predecessor", "record_id": "reiyah.assessment.synthetic-encounter", "record_kind": "human_automation_assessment", "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/human-automation-assessment.schema.json", "version": "1.0.0", "path": "fixtures/v1.1/good/nonexistent-human-predecessor.json", "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000"}}}],
+  "expected_outcome": "reject",
+  "expected_failure": {"instance_pointer": "/lifecycle_history/1/prior_artifact", "schema_keyword": "semantic", "reason": "A lifecycle successor must bind exact predecessor bytes and preserve the predecessor history as an immutable prefix."},
+  "runtime_execution_authorized": false
+}

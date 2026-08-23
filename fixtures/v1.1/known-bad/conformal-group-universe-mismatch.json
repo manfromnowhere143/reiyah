@@ -1,0 +1,11 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.conformal-group-universe-mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/joint-performance-evaluation.json",
+  "mutations": [{"operation": "remove", "json_pointer": "/conformal_evaluation/conditional_group_results/1"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"instance_pointer": "/conformal_evaluation/conditional_group_results", "schema_keyword": "semantic", "reason": "Conditional conformal reporting must cover the complete declared group universe."},
+  "runtime_execution_authorized": false
+}

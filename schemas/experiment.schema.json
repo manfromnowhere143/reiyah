@@ -1,0 +1,315 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/experiment.schema.json",
+  "title": "Versioned experiment specification",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "experiment_id",
+    "version",
+    "lifecycle_status",
+    "lifecycle_history",
+    "mission_release_id",
+    "protocol_release_id",
+    "preregistration",
+    "target_population",
+    "unit_of_analysis",
+    "sampling_frame",
+    "observation_window",
+    "exposure",
+    "comparator",
+    "outcome_definition_ids",
+    "estimand_ids",
+    "inclusion_rules",
+    "exclusion_rules",
+    "assignment_mechanism",
+    "identification_assumptions",
+    "validity_boundaries",
+    "epistemic_policy",
+    "subgroup_plan",
+    "analysis_plan",
+    "evidence_binding",
+    "runtime_execution_authorized"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/experiment.schema.json"
+    },
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "artifact_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "experiment_id": {
+      "$ref": "common.schema.json#/$defs/stableIdentifier"
+    },
+    "version": {
+      "$ref": "common.schema.json#/$defs/semanticVersion"
+    },
+    "lifecycle_status": {
+      "$ref": "common.schema.json#/$defs/lifecycleStatus"
+    },
+    "lifecycle_history": {
+      "$ref": "common.schema.json#/$defs/lifecycleHistory"
+    },
+    "mission_release_id": {
+      "$ref": "common.schema.json#/$defs/releaseIdentifier"
+    },
+    "protocol_release_id": {
+      "$ref": "common.schema.json#/$defs/releaseIdentifier"
+    },
+    "preregistration": {
+      "type": "object",
+      "required": ["status", "registered_at", "observation_boundary", "retained_artifact"],
+      "properties": {
+        "status": {
+          "enum": ["proposed", "exploratory", "preregistered"]
+        },
+        "registered_at": {
+          "oneOf": [
+            {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+            {"type": "null"}
+          ]
+        },
+        "observation_boundary": {
+          "oneOf": [
+            {
+              "$ref": "preregistration-record.schema.json#/$defs/observationBoundary"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "retained_artifact": {
+          "oneOf": [
+            {"$ref": "common.schema.json#/$defs/artifactReference"},
+            {"type": "null"}
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"status": {"const": "preregistered"}},
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "registered_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+              "observation_boundary": {
+                "$ref": "preregistration-record.schema.json#/$defs/observationBoundary"
+              },
+              "retained_artifact": {
+                "allOf": [
+                  {"$ref": "common.schema.json#/$defs/artifactReference"},
+                  {
+                    "required": ["schema_id", "version"],
+                    "properties": {
+                      "schema_id": {
+                        "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/preregistration-record.schema.json"
+                      },
+                      "version": {
+                        "$ref": "common.schema.json#/$defs/semanticVersion"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "registered_at": {"type": "null"},
+              "observation_boundary": {"type": "null"},
+              "retained_artifact": {"type": "null"}
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "target_population": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "unit_of_analysis": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "sampling_frame": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "observation_window": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "exposure": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "comparator": {
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    },
+    "outcome_definition_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+      "uniqueItems": true
+    },
+    "estimand_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+      "uniqueItems": true
+    },
+    "inclusion_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+      "uniqueItems": true
+    },
+    "exclusion_rules": {
+      "type": "array",
+      "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+      "uniqueItems": true
+    },
+    "assignment_mechanism": {
+      "$ref": "common.schema.json#/$defs/assignmentMechanism"
+    },
+    "identification_assumptions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "common.schema.json#/$defs/identificationAssumption"}
+    },
+    "validity_boundaries": {
+      "$ref": "common.schema.json#/$defs/completeValidityBoundaries"
+    },
+    "epistemic_policy": {
+      "$ref": "common.schema.json#/$defs/epistemicPolicy"
+    },
+    "subgroup_plan": {
+      "$ref": "common.schema.json#/$defs/subgroupPlan"
+    },
+    "analysis_plan": {
+      "$ref": "common.schema.json#/$defs/analysisPlan"
+    },
+    "evidence_binding": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "evidence_refs"],
+          "properties": {
+            "state": {"const": "retained"},
+            "evidence_refs": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "common.schema.json#/$defs/evidenceReference"},
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["state", "evidence_refs", "gap_reason"],
+          "properties": {
+            "state": {"const": "evidence_gap"},
+            "evidence_refs": {"type": "array", "maxItems": 0},
+            "gap_reason": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "runtime_execution_authorized": {
+      "const": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycle_status": {
+            "enum": [
+              "invalid", "null", "inconclusive", "failed", "supported", "contradicted",
+              "replicated", "corrected", "retracted"
+            ]
+          }
+        },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "evidence_binding": {
+            "properties": {"state": {"const": "retained"}},
+            "required": ["state"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle_status": {
+            "enum": ["corrected", "retracted"]
+          }
+        },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "lifecycle_history": {
+            "contains": {
+              "properties": {
+                "status": {
+                  "enum": ["corrected", "retracted"]
+                },
+                "prior_artifact": {
+                  "allOf": [
+                    {
+                      "$ref": "common.schema.json#/$defs/priorArtifactReference"
+                    },
+                    {
+                      "properties": {
+                        "record_kind": {
+                          "const": "experiment"
+                        },
+                        "schema_id": {
+                          "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/experiment.schema.json"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": ["status", "prior_artifact"]
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle_status": {
+            "const": "preregistered"
+          }
+        },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "preregistration": {
+            "properties": {
+              "status": {
+                "const": "preregistered"
+              }
+            },
+            "required": ["status"]
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-nonfinite-number-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.nonfinite-number",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "A raw JSON overlay contains the non-standard literal NaN, which must be rejected before schema or semantic interpretation.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-017",
+    "TM-018",
+    "TM-019"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-NONFINITE-NUMBER"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "repository_inventory",
+    "mutations": [
+      {
+        "operation": "add_file",
+        "path": "fixtures/good/raw-nonfinite-target.json",
+        "content_utf8": "{\"value\":NaN}\n"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.belief-missing-holder",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/human-automation-assessment.json",
+  "mutations": [{"operation": "remove", "json_pointer": "/belief_assessment/belief_holder"}],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "instance_pointer": "/belief_assessment",
+    "schema_keyword": "required",
+    "reason": "A probability distribution is not a belief assessment unless the belief holder is explicit."
+  },
+  "runtime_execution_authorized": false
+}

@@ -1,0 +1,18 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.fixture.good.groups",
+  "fixture_id": "reiyah.fixture.good.groups",
+  "version": "1.0.0",
+  "classification": "known_good",
+  "description": "Every declared synthetic group remains represented.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [],
+  "expected": {"outcome": "pass", "primary_rule_id": null},
+  "payload": {
+    "kind": "group_coverage",
+    "declared_group_ids": ["reiyah.group.synthetic-a", "reiyah.group.synthetic-b"],
+    "result_group_ids": ["reiyah.group.synthetic-a", "reiyah.group.synthetic-b"]
+  }
+}

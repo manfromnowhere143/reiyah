@@ -1,0 +1,20 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.1.0",
+  "fixture_id": "reiyah.fixture.bad.odd-missing-exit-conditions",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.1.0/evaluation-assurance-bundle.schema.json",
+  "base_fixture_path": "fixtures/v1.1/good/evaluation-assurance-bundle.json",
+  "mutations": [
+    {
+      "operation": "remove",
+      "json_pointer": "/odd_specification/exit_conditions"
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "instance_pointer": "/odd_specification",
+    "schema_keyword": "required",
+    "reason": "An ODD without explicit exit conditions cannot define its applicability boundary or handoff to an unknown/out-of-domain disposition."
+  },
+  "runtime_execution_authorized": false
+}

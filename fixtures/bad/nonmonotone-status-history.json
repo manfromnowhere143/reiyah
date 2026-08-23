@@ -1,0 +1,23 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-nonmonotone-status-history-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.nonmonotone-status-history",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The valid preregistered successor is mutated so its appended event predates its retained proposed predecessor event.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-009", "TM-019", "TM-027"],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-STATUS-HISTORY-TIME"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "scientific_semantics",
+    "mutations": [
+      {"operation": "replace", "path": "fixtures/good/experiment-preregistered.json", "json_pointer": "/lifecycle_history/1/recorded_at", "value": "2026-08-21T23:59:56Z"}
+    ]
+  }
+}

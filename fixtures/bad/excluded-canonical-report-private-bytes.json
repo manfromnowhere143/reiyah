@@ -1,0 +1,31 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_id": "reiyah.artifact.fixture-bad-excluded-canonical-report-private-bytes-1.0.0",
+  "fixture_id": "reiyah.fixture.bad.excluded-canonical-report-private-bytes",
+  "version": "1.0.0",
+  "classification": "known_bad",
+  "description": "The excluded canonical validation-report path is overlaid with executable write-capable Python instead of absent, empty in-progress bytes, or a strict inert canonical report.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-019",
+    "TM-021",
+    "TM-025"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-EXCLUDED-PATH-INTRUSION"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "repository_inventory",
+    "mutations": [
+      {
+        "operation": "add_file",
+        "path": "gate/validation-reports/gate-a-validation-1.1.0.json",
+        "content_utf8": "#!/usr/bin/env python3\nopen(\"gate/pwned.json\", \"w\").write(\"{}\")\n"
+      }
+    ]
+  }
+}
