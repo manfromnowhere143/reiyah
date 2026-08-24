@@ -41,19 +41,28 @@ PLAN_PATH = "validation/validation-plan.json"
 CATALOG_PATH = "fixtures/fixture-catalog.json"
 INDEX_PATH = "gate/GATE_A_EVIDENCE_INDEX.json"
 SIDECAR_PATH = "gate/GATE_A_EVIDENCE_INDEX.sha256"
-TEMPLATE_PATH = "gate/decisions/OPERATOR_DECISION.template.json"
+LEGACY_TEMPLATE_PATH = "gate/decisions/OPERATOR_DECISION.template.json"
+TEMPLATE_PATH = "gate/decisions/OPERATOR_DECISION-1.1.1.template.json"
 ACTUAL_DECISION_PREFIX = "reiyah.gate-a-decision-"
-REPORT_PATH = "gate/validation-reports/gate-a-validation-1.1.0.json"
+REPORT_PATH = "gate/validation-reports/gate-a-validation-1.1.1.json"
+HISTORICAL_V11_REPORT_PATH = "gate/validation-reports/gate-a-validation-1.1.0.json"
 ACTIVE_SOURCE_LEDGER_PATH = "evidence/source-ledger-1.1.0.json"
 ACTIVE_STANDARDS_CROSSWALK_PATH = "evidence/standards-crosswalk-1.1.0.json"
 PUBLIC_DISTRIBUTION_INVENTORY_PATH = "evidence/public-distribution-inventory-1.1.0.json"
 PUBLIC_CUSTODY_PROFILE_PATH = "evidence/public-evidence-custody-profile-1.1.0.json"
 FRONTIER_DISCOVERY_REGISTER_PATH = "evidence/frontier-discovery-register-1.1.0.json"
 PUBLIC_RIGHTS_REVALIDATION_PATH = "evidence/public-rights-revalidation-2026-08-23.json"
+SUCCESSOR_PUBLIC_RIGHTS_REVALIDATION_PATH = "evidence/public-rights-revalidation-2026-08-24.json"
 HISTORICAL_RECOVERY_PATH = "history/gate-a-1.0.0/RECOVERY.json"
 HISTORICAL_INDEX_PATH = "history/gate-a-1.0.0/gate/GATE_A_EVIDENCE_INDEX.json"
 HISTORICAL_SIDECAR_PATH = "history/gate-a-1.0.0/gate/GATE_A_EVIDENCE_INDEX.sha256"
+HISTORICAL_V11_INDEX_PATH = "history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.json"
+HISTORICAL_V11_SIDECAR_PATH = "history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.sha256"
+HISTORICAL_V11_INDEX_DIGEST = "sha256:91149ec8bfc9a3999ce95d8c18ce0d558cf974b0afb412a7ac11027c63056c7a"
+HISTORICAL_V11_REPORT_DIGEST = "sha256:89d96c947f909782c0a5ccc4f677114a8a2c9dd2f24e6a342a667f6526144db0"
 PUBLIC_RECEIPT_PREFIX = "gate/public-distribution-receipts/reiyah.public-distribution-receipt-"
+INITIAL_PUBLIC_RECEIPT_PATH = "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.0.json"
+INITIAL_PUBLIC_RECEIPT_DIGEST = "sha256:d805ad1bab46e087338fb3c7ac049f9c1e9edbbd782fa6960db1f8e3eca57139"
 SCIENTIFIC_CONTRACT_PROFILE_PATH = "manifests/scientific/harbor-scientific-contract-profile-1.1.0.json"
 V11_PROTOCOL_RELEASE_ID = "reiyah.protocol.harbor-gate-a@1.1.0"
 V11_MISSION_RELEASE_ID = "reiyah.mission@1.1.0"
@@ -631,12 +640,12 @@ def build_report(
     control_summary: dict[str, Any],
 ) -> dict[str, Any]:
     return {
-        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/validation-report.schema.json",
-        "schema_version": "1.1.0",
-        "artifact_id": "reiyah.validation-report.gate-a-1.1.0",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/validation-report.schema.json",
+        "schema_version": "1.1.1",
+        "artifact_id": "reiyah.validation-report.gate-a-1.1.1",
         "report_id": "reiyah.validation-report.gate-a",
-        "version": "1.1.0",
-        "validation_plan_id": "reiyah.validation-plan.gate-a-public-1.1.0",
+        "version": "1.1.1",
+        "validation_plan_id": "reiyah.validation-plan.gate-a-public-1.1.1",
         "mission_release_id": V11_MISSION_RELEASE_ID,
         "protocol_release_id": V11_PROTOCOL_RELEASE_ID,
         "distribution_profile": "public_open_source",
@@ -2515,8 +2524,8 @@ class GateAValidator:
             data = self.read_view_json(view, relative)
             return (
                 isinstance(data, dict)
-                and data.get("schema_id") == "https://schemas.reiyah.invalid/gate-a/1.1.0/gate-a-index.schema.json"
-                and data.get("artifact_id") == "reiyah.artifact.gate-a-index-1.1.0"
+                and data.get("schema_id") == "https://schemas.reiyah.invalid/gate-a/1.1.1/gate-a-index.schema.json"
+                and data.get("artifact_id") == "reiyah.artifact.gate-a-index-1.1.1"
                 and data.get("index_id") == "reiyah.gate-a-evidence-index"
                 and data.get("runtime_authorized") is False
                 and (not self.schemas or not self.instance_diagnostics(data, relative))
@@ -2553,8 +2562,8 @@ class GateAValidator:
                 return False
             if (
                 not isinstance(report, dict)
-                or report.get("schema_id") != "https://schemas.reiyah.invalid/gate-a/1.1.0/validation-report.schema.json"
-                or report.get("artifact_id") != "reiyah.validation-report.gate-a-1.1.0"
+                or report.get("schema_id") != "https://schemas.reiyah.invalid/gate-a/1.1.1/validation-report.schema.json"
+                or report.get("artifact_id") != "reiyah.validation-report.gate-a-1.1.1"
                 or report.get("report_id") != "reiyah.validation-report.gate-a"
                 or report.get("offline") is not True
                 or report.get("read_only") is not True
@@ -2581,7 +2590,7 @@ class GateAValidator:
             ).encode("utf-8") if isinstance(record, dict) else b""
             return (
                 isinstance(record, dict)
-                and record.get("schema_id") == "https://schemas.reiyah.invalid/gate-a/1.1.0/operator-decision-record.schema.json"
+                and record.get("schema_id") == "https://schemas.reiyah.invalid/gate-a/1.1.1/operator-decision-record.schema.json"
                 and raw == canonical
                 and (not self.schemas or not self.instance_diagnostics(record, relative))
             )
@@ -2596,7 +2605,10 @@ class GateAValidator:
             canonical = (json.dumps(receipt, ensure_ascii=False, indent=2, sort_keys=True, allow_nan=False) + "\n").encode("utf-8") if isinstance(receipt, dict) else b""
             return (
                 isinstance(receipt, dict)
-                and receipt.get("schema_id") == "https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-receipt.schema.json"
+                and receipt.get("schema_id") in {
+                    "https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-receipt.schema.json",
+                    "https://schemas.reiyah.invalid/gate-a/1.1.1/public-distribution-receipt.schema.json",
+                }
                 and raw == canonical
                 and (not self.schemas or not self.instance_diagnostics(receipt, relative))
             )
@@ -2658,10 +2670,24 @@ class GateAValidator:
         for relative in view.iter_files():
             name = relative.rsplit("/", 1)[-1]
             suffix = Path(relative).suffix.lower()
+            if (
+                relative.startswith("history/gate-a-1.1.0/")
+                and relative not in {HISTORICAL_V11_INDEX_PATH, HISTORICAL_V11_SIDECAR_PATH}
+            ):
+                diagnostics.append(
+                    make_diagnostic(
+                        "GA-INDEX-ROLE-INELIGIBLE",
+                        relative,
+                        "Gate A 1.1.0 history is closed to exactly the retained published index and sidecar; no additional bytes may hide under that prefix.",
+                    )
+                )
             excluded = self.is_plan_excluded(relative)
             reserved_excluded_location = (
                 relative.startswith("gate/validation-reports/")
-                and relative != "gate/validation-reports/gate-a-validation-1.0.0.json"
+                and relative not in {
+                    "gate/validation-reports/gate-a-validation-1.0.0.json",
+                    HISTORICAL_V11_REPORT_PATH,
+                }
             )
             if view.is_symlink(relative):
                 rule = "GA-EXCLUDED-PATH-INTRUSION" if excluded or reserved_excluded_location else "GA-ARTIFACT-SYMLINK"
@@ -3022,19 +3048,21 @@ class GateAValidator:
         binding: Any,
         expected_path: str,
         require_target_identity: bool = True,
+        physical_path: str | None = None,
     ) -> list[str]:
-        """Compare a custody binding with the exact current target bytes and identity."""
+        """Compare a logical custody binding with exact current or retained historical bytes."""
 
         if not isinstance(binding, dict):
             return ["binding is not an object"]
         issues: list[str] = []
         if binding.get("path") != expected_path:
             issues.append(f"path must equal {expected_path!r}")
+        target_path = expected_path if physical_path is None else physical_path
         try:
-            raw = view.read_bytes(expected_path)
+            raw = view.read_bytes(target_path)
         except (OSError, ValueError):
-            return issues + [f"target {expected_path!r} is absent or unreadable"]
-        target = self.read_view_json(view, expected_path)
+            return issues + [f"target bytes {target_path!r} are absent or unreadable"]
+        target = self.read_view_json(view, target_path)
         expected_fields: dict[str, Any] = {"sha256": digest_bytes(raw)}
         if require_target_identity or "byte_size" in binding:
             expected_fields["byte_size"] = len(raw)
@@ -3334,6 +3362,7 @@ class GateAValidator:
             FRONTIER_DISCOVERY_REGISTER_PATH,
             PUBLIC_DISTRIBUTION_INVENTORY_PATH,
             PUBLIC_RIGHTS_REVALIDATION_PATH,
+            SUCCESSOR_PUBLIC_RIGHTS_REVALIDATION_PATH,
             HISTORICAL_RECOVERY_PATH,
         )
         documents: dict[str, dict[str, Any]] = {}
@@ -3349,8 +3378,115 @@ class GateAValidator:
         frontier = documents.get(FRONTIER_DISCOVERY_REGISTER_PATH, {})
         inventory = documents.get(PUBLIC_DISTRIBUTION_INVENTORY_PATH, {})
         rights = documents.get(PUBLIC_RIGHTS_REVALIDATION_PATH, {})
+        successor_rights = documents.get(SUCCESSOR_PUBLIC_RIGHTS_REVALIDATION_PATH, {})
         if not all(isinstance(item, dict) for item in (ledger, profile, frontier, inventory, rights)):
             return sorted(diagnostics, key=diagnostic_key)
+
+        successor_receipt_schema_path = "schemas/public-distribution-receipt-1.1.1.schema.json"
+        successor_receipt_schema = self.read_view_json(view, successor_receipt_schema_path)
+        expected_successor_authorization = {
+            "basis_state": "observed_current_operator_instruction",
+            "recorded_date": "2026-08-24",
+            "authorized_action": "publish_exact_static_gate_a_1.1.1_governance_correction",
+            "scope_limit": "Exact static Gate A 1.1.1 governance-correction packet and the unchanged four eligible retained payloads; no new evidence, private data, runtime, deployment, or unauthorized source payloads.",
+            "operator_identity_authentication": "not_evaluated",
+            "ga17_effect": "not_evaluated",
+            "gate_a_acceptance_effect": "none",
+            "scientific_publication_acceptance_effect": "none",
+            "runtime_execution_effect": "none",
+        }
+        authorization_schema = (
+            successor_receipt_schema.get("$defs", {}).get("successorDistributionAuthorization")
+            if isinstance(successor_receipt_schema, dict) and isinstance(successor_receipt_schema.get("$defs"), dict)
+            else None
+        )
+        authorization_properties = authorization_schema.get("properties") if isinstance(authorization_schema, dict) and isinstance(authorization_schema.get("properties"), dict) else {}
+        authorization_required = authorization_schema.get("required") if isinstance(authorization_schema, dict) and isinstance(authorization_schema.get("required"), list) else []
+        observed_authorization = {
+            field: value.get("const") if isinstance(value, dict) else None
+            for field, value in authorization_properties.items()
+        }
+
+        def constrained_binding_constants(field: str) -> dict[str, Any]:
+            properties = successor_receipt_schema.get("properties") if isinstance(successor_receipt_schema, dict) else None
+            node = properties.get(field) if isinstance(properties, dict) else None
+            branches = node.get("allOf") if isinstance(node, dict) else None
+            constants: dict[str, Any] = {}
+            if isinstance(branches, list):
+                for branch in branches:
+                    branch_properties = branch.get("properties") if isinstance(branch, dict) else None
+                    if not isinstance(branch_properties, dict):
+                        continue
+                    for name, definition in branch_properties.items():
+                        if isinstance(definition, dict) and "const" in definition:
+                            constants[name] = definition.get("const")
+            return constants
+
+        expected_successor_bindings = {
+            "custody_profile_ref": {
+                "artifact_id": "reiyah.artifact.public-evidence-custody-profile-1.1.0",
+                "version": "1.1.0",
+                "path": PUBLIC_CUSTODY_PROFILE_PATH,
+            },
+            "source_ledger_ref": {
+                "artifact_id": "reiyah.artifact.source-ledger-1.1.0",
+                "version": "1.1.0",
+                "path": ACTIVE_SOURCE_LEDGER_PATH,
+            },
+            "frontier_discovery_register_ref": {
+                "artifact_id": "reiyah.artifact.frontier-discovery-register-1.1.0",
+                "version": "1.1.0",
+                "path": FRONTIER_DISCOVERY_REGISTER_PATH,
+            },
+            "distribution_inventory_ref": {
+                "artifact_id": "reiyah.artifact.public-distribution-inventory-1.1.0",
+                "version": "1.1.0",
+                "path": PUBLIC_DISTRIBUTION_INVENTORY_PATH,
+            },
+            "rights_revalidation_ref": {
+                "artifact_id": "reiyah.artifact.public-rights-revalidation-2026-08-24",
+                "version": "1.1.1",
+                "path": SUCCESSOR_PUBLIC_RIGHTS_REVALIDATION_PATH,
+            },
+            "published_index_ref": {
+                "artifact_id": "reiyah.artifact.gate-a-index-1.1.1",
+                "version": "1.1.1",
+                "path": INDEX_PATH,
+            },
+            "validation_report_ref": {
+                "artifact_id": "reiyah.validation-report.gate-a-1.1.1",
+                "version": "1.1.1",
+                "path": REPORT_PATH,
+            },
+            "prior_receipt_ref": {
+                "artifact_id": "reiyah.artifact.public-distribution-receipt-1.1.0",
+                "version": "1.1.0",
+                "path": INITIAL_PUBLIC_RECEIPT_PATH,
+                "sha256": INITIAL_PUBLIC_RECEIPT_DIGEST,
+                "byte_size": 6857,
+            },
+        }
+        successor_required = successor_receipt_schema.get("required") if isinstance(successor_receipt_schema, dict) and isinstance(successor_receipt_schema.get("required"), list) else []
+        successor_properties = successor_receipt_schema.get("properties") if isinstance(successor_receipt_schema, dict) and isinstance(successor_receipt_schema.get("properties"), dict) else {}
+        successor_readback = successor_properties.get("remote_readback") if isinstance(successor_properties.get("remote_readback"), dict) else {}
+        successor_readback_required = successor_readback.get("required") if isinstance(successor_readback.get("required"), list) else []
+        successor_readback_properties = successor_readback.get("properties") if isinstance(successor_readback.get("properties"), dict) else {}
+        if (
+            not isinstance(successor_receipt_schema, dict)
+            or successor_receipt_schema.get("$id") != "https://schemas.reiyah.invalid/gate-a/1.1.1/public-distribution-receipt.schema.json"
+            or successor_receipt_schema.get("properties", {}).get("distribution_authorization", {}).get("$ref") != "#/$defs/successorDistributionAuthorization"
+            or successor_properties.get("artifact_id", {}).get("const") != "reiyah.artifact.public-distribution-receipt-1.1.1"
+            or successor_properties.get("receipt_id", {}).get("const") != "reiyah.public-distribution-receipt.governance-correction-publication"
+            or observed_authorization != expected_successor_authorization
+            or set(authorization_required) != set(expected_successor_authorization)
+            or authorization_schema.get("additionalProperties") is not False
+            or successor_properties.get("receipt_sequence", {}).get("const") != 2
+            or "validation_report_ref" not in successor_required
+            or "tree_contains_exact_validation_report" not in successor_readback_required
+            or successor_readback_properties.get("tree_contains_exact_validation_report", {}).get("const") is not True
+            or any(constrained_binding_constants(field) != expected for field, expected in expected_successor_bindings.items())
+        ):
+            diagnostics.append(make_diagnostic("GA-PUBLIC-DISTRIBUTION-RECEIPT", successor_receipt_schema_path, "The event-specific successor receipt schema must freeze sequence 2, the exact prior receipt, fresh rights observation, current index/report identities, and the 2026-08-24 static-governance authorization without creating runtime, acceptance, scientific, or GA-17 authority."))
 
         ledger_records = ledger.get("records") if isinstance(ledger.get("records"), list) else []
         ledger_by_id = {
@@ -3498,10 +3634,72 @@ class GateAValidator:
         ):
             diagnostics.append(make_diagnostic("GA-PUBLIC-CUSTODY-CONTRACT", PUBLIC_RIGHTS_REVALIDATION_PATH, "Rights observation cannot create legal/operator authority, acceptance, or GA-17 evaluation."))
 
+        successor_basis = successor_rights.get("basis_observations") if isinstance(successor_rights.get("basis_observations"), list) else []
+        successor_observed_at = parse_exact_utc(successor_rights.get("observed_at"))
+        prior_observed_at = parse_exact_utc(rights.get("observed_at"))
+        successor_issues = self.exact_artifact_binding_issues(
+            view,
+            successor_rights.get("prior_observation_ref"),
+            PUBLIC_RIGHTS_REVALIDATION_PATH,
+        ) if isinstance(successor_rights, dict) else ["successor rights observation is absent"]
+        if (
+            not isinstance(successor_rights, dict)
+            or successor_rights.get("schema_id") != "https://schemas.reiyah.invalid/gate-a/1.1.1/public-rights-revalidation.schema.json"
+            or successor_rights.get("version") != "1.1.1"
+            or successor_issues
+            or successor_observed_at is None
+            or prior_observed_at is None
+            or successor_observed_at <= prior_observed_at
+            or any(parse_exact_utc(item.get("observed_at")) != successor_observed_at for item in successor_basis if isinstance(item, dict))
+            or [item.get("official_url") for item in successor_basis if isinstance(item, dict)] != expected_urls
+            or set(successor_rights.get("covered_payload_source_ids", [])) != distributable_ids
+            or set(successor_rights.get("excluded_pointer_source_ids", [])) != nist_pointer_ids
+            or successor_rights.get("all_included_payloads_covered") is not True
+            or successor_rights.get("preflight_outcome") != "included_iso_basis_consistent_nist_payload_excluded"
+            or successor_rights.get("distribution_authorization_created") is not False
+            or successor_rights.get("qualified_legal_review_performed") is not False
+            or successor_rights.get("legal_conclusion_created") is not False
+            or successor_rights.get("gate_a_acceptance_conferred") is not False
+            or successor_rights.get("ga17_status") != "not_evaluated"
+        ):
+            diagnostics.append(make_diagnostic("GA-PUBLIC-CUSTODY-CONTRACT", SUCCESSOR_PUBLIC_RIGHTS_REVALIDATION_PATH, f"The required successor rights observation must exactly and chronologically extend the immutable initial observation while preserving the same four-payload/two-NIST-pointer non-authority boundary; prior_issues={successor_issues}."))
+
+        try:
+            historical_v11_index_raw = view.read_bytes(HISTORICAL_V11_INDEX_PATH)
+            historical_v11_sidecar = view.read_text(HISTORICAL_V11_SIDECAR_PATH)
+        except (OSError, UnicodeDecodeError, ValueError):
+            historical_v11_index_raw = None
+            historical_v11_sidecar = None
+        expected_historical_sidecar = f"{HISTORICAL_V11_INDEX_DIGEST}  {INDEX_PATH}\n"
+        if (
+            historical_v11_index_raw is None
+            or digest_bytes(historical_v11_index_raw) != HISTORICAL_V11_INDEX_DIGEST
+            or historical_v11_sidecar != expected_historical_sidecar
+        ):
+            diagnostics.append(
+                make_diagnostic(
+                    "GA-PUBLIC-DISTRIBUTION-RECEIPT",
+                    HISTORICAL_V11_INDEX_PATH,
+                    "The immutable Gate A 1.1.0 index snapshot and sidecar must preserve the exact bytes bound by the initial public receipt.",
+                )
+            )
+
         receipt_paths = sorted(
             relative for relative in view.iter_files()
             if re.fullmatch(r"gate/public-distribution-receipts/reiyah\.public-distribution-receipt-[a-z0-9.-]+\.json", relative)
         )
+        try:
+            initial_receipt_raw = view.read_bytes(INITIAL_PUBLIC_RECEIPT_PATH)
+        except (OSError, ValueError):
+            initial_receipt_raw = None
+        if initial_receipt_raw is None or digest_bytes(initial_receipt_raw) != INITIAL_PUBLIC_RECEIPT_DIGEST:
+            diagnostics.append(
+                make_diagnostic(
+                    "GA-PUBLIC-DISTRIBUTION-RECEIPT",
+                    INITIAL_PUBLIC_RECEIPT_PATH,
+                    "The excluded initial public receipt must remain present at its exact path with immutable published digest d805ad1b…; semantic validity cannot substitute for byte identity.",
+                )
+            )
         receipts: list[tuple[str, dict[str, Any]]] = []
         for relative in receipt_paths:
             receipt = self.read_view_json(view, relative)
@@ -3511,15 +3709,113 @@ class GateAValidator:
             receipts.append((relative, receipt))
             diagnostics.extend(self.instance_diagnostics(receipt, relative))
             issues: list[str] = []
+            receipt_sequence = receipt.get("receipt_sequence")
+            if receipt_sequence == 1:
+                if (
+                    relative != INITIAL_PUBLIC_RECEIPT_PATH
+                    or receipt.get("schema_id") != "https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-receipt.schema.json"
+                    or receipt.get("schema_version") != "1.1.0"
+                    or receipt.get("version") != "1.1.0"
+                ):
+                    issues.append("receipt sequence 1 must be the exact immutable 1.1.0 initial receipt contract")
+            elif receipt_sequence == 2:
+                if (
+                    relative != "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.1.json"
+                    or receipt.get("schema_id") != "https://schemas.reiyah.invalid/gate-a/1.1.1/public-distribution-receipt.schema.json"
+                    or receipt.get("schema_version") != "1.1.1"
+                    or receipt.get("version") != "1.1.1"
+                    or receipt.get("artifact_id") != "reiyah.artifact.public-distribution-receipt-1.1.1"
+                    or receipt.get("receipt_id") != "reiyah.public-distribution-receipt.governance-correction-publication"
+                    or receipt.get("distribution_authorization") != expected_successor_authorization
+                ):
+                    issues.append("receipt sequence 2 must use the exact 1.1.1 schema/version and 2026-08-24 successor authorization")
+            else:
+                issues.append("this event-specific packet permits only immutable receipt sequence 1 and the versioned sequence 2 governance correction")
             for field, target in (
                 ("custody_profile_ref", PUBLIC_CUSTODY_PROFILE_PATH),
                 ("source_ledger_ref", ACTIVE_SOURCE_LEDGER_PATH),
                 ("frontier_discovery_register_ref", FRONTIER_DISCOVERY_REGISTER_PATH),
                 ("distribution_inventory_ref", PUBLIC_DISTRIBUTION_INVENTORY_PATH),
-                ("rights_revalidation_ref", PUBLIC_RIGHTS_REVALIDATION_PATH),
-                ("published_index_ref", INDEX_PATH),
             ):
                 issues.extend(f"{field}: {issue}" for issue in self.exact_artifact_binding_issues(view, receipt.get(field), target))
+
+            rights_binding = receipt.get("rights_revalidation_ref") if isinstance(receipt.get("rights_revalidation_ref"), dict) else {}
+            receipt_rights_path = rights_binding.get("path")
+            allowed_rights_contracts = {
+                PUBLIC_RIGHTS_REVALIDATION_PATH: (
+                    "https://schemas.reiyah.invalid/gate-a/1.1.0/public-rights-revalidation.schema.json",
+                    "1.0.0",
+                ),
+                SUCCESSOR_PUBLIC_RIGHTS_REVALIDATION_PATH: (
+                    "https://schemas.reiyah.invalid/gate-a/1.1.1/public-rights-revalidation.schema.json",
+                    "1.1.1",
+                ),
+            }
+            receipt_rights: dict[str, Any] = {}
+            expected_rights_contract = allowed_rights_contracts.get(receipt_rights_path)
+            if expected_rights_contract is None:
+                issues.append("rights_revalidation_ref path is not an allowed versioned rights observation")
+            else:
+                issues.extend(
+                    f"rights_revalidation_ref: {issue}"
+                    for issue in self.exact_artifact_binding_issues(view, rights_binding, receipt_rights_path)
+                )
+                candidate_rights = self.read_view_json(view, receipt_rights_path)
+                if isinstance(candidate_rights, dict):
+                    receipt_rights = candidate_rights
+                    diagnostics.extend(self.instance_diagnostics(receipt_rights, receipt_rights_path))
+                    expected_schema_id, expected_version = expected_rights_contract
+                    if receipt_rights.get("schema_id") != expected_schema_id or receipt_rights.get("version") != expected_version:
+                        issues.append("rights observation schema/version does not match its versioned path")
+                else:
+                    issues.append("rights observation target is absent or malformed")
+            if (
+                (receipt_sequence == 1 and receipt_rights_path != PUBLIC_RIGHTS_REVALIDATION_PATH)
+                or (receipt_sequence == 2 and receipt_rights_path != SUCCESSOR_PUBLIC_RIGHTS_REVALIDATION_PATH)
+            ):
+                issues.append("receipt sequence must bind its exact event-specific rights observation path")
+
+            index_binding = receipt.get("published_index_ref") if isinstance(receipt.get("published_index_ref"), dict) else {}
+            index_version = index_binding.get("version")
+            if (
+                receipt_sequence == 1
+                and index_version == "1.1.0"
+                and index_binding.get("artifact_id") == "reiyah.artifact.gate-a-index-1.1.0"
+                and index_binding.get("sha256") == HISTORICAL_V11_INDEX_DIGEST
+            ):
+                index_physical_path = HISTORICAL_V11_INDEX_PATH
+            elif (
+                receipt_sequence == 2
+                and index_version == "1.1.1"
+                and index_binding.get("artifact_id") == "reiyah.artifact.gate-a-index-1.1.1"
+            ):
+                index_physical_path = INDEX_PATH
+            else:
+                index_physical_path = None
+                issues.append("published_index_ref must bind the historical 1.1.0 index for sequence 1 or the current 1.1.1 index for sequence 2")
+            if index_physical_path is not None:
+                issues.extend(
+                    f"published_index_ref: {issue}"
+                    for issue in self.exact_artifact_binding_issues(
+                        view,
+                        index_binding,
+                        INDEX_PATH,
+                        physical_path=index_physical_path,
+                    )
+                )
+            if receipt_sequence == 2:
+                report_binding = receipt.get("validation_report_ref")
+                if (
+                    not isinstance(report_binding, dict)
+                    or report_binding.get("artifact_id") != "reiyah.validation-report.gate-a-1.1.1"
+                    or report_binding.get("version") != "1.1.1"
+                ):
+                    issues.append("validation_report_ref must bind the exact current 1.1.1 report identity")
+                else:
+                    issues.extend(
+                        f"validation_report_ref: {issue}"
+                        for issue in self.exact_artifact_binding_issues(view, report_binding, REPORT_PATH)
+                    )
             payloads = receipt.get("distributed_payloads") if isinstance(receipt.get("distributed_payloads"), list) else []
             payload_by_id = {
                 item.get("source_ref", {}).get("source_id"): item.get("payload")
@@ -3547,9 +3843,38 @@ class GateAValidator:
             readback = receipt.get("remote_readback") if isinstance(receipt.get("remote_readback"), dict) else {}
             verified_at = parse_exact_utc(readback.get("verified_at"))
             recorded_at = parse_exact_utc(receipt.get("recorded_at"))
-            freshness = rights.get("freshness_policy") if isinstance(rights.get("freshness_policy"), dict) else {}
-            age_seconds = int((published_at - observed_at).total_seconds()) if observed_at is not None and published_at is not None else None
-            if None in (observed_at, published_at, verified_at, recorded_at) or not (observed_at <= published_at <= verified_at <= recorded_at):
+            receipt_basis = receipt_rights.get("basis_observations") if isinstance(receipt_rights.get("basis_observations"), list) else []
+            receipt_observed_at = parse_exact_utc(receipt_rights.get("observed_at"))
+            receipt_observed_urls = [item.get("official_url") for item in receipt_basis if isinstance(item, dict)]
+            receipt_covered = receipt_rights.get("covered_payload_source_ids") if isinstance(receipt_rights.get("covered_payload_source_ids"), list) else []
+            receipt_excluded = receipt_rights.get("excluded_pointer_source_ids") if isinstance(receipt_rights.get("excluded_pointer_source_ids"), list) else []
+            if (
+                set(receipt_covered) != distributable_ids
+                or set(receipt_excluded) != nist_pointer_ids
+                or receipt_observed_urls != expected_urls
+                or receipt_rights.get("all_included_payloads_covered") is not True
+                or receipt_rights.get("preflight_outcome") != "included_iso_basis_consistent_nist_payload_excluded"
+                or receipt_observed_at is None
+                or any(parse_exact_utc(item.get("observed_at")) != receipt_observed_at for item in receipt_basis if isinstance(item, dict))
+                or receipt_rights.get("distribution_authorization_created") is not False
+                or receipt_rights.get("qualified_legal_review_performed") is not False
+                or receipt_rights.get("legal_conclusion_created") is not False
+                or receipt_rights.get("gate_a_acceptance_conferred") is not False
+                or receipt_rights.get("ga17_status") != "not_evaluated"
+            ):
+                issues.append("receipt rights observation does not preserve the exact custody boundary, canonical official-page observations, or non-authority invariants")
+            if receipt_rights_path == SUCCESSOR_PUBLIC_RIGHTS_REVALIDATION_PATH:
+                prior_rights_issues = self.exact_artifact_binding_issues(
+                    view,
+                    receipt_rights.get("prior_observation_ref"),
+                    PUBLIC_RIGHTS_REVALIDATION_PATH,
+                )
+                initial_observed_at = parse_exact_utc(rights.get("observed_at"))
+                if prior_rights_issues or initial_observed_at is None or receipt_observed_at is None or receipt_observed_at <= initial_observed_at:
+                    issues.append(f"successor rights observation must exactly and chronologically follow the immutable initial observation: {prior_rights_issues}")
+            freshness = receipt_rights.get("freshness_policy") if isinstance(receipt_rights.get("freshness_policy"), dict) else {}
+            age_seconds = (published_at - receipt_observed_at).total_seconds() if receipt_observed_at is not None and published_at is not None else None
+            if None in (receipt_observed_at, published_at, verified_at, recorded_at) or not (receipt_observed_at <= published_at <= verified_at <= recorded_at):
                 issues.append("receipt chronology must satisfy rights observation <= publication <= remote readback <= recording")
             if (
                 freshness.get("maximum_age_seconds") != 3600
@@ -3562,6 +3887,8 @@ class GateAValidator:
                 issues.append("receipt must recompute a same-event rights observation age within the exact 3600-second freshness policy")
             if receipt.get("published_repository_url") != "https://github.com/manfromnowhere143/reiyah" or receipt.get("published_ref") != "refs/heads/main":
                 issues.append("receipt must bind the canonical public repository and refs/heads/main")
+            if receipt_sequence == 2 and readback.get("tree_contains_exact_validation_report") is not True:
+                issues.append("receipt sequence 2 remote readback must attest that the published tree contains the exact bound validation report")
             if (
                 receipt.get("distribution_executed") is not True
                 or receipt.get("runtime_execution_authorized") is not False
@@ -3577,13 +3904,21 @@ class GateAValidator:
         if receipts:
             receipt_ids = [record.get("receipt_id") for _, record in receipts]
             artifact_ids = [record.get("artifact_id") for _, record in receipts]
+            receipt_rights_paths = [
+                record.get("rights_revalidation_ref", {}).get("path")
+                if isinstance(record.get("rights_revalidation_ref"), dict)
+                else None
+                for _, record in receipts
+            ]
             if (
                 any(not isinstance(value, str) for value in receipt_ids + artifact_ids)
                 or len(receipt_ids) != len(set(receipt_ids))
                 or len(artifact_ids) != len(set(artifact_ids))
                 or len(receipt_paths) != len(set(receipt_paths))
+                or any(not isinstance(value, str) for value in receipt_rights_paths)
+                or len(receipt_rights_paths) != len(set(receipt_rights_paths))
             ):
-                diagnostics.append(make_diagnostic("GA-PUBLIC-DISTRIBUTION-RECEIPT", receipts[0][0], "Receipt paths, receipt_id values, and artifact_id values must each be globally unique."))
+                diagnostics.append(make_diagnostic("GA-PUBLIC-DISTRIBUTION-RECEIPT", receipts[0][0], "Receipt paths, receipt_id values, artifact_id values, and per-event rights observation paths must each be globally unique."))
             by_sequence = {record.get("receipt_sequence"): (relative, record) for relative, record in receipts if isinstance(record.get("receipt_sequence"), int)}
             sequences = sorted(by_sequence)
             if sequences != list(range(1, len(receipts) + 1)) or len(by_sequence) != len(receipts):
@@ -3606,10 +3941,89 @@ class GateAValidator:
                     prior_time = parse_exact_utc(prior.get("recorded_at"))
                     if current_time is None or prior_time is None or current_time <= prior_time:
                         diagnostics.append(make_diagnostic("GA-PUBLIC-DISTRIBUTION-RECEIPT", relative, "Successor receipt time must be strictly later than its predecessor."))
+                    if (
+                        receipt.get("published_index_ref", {}).get("sha256") != prior.get("published_index_ref", {}).get("sha256")
+                        and receipt.get("published_git_commit") == prior.get("published_git_commit")
+                    ):
+                        diagnostics.append(make_diagnostic("GA-PUBLIC-DISTRIBUTION-RECEIPT", relative, "A successor that publishes different index bytes must bind a distinct immutable Git commit."))
                 previous = (relative, receipt)
 
         diagnostics.extend(self.historical_recovery_diagnostics(view))
         return sorted(diagnostics, key=diagnostic_key)
+
+    def predecessor_packet_drift_diagnostics(self, view: RepositoryView) -> list[dict[str, Any]]:
+        """Lock released 1.1.0 bytes while allowing only explicit 1.1.1 correction surfaces."""
+
+        diagnostics: list[dict[str, Any]] = []
+        try:
+            predecessor_raw = view.read_bytes(HISTORICAL_V11_INDEX_PATH)
+            predecessor = strict_json_loads(predecessor_raw.decode("utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError, StrictJSONError, ValueError):
+            predecessor_raw = None
+            predecessor = None
+        if predecessor_raw is None or digest_bytes(predecessor_raw) != HISTORICAL_V11_INDEX_DIGEST or not isinstance(predecessor, dict):
+            return [make_diagnostic("GA-PREDECESSOR-PACKET-DRIFT", HISTORICAL_V11_INDEX_PATH, "The exact frozen Gate A 1.1.0 predecessor index is absent, malformed, or digest-mismatched.")]
+
+        try:
+            report_raw = view.read_bytes(HISTORICAL_V11_REPORT_PATH)
+            report = strict_json_loads(report_raw.decode("utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError, StrictJSONError, ValueError):
+            report_raw = None
+            report = None
+        if (
+            report_raw is None
+            or digest_bytes(report_raw) != HISTORICAL_V11_REPORT_DIGEST
+            or not isinstance(report, dict)
+            or report.get("schema_id") != "https://schemas.reiyah.invalid/gate-a/1.1.0/validation-report.schema.json"
+            or report.get("artifact_id") != "reiyah.validation-report.gate-a-1.1.0"
+            or report.get("version") != "1.1.0"
+            or report.get("acceptance_created") is not False
+            or report.get("control_summary", {}).get("external_control_summary", {}).get("status") != "not_evaluated"
+        ):
+            diagnostics.append(make_diagnostic("GA-PREDECESSOR-PACKET-DRIFT", HISTORICAL_V11_REPORT_PATH, "The frozen Gate A 1.1.0 report must preserve exact digest, schema/artifact/version identity, no acceptance, and GA-17 not_evaluated."))
+
+        mutable_successor_paths = {
+            "CITATION.cff",
+            "README.md",
+            "docs/FRONTIER_BASELINE_2026.md",
+            "docs/RESEARCH_GAP_REGISTER.md",
+            "docs/SESSION_HANDOFF.md",
+            "docs/STATUS_MODEL.md",
+            "docs/VALIDATION.md",
+            "evidence/README.md",
+            "gate/README.md",
+            CATALOG_PATH,
+            PLAN_PATH,
+            "tools/build_gate_a_index.py",
+            "tools/validate_gate_a.py",
+        }
+        drift: list[str] = []
+        artifacts = predecessor.get("artifacts") if isinstance(predecessor.get("artifacts"), list) else []
+        for item in artifacts:
+            binding = item.get("artifact") if isinstance(item, dict) and isinstance(item.get("artifact"), dict) else {}
+            relative = binding.get("path")
+            if not isinstance(relative, str) or relative in mutable_successor_paths:
+                continue
+            try:
+                current_raw = view.read_bytes(relative)
+            except (OSError, ValueError):
+                drift.append(f"{relative}: absent")
+                continue
+            if binding.get("sha256") != digest_bytes(current_raw):
+                drift.append(f"{relative}: digest changed")
+        if drift:
+            diagnostics.append(
+                make_diagnostic(
+                    "GA-PREDECESSOR-PACKET-DRIFT",
+                    HISTORICAL_V11_INDEX_PATH,
+                    "Released 1.1.0 paths outside the explicit governance-correction surface must remain byte-exact; "
+                    f"drift={sorted(drift)}.",
+                )
+            )
+        return sorted(diagnostics, key=diagnostic_key)
+
+    def check_predecessor_packet_drift(self) -> None:
+        self.diagnostics.extend(self.predecessor_packet_drift_diagnostics(self.view))
 
     def check_public_custody(self) -> None:
         self.diagnostics.extend(self.public_custody_diagnostics(self.view))
@@ -7575,17 +7989,485 @@ class GateAValidator:
                 )
         return diagnostics
 
+    def operator_decision_contract_diagnostics(
+        self,
+        view: RepositoryView,
+        end_to_end: bool = False,
+    ) -> list[dict[str, Any]]:
+        """Prove the versioned decision interface is satisfiable without creating authority."""
+
+        schema_path = "schemas/operator-decision-record-1.1.1.schema.json"
+        template_path = TEMPLATE_PATH
+        schema = self.read_view_json(view, schema_path)
+        template = self.read_view_json(view, template_path)
+        ledger = self.read_view_json(view, "manifests/manifest-release-ledger.json")
+        issues: list[str] = []
+        if not isinstance(schema, dict) or not isinstance(template, dict) or not isinstance(ledger, dict):
+            return [make_diagnostic("GA-OPERATOR-DECISION-CONTRACT", schema_path, "The versioned decision schema, template, or release ledger is absent or malformed.")]
+
+        def at(document: Any, *keys: str) -> Any:
+            current = document
+            for key in keys:
+                if not isinstance(current, dict):
+                    return None
+                current = current.get(key)
+            return current
+
+        expected_index = {
+            "artifact_id": "reiyah.artifact.gate-a-index-1.1.1",
+            "path": INDEX_PATH,
+            "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/gate-a-index.schema.json",
+            "version": "1.1.1",
+        }
+        expected_report = {
+            "artifact_id": "reiyah.validation-report.gate-a-1.1.1",
+            "path": REPORT_PATH,
+            "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/validation-report.schema.json",
+            "version": "1.1.1",
+        }
+        schema_expectations = {
+            "schema $id": (schema.get("$id"), "https://schemas.reiyah.invalid/gate-a/1.1.1/operator-decision-record.schema.json"),
+            "schema_id const": (at(schema, "properties", "schema_id", "const"), "https://schemas.reiyah.invalid/gate-a/1.1.1/operator-decision-record.schema.json"),
+            "schema_version const": (at(schema, "properties", "schema_version", "const"), "1.1.1"),
+            "index artifact": (at(schema, "$defs", "indexBinding", "allOf",), None),
+            "1.1 protocol schema": (at(schema, "$defs", "protocolReleaseBinding1_1", "properties", "artifact", "allOf"), None),
+        }
+        for label, (actual, expected) in schema_expectations.items():
+            if expected is not None and actual != expected:
+                issues.append(f"{label} is {actual!r}, expected {expected!r}")
+        index_properties = at(schema, "$defs", "indexBinding", "allOf")
+        report_properties = at(schema, "$defs", "validationReportBinding", "allOf")
+        protocol_properties = at(schema, "$defs", "protocolReleaseBinding1_1", "properties", "artifact", "allOf")
+        index_properties = index_properties[1].get("properties", {}) if isinstance(index_properties, list) and len(index_properties) > 1 and isinstance(index_properties[1], dict) else {}
+        report_properties = report_properties[1].get("properties", {}) if isinstance(report_properties, list) and len(report_properties) > 1 and isinstance(report_properties[1], dict) else {}
+        protocol_properties = protocol_properties[1].get("properties", {}) if isinstance(protocol_properties, list) and len(protocol_properties) > 1 and isinstance(protocol_properties[1], dict) else {}
+        for field, expected in expected_index.items():
+            if at(index_properties, field, "const") != expected:
+                issues.append(f"decision schema index {field} does not bind {expected!r}")
+        for field, expected in expected_report.items():
+            if at(report_properties, field, "const") != expected:
+                issues.append(f"decision schema report {field} does not bind {expected!r}")
+        if at(protocol_properties, "schema_id", "const") != "https://schemas.reiyah.invalid/gate-a/1.1.0/protocol-manifest.schema.json":
+            issues.append("the unchanged 1.1 protocol release is not typed by the exact 1.1 protocol-manifest schema")
+
+        release_entries = ledger.get("entries") if isinstance(ledger.get("entries"), list) else []
+        ledger_bindings = {
+            entry.get("release_id"): entry.get("artifact_binding")
+            for entry in release_entries
+            if isinstance(entry, dict) and isinstance(entry.get("release_id"), str) and isinstance(entry.get("artifact_binding"), dict)
+        }
+        expected_release_ids = {
+            "reiyah.mission@1.0.0",
+            "reiyah.protocol.harbor-gate-a@1.0.0",
+            V11_MISSION_RELEASE_ID,
+            V11_PROTOCOL_RELEASE_ID,
+        }
+        if set(ledger_bindings) != expected_release_ids:
+            issues.append(f"release ledger set is {sorted(ledger_bindings)}, expected {sorted(expected_release_ids)}")
+
+        if (
+            template.get("schema_id") != schema.get("$id")
+            or template.get("schema_version") != "1.1.1"
+            or template.get("version") != "1.1.1"
+            or template.get("is_template") is not True
+            or template.get("scientific_claims_accepted") is not False
+            or not isinstance(template.get("template_notice"), str)
+        ):
+            issues.append("versioned template identity/non-authority fields do not match the 1.1.1 decision contract")
+        template_digest_placeholder = "sha256:REPLACE_WITH_64_LOWERCASE_HEX_DIGEST"
+        template_index = template.get("architecture_completeness_binding") if isinstance(template.get("architecture_completeness_binding"), dict) else {}
+        template_report = template.get("validation_report_binding") if isinstance(template.get("validation_report_binding"), dict) else {}
+        template_artifact_bindings = template.get("artifact_bindings") if isinstance(template.get("artifact_bindings"), list) else []
+        if template_artifact_bindings != [template_index]:
+            issues.append("template artifact_bindings must contain exactly the same single current-index reference as architecture_completeness_binding")
+        if template_index.get("sha256") != template_digest_placeholder or template_report.get("sha256") != template_digest_placeholder:
+            issues.append("template current-index and report digest slots must retain the exact recognizable replacement placeholder")
+        for field, expected in expected_index.items():
+            if template_index.get(field) != expected:
+                issues.append(f"template index {field} does not bind {expected!r}")
+        for field, expected in expected_report.items():
+            if template_report.get(field) != expected:
+                issues.append(f"template report {field} does not bind {expected!r}")
+        template_release_items = template.get("manifest_release_bindings") if isinstance(template.get("manifest_release_bindings"), list) else []
+        template_release_order = [item.get("release_id") for item in template_release_items if isinstance(item, dict)]
+        ledger_release_order = [
+            entry.get("release_id")
+            for entry in release_entries
+            if isinstance(entry, dict) and isinstance(entry.get("release_id"), str)
+        ]
+        if template_release_order != ledger_release_order or len(template_release_items) != len(expected_release_ids):
+            issues.append("template manifest_release_bindings must preserve the exact four-entry release-ledger order without duplicates")
+        template_releases = {
+            item.get("release_id"): item.get("artifact")
+            for item in template_release_items
+            if isinstance(item, dict) and isinstance(item.get("artifact"), dict)
+        }
+        if set(template_releases) != expected_release_ids:
+            issues.append("template does not bind exactly the immutable four-release ledger set")
+        for release_id, ledger_binding in ledger_bindings.items():
+            template_binding = template_releases.get(release_id)
+            for field in ("artifact_id", "path", "schema_id", "version"):
+                if not isinstance(template_binding, dict) or template_binding.get(field) != ledger_binding.get(field):
+                    issues.append(f"template {release_id} {field} does not equal the release ledger")
+            if not isinstance(template_binding, dict) or template_binding.get("sha256") != template_digest_placeholder:
+                issues.append(f"template {release_id} digest slot does not retain the exact recognizable replacement placeholder")
+
+        digest = "sha256:" + ("a" * 64)
+        index_reference = {**expected_index, "sha256": digest}
+        report_reference = {**expected_report, "sha256": digest}
+        synthetic = {
+            "schema_id": schema.get("$id"),
+            "schema_version": "1.1.1",
+            "artifact_id": "reiyah.synthetic.operator-decision-contract-1.1.1",
+            "record_id": "reiyah.synthetic.operator-decision-contract-1.1.1",
+            "version": "1.1.1",
+            "record_kind": "operator_gate_decision",
+            "is_template": False,
+            "gate_id": "reiyah.gate-a",
+            "decision": "deferred",
+            "operator_identity": "operator.synthetic-governance-contract",
+            "authority_basis": "Synthetic schema satisfiability test only; it authenticates no operator and creates no authority.",
+            "decided_at": "2026-08-24T00:00:00Z",
+            "rationale": "Synthetic deferred record used only to prove the static decision schema is satisfiable against exact packet and release identities; it is never retained as an operator decision.",
+            "risk_acknowledgements": template.get("risk_acknowledgements"),
+            "artifact_bindings": [index_reference],
+            "manifest_release_bindings": [
+                {"release_id": release_id, "artifact": binding}
+                for release_id, binding in ledger_bindings.items()
+            ],
+            "architecture_completeness_binding": index_reference,
+            "validation_report_binding": report_reference,
+            "scientific_claims_accepted": False,
+            "decision_sequence": 1,
+            "history_policy": "append_only_linear",
+            "supersedes_record_id": None,
+            "supersedes_record_sha256": None,
+        }
+        try:
+            validator = Draft202012Validator(schema, registry=self.registry, format_checker=self.format_checker)
+            schema_errors = sorted(validator.iter_errors(synthetic), key=lambda error: (list(error.absolute_path), error.message))
+        except Exception as exc:  # pragma: no cover - converted to deterministic contract failure
+            schema_errors = []
+            issues.append(f"synthetic satisfiability evaluation failed: {exc}")
+        if schema_errors:
+            rendered = [f"/{'/'.join(str(part) for part in error.absolute_path)}: {error.message}" for error in schema_errors]
+            issues.append(f"synthetic deferred non-authoritative record is not schema-satisfiable: {rendered}")
+        template_only_overlay = dict(view.overlay)
+        for candidate in view.iter_files():
+            if (
+                re.fullmatch(r"gate/decisions/[^/]+\.json", candidate)
+                and candidate not in {LEGACY_TEMPLATE_PATH, TEMPLATE_PATH}
+            ):
+                template_only_overlay[candidate] = None
+        template_scan_diagnostics = self.actual_decision_diagnostics(RepositoryView(self.root, template_only_overlay))
+        if template_scan_diagnostics:
+            issues.append("the shared actual-decision discovery path misclassifies one of the two exact immutable templates")
+        if end_to_end:
+            current_index_raw: bytes | None
+            current_report_raw: bytes | None
+            try:
+                current_index_raw = view.read_bytes(INDEX_PATH)
+            except (OSError, ValueError):
+                current_index_raw = None
+            try:
+                current_report_raw = view.read_bytes(REPORT_PATH)
+            except (OSError, ValueError):
+                current_report_raw = None
+
+            # The canonical report is produced by stdout redirection after validation,
+            # so an absent or zero-byte output is an expected generation window. Once
+            # both current artifacts contain bytes, require the shared exact replay path.
+            if current_index_raw and current_report_raw:
+                try:
+                    current_index = strict_json_loads(current_index_raw.decode("utf-8"))
+                    current_report = strict_json_loads(current_report_raw.decode("utf-8"))
+                except (UnicodeDecodeError, json.JSONDecodeError, StrictJSONError, ValueError) as exc:
+                    current_index = None
+                    current_report = None
+                    issues.append(f"current 1.1.1 index/report cannot support end-to-end decision replay: {exc}")
+                if (
+                    not isinstance(current_index, dict)
+                    or current_index.get("schema_id") != expected_index["schema_id"]
+                    or current_index.get("artifact_id") != expected_index["artifact_id"]
+                    or current_index.get("version") != expected_index["version"]
+                ):
+                    issues.append("current root evidence index is not the exact 1.1.1 packet identity")
+                if (
+                    not isinstance(current_report, dict)
+                    or current_report.get("schema_id") != expected_report["schema_id"]
+                    or current_report.get("artifact_id") != expected_report["artifact_id"]
+                    or current_report.get("version") != expected_report["version"]
+                ):
+                    issues.append("current validation report is not the exact 1.1.1 packet identity")
+            else:
+                current_index = None
+                current_report = None
+
+            if current_index_raw and current_report_raw and isinstance(current_index, dict) and isinstance(current_report, dict):
+                replay_index_reference = {**expected_index, "sha256": digest_bytes(current_index_raw)}
+                replay_report_reference = {**expected_report, "sha256": digest_bytes(current_report_raw)}
+                replay_record = dict(synthetic)
+                replay_record["artifact_bindings"] = [replay_index_reference]
+                replay_record["architecture_completeness_binding"] = replay_index_reference
+                replay_record["validation_report_binding"] = replay_report_reference
+                replay_overlay = dict(view.overlay)
+                for candidate in view.iter_files():
+                    if (
+                        re.fullmatch(r"gate/decisions/[^/]+\.json", candidate)
+                        and candidate not in {LEGACY_TEMPLATE_PATH, TEMPLATE_PATH}
+                    ):
+                        replay_overlay[candidate] = None
+                replay_path = "gate/decisions/reiyah.gate-a-decision-synthetic-contract.json"
+                replay_overlay[replay_path] = canonical_json_bytes(replay_record)
+                replay_diagnostics = self.actual_decision_diagnostics(RepositoryView(self.root, replay_overlay))
+                if replay_diagnostics:
+                    issues.append(
+                        "synthetic exact-digest decision fails the shared actual-decision replay path: "
+                        + repr(sorted({item.get("rule_id") for item in replay_diagnostics}))
+                    )
+        if issues:
+            return [
+                make_diagnostic(
+                    "GA-OPERATOR-DECISION-CONTRACT",
+                    schema_path,
+                    "Gate A 1.1.1 operator-decision schema/template/release/index/report contract is inconsistent; "
+                    f"violations={sorted(set(issues))}.",
+                )
+            ]
+        return []
+
+    def public_distribution_receipt_contract_diagnostics(
+        self,
+        view: RepositoryView,
+        variant: str,
+    ) -> list[dict[str, Any]]:
+        """Exercise the shared receipt path with a non-retained sequence-2 overlay."""
+
+        def failure(message: str) -> list[dict[str, Any]]:
+            return [
+                make_diagnostic(
+                    "GA-PUBLIC-DISTRIBUTION-RECEIPT",
+                    "schemas/public-distribution-receipt-1.1.1.schema.json",
+                    message,
+                )
+            ]
+
+        def clone_json(value: Any) -> Any:
+            return strict_json_loads(canonical_json_bytes(value).decode("utf-8"))
+
+        old_rights = self.read_view_json(view, PUBLIC_RIGHTS_REVALIDATION_PATH)
+        initial_receipt = self.read_view_json(view, INITIAL_PUBLIC_RECEIPT_PATH)
+        predecessor_index = self.read_view_json(view, HISTORICAL_V11_INDEX_PATH)
+        predecessor_report = self.read_view_json(view, HISTORICAL_V11_REPORT_PATH)
+        if not all(isinstance(item, dict) for item in (old_rights, initial_receipt, predecessor_index, predecessor_report)):
+            return failure("Synthetic successor feasibility requires the exact retained 1.1.0 rights, receipt, index, and report objects.")
+
+        try:
+            old_rights_raw = view.read_bytes(PUBLIC_RIGHTS_REVALIDATION_PATH)
+            initial_receipt_raw = view.read_bytes(INITIAL_PUBLIC_RECEIPT_PATH)
+        except (OSError, ValueError):
+            return failure("Synthetic successor feasibility cannot read immutable predecessor rights/receipt bytes.")
+
+        synthetic_index = clone_json(predecessor_index)
+        synthetic_index.update(
+            {
+                "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/gate-a-index.schema.json",
+                "schema_version": "1.1.1",
+                "artifact_id": "reiyah.artifact.gate-a-index-1.1.1",
+                "version": "1.1.1",
+                "as_of_date": "2026-08-24",
+                "prior_candidate_observation": {
+                    "artifact_id": "reiyah.artifact.gate-a-index-1.1.0",
+                    "version": "1.1.0",
+                    "sha256": HISTORICAL_V11_INDEX_DIGEST,
+                    "observed_on": "2026-08-23",
+                    "distribution_state": "public_packet_published_receipt_bound",
+                    "evidence_eligible": False,
+                },
+            }
+        )
+        synthetic_index_raw = canonical_json_bytes(synthetic_index)
+
+        synthetic_report = clone_json(predecessor_report)
+        synthetic_report.update(
+            {
+                "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/validation-report.schema.json",
+                "schema_version": "1.1.1",
+                "artifact_id": "reiyah.validation-report.gate-a-1.1.1",
+                "version": "1.1.1",
+                "validation_plan_id": "reiyah.validation-plan.gate-a-public-1.1.1",
+                "index_binding": {
+                    "path": INDEX_PATH,
+                    "sha256": digest_bytes(synthetic_index_raw),
+                },
+            }
+        )
+        synthetic_report_raw = canonical_json_bytes(synthetic_report)
+
+        synthetic_rights = clone_json(old_rights)
+        synthetic_rights.update(
+            {
+                "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/public-rights-revalidation.schema.json",
+                "schema_version": "1.1.1",
+                "artifact_id": "reiyah.artifact.public-rights-revalidation-2026-08-24",
+                "observation_id": "reiyah.public-rights-revalidation.governance-correction-publication",
+                "version": "1.1.1",
+                "observed_at": "2026-08-24T10:00:00Z",
+                "prior_observation_ref": {
+                    "artifact_id": old_rights.get("artifact_id"),
+                    "version": old_rights.get("version"),
+                    "path": PUBLIC_RIGHTS_REVALIDATION_PATH,
+                    "sha256": digest_bytes(old_rights_raw),
+                    "byte_size": len(old_rights_raw),
+                },
+            }
+        )
+        for observation in synthetic_rights.get("basis_observations", []):
+            if isinstance(observation, dict):
+                observation["observed_at"] = synthetic_rights["observed_at"]
+        synthetic_rights_raw = canonical_json_bytes(synthetic_rights)
+
+        expected_successor_authorization = {
+            "basis_state": "observed_current_operator_instruction",
+            "recorded_date": "2026-08-24",
+            "authorized_action": "publish_exact_static_gate_a_1.1.1_governance_correction",
+            "scope_limit": "Exact static Gate A 1.1.1 governance-correction packet and the unchanged four eligible retained payloads; no new evidence, private data, runtime, deployment, or unauthorized source payloads.",
+            "operator_identity_authentication": "not_evaluated",
+            "ga17_effect": "not_evaluated",
+            "gate_a_acceptance_effect": "none",
+            "scientific_publication_acceptance_effect": "none",
+            "runtime_execution_effect": "none",
+        }
+        synthetic_receipt = clone_json(initial_receipt)
+        synthetic_receipt.update(
+            {
+                "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/public-distribution-receipt.schema.json",
+                "schema_version": "1.1.1",
+                "artifact_id": "reiyah.artifact.public-distribution-receipt-1.1.1",
+                "receipt_id": "reiyah.public-distribution-receipt.governance-correction-publication",
+                "version": "1.1.1",
+                "recorded_at": "2026-08-24T10:05:20Z",
+                "published_at": "2026-08-24T10:05:00Z",
+                "published_git_commit": "b" * 40,
+                "receipt_sequence": 2,
+                "prior_receipt_ref": {
+                    "artifact_id": initial_receipt.get("artifact_id"),
+                    "version": initial_receipt.get("version"),
+                    "path": INITIAL_PUBLIC_RECEIPT_PATH,
+                    "sha256": digest_bytes(initial_receipt_raw),
+                    "byte_size": len(initial_receipt_raw),
+                },
+                "rights_revalidation_ref": {
+                    "artifact_id": synthetic_rights.get("artifact_id"),
+                    "version": synthetic_rights.get("version"),
+                    "path": SUCCESSOR_PUBLIC_RIGHTS_REVALIDATION_PATH,
+                    "sha256": digest_bytes(synthetic_rights_raw),
+                    "byte_size": len(synthetic_rights_raw),
+                },
+                "published_index_ref": {
+                    "artifact_id": synthetic_index.get("artifact_id"),
+                    "version": synthetic_index.get("version"),
+                    "path": INDEX_PATH,
+                    "sha256": digest_bytes(synthetic_index_raw),
+                    "byte_size": len(synthetic_index_raw),
+                },
+                "validation_report_ref": {
+                    "artifact_id": synthetic_report.get("artifact_id"),
+                    "version": synthetic_report.get("version"),
+                    "path": REPORT_PATH,
+                    "sha256": digest_bytes(synthetic_report_raw),
+                    "byte_size": len(synthetic_report_raw),
+                },
+                "rights_observation_age_seconds": 300,
+                "distribution_authorization": expected_successor_authorization,
+                "remote_readback": {
+                    **synthetic_receipt.get("remote_readback", {}),
+                    "verified_at": "2026-08-24T10:05:10Z",
+                    "tree_contains_exact_validation_report": True,
+                },
+            }
+        )
+
+        if variant == "legacy_authorization_reuse":
+            synthetic_receipt["schema_id"] = "https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-receipt.schema.json"
+            synthetic_receipt["schema_version"] = "1.1.0"
+            synthetic_receipt["version"] = "1.1.0"
+            synthetic_receipt["distribution_authorization"] = clone_json(initial_receipt.get("distribution_authorization"))
+            synthetic_receipt.pop("validation_report_ref", None)
+        elif variant == "missing_validation_report_binding":
+            synthetic_receipt.pop("validation_report_ref", None)
+        elif variant == "missing_validation_report_readback":
+            synthetic_receipt["remote_readback"].pop("tree_contains_exact_validation_report", None)
+        elif variant == "stale_index_binding":
+            synthetic_receipt["published_index_ref"] = {
+                "artifact_id": "reiyah.artifact.gate-a-index-1.1.0",
+                "version": "1.1.0",
+                "path": INDEX_PATH,
+                "sha256": HISTORICAL_V11_INDEX_DIGEST,
+                "byte_size": len(canonical_json_bytes(predecessor_index)),
+            }
+        elif variant == "stale_rights_binding":
+            synthetic_receipt["rights_revalidation_ref"]["sha256"] = "sha256:" + ("c" * 64)
+        elif variant == "stale_report_binding":
+            synthetic_receipt["validation_report_ref"]["sha256"] = "sha256:" + ("c" * 64)
+        elif variant == "stale_prior_receipt_binding":
+            synthetic_receipt["prior_receipt_ref"]["sha256"] = "sha256:" + ("c" * 64)
+        elif variant == "stale_custody_binding":
+            synthetic_receipt["custody_profile_ref"]["sha256"] = "sha256:" + ("c" * 64)
+        elif variant == "chronology_mismatch":
+            synthetic_receipt["published_at"] = "2026-08-24T09:59:59Z"
+            synthetic_receipt["rights_observation_age_seconds"] = 0
+        elif variant == "rights_chronology_mismatch":
+            synthetic_rights["observed_at"] = "2026-08-22T10:00:00Z"
+            for observation in synthetic_rights.get("basis_observations", []):
+                if isinstance(observation, dict):
+                    observation["observed_at"] = synthetic_rights["observed_at"]
+            synthetic_rights_raw = canonical_json_bytes(synthetic_rights)
+            synthetic_receipt["rights_revalidation_ref"]["sha256"] = digest_bytes(synthetic_rights_raw)
+            synthetic_receipt["rights_revalidation_ref"]["byte_size"] = len(synthetic_rights_raw)
+        elif variant == "same_commit_reuse":
+            synthetic_receipt["published_git_commit"] = initial_receipt.get("published_git_commit")
+        elif variant != "current":
+            return failure(f"Unknown synthetic successor receipt variant {variant!r}.")
+
+        synthetic_receipt_path = "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.1.json"
+        overlay = dict(view.overlay)
+        overlay[INDEX_PATH] = synthetic_index_raw
+        overlay[REPORT_PATH] = synthetic_report_raw
+        overlay[SUCCESSOR_PUBLIC_RIGHTS_REVALIDATION_PATH] = synthetic_rights_raw
+        overlay[synthetic_receipt_path] = canonical_json_bytes(synthetic_receipt)
+        synthetic_view = RepositoryView(self.root, overlay)
+        diagnostics = self.public_custody_diagnostics(synthetic_view)
+        if variant == "current":
+            diagnostics.extend(self.instance_diagnostics(synthetic_index, INDEX_PATH))
+            diagnostics.extend(self.instance_diagnostics(synthetic_report, REPORT_PATH))
+        return sorted(diagnostics, key=diagnostic_key)
+
     def fixture_case_diagnostics(self, case: dict[str, Any], case_path: str) -> list[dict[str, Any]]:
         payload = case.get("payload", {})
         if not isinstance(payload, dict):
             return [make_diagnostic("GA-FIXTURE-HANDLER", case_path, "Fixture payload is not an object.", case.get("fixture_id"))]
         kind = payload.get("kind")
         fixture_id = case.get("fixture_id") if isinstance(case.get("fixture_id"), str) else None
-        if case.get("classification") == "known_bad" and kind not in {"production_mutation", "identity", "production_identity"}:
+        if case.get("classification") == "known_bad" and kind not in {"production_mutation", "identity", "production_identity", "public_distribution_receipt_contract"}:
             return [make_diagnostic("GA-FIXTURE-HANDLER", case_path, "Known-bad fixtures must invoke a production RepositoryView diagnostic or the exact shared identity preflight.", fixture_id)]
         if kind == "production_mutation":
+            mutations = payload.get("mutations")
+            if fixture_id == "reiyah.fixture.bad.excluded-canonical-report-private-bytes":
+                expected_legacy_mutation = {
+                    "operation": "add_file",
+                    "path": HISTORICAL_V11_REPORT_PATH,
+                    "content_utf8": '#!/usr/bin/env python3\nopen("gate/pwned.json", "w").write("{}")\n',
+                }
+                if (
+                    case_path != "fixtures/bad/excluded-canonical-report-private-bytes.json"
+                    or payload.get("production_check") != "repository_inventory"
+                    or mutations != [expected_legacy_mutation]
+                ):
+                    return [make_diagnostic("GA-FIXTURE-HANDLER", case_path, "The immutable legacy canonical-report intrusion fixture no longer has its exact released shape.", fixture_id)]
+                mutations = [{**expected_legacy_mutation, "path": REPORT_PATH}]
             try:
-                view = self.mutation_view(payload.get("mutations"))
+                view = self.mutation_view(mutations)
             except (OSError, UnicodeDecodeError, json.JSONDecodeError, ValueError) as exc:
                 return [make_diagnostic("GA-FIXTURE-HANDLER", case_path, f"Cannot construct production mutation view: {exc}", fixture_id)]
             production_check = payload.get("production_check")
@@ -7609,6 +8491,10 @@ class GateAValidator:
                 return self.historical_recovery_diagnostics(view)
             if production_check == "scientific_contract_profile":
                 return self.scientific_contract_profile_diagnostics(view)
+            if production_check == "operator_decision_contract":
+                return self.operator_decision_contract_diagnostics(view)
+            if production_check == "predecessor_packet":
+                return self.predecessor_packet_drift_diagnostics(view)
             if production_check == "evidence_index":
                 return self.index_canonical_diagnostics(view)
             if production_check == "decision_history":
@@ -7642,6 +8528,10 @@ class GateAValidator:
             if production_check == "actual_decisions":
                 return self.actual_decision_diagnostics(view)
             return [make_diagnostic("GA-FIXTURE-HANDLER", case_path, f"Unknown production_check {production_check!r}.", fixture_id)]
+        if kind == "operator_decision_contract":
+            return self.operator_decision_contract_diagnostics(self.view)
+        if kind == "public_distribution_receipt_contract":
+            return self.public_distribution_receipt_contract_diagnostics(self.view, payload.get("variant"))
         if kind in {"identity", "production_identity"}:
             return identity_authority_diagnostics(payload, case_path, fixture_id)
         if kind == "canonical_chain":
@@ -7781,7 +8671,7 @@ class GateAValidator:
                 continue
             payload = case.get("payload")
             kind = payload.get("kind") if isinstance(payload, dict) else None
-            if kind not in {"production_mutation", "identity", "production_identity"}:
+            if kind not in {"production_mutation", "identity", "production_identity", "public_distribution_receipt_contract"}:
                 self.add("GA-FIXTURE-COVERAGE", relative, "Known-bad fixture bypasses the production diagnostic path.", case.get("fixture_id"))
         for rule_id in rule_ids:
             count = bad_rules.count(rule_id)
@@ -7855,6 +8745,7 @@ class GateAValidator:
                 isinstance(data, dict)
                 and (
                     data.get("schema_id") == "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json"
+                    or data.get("schema_id") == "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-case.schema.json"
                     or data.get("schema_id") == V11_MUTATION_SCHEMA_ID
                     or data.get("schema_id") in V11_APPLICATION_RULES
                 )
@@ -8471,13 +9362,16 @@ class GateAValidator:
                 PUBLIC_DISTRIBUTION_INVENTORY_PATH: "public_distribution_inventory",
                 PUBLIC_CUSTODY_PROFILE_PATH: "public_evidence_custody_profile",
                 PUBLIC_RIGHTS_REVALIDATION_PATH: "public_rights_revalidation",
+                SUCCESSOR_PUBLIC_RIGHTS_REVALIDATION_PATH: "public_rights_revalidation",
                 ACTIVE_SOURCE_LEDGER_PATH: "source_ledger",
                 "evidence/source-ledger.json": "historical_source_ledger",
                 ACTIVE_STANDARDS_CROSSWALK_PATH: "standards_crosswalk",
                 "evidence/standards-crosswalk.json": "historical_standards_crosswalk",
                 CATALOG_PATH: "fixture_catalog",
                 "gate/validation-reports/gate-a-validation-1.0.0.json": "historical_candidate_artifact",
+                HISTORICAL_V11_REPORT_PATH: "historical_candidate_artifact",
                 "gate/README.md": "acceptance_procedure",
+                LEGACY_TEMPLATE_PATH: "operator_decision_template",
                 TEMPLATE_PATH: "operator_decision_template",
                 "manifests/manifest-release-ledger.json": "manifest_release_ledger",
                 "manifests/history/manifest-release-ledger-1.0.0.json": "historical_manifest_release_ledger",
@@ -8501,6 +9395,7 @@ class GateAValidator:
             }
             fixture_schema_ids = {
                 "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
+                "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-case.schema.json",
                 V11_MUTATION_SCHEMA_ID,
             }
             mission_schema_ids = {
@@ -8517,9 +9412,15 @@ class GateAValidator:
                 "frontier_discovery_register": {"https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json"},
                 "public_distribution_inventory": {"https://schemas.reiyah.invalid/gate-a/1.1.0/public-distribution-inventory.schema.json"},
                 "public_evidence_custody_profile": {"https://schemas.reiyah.invalid/gate-a/1.1.0/public-evidence-custody-profile.schema.json"},
-                "public_rights_revalidation": {"https://schemas.reiyah.invalid/gate-a/1.1.0/public-rights-revalidation.schema.json"},
-                "fixture_catalog": {"https://schemas.reiyah.invalid/gate-a/1.1.0/fixture-catalog.schema.json"},
-                "operator_decision_template": {"https://schemas.reiyah.invalid/gate-a/1.1.0/operator-decision-record.schema.json"},
+                "public_rights_revalidation": {
+                    "https://schemas.reiyah.invalid/gate-a/1.1.0/public-rights-revalidation.schema.json",
+                    "https://schemas.reiyah.invalid/gate-a/1.1.1/public-rights-revalidation.schema.json",
+                },
+                "fixture_catalog": {"https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-catalog.schema.json"},
+                "operator_decision_template": {
+                    "https://schemas.reiyah.invalid/gate-a/1.1.0/operator-decision-record.schema.json",
+                    "https://schemas.reiyah.invalid/gate-a/1.1.1/operator-decision-record.schema.json",
+                },
                 "historical_packet_recovery": {"https://schemas.reiyah.invalid/gate-a/1.1.0/historical-packet-recovery.schema.json"},
             }
             ledger_document = self.read_view_json(view, "manifests/manifest-release-ledger.json")
@@ -8606,6 +9507,10 @@ class GateAValidator:
                     return None
                 if relative.startswith("history/gate-a-1.0.0/"):
                     return "historical_candidate_artifact"
+                if relative in {HISTORICAL_V11_INDEX_PATH, HISTORICAL_V11_SIDECAR_PATH}:
+                    return "historical_candidate_artifact"
+                if relative.startswith("history/gate-a-1.1.0/"):
+                    return None
                 return None
 
             indexed_items_by_path: dict[str, list[dict[str, Any]]] = {}
@@ -8959,7 +9864,8 @@ class GateAValidator:
         actual_paths = sorted(
             relative
             for relative in view.iter_files()
-            if re.fullmatch(r"gate/decisions/[^/]+\.json", relative) and relative != TEMPLATE_PATH
+            if re.fullmatch(r"gate/decisions/[^/]+\.json", relative)
+            and relative not in {LEGACY_TEMPLATE_PATH, TEMPLATE_PATH}
         )
         if not actual_paths:
             return []
@@ -8986,17 +9892,21 @@ class GateAValidator:
         diagnostics.extend(self.decision_history_diagnostics(records, view))
 
         expected_index_reference = {
-            "artifact_id": "reiyah.artifact.gate-a-index-1.1.0",
+            "artifact_id": "reiyah.artifact.gate-a-index-1.1.1",
             "path": INDEX_PATH,
             "sha256": current_index_digest,
-            "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/gate-a-index.schema.json",
-            "version": "1.1.0",
+            "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/gate-a-index.schema.json",
+            "version": "1.1.1",
         }
         expected_report = self.canonical_architecture_report(view)
         for relative, record in records:
             record_id = record.get("record_id") if isinstance(record.get("record_id"), str) else None
             if record.get("is_template") is not False:
                 diagnostics.append(make_diagnostic("GA-ACCEPTANCE-REPLAY", relative, "Actual decision record is still marked as a template.", record_id))
+            for field in ("artifact_id", "record_id"):
+                value = record.get(field)
+                if not isinstance(value, str) or re.search(r"(?:replace|placeholder|\bTBD\b|\bTODO\b)", value, re.IGNORECASE):
+                    diagnostics.append(make_diagnostic("GA-ACCEPTANCE-REPLAY", relative, f"Decision {field} must be a non-placeholder stable identifier.", record_id))
             meaningful_fields = {
                 "operator_identity": 3,
                 "authority_basis": 20,
@@ -9142,6 +10052,7 @@ class GateAValidator:
         self.check_scientific_contract_profile()
         self.check_sources_and_crosswalk()
         self.check_public_custody()
+        self.check_predecessor_packet_drift()
         self.check_narrative_bindings()
         self.diagnostics.extend(self.mission_boundary_diagnostics(self.view))
         self.diagnostics.extend(self.threat_coverage_diagnostics(self.view))
@@ -9152,6 +10063,7 @@ class GateAValidator:
         self.check_scope_inventory()
         self.check_index()
         self.check_current_report_coverage()
+        self.diagnostics.extend(self.operator_decision_contract_diagnostics(self.view, end_to_end=True))
         self.check_actual_decisions()
 
 

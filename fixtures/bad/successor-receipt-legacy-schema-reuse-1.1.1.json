@@ -1,0 +1,20 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-case.schema.json",
+  "schema_version": "1.1.1",
+  "artifact_id": "reiyah.fixture.bad.successor-receipt-legacy-schema-reuse-1.1.1",
+  "fixture_id": "reiyah.fixture.bad.successor-receipt-legacy-schema-reuse-1.1.1",
+  "version": "1.1.1",
+  "classification": "known_bad",
+  "description": "Receipt sequence 2 cannot reuse the generic 1.1.0 receipt schema or its 2026-08-23 authorization.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-017", "TM-020", "TM-022"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+  "payload": {
+    "kind": "public_distribution_receipt_contract",
+    "variant": "legacy_authorization_reuse",
+    "receipt_sequence": 2,
+    "non_authoritative": true,
+    "expected_external_control_status": "not_evaluated"
+  }
+}

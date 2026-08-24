@@ -14,15 +14,40 @@ From the verified Reiyah Git root:
 python3 tools/validate_gate_a.py
 ```
 
-When indexed architecture bytes intentionally change, rebuild the acyclic candidate index
-before validation. The builder itself writes only to stdout; these explicit shell redirects are
-the authorized mechanical update:
+The frozen public Gate A `1.1.0` index and report must not be regenerated in place. Once a
+candidate has been distributed for review or public transport, any intentional change to an
+indexed byte requires a newly versioned Gate A packet with successor schema and validation-plan
+bindings, an exact new index, a fresh report, and a new review target.
+
+Gate A `1.1.1` is a governance-correction candidate. It retains
+`reiyah.mission@1.1.0` and `reiyah.protocol.harbor-gate-a@1.1.0` unchanged. Its governance
+schemas and tool contracts define a `1.1.1` evidence index at
+`gate/GATE_A_EVIDENCE_INDEX.json` and a canonical report at
+`gate/validation-reports/gate-a-validation-1.1.1.json`. The sidecar digest-binds the candidate
+index, and the canonical report binds that same index. A later decision or valid distribution
+receipt can exact-bind the report bytes; the receipt also carries the packet commit and remote
+readback. Indexed prose does not duplicate those values, and no `1.1.0` identity may stand in for
+a `1.1.1` value.
+
+During successor construction, the builder's stdout may be inspected outside the repository
+before the canonical `1.1.1` index and sidecar are deliberately replaced:
 
 ```sh
-python3 tools/build_gate_a_index.py > gate/GATE_A_EVIDENCE_INDEX.json
-python3 tools/build_gate_a_index.py --sidecar > gate/GATE_A_EVIDENCE_INDEX.sha256
+python3 tools/build_gate_a_index.py > /tmp/reiyah-gate-a-index-candidate.json
+python3 tools/build_gate_a_index.py --sidecar > /tmp/reiyah-gate-a-index-candidate.sha256
 python3 tools/validate_gate_a.py
 ```
+
+Until every successor input, canonical index, sidecar, and report is present, validation may
+correctly classify the worktree as an incomplete candidate. That state is not permission to
+overwrite or relabel the retained `1.1.0` report or its immutable historical index snapshot. The
+builder remains stdout-only and the validator remains offline and read-only.
+
+The sequence-one distribution receipt keeps its original logical root-index path. The validator
+resolves that historical binding only to the byte-exact [Gate A `1.1.0` index
+snapshot](../history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.json) and [sidecar](../history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.sha256).
+The current root index is exclusively the `1.1.1` candidate. Neither version can substitute for
+the other.
 
 The index excludes itself, its sidecar, the exact canonical report path, append-only operator
 decision records, Git internals, and declared transient caches. Those exclusions and reasons are
@@ -66,12 +91,17 @@ known-bad fixture must reject for its exact primary rule, and the control summar
 GA-01 through GA-16 required, covered, and passed with no failed controls. GA-17 remains
 external operator authority and is always `not_evaluated` by the offline validator.
 
+The retained Gate A `1.1.1` report recomputes 60 schemas, 223 normative instances, 179 fixtures,
+and 1,010 required-property mutations for the exact successor index. Its zero-diagnostic full
+run classifies those indexed bytes as `architecture_complete`. It does not inherit the frozen
+packet's result and remains operator unaccepted with GA-17 `not_evaluated`.
+
 The historical Gate A `1.0.0` report covered 25 schemas, 122 normative instances, 91 fixture
 cases, eight retained sources, and 164 indexed artifacts. Those numbers describe only the
 historical packet and are not expectations for `1.1.0`.
 
-The 140 known-bad cases are reason-specific counterexamples and must reject for their exact
-declared primary rules. Production-overlay families invoke the same diagnostic functions as a
+The 164 Gate A `1.1.1` known-bad cases are reason-specific counterexamples and must reject for
+their exact declared primary rules. Production-overlay families invoke the same diagnostic functions as a
 real repository check. They exercise mission and manifest authority,
 claims, threat coverage, scientific lineage and references, preregistration freezes, evidence
 witnesses, belief and epistemic policies, denominators and uncertainty, worst-group selection,
@@ -83,14 +113,11 @@ Use `--format json` for a machine-readable report and `--fixture-only` to replay
 fixture catalog. These modes must be observational and produce no stored result unless the
 operator explicitly redirects stdout outside the validator.
 
-A closeout may retain the machine-readable integrity report without placing it inside the
-index's input cycle:
-
-```sh
-mkdir -p gate/validation-reports
-python3 tools/validate_gate_a.py --format json > \
-  gate/validation-reports/gate-a-validation-1.1.0.json
-```
+A closeout may retain a machine-readable integrity report without placing it inside the index's
+input cycle. The frozen report at
+`gate/validation-reports/gate-a-validation-1.1.0.json` must not be overwritten. Retain the
+successor report only at `gate/validation-reports/gate-a-validation-1.1.1.json` after the
+`1.1.1` index is canonical and the full run succeeds.
 
 The retained report binds the evidence-index digest and remains an integrity signal only. Its
 canonical sorted JSON bytes, exact coverage totals, zero diagnostics, and GA-01 through GA-16
@@ -105,8 +132,9 @@ the Git commit, a network, or mutable external services. Paths are repository-re
 diagnostics are sorted by code and path. SHA-256 is calculated over exact stored bytes.
 
 The validated toolchain and library versions are recorded in the session handoff after each
-architecture closeout. A toolchain difference is visible provenance, not permission to change
-expected fixture outcomes.
+architecture closeout. The frozen Gate A `1.1.0` report used CPython `3.14.2`, `jsonschema`
+`4.26.0`, and `referencing` `0.37.0`. A toolchain difference is visible provenance, not
+permission to change expected fixture outcomes.
 
 ## Result interpretation
 

@@ -1,0 +1,31 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-case.schema.json",
+  "schema_version": "1.1.1",
+  "version": "1.1.1",
+  "classification": "known_bad",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-017",
+    "TM-020"
+  ],
+  "artifact_id": "reiyah.fixture.bad.public-receipt-rights-observation-unresolved-1.1.1",
+  "fixture_id": "reiyah.fixture.bad.public-receipt-rights-observation-unresolved-1.1.1",
+  "description": "A receipt cannot relabel its immutable rights reference to a different publication event without exact target bytes and identity.",
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "public_custody",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.0.json",
+        "json_pointer": "/rights_revalidation_ref/path",
+        "value": "evidence/public-rights-revalidation-2026-08-24.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-case.schema.json",
+  "schema_version": "1.1.1",
+  "artifact_id": "reiyah.fixture.bad.successor-receipt-chronology-mismatch-1.1.1",
+  "fixture_id": "reiyah.fixture.bad.successor-receipt-chronology-mismatch-1.1.1",
+  "version": "1.1.1",
+  "classification": "known_bad",
+  "description": "Receipt sequence 2 cannot claim publication before its fresh rights observation.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-009", "TM-017", "TM-022"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+  "payload": {
+    "kind": "public_distribution_receipt_contract",
+    "variant": "chronology_mismatch",
+    "receipt_sequence": 2,
+    "non_authoritative": true,
+    "expected_external_control_status": "not_evaluated"
+  }
+}

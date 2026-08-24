@@ -284,8 +284,8 @@ credibility assessment. Label: **EXTERNAL_PRIMARY_UNRETAINED**.
 
 HARBOR should expose static interfaces for ODD, scenario, test-case, hazard, claim, argument,
 evidence, assumption, defeater, validity, and change impact before any safety claim is possible.
-Gate A is correctly not a safety case. These interfaces are future prerequisites only and do not
-authorize simulation, road testing, control, deployment, or certification.
+Gate A is not a safety case. These interfaces are future prerequisites only and do not authorize
+simulation, road testing, control, deployment, or certification.
 
 ## Tesla and Mobileye as bounded comparators
 

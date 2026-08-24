@@ -1,0 +1,31 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-case.schema.json",
+  "schema_version": "1.1.1",
+  "artifact_id": "reiyah.fixture.bad.historical-1.1-prefix-intrusion-1.1.1",
+  "fixture_id": "reiyah.fixture.bad.historical-1.1-prefix-intrusion-1.1.1",
+  "version": "1.1.1",
+  "classification": "known_bad",
+  "description": "Only the exact frozen 1.1.0 index and sidecar may occupy the successor history prefix.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-005",
+    "TM-021",
+    "TM-023"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-INDEX-ROLE-INELIGIBLE"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "repository_inventory",
+    "mutations": [
+      {
+        "operation": "add_file",
+        "path": "history/gate-a-1.1.0/rogue.json",
+        "content_utf8": "{}\n"
+      }
+    ]
+  }
+}

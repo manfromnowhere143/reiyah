@@ -1,0 +1,32 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-case.schema.json",
+  "schema_version": "1.1.1",
+  "version": "1.1.1",
+  "classification": "known_bad",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "artifact_id": "reiyah.fixture.bad.predecessor-legacy-template-drift-1.1.1",
+  "fixture_id": "reiyah.fixture.bad.predecessor-legacy-template-drift-1.1.1",
+  "description": "The frozen legacy operator template remains append-only and cannot be silently rewritten by the successor packet.",
+  "threat_ids": [
+    "TM-005",
+    "TM-020",
+    "TM-027"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-PREDECESSOR-PACKET-DRIFT"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "predecessor_packet",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "gate/decisions/OPERATOR_DECISION.template.json",
+        "json_pointer": "/template_notice",
+        "value": "NON-NORMATIVE altered legacy template bytes must be rejected."
+      }
+    ]
+  }
+}

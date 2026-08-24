@@ -4,9 +4,9 @@ This directory separates retained source bytes from source identity, discovery p
 distribution authorization. None of these artifacts is scientific, safety, standards,
 compliance, publication, or operator authority.
 
-## Current Gate A 1.1 profile
+## Frozen Gate A 1.1.0 profile
 
-The candidate public profile consists of these versioned artifacts:
+The frozen public profile consists of these versioned artifacts:
 
 - [`public-evidence-custody-profile-1.1.0.json`](public-evidence-custody-profile-1.1.0.json)
   defines the admissible custody states and authority limits.
@@ -31,6 +31,13 @@ public worktree. Their former local identities and digests remain visible as his
 metadata, but they are inadmissible under the current profile and unauthorized for payload
 distribution.
 
+## Gate A 1.1.1 pre-transport observation
+
+[`public-rights-revalidation-2026-08-24.json`](public-rights-revalidation-2026-08-24.json) is the
+add-only Gate A `1.1.1` observation for the governance-correction distribution event. It binds
+the earlier observation by exact path, digest, size, and version. It neither expands the frozen
+`1.1.0` evidence profile nor authorizes or establishes distribution.
+
 ## Historical records
 
 [`source-ledger.json`](source-ledger.json) and
@@ -40,13 +47,28 @@ distribution profile. Historical visibility does not restore source eligibility 
 
 ## Distribution state
 
-The operator authorized public distribution of the exact static open source candidate within
-the inventory boundary. Before the first push, `distribution_executed` remains false. The
-mutable official rights pages must be observed again before each payload distribution event. An
-unreachable page or contradiction fails closed. After an actual push, a separate append-only
-receipt must bind the published commit, inventory, rights observation, and exact four payloads.
-Such a receipt records transport only. It cannot evaluate GA-17, accept Gate A, support a claim,
-or authorize runtime.
+The operator authorized public distribution of the exact static open source Gate A `1.1.0`
+candidate within the inventory boundary. The frozen packet was published at commit
+`aa5f9b9b455219536183630b0be1e801a18a575e`. Verified remote readback is recorded in the
+append-only [public distribution
+receipt](../gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.0.json),
+which was added at commit `68854b474f7c4ebd95cc79ced56411c2d5935f78`.
+
+The base custody and inventory records retain `distribution_executed: false` because they bind
+the pre-transport packet. The receipt separately records that transport occurred. It cannot
+evaluate GA-17, accept Gate A, support a claim, or authorize runtime.
+
+Gate A `1.1.1` is a governance-correction candidate and does not change the `1.1.0` evidence
+profile, mission release, or protocol release. Its indexed bytes cannot contain their own later
+transport commit or remote readback. Inspect the latest valid append-only receipt for those facts;
+without a receipt binding the `1.1.1` index, transport is unverified. Mutable official rights
+pages must be observed again before each later payload distribution event; an unreachable page or
+contradiction fails closed.
+
+The `2026-08-24` observation is therefore a pre-transport input, not a transport receipt. Only a
+valid receipt sequence two can bind it to the exact successor index, validation report, published
+commit, and verified remote readback. A future distribution event requires another versioned
+observation and receipt contract rather than reuse of this event-specific record.
 
 ## Contributor rule
 

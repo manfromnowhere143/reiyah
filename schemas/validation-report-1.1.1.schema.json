@@ -1,0 +1,674 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.1/validation-report.schema.json",
+  "title": "Deterministic offline Gate A public validation report",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "report_id",
+    "version",
+    "validation_plan_id",
+    "mission_release_id",
+    "protocol_release_id",
+    "distribution_profile",
+    "source_ledger_version",
+    "mode",
+    "result",
+    "exit_code",
+    "architecture_status",
+    "index_binding",
+    "offline",
+    "read_only",
+    "runtime_authorized",
+    "acceptance_created",
+    "diagnostic_sort",
+    "diagnostics",
+    "fixture_summary",
+    "check_summary",
+    "control_summary",
+    "toolchain"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.1/validation-report.schema.json"
+    },
+    "schema_version": {
+      "const": "1.1.1"
+    },
+    "artifact_id": {
+      "const": "reiyah.validation-report.gate-a-1.1.1"
+    },
+    "report_id": {
+      "const": "reiyah.validation-report.gate-a"
+    },
+    "version": {
+      "const": "1.1.1"
+    },
+    "validation_plan_id": {
+      "const": "reiyah.validation-plan.gate-a-public-1.1.1"
+    },
+    "mode": {
+      "enum": [
+        "full",
+        "fixture_only"
+      ]
+    },
+    "result": {
+      "enum": [
+        "pass",
+        "fail",
+        "execution_error"
+      ]
+    },
+    "exit_code": {
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "architecture_status": {
+      "enum": [
+        "not_evaluated",
+        "invalid",
+        "architecture_complete"
+      ]
+    },
+    "index_binding": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "const": "gate/GATE_A_EVIDENCE_INDEX.json"
+            },
+            "sha256": {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/common.schema.json#/$defs/sha256Digest"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "offline": {
+      "const": true
+    },
+    "read_only": {
+      "const": true
+    },
+    "runtime_authorized": {
+      "const": false
+    },
+    "acceptance_created": {
+      "const": false
+    },
+    "diagnostic_sort": {
+      "const": [
+        "rule_id",
+        "path",
+        "object_id",
+        "message"
+      ]
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rule_id",
+          "severity",
+          "path",
+          "object_id",
+          "message"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string",
+            "pattern": "^GA-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "severity": {
+            "const": "error"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512,
+            "pattern": "^[A-Za-z0-9._/-]+$",
+            "not": {
+              "pattern": "(^|/)\\.\\.(/|$)"
+            }
+          },
+          "object_id": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "fixture_summary": {
+      "type": "object",
+      "required": [
+        "catalog_id",
+        "total",
+        "known_good_total",
+        "known_good_passed",
+        "known_bad_total",
+        "known_bad_rejected_for_declared_rule",
+        "unexpected_outcomes"
+      ],
+      "properties": {
+        "catalog_id": {
+          "const": "reiyah.fixture-catalog.gate-a"
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "known_good_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "known_good_passed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "known_bad_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "known_bad_rejected_for_declared_rule": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unexpected_outcomes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "check_summary": {
+      "type": "object",
+      "required": [
+        "schemas_checked",
+        "normative_instances_checked",
+        "fixture_cases_checked",
+        "retained_sources_checked",
+        "indexed_artifacts_checked",
+        "v11_required_properties_exercised",
+        "v11_required_mutations_rejected"
+      ],
+      "properties": {
+        "schemas_checked": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "normative_instances_checked": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fixture_cases_checked": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "retained_sources_checked": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "indexed_artifacts_checked": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "v11_required_properties_exercised": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "v11_required_mutations_rejected": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "control_summary": {
+      "type": "object",
+      "required": [
+        "required_control_ids",
+        "covered_control_ids",
+        "passed_control_ids",
+        "failed_control_ids",
+        "external_control_summary"
+      ],
+      "properties": {
+        "required_control_ids": {
+          "const": [
+            "GA-01",
+            "GA-02",
+            "GA-03",
+            "GA-04",
+            "GA-05",
+            "GA-06",
+            "GA-07",
+            "GA-08",
+            "GA-09",
+            "GA-10",
+            "GA-11",
+            "GA-12",
+            "GA-13",
+            "GA-14",
+            "GA-15",
+            "GA-16"
+          ]
+        },
+        "covered_control_ids": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "GA-01",
+              "GA-02",
+              "GA-03",
+              "GA-04",
+              "GA-05",
+              "GA-06",
+              "GA-07",
+              "GA-08",
+              "GA-09",
+              "GA-10",
+              "GA-11",
+              "GA-12",
+              "GA-13",
+              "GA-14",
+              "GA-15",
+              "GA-16"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "failed_control_ids": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "GA-01",
+              "GA-02",
+              "GA-03",
+              "GA-04",
+              "GA-05",
+              "GA-06",
+              "GA-07",
+              "GA-08",
+              "GA-09",
+              "GA-10",
+              "GA-11",
+              "GA-12",
+              "GA-13",
+              "GA-14",
+              "GA-15",
+              "GA-16"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "passed_control_ids": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "GA-01",
+              "GA-02",
+              "GA-03",
+              "GA-04",
+              "GA-05",
+              "GA-06",
+              "GA-07",
+              "GA-08",
+              "GA-09",
+              "GA-10",
+              "GA-11",
+              "GA-12",
+              "GA-13",
+              "GA-14",
+              "GA-15",
+              "GA-16"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "external_control_summary": {
+          "type": "object",
+          "required": [
+            "control_id",
+            "status",
+            "decision_record_id",
+            "diagnostics"
+          ],
+          "properties": {
+            "control_id": {
+              "const": "GA-17"
+            },
+            "status": {
+              "description": "The offline repository report always leaves GA-17 unevaluated because repository bytes cannot authenticate human identity or authority; decision-record defects are ordinary diagnostics outside this external-control summary.",
+              "const": "not_evaluated"
+            },
+            "decision_record_id": {
+              "type": "null"
+            },
+            "diagnostics": {
+              "type": "array",
+              "maxItems": 0,
+              "items": {
+                "$ref": "#/$defs/diagnostic"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "toolchain": {
+      "type": "object",
+      "required": [
+        "python_implementation",
+        "python_version",
+        "jsonschema_version",
+        "referencing_version",
+        "schema_dialect"
+      ],
+      "properties": {
+        "python_implementation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "python_version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+"
+        },
+        "jsonschema_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "referencing_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema_dialect": {
+          "const": "https://json-schema.org/draft/2020-12/schema"
+        }
+      },
+      "additionalProperties": false
+    },
+    "mission_release_id": {
+      "const": "reiyah.mission@1.1.0"
+    },
+    "protocol_release_id": {
+      "const": "reiyah.protocol.harbor-gate-a@1.1.0"
+    },
+    "distribution_profile": {
+      "const": "public_open_source"
+    },
+    "source_ledger_version": {
+      "const": "1.1.0"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "result": {
+            "const": "pass"
+          }
+        },
+        "required": [
+          "result"
+        ]
+      },
+      "then": {
+        "properties": {
+          "exit_code": {
+            "const": 0
+          },
+          "diagnostics": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "result": {
+            "const": "fail"
+          }
+        },
+        "required": [
+          "result"
+        ]
+      },
+      "then": {
+        "properties": {
+          "exit_code": {
+            "const": 1
+          },
+          "diagnostics": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "result": {
+            "const": "execution_error"
+          }
+        },
+        "required": [
+          "result"
+        ]
+      },
+      "then": {
+        "properties": {
+          "exit_code": {
+            "const": 2
+          },
+          "architecture_status": {
+            "const": "not_evaluated"
+          },
+          "diagnostics": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "fixture_only"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "architecture_status": {
+            "const": "not_evaluated"
+          },
+          "index_binding": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "architecture_status": {
+            "const": "architecture_complete"
+          }
+        },
+        "required": [
+          "architecture_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "mode": {
+            "const": "full"
+          },
+          "index_binding": {
+            "type": "object"
+          },
+          "acceptance_created": {
+            "const": false
+          },
+          "control_summary": {
+            "properties": {
+              "covered_control_ids": {
+                "const": [
+                  "GA-01",
+                  "GA-02",
+                  "GA-03",
+                  "GA-04",
+                  "GA-05",
+                  "GA-06",
+                  "GA-07",
+                  "GA-08",
+                  "GA-09",
+                  "GA-10",
+                  "GA-11",
+                  "GA-12",
+                  "GA-13",
+                  "GA-14",
+                  "GA-15",
+                  "GA-16"
+                ]
+              },
+              "passed_control_ids": {
+                "const": [
+                  "GA-01",
+                  "GA-02",
+                  "GA-03",
+                  "GA-04",
+                  "GA-05",
+                  "GA-06",
+                  "GA-07",
+                  "GA-08",
+                  "GA-09",
+                  "GA-10",
+                  "GA-11",
+                  "GA-12",
+                  "GA-13",
+                  "GA-14",
+                  "GA-15",
+                  "GA-16"
+                ]
+              },
+              "failed_control_ids": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        "oneOf": [
+          {
+            "properties": {
+              "result": {
+                "const": "pass"
+              },
+              "exit_code": {
+                "const": 0
+              },
+              "diagnostics": {
+                "maxItems": 0
+              }
+            }
+          },
+          {
+            "description": "GA-01 through GA-16 remain complete, but one or more external-decision structural diagnostics make the overall validation command fail without evaluating GA-17.",
+            "properties": {
+              "result": {
+                "const": "fail"
+              },
+              "exit_code": {
+                "const": 1
+              },
+              "diagnostics": {
+                "minItems": 1
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "diagnostic": {
+      "type": "object",
+      "required": [
+        "rule_id",
+        "severity",
+        "path",
+        "object_id",
+        "message"
+      ],
+      "properties": {
+        "rule_id": {
+          "type": "string",
+          "pattern": "^GA-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "severity": {
+          "const": "error"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512,
+          "pattern": "^[A-Za-z0-9._/-]+$",
+          "not": {
+            "pattern": "(^|/)\\.\\.(/|$)"
+          }
+        },
+        "object_id": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -4,10 +4,10 @@
 
 | Field | Value |
 |---|---|
-| As-of date | 2026-08-23 |
+| As-of date | 2026-08-24 |
 | Lifecycle status | Proposed |
 | Authority | Forensic research-audit record only |
-| Gate A membership | Gate A 1.1 architecture candidate; operator unaccepted |
+| Gate A membership | Gate A `1.1.1` governance-correction candidate with frozen public `1.1.0` predecessor; operator unaccepted |
 | Gate B status | Not defined and not authorized |
 | Runtime authorization | False |
 
@@ -15,9 +15,9 @@ This register separates defects in the current semantic architecture from resear
 that belong only in a separately authorized future gate. It also separates public-distribution
 work from scientific evidence.
 
-The register records the audit basis for the add-only Gate A 1.1 candidate. It does not itself
-amend a schema, manifest, validation plan, evidence index, validation report, or operator
-decision. External links use the evidence labels in
+The register records the audit basis for the frozen Gate A `1.1.0` packet and its narrow `1.1.1`
+governance-correction candidate. It does not itself amend a schema, manifest, validation plan,
+evidence index, validation report, or operator decision. External links use the evidence labels in
 [FRONTIER_BASELINE_2026.md](FRONTIER_BASELINE_2026.md). Every linked but unretained source is a
 discovery pointer, not retained evidence.
 
@@ -88,10 +88,10 @@ before any study, and P2 for later assurance or release maturity.
 |---|---|
 | Priority | P0 |
 | Classification | **GATE_A_RELEASE_BLOCKER** |
-| Status | Closed for repository identity on 2026-08-23; transport receipt remains separate |
+| Status | Closed for repository identity and frozen `1.1.0` transport on 2026-08-23; the receipt remains separate from the pre-distribution index |
 | Historical bytes | The historical `1.0.0` handoff said no remote was assumed or configured. |
 | Verified live observation | Git root inspection, `gh` authentication, and GitHub repository inspection identify origin as `https://github.com/manfromnowhere143/reiyah.git`, owned by the authenticated account and configured public. The user explicitly directed that Reiyah remain open source and authorized the static push. |
-| Closure | The `1.1.0` handoff records the verified public remote without granting it scientific, safety, acceptance, or publication authority. Post-push commit identity and readback belong to RGA-020 and the append-only distribution receipt. |
+| Closure | The `1.1.0` handoff records the verified public remote without granting it scientific, safety, acceptance, or publication authority. Post-push commit identity and readback are bound by the RGA-020 closure and the append-only distribution receipt. |
 | Failure consequence | The remote gains no authority, but release identity, reproducibility, and closeout reporting are inconsistent. |
 | Closure evidence | Verified Git root and origin, authenticated GitHub owner, public visibility, explicit operator distribution instruction, successor handoff, and later transport receipt. |
 
@@ -220,7 +220,7 @@ before any study, and P2 for later assurance or release maturity.
 | Priority | P1 |
 | Classification | **GATE_B_RESEARCH_PREREQUISITE** |
 | Status | Open |
-| Current boundary | Gate A correctly prohibits private-data ingestion. [evaluation-assurance-bundle.schema.json](../schemas/v1.1/evaluation-assurance-bundle.schema.json) provides static dataset, source, partition, ethics, label-governance, test, comparator, metric, leakage, contamination, maintenance and benchmark interfaces with unavailable payload bindings. |
+| Current boundary | Gate A prohibits private-data ingestion. [evaluation-assurance-bundle.schema.json](../schemas/v1.1/evaluation-assurance-bundle.schema.json) provides static dataset, source, partition, ethics, label-governance, test, comparator, metric, leakage, contamination, maintenance and benchmark interfaces with unavailable payload bindings. |
 | Gap | No dataset payload, participant or consent record, sensor-synchronization evidence, annotation execution, adjudication result, split artifact, contamination analysis, benchmark run, maintenance history, or independent review exists. |
 | Frontier basis | [TD2D descriptor](https://www.nature.com/articles/s41597-025-04781-8), official [Croissant RAI](https://docs.mlcommons.org/croissant/docs/croissant-rai-spec.html), [BenchRisk](https://proceedings.neurips.cc/paper_files/paper/2025/hash/92a0af72659802465884eaad8443ea89-Abstract-Datasets_and_Benchmarks_Track.html), and [benchmark-contamination study](https://proceedings.mlr.press/v267/sun25t.html). Mixed labels: **EXTERNAL_PRIMARY_UNRETAINED**, **EXTERNAL_OFFICIAL_UNRETAINED**, and bounded **REIYAH_INFERENCE**. |
 | Closure evidence | Authorized and retained dataset releases, participant and rights governance, immutable splits, executed contamination and leakage review, benchmark runs, correction and maintenance history, and independent audit. |
@@ -324,16 +324,17 @@ the public profile.
 Static repository distribution is authorized only for the exact public inventory. Empirical or
 scientific publication remains outside Gate A authority.
 
-### RGA-020: Public release lacks an immutable transport identity
+### RGA-020: Public release required an immutable transport identity
 
 | Field | Value |
 |---|---|
 | Priority | P0 |
 | Classification | **PUBLIC_RELEASE_PREREQUISITE** |
-| Status | Open |
-| Current state | At read-only inspection, the repository had a configured origin but no HEAD commit, and all files were untracked. |
-| Gap | An evidence index provides member digests, but there is no reviewed commit, tag, deterministic archive identity, hosted release, or verified correspondence between the configured remote and the local packet. |
-| Closure evidence | After explicit authority, create a versioned distribution manifest, deterministic member inventory, archive or commit digest, verified remote identity, release provenance, and post-publication readback. A signature is an integrity signal only and creates no scientific or operator authority. |
+| Status | Closed for frozen Gate A `1.1.0` by append-only receipt sequence 1; successor transport state is receipt-controlled |
+| Historical state | At the initial read-only inspection, the repository had a configured origin but no HEAD commit, and all files were untracked. That observation is historical and does not describe the frozen public release. |
+| Frozen `1.1.0` state | The indexed packet is commit `aa5f9b9b455219536183630b0be1e801a18a575e`; the evidence-index digest is `sha256:91149ec8bfc9a3999ce95d8c18ce0d558cf974b0afb412a7ac11027c63056c7a`; and commit `68854b474f7c4ebd95cc79ced56411c2d5935f78` adds only the append-only public distribution receipt. |
+| Closure evidence | Receipt `reiyah.public-distribution-receipt.initial-publication`, sequence 1, binds the exact packet commit, index, inventory, rights observation, payloads, attribution, public remote, `main` ref, and verified readback. Its digest is `sha256:d805ad1bab46e087338fb3c7ac049f9c1e9edbbd782fa6960db1f8e3eca57139`. It creates no scientific or operator authority. |
+| `1.1.1` boundary | The indexed governance correction cannot contain its own later commit or remote readback. A valid successor receipt is the sole transport authority for its exact index; absence of that receipt means transport is unverified. Frozen `1.1.0` identities cannot serve as placeholders. |
 
 ## Residual unknowns
 
@@ -380,7 +381,9 @@ compliance, or operator acceptance.
 RGA-006 through RGA-018 are candidate prerequisites for later scientific work. They do not
 authorize or define Gate B.
 
-RGA-019 is closed for the exact public `1.1.0` evidence profile. RGA-020 remains transport-gated
-in the pre-distribution packet and can close only through a later append-only receipt that binds
-the published commit and verified remote readback. The receipt cannot alter GA-17 or turn omitted
-or URL-only source bytes into retained evidence.
+RGA-019 is closed for the exact public `1.1.0` evidence profile. RGA-020 is closed for the frozen
+`1.1.0` transport by append-only receipt sequence 1. Gate A `1.1.1` is a governance correction
+with the `1.1.0` mission, protocol, and evidence profile unchanged. Its sidecar and canonical
+report identify the exact review target; only a valid event-specific successor receipt can
+establish its later packet commit and remote readback. Neither receipt sequence 1 nor a successor
+receipt can alter GA-17 or turn omitted or URL-only source bytes into retained evidence.

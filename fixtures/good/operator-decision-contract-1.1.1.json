@@ -1,0 +1,28 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-case.schema.json",
+  "schema_version": "1.1.1",
+  "artifact_id": "reiyah.fixture.good.operator-decision-contract-1.1.1",
+  "fixture_id": "reiyah.fixture.good.operator-decision-contract-1.1.1",
+  "version": "1.1.1",
+  "classification": "known_good",
+  "description": "Synthetic, non-authoritative proof that the corrected Gate A 1.1.1 operator-decision contract can exactly bind the unchanged 1.1 mission/protocol releases and versioned index/report identities.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-020"
+  ],
+  "expected": {
+    "outcome": "pass",
+    "primary_rule_id": null
+  },
+  "payload": {
+    "kind": "operator_decision_contract",
+    "schema_path": "schemas/operator-decision-record-1.1.1.schema.json",
+    "template_path": "gate/decisions/OPERATOR_DECISION-1.1.1.template.json",
+    "index_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/gate-a-index.schema.json",
+    "report_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/validation-report.schema.json",
+    "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+    "non_authoritative": true,
+    "expected_external_control_status": "not_evaluated"
+  }
+}

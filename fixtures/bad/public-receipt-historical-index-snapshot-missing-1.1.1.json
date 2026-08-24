@@ -1,0 +1,29 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-case.schema.json",
+  "schema_version": "1.1.1",
+  "version": "1.1.1",
+  "classification": "known_bad",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-017",
+    "TM-020"
+  ],
+  "artifact_id": "reiyah.fixture.bad.public-receipt-historical-index-snapshot-missing-1.1.1",
+  "fixture_id": "reiyah.fixture.bad.public-receipt-historical-index-snapshot-missing-1.1.1",
+  "description": "Removing the immutable 1.1.0 index snapshot makes the initial public receipt unverifiable after the root index advances.",
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "public_custody",
+    "mutations": [
+      {
+        "operation": "remove",
+        "path": "history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.json"
+      }
+    ]
+  }
+}

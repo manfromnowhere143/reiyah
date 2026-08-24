@@ -1,0 +1,30 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-case.schema.json",
+  "schema_version": "1.1.1",
+  "artifact_id": "reiyah.fixture.bad.operator-decision-protocol-binding-mismatch-1.1.1",
+  "fixture_id": "reiyah.fixture.bad.operator-decision-protocol-binding-mismatch-1.1.1",
+  "version": "1.1.1",
+  "classification": "known_bad",
+  "description": "The 1.1 protocol release is falsely typed by the 1.0 protocol schema, recreating the governance deadlock.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-020"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-OPERATOR-DECISION-CONTRACT"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "operator_decision_contract",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "schemas/operator-decision-record-1.1.1.schema.json",
+        "json_pointer": "/$defs/protocolReleaseBinding1_1/properties/artifact/allOf/1/properties/schema_id/const",
+        "value": "https://schemas.reiyah.invalid/gate-a/1.0.0/protocol-manifest.schema.json"
+      }
+    ]
+  }
+}

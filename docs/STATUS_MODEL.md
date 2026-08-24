@@ -294,16 +294,28 @@ identifier and semantic version. It contains exactly one relation:
 - `corrects`: fixes a named prior release while preserving it; or
 - `retracts`: withdraws a named prior release while preserving it.
 
-Released identifiers MUST never be reused. A candidate that changes before acceptance SHOULD
-receive a new version and release identifier when it has already been distributed for review.
-An accepted artifact that changes for any reason requires a new release and a new acceptance
-record; its previous acceptance does not transfer.
+Released identifiers MUST never be reused. A candidate that changes after it has been distributed
+for review or public transport MUST receive a newly versioned Gate A packet and new packet-level
+identities even when it remains unaccepted. The prior packet, report, commit, and receipt remain
+discoverable. An accepted artifact that changes for any reason requires a new release and a new
+acceptance record; its previous acceptance does not transfer.
 
 The immutable Gate A `1.0.0` packet freezes its ledger and manifest inventory to exactly the
 initial mission release `reiyah.mission@1.0.0` and protocol release
 `reiyah.protocol.harbor-gate-a@1.0.0`. A later correction or successor remains append-only but
 requires a newly versioned Gate A schema, validation plan, index, and report; it cannot silently
 enter or redefine the semantic head of packet `1.0.0`.
+
+The frozen public Gate A `1.1.0` packet is likewise immutable at its exact indexed commit and
+digest. Gate A `1.1.1` is a governance correction for release-state prose, citation, review, and
+versioning guidance. Because it does not change the scientific mission or protocol, it retains
+`reiyah.mission@1.1.0` and `reiyah.protocol.harbor-gate-a@1.1.0` unchanged. It still requires
+newly versioned packet-level schema and validation-plan bindings, an exact successor index, a
+fresh validation report, and a new review target. The sidecar digest-binds the index, and the
+report binds that index without entering its input cycle. A later operator decision or
+distribution receipt can exact-bind the report bytes. Any later commit and remote readback are
+established only by an append-only distribution receipt. Frozen `1.1.0` values are not
+placeholders.
 
 ## 8. Status ownership
 

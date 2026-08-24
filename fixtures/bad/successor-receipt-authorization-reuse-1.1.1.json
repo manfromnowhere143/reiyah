@@ -1,0 +1,32 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-case.schema.json",
+  "schema_version": "1.1.1",
+  "version": "1.1.1",
+  "classification": "known_bad",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "artifact_id": "reiyah.fixture.bad.successor-receipt-authorization-reuse-1.1.1",
+  "fixture_id": "reiyah.fixture.bad.successor-receipt-authorization-reuse-1.1.1",
+  "description": "The successor receipt schema cannot reuse the initial publication authorization date.",
+  "threat_ids": [
+    "TM-017",
+    "TM-020",
+    "TM-023"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "public_custody",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "schemas/public-distribution-receipt-1.1.1.schema.json",
+        "json_pointer": "/$defs/successorDistributionAuthorization/properties/recorded_date/const",
+        "value": "2026-08-23"
+      }
+    ]
+  }
+}
