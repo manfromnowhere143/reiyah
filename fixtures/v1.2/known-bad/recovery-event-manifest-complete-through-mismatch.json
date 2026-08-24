@@ -1,0 +1,20 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.recovery_event_manifest_complete_through_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/recovery/window/closes_at/value", "value": "2026-08-24T08:00:19Z"}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-RECOVERY-EVENT-MANIFEST-BINDING",
+    "instance_pointer": "/recovery/window_observation_complete",
+    "schema_keyword": "semantic",
+    "reason": "The application recovery-event rows and completeness boundary must exact-bind the protocol-owned synthetic event manifest selected for this artifact; the manifest is static resolver evidence, not a real event log."
+  },
+  "runtime_execution_authorized": false
+}

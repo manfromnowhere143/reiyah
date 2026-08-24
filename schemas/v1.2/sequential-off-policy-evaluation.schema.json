@@ -1,0 +1,311 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+  "title": "Sequential off-policy evaluation scientific contract",
+  "description": "Gate A 1.2 architecture for history-local support, cumulative trajectory weights, horizon-specific ESS, and outcome-blind estimator binding. No estimator is run.",
+  "type": "object",
+  "allOf": [{"$ref": "common.schema.json#/$defs/recordHeader"}],
+  "required": [
+    "schema_id", "schema_version", "artifact_id", "version", "lifecycle_status", "lifecycle_history",
+    "protocol_release_id", "created_at", "runtime_execution_authorized", "mission_release_id", "evaluation_id", "estimand_ref", "reward_contract",
+    "study_ref", "dataset_ref", "odd_ref", "frozen_at", "trajectory_set_ref", "behavior_policy", "target_policy", "horizon",
+    "trajectories", "support_assessment", "weight_construction", "effective_sample_size_by_horizon",
+    "estimator_selection", "estimators", "evidence_binding", "scientific_claim_authorized"
+  ],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json"},
+    "record_kind": {"const": "result"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "evaluation_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "estimand_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+    "reward_contract": {"$ref": "#/$defs/rewardContract"},
+    "study_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+    "dataset_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+    "odd_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+    "frozen_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+    "trajectory_set_ref": {
+      "allOf": [
+        {"$ref": "common.schema.json#/$defs/versionedReference"},
+        {"properties": {"record_kind": {"const": "reiyah.kind.trajectory_set"}}}
+      ]
+    },
+    "behavior_policy": {"$ref": "#/$defs/policyBinding"},
+    "target_policy": {"$ref": "#/$defs/policyBinding"},
+    "horizon": {"$ref": "#/$defs/horizon"},
+    "trajectories": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/trajectory"}},
+    "support_assessment": {"$ref": "#/$defs/supportAssessment"},
+    "weight_construction": {"$ref": "#/$defs/weightConstruction"},
+    "effective_sample_size_by_horizon": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/horizonEss"}},
+    "estimator_selection": {"$ref": "#/$defs/estimatorSelection"},
+    "estimators": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/estimator"}},
+    "evidence_binding": {"$ref": "common.schema.json#/$defs/evidenceGapBinding"},
+    "scientific_claim_authorized": {"const": false}
+  },
+  "$defs": {
+    "rewardContract": {
+      "type": "object",
+      "required": ["reward_signal_id", "version", "unit", "orientation", "minimum", "maximum", "discounted_return_definition"],
+      "properties": {
+        "reward_signal_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"const": "1.2.0"},
+        "unit": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "orientation": {"const": "higher_utility_is_better"},
+        "minimum": {"type": "number"},
+        "maximum": {"type": "number"},
+        "discounted_return_definition": {"const": "sum_discount_factor_power_step_index_times_reward"}
+      },
+      "additionalProperties": false
+    },
+    "actionSpace": {
+      "type": "object",
+      "required": ["action_space_id", "version", "action_ids", "exhaustive_as_declared"],
+      "properties": {
+        "action_space_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"const": "1.2.0"},
+        "action_ids": {"type": "array", "minItems": 2, "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"}, "uniqueItems": true},
+        "exhaustive_as_declared": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "policyBinding": {
+      "type": "object",
+      "required": ["policy_ref", "policy_table_ref", "action_space", "information_set_schema_ref", "stochasticity_declared"],
+      "properties": {
+        "policy_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "policy_table_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "reiyah.kind.policy_table"}}}
+          ]
+        },
+        "action_space": {"$ref": "#/$defs/actionSpace"},
+        "information_set_schema_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "stochasticity_declared": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "horizon": {
+      "type": "object",
+      "required": ["maximum_steps", "discount_factor", "termination_rule_ref"],
+      "properties": {
+        "maximum_steps": {"type": "integer", "minimum": 1},
+        "discount_factor": {"type": "number", "minimum": 0, "maximum": 1},
+        "termination_rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"}
+      },
+      "additionalProperties": false
+    },
+    "actionProbability": {
+      "type": "object",
+      "required": ["action_id", "probability"],
+      "properties": {
+        "action_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "probability": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": false
+    },
+    "step": {
+      "type": "object",
+      "required": ["step_index", "history_id", "information_set_schema_ref", "history_prefix", "information_set", "logged_action_id", "behavior_distribution", "target_distribution", "behavior_logged_propensity", "target_logged_propensity", "step_importance_ratio", "cumulative_importance_weight", "transformed_cumulative_importance_weight", "reward", "terminal"],
+      "properties": {
+        "step_index": {"type": "integer", "minimum": 0},
+        "history_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "information_set_schema_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "history_prefix": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["step_index", "logged_action_id"],
+            "properties": {
+              "step_index": {"type": "integer", "minimum": 0},
+              "logged_action_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "information_set": {"$ref": "common.schema.json#/$defs/informationSet"},
+        "logged_action_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "behavior_distribution": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/actionProbability"}},
+        "target_distribution": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/actionProbability"}},
+        "behavior_logged_propensity": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "target_logged_propensity": {"type": "number", "minimum": 0, "maximum": 1},
+        "step_importance_ratio": {"type": "number", "minimum": 0},
+        "cumulative_importance_weight": {"type": "number", "minimum": 0},
+        "transformed_cumulative_importance_weight": {"type": "number", "minimum": 0},
+        "reward": {"$ref": "common.schema.json#/$defs/numberMeasurement"},
+        "terminal": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "trajectory": {
+      "type": "object",
+      "required": ["trajectory_id", "steps", "observed_horizon", "termination_disposition", "final_cumulative_weight", "final_transformed_cumulative_weight"],
+      "properties": {
+        "trajectory_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "steps": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/step"}},
+        "observed_horizon": {"type": "integer", "minimum": 1},
+        "termination_disposition": {"enum": ["terminal_event", "maximum_horizon_truncation"]},
+        "final_cumulative_weight": {"type": "number", "minimum": 0},
+        "final_transformed_cumulative_weight": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "supportCell": {
+      "type": "object",
+      "required": ["history_id", "action_id", "behavior_probability", "target_probability", "supported"],
+      "properties": {
+        "history_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "action_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "behavior_probability": {"type": "number", "minimum": 0, "maximum": 1},
+        "target_probability": {"type": "number", "minimum": 0, "maximum": 1},
+        "supported": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "supportAssessment": {
+      "type": "object",
+      "required": ["support_rule_ref", "required_cells", "unsupported_cells", "support_disposition", "extrapolation_prohibited"],
+      "properties": {
+        "support_rule_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/ruleReference"},
+            {"properties": {"rule_id": {"const": "reiyah.rule.ope-policy-distribution"}}}
+          ]
+        },
+        "required_cells": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/supportCell"}},
+        "unsupported_cells": {"type": "array", "items": {"$ref": "#/$defs/supportCell"}},
+        "support_disposition": {"enum": ["supported", "unsupported"]},
+        "extrapolation_prohibited": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "weightConstruction": {
+      "type": "object",
+      "required": [
+        "weight_set_id",
+        "basis",
+        "transformation",
+        "normalization",
+        "normalization_scope",
+        "zero_sum_normalization_disposition",
+        "clipping",
+        "post_terminal_weight_policy",
+        "ess_weight_stage",
+        "zero_weight_preserved"
+      ],
+      "properties": {
+        "weight_set_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "basis": {"const": "cumulative_trajectory_product"},
+        "transformation": {"enum": ["none", "upper_clip"]},
+        "normalization": {"enum": ["none", "self_normalized_per_horizon"]},
+        "normalization_scope": {"const": "trajectory_weights_within_horizon"},
+        "zero_sum_normalization_disposition": {"const": "undefined"},
+        "clipping": {
+          "type": "object",
+          "required": ["enabled", "threshold"],
+          "properties": {
+            "enabled": {"type": "boolean"},
+            "threshold": {"oneOf": [{"type": "number", "exclusiveMinimum": 0}, {"type": "null"}]}
+          },
+          "additionalProperties": false
+        },
+        "post_terminal_weight_policy": {"const": "carry_forward_terminal_transformed_weight"},
+        "ess_weight_stage": {"const": "post_transformation_pre_normalization"},
+        "zero_weight_preserved": {"const": true}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"transformation": {"const": "none"}}, "required": ["transformation"]},
+          "then": {
+            "properties": {
+              "clipping": {
+                "properties": {"enabled": {"const": false}, "threshold": {"type": "null"}},
+                "required": ["enabled", "threshold"]
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "clipping": {
+                "properties": {"enabled": {"const": true}, "threshold": {"type": "number", "exclusiveMinimum": 0}},
+                "required": ["enabled", "threshold"]
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "horizonEss": {
+      "type": "object",
+      "required": [
+        "horizon_index",
+        "weight_set_id",
+        "included_trajectory_count",
+        "sum_cumulative_weights",
+        "sum_squared_cumulative_weights",
+        "normalization_mode",
+        "normalization_denominator",
+        "normalized_weight_sum",
+        "kish_effective_sample_size",
+        "disposition"
+      ],
+      "properties": {
+        "horizon_index": {"type": "integer", "minimum": 0},
+        "weight_set_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "included_trajectory_count": {"type": "integer", "minimum": 1},
+        "sum_cumulative_weights": {"type": "number", "minimum": 0},
+        "sum_squared_cumulative_weights": {"type": "number", "minimum": 0},
+        "normalization_mode": {"enum": ["none", "self_normalized_per_horizon"]},
+        "normalization_denominator": {
+          "oneOf": [
+            {"type": "number", "exclusiveMinimum": 0},
+            {"type": "null"}
+          ]
+        },
+        "normalized_weight_sum": {"$ref": "common.schema.json#/$defs/nonNegativeNumberMeasurement"},
+        "kish_effective_sample_size": {"$ref": "common.schema.json#/$defs/nonNegativeNumberMeasurement"},
+        "disposition": {"enum": ["sufficient", "insufficient", "undefined_all_zero"]}
+      },
+      "additionalProperties": false
+    },
+    "estimatorSelection": {
+      "type": "object",
+      "required": ["selection_rule_ref", "candidate_estimator_ids", "selected_estimator_ids", "selected_at", "first_outcome_accessed_at", "outcome_blind_selection_required"],
+      "properties": {
+        "selection_rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "candidate_estimator_ids": {"type": "array", "minItems": 1, "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"}, "uniqueItems": true},
+        "selected_estimator_ids": {"type": "array", "minItems": 1, "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"}, "uniqueItems": true},
+        "selected_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "first_outcome_accessed_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "outcome_blind_selection_required": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "estimator": {
+      "type": "object",
+      "required": ["estimator_id", "family", "version", "weight_set_id", "horizon_index", "estimate", "uncertainty", "selection_disposition"],
+      "properties": {
+        "estimator_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "family": {"enum": ["IS", "WIS", "PDIS", "DR"]},
+        "version": {"const": "1.2.0"},
+        "weight_set_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "horizon_index": {"type": "integer", "minimum": 0},
+        "estimate": {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"},
+        "uncertainty": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/uncertaintyInterval"},
+            {
+              "properties": {
+                "lower": {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"},
+                "upper": {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+              }
+            }
+          ]
+        },
+        "selection_disposition": {"enum": ["selected", "sensitivity_only"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "unevaluatedProperties": false
+}

@@ -1,0 +1,22 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.estimand_operand_worst_population",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/worst_group_evaluation/group_universe/0", "value": "reiyah.group.synthetic-a"},
+    {"operation": "replace", "json_pointer": "/worst_group_evaluation/group_universe/1", "value": "reiyah.group.synthetic-b"},
+    {"operation": "replace", "json_pointer": "/worst_group_evaluation/group_results/0/group_id", "value": "reiyah.group.synthetic-a"},
+    {"operation": "replace", "json_pointer": "/worst_group_evaluation/group_results/1/group_id", "value": "reiyah.group.synthetic-b"},
+    {"operation": "replace", "json_pointer": "/worst_group_evaluation/eligible_group_ids/0", "value": "reiyah.group.synthetic-a"},
+    {"operation": "replace", "json_pointer": "/worst_group_evaluation/eligible_group_ids/1", "value": "reiyah.group.synthetic-b"},
+    {"operation": "replace", "json_pointer": "/worst_group_evaluation/worst_group_ids/0", "value": "reiyah.group.synthetic-a"},
+    {"operation": "replace", "json_pointer": "/worst_group_evaluation/worst_group_ids/1", "value": "reiyah.group.synthetic-b"}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-ESTIMAND-REFERENCE-BINDING", "instance_pointer": "/worst_group_evaluation/group_universe", "schema_keyword": "semantic", "reason": "Each estimand reference must exact-bind the protocol-owned estimand assigned to its application section by the scientific contract profile."},
+  "runtime_execution_authorized": false
+}

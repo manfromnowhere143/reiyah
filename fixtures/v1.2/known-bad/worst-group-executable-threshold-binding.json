@@ -1,0 +1,24 @@
+{
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "expected_failure": {
+    "instance_pointer": "/worst_group_evaluation/minimum_information_rule",
+    "reason": "Group information disposition must be computed from all executable minimum-information thresholds.",
+    "rule_id": "GA-WORST-GROUP-INFORMATION",
+    "schema_keyword": "semantic"
+  },
+  "expected_outcome": "reject",
+  "fixture_id": "reiyah.fixture.known-bad.v12.worst-group-executable-threshold-binding",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "mutations": [
+    {
+      "json_pointer": "/worst_group_evaluation/minimum_information_rule/sample_count_min",
+      "operation": "replace",
+      "value": 29
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "runtime_execution_authorized": false,
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json"
+}

@@ -7,7 +7,7 @@
 | As-of date | 2026-08-24 |
 | Lifecycle status | Proposed |
 | Authority | Forensic research-audit record only |
-| Gate A membership | Gate A `1.1.2` documentation-and-continuity successor with frozen public `1.1.0` and `1.1.1` predecessors; operator unaccepted |
+| Gate A membership | Gate A `1.2.0` scientific and validation-integrity correction candidate with frozen public `1.1.0`, `1.1.1`, and `1.1.2` predecessors; operator unaccepted |
 | Gate B status | Not defined and not authorized |
 | Runtime authorization | False |
 
@@ -15,9 +15,9 @@ This register separates defects in the current semantic architecture from resear
 that belong only in a separately authorized future gate. It also separates public-distribution
 work from scientific evidence.
 
-The register records the audit basis for the frozen Gate A `1.1.0` and published `1.1.1` packets
-plus their narrow `1.1.2` documentation-and-continuity successor. It does not itself amend a schema, manifest, validation plan,
-evidence index, validation report, or operator decision. External links use the evidence labels in
+The register records the audit basis for the frozen public packets and the bounded `1.2.0`
+correction. It does not itself amend a schema, manifest, validation plan, evidence index,
+validation report, or operator decision. External links use the evidence labels in
 [FRONTIER_BASELINE_2026.md](FRONTIER_BASELINE_2026.md). Every linked but unretained source is a
 discovery pointer, not retained evidence.
 
@@ -106,6 +106,31 @@ before any study, and P2 for later assurance or release maturity.
 | New paths | docs/FRONTIER_BASELINE_2026.md, docs/RESEARCH_OPERATING_MODEL.md, and docs/RESEARCH_GAP_REGISTER.md |
 | Gap | These documents are intentionally not part of Gate A `1.0.0`. Their addition changed the live repository inventory, so the historical report cannot validate them. |
 | Closure evidence | The `1.1.0` successor adopts the documents through its own manifests, schemas, validation plan, acyclic evidence index, and deterministic report while preserving the historical packet unchanged. |
+
+## Gate A 1.2 correction register
+
+The retained [`1.1.2` adversarial review](GATE_A_1_1_2_ADVERSARIAL_REVIEW.md) demonstrated the
+following counterexamples. Each row remains a release blocker until the exact `1.2.0` release
+projection passes its production-path fixture, predecessor-inheritance, index, and canonical
+report checks. A schema or prose edit alone does not close a finding.
+
+| Finding | Demonstrated defect | Required executable closure | Candidate state |
+|---|---|---|---|
+| AR-001 | Incomplete behavior and target policy distributions, positivity, cumulative trajectory weights, and trajectory-level ESS were not jointly testable. | Derive normalized policy rows, logged propensity, support, step ratio, cumulative weight, estimator binding, and trajectory-level ESS. | Implemented in static contracts and counterexamples; release replay pending. |
+| AR-002 | A selected causal adjustment set could assert its own validity. | Derive acyclicity, temporal and observability eligibility, prohibited collider, mediator, and post-treatment roles, and back-door closure from the exact graph. | Implemented in static contracts and counterexamples; release replay pending. |
+| AR-003 | Required unknown capabilities could coexist with a confident readiness aggregate. | Derive the exact unresolved required-capability set and propagate its epistemic state without safety-critical compensation. | Implemented in static contracts and counterexamples; release replay pending. |
+| AR-004 | Recovery summaries need not reconcile with event history, elapsed time, window, censoring, or competing events. | Select the earliest qualifying event under the frozen window and cross-role tie policy, then derive duration and disposition. | Implemented in static contracts and counterexamples; release replay pending. |
+| AR-005 | Transfer results omitted metric direction, harmonization, overlap, invariance, access, adaptation, tuning, or coverage eligibility. | Derive transfer eligibility and suppress unqualified interpretation when any required condition fails. | Implemented in static contracts and counterexamples; release replay pending. |
+| AR-006 | A conformal guarantee could survive a failed required assumption or be conflated with empirical coverage. | Derive guarantee disposition separately from observed coverage and bind its target and group scope. | Implemented in static contracts and counterexamples; release replay pending. |
+| AR-007 | OOD and selective counts and rates need not share one exhaustive denominator. | Derive every count, coverage value, and rate from one disjoint exhaustive epistemic-state partition. | Implemented in static contracts and counterexamples; release replay pending. |
+| AR-008 | Worst-group minimum-information eligibility could be asserted rather than derived. | Derive eligibility from count, coverage, ESS, and interval width, preserve unknown groups and ties, and prevent an incomplete extremum from becoming complete. | Implemented in static contracts and counterexamples; release replay pending. |
+| AR-009 | Declared `date-time` and `uri` formats were not enforced. | Use local deterministic format predicates, scan every used format, reject unknown formats, and replay invalid canaries. | Implemented in the locked validator substrate; release replay pending. |
+| AR-010 | Repeated live-tree reads exposed time-of-check/time-of-use drift. | Read one immutable in-memory candidate projection and reject development drift or a dirty release tree. | Implemented in the locked validator substrate; release replay pending. |
+| AR-011 | Owner-writable modules could load before isolation and byte verification. | Enter the locked external sandbox before CPython starts, reject direct invocation, and bind the full declared runtime byte closure. | Implemented in launcher and toolchain lock; release replay pending. |
+| AR-012 | A publisher receipt's own remote readback assertion was treated as independent transport proof. | Keep the receipt `asserted_unverified` and require a distinct authorized observation record for independent verification. | Implemented in governance interfaces; no publication or transport event exists. |
+
+These candidate closures create no empirical evidence. They establish only testable static
+contracts and fail-closed integrity boundaries.
 
 ## Gate B research prerequisites
 
@@ -330,12 +355,13 @@ scientific publication remains outside Gate A authority.
 |---|---|
 | Priority | P0 |
 | Classification | **PUBLIC_RELEASE_PREREQUISITE** |
-| Status | Closed for frozen Gate A `1.1.0` and `1.1.1` by append-only receipt sequences one and two; `1.1.2` transport remains unverified until a sequence-three receipt exists |
+| Status | Publisher distribution identities are retained for frozen Gate A `1.1.0`, `1.1.1`, and `1.1.2`; independent transport verification is `not_evaluated` for all three. The pre-event `1.2.0` packet projection contains no sequence-four event record. Resolve any later event only from its exact post-packet rights record and receipt. |
 | Historical state | At the initial read-only inspection, the repository had a configured origin but no HEAD commit, and all files were untracked. That observation is historical and does not describe the frozen public release. |
 | Frozen `1.1.0` state | The indexed packet is commit `aa5f9b9b455219536183630b0be1e801a18a575e`; the evidence-index digest is `sha256:91149ec8bfc9a3999ce95d8c18ce0d558cf974b0afb412a7ac11027c63056c7a`; and commit `68854b474f7c4ebd95cc79ced56411c2d5935f78` adds only the append-only public distribution receipt. |
-| Closure evidence | Receipt `reiyah.public-distribution-receipt.initial-publication`, sequence 1, binds the exact packet commit, index, inventory, rights observation, payloads, attribution, public remote, `main` ref, and verified readback. Its digest is `sha256:d805ad1bab46e087338fb3c7ac049f9c1e9edbbd782fa6960db1f8e3eca57139`. It creates no scientific or operator authority. |
+| Sequence-one receipt | Receipt `reiyah.public-distribution-receipt.initial-publication` binds the exact packet commit, index, inventory, rights observation, payloads, attribution, public remote, `main` ref, and publisher readback assertion. Its digest is `sha256:d805ad1bab46e087338fb3c7ac049f9c1e9edbbd782fa6960db1f8e3eca57139`. It creates no independent transport, scientific, or operator authority. |
 | Frozen `1.1.1` state | The governance-correction packet is commit `90072fb64f3c16cb5d0af0f1a3bcad56554707fa`, with index digest `sha256:308f65ba2693c13fa71d081dad3f74f56ec80617e97497a2606c0d88a07b2ceb` and report digest `sha256:76c0dcce583beb02b121776e14bc9df41833a26c5c49488270d96861b3e33806`. Receipt sequence two has digest `sha256:6156a35d3dfb2c4f0d46cbf48845867da6c942b69ed734a4056ae1e36910aa11`; commit `8f4ba9894faf257c46351b2a89fc17f112a988f1` adds that receipt only. |
-| `1.1.2` boundary | The documentation-and-continuity successor cannot contain its own later commit or remote readback. Only a valid sequence-three receipt may bind its exact index, report, fresh rights observation, packet commit, and remote readback. Frozen predecessor identities cannot serve as placeholders. |
+| Frozen `1.1.2` state | Packet commit `ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b` has index digest `sha256:17f3a2e601e9cb4e1c0cd0f97561b1da9ffdc7d5893ed4af4eaccbaf8a67989f` and report digest `sha256:06fc3114522c16625da337fe25c71b1fd53abeeaf9c31a11748afc06eb5d66d8`. Receipt-bearing commit `656d826cfe6938fd628c0ede7ea15929fe11d90e` adds sequence three. |
+| Corrected transport boundary | A publisher receipt retains assertions made during its own publication act and cannot independently verify them. A separately authorized transport-verification record must bind independently retained observation bytes for the exact repository, commit, index, and report. The `1.2.0` receipt schema enforces `asserted_unverified`; the static packet never treats a later sequence-four receipt as independent transport evidence. |
 
 ## Residual unknowns
 
@@ -382,9 +408,9 @@ compliance, or operator acceptance.
 RGA-006 through RGA-018 are candidate prerequisites for later scientific work. They do not
 authorize or define Gate B.
 
-RGA-019 is closed for the exact public `1.1.0` evidence profile. RGA-020 is closed for the frozen
-`1.1.0` and `1.1.1` transports by append-only receipt sequences one and two. Gate A `1.1.2` is a
-documentation-and-continuity successor with the `1.1.0` mission, protocol, and evidence profile
-unchanged. Its sidecar and canonical report identify the exact review target; only a valid
-event-specific sequence-three receipt can establish its packet commit and remote readback. No
-receipt can alter GA-17 or turn omitted or URL-only source bytes into retained evidence.
+RGA-019 is closed for the exact public `1.1.0` evidence profile. RGA-020 retains exact publisher
+distribution identities for `1.1.0`, `1.1.1`, and `1.1.2`, but independent transport remains
+unevaluated. The sixteen `1.2.0` candidate-consistency findings remain release blockers until
+immutable release replay and canonical-report equality pass. Publication then still requires
+fresh event-specific authority and rights review. No receipt or transport observation can alter
+GA-17 or turn omitted or URL-only source bytes into retained evidence.

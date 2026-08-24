@@ -1,0 +1,18 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.readiness_window_inverted",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/readiness/window/closes_at/value", "value": "2026-08-24T07:59:59Z"}],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-READINESS-TEMPORAL-RECONCILIATION",
+    "instance_pointer": "/readiness/window",
+    "schema_keyword": "semantic",
+    "reason": "Observed readiness time must lie inside its ordered window and follow every observation, belief, and decision input available to the assessment."
+  },
+  "runtime_execution_authorized": false
+}

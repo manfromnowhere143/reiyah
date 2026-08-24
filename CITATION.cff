@@ -2,8 +2,10 @@ cff-version: 1.2.0
 message: >-
   Cite the exact Gate A evidence-index digest reviewed. For a distributed copy,
   also cite the unique highest valid append-only receipt that exact-binds that
-  same index, its canonical report, packet Git commit, and verified remote
-  readback. Until such a current receipt exists, transport is unverified.
+  same index, its canonical report, and packet Git commit. Treat publisher
+  readback as an assertion unless a distinct independent transport record binds
+  the same bytes. Until that record exists, independent transport verification
+  is not established.
 title: "Reiyah: HARBOR Gate A Research Architecture"
 type: software
 authors:
@@ -11,14 +13,18 @@ authors:
     given-names: Daniel
 repository-code: "https://github.com/manfromnowhere143/reiyah"
 license: Apache-2.0
-version: 1.1.2
+version: 1.2.0
+date-released: 2026-08-25
 abstract: >-
-  An operator-unaccepted documentation-and-continuity successor for the static Gate A
-  research architecture covering object-level human and automation belief,
-  readiness, recoverability, joint silent misses, causal policy effects,
-  transfer, explicit unknowns, and worst-group validation. The Gate A 1.1.0
-  mission, protocol, and evidence-profile releases remain unchanged; the
-  published Gate A 1.1.1 governance correction remains immutable.
+  An operator-unaccepted static Gate A correction candidate for the HARBOR
+  research architecture. Version 1.2.0 is intended to make policy distributions,
+  trajectory weights, causal identification, readiness unknown propagation, recovery event
+  derivation, transfer eligibility, conformal guarantees, out-of-distribution and
+  selective dispositions, population partitions, worst-group eligibility,
+  human belief reconciliation, joint silent-miss identifiability, and assumption
+  evidence eligibility executable against deterministic synthetic counterexamples.
+  It adds no runtime, empirical result, safety claim, standards claim, or operator
+  acceptance.
 keywords:
   - automated driving
   - human automation interaction

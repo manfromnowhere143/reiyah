@@ -1,0 +1,24 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.causal_analysis_unit_ref_wrong_version",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/study-design-preregistration.json",
+  "mutations": [
+    {
+      "operation": "replace",
+      "json_pointer": "/split_policy/analysis_unit_set_ref/version",
+      "value": "1.1.0"
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-REFERENCE-VERSION",
+    "instance_pointer": "/split_policy/analysis_unit_set_ref/version",
+    "schema_keyword": "const",
+    "reason": "A protocol-owned versioned reference must exactly match the resolved definition version."
+  },
+  "runtime_execution_authorized": false
+}

@@ -3,7 +3,7 @@
 | Field | Value |
 | --- | --- |
 | Document ID | `reiyah.architecture` |
-| Version | `1.1.0` |
+| Version | `1.2.0` |
 | Lifecycle status | `proposed` |
 | Architecture style | Static, evidence-bound, deterministic, offline |
 | Runtime authorization | None |
@@ -78,9 +78,10 @@ flowchart TB
     LEDGER[Source ledger]
     XWALK[Dated standards crosswalk]
     CUSTODY[Public custody profile]
-    RIGHTS[Pre-distribution rights observation]
+    RIGHTS[Post-packet, pre-distribution<br/>rights observation]
     DISCOVERY[Evidence-ineligible frontier pointers]
     DISTINV[Exact public distribution inventory]
+    RECEIPT[Append-only publisher receipt]
   end
 
   subgraph CONTRACTS[Contract-test plane]
@@ -108,7 +109,8 @@ flowchart TB
   BYTES --> LEDGER
   LEDGER --> XWALK
   LEDGER --> CUSTODY
-  RIGHTS --> DISTINV
+  DISTINV --> RIGHTS
+  RIGHTS --> RECEIPT
   LEDGER --> DISTINV
   DISCOVERY --> DISTINV
   RESEARCH --> PROFILE
@@ -120,12 +122,20 @@ flowchart TB
   MISSION --> INDEX
   PROTOCOL --> INDEX
   SCI --> INDEX
-  EVID --> INDEX
+  BYTES --> INDEX
+  LEDGER --> INDEX
+  XWALK --> INDEX
+  CUSTODY --> INDEX
+  DISCOVERY --> INDEX
+  DISTINV --> INDEX
   CONTRACTS --> INDEX
   VALIDATOR --> INDEX
   INDEX --> RUN
   VALIDATOR --> RUN
   RUN --> REPORT
+  INDEX --> RECEIPT
+  REPORT --> RECEIPT
+  RECEIPT -. exact cycle-breaking exclusion .-> INDEX
   INDEX -->|exact static review surface| OP
   REPORT -->|architecture-completeness evidence for that index digest| OP
   OP -->|explicit decision bound to index digest| ACCEPT
@@ -181,11 +191,11 @@ record. The validation report names the evidence-index digest it checked. The op
 decision binds that same index digest and its architecture-completeness evidence. This
 avoids a circular trust construction.
 
-The validation plan additionally binds the exact SHA-256 bytes of the only two authorized
-tools. The builder refuses an unbound tool before emitting an index, and the validator checks
-the same bindings plus a fail-closed static capability policy. This is an integrity boundary for
-reviewed Gate A bytes, not proof that validation is scientifically complete or externally
-trustworthy.
+The validation plan additionally binds the exact SHA-256 bytes of every authorized validation
+tool and the toolchain lock. The supported launcher refuses an unbound tool or environment before
+claiming its execution boundary. Index construction consumes the same immutable byte projection as
+semantic validation. This is an integrity boundary for reviewed Gate A bytes, not proof that
+validation is scientifically complete or externally trustworthy.
 
 ## 5. Scientific record model
 
@@ -258,8 +268,9 @@ all non-observed state counts.
 
 Observed categorical beliefs use the exact owning protocol's
 `belief_normalization_policy`: target sum one, absolute-error comparison, and tolerance
-`0.000001`. The record's `sum_tolerance` must equal that frozen policy value; a record cannot
-select its own acceptance threshold.
+`0.000001`. The record's complete `belief.normalization_policy_binding` must equal that frozen
+policy field for field, including identity, release, scope, arithmetic operands, and the runtime
+boundary. A record cannot select its own acceptance threshold.
 
 ### 5.3 Lifecycle record
 
@@ -268,15 +279,18 @@ history. The shared schema contract covers observations, latent beliefs, researc
 interventions, outcomes, evidence objects, experiments, and results. Every event records a
 stable event ID, contiguous sequence, prior and new status, UTC time, typed actor, rationale,
 versioned evidence references, and either a null root predecessor or an exact prior-artifact
-ID, logical record ID, kind, schema, version, path, and digest. The last event equals the
-record's current status.
+logical ID, kind, compatible schema, semantic version, path, digest, and byte size. The last event
+equals the record's current status.
 
 Sequence one is `proposed` and is the only event permitted to have null prior fields. Each
 later event is a new immutable artifact version and binds only its already-existing immediate
 predecessor. The current artifact's digest remains in the external evidence index, avoiding a
 self-digest cycle. Corrected and retracted successors retain the same logical record ID and
-schema/kind but use a distinct artifact, path, older predecessor version, and exact predecessor
-digest. Allowed entity/status pairs come from the exact bound protocol release's versioned
+schema/kind but use a distinct immutable artifact ID and path, a strictly older predecessor
+version, and exact predecessor digest and byte size. The loaded predecessor history must equal the
+successor history without its last event, which prevents earlier events from being rewritten.
+Allowed entity/status pairs come
+from the exact bound protocol release's versioned
 `lifecycle_transition_policy`, not a validator-owned hardcoded table. Status `null` is a
 protocol result and is unrelated to JSON `null` or epistemic absence.
 
@@ -339,9 +353,32 @@ the named state space, and an observed selected action belongs to the named choi
 registry is definition authority only within its exact proposed protocol release; it is not
 scientific evidence or runtime authority.
 
-Gate A 1.1 adds a digest-bound scientific contract profile and research-function registry. The
-profile names the exact common, application, mutation-fixture, and catalog schemas; every static
-positive and negative fixture; and the production semantic rules that replay those fixtures.
+The scientific profile partitions every reference occurrence exactly once into nine executable
+classes: rule reference, versioned reference, actor reference, schema reference, artifact
+reference, document-local reference, explicit evidence gap, registry-bare identifier, and
+document-local identifier. Structured references resolve kind and exact version. Registry-bare
+IDs resolve a declared definition kind and owner. Document-local references and identifiers
+resolve against the exact owning collection. Schema references bind the local `$id`; artifact
+references bind regular-file bytes; evidence gaps remain explicitly unavailable and carry no
+supporting references. Unclassified or multiply classified occurrences fail closed.
+The exact application-path inventory is derived from the bound schemas and reconciled with the
+implemented resolver families. Every stable-identifier-bearing schema path is either covered by
+one reference classifier or explicitly marked as an identity declaration. Adding an identifier
+path without that classification blocks the gate; a profile's abstract list of shape names is not
+proof of exhaustive coverage.
+
+Gate A 1.1 introduced a digest-bound scientific contract profile and research-function registry.
+The Gate A 1.2 successor binds the exact common, application, and mutation-fixture schemas; every
+static positive and scientific negative fixture; and the production semantic rules that replay
+those fixtures. Governance and validator-security fixtures remain separately classified in the
+central catalog and validation plan.
+Eleven high-level executable contracts cover policy distributions, causal identification,
+readiness, recovery, transfer, conformal guarantees, OOD partitioning, worst-group eligibility,
+human belief-observation-decision reconciliation, joint silent-miss identifiability, and
+assumption-evidence eligibility. The complete production rule set is broader and remains the
+actual executable closure surface. Ten of these application contracts carry a typed estimand
+operand that must equal the exact profile and protocol mapping; assumption-evidence eligibility is
+the only intentional empty estimand mapping.
 The function registry orders question and falsifier design, custody, construct validation,
 preregistration, data and benchmark governance, ODD and scenario design, temporal information
 sets, belief assessment, joint readiness and recovery, policy evaluation, selective uncertainty,
@@ -365,7 +402,7 @@ Formal quantities and invalid-state behavior are defined in
 `docs/MATHEMATICAL_SPECIFICATION.md`; prose here does not replace its machine-checked
 bindings.
 
-The Gate A 1.1 machine surface realizes these minimums through five closed application schemas:
+The Gate A 1.2 machine surface realizes these minimums through five closed-shape application schemas:
 `human-automation-assessment`, `study-design-preregistration`,
 `sequential-off-policy-evaluation`, `joint-performance-evaluation`, and
 `evaluation-assurance-bundle`. A shared contract defines typed actors, object references,
@@ -398,59 +435,83 @@ Narrative policy and limitations live in `docs/SOURCE_POLICY.md` and
 The public profile separates four retained and distribution-authorized payloads from four
 historical pointer-only records and a separately bound frontier discovery register. A static
 distribution inventory binds every included payload by path, size, digest, attribution, and
-caveat. Immediately before publication, a separate observation must cover the mutable official
-ISO Open Data and NIST rights pages. That observation has no legal or operator authority and
-fails closed on an inaccessible page or observed contradiction. A post-push receipt binds the
-pre-push custody profile, ledger, discovery register, inventory, rights observation, published
-repository, Git ref, commit, time, and exact four payloads. The receipt is transport evidence
-only and remains excluded from the acyclic pre-push index.
+caveat. The packet first freezes the exact index and report in commit `C_packet`. Immediately before
+packet finalization, two typed capture manifests record predeclared method-specific observation
+metadata and bounded paraphrases without redistributing the raw ISO or NIST HTML. Direct HTTP
+capture records the digest and size of the unretained response body. If a predeclared official page
+blocks that method, a closed adapter-observation branch records the failed direct attempt and leaves
+unexposed response bytes, status, digest, size, and cookie state unasserted. It cannot be selected
+as an undeclared fallback. Both branches expose their limitations and remain evidence-ineligible.
+The manifests are ordinary indexed packet artifacts. After `C_packet` exists and immediately
+before publication, a
+separate rights record resolves those manifests, covers the mutable official ISO Open Data and
+NIST rights pages, and binds `C_packet`, the index, and the report. That record has no legal or
+operator authority and fails closed on an inaccessible page or observed contradiction. Because including a
+record that names `C_packet` inside that same commit is impossible, the validation plan permits one
+exact event-specific rights path as a cycle-breaking exclusion and rejects every broad or historical
+rights exclusion. A post-push receipt and the rights record are committed together in direct child
+`C_receipt`. The receipt binds the pre-push custody profile, ledger, discovery register, inventory,
+rights observation, repository, Git ref, packet commit, time, and exact four payloads. Both event
+records remain excluded from the packet projection. The receipt preserves the publisher's
+transport assertion but does not independently verify a remote observation. A distinct
+transport-verification record must bind retained response or witness bytes before any scoped
+external readback claim is made.
 
 ## 9. Deterministic offline validation architecture
 
-The validation entry point may inspect only declared repository artifacts. It must make no
-network call, mutate no normative artifact, use no live/private input, and perform no model
-training or inference.
+The supported validation entry point starts with a standard-library bootstrap. Before importing a
+third-party package, it verifies the canonical root, isolated Python flags, locked executable and
+dependency bytes, and the exact platform-specific sandbox profile. The sandboxed child may inspect
+only a single immutable repository snapshot. It must make no network call, mutate no repository
+artifact, use no live or private input, and perform no model training or inference.
 
 ```mermaid
-sequenceDiagram
-  participant U as Reviewer/CI caller
-  participant V as Offline validator
-  participant M as Manifests and evidence index
-  participant S as Schemas/specifications
-  participant F as Fixtures
-  participant R as Validation report
+flowchart LR
+  U[Reviewer or CI caller]
+  B[Standard-library bootstrap]
+  L[Toolchain byte lock and<br/>isolated-launch preflight]
+  S[Locked macOS sandbox:<br/>deny network and repository writes]
+  T{Snapshot mode}
+  G[Clean immutable Git tree<br/>release eligible]
+  D[Stable filesystem projection<br/>development only]
+  V[Schema, semantic, fixture,<br/>inventory, and history checks]
+  R[Canonical report]
 
-  U->>V: Invoke documented offline entry point
-  V->>M: Verify identities, versions, inventory, and digests
-  V->>S: Validate closed schemas and semantic invariants
-  V->>F: Replay every known-good fixture
-  V->>F: Replay every known-bad fixture
-  V->>V: Reconcile IDs, references, links, states, status, time, and denominators
-  V->>R: Emit canonically ordered diagnostics and summary
-  R-->>U: Nonzero on any unexpected pass/fail or internal error
-  Note over V,R: No fetch, repair, acceptance, status upgrade, or scientific conclusion
+  U --> B --> L --> S --> T
+  T --> G --> V
+  T --> D --> V
+  V --> R
+  D -. never release or acceptance evidence .-> R
+  R -. no repair, acceptance, status upgrade,<br/>transport verification, or scientific conclusion .-> U
 ```
 
 ### 9.1 Validation stages
 
-1. **Identity:** assert the Reiyah canonical root and repository contract.
-2. **Inventory:** reject undeclared required artifacts, duplicates, unsafe paths, and
-   digest mismatches.
-3. **Syntax/schema:** use pinned schema dialects, reject unknown properties where the
-   schema is closed, and reject unsupported schema versions.
-4. **Semantic integrity:** enforce stable IDs, typed references, allowed status events,
-   kind separation, temporal availability, provenance, evidence eligibility, and
-   denominator reconciliation.
-5. **Fixture replay:** every known-good case passes; every known-bad case fails for its
-   declared primary rule ID. Failure for an unrelated reason is insufficient.
-6. **Document integrity:** verify internal links, artifact IDs, version bindings, and
+1. **Bootstrap:** assert the Reiyah canonical root, isolated interpreter flags, and the
+   digest-bound toolchain before any third-party import.
+2. **Execution boundary:** enter the reviewed platform sandbox and report its conditional
+   network and repository-write guarantee without implying broader operating-system assurance.
+3. **Snapshot:** load either one clean regular-blob Git tree for release review or one stable
+   filesystem projection for explicitly non-release development review. Reject symlinks, special
+   files, submodules, or pre-to-post drift.
+4. **Inventory:** reject undeclared required artifacts, duplicates, unsafe paths, and digest
+   mismatches against that same in-memory byte map.
+5. **Syntax and schema:** use the pinned dialect, strict JSON, a closed locally implemented format
+   set, and positive and negative format canaries. Reject unknown properties where the schema is
+   closed and reject unsupported formats or schema versions.
+6. **Semantic integrity:** enforce stable IDs, typed references, allowed status events, kind
+   separation, temporal availability, provenance, evidence eligibility, executable derived-value
+   rules, and denominator reconciliation.
+7. **Fixture replay:** every known-good case passes; every known-bad case fails for its declared
+   primary rule ID. Failure for an unrelated reason is insufficient.
+8. **Document integrity:** verify internal links, artifact IDs, version bindings, and
    cross-document vocabulary. The validation plan digest-binds every normative narrative to
    its machine contract through strict `narrative_bindings`; duplicate binding IDs or a stale
    narrative or machine digest fail closed.
-7. **Determinism:** canonicalize traversal and diagnostic order; a repeated unchanged run
-   must produce the same exit status and comparable report bytes.
-8. **Report:** emit stable rule IDs, artifact-relative paths, object IDs where known,
-   reasons, expected fixture outcomes, and an aggregate pass/fail result.
+9. **Determinism:** canonicalize traversal and diagnostic order; two fresh validations of the
+   same projection must produce identical exit status and report bytes.
+10. **Report:** emit stable rule IDs, artifact-relative paths, object IDs where known, reasons,
+    fixture totals, snapshot identity, execution-boundary status, and an aggregate result.
 
 The fixture layer MUST exercise the same production check functions used for repository
 validation. In-memory production mutations MUST cover removal of required boundaries,
@@ -459,8 +520,9 @@ excluded-path intrusion, noncanonical indexes, incomplete threat coverage, false
 coverage, and conflicting operator-decision history. A fixture-only surrogate that bypasses
 the production path does not establish the affected control.
 
-An exception, unknown artifact type, unresolved reference, or unsupported version is an
-error. No validator may weaken a rule or change a fixture expectation merely to pass.
+An exception, unknown artifact type, unresolved reference, unsupported format, or unsupported
+version is an error. No validator may weaken a rule or change a fixture expectation merely to
+pass. A development-mode pass cannot be promoted into release evidence.
 
 ## 10. Evidence index and acceptance
 
@@ -472,29 +534,39 @@ decision records. Append-only post-distribution receipts are also excluded becau
 commit that already contains the pre-push packet. The deterministic validation report identifies the evidence-index path
 and digest it checked.
 
-For Gate A index version `1.1.0`, the schema fixes the index schema ID, schema version,
-artifact ID, index ID, version, architecture date, lifecycle state, architecture state,
-unaccepted operator state, null decision binding, validation entry point, expectations, and
-no-runtime flag to their canonical values. Every `artifacts[]` binding MUST carry an explicit
+For Gate A index version `1.2.0`, the schema fixes the index schema ID, schema version, artifact
+ID, index ID, version, architecture date, lifecycle state, architecture state, unaccepted operator
+state, null decision binding, validation entry point, snapshot-projection contract, expectations,
+and no-runtime flag to their canonical values. Every `artifacts[]` binding MUST carry an explicit
 semantic version, including Markdown, tooling, lockfiles, retained-source bytes, and other
-artifacts that do not contain native JSON version metadata. The canonical builder is the only
-source for those derived inventory versions. Missing, guessed, or mutated metadata makes the
-saved index noncanonical.
+artifacts that do not contain native JSON version metadata. The canonical projection and builder
+logic are the only sources for derived inventory values. Missing, guessed, or mutated metadata
+makes the saved index noncanonical.
 
-The canonical, decision-free Gate A `1.1.0` closeout report is likewise closed over the exact
-Gate A version. It MUST report the coverage totals derived from the current validation plan and
-index; every known-good
-case MUST pass; every known-bad case MUST fail for its declared rule; unexpected outcomes and
-diagnostics MUST both be zero; and `acceptance_created` MUST be false. Its control summary MUST list GA-01 through
-GA-16 as required and covered with no failed architecture control. GA-17 is represented by a
-separate `external_control_summary` that the offline repository report always sets to
-`not_evaluated`, with null decision-record ID and no external-control diagnostics. The validator
+The canonical, decision-free Gate A `1.2.0` closeout report is likewise closed over the exact Gate
+A version and one release-eligible snapshot projection. It MUST report coverage totals derived
+from the current validation plan and index. Every known-good case MUST pass; every scientific,
+governance, and validator-security known-bad case MUST fail for its declared rule; each passed or
+rejected count MUST equal its corresponding total; unexpected outcomes and diagnostics MUST both
+be zero; `acceptance_created` MUST be false; and `operator_acceptance_state` MUST be `unaccepted`.
+Its control summary MUST list GA-01 through GA-16 as required, covered, and passed with no failed
+architecture control. GA-17 is represented by `control_summary.external_control`, which the
+offline repository report always sets to `not_evaluated` with a null decision-record ID. The validator
 may diagnose decision-record structure, bindings, and history, but repository bytes cannot
 authenticate a human or establish authority. Only an independently authorized external verifier
 may evaluate the composite operator state; a schema-valid self-assertion is insufficient and
-Gate B remains blocked. If a later external decision record is structurally defective, the
-overall command may fail with ordinary decision diagnostics while the independently computed
-GA-01-through-GA-16 architecture status remains `architecture_complete`.
+Gate B remains blocked. The report also keeps public transport `not_evaluated`: it may validate
+receipt-chain structure but cannot convert receipt assertions into an external remote observation.
+Any result other than `pass`, any nonzero exit code, any count mismatch, any failed architecture
+control, or any nonempty diagnostic set forbids `architecture_complete` for that report.
+
+The report MUST also carry a same-snapshot `correction_closure_summary`. Its ordered
+`required_finding_ids` are exactly `CR-001` through `CR-016`; `closed_finding_ids` and
+`open_finding_ids` form an exact disjoint partition of that set; and `finding_results` contains one
+ordered result for every required finding with the exact production checks and fixtures used to
+derive its state. `architecture_complete` is permitted only when the required and closed arrays are
+identical, the open array is empty, and every referenced check and fixture passed in that replay.
+Review prose, a prior run, or an independently edited closure list cannot close a finding.
 
 To prevent a decision/index digest cycle, the candidate index permanently records
 `operator_acceptance_state: unaccepted` and a null decision binding. A later external decision
@@ -563,6 +635,12 @@ an empirical finding. Any claim or experiment assigned `invalid`, `null`, `incon
 `failed`, `supported`, `contradicted`, `replicated`, `corrected`, or `retracted` MUST bind at
 least one retained evidence object.
 
+The Gate A 1.2 application envelope nevertheless exposes only an explicit evidence-gap binding;
+it has no eligible scientific-evidence or experiment-binding resolver. Evidence-requiring
+scientific statuses remain schema-representable as rejection targets, but no application record
+can enter a favorable or terminal evidence-backed state in this release. This deliberate boundary
+prevents a lifecycle label or self-reference from manufacturing scientific support.
+
 The same retained-evidence rule applies to a result or metric interpretation with one of
 those evidentiary dispositions. Every claim, experiment, result, or lifecycle event binding
 declared `retained` uses an exact `{evidence_id, version}` reference and resolves to that
@@ -614,6 +692,9 @@ structural conditions, not proof that the evidence is true, sufficient, or autho
 - Historical Gate A `1.0.0` contains its two initial manifest releases and remains unaccepted.
   Gate A `1.1.0` adds exact mission and protocol successors through the append-only release
   ledger. No successor may become an unchecked current head or overwrite an earlier release.
+- Gate A `1.1.2` remains frozen as the last public packet before adversarial semantic and
+  validation-integrity findings. Gate A `1.2.0` preserves mission `1.1.0`, creates a corrected
+  protocol `1.2.0`, and binds the predecessor through exact recovery artifacts.
 - Retractions remain visible and cannot silently restore an earlier status.
 - Schema or semantic-rule changes create a new version and require fixture replay.
 - Claim wording changes create a new claim version and must not inherit a result without a
@@ -646,7 +727,8 @@ present and the documented offline validation entry point confirms:
 - all known-good fixtures pass;
 - all known-bad fixtures fail for their declared primary reasons;
 - internal links, IDs, versions, source extents, and hashes reconcile;
-- validation is offline, fail-closed, and deterministically replayable;
+- validation uses the locked execution boundary, one immutable snapshot, a closed format set, and
+  byte-identical deterministic replay;
 - the full working-tree diff has been reviewed; and
 - the handoff records validation evidence, unresolved risk, and the next authorized action.
 

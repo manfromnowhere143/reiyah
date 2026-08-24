@@ -1,0 +1,24 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.reference_document_local_unresolved",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/study-design-preregistration.json",
+  "mutations": [
+    {
+      "operation": "replace",
+      "json_pointer": "/identification_queries/0/treatment_node_id",
+      "value": "reiyah.node.registered_but_absent"
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-DOCUMENT-LOCAL-REFERENCE-RESOLUTION",
+    "instance_pointer": "/identification_queries/0/treatment_node_id",
+    "schema_keyword": "semantic",
+    "reason": "A document-local identifier must resolve exactly once in its explicitly owned collection and may not be inferred by naming convention."
+  },
+  "runtime_execution_authorized": false
+}

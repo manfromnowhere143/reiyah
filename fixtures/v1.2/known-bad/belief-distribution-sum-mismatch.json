@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.belief_distribution_sum_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/belief/distribution/probabilities/1/probability", "value": 0.7}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-BELIEF-DISTRIBUTION-SUM", "instance_pointer": "/belief/distribution/probabilities", "schema_keyword": "semantic", "reason": "An observed belief distribution must sum to one within the exact record-bound protocol tolerance."},
+  "runtime_execution_authorized": false
+}

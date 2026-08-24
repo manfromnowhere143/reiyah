@@ -1,0 +1,283 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-mutation-fixture.schema.json",
+  "title": "Gate A 1.2.0 transport-observation governance mutation fixture",
+  "description": "Closed synthetic known-bad fixture that selects the typed transport-observation baseline and applies one generic RFC 6901 replace mutation, except for five exact-whitelisted coherent two- or three-replacement fixtures needed to isolate cross-copy predicates. Schema-first structural rejection and schema-valid semantic replay are distinct evidence layers.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "target_schema_id",
+    "artifact_version",
+    "fixture_id",
+    "fixture_class",
+    "mission_release_id",
+    "protocol_release_id",
+    "synthetic_fixture_only",
+    "baseline_fixture_id",
+    "baseline_expected_outcome",
+    "expected_diagnostic",
+    "expected_replay"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-mutation-fixture.schema.json"
+    },
+    "target_schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-fixture.schema.json"
+    },
+    "artifact_version": {"const": "1.2.0"},
+    "fixture_id": {
+      "type": "string",
+      "pattern": "^reiyah\\.fixture\\.governance\\.transport-[a-z0-9-]+@1\\.2\\.0$"
+    },
+    "fixture_class": {"const": "known-bad-governance"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+    "synthetic_fixture_only": {"const": true},
+    "baseline_fixture_id": {
+      "const": "reiyah.fixture.governance.transport-observation-synthetic-baseline@1.2.0"
+    },
+    "baseline_expected_outcome": {"const": "accepted"},
+    "expected_diagnostic": {
+      "description": "A structural fixture maps the exact canonical first schema keyword and pointer to this domain classification without claiming semantic-handler coverage. A semantic fixture requires this exact singleton production diagnostic after target-schema success.",
+      "enum": [
+        "GA12-TRANSPORT-PUBLICATION-BYTE-BINDING",
+        "GA12-TRANSPORT-PUBLICATION-BINDING",
+        "GA12-TRANSPORT-AUTHORIZATION-BINDING",
+        "GA12-TRANSPORT-OBSERVER-AUTHENTICATION",
+        "GA12-TRANSPORT-OBSERVER-IDENTITY-SEPARATION",
+        "GA12-TRANSPORT-OBSERVER-INDEPENDENCE-BASIS",
+        "GA12-TRANSPORT-EVIDENCE-RESOLUTION",
+        "GA12-TRANSPORT-EVIDENCE-REFERENCE-CHRONOLOGY",
+        "GA12-TRANSPORT-CHRONOLOGY"
+      ]
+    },
+    "expected_replay": {
+      "oneOf": [
+        {"$ref": "#/$defs/structuralReplay"},
+        {"$ref": "#/$defs/semanticReplay"}
+      ]
+    },
+    "mutation": {"$ref": "#/$defs/replaceMutation"},
+    "mutations": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/replaceMutation"},
+      "minItems": 2,
+      "maxItems": 3,
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "replaceMutation": {
+      "type": "object",
+      "required": ["operation", "json_pointer", "value"],
+      "properties": {
+        "operation": {"const": "replace"},
+        "json_pointer": {
+          "type": "string",
+          "minLength": 2,
+          "pattern": "^/"
+        },
+        "value": true
+      },
+      "additionalProperties": false
+    },
+    "structuralReplay": {
+      "type": "object",
+      "required": [
+        "rejection_layer",
+        "target_schema_id",
+        "schema_keyword",
+        "instance_pointer",
+        "semantic_replay_required",
+        "exact_singleton_semantic_diagnostic_required"
+      ],
+      "properties": {
+        "rejection_layer": {"const": "structural_schema"},
+        "target_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-fixture.schema.json"
+        },
+        "schema_keyword": {"enum": ["const", "minLength", "type"]},
+        "instance_pointer": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^/"
+        },
+        "semantic_replay_required": {"const": false},
+        "exact_singleton_semantic_diagnostic_required": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "semanticReplay": {
+      "type": "object",
+      "required": [
+        "rejection_layer",
+        "target_schema_id",
+        "schema_keyword",
+        "instance_pointer",
+        "semantic_replay_required",
+        "exact_singleton_semantic_diagnostic_required"
+      ],
+      "properties": {
+        "rejection_layer": {"const": "semantic"},
+        "target_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-fixture.schema.json"
+        },
+        "schema_keyword": {"const": "semantic"},
+        "instance_pointer": {"type": "null"},
+        "semantic_replay_required": {"const": true},
+        "exact_singleton_semantic_diagnostic_required": {"const": true}
+      },
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "required": ["mutation"],
+      "not": {"required": ["mutations"]}
+    },
+    {
+      "required": ["mutations"],
+      "not": {"required": ["mutation"]},
+      "oneOf": [
+        {
+          "properties": {
+            "fixture_id": {
+              "const": "reiyah.fixture.governance.transport-publication-strict-boundary-equality@1.2.0"
+            },
+            "expected_diagnostic": {"const": "GA12-TRANSPORT-CHRONOLOGY"},
+            "expected_replay": {
+              "properties": {"rejection_layer": {"const": "semantic"}}
+            },
+            "mutations": {
+              "const": [
+                {
+                  "operation": "replace",
+                  "json_pointer": "/retained_evidence_operands/0/record/captured_at",
+                  "value": "2026-08-25T10:30:50Z"
+                },
+                {
+                  "operation": "replace",
+                  "json_pointer": "/transport_record_operand/record/observation_evidence/0/captured_at",
+                  "value": "2026-08-25T10:30:50Z"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "properties": {
+            "fixture_id": {
+              "const": "reiyah.fixture.governance.transport-publication-c-packet-binding-mismatch@1.2.0"
+            },
+            "expected_diagnostic": {"const": "GA12-TRANSPORT-PUBLICATION-BINDING"},
+            "expected_replay": {
+              "properties": {"rejection_layer": {"const": "semantic"}}
+            },
+            "mutations": {
+              "const": [
+                {
+                  "operation": "replace",
+                  "json_pointer": "/authorization_operand/record/authorized_git_commit",
+                  "value": "2222222222222222222222222222222222222222"
+                },
+                {
+                  "operation": "replace",
+                  "json_pointer": "/transport_record_operand/record/observed_git_commit",
+                  "value": "2222222222222222222222222222222222222222"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "properties": {
+            "fixture_id": {
+              "const": "reiyah.fixture.governance.transport-evidence-payload-digest-recomputation@1.2.0"
+            },
+            "expected_diagnostic": {"const": "GA12-TRANSPORT-EVIDENCE-RESOLUTION"},
+            "expected_replay": {
+              "properties": {"rejection_layer": {"const": "semantic"}}
+            },
+            "mutations": {
+              "const": [
+                {
+                  "operation": "replace",
+                  "json_pointer": "/retained_evidence_operands/0/payload_sha256",
+                  "value": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+                },
+                {
+                  "operation": "replace",
+                  "json_pointer": "/retained_evidence_operands/0/record/sha256",
+                  "value": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+                },
+                {
+                  "operation": "replace",
+                  "json_pointer": "/transport_record_operand/record/observation_evidence/0/sha256",
+                  "value": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "properties": {
+            "fixture_id": {
+              "const": "reiyah.fixture.governance.transport-evidence-payload-size-recomputation@1.2.0"
+            },
+            "expected_diagnostic": {"const": "GA12-TRANSPORT-EVIDENCE-RESOLUTION"},
+            "expected_replay": {
+              "properties": {"rejection_layer": {"const": "semantic"}}
+            },
+            "mutations": {
+              "const": [
+                {
+                  "operation": "replace",
+                  "json_pointer": "/retained_evidence_operands/0/payload_byte_size",
+                  "value": 129
+                },
+                {
+                  "operation": "replace",
+                  "json_pointer": "/retained_evidence_operands/0/record/byte_size",
+                  "value": 129
+                },
+                {
+                  "operation": "replace",
+                  "json_pointer": "/transport_record_operand/record/observation_evidence/0/byte_size",
+                  "value": 129
+                }
+              ]
+            }
+          }
+        },
+        {
+          "properties": {
+            "fixture_id": {
+              "const": "reiyah.fixture.governance.transport-authorization-capture-lower-bound@1.2.0"
+            },
+            "expected_diagnostic": {"const": "GA12-TRANSPORT-CHRONOLOGY"},
+            "expected_replay": {
+              "properties": {"rejection_layer": {"const": "semantic"}}
+            },
+            "mutations": {
+              "const": [
+                {
+                  "operation": "replace",
+                  "json_pointer": "/retained_evidence_operands/0/record/captured_at",
+                  "value": "2026-08-25T10:31:29Z"
+                },
+                {
+                  "operation": "replace",
+                  "json_pointer": "/transport_record_operand/record/observation_evidence/0/captured_at",
+                  "value": "2026-08-25T10:31:29Z"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "additionalProperties": false,
+  "$comment": "The production resolver must load the exact closed baseline by baseline_fixture_id, require target_schema_id to equal the baseline schema_id, prove zero baseline schema and semantic diagnostics, deep-copy the baseline, validate each non-root RFC 6901 replace against an existing location, and apply it without mutating the retained baseline. Every fixture carries exactly one replacement except five fixture-ID-specific branches whose complete ordered mutation arrays are schema-const: strict publication time, publication-to-transport C_packet binding, UTF-8 payload digest recomputation, UTF-8 payload size recomputation, and retained-capture authorization lower bound. A structural_schema fixture must match the exact canonical first target-schema keyword and pointer and then skip semantic replay. A semantic fixture must have zero target-schema errors and emit exactly the singleton expected_diagnostic. Frozen domain diagnostic priority across schema-first mappings and reachable semantics is publication byte binding, publication receipt/topology binding, authorization binding, observer authentication, observer identity separation, substantive independence basis, evidence resolution, per-reference evidence chronology, and global chronology. The null-authorization and unauthenticated-observer canaries are structural-only under the bound production schema and make no semantic-handler coverage claim. Publication bytes gate publication topology; publication topology gates authorization; authorization resolution gates observer and global chronology; evidence resolution gates per-reference chronology."
+}

@@ -1,0 +1,18 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.bad.worst_group_nonobserved_ess_mislabeled_insufficient",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-nonobserved.json",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/worst_group_evaluation/group_results/0/information_disposition", "value": "insufficient"}],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-WORST-GROUP-INFORMATION",
+    "instance_pointer": "/worst_group_evaluation/group_results/0/information_disposition",
+    "schema_keyword": "semantic",
+    "reason": "Group information disposition must be computed from all executable minimum-information thresholds."
+  },
+  "runtime_execution_authorized": false
+}

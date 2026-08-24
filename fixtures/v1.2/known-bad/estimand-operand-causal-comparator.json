@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.estimand_operand_causal_comparator",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/study-design-preregistration.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/estimands/0/comparator", "value": "A different undeclared comparator."}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-CAUSAL-ESTIMAND-BINDING", "instance_pointer": "/estimands/0", "schema_keyword": "semantic", "reason": "Every identification query must resolve one declared estimand and exact-bind its treatment and outcome nodes."},
+  "runtime_execution_authorized": false
+}

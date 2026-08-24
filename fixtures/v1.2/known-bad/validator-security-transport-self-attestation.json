@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "synthetic_fixture_only": true,
+  "expected_diagnostic": "GA12-TRANSPORT-EXTERNALLY-UNVERIFIED",
+  "fixture_class": "known-bad-validator-security",
+  "fixture_id": "reiyah.fixture.validator-security.transport-self-attestation@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "probe": {
+    "kind": "transport_evidence",
+    "publisher_receipt_path": "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.2.json",
+    "independent_transport_record_paths": [],
+    "claimed_state": "independently_verified"
+  },
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0"
+}

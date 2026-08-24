@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "title": "Scientific contract v1.2 known-bad mutation fixture",
+  "description": "Declares a deterministic mutation and one reason-specific expected rejection. Mutation application is offline validation, never product runtime.",
+  "type": "object",
+  "required": ["schema_id", "schema_version", "protocol_release_id", "mission_release_id", "fixture_id", "target_schema_id", "base_fixture_path", "mutations", "expected_outcome", "expected_failure", "runtime_execution_authorized"],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json"},
+    "schema_version": {"const": "1.2.0"},
+    "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "fixture_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "target_schema_id": {
+      "enum": [
+        "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+        "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+        "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+        "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+        "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json"
+      ]
+    },
+    "base_fixture_path": {"$ref": "common.schema.json#/$defs/relativePath"},
+    "mutations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["operation", "json_pointer"],
+        "properties": {
+          "operation": {"enum": ["add", "remove", "replace"]},
+          "json_pointer": {"type": "string", "pattern": "^(?:/(?:[^~/]|~0|~1)*)+$"},
+          "value": true
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"operation": {"enum": ["add", "replace"]}}, "required": ["operation"]},
+            "then": {"required": ["value"]},
+            "else": {"not": {"required": ["value"]}}
+          }
+        ],
+        "additionalProperties": false
+      }
+    },
+    "expected_outcome": {"const": "reject"},
+    "expected_failure": {
+      "type": "object",
+      "required": ["rule_id", "instance_pointer", "schema_keyword", "reason"],
+      "properties": {
+        "rule_id": {"type": "string", "pattern": "^GA-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+        "instance_pointer": {"type": "string", "pattern": "^(?:$|(?:/(?:[^~/]|~0|~1)*)+)$"},
+        "schema_keyword": {"enum": ["required", "const", "enum", "type", "minimum", "maximum", "exclusiveMinimum", "exclusiveMaximum", "minItems", "maxItems", "uniqueItems", "additionalProperties", "unevaluatedProperties", "semantic"]},
+        "reason": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+      },
+      "additionalProperties": false
+    },
+    "runtime_execution_authorized": {"const": false}
+  },
+  "additionalProperties": false
+}

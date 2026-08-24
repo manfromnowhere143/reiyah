@@ -1,0 +1,274 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "schema_version": "1.2.0",
+  "artifact_id": "reiyah.fixture.human_automation_recovery_competing.good",
+  "record_kind": "result",
+  "version": "1.2.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.event.human_automation_recovery_competing.proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-24T08:00:00Z",
+      "actor": {
+        "actor_id": "reiyah.actor.fixture_author",
+        "actor_type": "derived_process",
+        "version": "1.2.0",
+        "role": "deterministic synthetic fixture author"
+      },
+      "rationale": "Synthetic static assessment containing an intentionally unresolved required capability.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "created_at": "2026-08-24T08:00:00Z",
+  "runtime_execution_authorized": false,
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "assessment_id": "reiyah.assessment.synthetic_human_automation_recovery_competing_1_2",
+  "encounter_ref": {
+    "record_id": "reiyah.encounter.synthetic_001",
+    "record_kind": "reiyah.kind.encounter",
+    "version": "1.2.0"
+  },
+  "belief": {
+    "belief_id": "reiyah.belief.synthetic_vehicle_state",
+    "estimand_ref": {
+      "record_id": "reiyah.estimand.object-belief-quality",
+      "record_kind": "reiyah.kind.estimand",
+      "version": "1.2.0"
+    },
+    "holder": {
+      "actor_id": "reiyah.actor.synthetic_driver",
+      "actor_type": "human",
+      "version": "1.2.0",
+      "role": "synthetic driver belief holder"
+    },
+    "object_ref": {
+      "record_id": "reiyah.object.synthetic_vehicle",
+      "record_kind": "reiyah.kind.vehicle_object",
+      "version": "1.2.0"
+    },
+    "as_of": {"state": "observed", "value": "2026-08-24T08:00:05Z"},
+    "information_set": {
+      "information_set_id": "reiyah.information_set.belief_001",
+      "version": "1.2.0",
+      "frozen_at": "2026-08-24T08:00:05Z",
+      "items": [
+        {"record_id": "reiyah.observation.synthetic_mode", "record_kind": "reiyah.kind.observation", "version": "1.2.0"}
+      ],
+      "complete_as_declared": true,
+      "post_freeze_additions_prohibited": true
+    },
+    "state_space": {
+      "state_space_id": "reiyah.state_space.automation_mode",
+      "version": "1.2.0",
+      "state_ids": ["reiyah.state.manual", "reiyah.state.automated"],
+      "exhaustive_as_declared": true
+    },
+    "distribution": {
+      "state": "observed",
+      "probabilities": [
+        {"state_id": "reiyah.state.manual", "probability": 0.25},
+        {"state_id": "reiyah.state.automated", "probability": 0.75}
+      ]
+    },
+    "normalization_policy_binding": {
+      "policy_id": "reiyah.belief-normalization-policy.harbor-gate-a",
+      "version": "1.2.0",
+      "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+      "applies_to": "observed_categorical_belief_components",
+      "sum_target": 1,
+      "absolute_tolerance": 0.000001,
+      "comparison": "absolute_error_lte",
+      "record_tolerance_must_equal_policy": true,
+      "runtime_execution_authorized": false
+    },
+    "calibration_target": {
+      "rule_id": "reiyah.rule.vehicle_mode_truth",
+      "rule_kind": "reiyah.kind.calibration_target",
+      "version": "1.2.0"
+    },
+    "scoring_contract": {
+      "scoring_rule_ref": null,
+      "reference_outcome": {
+        "state": "unmeasured",
+        "reason": "Gate A retains no independently valid reference outcome for proper-score evaluation.",
+        "basis_ids": ["reiyah.evidence_gap.reference_outcome"]
+      },
+      "score_output": {
+        "state": "unmeasured",
+        "reason": "No scoring rule or independently valid reference outcome is retained at Gate A.",
+        "basis_ids": ["reiyah.gate.runtime_prohibited"]
+      },
+      "aggregate_scoring_authorized": false
+    }
+  },
+  "observation": {
+    "observation_id": "reiyah.observation.synthetic_mode",
+    "observer": {
+      "actor_id": "reiyah.actor.synthetic_sensor",
+      "actor_type": "instrument",
+      "version": "1.2.0",
+      "role": "synthetic observation source"
+    },
+    "object_ref": {
+      "record_id": "reiyah.object.synthetic_vehicle",
+      "record_kind": "reiyah.kind.vehicle_object",
+      "version": "1.2.0"
+    },
+    "event_at": {"state": "observed", "value": "2026-08-24T08:00:04Z"},
+    "measured_at": {"state": "observed", "value": "2026-08-24T08:00:04Z"},
+    "available_at": {"state": "observed", "value": "2026-08-24T08:00:05Z"},
+    "value": {"state": "observed", "value": "automated"},
+    "validity": "valid"
+  },
+  "decision": {
+    "decision_id": "reiyah.decision.synthetic_acknowledge",
+    "actor": {
+      "actor_id": "reiyah.actor.synthetic_driver",
+      "actor_type": "human",
+      "version": "1.2.0",
+      "role": "synthetic decision actor"
+    },
+    "object_ref": {
+      "record_id": "reiyah.object.synthetic_vehicle",
+      "record_kind": "reiyah.kind.vehicle_object",
+      "version": "1.2.0"
+    },
+    "decided_at": {"state": "observed", "value": "2026-08-24T08:00:06Z"},
+    "information_set": {
+      "information_set_id": "reiyah.information_set.decision_001",
+      "version": "1.2.0",
+      "frozen_at": "2026-08-24T08:00:05Z",
+      "items": [
+        {"record_id": "reiyah.observation.synthetic_mode", "record_kind": "reiyah.kind.observation", "version": "1.2.0"},
+        {"record_id": "reiyah.belief.synthetic_vehicle_state", "record_kind": "reiyah.kind.belief", "version": "1.2.0"}
+      ],
+      "complete_as_declared": true,
+      "post_freeze_additions_prohibited": true
+    },
+    "action_space_id": "reiyah.action_space.synthetic_acknowledgement",
+    "selected_action": {"state": "observed", "value": "reiyah.action.acknowledge"},
+    "physical_control_authorized": false
+  },
+  "readiness": {
+    "readiness_id": "reiyah.readiness.synthetic_001",
+    "estimand_ref": {
+      "record_id": "reiyah.estimand.readiness",
+      "record_kind": "reiyah.kind.estimand",
+      "version": "1.2.0"
+    },
+    "subject_ref": {
+      "actor_id": "reiyah.actor.synthetic_driver",
+      "actor_type": "human",
+      "version": "1.2.0",
+      "role": "synthetic readiness subject"
+    },
+    "as_of": {"state": "observed", "value": "2026-08-24T08:00:09Z"},
+    "window": {
+      "window_id": "reiyah.window.readiness_001",
+      "opens_at": {"state": "observed", "value": "2026-08-24T08:00:00Z"},
+      "closes_at": {"state": "observed", "value": "2026-08-24T08:00:10Z"},
+      "clock_id": "reiyah.clock.synthetic_monotonic"
+    },
+    "aggregation": {
+      "mode": "weighted_continuous",
+      "rule_ref": {"rule_id": "reiyah.rule.readiness-unknown-propagation", "rule_kind": "reiyah.kind.aggregation_rule", "version": "1.2.0"},
+      "unknown_propagation": "dominant",
+      "safety_critical_compensation": false,
+      "weights_normalized": true
+    },
+    "capability_set_ref": {"record_id": "reiyah.capability-set.synthetic-readiness-required", "record_kind": "reiyah.kind.capability_set", "version": "1.2.0"},
+    "capabilities": [
+      {
+        "capability_id": "reiyah.capability.mode_comprehension",
+        "dimension_id": "reiyah.dimension.comprehension",
+        "required": true,
+        "safety_critical": true,
+        "weight": 0.5,
+        "estimate": {"state": "observed", "value": 0.8},
+        "criterion": {
+          "rule_ref": {"rule_id": "reiyah.rule.capability_threshold", "rule_kind": "reiyah.kind.readiness_criterion", "version": "1.2.0"},
+          "threshold": {"operator": "gte", "value": 0.7}
+        },
+        "criterion_disposition": "met"
+      },
+      {
+        "capability_id": "reiyah.capability.hazard_perception",
+        "dimension_id": "reiyah.dimension.perception",
+        "required": true,
+        "safety_critical": true,
+        "weight": 0.5,
+        "estimate": {
+          "state": "unmeasured",
+          "reason": "No hazard-perception measurement exists in the synthetic fixture.",
+          "basis_ids": ["reiyah.measurement.hazard_perception_absent"]
+        },
+        "criterion": {
+          "rule_ref": {"rule_id": "reiyah.rule.capability_threshold", "rule_kind": "reiyah.kind.readiness_criterion", "version": "1.2.0"},
+          "threshold": {"operator": "gte", "value": 0.7}
+        },
+        "criterion_disposition": "unknown"
+      }
+    ],
+    "unresolved_capability_ids": ["reiyah.capability.hazard_perception"],
+    "coverage_counts": {"total": 2, "observed": 1, "missing": 0, "unmeasured": 1, "out_of_distribution": 0, "sensor_invalid": 0, "abstained": 0},
+    "aggregate": {
+      "estimate": {
+        "state": "unmeasured",
+        "reason": "A required safety-critical capability is unmeasured and dominant unknown propagation applies.",
+        "basis_ids": ["reiyah.capability.hazard_perception"]
+      },
+      "disposition": "unknown"
+    }
+  },
+  "recovery": {
+    "recovery_id": "reiyah.recovery.synthetic_001",
+    "estimand_ref": {
+      "record_id": "reiyah.estimand.recoverability",
+      "record_kind": "reiyah.kind.estimand",
+      "version": "1.2.0"
+    },
+    "derivation_contract_ref": {"rule_id": "reiyah.rule.recovery-event-derivation", "rule_kind": "reiyah.kind.decision_rule", "version": "1.2.0"},
+    "event_manifest_ref": {"record_id": "reiyah.recovery-event-manifest.synthetic-competing-complete", "record_kind": "reiyah.kind.recovery_event_manifest", "version": "1.2.0"},
+    "index_event": {
+      "event_id": "reiyah.event.readiness_loss",
+      "event_type": "reiyah.event_type.readiness_loss",
+      "occurred_at": {"state": "observed", "value": "2026-08-24T08:00:10Z"},
+      "role": "none"
+    },
+    "window": {
+      "window_id": "reiyah.window.recovery_001",
+      "opens_at": {"state": "observed", "value": "2026-08-24T08:00:10Z"},
+      "closes_at": {"state": "observed", "value": "2026-08-24T08:00:20Z"},
+      "clock_id": "reiyah.clock.synthetic_monotonic"
+    },
+    "window_observation_complete": {"state": "observed", "value": true},
+    "event_tie_policy": "reject_ambiguous_cross_role_tie",
+    "recovery_criterion": {"rule_id": "reiyah.rule.recovery_event", "rule_kind": "reiyah.kind.recovery_criterion", "version": "1.2.0"},
+    "censoring_policy": {"rule_id": "reiyah.rule.recovery_censoring", "rule_kind": "reiyah.kind.censoring_policy", "version": "1.2.0"},
+    "competing_event_policy": {"rule_id": "reiyah.rule.recovery_competing", "rule_kind": "reiyah.kind.competing_policy", "version": "1.2.0"},
+    "events": [
+      {
+        "event_id": "reiyah.event.recovery_observed",
+        "event_type": "reiyah.event_type.readiness_loss",
+        "occurred_at": {"state": "observed", "value": "2026-08-24T08:00:14Z"},
+        "role": "competing"
+      }
+    ],
+    "outcome": {
+      "disposition": "competing_event",
+      "qualifying_event_id": {"state": "observed", "value": "reiyah.event.recovery_observed"},
+      "elapsed_seconds": {"state": "observed", "value": 4, "unit": "seconds"}
+    }
+  },
+  "evidence_binding": {
+    "state": "evidence_gap",
+    "evidence_refs": [],
+    "gap_reason": "The values are synthetic architecture examples and are not scientific evidence."
+  },
+  "scientific_claim_authorized": false
+}

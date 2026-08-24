@@ -1,0 +1,585 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+  "schema_version": "1.2.0",
+  "artifact_id": "reiyah.fixture.sequential_ope.maximum_horizon.good",
+  "record_kind": "result",
+  "version": "1.2.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.event.sequential_ope.maximum_horizon.proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-24T08:00:00Z",
+      "actor": {
+        "actor_id": "reiyah.actor.fixture_author",
+        "actor_type": "derived_process",
+        "version": "1.2.0",
+        "role": "deterministic synthetic fixture author"
+      },
+      "rationale": "Two synthetic two-step trajectories expose cumulative-weight and horizon-ESS arithmetic without executing an estimator.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "created_at": "2026-08-24T08:00:00Z",
+  "runtime_execution_authorized": false,
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "evaluation_id": "reiyah.evaluation.synthetic_ope_maximum_horizon_1_2",
+  "estimand_ref": {
+    "record_id": "reiyah.estimand.sequential-policy-value",
+    "record_kind": "reiyah.kind.estimand",
+    "version": "1.2.0"
+  },
+  "reward_contract": {
+    "reward_signal_id": "reiyah.reward.synthetic-utility",
+    "version": "1.2.0",
+    "unit": "synthetic utility",
+    "orientation": "higher_utility_is_better",
+    "minimum": 0,
+    "maximum": 1,
+    "discounted_return_definition": "sum_discount_factor_power_step_index_times_reward"
+  },
+  "study_ref": {
+    "record_id": "reiyah.study.synthetic_1_2",
+    "record_kind": "reiyah.kind.study_design",
+    "version": "1.2.0"
+  },
+  "dataset_ref": {
+    "record_id": "reiyah.dataset.synthetic_1_2",
+    "record_kind": "reiyah.kind.dataset",
+    "version": "1.2.0"
+  },
+  "odd_ref": {
+    "record_id": "reiyah.odd.synthetic_1_2",
+    "record_kind": "reiyah.kind.odd",
+    "version": "1.2.0"
+  },
+  "frozen_at": "2026-08-24T08:00:00Z",
+  "trajectory_set_ref": {"record_id": "reiyah.trajectory-set.synthetic-ope", "record_kind": "reiyah.kind.trajectory_set", "version": "1.2.0"},
+  "behavior_policy": {
+    "policy_table_ref": {"record_id": "reiyah.policy-table.synthetic-behavior-base", "record_kind": "reiyah.kind.policy_table", "version": "1.2.0"},
+    "policy_ref": {
+      "record_id": "reiyah.policy.synthetic_behavior",
+      "record_kind": "reiyah.kind.policy",
+      "version": "1.2.0"
+    },
+    "action_space": {
+      "action_space_id": "reiyah.action_space.synthetic_alerts",
+      "version": "1.2.0",
+      "action_ids": [
+        "reiyah.action.alert",
+        "reiyah.action.none"
+      ],
+      "exhaustive_as_declared": true
+    },
+    "information_set_schema_ref": {
+      "record_id": "reiyah.schema.policy_information",
+      "record_kind": "reiyah.kind.information_schema",
+      "version": "1.2.0"
+    },
+    "stochasticity_declared": true
+  },
+  "target_policy": {
+    "policy_table_ref": {"record_id": "reiyah.policy-table.synthetic-target-base", "record_kind": "reiyah.kind.policy_table", "version": "1.2.0"},
+    "policy_ref": {
+      "record_id": "reiyah.policy.synthetic_target",
+      "record_kind": "reiyah.kind.policy",
+      "version": "1.2.0"
+    },
+    "action_space": {
+      "action_space_id": "reiyah.action_space.synthetic_alerts",
+      "version": "1.2.0",
+      "action_ids": [
+        "reiyah.action.alert",
+        "reiyah.action.none"
+      ],
+      "exhaustive_as_declared": true
+    },
+    "information_set_schema_ref": {
+      "record_id": "reiyah.schema.policy_information",
+      "record_kind": "reiyah.kind.information_schema",
+      "version": "1.2.0"
+    },
+    "stochasticity_declared": true
+  },
+  "horizon": {
+    "maximum_steps": 2,
+    "discount_factor": 1,
+    "termination_rule_ref": {
+      "rule_id": "reiyah.rule.two_step_termination",
+      "rule_kind": "reiyah.kind.termination_rule",
+      "version": "1.2.0"
+    }
+  },
+  "trajectories": [
+    {
+      "trajectory_id": "reiyah.trajectory.synthetic_a",
+      "steps": [
+        {
+          "step_index": 0,
+          "history_id": "reiyah.history.trajectory_a_step_0",
+          "information_set_schema_ref": {
+            "record_id": "reiyah.schema.policy_information",
+            "record_kind": "reiyah.kind.information_schema",
+            "version": "1.2.0"
+          },
+          "history_prefix": [],
+          "information_set": {
+            "information_set_id": "reiyah.information_set.trajectory_a_step_0",
+            "version": "1.2.0",
+            "frozen_at": "2026-08-24T08:10:00Z",
+            "items": [],
+            "complete_as_declared": true,
+            "post_freeze_additions_prohibited": true
+          },
+          "logged_action_id": "reiyah.action.alert",
+          "behavior_distribution": [
+            {
+              "action_id": "reiyah.action.alert",
+              "probability": 0.5
+            },
+            {
+              "action_id": "reiyah.action.none",
+              "probability": 0.5
+            }
+          ],
+          "target_distribution": [
+            {
+              "action_id": "reiyah.action.alert",
+              "probability": 0.75
+            },
+            {
+              "action_id": "reiyah.action.none",
+              "probability": 0.25
+            }
+          ],
+          "behavior_logged_propensity": 0.5,
+          "target_logged_propensity": 0.75,
+          "step_importance_ratio": 1.5,
+          "cumulative_importance_weight": 1.5,
+          "transformed_cumulative_importance_weight": 1.5,
+          "reward": {
+            "state": "observed",
+            "value": 0,
+            "unit": "synthetic utility"
+          },
+          "terminal": false
+        },
+        {
+          "step_index": 1,
+          "history_id": "reiyah.history.trajectory_a_step_1",
+          "information_set_schema_ref": {
+            "record_id": "reiyah.schema.policy_information",
+            "record_kind": "reiyah.kind.information_schema",
+            "version": "1.2.0"
+          },
+          "history_prefix": [
+            {
+              "step_index": 0,
+              "logged_action_id": "reiyah.action.alert"
+            }
+          ],
+          "information_set": {
+            "information_set_id": "reiyah.information_set.trajectory_a_step_1",
+            "version": "1.2.0",
+            "frozen_at": "2026-08-24T08:10:01Z",
+            "items": [
+              {
+                "record_id": "reiyah.action.alert",
+                "record_kind": "reiyah.kind.prior_action",
+                "version": "1.2.0"
+              }
+            ],
+            "complete_as_declared": true,
+            "post_freeze_additions_prohibited": true
+          },
+          "logged_action_id": "reiyah.action.none",
+          "behavior_distribution": [
+            {
+              "action_id": "reiyah.action.alert",
+              "probability": 0.5
+            },
+            {
+              "action_id": "reiyah.action.none",
+              "probability": 0.5
+            }
+          ],
+          "target_distribution": [
+            {
+              "action_id": "reiyah.action.alert",
+              "probability": 0.5
+            },
+            {
+              "action_id": "reiyah.action.none",
+              "probability": 0.5
+            }
+          ],
+          "behavior_logged_propensity": 0.5,
+          "target_logged_propensity": 0.5,
+          "step_importance_ratio": 1,
+          "cumulative_importance_weight": 1.5,
+          "transformed_cumulative_importance_weight": 1.5,
+          "reward": {
+            "state": "observed",
+            "value": 1,
+            "unit": "synthetic utility"
+          },
+          "terminal": false
+        }
+      ],
+      "observed_horizon": 2,
+      "termination_disposition": "maximum_horizon_truncation",
+      "final_cumulative_weight": 1.5,
+      "final_transformed_cumulative_weight": 1.5
+    },
+    {
+      "trajectory_id": "reiyah.trajectory.synthetic_b",
+      "steps": [
+        {
+          "step_index": 0,
+          "history_id": "reiyah.history.trajectory_b_step_0",
+          "information_set_schema_ref": {
+            "record_id": "reiyah.schema.policy_information",
+            "record_kind": "reiyah.kind.information_schema",
+            "version": "1.2.0"
+          },
+          "history_prefix": [],
+          "information_set": {
+            "information_set_id": "reiyah.information_set.trajectory_b_step_0",
+            "version": "1.2.0",
+            "frozen_at": "2026-08-24T08:11:00Z",
+            "items": [],
+            "complete_as_declared": true,
+            "post_freeze_additions_prohibited": true
+          },
+          "logged_action_id": "reiyah.action.none",
+          "behavior_distribution": [
+            {
+              "action_id": "reiyah.action.alert",
+              "probability": 0.5
+            },
+            {
+              "action_id": "reiyah.action.none",
+              "probability": 0.5
+            }
+          ],
+          "target_distribution": [
+            {
+              "action_id": "reiyah.action.alert",
+              "probability": 0.25
+            },
+            {
+              "action_id": "reiyah.action.none",
+              "probability": 0.75
+            }
+          ],
+          "behavior_logged_propensity": 0.5,
+          "target_logged_propensity": 0.75,
+          "step_importance_ratio": 1.5,
+          "cumulative_importance_weight": 1.5,
+          "transformed_cumulative_importance_weight": 1.5,
+          "reward": {
+            "state": "observed",
+            "value": 0,
+            "unit": "synthetic utility"
+          },
+          "terminal": false
+        },
+        {
+          "step_index": 1,
+          "history_id": "reiyah.history.trajectory_b_step_1",
+          "information_set_schema_ref": {
+            "record_id": "reiyah.schema.policy_information",
+            "record_kind": "reiyah.kind.information_schema",
+            "version": "1.2.0"
+          },
+          "history_prefix": [
+            {
+              "step_index": 0,
+              "logged_action_id": "reiyah.action.none"
+            }
+          ],
+          "information_set": {
+            "information_set_id": "reiyah.information_set.trajectory_b_step_1",
+            "version": "1.2.0",
+            "frozen_at": "2026-08-24T08:11:01Z",
+            "items": [
+              {
+                "record_id": "reiyah.action.none",
+                "record_kind": "reiyah.kind.prior_action",
+                "version": "1.2.0"
+              }
+            ],
+            "complete_as_declared": true,
+            "post_freeze_additions_prohibited": true
+          },
+          "logged_action_id": "reiyah.action.none",
+          "behavior_distribution": [
+            {
+              "action_id": "reiyah.action.alert",
+              "probability": 0.5
+            },
+            {
+              "action_id": "reiyah.action.none",
+              "probability": 0.5
+            }
+          ],
+          "target_distribution": [
+            {
+              "action_id": "reiyah.action.alert",
+              "probability": 0.75
+            },
+            {
+              "action_id": "reiyah.action.none",
+              "probability": 0.25
+            }
+          ],
+          "behavior_logged_propensity": 0.5,
+          "target_logged_propensity": 0.25,
+          "step_importance_ratio": 0.5,
+          "cumulative_importance_weight": 0.75,
+          "transformed_cumulative_importance_weight": 0.75,
+          "reward": {
+            "state": "observed",
+            "value": 1,
+            "unit": "synthetic utility"
+          },
+          "terminal": false
+        }
+      ],
+      "observed_horizon": 2,
+      "termination_disposition": "maximum_horizon_truncation",
+      "final_cumulative_weight": 0.75,
+      "final_transformed_cumulative_weight": 0.75
+    }
+  ],
+  "support_assessment": {
+    "support_rule_ref": {
+      "rule_id": "reiyah.rule.ope-policy-distribution",
+      "rule_kind": "reiyah.kind.rule",
+      "version": "1.2.0"
+    },
+    "required_cells": [
+      {
+        "history_id": "reiyah.history.trajectory_a_step_0",
+        "action_id": "reiyah.action.alert",
+        "behavior_probability": 0.5,
+        "target_probability": 0.75,
+        "supported": true
+      },
+      {
+        "history_id": "reiyah.history.trajectory_a_step_0",
+        "action_id": "reiyah.action.none",
+        "behavior_probability": 0.5,
+        "target_probability": 0.25,
+        "supported": true
+      },
+      {
+        "history_id": "reiyah.history.trajectory_a_step_1",
+        "action_id": "reiyah.action.alert",
+        "behavior_probability": 0.5,
+        "target_probability": 0.5,
+        "supported": true
+      },
+      {
+        "history_id": "reiyah.history.trajectory_a_step_1",
+        "action_id": "reiyah.action.none",
+        "behavior_probability": 0.5,
+        "target_probability": 0.5,
+        "supported": true
+      },
+      {
+        "history_id": "reiyah.history.trajectory_b_step_0",
+        "action_id": "reiyah.action.alert",
+        "behavior_probability": 0.5,
+        "target_probability": 0.25,
+        "supported": true
+      },
+      {
+        "history_id": "reiyah.history.trajectory_b_step_0",
+        "action_id": "reiyah.action.none",
+        "behavior_probability": 0.5,
+        "target_probability": 0.75,
+        "supported": true
+      },
+      {
+        "history_id": "reiyah.history.trajectory_b_step_1",
+        "action_id": "reiyah.action.alert",
+        "behavior_probability": 0.5,
+        "target_probability": 0.75,
+        "supported": true
+      },
+      {
+        "history_id": "reiyah.history.trajectory_b_step_1",
+        "action_id": "reiyah.action.none",
+        "behavior_probability": 0.5,
+        "target_probability": 0.25,
+        "supported": true
+      }
+    ],
+    "unsupported_cells": [],
+    "support_disposition": "supported",
+    "extrapolation_prohibited": true
+  },
+  "weight_construction": {
+    "weight_set_id": "reiyah.weight_set.cumulative_untransformed",
+    "basis": "cumulative_trajectory_product",
+    "transformation": "none",
+    "normalization": "none",
+    "normalization_scope": "trajectory_weights_within_horizon",
+    "zero_sum_normalization_disposition": "undefined",
+    "clipping": {
+      "enabled": false,
+      "threshold": null
+    },
+    "post_terminal_weight_policy": "carry_forward_terminal_transformed_weight",
+    "ess_weight_stage": "post_transformation_pre_normalization",
+    "zero_weight_preserved": true
+  },
+  "effective_sample_size_by_horizon": [
+    {
+      "horizon_index": 0,
+      "weight_set_id": "reiyah.weight_set.cumulative_untransformed",
+      "included_trajectory_count": 2,
+      "sum_cumulative_weights": 3,
+      "sum_squared_cumulative_weights": 4.5,
+      "normalization_mode": "none",
+      "normalization_denominator": 1,
+      "normalized_weight_sum": {
+        "state": "observed",
+        "value": 3
+      },
+      "kish_effective_sample_size": {
+        "state": "observed",
+        "value": 2
+      },
+      "disposition": "sufficient"
+    },
+    {
+      "horizon_index": 1,
+      "weight_set_id": "reiyah.weight_set.cumulative_untransformed",
+      "included_trajectory_count": 2,
+      "sum_cumulative_weights": 2.25,
+      "sum_squared_cumulative_weights": 2.8125,
+      "normalization_mode": "none",
+      "normalization_denominator": 1,
+      "normalized_weight_sum": {
+        "state": "observed",
+        "value": 2.25
+      },
+      "kish_effective_sample_size": {
+        "state": "observed",
+        "value": 1.8
+      },
+      "disposition": "insufficient"
+    }
+  ],
+  "estimator_selection": {
+    "selection_rule_ref": {
+      "rule_id": "reiyah.rule.outcome_blind_estimator_selection",
+      "rule_kind": "reiyah.kind.selection_rule",
+      "version": "1.2.0"
+    },
+    "candidate_estimator_ids": [
+      "reiyah.estimator.synthetic_wis",
+      "reiyah.estimator.synthetic_dr"
+    ],
+    "selected_estimator_ids": [
+      "reiyah.estimator.synthetic_wis"
+    ],
+    "selected_at": "2026-08-24T08:00:00Z",
+    "first_outcome_accessed_at": "2026-08-24T08:30:00Z",
+    "outcome_blind_selection_required": true
+  },
+  "estimators": [
+    {
+      "estimator_id": "reiyah.estimator.synthetic_wis",
+      "family": "WIS",
+      "version": "1.2.0",
+      "weight_set_id": "reiyah.weight_set.cumulative_untransformed",
+      "horizon_index": 1,
+      "estimate": {
+        "state": "unmeasured",
+        "reason": "Gate A does not execute estimators.",
+        "basis_ids": [
+          "reiyah.gate.runtime_prohibited"
+        ]
+      },
+      "uncertainty": {
+        "method_ref": {
+          "rule_id": "reiyah.rule.bootstrap_interval",
+          "rule_kind": "reiyah.kind.interval_method",
+          "version": "1.2.0"
+        },
+        "confidence_level": {
+          "state": "observed",
+          "value": 0.95
+        },
+        "lower": {
+          "state": "unmeasured",
+          "reason": "No estimator is executed.",
+          "basis_ids": [
+            "reiyah.gate.runtime_prohibited"
+          ]
+        },
+        "upper": {
+          "state": "unmeasured",
+          "reason": "No estimator is executed.",
+          "basis_ids": [
+            "reiyah.gate.runtime_prohibited"
+          ]
+        }
+      },
+      "selection_disposition": "selected"
+    },
+    {
+      "estimator_id": "reiyah.estimator.synthetic_dr",
+      "family": "DR",
+      "version": "1.2.0",
+      "weight_set_id": "reiyah.weight_set.cumulative_untransformed",
+      "horizon_index": 1,
+      "estimate": {
+        "state": "unmeasured",
+        "reason": "Gate A does not execute estimators.",
+        "basis_ids": [
+          "reiyah.gate.runtime_prohibited"
+        ]
+      },
+      "uncertainty": {
+        "method_ref": {
+          "rule_id": "reiyah.rule.bootstrap_interval",
+          "rule_kind": "reiyah.kind.interval_method",
+          "version": "1.2.0"
+        },
+        "confidence_level": {
+          "state": "observed",
+          "value": 0.95
+        },
+        "lower": {
+          "state": "unmeasured",
+          "reason": "No estimator is executed.",
+          "basis_ids": [
+            "reiyah.gate.runtime_prohibited"
+          ]
+        },
+        "upper": {
+          "state": "unmeasured",
+          "reason": "No estimator is executed.",
+          "basis_ids": [
+            "reiyah.gate.runtime_prohibited"
+          ]
+        }
+      },
+      "selection_disposition": "sensitivity_only"
+    }
+  ],
+  "evidence_binding": {
+    "state": "evidence_gap",
+    "evidence_refs": [],
+    "gap_reason": "The trajectories and policy probabilities are synthetic validation values."
+  },
+  "scientific_claim_authorized": false
+}

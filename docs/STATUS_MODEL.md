@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.status-model`
 
-Version: `1.0.0`
+Version: `1.2.0`
 
 Lifecycle status: `proposed`
 
@@ -30,6 +30,8 @@ value from one axis for a value from another.
 | Gate completion | Are all required architecture artifacts present and deterministically valid? | incomplete, architecture-complete |
 | Operator decision | Did an authorized human decide on the exact hash-bound artifact set? | unaccepted, accepted, rejected, deferred |
 | Integrity state | Do recorded bytes match a recorded digest? | verified, mismatch, not checked |
+| Distribution event | What did the publisher assert about one exact publication act? | not published, asserted unverified |
+| Independent transport | Did a separately authorized observation retain the exact remote bytes? | `not_evaluated` before a record; record outcomes `independently_verified`, `failed`, or `inconclusive` |
 
 Passing validation is an integrity signal. It is not scientific support, independent review,
 or operator acceptance.
@@ -75,8 +77,9 @@ MUST NOT change the epistemic state of the source record.
 An observed categorical latent belief records the exact normalization tolerance owned by its
 protocol release; the record cannot choose a looser value. Gate A fixes
 `belief_normalization_policy.absolute_tolerance` and every observed belief's
-`sum_tolerance` to `0.000001`, with absolute error from one required to be no greater than
-that value.
+`belief.normalization_policy_binding.absolute_tolerance` to `0.000001`, with absolute error
+from one required to be no greater than that value. The remaining policy identity, release,
+scope, comparison, and authorization fields must also match exactly.
 
 ## 4. Lifecycle statuses
 
@@ -113,7 +116,8 @@ when downstream reporting would prefer to combine them.
 5. A correction or retraction MUST be a new immutable artifact version for the same logical
    record. Its lifecycle event MUST bind the existing predecessor's distinct artifact ID,
    same logical record ID, same record kind and schema, older version, repository path, and
-   SHA-256 digest. The predecessor remains discoverable.
+   SHA-256 digest and byte size. The predecessor history is the successor history's exact
+   append-only prefix, and the predecessor remains discoverable.
 6. Status changes MUST be new auditable records or new immutable releases. In-place status
    mutation of a released manifest is prohibited.
 7. A claim, experiment, result, or evidence object with `invalid`, `null`, `inconclusive`,
@@ -179,6 +183,7 @@ immutable artifact. Event IDs are unique, sequence is contiguous, times increase
 status equals the preceding event's status, and the final event status equals the record's
 current `lifecycle_status`. These cross-event requirements are semantic checks because JSON
 Schema cannot compare array elements or repository bytes.
+The logical record `created_at` equals the first event time and is preserved by every successor.
 
 The successor never embeds its own digest. Its new event binds only the already-existing
 predecessor bytes; the Gate A index binds the successor bytes externally. This avoids an
@@ -241,10 +246,16 @@ of abstentions are prohibited. Unknown eligibility remains unknown rather than i
 
 ## 6. Gate A completion and acceptance
 
-The Gate A index uses two independent fields for the candidate bytes:
+The Gate A `1.2.0` index and its excluded canonical report use separate fields for the same exact
+candidate bytes:
 
-- `architecture_status`: `incomplete`, `invalid`, `architecture_complete`, or `stale`; and
-- `operator_acceptance_state`: always `unaccepted`.
+- the index records `architecture_status: candidate_pending_canonical_report`;
+- the report records `not_evaluated`, `invalid`, or `architecture_complete`; and
+- both record `operator_acceptance_state: unaccepted`.
+
+This separation removes a self-attestation cycle. The index inventories and hashes the candidate
+projection. The report may classify that exact index only after release-mode validation. An index
+alone never establishes architecture completeness.
 
 An accepted, rejected, or deferred operator decision is an append-only external record that
 binds the existing index digest. It is intentionally excluded from the index and MUST NOT be
@@ -257,7 +268,7 @@ asserted by mutating the candidate index.
 `architecture_complete` means only that the required static artifacts are indexed and pass
 the declared offline checks with the exact version-specific coverage totals, zero
 architecture diagnostics, no created acceptance, and GA-01 through GA-16 covered. The report
-accounts for GA-17 separately in `external_control_summary`. The offline repository report
+accounts for GA-17 separately in `control_summary.external_control`. The offline repository report
 always records GA-17 as `not_evaluated` with a null record ID and no external-control
 diagnostics: repository bytes cannot authenticate a human or establish authority. Structural,
 binding, and history defects in a present decision record remain ordinary deterministic
@@ -279,6 +290,13 @@ or authority.
 The validator may check decision-record structure, bindings, and history but MUST NOT select a
 decision, create a decision record, authenticate identity or authority, evaluate GA-17, or
 convert architecture completeness into acceptance.
+
+Publication and transport use a third independent state axis. A publisher-authored distribution
+receipt may retain exact push commands, GitHub identifiers, and remote readback assertions, but
+its `transport_verification_state` remains `asserted_unverified`. It cannot verify itself. A
+verified transport state requires a separately authorized observation record whose retained
+observation bytes and provenance bind the exact repository, commit, index, and report. Neither a
+receipt nor an independent transport observation can accept Gate A or support a scientific claim.
 
 No acceptance record exists at bootstrap. Candidate manifests therefore MUST use
 `release_stage: candidate`, `lifecycle_status: proposed`, and an `operator_acceptance`
@@ -306,18 +324,19 @@ initial mission release `reiyah.mission@1.0.0` and protocol release
 requires a newly versioned Gate A schema, validation plan, index, and report; it cannot silently
 enter or redefine the semantic head of packet `1.0.0`.
 
-The public Gate A `1.1.0` and `1.1.1` packets are immutable at their exact indexed commits and
-digests. Gate A `1.1.1` is the published governance correction for release-state prose,
-citation, review, and versioning guidance. Gate A `1.1.2` is a documentation-and-continuity
-successor. Neither changes the scientific mission, protocol, or evidence profile, so both retain
-`reiyah.mission@1.1.0` and `reiyah.protocol.harbor-gate-a@1.1.0` unchanged.
+The public Gate A `1.1.0`, `1.1.1`, and `1.1.2` packets are immutable at their exact indexed
+commits and digests. Gate A `1.1.1` is the governance correction, and `1.1.2` is its presentation
+and continuity successor. Both retain `reiyah.mission@1.1.0` and
+`reiyah.protocol.harbor-gate-a@1.1.0` unchanged.
 
-The `1.1.2` successor still requires its own packet-level schemas, validation plan, index,
-sidecar, report, and review target. Its prior-candidate observation exact-binds the published
-`1.1.1` index. Receipt sequence two continues to resolve only through the frozen `1.1.1`
-snapshot; a future sequence-three receipt must bind the exact `1.1.2` index, report, fresh rights
-observation, publication commit, and remote readback. An operator decision and a transport
-receipt remain separate append-only event types. Frozen values are never placeholders.
+Gate A `1.2.0` is a scientific and validation-integrity correction. It retains the mission and
+introduces proposed protocol `reiyah.protocol.harbor-gate-a@1.2.0`, which points to the immutable
+`1.1.0` protocol as `corrects`. It inherits every unchanged `1.1.2` indexed artifact by exact
+digest, records every changed and added path in a closed validation plan, and removes no
+predecessor artifact. Receipt sequence three resolves only the exact `1.1.2` publication event.
+A future sequence-four publisher receipt, if separately authorized, must bind the exact `1.2.0`
+index, report, current rights observation, publication commit, and its own readback assertions;
+it still cannot claim independent transport verification. Frozen values are never placeholders.
 
 ## 8. Status ownership
 

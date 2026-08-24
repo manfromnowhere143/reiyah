@@ -1,0 +1,20 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.validator-security.profile-execution-tool-binding@1.2.0",
+  "fixture_class": "known-bad-validator-security",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "synthetic_fixture_only": true,
+  "expected_diagnostic": "GA12-SCIENCE-PROFILE-EXECUTION",
+  "probe": {
+    "kind": "scientific_profile_execution_binding",
+    "profile_path": "manifests/scientific/harbor-scientific-contract-profile-1.2.0.json",
+    "binding_role": "tool_binding",
+    "mutation": {
+      "operation": "replace",
+      "json_pointer": "/execution_integrity_contract/tool_binding/sha256",
+      "value": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  }
+}

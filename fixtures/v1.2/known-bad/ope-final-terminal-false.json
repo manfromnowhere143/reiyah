@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope_final_terminal_false",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/trajectories/0/steps/1/terminal", "value": false}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-OPE-TERMINAL-COMPLETENESS", "instance_pointer": "/trajectories/0/steps/1/terminal", "schema_keyword": "semantic", "reason": "A terminal-event trajectory must end in a terminal step; a nonterminal final step is valid only with maximum-horizon truncation at the exact maximum."},
+  "runtime_execution_authorized": false
+}

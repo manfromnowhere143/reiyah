@@ -1,0 +1,26 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-mutation-fixture.schema.json",
+  "target_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.governance.transport-authorization-receipt-boundary@1.2.0",
+  "fixture_class": "known-bad-governance",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "synthetic_fixture_only": true,
+  "baseline_fixture_id": "reiyah.fixture.governance.transport-observation-synthetic-baseline@1.2.0",
+  "baseline_expected_outcome": "accepted",
+  "expected_diagnostic": "GA12-TRANSPORT-CHRONOLOGY",
+  "expected_replay": {
+    "rejection_layer": "semantic",
+    "target_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-fixture.schema.json",
+    "schema_keyword": "semantic",
+    "instance_pointer": null,
+    "semantic_replay_required": true,
+    "exact_singleton_semantic_diagnostic_required": true
+  },
+  "mutation": {
+    "operation": "replace",
+    "json_pointer": "/authorization_operand/record/authorized_at",
+    "value": "2026-08-25T10:31:29Z"
+  }
+}

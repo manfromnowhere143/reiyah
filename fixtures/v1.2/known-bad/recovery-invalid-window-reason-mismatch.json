@@ -1,0 +1,20 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.bad.recovery_invalid_window_reason_mismatch",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment-recovery-invalid-window.json",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/recovery/outcome/qualifying_event_id/reason", "value": "ambiguous_event_tie"}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-RECOVERY-WINDOW-MISMATCH",
+    "instance_pointer": "/recovery/outcome",
+    "schema_keyword": "semantic",
+    "reason": "An invalid observed recovery window must propagate an invalid outcome with the exact invalid-window absent reason."
+  },
+  "runtime_execution_authorized": false
+}

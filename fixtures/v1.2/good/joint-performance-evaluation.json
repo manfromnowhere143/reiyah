@@ -1,0 +1,262 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "schema_version": "1.2.0",
+  "artifact_id": "reiyah.fixture.joint_performance.good",
+  "record_kind": "result",
+  "version": "1.2.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.event.joint_performance.proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-24T08:00:00Z",
+      "actor": {
+        "actor_id": "reiyah.actor.fixture_author",
+        "actor_type": "derived_process",
+        "version": "1.2.0",
+        "role": "deterministic synthetic fixture author"
+      },
+      "rationale": "Synthetic arithmetic example for deterministic semantic validation.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "created_at": "2026-08-24T08:00:00Z",
+  "runtime_execution_authorized": false,
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "evaluation_id": "reiyah.evaluation.synthetic_joint_1_2",
+  "study_ref": {"record_id": "reiyah.study.synthetic_1_2", "record_kind": "reiyah.kind.study_design", "version": "1.2.0"},
+  "dataset_ref": {"record_id": "reiyah.dataset.synthetic_1_2", "record_kind": "reiyah.kind.dataset", "version": "1.2.0"},
+  "odd_ref": {"record_id": "reiyah.odd.synthetic_1_2", "record_kind": "reiyah.kind.odd", "version": "1.2.0"},
+  "benchmark_ref": {"record_id": "reiyah.benchmark.synthetic_1_2", "record_kind": "reiyah.kind.benchmark", "version": "1.2.0"},
+  "joint_silent_miss": {
+    "estimand_ref": {"record_id": "reiyah.estimand.joint-silent-miss", "record_kind": "reiyah.kind.estimand", "version": "1.2.0"},
+    "opportunity_rule_ref": {"rule_id": "reiyah.rule.joint_miss_opportunity", "rule_kind": "reiyah.kind.event_rule", "version": "1.2.0"},
+    "opportunity_set_ref": {"record_id": "reiyah.opportunity-set.synthetic-joint-observed", "record_kind": "reiyah.kind.opportunity_set", "version": "1.2.0"},
+    "opportunity_window": {"clock_id": "reiyah.clock.synthetic-utc", "window_id": "reiyah.window.joint-opportunity-001", "opened_at": "2026-08-24T08:00:00Z", "closed_at": "2026-08-24T08:10:00Z"},
+    "opportunity_rows": [
+      {"opportunity_id": "reiyah.opportunity.synthetic.observed.001", "object_ref": {"record_id": "reiyah.object.synthetic_vehicle", "record_kind": "reiyah.kind.vehicle_object", "version": "1.2.0"}, "clock_id": "reiyah.clock.synthetic-utc", "window_id": "reiyah.window.joint-opportunity-001", "occurred_at": {"state": "observed", "value": "2026-08-24T08:01:00Z"}, "reference_state": {"state": "observed", "value": "opportunity_present"}, "reference_validity": {"state": "observed", "value": "valid"}, "human_channel": {"channel_ref": {"record_id": "reiyah.channel.synthetic_human_observation", "record_kind": "reiyah.kind.observation_channel", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "miss"}}, "automation_channel": {"channel_ref": {"record_id": "reiyah.channel.synthetic_automation_observation", "record_kind": "reiyah.kind.observation_channel", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "miss"}}, "warning": {"rule_ref": {"rule_id": "reiyah.rule.joint_warning_observation", "rule_kind": "reiyah.kind.event_rule", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "not_issued"}}, "fallback": {"rule_ref": {"rule_id": "reiyah.rule.joint_fallback_observation", "rule_kind": "reiyah.kind.event_rule", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "not_activated"}}},
+      {"opportunity_id": "reiyah.opportunity.synthetic.observed.002", "object_ref": {"record_id": "reiyah.object.synthetic_vehicle", "record_kind": "reiyah.kind.vehicle_object", "version": "1.2.0"}, "clock_id": "reiyah.clock.synthetic-utc", "window_id": "reiyah.window.joint-opportunity-001", "occurred_at": {"state": "observed", "value": "2026-08-24T08:02:00Z"}, "reference_state": {"state": "observed", "value": "opportunity_present"}, "reference_validity": {"state": "observed", "value": "valid"}, "human_channel": {"channel_ref": {"record_id": "reiyah.channel.synthetic_human_observation", "record_kind": "reiyah.kind.observation_channel", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "miss"}}, "automation_channel": {"channel_ref": {"record_id": "reiyah.channel.synthetic_automation_observation", "record_kind": "reiyah.kind.observation_channel", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "detected"}}, "warning": {"rule_ref": {"rule_id": "reiyah.rule.joint_warning_observation", "rule_kind": "reiyah.kind.event_rule", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "issued"}}, "fallback": {"rule_ref": {"rule_id": "reiyah.rule.joint_fallback_observation", "rule_kind": "reiyah.kind.event_rule", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "not_activated"}}},
+      {"opportunity_id": "reiyah.opportunity.synthetic.observed.003", "object_ref": {"record_id": "reiyah.object.synthetic_vehicle", "record_kind": "reiyah.kind.vehicle_object", "version": "1.2.0"}, "clock_id": "reiyah.clock.synthetic-utc", "window_id": "reiyah.window.joint-opportunity-001", "occurred_at": {"state": "observed", "value": "2026-08-24T08:03:00Z"}, "reference_state": {"state": "observed", "value": "opportunity_present"}, "reference_validity": {"state": "observed", "value": "valid"}, "human_channel": {"channel_ref": {"record_id": "reiyah.channel.synthetic_human_observation", "record_kind": "reiyah.kind.observation_channel", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "detected"}}, "automation_channel": {"channel_ref": {"record_id": "reiyah.channel.synthetic_automation_observation", "record_kind": "reiyah.kind.observation_channel", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "miss"}}, "warning": {"rule_ref": {"rule_id": "reiyah.rule.joint_warning_observation", "rule_kind": "reiyah.kind.event_rule", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "issued"}}, "fallback": {"rule_ref": {"rule_id": "reiyah.rule.joint_fallback_observation", "rule_kind": "reiyah.kind.event_rule", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "not_activated"}}},
+      {"opportunity_id": "reiyah.opportunity.synthetic.observed.004", "object_ref": {"record_id": "reiyah.object.synthetic_vehicle", "record_kind": "reiyah.kind.vehicle_object", "version": "1.2.0"}, "clock_id": "reiyah.clock.synthetic-utc", "window_id": "reiyah.window.joint-opportunity-001", "occurred_at": {"state": "observed", "value": "2026-08-24T08:04:00Z"}, "reference_state": {"state": "observed", "value": "opportunity_present"}, "reference_validity": {"state": "observed", "value": "valid"}, "human_channel": {"channel_ref": {"record_id": "reiyah.channel.synthetic_human_observation", "record_kind": "reiyah.kind.observation_channel", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "detected"}}, "automation_channel": {"channel_ref": {"record_id": "reiyah.channel.synthetic_automation_observation", "record_kind": "reiyah.kind.observation_channel", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "detected"}}, "warning": {"rule_ref": {"rule_id": "reiyah.rule.joint_warning_observation", "rule_kind": "reiyah.kind.event_rule", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "not_issued"}}, "fallback": {"rule_ref": {"rule_id": "reiyah.rule.joint_fallback_observation", "rule_kind": "reiyah.kind.event_rule", "version": "1.2.0"}, "outcome": {"state": "observed", "value": "not_activated"}}}
+    ],
+    "common_opportunity_cells": {
+      "both_miss": {"state": "observed", "value": 1},
+      "human_only_miss": {"state": "observed", "value": 1},
+      "automation_only_miss": {"state": "observed", "value": 1},
+      "neither_miss": {"state": "observed", "value": 1}
+    },
+    "identifiability": "identified_from_common_opportunities",
+    "opportunities": {"state": "observed", "value": 4},
+    "human_misses": {"state": "observed", "value": 2},
+    "automation_misses": {"state": "observed", "value": 2},
+    "joint_misses": {"state": "observed", "value": 1},
+    "joint_miss_risk": {"state": "observed", "value": 0.25}
+  },
+  "selective_evaluation": {
+    "threshold_rule_ref": {"rule_id": "reiyah.rule.selective_threshold", "rule_kind": "reiyah.kind.selection_rule", "version": "1.2.0"},
+    "threshold_frozen_at": "2026-08-24T08:00:00Z",
+    "evaluation_started_at": "2026-08-24T08:30:00Z",
+    "population_count": {"state": "observed", "value": 100},
+    "partition_counts": {
+      "accepted": {"state": "observed", "value": 80},
+      "ambiguous": {"state": "observed", "value": 5},
+      "missing": {"state": "observed", "value": 3},
+      "unmeasured": {"state": "observed", "value": 2},
+      "out_of_distribution": {"state": "observed", "value": 4},
+      "sensor_invalid": {"state": "observed", "value": 3},
+      "abstained": {"state": "observed", "value": 3}
+    },
+    "accepted_error_count": {"state": "observed", "value": 8},
+    "accepted_error_risk": {"state": "observed", "value": 0.1},
+    "coverage": {"state": "observed", "value": 0.8}
+  },
+  "ood_evaluation": {
+    "estimand_ref": {"record_id": "reiyah.estimand.ood-selective-risk-coverage", "record_kind": "reiyah.kind.estimand", "version": "1.2.0"},
+    "partition_contract_ref": {"rule_id": "reiyah.rule.ood-population-partition", "rule_kind": "reiyah.kind.ood_rule", "version": "1.2.0"},
+    "reference_rule_ref": {"rule_id": "reiyah.rule.ood_reference", "rule_kind": "reiyah.kind.ood_rule", "version": "1.2.0"},
+    "detector_rule_ref": {"rule_id": "reiyah.rule.ood_detector", "rule_kind": "reiyah.kind.ood_rule", "version": "1.2.0"},
+    "population_count": {"state": "observed", "value": 100},
+    "joint_state_cells": {
+      "reference_ood_detector_ood": {"state": "observed", "value": 3},
+      "reference_ood_detector_in_distribution": {"state": "observed", "value": 1},
+      "reference_ood_detector_unknown": {"state": "observed", "value": 0},
+      "reference_in_distribution_detector_ood": {"state": "observed", "value": 2},
+      "reference_in_distribution_detector_in_distribution": {"state": "observed", "value": 87},
+      "reference_in_distribution_detector_unknown": {"state": "observed", "value": 3},
+      "reference_unknown_detector_ood": {"state": "observed", "value": 0},
+      "reference_unknown_detector_in_distribution": {"state": "observed", "value": 4},
+      "reference_unknown_detector_unknown": {"state": "observed", "value": 0}
+    },
+    "reference_ood_count": {"state": "observed", "value": 4},
+    "detected_ood_count": {"state": "observed", "value": 5},
+    "reference_unknown_count": {"state": "observed", "value": 4},
+    "detector_unknown_count": {"state": "observed", "value": 3},
+    "true_positive_rate": {"state": "observed", "value": 0.75},
+    "false_positive_rate": {"state": "observed", "value": 0.02247191011235955},
+    "prevalence": {"state": "observed", "value": 0.041666666666666664},
+    "prevalence_denominator": "reference_known"
+  },
+  "conformal_evaluation": {
+    "estimand_ref": {"record_id": "reiyah.estimand.conformal-coverage", "record_kind": "reiyah.kind.estimand", "version": "1.2.0"},
+    "guarantee_contract_ref": {"rule_id": "reiyah.rule.conformal-guarantee-disposition", "rule_kind": "reiyah.kind.conformal_rule", "version": "1.2.0"},
+    "method_ref": {"rule_id": "reiyah.rule.split_conformal", "rule_kind": "reiyah.kind.conformal_method", "version": "1.2.0"},
+    "alpha": 0.1,
+    "target_coverage": 0.9,
+    "guarantee": {"kind": "none", "disposition": "not_asserted", "scope": "none"},
+    "exchangeability": {
+      "assumption_id": "reiyah.assumption.exchangeability",
+      "disposition": "unmeasured",
+      "rationale": "No eligible independent evidence establishes exchangeability, including for the synthetic construction.",
+      "evidence_refs": []
+    },
+    "calibration_set_ref": {"record_id": "reiyah.split.synthetic_calibration", "record_kind": "reiyah.kind.split", "version": "1.2.0"},
+    "test_set_ref": {"record_id": "reiyah.split.synthetic_test", "record_kind": "reiyah.kind.split", "version": "1.2.0"},
+    "calibration_sample_count": {"state": "observed", "value": 40},
+    "test_sample_count": {"state": "observed", "value": 50},
+    "group_set_ref": {"record_id": "reiyah.group-set.synthetic-evaluation", "record_kind": "reiyah.kind.group_set", "version": "1.2.0"},
+    "group_scope_mode": "disjoint_exhaustive",
+    "group_universe": ["reiyah.group.synthetic_a", "reiyah.group.synthetic_b"],
+    "group_results": [
+      {"group_id": "reiyah.group.synthetic_a", "covered_count": {"state": "observed", "value": 23}, "evaluated_count": {"state": "observed", "value": 25}, "empirical_coverage": {"state": "observed", "value": 0.92}, "coverage_disposition": "meets_target"},
+      {"group_id": "reiyah.group.synthetic_b", "covered_count": {"state": "observed", "value": 23}, "evaluated_count": {"state": "observed", "value": 25}, "empirical_coverage": {"state": "observed", "value": 0.92}, "coverage_disposition": "meets_target"}
+    ],
+    "covered_count": {"state": "observed", "value": 46},
+    "evaluated_count": {"state": "observed", "value": 50},
+    "empirical_coverage": {"state": "observed", "value": 0.92}
+  },
+  "transfer_evaluation": {
+    "estimand_ref": {"record_id": "reiyah.estimand.transfer", "record_kind": "reiyah.kind.estimand", "version": "1.2.0"},
+    "eligibility_contract_ref": {"rule_id": "reiyah.rule.transfer-eligibility", "rule_kind": "reiyah.kind.transfer_rule", "version": "1.2.0"},
+    "metric_contract": {
+      "metric_contract_id": "reiyah.metric.transfer_error",
+      "version": "1.2.0",
+      "unit": "error probability",
+      "direction": "lower_is_better",
+      "estimator_ref": {"rule_id": "reiyah.rule.transfer_estimator", "rule_kind": "reiyah.kind.estimator", "version": "1.2.0"},
+      "population_rule_ref": {"rule_id": "reiyah.rule.transfer_population", "rule_kind": "reiyah.kind.population_rule", "version": "1.2.0"},
+      "outcome_window_rule_ref": {"rule_id": "reiyah.rule.transfer_window", "rule_kind": "reiyah.kind.outcome_window", "version": "1.2.0"}
+    },
+    "source_result": {
+      "domain_id": "reiyah.domain.synthetic_source",
+      "metric_contract_id": "reiyah.metric.transfer_error",
+      "metric_contract_version": "1.2.0",
+      "estimate": {"state": "observed", "value": 0.08, "unit": "error probability"},
+      "uncertainty": {
+        "method_ref": {"rule_id": "reiyah.rule.wilson_interval", "rule_kind": "reiyah.kind.interval_method", "version": "1.2.0"},
+        "confidence_level": {"state": "observed", "value": 0.95},
+        "lower": {"state": "observed", "value": 0.04, "unit": "error probability"},
+        "upper": {"state": "observed", "value": 0.12, "unit": "error probability"}
+      },
+      "coverage_counts": {"total": 100, "observed": 90, "missing": 2, "unmeasured": 2, "out_of_distribution": 2, "sensor_invalid": 2, "abstained": 2}
+    },
+    "target_result": {
+      "domain_id": "reiyah.domain.synthetic_target",
+      "metric_contract_id": "reiyah.metric.transfer_error",
+      "metric_contract_version": "1.2.0",
+      "estimate": {"state": "observed", "value": 0.1, "unit": "error probability"},
+      "uncertainty": {
+        "method_ref": {"rule_id": "reiyah.rule.wilson_interval", "rule_kind": "reiyah.kind.interval_method", "version": "1.2.0"},
+        "confidence_level": {"state": "observed", "value": 0.95},
+        "lower": {"state": "observed", "value": 0.05, "unit": "error probability"},
+        "upper": {"state": "observed", "value": 0.15, "unit": "error probability"}
+      },
+      "coverage_counts": {"total": 50, "observed": 45, "missing": 1, "unmeasured": 1, "out_of_distribution": 1, "sensor_invalid": 1, "abstained": 1}
+    },
+    "gap": {"state": "observed", "value": 0.02, "unit": "error probability"},
+    "overlap": {
+      "assumption_id": "reiyah.assumption.transfer_overlap",
+      "disposition": "unmeasured",
+      "rationale": "No eligible independent evidence establishes source-to-target overlap.",
+      "evidence_refs": []
+    },
+    "invariance": {
+      "assumption_id": "reiyah.assumption.transfer_invariance",
+      "disposition": "unmeasured",
+      "rationale": "No eligible independent evidence establishes measurement invariance.",
+      "evidence_refs": []
+    },
+    "population_harmonization": {
+      "assumption_id": "reiyah.assumption.transfer_population_harmonization",
+      "disposition": "unmeasured",
+      "rationale": "No eligible independent evidence establishes population harmonization.",
+      "evidence_refs": []
+    },
+    "adaptation": {
+      "mode": "unsupervised",
+      "target_labels_used": false,
+      "tuning_performed": true,
+      "procedure_ref": {
+        "rule_id": "reiyah.rule.synthetic-transfer",
+        "rule_kind": "reiyah.kind.transfer_rule",
+        "version": "1.2.0"
+      }
+    },
+    "target_data_access": {
+      "first_accessed_at": "2026-08-24T09:00:00Z",
+      "analysis_frozen_at": "2026-08-24T08:00:00Z",
+      "labels_first_accessed_at": "2026-08-24T09:10:00Z"
+    },
+    "disposition": "unknown"
+  },
+  "worst_group_evaluation": {
+    "estimand_ref": {"record_id": "reiyah.estimand.worst-group", "record_kind": "reiyah.kind.estimand", "version": "1.2.0"},
+    "group_set_ref": {"record_id": "reiyah.group-set.synthetic-evaluation", "record_kind": "reiyah.kind.group_set", "version": "1.2.0"},
+    "shared_metric_contract": {
+      "metric_id": "reiyah.metric.synthetic-worst-group",
+      "version": "1.2.0",
+      "unit": "error probability",
+      "direction": "lower_is_better",
+      "population_rule_ref": {"rule_id": "reiyah.rule.worst_group_population", "rule_kind": "reiyah.kind.population_rule", "version": "1.2.0"},
+      "outcome_window_rule_ref": {"rule_id": "reiyah.rule.worst_group_window", "rule_kind": "reiyah.kind.outcome_window", "version": "1.2.0"}
+    },
+    "group_universe": ["reiyah.group.synthetic_a", "reiyah.group.synthetic_b"],
+    "minimum_information_rule": {
+      "rule_ref": {"rule_id": "reiyah.rule.worst-group-eligibility", "rule_kind": "reiyah.kind.minimum_information_rule", "version": "1.2.0"},
+      "operator": "all",
+      "sample_count_min": 30,
+      "coverage_fraction_min": 0.8,
+      "effective_sample_size_min": 20,
+      "interval_width_max": 0.25
+    },
+    "group_results": [
+      {
+        "group_id": "reiyah.group.synthetic_a",
+        "membership_state": "observed",
+        "sample_count": {"state": "observed", "value": 30},
+        "coverage_counts": {"total": 30, "observed": 28, "missing": 1, "unmeasured": 1, "out_of_distribution": 0, "sensor_invalid": 0, "abstained": 0},
+        "effective_sample_size": {"state": "observed", "value": 25},
+        "interval_width": {"state": "observed", "value": 0.08},
+        "information_disposition": "sufficient",
+        "performance": {"state": "observed", "value": 0.12, "unit": "error probability"}
+      },
+      {
+        "group_id": "reiyah.group.synthetic_b",
+        "membership_state": "observed",
+        "sample_count": {"state": "observed", "value": 30},
+        "coverage_counts": {"total": 30, "observed": 24, "missing": 6, "unmeasured": 0, "out_of_distribution": 0, "sensor_invalid": 0, "abstained": 0},
+        "effective_sample_size": {"state": "observed", "value": 20},
+        "interval_width": {"state": "observed", "value": 0.08},
+        "information_disposition": "sufficient",
+        "performance": {"state": "observed", "value": 0.12, "unit": "error probability"}
+      }
+    ],
+    "direction": "lower_is_better",
+    "eligible_group_ids": ["reiyah.group.synthetic_a", "reiyah.group.synthetic_b"],
+    "unknown_group_ids": [],
+    "insufficient_group_ids": [],
+    "worst_group_ids": ["reiyah.group.synthetic_a", "reiyah.group.synthetic_b"],
+    "worst_value": {"state": "observed", "value": 0.12, "unit": "error probability"},
+    "disposition": "identified",
+    "omission_prohibited": true
+  },
+  "evidence_binding": {
+    "state": "evidence_gap",
+    "evidence_refs": [],
+    "gap_reason": "All counts and results are synthetic validation values, not benchmark evidence."
+  },
+  "scientific_claim_authorized": false
+}

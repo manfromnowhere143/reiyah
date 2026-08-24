@@ -1,0 +1,639 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/fixture-catalog.schema.json",
+  "title": "Gate A 1.2.0 fixture catalog",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "catalog_id",
+    "version",
+    "mission_release_id",
+    "protocol_release_id",
+    "byte_attestation_algorithm",
+    "historical_rows_are_current_replay_evidence",
+    "replay_assertion_scope",
+    "offline_only",
+    "all_current_replay_known_good_must_pass",
+    "all_current_replay_known_bad_must_fail_for_declared_rule",
+    "fixtures"
+  ],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.2.0/fixture-catalog.schema.json"},
+    "schema_version": {"const": "1.2.0"},
+    "artifact_id": {"const": "reiyah.artifact.fixture-catalog-1.2.0"},
+    "catalog_id": {"const": "reiyah.fixture-catalog.gate-a"},
+    "version": {"const": "1.2.0"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+    "byte_attestation_algorithm": {"const": "sha256_entire_fixture_file_bytes"},
+    "historical_rows_are_current_replay_evidence": {"const": false},
+    "replay_assertion_scope": {"const": "rows_where_replay_mode_is_not_retained_not_replayed"},
+    "offline_only": {"const": true},
+    "all_current_replay_known_good_must_pass": {"const": true},
+    "all_current_replay_known_bad_must_fail_for_declared_rule": {"const": true},
+    "fixtures": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "fixture_id",
+          "path",
+          "classification",
+          "fixture_family",
+          "replay_mode",
+          "fixture_identity_source",
+          "fixture_schema_id",
+          "target_schema_id",
+          "sha256",
+          "byte_size",
+          "expected_primary_rule_id"
+        ],
+        "properties": {
+          "fixture_id": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 240,
+            "pattern": "^[a-z][a-z0-9]*(?:[._:@-][a-z0-9][a-z0-9._:@-]*)+$"
+          },
+          "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+          "classification": {"enum": ["known_good", "known_bad"]},
+          "fixture_family": {
+            "enum": [
+              "retained_historical",
+              "scientific_contract",
+              "validator_security",
+              "publication_governance",
+              "transport_governance"
+            ]
+          },
+          "replay_mode": {
+            "enum": [
+              "retained_not_replayed",
+              "production_accept",
+              "canonical_schema_reject",
+              "semantic_singleton_reject",
+              "validator_security_singleton_reject",
+              "governance_accept",
+              "governance_canonical_schema_reject",
+              "governance_semantic_singleton_reject"
+            ]
+          },
+          "fixture_identity_source": {
+            "enum": [
+              "embedded_fixture_id",
+              "frozen_path_binding"
+            ]
+          },
+          "fixture_schema_id": {
+            "type": "string",
+            "format": "uri"
+          },
+          "target_schema_id": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+          "byte_size": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "expected_primary_rule_id": {
+            "oneOf": [
+              {"type": "string", "pattern": "^GA(?:12)?-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+              {"type": "null"}
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"classification": {"const": "known_good"}}, "required": ["classification"]},
+            "then": {"properties": {"expected_primary_rule_id": {"type": "null"}}},
+            "else": {"properties": {"expected_primary_rule_id": {"type": "string"}}}
+          },
+          {
+            "if": {
+              "properties": {
+                "fixture_family": {
+                  "const": "retained_historical"
+                }
+              },
+              "required": [
+                "fixture_family"
+              ]
+            },
+            "then": {
+              "properties": {
+                "replay_mode": {
+                  "const": "retained_not_replayed"
+                },
+                "target_schema_id": {
+                  "type": "null"
+                },
+                "path": {
+                  "not": {
+                    "pattern": "^fixtures/v1\\.2/"
+                  }
+                }
+              },
+              "oneOf": [
+                {
+                  "properties": {
+                    "path": {
+                      "pattern": "^fixtures/good/[A-Za-z0-9._-]+\\.json$"
+                    },
+                    "classification": {
+                      "const": "known_good"
+                    },
+                    "fixture_identity_source": {
+                      "const": "embedded_fixture_id"
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "path": {
+                      "pattern": "^fixtures/v1\\.1/good/[A-Za-z0-9._-]+\\.json$"
+                    },
+                    "classification": {
+                      "const": "known_good"
+                    },
+                    "fixture_identity_source": {
+                      "const": "frozen_path_binding"
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "path": {
+                      "pattern": "^fixtures/(?:bad|v1\\.1/known-bad)/[A-Za-z0-9._-]+\\.json$"
+                    },
+                    "classification": {
+                      "const": "known_bad"
+                    },
+                    "fixture_identity_source": {
+                      "const": "embedded_fixture_id"
+                    }
+                  }
+                }
+              ]
+            },
+            "else": {
+              "properties": {
+                "replay_mode": {
+                  "not": {
+                    "const": "retained_not_replayed"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "fixture_family": {
+                  "const": "scientific_contract"
+                }
+              },
+              "required": [
+                "fixture_family"
+              ]
+            },
+            "then": {
+              "properties": {
+                "replay_mode": {
+                  "enum": [
+                    "production_accept",
+                    "canonical_schema_reject",
+                    "semantic_singleton_reject"
+                  ]
+                },
+                "target_schema_id": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "replay_mode": {
+                        "const": "production_accept"
+                      }
+                    },
+                    "required": [
+                      "replay_mode"
+                    ]
+                  },
+                  "then": {
+                    "properties": {
+                      "path": {
+                        "pattern": "^fixtures/v1\\.2/good/[a-z0-9-]+\\.json$"
+                      },
+                      "fixture_identity_source": {
+                        "const": "frozen_path_binding"
+                      }
+                    },
+                    "oneOf": [
+                      {
+                        "properties": {
+                          "fixture_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json"
+                          },
+                          "target_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json"
+                          }
+                        }
+                      },
+                      {
+                        "properties": {
+                          "fixture_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json"
+                          },
+                          "target_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json"
+                          }
+                        }
+                      },
+                      {
+                        "properties": {
+                          "fixture_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json"
+                          },
+                          "target_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json"
+                          }
+                        }
+                      },
+                      {
+                        "properties": {
+                          "fixture_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json"
+                          },
+                          "target_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json"
+                          }
+                        }
+                      },
+                      {
+                        "properties": {
+                          "fixture_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json"
+                          },
+                          "target_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "else": {
+                    "properties": {
+                      "path": {
+                        "allOf": [
+                          {
+                            "pattern": "^fixtures/v1\\.2/known-bad/[a-z0-9-]+\\.json$"
+                          },
+                          {
+                            "not": {
+                              "pattern": "^fixtures/v1\\.2/known-bad/(?:validator-security-|governance-)"
+                            }
+                          }
+                        ]
+                      },
+                      "fixture_schema_id": {
+                        "const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json"
+                      },
+                      "fixture_identity_source": {
+                        "const": "embedded_fixture_id"
+                      },
+                      "target_schema_id": {
+                        "enum": [
+                          "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+                          "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+                          "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+                          "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+                          "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json"
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "fixture_family": {
+                  "const": "validator_security"
+                }
+              },
+              "required": [
+                "fixture_family"
+              ]
+            },
+            "then": {
+              "properties": {
+                "classification": {
+                  "const": "known_bad"
+                },
+                "replay_mode": {
+                  "const": "validator_security_singleton_reject"
+                },
+                "fixture_schema_id": {
+                  "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json"
+                },
+                "fixture_identity_source": {
+                  "const": "embedded_fixture_id"
+                },
+                "target_schema_id": {
+                  "type": "null"
+                },
+                "path": {
+                  "pattern": "^fixtures/v1\\.2/known-bad/validator-security-[a-z0-9-]+\\.json$"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "fixture_family": {
+                  "const": "publication_governance"
+                }
+              },
+              "required": [
+                "fixture_family"
+              ]
+            },
+            "then": {
+              "properties": {
+                "replay_mode": {
+                  "enum": [
+                    "governance_accept",
+                    "governance_canonical_schema_reject",
+                    "governance_semantic_singleton_reject"
+                  ]
+                },
+                "target_schema_id": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "fixture_identity_source": {
+                  "const": "embedded_fixture_id"
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "replay_mode": {
+                        "const": "governance_accept"
+                      }
+                    },
+                    "required": [
+                      "replay_mode"
+                    ]
+                  },
+                  "then": {
+                    "oneOf": [
+                      {
+                        "properties": {
+                          "path": {
+                            "const": "fixtures/v1.2/governance-good/iso-rights-observation-capture.json"
+                          },
+                          "fixture_id": {
+                            "const": "reiyah.fixture.governance-good.iso-rights-observation-capture@1.2.0"
+                          },
+                          "fixture_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/governance-positive-fixture.schema.json"
+                          },
+                          "target_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json"
+                          }
+                        }
+                      },
+                      {
+                        "properties": {
+                          "path": {
+                            "const": "fixtures/v1.2/governance-good/nist-rights-observation-capture.json"
+                          },
+                          "fixture_id": {
+                            "const": "reiyah.fixture.governance-good.nist-rights-observation-capture@1.2.0"
+                          },
+                          "fixture_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/governance-positive-fixture.schema.json"
+                          },
+                          "target_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json"
+                          }
+                        }
+                      },
+                      {
+                        "properties": {
+                          "path": {
+                            "const": "fixtures/v1.2/governance-good/public-rights-revalidation.json"
+                          },
+                          "fixture_id": {
+                            "const": "reiyah.fixture.governance-good.public-rights-revalidation@1.2.0"
+                          },
+                          "fixture_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/governance-positive-fixture.schema.json"
+                          },
+                          "target_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-rights-revalidation.schema.json"
+                          }
+                        }
+                      },
+                      {
+                        "properties": {
+                          "path": {
+                            "const": "fixtures/v1.2/governance-good/public-distribution-receipt.json"
+                          },
+                          "fixture_id": {
+                            "const": "reiyah.fixture.governance-good.public-distribution-receipt@1.2.0"
+                          },
+                          "fixture_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/governance-positive-fixture.schema.json"
+                          },
+                          "target_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-distribution-receipt.schema.json"
+                          }
+                        }
+                      },
+                      {
+                        "properties": {
+                          "path": {
+                            "const": "fixtures/v1.2/governance/publication-event-synthetic-baseline.json"
+                          },
+                          "fixture_id": {
+                            "const": "reiyah.fixture.governance.publication-event-synthetic-baseline@1.2.0"
+                          },
+                          "fixture_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/publication-event-fixture.schema.json"
+                          },
+                          "target_schema_id": {
+                            "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/publication-event-fixture.schema.json"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "else": {
+                    "properties": {
+                      "path": {
+                        "allOf": [
+                          {
+                            "pattern": "^fixtures/v1\\.2/known-bad/governance-[a-z0-9-]+\\.json$"
+                          },
+                          {
+                            "not": {
+                              "pattern": "^fixtures/v1\\.2/known-bad/governance-transport-"
+                            }
+                          }
+                        ]
+                      },
+                      "fixture_schema_id": {
+                        "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/publication-event-mutation-fixture.schema.json"
+                      },
+                      "target_schema_id": {
+                        "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/publication-event-fixture.schema.json"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "fixture_family": {
+                  "const": "transport_governance"
+                }
+              },
+              "required": [
+                "fixture_family"
+              ]
+            },
+            "then": {
+              "properties": {
+                "replay_mode": {
+                  "enum": [
+                    "governance_accept",
+                    "governance_canonical_schema_reject",
+                    "governance_semantic_singleton_reject"
+                  ]
+                },
+                "target_schema_id": {
+                  "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-fixture.schema.json"
+                },
+                "fixture_identity_source": {
+                  "const": "embedded_fixture_id"
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "replay_mode": {
+                        "const": "governance_accept"
+                      }
+                    },
+                    "required": [
+                      "replay_mode"
+                    ]
+                  },
+                  "then": {
+                    "properties": {
+                      "path": {
+                        "const": "fixtures/v1.2/governance/transport-observation-synthetic-baseline.json"
+                      },
+                      "fixture_id": {
+                        "const": "reiyah.fixture.governance.transport-observation-synthetic-baseline@1.2.0"
+                      },
+                      "fixture_schema_id": {
+                        "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-fixture.schema.json"
+                      }
+                    }
+                  },
+                  "else": {
+                    "properties": {
+                      "path": {
+                        "pattern": "^fixtures/v1\\.2/known-bad/governance-transport-[a-z0-9-]+\\.json$"
+                      },
+                      "fixture_schema_id": {
+                        "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-mutation-fixture.schema.json"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "replay_mode": {
+                  "enum": [
+                    "production_accept",
+                    "governance_accept"
+                  ]
+                }
+              },
+              "required": [
+                "replay_mode"
+              ]
+            },
+            "then": {
+              "properties": {
+                "classification": {
+                  "const": "known_good"
+                },
+                "expected_primary_rule_id": {
+                  "type": "null"
+                }
+              }
+            },
+            "else": {
+              "if": {
+                "properties": {
+                  "replay_mode": {
+                    "not": {
+                      "const": "retained_not_replayed"
+                    }
+                  }
+                },
+                "required": [
+                  "replay_mode"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "classification": {
+                    "const": "known_bad"
+                  },
+                  "expected_primary_rule_id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

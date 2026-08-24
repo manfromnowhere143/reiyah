@@ -1,0 +1,30 @@
+{
+  "base_fixture_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+  "expected_failure": {
+    "instance_pointer": "/support_assessment",
+    "reason": "Every history-action cell with positive target probability must have positive behavior support; the assessment cannot remain supported otherwise.",
+    "rule_id": "GA-OPE-HISTORY-SUPPORT",
+    "schema_keyword": "semantic"
+  },
+  "fixture_id": "reiyah.fixture.bad.ope_support_duplicate_required_cell",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "mutations": [
+    {
+      "json_pointer": "/support_assessment/required_cells/-",
+      "operation": "add",
+      "value": {
+        "action_id": "reiyah.action.alert",
+        "behavior_probability": 0.5,
+        "history_id": "reiyah.history.trajectory_a_step_0",
+        "supported": true,
+        "target_probability": 0.75
+      }
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "expected_outcome": "reject",
+  "runtime_execution_authorized": false,
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json"
+}

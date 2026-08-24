@@ -15,19 +15,26 @@ occurred, and what retained evidence can support each statement.
 
 ## Current status
 
-Gate A `1.1.2` is scoped as a presentation and continuity successor. It does not change the Gate
-A `1.1.0` mission or protocol releases or add a scientific proposition. Its exact release and
-transport state must be resolved from machine-readable artifacts rather than inferred from the
-branch name or this narrative.
+Gate A `1.2.0` is an operator-unaccepted correction candidate. It preserves the proposed
+`reiyah.mission@1.1.0` mission and introduces the proposed
+`reiyah.protocol.harbor-gate-a@1.2.0` protocol successor. The correction responds to retained
+counterexamples against the public `1.1.2` packet. It does not add a runtime, execute a study,
+produce empirical evidence, or support a safety, compliance, causal-benefit, product-readiness,
+or superiority conclusion.
+
+The index deliberately records `candidate_pending_canonical_report`. Only a passing release-mode
+report that exact-binds that index may classify those bytes as `architecture_complete`. During
+construction, or whenever the report and index do not reconcile exactly, architecture status is
+not complete.
 
 | Surface | Meaning |
 |---|---|
-| Architecture state | `architecture_complete` applies only to the exact evidence-index digest named by a passing canonical report. |
+| Architecture state | Resolve only from the exact `1.2.0` canonical report and repeated byte-identical clean release replay. Until that evidence exists and passes, the state is not complete. |
 | Operator state | `unaccepted`. Acceptance requires a current exact-binding record whose decision is `accepted`, a validator-accepted append-only decision chain, and independent verification of operator identity and authority. |
 | External control | GA-17 remains `not_evaluated` by offline repository validation. |
 | Runtime | Unauthorized. No product runtime, model execution, live network dependency, cloud execution, private-data ingestion, deployment, or physical-control integration is present. |
 | Later gates | Gate B is not defined or authorized. |
-| Public remote | A distribution channel only; it has no scientific, safety, standards, acceptance, or publication authority. |
+| Public remote | A distribution channel only; it has no scientific, safety, standards, acceptance, or publication authority. Publisher readback is an assertion, not independent transport verification. |
 
 Architecture completion and operator acceptance are deliberately separate:
 
@@ -52,8 +59,10 @@ The diagram describes repository governance, not a deployed system.
 
 ## Resolve the exact current identity
 
-The indexed packet cannot contain its own digest, later Git commit, or post-publication receipt
-without creating a cycle. Resolve the current state in this order:
+The indexed packet cannot contain its own digest, its later Git commit, an event rights record
+that binds that commit, or a post-publication receipt without creating a cycle. The validation
+plan permits only one exact event-specific future-rights exclusion and rejects broad rights
+prefixes. Resolve the current state in this order:
 
 1. Verify [`GATE_A_EVIDENCE_INDEX.json`](gate/GATE_A_EVIDENCE_INDEX.json) against its
    [`SHA-256 sidecar`](gate/GATE_A_EVIDENCE_INDEX.sha256).
@@ -61,34 +70,38 @@ without creating a cycle. Resolve the current state in this order:
    `index_binding.sha256` equals that sidecar digest.
 3. Run the offline validator and require the report, index, repository inventory, fixtures, and
    declared controls to reconcile with zero diagnostics.
-4. For transport identity, select the unique highest valid record in
+4. For publication identity, select the unique highest valid record in
    [`gate/public-distribution-receipts/`](gate/public-distribution-receipts/) whose linear history
-   exact-binds that index, report, published commit, repository, and verified remote readback.
+   exact-binds that index, report, published commit, repository, rights observation, and the
+   publisher's retained readback assertions.
 5. Resolve acceptance separately. The current index, report, mission, and protocol must be bound
    by the head of a validator-accepted decision chain; that head must say `accepted`; and operator
    identity and authority must be independently verified. Otherwise no accepted state may be
    inferred from repository bytes.
-6. If no valid current receipt exists, the packet's public transport is unverified. A branch tip
-   or an older receipt is not a substitute.
+6. Resolve independent transport verification only from a distinct authorized observation record
+   that exact-binds the same repository, commit, index, and report bytes. A publisher receipt,
+   branch tip, or older receipt is not a substitute.
 
 ### Exact public predecessor
 
-Gate A `1.1.1` is the immutable public predecessor for this continuity successor:
+Gate A `1.1.2` is the immutable public predecessor for this correction:
 
-| Item | Gate A `1.1.1` identity |
+| Item | Gate A `1.1.2` identity |
 |---|---|
-| Indexed packet commit | `90072fb64f3c16cb5d0af0f1a3bcad56554707fa` |
-| Receipt-bearing repository commit | `8f4ba9894faf257c46351b2a89fc17f112a988f1` |
-| Evidence-index digest | `sha256:308f65ba2693c13fa71d081dad3f74f56ec80617e97497a2606c0d88a07b2ceb` |
-| Validation-report digest | `sha256:76c0dcce583beb02b121776e14bc9df41833a26c5c49488270d96861b3e33806` |
-| Distribution-receipt digest | `sha256:6156a35d3dfb2c4f0d46cbf48845867da6c942b69ed734a4056ae1e36910aa11` |
-| Receipt sequence | `2` |
+| Indexed packet commit | `ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b` |
+| Receipt-bearing repository commit | `656d826cfe6938fd628c0ede7ea15929fe11d90e` |
+| Evidence-index digest | `sha256:17f3a2e601e9cb4e1c0cd0f97561b1da9ffdc7d5893ed4af4eaccbaf8a67989f` |
+| Validation-report digest | `sha256:06fc3114522c16625da337fe25c71b1fd53abeeaf9c31a11748afc06eb5d66d8` |
+| Distribution-receipt digest | `sha256:e7f3bedac49423d4ba042419056896c507d26ee2bd9a706981abf2131dcda19d` |
+| Receipt sequence | `3` |
 | Mission release | `reiyah.mission@1.1.0` |
 | Protocol release | `reiyah.protocol.harbor-gate-a@1.1.0` |
 | Exact state | `architecture_complete`, `unaccepted`, GA-17 `not_evaluated`, runtime `false` |
 
-The predecessor receipt records static public transport only. It creates no scientific evidence,
-operator acceptance, compliance result, or runtime authority.
+The predecessor receipt records a publisher's static public-distribution assertions. It is not an
+independent observation of remote transport and creates no scientific evidence, operator
+acceptance, compliance result, or runtime authority. The exact collision-prone predecessor index
+and sidecar are preserved under [`history/gate-a-1.1.2/`](history/gate-a-1.1.2/).
 
 ### Why the successor exists
 
@@ -99,14 +112,30 @@ satisfy the contract. Gate A `1.1.1` corrected that governance defect, preserved
 mission and protocol releases, froze the predecessor bytes, and added exact index, report, and
 receipt replay without changing a scientific proposition.
 
-After `1.1.1` was published, the README and machine handoff needed to record its completed
-transport and explain the architecture more clearly. Both documents are evidence-index inputs,
-so changing them under the released `1.1.1` identity would have invalidated its digest. Gate A
-`1.1.2` therefore exists as an append-only presentation and continuity successor. The
-[`historical index`](history/gate-a-1.1.1/gate/GATE_A_EVIDENCE_INDEX.json),
-[`validation report`](gate/validation-reports/gate-a-validation-1.1.1.json), and
-[`distribution receipt`](gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.1.json)
-keep the `1.1.1` review and transport facts independently replayable.
+After `1.1.2` was published, a forensic challenge found twelve gaps. Eight were scientific:
+incomplete policy-distribution and trajectory-weight checks, asserted rather than derived causal
+adjustment validity, confident readiness despite required unknown capabilities, unreconciled
+recovery summaries, incomplete transfer eligibility, unqualified conformal guarantees,
+non-exhaustive OOD/selective denominators, and asserted worst-group eligibility. Four concerned
+validation integrity: unenforced string formats, live-tree time-of-check/time-of-use exposure,
+imports before isolation, and publisher self-attestation presented as independent transport
+proof.
+
+The Gate A `1.2.0` candidate is intended to correct these defects through executable operands,
+deterministic derivations, reason-specific counterexamples, a byte-locked pre-runtime launcher,
+one immutable candidate projection, and a separate transport-observation interface. Closure
+requires the final immutable release replay; this prose does not establish it. The retained
+[`adversarial review`](docs/GATE_A_1_1_2_ADVERSARIAL_REVIEW.md) is an advisory integrity input,
+not independent scientific evidence. Every unchanged `1.1.2` indexed artifact must remain
+byte-identical; every changed or added path must be explicit in the `1.2.0` validation plan.
+
+A second adversarial pass over the developing successor found sixteen candidate-integration
+risks. They include belief and observation reconciliation, joint-event identifiability,
+assumption-evidence eligibility, typed-reference substitution, governance chronology, canonical
+report count consistency, and premature completion language. The proposed protocol now binds the
+[`candidate consistency review`](docs/GATE_A_1_2_0_CONSISTENCY_REVIEW.md) and eleven high-level
+executable contracts. Those findings remain open until repeated byte-identical immutable release
+replay derives their exact closure from the same candidate snapshot.
 
 ## Research thesis
 
@@ -161,7 +190,7 @@ zero, false, normal, negative, or a confident label.
 | Research and assurance governance | Preregistration, datasets, benchmarks, ODDs, scenarios, tests, hazards, arguments, evidence, defeaters, and change impact without safety authority. |
 
 The formal quantities and invalid-state behavior are defined in the
-[`mathematical specification`](docs/MATHEMATICAL_SPECIFICATION.md). Five closed application
+[`mathematical specification`](docs/MATHEMATICAL_SPECIFICATION.md). Five closed-shape application
 schemas make these research surfaces machine-reviewable without collecting data or executing a
 model, policy, simulation, or study.
 
@@ -210,32 +239,108 @@ discoverable. A blocked result is preferable to a plausible default.
 ## Reproduce the static checks
 
 Authoritative replay is intentionally bound to the exact resolved canonical root
-`/Users/danielwahnich/workspace/reiyah`. The validation plan and both offline tools fail closed for
-an ordinary clone at any other path. External path portability is not provided at Gate A; moving
-the repository, using an alias or symlink, or bypassing the identity preflight produces a different,
-untrusted analysis rather than an equivalent Reiyah validation.
+`/Users/danielwahnich/workspace/reiyah`. The validation-plan-bound launcher, primary validator,
+science module, and toolchain lock fail closed for an ordinary clone at any other path. External
+path portability is not provided at Gate A; moving the repository, using an alias or symlink, or
+bypassing the identity preflight produces a different, untrusted analysis rather than an
+equivalent Reiyah validation.
 
-Only from that verified Reiyah Git root:
+Gate A `1.2.0` must start through the reviewed launcher. The launcher enters the locked macOS
+Seatbelt policy before CPython starts, clears ambient loader state, invokes isolated no-site,
+no-bytecode Python, and verifies exact platform, executable, standard-library, extension-module,
+and dependency bytes. In release mode it performs two separately loaded, state-reset evaluations
+of the same repository projection. Their pre-report stage evidence and index bytes must match before
+the report can record `architecture_complete`. Direct Python invocation is rejected.
+
+For a read-only development replay from the verified Reiyah Git root:
 
 ```sh
-python3 tools/validate_gate_a.py
+tools/gate_a_1_2_0.sh --snapshot-mode development --output human
 ```
 
-For machine-readable output without writing into the repository:
+For deterministic machine-readable development output:
 
 ```sh
-python3 tools/validate_gate_a.py --format json > /tmp/reiyah-gate-a-validation.json
+tools/gate_a_1_2_0.sh --snapshot-mode development --output json \
+  > /tmp/reiyah-gate-a-validation-1.2.0.json
 ```
 
-A successful full run requires exit code `0`, zero diagnostics, every known-good fixture to pass,
-every known-bad fixture to fail for its declared primary rule, complete required-property
-mutation coverage, and GA-01 through GA-16 to pass. The validator always leaves GA-17
-`not_evaluated` and cannot create an acceptance record. Read the matching canonical report for
-the exact current totals and toolchain provenance.
+A development replay uses one observational snapshot and is never release evidence. Release
+bootstrap is a three-state, acyclic procedure. Start from a clean committed `C0` in which the
+candidate is otherwise complete, including the two fresh capture manifests, but the current
+index, sidecar, and report paths are absent. Never redirect bootstrap output to a repository path:
+the shell opens that path before the validator captures its snapshot and thereby makes the
+release tree dirty.
 
-The immutable `1.1.1` predecessor checked 60 schemas, 223 normative instances, 179 fixtures, 15
-of 15 known-good cases, 164 of 164 known-bad cases, 1,010 of 1,010 required-property mutations,
-and 317 indexed artifacts with zero diagnostics.
+```sh
+set -eu
+
+index_tmp=/tmp/reiyah-gate-a-index-1.2.0.json
+report_tmp=/tmp/reiyah-gate-a-validation-1.2.0.json
+
+test -z "$(git status --porcelain=v1 --untracked-files=all)"
+test ! -e gate/GATE_A_EVIDENCE_INDEX.json
+test ! -e gate/GATE_A_EVIDENCE_INDEX.sha256
+test ! -e gate/validation-reports/gate-a-validation-1.2.0.json
+
+tools/gate_a_1_2_0.sh --snapshot-mode release --output json --emit-index \
+  > "$index_tmp"
+cp "$index_tmp" gate/GATE_A_EVIDENCE_INDEX.json
+index_digest=$(shasum -a 256 "$index_tmp" | awk '{print $1}')
+printf 'sha256:%s  gate/GATE_A_EVIDENCE_INDEX.json\n' "$index_digest" \
+  > gate/GATE_A_EVIDENCE_INDEX.sha256
+git add gate/GATE_A_EVIDENCE_INDEX.json gate/GATE_A_EVIDENCE_INDEX.sha256
+git commit --amend --no-edit
+
+tools/gate_a_1_2_0.sh --snapshot-mode release --output json --emit-report \
+  > "$report_tmp"
+cp "$report_tmp" gate/validation-reports/gate-a-validation-1.2.0.json
+git add gate/validation-reports/gate-a-validation-1.2.0.json
+git commit --amend --no-edit
+```
+
+The first amend creates `C_index`; the second creates `C_packet`. `--emit-report` requires exact
+committed index and sidecar readback and internally compares two separately loaded, fresh-worker
+S01 through S19 evaluations before emitting S20. The parent also performs a complete production
+replay over its immutable snapshot and requires every child token row, nested row, selector row,
+index byte, publication-state result, and report-driving section to equal that outer replay. The
+outer replay is a substitution guard, not a third independent evaluator. Once `C_packet` exists,
+two ordinary complete launcher invocations must be byte-identical to each other and the canonical
+report:
+
+```sh
+tools/gate_a_1_2_0.sh --snapshot-mode release --output json \
+  > /tmp/reiyah-gate-a-validation-1.2.0-a.json
+tools/gate_a_1_2_0.sh --snapshot-mode release --output json \
+  > /tmp/reiyah-gate-a-validation-1.2.0-b.json
+cmp /tmp/reiyah-gate-a-validation-1.2.0-a.json \
+  /tmp/reiyah-gate-a-validation-1.2.0-b.json
+cmp /tmp/reiyah-gate-a-validation-1.2.0-a.json \
+  gate/validation-reports/gate-a-validation-1.2.0.json
+```
+
+The later direct-child `C_receipt` state is checked by a release-blocking, non-emitted guard. It
+validates the real rights record and sequence-four receipt and proves that the candidate
+projection, index, and report remain byte-identical to `C_packet`. The unchanged canonical report
+does not and cannot contain evidence about that later commit, and the receipt cannot claim remote
+readback of the commit that contains the receipt itself.
+
+A successful release run requires exit code `0`, zero diagnostics, every current-replay
+known-good fixture to pass, every current-replay known-bad fixture to fail for its declared
+primary rule, exact byte and schema attestation for every catalog row, exact predecessor
+inheritance, exact index and projection reconciliation, and GA-01 through GA-16 to pass. The
+report's same-snapshot correction closure must list exactly `CR-001` through `CR-016`, with
+required findings equal to closed findings and no open finding. The
+validator always leaves GA-17 and independent transport verification `not_evaluated`; it cannot
+create acceptance, scientific evidence, or runtime authority.
+
+Retained historical fixture rows remain byte-attested and schema-identified in the catalog, but
+they are not counted as current `1.2.0` replay evidence.
+
+The immutable `1.1.2` predecessor checked 68 schemas, 241 normative instances, 196 fixtures, 17
+of 17 known-good cases, 179 of 179 known-bad cases, 1,010 of 1,010 required-property mutations,
+and 347 indexed artifacts with zero diagnostics. These counts describe only the exact predecessor
+bytes; the `1.2.0` totals must be read from its final canonical report.
 
 ## Review and navigation
 
@@ -264,18 +369,19 @@ unrelated work or reuse a published release identifier.
   claim.
 - A finite schema, threat model, and fixture suite cannot prove that every scientific, security,
   rights, or release threat is known.
-- No independently retained external review is included in or established by this packet.
+- The retained adversarial review is model-assisted advisory work. No independently retained
+  external scientific, safety, standards, or security review is established by this packet.
 - Authoritative replay is canonical-path-bound; portability to an arbitrary public clone remains
   explicitly unsupported at Gate A.
 
-If the Gate A `1.1.2` index, sidecar, canonical report, historical snapshot, fixtures, or
-validator support is absent or inconsistent, this packet permits completing only that static
-successor work. Once full replay is byte-identical to the canonical report and classifies the
-exact current bytes as `architecture_complete`, this packet permits independent advisory review
-of that exact candidate; it does not establish that such a review occurred. Review cannot
-authenticate operator authority, evaluate GA-17, accept Gate A, define Gate B, authorize live
-network or cloud execution, or authorize runtime. Any change to a published indexed byte requires
-a new append-only successor and a fresh review identity.
+If the Gate A `1.2.0` index, sidecar, canonical report, historical `1.1.2` snapshot, fixtures, or
+validator support is absent or inconsistent, continue only the bounded static correction. Once
+release replay is byte-identical to the canonical report and classifies the exact current bytes
+as `architecture_complete`, the exact bytes are eligible for independent advisory review and,
+under separate explicit publication authority, public distribution. Publication requires a
+current event-specific rights observation, exact packet/report bindings, and an append-only
+publisher receipt. Independent transport verification, operator acceptance, Gate B, cloud use,
+and runtime remain separate and unauthorized.
 
 ## Open source and citation
 
@@ -286,7 +392,8 @@ not relicense third-party material; see [`NOTICE`](NOTICE) and the
 bounded evidence payloads and required attribution.
 
 Use [`CITATION.cff`](CITATION.cff) and cite the exact evidence-index digest reviewed. When public
-transport identity matters, also cite the unique highest valid append-only receipt that exact-binds
-that same index, its canonical report, packet commit, and verified remote readback. Until such a
-current receipt exists, transport is unverified. Do not cite a mutable branch name, repository
-availability, or an older receipt as a substitute for the exact reviewed bytes.
+distribution identity matters, also cite the unique highest valid append-only receipt that
+exact-binds that same index, its canonical report, and packet commit. A publisher's readback is an
+assertion. Cite independent transport verification only when a distinct authorized observation
+record binds the same exact bytes. Never substitute a mutable branch name, repository
+availability, or an older receipt.

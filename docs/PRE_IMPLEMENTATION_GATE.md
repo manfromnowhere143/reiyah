@@ -1,5 +1,7 @@
 # Gate A: Pre-Implementation Architecture Gate
 
+Document version: `1.2.0`
+
 ## 1. Decision boundary
 
 Gate A determines whether Reiyah has a reviewable, falsifiable, evidence-bound architecture
@@ -38,7 +40,7 @@ the authority that waives or accepts the control.
 | GA-11 | Standards mappings identify exact version/date/scope/evidence/gaps and make no compliance claim. | dated crosswalk | Block |
 | GA-12 | Threats, trust boundaries, mitigations, detection evidence, and residual risks are explicit. | threat model | Block |
 | GA-13 | Schemas and global semantics reject ambiguity, unknown fields where normative, invalid or ineligible evidence bindings, invalid references, and collapsed unknowns. | JSON Schemas, fixtures | Block |
-| GA-14 | Validation is offline, deterministic, fail-closed, replayable, demonstrates production-path rejection for the declared known-bad fixtures, reconciles exact coverage totals, and reports zero diagnostics for completion. | validator, fixture catalog, control summary, validation report | Block |
+| GA-14 | Validation starts inside the locked pre-runtime isolation boundary, reads the same immutable projection through two separately loaded, state-reset release evaluations, is offline, deterministic, fail-closed, replayable, demonstrates production-path rejection for every declared known-bad fixture, reconciles exact coverage totals, and reports zero diagnostics for completion. | launcher, toolchain lock, validator, fixture catalog, control summary, validation report | Block |
 | GA-15 | The architecture shows no product runtime, live inference, deployment, physical control, private ingestion, or publication machinery. | repository inventory, architecture diagram | Block |
 | GA-16 | The complete review surface is listed in a digest-bound evidence index. | Gate A evidence index and sidecar digest | Block |
 | GA-17 | An authorized operator makes an explicit decision on the exact evidence-index digest. | operator-created acceptance record | Leaves Gate A unaccepted when unevaluated |
@@ -60,24 +62,45 @@ The architecture-completeness result is one of:
 
 These are gate states, not scientific result statuses.
 
-For the Gate A `1.1.0` architecture candidate, `architecture_complete` additionally
-requires a canonical index with an explicit version for every artifact binding and a canonical
-full validation report covering the exact frozen schema, normative-instance, fixture, retained-source,
-and indexed-artifact totals. Every known-good fixture must pass, every known-bad fixture must
-fail for its declared rule, unexpected outcomes and architecture diagnostics must be zero, and
-`acceptance_created` must be false. The decision-free closeout report has zero top-level
-diagnostics. The report's control summary must cover and pass GA-01 through GA-16 with no failed
-control; GA-17 is recorded separately as external.
-These totals are recomputed from the canonical repository view rather than trusted from report
-fields.
+For the Gate A `1.2.0` correction candidate, `architecture_complete` additionally requires all of
+the following for one exact index digest:
 
-This `1.1.0` packet binds the initial releases and their exact `1.1.0` successors through the
-append-only release ledger. Any later correction requires a newly versioned Gate A packet whose
-validator rechecks the complete mission and policy surface. Historical `1.0.0` bytes remain
-preserved and may not be rewritten or silently treated as the current semantic head.
+- the external launcher enters the locked Seatbelt policy before CPython starts and the validator
+  exact-matches the declared platform, executable, standard-library, extension-module, and
+  dependency bytes;
+- the release snapshot is a clean immutable Git tree, while development snapshots remain
+  explicitly ineligible as release evidence;
+- the exact `1.1.2` historical index, sidecar, canonical report, receipt, and recovery bindings
+  reconcile, every unchanged predecessor artifact remains byte-identical, and every changed or
+  added path belongs to the closed correction scope;
+- all seven `1.2.0` scientific schemas, all valid reference instances, every scientific mutation,
+  every governance counterexample, and every validator-security counterexample pass through the
+  same production paths;
+- the index projection, artifact inventory, exclusion list, fixture catalog, validation plan,
+  manifests, release ledger, and reason-specific diagnostics reconcile with their exact bytes;
+  and
+- two separately loaded, state-reset release evaluations of the unchanged committed projection produce
+  byte-identical pre-report stage evidence and index bytes inside one locked invocation; only then
+  may one deterministic canonical report render record zero diagnostics, GA-01 through GA-16 as
+  passed, no acceptance, and GA-17 separately as `not_evaluated`.
 
-The offline report's `external_control_summary` always records GA-17 as `not_evaluated` with a
-null decision-record ID and no external-control diagnostics. Repository bytes cannot
+After the report exists, two complete launcher invocations must still emit bytes identical to each
+other and to the committed report. That post-render readback is a release and publication
+prerequisite. It cannot be an operand inside the earlier report without creating a temporal
+self-reference, and the report does not claim to have observed it.
+
+The same report must derive its correction closure from that snapshot. Ordered
+`required_finding_ids` are exactly `CR-001` through `CR-016`; closed and open IDs form an exact
+disjoint partition; every finding result names the production checks and fixtures that determine
+it; and `architecture_complete` is forbidden unless required findings equal closed findings and
+the open set is empty.
+
+Counts are recomputed from the immutable candidate projection rather than trusted from prose or
+report fields. The index remains `candidate_pending_canonical_report`; only the excluded canonical
+report may classify its exact digest as `architecture_complete`.
+
+The offline report's `control_summary.external_control` always records GA-17 as `not_evaluated`
+with a null decision-record ID. Repository bytes cannot
 authenticate a human or establish authority. The validator may check the structure, bindings,
 and history of a present decision record and report defects through ordinary deterministic
 diagnostics, but it may not authenticate authority, evaluate GA-17, create the record, select
@@ -89,6 +112,11 @@ regardless of the GA-17 state.
 The validation plan also binds each normative narrative to its machine contract by exact safe
 paths and lowercase SHA-256 digests. Stale narrative or machine bytes, missing bindings, or
 duplicate binding IDs prevent architecture completeness.
+
+A distribution receipt is not part of architecture completeness. It may record a publisher's
+exact publication and readback assertions, but it remains `asserted_unverified`. Independent
+transport verification requires a distinct authorized observation record bound to the same
+repository, commit, index, and report bytes. Neither transport state can evaluate GA-17.
 
 ## 4. Operator decision rule
 
@@ -123,6 +151,11 @@ status requires a typed preregistration record and typed analysis specification 
 the declared observation boundary. Terminal results bind an exact eligible experiment
 version, and terminal evidence bindings use versioned active evidence references. None of
 these records authorizes runtime execution.
+
+Gate A 1.2 application records expose only an explicit evidence-gap binding. No retained
+scientific-evidence or experiment-binding resolver is authorized in this release, so favorable or
+terminal evidence-requiring scientific dispositions remain rejection targets rather than
+attainable states. This does not prevent append-only testing of non-support lifecycle successors.
 
 ## 5. Gate B prohibition
 

@@ -1,0 +1,802 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/research-function-registry.schema.json",
+  "schema_version": "1.2.0",
+  "artifact_id": "reiyah.artifact.research-function-registry-1.2.0",
+  "registry_id": "reiyah.research-function-registry.harbor",
+  "version": "1.2.0",
+  "as_of_date": "2026-08-24",
+  "program_name": "HARBOR",
+  "lifecycle_status": "proposed",
+  "authority": "operator_unaccepted_architecture",
+  "architecture_only": true,
+  "runtime_authorized": false,
+  "functions": [
+    {
+      "function_id": "reiyah.research-function.question-and-falsifier",
+      "sequence": 1,
+      "name": "Question and falsifier specification",
+      "purpose": "Turn a proposed research claim into a bounded question, estimand, comparator, decision consequence, and observable contradiction condition before outcomes are accessed.",
+      "lifecycle_status": "proposed",
+      "depends_on": [],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.operator-research-intent",
+          "kind": "question",
+          "schema_id": null,
+          "required": true,
+          "availability": "gate_b_candidate"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.research-question",
+          "kind": "question",
+          "schema_id": null,
+          "required": true,
+          "availability": "gate_b_candidate"
+        }
+      ],
+      "required_methods": [
+        "Separate scientific, safety, standards, and product questions.",
+        "Specify the target population, unit, exposure, comparator, outcome, horizon, and falsifier."
+      ],
+      "quality_controls": [
+        "Reject claims that cannot be contradicted by an eligible observation.",
+        "Keep every proposed claim distinct from an accepted finding."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "The question has an explicit estimand, comparator, falsifier, and decision use.",
+          "The question stays within the accepted mission and current gate."
+        ],
+        "must_stop_when": [
+          "The question implies runtime, private data, vehicle control, or an unsupported authority.",
+          "The comparator or falsifier is absent or changes after outcome access."
+        ],
+        "operator_review_required": true
+      }
+    },
+    {
+      "function_id": "reiyah.research-function.source-custody",
+      "sequence": 2,
+      "name": "Source custody and authority classification",
+      "purpose": "Resolve source identity, exact version, custody, redistribution, evidence eligibility, scope, and authority limits before a source can support any mapping.",
+      "lifecycle_status": "proposed",
+      "depends_on": [
+        "reiyah.research-function.question-and-falsifier"
+      ],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.research-question",
+          "kind": "question",
+          "schema_id": null,
+          "required": true,
+          "availability": "gate_b_candidate"
+        },
+        {
+          "contract_id": "reiyah.contract.source-candidate",
+          "kind": "source",
+          "schema_id": null,
+          "required": true,
+          "availability": "gate_b_candidate"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.public-source-ledger",
+          "kind": "source",
+          "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "required_methods": [
+        "Retain exact permitted bytes or create a pointer-only record.",
+        "Record publication date, retrieval provenance, digest, access terms, redistribution basis, scope, and limitations."
+      ],
+      "quality_controls": [
+        "Fail closed when redistribution or source identity is unmeasured.",
+        "Never promote a company statement, patent, job posting, signature, or consensus to independent evidence."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "Every retained payload is inventory-bound and eligible for its declared use.",
+          "Every pointer-only source is structurally ineligible as evidence."
+        ],
+        "must_stop_when": [
+          "A payload lacks observed redistribution authority.",
+          "A source version, date, scope, comparator, or authority boundary is unresolved."
+        ],
+        "operator_review_required": true
+      }
+    },
+    {
+      "function_id": "reiyah.research-function.construct-validation",
+      "sequence": 3,
+      "name": "Construct and measurement validation",
+      "purpose": "Define the latent construct, actor, object, horizon, reference process, measurement model, validity evidence, and proxy limits before measurement.",
+      "lifecycle_status": "proposed",
+      "depends_on": [
+        "reiyah.research-function.question-and-falsifier",
+        "reiyah.research-function.source-custody"
+      ],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.research-question",
+          "kind": "question",
+          "schema_id": null,
+          "required": true,
+          "availability": "gate_b_candidate"
+        },
+        {
+          "contract_id": "reiyah.contract.public-source-ledger",
+          "kind": "source",
+          "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json",
+          "required": false,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.human-automation-assessment",
+          "kind": "construct",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "required_methods": [
+        "Use multiple methods when no single measurement can identify the construct.",
+        "Separate convergent validity, discriminant validity, reliability, calibration, and applicability."
+      ],
+      "quality_controls": [
+        "Prohibit attention, gaze, drowsiness, workload, reaction time, or confidence from silently substituting for belief, readiness, or recovery.",
+        "Preserve discordant methods and non-observed states."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "The construct has a typed holder, target, horizon, reference, and validity boundary.",
+          "Every proxy has an explicit measurement argument and falsifier."
+        ],
+        "must_stop_when": [
+          "A proxy is treated as ground truth without validation.",
+          "The reference process shares an undisclosed dependency with the evaluated method."
+        ],
+        "operator_review_required": true
+      }
+    },
+    {
+      "function_id": "reiyah.research-function.study-preregistration",
+      "sequence": 4,
+      "name": "Study design and immutable preregistration",
+      "purpose": "Freeze the identification design, power or precision plan, stopping rules, causal structure, controls, missingness, splits, access chronology, deviations, and analysis boundary.",
+      "lifecycle_status": "proposed",
+      "depends_on": [
+        "reiyah.research-function.question-and-falsifier",
+        "reiyah.research-function.construct-validation"
+      ],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.research-question",
+          "kind": "question",
+          "schema_id": null,
+          "required": true,
+          "availability": "gate_b_candidate"
+        },
+        {
+          "contract_id": "reiyah.contract.human-automation-assessment",
+          "kind": "construct",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.study-preregistration",
+          "kind": "preregistration",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "required_methods": [
+        "Choose a design family before outcome access.",
+        "Specify causal graph, negative controls, placebo outcomes, missingness sensitivity, sampling, stopping, interim analysis, and deviation handling."
+      ],
+      "quality_controls": [
+        "Bind every freeze and data-access event to exact time and artifact identity.",
+        "Label amendments and exploratory analyses without inheriting preregistration."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "The design is internally coherent and frozen before prohibited outcome access.",
+          "Power, precision, stopping, missingness, and split rules are explicit."
+        ],
+        "must_stop_when": [
+          "Outcome information was accessed before the relevant freeze.",
+          "Identification assumptions, controls, or missingness sensitivity are absent."
+        ],
+        "operator_review_required": true
+      }
+    },
+    {
+      "function_id": "reiyah.research-function.data-benchmark-governance",
+      "sequence": 5,
+      "name": "Dataset and benchmark governance",
+      "purpose": "Specify participant, consent, ethics, sensor, synchronization, annotation, adjudication, split, leakage, contamination, maintenance, correction, and deprecation contracts without ingesting data.",
+      "lifecycle_status": "proposed",
+      "depends_on": [
+        "reiyah.research-function.study-preregistration",
+        "reiyah.research-function.source-custody"
+      ],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.study-preregistration",
+          "kind": "preregistration",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        },
+        {
+          "contract_id": "reiyah.contract.public-source-ledger",
+          "kind": "source",
+          "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/source-ledger.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.dataset-benchmark",
+          "kind": "dataset",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "required_methods": [
+        "Version subjects, encounters, vehicles, routes, scenarios, labels, and access events.",
+        "Split at the highest dependence and leakage unit required by the estimand."
+      ],
+      "quality_controls": [
+        "Record contamination searches and limitations.",
+        "Keep missing sensor data, withdrawn consent, and invalid synchronization distinct."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "A static dataset release and benchmark risk record are complete.",
+          "No private or operational payload enters Gate A."
+        ],
+        "must_stop_when": [
+          "Consent, redistribution, ethics, provenance, split chronology, or contamination status is unresolved.",
+          "A benchmark owner can silently change labels, tests, or access."
+        ],
+        "operator_review_required": true
+      }
+    },
+    {
+      "function_id": "reiyah.research-function.odd-scenario-design",
+      "sequence": 6,
+      "name": "ODD, scenario, and test case design",
+      "purpose": "Bind the operational domain, current conditions, scenario family, test case, oracle, expected result, coverage target, and change impact before evaluation.",
+      "lifecycle_status": "proposed",
+      "depends_on": [
+        "reiyah.research-function.study-preregistration",
+        "reiyah.research-function.data-benchmark-governance"
+      ],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.study-preregistration",
+          "kind": "preregistration",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        },
+        {
+          "contract_id": "reiyah.contract.dataset-benchmark",
+          "kind": "dataset",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.odd-scenario-test",
+          "kind": "odd",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "required_methods": [
+        "Use versioned include and exclude conditions.",
+        "Separate real seed, synthetic mutation, oracle uncertainty, simulation fidelity, and prospective road validation."
+      ],
+      "quality_controls": [
+        "Report untested and unsupported ODD cells.",
+        "Do not infer real-world validity from scenario count or simulated hours."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "Every test case has identity, objective, inputs, steps, platform, oracle, expected result, and coverage relation.",
+          "ODD exits and unknown current conditions are explicit."
+        ],
+        "must_stop_when": [
+          "The ODD cannot be evaluated from available conditions.",
+          "The oracle, simulation fidelity, or test selection mechanism is unqualified."
+        ],
+        "operator_review_required": true
+      }
+    },
+    {
+      "function_id": "reiyah.research-function.temporal-information-set",
+      "sequence": 7,
+      "name": "Observation and temporal information set",
+      "purpose": "Record what was measured, when it occurred, when it became available, who could access it, and whether it belonged to the belief or decision information set.",
+      "lifecycle_status": "proposed",
+      "depends_on": [
+        "reiyah.research-function.construct-validation",
+        "reiyah.research-function.odd-scenario-design"
+      ],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.odd-scenario-test",
+          "kind": "odd",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        },
+        {
+          "contract_id": "reiyah.contract.human-automation-assessment",
+          "kind": "construct",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.information-set",
+          "kind": "observation",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "required_methods": [
+        "Separate event, measurement, availability, and record times.",
+        "Bind source, actor membership, disclosure, withholding, validity, and provenance."
+      ],
+      "quality_controls": [
+        "Reject future or unavailable inputs.",
+        "Preserve missing, unmeasured, out-of-distribution, sensor-invalid, and abstained states."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "Every belief and decision input was available to the named actor by the relevant time.",
+          "Information-set membership and disclosure are reconciled."
+        ],
+        "must_stop_when": [
+          "Availability time is missing or later than belief or decision time.",
+          "An input source, actor, disclosure state, or validity boundary is unresolved."
+        ],
+        "operator_review_required": false
+      }
+    },
+    {
+      "function_id": "reiyah.research-function.belief-assessment",
+      "sequence": 8,
+      "name": "Object-level human and automation belief assessment",
+      "purpose": "Evaluate separately what each named actor believed about the same object or relation under the actor's actual information set and declared applicability domain.",
+      "lifecycle_status": "proposed",
+      "depends_on": [
+        "reiyah.research-function.temporal-information-set"
+      ],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.information-set",
+          "kind": "observation",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.belief-assessment",
+          "kind": "belief",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "required_methods": [
+        "Bind holder, target agent or object, state space, horizon, calibration target, elicitation or inference method, reference process, and decision loss.",
+        "Evaluate normalization, proper scoring, calibration, coverage, and abstention."
+      ],
+      "quality_controls": [
+        "Never infer human comprehension from gaze alone.",
+        "Never treat an automation confidence score as a calibrated belief outside its declared target and domain."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "Human and automation beliefs are independently identifiable and comparable on a common opportunity.",
+          "Calibration and applicability dispositions are explicit."
+        ],
+        "must_stop_when": [
+          "Belief holder, target, information set, reference, or calibration target is absent.",
+          "The belief distribution is invalid or coerces a non-observed state."
+        ],
+        "operator_review_required": false
+      }
+    },
+    {
+      "function_id": "reiyah.research-function.joint-readiness-recovery",
+      "sequence": 9,
+      "name": "Joint performance, readiness, and recoverability",
+      "purpose": "Evaluate human-only, automation-only, team, fallback, and oracle opportunities while resolving readiness phases, recovery events, joint silent misses, and dependence.",
+      "lifecycle_status": "proposed",
+      "depends_on": [
+        "reiyah.research-function.belief-assessment"
+      ],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.belief-assessment",
+          "kind": "belief",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.joint-performance",
+          "kind": "joint_performance",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "required_methods": [
+        "Use a common object-time opportunity and equal-information accounting.",
+        "Separate perception, comprehension, projection, decision, motor initiation, stabilization, censoring, and competing events.",
+        "Derive readiness unknown propagation and the earliest qualifying recovery, censoring, or competing event from complete typed operands."
+      ],
+      "quality_controls": [
+        "Report every channel marginal and joint event.",
+        "Model dependence and prohibit multiplication of reliabilities without justified independence.",
+        "Reject an observed readiness aggregate with an unknown required capability and reject any recovery summary that disagrees with the frozen event window."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "All channel opportunities, validity states, disclosures, effort, fallback, windows, and outcomes reconcile.",
+          "Team value is compared with the best eligible standalone actor and complementarity potential."
+        ],
+        "must_stop_when": [
+          "A relevant channel or fallback is unobserved but encoded as no miss.",
+          "A readiness proxy improves while hazard recognition or recovery contradicts it without explicit disposition."
+        ],
+        "operator_review_required": true
+      }
+    },
+    {
+      "function_id": "reiyah.research-function.policy-evaluation",
+      "sequence": 10,
+      "name": "Causal and sequential policy evaluation",
+      "purpose": "Estimate only identified policy contrasts with exact behavior and target policies, trajectories, propensities, support, rewards, safety costs, estimators, and missingness assumptions.",
+      "lifecycle_status": "proposed",
+      "depends_on": [
+        "reiyah.research-function.study-preregistration",
+        "reiyah.research-function.joint-readiness-recovery"
+      ],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.study-preregistration",
+          "kind": "preregistration",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        },
+        {
+          "contract_id": "reiyah.contract.joint-performance",
+          "kind": "joint_performance",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.sequential-ope",
+          "kind": "policy_evaluation",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "required_methods": [
+        "Separate assignment, delivery, receipt, adherence, contamination, and intervention.",
+        "Report positivity, effective sample size, weight tails, truncation, estimator registry, selection boundary, disagreement, missingness, and safety constraints.",
+        "Retain complete normalized behavior and target distributions per history, reconcile logged propensities, derive cumulative weights per trajectory and horizon, and compute effective sample size over trajectories.",
+        "Derive causal adjustment validity from the exact graph, temporal roles, observability, and strategy-specific identification criterion."
+      ],
+      "quality_controls": [
+        "Keep observational association distinct from causal effect.",
+        "Invalidate unsupported policies or estimators instead of extrapolating.",
+        "Do not treat acyclicity, a selected-set assertion, per-step ratios, or a logged-action-only propensity as identification or support evidence."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "The target policy is supported by logged behavior under the frozen design.",
+          "Estimator selection and uncertainty use only authorized data."
+        ],
+        "must_stop_when": [
+          "Support, propensity provenance, effective sample size, missingness identification, or safety constraints fail.",
+          "Estimator disagreement exceeds the preregistered decision rule."
+        ],
+        "operator_review_required": true
+      }
+    },
+    {
+      "function_id": "reiyah.research-function.selective-uncertainty",
+      "sequence": 11,
+      "name": "Selective prediction, OOD, and conformal assurance",
+      "purpose": "Evaluate accepted and rejected cases under explicit novelty, ambiguity, sensor validity, calibration, exchangeability, shift, and group-conditional coverage contracts.",
+      "lifecycle_status": "proposed",
+      "depends_on": [
+        "reiyah.research-function.belief-assessment",
+        "reiyah.research-function.policy-evaluation"
+      ],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.belief-assessment",
+          "kind": "belief",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        },
+        {
+          "contract_id": "reiyah.contract.sequential-ope",
+          "kind": "policy_evaluation",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.selective-uncertainty",
+          "kind": "uncertainty",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "required_methods": [
+        "Separate novelty rejection, ambiguity rejection, sensor invalidity, missingness, unmeasured state, and protocol abstention.",
+        "Report accepted and rejected denominators, risk-coverage, error-reject, marginal and group-conditional coverage.",
+        "Reconcile a disjoint exhaustive epistemic-state partition and keep the structured conformal guarantee disposition separate from empirical coverage."
+      ],
+      "quality_controls": [
+        "Bind calibration release and exchangeability or shift assumptions.",
+        "Invalidate guarantees when their conditions fail.",
+        "Reject arbitrary rates, incomplete partitions, and unqualified guarantees after any required assumption is contradicted or unmeasured."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "Coverage and risk are reported for every declared acceptance threshold and group.",
+          "Guarantee validity has an explicit supported, invalid, or inconclusive disposition under the architecture status vocabulary."
+        ],
+        "must_stop_when": [
+          "Calibration identity or guarantee conditions are missing.",
+          "A rejected or invalid case enters the accepted denominator."
+        ],
+        "operator_review_required": true
+      }
+    },
+    {
+      "function_id": "reiyah.research-function.transfer-worst-group",
+      "sequence": 12,
+      "name": "Transfer and worst group validation",
+      "purpose": "Evaluate exact source and target domains, adaptation, target access, support, measurement invariance, complete group coverage, and simultaneous uncertainty.",
+      "lifecycle_status": "proposed",
+      "depends_on": [
+        "reiyah.research-function.selective-uncertainty",
+        "reiyah.research-function.data-benchmark-governance"
+      ],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.selective-uncertainty",
+          "kind": "uncertainty",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        },
+        {
+          "contract_id": "reiyah.contract.dataset-benchmark",
+          "kind": "dataset",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.transfer-worst-group",
+          "kind": "transfer",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "required_methods": [
+        "Freeze source and target releases, shift taxonomy, adaptation allowance, target tuning, group universe, intersections, membership measurement, multiplicity, and minimum information.",
+        "Report source, target, gap, support, calibration, every group, all worst ties, and low-information dispositions.",
+        "Bind metric identity, direction, units, population harmonization, overlap, invariance, access chronology, adaptation, tuning, coverage, and typed group information thresholds."
+      ],
+      "quality_controls": [
+        "Never drop an unobserved or underpowered group.",
+        "Never infer target performance from source metadata or pooled calibration.",
+        "Derive transfer eligibility, gap direction, group eligibility, complete-result unknown state, and every tied extremum rather than trusting asserted booleans."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "Target support and measurement comparability meet the preregistered boundary.",
+          "Every declared group and intersection is present with effective sample size and simultaneous uncertainty."
+        ],
+        "must_stop_when": [
+          "Support or measurement invariance fails.",
+          "A group is omitted, post hoc, mismeasured, or below minimum information without an explicit unknown disposition."
+        ],
+        "operator_review_required": true
+      }
+    },
+    {
+      "function_id": "reiyah.research-function.result-evidence-lifecycle",
+      "sequence": 13,
+      "name": "Result, evidence, and lifecycle synthesis",
+      "purpose": "Bind results to the frozen study, protocol, source, metric, uncertainty, validity, and evidence objects while preserving every status and correction.",
+      "lifecycle_status": "proposed",
+      "depends_on": [
+        "reiyah.research-function.joint-readiness-recovery",
+        "reiyah.research-function.policy-evaluation",
+        "reiyah.research-function.transfer-worst-group"
+      ],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.joint-performance",
+          "kind": "joint_performance",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        },
+        {
+          "contract_id": "reiyah.contract.sequential-ope",
+          "kind": "policy_evaluation",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        },
+        {
+          "contract_id": "reiyah.contract.transfer-worst-group",
+          "kind": "transfer",
+          "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.evidence-qualified-result",
+          "kind": "evidence",
+          "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/evidence-object.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "required_methods": [
+        "Reconcile numerators, denominators, coverage, intervals, statuses, preregistration, and evidence witnesses.",
+        "Create append-only corrections, retractions, and replications with exact predecessor and independence lineage."
+      ],
+      "quality_controls": [
+        "Do not let prose, hashes, validators, generated reviews, or consensus serve as scientific evidence.",
+        "Do not translate null, inconclusive, failed, contradicted, corrected, or retracted into supported."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "Every status matches its metric and evidence disposition.",
+          "All source, experiment, result, replication, correction, and retraction references resolve exactly."
+        ],
+        "must_stop_when": [
+          "An evidence basis is ineligible, circular, stale, or missing.",
+          "A result status, denominator, uncertainty interval, preregistration, or lineage is incoherent."
+        ],
+        "operator_review_required": true
+      }
+    },
+    {
+      "function_id": "reiyah.research-function.independent-review",
+      "sequence": 14,
+      "name": "Independent review and gate decision",
+      "purpose": "Separate reproducibility, methodological review, safety review, standards review, legal review, and operator authority before any gate advancement.",
+      "lifecycle_status": "proposed",
+      "depends_on": [
+        "reiyah.research-function.result-evidence-lifecycle"
+      ],
+      "inputs": [
+        {
+          "contract_id": "reiyah.contract.evidence-qualified-result",
+          "kind": "evidence",
+          "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/evidence-object.schema.json",
+          "required": true,
+          "availability": "gate_a_defined"
+        }
+      ],
+      "outputs": [
+        {
+          "contract_id": "reiyah.contract.review-decision",
+          "kind": "review",
+          "schema_id": null,
+          "required": true,
+          "availability": "not_authorized"
+        }
+      ],
+      "required_methods": [
+        "Name reviewer identity, competence, conflicts, reviewed bytes, method, findings, limitations, and disposition.",
+        "Replicate with a distinct experiment and declared independence before using replicated status."
+      ],
+      "quality_controls": [
+        "Keep GA-17 external to offline validation.",
+        "Require a separately authorized contract for Gate B, runtime, publication, or deployment."
+      ],
+      "decision_boundary": {
+        "may_advance_when": [
+          "All required independent reviews are complete and bind exact bytes.",
+          "An independently authorized operator makes a separate hash-bound decision."
+        ],
+        "must_stop_when": [
+          "Reviewer independence or authority is unverified.",
+          "Any required evidence, replication, legal, standards, safety, or operator review is absent."
+        ],
+        "operator_review_required": true
+      }
+    }
+  ],
+  "dependency_order": [
+    "reiyah.research-function.question-and-falsifier",
+    "reiyah.research-function.source-custody",
+    "reiyah.research-function.construct-validation",
+    "reiyah.research-function.study-preregistration",
+    "reiyah.research-function.data-benchmark-governance",
+    "reiyah.research-function.odd-scenario-design",
+    "reiyah.research-function.temporal-information-set",
+    "reiyah.research-function.belief-assessment",
+    "reiyah.research-function.joint-readiness-recovery",
+    "reiyah.research-function.policy-evaluation",
+    "reiyah.research-function.selective-uncertainty",
+    "reiyah.research-function.transfer-worst-group",
+    "reiyah.research-function.result-evidence-lifecycle",
+    "reiyah.research-function.independent-review"
+  ],
+  "prohibited_shortcuts": [
+    "Starting data collection, training, inference, simulation execution, deployment, or vehicle control from this registry.",
+    "Treating a discovery pointer as retained or evidence-eligible.",
+    "Collapsing observation, latent belief, decision, intervention, outcome, and evidence.",
+    "Using gaze, attention, drowsiness, workload, reaction time, or confidence as unvalidated ground truth for belief or readiness.",
+    "Treating missing, unmeasured, out-of-distribution, sensor-invalid, or abstained as zero or a confident label.",
+    "Selecting hypotheses, groups, estimators, thresholds, or outcome labels after prohibited outcome access without an explicit exploratory amendment.",
+    "Multiplying human and automation reliabilities without a justified dependence model.",
+    "Converting a company statement, patent, certificate summary, job posting, signature, checksum, validator pass, or consensus into independent scientific evidence.",
+    "Claiming causal effect without assignment, behavior policy, support, missingness, and identification evidence.",
+    "Omitting target domains, low-information groups, rejected cases, competing events, deviations, nulls, contradictions, corrections, or retractions.",
+    "Treating architecture completeness or static distribution authorization as Gate A acceptance, scientific support, safety validation, standards compliance, publication authority, or Gate B authorization.",
+    "Changing an immutable release identifier or accepted hash-bound byte in place.",
+    "Treating a self-asserted valid, sufficient, supported, complete, or verified field as a derived result.",
+    "Computing off-policy effective sample size over step ratios instead of cumulative trajectory weights.",
+    "Treating graph acyclicity or an adjustment-set label as proof of causal identification.",
+    "Reporting a confident aggregate while a required capability, population cell, guarantee assumption, transfer condition, or group eligibility input is unknown.",
+    "Treating a locally authored distribution receipt as an independent remote observation."
+  ]
+}

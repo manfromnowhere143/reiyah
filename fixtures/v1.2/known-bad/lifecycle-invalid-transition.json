@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.lifecycle_invalid_transition",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/evaluation-assurance-bundle-blocked.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/lifecycle_history/1/status", "value": "running"},
+    {"operation": "replace", "json_pointer": "/lifecycle_status", "value": "running"}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-LIFECYCLE-CURRENT-HISTORY", "instance_pointer": "/lifecycle_history", "schema_keyword": "semantic", "reason": "Current lifecycle status must equal the terminal ordered lifecycle event and may not be changed without an appended event."},
+  "runtime_execution_authorized": false
+}

@@ -1,0 +1,36 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "synthetic_fixture_only": true,
+  "expected_diagnostic": "GA12-SCIENCE-LOGICAL-VERSION-UNIQUE",
+  "fixture_class": "known-bad-validator-security",
+  "fixture_id": "reiyah.fixture.validator-security.science-logical-version-duplicate@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "probe": {
+    "baseline_records": [
+      {
+        "artifact_id": "reiyah.artifact.synthetic_lineage_a",
+        "logical_record_id": "reiyah.record.synthetic_lineage_a",
+        "path": "fixtures/synthetic/lineage-a.json",
+        "predecessor_path": null,
+        "schema_id": "https://schemas.reiyah.invalid/synthetic/a.schema.json",
+        "version": "1.0.0"
+      },
+      {
+        "artifact_id": "reiyah.artifact.synthetic_lineage_b",
+        "logical_record_id": "reiyah.record.synthetic_lineage_b",
+        "path": "fixtures/synthetic/lineage-b.json",
+        "predecessor_path": null,
+        "schema_id": "https://schemas.reiyah.invalid/synthetic/a.schema.json",
+        "version": "1.0.0"
+      }
+    ],
+    "kind": "science_artifact_lineage",
+    "mutation": {
+      "json_pointer": "/records/1/logical_record_id",
+      "operation": "replace",
+      "value": "reiyah.record.synthetic_lineage_a"
+    }
+  },
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0"
+}

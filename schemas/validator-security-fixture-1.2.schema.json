@@ -1,0 +1,1937 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json",
+  "title": "Gate A 1.2.0 validator-security fixture",
+  "description": "Closed synthetic known-bad fixture envelope for adversarial checks of the deterministic Gate A validator. Schema validity establishes only that the probe is well formed; the declared diagnostic must still be produced by the corresponding validator path.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "artifact_version",
+    "fixture_id",
+    "fixture_class",
+    "mission_release_id",
+    "protocol_release_id",
+    "synthetic_fixture_only",
+    "expected_diagnostic",
+    "probe"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json"
+    },
+    "artifact_version": {
+      "const": "1.2.0"
+    },
+    "fixture_id": {
+      "enum": [
+        "reiyah.fixture.validator-security.actual-publication-event-fault-matrix@1.2.0",
+        "reiyah.fixture.validator-security.catalog-byte-digest@1.2.0",
+        "reiyah.fixture.validator-security.catalog-byte-size@1.2.0",
+        "reiyah.fixture.validator-security.catalog-duplicate-id@1.2.0",
+        "reiyah.fixture.validator-security.catalog-duplicate-path@1.2.0",
+        "reiyah.fixture.validator-security.catalog-expected-primary-rule@1.2.0",
+        "reiyah.fixture.validator-security.catalog-fixture-schema@1.2.0",
+        "reiyah.fixture.validator-security.catalog-identity-source@1.2.0",
+        "reiyah.fixture.validator-security.catalog-missing-row@1.2.0",
+        "reiyah.fixture.validator-security.catalog-replay-mode@1.2.0",
+        "reiyah.fixture.validator-security.catalog-target-schema@1.2.0",
+        "reiyah.fixture.validator-security.catalog-unexpected-row@1.2.0",
+        "reiyah.fixture.validator-security.development-drift@1.2.0",
+        "reiyah.fixture.validator-security.executable-contract-operand-matrix@1.2.0",
+        "reiyah.fixture.validator-security.invalid-date-time@1.2.0",
+        "reiyah.fixture.validator-security.invalid-uri@1.2.0",
+        "reiyah.fixture.validator-security.joint-opportunity-registry-manifest-binding-matrix@1.2.0",
+        "reiyah.fixture.validator-security.missing-isolation@1.2.0",
+        "reiyah.fixture.validator-security.narrative-state-contradiction@1.2.0",
+        "reiyah.fixture.validator-security.normative-surface-path-substitution@1.2.0",
+        "reiyah.fixture.validator-security.ope-registry-manifest-binding-matrix@1.2.0",
+        "reiyah.fixture.validator-security.plan-tool-binding-launcher@1.2.0",
+        "reiyah.fixture.validator-security.plan-tool-binding-primary-validator@1.2.0",
+        "reiyah.fixture.validator-security.plan-tool-binding-science-module@1.2.0",
+        "reiyah.fixture.validator-security.plan-tool-binding-toolchain-lock@1.2.0",
+        "reiyah.fixture.validator-security.profile-execution-binding@1.2.0",
+        "reiyah.fixture.validator-security.profile-execution-launcher-binding@1.2.0",
+        "reiyah.fixture.validator-security.profile-execution-tool-binding@1.2.0",
+        "reiyah.fixture.validator-security.profile-execution-toolchain-lock-binding@1.2.0",
+        "reiyah.fixture.validator-security.reference-path-duplicate@1.2.0",
+        "reiyah.fixture.validator-security.reference-path-handler-only@1.2.0",
+        "reiyah.fixture.validator-security.reference-path-missing@1.2.0",
+        "reiyah.fixture.validator-security.registry-definition-id-duplicate@1.2.0",
+        "reiyah.fixture.validator-security.registry-executable-contract-id-duplicate@1.2.0",
+        "reiyah.fixture.validator-security.registry-reference-kind-id-duplicate@1.2.0",
+        "reiyah.fixture.validator-security.release-dirty-state@1.2.0",
+        "reiyah.fixture.validator-security.release-index-flag@1.2.0",
+        "reiyah.fixture.validator-security.release-worker-fault-matrix@1.2.0",
+        "reiyah.fixture.validator-security.report-good-count-mismatch@1.2.0",
+        "reiyah.fixture.validator-security.report-governance-count-mismatch@1.2.0",
+        "reiyah.fixture.validator-security.report-science-bad-count-mismatch@1.2.0",
+        "reiyah.fixture.validator-security.report-security-count-mismatch@1.2.0",
+        "reiyah.fixture.validator-security.research-registry-earlier-date@1.2.0",
+        "reiyah.fixture.validator-security.science-artifact-id-duplicate@1.2.0",
+        "reiyah.fixture.validator-security.science-lineage-fork@1.2.0",
+        "reiyah.fixture.validator-security.science-logical-version-duplicate@1.2.0",
+        "reiyah.fixture.validator-security.selector-fixture-set-digest-mismatch@1.2.0",
+        "reiyah.fixture.validator-security.selector-missing-fixture@1.2.0",
+        "reiyah.fixture.validator-security.selector-missing-observation@1.2.0",
+        "reiyah.fixture.validator-security.selector-producer-substitution@1.2.0",
+        "reiyah.fixture.validator-security.selector-unexpected-fixture@1.2.0",
+        "reiyah.fixture.validator-security.self-membership-byte-mismatch@1.2.0",
+        "reiyah.fixture.validator-security.toolchain-byte-mismatch@1.2.0",
+        "reiyah.fixture.validator-security.transport-self-attestation@1.2.0",
+        "reiyah.fixture.validator-security.unknown-format@1.2.0"
+      ]
+    },
+    "fixture_class": {
+      "const": "known-bad-validator-security"
+    },
+    "mission_release_id": {
+      "const": "reiyah.mission@1.1.0"
+    },
+    "protocol_release_id": {
+      "const": "reiyah.protocol.harbor-gate-a@1.2.0"
+    },
+    "synthetic_fixture_only": {
+      "const": true
+    },
+    "expected_diagnostic": {
+      "type": "string",
+      "pattern": "^GA12-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+    },
+    "probe": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/actualPublicationEventFaultMatrixProbe"
+        },
+        {
+          "$ref": "#/$defs/fixtureCatalogUniquenessProbe"
+        },
+        {
+          "$ref": "#/$defs/fixtureCatalogReconciliationProbe"
+        },
+        {
+          "$ref": "#/$defs/developmentProjectionProbe"
+        },
+        {
+          "$ref": "#/$defs/executableContractOperandMatrixProbe"
+        },
+        {
+          "$ref": "#/$defs/formatProbe"
+        },
+        {
+          "$ref": "#/$defs/launcherProfileProbe"
+        },
+        {
+          "$ref": "#/$defs/narrativeStateProbe"
+        },
+        {
+          "$ref": "#/$defs/normativeMarkdownSurfaceProbe"
+        },
+        {
+          "$ref": "#/$defs/jointOpportunityRegistryManifestBindingMatrixProbe"
+        },
+        {
+          "$ref": "#/$defs/opeRegistryManifestBindingMatrixProbe"
+        },
+        {
+          "$ref": "#/$defs/referencePathInventoryProbe"
+        },
+        {
+          "$ref": "#/$defs/scientificProfileExecutionBindingProbe"
+        },
+        {
+          "$ref": "#/$defs/validationPlanToolBindingProbe"
+        },
+        {
+          "$ref": "#/$defs/selfMembershipProbe"
+        },
+        {
+          "$ref": "#/$defs/evidenceSelectorContractProbe"
+        },
+        {
+          "$ref": "#/$defs/registryUniquenessProbe"
+        },
+        {
+          "$ref": "#/$defs/releaseStateProbe"
+        },
+        {
+          "$ref": "#/$defs/releaseIndexFlagProbe"
+        },
+        {
+          "$ref": "#/$defs/releaseEvaluationWorkerFaultMatrixProbe"
+        },
+        {
+          "$ref": "#/$defs/canonicalReportFixtureSummaryProbe"
+        },
+        {
+          "$ref": "#/$defs/successorChronologyProbe"
+        },
+        {
+          "$ref": "#/$defs/scienceArtifactLineageProbe"
+        },
+        {
+          "$ref": "#/$defs/toolchainDigestProbe"
+        },
+        {
+          "$ref": "#/$defs/transportEvidenceProbe"
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.actual-publication-event-fault-matrix@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-PUBLICATION-EVENT-ACTUAL-CANARY-COVERAGE"
+          },
+          "probe": {
+            "const": {
+              "kind": "actual_publication_event_fault_matrix",
+              "operation": "replay_closed_actual_event_fault_matrix"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.ope-registry-manifest-binding-matrix@1.2.0"
+          }
+        },
+        "required": ["fixture_id"]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-OPE-REGISTRY-MANIFEST-CANARY-COVERAGE"
+          },
+          "probe": {
+            "const": {
+              "kind": "ope_registry_manifest_binding_matrix",
+              "registry_path": "manifests/definitions/harbor-gate-a-definition-registry-1.2.0.json",
+              "registry_schema_path": "schemas/protocol-definition-registry-1.2.schema.json",
+              "target_good_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+              "operation": "replay_closed_registry_manifest_binding_matrix"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.joint-opportunity-registry-manifest-binding-matrix@1.2.0"
+          }
+        },
+        "required": ["fixture_id"]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-JOINT-OPPORTUNITY-REGISTRY-MANIFEST-CANARY-COVERAGE"
+          },
+          "probe": {
+            "const": {
+              "kind": "joint_opportunity_registry_manifest_binding_matrix",
+              "registry_path": "manifests/definitions/harbor-gate-a-definition-registry-1.2.0.json",
+              "registry_schema_path": "schemas/protocol-definition-registry-1.2.schema.json",
+              "target_good_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+              "operation": "replay_closed_joint_opportunity_registry_manifest_binding_matrix"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "enum": [
+              "reiyah.fixture.validator-security.catalog-byte-digest@1.2.0",
+              "reiyah.fixture.validator-security.catalog-byte-size@1.2.0",
+              "reiyah.fixture.validator-security.catalog-expected-primary-rule@1.2.0",
+              "reiyah.fixture.validator-security.catalog-fixture-schema@1.2.0",
+              "reiyah.fixture.validator-security.catalog-identity-source@1.2.0",
+              "reiyah.fixture.validator-security.catalog-missing-row@1.2.0",
+              "reiyah.fixture.validator-security.catalog-replay-mode@1.2.0",
+              "reiyah.fixture.validator-security.catalog-target-schema@1.2.0",
+              "reiyah.fixture.validator-security.catalog-unexpected-row@1.2.0",
+              "reiyah.fixture.validator-security.profile-execution-launcher-binding@1.2.0",
+              "reiyah.fixture.validator-security.profile-execution-tool-binding@1.2.0",
+              "reiyah.fixture.validator-security.profile-execution-toolchain-lock-binding@1.2.0",
+              "reiyah.fixture.validator-security.plan-tool-binding-launcher@1.2.0",
+              "reiyah.fixture.validator-security.plan-tool-binding-primary-validator@1.2.0",
+              "reiyah.fixture.validator-security.plan-tool-binding-science-module@1.2.0",
+              "reiyah.fixture.validator-security.plan-tool-binding-toolchain-lock@1.2.0",
+              "reiyah.fixture.validator-security.self-membership-byte-mismatch@1.2.0",
+              "reiyah.fixture.validator-security.selector-fixture-set-digest-mismatch@1.2.0",
+              "reiyah.fixture.validator-security.selector-missing-fixture@1.2.0",
+              "reiyah.fixture.validator-security.selector-missing-observation@1.2.0",
+              "reiyah.fixture.validator-security.selector-producer-substitution@1.2.0",
+              "reiyah.fixture.validator-security.selector-unexpected-fixture@1.2.0"
+            ]
+          }
+        }
+      },
+      "then": {
+        "oneOf": [
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.catalog-byte-digest@1.2.0"},"expected_diagnostic":{"const":"GA12-FIXTURE-CATALOG-BYTE-DIGEST"},"probe":{"const":{"kind":"fixture_catalog_reconciliation","catalog_path":"fixtures/fixture-catalog.json","operation":"byte_digest"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.catalog-byte-size@1.2.0"},"expected_diagnostic":{"const":"GA12-FIXTURE-CATALOG-BYTE-SIZE"},"probe":{"const":{"kind":"fixture_catalog_reconciliation","catalog_path":"fixtures/fixture-catalog.json","operation":"byte_size"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.catalog-expected-primary-rule@1.2.0"},"expected_diagnostic":{"const":"GA12-FIXTURE-CATALOG-EXPECTED-PRIMARY-RULE"},"probe":{"const":{"kind":"fixture_catalog_reconciliation","catalog_path":"fixtures/fixture-catalog.json","operation":"expected_primary_rule"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.catalog-fixture-schema@1.2.0"},"expected_diagnostic":{"const":"GA12-FIXTURE-CATALOG-FIXTURE-SCHEMA"},"probe":{"const":{"kind":"fixture_catalog_reconciliation","catalog_path":"fixtures/fixture-catalog.json","operation":"fixture_schema"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.catalog-identity-source@1.2.0"},"expected_diagnostic":{"const":"GA12-FIXTURE-CATALOG-IDENTITY-SOURCE"},"probe":{"const":{"kind":"fixture_catalog_reconciliation","catalog_path":"fixtures/fixture-catalog.json","operation":"identity_source"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.catalog-missing-row@1.2.0"},"expected_diagnostic":{"const":"GA12-FIXTURE-CATALOG-MISSING-ROW"},"probe":{"const":{"kind":"fixture_catalog_reconciliation","catalog_path":"fixtures/fixture-catalog.json","operation":"missing_row"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.catalog-replay-mode@1.2.0"},"expected_diagnostic":{"const":"GA12-FIXTURE-CATALOG-REPLAY-MODE"},"probe":{"const":{"kind":"fixture_catalog_reconciliation","catalog_path":"fixtures/fixture-catalog.json","operation":"replay_mode"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.catalog-target-schema@1.2.0"},"expected_diagnostic":{"const":"GA12-FIXTURE-CATALOG-TARGET-SCHEMA"},"probe":{"const":{"kind":"fixture_catalog_reconciliation","catalog_path":"fixtures/fixture-catalog.json","operation":"target_schema"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.catalog-unexpected-row@1.2.0"},"expected_diagnostic":{"const":"GA12-FIXTURE-CATALOG-UNEXPECTED-ROW"},"probe":{"const":{"kind":"fixture_catalog_reconciliation","catalog_path":"fixtures/fixture-catalog.json","operation":"unexpected_row"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.profile-execution-launcher-binding@1.2.0"},"expected_diagnostic":{"const":"GA12-SCIENCE-PROFILE-EXECUTION"},"probe":{"const":{"kind":"scientific_profile_execution_binding","profile_path":"manifests/scientific/harbor-scientific-contract-profile-1.2.0.json","binding_role":"launcher_binding","mutation":{"operation":"replace","json_pointer":"/execution_integrity_contract/launcher_binding/sha256","value":"sha256:0000000000000000000000000000000000000000000000000000000000000000"}}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.profile-execution-tool-binding@1.2.0"},"expected_diagnostic":{"const":"GA12-SCIENCE-PROFILE-EXECUTION"},"probe":{"const":{"kind":"scientific_profile_execution_binding","profile_path":"manifests/scientific/harbor-scientific-contract-profile-1.2.0.json","binding_role":"tool_binding","mutation":{"operation":"replace","json_pointer":"/execution_integrity_contract/tool_binding/sha256","value":"sha256:0000000000000000000000000000000000000000000000000000000000000000"}}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.profile-execution-toolchain-lock-binding@1.2.0"},"expected_diagnostic":{"const":"GA12-SCIENCE-PROFILE-EXECUTION"},"probe":{"const":{"kind":"scientific_profile_execution_binding","profile_path":"manifests/scientific/harbor-scientific-contract-profile-1.2.0.json","binding_role":"toolchain_lock_binding","mutation":{"operation":"replace","json_pointer":"/execution_integrity_contract/toolchain_lock_binding/sha256","value":"sha256:0000000000000000000000000000000000000000000000000000000000000000"}}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.plan-tool-binding-launcher@1.2.0"},"expected_diagnostic":{"const":"GA12-PLAN-TOOL-BINDING"},"probe":{"const":{"kind":"validation_plan_tool_binding","plan_path":"validation/validation-plan.json","binding_role":"external_launcher","operation":"replace_bound_sha256_with_zero"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.plan-tool-binding-primary-validator@1.2.0"},"expected_diagnostic":{"const":"GA12-PLAN-TOOL-BINDING"},"probe":{"const":{"kind":"validation_plan_tool_binding","plan_path":"validation/validation-plan.json","binding_role":"validator_and_index_renderer","operation":"replace_bound_sha256_with_zero"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.plan-tool-binding-science-module@1.2.0"},"expected_diagnostic":{"const":"GA12-PLAN-TOOL-BINDING"},"probe":{"const":{"kind":"validation_plan_tool_binding","plan_path":"validation/validation-plan.json","binding_role":"scientific_derivation_module","operation":"replace_bound_sha256_with_zero"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.plan-tool-binding-toolchain-lock@1.2.0"},"expected_diagnostic":{"const":"GA12-PLAN-TOOL-BINDING"},"probe":{"const":{"kind":"validation_plan_tool_binding","plan_path":"validation/validation-plan.json","binding_role":"toolchain_lock","operation":"replace_bound_sha256_with_zero"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.self-membership-byte-mismatch@1.2.0"},"expected_diagnostic":{"const":"GA12-SELF-MEMBERSHIP"},"probe":{"const":{"kind":"self_membership","operation":"substitute_primary_validator_byte"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.selector-fixture-set-digest-mismatch@1.2.0"},"expected_diagnostic":{"const":"GA12-PLAN-EVIDENCE-SELECTOR-DIGEST"},"probe":{"const":{"kind":"evidence_selector_contract","operation":"fixture_set_digest_mismatch"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.selector-missing-fixture@1.2.0"},"expected_diagnostic":{"const":"GA12-PLAN-EVIDENCE-SELECTOR-FIXTURE-MISSING"},"probe":{"const":{"kind":"evidence_selector_contract","operation":"missing_fixture"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.selector-missing-observation@1.2.0"},"expected_diagnostic":{"const":"GA12-PLAN-EVIDENCE-SELECTOR-OBSERVATION-MISSING"},"probe":{"const":{"kind":"evidence_selector_contract","operation":"missing_observation"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.selector-producer-substitution@1.2.0"},"expected_diagnostic":{"const":"GA12-PLAN-EVIDENCE-SELECTOR-PRODUCER"},"probe":{"const":{"kind":"evidence_selector_contract","operation":"producer_substitution"}}}},
+          {"properties":{"fixture_id":{"const":"reiyah.fixture.validator-security.selector-unexpected-fixture@1.2.0"},"expected_diagnostic":{"const":"GA12-PLAN-EVIDENCE-SELECTOR-FIXTURE-UNEXPECTED"},"probe":{"const":{"kind":"evidence_selector_contract","operation":"unexpected_fixture"}}}}
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.normative-surface-path-substitution@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-NORMATIVE-ARCHITECTURE-SURFACE"
+          },
+          "probe": {
+            "const": {
+              "kind": "normative_markdown_surface",
+              "operation": "substitute_architecture_path"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.catalog-duplicate-id@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-FIXTURE-CATALOG-ID-UNIQUE"
+          },
+          "probe": {
+            "const": {
+              "kind": "fixture_catalog_uniqueness",
+              "catalog_path": "fixtures/fixture-catalog.json",
+              "mutation": {
+                "operation": "replace",
+                "json_pointer": "/fixtures/1/fixture_id",
+                "value": "reiyah.fixture.good.canonical-chain"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.executable-contract-operand-matrix@1.2.0"
+          }
+        },
+        "required": ["fixture_id"]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-EXECUTABLE-CONTRACT-OPERAND-COVERAGE"
+          },
+          "probe": {
+            "$ref": "#/$defs/executableContractOperandMatrixProbe"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.profile-execution-binding@1.2.0"
+          }
+        },
+        "required": ["fixture_id"]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-SCIENCE-PROFILE-EXECUTION"
+          },
+          "probe": {
+            "const": {
+              "kind": "scientific_profile_execution_binding",
+              "profile_path": "manifests/scientific/harbor-scientific-contract-profile-1.2.0.json",
+              "binding_role": "science_module_binding",
+              "mutation": {
+                "operation": "replace",
+                "json_pointer": "/execution_integrity_contract/science_module_binding/sha256",
+                "value": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.catalog-duplicate-path@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-FIXTURE-CATALOG-PATH-UNIQUE"
+          },
+          "probe": {
+            "const": {
+              "kind": "fixture_catalog_uniqueness",
+              "catalog_path": "fixtures/fixture-catalog.json",
+              "mutation": {
+                "operation": "replace",
+                "json_pointer": "/fixtures/1/path",
+                "value": "fixtures/good/canonical-object-chain.json"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.development-drift@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-DEVELOPMENT-SNAPSHOT-DRIFT"
+          },
+          "probe": {
+            "const": {
+              "kind": "development_projection",
+              "before_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "after_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.invalid-date-time@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-FORMAT-DATE-TIME"
+          },
+          "probe": {
+            "const": {
+              "kind": "format",
+              "format": "date-time",
+              "value": "2026-02-30T12:00:00Z"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.invalid-uri@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-FORMAT-URI"
+          },
+          "probe": {
+            "const": {
+              "kind": "format",
+              "format": "uri",
+              "value": "not a uri"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.missing-isolation@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-LAUNCHER-PROFILE"
+          },
+          "probe": {
+            "const": {
+              "kind": "launcher_profile",
+              "flags": [
+                "-I",
+                "-B"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.narrative-state-contradiction@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-NARRATIVE-STATE-CONSISTENCY"
+          },
+          "probe": {
+            "const": {
+              "kind": "narrative_state",
+              "mutation": {
+                "operation": "replace",
+                "json_pointer": "/protocol/release_stage",
+                "value": "corrected"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.reference-path-duplicate@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-REFERENCE-PATH-COVERAGE"
+          },
+          "probe": {
+            "const": {
+              "kind": "reference_path_inventory",
+              "profile_path": "manifests/scientific/harbor-scientific-contract-profile-1.2.0.json",
+              "operation": "duplicate_declared_classification"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.reference-path-handler-only@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-REFERENCE-PATH-COVERAGE"
+          },
+          "probe": {
+            "const": {
+              "kind": "reference_path_inventory",
+              "profile_path": "manifests/scientific/harbor-scientific-contract-profile-1.2.0.json",
+              "operation": "handler_only_path"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.reference-path-missing@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-REFERENCE-PATH-COVERAGE"
+          },
+          "probe": {
+            "const": {
+              "kind": "reference_path_inventory",
+              "profile_path": "manifests/scientific/harbor-scientific-contract-profile-1.2.0.json",
+              "operation": "missing_declared_binding"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.registry-definition-id-duplicate@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-REGISTRY-DEFINITION-ID-UNIQUE"
+          },
+          "probe": {
+            "const": {
+              "kind": "registry_uniqueness",
+              "registry_path": "manifests/definitions/harbor-gate-a-definition-registry-1.2.0.json",
+              "mutation": {
+                "operation": "replace",
+                "json_pointer": "/definitions/1/definition_id",
+                "value": "reiyah.producer.fixture-generator"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.registry-executable-contract-id-duplicate@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-REGISTRY-EXECUTABLE-CONTRACT-ID-UNIQUE"
+          },
+          "probe": {
+            "const": {
+              "kind": "registry_uniqueness",
+              "registry_path": "manifests/definitions/harbor-gate-a-definition-registry-1.2.0.json",
+              "mutation": {
+                "operation": "replace",
+                "json_pointer": "/definitions/285/executable_contract/contract_id",
+                "value": "reiyah.executable-contract.ope-policy-distribution"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.registry-reference-kind-id-duplicate@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-REGISTRY-REFERENCE-KIND-ID-UNIQUE"
+          },
+          "probe": {
+            "const": {
+              "kind": "registry_uniqueness",
+              "registry_path": "manifests/definitions/harbor-gate-a-definition-registry-1.2.0.json",
+              "mutation": {
+                "operation": "replace",
+                "json_pointer": "/reference_kind_contracts/1/reference_kind_id",
+                "value": "reiyah.kind.aggregation_rule"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.release-dirty-state@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-RELEASE-SNAPSHOT-DIRTY"
+          },
+          "probe": {
+            "const": {
+              "kind": "release_state",
+              "dirty": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.release-index-flag@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-RELEASE-INDEX-FLAG"
+          },
+          "probe": {
+            "const": {
+              "kind": "release_index_flag",
+              "flag": "S"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.release-worker-fault-matrix@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-DUAL-EVALUATION-CANARY-COVERAGE"
+          },
+          "probe": {
+            "const": {
+              "kind": "release_evaluation_worker_fault_matrix",
+              "operation": "replay_closed_worker_fault_matrix"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.report-good-count-mismatch@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-REPORT-GOOD-COUNT"
+          },
+          "probe": {
+            "const": {
+              "kind": "canonical_report_fixture_summary",
+              "baseline_source": "observed_pre_report_canary_fixture_summary",
+              "mutation": {
+                "operation": "decrement_integer",
+                "json_pointer": "/science_good_passed",
+                "delta": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.report-governance-count-mismatch@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-REPORT-GOVERNANCE-COUNT"
+          },
+          "probe": {
+            "const": {
+              "kind": "canonical_report_fixture_summary",
+              "baseline_source": "observed_pre_report_canary_fixture_summary",
+              "mutation": {
+                "operation": "decrement_integer",
+                "json_pointer": "/governance_rejected_for_declared_diagnostic",
+                "delta": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.report-science-bad-count-mismatch@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-REPORT-SCIENCE-BAD-COUNT"
+          },
+          "probe": {
+            "const": {
+              "kind": "canonical_report_fixture_summary",
+              "baseline_source": "observed_pre_report_canary_fixture_summary",
+              "mutation": {
+                "operation": "decrement_integer",
+                "json_pointer": "/science_known_bad_rejected_for_declared_rule",
+                "delta": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.report-security-count-mismatch@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-REPORT-SECURITY-COUNT"
+          },
+          "probe": {
+            "const": {
+              "kind": "canonical_report_fixture_summary",
+              "baseline_source": "observed_pre_report_canary_fixture_summary",
+              "mutation": {
+                "operation": "decrement_integer",
+                "json_pointer": "/validator_security_rejected_for_declared_diagnostic",
+                "delta": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.research-registry-earlier-date@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-RESEARCH-REGISTRY-CHRONOLOGY"
+          },
+          "probe": {
+            "const": {
+              "kind": "successor_chronology",
+              "mutation": {
+                "operation": "replace",
+                "json_pointer": "/research_registry/as_of_date",
+                "value": "2026-08-23"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.science-artifact-id-duplicate@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-SCIENCE-ARTIFACT-ID-UNIQUE"
+          },
+          "probe": {
+            "const": {
+              "baseline_records": [
+                {
+                  "artifact_id": "reiyah.artifact.synthetic_lineage_a",
+                  "logical_record_id": "reiyah.record.synthetic_lineage_a",
+                  "path": "fixtures/synthetic/lineage-a.json",
+                  "predecessor_path": null,
+                  "schema_id": "https://schemas.reiyah.invalid/synthetic/a.schema.json",
+                  "version": "1.0.0"
+                },
+                {
+                  "artifact_id": "reiyah.artifact.synthetic_lineage_b",
+                  "logical_record_id": "reiyah.record.synthetic_lineage_b",
+                  "path": "fixtures/synthetic/lineage-b.json",
+                  "predecessor_path": null,
+                  "schema_id": "https://schemas.reiyah.invalid/synthetic/a.schema.json",
+                  "version": "1.0.0"
+                }
+              ],
+              "kind": "science_artifact_lineage",
+              "mutation": {
+                "json_pointer": "/records/1/artifact_id",
+                "operation": "replace",
+                "value": "reiyah.artifact.synthetic_lineage_a"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.science-lineage-fork@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-SCIENCE-LINEAGE-FORK"
+          },
+          "probe": {
+            "const": {
+              "baseline_records": [
+                {
+                  "artifact_id": "reiyah.artifact.synthetic_lineage_v1",
+                  "logical_record_id": "reiyah.record.synthetic_lineage",
+                  "path": "fixtures/synthetic/lineage-v1.json",
+                  "predecessor_path": null,
+                  "schema_id": "https://schemas.reiyah.invalid/synthetic/a.schema.json",
+                  "version": "1.0.0"
+                },
+                {
+                  "artifact_id": "reiyah.artifact.synthetic_lineage_v2",
+                  "logical_record_id": "reiyah.record.synthetic_lineage",
+                  "path": "fixtures/synthetic/lineage-v2.json",
+                  "predecessor_path": "fixtures/synthetic/lineage-v1.json",
+                  "schema_id": "https://schemas.reiyah.invalid/synthetic/a.schema.json",
+                  "version": "1.1.0"
+                },
+                {
+                  "artifact_id": "reiyah.artifact.synthetic_lineage_v3",
+                  "logical_record_id": "reiyah.record.synthetic_lineage",
+                  "path": "fixtures/synthetic/lineage-v3.json",
+                  "predecessor_path": "fixtures/synthetic/lineage-v2.json",
+                  "schema_id": "https://schemas.reiyah.invalid/synthetic/a.schema.json",
+                  "version": "1.2.0"
+                }
+              ],
+              "kind": "science_artifact_lineage",
+              "mutation": {
+                "json_pointer": "/records/2/predecessor_path",
+                "operation": "replace",
+                "value": "fixtures/synthetic/lineage-v1.json"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.science-logical-version-duplicate@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-SCIENCE-LOGICAL-VERSION-UNIQUE"
+          },
+          "probe": {
+            "const": {
+              "baseline_records": [
+                {
+                  "artifact_id": "reiyah.artifact.synthetic_lineage_a",
+                  "logical_record_id": "reiyah.record.synthetic_lineage_a",
+                  "path": "fixtures/synthetic/lineage-a.json",
+                  "predecessor_path": null,
+                  "schema_id": "https://schemas.reiyah.invalid/synthetic/a.schema.json",
+                  "version": "1.0.0"
+                },
+                {
+                  "artifact_id": "reiyah.artifact.synthetic_lineage_b",
+                  "logical_record_id": "reiyah.record.synthetic_lineage_b",
+                  "path": "fixtures/synthetic/lineage-b.json",
+                  "predecessor_path": null,
+                  "schema_id": "https://schemas.reiyah.invalid/synthetic/a.schema.json",
+                  "version": "1.0.0"
+                }
+              ],
+              "kind": "science_artifact_lineage",
+              "mutation": {
+                "json_pointer": "/records/1/logical_record_id",
+                "operation": "replace",
+                "value": "reiyah.record.synthetic_lineage_a"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.toolchain-byte-mismatch@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-TOOLCHAIN-BYTE-MISMATCH"
+          },
+          "probe": {
+            "const": {
+              "kind": "toolchain_digest",
+              "locked_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "observed_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.transport-self-attestation@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-TRANSPORT-EXTERNALLY-UNVERIFIED"
+          },
+          "probe": {
+            "const": {
+              "kind": "transport_evidence",
+              "publisher_receipt_path": "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.2.json",
+              "independent_transport_record_paths": [],
+              "claimed_state": "independently_verified"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fixture_id": {
+            "const": "reiyah.fixture.validator-security.unknown-format@1.2.0"
+          }
+        },
+        "required": [
+          "fixture_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected_diagnostic": {
+            "const": "GA12-FORMAT-CHECKER-UNKNOWN"
+          },
+          "probe": {
+            "type": "object",
+            "required": [
+              "kind",
+              "format",
+              "value"
+            ],
+            "properties": {
+              "kind": {
+                "const": "format"
+              },
+              "value": {
+                "const": "example.invalid"
+              }
+            },
+            "patternProperties": {
+              "^format$": {
+                "const": "hostname-maybe"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "actualPublicationEventFaultMatrixProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "operation"
+      ],
+      "properties": {
+        "kind": {
+          "const": "actual_publication_event_fault_matrix"
+        },
+        "operation": {
+          "const": "replay_closed_actual_event_fault_matrix"
+        }
+      },
+      "additionalProperties": false
+    },
+    "rawSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "replaceMutation": {
+      "type": "object",
+      "required": [
+        "operation",
+        "json_pointer",
+        "value"
+      ],
+      "properties": {
+        "operation": {
+          "const": "replace"
+        },
+        "json_pointer": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 512,
+          "pattern": "^/(?:[^~]|~[01])+$"
+        },
+        "value": true
+      },
+      "additionalProperties": false
+    },
+    "fixtureCatalogUniquenessProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "catalog_path",
+        "mutation"
+      ],
+      "properties": {
+        "kind": {
+          "const": "fixture_catalog_uniqueness"
+        },
+        "catalog_path": {
+          "const": "fixtures/fixture-catalog.json"
+        },
+        "mutation": {
+          "$ref": "#/$defs/replaceMutation"
+        }
+      },
+      "additionalProperties": false
+    },
+    "fixtureCatalogReconciliationProbe": {
+      "type": "object",
+      "required": ["kind", "catalog_path", "operation"],
+      "properties": {
+        "kind": {"const": "fixture_catalog_reconciliation"},
+        "catalog_path": {"const": "fixtures/fixture-catalog.json"},
+        "operation": {
+          "enum": [
+            "byte_digest",
+            "byte_size",
+            "expected_primary_rule",
+            "fixture_schema",
+            "identity_source",
+            "missing_row",
+            "replay_mode",
+            "target_schema",
+            "unexpected_row"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "developmentProjectionProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "before_sha256",
+        "after_sha256"
+      ],
+      "properties": {
+        "kind": {
+          "const": "development_projection"
+        },
+        "before_sha256": {
+          "$ref": "#/$defs/rawSha256"
+        },
+        "after_sha256": {
+          "$ref": "#/$defs/rawSha256"
+        }
+      },
+      "additionalProperties": false
+    },
+    "formatProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "format",
+        "value"
+      ],
+      "properties": {
+        "kind": {
+          "const": "format"
+        },
+        "value": {
+          "type": "string",
+          "maxLength": 4096
+        }
+      },
+      "patternProperties": {
+        "^format$": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9-]*$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "launcherProfileProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "flags"
+      ],
+      "properties": {
+        "kind": {
+          "const": "launcher_profile"
+        },
+        "flags": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "-I",
+              "-S",
+              "-B"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "narrativeStateProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "mutation"
+      ],
+      "properties": {
+        "kind": {
+          "const": "narrative_state"
+        },
+        "mutation": {
+          "$ref": "#/$defs/replaceMutation"
+        }
+      },
+      "additionalProperties": false
+    },
+    "normativeMarkdownSurfaceProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "operation"
+      ],
+      "properties": {
+        "kind": {
+          "const": "normative_markdown_surface"
+        },
+        "operation": {
+          "const": "substitute_architecture_path"
+        }
+      },
+      "additionalProperties": false
+    },
+    "referencePathInventoryProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "profile_path",
+        "operation"
+      ],
+      "properties": {
+        "kind": {
+          "const": "reference_path_inventory"
+        },
+        "profile_path": {
+          "const": "manifests/scientific/harbor-scientific-contract-profile-1.2.0.json"
+        },
+        "operation": {
+          "enum": [
+            "missing_declared_binding",
+            "duplicate_declared_classification",
+            "handler_only_path"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "scientificProfileExecutionBindingProbe": {
+      "type": "object",
+      "required": ["kind", "profile_path", "binding_role", "mutation"],
+      "properties": {
+        "kind": {"const": "scientific_profile_execution_binding"},
+        "profile_path": {"const": "manifests/scientific/harbor-scientific-contract-profile-1.2.0.json"},
+        "binding_role": {
+          "enum": [
+            "launcher_binding",
+            "tool_binding",
+            "science_module_binding",
+            "toolchain_lock_binding"
+          ]
+        },
+        "mutation": {
+          "$ref": "#/$defs/replaceMutation"
+        }
+      },
+      "additionalProperties": false
+    },
+    "validationPlanToolBindingProbe": {
+      "type": "object",
+      "required": ["kind", "plan_path", "binding_role", "operation"],
+      "properties": {
+        "kind": {"const": "validation_plan_tool_binding"},
+        "plan_path": {"const": "validation/validation-plan.json"},
+        "binding_role": {
+          "enum": [
+            "external_launcher",
+            "validator_and_index_renderer",
+            "scientific_derivation_module",
+            "toolchain_lock"
+          ]
+        },
+        "operation": {"const": "replace_bound_sha256_with_zero"}
+      },
+      "additionalProperties": false
+    },
+    "selfMembershipProbe": {
+      "type": "object",
+      "required": ["kind", "operation"],
+      "properties": {
+        "kind": {"const": "self_membership"},
+        "operation": {"const": "substitute_primary_validator_byte"}
+      },
+      "additionalProperties": false
+    },
+    "evidenceSelectorContractProbe": {
+      "type": "object",
+      "required": ["kind", "operation"],
+      "properties": {
+        "kind": {"const": "evidence_selector_contract"},
+        "operation": {
+          "enum": [
+            "fixture_set_digest_mismatch",
+            "missing_fixture",
+            "missing_observation",
+            "producer_substitution",
+            "unexpected_fixture"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "executableContractOperandMutation": {
+      "type": "object",
+      "required": ["operation", "json_pointer", "value"],
+      "properties": {
+        "operation": {"const": "replace"},
+        "json_pointer": {
+          "type": "string",
+          "pattern": "^/definitions/[0-9]+/executable_contract(?:/[^/~]*(?:~[01][^/~]*)*)+$"
+        },
+        "value": {
+          "type": ["string", "number", "integer", "boolean"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "executableContractRegistryPrimary": {
+      "type": "object",
+      "required": ["schema_keyword", "instance_pointer"],
+      "properties": {
+        "schema_keyword": {"enum": ["const", "oneOf"]},
+        "instance_pointer": {
+          "type": "string",
+          "pattern": "^/definitions/[0-9]+/executable_contract(?:/[^/~]*(?:~[01][^/~]*)*)*$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "executableContractSemanticSingleton": {
+      "type": "object",
+      "required": ["rule_id", "instance_pointer", "reason"],
+      "properties": {
+        "rule_id": {"type": "string", "pattern": "^GA-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+        "instance_pointer": {"type": "string", "pattern": "^/"},
+        "reason": {"type": "string", "minLength": 1, "maxLength": 1000}
+      },
+      "additionalProperties": false
+    },
+    "executableContractOperandCase": {
+      "type": "object",
+      "required": [
+        "case_id",
+        "contract_id",
+        "definition_id",
+        "registry_leaf_pointer",
+        "mutations",
+        "target_good_path",
+        "target_schema_id",
+        "declared_registry_layer",
+        "expected_registry_primary",
+        "expected_semantic_singleton"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "pattern": "^reiyah\\.fixture\\.validator-security\\.eco\\.[a-z0-9.-]+@1\\.2\\.0$"
+        },
+        "contract_id": {
+          "type": "string",
+          "pattern": "^reiyah\\.executable-contract\\.[a-z0-9.-]+$"
+        },
+        "definition_id": {
+          "type": "string",
+          "pattern": "^reiyah\\.rule\\.[a-z0-9._-]+$"
+        },
+        "registry_leaf_pointer": {
+          "type": "string",
+          "pattern": "^/definitions/[0-9]+/executable_contract(?:/[^/~]*(?:~[01][^/~]*)*)+$"
+        },
+        "mutations": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/executableContractOperandMutation"},
+          "uniqueItems": true
+        },
+        "target_good_path": {
+          "enum": [
+            "fixtures/v1.2/good/human-automation-assessment.json",
+            "fixtures/v1.2/good/joint-performance-evaluation.json",
+            "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+            "fixtures/v1.2/good/study-design-preregistration.json"
+          ]
+        },
+        "target_schema_id": {"type": "string", "format": "uri"},
+        "declared_registry_layer": {"enum": ["structural", "semantic"]},
+        "expected_registry_primary": {
+          "oneOf": [
+            {"$ref": "#/$defs/executableContractRegistryPrimary"},
+            {"type": "null"}
+          ]
+        },
+        "expected_semantic_singleton": {
+          "$ref": "#/$defs/executableContractSemanticSingleton"
+        }
+      },
+      "additionalProperties": false
+    },
+    "executableContractOperandMatrixProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "registry_path",
+        "registry_schema_path",
+        "metadata_leaf_names",
+        "derivation_order",
+        "cases",
+        "coverage_canary"
+      ],
+      "properties": {
+        "kind": {"const": "executable_contract_operand_matrix"},
+        "registry_path": {
+          "const": "manifests/definitions/harbor-gate-a-definition-registry-1.2.0.json"
+        },
+        "registry_schema_path": {
+          "const": "schemas/protocol-definition-registry-1.2.schema.json"
+        },
+        "metadata_leaf_names": {
+          "const": ["contract_id", "contract_kind", "version", "derivation_authority"]
+        },
+        "derivation_order": {
+          "const": "definition_array_then_depth_first_insertion_order_nonmetadata_leaves"
+        },
+        "cases": {
+          "type": "array",
+          "minItems": 189,
+          "maxItems": 189,
+          "items": {"$ref": "#/$defs/executableContractOperandCase"},
+          "uniqueItems": true
+        },
+        "coverage_canary": {
+          "const": {"operation": "remove", "json_pointer": "/cases/188"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "registryUniquenessProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "registry_path",
+        "mutation"
+      ],
+      "properties": {
+        "kind": {
+          "const": "registry_uniqueness"
+        },
+        "registry_path": {
+          "const": "manifests/definitions/harbor-gate-a-definition-registry-1.2.0.json"
+        },
+        "mutation": {
+          "$ref": "#/$defs/replaceMutation"
+        }
+      },
+      "additionalProperties": false
+    },
+    "releaseStateProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "dirty"
+      ],
+      "properties": {
+        "kind": {
+          "const": "release_state"
+        },
+        "dirty": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "releaseIndexFlagProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "flag"
+      ],
+      "properties": {
+        "kind": {
+          "const": "release_index_flag"
+        },
+        "flag": {
+          "const": "S"
+        }
+      },
+      "additionalProperties": false
+    },
+    "releaseEvaluationWorkerFaultMatrixProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "operation"
+      ],
+      "properties": {
+        "kind": {
+          "const": "release_evaluation_worker_fault_matrix"
+        },
+        "operation": {
+          "const": "replay_closed_worker_fault_matrix"
+        }
+      },
+      "additionalProperties": false
+    },
+    "opeRegistryManifestBindingMatrixProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "registry_path",
+        "registry_schema_path",
+        "target_good_path",
+        "operation"
+      ],
+      "properties": {
+        "kind": {
+          "const": "ope_registry_manifest_binding_matrix"
+        },
+        "registry_path": {
+          "const": "manifests/definitions/harbor-gate-a-definition-registry-1.2.0.json"
+        },
+        "registry_schema_path": {
+          "const": "schemas/protocol-definition-registry-1.2.schema.json"
+        },
+        "target_good_path": {
+          "const": "fixtures/v1.2/good/sequential-off-policy-evaluation.json"
+        },
+        "operation": {
+          "const": "replay_closed_registry_manifest_binding_matrix"
+        }
+      },
+      "additionalProperties": false
+    },
+    "jointOpportunityRegistryManifestBindingMatrixProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "registry_path",
+        "registry_schema_path",
+        "target_good_path",
+        "operation"
+      ],
+      "properties": {
+        "kind": {
+          "const": "joint_opportunity_registry_manifest_binding_matrix"
+        },
+        "registry_path": {
+          "const": "manifests/definitions/harbor-gate-a-definition-registry-1.2.0.json"
+        },
+        "registry_schema_path": {
+          "const": "schemas/protocol-definition-registry-1.2.schema.json"
+        },
+        "target_good_path": {
+          "const": "fixtures/v1.2/good/joint-performance-evaluation.json"
+        },
+        "operation": {
+          "const": "replay_closed_joint_opportunity_registry_manifest_binding_matrix"
+        }
+      },
+      "additionalProperties": false
+    },
+    "fixtureSummaryCountMutation": {
+      "type": "object",
+      "required": [
+        "operation",
+        "json_pointer",
+        "delta"
+      ],
+      "properties": {
+        "operation": {
+          "const": "decrement_integer"
+        },
+        "json_pointer": {
+          "enum": [
+            "/science_good_passed",
+            "/science_known_bad_rejected_for_declared_rule",
+            "/validator_security_rejected_for_declared_diagnostic",
+            "/governance_rejected_for_declared_diagnostic"
+          ]
+        },
+        "delta": {
+          "const": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "canonicalReportFixtureSummaryProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "baseline_source",
+        "mutation"
+      ],
+      "properties": {
+        "kind": {
+          "const": "canonical_report_fixture_summary"
+        },
+        "baseline_source": {
+          "const": "observed_pre_report_canary_fixture_summary"
+        },
+        "mutation": {
+          "$ref": "#/$defs/fixtureSummaryCountMutation"
+        }
+      },
+      "additionalProperties": false
+    },
+    "successorChronologyProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "mutation"
+      ],
+      "properties": {
+        "kind": {
+          "const": "successor_chronology"
+        },
+        "mutation": {
+          "$ref": "#/$defs/replaceMutation"
+        }
+      },
+      "additionalProperties": false
+    },
+    "lineageRecord": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "logical_record_id",
+        "path",
+        "predecessor_path",
+        "schema_id",
+        "version"
+      ],
+      "properties": {
+        "artifact_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "logical_record_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "path": {
+          "$ref": "common.schema.json#/$defs/relativeArtifactPath"
+        },
+        "predecessor_path": {
+          "oneOf": [
+            {
+              "$ref": "common.schema.json#/$defs/relativeArtifactPath"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "schema_id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "version": {
+          "$ref": "common.schema.json#/$defs/semanticVersion"
+        }
+      },
+      "additionalProperties": false
+    },
+    "scienceArtifactLineageProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "baseline_records",
+        "mutation"
+      ],
+      "properties": {
+        "kind": {
+          "const": "science_artifact_lineage"
+        },
+        "baseline_records": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 16,
+          "items": {
+            "$ref": "#/$defs/lineageRecord"
+          }
+        },
+        "mutation": {
+          "$ref": "#/$defs/replaceMutation"
+        }
+      },
+      "additionalProperties": false
+    },
+    "toolchainDigestProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "locked_sha256",
+        "observed_sha256"
+      ],
+      "properties": {
+        "kind": {
+          "const": "toolchain_digest"
+        },
+        "locked_sha256": {
+          "$ref": "#/$defs/rawSha256"
+        },
+        "observed_sha256": {
+          "$ref": "#/$defs/rawSha256"
+        }
+      },
+      "additionalProperties": false
+    },
+    "transportEvidenceProbe": {
+      "type": "object",
+      "required": [
+        "kind",
+        "publisher_receipt_path",
+        "independent_transport_record_paths",
+        "claimed_state"
+      ],
+      "properties": {
+        "kind": {
+          "const": "transport_evidence"
+        },
+        "publisher_receipt_path": {
+          "$ref": "common.schema.json#/$defs/relativeArtifactPath"
+        },
+        "independent_transport_record_paths": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/relativeArtifactPath"
+          }
+        },
+        "claimed_state": {
+          "enum": [
+            "not_evaluated",
+            "asserted_unverified",
+            "independently_verified"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

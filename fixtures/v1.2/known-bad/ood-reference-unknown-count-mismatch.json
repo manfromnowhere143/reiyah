@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ood_reference_unknown_count_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/ood_evaluation/reference_unknown_count/value", "value": 5}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-OOD-DERIVATION", "instance_pointer": "/ood_evaluation/reference_unknown_count/value", "schema_keyword": "semantic", "reason": "Reference-unknown and detector-unknown marginals must each derive from the corresponding rows and columns of the disjoint joint-state cells."},
+  "runtime_execution_authorized": false
+}

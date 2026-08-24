@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.causal_dag_cycle",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/study-design-preregistration.json",
+  "mutations": [{"operation": "add", "json_pointer": "/causal_graph/edges/-", "value": {"from_node_id": "reiyah.node.outcome", "to_node_id": "reiyah.node.context"}}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-CAUSAL-DAG-CYCLE", "instance_pointer": "/causal_graph/edges", "schema_keyword": "semantic", "reason": "The declared causal graph must be acyclic."},
+  "runtime_execution_authorized": false
+}

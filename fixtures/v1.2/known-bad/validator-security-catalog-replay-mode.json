@@ -1,0 +1,15 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.validator-security.catalog-replay-mode@1.2.0",
+  "fixture_class": "known-bad-validator-security",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "synthetic_fixture_only": true,
+  "expected_diagnostic": "GA12-FIXTURE-CATALOG-REPLAY-MODE",
+  "probe": {
+    "kind": "fixture_catalog_reconciliation",
+    "catalog_path": "fixtures/fixture-catalog.json",
+    "operation": "replay_mode"
+  }
+}

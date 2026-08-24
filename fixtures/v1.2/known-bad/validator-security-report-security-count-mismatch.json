@@ -1,0 +1,19 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "synthetic_fixture_only": true,
+  "expected_diagnostic": "GA12-REPORT-SECURITY-COUNT",
+  "fixture_class": "known-bad-validator-security",
+  "fixture_id": "reiyah.fixture.validator-security.report-security-count-mismatch@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "probe": {
+    "kind": "canonical_report_fixture_summary",
+    "baseline_source": "observed_pre_report_canary_fixture_summary",
+    "mutation": {
+      "operation": "decrement_integer",
+      "json_pointer": "/validator_security_rejected_for_declared_diagnostic",
+      "delta": 1
+    }
+  },
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0"
+}

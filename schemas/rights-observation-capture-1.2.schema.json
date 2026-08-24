@@ -1,0 +1,490 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json",
+  "title": "Gate A 1.2.0 rights observation capture manifest",
+  "description": "Closed manifest for locally authored direct-attempt metadata, an explicitly mode-dependent unretained-response measurement or adapter assertion, and bounded observer-authored paraphrases. It never retains or redistributes the response body and creates no source, legal, scientific, acceptance, publication, transport, or runtime authority.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "artifact_path",
+    "capture_id",
+    "version",
+    "record_kind",
+    "distribution_event_id",
+    "capture_role",
+    "basis_id",
+    "publisher",
+    "requested_url",
+    "final_url",
+    "related_source_ids",
+    "observation_mode",
+    "observation_started_at",
+    "observation_completed_at",
+    "direct_http_attempt",
+    "adapter_observation",
+    "source_bytes_exposed_to_reiyah_observer",
+    "request_policy",
+    "unretained_response_measurement",
+    "retained_capture_extent",
+    "response_body_retained",
+    "response_body_redistributed",
+    "bounded_observed_facts",
+    "observer",
+    "evidence_eligible",
+    "limitations",
+    "runtime_execution_authorized"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json"
+    },
+    "schema_version": {"const": "1.2.0"},
+    "artifact_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "artifact_path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+    "capture_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "version": {"const": "1.2.0"},
+    "record_kind": {"const": "rights_observation_capture_manifest"},
+    "distribution_event_id": {
+      "const": "reiyah.distribution-event.gate-a-1.2.0-static-correction"
+    },
+    "capture_role": {
+      "enum": ["iso_open_data_rights", "nist_technical_series_rights"]
+    },
+    "basis_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "publisher": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+    "requested_url": {"type": "string", "format": "https-uri"},
+    "final_url": {"type": "string", "format": "https-uri"},
+    "related_source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+      "uniqueItems": true
+    },
+    "observation_mode": {
+      "enum": [
+        "adapter_observation_with_blocked_direct_attempt",
+        "direct_http_metadata_digest"
+      ]
+    },
+    "observation_started_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+    "observation_completed_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+    "direct_http_attempt": {"$ref": "#/$defs/directHttpAttempt"},
+    "adapter_observation": {
+      "oneOf": [
+        {"$ref": "#/$defs/adapterObservation"},
+        {"type": "null"}
+      ]
+    },
+    "source_bytes_exposed_to_reiyah_observer": {"type": "boolean"},
+    "request_policy": {
+      "type": "object",
+      "required": [
+        "credentials_supplied_by_reiyah",
+        "cookies_supplied_by_reiyah",
+        "client_certificate_supplied_by_reiyah",
+        "authorization_header_state",
+        "cookie_header_state",
+        "client_certificate_state",
+        "url_userinfo_present",
+        "request_body_supplied_by_reiyah",
+        "credential_material_retained",
+        "response_headers_retained",
+        "set_cookie_header_retained"
+      ],
+      "properties": {
+        "credentials_supplied_by_reiyah": {"const": false},
+        "cookies_supplied_by_reiyah": {"const": false},
+        "client_certificate_supplied_by_reiyah": {"const": false},
+        "authorization_header_state": {"enum": ["not_sent", "unobserved_by_reiyah"]},
+        "cookie_header_state": {"enum": ["not_sent", "unobserved_by_reiyah"]},
+        "client_certificate_state": {"enum": ["not_sent", "unobserved_by_reiyah"]},
+        "url_userinfo_present": {"const": false},
+        "request_body_supplied_by_reiyah": {"const": false},
+        "credential_material_retained": {"const": false},
+        "response_headers_retained": {"const": false},
+        "set_cookie_header_retained": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "unretained_response_measurement": {
+      "oneOf": [
+        {"$ref": "#/$defs/responseMeasurement"},
+        {"type": "null"}
+      ]
+    },
+    "retained_capture_extent": {
+      "enum": [
+        "attempt_metadata_and_observer_paraphrase_only",
+        "attempt_metadata_unverified_body_digest_and_observer_paraphrase_only"
+      ]
+    },
+    "response_body_retained": {"const": false},
+    "response_body_redistributed": {"const": false},
+    "bounded_observed_facts": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/paraphrasedFact"},
+      "uniqueItems": true
+    },
+    "observer": {"$ref": "#/$defs/observerAssertion"},
+    "evidence_eligible": {"const": false},
+    "limitations": {
+      "const": [
+        "Only this locally authored manifest is retained; the official response body and response headers are not retained or redistributed.",
+        "When present, the unretained response digest and byte size are contemporaneous observer measurements and cannot independently substantiate the paraphrases, authenticate the source, or recreate the response.",
+        "Every observed fact is a bounded observer-authored paraphrase; no source excerpt, quotation, raw response, credential, cookie, or authorization material is retained.",
+        "An adapter assertion that a page was crawled today does not independently establish crawl freshness, expose source bytes, authenticate the raw response, or prove legal meaning.",
+        "This manifest is evidence-ineligible and creates no legal conclusion, distribution authorization, operator acceptance, publication acceptance, transport verification, scientific support, compliance claim, or runtime authority."
+      ]
+    },
+    "runtime_execution_authorized": {"const": false}
+  },
+  "$defs": {
+    "directHttpAttempt": {
+      "type": "object",
+      "required": [
+        "attempted",
+        "method",
+        "requested_url",
+        "final_url",
+        "retrieval_completed_at",
+        "http_status",
+        "redirect_count",
+        "content_encoding",
+        "response_media_type",
+        "credentials_supplied_by_reiyah",
+        "cookies_supplied_by_reiyah",
+        "authorization_header_sent",
+        "cookie_header_sent",
+        "client_certificate_sent",
+        "response_body_retained"
+      ],
+      "properties": {
+        "attempted": {"const": true},
+        "method": {"const": "GET"},
+        "requested_url": {"type": "string", "format": "https-uri"},
+        "final_url": {"type": "string", "format": "https-uri"},
+        "retrieval_completed_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+        "http_status": {"type": "integer", "minimum": 100, "maximum": 599},
+        "redirect_count": {"type": "integer", "minimum": 0, "maximum": 3},
+        "content_encoding": {
+          "enum": ["identity", "not_declared"]
+        },
+        "response_media_type": {
+          "oneOf": [
+            {"type": "string", "pattern": "^[a-z0-9.+-]+/[a-z0-9.+-]+(?:[ ]*;[ -~]+)?$"},
+            {"type": "null"}
+          ]
+        },
+        "credentials_supplied_by_reiyah": {"const": false},
+        "cookies_supplied_by_reiyah": {"const": false},
+        "authorization_header_sent": {"const": false},
+        "cookie_header_sent": {"const": false},
+        "client_certificate_sent": {"const": false},
+        "response_body_retained": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "adapterObservation": {
+      "type": "object",
+      "required": [
+        "adapter_id",
+        "adapter_provider",
+        "adapter_version_state",
+        "official_url",
+        "observation_completed_at",
+        "result_state",
+        "adapter_reports_crawled_today",
+        "source_bytes_exposed",
+        "http_status_exposed",
+        "response_digest_exposed",
+        "response_byte_size_exposed",
+        "authorization_state",
+        "cookie_state",
+        "crawl_freshness_independently_verified",
+        "raw_authenticity_verified",
+        "source_authority_claimed"
+      ],
+      "properties": {
+        "adapter_id": {"const": "reiyah.adapter.web-research"},
+        "adapter_provider": {"const": "OpenAI"},
+        "adapter_version_state": {"const": "unobserved"},
+        "official_url": {
+          "const": "https://www.iso.org/open-data.html#iso_deliverables_metadata"
+        },
+        "observation_completed_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+        "result_state": {"const": "visible_bounded_text_only"},
+        "adapter_reports_crawled_today": {"const": true},
+        "source_bytes_exposed": {"const": false},
+        "http_status_exposed": {"const": false},
+        "response_digest_exposed": {"const": false},
+        "response_byte_size_exposed": {"const": false},
+        "authorization_state": {"const": "unobserved_by_reiyah"},
+        "cookie_state": {"const": "unobserved_by_reiyah"},
+        "crawl_freshness_independently_verified": {"const": false},
+        "raw_authenticity_verified": {"const": false},
+        "source_authority_claimed": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "responseMeasurement": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "sha256",
+        "byte_size",
+        "digest_scope",
+        "content_decoding_applied",
+        "text_transcoding_applied",
+        "measurement_evidence_eligible"
+      ],
+      "properties": {
+        "algorithm": {"const": "sha256"},
+        "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "byte_size": {"type": "integer", "minimum": 1},
+        "digest_scope": {
+          "const": "response_body_octets_after_http_transfer_framing_removal_without_content_decoding_or_text_transcoding"
+        },
+        "content_decoding_applied": {"const": false},
+        "text_transcoding_applied": {"const": false},
+        "measurement_evidence_eligible": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "paraphrasedFact": {
+      "type": "object",
+      "required": [
+        "fact_id",
+        "statement",
+        "representation",
+        "source_excerpt_retained",
+        "source_authority_claimed"
+      ],
+      "properties": {
+        "fact_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "statement": {"type": "string", "minLength": 1, "maxLength": 320},
+        "representation": {"const": "observer_authored_paraphrase"},
+        "source_excerpt_retained": {"const": false},
+        "source_authority_claimed": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "observerAssertion": {
+      "type": "object",
+      "required": [
+        "observer_id",
+        "observer_kind",
+        "assertion_kind",
+        "assertion_basis",
+        "identity_authentication_state",
+        "source_authority_claimed",
+        "legal_authority_claimed",
+        "scientific_authority_claimed",
+        "operator_authority_claimed"
+      ],
+      "properties": {
+        "observer_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "observer_kind": {
+          "enum": ["untrusted_research_adapter", "direct_http_retrieval_observer"]
+        },
+        "assertion_kind": {"const": "contemporaneous_observer_assertion"},
+        "assertion_basis": {
+          "enum": [
+            "direct_attempt_metadata_adapter_assertion_and_bounded_paraphrase_only",
+            "direct_http_attempt_metadata_unverified_body_digest_and_bounded_paraphrase_only"
+          ]
+        },
+        "identity_authentication_state": {
+          "enum": ["publisher_authenticated", "not_authenticated"]
+        },
+        "source_authority_claimed": {"const": false},
+        "legal_authority_claimed": {"const": false},
+        "scientific_authority_claimed": {"const": false},
+        "operator_authority_claimed": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "isoCapture": {
+      "type": "object",
+      "properties": {
+        "artifact_id": {
+          "const": "reiyah.artifact.rights-observation-capture-iso-open-data-gate-a-static-correction-1.2.0"
+        },
+        "artifact_path": {
+          "const": "evidence/rights-observations/2026-08-25-iso-open-data-gate-a-static-correction-1.2.0.json"
+        },
+        "capture_id": {
+          "const": "reiyah.rights-observation-capture.iso-open-data.gate-a-1.2.0-static-correction"
+        },
+        "capture_role": {"const": "iso_open_data_rights"},
+        "observation_mode": {
+          "const": "adapter_observation_with_blocked_direct_attempt"
+        },
+        "basis_id": {"const": "rights.iso-open-data.odc-by-1.0"},
+        "publisher": {"const": "International Organization for Standardization"},
+        "requested_url": {
+          "const": "https://www.iso.org/open-data.html#iso_deliverables_metadata"
+        },
+        "final_url": {"const": "https://www.iso.org/open-data.html"},
+        "direct_http_attempt": {
+          "allOf": [
+            {"$ref": "#/$defs/directHttpAttempt"},
+            {
+              "properties": {
+                "requested_url": {
+                  "const": "https://www.iso.org/open-data.html#iso_deliverables_metadata"
+                },
+                "final_url": {"const": "https://www.iso.org/open-data.html"},
+                "http_status": {"const": 403},
+                "redirect_count": {"const": 0},
+                "content_encoding": {"const": "identity"}
+              }
+            }
+          ]
+        },
+        "adapter_observation": {"$ref": "#/$defs/adapterObservation"},
+        "source_bytes_exposed_to_reiyah_observer": {"const": false},
+        "request_policy": {
+          "const": {
+            "credentials_supplied_by_reiyah": false,
+            "cookies_supplied_by_reiyah": false,
+            "client_certificate_supplied_by_reiyah": false,
+            "authorization_header_state": "unobserved_by_reiyah",
+            "cookie_header_state": "unobserved_by_reiyah",
+            "client_certificate_state": "unobserved_by_reiyah",
+            "url_userinfo_present": false,
+            "request_body_supplied_by_reiyah": false,
+            "credential_material_retained": false,
+            "response_headers_retained": false,
+            "set_cookie_header_retained": false
+          }
+        },
+        "unretained_response_measurement": {"type": "null"},
+        "retained_capture_extent": {
+          "const": "attempt_metadata_and_observer_paraphrase_only"
+        },
+        "observer": {
+          "allOf": [
+            {"$ref": "#/$defs/observerAssertion"},
+            {
+              "properties": {
+                "observer_id": {"const": "reiyah.adapter.web-research"},
+                "observer_kind": {"const": "untrusted_research_adapter"},
+                "assertion_basis": {
+                  "const": "direct_attempt_metadata_adapter_assertion_and_bounded_paraphrase_only"
+                }
+              }
+            }
+          ]
+        },
+        "related_source_ids": {
+          "const": [
+            "src.iso.26262-1.2018.open-data",
+            "src.iso.21448.2022.open-data",
+            "src.iso-tr.21959-1.2020.open-data",
+            "src.iso-pas.8800.2024.open-data"
+          ]
+        }
+      }
+    },
+    "nistCapture": {
+      "type": "object",
+      "properties": {
+        "artifact_id": {
+          "const": "reiyah.artifact.rights-observation-capture-nist-technical-series-gate-a-static-correction-1.2.0"
+        },
+        "artifact_path": {
+          "const": "evidence/rights-observations/2026-08-25-nist-technical-series-gate-a-static-correction-1.2.0.json"
+        },
+        "capture_id": {
+          "const": "reiyah.rights-observation-capture.nist-technical-series.gate-a-1.2.0-static-correction"
+        },
+        "capture_role": {"const": "nist_technical_series_rights"},
+        "observation_mode": {"const": "direct_http_metadata_digest"},
+        "basis_id": {"const": "rights.nist-technical-series-publications"},
+        "publisher": {"const": "National Institute of Standards and Technology"},
+        "requested_url": {
+          "const": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications"
+        },
+        "final_url": {
+          "const": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications"
+        },
+        "direct_http_attempt": {
+          "allOf": [
+            {"$ref": "#/$defs/directHttpAttempt"},
+            {
+              "properties": {
+                "requested_url": {
+                  "const": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications"
+                },
+                "final_url": {
+                  "const": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications"
+                },
+                "http_status": {"const": 200},
+                "redirect_count": {"const": 0},
+                "content_encoding": {"const": "identity"},
+                "response_media_type": {
+                  "type": "string",
+                  "pattern": "^text/html(?:[ ]*;[ -~]+)?$"
+                }
+              }
+            }
+          ]
+        },
+        "adapter_observation": {"type": "null"},
+        "source_bytes_exposed_to_reiyah_observer": {"const": true},
+        "request_policy": {
+          "const": {
+            "credentials_supplied_by_reiyah": false,
+            "cookies_supplied_by_reiyah": false,
+            "client_certificate_supplied_by_reiyah": false,
+            "authorization_header_state": "not_sent",
+            "cookie_header_state": "not_sent",
+            "client_certificate_state": "not_sent",
+            "url_userinfo_present": false,
+            "request_body_supplied_by_reiyah": false,
+            "credential_material_retained": false,
+            "response_headers_retained": false,
+            "set_cookie_header_retained": false
+          }
+        },
+        "unretained_response_measurement": {"$ref": "#/$defs/responseMeasurement"},
+        "retained_capture_extent": {
+          "const": "attempt_metadata_unverified_body_digest_and_observer_paraphrase_only"
+        },
+        "observer": {
+          "allOf": [
+            {"$ref": "#/$defs/observerAssertion"},
+            {
+              "properties": {
+                "observer_kind": {"const": "direct_http_retrieval_observer"},
+                "assertion_basis": {
+                  "const": "direct_http_attempt_metadata_unverified_body_digest_and_bounded_paraphrase_only"
+                }
+              }
+            }
+          ]
+        },
+        "related_source_ids": {
+          "const": [
+            "src.nist.ai-100-1.2023.pdf",
+            "src.nist.ai-100-1.2023.publication-page"
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "oneOf": [
+        {"$ref": "#/$defs/isoCapture"},
+        {"$ref": "#/$defs/nistCapture"}
+      ]
+    }
+  ],
+  "unevaluatedProperties": false,
+  "$comment": "Chronology is semantic: observation_started_at must be no later than observation_completed_at. For NIST, observation_completed_at equals direct_http_attempt.retrieval_completed_at. For ISO, the direct 403 attempt completes no later than adapter_observation.observation_completed_at, which equals the top-level completion. The rights wrapper must copy the role completion time and occur no earlier than either manifest."
+}

@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.worst_group_coverage_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/worst_group_evaluation/group_results/1/coverage_counts/observed", "value": 22}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-WORST-GROUP-COVERAGE", "instance_pointer": "/worst_group_evaluation/group_results/1/coverage_counts", "schema_keyword": "semantic", "reason": "Each group's coverage states must reconcile to its sample count and total."},
+  "runtime_execution_authorized": false
+}

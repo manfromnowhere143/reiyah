@@ -1,0 +1,35 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.conformal_established_inline_evidence",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/conformal_evaluation/exchangeability/disposition", "value": "established"},
+    {
+      "operation": "add",
+      "json_pointer": "/conformal_evaluation/exchangeability/evidence_refs/-",
+      "value": {
+        "evidence_ref": {"record_id": "reiyah.provenance.synthetic_external", "record_kind": "reiyah.kind.provenance", "version": "1.2.0"},
+        "eligibility": "eligible",
+        "independence": "independent",
+        "scope_match": {"state": "observed", "value": true},
+        "retained_source_eligible": true,
+        "supports_disposition": "established"
+      }
+    },
+    {"operation": "replace", "json_pointer": "/conformal_evaluation/guarantee/kind", "value": "finite_sample_marginal"},
+    {"operation": "replace", "json_pointer": "/conformal_evaluation/guarantee/disposition", "value": "asserted"},
+    {"operation": "replace", "json_pointer": "/conformal_evaluation/guarantee/scope", "value": "declared_test_population"}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-ASSUMPTION-EVIDENCE-ELIGIBILITY",
+    "instance_pointer": "/conformal_evaluation/exchangeability/disposition",
+    "schema_keyword": "enum",
+    "reason": "Gate A 1.2 cannot establish or contradict a scientific assumption from inline evidence because no independently retained evidence resolver exists."
+  },
+  "runtime_execution_authorized": false
+}

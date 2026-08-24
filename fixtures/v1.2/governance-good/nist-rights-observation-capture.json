@@ -1,0 +1,123 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/governance-positive-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.governance-good.nist-rights-observation-capture@1.2.0",
+  "fixture_class": "known-good-governance",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "synthetic_fixture_only": true,
+  "baseline_expected_outcome": "accepted",
+  "fixture_role": "nist_capture_manifest",
+  "target_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json",
+  "target_artifact_id": "reiyah.artifact.rights-observation-capture-nist-technical-series-gate-a-static-correction-1.2.0",
+  "production_event_claimed": false,
+  "distribution_event_occurred": false,
+  "authority_created": false,
+  "runtime_execution_authorized": false,
+  "limitations": [
+    "The nested record is a synthetic test operand; its production artifact, receipt, event, publication, readback, authorization, and distribution assertions did not occur.",
+    "This fixture wrapper creates no source evidence, legal conclusion, transport verification, Gate A acceptance, scientific support, publication acceptance, or runtime authority."
+  ],
+  "record": {
+    "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json",
+    "schema_version": "1.2.0",
+    "artifact_id": "reiyah.artifact.rights-observation-capture-nist-technical-series-gate-a-static-correction-1.2.0",
+    "artifact_path": "evidence/rights-observations/2026-08-25-nist-technical-series-gate-a-static-correction-1.2.0.json",
+    "capture_id": "reiyah.rights-observation-capture.nist-technical-series.gate-a-1.2.0-static-correction",
+    "version": "1.2.0",
+    "record_kind": "rights_observation_capture_manifest",
+    "distribution_event_id": "reiyah.distribution-event.gate-a-1.2.0-static-correction",
+    "capture_role": "nist_technical_series_rights",
+    "basis_id": "rights.nist-technical-series-publications",
+    "publisher": "National Institute of Standards and Technology",
+    "requested_url": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+    "final_url": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+    "related_source_ids": [
+      "src.nist.ai-100-1.2023.pdf",
+      "src.nist.ai-100-1.2023.publication-page"
+    ],
+    "observation_mode": "direct_http_metadata_digest",
+    "observation_started_at": "2026-08-25T10:00:20Z",
+    "observation_completed_at": "2026-08-25T10:00:50Z",
+    "direct_http_attempt": {
+      "attempted": true,
+      "method": "GET",
+      "requested_url": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+      "final_url": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+      "retrieval_completed_at": "2026-08-25T10:00:50Z",
+      "http_status": 200,
+      "redirect_count": 0,
+      "content_encoding": "identity",
+      "response_media_type": "text/html; charset=UTF-8",
+      "credentials_supplied_by_reiyah": false,
+      "cookies_supplied_by_reiyah": false,
+      "authorization_header_sent": false,
+      "cookie_header_sent": false,
+      "client_certificate_sent": false,
+      "response_body_retained": false
+    },
+    "adapter_observation": null,
+    "source_bytes_exposed_to_reiyah_observer": true,
+    "request_policy": {
+      "credentials_supplied_by_reiyah": false,
+      "cookies_supplied_by_reiyah": false,
+      "client_certificate_supplied_by_reiyah": false,
+      "authorization_header_state": "not_sent",
+      "cookie_header_state": "not_sent",
+      "client_certificate_state": "not_sent",
+      "url_userinfo_present": false,
+      "request_body_supplied_by_reiyah": false,
+      "credential_material_retained": false,
+      "response_headers_retained": false,
+      "set_cookie_header_retained": false
+    },
+    "unretained_response_measurement": {
+      "algorithm": "sha256",
+      "sha256": "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+      "byte_size": 8192,
+      "digest_scope": "response_body_octets_after_http_transfer_framing_removal_without_content_decoding_or_text_transcoding",
+      "content_decoding_applied": false,
+      "text_transcoding_applied": false,
+      "measurement_evidence_eligible": false
+    },
+    "retained_capture_extent": "attempt_metadata_unverified_body_digest_and_observer_paraphrase_only",
+    "response_body_retained": false,
+    "response_body_redistributed": false,
+    "bounded_observed_facts": [
+      {
+        "fact_id": "reiyah.observed-fact.synthetic.nist-government-work",
+        "statement": "The observed NIST page describes a public reuse boundary for covered NIST-authored technical series material.",
+        "representation": "observer_authored_paraphrase",
+        "source_excerpt_retained": false,
+        "source_authority_claimed": false
+      },
+      {
+        "fact_id": "reiyah.observed-fact.synthetic.nist-third-party-caveat",
+        "statement": "The observed page warns that separately identified third-party material may have different rights conditions.",
+        "representation": "observer_authored_paraphrase",
+        "source_excerpt_retained": false,
+        "source_authority_claimed": false
+      }
+    ],
+    "observer": {
+      "observer_id": "reiyah.observer.synthetic.direct-http",
+      "observer_kind": "direct_http_retrieval_observer",
+      "assertion_kind": "contemporaneous_observer_assertion",
+      "assertion_basis": "direct_http_attempt_metadata_unverified_body_digest_and_bounded_paraphrase_only",
+      "identity_authentication_state": "not_authenticated",
+      "source_authority_claimed": false,
+      "legal_authority_claimed": false,
+      "scientific_authority_claimed": false,
+      "operator_authority_claimed": false
+    },
+    "evidence_eligible": false,
+    "limitations": [
+      "Only this locally authored manifest is retained; the official response body and response headers are not retained or redistributed.",
+      "When present, the unretained response digest and byte size are contemporaneous observer measurements and cannot independently substantiate the paraphrases, authenticate the source, or recreate the response.",
+      "Every observed fact is a bounded observer-authored paraphrase; no source excerpt, quotation, raw response, credential, cookie, or authorization material is retained.",
+      "An adapter assertion that a page was crawled today does not independently establish crawl freshness, expose source bytes, authenticate the raw response, or prove legal meaning.",
+      "This manifest is evidence-ineligible and creates no legal conclusion, distribution authorization, operator acceptance, publication acceptance, transport verification, scientific support, compliance claim, or runtime authority."
+    ],
+    "runtime_execution_authorized": false
+  }
+}

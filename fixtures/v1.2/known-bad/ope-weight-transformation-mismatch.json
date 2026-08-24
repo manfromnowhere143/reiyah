@@ -1,0 +1,17 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope_weight_transformation_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/weight_construction/transformation", "value": "upper_clip"},
+    {"operation": "replace", "json_pointer": "/weight_construction/clipping/enabled", "value": true},
+    {"operation": "replace", "json_pointer": "/weight_construction/clipping/threshold", "value": 1}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-OPE-WEIGHT-TRANSFORMATION", "instance_pointer": "/trajectories/0/steps/0/transformed_cumulative_importance_weight", "schema_keyword": "semantic", "reason": "Upper clipping requires each transformed cumulative weight to equal min(raw cumulative weight, threshold)."},
+  "runtime_execution_authorized": false
+}

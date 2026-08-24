@@ -1,124 +1,254 @@
 # Reiyah Session Handoff
 
-This document is the deterministic continuation contract for Reiyah. It is an indexed Gate A
-artifact, not a mutable activity log. A successor must resolve current hashes, validation state,
-transport state, and acceptance state from the machine records named below rather than trusting
-narrative memory.
+Gate A `1.2.0` remains operator-unaccepted; architecture status must be resolved from the exact canonical report and repeated byte-identical release replay.
 
-## Machine bootstrap
+This is Reiyah's machine-to-machine continuation contract. It is a versioned architecture
+artifact, not a diary and not an authority source. Resolve mutable state from the exact machine
+records named below. Never promote a remembered count, prose claim, prior report, publisher
+assertion, or generated review into current evidence.
 
-Apply the repository identity gate before repository-specific validation or change. The latest
-operator request must name Reiyah, and the working directory, Git root, and loaded `AGENTS.md`
-must all identify `/Users/danielwahnich/workspace/reiyah`. Project names are not aliases.
+## 1. Identity gate
 
-From the expected root, run this read-only preflight:
+Continue only when the latest request names Reiyah and all four identities agree:
+
+1. project: Reiyah;
+2. working directory: `/Users/danielwahnich/workspace/reiyah`;
+3. Git root: `/Users/danielwahnich/workspace/reiyah`; and
+4. repository contract: this repository's `AGENTS.md`.
+
+Run this read-only preflight before repository-specific validation or change:
 
 ```sh
 set -eu
 
 reiyah_expected_root=/Users/danielwahnich/workspace/reiyah
-
 test "$(pwd -P)" = "$reiyah_expected_root"
 test "$(git rev-parse --show-toplevel)" = "$reiyah_expected_root"
-test "$(git remote get-url origin)" = "https://github.com/manfromnowhere143/reiyah.git"
+test "$(git remote get-url origin)" = \
+  "https://github.com/manfromnowhere143/reiyah.git"
 
 git branch --show-current
+git rev-parse HEAD
 git status --short
 git diff --check
 git diff --cached --check
 ```
 
-A nonempty worktree is not permission to reset, discard, overwrite, or absorb changes. Inspect
-every changed path and preserve work that is not known to belong to the current task. If an
-existing change overlaps the requested paths and its ownership or intent cannot be established,
-stop before editing and request direction.
+If any identity differs, stop. Do not bootstrap another repository, copy Reiyah artifacts into a
+sibling, or treat a project name as an alias. A dirty worktree is not permission to reset or
+discard changes. Establish ownership of overlapping edits before modifying them.
 
-Read, in order:
+Read in this order:
 
-1. `AGENTS.md` for repository authority, scope, and invariants.
-2. This handoff for deterministic state resolution and continuation rules.
-3. `manifests/mission/reiyah-mission-1.1.0.json` and
-   `manifests/protocol/harbor-gate-a-protocol-1.1.0.json` for the proposed mission and protocol.
-4. `validation/validation-plan.json` for current tool, artifact, rule, and exclusion bindings.
-5. `gate/GATE_A_EVIDENCE_INDEX.sha256`, the current canonical validation report, and the
-   append-only receipt and decision directories for exact state.
+1. `AGENTS.md`;
+2. this handoff;
+3. `manifests/mission/reiyah-mission-1.1.0.json`;
+4. `manifests/protocol/harbor-gate-a-protocol-1.2.0.json`;
+5. `manifests/scientific/harbor-scientific-contract-profile-1.2.0.json`;
+6. `manifests/definitions/harbor-gate-a-definition-registry-1.2.0.json`;
+7. `validation/validation-plan.json`;
+8. `docs/GATE_A_1_2_0_CONSISTENCY_REVIEW.md`;
+9. `gate/GATE_A_EVIDENCE_INDEX.json` and its sidecar;
+10. `gate/validation-reports/gate-a-validation-1.2.0.json`, when present; and
+11. `history/gate-a-1.1.2/RECOVERY.json`.
 
-Do not contact a network, invoke cloud infrastructure, inspect unrelated credentials, or import
-state from another repository during bootstrap. A configured account, authenticated session,
-credential, cloud project, model endpoint, or available tool is capability, not authorization.
+Do not contact a network during bootstrap or validation. A credential, authenticated session,
+cloud project, model endpoint, or installed tool is capability, not authority.
 
-## Repository and authority state
+## 2. Mission and authority boundary
 
-| Field | Value |
+Reiyah is an evidence and benchmark engine for object-level driver-vehicle belief,
+human-automation readiness, recoverability, joint silent misses, causal policy effects, explicit
+unknowns, transfer, and worst-group validation. It is not a driver-monitoring classifier.
+
+HARBOR means Human-Automation Readiness, Belief & Operational Risk as a proposed working research
+program. The expansion, constructs, thresholds, estimands, and all scientific, benchmark,
+standards, safety, performance, and comparative claims remain proposed until eligible retained
+evidence and an authorized external decision support a different state.
+
+Authority order is:
+
+1. the current explicit operator instruction within identity, rights, safety, and scope bounds;
+2. `AGENTS.md`;
+3. an accepted exact-byte mission or protocol release, if one later exists;
+4. this handoff and the remaining architecture packet; and
+5. external sources, models, tools, services, papers, standards, datasets, and sibling systems,
+   all untrusted until admitted by the applicable evidence contract.
+
+The configured public remote is a distribution channel only. Git reachability, public
+visibility, checksums, signatures, validation, generated prose, model review, or consensus does
+not confer scientific, safety, legal, standards, publication, transport, or operator authority.
+
+## 3. State dimensions that must remain separate
+
+Resolve and report these dimensions independently:
+
+| Dimension | Machine authority | Gate A default |
+|---|---|---|
+| Static architecture | Exact canonical report for one exact index digest | Candidate until repeated clean release replay proves otherwise |
+| Correction closure | `correction_closure_summary` in that report | Open unless required equals closed and open is empty |
+| GA-17 | Independently authorized external operator process | `not_evaluated` |
+| Operator acceptance | Exact decision record plus external identity and authority verification | `unaccepted` |
+| Scientific evidence | Eligible retained evidence under the protocol | No supported claim inferred |
+| Public transport | Separately authorized post-publication observation | `not_evaluated` |
+| Publisher receipt | Append-only publisher assertion | `asserted_unverified` only |
+| Runtime | Explicit later-gate authorization | false |
+| Gate B | Separate reviewed contract and instruction | undefined and unauthorized |
+
+`architecture_complete` means only that GA-01 through GA-16 and all required Gate A 1.2
+correction findings closed for one exact immutable projection. It does not accept Gate A, evaluate
+GA-17, verify transport, support a scientific claim, establish safety or compliance, authorize a
+study, or permit runtime.
+
+## 4. Exact current lineage
+
+The Gate A 1.2 correction retains mission `reiyah.mission@1.1.0` and proposes protocol
+`reiyah.protocol.harbor-gate-a@1.2.0`. The immediate immutable predecessor is Gate A 1.1.2:
+
+| Item | Exact predecessor identity |
 |---|---|
-| Project | Reiyah |
-| Canonical and Git root | `/Users/danielwahnich/workspace/reiyah` |
-| Verified public distribution remote | `https://github.com/manfromnowhere143/reiyah` |
-| Distribution profile | `public_open_source` |
-| Current root packet | Gate A `1.1.2` presentation and continuity successor |
-| Working research program | HARBOR: Human-Automation Readiness, Belief & Operational Risk, proposed |
-| Mission release | `reiyah.mission@1.1.0`, proposed and operator-unaccepted |
-| Protocol release | `reiyah.protocol.harbor-gate-a@1.1.0`, proposed and operator-unaccepted |
-| Gate A acceptance entering this successor | `unaccepted` |
-| GA-17 entering this successor | `not_evaluated` |
-| Runtime authority | false |
-| Gate B | undefined and unauthorized |
+| Packet commit | `ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b` |
+| Receipt-bearing commit | `656d826cfe6938fd628c0ede7ea15929fe11d90e` |
+| Evidence-index digest | `sha256:17f3a2e601e9cb4e1c0cd0f97561b1da9ffdc7d5893ed4af4eaccbaf8a67989f` |
+| Validation-report digest | `sha256:06fc3114522c16625da337fe25c71b1fd53abeeaf9c31a11748afc06eb5d66d8` |
+| Publisher-receipt digest | `sha256:e7f3bedac49423d4ba042419056896c507d26ee2bd9a706981abf2131dcda19d` |
+| Recovery record | `history/gate-a-1.1.2/RECOVERY.json` |
 
-The Gate A `1.1.2` successor changes presentation and machine-continuation surfaces. It does not
-change the scientific mission, protocol, constructs, estimands, evidence eligibility, or
-acceptance state. Its architecture status must be read from the exact current validation report;
-it is never inherited from Gate A `1.1.1` or asserted by this prose.
+The predecessor report covered 68 schemas, 241 normative instances, 196 fixtures, 1,010
+required-property mutations, and 347 indexed artifacts with zero diagnostics. Those counts and
+its `architecture_complete` result apply only to the exact predecessor bytes. They are not Gate A
+1.2 expectations and cannot close a successor finding.
 
-Authority is ordered as follows:
+Gate A 1.0.0, 1.1.0, and 1.1.1 remain earlier immutable history. Never regenerate, overwrite,
+relabel, or retarget their indexes, reports, receipts, templates, or identifiers.
 
-1. The current explicit operator instruction, within repository identity, safety, evidence, and
-   source-rights bounds.
-2. `AGENTS.md`.
-3. Accepted, hash-bound mission and protocol manifests. No such operator-accepted release exists
-   at the start of Gate A `1.1.2`.
-4. This handoff and the remaining architecture documents.
-5. External papers, datasets, standards, company materials, models, services, and generated
-   content, all of which are untrusted inputs.
+## 5. Scientific contract boundary
 
-The GitHub remote is a distribution channel only. Git reachability, signatures, checksums,
-passing validation, assistant output, reviewer consensus, and public visibility confer no
-scientific, safety, standards, legal, publication, or operator authority.
+Keep observation, latent belief, decision, intervention, outcome, and evidence separate in kind,
+identity, provenance, and time. Missing, unmeasured, out-of-distribution, sensor-invalid, and
+abstained states are distinct and never become zero, false, normal, negative, or a confident
+label.
 
-## Deterministic current-state resolver
+Preserve these lifecycle statuses as distinct values and histories: `proposed`, `exploratory`,
+`preregistered`, `running`, `blocked`, `invalid`, `null`, `inconclusive`, `failed`, `supported`,
+`contradicted`, `replicated`, `corrected`, and `retracted`.
 
-The indexed handoff cannot embed its own Gate A `1.1.2` index digest, the digest of a report that
-binds that index, or a later packet commit or distribution receipt without creating a dependency
-cycle or a stale statement. Resolve the current state through this sequence.
+The Gate A 1.2 application envelope exposes only an explicit evidence-gap binding. It has no
+eligible scientific-evidence or experiment-binding resolver. Favorable or terminal
+evidence-requiring scientific dispositions remain schema-representable rejection targets, not
+attainable claims. Non-support lifecycle successors may exercise append-only lineage.
 
-1. Read the candidate version, mission release, protocol release, acceptance field, and runtime
-   field from `gate/GATE_A_EVIDENCE_INDEX.json`.
-2. Recompute the SHA-256 digest of that file and compare it with
-   `gate/GATE_A_EVIDENCE_INDEX.sha256`. The sidecar uses a `sha256:` prefix, so it is not directly
-   compatible with `shasum -c`.
-3. Run the offline validator in machine-readable full mode. For an unchanged, complete Gate A
-   `1.1.2` candidate, its stdout must be byte-identical to
-   `gate/validation-reports/gate-a-validation-1.1.2.json`.
-4. Trust no distribution receipt until the full validator accepts the complete append-only
-   receipt chain. The newest valid receipt establishes transport for the current candidate only
-   when its index and report bindings equal the current exact bytes, its commit is distinct from
-   its predecessor, and its recorded remote readback fields are true.
-5. A newest valid receipt that binds Gate A `1.1.1` proves only `1.1.1` transport. It cannot stand
-   in for Gate A `1.1.2`.
-6. Resolve operator acceptance separately. A repository decision record must exact-bind the
-   current index, canonical report, mission release, and protocol release and must belong to a
-   validator-accepted append-only decision chain. Identity and authority still require
-   independent out-of-band verification. In the absence of both conditions, Gate A remains
-   `unaccepted` and GA-17 remains `not_evaluated`.
+The machine profile maps ten application estimand paths to exact protocol and definition-registry
+contracts. Eleven executable contracts cover estimand resolution, derived values, cross-cutting
+references and identifiers, lifecycle lineage, evidence eligibility, OPE reconciliation, and
+governance boundaries. Do not trust the count or an identifier alone: every handler must consume
+the contract's exact application role, measure, direction, unit, population, outcome, comparator,
+aggregation, evidence policy, required operands, tolerances, thresholds, and freeze semantics.
 
-The current non-normative decision starting point is
-`gate/decisions/OPERATOR_DECISION-1.1.2.template.json`. It is deliberately invalid while it
-contains placeholders and cannot authenticate, select, or imply an operator decision. No tool
-may complete operator identity, authority, decision, time, or rationale.
+Scientific fixtures are deterministic synthetic counterexamples, never empirical evidence. Gate A
+contains no product runtime, model training or inference, real policy evaluation, study execution,
+private-data ingestion, deployment, live service, alert path, vehicle connection, or physical
+control interface.
 
-Use these commands for the byte checks and full replay:
+## 6. Gate A 1.2 correction contract
+
+`docs/GATE_A_1_2_0_CONSISTENCY_REVIEW.md` defines `CR-001` through `CR-016` as immutable
+pre-replay findings. The canonical report derives closure from the same immutable snapshot used for
+all other checks. It contains:
+
+- ordered `required_finding_ids`, exactly `CR-001` through `CR-016`;
+- ordered `closed_finding_ids`;
+- ordered `open_finding_ids`; and
+- exactly one ordered `finding_results` row per finding, with its production check and fixture
+  evidence.
+
+Closed and open IDs must be a disjoint exact partition of required IDs. The report may state
+`architecture_complete` only when required equals closed, open is empty, every mapped check and
+fixture passed, GA-01 through GA-16 passed, all counts reconcile, exit code is zero, and diagnostics
+are empty. Review prose, a hardcoded list, schema validity alone, or a prior run cannot close a
+finding.
+
+The correction covers belief and observation reconciliation, causal identification and exact
+split manifests, readiness and recoverability, sequential off-policy support and weight
+reconciliation, member-complete joint opportunities, atomic OOD and selective partitions,
+versioned conformal and worst-group universes, transfer and assumption boundaries, exhaustive
+typed references, append-only lifecycle lineage, launcher and toolchain binding, public-rights
+interfaces, transport separation, canonical-report implications, fixture-catalog integrity,
+release chronology, and truthful documentation.
+
+## 7. Canonical validation entry point
+
+Use only the byte-bound launcher. Direct execution of either Python module is unsupported.
+
+For an intentionally dirty development tree:
+
+```sh
+tools/gate_a_1_2_0.sh --snapshot-mode development --output human
+tools/gate_a_1_2_0.sh --snapshot-mode development --output json \
+  > /tmp/reiyah-gate-a-validation-1.2.0.json
+```
+
+Development output is diagnostic only. It is never release evidence, even when its exit code is
+zero.
+
+Bootstrap the cycle-breaking outputs only through these three committed states. `C0` is clean and
+contains every candidate artifact, including both fresh capture manifests, except the current
+index, sidecar, and report. `C_index` adds the exact index and sidecar. `C_packet` adds the exact
+report. Always send bootstrap output to `/tmp`: shell redirection to a repository path creates or
+truncates that path before the validator captures its snapshot and therefore makes the release
+tree dirty.
 
 ```sh
 set -eu
+
+index_tmp=/tmp/reiyah-gate-a-index-1.2.0.json
+report_tmp=/tmp/reiyah-gate-a-validation-1.2.0.json
+
+test -z "$(git status --porcelain=v1 --untracked-files=all)"
+test ! -e gate/GATE_A_EVIDENCE_INDEX.json
+test ! -e gate/GATE_A_EVIDENCE_INDEX.sha256
+test ! -e gate/validation-reports/gate-a-validation-1.2.0.json
+
+tools/gate_a_1_2_0.sh --snapshot-mode release --output json --emit-index \
+  > "$index_tmp"
+cp "$index_tmp" gate/GATE_A_EVIDENCE_INDEX.json
+index_digest=$(shasum -a 256 "$index_tmp" | awk '{print $1}')
+printf 'sha256:%s  gate/GATE_A_EVIDENCE_INDEX.json\n' "$index_digest" \
+  > gate/GATE_A_EVIDENCE_INDEX.sha256
+git add gate/GATE_A_EVIDENCE_INDEX.json gate/GATE_A_EVIDENCE_INDEX.sha256
+git commit --amend --no-edit
+
+tools/gate_a_1_2_0.sh --snapshot-mode release --output json --emit-report \
+  > "$report_tmp"
+cp "$report_tmp" gate/validation-reports/gate-a-validation-1.2.0.json
+git add gate/validation-reports/gate-a-validation-1.2.0.json
+git commit --amend --no-edit
+```
+
+The first amend establishes `C_index`; the second establishes `C_packet`. `--emit-index` requires
+all three output paths to be absent. `--emit-report` requires exact committed index and sidecar
+readback and an absent report path. Neither flag is valid in development mode.
+
+In both report-emitting release modes, two fresh isolated children execute S01 through S19. The
+parent also performs a complete production replay over its independently retained immutable
+snapshot and requires each child's full token, nested, selector, index, publication-state, and
+report-input bundle to equal that outer result before comparing the two children and emitting
+S20. The parent replay is a substitution guard, not a third independent evaluator.
+
+For a clean committed candidate whose canonical index, sidecar, and report already exist:
+
+```sh
+set -eu
+
+tools/gate_a_1_2_0.sh --snapshot-mode release --output json \
+  > /tmp/reiyah-gate-a-validation-1.2.0-a.json
+tools/gate_a_1_2_0.sh --snapshot-mode release --output json \
+  > /tmp/reiyah-gate-a-validation-1.2.0-b.json
+
+cmp /tmp/reiyah-gate-a-validation-1.2.0-a.json \
+  /tmp/reiyah-gate-a-validation-1.2.0-b.json
+cmp /tmp/reiyah-gate-a-validation-1.2.0-a.json \
+  gate/validation-reports/gate-a-validation-1.2.0.json
 
 expected_index_digest=$(awk '{sub(/^sha256:/, "", $1); print $1}' \
   gate/GATE_A_EVIDENCE_INDEX.sha256)
@@ -126,300 +256,272 @@ actual_index_digest=$(shasum -a 256 gate/GATE_A_EVIDENCE_INDEX.json | \
   awk '{print $1}')
 test "$actual_index_digest" = "$expected_index_digest"
 
-python3 tools/validate_gate_a.py --format json \
-  > /tmp/reiyah-gate-a-validation-1.1.2.json
-cmp /tmp/reiyah-gate-a-validation-1.1.2.json \
-  gate/validation-reports/gate-a-validation-1.1.2.json
-
-jq '{version, architecture_status, operator_acceptance_state,
-  mission_release_id, protocol_release_id, runtime_authorized}' \
-  gate/GATE_A_EVIDENCE_INDEX.json
-jq '{version, result, exit_code, architecture_status, acceptance_created,
-  index_binding, control_summary, check_summary, fixture_summary, toolchain}' \
-  gate/validation-reports/gate-a-validation-1.1.2.json
-jq -s 'sort_by(.receipt_sequence) | last |
-  {receipt_sequence, version, published_git_commit, published_index_ref,
-   validation_report_ref, remote_readback, gate_a_acceptance_conferred,
-   runtime_execution_authorized}' \
-  gate/public-distribution-receipts/*.json
+jq '{result, exit_code, architecture_status, operator_acceptance_state,
+  correction_closure_summary, control_summary, transport_summary,
+  runtime_authorized, gate_b_authorized, diagnostics}' \
+  gate/validation-reports/gate-a-validation-1.2.0.json
 ```
 
-Full-mode exit `0` establishes static internal architecture completeness for the exact indexed
-bytes only. Exit `1` reports one or more deterministic contract failures. Exit `2` means the
-validator could not execute safely. No exit code accepts Gate A or supports a scientific claim.
+The launcher enters the locked macOS Seatbelt policy before CPython starts, uses isolated
+`-I -S -B` execution, denies network and filesystem writes, and exact-checks the declared
+toolchain. A release invocation starts two fresh child interpreters, each reloads the same clean
+committed projection without shared mutable evaluation state, and the parent exact-compares their
+S01 through S19, nested, selector, and index bytes before emitting S20. This is state separation,
+not independent external verification. Development uses one observational snapshot and cannot
+emit a canonical completion result.
 
-The binding flow is:
+Release exit `0` means the two internal pre-report evaluations matched and the one rendered report
+passed. A retained release is usable only after two complete launcher invocations are also
+byte-identical to that canonical report while the tree remains unchanged. Exit `1` is a
+deterministic contract failure. Exit `2` means the required execution boundary could not be
+established. No exit code evaluates GA-17 or authorizes runtime.
 
-```mermaid
-flowchart LR
-    A[Indexed Gate A bytes] --> I[Evidence index]
-    I --> S[Index sidecar]
-    I --> V[Offline validation report]
-    I --> R[Distribution receipt]
-    V --> R
-    C[Exact packet commit] --> R
-    R --> T[Verified transport state]
-    I --> D[Repository decision record]
-    V --> D
-    M[Mission and protocol releases] --> D
-    D --> B[Both conditions required]
-    H[Independent identity and authority verification] --> B
-    B --> G[Possible external GA-17 effect]
+## 8. Two-evaluation verification order
+
+The release path must preserve this order:
+
+1. verify repository identity and a clean immutable Git tree;
+2. verify launcher, primary validator, science module, platform, and toolchain-lock bytes;
+3. capture release evaluation one, read its complete candidate projection, and reject drift,
+   symlinks, special files, and undeclared exclusions;
+4. for that snapshot, verify Gate A 1.1.2 recovery and inheritance, schemas, normative instances,
+   reference ownership, scientific documents, fixtures, catalog, plan, rules, manifests, ledger,
+   correction delta, and canonical index bytes;
+5. independently capture release evaluation two and repeat the complete pre-report pipeline;
+6. canonicalize S01 through S19, all nested contract rows, and the index for each evaluation, then
+   require byte equality without reusing either evaluation record;
+7. emit S20 only for the observed two-evaluation match;
+8. derive controls and correction closure from those observed rows;
+9. render and schema-check the canonical report once;
+10. in ordinary release mode, require exact committed-report readback as a non-emitted guard; and
+11. after report creation, repeat the complete launcher invocation and compare both outputs with
+    the committed report as external release and publication evidence.
+
+Counts are always recomputed from the exact snapshot. Do not hand-edit or copy counts, digests,
+byte sizes, closure sets, index rows, or report results.
+
+## 9. Index and report resolver
+
+The index is the canonical inventory of the exact candidate projection. It intentionally excludes
+itself, its sidecar, the canonical report, operator decision records, publisher receipts, and
+explicitly constrained transient caches to avoid digest cycles. Exclusion never creates a general
+hiding place.
+
+Resolve current machine state from:
+
+```sh
+jq '{version, architecture_status, mission_release_id, protocol_release_id,
+  operator_acceptance_state, runtime_authorized, artifact_count:
+  (.artifacts | length)}' gate/GATE_A_EVIDENCE_INDEX.json
+
+jq '{result, exit_code, architecture_status, candidate_projection,
+  fixture_summary, correction_closure_summary, control_summary,
+  security_toolchain_summary, transport_summary, operator_acceptance_state,
+  runtime_authorized, gate_b_authorized}' \
+  gate/validation-reports/gate-a-validation-1.2.0.json
 ```
 
-Transport and acceptance are independent branches. A receipt cannot accept Gate A. A decision
-cannot prove remote transport. A repository decision record and independent identity and
-authority verification are both required before any possible external GA-17 effect. The
-repository cannot perform that verification or set GA-17. Neither branch can produce scientific
-evidence.
+The handoff cannot embed the current index digest or a report digest that depends on this file
+without becoming cyclic or stale. Recompute those identities from their bytes and sidecar.
 
-## Immutable Gate A 1.1.1 predecessor
+## 10. Research and evidence state
 
-Gate A `1.1.1` corrected an unsatisfiable `1.1.0` operator-decision interface while preserving
-the `1.1.0` mission and protocol releases and adding no scientific proposition. The predecessor
-schema had required the `1.1.0` protocol release to claim the `1.0.0` protocol schema identity.
-The correction introduced satisfiable exact bindings for the index, report, mission, and
-protocol and tested them through the shared diagnostic path. It did not create an operator
-decision.
+The source ledger and public distribution inventory define retained custody. A URL is not retained
+evidence. Third-party payloads may enter public Git history only when exact bytes, identity,
+version, date, scope, access and redistribution terms, attribution, limitations, and digest are
+recorded. Otherwise retain a pointer-only, evidence-ineligible discovery record.
 
-| Item | Exact Gate A `1.1.1` identity |
-|---|---|
-| Indexed packet commit | `90072fb64f3c16cb5d0af0f1a3bcad56554707fa` |
-| Receipt-bearing repository commit | `8f4ba9894faf257c46351b2a89fc17f112a988f1` |
-| Historical index path | `history/gate-a-1.1.1/gate/GATE_A_EVIDENCE_INDEX.json` |
-| Historical sidecar path | `history/gate-a-1.1.1/gate/GATE_A_EVIDENCE_INDEX.sha256` |
-| Evidence-index digest | `sha256:308f65ba2693c13fa71d081dad3f74f56ec80617e97497a2606c0d88a07b2ceb` |
-| Evidence-index size | 167,038 bytes |
-| Validation-report path | `gate/validation-reports/gate-a-validation-1.1.1.json` |
-| Validation-report digest | `sha256:76c0dcce583beb02b121776e14bc9df41833a26c5c49488270d96861b3e33806` |
-| Validation-report size | 2,826 bytes |
-| Distribution-receipt path | `gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.1.json` |
-| Distribution-receipt digest | `sha256:6156a35d3dfb2c4f0d46cbf48845867da6c942b69ed734a4056ae1e36910aa11` |
-| Distribution-receipt size | 7,565 bytes |
-| Receipt sequence | 2 |
-| Published at | `2026-08-24T08:00:30Z` |
-| Verified remote readback at | `2026-08-24T08:01:28Z` |
-| Receipt recorded at | `2026-08-24T08:02:01Z` |
+The 2026 frontier baseline is `evidence/frontier-discovery-register-1.1.0.json`. Its 38 entries are
+pointer-only and evidence-ineligible. They include bounded official Tesla and Mobileye comparator
+pointers, but establish no safety, performance, causality, or superiority claim. Later browsing or
+model-assisted research remains discovery input until a versioned successor register and the
+evidence admission process retain it.
 
-The exact mission and protocol identities retained by that packet are:
+Standards crosswalks are dated relevance and gap analyses. They do not establish applicability,
+conformity, certification, legal interpretation, or compliance.
 
-| Release | Artifact digest |
-|---|---|
-| `reiyah.mission@1.1.0` | `sha256:1d49a990391c8629c4dd919e73786f12de6c63092e43608d53d41dee4f52d4ed` |
-| `reiyah.protocol.harbor-gate-a@1.1.0` | `sha256:6170bb4b3c21d56c5428e8b8afdfe7e7860b1ae360bf8cc520a6ea8938f268de` |
+## 11. Public release sequence
 
-The retained Gate A `1.1.1` deterministic result is:
+Public distribution is separate from architecture validation and operator acceptance. When the
+operator explicitly authorizes publication of one frozen candidate, preserve this sequence:
 
-| Measure | Exact value |
-|---|---:|
-| Schemas checked | 60 |
-| Normative instances checked | 223 |
-| Fixture cases | 179 |
-| Known-good fixtures passed | 15 of 15 |
-| Known-bad fixtures rejected for the declared rule | 164 of 164 |
-| Required-property mutations exercised and rejected | 1,010 of 1,010 |
-| Validation rules | 78 |
-| Critical families | 58 |
-| Required artifacts in the validation plan | 121 |
-| Indexed artifacts | 317 |
-| Declared index exclusions | 14 |
-| Retained sources checked | 8 |
-| Public retained payloads | 4 |
-| Frontier discovery pointers | 38 |
+1. preselect event ID `reiyah.distribution-event.gate-a-1.2.0-static-correction`, future rights
+   path `evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json`, and
+   receipt path
+   `gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.2.0.json`;
+2. require that one exact path as a cycle-breaking projection exclusion while rejecting any broad
+   rights-prefix exclusion; historical rights records remain indexed;
+3. predeclare
+   `evidence/rights-observations/2026-08-25-iso-open-data-gate-a-static-correction-1.2.0.json`
+   and
+   `evidence/rights-observations/2026-08-25-nist-technical-series-gate-a-static-correction-1.2.0.json`,
+   include them as ordinary indexed packet artifacts, and never exclude those paths;
+4. complete all other architecture bytes, then observe both official pages and freeze two typed
+   capture manifests in their predeclared modes: direct HTTP response metadata when exposed, or a
+   bounded adapter observation plus the recorded blocked direct attempt when response bytes are
+   unavailable; never invent status, digest, size, or cookie state, and preserve the explicit
+   no-response-body/no-redistribution boundary;
+5. generate the index, sidecar, and report and commit the packet as `C_packet`, with neither the
+   future rights record nor a sequence-four
+   receipt present, and perform two byte-identical clean release replays;
+6. create a fresh event-specific rights observation for the exact `C_packet`, index, report, and
+   distributed payload set, without implying legal review, publication acceptance, safety,
+   compliance, science, or runtime authority;
+7. keep that record uncommitted while pushing exactly `C_packet` to the configured public `main`
+   ref, then read back the exact repository, ref, commit, index, report, and payload bytes as
+   publisher observations only;
+8. append a sequence-four publisher receipt whose transport state is exactly
+   `asserted_unverified` and whose rights binding names the fresh record;
+9. commit the rights observation and receipt together as direct child `C_receipt` of `C_packet`,
+   rerun ordinary release validation so its non-emitted post-event guard proves the production
+   schemas, joins, chronology, direct-parent topology, event-only delta, and unchanged packet
+   projection, index, and report, then push `C_receipt`; any later publisher readback of
+   `C_receipt` requires a distinct append-only observation and is not part of the receipt; and
+10. retain `C_packet` and `C_receipt` as distinct immutable identities.
 
-That full run emitted zero diagnostics, passed GA-01 through GA-16, and classified its exact
-indexed bytes as `architecture_complete`. It recorded GA-17 as `not_evaluated`, created no
-acceptance, and authorized no runtime. Its recorded toolchain was CPython `3.14.2`, `jsonschema`
-`4.26.0`, `referencing` `0.37.0`, and JSON Schema Draft 2020-12.
+Generate the two postpacket records from the nested `record` shapes in
+`fixtures/v1.2/governance-good/public-rights-revalidation.json` and
+`fixtures/v1.2/governance-good/public-distribution-receipt.json`; those files are synthetic
+shape witnesses, never event evidence and never a source for copying placeholder digests, times,
+commits, or observer identities.
 
-The Gate A `1.1.1` validation plan bound the index builder to
-`sha256:39e56534567295c5a5b924bf87f3de574957cfe3ea303697bdbd48fecaa90ee4` and the validator to
-`sha256:2a0198cb8ddef715336c8e6f3b6b14039757596695ccdd6d5c07ee65f51f3c7d`.
+For the rights record, preserve the predeclared artifact, event, repository, ref, mission,
+protocol, schema, and prior-record identities. Recompute `intended_distribution.candidate_git_commit`
+from `C_packet`; recompute the index and report reference digests and byte sizes from the exact
+committed files; bind both capture manifests by exact path, artifact ID, schema, digest, byte size,
+role, URL, mode, and their real `observation_completed_at`; record the actual observation time and
+truthful observer basis; derive the covered payload and excluded pointer source-ID sets from the
+validated source ledger and packet inventory. Distribution is eligible only when
+`all_included_payloads_covered` is `true` and `preflight_outcome` is exactly
+`eligible_payload_basis_observed_pointer_payloads_excluded`. Keep every legal, acceptance,
+science, compliance, GA-17, and runtime authority field at its nonclaim value.
 
-Gate A `1.1.1` must remain replayable through the exact historical index and sidecar under
-`history/gate-a-1.1.1/` after the current root advances. Its report and sequence-two receipt keep
-their versioned paths. Never regenerate, relabel, overwrite, or substitute these bytes.
+For the sequence-four receipt, recompute every custody, source-ledger, frontier-register,
+distribution-inventory, rights, index, report, and distributed-payload reference from actual
+bytes. Set repository, ref, and `published_git_commit` to the pushed `C_packet`; set
+`published_at` to the real publication event; derive `oldest_capture_age_seconds` as publication
+time minus the oldest capture `observation_completed_at`; retain the actual bounded operator
+authorization; and populate `remote_readback_assertion` only from the publisher's subsequent
+readback of that same `C_packet`. Enforce capture completion at or before rights observation,
+rights observation at or before authorization, authorization at or before publication,
+publication before readback, and readback at or before receipt recording. Keep transport exactly
+`asserted_unverified`, the independent record reference `null`, the prior receipt exact, and
+`receipt_bearing_commit_self_readback_claimed` `false`. Do not put either real record on disk
+before the event that supplies these values.
 
-Gate A `1.1.0` and `1.0.0` remain earlier immutable history. Their counts, reports, decisions,
-and transport facts apply only to their exact bytes and cannot satisfy a later successor.
+A rights observation must be fresh for the actual distribution event and exact packet. Do not
+reuse a stale observation after candidate bytes or timing changes. A publisher receipt cannot
+verify its own transport. Independent transport requires a distinct, separately authorized
+observer, authentication basis, authorization record, retained observation evidence, and valid
+post-publication chronology. Without that process, transport remains `not_evaluated`.
 
-## Gate A scientific and implementation boundary
+This exact exclusion is necessary because the rights record binds `C_packet`, the index, and the
+report. Including it in `C_packet` would make the Git commit hash contain a record that names that
+same commit and would make the index and rights record hash one another. No ordinary digest fixed
+point exists. The exclusion is exact, schema-constrained, and absent during packet replay; it is
+not permission to hide another rights record or candidate artifact.
 
-Reiyah is an evidence and benchmark engine for object-level driver-vehicle belief,
-human-automation readiness, recoverability, joint silent misses, causal policy effects,
-explicit unknowns, transfer, and worst-group validation. It is not a driver-monitoring
-classifier.
+The two capture manifests are different: they do not bind `C_packet`, so they remain ordinary
+indexed packet artifacts. They retain locally authored retrieval metadata and the digest and size
+of an unretained response only when the direct mode exposes those values, not the raw ISO or NIST
+HTML. A predeclared adapter mode records unavailable transport fields as unobserved and cannot
+serve as a silent fallback. Reiyah supplies no credential material; unexposed adapter cookie state
+remains unobserved. The validator must resolve every `capture_manifest_ref` byte, enforce ordered
+capture, manifest, rights, and publication timestamps, and derive freshness against both
+completion times. If either capture
+will be more than 3,600 seconds old at first publication, abort and rebuild both captures, the
+report, and `C_packet`; never refresh bytes under a committed capture path.
 
-Gate A contains static architecture, machine-readable contracts, synthetic deterministic
-fixtures, and offline read-only validators. It excludes:
+No tool may create an operator decision, choose `accepted`, invent a reviewer, infer authority,
+or treat publication instructions as Gate A acceptance. The decision template remains invalid
+until an authorized human independently completes and verifies it.
 
-- product runtime, model training, and model inference;
-- deployment, live services, cloud execution, and physical-control integration;
-- private-data ingestion and operational data collection;
-- empirical publication machinery;
-- safety, compliance, causal-benefit, product-readiness, or competitive-superiority claims; and
-- any Gate B work.
-
-No available infrastructure changes this boundary. A passing validator, public release,
-impressive demonstration, external deadline, or difficult engineering problem does not widen
-scope.
-
-The scientific object chain keeps observation, latent belief, decision, intervention, outcome,
-and evidence separate in kind, identity, provenance, and time. Missing, unmeasured,
-out-of-distribution, sensor-invalid, and abstained remain distinct states and never become zero,
-false, normal, negative, or a confident label.
-
-The lifecycle vocabulary preserves `proposed`, `exploratory`, `preregistered`, `running`,
-`blocked`, `invalid`, `null`, `inconclusive`, `failed`, `supported`, `contradicted`, `replicated`,
-`corrected`, and `retracted` as different states. No workflow may merge them for convenience.
-
-Five application-contract surfaces cover:
-
-1. Object-level human and automation belief, frozen information sets, readiness, and recovery.
-2. Common opportunities, joint silent misses, selective prediction, conformal validity,
-   transfer, and worst-group evaluation.
-3. Sequential off-policy evaluation with exact policies, propensities, support, estimator
-   selection, uncertainty, and safety-cost estimands.
-4. Study design and preregistration with causal graphs, adjustment sets, access chronology,
-   power, stopping, missingness, multiplicity, splits, and deviations.
-5. Dataset, benchmark, ODD, scenario, test, hazard, argument, evidence, and change-impact
-   assurance interfaces that explicitly confer no safety authority.
-
-## Evidence and frontier state
-
-The source ledger entering Gate A `1.1.2` contains eight checked source records. The public
-profile distributes four ISO Open Data metadata payloads with recorded attribution and custody.
-Those payloads are metadata, not normative ISO standards text. The NIST and United Nations
-records in the source profile remain pointer only and are excluded from public retained
-payloads. Crosswalks record mappings and gaps; they do not claim standards compliance.
-
-The registered 2026 frontier baseline is
-`evidence/frontier-discovery-register-1.1.0.json`, artifact
-`reiyah.artifact.frontier-discovery-register-1.1.0`, digest
-`sha256:0567b9d00f50783574201bc367869094ca8383fce3e6dd9f56b6108a764c3093`, and size 70,081 bytes.
-It contains 38 discovery records. Every record is pointer only, evidence ineligible, and unable
-to admit a claim. It covers primary methods, official specifications, and bounded Tesla and
-Mobileye company comparators. Company descriptions motivate falsifiable tests; they are not
-independent evidence of safety, performance, causality, or superiority.
-
-No DeepMind, SpaceX, NASA-STD-7009, or NIST TEVV-Athlon item is present in the registered
-38-record baseline. A URL, chat citation, generated summary, or remembered source cannot change
-that fact. Adding any frontier source requires a versioned discovery-register successor with
-exact identity and scope. Promoting it beyond pointer-only status additionally requires
-permitted retained bytes, metadata, rights and redistribution review, limitations, digest, and
-independent review.
-
-No eligible empirical dataset, study execution, benchmark run, policy log, construct-validity
-result, subgroup analysis, independent replication, safety review, standards review, or legal
-opinion exists. HARBOR's name, expansion, constructs, estimands, thresholds, and every
-scientific claim remain proposed.
-
-## Residual unknowns
-
-- Whether HARBOR's proposed constructs and estimands can be measured reliably or usefully is
-  unknown.
-- Comparator software, hardware, supervision, ODD, fleet, telemetry, denominator, and outcome
-  versions have not been retained in eligible records, so comparative performance is unknown.
-- The exact present bytes, later revisions, corrections, and rights status of frontier pointers
-  are unknown to the retained evidence system.
-- A finite schema and fixture suite cannot establish that every scientific, statistical,
-  security, source-rights, release, or human-factors failure mode is known.
-- No independently retained external review is included in or established by this packet.
-- No retained evidence supports a safety, compliance, causal-benefit, readiness, deployment, or
-  superiority conclusion.
-
-## Hard-problem escalation doctrine
+## 12. Hard-problem doctrine
 
 Engineering pressure increases the burden of proof. It never increases confidence by itself.
-When a hard problem is encountered, use the following fail-closed responses.
 
 | Trigger | Required response | Forbidden shortcut |
 |---|---|---|
-| Unexplained failure | Freeze the bytes, reproduce the failure, isolate the smallest counterexample, identify the violated invariant, and retain the failure record. | Retry until green or remove the observation. |
-| Validator disagreement | Treat the validator and specification as competing hypotheses, trace the shared diagnostic path, and add a reason-specific fixture for the resolved defect. | Weaken a rule, fixture, or expected failure merely to pass. |
-| Evidence gap | Record the state as unknown, unmeasured, blocked, inconclusive, or pointer only as applicable. | Convert inference, consensus, or fluent prose into evidence. |
-| Conflicting sources | Preserve both exact scoped claims, provenance, versions, and limitations and open an adjudication gap. | Average away or silently choose the convenient source. |
-| Sparse support or subgroup failure | Report support, coverage, denominators, censoring, and worst-group limits and abstain where required. | Hide the failure inside a pooled metric. |
-| Post-review or post-distribution edit | Preserve the reviewed bytes and create a newly versioned successor with explicit lineage. | Regenerate or relabel the released identifier. |
-| Rights uncertainty | Keep the source pointer only or exclude the payload until document-specific rights and attribution are resolved. | Publish because the material is publicly reachable. |
-| Scope or authority uncertainty | Stop at the current gate and request explicit authority. | Use available credentials, cloud, models, or infrastructure as implied permission. |
-| High-impact conclusion | Require deterministic replay, independent challenge, retained falsification attempts, and explicit residual unknowns. | Treat self-review, signatures, checksums, or consensus as scientific confirmation. |
+| Unexplained failure | Freeze the observed bytes, reproduce, minimize, identify the violated invariant, and retain a reason-specific counterexample. | Retry until green or delete the observation. |
+| Validator and specification disagree | Treat both as hypotheses, trace the production path, repair the contract, and add a minimally changed fixture. | Weaken the rule or expected diagnostic merely to pass. |
+| Evidence is absent or ineligible | Preserve the exact unknown, gap, blocked, invalid, or inconclusive state. | Convert fluent prose, consensus, a checksum, or self-review into evidence. |
+| Source or result conflicts | Preserve both identities, scopes, versions, provenance, and limitations. | Average away or silently choose the favorable record. |
+| Support, coverage, or subgroup failure | Expose denominators, unknowns, censoring, intervals, and worst-group limits; abstain where required. | Hide the failure in an aggregate. |
+| Post-freeze byte changes | Preserve the old target and create a versioned successor with exact lineage. | Regenerate or relabel an immutable release. |
+| Rights or authority is uncertain | Keep payload pointer-only or stop at the current gate. | Treat public reachability, credentials, or urgency as permission. |
 
-Failures are information. Preserve them as diagnostics, known-bad fixtures, blocked states,
-contradicted claims, or correction lineage. Never erase a difficult result to protect a schedule,
-presentation, hypothesis, or reputation.
+Failures are information. Preserve them as diagnostics, known-bad fixtures, open findings,
+blocked states, contradictions, corrections, or retractions.
 
-## Stop conditions
+## 13. Stop conditions
 
-Stop before any out-of-scope modification, and always stop before validation closeout or
-publication, when any of these conditions holds:
+Stop closeout or publication when any of these holds:
 
-1. The named project, current directory, Git root, loaded instructions, or configured remote does
-   not resolve to Reiyah.
-2. An overlapping dirty-worktree change cannot be attributed safely.
-3. A released artifact would be overwritten, relabeled, or reused instead of preserved through
-   successor lineage.
-4. The current index, sidecar, canonical report, schema identity, tool binding, fixture catalog,
-   or historical snapshot is missing or inconsistent. During the explicitly authorized Gate A
-   `1.1.2` construction, this condition permits only the bounded static repair described in the
-   next section; it blocks closeout, review handoff, publication, and unrelated modification.
-5. Full validation returns a nonzero exit, produces diagnostics, differs from the canonical
-   report, or fails a known-good, known-bad, required-property, or control expectation.
-6. A missing, invalid, sensor-invalid, out-of-distribution, abstained, or unmeasured state would
-   be silently coerced or omitted.
-7. Source identity, access terms, redistribution permission, attribution, or retained bytes are
-   unresolved for a proposed public payload.
-8. A request would infer acceptance, scientific support, safety, compliance, causality, or
-   superiority without the required independent evidence and authority.
-9. A task would introduce runtime, cloud execution, deployment, physical control, private data,
-   empirical publication machinery, or Gate B work under Gate A.
+1. project, directory, Git root, repository contract, or remote identity differs;
+2. overlapping worktree changes cannot be attributed safely;
+3. a released identifier or historical byte would be overwritten, relabeled, or retargeted;
+4. predecessor recovery, schema, profile, plan, catalog, ledger, index, sidecar, or report does not
+   reconcile;
+5. any known-good fails, any known-bad misses its exact primary diagnostic, any required finding
+   remains open, any GA-01 through GA-16 control fails, or diagnostics are nonempty;
+6. repeated clean release report bytes differ;
+7. an epistemic state, lifecycle state, denominator, group, opportunity, reference, or lineage
+   event would be coerced, omitted, duplicated, or self-attested;
+8. public payload identity, redistribution terms, attribution, rights observation, or freshness is
+   unresolved;
+9. acceptance, transport, scientific support, safety, compliance, causality, or superiority would
+   be inferred without its independent authority and evidence; or
+10. the task would introduce runtime, cloud execution, deployment, private data, empirical study
+    execution, publication machinery, physical control, or Gate B work.
 
-Report the exact condition, affected paths or records, and the smallest authorized recovery.
-Do not broaden scope to escape the stop condition.
+Report the exact condition, affected paths or records, and the smallest in-scope recovery. Do not
+broaden scope to escape a stop condition.
 
-## Next authorized action
+## 14. Host and repository stewardship
 
-The current authorized work is the static Gate A `1.1.2` presentation and continuity successor.
-Resolve its next step from machine state:
+The repository is small; host storage pressure is not caused by Gate A artifacts. Disk cleanup
+must be narrow, inspected, and recoverable where practical. Never delete active update staging,
+active Codex runtimes, credentials, unrelated repositories, user documents, or broad cache roots
+to make validation appear successful. Remove only exact inactive targets after checking process
+use and ownership. Repository-generated `__pycache__` is transient and forbidden in the candidate
+projection; the launcher uses `-B` to avoid creating it.
 
-1. If the `1.1.2` index, sidecar, report, historical `1.1.1` snapshot, fixtures, or validator
-   support is absent or inconsistent, complete only that static successor work.
-2. If full validation is byte-identical to the canonical `1.1.2` report and that report classifies
-   the exact current bytes as `architecture_complete`, this packet permits independent advisory
-   review of that exact candidate. It does not establish that a review occurred; resolve any such
-   event from separately retained evidence.
-3. Public distribution requires explicit operator distribution authority, a fresh
-   event-specific rights observation, exact packet and report bindings, verified remote
-   readback, and an append-only successor receipt. Distribution does not evaluate GA-17.
-4. An operator decision is a separate external act. No tool may choose it, invent operator
-   identity or authority, or treat praise, urgency, prior distribution authority, or a typed name
-   as acceptance.
+## 15. Continuation resolver
 
-Runtime, cloud use, deployment, private-data ingestion, physical control, empirical publication,
-and Gate B remain unauthorized after this successor validates or is distributed. They require a
-separately reviewed contract and explicit operator authority.
+At the start of the next session:
 
-## Required closeout
+1. run the identity and worktree preflight;
+2. inspect the exact current report and correction closure if they exist;
+3. run development validation only for an intentionally dirty candidate;
+4. run the repeated release sequence only for a clean committed candidate;
+5. compare local and remote commit identities without treating reachability as independent
+   transport verification;
+6. inspect append-only rights, receipt, transport, and decision records separately; and
+7. continue only the smallest unresolved Gate A architecture or release step.
 
-Before declaring any Gate A successor task complete:
+After a complete public Gate A 1.2 packet and publisher receipt exist, the next authorized work is
+still architecture review, correction, documentation, and separately requested governance. Gate B,
+runtime, cloud execution, deployment, private-data ingestion, physical control, and empirical
+publication remain unauthorized until a new explicit instruction and reviewed contract say
+otherwise.
 
-1. Run `python3 tools/validate_gate_a.py` and the machine-readable replay shown above.
-2. Confirm every known-good fixture passes and every known-bad fixture rejects for its declared
-   primary reason, including all required-property mutations and critical controls.
-3. Confirm current index-sidecar equality and byte identity between validator stdout and the
-   canonical report.
-4. Verify internal links, artifact IDs, schema bindings, release lineage, retained-source
-   digests, historical snapshots, exclusions, and receipt or decision chains affected by the
-   change.
-5. Run `git diff --check` and `git diff --cached --check`, inspect the complete staged and
-   unstaged diff, and report every uncommitted path. Preserve unrelated changes.
-6. Obtain an independent adversarial review for a release-affecting change and record unresolved
-   findings without promoting that review to evidence or acceptance.
-7. State separately the architecture result, GA-17 result, operator-acceptance state, scientific
-   evidence state, transport state, and runtime authority.
-8. If any indexed byte changes after its exact bytes were distributed for review or public
-   transport, preserve it and create another append-only successor. Never rewrite history.
+## 16. Required closeout statement
 
-A successful closeout may establish `architecture_complete` for one exact digest. It cannot, by
-itself, establish operator acceptance, scientific support, safety, compliance, product
-readiness, competitive superiority, publication acceptance, or authority for runtime.
+Every handoff must state, separately and from exact machine records:
+
+- repository root, branch, local commit, configured remote, and remote ref identity;
+- worktree cleanliness and every uncommitted path;
+- index path, digest, byte size, and artifact count;
+- report path, digest, byte size, exit code, diagnostics, and replay equality;
+- required, closed, and open correction finding sets;
+- GA-01 through GA-16 result and GA-17 state;
+- operator acceptance state;
+- publisher-receipt state and independent transport state;
+- scientific evidence and claim state;
+- runtime and Gate B authority; and
+- unresolved risks and the next smallest authorized action.
+
+A successful architecture closeout is an exact-byte integrity result. It is never, by itself,
+scientific support, safety validation, standards compliance, product readiness, competitive
+superiority, publication acceptance, independent transport proof, operator acceptance, or runtime
+authority.

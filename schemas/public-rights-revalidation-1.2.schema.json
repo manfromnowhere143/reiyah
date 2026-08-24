@@ -1,0 +1,696 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-rights-revalidation.schema.json",
+  "title": "Event-specific public payload rights observation",
+  "description": "Fail-closed interface for a fresh, event-specific pre-distribution observation of mutable official rights pages. It binds one exact static Gate A 1.2.0 candidate and two retained capture-manifest artifacts, never claims that official response bodies were retained, preserves unsuccessful outcomes explicitly, and creates no legal conclusion, distribution authorization, operator acceptance, scientific support, compliance claim, publication acceptance, transport verification, or runtime authority.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "artifact_path",
+    "observation_id",
+    "version",
+    "record_kind",
+    "distribution_event_id",
+    "prior_observation_ref",
+    "observed_at",
+    "lifecycle_status",
+    "purpose",
+    "observer",
+    "intended_distribution",
+    "basis_observations",
+    "covered_payload_source_ids",
+    "excluded_pointer_source_ids",
+    "freshness_policy",
+    "all_included_payloads_covered",
+    "preflight_outcome",
+    "distribution_authorization_created",
+    "qualified_legal_review_performed",
+    "legal_conclusion_created",
+    "gate_a_acceptance_conferred",
+    "ga17_status",
+    "scientific_publication_acceptance_conferred",
+    "scientific_support_claimed",
+    "compliance_claimed",
+    "runtime_execution_authorized",
+    "limitations"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-rights-revalidation.schema.json"
+    },
+    "schema_version": {
+      "const": "1.2.0"
+    },
+    "artifact_id": {
+      "const": "reiyah.artifact.public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0"
+    },
+    "artifact_path": {
+      "const": "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json"
+    },
+    "observation_id": {
+      "const": "reiyah.public-rights-revalidation.event.gate-a-1.2.0-static-correction"
+    },
+    "version": {
+      "const": "1.2.0"
+    },
+    "record_kind": {
+      "const": "event_specific_public_rights_observation"
+    },
+    "distribution_event_id": {
+      "const": "reiyah.distribution-event.gate-a-1.2.0-static-correction"
+    },
+    "prior_observation_ref": {
+      "$ref": "#/$defs/priorObservationBinding"
+    },
+    "observed_at": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "lifecycle_status": {
+      "const": "proposed"
+    },
+    "purpose": {
+      "const": "fresh_pre_distribution_observation_of_mutable_official_rights_pages"
+    },
+    "observer": {
+      "type": "object",
+      "required": [
+        "observer_id",
+        "observer_kind",
+        "identity_authentication_state",
+        "authority"
+      ],
+      "properties": {
+        "observer_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "observer_kind": {
+          "const": "untrusted_research_adapter"
+        },
+        "identity_authentication_state": {
+          "enum": [
+            "independently_authenticated",
+            "not_authenticated"
+          ]
+        },
+        "authority": {
+          "const": "observation_only_no_legal_distribution_operator_scientific_or_publication_authority"
+        }
+      },
+      "additionalProperties": false
+    },
+    "intended_distribution": {
+      "type": "object",
+      "required": [
+        "distribution_event_id",
+        "repository_url",
+        "repository_ref",
+        "candidate_git_commit",
+        "mission_release_id",
+        "protocol_release_id",
+        "index_ref",
+        "validation_report_ref"
+      ],
+      "properties": {
+        "distribution_event_id": {
+          "const": "reiyah.distribution-event.gate-a-1.2.0-static-correction"
+        },
+        "repository_url": {
+          "const": "https://github.com/manfromnowhere143/reiyah"
+        },
+        "repository_ref": {
+          "const": "refs/heads/main"
+        },
+        "candidate_git_commit": {
+          "$ref": "#/$defs/gitObjectId"
+        },
+        "mission_release_id": {
+          "const": "reiyah.mission@1.1.0"
+        },
+        "protocol_release_id": {
+          "const": "reiyah.protocol.harbor-gate-a@1.2.0"
+        },
+        "index_ref": {
+          "$ref": "#/$defs/indexBinding"
+        },
+        "validation_report_ref": {
+          "$ref": "#/$defs/validationReportBinding"
+        }
+      },
+      "additionalProperties": false
+    },
+    "basis_observations": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/isoObservation"
+        },
+        {
+          "$ref": "#/$defs/nistObservation"
+        }
+      ]
+    },
+    "covered_payload_source_ids": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {
+          "const": "src.iso.26262-1.2018.open-data"
+        },
+        {
+          "const": "src.iso.21448.2022.open-data"
+        },
+        {
+          "const": "src.iso-tr.21959-1.2020.open-data"
+        },
+        {
+          "const": "src.iso-pas.8800.2024.open-data"
+        }
+      ],
+      "uniqueItems": true
+    },
+    "excluded_pointer_source_ids": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "const": "src.nist.ai-100-1.2023.pdf"
+        },
+        {
+          "const": "src.nist.ai-100-1.2023.publication-page"
+        }
+      ],
+      "uniqueItems": true
+    },
+    "freshness_policy": {
+      "type": "object",
+      "required": [
+        "maximum_age_seconds",
+        "comparison",
+        "new_observation_required_for_each_payload_distribution_event",
+        "clock"
+      ],
+      "properties": {
+        "maximum_age_seconds": {
+          "const": 3600
+        },
+        "comparison": {
+          "const": "zero_lte_published_at_minus_oldest_capture_completed_at_lte_maximum"
+        },
+        "new_observation_required_for_each_payload_distribution_event": {
+          "const": true
+        },
+        "clock": {
+          "const": "UTC"
+        }
+      },
+      "additionalProperties": false
+    },
+    "all_included_payloads_covered": {
+      "type": "boolean"
+    },
+    "preflight_outcome": {
+      "enum": [
+        "eligible_payload_basis_observed_pointer_payloads_excluded",
+        "blocked_rights_uncertain",
+        "inconclusive"
+      ]
+    },
+    "distribution_authorization_created": {
+      "const": false
+    },
+    "qualified_legal_review_performed": {
+      "const": false
+    },
+    "legal_conclusion_created": {
+      "const": false
+    },
+    "gate_a_acceptance_conferred": {
+      "const": false
+    },
+    "ga17_status": {
+      "const": "not_evaluated"
+    },
+    "scientific_publication_acceptance_conferred": {
+      "const": false
+    },
+    "scientific_support_claimed": {
+      "const": false
+    },
+    "compliance_claimed": {
+      "const": false
+    },
+    "runtime_execution_authorized": {
+      "const": false
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 6,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/nonEmptyString"
+      },
+      "allOf": [
+        {
+          "contains": {
+            "const": "This record retains an observation of mutable official pages and is not a qualified legal review or legal conclusion."
+          }
+        },
+        {
+          "contains": {
+            "const": "This record creates no distribution authorization and cannot replace event-specific operator instruction."
+          }
+        },
+        {
+          "contains": {
+            "const": "This record does not accept Gate A, evaluate GA-17, or establish scientific support, standards compliance, safety, readiness, performance, causality, or superiority."
+          }
+        },
+        {
+          "contains": {
+            "const": "This record is not transport verification or publication acceptance."
+          }
+        },
+        {
+          "contains": {
+            "const": "This record authorizes no runtime, cloud execution, deployment, private-data ingestion, model execution, or physical control."
+          }
+        },
+        {
+          "contains": {
+            "const": "The bound capture artifacts retain mode-dependent attempt metadata, any explicitly unretained measurement values, and bounded paraphrases only; they do not retain official response bodies and cannot independently prove authenticity, source content, or legal effect."
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "gitObjectId": {
+      "type": "string",
+      "pattern": "^(?:[0-9a-f]{40}|[0-9a-f]{64})$"
+    },
+    "artifactBinding": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "path",
+        "sha256",
+        "byte_size",
+        "version"
+      ],
+      "properties": {
+        "artifact_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "path": {
+          "$ref": "common.schema.json#/$defs/relativeArtifactPath"
+        },
+        "sha256": {
+          "$ref": "common.schema.json#/$defs/sha256Digest"
+        },
+        "byte_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "schema_id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "version": {
+          "$ref": "common.schema.json#/$defs/semanticVersion"
+        }
+      },
+      "additionalProperties": false
+    },
+    "priorObservationBinding": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/artifactBinding"
+        },
+        {
+          "required": [
+            "schema_id"
+          ],
+          "properties": {
+            "artifact_id": {
+              "const": "reiyah.artifact.public-rights-revalidation-2026-08-24-1.1.2"
+            },
+            "path": {
+              "const": "evidence/public-rights-revalidation-2026-08-24-1.1.2.json"
+            },
+            "sha256": {
+              "const": "sha256:9551b7ebb61adcafc83cab5cac29ad7bdaf93292daf739275a0d255f16f431e9"
+            },
+            "byte_size": {
+              "const": 4964
+            },
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.1.2/public-rights-revalidation.schema.json"
+            },
+            "version": {
+              "const": "1.1.2"
+            }
+          }
+        }
+      ]
+    },
+    "indexBinding": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/artifactBinding"
+        },
+        {
+          "required": [
+            "schema_id"
+          ],
+          "properties": {
+            "artifact_id": {
+              "const": "reiyah.artifact.gate-a-index-1.2.0"
+            },
+            "path": {
+              "const": "gate/GATE_A_EVIDENCE_INDEX.json"
+            },
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/gate-a-index.schema.json"
+            },
+            "version": {
+              "const": "1.2.0"
+            }
+          }
+        }
+      ]
+    },
+    "validationReportBinding": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/artifactBinding"
+        },
+        {
+          "required": [
+            "schema_id"
+          ],
+          "properties": {
+            "artifact_id": {
+              "const": "reiyah.validation-report.gate-a-1.2.0"
+            },
+            "path": {
+              "const": "gate/validation-reports/gate-a-validation-1.2.0.json"
+            },
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/validation-report.schema.json"
+            },
+            "version": {
+              "const": "1.2.0"
+            }
+          }
+        }
+      ]
+    },
+    "captureManifestBinding": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/artifactBinding"
+        },
+        {
+          "required": ["schema_id"],
+          "properties": {
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json"
+            },
+            "version": {
+              "const": "1.2.0"
+            }
+          }
+        }
+      ]
+    },
+    "isoCaptureManifestBinding": {
+      "allOf": [
+        {"$ref": "#/$defs/captureManifestBinding"},
+        {
+          "properties": {
+            "artifact_id": {
+              "const": "reiyah.artifact.rights-observation-capture-iso-open-data-gate-a-static-correction-1.2.0"
+            },
+            "path": {
+              "const": "evidence/rights-observations/2026-08-25-iso-open-data-gate-a-static-correction-1.2.0.json"
+            }
+          }
+        }
+      ]
+    },
+    "nistCaptureManifestBinding": {
+      "allOf": [
+        {"$ref": "#/$defs/captureManifestBinding"},
+        {
+          "properties": {
+            "artifact_id": {
+              "const": "reiyah.artifact.rights-observation-capture-nist-technical-series-gate-a-static-correction-1.2.0"
+            },
+            "path": {
+              "const": "evidence/rights-observations/2026-08-25-nist-technical-series-gate-a-static-correction-1.2.0.json"
+            }
+          }
+        }
+      ]
+    },
+    "sharedObservation": {
+      "type": "object",
+      "required": [
+        "basis_id",
+        "publisher",
+        "official_url",
+        "page_scope",
+        "observed_at",
+        "observation_mode",
+        "retrieval_state",
+        "observation_state",
+        "observation_completed_at",
+        "capture_manifest_ref",
+        "observed_facts",
+        "caveats",
+        "related_source_ids"
+      ],
+      "properties": {
+        "basis_id": {
+          "$ref": "common.schema.json#/$defs/stableIdentifier"
+        },
+        "publisher": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "official_url": {
+          "type": "string",
+          "format": "https-uri"
+        },
+        "page_scope": {
+          "$ref": "common.schema.json#/$defs/nonEmptyString"
+        },
+        "observed_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "observation_completed_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "observation_mode": {
+          "enum": [
+            "adapter_observation_with_blocked_direct_attempt",
+            "direct_http_metadata_digest"
+          ]
+        },
+        "retrieval_state": {
+          "enum": [
+            "adapter_visible_direct_http_blocked",
+            "direct_http_reachable",
+            "unreachable",
+            "measurement_invalid"
+          ]
+        },
+        "observation_state": {
+          "enum": [
+            "consistent_with_recorded_inventory_basis",
+            "unresolved_document_specific_caveat_payload_excluded",
+            "unresolved",
+            "measurement_invalid"
+          ]
+        },
+        "capture_manifest_ref": {
+          "$ref": "#/$defs/captureManifestBinding"
+        },
+        "observed_facts": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "caveats": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "common.schema.json#/$defs/nonEmptyString"
+          },
+          "uniqueItems": true
+        },
+        "related_source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "common.schema.json#/$defs/stableIdentifier"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "isoObservation": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sharedObservation"
+        },
+        {
+          "properties": {
+            "basis_id": {
+              "const": "rights.iso-open-data.odc-by-1.0"
+            },
+            "publisher": {
+              "const": "International Organization for Standardization"
+            },
+            "official_url": {
+              "const": "https://www.iso.org/open-data.html#iso_deliverables_metadata"
+            },
+            "page_scope": {
+              "const": "ISO Deliverables Metadata license and attribution statement"
+            },
+            "observation_mode": {
+              "const": "adapter_observation_with_blocked_direct_attempt"
+            },
+            "retrieval_state": {
+              "const": "adapter_visible_direct_http_blocked"
+            },
+            "capture_manifest_ref": {
+              "$ref": "#/$defs/isoCaptureManifestBinding"
+            },
+            "related_source_ids": {
+              "minItems": 4,
+              "maxItems": 4,
+              "prefixItems": [
+                {
+                  "const": "src.iso.26262-1.2018.open-data"
+                },
+                {
+                  "const": "src.iso.21448.2022.open-data"
+                },
+                {
+                  "const": "src.iso-tr.21959-1.2020.open-data"
+                },
+                {
+                  "const": "src.iso-pas.8800.2024.open-data"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "nistObservation": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sharedObservation"
+        },
+        {
+          "properties": {
+            "basis_id": {
+              "const": "rights.nist-technical-series-publications"
+            },
+            "publisher": {
+              "const": "National Institute of Standards and Technology"
+            },
+            "official_url": {
+              "const": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications"
+            },
+            "page_scope": {
+              "const": "NIST Technical Series Publications rights and citation statement"
+            },
+            "observation_mode": {"const": "direct_http_metadata_digest"},
+            "retrieval_state": {"const": "direct_http_reachable"},
+            "capture_manifest_ref": {
+              "$ref": "#/$defs/nistCaptureManifestBinding"
+            },
+            "related_source_ids": {
+              "minItems": 2,
+              "maxItems": 2,
+              "prefixItems": [
+                {
+                  "const": "src.nist.ai-100-1.2023.pdf"
+                },
+                {
+                  "const": "src.nist.ai-100-1.2023.publication-page"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "preflight_outcome": {
+            "const": "eligible_payload_basis_observed_pointer_payloads_excluded"
+          }
+        },
+        "required": [
+          "preflight_outcome"
+        ]
+      },
+      "then": {
+        "properties": {
+          "all_included_payloads_covered": {
+            "const": true
+          },
+          "basis_observations": {
+            "prefixItems": [
+              {
+                "properties": {
+                  "retrieval_state": {
+                    "const": "adapter_visible_direct_http_blocked"
+                  },
+                  "observation_state": {
+                    "const": "consistent_with_recorded_inventory_basis"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "retrieval_state": {
+                    "const": "direct_http_reachable"
+                  },
+                  "observation_state": {
+                    "const": "unresolved_document_specific_caveat_payload_excluded"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "all_included_payloads_covered": {
+            "const": false
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false,
+  "$comment": "Semantic validation must resolve both capture_manifest_ref values byte-exactly; require role, basis, publisher, URL, event, and observation_completed_at equality with their manifests; require observed_at no earlier than both capture observations; require the receipt's published_git_commit to equal intended_distribution.candidate_git_commit; and derive freshness from the older capture observation completion."
+}

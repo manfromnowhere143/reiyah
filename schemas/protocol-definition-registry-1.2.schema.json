@@ -1,0 +1,1088 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/protocol-definition-registry.schema.json",
+  "title": "Protocol-owned typed definition registry 1.2",
+  "description": "Versioned definitions for every protocol-owned identifier used by the Gate A 1.2 scientific contract fixtures. Definitions remain proposed and authorize no runtime behavior.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "registry_id",
+    "version",
+    "protocol_release_id",
+    "reference_kind_contracts",
+    "actor_reference_contract",
+    "definitions",
+    "runtime_execution_authorized"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/protocol-definition-registry.schema.json"
+    },
+    "schema_version": {"const": "1.2.0"},
+    "artifact_id": {"const": "reiyah.artifact.protocol-definition-registry-1.2.0"},
+    "registry_id": {"const": "reiyah.protocol-definition-registry.harbor-gate-a"},
+    "version": {"const": "1.2.0"},
+    "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+    "reference_kind_contracts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/referenceKindContract"},
+      "uniqueItems": true
+    },
+    "actor_reference_contract": {
+      "type": "object",
+      "required": [
+        "reference_shape",
+        "required_definition_kind",
+        "actor_type_must_match",
+        "version_must_match",
+        "unresolved_policy"
+      ],
+      "properties": {
+        "reference_shape": {"const": "actor_reference"},
+        "required_definition_kind": {"const": "actor"},
+        "actor_type_must_match": {"const": true},
+        "version_must_match": {"const": true},
+        "unresolved_policy": {"const": "reject"}
+      },
+      "additionalProperties": false
+    },
+    "definitions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/definition"},
+      "uniqueItems": true
+    },
+    "runtime_execution_authorized": {"const": false}
+  },
+  "$defs": {
+    "referenceKindContract": {
+      "type": "object",
+      "required": [
+        "reference_kind_id",
+        "reference_shape",
+        "compatible_definition_kinds",
+        "record_identity_requires_exact_record_kind",
+        "version_must_match",
+        "unresolved_policy"
+      ],
+      "properties": {
+        "reference_kind_id": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            {"pattern": "^reiyah\\.kind\\."}
+          ]
+        },
+        "reference_shape": {"enum": ["versioned_reference", "rule_reference"]},
+        "compatible_definition_kinds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/definitionKind"},
+          "uniqueItems": true
+        },
+        "record_identity_requires_exact_record_kind": {"const": true},
+        "version_must_match": {"const": true},
+        "unresolved_policy": {"const": "reject"}
+      },
+      "additionalProperties": false
+    },
+    "definitionKind": {
+      "type": "string",
+      "enum": [
+        "rule",
+        "measurement_rule",
+        "scoring_rule",
+        "stopping_rule",
+        "selection_rule",
+        "aggregation_rule",
+        "adjudication_rule",
+        "abstention_rule",
+        "ood_rule",
+        "conformal_rule",
+        "transfer_rule",
+        "safety_rule",
+        "method",
+        "estimator",
+        "outcome_definition",
+        "treatment_definition",
+        "group",
+        "clock",
+        "sensor",
+        "actor",
+        "action",
+        "analysis_unit",
+        "analysis_unit_set",
+        "capability_set",
+        "recovery_event_manifest",
+        "opportunity_set",
+        "trajectory",
+        "trajectory_set",
+        "policy_table",
+        "state",
+        "construct",
+        "dimension",
+        "encounter",
+        "object",
+        "dataset",
+        "benchmark",
+        "odd",
+        "scenario_set",
+        "split",
+        "policy",
+        "graph",
+        "graph_node",
+        "adjustment_set",
+        "weight_set",
+        "window",
+        "provenance",
+        "comparator",
+        "protocol",
+        "fixture",
+        "safety_case",
+        "assurance_bundle",
+        "record_identity",
+        "state_space",
+        "choice_set",
+        "action_space",
+        "group_set",
+        "information_set_schema",
+        "inference_specification",
+        "analysis_specification",
+        "uncertainty_method",
+        "multiplicity_rule",
+        "assignment_mechanism",
+        "inclusion_rule",
+        "exclusion_rule",
+        "minimum_information_rule",
+        "decision_rule",
+        "producer",
+        "assumption",
+        "validity_boundary",
+        "estimand",
+        "metric",
+        "oracle",
+        "label_schema",
+        "authority",
+        "scope",
+        "loss_function",
+        "event_type",
+        "condition",
+        "capability",
+        "reference_process",
+        "external_source",
+        "sensitivity_analysis",
+        "constraint",
+        "reward_signal",
+        "cost_signal",
+        "unit",
+        "selector",
+        "detector",
+        "domain"
+      ]
+    },
+    "actorType": {
+      "enum": [
+        "human",
+        "automation_system",
+        "organization",
+        "software",
+        "model",
+        "instrument",
+        "derived_process",
+        "external_source"
+      ]
+    },
+    "estimandContract": {
+      "type": "object",
+      "required": ["metric_class", "application_role", "direction", "operand_contract"],
+      "properties": {
+        "metric_class": {
+          "enum": [
+            "object_belief_quality",
+            "readiness",
+            "recoverability",
+            "joint_silent_miss",
+            "causal_policy_effect",
+            "sequential_policy_value",
+            "conformal_coverage",
+            "ood_selective_risk_coverage",
+            "transfer",
+            "worst_group"
+          ]
+        },
+        "application_role": {
+          "enum": [
+            "object_belief_scoring",
+            "readiness_functional",
+            "recovery_cdf",
+            "causal_policy_contrast",
+            "target_policy_value",
+            "common_opportunity_joint_risk",
+            "coverage_constraint",
+            "joint_ood_selective_operating_point",
+            "domain_gap",
+            "maximum_eligible_group_loss"
+          ]
+        },
+        "direction": {
+          "enum": [
+            "higher_is_better",
+            "lower_is_better",
+            "signed_contrast",
+            "target_constraint",
+            "vector_tradeoff"
+          ]
+        },
+        "operand_contract": {
+          "type": "object",
+          "required": [
+            "application_schema_id",
+            "application_pointer",
+            "primary_measure_id",
+            "unit_contract_id",
+            "population_contract_id",
+            "outcome_contract_id",
+            "comparator_contract_id",
+            "aggregation_contract_id",
+            "evidence_boundary_id",
+            "required_operand_paths",
+            "runtime_output_authorized"
+          ],
+          "properties": {
+            "application_schema_id": {"type": "string", "format": "uri"},
+            "application_pointer": {
+              "type": "string",
+              "pattern": "^/(?:[^~/]|~0|~1)+(?:/(?:[^~/]|~0|~1)+)*$"
+            },
+            "primary_measure_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "unit_contract_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "population_contract_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "outcome_contract_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "comparator_contract_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "aggregation_contract_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "evidence_boundary_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "required_operand_paths": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "pattern": "^/(?:[^~/]|~0|~1|\\*)+(?:/(?:[^~/]|~0|~1|\\*)+)*$"
+              },
+              "uniqueItems": true
+            },
+            "runtime_output_authorized": {"const": false}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "executableContract": {
+      "type": "object",
+      "required": ["contract_id", "contract_kind", "version", "derivation_authority"],
+      "properties": {
+        "contract_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "contract_kind": {
+          "enum": [
+            "policy_distribution",
+            "causal_identification",
+            "readiness_aggregation",
+            "recovery_event_derivation",
+            "transfer_eligibility",
+            "conformal_guarantee",
+            "population_partition",
+            "minimum_information",
+            "human_information_reconciliation",
+            "joint_silent_miss_identifiability",
+            "assumption_evidence_eligibility"
+          ]
+        },
+        "version": {"const": "1.2.0"},
+        "derivation_authority": {"const": "offline_validator"},
+        "normalization_tolerance": {"type": "number", "exclusiveMinimum": 0, "maximum": 0.000001},
+        "normalization_comparison": {"const": "absolute_error_lte"},
+        "relative_tolerance": {"const": 0},
+        "logged_propensity_reconciliation": {"const": "exact_within_normalization_tolerance"},
+        "support_scope": {"const": "every_target_supported_action_per_history"},
+        "weight_scope": {"const": "cumulative_trajectory_by_horizon"},
+        "ess_unit": {"const": "trajectory"},
+        "horizon_coverage": {"const": "every_declared_horizon_exactly_once"},
+        "terminal_reconciliation": {"const": "exact_trajectory_terminal_or_max_horizon_truncation"},
+        "weight_transformation_policy": {"const": "declared_recomputed_before_normalization_and_ess"},
+        "normalized_weight_policy": {"const": "sum_one_when_positive_raw_weight_exists_otherwise_explicit_unknown"},
+        "minimum_effective_sample_size": {"type": "number", "exclusiveMinimum": 0},
+        "ess_disposition_policy": {"const": "exact_threshold_from_recomputed_ess"},
+        "history_identity_policy": {"const": "globally_unique_per_step"},
+        "support_cell_identity_policy": {"const": "exact_once_history_action"},
+        "trajectory_set_record_kind": {"const": "reiyah.kind.trajectory_set"},
+        "trajectory_manifest_resolution_policy": {"const": "exact_ordered_registry_members_bound_to_artifact"},
+        "policy_table_record_kind": {"const": "reiyah.kind.policy_table"},
+        "policy_table_resolution_policy": {"const": "exact_policy_role_history_action_probabilities_bound_to_artifact"},
+        "behavior_policy_ref": {
+          "const": {
+            "record_id": "reiyah.policy.synthetic_behavior",
+            "record_kind": "reiyah.kind.policy",
+            "version": "1.2.0"
+          }
+        },
+        "target_policy_ref": {
+          "const": {
+            "record_id": "reiyah.policy.synthetic_target",
+            "record_kind": "reiyah.kind.policy",
+            "version": "1.2.0"
+          }
+        },
+        "identification_strategy": {"const": "backdoor_adjustment"},
+        "requires_pre_treatment": {"const": true},
+        "requires_observed": {"const": true},
+        "prohibited_roles": {
+          "const": [
+            "treatment",
+            "outcome",
+            "mediator",
+            "post_treatment_descendant",
+            "collider",
+            "selection"
+          ]
+        },
+        "acyclicity_sufficient": {"const": false},
+        "query_binding": {"const": "exact_treatment_outcome_estimand_graph_and_selected_set"},
+        "selected_set_reconciliation": {"const": "exact_query_selected_adjustment_ids"},
+        "analysis_unit_id": {"const": "reiyah.unit.synthetic-encounter"},
+        "split_unit_id": {"const": "reiyah.unit.subject"},
+        "analysis_unit_set_ref": {
+          "const": {
+            "record_id": "reiyah.analysis-unit-set.synthetic-study-1.2",
+            "record_kind": "reiyah.kind.analysis_unit_set",
+            "version": "1.2.0"
+          }
+        },
+        "analysis_unit_member_ids": {
+          "const": [
+            "reiyah.subject.synthetic_001",
+            "reiyah.subject.synthetic_002",
+            "reiyah.subject.synthetic_003",
+            "reiyah.subject.synthetic_004",
+            "reiyah.subject.synthetic_005",
+            "reiyah.subject.synthetic_006"
+          ]
+        },
+        "split_partition_policy": {"const": "ordered_exact_member_rows_pairwise_disjoint_complete_union"},
+        "split_freeze_policy": {"const": "every_manifest_strictly_before_first_outcome_access"},
+        "stratification_input_policy": {"const": "exact_observed_pre_treatment_graph_node_role_available_by_manifest_freeze"},
+        "required_unknown_policy": {"const": "propagate_nonobserved_state"},
+        "safety_critical_compensation_allowed": {"const": false},
+        "unresolved_set_policy": {"const": "exact_required_or_safety_critical_or_positively_weighted_unknown_capability_ids"},
+        "capability_set_record_kind": {"const": "reiyah.kind.capability_set"},
+        "capability_manifest_resolution_policy": {"const": "exact_registry_members_bound_to_artifact"},
+        "capability_criterion_rule_ref": {
+          "const": {
+            "rule_id": "reiyah.rule.capability_threshold",
+            "rule_kind": "reiyah.kind.readiness_criterion",
+            "version": "1.2.0"
+          }
+        },
+        "event_selection": {"const": "earliest_qualifying_inside_frozen_window"},
+        "elapsed_time_origin": {"const": "index_event"},
+        "absence_in_valid_complete_window": {"const": "right_censored"},
+        "nonobserved_input_policy": {"const": "propagate_explicit_nonobserved_or_invalid"},
+        "no_qualifying_event_policy": {"const": "right_censored_only_for_complete_valid_window"},
+        "event_manifest_resolution_policy": {"const": "exact_registry_event_members_completeness_and_artifact_binding"},
+        "recovery_criterion_ref": {
+          "const": {"rule_id": "reiyah.rule.recovery_event", "rule_kind": "reiyah.kind.recovery_criterion", "version": "1.2.0"}
+        },
+        "censoring_policy_ref": {
+          "const": {"rule_id": "reiyah.rule.recovery_censoring", "rule_kind": "reiyah.kind.censoring_policy", "version": "1.2.0"}
+        },
+        "competing_event_policy_ref": {
+          "const": {"rule_id": "reiyah.rule.recovery_competing", "rule_kind": "reiyah.kind.competing_policy", "version": "1.2.0"}
+        },
+        "event_type_role_bindings": {
+          "const": [
+            {"event_type": "reiyah.event_type.capability_restored", "role": "recovery"},
+            {"event_type": "reiyah.event_type.observation_censored", "role": "censoring"},
+            {"event_type": "reiyah.event_type.readiness_loss", "role": "competing"}
+          ]
+        },
+        "required_conditions": {
+          "const": [
+            "metric_identity",
+            "metric_direction",
+            "population_harmonization",
+            "support_overlap",
+            "measurement_invariance",
+            "access_chronology",
+            "adaptation_disclosure",
+            "target_tuning_disclosure"
+          ]
+        },
+        "failed_condition_policy": {"const": "unqualified_result_ineligible"},
+        "minimum_observed_count": {"const": 1},
+        "estimate_observability_policy": {"const": "observed_requires_minimum_observed_count"},
+        "metric_direction": {"const": "lower_is_better"},
+        "source_domain_id": {"const": "reiyah.domain.synthetic_source"},
+        "target_domain_id": {"const": "reiyah.domain.synthetic_target"},
+        "domain_role_binding_policy": {"const": "exact_distinct_source_and_target_domain_ids"},
+        "guarantee_separate_from_empirical_coverage": {"const": true},
+        "required_assumption_failure_policy": {"const": "guarantee_not_supported"},
+        "empirical_coverage_policy": {"const": "exact_covered_over_evaluated_with_nonobserved_zero_or_unknown"},
+        "group_scope_policy": {"const": "registry_bound_group_set_with_declared_disjoint_or_overlapping_aggregation"},
+        "calibration_set_ref": {
+          "const": {
+            "record_id": "reiyah.split.synthetic_calibration",
+            "record_kind": "reiyah.kind.split",
+            "version": "1.2.0"
+          }
+        },
+        "test_set_ref": {
+          "const": {
+            "record_id": "reiyah.split.synthetic_test",
+            "record_kind": "reiyah.kind.split",
+            "version": "1.2.0"
+          }
+        },
+        "split_role_binding_policy": {"const": "exact_calibration_and_test_split_ids_roles_and_versions"},
+        "arithmetic_comparison": {"const": "absolute_error_lte"},
+        "arithmetic_absolute_tolerance": {"const": 1e-12},
+        "states": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "enum": [
+              "observed",
+              "missing",
+              "unmeasured",
+              "out_of_distribution",
+              "sensor_invalid",
+              "abstained"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "disjoint_required": {"const": true},
+        "exhaustive_required": {"const": true},
+        "derived_rates_required": {"const": true},
+        "joint_axis_cells": {
+          "const": [
+            "reference_ood_detector_ood",
+            "reference_ood_detector_in_distribution",
+            "reference_ood_detector_unknown",
+            "reference_in_distribution_detector_ood",
+            "reference_in_distribution_detector_in_distribution",
+            "reference_in_distribution_detector_unknown",
+            "reference_unknown_detector_ood",
+            "reference_unknown_detector_in_distribution",
+            "reference_unknown_detector_unknown"
+          ]
+        },
+        "reference_detector_axes_disjoint": {"const": true},
+        "unknown_axis_policy": {"const": "retain_unknowns_as_atomic_partition_cells"},
+        "minimum_count": {"type": "integer", "minimum": 1},
+        "minimum_coverage": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "maximum_interval_width": {"type": "number", "exclusiveMinimum": 0},
+        "ineligible_group_policy": {"const": "complete_worst_group_unknown"},
+        "tie_comparison": {"const": "absolute_error_lte"},
+        "tie_absolute_tolerance": {"const": 1e-12},
+        "belief_state_space_coverage": {"const": "every_registry_state_exactly_once"},
+        "belief_probability_policy": {"const": "sum_one_within_protocol_tolerance"},
+        "belief_normalization_policy_binding": {"const": "exact_policy_identity_release_scope_operands_and_runtime_boundary"},
+        "observation_validity_value_policy": {"const": "independent_compatible_axes"},
+        "object_reconciliation": {"const": "exact_record_id_kind_and_version"},
+        "information_set_reconciliation": {"const": "exact_membership_and_freeze"},
+        "observation_time_policy": {"const": "event_lte_measured_lte_available"},
+        "availability_boundary_policy": {"const": "available_lte_belief_as_of_and_information_freeze"},
+        "temporal_reconciliation": {"const": "event_measurement_availability_belief_decision_exact_chain"},
+        "common_opportunity_cells": {
+          "const": ["both_miss", "human_only_miss", "automation_only_miss", "neither_miss"]
+        },
+        "marginal_derivation": {"const": "exact_from_disjoint_common_opportunity_cells"},
+        "identifiability_policy": {"const": "observed_common_cells_or_nonidentifiable"},
+        "joint_unknown_propagation": {"const": "nonobserved_operand_forces_nonidentified_nonobserved_summary"},
+        "opportunity_set_record_kind": {"const": "reiyah.kind.opportunity_set"},
+        "opportunity_manifest_resolution_policy": {"const": "exact_ordered_registry_rows_bound_to_artifact"},
+        "opportunity_set_ids": {
+          "const": [
+            "reiyah.opportunity-set.synthetic-joint-observed",
+            "reiyah.opportunity-set.synthetic-joint-nonobserved",
+            "reiyah.opportunity-set.synthetic-joint-empty"
+          ]
+        },
+        "opportunity_rule_ref": {
+          "const": {"rule_id": "reiyah.rule.joint_miss_opportunity", "rule_kind": "reiyah.kind.event_rule", "version": "1.2.0"}
+        },
+        "object_ref": {
+          "const": {"record_id": "reiyah.object.synthetic_vehicle", "record_kind": "reiyah.kind.vehicle_object", "version": "1.2.0"}
+        },
+        "human_channel_ref": {
+          "const": {"record_id": "reiyah.channel.synthetic_human_observation", "record_kind": "reiyah.kind.observation_channel", "version": "1.2.0"}
+        },
+        "automation_channel_ref": {
+          "const": {"record_id": "reiyah.channel.synthetic_automation_observation", "record_kind": "reiyah.kind.observation_channel", "version": "1.2.0"}
+        },
+        "warning_rule_ref": {
+          "const": {"rule_id": "reiyah.rule.joint_warning_observation", "rule_kind": "reiyah.kind.event_rule", "version": "1.2.0"}
+        },
+        "fallback_rule_ref": {
+          "const": {"rule_id": "reiyah.rule.joint_fallback_observation", "rule_kind": "reiyah.kind.event_rule", "version": "1.2.0"}
+        },
+        "clock_id": {"const": "reiyah.clock.synthetic-utc"},
+        "window_id": {"const": "reiyah.window.joint-opportunity-001"},
+        "row_derivation_policy": {"const": "exact_reference_validity_channel_warning_fallback_rows_to_disjoint_cells"},
+        "silent_joint_miss_policy": {"const": "both_channels_miss_and_warning_not_issued_and_fallback_not_activated"},
+        "eligible_evidence_basis": {"const": "independently_retained_exact_references"},
+        "empty_evidence_policy": {"const": "assumption_unknown"},
+        "self_evidence_policy": {"const": "ineligible"},
+        "assumption_consumer_scope": {"const": "conformal_exchangeability_and_transfer_overlap_invariance"}
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "contract_kind": {"const": "policy_distribution"},
+            "minimum_effective_sample_size": {"const": 2}
+          },
+          "required": [
+            "normalization_tolerance",
+            "normalization_comparison",
+            "relative_tolerance",
+            "logged_propensity_reconciliation",
+            "support_scope",
+            "weight_scope",
+            "ess_unit",
+            "horizon_coverage",
+            "terminal_reconciliation",
+            "weight_transformation_policy",
+            "normalized_weight_policy",
+            "minimum_effective_sample_size",
+            "ess_disposition_policy",
+            "history_identity_policy",
+            "support_cell_identity_policy",
+            "trajectory_set_record_kind",
+            "trajectory_manifest_resolution_policy",
+            "policy_table_record_kind",
+            "policy_table_resolution_policy",
+            "behavior_policy_ref",
+            "target_policy_ref"
+          ]
+        },
+        {
+          "properties": {"contract_kind": {"const": "causal_identification"}},
+          "required": [
+            "identification_strategy",
+            "requires_pre_treatment",
+            "requires_observed",
+            "prohibited_roles",
+            "acyclicity_sufficient",
+            "query_binding",
+            "selected_set_reconciliation",
+            "analysis_unit_id",
+            "split_unit_id",
+            "analysis_unit_set_ref",
+            "analysis_unit_member_ids",
+            "split_partition_policy",
+            "split_freeze_policy",
+            "stratification_input_policy"
+          ]
+        },
+        {
+          "properties": {"contract_kind": {"const": "readiness_aggregation"}},
+          "required": [
+            "required_unknown_policy",
+            "safety_critical_compensation_allowed",
+            "unresolved_set_policy",
+            "capability_set_record_kind",
+            "capability_manifest_resolution_policy",
+            "capability_criterion_rule_ref"
+          ]
+        },
+        {
+          "properties": {"contract_kind": {"const": "recovery_event_derivation"}},
+          "required": [
+            "event_selection",
+            "elapsed_time_origin",
+            "absence_in_valid_complete_window",
+            "nonobserved_input_policy",
+            "no_qualifying_event_policy",
+            "event_manifest_resolution_policy",
+            "recovery_criterion_ref",
+            "censoring_policy_ref",
+            "competing_event_policy_ref",
+            "event_type_role_bindings"
+          ]
+        },
+        {
+          "properties": {"contract_kind": {"const": "transfer_eligibility"}},
+          "required": [
+            "required_conditions",
+            "failed_condition_policy",
+            "minimum_observed_count",
+            "estimate_observability_policy",
+            "metric_direction",
+            "source_domain_id",
+            "target_domain_id",
+            "domain_role_binding_policy",
+            "arithmetic_comparison",
+            "arithmetic_absolute_tolerance",
+            "relative_tolerance"
+          ]
+        },
+        {
+          "properties": {"contract_kind": {"const": "conformal_guarantee"}},
+          "required": [
+            "guarantee_separate_from_empirical_coverage",
+            "required_assumption_failure_policy",
+            "empirical_coverage_policy",
+            "group_scope_policy",
+            "calibration_set_ref",
+            "test_set_ref",
+            "split_role_binding_policy",
+            "arithmetic_comparison",
+            "arithmetic_absolute_tolerance",
+            "relative_tolerance"
+          ]
+        },
+        {
+          "properties": {"contract_kind": {"const": "population_partition"}},
+          "required": [
+            "states",
+            "disjoint_required",
+            "exhaustive_required",
+            "derived_rates_required",
+            "joint_axis_cells",
+            "reference_detector_axes_disjoint",
+            "unknown_axis_policy"
+          ]
+        },
+        {
+          "properties": {"contract_kind": {"const": "minimum_information"}},
+          "required": [
+            "minimum_count",
+            "minimum_coverage",
+            "minimum_effective_sample_size",
+            "maximum_interval_width",
+            "ineligible_group_policy",
+            "arithmetic_comparison",
+            "arithmetic_absolute_tolerance",
+            "relative_tolerance",
+            "tie_comparison",
+            "tie_absolute_tolerance"
+          ]
+        },
+        {
+          "properties": {"contract_kind": {"const": "human_information_reconciliation"}},
+          "required": [
+            "belief_state_space_coverage",
+            "belief_probability_policy",
+            "belief_normalization_policy_binding",
+            "observation_validity_value_policy",
+            "object_reconciliation",
+            "information_set_reconciliation",
+            "observation_time_policy",
+            "availability_boundary_policy",
+            "temporal_reconciliation"
+          ]
+        },
+        {
+          "properties": {"contract_kind": {"const": "joint_silent_miss_identifiability"}},
+          "required": [
+            "common_opportunity_cells",
+            "marginal_derivation",
+            "identifiability_policy",
+            "joint_unknown_propagation",
+            "opportunity_set_record_kind",
+            "opportunity_manifest_resolution_policy",
+            "opportunity_set_ids",
+            "opportunity_rule_ref",
+            "object_ref",
+            "human_channel_ref",
+            "automation_channel_ref",
+            "warning_rule_ref",
+            "fallback_rule_ref",
+            "clock_id",
+            "window_id",
+            "row_derivation_policy",
+            "silent_joint_miss_policy"
+          ]
+        },
+        {
+          "properties": {"contract_kind": {"const": "assumption_evidence_eligibility"}},
+          "required": [
+            "eligible_evidence_basis",
+            "empty_evidence_policy",
+            "self_evidence_policy",
+            "assumption_consumer_scope"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "capabilityManifestMember": {
+      "type": "object",
+      "required": ["capability_id", "dimension_id", "required", "safety_critical", "weight", "criterion_rule_id", "threshold_operator", "threshold_value"],
+      "properties": {
+        "capability_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "dimension_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "required": {"type": "boolean"},
+        "safety_critical": {"type": "boolean"},
+        "weight": {"type": "number", "minimum": 0, "maximum": 1},
+        "criterion_rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "threshold_operator": {"enum": ["gt", "gte", "lt", "lte", "eq"]},
+        "threshold_value": {"type": "number"}
+      },
+      "additionalProperties": false
+    },
+    "recoveryEventManifestMember": {
+      "type": "object",
+      "required": ["event_id", "event_type", "role"],
+      "properties": {
+        "event_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "event_type": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "role": {"enum": ["recovery", "censoring", "competing"]}
+      },
+      "additionalProperties": false
+    },
+    "registryVersionedReference": {
+      "type": "object",
+      "required": ["record_id", "record_kind", "version"],
+      "properties": {
+        "record_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "record_kind": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"const": "1.2.0"}
+      },
+      "additionalProperties": false
+    },
+    "registryRuleReference": {
+      "type": "object",
+      "required": ["rule_id", "rule_kind", "version"],
+      "properties": {
+        "rule_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "rule_kind": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"const": "1.2.0"}
+      },
+      "additionalProperties": false
+    },
+    "policyTableProbability": {
+      "type": "object",
+      "required": ["action_id", "probability"],
+      "properties": {
+        "action_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "probability": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": false
+    },
+    "policyTableHistoryRow": {
+      "type": "object",
+      "required": ["history_id", "probabilities"],
+      "properties": {
+        "history_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "probabilities": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/policyTableProbability"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "opportunityWindow": {
+      "type": "object",
+      "required": ["clock_id", "window_id", "opened_at", "closed_at"],
+      "properties": {
+        "clock_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "window_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "opened_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "closed_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"}
+      },
+      "additionalProperties": false
+    },
+    "registryNonObservedMeasurement": {
+      "type": "object",
+      "required": ["state", "reason", "basis_ids"],
+      "properties": {
+        "state": {"enum": ["missing", "unmeasured", "out_of_distribution", "sensor_invalid", "abstained"]},
+        "reason": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "basis_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "registryStringMeasurement": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "value"],
+          "properties": {
+            "state": {"const": "observed"},
+            "value": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+          },
+          "additionalProperties": false
+        },
+        {"$ref": "#/$defs/registryNonObservedMeasurement"}
+      ]
+    },
+    "registryTimestampMeasurement": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["state", "value"],
+          "properties": {
+            "state": {"const": "observed"},
+            "value": {"$ref": "common.schema.json#/$defs/utcTimestamp"}
+          },
+          "additionalProperties": false
+        },
+        {"$ref": "#/$defs/registryNonObservedMeasurement"}
+      ]
+    },
+    "opportunityChannel": {
+      "type": "object",
+      "required": ["channel_ref", "outcome"],
+      "properties": {
+        "channel_ref": {"$ref": "#/$defs/registryVersionedReference"},
+        "outcome": {"$ref": "#/$defs/registryStringMeasurement"}
+      },
+      "additionalProperties": false
+    },
+    "opportunityRuleOutcome": {
+      "type": "object",
+      "required": ["rule_ref", "outcome"],
+      "properties": {
+        "rule_ref": {"$ref": "#/$defs/registryRuleReference"},
+        "outcome": {"$ref": "#/$defs/registryStringMeasurement"}
+      },
+      "additionalProperties": false
+    },
+    "opportunityManifestMember": {
+      "type": "object",
+      "required": [
+        "opportunity_id", "object_ref", "clock_id", "window_id", "occurred_at",
+        "reference_state", "reference_validity", "human_channel", "automation_channel",
+        "warning", "fallback"
+      ],
+      "properties": {
+        "opportunity_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "object_ref": {"$ref": "#/$defs/registryVersionedReference"},
+        "clock_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "window_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "occurred_at": {"$ref": "#/$defs/registryTimestampMeasurement"},
+        "reference_state": {"$ref": "#/$defs/registryStringMeasurement"},
+        "reference_validity": {"$ref": "#/$defs/registryStringMeasurement"},
+        "human_channel": {"$ref": "#/$defs/opportunityChannel"},
+        "automation_channel": {"$ref": "#/$defs/opportunityChannel"},
+        "warning": {"$ref": "#/$defs/opportunityRuleOutcome"},
+        "fallback": {"$ref": "#/$defs/opportunityRuleOutcome"}
+      },
+      "additionalProperties": false
+    },
+    "definition": {
+      "type": "object",
+      "required": [
+        "definition_id",
+        "kind",
+        "version",
+        "lifecycle_status",
+        "owner_protocol_release_id",
+        "description"
+      ],
+      "properties": {
+        "definition_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "kind": {"$ref": "#/$defs/definitionKind"},
+        "version": {"const": "1.2.0"},
+        "lifecycle_status": {"const": "proposed"},
+        "owner_protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+        "description": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "executable_contract": {"$ref": "#/$defs/executableContract"},
+        "member_ids": {
+          "type": "array",
+          "minItems": 0,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "bound_artifact_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "capability_contracts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/capabilityManifestMember"},
+          "uniqueItems": true
+        },
+        "event_contracts": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/recoveryEventManifestMember"},
+          "uniqueItems": true
+        },
+        "window_observation_complete": {"type": "boolean"},
+        "complete_through": {
+          "oneOf": [
+            {"type": "string", "format": "date-time", "pattern": "Z$"},
+            {"type": "null"}
+          ]
+        },
+        "policy_ref": {"$ref": "#/$defs/registryVersionedReference"},
+        "policy_role": {"enum": ["behavior", "target"]},
+        "action_space_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "action_ids": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "history_probability_rows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/policyTableHistoryRow"}
+        },
+        "object_ref": {"$ref": "#/$defs/registryVersionedReference"},
+        "opportunity_window": {"$ref": "#/$defs/opportunityWindow"},
+        "opportunity_contracts": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/opportunityManifestMember"}
+        },
+        "synthetic_fixture_only": {"const": true},
+        "evidence_eligible": {"const": false},
+        "real_data_resolution_authorized": {"const": false},
+        "actor_type": {"$ref": "#/$defs/actorType"},
+        "record_kind": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "estimand_contract": {"$ref": "#/$defs/estimandContract"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {"enum": ["state_space", "choice_set", "action_space", "group_set", "analysis_unit_set", "trajectory_set", "opportunity_set"]}
+            },
+            "required": ["kind"]
+          },
+          "then": {"required": ["member_ids"]}
+        },
+        {
+          "if": {
+            "properties": {"kind": {"enum": ["capability_set", "recovery_event_manifest", "trajectory_set", "policy_table", "opportunity_set"]}},
+            "required": ["kind"]
+          },
+          "then": {
+            "required": ["bound_artifact_ids", "synthetic_fixture_only", "evidence_eligible", "real_data_resolution_authorized"]
+          },
+          "else": {
+            "not": {
+              "anyOf": [
+                {"required": ["bound_artifact_ids"]},
+                {"required": ["synthetic_fixture_only"]},
+                {"required": ["evidence_eligible"]},
+                {"required": ["real_data_resolution_authorized"]}
+              ]
+            }
+          }
+        },
+        {
+          "if": {"properties": {"kind": {"const": "capability_set"}}, "required": ["kind"]},
+          "then": {"required": ["capability_contracts"]},
+          "else": {"not": {"required": ["capability_contracts"]}}
+        },
+        {
+          "if": {"properties": {"kind": {"const": "recovery_event_manifest"}}, "required": ["kind"]},
+          "then": {"required": ["event_contracts", "window_observation_complete", "complete_through"]},
+          "else": {
+            "not": {
+              "anyOf": [
+                {"required": ["event_contracts"]},
+                {"required": ["window_observation_complete"]},
+                {"required": ["complete_through"]}
+              ]
+            }
+          }
+        },
+        {
+          "if": {"properties": {"kind": {"const": "opportunity_set"}}, "required": ["kind"]},
+          "then": {
+            "required": ["object_ref", "opportunity_window", "opportunity_contracts"]
+          },
+          "else": {
+            "not": {
+              "anyOf": [
+                {"required": ["object_ref"]},
+                {"required": ["opportunity_window"]},
+                {"required": ["opportunity_contracts"]}
+              ]
+            }
+          }
+        },
+        {
+          "if": {"properties": {"kind": {"const": "policy_table"}}, "required": ["kind"]},
+          "then": {
+            "required": ["policy_ref", "policy_role", "action_space_id", "action_ids", "history_probability_rows"]
+          },
+          "else": {
+            "not": {
+              "anyOf": [
+                {"required": ["policy_ref"]},
+                {"required": ["policy_role"]},
+                {"required": ["action_space_id"]},
+                {"required": ["action_ids"]},
+                {"required": ["history_probability_rows"]}
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {"kind": {"const": "actor"}},
+            "required": ["kind"]
+          },
+          "then": {"required": ["actor_type"]},
+          "else": {"not": {"required": ["actor_type"]}}
+        },
+        {
+          "if": {
+            "properties": {
+              "definition_id": {
+                "enum": [
+                  "reiyah.rule.ope-policy-distribution",
+                  "reiyah.rule.causal-identification",
+                  "reiyah.rule.readiness-unknown-propagation",
+                  "reiyah.rule.recovery-event-derivation",
+                  "reiyah.rule.transfer-eligibility",
+                  "reiyah.rule.conformal-guarantee-disposition",
+                  "reiyah.rule.ood-population-partition",
+                  "reiyah.rule.worst-group-eligibility",
+                  "reiyah.rule.human-belief-observation-decision-reconciliation",
+                  "reiyah.rule.joint-silent-miss-identifiability",
+                  "reiyah.rule.assumption-evidence-eligibility"
+                ]
+              }
+            },
+            "required": ["definition_id"]
+          },
+          "then": {"required": ["executable_contract"]}
+        },
+        {
+          "if": {
+            "properties": {"kind": {"const": "estimand"}},
+            "required": ["kind"]
+          },
+          "then": {"required": ["estimand_contract"]},
+          "else": {"not": {"required": ["estimand_contract"]}}
+        },
+        {
+          "if": {
+            "properties": {"kind": {"const": "record_identity"}},
+            "required": ["kind"]
+          },
+          "then": {"required": ["record_kind"]},
+          "else": {"not": {"required": ["record_kind"]}}
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.transfer_gap_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/transfer_evaluation/gap/value", "value": 0.03}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-TRANSFER-GAP", "instance_pointer": "/transfer_evaluation/gap/value", "schema_keyword": "semantic", "reason": "An observed transfer gap must equal target estimate minus source estimate under the exact shared metric contract."},
+  "runtime_execution_authorized": false
+}

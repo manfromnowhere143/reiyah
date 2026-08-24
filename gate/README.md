@@ -1,91 +1,114 @@
-# Gate A Review and Release Records
+# Gate A Review and Distribution Records
 
-This directory contains the digest-bound architecture evidence index, retained validation
-reports, append-only public distribution receipts, and, only after direct human action,
-append-only operator decision records.
+This directory separates four record classes that must never confer authority on one another:
 
-## Frozen public records
+1. the current candidate evidence index and its digest sidecar;
+2. immutable versioned validation reports;
+3. append-only publisher distribution receipts; and
+4. append-only operator decisions created only through direct authorized human action.
 
-The frozen indexed packet is commit
-`aa5f9b9b455219536183630b0be1e801a18a575e`, with evidence-index digest
-`sha256:91149ec8bfc9a3999ce95d8c18ce0d558cf974b0afb412a7ac11027c63056c7a`.
-Commit `68854b474f7c4ebd95cc79ced56411c2d5935f78` adds only the append-only
-[`1.1.0` public distribution receipt](public-distribution-receipts/reiyah.public-distribution-receipt-1.1.0.json).
-That receipt records completed transport and verified remote readback. It does not evaluate
-GA-17, accept Gate A, authorize runtime, or create scientific support.
+Independent transport observations use a separate schema and are never inferred from a publisher
+receipt.
 
-The sequence-one receipt logically names `gate/GATE_A_EVIDENCE_INDEX.json` as it existed in the
-published `1.1.0` packet. Offline replay resolves that binding through the byte-exact [historical index
-snapshot](../history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.json) and its [matching
-sidecar](../history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.sha256). The snapshot is immutable
-release history, not a second current index.
+## Immutable public predecessors
 
-Gate A `1.1.1` is also frozen public history. Its packet commit is
-`90072fb64f3c16cb5d0af0f1a3bcad56554707fa`, its evidence-index digest is
-`sha256:308f65ba2693c13fa71d081dad3f74f56ec80617e97497a2606c0d88a07b2ceb`, and its canonical
-report digest is
-`sha256:76c0dcce583beb02b121776e14bc9df41833a26c5c49488270d96861b3e33806`. Commit
-`8f4ba9894faf257c46351b2a89fc17f112a988f1` adds only append-only receipt sequence two. The
-[receipt](public-distribution-receipts/reiyah.public-distribution-receipt-1.1.1.json) records
-the packet commit and verified readback without creating acceptance, scientific support, or
-runtime authority. Replay resolves its logical root-index binding through the byte-exact
-[1.1.1 historical snapshot](../history/gate-a-1.1.1/gate/GATE_A_EVIDENCE_INDEX.json) and
-[sidecar](../history/gate-a-1.1.1/gate/GATE_A_EVIDENCE_INDEX.sha256).
+Gate A `1.1.0`, `1.1.1`, and `1.1.2` are frozen public history. Their current-path indexes would
+collide, so exact copies are retained under `history/`; their version-qualified reports and
+publisher receipts remain at their canonical paths.
 
-Gate A `1.1.2` is the current documentation-and-continuity successor. It changes no scientific
-mission, protocol, evidence profile, benchmark result, or runtime authorization. Its root index,
-sidecar, and canonical report identify the new review target only after deterministic closeout.
-Until a valid append-only sequence-three receipt exists, no packet commit or remote readback is
-claimed for `1.1.2`.
+| Packet | Packet commit | Index digest | Report digest | Publisher receipt |
+|---|---|---|---|---|
+| `1.1.0` | `aa5f9b9b455219536183630b0be1e801a18a575e` | `sha256:91149ec8bfc9a3999ce95d8c18ce0d558cf974b0afb412a7ac11027c63056c7a` | versioned report retained | sequence 1 |
+| `1.1.1` | `90072fb64f3c16cb5d0af0f1a3bcad56554707fa` | `sha256:308f65ba2693c13fa71d081dad3f74f56ec80617e97497a2606c0d88a07b2ceb` | `sha256:76c0dcce583beb02b121776e14bc9df41833a26c5c49488270d96861b3e33806` | sequence 2 |
+| `1.1.2` | `ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b` | `sha256:17f3a2e601e9cb4e1c0cd0f97561b1da9ffdc7d5893ed4af4eaccbaf8a67989f` | `sha256:06fc3114522c16625da337fe25c71b1fd53abeeaf9c31a11748afc06eb5d66d8` | sequence 3 |
 
-The original `gate/decisions/OPERATOR_DECISION.template.json` and the add-only
-[`OPERATOR_DECISION-1.1.1.template.json`](decisions/OPERATOR_DECISION-1.1.1.template.json) remain
-historical templates for their exact packets. The current add-only template is
-[`OPERATOR_DECISION-1.1.2.template.json`](decisions/OPERATOR_DECISION-1.1.2.template.json).
+The `1.1.2` receipt-bearing commit is
+`656d826cfe6938fd628c0ede7ea15929fe11d90e`. Exact recovery identity and replay limits are
+recorded in [`history/gate-a-1.1.2/RECOVERY.json`](../history/gate-a-1.1.2/RECOVERY.json).
+
+Historical receipts retain publisher assertions about publication and remote readback. They are
+not independent transport observations. No historical receipt evaluates GA-17, accepts Gate A,
+creates scientific evidence, supports a safety or compliance claim, or authorizes runtime.
+
+## Current correction candidate
+
+Gate A `1.2.0` is a candidate intended to correct the retained `1.1.2` scientific and
+validation-integrity defects. It keeps
+mission `reiyah.mission@1.1.0` and proposes protocol
+`reiyah.protocol.harbor-gate-a@1.2.0`. Its current index remains
+`candidate_pending_canonical_report` until a clean immutable release replay emits a
+byte-identical, zero-diagnostic `gate-a-validation-1.2.0.json` report.
+
+No sequence-four publisher receipt, real operator decision, or independent transport record
+exists during candidate construction. The `1.2.0` template is deliberately invalid and
+non-accepting:
+
+[`OPERATOR_DECISION-1.2.0.template.json`](decisions/OPERATOR_DECISION-1.2.0.template.json)
+
+Historical decision templates remain frozen for their own packets and cannot be retargeted.
 
 ## No inferred acceptance
 
-The repository bootstrap, passing validators, assistant output, generated prose, checksums,
-and a typed reviewer name do not constitute acceptance. The initial architecture intentionally
-contains no completed operator decision record.
+Repository bootstrap, passing validators, public visibility, generated prose, assistant output,
+checksums, signatures, consensus, a typed reviewer name, a publisher receipt, and an independent
+transport observation do not constitute operator acceptance.
+
+The offline validator may check a decision record's schema, exact artifact bindings, and linear
+history. It cannot select a decision, create a record, authenticate a person, establish their
+authority, or mark GA-17 as passed.
 
 ## Decision-record procedure
 
-After canonical full-mode validation reports `architecture_complete` for the exact Gate A
-`1.1.2` successor, an authorized operator may copy the non-normative template at
-`gate/decisions/OPERATOR_DECISION-1.1.2.template.json` to a new append-only file named with a
-stable lowercase identifier, for example:
+Only after the canonical release report classifies the exact `1.2.0` index bytes as
+`architecture_complete` may an authorized human use the current template as a starting point.
+The human must create a new append-only record named with a stable lowercase identity, for
+example:
 
 `gate/decisions/reiyah.gate-a-decision-YYYYMMDDTHHMMSSZ.json`
 
-The operator must replace every placeholder; use an independently verifiable lowercase
-`operator.*` identifier; state a substantive authority basis and rationale; bind the exact
-canonical evidence-index, mission release, protocol release, and retained validation-report
-artifact IDs, paths, schema IDs, versions, and SHA-256 digests; acknowledge all four residual
-risk statements; and choose `accepted`, `rejected`, or `deferred`. The bound report must be the
-canonical `gate/validation-reports/gate-a-validation-1.1.2.json` bytes and must establish
-architecture completeness for the same index digest.
+The operator must replace every placeholder and bind the exact index, canonical report, mission,
+protocol, artifact IDs, paths, schema IDs, versions, and SHA-256 digests. The record must identify
+the operator and authority basis, retain a UTC decision time and substantive rationale,
+acknowledge residual risks and the no-runtime boundary, and choose `accepted`, `rejected`, or
+`deferred`.
 
-The operator must also set `decision_sequence` and `history_policy: append_only_linear`. The
-first decision uses sequence one with null predecessor ID and digest. Every later decision
-names and digest-binds the immediate prior record. Repository validation rejects duplicate
-record or artifact IDs, non-increasing UTC times, branches, cycles, gaps, multiple roots or
-heads, and predecessor mismatch.
+Decision records form one append-only linear chain. Sequence one has null predecessor fields.
+Every successor binds the immediate prior record's identity and digest and has a strictly later
+UTC decision time. Duplicate identities, branches, cycles, gaps, multiple roots, multiple heads,
+or predecessor mismatch are invalid.
 
-The record must validate against the current operator-decision schema. Structural validity is
-necessary but never sufficient: identity and authority must be independently verified outside
-the repository, and the repository validator never reports GA-17 as `passed`. No tool may choose
-the decision or populate identity, authority, or rationale on the operator's behalf. A copied
-template must remove `template_notice`, change `is_template` to `false`, and add or replace any
-fields required by the current schema; the template is deliberately non-normative and invalid
-until those operator-controlled steps are complete. Schema validity constrains structure but
-does not authenticate identity or authority.
+Structural validity is necessary but insufficient. An independently authorized external process
+must verify the named human's identity and authority. A change to any bound byte makes the
+decision stale for authorization purposes but never deletes it.
 
-Changing any indexed artifact invalidates an earlier `accepted` decision for authorization
-purposes but never deletes it. A new validation and later decision append a new record with a
-`supersedes_record_id` reference.
+## Publication and transport procedure
 
-The frozen public `1.1.0` and `1.1.1` packets must not be regenerated in place. A correction after
-public distribution requires a newly versioned Gate A packet, index, validation report, and
-review target. Independent review of the exact successor remains separate from operator
-acceptance.
+Publication is a separate event. It requires fresh event-specific operator distribution
+authority, a current rights observation, exact index and report bindings, a distinct packet
+commit, and an append-only sequence-four receipt. The receipt schema permits only
+`transport_verification_state: asserted_unverified`; its remote readback object is explicitly a
+publisher assertion.
+
+The packet commit must exist before the rights record because the rights schema binds that exact
+commit, index, and report. The validation plan therefore permits exactly one event-specific future
+rights path as a cycle-breaking projection exclusion and forbids a broad rights prefix. After two
+clean packet replays, create the fresh rights record, push the exact packet, then commit that
+record and the receipt together as a direct child of the packet commit. Release replay at the
+receipt-bearing child must reproduce the same packet index and report bytes.
+
+The two official-page capture manifests are created before the packet and indexed normally. They
+retain predeclared method-specific observation metadata, bounded paraphrases, and an explicit
+no-body/no-redistribution limitation. Direct HTTP mode records the unretained response digest and
+size; a closed adapter mode records a blocked direct attempt and leaves transport values the
+adapter did not expose unasserted. The post-packet rights record exact-binds those manifest bytes.
+Publication freshness is checked against both capture completion times and ordered event
+timestamps; an aged capture requires a new packet rather than an in-place refresh.
+
+Independent transport verification requires a separate authorized observer and retained
+observation bytes bound to the exact repository URL, ref, commit, index, report, and publisher
+receipt. The observer must not treat publisher assertions as independent evidence. A transport
+record can report verified, contradicted, inconclusive, or failed observation as its schema
+allows, but none of those states accepts Gate A or changes GA-17.
+
+Never regenerate, relabel, or overwrite a released index, report, decision, or receipt. A changed
+review target always receives a newly versioned append-only successor.

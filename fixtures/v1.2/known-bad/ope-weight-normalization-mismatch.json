@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope_weight_normalization_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/weight_construction/normalization", "value": "self_normalized_per_horizon"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-OPE-WEIGHT-NORMALIZATION", "instance_pointer": "/effective_sample_size_by_horizon/0/normalization_mode", "schema_keyword": "semantic", "reason": "Every ESS horizon row must reconcile its normalization mode, denominator, and resulting weight sum with the declared construction."},
+  "runtime_execution_authorized": false
+}

@@ -1,0 +1,17 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.conformal_false_exchangeability_guarantee",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/conformal_evaluation/guarantee/kind", "value": "finite_sample_marginal"},
+    {"operation": "replace", "json_pointer": "/conformal_evaluation/guarantee/disposition", "value": "asserted"},
+    {"operation": "replace", "json_pointer": "/conformal_evaluation/guarantee/scope", "value": "declared_test_population"}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-CONFORMAL-GUARANTEE-ASSUMPTION", "instance_pointer": "/conformal_evaluation/guarantee/disposition", "schema_keyword": "const", "reason": "A finite-sample conformal guarantee cannot be asserted when exchangeability is unmeasured."},
+  "runtime_execution_authorized": false
+}

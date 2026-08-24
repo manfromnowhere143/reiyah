@@ -1,0 +1,20 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.recovery_censoring_policy_substitution",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/recovery/censoring_policy/rule_id", "value": "reiyah.rule.fixture-unmeasured"}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-RECOVERY-EVENT-CLASSIFICATION",
+    "instance_pointer": "/recovery/censoring_policy",
+    "schema_keyword": "semantic",
+    "reason": "Recovery, censoring, and competing-event policy identities and each synthetic event type-to-role classification must exact-bind the executable recovery contract."
+  },
+  "runtime_execution_authorized": false
+}

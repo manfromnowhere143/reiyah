@@ -1,0 +1,39 @@
+{
+  "base_fixture_path": "fixtures/v1.2/good/study-design-preregistration.json",
+  "expected_failure": {
+    "instance_pointer": "/deviations",
+    "reason": "A document-local identifier must resolve exactly once in its explicitly owned collection and may not be inferred by naming convention.",
+    "rule_id": "GA-DOCUMENT-LOCAL-REFERENCE-RESOLUTION",
+    "schema_keyword": "semantic"
+  },
+  "fixture_id": "reiyah.fixture.bad.study_duplicate_deviation_id",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "mutations": [
+    {
+      "json_pointer": "/deviations/-",
+      "operation": "add",
+      "value": {
+        "description": "First synthetic deviation record for uniqueness validation.",
+        "deviation_id": "reiyah.deviation.synthetic_duplicate",
+        "impact_assessment": "No empirical impact is asserted by this static fixture.",
+        "status": "proposed"
+      }
+    },
+    {
+      "json_pointer": "/deviations/-",
+      "operation": "add",
+      "value": {
+        "description": "Second synthetic deviation record for uniqueness validation.",
+        "deviation_id": "reiyah.deviation.synthetic_duplicate",
+        "impact_assessment": "No empirical impact is asserted by this static fixture.",
+        "status": "proposed"
+      }
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "expected_outcome": "reject",
+  "runtime_execution_authorized": false,
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json"
+}

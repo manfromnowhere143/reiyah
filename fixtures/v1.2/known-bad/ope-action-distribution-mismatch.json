@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope_action_distribution_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/trajectories/0/steps/0/behavior_distribution/1/probability", "value": 0.6}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-OPE-ACTION-DISTRIBUTION", "instance_pointer": "/trajectories/0/steps/0/behavior_distribution", "schema_keyword": "semantic", "reason": "Every policy distribution must cover the exact action space once and sum to one."},
+  "runtime_execution_authorized": false
+}

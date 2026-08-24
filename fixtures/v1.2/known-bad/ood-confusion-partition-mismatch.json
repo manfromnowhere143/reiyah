@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ood_confusion_partition_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/ood_evaluation/joint_state_cells/reference_in_distribution_detector_in_distribution/value", "value": 86}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-OOD-DISJOINT-PARTITION", "instance_pointer": "/ood_evaluation/joint_state_cells", "schema_keyword": "semantic", "reason": "The nine disjoint reference-by-detector cells must exhaust the OOD population exactly once."},
+  "runtime_execution_authorized": false
+}

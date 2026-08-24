@@ -1,0 +1,25 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/publication-event-mutation-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.governance.capture-role-path@1.2.0",
+  "fixture_class": "known-bad-governance",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "synthetic_fixture_only": true,
+  "baseline_fixture_id": "reiyah.fixture.governance.publication-event-synthetic-baseline@1.2.0",
+  "baseline_expected_outcome": "accepted",
+  "expected_diagnostic": "GA12-CAPTURE-ROLE-PATH",
+  "expected_replay": {
+    "rejection_layer": "structural_schema",
+    "target_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/publication-event-fixture.schema.json",
+    "schema_keyword": "oneOf",
+    "instance_pointer": "/capture_manifests/0/record",
+    "semantic_replay_required": false,
+    "exact_singleton_semantic_diagnostic_required": false
+  },
+  "mutation": {
+    "operation": "replace",
+    "json_pointer": "/capture_manifests/0/record/artifact_path",
+    "value": "evidence/rights-observations/2026-08-25-nist-technical-series-gate-a-static-correction-1.2.0.json"
+  }
+}

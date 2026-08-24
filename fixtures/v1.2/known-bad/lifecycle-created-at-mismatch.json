@@ -1,0 +1,24 @@
+{
+  "base_fixture_path": "fixtures/v1.2/good/evaluation-assurance-bundle.json",
+  "expected_failure": {
+    "instance_pointer": "/created_at",
+    "reason": "A record's created_at must equal the first lifecycle event time, and every appended lifecycle event must be strictly later while immutable successors preserve the original creation time.",
+    "rule_id": "GA-LIFECYCLE-CHRONOLOGY",
+    "schema_keyword": "semantic"
+  },
+  "fixture_id": "reiyah.fixture.bad.lifecycle_created_at_mismatch",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "mutations": [
+    {
+      "json_pointer": "/created_at",
+      "operation": "replace",
+      "value": "2026-08-24T08:00:01Z"
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "expected_outcome": "reject",
+  "runtime_execution_authorized": false,
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json"
+}

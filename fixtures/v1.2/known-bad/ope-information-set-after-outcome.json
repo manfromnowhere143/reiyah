@@ -1,0 +1,24 @@
+{
+  "base_fixture_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+  "expected_failure": {
+    "instance_pointer": "/trajectories/0/steps/1/history_prefix",
+    "reason": "Every trajectory, history, and information-set identity must be unique, and each frozen information set must exact-bind the policy schema and the complete ordered prior-action history before outcome access.",
+    "rule_id": "GA-OPE-HISTORY-INFORMATION-SET",
+    "schema_keyword": "semantic"
+  },
+  "fixture_id": "reiyah.fixture.bad.ope_information_set_after_outcome",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "mutations": [
+    {
+      "json_pointer": "/trajectories/0/steps/1/information_set/frozen_at",
+      "operation": "replace",
+      "value": "2026-08-24T08:31:00Z"
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "expected_outcome": "reject",
+  "runtime_execution_authorized": false,
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json"
+}

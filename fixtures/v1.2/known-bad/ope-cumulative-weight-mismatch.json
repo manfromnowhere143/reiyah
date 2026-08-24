@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope_cumulative_weight_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/trajectories/0/steps/1/cumulative_importance_weight", "value": 1.4}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-OPE-CUMULATIVE-WEIGHT", "instance_pointer": "/trajectories/0/steps/1/cumulative_importance_weight", "schema_keyword": "semantic", "reason": "A horizon weight must be the product of all history-local step ratios through that horizon."},
+  "runtime_execution_authorized": false
+}

@@ -1,0 +1,24 @@
+{
+  "base_fixture_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+  "expected_failure": {
+    "instance_pointer": "/trajectories/1/trajectory_id",
+    "reason": "A document-local identifier must resolve exactly once in its explicitly owned collection and may not be inferred by naming convention.",
+    "rule_id": "GA-DOCUMENT-LOCAL-REFERENCE-RESOLUTION",
+    "schema_keyword": "semantic"
+  },
+  "fixture_id": "reiyah.fixture.bad.ope_duplicate_trajectory_id",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "mutations": [
+    {
+      "json_pointer": "/trajectories/1/trajectory_id",
+      "operation": "replace",
+      "value": "reiyah.trajectory.synthetic_a"
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "expected_outcome": "reject",
+  "runtime_execution_authorized": false,
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json"
+}

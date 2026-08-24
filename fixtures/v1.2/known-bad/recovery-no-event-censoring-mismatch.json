@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.recovery_no_event_censoring_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment.json",
+  "mutations": [
+    {"operation": "remove", "json_pointer": "/recovery/events/0"},
+    {"operation": "replace", "json_pointer": "/recovery/outcome/qualifying_event_id", "value": {"state": "absent", "reason": "no_qualifying_event"}}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-RECOVERY-NO-EVENT-CENSORING", "instance_pointer": "/recovery/outcome", "schema_keyword": "semantic", "reason": "A complete observed window with no qualifying event must be right censored, bind an explicit absent event, and use close minus index elapsed time."},
+  "runtime_execution_authorized": false
+}

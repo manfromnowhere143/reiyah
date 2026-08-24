@@ -1,0 +1,20 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope_policy_table_role_substitution",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/behavior_policy/policy_table_ref/record_id", "value": "reiyah.policy-table.synthetic-behavior-unsupported"}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-OPE-POLICY-TABLE-BINDING",
+    "instance_pointer": "/trajectories/0/steps/0/behavior_distribution",
+    "schema_keyword": "semantic",
+    "reason": "Every behavior and target distribution must exact-bind the artifact-bound protocol-owned synthetic policy table selected for its role and history; the table is static resolver evidence, not an executed policy."
+  },
+  "runtime_execution_authorized": false
+}

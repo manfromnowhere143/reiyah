@@ -1,0 +1,425 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/publication-event-fixture.schema.json",
+  "title": "Gate A 1.2.0 synthetic publication-event fixture",
+  "description": "Closed, synthetic-only governance fixture that value-binds four production-schema-shaped positive records and an acyclic C_packet to C_receipt topology observation. It is test input only and creates no publication, transport, legal, scientific, acceptance, or runtime authority.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "artifact_version",
+    "fixture_id",
+    "fixture_class",
+    "mission_release_id",
+    "protocol_release_id",
+    "synthetic_fixture_only",
+    "baseline_expected_outcome",
+    "semantic_contract",
+    "governance_positive_fixture_refs",
+    "capture_manifests",
+    "rights_revalidation",
+    "publisher_receipt",
+    "topology_observation"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/publication-event-fixture.schema.json"
+    },
+    "artifact_version": {"const": "1.2.0"},
+    "fixture_id": {
+      "const": "reiyah.fixture.governance.publication-event-synthetic-baseline@1.2.0"
+    },
+    "fixture_class": {"const": "known-good-publication-event"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+    "synthetic_fixture_only": {"const": true},
+    "baseline_expected_outcome": {"const": "accepted"},
+    "semantic_contract": {
+      "const": {
+        "chronology_contract": {
+          "capture_to_rights": "all_capture_observation_completed_at_lte_rights_observed_at",
+          "rights_to_operator_authorization": "rights_observed_at_lte_distribution_authorization_observed_at",
+          "operator_authorization_to_publish": "distribution_authorization_observed_at_lte_published_at",
+          "publish_to_publisher_readback": "published_at_lte_remote_readback_asserted_at",
+          "publisher_readback_to_receipt_record": "remote_readback_asserted_at_lte_recorded_at",
+          "freshness": "oldest_capture_age_seconds_eq_published_at_minus_min_capture_observation_completed_at_lte_3600"
+        },
+        "intended_distribution_binding_contract": {
+          "rights_to_receipt_equal_fields": [
+            "distribution_event_id",
+            "repository_url",
+            "repository_ref",
+            "candidate_git_commit_eq_published_git_commit",
+            "mission_release_id",
+            "protocol_release_id",
+            "index_ref",
+            "validation_report_ref"
+          ],
+          "receipt_to_readback_equal_fields": [
+            "repository_url",
+            "repository_ref",
+            "published_git_commit",
+            "published_index_ref_sha256",
+            "validation_report_ref_sha256"
+          ],
+          "receipt_to_topology_equal_fields": [
+            "distribution_event_id",
+            "published_git_commit_eq_candidate_packet_commit",
+            "published_git_commit_eq_receipt_published_git_commit",
+            "published_index_ref_sha256_eq_canonical_index_sha256_before_after",
+            "validation_report_ref_sha256_eq_canonical_report_sha256_before_after"
+          ]
+        },
+        "positive_wrapper_binding_contract": {
+          "exact_snapshot_path_fixture_id_role_fixture_schema_target_schema_target_artifact_sha256_byte_size_required": true,
+          "closed_synthetic_wrapper_required": true,
+          "nested_record_value_equality_required": true,
+          "synthetic_event_artifact_operand_scope_is_not_snapshot_release_or_evidence_binding": true
+        }
+      }
+    },
+    "governance_positive_fixture_refs": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/isoPositiveFixtureRef"
+        },
+        {
+          "$ref": "#/$defs/nistPositiveFixtureRef"
+        },
+        {
+          "$ref": "#/$defs/rightsPositiveFixtureRef"
+        },
+        {
+          "$ref": "#/$defs/receiptPositiveFixtureRef"
+        }
+      ],
+      "items": false,
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "capture_manifests": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "allOf": [
+            {"$ref": "#/$defs/captureEnvelope"},
+            {
+              "properties": {
+                "path": {
+                  "const": "evidence/rights-observations/2026-08-25-iso-open-data-gate-a-static-correction-1.2.0.json"
+                },
+                "record": {
+                  "allOf": [
+                    {
+                      "$ref": "rights-observation-capture.schema.json"
+                    },
+                    {
+                      "properties": {
+                        "capture_role": {"const": "iso_open_data_rights"}
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/captureEnvelope"},
+            {
+              "properties": {
+                "path": {
+                  "const": "evidence/rights-observations/2026-08-25-nist-technical-series-gate-a-static-correction-1.2.0.json"
+                },
+                "record": {
+                  "allOf": [
+                    {
+                      "$ref": "rights-observation-capture.schema.json"
+                    },
+                    {
+                      "properties": {
+                        "capture_role": {"const": "nist_technical_series_rights"}
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "rights_revalidation": {
+      "allOf": [
+        {"$ref": "#/$defs/rightsEnvelope"},
+        {
+          "properties": {
+            "path": {
+              "const": "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json"
+            }
+          }
+        }
+      ]
+    },
+    "publisher_receipt": {
+      "$ref": "public-distribution-receipt.schema.json"
+    },
+    "topology_observation": {
+      "$ref": "#/$defs/topologyObservation"
+    }
+  },
+  "$defs": {
+    "positiveFixtureRef": {
+      "type": "object",
+      "required": [
+        "fixture_role",
+        "fixture_id",
+        "path",
+        "fixture_schema_id",
+        "target_schema_id",
+        "target_artifact_id",
+        "sha256",
+        "byte_size",
+        "byte_binding_scope"
+      ],
+      "properties": {
+        "fixture_role": {
+          "enum": [
+            "iso_capture_manifest",
+            "nist_capture_manifest",
+            "rights_revalidation",
+            "publisher_receipt"
+          ]
+        },
+        "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+        "fixture_id": {
+          "type": "string",
+          "pattern": "^reiyah\\.fixture\\.governance-good\\.[a-z0-9-]+@1\\.2\\.0$"
+        },
+        "fixture_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/governance-positive-fixture.schema.json"
+        },
+        "target_schema_id": {"type": "string", "format": "uri"},
+        "target_artifact_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "byte_size": {"type": "integer", "minimum": 1},
+        "byte_binding_scope": {"const": "entire_synthetic_fixture_wrapper_file_bytes"}
+      },
+      "additionalProperties": false
+    },
+    "isoPositiveFixtureRef": {
+      "allOf": [
+        {"$ref": "#/$defs/positiveFixtureRef"},
+        {
+          "properties": {
+            "fixture_role": {"const": "iso_capture_manifest"},
+            "fixture_id": {
+              "const": "reiyah.fixture.governance-good.iso-rights-observation-capture@1.2.0"
+            },
+            "path": {
+              "const": "fixtures/v1.2/governance-good/iso-rights-observation-capture.json"
+            },
+            "target_artifact_id": {
+              "const": "reiyah.artifact.rights-observation-capture-iso-open-data-gate-a-static-correction-1.2.0"
+            },
+            "target_schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json"
+            }
+          }
+        }
+      ]
+    },
+    "nistPositiveFixtureRef": {
+      "allOf": [
+        {"$ref": "#/$defs/positiveFixtureRef"},
+        {
+          "properties": {
+            "fixture_role": {"const": "nist_capture_manifest"},
+            "fixture_id": {
+              "const": "reiyah.fixture.governance-good.nist-rights-observation-capture@1.2.0"
+            },
+            "path": {
+              "const": "fixtures/v1.2/governance-good/nist-rights-observation-capture.json"
+            },
+            "target_artifact_id": {
+              "const": "reiyah.artifact.rights-observation-capture-nist-technical-series-gate-a-static-correction-1.2.0"
+            },
+            "target_schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json"
+            }
+          }
+        }
+      ]
+    },
+    "rightsPositiveFixtureRef": {
+      "allOf": [
+        {"$ref": "#/$defs/positiveFixtureRef"},
+        {
+          "properties": {
+            "fixture_role": {"const": "rights_revalidation"},
+            "fixture_id": {
+              "const": "reiyah.fixture.governance-good.public-rights-revalidation@1.2.0"
+            },
+            "path": {
+              "const": "fixtures/v1.2/governance-good/public-rights-revalidation.json"
+            },
+            "target_artifact_id": {
+              "const": "reiyah.artifact.public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0"
+            },
+            "target_schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-rights-revalidation.schema.json"
+            }
+          }
+        }
+      ]
+    },
+    "receiptPositiveFixtureRef": {
+      "allOf": [
+        {"$ref": "#/$defs/positiveFixtureRef"},
+        {
+          "properties": {
+            "fixture_role": {"const": "publisher_receipt"},
+            "fixture_id": {
+              "const": "reiyah.fixture.governance-good.public-distribution-receipt@1.2.0"
+            },
+            "path": {
+              "const": "fixtures/v1.2/governance-good/public-distribution-receipt.json"
+            },
+            "target_artifact_id": {
+              "const": "reiyah.artifact.public-distribution-receipt-1.2.0"
+            },
+            "target_schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-distribution-receipt.schema.json"
+            }
+          }
+        }
+      ]
+    },
+    "captureEnvelope": {
+      "type": "object",
+      "required": ["path", "sha256", "byte_size", "binding_scope", "record"],
+      "properties": {
+        "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+        "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "byte_size": {"type": "integer", "minimum": 1},
+        "binding_scope": {
+          "const": "synthetic_declared_event_artifact_operand_not_retained_fixture_bytes"
+        },
+        "record": {"$ref": "rights-observation-capture.schema.json"}
+      },
+      "additionalProperties": false
+    },
+    "rightsEnvelope": {
+      "type": "object",
+      "required": ["path", "sha256", "byte_size", "binding_scope", "record"],
+      "properties": {
+        "path": {
+          "const": "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json"
+        },
+        "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "byte_size": {"type": "integer", "minimum": 1},
+        "binding_scope": {
+          "const": "synthetic_declared_event_artifact_operand_not_retained_fixture_bytes"
+        },
+        "record": {"$ref": "public-rights-revalidation.schema.json"}
+      },
+      "additionalProperties": false
+    },
+    "topologyObservation": {
+      "type": "object",
+      "required": [
+        "mode",
+        "distribution_event_id",
+        "candidate_packet_commit",
+        "receipt_bearing_commit",
+        "receipt_bearing_parent_commit",
+        "candidate_packet_future_rights_state",
+        "candidate_packet_receipt_state",
+        "candidate_packet_capture_paths",
+        "rights_exclusions",
+        "capture_paths_excluded",
+        "receipt_commit_contains_rights",
+        "receipt_commit_contains_receipt",
+        "candidate_projection_sha256_before",
+        "candidate_projection_sha256_after",
+        "canonical_index_sha256_before",
+        "canonical_index_sha256_after",
+        "canonical_report_sha256_before",
+        "canonical_report_sha256_after",
+        "receipt_published_git_commit",
+        "receipt_bearing_commit_self_readback_claimed",
+        "receipt_bearing_commit_readback_observation_ref",
+        "transport_state",
+        "ga17_status",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "mode": {"const": "direct_child_receipt_mode"},
+        "distribution_event_id": {
+          "const": "reiyah.distribution-event.gate-a-1.2.0-static-correction"
+        },
+        "candidate_packet_commit": {"$ref": "#/$defs/gitCommit"},
+        "receipt_bearing_commit": {"$ref": "#/$defs/gitCommit"},
+        "receipt_bearing_parent_commit": {"$ref": "#/$defs/gitCommit"},
+        "candidate_packet_future_rights_state": {
+          "const": "absent_no_placeholder_no_symlink"
+        },
+        "candidate_packet_receipt_state": {
+          "const": "absent_no_placeholder_no_symlink"
+        },
+        "candidate_packet_capture_paths": {
+          "const": [
+            "evidence/rights-observations/2026-08-25-iso-open-data-gate-a-static-correction-1.2.0.json",
+            "evidence/rights-observations/2026-08-25-nist-technical-series-gate-a-static-correction-1.2.0.json"
+          ]
+        },
+        "rights_exclusions": {
+          "const": [
+            {
+              "match_kind": "exact",
+              "path": "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json"
+            }
+          ]
+        },
+        "capture_paths_excluded": {"const": false},
+        "receipt_commit_contains_rights": {"const": true},
+        "receipt_commit_contains_receipt": {"const": true},
+        "candidate_projection_sha256_before": {
+          "$ref": "common.schema.json#/$defs/sha256Digest"
+        },
+        "candidate_projection_sha256_after": {
+          "$ref": "common.schema.json#/$defs/sha256Digest"
+        },
+        "canonical_index_sha256_before": {
+          "$ref": "common.schema.json#/$defs/sha256Digest"
+        },
+        "canonical_index_sha256_after": {
+          "$ref": "common.schema.json#/$defs/sha256Digest"
+        },
+        "canonical_report_sha256_before": {
+          "$ref": "common.schema.json#/$defs/sha256Digest"
+        },
+        "canonical_report_sha256_after": {
+          "$ref": "common.schema.json#/$defs/sha256Digest"
+        },
+        "receipt_published_git_commit": {"$ref": "#/$defs/gitCommit"},
+        "receipt_bearing_commit_self_readback_claimed": {"const": false},
+        "receipt_bearing_commit_readback_observation_ref": {"type": "null"},
+        "transport_state": {"const": "not_evaluated"},
+        "ga17_status": {"const": "not_evaluated"},
+        "runtime_execution_authorized": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "gitCommit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    }
+  },
+  "additionalProperties": false,
+  "$comment": "The governance fixture resolver must load all four governance_positive_fixture_refs, verify their entire wrapper-file SHA-256 and byte-size bindings, validate each closed synthetic wrapper, require exact fixture ID/role/path/fixture-schema/target-schema/target-artifact bindings, and require each wrapper.record to equal its embedded record by parsed JSON value before proving the baseline has zero diagnostics. The capture and rights envelope digests are explicitly synthetic declared operands used only to test cross-binding and do not claim retained fixture, release, event, or source-evidence bytes. It must execute every semantic_contract chronology and equality, require distinct commits, keep the receipt bound to C_packet only, require before/after projection/index/report digests pairwise equal, exact-bind synthetic capture envelopes to rights refs and the rights envelope to the receipt ref, and reject any C_receipt self-readback claim. Semantic priority after the original fourteen publication diagnostics is GA12-PUBLICATION-EVENT-CHRONOLOGY, GA12-PUBLICATION-EVENT-BINDING, then GA12-GOVERNANCE-POSITIVE-BYTE-BINDING."
+}

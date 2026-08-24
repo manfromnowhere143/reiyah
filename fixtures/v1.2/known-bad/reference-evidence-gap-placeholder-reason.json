@@ -1,0 +1,24 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.reference_evidence_gap_placeholder_reason",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/study-design-preregistration.json",
+  "mutations": [
+    {
+      "operation": "replace",
+      "json_pointer": "/evidence_binding/gap_reason",
+      "value": "TBD"
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-EVIDENCE-GAP-REFERENCE-DISPOSITION",
+    "instance_pointer": "/evidence_binding/gap_reason",
+    "schema_keyword": "semantic",
+    "reason": "An explicit evidence gap must remain unavailable and non-supporting, retain no evidence references, and state a substantive reason."
+  },
+  "runtime_execution_authorized": false
+}

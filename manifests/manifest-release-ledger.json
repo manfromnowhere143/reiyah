@@ -1,10 +1,10 @@
 {
-  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/manifest-release-ledger.schema.json",
-  "schema_version": "1.1.0",
-  "artifact_id": "reiyah.artifact.manifest-release-ledger-1.1.0",
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/manifest-release-ledger.schema.json",
+  "schema_version": "1.2.0",
+  "artifact_id": "reiyah.artifact.manifest-release-ledger-1.2.0",
   "ledger_id": "reiyah.manifest-release-ledger",
-  "version": "1.1.0",
-  "as_of_date": "2026-08-23",
+  "version": "1.2.0",
+  "as_of_date": "2026-08-24",
   "append_only": true,
   "identifier_reuse_prohibited": true,
   "entries": [
@@ -95,14 +95,38 @@
         "state": "unaccepted",
         "record_id": null
       }
+    },
+    {
+      "manifest_kind": "protocol",
+      "release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+      "version": "1.2.0",
+      "release_stage": "candidate",
+      "lifecycle_status": "proposed",
+      "relation": {
+        "type": "corrects",
+        "prior_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+        "rationale": "Corrects the Gate A 1.1.2 scientific-contract, reference-resolution, validation-integrity, and static publication-topology defects while preserving the proposed mission and no-runtime boundary."
+      },
+      "artifact_binding": {
+        "artifact_id": "reiyah.artifact.protocol-1.2.0",
+        "path": "manifests/protocol/harbor-gate-a-protocol-1.2.0.json",
+        "sha256": "sha256:d282e8a58de6a207129079498343b23bb634b45eaa38697794b77b9dadbad7ad",
+        "byte_size": 63718,
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/protocol-manifest.schema.json",
+        "version": "1.2.0"
+      },
+      "operator_acceptance": {
+        "state": "unaccepted",
+        "record_id": null
+      }
     }
   ],
   "prior_ledger_binding": {
-    "artifact_id": "reiyah.artifact.manifest-release-ledger-1.0.0",
-    "path": "manifests/history/manifest-release-ledger-1.0.0.json",
-    "sha256": "sha256:f48fdbf0bf314dbcbbcac38a88ca77c38f12ab0429919ecc0536f6ffcbe9c4c9",
-    "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/manifest-release-ledger.schema.json",
-    "version": "1.0.0"
+    "artifact_id": "reiyah.artifact.manifest-release-ledger-1.1.0",
+    "path": "manifests/history/manifest-release-ledger-1.1.0.json",
+    "sha256": "sha256:ed330555348a3e4893843a625501635e0b727a6335463140aba14ece926f98be",
+    "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/manifest-release-ledger.schema.json",
+    "version": "1.1.0"
   },
   "distribution_profile": "public_open_source"
 }

@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.transfer_target_access_before_freeze",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/transfer_evaluation/target_data_access/first_accessed_at", "value": "2026-08-24T07:00:00Z"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-TRANSFER-TARGET-ACCESS", "instance_pointer": "/transfer_evaluation/target_data_access/first_accessed_at", "schema_keyword": "semantic", "reason": "The transfer analysis contract must be frozen before any target-domain data access."},
+  "runtime_execution_authorized": false
+}

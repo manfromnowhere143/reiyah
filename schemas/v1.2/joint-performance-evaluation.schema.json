@@ -1,0 +1,566 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "title": "Joint performance evaluation scientific contract",
+  "description": "Gate A 1.2 architecture for joint silent misses, selective prediction, OOD accounting, conformal scope, transfer, and executable worst-group selection.",
+  "type": "object",
+  "allOf": [{"$ref": "common.schema.json#/$defs/recordHeader"}],
+  "required": [
+    "schema_id", "schema_version", "artifact_id", "version", "lifecycle_status", "lifecycle_history",
+    "protocol_release_id", "created_at", "runtime_execution_authorized", "mission_release_id",
+    "evaluation_id", "study_ref", "dataset_ref", "odd_ref", "benchmark_ref", "joint_silent_miss",
+    "selective_evaluation", "ood_evaluation", "conformal_evaluation", "transfer_evaluation",
+    "worst_group_evaluation", "evidence_binding", "scientific_claim_authorized"
+  ],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json"},
+    "record_kind": {"const": "result"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "evaluation_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "study_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+    "dataset_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+    "odd_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+    "benchmark_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+    "joint_silent_miss": {"$ref": "#/$defs/jointSilentMiss"},
+    "selective_evaluation": {"$ref": "#/$defs/selectiveEvaluation"},
+    "ood_evaluation": {"$ref": "#/$defs/oodEvaluation"},
+    "conformal_evaluation": {"$ref": "#/$defs/conformalEvaluation"},
+    "transfer_evaluation": {"$ref": "#/$defs/transferEvaluation"},
+    "worst_group_evaluation": {"$ref": "#/$defs/worstGroupEvaluation"},
+    "evidence_binding": {"$ref": "common.schema.json#/$defs/evidenceGapBinding"},
+    "scientific_claim_authorized": {"const": false}
+  },
+  "$defs": {
+    "jointSilentMiss": {
+      "type": "object",
+      "required": [
+        "opportunity_rule_ref",
+        "opportunity_set_ref",
+        "opportunity_window",
+        "opportunity_rows",
+        "estimand_ref",
+        "common_opportunity_cells",
+        "identifiability",
+        "opportunities",
+        "human_misses",
+        "automation_misses",
+        "joint_misses",
+        "joint_miss_risk"
+      ],
+      "properties": {
+        "opportunity_rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "opportunity_set_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "reiyah.kind.opportunity_set"}}}
+          ]
+        },
+        "opportunity_window": {"$ref": "#/$defs/opportunityWindow"},
+        "opportunity_rows": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/opportunityRow"}
+        },
+        "estimand_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "common_opportunity_cells": {
+          "type": "object",
+          "required": ["both_miss", "human_only_miss", "automation_only_miss", "neither_miss"],
+          "properties": {
+            "both_miss": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "human_only_miss": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "automation_only_miss": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "neither_miss": {"$ref": "common.schema.json#/$defs/integerMeasurement"}
+          },
+          "additionalProperties": false
+        },
+        "identifiability": {"enum": ["identified_from_common_opportunities", "nonidentifiable_unknown"]},
+        "opportunities": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "human_misses": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "automation_misses": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "joint_misses": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "joint_miss_risk": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"}
+      },
+      "additionalProperties": false
+    },
+    "observedOpportunityReferenceState": {
+      "type": "object",
+      "required": ["state", "value"],
+      "properties": {
+        "state": {"const": "observed"},
+        "value": {"const": "opportunity_present"}
+      },
+      "additionalProperties": false
+    },
+    "opportunityReferenceStateMeasurement": {
+      "oneOf": [
+        {"$ref": "#/$defs/observedOpportunityReferenceState"},
+        {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "observedOpportunityValidity": {
+      "type": "object",
+      "required": ["state", "value"],
+      "properties": {
+        "state": {"const": "observed"},
+        "value": {"const": "valid"}
+      },
+      "additionalProperties": false
+    },
+    "opportunityValidityMeasurement": {
+      "oneOf": [
+        {"$ref": "#/$defs/observedOpportunityValidity"},
+        {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "observedChannelOutcome": {
+      "type": "object",
+      "required": ["state", "value"],
+      "properties": {
+        "state": {"const": "observed"},
+        "value": {"enum": ["miss", "detected"]}
+      },
+      "additionalProperties": false
+    },
+    "channelOutcomeMeasurement": {
+      "oneOf": [
+        {"$ref": "#/$defs/observedChannelOutcome"},
+        {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "observedWarningOutcome": {
+      "type": "object",
+      "required": ["state", "value"],
+      "properties": {
+        "state": {"const": "observed"},
+        "value": {"enum": ["issued", "not_issued"]}
+      },
+      "additionalProperties": false
+    },
+    "warningOutcomeMeasurement": {
+      "oneOf": [
+        {"$ref": "#/$defs/observedWarningOutcome"},
+        {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "observedFallbackOutcome": {
+      "type": "object",
+      "required": ["state", "value"],
+      "properties": {
+        "state": {"const": "observed"},
+        "value": {"enum": ["activated", "not_activated"]}
+      },
+      "additionalProperties": false
+    },
+    "fallbackOutcomeMeasurement": {
+      "oneOf": [
+        {"$ref": "#/$defs/observedFallbackOutcome"},
+        {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+      ]
+    },
+    "opportunityWindow": {
+      "type": "object",
+      "required": ["clock_id", "window_id", "opened_at", "closed_at"],
+      "properties": {
+        "clock_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "window_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "opened_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "closed_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"}
+      },
+      "additionalProperties": false
+    },
+    "opportunityChannel": {
+      "type": "object",
+      "required": ["channel_ref", "outcome"],
+      "properties": {
+        "channel_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "reiyah.kind.observation_channel"}}}
+          ]
+        },
+        "outcome": {"$ref": "#/$defs/channelOutcomeMeasurement"}
+      },
+      "additionalProperties": false
+    },
+    "opportunityWarning": {
+      "type": "object",
+      "required": ["rule_ref", "outcome"],
+      "properties": {
+        "rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "outcome": {"$ref": "#/$defs/warningOutcomeMeasurement"}
+      },
+      "additionalProperties": false
+    },
+    "opportunityFallback": {
+      "type": "object",
+      "required": ["rule_ref", "outcome"],
+      "properties": {
+        "rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "outcome": {"$ref": "#/$defs/fallbackOutcomeMeasurement"}
+      },
+      "additionalProperties": false
+    },
+    "opportunityRow": {
+      "type": "object",
+      "required": [
+        "opportunity_id", "object_ref", "clock_id", "window_id", "occurred_at",
+        "reference_state", "reference_validity", "human_channel", "automation_channel",
+        "warning", "fallback"
+      ],
+      "properties": {
+        "opportunity_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "object_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "reiyah.kind.vehicle_object"}}}
+          ]
+        },
+        "clock_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "window_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "occurred_at": {"$ref": "common.schema.json#/$defs/timestampMeasurement"},
+        "reference_state": {"$ref": "#/$defs/opportunityReferenceStateMeasurement"},
+        "reference_validity": {"$ref": "#/$defs/opportunityValidityMeasurement"},
+        "human_channel": {"$ref": "#/$defs/opportunityChannel"},
+        "automation_channel": {"$ref": "#/$defs/opportunityChannel"},
+        "warning": {"$ref": "#/$defs/opportunityWarning"},
+        "fallback": {"$ref": "#/$defs/opportunityFallback"}
+      },
+      "additionalProperties": false
+    },
+    "selectiveEvaluation": {
+      "type": "object",
+      "required": ["threshold_rule_ref", "threshold_frozen_at", "evaluation_started_at", "population_count", "partition_counts", "accepted_error_count", "accepted_error_risk", "coverage"],
+      "properties": {
+        "threshold_rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "threshold_frozen_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "evaluation_started_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "population_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "partition_counts": {
+          "type": "object",
+          "required": ["accepted", "ambiguous", "missing", "unmeasured", "out_of_distribution", "sensor_invalid", "abstained"],
+          "properties": {
+            "accepted": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "ambiguous": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "missing": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "unmeasured": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "out_of_distribution": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "sensor_invalid": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "abstained": {"$ref": "common.schema.json#/$defs/integerMeasurement"}
+          },
+          "additionalProperties": false
+        },
+        "accepted_error_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "accepted_error_risk": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "coverage": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"}
+      },
+      "additionalProperties": false
+    },
+    "oodEvaluation": {
+      "type": "object",
+      "required": [
+        "partition_contract_ref",
+        "estimand_ref",
+        "reference_rule_ref",
+        "detector_rule_ref",
+        "population_count",
+        "joint_state_cells",
+        "reference_ood_count",
+        "detected_ood_count",
+        "reference_unknown_count",
+        "detector_unknown_count",
+        "true_positive_rate",
+        "false_positive_rate",
+        "prevalence",
+        "prevalence_denominator"
+      ],
+      "properties": {
+        "partition_contract_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/ruleReference"},
+            {"properties": {"rule_id": {"const": "reiyah.rule.ood-population-partition"}}}
+          ]
+        },
+        "estimand_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "reference_rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "detector_rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "population_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "joint_state_cells": {
+          "type": "object",
+          "required": [
+            "reference_ood_detector_ood",
+            "reference_ood_detector_in_distribution",
+            "reference_ood_detector_unknown",
+            "reference_in_distribution_detector_ood",
+            "reference_in_distribution_detector_in_distribution",
+            "reference_in_distribution_detector_unknown",
+            "reference_unknown_detector_ood",
+            "reference_unknown_detector_in_distribution",
+            "reference_unknown_detector_unknown"
+          ],
+          "properties": {
+            "reference_ood_detector_ood": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "reference_ood_detector_in_distribution": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "reference_ood_detector_unknown": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "reference_in_distribution_detector_ood": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "reference_in_distribution_detector_in_distribution": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "reference_in_distribution_detector_unknown": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "reference_unknown_detector_ood": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "reference_unknown_detector_in_distribution": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+            "reference_unknown_detector_unknown": {"$ref": "common.schema.json#/$defs/integerMeasurement"}
+          },
+          "additionalProperties": false
+        },
+        "reference_ood_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "detected_ood_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "reference_unknown_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "detector_unknown_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "true_positive_rate": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "false_positive_rate": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "prevalence": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "prevalence_denominator": {"const": "reference_known"}
+      },
+      "additionalProperties": false
+    },
+    "conformalGroup": {
+      "type": "object",
+      "required": ["group_id", "covered_count", "evaluated_count", "empirical_coverage", "coverage_disposition"],
+      "properties": {
+        "group_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "covered_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "evaluated_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "empirical_coverage": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "coverage_disposition": {"enum": ["meets_target", "below_target", "unknown"]}
+      },
+      "additionalProperties": false
+    },
+    "conformalEvaluation": {
+      "type": "object",
+      "required": ["guarantee_contract_ref", "estimand_ref", "method_ref", "alpha", "target_coverage", "guarantee", "exchangeability", "calibration_set_ref", "test_set_ref", "calibration_sample_count", "test_sample_count", "group_set_ref", "group_scope_mode", "group_universe", "group_results", "covered_count", "evaluated_count", "empirical_coverage"],
+      "properties": {
+        "guarantee_contract_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/ruleReference"},
+            {"properties": {"rule_id": {"const": "reiyah.rule.conformal-guarantee-disposition"}}}
+          ]
+        },
+        "estimand_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "method_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "alpha": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1},
+        "target_coverage": {"type": "number", "minimum": 0, "maximum": 1},
+        "guarantee": {
+          "type": "object",
+          "required": ["kind", "disposition", "scope"],
+          "properties": {
+            "kind": {"const": "none"},
+            "disposition": {"const": "not_asserted"},
+            "scope": {"const": "none"}
+          },
+          "additionalProperties": false
+        },
+        "exchangeability": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/assumptionAssessment"},
+            {
+              "properties": {
+                "assumption_id": {"const": "reiyah.assumption.exchangeability"},
+                "disposition": {"enum": ["unmeasured", "not_applicable"]},
+                "evidence_refs": {"maxItems": 0}
+              }
+            }
+          ]
+        },
+        "calibration_set_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "test_set_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "calibration_sample_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "test_sample_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "group_set_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "reiyah.kind.group_set"}}}
+          ]
+        },
+        "group_scope_mode": {"enum": ["disjoint_exhaustive", "overlapping"]},
+        "group_universe": {"type": "array", "minItems": 1, "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"}, "uniqueItems": true},
+        "group_results": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/conformalGroup"}},
+        "covered_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "evaluated_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "empirical_coverage": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"}
+      },
+      "additionalProperties": false
+    },
+    "metricContract": {
+      "type": "object",
+      "required": ["metric_contract_id", "version", "unit", "direction", "estimator_ref", "population_rule_ref", "outcome_window_rule_ref"],
+      "properties": {
+        "metric_contract_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"const": "1.2.0"},
+        "unit": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "direction": {"enum": ["higher_is_better", "lower_is_better"]},
+        "estimator_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "population_rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "outcome_window_rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"}
+      },
+      "additionalProperties": false
+    },
+    "domainResult": {
+      "type": "object",
+      "required": ["domain_id", "metric_contract_id", "metric_contract_version", "estimate", "uncertainty", "coverage_counts"],
+      "properties": {
+        "domain_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "metric_contract_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "metric_contract_version": {"const": "1.2.0"},
+        "estimate": {"$ref": "common.schema.json#/$defs/numberMeasurement"},
+        "uncertainty": {"$ref": "common.schema.json#/$defs/uncertaintyInterval"},
+        "coverage_counts": {"$ref": "common.schema.json#/$defs/coverageCounts"}
+      },
+      "additionalProperties": false
+    },
+    "transferEvaluation": {
+      "type": "object",
+      "required": ["eligibility_contract_ref", "estimand_ref", "metric_contract", "source_result", "target_result", "gap", "overlap", "invariance", "population_harmonization", "adaptation", "target_data_access", "disposition"],
+      "properties": {
+        "eligibility_contract_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/ruleReference"},
+            {"properties": {"rule_id": {"const": "reiyah.rule.transfer-eligibility"}}}
+          ]
+        },
+        "estimand_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "metric_contract": {"$ref": "#/$defs/metricContract"},
+        "source_result": {"$ref": "#/$defs/domainResult"},
+        "target_result": {"$ref": "#/$defs/domainResult"},
+        "gap": {"$ref": "common.schema.json#/$defs/numberMeasurement"},
+        "overlap": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/assumptionAssessment"},
+            {
+              "properties": {
+                "assumption_id": {"const": "reiyah.assumption.transfer_overlap"},
+                "disposition": {"enum": ["unmeasured", "not_applicable"]},
+                "evidence_refs": {"maxItems": 0}
+              }
+            }
+          ]
+        },
+        "invariance": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/assumptionAssessment"},
+            {
+              "properties": {
+                "assumption_id": {"const": "reiyah.assumption.transfer_invariance"},
+                "disposition": {"enum": ["unmeasured", "not_applicable"]},
+                "evidence_refs": {"maxItems": 0}
+              }
+            }
+          ]
+        },
+        "population_harmonization": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/assumptionAssessment"},
+            {
+              "properties": {
+                "assumption_id": {"const": "reiyah.assumption.transfer_population_harmonization"},
+                "disposition": {"enum": ["unmeasured", "not_applicable"]},
+                "evidence_refs": {"maxItems": 0}
+              }
+            }
+          ]
+        },
+        "adaptation": {
+          "type": "object",
+          "required": ["mode", "target_labels_used", "tuning_performed", "procedure_ref"],
+          "properties": {
+            "mode": {"enum": ["none", "unsupervised", "supervised"]},
+            "target_labels_used": {"type": "boolean"},
+            "tuning_performed": {"type": "boolean"},
+            "procedure_ref": {"oneOf": [{"$ref": "common.schema.json#/$defs/ruleReference"}, {"type": "null"}]}
+          },
+          "additionalProperties": false
+        },
+        "target_data_access": {
+          "type": "object",
+          "required": ["first_accessed_at", "analysis_frozen_at", "labels_first_accessed_at"],
+          "properties": {
+            "first_accessed_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+            "analysis_frozen_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+            "labels_first_accessed_at": {"oneOf": [{"$ref": "common.schema.json#/$defs/utcTimestamp"}, {"type": "null"}]}
+          },
+          "additionalProperties": false
+        },
+        "disposition": {"enum": ["not_identified", "unknown"]}
+      },
+      "additionalProperties": false
+    },
+    "minimumInformationRule": {
+      "type": "object",
+      "required": ["rule_ref", "operator", "sample_count_min", "coverage_fraction_min", "effective_sample_size_min", "interval_width_max"],
+      "properties": {
+        "rule_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/ruleReference"},
+            {"properties": {"rule_id": {"const": "reiyah.rule.worst-group-eligibility"}}}
+          ]
+        },
+        "operator": {"const": "all"},
+        "sample_count_min": {"type": "integer", "minimum": 1},
+        "coverage_fraction_min": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "effective_sample_size_min": {"type": "number", "exclusiveMinimum": 0},
+        "interval_width_max": {"type": "number", "exclusiveMinimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "worstGroupResult": {
+      "type": "object",
+      "required": ["group_id", "membership_state", "sample_count", "coverage_counts", "effective_sample_size", "interval_width", "information_disposition", "performance"],
+      "properties": {
+        "group_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "membership_state": {"enum": ["observed", "missing", "unmeasured", "out_of_distribution", "sensor_invalid", "abstained"]},
+        "sample_count": {"$ref": "common.schema.json#/$defs/integerMeasurement"},
+        "coverage_counts": {"$ref": "common.schema.json#/$defs/coverageCounts"},
+        "effective_sample_size": {"$ref": "common.schema.json#/$defs/nonNegativeNumberMeasurement"},
+        "interval_width": {"$ref": "common.schema.json#/$defs/nonNegativeNumberMeasurement"},
+        "information_disposition": {"enum": ["sufficient", "insufficient", "unknown"]},
+        "performance": {"$ref": "common.schema.json#/$defs/numberMeasurement"}
+      },
+      "additionalProperties": false
+    },
+    "worstGroupEvaluation": {
+      "type": "object",
+      "required": ["estimand_ref", "shared_metric_contract", "group_set_ref", "group_universe", "minimum_information_rule", "group_results", "direction", "eligible_group_ids", "unknown_group_ids", "insufficient_group_ids", "worst_group_ids", "worst_value", "disposition", "omission_prohibited"],
+      "properties": {
+        "estimand_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "shared_metric_contract": {
+          "type": "object",
+          "required": ["metric_id", "version", "unit", "direction", "population_rule_ref", "outcome_window_rule_ref"],
+          "properties": {
+            "metric_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "version": {"const": "1.2.0"},
+            "unit": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+            "direction": {"enum": ["higher_is_better", "lower_is_better"]},
+            "population_rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+            "outcome_window_rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"}
+          },
+          "additionalProperties": false
+        },
+        "group_set_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "reiyah.kind.group_set"}}}
+          ]
+        },
+        "group_universe": {"type": "array", "minItems": 1, "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"}, "uniqueItems": true},
+        "minimum_information_rule": {"$ref": "#/$defs/minimumInformationRule"},
+        "group_results": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/worstGroupResult"}},
+        "direction": {"enum": ["higher_is_better", "lower_is_better"]},
+        "eligible_group_ids": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"}, "uniqueItems": true},
+        "unknown_group_ids": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"}, "uniqueItems": true},
+        "insufficient_group_ids": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"}, "uniqueItems": true},
+        "worst_group_ids": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"}, "uniqueItems": true},
+        "worst_value": {"$ref": "common.schema.json#/$defs/numberMeasurement"},
+        "disposition": {"enum": ["identified", "unknown", "no_eligible_groups"]},
+        "omission_prohibited": {"const": true}
+      },
+      "additionalProperties": false
+    }
+  },
+  "unevaluatedProperties": false
+}

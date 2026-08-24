@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/governance-positive-fixture.schema.json",
+  "title": "Gate A 1.2.0 synthetic governance positive fixture",
+  "description": "Closed known-good governance wrapper around one production-schema-shaped synthetic record. The wrapper prevents the nested future event identity and assertions from being cited as a real capture, rights observation, receipt, distribution, publication, readback, authorization, or transport event.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "artifact_version",
+    "fixture_id",
+    "fixture_class",
+    "mission_release_id",
+    "protocol_release_id",
+    "synthetic_fixture_only",
+    "baseline_expected_outcome",
+    "fixture_role",
+    "target_schema_id",
+    "target_artifact_id",
+    "production_event_claimed",
+    "distribution_event_occurred",
+    "authority_created",
+    "runtime_execution_authorized",
+    "limitations",
+    "record"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/governance-positive-fixture.schema.json"
+    },
+    "artifact_version": {"const": "1.2.0"},
+    "fixture_id": {
+      "type": "string",
+      "pattern": "^reiyah\\.fixture\\.governance-good\\.[a-z0-9-]+@1\\.2\\.0$"
+    },
+    "fixture_class": {"const": "known-good-governance"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+    "synthetic_fixture_only": {"const": true},
+    "baseline_expected_outcome": {"const": "accepted"},
+    "fixture_role": {
+      "enum": [
+        "iso_capture_manifest",
+        "nist_capture_manifest",
+        "rights_revalidation",
+        "publisher_receipt"
+      ]
+    },
+    "target_schema_id": {"type": "string", "format": "uri"},
+    "target_artifact_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "production_event_claimed": {"const": false},
+    "distribution_event_occurred": {"const": false},
+    "authority_created": {"const": false},
+    "runtime_execution_authorized": {"const": false},
+    "limitations": {
+      "const": [
+        "The nested record is a synthetic test operand; its production artifact, receipt, event, publication, readback, authorization, and distribution assertions did not occur.",
+        "This fixture wrapper creates no source evidence, legal conclusion, transport verification, Gate A acceptance, scientific support, publication acceptance, or runtime authority."
+      ]
+    },
+    "record": {
+      "oneOf": [
+        {"$ref": "rights-observation-capture.schema.json"},
+        {"$ref": "public-rights-revalidation.schema.json"},
+        {"$ref": "public-distribution-receipt.schema.json"}
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "oneOf": [
+        {"$ref": "#/$defs/isoFixture"},
+        {"$ref": "#/$defs/nistFixture"},
+        {"$ref": "#/$defs/rightsFixture"},
+        {"$ref": "#/$defs/receiptFixture"}
+      ]
+    }
+  ],
+  "$defs": {
+    "isoFixture": {
+      "properties": {
+        "fixture_id": {
+          "const": "reiyah.fixture.governance-good.iso-rights-observation-capture@1.2.0"
+        },
+        "fixture_role": {"const": "iso_capture_manifest"},
+        "target_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json"
+        },
+        "target_artifact_id": {
+          "const": "reiyah.artifact.rights-observation-capture-iso-open-data-gate-a-static-correction-1.2.0"
+        },
+        "record": {
+          "allOf": [
+            {"$ref": "rights-observation-capture.schema.json"},
+            {"properties": {"capture_role": {"const": "iso_open_data_rights"}}}
+          ]
+        }
+      }
+    },
+    "nistFixture": {
+      "properties": {
+        "fixture_id": {
+          "const": "reiyah.fixture.governance-good.nist-rights-observation-capture@1.2.0"
+        },
+        "fixture_role": {"const": "nist_capture_manifest"},
+        "target_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json"
+        },
+        "target_artifact_id": {
+          "const": "reiyah.artifact.rights-observation-capture-nist-technical-series-gate-a-static-correction-1.2.0"
+        },
+        "record": {
+          "allOf": [
+            {"$ref": "rights-observation-capture.schema.json"},
+            {"properties": {"capture_role": {"const": "nist_technical_series_rights"}}}
+          ]
+        }
+      }
+    },
+    "rightsFixture": {
+      "properties": {
+        "fixture_id": {
+          "const": "reiyah.fixture.governance-good.public-rights-revalidation@1.2.0"
+        },
+        "fixture_role": {"const": "rights_revalidation"},
+        "target_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-rights-revalidation.schema.json"
+        },
+        "target_artifact_id": {
+          "const": "reiyah.artifact.public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0"
+        },
+        "record": {"$ref": "public-rights-revalidation.schema.json"}
+      }
+    },
+    "receiptFixture": {
+      "properties": {
+        "fixture_id": {
+          "const": "reiyah.fixture.governance-good.public-distribution-receipt@1.2.0"
+        },
+        "fixture_role": {"const": "publisher_receipt"},
+        "target_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-distribution-receipt.schema.json"
+        },
+        "target_artifact_id": {
+          "const": "reiyah.artifact.public-distribution-receipt-1.2.0"
+        },
+        "record": {"$ref": "public-distribution-receipt.schema.json"}
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$comment": "The governance fixture resolver must validate this wrapper first, validate record against target_schema_id, require record.artifact_id to equal target_artifact_id, and treat every nested production-event assertion solely as synthetic input."
+}

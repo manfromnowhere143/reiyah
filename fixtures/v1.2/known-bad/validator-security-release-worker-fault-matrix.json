@@ -1,0 +1,14 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.validator-security.release-worker-fault-matrix@1.2.0",
+  "fixture_class": "known-bad-validator-security",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "synthetic_fixture_only": true,
+  "expected_diagnostic": "GA12-DUAL-EVALUATION-CANARY-COVERAGE",
+  "probe": {
+    "kind": "release_evaluation_worker_fault_matrix",
+    "operation": "replay_closed_worker_fault_matrix"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/manifest-release-ledger.schema.json",
+  "schema_version": "1.1.0",
+  "artifact_id": "reiyah.artifact.manifest-release-ledger-1.1.0",
+  "ledger_id": "reiyah.manifest-release-ledger",
+  "version": "1.1.0",
+  "as_of_date": "2026-08-23",
+  "append_only": true,
+  "identifier_reuse_prohibited": true,
+  "entries": [
+    {
+      "manifest_kind": "mission",
+      "release_id": "reiyah.mission@1.0.0",
+      "version": "1.0.0",
+      "release_stage": "candidate",
+      "lifecycle_status": "proposed",
+      "relation": {
+        "type": "initial"
+      },
+      "artifact_binding": {
+        "artifact_id": "reiyah.artifact.mission-1.0.0",
+        "path": "manifests/mission/reiyah-mission-1.0.0.json",
+        "sha256": "sha256:5acb0cea515b294d98a073cc36155622037731007c498d93141eadbaf0b97b8c",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/mission-manifest.schema.json",
+        "version": "1.0.0"
+      },
+      "operator_acceptance": {
+        "state": "unaccepted",
+        "record_id": null
+      }
+    },
+    {
+      "manifest_kind": "protocol",
+      "release_id": "reiyah.protocol.harbor-gate-a@1.0.0",
+      "version": "1.0.0",
+      "release_stage": "candidate",
+      "lifecycle_status": "proposed",
+      "relation": {
+        "type": "initial"
+      },
+      "artifact_binding": {
+        "artifact_id": "reiyah.artifact.protocol-1.0.0",
+        "path": "manifests/protocol/harbor-gate-a-protocol-1.0.0.json",
+        "sha256": "sha256:2e64bd49b9289f62c1afb1a8aed8483533deaade67fc4b1fc899ce1765d43e53",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/protocol-manifest.schema.json",
+        "version": "1.0.0"
+      },
+      "operator_acceptance": {
+        "state": "unaccepted",
+        "record_id": null
+      }
+    },
+    {
+      "manifest_kind": "mission",
+      "release_id": "reiyah.mission@1.1.0",
+      "version": "1.1.0",
+      "release_stage": "candidate",
+      "lifecycle_status": "proposed",
+      "relation": {
+        "type": "supersedes",
+        "prior_release_id": "reiyah.mission@1.0.0",
+        "rationale": "Records the verified public Reiyah remote, the Apache 2.0 release boundary, and the lawful separation of third party source payloads without changing the scientific mission."
+      },
+      "artifact_binding": {
+        "artifact_id": "reiyah.artifact.mission-1.1.0",
+        "path": "manifests/mission/reiyah-mission-1.1.0.json",
+        "sha256": "sha256:1d49a990391c8629c4dd919e73786f12de6c63092e43608d53d41dee4f52d4ed",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/mission-manifest.schema.json",
+        "version": "1.1.0"
+      },
+      "operator_acceptance": {
+        "state": "unaccepted",
+        "record_id": null
+      }
+    },
+    {
+      "manifest_kind": "protocol",
+      "release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
+      "version": "1.1.0",
+      "release_stage": "candidate",
+      "lifecycle_status": "proposed",
+      "relation": {
+        "type": "supersedes",
+        "prior_release_id": "reiyah.protocol.harbor-gate-a@1.0.0",
+        "rationale": "Binds Gate A to the verified public mission successor and adds lawful static repository distribution while preserving the no runtime boundary."
+      },
+      "artifact_binding": {
+        "artifact_id": "reiyah.artifact.protocol-1.1.0",
+        "path": "manifests/protocol/harbor-gate-a-protocol-1.1.0.json",
+        "sha256": "sha256:6170bb4b3c21d56c5428e8b8afdfe7e7860b1ae360bf8cc520a6ea8938f268de",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/protocol-manifest.schema.json",
+        "version": "1.1.0"
+      },
+      "operator_acceptance": {
+        "state": "unaccepted",
+        "record_id": null
+      }
+    }
+  ],
+  "prior_ledger_binding": {
+    "artifact_id": "reiyah.artifact.manifest-release-ledger-1.0.0",
+    "path": "manifests/history/manifest-release-ledger-1.0.0.json",
+    "sha256": "sha256:f48fdbf0bf314dbcbbcac38a88ca77c38f12ab0429919ecc0536f6ffcbe9c4c9",
+    "schema_id": "https://schemas.reiyah.invalid/gate-a/1.0.0/manifest-release-ledger.schema.json",
+    "version": "1.0.0"
+  },
+  "distribution_profile": "public_open_source"
+}

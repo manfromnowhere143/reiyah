@@ -1,0 +1,164 @@
+{
+  "artifact_id": "reiyah.validation-toolchain-lock@1.2.0",
+  "artifact_version": "1.2.0",
+  "lifecycle_status": "proposed",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "platform": {
+    "kernel_release": "23.4.0",
+    "kernel_version": "Darwin Kernel Version 23.4.0: Wed Feb 21 21:44:43 PST 2024; root:xnu-10063.101.15~2/RELEASE_ARM64_T6000",
+    "machine": "arm64",
+    "product_build_version": "23E214",
+    "product_version": "14.4",
+    "python_implementation": "cpython",
+    "python_version": "3.14.2",
+    "system": "Darwin"
+  },
+  "python_runtime": {
+    "stdlib_root": "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14",
+    "excluded_subtrees": [
+      "config-3.14-darwin",
+      "site-packages"
+    ],
+    "framework_path": "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/Python",
+    "stdlib_file_count": 2889,
+    "stdlib_tree_sha256": "6c16d67e7b053e4a26cf18c518b5d726ac7031bc4688208320daf57c41c2f491",
+    "framework_size": 5454960,
+    "framework_sha256": "19e926471e468a71c8d0c165af01b53dd08dcc590bcae7eff666ba200dc6a48f"
+  },
+  "execution_profile": {
+    "filesystem_write_policy": "denied_except_write_data_to_dev_null",
+    "network_policy": "denied_by_locked_macos_seatbelt_profile",
+    "required_python_flags": [
+      "-I",
+      "-S",
+      "-B"
+    ],
+    "seatbelt_application": "external_launcher_with_early_libsandbox_policy_checks",
+    "seatbelt_profile_sha256": "38b55e492f288ac0c410d68a4420f0242d21020c45be6addb13ac068e9ba3313"
+  },
+  "executables": {
+    "env": {
+      "path": "/usr/bin/env",
+      "resolved_path": "/usr/bin/env",
+      "sha256": "fe531da7d583d35e73ecf2a17aedf8ae4b2ff883de91b20fff5ad79dd7e1c723",
+      "size": 102336
+    },
+    "git": {
+      "path": "/usr/bin/git",
+      "resolved_path": "/usr/bin/git",
+      "sha256": "878004e85c866251cb3941ad57c0e21e4e361b026e139c24eb9a170c46ec8e81",
+      "size": 119008
+    },
+    "python": {
+      "path": "/opt/homebrew/bin/python3.14",
+      "resolved_path": "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+      "sha256": "3b6b69c61fd3765ab911d701cd17293b4a9154a0cb4973b546f05847f9a164c6",
+      "size": 52640
+    },
+    "sandbox_exec": {
+      "path": "/usr/bin/sandbox-exec",
+      "resolved_path": "/usr/bin/sandbox-exec",
+      "sha256": "569aa2e95952f1a355c46f3de02574bc4a90b9d21ec4c3944001f611935ee5ad",
+      "size": 118944
+    },
+    "shell": {
+      "path": "/bin/sh",
+      "resolved_path": "/bin/sh",
+      "sha256": "75fab21b84ad712398981e76b53721a6db46eb3cc39e85e0abac1bff01b30d3b",
+      "size": 101232
+    }
+  },
+  "dependencies": [
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "site_packages": "/opt/homebrew/lib/python3.14/site-packages",
+      "dist_info": "attrs-26.1.0.dist-info",
+      "import_roots": [
+        "attr",
+        "attrs"
+      ],
+      "record_sha256": "3cc123d895d29f6371d82bc6743c0dea82c79123d9421837517c6b6777345a77",
+      "recorded_file_count": 55,
+      "recorded_files_sha256": "1f6983c1179f9e6c506a0498ab0c39c42a2e2b2622fbede1844f334fca8b3939",
+      "import_root_file_count": 50,
+      "import_roots_sha256": "3f0345ca5bb86375cf35dcaf3ecf94b226b8e5efc48e4272dbfbc84afdcdb481"
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "site_packages": "/opt/homebrew/lib/python3.14/site-packages",
+      "dist_info": "jsonschema-4.26.0.dist-info",
+      "import_roots": [
+        "jsonschema"
+      ],
+      "record_sha256": "05204a77f61e90075e5ca0cdfb6e8fdb17f4a429608e759481d777eaae748cf0",
+      "recorded_file_count": 82,
+      "recorded_files_sha256": "8a2f6c8d6aa77eb559f8d9a916076f11582086c13a00be568316170495f9e2ae",
+      "import_root_file_count": 75,
+      "import_roots_sha256": "4af301fcfec8639cea25f3bbb587a50296e61b50b91adeb38114cc7eadcba27f"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "site_packages": "/opt/homebrew/lib/python3.14/site-packages",
+      "dist_info": "jsonschema_specifications-2025.9.1.dist-info",
+      "import_roots": [
+        "jsonschema_specifications"
+      ],
+      "record_sha256": "423669f278797615b7df8c63a3716753437e921c9bf0b579ef237c1fa9c94439",
+      "recorded_file_count": 33,
+      "recorded_files_sha256": "c9a7bb0aca35973aa5e875fc22bc1e6388320e5c3e45c427efdb47f670af15fb",
+      "import_root_file_count": 28,
+      "import_roots_sha256": "e2866df595703b8f8c21809bd5d8b51ebf68acb556cb4569f7c4289a865b4cf9"
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0",
+      "site_packages": "/opt/homebrew/lib/python3.14/site-packages",
+      "dist_info": "referencing-0.37.0.dist-info",
+      "import_roots": [
+        "referencing"
+      ],
+      "record_sha256": "49bff17ca45686bef72bafa5668a4426f3f106ae0454c677f8b426c7814b72f5",
+      "recorded_file_count": 33,
+      "recorded_files_sha256": "2443dbef240ea29a1cbc4ae1ba199769533c2d80fe1a1132e3a7e3b5c1a256c6",
+      "import_root_file_count": 28,
+      "import_roots_sha256": "1a9130ab066963ed40ab87fe68a5b3f4674278d962bda14983e56cd35cc4f0fb"
+    },
+    {
+      "name": "rpds-py",
+      "version": "0.30.0",
+      "site_packages": "/opt/homebrew/lib/python3.14/site-packages",
+      "dist_info": "rpds_py-0.30.0.dist-info",
+      "import_roots": [
+        "rpds"
+      ],
+      "record_sha256": "b5982e8b17ae55458f72e2f5a5bc327cdc237f83f535000b592b4f9133527323",
+      "recorded_file_count": 10,
+      "recorded_files_sha256": "7c461ff3d648112356a36f26272714b85fefbbf78e77b5c91d8126d632847ebe",
+      "import_root_file_count": 5,
+      "import_roots_sha256": "40ab05935a448a49df693ae948cee5e40a26b7cfbeaf7711e7ffd020b29e933b"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.15.0",
+      "site_packages": "/opt/homebrew/lib/python3.14/site-packages",
+      "dist_info": "typing_extensions-4.15.0.dist-info",
+      "import_roots": [
+        "typing_extensions.py"
+      ],
+      "record_sha256": "39ebc307a6c6a59ad18f6ce65bccc4ab4cab3a83cba019c12622ce5bf33d13be",
+      "recorded_file_count": 7,
+      "recorded_files_sha256": "1447fc052b748f47299900364be0445f935aaa4f3850a7c3fd8be9fe10d1b309",
+      "import_root_file_count": 1,
+      "import_roots_sha256": "07bdfdcc0f2a79ff2b87ed33674874d118cf4399dca9b7ac362a07f8a8d0f17e"
+    }
+  ],
+  "guarantee_boundaries": {
+    "covered": "Exact declared executable, Python framework, standard-library, dependency RECORD, recorded-file, and import-root bytes on the named platform; the external launcher enters Seatbelt before CPython startup; isolated no-site Python startup verifies the effective denial policy before other standard-library imports; network and filesystem writes are denied except write-data to /dev/null.",
+    "conditional": "Seatbelt enforcement is conditional on the exact locked launcher, macOS build, kernel, sandbox-exec and libsandbox implementations, shell, env, Python and Git bytes, and an uncompromised operating system.",
+    "externally_verified": "Nothing in this offline lock proves GitHub state, independent transport readback, operator acceptance, scientific validity, executable code identity before first instruction, transitive dynamic-library bytes, or operating-system integrity."
+  }
+}

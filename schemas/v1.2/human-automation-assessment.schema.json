@@ -1,0 +1,292 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "title": "Human automation assessment scientific contract",
+  "description": "Gate A 1.2 architecture for object-level belief, decision, readiness, and event-derived recovery. It authorizes no runtime or scientific claim.",
+  "type": "object",
+  "allOf": [{"$ref": "common.schema.json#/$defs/recordHeader"}],
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "version",
+    "lifecycle_status",
+    "lifecycle_history",
+    "protocol_release_id",
+    "created_at",
+    "runtime_execution_authorized",
+    "mission_release_id",
+    "assessment_id",
+    "encounter_ref",
+    "belief",
+    "observation",
+    "decision",
+    "readiness",
+    "recovery",
+    "evidence_binding",
+    "scientific_claim_authorized"
+  ],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json"},
+    "record_kind": {"const": "result"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "assessment_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "encounter_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+    "belief": {"$ref": "#/$defs/belief"},
+    "observation": {"$ref": "#/$defs/observation"},
+    "decision": {"$ref": "#/$defs/decision"},
+    "readiness": {"$ref": "#/$defs/readiness"},
+    "recovery": {"$ref": "#/$defs/recovery"},
+    "evidence_binding": {"$ref": "common.schema.json#/$defs/evidenceGapBinding"},
+    "scientific_claim_authorized": {"const": false}
+  },
+  "$defs": {
+    "belief": {
+      "type": "object",
+      "required": ["belief_id", "estimand_ref", "holder", "object_ref", "as_of", "information_set", "state_space", "distribution", "normalization_policy_binding", "calibration_target", "scoring_contract"],
+      "properties": {
+        "belief_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "estimand_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "holder": {"$ref": "common.schema.json#/$defs/actorReference"},
+        "object_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "as_of": {"$ref": "common.schema.json#/$defs/timestampMeasurement"},
+        "information_set": {"$ref": "common.schema.json#/$defs/informationSet"},
+        "state_space": {
+          "type": "object",
+          "required": ["state_space_id", "version", "state_ids", "exhaustive_as_declared"],
+          "properties": {
+            "state_space_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "version": {"const": "1.2.0"},
+            "state_ids": {"type": "array", "minItems": 2, "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"}, "uniqueItems": true},
+            "exhaustive_as_declared": {"const": true}
+          },
+          "additionalProperties": false
+        },
+        "distribution": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": ["state", "probabilities"],
+              "properties": {
+                "state": {"const": "observed"},
+                "probabilities": {
+                  "type": "array",
+                  "minItems": 2,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "object",
+                    "required": ["state_id", "probability"],
+                    "properties": {
+                      "state_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+                      "probability": {"type": "number", "minimum": 0, "maximum": 1}
+                    },
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false
+            },
+            {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"}
+          ]
+        },
+        "normalization_policy_binding": {
+          "type": "object",
+          "required": [
+            "policy_id",
+            "version",
+            "protocol_release_id",
+            "applies_to",
+            "sum_target",
+            "absolute_tolerance",
+            "comparison",
+            "record_tolerance_must_equal_policy",
+            "runtime_execution_authorized"
+          ],
+          "properties": {
+            "policy_id": {"const": "reiyah.belief-normalization-policy.harbor-gate-a"},
+            "version": {"const": "1.2.0"},
+            "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+            "applies_to": {"const": "observed_categorical_belief_components"},
+            "sum_target": {"const": 1},
+            "absolute_tolerance": {"type": "number", "exclusiveMinimum": 0, "maximum": 0.01},
+            "comparison": {"const": "absolute_error_lte"},
+            "record_tolerance_must_equal_policy": {"const": true},
+            "runtime_execution_authorized": {"const": false}
+          },
+          "additionalProperties": false
+        },
+        "calibration_target": {"$ref": "common.schema.json#/$defs/ruleReference"}
+        ,
+        "scoring_contract": {
+          "type": "object",
+          "required": ["scoring_rule_ref", "reference_outcome", "score_output", "aggregate_scoring_authorized"],
+          "properties": {
+            "scoring_rule_ref": {"type": "null"},
+            "reference_outcome": {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"},
+            "score_output": {"$ref": "common.schema.json#/$defs/nonObservedMeasurement"},
+            "aggregate_scoring_authorized": {"const": false}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "observation": {
+      "type": "object",
+      "required": ["observation_id", "observer", "object_ref", "event_at", "measured_at", "available_at", "value", "validity"],
+      "properties": {
+        "observation_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "observer": {"$ref": "common.schema.json#/$defs/actorReference"},
+        "object_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "event_at": {"$ref": "common.schema.json#/$defs/timestampMeasurement"},
+        "measured_at": {"$ref": "common.schema.json#/$defs/timestampMeasurement"},
+        "available_at": {"$ref": "common.schema.json#/$defs/timestampMeasurement"},
+        "value": {"$ref": "common.schema.json#/$defs/stringMeasurement"},
+        "validity": {"enum": ["valid", "missing", "unmeasured", "out_of_distribution", "sensor_invalid", "abstained"]}
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object",
+      "required": ["decision_id", "actor", "object_ref", "decided_at", "information_set", "action_space_id", "selected_action", "physical_control_authorized"],
+      "properties": {
+        "decision_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "actor": {"$ref": "common.schema.json#/$defs/actorReference"},
+        "object_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "decided_at": {"$ref": "common.schema.json#/$defs/timestampMeasurement"},
+        "information_set": {"$ref": "common.schema.json#/$defs/informationSet"},
+        "action_space_id": {"const": "reiyah.action_space.synthetic_acknowledgement"},
+        "selected_action": {"$ref": "common.schema.json#/$defs/identifierMeasurement"},
+        "physical_control_authorized": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "criterion": {
+      "type": "object",
+      "required": ["rule_ref", "threshold"],
+      "properties": {
+        "rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "threshold": {"$ref": "common.schema.json#/$defs/threshold"}
+      },
+      "additionalProperties": false
+    },
+    "capability": {
+      "type": "object",
+      "required": ["capability_id", "dimension_id", "required", "safety_critical", "weight", "estimate", "criterion", "criterion_disposition"],
+      "properties": {
+        "capability_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "dimension_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "required": {"type": "boolean"},
+        "safety_critical": {"type": "boolean"},
+        "weight": {"type": "number", "minimum": 0, "maximum": 1},
+        "estimate": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+        "criterion": {"$ref": "#/$defs/criterion"},
+        "criterion_disposition": {"enum": ["met", "not_met", "unknown"]}
+      },
+      "additionalProperties": false
+    },
+    "readiness": {
+      "type": "object",
+      "required": ["readiness_id", "estimand_ref", "subject_ref", "as_of", "window", "aggregation", "capability_set_ref", "capabilities", "unresolved_capability_ids", "coverage_counts", "aggregate"],
+      "properties": {
+        "readiness_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "estimand_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "subject_ref": {"$ref": "common.schema.json#/$defs/actorReference"},
+        "as_of": {"$ref": "common.schema.json#/$defs/timestampMeasurement"},
+        "window": {"$ref": "common.schema.json#/$defs/temporalWindow"},
+        "aggregation": {
+          "type": "object",
+          "required": ["mode", "rule_ref", "unknown_propagation", "safety_critical_compensation", "weights_normalized"],
+          "properties": {
+            "mode": {"enum": ["boolean_all_required", "weighted_continuous"]},
+            "rule_ref": {
+              "allOf": [
+                {"$ref": "common.schema.json#/$defs/ruleReference"},
+                {"properties": {"rule_id": {"const": "reiyah.rule.readiness-unknown-propagation"}}}
+              ]
+            },
+            "unknown_propagation": {"const": "dominant"},
+            "safety_critical_compensation": {"const": false},
+            "weights_normalized": {"const": true}
+          },
+          "additionalProperties": false
+        },
+        "capability_set_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "reiyah.kind.capability_set"}}}
+          ]
+        },
+        "capabilities": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/capability"}},
+        "unresolved_capability_ids": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"}, "uniqueItems": true},
+        "coverage_counts": {"$ref": "common.schema.json#/$defs/coverageCounts"},
+        "aggregate": {
+          "type": "object",
+          "required": ["estimate", "disposition"],
+          "properties": {
+            "estimate": {"$ref": "common.schema.json#/$defs/probabilityMeasurement"},
+            "disposition": {"enum": ["ready", "not_ready", "unknown"]}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "recoveryEvent": {
+      "type": "object",
+      "required": ["event_id", "event_type", "occurred_at", "role"],
+      "properties": {
+        "event_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "event_type": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "occurred_at": {"$ref": "common.schema.json#/$defs/timestampMeasurement"},
+        "role": {"enum": ["recovery", "censoring", "competing", "none"]}
+      },
+      "additionalProperties": false
+    },
+    "recovery": {
+      "type": "object",
+      "required": ["recovery_id", "estimand_ref", "derivation_contract_ref", "event_manifest_ref", "index_event", "window", "window_observation_complete", "event_tie_policy", "recovery_criterion", "censoring_policy", "competing_event_policy", "events", "outcome"],
+      "properties": {
+        "recovery_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "estimand_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "derivation_contract_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/ruleReference"},
+            {"properties": {"rule_id": {"const": "reiyah.rule.recovery-event-derivation"}}}
+          ]
+        },
+        "event_manifest_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/versionedReference"},
+            {"properties": {"record_kind": {"const": "reiyah.kind.recovery_event_manifest"}}}
+          ]
+        },
+        "index_event": {
+          "allOf": [
+            {"$ref": "#/$defs/recoveryEvent"},
+            {"properties": {"role": {"const": "none"}}}
+          ]
+        },
+        "window": {"$ref": "common.schema.json#/$defs/temporalWindow"},
+        "window_observation_complete": {"$ref": "common.schema.json#/$defs/booleanMeasurement"},
+        "event_tie_policy": {"const": "reject_ambiguous_cross_role_tie"},
+        "recovery_criterion": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "censoring_policy": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "competing_event_policy": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "events": {"type": "array", "items": {"$ref": "#/$defs/recoveryEvent"}},
+        "outcome": {
+          "type": "object",
+          "required": ["disposition", "qualifying_event_id", "elapsed_seconds"],
+          "properties": {
+            "disposition": {"enum": ["recovered", "right_censored", "competing_event", "invalid", "nonobserved"]},
+            "qualifying_event_id": {"$ref": "common.schema.json#/$defs/identifierOrAbsentMeasurement"},
+            "elapsed_seconds": {"$ref": "common.schema.json#/$defs/nonNegativeNumberMeasurement"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "unevaluatedProperties": false
+}

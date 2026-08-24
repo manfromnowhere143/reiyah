@@ -1,0 +1,28 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope_trajectory_manifest_coordinated_omission",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+  "mutations": [
+    {"operation": "remove", "json_pointer": "/trajectories/1"},
+    {"operation": "remove", "json_pointer": "/support_assessment/required_cells/7"},
+    {"operation": "remove", "json_pointer": "/support_assessment/required_cells/6"},
+    {"operation": "remove", "json_pointer": "/support_assessment/required_cells/5"},
+    {"operation": "remove", "json_pointer": "/support_assessment/required_cells/4"},
+    {"operation": "replace", "json_pointer": "/effective_sample_size_by_horizon", "value": [
+      {"horizon_index": 0, "weight_set_id": "reiyah.weight_set.cumulative_untransformed", "included_trajectory_count": 1, "sum_cumulative_weights": 1.5, "sum_squared_cumulative_weights": 2.25, "normalization_mode": "none", "normalization_denominator": 1, "normalized_weight_sum": {"state": "observed", "value": 1.5}, "kish_effective_sample_size": {"state": "observed", "value": 1}, "disposition": "insufficient"},
+      {"horizon_index": 1, "weight_set_id": "reiyah.weight_set.cumulative_untransformed", "included_trajectory_count": 1, "sum_cumulative_weights": 1.5, "sum_squared_cumulative_weights": 2.25, "normalization_mode": "none", "normalization_denominator": 1, "normalized_weight_sum": {"state": "observed", "value": 1.5}, "kish_effective_sample_size": {"state": "observed", "value": 1}, "disposition": "insufficient"}
+    ]}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-OPE-TRAJECTORY-MANIFEST-BINDING",
+    "instance_pointer": "/trajectories",
+    "schema_keyword": "semantic",
+    "reason": "The retained trajectory identities must exact-bind the complete ordered artifact-bound protocol-owned synthetic trajectory manifest; the manifest is static resolver evidence, not a real dataset population."
+  },
+  "runtime_execution_authorized": false
+}

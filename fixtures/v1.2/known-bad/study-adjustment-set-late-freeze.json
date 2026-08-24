@@ -1,0 +1,24 @@
+{
+  "base_fixture_path": "fixtures/v1.2/good/study-design-preregistration.json",
+  "expected_failure": {
+    "instance_pointer": "/data_access_chronology",
+    "reason": "The root and nested design freezes must be identical, precede feature and outcome access, and bound every adjustment-set freeze.",
+    "rule_id": "GA-STUDY-DESIGN-CHRONOLOGY",
+    "schema_keyword": "semantic"
+  },
+  "fixture_id": "reiyah.fixture.bad.study_adjustment_set_late_freeze",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "mutations": [
+    {
+      "json_pointer": "/adjustment_sets/0/frozen_at",
+      "operation": "replace",
+      "value": "2026-08-24T08:00:01Z"
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "expected_outcome": "reject",
+  "runtime_execution_authorized": false,
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json"
+}

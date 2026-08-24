@@ -1,0 +1,18 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.bad.worst_group_insufficient_partition_omission",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-conformal-below-target.json",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "mutations": [{"operation": "remove", "json_pointer": "/worst_group_evaluation/insufficient_group_ids/0"}],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-WORST-GROUP-ELIGIBILITY",
+    "instance_pointer": "/worst_group_evaluation/eligible_group_ids",
+    "schema_keyword": "semantic",
+    "reason": "Eligible group IDs must equal exactly the observed groups satisfying the executable minimum-information rule."
+  },
+  "runtime_execution_authorized": false
+}

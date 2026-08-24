@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.selective_risk_derivation_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/selective_evaluation/accepted_error_risk/value", "value": 0.11}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-SELECTIVE-DERIVATION", "instance_pointer": "/selective_evaluation/accepted_error_risk/value", "schema_keyword": "semantic", "reason": "Accepted error risk and coverage must be derived from the declared accepted and population counts."},
+  "runtime_execution_authorized": false
+}

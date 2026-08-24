@@ -1,0 +1,21 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.bad.conformal_coordinated_group_drop",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "mutations": [
+    {"operation": "remove", "json_pointer": "/conformal_evaluation/group_universe/1"},
+    {"operation": "remove", "json_pointer": "/conformal_evaluation/group_results/1"}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-CONFORMAL-GROUP-SCOPE",
+    "instance_pointer": "/conformal_evaluation/group_set_ref",
+    "schema_keyword": "semantic",
+    "reason": "Conformal calibration and test refs must be distinct, and the declared group universe must exact-bind the registry-owned group set."
+  },
+  "runtime_execution_authorized": false
+}

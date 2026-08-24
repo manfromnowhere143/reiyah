@@ -1,0 +1,20 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.joint_opportunity_warning_flip",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/joint_silent_miss/opportunity_rows/0/warning/outcome/value", "value": "issued"}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-JOINT-SILENT-ROW-DERIVATION",
+    "instance_pointer": "/joint_silent_miss/joint_misses",
+    "schema_keyword": "semantic",
+    "reason": "A joint silent miss requires both channels to miss while warning is not issued and fallback is not activated; nonobserved row operands must propagate to the affected cell and summary."
+  },
+  "runtime_execution_authorized": false
+}

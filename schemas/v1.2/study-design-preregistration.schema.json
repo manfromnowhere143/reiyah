@@ -1,0 +1,276 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+  "title": "Study design preregistration scientific contract",
+  "description": "Gate A 1.2 architecture for frozen study design and graph-checked causal adjustment. It is not an empirical preregistration or claim.",
+  "type": "object",
+  "allOf": [{"$ref": "common.schema.json#/$defs/recordHeader"}],
+  "required": [
+    "schema_id", "schema_version", "artifact_id", "version", "lifecycle_status", "lifecycle_history",
+    "protocol_release_id", "created_at", "runtime_execution_authorized", "mission_release_id", "study_id",
+    "design_frozen_at", "target_population", "unit_of_analysis", "estimands", "power_analysis",
+    "stopping_rule", "data_access_chronology", "missingness_policy", "split_policy", "causal_graph",
+    "adjustment_sets", "identification_queries", "control_strategy", "deviations", "evidence_binding",
+    "scientific_claim_authorized"
+  ],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json"},
+    "record_kind": {"const": "experiment"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "study_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "design_frozen_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+    "target_population": {"$ref": "common.schema.json#/$defs/ruleReference"},
+    "unit_of_analysis": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+    "estimands": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/estimand"}},
+    "power_analysis": {"$ref": "#/$defs/powerAnalysis"},
+    "stopping_rule": {"$ref": "#/$defs/stoppingRule"},
+    "data_access_chronology": {"$ref": "#/$defs/accessChronology"},
+    "missingness_policy": {"$ref": "#/$defs/missingnessPolicy"},
+    "split_policy": {"$ref": "#/$defs/splitPolicy"},
+    "causal_graph": {"$ref": "#/$defs/causalGraph"},
+    "adjustment_sets": {"type": "array", "items": {"$ref": "#/$defs/adjustmentSet"}},
+    "identification_queries": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/identificationQuery"}},
+    "control_strategy": {"$ref": "#/$defs/controlStrategy"},
+    "deviations": {"type": "array", "items": {"$ref": "#/$defs/deviation"}},
+    "evidence_binding": {"$ref": "common.schema.json#/$defs/evidenceGapBinding"},
+    "scientific_claim_authorized": {"const": false}
+  },
+  "$defs": {
+    "estimand": {
+      "type": "object",
+      "required": ["estimand_id", "population_rule_ref", "treatment_node_id", "comparator", "outcome_node_id", "outcome_window_rule_ref", "effect_measure", "intercurrent_event_rule_ref"],
+      "properties": {
+        "estimand_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "population_rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "treatment_node_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "comparator": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "outcome_node_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "outcome_window_rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "effect_measure": {"enum": ["risk_difference", "risk_ratio", "odds_ratio", "mean_difference", "survival_contrast"]},
+        "intercurrent_event_rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"}
+      },
+      "additionalProperties": false
+    },
+    "powerAnalysis": {
+      "type": "object",
+      "required": ["method_ref", "alpha", "target_power", "effect_size", "planned_sample_size", "assumptions_frozen"],
+      "properties": {
+        "method_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "alpha": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1},
+        "target_power": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "effect_size": {"$ref": "common.schema.json#/$defs/numberMeasurement"},
+        "planned_sample_size": {"type": "integer", "minimum": 1},
+        "assumptions_frozen": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "stoppingRule": {
+      "type": "object",
+      "required": ["rule_ref", "optional_stopping_permitted", "interim_looks"],
+      "properties": {
+        "rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "optional_stopping_permitted": {"const": false},
+        "interim_looks": {"type": "array", "items": {"type": "integer", "minimum": 1}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "accessChronology": {
+      "type": "object",
+      "required": ["design_frozen_at", "first_feature_access_at", "first_outcome_access_at", "outcome_access_before_freeze_prohibited"],
+      "properties": {
+        "design_frozen_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "first_feature_access_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "first_outcome_access_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "outcome_access_before_freeze_prohibited": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "missingnessPolicy": {
+      "type": "object",
+      "required": ["rule_ref", "states_preserved", "zero_coercion_prohibited", "imputation_requires_declared_procedure"],
+      "properties": {
+        "rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "states_preserved": {"const": ["missing", "unmeasured", "out_of_distribution", "sensor_invalid", "abstained"]},
+        "zero_coercion_prohibited": {"const": true},
+        "imputation_requires_declared_procedure": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "splitPolicy": {
+      "type": "object",
+      "required": ["rule_ref", "split_unit", "analysis_unit_set_ref", "analysis_unit_ids", "split_manifests", "cross_split_overlap_prohibited", "outcome_stratification_after_access_prohibited"],
+      "properties": {
+        "rule_ref": {"$ref": "common.schema.json#/$defs/ruleReference"},
+        "split_unit": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "analysis_unit_set_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "analysis_unit_ids": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "split_manifests": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "prefixItems": [
+            {
+              "allOf": [
+                {"$ref": "#/$defs/splitManifest"},
+                {"properties": {"split_role": {"const": "train"}}}
+              ]
+            },
+            {
+              "allOf": [
+                {"$ref": "#/$defs/splitManifest"},
+                {"properties": {"split_role": {"const": "calibration"}}}
+              ]
+            },
+            {
+              "allOf": [
+                {"$ref": "#/$defs/splitManifest"},
+                {"properties": {"split_role": {"const": "test"}}}
+              ]
+            }
+          ],
+          "items": false
+        },
+        "cross_split_overlap_prohibited": {"const": true},
+        "outcome_stratification_after_access_prohibited": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "splitManifest": {
+      "type": "object",
+      "required": ["split_role", "split_ref", "frozen_at", "member_ids", "stratification_input_refs"],
+      "properties": {
+        "split_role": {"enum": ["train", "calibration", "test"]},
+        "split_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "frozen_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"},
+        "member_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "stratification_input_refs": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/stratificationInputRef"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "stratificationInputRef": {
+      "type": "object",
+      "required": ["node_id", "node_role", "available_at"],
+      "properties": {
+        "node_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "node_role": {
+          "enum": [
+            "treatment",
+            "outcome",
+            "pre_treatment_confounder",
+            "instrument",
+            "mediator",
+            "post_treatment_descendant",
+            "collider",
+            "selection",
+            "other"
+          ]
+        },
+        "available_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"}
+      },
+      "additionalProperties": false
+    },
+    "causalNode": {
+      "type": "object",
+      "required": ["node_id", "role", "time_order", "observability"],
+      "properties": {
+        "node_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "role": {"enum": ["treatment", "outcome", "pre_treatment_confounder", "instrument", "mediator", "post_treatment_descendant", "collider", "selection", "other"]},
+        "time_order": {"type": "integer", "minimum": 0},
+        "observability": {"$ref": "common.schema.json#/$defs/epistemicState"}
+      },
+      "additionalProperties": false
+    },
+    "causalEdge": {
+      "type": "object",
+      "required": ["from_node_id", "to_node_id"],
+      "properties": {
+        "from_node_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "to_node_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"}
+      },
+      "additionalProperties": false
+    },
+    "causalGraph": {
+      "type": "object",
+      "required": ["graph_id", "version", "nodes", "edges", "acyclic_required", "temporal_order_required"],
+      "properties": {
+        "graph_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "version": {"const": "1.2.0"},
+        "nodes": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/causalNode"}},
+        "edges": {"type": "array", "items": {"$ref": "#/$defs/causalEdge"}},
+        "acyclic_required": {"const": true},
+        "temporal_order_required": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "adjustmentSet": {
+      "type": "object",
+      "required": ["adjustment_set_id", "node_ids", "frozen_at"],
+      "properties": {
+        "adjustment_set_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "node_ids": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"}, "uniqueItems": true},
+        "frozen_at": {"$ref": "common.schema.json#/$defs/utcTimestamp"}
+      },
+      "additionalProperties": false
+    },
+    "identificationQuery": {
+      "type": "object",
+      "required": ["query_id", "estimand_id", "treatment_node_id", "outcome_node_id", "strategy", "adjustment_set_id", "disposition", "machine_validation_required"],
+      "properties": {
+        "query_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "estimand_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "treatment_node_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "outcome_node_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "strategy": {"const": "backdoor"},
+        "adjustment_set_id": {"oneOf": [{"$ref": "common.schema.json#/$defs/stableIdentifier"}, {"type": "null"}]},
+        "disposition": {"enum": ["identified", "not_identified", "unknown"]},
+        "machine_validation_required": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "controlStrategy": {
+      "type": "object",
+      "required": ["identification_contract_ref", "estimand_ref", "selected_adjustment_set_ids", "prohibited_roles", "post_treatment_adjustment_prohibited", "collider_adjustment_prohibited", "unmeasured_adjustment_prohibited"],
+      "properties": {
+        "identification_contract_ref": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/ruleReference"},
+            {"properties": {"rule_id": {"const": "reiyah.rule.causal-identification"}}}
+          ]
+        },
+        "estimand_ref": {"$ref": "common.schema.json#/$defs/versionedReference"},
+        "selected_adjustment_set_ids": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"}, "uniqueItems": true},
+        "prohibited_roles": {"const": ["treatment", "outcome", "mediator", "post_treatment_descendant", "collider", "selection"]},
+        "post_treatment_adjustment_prohibited": {"const": true},
+        "collider_adjustment_prohibited": {"const": true},
+        "unmeasured_adjustment_prohibited": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "deviation": {
+      "type": "object",
+      "required": ["deviation_id", "status", "description", "impact_assessment"],
+      "properties": {
+        "deviation_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "status": {"enum": ["proposed", "running", "blocked", "invalid", "corrected", "retracted"]},
+        "description": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "impact_assessment": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "unevaluatedProperties": false
+}

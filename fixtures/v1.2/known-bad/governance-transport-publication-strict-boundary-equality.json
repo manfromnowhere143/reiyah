@@ -1,0 +1,33 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-mutation-fixture.schema.json",
+  "target_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.governance.transport-publication-strict-boundary-equality@1.2.0",
+  "fixture_class": "known-bad-governance",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "synthetic_fixture_only": true,
+  "baseline_fixture_id": "reiyah.fixture.governance.transport-observation-synthetic-baseline@1.2.0",
+  "baseline_expected_outcome": "accepted",
+  "expected_diagnostic": "GA12-TRANSPORT-CHRONOLOGY",
+  "expected_replay": {
+    "rejection_layer": "semantic",
+    "target_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-fixture.schema.json",
+    "schema_keyword": "semantic",
+    "instance_pointer": null,
+    "semantic_replay_required": true,
+    "exact_singleton_semantic_diagnostic_required": true
+  },
+  "mutations": [
+    {
+      "operation": "replace",
+      "json_pointer": "/retained_evidence_operands/0/record/captured_at",
+      "value": "2026-08-25T10:30:50Z"
+    },
+    {
+      "operation": "replace",
+      "json_pointer": "/transport_record_operand/record/observation_evidence/0/captured_at",
+      "value": "2026-08-25T10:30:50Z"
+    }
+  ]
+}

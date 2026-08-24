@@ -1,0 +1,15 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "synthetic_fixture_only": true,
+  "expected_diagnostic": "GA12-REFERENCE-PATH-COVERAGE",
+  "fixture_class": "known-bad-validator-security",
+  "fixture_id": "reiyah.fixture.validator-security.reference-path-duplicate@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "probe": {
+    "kind": "reference_path_inventory",
+    "profile_path": "manifests/scientific/harbor-scientific-contract-profile-1.2.0.json",
+    "operation": "duplicate_declared_classification"
+  },
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0"
+}

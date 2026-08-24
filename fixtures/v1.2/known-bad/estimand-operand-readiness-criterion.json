@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.estimand_operand_readiness_criterion",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/readiness/capabilities/0/criterion/rule_ref/rule_id", "value": "reiyah.rule.synthetic-readiness-threshold"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-ESTIMAND-REFERENCE-BINDING", "instance_pointer": "/readiness/capabilities/0/criterion/rule_ref", "schema_keyword": "semantic", "reason": "Each estimand reference must exact-bind the protocol-owned estimand assigned to its application section by the scientific contract profile."},
+  "runtime_execution_authorized": false
+}

@@ -1,0 +1,162 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+  "schema_version": "1.2.0",
+  "artifact_id": "reiyah.fixture.assurance.blocked.good",
+  "record_kind": "evidence",
+  "version": "1.2.1",
+  "lifecycle_status": "blocked",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.event.assurance.proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-24T08:00:00Z",
+      "actor": {
+        "actor_id": "reiyah.actor.fixture_author",
+        "actor_type": "derived_process",
+        "version": "1.2.0",
+        "role": "deterministic synthetic fixture author"
+      },
+      "rationale": "Synthetic static architecture example with no empirical evidence or authority.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    },
+    {
+      "event_id": "reiyah.event.assurance.blocked",
+      "sequence": 2,
+      "prior_status": "proposed",
+      "status": "blocked",
+      "recorded_at": "2026-08-24T08:01:00Z",
+      "actor": {
+        "actor_id": "reiyah.actor.fixture_author",
+        "actor_type": "derived_process",
+        "version": "1.2.0",
+        "role": "deterministic synthetic fixture author"
+      },
+      "rationale": "The immutable successor remains blocked because Gate A retains no eligible scientific evidence.",
+      "evidence_refs": [],
+      "prior_artifact": {
+        "artifact_id": "reiyah.fixture.assurance.good",
+        "artifact_kind": "reiyah.kind.evidence",
+        "version": "1.2.0",
+        "path": "fixtures/v1.2/good/evaluation-assurance-bundle.json",
+        "sha256": "sha256:9157fc65e1e62318e84a457170a9135f032c43e70ce952c3e84d255549155cf4",
+        "byte_size": 5271
+      }
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "created_at": "2026-08-24T08:00:00Z",
+  "runtime_execution_authorized": false,
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "bundle_id": "reiyah.bundle.synthetic_assurance",
+  "dataset_governance": {
+    "dataset_id": "reiyah.dataset.synthetic_1_2",
+    "version": "1.2.0",
+    "provenance_ref": {
+      "record_id": "reiyah.provenance.synthetic_generation",
+      "record_kind": "reiyah.kind.provenance",
+      "version": "1.2.0"
+    },
+    "license_disposition": "synthetic_original",
+    "ethics_review": {
+      "assumption_id": "reiyah.assumption.ethics_review",
+      "disposition": "unmeasured",
+      "rationale": "No human data, participants, or private records exist in this static synthetic fixture.",
+      "evidence_refs": []
+    },
+    "private_data_ingestion_authorized": false,
+    "synthetic_only": true
+  },
+  "odd_contract": {
+    "odd_id": "reiyah.odd.synthetic_1_2",
+    "version": "1.2.0",
+    "inclusion_rule_refs": [
+      {"rule_id": "reiyah.rule.odd_inclusion", "rule_kind": "reiyah.kind.odd_rule", "version": "1.2.0"}
+    ],
+    "exclusion_rule_refs": [
+      {"rule_id": "reiyah.rule.odd_exclusion", "rule_kind": "reiyah.kind.odd_rule", "version": "1.2.0"}
+    ],
+    "exit_condition_rule_refs": [
+      {"rule_id": "reiyah.rule.odd_exit", "rule_kind": "reiyah.kind.odd_rule", "version": "1.2.0"}
+    ],
+    "boundary_state": "proposed"
+  },
+  "scenario_contract": {
+    "scenario_set_id": "reiyah.scenarios.synthetic_1_2",
+    "version": "1.2.0",
+    "generation_rule_ref": {"rule_id": "reiyah.rule.scenario_generation", "rule_kind": "reiyah.kind.scenario_rule", "version": "1.2.0"},
+    "coverage_rule_ref": {"rule_id": "reiyah.rule.scenario_coverage", "rule_kind": "reiyah.kind.scenario_rule", "version": "1.2.0"},
+    "post_hoc_relabeling_prohibited": true
+  },
+  "test_contracts": [
+    {
+      "test_id": "reiyah.test.synthetic_schema_rejection",
+      "version": "1.2.0",
+      "input_fixture_ref": {
+        "record_id": "reiyah.fixture.synthetic_input",
+        "record_kind": "reiyah.kind.fixture",
+        "version": "1.2.0"
+      },
+      "oracle_rule_ref": {"rule_id": "reiyah.rule.synthetic_oracle", "rule_kind": "reiyah.kind.oracle", "version": "1.2.0"},
+      "expected_disposition": "reject",
+      "runtime_execution_authorized": false
+    }
+  ],
+  "benchmark_contract": {
+    "benchmark_id": "reiyah.benchmark.synthetic_1_2",
+    "version": "1.2.0",
+    "metric_contract_refs": [
+      {"rule_id": "reiyah.metric.joint_miss_risk", "rule_kind": "reiyah.kind.metric_contract", "version": "1.2.0"}
+    ],
+    "comparator_refs": [
+      {"record_id": "reiyah.comparator.synthetic_baseline", "record_kind": "reiyah.kind.comparator", "version": "1.2.0"}
+    ],
+    "evaluation_protocol_ref": {
+      "record_id": "reiyah.protocol.harbor_gate_a",
+      "record_kind": "reiyah.kind.protocol",
+      "version": "1.2.0"
+    },
+    "claim_disposition": "proposed"
+  },
+  "safety_case": {
+    "case_id": "reiyah.safety_case.synthetic_1_2",
+    "version": "1.2.0",
+    "hazards": [
+      {
+        "hazard_id": "reiyah.hazard.false_confidence",
+        "description": "A missing capability could be silently represented as confident readiness.",
+        "mitigation_rule_refs": [
+          {"rule_id": "reiyah.rule.readiness-unknown-propagation", "rule_kind": "reiyah.kind.aggregation_rule", "version": "1.2.0"}
+        ],
+        "residual_risk_state": "unmeasured"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "reiyah.claim.synthetic_architecture",
+        "claim_type": "safety",
+        "statement": "The schema proposes a checkable unknown-propagation contract; no safety performance is claimed.",
+        "status": "proposed",
+        "hazard_refs": ["reiyah.hazard.false_confidence"],
+        "evidence_binding": {
+          "state": "evidence_gap",
+          "evidence_refs": [],
+          "gap_reason": "No empirical safety evidence is retained by Gate A."
+        }
+      }
+    ],
+    "status": "proposed",
+    "operator_acceptance_inferred": false
+  },
+  "evidence_binding": {
+    "state": "evidence_gap",
+    "evidence_refs": [],
+    "gap_reason": "This is a synthetic architecture fixture, not retained scientific evidence."
+  },
+  "scientific_claim_authorized": false,
+  "safety_claim_authorized": false,
+  "compliance_claim_authorized": false,
+  "deployment_authorized": false
+}

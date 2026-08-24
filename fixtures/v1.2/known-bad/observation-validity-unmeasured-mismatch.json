@@ -1,0 +1,24 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.observation_validity_unmeasured_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment-observation-unmeasured.json",
+  "mutations": [
+    {
+      "operation": "replace",
+      "json_pointer": "/observation/validity",
+      "value": "missing"
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-OBSERVATION-VALIDITY-STATE",
+    "instance_pointer": "/observation/validity",
+    "schema_keyword": "semantic",
+    "reason": "Observation validity must be valid exactly for an observed value and otherwise equal the value epistemic state."
+  },
+  "runtime_execution_authorized": false
+}

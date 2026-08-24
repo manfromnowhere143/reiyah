@@ -1,0 +1,335 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/historical-packet-recovery.schema.json",
+  "title": "Immutable Gate A 1.1.2 public packet recovery record",
+  "description": "Closed recovery binding for exact predecessor bytes. It confers no transport, acceptance, scientific, safety, or runtime authority.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "record_id",
+    "version",
+    "as_of_date",
+    "subject_release",
+    "recovery_method",
+    "source_repository",
+    "release_commits",
+    "snapshot_policy",
+    "snapshot_artifacts",
+    "canonical_versioned_artifacts",
+    "validation_bindings",
+    "detached_worktree_replay",
+    "dispositions"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/historical-packet-recovery.schema.json"
+    },
+    "schema_version": {"const": "1.2.0"},
+    "artifact_id": {"const": "reiyah.artifact.gate-a-1.1.2-recovery-1.2.0"},
+    "record_id": {"const": "reiyah.history.gate-a-1.1.2-recovery"},
+    "version": {"const": "1.2.0"},
+    "as_of_date": {"type": "string", "format": "date", "const": "2026-08-24"},
+    "subject_release": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "release_id",
+        "version",
+        "architecture_status",
+        "operator_acceptance_state",
+        "ga_17_state",
+        "runtime_authorized"
+      ],
+      "properties": {
+        "artifact_id": {"const": "reiyah.artifact.gate-a-index-1.1.2"},
+        "release_id": {"const": "reiyah.gate-a-evidence-index@1.1.2"},
+        "version": {"const": "1.1.2"},
+        "architecture_status": {"const": "architecture_complete"},
+        "operator_acceptance_state": {"const": "unaccepted"},
+        "ga_17_state": {"const": "not_evaluated"},
+        "runtime_authorized": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "recovery_method": {"const": "exact_git_object_copy_from_released_public_packet"},
+    "source_repository": {
+      "type": "object",
+      "required": ["canonical_root", "distribution_remote", "git_object_format", "remote_authority"],
+      "properties": {
+        "canonical_root": {"const": "/Users/danielwahnich/workspace/reiyah"},
+        "distribution_remote": {"const": "https://github.com/manfromnowhere143/reiyah"},
+        "git_object_format": {"const": "sha1"},
+        "remote_authority": {"const": "distribution_only"}
+      },
+      "additionalProperties": false
+    },
+    "release_commits": {
+      "type": "object",
+      "required": ["packet", "receipt_bearing"],
+      "properties": {
+        "packet": {
+          "allOf": [
+            {"$ref": "#/$defs/commitTree"},
+            {
+              "properties": {
+                "commit": {"const": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b"},
+                "tree": {"const": "5865cbc977ed6e4ccf7bf80ad6d8a64e6c9e5341"}
+              }
+            }
+          ]
+        },
+        "receipt_bearing": {
+          "type": "object",
+          "required": ["commit", "tree", "first_parent", "first_parent_matches_packet_commit"],
+          "properties": {
+            "commit": {"const": "656d826cfe6938fd628c0ede7ea15929fe11d90e"},
+            "tree": {"const": "94c32621d7b1d9da42b6aae9df7ca4da82a6e8ed"},
+            "first_parent": {"const": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b"},
+            "first_parent_matches_packet_commit": {"const": true}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "snapshot_policy": {
+      "type": "object",
+      "required": [
+        "collision_prone_root_artifacts_copied",
+        "copied_artifact_count",
+        "versioned_validation_report_copied",
+        "versioned_distribution_receipt_copied",
+        "rationale"
+      ],
+      "properties": {
+        "collision_prone_root_artifacts_copied": {"const": true},
+        "copied_artifact_count": {"const": 2},
+        "versioned_validation_report_copied": {"const": false},
+        "versioned_distribution_receipt_copied": {"const": false},
+        "rationale": {"$ref": "#/$defs/nonEmptyString"}
+      },
+      "additionalProperties": false
+    },
+    "snapshot_artifacts": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/snapshotArtifact"},
+      "allOf": [
+        {
+          "contains": {
+            "properties": {
+              "snapshot_path": {"const": "history/gate-a-1.1.2/gate/GATE_A_EVIDENCE_INDEX.json"},
+              "sha256": {"const": "sha256:17f3a2e601e9cb4e1c0cd0f97561b1da9ffdc7d5893ed4af4eaccbaf8a67989f"}
+            },
+            "required": ["snapshot_path", "sha256"]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "snapshot_path": {"const": "history/gate-a-1.1.2/gate/GATE_A_EVIDENCE_INDEX.sha256"},
+              "bound_index_sha256": {"const": "sha256:17f3a2e601e9cb4e1c0cd0f97561b1da9ffdc7d5893ed4af4eaccbaf8a67989f"}
+            },
+            "required": ["snapshot_path", "bound_index_sha256"]
+          }
+        }
+      ]
+    },
+    "canonical_versioned_artifacts": {
+      "type": "object",
+      "required": ["validation_report", "distribution_receipt"],
+      "properties": {
+        "validation_report": {"$ref": "#/$defs/canonicalArtifact"},
+        "distribution_receipt": {
+          "allOf": [
+            {"$ref": "#/$defs/canonicalArtifact"},
+            {
+              "type": "object",
+              "required": ["receipt_id", "receipt_sequence", "published_packet_commit"],
+              "properties": {
+                "receipt_id": {"$ref": "#/$defs/nonEmptyString"},
+                "receipt_sequence": {"const": 3},
+                "published_packet_commit": {"const": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b"}
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "validation_bindings": {
+      "type": "object",
+      "required": ["validation_plan", "authorized_tools", "recorded_toolchain"],
+      "properties": {
+        "validation_plan": {"$ref": "#/$defs/sourceArtifact"},
+        "authorized_tools": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/sourceArtifact"}
+        },
+        "recorded_toolchain": {
+          "type": "object",
+          "required": [
+            "python_implementation",
+            "python_version",
+            "jsonschema_version",
+            "referencing_version",
+            "schema_dialect"
+          ],
+          "properties": {
+            "python_implementation": {"const": "CPython"},
+            "python_version": {"const": "3.14.2"},
+            "jsonschema_version": {"const": "4.26.0"},
+            "referencing_version": {"const": "0.37.0"},
+            "schema_dialect": {"const": "https://json-schema.org/draft/2020-12/schema"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "detached_worktree_replay": {
+      "type": "object",
+      "required": [
+        "shell",
+        "network_required",
+        "mutates_released_bytes",
+        "instruction",
+        "validator_replay",
+        "script_lines"
+      ],
+      "properties": {
+        "shell": {"const": "POSIX sh"},
+        "network_required": {"const": false},
+        "mutates_released_bytes": {"const": false},
+        "instruction": {"$ref": "#/$defs/nonEmptyString"},
+        "validator_replay": {
+          "type": "object",
+          "required": ["supported_from_detached_worktree", "released_validator_expected_exit_code", "reason"],
+          "properties": {
+            "supported_from_detached_worktree": {"const": false},
+            "released_validator_expected_exit_code": {"const": 2},
+            "reason": {"$ref": "#/$defs/nonEmptyString"}
+          },
+          "additionalProperties": false
+        },
+        "script_lines": {
+          "type": "array",
+          "minItems": 20,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "dispositions": {
+      "type": "object",
+      "required": [
+        "exact_released_bytes_bound",
+        "exact_released_bytes_locally_replayable",
+        "external_transport_verification_state",
+        "released_identifiers_reused_or_overwritten",
+        "new_scientific_evidence_created",
+        "operator_acceptance_created",
+        "gate_a_acceptance_conferred",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "exact_released_bytes_bound": {"const": true},
+        "exact_released_bytes_locally_replayable": {"const": true},
+        "external_transport_verification_state": {"const": "not_evaluated"},
+        "released_identifiers_reused_or_overwritten": {"const": false},
+        "new_scientific_evidence_created": {"const": false},
+        "operator_acceptance_created": {"const": false},
+        "gate_a_acceptance_conferred": {"const": false},
+        "runtime_execution_authorized": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {"type": "string", "minLength": 1, "maxLength": 10000},
+    "sha1": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "relativePath": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512,
+      "pattern": "^[A-Za-z0-9._/-]+$",
+      "not": {"pattern": "(^|/)\\.\\.?(/|$)"}
+    },
+    "commitTree": {
+      "type": "object",
+      "required": ["commit", "tree"],
+      "properties": {
+        "commit": {"$ref": "#/$defs/sha1"},
+        "tree": {"$ref": "#/$defs/sha1"}
+      },
+      "additionalProperties": false
+    },
+    "snapshotArtifact": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "source_commit",
+        "source_path",
+        "snapshot_path",
+        "sha256",
+        "byte_size",
+        "copy_class"
+      ],
+      "properties": {
+        "artifact_id": {"$ref": "#/$defs/nonEmptyString"},
+        "source_commit": {"const": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b"},
+        "source_path": {"$ref": "#/$defs/relativePath"},
+        "snapshot_path": {"$ref": "#/$defs/relativePath"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "byte_size": {"type": "integer", "minimum": 1},
+        "bound_index_sha256": {"$ref": "#/$defs/sha256"},
+        "copy_class": {"const": "byte_identical_git_object_copy"}
+      },
+      "additionalProperties": false
+    },
+    "canonicalArtifact": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "source_commit",
+        "source_path",
+        "canonical_path",
+        "sha256",
+        "byte_size",
+        "snapshot_copy_created"
+      ],
+      "properties": {
+        "artifact_id": {"$ref": "#/$defs/nonEmptyString"},
+        "source_commit": {"$ref": "#/$defs/sha1"},
+        "source_path": {"$ref": "#/$defs/relativePath"},
+        "canonical_path": {"$ref": "#/$defs/relativePath"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "byte_size": {"type": "integer", "minimum": 1},
+        "snapshot_copy_created": {"const": false},
+        "receipt_id": {"$ref": "#/$defs/nonEmptyString"},
+        "receipt_sequence": {"type": "integer", "minimum": 1},
+        "published_packet_commit": {"$ref": "#/$defs/sha1"}
+      },
+      "additionalProperties": false
+    },
+    "sourceArtifact": {
+      "type": "object",
+      "required": ["source_commit", "path", "sha256", "byte_size"],
+      "properties": {
+        "source_commit": {"const": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b"},
+        "path": {"$ref": "#/$defs/relativePath"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "byte_size": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

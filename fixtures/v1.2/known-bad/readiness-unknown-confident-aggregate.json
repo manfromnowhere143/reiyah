@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.readiness_unknown_confident_aggregate",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/readiness/aggregate/estimate", "value": {"state": "observed", "value": 0.8}},
+    {"operation": "replace", "json_pointer": "/readiness/aggregate/disposition", "value": "ready"}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-READINESS-UNKNOWN-PROPAGATION", "instance_pointer": "/readiness/aggregate", "schema_keyword": "semantic", "reason": "Any required or positively weighted unresolved capability must appear in the unresolved set and force a nonobserved aggregate with unknown disposition."},
+  "runtime_execution_authorized": false
+}

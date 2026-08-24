@@ -1,0 +1,1008 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json",
+  "title": "Independent public transport verification record",
+  "description": "Static interface for an independently retained observation of a public repository transport event. It consumes a publisher receipt only as an untrusted claim input, retains its own observation bytes, and resolves transport independently as verified, failed, or inconclusive. It creates no Gate A, scientific, safety, standards, legal, publication, acceptance, GA-17, runtime, cloud, deployment, private-data, model-execution, or physical-control authority.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "record_id",
+    "version",
+    "record_kind",
+    "recorded_at",
+    "distribution_event_id",
+    "mission_release_id",
+    "protocol_release_id",
+    "observer",
+    "authorization_record_ref",
+    "receipt_ref",
+    "receipt_transport_state_before_observation",
+    "publisher_assertion_treatment",
+    "repository_url",
+    "repository_ref",
+    "observed_git_commit",
+    "observed_at",
+    "observation_method",
+    "index_ref",
+    "validation_report_ref",
+    "observations",
+    "observation_evidence",
+    "evidence_resolution_policy",
+    "reference_chronology_policy",
+    "chronology_policy",
+    "transport_verification_state",
+    "discrepancies",
+    "independently_retained_observation",
+    "publisher_assertion_accepted_as_independent_evidence",
+    "verification_sequence",
+    "history_policy",
+    "prior_verification_ref",
+    "gate_a_acceptance_conferred",
+    "ga17_status",
+    "scientific_publication_acceptance_conferred",
+    "scientific_support_claimed",
+    "compliance_claimed",
+    "runtime_execution_authorized",
+    "limitations"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "artifact_id": {
+      "allOf": [
+        {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        {
+          "pattern": "^reiyah\\.artifact\\.transport-verification-record-[a-z0-9][a-z0-9._-]+$"
+        }
+      ]
+    },
+    "record_id": {
+      "allOf": [
+        {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        {
+          "pattern": "^reiyah\\.transport-verification\\.[a-z0-9][a-z0-9._-]+$"
+        }
+      ]
+    },
+    "version": {
+      "const": "1.0.0"
+    },
+    "record_kind": {
+      "const": "independent_transport_verification"
+    },
+    "recorded_at": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/timestamp"
+    },
+    "distribution_event_id": {
+      "allOf": [
+        {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        {
+          "pattern": "^reiyah\\.distribution-event\\.[a-z0-9][a-z0-9._-]+$"
+        }
+      ]
+    },
+    "mission_release_id": {
+      "const": "reiyah.mission@1.1.0"
+    },
+    "protocol_release_id": {
+      "const": "reiyah.protocol.harbor-gate-a@1.2.0"
+    },
+    "observer": {
+      "$ref": "#/$defs/independentObserver"
+    },
+    "authorization_record_ref": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/authorizationRecordBinding"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "receipt_ref": {
+      "$ref": "#/$defs/receiptBinding"
+    },
+    "receipt_transport_state_before_observation": {
+      "const": "asserted_unverified"
+    },
+    "publisher_assertion_treatment": {
+      "const": "untrusted_claim_input_only"
+    },
+    "repository_url": {
+      "const": "https://github.com/manfromnowhere143/reiyah"
+    },
+    "repository_ref": {
+      "const": "refs/heads/main"
+    },
+    "observed_git_commit": {
+      "$ref": "#/$defs/gitObjectId"
+    },
+    "observed_at": {
+      "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/timestamp"
+    },
+    "observation_method": {
+      "enum": [
+        "independent_https_and_git_fetch",
+        "independent_https_fetch",
+        "independent_git_fetch"
+      ]
+    },
+    "index_ref": {
+      "$ref": "#/$defs/indexBinding"
+    },
+    "validation_report_ref": {
+      "$ref": "#/$defs/validationReportBinding"
+    },
+    "observations": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/transportObservation"
+      },
+      "$ref": "#/$defs/exactObservationCoverage"
+    },
+    "observation_evidence": {
+      "description": "Exact independently captured bytes; publisher receipt bytes alone are ineligible.",
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/retainedObservationEvidence"
+      },
+      "allOf": [
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "evidence_kind": {
+                "const": "remote_response_capture"
+              }
+            },
+            "required": [
+              "evidence_kind"
+            ]
+          },
+          "minContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "evidence_kind": {
+                "const": "verification_transcript"
+              }
+            },
+            "required": [
+              "evidence_kind"
+            ]
+          },
+          "minContains": 1
+        }
+      ]
+    },
+    "evidence_resolution_policy": {
+      "const": "distinct_referenced_evidence_ids_equal_distinct_retained_evidence_ids_and_each_id_resolves_once"
+    },
+    "reference_chronology_policy": {
+      "description": "Semantic validation must resolve every observation evidence reference and require the retained capture time to be no later than that referencing observation's observed_at value.",
+      "const": "each_referenced_evidence_captured_at_lte_referencing_observation_observed_at"
+    },
+    "chronology_policy": {
+      "const": "receipt_published_at_lt_each_observation_and_capture_lte_observed_at_lte_recorded_at"
+    },
+    "transport_verification_state": {
+      "enum": [
+        "independently_verified",
+        "failed",
+        "inconclusive"
+      ]
+    },
+    "discrepancies": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/nonEmptyString"
+      },
+      "uniqueItems": true
+    },
+    "independently_retained_observation": {
+      "const": true
+    },
+    "publisher_assertion_accepted_as_independent_evidence": {
+      "const": false
+    },
+    "verification_sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "history_policy": {
+      "const": "append_only_linear"
+    },
+    "prior_verification_ref": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/priorVerificationBinding"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "gate_a_acceptance_conferred": {
+      "const": false
+    },
+    "ga17_status": {
+      "const": "not_evaluated"
+    },
+    "scientific_publication_acceptance_conferred": {
+      "const": false
+    },
+    "scientific_support_claimed": {
+      "const": false
+    },
+    "compliance_claimed": {
+      "const": false
+    },
+    "runtime_execution_authorized": {
+      "const": false
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/nonEmptyString"
+      },
+      "allOf": [
+        {
+          "contains": {
+            "const": "Independent transport verification establishes only the observed remote byte and reachability state for the exact bound commit."
+          }
+        },
+        {
+          "contains": {
+            "const": "This record does not authenticate operator authority or accept Gate A."
+          }
+        },
+        {
+          "contains": {
+            "const": "This record is not scientific evidence and supports no safety, standards, legal, publication, readiness, performance, causal, or superiority conclusion."
+          }
+        },
+        {
+          "contains": {
+            "const": "This record authorizes no runtime, cloud execution, deployment, private-data ingestion, model execution, or physical control."
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "gitObjectId": {
+      "type": "string",
+      "pattern": "^(?:[0-9a-f]{40}|[0-9a-f]{64})$"
+    },
+    "independentObserver": {
+      "type": "object",
+      "required": [
+        "observer_id",
+        "observer_role",
+        "publisher_identity",
+        "independent_from_publisher",
+        "identity_separation_policy",
+        "independence_basis",
+        "identity_authentication_state"
+      ],
+      "properties": {
+        "observer_id": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        "observer_role": {
+          "const": "independent_transport_observer"
+        },
+        "publisher_identity": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        "independent_from_publisher": {
+          "description": "Necessary record assertion only. It is never sufficient without authenticated identity, observer/publisher identifier non-equivalence, and a substantive independence basis.",
+          "const": true
+        },
+        "identity_separation_policy": {
+          "description": "Semantic validation must reject a record when observer_id equals publisher_identity; a self-asserted boolean cannot satisfy this policy.",
+          "const": "observer_id_must_not_equal_publisher_identity"
+        },
+        "independence_basis": {
+          "description": "Substantive, reviewable basis for independence. This prose is an operand, not proof; semantic validation still enforces identity non-equivalence and rejects missing or placeholder text.",
+          "type": "string",
+          "minLength": 80,
+          "maxLength": 4000,
+          "pattern": "\\S",
+          "not": {
+            "pattern": "(?:[Rr][Ee][Pp][Ll][Aa][Cc][Ee]|[Pp][Ll][Aa][Cc][Ee][Hh][Oo][Ll][Dd][Ee][Rr]|[Tt][Oo][Dd][Oo]|[Tt][Bb][Dd])"
+          }
+        },
+        "identity_authentication_state": {
+          "enum": [
+            "independently_authenticated",
+            "not_authenticated"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorizationRecordBinding": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "authorization_id",
+        "path",
+        "sha256",
+        "byte_size",
+        "schema_id",
+        "version"
+      ],
+      "properties": {
+        "artifact_id": {
+          "allOf": [
+            {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+            },
+            {
+              "pattern": "^reiyah\\.artifact\\.transport-observation-authorization-[a-z0-9][a-z0-9._-]+$"
+            }
+          ]
+        },
+        "authorization_id": {
+          "allOf": [
+            {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+            },
+            {
+              "pattern": "^reiyah\\.transport-observation-authorization\\.[a-z0-9][a-z0-9._-]+$"
+            }
+          ]
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^gate/transport-verification-authorizations/[A-Za-z0-9._-]+\\.json$"
+        },
+        "sha256": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/sha256Digest"
+        },
+        "byte_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json#/$defs/transportObservationAuthorizationRecord"
+        },
+        "version": {
+          "const": "1.0.0"
+        }
+      },
+      "additionalProperties": false
+    },
+    "transportObservationAuthorizationRecord": {
+      "$anchor": "transportObservationAuthorizationRecord",
+      "type": "object",
+      "required": [
+        "schema_id",
+        "schema_version",
+        "artifact_id",
+        "authorization_id",
+        "version",
+        "record_kind",
+        "authorized_transport_record_id",
+        "distribution_event_id",
+        "mission_release_id",
+        "protocol_release_id",
+        "repository_url",
+        "repository_ref",
+        "authorized_git_commit",
+        "index_ref",
+        "validation_report_ref",
+        "authorizer_identity",
+        "authorizer_identity_authentication_state",
+        "authority_basis",
+        "authorized_at",
+        "valid_until",
+        "authorization_scope",
+        "single_use",
+        "gate_a_acceptance_conferred",
+        "ga17_status",
+        "scientific_publication_acceptance_conferred",
+        "scientific_support_claimed",
+        "compliance_claimed",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json#/$defs/transportObservationAuthorizationRecord"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "artifact_id": {
+          "allOf": [
+            {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+            },
+            {
+              "pattern": "^reiyah\\.artifact\\.transport-observation-authorization-[a-z0-9][a-z0-9._-]+$"
+            }
+          ]
+        },
+        "authorization_id": {
+          "allOf": [
+            {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+            },
+            {
+              "pattern": "^reiyah\\.transport-observation-authorization\\.[a-z0-9][a-z0-9._-]+$"
+            }
+          ]
+        },
+        "version": {
+          "const": "1.0.0"
+        },
+        "record_kind": {
+          "const": "transport_observation_authorization"
+        },
+        "authorized_transport_record_id": {
+          "allOf": [
+            {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+            },
+            {
+              "pattern": "^reiyah\\.transport-verification\\.[a-z0-9][a-z0-9._-]+$"
+            }
+          ]
+        },
+        "distribution_event_id": {
+          "allOf": [
+            {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+            },
+            {
+              "pattern": "^reiyah\\.distribution-event\\.[a-z0-9][a-z0-9._-]+$"
+            }
+          ]
+        },
+        "mission_release_id": {
+          "const": "reiyah.mission@1.1.0"
+        },
+        "protocol_release_id": {
+          "const": "reiyah.protocol.harbor-gate-a@1.2.0"
+        },
+        "repository_url": {
+          "const": "https://github.com/manfromnowhere143/reiyah"
+        },
+        "repository_ref": {
+          "const": "refs/heads/main"
+        },
+        "authorized_git_commit": {
+          "$ref": "#/$defs/gitObjectId"
+        },
+        "index_ref": {
+          "$ref": "#/$defs/indexBinding"
+        },
+        "validation_report_ref": {
+          "$ref": "#/$defs/validationReportBinding"
+        },
+        "authorizer_identity": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+        },
+        "authorizer_identity_authentication_state": {
+          "const": "independently_authenticated"
+        },
+        "authority_basis": {
+          "type": "string",
+          "minLength": 80,
+          "maxLength": 4000,
+          "pattern": "\\S",
+          "not": {
+            "pattern": "(?:[Rr][Ee][Pp][Ll][Aa][Cc][Ee]|[Pp][Ll][Aa][Cc][Ee][Hh][Oo][Ll][Dd][Ee][Rr]|[Tt][Oo][Dd][Oo]|[Tt][Bb][Dd])"
+          }
+        },
+        "authorized_at": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/timestamp"
+        },
+        "valid_until": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/timestamp"
+        },
+        "authorization_scope": {
+          "const": "one_independent_static_transport_observation"
+        },
+        "single_use": {
+          "const": true
+        },
+        "gate_a_acceptance_conferred": {
+          "const": false
+        },
+        "ga17_status": {
+          "const": "not_evaluated"
+        },
+        "scientific_publication_acceptance_conferred": {
+          "const": false
+        },
+        "scientific_support_claimed": {
+          "const": false
+        },
+        "compliance_claimed": {
+          "const": false
+        },
+        "runtime_execution_authorized": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "receiptBinding": {
+      "allOf": [
+        {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/artifactReference"
+        },
+        {
+          "required": [
+            "schema_id",
+            "version"
+          ],
+          "properties": {
+            "artifact_id": {
+              "const": "reiyah.artifact.public-distribution-receipt-1.2.0"
+            },
+            "path": {
+              "const": "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.2.0.json"
+            },
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-distribution-receipt.schema.json"
+            },
+            "version": {
+              "const": "1.2.0"
+            }
+          }
+        }
+      ]
+    },
+    "indexBinding": {
+      "allOf": [
+        {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/artifactReference"
+        },
+        {
+          "required": [
+            "schema_id",
+            "version"
+          ],
+          "properties": {
+            "artifact_id": {
+              "const": "reiyah.artifact.gate-a-index-1.2.0"
+            },
+            "path": {
+              "const": "gate/GATE_A_EVIDENCE_INDEX.json"
+            },
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/gate-a-index.schema.json"
+            },
+            "version": {
+              "const": "1.2.0"
+            }
+          }
+        }
+      ]
+    },
+    "validationReportBinding": {
+      "allOf": [
+        {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/artifactReference"
+        },
+        {
+          "required": [
+            "schema_id",
+            "version"
+          ],
+          "properties": {
+            "artifact_id": {
+              "const": "reiyah.validation-report.gate-a-1.2.0"
+            },
+            "path": {
+              "const": "gate/validation-reports/gate-a-validation-1.2.0.json"
+            },
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/validation-report.schema.json"
+            },
+            "version": {
+              "const": "1.2.0"
+            }
+          }
+        }
+      ]
+    },
+    "transportObservation": {
+      "type": "object",
+      "required": [
+        "observation_id",
+        "observed_at",
+        "expected_state",
+        "observed_state",
+        "evidence_refs"
+      ],
+      "properties": {
+        "observation_id": {
+          "enum": [
+            "repository_ref_reachable",
+            "published_commit_reachable",
+            "index_byte_identity",
+            "validation_report_byte_identity",
+            "distributed_payload_retrievability"
+          ]
+        },
+        "observed_at": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/timestamp"
+        },
+        "expected_state": {
+          "const": "observed_true"
+        },
+        "observed_state": {
+          "enum": [
+            "observed_true",
+            "observed_false",
+            "not_observed",
+            "measurement_invalid"
+          ]
+        },
+        "evidence_refs": {
+          "description": "Every identifier must resolve exactly once, and its retained captured_at value must be no later than this observation's observed_at value.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "allOf": [
+              {
+                "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+              },
+              {
+                "pattern": "^reiyah\\.transport-evidence\\.[a-z0-9][a-z0-9._-]+$"
+              }
+            ]
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "exactObservationCoverage": {
+      "allOf": [
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "observation_id": {
+                "const": "repository_ref_reachable"
+              }
+            },
+            "required": [
+              "observation_id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "observation_id": {
+                "const": "published_commit_reachable"
+              }
+            },
+            "required": [
+              "observation_id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "observation_id": {
+                "const": "index_byte_identity"
+              }
+            },
+            "required": [
+              "observation_id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "observation_id": {
+                "const": "validation_report_byte_identity"
+              }
+            },
+            "required": [
+              "observation_id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "observation_id": {
+                "const": "distributed_payload_retrievability"
+              }
+            },
+            "required": [
+              "observation_id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        }
+      ]
+    },
+    "retainedObservationEvidence": {
+      "type": "object",
+      "required": [
+        "evidence_id",
+        "evidence_kind",
+        "path",
+        "sha256",
+        "byte_size",
+        "media_type",
+        "captured_at",
+        "source_endpoint",
+        "collection_method"
+      ],
+      "properties": {
+        "evidence_id": {
+          "allOf": [
+            {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/stableIdentifier"
+            },
+            {
+              "pattern": "^reiyah\\.transport-evidence\\.[a-z0-9][a-z0-9._-]+$"
+            }
+          ]
+        },
+        "evidence_kind": {
+          "enum": [
+            "remote_response_capture",
+            "verification_transcript"
+          ]
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^gate/transport-verification-evidence/[A-Za-z0-9._/-]+$",
+          "not": {
+            "pattern": "(?:^|/)\\.\\.(?:/|$)"
+          }
+        },
+        "sha256": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/sha256Digest"
+        },
+        "byte_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "media_type": {
+          "enum": [
+            "application/json",
+            "application/octet-stream",
+            "text/plain"
+          ]
+        },
+        "captured_at": {
+          "description": "Capture time must satisfy both the record-level chronology and every referencing observation's local chronology.",
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/timestamp"
+        },
+        "source_endpoint": {
+          "type": "string",
+          "format": "https-uri"
+        },
+        "collection_method": {
+          "enum": [
+            "independent_https_fetch",
+            "independent_git_fetch"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "priorVerificationBinding": {
+      "allOf": [
+        {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.2.0/common.schema.json#/$defs/artifactReference"
+        },
+        {
+          "required": [
+            "schema_id",
+            "version"
+          ],
+          "properties": {
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json"
+            },
+            "version": {
+              "const": "1.0.0"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "transport_verification_state": {
+            "const": "independently_verified"
+          }
+        },
+        "required": [
+          "transport_verification_state"
+        ]
+      },
+      "then": {
+        "properties": {
+          "observer": {
+            "properties": {
+              "identity_authentication_state": {
+                "const": "independently_authenticated"
+              }
+            }
+          },
+          "authorization_record_ref": {
+            "$ref": "#/$defs/authorizationRecordBinding"
+          },
+          "observations": {
+            "items": {
+              "properties": {
+                "observed_state": {
+                  "const": "observed_true"
+                }
+              }
+            }
+          },
+          "discrepancies": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "transport_verification_state": {
+            "const": "failed"
+          }
+        },
+        "required": [
+          "transport_verification_state"
+        ]
+      },
+      "then": {
+        "properties": {
+          "observations": {
+            "contains": {
+              "type": "object",
+              "properties": {
+                "observed_state": {
+                  "const": "observed_false"
+                }
+              },
+              "required": [
+                "observed_state"
+              ]
+            },
+            "minContains": 1
+          },
+          "discrepancies": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "transport_verification_state": {
+            "const": "inconclusive"
+          }
+        },
+        "required": [
+          "transport_verification_state"
+        ]
+      },
+      "then": {
+        "properties": {
+          "observations": {
+            "contains": {
+              "type": "object",
+              "properties": {
+                "observed_state": {
+                  "enum": [
+                    "not_observed",
+                    "measurement_invalid"
+                  ]
+                }
+              },
+              "required": [
+                "observed_state"
+              ]
+            },
+            "minContains": 1,
+            "not": {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "observed_state": {
+                    "const": "observed_false"
+                  }
+                },
+                "required": [
+                  "observed_state"
+                ]
+              }
+            }
+          },
+          "discrepancies": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "verification_sequence": {
+            "const": 1
+          }
+        },
+        "required": [
+          "verification_sequence"
+        ]
+      },
+      "then": {
+        "properties": {
+          "prior_verification_ref": {
+            "type": "null"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "verification_sequence": {
+            "minimum": 2
+          },
+          "prior_verification_ref": {
+            "$ref": "#/$defs/priorVerificationBinding"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

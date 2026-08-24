@@ -1,0 +1,2049 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validation-plan.schema.json",
+  "title": "HARBOR Gate A 1.2.0 deterministic validation plan",
+  "description": "Closed plan for two separately loaded, state-reset offline evaluations of one immutable projection, predecessor inheritance, reason-specific fixtures, and a non-authoritative canonical report.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "plan_id",
+    "version",
+    "as_of_date",
+    "distribution_profile",
+    "mission_release_id",
+    "protocol_release_id",
+    "source_ledger_path",
+    "standards_crosswalk_path",
+    "schema_dialect",
+    "canonical_root",
+    "entrypoint",
+    "fixture_catalog_path",
+    "index_path",
+    "index_sidecar_path",
+    "canonical_report_path",
+    "offline_required",
+    "read_only_required",
+    "deterministic_required",
+    "runtime_authorized",
+    "acceptance_authorized",
+    "gate_b_authorized",
+    "tool_bindings",
+    "narrative_bindings",
+    "stage_evidence_contract",
+    "static_publication_topology",
+    "candidate_projection",
+    "predecessor_inheritance",
+    "required_artifacts",
+    "rules",
+    "control_contract",
+    "correction_closure_contract",
+    "transport_policy"
+  ],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.2.0/validation-plan.schema.json"},
+    "schema_version": {"const": "1.2.0"},
+    "artifact_id": {"const": "reiyah.artifact.validation-plan-1.2.0"},
+    "plan_id": {"const": "reiyah.validation-plan.gate-a-public-1.2.0"},
+    "version": {"const": "1.2.0"},
+    "as_of_date": {"const": "2026-08-25"},
+    "distribution_profile": {"const": "public_open_source"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+    "source_ledger_path": {"const": "evidence/source-ledger-1.1.0.json"},
+    "standards_crosswalk_path": {"const": "evidence/standards-crosswalk-1.1.0.json"},
+    "schema_dialect": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "canonical_root": {"const": "/Users/danielwahnich/workspace/reiyah"},
+    "entrypoint": {"const": "tools/gate_a_1_2_0.sh"},
+    "fixture_catalog_path": {"const": "fixtures/fixture-catalog.json"},
+    "index_path": {"const": "gate/GATE_A_EVIDENCE_INDEX.json"},
+    "index_sidecar_path": {"const": "gate/GATE_A_EVIDENCE_INDEX.sha256"},
+    "canonical_report_path": {"const": "gate/validation-reports/gate-a-validation-1.2.0.json"},
+    "offline_required": {"const": true},
+    "read_only_required": {"const": true},
+    "deterministic_required": {"const": true},
+    "runtime_authorized": {"const": false},
+    "acceptance_authorized": {"const": false},
+    "gate_b_authorized": {"const": false},
+    "tool_bindings": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {
+          "allOf": [
+            {"$ref": "#/$defs/toolBinding"},
+            {"properties": {"role": {"const": "external_launcher"}, "path": {"const": "tools/gate_a_1_2_0.sh"}}}
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/toolBinding"},
+            {"properties": {"role": {"const": "validator_and_index_renderer"}, "path": {"const": "tools/gate_a_1_2_0.py"}}}
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/toolBinding"},
+            {"properties": {"role": {"const": "scientific_derivation_module"}, "path": {"const": "tools/gate_a_1_2_0_science.py"}}}
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/toolBinding"},
+            {"properties": {"role": {"const": "toolchain_lock"}, "path": {"const": "validation/toolchain-lock-1.2.0.json"}}}
+          ]
+        }
+      ],
+      "items": false
+    },
+    "narrative_bindings": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "prefixItems": [
+        {
+          "allOf": [
+            {"$ref": "#/$defs/artifactBinding"},
+            {"properties": {"path": {"const": "README.md"}}}
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/artifactBinding"},
+            {"properties": {"path": {"const": "docs/GATE_A_1_2_0_CONSISTENCY_REVIEW.md"}}}
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/artifactBinding"},
+            {"properties": {"path": {"const": "docs/SESSION_HANDOFF.md"}}}
+          ]
+        }
+      ],
+      "items": false
+    },
+    "stage_evidence_contract": {
+      "$ref": "#/$defs/stageEvidenceContract"
+    },
+    "static_publication_topology": {
+      "$ref": "#/$defs/staticPublicationTopology"
+    },
+    "candidate_projection": {
+      "type": "object",
+      "required": [
+        "serialization",
+        "source",
+        "release_evaluation_count",
+        "development_evaluation_count",
+        "regular_files_only",
+        "symlink_policy",
+        "release_mode",
+        "development_release_eligible",
+        "excluded_paths"
+      ],
+      "properties": {
+        "serialization": {"const": "sorted_path_nul_sha256_nul_byte_count_lf"},
+        "source": {"const": "one_in_memory_repository_snapshot_per_evaluation"},
+        "release_evaluation_count": {"const": 2},
+        "development_evaluation_count": {"const": 1},
+        "regular_files_only": {"const": true},
+        "symlink_policy": {"const": "reject"},
+        "release_mode": {"const": "clean_immutable_git_tree"},
+        "development_release_eligible": {"const": false},
+        "excluded_paths": {
+          "type": "array",
+          "minItems": 6,
+          "items": {"$ref": "#/$defs/exclusion"},
+          "uniqueItems": true,
+          "allOf": [
+            {
+              "contains": {
+                "properties": {
+                  "match_kind": {"const": "exact"},
+                  "path": {
+                    "const": "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json"
+                  }
+                },
+                "required": ["match_kind", "path"]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "not": {
+                "contains": {
+                  "properties": {
+                    "match_kind": {"const": "prefix"},
+                    "path": {"pattern": "^evidence/public-rights-revalidation"}
+                  },
+                  "required": ["match_kind", "path"]
+                }
+              }
+            },
+            {
+              "not": {
+                "contains": {
+                  "properties": {
+                    "path": {
+                      "allOf": [
+                        {"pattern": "^evidence/public-rights-revalidation"},
+                        {
+                          "not": {
+                            "const": "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "required": ["path"]
+                }
+              }
+            },
+            {
+              "not": {
+                "contains": {
+                  "properties": {
+                    "path": {"pattern": "^evidence/rights-observations(?:/|$)"}
+                  },
+                  "required": ["path"]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "predecessor_inheritance": {
+      "type": "object",
+      "required": [
+        "subject_version",
+        "packet_commit",
+        "receipt_bearing_commit",
+        "historical_index",
+        "historical_sidecar",
+        "canonical_report",
+        "publisher_receipt",
+        "recovery_record",
+        "policy",
+        "changed_paths",
+        "added_paths",
+        "removed_paths"
+      ],
+      "properties": {
+        "subject_version": {"const": "1.1.2"},
+        "packet_commit": {"const": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b"},
+        "receipt_bearing_commit": {"const": "656d826cfe6938fd628c0ede7ea15929fe11d90e"},
+        "historical_index": {"$ref": "#/$defs/artifactBinding"},
+        "historical_sidecar": {"$ref": "#/$defs/artifactBinding"},
+        "canonical_report": {"$ref": "#/$defs/artifactBinding"},
+        "publisher_receipt": {"$ref": "#/$defs/artifactBinding"},
+        "recovery_record": {"$ref": "#/$defs/artifactBinding"},
+        "policy": {"const": "every_predecessor_index_artifact_is_byte_identical_unless_path_is_explicitly_changed"},
+        "changed_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+          "uniqueItems": true
+        },
+        "added_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+          "uniqueItems": true
+        },
+        "removed_paths": {
+          "type": "array",
+          "maxItems": 0,
+          "items": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "required_artifacts": {
+      "type": "array",
+      "minItems": 32,
+      "items": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+      "uniqueItems": true
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 30,
+      "items": {"$ref": "#/$defs/rule"},
+      "uniqueItems": true
+    },
+    "control_contract": {
+      "type": "object",
+      "required": [
+        "offline_control_ids",
+        "control_evidence_requirements",
+        "coverage_definition",
+        "pass_definition",
+        "failure_definition",
+        "external_control_id",
+        "external_control_state"
+      ],
+      "properties": {
+        "offline_control_ids": {
+          "const": [
+            "GA-01", "GA-02", "GA-03", "GA-04", "GA-05", "GA-06", "GA-07", "GA-08",
+            "GA-09", "GA-10", "GA-11", "GA-12", "GA-13", "GA-14", "GA-15", "GA-16"
+          ]
+        },
+        "control_evidence_requirements": {
+          "$ref": "#/$defs/controlEvidenceRequirements"
+        },
+        "coverage_definition": {
+          "const": "exact_closed_mapping_exists_and_every_named_stage_and_nested_contract_producer_is_implemented"
+        },
+        "pass_definition": {
+          "const": "every_required_stage_token_and_nested_contract_token_is_observed_for_the_same_candidate_projection"
+        },
+        "failure_definition": {
+          "const": "required_control_ids_minus_passed_control_ids_in_required_order"
+        },
+        "external_control_id": {"const": "GA-17"},
+        "external_control_state": {"const": "not_evaluated"}
+      },
+      "additionalProperties": false
+    },
+    "correction_closure_contract": {
+      "$ref": "#/$defs/correctionClosureContract"
+    },
+    "transport_policy": {
+      "type": "object",
+      "required": [
+        "offline_state",
+        "publisher_receipt_is_independent_verification",
+        "independent_record_required_for_verified_state",
+        "transport_confers_acceptance"
+      ],
+      "properties": {
+        "offline_state": {"const": "not_evaluated"},
+        "publisher_receipt_is_independent_verification": {"const": false},
+        "independent_record_required_for_verified_state": {"const": true},
+        "transport_confers_acceptance": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "stageEvidenceContract": {
+      "const": {
+        "primitive_stages": [
+          {
+            "token_id": "reiyah.stage-evidence.snapshot-release-projection@1.2.0",
+            "producer_check_id": "GA12-STAGE-RELEASE-PROJECTION",
+            "required_observation_ids": ["reiyah.stage-observation.candidate-projection-inventory@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.toolchain-pre-post-integrity@1.2.0",
+            "producer_check_id": "GA12-STAGE-TOOLCHAIN-INTEGRITY",
+            "required_observation_ids": ["reiyah.stage-observation.toolchain-pre-post-integrity@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.validation-plan-contract@1.2.0",
+            "producer_check_id": "GA12-STAGE-PLAN-CONTRACT",
+            "required_observation_ids": ["reiyah.stage-observation.validation-plan-closed-contract@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.predecessor-inheritance@1.2.0",
+            "producer_check_id": "GA12-STAGE-PREDECESSOR-INHERITANCE",
+            "required_observation_ids": ["reiyah.stage-observation.predecessor-inheritance-reconciliation@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.repository-authority-and-normative-architecture@1.2.0",
+            "producer_check_id": "GA12-STAGE-NORMATIVE-ARCHITECTURE",
+            "required_observation_ids": ["reiyah.stage-observation.repository-authority-normative-architecture@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.manifest-lineage@1.2.0",
+            "producer_check_id": "GA12-STAGE-MANIFEST-LINEAGE",
+            "required_observation_ids": ["reiyah.stage-observation.manifest-lineage-append-only@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.source-and-standards-custody@1.2.0",
+            "producer_check_id": "GA12-STAGE-SOURCE-STANDARDS-CUSTODY",
+            "required_observation_ids": ["reiyah.stage-observation.source-standards-custody-reconciliation@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.threat-and-no-runtime-boundary@1.2.0",
+            "producer_check_id": "GA12-STAGE-THREAT-NO-RUNTIME",
+            "required_observation_ids": ["reiyah.stage-observation.threat-no-runtime-boundary@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.schema-and-format-corpus@1.2.0",
+            "producer_check_id": "GA12-STAGE-SCHEMA-FORMAT-CORPUS",
+            "required_observation_ids": ["reiyah.stage-observation.schema-format-corpus-replay@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-SCIENTIFIC-CONTRACT-REPLAY",
+            "required_observation_ids": ["reiyah.stage-observation.scientific-good-bad-replay@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0",
+            "producer_check_id": "GA12-STAGE-SCIENTIFIC-PROFILE-REFERENCES",
+            "required_observation_ids": ["reiyah.stage-observation.profile-reference-inventory-reconciliation@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.publication-governance-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-PUBLICATION-GOVERNANCE",
+            "required_observation_ids": ["reiyah.stage-observation.publication-governance-replay@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.transport-governance-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-TRANSPORT-GOVERNANCE",
+            "required_observation_ids": ["reiyah.stage-observation.transport-governance-replay@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.validator-security-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-VALIDATOR-SECURITY",
+            "required_observation_ids": ["reiyah.stage-observation.validator-security-replay@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.fixture-catalog-reconciliation@1.2.0",
+            "producer_check_id": "GA12-STAGE-FIXTURE-CATALOG",
+            "required_observation_ids": ["reiyah.stage-observation.fixture-catalog-filesystem-reconciliation@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.rule-control-threat-coverage@1.2.0",
+            "producer_check_id": "GA12-STAGE-RULE-CONTROL-THREAT-COVERAGE",
+            "required_observation_ids": ["reiyah.stage-observation.rule-control-threat-exact-coverage@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.narrative-candidate-nonclaim@1.2.0",
+            "producer_check_id": "GA12-STAGE-NARRATIVE-NONCLAIM",
+            "required_observation_ids": ["reiyah.stage-observation.narrative-candidate-nonclaim-reconciliation@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.canonical-index-readback@1.2.0",
+            "producer_check_id": "GA12-STAGE-CANONICAL-INDEX",
+            "required_observation_ids": ["reiyah.stage-observation.canonical-index-byte-readback@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.report-implication-engine@1.2.0",
+            "producer_check_id": "GA12-STAGE-REPORT-IMPLICATIONS",
+            "required_observation_ids": ["reiyah.stage-observation.report-implication-canary-replay@1.2.0"]
+          },
+          {
+            "token_id": "reiyah.stage-evidence.dual-release-evaluation-match@1.2.0",
+            "producer_check_id": "GA12-STAGE-DUAL-RELEASE-EVALUATION",
+            "required_observation_ids": ["reiyah.stage-observation.two-release-evaluations-byte-identical@1.2.0"]
+          }
+        ],
+        "nested_contract_ids": [
+          "reiyah.executable-contract.ope-policy-distribution",
+          "reiyah.executable-contract.causal-identification",
+          "reiyah.executable-contract.readiness-unknown-propagation",
+          "reiyah.executable-contract.recovery-event-derivation",
+          "reiyah.executable-contract.transfer-eligibility",
+          "reiyah.executable-contract.conformal-guarantee-disposition",
+          "reiyah.executable-contract.ood-population-partition",
+          "reiyah.executable-contract.worst-group-eligibility",
+          "reiyah.executable-contract.human-belief-observation-decision-reconciliation",
+          "reiyah.executable-contract.joint-silent-miss-identifiability",
+          "reiyah.executable-contract.assumption-evidence-eligibility",
+          "reiyah.cross-cutting-contract.lifecycle-history-integrity",
+          "reiyah.cross-cutting-contract.typed-reference-integrity",
+          "reiyah.cross-cutting-contract.architecture-nonclaim-boundary"
+        ],
+        "row_shape": {
+          "report_schema_path": "schemas/validation-report-1.2.schema.json",
+          "report_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validation-report.schema.json",
+          "token_row_schema_pointer": "#/$defs/stageEvidenceTokenRow",
+          "observation_row_schema_pointer": "#/$defs/stageEvidenceObservation",
+          "nested_contract_row_schema_pointer": "#/$defs/nestedContractEvidenceRow",
+          "selector_row_schema_pointer": "#/$defs/selectorEvidenceRow",
+          "selector_observation_schema_pointer": "#/$defs/selectorEvidenceObservation",
+          "token_row_fields": [
+            "token_id",
+            "producer_check_id",
+            "candidate_projection_sha256",
+            "observations",
+            "evidence_sha256"
+          ],
+          "observation_row_fields": [
+            "observation_id",
+            "subject_count",
+            "evidence_sha256"
+          ],
+          "nested_contract_row_fields": [
+            "contract_id",
+            "producer_check_id",
+            "candidate_projection_sha256",
+            "application_schema_ids",
+            "production_rule_ids",
+            "application_schema_set_sha256",
+            "production_rule_set_sha256",
+            "known_good_fixture_ids",
+            "known_bad_fixture_ids",
+            "known_good_fixture_set_sha256",
+            "known_bad_fixture_set_sha256",
+            "evidence_sha256"
+          ],
+          "selector_row_fields": [
+            "selector_id",
+            "producer_stage_token_id",
+            "candidate_projection_sha256",
+            "observation_projections",
+            "evidence_sha256"
+          ],
+          "selector_observation_fields": [
+            "observation_id",
+            "fixture_ids",
+            "fixture_set_sha256"
+          ],
+          "canonicalization": "utf8_json_sort_keys_compact_no_trailing_lf",
+          "digest_algorithm": "sha256",
+          "token_evidence_digest_preimage": "token_row_without_evidence_sha256",
+          "observation_evidence_digest_preimage": "producer_specific_post_replay_rows_not_the_observation_row",
+          "application_schema_set_digest_preimage": "compact_sorted_key_json_array_in_declared_schema_id_order_of_rows_with_exact_path_raw_lowercase_sha256_and_size",
+          "production_rule_set_digest_preimage": "compact_json_array_of_production_rule_ids_in_declared_order",
+          "known_good_fixture_set_digest_preimage": "compact_sorted_key_json_array_in_declared_fixture_id_order_of_rows_with_exact_path_raw_lowercase_sha256_and_size",
+          "known_bad_fixture_set_digest_preimage": "compact_sorted_key_json_array_in_declared_fixture_id_order_of_rows_with_exact_path_raw_lowercase_sha256_and_size",
+          "nested_contract_evidence_digest_preimage": "nested_contract_row_without_evidence_sha256",
+          "selector_evidence_digest_preimage": "selector_row_without_evidence_sha256",
+          "selector_observation_fixture_set_digest_preimage": "compact_sorted_key_json_array_in_declared_fixture_id_order_of_rows_with_exact_path_raw_lowercase_sha256_and_size",
+          "stage_evidence_set_digest_preimage": "object_with_token_rows_nested_contract_rows_and_selector_rows_only",
+          "finding_evidence_projection_digest_preimage": "finding_result_evidence_fields_without_status_or_evidence_projection_sha256"
+        },
+        "collector_policy": {
+          "one_central_collector_per_evaluation_required": true,
+          "one_final_post_comparison_reducer_required": true,
+          "emit_only_after_production_success": true,
+          "plan_declaration_is_evidence": false,
+          "candidate_projection_binding_required": true,
+          "observed_counts_and_digests_derived_from_post_replay_rows": true,
+          "duplicate_token_policy": "reject",
+          "unexpected_token_policy": "reject",
+          "order_drift_policy": "reject",
+          "canonical_token_row_order": "primitive_stages_declaration_order",
+          "canonical_nested_contract_row_order": "nested_contract_ids_declaration_order",
+          "canonical_selector_row_order": "evidence_selector_registry_declaration_order",
+          "execution_order_may_differ_from_canonical_report_order": true,
+          "missing_token_policy": "nonpass",
+          "nested_contract_emission_requires_registry_protocol_profile_schema_good_bad_and_tool_reconciliation": true,
+          "release_evaluation_count": 2,
+          "separately_loaded_repository_snapshot_per_release_evaluation": true,
+          "pre_report_evidence_and_index_byte_equality_required": true,
+          "dual_evaluation_token_emits_only_after_both_evaluations_match": true
+        },
+        "two_evaluation_bundle": {
+          "evaluation_count": 2,
+          "evaluation_roles": ["release_evaluation_1", "release_evaluation_2"],
+          "snapshot_capture_sequence": [1, 2],
+          "separately_loaded_state_reset_snapshot_per_evaluation": true,
+          "same_snapshot_object_reuse_prohibited": true,
+          "evaluation_mutable_state_reuse_prohibited": true,
+          "comparable_evaluation_record_fields": [
+            "candidate_projection_sha256",
+            "candidate_projection_artifact_count",
+            "candidate_projection_byte_count",
+            "canonical_index_sha256",
+            "canonical_index_byte_size",
+            "pre_report_stage_evidence_sha256",
+            "pre_report_stage_evidence_byte_size"
+          ],
+          "evaluation_digest_preimage": "comparable_evaluation_record_only_without_ordinal",
+          "ordered_evaluation_row_fields": [
+            "role",
+            "capture_sequence",
+            "evaluation_sha256",
+            "fresh_snapshot_loaded",
+            "shared_mutable_state_reused"
+          ],
+          "equality_scope": [
+            "candidate_projection_serialization",
+            "canonical_index_bytes",
+            "primitive_stage_rows_S01_through_S19",
+            "nested_contract_rows",
+            "selector_rows"
+          ],
+          "byte_equality_scope": [
+            "canonical_index_bytes",
+            "pre_report_stage_evidence_bytes"
+          ],
+          "comparison": "raw_byte_equality_is_required_before_the_two_evaluation_digests_are_compared",
+          "dual_evaluation_observation_id": "reiyah.stage-observation.two-release-evaluations-byte-identical@1.2.0",
+          "dual_evaluation_subject_count": 2,
+          "dual_evaluation_evidence_preimage": "object_with_evaluation_count_ordered_evaluation_rows_common_evaluation_sha256_equality_scope_and_byte_equality_scope",
+          "report_readback_in_comparison_bundle": false,
+          "git_commit_identity_in_comparison_bundle": false
+        },
+        "evaluation_layering": [
+          "each_separately_loaded_state_reset_release_evaluation_emits_S01_through_S19_and_nested_contract_rows",
+          "the_comparator_requires_equal_pre_report_evidence_and_index_bytes",
+          "S20_emits_only_after_the_two_separately_loaded_evaluations_match",
+          "the_GA_and_CR_reducers_consume_S01_through_S20_after_S20_exists",
+          "S19_proves_only_the_pure_report_implication_engine_and_never_consumes_GA_or_CR_results",
+          "one_report_is_rendered_only_after_the_GA_and_CR_reducers_finish"
+        ],
+        "development_mode_policy": {
+          "release_only_token_ids": [
+            "reiyah.stage-evidence.snapshot-release-projection@1.2.0",
+            "reiyah.stage-evidence.dual-release-evaluation-match@1.2.0"
+          ],
+          "canonical_architecture_complete_allowed": false,
+          "development_result_is_release_evidence": false
+        },
+        "release_report_cycle_policy": {
+          "index_bootstrap_cli_flag": "--emit-index",
+          "index_bootstrap_mode": "release_only_clean_snapshot_with_index_and_report_readback_skipped",
+          "bootstrap_cli_flag": "--emit-report",
+          "bootstrap_mode": "release_only_clean_snapshot_with_committed_index_readback_and_report_readback_skipped",
+          "ordinary_release_mode": "release_only_clean_snapshot_with_committed_index_and_report_exact_readback",
+          "bootstrap_sequence": [
+            "commit_candidate_sources_without_index_or_report",
+            "emit_index_from_clean_release_snapshot_install_index_and_sidecar_then_amend",
+            "emit_report_from_clean_release_snapshot_with_exact_index_readback_install_report_then_amend",
+            "run_ordinary_release_with_exact_index_and_report_readback"
+          ],
+          "bootstrap_report_install_then_packet_commit_amend_required": true,
+          "bootstrap_and_ordinary_release_pre_report_evidence_must_match": true,
+          "report_self_digest_in_token_evidence_prohibited": true,
+          "report_byte_size_in_token_evidence_prohibited": true,
+          "report_readback_state_in_token_evidence_prohibited": true,
+          "bootstrap_and_committed_readback_token_bytes_must_match": true,
+          "ordinary_release_readback_is_a_nonemitted_guard": true,
+          "repeated_launcher_replay_is_post_report_external_evidence": true
+        }
+      }
+    },
+    "controlEvidenceRequirements": {
+      "const": [
+        {
+          "control_id": "GA-01",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.snapshot-release-projection@1.2.0",
+            "reiyah.stage-evidence.repository-authority-and-normative-architecture@1.2.0"
+          ],
+          "required_nested_contract_ids": []
+        },
+        {
+          "control_id": "GA-02",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.repository-authority-and-normative-architecture@1.2.0",
+            "reiyah.stage-evidence.schema-and-format-corpus@1.2.0"
+          ],
+          "required_nested_contract_ids": []
+        },
+        {
+          "control_id": "GA-03",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.repository-authority-and-normative-architecture@1.2.0",
+            "reiyah.stage-evidence.schema-and-format-corpus@1.2.0",
+            "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0",
+            "reiyah.stage-evidence.narrative-candidate-nonclaim@1.2.0"
+          ],
+          "required_nested_contract_ids": [
+            "reiyah.cross-cutting-contract.architecture-nonclaim-boundary"
+          ]
+        },
+        {
+          "control_id": "GA-04",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.repository-authority-and-normative-architecture@1.2.0",
+            "reiyah.stage-evidence.schema-and-format-corpus@1.2.0",
+            "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0"
+          ],
+          "required_nested_contract_ids": [
+            "reiyah.executable-contract.human-belief-observation-decision-reconciliation",
+            "reiyah.executable-contract.joint-silent-miss-identifiability"
+          ]
+        },
+        {
+          "control_id": "GA-05",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.schema-and-format-corpus@1.2.0",
+            "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0",
+            "reiyah.stage-evidence.validator-security-replay@1.2.0"
+          ],
+          "required_nested_contract_ids": [
+            "reiyah.executable-contract.readiness-unknown-propagation",
+            "reiyah.executable-contract.recovery-event-derivation",
+            "reiyah.executable-contract.transfer-eligibility",
+            "reiyah.executable-contract.conformal-guarantee-disposition",
+            "reiyah.executable-contract.ood-population-partition",
+            "reiyah.executable-contract.worst-group-eligibility",
+            "reiyah.executable-contract.human-belief-observation-decision-reconciliation",
+            "reiyah.executable-contract.joint-silent-miss-identifiability",
+            "reiyah.executable-contract.assumption-evidence-eligibility"
+          ]
+        },
+        {
+          "control_id": "GA-06",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.manifest-lineage@1.2.0",
+            "reiyah.stage-evidence.schema-and-format-corpus@1.2.0",
+            "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0",
+            "reiyah.stage-evidence.validator-security-replay@1.2.0"
+          ],
+          "required_nested_contract_ids": [
+            "reiyah.cross-cutting-contract.lifecycle-history-integrity"
+          ]
+        },
+        {
+          "control_id": "GA-07",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.manifest-lineage@1.2.0",
+            "reiyah.stage-evidence.schema-and-format-corpus@1.2.0",
+            "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0"
+          ],
+          "required_nested_contract_ids": [
+            "reiyah.executable-contract.ope-policy-distribution",
+            "reiyah.executable-contract.causal-identification",
+            "reiyah.executable-contract.readiness-unknown-propagation",
+            "reiyah.executable-contract.recovery-event-derivation",
+            "reiyah.executable-contract.transfer-eligibility",
+            "reiyah.executable-contract.conformal-guarantee-disposition",
+            "reiyah.executable-contract.ood-population-partition",
+            "reiyah.executable-contract.worst-group-eligibility",
+            "reiyah.executable-contract.human-belief-observation-decision-reconciliation",
+            "reiyah.executable-contract.joint-silent-miss-identifiability",
+            "reiyah.executable-contract.assumption-evidence-eligibility"
+          ]
+        },
+        {
+          "control_id": "GA-08",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.repository-authority-and-normative-architecture@1.2.0",
+            "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0",
+            "reiyah.stage-evidence.narrative-candidate-nonclaim@1.2.0"
+          ],
+          "required_nested_contract_ids": [
+            "reiyah.executable-contract.ope-policy-distribution",
+            "reiyah.executable-contract.causal-identification",
+            "reiyah.executable-contract.readiness-unknown-propagation",
+            "reiyah.executable-contract.recovery-event-derivation",
+            "reiyah.executable-contract.transfer-eligibility",
+            "reiyah.executable-contract.conformal-guarantee-disposition",
+            "reiyah.executable-contract.ood-population-partition",
+            "reiyah.executable-contract.worst-group-eligibility",
+            "reiyah.executable-contract.human-belief-observation-decision-reconciliation",
+            "reiyah.executable-contract.joint-silent-miss-identifiability",
+            "reiyah.executable-contract.assumption-evidence-eligibility"
+          ]
+        },
+        {
+          "control_id": "GA-09",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.predecessor-inheritance@1.2.0",
+            "reiyah.stage-evidence.manifest-lineage@1.2.0",
+            "reiyah.stage-evidence.schema-and-format-corpus@1.2.0"
+          ],
+          "required_nested_contract_ids": [
+            "reiyah.cross-cutting-contract.lifecycle-history-integrity"
+          ]
+        },
+        {
+          "control_id": "GA-10",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.source-and-standards-custody@1.2.0",
+            "reiyah.stage-evidence.schema-and-format-corpus@1.2.0",
+            "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0",
+            "reiyah.stage-evidence.publication-governance-replay@1.2.0"
+          ],
+          "required_nested_contract_ids": [
+            "reiyah.cross-cutting-contract.typed-reference-integrity"
+          ]
+        },
+        {
+          "control_id": "GA-11",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.source-and-standards-custody@1.2.0",
+            "reiyah.stage-evidence.schema-and-format-corpus@1.2.0",
+            "reiyah.stage-evidence.publication-governance-replay@1.2.0",
+            "reiyah.stage-evidence.narrative-candidate-nonclaim@1.2.0"
+          ],
+          "required_nested_contract_ids": []
+        },
+        {
+          "control_id": "GA-12",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.threat-and-no-runtime-boundary@1.2.0",
+            "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "reiyah.stage-evidence.publication-governance-replay@1.2.0",
+            "reiyah.stage-evidence.transport-governance-replay@1.2.0",
+            "reiyah.stage-evidence.validator-security-replay@1.2.0",
+            "reiyah.stage-evidence.rule-control-threat-coverage@1.2.0"
+          ],
+          "required_nested_contract_ids": []
+        },
+        {
+          "control_id": "GA-13",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.schema-and-format-corpus@1.2.0",
+            "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0",
+            "reiyah.stage-evidence.publication-governance-replay@1.2.0",
+            "reiyah.stage-evidence.transport-governance-replay@1.2.0",
+            "reiyah.stage-evidence.validator-security-replay@1.2.0",
+            "reiyah.stage-evidence.fixture-catalog-reconciliation@1.2.0"
+          ],
+          "required_nested_contract_ids": [
+            "reiyah.executable-contract.ope-policy-distribution",
+            "reiyah.executable-contract.causal-identification",
+            "reiyah.executable-contract.readiness-unknown-propagation",
+            "reiyah.executable-contract.recovery-event-derivation",
+            "reiyah.executable-contract.transfer-eligibility",
+            "reiyah.executable-contract.conformal-guarantee-disposition",
+            "reiyah.executable-contract.ood-population-partition",
+            "reiyah.executable-contract.worst-group-eligibility",
+            "reiyah.executable-contract.human-belief-observation-decision-reconciliation",
+            "reiyah.executable-contract.joint-silent-miss-identifiability",
+            "reiyah.executable-contract.assumption-evidence-eligibility",
+            "reiyah.cross-cutting-contract.lifecycle-history-integrity",
+            "reiyah.cross-cutting-contract.typed-reference-integrity",
+            "reiyah.cross-cutting-contract.architecture-nonclaim-boundary"
+          ]
+        },
+        {
+          "control_id": "GA-14",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.snapshot-release-projection@1.2.0",
+            "reiyah.stage-evidence.toolchain-pre-post-integrity@1.2.0",
+            "reiyah.stage-evidence.validation-plan-contract@1.2.0",
+            "reiyah.stage-evidence.predecessor-inheritance@1.2.0",
+            "reiyah.stage-evidence.schema-and-format-corpus@1.2.0",
+            "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0",
+            "reiyah.stage-evidence.publication-governance-replay@1.2.0",
+            "reiyah.stage-evidence.transport-governance-replay@1.2.0",
+            "reiyah.stage-evidence.validator-security-replay@1.2.0",
+            "reiyah.stage-evidence.fixture-catalog-reconciliation@1.2.0",
+            "reiyah.stage-evidence.rule-control-threat-coverage@1.2.0",
+            "reiyah.stage-evidence.canonical-index-readback@1.2.0",
+            "reiyah.stage-evidence.report-implication-engine@1.2.0",
+            "reiyah.stage-evidence.dual-release-evaluation-match@1.2.0"
+          ],
+          "required_nested_contract_ids": [
+            "reiyah.executable-contract.ope-policy-distribution",
+            "reiyah.executable-contract.causal-identification",
+            "reiyah.executable-contract.readiness-unknown-propagation",
+            "reiyah.executable-contract.recovery-event-derivation",
+            "reiyah.executable-contract.transfer-eligibility",
+            "reiyah.executable-contract.conformal-guarantee-disposition",
+            "reiyah.executable-contract.ood-population-partition",
+            "reiyah.executable-contract.worst-group-eligibility",
+            "reiyah.executable-contract.human-belief-observation-decision-reconciliation",
+            "reiyah.executable-contract.joint-silent-miss-identifiability",
+            "reiyah.executable-contract.assumption-evidence-eligibility",
+            "reiyah.cross-cutting-contract.lifecycle-history-integrity",
+            "reiyah.cross-cutting-contract.typed-reference-integrity",
+            "reiyah.cross-cutting-contract.architecture-nonclaim-boundary"
+          ]
+        },
+        {
+          "control_id": "GA-15",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.repository-authority-and-normative-architecture@1.2.0",
+            "reiyah.stage-evidence.threat-and-no-runtime-boundary@1.2.0",
+            "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "reiyah.stage-evidence.publication-governance-replay@1.2.0",
+            "reiyah.stage-evidence.transport-governance-replay@1.2.0",
+            "reiyah.stage-evidence.narrative-candidate-nonclaim@1.2.0"
+          ],
+          "required_nested_contract_ids": [
+            "reiyah.cross-cutting-contract.architecture-nonclaim-boundary"
+          ]
+        },
+        {
+          "control_id": "GA-16",
+          "required_stage_token_ids": [
+            "reiyah.stage-evidence.snapshot-release-projection@1.2.0",
+            "reiyah.stage-evidence.validation-plan-contract@1.2.0",
+            "reiyah.stage-evidence.predecessor-inheritance@1.2.0",
+            "reiyah.stage-evidence.canonical-index-readback@1.2.0",
+            "reiyah.stage-evidence.dual-release-evaluation-match@1.2.0"
+          ],
+          "required_nested_contract_ids": []
+        }
+      ]
+    },
+    "correctionClosureContract": {
+      "const": {
+        "evidence_selector_registry": [
+          {
+            "selector_id": "reiyah.evidence-selector.science.belief-reconciliation",
+            "producer_stage_token_id": "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-SCIENTIFIC-CONTRACT-REPLAY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.science.belief-reconciliation-known-good@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.good.v12.human-automation-assessment",
+                  "reiyah.fixture.good.v12.human-automation-assessment-observation-abstained",
+                  "reiyah.fixture.good.v12.human-automation-assessment-observation-missing",
+                  "reiyah.fixture.good.v12.human-automation-assessment-observation-out-of-distribution",
+                  "reiyah.fixture.good.v12.human-automation-assessment-observation-sensor-invalid",
+                  "reiyah.fixture.good.v12.human-automation-assessment-observation-unmeasured"
+                ],
+                "fixture_set_sha256": "sha256:47debf3a6f241724fee907e18514545602ff2d1373e937a93048353fe9f4038b"
+              },
+              {
+                "observation_id": "reiyah.selector-observation.science.belief-reconciliation-known-bad@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.bad.belief_distribution_sum_mismatch",
+                  "reiyah.fixture.bad.belief_normalization_policy_binding_mismatch",
+                  "reiyah.fixture.bad.belief_state_space_coverage_mismatch",
+                  "reiyah.fixture.bad.estimand_binding_human_belief_mismatch",
+                  "reiyah.fixture.bad.estimand_operand_human_belief_gap",
+                  "reiyah.fixture.bad.human_information_set_reconciliation_mismatch",
+                  "reiyah.fixture.bad.human_object_reconciliation_mismatch",
+                  "reiyah.fixture.bad.human_observation_availability_after_belief",
+                  "reiyah.fixture.bad.human_observation_availability_before_measurement",
+                  "reiyah.fixture.bad.human_observation_availability_nonobserved",
+                  "reiyah.fixture.bad.human_observation_event_after_measurement",
+                  "reiyah.fixture.bad.human_observation_event_nonobserved",
+                  "reiyah.fixture.bad.human_subject_belief_holder_mismatch",
+                  "reiyah.fixture.bad.human_subject_decision_actor_mismatch",
+                  "reiyah.fixture.bad.human_subject_readiness_mismatch",
+                  "reiyah.fixture.bad.human_temporal_reconciliation_mismatch"
+                ],
+                "fixture_set_sha256": "sha256:2173f72976118e7c22f06375573f28261efea6e7c811973ac94c6afcb026fcac"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.science.observation-validity-reconciliation",
+            "producer_stage_token_id": "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-SCIENTIFIC-CONTRACT-REPLAY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.science.observation-validity-reconciliation-known-good@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.good.v12.human-automation-assessment",
+                  "reiyah.fixture.good.v12.human-automation-assessment-observation-abstained",
+                  "reiyah.fixture.good.v12.human-automation-assessment-observation-missing",
+                  "reiyah.fixture.good.v12.human-automation-assessment-observation-out-of-distribution",
+                  "reiyah.fixture.good.v12.human-automation-assessment-observation-sensor-invalid",
+                  "reiyah.fixture.good.v12.human-automation-assessment-observation-unmeasured"
+                ],
+                "fixture_set_sha256": "sha256:47debf3a6f241724fee907e18514545602ff2d1373e937a93048353fe9f4038b"
+              },
+              {
+                "observation_id": "reiyah.selector-observation.science.observation-validity-reconciliation-known-bad@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.bad.human_information_set_reconciliation_mismatch",
+                  "reiyah.fixture.bad.human_object_reconciliation_mismatch",
+                  "reiyah.fixture.bad.human_observation_availability_after_belief",
+                  "reiyah.fixture.bad.human_observation_availability_before_measurement",
+                  "reiyah.fixture.bad.human_observation_availability_nonobserved",
+                  "reiyah.fixture.bad.human_observation_event_after_measurement",
+                  "reiyah.fixture.bad.human_observation_event_nonobserved",
+                  "reiyah.fixture.bad.human_temporal_reconciliation_mismatch",
+                  "reiyah.fixture.bad.observation_validity_abstained_mismatch",
+                  "reiyah.fixture.bad.observation_validity_missing_mismatch",
+                  "reiyah.fixture.bad.observation_validity_out_of_distribution_mismatch",
+                  "reiyah.fixture.bad.observation_validity_sensor_invalid_mismatch",
+                  "reiyah.fixture.bad.observation_validity_state_mismatch",
+                  "reiyah.fixture.bad.observation_validity_unmeasured_mismatch"
+                ],
+                "fixture_set_sha256": "sha256:d3df3116e351c4b706217cf09c0e8df8cd2a1bfd6f7951fde45ebf48bb71fcc3"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.science.causal-preregistration",
+            "producer_stage_token_id": "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-SCIENTIFIC-CONTRACT-REPLAY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.science.causal-preregistration-known-good@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.good.v12.study-design-preregistration",
+                  "reiyah.fixture.good.v12.study-design-preregistration-not-identified",
+                  "reiyah.fixture.good.v12.study-design-preregistration-unknown"
+                ],
+                "fixture_set_sha256": "sha256:aa2770e4afe941bc06d96d3dfed45395b3e91cf157b380a6a325b74482431634"
+              },
+              {
+                "observation_id": "reiyah.selector-observation.science.causal-preregistration-known-bad@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.bad.causal_analysis_unit_coordinated_drop",
+                  "reiyah.fixture.bad.causal_analysis_unit_duplicate",
+                  "reiyah.fixture.bad.causal_analysis_unit_ref_wrong_id",
+                  "reiyah.fixture.bad.causal_analysis_unit_ref_wrong_kind",
+                  "reiyah.fixture.bad.causal_analysis_unit_reordered",
+                  "reiyah.fixture.bad.causal_analysis_unit_role_substitution",
+                  "reiyah.fixture.bad.causal_backdoor_open",
+                  "reiyah.fixture.bad.causal_collider_adjustment",
+                  "reiyah.fixture.bad.causal_dag_cycle",
+                  "reiyah.fixture.bad.causal_duplicate_treatment_role",
+                  "reiyah.fixture.bad.causal_estimand_binding_mismatch",
+                  "reiyah.fixture.bad.causal_identification_disposition_not_identified",
+                  "reiyah.fixture.bad.causal_identification_disposition_unknown",
+                  "reiyah.fixture.bad.causal_prohibited_adjustment",
+                  "reiyah.fixture.bad.causal_query_outcome_role_mismatch",
+                  "reiyah.fixture.bad.causal_query_treatment_role_mismatch",
+                  "reiyah.fixture.bad.causal_selected_adjustment_set_mismatch",
+                  "reiyah.fixture.bad.causal_split_late_freeze",
+                  "reiyah.fixture.bad.causal_split_member_omission",
+                  "reiyah.fixture.bad.causal_split_member_overlap",
+                  "reiyah.fixture.bad.causal_split_member_reordered",
+                  "reiyah.fixture.bad.causal_split_outcome_stratification",
+                  "reiyah.fixture.bad.causal_split_reference_duplicate",
+                  "reiyah.fixture.bad.causal_split_unit_role_substitution",
+                  "reiyah.fixture.bad.causal_stratification_late_availability",
+                  "reiyah.fixture.bad.causal_stratification_role_mismatch",
+                  "reiyah.fixture.bad.causal_stratification_unobserved_node",
+                  "reiyah.fixture.bad.causal_temporal_order",
+                  "reiyah.fixture.bad.causal_treatment_endpoint_unobserved",
+                  "reiyah.fixture.bad.causal_unmeasured_adjustment",
+                  "reiyah.fixture.bad.estimand_binding_study_causal_mismatch",
+                  "reiyah.fixture.bad.estimand_operand_causal_comparator",
+                  "reiyah.fixture.bad.reference_document_local_unresolved",
+                  "reiyah.fixture.bad.study_adjustment_set_late_freeze",
+                  "reiyah.fixture.bad.study_design_freeze_after_feature_access",
+                  "reiyah.fixture.bad.study_design_freeze_binding_mismatch"
+                ],
+                "fixture_set_sha256": "sha256:c02cda19b10c56a29d80961f0fed099758565cd68dbb84323b2f468ccd38dc0d"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.science.readiness-recovery",
+            "producer_stage_token_id": "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-SCIENTIFIC-CONTRACT-REPLAY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.science.readiness-recovery-known-good@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.good.v12.human-automation-assessment",
+                  "reiyah.fixture.good.v12.human-automation-assessment-optional-unknown",
+                  "reiyah.fixture.good.v12.human-automation-assessment-readiness-not-ready-weighted",
+                  "reiyah.fixture.good.v12.human-automation-assessment-readiness-ready-boolean",
+                  "reiyah.fixture.good.v12.human-automation-assessment-readiness-ready-weighted",
+                  "reiyah.fixture.good.v12.human-automation-assessment-recovery-ambiguous-tie",
+                  "reiyah.fixture.good.v12.human-automation-assessment-recovery-censoring",
+                  "reiyah.fixture.good.v12.human-automation-assessment-recovery-competing",
+                  "reiyah.fixture.good.v12.human-automation-assessment-recovery-incomplete-window",
+                  "reiyah.fixture.good.v12.human-automation-assessment-recovery-input-nonobserved",
+                  "reiyah.fixture.good.v12.human-automation-assessment-recovery-invalid-window",
+                  "reiyah.fixture.good.v12.human-automation-assessment-recovery-no-event"
+                ],
+                "fixture_set_sha256": "sha256:427b75ff1877c42bc1edbab5abadec33d96c713ea4adb347fcd0e06a87033ec3"
+              },
+              {
+                "observation_id": "reiyah.selector-observation.science.readiness-recovery-known-bad@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.bad.estimand_binding_human_readiness_mismatch",
+                  "reiyah.fixture.bad.estimand_binding_human_recovery_mismatch",
+                  "reiyah.fixture.bad.estimand_operand_readiness_criterion",
+                  "reiyah.fixture.bad.estimand_operand_recovery_criterion",
+                  "reiyah.fixture.bad.readiness_aggregation_mismatch",
+                  "reiyah.fixture.bad.readiness_as_of_before_window",
+                  "reiyah.fixture.bad.readiness_capability_dimension_duplicate",
+                  "reiyah.fixture.bad.readiness_capability_manifest_coordinated_omission",
+                  "reiyah.fixture.bad.readiness_capability_manifest_ref_substitution",
+                  "reiyah.fixture.bad.readiness_criterion_mismatch",
+                  "reiyah.fixture.bad.readiness_optional_unknown_imputed_zero",
+                  "reiyah.fixture.bad.readiness_unknown_confident_aggregate",
+                  "reiyah.fixture.bad.readiness_window_inverted",
+                  "reiyah.fixture.bad.recovery_ambiguous_tie_reason_mismatch",
+                  "reiyah.fixture.bad.recovery_censoring_disposition_mismatch",
+                  "reiyah.fixture.bad.recovery_censoring_policy_substitution",
+                  "reiyah.fixture.bad.recovery_competing_event_mismatch",
+                  "reiyah.fixture.bad.recovery_competing_policy_substitution",
+                  "reiyah.fixture.bad.recovery_duration_event_mismatch",
+                  "reiyah.fixture.bad.recovery_elapsed_near_equality",
+                  "reiyah.fixture.bad.recovery_elapsed_unit_mismatch",
+                  "reiyah.fixture.bad.recovery_event_manifest_complete_through_mismatch",
+                  "reiyah.fixture.bad.recovery_event_manifest_completeness_mismatch",
+                  "reiyah.fixture.bad.recovery_event_manifest_coordinated_omission",
+                  "reiyah.fixture.bad.recovery_event_manifest_ref_substitution",
+                  "reiyah.fixture.bad.recovery_event_outside_window",
+                  "reiyah.fixture.bad.recovery_event_type_role_mismatch",
+                  "reiyah.fixture.bad.recovery_incomplete_window_confident_outcome",
+                  "reiyah.fixture.bad.recovery_incomplete_window_reason_mismatch",
+                  "reiyah.fixture.bad.recovery_input_nonobserved_reason_mismatch",
+                  "reiyah.fixture.bad.recovery_invalid_window_reason_mismatch",
+                  "reiyah.fixture.bad.recovery_late_event_selected",
+                  "reiyah.fixture.bad.recovery_no_event_censoring_mismatch",
+                  "reiyah.fixture.bad.recovery_no_event_reason_mismatch",
+                  "reiyah.fixture.bad.recovery_nonobserved_event_time_confident_outcome",
+                  "reiyah.fixture.bad.recovery_nonobserved_input_confident_outcome"
+                ],
+                "fixture_set_sha256": "sha256:db172d080ad0373fc72dafa3ed36c09ae42fa99d8ba697e5d8d982164c574cdf"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.science.ope-closure",
+            "producer_stage_token_id": "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-SCIENTIFIC-CONTRACT-REPLAY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.science.ope-closure-known-good@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.good.v12.sequential-off-policy-evaluation",
+                  "reiyah.fixture.good.v12.sequential-off-policy-evaluation-all-zero",
+                  "reiyah.fixture.good.v12.sequential-off-policy-evaluation-maximum-horizon",
+                  "reiyah.fixture.good.v12.sequential-off-policy-evaluation-self-normalized",
+                  "reiyah.fixture.good.v12.sequential-off-policy-evaluation-unsupported",
+                  "reiyah.fixture.good.v12.sequential-off-policy-evaluation-upper-clip"
+                ],
+                "fixture_set_sha256": "sha256:321369ec1d6abdc710558296d1526a2e8e350e64c8dbf757903ee5e107b70aaf"
+              },
+              {
+                "observation_id": "reiyah.selector-observation.science.ope-closure-known-bad@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.bad.estimand_binding_ope_mismatch",
+                  "reiyah.fixture.bad.estimand_operand_ope_policy_role",
+                  "reiyah.fixture.bad.ope_action_distribution_mismatch",
+                  "reiyah.fixture.bad.ope_contract_freeze_after_outcome",
+                  "reiyah.fixture.bad.ope_cumulative_weight_mismatch",
+                  "reiyah.fixture.bad.ope_duplicate_history_id",
+                  "reiyah.fixture.bad.ope_duplicate_information_set_id",
+                  "reiyah.fixture.bad.ope_duplicate_trajectory_id",
+                  "reiyah.fixture.bad.ope_ess_all_zero_confident",
+                  "reiyah.fixture.bad.ope_ess_cumulative_mismatch",
+                  "reiyah.fixture.bad.ope_ess_horizon_missing",
+                  "reiyah.fixture.bad.ope_estimator_selection_after_outcome",
+                  "reiyah.fixture.bad.ope_estimator_weight_binding_mismatch",
+                  "reiyah.fixture.bad.ope_final_terminal_false",
+                  "reiyah.fixture.bad.ope_history_prefix_wrong_action",
+                  "reiyah.fixture.bad.ope_history_support_failure",
+                  "reiyah.fixture.bad.ope_information_set_after_outcome",
+                  "reiyah.fixture.bad.ope_logged_propensity_mismatch",
+                  "reiyah.fixture.bad.ope_maximum_horizon_exceeded",
+                  "reiyah.fixture.bad.ope_observed_horizon_mismatch",
+                  "reiyah.fixture.bad.ope_policy_table_coherent_probability_swap",
+                  "reiyah.fixture.bad.ope_policy_table_role_substitution",
+                  "reiyah.fixture.bad.ope_step_index_gap",
+                  "reiyah.fixture.bad.ope_step_ratio_mismatch",
+                  "reiyah.fixture.bad.ope_support_duplicate_required_cell",
+                  "reiyah.fixture.bad.ope_terminal_before_final",
+                  "reiyah.fixture.bad.ope_trajectory_manifest_coordinated_omission",
+                  "reiyah.fixture.bad.ope_weight_normalization_mismatch",
+                  "reiyah.fixture.bad.ope_weight_transformation_mismatch"
+                ],
+                "fixture_set_sha256": "sha256:f7e80f1b6bfdcda9b27b6f411bdf878b0d221e1b7d40edb632a5a9a912e28906"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.science.joint-silent-miss",
+            "producer_stage_token_id": "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-SCIENTIFIC-CONTRACT-REPLAY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.science.joint-silent-miss-known-good@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.good.v12.joint-performance-evaluation",
+                  "reiyah.fixture.good.v12.joint-performance-nonobserved",
+                  "reiyah.fixture.good.v12.joint-performance-zero-opportunities"
+                ],
+                "fixture_set_sha256": "sha256:4dc77b4dfcdfed1f9fc920db22c9e868fe7b0ab5fbfc8cdb00a203cd0e8e215c"
+              },
+              {
+                "observation_id": "reiyah.selector-observation.science.joint-silent-miss-known-bad@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.bad.estimand_binding_joint_miss_mismatch",
+                  "reiyah.fixture.bad.estimand_operand_joint_opportunity",
+                  "reiyah.fixture.bad.joint_common_opportunity_derivation_mismatch",
+                  "reiyah.fixture.bad.joint_nonobserved_operands_confident_summary",
+                  "reiyah.fixture.bad.joint_opportunity_aggregate_coherent_swap",
+                  "reiyah.fixture.bad.joint_opportunity_channel_role_swap",
+                  "reiyah.fixture.bad.joint_opportunity_coordinated_member_omission",
+                  "reiyah.fixture.bad.joint_opportunity_cross_object",
+                  "reiyah.fixture.bad.joint_opportunity_duplicate_id",
+                  "reiyah.fixture.bad.joint_opportunity_fallback_flip",
+                  "reiyah.fixture.bad.joint_opportunity_member_order_swap",
+                  "reiyah.fixture.bad.joint_opportunity_outside_window",
+                  "reiyah.fixture.bad.joint_opportunity_set_ref_substitution",
+                  "reiyah.fixture.bad.joint_opportunity_warning_flip",
+                  "reiyah.fixture.bad.joint_opportunity_warning_nonobserved_confident_summary",
+                  "reiyah.fixture.bad.joint_opportunity_window_mismatch",
+                  "reiyah.fixture.bad.joint_silent_miss_derivation_mismatch"
+                ],
+                "fixture_set_sha256": "sha256:c7177a8190433938ea28095b905df8bea42670eb4b756ea41c6644f9f3cb0d90"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.science.ood-worst-group",
+            "producer_stage_token_id": "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-SCIENTIFIC-CONTRACT-REPLAY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.science.ood-worst-group-known-good@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.good.v12.joint-performance-conformal-below-target",
+                  "reiyah.fixture.good.v12.joint-performance-conformal-unknown",
+                  "reiyah.fixture.good.v12.joint-performance-evaluation",
+                  "reiyah.fixture.good.v12.joint-performance-nonobserved",
+                  "reiyah.fixture.good.v12.joint-performance-ood-all-unknown",
+                  "reiyah.fixture.good.v12.joint-performance-selective-zero-accepted"
+                ],
+                "fixture_set_sha256": "sha256:6b6daaa706ad654fe38e85d52e18de26da1e6eabd95a4a4a911194131df22465"
+              },
+              {
+                "observation_id": "reiyah.selector-observation.science.ood-worst-group-known-bad@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.bad.conformal_aggregate_coverage_mismatch",
+                  "reiyah.fixture.bad.conformal_calibration_test_collision",
+                  "reiyah.fixture.bad.conformal_coordinated_group_drop",
+                  "reiyah.fixture.bad.conformal_coverage_disposition_mismatch",
+                  "reiyah.fixture.bad.conformal_disjoint_aggregate_mismatch",
+                  "reiyah.fixture.bad.conformal_false_exchangeability_guarantee",
+                  "reiyah.fixture.bad.conformal_group_count_mismatch",
+                  "reiyah.fixture.bad.conformal_group_scope_mismatch",
+                  "reiyah.fixture.bad.conformal_split_role_swap",
+                  "reiyah.fixture.bad.conformal_target_mismatch",
+                  "reiyah.fixture.bad.conformal_unknown_disposition_relabel",
+                  "reiyah.fixture.bad.conformal_zero_denominator_confident",
+                  "reiyah.fixture.bad.estimand_binding_conformal_mismatch",
+                  "reiyah.fixture.bad.estimand_binding_ood_mismatch",
+                  "reiyah.fixture.bad.estimand_binding_worst_group_mismatch",
+                  "reiyah.fixture.bad.estimand_operand_conformal_method",
+                  "reiyah.fixture.bad.estimand_operand_ood_rule_role",
+                  "reiyah.fixture.bad.estimand_operand_worst_population",
+                  "reiyah.fixture.bad.ood_confusion_partition_mismatch",
+                  "reiyah.fixture.bad.ood_detected_count_mismatch",
+                  "reiyah.fixture.bad.ood_rate_derivation_mismatch",
+                  "reiyah.fixture.bad.ood_reference_unknown_count_mismatch",
+                  "reiyah.fixture.bad.ood_selective_binding_mismatch",
+                  "reiyah.fixture.bad.selective_partition_mismatch",
+                  "reiyah.fixture.bad.selective_risk_derivation_mismatch",
+                  "reiyah.fixture.bad.worst_group_coordinated_group_drop",
+                  "reiyah.fixture.bad.worst_group_coverage_mismatch",
+                  "reiyah.fixture.bad.worst_group_eligibility_mismatch",
+                  "reiyah.fixture.bad.worst_group_insufficient_partition_omission",
+                  "reiyah.fixture.bad.worst_group_minimum_information_bypass",
+                  "reiyah.fixture.bad.worst_group_no_eligible_confident_value",
+                  "reiyah.fixture.bad.worst_group_no_eligible_relabel_unknown",
+                  "reiyah.fixture.bad.worst_group_nonobserved_ess_mislabeled_insufficient",
+                  "reiyah.fixture.bad.worst_group_tie_mismatch",
+                  "reiyah.fixture.bad.worst_group_unknown_observed_extremum",
+                  "reiyah.fixture.bad.worst_group_unknown_partition_omission",
+                  "reiyah.fixture.bad.worst_group_unknown_relabel_no_eligible",
+                  "reiyah.fixture.known-bad.v12.worst-group-executable-threshold-binding"
+                ],
+                "fixture_set_sha256": "sha256:6b2c7c13375c4809b26262c65eb51af10e3ade4585dc83aea9d81b9d3f2f6dc8"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.science.transfer-conformal-assumption",
+            "producer_stage_token_id": "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-SCIENTIFIC-CONTRACT-REPLAY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.science.transfer-conformal-assumption-known-good@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.good.v12.joint-performance-conformal-below-target",
+                  "reiyah.fixture.good.v12.joint-performance-conformal-unknown",
+                  "reiyah.fixture.good.v12.joint-performance-evaluation",
+                  "reiyah.fixture.good.v12.joint-performance-nonobserved"
+                ],
+                "fixture_set_sha256": "sha256:1bc1fa661e3fc76536649312b2f70416793097f020a5d422837b6a1998c6984a"
+              },
+              {
+                "observation_id": "reiyah.selector-observation.science.transfer-conformal-assumption-known-bad@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.bad.conformal_aggregate_coverage_mismatch",
+                  "reiyah.fixture.bad.conformal_calibration_test_collision",
+                  "reiyah.fixture.bad.conformal_coordinated_group_drop",
+                  "reiyah.fixture.bad.conformal_coverage_disposition_mismatch",
+                  "reiyah.fixture.bad.conformal_disjoint_aggregate_mismatch",
+                  "reiyah.fixture.bad.conformal_established_empty_evidence",
+                  "reiyah.fixture.bad.conformal_established_inline_evidence",
+                  "reiyah.fixture.bad.conformal_established_self_evidence",
+                  "reiyah.fixture.bad.conformal_false_exchangeability_guarantee",
+                  "reiyah.fixture.bad.conformal_group_count_mismatch",
+                  "reiyah.fixture.bad.conformal_group_scope_mismatch",
+                  "reiyah.fixture.bad.conformal_split_role_swap",
+                  "reiyah.fixture.bad.conformal_target_mismatch",
+                  "reiyah.fixture.bad.conformal_unknown_disposition_relabel",
+                  "reiyah.fixture.bad.conformal_zero_denominator_confident",
+                  "reiyah.fixture.bad.estimand_binding_conformal_mismatch",
+                  "reiyah.fixture.bad.estimand_binding_transfer_mismatch",
+                  "reiyah.fixture.bad.estimand_operand_conformal_method",
+                  "reiyah.fixture.bad.estimand_operand_transfer_unit",
+                  "reiyah.fixture.bad.transfer_analysis_freeze_equality",
+                  "reiyah.fixture.bad.transfer_coverage_mismatch",
+                  "reiyah.fixture.bad.transfer_domain_role_swap",
+                  "reiyah.fixture.bad.transfer_established_empty_evidence",
+                  "reiyah.fixture.bad.transfer_gap_mismatch",
+                  "reiyah.fixture.bad.transfer_invariance_state_mismatch",
+                  "reiyah.fixture.bad.transfer_label_access_before_target",
+                  "reiyah.fixture.bad.transfer_metric_contract_mismatch",
+                  "reiyah.fixture.bad.transfer_metric_direction_mismatch",
+                  "reiyah.fixture.bad.transfer_nonobserved_source_confident_gap",
+                  "reiyah.fixture.bad.transfer_not_identified_relabel_unknown",
+                  "reiyah.fixture.bad.transfer_overlap_failed_observed_gap",
+                  "reiyah.fixture.bad.transfer_population_harmonization_state_mismatch",
+                  "reiyah.fixture.bad.transfer_source_domain_equals_target",
+                  "reiyah.fixture.bad.transfer_source_zero_observed_estimate",
+                  "reiyah.fixture.bad.transfer_supervised_missing_label_time",
+                  "reiyah.fixture.bad.transfer_target_access_before_freeze",
+                  "reiyah.fixture.bad.transfer_target_zero_observed_estimate",
+                  "reiyah.fixture.bad.transfer_undisclosed_target_tuning",
+                  "reiyah.fixture.bad.transfer_unknown_relabel_not_identified",
+                  "reiyah.fixture.bad.transfer_unsupervised_label_use"
+                ],
+                "fixture_set_sha256": "sha256:1d0b41d1b8d1d02c8ec596ce64d5ae18619bee878d1dbcae7b993b2887002ac5"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.governance.publication-static-interface",
+            "producer_stage_token_id": "reiyah.stage-evidence.publication-governance-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-PUBLICATION-GOVERNANCE",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.governance.publication-positive@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.governance-good.iso-rights-observation-capture@1.2.0",
+                  "reiyah.fixture.governance-good.nist-rights-observation-capture@1.2.0",
+                  "reiyah.fixture.governance-good.public-distribution-receipt@1.2.0",
+                  "reiyah.fixture.governance-good.public-rights-revalidation@1.2.0",
+                  "reiyah.fixture.governance.publication-event-synthetic-baseline@1.2.0"
+                ],
+                "fixture_set_sha256": "sha256:52cee08c7c55000121bf91124e9e97ec78a6c9f0c162884285737ebb39db9fff"
+              },
+              {
+                "observation_id": "reiyah.selector-observation.governance.publication-known-bad@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.governance.capture-chronology@1.2.0",
+                  "reiyah.fixture.governance.capture-no-credentials@1.2.0",
+                  "reiyah.fixture.governance.capture-no-raw-body@1.2.0",
+                  "reiyah.fixture.governance.capture-response-digest-scope@1.2.0",
+                  "reiyah.fixture.governance.capture-role-path@1.2.0",
+                  "reiyah.fixture.governance.capture-schema-binding@1.2.0",
+                  "reiyah.fixture.governance.capture-url@1.2.0",
+                  "reiyah.fixture.governance.positive-byte-binding@1.2.0",
+                  "reiyah.fixture.governance.publication-event-binding@1.2.0",
+                  "reiyah.fixture.governance.publication-event-chronology@1.2.0",
+                  "reiyah.fixture.governance.publication-topology-exclusion@1.2.0",
+                  "reiyah.fixture.governance.publication-topology-packet-state@1.2.0",
+                  "reiyah.fixture.governance.publication-topology-receipt-state@1.2.0",
+                  "reiyah.fixture.governance.publication-topology-self-cycle@1.2.0",
+                  "reiyah.fixture.governance.receipt-independent-verification-claim@1.2.0",
+                  "reiyah.fixture.governance.receipt-stale-rights-schema@1.2.0",
+                  "reiyah.fixture.governance.rights-capture-binding@1.2.0",
+                  "reiyah.fixture.governance.rights-capture-coverage@1.2.0",
+                  "reiyah.fixture.governance.rights-capture-freshness@1.2.0"
+                ],
+                "fixture_set_sha256": "sha256:2e33ecbe5057ca956cab1afc0f2e4834a8fb990b876bd5a97037c380d700bec4"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.governance.transport-static-interface",
+            "producer_stage_token_id": "reiyah.stage-evidence.transport-governance-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-TRANSPORT-GOVERNANCE",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.governance.transport-positive@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.governance.transport-observation-synthetic-baseline@1.2.0"
+                ],
+                "fixture_set_sha256": "sha256:a11a9fdf24d25690febcc4765aaedbdceccfe02623f3b906adbb31007e4dcdd3"
+              },
+              {
+                "observation_id": "reiyah.selector-observation.governance.transport-known-bad@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.governance.transport-authorization-capture-lower-bound@1.2.0",
+                  "reiyah.fixture.governance.transport-authorization-commit-mismatch@1.2.0",
+                  "reiyah.fixture.governance.transport-authorization-event-mismatch@1.2.0",
+                  "reiyah.fixture.governance.transport-authorization-expiry-boundary@1.2.0",
+                  "reiyah.fixture.governance.transport-authorization-index-mismatch@1.2.0",
+                  "reiyah.fixture.governance.transport-authorization-receipt-boundary@1.2.0",
+                  "reiyah.fixture.governance.transport-authorization-reference-binding-mismatch@1.2.0",
+                  "reiyah.fixture.governance.transport-authorization-report-mismatch@1.2.0",
+                  "reiyah.fixture.governance.transport-authorization-start-boundary@1.2.0",
+                  "reiyah.fixture.governance.transport-authorization-target-identity-mismatch@1.2.0",
+                  "reiyah.fixture.governance.transport-chronology-violation@1.2.0",
+                  "reiyah.fixture.governance.transport-dangling-evidence@1.2.0",
+                  "reiyah.fixture.governance.transport-evidence-duplicate-retained-id@1.2.0",
+                  "reiyah.fixture.governance.transport-evidence-payload-digest-mismatch@1.2.0",
+                  "reiyah.fixture.governance.transport-evidence-payload-digest-recomputation@1.2.0",
+                  "reiyah.fixture.governance.transport-evidence-payload-size-mismatch@1.2.0",
+                  "reiyah.fixture.governance.transport-evidence-payload-size-recomputation@1.2.0",
+                  "reiyah.fixture.governance.transport-evidence-unused-retained@1.2.0",
+                  "reiyah.fixture.governance.transport-evidence-wrapper-record-mismatch@1.2.0",
+                  "reiyah.fixture.governance.transport-insubstantive-independence-basis@1.2.0",
+                  "reiyah.fixture.governance.transport-missing-authorization@1.2.0",
+                  "reiyah.fixture.governance.transport-observed-boundary@1.2.0",
+                  "reiyah.fixture.governance.transport-observer-identity-collision@1.2.0",
+                  "reiyah.fixture.governance.transport-publication-c-packet-binding-mismatch@1.2.0",
+                  "reiyah.fixture.governance.transport-publication-stale-digest@1.2.0",
+                  "reiyah.fixture.governance.transport-publication-stale-size@1.2.0",
+                  "reiyah.fixture.governance.transport-publication-strict-boundary-equality@1.2.0",
+                  "reiyah.fixture.governance.transport-publication-topology-mismatch@1.2.0",
+                  "reiyah.fixture.governance.transport-receipt-binding-mismatch@1.2.0",
+                  "reiyah.fixture.governance.transport-reference-chronology-violation@1.2.0",
+                  "reiyah.fixture.governance.transport-unauthenticated-verifier@1.2.0"
+                ],
+                "fixture_set_sha256": "sha256:91be27bb72ffc6d10effd0ae09ad61a1e8965c10b8e0dbe8e008cf8696ba84dd"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.security.execution-integrity",
+            "producer_stage_token_id": "reiyah.stage-evidence.validator-security-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-VALIDATOR-SECURITY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.security.execution-integrity@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.validator-security.actual-publication-event-fault-matrix@1.2.0",
+                  "reiyah.fixture.validator-security.development-drift@1.2.0",
+                  "reiyah.fixture.validator-security.missing-isolation@1.2.0",
+                  "reiyah.fixture.validator-security.plan-tool-binding-launcher@1.2.0",
+                  "reiyah.fixture.validator-security.plan-tool-binding-primary-validator@1.2.0",
+                  "reiyah.fixture.validator-security.plan-tool-binding-science-module@1.2.0",
+                  "reiyah.fixture.validator-security.plan-tool-binding-toolchain-lock@1.2.0",
+                  "reiyah.fixture.validator-security.profile-execution-binding@1.2.0",
+                  "reiyah.fixture.validator-security.profile-execution-launcher-binding@1.2.0",
+                  "reiyah.fixture.validator-security.profile-execution-tool-binding@1.2.0",
+                  "reiyah.fixture.validator-security.profile-execution-toolchain-lock-binding@1.2.0",
+                  "reiyah.fixture.validator-security.release-dirty-state@1.2.0",
+                  "reiyah.fixture.validator-security.release-index-flag@1.2.0",
+                  "reiyah.fixture.validator-security.release-worker-fault-matrix@1.2.0",
+                  "reiyah.fixture.validator-security.self-membership-byte-mismatch@1.2.0",
+                  "reiyah.fixture.validator-security.toolchain-byte-mismatch@1.2.0"
+                ],
+                "fixture_set_sha256": "sha256:05d5a8964892803456b6d7b8789b647e6a20b5ea6b37f994470d0a576cee496a"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.security.fixture-catalog-integrity",
+            "producer_stage_token_id": "reiyah.stage-evidence.validator-security-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-VALIDATOR-SECURITY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.security.fixture-catalog-integrity@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.validator-security.catalog-byte-digest@1.2.0",
+                  "reiyah.fixture.validator-security.catalog-byte-size@1.2.0",
+                  "reiyah.fixture.validator-security.catalog-duplicate-id@1.2.0",
+                  "reiyah.fixture.validator-security.catalog-duplicate-path@1.2.0",
+                  "reiyah.fixture.validator-security.catalog-expected-primary-rule@1.2.0",
+                  "reiyah.fixture.validator-security.catalog-fixture-schema@1.2.0",
+                  "reiyah.fixture.validator-security.catalog-identity-source@1.2.0",
+                  "reiyah.fixture.validator-security.catalog-missing-row@1.2.0",
+                  "reiyah.fixture.validator-security.catalog-replay-mode@1.2.0",
+                  "reiyah.fixture.validator-security.catalog-target-schema@1.2.0",
+                  "reiyah.fixture.validator-security.catalog-unexpected-row@1.2.0"
+                ],
+                "fixture_set_sha256": "sha256:0901c01a55b0f5023cc667b5cfc92b342c8ae9b272e880b2252044294f7d2e5d"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.security.narrative-nonclaim",
+            "producer_stage_token_id": "reiyah.stage-evidence.validator-security-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-VALIDATOR-SECURITY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.security.narrative-nonclaim@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.validator-security.narrative-state-contradiction@1.2.0",
+                  "reiyah.fixture.validator-security.normative-surface-path-substitution@1.2.0"
+                ],
+                "fixture_set_sha256": "sha256:5bfd06443f346767f2cde88b8401884e3a1e5d960e2f7372dcba0a133936c057"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.security.reference-path-coverage",
+            "producer_stage_token_id": "reiyah.stage-evidence.validator-security-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-VALIDATOR-SECURITY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.security.reference-path-coverage@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.validator-security.reference-path-missing@1.2.0",
+                  "reiyah.fixture.validator-security.reference-path-duplicate@1.2.0",
+                  "reiyah.fixture.validator-security.reference-path-handler-only@1.2.0"
+                ],
+                "fixture_set_sha256": "sha256:40b50e37bd2726e11a1822814fe5983408573ec808d3d3ff1de6dea4c92512f7"
+              },
+              {
+                "observation_id": "reiyah.selector-observation.security.registry-uniqueness@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.validator-security.registry-definition-id-duplicate@1.2.0",
+                  "reiyah.fixture.validator-security.registry-reference-kind-id-duplicate@1.2.0",
+                  "reiyah.fixture.validator-security.registry-executable-contract-id-duplicate@1.2.0"
+                ],
+                "fixture_set_sha256": "sha256:d81abd6ce8bf0e480a158f08eb84233350c551cdc3c29ef8c0440b1ba9d3a5c6"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.security.report-implications",
+            "producer_stage_token_id": "reiyah.stage-evidence.report-implication-engine@1.2.0",
+            "producer_check_id": "GA12-STAGE-REPORT-IMPLICATIONS",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.security.report-implications@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.validator-security.report-good-count-mismatch@1.2.0",
+                  "reiyah.fixture.validator-security.report-governance-count-mismatch@1.2.0",
+                  "reiyah.fixture.validator-security.report-science-bad-count-mismatch@1.2.0",
+                  "reiyah.fixture.validator-security.report-security-count-mismatch@1.2.0",
+                  "reiyah.fixture.validator-security.selector-fixture-set-digest-mismatch@1.2.0",
+                  "reiyah.fixture.validator-security.selector-missing-fixture@1.2.0",
+                  "reiyah.fixture.validator-security.selector-missing-observation@1.2.0",
+                  "reiyah.fixture.validator-security.selector-producer-substitution@1.2.0",
+                  "reiyah.fixture.validator-security.selector-unexpected-fixture@1.2.0"
+                ],
+                "fixture_set_sha256": "sha256:387c2b3f9f607b934ee534583fc9281340a7521a471d09601e93df38a5dba33c"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.security.science-lineage",
+            "producer_stage_token_id": "reiyah.stage-evidence.validator-security-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-VALIDATOR-SECURITY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.security.science-lineage@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.validator-security.science-artifact-id-duplicate@1.2.0",
+                  "reiyah.fixture.validator-security.science-logical-version-duplicate@1.2.0",
+                  "reiyah.fixture.validator-security.science-lineage-fork@1.2.0"
+                ],
+                "fixture_set_sha256": "sha256:1b55ef07c32c5c7023f61f3c033d2ad99eb21063848a991a09af798febf7327e"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.security.successor-chronology",
+            "producer_stage_token_id": "reiyah.stage-evidence.validator-security-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-VALIDATOR-SECURITY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.security.successor-chronology@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.validator-security.research-registry-earlier-date@1.2.0"
+                ],
+                "fixture_set_sha256": "sha256:fd1f9964b9263a7fb5be1500e23b67723ec23594d903a84c73336ed9d74ba616"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          },
+          {
+            "selector_id": "reiyah.evidence-selector.security.transport-self-attestation",
+            "producer_stage_token_id": "reiyah.stage-evidence.validator-security-replay@1.2.0",
+            "producer_check_id": "GA12-STAGE-VALIDATOR-SECURITY",
+            "required_observations": [
+              {
+                "observation_id": "reiyah.selector-observation.security.transport-self-attestation@1.2.0",
+                "fixture_ids": [
+                  "reiyah.fixture.validator-security.transport-self-attestation@1.2.0"
+                ],
+                "fixture_set_sha256": "sha256:c7c4c195e1b6b35775a7322d9ec60203cbcb09032e5396acff64ead93f133480"
+              }
+            ],
+            "projection_policy": "ordered_fixture_ids_resolved_through_validated_catalog_to_path_sha256_size"
+          }
+        ],
+        "required_finding_ids": [
+          "CR-001", "CR-002", "CR-003", "CR-004", "CR-005", "CR-006", "CR-007", "CR-008",
+          "CR-009", "CR-010", "CR-011", "CR-012", "CR-013", "CR-014", "CR-015", "CR-016"
+        ],
+        "common_required_stage_token_ids": [
+          "reiyah.stage-evidence.snapshot-release-projection@1.2.0",
+          "reiyah.stage-evidence.toolchain-pre-post-integrity@1.2.0",
+          "reiyah.stage-evidence.validation-plan-contract@1.2.0",
+          "reiyah.stage-evidence.predecessor-inheritance@1.2.0",
+          "reiyah.stage-evidence.manifest-lineage@1.2.0",
+          "reiyah.stage-evidence.schema-and-format-corpus@1.2.0",
+          "reiyah.stage-evidence.fixture-catalog-reconciliation@1.2.0",
+          "reiyah.stage-evidence.rule-control-threat-coverage@1.2.0",
+          "reiyah.stage-evidence.canonical-index-readback@1.2.0",
+          "reiyah.stage-evidence.report-implication-engine@1.2.0",
+          "reiyah.stage-evidence.dual-release-evaluation-match@1.2.0"
+        ],
+        "finding_evidence_requirements": [
+          {
+            "finding_id": "CR-001",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+              "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0"
+            ],
+            "required_nested_contract_ids": [
+              "reiyah.executable-contract.human-belief-observation-decision-reconciliation",
+              "reiyah.cross-cutting-contract.lifecycle-history-integrity",
+              "reiyah.cross-cutting-contract.typed-reference-integrity"
+            ],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.science.belief-reconciliation"
+            ]
+          },
+          {
+            "finding_id": "CR-002",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+              "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0"
+            ],
+            "required_nested_contract_ids": [
+              "reiyah.executable-contract.human-belief-observation-decision-reconciliation",
+              "reiyah.cross-cutting-contract.lifecycle-history-integrity",
+              "reiyah.cross-cutting-contract.typed-reference-integrity"
+            ],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.science.observation-validity-reconciliation"
+            ]
+          },
+          {
+            "finding_id": "CR-003",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+              "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0"
+            ],
+            "required_nested_contract_ids": [
+              "reiyah.executable-contract.causal-identification",
+              "reiyah.cross-cutting-contract.lifecycle-history-integrity",
+              "reiyah.cross-cutting-contract.typed-reference-integrity"
+            ],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.science.causal-preregistration"
+            ]
+          },
+          {
+            "finding_id": "CR-004",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+              "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0"
+            ],
+            "required_nested_contract_ids": [
+              "reiyah.executable-contract.readiness-unknown-propagation",
+              "reiyah.executable-contract.recovery-event-derivation",
+              "reiyah.cross-cutting-contract.lifecycle-history-integrity",
+              "reiyah.cross-cutting-contract.typed-reference-integrity"
+            ],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.science.readiness-recovery"
+            ]
+          },
+          {
+            "finding_id": "CR-005",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+              "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0"
+            ],
+            "required_nested_contract_ids": [
+              "reiyah.executable-contract.ope-policy-distribution",
+              "reiyah.cross-cutting-contract.lifecycle-history-integrity",
+              "reiyah.cross-cutting-contract.typed-reference-integrity"
+            ],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.science.ope-closure"
+            ]
+          },
+          {
+            "finding_id": "CR-006",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+              "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0"
+            ],
+            "required_nested_contract_ids": [
+              "reiyah.executable-contract.joint-silent-miss-identifiability",
+              "reiyah.cross-cutting-contract.lifecycle-history-integrity",
+              "reiyah.cross-cutting-contract.typed-reference-integrity"
+            ],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.science.joint-silent-miss"
+            ]
+          },
+          {
+            "finding_id": "CR-007",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+              "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0"
+            ],
+            "required_nested_contract_ids": [
+              "reiyah.executable-contract.conformal-guarantee-disposition",
+              "reiyah.executable-contract.ood-population-partition",
+              "reiyah.executable-contract.worst-group-eligibility",
+              "reiyah.cross-cutting-contract.lifecycle-history-integrity",
+              "reiyah.cross-cutting-contract.typed-reference-integrity"
+            ],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.science.ood-worst-group"
+            ]
+          },
+          {
+            "finding_id": "CR-008",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+              "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0"
+            ],
+            "required_nested_contract_ids": [
+              "reiyah.executable-contract.transfer-eligibility",
+              "reiyah.executable-contract.conformal-guarantee-disposition",
+              "reiyah.executable-contract.assumption-evidence-eligibility",
+              "reiyah.cross-cutting-contract.lifecycle-history-integrity",
+              "reiyah.cross-cutting-contract.typed-reference-integrity"
+            ],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.science.transfer-conformal-assumption"
+            ]
+          },
+          {
+            "finding_id": "CR-009",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.scientific-contract-replay@1.2.0",
+              "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0",
+              "reiyah.stage-evidence.validator-security-replay@1.2.0"
+            ],
+            "required_nested_contract_ids": [
+              "reiyah.cross-cutting-contract.lifecycle-history-integrity",
+              "reiyah.cross-cutting-contract.typed-reference-integrity"
+            ],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.security.reference-path-coverage",
+              "reiyah.evidence-selector.security.science-lineage"
+            ]
+          },
+          {
+            "finding_id": "CR-010",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.scientific-profile-and-reference-inventory@1.2.0",
+              "reiyah.stage-evidence.validator-security-replay@1.2.0"
+            ],
+            "required_nested_contract_ids": [],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.security.execution-integrity"
+            ]
+          },
+          {
+            "finding_id": "CR-011",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.publication-governance-replay@1.2.0"
+            ],
+            "required_nested_contract_ids": [],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.governance.publication-static-interface"
+            ]
+          },
+          {
+            "finding_id": "CR-012",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.transport-governance-replay@1.2.0",
+              "reiyah.stage-evidence.validator-security-replay@1.2.0"
+            ],
+            "required_nested_contract_ids": [],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.governance.transport-static-interface",
+              "reiyah.evidence-selector.security.transport-self-attestation"
+            ]
+          },
+          {
+            "finding_id": "CR-013",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.validator-security-replay@1.2.0"
+            ],
+            "required_nested_contract_ids": [],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.security.report-implications"
+            ]
+          },
+          {
+            "finding_id": "CR-014",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.validator-security-replay@1.2.0"
+            ],
+            "required_nested_contract_ids": [],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.security.fixture-catalog-integrity"
+            ]
+          },
+          {
+            "finding_id": "CR-015",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.validator-security-replay@1.2.0"
+            ],
+            "required_nested_contract_ids": [],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.security.successor-chronology"
+            ]
+          },
+          {
+            "finding_id": "CR-016",
+            "additional_required_stage_token_ids": [
+              "reiyah.stage-evidence.repository-authority-and-normative-architecture@1.2.0",
+              "reiyah.stage-evidence.threat-and-no-runtime-boundary@1.2.0",
+              "reiyah.stage-evidence.validator-security-replay@1.2.0",
+              "reiyah.stage-evidence.narrative-candidate-nonclaim@1.2.0"
+            ],
+            "required_nested_contract_ids": [
+              "reiyah.cross-cutting-contract.architecture-nonclaim-boundary"
+            ],
+            "required_evidence_selectors": [
+              "reiyah.evidence-selector.security.narrative-nonclaim"
+            ]
+          }
+        ],
+        "closure_definition": "all_required_stage_tokens_nested_contract_tokens_and_resolved_fixture_evidence_are_observed_for_the_same_candidate_projection",
+        "open_definition": "required_finding_ids_minus_closed_finding_ids_in_required_order",
+        "pass_dependency": "required_finding_ids_equal_closed_finding_ids_and_open_finding_ids_is_empty"
+      }
+    },
+    "staticPublicationTopology": {
+      "type": "object",
+      "required": [
+        "distribution_event_id",
+        "candidate_packet_role",
+        "receipt_bearing_commit_role",
+        "capture_schema",
+        "capture_manifests",
+        "rights_revalidation",
+        "publisher_receipt",
+        "candidate_packet_contract",
+        "projection_exclusion",
+        "receipt_commit_contract",
+        "self_cycle_boundary",
+        "transport_state",
+        "ga17_status",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "distribution_event_id": {
+          "const": "reiyah.distribution-event.gate-a-1.2.0-static-correction"
+        },
+        "candidate_packet_role": {"const": "C_packet"},
+        "receipt_bearing_commit_role": {"const": "C_receipt"},
+        "capture_schema": {
+          "const": {
+            "path": "schemas/rights-observation-capture-1.2.schema.json",
+            "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json",
+            "version": "1.2.0"
+          }
+        },
+        "capture_manifests": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "prefixItems": [
+            {"$ref": "#/$defs/isoCaptureDeclaration"},
+            {"$ref": "#/$defs/nistCaptureDeclaration"}
+          ],
+          "items": false
+        },
+        "rights_revalidation": {
+          "const": {
+            "artifact_id": "reiyah.artifact.public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0",
+            "artifact_path": "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json",
+            "observation_id": "reiyah.public-rights-revalidation.event.gate-a-1.2.0-static-correction",
+            "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-rights-revalidation.schema.json",
+            "version": "1.2.0",
+            "lifecycle_position": "after_C_packet_before_initial_push",
+            "included_in_candidate_projection": false,
+            "binds_candidate_packet_commit": true
+          }
+        },
+        "publisher_receipt": {
+          "const": {
+            "artifact_id": "reiyah.artifact.public-distribution-receipt-1.2.0",
+            "artifact_path": "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.2.0.json",
+            "receipt_id": "reiyah.public-distribution-receipt.gate-a-1.2.0-static-correction",
+            "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-distribution-receipt.schema.json",
+            "version": "1.2.0",
+            "lifecycle_position": "after_C_packet_push_and_publisher_readback",
+            "included_in_candidate_projection": false,
+            "published_git_commit_role": "C_packet"
+          }
+        },
+        "candidate_packet_contract": {
+          "const": {
+            "future_rights_path_state": "absent_no_placeholder_no_symlink",
+            "publisher_receipt_path_state": "absent_no_placeholder_no_symlink",
+            "capture_manifest_state": "both_present_regular_indexed_and_byte_bound",
+            "clean_release_replay_minimum": 2,
+            "regular_files_only": true,
+            "symlinks_rejected": true
+          }
+        },
+        "projection_exclusion": {
+          "const": {
+            "match_kind": "exact",
+            "path": "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json",
+            "exactly_one_future_rights_exclusion": true,
+            "broad_rights_prefix_prohibited": true,
+            "second_rights_exclusion_prohibited": true,
+            "capture_manifest_exclusion_prohibited": true
+          }
+        },
+        "receipt_commit_contract": {
+          "const": {
+            "parent_role": "C_packet",
+            "commit_role": "C_receipt",
+            "direct_child_required": true,
+            "rights_and_receipt_present_together": true,
+            "event_artifacts_separately_schema_semantic_and_digest_validated": true,
+            "candidate_projection_byte_identical": true,
+            "canonical_index_byte_identical": true,
+            "canonical_report_byte_identical": true
+          }
+        },
+        "self_cycle_boundary": {
+          "const": {
+            "capture_manifests_bind_candidate_commit": false,
+            "rights_wrapper_performs_post_commit_join": true,
+            "receipt_published_commit_role": "C_packet",
+            "receipt_may_bind_its_own_commit_or_readback": false,
+            "C_receipt_readback_requires_later_append_only_observation": true
+          }
+        },
+        "transport_state": {"const": "not_evaluated"},
+        "ga17_status": {"const": "not_evaluated"},
+        "runtime_execution_authorized": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "isoCaptureDeclaration": {
+      "const": {
+        "capture_role": "iso_open_data_rights",
+        "artifact_id": "reiyah.artifact.rights-observation-capture-iso-open-data-gate-a-static-correction-1.2.0",
+        "artifact_path": "evidence/rights-observations/2026-08-25-iso-open-data-gate-a-static-correction-1.2.0.json",
+        "capture_id": "reiyah.rights-observation-capture.iso-open-data.gate-a-1.2.0-static-correction",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json",
+        "version": "1.2.0",
+        "observation_mode": "adapter_observation_with_blocked_direct_attempt",
+        "retained_capture_extent": "attempt_metadata_and_observer_paraphrase_only",
+        "requested_url": "https://www.iso.org/open-data.html#iso_deliverables_metadata",
+        "final_url": "https://www.iso.org/open-data.html",
+        "index_role": "rights_observation_capture_manifest",
+        "included_in_candidate_projection": true,
+        "binds_candidate_git_commit": false
+      }
+    },
+    "nistCaptureDeclaration": {
+      "const": {
+        "capture_role": "nist_technical_series_rights",
+        "artifact_id": "reiyah.artifact.rights-observation-capture-nist-technical-series-gate-a-static-correction-1.2.0",
+        "artifact_path": "evidence/rights-observations/2026-08-25-nist-technical-series-gate-a-static-correction-1.2.0.json",
+        "capture_id": "reiyah.rights-observation-capture.nist-technical-series.gate-a-1.2.0-static-correction",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json",
+        "version": "1.2.0",
+        "observation_mode": "direct_http_metadata_digest",
+        "retained_capture_extent": "attempt_metadata_unverified_body_digest_and_observer_paraphrase_only",
+        "requested_url": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+        "final_url": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+        "index_role": "rights_observation_capture_manifest",
+        "included_in_candidate_projection": true,
+        "binds_candidate_git_commit": false
+      }
+    },
+    "artifactBinding": {
+      "type": "object",
+      "required": ["path", "sha256", "byte_size"],
+      "properties": {
+        "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+        "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "byte_size": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "toolBinding": {
+      "type": "object",
+      "required": ["role", "path", "sha256", "byte_size"],
+      "properties": {
+        "role": {"enum": ["external_launcher", "validator_and_index_renderer", "scientific_derivation_module", "toolchain_lock"]},
+        "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+        "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "byte_size": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "exclusion": {
+      "type": "object",
+      "required": ["match_kind", "path", "reason"],
+      "properties": {
+        "match_kind": {"enum": ["exact", "prefix"]},
+        "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+        "reason": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+      },
+      "additionalProperties": false
+    },
+    "rule": {
+      "type": "object",
+      "required": ["rule_id", "version", "handler", "severity", "description", "threat_ids", "gate_controls", "known_bad_fixture_ids", "bad_fixture_required"],
+      "properties": {
+        "rule_id": {"type": "string", "pattern": "^GA(?:12)?-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+        "version": {"const": "1.2.0"},
+        "handler": {
+          "enum": [
+            "predecessor_inheritance",
+            "schema_contract",
+            "scientific_derivation",
+            "reference_resolution",
+            "manifest_lineage",
+            "fixture_catalog",
+            "validator_security",
+            "stage_evidence",
+            "report_implication",
+            "snapshot_integrity",
+            "toolchain_integrity",
+            "format_integrity",
+            "transport_boundary",
+            "publication_governance",
+            "transport_governance",
+            "source_standards_custody",
+            "narrative_nonclaim"
+          ]
+        },
+        "severity": {"const": "error"},
+        "description": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "threat_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^TM-[0-9]{3}$"},
+          "uniqueItems": true
+        },
+        "gate_controls": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^GA-(?:0[1-9]|1[0-6])$"},
+          "uniqueItems": true
+        },
+        "known_bad_fixture_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 240,
+            "pattern": "^[a-z][a-z0-9]*(?:[._:@-][a-z0-9][a-z0-9._:@-]*)+$"
+          },
+          "uniqueItems": true
+        },
+        "bad_fixture_required": {"const": true}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

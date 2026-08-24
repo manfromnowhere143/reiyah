@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.lifecycle_supported_without_evidence",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/evaluation-assurance-bundle-blocked.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/lifecycle_history/1/status", "value": "supported"},
+    {"operation": "replace", "json_pointer": "/lifecycle_status", "value": "supported"}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-LIFECYCLE-EVIDENCE-ELIGIBILITY", "instance_pointer": "/lifecycle_status", "schema_keyword": "semantic", "reason": "A lifecycle status requiring scientific evidence or experiment binding cannot be asserted from Gate A evidence gaps and unresolved scientific dependencies."},
+  "runtime_execution_authorized": false
+}

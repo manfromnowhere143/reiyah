@@ -1,0 +1,801 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validation-report.schema.json",
+  "title": "HARBOR Gate A 1.2.0 validation output",
+  "description": "Closed output contract for either a canonical release report derived from two separately loaded, state-reset evaluations or a non-release development observation. Neither shape creates operator acceptance, scientific evidence, transport verification, or runtime authority.",
+  "oneOf": [
+    {"$ref": "#/$defs/canonicalReleaseReport"},
+    {"$ref": "#/$defs/developmentObservation"}
+  ],
+  "$defs": {
+    "canonicalReleaseReport": {
+      "type": "object",
+      "required": [
+        "schema_id",
+        "schema_version",
+        "artifact_id",
+        "record_kind",
+        "report_id",
+        "version",
+        "validation_plan_id",
+        "mission_release_id",
+        "protocol_release_id",
+        "distribution_profile",
+        "source_ledger_version",
+        "result",
+        "exit_code",
+        "architecture_status",
+        "index_binding",
+        "candidate_projection",
+        "stage_evidence",
+        "predecessor_inheritance",
+        "fixture_summary",
+        "control_summary",
+        "correction_closure_summary",
+        "security_toolchain_summary",
+        "transport_summary",
+        "offline",
+        "read_only",
+        "deterministic",
+        "release_evidence",
+        "runtime_authorized",
+        "acceptance_created",
+        "operator_acceptance_state",
+        "gate_b_authorized",
+        "diagnostic_sort",
+        "diagnostics"
+      ],
+      "properties": {
+        "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.2.0/validation-report.schema.json"},
+        "schema_version": {"const": "1.2.0"},
+        "artifact_id": {"const": "reiyah.validation-report.gate-a-1.2.0"},
+        "record_kind": {"const": "canonical_release_report"},
+        "report_id": {"const": "reiyah.validation-report.gate-a"},
+        "version": {"const": "1.2.0"},
+        "validation_plan_id": {"const": "reiyah.validation-plan.gate-a-public-1.2.0"},
+        "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+        "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+        "distribution_profile": {"const": "public_open_source"},
+        "source_ledger_version": {"const": "1.1.0"},
+        "result": {"enum": ["pass", "fail"]},
+        "exit_code": {"enum": [0, 1]},
+        "architecture_status": {"enum": ["invalid", "architecture_complete"]},
+        "index_binding": {"$ref": "#/$defs/indexBinding"},
+        "candidate_projection": {"$ref": "#/$defs/projection"},
+        "stage_evidence": {"$ref": "#/$defs/releaseStageEvidence"},
+        "predecessor_inheritance": {"$ref": "#/$defs/predecessorInheritance"},
+        "fixture_summary": {"$ref": "#/$defs/fixtureSummary"},
+        "control_summary": {"$ref": "#/$defs/controlSummary"},
+        "correction_closure_summary": {"$ref": "#/$defs/correctionClosureSummary"},
+        "security_toolchain_summary": {"$ref": "#/$defs/securityToolchainSummary"},
+        "transport_summary": {"$ref": "#/$defs/transportSummary"},
+        "offline": {"const": true},
+        "read_only": {"const": true},
+        "deterministic": {"const": true},
+        "release_evidence": {"const": true},
+        "runtime_authorized": {"const": false},
+        "acceptance_created": {"const": false},
+        "operator_acceptance_state": {"const": "unaccepted"},
+        "gate_b_authorized": {"const": false},
+        "diagnostic_sort": {"const": ["rule_id", "path", "object_id", "message"]},
+        "diagnostics": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/diagnostic"}
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"result": {"const": "pass"}},
+            "required": ["result"]
+          },
+          "then": {
+            "properties": {
+              "exit_code": {"const": 0},
+              "architecture_status": {"const": "architecture_complete"},
+              "diagnostics": {"maxItems": 0},
+              "fixture_summary": {
+                "properties": {"unexpected_outcomes": {"const": 0}},
+                "required": ["unexpected_outcomes"]
+              },
+              "control_summary": {
+                "properties": {
+                  "required_control_ids": {"$ref": "#/$defs/allOfflineControls"},
+                  "covered_control_ids": {"$ref": "#/$defs/allOfflineControls"},
+                  "passed_control_ids": {"$ref": "#/$defs/allOfflineControls"},
+                  "failed_control_ids": {"maxItems": 0}
+                },
+                "required": [
+                  "required_control_ids",
+                  "covered_control_ids",
+                  "passed_control_ids",
+                  "failed_control_ids"
+                ]
+              },
+              "correction_closure_summary": {
+                "properties": {
+                  "required_finding_ids": {"$ref": "#/$defs/allCorrectionFindings"},
+                  "closed_finding_ids": {"$ref": "#/$defs/allCorrectionFindings"},
+                  "open_finding_ids": {"maxItems": 0}
+                },
+                "required": [
+                  "required_finding_ids",
+                  "closed_finding_ids",
+                  "open_finding_ids"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {"result": {"const": "fail"}},
+            "required": ["result"]
+          },
+          "then": {
+            "properties": {
+              "exit_code": {"const": 1},
+              "architecture_status": {"const": "invalid"},
+              "diagnostics": {"minItems": 1}
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "developmentObservation": {
+      "type": "object",
+      "required": [
+        "schema_id",
+        "schema_version",
+        "artifact_id",
+        "record_kind",
+        "observation_id",
+        "version",
+        "validation_plan_id",
+        "mission_release_id",
+        "protocol_release_id",
+        "result",
+        "architecture_status",
+        "release_evidence",
+        "canonical_report_emitted",
+        "candidate_projection",
+        "rendered_index",
+        "observed_checks",
+        "offline",
+        "read_only",
+        "deterministic",
+        "runtime_authorized",
+        "acceptance_created",
+        "operator_acceptance_state",
+        "gate_b_authorized"
+      ],
+      "properties": {
+        "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.2.0/validation-report.schema.json"},
+        "schema_version": {"const": "1.2.0"},
+        "artifact_id": {"const": "reiyah.validation-observation.gate-a-development-1.2.0"},
+        "record_kind": {"const": "development_observation"},
+        "observation_id": {"const": "reiyah.validation-observation.gate-a-development"},
+        "version": {"const": "1.2.0"},
+        "validation_plan_id": {"const": "reiyah.validation-plan.gate-a-public-1.2.0"},
+        "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+        "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+        "result": {"const": "development_observation_complete"},
+        "architecture_status": {"const": "not_evaluated"},
+        "release_evidence": {"const": false},
+        "canonical_report_emitted": {"const": false},
+        "candidate_projection": {"$ref": "#/$defs/projection"},
+        "rendered_index": {
+          "type": "object",
+          "required": ["path", "sha256", "byte_size", "committed_readback_verified"],
+          "properties": {
+            "path": {"const": "gate/GATE_A_EVIDENCE_INDEX.json"},
+            "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+            "byte_size": {"type": "integer", "minimum": 1},
+            "committed_readback_verified": {"const": false}
+          },
+          "additionalProperties": false
+        },
+        "observed_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/developmentCheckObservation"},
+          "uniqueItems": true
+        },
+        "offline": {"const": true},
+        "read_only": {"const": true},
+        "deterministic": {"const": true},
+        "runtime_authorized": {"const": false},
+        "acceptance_created": {"const": false},
+        "operator_acceptance_state": {"const": "unaccepted"},
+        "gate_b_authorized": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "evidenceIdentifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@-]*$"
+    },
+    "sha256Digest": {
+      "$ref": "common.schema.json#/$defs/sha256Digest"
+    },
+    "projection": {
+      "type": "object",
+      "required": ["serialization", "sha256", "artifact_count", "byte_count"],
+      "properties": {
+        "serialization": {"const": "sorted_path_nul_sha256_nul_byte_count_lf"},
+        "sha256": {"$ref": "#/$defs/sha256Digest"},
+        "artifact_count": {"type": "integer", "minimum": 1},
+        "byte_count": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "byteBinding": {
+      "type": "object",
+      "required": ["path", "sha256", "byte_size"],
+      "properties": {
+        "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+        "sha256": {"$ref": "#/$defs/sha256Digest"},
+        "byte_size": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "indexBinding": {
+      "type": "object",
+      "required": ["path", "sha256", "byte_size", "sidecar_path", "sidecar_sha256", "sidecar_byte_size"],
+      "properties": {
+        "path": {"const": "gate/GATE_A_EVIDENCE_INDEX.json"},
+        "sha256": {"$ref": "#/$defs/sha256Digest"},
+        "byte_size": {"type": "integer", "minimum": 1},
+        "sidecar_path": {"const": "gate/GATE_A_EVIDENCE_INDEX.sha256"},
+        "sidecar_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "sidecar_byte_size": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "stageEvidenceObservation": {
+      "type": "object",
+      "required": ["observation_id", "subject_count", "evidence_sha256"],
+      "properties": {
+        "observation_id": {"$ref": "#/$defs/evidenceIdentifier"},
+        "subject_count": {"type": "integer", "minimum": 1},
+        "evidence_sha256": {"$ref": "#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "stageEvidenceTokenRow": {
+      "type": "object",
+      "required": [
+        "token_id",
+        "producer_check_id",
+        "candidate_projection_sha256",
+        "observations",
+        "evidence_sha256"
+      ],
+      "properties": {
+        "token_id": {"$ref": "#/$defs/evidenceIdentifier"},
+        "producer_check_id": {
+          "type": "string",
+          "pattern": "^GA12-STAGE-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "candidate_projection_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "observations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/stageEvidenceObservation"},
+          "uniqueItems": true
+        },
+        "evidence_sha256": {"$ref": "#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "identifierArray": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/evidenceIdentifier"},
+      "uniqueItems": true
+    },
+    "nonEmptyIdentifierArray": {
+      "allOf": [
+        {"$ref": "#/$defs/identifierArray"},
+        {"minItems": 1}
+      ]
+    },
+    "nestedContractEvidenceRow": {
+      "type": "object",
+      "required": [
+        "contract_id",
+        "producer_check_id",
+        "candidate_projection_sha256",
+        "application_schema_ids",
+        "production_rule_ids",
+        "application_schema_set_sha256",
+        "production_rule_set_sha256",
+        "known_good_fixture_ids",
+        "known_bad_fixture_ids",
+        "known_good_fixture_set_sha256",
+        "known_bad_fixture_set_sha256",
+        "evidence_sha256"
+      ],
+      "properties": {
+        "contract_id": {"$ref": "#/$defs/evidenceIdentifier"},
+        "producer_check_id": {
+          "type": "string",
+          "pattern": "^GA12-STAGE-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "candidate_projection_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "application_schema_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "format": "https-uri"},
+          "uniqueItems": true
+        },
+        "production_rule_ids": {"$ref": "#/$defs/nonEmptyIdentifierArray"},
+        "application_schema_set_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "production_rule_set_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "known_good_fixture_ids": {"$ref": "#/$defs/nonEmptyIdentifierArray"},
+        "known_bad_fixture_ids": {"$ref": "#/$defs/nonEmptyIdentifierArray"},
+        "known_good_fixture_set_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "known_bad_fixture_set_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "evidence_sha256": {"$ref": "#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "selectorEvidenceObservation": {
+      "type": "object",
+      "required": ["observation_id", "fixture_ids", "fixture_set_sha256"],
+      "properties": {
+        "observation_id": {"$ref": "#/$defs/evidenceIdentifier"},
+        "fixture_ids": {"$ref": "#/$defs/nonEmptyIdentifierArray"},
+        "fixture_set_sha256": {"$ref": "#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "selectorEvidenceRow": {
+      "type": "object",
+      "required": [
+        "selector_id",
+        "producer_stage_token_id",
+        "candidate_projection_sha256",
+        "observation_projections",
+        "evidence_sha256"
+      ],
+      "properties": {
+        "selector_id": {"$ref": "#/$defs/evidenceIdentifier"},
+        "producer_stage_token_id": {"$ref": "#/$defs/evidenceIdentifier"},
+        "candidate_projection_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "observation_projections": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/selectorEvidenceObservation"},
+          "uniqueItems": true
+        },
+        "evidence_sha256": {"$ref": "#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "releaseEvaluationRow": {
+      "type": "object",
+      "required": [
+        "role",
+        "capture_sequence",
+        "evaluation_sha256",
+        "fresh_snapshot_loaded",
+        "shared_mutable_state_reused"
+      ],
+      "properties": {
+        "role": {"enum": ["release_evaluation_1", "release_evaluation_2"]},
+        "capture_sequence": {"enum": [1, 2]},
+        "evaluation_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "fresh_snapshot_loaded": {"const": true},
+        "shared_mutable_state_reused": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "releaseEvaluationSummary": {
+      "type": "object",
+      "required": [
+        "evaluation_count",
+        "ordered_evaluations",
+        "common_evaluation_sha256",
+        "equality_scope",
+        "byte_equality_scope",
+        "canonical_index_byte_equal",
+        "pre_report_stage_evidence_byte_equal",
+        "evidence_sha256"
+      ],
+      "properties": {
+        "evaluation_count": {"const": 2},
+        "ordered_evaluations": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "prefixItems": [
+            {
+              "allOf": [
+                {"$ref": "#/$defs/releaseEvaluationRow"},
+                {"properties": {"role": {"const": "release_evaluation_1"}, "capture_sequence": {"const": 1}}}
+              ]
+            },
+            {
+              "allOf": [
+                {"$ref": "#/$defs/releaseEvaluationRow"},
+                {"properties": {"role": {"const": "release_evaluation_2"}, "capture_sequence": {"const": 2}}}
+              ]
+            }
+          ],
+          "items": false
+        },
+        "common_evaluation_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "equality_scope": {
+          "const": [
+            "candidate_projection_serialization",
+            "canonical_index_bytes",
+            "primitive_stage_rows_S01_through_S19",
+            "nested_contract_rows",
+            "selector_rows"
+          ]
+        },
+        "byte_equality_scope": {
+          "const": [
+            "canonical_index_bytes",
+            "pre_report_stage_evidence_bytes"
+          ]
+        },
+        "canonical_index_byte_equal": {"const": true},
+        "pre_report_stage_evidence_byte_equal": {"const": true},
+        "evidence_sha256": {"$ref": "#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "releaseStageEvidence": {
+      "type": "object",
+      "required": [
+        "candidate_projection_sha256",
+        "required_token_ids",
+        "observed_token_ids",
+        "missing_token_ids",
+        "unexpected_token_ids",
+        "release_evaluations",
+        "token_rows",
+        "nested_contract_rows",
+        "selector_rows",
+        "evidence_set_sha256"
+      ],
+      "properties": {
+        "candidate_projection_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "required_token_ids": {"$ref": "#/$defs/nonEmptyIdentifierArray"},
+        "observed_token_ids": {"$ref": "#/$defs/nonEmptyIdentifierArray"},
+        "missing_token_ids": {"$ref": "#/$defs/identifierArray"},
+        "unexpected_token_ids": {"$ref": "#/$defs/identifierArray"},
+        "release_evaluations": {"$ref": "#/$defs/releaseEvaluationSummary"},
+        "token_rows": {
+          "type": "array",
+          "minItems": 20,
+          "maxItems": 20,
+          "items": {"$ref": "#/$defs/stageEvidenceTokenRow"},
+          "uniqueItems": true
+        },
+        "nested_contract_rows": {
+          "type": "array",
+          "minItems": 14,
+          "maxItems": 14,
+          "items": {"$ref": "#/$defs/nestedContractEvidenceRow"},
+          "uniqueItems": true
+        },
+        "selector_rows": {
+          "type": "array",
+          "minItems": 18,
+          "maxItems": 18,
+          "items": {"$ref": "#/$defs/selectorEvidenceRow"},
+          "uniqueItems": true
+        },
+        "evidence_set_sha256": {"$ref": "#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "controlResult": {
+      "type": "object",
+      "required": [
+        "control_id",
+        "required_stage_token_ids",
+        "observed_stage_token_ids",
+        "missing_stage_token_ids",
+        "required_nested_contract_ids",
+        "observed_nested_contract_ids",
+        "missing_nested_contract_ids",
+        "status",
+        "evidence_sha256"
+      ],
+      "properties": {
+        "control_id": {"type": "string", "pattern": "^GA-(?:0[1-9]|1[0-6])$"},
+        "required_stage_token_ids": {"$ref": "#/$defs/nonEmptyIdentifierArray"},
+        "observed_stage_token_ids": {"$ref": "#/$defs/identifierArray"},
+        "missing_stage_token_ids": {"$ref": "#/$defs/identifierArray"},
+        "required_nested_contract_ids": {"$ref": "#/$defs/identifierArray"},
+        "observed_nested_contract_ids": {"$ref": "#/$defs/identifierArray"},
+        "missing_nested_contract_ids": {"$ref": "#/$defs/identifierArray"},
+        "status": {"enum": ["pass", "fail"]},
+        "evidence_sha256": {"$ref": "#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "controlSummary": {
+      "type": "object",
+      "required": [
+        "required_control_ids",
+        "covered_control_ids",
+        "passed_control_ids",
+        "failed_control_ids",
+        "results",
+        "evidence_sha256",
+        "external_control"
+      ],
+      "properties": {
+        "required_control_ids": {"$ref": "#/$defs/offlineControls"},
+        "covered_control_ids": {"$ref": "#/$defs/offlineControls"},
+        "passed_control_ids": {"$ref": "#/$defs/offlineControls"},
+        "failed_control_ids": {"$ref": "#/$defs/offlineControls"},
+        "results": {
+          "type": "array",
+          "minItems": 16,
+          "maxItems": 16,
+          "items": {"$ref": "#/$defs/controlResult"},
+          "uniqueItems": true
+        },
+        "evidence_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "external_control": {
+          "type": "object",
+          "required": ["control_id", "status", "decision_record_id"],
+          "properties": {
+            "control_id": {"const": "GA-17"},
+            "status": {"const": "not_evaluated"},
+            "decision_record_id": {"type": "null"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "findingResult": {
+      "type": "object",
+      "required": [
+        "finding_id",
+        "required_stage_token_ids",
+        "observed_stage_token_ids",
+        "missing_stage_token_ids",
+        "required_nested_contract_ids",
+        "observed_nested_contract_ids",
+        "missing_nested_contract_ids",
+        "required_evidence_selector_ids",
+        "observed_evidence_selector_ids",
+        "missing_evidence_selector_ids",
+        "production_rule_ids",
+        "known_good_fixture_ids",
+        "known_bad_fixture_ids",
+        "status",
+        "evidence_projection_sha256"
+      ],
+      "properties": {
+        "finding_id": {"type": "string", "pattern": "^CR-(?:00[1-9]|01[0-6])$"},
+        "required_stage_token_ids": {"$ref": "#/$defs/nonEmptyIdentifierArray"},
+        "observed_stage_token_ids": {"$ref": "#/$defs/identifierArray"},
+        "missing_stage_token_ids": {"$ref": "#/$defs/identifierArray"},
+        "required_nested_contract_ids": {"$ref": "#/$defs/identifierArray"},
+        "observed_nested_contract_ids": {"$ref": "#/$defs/identifierArray"},
+        "missing_nested_contract_ids": {"$ref": "#/$defs/identifierArray"},
+        "required_evidence_selector_ids": {"$ref": "#/$defs/identifierArray"},
+        "observed_evidence_selector_ids": {"$ref": "#/$defs/identifierArray"},
+        "missing_evidence_selector_ids": {"$ref": "#/$defs/identifierArray"},
+        "production_rule_ids": {"$ref": "#/$defs/identifierArray"},
+        "known_good_fixture_ids": {"$ref": "#/$defs/identifierArray"},
+        "known_bad_fixture_ids": {"$ref": "#/$defs/nonEmptyIdentifierArray"},
+        "status": {"enum": ["closed", "open"]},
+        "evidence_projection_sha256": {"$ref": "#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "correctionClosureSummary": {
+      "type": "object",
+      "required": [
+        "required_finding_ids",
+        "closed_finding_ids",
+        "open_finding_ids",
+        "results",
+        "evidence_sha256"
+      ],
+      "properties": {
+        "required_finding_ids": {"$ref": "#/$defs/correctionFindings"},
+        "closed_finding_ids": {"$ref": "#/$defs/correctionFindings"},
+        "open_finding_ids": {"$ref": "#/$defs/correctionFindings"},
+        "results": {
+          "type": "array",
+          "minItems": 16,
+          "maxItems": 16,
+          "items": {"$ref": "#/$defs/findingResult"},
+          "uniqueItems": true
+        },
+        "evidence_sha256": {"$ref": "#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "predecessorInheritance": {
+      "type": "object",
+      "required": [
+        "subject_version",
+        "historical_index_binding",
+        "historical_sidecar_binding",
+        "canonical_report_binding",
+        "publisher_receipt_binding",
+        "recovery_record_binding",
+        "predecessor_artifact_count",
+        "unchanged_artifact_count",
+        "changed_paths",
+        "added_paths",
+        "removed_paths",
+        "missing_paths",
+        "unexpected_drift_paths"
+      ],
+      "properties": {
+        "subject_version": {"const": "1.1.2"},
+        "historical_index_binding": {"$ref": "#/$defs/byteBinding"},
+        "historical_sidecar_binding": {"$ref": "#/$defs/byteBinding"},
+        "canonical_report_binding": {"$ref": "#/$defs/byteBinding"},
+        "publisher_receipt_binding": {"$ref": "#/$defs/byteBinding"},
+        "recovery_record_binding": {"$ref": "#/$defs/byteBinding"},
+        "predecessor_artifact_count": {"type": "integer", "minimum": 1},
+        "unchanged_artifact_count": {"type": "integer", "minimum": 1},
+        "changed_paths": {"$ref": "#/$defs/pathSet"},
+        "added_paths": {"$ref": "#/$defs/pathSet"},
+        "removed_paths": {"type": "array", "maxItems": 0},
+        "missing_paths": {"type": "array", "maxItems": 0},
+        "unexpected_drift_paths": {"type": "array", "maxItems": 0}
+      },
+      "additionalProperties": false
+    },
+    "fixtureSummary": {
+      "type": "object",
+      "required": [
+        "science_schema_count",
+        "science_good_total",
+        "science_good_passed",
+        "science_known_bad_total",
+        "science_known_bad_rejected_for_declared_rule",
+        "science_semantic_rule_count",
+        "science_schema_rejected_known_bad_count",
+        "validator_security_known_bad_total",
+        "validator_security_rejected_for_declared_diagnostic",
+        "governance_known_good_total",
+        "governance_known_good_passed",
+        "governance_known_bad_total",
+        "governance_rejected_for_declared_diagnostic",
+        "unexpected_outcomes",
+        "schema_set_sha256",
+        "good_fixture_set_sha256",
+        "known_bad_fixture_set_sha256",
+        "security_fixture_set_sha256",
+        "governance_positive_fixture_set_sha256",
+        "governance_known_bad_fixture_set_sha256"
+      ],
+      "properties": {
+        "science_schema_count": {"type": "integer", "minimum": 1},
+        "science_good_total": {"type": "integer", "minimum": 1},
+        "science_good_passed": {"type": "integer", "minimum": 0},
+        "science_known_bad_total": {"type": "integer", "minimum": 1},
+        "science_known_bad_rejected_for_declared_rule": {"type": "integer", "minimum": 0},
+        "science_semantic_rule_count": {"type": "integer", "minimum": 1},
+        "science_schema_rejected_known_bad_count": {"type": "integer", "minimum": 0},
+        "validator_security_known_bad_total": {"type": "integer", "minimum": 1},
+        "validator_security_rejected_for_declared_diagnostic": {"type": "integer", "minimum": 0},
+        "governance_known_good_total": {"type": "integer", "minimum": 1},
+        "governance_known_good_passed": {"type": "integer", "minimum": 0},
+        "governance_known_bad_total": {"type": "integer", "minimum": 1},
+        "governance_rejected_for_declared_diagnostic": {"type": "integer", "minimum": 0},
+        "unexpected_outcomes": {"type": "integer", "minimum": 0},
+        "schema_set_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "good_fixture_set_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "known_bad_fixture_set_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "security_fixture_set_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "governance_positive_fixture_set_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "governance_known_bad_fixture_set_sha256": {"$ref": "#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "securityToolchainSummary": {
+      "type": "object",
+      "required": [
+        "dependency_count",
+        "dependency_names",
+        "seatbelt_profile_sha256",
+        "external_launcher_precedes_python",
+        "format_checker_count",
+        "unknown_formats_rejected",
+        "toolchain_postload_reverified"
+      ],
+      "properties": {
+        "dependency_count": {"type": "integer", "minimum": 1},
+        "dependency_names": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "seatbelt_profile_sha256": {"$ref": "#/$defs/sha256Digest"},
+        "external_launcher_precedes_python": {"const": true},
+        "format_checker_count": {"type": "integer", "minimum": 4},
+        "unknown_formats_rejected": {"const": true},
+        "toolchain_postload_reverified": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "transportSummary": {
+      "type": "object",
+      "required": ["status", "publisher_receipt_is_independent_verification", "independent_record_id"],
+      "properties": {
+        "status": {"const": "not_evaluated"},
+        "publisher_receipt_is_independent_verification": {"const": false},
+        "independent_record_id": {"type": "null"}
+      },
+      "additionalProperties": false
+    },
+    "developmentCheckObservation": {
+      "type": "object",
+      "required": ["producer_check_id", "subject_count", "evidence_sha256"],
+      "properties": {
+        "producer_check_id": {
+          "type": "string",
+          "pattern": "^GA12-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "subject_count": {"type": "integer", "minimum": 1},
+        "evidence_sha256": {"$ref": "#/$defs/sha256Digest"}
+      },
+      "additionalProperties": false
+    },
+    "offlineControls": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^GA-(?:0[1-9]|1[0-6])$"},
+      "uniqueItems": true
+    },
+    "allOfflineControls": {
+      "const": [
+        "GA-01", "GA-02", "GA-03", "GA-04", "GA-05", "GA-06", "GA-07", "GA-08",
+        "GA-09", "GA-10", "GA-11", "GA-12", "GA-13", "GA-14", "GA-15", "GA-16"
+      ]
+    },
+    "correctionFindings": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^CR-(?:00[1-9]|01[0-6])$"},
+      "uniqueItems": true
+    },
+    "allCorrectionFindings": {
+      "const": [
+        "CR-001", "CR-002", "CR-003", "CR-004", "CR-005", "CR-006", "CR-007", "CR-008",
+        "CR-009", "CR-010", "CR-011", "CR-012", "CR-013", "CR-014", "CR-015", "CR-016"
+      ]
+    },
+    "pathSet": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+      "uniqueItems": true
+    },
+    "diagnostic": {
+      "type": "object",
+      "required": ["rule_id", "severity", "path", "object_id", "message"],
+      "properties": {
+        "rule_id": {"type": "string", "pattern": "^GA(?:12)?-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+        "severity": {"const": "error"},
+        "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+        "object_id": {
+          "oneOf": [
+            {"type": "string", "minLength": 1},
+            {"type": "null"}
+          ]
+        },
+        "message": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json",
+  "schema_version": "1.2.0",
+  "artifact_id": "reiyah.artifact.rights-observation-capture-iso-open-data-gate-a-static-correction-1.2.0",
+  "artifact_path": "evidence/rights-observations/2026-08-25-iso-open-data-gate-a-static-correction-1.2.0.json",
+  "capture_id": "reiyah.rights-observation-capture.iso-open-data.gate-a-1.2.0-static-correction",
+  "version": "1.2.0",
+  "record_kind": "rights_observation_capture_manifest",
+  "distribution_event_id": "reiyah.distribution-event.gate-a-1.2.0-static-correction",
+  "capture_role": "iso_open_data_rights",
+  "basis_id": "rights.iso-open-data.odc-by-1.0",
+  "publisher": "International Organization for Standardization",
+  "requested_url": "https://www.iso.org/open-data.html#iso_deliverables_metadata",
+  "final_url": "https://www.iso.org/open-data.html",
+  "related_source_ids": [
+    "src.iso.26262-1.2018.open-data",
+    "src.iso.21448.2022.open-data",
+    "src.iso-tr.21959-1.2020.open-data",
+    "src.iso-pas.8800.2024.open-data"
+  ],
+  "observation_mode": "adapter_observation_with_blocked_direct_attempt",
+  "observation_started_at": "2026-08-24T21:49:10Z",
+  "observation_completed_at": "2026-08-24T21:49:28Z",
+  "direct_http_attempt": {
+    "attempted": true,
+    "method": "GET",
+    "requested_url": "https://www.iso.org/open-data.html#iso_deliverables_metadata",
+    "final_url": "https://www.iso.org/open-data.html",
+    "retrieval_completed_at": "2026-08-24T21:49:10Z",
+    "http_status": 403,
+    "redirect_count": 0,
+    "content_encoding": "identity",
+    "response_media_type": "text/html; charset=UTF-8",
+    "credentials_supplied_by_reiyah": false,
+    "cookies_supplied_by_reiyah": false,
+    "authorization_header_sent": false,
+    "cookie_header_sent": false,
+    "client_certificate_sent": false,
+    "response_body_retained": false
+  },
+  "adapter_observation": {
+    "adapter_id": "reiyah.adapter.web-research",
+    "adapter_provider": "OpenAI",
+    "adapter_version_state": "unobserved",
+    "official_url": "https://www.iso.org/open-data.html#iso_deliverables_metadata",
+    "observation_completed_at": "2026-08-24T21:49:28Z",
+    "result_state": "visible_bounded_text_only",
+    "adapter_reports_crawled_today": true,
+    "source_bytes_exposed": false,
+    "http_status_exposed": false,
+    "response_digest_exposed": false,
+    "response_byte_size_exposed": false,
+    "authorization_state": "unobserved_by_reiyah",
+    "cookie_state": "unobserved_by_reiyah",
+    "crawl_freshness_independently_verified": false,
+    "raw_authenticity_verified": false,
+    "source_authority_claimed": false
+  },
+  "source_bytes_exposed_to_reiyah_observer": false,
+  "request_policy": {
+    "credentials_supplied_by_reiyah": false,
+    "cookies_supplied_by_reiyah": false,
+    "client_certificate_supplied_by_reiyah": false,
+    "authorization_header_state": "unobserved_by_reiyah",
+    "cookie_header_state": "unobserved_by_reiyah",
+    "client_certificate_state": "unobserved_by_reiyah",
+    "url_userinfo_present": false,
+    "request_body_supplied_by_reiyah": false,
+    "credential_material_retained": false,
+    "response_headers_retained": false,
+    "set_cookie_header_retained": false
+  },
+  "unretained_response_measurement": null,
+  "retained_capture_extent": "attempt_metadata_and_observer_paraphrase_only",
+  "response_body_retained": false,
+  "response_body_redistributed": false,
+  "bounded_observed_facts": [
+    {
+      "fact_id": "reiyah.observed-fact.iso-open-data-license-2026-08-25",
+      "statement": "The adapter-visible ISO page identifies the ISO deliverables metadata dataset as licensed under the Open Data Commons Attribution 1.0 license.",
+      "representation": "observer_authored_paraphrase",
+      "source_excerpt_retained": false,
+      "source_authority_claimed": false
+    },
+    {
+      "fact_id": "reiyah.observed-fact.iso-open-data-attribution-2026-08-25",
+      "statement": "The adapter-visible ISO page provides an attribution form for reuse of the ISO deliverables metadata dataset.",
+      "representation": "observer_authored_paraphrase",
+      "source_excerpt_retained": false,
+      "source_authority_claimed": false
+    }
+  ],
+  "observer": {
+    "observer_id": "reiyah.adapter.web-research",
+    "observer_kind": "untrusted_research_adapter",
+    "assertion_kind": "contemporaneous_observer_assertion",
+    "assertion_basis": "direct_attempt_metadata_adapter_assertion_and_bounded_paraphrase_only",
+    "identity_authentication_state": "not_authenticated",
+    "source_authority_claimed": false,
+    "legal_authority_claimed": false,
+    "scientific_authority_claimed": false,
+    "operator_authority_claimed": false
+  },
+  "evidence_eligible": false,
+  "limitations": [
+    "Only this locally authored manifest is retained; the official response body and response headers are not retained or redistributed.",
+    "When present, the unretained response digest and byte size are contemporaneous observer measurements and cannot independently substantiate the paraphrases, authenticate the source, or recreate the response.",
+    "Every observed fact is a bounded observer-authored paraphrase; no source excerpt, quotation, raw response, credential, cookie, or authorization material is retained.",
+    "An adapter assertion that a page was crawled today does not independently establish crawl freshness, expose source bytes, authenticate the raw response, or prove legal meaning.",
+    "This manifest is evidence-ineligible and creates no legal conclusion, distribution authorization, operator acceptance, publication acceptance, transport verification, scientific support, compliance claim, or runtime authority."
+  ],
+  "runtime_execution_authorized": false
+}

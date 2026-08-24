@@ -1,0 +1,21 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.bad.transfer_source_zero_observed_estimate",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/transfer_evaluation/source_result/coverage_counts/observed", "value": 0},
+    {"operation": "replace", "json_pointer": "/transfer_evaluation/source_result/coverage_counts/unmeasured", "value": 92}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-TRANSFER-COVERAGE",
+    "instance_pointer": "/transfer_evaluation/source_result/estimate",
+    "schema_keyword": "semantic",
+    "reason": "Transfer coverage must reconcile exactly, and observed estimates or uncertainty operands require the registry-owned minimum observed count."
+  },
+  "runtime_execution_authorized": false
+}

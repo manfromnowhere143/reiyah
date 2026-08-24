@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.recovery_duration_event_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/recovery/outcome/elapsed_seconds/value", "value": 5}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-RECOVERY-EVENT-DERIVATION", "instance_pointer": "/recovery/outcome/elapsed_seconds/value", "schema_keyword": "semantic", "reason": "Elapsed recovery time must equal the qualifying event time minus the index event time on the declared clock."},
+  "runtime_execution_authorized": false
+}

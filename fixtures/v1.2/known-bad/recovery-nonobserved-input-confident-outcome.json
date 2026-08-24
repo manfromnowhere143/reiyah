@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.recovery_nonobserved_input_confident_outcome",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/recovery/index_event/occurred_at", "value": {"state": "unmeasured", "reason": "The index-event time was not measured.", "basis_ids": ["reiyah.measurement.index_time_absent"]}}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-RECOVERY-INPUT-UNKNOWN-PROPAGATION", "instance_pointer": "/recovery/outcome", "schema_keyword": "semantic", "reason": "A nonobserved recovery index or window input must force a nonobserved outcome, absent event binding, and nonobserved elapsed time."},
+  "runtime_execution_authorized": false
+}

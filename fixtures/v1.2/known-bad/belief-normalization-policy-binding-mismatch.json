@@ -1,0 +1,24 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.belief_normalization_policy_binding_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment.json",
+  "mutations": [
+    {
+      "operation": "replace",
+      "json_pointer": "/belief/normalization_policy_binding/absolute_tolerance",
+      "value": 1e-7
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-BELIEF-NORMALIZATION-POLICY-BINDING",
+    "instance_pointer": "/belief/normalization_policy_binding/absolute_tolerance",
+    "schema_keyword": "semantic",
+    "reason": "The belief normalization binding must exactly equal every protocol-owned normalization policy field."
+  },
+  "runtime_execution_authorized": false
+}

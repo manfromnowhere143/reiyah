@@ -1,0 +1,20 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.joint_opportunity_set_ref_substitution",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/joint_silent_miss/opportunity_set_ref/record_id", "value": "reiyah.opportunity-set.synthetic-joint-nonobserved"}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-JOINT-OPPORTUNITY-MANIFEST-BINDING",
+    "instance_pointer": "/joint_silent_miss/opportunity_set_ref",
+    "schema_keyword": "semantic",
+    "reason": "The complete ordered opportunity identities and typed rows must exact-bind one artifact-bound protocol-owned synthetic manifest; it is static resolver evidence, not a real population."
+  },
+  "runtime_execution_authorized": false
+}

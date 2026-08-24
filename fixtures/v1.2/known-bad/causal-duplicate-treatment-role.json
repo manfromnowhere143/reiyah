@@ -1,0 +1,24 @@
+{
+  "base_fixture_path": "fixtures/v1.2/good/study-design-preregistration.json",
+  "expected_failure": {
+    "instance_pointer": "/causal_graph/nodes",
+    "reason": "The causal graph must declare exactly one treatment-role node and one outcome-role node.",
+    "rule_id": "GA-CAUSAL-QUERY-ROLE",
+    "schema_keyword": "semantic"
+  },
+  "fixture_id": "reiyah.fixture.bad.causal_duplicate_treatment_role",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "mutations": [
+    {
+      "json_pointer": "/causal_graph/nodes/2/role",
+      "operation": "replace",
+      "value": "treatment"
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "expected_outcome": "reject",
+  "runtime_execution_authorized": false,
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json"
+}

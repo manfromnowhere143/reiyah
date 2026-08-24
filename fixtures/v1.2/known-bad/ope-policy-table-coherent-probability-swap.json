@@ -1,0 +1,29 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope_policy_table_coherent_probability_swap",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/trajectories/0/steps/0/behavior_distribution/0/probability", "value": 0.4},
+    {"operation": "replace", "json_pointer": "/trajectories/0/steps/0/behavior_distribution/1/probability", "value": 0.6},
+    {"operation": "replace", "json_pointer": "/trajectories/0/steps/0/target_distribution/0/probability", "value": 0.6},
+    {"operation": "replace", "json_pointer": "/trajectories/0/steps/0/target_distribution/1/probability", "value": 0.4},
+    {"operation": "replace", "json_pointer": "/trajectories/0/steps/0/behavior_logged_propensity", "value": 0.4},
+    {"operation": "replace", "json_pointer": "/trajectories/0/steps/0/target_logged_propensity", "value": 0.6},
+    {"operation": "replace", "json_pointer": "/support_assessment/required_cells/0/behavior_probability", "value": 0.4},
+    {"operation": "replace", "json_pointer": "/support_assessment/required_cells/0/target_probability", "value": 0.6},
+    {"operation": "replace", "json_pointer": "/support_assessment/required_cells/1/behavior_probability", "value": 0.6},
+    {"operation": "replace", "json_pointer": "/support_assessment/required_cells/1/target_probability", "value": 0.4}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-OPE-POLICY-TABLE-BINDING",
+    "instance_pointer": "/trajectories/0/steps/0/behavior_distribution",
+    "schema_keyword": "semantic",
+    "reason": "Every behavior and target distribution must exact-bind the artifact-bound protocol-owned synthetic policy table selected for its role and history; the table is static resolver evidence, not an executed policy."
+  },
+  "runtime_execution_authorized": false
+}

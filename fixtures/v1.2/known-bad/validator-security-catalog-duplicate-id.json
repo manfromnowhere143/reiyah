@@ -1,0 +1,19 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "synthetic_fixture_only": true,
+  "expected_diagnostic": "GA12-FIXTURE-CATALOG-ID-UNIQUE",
+  "fixture_class": "known-bad-validator-security",
+  "fixture_id": "reiyah.fixture.validator-security.catalog-duplicate-id@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "probe": {
+    "kind": "fixture_catalog_uniqueness",
+    "catalog_path": "fixtures/fixture-catalog.json",
+    "mutation": {
+      "operation": "replace",
+      "json_pointer": "/fixtures/1/fixture_id",
+      "value": "reiyah.fixture.good.canonical-chain"
+    }
+  },
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0"
+}

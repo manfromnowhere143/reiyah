@@ -7,13 +7,13 @@
 | As-of date | 2026-08-23 |
 | Lifecycle status | Proposed |
 | Scope | External methodological review for the HARBOR research program |
-| Gate status | Gate A 1.1 architecture candidate; operator unaccepted |
+| Gate status | Gate A 1.2.0 correction candidate; operator unaccepted |
 | Runtime authorization | False |
 | Scientific support created | False |
 | Operator acceptance created | False |
 
-This document records the research baseline proposed for the Gate A 1.1 architecture candidate.
-It does not mutate the historical 1.0 packet, authorize Gate B, validate a product, create a
+This document records the research baseline carried into the Gate A 1.2.0 correction candidate.
+It does not mutate a retained predecessor packet, authorize Gate B, validate a product, create a
 safety case, or support a performance claim. Its external links are discovery pointers. No
 linked paper, standard, company page, dataset, or certificate has been made evidence-eligible by
 this document. Under

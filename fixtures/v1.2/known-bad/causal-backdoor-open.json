@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.causal_backdoor_open",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/study-design-preregistration.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/adjustment_sets/0/node_ids", "value": []}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-CAUSAL-BACKDOOR-OPEN", "instance_pointer": "/identification_queries/0/disposition", "schema_keyword": "semantic", "reason": "An identification query cannot be identified while a backdoor path remains open under its selected adjustment set."},
+  "runtime_execution_authorized": false
+}

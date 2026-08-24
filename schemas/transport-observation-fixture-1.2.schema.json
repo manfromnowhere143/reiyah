@@ -1,0 +1,438 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-fixture.schema.json",
+  "title": "Gate A 1.2.0 synthetic transport-observation fixture",
+  "description": "Closed governance fixture that layers a production-schema-valid synthetic authorization, two retained synthetic evidence operands, and a production-schema-valid transport record on the exact typed publication-event baseline. Every nested event and independently-verified assertion is test input only; no real publication, observation, identity authentication, independence, transport conclusion, authority, acceptance, scientific support, or runtime permission is created.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "target_schema_id",
+    "artifact_version",
+    "fixture_id",
+    "fixture_class",
+    "mission_release_id",
+    "protocol_release_id",
+    "synthetic_fixture_only",
+    "baseline_expected_outcome",
+    "publication_event_baseline_ref",
+    "publication_receipt_operand",
+    "authorization_operand",
+    "retained_evidence_operands",
+    "transport_record_operand",
+    "semantic_contract",
+    "production_event_claimed",
+    "independent_transport_event_occurred",
+    "independently_verified_transport_claimed_as_real",
+    "authority_created",
+    "gate_a_acceptance_conferred",
+    "ga17_status",
+    "scientific_support_claimed",
+    "runtime_execution_authorized",
+    "limitations"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-fixture.schema.json"
+    },
+    "target_schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/transport-observation-fixture.schema.json"
+    },
+    "artifact_version": {"const": "1.2.0"},
+    "fixture_id": {
+      "const": "reiyah.fixture.governance.transport-observation-synthetic-baseline@1.2.0"
+    },
+    "fixture_class": {"const": "known-good-governance"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+    "synthetic_fixture_only": {"const": true},
+    "baseline_expected_outcome": {"const": "accepted"},
+    "publication_event_baseline_ref": {
+      "type": "object",
+      "required": [
+        "fixture_id",
+        "path",
+        "schema_id",
+        "sha256",
+        "byte_size",
+        "byte_binding_scope"
+      ],
+      "properties": {
+        "fixture_id": {
+          "const": "reiyah.fixture.governance.publication-event-synthetic-baseline@1.2.0"
+        },
+        "path": {
+          "const": "fixtures/v1.2/governance/publication-event-synthetic-baseline.json"
+        },
+        "schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/publication-event-fixture.schema.json"
+        },
+        "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "byte_size": {"type": "integer", "minimum": 1},
+        "byte_binding_scope": {
+          "const": "entire_typed_publication_baseline_file_bytes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "publication_receipt_operand": {"$ref": "#/$defs/publicationReceiptOperand"},
+    "authorization_operand": {"$ref": "#/$defs/authorizationOperand"},
+    "retained_evidence_operands": {
+      "type": "array",
+      "prefixItems": [
+        {"$ref": "#/$defs/remoteResponseEvidenceOperand"},
+        {"$ref": "#/$defs/verificationTranscriptEvidenceOperand"}
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "transport_record_operand": {"$ref": "#/$defs/transportRecordOperand"},
+    "semantic_contract": {
+      "const": {
+        "publication_byte_binding": {
+          "actual_snapshot_digest_and_size_must_equal_reference": true,
+          "referenced_snapshot_schema_and_fixture_id_must_validate": true
+        },
+        "publication_binding": {
+          "exact_publication_baseline_snapshot_required": true,
+          "receipt_operand_must_select_publication_baseline_publisher_receipt": true,
+          "selected_topology_must_equal_byte_resolved_publisher_receipt": true,
+          "publication_receipt_artifact_binding_must_equal_transport_receipt_ref": true,
+          "distribution_event_repository_ref_C_packet_index_report_must_equal_publication_receipt_and_topology": true
+        },
+        "authorization_binding": {
+          "wrapper_binding_must_equal_transport_authorization_ref": true,
+          "authorization_record_id_event_target_commit_index_report_must_equal_transport_record": true,
+          "authorized_at_lte_all_evidence_observations_and_transport_observed_at_lte_valid_until": true
+        },
+        "evidence_binding": {
+          "payload_sha256_and_byte_size_must_equal_utf8_payload_bytes": true,
+          "evidence_wrapper_record_must_equal_transport_observation_evidence_record": true,
+          "distinct_referenced_ids_must_equal_distinct_retained_ids_and_resolve_once": true
+        },
+        "chronology": {
+          "publication_receipt_recorded_at_lte_authorized_at": true,
+          "publication_published_at_lt_all_evidence_captured_at_and_observations_observed_at": true,
+          "each_evidence_captured_at_lte_each_referencing_observation_observed_at": true,
+          "all_evidence_and_observations_lte_transport_observed_at_lte_transport_recorded_at": true
+        },
+        "diagnostic_gating": {
+          "publication_byte_binding_before_publication_binding": true,
+          "publication_binding_before_authorization_binding": true,
+          "authorization_binding_before_observer_and_global_chronology": true,
+          "evidence_resolution_before_reference_chronology": true,
+          "structural_schema_primary_skips_semantic_replay": true
+        }
+      }
+    },
+    "production_event_claimed": {"const": false},
+    "independent_transport_event_occurred": {"const": false},
+    "independently_verified_transport_claimed_as_real": {"const": false},
+    "authority_created": {"const": false},
+    "gate_a_acceptance_conferred": {"const": false},
+    "ga17_status": {"const": "not_evaluated"},
+    "scientific_support_claimed": {"const": false},
+    "runtime_execution_authorized": {"const": false},
+    "limitations": {
+      "const": [
+        "Every nested authorization, evidence, observation, transport, publication, and verification assertion is a synthetic fixture operand; no corresponding real event occurred.",
+        "The independently_verified nested state is used only to exercise the production schema and resolver and is not a real transport conclusion.",
+        "This fixture creates no identity authentication, independence proof, authority, distribution authorization, publication acceptance, Gate A acceptance, scientific support, legal conclusion, compliance claim, GA-17 evaluation, or runtime authority."
+      ]
+    }
+  },
+  "$defs": {
+    "publicationReceiptOperand": {
+      "type": "object",
+      "required": [
+        "source_fixture_id",
+        "source_record_pointer",
+        "source_positive_fixture_id",
+        "artifact_id",
+        "path",
+        "sha256",
+        "byte_size",
+        "schema_id",
+        "version",
+        "binding_scope",
+        "selected_topology"
+      ],
+      "properties": {
+        "source_fixture_id": {
+          "const": "reiyah.fixture.governance.publication-event-synthetic-baseline@1.2.0"
+        },
+        "source_record_pointer": {"const": "/publisher_receipt"},
+        "source_positive_fixture_id": {
+          "const": "reiyah.fixture.governance-good.public-distribution-receipt@1.2.0"
+        },
+        "artifact_id": {
+          "const": "reiyah.artifact.public-distribution-receipt-1.2.0"
+        },
+        "path": {
+          "const": "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.2.0.json"
+        },
+        "sha256": {
+          "const": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+        },
+        "byte_size": {"const": 12000},
+        "schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-distribution-receipt.schema.json"
+        },
+        "version": {"const": "1.2.0"},
+        "binding_scope": {
+          "const": "synthetic_declared_event_artifact_operand_not_fixture_snapshot_bytes"
+        },
+        "selected_topology": {
+          "type": "object",
+          "required": [
+            "artifact_id",
+            "receipt_id",
+            "schema_id",
+            "version",
+            "distribution_event_id",
+            "published_repository_url",
+            "published_ref",
+            "published_git_commit",
+            "published_index_ref",
+            "validation_report_ref",
+            "published_at",
+            "recorded_at"
+          ],
+          "properties": {
+            "artifact_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "receipt_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-distribution-receipt.schema.json"
+            },
+            "version": {"const": "1.2.0"},
+            "distribution_event_id": {
+              "$ref": "common.schema.json#/$defs/stableIdentifier"
+            },
+            "published_repository_url": {"type": "string", "format": "uri"},
+            "published_ref": {"type": "string", "minLength": 1},
+            "published_git_commit": {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json#/$defs/gitObjectId"
+            },
+            "published_index_ref": {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json#/$defs/indexBinding"
+            },
+            "validation_report_ref": {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json#/$defs/validationReportBinding"
+            },
+            "published_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+            "recorded_at": {"$ref": "common.schema.json#/$defs/timestamp"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorizationOperand": {
+      "type": "object",
+      "required": [
+        "fixture_operand_id",
+        "fixture_role",
+        "target_schema_id",
+        "artifact_path",
+        "sha256",
+        "byte_size",
+        "binding_scope",
+        "synthetic_fixture_only",
+        "production_event_claimed",
+        "authority_created",
+        "record"
+      ],
+      "properties": {
+        "fixture_operand_id": {
+          "const": "reiyah.fixture-operand.transport.authorization.synthetic-governance"
+        },
+        "fixture_role": {"const": "transport_observation_authorization"},
+        "target_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json#/$defs/transportObservationAuthorizationRecord"
+        },
+        "artifact_path": {
+          "const": "gate/transport-verification-authorizations/synthetic-governance.json"
+        },
+        "sha256": {
+          "const": "sha256:5555555555555555555555555555555555555555555555555555555555555555"
+        },
+        "byte_size": {"const": 3072},
+        "binding_scope": {
+          "const": "synthetic_declared_event_artifact_operand_not_fixture_snapshot_bytes"
+        },
+        "synthetic_fixture_only": {"const": true},
+        "production_event_claimed": {"const": false},
+        "authority_created": {"const": false},
+        "record": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json#/$defs/transportObservationAuthorizationRecord"
+        }
+      },
+      "additionalProperties": false
+    },
+    "retainedEvidenceOperand": {
+      "type": "object",
+      "required": [
+        "fixture_operand_id",
+        "fixture_role",
+        "target_schema_id",
+        "payload_encoding",
+        "payload",
+        "payload_sha256",
+        "payload_byte_size",
+        "payload_binding_scope",
+        "synthetic_fixture_only",
+        "independent_observation_occurred",
+        "authority_created",
+        "record"
+      ],
+      "properties": {
+        "fixture_operand_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "fixture_role": {
+          "enum": ["remote_response_evidence", "verification_transcript_evidence"]
+        },
+        "target_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json#/$defs/retainedObservationEvidence"
+        },
+        "payload_encoding": {"const": "utf-8"},
+        "payload": {"type": "string", "minLength": 1},
+        "payload_sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "payload_byte_size": {"type": "integer", "minimum": 1},
+        "payload_binding_scope": {"const": "utf8_payload_string_bytes"},
+        "synthetic_fixture_only": {"const": true},
+        "independent_observation_occurred": {"const": false},
+        "authority_created": {"const": false},
+        "record": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json#/$defs/retainedObservationEvidence"
+        }
+      },
+      "additionalProperties": false
+    },
+    "remoteResponseEvidenceOperand": {
+      "allOf": [
+        {"$ref": "#/$defs/retainedEvidenceOperand"},
+        {
+          "properties": {
+            "fixture_operand_id": {
+              "const": "reiyah.fixture-operand.transport.remote-response.synthetic-governance"
+            },
+            "fixture_role": {"const": "remote_response_evidence"},
+            "payload": {
+              "const": "{\"authority_created\":false,\"fixture_only\":true,\"observation\":\"synthetic remote response operand; no network response occurred\"}\n"
+            },
+            "record": {
+              "allOf": [
+                {
+                  "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json#/$defs/retainedObservationEvidence"
+                },
+                {
+                  "properties": {
+                    "evidence_id": {
+                      "const": "reiyah.transport-evidence.synthetic-remote-response"
+                    },
+                    "evidence_kind": {"const": "remote_response_capture"},
+                    "path": {
+                      "const": "gate/transport-verification-evidence/synthetic-remote-response.json"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "verificationTranscriptEvidenceOperand": {
+      "allOf": [
+        {"$ref": "#/$defs/retainedEvidenceOperand"},
+        {
+          "properties": {
+            "fixture_operand_id": {
+              "const": "reiyah.fixture-operand.transport.verification-transcript.synthetic-governance"
+            },
+            "fixture_role": {"const": "verification_transcript_evidence"},
+            "payload": {
+              "const": "synthetic fixture only; no remote fetch, independent observation, publication acceptance, or authority occurred.\n"
+            },
+            "record": {
+              "allOf": [
+                {
+                  "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json#/$defs/retainedObservationEvidence"
+                },
+                {
+                  "properties": {
+                    "evidence_id": {
+                      "const": "reiyah.transport-evidence.synthetic-verification-transcript"
+                    },
+                    "evidence_kind": {"const": "verification_transcript"},
+                    "path": {
+                      "const": "gate/transport-verification-evidence/synthetic-verification-transcript.txt"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "transportRecordOperand": {
+      "type": "object",
+      "required": [
+        "fixture_operand_id",
+        "fixture_role",
+        "target_schema_id",
+        "artifact_path",
+        "sha256",
+        "byte_size",
+        "binding_scope",
+        "synthetic_fixture_only",
+        "independent_transport_event_occurred",
+        "independently_verified_transport_claimed_as_real",
+        "authority_created",
+        "record"
+      ],
+      "properties": {
+        "fixture_operand_id": {
+          "const": "reiyah.fixture-operand.transport.record.synthetic-governance"
+        },
+        "fixture_role": {"const": "transport_verification_record"},
+        "target_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json"
+        },
+        "artifact_path": {
+          "const": "gate/transport-verification-records/synthetic-governance.json"
+        },
+        "sha256": {
+          "const": "sha256:8888888888888888888888888888888888888888888888888888888888888888"
+        },
+        "byte_size": {"const": 16384},
+        "binding_scope": {
+          "const": "synthetic_declared_event_artifact_operand_not_fixture_snapshot_bytes"
+        },
+        "synthetic_fixture_only": {"const": true},
+        "independent_transport_event_occurred": {"const": false},
+        "independently_verified_transport_claimed_as_real": {"const": false},
+        "authority_created": {"const": false},
+        "record": {
+          "allOf": [
+            {
+              "$ref": "https://schemas.reiyah.invalid/gate-a/1.0.0/transport-verification-record.schema.json"
+            },
+            {
+              "properties": {
+                "limitations": {
+                  "contains": {
+                    "const": "This nested record is a synthetic fixture operand only; no real publication, independent observation, retained transport evidence, or independently verified transport event occurred."
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$comment": "Resolver order is fail-closed: hash and size the actual typed publication-baseline snapshot bytes; validate its schema and fixture identity; select its publisher receipt; exact-compare the copied receipt topology; validate every nested production record; verify both UTF-8 payload digests and sizes; exact-bind receipt, C_packet, event, index, report, authorization, evidence IDs, and transport operands; and prove a zero-diagnostic baseline. Domain diagnostic priority across schema-first mappings and reachable semantics is publication byte binding, publication receipt/topology binding, authorization binding, observer authentication, observer identity separation, substantive independence basis, evidence resolution, per-reference chronology, and global chronology. Publication bytes gate publication topology; publication topology gates authorization; authorization resolution gates observer checks and global chronology; evidence resolution gates per-reference chronology. Under the bound production schema, a null authorization and an unauthenticated independently_verified observer are structural rejections and prove only their exact schema-to-domain mappings, never semantic-handler reachability. The nested independently_verified state remains synthetic-only."
+}

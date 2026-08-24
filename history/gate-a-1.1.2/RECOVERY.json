@@ -1,0 +1,172 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/historical-packet-recovery.schema.json",
+  "schema_version": "1.2.0",
+  "artifact_id": "reiyah.artifact.gate-a-1.1.2-recovery-1.2.0",
+  "record_id": "reiyah.history.gate-a-1.1.2-recovery",
+  "version": "1.2.0",
+  "as_of_date": "2026-08-24",
+  "subject_release": {
+    "artifact_id": "reiyah.artifact.gate-a-index-1.1.2",
+    "release_id": "reiyah.gate-a-evidence-index@1.1.2",
+    "version": "1.1.2",
+    "architecture_status": "architecture_complete",
+    "operator_acceptance_state": "unaccepted",
+    "ga_17_state": "not_evaluated",
+    "runtime_authorized": false
+  },
+  "recovery_method": "exact_git_object_copy_from_released_public_packet",
+  "source_repository": {
+    "canonical_root": "/Users/danielwahnich/workspace/reiyah",
+    "distribution_remote": "https://github.com/manfromnowhere143/reiyah",
+    "git_object_format": "sha1",
+    "remote_authority": "distribution_only"
+  },
+  "release_commits": {
+    "packet": {
+      "commit": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b",
+      "tree": "5865cbc977ed6e4ccf7bf80ad6d8a64e6c9e5341"
+    },
+    "receipt_bearing": {
+      "commit": "656d826cfe6938fd628c0ede7ea15929fe11d90e",
+      "tree": "94c32621d7b1d9da42b6aae9df7ca4da82a6e8ed",
+      "first_parent": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b",
+      "first_parent_matches_packet_commit": true
+    }
+  },
+  "snapshot_policy": {
+    "collision_prone_root_artifacts_copied": true,
+    "copied_artifact_count": 2,
+    "versioned_validation_report_copied": false,
+    "versioned_distribution_receipt_copied": false,
+    "rationale": "Gate A 1.1.0 and 1.1.1 history preserve root index and sidecar bytes under their historical directories while version-qualified reports and receipts remain at canonical gate paths. Gate A 1.1.2 follows that convention and binds, but does not duplicate, its canonical versioned report and receipt."
+  },
+  "snapshot_artifacts": [
+    {
+      "artifact_id": "reiyah.artifact.historical-gate-a-index-1.1.2",
+      "source_commit": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b",
+      "source_path": "gate/GATE_A_EVIDENCE_INDEX.json",
+      "snapshot_path": "history/gate-a-1.1.2/gate/GATE_A_EVIDENCE_INDEX.json",
+      "sha256": "sha256:17f3a2e601e9cb4e1c0cd0f97561b1da9ffdc7d5893ed4af4eaccbaf8a67989f",
+      "byte_size": 182832,
+      "copy_class": "byte_identical_git_object_copy"
+    },
+    {
+      "artifact_id": "reiyah.artifact.historical-gate-a-index-sidecar-1.1.2",
+      "source_commit": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b",
+      "source_path": "gate/GATE_A_EVIDENCE_INDEX.sha256",
+      "snapshot_path": "history/gate-a-1.1.2/gate/GATE_A_EVIDENCE_INDEX.sha256",
+      "sha256": "sha256:d2df35f83aeb4658da54b54f302680947d965752c335647f45be196e95cefdfe",
+      "byte_size": 105,
+      "bound_index_sha256": "sha256:17f3a2e601e9cb4e1c0cd0f97561b1da9ffdc7d5893ed4af4eaccbaf8a67989f",
+      "copy_class": "byte_identical_git_object_copy"
+    }
+  ],
+  "canonical_versioned_artifacts": {
+    "validation_report": {
+      "artifact_id": "reiyah.validation-report.gate-a-1.1.2",
+      "source_commit": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b",
+      "source_path": "gate/validation-reports/gate-a-validation-1.1.2.json",
+      "canonical_path": "gate/validation-reports/gate-a-validation-1.1.2.json",
+      "sha256": "sha256:06fc3114522c16625da337fe25c71b1fd53abeeaf9c31a11748afc06eb5d66d8",
+      "byte_size": 2826,
+      "snapshot_copy_created": false
+    },
+    "distribution_receipt": {
+      "artifact_id": "reiyah.artifact.public-distribution-receipt-1.1.2",
+      "receipt_id": "reiyah.public-distribution-receipt.documentation-continuity-publication",
+      "receipt_sequence": 3,
+      "source_commit": "656d826cfe6938fd628c0ede7ea15929fe11d90e",
+      "source_path": "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.2.json",
+      "canonical_path": "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.2.json",
+      "sha256": "sha256:e7f3bedac49423d4ba042419056896c507d26ee2bd9a706981abf2131dcda19d",
+      "byte_size": 7621,
+      "published_packet_commit": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b",
+      "snapshot_copy_created": false
+    }
+  },
+  "validation_bindings": {
+    "validation_plan": {
+      "source_commit": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b",
+      "path": "validation/validation-plan.json",
+      "sha256": "sha256:6b17ed05c46bb90bceb45a998298d52c0cd2fc83ce622d2fdb4888cf51fb5934",
+      "byte_size": 58381
+    },
+    "authorized_tools": [
+      {
+        "source_commit": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b",
+        "path": "tools/build_gate_a_index.py",
+        "sha256": "sha256:744910f4745dc23e96e09eaeac75b24788d689116ce49d9ea927047e7efb22ee",
+        "byte_size": 30946
+      },
+      {
+        "source_commit": "ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b",
+        "path": "tools/validate_gate_a.py",
+        "sha256": "sha256:6758388216dd0878efa218550ab9c70b1bfb1e37ee432dca58ec47f4246878e4",
+        "byte_size": 693833
+      }
+    ],
+    "recorded_toolchain": {
+      "python_implementation": "CPython",
+      "python_version": "3.14.2",
+      "jsonschema_version": "4.26.0",
+      "referencing_version": "0.37.0",
+      "schema_dialect": "https://json-schema.org/draft/2020-12/schema"
+    }
+  },
+  "detached_worktree_replay": {
+    "shell": "POSIX sh",
+    "network_required": false,
+    "mutates_released_bytes": false,
+    "instruction": "Join the script_lines with newline characters and execute from any directory after confirming the canonical repository path. The script creates temporary detached worktrees, verifies immutable Git objects and commit ancestry, and removes the worktrees.",
+    "validator_replay": {
+      "supported_from_detached_worktree": false,
+      "released_validator_expected_exit_code": 2,
+      "reason": "The released validator hard-codes /Users/danielwahnich/workspace/reiyah as CANONICAL_ROOT and fail-closes unless both its working directory and script root resolve to that exact path. A detached worktree necessarily has a different script root. The replay therefore verifies the exact validator, report, index, receipt, and plan bytes without bypassing the identity gate or claiming a detached validation run."
+    },
+    "script_lines": [
+      "set -eu",
+      "reiyah_repository=/Users/danielwahnich/workspace/reiyah",
+      "test \"$(git -C \"$reiyah_repository\" rev-parse --show-toplevel)\" = \"$reiyah_repository\"",
+      "reiyah_replay_root=$(mktemp -d /tmp/reiyah-gate-a-1.1.2-replay.XXXXXX)",
+      "reiyah_packet_tree=$reiyah_replay_root/packet",
+      "reiyah_receipt_tree=$reiyah_replay_root/receipt",
+      "reiyah_cleanup() { git -C \"$reiyah_repository\" worktree remove --force \"$reiyah_packet_tree\" >/dev/null 2>&1 || true; git -C \"$reiyah_repository\" worktree remove --force \"$reiyah_receipt_tree\" >/dev/null 2>&1 || true; rmdir \"$reiyah_replay_root\" >/dev/null 2>&1 || true; }",
+      "trap reiyah_cleanup EXIT HUP INT TERM",
+      "git -C \"$reiyah_repository\" worktree add --detach \"$reiyah_packet_tree\" ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b",
+      "git -C \"$reiyah_repository\" worktree add --detach \"$reiyah_receipt_tree\" 656d826cfe6938fd628c0ede7ea15929fe11d90e",
+      "test \"$(git -C \"$reiyah_packet_tree\" rev-parse HEAD)\" = ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b",
+      "test \"$(git -C \"$reiyah_packet_tree\" rev-parse HEAD^{tree})\" = 5865cbc977ed6e4ccf7bf80ad6d8a64e6c9e5341",
+      "test \"$(shasum -a 256 \"$reiyah_packet_tree/gate/GATE_A_EVIDENCE_INDEX.json\" | awk '{print $1}')\" = 17f3a2e601e9cb4e1c0cd0f97561b1da9ffdc7d5893ed4af4eaccbaf8a67989f",
+      "test \"$(wc -c < \"$reiyah_packet_tree/gate/GATE_A_EVIDENCE_INDEX.json\" | tr -d ' ')\" = 182832",
+      "test \"$(shasum -a 256 \"$reiyah_packet_tree/gate/GATE_A_EVIDENCE_INDEX.sha256\" | awk '{print $1}')\" = d2df35f83aeb4658da54b54f302680947d965752c335647f45be196e95cefdfe",
+      "test \"$(shasum -a 256 \"$reiyah_packet_tree/gate/validation-reports/gate-a-validation-1.1.2.json\" | awk '{print $1}')\" = 06fc3114522c16625da337fe25c71b1fd53abeeaf9c31a11748afc06eb5d66d8",
+      "test \"$(wc -c < \"$reiyah_packet_tree/gate/validation-reports/gate-a-validation-1.1.2.json\" | tr -d ' ')\" = 2826",
+      "test \"$(shasum -a 256 \"$reiyah_packet_tree/validation/validation-plan.json\" | awk '{print $1}')\" = 6b17ed05c46bb90bceb45a998298d52c0cd2fc83ce622d2fdb4888cf51fb5934",
+      "test \"$(shasum -a 256 \"$reiyah_packet_tree/tools/build_gate_a_index.py\" | awk '{print $1}')\" = 744910f4745dc23e96e09eaeac75b24788d689116ce49d9ea927047e7efb22ee",
+      "test \"$(shasum -a 256 \"$reiyah_packet_tree/tools/validate_gate_a.py\" | awk '{print $1}')\" = 6758388216dd0878efa218550ab9c70b1bfb1e37ee432dca58ec47f4246878e4",
+      "test \"$(git -C \"$reiyah_receipt_tree\" rev-parse HEAD)\" = 656d826cfe6938fd628c0ede7ea15929fe11d90e",
+      "test \"$(git -C \"$reiyah_receipt_tree\" rev-parse HEAD^{tree})\" = 94c32621d7b1d9da42b6aae9df7ca4da82a6e8ed",
+      "test \"$(git -C \"$reiyah_receipt_tree\" rev-parse HEAD^)\" = ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b",
+      "test \"$(shasum -a 256 \"$reiyah_receipt_tree/gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.2.json\" | awk '{print $1}')\" = e7f3bedac49423d4ba042419056896c507d26ee2bd9a706981abf2131dcda19d",
+      "test \"$(wc -c < \"$reiyah_receipt_tree/gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.2.json\" | tr -d ' ')\" = 7621",
+      "cmp \"$reiyah_packet_tree/gate/GATE_A_EVIDENCE_INDEX.json\" \"$reiyah_receipt_tree/gate/GATE_A_EVIDENCE_INDEX.json\"",
+      "cmp \"$reiyah_packet_tree/gate/GATE_A_EVIDENCE_INDEX.sha256\" \"$reiyah_receipt_tree/gate/GATE_A_EVIDENCE_INDEX.sha256\"",
+      "cmp \"$reiyah_packet_tree/gate/validation-reports/gate-a-validation-1.1.2.json\" \"$reiyah_receipt_tree/gate/validation-reports/gate-a-validation-1.1.2.json\"",
+      "cmp \"$reiyah_packet_tree/validation/validation-plan.json\" \"$reiyah_receipt_tree/validation/validation-plan.json\"",
+      "cmp \"$reiyah_packet_tree/tools/build_gate_a_index.py\" \"$reiyah_receipt_tree/tools/build_gate_a_index.py\"",
+      "cmp \"$reiyah_packet_tree/tools/validate_gate_a.py\" \"$reiyah_receipt_tree/tools/validate_gate_a.py\"",
+      "reiyah_cleanup",
+      "trap - EXIT HUP INT TERM"
+    ]
+  },
+  "dispositions": {
+    "exact_released_bytes_bound": true,
+    "exact_released_bytes_locally_replayable": true,
+    "external_transport_verification_state": "not_evaluated",
+    "released_identifiers_reused_or_overwritten": false,
+    "new_scientific_evidence_created": false,
+    "operator_acceptance_created": false,
+    "gate_a_acceptance_conferred": false,
+    "runtime_execution_authorized": false
+  }
+}

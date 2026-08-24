@@ -1,0 +1,16 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.validator-security.plan-tool-binding-science-module@1.2.0",
+  "fixture_class": "known-bad-validator-security",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "synthetic_fixture_only": true,
+  "expected_diagnostic": "GA12-PLAN-TOOL-BINDING",
+  "probe": {
+    "kind": "validation_plan_tool_binding",
+    "plan_path": "validation/validation-plan.json",
+    "binding_role": "scientific_derivation_module",
+    "operation": "replace_bound_sha256_with_zero"
+  }
+}

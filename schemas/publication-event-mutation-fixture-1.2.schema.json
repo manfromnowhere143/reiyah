@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/publication-event-mutation-fixture.schema.json",
+  "title": "Gate A 1.2.0 publication-event governance mutation fixture",
+  "description": "Closed synthetic known-bad fixture that selects the typed publication-event baseline and applies exactly one generic RFC 6901 replace mutation. The production resolver must prove the unmodified baseline has zero diagnostics before applying the mutation and must require the exact declared primary diagnostic.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "artifact_version",
+    "fixture_id",
+    "fixture_class",
+    "mission_release_id",
+    "protocol_release_id",
+    "synthetic_fixture_only",
+    "baseline_fixture_id",
+    "baseline_expected_outcome",
+    "expected_diagnostic",
+    "expected_replay",
+    "mutation"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/publication-event-mutation-fixture.schema.json"
+    },
+    "artifact_version": {"const": "1.2.0"},
+    "fixture_id": {
+      "type": "string",
+      "pattern": "^reiyah\\.fixture\\.governance\\.[a-z0-9-]+@1\\.2\\.0$"
+    },
+    "fixture_class": {"const": "known-bad-governance"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+    "synthetic_fixture_only": {"const": true},
+    "baseline_fixture_id": {
+      "const": "reiyah.fixture.governance.publication-event-synthetic-baseline@1.2.0"
+    },
+    "baseline_expected_outcome": {"const": "accepted"},
+    "expected_diagnostic": {
+      "description": "For a structural fixture this is the locked domain classification emitted only after the exact canonical schema keyword and pointer match; it is not semantic-handler evidence. For a semantic fixture it is the required exact singleton production diagnostic.",
+      "enum": [
+        "GA12-CAPTURE-SCHEMA-BINDING",
+        "GA12-CAPTURE-ROLE-PATH",
+        "GA12-CAPTURE-URL",
+        "GA12-CAPTURE-CHRONOLOGY",
+        "GA12-CAPTURE-RESPONSE-DIGEST-SCOPE",
+        "GA12-CAPTURE-NO-RAW-BODY",
+        "GA12-CAPTURE-NO-CREDENTIALS",
+        "GA12-RIGHTS-CAPTURE-BINDING",
+        "GA12-RIGHTS-CAPTURE-COVERAGE",
+        "GA12-RIGHTS-CAPTURE-FRESHNESS",
+        "GA12-RIGHTS-SCHEMA-BINDING",
+        "GA12-RECEIPT-INDEPENDENT-VERIFICATION-CLAIM",
+        "GA12-PUBLICATION-TOPOLOGY-EXCLUSION",
+        "GA12-PUBLICATION-TOPOLOGY-PACKET-STATE",
+        "GA12-PUBLICATION-TOPOLOGY-RECEIPT-STATE",
+        "GA12-PUBLICATION-TOPOLOGY-SELF-CYCLE",
+        "GA12-PUBLICATION-EVENT-CHRONOLOGY",
+        "GA12-PUBLICATION-EVENT-BINDING",
+        "GA12-GOVERNANCE-POSITIVE-BYTE-BINDING"
+      ]
+    },
+    "expected_replay": {
+      "oneOf": [
+        {"$ref": "#/$defs/structuralReplay"},
+        {"$ref": "#/$defs/semanticReplay"}
+      ]
+    },
+    "mutation": {
+      "type": "object",
+      "required": ["operation", "json_pointer", "value"],
+      "properties": {
+        "operation": {"const": "replace"},
+        "json_pointer": {
+          "type": "string",
+          "minLength": 2,
+          "pattern": "^/"
+        },
+        "value": true
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "structuralReplay": {
+      "type": "object",
+      "required": [
+        "rejection_layer",
+        "target_schema_id",
+        "schema_keyword",
+        "instance_pointer",
+        "semantic_replay_required",
+        "exact_singleton_semantic_diagnostic_required"
+      ],
+      "properties": {
+        "rejection_layer": {"const": "structural_schema"},
+        "target_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/publication-event-fixture.schema.json"
+        },
+        "schema_keyword": {"enum": ["const", "oneOf"]},
+        "instance_pointer": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^/"
+        },
+        "semantic_replay_required": {"const": false},
+        "exact_singleton_semantic_diagnostic_required": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "semanticReplay": {
+      "type": "object",
+      "required": [
+        "rejection_layer",
+        "target_schema_id",
+        "schema_keyword",
+        "instance_pointer",
+        "semantic_replay_required",
+        "exact_singleton_semantic_diagnostic_required"
+      ],
+      "properties": {
+        "rejection_layer": {"const": "semantic"},
+        "target_schema_id": {
+          "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/publication-event-fixture.schema.json"
+        },
+        "schema_keyword": {"const": "semantic"},
+        "instance_pointer": {"type": "null"},
+        "semantic_replay_required": {"const": true},
+        "exact_singleton_semantic_diagnostic_required": {"const": true}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$comment": "The production resolver must load the exact closed baseline by baseline_fixture_id, prove zero baseline schema and semantic diagnostics, deep-copy it, validate exactly one non-root RFC 6901 replace operation against an existing location, and apply it without changing the retained baseline. A structural_schema fixture must match the exact canonical first target-schema keyword and pointer, then may map that rejection to expected_diagnostic without invoking or claiming semantic-handler coverage. A semantic fixture must have zero target-schema errors and then emit exactly the singleton expected_diagnostic under the frozen publication-event diagnostic priority."
+}

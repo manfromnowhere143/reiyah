@@ -1,0 +1,244 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/governance-positive-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.governance-good.public-distribution-receipt@1.2.0",
+  "fixture_class": "known-good-governance",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "synthetic_fixture_only": true,
+  "baseline_expected_outcome": "accepted",
+  "fixture_role": "publisher_receipt",
+  "target_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-distribution-receipt.schema.json",
+  "target_artifact_id": "reiyah.artifact.public-distribution-receipt-1.2.0",
+  "production_event_claimed": false,
+  "distribution_event_occurred": false,
+  "authority_created": false,
+  "runtime_execution_authorized": false,
+  "limitations": [
+    "The nested record is a synthetic test operand; its production artifact, receipt, event, publication, readback, authorization, and distribution assertions did not occur.",
+    "This fixture wrapper creates no source evidence, legal conclusion, transport verification, Gate A acceptance, scientific support, publication acceptance, or runtime authority."
+  ],
+  "record": {
+    "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-distribution-receipt.schema.json",
+    "schema_version": "1.2.0",
+    "artifact_id": "reiyah.artifact.public-distribution-receipt-1.2.0",
+    "receipt_id": "reiyah.public-distribution-receipt.gate-a-1.2.0-static-correction",
+    "version": "1.2.0",
+    "recorded_at": "2026-08-25T10:31:30Z",
+    "lifecycle_status": "proposed",
+    "distribution_event_id": "reiyah.distribution-event.gate-a-1.2.0-static-correction",
+    "mission_release_id": "reiyah.mission@1.1.0",
+    "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+    "custody_profile_ref": {
+      "artifact_id": "reiyah.artifact.public-evidence-custody-profile-1.1.0",
+      "path": "evidence/public-evidence-custody-profile-1.1.0.json",
+      "sha256": "sha256:80bc6f977ca8810b18cc077976c4c8517dc6f93d70b5ebbf455b433d73e3978b",
+      "byte_size": 5296,
+      "version": "1.1.0"
+    },
+    "source_ledger_ref": {
+      "artifact_id": "reiyah.artifact.source-ledger-1.1.0",
+      "path": "evidence/source-ledger-1.1.0.json",
+      "sha256": "sha256:61ea0ba90cba3bd68dba3283560c16b699f1e5d954062e1d53a18846c10d774c",
+      "byte_size": 32634,
+      "version": "1.1.0"
+    },
+    "frontier_discovery_register_ref": {
+      "artifact_id": "reiyah.artifact.frontier-discovery-register-1.1.0",
+      "path": "evidence/frontier-discovery-register-1.1.0.json",
+      "sha256": "sha256:0567b9d00f50783574201bc367869094ca8383fce3e6dd9f56b6108a764c3093",
+      "byte_size": 70081,
+      "version": "1.1.0"
+    },
+    "distribution_inventory_ref": {
+      "artifact_id": "reiyah.artifact.public-distribution-inventory-1.1.0",
+      "path": "evidence/public-distribution-inventory-1.1.0.json",
+      "sha256": "sha256:b1f63dd32dc3a1104520312723f8061b9fd729740f63a585bcad91d73d55370b",
+      "byte_size": 8717,
+      "version": "1.1.0"
+    },
+    "rights_revalidation_ref": {
+      "artifact_id": "reiyah.artifact.public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0",
+      "path": "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json",
+    "sha256": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "byte_size": 8192,
+      "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-rights-revalidation.schema.json",
+      "version": "1.2.0"
+    },
+    "published_index_ref": {
+      "artifact_id": "reiyah.artifact.gate-a-index-1.2.0",
+      "path": "gate/GATE_A_EVIDENCE_INDEX.json",
+      "sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "byte_size": 200000,
+      "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/gate-a-index.schema.json",
+      "version": "1.2.0"
+    },
+    "validation_report_ref": {
+      "artifact_id": "reiyah.validation-report.gate-a-1.2.0",
+      "path": "gate/validation-reports/gate-a-validation-1.2.0.json",
+      "sha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "byte_size": 8192,
+      "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validation-report.schema.json",
+      "version": "1.2.0"
+    },
+    "published_repository_url": "https://github.com/manfromnowhere143/reiyah",
+    "published_ref": "refs/heads/main",
+    "published_git_commit": "1111111111111111111111111111111111111111",
+    "published_at": "2026-08-25T10:30:50Z",
+    "oldest_capture_age_seconds": 1800,
+    "distributed_payloads": [
+      {
+        "source_ref": {
+          "source_id": "src.iso.26262-1.2018.open-data",
+          "version": "1.1.0"
+        },
+        "payload": {
+          "path": "evidence/sources/iso-open-data-68383-20260819.jsonl",
+          "sha256": "sha256:305ca3de040b5d216fc5ae9a79100ac2aaab470b41b0b2e6a0a32d653be04e1d",
+          "byte_size": 2606,
+          "media_type": "application/octet-stream"
+        }
+      },
+      {
+        "source_ref": {
+          "source_id": "src.iso.21448.2022.open-data",
+          "version": "1.1.0"
+        },
+        "payload": {
+          "path": "evidence/sources/iso-open-data-77490-20260819.jsonl",
+          "sha256": "sha256:4c172bebc38e108d7b9568dcea8eb1a13252cd13f5e48cf46a9e18e4a12fbb86",
+          "byte_size": 2814,
+          "media_type": "application/octet-stream"
+        }
+      },
+      {
+        "source_ref": {
+          "source_id": "src.iso-tr.21959-1.2020.open-data",
+          "version": "1.1.0"
+        },
+        "payload": {
+          "path": "evidence/sources/iso-open-data-78088-20260819.jsonl",
+          "sha256": "sha256:b92adcf7a8203d4e141057163c2d42b7bc79686542255d4a81962116326db223",
+          "byte_size": 1671,
+          "media_type": "application/octet-stream"
+        }
+      },
+      {
+        "source_ref": {
+          "source_id": "src.iso-pas.8800.2024.open-data",
+          "version": "1.1.0"
+        },
+        "payload": {
+          "path": "evidence/sources/iso-open-data-83303-20260819.jsonl",
+          "sha256": "sha256:55b96ac98610215c67189fb758be9aba9224d9409dfdb09dad0ed0aeb03e5d45",
+          "byte_size": 2920,
+          "media_type": "application/octet-stream"
+        }
+      }
+    ],
+    "attribution_fulfillment": [
+      {
+        "source_ref": {
+          "source_id": "src.iso.26262-1.2018.open-data",
+          "version": "1.1.0"
+        },
+        "notice_path": "NOTICE",
+        "attribution_present": true
+      },
+      {
+        "source_ref": {
+          "source_id": "src.iso.21448.2022.open-data",
+          "version": "1.1.0"
+        },
+        "notice_path": "NOTICE",
+        "attribution_present": true
+      },
+      {
+        "source_ref": {
+          "source_id": "src.iso-tr.21959-1.2020.open-data",
+          "version": "1.1.0"
+        },
+        "notice_path": "NOTICE",
+        "attribution_present": true
+      },
+      {
+        "source_ref": {
+          "source_id": "src.iso-pas.8800.2024.open-data",
+          "version": "1.1.0"
+        },
+        "notice_path": "NOTICE",
+        "attribution_present": true
+      }
+    ],
+    "remote_readback_assertion": {
+      "asserted_at": "2026-08-25T10:31:10Z",
+      "asserted_by": "reiyah.publisher.synthetic",
+      "assertion_basis": "publisher_observation_of_published_remote",
+      "observation_method": "authenticated_github_api_and_git_remote",
+      "observed_repository_url": "https://github.com/manfromnowhere143/reiyah",
+      "observed_ref": "refs/heads/main",
+      "observed_git_commit": "1111111111111111111111111111111111111111",
+      "observed_index_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "observed_validation_report_sha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "repository_visibility": "public",
+      "default_branch": "main",
+      "commit_reachable": true,
+      "tree_contains_exact_index": true,
+      "tree_contains_exact_validation_report": true,
+      "all_distributed_payloads_retrievable": true,
+      "publisher_is_observer": true,
+      "independent_observer": false,
+      "independent_verification_claimed": false
+    },
+    "transport_verification_state": "asserted_unverified",
+    "transport_verification_record_ref": null,
+    "receipt_sequence": 4,
+    "history_policy": "append_only_linear",
+    "prior_receipt_ref": {
+      "artifact_id": "reiyah.artifact.public-distribution-receipt-1.1.2",
+      "path": "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.1.2.json",
+      "sha256": "sha256:e7f3bedac49423d4ba042419056896c507d26ee2bd9a706981abf2131dcda19d",
+      "byte_size": 7621,
+      "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.2/public-distribution-receipt.schema.json",
+      "version": "1.1.2"
+    },
+    "operator_distribution_authorized": true,
+    "distribution_authorization": {
+      "basis_state": "observed_fresh_event_specific_operator_instruction",
+      "observed_at": "2026-08-25T10:02:00Z",
+      "authorized_action": "publish_exact_static_gate_a_1.2.0_correction_packet",
+      "scope_limit": "Exact static Gate A 1.2.0 correction packet and the unchanged four eligible retained payloads only; no new scientific evidence, runtime, cloud execution, deployment, private data, model execution, physical control, or unauthorized source payloads.",
+      "operator_identity_authentication": "not_evaluated",
+      "ga17_effect": "not_evaluated",
+      "gate_a_acceptance_effect": "none",
+      "scientific_publication_acceptance_effect": "none",
+      "runtime_execution_effect": "none"
+    },
+    "distribution_authorization_scope": "exact_static_public_repository_distribution",
+    "distribution_executed": true,
+    "receipt_is_append_only_successor": true,
+    "commit_topology": {
+      "published_git_commit_role": "candidate_packet_commit",
+      "receipt_bearing_commit_role": "direct_child_event_artifact_commit",
+      "receipt_bearing_commit_must_be_direct_child": true,
+      "published_and_receipt_bearing_commits_must_differ": true,
+      "packet_projection_index_report_must_remain_byte_identical": true,
+      "receipt_bearing_commit_self_readback_claimed": false,
+      "receipt_bearing_commit_readback_requires_later_append_only_observation": true
+    },
+    "runtime_execution_authorized": false,
+    "ga17_status": "not_evaluated",
+    "gate_a_acceptance_conferred": false,
+    "scientific_publication_acceptance_conferred": false,
+    "scientific_support_claimed": false,
+    "compliance_claimed": false,
+    "limitations": [
+      "Remote readback in this receipt is a publisher assertion, not an independently retained transport observation.",
+      "Transport remains asserted_unverified until a distinct transport verification record binds independently retained observation bytes.",
+      "Static public distribution does not accept Gate A, evaluate GA-17, or authorize runtime, cloud execution, deployment, private data, model execution, or physical control.",
+      "Repository reachability and byte equality do not establish scientific validity, safety, standards compliance, legal sufficiency, publication acceptance, readiness, or superiority.",
+      "The frontier discovery register remains pointer only and evidence ineligible.",
+      "This receipt binds publication and publisher readback of C_packet only; it cannot claim readback of the C_receipt commit that contains its own bytes."
+    ]
+  }
+}

@@ -107,6 +107,26 @@ legal and operator authority, and must fail closed on an unreachable page or an 
 contradiction. This preflight is an integrity observation only. It is not qualified legal review,
 legal clearance, or a new distribution authorization.
 
+Gate A 1.2 retains two typed capture manifests inside the packet before creating the post-packet
+rights wrapper. Each manifest records the exact official URL, observation times, predeclared
+capture mode, bounded observer-authored paraphrases, and an explicit metadata-only extent. A direct
+HTTP mode records the requested and final URL, response status and media type, and an asserted
+digest over response-body octets after HTTP transfer decoding and before text decoding. It also
+records the unretained body's byte size. An adapter-observation mode is permitted only when the
+predeclared official page blocks the separately recorded direct attempt. That mode records the
+adapter and its visible observation, leaves unavailable response status, body digest, and byte size
+unasserted, and exposes any adapter crawl-freshness limitation. Reiyah supplies no credential
+material; cookie state that an adapter does not expose remains `unobserved`, never assumed absent.
+The protocol fixes one mode for each page so a failure cannot silently downgrade the capture.
+
+No response body or adapter snapshot is retained or redistributed when a document-specific
+redistribution basis is not established. These locally authored manifest bytes are not a substitute
+for the unretained page, do not prove authenticity or legal effect, and remain evidence-ineligible.
+The rights wrapper resolves both manifests and binds the already committed packet, index, and
+report. Publication freshness is derived from both observation completion times and requires
+ordered capture, manifest, rights, and publication timestamps. An expired capture requires a new
+packet and may not be refreshed under an immutable path.
+
 ### 5. Version and amendment control
 
 Every mapping is dated. A current-stage flag, successor identifier, amendment, or draft MUST NOT

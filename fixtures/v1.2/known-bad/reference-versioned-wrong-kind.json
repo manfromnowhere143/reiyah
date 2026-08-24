@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.reference_versioned_wrong_kind",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/study-design-preregistration.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/split_policy/split_manifests/0/split_ref/record_kind", "value": "reiyah.kind.study_design"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-REFERENCE-KIND", "instance_pointer": "/split_policy/split_manifests/0/split_ref/record_kind", "schema_keyword": "semantic", "reason": "A versioned reference kind must have a registry contract compatible with the resolved definition and exact record_identity record_kind."},
+  "runtime_execution_authorized": false
+}

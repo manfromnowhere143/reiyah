@@ -1,0 +1,24 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.human_observation_availability_after_belief",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment.json",
+  "mutations": [
+    {
+      "operation": "replace",
+      "json_pointer": "/belief/as_of/value",
+      "value": "2026-08-24T08:00:04Z"
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-HUMAN-TEMPORAL-RECONCILIATION",
+    "instance_pointer": "/belief/as_of/value",
+    "schema_keyword": "semantic",
+    "reason": "Observation event, measurement, availability, belief freeze, decision information freeze, and decision time must respect the declared epistemic chronology."
+  },
+  "runtime_execution_authorized": false
+}

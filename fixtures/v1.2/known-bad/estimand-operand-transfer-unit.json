@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.estimand_operand_transfer_unit",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/transfer_evaluation/metric_contract/unit", "value": "seconds"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-ESTIMAND-REFERENCE-BINDING", "instance_pointer": "/transfer_evaluation/metric_contract", "schema_keyword": "semantic", "reason": "Each estimand reference must exact-bind the protocol-owned estimand assigned to its application section by the scientific contract profile."},
+  "runtime_execution_authorized": false
+}

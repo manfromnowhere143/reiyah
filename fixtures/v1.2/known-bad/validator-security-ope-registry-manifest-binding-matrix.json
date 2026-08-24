@@ -1,0 +1,17 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.validator-security.ope-registry-manifest-binding-matrix@1.2.0",
+  "fixture_class": "known-bad-validator-security",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "synthetic_fixture_only": true,
+  "expected_diagnostic": "GA12-OPE-REGISTRY-MANIFEST-CANARY-COVERAGE",
+  "probe": {
+    "kind": "ope_registry_manifest_binding_matrix",
+    "registry_path": "manifests/definitions/harbor-gate-a-definition-registry-1.2.0.json",
+    "registry_schema_path": "schemas/protocol-definition-registry-1.2.schema.json",
+    "target_good_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+    "operation": "replay_closed_registry_manifest_binding_matrix"
+  }
+}

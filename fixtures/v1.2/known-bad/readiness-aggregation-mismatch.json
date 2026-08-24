@@ -1,0 +1,19 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.readiness_aggregation_mismatch",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment.json",
+  "mutations": [
+    {"operation": "replace", "json_pointer": "/readiness/capabilities/1/estimate", "value": {"state": "observed", "value": 0.6}},
+    {"operation": "replace", "json_pointer": "/readiness/capabilities/1/criterion_disposition", "value": "not_met"},
+    {"operation": "replace", "json_pointer": "/readiness/unresolved_capability_ids", "value": []},
+    {"operation": "replace", "json_pointer": "/readiness/coverage_counts", "value": {"total": 2, "observed": 2, "missing": 0, "unmeasured": 0, "out_of_distribution": 0, "sensor_invalid": 0, "abstained": 0}},
+    {"operation": "replace", "json_pointer": "/readiness/aggregate", "value": {"estimate": {"state": "observed", "value": 0.75}, "disposition": "not_ready"}}
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-READINESS-AGGREGATION-MISMATCH", "instance_pointer": "/readiness/aggregate/estimate/value", "schema_keyword": "semantic", "reason": "The observed aggregate must equal the declared normalized weighted construction from observed capability estimates."},
+  "runtime_execution_authorized": false
+}

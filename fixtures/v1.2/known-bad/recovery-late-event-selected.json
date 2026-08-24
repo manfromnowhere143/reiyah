@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.recovery_late_event_selected",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/human-automation-assessment.json",
+  "mutations": [{"operation": "add", "json_pointer": "/recovery/events/1", "value": {"event_id": "reiyah.event.recovery_earlier", "event_type": "reiyah.event_type.capability_restored", "occurred_at": {"state": "observed", "value": "2026-08-24T08:00:12Z"}, "role": "recovery"}}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-RECOVERY-EVENT-DERIVATION", "instance_pointer": "/recovery/outcome/qualifying_event_id/value", "schema_keyword": "semantic", "reason": "The outcome must bind the earliest qualifying recovery event inside the frozen window."},
+  "runtime_execution_authorized": false
+}

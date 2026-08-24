@@ -1,0 +1,44 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validator-security-fixture.schema.json",
+  "artifact_version": "1.2.0",
+  "synthetic_fixture_only": true,
+  "expected_diagnostic": "GA12-SCIENCE-LINEAGE-FORK",
+  "fixture_class": "known-bad-validator-security",
+  "fixture_id": "reiyah.fixture.validator-security.science-lineage-fork@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "probe": {
+    "baseline_records": [
+      {
+        "artifact_id": "reiyah.artifact.synthetic_lineage_v1",
+        "logical_record_id": "reiyah.record.synthetic_lineage",
+        "path": "fixtures/synthetic/lineage-v1.json",
+        "predecessor_path": null,
+        "schema_id": "https://schemas.reiyah.invalid/synthetic/a.schema.json",
+        "version": "1.0.0"
+      },
+      {
+        "artifact_id": "reiyah.artifact.synthetic_lineage_v2",
+        "logical_record_id": "reiyah.record.synthetic_lineage",
+        "path": "fixtures/synthetic/lineage-v2.json",
+        "predecessor_path": "fixtures/synthetic/lineage-v1.json",
+        "schema_id": "https://schemas.reiyah.invalid/synthetic/a.schema.json",
+        "version": "1.1.0"
+      },
+      {
+        "artifact_id": "reiyah.artifact.synthetic_lineage_v3",
+        "logical_record_id": "reiyah.record.synthetic_lineage",
+        "path": "fixtures/synthetic/lineage-v3.json",
+        "predecessor_path": "fixtures/synthetic/lineage-v2.json",
+        "schema_id": "https://schemas.reiyah.invalid/synthetic/a.schema.json",
+        "version": "1.2.0"
+      }
+    ],
+    "kind": "science_artifact_lineage",
+    "mutation": {
+      "json_pointer": "/records/2/predecessor_path",
+      "operation": "replace",
+      "value": "fixtures/synthetic/lineage-v1.json"
+    }
+  },
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0"
+}

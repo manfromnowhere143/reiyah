@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.ope_step_index_gap",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/sequential-off-policy-evaluation.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/trajectories/0/steps/1/step_index", "value": 2}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-OPE-STEP-HORIZON-COMPLETENESS", "instance_pointer": "/trajectories/0/steps/1/step_index", "schema_keyword": "semantic", "reason": "Step indices must be the contiguous zero-based sequence through the observed trajectory horizon."},
+  "runtime_execution_authorized": false
+}

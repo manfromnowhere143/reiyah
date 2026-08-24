@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.lifecycle_successor_version_older",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/evaluation-assurance-bundle-blocked.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/version", "value": "1.1.9"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-ARTIFACT-REFERENCE-RESOLUTION", "instance_pointer": "/lifecycle_history/1/prior_artifact/path", "schema_keyword": "semantic", "reason": "A lifecycle predecessor artifact must resolve exact non-self snapshot bytes, identity, kind, schema, logical record, and an older semantic version."},
+  "runtime_execution_authorized": false
+}

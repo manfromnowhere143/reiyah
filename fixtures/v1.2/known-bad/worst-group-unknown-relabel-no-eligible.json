@@ -1,0 +1,18 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.bad.worst_group_unknown_relabel_no_eligible",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "base_fixture_path": "fixtures/v1.2/good/joint-performance-nonobserved.json",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/worst_group_evaluation/disposition", "value": "no_eligible_groups"}],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA-WORST-GROUP-DISPOSITION",
+    "instance_pointer": "/worst_group_evaluation",
+    "schema_keyword": "semantic",
+    "reason": "Worst-group disposition must be identified for a resolved nonempty eligible set, no_eligible_groups for a resolved empty eligible set, and unknown for any unresolved required operand."
+  },
+  "runtime_execution_authorized": false
+}

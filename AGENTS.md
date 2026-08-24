@@ -9,10 +9,14 @@ Before any repository-specific bootstrap, validation, tool call, or file change:
 3. Continue only when the named project, working directory, Git root, and these
    instructions all identify Reiyah at `/Users/danielwahnich/workspace/reiyah`.
 
-Reiyah is independent from sibling repositories. Its verified public distribution remote is
+Reiyah is independent from sibling repositories. Its configured public distribution remote is
 `https://github.com/manfromnowhere143/reiyah`. The remote is a distribution channel only. It has
-no scientific, safety, acceptance, or publication authority. Never import authority, data, code,
-conclusions, or configuration from another repository.
+no scientific, safety, acceptance, or publication authority. A publisher-authored distribution
+receipt may retain exact push and readback assertions, but it is not independent transport
+verification. Only a separately authorized observation record, produced outside the publication
+act and bound to the exact repository, commit, index, and report bytes, may support an
+independently verified transport state. Never import authority, data, code, conclusions, or
+configuration from another repository.
 
 ## Mission
 
@@ -103,6 +107,9 @@ retractions remain discoverable.
 - Validators must fail closed, operate offline, emit deterministic machine-readable
   diagnostics, reject unknown schema properties where specified, and include known-bad
   fixtures proving each critical rejection path.
+- Release validation must start through the byte-bound launcher declared by the current
+  validation plan, enter its locked isolation policy before the language runtime starts, read one
+  immutable candidate projection, and distinguish development replay from release evidence.
 - Never weaken a validator or expected failure merely to make validation pass.
 - Keep Mermaid source in Markdown and avoid diagrams that imply unauthorized runtime.
 
@@ -110,9 +117,11 @@ retractions remain discoverable.
 
 Before declaring a Gate A change complete:
 
-1. run the documented offline validation entry point;
-2. confirm every known-good fixture passes and every known-bad fixture fails for its
-   declared reason;
+1. run the documented offline validation entry point through its locked launcher and, when a
+   predecessor is inherited, replay or exact-bind that predecessor as the current plan requires;
+2. confirm every current-replay known-good fixture passes, every current-replay known-bad fixture
+   fails for its declared reason, and every retained historical catalog row preserves its exact
+   byte and schema identity without being counted as current replay evidence;
 3. verify all internal links, referenced identifiers, hashes, and schema bindings;
 4. inspect `git diff` and report uncommitted scope;
 5. update `docs/SESSION_HANDOFF.md` with completed work, validation evidence, unresolved

@@ -1,0 +1,642 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/scientific-contract-profile.schema.json",
+  "title": "HARBOR Gate A 1.2 scientific correction profile",
+  "description": "Closed static profile for executable scientific invariants and their reason-specific counterexamples. It authorizes no runtime or scientific claim.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "profile_id",
+    "version",
+    "as_of_date",
+    "protocol_release_id",
+    "mission_release_id",
+    "lifecycle_status",
+    "profile_status",
+    "operator_acceptance_state",
+    "architecture_only",
+    "runtime_authorized",
+    "gate_b_authorized",
+    "scientific_support_claimed",
+    "safety_case_claimed",
+    "prior_profile_binding",
+    "adversarial_review_binding",
+    "consistency_review_binding",
+    "definition_registry_binding",
+    "schema_bindings",
+    "application_schema_ids",
+    "fixture_bindings",
+    "production_rule_ids",
+    "reference_resolution_contract",
+    "cross_cutting_rule_contracts",
+    "derived_invariant_contracts",
+    "execution_integrity_contract",
+    "closure_policy"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/scientific-contract-profile.schema.json"
+    },
+    "schema_version": {"const": "1.2.0"},
+    "artifact_id": {"const": "reiyah.artifact.scientific-contract-profile-1.2.0"},
+    "profile_id": {"const": "reiyah.scientific-contract-profile.harbor-gate-a"},
+    "version": {"const": "1.2.0"},
+    "as_of_date": {"const": "2026-08-24"},
+    "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "lifecycle_status": {"const": "proposed"},
+    "profile_status": {"const": "candidate"},
+    "operator_acceptance_state": {"const": "unaccepted"},
+    "architecture_only": {"const": true},
+    "runtime_authorized": {"const": false},
+    "gate_b_authorized": {"const": false},
+    "scientific_support_claimed": {"const": false},
+    "safety_case_claimed": {"const": false},
+    "prior_profile_binding": {
+      "allOf": [
+        {"$ref": "common.schema.json#/$defs/exactArtifactReference"},
+        {
+          "required": ["schema_id", "version"],
+          "properties": {
+            "artifact_id": {"const": "reiyah.artifact.scientific-contract-profile-1.1.0"},
+            "path": {"const": "manifests/scientific/harbor-scientific-contract-profile-1.1.0.json"},
+            "sha256": {"const": "sha256:e24f0da63e4220092847b9e2c5617622e91b6cc212205807d948917224b43a92"},
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.1.0/scientific-contract-profile.schema.json"
+            },
+            "version": {"const": "1.1.0"}
+          }
+        }
+      ]
+    },
+    "adversarial_review_binding": {
+      "allOf": [
+        {"$ref": "common.schema.json#/$defs/exactArtifactReference"},
+        {
+          "required": ["version"],
+          "properties": {
+            "artifact_id": {"const": "reiyah.artifact.gate-a-1.1.2-adversarial-review-1.2.0"},
+            "path": {"const": "docs/GATE_A_1_1_2_ADVERSARIAL_REVIEW.md"},
+            "version": {"const": "1.2.0"}
+          }
+        }
+      ]
+    },
+    "consistency_review_binding": {
+      "allOf": [
+        {"$ref": "common.schema.json#/$defs/exactArtifactReference"},
+        {
+          "required": ["version"],
+          "properties": {
+            "artifact_id": {"const": "reiyah.artifact.gate-a-1.2.0-consistency-review"},
+            "path": {"const": "docs/GATE_A_1_2_0_CONSISTENCY_REVIEW.md"},
+            "version": {"const": "1.2.0"}
+          }
+        }
+      ]
+    },
+    "definition_registry_binding": {
+      "allOf": [
+        {"$ref": "common.schema.json#/$defs/exactArtifactReference"},
+        {
+          "required": ["schema_id", "version"],
+          "properties": {
+            "artifact_id": {"const": "reiyah.artifact.protocol-definition-registry-1.2.0"},
+            "path": {"const": "manifests/definitions/harbor-gate-a-definition-registry-1.2.0.json"},
+            "schema_id": {
+              "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/protocol-definition-registry.schema.json"
+            },
+            "version": {"const": "1.2.0"}
+          }
+        }
+      ]
+    },
+    "schema_bindings": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {"$ref": "#/$defs/schemaBinding"},
+      "uniqueItems": true
+    },
+    "application_schema_ids": {
+      "const": [
+        "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+        "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+        "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+        "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+        "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json"
+      ]
+    },
+    "fixture_bindings": {
+      "type": "array",
+      "minItems": 20,
+      "items": {"$ref": "#/$defs/fixtureBinding"},
+      "uniqueItems": true
+    },
+    "production_rule_ids": {
+      "type": "array",
+      "minItems": 25,
+      "items": {"type": "string", "pattern": "^GA(?:12)?-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+      "uniqueItems": true
+    },
+    "reference_resolution_contract": {
+      "type": "object",
+      "required": [
+        "classification_exhaustive",
+        "unclassified_reference_policy",
+        "multiple_classification_policy",
+        "exact_version_required",
+        "classifiers",
+        "application_path_inventory"
+      ],
+      "properties": {
+        "classification_exhaustive": {"const": true},
+        "unclassified_reference_policy": {"const": "reject"},
+        "multiple_classification_policy": {"const": "reject"},
+        "exact_version_required": {"const": true},
+        "classifiers": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {"$ref": "#/$defs/referenceClassifier"},
+          "allOf": [
+            {"contains": {"properties": {"shape": {"const": "rule_reference"}}, "required": ["shape"]}},
+            {"contains": {"properties": {"shape": {"const": "versioned_reference"}}, "required": ["shape"]}},
+            {"contains": {"properties": {"shape": {"const": "actor_reference"}}, "required": ["shape"]}},
+            {"contains": {"properties": {"shape": {"const": "schema_reference"}}, "required": ["shape"]}},
+            {"contains": {"properties": {"shape": {"const": "artifact_reference"}}, "required": ["shape"]}},
+            {"contains": {"properties": {"shape": {"const": "document_local_reference"}}, "required": ["shape"]}},
+            {"contains": {"properties": {"shape": {"const": "explicit_evidence_gap"}}, "required": ["shape"]}},
+            {"contains": {"properties": {"shape": {"const": "registry_bare_identifier"}}, "required": ["shape"]}},
+            {"contains": {"properties": {"shape": {"const": "document_local_identifier"}}, "required": ["shape"]}}
+          ]
+        },
+        "application_path_inventory": {"$ref": "#/$defs/referencePathInventory"}
+      },
+      "additionalProperties": false
+    },
+    "cross_cutting_rule_contracts": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "prefixItems": [
+        {
+          "allOf": [
+            {"$ref": "#/$defs/crossCuttingRuleContract"},
+            {
+              "properties": {
+                "contract_id": {"const": "reiyah.cross-cutting-contract.lifecycle-history-integrity"},
+                "contract_kind": {"const": "lifecycle_history_integrity"},
+                "required_rule_ids": {"const": ["GA-LIFECYCLE-CURRENT-HISTORY", "GA-LIFECYCLE-CHRONOLOGY", "GA-LIFECYCLE-EVIDENCE-ELIGIBILITY"]}
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/crossCuttingRuleContract"},
+            {
+              "properties": {
+                "contract_id": {"const": "reiyah.cross-cutting-contract.typed-reference-integrity"},
+                "contract_kind": {"const": "typed_reference_integrity"},
+                "required_rule_ids": {"const": ["GA-ACTOR-REFERENCE-TYPE", "GA-ARTIFACT-REFERENCE-RESOLUTION", "GA-DOCUMENT-LOCAL-REFERENCE-RESOLUTION", "GA-ESTIMAND-REFERENCE-BINDING", "GA-EVIDENCE-GAP-REFERENCE-DISPOSITION", "GA-REFERENCE-KIND", "GA-REFERENCE-VERSION", "GA-REGISTRY-BARE-IDENTIFIER-RESOLUTION", "GA-SCHEMA-REFERENCE-RESOLUTION"]}
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/crossCuttingRuleContract"},
+            {
+              "properties": {
+                "contract_id": {"const": "reiyah.cross-cutting-contract.architecture-nonclaim-boundary"},
+                "contract_kind": {"const": "architecture_nonclaim_boundary"},
+                "required_rule_ids": {"const": ["GA-ASSURANCE-LICENSE-DISPOSITION", "GA-ASSURANCE-NO-DEPLOYMENT", "GA-ASSURANCE-NONCLAIM"]}
+              }
+            }
+          ]
+        }
+      ],
+      "items": false
+    },
+    "derived_invariant_contracts": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "prefixItems": [
+        {"allOf": [{"$ref": "#/$defs/derivedInvariant"}, {"properties": {"finding_ids": {"const": ["AR-001", "CR-005"]}, "executable_contract_id": {"const": "reiyah.executable-contract.ope-policy-distribution"}, "depends_on_executable_contract_ids": {"const": []}}}]},
+        {"allOf": [{"$ref": "#/$defs/derivedInvariant"}, {"properties": {"finding_ids": {"const": ["AR-002", "CR-003"]}, "executable_contract_id": {"const": "reiyah.executable-contract.causal-identification"}, "depends_on_executable_contract_ids": {"const": []}}}]},
+        {"allOf": [{"$ref": "#/$defs/derivedInvariant"}, {"properties": {"finding_ids": {"const": ["AR-003", "CR-004"]}, "executable_contract_id": {"const": "reiyah.executable-contract.readiness-unknown-propagation"}, "depends_on_executable_contract_ids": {"const": []}}}]},
+        {"allOf": [{"$ref": "#/$defs/derivedInvariant"}, {"properties": {"finding_ids": {"const": ["AR-004", "CR-004"]}, "executable_contract_id": {"const": "reiyah.executable-contract.recovery-event-derivation"}, "depends_on_executable_contract_ids": {"const": []}}}]},
+        {"allOf": [{"$ref": "#/$defs/derivedInvariant"}, {"properties": {"finding_ids": {"const": ["AR-005", "CR-008"]}, "executable_contract_id": {"const": "reiyah.executable-contract.transfer-eligibility"}, "depends_on_executable_contract_ids": {"const": ["reiyah.executable-contract.assumption-evidence-eligibility"]}}}]},
+        {"allOf": [{"$ref": "#/$defs/derivedInvariant"}, {"properties": {"finding_ids": {"const": ["AR-006", "CR-008"]}, "executable_contract_id": {"const": "reiyah.executable-contract.conformal-guarantee-disposition"}, "depends_on_executable_contract_ids": {"const": ["reiyah.executable-contract.assumption-evidence-eligibility"]}}}]},
+        {"allOf": [{"$ref": "#/$defs/derivedInvariant"}, {"properties": {"finding_ids": {"const": ["AR-007", "CR-007"]}, "executable_contract_id": {"const": "reiyah.executable-contract.ood-population-partition"}, "depends_on_executable_contract_ids": {"const": []}}}]},
+        {"allOf": [{"$ref": "#/$defs/derivedInvariant"}, {"properties": {"finding_ids": {"const": ["AR-008", "CR-007"]}, "executable_contract_id": {"const": "reiyah.executable-contract.worst-group-eligibility"}, "depends_on_executable_contract_ids": {"const": []}}}]},
+        {"allOf": [{"$ref": "#/$defs/derivedInvariant"}, {"properties": {"finding_ids": {"const": ["CR-001", "CR-002"]}, "executable_contract_id": {"const": "reiyah.executable-contract.human-belief-observation-decision-reconciliation"}, "depends_on_executable_contract_ids": {"const": []}}}]},
+        {"allOf": [{"$ref": "#/$defs/derivedInvariant"}, {"properties": {"finding_ids": {"const": ["CR-006"]}, "executable_contract_id": {"const": "reiyah.executable-contract.joint-silent-miss-identifiability"}, "depends_on_executable_contract_ids": {"const": []}}}]},
+        {"allOf": [{"$ref": "#/$defs/derivedInvariant"}, {"properties": {"finding_ids": {"const": ["CR-008"]}, "executable_contract_id": {"const": "reiyah.executable-contract.assumption-evidence-eligibility"}, "depends_on_executable_contract_ids": {"const": []}}}]}
+      ],
+      "items": false
+    },
+    "execution_integrity_contract": {
+      "type": "object",
+      "required": [
+        "launcher_binding",
+        "tool_binding",
+        "science_module_binding",
+        "toolchain_lock_binding",
+        "release_snapshot_mode",
+        "development_release_eligible",
+        "format_set",
+        "schema_validation_uses_local_format_checkers",
+        "transport_state"
+      ],
+      "properties": {
+        "launcher_binding": {"$ref": "common.schema.json#/$defs/exactArtifactReference"},
+        "tool_binding": {"$ref": "common.schema.json#/$defs/exactArtifactReference"},
+        "science_module_binding": {"$ref": "common.schema.json#/$defs/exactArtifactReference"},
+        "toolchain_lock_binding": {"$ref": "common.schema.json#/$defs/exactArtifactReference"},
+        "release_snapshot_mode": {"const": "immutable_clean_git_tree"},
+        "development_release_eligible": {"const": false},
+        "format_set": {"const": ["date", "date-time", "https-uri", "uri"]},
+        "schema_validation_uses_local_format_checkers": {"const": true},
+        "transport_state": {"const": "not_evaluated"}
+      },
+      "additionalProperties": false
+    },
+    "closure_policy": {
+      "type": "object",
+      "required": [
+        "disposition",
+        "definition_required",
+        "schema_operands_required",
+        "validator_derivation_required",
+        "known_good_required",
+        "reason_specific_known_bad_required",
+        "deterministic_release_replay_required",
+        "original_counterexample_rejection_required",
+        "scientific_claim_created"
+      ],
+      "properties": {
+        "disposition": {"const": "closed_for_static_architecture_only_if_canonical_report_passes"},
+        "definition_required": {"const": true},
+        "schema_operands_required": {"const": true},
+        "validator_derivation_required": {"const": true},
+        "known_good_required": {"const": true},
+        "reason_specific_known_bad_required": {"const": true},
+        "deterministic_release_replay_required": {"const": true},
+        "original_counterexample_rejection_required": {"const": true},
+        "scientific_claim_created": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "schemaBinding": {
+      "allOf": [
+        {"$ref": "common.schema.json#/$defs/exactArtifactReference"},
+        {
+          "required": ["schema_id", "version"],
+          "properties": {
+            "schema_id": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://schemas\\.reiyah\\.invalid/scientific-contract/1\\.2\\.0/"
+            },
+            "version": {"const": "1.2.0"},
+            "path": {"pattern": "^schemas/v1\\.2/"}
+          }
+        }
+      ]
+    },
+    "fixtureBinding": {
+      "type": "object",
+      "required": ["fixture_id", "classification", "path", "sha256", "expected_rule_id"],
+      "properties": {
+        "fixture_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "classification": {"enum": ["known_good", "known_bad"]},
+        "path": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+            {"pattern": "^fixtures/v1\\.2/"}
+          ]
+        },
+        "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "expected_rule_id": {
+          "oneOf": [
+            {"type": "string", "pattern": "^GA(?:12)?-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+            {"type": "null"}
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"classification": {"const": "known_good"}}, "required": ["classification"]},
+          "then": {"properties": {"expected_rule_id": {"type": "null"}}},
+          "else": {"properties": {"expected_rule_id": {"type": "string"}}}
+        }
+      ],
+      "additionalProperties": false
+    },
+    "referenceClassifier": {
+      "type": "object",
+      "required": ["classifier_id", "shape", "owner", "resolution", "failure_rule_ids"],
+      "properties": {
+        "classifier_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "shape": {
+          "enum": [
+            "rule_reference",
+            "versioned_reference",
+            "actor_reference",
+            "schema_reference",
+            "artifact_reference",
+            "document_local_reference",
+            "explicit_evidence_gap",
+            "registry_bare_identifier",
+            "document_local_identifier"
+          ]
+        },
+        "owner": {
+          "enum": [
+            "protocol_definition_registry",
+            "schema_registry",
+            "repository_snapshot",
+            "application_document",
+            "explicit_unavailable"
+          ]
+        },
+        "resolution": {"$ref": "common.schema.json#/$defs/nonEmptyString"},
+        "failure_rule_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {"type": "string", "pattern": "^GA-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "referencePathInventory": {
+      "type": "object",
+      "required": [
+        "derivation",
+        "array_path_token",
+        "candidate_node_policy",
+        "identity_declarations_explicit",
+        "binding_count",
+        "bindings_sha256",
+        "bindings",
+        "lexical_exemption_count",
+        "lexical_exemptions_sha256",
+        "non_reference_exemptions"
+      ],
+      "properties": {
+        "derivation": {"const": "resolved_draft_2020_12_application_instance_graph"},
+        "array_path_token": {"const": "*"},
+        "candidate_node_policy": {"const": "stable_identifier_or_structured_reference_or_root_schema_id"},
+        "identity_declarations_explicit": {"const": true},
+        "binding_count": {"type": "integer", "minimum": 1},
+        "bindings_sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "bindings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/referencePathBinding"},
+          "uniqueItems": true
+        },
+        "lexical_exemption_count": {"type": "integer", "minimum": 1},
+        "lexical_exemptions_sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "non_reference_exemptions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/referencePathExemption"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "referencePathBinding": {
+      "type": "object",
+      "required": [
+        "schema_id",
+        "pointer_glob",
+        "candidate_node_kind",
+        "classification",
+        "owner",
+        "expected_kind_policy",
+        "expected_registry_kind",
+        "local_collection_pointer",
+        "resolution_policy",
+        "handler"
+      ],
+      "properties": {
+        "schema_id": {
+          "enum": [
+            "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+            "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+            "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+            "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+            "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json"
+          ]
+        },
+        "pointer_glob": {"type": "string", "pattern": "^/(?:[^~/]|~0|~1|\\*)+(?:/(?:[^~/]|~0|~1|\\*)+)*$"},
+        "candidate_node_kind": {"enum": ["stable_identifier", "structured_reference", "schema_identifier"]},
+        "classification": {
+          "enum": [
+            "rule_reference",
+            "versioned_reference",
+            "actor_reference",
+            "schema_reference",
+            "artifact_reference",
+            "document_local_reference",
+            "explicit_evidence_gap",
+            "registry_bare_identifier",
+            "document_local_identifier",
+            "identity_declaration"
+          ]
+        },
+        "owner": {
+          "enum": [
+            "protocol_definition_registry",
+            "schema_registry",
+            "repository_snapshot",
+            "application_document",
+            "explicit_unavailable",
+            "application_identity_space"
+          ]
+        },
+        "expected_registry_kind": {
+          "oneOf": [
+            {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+            {"type": "null"}
+          ]
+        },
+        "expected_kind_policy": {
+          "enum": [
+            "exact_registry_kind",
+            "declared_reference_kind",
+            "actor_reference_contract",
+            "schema_identity",
+            "declared_artifact_kind",
+            "not_applicable"
+          ]
+        },
+        "local_collection_pointer": {
+          "oneOf": [
+            {"type": "string", "pattern": "^/(?:[^~/]|~0|~1|\\*)+(?:/(?:[^~/]|~0|~1|\\*)+)*$"},
+            {"type": "null"}
+          ]
+        },
+        "resolution_policy": {
+          "enum": [
+            "typed_registry_reference",
+            "exact_local_schema",
+            "exact_snapshot_artifact",
+            "exact_document_member",
+            "exact_registry_definition",
+            "explicit_non_supporting_gap",
+            "assumption_evidence_fail_closed",
+            "unique_identity_declaration"
+          ]
+        },
+        "handler": {
+          "enum": [
+            "typed_reference_violations",
+            "schema_reference_violations",
+            "lifecycle_policy_violations",
+            "document_local_identifier_violations",
+            "registry_bare_identifier_violations",
+            "evidence_gap_reference_violations",
+            "assumption_evidence_violations",
+            "classified_reference_path_violations"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "referencePathExemption": {
+      "type": "object",
+      "required": ["schema_id", "pointer_glob", "reason", "enforcement"],
+      "properties": {
+        "schema_id": {
+          "enum": [
+            "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+            "https://schemas.reiyah.invalid/scientific-contract/1.2.0/human-automation-assessment.schema.json",
+            "https://schemas.reiyah.invalid/scientific-contract/1.2.0/joint-performance-evaluation.schema.json",
+            "https://schemas.reiyah.invalid/scientific-contract/1.2.0/sequential-off-policy-evaluation.schema.json",
+            "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json"
+          ]
+        },
+        "pointer_glob": {"type": "string", "pattern": "^/(?:[^~/]|~0|~1|\\*)+(?:/(?:[^~/]|~0|~1|\\*)+)*$"},
+        "reason": {"enum": ["closed_release_metadata_const", "schema_closed_null_nonreference", "schema_closed_empty_array_nonreference"]},
+        "enforcement": {"enum": ["schema_const", "schema_null", "schema_max_items_zero"]}
+      },
+      "additionalProperties": false
+    },
+    "crossCuttingRuleContract": {
+      "type": "object",
+      "required": [
+        "contract_id",
+        "contract_kind",
+        "application_schema_ids",
+        "good_fixture_ids",
+        "required_rule_ids",
+        "validator_derives_result",
+        "self_attestation_sufficient",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "contract_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "contract_kind": {
+          "enum": [
+            "lifecycle_history_integrity",
+            "typed_reference_integrity",
+            "architecture_nonclaim_boundary"
+          ]
+        },
+        "application_schema_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "format": "uri"},
+          "uniqueItems": true
+        },
+        "good_fixture_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "required_rule_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^GA-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+          "uniqueItems": true
+        },
+        "validator_derives_result": {"const": true},
+        "self_attestation_sufficient": {"const": false},
+        "runtime_execution_authorized": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "derivedInvariant": {
+      "type": "object",
+      "required": [
+        "invariant_id",
+        "finding_ids",
+        "executable_contract_id",
+        "depends_on_executable_contract_ids",
+        "protocol_estimand_ids",
+        "application_schema_ids",
+        "good_fixture_ids",
+        "required_rule_ids",
+        "validator_derives_result",
+        "self_attestation_sufficient",
+        "runtime_execution_authorized"
+      ],
+      "properties": {
+        "invariant_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "finding_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^(?:AR|CR)-[0-9]{3}$"},
+          "uniqueItems": true
+        },
+        "executable_contract_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "depends_on_executable_contract_ids": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "protocol_estimand_ids": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "application_schema_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "format": "uri"},
+          "uniqueItems": true
+        },
+        "good_fixture_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+          "uniqueItems": true
+        },
+        "required_rule_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^GA-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+          "uniqueItems": true
+        },
+        "validator_derives_result": {"const": true},
+        "self_attestation_sufficient": {"const": false},
+        "runtime_execution_authorized": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

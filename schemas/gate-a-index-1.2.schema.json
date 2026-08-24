@@ -1,0 +1,398 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.0/gate-a-index.schema.json",
+  "title": "HARBOR Gate A 1.2.0 candidate evidence index",
+  "description": "Closed index for the static Gate A 1.2.0 correction candidate. The index is an integrity inventory, not scientific evidence, operator acceptance, transport verification, or runtime authority.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "index_id",
+    "version",
+    "as_of_date",
+    "lifecycle_status",
+    "architecture_status",
+    "operator_acceptance_state",
+    "ga_17_state",
+    "operator_decision_binding",
+    "mission_release_id",
+    "protocol_release_id",
+    "distribution_profile",
+    "source_ledger_version",
+    "predecessor_binding",
+    "predecessor_correction_scope",
+    "candidate_projection",
+    "artifacts",
+    "exclusions",
+    "validation_profile",
+    "known_good_expectation",
+    "known_bad_expectation",
+    "transport_verification_state",
+    "runtime_authorized",
+    "gate_b_authorized"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.2.0/gate-a-index.schema.json"
+    },
+    "schema_version": {"const": "1.2.0"},
+    "artifact_id": {"const": "reiyah.artifact.gate-a-index-1.2.0"},
+    "index_id": {"const": "reiyah.gate-a-evidence-index"},
+    "version": {"const": "1.2.0"},
+    "as_of_date": {"const": "2026-08-25"},
+    "lifecycle_status": {"const": "proposed"},
+    "architecture_status": {
+      "description": "The excluded canonical report, not this self-referential inventory, determines architecture completeness for these exact bytes.",
+      "const": "candidate_pending_canonical_report"
+    },
+    "operator_acceptance_state": {"const": "unaccepted"},
+    "ga_17_state": {"const": "not_evaluated"},
+    "operator_decision_binding": {"type": "null"},
+    "mission_release_id": {"const": "reiyah.mission@1.1.0"},
+    "protocol_release_id": {"const": "reiyah.protocol.harbor-gate-a@1.2.0"},
+    "distribution_profile": {"const": "public_open_source"},
+    "source_ledger_version": {"const": "1.1.0"},
+    "predecessor_binding": {
+      "type": "object",
+      "required": ["index", "validation_report", "recovery_record"],
+      "properties": {
+        "index": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/artifactReference"},
+            {
+              "required": ["version"],
+              "properties": {
+                "artifact_id": {"const": "reiyah.artifact.historical-gate-a-index-1.1.2"},
+                "path": {"const": "history/gate-a-1.1.2/gate/GATE_A_EVIDENCE_INDEX.json"},
+                "sha256": {"const": "sha256:17f3a2e601e9cb4e1c0cd0f97561b1da9ffdc7d5893ed4af4eaccbaf8a67989f"},
+                "version": {"const": "1.1.2"}
+              }
+            }
+          ]
+        },
+        "validation_report": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/artifactReference"},
+            {
+              "required": ["version"],
+              "properties": {
+                "artifact_id": {"const": "reiyah.validation-report.gate-a-1.1.2"},
+                "path": {"const": "gate/validation-reports/gate-a-validation-1.1.2.json"},
+                "sha256": {"const": "sha256:06fc3114522c16625da337fe25c71b1fd53abeeaf9c31a11748afc06eb5d66d8"},
+                "version": {"const": "1.1.2"}
+              }
+            }
+          ]
+        },
+        "recovery_record": {
+          "allOf": [
+            {"$ref": "common.schema.json#/$defs/artifactReference"},
+            {
+              "required": ["schema_id", "version"],
+              "properties": {
+                "artifact_id": {"const": "reiyah.artifact.gate-a-1.1.2-recovery-1.2.0"},
+                "path": {"const": "history/gate-a-1.1.2/RECOVERY.json"},
+                "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.2.0/historical-packet-recovery.schema.json"},
+                "version": {"const": "1.2.0"}
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "predecessor_correction_scope": {
+      "type": "object",
+      "required": [
+        "review_path",
+        "finding_ids",
+        "changed_predecessor_paths",
+        "added_paths",
+        "removed_predecessor_paths",
+        "unchanged_predecessor_artifact_count"
+      ],
+      "properties": {
+        "review_path": {"const": "docs/GATE_A_1_1_2_ADVERSARIAL_REVIEW.md"},
+        "finding_ids": {
+          "const": [
+            "AR-001",
+            "AR-002",
+            "AR-003",
+            "AR-004",
+            "AR-005",
+            "AR-006",
+            "AR-007",
+            "AR-008",
+            "AR-009",
+            "AR-010",
+            "AR-011",
+            "AR-012"
+          ]
+        },
+        "changed_predecessor_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+          "uniqueItems": true
+        },
+        "added_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+          "uniqueItems": true
+        },
+        "removed_predecessor_paths": {
+          "type": "array",
+          "maxItems": 0,
+          "items": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"}
+        },
+        "unchanged_predecessor_artifact_count": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "candidate_projection": {
+      "type": "object",
+      "required": ["algorithm", "serialization", "sha256", "artifact_count", "byte_count"],
+      "properties": {
+        "algorithm": {"const": "sha256"},
+        "serialization": {"const": "sorted_path_nul_sha256_nul_byte_count_lf"},
+        "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+        "artifact_count": {"type": "integer", "minimum": 1},
+        "byte_count": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/indexedArtifact"},
+      "allOf": [
+        {
+          "contains": {
+            "properties": {
+              "role": {"const": "rights_observation_capture_manifest"},
+              "artifact": {
+                "properties": {
+                  "path": {
+                    "const": "evidence/rights-observations/2026-08-25-iso-open-data-gate-a-static-correction-1.2.0.json"
+                  }
+                }
+              }
+            },
+            "required": ["role", "artifact"]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "properties": {
+              "role": {"const": "rights_observation_capture_manifest"},
+              "artifact": {
+                "properties": {
+                  "path": {
+                    "const": "evidence/rights-observations/2026-08-25-nist-technical-series-gate-a-static-correction-1.2.0.json"
+                  }
+                }
+              }
+            },
+            "required": ["role", "artifact"]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        }
+      ]
+    },
+    "exclusions": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"$ref": "#/$defs/exclusion"},
+      "uniqueItems": true,
+      "allOf": [
+        {
+          "contains": {
+            "properties": {
+              "match_kind": {"const": "exact"},
+              "path": {
+                "const": "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json"
+              }
+            },
+            "required": ["match_kind", "path"]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "not": {
+            "contains": {
+              "properties": {
+                "match_kind": {"const": "prefix"},
+                "path": {"pattern": "^evidence/public-rights-revalidation"}
+              },
+              "required": ["match_kind", "path"]
+            }
+          }
+        },
+        {
+          "not": {
+            "contains": {
+              "properties": {
+                "path": {
+                  "allOf": [
+                    {"pattern": "^evidence/public-rights-revalidation"},
+                    {
+                      "not": {
+                        "const": "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json"
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": ["path"]
+            }
+          }
+        },
+        {
+          "not": {
+            "contains": {
+              "properties": {
+                "path": {"pattern": "^evidence/rights-observations(?:/|$)"}
+              },
+              "required": ["path"]
+            }
+          }
+        }
+      ]
+    },
+    "validation_profile": {
+      "type": "object",
+      "required": [
+        "entrypoint",
+        "implementation",
+        "toolchain_lock",
+        "release_snapshot_mode",
+        "offline_required",
+        "deterministic_required",
+        "fail_closed_required"
+      ],
+      "properties": {
+        "entrypoint": {"const": "tools/gate_a_1_2_0.sh"},
+        "implementation": {"const": "tools/gate_a_1_2_0.py"},
+        "toolchain_lock": {"const": "validation/toolchain-lock-1.2.0.json"},
+        "release_snapshot_mode": {"const": "immutable_clean_git_tree"},
+        "offline_required": {"const": true},
+        "deterministic_required": {"const": true},
+        "fail_closed_required": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "known_good_expectation": {"const": "all_pass"},
+    "known_bad_expectation": {"const": "all_fail_for_declared_reason"},
+    "transport_verification_state": {"const": "not_evaluated"},
+    "runtime_authorized": {"const": false},
+    "gate_b_authorized": {"const": false}
+  },
+  "$defs": {
+    "indexedArtifact": {
+      "type": "object",
+      "required": ["role", "media_type", "digest_algorithm", "byte_size", "artifact"],
+      "properties": {
+        "role": {
+          "enum": [
+            "acceptance_procedure",
+            "adversarial_review",
+            "architecture_diagram",
+            "architecture_specification",
+            "attribution_notice",
+            "citation_metadata",
+            "claims_and_non_claims",
+            "contribution_policy",
+            "evidence_custody_documentation",
+            "fixture_catalog",
+            "frontier_baseline",
+            "frontier_discovery_register",
+            "glossary",
+            "governance_interface",
+            "historical_candidate_artifact",
+            "historical_manifest_release_ledger",
+            "historical_packet_recovery",
+            "historical_source_ledger",
+            "historical_standards_crosswalk",
+            "index_builder",
+            "known_bad_fixture",
+            "known_good_fixture",
+            "manifest_release_ledger",
+            "mathematical_specification",
+            "mission_manifest",
+            "offline_validator",
+            "open_source_license",
+            "operator_decision_template",
+            "preimplementation_gate",
+            "protocol_definition_registry",
+            "protocol_manifest",
+            "public_distribution_inventory",
+            "public_evidence_custody_profile",
+            "public_rights_revalidation",
+            "rights_observation_capture_manifest",
+            "repository_contract",
+            "repository_metadata",
+            "repository_overview",
+            "research_function_registry",
+            "research_gap_register",
+            "research_operating_model",
+            "retained_source",
+            "schema",
+            "scientific_charter",
+            "scientific_contract_profile",
+            "security_policy",
+            "session_handoff",
+            "source_ledger",
+            "source_policy",
+            "standards_crosswalk",
+            "status_model",
+            "threat_model",
+            "toolchain_lock",
+            "validation_documentation",
+            "validation_launcher",
+            "validation_specification"
+          ]
+        },
+        "media_type": {"type": "string", "pattern": "^[a-z0-9.+-]+/[a-z0-9.+-]+$"},
+        "digest_algorithm": {"const": "sha256"},
+        "byte_size": {"type": "integer", "minimum": 1},
+        "artifact": {
+          "type": "object",
+          "required": ["artifact_id", "path", "sha256", "version"],
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 240,
+              "pattern": "^[a-z][a-z0-9]*(?:[._:@-][a-z0-9][a-z0-9._:@-]*)+$"
+            },
+            "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+            "sha256": {"$ref": "common.schema.json#/$defs/sha256Digest"},
+            "byte_size": {"type": "integer", "minimum": 1},
+            "schema_id": {"type": "string", "format": "uri"},
+            "version": {"$ref": "common.schema.json#/$defs/semanticVersion"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "exclusion": {
+      "type": "object",
+      "required": ["exclusion_id", "match_kind", "path", "reason"],
+      "properties": {
+        "exclusion_id": {"$ref": "common.schema.json#/$defs/stableIdentifier"},
+        "match_kind": {"enum": ["exact", "prefix"]},
+        "path": {"$ref": "common.schema.json#/$defs/relativeArtifactPath"},
+        "reason": {"$ref": "common.schema.json#/$defs/nonEmptyString"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

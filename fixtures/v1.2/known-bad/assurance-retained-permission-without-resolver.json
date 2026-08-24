@@ -1,0 +1,13 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/scientific-contract-mutation-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "fixture_id": "reiyah.fixture.bad.assurance_retained_permission_without_resolver",
+  "target_schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/evaluation-assurance-bundle.schema.json",
+  "base_fixture_path": "fixtures/v1.2/good/evaluation-assurance-bundle.json",
+  "mutations": [{"operation": "replace", "json_pointer": "/dataset_governance/license_disposition", "value": "retained_permission_verified"}],
+  "expected_outcome": "reject",
+  "expected_failure": {"rule_id": "GA-ASSURANCE-LICENSE-DISPOSITION", "instance_pointer": "/dataset_governance/license_disposition", "schema_keyword": "const", "reason": "A synthetic-only Gate A assurance bundle must retain the exact synthetic-original license disposition and cannot claim verified retained permission."},
+  "runtime_execution_authorized": false
+}

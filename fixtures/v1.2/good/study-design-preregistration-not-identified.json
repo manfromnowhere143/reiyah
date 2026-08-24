@@ -1,0 +1,179 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.2.0/study-design-preregistration.schema.json",
+  "schema_version": "1.2.0",
+  "artifact_id": "reiyah.fixture.study_design.not_identified.good",
+  "record_kind": "experiment",
+  "version": "1.2.0",
+  "lifecycle_status": "proposed",
+  "lifecycle_history": [
+    {
+      "event_id": "reiyah.event.study_design.not_identified.proposed",
+      "sequence": 1,
+      "prior_status": null,
+      "status": "proposed",
+      "recorded_at": "2026-08-24T08:00:00Z",
+      "actor": {
+        "actor_id": "reiyah.actor.fixture_author",
+        "actor_type": "derived_process",
+        "version": "1.2.0",
+        "role": "deterministic synthetic fixture author"
+      },
+      "rationale": "Synthetic graph and frozen study-design example; no study is registered or running.",
+      "evidence_refs": [],
+      "prior_artifact": null
+    }
+  ],
+  "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+  "created_at": "2026-08-24T08:00:00Z",
+  "runtime_execution_authorized": false,
+  "mission_release_id": "reiyah.mission@1.1.0",
+  "study_id": "reiyah.study.synthetic_not_identified_1_2",
+  "design_frozen_at": "2026-08-24T08:00:00Z",
+  "target_population": {"rule_id": "reiyah.rule.synthetic_population", "rule_kind": "reiyah.kind.population_rule", "version": "1.2.0"},
+  "unit_of_analysis": "reiyah.unit.synthetic-encounter",
+  "estimands": [
+    {
+      "estimand_id": "reiyah.estimand.synthetic-risk-difference",
+      "population_rule_ref": {"rule_id": "reiyah.rule.synthetic_population", "rule_kind": "reiyah.kind.population_rule", "version": "1.2.0"},
+      "treatment_node_id": "reiyah.node.intervention",
+      "comparator": "No synthetic intervention under the same declared ODD.",
+      "outcome_node_id": "reiyah.node.outcome",
+      "outcome_window_rule_ref": {"rule_id": "reiyah.rule.outcome_window", "rule_kind": "reiyah.kind.outcome_window", "version": "1.2.0"},
+      "effect_measure": "risk_difference",
+      "intercurrent_event_rule_ref": {"rule_id": "reiyah.rule.intercurrent_events", "rule_kind": "reiyah.kind.intercurrent_rule", "version": "1.2.0"}
+    }
+  ],
+  "power_analysis": {
+    "method_ref": {"rule_id": "reiyah.rule.synthetic_power", "rule_kind": "reiyah.kind.power_method", "version": "1.2.0"},
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "effect_size": {"state": "observed", "value": 0.1, "unit": "risk difference"},
+    "planned_sample_size": 100,
+    "assumptions_frozen": true
+  },
+  "stopping_rule": {
+    "rule_ref": {"rule_id": "reiyah.rule.fixed_sample", "rule_kind": "reiyah.kind.stopping_rule", "version": "1.2.0"},
+    "optional_stopping_permitted": false,
+    "interim_looks": []
+  },
+  "data_access_chronology": {
+    "design_frozen_at": "2026-08-24T08:00:00Z",
+    "first_feature_access_at": "2026-08-24T08:10:00Z",
+    "first_outcome_access_at": "2026-08-24T08:20:00Z",
+    "outcome_access_before_freeze_prohibited": true
+  },
+  "missingness_policy": {
+    "rule_ref": {"rule_id": "reiyah.rule.missingness_states", "rule_kind": "reiyah.kind.missingness_rule", "version": "1.2.0"},
+    "states_preserved": ["missing", "unmeasured", "out_of_distribution", "sensor_invalid", "abstained"],
+    "zero_coercion_prohibited": true,
+    "imputation_requires_declared_procedure": true
+  },
+  "split_policy": {
+    "rule_ref": {"rule_id": "reiyah.rule.subject_disjoint_split", "rule_kind": "reiyah.kind.split_rule", "version": "1.2.0"},
+    "split_unit": "reiyah.unit.subject",
+    "analysis_unit_set_ref": {"record_id": "reiyah.analysis-unit-set.synthetic-study-1.2", "record_kind": "reiyah.kind.analysis_unit_set", "version": "1.2.0"},
+    "analysis_unit_ids": [
+      "reiyah.subject.synthetic_001",
+      "reiyah.subject.synthetic_002",
+      "reiyah.subject.synthetic_003",
+      "reiyah.subject.synthetic_004",
+      "reiyah.subject.synthetic_005",
+      "reiyah.subject.synthetic_006"
+    ],
+    "split_manifests": [
+      {
+        "split_role": "train",
+        "split_ref": {"record_id": "reiyah.split.synthetic_train", "record_kind": "reiyah.kind.split", "version": "1.2.0"},
+        "frozen_at": "2026-08-24T08:05:00Z",
+        "member_ids": [
+          "reiyah.subject.synthetic_001",
+          "reiyah.subject.synthetic_002",
+          "reiyah.subject.synthetic_003"
+        ],
+        "stratification_input_refs": [
+          {
+            "node_id": "reiyah.node.stratification_context",
+            "node_role": "pre_treatment_confounder",
+            "available_at": "2026-08-24T08:04:00Z"
+          }
+        ]
+      },
+      {
+        "split_role": "calibration",
+        "split_ref": {"record_id": "reiyah.split.synthetic_calibration", "record_kind": "reiyah.kind.split", "version": "1.2.0"},
+        "frozen_at": "2026-08-24T08:06:00Z",
+        "member_ids": ["reiyah.subject.synthetic_004"],
+        "stratification_input_refs": []
+      },
+      {
+        "split_role": "test",
+        "split_ref": {"record_id": "reiyah.split.synthetic_test", "record_kind": "reiyah.kind.split", "version": "1.2.0"},
+        "frozen_at": "2026-08-24T08:07:00Z",
+        "member_ids": [
+          "reiyah.subject.synthetic_005",
+          "reiyah.subject.synthetic_006"
+        ],
+        "stratification_input_refs": []
+      }
+    ],
+    "cross_split_overlap_prohibited": true,
+    "outcome_stratification_after_access_prohibited": true
+  },
+  "causal_graph": {
+    "graph_id": "reiyah.graph.synthetic_policy_effect",
+    "version": "1.2.0",
+    "nodes": [
+      {"node_id": "reiyah.node.context", "role": "pre_treatment_confounder", "time_order": 0, "observability": "observed"},
+      {"node_id": "reiyah.node.intervention", "role": "treatment", "time_order": 1, "observability": "observed"},
+      {"node_id": "reiyah.node.mediator", "role": "mediator", "time_order": 2, "observability": "observed"},
+      {"node_id": "reiyah.node.outcome", "role": "outcome", "time_order": 3, "observability": "observed"},
+      {"node_id": "reiyah.node.colliding_selection", "role": "collider", "time_order": 4, "observability": "observed"},
+      {"node_id": "reiyah.node.stratification_context", "role": "pre_treatment_confounder", "time_order": 0, "observability": "observed"}
+    ],
+    "edges": [
+      {"from_node_id": "reiyah.node.context", "to_node_id": "reiyah.node.intervention"},
+      {"from_node_id": "reiyah.node.context", "to_node_id": "reiyah.node.outcome"},
+      {"from_node_id": "reiyah.node.intervention", "to_node_id": "reiyah.node.mediator"},
+      {"from_node_id": "reiyah.node.mediator", "to_node_id": "reiyah.node.outcome"},
+      {"from_node_id": "reiyah.node.intervention", "to_node_id": "reiyah.node.colliding_selection"},
+      {"from_node_id": "reiyah.node.outcome", "to_node_id": "reiyah.node.colliding_selection"}
+    ],
+    "acyclic_required": true,
+    "temporal_order_required": true
+  },
+  "adjustment_sets": [
+    {
+      "adjustment_set_id": "reiyah.adjustment_set.empty",
+      "node_ids": [],
+      "frozen_at": "2026-08-24T08:00:00Z"
+    }
+  ],
+  "identification_queries": [
+    {
+      "query_id": "reiyah.query.policy_effect.not_identified",
+      "estimand_id": "reiyah.estimand.synthetic-risk-difference",
+      "treatment_node_id": "reiyah.node.intervention",
+      "outcome_node_id": "reiyah.node.outcome",
+      "strategy": "backdoor",
+      "adjustment_set_id": "reiyah.adjustment_set.empty",
+      "disposition": "not_identified",
+      "machine_validation_required": true
+    }
+  ],
+  "control_strategy": {
+    "identification_contract_ref": {"rule_id": "reiyah.rule.causal-identification", "rule_kind": "reiyah.kind.rule", "version": "1.2.0"},
+    "estimand_ref": {"record_id": "reiyah.estimand.synthetic-risk-difference", "record_kind": "reiyah.kind.estimand", "version": "1.2.0"},
+    "selected_adjustment_set_ids": ["reiyah.adjustment_set.empty"],
+    "prohibited_roles": ["treatment", "outcome", "mediator", "post_treatment_descendant", "collider", "selection"],
+    "post_treatment_adjustment_prohibited": true,
+    "collider_adjustment_prohibited": true,
+    "unmeasured_adjustment_prohibited": true
+  },
+  "deviations": [],
+  "evidence_binding": {
+    "state": "evidence_gap",
+    "evidence_refs": [],
+    "gap_reason": "The graph and values are synthetic and do not identify a real causal effect."
+  },
+  "scientific_claim_authorized": false
+}
