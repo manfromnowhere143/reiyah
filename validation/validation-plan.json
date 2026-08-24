@@ -1,9 +1,9 @@
 {
-  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/validation-plan.schema.json",
-  "schema_version": "1.1.1",
-  "artifact_id": "reiyah.artifact.validation-plan-1.1.1",
-  "plan_id": "reiyah.validation-plan.gate-a-public-1.1.1",
-  "version": "1.1.1",
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.2/validation-plan.schema.json",
+  "schema_version": "1.1.2",
+  "artifact_id": "reiyah.artifact.validation-plan-1.1.2",
+  "plan_id": "reiyah.validation-plan.gate-a-public-1.1.2",
+  "version": "1.1.2",
   "distribution_profile": "public_open_source",
   "mission_release_id": "reiyah.mission@1.1.0",
   "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.1.0",
@@ -25,7 +25,7 @@
     "excluded_paths": [
       "gate/GATE_A_EVIDENCE_INDEX.json",
       "gate/GATE_A_EVIDENCE_INDEX.sha256",
-      "gate/validation-reports/gate-a-validation-1.1.1.json",
+      "gate/validation-reports/gate-a-validation-1.1.2.json",
       "gate/decisions/reiyah.gate-a-decision-",
       "gate/public-distribution-receipts/reiyah.public-distribution-receipt-",
       ".git/",
@@ -42,11 +42,11 @@
   "authorized_tool_bindings": [
     {
       "path": "tools/build_gate_a_index.py",
-      "sha256": "sha256:39e56534567295c5a5b924bf87f3de574957cfe3ea303697bdbd48fecaa90ee4"
+      "sha256": "sha256:744910f4745dc23e96e09eaeac75b24788d689116ce49d9ea927047e7efb22ee"
     },
     {
       "path": "tools/validate_gate_a.py",
-      "sha256": "sha256:2a0198cb8ddef715336c8e6f3b6b14039757596695ccdd6d5c07ee65f51f3c7d"
+      "sha256": "sha256:6758388216dd0878efa218550ab9c70b1bfb1e37ee432dca58ec47f4246878e4"
     }
   ],
   "narrative_bindings": [
@@ -94,9 +94,13 @@
     "gate/README.md",
     "gate/decisions/OPERATOR_DECISION.template.json",
     "gate/decisions/OPERATOR_DECISION-1.1.1.template.json",
+    "gate/decisions/OPERATOR_DECISION-1.1.2.template.json",
     "gate/validation-reports/gate-a-validation-1.1.0.json",
+    "gate/validation-reports/gate-a-validation-1.1.1.json",
     "history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.json",
     "history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.sha256",
+    "history/gate-a-1.1.1/gate/GATE_A_EVIDENCE_INDEX.json",
+    "history/gate-a-1.1.1/gate/GATE_A_EVIDENCE_INDEX.sha256",
     "manifests/mission/reiyah-mission-1.0.0.json",
     "manifests/protocol/harbor-gate-a-protocol-1.0.0.json",
     "manifests/definitions/harbor-gate-a-definition-registry-1.0.0.json",
@@ -158,6 +162,7 @@
     "evidence/frontier-discovery-register-1.1.0.json",
     "evidence/public-rights-revalidation-2026-08-23.json",
     "evidence/public-rights-revalidation-2026-08-24.json",
+    "evidence/public-rights-revalidation-2026-08-24-1.1.2.json",
     "history/gate-a-1.0.0/RECOVERY.json",
     "schemas/common-1.1.schema.json",
     "schemas/fixture-catalog-1.1.schema.json",
@@ -185,6 +190,14 @@
     "schemas/public-rights-revalidation-1.1.1.schema.json",
     "schemas/validation-plan-1.1.1.schema.json",
     "schemas/validation-report-1.1.1.schema.json",
+    "schemas/fixture-case-1.1.2.schema.json",
+    "schemas/fixture-catalog-1.1.2.schema.json",
+    "schemas/gate-a-index-1.1.2.schema.json",
+    "schemas/operator-decision-record-1.1.2.schema.json",
+    "schemas/public-distribution-receipt-1.1.2.schema.json",
+    "schemas/public-rights-revalidation-1.1.2.schema.json",
+    "schemas/validation-plan-1.1.2.schema.json",
+    "schemas/validation-report-1.1.2.schema.json",
     "schemas/v1.1/scientific-contract-common.schema.json",
     "schemas/v1.1/scientific-contract-mutation-fixture.schema.json",
     "schemas/v1.1/human-automation-assessment.schema.json",
@@ -196,7 +209,24 @@
     "fixtures/v1.1/good/joint-performance-evaluation.json",
     "fixtures/v1.1/good/study-design-preregistration.json",
     "fixtures/v1.1/good/sequential-off-policy-evaluation.json",
-    "fixtures/v1.1/good/evaluation-assurance-bundle.json"
+    "fixtures/v1.1/good/evaluation-assurance-bundle.json",
+    "fixtures/good/operator-decision-contract-1.1.2.json",
+    "fixtures/good/public-distribution-receipt-contract-1.1.2.json",
+    "fixtures/bad/operator-decision-index-binding-mismatch-1.1.2.json",
+    "fixtures/bad/operator-decision-report-binding-mismatch-1.1.2.json",
+    "fixtures/bad/predecessor-report-drift-1.1.2.json",
+    "fixtures/bad/historical-prefix-intrusion-1.1.2.json",
+    "fixtures/bad/successor-receipt-stale-index-binding-1.1.2.json",
+    "fixtures/bad/successor-receipt-stale-rights-binding-1.1.2.json",
+    "fixtures/bad/successor-receipt-stale-report-binding-1.1.2.json",
+    "fixtures/bad/successor-receipt-stale-prior-binding-1.1.2.json",
+    "fixtures/bad/successor-receipt-same-commit-reuse-1.1.2.json",
+    "fixtures/bad/successor-receipt-chronology-mismatch-1.1.2.json",
+    "fixtures/bad/successor-rights-chronology-mismatch-1.1.2.json",
+    "fixtures/bad/successor-receipt-missing-report-binding-1.1.2.json",
+    "fixtures/bad/successor-receipt-missing-report-readback-1.1.2.json",
+    "fixtures/bad/successor-receipt-stale-custody-binding-1.1.2.json",
+    "fixtures/bad/successor-receipt-legacy-schema-reuse-1.1.2.json"
   ],
   "rules": [
     {
@@ -681,10 +711,10 @@
     },
     {
       "rule_id": "GA-INDEX-ROLE-INELIGIBLE",
-      "version": "1.0.0",
+      "version": "1.1.2",
       "handler": "production_mutation",
       "severity": "error",
-      "description": "Every indexed production path must have the exact canonical role, media type, typed schema identity, and ledger or fixture ownership required for that path.",
+      "description": "Every indexed production path must have the exact canonical role, media type, typed schema identity, and ledger or fixture ownership required for that path; published history prefixes are closed to their declared snapshots.",
       "threat_ids": ["TM-005", "TM-019", "TM-021", "TM-026"],
       "gate_controls": ["GA-09", "GA-13", "GA-16"],
       "bad_fixture_required": true
@@ -921,20 +951,20 @@
     },
     {
       "rule_id": "GA-PUBLIC-CUSTODY-CONTRACT",
-      "version": "1.1.0",
+      "version": "1.1.2",
       "handler": "production_mutation",
       "severity": "error",
-      "description": "The public custody graph must exactly partition the active source ledger into four retained redistributable ISO payloads and four pointer-only records, with exact inventory, rights, and non-authority bindings.",
+      "description": "The public custody graph must exactly partition the active source ledger into four retained redistributable ISO payloads and four pointer-only records, with versioned append-only rights observations, exact receipt lineage, and non-authority bindings.",
       "threat_ids": ["TM-003", "TM-005", "TM-022", "TM-023"],
       "gate_controls": ["GA-10", "GA-11", "GA-13", "GA-14"],
       "bad_fixture_required": true
     },
     {
       "rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "handler": "production_mutation",
       "severity": "error",
-      "description": "Any excluded post-push receipt must be strict, append-only, identity-unique, current-byte bound, rights-fresh, exact-four-payload, canonical-repository metadata without creating acceptance or publication authority.",
+      "description": "Each excluded post-push receipt must use its event-specific schema, bind the exact immediate prior receipt plus packet index, validation report, and fresh rights bytes, preserve the exact-four-payload boundary, and create no acceptance or runtime authority.",
       "threat_ids": ["TM-005", "TM-017", "TM-020", "TM-022"],
       "gate_controls": ["GA-10", "GA-11", "GA-13", "GA-14"],
       "bad_fixture_required": true
@@ -961,20 +991,20 @@
     },
     {
       "rule_id": "GA-OPERATOR-DECISION-CONTRACT",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "handler": "production_mutation",
       "severity": "error",
-      "description": "The versioned operator-decision schema and deliberately invalid template must remain synthetically satisfiable against the exact unchanged release ledger and current packet index/report identities without authenticating authority or evaluating GA-17.",
+      "description": "Each versioned operator-decision schema and deliberately invalid template must remain synthetically satisfiable against the exact unchanged release ledger and its own frozen or current packet index/report identities without authenticating authority or evaluating GA-17.",
       "threat_ids": ["TM-005", "TM-017", "TM-020", "TM-027"],
       "gate_controls": ["GA-13", "GA-14", "GA-17"],
       "bad_fixture_required": true
     },
     {
       "rule_id": "GA-PREDECESSOR-PACKET-DRIFT",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "handler": "production_mutation",
       "severity": "error",
-      "description": "Released Gate A 1.1.0 packet bytes outside the explicit 1.1.1 governance-correction surface, including the report and legacy decision template, must remain byte-exact against the preserved predecessor index.",
+      "description": "Released Gate A 1.1.0 and 1.1.1 packet bytes outside their explicit successor surfaces, including each frozen report, must remain byte-exact against the preserved predecessor indexes.",
       "threat_ids": ["TM-005", "TM-017", "TM-020", "TM-027"],
       "gate_controls": ["GA-05", "GA-09", "GA-13", "GA-14"],
       "bad_fixture_required": true

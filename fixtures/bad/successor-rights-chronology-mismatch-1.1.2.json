@@ -1,0 +1,28 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.2/fixture-case.schema.json",
+  "schema_version": "1.1.2",
+  "artifact_id": "reiyah.fixture.bad.successor-rights-chronology-mismatch-1.1.2",
+  "fixture_id": "reiyah.fixture.bad.successor-rights-chronology-mismatch-1.1.2",
+  "version": "1.1.2",
+  "classification": "known_bad",
+  "description": "The sequence-three rights observation cannot predate its exact immutable Gate A 1.1.1 predecessor observation.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-005",
+    "TM-009",
+    "TM-017",
+    "TM-022"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"
+  },
+  "payload": {
+    "kind": "public_distribution_receipt_contract",
+    "variant": "rights_chronology_mismatch",
+    "receipt_sequence": 3,
+    "non_authoritative": true,
+    "expected_external_control_status": "not_evaluated"
+  }
+}

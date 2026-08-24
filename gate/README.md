@@ -4,7 +4,7 @@ This directory contains the digest-bound architecture evidence index, retained v
 reports, append-only public distribution receipts, and, only after direct human action,
 append-only operator decision records.
 
-## Frozen Gate A 1.1.0 records
+## Frozen public records
 
 The frozen indexed packet is commit
 `aa5f9b9b455219536183630b0be1e801a18a575e`, with evidence-index digest
@@ -15,23 +15,33 @@ That receipt records completed transport and verified remote readback. It does n
 GA-17, accept Gate A, authorize runtime, or create scientific support.
 
 The sequence-one receipt logically names `gate/GATE_A_EVIDENCE_INDEX.json` as it existed in the
-published `1.1.0` packet. After the root path advances to `1.1.1`, offline replay resolves that
-binding through the byte-exact [historical index
+published `1.1.0` packet. Offline replay resolves that binding through the byte-exact [historical index
 snapshot](../history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.json) and its [matching
 sidecar](../history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.sha256). The snapshot is immutable
 release history, not a second current index.
 
-Gate A `1.1.1` is a governance-correction candidate. Its current index sidecar and canonical
-validation report identify the exact review target. The mission and protocol releases remain at
-`1.1.0` because this correction does not change them. The indexed candidate intentionally makes
-no claim about its later Git commit or remote readback. Those transport facts exist only if a
-valid append-only `1.1.1` distribution receipt is present.
+Gate A `1.1.1` is also frozen public history. Its packet commit is
+`90072fb64f3c16cb5d0af0f1a3bcad56554707fa`, its evidence-index digest is
+`sha256:308f65ba2693c13fa71d081dad3f74f56ec80617e97497a2606c0d88a07b2ceb`, and its canonical
+report digest is
+`sha256:76c0dcce583beb02b121776e14bc9df41833a26c5c49488270d96861b3e33806`. Commit
+`8f4ba9894faf257c46351b2a89fc17f112a988f1` adds only append-only receipt sequence two. The
+[receipt](public-distribution-receipts/reiyah.public-distribution-receipt-1.1.1.json) records
+the packet commit and verified readback without creating acceptance, scientific support, or
+runtime authority. Replay resolves its logical root-index binding through the byte-exact
+[1.1.1 historical snapshot](../history/gate-a-1.1.1/gate/GATE_A_EVIDENCE_INDEX.json) and
+[sidecar](../history/gate-a-1.1.1/gate/GATE_A_EVIDENCE_INDEX.sha256).
 
-The original `gate/decisions/OPERATOR_DECISION.template.json` remains the frozen historical
-Gate A `1.1.0` template. It must not be rewritten or used as the current `1.1.1` procedure. The
-add-only
-[`OPERATOR_DECISION-1.1.1.template.json`](decisions/OPERATOR_DECISION-1.1.1.template.json) is the
-current governance-correction candidate template.
+Gate A `1.1.2` is the current documentation-and-continuity successor. It changes no scientific
+mission, protocol, evidence profile, benchmark result, or runtime authorization. Its root index,
+sidecar, and canonical report identify the new review target only after deterministic closeout.
+Until a valid append-only sequence-three receipt exists, no packet commit or remote readback is
+claimed for `1.1.2`.
+
+The original `gate/decisions/OPERATOR_DECISION.template.json` and the add-only
+[`OPERATOR_DECISION-1.1.1.template.json`](decisions/OPERATOR_DECISION-1.1.1.template.json) remain
+historical templates for their exact packets. The current add-only template is
+[`OPERATOR_DECISION-1.1.2.template.json`](decisions/OPERATOR_DECISION-1.1.2.template.json).
 
 ## No inferred acceptance
 
@@ -42,8 +52,8 @@ contains no completed operator decision record.
 ## Decision-record procedure
 
 After canonical full-mode validation reports `architecture_complete` for the exact Gate A
-`1.1.1` successor, an authorized operator may copy the non-normative template at
-`gate/decisions/OPERATOR_DECISION-1.1.1.template.json` to a new append-only file named with a
+`1.1.2` successor, an authorized operator may copy the non-normative template at
+`gate/decisions/OPERATOR_DECISION-1.1.2.template.json` to a new append-only file named with a
 stable lowercase identifier, for example:
 
 `gate/decisions/reiyah.gate-a-decision-YYYYMMDDTHHMMSSZ.json`
@@ -53,7 +63,7 @@ The operator must replace every placeholder; use an independently verifiable low
 canonical evidence-index, mission release, protocol release, and retained validation-report
 artifact IDs, paths, schema IDs, versions, and SHA-256 digests; acknowledge all four residual
 risk statements; and choose `accepted`, `rejected`, or `deferred`. The bound report must be the
-canonical `gate/validation-reports/gate-a-validation-1.1.1.json` bytes and must establish
+canonical `gate/validation-reports/gate-a-validation-1.1.2.json` bytes and must establish
 architecture completeness for the same index digest.
 
 The operator must also set `decision_sequence` and `history_policy: append_only_linear`. The
@@ -75,6 +85,7 @@ Changing any indexed artifact invalidates an earlier `accepted` decision for aut
 purposes but never deletes it. A new validation and later decision append a new record with a
 `supersedes_record_id` reference.
 
-The frozen public `1.1.0` packet must not be regenerated in place. A correction after public
-distribution requires a newly versioned Gate A packet, index, validation report, and review
-target. Independent review of the exact successor remains separate from operator acceptance.
+The frozen public `1.1.0` and `1.1.1` packets must not be regenerated in place. A correction after
+public distribution requires a newly versioned Gate A packet, index, validation report, and
+review target. Independent review of the exact successor remains separate from operator
+acceptance.

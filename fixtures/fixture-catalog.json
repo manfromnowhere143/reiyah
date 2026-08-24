@@ -1,9 +1,9 @@
 {
-  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-catalog.schema.json",
-  "schema_version": "1.1.1",
-  "artifact_id": "reiyah.artifact.fixture-catalog-1.1.1",
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.2/fixture-catalog.schema.json",
+  "schema_version": "1.1.2",
+  "artifact_id": "reiyah.artifact.fixture-catalog-1.1.2",
   "catalog_id": "reiyah.fixture-catalog.gate-a",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "offline_only": true,
   "all_known_good_must_pass": true,
   "all_known_bad_must_fail_for_declared_rule": true,
@@ -186,6 +186,23 @@
     {"fixture_id": "reiyah.fixture.bad.operator-decision-template-duplicate-release-binding-1.1.1", "path": "fixtures/bad/operator-decision-template-duplicate-release-binding-1.1.1.json", "classification": "known_bad", "expected_primary_rule_id": "GA-OPERATOR-DECISION-CONTRACT"},
     {"fixture_id": "reiyah.fixture.bad.operator-decision-template-digest-placeholder-mismatch-1.1.1", "path": "fixtures/bad/operator-decision-template-digest-placeholder-mismatch-1.1.1.json", "classification": "known_bad", "expected_primary_rule_id": "GA-OPERATOR-DECISION-CONTRACT"},
     {"fixture_id": "reiyah.fixture.bad.successor-rights-chronology-mismatch-1.1.1", "path": "fixtures/bad/successor-rights-chronology-mismatch-1.1.1.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-CUSTODY-CONTRACT"},
-    {"fixture_id": "reiyah.fixture.bad.successor-receipt-same-commit-reuse-1.1.1", "path": "fixtures/bad/successor-receipt-same-commit-reuse-1.1.1.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"}
+    {"fixture_id": "reiyah.fixture.bad.successor-receipt-same-commit-reuse-1.1.1", "path": "fixtures/bad/successor-receipt-same-commit-reuse-1.1.1.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+    {"fixture_id": "reiyah.fixture.good.operator-decision-contract-1.1.2", "path": "fixtures/good/operator-decision-contract-1.1.2.json", "classification": "known_good", "expected_primary_rule_id": null},
+    {"fixture_id": "reiyah.fixture.good.public-distribution-receipt-contract-1.1.2", "path": "fixtures/good/public-distribution-receipt-contract-1.1.2.json", "classification": "known_good", "expected_primary_rule_id": null},
+    {"fixture_id": "reiyah.fixture.bad.operator-decision-index-binding-mismatch-1.1.2", "path": "fixtures/bad/operator-decision-index-binding-mismatch-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-OPERATOR-DECISION-CONTRACT"},
+    {"fixture_id": "reiyah.fixture.bad.operator-decision-report-binding-mismatch-1.1.2", "path": "fixtures/bad/operator-decision-report-binding-mismatch-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-OPERATOR-DECISION-CONTRACT"},
+    {"fixture_id": "reiyah.fixture.bad.predecessor-report-drift-1.1.2", "path": "fixtures/bad/predecessor-report-drift-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PREDECESSOR-PACKET-DRIFT"},
+    {"fixture_id": "reiyah.fixture.bad.historical-prefix-intrusion-1.1.2", "path": "fixtures/bad/historical-prefix-intrusion-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-INDEX-ROLE-INELIGIBLE"},
+    {"fixture_id": "reiyah.fixture.bad.successor-receipt-stale-index-binding-1.1.2", "path": "fixtures/bad/successor-receipt-stale-index-binding-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+    {"fixture_id": "reiyah.fixture.bad.successor-receipt-stale-rights-binding-1.1.2", "path": "fixtures/bad/successor-receipt-stale-rights-binding-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+    {"fixture_id": "reiyah.fixture.bad.successor-receipt-stale-report-binding-1.1.2", "path": "fixtures/bad/successor-receipt-stale-report-binding-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+    {"fixture_id": "reiyah.fixture.bad.successor-receipt-stale-prior-binding-1.1.2", "path": "fixtures/bad/successor-receipt-stale-prior-binding-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+    {"fixture_id": "reiyah.fixture.bad.successor-receipt-same-commit-reuse-1.1.2", "path": "fixtures/bad/successor-receipt-same-commit-reuse-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+    {"fixture_id": "reiyah.fixture.bad.successor-receipt-chronology-mismatch-1.1.2", "path": "fixtures/bad/successor-receipt-chronology-mismatch-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+    {"fixture_id": "reiyah.fixture.bad.successor-rights-chronology-mismatch-1.1.2", "path": "fixtures/bad/successor-rights-chronology-mismatch-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+    {"fixture_id": "reiyah.fixture.bad.successor-receipt-missing-report-binding-1.1.2", "path": "fixtures/bad/successor-receipt-missing-report-binding-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+    {"fixture_id": "reiyah.fixture.bad.successor-receipt-missing-report-readback-1.1.2", "path": "fixtures/bad/successor-receipt-missing-report-readback-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+    {"fixture_id": "reiyah.fixture.bad.successor-receipt-stale-custody-binding-1.1.2", "path": "fixtures/bad/successor-receipt-stale-custody-binding-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+    {"fixture_id": "reiyah.fixture.bad.successor-receipt-legacy-schema-reuse-1.1.2", "path": "fixtures/bad/successor-receipt-legacy-schema-reuse-1.1.2.json", "classification": "known_bad", "expected_primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"}
   ]
 }

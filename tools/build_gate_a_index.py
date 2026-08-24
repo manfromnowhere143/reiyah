@@ -25,7 +25,7 @@ INDEX_PATH = "gate/GATE_A_EVIDENCE_INDEX.json"
 SIDECAR_PATH = "gate/GATE_A_EVIDENCE_INDEX.sha256"
 ACTUAL_DECISION_PREFIX = "gate/decisions/reiyah.gate-a-decision-"
 PUBLIC_RECEIPT_PREFIX = "gate/public-distribution-receipts/reiyah.public-distribution-receipt-"
-DEFAULT_ARTIFACT_VERSION = "1.1.1"
+DEFAULT_ARTIFACT_VERSION = "1.1.2"
 AUTHORIZED_TOOL_PATHS = frozenset(
     {"tools/build_gate_a_index.py", "tools/validate_gate_a.py"}
 )
@@ -46,7 +46,7 @@ EXCLUSIONS: tuple[dict[str, str], ...] = (
     {
         "exclusion_id": "reiyah.exclusion.validation-reports",
         "match_kind": "exact",
-        "path": "gate/validation-reports/gate-a-validation-1.1.1.json",
+        "path": "gate/validation-reports/gate-a-validation-1.1.2.json",
         "reason": "The canonical validation report is an output bound to the index, not an index input.",
     },
     {
@@ -148,6 +148,7 @@ EXACT_ROLES: dict[str, str] = {
     "evidence/public-evidence-custody-profile-1.1.0.json": "public_evidence_custody_profile",
     "evidence/public-rights-revalidation-2026-08-23.json": "public_rights_revalidation",
     "evidence/public-rights-revalidation-2026-08-24.json": "public_rights_revalidation",
+    "evidence/public-rights-revalidation-2026-08-24-1.1.2.json": "public_rights_revalidation",
     "evidence/source-ledger-1.1.0.json": "source_ledger",
     "evidence/source-ledger.json": "historical_source_ledger",
     "evidence/standards-crosswalk-1.1.0.json": "standards_crosswalk",
@@ -155,9 +156,11 @@ EXACT_ROLES: dict[str, str] = {
     "fixtures/fixture-catalog.json": "fixture_catalog",
     "gate/validation-reports/gate-a-validation-1.0.0.json": "historical_candidate_artifact",
     "gate/validation-reports/gate-a-validation-1.1.0.json": "historical_candidate_artifact",
+    "gate/validation-reports/gate-a-validation-1.1.1.json": "historical_candidate_artifact",
     "gate/README.md": "acceptance_procedure",
     "gate/decisions/OPERATOR_DECISION.template.json": "operator_decision_template",
     "gate/decisions/OPERATOR_DECISION-1.1.1.template.json": "operator_decision_template",
+    "gate/decisions/OPERATOR_DECISION-1.1.2.template.json": "operator_decision_template",
     "manifests/manifest-release-ledger.json": "manifest_release_ledger",
     "manifests/history/manifest-release-ledger-1.0.0.json": "historical_manifest_release_ledger",
     "manifests/scientific/harbor-scientific-contract-profile-1.1.0.json": "scientific_contract_profile",
@@ -211,13 +214,16 @@ ROLE_SCHEMA_IDS: dict[str, frozenset[str]] = {
     "public_rights_revalidation": frozenset({
         "https://schemas.reiyah.invalid/gate-a/1.1.0/public-rights-revalidation.schema.json",
         "https://schemas.reiyah.invalid/gate-a/1.1.1/public-rights-revalidation.schema.json",
+        "https://schemas.reiyah.invalid/gate-a/1.1.2/public-rights-revalidation.schema.json",
     }),
     "fixture_catalog": frozenset({
-        "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-catalog.schema.json"
+        "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-catalog.schema.json",
+        "https://schemas.reiyah.invalid/gate-a/1.1.2/fixture-catalog.schema.json",
     }),
     "operator_decision_template": frozenset({
         "https://schemas.reiyah.invalid/gate-a/1.1.0/operator-decision-record.schema.json",
         "https://schemas.reiyah.invalid/gate-a/1.1.1/operator-decision-record.schema.json",
+        "https://schemas.reiyah.invalid/gate-a/1.1.2/operator-decision-record.schema.json",
     }),
     "historical_packet_recovery": frozenset({
         "https://schemas.reiyah.invalid/gate-a/1.1.0/historical-packet-recovery.schema.json"
@@ -237,11 +243,13 @@ ROLE_SCHEMA_IDS: dict[str, frozenset[str]] = {
     "known_bad_fixture": frozenset({
         "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
         "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-case.schema.json",
+        "https://schemas.reiyah.invalid/gate-a/1.1.2/fixture-case.schema.json",
         "https://schemas.reiyah.invalid/scientific-contract/1.1.0/scientific-contract-mutation-fixture.schema.json",
     }),
     "known_good_fixture": frozenset({
         "https://schemas.reiyah.invalid/gate-a/1.0.0/fixture-case.schema.json",
         "https://schemas.reiyah.invalid/gate-a/1.1.1/fixture-case.schema.json",
+        "https://schemas.reiyah.invalid/gate-a/1.1.2/fixture-case.schema.json",
         "https://schemas.reiyah.invalid/gate-a/1.0.0/analysis-specification.schema.json",
         "https://schemas.reiyah.invalid/gate-a/1.0.0/preregistration-record.schema.json",
         "https://schemas.reiyah.invalid/gate-a/1.0.0/observation.schema.json",
@@ -347,6 +355,8 @@ def role_for(path: str) -> str:
     if path in {
         "history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.json",
         "history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.sha256",
+        "history/gate-a-1.1.1/gate/GATE_A_EVIDENCE_INDEX.json",
+        "history/gate-a-1.1.1/gate/GATE_A_EVIDENCE_INDEX.sha256",
     }:
         return "historical_candidate_artifact"
     raise BuildFailure(f"undeclared Gate A artifact role for {path}")
@@ -383,6 +393,8 @@ def json_metadata(path: str, raw: bytes) -> tuple[str | None, str | None, str | 
         artifact_id = "reiyah.artifact.operator-decision-template"
     elif path == "gate/decisions/OPERATOR_DECISION-1.1.1.template.json":
         artifact_id = "reiyah.artifact.operator-decision-template-1.1.1"
+    elif path == "gate/decisions/OPERATOR_DECISION-1.1.2.template.json":
+        artifact_id = "reiyah.artifact.operator-decision-template-1.1.2"
     else:
         candidate = data.get("artifact_id")
         artifact_id = candidate if isinstance(candidate, str) and not candidate.startswith("replace.") else None
@@ -396,7 +408,10 @@ def json_metadata(path: str, raw: bytes) -> tuple[str | None, str | None, str | 
         version = data.get("schema_version") if isinstance(data.get("schema_version"), str) else None
     if path.startswith("schemas/") and version is None:
         version = (
-            "1.1.1"
+            "1.1.2"
+            if "/1.1.2/" in str(schema_id)
+            or "-1.1.2.schema.json" in path
+            else "1.1.1"
             if "/1.1.1/" in str(schema_id)
             or "-1.1.1.schema.json" in path
             else "1.1.0"
@@ -547,6 +562,8 @@ def build_index(root: Path) -> dict[str, Any]:
                 version = "1.0.0"
             elif relative.startswith("history/gate-a-1.1.0/"):
                 version = "1.1.0"
+            elif relative.startswith("history/gate-a-1.1.1/"):
+                version = "1.1.1"
             else:
                 version = DEFAULT_ARTIFACT_VERSION
         if artifact_id in seen_artifact_ids:
@@ -586,11 +603,11 @@ def build_index(root: Path) -> dict[str, Any]:
         )
 
     return {
-        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.1/gate-a-index.schema.json",
-        "schema_version": "1.1.1",
-        "artifact_id": "reiyah.artifact.gate-a-index-1.1.1",
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.2/gate-a-index.schema.json",
+        "schema_version": "1.1.2",
+        "artifact_id": "reiyah.artifact.gate-a-index-1.1.2",
         "index_id": "reiyah.gate-a-evidence-index",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "as_of_date": "2026-08-24",
         "lifecycle_status": "proposed",
         "architecture_status": "architecture_complete",
@@ -601,10 +618,10 @@ def build_index(root: Path) -> dict[str, Any]:
         "distribution_profile": "public_open_source",
         "source_ledger_version": "1.1.0",
         "prior_candidate_observation": {
-            "artifact_id": "reiyah.artifact.gate-a-index-1.1.0",
-            "version": "1.1.0",
-            "sha256": "sha256:91149ec8bfc9a3999ce95d8c18ce0d558cf974b0afb412a7ac11027c63056c7a",
-            "observed_on": "2026-08-23",
+            "artifact_id": "reiyah.artifact.gate-a-index-1.1.1",
+            "version": "1.1.1",
+            "sha256": "sha256:308f65ba2693c13fa71d081dad3f74f56ec80617e97497a2606c0d88a07b2ceb",
+            "observed_on": "2026-08-24",
             "distribution_state": "public_packet_published_receipt_bound",
             "evidence_eligible": False,
         },

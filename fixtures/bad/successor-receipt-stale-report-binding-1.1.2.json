@@ -1,0 +1,14 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.2/fixture-case.schema.json",
+  "schema_version": "1.1.2",
+  "artifact_id": "reiyah.fixture.bad.successor-receipt-stale-report-binding-1.1.2",
+  "fixture_id": "reiyah.fixture.bad.successor-receipt-stale-report-binding-1.1.2",
+  "version": "1.1.2",
+  "classification": "known_bad",
+  "description": "Synthetic receipt sequence three cannot bind stale bytes for the Gate A 1.1.2 validation report.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": ["TM-020", "TM-023"],
+  "expected": {"outcome": "reject", "primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"},
+  "payload": {"kind": "public_distribution_receipt_contract", "variant": "stale_report_binding", "receipt_sequence": 3, "non_authoritative": true, "expected_external_control_status": "not_evaluated"}
+}

@@ -8,29 +8,34 @@ acceptance decision.
 
 ## Reproducible entry point
 
-From the verified Reiyah Git root:
+Authoritative replay is intentionally bound to the exact resolved canonical root
+`/Users/danielwahnich/workspace/reiyah`. Both offline tools fail closed at every other path;
+bypassing that identity preflight is not an equivalent Reiyah validation.
+
+From that verified Reiyah Git root:
 
 ```sh
 python3 tools/validate_gate_a.py
 ```
 
-The frozen public Gate A `1.1.0` index and report must not be regenerated in place. Once a
+The frozen public Gate A `1.1.0` and `1.1.1` indexes and reports must not be regenerated in place. Once a
 candidate has been distributed for review or public transport, any intentional change to an
 indexed byte requires a newly versioned Gate A packet with successor schema and validation-plan
 bindings, an exact new index, a fresh report, and a new review target.
 
-Gate A `1.1.1` is a governance-correction candidate. It retains
-`reiyah.mission@1.1.0` and `reiyah.protocol.harbor-gate-a@1.1.0` unchanged. Its governance
-schemas and tool contracts define a `1.1.1` evidence index at
+Gate A `1.1.1` is a published, receipt-bound governance correction. Gate A `1.1.2` is the current
+documentation-and-continuity successor. It retains `reiyah.mission@1.1.0`,
+`reiyah.protocol.harbor-gate-a@1.1.0`, and the `1.1.0` evidence profile unchanged. Its governance
+schemas and tool contracts define a `1.1.2` evidence index at
 `gate/GATE_A_EVIDENCE_INDEX.json` and a canonical report at
-`gate/validation-reports/gate-a-validation-1.1.1.json`. The sidecar digest-binds the candidate
+`gate/validation-reports/gate-a-validation-1.1.2.json`. The sidecar digest-binds the candidate
 index, and the canonical report binds that same index. A later decision or valid distribution
 receipt can exact-bind the report bytes; the receipt also carries the packet commit and remote
-readback. Indexed prose does not duplicate those values, and no `1.1.0` identity may stand in for
-a `1.1.1` value.
+readback. Indexed prose does not duplicate those values, and no predecessor identity may stand in
+for a `1.1.2` value.
 
 During successor construction, the builder's stdout may be inspected outside the repository
-before the canonical `1.1.1` index and sidecar are deliberately replaced:
+before the canonical `1.1.2` index and sidecar are deliberately replaced:
 
 ```sh
 python3 tools/build_gate_a_index.py > /tmp/reiyah-gate-a-index-candidate.json
@@ -40,14 +45,14 @@ python3 tools/validate_gate_a.py
 
 Until every successor input, canonical index, sidecar, and report is present, validation may
 correctly classify the worktree as an incomplete candidate. That state is not permission to
-overwrite or relabel the retained `1.1.0` report or its immutable historical index snapshot. The
+overwrite or relabel either retained predecessor report or immutable historical index snapshot. The
 builder remains stdout-only and the validator remains offline and read-only.
 
-The sequence-one distribution receipt keeps its original logical root-index path. The validator
-resolves that historical binding only to the byte-exact [Gate A `1.1.0` index
-snapshot](../history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.json) and [sidecar](../history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.sha256).
-The current root index is exclusively the `1.1.1` candidate. Neither version can substitute for
-the other.
+Receipt sequences one and two keep their original logical root-index path. The validator resolves
+them only to the byte-exact Gate A [`1.1.0`](../history/gate-a-1.1.0/gate/GATE_A_EVIDENCE_INDEX.json)
+and [`1.1.1`](../history/gate-a-1.1.1/gate/GATE_A_EVIDENCE_INDEX.json) snapshots and matching
+sidecars. The current root index is exclusively the `1.1.2` candidate. No version can substitute
+for another.
 
 The index excludes itself, its sidecar, the exact canonical report path, append-only operator
 decision records, Git internals, and declared transient caches. Those exclusions and reasons are
@@ -100,7 +105,8 @@ The historical Gate A `1.0.0` report covered 25 schemas, 122 normative instances
 cases, eight retained sources, and 164 indexed artifacts. Those numbers describe only the
 historical packet and are not expectations for `1.1.0`.
 
-The 164 Gate A `1.1.1` known-bad cases are reason-specific counterexamples and must reject for
+The 164 retained Gate A `1.1.1` known-bad cases and the versioned `1.1.2` additions are
+reason-specific counterexamples and must reject for
 their exact declared primary rules. Production-overlay families invoke the same diagnostic functions as a
 real repository check. They exercise mission and manifest authority,
 claims, threat coverage, scientific lineage and references, preregistration freezes, evidence
@@ -115,9 +121,10 @@ operator explicitly redirects stdout outside the validator.
 
 A closeout may retain a machine-readable integrity report without placing it inside the index's
 input cycle. The frozen report at
-`gate/validation-reports/gate-a-validation-1.1.0.json` must not be overwritten. Retain the
-successor report only at `gate/validation-reports/gate-a-validation-1.1.1.json` after the
-`1.1.1` index is canonical and the full run succeeds.
+`gate/validation-reports/gate-a-validation-1.1.0.json` and the published `1.1.1` report must not
+be overwritten. Retain the successor report only at
+`gate/validation-reports/gate-a-validation-1.1.2.json` after the `1.1.2` index is canonical and
+the full run succeeds.
 
 The retained report binds the evidence-index digest and remains an integrity signal only. Its
 canonical sorted JSON bytes, exact coverage totals, zero diagnostics, and GA-01 through GA-16

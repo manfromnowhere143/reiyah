@@ -1,0 +1,26 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.2/fixture-case.schema.json",
+  "schema_version": "1.1.2",
+  "artifact_id": "reiyah.fixture.good.public-distribution-receipt-contract-1.1.2",
+  "fixture_id": "reiyah.fixture.good.public-distribution-receipt-contract-1.1.2",
+  "version": "1.1.2",
+  "classification": "known_good",
+  "description": "Synthetic, non-authoritative proof that an unpublished receipt sequence three can bind the exact 1.1.2 packet and the immutable sequence-two lineage without creating acceptance or runtime authority.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-020",
+    "TM-023"
+  ],
+  "expected": {
+    "outcome": "pass",
+    "primary_rule_id": null
+  },
+  "payload": {
+    "kind": "public_distribution_receipt_contract",
+    "variant": "current",
+    "receipt_sequence": 3,
+    "non_authoritative": true,
+    "expected_external_control_status": "not_evaluated"
+  }
+}

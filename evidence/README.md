@@ -31,12 +31,22 @@ public worktree. Their former local identities and digests remain visible as his
 metadata, but they are inadmissible under the current profile and unauthorized for payload
 distribution.
 
-## Gate A 1.1.1 pre-transport observation
+## Versioned transport observations
 
 [`public-rights-revalidation-2026-08-24.json`](public-rights-revalidation-2026-08-24.json) is the
 add-only Gate A `1.1.1` observation for the governance-correction distribution event. It binds
 the earlier observation by exact path, digest, size, and version. It neither expands the frozen
-`1.1.0` evidence profile nor authorizes or establishes distribution.
+`1.1.0` evidence profile nor independently authorizes or establishes distribution. Receipt
+sequence two exact-binds this observation to the published `1.1.1` packet.
+
+[`public-rights-revalidation-2026-08-24-1.1.2.json`](public-rights-revalidation-2026-08-24-1.1.2.json)
+is the present Gate A `1.1.2` same-event observation, recorded at `2026-08-24T10:16:56Z`. It
+exact-binds the immutable `1.1.1` observation as its predecessor and records the preflight outcome
+`included_iso_basis_consistent_nist_payload_excluded` with a maximum age of 3,600 seconds. It is an
+observation only: it creates no distribution authority, legal conclusion, GA-17 evaluation, or
+Gate A acceptance. A sequence-three receipt must exact-bind it to the same published `1.1.2`
+index, canonical report, packet commit, and remote readback within that freshness window;
+otherwise transport is unverified and a new observation is required.
 
 ## Historical records
 
@@ -58,17 +68,18 @@ The base custody and inventory records retain `distribution_executed: false` bec
 the pre-transport packet. The receipt separately records that transport occurred. It cannot
 evaluate GA-17, accept Gate A, support a claim, or authorize runtime.
 
-Gate A `1.1.1` is a governance-correction candidate and does not change the `1.1.0` evidence
-profile, mission release, or protocol release. Its indexed bytes cannot contain their own later
-transport commit or remote readback. Inspect the latest valid append-only receipt for those facts;
-without a receipt binding the `1.1.1` index, transport is unverified. Mutable official rights
-pages must be observed again before each later payload distribution event; an unreachable page or
-contradiction fails closed.
+Gate A `1.1.1` is a published governance correction and does not change the `1.1.0` evidence
+profile, mission release, or protocol release. Its append-only sequence-two receipt records the
+packet commit, exact index and report bytes, fresh rights observation, and remote readback. Gate A
+`1.1.2` is a documentation-and-continuity successor with the same evidence boundary. Its indexed
+bytes cannot contain their own later transport commit or remote readback. Without a valid
+sequence-three receipt binding the `1.1.2` packet, its transport remains unverified. Mutable
+official rights pages must be observed again before each payload distribution event; an
+unreachable page or contradiction fails closed.
 
-The `2026-08-24` observation is therefore a pre-transport input, not a transport receipt. Only a
-valid receipt sequence two can bind it to the exact successor index, validation report, published
-commit, and verified remote readback. A future distribution event requires another versioned
-observation and receipt contract rather than reuse of this event-specific record.
+The `2026-08-24` observation remains a pre-transport input, not a transport receipt. Receipt
+sequence two binds it to the exact `1.1.1` packet. A future distribution event requires another
+versioned observation and receipt contract rather than reuse of this event-specific record.
 
 ## Contributor rule
 

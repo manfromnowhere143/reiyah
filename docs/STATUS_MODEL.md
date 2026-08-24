@@ -306,16 +306,18 @@ initial mission release `reiyah.mission@1.0.0` and protocol release
 requires a newly versioned Gate A schema, validation plan, index, and report; it cannot silently
 enter or redefine the semantic head of packet `1.0.0`.
 
-The frozen public Gate A `1.1.0` packet is likewise immutable at its exact indexed commit and
-digest. Gate A `1.1.1` is a governance correction for release-state prose, citation, review, and
-versioning guidance. Because it does not change the scientific mission or protocol, it retains
-`reiyah.mission@1.1.0` and `reiyah.protocol.harbor-gate-a@1.1.0` unchanged. It still requires
-newly versioned packet-level schema and validation-plan bindings, an exact successor index, a
-fresh validation report, and a new review target. The sidecar digest-binds the index, and the
-report binds that index without entering its input cycle. A later operator decision or
-distribution receipt can exact-bind the report bytes. Any later commit and remote readback are
-established only by an append-only distribution receipt. Frozen `1.1.0` values are not
-placeholders.
+The public Gate A `1.1.0` and `1.1.1` packets are immutable at their exact indexed commits and
+digests. Gate A `1.1.1` is the published governance correction for release-state prose,
+citation, review, and versioning guidance. Gate A `1.1.2` is a documentation-and-continuity
+successor. Neither changes the scientific mission, protocol, or evidence profile, so both retain
+`reiyah.mission@1.1.0` and `reiyah.protocol.harbor-gate-a@1.1.0` unchanged.
+
+The `1.1.2` successor still requires its own packet-level schemas, validation plan, index,
+sidecar, report, and review target. Its prior-candidate observation exact-binds the published
+`1.1.1` index. Receipt sequence two continues to resolve only through the frozen `1.1.1`
+snapshot; a future sequence-three receipt must bind the exact `1.1.2` index, report, fresh rights
+observation, publication commit, and remote readback. An operator decision and a transport
+receipt remain separate append-only event types. Frozen values are never placeholders.
 
 ## 8. Status ownership
 

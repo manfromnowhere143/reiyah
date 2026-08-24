@@ -1,0 +1,359 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.1.2/validation-plan.schema.json",
+  "title": "Deterministic Gate A public validation plan",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "artifact_id",
+    "plan_id",
+    "version",
+    "distribution_profile",
+    "mission_release_id",
+    "protocol_release_id",
+    "source_ledger_path",
+    "standards_crosswalk_path",
+    "public_distribution_inventory_path",
+    "schema_dialect",
+    "canonical_root",
+    "entrypoint",
+    "fixture_catalog_path",
+    "offline_required",
+    "read_only_required",
+    "deterministic_required",
+    "runtime_authorized",
+    "acceptance_authorized",
+    "index",
+    "authorized_tool_bindings",
+    "narrative_bindings",
+    "required_artifacts",
+    "rules",
+    "critical_families"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "https://schemas.reiyah.invalid/gate-a/1.1.2/validation-plan.schema.json"
+    },
+    "schema_version": {
+      "const": "1.1.2"
+    },
+    "artifact_id": {
+      "const": "reiyah.artifact.validation-plan-1.1.2"
+    },
+    "plan_id": {
+      "const": "reiyah.validation-plan.gate-a-public-1.1.2"
+    },
+    "version": {
+      "const": "1.1.2"
+    },
+    "schema_dialect": {
+      "const": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "canonical_root": {
+      "const": "/Users/danielwahnich/workspace/reiyah"
+    },
+    "entrypoint": {
+      "const": "tools/validate_gate_a.py"
+    },
+    "fixture_catalog_path": {
+      "const": "fixtures/fixture-catalog.json"
+    },
+    "offline_required": {
+      "const": true
+    },
+    "read_only_required": {
+      "const": true
+    },
+    "deterministic_required": {
+      "const": true
+    },
+    "runtime_authorized": {
+      "const": false
+    },
+    "acceptance_authorized": {
+      "const": false
+    },
+    "index": {
+      "type": "object",
+      "required": [
+        "path",
+        "sidecar_path",
+        "excluded_paths"
+      ],
+      "properties": {
+        "path": {
+          "const": "gate/GATE_A_EVIDENCE_INDEX.json"
+        },
+        "sidecar_path": {
+          "const": "gate/GATE_A_EVIDENCE_INDEX.sha256"
+        },
+        "excluded_paths": {
+          "type": "array",
+          "minItems": 6,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512,
+            "pattern": "^[A-Za-z0-9._/-]+$",
+            "not": {
+              "pattern": "(^|/)\\.\\.(/|$)"
+            }
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorized_tool_bindings": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/authorizedToolBinding"
+            },
+            {
+              "properties": {
+                "path": {
+                  "const": "tools/build_gate_a_index.py"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/authorizedToolBinding"
+            },
+            {
+              "properties": {
+                "path": {
+                  "const": "tools/validate_gate_a.py"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "items": false
+    },
+    "narrative_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "binding_id",
+          "scope",
+          "narrative",
+          "machine"
+        ],
+        "properties": {
+          "binding_id": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/common.schema.json#/$defs/stableIdentifier"
+          },
+          "scope": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/common.schema.json#/$defs/nonEmptyString"
+          },
+          "narrative": {
+            "$ref": "#/$defs/narrativeBindingArtifact"
+          },
+          "machine": {
+            "$ref": "#/$defs/narrativeBindingArtifact"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "required_artifacts": {
+      "type": "array",
+      "minItems": 16,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 512,
+        "pattern": "^[A-Za-z0-9._/-]+$",
+        "not": {
+          "pattern": "(^|/)\\.\\.(/|$)"
+        }
+      },
+      "uniqueItems": true
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "rule_id",
+          "version",
+          "handler",
+          "severity",
+          "description",
+          "threat_ids",
+          "gate_controls",
+          "bad_fixture_required"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string",
+            "pattern": "^GA-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "version": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/common.schema.json#/$defs/semanticVersion"
+          },
+          "handler": {
+            "enum": [
+              "identity",
+              "kind_separation",
+              "epistemic_measurements",
+              "lifecycle_status",
+              "temporal_information_set",
+              "provenance",
+              "digest",
+              "typed_reference",
+              "manifest_binding",
+              "release_ledger",
+              "denominator",
+              "group_coverage",
+              "determinism",
+              "standards_claim",
+              "acceptance_binding",
+              "data_boundary",
+              "scope_boundary",
+              "evidence_index",
+              "production_mutation"
+            ]
+          },
+          "severity": {
+            "const": "error"
+          },
+          "description": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/common.schema.json#/$defs/nonEmptyString"
+          },
+          "threat_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^TM-[0-9]{3}$"
+            },
+            "uniqueItems": true
+          },
+          "gate_controls": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^GA-[0-9]{2}$"
+            },
+            "uniqueItems": true
+          },
+          "bad_fixture_required": {
+            "const": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "critical_families": {
+      "type": "array",
+      "minItems": 20,
+      "items": {
+        "type": "object",
+        "required": [
+          "family_id",
+          "description",
+          "rule_ids",
+          "threat_ids"
+        ],
+        "properties": {
+          "family_id": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/common.schema.json#/$defs/stableIdentifier"
+          },
+          "description": {
+            "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/common.schema.json#/$defs/nonEmptyString"
+          },
+          "rule_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^GA-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+            },
+            "uniqueItems": true
+          },
+          "threat_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^TM-[0-9]{3}$"
+            },
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "distribution_profile": {
+      "const": "public_open_source"
+    },
+    "mission_release_id": {
+      "const": "reiyah.mission@1.1.0"
+    },
+    "protocol_release_id": {
+      "const": "reiyah.protocol.harbor-gate-a@1.1.0"
+    },
+    "source_ledger_path": {
+      "const": "evidence/source-ledger-1.1.0.json"
+    },
+    "standards_crosswalk_path": {
+      "const": "evidence/standards-crosswalk-1.1.0.json"
+    },
+    "public_distribution_inventory_path": {
+      "const": "evidence/public-distribution-inventory-1.1.0.json"
+    }
+  },
+  "$defs": {
+    "authorizedToolBinding": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/common.schema.json#/$defs/relativeArtifactPath"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "narrativeBindingArtifact": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "https://schemas.reiyah.invalid/gate-a/1.1.0/common.schema.json#/$defs/relativeArtifactPath"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

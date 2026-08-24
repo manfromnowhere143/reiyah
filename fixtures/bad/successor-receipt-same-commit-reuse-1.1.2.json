@@ -1,0 +1,27 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.2/fixture-case.schema.json",
+  "schema_version": "1.1.2",
+  "artifact_id": "reiyah.fixture.bad.successor-receipt-same-commit-reuse-1.1.2",
+  "fixture_id": "reiyah.fixture.bad.successor-receipt-same-commit-reuse-1.1.2",
+  "version": "1.1.2",
+  "classification": "known_bad",
+  "description": "Receipt sequence three cannot attribute different successor index bytes to the immutable Gate A 1.1.1 packet commit.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-005",
+    "TM-017",
+    "TM-020"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-PUBLIC-DISTRIBUTION-RECEIPT"
+  },
+  "payload": {
+    "kind": "public_distribution_receipt_contract",
+    "variant": "same_commit_reuse",
+    "receipt_sequence": 3,
+    "non_authoritative": true,
+    "expected_external_control_status": "not_evaluated"
+  }
+}

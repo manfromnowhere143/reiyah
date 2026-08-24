@@ -1,0 +1,32 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.2/fixture-case.schema.json",
+  "schema_version": "1.1.2",
+  "artifact_id": "reiyah.fixture.bad.predecessor-report-drift-1.1.2",
+  "fixture_id": "reiyah.fixture.bad.predecessor-report-drift-1.1.2",
+  "version": "1.1.2",
+  "classification": "known_bad",
+  "description": "A schema-valid change cannot rewrite the validation report bound by the published Gate A 1.1.1 packet.",
+  "synthetic": true,
+  "contains_empirical_data": false,
+  "threat_ids": [
+    "TM-005",
+    "TM-017",
+    "TM-020"
+  ],
+  "expected": {
+    "outcome": "reject",
+    "primary_rule_id": "GA-PREDECESSOR-PACKET-DRIFT"
+  },
+  "payload": {
+    "kind": "production_mutation",
+    "production_check": "predecessor_packet",
+    "mutations": [
+      {
+        "operation": "replace",
+        "path": "gate/validation-reports/gate-a-validation-1.1.1.json",
+        "json_pointer": "/toolchain/python_version",
+        "value": "3.14.9"
+      }
+    ]
+  }
+}

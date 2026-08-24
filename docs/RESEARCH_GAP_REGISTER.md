@@ -7,7 +7,7 @@
 | As-of date | 2026-08-24 |
 | Lifecycle status | Proposed |
 | Authority | Forensic research-audit record only |
-| Gate A membership | Gate A `1.1.1` governance-correction candidate with frozen public `1.1.0` predecessor; operator unaccepted |
+| Gate A membership | Gate A `1.1.2` documentation-and-continuity successor with frozen public `1.1.0` and `1.1.1` predecessors; operator unaccepted |
 | Gate B status | Not defined and not authorized |
 | Runtime authorization | False |
 
@@ -15,8 +15,8 @@ This register separates defects in the current semantic architecture from resear
 that belong only in a separately authorized future gate. It also separates public-distribution
 work from scientific evidence.
 
-The register records the audit basis for the frozen Gate A `1.1.0` packet and its narrow `1.1.1`
-governance-correction candidate. It does not itself amend a schema, manifest, validation plan,
+The register records the audit basis for the frozen Gate A `1.1.0` and published `1.1.1` packets
+plus their narrow `1.1.2` documentation-and-continuity successor. It does not itself amend a schema, manifest, validation plan,
 evidence index, validation report, or operator decision. External links use the evidence labels in
 [FRONTIER_BASELINE_2026.md](FRONTIER_BASELINE_2026.md). Every linked but unretained source is a
 discovery pointer, not retained evidence.
@@ -330,11 +330,12 @@ scientific publication remains outside Gate A authority.
 |---|---|
 | Priority | P0 |
 | Classification | **PUBLIC_RELEASE_PREREQUISITE** |
-| Status | Closed for frozen Gate A `1.1.0` by append-only receipt sequence 1; successor transport state is receipt-controlled |
+| Status | Closed for frozen Gate A `1.1.0` and `1.1.1` by append-only receipt sequences one and two; `1.1.2` transport remains unverified until a sequence-three receipt exists |
 | Historical state | At the initial read-only inspection, the repository had a configured origin but no HEAD commit, and all files were untracked. That observation is historical and does not describe the frozen public release. |
 | Frozen `1.1.0` state | The indexed packet is commit `aa5f9b9b455219536183630b0be1e801a18a575e`; the evidence-index digest is `sha256:91149ec8bfc9a3999ce95d8c18ce0d558cf974b0afb412a7ac11027c63056c7a`; and commit `68854b474f7c4ebd95cc79ced56411c2d5935f78` adds only the append-only public distribution receipt. |
 | Closure evidence | Receipt `reiyah.public-distribution-receipt.initial-publication`, sequence 1, binds the exact packet commit, index, inventory, rights observation, payloads, attribution, public remote, `main` ref, and verified readback. Its digest is `sha256:d805ad1bab46e087338fb3c7ac049f9c1e9edbbd782fa6960db1f8e3eca57139`. It creates no scientific or operator authority. |
-| `1.1.1` boundary | The indexed governance correction cannot contain its own later commit or remote readback. A valid successor receipt is the sole transport authority for its exact index; absence of that receipt means transport is unverified. Frozen `1.1.0` identities cannot serve as placeholders. |
+| Frozen `1.1.1` state | The governance-correction packet is commit `90072fb64f3c16cb5d0af0f1a3bcad56554707fa`, with index digest `sha256:308f65ba2693c13fa71d081dad3f74f56ec80617e97497a2606c0d88a07b2ceb` and report digest `sha256:76c0dcce583beb02b121776e14bc9df41833a26c5c49488270d96861b3e33806`. Receipt sequence two has digest `sha256:6156a35d3dfb2c4f0d46cbf48845867da6c942b69ed734a4056ae1e36910aa11`; commit `8f4ba9894faf257c46351b2a89fc17f112a988f1` adds that receipt only. |
+| `1.1.2` boundary | The documentation-and-continuity successor cannot contain its own later commit or remote readback. Only a valid sequence-three receipt may bind its exact index, report, fresh rights observation, packet commit, and remote readback. Frozen predecessor identities cannot serve as placeholders. |
 
 ## Residual unknowns
 
@@ -382,8 +383,8 @@ RGA-006 through RGA-018 are candidate prerequisites for later scientific work. T
 authorize or define Gate B.
 
 RGA-019 is closed for the exact public `1.1.0` evidence profile. RGA-020 is closed for the frozen
-`1.1.0` transport by append-only receipt sequence 1. Gate A `1.1.1` is a governance correction
-with the `1.1.0` mission, protocol, and evidence profile unchanged. Its sidecar and canonical
-report identify the exact review target; only a valid event-specific successor receipt can
-establish its later packet commit and remote readback. Neither receipt sequence 1 nor a successor
+`1.1.0` and `1.1.1` transports by append-only receipt sequences one and two. Gate A `1.1.2` is a
+documentation-and-continuity successor with the `1.1.0` mission, protocol, and evidence profile
+unchanged. Its sidecar and canonical report identify the exact review target; only a valid
+event-specific sequence-three receipt can establish its packet commit and remote readback. No
 receipt can alter GA-17 or turn omitted or URL-only source bytes into retained evidence.
