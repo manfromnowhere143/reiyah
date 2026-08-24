@@ -1,0 +1,150 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/public-rights-revalidation.schema.json",
+  "schema_version": "1.2.0",
+  "artifact_id": "reiyah.artifact.public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0",
+  "artifact_path": "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json",
+  "observation_id": "reiyah.public-rights-revalidation.event.gate-a-1.2.0-static-correction",
+  "version": "1.2.0",
+  "record_kind": "event_specific_public_rights_observation",
+  "distribution_event_id": "reiyah.distribution-event.gate-a-1.2.0-static-correction",
+  "prior_observation_ref": {
+    "artifact_id": "reiyah.artifact.public-rights-revalidation-2026-08-24-1.1.2",
+    "path": "evidence/public-rights-revalidation-2026-08-24-1.1.2.json",
+    "sha256": "sha256:9551b7ebb61adcafc83cab5cac29ad7bdaf93292daf739275a0d255f16f431e9",
+    "byte_size": 4964,
+    "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.2/public-rights-revalidation.schema.json",
+    "version": "1.1.2"
+  },
+  "observed_at": "2026-08-24T22:41:42Z",
+  "lifecycle_status": "proposed",
+  "purpose": "fresh_pre_distribution_observation_of_mutable_official_rights_pages",
+  "observer": {
+    "observer_id": "reiyah.observer.publication-preflight-2026-08-25",
+    "observer_kind": "untrusted_research_adapter",
+    "identity_authentication_state": "not_authenticated",
+    "authority": "observation_only_no_legal_distribution_operator_scientific_or_publication_authority"
+  },
+  "intended_distribution": {
+    "distribution_event_id": "reiyah.distribution-event.gate-a-1.2.0-static-correction",
+    "repository_url": "https://github.com/manfromnowhere143/reiyah",
+    "repository_ref": "refs/heads/main",
+    "candidate_git_commit": "86409473c8fd1571236c849a6cc730db896465fb",
+    "mission_release_id": "reiyah.mission@1.1.0",
+    "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+    "index_ref": {
+      "artifact_id": "reiyah.artifact.gate-a-index-1.2.0",
+      "path": "gate/GATE_A_EVIDENCE_INDEX.json",
+      "sha256": "sha256:b39a9bd02b3d86e32b95b988115243918d39b8fa7dea15012d90a0cb0f7c811a",
+      "byte_size": 397559,
+      "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/gate-a-index.schema.json",
+      "version": "1.2.0"
+    },
+    "validation_report_ref": {
+      "artifact_id": "reiyah.validation-report.gate-a-1.2.0",
+      "path": "gate/validation-reports/gate-a-validation-1.2.0.json",
+      "sha256": "sha256:79d6f3578630994c54cbe341e2c62b79fe4606b4645b85499bcb76f018ad1961",
+      "byte_size": 257357,
+      "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/validation-report.schema.json",
+      "version": "1.2.0"
+    }
+  },
+  "basis_observations": [
+    {
+      "basis_id": "rights.iso-open-data.odc-by-1.0",
+      "publisher": "International Organization for Standardization",
+      "official_url": "https://www.iso.org/open-data.html#iso_deliverables_metadata",
+      "page_scope": "ISO Deliverables Metadata license and attribution statement",
+      "observed_at": "2026-08-24T21:49:28Z",
+      "observation_mode": "adapter_observation_with_blocked_direct_attempt",
+      "retrieval_state": "adapter_visible_direct_http_blocked",
+      "observation_state": "consistent_with_recorded_inventory_basis",
+      "observation_completed_at": "2026-08-24T21:49:28Z",
+      "capture_manifest_ref": {
+        "artifact_id": "reiyah.artifact.rights-observation-capture-iso-open-data-gate-a-static-correction-1.2.0",
+        "path": "evidence/rights-observations/2026-08-25-iso-open-data-gate-a-static-correction-1.2.0.json",
+        "sha256": "sha256:e7cfb3a9955b9e3b657c0112f87ab5a10a6ae933157d2c360b8d938fd6f76603",
+        "byte_size": 5775,
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json",
+        "version": "1.2.0"
+      },
+      "observed_facts": [
+        "The adapter-visible ISO page identifies the ISO deliverables metadata dataset as licensed under the Open Data Commons Attribution 1.0 license.",
+        "The adapter-visible ISO page provides an attribution form for reuse of the ISO deliverables metadata dataset."
+      ],
+      "caveats": [
+        "The direct anonymous HTTP attempt returned 403; adapter crawl freshness, source bytes, raw authenticity, legal meaning, and authority remain unverified."
+      ],
+      "related_source_ids": [
+        "src.iso.26262-1.2018.open-data",
+        "src.iso.21448.2022.open-data",
+        "src.iso-tr.21959-1.2020.open-data",
+        "src.iso-pas.8800.2024.open-data"
+      ]
+    },
+    {
+      "basis_id": "rights.nist-technical-series-publications",
+      "publisher": "National Institute of Standards and Technology",
+      "official_url": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+      "page_scope": "NIST Technical Series Publications rights and citation statement",
+      "observed_at": "2026-08-24T21:49:11Z",
+      "observation_mode": "direct_http_metadata_digest",
+      "retrieval_state": "direct_http_reachable",
+      "observation_state": "unresolved_document_specific_caveat_payload_excluded",
+      "observation_completed_at": "2026-08-24T21:49:11Z",
+      "capture_manifest_ref": {
+        "artifact_id": "reiyah.artifact.rights-observation-capture-nist-technical-series-gate-a-static-correction-1.2.0",
+        "path": "evidence/rights-observations/2026-08-25-nist-technical-series-gate-a-static-correction-1.2.0.json",
+        "sha256": "sha256:35fe94563a8a5902df36307c4ee3537f5a956652e2bf918489f9b6107e31076f",
+        "byte_size": 5768,
+        "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/rights-observation-capture.schema.json",
+        "version": "1.2.0"
+      },
+      "observed_facts": [
+        "The observed NIST page describes a public reuse boundary for covered NIST employee-authored Technical Series material while reserving foreign rights.",
+        "The observed NIST page warns that some NIST-published works may have third-party authorship and may remain subject to copyright protection."
+      ],
+      "caveats": [
+        "The NIST pointer payloads remain excluded because this observation is not a document-specific rights review and creates no legal conclusion."
+      ],
+      "related_source_ids": [
+        "src.nist.ai-100-1.2023.pdf",
+        "src.nist.ai-100-1.2023.publication-page"
+      ]
+    }
+  ],
+  "covered_payload_source_ids": [
+    "src.iso.26262-1.2018.open-data",
+    "src.iso.21448.2022.open-data",
+    "src.iso-tr.21959-1.2020.open-data",
+    "src.iso-pas.8800.2024.open-data"
+  ],
+  "excluded_pointer_source_ids": [
+    "src.nist.ai-100-1.2023.pdf",
+    "src.nist.ai-100-1.2023.publication-page"
+  ],
+  "freshness_policy": {
+    "maximum_age_seconds": 3600,
+    "comparison": "zero_lte_published_at_minus_oldest_capture_completed_at_lte_maximum",
+    "new_observation_required_for_each_payload_distribution_event": true,
+    "clock": "UTC"
+  },
+  "all_included_payloads_covered": true,
+  "preflight_outcome": "eligible_payload_basis_observed_pointer_payloads_excluded",
+  "distribution_authorization_created": false,
+  "qualified_legal_review_performed": false,
+  "legal_conclusion_created": false,
+  "gate_a_acceptance_conferred": false,
+  "ga17_status": "not_evaluated",
+  "scientific_publication_acceptance_conferred": false,
+  "scientific_support_claimed": false,
+  "compliance_claimed": false,
+  "runtime_execution_authorized": false,
+  "limitations": [
+    "This record retains an observation of mutable official pages and is not a qualified legal review or legal conclusion.",
+    "This record creates no distribution authorization and cannot replace event-specific operator instruction.",
+    "This record does not accept Gate A, evaluate GA-17, or establish scientific support, standards compliance, safety, readiness, performance, causality, or superiority.",
+    "This record is not transport verification or publication acceptance.",
+    "This record authorizes no runtime, cloud execution, deployment, private-data ingestion, model execution, or physical control.",
+    "The bound capture artifacts retain mode-dependent attempt metadata, any explicitly unretained measurement values, and bounded paraphrases only; they do not retain official response bodies and cannot independently prove authenticity, source content, or legal effect."
+  ]
+}
