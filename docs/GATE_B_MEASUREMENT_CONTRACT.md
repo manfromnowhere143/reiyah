@@ -59,6 +59,10 @@ Full transcripts are retained under `evidence/measurement/`. The tooling is at `
 | G | derived | Required validation evidence scales as the square root of the lift, so the real cost is about 26% more evidence, not 59%. |
 | H | measured | Across six detector pairs and three lidar architectures, same-modality and cross-modality pairs separate completely. Joint-failure odds rise with the accuracy of both models. |
 
+A seventh correction arrived later and is the most substantive: the measurements record
+both-channel misses, not joint *silent* misses, which are not establishable from a source that
+observes no warning and no fallback. See [`CONTRACT_CAUGHT_AN_ERROR.md`](CONTRACT_CAUGHT_AN_ERROR.md).
+
 Six claims were withdrawn or corrected during this work. Every one made the result smaller. They
 are retained with their refutations attached rather than deleted.
 

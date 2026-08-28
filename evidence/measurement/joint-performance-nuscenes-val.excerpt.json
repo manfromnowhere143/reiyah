@@ -341,7 +341,7 @@
     "value": 60063
    }
   },
-  "identifiability": "identified_from_common_opportunities",
+  "identifiability": "nonidentifiable_unknown",
   "opportunities": {
    "state": "observed",
    "value": 134565
@@ -355,12 +355,18 @@
    "value": 45741
   },
   "joint_misses": {
-   "state": "observed",
-   "value": 33711
+   "state": "unmeasured",
+   "reason": "silent joint miss requires warning not_issued and fallback not_activated; this source observes neither, so the count of SILENT joint misses is not establishable. The count of both-channel misses is observed and is carried in common_opportunity_cells.both_miss",
+   "basis_ids": [
+    "reiyah.basis.nuscenes-detection-benchmark-scope"
+   ]
   },
   "joint_miss_risk": {
-   "state": "observed",
-   "value": 0.250518336863
+   "state": "unmeasured",
+   "reason": "derived from joint_misses, which is not establishable from this source",
+   "basis_ids": [
+    "reiyah.basis.nuscenes-detection-benchmark-scope"
+   ]
   }
  },
  "selective_evaluation": {
@@ -405,5 +411,5 @@
    "reiyah.basis.gate-a-1.2-evidence-gap-envelope"
   ]
  },
- "_excerpt_note": "first 3 of 134,565 opportunity rows. The full record is 235 MB and is reproducible with tools/measure/build_joint_record.py; only the excerpt and the validation transcript are retained here."
+ "_excerpt_note": "first 3 of 134,565 opportunity rows. Full record is 235 MB and is reproducible with tools/measure/build_joint_record.py."
 }

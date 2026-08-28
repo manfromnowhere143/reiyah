@@ -183,12 +183,28 @@ record = {
             "first_only_miss": {"state": "observed", "value": f_only},
             "second_only_miss": {"state": "observed", "value": s_only},
             "neither_miss": {"state": "observed", "value": neither}},
-        "identifiability": "identified_from_common_opportunities",
+        # A joint miss is SILENT only when both channels miss AND no warning was
+        # issued AND no fallback activated. This source observes neither warning
+        # nor fallback, so silence is not establishable and the silent-miss
+        # summary is nonidentifiable. both_miss is measured; silent joint miss
+        # is not. Conflating them was our error, caught by the semantic contract
+        # after JSON Schema had passed the record.
+        "identifiability": "nonidentifiable_unknown",
         "opportunities": {"state": "observed", "value": n},
         "first_misses": {"state": "observed", "value": both + f_only},
         "second_misses": {"state": "observed", "value": both + s_only},
-        "joint_misses": {"state": "observed", "value": both},
-        "joint_miss_risk": {"state": "observed", "value": round(both / n, 12)},
+        "joint_misses": {
+            "state": "unmeasured",
+            "reason": ("silent joint miss requires warning not_issued and fallback "
+                       "not_activated; this source observes neither, so the count of "
+                       "SILENT joint misses is not establishable. The count of "
+                       "both-channel misses is observed and is carried in "
+                       "common_opportunity_cells.both_miss"),
+            "basis_ids": ["reiyah.basis.nuscenes-detection-benchmark-scope"]},
+        "joint_miss_risk": {
+            "state": "unmeasured",
+            "reason": "derived from joint_misses, which is not establishable from this source",
+            "basis_ids": ["reiyah.basis.nuscenes-detection-benchmark-scope"]},
     },
 }
 

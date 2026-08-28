@@ -1,11 +1,17 @@
-v1.3 SCHEMA VALIDATION OF A REAL MEASURED RECORD
-opportunity rows : 134,565
-validated in     : 107.2s
-ERRORS           : 0
+STRUCTURAL VALIDATION, schemas/v1.3
+  opportunity rows : 134,565
+  validated in     : 109.3s
+  errors           : 0
 
-VALID. cells reconcile:
-  both=33,711 first_only=28,761 second_only=12,030 neither=60,063
-  sum=134,565 == opportunities=134,565 -> True
-  first_misses  = 62,472  == both+first_only -> True
-  second_misses = 45,741 == both+second_only -> True
-  joint_miss_risk = 0.250518
+SEMANTIC STATE, after the correction the contract forced
+  identifiability  : nonidentifiable_unknown
+  joint_misses     : unmeasured
+  joint_miss_risk  : unmeasured
+  cells            : both=33,711 first_only=28,761 second_only=12,030 neither=60,063
+  cells sum        : 134,565 == opportunities 134,565 -> True
+  first_misses     : 62,472 == both+first_only -> True
+  second_misses    : 45,741 == both+second_only -> True
+
+  both_miss is MEASURED. silent joint miss is NOT ESTABLISHABLE from this
+  source, because neither warning issuance nor fallback activation is
+  observed. The two are different quantities and were conflated.
