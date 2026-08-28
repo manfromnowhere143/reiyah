@@ -104,7 +104,7 @@ for a in tables["sample_annotation.json"]:
 
 NF = sum(full.values()); NR = sum(removed.values()); NE = NF - NR
 print("=" * 82)
-print("RESULT B — recall inflation granted to a lidar-only detector")
+print("RESULT B - recall inflation granted to a lidar-only detector")
 print("nuScenes v1.0-trainval, official val split, post class-range filter")
 print("=" * 82)
 print(f"\nAnnotated and in range (N_full)      : {NF:,}")

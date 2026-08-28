@@ -103,7 +103,7 @@ KEYS = [
 ]
 
 print("=" * 88)
-print("RESULT E — does the dependence survive conditioning on scene difficulty?")
+print("RESULT E - does the dependence survive conditioning on scene difficulty?")
 print("stratified on observable difficulty covariates; FULL denominator")
 print("=" * 88)
 print("\nc_strat = sum(observed joint) / sum(within-stratum expected joint)")

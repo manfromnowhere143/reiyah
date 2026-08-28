@@ -83,7 +83,7 @@ MODALITY = {"mapillary": "camera", "megvii": "lidar", "pointpillars": "lidar",
 MAP = {"mapillary": 29.8, "megvii": 51.9, "pointpillars": 29.5, "centerpoint": 61.6}
 
 print("=" * 90)
-print("RESULT H — does modality diversity buy failure independence?")
+print("RESULT H - does modality diversity buy failure independence?")
 print(f"pairwise lift between published nuScenes detectors, val split, score >= {THR}")
 print("=" * 90)
 print(f"\n{'pair':<28}{'modalities':<20}{'marginal c':>12}{'cond. c':>10}"

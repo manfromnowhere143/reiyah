@@ -49,7 +49,7 @@ def n_examples(c, target=TARGET):
 
 base = n_examples(1.0)
 print("=" * 86)
-print("RESULT G — the evidence cost of the measured dependence")
+print("RESULT G - the evidence cost of the measured dependence")
 print("RSS Corollary 3:  P <= 6 c p^2   ->   N ~ sqrt(6c/P)   ->   N proportional to sqrt(c)")
 print("=" * 86)
 print(f"\nRSS's own worked example, target P = 1e-9, assuming independence (c = 1):")

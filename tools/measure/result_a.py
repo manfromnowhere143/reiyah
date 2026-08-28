@@ -121,7 +121,7 @@ for a in tables["sample_annotation.json"]:
 
 T = sum(surv.values()); K = sum(killed.values())
 print("\n" + "=" * 78)
-print("RESULT A (exact) — GT deleted by nuscenes-devkit loaders.py:231")
+print("RESULT A (exact) - GT deleted by nuscenes-devkit loaders.py:231")
 print("nuScenes v1.0-trainval, official val split, official filter ORDER")
 print("=" * 78)
 print(f"\nVal annotations in the 10 evaluated classes : {n_in_class:,}")

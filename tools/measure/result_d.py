@@ -70,7 +70,7 @@ ALL = list(range(len(gt)))
 OFFICIAL = [i for i in ALL if gt[i]["nl"] + gt[i]["nr"] > 0]
 
 print("=" * 84)
-print("RESULT D — joint camera/lidar miss, and the RSS coefficient c")
+print("RESULT D - joint camera/lidar miss, and the RSS coefficient c")
 print("camera-only: Mapillary MonoDIS 29.8 mAP | lidar-only: Megvii CBGS 51.9 mAP")
 print("nuScenes val, matched at 2.0 m by a matcher validated against published mAP")
 print("=" * 84)
