@@ -1,0 +1,409 @@
+{
+ "schema_id": "https://schemas.reiyah.invalid/scientific-contract/1.3.0/joint-performance-evaluation.schema.json",
+ "schema_version": "1.3.0",
+ "artifact_id": "reiyah.artifact.joint-performance-nuscenes-val-camera-lidar",
+ "record_kind": "result",
+ "version": "0.1.0",
+ "lifecycle_status": "proposed",
+ "lifecycle_history": [
+  {
+   "event_id": "reiyah.event.joint-performance-nuscenes-val-camera-lidar.proposed",
+   "sequence": 1,
+   "prior_status": null,
+   "status": "proposed",
+   "recorded_at": "2026-08-28T00:00:00Z",
+   "actor": {
+    "actor_id": "reiyah.actor.gate-b-measurement",
+    "actor_type": "derived_process",
+    "version": "1.3.0",
+    "role": "deterministic offline measurement over published artifacts"
+   },
+   "rationale": "first application of a Reiyah scientific contract to measured data rather than to a synthetic fixture",
+   "evidence_refs": [],
+   "prior_artifact": null
+  }
+ ],
+ "protocol_release_id": "reiyah.protocol.harbor-gate-a@1.2.0",
+ "mission_release_id": "reiyah.mission@1.1.0",
+ "created_at": "2026-08-28T00:00:00Z",
+ "runtime_execution_authorized": false,
+ "scientific_claim_authorized": false,
+ "evaluation_id": "reiyah.evaluation.nuscenes-val-camera-lidar-joint-miss",
+ "study_ref": {
+  "state": "unmeasured",
+  "reason": "no authorized study exists; this is a secondary analysis of published artifacts",
+  "basis_ids": [
+   "reiyah.basis.gate-b-measurement-contract"
+  ]
+ },
+ "dataset_ref": {
+  "record_id": "reiyah.dataset.nuscenes-v1.0-trainval-val-split",
+  "record_kind": "reiyah.kind.dataset_release",
+  "version": "1.3.0"
+ },
+ "odd_ref": {
+  "state": "unmeasured",
+  "reason": "the source declares no operational design domain",
+  "basis_ids": [
+   "reiyah.basis.nuscenes-detection-benchmark-scope"
+  ]
+ },
+ "benchmark_ref": {
+  "record_id": "reiyah.benchmark.nuscenes-detection-cvpr-2019",
+  "record_kind": "reiyah.kind.benchmark_release",
+  "version": "1.3.0"
+ },
+ "joint_silent_miss": {
+  "estimand_ref": {
+   "record_id": "reiyah.estimand.joint-silent-miss-rate",
+   "record_kind": "reiyah.kind.estimand_definition",
+   "version": "1.3.0"
+  },
+  "opportunity_rule_ref": {
+   "rule_id": "reiyah.rule.nuscenes-annotated-object-in-class-range",
+   "rule_kind": "reiyah.kind.opportunity_rule",
+   "version": "1.3.0"
+  },
+  "opportunity_set_ref": {
+   "record_id": "reiyah.opportunity-set.nuscenes-val-in-range",
+   "record_kind": "reiyah.kind.opportunity_set",
+   "version": "1.3.0"
+  },
+  "opportunity_window": {
+   "clock_id": "reiyah.clock.nuscenes-sample-utc",
+   "window_id": "reiyah.window.nuscenes-val-keyframe",
+   "opened_at": "2018-07-11T03:57:19.800Z",
+   "closed_at": "2018-11-21T11:29:21.947Z"
+  },
+  "channel_contract": {
+   "first": {
+    "role": "machine_perception",
+    "channel_ref": {
+     "record_id": "reiyah.channel.nuscenes.mapillary-monodis-camera",
+     "record_kind": "reiyah.kind.observation_channel",
+     "version": "1.3.0"
+    }
+   },
+   "second": {
+    "role": "machine_perception",
+    "channel_ref": {
+     "record_id": "reiyah.channel.nuscenes.megvii-cbgs-lidar",
+     "record_kind": "reiyah.kind.observation_channel",
+     "version": "1.3.0"
+    }
+   }
+  },
+  "opportunity_rows": [
+   {
+    "opportunity_id": "reiyah.opportunity.nuscenes-val.052426c1584d4ed5b45cfeaf77ee1656",
+    "object_ref": {
+     "record_id": "reiyah.object.nuscenes.052426c1584d4ed5b45cfeaf77ee1656",
+     "record_kind": "reiyah.kind.annotated_road_object",
+     "version": "1.3.0"
+    },
+    "clock_id": "reiyah.clock.nuscenes-sample-utc",
+    "window_id": "reiyah.window.nuscenes-val-keyframe",
+    "occurred_at": {
+     "state": "observed",
+     "value": "2018-08-02T09:17:52.898Z"
+    },
+    "reference_state": {
+     "state": "observed",
+     "value": "opportunity_present"
+    },
+    "reference_validity": {
+     "state": "observed",
+     "value": "valid"
+    },
+    "channels": [
+     {
+      "channel_ref": {
+       "record_id": "reiyah.channel.nuscenes.mapillary-monodis-camera",
+       "record_kind": "reiyah.kind.observation_channel",
+       "version": "1.3.0"
+      },
+      "role": "machine_perception",
+      "outcome": {
+       "state": "observed",
+       "value": "detected"
+      }
+     },
+     {
+      "channel_ref": {
+       "record_id": "reiyah.channel.nuscenes.megvii-cbgs-lidar",
+       "record_kind": "reiyah.kind.observation_channel",
+       "version": "1.3.0"
+      },
+      "role": "machine_perception",
+      "outcome": {
+       "state": "observed",
+       "value": "detected"
+      }
+     }
+    ],
+    "warning": {
+     "rule_ref": {
+      "rule_id": "reiyah.rule.no-warning-channel-in-source",
+      "rule_kind": "reiyah.kind.event_rule",
+      "version": "1.3.0"
+     },
+     "outcome": {
+      "state": "unmeasured",
+      "reason": "the source is an offline detection benchmark; it contains no warning-issuing subsystem, so warning issuance is unmeasured rather than not_issued",
+      "basis_ids": [
+       "reiyah.basis.nuscenes-detection-benchmark-scope"
+      ]
+     }
+    },
+    "fallback": {
+     "rule_ref": {
+      "rule_id": "reiyah.rule.no-fallback-procedure-in-source",
+      "rule_kind": "reiyah.kind.event_rule",
+      "version": "1.3.0"
+     },
+     "outcome": {
+      "state": "unmeasured",
+      "reason": "the source is an offline detection benchmark; it contains no fallback procedure, so activation is unmeasured rather than not_activated",
+      "basis_ids": [
+       "reiyah.basis.nuscenes-detection-benchmark-scope"
+      ]
+     }
+    }
+   },
+   {
+    "opportunity_id": "reiyah.opportunity.nuscenes-val.7c1efbbfdfb4466e856ac66d039c4ef1",
+    "object_ref": {
+     "record_id": "reiyah.object.nuscenes.7c1efbbfdfb4466e856ac66d039c4ef1",
+     "record_kind": "reiyah.kind.annotated_road_object",
+     "version": "1.3.0"
+    },
+    "clock_id": "reiyah.clock.nuscenes-sample-utc",
+    "window_id": "reiyah.window.nuscenes-val-keyframe",
+    "occurred_at": {
+     "state": "observed",
+     "value": "2018-08-02T09:18:07.798Z"
+    },
+    "reference_state": {
+     "state": "observed",
+     "value": "opportunity_present"
+    },
+    "reference_validity": {
+     "state": "observed",
+     "value": "valid"
+    },
+    "channels": [
+     {
+      "channel_ref": {
+       "record_id": "reiyah.channel.nuscenes.mapillary-monodis-camera",
+       "record_kind": "reiyah.kind.observation_channel",
+       "version": "1.3.0"
+      },
+      "role": "machine_perception",
+      "outcome": {
+       "state": "observed",
+       "value": "miss"
+      }
+     },
+     {
+      "channel_ref": {
+       "record_id": "reiyah.channel.nuscenes.megvii-cbgs-lidar",
+       "record_kind": "reiyah.kind.observation_channel",
+       "version": "1.3.0"
+      },
+      "role": "machine_perception",
+      "outcome": {
+       "state": "observed",
+       "value": "detected"
+      }
+     }
+    ],
+    "warning": {
+     "rule_ref": {
+      "rule_id": "reiyah.rule.no-warning-channel-in-source",
+      "rule_kind": "reiyah.kind.event_rule",
+      "version": "1.3.0"
+     },
+     "outcome": {
+      "state": "unmeasured",
+      "reason": "the source is an offline detection benchmark; it contains no warning-issuing subsystem, so warning issuance is unmeasured rather than not_issued",
+      "basis_ids": [
+       "reiyah.basis.nuscenes-detection-benchmark-scope"
+      ]
+     }
+    },
+    "fallback": {
+     "rule_ref": {
+      "rule_id": "reiyah.rule.no-fallback-procedure-in-source",
+      "rule_kind": "reiyah.kind.event_rule",
+      "version": "1.3.0"
+     },
+     "outcome": {
+      "state": "unmeasured",
+      "reason": "the source is an offline detection benchmark; it contains no fallback procedure, so activation is unmeasured rather than not_activated",
+      "basis_ids": [
+       "reiyah.basis.nuscenes-detection-benchmark-scope"
+      ]
+     }
+    }
+   },
+   {
+    "opportunity_id": "reiyah.opportunity.nuscenes-val.84208d6cf7084cfb8ac53d9debc13937",
+    "object_ref": {
+     "record_id": "reiyah.object.nuscenes.84208d6cf7084cfb8ac53d9debc13937",
+     "record_kind": "reiyah.kind.annotated_road_object",
+     "version": "1.3.0"
+    },
+    "clock_id": "reiyah.clock.nuscenes-sample-utc",
+    "window_id": "reiyah.window.nuscenes-val-keyframe",
+    "occurred_at": {
+     "state": "observed",
+     "value": "2018-08-02T09:17:57.948Z"
+    },
+    "reference_state": {
+     "state": "observed",
+     "value": "opportunity_present"
+    },
+    "reference_validity": {
+     "state": "observed",
+     "value": "valid"
+    },
+    "channels": [
+     {
+      "channel_ref": {
+       "record_id": "reiyah.channel.nuscenes.mapillary-monodis-camera",
+       "record_kind": "reiyah.kind.observation_channel",
+       "version": "1.3.0"
+      },
+      "role": "machine_perception",
+      "outcome": {
+       "state": "observed",
+       "value": "detected"
+      }
+     },
+     {
+      "channel_ref": {
+       "record_id": "reiyah.channel.nuscenes.megvii-cbgs-lidar",
+       "record_kind": "reiyah.kind.observation_channel",
+       "version": "1.3.0"
+      },
+      "role": "machine_perception",
+      "outcome": {
+       "state": "observed",
+       "value": "detected"
+      }
+     }
+    ],
+    "warning": {
+     "rule_ref": {
+      "rule_id": "reiyah.rule.no-warning-channel-in-source",
+      "rule_kind": "reiyah.kind.event_rule",
+      "version": "1.3.0"
+     },
+     "outcome": {
+      "state": "unmeasured",
+      "reason": "the source is an offline detection benchmark; it contains no warning-issuing subsystem, so warning issuance is unmeasured rather than not_issued",
+      "basis_ids": [
+       "reiyah.basis.nuscenes-detection-benchmark-scope"
+      ]
+     }
+    },
+    "fallback": {
+     "rule_ref": {
+      "rule_id": "reiyah.rule.no-fallback-procedure-in-source",
+      "rule_kind": "reiyah.kind.event_rule",
+      "version": "1.3.0"
+     },
+     "outcome": {
+      "state": "unmeasured",
+      "reason": "the source is an offline detection benchmark; it contains no fallback procedure, so activation is unmeasured rather than not_activated",
+      "basis_ids": [
+       "reiyah.basis.nuscenes-detection-benchmark-scope"
+      ]
+     }
+    }
+   }
+  ],
+  "common_opportunity_cells": {
+   "both_miss": {
+    "state": "observed",
+    "value": 33711
+   },
+   "first_only_miss": {
+    "state": "observed",
+    "value": 28761
+   },
+   "second_only_miss": {
+    "state": "observed",
+    "value": 12030
+   },
+   "neither_miss": {
+    "state": "observed",
+    "value": 60063
+   }
+  },
+  "identifiability": "identified_from_common_opportunities",
+  "opportunities": {
+   "state": "observed",
+   "value": 134565
+  },
+  "first_misses": {
+   "state": "observed",
+   "value": 62472
+  },
+  "second_misses": {
+   "state": "observed",
+   "value": 45741
+  },
+  "joint_misses": {
+   "state": "observed",
+   "value": 33711
+  },
+  "joint_miss_risk": {
+   "state": "observed",
+   "value": 0.250518336863
+  }
+ },
+ "selective_evaluation": {
+  "state": "unmeasured",
+  "reason": "selective_evaluation is out of scope for this record, which measures joint misses only",
+  "basis_ids": [
+   "reiyah.basis.gate-b-measurement-contract"
+  ]
+ },
+ "ood_evaluation": {
+  "state": "unmeasured",
+  "reason": "ood_evaluation is out of scope for this record, which measures joint misses only",
+  "basis_ids": [
+   "reiyah.basis.gate-b-measurement-contract"
+  ]
+ },
+ "conformal_evaluation": {
+  "state": "unmeasured",
+  "reason": "conformal_evaluation is out of scope for this record, which measures joint misses only",
+  "basis_ids": [
+   "reiyah.basis.gate-b-measurement-contract"
+  ]
+ },
+ "transfer_evaluation": {
+  "state": "unmeasured",
+  "reason": "transfer_evaluation is out of scope for this record, which measures joint misses only",
+  "basis_ids": [
+   "reiyah.basis.gate-b-measurement-contract"
+  ]
+ },
+ "worst_group_evaluation": {
+  "state": "unmeasured",
+  "reason": "worst_group_evaluation is out of scope for this record, which measures joint misses only",
+  "basis_ids": [
+   "reiyah.basis.gate-b-measurement-contract"
+  ]
+ },
+ "evidence_binding": {
+  "state": "unmeasured",
+  "reason": "Gate A 1.2 exposes only an explicit evidence-gap binding and has no eligible scientific-evidence resolver; this record therefore binds no evidence object",
+  "basis_ids": [
+   "reiyah.basis.gate-a-1.2-evidence-gap-envelope"
+  ]
+ },
+ "_excerpt_note": "first 3 of 134,565 opportunity rows. The full record is 235 MB and is reproducible with tools/measure/build_joint_record.py; only the excerpt and the validation transcript are retained here."
+}

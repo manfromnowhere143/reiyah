@@ -32,6 +32,7 @@ for m in tar:
 cat = {c["token"]: c["name"] for c in t["category.json"]}
 inst = {i["token"]: cat[i["category_token"]] for i in t["instance.json"]}
 samp = {s["token"]: s["scene_token"] for s in t["sample.json"]}
+samp_ts = {s["token"]: s["timestamp"] for s in t["sample.json"]}   # microseconds UTC
 scn = {s["token"]: s["name"] for s in t["scene.json"]}
 desc = {s["token"]: s.get("description", "") for s in t["scene.json"]}
 vis = {v["token"]: v["level"] for v in t["visibility.json"]}
@@ -75,7 +76,9 @@ for a in t["sample_annotation.json"]:
     dsc = desc[st].lower()
     out.append({
         "sample_token": a["sample_token"],
+        "ts_us": samp_ts[a["sample_token"]],
         "instance_token": a["instance_token"],
+        "ann_token": a["token"],
         "cls": d,
         "raw_cls": inst[a["instance_token"]],
         "xy": [tr[0], tr[1]],

@@ -1,0 +1,893 @@
+{
+  "$defs": {
+    "absentIdentifier": {
+      "additionalProperties": false,
+      "properties": {
+        "reason": {
+          "enum": [
+            "no_qualifying_event",
+            "input_nonobserved",
+            "window_incomplete",
+            "invalid_window",
+            "ambiguous_event_tie"
+          ]
+        },
+        "state": {
+          "const": "absent"
+        }
+      },
+      "required": [
+        "state",
+        "reason"
+      ],
+      "type": "object"
+    },
+    "actorReference": {
+      "additionalProperties": false,
+      "properties": {
+        "actor_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "actor_type": {
+          "enum": [
+            "human",
+            "automation_system",
+            "organization",
+            "software",
+            "model",
+            "instrument",
+            "derived_process",
+            "external_source"
+          ]
+        },
+        "role": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "$ref": "#/$defs/semanticVersion"
+        }
+      },
+      "required": [
+        "actor_id",
+        "actor_type",
+        "version",
+        "role"
+      ],
+      "type": "object"
+    },
+    "artifactReference": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "artifact_kind": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "byte_size": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256Digest"
+        },
+        "version": {
+          "$ref": "#/$defs/semanticVersion"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "artifact_kind",
+        "version",
+        "path",
+        "sha256",
+        "byte_size"
+      ],
+      "type": "object"
+    },
+    "assumptionAssessment": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "disposition": {
+                "enum": [
+                  "established",
+                  "contradicted"
+                ]
+              }
+            },
+            "required": [
+              "disposition"
+            ]
+          },
+          "then": {
+            "properties": {
+              "evidence_refs": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ],
+      "properties": {
+        "assumption_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "disposition": {
+          "enum": [
+            "established",
+            "contradicted",
+            "unmeasured",
+            "not_applicable"
+          ]
+        },
+        "evidence_refs": {
+          "items": {
+            "$ref": "#/$defs/assumptionEvidence"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "rationale": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      },
+      "required": [
+        "assumption_id",
+        "disposition",
+        "rationale",
+        "evidence_refs"
+      ],
+      "type": "object"
+    },
+    "assumptionEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "eligibility": {
+          "enum": [
+            "eligible",
+            "ineligible",
+            "unknown"
+          ]
+        },
+        "evidence_ref": {
+          "$ref": "#/$defs/versionedReference"
+        },
+        "independence": {
+          "enum": [
+            "independent",
+            "self_authored",
+            "unknown"
+          ]
+        },
+        "retained_source_eligible": {
+          "type": "boolean"
+        },
+        "scope_match": {
+          "$ref": "#/$defs/booleanMeasurement"
+        },
+        "supports_disposition": {
+          "enum": [
+            "established",
+            "contradicted",
+            "none"
+          ]
+        }
+      },
+      "required": [
+        "evidence_ref",
+        "eligibility",
+        "independence",
+        "scope_match",
+        "retained_source_eligible",
+        "supports_disposition"
+      ],
+      "type": "object"
+    },
+    "booleanMeasurement": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/observedBoolean"
+        },
+        {
+          "$ref": "#/$defs/nonObservedMeasurement"
+        }
+      ]
+    },
+    "coverageCounts": {
+      "additionalProperties": false,
+      "properties": {
+        "abstained": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "missing": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "observed": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "out_of_distribution": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sensor_invalid": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "total": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "unmeasured": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "total",
+        "observed",
+        "missing",
+        "unmeasured",
+        "out_of_distribution",
+        "sensor_invalid",
+        "abstained"
+      ],
+      "type": "object"
+    },
+    "epistemicState": {
+      "enum": [
+        "observed",
+        "missing",
+        "unmeasured",
+        "out_of_distribution",
+        "sensor_invalid",
+        "abstained"
+      ]
+    },
+    "evidenceGapBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_refs": {
+          "maxItems": 0,
+          "type": "array"
+        },
+        "gap_reason": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "state": {
+          "const": "evidence_gap"
+        }
+      },
+      "required": [
+        "state",
+        "evidence_refs",
+        "gap_reason"
+      ],
+      "type": "object"
+    },
+    "identifierMeasurement": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/observedIdentifier"
+        },
+        {
+          "$ref": "#/$defs/nonObservedMeasurement"
+        }
+      ]
+    },
+    "identifierOrAbsentMeasurement": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/identifierMeasurement"
+        },
+        {
+          "$ref": "#/$defs/absentIdentifier"
+        }
+      ]
+    },
+    "informationSet": {
+      "additionalProperties": false,
+      "properties": {
+        "complete_as_declared": {
+          "const": true
+        },
+        "frozen_at": {
+          "$ref": "#/$defs/utcTimestamp"
+        },
+        "information_set_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/$defs/versionedReference"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "post_freeze_additions_prohibited": {
+          "const": true
+        },
+        "version": {
+          "const": "1.3.0"
+        }
+      },
+      "required": [
+        "information_set_id",
+        "version",
+        "frozen_at",
+        "items",
+        "complete_as_declared",
+        "post_freeze_additions_prohibited"
+      ],
+      "type": "object"
+    },
+    "integerMeasurement": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/observedInteger"
+        },
+        {
+          "$ref": "#/$defs/nonObservedMeasurement"
+        }
+      ]
+    },
+    "lifecycleEvent": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "else": {
+            "properties": {
+              "prior_artifact": {
+                "$ref": "#/$defs/artifactReference"
+              },
+              "prior_status": {
+                "$ref": "#/$defs/lifecycleStatus"
+              }
+            }
+          },
+          "if": {
+            "properties": {
+              "sequence": {
+                "const": 1
+              }
+            },
+            "required": [
+              "sequence"
+            ]
+          },
+          "then": {
+            "properties": {
+              "prior_artifact": {
+                "type": "null"
+              },
+              "prior_status": {
+                "type": "null"
+              },
+              "status": {
+                "const": "proposed"
+              }
+            }
+          }
+        }
+      ],
+      "properties": {
+        "actor": {
+          "$ref": "#/$defs/actorReference"
+        },
+        "event_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "evidence_refs": {
+          "items": {
+            "$ref": "#/$defs/versionedReference"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "prior_artifact": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/artifactReference"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "prior_status": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/lifecycleStatus"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rationale": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/utcTimestamp"
+        },
+        "sequence": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "status": {
+          "$ref": "#/$defs/lifecycleStatus"
+        }
+      },
+      "required": [
+        "event_id",
+        "sequence",
+        "prior_status",
+        "status",
+        "recorded_at",
+        "actor",
+        "rationale",
+        "evidence_refs",
+        "prior_artifact"
+      ],
+      "type": "object"
+    },
+    "lifecycleStatus": {
+      "enum": [
+        "proposed",
+        "exploratory",
+        "preregistered",
+        "running",
+        "blocked",
+        "invalid",
+        "null",
+        "inconclusive",
+        "failed",
+        "supported",
+        "contradicted",
+        "replicated",
+        "corrected",
+        "retracted"
+      ]
+    },
+    "nonEmptyString": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "nonNegativeNumberMeasurement": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/observedNonNegativeNumber"
+        },
+        {
+          "$ref": "#/$defs/nonObservedMeasurement"
+        }
+      ]
+    },
+    "nonObservedMeasurement": {
+      "additionalProperties": false,
+      "properties": {
+        "basis_ids": {
+          "items": {
+            "$ref": "#/$defs/stableIdentifier"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "reason": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "state": {
+          "$ref": "#/$defs/nonObservedState"
+        }
+      },
+      "required": [
+        "state",
+        "reason",
+        "basis_ids"
+      ],
+      "type": "object"
+    },
+    "nonObservedState": {
+      "enum": [
+        "missing",
+        "unmeasured",
+        "out_of_distribution",
+        "sensor_invalid",
+        "abstained"
+      ]
+    },
+    "numberMeasurement": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/observedNumber"
+        },
+        {
+          "$ref": "#/$defs/nonObservedMeasurement"
+        }
+      ]
+    },
+    "observedBoolean": {
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "const": "observed"
+        },
+        "value": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "state",
+        "value"
+      ],
+      "type": "object"
+    },
+    "observedIdentifier": {
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "const": "observed"
+        },
+        "value": {
+          "$ref": "#/$defs/stableIdentifier"
+        }
+      },
+      "required": [
+        "state",
+        "value"
+      ],
+      "type": "object"
+    },
+    "observedInteger": {
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "const": "observed"
+        },
+        "value": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "state",
+        "value"
+      ],
+      "type": "object"
+    },
+    "observedNonNegativeNumber": {
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "const": "observed"
+        },
+        "unit": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "value": {
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "state",
+        "value"
+      ],
+      "type": "object"
+    },
+    "observedNumber": {
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "const": "observed"
+        },
+        "unit": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "value": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "state",
+        "value"
+      ],
+      "type": "object"
+    },
+    "observedProbability": {
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "const": "observed"
+        },
+        "value": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "state",
+        "value"
+      ],
+      "type": "object"
+    },
+    "observedString": {
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "const": "observed"
+        },
+        "value": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      },
+      "required": [
+        "state",
+        "value"
+      ],
+      "type": "object"
+    },
+    "observedTimestamp": {
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "const": "observed"
+        },
+        "value": {
+          "$ref": "#/$defs/utcTimestamp"
+        }
+      },
+      "required": [
+        "state",
+        "value"
+      ],
+      "type": "object"
+    },
+    "probabilityMeasurement": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/observedProbability"
+        },
+        {
+          "$ref": "#/$defs/nonObservedMeasurement"
+        }
+      ]
+    },
+    "recordHeader": {
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "created_at": {
+          "$ref": "#/$defs/utcTimestamp"
+        },
+        "lifecycle_history": {
+          "items": {
+            "$ref": "#/$defs/lifecycleEvent"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "lifecycle_status": {
+          "$ref": "#/$defs/lifecycleStatus"
+        },
+        "protocol_release_id": {
+          "const": "reiyah.protocol.harbor-gate-a@1.2.0"
+        },
+        "record_kind": {
+          "enum": [
+            "evidence",
+            "experiment",
+            "result"
+          ]
+        },
+        "runtime_execution_authorized": {
+          "const": false
+        },
+        "schema_id": {
+          "format": "uri",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "1.3.0"
+        },
+        "version": {
+          "$ref": "#/$defs/semanticVersion"
+        }
+      },
+      "required": [
+        "schema_id",
+        "schema_version",
+        "artifact_id",
+        "record_kind",
+        "version",
+        "lifecycle_status",
+        "lifecycle_history",
+        "protocol_release_id",
+        "created_at",
+        "runtime_execution_authorized"
+      ],
+      "type": "object"
+    },
+    "relativePath": {
+      "maxLength": 512,
+      "minLength": 1,
+      "not": {
+        "pattern": "(^|/)\\.\\.?(/|$)"
+      },
+      "pattern": "^[.A-Za-z0-9][A-Za-z0-9._/-]*$",
+      "type": "string"
+    },
+    "releaseIdentifier": {
+      "pattern": "^[a-z][a-z0-9]*(?:[._:-][a-z0-9][a-z0-9._-]*)+@[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "type": "string"
+    },
+    "ruleReference": {
+      "additionalProperties": false,
+      "properties": {
+        "rule_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "rule_kind": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "version": {
+          "const": "1.3.0"
+        }
+      },
+      "required": [
+        "rule_id",
+        "rule_kind",
+        "version"
+      ],
+      "type": "object"
+    },
+    "schemaVersion": {
+      "const": "1.3.0"
+    },
+    "semanticVersion": {
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?$",
+      "type": "string"
+    },
+    "sha256Digest": {
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "stableIdentifier": {
+      "maxLength": 240,
+      "minLength": 3,
+      "pattern": "^[a-z][a-z0-9]*(?:[._:-][a-z0-9][a-z0-9._-]*)+$",
+      "type": "string"
+    },
+    "stringMeasurement": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/observedString"
+        },
+        {
+          "$ref": "#/$defs/nonObservedMeasurement"
+        }
+      ]
+    },
+    "temporalWindow": {
+      "additionalProperties": false,
+      "properties": {
+        "clock_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "closes_at": {
+          "$ref": "#/$defs/timestampMeasurement"
+        },
+        "opens_at": {
+          "$ref": "#/$defs/timestampMeasurement"
+        },
+        "window_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        }
+      },
+      "required": [
+        "window_id",
+        "opens_at",
+        "closes_at",
+        "clock_id"
+      ],
+      "type": "object"
+    },
+    "threshold": {
+      "additionalProperties": false,
+      "properties": {
+        "operator": {
+          "enum": [
+            "gt",
+            "gte",
+            "lt",
+            "lte",
+            "eq"
+          ]
+        },
+        "value": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "operator",
+        "value"
+      ],
+      "type": "object"
+    },
+    "timestampMeasurement": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/observedTimestamp"
+        },
+        {
+          "$ref": "#/$defs/nonObservedMeasurement"
+        }
+      ]
+    },
+    "uncertaintyInterval": {
+      "additionalProperties": false,
+      "properties": {
+        "confidence_level": {
+          "$ref": "#/$defs/probabilityMeasurement"
+        },
+        "lower": {
+          "$ref": "#/$defs/numberMeasurement"
+        },
+        "method_ref": {
+          "$ref": "#/$defs/ruleReference"
+        },
+        "upper": {
+          "$ref": "#/$defs/numberMeasurement"
+        }
+      },
+      "required": [
+        "method_ref",
+        "confidence_level",
+        "lower",
+        "upper"
+      ],
+      "type": "object"
+    },
+    "utcTimestamp": {
+      "format": "date-time",
+      "pattern": "Z$",
+      "type": "string"
+    },
+    "versionedReference": {
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "record_kind": {
+          "$ref": "#/$defs/stableIdentifier"
+        },
+        "version": {
+          "const": "1.3.0"
+        }
+      },
+      "required": [
+        "record_id",
+        "record_kind",
+        "version"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://schemas.reiyah.invalid/scientific-contract/1.3.0/common.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Closed Gate A 1.2 types. These structures authorize no runtime, control, deployment, scientific claim, safety claim, or operator acceptance.",
+  "title": "Reiyah scientific contract common definitions"
+}
