@@ -54,17 +54,20 @@ Full transcripts are retained under `evidence/measurement/`. The tooling is at `
 | B | measured | The removal criterion is defined on range-sensor returns alone, so it is correlated with lidar failure by construction and not with camera failure. |
 | C | rejected | Our hypothesis that the published dependence literature inherited this filter. It does not. |
 | D | superseded | Marginal joint-failure lift between camera and lidar detectors, 1.24 to 2.37 by operating point. |
-| E | measured | Conditioning on class, range and visibility removes 73.4% of that excess. Conditional lift 1.156, CMH 4,924 on 1 df. |
+| E | measured, narrowed | Conditioning on class, range and visibility removes 73.4% of that excess. Conditional lift 1.156, cluster-robust 95% interval [1.144, 1.166] at the tracked-instance unit. The published CMH of 4,924 is computed at the box unit; the design effect is 5.02, so the honest statistic is about 982 on 1 df. Conclusion stands, evidence narrowed. See [`AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md`](AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md). |
 | F | measured | The lidar arm recovers 18.13% of the removed objects, closing Result B's upper bound. |
 | G | derived | Required validation evidence scales as the square root of the lift, so the real cost is about 26% more evidence, not 59%. |
-| H | measured | Across six detector pairs and three lidar architectures, same-modality and cross-modality pairs separate completely. Joint-failure odds rise with the accuracy of both models. |
+| H | measured | Across six detector pairs and three lidar architectures, same-modality and cross-modality pairs separate completely. |
+| H-accuracy | withdrawn | "Joint-failure odds rise with the accuracy of both models." No computation produced this: `result_h.py` binds `MAP` and never reads it. Three non-independent odds ratios, permutation p 0.167, two points resting on an unvalidated accuracy figure, and two pairs at identical weaker-model accuracy differing by 2.26x. Retained with its refutation in [`AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md`](AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md). |
 
 A seventh correction arrived later and is the most substantive: the measurements record
 both-channel misses, not joint *silent* misses, which are not establishable from a source that
 observes no warning and no fallback. See [`CONTRACT_CAUGHT_AN_ERROR.md`](CONTRACT_CAUGHT_AN_ERROR.md).
 
-Six claims were withdrawn or corrected during this work. Every one made the result smaller. They
-are retained with their refutations attached rather than deleted.
+Eight claims were withdrawn or corrected during this work. Every one made the result smaller. They
+are retained with their refutations attached rather than deleted. The two most recent came from
+an adversarial audit of this workstream's own statistics and are recorded in
+[`AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md`](AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md).
 
 ## 4. Evidence eligibility
 

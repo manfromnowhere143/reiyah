@@ -57,16 +57,23 @@ headline facts:
   Mapillary 29.58 against 29.80, PointPillars 29.54 against 29.50. CenterPoint reconstructs 61.59
   and is **not validated** against a confirmed figure.
 - Camera and lidar failures are not independent. Marginal lift 1.587 at score 0.3, conditional
-  1.156 after stratifying on class, range and visibility, CMH 4,924 on 1 df.
+  1.156 after stratifying on class, range and visibility, cluster-robust 95% interval
+  [1.144, 1.166] at the tracked-instance unit. The CMH of 4,924 was computed at the box
+  unit; design effect 5.02, so the honest statistic is about 982 on 1 df.
 - Required validation evidence scales as **sqrt(c)**, so the cost is about **26% more evidence**,
   not 59%.
-- Across six detector pairs, same-modality and cross-modality separate completely, and
-  joint-failure odds **rise with the accuracy of both models**: 7.01, 15.86, 31.99.
+- Across six detector pairs, same-modality and cross-modality separate completely.
+  The former claim that joint-failure odds **rise with the accuracy of both models**
+  (7.01, 15.86, 31.99) is **withdrawn**: no computation produced it, the trend has a
+  permutation p of 0.167 on three non-independent points, and two pairs at identical
+  weaker-model accuracy differ by 2.26x. See
+  [`AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md`](AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md).
 
 ## 5. Corrections, all of them
 
-Nine claims were withdrawn or narrowed. Every one made the result smaller. All remain in place with
-their refutations attached; **do not tidy them away**.
+Eleven claims were withdrawn or narrowed. Every one made the result smaller. All remain in place
+with their refutations attached; **do not tidy them away**. The two most recent are in
+[`AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md`](AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md).
 
 | Claim | Verdict |
 |---|---|

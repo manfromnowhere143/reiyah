@@ -1,0 +1,54 @@
+========================================================================================
+AUDIT OF RESULT E - is the inference unit the analysis unit?
+mapillary x megvii, nuScenes val, score >= 0.3, class x range x visibility
+========================================================================================
+
+### 1. exact reproduction of Result E
+                      strata: 132
+                      N used: 134,477
+       N thin (kept visible): 88
+       observed joint misses: 33,665
+          conditional lift c: 1.156
+        Result E published c: 1.156
+                  reproduced: YES
+
+### 2. absence coerced to a confident miss
+`cam.get(i, -1.0) < thr` cannot distinguish 'detector emitted nothing'
+from 'detector emitted a low score'. Both become a confident miss.
+  mapillary    absent   32,787 of 134,565 rows   =  24.4% of rows   =  52.5% of its misses
+  megvii       absent   18,091 of 134,565 rows   =  13.4% of rows   =  39.6% of its misses
+  both absent    10,715   =   8.0% of rows
+  For a detection task an unmatched ground-truth object is a genuine
+  false negative, so this coercion is defensible. It is recorded because
+  the charter forbids silent coercion, not because it is wrong here.
+
+### 3. design effect, 2,000 bootstrap replicates, seed 20260828
+                           instances: 8,976   rows: 134,565   mean rows/instance: 14.99
+         row-level (as published) SE: 0.00249   95% CI [1.151, 1.161]
+               instance-clustered SE: 0.00558   95% CI [1.144, 1.166]
+           design effect (var ratio): 5.02
+                        SE inflation: 2.24x
+               effective sample size: 26,832 of 134,565 rows
+
+### 4. restated CMH evidence at the instance unit
+       Result E published CMH (1 df): 4,924
+        divided by the design effect: 982
+  A chi-square of 10.83 on 1 df is p < 0.001.
+       conditional independence null: SURVIVES
+
+----------------------------------------------------------------------------------------
+Finding. The point estimate is unchanged and the direction is intact:
+the cluster-robust interval [1.144, 1.166] excludes 1.0, so the two
+channels do fail together beyond what class, range and visibility explain.
+Result E's substantive conclusion stands.
+
+What does not stand is the size of the claimed evidence. The published
+CMH of 4,924 is computed at the box unit and overstates the evidence
+by a factor of about 5. The honest statistic is on the order of
+982, and the correct denominator for any RSS-style evidence-count
+argument is roughly 8,976 independent tracked objects, not 134,565 boxes.
+
+Results D, G and H share the box-level unit and are affected the same way.
+None of their point estimates change. Every interval and test statistic
+derived from them must be restated at the instance unit before use.
+----------------------------------------------------------------------------------------

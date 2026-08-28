@@ -1,0 +1,83 @@
+========================================================================================
+AUDIT OF THE RESULT H ACCURACY CLAIM
+"joint-failure odds rise with the accuracy of both models: 7.01, 15.86, 31.99"
+========================================================================================
+
+### 1. provenance of the claim
+  stated in : docs/GATE_B_SESSION_HANDOFF.md, docs/GATE_B_MEASUREMENT_CONTRACT.md
+  labelled  : 'measured' in the contract results table
+  computed  : nowhere. result_h.py binds MAP and never reads it.
+  status    : a prose ordering of three published numbers
+
+### 2. does 'accuracy of both models' even order the pairs?
+  pair                            min mAP  sum mAP   cond c     MH OR
+  centerpoint x megvii               51.9    113.5    1.725    31.988
+  centerpoint x pointpillars         29.5     91.1    1.386    15.863
+  megvii x pointpillars              29.5     81.4    1.313     7.010
+
+  Two pairs share an identical weaker-model accuracy of 29.5 mAP:
+    centerpoint x pointpillars     MH OR = 15.863
+    megvii x pointpillars     MH OR = 7.010
+  Their odds ratios differ by 2.26x at the same weaker-model
+  accuracy. 'The accuracy of both models' therefore does not order
+  these data unless 'both' silently means the sum, which is a
+  different and unstated claim.
+
+### 3. evidential weight of a monotone trend on three points
+  permutations of three distinct values      : 6
+  that are monotone increasing               : 1   p = 0.167
+  that are monotone in either direction      : 2   p = 0.333
+  Under a random assignment of the three odds ratios to the three
+  accuracy ranks, a perfect monotone trend arises one time in six.
+  No conventional threshold is met. There is no test statistic to
+  report because there is no test.
+
+### 4. the three points are not three independent observations
+  detectors involved: centerpoint, megvii, pointpillars
+    centerpoint    appears in 2 of the 3 pairs
+    megvii         appears in 2 of the 3 pairs
+    pointpillars   appears in 2 of the 3 pairs
+  Every detector appears in two pairs, so the three odds ratios share
+  detectors pairwise. They cannot be treated as independent draws.
+
+### 5. one accuracy figure is not validated
+    centerpoint     61.6 mAP   NOT VALIDATED  in 2 of 3 pairs
+    megvii          51.9 mAP   validated      in 2 of 3 pairs
+    pointpillars    29.5 mAP   validated      in 2 of 3 pairs
+  2 of the 3 points depend on an accuracy figure the workstream
+  itself records as reconstructed and unconfirmed, from a source it
+  marks 'explicitly weaker provenance'.
+
+### 6. the headline switches to the more dramatic metric
+  Result G states that the lift c, not the odds ratio, 'is the number
+  that belongs against Corollary 3'. The same three pairs in that metric:
+    centerpoint x megvii            c = 1.725   MH OR = 31.988
+    centerpoint x pointpillars      c = 1.386   MH OR = 15.863
+    megvii x pointpillars           c = 1.313   MH OR = 7.010
+  spread in c      : 1.31x
+  spread in MH OR  : 4.56x
+  The quoted figures are the metric with the widest spread, while the
+  workstream's own analysis names the other one as operative.
+
+----------------------------------------------------------------------------------------
+Finding. The claim 'joint-failure odds rise with the accuracy of both
+models' is not supported and must not carry the label 'measured'.
+
+It is an ordering of three non-independent odds ratios, two of which
+depend on an unvalidated accuracy figure, expressed in a metric the
+workstream's own analysis does not treat as operative, with a
+permutation p of 0.167 for the trend and no interval on any point.
+Two pairs at identical weaker-model accuracy differ by 2.26x, so the
+stated covariate does not even order the observations.
+
+This does not touch Result H's supported finding. Same-modality and
+cross-modality pairs do separate on these six measurements, and that
+separation is what the script computes. The accuracy sentence is a
+separate assertion that no computation produced.
+
+Required action: withdraw the accuracy sentence from the contract
+results table and the handoff, or demote it to a proposed question
+with the design that would answer it, namely more detectors, validated
+accuracy for every one, a pre-declared metric, and intervals that
+respect both the pair-sharing and the instance clustering.
+----------------------------------------------------------------------------------------
