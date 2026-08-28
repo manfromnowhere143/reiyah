@@ -89,6 +89,27 @@ derived quantities reconcile exactly:
 
 Transcript at [`evidence/measurement/v13_validation.txt`](../evidence/measurement/v13_validation.txt).
 
+## The record's true state
+
+The record is **structurally valid and semantically unvalidated**, and that distinction matters.
+
+`docs/MATHEMATICAL_SPECIFICATION.md` section 9 states that JSON Schema validation is necessary and
+not sufficient, and lists 31 deterministic semantic checks the offline validator must additionally
+perform. Those live in the science module, and they will refuse this record: before any arithmetic
+runs, the executable contract is compared by exact equality against a fixed expectation that pins
+the object reference, both channel references, the clock, the window and the opportunity set
+identifiers to synthetic values.
+
+That refusal is correct behaviour. It is a substitution guard preventing the contract being
+weakened by editing the profile, and `AGENTS.md` requires exactly that instinct. The consequence is
+that **a schema successor alone is not enough**: reaching a semantically validated real record
+requires a matching executable contract release. That is specified in
+[`EXECUTABLE_CONTRACT_1_3_PROPOSAL.md`](EXECUTABLE_CONTRACT_1_3_PROPOSAL.md) and does not yet
+exist.
+
+Claiming this record is validated would therefore be false. It passes the structural half of a
+two-part contract.
+
 ## What this says about the method
 
 Writing contracts before data is right, and it is not sufficient. Fixtures test whether a schema
