@@ -1,0 +1,44 @@
+==============================================================================================
+RESULT K - the evidence-cost number, with an interval, at the instance unit
+mapillary x megvii, nuScenes val, instance-clustered bootstrap
+4,000 replicates, seed 20260828, 8,976 independent tracked objects
+==============================================================================================
+
+Evidence multiplier is sqrt(c) from RSS Corollary 3, N proportional to sqrt(c).
+Intervals are propagated by transforming each replicate, not by a delta
+approximation, so they remain valid under skew in c.
+
+### FULL denominator, N = 134,565
+    thr    c_hat           95% CI on c  evidence +%          95% CI on +%
+    0.1    2.271        [2.217, 2.322]        50.7%          [48.9, 52.4]
+    0.2    1.878        [1.844, 1.913]        37.0%          [35.8, 38.3]
+    0.3    1.587        [1.564, 1.612]        26.0%          [25.0, 26.9]
+    0.4    1.363        [1.347, 1.380]        16.8%          [16.0, 17.5]
+    0.5    1.239        [1.226, 1.252]        11.3%          [10.7, 11.9]
+
+### OFFICIAL denominator, N = 121,871
+    thr    c_hat           95% CI on c  evidence +%          95% CI on +%
+    0.1    2.369        [2.300, 2.436]        53.9%          [51.6, 56.1]
+    0.2    1.948        [1.905, 1.991]        39.6%          [38.0, 41.1]
+    0.3    1.630        [1.602, 1.659]        27.7%          [26.6, 28.8]
+    0.4    1.391        [1.372, 1.411]        18.0%          [17.1, 18.8]
+    0.5    1.261        [1.246, 1.275]        12.3%          [11.6, 12.9]
+
+----------------------------------------------------------------------------------------------
+At score >= 0.3, FULL denominator, RSS's own worked target of P = 1e-9:
+  assuming independence               : 77,460 examples per subsystem
+  at the measured lift 1.587          : 97,596 examples
+  95% interval on that requirement    : [96,860, 98,332] examples
+  lift interval excludes independence : YES   c in [1.564, 1.612]
+
+Result G's headline of about 26% more evidence is confirmed as a point
+estimate, 26.0%, and now carries a bound. The lower end of the
+interval still requires 25.0% more than an independence assumption
+allows, so the shortfall is not an artifact of sampling noise.
+
+This is the marginal lift. Result E's conditional lift of 1.156 is the
+quantity to use when the validation campaign already stratifies on class,
+range and visibility. Result I's worst-group lift is the quantity to use
+when the campaign must cover the close-range car. The three answer
+different provisioning questions and must not be interchanged.
+----------------------------------------------------------------------------------------------
