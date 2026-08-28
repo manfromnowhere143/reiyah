@@ -110,7 +110,7 @@ increasing. That is not a limitation: an opportunity set is **one common object 
 series**, as section 5.11 of the mathematical specification states.
 
 nuScenes objects are tracked, so 8,976 instances at mean 15 observations fit exactly. **This is
-also the correct statistical unit** — treating fifteen near-identical boxes of one tracked object
+also the correct statistical unit**: treating fifteen near-identical boxes of one tracked object
 as independent is the clustering error in our own traps table. The contract demanded the right unit
 before we thought to apply it. Any future analysis must cluster on `instance_token`.
 
