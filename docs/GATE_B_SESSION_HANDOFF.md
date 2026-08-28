@@ -159,10 +159,70 @@ described above.
 Its torch is 2.9.1 with CUDA 12.9, while mmcv 2.1.0 ships wheels only to cu121. **Do not downgrade
 torch on that box**, it belongs to Sentinel. Use a container if inference is ever required.
 
+## 9a. Session of 2026-08-28, what changed and what to distrust
+
+Seven results and audits were added in one session. Read this section before trusting any
+number quoted elsewhere in this file, because two long-standing figures were corrected.
+
+**Corrected, do not use the old values.**
+
+- Result E's CMH of 4,924 was computed at the box unit. The design effect is 5.02, so the
+  honest statistic is about 982 on 1 df. The point estimate 1.156 is unchanged and the
+  conclusion stands. `audit_result_e_clustering.py`.
+- "Joint-failure odds rise with the accuracy of both models" is **withdrawn**. No
+  computation produced it: `result_h.py` binds `MAP` and never reads it. Permutation p is
+  0.167 on three non-independent points, two of which rest on CenterPoint's unvalidated
+  accuracy, and two pairs at identical weaker-model accuracy differ by 2.26x.
+  `audit_result_h_accuracy_claim.py`.
+- Result I's worst-stratum identity is **pair-specific**, narrowed by Result J. Its
+  regional finding holds across all three pairs.
+
+**Added.**
+
+| Result | One line |
+|---|---|
+| I | Pooling hid it: worst eligible group `car` 0-20 m `v80-100` at lift 6.946, simultaneous 95% [2.221, 11.671], against a pooled 1.156. Survives four attacks. Evidence base is 34 instances; never quote without the band. |
+| J | The worst *region* generalises across three pairs, the worst *stratum* does not. One pair's extremum has a lower bound of 0.992 and is **not established**. |
+| K | The evidence-cost number has a bound: +26.0%, 95% CI [25.0, 26.9], or 97,596 examples per subsystem, CI [96,860, 98,332]. Pays Audit 1's interval debt for D and G. |
+| L | The conditional coefficient **converges and not to independence**: 1.151, 95% CI [1.138, 1.160], on a common support. Closes open question 2. |
+| M | First `worst_group_evaluation` records from measured data. The unknown-group rule fires for real. Closes open question 3. |
+
+**A trap now on the record.** Conditioning on `num_lidar_pts` moves the coefficient
+-0.044, ten times more than any admissible covariate. It is the lidar return itself and
+sits on the path being measured. It looks like convergence and is mechanical. Never use
+it. See [`RESULT_L_CONVERGENCE.md`](RESULT_L_CONVERGENCE.md).
+
+**Two defects found in this session's own work, both recorded rather than quietly fixed.**
+
+1. The first robustness script coerced an ineligible stratum into a numeric rank of 110
+   and reported a false FAIL. The coercion was removed; the criterion was not loosened.
+   Recorded in [`RESULT_I_WORST_GROUP_DEPENDENCE.md`](RESULT_I_WORST_GROUP_DEPENDENCE.md).
+2. The first worst-group mutation set reported nine FAILs that were mutations inapplicable
+   to their record, not rule defects. The set is now precondition-aware and the run fails
+   unless every rule is rejected by at least one applicable replay somewhere.
+
+**A new `1.3` schema limit.** `joint_silent_miss` is a bare `$ref` where its seven sibling
+sections are a `oneOf` with `nonObservedMeasurement`, so a record that did not measure
+joint silent misses cannot be expressed without fabricating four identities. The section
+is omitted, the whole-record schema failure is retained as the evidence, and a one-line
+`1.4` successor change is proposed. See
+[`SCHEMA_1_3_FINDING_JOINT_SILENT_MISS.md`](SCHEMA_1_3_FINDING_JOINT_SILENT_MISS.md).
+**Do not apply it to a released `1.3` byte.**
+
+**Reproducibility.** `matched_pointpillars.json` was rebuilt and gated at 29.54 against a
+published 29.50 before use. All `matched_*.json` are gitignored; regenerate with
+`tools/measure/match.py` and never admit a match set that fails its `--validate` gate.
+CenterPoint remains excluded for weak provenance and is not readmitted.
+
+**Every new tool is seeded and re-runs byte-identically.** If one does not, stop and find
+out why before trusting anything it produced.
+
 ## 10. The next smallest action
 
-Release the `1.3.0` executable contract into the definition registry so the **shipped science
-module**, not our faithful port, can execute these checks. `tools/measure/semantic_joint_1_3.py`
+Unchanged and still first: release the `1.3.0` executable contract into the definition registry so
+the **shipped science module**, not our faithful port, can execute these checks. Note that the
+session of 2026-08-28 added a second faithful port, `semantic_worst_group_1_3.py`, which is subject
+to exactly the same limitation: it is a reimplementation, not the artifact of record. `tools/measure/semantic_joint_1_3.py`
 is a port with the guard split into policy and subject per
 [`EXECUTABLE_CONTRACT_1_3_PROPOSAL.md`](EXECUTABLE_CONTRACT_1_3_PROPOSAL.md); it is not the real
 validator, and the records are therefore validated by a faithful reimplementation rather than by
@@ -174,7 +234,9 @@ can be talked into anything, keep the refusal.
 
 After that, in order:
 
-1. A second independent camera detector. All three cross-modality pairs share Mapillary, so that
+1. Restate Result H at the instance unit. Audit 1 required it for D, G and H; K did D and G, H is
+   still box-unit and its six pairwise figures still carry no interval.
+2. A second independent camera detector. All three cross-modality pairs share Mapillary, so that
    column has no internal replication, and no modern camera-only nuScenes predictions are published
    anywhere. Obtaining one means running inference.
 2. **CLOSED** by [`RESULT_L_CONVERGENCE.md`](RESULT_L_CONVERGENCE.md). On a common support the
@@ -182,9 +244,14 @@ After that, in order:
    state each move it by only -0.004. `num_lidar_pts` was decided **inadmissible**: it is the lidar
    return itself and conditioning on it blocks the measured path, moving the estimate -0.044 for
    mechanical reasons. Object size and truncation are not in the cache and remain untested.
-3. `worst_group_evaluation` on real data, now that vulnerable road users are representable. 1,994
-   of the 8,976 tracked objects are vulnerable road users, and the unknown-group rule has never
-   been exercised against anything real.
+3. **CLOSED.** `worst_group_evaluation` now has three records built from measured data, and the
+   unknown-group rule has fired against something real: grouping by motion state yields
+   disposition `unknown` with no extremum, because 315 of 8,976 tracked objects appear in fewer
+   than two keyframes and their motion membership is not derivable. 67 of those are vulnerable
+   road users. Ten semantic rules with 23 rejection replays, all rejecting for their declared
+   reason. Tools `build_worst_group_records.py` and `semantic_worst_group_1_3.py`; records at
+   `evidence/measurement/worst-group-records.jsonl`. It surfaced a new `1.3` limit, recorded in
+   [`SCHEMA_1_3_FINDING_JOINT_SILENT_MISS.md`](SCHEMA_1_3_FINDING_JOINT_SILENT_MISS.md).
 
 ## 11. Standards
 

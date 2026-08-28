@@ -1,0 +1,70 @@
+==========================================================================================
+SEMANTIC WORST-GROUP VALIDATION, contract 1.3
+==========================================================================================
+
+### 3 real records
+  PASS  reiyah.evaluation.worst-group-by-class
+        universe 10  eligible 10  insufficient 0  unknown 0  disposition identified
+  PASS  reiyah.evaluation.worst-group-by-motion-state
+        universe 3  eligible 2  insufficient 0  unknown 1  disposition unknown
+  PASS  reiyah.evaluation.worst-group-by-class-and-range
+        universe 33  eligible 33  insufficient 0  unknown 0  disposition identified
+
+### retained 1.3 limit: the whole-record schema cannot host these
+  worst-group-by-class          1 errors, all under: <root>
+  worst-group-by-motion-state   1 errors, all under: <root>
+  worst-group-by-class-and-range1 errors, all under: <root>
+  Every failure is `joint_silent_miss`, a bare $ref where its seven
+  sibling sections are a oneOf with nonObservedMeasurement. The section
+  is omitted rather than fabricated. See
+  docs/SCHEMA_1_3_FINDING_JOINT_SILENT_MISS.md.
+
+### rejection paths, replayed against minimally mutated real records
+  PASS  worst-group-by-class      drop a universe member from the partition           rejected WG-PARTITION-EXACT
+  PASS  worst-group-by-class      duplicate a group result                            rejected WG-RESULT-COVERAGE
+  n/a   worst-group-by-class      relabel an unknown group as sufficient              not applicable to this record
+  n/a   worst-group-by-class      give a non-observed measurement a value             not applicable to this record
+  PASS  worst-group-by-class      break a coverage total                              rejected WG-COVERAGE-RECONCILE
+  PASS  worst-group-by-class      raise the eligibility floor above every declared-sufficient grouprejected WG-ELIGIBILITY-DERIVED
+  n/a   worst-group-by-class      declare identified while an unknown group stands    not applicable to this record
+  n/a   worst-group-by-class      report a worst group despite a non-identified dispositionnot applicable to this record
+  PASS  worst-group-by-class      point the extremum at a non-extremal eligible group rejected WG-EXTREMUM-OVER-ELIGIBLE
+  PASS  worst-group-by-class      empty the extremum set of an identified result      rejected WG-EXTREMUM-OVER-ELIGIBLE
+  PASS  worst-group-by-class      turn off the omission guard                         rejected WG-OMISSION-PROHIBITED
+  PASS  worst-group-by-motion-statedrop a universe member from the partition           rejected WG-PARTITION-EXACT
+  PASS  worst-group-by-motion-stateduplicate a group result                            rejected WG-RESULT-COVERAGE
+  PASS  worst-group-by-motion-staterelabel an unknown group as sufficient              rejected WG-MEMBERSHIP-CONSISTENCY
+  PASS  worst-group-by-motion-stategive a non-observed measurement a value             rejected WG-NONOBSERVED-NO-VALUE
+  PASS  worst-group-by-motion-statebreak a coverage total                              rejected WG-COVERAGE-RECONCILE
+  PASS  worst-group-by-motion-stateraise the eligibility floor above every declared-sufficient grouprejected WG-ELIGIBILITY-DERIVED
+  PASS  worst-group-by-motion-statedeclare identified while an unknown group stands    rejected WG-DISPOSITION
+  PASS  worst-group-by-motion-statereport a worst group despite a non-identified dispositionrejected WG-UNKNOWN-NO-EXTREMUM
+  n/a   worst-group-by-motion-statepoint the extremum at a non-extremal eligible group not applicable to this record
+  n/a   worst-group-by-motion-stateempty the extremum set of an identified result      not applicable to this record
+  PASS  worst-group-by-motion-stateturn off the omission guard                         rejected WG-OMISSION-PROHIBITED
+  PASS  worst-group-by-class-and-rangedrop a universe member from the partition           rejected WG-PARTITION-EXACT
+  PASS  worst-group-by-class-and-rangeduplicate a group result                            rejected WG-RESULT-COVERAGE
+  n/a   worst-group-by-class-and-rangerelabel an unknown group as sufficient              not applicable to this record
+  n/a   worst-group-by-class-and-rangegive a non-observed measurement a value             not applicable to this record
+  PASS  worst-group-by-class-and-rangebreak a coverage total                              rejected WG-COVERAGE-RECONCILE
+  PASS  worst-group-by-class-and-rangeraise the eligibility floor above every declared-sufficient grouprejected WG-ELIGIBILITY-DERIVED
+  n/a   worst-group-by-class-and-rangedeclare identified while an unknown group stands    not applicable to this record
+  n/a   worst-group-by-class-and-rangereport a worst group despite a non-identified dispositionnot applicable to this record
+  PASS  worst-group-by-class-and-rangepoint the extremum at a non-extremal eligible group rejected WG-EXTREMUM-OVER-ELIGIBLE
+  PASS  worst-group-by-class-and-rangeempty the extremum set of an identified result      rejected WG-EXTREMUM-OVER-ELIGIBLE
+  PASS  worst-group-by-class-and-rangeturn off the omission guard                         rejected WG-OMISSION-PROHIBITED
+
+------------------------------------------------------------------------------------------
+  real records validated              : 3
+  rejection paths replayed            : 23
+  rejected for the declared reason    : 23
+  wrong or missing rejection          : 0
+  inapplicable to their record        : 10
+  rules covered by at least one replay: 10 of 10
+
+  Every rule rejects its own counterexample for its own declared reason,
+  and every rule is exercised by at least one applicable replay.
+  The unknown-group rule is exercised against real data: 315 of 8,976
+  tracked objects have undeterminable motion state, so the motion-state
+  worst-group result is `unknown` and reports no extremum.
+------------------------------------------------------------------------------------------
