@@ -177,10 +177,11 @@ After that, in order:
 1. A second independent camera detector. All three cross-modality pairs share Mapillary, so that
    column has no internal replication, and no modern camera-only nuScenes predictions are published
    anywhere. Obtaining one means running inference.
-2. Convergence of the conditional coefficient, which fell 1.525, 1.318, 1.156 without obviously
-   converging. Stratify additionally on object size, truncation and motion state. **Careful:**
-   `num_lidar_pts` is arguably a mediator of lidar failure rather than a confounder, so
-   conditioning on it may delete the path being measured. Decide which it is before using it.
+2. **CLOSED** by [`RESULT_L_CONVERGENCE.md`](RESULT_L_CONVERGENCE.md). On a common support the
+   sequence converges to 1.151, 95% CI [1.138, 1.160], excluding independence. Weather and motion
+   state each move it by only -0.004. `num_lidar_pts` was decided **inadmissible**: it is the lidar
+   return itself and conditioning on it blocks the measured path, moving the estimate -0.044 for
+   mechanical reasons. Object size and truncation are not in the cache and remain untested.
 3. `worst_group_evaluation` on real data, now that vulnerable road users are representable. 1,994
    of the 8,976 tracked objects are vulnerable road users, and the unknown-group rule has never
    been exercised against anything real.

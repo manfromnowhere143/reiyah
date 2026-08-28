@@ -1,0 +1,59 @@
+==============================================================================================
+RESULT L - does the conditional coefficient converge, and to what?
+mapillary x megvii, nuScenes val, score >= 0.3, instance-clustered bootstrap, 1,500 reps
+==============================================================================================
+
+### sequence as published: cumulative conditioning, population varies
+  level                               strata    N used  N thin       c              95% CI
+  L0 none (marginal)                       1   134,565       0   1.587      [1.564, 1.611]
+  L1 + class                              10   134,565       0   1.525      [1.502, 1.546]
+  L2 + range band                         33   134,565       0   1.318      [1.301, 1.333]
+  L3 + visibility                        132   134,477      88   1.156      [1.144, 1.167]
+  L4 + weather/lighting                  334   133,403   1,162   1.154      [1.141, 1.163]
+  L5 + motion state                      623   131,722   2,843   1.151      [1.138, 1.160]
+
+### same sequence on a COMMON SUPPORT fixed by L5 + motion state
+  every level below is estimated on the identical 131,722 rows,
+  so a change in c is conditioning and not a change of population
+  level                               strata    N used  N thin       c              95% CI
+  L0 none (marginal)                       1   131,722       0   1.602      [1.577, 1.627]
+  L1 + class                              10   131,722       0   1.539      [1.515, 1.560]
+  L2 + range band                         33   131,722       0   1.326      [1.308, 1.341]
+  L3 + visibility                        132   131,722       0   1.159      [1.147, 1.170]
+  L4 + weather/lighting                  334   131,722       0   1.155      [1.143, 1.165]
+  L5 + motion state                      623   131,722       0   1.151      [1.138, 1.160]
+
+### convergence diagnosis, on the common support
+  sequence      : 1.602, 1.539, 1.326, 1.159, 1.155, 1.151
+  step sizes    : -0.063, -0.213, -0.166, -0.004, -0.004
+  final step    : -0.0042
+  terminal c    : 1.151   95% CI [1.138, 1.160]
+  steps monotonically shrinking in magnitude : NO
+  terminal lower bound above 1.0             : YES
+
+### the mediator error, performed deliberately
+  L6 + lidar point count (INADMISSIBLE)
+  strata 1620, N used 126,441, N thin 5,281
+  c = 1.107   95% CI [1.096, 1.114]
+  apparent extra shrinkage vs L5: -0.044
+  This number is NOT a better estimate. `num_lidar_pts` is the lidar return
+  itself, so conditioning on it blocks the path from object to lidar failure
+  that the coefficient is measuring. The shrinkage is mechanical. It is
+  recorded here so that anyone who reaches for this covariate can see what
+  it does and why the number must not be used.
+
+----------------------------------------------------------------------------------------------
+The conditional coefficient does not fall to independence. On a fixed
+population with five admissible confounders it is 1.151, with a
+cluster-robust 95% interval of [1.138, 1.160] that excludes 1.0.
+
+Result E's open question is answered for the covariates available here:
+shared observable difficulty explains most of the marginal association
+and does not explain all of it. Camera and lidar fail together beyond
+what class, range, visibility, weather and motion account for.
+
+This is bounded by the covariates nuScenes annotates. Unmeasured common
+causes remain possible and no adjustment set here is claimed to be
+sufficient for identification. The result is association after declared
+conditioning, not a causal effect.
+----------------------------------------------------------------------------------------------
