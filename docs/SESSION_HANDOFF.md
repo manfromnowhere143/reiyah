@@ -1,6 +1,12 @@
 # Reiyah Session Handoff
 
-Gate A `1.2.0` remains operator-unaccepted; architecture status must be resolved from the exact canonical report and repeated byte-identical release replay.
+Gate A `1.2.0` is the completed public static architecture packet. Its exact canonical report
+records `architecture_complete`; operator acceptance remains `unaccepted`.
+
+A Gate A `1.2.1` continuity successor is under construction on the current branch and tracked in
+[GitHub issue #1](https://github.com/manfromnowhere143/reiyah/issues/1). This handoff cannot
+establish its validation or publication state. Resolve either state only from an exact `1.2.1`
+canonical report and append-only event record; absent them, treat the successor as proposed.
 
 This is Reiyah's machine-to-machine continuation contract. It is a versioned architecture
 artifact, not a diary and not an authority source. Resolve mutable state from the exact machine
@@ -48,9 +54,10 @@ Read in this order:
 6. `manifests/definitions/harbor-gate-a-definition-registry-1.2.0.json`;
 7. `validation/validation-plan.json`;
 8. `docs/GATE_A_1_2_0_CONSISTENCY_REVIEW.md`;
-9. `gate/GATE_A_EVIDENCE_INDEX.json` and its sidecar;
-10. `gate/validation-reports/gate-a-validation-1.2.0.json`, when present; and
-11. `history/gate-a-1.1.2/RECOVERY.json`.
+9. `history/gate-a-1.2.0/RECOVERY.json`;
+10. `history/gate-a-1.2.0/gate/GATE_A_EVIDENCE_INDEX.json` and its sidecar;
+11. `gate/validation-reports/gate-a-validation-1.2.0.json`; and
+12. `history/gate-a-1.1.2/RECOVERY.json`.
 
 Do not contact a network during bootstrap or validation. A credential, authenticated session,
 cloud project, model endpoint, or installed tool is capability, not authority.
@@ -83,17 +90,17 @@ not confer scientific, safety, legal, standards, publication, transport, or oper
 
 Resolve and report these dimensions independently:
 
-| Dimension | Machine authority | Gate A default |
+| Dimension | Machine authority | Current Gate A `1.2.0` state |
 |---|---|---|
-| Static architecture | Exact canonical report for one exact index digest | Candidate until repeated clean release replay proves otherwise |
-| Correction closure | `correction_closure_summary` in that report | Open unless required equals closed and open is empty |
+| Static architecture | Exact canonical report for one exact index digest | `architecture_complete` |
+| Correction closure | `correction_closure_summary` in that report | `CR-001` through `CR-016` required and closed; open set empty |
 | GA-17 | Independently authorized external operator process | `not_evaluated` |
 | Operator acceptance | Exact decision record plus external identity and authority verification | `unaccepted` |
 | Scientific evidence | Eligible retained evidence under the protocol | No supported claim inferred |
-| Public transport | Separately authorized post-publication observation | `not_evaluated` |
-| Publisher receipt | Append-only publisher assertion | `asserted_unverified` only |
+| Public transport | Separately authorized post-publication observation | Independent transport `not_evaluated` |
+| Publisher receipt | Append-only publisher assertion | Sequence four exists; `asserted_unverified` |
 | Runtime | Explicit later-gate authorization | false |
-| Gate B | Separate reviewed contract and instruction | undefined and unauthorized |
+| Gate B | Separate reviewed contract and instruction | false and unauthorized |
 
 `architecture_complete` means only that GA-01 through GA-16 and all required Gate A 1.2
 correction findings closed for one exact immutable projection. It does not accept Gate A, evaluate
@@ -102,8 +109,28 @@ study, or permit runtime.
 
 ## 4. Exact current lineage
 
-The Gate A 1.2 correction retains mission `reiyah.mission@1.1.0` and proposes protocol
-`reiyah.protocol.harbor-gate-a@1.2.0`. The immediate immutable predecessor is Gate A 1.1.2:
+The public Gate A 1.2 correction retains mission `reiyah.mission@1.1.0` and proposes protocol
+`reiyah.protocol.harbor-gate-a@1.2.0`.
+
+| Item | Exact Gate A `1.2.0` identity |
+|---|---|
+| `C_packet` commit | `86409473c8fd1571236c849a6cc730db896465fb` |
+| `C_receipt` direct-child commit | `d42d4d298d515b59e9df15f2ba45572a91b9fab8` |
+| Evidence index | `sha256:b39a9bd02b3d86e32b95b988115243918d39b8fa7dea15012d90a0cb0f7c811a`; 397,559 bytes; 767 artifacts |
+| Validation report | `sha256:79d6f3578630994c54cbe341e2c62b79fe4606b4645b85499bcb76f018ad1961`; 257,357 bytes; exit `0`; diagnostics empty |
+| Publisher receipt | `sha256:74817d54ec3085ef0f6ceb45f54db4c24e353aa48e20a44b5ab36c97bd9d9a99`; 9,898 bytes |
+| Receipt sequence | `4` |
+| Architecture and corrections | `architecture_complete`; `CR-001` through `CR-016` closed; zero diagnostics |
+| Release replay | Two fresh evaluations; candidate, index, S01 through S19, nested-contract, and selector equality passed |
+| Authority boundary | operator `unaccepted`; GA-17 `not_evaluated`; runtime `false`; Gate B `false` |
+| Transport boundary | publisher `asserted_unverified`; independent transport `not_evaluated` |
+
+The current index's internal `candidate_pending_canonical_report` value is an intentional acyclic
+pre-report state. Resolve architecture completion from the exact report whose index binding is the
+digest above. The receipt binds the public `C_packet`; it cannot independently verify transport or
+claim readback of the later commit that contains the receipt itself.
+
+The immediate immutable predecessor is Gate A 1.1.2:
 
 | Item | Exact predecessor identity |
 |---|---|
@@ -168,6 +195,11 @@ fixture passed, GA-01 through GA-16 passed, all counts reconcile, exit code is z
 are empty. Review prose, a hardcoded list, schema validity alone, or a prior run cannot close a
 finding.
 
+For the exact public `C_packet`, the retained canonical report records all sixteen required
+findings as closed and records no open finding. That bounded result applies only to the exact index
+and report identities in section 4. It creates no scientific support, acceptance, transport
+verification, or runtime authority.
+
 The correction covers belief and observation reconciliation, causal identification and exact
 split manifests, readiness and recoverability, sequential off-policy support and weight
 reconciliation, member-complete joint opportunities, atomic OOD and selective partitions,
@@ -190,6 +222,9 @@ tools/gate_a_1_2_0.sh --snapshot-mode development --output json \
 
 Development output is diagnostic only. It is never release evidence, even when its exit code is
 zero.
+
+The following bootstrap procedure is retained to explain how the immutable `1.2.0` packet was
+created. Do not rerun its emit modes against the populated current paths or rewrite the release.
 
 Bootstrap the cycle-breaking outputs only through these three committed states. `C0` is clean and
 contains every candidate artifact, including both fresh capture manifests, except the current
@@ -307,12 +342,13 @@ itself, its sidecar, the canonical report, operator decision records, publisher 
 explicitly constrained transient caches to avoid digest cycles. Exclusion never creates a general
 hiding place.
 
-Resolve current machine state from:
+Resolve the immutable public `1.2.0` baseline from:
 
 ```sh
 jq '{version, architecture_status, mission_release_id, protocol_release_id,
   operator_acceptance_state, runtime_authorized, artifact_count:
-  (.artifacts | length)}' gate/GATE_A_EVIDENCE_INDEX.json
+  (.artifacts | length)}' \
+  history/gate-a-1.2.0/gate/GATE_A_EVIDENCE_INDEX.json
 
 jq '{result, exit_code, architecture_status, candidate_projection,
   fixture_summary, correction_closure_summary, control_summary,
@@ -321,8 +357,10 @@ jq '{result, exit_code, architecture_status, candidate_projection,
   gate/validation-reports/gate-a-validation-1.2.0.json
 ```
 
-The handoff cannot embed the current index digest or a report digest that depends on this file
-without becoming cyclic or stale. Recompute those identities from their bytes and sidecar.
+The Gate A `1.2.0` identities in section 4 are immutable historical bindings. Recompute them from
+the archived bytes and sidecar before relying on them. A future `1.2.1` current-path index and
+report, if later generated, must resolve independently under their own versioned plan. This prose
+does not establish a `1.2.1` release or validation state.
 
 ## 10. Research and evidence state
 
@@ -331,11 +369,13 @@ evidence. Third-party payloads may enter public Git history only when exact byte
 version, date, scope, access and redistribution terms, attribution, limitations, and digest are
 recorded. Otherwise retain a pointer-only, evidence-ineligible discovery record.
 
-The 2026 frontier baseline is `evidence/frontier-discovery-register-1.1.0.json`. Its 38 entries are
-pointer-only and evidence-ineligible. They include bounded official Tesla and Mobileye comparator
-pointers, but establish no safety, performance, causality, or superiority claim. Later browsing or
-model-assisted research remains discovery input until a versioned successor register and the
-evidence admission process retain it.
+The 2026 frontier baseline is `evidence/frontier-discovery-register-1.1.0.json`. The successor
+`evidence/frontier-discovery-register-1.2.0.json` exact-preserves its 38 records as an unchanged
+prefix and appends 16 records, for 54 total. Every record is pointer-only and evidence-ineligible.
+The additions cover official Tesla, Mobileye, MOIA, NHTSA, Waymo, and Google material plus primary
+research pointers, but establish no safety, performance, causality, or superiority claim. Later
+browsing or model-assisted research remains discovery input until the evidence admission process
+retains exact eligible bytes and independent review.
 
 Standards crosswalks are dated relevance and gap analyses. They do not establish applicability,
 conformity, certification, legal interpretation, or compliance.
@@ -344,6 +384,14 @@ conformity, certification, legal interpretation, or compliance.
 
 Public distribution is separate from architecture validation and operator acceptance. When the
 operator explicitly authorizes publication of one frozen candidate, preserve this sequence:
+
+The Gate A `1.2.0` event completed this sequence. `C_packet` is
+`86409473c8fd1571236c849a6cc730db896465fb`; its sequence-four rights and receipt records were
+added together at direct-child `C_receipt`
+`d42d4d298d515b59e9df15f2ba45572a91b9fab8`. The receipt binds the exact packet, index, report,
+rights record, and publisher readback assertion. Its transport state is `asserted_unverified`;
+independent transport remains `not_evaluated`. The procedure below is retained as release history
+and must not be treated as authority to repeat or mutate the event.
 
 1. preselect event ID `reiyah.distribution-event.gate-a-1.2.0-static-correction`, future rights
    path `evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json`, and
@@ -413,7 +461,8 @@ A rights observation must be fresh for the actual distribution event and exact p
 reuse a stale observation after candidate bytes or timing changes. A publisher receipt cannot
 verify its own transport. Independent transport requires a distinct, separately authorized
 observer, authentication basis, authorization record, retained observation evidence, and valid
-post-publication chronology. Without that process, transport remains `not_evaluated`.
+post-publication chronology. Without that process, publisher transport remains
+`asserted_unverified` and independent transport remains `not_evaluated`.
 
 This exact exclusion is necessary because the rights record binds `C_packet`, the index, and the
 report. Including it in `C_packet` would make the Git commit hash contain a record that names that
@@ -491,7 +540,8 @@ projection; the launcher uses `-B` to avoid creating it.
 At the start of the next session:
 
 1. run the identity and worktree preflight;
-2. inspect the exact current report and correction closure if they exist;
+2. inspect the exact `1.2.0` report, closed correction set, rights record, and sequence-four
+   receipt;
 3. run development validation only for an intentionally dirty candidate;
 4. run the repeated release sequence only for a clean committed candidate;
 5. compare local and remote commit identities without treating reachability as independent
@@ -499,8 +549,11 @@ At the start of the next session:
 6. inspect append-only rights, receipt, transport, and decision records separately; and
 7. continue only the smallest unresolved Gate A architecture or release step.
 
-After a complete public Gate A 1.2 packet and publisher receipt exist, the next authorized work is
-still architecture review, correction, documentation, and separately requested governance. Gate B,
+The complete public Gate A `1.2.0` packet and publisher receipt now exist. The next bounded work is
+the `1.2.1` continuity successor tracked in
+[GitHub issue #1](https://github.com/manfromnowhere143/reiyah/issues/1), followed only by separately
+requested architecture review or governance. Describe `1.2.1` as released, validated, or
+publication-authorized only when a distinct exact machine record establishes that state. Gate B,
 runtime, cloud execution, deployment, private-data ingestion, physical control, and empirical
 publication remain unauthorized until a new explicit instruction and reviewed contract say
 otherwise.
@@ -525,3 +578,92 @@ A successful architecture closeout is an exact-byte integrity result. It is neve
 scientific support, safety validation, standards compliance, product readiness, competitive
 superiority, publication acceptance, independent transport proof, operator acceptance, or runtime
 authority.
+
+## 17. Proposed 1.2.1 continuity authoring checkpoint
+
+This checkpoint describes an uncommitted documentation proposal, not a release record. The branch
+is `gate-a-1.2.1-continuity`, based on public receipt commit
+`d42d4d298d515b59e9df15f2ba45572a91b9fab8`. The documentation scope is `README.md`,
+`gate/README.md`, `evidence/README.md`, `docs/STATUS_MODEL.md`,
+`docs/RESEARCH_GAP_REGISTER.md`, `docs/SESSION_HANDOFF.md`,
+`docs/RESEARCH_OPERATING_MODEL.md`, and `CITATION.cff`. `docs/SOURCE_POLICY.md` required no
+current-state correction and remains unchanged.
+
+The documentation self-review established all of the following:
+
+- `C_receipt` is the direct child of `C_packet`;
+- Git-object recomputation matched the exact index, report, and sequence-four receipt digests in
+  section 4;
+- the report machine fields matched `architecture_complete`, closed `CR-001` through `CR-016`,
+  GA-17 `not_evaluated`, operator `unaccepted`, runtime `false`, Gate B `false`, and zero
+  diagnostics;
+- the receipt machine fields matched sequence four, `asserted_unverified`, null independent
+  transport record, GA-17 `not_evaluated`, no acceptance, and no runtime authority;
+- `CITATION.cff` parsed as YAML, all local Markdown links resolved, the scoped diff passed
+  `git diff --check`, and the edited files contained no em dash.
+
+The locked `1.2.0` launcher was also run in development mode against the shared, intentionally
+dirty successor worktree. It returned `GA12-PLAN-SCHEMA` because the concurrently developing
+`1.2.1` validation plan contains successor properties outside the frozen `1.2.0` plan schema.
+That diagnostic is not release evidence, does not validate this documentation proposal, and must
+not be weakened. The validator and frontier workstreams own concurrent non-document changes; do
+not discard, stage, or attribute those paths to this documentation correction.
+
+### 17.1 Continuity defect closure observed on 2026-08-28
+
+The proposed `1.2.1` launcher `tools/gate_a_1_2_1.sh` was run in development mode against the
+shared successor worktree. The first observation returned five control diagnostics. Each was
+traced to an exact cause and closed without weakening a control, a tolerance, or an expected
+diagnostic.
+
+| Observed diagnostic | Exact cause | Bounded closure |
+|---|---|---|
+| `GA121-SUCCESSOR-DELTA-SCOPE` | A transient `.ruff_cache/` lint cache entered the candidate projection. It is outside the closed `__pycache__` and `.pytest_cache` boundary, so the validator refused it rather than ignoring an unknown directory. | The transient cache was moved out of the worktree. The closed cache boundary was not widened. |
+| `GA121-DOCUMENTATION-LINKS` | Downstream of the delta failure. | Closed by the same removal. |
+| `GA121-FIXTURE-COVERAGE` | Downstream of the delta failure through the known-good continuity replay. | Closed by the same removal. |
+| `GA121-DISCOVERY-NONAUTHORITY` | `EXPECTED_FRONTIER_FIXTURE_CASE_MAP_SHA256` still held an authoring placeholder. Every one of the eleven frontier fixtures had already matched its own declared diagnostic before the frozen digest was compared. | The diagnostic was first made self reporting, then the freeze was sealed for the first time on an unreleased successor. |
+| `GA121-TOOLCHAIN-BINDING` | `validation/toolchain-lock-1.2.1.json` was stale. It bound a nonexistent `schemas/operator-decision-record-1.2.1.schema.json`, omitted both frontier schemas, and pinned an earlier validator byte size. | The lock was regenerated from actual bytes and cross checked against the validator's own declared schema path tuple. |
+
+### 17.2 Retained host toolchain drift diagnostic
+
+After the schema binding was repaired, `GA121-TOOLCHAIN-BINDING` reported that the host Python
+stdlib no longer matched the frozen `1.2.0` toolchain lock. The cause was identified exactly and
+is retained here as a diagnostic rather than resolved by re-sealing an immutable predecessor.
+
+Three CPython bytecode caches had been written into the locked stdlib tree on 2026-08-27 at
+15:18 local time by a process other than the Reiyah launcher, which always uses `-B`:
+
+- `__pycache__/smtplib.cpython-314.pyc`;
+- `multiprocessing/__pycache__/heap.cpython-314.pyc`; and
+- `multiprocessing/__pycache__/sharedctypes.cpython-314.pyc`.
+
+The observed tree carried 2,892 files and digest
+`sha256:f5a1435faa67b572755cafa1924f2264f8af67a496d294790466e33a500e59e5`. Excluding exactly those
+three derived caches restored 2,889 files and digest
+`sha256:6c16d67e7b053e4a26cf18c518b5d726ac7031bc4688208320daf57c41c2f491`, which equals the value
+recorded in `validation/toolchain-lock-1.2.0.json`. The Python framework binary was byte identical
+throughout. The three derived caches were therefore quarantined outside the interpreter tree so
+the locked byte closure holds. The frozen `1.2.0` lock was not retargeted.
+
+This drift is a host reproducibility signal, not a Reiyah artifact defect. The validated runtime
+byte closure is not guaranteed immutable on a shared developer host. Any future release evaluation
+must re-verify it rather than assume it.
+
+### 17.3 Current observed continuity state
+
+The `1.2.1` launcher then returned a development observation of `pass` with exit code zero, empty
+diagnostics, and byte identical repeated output. The observed candidate projection was 821
+artifacts at
+`sha256:1d16d333d20846244554993ee301dd2fcb7a51bc3f10b7441364367b661ce619`. Fourteen controls
+passed and `GA121-DUAL-EVALUATION` remained `not_evaluated` because it is reachable only in
+release mode. The continuity catalog exercised 24 fixtures, of which one known good passed and 23
+known bad were rejected for their declared diagnostic, alongside 11 frontier fixtures and 54
+pointer only discovery records.
+
+Development output is diagnostic only. It is never release evidence, even at exit code zero. It
+does not validate, release, publish, or accept the successor, and it creates no scientific
+evidence.
+
+The next action is to commit the successor scope on this branch and then run the `1.2.1` release
+path under its own locked plan. Until a distinct exact machine record establishes otherwise,
+`1.2.1` remains proposed, unvalidated, unreleased, and without publication authorization.

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.1/historical-packet-recovery.schema.json",
+  "title": "Gate A 1.2.0 packet recovery recorded by continuity release 1.2.1",
+  "type": "object",
+  "required": ["schema_id", "schema_version", "artifact_id", "record_id", "version", "as_of_date", "subject_release", "release_commits", "snapshot_artifacts", "canonical_versioned_artifacts", "inherited_science", "dispositions"],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.2.1/historical-packet-recovery.schema.json"},
+    "schema_version": {"const": "1.2.1"},
+    "artifact_id": {"const": "reiyah.artifact.gate-a-1.2.0-recovery-1.2.1"},
+    "record_id": {"const": "reiyah.history.gate-a-1.2.0-recovery"},
+    "version": {"const": "1.2.1"},
+    "as_of_date": {"const": "2026-08-25"},
+    "subject_release": {"type": "object"},
+    "recovery_method": {"const": "exact_git_object_copy_from_released_public_packet"},
+    "source_repository": {"type": "object"},
+    "release_commits": {"type": "object"},
+    "snapshot_policy": {"type": "object"},
+    "snapshot_artifacts": {"type": "array", "minItems": 2, "maxItems": 2},
+    "canonical_versioned_artifacts": {"type": "object"},
+    "inherited_science": {"type": "object"},
+    "dispositions": {"type": "object"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,9 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.1/continuity-fixture.schema.json",
+  "fixture_id": "reiyah.fixture.continuity.packet-commit-drift@1.2.1",
+  "version": "1.2.1",
+  "expected_outcome": "fail",
+  "operation": "mutate_packet_commit",
+  "expected_diagnostic": "GA121-PREDECESSOR-PACKET-IDENTITY",
+  "description": "A substituted predecessor packet commit must fail closed."
+}

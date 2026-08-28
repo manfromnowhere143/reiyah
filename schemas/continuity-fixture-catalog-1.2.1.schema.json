@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.1/continuity-fixture-catalog.schema.json",
+  "title": "Gate A 1.2.1 continuity fixture catalog",
+  "type": "object",
+  "required": ["schema_id", "artifact_id", "version", "fixtures"],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.2.1/continuity-fixture-catalog.schema.json"},
+    "artifact_id": {"const": "reiyah.artifact.continuity-fixture-catalog-1.2.1"},
+    "version": {"const": "1.2.1"},
+    "fixtures": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["fixture_id", "path", "expected_outcome", "expected_diagnostic", "sha256", "byte_size"],
+        "properties": {
+          "fixture_id": {"type": "string"},
+          "path": {"type": "string", "pattern": "^fixtures/v1\\.2\\.1/(known-good|known-bad)/"},
+          "expected_outcome": {"enum": ["pass", "fail"]},
+          "expected_diagnostic": {"type": ["string", "null"]},
+          "sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+          "byte_size": {"type": "integer", "minimum": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,9 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.1/continuity-fixture.schema.json",
+  "fixture_id": "reiyah.fixture.continuity.receipt-parent-drift@1.2.1",
+  "version": "1.2.1",
+  "expected_outcome": "fail",
+  "operation": "mutate_receipt_parent",
+  "expected_diagnostic": "GA121-PREDECESSOR-TOPOLOGY",
+  "description": "A receipt commit detached from the packet first parent must fail closed."
+}

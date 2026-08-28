@@ -15,26 +15,37 @@ occurred, and what retained evidence can support each statement.
 
 ## Current status
 
-Gate A `1.2.0` is an operator-unaccepted correction candidate. It preserves the proposed
+Gate A `1.2.0` is the current public, operator-unaccepted static architecture packet. Its exact
+canonical report records `architecture_complete`, closes `CR-001` through `CR-016`, and passes
+GA-01 through GA-16 with zero diagnostics. It preserves the proposed
 `reiyah.mission@1.1.0` mission and introduces the proposed
-`reiyah.protocol.harbor-gate-a@1.2.0` protocol successor. The correction responds to retained
-counterexamples against the public `1.1.2` packet. It does not add a runtime, execute a study,
-produce empirical evidence, or support a safety, compliance, causal-benefit, product-readiness,
-or superiority conclusion.
+`reiyah.protocol.harbor-gate-a@1.2.0` protocol successor. These are architecture-integrity
+results for one exact packet. They do not execute a study, produce empirical evidence, or support
+a safety, compliance, causal-benefit, product-readiness, or superiority conclusion.
 
-The index deliberately records `candidate_pending_canonical_report`. Only a passing release-mode
-report that exact-binds that index may classify those bytes as `architecture_complete`. During
-construction, or whenever the report and index do not reconcile exactly, architecture status is
-not complete.
+The index deliberately records `candidate_pending_canonical_report` because it cannot contain the
+later report without creating a cycle. The exact report bound to that index is the authority for
+the `architecture_complete` classification. Publication is recorded separately by receipt
+sequence four. That publisher receipt reports `asserted_unverified`; independent transport
+verification remains `not_evaluated`.
 
 | Surface | Meaning |
 |---|---|
-| Architecture state | Resolve only from the exact `1.2.0` canonical report and repeated byte-identical clean release replay. Until that evidence exists and passes, the state is not complete. |
+| Architecture state | `architecture_complete` for the exact `1.2.0` packet identified below. The canonical report closes `CR-001` through `CR-016`, passes GA-01 through GA-16, and has zero diagnostics. |
 | Operator state | `unaccepted`. Acceptance requires a current exact-binding record whose decision is `accepted`, a validator-accepted append-only decision chain, and independent verification of operator identity and authority. |
 | External control | GA-17 remains `not_evaluated` by offline repository validation. |
 | Runtime | Unauthorized. No product runtime, model execution, live network dependency, cloud execution, private-data ingestion, deployment, or physical-control integration is present. |
 | Later gates | Gate B is not defined or authorized. |
-| Public remote | A distribution channel only; it has no scientific, safety, standards, acceptance, or publication authority. Publisher readback is an assertion, not independent transport verification. |
+| Public remote | The exact `1.2.0` packet and its direct-child receipt are public. The remote is a distribution channel only. Publisher transport is `asserted_unverified`; independent transport is `not_evaluated`. |
+
+A Gate A `1.2.1` continuity successor is tracked in
+[GitHub issue #1](https://github.com/manfromnowhere143/reiyah/issues/1). Its candidate scope is
+present in this tree under its own versioned plan, launcher, schemas, and fixture catalog. It does
+not change the immutable `1.2.0` packet, report, protocol, scientific contracts, or authority
+state, and its own contract holds public distribution closed. This prose does not establish a
+`1.2.1` validation or publication event, and a packet cannot state its own index or report digest
+without creating a cycle. Resolve either state only from an exact `1.2.1` canonical report and an
+append-only event receipt; absent those records, treat the successor as proposed.
 
 Architecture completion and operator acceptance are deliberately separate:
 
@@ -61,11 +72,12 @@ The diagram describes repository governance, not a deployed system.
 
 The indexed packet cannot contain its own digest, its later Git commit, an event rights record
 that binds that commit, or a post-publication receipt without creating a cycle. The validation
-plan permits only one exact event-specific future-rights exclusion and rejects broad rights
-prefixes. Resolve the current state in this order:
+plan for the immutable `1.2.0` event permitted only one exact event-specific future-rights
+exclusion and rejected broad rights prefixes. Resolve that public state in this order:
 
-1. Verify [`GATE_A_EVIDENCE_INDEX.json`](gate/GATE_A_EVIDENCE_INDEX.json) against its
-   [`SHA-256 sidecar`](gate/GATE_A_EVIDENCE_INDEX.sha256).
+1. Verify the frozen `1.2.0`
+   [`GATE_A_EVIDENCE_INDEX.json`](history/gate-a-1.2.0/gate/GATE_A_EVIDENCE_INDEX.json) against its
+   [`SHA-256 sidecar`](history/gate-a-1.2.0/gate/GATE_A_EVIDENCE_INDEX.sha256).
 2. Select the canonical report in [`gate/validation-reports/`](gate/validation-reports/) whose
    `index_binding.sha256` equals that sidecar digest.
 3. Run the offline validator and require the report, index, repository inventory, fixtures, and
@@ -81,6 +93,23 @@ prefixes. Resolve the current state in this order:
 6. Resolve independent transport verification only from a distinct authorized observation record
    that exact-binds the same repository, commit, index, and report bytes. A publisher receipt,
    branch tip, or older receipt is not a substitute.
+
+### Exact public Gate A 1.2.0 identity
+
+| Item | Gate A `1.2.0` identity |
+|---|---|
+| `C_packet` commit | `86409473c8fd1571236c849a6cc730db896465fb` |
+| `C_receipt` direct-child commit | `d42d4d298d515b59e9df15f2ba45572a91b9fab8` |
+| Evidence-index digest | `sha256:b39a9bd02b3d86e32b95b988115243918d39b8fa7dea15012d90a0cb0f7c811a` |
+| Validation-report digest | `sha256:79d6f3578630994c54cbe341e2c62b79fe4606b4645b85499bcb76f018ad1961` |
+| Distribution-receipt digest | `sha256:74817d54ec3085ef0f6ceb45f54db4c24e353aa48e20a44b5ab36c97bd9d9a99` |
+| Receipt sequence | `4` |
+| Exact architecture state | `architecture_complete`; `CR-001` through `CR-016` closed; GA-01 through GA-16 passed |
+| Independent states | operator `unaccepted`; GA-17 `not_evaluated`; independent transport `not_evaluated`; runtime `false`; Gate B `false` |
+
+The receipt records the publisher's public push and readback assertions for `C_packet`; it does
+not claim readback of the later commit containing itself. Its transport state is
+`asserted_unverified`, and no independent transport-verification record exists.
 
 ### Exact public predecessor
 
@@ -121,10 +150,10 @@ validation integrity: unenforced string formats, live-tree time-of-check/time-of
 imports before isolation, and publisher self-attestation presented as independent transport
 proof.
 
-The Gate A `1.2.0` candidate is intended to correct these defects through executable operands,
-deterministic derivations, reason-specific counterexamples, a byte-locked pre-runtime launcher,
-one immutable candidate projection, and a separate transport-observation interface. Closure
-requires the final immutable release replay; this prose does not establish it. The retained
+Gate A `1.2.0` corrected these defects through executable operands, deterministic derivations,
+reason-specific counterexamples, a byte-locked pre-runtime launcher, one immutable candidate
+projection, and a separate transport-observation interface. The exact canonical report, not this
+prose, establishes the bounded architecture closure. The retained
 [`adversarial review`](docs/GATE_A_1_1_2_ADVERSARIAL_REVIEW.md) is an advisory integrity input,
 not independent scientific evidence. Every unchanged `1.1.2` indexed artifact must remain
 byte-identical; every changed or added path must be explicit in the `1.2.0` validation plan.
@@ -132,10 +161,11 @@ byte-identical; every changed or added path must be explicit in the `1.2.0` vali
 A second adversarial pass over the developing successor found sixteen candidate-integration
 risks. They include belief and observation reconciliation, joint-event identifiability,
 assumption-evidence eligibility, typed-reference substitution, governance chronology, canonical
-report count consistency, and premature completion language. The proposed protocol now binds the
+report count consistency, and premature completion language. The proposed protocol binds the
 [`candidate consistency review`](docs/GATE_A_1_2_0_CONSISTENCY_REVIEW.md) and eleven high-level
-executable contracts. Those findings remain open until repeated byte-identical immutable release
-replay derives their exact closure from the same candidate snapshot.
+executable contracts. The canonical report derives `CR-001` through `CR-016` as closed from the
+same immutable candidate snapshot, with no open correction finding. That closure creates no
+empirical or scientific evidence.
 
 ## Research thesis
 
@@ -215,14 +245,16 @@ A URL is a discovery pointer, not retained evidence. Positive standards or bench
 require exact permitted bytes, identity, version, publication date, scope, comparator, content
 digest, limitations, and an explicit custody and redistribution state. The repository currently
 contains four eligible ISO Open Data metadata payloads, not normative ISO text. Four NIST or UN
-records and all 38 frontier records covering primary methods, official specifications, and
-bounded Tesla and Mobileye company comparators remain pointer only and evidence ineligible.
+ledger records remain pointer only. The frontier successor exact-preserves its 38-record baseline
+and appends 16 records, for 54 pointer-only, evidence-ineligible records covering primary methods,
+official specifications, and bounded Tesla, Mobileye, NHTSA, Waymo, and Google discovery.
 
 Company statements, papers, standards pages, generated prose, signatures, checksums, passing
 tests, and consensus may motivate a question or provide an integrity signal. They do not become
 independent proof of effectiveness, safety, compliance, deployment, or comparative advantage.
 See the [`source policy`](docs/SOURCE_POLICY.md), [`standards crosswalk`](docs/STANDARDS_CROSSWALK.md),
-and [`2026 frontier baseline`](docs/FRONTIER_BASELINE_2026.md).
+[`2026 frontier baseline`](docs/FRONTIER_BASELINE_2026.md), and machine-readable
+[`frontier successor`](evidence/frontier-discovery-register-1.2.0.json).
 
 ## Rigor under pressure
 
@@ -244,6 +276,31 @@ science module, and toolchain lock fail closed for an ordinary clone at any othe
 path portability is not provided at Gate A; moving the repository, using an alias or symlink, or
 bypassing the identity preflight produces a different, untrusted analysis rather than an
 equivalent Reiyah validation.
+
+### Gate A 1.2.1 continuity replay
+
+The current `1.2.1` launcher evaluates only documentation, discovery, lineage, and publication
+continuity. It exact-binds the released `1.2.0` scientific handler, profile, schemas, fixtures,
+index, report, rights record, and receipt as historical inheritance. It does not run the bound
+science fixtures again and cannot replace or extend their handler.
+
+For the intentionally dirty authoring tree:
+
+```sh
+tools/gate_a_1_2_1.sh --snapshot-mode development --output human
+tools/gate_a_1_2_1.sh --snapshot-mode development --output json \
+  > /tmp/reiyah-gate-a-validation-1.2.1-development.json
+```
+
+Development output is diagnostic only. A release result requires a clean committed three-state
+bootstrap through `--emit-index`, `--emit-report`, and ordinary release replay. The `1.2.1`
+validator requires two fresh worker processes, exact outer-payload equality, committed index and
+report readback, closed delta membership, frozen Git modes, protected predecessor bytes, and all
+continuity and frontier counterexamples to resolve at their declared diagnostic. Its publication
+inventory state remains blocked unless a separately reviewed successor preserves the exact
+four-payload rights boundary.
+
+### Immutable Gate A 1.2.0 scientific replay
 
 Gate A `1.2.0` must start through the reviewed launcher. The launcher enters the locked macOS
 Seatbelt policy before CPython starts, clears ambient loader state, invokes isolated no-site,
@@ -350,7 +407,7 @@ bytes; the `1.2.0` totals must be read from its final canonical report.
 | Mission and claim boundary | [`scientific charter`](docs/SCIENTIFIC_CHARTER.md), [`claims and non-claims`](docs/CLAIMS_AND_NON_CLAIMS.md), [`status model`](docs/STATUS_MODEL.md) |
 | Gate decision procedure | [`pre-implementation gate`](docs/PRE_IMPLEMENTATION_GATE.md), [`gate records`](gate/) |
 | Scientific and technical review | [`architecture`](docs/ARCHITECTURE.md), [`mathematical specification`](docs/MATHEMATICAL_SPECIFICATION.md), [`threat model`](docs/THREAT_MODEL.md) |
-| Research frontier and open gaps | [`research operating model`](docs/RESEARCH_OPERATING_MODEL.md), [`2026 frontier baseline`](docs/FRONTIER_BASELINE_2026.md), [`research gap register`](docs/RESEARCH_GAP_REGISTER.md) |
+| Research frontier and open gaps | [`research operating model`](docs/RESEARCH_OPERATING_MODEL.md), [`2026 frontier baseline`](docs/FRONTIER_BASELINE_2026.md), [`frontier successor`](evidence/frontier-discovery-register-1.2.0.json), [`research gap register`](docs/RESEARCH_GAP_REGISTER.md) |
 | Evidence and standards review | [`source policy`](docs/SOURCE_POLICY.md), [`standards crosswalk`](docs/STANDARDS_CROSSWALK.md), [`evidence records`](evidence/) |
 | Deterministic replay | [`validation guide`](docs/VALIDATION.md), [`validation plan`](validation/), [`fixture catalog`](fixtures/fixture-catalog.json) |
 | Contribution or disclosure | [`CONTRIBUTING.md`](CONTRIBUTING.md), [`SECURITY.md`](SECURITY.md) |
@@ -365,8 +422,8 @@ unrelated work or reuse a published release identifier.
 - No eligible empirical dataset, executed study, benchmark result, policy log, construct-validity
   result, subgroup analysis, independent replication, safety review, standards review, or legal
   opinion exists.
-- The frontier baseline remains discovery material and cannot support a protocol or superiority
-  claim.
+- The frontier baseline and successor remain discovery material and cannot support a protocol or
+  superiority claim.
 - A finite schema, threat model, and fixture suite cannot prove that every scientific, security,
   rights, or release threat is known.
 - The retained adversarial review is model-assisted advisory work. No independently retained
@@ -374,14 +431,19 @@ unrelated work or reuse a published release identifier.
 - Authoritative replay is canonical-path-bound; portability to an arbitrary public clone remains
   explicitly unsupported at Gate A.
 
-If the Gate A `1.2.0` index, sidecar, canonical report, historical `1.1.2` snapshot, fixtures, or
-validator support is absent or inconsistent, continue only the bounded static correction. Once
-release replay is byte-identical to the canonical report and classifies the exact current bytes
-as `architecture_complete`, the exact bytes are eligible for independent advisory review and,
-under separate explicit publication authority, public distribution. Publication requires a
-current event-specific rights observation, exact packet/report bindings, and an append-only
-publisher receipt. Independent transport verification, operator acceptance, Gate B, cloud use,
-and runtime remain separate and unauthorized.
+Gate A `1.2.0` now has its exact index, sidecar, canonical report, historical `1.1.2` snapshot,
+fixtures, event-specific rights record, and sequence-four publisher receipt. The documentation
+continuity successor tracked in
+[GitHub issue #1](https://github.com/manfromnowhere143/reiyah/issues/1) is assembled in this tree
+under its own contract. Resolve Gate A `1.2.1` only from its exact successor contract, canonical
+report, and any later append-only event record. The packet prose cannot establish those states,
+and the successor's own contract keeps public distribution closed until a separately reviewed
+successor preserves the exact four-payload rights boundary.
+
+The next bounded work items are a `1.2.2` discovery successor that admits the remaining dated
+comparator and regulatory pointers, and, separately, any authorized publication event. Neither is
+performed by this packet. Independent transport verification, operator acceptance, Gate B, cloud
+use, and runtime remain separate and unauthorized.
 
 ## Open source and citation
 

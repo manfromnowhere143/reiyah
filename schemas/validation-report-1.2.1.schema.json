@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.1/validation-report.schema.json",
+  "title": "Gate A 1.2.1 continuity validation report",
+  "type": "object",
+  "required": ["schema_id", "artifact_id", "report_id", "version", "mode", "status", "release_eligible", "public_distribution_eligible", "predecessor", "inherited_science", "candidate_projection", "controls", "fixtures", "authority_nonclaims", "diagnostics"],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.2.1/validation-report.schema.json"},
+    "artifact_id": {"const": "reiyah.artifact.validation-report-1.2.1"},
+    "report_id": {"const": "reiyah.validation-report.gate-a-continuity-1.2.1"},
+    "version": {"const": "1.2.1"},
+    "mode": {"enum": ["development", "release"]},
+    "status": {"enum": ["pass", "fail"]},
+    "release_eligible": {"type": "boolean"},
+    "public_distribution_eligible": {"const": false},
+    "predecessor": {"type": "object"},
+    "inherited_science": {"type": "object"},
+    "candidate_projection": {"type": "object"},
+    "successor_delta": {"type": "object"},
+    "controls": {"type": "array", "minItems": 10},
+    "fixtures": {"type": "object"},
+    "discovery": {"type": ["object", "null"]},
+    "publication_inventory": {"type": ["object", "null"]},
+    "toolchain": {"type": ["object", "null"]},
+    "protected_predecessor": {"type": ["object", "null"]},
+    "authority_nonclaims": {"type": "object"},
+    "diagnostics": {"type": "array"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,33 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.1/continuity-toolchain-lock.schema.json",
+  "artifact_id": "reiyah.artifact.continuity-toolchain-lock-1.2.1",
+  "version": "1.2.1",
+  "runtime": {
+    "implementation": "cpython",
+    "version": "3.14.2",
+    "isolated_flag": true,
+    "no_site_flag": true,
+    "no_bytecode_flag": true,
+    "standard_library_only": true
+  },
+  "inherited_lock": {
+    "path": "validation/toolchain-lock-1.2.0.json",
+    "sha256": "sha256:7e4ebb8aa6ac3794f30fa4b830dc3854d8a99979de1a474c03b5482ea323064b",
+    "byte_size": 7337
+  },
+  "tools": [
+    {"path": "tools/gate_a_1_2_1.sh", "sha256": "sha256:9ad89e3ff4bfdeeb95bc3c056f4f83d3591781bd806b686dff2a6d4675ed9978", "byte_size": 883},
+    {"path": "tools/gate_a_1_2_1.py", "sha256": "sha256:b5a75dcf180eb513ef49c97398dd7c6eb750b7261bf510303a0df24a82d09f18", "byte_size": 130996}
+  ],
+  "schemas": [
+    {"path": "schemas/continuity-fixture-1.2.1.schema.json", "sha256": "sha256:de5b54074a07a2413884efa0e45815cb9d0f018c4bc7ceca68b7db4522b0e0b1", "byte_size": 1781},
+    {"path": "schemas/continuity-fixture-catalog-1.2.1.schema.json", "sha256": "sha256:ba7f5bdbad92b0db33f4acef09f64568696d45b9f36f7b4d934c4ad4a9bda3f0", "byte_size": 1285},
+    {"path": "schemas/historical-packet-recovery-1.2.1.schema.json", "sha256": "sha256:a4c329df1050d57beac4463bd5b9746ddc777ba72c660b0c9b6384a48de1ed4d", "byte_size": 1401},
+    {"path": "schemas/continuity-toolchain-lock-1.2.1.schema.json", "sha256": "sha256:c72e8b3bf85753a080fc1909199c3766f09d433a6962c4b7465a20f4c81ffde6", "byte_size": 1768},
+    {"path": "schemas/validation-plan-1.2.1.schema.json", "sha256": "sha256:2edb4dbcd81799e19c5c3998826bd7307e462e0f4250e518b650b5d4b7ddfa72", "byte_size": 1726},
+    {"path": "schemas/validation-report-1.2.1.schema.json", "sha256": "sha256:08c289bbfa65dbc387eeb647ccc403bbfd08e8caf617e2bccfb853ef8eef9c45", "byte_size": 1584},
+    {"path": "schemas/gate-a-index-1.2.1.schema.json", "sha256": "sha256:ed80a85873c551c00a3d2fd6d60fc4fc38dcaa0cf7e9fbbd4dcb710740e0cfc1", "byte_size": 1487},
+    {"path": "schemas/frontier-discovery-register-1.2.schema.json", "sha256": "sha256:68441568a33418e0ed82f5b6aa2d7fc1869df12eebcd60af6d30343d8c60fa87", "byte_size": 116189},
+    {"path": "schemas/frontier-discovery-fixture-1.2.schema.json", "sha256": "sha256:19e93c60294c61cd046142c56a9bef02ac092baf56616b11b4e989d7af661362", "byte_size": 6488}
+  ]
+}

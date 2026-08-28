@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.1/gate-a-index.schema.json",
+  "title": "Gate A 1.2.1 documentation and discovery continuity index",
+  "type": "object",
+  "required": ["schema_id", "artifact_id", "release_id", "version", "architecture_status", "operator_acceptance_state", "runtime_authorized", "gate_b_authorized", "transport_verification_state", "public_distribution_authorized", "science_evidence_state", "predecessor", "candidate_projection", "artifacts"],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.2.1/gate-a-index.schema.json"},
+    "artifact_id": {"const": "reiyah.artifact.gate-a-index-1.2.1"},
+    "release_id": {"const": "reiyah.gate-a-evidence-index@1.2.1"},
+    "version": {"const": "1.2.1"},
+    "architecture_status": {"enum": ["candidate_pending_canonical_report", "architecture_complete"]},
+    "operator_acceptance_state": {"const": "unaccepted"},
+    "runtime_authorized": {"const": false},
+    "gate_b_authorized": {"const": false},
+    "transport_verification_state": {"const": "not_evaluated"},
+    "public_distribution_authorized": {"const": false},
+    "science_evidence_state": {"const": "inherited_historical_exact_byte_binding"},
+    "predecessor": {"type": "object"},
+    "candidate_projection": {"type": "object"},
+    "artifacts": {"type": "array"},
+    "successor_delta": {"type": "object"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,108 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.1/historical-packet-recovery.schema.json",
+  "schema_version": "1.2.1",
+  "artifact_id": "reiyah.artifact.gate-a-1.2.0-recovery-1.2.1",
+  "record_id": "reiyah.history.gate-a-1.2.0-recovery",
+  "version": "1.2.1",
+  "as_of_date": "2026-08-25",
+  "subject_release": {
+    "artifact_id": "reiyah.artifact.gate-a-index-1.2.0",
+    "release_id": "reiyah.gate-a-evidence-index@1.2.0",
+    "version": "1.2.0",
+    "architecture_status": "architecture_complete",
+    "operator_acceptance_state": "unaccepted",
+    "ga_17_state": "not_evaluated",
+    "runtime_authorized": false
+  },
+  "recovery_method": "exact_git_object_copy_from_released_public_packet",
+  "source_repository": {
+    "canonical_root": "/Users/danielwahnich/workspace/reiyah",
+    "distribution_remote": "https://github.com/manfromnowhere143/reiyah",
+    "git_object_format": "sha1",
+    "remote_authority": "distribution_only"
+  },
+  "release_commits": {
+    "packet": {
+      "commit": "86409473c8fd1571236c849a6cc730db896465fb",
+      "tree": "88a5ac2a2c0a33b5ce187880ce1129c258229dca"
+    },
+    "receipt_bearing": {
+      "commit": "d42d4d298d515b59e9df15f2ba45572a91b9fab8",
+      "tree": "ed78e0c57d20e3e32b2346604d25c475b7959c97",
+      "first_parent": "86409473c8fd1571236c849a6cc730db896465fb",
+      "first_parent_matches_packet_commit": true,
+      "exact_delta_paths": [
+        "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json",
+        "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.2.0.json"
+      ]
+    }
+  },
+  "snapshot_policy": {
+    "collision_prone_root_artifacts_copied": true,
+    "copied_artifact_count": 2,
+    "versioned_validation_report_copied": false,
+    "versioned_distribution_receipt_copied": false,
+    "rationale": "The root index and sidecar are single-name packet outputs. Their released 1.2.0 bytes are preserved under the historical directory. The version-qualified report, rights observation, and publisher receipt remain at their canonical paths and are exact-bound rather than duplicated."
+  },
+  "snapshot_artifacts": [
+    {
+      "artifact_id": "reiyah.artifact.historical-gate-a-index-1.2.0",
+      "source_commit": "86409473c8fd1571236c849a6cc730db896465fb",
+      "source_path": "gate/GATE_A_EVIDENCE_INDEX.json",
+      "snapshot_path": "history/gate-a-1.2.0/gate/GATE_A_EVIDENCE_INDEX.json",
+      "sha256": "sha256:b39a9bd02b3d86e32b95b988115243918d39b8fa7dea15012d90a0cb0f7c811a",
+      "byte_size": 397559,
+      "copy_class": "byte_identical_git_object_copy"
+    },
+    {
+      "artifact_id": "reiyah.artifact.historical-gate-a-index-sidecar-1.2.0",
+      "source_commit": "86409473c8fd1571236c849a6cc730db896465fb",
+      "source_path": "gate/GATE_A_EVIDENCE_INDEX.sha256",
+      "snapshot_path": "history/gate-a-1.2.0/gate/GATE_A_EVIDENCE_INDEX.sha256",
+      "sha256": "sha256:58a7c831b9b9e13859f936d4ef565c334fbe96b37d69c1bd893f84f8f453a91d",
+      "byte_size": 105,
+      "bound_index_sha256": "sha256:b39a9bd02b3d86e32b95b988115243918d39b8fa7dea15012d90a0cb0f7c811a",
+      "copy_class": "byte_identical_git_object_copy"
+    }
+  ],
+  "canonical_versioned_artifacts": {
+    "validation_report": {
+      "source_commit": "86409473c8fd1571236c849a6cc730db896465fb",
+      "path": "gate/validation-reports/gate-a-validation-1.2.0.json",
+      "sha256": "sha256:79d6f3578630994c54cbe341e2c62b79fe4606b4645b85499bcb76f018ad1961",
+      "byte_size": 257357
+    },
+    "rights_observation": {
+      "source_commit": "d42d4d298d515b59e9df15f2ba45572a91b9fab8",
+      "path": "evidence/public-rights-revalidation-2026-08-25-gate-a-static-correction-1.2.0.json",
+      "sha256": "sha256:e68ca1c6b53b3f63e65663a1a999db95699cf4177bb5b0d134a6c0e85860bb13",
+      "byte_size": 8393
+    },
+    "distribution_receipt": {
+      "source_commit": "d42d4d298d515b59e9df15f2ba45572a91b9fab8",
+      "path": "gate/public-distribution-receipts/reiyah.public-distribution-receipt-1.2.0.json",
+      "sha256": "sha256:74817d54ec3085ef0f6ceb45f54db4c24e353aa48e20a44b5ab36c97bd9d9a99",
+      "byte_size": 9898,
+      "published_packet_commit": "86409473c8fd1571236c849a6cc730db896465fb"
+    }
+  },
+  "inherited_science": {
+    "evidence_state": "inherited_historical_exact_byte_binding",
+    "current_replay_performed": false,
+    "current_science_handler_replaced": false,
+    "profile_bound_entrypoint": "tools/gate_a_1_2_0.sh",
+    "profile_bound_validator_sha256": "sha256:048597c3f69a5a1d384d9a4e032a15a66f654f20107d04be083fffc5a4c1fa58",
+    "profile_bound_science_sha256": "sha256:e539c1c1ce32c556736be9124b6b046b5cc85658066d2218117bb4ae0808b602",
+    "scientific_profile_sha256": "sha256:4422e0301b20b8ec9cb30b5f3d500252567c4c5dc88aaf883d35a92dd9b7804b",
+    "protocol_manifest_sha256": "sha256:d282e8a58de6a207129079498343b23bb634b45eaa38697794b77b9dadbad7ad"
+  },
+  "dispositions": {
+    "exact_released_bytes_bound": true,
+    "external_transport_verification_state": "not_evaluated",
+    "new_scientific_evidence_created": false,
+    "operator_acceptance_created": false,
+    "gate_a_acceptance_conferred": false,
+    "runtime_execution_authorized": false,
+    "gate_b_authorized": false
+  }
+}

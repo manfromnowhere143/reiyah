@@ -1,0 +1,37 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.frontier-discovery.dynamic-source-access-date-missing@1.2.0",
+  "fixture_class": "known_bad_frontier",
+  "target_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json",
+  "base_artifact_ref": {
+    "artifact_id": "reiyah.artifact.frontier-discovery-register-1.2.0",
+    "path": "evidence/frontier-discovery-register-1.2.0.json",
+    "sha256": "sha256:e5e7f68c3f93d43553408873ca4ab4f9eb93ae5cd637c473b4f847a458000fac",
+    "byte_size": 119407,
+    "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json",
+    "version": "1.2.0"
+  },
+  "mutations": [
+    {
+      "operation": "remove",
+      "json_pointer": "/records/47/accessed_on"
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA12-FRONTIER-DYNAMIC-SOURCE-BINDING",
+    "rejection_layer": "structural_schema",
+    "schema_keyword": "required",
+    "instance_pointer": "/records/47",
+    "reason": "A dynamic mutable source must retain the exact date on which its current pointer metadata was observed."
+  },
+  "fixture_creates_evidence": false,
+  "fixture_creates_claims": false,
+  "runtime_execution_authorized": false,
+  "gate_b_authorized": false,
+  "limitations": [
+    "This fixture is an offline deterministic schema replay descriptor and contains no source payload or empirical observation.",
+    "Fixture acceptance or rejection creates no scientific evidence, safety claim, compliance claim, superiority claim, operator acceptance, runtime authority, or Gate B authority."
+  ]
+}

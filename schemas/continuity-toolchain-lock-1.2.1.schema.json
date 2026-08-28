@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.1/continuity-toolchain-lock.schema.json",
+  "title": "Gate A 1.2.1 continuity toolchain lock",
+  "type": "object",
+  "required": ["schema_id", "artifact_id", "version", "runtime", "inherited_lock", "tools", "schemas"],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.2.1/continuity-toolchain-lock.schema.json"},
+    "artifact_id": {"const": "reiyah.artifact.continuity-toolchain-lock-1.2.1"},
+    "version": {"const": "1.2.1"},
+    "runtime": {
+      "type": "object",
+      "required": ["implementation", "version", "isolated_flag", "no_site_flag", "no_bytecode_flag", "standard_library_only"],
+      "properties": {
+        "implementation": {"const": "cpython"},
+        "version": {"type": "string", "pattern": "^3\\.14\\."},
+        "isolated_flag": {"const": true},
+        "no_site_flag": {"const": true},
+        "no_bytecode_flag": {"const": true},
+        "standard_library_only": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "inherited_lock": {"$ref": "#/$defs/fileBinding"},
+    "tools": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/fileBinding"}},
+    "schemas": {"type": "array", "minItems": 7, "items": {"$ref": "#/$defs/fileBinding"}}
+  },
+  "$defs": {
+    "fileBinding": {
+      "type": "object",
+      "required": ["path", "sha256", "byte_size"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+        "byte_size": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

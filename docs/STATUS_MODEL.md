@@ -246,6 +246,23 @@ of abstentions are prohibited. Unknown eligibility remains unknown rather than i
 
 ## 6. Gate A completion and acceptance
 
+### 6.1 Current public Gate A state
+
+For the exact public Gate A `1.2.0` packet, the canonical report records
+`architecture_complete`, closes `CR-001` through `CR-016`, passes GA-01 through GA-16, and
+contains zero diagnostics. Receipt sequence four exists at the direct-child receipt commit and
+records publisher transport as `asserted_unverified`. Independent transport remains
+`not_evaluated`; GA-17 is `not_evaluated`; operator acceptance is `unaccepted`; and runtime and
+Gate B authorization are both `false`.
+
+The `1.2.1` continuity successor tracked in
+[GitHub issue #1](https://github.com/manfromnowhere143/reiyah/issues/1) cannot change the exact
+status of the immutable `1.2.0` packet. This prose does not establish its validation or
+publication state. Resolve those states only from an exact `1.2.1` canonical report and
+append-only event record; absent them, treat the successor as proposed.
+
+### 6.2 Acyclic completion model
+
 The Gate A `1.2.0` index and its excluded canonical report use separate fields for the same exact
 candidate bytes:
 
@@ -324,9 +341,9 @@ initial mission release `reiyah.mission@1.0.0` and protocol release
 requires a newly versioned Gate A schema, validation plan, index, and report; it cannot silently
 enter or redefine the semantic head of packet `1.0.0`.
 
-The public Gate A `1.1.0`, `1.1.1`, and `1.1.2` packets are immutable at their exact indexed
-commits and digests. Gate A `1.1.1` is the governance correction, and `1.1.2` is its presentation
-and continuity successor. Both retain `reiyah.mission@1.1.0` and
+The public Gate A `1.1.0`, `1.1.1`, `1.1.2`, and `1.2.0` packets are immutable at their exact
+indexed commits and digests. Gate A `1.1.1` is the governance correction, and `1.1.2` is its
+presentation and continuity successor. Both retain `reiyah.mission@1.1.0` and
 `reiyah.protocol.harbor-gate-a@1.1.0` unchanged.
 
 Gate A `1.2.0` is a scientific and validation-integrity correction. It retains the mission and
@@ -334,9 +351,9 @@ introduces proposed protocol `reiyah.protocol.harbor-gate-a@1.2.0`, which points
 `1.1.0` protocol as `corrects`. It inherits every unchanged `1.1.2` indexed artifact by exact
 digest, records every changed and added path in a closed validation plan, and removes no
 predecessor artifact. Receipt sequence three resolves only the exact `1.1.2` publication event.
-A future sequence-four publisher receipt, if separately authorized, must bind the exact `1.2.0`
-index, report, current rights observation, publication commit, and its own readback assertions;
-it still cannot claim independent transport verification. Frozen values are never placeholders.
+Receipt sequence four binds the exact `1.2.0` index, report, event-specific rights observation,
+publication commit, and publisher readback assertions. It records `asserted_unverified` and does
+not claim independent transport verification. Frozen values are never placeholders.
 
 ## 8. Status ownership
 

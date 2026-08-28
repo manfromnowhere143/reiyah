@@ -1,0 +1,38 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-fixture.schema.json",
+  "schema_version": "1.2.0",
+  "fixture_id": "reiyah.fixture.frontier-discovery.predecessor-drift@1.2.0",
+  "fixture_class": "known_bad_frontier",
+  "target_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json",
+  "base_artifact_ref": {
+    "artifact_id": "reiyah.artifact.frontier-discovery-register-1.2.0",
+    "path": "evidence/frontier-discovery-register-1.2.0.json",
+    "sha256": "sha256:e5e7f68c3f93d43553408873ca4ab4f9eb93ae5cd637c473b4f847a458000fac",
+    "byte_size": 119407,
+    "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json",
+    "version": "1.2.0"
+  },
+  "mutations": [
+    {
+      "operation": "replace",
+      "json_pointer": "/predecessor_binding/sha256",
+      "value": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "expected_outcome": "reject",
+  "expected_failure": {
+    "rule_id": "GA12-FRONTIER-PREDECESSOR-BINDING",
+    "rejection_layer": "structural_schema",
+    "schema_keyword": "const",
+    "instance_pointer": "/predecessor_binding/sha256",
+    "reason": "The successor must bind the exact immutable predecessor digest."
+  },
+  "fixture_creates_evidence": false,
+  "fixture_creates_claims": false,
+  "runtime_execution_authorized": false,
+  "gate_b_authorized": false,
+  "limitations": [
+    "This fixture is an offline deterministic schema replay descriptor and contains no source payload or empirical observation.",
+    "Fixture acceptance or rejection creates no scientific evidence, safety claim, compliance claim, superiority claim, operator acceptance, runtime authority, or Gate B authority."
+  ]
+}

@@ -4,10 +4,10 @@
 
 | Field | Value |
 |---|---|
-| As-of date | 2026-08-23 |
+| As-of date | 2026-08-25 |
 | Lifecycle status | Proposed |
 | Authority | Informative research-audit proposal only |
-| Gate A membership | Gate A 1.1 architecture candidate; operator unaccepted |
+| Gate A membership | Public Gate A `1.2.0` static architecture packet; `architecture_complete`; operator unaccepted |
 | Gate B status | Not defined and not authorized |
 | Runtime, data collection, training, inference, deployment, or control authorization | False |
 
@@ -15,6 +15,17 @@ This operating model describes how a future HARBOR research program could become
 evidence-bearing without weakening Reiyah's current authority, unknown-state, or immutable-release
 rules. It creates no role assignment, hiring decision, study approval, data authority,
 empirical or scientific publication authority, scientific support, or operator acceptance.
+
+The exact Gate A `1.2.0` canonical report closes `CR-001` through `CR-016` and passes GA-01
+through GA-16 with zero diagnostics. Receipt sequence four exists, with publisher transport
+`asserted_unverified` and independent transport `not_evaluated`. GA-17 remains `not_evaluated`,
+operator acceptance remains `unaccepted`, and runtime and Gate B authorization remain `false`.
+These are bounded architecture and distribution states, not scientific results.
+
+A `1.2.1` continuity successor is tracked in
+[GitHub issue #1](https://github.com/manfromnowhere143/reiyah/issues/1). This operating model
+cannot validate or publish it. Resolve those states only from exact versioned machine records;
+absent them, treat the successor as proposed.
 
 The external links in this document are unretained discovery pointers. Their evidentiary labels
 are defined in [FRONTIER_BASELINE_2026.md](FRONTIER_BASELINE_2026.md). A linked source is not
@@ -35,6 +46,14 @@ The operating model has four simultaneous duties:
    and
 4. keep scientific judgment, safety assurance, operator acceptance, and release authority
    separate.
+
+The current discovery checkpoint is
+[`frontier-discovery-register-1.2.0.json`](../evidence/frontier-discovery-register-1.2.0.json).
+It exact-preserves the 38-record `1.1.0` baseline and appends 16 records, for 54 total. Every row
+remains pointer-only, evidence-ineligible, payload-free, and non-supporting. The register sharpens
+questions about supervision, degraded sensing, recovery opportunity, teleoperation, semantic
+failure discovery, human reference models, exposure matching, and claim-to-artifact lineage. It
+does not establish a comparator result or Reiyah advantage.
 
 ## Authority and role separation
 
@@ -80,9 +99,10 @@ Every record must use the exact name and authority limitation present in its sou
 
 ## Required research objects
 
-The six Gate A object kinds remain the foundation. Gate A `1.1.0` adds typed components for the
-minimum static research contracts while creating no runtime behavior. The sections below describe
-that current static surface and the evidence a future empirical program would still need.
+The six Gate A object kinds remain the foundation. Gate A `1.1.0` added typed components for the
+minimum static research contracts. Gate A `1.2.0` retained and strengthened that static surface
+without creating runtime behavior. The sections below describe the current static contracts and
+the evidence a future empirical program would still need.
 
 ### Actor and information-set objects
 
@@ -400,11 +420,11 @@ scientific evidence.
 
 ## Immutable release and distribution model
 
-The historical Gate A 1.0.0 files must not be overwritten. This document and the other 2026
-audit records are adopted only by the add-only 1.1 architecture candidate, with new schema,
-manifest, ledger, index, report, and decision bindings as applicable. The recovered historical
-1.0 anchors and digests remain separately verifiable, with interrupted custody disclosed in the
-recovery record.
+The historical Gate A 1.0.0 files must not be overwritten. This document and the other 2026 audit
+records were first adopted by the add-only public 1.1 architecture lineage and remain present in
+the immutable public `1.2.0` packet, with versioned schema, manifest, ledger, index, report, and
+governance bindings as applicable. The recovered historical 1.0 anchors and digests remain
+separately verifiable, with interrupted custody disclosed in the recovery record.
 
 Future releases should separate:
 
@@ -424,14 +444,20 @@ authority.
 
 ## Gate boundary
 
-### Gate A 1.1 static closures
+### Gate A static closures
 
-The `1.1.0` candidate closes three defects found in the historical packet without executing
+The public `1.1.0` packet closed three defects found in the historical packet without executing
 research. It represents event, record, and availability time; frozen actor information sets;
 belief holder, target, calibration, and applicability; and construct-specific contracts for
 human-automation assessment, joint performance, sequential off-policy evaluation, study design,
 and evaluation assurance. Exact reference ownership, version binding, epistemic rules, and
 reason-specific mutations make those static obligations fail closed.
+
+The public `1.2.0` correction added executable reconciliation, derivation, eligibility,
+reference, release-isolation, and transport-separation contracts. Its exact canonical report
+records `architecture_complete`, closes `CR-001` through `CR-016`, and leaves GA-17 and
+independent transport `not_evaluated`. The sequence-four receipt records only publisher transport
+as `asserted_unverified`.
 
 These are architecture closures only. They do not establish that any construct is measurable,
 valid, safe, useful, or supported. They do not create retained empirical evidence or authorize

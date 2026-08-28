@@ -2,7 +2,8 @@
 
 This directory separates four record classes that must never confer authority on one another:
 
-1. the current candidate evidence index and its digest sidecar;
+1. a current candidate evidence index and sidecar when generated, with released predecessors
+   frozen under `history/`;
 2. immutable versioned validation reports;
 3. append-only publisher distribution receipts; and
 4. append-only operator decisions created only through direct authorized human action.
@@ -30,22 +31,37 @@ Historical receipts retain publisher assertions about publication and remote rea
 not independent transport observations. No historical receipt evaluates GA-17, accepts Gate A,
 creates scientific evidence, supports a safety or compliance claim, or authorizes runtime.
 
-## Current correction candidate
+## Current public correction packet
 
-Gate A `1.2.0` is a candidate intended to correct the retained `1.1.2` scientific and
-validation-integrity defects. It keeps
+Gate A `1.2.0` is the current public scientific and validation-integrity correction. It keeps
 mission `reiyah.mission@1.1.0` and proposes protocol
-`reiyah.protocol.harbor-gate-a@1.2.0`. Its current index remains
-`candidate_pending_canonical_report` until a clean immutable release replay emits a
-byte-identical, zero-diagnostic `gate-a-validation-1.2.0.json` report.
+`reiyah.protocol.harbor-gate-a@1.2.0`. The index deliberately remains
+`candidate_pending_canonical_report` because the report is outside its acyclic projection. The
+exact canonical report binds that index, records `architecture_complete`, closes `CR-001` through
+`CR-016`, passes GA-01 through GA-16, and contains zero diagnostics.
 
-No sequence-four publisher receipt, real operator decision, or independent transport record
-exists during candidate construction. The `1.2.0` template is deliberately invalid and
-non-accepting:
+| Item | Exact identity or state |
+|---|---|
+| `C_packet` | `86409473c8fd1571236c849a6cc730db896465fb` |
+| `C_receipt` | `d42d4d298d515b59e9df15f2ba45572a91b9fab8`, a direct child of `C_packet` |
+| Index digest | `sha256:b39a9bd02b3d86e32b95b988115243918d39b8fa7dea15012d90a0cb0f7c811a` |
+| Report digest | `sha256:79d6f3578630994c54cbe341e2c62b79fe4606b4645b85499bcb76f018ad1961` |
+| Sequence-four receipt digest | `sha256:74817d54ec3085ef0f6ceb45f54db4c24e353aa48e20a44b5ab36c97bd9d9a99` |
+| Transport | publisher `asserted_unverified`; independent verification `not_evaluated` |
+| Authority | operator `unaccepted`; GA-17 `not_evaluated`; runtime `false`; Gate B `false` |
+
+The sequence-four receipt exists and binds the exact public packet, index, report, rights record,
+and publisher readback assertion. No real operator decision or independent transport record
+exists. The `1.2.0` decision template remains deliberately invalid and non-accepting:
 
 [`OPERATOR_DECISION-1.2.0.template.json`](decisions/OPERATOR_DECISION-1.2.0.template.json)
 
 Historical decision templates remain frozen for their own packets and cannot be retargeted.
+
+A `1.2.1` continuity successor is tracked in
+[GitHub issue #1](https://github.com/manfromnowhere143/reiyah/issues/1). This prose cannot validate
+or publish it. Resolve those states only from an exact `1.2.1` report and append-only event
+receipt; absent those records, treat the successor as proposed.
 
 ## No inferred acceptance
 
@@ -59,10 +75,10 @@ authority, or mark GA-17 as passed.
 
 ## Decision-record procedure
 
-Only after the canonical release report classifies the exact `1.2.0` index bytes as
-`architecture_complete` may an authorized human use the current template as a starting point.
-The human must create a new append-only record named with a stable lowercase identity, for
-example:
+The canonical release report classifies the exact `1.2.0` index bytes as
+`architecture_complete`. An authorized human may use the current template as a starting point,
+but no such action or acceptance is inferred. The human must create a new append-only record named
+with a stable lowercase identity, for example:
 
 `gate/decisions/reiyah.gate-a-decision-YYYYMMDDTHHMMSSZ.json`
 
@@ -83,18 +99,18 @@ decision stale for authorization purposes but never deletes it.
 
 ## Publication and transport procedure
 
-Publication is a separate event. It requires fresh event-specific operator distribution
-authority, a current rights observation, exact index and report bindings, a distinct packet
-commit, and an append-only sequence-four receipt. The receipt schema permits only
+Publication is a separate event. For `1.2.0`, it used fresh event-specific operator distribution
+authority, a current rights observation, exact index and report bindings, the distinct
+`C_packet`, and the append-only sequence-four receipt at `C_receipt`. The receipt records
 `transport_verification_state: asserted_unverified`; its remote readback object is explicitly a
 publisher assertion.
 
-The packet commit must exist before the rights record because the rights schema binds that exact
-commit, index, and report. The validation plan therefore permits exactly one event-specific future
-rights path as a cycle-breaking projection exclusion and forbids a broad rights prefix. After two
-clean packet replays, create the fresh rights record, push the exact packet, then commit that
-record and the receipt together as a direct child of the packet commit. Release replay at the
-receipt-bearing child must reproduce the same packet index and report bytes.
+The packet commit had to exist before the rights record because the rights schema binds that exact
+commit, index, and report. The validation plan therefore permitted exactly one event-specific
+future-rights path as a cycle-breaking projection exclusion and forbade a broad rights prefix.
+After two clean packet replays, the event created the fresh rights record, pushed the exact packet,
+and committed that record and the receipt together as a direct child. Release replay at the
+receipt-bearing child reproduced the same packet index and report bytes.
 
 The two official-page capture manifests are created before the packet and indexed normally. They
 retain predeclared method-specific observation metadata, bounded paraphrases, and an explicit

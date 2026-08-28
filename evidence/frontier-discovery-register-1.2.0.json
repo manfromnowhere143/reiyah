@@ -1,0 +1,2588 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json",
+  "schema_version": "1.2.0",
+  "artifact_id": "reiyah.artifact.frontier-discovery-register-1.2.0",
+  "register_id": "reiyah.frontier-discovery-register",
+  "version": "1.2.0",
+  "as_of_date": "2026-08-25",
+  "lifecycle_status": "proposed",
+  "relation": {
+    "type": "append_only_successor",
+    "prior_artifact_id": "reiyah.artifact.frontier-discovery-register-1.1.0",
+    "prior_version": "1.1.0",
+    "inherited_record_count": 38,
+    "appended_record_count": 16,
+    "predecessor_records_semantically_unchanged": true
+  },
+  "predecessor_binding": {
+    "relation": "append_only_successor",
+    "artifact_id": "reiyah.artifact.frontier-discovery-register-1.1.0",
+    "register_id": "reiyah.frontier-discovery-register",
+    "path": "evidence/frontier-discovery-register-1.1.0.json",
+    "sha256": "sha256:0567b9d00f50783574201bc367869094ca8383fce3e6dd9f56b6108a764c3093",
+    "byte_size": 70081,
+    "version": "1.1.0",
+    "record_count": 38,
+    "records_preserved_as_exact_prefix": true,
+    "schema_binding": {
+      "schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json",
+      "schema_version": "1.1.0",
+      "path": "schemas/frontier-discovery-register-1.1.schema.json",
+      "sha256": "sha256:722b12709dba204dd38773b6f89e97fed76127996d7e5103b50b710cfc349b68",
+      "byte_size": 7686
+    }
+  },
+  "identity_policy": {
+    "record_order": "exact_predecessor_prefix_then_append_only_successor_records",
+    "identity_fields": [
+      "artifact_id",
+      "discovery_id",
+      "version"
+    ],
+    "predecessor_record_mutation_prohibited": true,
+    "duplicate_artifact_id_prohibited": true,
+    "duplicate_discovery_id_prohibited": true,
+    "identifier_reuse_prohibited": true
+  },
+  "runtime_execution_authorized": false,
+  "gate_b_authorized": false,
+  "custody_profile_ref": {
+    "artifact_id": "reiyah.artifact.public-evidence-custody-profile-1.1.0",
+    "version": "1.1.0",
+    "path": "evidence/public-evidence-custody-profile-1.1.0.json",
+    "sha256": "sha256:80bc6f977ca8810b18cc077976c4c8517dc6f93d70b5ebbf455b433d73e3978b",
+    "byte_size": 5296
+  },
+  "operator_distribution_authorized": true,
+  "distribution_authorization": {
+    "basis_state": "observed_current_operator_instruction",
+    "recorded_date": "2026-08-25",
+    "authorized_action": "append_pointer_only_frontier_discovery_metadata_to_static_open_source_candidate",
+    "scope_limit": "This successor register, its schema, and deterministic fixtures as pointer metadata only; no third party payload, private data, runtime, scientific claim, safety claim, compliance claim, or superiority claim.",
+    "operator_identity_authentication": "not_evaluated",
+    "ga17_effect": "not_evaluated",
+    "gate_a_acceptance_effect": "none",
+    "scientific_publication_acceptance_effect": "none"
+  },
+  "distribution_authorization_scope": "static_public_repository_distribution",
+  "pointer_metadata_distribution_authorized": true,
+  "payload_distribution_authorized": false,
+  "claims_admitted": false,
+  "scientific_support_claimed": false,
+  "safety_claimed": false,
+  "compliance_claimed": false,
+  "comparative_superiority_claimed": false,
+  "operator_acceptance_conferred": false,
+  "record_count": 54,
+  "records": [
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.tesla-q2-2026-update-1.1.0",
+      "discovery_id": "reiyah.discovery.tesla.q2-2026-update",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_disclosure",
+      "title": "Tesla Q2 2026 Update",
+      "publisher": {
+        "state": "observed",
+        "value": "Tesla, Inc."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "TSLA-Q2-2026-Update"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Q2 2026 shareholder update"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-07-22"
+      },
+      "scope": "Official Tesla investor update containing company statements about AI software, FSD (Supervised), Robotaxi, Cybercab, fleet mileage, and geographic rollout.",
+      "source_url": "https://assets-ir.tesla.com/tesla-contents/IR/TSLA-Q2-2026-Update.pdf",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "tesla_autonomy",
+        "data_engine_mapping"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Company disclosure pointer only; no payload is retained under this profile.",
+        "Investor statements are not independent scientific, safety, causal, or benchmark evidence."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.tesla-fy2025-update-1.1.0",
+      "discovery_id": "reiyah.discovery.tesla.fy2025-update",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_disclosure",
+      "title": "Tesla Q4 and Full Year 2025 Update",
+      "publisher": {
+        "state": "observed",
+        "value": "Tesla, Inc."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "tsla-20260128-gen"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Q4 and full-year 2025 shareholder update"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-01-28"
+      },
+      "scope": "Official Tesla investor update containing company descriptions of FSD v14, an end-to-end foundation model, customer and Robotaxi data, fleet scale, and planned inference hardware.",
+      "source_url": "https://ir.tesla.com/_flysystem/s3/sec/000162828026003837/tsla-20260128-gen.pdf",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "tesla_autonomy",
+        "data_engine_mapping"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Company disclosure pointer only; no payload is retained under this profile.",
+        "Architecture, scale, and performance statements are company claims, not complete technical disclosure or independent validation."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.tesla-q1-2025-update-1.1.0",
+      "discovery_id": "reiyah.discovery.tesla.q1-2025-update",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_disclosure",
+      "title": "Tesla Q1 2025 Update",
+      "publisher": {
+        "state": "observed",
+        "value": "Tesla, Inc."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "tsla-20250422-gen"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Q1 2025 shareholder update"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2025-04-22"
+      },
+      "scope": "Official Tesla investor update containing company statements about vision-only end-to-end training, supervised regional transfer, and bounded factory logistics.",
+      "source_url": "https://ir.tesla.com/_flysystem/s3/sec/000162828025018851/tsla-20250422-gen.pdf",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "tesla_autonomy",
+        "simulation"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Company disclosure pointer only; no payload is retained under this profile.",
+        "The term validation in an investor update does not establish a preregistered transfer experiment or independent review."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.patent-us-20260017875a1-1.1.0",
+      "discovery_id": "reiyah.discovery.patent.us-20260017875a1",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "patent_publication",
+      "title": "Simulation of viewpoint capture from environment rendered with ground truth heuristics",
+      "publisher": {
+        "state": "observed",
+        "value": "United States Patent and Trademark Office publication mirrored by Google Patents"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "US20260017875A1"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "US patent application publication US20260017875A1"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-01-15"
+      },
+      "scope": "Tesla-assigned patent publication describing environment reconstruction, simulated viewpoints and sensor images, variations, and combined real and simulated training data.",
+      "source_url": "https://patents.google.com/patent/US20260017875A1/en",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "tesla_autonomy",
+        "simulation",
+        "data_engine_mapping"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "The URL is a patent-publication mirror and no office or mirror payload is retained.",
+        "A patent disclosure is not evidence of deployment, performance, novelty adjudication, or safety."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.patent-ep-4594990a1-1.1.0",
+      "discovery_id": "reiyah.discovery.patent.ep-4594990a1",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "patent_publication",
+      "title": "Labeling training data using high-volume navigation data",
+      "publisher": {
+        "state": "observed",
+        "value": "European Patent Office publication mirrored by Google Patents"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "EP4594990A1"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "European patent application publication EP4594990A1"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2025-08-06"
+      },
+      "scope": "Tesla-assigned patent publication describing aggregation, deduplication, denoising, 3D modeling, transferred labels, and optional human verification for fleet data.",
+      "source_url": "https://patents.google.com/patent/EP4594990A1/en",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "tesla_autonomy",
+        "data_engine_mapping"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "The URL is a patent-publication mirror and no office or mirror payload is retained.",
+        "A patent disclosure is not evidence of production use, label quality, coverage, performance, or safety."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-2025-10-k-1.1.0",
+      "discovery_id": "reiyah.discovery.mobileye.2025-10-k",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_disclosure",
+      "title": "Mobileye Global Inc. 2025 Annual Report on Form 10-K",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye Global Inc."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "SEC accession 0001104659-26-014300"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Form 10-K for fiscal year ended 2025-12-27"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-02-12"
+      },
+      "scope": "Official annual filing describing Mobileye products, business, data and mapping, development programs, risk factors, and company claims for fiscal 2025.",
+      "source_url": "https://ir.mobileye.com/sec-filings/sec-filing/10-k/0001104659-26-014300",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "data_engine_mapping",
+        "safety_architecture"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Official filing pointer only; no filing payload is retained under this profile.",
+        "Company disclosures and risk statements are not independent technical validation or Reiyah evidence."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-q1-2026-results-1.1.0",
+      "discovery_id": "reiyah.discovery.mobileye.q1-2026-results",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_disclosure",
+      "title": "Mobileye Releases First Quarter 2026 Results, Updates Full-Year Outlook, and Announces a $250 Million Share Repurchase Program",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye Global Inc."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Mobileye IR news release 2026-04-23"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Q1 2026 results release"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-04-23"
+      },
+      "scope": "Official quarterly results release with company-reported product, robotaxi, and development milestones and financial results.",
+      "source_url": "https://ir.mobileye.com/news-releases/news-release-details/mobileye-releases-first-quarter-2026-results-updates-full-year",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "safety_architecture"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Company results pointer only; no payload is retained under this profile.",
+        "Forward-looking statements and milestones are company self-reports, not independent safety or performance evidence."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-q2-2026-results-1.1.0",
+      "discovery_id": "reiyah.discovery.mobileye.q2-2026-results",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_disclosure",
+      "title": "Mobileye Releases Second Quarter 2026 Results, Updates Guidance, and Provides Business Overview",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye Global Inc."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Mobileye IR news release 2026-07-23"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Q2 2026 results release"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-07-23"
+      },
+      "scope": "Official quarterly results release with company-reported robotaxi, self-driving-system, product, and business milestones and financial results.",
+      "source_url": "https://ir.mobileye.com/news-releases/news-release-details/mobileye-releases-second-quarter-2026-results-updates-guidance",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "safety_architecture"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Company results pointer only; no payload is retained under this profile.",
+        "Forward-looking statements and milestones are company self-reports, not independent safety or performance evidence."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-ces-2026-architecture-1.1.0",
+      "discovery_id": "reiyah.discovery.mobileye.ces-2026-architecture",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_technical_page",
+      "title": "Prof. Amnon Shashua at CES 2026: Robotaxi updates, breakthroughs in AI, and robotics",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Mobileye CES 2026 architecture post"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Publisher page dated 2026-01-10"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-01-10"
+      },
+      "scope": "Official company post describing fast and slow thinking, safety-layer separation, sensing-state simulation, ACI self-play, and product roadmaps as Mobileye claims.",
+      "source_url": "https://www.mobileye.com/blog/takeaways-from-the-mobileye-press-conference-with-ceo-prof-amnon-shashua-at-ces-2026/",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "safety_architecture",
+        "simulation"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Official company technical-marketing pointer only; no payload is retained.",
+        "Architecture descriptions and forecasts are self-reports and do not establish deployed behavior, safety, or performance."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-sds-safety-architecture-1.1.0",
+      "discovery_id": "reiyah.discovery.mobileye.sds-safety-architecture",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "A Safety Architecture for Self-Driving Systems",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "SDS_Safety_Architecture.pdf"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Mobileye 2024 paper by Shalev-Shwartz, Molnar, Granot, Shany, and Shashua"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2024-11-26"
+      },
+      "scope": "Author-identified Mobileye paper proposing safety goals and architecture for eyes-off and no-driver self-driving systems.",
+      "source_url": "https://static.mobileye.com/website/us/corporate/files/SDS_Safety_Architecture.pdf",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "safety_architecture"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Author-hosted paper pointer only; no payload is retained or independently reviewed.",
+        "Authorship does not establish independent replication, certification, or applicability to Reiyah."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-rss-primary-paper-1.1.0",
+      "discovery_id": "reiyah.discovery.mobileye.rss-primary-paper",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "On a Formal Model of Safe and Scalable Self-driving Cars",
+      "publisher": {
+        "state": "observed",
+        "value": "arXiv"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "arXiv:1708.06374v6"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "v6 by Shalev-Shwartz, Shammah, and Shashua"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2018-10-27"
+      },
+      "scope": "Primary author-posted paper proposing the Responsibility-Sensitive Safety mathematical model.",
+      "source_url": "https://arxiv.org/abs/1708.06374",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "safety_architecture"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Primary paper pointer only; no exact versioned payload is retained under this profile.",
+        "A proposed formal model does not establish implementation conformance, complete physical assumptions, or deployed safety."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-rem-page-1.1.0",
+      "discovery_id": "reiyah.discovery.mobileye.rem-page",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_technical_page",
+      "title": "Mobileye REM — Road Experience Management",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Mobileye technology/rem page"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Mutable publisher page observed 2026-08-23"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "The live page did not expose a stable publication date in the observed discovery metadata."
+      },
+      "scope": "Official company page describing crowdsourced mapping and the Mobileye Roadbook as company claims.",
+      "source_url": "https://www.mobileye.com/technology/rem/",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "data_engine_mapping"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Mutable company page pointer only; no dated payload is retained.",
+        "Coverage, freshness, scale, and deployment statements are not independently validated here."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-dms-program-2026-1.1.0",
+      "discovery_id": "reiyah.discovery.mobileye.dms-program-2026",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_disclosure",
+      "title": "Mobileye secures major DMS production program with leading U.S. automaker",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Mobileye news release 2026-03-23"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Publisher release dated 2026-03-23"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-03-23"
+      },
+      "scope": "Official company release describing a future DMS production program and claimed fusion of driver gaze, attention, and road context.",
+      "source_url": "https://www.mobileye.com/news/mobileye-secures-major-dms-production-program-with-leading-us-automaker/",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "driver_vehicle_state",
+        "driver_monitoring",
+        "object_set_coverage"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Company program announcement pointer only; customer identity, contract, production, and validation evidence are not retained.",
+        "Intended functionality and expected scale are not evidence of realized safety or performance."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.human-ai-no-free-lunch-1.1.0",
+      "discovery_id": "reiyah.discovery.method.human-ai-no-free-lunch",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "A No Free Lunch Theorem for Human-AI Collaboration",
+      "publisher": {
+        "state": "observed",
+        "value": "Proceedings of the AAAI Conference on Artificial Intelligence"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "doi:10.1609/aaai.v39i13.33574"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "AAAI 2025 volume 39 issue 13, pages 14369-14376"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2025-04-11"
+      },
+      "scope": "Primary paper on limits of deterministic complementarity among calibrated probabilistic agents in binary classification.",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/33574",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "human_ai_complementarity"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Publisher page pointer only; paper bytes and review materials are not retained.",
+        "Binary-classification theory does not directly validate a Reiyah collaboration estimand or automotive deployment."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.human-ai-sufficient-statistic-1.1.0",
+      "discovery_id": "reiyah.discovery.method.human-ai-sufficient-statistic",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "Designing Human-AI Collaboration: A Sufficient-Statistic Approach",
+      "publisher": {
+        "state": "observed",
+        "value": "National Bureau of Economic Research"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "NBER Working Paper 33949; doi:10.3386/w33949"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "NBER Working Paper 33949, June 2025"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "The official page specifies June 2025 but not an exact day."
+      },
+      "scope": "Primary working paper on AI information disclosure, selective automation, biased beliefs, and effort crowd-out in a fact-checking experiment.",
+      "source_url": "https://www.nber.org/papers/w33949",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "human_ai_complementarity",
+        "driver_vehicle_state"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Publisher page pointer only; paper, experiment data, and preregistration are not retained.",
+        "A fact-checking study does not directly establish effects in driving or vehicle automation."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.situation-awareness-assessment-1.1.0",
+      "discovery_id": "reiyah.discovery.method.situation-awareness-assessment",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "How to assess situation awareness while driving with automation?",
+      "publisher": {
+        "state": "observed",
+        "value": "Accident Analysis & Prevention / Elsevier"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "PII S0001457525002283"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "2025 publisher article page"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "An exact publication day was not retained in the discovery review."
+      },
+      "scope": "Primary 2025 study comparing situation-awareness measurement approaches in automated-driving contexts.",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S0001457525002283",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "readiness_situation_awareness",
+        "driver_vehicle_state"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Publisher page pointer only; article bytes, instruments, and data are not retained.",
+        "Study measures must not be treated as interchangeable readiness ground truth without a retained construct-validation review."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.situation-awareness-hazard-mismatch-1.1.0",
+      "discovery_id": "reiyah.discovery.method.situation-awareness-hazard-mismatch",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "The mismatch between perceived situation awareness and hazard recognition in automated driving",
+      "publisher": {
+        "state": "observed",
+        "value": "Applied Ergonomics / Elsevier"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "PII S0003687025000985"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "2025 publisher article page"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "An exact publication day was not retained in the discovery review."
+      },
+      "scope": "Primary 2025 study of perceived situation awareness and hazard-recognition behavior under automation.",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S0003687025000985",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "readiness_situation_awareness",
+        "driver_vehicle_state"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Publisher page pointer only; article bytes and data are not retained.",
+        "A reported proxy mismatch does not establish a universal readiness model or Reiyah effect."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.takeover-task-demands-1.1.0",
+      "discovery_id": "reiyah.discovery.method.takeover-task-demands",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "How task demands influence driver behaviour in conditionally automated driving",
+      "publisher": {
+        "state": "observed",
+        "value": "Safety Science / Elsevier"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "PII S0141938225001544"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "2025 publisher article page"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "An exact publication day was not retained in the discovery review."
+      },
+      "scope": "Primary 2025 study of time budget, non-driving tasks, lane context, scenario complexity, and takeover phases.",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S0141938225001544",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "readiness_situation_awareness",
+        "driver_vehicle_state"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Publisher page pointer only; article bytes, protocol, and data are not retained.",
+        "Reported phase effects do not establish a portable readiness or recoverability threshold."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.takeover-obstacle-alertness-1.1.0",
+      "discovery_id": "reiyah.discovery.method.takeover-obstacle-alertness",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "How do obstacle characteristics and driver alertness affect the takeover process?",
+      "publisher": {
+        "state": "observed",
+        "value": "Transportation Research Part F / Elsevier"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "PII S1369847825002566"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "2025 publisher article page"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "An exact publication day was not retained in the discovery review."
+      },
+      "scope": "Primary 2025 study separating situation-understanding and takeover-reaction timing under obstacle and alertness variation.",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S1369847825002566",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "readiness_situation_awareness",
+        "driver_vehicle_state"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Publisher page pointer only; article bytes, protocol, and data are not retained.",
+        "Reported mediation or phase timing is not retained evidence for a Reiyah causal or readiness claim."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.pilot-dsm-1.1.0",
+      "discovery_id": "reiyah.discovery.method.pilot-dsm",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "PILOT-DSM: Risk perception-aligned takeover prompting framework via coverage-gap assessment",
+      "publisher": {
+        "state": "observed",
+        "value": "Accident Analysis & Prevention / Elsevier"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "PII S0001457526002745"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "2026 publisher article page"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "An exact publication day was not retained in the discovery review."
+      },
+      "scope": "Primary 2026 paper framing takeover prompting through driver coverage of risk-relevant object sets and coverage gaps.",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S0001457526002745",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "object_set_coverage",
+        "driver_monitoring",
+        "readiness_situation_awareness"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Publisher page pointer only; article bytes, expert reference process, and data are not retained.",
+        "The framework motivates a benchmark question but does not validate HARBOR joint silent-miss definitions."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.ope-safety-constraint-1.1.0",
+      "discovery_id": "reiyah.discovery.method.ope-safety-constraint",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "Efficient Policy Evaluation with Safety Constraint for Reinforcement Learning",
+      "publisher": {
+        "state": "observed",
+        "value": "International Conference on Learning Representations"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "ICLR 2025 paper hash 5681251fa039cf49d6d11b906eded1b3"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "ICLR 2025 conference publication page"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "An exact publication day was not retained in the discovery review."
+      },
+      "scope": "Primary 2025 paper on policy evaluation using logged transitions with behavior-policy design, variance, and safety constraints.",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/5681251fa039cf49d6d11b906eded1b3-Abstract-Conference.html",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "off_policy_evaluation"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Proceedings pointer only; paper bytes, code, and experiments are not retained.",
+        "Reinforcement-learning results do not authorize policy learning, online exploration, simulation, or vehicle control."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.ope-nonignorable-missingness-1.1.0",
+      "discovery_id": "reiyah.discovery.method.ope-nonignorable-missingness",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "Off-Policy Evaluation under Nonignorable Missing Data",
+      "publisher": {
+        "state": "observed",
+        "value": "OpenReview / ICML 2025"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "OpenReview So6DMbeAak"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "ICML 2025 OpenReview forum record"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "An exact publication day was not retained in the discovery review."
+      },
+      "scope": "Primary 2025 paper on off-policy value estimation under nonignorable missingness assumptions and inference.",
+      "source_url": "https://openreview.net/forum?id=So6DMbeAak",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "off_policy_evaluation",
+        "missingness_history_model_selection"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "OpenReview pointer only; exact paper bytes, reviews, and code are not retained.",
+        "Missingness identification assumptions must be independently specified and tested before any HARBOR use."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.ope-history-dependent-policy-1.1.0",
+      "discovery_id": "reiyah.discovery.method.ope-history-dependent-policy",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "Demystifying the Paradox of Importance Sampling with an Estimated History-Dependent Behavior Policy",
+      "publisher": {
+        "state": "observed",
+        "value": "OpenReview / ICML 2025"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "OpenReview BrLuZ0HOnb"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "ICML 2025 OpenReview forum record"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "An exact publication day was not retained in the discovery review."
+      },
+      "scope": "Primary 2025 paper on finite-sample and asymptotic consequences of estimated history-dependent behavior policies in importance sampling.",
+      "source_url": "https://openreview.net/forum?id=BrLuZ0HOnb",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "off_policy_evaluation",
+        "missingness_history_model_selection"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "OpenReview pointer only; exact paper bytes, reviews, and code are not retained.",
+        "Theoretical or simulated behavior does not establish adequacy for a vehicle policy log or Reiyah estimand."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.ope-model-selection-1.1.0",
+      "discovery_id": "reiyah.discovery.method.ope-model-selection",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "Model Selection for Off-policy Evaluation",
+      "publisher": {
+        "state": "observed",
+        "value": "OpenReview / NeurIPS 2025"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "OpenReview gQ8kIhu8JA"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "NeurIPS 2025 OpenReview forum record"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "An exact publication day was not retained in the discovery review."
+      },
+      "scope": "Primary 2025 paper treating estimator and hyperparameter selection as part of off-policy evaluation design.",
+      "source_url": "https://openreview.net/forum?id=gQ8kIhu8JA",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "off_policy_evaluation",
+        "missingness_history_model_selection"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "OpenReview pointer only; exact paper bytes, reviews, and code are not retained.",
+        "A candidate model-selection method does not validate any estimator or data-splitting boundary for HARBOR."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.conformal-reject-option-1.1.0",
+      "discovery_id": "reiyah.discovery.method.conformal-reject-option",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "Classification with reject option: Distribution-free error guarantees via conformal prediction",
+      "publisher": {
+        "state": "observed",
+        "value": "Machine Learning with Applications / Elsevier"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "PII S2666827025000477"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "2025 publisher article page"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "An exact publication day was not retained in the discovery review."
+      },
+      "scope": "Primary 2025 paper on novelty and ambiguity rejection with conformal error-reject guarantees.",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S2666827025000477",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "uncertainty_ood_abstention"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Publisher page pointer only; article bytes, code, and calibration data are not retained.",
+        "Distribution-free language does not remove calibration-distribution, task, and guarantee-scope assumptions."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.conformal-generalized-shift-1.1.0",
+      "discovery_id": "reiyah.discovery.method.conformal-generalized-shift",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "Conformal Prediction Under Generalized Covariate Shift with Posterior Drift",
+      "publisher": {
+        "state": "observed",
+        "value": "Proceedings of Machine Learning Research / AISTATS 2025"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "PMLR v258, wang25l"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "AISTATS 2025 PMLR publication"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "An exact publication day was not retained in the discovery review."
+      },
+      "scope": "Primary 2025 paper on conformal coverage under a declared source-to-target covariate-shift and posterior-drift model.",
+      "source_url": "https://proceedings.mlr.press/v258/wang25l.html",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "uncertainty_ood_abstention",
+        "group_conditional_validation"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Proceedings pointer only; paper bytes, code, and experiments are not retained.",
+        "Coverage depends on a valid target-shift model and does not establish HARBOR transfer validity."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.conformal-fairness-efficiency-1.1.0",
+      "discovery_id": "reiyah.discovery.method.conformal-fairness-efficiency",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "Bridging Fairness and Efficiency in Conformal Inference",
+      "publisher": {
+        "state": "observed",
+        "value": "Proceedings of Machine Learning Research / ICML 2025"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "PMLR v267, gao25c"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "ICML 2025 PMLR publication"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "An exact publication day was not retained in the discovery review."
+      },
+      "scope": "Primary 2025 paper on group-conditional conformal coverage and efficiency tradeoffs for underrepresented groups.",
+      "source_url": "https://proceedings.mlr.press/v267/gao25c.html",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "uncertainty_ood_abstention",
+        "group_conditional_validation"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Proceedings pointer only; paper bytes, code, and experiments are not retained.",
+        "A group-conditional method does not define Reiyah groups, measurement validity, or acceptable coverage-width tradeoffs."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.iso-34505-2025-page-1.1.0",
+      "discovery_id": "reiyah.discovery.standard.iso-34505-2025",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_standard_page",
+      "title": "ISO 34505:2025 Road vehicles — Test scenarios for automated driving systems — Scenario evaluation and test case generation",
+      "publisher": {
+        "state": "observed",
+        "value": "International Organization for Standardization"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "ISO 34505:2025; ISO catalog 78954"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "ISO 34505:2025, edition 1"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2025-06-12"
+      },
+      "scope": "Official ISO catalog page for scenario evaluation and test-case generation for automated-driving-system testing.",
+      "source_url": "https://www.iso.org/standard/78954.html",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "scenario_odd"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Official catalog pointer only; no ISO 34505 normative text or retained Open Data record is included.",
+        "The pointer cannot support a requirements, conformance, certification, or compliance mapping."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.asam-openodd-1.0.0-1.1.0",
+      "discovery_id": "reiyah.discovery.standard.asam-openodd-1.0.0",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_specification",
+      "title": "ASAM OpenODD Base Standard 1.0.0 Specification",
+      "publisher": {
+        "state": "observed",
+        "value": "ASAM e.V."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "ASAM OpenODD 1.0.0"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Base Standard 1.0.0"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2025-04-03"
+      },
+      "scope": "Official ASAM specification page for an abstract machine-readable model of operational design domains and operational domains.",
+      "source_url": "https://publications.pages.asam.net/standards/ASAM_OpenODD/ASAM_OpenODD/latest/specification/index.html",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "scenario_odd"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Official specification pointer only; no exact site payload is retained under this profile.",
+        "A machine-readable ODD vocabulary does not establish scenario completeness, safety, or Reiyah conformance."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.croissant-rai-1.0-1.1.0",
+      "discovery_id": "reiyah.discovery.standard.croissant-rai-1.0",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_specification",
+      "title": "Croissant RAI Specification",
+      "publisher": {
+        "state": "observed",
+        "value": "MLCommons"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "http://mlcommons.org/croissant/RAI/1.0"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Croissant RAI 1.0"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2024-03-06"
+      },
+      "scope": "Official MLCommons specification for machine-readable responsible-AI dataset metadata covering lifecycle, labeling, sensitive information, use limitations, maintenance, and related properties.",
+      "source_url": "https://docs.mlcommons.org/croissant/docs/croissant-rai-spec.html",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "dataset_benchmark_governance"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Official specification pointer only; no exact specification payload is retained.",
+        "Vocabulary coverage does not establish dataset quality, rights, ethics, validity, or Reiyah adoption."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.benchrisk-1.1.0",
+      "discovery_id": "reiyah.discovery.method.benchrisk",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "Risk Management for Mitigating Benchmark Failure Modes: BenchRisk",
+      "publisher": {
+        "state": "observed",
+        "value": "Advances in Neural Information Processing Systems 38, Datasets and Benchmarks Track"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "doi:10.52202/085713-3387; NeurIPS hash 92a0af72659802465884eaad8443ea89"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "NeurIPS 2025 Datasets and Benchmarks Track publication"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "An exact publication day was not retained in the discovery review."
+      },
+      "scope": "Primary 2025 paper organizing benchmark failure modes and mitigations across comprehensiveness, intelligibility, consistency, correctness, and longevity.",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/92a0af72659802465884eaad8443ea89-Abstract-Datasets_and_Benchmarks_Track.html",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "dataset_benchmark_governance"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Proceedings pointer only; paper, tool, benchmark corpus, and scores are not retained.",
+        "The study concerns language-model benchmarks; transfer to automotive evaluation is a bounded Reiyah research inference, not direct evidence."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-long-tail-2026-1.1.0",
+      "discovery_id": "reiyah.discovery.mobileye.long-tail-2026",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_technical_page",
+      "title": "Driving the long tail",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "mobileye-opinion-driving-the-long-tail-2026"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Mobileye opinion page published 2026-05-27"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-05-27"
+      },
+      "scope": "Company-authored technical account of separating rare-failure discovery from failure resolution through semantic failure classes, retrieval or generation of variations, and reproducibility testing.",
+      "source_url": "https://www.mobileye.com/opinion/driving-the-long-tail/",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "data_engine_mapping",
+        "simulation"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Company technical pointer only; no page payload, Meteor system, training corpus, evaluation protocol, or independent result is retained.",
+        "The account proposes a development method and does not establish effectiveness, completeness of rare-event discovery, safety, or independent replication."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-meteor-2026-1.1.0",
+      "discovery_id": "reiyah.discovery.mobileye.meteor-2026",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_technical_page",
+      "title": "Diagnosing the long tail: how Mobileye turns edge cases into targeted training",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "mobileye-blog-diagnosing-long-tail-2026"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Mobileye blog page published 2026-05-27"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-05-27"
+      },
+      "scope": "Company-authored account of Meteor, described as a multi-agent analysis system using vision-language embeddings and automated reasoning to search driving video, organize semantic failure classes, and support targeted training and reproducibility checks.",
+      "source_url": "https://www.mobileye.com/blog/diagnosing-the-long-tail-how-mobileye-turns-edge-cases-into-targeted-training/",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "data_engine_mapping",
+        "simulation"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Company technical pointer only; no page payload, Meteor implementation, query corpus, training examples, evaluation protocol, or independent result is retained.",
+        "A semantic retrieval and targeted-training account does not establish rare-event recall, causal error reduction, transfer, safety, or superiority."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.tesla-q1-2026-update-1.1.0",
+      "discovery_id": "reiyah.discovery.tesla.q1-2026-update",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_disclosure",
+      "title": "Tesla Q1 2026 Update",
+      "publisher": {
+        "state": "observed",
+        "value": "Tesla, Inc."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "SEC accession 0001628280-26-026551; tsla-20260422-gen"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Q1 2026 shareholder update filed as Exhibit 99.1"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-04-22"
+      },
+      "scope": "Official Tesla investor update describing company work on FSD v14.3, reinforcement-learning treatment of long-tail cases, low-visibility vision encoding, compiler iteration, inference latency, AI5, and Robotaxi expansion.",
+      "source_url": "https://ir.tesla.com/_flysystem/s3/sec/000162828026026551/tsla-20260422-gen.pdf",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "tesla_autonomy",
+        "data_engine_mapping",
+        "simulation"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Company disclosure pointer only; no update payload, training data, model, evaluation protocol, Robotaxi log, or independent result is retained.",
+        "The update's engineering and operating statements do not establish safety, causal effect, long-tail coverage, transfer, or superiority."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.tesla-fsd-safety-method-2026-1.1.0",
+      "discovery_id": "reiyah.discovery.tesla.fsd-safety-method-2026",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_technical_page",
+      "title": "Full Self-Driving (Supervised) Vehicle Safety Report",
+      "publisher": {
+        "state": "observed",
+        "value": "Tesla, Inc."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "tesla-fsd-supervised-vehicle-safety-report"
+      },
+      "exact_version": {
+        "state": "unmeasured",
+        "reason": "The live page exposes rolling counters and quarterly updates without an immutable page-version identifier."
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "The live page does not expose one publication date for the reviewed methodology and rolling metrics."
+      },
+      "scope": "Current company-authored collision-attribution, telemetry, road-classification, and comparator methodology reviewed on 2026-08-23.",
+      "source_url": "https://www.tesla.com/fsd/safety",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "tesla_autonomy",
+        "safety_architecture",
+        "data_engine_mapping"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Mutable company page pointer only; no frozen methodology, event data, denominator data, analysis code, injury linkage, or independent audit is retained.",
+        "Company collision ratios and five-second attribution rules do not establish causal safety benefit or HARBOR comparator eligibility."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-hands-off-l2-2026-1.1.0",
+      "discovery_id": "reiyah.discovery.mobileye.hands-off-l2-2026",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_technical_page",
+      "title": "Hands-off driving goes mainstream: enabling L2+ at scale",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "mobileye-blog-hands-off-l2-at-scale-2026"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Mobileye blog page published 2026-08-11"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-08-11"
+      },
+      "scope": "Company-authored account of EyeQ6H integration, REM localization, external and cabin sensing, hands-off eyes-on functions, parking transitions, driver monitoring, and cross-product feedback loops.",
+      "source_url": "https://www.mobileye.com/blog/hands-off-driving-goes-mainstream-enabling-l2-at-scale/",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "driver_monitoring",
+        "data_engine_mapping"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Company technical pointer only; no page payload, system release, REM data, driver-monitoring protocol, evaluation data, or independent result is retained.",
+        "An integration and scaling account does not establish construct validity, safety, effectiveness, transfer, or comparator superiority."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.vehicle-situation-awareness-sharing-1.1.0",
+      "discovery_id": "reiyah.discovery.method.vehicle-situation-awareness-sharing",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "With a Little Help From My Car: Sharing Automated Vehicle’s Situation Awareness Reduces Driver-Initiated Automation Disengagement Without Delaying Takeover Response Time",
+      "publisher": {
+        "state": "observed",
+        "value": "Human Factors: The Journal of the Human Factors and Ergonomics Society / SAGE"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "doi:10.1177/00187208261422917"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Version 1, first published online 2026-02-07; Human Factors volume 68 issue 7"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-02-07"
+      },
+      "scope": "Primary simulator study comparing perception, confidence, and trajectory-projection information in shared vehicle situation awareness during urban takeover scenarios.",
+      "source_url": "https://journals.sagepub.com/doi/10.1177/00187208261422917",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "human_ai_complementarity",
+        "readiness_situation_awareness",
+        "object_set_coverage"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Publisher page pointer only; article bytes, study materials, participant data, and analysis code are not retained.",
+        "A bounded simulator result does not establish field effectiveness, construct validity, safety, transfer, or HARBOR applicability."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.1.0/frontier-discovery-register.schema.json#/$defs/discoveryRecord",
+      "schema_version": "1.1.0",
+      "artifact_id": "reiyah.artifact.discovery.takeover-attention-residue-1.1.0",
+      "discovery_id": "reiyah.discovery.method.takeover-attention-residue",
+      "version": "1.1.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "title": "Will drivers cognitively disengage from previous tasks following scheduled takeovers? Identifying the influencing factors of drivers' attention residue",
+      "publisher": {
+        "state": "observed",
+        "value": "Transportation Research Part F: Traffic Psychology and Behaviour / Elsevier"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "doi:10.1016/j.trf.2026.103641; PII S1369847826001361"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Volume 120, article 103641, May 2026"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "The reviewed publisher record exposed May 2026 but not an exact publication day."
+      },
+      "scope": "Primary mixed-methods simulator study of attention residue after scheduled Level 3 takeovers and its reported association with situational motivation, mind wandering, and driving demand.",
+      "source_url": "https://doi.org/10.1016/j.trf.2026.103641",
+      "recorded_at": "2026-08-23T00:00:00Z",
+      "topics": [
+        "readiness_situation_awareness",
+        "missingness_history_model_selection"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "limitations": [
+        "Publisher pointer only; article payload, interview materials, simulator assets, participant data, and analysis code are not retained.",
+        "Reported predictors do not validate an operational readiness or recovery measure and do not establish field safety or HARBOR applicability."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-q4-fy2025-earnings-call-1.2.0",
+      "discovery_id": "reiyah.discovery.mobileye.q4-fy2025-earnings-call",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_disclosure",
+      "assertion_origin": "company_self_report",
+      "independent_validation_established": false,
+      "title": "Mobileye Fourth Quarter and Full Year 2025 Earnings Conference Call",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye Global Inc."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Mobileye IR transcript 2026-01-22"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Official transcript for the January 22, 2026 earnings call"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-01-22"
+      },
+      "scope": "Official earnings call transcript describing Compound AI, ACI self play, REM based sensing state simulation, fast and slow reasoning, and stated goals for reducing teleoperator demand.",
+      "source_url": "https://ir.mobileye.com/static-files/dc85a542-1a8e-4981-a3ad-407a7590549d",
+      "accessed_on": "2026-08-25",
+      "source_stability": "fixed_document",
+      "source_version_state": "exact_document_version_observed",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "safety_architecture",
+        "simulation",
+        "data_engine_mapping"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Company transcript pointer only; no transcript payload, experiment artifact, simulator output, or operational record is retained.",
+        "Statements about simulated hours, architecture, mean time between interventions, cloud reasoning, or teleoperator demand are company self reports without disclosed comparative protocols, denominators, uncertainty, or independent validation."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-q1-2026-earnings-call-1.2.0",
+      "discovery_id": "reiyah.discovery.mobileye.q1-2026-earnings-call",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_disclosure",
+      "assertion_origin": "company_self_report",
+      "independent_validation_established": false,
+      "title": "Mobileye First Quarter 2026 Earnings Conference Call",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye Global Inc."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Mobileye IR transcript 2026-04-23"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Official transcript for the April 23, 2026 earnings call"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-04-23"
+      },
+      "scope": "Official earnings call transcript discussing an unplanned United States drive, undisclosed mean time between failure goals, ODD and comfort requirements, staged rider testing, safety drivers, teleoperation, maps, and driver removal criteria.",
+      "source_url": "https://ir.mobileye.com/static-files/4cda4089-e97e-4b79-8ca1-b51c4035ef73",
+      "accessed_on": "2026-08-25",
+      "source_stability": "fixed_document",
+      "source_version_state": "exact_document_version_observed",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "safety_architecture",
+        "scenario_odd",
+        "dataset_benchmark_governance"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Company transcript pointer only; no road log, intervention ledger, safety driver record, validation protocol, or threshold artifact is retained.",
+        "The public account does not disclose exact intervention counts or classes, exposure conditions, driver removal thresholds, censoring, comparator, confidence interval, or worst group result."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-q2-2026-earnings-call-1.2.0",
+      "discovery_id": "reiyah.discovery.mobileye.q2-2026-earnings-call",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_disclosure",
+      "assertion_origin": "company_self_report",
+      "independent_validation_established": false,
+      "title": "Mobileye Second Quarter 2026 Earnings Conference Call",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye Global Inc."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Mobileye IR transcript 2026-07-23"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Official transcript for the July 23, 2026 earnings call"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-07-23"
+      },
+      "scope": "Official earnings call transcript describing Hamburg rider testing with safety drivers, vertically integrated robotaxi validation, teleoperation, customer facing systems, and forward looking driverless deployment timing.",
+      "source_url": "https://ir.mobileye.com/static-files/7e9569f9-63f5-40f8-940d-e846cc707365",
+      "accessed_on": "2026-08-25",
+      "source_stability": "fixed_document",
+      "source_version_state": "exact_document_version_observed",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "safety_architecture",
+        "scenario_odd",
+        "dataset_benchmark_governance"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Company transcript pointer only; no validation dataset, operational event ledger, service record, teleoperation trace, or customer evidence is retained.",
+        "Testing status and future timelines do not disclose driver out criteria, ODD coverage, intervention severity, incident rates, recovery outcomes, or independent technical validation."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-heavy-tail-learning-2026-1.2.0",
+      "discovery_id": "reiyah.discovery.mobileye.heavy-tail-learning-2026",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_technical_page",
+      "assertion_origin": "company_self_report",
+      "independent_validation_established": false,
+      "title": "Why learning from data gets harder in the tail",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Mobileye opinion page 2026-05-27"
+      },
+      "exact_version": {
+        "state": "unmeasured",
+        "reason": "The current web page exposes a publication date but no immutable page revision or retained byte identity."
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-05-27"
+      },
+      "scope": "Company researcher technical argument that heavy tailed scenario frequency and stochastic labels can reduce stochastic gradient signal to noise and make average loss insufficient for finding reproducible rare scenario failures.",
+      "source_url": "https://www.mobileye.com/opinion/why-learning-from-data-gets-harder-in-the-tail/",
+      "accessed_on": "2026-08-25",
+      "source_stability": "dynamic_mutable_page",
+      "source_version_state": "current_version_unmeasured",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "dataset_benchmark_governance",
+        "scenario_odd",
+        "missingness_history_model_selection"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Dynamic company page pointer only; no page payload, proof artifact, training corpus, code, or production evaluation is retained.",
+        "The argument includes a stylized construction and a conjecture about deeper systems; it does not establish production prevalence, causal resolution, transfer, or comparative autonomous driving performance."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.mobileye-vertical-robotaxi-business-2026-1.2.0",
+      "discovery_id": "reiyah.discovery.mobileye.vertical-robotaxi-business-2026",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_disclosure",
+      "assertion_origin": "company_self_report",
+      "independent_validation_established": false,
+      "title": "Mobileye to establish vertically integrated robotaxi business",
+      "publisher": {
+        "state": "observed",
+        "value": "Mobileye"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Mobileye news release 2026-06-16"
+      },
+      "exact_version": {
+        "state": "unmeasured",
+        "reason": "The current web release has no retained immutable page revision or byte identity."
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-06-16"
+      },
+      "scope": "Company announcement of a planned United States robotaxi business combining Mobileye Drive, Moovit applications, mission control, fleet management, and teleoperation infrastructure.",
+      "source_url": "https://www.mobileye.com/news/mobileye-to-establish-vertically-integrated-robotaxi-business/",
+      "accessed_on": "2026-08-25",
+      "source_stability": "dynamic_mutable_page",
+      "source_version_state": "current_version_unmeasured",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "safety_architecture",
+        "scenario_odd",
+        "data_engine_mapping"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Dynamic company announcement pointer only; no deployed fleet, mission control record, teleoperation trace, service evidence, or application payload is retained.",
+        "The announced 2027 launch is forward looking and does not establish driverless operation, utilization, service reliability, safety, readiness, or recovery performance."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.moia-hamburg-passenger-test-2026-1.2.0",
+      "discovery_id": "reiyah.discovery.moia.hamburg-passenger-test-2026",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_deployment_partner_disclosure",
+      "assertion_origin": "deployment_partner_self_report",
+      "independent_validation_established": false,
+      "title": "MOIA reaches next Milestone: Passenger test operation launches in Hamburg",
+      "publisher": {
+        "state": "observed",
+        "value": "MOIA GmbH"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "MOIA news release 2026-07-15"
+      },
+      "exact_version": {
+        "state": "unmeasured",
+        "reason": "The current partner web release has no retained immutable page revision or byte identity."
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-07-15"
+      },
+      "scope": "Deployment partner announcement that selected Hamburg residents could book test rides on a platform integrating the Mobileye self driving system and that each ride was accompanied by a trained safety operator.",
+      "source_url": "https://www.moia.io/en/news/moia-launches-passenger-test-operation-in-hamburg",
+      "accessed_on": "2026-08-25",
+      "source_stability": "dynamic_mutable_page",
+      "source_version_state": "current_version_unmeasured",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "mobileye_autonomy",
+        "scenario_odd",
+        "dataset_benchmark_governance"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Dynamic deployment partner page pointer only; no ride log, intervention record, ODD definition, safety operator protocol, or passenger outcome is retained.",
+        "A deployment partner account can corroborate program status but is not an independent safety or performance evaluation and supplies no exposure denominator or recovery result."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.tesla-2025-10-k-1.2.0",
+      "discovery_id": "reiyah.discovery.tesla.2025-10-k",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_regulated_filing",
+      "assertion_origin": "company_self_report",
+      "independent_validation_established": false,
+      "title": "Tesla, Inc. Annual Report on Form 10-K for the Year Ended December 31, 2025",
+      "publisher": {
+        "state": "observed",
+        "value": "Tesla, Inc."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "SEC accession 0001628280-26-003952"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Form 10-K for the year ended December 31, 2025, filed January 28, 2026"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-01-28"
+      },
+      "scope": "Official regulated company filing distinguishing supervised customer Full Self Driving use from Robotaxi operations and describing teleoperations and related autonomy development.",
+      "source_url": "https://ir.tesla.com/_flysystem/s3/sec/000162828026003952/tsla-20251231-gen.pdf",
+      "accessed_on": "2026-08-25",
+      "source_stability": "fixed_document",
+      "source_version_state": "exact_document_version_observed",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "tesla_autonomy",
+        "driver_monitoring",
+        "safety_architecture",
+        "scenario_odd"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Regulated company filing pointer only; no filing payload, operational log, teleoperation record, ODD contract, or intervention dataset is retained.",
+        "The filing remains company authored and does not disclose exact ODD boundaries, intervention or recovery thresholds, remote operator authority, or independent safety validation."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.nhtsa-ea26002-resume-1.2.0",
+      "discovery_id": "reiyah.discovery.nhtsa.ea26002-resume",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_regulator_investigation",
+      "assertion_origin": "regulator_open_investigation",
+      "independent_validation_established": false,
+      "title": "ODI Resume EA26002: FSD Collisions in Reduced Roadway Visibility Conditions",
+      "publisher": {
+        "state": "observed",
+        "value": "National Highway Traffic Safety Administration, Office of Defects Investigation"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "NHTSA EA26002"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "ODI investigation resume EA26002 opened March 18, 2026"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-03-18"
+      },
+      "scope": "Official regulator investigation resume concerning reported collisions involving Full Self Driving in reduced roadway visibility conditions.",
+      "source_url": "https://static.nhtsa.gov/odi/inv/2026/INOA-EA26002-10023.pdf",
+      "accessed_on": "2026-08-25",
+      "source_stability": "fixed_document",
+      "source_version_state": "exact_document_version_observed",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "tesla_autonomy",
+        "scenario_odd",
+        "uncertainty_ood_abstention",
+        "safety_architecture"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Official regulator pointer only; no investigation payload, underlying incident corpus, manufacturer response, or final disposition is retained.",
+        "An open investigation is not a final defect, risk, causality, liability, safety, or compliance finding and does not establish HARBOR applicability."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.nhtsa-pe25012-resume-1.2.0",
+      "discovery_id": "reiyah.discovery.nhtsa.pe25012-resume",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_regulator_investigation",
+      "assertion_origin": "regulator_open_investigation",
+      "independent_validation_established": false,
+      "title": "ODI Resume PE25012: Traffic Safety Violations While FSD Engaged",
+      "publisher": {
+        "state": "observed",
+        "value": "National Highway Traffic Safety Administration, Office of Defects Investigation"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "NHTSA PE25012"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "ODI investigation resume PE25012 opened October 7, 2025"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2025-10-07"
+      },
+      "scope": "Official regulator investigation resume concerning reported traffic safety violations while Full Self Driving was engaged.",
+      "source_url": "https://static.nhtsa.gov/odi/inv/2025/INOA-PE25012-19171.pdf",
+      "accessed_on": "2026-08-25",
+      "source_stability": "fixed_document",
+      "source_version_state": "exact_document_version_observed",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "tesla_autonomy",
+        "scenario_odd",
+        "safety_architecture",
+        "dataset_benchmark_governance"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Official regulator pointer only; no investigation payload, complete event corpus, manufacturer response, or final disposition is retained.",
+        "An open preliminary evaluation is not an adjudication or final defect, causality, liability, safety, or compliance finding."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.tesla-fsd-supervised-limitations-1.2.0",
+      "discovery_id": "reiyah.discovery.tesla.fsd-supervised-limitations",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_product_manual",
+      "assertion_origin": "company_self_report",
+      "independent_validation_established": false,
+      "title": "Full Self-Driving (Supervised) Limitations",
+      "publisher": {
+        "state": "observed",
+        "value": "Tesla, Inc."
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Tesla Model 3 Owner's Manual GUID-59736DF1-31FA-4F67-8A3F-6111778939D9"
+      },
+      "exact_version": {
+        "state": "unmeasured",
+        "reason": "The live product manual is mutable and no exact historical page revision or byte identity is retained."
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "The reviewed live manual page does not expose a stable publication date."
+      },
+      "scope": "Official product manual limitations page warning that driver monitoring may issue false alerts or miss inattentiveness and that absence of an alert does not establish driver attentiveness.",
+      "source_url": "https://www.tesla.com/ownersmanual/model3/en_nl/GUID-59736DF1-31FA-4F67-8A3F-6111778939D9.html",
+      "accessed_on": "2026-08-25",
+      "source_stability": "dynamic_mutable_page",
+      "source_version_state": "current_version_unmeasured",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "tesla_autonomy",
+        "driver_monitoring",
+        "readiness_situation_awareness",
+        "uncertainty_ood_abstention"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Dynamic company manual pointer only; no manual payload, exact page revision, driver monitoring trace, alert log, or vehicle record is retained.",
+        "A manufacturer warning does not quantify alert error, establish driver belief or readiness, validate absence of alert, or provide subgroup and recovery outcomes."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.active-inference-collision-avoidance-1.2.0",
+      "discovery_id": "reiyah.discovery.method.active-inference-collision-avoidance",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "assertion_origin": "primary_research_not_independent_replication",
+      "independent_validation_established": false,
+      "title": "Active inference as a model of collision avoidance behavior in human drivers",
+      "publisher": {
+        "state": "observed",
+        "value": "Nature Communications"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "doi:10.1038/s41467-026-73345-0"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "Nature Communications article s41467-026-73345-0"
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-06-10"
+      },
+      "scope": "Primary research article modeling human collision avoidance with active inference across three reported scenario families and manually fitted parameters.",
+      "source_url": "https://www.nature.com/articles/s41467-026-73345-0",
+      "accessed_on": "2026-08-25",
+      "source_stability": "versioned_persistent_record",
+      "source_version_state": "publisher_version_observed",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "driver_vehicle_state",
+        "readiness_situation_awareness",
+        "scenario_odd",
+        "missingness_history_model_selection"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Publisher pointer only; article payload, participant data, parameter fitting artifacts, scenarios, and analysis code are not retained.",
+        "Three scenario families, manual parameter fitting, and reported generalization limits do not establish a universal human reference model, field validity, or HARBOR construct validity."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.waymo-time-geography-benchmarking-2026-1.2.0",
+      "discovery_id": "reiyah.discovery.waymo.time-geography-benchmarking-2026",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_company_technical_page",
+      "assertion_origin": "company_self_report",
+      "independent_validation_established": false,
+      "title": "Not All Miles are Equal: Why Time and Location Matter When Benchmarking Autonomous Safety",
+      "publisher": {
+        "state": "observed",
+        "value": "Waymo"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Waymo technical blog 2026-07-07"
+      },
+      "exact_version": {
+        "state": "unmeasured",
+        "reason": "The current company web page has no retained immutable revision or byte identity."
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-07-07"
+      },
+      "scope": "Company technical page motivating time and geographic exposure matching when comparing autonomous driving crash experience with human driving baselines.",
+      "source_url": "https://waymo.com/blog/2026/07/time-geo-crash-risk-effect/",
+      "accessed_on": "2026-08-25",
+      "source_stability": "dynamic_mutable_page",
+      "source_version_state": "current_version_unmeasured",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "dataset_benchmark_governance",
+        "group_conditional_validation",
+        "scenario_odd",
+        "missingness_history_model_selection"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Dynamic company page pointer only; no page payload, crash dataset, exposure table, matching implementation, or analysis code is retained.",
+        "The methodological motivation is a company account and does not independently establish Waymo system safety, comparator validity, causal effect, or universal matching sufficiency."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.scientistone-chain-of-evidence-1.2.0",
+      "discovery_id": "reiyah.discovery.method.scientistone-chain-of-evidence",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_preprint",
+      "assertion_origin": "primary_research_not_independent_replication",
+      "independent_validation_established": false,
+      "title": "ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence",
+      "publisher": {
+        "state": "observed",
+        "value": "arXiv"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "arXiv:2605.26340"
+      },
+      "exact_version": {
+        "state": "unmeasured",
+        "reason": "The arXiv base identifier was observed, but no exact vN revision suffix or immutable revision-specific URL was retained in discovery metadata."
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "The reviewed discovery metadata identifies May 2026 but not an exact publication day."
+      },
+      "scope": "Primary preprint proposing an autonomous research framework and benchmark organized around a chain of evidence and automated research tasks.",
+      "source_url": "https://arxiv.org/abs/2605.26340",
+      "accessed_on": "2026-08-25",
+      "source_stability": "versioned_persistent_record",
+      "source_version_state": "current_version_unmeasured",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "dataset_benchmark_governance",
+        "human_ai_complementarity",
+        "missingness_history_model_selection"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Preprint pointer only; manuscript payload, benchmark data, prompts, execution traces, judge outputs, and code are not retained.",
+        "An autonomous research benchmark does not transfer automatically to HARBOR, and language model judge checks are not independent scientific review or evidence admission."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.google-science-one-framework-2026-1.2.0",
+      "discovery_id": "reiyah.discovery.google.science-one-framework-2026",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_research_technical_page",
+      "assertion_origin": "institution_self_report",
+      "independent_validation_established": false,
+      "title": "Science One Framework: A verifiable autonomous research framework via Chain-of-Evidence",
+      "publisher": {
+        "state": "observed",
+        "value": "Google Research"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Google Research blog 2026-07-30"
+      },
+      "exact_version": {
+        "state": "unmeasured",
+        "reason": "The current institutional web page has no retained immutable revision or byte identity."
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-07-30"
+      },
+      "scope": "Official research organization page describing a chain of evidence framework for autonomous research and its proposed verification structure.",
+      "source_url": "https://research.google/blog/science-one-framework-a-verifiable-autonomous-research-framework-via-chain-of-evidence/",
+      "accessed_on": "2026-08-25",
+      "source_stability": "dynamic_mutable_page",
+      "source_version_state": "current_version_unmeasured",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "dataset_benchmark_governance",
+        "human_ai_complementarity",
+        "missingness_history_model_selection"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Dynamic institutional page pointer only; no page payload, benchmark artifact, execution trace, judge record, or independent review is retained.",
+        "An official research account is not Reiyah authority, retained scientific evidence, independent replication, or proof that the framework transfers to driver readiness research."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.forest-tree-reproducible-ml-evaluation-1.2.0",
+      "discovery_id": "reiyah.discovery.method.forest-tree-reproducible-ml-evaluation",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "primary_research_publication",
+      "assertion_origin": "primary_research_not_independent_replication",
+      "independent_validation_established": false,
+      "title": "Forest vs Tree: The (N,K) Trade-off in Reproducible ML Evaluation",
+      "publisher": {
+        "state": "observed",
+        "value": "Proceedings of the AAAI Conference on Artificial Intelligence"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "AAAI article 39659"
+      },
+      "exact_version": {
+        "state": "observed",
+        "value": "AAAI 2026 proceedings article 39659"
+      },
+      "publication_date": {
+        "state": "unmeasured",
+        "reason": "The reviewed official proceedings record identifies AAAI 2026 but not an exact publication day."
+      },
+      "scope": "Primary research publication studying the tradeoff between the number of evaluated items and raters per item in reproducible machine learning evaluation using domain specific rater simulation.",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/39659",
+      "accessed_on": "2026-08-25",
+      "source_stability": "versioned_persistent_record",
+      "source_version_state": "publisher_version_observed",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "dataset_benchmark_governance",
+        "group_conditional_validation",
+        "missingness_history_model_selection"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Proceedings pointer only; paper payload, simulation code, rater data, sampling frame, and analysis artifacts are not retained.",
+        "Domain specific rater simulation does not establish a universal rater allocation rule, driver readiness construct validity, field safety, or HARBOR applicability."
+      ]
+    },
+    {
+      "record_schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.0/frontier-discovery-register.schema.json#/$defs/appendedDiscoveryRecord",
+      "schema_version": "1.2.0",
+      "artifact_id": "reiyah.artifact.discovery.google-benchmark-rater-count-2026-1.2.0",
+      "discovery_id": "reiyah.discovery.google.benchmark-rater-count-2026",
+      "version": "1.2.0",
+      "lifecycle_status": "proposed",
+      "source_kind": "official_research_technical_page",
+      "assertion_origin": "institution_self_report",
+      "independent_validation_established": false,
+      "title": "Building better AI benchmarks: How many raters are enough?",
+      "publisher": {
+        "state": "observed",
+        "value": "Google Research"
+      },
+      "persistent_identifier": {
+        "state": "observed",
+        "value": "Google Research blog 2026-03-31"
+      },
+      "exact_version": {
+        "state": "unmeasured",
+        "reason": "The current institutional web page has no retained immutable revision or byte identity."
+      },
+      "publication_date": {
+        "state": "observed",
+        "value": "2026-03-31"
+      },
+      "scope": "Official research organization summary of work on allocating benchmark annotation effort between the number of items and the number of raters per item.",
+      "source_url": "https://research.google/blog/building-better-ai-benchmarks-how-many-raters-are-enough/",
+      "accessed_on": "2026-08-25",
+      "source_stability": "dynamic_mutable_page",
+      "source_version_state": "current_version_unmeasured",
+      "recorded_at": "2026-08-25T00:00:00Z",
+      "topics": [
+        "dataset_benchmark_governance",
+        "group_conditional_validation",
+        "missingness_history_model_selection"
+      ],
+      "custody_state": "pointer_only",
+      "redistribution_state": "pointer_metadata_only",
+      "evidence_eligibility": "ineligible_pointer_only",
+      "retained_payload": null,
+      "payload_redistribution_authorized": false,
+      "claims_admitted": false,
+      "scientific_support_claimed": false,
+      "safety_claimed": false,
+      "compliance_claimed": false,
+      "comparative_superiority_claimed": false,
+      "limitations": [
+        "Dynamic institutional blog pointer only; no page payload, paper payload, rater data, simulator, or analysis code is retained.",
+        "A blog summary is not retained evidence, independent replication, a universal rater rule, or validation of HARBOR annotations, constructs, groups, or outcomes."
+      ]
+    }
+  ],
+  "invariants": [
+    "The first 38 records are semantically identical to the exact byte bound 1.1.0 predecessor and remain in the same order.",
+    "Every appended record has a unique artifact identity and discovery identity and cannot replace, mutate, relabel, or reuse a predecessor identity.",
+    "Every record is pointer only, evidence ineligible, and payload free.",
+    "A URL, title, identifier, publication fact, access date, or source version state is discovery metadata, not retained evidence.",
+    "Company, deployment partner, and institutional materials remain self reports; regulator investigations remain open process records; primary publications and preprints do not establish independent replication or Reiyah applicability.",
+    "Dynamic sources require an exact access date and an explicit unmeasured current version state.",
+    "A versioned persistent source may use publisher_version_observed only when an exact revision identity is retained; otherwise its exact version and current version remain explicitly unmeasured.",
+    "No record supports a scientific, safety, standards, benchmark, compliance, deployment, causality, readiness, recoverability, or superiority claim.",
+    "Static pointer metadata distribution authorization is distinct from payload reuse permission, Gate A acceptance, GA-17 evaluation, scientific publication acceptance, runtime authority, and Gate B authority."
+  ]
+}

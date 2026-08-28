@@ -1,0 +1,9 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-a/1.2.1/continuity-fixture.schema.json",
+  "fixture_id": "reiyah.fixture.continuity.protected-science-drift@1.2.1",
+  "version": "1.2.1",
+  "expected_outcome": "fail",
+  "operation": "mutate_protected_science_byte",
+  "expected_diagnostic": "GA121-PROTECTED-BYTES",
+  "description": "Any drift in a predecessor scientific or protocol byte must fail closed."
+}

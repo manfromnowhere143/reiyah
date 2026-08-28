@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-a/1.2.1/validation-plan.schema.json",
+  "title": "Gate A 1.2.1 documentation and discovery continuity validation plan",
+  "type": "object",
+  "required": ["schema_id", "artifact_id", "plan_id", "version", "as_of_date", "scope", "authority", "entrypoint", "implementation", "toolchain_lock", "continuity_fixture_catalog", "outputs", "predecessor", "inherited_science", "protected_predecessor_surfaces", "successor_delta_policy", "evaluation_modes", "control_ids"],
+  "properties": {
+    "schema_id": {"const": "https://schemas.reiyah.invalid/gate-a/1.2.1/validation-plan.schema.json"},
+    "artifact_id": {"const": "reiyah.artifact.validation-plan-1.2.1"},
+    "plan_id": {"const": "reiyah.validation-plan.gate-a-continuity-1.2.1"},
+    "version": {"const": "1.2.1"},
+    "as_of_date": {"const": "2026-08-25"},
+    "scope": {"const": "documentation_discovery_lineage_and_publication_continuity_only"},
+    "authority": {"type": "object"},
+    "entrypoint": {"const": "tools/gate_a_1_2_1.sh"},
+    "implementation": {"const": "tools/gate_a_1_2_1.py"},
+    "toolchain_lock": {"const": "validation/toolchain-lock-1.2.1.json"},
+    "continuity_fixture_catalog": {"const": "fixtures/v1.2.1/continuity-fixture-catalog.json"},
+    "outputs": {"type": "object"},
+    "predecessor": {"type": "object"},
+    "inherited_science": {"type": "object"},
+    "protected_predecessor_surfaces": {"type": "array", "minItems": 8},
+    "successor_delta_policy": {"type": "object"},
+    "evaluation_modes": {"type": "object"},
+    "control_ids": {"type": "array", "minItems": 10, "uniqueItems": true}
+  },
+  "additionalProperties": false
+}
