@@ -1,0 +1,63 @@
+============================================================================================
+RESULT I - worst-group dependence: where does redundancy buy least?
+mapillary x megvii, nuScenes val, score >= 0.3
+direction declared before inspection: LARGER LIFT IS WORSE
+============================================================================================
+
+### universe partition, criteria fixed before ranking
+  criteria: n_s >= 30, expected joint >= 5.0, finite simultaneous interval
+                  strata in universe: 132
+                          sufficient: 120   covering 133,807 boxes
+               observed-insufficient: 12   covering 758 boxes
+                             unknown: 0
+                     exact partition: 132 == 132   OK
+
+### simultaneous 95% band over 120 eligible strata
+  bootstrap max-t critical value : 5.069   (a per-stratum z would be 1.96)
+  multiplicity penalty           : 2.59x wider than a naive interval
+
+### ten most dependent eligible strata
+  class                       range  visibility       n    lift      simultaneous 95%
+  car                          0-20     v80-100  12,890   6.946       [2.221, 11.671]
+  car                          0-20      v60-80   1,979   4.290       [-0.071, 8.650]
+  car                         20-30     v80-100   7,095   3.929        [1.724, 6.133]
+  car                          0-20      v40-60   1,238   3.458        [1.210, 5.706]
+  barrier                      0-20      v60-80   1,698   2.285        [1.291, 3.278]
+  bus                         20-30     v80-100     313   2.136       [-1.085, 5.356]
+  car                         20-30      v60-80   2,391   1.965        [1.122, 2.809]
+  barrier                      0-20     v80-100   6,203   1.767        [1.086, 2.447]
+  bus                          0-20     v80-100     456   1.754       [-0.763, 4.270]
+  bicycle                      0-20     v80-100     571   1.743        [0.558, 2.928]
+
+### least dependent eligible strata, for contrast
+  trailer                      0-20      v60-80      74   0.925        [0.542, 1.308]
+  trailer                      0-20     v80-100     210   0.838        [0.238, 1.438]
+  truck                        0-20     v80-100   1,981   0.635       [-0.393, 1.663]
+
+### observed-insufficient strata, retained and barred from the extremum
+  bus                          0-20      v60-80      77   2.962   exp_joint=0.3<5.0
+  bus                         20-30      v60-80     121   1.729   exp_joint=2.3<5.0
+  motorcycle                   0-20      v40-60      34   1.328   exp_joint=3.8<5.0
+  bus                         20-30       v0-40      26   1.040   n=26<30
+  motorcycle                  30-40      v40-60      29   1.007   n=29<30
+  construction_vehicle        40-50       v0-40     154   1.000   
+  ... and 6 more, none eligible for the extremum
+
+--------------------------------------------------------------------------------------------
+Pooled conditional lift, Result E            : 1.156
+Worst eligible group lift                    : 6.946   [2.221, 11.671] simultaneous
+Worst group                                  : car, 0-20 m, visibility v80-100
+Worst group size                             : 12,890 boxes
+Ties at the extremum                         : 1
+Aggregate-to-worst gap                       : +5.790   (3806% of the pooled excess over independence)
+
+The worst eligible group's simultaneous lower bound exceeds 1.0, so its
+dependence is not a multiplicity artifact of ranking 132 strata.
+
+Consequence for a redundancy argument. Result G converts a lift into an
+evidence requirement through N proportional to sqrt(c). Applied to the
+pooled 1.156 that is 7.5% more evidence. Applied to the worst
+eligible group it is 163.5% more. A safety case that designs to the
+pooled figure under-provisions exactly the region where the two channels
+are least independent.
+--------------------------------------------------------------------------------------------

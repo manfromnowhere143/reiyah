@@ -61,7 +61,8 @@ headline facts:
   [1.144, 1.166] at the tracked-instance unit. The CMH of 4,924 was computed at the box
   unit; design effect 5.02, so the honest statistic is about 982 on 1 df.
 - Required validation evidence scales as **sqrt(c)**, so the cost is about **26% more evidence**,
-  not 59%.
+  not 59%, when designed against the pooled marginal lift. Designed against the worst eligible
+  group it is **163.5%**. See [`RESULT_I_WORST_GROUP_DEPENDENCE.md`](RESULT_I_WORST_GROUP_DEPENDENCE.md).
 - Across six detector pairs, same-modality and cross-modality separate completely.
   The former claim that joint-failure odds **rise with the accuracy of both models**
   (7.01, 15.86, 31.99) is **withdrawn**: no computation produced it, the trend has a

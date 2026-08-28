@@ -59,12 +59,13 @@ Full transcripts are retained under `evidence/measurement/`. The tooling is at `
 | G | derived | Required validation evidence scales as the square root of the lift, so the real cost is about 26% more evidence, not 59%. |
 | H | measured | Across six detector pairs and three lidar architectures, same-modality and cross-modality pairs separate completely. |
 | H-accuracy | withdrawn | "Joint-failure odds rise with the accuracy of both models." No computation produced this: `result_h.py` binds `MAP` and never reads it. Three non-independent odds ratios, permutation p 0.167, two points resting on an unvalidated accuracy figure, and two pairs at identical weaker-model accuracy differing by 2.26x. Retained with its refutation in [`AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md`](AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md). |
+| I | measured | Worst-group dependence. Pooling hides it: conditional lift is 1.156 pooled but **6.946** in the worst eligible stratum, `car` at 0-20 m with `v80-100` visibility, simultaneous 95% [2.221, 11.671] over 120 eligible strata. Universe partitions exactly, 120 sufficient, 12 insufficient, 0 unknown. Survives absence, concentration and operating-point attacks. Evidence base is 34 tracked instances; quote only with the band. See [`RESULT_I_WORST_GROUP_DEPENDENCE.md`](RESULT_I_WORST_GROUP_DEPENDENCE.md). |
 
 A seventh correction arrived later and is the most substantive: the measurements record
 both-channel misses, not joint *silent* misses, which are not establishable from a source that
 observes no warning and no fallback. See [`CONTRACT_CAUGHT_AN_ERROR.md`](CONTRACT_CAUGHT_AN_ERROR.md).
 
-Eight claims were withdrawn or corrected during this work. Every one made the result smaller. They
+Nine claims were withdrawn or corrected during this work, one of them a defect in a robustness audit's own first version. Every one made the result smaller. They
 are retained with their refutations attached rather than deleted. The two most recent came from
 an adversarial audit of this workstream's own statistics and are recorded in
 [`AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md`](AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md).

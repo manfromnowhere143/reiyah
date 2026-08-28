@@ -1,0 +1,60 @@
+============================================================================================
+AUDIT OF RESULT I - is the worst group real?
+target stratum: car, 0-20 m, visibility v80-100
+============================================================================================
+
+### 1. the cell counts behind the ratio, score >= 0.3
+               both miss (a):     178
+        camera miss only (b):   1,032
+         lidar miss only (c):      95
+          neither misses (d):  11,585
+            stratum size (n):  12,890
+            camera miss rate:  0.0939
+             lidar miss rate:  0.0212
+    expected joint if indep.:    25.6
+              observed joint:     178
+                        lift:   6.946
+  expected joint clears the declared floor of 5.0: YES
+
+### 2. is the worst group an absence artifact?
+             joint misses in stratum: 178
+      of which both detectors absent: 7   (3.9%)
+  recomputed with both-absent rows removed from the denominator:
+                        stratum size: 12,883
+                                lift: 6.884
+           rank among all 132 strata: 1
+            still above independence: YES
+
+### 3. are the joint misses concentrated in a few keyframes?
+       distinct samples contributing: 177
+     distinct instances contributing: 34
+         largest single sample share: 1.12%
+             top 1% of samples carry: 1.1%
+  sample-clustered bootstrap SE  : 0.322   pointwise 95% [6.338, 7.585]
+      lower bound above independence: YES
+
+### 4. does the ranking hold across operating points?
+  A stratum that fails the pre-declared eligibility floor has NO rank at
+  that threshold. Reporting one would coerce an ineligible group into a
+  confident value, which the charter forbids. Ineligible points are shown
+  as such and excluded from the extremum, never scored as a bad rank.
+    thr     lift      rank  eligible   exp joint
+    0.1    5.037       n/aINELIGIBLE         1.8
+    0.2    4.943         1       yes         7.7
+    0.3    6.946         1       yes        25.6
+    0.4    5.617         1       yes        50.7
+    0.5    4.192         1       yes        94.7
+  eligible operating points          : 4 of 5
+  ineligible by the declared floor   : 1   (expected joint below 5.0)
+  rank <= 3 at every ELIGIBLE point  : YES
+
+--------------------------------------------------------------------------------------------
+  PASS  expected joint clears the floor
+  PASS  not an absence artifact
+  PASS  not concentrated in a few keyframes
+  PASS  worst at every eligible operating point
+
+  Result I's worst group SURVIVES all four attacks. The claim that
+  redundancy is weakest on near, clearly visible cars stands, and it is
+  the region a redundancy argument is least likely to interrogate.
+--------------------------------------------------------------------------------------------
