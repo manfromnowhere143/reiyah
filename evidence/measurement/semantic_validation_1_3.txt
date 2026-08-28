@@ -1,0 +1,23 @@
+SEMANTIC VALIDATION, executable contract 1.3.0
+==================================================================
+records (tracked objects) : 8,976
+opportunity rows total    : 134,565
+semantic violations       : 0
+
+identifiability, derived per record:
+  nonidentifiable_unknown                 6,525  (72.7%)
+  identified_from_common_opportunities    2,451  (27.3%)
+
+cells aggregated across records:
+  both_miss              33,711
+  first_only_miss        28,761
+  second_only_miss       12,030
+  neither_miss           60,063
+  sum                   134,565
+
+objects with a knowable silent count (zero both-misses): 2,451
+objects where silence is not establishable             : 6,525
+
+The statistical unit is now the tracked object, not the box. That is the
+clustering our own traps table demanded, and the contract's structure
+required it before we applied it.

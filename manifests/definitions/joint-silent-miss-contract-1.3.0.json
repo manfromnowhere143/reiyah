@@ -1,0 +1,56 @@
+{
+  "contract_id": "reiyah.executable-contract.joint-silent-miss-identifiability",
+  "contract_kind": "joint_silent_miss_identifiability",
+  "version": "1.3.0",
+  "supersedes": "1.2.0",
+  "derivation_authority": "offline_validator",
+  "rationale": "The 1.2.0 contract pinned policy and subject together by exact equality, so it could only be applied to the synthetic fixture it was written against. 1.3.0 keeps every policy pinned exactly and moves the subject into a declared per-record binding whose shape and kinds are checked. The guard is not weakened: a changed policy still stops the validator.",
+
+  "policy": {
+    "channel_arity": 2,
+    "channel_role_vocabulary": [
+      "human", "automation", "machine_perception",
+      "reference_process", "fallback_procedure"
+    ],
+    "common_opportunity_cells": [
+      "both_miss", "first_only_miss", "second_only_miss", "neither_miss"
+    ],
+    "marginal_derivation": "exact_from_disjoint_common_opportunity_cells",
+    "identifiability_policy": "observed_common_cells_or_nonidentifiable",
+    "joint_unknown_propagation": "nonobserved_operand_forces_nonidentified_nonobserved_summary",
+    "opportunity_manifest_resolution_policy": "exact_ordered_registry_rows_bound_to_artifact",
+    "row_derivation_policy": "exact_reference_validity_channel_warning_fallback_rows_to_disjoint_cells",
+    "silent_joint_miss_policy": "both_channels_miss_and_warning_not_issued_and_fallback_not_activated",
+    "opportunity_unit": "one_common_object_observed_over_a_strictly_ordered_time_series",
+    "chronology_policy": "strictly_increasing_occurred_at_within_the_declared_window"
+  },
+
+  "subject_binding_requirements": {
+    "bound_per_record": true,
+    "required_fields": [
+      "object_ref", "clock_id", "window_id", "channels",
+      "warning_rule_ref", "fallback_rule_ref",
+      "opportunity_set_ref", "opportunity_rule_ref"
+    ],
+    "opportunity_set_record_kind": "reiyah.kind.opportunity_set",
+    "observation_channel_record_kind": "reiyah.kind.observation_channel",
+    "permitted_object_kinds": [
+      "reiyah.kind.vehicle_object",
+      "reiyah.kind.vulnerable_road_user_object",
+      "reiyah.kind.static_obstacle_object",
+      "reiyah.kind.annotated_road_object"
+    ],
+    "channel_count": 2,
+    "all_rows_share_the_bound_object": true,
+    "binding_must_be_digest_bound": true
+  },
+
+  "guard_contract": {
+    "policy_comparison": "exact_equality_on_every_policy_field",
+    "subject_comparison": "shape_and_kind_only_never_literal_identity",
+    "on_policy_mismatch": "raise_and_refuse_to_run",
+    "on_subject_mismatch": "raise_and_refuse_to_run",
+    "may_be_relaxed_to_subset_check": false,
+    "may_be_made_advisory": false
+  }
+}
