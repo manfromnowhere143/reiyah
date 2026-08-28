@@ -110,6 +110,21 @@ removed the coercion and reports ineligible points as ineligible. The criterion 
 loosened. This is recorded because a robustness audit that quietly repairs itself is
 worth less than one that says where it was wrong.
 
+## Amendment from Result J
+
+[`RESULT_J_WORST_REGION_ACROSS_PAIRS.md`](RESULT_J_WORST_REGION_ACROSS_PAIRS.md) ran this
+identical contract over three detector pairs. The result below is **narrowed**.
+
+The worst-stratum identity is pair-specific. Two pairs put `car, 0-20 m, v80-100` worst
+and one puts `car, 0-20 m, v60-80` worst. The claim that this exact cell is universally
+worst is not supported.
+
+The regional finding is supported and strengthened. In all three pairs, including a
+lidar-lidar pair sharing no modality structure with the other two, the worst eligible
+stratum and the entire top three are close-range cars.
+
+Read this document as one pair's extremum inside a consistently worst region.
+
 ## The limit of this finding, stated plainly
 
 The 178 joint misses come from **34 distinct tracked instances**. That is the real

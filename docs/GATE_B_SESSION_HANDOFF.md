@@ -56,6 +56,11 @@ headline facts:
 - A per-object matcher reproduces published mAP on four detectors: Megvii 51.97 against 51.90,
   Mapillary 29.58 against 29.80, PointPillars 29.54 against 29.50. CenterPoint reconstructs 61.59
   and is **not validated** against a confirmed figure.
+- Redundancy is weakest on the close-range car. Pooled conditional lift 1.156, worst eligible
+  group 6.946 with a simultaneous band of [2.221, 11.671]. Across three detector pairs the
+  worst region is a close-range car every time; the exact stratum is pair-specific. See
+  [`RESULT_I_WORST_GROUP_DEPENDENCE.md`](RESULT_I_WORST_GROUP_DEPENDENCE.md) and
+  [`RESULT_J_WORST_REGION_ACROSS_PAIRS.md`](RESULT_J_WORST_REGION_ACROSS_PAIRS.md).
 - Camera and lidar failures are not independent. Marginal lift 1.587 at score 0.3, conditional
   1.156 after stratifying on class, range and visibility, cluster-robust 95% interval
   [1.144, 1.166] at the tracked-instance unit. The CMH of 4,924 was computed at the box

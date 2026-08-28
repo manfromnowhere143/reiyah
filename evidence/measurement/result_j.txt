@@ -1,0 +1,52 @@
+================================================================================================
+RESULT J - is the worst group a property of the pair, or of the region?
+nuScenes val, score >= 0.3, universe = class x range x visibility (132 strata)
+direction declared before inspection: LARGER LIFT IS WORSE
+CenterPoint excluded: weaker provenance, unconfirmed accuracy
+================================================================================================
+
+### mapillary x megvii   [camera/lidar, cross-modality]
+  partition: sufficient 120, insufficient 12, unknown 0   exact: True
+  pooled lift over eligible strata : 1.156
+                        worst group: car, 0-20 m, v80-100
+                   worst group lift: 6.946   simultaneous 95% [2.221, 11.671]  (max-t 5.07)
+                   worst group size: 12,890 boxes, 178 joint misses, ties 1
+                          top three: car 0-20 v80-100 6.95 | car 0-20 v60-80 4.29 | car 20-30 v80-100 3.93
+     evidence cost, pooled vs worst: 7.5% vs 163.5%
+
+### mapillary x pointpillars   [camera/lidar, cross-modality]
+  partition: sufficient 112, insufficient 20, unknown 0   exact: True
+  pooled lift over eligible strata : 1.101
+                        worst group: car, 0-20 m, v60-80
+                   worst group lift: 2.350   simultaneous 95% [0.992, 3.709]  (max-t 5.13)
+                   worst group size: 1,979 boxes, 81 joint misses, ties 1
+                          top three: car 0-20 v60-80 2.35 | car 0-20 v80-100 2.33 | car 0-20 v40-60 1.93
+     evidence cost, pooled vs worst: 4.9% vs 53.3%
+
+### megvii x pointpillars   [lidar/lidar, SAME-modality]
+  partition: sufficient 112, insufficient 20, unknown 0   exact: True
+  pooled lift over eligible strata : 1.313
+                        worst group: car, 0-20 m, v80-100
+                   worst group lift: 6.427   simultaneous 95% [1.429, 11.424]  (max-t 5.07)
+                   worst group size: 12,890 boxes, 147 joint misses, ties 1
+                          top three: car 0-20 v80-100 6.43 | car 0-20 v60-80 4.91 | car 0-20 v40-60 4.52
+     evidence cost, pooled vs worst: 14.6% vs 153.5%
+
+================================================================================================
+### does the same region come worst across pairs?
+  pair                               kind   pooled  worst lift   worst group
+  mapillary x megvii                cross    1.156       6.946   car, 0-20 m, v80-100
+  mapillary x pointpillars          cross    1.101       2.350   car, 0-20 m, v60-80
+  megvii x pointpillars              SAME    1.313       6.427   car, 0-20 m, v80-100
+
+------------------------------------------------------------------------------------------------
+  identical worst stratum in all 3 pairs : NO
+  worst stratum is a close-range car          : 3 of 3 pairs
+  a close-range car in the top three          : 3 of 3 pairs
+  every worst-group lower bound above 1.0     : NO   (min 0.992)
+
+  The exact worst stratum differs by pair, but a close-range car is in
+  the top three for every pair. The regional reading is supported; the
+  single-stratum reading is not, and Result I must be stated as one
+  pair's extremum within a consistently worst region.
+------------------------------------------------------------------------------------------------
