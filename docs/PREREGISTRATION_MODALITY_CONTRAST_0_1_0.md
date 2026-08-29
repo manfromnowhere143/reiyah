@@ -154,19 +154,43 @@ own budget. A single scalar epsilon is inadmissible.
 |---|---|---|
 | `L0` | none | Worst case. Report `unbounded` or `undefined` where the feasible set permits it. Never substitute a finite surrogate |
 | `L1` | mechanism-specific budgets, no assumption on which cells absorb them | Sharp bounds by optimising the fractional-linear estimand over the feasible cell polytope |
-| `L2` | `L1` plus non-differential error with respect to channel outcome, itself probed | Tighter bounds; the restriction is tested, not assumed |
+| `L2` | `L1` plus a **bounded-differentiality** restriction, parameterised by a single `delta`, itself probed | Tighter bounds; the restriction is tested, not assumed. Two earlier encodings were refuted, see below |
 | `L3` | `L2` plus error rates estimated by blinded reannotation | Tightest. **Only `L3` is eligible for a headline, and only after independent replication** |
 
 Sharpness MUST be proved or numerically verified wherever claimed. The denominator can reach zero
 inside the feasible set whenever a marginal budget covers the observed marginal count; that case
 yields `undefined`, never a truncated large number.
 
+### 10.2a Proposition M4-1 changes what reannotation must measure
+
+`c` is scale invariant, so a strictly proportional perturbation of the four cells leaves it
+exactly unchanged. Proof and numerical check in
+[`M4_IDENTIFICATION_FINDINGS.md`](M4_IDENTIFICATION_FINDINGS.md) section 2.
+
+Therefore **uniform reference error does not bias `c` at all**, and every unit of identification
+exposure is differential error, error whose rate depends on the cell and so on the channel
+outcomes. Two encodings of the `L2` restriction were refuted on these grounds and are retained:
+tying the two single-miss cells is **vacuous**, because `c` is monotonically decreasing in both so
+every extremum satisfies the tie for free; and proportional perturbation is **null**, because it is
+exactly the invariance direction.
+
+The binding formulation perturbs cell `j` at rate `r_j` in `[rbar - delta, rbar + delta]` for a
+free common rate `rbar`. On the fixture stratum the set is `[1.0057, 1.1063]` at `delta = 0.02`
+and `[0.9620, 1.1547]` at `delta = 0.05`, so **a five percentage point differential error rate is
+already enough to leave that stratum's dependence unidentified**.
+
 ### 10.3 Blinded reannotation
 
 Annotators see no channel output, no prior label, and no stratum assignment. Sample is stratified
-random over the universe. Sample size is driven by the target width of the resulting bound, not by
-convenience. Inter-annotator disagreement and localization uncertainty are retained as
-distributions, never collapsed to a point.
+random over the universe. Inter-annotator disagreement and localization uncertainty are retained
+as distributions, never collapsed to a point.
+
+**The estimation target is `delta`, not the overall error rate.** Section 10.2a establishes that
+the overall rate is irrelevant to this estimand, so a design powered to estimate it would be
+powered for the wrong quantity. Sample size is driven by the width of the resulting bound on
+`delta`, and the reannotation must be stratified so that a per-cell error rate is estimable at all,
+which requires deliberate oversampling of the both-miss cell because it is the rarest and carries
+the numerator.
 
 ### 10.4 Reporting
 

@@ -36,10 +36,13 @@ publicly released prediction files and computes contingency tables. GA-15 is not
 
 | Item | State |
 |---|---|
-| Branch | `gate-b-measurement`, clean, pushed, 14 commits |
+| Branch | `gate-b-measurement`, clean, **8 commits unpushed** as of 2026-08-29 |
 | Schema successor | `schemas/v1.3/`, **proposed** |
-| Executable contract successor | `manifests/definitions/joint-silent-miss-contract-1.3.0.json`, **proposed, not in the registry** |
-| Real records | 8,976 built, **0 semantic violations** |
+| Executable contract successor | `manifests/definitions/joint-silent-miss-contract-1.3.0.json`, **proposed, not in the registry, and NOT REGISTRABLE FROM THIS LANE**; see section 10 |
+| Real records | 8,976 built, **0 semantic violations**, validated by a **port**; the 3 worst-group records by a **spec reimplementation**, which is weaker still |
+| Claim status | machine-readable in [`claim-status-register-2026-08-29.json`](../evidence/claim-status-register-2026-08-29.json); enforced by `tools/measure/check_claim_reconciliation.py` |
+| Evidence-cost figures | **withdrawn as stated**, retained with lineage; see [`ESTIMAND_RSS_DEFINITION_32.md`](ESTIMAND_RSS_DEFINITION_32.md) section 6 |
+| Reference-error identification | **`unknown`**; no blinded reannotation performed; solver exercised on synthetic fixtures only |
 | Operator acceptance | none |
 | Scientific support | none |
 | Released `1.2` bytes modified | none |
@@ -226,20 +229,33 @@ out why before trusting anything it produced.
 
 ## 10. The next smallest action
 
-Unchanged and still first: release the `1.3.0` executable contract into the definition registry so
-the **shipped science module**, not our faithful port, can execute these checks. Note that the
-session of 2026-08-28 added a second faithful port, `semantic_worst_group_1_3.py`, which is subject
-to exactly the same limitation: it is a reimplementation, not the artifact of record. `tools/measure/semantic_joint_1_3.py`
-is a port with the guard split into policy and subject per
-[`EXECUTABLE_CONTRACT_1_3_PROPOSAL.md`](EXECUTABLE_CONTRACT_1_3_PROPOSAL.md); it is not the real
-validator, and the records are therefore validated by a faithful reimplementation rather than by
-the artifact of record.
+**The former first item is REVOKED as unreachable from this lane, on verified grounds.** It read:
+release the `1.3.0` executable contract into the definition registry so the shipped science module
+rather than a port can execute these checks. The 2026-08-29 audit established that this cannot be
+done here, and the reason is now bound to bytes rather than inferred.
 
-**Do not weaken the substitution guard to get there.** It may not be removed, relaxed to a subset
-check, or made advisory. If the choice is between a validator that refuses real data and one that
-can be talked into anything, keep the refusal.
+`tools/gate_a_1_2_0_science.py` in this worktree is Git blob
+`a32c6cfa948ee1005a99937e54670991999db253`, byte-identical to the frozen Gate A `C_packet` copy at
+`801eacf`. Its guard `executable_contract_binding_violations` compares the registry entry against
+`FROZEN_EXECUTABLE_CONTRACT_DEFINITIONS`, a constant **inside that released module**, by exact
+equality. The bound `1.2.0` contract hardcodes synthetic subject identities:
+`reiyah.opportunity-set.synthetic-joint-observed` and siblings, `reiyah.object.synthetic_vehicle`,
+and synthetic human and automation channel refs. **The artifact of record can therefore only ever
+validate the synthetic fixture it was frozen against.** Registering a `1.3.0` contract would
+require changing a released Gate A byte, which is prohibited in place and needs a Gate A science
+module successor. That is another lane.
 
-After that, in order:
+So the `1.3.0` proposal's own diagnosis is confirmed correct, the port was forced rather than
+chosen, and the honest validation state of every Gate B record is `port` or `spec_reimplementation`
+until a Gate A successor exists. See [`CLAIM_AUDIT_2026-08-29.md`](CLAIM_AUDIT_2026-08-29.md)
+section 4.
+
+**Do not weaken the substitution guard.** It may not be removed, relaxed to a subset check, or
+made advisory. It is working exactly as designed: it is refusing real data because the contract it
+was frozen against names a fixture. If the choice is between a validator that refuses real data and
+one that can be talked into anything, keep the refusal.
+
+The next smallest actions that ARE reachable from this lane, in order:
 
 1. Restate Result H at the instance unit. Audit 1 required it for D, G and H; K did D and G, H is
    still box-unit and its six pairwise figures still carry no interval.

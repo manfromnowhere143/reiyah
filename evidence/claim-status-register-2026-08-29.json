@@ -25,11 +25,31 @@
         "evidence/measurement/result_k.txt"
       ],
       "values_withdrawn": [
-        { "label": "extra evidence, pooled marginal, score >= 0.3", "value": "+26.0%", "interval": "95% CI [25.0, 26.9]" },
-        { "label": "examples per subsystem at the measured lift", "value": "97,596", "interval": "95% CI [96,860, 98,332]" },
-        { "label": "examples per subsystem, result_g literal path", "value": "97,581", "interval": null },
-        { "label": "baseline examples per subsystem under independence", "value": "77,460", "interval": null },
-        { "label": "extra evidence, pooled conditional coefficient", "value": "+7.5%", "interval": null }
+        {
+          "label": "extra evidence, pooled marginal, score >= 0.3",
+          "value": "+26.0%",
+          "interval": "95% CI [25.0, 26.9]"
+        },
+        {
+          "label": "examples per subsystem at the measured lift",
+          "value": "97,596",
+          "interval": "95% CI [96,860, 98,332]"
+        },
+        {
+          "label": "examples per subsystem, result_g literal path",
+          "value": "97,581",
+          "interval": null
+        },
+        {
+          "label": "baseline examples per subsystem under independence",
+          "value": "77,460",
+          "interval": null
+        },
+        {
+          "label": "extra evidence, pooled conditional coefficient",
+          "value": "+7.5%",
+          "interval": null
+        }
       ],
       "source_identity": {
         "source_id": "S-01",
@@ -64,11 +84,31 @@
         "evidence/measurement/result_j.txt"
       ],
       "values_withdrawn": [
-        { "label": "extra evidence, worst eligible group, mapillary x megvii", "value": "+163.5%", "interval": null },
-        { "label": "extra evidence, worst eligible group, mapillary x pointpillars", "value": "+53.3%", "interval": null },
-        { "label": "extra evidence, worst eligible group, megvii x pointpillars", "value": "+153.5%", "interval": null },
-        { "label": "extra evidence, pooled, mapillary x pointpillars", "value": "+4.9%", "interval": null },
-        { "label": "extra evidence, pooled, megvii x pointpillars", "value": "+14.6%", "interval": null }
+        {
+          "label": "extra evidence, worst eligible group, mapillary x megvii",
+          "value": "+163.5%",
+          "interval": null
+        },
+        {
+          "label": "extra evidence, worst eligible group, mapillary x pointpillars",
+          "value": "+53.3%",
+          "interval": null
+        },
+        {
+          "label": "extra evidence, worst eligible group, megvii x pointpillars",
+          "value": "+153.5%",
+          "interval": null
+        },
+        {
+          "label": "extra evidence, pooled, mapillary x pointpillars",
+          "value": "+4.9%",
+          "interval": null
+        },
+        {
+          "label": "extra evidence, pooled, megvii x pointpillars",
+          "value": "+14.6%",
+          "interval": null
+        }
       ],
       "source_identity": {
         "source_id": "S-01",
@@ -95,9 +135,15 @@
         "first_stated_in": "docs/GATE_B_MEASUREMENT_CONTRACT.md row G",
         "superseded_by": "docs/CLAIM_AUDIT_2026-08-29.md section 3.3"
       },
-      "retained_transcripts": ["evidence/measurement/result_g.txt"],
+      "retained_transcripts": [
+        "evidence/measurement/result_g.txt"
+      ],
       "values_withdrawn": [
-        { "label": "the whole Result G table at both marginal and conditional coefficients", "value": "see transcript", "interval": null }
+        {
+          "label": "the whole Result G table at both marginal and conditional coefficients",
+          "value": "see transcript",
+          "interval": null
+        }
       ],
       "source_identity": {
         "source_id": "S-01",
@@ -124,9 +170,16 @@
         "first_stated_in": "tools/measure/result_k_evidence_cost_interval.py line 46 code comment, and evidence/measurement/result_g.txt line 6",
         "superseded_by": "docs/PRIMARY_SOURCE_CUSTODY_2026-08-29.md entry S-01"
       },
-      "retained_transcripts": ["evidence/measurement/result_g.txt", "evidence/measurement/result_k.txt"],
+      "retained_transcripts": [
+        "evidence/measurement/result_g.txt",
+        "evidence/measurement/result_k.txt"
+      ],
       "values_withdrawn": [
-        { "label": "described as RSS's own worked example or worked target", "value": "77,460", "interval": null }
+        {
+          "label": "described as RSS's own worked example or worked target",
+          "value": "77,460",
+          "interval": null
+        }
       ],
       "source_identity": {
         "source_id": "S-01",
@@ -180,7 +233,9 @@
         "first_stated_in": "docs/RESEARCH_GAP_REGISTER.md RGA-027",
         "superseded_by": null
       },
-      "retained_transcripts": ["evidence/measurement/estimand_counterexamples.txt"],
+      "retained_transcripts": [
+        "evidence/measurement/estimand_counterexamples.txt"
+      ],
       "source_identity": {
         "source_id": "not_applicable",
         "custody_state": "not_applicable",
@@ -191,10 +246,13 @@
         "statement": "No blinded reannotation has been performed, so no error budget is estimated and no bound exists at any level of the L0 to L3 ladder. Counterexample CE-5 shows a 0.50 percent reference error moves c from exactly 1.0000 to 0.5512 or to 1.3673, which exceeds most effects of interest. This is unknown, not zero and not negligible."
       },
       "reconsideration_requirements": [
-        "Execute the blinded reannotation design in docs/PREREGISTRATION_MODALITY_CONTRAST_0_1_0.md section 10.3 with annotators blind to channel outputs, prior labels, and stratum assignment.",
+        "Estimate delta, the bound on how much the reference error rate VARIES ACROSS CELLS. Proposition M4-1 establishes that c is scale invariant, so the overall annotation error rate is irrelevant to this estimand and a design powered for it is powered for the wrong quantity.",
+        "Execute the blinded reannotation design in docs/PREREGISTRATION_MODALITY_CONTRAST_0_1_0.md section 10.3, with annotators blind to channel outputs, prior labels, and stratum assignment, and with deliberate oversampling of the both-miss cell.",
         "Report identification bounds as an outer interval containing the clustered sampling interval, never collapsed.",
-        "Only L3, supported by blinded reannotation, may carry a headline."
-      ]
+        "Establish that the reference process is independent of every evaluated channel. Channel-dependent contamination yields `invalid`, not a wider interval, and no bound repairs it.",
+        "Only L3, supported by blinded reannotation, may carry a headline, and only after independent replication."
+      ],
+      "notes": "The solver is implemented and adversarially tested on synthetic fixtures only: tools/measure/m4_partial_identification.py. No measured stratum has been bounded. At delta = 0.05 the fixture stratum's set already covers 1.0."
     },
     {
       "claim_id": "reiyah.gate-b.claim.joint-silent-miss",
