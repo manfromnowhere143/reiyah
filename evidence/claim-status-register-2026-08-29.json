@@ -304,6 +304,45 @@
         "Human-subjects review, consent, and recruitment, none of which is authorized.",
         "When awareness is not identified the output is human_state unknown, never miss equals one."
       ]
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.modality-separation",
+      "estimand": "Difference in the coincident-miss ratio between same-modality and cross-modality detector pairs, at a declared operating point.",
+      "status": "inconclusive",
+      "current_scientific_use": "forbidden",
+      "unit": "object_track",
+      "lineage": {
+        "first_stated_in": "docs/GATE_B_MEASUREMENT_CONTRACT.md row H",
+        "superseded_by": "evidence/measurement/result_h_instance_unit.txt"
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_h.txt",
+        "evidence/measurement/result_h_instance_unit.txt"
+      ],
+      "values_withdrawn": [
+        {
+          "label": "separation across six detector pairs and three lidar architectures",
+          "value": "see transcript",
+          "interval": null
+        }
+      ],
+      "source_identity": {
+        "source_id": "S-01",
+        "custody_state": "primary_retained",
+        "exact_proposition": "The primary text argues that camera and lidar remain approximately independent for miss mistakes because their shared weather causes produce different mistake types. This is the mechanism such a contrast would test."
+      },
+      "refutation": {
+        "reason_code": "scope_operand_incomplete",
+        "statement": "Three of the six published pairs used CenterPoint, which Result J excluded for weak provenance and did not readmit, and matched_centerpoint.json is absent from the worktree so the published table is not reproducible. After removal one same-modality pair and two cross-modality pairs remain. The preregistration requires each arm to contain at least two pairs sharing no channel; the same-modality arm holds one pair and both cross-modality pairs share Mapillary, so neither arm has internal replication. The instance-clustered difference excludes zero, marginal +0.222 CI [+0.203, +0.241] and conditional +0.184 CI [+0.170, +0.195], but the design cannot support a supported or contradicted state whatever the interval says."
+      },
+      "reconsideration_requirements": [
+        "At least two same-modality pairs sharing no channel, and at least two cross-modality pairs sharing no channel.",
+        "A second independent camera detector, since all cross-modality pairs currently share Mapillary. No modern camera-only nuScenes predictions are published, so obtaining one means running inference, which is outside current authority.",
+        "Matched marginals or marginals as declared covariates, per the preregistration.",
+        "Reference-error identification bounds, currently unknown.",
+        "Independent replication on a disjoint split with a different reference process."
+      ],
+      "notes": "The unit debt Audit 1 raised for D, G and H is closed by this restatement. The estimate agrees with Result K to three decimals on both point and interval from an independent estimator, which cross-validates both."
     }
   ]
 }

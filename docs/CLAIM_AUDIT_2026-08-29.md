@@ -70,7 +70,7 @@ code, this operator, and this machine, which is disclosed dependence, not replic
 | E | Conditional `c` after class, range, visibility | instance | independence | `measured, narrowed` | non-identified per estimand note section 4 |
 | F | Share of removed objects the lidar arm recovers | object | none | `measured` | descriptive |
 | G | Evidence-cost consequence | `derived_arithmetic` | independence | **`withdrawn as stated`** | **no data path**, section 3.4, plus scope mismatch, estimand note 6.2 |
-| H | Same-modality against cross-modality separation across six pairs | box | none | `measured, not restated at instance unit` | no interval, unit debt open |
+| H | Same-modality against cross-modality separation | object_track | independence | **`superseded`**; successor is **`inconclusive`** | Unit debt closed 2026-08-29. CenterPoint removed as excluded by Result J; three pairs remain; arms lack the required internal replication |
 | H-acc | Joint-failure odds rise with model accuracy | n/a | none | `withdrawn` | no computation produced it |
 | I | Worst-group `c` | instance | independence | `measured` | 34 tracked instances at the extremum; not identified; reference error unbounded |
 | J | Worst-region generalisation across three pairs | instance | independence | `measured, narrows I` | one pair's extremum not established |

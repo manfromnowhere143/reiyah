@@ -257,8 +257,14 @@ one that can be talked into anything, keep the refusal.
 
 The next smallest actions that ARE reachable from this lane, in order:
 
-1. Restate Result H at the instance unit. Audit 1 required it for D, G and H; K did D and G, H is
-   still box-unit and its six pairwise figures still carry no interval.
+1. **DONE, 2026-08-29, and the result got smaller.** Result H restated at the instance unit with
+   CenterPoint removed. Three pairs survive. The arm difference excludes zero, but the
+   same-modality arm holds one pair and both cross-modality pairs share Mapillary, so the design
+   verdict is `inconclusive` by construction. Audit 1's unit debt for D, G and H is now closed.
+   Tool `result_h_instance_unit.py`, transcript `result_h_instance_unit.txt`. The marginal `c`
+   for `mapillary x megvii` reproduces Result K's `1.587` and its interval `[1.564, 1.612]`
+   exactly, from a separate estimator and a different replicate count, which is a real
+   cross-check on both.
 2. A second independent camera detector. All three cross-modality pairs share Mapillary, so that
    column has no internal replication, and no modern camera-only nuScenes predictions are published
    anywhere. Obtaining one means running inference.

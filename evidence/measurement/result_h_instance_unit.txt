@@ -1,0 +1,46 @@
+================================================================================================
+RESULT H RESTATED - instance unit, CenterPoint removed
+nuScenes val, score >= 0.3, instance-clustered bootstrap
+2,000 replicates, seed 20260829, 8,976 tracked objects, 134,565 boxes
+================================================================================================
+
+EXCLUDED, carried forward from Result J and not readmitted:
+  centerpoint      weak provenance, excluded by Result J and not readmitted
+  Admitted detectors: mapillary, megvii, pointpillars
+  Eligible strata (n >= 30): 127 of 132
+
+pair                          modalities         marginal c              95% CI   cond. c              95% CI
+megvii x pointpillars         lidar/lidar             1.712      [1.687, 1.739]     1.313      [1.296, 1.325]   SAME modality
+mapillary x megvii            camera/lidar            1.587      [1.564, 1.612]     1.156      [1.144, 1.166]   cross-modality
+mapillary x pointpillars      camera/lidar            1.393      [1.376, 1.411]     1.101      [1.092, 1.109]   cross-modality
+
+------------------------------------------------------------------------------------------------
+same-modality pairs : 1   ['megvii x pointpillars']
+cross-modality pairs: 2  ['mapillary x megvii', 'mapillary x pointpillars']
+
+marginal     same mean 1.712   cross mean 1.490   difference +0.222   95% CI [+0.203, +0.241]   EXCLUDES zero
+conditional  same mean 1.313   cross mean 1.129   difference +0.184   95% CI [+0.170, +0.195]   EXCLUDES zero
+
+------------------------------------------------------------------------------------------------
+ARM REPLICATION CHECK, applied from the preregistration section 5
+------------------------------------------------------------------------------------------------
+  same-modality arm  : 1 pair(s)   FAILS the two-pair requirement
+  cross-modality arm : 2 pair(s)  OK
+
+  VERDICT: INCONCLUSIVE by construction.
+  The same-modality arm rests on a single pair, so its arm has no internal
+  replication and its interval cannot separate a modality effect from a
+  property of that one detector pair. The two cross-modality pairs also share
+  Mapillary, so that arm has no independent replication either. Whatever the
+  difference and its interval say, the design cannot support a supported or
+  contradicted state. This is a design verdict fixed before the numbers were
+  read, and it is not overturned by the numbers.
+
+  What Result H claimed: same-modality and cross-modality 'separate completely'
+  across six pairs and three lidar architectures. After removing an excluded
+  detector, three pairs remain, two of the three same-modality pairs are gone,
+  and the published claim's evidence base does not exist in this worktree.
+
+NON-CLAIMS: no scientific support, no safety finding, no vendor comparison, no
+operator acceptance. Observational, one split, no reference-error bound, and the
+reference-error identification state remains unknown.
