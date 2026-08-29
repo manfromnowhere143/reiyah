@@ -34,8 +34,10 @@ Definition 32 for that stratum and that channel pair, whenever the Bernoulli var
 matched. This is a definitional identity, not an analogy, and it is bound to retained primary
 bytes.
 
-Reiyah MUST NOT call `c_s` the Eckhardt and Lee intensity function. No primary text for that work
-is retained. See custody entry S-04.
+Reiyah MUST NOT call `c_s` the Eckhardt and Lee intensity function. That prohibition was
+originally provisional, for want of retained text. As of 2026-08-29 the primary text is retained
+via NASA Technical Memorandum 86369 and the prohibition is now **positively established** rather
+than merely precautionary. See custody entry S-04 and section 3.1 below.
 
 ## 3. Heterogeneous-channel decomposition
 
@@ -74,6 +76,43 @@ Two readings follow, and only the first is a theorem.
 `c_s` is therefore, under CI, a normalised covariance of the two channels' conditional failure
 intensities over **residual unmodelled demand heterogeneity within `s`**. It is a property of the
 stratification as much as of the channels.
+
+### 3.1 What the retained coincident-error text does and does not license
+
+Custody entry S-04 retains NASA Technical Memorandum 86369, the NASA variant of Eckhardt and Lee
+1985. Two of its statements bear directly on section 3, and one forbids a tempting shortcut.
+
+**Theorem 2, verbatim:** "a necessary and sufficient condition for (unconditional) independent
+failure of the component versions is that `theta(x)` be constant except on a subset `A` of
+`Omega` for which `Q(A) = 0`." And, verbatim: "the variance `sigma^2` of the intensity
+distribution gives a measure of departure from the independence model."
+
+That is the same boundary case the homogeneous reading of section 3 reaches: `c_s = 1` exactly
+when the conditional failure intensity is constant almost everywhere on the stratum, and the
+departure is governed by its variance. Reiyah's `c_s - 1` is the **normalised** form of that
+departure measure, dividing by the squared mean so the quantity is dimensionless. The agreement
+is a useful check on section 3, arrived at independently and forty-one years later.
+
+**Three reasons the identification still fails, all from the retained text.**
+
+1. `theta` is a **function on the input space**, not a scalar. The departure measure is the
+   variance of its induced distribution, not a ratio.
+2. `theta` is an expectation over a **random draw from a population of versions** developed to a
+   common specification. Reiyah's channels are two fixed, named, published, heterogeneous
+   detectors. There is no version population and no random draw, so there is no `theta` to be the
+   intensity of.
+3. The model is **homogeneous**: one intensity function shared by all versions. Reiyah's case is
+   heterogeneous by construction, which is why section 3 needs two functions and a covariance.
+
+**A warning the retained text states explicitly**, verbatim: "Our results show it is incorrect to
+interpret a low intensity as implying statistical independence and a high intensity as implying
+statistical dependence." And, on the scope of the word independence in that model: "We emphasize
+that statistical independence in the current context refers only to the selection process and
+does not imply statistically independent failures among software components."
+
+So the admissible statement is that section 3's homogeneous case **agrees in form** with a
+retained theorem, and nothing stronger. `c_s` is not that theorem's intensity, is not its
+variance, and inherits none of its conclusions.
 
 ## 4. Non-identification, with checkable counterexamples
 
