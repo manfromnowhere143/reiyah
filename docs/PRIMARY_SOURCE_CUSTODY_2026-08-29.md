@@ -161,6 +161,13 @@ A reply document authored by Knight responding to criticisms is hosted at
 `http://sunnyday.mit.edu/critics.pdf`. Retrieval failed: `connect ECONNREFUSED` on HTTPS upgrade.
 State `unavailable`.
 
+**Bounded search for an open NASA variant, 2026-08-29: none found for this experiment.** The
+search returned only documents belonging to the later twenty-version, four-university programme,
+namely NASA CR 178363 (NTRS `19870020663`), NTRS `19880004481`, and NASA TM 102613 (NTRS
+`19900014642`, retained here as entry S-10). Those describe a different and larger experiment and
+are not a variant of the 27-version study. Recorded so this search is not repeated. Custody for
+S-03 therefore stays `primary_pointer_only`, and no number from it may be quoted.
+
 ### S-04 Eckhardt and Lee 1985
 
 | Field | Value |
