@@ -1,0 +1,78 @@
+================================================================================================
+ESTIMAND COUNTEREXAMPLES - exact arithmetic, no sampling, no data
+c_s = P_s(both miss) / [P_s(A miss) P_s(B miss)]   (RSS Definition 32 constant)
+================================================================================================
+
+================================================================================================
+CE-1  c > 1 with ZERO channel coupling: residual difficulty heterogeneity alone
+================================================================================================
+  Two equally weighted latent difficulty regimes. Within each regime the two
+  channels are EXACTLY conditionally independent. No common cause, no shared
+  component, no coupling of any kind.
+    regime u: weight 1/2, theta_A = theta_B = 0.40
+    regime v: weight 1/2, theta_A = theta_B = 0.02
+  pooled over the unmodelled regime                      pA=0.210000  pB=0.210000  pAB=0.080200  c=1.8186
+  Conclusion: c = 1.8186 > 1 is produced by incomplete stratification alone.
+  c > 1 is therefore NOT evidence of common-cause coupling.
+
+================================================================================================
+CE-2  c < 1 with NO diversity mechanism: anti-correlated difficulty alone
+================================================================================================
+  Same construction, but the regimes are hard for opposite channels.
+    regime u: weight 1/2, theta_A = 0.40, theta_B = 0.02
+    regime v: weight 1/2, theta_A = 0.02, theta_B = 0.40
+  Channels remain EXACTLY conditionally independent within each regime.
+  pooled over the unmodelled regime                      pA=0.210000  pB=0.210000  pAB=0.008000  c=0.1814
+  Conclusion: c = 0.1814 < 1 arises with no protective mechanism and no
+  intervention on channel construction. c < 1 is NOT evidence that diversity
+  protected the system.
+
+================================================================================================
+CE-3  pooled c near independence while a subgroup is severely coupled
+================================================================================================
+  bulk    (mass 0.99, independent)                       pA=0.100000  pB=0.100000  pAB=0.010000  c=1.0000
+  subgroup(mass 0.01, coupled)                           pA=0.100000  pB=0.100000  pAB=0.050000  c=5.0000
+  POOLED                                                 pA=0.100000  pB=0.100000  pAB=0.010400  c=1.0400
+  Pooled c = 1.0400. Worst subgroup c = 5.0000.
+  Both marginals are identical everywhere, so no marginal diagnostic can
+  reveal the subgroup. Only the worst-group partition can.
+
+================================================================================================
+CE-4  c moves when ONE channel's operating point moves, coupling unchanged
+================================================================================================
+  tau_1: theta_B = (0.40, 0.02)                          pA=0.210000  pB=0.210000  pAB=0.080200  c=1.8186
+  tau_2: theta_B = (0.50, 0.30)                          pA=0.210000  pB=0.400000  pAB=0.103000  c=1.2262
+  Channel A is untouched and the conditional-independence structure is untouched.
+  Only B's operating point moved. c is not invariant to operating point, so a
+  reported c is meaningless without both marginals and the declared operating point.
+
+================================================================================================
+CE-5  reference error alone moves c in BOTH directions from exact independence
+================================================================================================
+  TRUTH: a=100 b=900 c=900 d=8100 (exactly independent)  pA=0.100000  pB=0.100000  pAB=0.010000  c=1.0000
+  omit 50 TRUE both-miss opportunities (0.50% of universe) pA=0.095477  pB=0.095477  pAB=0.005025  c=0.5512
+  add 50 FALSE opportunities no channel can detect       pA=0.104478  pB=0.104478  pAB=0.014925  c=1.3673
+  A 0.50% reference error moves c from exactly 1.0000 to 0.5512 or 1.3673.
+  Direction depends only on which way the reference errs. Omission of hard
+  objects deflates c; phantom undetectable labels inflate it. Both are plausible.
+  This is why reference-error partial identification is P0 and must be carried
+  in the same contract as the estimate, not appended to it.
+
+================================================================================================
+CE-6  zero denominator: c is undefined, never zero, never one
+================================================================================================
+  channel A never misses in this stratum                 pA=0.000000  pB=0.005000  pAB=0.000000  c=undefined
+  P(A miss) = 0 makes the denominator zero. The correct output is the explicit
+  undefined state. Coercing it to 0, 1, or 'independent' is prohibited.
+
+================================================================================================
+SUMMARY
+================================================================================================
+  c > 1 alone       : consistent with coupling OR incomplete stratification
+                      OR correlated reference error. Not identified.
+  c < 1 alone       : consistent with diversity benefit OR anti-correlated
+                      difficulty OR reference error OR sampling noise. Not identified.
+  pooled c alone    : can be arbitrarily close to 1 with an arbitrarily bad subgroup.
+  c without marginals, operating point, denominator and clustering unit: not
+                      interpretable at all.
+  No value of c, at any confidence level, is causal evidence about channel design.
