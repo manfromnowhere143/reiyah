@@ -78,18 +78,37 @@ headline facts:
   evidence-budget multiplier. See
   [`ESTIMAND_RSS_DEFINITION_32.md`](ESTIMAND_RSS_DEFINITION_32.md) section 6 for the five
   conditions that would have to hold before any such figure returns.
-- Across six detector pairs, same-modality and cross-modality separate completely.
-  The former claim that joint-failure odds **rise with the accuracy of both models**
-  (7.01, 15.86, 31.99) is **withdrawn**: no computation produced it, the trend has a
+- **SUPERSEDED.** This bullet formerly read that across six detector pairs, same-modality and
+  cross-modality separate completely. Three of those six pairs used CenterPoint, which section 9a
+  itself excluded for weak provenance and did not readmit, and `matched_centerpoint.json` is not
+  in this worktree, so the six-pair table is not reproducible here. Restated at the instance unit
+  with CenterPoint removed, three pairs survive: one same-modality and two cross-modality. The
+  difference does exclude zero, marginal `+0.222` 95% CI `[+0.203, +0.241]` and conditional
+  `+0.184` 95% CI `[+0.170, +0.195]`, but the same-modality arm holds a single pair and both
+  cross-modality pairs share Mapillary, so neither arm has internal replication and the verdict is
+  **`inconclusive` by construction**. See
+  [`result_h_instance_unit.txt`](../evidence/measurement/result_h_instance_unit.txt).
+  The separate claim that joint-failure odds **rise with the accuracy of both models**
+  (7.01, 15.86, 31.99) remains **withdrawn**: no computation produced it, the trend has a
   permutation p of 0.167 on three non-independent points, and two pairs at identical
   weaker-model accuracy differ by 2.26x. See
   [`AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md`](AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md).
 
 ## 5. Corrections, all of them
 
-Eleven claims were withdrawn or narrowed. Every one made the result smaller. All remain in place
-with their refutations attached; **do not tidy them away**. The two most recent are in
-[`AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md`](AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md).
+Eighteen claims have now been withdrawn or narrowed. Every one made the result smaller. All remain
+in place with their refutations attached; **do not tidy them away**. The machine-readable current
+status of every claim is
+[`claim-status-register-2026-08-29.json`](../evidence/claim-status-register-2026-08-29.json), and
+`tools/measure/check_claim_reconciliation.py` fails closed if any live prose artifact states a
+figure the register forbids. **The register, not this prose, is the reconciliation point.**
+
+The 2026-08-29 audit added seven: the pooled evidence-cost figures, the worst-group evidence-cost
+figures, the whole of Result G on a second and independent ground,
+the withdrawn attribution of `77,460` to the primary source,
+the identification of `c` with an Eckhardt and Lee intensity function, the
+provenance of the worst-group records, and Result H's six-pair separation. Full table in
+[`CLAIM_AUDIT_2026-08-29.md`](CLAIM_AUDIT_2026-08-29.md) section 3.1.
 
 | Claim | Verdict |
 |---|---|
@@ -294,5 +313,29 @@ retractions, and never weaken a check to make a run pass.
 
 State, separately and from exact records: worktree, branch, commit, and cleanliness; which schemas
 and contracts are proposed against released; how many records validate and against which validator,
-the ported one or the shipped one; every claim withdrawn since the last handoff; and the next
-smallest authorized action.
+the ported one, the spec reimplementation, or the shipped one; every claim withdrawn since the last
+handoff; and the next smallest authorized action.
+
+Add, since 2026-08-29:
+
+1. the reconciliation check must pass, and its result must be stated;
+2. every reproduction that is a dependency of corrected prose must be re-run and its
+   byte-identity stated;
+3. source custody state must be stated per source, distinguishing `primary_retained`,
+   `primary_pointer_only`, `third_party_unretained`, and `unavailable`, and no claim may
+   characterise a source held only as a pointer;
+4. any statement of novelty must be given as `no prior instance found in this bounded search`
+   with the search scope named, never as novelty;
+5. disclosed dependence must be stated: no Gate B result is independently replicated, and shared
+   compute, code, authorship, or evaluation is never independent validation.
+
+## 13. What is blocked, and by what
+
+| Blocked | Blocker | Lane |
+|---|---|---|
+| Registering the `1.3.0` contract so the artifact of record runs | The frozen expectation lives inside a released Gate A module and is compared by exact equality | Gate A |
+| Any evidence-budget figure | Five conditions in `ESTIMAND_RSS_DEFINITION_32.md` section 6.4 | Gate B, open |
+| Bounding `c` on any measured stratum | No blinded reannotation; `delta` unestimated | Gate B, needs authorization |
+| A second independent camera detector | No modern camera-only nuScenes predictions are published; obtaining one means running inference | Outside current authority |
+| Object-level `M^H` | No audited public dataset identifies it; pilot needs human-subjects review | Outside current authority |
+| Any use of the word `silent` | No audited monitor adapter | Gate B contract design done, adapter absent |
