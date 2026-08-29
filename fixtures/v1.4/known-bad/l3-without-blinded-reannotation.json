@@ -1,0 +1,100 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/coincident-miss-metric-record.schema.json",
+  "record_id": "reiyah.metric.synthetic-bad-l3-without-blinded-reannotation",
+  "record_kind": "reiyah.kind.coincident_miss_metric",
+  "version": "1.4.0",
+  "lifecycle_status": "exploratory",
+  "universe": {
+    "universe_id": "reiyah.universe.synthetic-stratum-001",
+    "reference_process_ref": {
+      "record_id": "reiyah.reference.synthetic-blind-annotation",
+      "version": "1.0.0",
+      "independent_of_every_evaluated_channel": true
+    },
+    "filter_defined_on_evaluated_channel": false,
+    "eligible_denominator": 10000,
+    "membership_unknown_count": 0
+  },
+  "channels": [
+    {
+      "channel_id": "reiyah.channel.synthetic-first",
+      "role": "first",
+      "modality": "camera_only",
+      "version": "1.0.0",
+      "prediction_digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+      "headline_metric_reproduced": "within_declared_tolerance",
+      "training_corpus_overlap_with_peer": "none"
+    },
+    {
+      "channel_id": "reiyah.channel.synthetic-second",
+      "role": "second",
+      "modality": "lidar_only",
+      "version": "1.0.0",
+      "prediction_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+      "headline_metric_reproduced": "within_declared_tolerance",
+      "training_corpus_overlap_with_peer": "none"
+    }
+  ],
+  "operating_point": {
+    "comparability": "matched_marginal_miss_rate",
+    "first_threshold": 0.3,
+    "second_threshold": 0.3,
+    "matcher_id": "reiyah.matcher.synthetic-2m-center-distance",
+    "matcher_uses_channel_specific_geometry": false
+  },
+  "stratum": {
+    "stratum_id": "reiyah.stratum.synthetic-001",
+    "partition_class": "sufficient"
+  },
+  "cells": {
+    "both_miss": 100,
+    "first_only_miss": 900,
+    "second_only_miss": 900,
+    "neither_miss": 8100,
+    "unknown_operand": 0
+  },
+  "estimand_vector": {
+    "p_first": 0.1,
+    "p_second": 0.1,
+    "p_joint": 0.01,
+    "c": 1.0,
+    "c_state": "defined"
+  },
+  "clustering": {
+    "primary_unit": "object_track",
+    "primary_unit_count": 640,
+    "design_effect_state": "not_computed"
+  },
+  "uncertainty": {
+    "method": "instance_clustered_multinomial_bootstrap",
+    "replicates": 2000,
+    "seed": 20260829,
+    "interval_low": 0.94,
+    "interval_high": 1.07,
+    "multiplicity_family": "primary_single_test",
+    "simultaneous": false
+  },
+  "identification": {
+    "ladder_level": "L3",
+    "delta_differentiality": 0.02,
+    "delta_source": "declared_budget",
+    "outer_low": 0.9,
+    "outer_high": 1.12
+  },
+  "provenance": {
+    "dataset_ref": "reiyah.dataset.synthetic",
+    "dataset_digest": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+    "rights": "synthetic fixture, no third party rights",
+    "redistribution_state": "retained"
+  },
+  "validated_by": "port",
+  "nonclaims": {
+    "causal": false,
+    "safety": false,
+    "compliance": false,
+    "vendor_comparison": false,
+    "operator_acceptance": false,
+    "independent_replication": false
+  },
+  "_expected_rejection_rule": "SR-10"
+}

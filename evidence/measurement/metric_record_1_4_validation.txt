@@ -1,0 +1,31 @@
+============================================================================================
+COINCIDENT-MISS METRIC RECORD 1.4 - SCHEMA PLUS SEMANTIC VALIDATION
+port-class validator; the artifact of record cannot accept a real record
+============================================================================================
+
+KNOWN-GOOD
+  coincident-miss-good.json                    schema=ok    semantic=clean        PASS
+
+KNOWN-BAD, each must be rejected for its declared reason
+  box-unit-without-design-effect.json          expected=SR-09   got=SR-09          REJECTED for its reason
+  c-not-recomputable.json                      expected=SR-02   got=SR-02          REJECTED for its reason
+  cell-sum-mismatch.json                       expected=SR-01   got=SR-01,SR-02    REJECTED for its reason
+  channel-failed-reproduction-gate.json        expected=SR-08   got=SR-08          REJECTED for its reason
+  insufficient-stratum-claims-support.json     expected=SR-13   got=SR-13          REJECTED for its reason
+  l3-without-blinded-reannotation.json         expected=SR-10   got=SR-10          REJECTED for its reason
+  matcher-uses-channel-geometry.json           expected=SR-07   got=SR-07          REJECTED for its reason
+  outer-does-not-contain-inner.json            expected=SR-11   got=SR-11          REJECTED for its reason
+  reference-contaminated-by-channel.json       expected=SR-06   got=SR-06          REJECTED for its reason
+  supported-by-port-without-replication.json   expected=SR-12   got=SR-12          REJECTED for its reason
+  universe-filtered-by-evaluated-channel.json  expected=SR-05   got=SR-05          REJECTED for its reason
+  unknown-operand-not-propagated.json          expected=SR-04   got=SR-04          REJECTED for its reason
+  zero-denominator-coerced.json                expected=SR-03   got=SR-03          REJECTED for its reason
+
+--------------------------------------------------------------------------------------------
+  rules declared : 13
+  rules covered  : 13
+  every rule is rejected by at least one applicable known-bad fixture
+--------------------------------------------------------------------------------------------
+  RESULT: PASS
+  A record accepted here carries validated_by of at most `port`.
+  Schema validity plus these rules is still not a measurement.

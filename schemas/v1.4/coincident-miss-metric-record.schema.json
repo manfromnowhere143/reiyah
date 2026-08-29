@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-b/1.4/coincident-miss-metric-record.schema.json",
+  "title": "Coincident-miss metric record",
+  "description": "One reported coincident-miss ratio for one stratum, one channel pair, one operating point. Structural conformance only. Every semantic rule in tools/measure/validate_metric_record_1_4.py is necessary in addition and is not expressible here. A record that validates against this schema is NOT a measurement.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id", "record_id", "record_kind", "version", "lifecycle_status",
+    "universe", "channels", "operating_point", "stratum", "cells",
+    "estimand_vector", "clustering", "uncertainty", "identification",
+    "provenance", "validated_by", "nonclaims"
+  ],
+  "properties": {
+    "schema_id": { "const": "https://schemas.reiyah.invalid/gate-b/1.4/coincident-miss-metric-record.schema.json" },
+    "record_id": { "type": "string", "minLength": 1 },
+    "record_kind": { "const": "reiyah.kind.coincident_miss_metric" },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "lifecycle_status": {
+      "enum": ["proposed", "exploratory", "preregistered", "running", "blocked", "invalid", "null", "inconclusive", "failed", "supported", "contradicted", "replicated", "corrected", "retracted"]
+    },
+    "universe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["universe_id", "reference_process_ref", "filter_defined_on_evaluated_channel", "eligible_denominator", "membership_unknown_count"],
+      "properties": {
+        "universe_id": { "type": "string" },
+        "reference_process_ref": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["record_id", "version", "independent_of_every_evaluated_channel"],
+          "properties": {
+            "record_id": { "type": "string" },
+            "version": { "type": "string" },
+            "independent_of_every_evaluated_channel": { "enum": [true, false, "unknown"] }
+          }
+        },
+        "filter_defined_on_evaluated_channel": { "enum": [true, false, "unknown"] },
+        "eligible_denominator": { "type": "integer", "minimum": 0 },
+        "membership_unknown_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "channels": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["channel_id", "role", "modality", "version", "prediction_digest", "headline_metric_reproduced", "training_corpus_overlap_with_peer"],
+        "properties": {
+          "channel_id": { "type": "string" },
+          "role": { "enum": ["first", "second"] },
+          "modality": { "enum": ["camera_only", "lidar_only", "radar_only", "fused", "human", "unknown"] },
+          "version": { "type": "string" },
+          "prediction_digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+          "headline_metric_reproduced": { "enum": ["within_declared_tolerance", "failed_gate", "not_attempted"] },
+          "training_corpus_overlap_with_peer": { "enum": ["none", "partial", "full", "undetermined"] }
+        }
+      }
+    },
+    "operating_point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["comparability", "first_threshold", "second_threshold", "matcher_id", "matcher_uses_channel_specific_geometry"],
+      "properties": {
+        "comparability": { "enum": ["matched_marginal_miss_rate", "declared_grid_point", "convenience_threshold"] },
+        "first_threshold": { "type": "number" },
+        "second_threshold": { "type": "number" },
+        "matcher_id": { "type": "string" },
+        "matcher_uses_channel_specific_geometry": { "enum": [true, false, "unknown"] }
+      }
+    },
+    "stratum": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stratum_id", "partition_class"],
+      "properties": {
+        "stratum_id": { "type": "string" },
+        "partition_class": { "enum": ["sufficient", "observed_insufficient", "unknown"] }
+      }
+    },
+    "cells": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["both_miss", "first_only_miss", "second_only_miss", "neither_miss", "unknown_operand"],
+      "properties": {
+        "both_miss": { "type": "integer", "minimum": 0 },
+        "first_only_miss": { "type": "integer", "minimum": 0 },
+        "second_only_miss": { "type": "integer", "minimum": 0 },
+        "neither_miss": { "type": "integer", "minimum": 0 },
+        "unknown_operand": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "estimand_vector": {
+      "description": "A bare c is not a reportable result. Every operand here is required.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["p_first", "p_second", "p_joint", "c", "c_state"],
+      "properties": {
+        "p_first": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "p_second": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "p_joint": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "c": { "type": ["number", "null"], "minimum": 0 },
+        "c_state": { "enum": ["defined", "undefined_zero_denominator", "unknown_operand_present"] }
+      }
+    },
+    "clustering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_unit", "primary_unit_count", "design_effect_state"],
+      "properties": {
+        "primary_unit": { "enum": ["person", "log_or_scene", "object_track", "detection_box"] },
+        "primary_unit_count": { "type": "integer", "minimum": 0 },
+        "design_effect_state": { "type": ["number", "string"] }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "replicates", "seed", "interval_low", "interval_high", "multiplicity_family", "simultaneous"],
+      "properties": {
+        "method": { "type": "string" },
+        "replicates": { "type": "integer", "minimum": 1 },
+        "seed": { "type": "integer" },
+        "interval_low": { "type": ["number", "null"] },
+        "interval_high": { "type": ["number", "null", "string"] },
+        "multiplicity_family": { "enum": ["primary_single_test", "worst_group_search", "not_applicable"] },
+        "simultaneous": { "type": "boolean" }
+      }
+    },
+    "identification": {
+      "description": "Reference-error partial identification. Proposition M4-1: c is scale invariant, so the required parameter is the DIFFERENTIALITY bound delta, not an overall annotation error rate.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ladder_level", "delta_differentiality", "delta_source", "outer_low", "outer_high"],
+      "properties": {
+        "ladder_level": { "enum": ["L0", "L1", "L2", "L3", "not_performed"] },
+        "delta_differentiality": { "type": ["number", "null"], "minimum": 0 },
+        "delta_source": { "enum": ["blinded_reannotation", "declared_budget", "not_estimated"] },
+        "outer_low": { "type": ["number", "null"] },
+        "outer_high": { "type": ["number", "null", "string"] }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dataset_ref", "dataset_digest", "rights", "redistribution_state"],
+      "properties": {
+        "dataset_ref": { "type": "string" },
+        "dataset_digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "rights": { "type": "string" },
+        "redistribution_state": { "enum": ["retained", "pointer_only", "not_established"] }
+      }
+    },
+    "validated_by": {
+      "description": "Never promotable upward. A port is not the artifact of record.",
+      "enum": ["artifact_of_record", "port", "spec_reimplementation", "not_validated"]
+    },
+    "nonclaims": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["causal", "safety", "compliance", "vendor_comparison", "operator_acceptance", "independent_replication"],
+      "properties": {
+        "causal": { "const": false },
+        "safety": { "const": false },
+        "compliance": { "const": false },
+        "vendor_comparison": { "const": false },
+        "operator_acceptance": { "const": false },
+        "independent_replication": { "enum": [false, "disclosed_dependence"] }
+      }
+    }
+  }
+}
