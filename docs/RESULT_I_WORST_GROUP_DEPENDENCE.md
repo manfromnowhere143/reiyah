@@ -139,20 +139,29 @@ about camera and lidar as modalities, about any vendor, or about any deployed sy
 
 ## Why it matters
 
-Result G converts a lift into an evidence requirement through `N` proportional to
-`sqrt(c)`.
+**This section is WITHDRAWN as stated and retained as historical.** It formerly converted
+the pooled and worst-group coefficients into extra-validation-evidence percentages through
+Result G. Those percentages are withdrawn from current scientific use. The exact superseded
+values are retained in
+[`result_i.txt`](../evidence/measurement/result_i.txt) and in
+[`claim-status-register-2026-08-29.json`](../evidence/claim-status-register-2026-08-29.json)
+under `reiyah.gate-b.claim.evidence-cost-worst-group`.
 
-| Designed against | Extra validation evidence required |
-|---|---|
-| Pooled lift 1.156 | 7.5% |
-| Worst eligible group 6.946 | **163.5%** |
+Two independent grounds, both recorded in
+[`ESTIMAND_RSS_DEFINITION_32.md`](ESTIMAND_RSS_DEFINITION_32.md) section 6. Result G itself
+has no data path: its coefficients are hand-transcribed rounded literals. And RSS
+Corollary 3 is a three-subsystem majority-vote bound over safety-critic miss **and** ghost
+mistakes, so it is not a validated conversion from a two-channel detection-miss `c` into a
+validation-evidence multiplier.
 
-A safety case provisioned from the pooled figure under-provisions by more than a factor
-of two in exactly the region where the two channels are least independent, and that
-region is the near, clearly visible car.
-
-That gap is the entire argument for worst-group reporting, and it was invisible in the
-pooled number.
+What survives the withdrawal carries no number and is unchanged in substance. A pooled
+coefficient and a worst-group coefficient are different quantities, they differ here by
+more than a factor of four, and a redundancy argument that reports only the pooled value
+cannot see the worst group at all. Counterexample CE-3 in
+[`estimand_counterexamples.txt`](../evidence/measurement/estimand_counterexamples.txt) shows
+this is not an artifact of these data: a pooled coefficient of 1.0400 is compatible with a
+subgroup at 5.0000 while every marginal is identical. That is the entire argument for
+worst-group reporting, and it needs no evidence-budget conversion to stand.
 
 ## Non-claims
 

@@ -65,9 +65,16 @@ headline facts:
   1.156 after stratifying on class, range and visibility, cluster-robust 95% interval
   [1.144, 1.166] at the tracked-instance unit. The CMH of 4,924 was computed at the box
   unit; design effect 5.02, so the honest statistic is about 982 on 1 df.
-- Required validation evidence scales as **sqrt(c)**, so the cost is about **26% more evidence**,
-  not 59%, when designed against the pooled marginal lift. Designed against the worst eligible
-  group it is **163.5%**. See [`RESULT_I_WORST_GROUP_DEPENDENCE.md`](RESULT_I_WORST_GROUP_DEPENDENCE.md).
+- **WITHDRAWN, historical.** This bullet formerly converted the measured dependence into a
+  validation-evidence budget. Every such figure is withdrawn from current scientific use. The
+  superseded values are retained in
+  [`claim-status-register-2026-08-29.json`](../evidence/claim-status-register-2026-08-29.json)
+  and in the Result G, I, J and K transcripts. RSS Corollary 3 is a three-subsystem
+  majority-vote bound over safety-critic miss **and** ghost mistakes; it is not a validated
+  conversion from a measured two-channel detection-miss `c` into a validation-mile or
+  evidence-budget multiplier. See
+  [`ESTIMAND_RSS_DEFINITION_32.md`](ESTIMAND_RSS_DEFINITION_32.md) section 6 for the five
+  conditions that would have to hold before any such figure returns.
 - Across six detector pairs, same-modality and cross-modality separate completely.
   The former claim that joint-failure odds **rise with the accuracy of both models**
   (7.01, 15.86, 31.99) is **withdrawn**: no computation produced it, the trend has a
@@ -88,7 +95,7 @@ with their refutations attached; **do not tidy them away**. The two most recent 
 | Qiu's published estimate inherits the filter | false, independent pipeline |
 | Zero lidar points implies undetectable | false, 18.13% recovered |
 | Quote the conditional coefficient against RSS | wrong quantity for that bound |
-| Evidence scales linearly in c | false, it scales as sqrt(c) |
+| Evidence scales linearly in c | superseded twice: the sqrt(c) replacement is itself now **withdrawn as stated**, see the register |
 | GA-15 forbids this work living in Reiyah | false, over-cautious; work folded back in |
 | Both-channel miss is a joint **silent** miss | false, silence is not establishable here |
 | Every record is `nonidentifiable_unknown` | false, unknown does not propagate from an unreached operand |
@@ -183,7 +190,7 @@ number quoted elsewhere in this file, because two long-standing figures were cor
 |---|---|
 | I | Pooling hid it: worst eligible group `car` 0-20 m `v80-100` at lift 6.946, simultaneous 95% [2.221, 11.671], against a pooled 1.156. Survives four attacks. Evidence base is 34 instances; never quote without the band. |
 | J | The worst *region* generalises across three pairs, the worst *stratum* does not. One pair's extremum has a lower bound of 0.992 and is **not established**. |
-| K | The evidence-cost number has a bound: +26.0%, 95% CI [25.0, 26.9], or 97,596 examples per subsystem, CI [96,860, 98,332]. Pays Audit 1's interval debt for D and G. |
+| K | The marginal `c` at the instance unit with an interval, which stands. Its evidence-cost columns are **withdrawn as stated**; the superseded figures are retained in the transcript and the register. Pays Audit 1's interval debt for D and G. |
 | L | The conditional coefficient **converges and not to independence**: 1.151, 95% CI [1.138, 1.160], on a common support. Closes open question 2. |
 | M | First `worst_group_evaluation` records from measured data. The unknown-group rule fires for real. Closes open question 3. |
 

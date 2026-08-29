@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.reiyah.invalid/gate-b/1.3/claim-status-register.schema.json",
+  "title": "Gate B claim status register",
+  "description": "Machine-readable current status of every Gate B claim. This artifact is the single reconciliation point: a claim whose current_scientific_use is forbidden here MUST NOT be asserted as current in any prose artifact. Retained evidence transcripts are historical bytes and are exempt: they record what a script printed, not what the repository currently asserts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_id", "artifact_id", "version", "lifecycle_status", "created_on", "reconciliation_policy", "claims"],
+  "properties": {
+    "schema_id": { "const": "https://schemas.reiyah.invalid/gate-b/1.3/claim-status-register.schema.json" },
+    "artifact_id": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "lifecycle_status": { "enum": ["proposed"] },
+    "created_on": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "reconciliation_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["prose_must_match_register", "transcripts_are_historical", "deletion_prohibited"],
+      "properties": {
+        "prose_must_match_register": { "const": true },
+        "transcripts_are_historical": { "const": true },
+        "deletion_prohibited": { "const": true }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/claim" }
+    }
+  },
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "estimand", "status", "current_scientific_use", "unit", "lineage", "retained_transcripts"],
+      "properties": {
+        "claim_id": { "type": "string", "pattern": "^reiyah\\.gate-b\\.claim\\.[a-z0-9\\-]+$" },
+        "estimand": { "type": "string", "minLength": 1 },
+        "status": {
+          "description": "Lifecycle statuses are distinct values and never collapse. unknown means a required operand is non-observed; it is not a negative result.",
+          "enum": ["measured", "derived", "superseded", "narrowed", "rejected", "withdrawn", "withdrawn_as_stated", "not_established", "inconclusive", "unknown"]
+        },
+        "current_scientific_use": { "enum": ["permitted", "forbidden"] },
+        "unit": { "enum": ["object", "detection_box", "object_track", "stratum", "rule", "derived_arithmetic", "not_applicable"] },
+        "lineage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["first_stated_in", "superseded_by"],
+          "properties": {
+            "first_stated_in": { "type": "string" },
+            "superseded_by": { "type": ["string", "null"] }
+          }
+        },
+        "retained_transcripts": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Historical bytes. Never edited to match a later correction."
+        },
+        "values_withdrawn": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label", "value"],
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "string" },
+              "interval": { "type": ["string", "null"] }
+            }
+          }
+        },
+        "source_identity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source_id", "custody_state", "exact_proposition"],
+          "properties": {
+            "source_id": { "type": "string" },
+            "custody_state": { "enum": ["primary_retained", "primary_pointer_only", "third_party_unretained", "unavailable", "not_applicable"] },
+            "exact_proposition": { "type": "string" }
+          }
+        },
+        "refutation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reason_code", "statement"],
+          "properties": {
+            "reason_code": {
+              "enum": ["scope_arity_mismatch", "scope_population_mismatch", "scope_operand_incomplete", "precision_not_in_source", "no_data_path", "unit_mismatch", "no_computation_produced_it", "not_identified", "operand_non_observed"]
+            },
+            "statement": { "type": "string", "minLength": 1 }
+          }
+        },
+        "reconsideration_requirements": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Exactly what evidence or derivation would be needed to move this claim out of its withdrawn state. An empty array means no path has been identified."
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

@@ -76,16 +76,21 @@ accuracy claim withdrawn in Audit 2, which would need a design, not another data
 
 ## Consequence
 
-| Pair | Evidence cost, pooled | Evidence cost, worst group |
-|---|---|---|
-| mapillary x megvii | 7.5% | 163.5% |
-| mapillary x pointpillars | 4.9% | 53.3% |
-| megvii x pointpillars | 14.6% | 153.5% |
+**The evidence-cost table formerly printed here is WITHDRAWN as stated.** Its six
+percentages are retained verbatim in [`result_j.txt`](../evidence/measurement/result_j.txt)
+and in
+[`claim-status-register-2026-08-29.json`](../evidence/claim-status-register-2026-08-29.json)
+under `reiyah.gate-b.claim.evidence-cost-worst-group`. The conversion from `c` to a
+validation-evidence multiplier misuses RSS Corollary 3, which bounds a three-subsystem
+majority-vote fusion over safety-critic miss and ghost mistakes. See
+[`ESTIMAND_RSS_DEFINITION_32.md`](ESTIMAND_RSS_DEFINITION_32.md) section 6.
 
-Under `N` proportional to `sqrt(c)`, a redundancy argument provisioned from a pooled lift
-under-provisions the close-range car for every pair tested, including a same-modality
-pair. The size of the shortfall varies by an order of magnitude between pairs; the
-direction does not vary at all.
+The measured finding is unaffected and is stated without any conversion. For all three
+pairs tested, including a same-modality pair, the worst eligible stratum coefficient
+exceeds the pooled coefficient, and the worst region is a close-range car every time. The
+ratio between worst and pooled varies substantially across pairs; its direction does not
+vary at all. Both coefficients remain subject to the reference-error identification bound,
+which is `unknown` until M4 is executed.
 
 ## Required amendment to Result I
 
