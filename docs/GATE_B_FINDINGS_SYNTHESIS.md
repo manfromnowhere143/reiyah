@@ -30,7 +30,7 @@ If two perception channels fail together more than independently, that assumptio
 and the evidence reduction is overstated. This workstream measures the coefficient the safety
 argument leaves unmeasured.
 
-## The core result, and its three robustness axes
+## The core result, and its four robustness axes
 
 ![Gate B robustness: the conditional coefficient stays above independence across thresholds and detectors](gate_b_robustness_figure.svg)
 
@@ -45,6 +45,7 @@ it survives every cheap way to dismiss it:
 | **Detector** | [M](RESULT_M_CROSS_DETECTOR_REPLICATION.md) | "it is one model pair" | Replace the entire lidar backbone with PointPillars (half the accuracy): c = **1.096**, still excludes 1.0 |
 | **Score threshold** | [N](RESULT_N_THRESHOLD_ROBUSTNESS.md) | "0.3 is cherry-picked" | Sweep 0.1 to 0.5, both detectors: **10 of 10** intervals exclude 1.0 |
 | **Unmeasured confounding** | [O](RESULT_O_SENSITIVITY_EVALUE.md) | "you did not measure everything" | A hidden common cause must reach **E-value 3.03** (Megvii) / **2.13** (PointPillars) on both arms to nullify it |
+| **Detector (camera)** | [Q](RESULT_Q_CAMERA_AXIS_AND_MODALITY_GRID.md) | "it is one camera model" | Replace the camera with FCOS3D (validated to published mAP): crossed with both lidars, c = **1.107** / **1.072**, still excludes 1.0 |
 
 The E-value is the decisive honesty move: instead of only declaring that an unmeasured common
 cause *could* exist, it states how strong one would have to be. A confounder associated with both
@@ -62,9 +63,26 @@ five measured covariates, cannot explain the coupling away.
 - **It is bounded by what nuScenes annotates.** Object size and truncation are not in this cache
   and were not tested; the E-value says how strong such a factor would have to matter, not that it
   does not.
-- **One axis is still open.** Every pair shares the single Mapillary camera model, so robustness to
-  the *camera* detector is untested. A second camera-only detector is the next replication and
-  requires running inference, not just public predictions.
+- **The one detector axis that was open is now closed.** The camera axis (Result Q) was the last
+  gap — every pair used to share the Mapillary camera. A second camera detector, FCOS3D, validated
+  to its published mAP, crossed with both lidars stays above independence (1.107, 1.072). The four
+  detector/threshold/confounding axes are complete; what remains genuinely open is *external* audit
+  — these results are reproducible and self-checked, but retained as `proposed`, not independently
+  reviewed.
+
+## Two results that sharpen the picture
+
+- **The coefficient is smallest where the sensors jointly miss most** ([Result P](RESULT_P_COEFFICIENT_VS_ABSOLUTE.md)).
+  `c = P(both) / (P_A·P_B)` is a ratio deflated by the marginal miss rates. As the threshold
+  tightens, `c` falls toward independence (2.27 → 1.24) while the *absolute* joint-miss rate rises
+  from ~10% to ~51% of all objects. A redundancy argument that certifies safety by exhibiting a
+  small `c` can sit on the worst absolute joint failure; `c` must be read with the marginals, never
+  alone.
+- **What the 2×2 modality grid shows** ([Result Q](RESULT_Q_CAMERA_AXIS_AND_MODALITY_GRID.md)). With
+  two cameras and two lidars, all six pairs exceed independence. The strongest coupling is
+  lidar-lidar (1.290) — shared point sparsity. Two cameras couple like cross-modality (1.144), not
+  like two lidars. So the coupling is governed by *shared failure drivers*, not by same-versus-cross
+  modality, and no pairing reaches the independence a redundancy safety case assumes.
 
 ## Reproduce it
 

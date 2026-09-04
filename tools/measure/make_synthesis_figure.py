@@ -154,7 +154,8 @@ def main():
       f'and does not reach independence in the measured range.</text>')
     a(f'<text x="{ML}" y="{H - 11}" font-size="11" fill="{MUTE}">'
       f'Association after declared conditioning, not a causal effect. Two published '
-      f'detection outputs on one public split. One camera model, not yet replicated.</text>')
+      f'detection outputs on one public split. Camera axis replicated with a second '
+      f'detector (FCOS3D, Result Q); retained as proposed.</text>')
 
     a('</svg>')
     sys.stdout.write("\n".join(out) + "\n")
