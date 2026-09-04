@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">
+<rect x="0" y="0" width="800" height="520" fill="#ffffff"/>
+<text x="74" y="34" font-size="19" font-weight="700" fill="#1a1c22">Camera and lidar fail together after conditioning</text>
+<text x="74" y="56" font-size="13" fill="#6b7280">Conditional joint-failure coefficient on nuScenes val, after class, range, visibility, weather and motion.</text>
+<text x="74" y="73" font-size="13" fill="#6b7280">Above 1.0 means the two channels miss the same objects more than independence predicts. Higher is worse.</text>
+<line x1="74" y1="454.0" x2="612" y2="454.0" stroke="#e7e8ec" stroke-width="1"/>
+<text x="62" y="458.0" font-size="12" fill="#6b7280" text-anchor="end">1.0</text>
+<line x1="74" y1="363.5" x2="612" y2="363.5" stroke="#e7e8ec" stroke-width="1"/>
+<text x="62" y="367.5" font-size="12" fill="#6b7280" text-anchor="end">1.1</text>
+<line x1="74" y1="273.0" x2="612" y2="273.0" stroke="#e7e8ec" stroke-width="1"/>
+<text x="62" y="277.0" font-size="12" fill="#6b7280" text-anchor="end">1.2</text>
+<line x1="74" y1="182.5" x2="612" y2="182.5" stroke="#e7e8ec" stroke-width="1"/>
+<text x="62" y="186.5" font-size="12" fill="#6b7280" text-anchor="end">1.3</text>
+<line x1="74" y1="92.0" x2="612" y2="92.0" stroke="#e7e8ec" stroke-width="1"/>
+<text x="62" y="96.0" font-size="12" fill="#6b7280" text-anchor="end">1.4</text>
+<line x1="74" y1="454.0" x2="612" y2="454.0" stroke="#b02a37" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="608" y="446.0" font-size="12" fill="#b02a37" text-anchor="end" font-weight="600">independence (c = 1.0)</text>
+<text x="74.0" y="478.0" font-size="12" fill="#6b7280" text-anchor="middle">0.1</text>
+<text x="208.5" y="478.0" font-size="12" fill="#6b7280" text-anchor="middle">0.2</text>
+<text x="343.0" y="478.0" font-size="12" fill="#6b7280" text-anchor="middle">0.3</text>
+<text x="477.5" y="478.0" font-size="12" fill="#6b7280" text-anchor="middle">0.4</text>
+<text x="612.0" y="478.0" font-size="12" fill="#6b7280" text-anchor="middle">0.5</text>
+<text x="343.0" y="502.0" font-size="13" fill="#1a1c22" text-anchor="middle">detector score threshold</text>
+<text x="20" y="273.0" font-size="13" fill="#1a1c22" text-anchor="middle" transform="rotate(-90 20 273.0)">conditional coefficient c</text>
+<polygon points="74.0,211.5 208.5,319.2 343.0,360.8 477.5,387.0 612.0,411.5 612.0,419.6 477.5,397.9 343.0,375.3 208.5,340.0 74.0,254.0" fill="#c2582a" fill-opacity="0.13" stroke="none"/>
+<polygon points="74.0,110.1 208.5,227.7 343.0,309.2 477.5,368.0 612.0,404.2 612.0,412.4 477.5,380.7 343.0,329.1 208.5,257.6 74.0,159.9" fill="#1f5fa8" fill-opacity="0.13" stroke="none"/>
+<polyline points="74.0,228.7 208.5,328.2 343.0,367.1 477.5,391.6 612.0,415.1" fill="none" stroke="#c2582a" stroke-width="2.4" stroke-linejoin="round"/><circle cx="74.0" cy="228.7" r="3.4" fill="#c2582a"/><circle cx="208.5" cy="328.2" r="3.4" fill="#c2582a"/><circle cx="343.0" cy="367.1" r="3.4" fill="#c2582a"/><circle cx="477.5" cy="391.6" r="3.4" fill="#c2582a"/><circle cx="612.0" cy="415.1" r="3.4" fill="#c2582a"/>
+<polyline points="74.0,128.2 208.5,238.6 343.0,317.3 477.5,373.5 612.0,407.8" fill="none" stroke="#1f5fa8" stroke-width="2.4" stroke-linejoin="round"/><circle cx="74.0" cy="128.2" r="3.4" fill="#1f5fa8"/><circle cx="208.5" cy="238.6" r="3.4" fill="#1f5fa8"/><circle cx="343.0" cy="317.3" r="3.4" fill="#1f5fa8"/><circle cx="477.5" cy="373.5" r="3.4" fill="#1f5fa8"/><circle cx="612.0" cy="407.8" r="3.4" fill="#1f5fa8"/>
+<text x="634" y="98" font-size="12" font-weight="700" fill="#1a1c22">detector pair</text>
+<text x="634" y="116" font-size="11.5" fill="#6b7280">camera: Mapillary</text>
+<line x1="634" y1="136" x2="660" y2="136" stroke="#1f5fa8" stroke-width="2.6"/><circle cx="647" cy="136" r="3.2" fill="#1f5fa8"/>
+<text x="634" y="154" font-size="12" fill="#1a1c22">x Megvii (lidar)</text>
+<text x="634" y="170" font-size="11" fill="#6b7280">E-value 3.03 at 0.3</text>
+<line x1="634" y1="196" x2="660" y2="196" stroke="#c2582a" stroke-width="2.6"/><circle cx="647" cy="196" r="3.2" fill="#c2582a"/>
+<text x="634" y="214" font-size="12" fill="#1a1c22">x PointPillars (lidar)</text>
+<text x="634" y="230" font-size="11" fill="#6b7280">E-value 2.13 at 0.3</text>
+<text x="634" y="268" font-size="11.5" font-weight="700" fill="#1a1c22">E-value</text>
+<text x="634" y="286" font-size="10.5" fill="#6b7280">strength a hidden</text>
+<text x="634" y="301" font-size="10.5" fill="#6b7280">common cause needs</text>
+<text x="634" y="316" font-size="10.5" fill="#6b7280">on both arms to</text>
+<text x="634" y="331" font-size="10.5" fill="#6b7280">reach independence.</text>
+<text x="634" y="346" font-size="10.5" fill="#6b7280">Larger = more robust.</text>
+<text x="74" y="494" font-size="11" fill="#6b7280">Every interval excludes 1.0. The coupling attenuates as the threshold tightens and does not reach independence in the measured range.</text>
+<text x="74" y="509" font-size="11" fill="#6b7280">Association after declared conditioning, not a causal effect. Two published detection outputs on one public split. One camera model, not yet replicated.</text>
+</svg>
