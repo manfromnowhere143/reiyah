@@ -1,0 +1,89 @@
+==============================================================================================
+RESULT M - does Result L's convergence-above-independence replicate across lidar detectors?
+mapillary (camera) x pointpillars (lidar), nuScenes val, score >= 0.3, instance-clustered
+bootstrap, 1,500 reps, seed 20260828
+==============================================================================================
+
+PROVENANCE
+  command : python3 tools/measure/result_l_convergence.py \
+                gt_val_cache.json matched_mapillary.json matched_pointpillars.json
+  note    : result_l_convergence.py prints a FIXED title line reading "mapillary x megvii".
+            That line is a hardcoded string in the tool and is NOT re-derived from argv.
+            The pair actually measured is fixed by the third argument, matched_pointpillars.json.
+            The numbers below are the PointPillars pair and differ throughout from the
+            Megvii pair in evidence/measurement/result_l.txt (marginal 1.393 vs 1.587,
+            terminal 1.096 vs 1.151, mediator 1.067 vs 1.107), which confirms the second
+            detector's matched file was consumed.
+
+  detectors (per docs/RESULT_J_WORST_REGION_ACROSS_PAIRS.md):
+    mapillary     MonoDIS       camera   29.8 mAP published, 29.58 reproduced
+    pointpillars  PointPillars  lidar    29.5 mAP published, 29.54 reproduced
+  Result L's pair used megvii (CBGS, lidar, 51.9 mAP). PointPillars is an architecturally
+  distinct lidar backbone at roughly half the accuracy, so a repeated coefficient above 1.0
+  cannot be an artifact of the Megvii model in particular.
+
+----------------------------------------------------------------------------------------------
+RAW TOOL OUTPUT (title line is the tool's fixed label; see PROVENANCE)
+----------------------------------------------------------------------------------------------
+==============================================================================================
+RESULT L - does the conditional coefficient converge, and to what?
+mapillary x megvii, nuScenes val, score >= 0.3, instance-clustered bootstrap, 1,500 reps
+==============================================================================================
+
+### sequence as published: cumulative conditioning, population varies
+  level                               strata    N used  N thin       c              95% CI
+  L0 none (marginal)                       1   134,565       0   1.393      [1.375, 1.411]
+  L1 + class                              10   134,565       0   1.329      [1.314, 1.345]
+  L2 + range band                         33   134,565       0   1.203      [1.191, 1.214]
+  L3 + visibility                        132   134,477      88   1.101      [1.092, 1.109]
+  L4 + weather/lighting                  334   133,403   1,162   1.100      [1.091, 1.108]
+  L5 + motion state                      623   131,722   2,843   1.096      [1.087, 1.103]
+
+### same sequence on a COMMON SUPPORT fixed by L5 + motion state
+  every level below is estimated on the identical 131,722 rows,
+  so a change in c is conditioning and not a change of population
+  level                               strata    N used  N thin       c              95% CI
+  L0 none (marginal)                       1   131,722       0   1.401      [1.383, 1.419]
+  L1 + class                              10   131,722       0   1.341      [1.325, 1.357]
+  L2 + range band                         33   131,722       0   1.209      [1.197, 1.221]
+  L3 + visibility                        132   131,722       0   1.104      [1.094, 1.112]
+  L4 + weather/lighting                  334   131,722       0   1.101      [1.092, 1.109]
+  L5 + motion state                      623   131,722       0   1.096      [1.087, 1.103]
+
+### convergence diagnosis, on the common support
+  sequence      : 1.401, 1.341, 1.209, 1.104, 1.101, 1.096
+  step sizes    : -0.060, -0.132, -0.105, -0.002, -0.005
+  final step    : -0.0053
+  terminal c    : 1.096   95% CI [1.087, 1.103]
+  steps monotonically shrinking in magnitude : NO
+  terminal lower bound above 1.0             : YES
+
+### the mediator error, performed deliberately
+  L6 + lidar point count (INADMISSIBLE)
+  strata 1620, N used 126,441, N thin 5,281
+  c = 1.067   95% CI [1.060, 1.073]
+  apparent extra shrinkage vs L5: -0.029
+  `num_lidar_pts` is the lidar return itself; conditioning on it blocks the path from
+  object to lidar failure that the coefficient measures. Mechanical, not evidential.
+  Same trap, same size, same direction as in the Megvii pair (result_l.txt).
+
+----------------------------------------------------------------------------------------------
+SIDE BY SIDE, on the common support, five admissible confounders (L5)
+----------------------------------------------------------------------------------------------
+  pair                              terminal c   95% CI            excludes 1.0
+  mapillary x megvii (Result L)     1.151        [1.138, 1.160]    yes
+  mapillary x pointpillars (M)      1.096        [1.087, 1.103]    yes
+
+The convergence-above-independence result is not specific to one lidar detector. Swapping
+the entire lidar backbone for an architecturally distinct model at half the accuracy leaves
+the terminal coefficient above 1.0 with a cluster-robust interval that excludes independence.
+The magnitude is smaller with the weaker detector (1.096 vs 1.151); the sign and the
+significance are unchanged. Same admissible-covariate set, same common-support method, same
+seed, same mediator behaviour on the inadmissible L6.
+
+NON-CLAIMS
+  No scientific support, safety finding, compliance determination, comparative claim about
+  any detector or vendor, and no operator acceptance. Two published detection outputs on one
+  public split, retained as proposed. Bounded by the covariates nuScenes annotates; unmeasured
+  common causes remain possible; association after declared conditioning, not a causal effect.
+  No released 1.2 byte is modified.
