@@ -1,0 +1,75 @@
+==============================================================================================
+RESULT P - the RSS coefficient falls while the absolute joint-miss rate rises
+mapillary (camera) x {megvii, pointpillars} (lidar), nuScenes val full population N=134,565,
+instance-clustered bootstrap 1,500 reps seed 20260828
+==============================================================================================
+
+PROVENANCE
+  tool     : tools/measure/result_p_coefficient_vs_absolute.py
+  commands :
+    python3 tools/measure/result_p_coefficient_vs_absolute.py \
+        gt_val_cache.json matched_mapillary.json matched_megvii.json
+    python3 tools/measure/result_p_coefficient_vs_absolute.py \
+        gt_val_cache.json matched_mapillary.json matched_pointpillars.json
+
+  point    : RSS Corollary 3 reasons about the coincidence constant c of Definition 32.
+             docs/ESTIMAND_RSS_DEFINITION_32.md section 1 states c = P(both)/(P_A P_B) is
+             "not invariant to the marginal miss rates". This makes that concrete and shows
+             its safety consequence by reporting the coefficient beside the absolute
+             joint-miss rate at every threshold.
+
+----------------------------------------------------------------------------------------------
+PAIR 1  mapillary x megvii
+----------------------------------------------------------------------------------------------
+   thr |    P_A    P_B |            c (coeff) |         P(both) absolute |           abs excess
+  0.10 |  0.314  0.134 |  2.271 [2.216,2.322] |   0.0958 [0.0908,0.1007] | 0.0536 [0.0509,0.0563]
+  0.20 |  0.395  0.220 |  1.878 [1.843,1.913] |   0.1627 [0.1565,0.1690] | 0.0760 [0.0731,0.0790]
+  0.30 |  0.464  0.340 |  1.587 [1.564,1.611] |   0.2505 [0.2431,0.2579] | 0.0927 [0.0897,0.0957]
+  0.40 |  0.559  0.489 |  1.363 [1.347,1.380] |   0.3724 [0.3636,0.3807] | 0.0993 [0.0962,0.1022]
+  0.50 |  0.686  0.598 |  1.239 [1.226,1.252] |   0.5085 [0.4990,0.5180] | 0.0981 [0.0945,0.1015]
+
+----------------------------------------------------------------------------------------------
+PAIR 2  mapillary x pointpillars
+----------------------------------------------------------------------------------------------
+   thr |    P_A    P_B |            c (coeff) |         P(both) absolute |           abs excess
+  0.10 |  0.314  0.174 |  1.909 [1.860,1.957] |   0.1041 [0.0987,0.1095] | 0.0496 [0.0466,0.0523]
+  0.20 |  0.395  0.378 |  1.557 [1.532,1.581] |   0.2324 [0.2253,0.2396] | 0.0831 [0.0801,0.0860]
+  0.30 |  0.464  0.479 |  1.393 [1.375,1.411] |   0.3099 [0.3019,0.3180] | 0.0874 [0.0844,0.0903]
+  0.40 |  0.559  0.555 |  1.284 [1.270,1.298] |   0.3980 [0.3896,0.4068] | 0.0880 [0.0850,0.0911]
+  0.50 |  0.686  0.617 |  1.193 [1.183,1.203] |   0.5048 [0.4958,0.5142] | 0.0816 [0.0784,0.0848]
+
+----------------------------------------------------------------------------------------------
+FINDING
+----------------------------------------------------------------------------------------------
+Across the operating range 0.1 to 0.5, for both detector pairs, the RSS coincidence constant c
+and the absolute joint-miss rate P(both) move in OPPOSITE directions, with non-overlapping
+bootstrap intervals at every step:
+
+  megvii pair       c 2.271 -> 1.239 (down 1.03)   P(both) 0.096 -> 0.509 (up, ~5.3x)
+  pointpillars pair c 1.909 -> 1.193 (down 0.72)   P(both) 0.104 -> 0.505 (up, ~4.8x)
+
+The absolute excess joint-miss over independence, P(both) - P_A P_B, rises from the loose end
+and plateaus in the 0.3-0.4 band (megvii 0.054 -> 0.099; pointpillars 0.050 -> 0.088); it never
+follows c downward. So at every operating point at or above 0.2 the absolute excess is far above
+its 0.1 value while c is below its 0.1 value.
+
+Reading, stated as a property of the estimand and not as a safety determination:
+
+  1. c is a ratio deflated by the rising marginal miss rates. As P_A and P_B rise toward 1 the
+     denominator P_A P_B rises, dragging c toward 1 for arithmetic reasons, exactly the
+     non-invariance the estimand doc names. Near the marginal-rate boundary any two events look
+     independent by this ratio.
+
+  2. The safety-relevant quantity is not the ratio. A real object missed by both sensors is
+     missed whatever c says. P(both) and its absolute excess are what a redundancy argument must
+     bound, and they are largest where c is smallest.
+
+  3. Therefore a redundancy argument that certifies safety by showing c near 1 - which is the
+     shape of RSS Corollary 3's premise - can hold at exactly the operating point where the two
+     sensors jointly miss the most objects. c must be read together with the marginal miss
+     rates, never alone.
+
+NON-CLAIMS
+  Two published detection outputs on one public split, retained as proposed. Rates after declared
+  matching, not a causal effect or a safety determination. No claim that any specific operating
+  point is used by any deployed system. No released 1.2 byte is modified.
