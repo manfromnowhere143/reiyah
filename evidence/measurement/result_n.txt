@@ -1,0 +1,75 @@
+==============================================================================================
+RESULT N - does the conditional coefficient survive the score threshold, or is 0.3 lucky?
+mapillary (camera) x {megvii, pointpillars} (lidar), nuScenes val, instance-clustered
+bootstrap, 1,500 reps, seed 20260828
+==============================================================================================
+
+PROVENANCE
+  tool     : tools/measure/result_n_threshold_robustness.py
+  commands :
+    python3 tools/measure/result_n_threshold_robustness.py \
+        gt_val_cache.json matched_mapillary.json matched_megvii.json
+    python3 tools/measure/result_n_threshold_robustness.py \
+        gt_val_cache.json matched_mapillary.json matched_pointpillars.json
+
+  method   : Results L and M's exact L5 machinery, changed in one place only - the score
+             threshold. Same five admissible confounders (class, range band, visibility,
+             weather/lighting, motion state), same MIN_STRATUM=30 floor, same
+             instance-clustered bootstrap, same seed. The common support is fixed by
+             GROUND-TRUTH stratum counts (131,722 rows), so it is the identical population
+             at every threshold; only the miss definition (score < threshold) varies.
+
+  self-check: at score >= 0.30 the conditional c reproduces Result L (1.151 [1.138, 1.160]
+             for megvii) and Result M (1.096 [1.087, 1.103] for pointpillars) exactly, and
+             the marginal L0 reproduces their common-support marginals, confirming the
+             machinery is faithful and only the threshold changed.
+
+----------------------------------------------------------------------------------------------
+PAIR 1  mapillary x megvii, on the 131,722-row common support
+----------------------------------------------------------------------------------------------
+   score >=           marginal c (L0)            conditional c (L5)  L5 excl 1.0
+       0.10      2.304 [2.247, 2.359]          1.360 [1.325, 1.380]          YES
+       0.20      1.900 [1.865, 1.935]          1.238 [1.217, 1.250]          YES
+       0.30      1.602 [1.577, 1.627]          1.151 [1.138, 1.160]          YES
+       0.40      1.373 [1.356, 1.390]          1.089 [1.081, 1.095]          YES
+       0.50      1.245 [1.232, 1.258]          1.051 [1.046, 1.055]          YES
+
+----------------------------------------------------------------------------------------------
+PAIR 2  mapillary x pointpillars, on the 131,722-row common support
+----------------------------------------------------------------------------------------------
+   score >=           marginal c (L0)            conditional c (L5)  L5 excl 1.0
+       0.10      1.928 [1.877, 1.978]          1.249 [1.221, 1.268]          YES
+       0.20      1.569 [1.543, 1.594]          1.139 [1.126, 1.149]          YES
+       0.30      1.401 [1.383, 1.419]          1.096 [1.087, 1.103]          YES
+       0.40      1.290 [1.276, 1.304]          1.069 [1.062, 1.074]          YES
+       0.50      1.197 [1.186, 1.207]          1.043 [1.038, 1.047]          YES
+
+----------------------------------------------------------------------------------------------
+FINDING
+----------------------------------------------------------------------------------------------
+Across the entire operating range 0.1 to 0.5, for BOTH lidar detectors, the conditional
+coefficient's 95% interval excludes independence. Ten measurements, ten intervals above
+1.0. The residual camera-lidar coupling is not an artifact of the 0.3 operating point.
+
+Two honest facts, stated as measured, not softened and not oversold:
+
+  1. It attenuates. The conditional c declines as the threshold tightens (megvii
+     1.360 -> 1.051; pointpillars 1.249 -> 1.043). As only confident detections remain,
+     the residual coupling shrinks toward independence. At score >= 0.5 the effect is
+     small - about 5% and 4% excess - though still statistically distinguishable from 1.0.
+
+  2. It never reaches independence in the measured range. The lower bound of every
+     interval at every threshold, for both detectors, is above 1.0. The marginal
+     coefficient (shared difficulty plus coupling) falls faster and further; the part
+     that survives conditioning falls slower and does not cross 1.0 anywhere measured.
+
+Combined with Result M (replication across a second lidar backbone), the finding is now
+robust along two independent axes: the detector, and the score threshold. The cheapest
+single-operating-point objection to Results L and M is answered on evidence.
+
+NON-CLAIMS
+  Association after declared conditioning, not a causal effect. Bounded by the covariates
+  nuScenes annotates (object size and truncation were not available and not tested).
+  Unmeasured common causes remain possible; no adjustment set is claimed sufficient for
+  identification. Two published detection outputs on one public split, retained as
+  proposed. No released 1.2 byte is modified.
