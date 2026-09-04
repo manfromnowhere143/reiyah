@@ -1,0 +1,67 @@
+==============================================================================================
+RESULT Q - the camera axis closed, and the 2x2 modality grid
+second camera detector FCOS3D added; nuScenes val; conditional coefficient (L5, five
+admissible confounders), instance-clustered bootstrap 1,500 reps seed 20260828
+==============================================================================================
+
+FCOS3D VALIDATION (the run is a result only because its mAP reproduces)
+  detector : FCOS3D (r101 caffe fpn gn-head dcn, finetune), camera-only monocular 3D
+  run      : nuScenes devkit eval on 6,019 val samples
+  mAP      : devkit 0.3207, match.py reaggregation 31.97, published 32.16 (delta <= 0.13, PASS)
+  note     : NDS came out 0.2898 vs published ~0.395 because the container's mmdet3d writes
+             box SIZE and YAW in a convention that inflates the scale and orientation TP errors
+             (mASE 0.80 vs 0.26, mAOE 1.68 vs 0.39). mAP, translation error, attribute error
+             and velocity error all reproduce. nuScenes mAP and this workstream's per-object
+             matching are CENTER-DISTANCE based and use translation, score and class only, all
+             of which reproduce, so the NDS gap does not affect any coefficient below. Flagged
+             for honesty, not hidden.
+  matching : tools/measure/match.py gt_val_cache.json predictions/fcos3d_val.json \
+                 matched_fcos3d.json --validate 32.1   -> matched_fcos3d.json
+
+----------------------------------------------------------------------------------------------
+THE 2x2 MODALITY GRID  (conditional c at L5, common support 131,722 rows)
+----------------------------------------------------------------------------------------------
+  pair                                       modalities        c        95% CI          excl 1.0
+  Mapillary(C)  x Megvii(L)                  cross           1.151    [1.138, 1.160]     yes
+  Mapillary(C)  x PointPillars(L)            cross           1.096    [1.087, 1.103]     yes
+  FCOS3D(C)     x Megvii(L)                  cross           1.107    [1.098, 1.113]     yes
+  FCOS3D(C)     x PointPillars(L)            cross           1.072    [1.065, 1.077]     yes
+  Megvii(L)     x PointPillars(L)            same (lidar)    1.290    [1.273, 1.300]     yes
+  Mapillary(C)  x FCOS3D(C)                  same (camera)   1.144    [1.136, 1.150]     yes
+
+----------------------------------------------------------------------------------------------
+FINDINGS
+----------------------------------------------------------------------------------------------
+1. THE CAMERA AXIS IS CLOSED. FCOS3D, an architecturally distinct second camera detector,
+   crossed with both lidars gives 1.107 and 1.072, both excluding 1.0. The camera-lidar
+   failure coupling is not an artifact of the Mapillary model. All four cross-modality pairs
+   sit in a tight 1.072-1.151 band.
+
+2. THE STRONGEST COUPLING IS LIDAR-LIDAR (1.290). Two lidar detectors fail together most,
+   consistent with a shared failure driver they both depend on - lidar point sparsity, the
+   same mechanism Results A and B measured (objects with few or zero lidar points).
+
+3. TWO CAMERAS COUPLE LIKE CROSS-MODALITY, NOT LIKE TWO LIDARS. The camera-camera pair is
+   1.144, inside the cross-modality band, far below the lidar-lidar 1.290. At the conditional
+   level Result H's "same-modality is worse than cross-modality" effect is almost entirely a
+   lidar-lidar effect; the camera-camera excess over independence is modest and comparable to
+   mixing a camera with a lidar.
+
+REFINED THESIS (corrects the naive "modality diversity necessary but not sufficient")
+  The coupling is governed by SHARED FAILURE DRIVERS, not by same-vs-cross modality as such.
+  Two lidars share the most (point return), and couple most. Camera-camera and camera-lidar
+  share less, and couple less. But every one of the six pairs exceeds independence after five
+  admissible confounders, so no pairing - not even two different modalities - reaches the
+  independence a redundancy safety argument assumes.
+
+ROBUSTNESS AXES NOW COMPLETE
+  M  detector        coupling survives a second lidar backbone
+  N  threshold       conditional c excludes 1.0 across 0.1-0.5
+  O  confounding     E-value 2-3 needed on both arms to nullify
+  Q  camera model    coupling survives a second camera backbone (this result)
+
+NON-CLAIMS
+  Three published/derived detection outputs on one public split, retained as proposed. FCOS3D
+  predictions produced by this workstream and validated to published mAP. Association after
+  declared conditioning, not a causal effect or safety determination. No released 1.2 byte is
+  modified.
