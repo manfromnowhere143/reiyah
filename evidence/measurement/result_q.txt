@@ -60,6 +60,24 @@ ROBUSTNESS AXES NOW COMPLETE
   O  confounding     E-value 2-3 needed on both arms to nullify
   Q  camera model    coupling survives a second camera backbone (this result)
 
+CAMERA AXIS FULL DEPTH - the FCOS3D pairs also pass the threshold sweep (N) and E-value (O)
+  Applying Results N and O to the two FCOS3D cross-modality pairs, so the camera axis carries
+  the same rigor as the lidar axis.
+
+  Threshold sweep, conditional c (L5), common support:
+    score>=            0.10    0.20    0.30    0.40    0.50    all excl 1.0
+    FCOS3D x Megvii    1.417   1.243   1.107   1.030   1.007   yes (10/10)
+    FCOS3D x PointP.   1.304   1.150   1.072   1.024   1.006   yes (10/10)
+  Both attenuate toward independence at strict thresholds more sharply than the Mapillary
+  pairs (down to ~1.007), but every interval still excludes 1.0. Same pattern as Result N.
+
+  E-value (unmeasured confounding), at score>=0.30:
+    FCOS3D x Megvii        conditional RR 2.090   E-value 3.60   (CI bound 3.37)
+    FCOS3D x PointPillars  conditional RR 1.481   E-value 2.32   (CI bound 2.21)
+  Comparable to or stronger than the Mapillary pairs (3.03, 2.13). A hidden common cause would
+  need RR ~2.3-3.6 on both arms to nullify. So all four cross-modality pairs pass all three of
+  the M/N/O checks, not only the headline conditional coefficient.
+
 NON-CLAIMS
   Three published/derived detection outputs on one public split, retained as proposed. FCOS3D
   predictions produced by this workstream and validated to published mAP. Association after
