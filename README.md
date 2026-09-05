@@ -236,6 +236,112 @@ or weaken an expected failure.
 Failures, contradictions, null results, invalid analyses, corrections, and retractions remain
 discoverable. A blocked result is preferable to a plausible default.
 
+## The measurement, the engine's first evidence
+
+The `gate-b-measurement` branch carries the first empirical stress test of a HARBOR construct on
+public data. It takes the dependence treatment named in the joint-silent-miss surface and measures
+it directly, using only published or reproduced detector outputs on the nuScenes validation split.
+No private data, no deployed system, and no released `1.2` architecture byte are involved. Every
+result is retained as `proposed`, and several of this workstream's own claims were withdrawn on
+evidence and left standing with their refutations attached. A full reading with a figure is in
+[`docs/GATE_B_FINDINGS_SYNTHESIS.md`](docs/GATE_B_FINDINGS_SYNTHESIS.md).
+
+### The claim under test, and the number it never measures
+
+Mobileye's RSS paper argues that direct statistical validation of an autonomous vehicle is
+infeasible, then escapes that cost with a redundancy argument: Definition 32 posits that subsystem
+errors are `c`-approximately independent, and Corollary 3 uses it to cut the required evidence by
+about four orders of magnitude. The coefficient `c` is assumed and is never estimated anywhere in
+the paper. This workstream measures it.
+
+```mermaid
+flowchart TD
+    A["Direct AV validation<br/>~10^9 hours, infeasible"] --> B["RSS redundancy:<br/>combine subsystems"]
+    B --> C["Definition 32<br/>assume c-approximate<br/>independence"]
+    C --> D["Corollary 3<br/>required evidence<br/>falls to ~10^5"]
+    C -. "c is assumed,<br/>never measured" .-> GAP["the gap"]
+    GAP --> M["measure c on the<br/>public benchmark"]
+    M --> R["c above 1 after conditioning,<br/>across detectors, thresholds,<br/>and plausible confounding"]
+    R --> CON["the reduction is optimistic;<br/>independence fails on evidence"]
+    classDef rss fill:#e3f2fd,stroke:#1565c0,color:#0d47a1;
+    classDef gap fill:#fff8e1,stroke:#f9a825,color:#e65100;
+    classDef res fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20;
+    class A,B,C,D rss;
+    class GAP,M gap;
+    class R,CON res;
+```
+
+### How it is measured, and how each step is checked
+
+A per-object matcher reimplements the nuScenes devkit accumulation but keeps the match set the
+devkit discards, so each ground-truth object gets the score of the detection that matched it. A
+detector is admitted only if that matcher reproduces its published mAP; otherwise nothing
+downstream is believed. The retained coefficient is the observed joint-miss rate divided by what
+independence predicts within each stratum of five admissible confounders, which is exactly the
+smallest admissible constant in RSS Definition 32.
+
+```mermaid
+flowchart LR
+    subgraph SRC["public inputs, nothing private"]
+        NUS["nuScenes val<br/>6,019 samples<br/>134,565 objects"]
+        DET["detectors<br/>2 camera, 3 lidar<br/>published + reproduced"]
+    end
+    subgraph MEAS["measurement, every step validated"]
+        MATCH["per-object matcher<br/>keeps the match set<br/>the devkit discards"]
+        VAL{"reproduces<br/>published mAP?"}
+        CELL["2x2 miss table per stratum<br/>class, range, visibility,<br/>weather, motion"]
+        COEF["conditional coefficient<br/>c = P(both miss) / P_A P_B"]
+    end
+    NUS --> MATCH
+    DET --> MATCH
+    MATCH --> VAL
+    VAL -- "no: discard" --> STOP["not a result"]
+    VAL -- "yes" --> CELL --> COEF
+    classDef src fill:#eef2ff,stroke:#3949ab,color:#1a237e;
+    classDef meas fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20;
+    classDef stop fill:#ffebee,stroke:#b71c1c,color:#b71c1c;
+    class NUS,DET src;
+    class MATCH,VAL,CELL,COEF meas;
+    class STOP stop;
+```
+
+### What survived the checks
+
+The headline is that a camera detector and a lidar detector fail on the same objects more than
+independence predicts, `c = 1.151` for the first pair after five confounders, and that this
+survives every cheap way to dismiss it. One measurement becomes a finding by clearing four
+independent robustness axes and two sharpening results.
+
+```mermaid
+flowchart TB
+    C(("conditional c above 1<br/>1.151"))
+    C --- M["M, second lidar<br/>survives, 1.096"]
+    C --- N["N, thresholds 0.1 to 0.5<br/>survives, 10 of 10"]
+    C --- O["O, unmeasured confounding<br/>E-value 2 to 3 to nullify"]
+    C --- Q["Q, second camera<br/>survives, 1.107 and 1.072"]
+    C -. sharpened by .-> P["P, c is smallest where<br/>joint-miss is largest"]
+    C -. sharpened by .-> R["R, accuracy trend is<br/>mostly the P artifact"]
+    classDef core fill:#1a237e,stroke:#1a237e,color:#ffffff;
+    classDef axis fill:#e8eaf6,stroke:#3949ab,color:#1a237e;
+    classDef sharp fill:#fff3e0,stroke:#e65100,color:#bf360c;
+    class C core;
+    class M,N,O,Q axis;
+    class P,R sharp;
+```
+
+Two of those deserve a sentence, because they are where the method earns its keep. Result P shows
+the coefficient is smallest exactly where the two sensors jointly miss the most real objects, since
+a ratio is deflated by its marginals, so `c` alone cannot certify redundancy. Result R takes an
+inviting trend, that stronger detectors appear to couple more, and finds that about four fifths of
+it is the same marginal arithmetic P identified; only a small residual survives a matched-marginal
+comparison. The dramatic version of each claim is the one the method refuses to make.
+
+None of this is a safety finding, a compliance determination, or a comparative claim about any
+vendor. It is association after declared conditioning on two public detection outputs, reproducible
+from this repository, and bounded by the covariates nuScenes annotates. It is evidence that the
+architecture's constructs are measurable and that the assumption they target fails where it has
+been tested, not a certificate about any deployed system.
+
 ## Reproduce the static checks
 
 Authoritative replay is intentionally bound to the exact resolved canonical root
