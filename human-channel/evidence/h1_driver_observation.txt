@@ -1,0 +1,56 @@
+==========================================================================================
+HUMAN CHANNEL H1 - driver observation state in real crash/near-crash conflicts
+100-Car NDS, eyeglance reduction, syncs = 1/10 s; No Video kept as unknown
+==========================================================================================
+
+events with eyeglance data: 786
+severity split: {'Near-Crash': 727, 'Crash': 59}
+
+### ON-ROAD = strict 'Forward' only ###
+  all events: n=785
+    off-road proportion of observed window: mean 19.0%, median 14.2%
+    any off-road glance in window          : 95.5%
+    off-road for >= half the window        : 6.4%
+    forward for the ENTIRE observed window : 4.5%  <- observed yet in conflict
+    events with some No-Video (unknown)    : 6.6%
+  crashes: n=59
+    off-road proportion of observed window: mean 28.3%, median 23.5%
+    any off-road glance in window          : 98.3%
+    off-road for >= half the window        : 13.6%
+    forward for the ENTIRE observed window : 1.7%  <- observed yet in conflict
+    events with some No-Video (unknown)    : 5.1%
+  near-crashes: n=726
+    off-road proportion of observed window: mean 18.2%, median 13.8%
+    any off-road glance in window          : 95.3%
+    off-road for >= half the window        : 5.8%
+    forward for the ENTIRE observed window : 4.7%  <- observed yet in conflict
+    events with some No-Video (unknown)    : 6.7%
+
+### ON-ROAD = Forward + Left/Right Forward (peripheral through windshield) ###
+  all events: n=785
+    off-road proportion of observed window: mean 15.6%, median 11.0%
+    any off-road glance in window          : 93.2%
+    off-road for >= half the window        : 4.5%
+    forward for the ENTIRE observed window : 6.8%  <- observed yet in conflict
+    events with some No-Video (unknown)    : 6.6%
+  crashes: n=59
+    off-road proportion of observed window: mean 25.4%, median 18.4%
+    any off-road glance in window          : 96.6%
+    off-road for >= half the window        : 10.2%
+    forward for the ENTIRE observed window : 3.4%  <- observed yet in conflict
+    events with some No-Video (unknown)    : 5.1%
+  near-crashes: n=726
+    off-road proportion of observed window: mean 14.8%, median 10.4%
+    any off-road glance in window          : 93.0%
+    off-road for >= half the window        : 4.0%
+    forward for the ENTIRE observed window : 7.0%  <- observed yet in conflict
+    events with some No-Video (unknown)    : 6.7%
+
+### THE CONTRAST that gives the number meaning (strict Forward) ###
+  baseline (normal driving), n=4950 epochs:
+    off-road proportion: mean 17.3%, median 9.8%; forward entire epoch 39.1%
+  conflicts vs baseline: crashes 28.3% vs baseline 17.3% off-road (mean).
+  If conflicts exceed baseline, inattention is elevated where it mattered, not ambient.
+
+NON-CLAIMS: observed-window proportion, not the precipitating-instant glance;
+2003-2004 naturalistic data, CC0; descriptive, not a causal or safety determination.
