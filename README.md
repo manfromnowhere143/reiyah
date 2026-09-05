@@ -342,6 +342,12 @@ from this repository, and bounded by the covariates nuScenes annotates. It is ev
 architecture's constructs are measurable and that the assumption they target fails where it has
 been tested, not a certificate about any deployed system.
 
+The workstream red-teams itself in [`docs/MEASUREMENT_THREATS_TO_VALIDITY.md`](docs/MEASUREMENT_THREATS_TO_VALIDITY.md):
+shared training data, the benchmark's own filter, the matcher, incomplete conditioning, the
+coefficient's marginal sensitivity, clustering, single-benchmark scope, detection as a proxy for a
+fused subsystem, and the absence of external audit. Some are answered, one strengthens the finding,
+and the rest are left open and scoped rather than hidden.
+
 ## Reproduce the static checks
 
 Authoritative replay is intentionally bound to the exact resolved canonical root
