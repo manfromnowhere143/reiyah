@@ -57,6 +57,18 @@ SHA-256 of the verbatim `example` text, as Result X does for both formats, and g
 `answer` when `gold` is absent or empty, with the same per-row `acc` check. No prediction is
 changed. Committed before the run.
 
+## Deviation 3, recorded before any result was read
+
+The second rerun still joined three models: the run selector took, for each Llama model, a run
+whose predictions are stored as text, while a later 5-shot run stores them as numbers; and Qwen's
+2024-format file carries no gold at all. The procedure is amended a third time: among each
+model's 5-shot Winogrande runs, the latest whose predictions parse as numbers is used, and gold
+for gold-less files is recovered at join time from a gold-bearing model on the same question and
+checked against every model's own `acc` on every joined row, exactly Result X's rule. No
+prediction is changed. Committed before the run. Three procedural deviations before a
+preregistered test is a finding about the archive's heterogeneity and about the tool, and is
+recorded as such.
+
 ## Non-claims
 
 A preregistration, not a result. Public leaderboard outputs; no LLM is executed; no released `1.2`

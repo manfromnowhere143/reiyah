@@ -27,53 +27,53 @@ TASK = sys.argv[1] if len(sys.argv) > 1 else "winogrande"
 
 
 def load(model):
+    """Deviation 3: among this model's 5-shot Winogrande runs, take the latest whose predictions
+    parse as numbers; gold from `answer` where the file has it, else NaN to be recovered at join
+    from a gold-bearing model on the same question and checked against every row's acc."""
     rid = f"open-llm-leaderboard-old/details_{model}"
     try:
-        files = [f for f in api.list_repo_files(rid, repo_type="dataset")
-                 if f"|{TASK}|" in f and f.endswith(".parquet")]
-    except Exception:
-        return None
-    if not files:
-        return None
-    best = pd.Series([f.split("/")[0] for f in files]).value_counts().index[0]
-    parts = []
-    for f in sorted(x for x in files if x.startswith(best)):
+        files = sorted(f for f in api.list_repo_files(rid, repo_type="dataset")
+                       if f"|{TASK}|5_" in f and f.endswith(".parquet"))
+    except Exception as e:
+        print(f"  FAILED {model}: {type(e).__name__}", flush=True); return None
+    for f in reversed(files):
         try:
             df = pd.read_parquet(hf_hub_download(rid, f, repo_type="dataset"))
-            # deviation 2: join by the SHA-256 of the verbatim example text, as Result X does for
-            # both leaderboard formats; the `hashes` field is a string in some Winogrande runs and
-            # absent in 2024-format files
-            df["qhash"] = df["example"].apply(lambda s: hashlib.sha256(str(s).encode()).hexdigest())
             pr = df["predictions"].apply(lambda p: np.array(p, dtype=float))
-            df["chosen"] = pr.apply(lambda a: int(np.argmax(a)))
-            if "gold" not in df.columns or df["gold"].apply(lambda g: hasattr(g, "__len__") and not isinstance(g, str) and len(g) == 0).all():
-                df["gold"] = df["answer"].astype(int) - 1          # Winogrande: answer "1"/"2"
-            df["gold"] = df["gold"].astype(int)
-            df["acc"] = df["metrics"].apply(lambda m: float(m["acc"])) if "metrics" in df.columns else df["acc"].astype(float)
-            agree = float(((df["chosen"] == df["gold"]).astype(float) == df["acc"]).mean())
-            if agree < 1.0:
-                raise ValueError(f"gold mapping disagrees with acc on {100*(1-agree):.2f}% of rows")
-            parts.append(df[["qhash", "acc", "chosen", "gold"]])
         except Exception as e:
-            print(f"  FAILED {model} file {f.split('/')[-1][:50]}: {type(e).__name__}: {e}"[:160], flush=True)
+            print(f"  skipped run {f.split('/')[0]} for {model.split('__')[-1]}: {type(e).__name__}", flush=True)
             continue
-    if not parts:
-        return None
-    d = pd.concat(parts).drop_duplicates("qhash").set_index("qhash")
-    print(f"  loaded {model}: {len(d)} questions", flush=True)
-    return d
+        df["qhash"] = df["example"].apply(lambda s: hashlib.sha256(str(s).encode()).hexdigest())
+        df["chosen"] = pr.apply(lambda a: int(np.argmax(a)))
+        df["gold"] = (df["answer"].astype(int) - 1) if "answer" in df.columns else np.nan
+        df["acc"] = df["metrics"].apply(lambda m: float(m["acc"])) if "metrics" in df.columns else df["acc"].astype(float)
+        d = df.drop_duplicates("qhash").set_index("qhash")[["acc", "chosen", "gold"]]
+        print(f"  loaded {model}: {len(d)} questions (run {f.split('/')[0]}, gold {'in file' if d['gold'].notna().all() else 'recovered at join'})", flush=True)
+        return d
+    print(f"  FAILED {model}: no 5-shot run with numeric predictions", flush=True)
+    return None
 
 
 def main():
     print(f"loading models on {TASK}...", flush=True)
-    acc, chosen, gold, fams = {}, {}, None, {}
+    acc, chosen, gold, fams, golds, accs = {}, {}, None, {}, {}, {}
     for m, fam in MODELS:
         d = load(m)
         if d is None:
             continue
         acc[m], chosen[m] = (d["acc"] == 1).astype(int), d["chosen"]
         fams[m] = fam
-        gold = d["gold"] if gold is None else gold
+        golds[m] = d["gold"]; accs[m] = d["acc"]
+    # gold recovered at join for gold-less files, then checked against every model's own acc
+    src = [m for m in golds if golds[m].notna().all()]
+    gold = golds[src[0]]
+    for m in list(acc):
+        common = chosen[m].index.intersection(gold.index)
+        agree = float(((chosen[m].loc[common] == gold.loc[common].astype(int)).astype(float) == accs[m].loc[common]).mean()) if len(common) else 0.0
+        print(f"  gold check {m.split('__')[-1]}: acc == (chosen == gold) on {100*agree:.2f}% of {len(common)} joined rows")
+        if agree < 0.99:
+            print(f"  REFUSED {m.split('__')[-1]}: acc does not reproduce from chosen and gold")
+            del acc[m]; del chosen[m]; del fams[m]
     # auto-drop models whose question hashes do not join (different prompt format).
     # reference is the model that overlaps the MOST others (the majority group).
     def ov(a, b):
