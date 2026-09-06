@@ -59,9 +59,9 @@ Face. Custody for each is in
 
 [`MEASUREMENT_THREATS_TO_VALIDITY.md`](MEASUREMENT_THREATS_TO_VALIDITY.md) lists nine, of which
 shared training data, one benchmark and one split, detection as a proxy for the RSS subsystem, and
-the absence of external audit remain open. The LLM threads add: benchmark-dependence of the lineage
-mechanism (Y), the leaderboard's prompt-format non-joins, and question-level rather than
-subject-level resampling for intervals (AC).
+the absence of external audit remain open. The human, LLM and monitor threads have their own red team in
+[`THREATS_HUMAN_AND_LLM_THREADS.md`](THREATS_HUMAN_AND_LLM_THREADS.md): sixteen threats, each
+marked answered, stated, or open.
 
 ## What a review returns
 

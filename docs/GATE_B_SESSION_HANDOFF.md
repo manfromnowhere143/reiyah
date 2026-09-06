@@ -390,6 +390,9 @@ was deleted and no check was weakened.
    H1 to H4, H7; Z, AA, AB, AD, AF), 17 historical sensor-spine rows digest-checked and never
    replayed, 2 BDD-A inference transcripts not replayed here. Report
    `evidence/gate-b-check-2026-09-06-replay-mode.json`.
+15. **Red team for the newer threads** consolidated in
+   [`THREATS_HUMAN_AND_LLM_THREADS.md`](THREATS_HUMAN_AND_LLM_THREADS.md), sixteen threats marked
+   answered, stated, or open, linked from the review request.
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.
