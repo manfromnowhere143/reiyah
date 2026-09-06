@@ -43,8 +43,9 @@ BDD-A validation, 120 clips, 519 frames, 11,104 driving objects.
    recorded, and the frame sampling evidently differed. The two coefficients, 0.972 and 0.962, and
    H6's 0.981 [0.962, 0.998], agree within the band.
 
-3. **Determinism on the accelerator is a stated question, not an assumption.** The detector runs on
-   the machine's GPU path; a second pass with identical arguments is recorded below once complete.
+3. **Determinism on the accelerator was tested, not assumed.** A second full pass with identical
+   arguments on the same machine produced a byte-identical transcript, including every detector
+   output that feeds the 2x2 table. Whether a different machine reproduces it is not established.
 
 ## Non-claims
 
