@@ -1,0 +1,41 @@
+loading models on winogrande...
+  loaded meta-llama__Llama-2-7b-hf: 1267 questions (run 2023-09-20T14-39-46.791628, gold in file)
+  loaded meta-llama__Llama-2-13b-hf: 1267 questions (run 2023-10-14T23-00-26.644553, gold in file)
+  loaded meta-llama__Llama-2-70b-hf: 1267 questions (run 2023-09-18T06-46-44.905361, gold in file)
+  loaded mistralai__Mistral-7B-v0.1: 1267 questions (run 2023-10-26T01-29-53.089924, gold in file)
+  loaded tiiuae__falcon-7b: 1267 questions (run 2023-09-17T10-06-45.584443, gold in file)
+  loaded mosaicml__mpt-7b: 1267 questions (run 2023-09-23T17-09-43.658606, gold in file)
+  loaded Qwen__Qwen-7B: 1267 questions (run 2023-11-15T05-40-30.047401, gold recovered at join)
+  gold check Llama-2-7b-hf: acc == (chosen == gold) on 100.00% of 1267 joined rows
+  gold check Llama-2-13b-hf: acc == (chosen == gold) on 100.00% of 1267 joined rows
+  gold check Llama-2-70b-hf: acc == (chosen == gold) on 100.00% of 1267 joined rows
+  gold check Mistral-7B-v0.1: acc == (chosen == gold) on 100.00% of 1267 joined rows
+  gold check falcon-7b: acc == (chosen == gold) on 100.00% of 1267 joined rows
+  gold check mpt-7b: acc == (chosen == gold) on 100.00% of 1267 joined rows
+  gold check Qwen-7B: acc == (chosen == gold) on 100.00% of 1267 joined rows
+====================================================================================
+RESULT AI - the preregistered test of the LLM law on Winogrande
+7 models, 1267 questions answered by all
+====================================================================================
+
+  marginal c: mean 2.544, same-family 2.809, cross-family 2.500
+  conditional c: mean 1.134, same 1.190, cross 1.124
+  marginal c per pair: min 2.260, max 3.132 over 21 pairs (deviation 4: added for AI-1)
+  conditional c per pair: min 1.004, max 1.249
+  7-model jury: P(all wrong) 5.37% vs indep 0.004% = 1210x; effective independent models 2.06
+
+  agreement: P(correct|two agree) 81.8%, P(both wrong|agree) 18.2%
+  unanimous 54.9% of questions, of those wrong 9.8%
+
+  --- replication reference: MMLU (T/U) and ARC-Challenge (W) ---
+  MMLU: marginal 1.32 (same 1.52 > cross 1.29), conditional 1.10, jury eff 3.6,
+        agree->correct 64.8%, unanimous->wrong 10.4%.
+  ARC:  marginal 1.76 (same 1.87 > cross 1.73), conditional 1.05, jury eff 1.6,
+        agree->correct 57.9%, unanimous->wrong 37.2%.
+  If winogrande shows the same pattern (c>1, same>cross, agreement over-trusted), the law
+  holds; the size of the conditional residual is reported as measured, not assumed.
+
+------------------------------------------------------------------------------------
+NON-CLAIMS: public leaderboard outputs on a third benchmark (winogrande, leaderboard v1 setting);
+same estimand; marginal c includes shared difficulty; descriptive, proposed; a
+robustness replication, not a driving result. No released 1.2 byte involved.

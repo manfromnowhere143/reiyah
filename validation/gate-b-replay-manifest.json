@@ -1,7 +1,7 @@
 {
   "manifest_kind": "gate-b-replay-manifest",
   "artifact_id": "reiyah.gate-b.replay-manifest",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "note": "Rows with replay_class argv_unrecorded_historical are retained transcripts whose exact command line was not recorded per transcript when they were produced; their digests are checked, they are never replayed by this tool, and adding an argv is a later, append-only step.",
@@ -575,6 +575,22 @@
         "docs/RESULT_AH3_GHOST_REPLICATION.md"
       ],
       "timeout_s": 9000,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "llm-generalization/evidence/result_ai_winogrande.txt",
+      "sha256": "sha256:4dae0908a00550f9c58c22aa6c4f449de8f86b0e00716b563b2e8abd92d41ccb",
+      "tool": "llm-generalization/tools/result_ai_winogrande.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "llm-generalization/tools/result_ai_winogrande.py",
+        "winogrande"
+      ],
+      "replay_class": "network_cached",
+      "results": [
+        "llm-generalization/RESULT_AI_PREREGISTERED_WINOGRANDE.md"
+      ],
+      "timeout_s": 7200,
       "stderr_merged": true
     }
   ]

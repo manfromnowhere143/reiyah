@@ -76,6 +76,11 @@ the tool prints only mean coefficients. Two output lines are added, the per-pair
 maximum of the marginal and conditional coefficients; no computation, definition or prediction
 changes. Committed before the final run, whose transcript is the one retained.
 
+## Outcome
+
+Run after deviation 4: eight of eight predictions supported; see
+[`RESULT_AI_PREREGISTERED_WINOGRANDE.md`](../../llm-generalization/RESULT_AI_PREREGISTERED_WINOGRANDE.md).
+
 ## Non-claims
 
 A preregistration, not a result. Public leaderboard outputs; no LLM is executed; no released `1.2`

@@ -418,7 +418,8 @@ Similar systems share their blind spots. Genuinely different ones do not. The in
 assumption is a load-bearing fiction wherever redundancy is claimed, in sensors, in the human, and
 in AI juries alike. The law replicates on ARC-Challenge and HellaSwag, where the residual beyond
 shared difficulty is nearly zero, so the lineage mechanism is benchmark-dependent while the marginal
-law is not. A coupling-aware monitor fitted on one jury reads seven unseen model families almost
+law is not, and it forecast a fourth benchmark, Winogrande, with eight predictions committed before
+the run, all eight supported. A coupling-aware monitor fitted on one jury reads seven unseen model families almost
 without loss and fails across benchmarks without recalibration; carried to the driving channels at
 the scene level it adds nothing over what the stack already knows, and at the object level a
 non-linear monitor reads cross-channel context as a measurable improvement on three of four

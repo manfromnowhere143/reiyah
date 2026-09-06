@@ -66,6 +66,11 @@ question and checked against every row's own correctness flag.
   transfer question: fitted on two benchmarks and read on the third, the monitor is no better than a
   single-benchmark fit, and on HellaSwag it is worse than chance (AUC 0.37 to 0.39). Fit per task,
   read across channels; the boundary of the instrument is recorded as firmly as its successes.
+- [`RESULT_AI_PREREGISTERED_WINOGRANDE.md`](RESULT_AI_PREREGISTERED_WINOGRANDE.md) - the first
+  preregistered test: eight falsifiable predictions committed before the run on a two-choice
+  benchmark the program had never examined, eight supported (every pair above 1, minimum 2.26; a
+  seven-model jury with the diversity of 2.06; unanimity on 55% of questions, wrong on 10%). Four
+  procedural deviations about the archive's file formats, each committed before its rerun.
 
 ## Discipline
 

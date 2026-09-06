@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.14",
+  "version": "0.2.15",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -1012,6 +1012,26 @@
         "exact_proposition": "Same detections and ghost definition as Result AH; annotated instances tracked by instance token; scene table from the pinned meta.tgz."
       },
       "notes": "Coincident ghosts recur 45.9 percent [35.9, 53.5]; lone camera ghosts 39.1, lone lidar ghosts 30.3, true camera detections 76.9, static annotated objects 60.5. Bounds the reference-error threat on ghost-coincidence: the momentary share is a lower bound on shared hallucination; persistence does not separate real from artifactual."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.llm-jury-law-preregistered-winogrande",
+      "estimand": "Eight preregistered directional predictions of the LLM jury law (pairwise marginal c above 1, same above cross, conditional c above 1, effective models below N/2, all-wrong inflation above 5x, agreement reliability below 90 percent, unanimous-wrong above 5 percent, conditional margin smaller than marginal) on Winogrande with the same seven models.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "item",
+      "lineage": {
+        "first_stated_in": "docs/preregistrations/PREREGISTRATION_AI_WINOGRANDE_2026-09-06.md (predictions, committed before the run); llm-generalization/RESULT_AI_PREREGISTERED_WINOGRANDE.md (outcome)",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "llm-generalization/evidence/result_ai_winogrande.txt"
+      ],
+      "source_identity": {
+        "source_id": "open-llm-leaderboard-old",
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "Same source as llm-jury-coincidence-mmlu; task winogrande 5-shot; per model the latest 5-shot run with numeric predictions; gold from the answer field or recovered at join, checked against every row's acc (100 percent on every model)."
+      },
+      "notes": "Eight of eight supported. Directional only: the program has no model that forecasts a number beyond thresholds, recorded as its honest limit. Four procedural deviations (gold mapping, join by example text, run selection with gold recovery, per-pair range output) were each committed before the corresponding rerun; none touched a prediction. No band reported; the marginal coefficient on a two-choice task is bounded above by the error rates."
     }
   ]
 }

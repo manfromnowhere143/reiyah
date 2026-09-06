@@ -418,6 +418,11 @@ was deleted and no check was weakened.
    differs, stated. A second detector pass on the accelerator path was byte-identical.
 20. **Result AH3 added** (register `0.2.12`): the ghost coefficient against the time-shift null is
    4.6 to 9.8 on a second camera, a second lidar and a second operating point, no band reaching 1.
+24. **Result AI, the first preregistered test** (register `0.2.15`): eight falsifiable predictions
+   of the LLM law committed before any run on Winogrande, eight supported by the retained
+   transcript. Four procedural deviations, each about the archive's file formats and each
+   committed before its rerun, are recorded in the preregistration. Preregistrations live under
+   `docs/preregistrations/`.
 23. **Review instrument, part 2.** The register and the documents must describe the same program:
    every claim points to an existing path and, unless its status is unknown or not_established, a
    transcript; every result document is named by a claim; lifecycle lines agree with statuses;
