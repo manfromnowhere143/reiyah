@@ -38,14 +38,33 @@ Per-detector miss rates at 0.50: Mapillary 68.6 percent, FCOS3D 93.9, Megvii 59.
    cannot fail together with another channel more often than it already fails alone, so its
    pairs read as nearly independent (1.04 to 1.05), and the two-camera pair's effective
    independence rises to 1.88 of 2, above the cross-kind pairs. The ordering holds at 0.10 and at
-   0.30, where every channel operates in a comparable regime. The law's second arm is therefore
-   narrowed: same-kind pairs are the least independent when the channels operate in comparable
-   regimes; a near-blind channel looks independent of everything, and that appearance is the
-   marginal artifact Result P named, not diversity.
+   0.30 and not at 0.50, and the near-blind camera is not the whole reason: the two-lidar pair also
+   exceeds a cross pair there (see the adversarial reading). The law's second arm is therefore
+   narrowed to the operating points where it was observed, 0.10 and 0.30, with the failure at 0.50
+   recorded and not yet explained beyond the marginal artifact Result P named.
 
 3. **The effective-independence quantity has a regime limit.** It saturates toward the jury size
    as miss rates approach 1, for the same arithmetic reason. It is reported, as everywhere in the
    program, only beside the miss rates it was computed from.
+
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. **The falsification is broader than the near-blind camera.** At 0.50 the two-lidar pair (1.56
+   [1.55, 1.57] of 2) also exceeds the Mapillary x Megvii cross pair (1.53 [1.51, 1.54]) with
+   non-overlapping bands, and the lidars (59.8 and 61.7 percent miss) and Mapillary (68.6 percent)
+   operate in comparable regimes there. The explanation "comparable regimes" is therefore not
+   sufficient, and the law's second arm is narrowed further: the same-kind ordering holds at the
+   0.10 and 0.30 operating points and does not hold at 0.50, for reasons not yet identified beyond
+   the marginal artifact of Result P. The register carries this.
+2. The effective-independence quantity exceeds the jury size on one pair at 0.50 (FCOS3D x
+   PointPillars, 2.02 [2.01, 2.04] of 2): it uses the mean miss rate, and with unequal miss rates
+   it can pass the jury size while the inflation stays above 1. The inflation column is the primary
+   quantity; effective independence is a summary with that known distortion.
+3. AJ-4's verdict needs the 0.30 values, which are in Result AF's transcript, not this one; the
+   preregistration said "from the transcript alone" and the verdict is stated as from the two
+   transcripts.
 
 ## Non-claims
 

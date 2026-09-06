@@ -71,6 +71,17 @@ actual) and over-predicts at the bottom (2.3 against 1.3).
    baseline already reads. A sensor monitor that wants to see the coupling would need per-object
    evidence, for example disagreements on reported objects, which is a different estimand.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. "No demonstrated value over density" is a statement about statistical power: the held-out split
+   favours the monitor slightly (AUC 0.851 against 0.829), the five scene folds do not resolve an
+   increment of that size either way, and no held-out interval is printed. The verdict inconclusive
+   is the right one and the reason is now stated as power, not as absence.
+2. "Crowded frames hide more" and "clutter is what the baseline reads" are interpretations of a
+   correlation, not measured mechanisms.
+
 ## Non-claims
 
 Two released detectors on the public nuScenes validation split, retained as `proposed` with the

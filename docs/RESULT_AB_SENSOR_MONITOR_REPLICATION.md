@@ -38,11 +38,24 @@ transcript.
 ## What it says
 
 On every configuration the coupling-aware form's increment over its baseline is inside the fold
-spread, and at the scene level it is negative as often as positive. The per-channel realness result
-of AA replicates in shape: lone lidar detections are far more predictable from their own attributes
-than lone camera detections, and the second camera's lone detections are barely predictable at all
-(AUC 0.58). The two-sensor conjecture is now unsupported on three pairs and two operating points
+spread; at the scene level the Spearman increment is negative on all three configurations and the
+AUC increment on two of three (corrected 2026-09-06). The per-channel realness pattern of AA, lone
+lidar detections more predictable than lone camera detections, holds on two of three configurations
+and not on Mapillary x PointPillars (0.739 against 0.743); the second camera's lone detections are
+barely predictable at all (AUC 0.58). The two-sensor conjecture is now unsupported on three pairs and two operating points
 with linear models; Result AD supplies the non-linear test the register also required.
+
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. "Replicates in shape" fails on Mapillary x PointPillars, where camera-only and lidar-only
+   detections are equally predictable (0.739 against 0.743). Corrected: the lidar-more-predictable
+   pattern holds on two of three configurations.
+2. "Negative as often as positive" is wrong: the scene-level Spearman increment is negative on all
+   three configurations and the AUC increment on two of three. Corrected to that.
+3. Two transcript non-claims (the target is a lower bound on what is present; realness is by the
+   self-checked labeling matcher) are added.
 
 ## Non-claims
 

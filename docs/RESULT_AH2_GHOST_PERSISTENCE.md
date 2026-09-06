@@ -28,7 +28,7 @@ scene-clustered bands.
 
 ## What it says
 
-1. **At least half of the coincident ghosts are momentary.** Fifty-four percent [46, 64] of them
+1. **About half of the coincident ghosts are momentary.** Fifty-four percent [46, 64] of them
    have no coincident ghost within 2 m half a second later. An unannotated static object would
    recur at the rate of static annotated objects seen by the camera, about 61 percent, or of true
    detections, 77 percent. Coincident ghosts recur at 46 percent. Unannotated real objects cannot
@@ -45,6 +45,22 @@ scene-clustered bands.
    coefficient against the time-shift null would fall by roughly the persistent share; it would not
    reach 1. The evidence-cost condition on ghosts stays measured and not identified, and the
    direction of the finding, that ghosts coincide far beyond independence, does not depend on it.
+
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. **The reference was the wrong kind, and the right one was then measured.** The reader pointed
+   out that 60.5 and 76.9 percent are single-channel recurrence rates while a coincident ghost
+   recurs only if both channels re-fire within 2 m. Result AH2b measures the fair reference:
+   coincident TRUE detections recur 71.7 percent [69.7, 73.4] of the time. Coincident ghosts recur
+   45.9 percent [35.9, 53.5]. The gap stands against the fair reference.
+2. "At least half" overstated a band that includes values below half; corrected to "about half,
+   band [46, 64] percent not recurring".
+3. Coincident ghosts against lone camera ghosts: the bands [35.9, 53.5] and [35.8, 42.7] largely
+   overlap; "more persistent than lone ghosts" is a point-estimate ordering and is stated so.
+4. The momentary share is a lower bound on momentary events, not on hallucination specifically; a
+   momentary coincident ghost could also be an unannotated moving object.
 
 ## Non-claims
 

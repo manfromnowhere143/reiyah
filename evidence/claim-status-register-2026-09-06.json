@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.17",
+  "version": "0.2.18",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -426,7 +426,7 @@
         "custody_state": "primary_retained",
         "exact_proposition": "Definition 32 of arXiv:1708.06374, the one sided c-approximate independence coefficient; every c below is the smallest constant satisfying it for its declared pair, stratum, and operating point."
       },
-      "notes": "One pair per cell except camera-lidar; the same-kind versus cross-kind reading rests on one lidar-lidar pair and one camera-camera pair and is not internally replicated. Modality-separation as a difference-in-c claim remains inconclusive (see modality-separation). Narrowed 2026-09-06 by Result AJ: the same-kind ordering holds at 0.10 and 0.30 and is falsified at 0.50, where FCOS3D misses 93.9 percent of objects and reads as independent of everything (the marginal artifact of Result P). Stated as: same-kind pairs are the least independent when channels operate in comparable regimes."
+      "notes": "One pair per cell except camera-lidar; the same-kind versus cross-kind reading rests on one lidar-lidar pair and one camera-camera pair and is not internally replicated. Modality-separation as a difference-in-c claim remains inconclusive (see modality-separation). Narrowed 2026-09-06 by Result AJ: the same-kind ordering holds at 0.10 and 0.30 and is falsified at 0.50, where FCOS3D misses 93.9 percent of objects and reads as independent of everything (the marginal artifact of Result P). Stated as: same-kind pairs are the least independent when channels operate in comparable regimes. Narrowed further 2026-09-06: at 0.50 the two-lidar pair (1.56 of 2) also exceeds the Mapillary x Megvii cross pair (1.53), so the near-blind camera is not the whole reason; the same-kind ordering holds at 0.10 and 0.30 and fails at 0.50 for reasons not identified beyond Result P's marginal artifact."
     },
     {
       "claim_id": "reiyah.gate-b.claim.accuracy-coupling-residual",
@@ -451,7 +451,7 @@
     {
       "claim_id": "reiyah.gate-b.claim.evidence-cost-direction",
       "estimand": "Direction of the validation-evidence correction under RSS Corollary 3 when c > 1: holding the bound fixed, the admissible per-channel rate shrinks as 1/sqrt(c), so a campaign sized under independence is undersized; qualitative and conditional only.",
-      "status": "derived",
+      "status": "narrowed",
       "current_scientific_use": "permitted",
       "unit": "derived_arithmetic",
       "lineage": {
@@ -469,7 +469,7 @@
       "reconsideration_requirements": [
         "Identical to the five requirements under evidence-cost-pooled; until then this claim is qualitative."
       ],
-      "notes": "Carries no percentage, count, interval, or multiplier. Every figure belongs to evidence-cost-pooled and is forbidden until its five requirements are met."
+      "notes": "Carries no percentage, count, interval, or multiplier. Every figure belongs to evidence-cost-pooled and is forbidden until its five requirements are met. Narrowed 2026-09-06: the five withdrawal grounds bear on the sign as well as the magnitude, so the retained direction is conditional on the measured coefficient standing in for the corollary's, which is not established."
     },
     {
       "claim_id": "reiyah.gate-b.claim.human-observation-state-in-conflict",
@@ -511,12 +511,12 @@
         "custody_state": "primary_pointer_only",
         "exact_proposition": "Same source as human-observation-state-in-conflict."
       },
-      "notes": "Includes a causal component (not looking impairs reacting) and is not pure latent dependence. Crash-subset cells are small (n=56, both-fail 8) and illustrative. Not driver-clustered. Narrowed 2026-09-06 by H7: event-resampled 95% band [1.036, 1.897] over 770 events; the crash [0.693, 1.867] and near-crash [0.990, 2.139] subgroups do not exclude 1. Quote with the band."
+      "notes": "Includes a causal component (not looking impairs reacting) and is not pure latent dependence. Crash-subset cells are small (n=56, both-fail 8) and illustrative. Not driver-clustered. Narrowed 2026-09-06 by H7: event-resampled 95% band [1.036, 1.897] over 770 events; the crash [0.693, 1.867] and near-crash [0.990, 2.139] subgroups do not exclude 1. Quote with the band. Adversarial reading 2026-09-06: the 2x2 conditions on events that became crashes or near-crashes, so selection on a common effect can manufacture c > 1 with no latent coupling; the coefficient is an association inside a selected population."
     },
     {
       "claim_id": "reiyah.gate-b.claim.l3-takeover-distraction-delay",
       "estimand": "Mean takeover time by non-driving task and by task group (none, cognitive-only, visual-manual) in the DCPT L3 simulator study.",
-      "status": "measured",
+      "status": "narrowed",
       "current_scientific_use": "permitted",
       "unit": "trial",
       "lineage": {
@@ -531,7 +531,7 @@
         "custody_state": "third_party_retained",
         "exact_proposition": "DCPT, Zenodo doi:10.5281/zenodo.17354775, CC BY 4.0 as recorded by the publisher; three files retained in Git and verified by MD5 against the publisher record on 2026-09-06."
       },
-      "notes": "Simulator, random takeover request, so readiness-to-response only, not cross-agent dependence. Descriptive across trials, not participant-clustered."
+      "notes": "Simulator, random takeover request, so readiness-to-response only, not cross-agent dependence. Descriptive across trials, not participant-clustered. Narrowed 2026-09-06: the watching-video task (mean 2.01 s, eyes on the center screen) belongs to neither group and equals no task; the +0.47 s contrast depends on the visual-manual grouping, which was fixed in the tool but not preregistered."
     },
     {
       "claim_id": "reiyah.gate-b.claim.cross-agent-coincidence-detectable-set",
@@ -556,12 +556,12 @@
         "BDD-A terms: retained from an archive snapshot on 2026-09-06; research use permitted.",
         "Ground-truth boxes or a reference process independent of both channels."
       ],
-      "notes": "Measured on the detector's own detections, so a floor on cross-agent dependence, not a certificate of independence. Engaged in-lab observers, aggregate heatmap. Pretrained torchvision Faster R-CNN executed on the frames; nothing trained. 2026-09-06 H5b: re-measured with the clip id recorded, c = 0.962, clip-clustered band [0.927, 0.993] on 117 clips; H5's sample (651 frames) differs from H5b's (519 frames) because H5's arguments were not recorded; both agree within the band. Band: human-channel/H5B_CROSS_AGENT_INTERVAL.md."
+      "notes": "Measured on the detector's own detections, so a floor on cross-agent dependence, not a certificate of independence. Engaged in-lab observers, aggregate heatmap. Pretrained torchvision Faster R-CNN executed on the frames; nothing trained. 2026-09-06 H5b: re-measured with the clip id recorded, c = 0.962, clip-clustered band [0.927, 0.993] on 117 clips; H5's sample (651 frames) differs from H5b's (519 frames) because H5's arguments were not recorded; both agree within the band. Band: human-channel/H5B_CROSS_AGENT_INTERVAL.md. Adversarial reading 2026-09-06: the human miss is a median split whose median gaze mass is 0.005, so it separates boxes by whether they carry almost any gaze mass; the marginals cap the coefficient at 2.0, so the H5b band [0.927, 0.993] is informative."
     },
     {
       "claim_id": "reiyah.gate-b.claim.cross-agent-total-miss-coincidence",
       "estimand": "Cross-agent coincident-miss coefficient between a deployed edge detector's total misses on reference-detector objects and low gaze attention on BDD-A, with a clip-clustered bootstrap interval.",
-      "status": "measured",
+      "status": "narrowed",
       "current_scientific_use": "permitted",
       "unit": "object",
       "lineage": {
@@ -576,7 +576,10 @@
         "custody_state": "third_party_unretained",
         "exact_proposition": "BDD-A, Xia et al. 2018, arXiv:1711.06406, downloaded from the Berkeley DeepDrive portal; terms retained on 2026-09-06 from an Internet Archive snapshot of the BDD100K documentation licence page (Regents' licence: educational, research and not-for-profit use, copying and distribution with notice), which states it covers data and labels downloaded from that portal. Data not redistributed."
       },
-      "notes": "Reference is a strong detector, not human ground truth, so a lower bound on the true joint miss. Interval grazes 1.0 from below; reported as approximately independent and pointedly not the same-kind pattern. The word silent is not used. Two pretrained torchvision detectors executed; nothing trained."
+      "notes": "Reference is a strong detector, not human ground truth, so a lower bound on the true joint miss. Interval grazes 1.0 from below; reported as approximately independent and pointedly not the same-kind pattern. The word silent is not used. Two pretrained torchvision detectors executed; nothing trained. Narrowed 2026-09-06: with P(automation miss) 84.5 percent and P(human miss) 50 percent the coefficient is confined to about [0.82, 1.18] by the Frechet bounds, so approximate independence is nearly forced by the marginals; the informative human-machine evidence is cross-agent-coincidence-detectable-set (ceiling 2.0). The 84.5 percent total-miss rate is not verified as genuine blindness rather than a pipeline defect.",
+      "reconsideration_requirements": [
+        "Verify the 84.5 percent edge-detector total-miss rate is genuine blindness (resolution, class mapping, matching) before the coefficient is read at all."
+      ]
     },
     {
       "claim_id": "reiyah.gate-b.claim.llm-jury-coincidence-mmlu",
@@ -640,7 +643,7 @@
         "Transfer to a disjoint jury without refitting: done, llm-monitor-transfer (holds across juries on the same benchmark).",
         "Validation on real driving channel outputs rather than benchmark outputs."
       ],
-      "notes": "A demonstration instrument, in-domain only: the held-out items come from the same jury and benchmark the monitor was fitted on. Deployability rests on the transfer claim, not this one. A logistic-regression monitor is fitted; no LLM executed."
+      "notes": "A demonstration instrument, in-domain only: the held-out items come from the same jury and benchmark the monitor was fitted on. Deployability rests on the transfer claim, not this one. A logistic-regression monitor is fitted; no LLM executed. Adversarial reading 2026-09-06: in-distribution selective prediction on one jury and benchmark; that coupling was learned is an interpretation; the lowest risk band under-predicts (1.6 against 3.0 percent)."
     },
     {
       "claim_id": "reiyah.gate-b.claim.llm-jury-coincidence-arc-replication",
@@ -729,7 +732,7 @@
         "More than one detector pair and operating point.",
         "A non-linear monitor, stated in advance, before any claim that the form carries over."
       ],
-      "notes": "Permitted use is as a negative result only: the monitor's increment over the proportional baseline is inside the cross-validation spread on every metric, so the sentence that the LLM monitor form applies to two sensors is a conjecture with one failed scene-level test, not a result. Unit is the keyframe, which the schema does not enumerate; recorded here in notes."
+      "notes": "Permitted use is as a negative result only: the monitor's increment over the proportional baseline is inside the cross-validation spread on every metric, so the sentence that the LLM monitor form applies to two sensors is a conjecture with one failed scene-level test, not a result. Unit is the keyframe, which the schema does not enumerate; recorded here in notes. Adversarial reading 2026-09-06: the inconclusive verdict is a statement about power; the held-out split favours the monitor slightly and five scene folds cannot resolve the increment."
     },
     {
       "claim_id": "reiyah.gate-b.claim.sensor-disagreement-realness",
@@ -906,7 +909,7 @@
         "A held-out detector pair not used in any configuration here.",
         "Real driving channel outputs beyond the public benchmark before any deployability language."
       ],
-      "notes": "Outside the fold spread on Mapillary x Megvii at 0.30 and 0.50 and on Mapillary x PointPillars; inside it on FCOS3D x Megvii. The scene-level form stays inconclusive with the same model. One model class, no tuning."
+      "notes": "Outside the fold spread on Mapillary x Megvii at 0.30 and 0.50 and on Mapillary x PointPillars; inside it on FCOS3D x Megvii. The scene-level form stays inconclusive with the same model. One model class, no tuning. Adversarial reading 2026-09-06: verdict rule stated, an increment counts when it exceeds the larger of the two fold spreads; verdicts unchanged; the 0.50 scene-level case (0.039 against 0.042) is the closest call."
     },
     {
       "claim_id": "reiyah.gate-b.claim.llm-monitor-multi-benchmark-calibration",
@@ -926,7 +929,7 @@
         "custody_state": "third_party_unretained",
         "exact_proposition": "Same source as llm-jury-coincidence-mmlu; tasks hendrycksTest (MMLU), arc:challenge, hellaswag; two juries."
       },
-      "notes": "A negative result stated as measured: no fair comparison favors the two-benchmark fit, and on HellaSwag the transferred monitor is worse than chance (AUC 0.37 to 0.39 on jury A). Deployability language is bounded to: fit per task, read across channels."
+      "notes": "A negative result stated as measured: no fair comparison favors the two-benchmark fit, and on HellaSwag the transferred monitor is worse than chance (AUC 0.37 to 0.39 on jury A). Deployability language is bounded to: fit per task, read across channels. Adversarial reading 2026-09-06: the two-benchmark fit improves calibration on ARC (ECE 0.052 and 0.108 against 0.184 and 0.213) and does not restore discrimination; below chance is jury A on HellaSwag only."
     },
     {
       "claim_id": "reiyah.gate-b.claim.sensor-jury-effective-independence",
@@ -971,7 +974,7 @@
     {
       "claim_id": "reiyah.gate-b.claim.ghost-coincidence",
       "estimand": "P(lidar ghost within 2 m | camera ghost) and its reverse, against a rotation-about-ego null, a 180-degree null and a within-scene time-shift null, with scene-clustered bands; a ghost is a detection with no annotated object of any class within 2 m.",
-      "status": "measured",
+      "status": "narrowed",
       "current_scientific_use": "permitted",
       "unit": "detection_box",
       "lineage": {
@@ -992,7 +995,7 @@
         "A second pair and operating point: done, Result AH3 (time-shift coefficients 9.80 [7.08, 14.82], 4.60 [3.43, 9.69], 7.66 [3.82, 24.33]).",
         "A ghost definition on safety-critic assertions, not all detections, before any Corollary 3 use."
       ],
-      "notes": "The load-bearing coefficient is 6.18 [4.60, 10.31] against the within-scene time-shift null; the rotation-null coefficients (11.7, 11.8) are inflated by road geometry as the sanity row (true detections 8.1 above the same null) shows. Upper bound in the reference-error direction; lenient ghost definition in the other. Evidence-cost condition three is measured, not identified. Replication: docs/RESULT_AH3_GHOST_REPLICATION.md."
+      "notes": "The load-bearing coefficient is 6.18 [4.60, 10.31] against the within-scene time-shift null; the rotation-null coefficients (11.7, 11.8) are inflated by road geometry as the sanity row (true detections 8.1 above the same null) shows. Upper bound in the reference-error direction; lenient ghost definition in the other. Evidence-cost condition three is measured, not identified. Replication: docs/RESULT_AH3_GHOST_REPLICATION.md. Narrowed 2026-09-06 by Result AK: at 0.10 the time-shift coefficient is 2.65 [2.47, 2.88] and ghosts co-locate less than true detections against the rotation null; the finding holds at 0.30 and 0.50 (four configurations) and not at 0.10 on the primary pair. Operating-point dependent."
     },
     {
       "claim_id": "reiyah.gate-b.claim.ghost-persistence",
@@ -1012,7 +1015,7 @@
         "custody_state": "primary_pointer_only",
         "exact_proposition": "Same detections and ghost definition as Result AH; annotated instances tracked by instance token; scene table from the pinned meta.tgz."
       },
-      "notes": "Coincident ghosts recur 45.9 percent [35.9, 53.5]; lone camera ghosts 39.1, lone lidar ghosts 30.3, true camera detections 76.9, static annotated objects 60.5. Bounds the reference-error threat on ghost-coincidence: the momentary share is a lower bound on shared hallucination; persistence does not separate real from artifactual."
+      "notes": "Coincident ghosts recur 45.9 percent [35.9, 53.5]; lone camera ghosts 39.1, lone lidar ghosts 30.3, true camera detections 76.9, static annotated objects 60.5. Bounds the reference-error threat on ghost-coincidence: the momentary share is a lower bound on shared hallucination; persistence does not separate real from artifactual. Adversarial reading 2026-09-06: reference rates were single-channel; Result AH2b measured the fair reference (coincident true detections recur 71.7 percent [69.7, 73.4]) and the momentary reading stands; 'at least half' corrected to 'about half'."
     },
     {
       "claim_id": "reiyah.gate-b.claim.llm-jury-law-preregistered-winogrande",
@@ -1081,6 +1084,46 @@
         "None: the direction is measured. Any lower-bound statement about the sensor coefficient must rest on a different mechanism with its own retained measurement."
       ],
       "notes": "Found on 2026-09-06 while auditing a public comment that said the coefficient is a lower bound. The 2026-08-29 correction table had recorded the right direction; the threats document contradicted it and now carries the correction first."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.ghost-operating-point-preregistered",
+      "estimand": "Six preregistered numeric-range predictions for the ghost coefficient and persistence on Mapillary x Megvii at 0.10 (ghost shares, time-shift and rotation coefficients, sanity ordering, recurrence ordering, true-detection recurrence).",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "detection_box",
+      "lineage": {
+        "first_stated_in": "docs/preregistrations/PREREGISTRATION_AK_GHOST_OPERATING_POINT_2026-09-06.md (predictions, committed before the run); docs/RESULT_AK_GHOST_OPERATING_POINT.md (outcome)",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_ak.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Result AH and AH2 tools imported unchanged with SCORE assigned to 0.10."
+      },
+      "notes": "Two of six supported, four falsified: time-shift c_ghost 2.65 [2.47, 2.88], rotation-null c_ghost 3.55 below the sanity coefficient 7.53, coincident-ghost recurrence equal to lone lidar recurrence. The ghost finding is operating-point dependent; the mechanism offered in the result is a hypothesis."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.coincident-true-detection-recurrence",
+      "estimand": "Recurrence within 2 m in the next keyframe of coincident true detections, and of single-channel true detections, on Mapillary x Megvii at 0.30, scene-clustered bands.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "detection_box",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_AH2B_COINCIDENT_TRUE_RECURRENCE.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_ah2b.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Result AH2 definitions imported unchanged; two comparison sets added."
+      },
+      "notes": "Coincident true detections recur 71.7 percent [69.7, 73.4], the fair reference for ghost-persistence; single channels 74.2 and 76.9."
     }
   ]
 }

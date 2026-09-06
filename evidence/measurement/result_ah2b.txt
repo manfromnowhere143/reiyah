@@ -1,0 +1,15 @@
+============================================================================================
+RESULT AH2b - recurrence of coincident TRUE detections, the reference Result AH2 lacked
+camera=Mapillary lidar=Megvii at score >= 0.3; recurrence within 2.0 m in the next keyframe; 150 scenes; scene-clustered bootstrap B = 500
+============================================================================================
+
+  set                                           items   recur next keyframe          95% band
+  coincident ghosts (AH2)                        3597                 45.9%  [35.9, 53.5]
+  coincident TRUE detections                    66723                 71.7%  [69.7, 73.4]
+  true camera detections, single channel        76796                 74.2%  [71.8, 76.0]
+  true lidar detections, single channel         93648                 76.9%  [75.2, 78.5]
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: released detector outputs on the public nuScenes validation split, retained as
+proposed. Recurrence separates persistent from momentary, not real from artifactual. One pair,
+one operating point. Not a safety determination. No detector is executed. No released 1.2 byte.

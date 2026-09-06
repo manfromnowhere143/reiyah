@@ -48,6 +48,18 @@ percent.
    objects, so the eligible-only band excluded its own point. The bootstrap now keeps only the
    masked objects of each drawn instance; the correction is recorded in the tool.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. Effective independence is a marginal summary that moves with the miss rates themselves (Result
+   AJ later showed it exceeding the jury size on one pair at 0.50); "2.10 of 4" is a property of
+   this jury at this operating point, not of sensor coupling in general.
+2. "In the same range in the same quantity" set juries of four, six and seven side by side with
+   no stated criterion; the sentence is kept as a description of magnitudes, not a comparison.
+3. "Protection" is a safety reading of a descriptive coefficient; the transcript's non-claim that a
+   miss is the validated matcher's absence of a match at 0.30 is added.
+
 ## Non-claims
 
 Released detector outputs on the public nuScenes validation split, marginal quantities at one

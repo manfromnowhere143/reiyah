@@ -125,6 +125,21 @@ safety-argument premise in Result G is correspondingly harder to dismiss.
 `evidence/measurement/result_o.txt` records both commands, both full sweeps, and the
 odds-ratio self-check against Result E.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The E-value neither rules unmeasured confounding in nor out, as the transcript's non-claims say;
+   "robustly to unmeasured shared difficulty" overstated that and is withdrawn as a sentence. An
+   E-value of about 2 is not large in data where the range band alone moved the coefficient by
+   0.132, and named candidates (object size, truncation, fine occlusion) could plausibly carry that
+   strength on both channels. The result bounds the confounder's required strength; it does not
+   make it implausible.
+2. The comparison "comparable to the strongest measured covariate effects" had no numbers behind
+   it in this transcript and is withdrawn as a sentence.
+3. Two transcript non-claims are added: association after declared conditioning, not a causal
+   effect; bounded by the covariates the benchmark annotates.
+
 ## Non-claims
 
 No scientific support, safety finding, compliance determination, comparative claim about any

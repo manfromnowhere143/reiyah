@@ -58,6 +58,20 @@ eye tracking and is the next acquisition. The coefficients on the crash subset r
 descriptive, not driver-clustered, on 2003-2004 CC0 data. `c > 1` here includes a causal component
 (not looking impairs reacting) and is not claimed as pure latent dependence.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. **Selection on the outcome.** The 2x2 is computed only on events that already became crashes
+   or near-crashes. Conditioning on an outcome that both channels' failures cause can manufacture
+   a coefficient above 1 with no latent coupling, and no reaction is itself close to a definition
+   of severity (37.5 percent of crashes against 5.0 percent of near-crashes). The pooled 1.46 is
+   therefore an association inside a selected population, not evidence that a looking driver fails
+   to act beyond independence in general. The register entry is narrowed on this ground.
+2. The transcript calls the coefficient illustrative for the whole table, not only for the crash
+   subset; the band in H7 is event-resampled and, as H7 says, understates uncertainty under driver
+   clustering.
+
 ## Non-claims
 
 Descriptive statistics on a public CC0 dataset, retained as `proposed`. Not a causal effect, not a

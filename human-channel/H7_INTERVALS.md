@@ -46,6 +46,17 @@ seeded. Parsing and definitions are imported from the H3 and H4 tools unchanged.
 3. **The Level 3 distraction effect survives participant clustering.** Visual-manual tasks slow
    the takeover by 0.47 s with a band that excludes zero; cognitive-only tasks do not.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The 100-Car bands are event-resampled; any intra-driver correlation widens them, and the
+   near-crash subgroup already reaches 0.990. The lower bound of 1.036 is therefore the
+   least-clustered reading, and H3's adversarial reading adds the selection-on-outcome objection.
+2. The H2 rates here (0.711 on 775 events, 0.690 on 58) use events with known gaze; the H2
+   document's 70.2 and 67.8 percent use 783 and 59 events including unknown gaze. Both are now
+   stated.
+
 ## Non-claims
 
 Descriptive intervals on public CC0 and CC BY 4.0 data, retained as `proposed`. The 100-Car

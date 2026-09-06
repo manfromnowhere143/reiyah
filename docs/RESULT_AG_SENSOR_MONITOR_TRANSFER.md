@@ -50,6 +50,18 @@ features (0.818 against 0.821), where in domain they add 0.02.
    two transfer pairs each share one channel with the primary pair. This is transfer within one
    benchmark's detector ecosystem, not across deployments.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. **Transfer is confounded with channel importance.** The swapped camera is the channel the monitor
+   uses least (in-domain camera-only AUC 0.772 against lidar-only 0.893), so the small loss on the
+   camera swap is equally explained by "the changed channel did not matter" as by "camera scores
+   keep their meaning"; nothing here separates the two. The "transfer law" is narrowed to an
+   ordering of losses on one swap of each kind, and its mechanism sentences are hypotheses.
+2. "Nearly as well as a refit" overstated a gap of 0.038 on the camera-only rows; the transfer case
+   also triples calibration error (0.031 against 0.009).
+
 ## Non-claims
 
 Released detector outputs on the public nuScenes validation split, retained as `proposed`. One

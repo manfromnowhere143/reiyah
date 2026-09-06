@@ -31,6 +31,8 @@ which 23,840 are ghosts (19.9 percent).
 |---|---|---|
 | P(lidar ghost within 2 m of a camera ghost), observed | 15.25% | [12.13, 18.33] |
 | same, rotation null | 1.30% | [0.97, 1.66] |
+| same, 180-degree null | 0.67% | [0.48, 0.92] |
+| P(lidar ghost within 2 m of a camera ghost), on the 3,756 keyframes with a time-shift partner | 15.58% | [12.41, 18.85] |
 | same, within-scene time-shift null | 2.52% | [1.33, 3.92] |
 | P(camera ghost within 2 m of a lidar ghost), observed | 15.14% | [11.71, 18.87] |
 | sanity: P(lidar true detection within 2 m of a camera true detection), observed / rotation null | 86.91% / 10.68% | |
@@ -78,6 +80,25 @@ barrier 15.3, traffic cone 16.5.
 Replicated the same day on a second camera, a second lidar and a second operating point, with
 time-shift coefficients of 4.6 to 9.8 and no band reaching 1
 ([AH3](RESULT_AH3_GHOST_REPLICATION.md)).
+
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. **The table mixed two keyframe sets.** The time-shift null (2.52 percent) is computed on the
+   3,756 keyframes with a heading and a partner, where the observed rate is 15.58 percent, and the
+   coefficient 6.18 is their ratio; the 15.25 percent row is the all-keyframe rate. The table now
+   carries both rows. 2,197 keyframes are excluded from that null, of which 1,173 lack a heading and
+   the rest lack a partner ten keyframes away.
+2. The 180-degree null was announced and its outcome was not reported: 0.67 percent [0.48, 0.92],
+   coefficient 22.73 [17.09, 30.80]. It is the weakest of the three nulls for the same geometric
+   reason as the rotation null.
+3. "Where annotation is most complete" and "most plausibly under-annotated" are conjectures about
+   the annotation set, stated as such now.
+4. **Operating-point dependence (Preregistration AK, run after this reading).** At 0.10 the
+   time-shift coefficient is 2.65 [2.47, 2.88] and ghosts co-locate less than true detections
+   relative to the rotation null; the finding as stated here holds at 0.30 and 0.50 and not at
+   0.10. See Result AK.
 
 ## Non-claims
 

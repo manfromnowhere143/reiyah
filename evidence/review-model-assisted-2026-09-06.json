@@ -1,0 +1,674 @@
+{
+  "artifact_id": "reiyah.gate-b.review-model-assisted-2026-09-06",
+  "version": "0.1.0",
+  "lifecycle_status": "proposed",
+  "disclosure": "Model-assisted advisory review. Four context-free readers, each a fresh instance of the same model family as the author, each given only a group of result documents and their retained transcripts and a fixed rubric (unsupported sentences, overreach, missing caveats, headline verdict, strongest objection). Not independent review under the repository's law; it raises the floor and does not replace a person. Every point that changed a sentence is recorded in the document's own 'Adversarial reading, 2026-09-06' section.",
+  "rubric": [
+    "every quantitative sentence follows from the transcript",
+    "no overreach beyond the transcript",
+    "transcript non-claims present in the document",
+    "headline verdict: reproduced, narrowed, contradicted, not_examinable",
+    "strongest objection"
+  ],
+  "readers": {
+    "sensor_a": [
+      {
+        "document": "docs/RESULT_M_CROSS_DETECTOR_REPLICATION.md",
+        "transcript": "evidence/measurement/result_m.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "The trap is the same size and the same direction as in the Megvii pair. It is recorded so nobody reaches for it as convergence. -- the transcript's own PROVENANCE gives the Megvii pair as terminal 1.151 and mediator 1.107 (a step of -0.044) against -0.029 here; the direction matches, the size does not, and the transcript prints no Megvii step to compare.",
+          "Two lidar detectors that share no architecture, one at half the accuracy of the other, both fail together with the same camera beyond what class, range, visibility, weather and motion explain. -- the transcript says 'architecturally distinct' and 'roughly half' (29.5 vs 51.9 mAP is 0.57); 'share no architecture' and 'half' are not in the transcript."
+        ],
+        "overreach": [
+          "**The convergence signature repeats, and again it is not to independence.** -- the transcript's own convergence diagnosis prints 'steps monotonically shrinking in magnitude : NO' (L4 -0.002 then L5 -0.005); the document never reports that line.",
+          "Together with Result J's worst-group replication across the same three pairs, the dependence is a property of the operating region and the two sensing channels, not of one model pair. -- the transcript supports only 'not specific to one lidar detector'; both pairs share the single Mapillary camera, and no 'operating region' quantity is in the transcript.",
+          "The RSS critique in Results D, E, I, J, K and L rests on a coefficient that has been reproduced on an independent detector, not on a single measurement. -- the coefficient value is not reproduced (1.096 [1.087, 1.103] vs 1.151 [1.138, 1.160], non-overlapping); only the sign and exclusion of 1.0 repeat."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "Both pairs share the identical Mapillary camera detector and the identical ground-truth cache, so the replication removes only the Megvii-specific objection while the document generalises to 'the two sensing channels'; and the transcript's own diagnostic says the step sequence is not monotonically shrinking, which the document suppresses under the word 'convergence'."
+      },
+      {
+        "document": "docs/RESULT_N_THRESHOLD_ROBUSTNESS.md",
+        "transcript": "evidence/measurement/result_n.txt",
+        "headline_verdict": "reproduced",
+        "unsupported_sentences": [
+          "Result D already answered this for the **marginal** coefficient, and the answer there is *yes, it falls*: `2.271, 1.878, 1.587, 1.363, 1.239` at thresholds `0.1 .. 0.5`. -- none of these five numbers appears in result_n.txt (its marginal L0 column reads 2.304, 1.900, 1.602, 1.373, 1.245 on the common support).",
+          "The safety-argument consequence in Result G (evidence scales as the square root of the marginal coefficient) is unchanged in form; this result hardens the premise it rests on. -- no square-root scaling or Result G quantity is in the transcript."
+        ],
+        "overreach": [
+          "It is that the residual coupling is present and significant across the entire operating range a detector is actually run at, and is therefore not a property of the `0.3` operating point. -- the transcript measures 0.1 to 0.5 and says nothing about what range detectors are actually run at.",
+          "RSS Definition 32's channel-independence assumption fails on this evidence not at one lucky operating point but across the range of thresholds a deployed detector uses, for two different lidar detectors. -- 'the range of thresholds a deployed detector uses' is not measured or asserted in the transcript."
+        ],
+        "missing_caveats": [
+          "object size and truncation were not available and not tested",
+          "no adjustment set is claimed sufficient for identification"
+        ],
+        "strongest_objection": "The sweep stops at 0.5, exactly where the conditional excess has shrunk to 4-5% and is still falling monotonically (1.360 -> 1.051; 1.249 -> 1.043), so 'never reaches independence in the measured range' is a statement about where the measurement was cut off, while the document equates that cut-off with 'the range a deployed detector uses' on no evidence."
+      },
+      {
+        "document": "docs/RESULT_O_SENSITIVITY_EVALUE.md",
+        "transcript": "evidence/measurement/result_o.txt",
+        "headline_verdict": "reproduced",
+        "unsupported_sentences": [
+          "For scale, that is an unmeasured shared difficulty comparable to the strongest **measured** covariate effects in this data, not a slight residual imbalance the conditioning happened to miss. -- the transcript prints no risk ratio for any measured covariate, so the comparison has no numbers behind it on either side."
+        ],
+        "overreach": [
+          "RSS Definition 32's channel-independence assumption fails on this evidence not only across detectors and operating points but robustly to unmeasured shared difficulty: the residual coupling cannot be an artifact of one omitted covariate unless that covariate is strong. -- the transcript's NON-CLAIMS say the E-value 'neither rules it in nor out'; 'robustly to unmeasured shared difficulty' asserts what the E-value does not test.",
+          "A large E-value means only an implausibly strong hidden factor could account for the finding; a small one means a weak factor could. -- no plausibility scale for RR 2-3 in this data is computed in the transcript."
+        ],
+        "missing_caveats": [
+          "Association after declared conditioning, not a causal effect (absent from the document's Non-claims and body)",
+          "Bounded by the covariates nuScenes annotates (stated only descriptively in the opening, not as a non-claim)"
+        ],
+        "strongest_objection": "An E-value of 2.05-2.13 for PointPillars (1.96-2.05 at score >= 0.4-0.5) is not large in a setting where range band alone moved the coefficient by 0.132 and where the named candidates (object size, truncation, fine occlusion) plausibly carry RR > 2 on both channels' misses, so the transcript's numbers are equally consistent with the coupling being explained by one strong omitted covariate."
+      },
+      {
+        "document": "docs/RESULT_P_COEFFICIENT_VS_ABSOLUTE.md",
+        "transcript": "evidence/measurement/result_p.txt",
+        "headline_verdict": "reproduced",
+        "unsupported_sentences": [
+          "Every interval is non-overlapping between adjacent thresholds, so the two trends are not noise. -- true for c and P(both) only; the excess intervals overlap at Megvii 0.40 [0.0962,0.1022] vs 0.50 [0.0945,0.1015], PointPillars 0.20 [0.0801,0.0860] vs 0.30 [0.0844,0.0903], and PointPillars 0.30 [0.0844,0.0903] vs 0.40 [0.0850,0.0911].",
+          "It never follows `c` down. -- for PointPillars the excess falls from 0.0880 [0.0850,0.0911] at 0.40 to 0.0816 [0.0784,0.0848] at 0.50 with non-overlapping intervals, i.e. it does follow c down at the strict end.",
+          "The fall of `c` with the threshold, first reported in Result N, is in large part this arithmetic, not the channels becoming more independent. -- no decomposition of the fall into an arithmetic and a residual part is computed anywhere in the transcript, and Result N's fall is of the conditional c on the 131,722 common support while this transcript measures the marginal c on N=134,565."
+        ],
+        "overreach": [
+          "This does not overturn Results L, M, N or O: after conditioning on the five admissible confounders the coefficient still exceeds 1 across detectors, thresholds and plausible unmeasured confounding. -- nothing conditional and no confounding sensitivity is in result_p.txt."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "Raising a score threshold mechanically converts detections to misses on both channels, so P(both) rising and c falling toward 1 as P_A, P_B approach 0.6-0.7 is close to a tautology of the estimand rather than a finding; the transcript quantifies no split between arithmetic and coupling, and its own excess column declines at 0.5 for PointPillars, contradicting 'never follows c down'."
+      },
+      {
+        "document": "docs/RESULT_Q_CAMERA_AXIS_AND_MODALITY_GRID.md",
+        "transcript": "evidence/measurement/result_q.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "Result H found same-modality coupling far above cross-modality at the *raw* level; at the *conditional* level that effect turns out to be almost entirely a **lidar-lidar** effect. -- no raw-level (Result H) numbers are in the transcript, so 'almost entirely' cannot be checked.",
+          "FCOS3D (r101, DCN, finetune) was run on the 6,019 val samples in a pinned container. -- 'pinned' is not in the transcript, which says only 'the container's mmdet3d'."
+        ],
+        "overreach": [
+          "Both reproduce the published figure to within 0.13, so the detection is correct. -- the transcript records mASE 0.80 vs 0.26 and mAOE 1.68 vs 0.39, i.e. box size and yaw are wrong; only centre-distance scoring is shown correct.",
+          "The failure coupling is governed by **shared failure drivers**, not by same-versus-cross modality as such. -- causal language; no driver is measured in the transcript, only six coefficients.",
+          "No pairing, not even two different modalities, reaches the independence a redundancy safety argument assumes; the best a second modality does is bring the coefficient down to the ~1.07-1.15 band, never to 1.0. -- the transcript's own threshold sweep shows the FCOS3D pairs at 1.007 and 1.006 at score >= 0.5, which the document omits.",
+          "The coupling has now been shown robust to the lidar detector, the camera detector, the operating threshold, and plausible unmeasured confounding. Every axis a reviewer can cheaply attack is answered on evidence. -- 'plausible unmeasured confounding' is not established by an E-value, and 'every axis' is unbounded."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "The document omits the transcript's 'CAMERA AXIS FULL DEPTH' section, in which the two FCOS3D cross-modality pairs attenuate to 1.007 and 1.006 at score >= 0.5 with no confidence intervals printed and only a bare 'yes (10/10)' asserting exclusion of 1.0, so the camera axis is 'closed' at the 0.30 reference point but is within rounding of independence at strict thresholds."
+      },
+      {
+        "document": "docs/RESULT_R_ACCURACY_COUPLING.md",
+        "transcript": "evidence/measurement/result_r.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [],
+        "overreach": [
+          "**A small, robust residual survives.** At every one of the four matched miss-rate levels the ordering is perfectly monotonic in accuracy, and at the extremes the intervals separate (P_B = 0.40: PointPillars 1.116 [1.106, 1.124] vs CenterPoint 1.141 [1.129, 1.149], no overlap). -- Megvii's interval overlaps both neighbours at every level; PointPillars and CenterPoint overlap at P_B = 0.55 ([1.073,1.087] vs [1.084,1.098]) and touch at 0.50 (1.098); the 'robust' ordering is a point-estimate ordering.",
+          "So there is a genuine effect, the strongest detector does fail together with the camera slightly more than the weakest, even at equal miss rates, but it is an order of magnitude smaller than the naive comparison implied. -- 0.120 against 0.025-0.012 is a factor of 5 to 10, not uniformly an order of magnitude; and 'genuine effect' is stated on separated intervals at two of four levels.",
+          "**About four fifths of the apparent accuracy-coupling trend is the Result P marginal artifact.** Match the miss rates and most of it disappears. -- the transcript computes no decomposition; four fifths is 1 - 0.02/0.12 taken from a spread that ranges 0.012-0.025 depending on the level chosen."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "Matching P_B forces CenterPoint from its default 0.213 miss rate to 0.40-0.55, a far stricter operating point where Result-N-type attenuation of the conditional coefficient also acts, so the matched comparison removes the marginal artifact and an unquantified threshold effect together, and the surviving 0.012-0.025 residual rests on adjacent intervals that overlap at three of four levels."
+      },
+      {
+        "document": "docs/RESULT_S_CORRECTED_SAFETY_CALCULUS.md",
+        "transcript": "evidence/measurement/result_s.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "And it is a **lower bound** (this direction is contradicted by Result D's transcript ...) -- result_s.txt states 'This is a LOWER bound'; the 'about 3 percent' and the contradiction come from a transcript outside the one retained for this result.",
+          "That register entry lists five conditions that must hold before any evidence-budget figure returns ... -- none of the five conditions, the register entry, or the 2026-08-29 withdrawal is in the transcript."
+        ],
+        "overreach": [
+          "What survives is qualitative and conditional: from `P <= 6 c p^2` the admissible per-channel rate shrinks as `1/sqrt(c)` ... The direction is retained. -- the document's own grounds 2, 4 and 5 mean the measured c is not the corollary's c, which undermines the sign as much as the magnitude.",
+          "The constant `6` and the `sqrt(c)` scaling are taken from the retained primary text; the coefficient is a lower bound; ... -- the document asserts 'the coefficient is a lower bound' here while stating earlier that this direction is contradicted.",
+          "Lifecycle status: `corrected` ... retained as `proposed`. -- the header and the Non-claims section give two different lifecycle states."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "Every figure the transcript prints is faithfully reproduced, but the transcript supplies no derivation of N = 1/p or of Corollary 3's applicability to a two-channel pair scored on all annotated objects, and the document withdraws the numbers on five grounds that apply with equal force to the retained 'direction', while simultaneously calling the coefficient a lower bound and saying that direction is contradicted."
+      },
+      {
+        "document": "docs/RESULT_Z_SCENE_BLINDNESS_MONITOR.md",
+        "transcript": "evidence/measurement/result_z.txt",
+        "headline_verdict": "reproduced",
+        "unsupported_sentences": [
+          "... how many agree (same class within 2 m) ... -- the 2 m agreement radius appears nowhere in result_z.txt.",
+          "The metadata archive is the pinned `meta.tgz` (SHA-256 ...). Transcript ... re-runs byte-identically (three runs). -- neither the hash nor the three-run re-execution is recorded in the transcript."
+        ],
+        "overreach": [
+          "For two sensors, the jointly missed object produces no output at all; the only trace it leaves is indirect, through the scene's clutter, and clutter is what the proportional baseline already reads. -- a mechanism stated as fact; the transcript tests one linear Poisson model and does not establish that clutter is the only trace.",
+          "The number of objects the fusion reports already carries a Spearman correlation of 0.67 with the number it is jointly blind to; crowded frames hide more. -- 'crowded frames hide more' is a causal gloss on a correlation of 0.673 on one held-out split."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "The monitor beats the proportional baseline on held-out AUC (0.851 vs 0.829) and Spearman (0.684 vs 0.673), and the five-fold spread of +/- 0.08 Spearman on 150 scenes cannot resolve an increment of that size either way, so 'no demonstrated value over density' is a statement about statistical power, not about the monitor, and the transcript prints no held-out interval to settle it."
+      },
+      {
+        "document": "docs/RESULT_AA_DISAGREEMENT_MONITOR.md",
+        "transcript": "evidence/measurement/result_aa.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "**The two-sensor conjecture is now unsupported on two estimands** (with linear models; Result AD later found ...). -- Result AD and 'three of four configurations' are not in result_aa.txt.",
+          "a disagreement, an object reported by exactly one channel (no same-class detection of the other channel within 2 m). -- the transcript defines realness with a 2 m radius but does not state the disagreement radius.",
+          "Transcript ... re-runs byte-identically (three runs). -- not recorded in the transcript."
+        ],
+        "overreach": [
+          "**Cross-channel context adds nothing measurable.** ... -- on the held-out lidar-only detections context raises AUC 0.835 to 0.844 and lowers Brier 0.167 to 0.163, and on camera-only it lowers AUC 0.653 to 0.648; the transcript gives no spread for the held-out per-channel rows, so 'nothing measurable' is asserted only for the pooled cross-validation.",
+          "The strongest single context feature, distance to the nearest other-channel detection, reaches 0.61 alone and is absorbed by the object's own attributes. -- 'absorbed' is an inference; no ablation showing that feature's contribution given own features is in the transcript.",
+          "At the scene level (Z) and at the object level (AA), ... the coupling-aware form buys nothing over what the stack already knows. -- Result Z's numbers are not in this transcript, and the document's own parenthetical concedes a boosted model found the increment."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "The headline 'context adds nothing' is a property of a logistic model with context entered linearly: the per-feature AUCs of 0.55-0.61 show real signal, the lidar-only held-out rows gain +0.009 AUC with no interval printed, and the document itself admits a boosted model later recovered the increment, so the transcript supports 'a linear model does not use context', not 'context adds nothing'."
+      }
+    ],
+    "sensor_b": [
+      {
+        "document": "docs/RESULT_AB_SENSOR_MONITOR_REPLICATION.md",
+        "transcript": "evidence/measurement/result_ab.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "Result Z / Result AA baseline rows are not in result_ab.txt",
+          "lone lidar detections are far more predictable from their own attributes than lone camera detections [on Mapillary x PointPillars the own-features AUC is 0.739 camera-only vs 0.743 lidar-only]",
+          "at the scene level it is negative as often as positive [Spearman increment negative on all three configurations (-0.022, -0.024, -0.001); AUC increment negative on two of three (-0.004, -0.007, +0.027)]"
+        ],
+        "overreach": [
+          "The per-channel realness result of AA replicates in shape [not on Mapillary x PointPillars, 0.739 vs 0.743]"
+        ],
+        "missing_caveats": [
+          "The target counts annotated objects both channels missed, a lower bound on what is present.",
+          "Realness is defined by a same-class annotated object within 2 m, a labeling matcher self-checked against the validated per-object matcher."
+        ],
+        "strongest_objection": "'Inside the fold spread' is read one-sidedly: on every configuration the scene-level monitor's Spearman is below the proportional baseline and the per-object context increment is at most 0.004, and on Mapillary x PointPillars the camera/lidar own-feature AUCs are 0.739 and 0.743, so 'replicates in shape' is contradicted by one of the three configurations."
+      },
+      {
+        "document": "docs/RESULT_AD_NONLINEAR_SENSOR_MONITOR.md",
+        "transcript": "evidence/measurement/result_ad.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "With the linear model (AA, AB) the same increments were 0.000 to 0.004. [not in result_ad.txt]",
+          "hyperparameters not in the transcript; imported NON-CLAIMS blocks still say a Poisson regression / logistic and isotonic models are fitted",
+          "The linear null at the object level was a model limitation. [linear values not in this transcript]"
+        ],
+        "overreach": [
+          "The context interacts with class and range in a way a linear model could not use. [no interaction analysis]",
+          "the fourth, at the 0.50 operating point, shows an increment of 0.039 AUC against a spread of 0.03 to 0.04, and is not counted. [+0.022 against 0.009 counted at object level; +0.039 exceeds the monitor's own 0.032 spread here]",
+          "The scene-level null stands."
+        ],
+        "missing_caveats": [
+          "target is a lower bound on what is present",
+          "realness labeler self-check",
+          "the transcript's NON-CLAIMS describe the fitted model as Poisson / logistic, stale for the boosted run"
+        ],
+        "strongest_objection": "The verdict rule is applied asymmetrically: +0.022 AUC against a 0.009 spread is 'outside spread' at the object level, but +0.039 AUC against the monitor's 0.032 spread at the 0.50 scene level (held-out 0.881 vs 0.840, MAE 5.34 vs 5.61) is 'not counted', so 'still not at the scene level' depends on a rule that appears nowhere in the transcript."
+      },
+      {
+        "document": "docs/RESULT_AF_SENSOR_JURY.md",
+        "transcript": "evidence/measurement/result_af.txt",
+        "headline_verdict": "reproduced",
+        "unsupported_sentences": [
+          "The first draft resampled whole tracked instances ... [not examinable; transcript holds only the corrected run]",
+          "re-runs byte-identically (two runs after the correction) [not examinable]",
+          "The eligible-only denominator gives 2.20 [2.17, 2.23] of 4 and the same ordering throughout. [three-channel juries tie at 1.95 of 3 on the eligible set where they differ on all objects]"
+        ],
+        "overreach": [
+          "Four sensors provide the joint-failure protection of about two. ['protection' is a safety reading of a descriptive marginal coefficient]",
+          "every four-way miss occurs 4.5 times as often as independence predicts [a rate ratio, not every miss]",
+          "Beside the LLM juries ... the sensor jury sits in the same range in the same quantity. [compares of 4 with of 6 and of 7 with no stated criterion]"
+        ],
+        "missing_caveats": [
+          "Miss is the validated matcher's absence of a match at 0.30"
+        ],
+        "strongest_objection": "Effective independence is a marginal statistic that moves with the miss rates themselves (the jury includes a 61.6%-miss camera), so '2.10 of 4' cannot be read as a property of sensor coupling rather than of the 0.30 operating point, and setting it beside 3.60 of 7 and 1.28 of 7 compares quantities on different jury sizes."
+      },
+      {
+        "document": "docs/RESULT_AG_SENSOR_MONITOR_TRANSFER.md",
+        "transcript": "evidence/measurement/result_ag.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "Result X showed the LLM monitor transfers across juries on one task. [not in result_ag.txt]",
+          "The sensor monitor and the LLM monitor have the same transfer law. [no LLM numbers]",
+          "no refit-free fix has been found [no fix tried in the transcript]"
+        ],
+        "overreach": [
+          "the new camera's lone detections are read nearly as well as a refit would [0.714 vs 0.752 is a 0.038 gap]",
+          "Swapping the lidar costs 0.072 and breaks calibration: PointPillars' scores mean something different [causal mechanism not measured]",
+          "Changing the operating point costs 0.041, because the disagreement population itself changes ['because' untested]",
+          "The instrument is portable across like channels and must be calibrated for the semantics it reads. [a general law from one swap each]",
+          "the lidar channel, which carries most of the realness signal, is unchanged"
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "The 'transfer law' is confounded with channel importance: the swapped camera is the channel the monitor barely uses (in-domain camera-only AUC 0.772 vs lidar-only 0.893), so P2's small loss is equally explained by 'the changed channel didn't matter' as by 'camera scores keep their meaning', and nothing in the transcript separates the two."
+      },
+      {
+        "document": "docs/RESULT_AH_GHOST_COINCIDENCE.md",
+        "transcript": "evidence/measurement/result_ah.txt",
+        "headline_verdict": "reproduced",
+        "unsupported_sentences": [
+          "Result AH2 bounds this threat ... [not in result_ah.txt]",
+          "Replicated the same day ... [not in result_ah.txt]",
+          "The time-shift null excludes the 1,173 keyframes whose ego moved under 0.5 m. [transcript: 3756 of 5953 keyframes have a heading and a partner, i.e. 2197 excluded, of which 1173 lack a heading]",
+          "those are the classes whose small, repeated instances are most plausibly under-annotated [not in the transcript]",
+          "The car, pedestrian and truck rows, where annotation is most complete [not in the transcript]"
+        ],
+        "overreach": [
+          "| same, within-scene time-shift null | 2.52% | [1.33, 3.92] | [placed under the 15.25% all-keyframe observed row; the transcript pairs 2.52% with 15.58% on the 3756-keyframe subset]",
+          "a redundancy argument that assumed independent ghosts assumed something further from the data than the miss assumption was. [miss coefficients use a different null]",
+          "phantom objects at the same places, at the same instants ['phantom' not established for barrier and traffic-cone classes under the reference-error caveat]"
+        ],
+        "missing_caveats": [
+          "the announced 180-degree null's outcome (0.67% [0.48, 0.92]; c_ghost 22.73 [17.09, 30.80]) is not reported in the document"
+        ],
+        "strongest_objection": "Because a ghost is defined against an annotation set of unknown completeness and the highest-coincidence classes (barrier 40.46%, traffic cone 26.40%) are the ones most plausibly under-annotated, the transcript cannot separate shared hallucination from shared correct detection of unannotated objects, and the load-bearing time-shift coefficient rests on 3756 of 5953 keyframes with a band the document sets beside an observed rate computed on a different keyframe set."
+      },
+      {
+        "document": "docs/RESULT_AH2_GHOST_PERSISTENCE.md",
+        "transcript": "evidence/measurement/result_ah2.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "'seen by the camera next keyframe' is not in the transcript row label",
+          "as Result AH's time-shift null already indicated [not in result_ah2.txt]",
+          "'six-fold' not in result_ah2.txt"
+        ],
+        "overreach": [
+          "At least half of the coincident ghosts are momentary. [band [46, 64] includes values below half]",
+          "Coincident ghosts are more persistent than lone ghosts. 46 percent against 39 and 30. [coincident band [35.9, 53.5] almost wholly overlaps the lone-camera band [35.8, 42.7]]",
+          "the momentary share is a lower bound on shared hallucination [a momentary coincident ghost may be a real unannotated moving object or an annotation gap]",
+          "If every persistent coincident ghost were an unannotated real object, the coefficient ... would not reach 1. [bound stated without computation]",
+          "An unannotated static object would recur at the rate of static annotated objects seen by the camera, about 61 percent, or of true detections, 77 percent. [single-channel recurrence rates, whereas coincident-ghost recurrence requires both channels to re-fire within 2 m]"
+        ],
+        "missing_caveats": [
+          "Ego-static keyframes are included (map coordinates do not depend on ego motion)."
+        ],
+        "strongest_objection": "The reference rates are single-channel recurrence rates, whereas a coincident ghost recurs only if both channels re-fire within 2 m, so the 46% vs 61-77% gap may be the conjunction penalty of a stricter recurrence event rather than evidence that the ghosts are momentary."
+      },
+      {
+        "document": "docs/RESULT_AH3_GHOST_REPLICATION.md",
+        "transcript": "evidence/measurement/result_ah3.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "AH row not in result_ah3.txt",
+          "Result AH2's finding ... [not in result_ah3.txt; AH2's band includes values below half]"
+        ],
+        "overreach": [
+          "The finding does not depend on the camera, the lidar, or the operating point. [one alternative per factor; coefficient ranges 4.60 to 9.80]"
+        ],
+        "missing_caveats": [
+          "per-configuration time-shift coverage (2666, 3492 and 1093 of 5953 keyframes) and the P3 class table (car 4.74, truck 4.63, bicycle 2.96 vs c_real 7.93) are not reported"
+        ],
+        "strongest_objection": "On Mapillary x PointPillars the well-annotated classes coincide less than true detections do relative to the rotation null (car 4.74, truck 4.63, bicycle 2.96 versus c_real 7.93), so the replication there rests on barrier/pedestrian/cone rows and a time-shift coefficient 4.60 [3.43, 9.69] whose point estimate sits exactly at AH's lower bound, while at 0.50 the null uses 1093 of 5953 keyframes and its band spans [3.82, 24.33]."
+      },
+      {
+        "document": "docs/RESULT_AJ_SENSOR_JURY_OPERATING_POINTS.md",
+        "transcript": "evidence/measurement/result_aj.txt",
+        "headline_verdict": "narrowed",
+        "preregistration_verdicts": {
+          "AJ-1": "supported; lowest 0.50 pair 1.04 [1.04, 1.04] excludes 1 only at the second decimal",
+          "AJ-2": "supported at 0.10; falsified at 0.50 by two pairs: cameras 1.88 [1.87, 1.90] exceed MxM 1.53 and MxPP 1.60, and lidars 1.56 [1.55, 1.57] exceed MxM 1.53 [1.51, 1.54] with non-overlapping bands",
+          "AJ-3": "supported",
+          "AJ-4": "not examinable from result_aj.txt alone: the 0.30 values it compares against are in result_af.txt",
+          "AJ-5": "supported"
+        },
+        "unsupported_sentences": [
+          "0.30 values (miss rates, inflations) are not in result_aj.txt",
+          "every one of twelve pair comparisons fell the predicted way [six use 0.30 values from another transcript]",
+          "the strongest evidence yet that P describes how the coefficient behaves [comparative claim not in the transcript]"
+        ],
+        "overreach": [
+          "It saturates toward the jury size as miss rates approach 1 [the transcript shows the quantity exceeding the jury size: FCOS3D x PointPillars 2.02 [2.01, 2.04] of 2]",
+          "the reason is visible in the bytes. At 0.50 the second camera misses 94 percent of objects. [does not explain why the two-lidar pair also exceeds Mapillary x Megvii]",
+          "same-kind pairs are the least independent when the channels operate in comparable regimes [at 0.50 the lidars and Mapillary are in comparable regimes and the lidar pair is still not below every cross-kind pair]"
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "The document attributes the AJ-2 falsification entirely to the 94%-miss camera, but at 0.50 the two-lidar pair (1.56 [1.55, 1.57] of 2) also exceeds the Mapillary x Megvii cross pair (1.53 [1.51, 1.54]) with non-overlapping bands, so the narrowed law 'same-kind pairs are least independent in comparable regimes' is contradicted by the very transcript it is drawn from; and AJ-4 cannot be verdicted from the transcript alone."
+      }
+    ],
+    "human": [
+      {
+        "document": "human-channel/H1_DRIVER_OBSERVATION.md",
+        "transcript": "human-channel/evidence/h1_driver_observation.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "It is the observed-window proportion, not the glance at the precipitating instant, which needs the reaction sync from the 69-column reduced file and is the next refinement.",
+          "Events cluster within about 100 drivers; proper inference on the crash-versus-baseline difference needs driver-level clustering, which needs the driver mapping and is not done here, so the table is descriptive, not an inferential test."
+        ],
+        "overreach": [
+          "In normal driving 39% of windows are eyes-forward the whole time; in conflicts that collapses to about 5%, and to 1.7% in crashes.",
+          "Only crashes (28.3%) separate clearly, about 1.6 times baseline.",
+          "This is the human-side analogue of a channel that observed and still missed, and it is exactly what a driver-monitoring safety case that equates eyes-on-road with attentive-and-safe has to reckon with."
+        ],
+        "missing_caveats": [
+          "None of the transcript's NON-CLAIMS items is missing; but the transcript's 'No Video' figures (6.6% of events, 5.1% of crashes contain unknown time) and the mean/median gap (19.0% vs 14.2%) are dropped, and the severity split lists 727 near-crashes while the analysis uses 726 without the document noting the discrepancy."
+        ],
+        "strongest_objection": "The headline contrast (39.1% of baseline epochs fully eyes-forward vs 4.5% of conflict windows) is a comparison of 'entire window' proportions across baseline epochs and event windows whose durations the transcript never states, so a longer event window alone would mechanically depress the eyes-forward-throughout fraction and the 'collapse' cannot be attributed to conflict rather than to window length."
+      },
+      {
+        "document": "human-channel/H2_GLANCE_AT_CONFLICT.md",
+        "transcript": "human-channel/evidence/h2_glance_at_conflict.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "In the 100-Car data the eyeglance sequence ends exactly at the reduced file's `event_end` for every event (verified, offset 0), so `event_end` is the conflict climax and `[event_start, event_end]` is the few-second reaction window.",
+          "Crashes carry 36.0% off-road time in the reaction window against 22.9% for near-crashes, a wider separation than the whole-window figures in H1 (28.3% vs 18.2%).",
+          "This independently reproduces the direction of Victor et al. (2018), that a substantial share of drivers are looking toward the conflict and still fail, from a different derivation on public data."
+        ],
+        "overreach": [
+          "Gaze direction is a weak proxy for detection.",
+          "Focusing on the seconds that matter strengthens the inattention-severity relationship, as it should.",
+          "A safety argument that treats eyes-on-road as attentive-and-safe is contradicted here: two thirds of crashes occurred with the driver's gaze forward.",
+          "Eyes-on-road is necessary, not sufficient."
+        ],
+        "missing_caveats": [
+          "'No Video kept as unknown': the document's table has no unknown column and never reports the 1.1% / 1.7% unknown-gaze share at the instant."
+        ],
+        "strongest_objection": "The 'conflict instant' is defined as event_end, the last sync of the reduced window, and the transcript contains nothing establishing that this is the precipitating moment rather than the end of the evasive maneuver, by which time a driver who had looked away would already have re-oriented forward, so the 70% figure may measure post-recognition gaze and overstate 'looking forward when it happened'."
+      },
+      {
+        "document": "human-channel/H3_OBSERVATION_RESPONSE_JOINT.md",
+        "transcript": "human-channel/evidence/h3_observation_response_joint.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "(Band added 2026-09-06 by H7: 1.46 with an event-resampled 95% interval of [1.04, 1.90] over all events; the crash and near-crash subgroups do not exclude 1.)",
+          "This is the same shape, and nearly the same magnitude, as the conditional camera-lidar coefficient."
+        ],
+        "overreach": [
+          "Part of `c > 1` is the obvious causal link, eyes off means no chance to react.",
+          "Two automation channels fail together beyond independence. The human's two channels fail together beyond independence. The redundancy a safety case leans on is violated on both sides of the windshield, wherever it has been measured.",
+          "The coefficients on the crash subset rest on small counts (n=56, both-fail 8, looked-no-act 13) and are illustrative, not an inferential test."
+        ],
+        "missing_caveats": [
+          "'c is illustrative on these counts, not an inferential test' is stated by the transcript for the coefficient as a whole; the document confines it to the crash subset and, in point 1, asserts 95%-level support for the all-events coefficient from a source outside this transcript."
+        ],
+        "strongest_objection": "The 2x2 is computed only on events that already became crashes or near-crashes, so it conditions on the outcome; selection on a common effect of not-looking and not-reacting can manufacture c > 1 with no latent coupling at all, and since 'no reaction' is itself a near-definition of crash severity (37.5% in crashes vs 5.0% in near-crashes), the pooled 1.46 is not evidence that a looking driver fails to act beyond independence."
+      },
+      {
+        "document": "human-channel/H4_DCPT_TAKEOVER.md",
+        "transcript": "human-channel/evidence/h4_dcpt_takeover.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "The trial identifiers encode the task, participant, and takeover time, so this result is derived from the 60 KB metadata table alone, with no large media download.",
+          "At highway speed a 0.47 s delay is on the order of 15 m of additional travel before the human has control.",
+          "Trials cluster within 40 participants, and the figures here are descriptive across trials, not a participant-clustered inferential test, though the visual-manual versus no-task gap is large relative to its spread."
+        ],
+        "overreach": [
+          "The human-as-backup assumption a Level 3 safety case relies on is weakest exactly for the tasks people actually do on a phone.",
+          "The human's observation state, what they were absorbed in, predicts their response quality, the takeover time.",
+          "This is the observation-to-response link H3 measured in 100-Car, now in L3 automation, the setting the mission is about."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "'Watching video' (n=120, mean 2.01 s), a task with eyes off the road and on the center screen, is silently excluded from both groups and is statistically indistinguishable from no task (1.99 s), which directly undercuts the transcript's own line 'Eyes/hands off the road slows the takeover' and shows the +0.47 s contrast depends on which four tasks were labelled visual-manual."
+      },
+      {
+        "document": "human-channel/H5_CROSS_AGENT_JOINT.md",
+        "transcript": "human-channel/evidence/h5_cross_agent_joint.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "| **cross-agent coefficient c** | **0.972** (re-measured 2026-09-06 with a clip-clustered band, H5b: 0.962 [0.927, 0.993]) |",
+          "The coefficient is indistinguishable from 1, and the correlation is essentially zero, stable from a 200-object pilot to the 13,904-object run.",
+          "The object set is the detector's detections at score `>= 0.3`.",
+          "| Two sensors, camera x lidar (Result L) | 1.15 | fail together |",
+          "| One human, observation x response (Result H3) | 1.46 | fail together |"
+        ],
+        "overreach": [
+          "It is that **same-kind redundancy fails and different-kind redundancy roughly holds.**",
+          "Two sensors share a substrate, the point return, and so share their blind spots. A human's eyes and hands share one attention budget, and so fail together when it is spent.",
+          "That is the one pairing where the independence a safety case assumes survives contact with data, and it is exactly the human-automation teaming that Level 2 and Level 3 systems rely on.",
+          "That omitted set can only push dependence up, so `c ~ 1` is a floor on cross-agent dependence, not a certificate of independence.",
+          "Results H3 and H4 show a distracted human's own channels collapse and takeover slows, so the independence is conditional on an attending human, not a property of the pairing under distraction.",
+          "The safety reading is specific: credit the human-automation redundancy only under the conditions where it was independent here, an attending human and objects the machine can at least partially see, and never as a blanket independence."
+        ],
+        "missing_caveats": [
+          "None of the transcript's NON-CLAIMS items is missing; the document does omit that the human-miss median is 0.005 (near zero), which the transcript records."
+        ],
+        "strongest_objection": "P(human miss) is 50.0% by construction of a median split whose median is 0.005, so 'human miss' means gaze mass in the box below a near-zero threshold, a quantity governed largely by box size and position rather than attention, and a Pearson correlation of -0.022 between that and a detector score is evidence that two weak measurements are unrelated, not that a human and a machine are independently blind; with no interval in the transcript, 'indistinguishable from 1' is asserted, not computed."
+      },
+      {
+        "document": "human-channel/H5B_CROSS_AGENT_INTERVAL.md",
+        "transcript": "human-channel/evidence/h5b_cross_agent_interval.txt",
+        "headline_verdict": "reproduced",
+        "unsupported_sentences": [
+          "H5 reported the cross-agent coincidence coefficient, automation miss by human inattention on the detector's own detections, as a point estimate of 0.972 on 13,904 objects, with no band; H6 had one.",
+          "This is the same measurement, unchanged in every definition (detector and weights, score floor 0.3, operating threshold 0.5, driving classes, gaze alignment, median split), with the clip id recorded per object so a clip-clustered bootstrap band can be put on the coefficient, and the raw per-object rows saved.",
+          "the band sits pointedly below every same-kind coefficient in the program (sensors 1.10 to 1.29 with bands of a hundredth, LLM pairs 1.3 to 2.3, the human's own channels 1.46 [1.04, 1.90]).",
+          "H5's retained run covered 651 frames and 13,904 objects; this run, with the arguments recorded (120 clips at 0.4 frames per second), covered 519 frames and 11,104 objects.",
+          "The two coefficients, 0.972 and 0.962, and H6's 0.981 [0.962, 0.998], agree within the band.",
+          "A second full pass with identical arguments on the same machine produced a byte-identical transcript, including every detector output that feeds the 2x2 table."
+        ],
+        "overreach": [
+          "The two coefficients, 0.972 and 0.962, and H6's 0.981 [0.962, 0.998], agree within the band.",
+          "The human-machine cell holds with a band that excludes fail-together."
+        ],
+        "missing_caveats": [
+          "'c > 1 includes shared scene difficulty, not claimed as pure latent dependence' is in the transcript's NON-CLAIMS and absent from the document.",
+          "The band is computed on 117 clips although the run covers 120; neither the transcript nor the document says why three clips drop out."
+        ],
+        "strongest_objection": "The band [0.927, 0.993] is conditional on a median split fixed at 0.005 and not resampled, so it propagates clip-sampling noise but none of the dichotomization uncertainty, and with P(human miss) pinned at 50% by construction the 'exclusion of 1' is a statement about one specific cut of a near-zero gaze-mass distribution, not about human and machine blindness."
+      },
+      {
+        "document": "human-channel/H6_TOTAL_BOTH_MISS.md",
+        "transcript": "human-channel/evidence/h6_total_both_miss.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "BDD-A carries no ground-truth boxes, and BDD100K's labels cannot be joined to it (the clips are renumbered with no mapping, confirmed from the data).",
+          "| Two sensors, camera x lidar | 1.15 [1.14, 1.16] | worse than independent, fails together |",
+          "| One human, observation x response | 1.46 | worse than independent |",
+          "| Human x automation, uncertain miss (H5) | 0.97 | approximately independent |"
+        ],
+        "overreach": [
+          "automation miss on a reference object: no deployed box overlaps it at IoU `>= 0.5`, i.e. the deployed detector gives it no detection at all",
+          "The edge detector is totally blind to 84.5% of the objects a strong model confidently finds, which is the deployment reality for cheap perception.",
+          "The robust, load-bearing claim is the asymmetry: **same-kind redundancy is robustly and substantially above 1; the human-machine pairing is not.**",
+          "Two sensors share a substrate and share their blind spots. A human's eyes and hands share one attention budget. But a human and a machine are built and fail differently, so their misses do not concentrate on the same objects. The redundancy worth building is the one across kinds.",
+          "It holds for an engaged human; the gaze here is attentive-observer data, and Results H3 and H4 show a distracted human's own channels collapse, so the independence is conditional on attention.",
+          "Credited as a blanket independence, it would be an overclaim; credited under those conditions, it is the one redundancy the data supports."
+        ],
+        "missing_caveats": [
+          "'descriptive, not clustered' is stated in the transcript's NON-CLAIMS and dropped from the document (the transcript is itself inconsistent, reporting a clip-clustered CI alongside that phrase, and the document does not flag this).",
+          "The CI is on 96 clips of 100; neither file explains the four missing clips."
+        ],
+        "strongest_objection": "An 84.5% total-miss rate for SSDLite at score 0.25 on objects Faster R-CNN finds at 0.6 is implausible as genuine blindness and far more consistent with a pipeline defect (resolution, class mapping, or IoU matching counting mislocalized boxes as 'no detection at all'); moreover with marginals of 84.5% and 50% the Frechet bounds confine c to roughly [0.82, 1.18] regardless of any real dependence, so 'approximately independent' is nearly forced by the marginals and cannot be compared on the same scale as same-kind coefficients whose marginals permit c up to 2 or 3."
+      },
+      {
+        "document": "human-channel/H7_INTERVALS.md",
+        "transcript": "human-channel/evidence/h7_intervals.txt",
+        "headline_verdict": "reproduced",
+        "unsupported_sentences": [
+          "H1 to H4 report point estimates, and the law table quotes the human's eyes-by-hands coefficient beside sensor coefficients that carry bands.",
+          "The law table has quoted this cell next to sensor coefficients whose bands sit at plus or minus 0.01; that comparison is now stated with the band.",
+          "Transcript `evidence/h7_intervals.txt` re-runs byte-identically (three runs).",
+          "Parsing and definitions are imported from the H3 and H4 tools unchanged."
+        ],
+        "overreach": [
+          "Two thirds of conflicts with the driver looking forward at the instant has a band of a few points, and the looked-forward-yet-no-reaction cell in crashes, 23 percent, has a band of [12, 36] percent.",
+          "The Level 3 distraction effect survives participant clustering."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "The lower bound of 1.036 that lets the headline 'excludes independence' stand is an event-resampled percentile the transcript itself says understates uncertainty if events cluster within drivers, so any non-trivial intra-driver correlation across the ~770 events would widen the band over 1 (the near-crash subgroup already reaches 0.990); separately, the H2 gaze-forward points here (0.711, 0.690 on 775/58 known-gaze events) differ from the H2 document's 70.2%/67.8% because of a different denominator, which the document never reconciles."
+      }
+    ],
+    "llm": [
+      {
+        "document": "llm-generalization/RESULT_T_LLM_INDEPENDENCE.md",
+        "transcript": "llm-generalization/evidence/result_t.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "(Narrowed on 2026-09-06 by Result AC ...)",
+          "exactly as two same-modality sensors fail together more than a camera and a lidar",
+          "just as the camera-lidar coefficient stayed above 1 after conditioning on scene difficulty",
+          "| sensors | two lidars, c = 1.29 | camera x lidar, c = 1.10 to 1.15; human x machine, c ~ 1 |",
+          "| the human | eyes x hands, c = 1.46 | (n/a) |",
+          "Result S showed required validation evidence scales as `sqrt(c)` per credited independent channel.",
+          "joined on 13,937 questions by a hash of the example"
+        ],
+        "overreach": [
+          "The coupling survives conditioning. Conditioned on question difficulty measured by the other models (leave the pair out), the coefficient falls but stays above 1 (1.097)",
+          "Similar systems share their blind spots; genuinely different systems are more independent. The same law, in a different domain.",
+          "The independence assumption is a load-bearing fiction wherever redundancy is claimed, and it fails most for the systems that share the most.",
+          "Any argument that convenes multiple LLMs to cross-check a safety-relevant judgment, and credits their agreement as independent confirmation, is over-crediting by the same factor, and by more when the models share a lineage.",
+          "Half the votes you convened are, in effect, echoes."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "The only coupling that is not shared item difficulty is the conditional coefficient, whose mean is 1.097 but whose per-pair range dips to 0.971 (below independence), and 'difficulty' is itself estimated from the other five models' errors, so the residual is measured against a proxy built from the same coupled jury; the three-domain unification table and every sensor/human number are absent from this transcript."
+      },
+      {
+        "document": "llm-generalization/RESULT_U_AGREEMENT_RELIABILITY.md",
+        "transcript": "llm-generalization/evidence/result_u.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "Each model's chosen answer is the argmax of its per-choice log-probabilities",
+          "Result S corrected required validation evidence by `sqrt(c)` per independent channel, and Result T showed a seven-model jury has the effective diversity of 3.6."
+        ],
+        "overreach": [
+          "Coupled models share the same misconceptions, so they concentrate on the same wrong answer, and the ensemble has no way to tell a confident-correct consensus from a confident-wrong one from the outputs alone, unless it accounts for the coupling.",
+          "This is a runtime signal. The quantities above are computed from the models' outputs, with no ground truth.",
+          "A live monitor that knows the measured coupling can correct the confidence it reads from agreement, downweighting consensus among coupled channels.",
+          "the over-crediting is not only in the offline evidence budget, it is in every live decision that trusts agreement, and it is the same coupling in both places.",
+          "When all seven diverse models agree, they are still wrong one time in ten."
+        ],
+        "missing_caveats": [
+          "the independence baseline for shared wrong answers is a simple uniform approximation"
+        ],
+        "strongest_objection": "P(correct | agree) and unanimous-yet-wrong are computed against gold labels, so they are not 'from outputs alone'; and with no independence baseline printed for agreement (the transcript admits only a 'simple uniform approximation'), a 65% pair-average reliability among models whose error rates run 31% to 73% may be exactly what base rates alone predict, so 'over-trusted' is asserted rather than measured."
+      },
+      {
+        "document": "llm-generalization/RESULT_V_DEPLOYED_MONITOR.md",
+        "transcript": "llm-generalization/evidence/result_v.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "The features are channel-agnostic - agreement fraction, per-model confidence margins and their spread, the plurality voters' confidence, vote entropy, and the number of distinct answers",
+          "Calibrated on a training split (8,362 items), evaluated on a held-out test split (5,575 items), with no test label seen at fit time.",
+          "the claim that the same form applies to two sensors was tested on 2026-09-06 ..."
+        ],
+        "overreach": [
+          "so the same monitor form applies to any redundant channels whose outputs carry a choice and a confidence, including two sensors or a human and a machine.",
+          "It is held to the standard a deployed instrument must meet, not just demonstrated once.",
+          "The monitor, having learned the coupling from calibration data, assigns it the risk it actually carries.",
+          "The predicted risk tracks the realized failure rate across the whole range.",
+          "The program's arc is now closed end to end",
+          "a calibrated, output-only risk estimator that corrects the over-confidence, validated out of sample."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "A logistic fit on 8,362 labeled items of the same jury on the same benchmark, tested on the other 5,575, shows only that confidence margins and vote entropy predict error in-distribution (ordinary selective prediction); nothing in the transcript shows that 'coupling' was learned, the lowest band under-predicts risk by almost half (1.6% predicted vs 3.0% realized), and the title 'deployed monitor' is contradicted by the transcript's own 'not a deployed product'."
+      },
+      {
+        "document": "llm-generalization/RESULT_W_SECOND_BENCHMARK.md",
+        "transcript": "llm-generalization/evidence/result_w.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "One model, Falcon, used a different ARC prompt format so its question hashes do not join",
+          "a different domain, science reasoning rather than broad knowledge",
+          "Every element reappears on a harder reasoning benchmark",
+          "exactly as the camera-lidar marginal coefficient was mostly shared scene difficulty with a smaller residual",
+          "The universal law ... are not properties of a single test."
+        ],
+        "overreach": [
+          "When all six diverse models agree on ARC-Challenge they are still wrong 37% of the time, against 10% on MMLU.",
+          "The harder the questions, the more the models share their failures, and the less unanimity means.",
+          "The over-crediting of an LLM jury is, if anything, larger on harder material, which is exactly the material where a safety-relevant judgment matters most.",
+          "Results T, U and V now rest on two benchmarks in two domains, not one."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "The transcript prints no per-model error rates, no per-pair values and no intervals on 1,170 items, so 'harder' is unmeasured, the same-vs-cross gap (1.874 vs 1.733, three Llama pairs vs twelve) and the conditional residual 1.054 are bare point estimates, every cross-benchmark comparison (unanimity 51.9% vs 5.5%, n_eff of 6 vs of 7, 28x vs 14x) is between juries of different size and composition, and the Result V monitor was never run on ARC here despite the consequence section saying it now rests on two benchmarks."
+      },
+      {
+        "document": "llm-generalization/RESULT_X_MONITOR_TRANSFER.md",
+        "transcript": "llm-generalization/evidence/result_x.txt",
+        "headline_verdict": "reproduced",
+        "unsupported_sentences": [
+          "On ARC-Challenge two jury B models and one jury A model use a different prompt format whose questions do not join",
+          "The per-model confidence margins on a 25-shot reasoning task are on a different scale from 5-shot knowledge questions, and the monitor reads that scale as confidence it is not.",
+          "A logistic-regression monitor is fitted; no LLM is executed. Transcript ... re-runs byte-identically (three runs compared)."
+        ],
+        "overreach": [
+          "Recalibrating on the new jury would buy almost nothing.",
+          "The coupling it learned is a property of how redundant channels fail, not of the seven channels it learned it from.",
+          "its discrimination falls to the naive baseline or below it (0.575 against 0.618 for jury A)",
+          "Channel transfer holds; task transfer does not."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "'Transfer across juries' is one alternate jury (X4 is a subset of it, not an independent test) read on the identical 13,937 MMLU items the monitor was fitted on, so channel transfer is confounded with an unchanged item distribution, and the transcript shows recalibration halves the calibration error (ECE 0.032 vs 0.015), which is not 'almost nothing'."
+      },
+      {
+        "document": "llm-generalization/RESULT_X2_LABEL_FREE_NORMALIZATION.md",
+        "transcript": "llm-generalization/evidence/result_x2.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "On the unseen MMLU jury, normalization lowers the AUC from 0.853 to 0.787, and lowers the in-domain ceiling by the same amount.",
+          "one normalization (within-model empirical quantile) was tested, stated in advance, and no other was tried.",
+          "Transcript ... re-runs byte-identically (three runs)."
+        ],
+        "overreach": [
+          "The task failure is not a scale problem.",
+          "Normalizing the margins leaves the ARC transfers at or near the naive baseline in discrimination (0.60 and 0.64 against 0.58 and 0.62) and leaves the calibration broken.",
+          "The output features carry less information about joint failure on that benchmark, and no label-free rescaling recovers what is not there.",
+          "The absolute size of a model's confidence margin, compared across models, is part of what the coupling-aware monitor reads; replacing it with a within-model rank throws that away."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "One normalization was tried and it partly helped on the task transfer it is said not to repair (X2-3 AUC 0.575 to 0.641, above the naive 0.618; every ARC ECE fell, 0.213 to 0.178 and 0.184 to 0.147), while on MMLU it cost discrimination but improved calibration (ECE 0.032 to 0.025), so 'not a scale problem' and 'costs channel transfer' are both broader than the transcript, and the raw in-domain ceiling 0.856 used for 'by the same amount' is not in this transcript."
+      },
+      {
+        "document": "llm-generalization/RESULT_Y_THIRD_BENCHMARK.md",
+        "transcript": "llm-generalization/evidence/result_y_hellaswag.txt",
+        "headline_verdict": "reproduced",
+        "unsupported_sentences": [
+          "Marginal `c` is above 1 for every pairing, same-family above cross-family, the conditional residual above 1",
+          "HellaSwag (the leaderboard's 10-shot commonsense completion task, four choices)",
+          "Transcript ... re-runs byte-identically."
+        ],
+        "overreach": [
+          "On HellaSwag the coupling is almost entirely the questions themselves: the models all fail on the same hard items because the items are hard, not because the models share a lineage.",
+          "Agreement is over-trusted for either reason, and the over-trust grows with the share of unanimous items.",
+          "the seven models are, for the purpose of failing, very nearly one model."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "With a conditional coefficient of 1.028, the 210x inflation and n_eff of 1.28 are almost entirely item-difficulty heterogeneity, so presenting them as a third replication of a channel-coupling 'law' relabels difficulty variance as dependence; the transcript prints only means, so 'above 1 for every pairing' is unverified, and no per-model error rates are shown."
+      },
+      {
+        "document": "llm-generalization/RESULT_AC_LLM_INTERVALS.md",
+        "transcript": "llm-generalization/evidence/result_ac.txt",
+        "headline_verdict": "reproduced",
+        "unsupported_sentences": [
+          "Transcript ... re-runs byte-identically (three runs)."
+        ],
+        "overreach": [
+          "Coupling far above 1, agreement over-trusted, a jury with a fraction of its nominal diversity, and same-family marginal coupling above cross-family, on all three benchmarks, with intervals that never touch the null.",
+          "it is supported on MMLU and not established on the other two, where the whole same-family excess is shared difficulty.",
+          "Something beyond measured difficulty couples the models on every benchmark; on HellaSwag it is small and it is not lineage."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "The 'lineage effect' contrast is three Llama-2 size pairs against 18 cross pairs, one lineage in total, so a per-question bootstrap cannot support any statement about lineage as a variable; an ARC interval of [-0.008, 0.021] means not established, not 'the whole excess is shared difficulty'; and no null is computed for 'agreement over-trusted', so that band does not 'exclude' anything."
+      },
+      {
+        "document": "llm-generalization/RESULT_AE_LEAVE_ONE_BENCHMARK_OUT.md",
+        "transcript": "llm-generalization/evidence/result_ae.txt",
+        "headline_verdict": "narrowed",
+        "unsupported_sentences": [
+          "| MMLU, jury B | 0.683 | 0.686 / 0.367 | 0.853 / 0.032 (Result X) | 0.856 / 0.015 |",
+          "The two-benchmark fit is not better than the one-benchmark fit anywhere that is a fair comparison.",
+          "Three independent attempts to escape task calibration ... failed, one of them into anti-correlation.",
+          "jury sizes differ by benchmark under the non-joining rule, and the features are size-normalized only where they can be",
+          "Transcript ... re-runs byte-identically (two runs)."
+        ],
+        "overreach": [
+          "On HellaSwag the transferred monitor is worse than chance.",
+          "The deployment statement is now complete and closed.",
+          "That is the boundary of the instrument, and it is recorded as firmly as the instrument's successes.",
+          "reading ARC after fitting on MMLU and HellaSwag lands at the naive baseline."
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "The transcript contradicts 'not better than the one-benchmark fit anywhere': on ARC the two-benchmark fit's calibration (ECE 0.052 and 0.108) beats the MMLU-only fit (0.184 and 0.213) and matches the in-domain ceiling (0.054 and 0.068), and its AUC is higher in three of the four fair comparisons (0.598 vs 0.575, 0.386 vs 0.367, 0.510 vs 0.502); the below-chance result is jury A only (jury B on HellaSwag is at chance, 0.510 and 0.502), and the transcript's own non-claim says the MMLU/jury A single-benchmark reference is 'marked so by omission' while printing it (AUC 0.849)."
+      },
+      {
+        "document": "llm-generalization/RESULT_AI_PREREGISTERED_WINOGRANDE.md",
+        "transcript": "llm-generalization/evidence/result_ai_winogrande.txt",
+        "headline_verdict": "reproduced",
+        "unsupported_sentences": [
+          "On a two-choice task the marginal coefficient is bounded above by the reciprocal of the smaller error rate, which is why it sits near 2.5 for every pair",
+          "each about the archive's heterogeneous file formats, not about the predictions",
+          "Transcript ... re-runs byte-identically (two runs)."
+        ],
+        "overreach": [
+          "The law predicted a benchmark it had never seen.",
+          "so the jury has the effective diversity of two",
+          "was committed before any run on Winogrande"
+        ],
+        "missing_caveats": [],
+        "strongest_objection": "All eight verdicts are correctly read from the transcript, but the thresholds are so loose that any set of imperfect base LLMs would pass them, deviation 4 was committed only after a seven-model run had already executed (its means presumably seen) so the retained run is not strictly blind, the stated two-choice bound is wrong as written (P(both wrong) <= min(p_i, p_j) bounds c by the reciprocal of the larger error rate, and that bound is not specific to two choices), and the transcript itself still labels Winogrande 'a third benchmark'."
+      }
+    ]
+  }
+}

@@ -69,6 +69,19 @@ This is the point of the whole workstream in miniature: the interesting-looking 
 against its most likely artifact, the artifact explained most of it, and only the residue that
 survived the check is claimed.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The matched-marginal ordering is a point-estimate ordering: Megvii's interval overlaps both
+   neighbours at every level and the extremes separate at two of four levels. "Small, robust
+   residual" is narrowed to "small residual, separated at two of four matched levels".
+2. "An order of magnitude smaller" is a factor of five to ten; "four fifths" is one reading of a
+   spread from 0.012 to 0.025. Both are stated as ranges now.
+3. Matching the miss rates moves CenterPoint to a far stricter operating point, where threshold
+   attenuation also acts; the matched comparison removes the marginal artifact and an unquantified
+   threshold effect together.
+
 ## Non-claims
 
 Three published or workstream-produced detection outputs on one public split, retained as

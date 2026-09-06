@@ -54,6 +54,18 @@ channels fail together more at the marginal level on all three; and the part of 
 survives difficulty conditioning is a MMLU finding, not a general one. The register carries the
 narrowing.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The same-family contrast is three Llama-2 size pairs against eighteen cross pairs: one lineage.
+   Nothing here supports a statement about lineage as a variable; the finding is about the Llama-2
+   family on MMLU. Stated now.
+2. An ARC interval of [-0.008, 0.021] means not established, which is what the register records;
+   "the whole excess is shared difficulty" is too strong and is withdrawn as a sentence.
+3. No independence null for agreement reliability is computed; its band describes sampling
+   variation, not distance from a null.
+
 ## Non-claims
 
 Public leaderboard outputs, retained as `proposed`. Intervals are question-resampled percentile

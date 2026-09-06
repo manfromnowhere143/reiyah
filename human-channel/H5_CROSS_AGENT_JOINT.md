@@ -81,6 +81,21 @@ the same-kind layers. The safety reading is specific: credit the human-automatio
 under the conditions where it was independent here, an attending human and objects the machine can
 at least partially see, and never as a blanket independence.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. **What the human channel measures.** The human miss is a median split, and the median gaze
+   mass inside a box is 0.005, near zero. The split therefore separates boxes by whether they carry
+   almost any gaze mass at all, a quantity governed in part by box size and position. The
+   coefficient is a statement about that operationalization of attention, not about attention as
+   such, and the document now says so.
+2. **The ceiling the marginals impose.** With P(automation miss) 27 percent and P(human miss) 50
+   percent, the coefficient cannot exceed 2.0 whatever the dependence. A band of [0.93, 0.99]
+   (H5b) sits well below that ceiling, so it carries information; the H6 construction, with an
+   84.5 percent automation miss rate, has a ceiling of 1.18 and carries far less. The human-machine
+   cell of the law rests on H5 and H5b, not on H6.
+
 ## Non-claims
 
 Research-use public data (Xia et al. 2018, BDD-A), retained as `proposed`. Object detections from a

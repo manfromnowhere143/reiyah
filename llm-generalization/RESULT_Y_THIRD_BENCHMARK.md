@@ -56,6 +56,17 @@ across all three. The mechanism statement (same-lineage models share blind spots
 difficulty) is supported on MMLU, modest on ARC, and near the floor on HellaSwag; it is therefore
 stated as benchmark-dependent and not as universal.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. With a conditional coefficient of 1.028, the 210-fold inflation and the effective diversity of
+   1.28 are almost entirely item-difficulty heterogeneity; the document says so in point 2 and the
+   reader is right that presenting them under "the law" risks relabelling difficulty variance as
+   dependence. The marginal quantities are what a jury experiences; the conditional residual is the
+   coupling.
+2. "Every pairing above 1" is verified in Result AC's bands, not in this transcript.
+
 ## Non-claims
 
 Public leaderboard per-question outputs on a third benchmark, retained as `proposed`. Same estimand;

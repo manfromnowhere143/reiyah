@@ -52,6 +52,17 @@ for it, are not properties of a single test. The over-crediting of an LLM jury i
 larger on harder material, which is exactly the material where a safety-relevant judgment matters
 most.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The transcript prints means only, no per-pair values, no intervals and no per-model error
+   rates; Result AC later supplied bands. "Harder" was not measured and is replaced by "a benchmark
+   on which these models score lower".
+2. Cross-benchmark comparisons are between juries of different size and composition (six models
+   here, seven on MMLU), stated now.
+3. The Result V monitor was not run on ARC in this result; that test is Result X.
+
 ## Non-claims
 
 Public leaderboard per-question outputs on a second benchmark (ARC-Challenge 25-shot), retained as

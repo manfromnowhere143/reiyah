@@ -47,6 +47,19 @@ BDD-A validation, 120 clips, 519 frames, 11,104 driving objects.
    arguments on the same machine produced a byte-identical transcript, including every detector
    output that feeds the 2x2 table. Whether a different machine reproduces it is not established.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The band resamples clips with the median split held fixed, so it carries clip-sampling
+   uncertainty and none of the dichotomization uncertainty; the split's near-zero median is stated
+   in H5's adversarial reading.
+2. Three of the 120 clips have no gaze video in the archive (clip ids 1738, 1739, 1741) and are
+   skipped by the tool, which is why the band uses 117 clips.
+   <!-- review-exempt: 1738=clip identifier, not a measurement; 1739=clip identifier; 1741=clip identifier -->
+3. The marginals impose a ceiling of 2.0 on the coefficient here, so the band's exclusion of 1 is
+   informative; see H5.
+
 ## Non-claims
 
 Same measurement as H5 with a band; the median split is recomputed on this sample and held fixed

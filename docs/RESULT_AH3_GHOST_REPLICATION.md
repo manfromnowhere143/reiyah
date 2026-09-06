@@ -41,6 +41,20 @@ Every caveat of Result AH applies to each configuration: an upper bound under re
 lenient ghost definition, and Result AH2's finding that at least half of the coincident ghosts are
 momentary was measured on the primary pair only.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. Coverage of the time-shift null per configuration: 2,666, 3,492 and 1,093 of 5,953 keyframes.
+   At 0.50 the null rests on 1,093 keyframes and its band is [3.82, 24.33].
+2. On Mapillary x PointPillars the car, truck and bicycle rows (4.74, 4.63, 2.96 against the
+   rotation null) fall below that configuration's sanity coefficient for true detections (7.93), so
+   the replication there rests on the barrier, pedestrian and cone rows and on a time-shift
+   coefficient whose point estimate sits at AH's lower bound.
+3. "Does not depend on the camera, the lidar, or the operating point" is narrowed: one alternative
+   of each was tested, the coefficient varies two-fold across them, and Result AK then found the
+   finding does not hold at 0.10.
+
 ## Non-claims
 
 Replication of Result AH on released nuScenes validation predictions, retained as `proposed`. Not a

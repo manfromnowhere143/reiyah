@@ -50,8 +50,9 @@ answer.
    answer, and the ensemble has no way to tell a confident-correct consensus from a confident-wrong
    one from the outputs alone, unless it accounts for the coupling.
 
-3. **This is a runtime signal.** The quantities above are computed from the models' outputs, with no
-   ground truth. A live monitor that knows the measured coupling can correct the confidence it reads
+3. **Agreement is a runtime signal.** Agreement and unanimity are read from the models' outputs;
+   their reliability, the quantities above, needs the gold labels and is measured here after the
+   fact (corrected 2026-09-06). A live monitor that knows the measured coupling can correct the confidence it reads
    from agreement, downweighting consensus among coupled channels. That is the seed of the instrument
    the whole program points toward: not measuring joint failure after the fact, but estimating it as
    it happens.
@@ -62,6 +63,18 @@ Result S corrected required validation evidence by `sqrt(c)` per independent cha
 showed a seven-model jury has the effective diversity of 3.6. This closes the loop at runtime: the
 over-crediting is not only in the offline evidence budget, it is in every live decision that trusts
 agreement, and it is the same coupling in both places.
+
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. P(correct given agreement) and the unanimous-yet-wrong rate are computed against gold labels;
+   agreement itself is read from outputs, its reliability is not. The phrase "from outputs alone"
+   applies to the signal, not to its measured reliability. Corrected below.
+2. No independence baseline for agreement reliability is computed here; the transcript's own
+   baseline for shared wrong answers is a uniform approximation. "Over-trusted" therefore means
+   lower than 1 by a measured amount, not lower than what independence would predict; that
+   comparison is not made in this result.
 
 ## Non-claims
 

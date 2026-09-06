@@ -104,6 +104,19 @@ premise it rests on.
 `evidence/measurement/result_n.txt` records both commands, both full sweeps, and the
 self-check that reproduces Results L and M at `0.3`.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The sweep is 0.10 to 0.50; nothing here measures the range a deployed detector uses, and that
+   phrase is withdrawn as a sentence. At 0.50 the conditional excess has shrunk to 4 to 5 percent
+   and is still falling; "never reaches independence in the measured range" is a statement about
+   where the sweep stops.
+2. The marginal values quoted from Result D (2.271 to 1.239) are on the full object set; this
+   transcript's marginal column on the common support reads 2.304 to 1.245. Both are now stated.
+3. Two transcript non-claims were missing: object size and truncation were not available and not
+   tested, and no adjustment set is claimed sufficient for identification.
+
 ## Non-claims
 
 No scientific support, safety finding, compliance determination, comparative claim about any

@@ -52,8 +52,9 @@ Read against the rest of the program, with intervals where they exist:
 | Human x automation, uncertain miss (H5) | 0.97 | approximately independent |
 | **Human x automation, total miss (H6)** | **0.98 [0.96, 0.998]** | **not worse than independent** |
 
-The robust, load-bearing claim is the asymmetry: **same-kind redundancy is robustly and
-substantially above 1; the human-machine pairing is not.** The H6 interval grazes 1.0 from below,
+The load-bearing claim is the asymmetry: **same-kind redundancy is substantially above 1; the
+human-machine pairing is not**, with the qualification added on 2026-09-06 that this construction's
+marginals cap the coefficient at about 1.18, so the informative human-machine evidence is H5 and H5b. The H6 interval grazes 1.0 from below,
 so the most that can be said on the upper side is a small complementary tilt, where the machine is
 blind the human is slightly more likely to attend, and it is not oversold here: a two-percent effect
 with a confidence bound at 0.998 is reported as "approximately independent, and pointedly not the
@@ -82,6 +83,21 @@ Same-kind layers inflate it. The human-automation layer, on this evidence, contr
 conditions measured here: an engaged human and objects a strong model can find. Credited as a
 blanket independence, it would be an overclaim; credited under those conditions, it is the one
 redundancy the data supports.
+
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. **The marginals nearly force the result.** With P(automation miss) 84.5 percent and P(human
+   miss) 50 percent, the coefficient is confined by the Fréchet bounds to about [0.82, 1.18]
+   whatever the true dependence. "Not worse than independent" is therefore close to forced by the
+   marginals, and this coefficient cannot be compared on the same scale as same-kind coefficients
+   whose marginals permit values of 2 or 3. The register entry is narrowed to say so; the
+   human-machine cell of the law rests on H5 and H5b, whose ceiling is 2.0.
+2. An 84.5 percent total-miss rate for a small edge detector at 0.25 on objects a strong detector
+   finds at 0.6 is not verified as genuine blindness; a resolution, class-mapping or matching
+   defect would produce the same number. Open, and the register requirement now names it.
+3. The band uses 96 of 100 clips; four lack gaze video or reference objects.
 
 ## Non-claims
 

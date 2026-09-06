@@ -1,7 +1,7 @@
 {
   "manifest_kind": "gate-b-replay-manifest",
   "artifact_id": "reiyah.gate-b.replay-manifest",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "note": "Rows with replay_class argv_unrecorded_historical are retained transcripts whose exact command line was not recorded per transcript when they were produced; their digests are checked, they are never replayed by this tool, and adding an argv is a later, append-only step.",
@@ -606,6 +606,36 @@
         "docs/RESULT_AJ_SENSOR_JURY_OPERATING_POINTS.md"
       ],
       "timeout_s": 7200,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "evidence/measurement/result_ak.txt",
+      "sha256": "sha256:4334b08aa07971f687431cf7f8a6e85465b9061300cf0cb6b817670a3fa9a079",
+      "tool": "tools/measure/result_ak_ghost_operating_point.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "tools/measure/result_ak_ghost_operating_point.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "docs/RESULT_AK_GHOST_OPERATING_POINT.md"
+      ],
+      "timeout_s": 9000,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "evidence/measurement/result_ah2b.txt",
+      "sha256": "sha256:e25d6459f6a79940cb9f8baee8d095c53baa18fc217db046f2cc732ec3d993a8",
+      "tool": "tools/measure/result_ah2b_coincident_true_recurrence.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "tools/measure/result_ah2b_coincident_true_recurrence.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "docs/RESULT_AH2B_COINCIDENT_TRUE_RECURRENCE.md"
+      ],
+      "timeout_s": 9000,
       "stderr_merged": true
     }
   ]

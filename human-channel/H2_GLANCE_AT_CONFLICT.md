@@ -51,6 +51,21 @@ drivers are looking toward the conflict and still fail, from a different derivat
 event. It is descriptive, not driver-clustered, and 2003-2004 naturalistic data. It is the human
 channel alone. The mission's target, the joint human-automation failure, is next.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The conflict instant is `event_end`, the last sync of the reduced window. Nothing in the
+   transcript establishes that this is the precipitating moment rather than the end of the
+   evasive maneuver, by which time a driver who looked away may have re-oriented forward. The
+   70.2 percent figure may therefore measure post-recognition gaze and overstate looking forward
+   when it happened. This is the strongest open objection to H2 and it is not answered here.
+2. The table shows no unknown column; the unknown-gaze share at the instant is 1.1 percent of
+   events and 1.7 percent of crashes in the transcript.
+3. Result H7 reports the same rates on a smaller denominator (775 and 58 events with known gaze
+   against 783 and 59 here, which include unknown gaze); the two agree within a point and the
+   denominators are now stated in both.
+
 ## Non-claims
 
 Descriptive statistics on a public CC0 dataset, retained as `proposed`. Not a causal claim, not a

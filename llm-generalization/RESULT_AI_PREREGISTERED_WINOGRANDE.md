@@ -34,9 +34,9 @@ against every file's own correctness flag on every row.
 
 2. **The quantities are extreme here.** Seven models agree unanimously on 55 percent of questions,
    are wrong on 10 percent of those, and fail all together 1,210 times more often than independence
-   predicts, so the jury has the effective diversity of two. On a two-choice task the marginal
-   coefficient is bounded above by the reciprocal of the smaller error rate, which is why it sits
-   near 2.5 for every pair; the conditional residual, 1.13, is the informative number and it
+   predicts, so the jury has the effective diversity of two. The marginal coefficient is
+   bounded above by the reciprocal of the larger error rate on any task (corrected 2026-09-06), and
+   on a two-choice task the error rates are high enough that the bound sits near 2.5 for every pair; the conditional residual, 1.13, is the informative number and it
    exceeds MMLU's.
 
 3. **The honest limit stands.** The preregistration recorded that the program has no model that
@@ -44,6 +44,21 @@ against every file's own correctness flag on every row.
    procedural deviations before the run, each committed before the corresponding rerun and each
    about the archive's heterogeneous file formats, not about the predictions. Those are findings
    about the archive and the tool, and they are recorded in the preregistration.
+
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The bound stated in point 2 was wrong as written. P(both wrong) is at most the smaller error
+   rate, so the marginal coefficient is bounded above by the reciprocal of the larger error rate,
+   and that bound holds on any task, not only two-choice ones. Corrected in place.
+2. Deviation 4 was committed after a seven-model run had already executed and its means were
+   visible; the retained run is therefore not blind with respect to those means. Every prediction
+   was fixed before the first run and none was changed, but the reader is right that the final
+   transcript was produced after the author had seen a near-identical one. Stated in the
+   preregistration.
+3. The thresholds are loose by design and the document says so; a stricter forecast needs a model
+   the program does not have.
 
 ## Non-claims
 

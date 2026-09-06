@@ -36,6 +36,11 @@ imported unchanged with `SCORE` assigned to 0.10, two runs each, byte identity r
 transcript retained as `evidence/measurement/result_ak.txt`. Verdicts from the transcript alone,
 recorded whichever way they fall.
 
+## Outcome
+
+Two of six supported (AK-1, AK-6); AK-2, AK-3, AK-4 and AK-5 falsified. See
+[`RESULT_AK_GHOST_OPERATING_POINT.md`](../RESULT_AK_GHOST_OPERATING_POINT.md).
+
 ## Non-claims
 
 A preregistration, not a result. Released detector outputs on the public nuScenes validation split;

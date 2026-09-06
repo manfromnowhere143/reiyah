@@ -56,6 +56,20 @@ is unchanged within spread. With the linear model (AA, AB) the same increments w
    level. The sentence "the same form applies to two sensors" is therefore replaced by that
    statement; it is neither the conjecture as first written nor its refutation.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. **The verdict rule, stated and applied symmetrically.** The rule used throughout is: an
+   increment counts when it exceeds the larger of the two five-fold spreads being compared. Object
+   level: 0.022 against max(0.009, 0.008) counts; 0.010 against 0.016 does not; 0.025 against 0.008
+   counts; 0.026 against 0.012 counts. Scene level at 0.50: 0.039 against max(0.042, 0.032) does
+   not count. The earlier text applied the rule without stating it, which read as asymmetric; the
+   verdicts do not change, and the 0.50 scene-level case is the closest call in the program.
+2. The imported tools' non-claims blocks still name a Poisson regression and a logistic model;
+   for this run the model is the boosted one named above, and those blocks are stale by design.
+3. "Interacts with class and range" is a hypothesis; no interaction analysis is in the transcript.
+
 ## Non-claims
 
 Released detector outputs on the public nuScenes validation split, retained as `proposed`. One

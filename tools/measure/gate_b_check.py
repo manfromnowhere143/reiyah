@@ -143,7 +143,10 @@ def main():
     check("REVIEW    the register and the result documents describe the same program", rc.returncode == 0, last[-1].strip() if last else rc.stderr[:200])
 
     if a.attacks:
-        ra = subprocess.run([sys.executable, "tools/measure/review_attacks.py"], capture_output=True, text=True)
+        # the attack suite needs the analysis environment (scikit-learn); use the interpreter the
+        # manifest records for the local_deterministic rows, never the check's own interpreter
+        interp = next((row["argv"][0] for row in man["transcripts"] if row["replay_class"] == "local_deterministic" and row["argv"]), sys.executable)
+        ra = subprocess.run([interp, "tools/measure/review_attacks.py"], capture_output=True, text=True)
         last = [l for l in ra.stdout.splitlines() if l.strip().startswith("RESULT:")]
         check("REVIEW    the attack suite: every attack with a stated criterion fails to break its result", ra.returncode == 0, last[-1].strip() if last else ra.stderr[:200])
     else:

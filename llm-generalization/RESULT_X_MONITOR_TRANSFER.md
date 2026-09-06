@@ -70,6 +70,16 @@ same time: the instrument is portable across channels and not across tasks. The 
 are a monitor fitted on driving channel outputs rather than benchmark outputs, and a margin
 normalization that is itself learned without labels, which is not attempted here.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. Channel transfer is tested on the same 13,937 MMLU items the monitor was fitted on, with a
+   different jury; the item distribution is unchanged, so "transfer across channels" here means
+   across models on the same items. X4 is a subset of jury B, not an independent jury.
+2. Recalibrating on the new jury halves the calibration error (0.032 to 0.015); "would buy almost
+   nothing" is true of discrimination and not of calibration.
+
 ## Non-claims
 
 Public leaderboard outputs, retained as `proposed`. Transfer between two juries of public base

@@ -45,6 +45,17 @@ On the ARC unanimous items the normalized monitor assigns 15 to 16 percent risk 
    channels on the same task, and it must be calibrated on the task it reads. The cheap fix that
    would have made it portable across tasks does not work, and it is recorded as not working.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The normalization partly helped on task transfer: on ARC, jury A, AUC rose from 0.575 to 0.641
+   (above the naive 0.618) and every ARC calibration error fell. It did not restore task transfer
+   (still far below the in-domain ceiling, low-risk bands still broken), and it cost channel-transfer
+   discrimination while slightly improving its calibration (0.032 to 0.025). The headline
+   "does not repair" is kept with that accounting; "not a scale problem" is narrowed to "not only a
+   scale problem".
+
 ## Non-claims
 
 Public leaderboard outputs, retained as `proposed`. The normalization uses only the outputs of the

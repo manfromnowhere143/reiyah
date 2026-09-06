@@ -68,6 +68,19 @@ channel alone, not yet the joint human-automation failure that is the mission's 
 - Bring in the automation-proxy channel (event sensor status) and measure the first joint
   human-automation failure, the actual HARBOR construct.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The eyes-forward-throughout contrast (39.1 percent of baseline epochs against 4.5 percent of
+   conflict windows) compares whole-window proportions across windows whose durations this
+   document does not state; a longer conflict window alone depresses the fraction. The contrast is
+   retained as descriptive and its window lengths are an open item.
+2. The transcript's unknown-time shares (6.6 percent of events, 5.1 percent of crashes) and the
+   mean-median gap (19.0 against 14.2 percent) belong beside the table and were not shown.
+3. The severity split lists 727 near-crashes while the table uses 726; one event lacks the field
+   used for the split. Stated now.
+
 ## Non-claims
 
 Descriptive statistics on a public CC0 dataset, retained as `proposed`. Not a causal claim, not

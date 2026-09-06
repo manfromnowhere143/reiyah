@@ -86,6 +86,19 @@ It adds the orthogonal point that even where the marginal coefficient is closest
 absolute joint failure is at its worst, so the coefficient is necessary but not sufficient to read
 the redundancy.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. "It never follows c down" is contradicted at the strict end for PointPillars, whose excess
+   falls from 0.0880 [0.0850, 0.0911] at 0.40 to 0.0816 [0.0784, 0.0848] at 0.50 with
+   non-overlapping bands; and the excess intervals overlap between some adjacent thresholds. The
+   sentence is corrected to: the excess rises with the threshold through 0.40 and does not fall
+   with c until the strictest point.
+2. The transcript computes no decomposition of the fall of c into an arithmetic and a residual
+   part; "in large part this arithmetic" is an interpretation. The mechanism was later put to a
+   preregistered test (Result AJ) and held on every pair.
+
 ## Non-claims
 
 Two published detection outputs on one public split, retained as `proposed`. Rates after declared

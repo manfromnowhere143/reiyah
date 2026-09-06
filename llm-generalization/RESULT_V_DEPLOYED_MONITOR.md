@@ -79,6 +79,19 @@ The program's arc is now closed end to end:
 This is the instrument the architecture pointed at: not a study of joint failure after the fact, but
 a live estimate of it, ground-truth-free, that a system reads from its own channels.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The title's word "deployed" contradicts the non-claims; the monitor is a demonstration
+   instrument fitted and evaluated in-distribution on one jury and one benchmark. What the
+   transcript shows is that confidence margins and vote agreement predict jury error in
+   distribution, which is ordinary selective prediction; that "coupling" was learned is an
+   interpretation, not a measured quantity.
+2. The lowest risk band under-predicts by almost half (1.6 percent predicted against 3.0 percent
+   realized); "tracks the realized failure rate across the whole range" is too strong for that band.
+3. "The program's arc is now closed end to end" is rhetoric and is withdrawn as a sentence.
+
 ## Non-claims
 
 A demonstration instrument on public MMLU outputs, retained as `proposed`. The features are

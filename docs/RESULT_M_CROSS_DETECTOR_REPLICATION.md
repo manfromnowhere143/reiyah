@@ -115,6 +115,19 @@ regardless of its arguments; the pair measured is fixed by the third argument
 (`matched_pointpillars.json`), and every number in this result differs from Result L,
 confirming the second detector's matched file was consumed.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The transcript's own convergence diagnostic prints "steps monotonically shrinking in magnitude:
+   NO" (the last two steps are -0.002 then -0.005); the word "convergence" in this document is a
+   description of the terminal value's stability, not of monotone shrinkage, and that line is now
+   reported.
+2. Both pairs share the same camera detector and the same ground-truth cache, so this replication
+   removes only the Megvii-specific objection; "the two sensing channels" is broader than what two
+   pairs sharing one camera can show. The coefficient's value is not reproduced (1.096 [1.087,
+   1.103] against 1.151 [1.138, 1.160], non-overlapping); its sign and its exclusion of 1 are.
+
 ## Non-claims
 
 No scientific support, safety finding, compliance determination, comparative claim about

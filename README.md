@@ -429,8 +429,9 @@ configurations; fit per task, read across channels. Four sensors provide the joi
 protection of about two independent channels, in the same quantity that gives a seven-model jury
 3.6. And the mistake type the redundancy argument also assumes independent, the phantom object,
 is measured for the first time: the camera and the lidar report phantoms at the same place and
-instant six times more often than a same-road, different-instant null predicts, and at least half
-of those coincidences are momentary. The full reading is in
+instant six times more often than a same-road, different-instant null predicts at the 0.30
+operating point, four to ten times on three more configurations at 0.30 and 0.50, and not at 0.10,
+where a preregistered numeric forecast failed; about half of those coincidences are momentary. The full reading is in
 [`docs/GATE_B_FINDINGS_SYNTHESIS.md`](docs/GATE_B_FINDINGS_SYNTHESIS.md),
 [`human-channel/`](human-channel/), and [`llm-generalization/`](llm-generalization/).
 

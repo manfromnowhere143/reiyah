@@ -76,6 +76,13 @@ the tool prints only mean coefficients. Two output lines are added, the per-pair
 maximum of the marginal and conditional coefficients; no computation, definition or prediction
 changes. Committed before the final run, whose transcript is the one retained.
 
+## Blindness, stated on 2026-09-06
+
+Deviations 1 to 3 were committed before any complete jury had run. Deviation 4 (two output lines)
+was committed after a complete seven-model run had executed and its means had been seen; the
+retained transcript is therefore not blind with respect to those means, although no prediction
+was changed at any point.
+
 ## Outcome
 
 Run after deviation 4: eight of eight predictions supported; see

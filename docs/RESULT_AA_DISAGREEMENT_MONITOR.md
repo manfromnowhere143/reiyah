@@ -69,6 +69,17 @@ detections within 5 m 0.585, score of agreeing pairs 0.513.
    failed tests. What the measured coupling (Results L to R) changes is the evidence calculus and
    the credit given to redundancy; it has not been shown to be readable live from sensor outputs.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. "Context adds nothing measurable" is a property of a logistic model with context entered
+   linearly; the per-feature AUCs of 0.55 to 0.61 show real signal, the lidar-only held-out rows
+   gain 0.009 with no interval printed, and Result AD found the increment with a boosted model.
+   The headline is narrowed to "a linear model does not use the context".
+2. "Absorbed by the object's own attributes" is an inference; no ablation of that feature given the
+   own features is in the transcript.
+
 ## Non-claims
 
 Two released detectors on the public nuScenes validation split, retained as `proposed`. Realness is

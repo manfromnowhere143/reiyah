@@ -419,6 +419,18 @@ was deleted and no check was weakened.
    differs, stated. A second detector pass on the accelerator path was byte-identical.
 20. **Result AH3 added** (register `0.2.12`): the ghost coefficient against the time-shift null is
    4.6 to 9.8 on a second camera, a second lidar and a second operating point, no band reaching 1.
+28. **Review instrument, part 4, and the correction pass it forced.** Four context-free readers
+   (model-assisted, advisory) read every result document against its transcript alone; record in
+   [`REVIEW_MODEL_ASSISTED_2026-09-06.md`](REVIEW_MODEL_ASSISTED_2026-09-06.md). Seven objections
+   changed the science: the Frechet ceiling on the human-machine cell (H6 narrowed, H5b carries it),
+   selection on the outcome in H3, the AJ falsification being broader than the near-blind camera,
+   the AH2 reference (fair reference measured, AH2b, and the reading stands), Result Q's omitted
+   strict-threshold rows, AE and X2 and U and AI sentences corrected in place, and the AD verdict
+   rule stated. Every document carries its own "Adversarial reading, 2026-09-06" section. Register
+   `0.2.18`.
+29. **Result AK, the third preregistered test** (numeric ranges): two of six supported, four
+   falsified. The ghost finding is operating-point dependent (not at 0.10) and is qualified so
+   everywhere, including the note recommended for the public post.
 27. **A live contradiction found and corrected.** The threats document's section 2 stated that the
    benchmark filter biases the coefficient toward independence, making it a lower bound. Result D's
    retained transcript shows the opposite at every operating point (official 1.630 against full

@@ -90,6 +90,22 @@ The coupling has now been shown robust to the lidar detector, the camera detecto
 threshold, and plausible unmeasured confounding. Every axis a reviewer can cheaply attack is
 answered on evidence.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. **An omission, corrected.** The transcript's camera-axis full-depth section shows the two FCOS3D
+   cross-modality pairs attenuating to 1.007 and 1.006 at the 0.50 threshold, within rounding of
+   independence, with exclusion of 1 asserted by a bare "yes (10/10)" and no intervals printed. The
+   camera axis is closed at the 0.30 reference point and is at the edge of independence at strict
+   thresholds; the sentence "never to 1.0" is withdrawn.
+2. FCOS3D's reproduction is of the centre-distance mAP; its box size and yaw errors are far from
+   the published ones (mASE 0.80 against 0.26, mAOE 1.68 against 0.39). The coefficient uses
+   centre distance only, so this does not touch the result, and "the detection is correct" is
+   narrowed to "the centre-distance scoring reproduces".
+3. "Shared failure drivers" is a hypothesis about mechanism; the transcript measures six
+   coefficients and no driver.
+
 ## Non-claims
 
 Three published or workstream-derived detection outputs on one public split, retained as

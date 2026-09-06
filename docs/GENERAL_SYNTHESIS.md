@@ -58,7 +58,7 @@ moment of the event two thirds of the time: observation is not detection
 ([human-channel H2](../human-channel/H2_GLANCE_AT_CONFLICT.md)). The human's own two channels,
 looking and acting, fail together with the same coefficient the sensors do, `c = 1.46`, with an
 event-resampled band of [1.04, 1.90] that excludes independence narrowly over all events and not
-in either severity subgroup ([H3](../human-channel/H3_OBSERVATION_RESPONSE_JOINT.md),
+in either severity subgroup, inside a population selected on the outcome ([H3](../human-channel/H3_OBSERVATION_RESPONSE_JOINT.md),
 [H7](../human-channel/H7_INTERVALS.md)). In modern Level 3 automation a
 visual-manual distraction slows the human's takeover by a quarter
 ([H4](../human-channel/H4_DCPT_TAKEOVER.md)). And the cross-agent question no prior work had
@@ -90,16 +90,16 @@ predictions committed before the run; all eight held
 
 | domain | same-kind pairing | cross-kind pairing |
 |---|---|---|
-| sensors | two lidars, c = 1.29; four sensors = 2.10 [2.08, 2.13] independent | camera x lidar, c = 1.10 to 1.15; human x machine, c = 0.96 [0.93, 0.99] and 0.98 [0.96, 1.00] |
+| sensors | two lidars, c = 1.29; four sensors = 2.10 [2.08, 2.13] independent | camera x lidar, c = 1.10 to 1.15; human x machine, c = 0.96 [0.93, 0.99] (ceiling 2.0 from the marginals; the total-blindness construction's ceiling is 1.18 and carries little) |
 | the human | eyes x hands, c = 1.46 [1.04, 1.90], event-resampled | (n/a) |
 | LLM juries | same family, c = 1.52 (MMLU), 1.87 (ARC), 2.43 (HellaSwag) | cross family, c = 1.29 (MMLU), 1.73 (ARC), 2.30 (HellaSwag) |
 
 **Redundancy across genuinely different kinds buys independence; redundancy across similar kinds
-does not**, when the channels operate in comparable regimes: a preregistered test at a stricter
-operating point ([AJ](RESULT_AJ_SENSOR_JURY_OPERATING_POINTS.md)) falsified the same-kind ordering
-where one camera misses 94 percent of objects, because a near-blind channel reads as independent of
-everything, the marginal artifact of Result P; the same test confirmed P's mechanism on every pair
-at both new operating points. Similar channels share a substrate and share their blind spots. Genuinely different
+does not**, at the operating points where it was observed: a preregistered test
+([AJ](RESULT_AJ_SENSOR_JURY_OPERATING_POINTS.md)) found the same-kind ordering at 0.10 and 0.30 and
+not at 0.50, where a near-blind camera and a lidar pair both cross the ordering for reasons not yet
+identified beyond the marginal artifact of Result P; the same test confirmed P's mechanism on every
+pair at both new operating points. Similar channels share a substrate and share their blind spots. Genuinely different
 ones do not. The independence assumption is a load-bearing fiction wherever redundancy is claimed,
 and it fails most for the systems that share the most.
 
@@ -114,9 +114,11 @@ yet meet its five stated conditions. Reiyah reports `c` with its absolute-risk v
 evidence-budget percentage. The corollary's other mistake type, the ghost, has now been measured
 once: the camera and the lidar report phantom objects at the same place and instant six times more
 often than a same-road, same-sensor, different-instant null predicts, 6.2 [4.6, 10.3], an upper
-bound where the annotation itself is incomplete ([AH](RESULT_AH_GHOST_COINCIDENCE.md)); at least
-half of those coincident phantoms are momentary, not persistent structure or annotation gaps
-([AH2](RESULT_AH2_GHOST_PERSISTENCE.md)). The
+bound where the annotation itself is incomplete ([AH](RESULT_AH_GHOST_COINCIDENCE.md)), at the 0.30
+and 0.50 operating points and not at 0.10, where a preregistered numeric forecast failed four of six
+([AK](RESULT_AK_GHOST_OPERATING_POINT.md)); about half of those coincident phantoms are momentary
+against the fair reference of coincident true detections ([AH2](RESULT_AH2_GHOST_PERSISTENCE.md),
+[AH2b](RESULT_AH2B_COINCIDENT_TRUE_RECURRENCE.md)). The
 human-machine layer, at `c` about 1, adds essentially no correction.
 Two coupled sensors provide the joint-failure protection of about one and a half independent
 channels, and a seven-model jury the diversity of 3.6; both are illustrative effective-count

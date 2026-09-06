@@ -71,6 +71,17 @@ reaction to resume control, not a collision outcome. Trials cluster within 40 pa
 figures here are descriptive across trials, not a participant-clustered inferential test, though the
 visual-manual versus no-task gap is large relative to its spread.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The task watching video (eyes on the center screen, mean 2.01 s) belongs to neither group and
+   is indistinguishable from no task (1.99 s). The visual-manual group was defined in the tool
+   before the numbers were read, but it was not preregistered, and the contrast of +0.47 s depends
+   on which tasks are labelled visual-manual; with video included the group mean falls. Stated as
+   a limit of the grouping, not of the data.
+2. The 15 m sentence is arithmetic on an assumed highway speed, not a measurement.
+
 ## Non-claims
 
 Descriptive statistics on a public CC BY 4.0 dataset, retained as `proposed`. Not a causal effect,

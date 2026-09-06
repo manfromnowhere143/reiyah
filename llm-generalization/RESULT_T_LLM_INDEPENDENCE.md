@@ -82,6 +82,18 @@ provides `n_eff` here, 3.6 of 7. Any argument that convenes multiple LLMs to cro
 safety-relevant judgment, and credits their agreement as independent confirmation, is over-crediting
 by the same factor, and by more when the models share a lineage.
 
+## Adversarial reading, 2026-09-06
+
+A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
+
+1. The conditional coefficient's per-pair range is [0.971, 1.358]: not every pair exceeds 1 after
+   difficulty conditioning, only the mean does. The sentence "the coupling survives conditioning"
+   is a statement about the mean.
+2. Difficulty is estimated from the other five models' errors, so the residual is measured against
+   a proxy built from the same coupled jury; a finer, independent difficulty measure could move it.
+3. "Half the votes you convened are, in effect, echoes" is a reading of the effective-model count,
+   which is a summary statistic of the all-wrong rate, not a count of redundant models.
+
 ## Non-claims
 
 Public leaderboard per-question correctness on one benchmark (MMLU 5-shot), retained as `proposed`.
