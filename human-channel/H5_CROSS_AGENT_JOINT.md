@@ -62,7 +62,7 @@ This result is honest only with its limits stated plainly, because they change w
 
 1. **It is measured on detectable objects.** The object set is the detector's detections at score
    `>= 0.3`. Objects the detector misses entirely are unobservable here without ground-truth boxes,
-   so the true joint silent miss, where **both** channels are totally blind, is not captured. That
+   so the true joint total miss, where **both** channels are totally blind, is not captured. That
    omitted set can only push dependence up, so `c ~ 1` is a floor on cross-agent dependence, not a
    certificate of independence.
 2. **It holds only while the human is engaged.** The gaze here is attentive-observer data. Results

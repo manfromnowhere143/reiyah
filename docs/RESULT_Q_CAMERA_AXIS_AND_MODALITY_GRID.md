@@ -13,7 +13,7 @@ so the coupling's robustness to the *camera* detector was the one axis left unte
 required a second camera-only detector's predictions on nuScenes val, which meant running
 inference rather than reusing published files.
 
-This result adds that detector — **FCOS3D** — and, because a second camera model finally exists,
+This result adds that detector, **FCOS3D**, and, because a second camera model finally exists,
 completes the full **2×2 modality grid**: two cameras (Mapillary, FCOS3D) crossed with two lidars
 (Megvii, PointPillars), plus the two same-modality pairs.
 
@@ -29,8 +29,8 @@ trusting it is reproduction of its published accuracy:
 One honesty note kept in the record: NDS came out 0.290 against a published ~0.395, because this
 container's mmdet3d writes box **size and yaw** in a convention that inflates the scale and
 orientation true-positive errors. The mAP, translation error, attribute error and velocity error
-all reproduce. Since nuScenes mAP and this workstream's matching are both **center-distance based**
-— they use translation, score and class only — the NDS gap does not touch any coefficient here. It
+all reproduce. Since nuScenes mAP and this workstream's matching are both **center-distance based**,
+using translation, score and class only, the NDS gap does not touch any coefficient here. It
 is flagged, not hidden.
 
 ## The grid
@@ -41,12 +41,12 @@ Conditional coefficient at L5 (class, range, visibility, weather, motion), on th
 | | Megvii (lidar) | PointPillars (lidar) | FCOS3D (camera) |
 |---|---|---|---|
 | **Mapillary** (camera) | 1.151 [1.138, 1.160] | 1.096 [1.087, 1.103] | **1.144** [1.136, 1.150] |
-| **FCOS3D** (camera) | 1.107 [1.098, 1.113] | 1.072 [1.065, 1.077] | — |
-| **Megvii** (lidar) | — | **1.290** [1.273, 1.300] | 1.107 |
+| **FCOS3D** (camera) | 1.107 [1.098, 1.113] | 1.072 [1.065, 1.077] | - |
+| **Megvii** (lidar) | - | **1.290** [1.273, 1.300] | 1.107 |
 
 Every one of the six pairs excludes 1.0.
 
-## What it shows — reported as measured, not as predicted
+## What it shows, reported as measured, not as predicted
 
 1. **The camera axis is closed.** FCOS3D, an architecturally distinct camera detector, crossed
    with both lidars gives 1.107 and 1.072, both above independence. The camera-lidar coupling is
@@ -54,11 +54,11 @@ Every one of the six pairs excludes 1.0.
    1.072–1.151 band.
 
 2. **The strongest coupling is lidar-lidar (1.290).** Two lidar detectors fail together the most,
-   consistent with a shared driver they both depend on — lidar point sparsity, the same mechanism
+   consistent with a shared driver they both depend on, lidar point sparsity, the same mechanism
    Results A and B measured directly (objects with few or zero lidar points).
 
 3. **The surprise: two cameras couple like cross-modality, not like two lidars.** The
-   camera-camera pair is 1.144 — inside the cross-modality band, far below the lidar-lidar 1.290.
+   camera-camera pair is 1.144, inside the cross-modality band, far below the lidar-lidar 1.290.
    This corrects a naive expectation. Result H found same-modality coupling far above
    cross-modality at the *raw* level; at the *conditional* level that effect turns out to be
    almost entirely a **lidar-lidar** effect. Once class, range and visibility are removed, two
@@ -67,8 +67,8 @@ Every one of the six pairs excludes 1.0.
 ## The refined thesis
 
 The failure coupling is governed by **shared failure drivers**, not by same-versus-cross modality
-as such. Two lidars share the most — both consume the same point return, and both fail on the same
-sparse-point objects — so they couple most. Camera-camera and camera-lidar share less and couple
+as such. Two lidars share the most, both consume the same point return, and both fail on the same
+sparse-point objects, so they couple most. Camera-camera and camera-lidar share less and couple
 less. But **all six pairs exceed independence** after five admissible confounders. No pairing, not
 even two different modalities, reaches the independence a redundancy safety argument assumes; the
 best a second modality does is bring the coefficient down to the ~1.07–1.15 band, never to 1.0.

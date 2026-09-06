@@ -366,11 +366,16 @@ case assumes roughly survives.
 
 ### The number a safety case consumes
 
-RSS Corollary 3 reduces required validation evidence by assuming independence, and the reduction
-scales as `sqrt(c)`. Reproducing RSS's own worked example and substituting the measured coefficient,
-the corrected calculus says a same-kind redundancy needs at least 26% more validation evidence than
-Corollary 3 claims, a lower bound, while the human-machine layer needs almost none. Two coupled
-sensors provide the joint-failure protection of one and a half independent channels, not two.
+RSS Corollary 3 reduces required validation evidence by assuming independence. Holding its bound
+fixed, the admissible per-channel error rate shrinks as `1/sqrt(c)`, so a campaign sized under
+independence is undersized wherever `c > 1`, and by more in the worst group than in the pooled
+estimate. The evidence-budget percentages once derived from this are withdrawn as stated: the
+corollary bounds a three-subsystem vote over miss and ghost mistakes on safety-critic errors, and
+the measured two-channel detection-miss `c` does not yet meet its five stated conditions (Result S
+correction; estimand document section 6.4). Reiyah reports `c` with its absolute-risk vector and no
+evidence-budget percentage. The human-machine layer, at `c` about 1, adds essentially no correction.
+Two coupled sensors provide the joint-failure protection of about one and a half independent
+channels, an illustrative interpretation that depends on the operating miss rates.
 
 ### One law, three domains
 

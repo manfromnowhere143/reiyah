@@ -19,8 +19,8 @@ on its own branch, cut from a released commit so no `1.2.0` byte is ever touched
 cd ~/workspace/reiyah-gate-b
 git remote get-url origin      # https://github.com/manfromnowhere143/reiyah.git
 git branch --show-current      # gate-b-measurement
-git log --oneline -1           # 3450415 (Result W) or later
-git status --short             # clean, or only docs/GENERAL_SYNTHESIS.md until committed
+git log --oneline -1           # 21c533b (baton) or later
+git status --short             # clean
 ```
 
 Branch cut from a released commit, so no `1.2.x` byte is touched and the Gate A continuity
@@ -38,8 +38,11 @@ also corrects the safety calculus that the assumption feeds, and builds a live m
 the coupling from channel outputs alone. HARBOR (Human-Automation Readiness, Belief & Operational
 Risk) is the proposed working research program; every scientific, benchmark, standards, safety, and
 comparative claim stays `proposed` until eligible retained evidence and an authorized external
-decision say otherwise. **No model is executed in the analysis lane.** The one place inference ran is
-recorded in section 8, on a separate GPU box, to produce a second camera detector's predictions.
+decision say otherwise. **Model execution is bounded and named, never hidden.** No LLM is executed
+anywhere. Pretrained detectors are executed only to produce channel outputs on public frames: FCOS3D
+on nuScenes (section 8, on the GPU box) and torchvision Faster R-CNN and SSDLite on BDD-A frames for
+H5 and H6, locally. Result V fits and calibrates a logistic-regression monitor on leaderboard outputs.
+Each execution is recorded in the result it serves and none is a Reiyah product model.
 
 The single reading of the whole program is [`GENERAL_SYNTHESIS.md`](GENERAL_SYNTHESIS.md). The
 contract authorizing the measurement lane is
@@ -101,9 +104,9 @@ these has the mission.
 | Item | State |
 |---|---|
 | Worktree / branch | `~/workspace/reiyah-gate-b`, `gate-b-measurement` |
-| HEAD | `3450415` (Result W) |
-| Pushed | all commits pushed to `origin/gate-b-measurement` |
-| Uncommitted | `docs/GENERAL_SYNTHESIS.md` until committed with this handoff |
+| HEAD | resolve with `git rev-parse HEAD`; the closeout in section 14 names the exact commit it describes |
+| Pushed | all commits pushed to `origin/gate-b-measurement`; `origin/main` state is a recorded governance event (section 14) |
+| Uncommitted | none at closeout |
 | Schema successor | `schemas/v1.3/`, **proposed**, not applied to any released byte |
 | Executable contract successor | `1.3.0` joint-silent-miss contract, **proposed, not registrable from this lane** (section 12) |
 | Record validation | `port` or `spec_reimplementation` only; the shipped module can validate only its frozen synthetic fixture |
@@ -148,11 +151,13 @@ ARC-Challenge, where a six-model jury carries the diversity of 1.6 and unanimity
 No LLM inference: this reads public per-question outputs and joins by example hash. Files
 `llm-generalization/RESULT_T..W_*.md`.
 
-**The correction (S).** Required validation evidence in the redundancy argument scales as `sqrt(c)`,
-reproduced against RSS's own worked example. With the measured coefficient, a same-kind redundancy
-needs at least 26% more validation evidence than the argument claims (a lower bound); the
-human-machine layer needs almost none. Two coupled sensors give the joint-failure protection of one
-and a half independent channels. File [`RESULT_S_CORRECTED_SAFETY_CALCULUS.md`](RESULT_S_CORRECTED_SAFETY_CALCULUS.md).
+**The correction (S), re-scoped 2026-09-06.** Under RSS Corollary 3 the admissible per-channel
+error rate shrinks as `1/sqrt(c)`, so a campaign sized under independence is undersized wherever
+`c > 1`. The evidence-budget percentages and counts Result S derived are withdrawn as stated: the
+register's five conditions (estimand document section 6.4) are unmet, and the reconciliation check
+caught the figures on 2026-09-06. The direction survives as conditional; no percentage is claimed.
+The human-machine layer at `c` about 1 adds essentially no correction. File
+[`RESULT_S_CORRECTED_SAFETY_CALCULUS.md`](RESULT_S_CORRECTED_SAFETY_CALCULUS.md), correction first.
 
 **The instrument (V).** A monitor that sees only the channels' outputs, with no ground truth,
 returns a calibrated probability the ensemble is wrong, having learned the coupling from a labeled
@@ -192,7 +197,8 @@ clustered intervals (clip-clustered for BDD-A, example-joined for the juries).
 Every withdrawn or narrowed claim stays with its refutation attached; the register is the
 reconciliation point. A non-exhaustive reminder of the shape of them: censoring inflates dependence
 rather than deflating it; dependence is worst up close, not at long range; the evidence-budget
-figures were withdrawn and only the `sqrt(c)` correction (S) returned them under stated conditions;
+figures were withdrawn as stated and remain withdrawn (Result S reasserted them, the reconciliation
+check caught it on 2026-09-06, and S now carries the correction first);
 the word `silent` is wrong for a both-channel miss without an audited monitor adapter and must not
 be used; Result H's cross-modality separation is `inconclusive` by construction because neither arm
 has internal replication. Full tables in
@@ -252,12 +258,14 @@ with an engaged human; the LLM monitor is validated on two benchmarks and one ju
 
 ## 11. The next smallest actions
 
-1. **Commit `docs/GENERAL_SYNTHESIS.md`** with this handoff so the tree is clean and the fresh
-   session inherits the single reading (Daniel-authored, no trailer). If this handoff already reads
-   `clean` in section 3, that is done.
+1. **Operator decisions recorded in section 14 that only Daniel can take:** whether `origin/main`
+   stays at the Gate B tip or returns to the released `1.2.0` commit, and whether the DCPT payload
+   stays in public history once its licence bytes are retained.
 2. **Retain an independent external review.** Operator action; cannot be self-performed. This is the
    real frontier.
-3. Optional hardening already scoped: a monitor cross-model transfer test (train the coupling
+3. Retain licence and custody bytes for the four public-data sources (section 14), so no source is
+   characterized from a pointer.
+4. Optional hardening already scoped: a monitor cross-model transfer test (train the coupling
    estimator on one jury, test on a disjoint jury); the monitor validated on real driving outputs
    rather than benchmark outputs; a third benchmark for the LLM law.
 
@@ -269,7 +277,7 @@ never raises confidence by itself.
 | Blocked | Blocker | Lane |
 |---|---|---|
 | Registering the `1.3.0` contract so the shipped module runs these checks | the frozen expectation lives inside a released Gate A module and is compared by exact equality; changing it would edit a released byte | Gate A successor |
-| Any evidence-budget figure beyond the `sqrt(c)` correction | conditions in `ESTIMAND_RSS_DEFINITION_32.md` section 6.4 | Gate B, open |
+| Any evidence-budget figure, percentage, count, or multiplier | five conditions in `ESTIMAND_RSS_DEFINITION_32.md` section 6.4, none yet met | Gate B, open |
 | Bounding `c` on a measured stratum by reference-error rate | no blinded reannotation performed | Gate B, needs authorization |
 | Any use of the word `silent` | no audited monitor adapter | contract design done, adapter absent |
 | Object-level human miss on real data at scale | no audited public dataset identifies it; a pilot needs human-subjects review | outside current authority |
@@ -285,6 +293,43 @@ depends on re-run with its byte-identity stated; source custody per source; that
 independently replicated and shared compute or authorship is never independent validation; operator
 acceptance, scientific support, external-review, runtime, and Gate B authority states; and the next
 smallest authorized action.
+
+## 14. Session of 2026-09-06: the baton audited against its own bytes
+
+A fresh session took the baton at `21c533b` and ran the closeout it requires before trusting it.
+The tree failed its own rules in six places. Every correction below is additive; nothing withdrawn
+was deleted and no check was weakened.
+
+1. **The reconciliation check failed at `21c533b`** with six live assertions of register-forbidden
+   evidence-cost figures, in `README.md`, this handoff, `GENERAL_SYNTHESIS.md`, and Result S. The
+   prior closing statement that reconciliation was intact was wrong. Result S now carries a
+   correction first, its figures are marked withdrawn as stated, and the three summaries state the
+   `1/sqrt(c)` direction with no percentage. The check's live-prose coverage was widened to the
+   `human-channel/` and `llm-generalization/` documents; it was not loosened.
+2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
+   pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
+   Section 1 and the thread READMEs now say exactly what runs.
+3. **The word silent** appeared in H5, H6, and the human-channel README for a both-channel miss
+   while section 12 blocks it. Replaced with joint total miss; the register's reservation is now
+   stated in H6.
+4. **Em dashes** in five result documents (M, P, Q, R, findings synthesis) were replaced.
+5. **Source custody** for the four new public sources was unrecorded, and the DCPT payload sits in
+   public history without retained licence bytes or attribution. Recorded in
+   [`PUBLIC_DATA_CUSTODY_2026-09-06.md`](PUBLIC_DATA_CUSTODY_2026-09-06.md) as open findings.
+6. **The public `main` ref was moved to the Gate B tip** by earlier pushes, unrecorded. Recorded in
+   [`GOVERNANCE_EVENT_2026-09-06_MAIN_REF_MOVED.md`](GOVERNANCE_EVENT_2026-09-06_MAIN_REF_MOVED.md);
+   the ref's correct target is an operator decision.
+
+Closeout, from exact records: worktree `~/workspace/reiyah-gate-b`, branch `gate-b-measurement`,
+the commit that retains this section is the one whose message names it, tree clean after commit;
+schemas `v1.3` and the `1.3.0` contract remain `proposed` against released `1.2`; record validation
+unchanged, `port` or `spec_reimplementation`; `check_claim_reconciliation.py` returns PASS on this
+tree with 64 live artifacts scanned; no transcript or tool that produced a retained result was
+edited, so every reproduction dependency is byte-identical to its commit; custody per source is in
+the custody record; no result is independently replicated and shared authorship is never independent
+validation; operator acceptance, scientific support, external review, runtime, and Gate B authority
+all remain none or false. Numbers quoted in the synthesis were checked line by line against their
+transcripts and match, except the withdrawn evidence-cost figures.
 
 A successful measurement is an honest descriptive result on public data. It is never, by itself,
 scientific support, safety validation, standards compliance, product readiness, competitive

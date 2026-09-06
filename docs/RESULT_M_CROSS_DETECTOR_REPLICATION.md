@@ -57,8 +57,8 @@ All estimates use an instance-clustered bootstrap over the tracked objects on th
 
 **The convergence signature repeats, and again it is not to independence.**
 
-The same three covariates carry the association down hard — class, range and visibility
-account for steps of -0.060, -0.132 and -0.105 — and the next two admissible covariates
+The same three covariates carry the association down hard, class, range and visibility
+account for steps of -0.060, -0.132 and -0.105, and the next two admissible covariates
 move it by -0.002 and -0.005, an order of magnitude smaller. The terminal value is 1.096
 with a cluster-robust 95% interval of `[1.087, 1.103]` that excludes 1.0.
 
@@ -69,8 +69,8 @@ with a cluster-robust 95% interval of `[1.087, 1.103]` that excludes 1.0.
 
 Two lidar detectors that share no architecture, one at half the accuracy of the other,
 both fail together with the same camera beyond what class, range, visibility, weather and
-motion explain. The excess over independence is **smaller** on the weaker lidar — 1.096
-against 1.151 — and this result does not speculate on why; it records the sign as
+motion explain. The excess over independence is **smaller** on the weaker lidar, 1.096
+against 1.151, and this result does not speculate on why; it records the sign as
 unchanged and the interval as still excluding 1.0.
 
 ### The mediator error, in the second pair too
@@ -102,8 +102,8 @@ of the underlying mechanism.
 
 ## Consequence
 
-Result L's conclusion — that RSS Definition 32's channel-independence assumption fails on
-this evidence — is now shown for two lidar detectors rather than one. The RSS critique in
+Result L's conclusion, that RSS Definition 32's channel-independence assumption fails on
+this evidence, is now shown for two lidar detectors rather than one. The RSS critique in
 Results D, E, I, J, K and L rests on a coefficient that has been reproduced on an
 independent detector, not on a single measurement.
 

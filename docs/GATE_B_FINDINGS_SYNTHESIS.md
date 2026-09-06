@@ -64,10 +64,10 @@ five measured covariates, cannot explain the coupling away.
   and were not tested; the E-value says how strong such a factor would have to matter, not that it
   does not.
 - **The one detector axis that was open is now closed.** The camera axis (Result Q) was the last
-  gap — every pair used to share the Mapillary camera. A second camera detector, FCOS3D, validated
+  gap, every pair used to share the Mapillary camera. A second camera detector, FCOS3D, validated
   to its published mAP, crossed with both lidars stays above independence (1.107, 1.072). The four
-  detector/threshold/confounding axes are complete; what remains genuinely open is *external* audit
-  — these results are reproducible and self-checked, but retained as `proposed`, not independently
+  detector/threshold/confounding axes are complete; what remains genuinely open is *external* audit:
+  these results are reproducible and self-checked, but retained as `proposed`, not independently
   reviewed.
 
 ## Two results that sharpen the picture
@@ -80,7 +80,7 @@ five measured covariates, cannot explain the coupling away.
   alone.
 - **What the 2×2 modality grid shows** ([Result Q](RESULT_Q_CAMERA_AXIS_AND_MODALITY_GRID.md)). With
   two cameras and two lidars, all six pairs exceed independence. The strongest coupling is
-  lidar-lidar (1.290) — shared point sparsity. Two cameras couple like cross-modality (1.144), not
+  lidar-lidar (1.290), shared point sparsity. Two cameras couple like cross-modality (1.144), not
   like two lidars. So the coupling is governed by *shared failure drivers*, not by same-versus-cross
   modality, and no pairing reaches the independence a redundancy safety case assumes.
 

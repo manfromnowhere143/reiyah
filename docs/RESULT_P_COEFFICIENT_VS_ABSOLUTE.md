@@ -23,7 +23,7 @@ The estimand doc (`docs/ESTIMAND_RSS_DEFINITION_32.md`, section 1) already warns
 `P(both) / (P_A · P_B)` and is **not invariant to the marginal miss rates**. This result makes
 that warning concrete and shows it has a safety edge: as a detector's score threshold tightens,
 the marginal miss rates `P_A` and `P_B` rise, the denominator `P_A·P_B` rises, and `c` is dragged
-toward 1 for arithmetic reasons — while the thing a redundancy argument actually needs to bound,
+toward 1 for arithmetic reasons, while the thing a redundancy argument actually needs to bound,
 the absolute joint-miss rate `P(both)`, rises at the same time.
 
 ## The measurement
@@ -34,7 +34,7 @@ absolute quantities.
 
 **Mapillary (camera) x Megvii (lidar)**
 
-| score >= | P_A | P_B | c (coefficient) | P(both) — absolute | excess = P(both) − P_A·P_B |
+| score >= | P_A | P_B | c (coefficient) | P(both), absolute | excess = P(both) − P_A·P_B |
 |---|---|---|---|---|---|
 | 0.10 | 0.314 | 0.134 | **2.271** [2.216, 2.322] | **0.096** [0.091, 0.101] | 0.054 [0.051, 0.056] |
 | 0.20 | 0.395 | 0.220 | 1.878 [1.843, 1.913] | 0.163 [0.157, 0.169] | 0.076 [0.073, 0.079] |
@@ -44,7 +44,7 @@ absolute quantities.
 
 **Mapillary (camera) x PointPillars (lidar)**
 
-| score >= | P_A | P_B | c (coefficient) | P(both) — absolute | excess |
+| score >= | P_A | P_B | c (coefficient) | P(both), absolute | excess |
 |---|---|---|---|---|---|
 | 0.10 | 0.314 | 0.174 | **1.909** [1.860, 1.957] | **0.104** [0.099, 0.110] | 0.050 [0.047, 0.052] |
 | 0.20 | 0.395 | 0.378 | 1.557 [1.532, 1.581] | 0.232 [0.225, 0.240] | 0.083 [0.080, 0.086] |
@@ -76,8 +76,8 @@ Every interval is non-overlapping between adjacent thresholds, so the two trends
    whatever `c` says. `P(both)` and its absolute excess are what a redundancy argument must bound,
    and they are largest where `c` is smallest.
 
-3. Therefore a redundancy argument that certifies safety by exhibiting a small `c` — the shape of
-   Corollary 3's premise — can hold at exactly the operating point where the two sensors jointly
+3. Therefore a redundancy argument that certifies safety by exhibiting a small `c`, the shape of
+   Corollary 3's premise, can hold at exactly the operating point where the two sensors jointly
    miss the most objects. **`c` must be read together with the marginal miss rates, never alone.**
 
 This does not overturn Results L, M, N or O: after conditioning on the five admissible confounders

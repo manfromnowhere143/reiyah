@@ -4,7 +4,32 @@ Document ID: `reiyah.result-s-corrected-safety-calculus`
 
 Version: `0.1.0`
 
-Lifecycle status: `proposed`
+Lifecycle status: `corrected` (figures withdrawn as stated on 2026-09-06; direction retained as conditional)
+
+## Correction of 2026-09-06, read first
+
+The reconciliation check `tools/measure/check_claim_reconciliation.py` caught this document
+asserting figures the claim register withdrew on 2026-08-29 under
+`reiyah.gate-b.claim.evidence-cost-pooled`: the evidence counts and the "at least 26 percent"
+percentage. That register entry lists five conditions that must hold before any evidence-budget
+figure returns, set out in [`ESTIMAND_RSS_DEFINITION_32.md`](ESTIMAND_RSS_DEFINITION_32.md)
+section 6.4. This document meets none of them:
+
+1. the bridge `N proportional to 1/p` is used with no stated estimator or confidence level;
+2. `c` is measured on detection misses over all annotated objects, not on safety-critic mistakes;
+3. ghost-ghost dependence is unmeasured;
+4. the corollary bounds a three-subsystem majority vote and this is a two-channel pair; and
+5. the pooled marginal `c` is used where the corollary requires a uniform bound over every pair.
+
+Disposition: every evidence count, percentage, and multiplier below is **withdrawn as stated** and
+retained with this correction attached, per the register's deletion-prohibited policy. What
+survives is qualitative and conditional: from `P <= 6 c p^2` the admissible per-channel rate
+shrinks as `1/sqrt(c)`, so a campaign sized under independence is undersized wherever `c > 1`, by
+an amount that grows with `c`. The direction is retained. The number is not. The illustrative
+effective-channel reading (`n_eff`) is not an evidence budget and is retained as illustrative. The
+original text follows unchanged except for the withdrawal markers the check requires.
+
+## Original text, retained historically
 
 This turns the measurement into the number a safety argument actually consumes. Every prior
 result asked whether the independence assumption holds. This asks the next question: given that
@@ -25,8 +50,10 @@ N(c, P_e) = 1 / p = sqrt( 6 c / P_e ).
 ```
 
 **Self-check against RSS's own worked example.** For `c = 1`, `P_e = 1e-9`:
-`N = sqrt(6 / 1e-9) = 77,460`, which RSS states as "on the order of `10^5`." Reproduced exactly.
-That reproduction is what licenses substituting a measured `c` into the same formula.
+`N = sqrt(6 / 1e-9)`, about `7.7 x 10^4`, consistent with the text's "on the order of `10^5`."
+The specific count is a Reiyah derivation, not a figure RSS publishes (register: narrowed). This
+consistency was taken to license substituting a measured `c` into the same formula; the correction
+above records why that licence does not hold as stated.
 
 The consequence is the whole point: **required evidence scales as `sqrt(c)`.** RSS assumes
 `c ~ 1` and never estimates it. We estimated it.
@@ -45,17 +72,21 @@ answers the safety-evidence question. Result S uses the marginal.
 Marginal camera-lidar coefficient measured on nuScenes val (Mapillary x Megvii), and the
 corrected evidence at `P_e = 1e-9`:
 
-| operating point (score >=) | marginal c | inflation `sqrt(c)` | corrected `N` | extra evidence vs RSS |
-|---|---|---|---|---|
-| 0.10 | 2.271 | 1.507 | 116,724 | +39,265 |
-| 0.20 | 1.878 | 1.370 | 106,146 | +28,686 |
-| 0.30 | 1.587 | **1.260** | 97,596 | +20,136 |
-| 0.40 | 1.363 | 1.168 | 90,447 | +12,987 |
-| 0.50 | 1.239 | 1.113 | 86,216 | +8,757 |
+| operating point (score >=) | marginal c | inflation `sqrt(c)` | corrected `N` | extra evidence vs RSS | status |
+|---|---|---|---|---|---|
+| 0.10 | 2.271 | 1.507 | 116,724 | +39,265 | withdrawn as stated |
+| 0.20 | 1.878 | 1.370 | 106,146 | +28,686 | withdrawn as stated |
+| 0.30 | 1.587 | **1.260** | 97,596 | +20,136 | withdrawn as stated |
+| 0.40 | 1.363 | 1.168 | 90,447 | +12,987 | withdrawn as stated |
+| 0.50 | 1.239 | 1.113 | 86,216 | +8,757 | withdrawn as stated |
 
-**The headline.** At a `0.30` operating point, RSS's independence-based evidence figure is
-understated by a factor of `sqrt(1.587) = 1.260`: **at least 26% more validation evidence is
-required than Corollary 3 claims, for this pair.** The correction is a range, `1.11x` to `1.51x`,
+The marginal `c` column is measured and stands (Results K and P). The `sqrt(c)` column is the
+conditional derivation. The `N` and extra-evidence columns are withdrawn as stated.
+
+**The former headline, withdrawn as stated.** It read: at a `0.30` operating point, RSS's
+independence-based evidence figure is understated by a factor of `sqrt(1.587) = 1.260`, at least
+26% more validation evidence than Corollary 3 claims, for this pair (withdrawn as stated). Withdrawn
+on the five grounds above. The range it described, `1.11x` to `1.51x`, is likewise withdrawn as stated,
 because the marginal coefficient depends on the operating threshold (Result P). And it is a
 **lower bound**, because the benchmark deletes the camera-only-visible objects before scoring
 (Result A), which biases the coefficient toward independence.
@@ -67,7 +98,8 @@ credits the **human** as a redundant channel. That redundancy carries its own me
 dependence, `c = 1.46` (Result H3), a further `sqrt(1.46) = 1.208x` correction that RSS applies
 by **zero**, because the human is outside its model. Two credited redundancy layers compound: the
 automation `sqrt(1.587)` and the human `sqrt(1.46)` give **`1.522x`** the RSS evidence figure, a
-52% understatement, before the lower-bound caveat.
+52% understatement, before the lower-bound caveat. These multipliers are withdrawn as stated on the
+same five grounds; the compounding structure is retained as the shape of the open question.
 
 ## An interpretation: effective independent channels
 

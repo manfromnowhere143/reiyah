@@ -48,12 +48,14 @@ The tools expect `eventEyeglance.txt`, `eventVideoReduced.txt`, `baselineEyeglan
   different-kind (human x machine) roughly holds - on detectable objects, with an engaged human.
 - [`H6_TOTAL_BOTH_MISS.md`](H6_TOTAL_BOTH_MISS.md) - the deepest version, with an interval. A strong
   reference detector defines objects present, a realistic edge detector is the deployed automation
-  (totally blind to 84.5% of them), and the total joint silent miss with human neglect is c = 0.981,
+  (totally blind to 84.5% of them), and the total joint miss with human neglect is c = 0.981,
   clip-clustered 95% CI [0.962, 0.998]. Even at total blindness the human-machine pairing is not
   worse than independent, in sharp contrast to same-kind redundancy.
 
 ## Discipline
 
 Every result descriptive and `proposed`, `No Video` kept as unknown, never a causal or safety
-claim, no released `1.2` byte involved. The next steps are anchoring the glance to the
+claim, no released `1.2` byte involved. H5 and H6 execute pretrained torchvision detectors on the
+BDD-A frames to produce the automation channel's outputs; nothing is trained, and the word silent
+is not used for a both-channel miss. The next steps are anchoring the glance to the
 precipitating instant, driver-level clustering, and the first joint human-automation measurement.

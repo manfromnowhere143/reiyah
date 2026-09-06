@@ -90,12 +90,16 @@ and it fails most for the systems that share the most.
 
 ## The consequence, corrected
 
-Required validation evidence in the redundancy argument scales as `sqrt(c)`
-([S](RESULT_S_CORRECTED_SAFETY_CALCULUS.md)), reproduced against RSS's own worked example. With the
-measured coefficient, a same-kind redundancy needs at least 26% more validation evidence than the
-argument claims, a lower bound, while the human-machine layer needs almost none. Two coupled sensors
-provide the joint-failure protection of one and a half independent channels; a seven-model jury,
-the diversity of 3.6.
+Under RSS Corollary 3 ([S](RESULT_S_CORRECTED_SAFETY_CALCULUS.md)), holding the bound fixed, the
+admissible per-channel error rate shrinks as `1/sqrt(c)`, so a validation campaign sized under
+independence is undersized wherever `c > 1`. The evidence-budget percentages once derived from this
+are withdrawn as stated and remain withdrawn: the corollary concerns a three-subsystem vote over miss
+and ghost mistakes on safety-critic errors, and the measured two-channel detection-miss `c` does not
+yet meet its five stated conditions. Reiyah reports `c` with its absolute-risk vector and no
+evidence-budget percentage. The human-machine layer, at `c` about 1, adds essentially no correction.
+Two coupled sensors provide the joint-failure protection of about one and a half independent
+channels, and a seven-model jury the diversity of 3.6; both are illustrative effective-count
+readings, not evidence budgets.
 
 ## The instrument
 
@@ -110,9 +114,9 @@ so the same monitor form applies to two sensors or a human and a machine.
 ## What is proven, and what is open
 
 Proven, and reproducible from this repository: the coefficient exceeds 1 for similar-kind redundancy
-across three domains and two benchmarks; it is approximately 1 for a human and a machine; the
-required evidence is understated by the measured amount; and a calibrated, output-only monitor
-corrects the over-confidence. Every result is `proposed`, self-checked against independent anchors,
+across three domains and two benchmarks; it is approximately 1 for a human and a machine; a campaign
+sized under independence is undersized in the direction and ordering the coefficient gives, with no
+percentage claimed; and a calibrated, output-only monitor corrects the over-confidence. Every result is `proposed`, self-checked against independent anchors,
 robustness-tested, and red-teamed, with the marginal and conditional coefficients kept distinct and
 the demonstrations labeled as demonstrations.
 

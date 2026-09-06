@@ -25,8 +25,8 @@ safety-critical result. **It is also confounded, and must not be claimed as stat
 ## The confound is our own Result P
 
 Result P established that `c = P(both) / (P_A·P_B)` is deflated by the marginal miss rates. A
-stronger detector has a **lower** miss rate — CenterPoint misses 21% of objects at 0.3, Megvii
-34%, PointPillars 48% — and a lower marginal **inflates `c` for arithmetic reasons alone**. So the
+stronger detector has a **lower** miss rate, CenterPoint misses 21% of objects at 0.3, Megvii
+34%, PointPillars 48%, and a lower marginal **inflates `c` for arithmetic reasons alone**. So the
 monotonic rise above is partly, perhaps mostly, the marginal artifact, not coincident failure. A
 finding this session already proved predicts exactly this trap.
 
@@ -56,8 +56,8 @@ about **0.02**.
 2. **A small, robust residual survives.** At every one of the four matched miss-rate levels the
    ordering is perfectly monotonic in accuracy, and at the extremes the intervals separate
    (P_B = 0.40: PointPillars 1.116 [1.106, 1.124] vs CenterPoint 1.141 [1.129, 1.149], no
-   overlap). So there is a genuine effect — the strongest detector does fail together with the
-   camera slightly more than the weakest, even at equal miss rates — but it is an order of
+   overlap). So there is a genuine effect, the strongest detector does fail together with the
+   camera slightly more than the weakest, even at equal miss rates, but it is an order of
    magnitude smaller than the naive comparison implied.
 
 3. **The safety reading is the careful one.** "Better sensors couple more" is directionally

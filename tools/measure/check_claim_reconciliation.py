@@ -38,7 +38,7 @@ WITHDRAWAL_MARKERS = (
     "historical", "HISTORICAL", "not for current use", "forbidden",
 )
 
-LIVE_GLOBS = ("docs/*.md", "*.md")
+LIVE_GLOBS = ("docs/*.md", "*.md", "human-channel/*.md", "llm-generalization/*.md")
 
 
 

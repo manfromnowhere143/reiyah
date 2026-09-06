@@ -9,7 +9,7 @@ Lifecycle status: `proposed`
 ## The deepest question, and why H5 could not answer it
 
 H5 measured cross-agent coincidence on objects the detector at least weakly saw, and found
-independence there. The dangerous case is the total joint silent miss: an object that is really
+independence there. The dangerous case is the total joint miss: an object that is really
 present, that the automation detects **not at all**, and that the human also does not attend. That
 needs a reference for "present" beyond the deployed detector. BDD-A carries no ground-truth boxes,
 and BDD100K's labels cannot be joined to it (the clips are renumbered with no mapping, confirmed
@@ -32,7 +32,7 @@ BDD-A validation, 100 clips, 533 frames, **7,735 reference objects**.
 |---|---|
 | P(deployed automation totally misses a present object) | 84.5% |
 | P(human misses) | 50.0% |
-| P(both miss = the joint silent miss) | 41.4% |
+| P(both miss = the joint total miss) | 41.4% |
 | expected if independent | 42.2% |
 | **coefficient c** | **0.981** |
 | clip-clustered bootstrap 95% CI (96 clips) | **[0.962, 0.998]** |
@@ -86,6 +86,9 @@ redundancy the data supports.
 ## Non-claims
 
 Research-use public data (Xia et al. 2018, BDD-A), retained as `proposed`. A strong detector as
-reference, not human ground truth; a lower bound on the true joint miss. Descriptive, not a causal
+reference, not human ground truth; a lower bound on the true joint miss. The word silent is not
+claimed: no warning, indication, or fallback channel is observed here, and the register reserves
+joint silent miss for an audited monitor adapter. Pretrained torchvision detectors are executed on
+the public frames to produce the automation channel; no model is trained. Descriptive, not a causal
 effect, not a safety determination, not a claim about any product. No released `1.2` byte is
 involved.

@@ -10,6 +10,8 @@ majority vote, and multi-model cross-checking, all of which assume the models er
 Public v1 Open LLM Leaderboard per-question results (`open-llm-leaderboard-old` on Hugging Face),
 MMLU 5-shot, per-question correctness, joined across models by a hash of the example. Same method as
 the sensor work: public per-item predictions and the Definition 32 coefficient. No LLM inference.
+Result V fits and calibrates a logistic-regression monitor on those outputs, the only model fitting
+in this thread, and reports it on a held-out split.
 
 Reproduce: `bdda-venv/bin/python llm-generalization/tools/result_t_llm_independence.py` (downloads
 the per-question parquet files from Hugging Face).
