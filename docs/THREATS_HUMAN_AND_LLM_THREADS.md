@@ -48,10 +48,13 @@ clip-clustered band [0.927, 0.993] on 117 clips. The sample differs from H5's re
 against 651 frames; H5's arguments were not recorded), and the three cross-agent estimates agree
 within the band.
 
-### 6. BDD-A terms are not retained (open)
+### 6. BDD-A terms are not retained (answered)
 
-Three retrieval attempts failed on 2026-09-06 and are recorded. The data are not redistributed;
-the results may be described as research-use public data and no further until the terms are held.
+The live host and portal were unreachable on 2026-09-06 (three attempts plus the operator's
+browser, certificate invalid). The licence text was retained from an Internet Archive snapshot of
+the BDD100K documentation, which states it covers data and labels downloaded from the portal:
+educational, research and not-for-profit use, copying and distribution with notice. The data are
+not redistributed here.
 
 ## LLM juries
 

@@ -301,8 +301,10 @@ with an engaged human; the LLM monitor is validated on two benchmarks and one ju
    under its retained CC BY 4.0 record and NOTICE attribution.
 2. **Retain an independent external review.** Operator action; cannot be self-performed. This is the
    real frontier.
-3. Retain the BDD-A terms once the portal is reachable; DCPT and 100-Car custody is retained and
-   verified (section 14), the leaderboard archive states no licence.
+3. Custody is closed for every source that states terms: DCPT and 100-Car from publisher records,
+   BDD-A from a retained archive snapshot of the licence page (the portal's certificate is invalid
+   as of 2026-09-06, confirmed from the operator's browser); the leaderboard archive states no
+   licence.
 4. Done this session: X, X2, Y, Z, AA, AB, AC, AD, AE, AF, AG, H7, the Gate B check, the red team
    for the newer threads. Open and
    scoped: a monitor on real driving channel outputs beyond the public benchmark; the H5 cross-agent
@@ -414,6 +416,9 @@ was deleted and no check was weakened.
    differs, stated. A second detector pass on the accelerator path was byte-identical.
 20. **Result AH3 added** (register `0.2.12`): the ghost coefficient against the time-shift null is
    4.6 to 9.8 on a second camera, a second lidar and a second operating point, no band reaching 1.
+21. **BDD-A terms retained** from an Internet Archive snapshot of the BDD100K licence page after
+   the operator's browser confirmed the portal's certificate is invalid; custody closed for every
+   source that states terms (register `0.2.13`).
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.

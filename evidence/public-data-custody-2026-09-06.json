@@ -133,6 +133,10 @@
         {
           "url": "https://raw.githubusercontent.com/pascalxia/driver_attention_prediction/master/LICENSE",
           "result": "404, not retrieved"
+        },
+        {
+          "url": "https://bdd-data.berkeley.edu/ (operator's browser)",
+          "result": "NET::ERR_CERT_COMMON_NAME_INVALID, not entered"
         }
       ],
       "local_files_not_in_git": [
@@ -144,7 +148,17 @@
         }
       ],
       "payload_in_public_git": [],
-      "custody_state": "third_party_unretained_terms_unretrieved"
+      "custody_state": "third_party_unretained_terms_recorded_from_archive_snapshot",
+      "terms_as_recorded": "Copyright 2018 The Regents of the University of California. Permission to use, copy, modify, and distribute this software and its documentation for educational, research, and not-for-profit purposes, without fee and without a signed licensing agreement, provided that the copyright notice and the licence paragraphs appear in all copies, modifications, and distributions; commercial use limited to BDD and BAIR Commons members; the documentation page states this licence covers the data and labels downloaded from https://bdd-data.berkeley.edu/, the portal that lists BDD-Attention.",
+      "retained_record": {
+        "path": "evidence/sources/bdd100k-doc-license-web-archive-20231004022524.html",
+        "sha256": "sha256:af8f4a7ffcdd9bce0ed7669b274c347e589966209bd657b15d9dedcd6e28bf0d",
+        "byte_size": 10824,
+        "retrieved_via": "https://web.archive.org/web/20231004022524id_/https://doc.bdd100k.com/license.html",
+        "retrieved_on": "2026-09-06",
+        "note": "Internet Archive snapshot of the BDD100K documentation licence page; the live host did not resolve and the portal's certificate is invalid on 2026-09-06 (screenshot from the operator's browser confirms NET::ERR_CERT_COMMON_NAME_INVALID). A 2024-04-21 archive snapshot of the portal's download page carries the identical licence text but also a third party's account details and was therefore not retained; its URL is recorded as a pointer only."
+      },
+      "portal_download_page_pointer": "https://web.archive.org/web/20240421154328id_/http://bdd-data.berkeley.edu/download.html"
     },
     {
       "source_id": "open-llm-leaderboard-old",

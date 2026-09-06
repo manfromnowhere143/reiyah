@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -548,11 +548,11 @@
       ],
       "source_identity": {
         "source_id": "bdda",
-        "custody_state": "third_party_unretained_terms_unretrieved",
-        "exact_proposition": "BDD-A, Xia et al. 2018, arXiv:1711.06406; terms not retrieved after three recorded attempts on 2026-09-06."
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "BDD-A, Xia et al. 2018, arXiv:1711.06406, downloaded from the Berkeley DeepDrive portal; terms retained on 2026-09-06 from an Internet Archive snapshot of the BDD100K documentation licence page (Regents' licence: educational, research and not-for-profit use, copying and distribution with notice), which states it covers data and labels downloaded from that portal. Data not redistributed."
       },
       "reconsideration_requirements": [
-        "Retained BDD-A terms before any redistribution or publication use.",
+        "BDD-A terms: retained from an archive snapshot on 2026-09-06; research use permitted.",
         "Ground-truth boxes or a reference process independent of both channels."
       ],
       "notes": "Measured on the detector's own detections, so a floor on cross-agent dependence, not a certificate of independence. Engaged in-lab observers, aggregate heatmap. Pretrained torchvision Faster R-CNN executed on the frames; nothing trained. 2026-09-06 H5b: re-measured with the clip id recorded, c = 0.962, clip-clustered band [0.927, 0.993] on 117 clips; H5's sample (651 frames) differs from H5b's (519 frames) because H5's arguments were not recorded; both agree within the band."
@@ -572,8 +572,8 @@
       ],
       "source_identity": {
         "source_id": "bdda",
-        "custody_state": "third_party_unretained_terms_unretrieved",
-        "exact_proposition": "Same source as cross-agent-coincidence-detectable-set."
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "BDD-A, Xia et al. 2018, arXiv:1711.06406, downloaded from the Berkeley DeepDrive portal; terms retained on 2026-09-06 from an Internet Archive snapshot of the BDD100K documentation licence page (Regents' licence: educational, research and not-for-profit use, copying and distribution with notice), which states it covers data and labels downloaded from that portal. Data not redistributed."
       },
       "notes": "Reference is a strong detector, not human ground truth, so a lower bound on the true joint miss. Interval grazes 1.0 from below; reported as approximately independent and pointedly not the same-kind pattern. The word silent is not used. Two pretrained torchvision detectors executed; nothing trained."
     },
