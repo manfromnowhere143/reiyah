@@ -33,6 +33,14 @@ The tools expect `eventEyeglance.txt`, `eventVideoReduced.txt`, `baselineEyeglan
   to event_end. In about two thirds of crashes (67.8%) the driver was looking forward at the moment
   it happened. Eyes-on-road is necessary, not sufficient: a channel being on is not the channel
   succeeding, the human-side twin of the camera-lidar result.
+- [`H3_OBSERVATION_RESPONSE_JOINT.md`](H3_OBSERVATION_RESPONSE_JOINT.md) - the first joint
+  measurement. The same Definition 32 coefficient applied to the human's two channels, observation
+  and response: c = 1.46, they fail together beyond independence, and 23% of crashes had the driver
+  looking forward yet doing nothing. The redundancy fails on both sides of the windshield.
+- [`H4_DCPT_TAKEOVER.md`](H4_DCPT_TAKEOVER.md) - a modern L3 counterpart (DCPT, CC BY 4.0). Visual-
+  manual distraction (game, messaging, reading, eating) slows the automation-to-human takeover by
+  +0.47 s (+24%) versus no task; cognitive-only load costs almost nothing. The kind of distraction
+  is what matters, and the human-as-backup assumption is weakest for the tasks people do on a phone.
 
 ## Discipline
 
