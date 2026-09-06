@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -772,7 +772,7 @@
         "A non-linear monitor stated in advance.",
         "Only then may the two-sensor conjecture be called refuted rather than unsupported."
       ],
-      "notes": "Permitted use is as a negative result only: AUC 0.788 against 0.785 across folds, inside the spread. Together with sensor-scene-blindness-monitor this leaves the claim that the LLM monitor form applies to two sensors as a conjecture with two failed tests."
+      "notes": "Permitted use is as a negative result only: AUC 0.788 against 0.785 across folds, inside the spread. Together with sensor-scene-blindness-monitor this leaves the claim that the LLM monitor form applies to two sensors as a conjecture with two failed tests. 2026-09-06 later: with a boosted model (Result AD) the increment is 0.022 to 0.026 AUC outside the fold spread on three of four configurations; see sensor-disagreement-context-increment-nonlinear. The linear null stands as a model limitation."
     },
     {
       "claim_id": "reiyah.gate-b.claim.llm-coefficient-intervals",
@@ -881,6 +881,70 @@
         "exact_proposition": "100-Car Data (CC0, publisher record retained) and DCPT (CC BY 4.0, three files retained); parsing imported from the H3 and H4 tools."
       },
       "notes": "The 100-Car bands are not driver-clustered and understate uncertainty if events cluster within drivers. The DCPT visual-manual delay is +0.474 s [+0.214, +0.732]; cognitive-only includes zero."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.sensor-disagreement-context-increment-nonlinear",
+      "estimand": "Increment in five-fold grouped AUC, Brier and ECE from adding six output-only cross-channel context features to the own-feature realness model, with a histogram gradient-boosted classifier named in advance, on four detector-pair and operating-point configurations.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "detection_box",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_AD_NONLINEAR_SENSOR_MONITOR.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_ad.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Released nuScenes validation predictions for Mapillary, FCOS3D, Megvii and PointPillars, each match set gated at published mAP; scene table from the pinned meta.tgz."
+      },
+      "reconsideration_requirements": [
+        "A held-out detector pair not used in any configuration here.",
+        "Real driving channel outputs beyond the public benchmark before any deployability language."
+      ],
+      "notes": "Outside the fold spread on Mapillary x Megvii at 0.30 and 0.50 and on Mapillary x PointPillars; inside it on FCOS3D x Megvii. The scene-level form stays inconclusive with the same model. One model class, no tuning."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.llm-monitor-multi-benchmark-calibration",
+      "estimand": "AUC, Brier and ECE of the monitor fitted on jury A's items from two benchmarks and read on the third, on juries A and B, against the naive baseline, the MMLU-only fit and the in-domain ceiling.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "item",
+      "lineage": {
+        "first_stated_in": "llm-generalization/RESULT_AE_LEAVE_ONE_BENCHMARK_OUT.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "llm-generalization/evidence/result_ae.txt"
+      ],
+      "source_identity": {
+        "source_id": "open-llm-leaderboard-old",
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "Same source as llm-jury-coincidence-mmlu; tasks hendrycksTest (MMLU), arc:challenge, hellaswag; two juries."
+      },
+      "notes": "A negative result stated as measured: no fair comparison favors the two-benchmark fit, and on HellaSwag the transferred monitor is worse than chance (AUC 0.37 to 0.39 on jury A). Deployability language is bounded to: fit per task, read across channels."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.sensor-jury-effective-independence",
+      "estimand": "Effective number of independent channels (Result T definition) and inflation of the all-miss rate over independence for the four-detector nuScenes jury and every sub-jury at score 0.30, with instance-clustered bootstrap bands.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "object_track",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_AF_SENSOR_JURY.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_af.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Released nuScenes validation predictions for Mapillary, FCOS3D, Megvii and PointPillars, each match set gated at published mAP; scene table from the pinned meta.tgz."
+      },
+      "notes": "Full jury 2.10 [2.08, 2.13] of 4; same-kind pairs 1.43 to 1.45 of 2, cross-kind pairs 1.52 to 1.64 of 2, marginal at one operating point. A bootstrap defect in the first draft (whole-instance resampling under the eligible mask) is recorded in the tool and corrected."
     }
   ]
 }

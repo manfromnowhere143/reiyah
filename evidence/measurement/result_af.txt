@@ -1,0 +1,50 @@
+============================================================================================
+RESULT AF - the sensor jury in the LLM jury's quantity: effective independent channels
+nuScenes val, 134565 annotated objects (121871 with any lidar or radar return), 8976 tracked instances,
+four detectors at score >= 0.3; instance-clustered bootstrap, B = 1000, seed 20260906
+============================================================================================
+
+  per-detector miss rate, all objects:
+    Mapillary (camera)         46.4%   (eligible only 42.1%)
+    FCOS3D (camera)            61.6%   (eligible only 58.3%)
+    Megvii (lidar)             34.0%   (eligible only 29.0%)
+    PointPillars (lidar)       47.9%   (eligible only 43.8%)
+
+  all annotated objects:
+    jury                                    k  P(all miss)             inflation     effective independent
+    full jury: 2 cameras + 2 lidars         4        20.9%     4.48 [4.31, 4.67]      2.10 [2.08, 2.13] of 4
+    two cameras                             2        41.0%     1.43 [1.42, 1.45]      1.45 [1.44, 1.46] of 2
+    two lidars                              2        27.9%     1.71 [1.69, 1.74]      1.43 [1.42, 1.44] of 2
+    Mapillary x Megvii (camera x lidar)     2        25.1%     1.59 [1.57, 1.61]      1.52 [1.51, 1.53] of 2
+    Mapillary x PointPillars                2        31.0%     1.39 [1.37, 1.41]      1.56 [1.55, 1.57] of 2
+    FCOS3D x Megvii                         2        29.7%     1.42 [1.40, 1.44]      1.64 [1.63, 1.66] of 2
+    FCOS3D x PointPillars                   2        38.2%     1.29 [1.28, 1.31]      1.60 [1.59, 1.61] of 2
+    2 cameras + Megvii                      3        23.9%     2.46 [2.40, 2.52]      1.91 [1.89, 1.93] of 3
+    2 cameras + PointPillars                3        29.0%     2.11 [2.06, 2.16]      1.89 [1.88, 1.91] of 3
+    Mapillary + 2 lidars                    3        21.7%     2.87 [2.79, 2.95]      1.80 [1.78, 1.82] of 3
+    FCOS3D + 2 lidars                       3        25.0%     2.49 [2.43, 2.55]      1.88 [1.86, 1.90] of 3
+
+  eligible objects only:
+    jury                                    k  P(all miss)             inflation     effective independent
+    full jury: 2 cameras + 2 lidars         4        15.8%     5.08 [4.88, 5.31]      2.20 [2.17, 2.23] of 4
+    two cameras                             2        36.4%     1.48 [1.46, 1.50]      1.47 [1.46, 1.48] of 2
+    two lidars                              2        22.8%     1.79 [1.76, 1.83]      1.46 [1.45, 1.48] of 2
+    Mapillary x Megvii (camera x lidar)     2        19.9%     1.63 [1.60, 1.66]      1.56 [1.55, 1.57] of 2
+    Mapillary x PointPillars                2        26.1%     1.41 [1.39, 1.43]      1.59 [1.58, 1.61] of 2
+    FCOS3D x Megvii                         2        24.7%     1.46 [1.44, 1.48]      1.69 [1.67, 1.70] of 2
+    FCOS3D x PointPillars                   2        33.5%     1.31 [1.30, 1.33]      1.63 [1.61, 1.64] of 2
+    2 cameras + Megvii                      3        18.8%     2.64 [2.57, 2.72]      1.99 [1.96, 2.01] of 3
+    2 cameras + PointPillars                3        24.0%     2.23 [2.17, 2.29]      1.95 [1.93, 1.97] of 3
+    Mapillary + 2 lidars                    3        16.6%     3.10 [3.01, 3.20]      1.87 [1.85, 1.89] of 3
+    FCOS3D + 2 lidars                       3        19.9%     2.69 [2.61, 2.76]      1.95 [1.93, 1.97] of 3
+
+  reading against the LLM juries (Results T, W, Y): 7 models on MMLU 3.60 [3.53, 3.68] of 7;
+  6 on ARC-Challenge 1.64 [1.57, 1.71] of 6; 7 on HellaSwag 1.28 [1.27, 1.30] of 7.
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: released detector outputs on the public nuScenes validation split, marginal
+coefficients at one operating point including shared scene difficulty, retained as proposed.
+Miss is the validated matcher's absence of a match at 0.30; the two cameras and two lidars
+were all trained on the nuScenes training split, a shared-data threat already on record.
+Descriptive, not a safety determination, not a certificate about any deployed system. No
+detector is executed. No released 1.2 byte is involved.

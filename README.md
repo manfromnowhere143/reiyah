@@ -420,8 +420,11 @@ in AI juries alike. The law replicates on ARC-Challenge and HellaSwag, where the
 shared difficulty is nearly zero, so the lineage mechanism is benchmark-dependent while the marginal
 law is not. A coupling-aware monitor fitted on one jury reads seven unseen model families almost
 without loss and fails across benchmarks without recalibration; carried to the driving channels at
-the scene and object level it adds nothing over what the stack already knows, so the sentence that
-the same form applies to two sensors is a conjecture with two failed tests. The full reading is in
+the scene level it adds nothing over what the stack already knows, and at the object level a
+non-linear monitor reads cross-channel context as a measurable improvement on three of four
+configurations; fit per task, read across channels. Four sensors provide the joint-failure
+protection of about two independent channels, in the same quantity that gives a seven-model jury
+3.6. The full reading is in
 [`docs/GATE_B_FINDINGS_SYNTHESIS.md`](docs/GATE_B_FINDINGS_SYNTHESIS.md),
 [`human-channel/`](human-channel/), and [`llm-generalization/`](llm-generalization/).
 

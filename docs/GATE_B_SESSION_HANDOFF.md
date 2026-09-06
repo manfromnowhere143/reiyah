@@ -157,7 +157,8 @@ lineage mechanism is benchmark-dependent while the marginal law is not (Y, 2026-
 quantity carries a question-resampled interval (AC): the same-family excess beyond difficulty is
 0.058 [0.050, 0.066] on MMLU and includes zero on the other two, so Result T's lineage statement is
 narrowed to MMLU. A label-free margin normalization does not repair the monitor's task transfer and
-costs its channel transfer (X2).
+costs its channel transfer (X2); fitting on two benchmarks does not transfer to a third and on
+HellaSwag the transferred monitor is worse than chance (AE): fit per task, read across channels.
 No LLM inference: this reads public per-question outputs and joins by example hash. Files
 `llm-generalization/RESULT_T..W_*.md`.
 
@@ -189,8 +190,13 @@ realness at AUC 0.79 against 0.68 for its score alone, and six cross-channel con
 0.003, inside the fold spread. Two estimands, no support. File
 [`RESULT_AA_DISAGREEMENT_MONITOR.md`](RESULT_AA_DISAGREEMENT_MONITOR.md). Replicated on a second
 camera, a second lidar and a second operating point with the same verdict
-([`RESULT_AB_SENSOR_MONITOR_REPLICATION.md`](RESULT_AB_SENSOR_MONITOR_REPLICATION.md)). The
-non-linear test the register required is Result AD.
+([`RESULT_AB_SENSOR_MONITOR_REPLICATION.md`](RESULT_AB_SENSOR_MONITOR_REPLICATION.md)). **The
+non-linear test (AD):** with a boosted model the object-level context increment is 0.022 to 0.026
+AUC outside the fold spread on three of four configurations and inside it on one; the scene-level
+null stands. The conjecture is restated: readable at the object level with a non-linear monitor,
+not at the scene level ([`RESULT_AD_NONLINEAR_SENSOR_MONITOR.md`](RESULT_AD_NONLINEAR_SENSOR_MONITOR.md)).
+In the jury quantity, four sensors give 2.10 [2.08, 2.13] independent channels
+([`RESULT_AF_SENSOR_JURY.md`](RESULT_AF_SENSOR_JURY.md)).
 
 ## 5. The law, and the headline coefficients
 
@@ -291,9 +297,10 @@ with an engaged human; the LLM monitor is validated on two benchmarks and one ju
    real frontier.
 3. Retain the BDD-A terms once the portal is reachable; DCPT and 100-Car custody is retained and
    verified (section 14), the leaderboard archive states no licence.
-4. Optional hardening still open: the non-linear sensor monitors on all four configurations (AD,
-   running at this closeout; its first configuration showed the per-object context increment
-   emerges with a boosted model). Done: X, X2, Y, Z, AA, AB, AC.
+4. Done this session: X, X2, Y, Z, AA, AB, AC, AD, AE, AF, H7, the Gate B check. Open and
+   scoped: a monitor on real driving channel outputs beyond the public benchmark; the H5 cross-agent
+   coefficient with a clustered band (H6 has one); a second dataset for the shared-training-data
+   threat.
 
 Continue only the smallest unresolved step. Engineering pressure raises the burden of proof; it
 never raises confidence by itself.
@@ -372,6 +379,12 @@ was deleted and no check was weakened.
    request is drafted in [`EXTERNAL_REVIEW_REQUEST_2026-09-06.md`](EXTERNAL_REVIEW_REQUEST_2026-09-06.md).
 12. **H7 added**, bands on every human-channel headline; the eyes x hands cell is narrowed to
    1.46 [1.04, 1.90] (register `0.2.6`), and the DCPT delay survives participant clustering.
+13. **Results AD, AE, AF added** (register `0.2.7`). AD: with a boosted model the object-level
+   context increment is measurable on three of four configurations; the scene-level null stands.
+   AE: multi-benchmark calibration does not transfer, and on HellaSwag the transferred monitor is
+   worse than chance. AF: the four-sensor jury has 2.10 [2.08, 2.13] effective independent
+   channels; a bootstrap defect in its first draft is recorded and corrected. Four background jobs
+   were stopped externally at 15:25 and rerun serially; nothing was lost.
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.

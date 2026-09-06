@@ -87,7 +87,7 @@ includes zero on the other two benchmarks, so it is a MMLU finding, not a genera
 
 | domain | same-kind pairing | cross-kind pairing |
 |---|---|---|
-| sensors | two lidars, c = 1.29 | camera x lidar, c = 1.10 to 1.15; human x machine, c ~ 1 |
+| sensors | two lidars, c = 1.29; four sensors = 2.10 [2.08, 2.13] independent | camera x lidar, c = 1.10 to 1.15; human x machine, c ~ 1 |
 | the human | eyes x hands, c = 1.46 [1.04, 1.90], event-resampled | (n/a) |
 | LLM juries | same family, c = 1.52 (MMLU), 1.87 (ARC), 2.43 (HellaSwag) | cross family, c = 1.29 (MMLU), 1.73 (ARC), 2.30 (HellaSwag) |
 
@@ -123,16 +123,11 @@ from; read on a second benchmark it falls to the naive baseline and its calibrat
 ([X](../llm-generalization/RESULT_X_MONITOR_TRANSFER.md)). The instrument is portable across
 channels and must be calibrated on the task it reads; a label-free rescaling of the margins does not
 repair the task failure and costs channel transfer ([X2](../llm-generalization/RESULT_X2_LABEL_FREE_NORMALIZATION.md)).
-Carried to the driving channels as a
-scene-level estimator of how many present objects both sensors missed, the coupling-aware form does
-not beat a baseline that scales with how many objects the fusion reports
-([Z](RESULT_Z_SCENE_BLINDNESS_MONITOR.md), `inconclusive`), and at the object level, on
-detections only one channel reports, cross-channel context adds nothing to the detection's own
-attributes ([AA](RESULT_AA_DISAGREEMENT_MONITOR.md)), on three pairs and two operating points
-([AB](RESULT_AB_SENSOR_MONITOR_REPLICATION.md)). A jointly missed object leaves no output, so
-the sentence that the same form applies to two sensors is a conjecture with two failed tests, not a
-result. What the measured coupling changes is the evidence calculus and the credit given to
-redundancy; it has not been shown to be readable live from sensor outputs.
+Carried to the driving channels, the coupling-aware form is not readable at the scene level, where a jointly missed object leaves no output ([Z](RESULT_Z_SCENE_BLINDNESS_MONITOR.md), [AB](RESULT_AB_SENSOR_MONITOR_REPLICATION.md)); at the object level, on detections only one channel reports, a non-linear monitor reads cross-channel context as a measurable improvement on three of four configurations ([AA](RESULT_AA_DISAGREEMENT_MONITOR.md), [AD](RESULT_AD_NONLINEAR_SENSOR_MONITOR.md)). The sentence that the same form applies to two sensors is replaced by that statement. What the measured coupling changes with certainty is the evidence calculus and the credit given to redundancy; live readability is object-level only. Fitting the monitor on two benchmarks does not transfer to a third, and on HellaSwag the
+transferred monitor is worse than chance ([AE](../llm-generalization/RESULT_AE_LEAVE_ONE_BENCHMARK_OUT.md)):
+fit per task, read across channels. In the jury's own quantity, four sensors provide the
+joint-failure protection of 2.10 [2.08, 2.13] independent channels
+([AF](RESULT_AF_SENSOR_JURY.md)).
 
 ## What is proven, and what is open
 

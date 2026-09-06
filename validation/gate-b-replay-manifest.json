@@ -1,7 +1,7 @@
 {
   "manifest_kind": "gate-b-replay-manifest",
   "artifact_id": "reiyah.gate-b.replay-manifest",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "note": "Rows with replay_class argv_unrecorded_historical are retained transcripts whose exact command line was not recorded per transcript when they were produced; their digests are checked, they are never replayed by this tool, and adding an argv is a later, append-only step.",
@@ -454,6 +454,51 @@
       ],
       "timeout_s": 7200,
       "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_ad.txt",
+      "sha256": "sha256:a947e577239d3fa4f9afe754c9bcf9e414f1be48c43e0f6772a470a5dff43d73",
+      "tool": "tools/measure/result_ad_nonlinear_sensor_monitor.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "tools/measure/result_ad_nonlinear_sensor_monitor.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "docs/RESULT_AD_NONLINEAR_SENSOR_MONITOR.md"
+      ],
+      "timeout_s": 9000,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "llm-generalization/evidence/result_ae.txt",
+      "sha256": "sha256:fcac86a95a7bb79fdc1735035d4c0ee5adfc0c78b98c48906e16ecee972699ec",
+      "tool": "llm-generalization/tools/result_ae_leave_one_benchmark_out.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "llm-generalization/tools/result_ae_leave_one_benchmark_out.py"
+      ],
+      "replay_class": "network_cached",
+      "results": [
+        "llm-generalization/RESULT_AE_LEAVE_ONE_BENCHMARK_OUT.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "evidence/measurement/result_af.txt",
+      "sha256": "sha256:db9359916d4560a62743de4fd2b668bde975cb221596a39745b06d32cb66a139",
+      "tool": "tools/measure/result_af_sensor_jury.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "tools/measure/result_af_sensor_jury.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "docs/RESULT_AF_SENSOR_JURY.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": true
     }
   ]
 }

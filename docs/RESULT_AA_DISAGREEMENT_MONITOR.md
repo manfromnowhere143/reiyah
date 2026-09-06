@@ -61,7 +61,8 @@ detections within 5 m 0.585, score of agreeing pairs 0.513.
    spread. The strongest single context feature, distance to the nearest other-channel detection,
    reaches 0.61 alone and is absorbed by the object's own attributes.
 
-3. **The two-sensor conjecture is now unsupported on two estimands.** At the scene level (Z) and
+3. **The two-sensor conjecture is now unsupported on two estimands** (with linear models; Result AD
+   later found the object-level increment with a boosted model on three of four configurations). At the scene level (Z) and
    at the object level (AA), on this pair and operating point with linear and calibrated models,
    the coupling-aware form buys nothing over what the stack already knows. The program's sentence
    that the same monitor form applies to two sensors is retained only as a conjecture with two

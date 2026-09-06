@@ -1,0 +1,155 @@
+loading juries on three benchmarks...
+  loaded meta-llama__Llama-2-7b-hf on mmlu: 13937 questions (run 2023-08-19T16:35:46.942696, 2023 format)
+  loaded meta-llama__Llama-2-13b-hf on mmlu: 13937 questions (run 2023-08-19T22:35:38.117975, 2023 format)
+  loaded meta-llama__Llama-2-70b-hf on mmlu: 13937 questions (run 2023-08-22T09:05:23.035851, 2023 format)
+  loaded mistralai__Mistral-7B-v0.1 on mmlu: 13937 questions (run 2023-09-27T15-30-59.039834, 2023 format)
+  loaded tiiuae__falcon-7b on mmlu: 13937 questions (run 2023-07-19T10:51:47.706539, 2023 format)
+  loaded mosaicml__mpt-7b on mmlu: 13937 questions (run 2023-08-22T15:05:51.358534, 2023 format)
+  loaded Qwen__Qwen-7B on mmlu: 13937 questions (run 2023-10-13T06-37-24.832652, 2023 format)
+  gold check Llama-2-7b-hf on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Llama-2-13b-hf on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Llama-2-70b-hf on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Mistral-7B-v0.1 on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check falcon-7b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check mpt-7b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Qwen-7B on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  loaded meta-llama__Llama-2-7b-hf on arc: 1170 questions (run 2023-08-19T16:35:46.942696, 2023 format)
+  loaded meta-llama__Llama-2-13b-hf on arc: 1170 questions (run 2023-08-19T22:35:38.117975, 2023 format)
+  loaded meta-llama__Llama-2-70b-hf on arc: 1170 questions (run 2023-08-22T09:05:23.035851, 2023 format)
+  loaded mistralai__Mistral-7B-v0.1 on arc: 1170 questions (run 2023-09-27T15-30-59.039834, 2023 format)
+  loaded tiiuae__falcon-7b on arc: 1172 questions (run 2023-07-19T10:51:47.706539, 2023 format)
+  loaded mosaicml__mpt-7b on arc: 1170 questions (run 2023-08-22T15:05:51.358534, 2023 format)
+  loaded Qwen__Qwen-7B on arc: 1170 questions (run 2023-10-13T06-37-24.832652, 2023 format)
+  dropped (non-joining hashes) on arc: ['falcon-7b']
+  gold check Llama-2-7b-hf on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+  gold check Llama-2-13b-hf on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+  gold check Llama-2-70b-hf on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+  gold check Mistral-7B-v0.1 on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+  gold check mpt-7b on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+  gold check Qwen-7B on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+  loaded meta-llama__Llama-2-7b-hf on hellaswag: 10019 questions (run 2023-08-19T16:35:46.942696, 2023 format)
+  loaded meta-llama__Llama-2-13b-hf on hellaswag: 10019 questions (run 2023-08-19T22:35:38.117975, 2023 format)
+  loaded meta-llama__Llama-2-70b-hf on hellaswag: 10019 questions (run 2023-08-22T09:05:23.035851, 2023 format)
+  loaded mistralai__Mistral-7B-v0.1 on hellaswag: 10019 questions (run 2023-09-27T15-30-59.039834, 2023 format)
+  loaded tiiuae__falcon-7b on hellaswag: 10019 questions (run 2023-07-19T10:51:47.706539, 2023 format)
+  loaded mosaicml__mpt-7b on hellaswag: 10019 questions (run 2023-08-22T15:05:51.358534, 2023 format)
+  loaded Qwen__Qwen-7B on hellaswag: 10019 questions (run 2023-10-13T06-37-24.832652, 2023 format)
+  gold check Llama-2-7b-hf on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check Llama-2-13b-hf on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check Llama-2-70b-hf on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check Mistral-7B-v0.1 on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check falcon-7b on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check mpt-7b on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check Qwen-7B on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  loaded 01-ai__Yi-6B on mmlu: 13937 questions (run 2023-11-02T10-48-20.025919, 2024, gold recovered at join format)
+  loaded EleutherAI__gpt-neox-20b on mmlu: 13937 questions (run 2023-07-20T10:44:54.391639, 2023 format)
+  loaded google__gemma-7b on mmlu: 13937 questions (run 2024-02-16T08-54-11.990054, 2024, gold recovered at join format)
+  loaded microsoft__phi-2 on mmlu: 13937 questions (run 2023-12-14T09-31-24.484620, 2024, gold recovered at join format)
+  loaded bigscience__bloom-7b1 on mmlu: 13937 questions (run 2023-08-01T14:42:42.953249, 2023 format)
+  loaded stabilityai__stablelm-base-alpha-7b on mmlu: 13937 questions (run 2023-07-19T17:27:18.412966, 2023 format)
+  loaded openlm-research__open_llama_7b_v2 on mmlu: 13937 questions (run 2023-08-23T15:22:49.203021, 2023 format)
+  gold check Yi-6B on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (recovered gold)
+  gold check gpt-neox-20b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check gemma-7b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (recovered gold)
+  gold check phi-2 on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (recovered gold)
+  gold check bloom-7b1 on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check stablelm-base-alpha-7b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check open_llama_7b_v2 on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  loaded 01-ai__Yi-6B on arc: 1170 questions (run 2023-11-02T10-48-20.025919, 2024, gold recovered at join format)
+  loaded EleutherAI__gpt-neox-20b on arc: 1172 questions (run 2023-07-20T10:44:54.391639, 2023 format)
+  loaded google__gemma-7b on arc: 1170 questions (run 2024-02-16T08-54-11.990054, 2024, gold recovered at join format)
+  loaded microsoft__phi-2 on arc: 1170 questions (run 2023-12-14T09-31-24.484620, 2024, gold recovered at join format)
+  loaded bigscience__bloom-7b1 on arc: 1170 questions (run 2023-08-01T14:42:42.953249, 2023 format)
+  loaded stabilityai__stablelm-base-alpha-7b on arc: 1172 questions (run 2023-07-19T17:27:18.412966, 2023 format)
+  loaded openlm-research__open_llama_7b_v2 on arc: 1170 questions (run 2023-08-23T15:22:49.203021, 2023 format)
+  dropped (non-joining hashes) on arc: ['gpt-neox-20b', 'stablelm-base-alpha-7b']
+  gold check Yi-6B on arc: acc == (chosen == gold) on 100.00% of 1170 rows (recovered gold)
+  gold check gemma-7b on arc: acc == (chosen == gold) on 100.00% of 1170 rows (recovered gold)
+  gold check phi-2 on arc: acc == (chosen == gold) on 100.00% of 1170 rows (recovered gold)
+  gold check bloom-7b1 on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+  gold check open_llama_7b_v2 on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+  loaded 01-ai__Yi-6B on hellaswag: 10019 questions (run 2023-11-02T10-48-20.025919, 2024, gold recovered at join format)
+  loaded EleutherAI__gpt-neox-20b on hellaswag: 10019 questions (run 2023-07-20T10:44:54.391639, 2023 format)
+  loaded google__gemma-7b on hellaswag: 10019 questions (run 2024-02-16T08-54-11.990054, 2024, gold recovered at join format)
+  loaded microsoft__phi-2 on hellaswag: 10019 questions (run 2023-12-14T09-31-24.484620, 2024, gold recovered at join format)
+  loaded bigscience__bloom-7b1 on hellaswag: 10019 questions (run 2023-08-01T14:42:42.953249, 2023 format)
+  loaded stabilityai__stablelm-base-alpha-7b on hellaswag: 10019 questions (run 2023-07-19T17:27:18.412966, 2023 format)
+  loaded openlm-research__open_llama_7b_v2 on hellaswag: 10019 questions (run 2023-08-23T15:22:49.203021, 2023 format)
+  gold check Yi-6B on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (recovered gold)
+  gold check gpt-neox-20b on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check gemma-7b on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (recovered gold)
+  gold check phi-2 on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (recovered gold)
+  gold check bloom-7b1 on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check stablelm-base-alpha-7b on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check open_llama_7b_v2 on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+============================================================================================
+RESULT AE - leave-one-benchmark-out: fit the monitor on two benchmarks, read the third
+  jury A on mmlu: 7 models, 13937 items, wrong 38.4%;  jury B on mmlu: 7 models, 13937 items
+  jury A on arc: 6 models, 1170 items, wrong 46.2%;  jury B on arc: 5 models, 1170 items
+  jury A on hellaswag: 7 models, 10019 items, wrong 39.6%;  jury B on hellaswag: 7 models, 10019 items
+============================================================================================
+
+  AE held-out mmlu, jury A (7 models), fitted on arc + hellaswag
+    n = 13937, jury (plurality) wrong rate 38.4%
+    estimator                        AUC    Brier     ECE
+    naive: 1 - agreement           0.719    0.204   0.042
+    monitor (no refit)             0.742    0.324   0.348
+    unanimous items (770): actual wrong 10.4%, naive risk 0.0%, monitor risk 51.4%
+    reliability bands predicted/actual %: 59/9  64/34  68/26  81/58  95/65
+    single-benchmark reference (fitted on mmlu only): AUC 0.849  Brier 0.152  ECE 0.008
+    in-domain ceiling on mmlu/jury A (refit on its own split, held-out): AUC 0.851  Brier 0.152  ECE 0.019
+
+  AE held-out mmlu, jury B (7 models), fitted on arc + hellaswag
+    n = 13937, jury (plurality) wrong rate 42.6%
+    estimator                        AUC    Brier     ECE
+    naive: 1 - agreement           0.683    0.221   0.053
+    monitor (no refit)             0.686    0.353   0.367
+    unanimous items (126): actual wrong 23.8%, naive risk 0.0%, monitor risk 50.3%
+    reliability bands predicted/actual %: 62/24  67/20  78/52  93/61  97/57
+    in-domain ceiling on mmlu/jury B (refit on its own split, held-out): AUC 0.856  Brier 0.152  ECE 0.015
+
+  AE held-out arc, jury A (6 models), fitted on mmlu + hellaswag
+    n = 1170, jury (plurality) wrong rate 46.2%
+    estimator                        AUC    Brier     ECE
+    naive: 1 - agreement           0.618    0.337   0.312
+    monitor (no refit)             0.598    0.244   0.052
+    unanimous items (607): actual wrong 37.2%, naive risk 0.0%, monitor risk 38.5%
+    reliability bands predicted/actual %: 21/37  34/43  41/41  45/45  64/65
+    single-benchmark reference (fitted on mmlu only): AUC 0.575  Brier 0.286  ECE 0.184
+    in-domain ceiling on arc/jury A (refit on its own split, held-out): AUC 0.665  Brier 0.229  ECE 0.054
+
+  AE held-out arc, jury B (5 models), fitted on mmlu + hellaswag
+    n = 1170, jury (plurality) wrong rate 47.9%
+    estimator                        AUC    Brier     ECE
+    naive: 1 - agreement           0.583    0.343   0.298
+    monitor (no refit)             0.593    0.257   0.108
+    unanimous items (520): actual wrong 41.0%, naive risk 0.0%, monitor risk 36.2%
+    reliability bands predicted/actual %: 17/37  29/46  39/44  45/51  66/62
+    single-benchmark reference (fitted on mmlu only): AUC 0.610  Brier 0.294  ECE 0.213
+    in-domain ceiling on arc/jury B (refit on its own split, held-out): AUC 0.623  Brier 0.245  ECE 0.068
+
+  AE held-out hellaswag, jury A (7 models), fitted on mmlu + arc
+    n = 10019, jury (plurality) wrong rate 39.6%
+    estimator                        AUC    Brier     ECE
+    naive: 1 - agreement           0.593    0.347   0.341
+    monitor (no refit)             0.386    0.445   0.412
+    unanimous items (7947): actual wrong 34.0%, naive risk 0.0%, monitor risk 44.5%
+    reliability bands predicted/actual %: 1/46  9/48  27/48  62/37  96/19
+    single-benchmark reference (fitted on mmlu only): AUC 0.367  Brier 0.394  ECE 0.373
+    in-domain ceiling on hellaswag/jury A (refit on its own split, held-out): AUC 0.708  Brier 0.210  ECE 0.017
+
+  AE held-out hellaswag, jury B (7 models), fitted on mmlu + arc
+    n = 10019, jury (plurality) wrong rate 44.9%
+    estimator                        AUC    Brier     ECE
+    naive: 1 - agreement           0.507    0.396   0.365
+    monitor (no refit)             0.510    0.404   0.377
+    unanimous items (6779): actual wrong 44.7%, naive risk 0.0%, monitor risk 28.6%
+    reliability bands predicted/actual %: 0/38  1/46  9/52  31/51  80/38
+    single-benchmark reference (fitted on mmlu only): AUC 0.502  Brier 0.375  ECE 0.332
+    in-domain ceiling on hellaswag/jury B (refit on its own split, held-out): AUC 0.720  Brier 0.209  ECE 0.010
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: public leaderboard outputs, retained as proposed. Three benchmarks, two juries;
+the held-out MMLU / jury A row is not an out-of-sample test for the single-benchmark
+reference and is marked so by omission. Not a deployed product, not a safety determination,
+not a driving result. No released 1.2 byte is involved.
