@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -80,7 +80,7 @@
         "Match the arity and fusion rule of the system under analysis, or derive and retain a two-channel corollary.",
         "Use the uniform bound the corollary requires rather than a pooled estimate."
       ],
-      "notes": "The direction survives the withdrawal and carries no number: if the measured dependence transfers to safety-critic mistakes, a campaign sized under independence is undersized. 2026-09-06: docs/RESULT_S_CORRECTED_SAFETY_CALCULUS.md reasserted the withdrawn pooled figures as a sqrt(c) correction without meeting any of the five requirements; the reconciliation check caught it, the document now carries the correction first, and the figures stay withdrawn as stated. Transcript evidence/measurement/result_s.txt is historical bytes."
+      "notes": "The direction survives the withdrawal and carries no number: if the measured dependence transfers to safety-critic mistakes, a campaign sized under independence is undersized. 2026-09-06: docs/RESULT_S_CORRECTED_SAFETY_CALCULUS.md reasserted the withdrawn pooled figures as a sqrt(c) correction without meeting any of the five requirements; the reconciliation check caught it, the document now carries the correction first, and the figures stay withdrawn as stated. Transcript evidence/measurement/result_s.txt is historical bytes. 2026-09-06 later: requirement 2 (ghost-ghost dependence) is now measured by Result AH (c_ghost 6.2 [4.6, 10.3] against a within-scene time-shift null) but not identified as a bound under reference error; requirements 0, 1, 3 and 4 remain unmet. Figures stay withdrawn."
     },
     {
       "claim_id": "reiyah.gate-b.claim.evidence-cost-worst-group",
@@ -965,6 +965,31 @@
         "exact_proposition": "Released nuScenes validation predictions for four detectors, each match set gated at published mAP; row construction copied from Result AA and self-checked to its exact counts."
       },
       "notes": "Transfer loss 0.005 AUC to a changed camera, 0.072 with broken calibration to a changed lidar, 0.041 to a changed operating point. All configurations share the nuScenes training split and the transfer pairs share one channel with the primary; within-ecosystem transfer only. Same law as llm-monitor-transfer: portable across like channels, calibrated for the semantics read."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.ghost-coincidence",
+      "estimand": "P(lidar ghost within 2 m | camera ghost) and its reverse, against a rotation-about-ego null, a 180-degree null and a within-scene time-shift null, with scene-clustered bands; a ghost is a detection with no annotated object of any class within 2 m.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "detection_box",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_AH_GHOST_COINCIDENCE.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_ah.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Mapillary and Megvii released nuScenes validation predictions at score 0.30; every annotation counted including unreturned objects; ego position and heading from the annotation cache's ego track; scene table from the pinned meta.tgz."
+      },
+      "reconsideration_requirements": [
+        "Reference-error identification (register: unknown) before c_ghost is used as a bound; barrier and traffic-cone rows are the likely annotation-gap cases.",
+        "A second pair and operating point.",
+        "A ghost definition on safety-critic assertions, not all detections, before any Corollary 3 use."
+      ],
+      "notes": "The load-bearing coefficient is 6.18 [4.60, 10.31] against the within-scene time-shift null; the rotation-null coefficients (11.7, 11.8) are inflated by road geometry as the sanity row (true detections 8.1 above the same null) shows. Upper bound in the reference-error direction; lenient ghost definition in the other. Evidence-cost condition three is measured, not identified."
     }
   ]
 }
