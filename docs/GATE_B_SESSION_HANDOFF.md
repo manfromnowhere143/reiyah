@@ -385,6 +385,11 @@ was deleted and no check was weakened.
    worse than chance. AF: the four-sensor jury has 2.10 [2.08, 2.13] effective independent
    channels; a bootstrap defect in its first draft is recorded and corrected. Four background jobs
    were stopped externally at 15:25 and rerun serially; nothing was lost.
+14. **Full replay retained.** `gate_b_check.py --replay local_deterministic,network_cached` on the
+   tree at `35add31`: 19 of 19 replayable transcripts byte-identical (T, U, V, W, X, X2, Y, AC, AE;
+   H1 to H4, H7; Z, AA, AB, AD, AF), 17 historical sensor-spine rows digest-checked and never
+   replayed, 2 BDD-A inference transcripts not replayed here. Report
+   `evidence/gate-b-check-2026-09-06-replay-mode.json`.
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.
