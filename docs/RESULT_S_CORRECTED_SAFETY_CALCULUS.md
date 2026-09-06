@@ -88,7 +88,8 @@ independence-based evidence figure is understated by a factor of `sqrt(1.587) = 
 26% more validation evidence than Corollary 3 claims, for this pair (withdrawn as stated). Withdrawn
 on the five grounds above. The range it described, `1.11x` to `1.51x`, is likewise withdrawn as stated,
 because the marginal coefficient depends on the operating threshold (Result P). And it is a
-**lower bound**, because the benchmark deletes the camera-only-visible objects before scoring
+**lower bound** (this direction is contradicted by Result D's transcript, which shows the filtered
+set overstates the coefficient by about 3 percent; corrected 2026-09-06), because the benchmark deletes the camera-only-visible objects before scoring
 (Result A), which biases the coefficient toward independence.
 
 ## The redundancy RSS does not model at all

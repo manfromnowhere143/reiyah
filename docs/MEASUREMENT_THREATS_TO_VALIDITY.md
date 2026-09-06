@@ -38,7 +38,18 @@ component contributes to the measured coefficient remains open and is not claime
 **The attack.** nuScenes deletes every ground-truth object with zero lidar and radar returns before
 scoring (Result A, 9.43% of objects). A filtered denominator could distort the dependence estimate.
 
-**What answers it.** The deleted objects are exactly the camera-favorable ones, where the camera can
+**Correction of 2026-09-06, read first.** The paragraph below stated the direction backwards and is
+retained with this correction attached. Result D's retained transcript measures the coefficient on
+both denominators at every operating point, and the official filtered set gives the higher value
+throughout: at 0.30, 1.630 on the official set against 1.587 on the full set; at 0.10, 2.369 against
+2.271; at 0.50, 1.261 against 1.239. The filter therefore inflates the measured coefficient by
+about 3 percent; the coefficient on the full object set is slightly lower, not higher. The
+2026-08-29 correction table already recorded this ("censoring inflates dependence about 3%"); this
+document contradicted it and now does not. "Lower bound" may not be said of the sensor coefficient
+on this ground. The finding, that the coefficient exceeds 1 on both denominators at every operating
+point, stands on the full set as on the official set.
+
+**What the paragraph said, retained as written.** The deleted objects are exactly the camera-favorable ones, where the camera can
 succeed and the lidar cannot. Removing them removes the discordant cases that would push the
 estimate toward independence, so the measured coefficient is a **lower bound**: the true coupling on
 the full object set is at least as strong. Result D measured the direction directly, about 3% on the

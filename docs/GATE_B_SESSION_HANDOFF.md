@@ -419,6 +419,13 @@ was deleted and no check was weakened.
    differs, stated. A second detector pass on the accelerator path was byte-identical.
 20. **Result AH3 added** (register `0.2.12`): the ghost coefficient against the time-shift null is
    4.6 to 9.8 on a second camera, a second lidar and a second operating point, no band reaching 1.
+27. **A live contradiction found and corrected.** The threats document's section 2 stated that the
+   benchmark filter biases the coefficient toward independence, making it a lower bound. Result D's
+   retained transcript shows the opposite at every operating point (official 1.630 against full
+   1.587 at 0.30), which the 2026-08-29 correction table had already recorded. The section now
+   carries the correction first; "lower bound" may not be said of the sensor coefficient on that
+   ground; registered as `benchmark-filter-direction`, rejected (register `0.2.17`). Found while
+   auditing a public comment that repeated the wrong direction.
 26. **Result AJ, the second preregistered test** (register `0.2.16`): four of five predictions
    supported, including the first mechanism-based forecast (Result P's deflation, on every pair at
    both new operating points) and the first numerical-range forecast; AJ-2, the same-kind ordering,

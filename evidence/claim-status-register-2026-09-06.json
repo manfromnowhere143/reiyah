@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.16",
+  "version": "0.2.17",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -1053,6 +1053,34 @@
         "exact_proposition": "Result AF tool imported unchanged with SCORE assigned to 0.10 and 0.50; released predictions for four detectors, each match set gated at published mAP."
       },
       "notes": "AJ-1, AJ-3, AJ-4, AJ-5 supported; AJ-2 falsified at 0.50 (two-camera pair 1.88 [1.87, 1.90] of 2 above every cross-kind pair) and supported at 0.10. AJ-4 is the first mechanism-based forecast and held on all twelve pair comparisons. The effective-independence quantity saturates toward the jury size as miss rates approach 1; reported only beside its miss rates."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.benchmark-filter-direction",
+      "estimand": "Whether the benchmark's zero-return filter biases the measured camera-lidar coincident-miss coefficient toward independence, making the measured value a lower bound on the full-object-set value.",
+      "status": "rejected",
+      "current_scientific_use": "forbidden",
+      "unit": "object",
+      "lineage": {
+        "first_stated_in": "docs/MEASUREMENT_THREATS_TO_VALIDITY.md section 2 (stated backwards); corrected 2026-09-06",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_d.txt"
+      ],
+      "values_withdrawn": [
+        {
+          "label": "the phrase, not a number",
+          "value": "see transcript"
+        }
+      ],
+      "refutation": {
+        "reason_code": "no_computation_produced_it",
+        "statement": "Result D measures both denominators at every operating point and the official filtered set gives the higher coefficient throughout (1.630 against 1.587 at 0.30; 2.369 against 2.271 at 0.10; 1.261 against 1.239 at 0.50). The filter inflates the coefficient by about 3 percent; the measured value is not a lower bound on that ground. The coefficient exceeds 1 on both denominators."
+      },
+      "reconsideration_requirements": [
+        "None: the direction is measured. Any lower-bound statement about the sensor coefficient must rest on a different mechanism with its own retained measurement."
+      ],
+      "notes": "Found on 2026-09-06 while auditing a public comment that said the coefficient is a lower bound. The 2026-08-29 correction table had recorded the right direction; the threats document contradicted it and now carries the correction first."
     }
   ]
 }
