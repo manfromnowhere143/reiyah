@@ -38,6 +38,16 @@ Models that do not join by the Result W rule are dropped and named. The verdict 
 `supported` or `falsified` from the transcript alone, recorded in the result document and the
 register, whichever way it falls.
 
+## Deviation, recorded before any result was read
+
+The first run of the unchanged Result Y tool loaded no model: the Winogrande files carry no
+`gold` index, only an `answer` string naming the correct option, and the tool's silent skip on a
+missing column left the jury empty (the transcript of that failed run is retained in the session
+log, not in the repository, since it produced no measurement). The procedure is amended to a copy
+of the tool, `result_ai_winogrande.py`, that maps `answer` to a gold index and refuses any model on
+which the mapping disagrees with the file's own `acc` flag on any row. No prediction is changed.
+This amendment was committed before the amended tool was run.
+
 ## Non-claims
 
 A preregistration, not a result. Public leaderboard outputs; no LLM is executed; no released `1.2`
