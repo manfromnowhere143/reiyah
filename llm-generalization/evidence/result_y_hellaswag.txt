@@ -1,0 +1,32 @@
+loading models on hellaswag...
+  loaded meta-llama__Llama-2-7b-hf: 10019 questions
+  loaded meta-llama__Llama-2-13b-hf: 10019 questions
+  loaded meta-llama__Llama-2-70b-hf: 10019 questions
+  loaded mistralai__Mistral-7B-v0.1: 10019 questions
+  loaded tiiuae__falcon-7b: 10019 questions
+  loaded mosaicml__mpt-7b: 10019 questions
+  loaded Qwen__Qwen-7B: 10019 questions
+====================================================================================
+RESULT Y - the LLM law on a third benchmark
+7 models, 10019 questions answered by all
+====================================================================================
+
+  marginal c: mean 2.319, same-family 2.428, cross-family 2.301
+  conditional c: mean 1.028, same 1.036, cross 1.027
+  7-model jury: P(all wrong) 30.41% vs indep 0.145% = 210x; effective independent models 1.28
+
+  agreement: P(correct|two agree) 62.5%, P(both wrong|agree) 37.5%
+  unanimous 79.3% of questions, of those wrong 34.0%
+
+  --- replication reference: MMLU (T/U) and ARC-Challenge (W) ---
+  MMLU: marginal 1.32 (same 1.52 > cross 1.29), conditional 1.10, jury eff 3.6,
+        agree->correct 64.8%, unanimous->wrong 10.4%.
+  ARC:  marginal 1.76 (same 1.87 > cross 1.73), conditional 1.05, jury eff 1.6,
+        agree->correct 57.9%, unanimous->wrong 37.2%.
+  If hellaswag shows the same pattern (c>1, same>cross, agreement over-trusted), the law
+  holds; the size of the conditional residual is reported as measured, not assumed.
+
+------------------------------------------------------------------------------------
+NON-CLAIMS: public leaderboard outputs on a third benchmark (hellaswag, leaderboard v1 setting);
+same estimand; marginal c includes shared difficulty; descriptive, proposed; a
+robustness replication, not a driving result. No released 1.2 byte involved.

@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -682,6 +682,26 @@
         "Validation on real driving channel outputs before any deployability language beyond channel transfer."
       ],
       "notes": "Two-sided and stated so: channel transfer holds (AUC 0.853 against a 0.856 ceiling on seven unseen families), task transfer fails (at or below the naive baseline on ARC-Challenge with broken calibration). Any claim of deployability without task-level recalibration is forbidden by this entry. A logistic-regression monitor is fitted; no LLM executed."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.llm-jury-coincidence-hellaswag-replication",
+      "estimand": "Replication of the MMLU and ARC jury coefficients, effective independent models, and agreement reliability on HellaSwag with the same seven models.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "item",
+      "lineage": {
+        "first_stated_in": "llm-generalization/RESULT_Y_THIRD_BENCHMARK.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "llm-generalization/evidence/result_y_hellaswag.txt"
+      ],
+      "source_identity": {
+        "source_id": "open-llm-leaderboard-old",
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "Same source as llm-jury-coincidence-mmlu; task hellaswag, leaderboard v1 10-shot setting."
+      },
+      "notes": "Direction replicates on all counts; the conditional residual is 1.03 with a same-family margin of 0.01, so the lineage mechanism is registered as benchmark-dependent, not universal. The marginal law (coupling far above independence, agreement over-trusted) is the robust statement across three benchmarks. Same authors and code as T, U, W; never independent validation."
     }
   ]
 }

@@ -73,7 +73,10 @@ seven-model jury has the effective diversity of 3.6 independent models
 when two models agree they are correct 65% of the time, and when all seven agree they are still
 wrong 10% ([U](../llm-generalization/RESULT_U_AGREEMENT_RELIABILITY.md)). The finding replicates on
 ARC-Challenge, where a six-model jury has the effective diversity of 1.6 and unanimity is wrong 37%
-of the time ([W](../llm-generalization/RESULT_W_SECOND_BENCHMARK.md)).
+of the time ([W](../llm-generalization/RESULT_W_SECOND_BENCHMARK.md)), and on HellaSwag, where the
+jury's effective diversity is 1.28 and the residual beyond shared difficulty is nearly zero, so the
+lineage mechanism is benchmark-dependent while the marginal law is not
+([Y](../llm-generalization/RESULT_Y_THIRD_BENCHMARK.md)).
 
 ## The law
 
@@ -81,7 +84,7 @@ of the time ([W](../llm-generalization/RESULT_W_SECOND_BENCHMARK.md)).
 |---|---|---|
 | sensors | two lidars, c = 1.29 | camera x lidar, c = 1.10 to 1.15; human x machine, c ~ 1 |
 | the human | eyes x hands, c = 1.46 | (n/a) |
-| LLM juries | same family, c = 1.52 (MMLU), 1.87 (ARC) | cross family, c = 1.29 (MMLU), 1.73 (ARC) |
+| LLM juries | same family, c = 1.52 (MMLU), 1.87 (ARC), 2.43 (HellaSwag) | cross family, c = 1.29 (MMLU), 1.73 (ARC), 2.30 (HellaSwag) |
 
 **Redundancy across genuinely different kinds buys independence; redundancy across similar kinds
 does not.** Similar channels share a substrate and share their blind spots. Genuinely different

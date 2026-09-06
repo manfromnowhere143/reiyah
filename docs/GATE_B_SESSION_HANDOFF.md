@@ -150,7 +150,9 @@ different kinds, and their redundancy holds. Files `human-channel/H1..H6_*.md`.
 together; same-lineage more than cross-lineage; the residual survives difficulty conditioning; a
 seven-model jury has the effective diversity of 3.6 (T). Agreement is over-trusted: two agreeing are
 correct 64.8% of the time, all seven agreeing are still wrong 10.4% (U). It replicates on
-ARC-Challenge, where a six-model jury carries the diversity of 1.6 and unanimity is wrong 37.2% (W).
+ARC-Challenge, where a six-model jury carries the diversity of 1.6 and unanimity is wrong 37.2% (W),
+and on HellaSwag, where the jury's diversity is 1.28 and the conditional residual is only 1.03, so the
+lineage mechanism is benchmark-dependent while the marginal law is not (Y, 2026-09-06).
 No LLM inference: this reads public per-question outputs and joins by example hash. Files
 `llm-generalization/RESULT_T..W_*.md`.
 
@@ -180,7 +182,7 @@ baseline and its calibration breaks. Channel transfer holds, task transfer does 
 |---|---|---|
 | sensors | two lidars, c = 1.29 | camera x lidar, c = 1.10 to 1.15; human x machine, c ~ 0.98 |
 | the human | eyes x hands, c = 1.46 | (the human x machine cell above) |
-| LLM juries | same family c = 1.52 (MMLU), 1.87 (ARC) | cross family c = 1.29 (MMLU), 1.73 (ARC) |
+| LLM juries | same family c = 1.52 (MMLU), 1.87 (ARC), 2.43 (HellaSwag) | cross family c = 1.29 (MMLU), 1.73 (ARC), 2.30 (HellaSwag) |
 
 Similar channels share a substrate and share their blind spots; genuinely different ones do not. The
 independence assumption is a load-bearing fiction wherever redundancy is claimed, and it fails most
@@ -273,8 +275,8 @@ with an engaged human; the LLM monitor is validated on two benchmarks and one ju
 3. Retain the BDD-A terms once the portal is reachable; DCPT and 100-Car custody is retained and
    verified (section 14), the leaderboard archive states no licence.
 4. Optional hardening still open: the monitor validated on real driving channel outputs rather
-   than benchmark outputs; a label-free margin normalization so task transfer can be retested; a
-   third benchmark for the LLM law. The cross-jury transfer test is done (Result X).
+   than benchmark outputs; a label-free margin normalization so task transfer can be retested.
+   The cross-jury transfer test (X) and the third benchmark (Y) are done.
 
 Continue only the smallest unresolved step. Engineering pressure raises the burden of proof; it
 never raises confidence by itself.
@@ -319,6 +321,9 @@ was deleted and no check was weakened.
    lines, which were marked.
 7. **Result X added**, the monitor transfer test, with transcript `llm-generalization/evidence/result_x.txt`
    byte-identical across three runs and registered as `llm-monitor-transfer` (register `0.2.1`).
+8. **Result Y added**, the third benchmark (HellaSwag), transcript `llm-generalization/evidence/result_y_hellaswag.txt`
+   byte-identical across two runs, registered as `llm-jury-coincidence-hellaswag-replication`
+   (register `0.2.2`), with the near-zero conditional residual stated as the headline nuance.
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.

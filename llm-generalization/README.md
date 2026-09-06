@@ -48,6 +48,11 @@ question and checked against every row's own correctness flag.
   transfer holds. Read on ARC-Challenge it falls to or below the naive baseline and its calibration
   breaks: task transfer does not hold. The instrument is portable across channels and must be
   calibrated on the task it reads.
+- [`RESULT_Y_THIRD_BENCHMARK.md`](RESULT_Y_THIRD_BENCHMARK.md) - a third benchmark, HellaSwag.
+  Every direction of the law reappears (marginal c 2.32, same 2.43 > cross 2.30, a seven-model jury
+  with the effective diversity of 1.28, unanimity on 79% of questions and wrong on 34% of those), and
+  the residual beyond shared difficulty is nearly zero (conditional c 1.03). The marginal law is
+  robust across three benchmarks; the lineage mechanism is benchmark-dependent and stated so.
 
 ## Discipline
 
