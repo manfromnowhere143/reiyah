@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.18",
+  "version": "0.2.19",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -426,7 +426,7 @@
         "custody_state": "primary_retained",
         "exact_proposition": "Definition 32 of arXiv:1708.06374, the one sided c-approximate independence coefficient; every c below is the smallest constant satisfying it for its declared pair, stratum, and operating point."
       },
-      "notes": "One pair per cell except camera-lidar; the same-kind versus cross-kind reading rests on one lidar-lidar pair and one camera-camera pair and is not internally replicated. Modality-separation as a difference-in-c claim remains inconclusive (see modality-separation). Narrowed 2026-09-06 by Result AJ: the same-kind ordering holds at 0.10 and 0.30 and is falsified at 0.50, where FCOS3D misses 93.9 percent of objects and reads as independent of everything (the marginal artifact of Result P). Stated as: same-kind pairs are the least independent when channels operate in comparable regimes. Narrowed further 2026-09-06: at 0.50 the two-lidar pair (1.56 of 2) also exceeds the Mapillary x Megvii cross pair (1.53), so the near-blind camera is not the whole reason; the same-kind ordering holds at 0.10 and 0.30 and fails at 0.50 for reasons not identified beyond Result P's marginal artifact."
+      "notes": "One pair per cell except camera-lidar; the same-kind versus cross-kind reading rests on one lidar-lidar pair and one camera-camera pair and is not internally replicated. Modality-separation as a difference-in-c claim remains inconclusive (see modality-separation). Narrowed 2026-09-06 by Result AJ: the same-kind ordering holds at 0.10 and 0.30 and is falsified at 0.50, where FCOS3D misses 93.9 percent of objects and reads as independent of everything (the marginal artifact of Result P). Stated as: same-kind pairs are the least independent when channels operate in comparable regimes. Narrowed further 2026-09-06: at 0.50 the two-lidar pair (1.56 of 2) also exceeds the Mapillary x Megvii cross pair (1.53), so the near-blind camera is not the whole reason; the same-kind ordering holds at 0.10 and 0.30 and fails at 0.50 for reasons not identified beyond Result P's marginal artifact. Result AM (exploratory, 2026-09-06): at 0.50 the two-lidar pair's inflation equals or exceeds every cross pair's in every range band (1.25 against 1.24 and 1.19 overall), so the lidar-pair reversal recorded by AJ lives in the effective-independence summary, not in the inflation; the camera pair collapses with FCOS3D 89 to 100 percent blind by band. Suggests, does not establish, stating the ordering in the inflation quantity; a preregistration in that quantity is the next step."
     },
     {
       "claim_id": "reiyah.gate-b.claim.accuracy-coupling-residual",
@@ -1124,6 +1124,26 @@
         "exact_proposition": "Result AH2 definitions imported unchanged; two comparison sets added."
       },
       "notes": "Coincident true detections recur 71.7 percent [69.7, 73.4], the fair reference for ghost-persistence; single channels 74.2 and 76.9."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.ordering-failure-diagnostic",
+      "estimand": "Pairwise inflation over independence for all six detector pairs at 0.30 and 0.50 by ego range band and by class, with per-stratum miss rates; a map of where the same-kind ordering fails.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "object",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_AM_ORDERING_FAILURE_DIAGNOSTIC.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_am.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Result AF definitions imported unchanged; all annotated objects; no bands."
+      },
+      "notes": "Exploratory, not preregistered, no bands; permitted as a diagnostic only. It changes no verdict."
     }
   ]
 }

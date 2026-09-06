@@ -428,6 +428,10 @@ was deleted and no check was weakened.
    strict-threshold rows, AE and X2 and U and AI sentences corrected in place, and the AD verdict
    rule stated. Every document carries its own "Adversarial reading, 2026-09-06" section. Register
    `0.2.18`.
+30. **Result AM (exploratory)**: the AJ falsification split into a summary-statistic artifact (the
+   lidar pair keeps its rank in the inflation quantity in every range band at 0.50) and a
+   measurement fact (the camera pair collapses with the second camera 89 to 100 percent blind).
+   Register `0.2.19`. Next step named: a preregistration of the ordering in the inflation quantity.
 29. **Result AK, the third preregistered test** (numeric ranges): two of six supported, four
    falsified. The ghost finding is operating-point dependent (not at 0.10) and is qualified so
    everywhere, including the note recommended for the public post.

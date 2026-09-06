@@ -1,7 +1,7 @@
 {
   "manifest_kind": "gate-b-replay-manifest",
   "artifact_id": "reiyah.gate-b.replay-manifest",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "note": "Rows with replay_class argv_unrecorded_historical are retained transcripts whose exact command line was not recorded per transcript when they were produced; their digests are checked, they are never replayed by this tool, and adding an argv is a later, append-only step.",
@@ -636,6 +636,21 @@
         "docs/RESULT_AH2B_COINCIDENT_TRUE_RECURRENCE.md"
       ],
       "timeout_s": 9000,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "evidence/measurement/result_am.txt",
+      "sha256": "sha256:e833bfd0204e70ccd377b7151c94c65fd9455b660eba9b1c8f557dd58f035d45",
+      "tool": "tools/measure/result_am_ordering_failure_diagnostic.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "tools/measure/result_am_ordering_failure_diagnostic.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "docs/RESULT_AM_ORDERING_FAILURE_DIAGNOSTIC.md"
+      ],
+      "timeout_s": 3600,
       "stderr_merged": true
     }
   ]

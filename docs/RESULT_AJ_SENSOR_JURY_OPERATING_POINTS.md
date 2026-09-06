@@ -62,7 +62,9 @@ A context-free reader (model-assisted, advisory, same model family as the author
    PointPillars, 2.02 [2.01, 2.04] of 2): it uses the mean miss rate, and with unequal miss rates
    it can pass the jury size while the inflation stays above 1. The inflation column is the primary
    quantity; effective independence is a summary with that known distortion.
-3. AJ-4's verdict needs the 0.30 values, which are in Result AF's transcript, not this one; the
+3. Result AM (exploratory) later located the lidar-pair reversal in the effective-independence
+   summary: in the inflation quantity the lidar pair keeps its rank in every range band at 0.50.
+4. AJ-4's verdict needs the 0.30 values, which are in Result AF's transcript, not this one; the
    preregistration said "from the transcript alone" and the verdict is stated as from the two
    transcripts.
 
