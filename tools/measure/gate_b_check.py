@@ -132,6 +132,11 @@ def main():
     check("STYLE     every result document carries Document ID, Version, Lifecycle status", not missing_hdr, str(missing_hdr) if missing_hdr else "")
     check("STYLE     every relative Markdown link resolves", not broken, str(broken[:6]) if broken else "")
 
+    # 6. review instrument: every number in every result document bound to retained bytes
+    rb = subprocess.run([sys.executable, "tools/measure/review_number_binding.py"], capture_output=True, text=True)
+    last = [l for l in rb.stdout.splitlines() if l.strip().startswith("RESULT:")]
+    check("REVIEW    every number in every result document is bound to retained bytes", rb.returncode == 0, last[-1].strip() if last else rb.stderr[:200])
+
     report["result"] = "pass" if fails == 0 else "fail"
     print(f"\n  RESULT: {report['result'].upper()}  ({fails} failing check(s))")
     if a.json:

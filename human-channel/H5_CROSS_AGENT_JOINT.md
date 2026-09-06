@@ -36,7 +36,7 @@ BDD-A validation, 120 clips, 651 frames, **13,904 driving objects**.
 | Pearson corr(automation score, human attention) | -0.022 |
 
 The coefficient is indistinguishable from 1, and the correlation is essentially zero, stable from a
-200-object pilot to a 14,000-object run.
+200-object pilot to the 13,904-object run.
 
 ## What it says, and why it is the sharpest line in the body of work
 

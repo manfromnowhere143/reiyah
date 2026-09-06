@@ -332,6 +332,8 @@ verifies every retained transcript against the SHA-256 recorded in
 `validation/gate-b-replay-manifest.json`, replays the transcripts of the classes named by
 `--replay` and requires byte identity, runs the register and reconciliation check, verifies the
 custody digests, and enforces the style rules (no em dash, document headers, resolving links). It
+runs the number-binding review (`tools/measure/review_number_binding.py`: every number in every
+result document must be bound to retained bytes, in one of five named states), and
 writes a machine-readable report with `--json`. Without `--replay` every transcript is reported as
 `not_replayed_here`, a distinct state never counted as replicated; rows of class
 `argv_unrecorded_historical` are digest-checked and never replayed. Run it before every closeout
@@ -416,6 +418,11 @@ was deleted and no check was weakened.
    differs, stated. A second detector pass on the accelerator path was byte-identical.
 20. **Result AH3 added** (register `0.2.12`): the ghost coefficient against the time-shift null is
    4.6 to 9.8 on a second camera, a second lidar and a second operating point, no band reaching 1.
+22. **Review instrument, part 1.** Every number in every result document is now classified as
+   bound to its own transcript, bound elsewhere, derived by one arithmetic step, exempt with a
+   reason, or unbound; 1,751 numbers across 33 documents, two findings on first run (a rounded
+   count in H5, corrected; a tokenizer defect on unit suffixes, corrected), zero unbound after.
+   Integrated into the Gate B check; report retained under `evidence/`.
 21. **BDD-A terms retained** from an Internet Archive snapshot of the BDD100K licence page after
    the operator's browser confirmed the portal's certificate is invalid; custody closed for every
    source that states terms (register `0.2.13`).
