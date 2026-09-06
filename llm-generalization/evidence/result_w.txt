@@ -1,0 +1,30 @@
+loading models on arc:challenge...
+  loaded meta-llama__Llama-2-7b-hf: 1170 questions
+  loaded meta-llama__Llama-2-13b-hf: 1170 questions
+  loaded meta-llama__Llama-2-70b-hf: 1170 questions
+  loaded mistralai__Mistral-7B-v0.1: 1170 questions
+  loaded tiiuae__falcon-7b: 1172 questions
+  loaded mosaicml__mpt-7b: 1170 questions
+  loaded Qwen__Qwen-7B: 1170 questions
+  dropped (non-joining hashes): ['falcon-7b']
+====================================================================================
+RESULT W - the LLM law on a second benchmark: ARC-Challenge
+6 models, 1170 questions answered by all
+====================================================================================
+
+  marginal c: mean 1.761, same-family 1.874, cross-family 1.733
+  conditional c: mean 1.054, same 1.062, cross 1.052
+  6-model jury: P(all wrong) 29.32% vs indep 1.055% = 28x; effective independent models 1.64
+
+  agreement: P(correct|two agree) 57.9%, P(both wrong|agree) 42.1%
+  unanimous 51.9% of questions, of those wrong 37.2%
+
+  --- replication verdict vs MMLU (T/U) ---
+  MMLU: marginal 1.32 (same 1.52 > cross 1.29), conditional 1.10, jury eff 3.6,
+        agree->correct 64.8%, unanimous->wrong 10.4%.
+  If ARC shows the same pattern (c>1, same>cross, agreement over-trusted), the law holds.
+
+------------------------------------------------------------------------------------
+NON-CLAIMS: public leaderboard outputs on a second benchmark (ARC-Challenge 25-shot);
+same estimand; marginal c includes shared difficulty; descriptive, proposed; a
+robustness replication, not a driving result. No released 1.2 byte involved.

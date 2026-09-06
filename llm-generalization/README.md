@@ -33,6 +33,11 @@ the per-question parquet files from Hugging Face).
   ECE 0.015 vs 0.045). On held-out unanimous items the naive ensemble assigns 0% risk while the true
   wrong rate is 9.5%; the monitor assigns 11.6%, catching the coupled-failure blind spot. Its
   features are channel-agnostic, so the same form applies to two sensors or a human and a machine.
+- [`RESULT_W_SECOND_BENCHMARK.md`](RESULT_W_SECOND_BENCHMARK.md) - the red-team. The whole law
+  replicates on ARC-Challenge, a different domain: marginal c 1.76 (same 1.87 > cross 1.73),
+  conditional 1.05, a six-model jury with the effective diversity of 1.6, and unanimous-yet-wrong
+  37% (against 10% on MMLU). On harder material the coupling sharpens. The findings are not an MMLU
+  artifact.
 
 ## Discipline
 
