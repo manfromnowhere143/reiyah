@@ -415,7 +415,12 @@ flowchart TB
 
 Similar systems share their blind spots. Genuinely different ones do not. The independence
 assumption is a load-bearing fiction wherever redundancy is claimed, in sensors, in the human, and
-in AI juries alike, and the full reading is in
+in AI juries alike. The law replicates on ARC-Challenge and HellaSwag, where the residual beyond
+shared difficulty is nearly zero, so the lineage mechanism is benchmark-dependent while the marginal
+law is not. A coupling-aware monitor fitted on one jury reads seven unseen model families almost
+without loss and fails across benchmarks without recalibration; carried to the driving channels at
+the scene and object level it adds nothing over what the stack already knows, so the sentence that
+the same form applies to two sensors is a conjecture with two failed tests. The full reading is in
 [`docs/GATE_B_FINDINGS_SYNTHESIS.md`](docs/GATE_B_FINDINGS_SYNTHESIS.md),
 [`human-channel/`](human-channel/), and [`llm-generalization/`](llm-generalization/).
 
