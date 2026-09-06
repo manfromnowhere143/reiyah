@@ -126,6 +126,9 @@ def main():
     print(f"  conditional c: mean {np.nanmean([cond_c(*p) for p in pairs]):.3f}, "
           f"same {np.nanmean([cond_c(*p) for p in same]):.3f}, "
           f"cross {np.nanmean([cond_c(*p) for p in cross]):.3f}")
+    mc_all = [marg_c(*p) for p in pairs]; cc_all = [cond_c(*p) for p in pairs]
+    print(f"  marginal c per pair: min {np.min(mc_all):.3f}, max {np.max(mc_all):.3f} over {len(pairs)} pairs (deviation 4: added for AI-1)")
+    print(f"  conditional c per pair: min {np.nanmin(cc_all):.3f}, max {np.nanmax(cc_all):.3f}")
 
     p_each = W.mean(axis=0)
     p_all = (W.sum(axis=1) == len(names)).mean()

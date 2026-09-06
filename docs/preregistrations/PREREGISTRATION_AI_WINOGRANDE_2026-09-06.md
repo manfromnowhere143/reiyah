@@ -69,6 +69,13 @@ prediction is changed. Committed before the run. Three procedural deviations bef
 preregistered test is a finding about the archive's heterogeneity and about the tool, and is
 recorded as such.
 
+## Deviation 4, recorded before the final run
+
+With all seven models joined, prediction AI-1 (every pair above 1) could not be judged because
+the tool prints only mean coefficients. Two output lines are added, the per-pair minimum and
+maximum of the marginal and conditional coefficients; no computation, definition or prediction
+changes. Committed before the final run, whose transcript is the one retained.
+
 ## Non-claims
 
 A preregistration, not a result. Public leaderboard outputs; no LLM is executed; no released `1.2`
