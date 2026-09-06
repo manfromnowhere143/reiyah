@@ -22,6 +22,11 @@ the per-question parquet files from Hugging Face).
   survives difficulty conditioning (conditional c = 1.10); and a seven-model jury has the effective
   diversity of 3.6 independent models. The independence assumption is a load-bearing fiction
   wherever redundancy is claimed, in sensors, in the human, and in AI juries alike.
+- [`RESULT_U_AGREEMENT_RELIABILITY.md`](RESULT_U_AGREEMENT_RELIABILITY.md) - from measuring joint
+  failure to predicting it from outputs alone. When two models agree, they are correct only 64.8% of
+  the time (both wrong together 35% of the time), and when all seven agree they are still wrong 10.4%
+  of the time. Agreement is a systematically over-trusted signal, and the amount is measurable from
+  the outputs with no ground truth, the seed of a live monitor.
 
 ## Discipline
 

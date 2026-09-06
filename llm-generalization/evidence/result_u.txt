@@ -1,0 +1,36 @@
+loading models (chosen answers)...
+  loaded meta-llama__Llama-2-7b-hf: 13937 questions
+  loaded meta-llama__Llama-2-13b-hf: 13937 questions
+  loaded meta-llama__Llama-2-70b-hf: 13937 questions
+  loaded mistralai__Mistral-7B-v0.1: 13937 questions
+  loaded tiiuae__falcon-7b: 13937 questions
+  loaded mosaicml__mpt-7b: 13937 questions
+  loaded Qwen__Qwen-7B: 13937 questions
+========================================================================================
+RESULT U - is agreement a trustworthy signal? predicting joint failure from outputs
+MMLU 5-shot, 7 models, 13937 questions, choices A-D
+========================================================================================
+
+  when two models AGREE on an answer:
+  pair                                          P(agree)  P(correct|agree) P(both wrong|agree)
+  Llama-2-7b-hf + Llama-2-13b-hf                     55%             65.0%               35.0%
+  Llama-2-7b-hf + Llama-2-70b-hf                     50%             77.1%               22.9%
+  Llama-2-7b-hf + Mistral-7B-v0.1                    53%             71.5%               28.5%
+  Llama-2-7b-hf + falcon-7b                          32%             46.5%               53.5%
+  Llama-2-7b-hf + mpt-7b                             32%             50.9%               49.1%
+  Llama-2-7b-hf + Qwen-7B                            52%             68.9%               31.1%
+  Llama-2-13b-hf + Llama-2-70b-hf                    63%             76.6%               23.4%
+  Llama-2-13b-hf + Mistral-7B-v0.1                   66%             71.6%               28.4%
+
+  average over 21 pairs: P(correct|agree) 64.8%, P(both wrong|agree) 35.2%
+
+  the full 7-model jury:
+    unanimous (all chose the same answer): 5.5% of questions
+    of those, UNANIMOUS AND WRONG        : 10.4%  (80 questions)
+    so agreement, even unanimous, carries a real error rate the ensemble treats as ~0
+
+----------------------------------------------------------------------------------------
+NON-CLAIMS: public leaderboard outputs on one benchmark (MMLU 5-shot); agreement is the
+argmax choice; the independence baseline for shared wrong answers is a simple uniform
+approximation; descriptive, retained as proposed; a runtime-signal demonstration, not a
+deployed monitor and not a driving result. No released 1.2 byte is involved.
