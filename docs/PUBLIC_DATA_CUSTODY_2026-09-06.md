@@ -18,10 +18,18 @@ the gaps. It creates no rights, no permission, and no claim.
 |---|---|---|---|---|---|---|
 | nuScenes trainval metadata (Motional) | Results A through R, S | no, gitignored | yes, S3 URL and SHA-256 in the handoff | nuScenes terms of use, non-commercial | no | `primary_pointer_only`, digest pinned |
 | Detector prediction files (Megvii, Mapillary, PointPillars, FCOS3D run for Result Q) | Results A through R | no, gitignored | yes, `tools/measure/fetch_predictions.py` | per-detector release terms | no | `third_party_unretained` |
-| 100-Car Naturalistic Driving Study (VTTI) | H1, H2, H3 | no, gitignored | yes, dataverse DOI `10.15787/VTT1/CEU6RB` and file ids in `human-channel/README.md` | CC0 1.0 | no | `primary_pointer_only` |
-| DCPT L3 takeover dataset | H4 | **yes**: `human-channel/dcpt/README.md`, `TakeoverTime.xlsx`, `information.xlsx`, committed at `215b3b0` | **no** | CC BY 4.0, asserted in H4 | **no** | `third_party_retained_terms_unverified` |
-| BDD-A driver attention (Xia et al. 2018) | H5, H6 | no, gitignored | **no** | research-use, asserted in H5 and H6 | no | `third_party_unretained_pointer_unrecorded` |
+| 100-Car Naturalistic Driving Study (VTTI) | H1, H2, H3 | no, gitignored | yes, dataverse DOI `10.15787/VTT1/CEU6RB` and file ids in `human-channel/README.md` | CC0 1.0 | **yes, same day**: publisher record retained, seven local files match its MD5s | `primary_pointer_with_retained_record_and_verified_local_bytes` |
+| DCPT L3 takeover dataset | H4 | **yes**: `human-channel/dcpt/README.md`, `TakeoverTime.xlsx`, `information.xlsx`, committed at `215b3b0` | **yes, same day**: Zenodo `10.5281/zenodo.17354775` | CC BY 4.0 as recorded by the publisher | **yes, same day**: record retained, all three files match its MD5s, attribution added to `NOTICE` | `third_party_retained_terms_recorded_by_publisher` |
+| BDD-A driver attention (Xia et al. 2018) | H5, H6 | no, gitignored | **yes, same day**: portal `bdd-data.berkeley.edu`, paper arXiv:1711.06406 | research-use, asserted | **no**: three retrieval attempts failed (certificate mismatch, unresolvable host, 404), recorded | `third_party_unretained_terms_unretrieved` |
 | Open LLM Leaderboard v1 per-question results (`open-llm-leaderboard-old`, Hugging Face) | T, U, V, W | no, downloaded at run time | yes, dataset id in the tools | per-model and per-dataset terms on the Hub | no | `third_party_unretained` |
+
+## Same-day closure
+
+The machine record [`evidence/public-data-custody-2026-09-06.json`](../evidence/public-data-custody-2026-09-06.json)
+retains the Zenodo and Dataverse publisher records under `evidence/sources/` with SHA-256 digests
+and verifies every local and committed payload byte against the publisher's MD5. Findings 1 and 3
+below are closed for DCPT and 100-Car on that basis; finding 2 is narrowed to a recorded pointer with
+recorded failed retrievals. The findings are kept as written.
 
 ## Open findings
 

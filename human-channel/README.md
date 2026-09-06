@@ -7,6 +7,8 @@ failure that is HARBOR's actual target, the moment two channels stop being indep
 ## Source
 
 100-Car Naturalistic Driving Study, VTTI, CC0 1.0 public domain. DOI `10.15787/VTT1/CEU6RB`.
+Custody for every source in this thread, with retained publisher records and verified checksums, is
+in [`evidence/public-data-custody-2026-09-06.json`](../evidence/public-data-custody-2026-09-06.json).
 828 crash and near-crash events, ~5,000 baseline epochs, frame-by-frame driver eyeglance
 reduction, glances timed in syncs (1/10 s).
 

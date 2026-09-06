@@ -1,0 +1,160 @@
+{
+  "schema_note": "reiyah.gate-b.public-data-custody record; plain JSON, no schema binding yet; every field is an observation dated 2026-09-06",
+  "artifact_id": "reiyah.gate-b.public-data-custody-2026-09-06",
+  "version": "0.1.0",
+  "lifecycle_status": "proposed",
+  "observed_on": "2026-09-06",
+  "authority_nonclaims": {
+    "creates_rights": false,
+    "creates_permission": false,
+    "creates_scientific_evidence": false,
+    "asserts_compliance": false
+  },
+  "sources": [
+    {
+      "source_id": "dcpt",
+      "title": "DCPT: A Multi-Modal Dataset of Drivers' Cognitive and Physical States in L3 Takeover Scenarios",
+      "creators": [
+        "Hu, Hongyu",
+        "Liang, Yunhan",
+        "Li, Zhengyi",
+        "Zhang, Zhengguang",
+        "Zhang, Lu",
+        "Shen, Chuanliang",
+        "Gao, Zhenhai"
+      ],
+      "doi": "10.5281/zenodo.17354775",
+      "record_url": "https://zenodo.org/records/17354775",
+      "published": "2025-10-15",
+      "license_id_as_recorded_by_publisher": "cc-by-4.0",
+      "access_right_as_recorded": "open",
+      "retained_record": {
+        "path": "evidence/sources/zenodo-record-17354775-dcpt-20260906.json",
+        "sha256": "sha256:2411f7c54bca8c1297325d311287537a636807e620ecb6b8c4bb7232659f605c",
+        "byte_size": 17320,
+        "retrieved_via": "https://zenodo.org/api/records/17354775"
+      },
+      "payload_in_public_git": [
+        {
+          "path": "human-channel/dcpt/README.md",
+          "md5": "19efb0b2e2096c0cbd52293355492867",
+          "matches_record_file": "README.md",
+          "matches": true
+        },
+        {
+          "path": "human-channel/dcpt/TakeoverTime.xlsx",
+          "md5": "9ba29fcb6ec4c63d1bdd304a07683497",
+          "matches_record_file": "Takeover-Time.xlsx",
+          "matches": true
+        },
+        {
+          "path": "human-channel/dcpt/information.xlsx",
+          "md5": "78f8a992a72b1935611ae0d1a8f0e8be",
+          "matches_record_file": "information.xlsx",
+          "matches": true
+        }
+      ],
+      "custody_state": "third_party_retained_terms_recorded_by_publisher",
+      "attribution_recorded_in": "NOTICE",
+      "open": "the licence text itself is not retained, only the publisher's licence identifier in the record; the three files are unmodified copies"
+    },
+    {
+      "source_id": "100car",
+      "title": "100-Car Data",
+      "publisher": "Virginia Tech Transportation Institute",
+      "doi": "10.15787/VTT1/CEU6RB",
+      "record_url": "https://dataverse.vtti.vt.edu/dataset.xhtml?persistentId=doi:10.15787/VTT1/CEU6RB",
+      "dataset_version_as_recorded": "2.1",
+      "license_as_recorded_by_publisher": {
+        "name": "CC0 1.0",
+        "spdx": "CC0-1.0",
+        "uri": "http://creativecommons.org/publicdomain/zero/1.0"
+      },
+      "retained_record": {
+        "path": "evidence/sources/dataverse-vtti-100car-doi-10.15787-VTT1-CEU6RB-20260906.json",
+        "sha256": "sha256:3d8f62d970d363ff461307fb1ced5c2587b26512bc08e4e3778dbf26ebb87fb9",
+        "byte_size": 24132,
+        "retrieved_via": "https://dataverse.vtti.vt.edu/api/datasets/:persistentId/?persistentId=doi:10.15787/VTT1/CEU6RB"
+      },
+      "local_files_not_in_git": [
+        {
+          "local": "human-channel/data/baselineEyeglance.txt",
+          "file_id": 571,
+          "md5_matches_record": true
+        },
+        {
+          "local": "human-channel/data/eventEyeglance.txt",
+          "file_id": 574,
+          "md5_matches_record": true
+        },
+        {
+          "local": "human-channel/data/eventTimeStamp.txt",
+          "file_id": 577,
+          "md5_matches_record": true
+        },
+        {
+          "local": "human-channel/data/eventVideoReduced.txt",
+          "file_id": 578,
+          "md5_matches_record": true
+        },
+        {
+          "local": "human-channel/data/dict_eyeglance.pdf",
+          "file_id": 586,
+          "md5_matches_record": true
+        },
+        {
+          "local": "human-channel/data/dict_timestamp.pdf",
+          "file_id": 587,
+          "md5_matches_record": true
+        },
+        {
+          "local": "human-channel/data/import_reduced.sas",
+          "file_id": 583,
+          "md5_matches_record": true
+        }
+      ],
+      "custody_state": "primary_pointer_with_retained_record_and_verified_local_bytes"
+    },
+    {
+      "source_id": "bdda",
+      "title": "Berkeley DeepDrive Attention (BDD-A)",
+      "citation": "Xia, Zhang, Kim, Nakayama, Zipser, Whitney, Predicting Driver Attention in Critical Situations, ACCV 2018, arXiv:1711.06406",
+      "origin_url": "https://bdd-data.berkeley.edu/ (user portal, registration)",
+      "terms_as_asserted": "research use, asserted from the portal at download time; not retained",
+      "retrieval_attempts_2026_09_06": [
+        {
+          "url": "https://bdd-data.berkeley.edu/",
+          "result": "TLS certificate name mismatch, not retrieved"
+        },
+        {
+          "url": "https://doc.bdd100k.com/license.html",
+          "result": "host not resolvable, not retrieved"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/pascalxia/driver_attention_prediction/master/LICENSE",
+          "result": "404, not retrieved"
+        }
+      ],
+      "local_files_not_in_git": [
+        {
+          "local": "human-channel/bdda/BDDA/README.txt",
+          "sha256": "sha256:cbcbeccfa1a20ee10c3b4c7b325c7be93a1d34e771838491c9ebff656d543534",
+          "byte_size": 455,
+          "contains_terms": false
+        }
+      ],
+      "payload_in_public_git": [],
+      "custody_state": "third_party_unretained_terms_unretrieved"
+    },
+    {
+      "source_id": "open-llm-leaderboard-old",
+      "title": "Open LLM Leaderboard v1 per-sample evaluation details (archive)",
+      "publisher": "Open LLM Leaderboard Archive on Hugging Face",
+      "origin_url_pattern": "https://huggingface.co/datasets/open-llm-leaderboard-old/details_<org>__<model>",
+      "license_as_stated_on_dataset_card": "not stated (card reads More Information Needed)",
+      "gating": "none observed",
+      "payload_in_public_git": [],
+      "custody_state": "third_party_unretained_terms_unstated"
+    }
+  ]
+}

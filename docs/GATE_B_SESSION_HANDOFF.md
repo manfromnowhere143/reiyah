@@ -263,8 +263,8 @@ with an engaged human; the LLM monitor is validated on two benchmarks and one ju
    stays in public history once its licence bytes are retained.
 2. **Retain an independent external review.** Operator action; cannot be self-performed. This is the
    real frontier.
-3. Retain licence and custody bytes for the four public-data sources (section 14), so no source is
-   characterized from a pointer.
+3. Retain the BDD-A terms once the portal is reachable; DCPT and 100-Car custody is retained and
+   verified (section 14), the leaderboard archive states no licence.
 4. Optional hardening already scoped: a monitor cross-model transfer test (train the coupling
    estimator on one jury, test on a disjoint jury); the monitor validated on real driving outputs
    rather than benchmark outputs; a third benchmark for the LLM law.
@@ -315,7 +315,11 @@ was deleted and no check was weakened.
 4. **Em dashes** in five result documents (M, P, Q, R, findings synthesis) were replaced.
 5. **Source custody** for the four new public sources was unrecorded, and the DCPT payload sits in
    public history without retained licence bytes or attribution. Recorded in
-   [`PUBLIC_DATA_CUSTODY_2026-09-06.md`](PUBLIC_DATA_CUSTODY_2026-09-06.md) as open findings.
+   [`PUBLIC_DATA_CUSTODY_2026-09-06.md`](PUBLIC_DATA_CUSTODY_2026-09-06.md) as open findings, then
+   closed the same day for DCPT and 100-Car: the Zenodo and Dataverse publisher records are retained
+   under `evidence/sources/`, every committed and local payload matches the publisher's checksum,
+   and `NOTICE` carries the CC BY 4.0 attribution. BDD-A terms remain unretrieved after three
+   recorded attempts; the leaderboard archive states no licence on its card.
 6. **The public `main` ref was moved to the Gate B tip** by earlier pushes, unrecorded. Recorded in
    [`GOVERNANCE_EVENT_2026-09-06_MAIN_REF_MOVED.md`](GOVERNANCE_EVENT_2026-09-06_MAIN_REF_MOVED.md);
    the ref's correct target is an operator decision.

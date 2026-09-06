@@ -10,7 +10,9 @@ Lifecycle status: `proposed`
 
 The 100-Car results are from human driving with no automation. The mission's relevance lives
 where a human is the backup to automation, so this brings in a modern L3 conditional-automation
-study, DCPT (CC BY 4.0), and measures the human's response when the automation hands control back.
+study, DCPT (Hu et al., Zenodo, doi:10.5281/zenodo.17354775, CC BY 4.0 as recorded by the publisher;
+custody in `evidence/public-data-custody-2026-09-06.json`), and measures the human's response when
+the automation hands control back.
 
 In DCPT the automation drives while the participant does one of nine non-driving tasks, then a
 takeover request is issued at a random time and the participant resumes control. The response
