@@ -65,10 +65,13 @@ these has the mission.
    label.
 3. **Corrections are permanent and additive.** Eighteen-plus claims have been withdrawn or narrowed;
    every correction made the result smaller. All remain in place with their refutations attached.
-   **Do not tidy them away.** The machine-readable reconciliation point is
-   [`claim-status-register-2026-08-29.json`](../evidence/claim-status-register-2026-08-29.json), and
+   **Do not tidy them away.** The machine-readable reconciliation point is the newest dated
+   register under `evidence/claim-status-register-*.json` (currently
+   [`claim-status-register-2026-09-06.json`](../evidence/claim-status-register-2026-09-06.json),
+   which names its predecessor by digest and carries every prior claim forward), and
    `tools/measure/check_claim_reconciliation.py` fails closed if any live prose states a figure the
-   register forbids. The register, not any prose, is the truth.
+   register forbids. The register, not any prose, is the truth. Every human-channel and LLM result
+   is registered there; a result that is not registered is not a claim.
 4. **Marginal and conditional are never conflated.** The marginal coefficient includes shared
    difficulty; the conditional removes the measurable part and reports what is left. Always report
    both, and name which one a sentence means.
@@ -305,7 +308,11 @@ was deleted and no check was weakened.
    prior closing statement that reconciliation was intact was wrong. Result S now carries a
    correction first, its figures are marked withdrawn as stated, and the three summaries state the
    `1/sqrt(c)` direction with no percentage. The check's live-prose coverage was widened to the
-   `human-channel/` and `llm-generalization/` documents; it was not loosened.
+   `human-channel/` and `llm-generalization/` documents; it was not loosened. Later the same day
+   the register gained an append-only successor (`0.2.0`, schema `v1.4`) that registers every
+   human-channel and LLM claim with its unit, source custody, and reconsideration requirements, and
+   the check now reads the newest register; the widened register caught two more unmarked Result S
+   lines, which were marked.
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.

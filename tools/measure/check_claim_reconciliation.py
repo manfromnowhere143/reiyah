@@ -26,11 +26,20 @@ import pathlib
 import re
 import sys
 
-REGISTER = "evidence/claim-status-register-2026-08-29.json"
-SCHEMA = "schemas/v1.3/claim-status-register.schema.json"
+# The newest dated register is the reconciliation point; each register names its predecessor and
+# carries every prior claim forward, so the newest one is always the complete current status.
+REGISTER = sorted(pathlib.Path("evidence").glob("claim-status-register-*.json"))[-1].as_posix()
+SCHEMAS_BY_ID = {
+    "https://schemas.reiyah.invalid/gate-b/1.3/claim-status-register.schema.json":
+        "schemas/v1.3/claim-status-register.schema.json",
+    "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json":
+        "schemas/v1.4/claim-status-register.schema.json",
+}
 
 # Historical bytes: transcripts of what a script printed, and the scripts themselves.
-HISTORICAL_PREFIXES = ("evidence/measurement/", "tools/measure/")
+HISTORICAL_PREFIXES = ("evidence/measurement/", "tools/measure/",
+                       "human-channel/evidence/", "human-channel/tools/",
+                       "llm-generalization/evidence/", "llm-generalization/tools/")
 
 # A line asserting a withdrawn figure must also carry one of these.
 WITHDRAWAL_MARKERS = (
@@ -81,7 +90,8 @@ def live_files() -> list[pathlib.Path]:
 def main() -> int:
     try:
         register = json.loads(pathlib.Path(REGISTER).read_text(encoding="utf-8"))
-        schema = json.loads(pathlib.Path(SCHEMA).read_text(encoding="utf-8"))
+        schema_path = SCHEMAS_BY_ID[register["schema_id"]]
+        schema = json.loads(pathlib.Path(schema_path).read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
         print(f"STRUCTURAL FAILURE: {type(exc).__name__}: {exc}")
         return 2
@@ -89,6 +99,7 @@ def main() -> int:
     print("=" * 92)
     print("GATE B CLAIM RECONCILIATION CHECK")
     print("=" * 92)
+    print(f"  register: {REGISTER}")
 
     try:
         import jsonschema

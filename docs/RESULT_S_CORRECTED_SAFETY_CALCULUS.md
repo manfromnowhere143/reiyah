@@ -84,7 +84,7 @@ The marginal `c` column is measured and stands (Results K and P). The `sqrt(c)` 
 conditional derivation. The `N` and extra-evidence columns are withdrawn as stated.
 
 **The former headline, withdrawn as stated.** It read: at a `0.30` operating point, RSS's
-independence-based evidence figure is understated by a factor of `sqrt(1.587) = 1.260`, at least
+independence-based evidence figure is understated by a factor of `sqrt(1.587) = 1.260` (withdrawn as stated), at least
 26% more validation evidence than Corollary 3 claims, for this pair (withdrawn as stated). Withdrawn
 on the five grounds above. The range it described, `1.11x` to `1.51x`, is likewise withdrawn as stated,
 because the marginal coefficient depends on the operating threshold (Result P). And it is a
@@ -97,7 +97,7 @@ RSS's redundancy is automation-automation. A real Level 2 or Level 3 safety case
 credits the **human** as a redundant channel. That redundancy carries its own measured
 dependence, `c = 1.46` (Result H3), a further `sqrt(1.46) = 1.208x` correction that RSS applies
 by **zero**, because the human is outside its model. Two credited redundancy layers compound: the
-automation `sqrt(1.587)` and the human `sqrt(1.46)` give **`1.522x`** the RSS evidence figure, a
+automation `sqrt(1.587)` and the human `sqrt(1.46)` give **`1.522x`** (withdrawn as stated) the RSS evidence figure, a
 52% understatement, before the lower-bound caveat. These multipliers are withdrawn as stated on the
 same five grounds; the compounding structure is retained as the shape of the open question.
 

@@ -1,0 +1,663 @@
+{
+  "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
+  "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
+  "version": "0.2.0",
+  "lifecycle_status": "proposed",
+  "created_on": "2026-09-06",
+  "predecessor": {
+    "path": "evidence/claim-status-register-2026-08-29.json",
+    "sha256": "sha256:478d5935207575080121d94b3464455797625453af585a08bb749032f8341607"
+  },
+  "reconciliation_policy": {
+    "prose_must_match_register": true,
+    "transcripts_are_historical": true,
+    "deletion_prohibited": true
+  },
+  "claims": [
+    {
+      "claim_id": "reiyah.gate-b.claim.evidence-cost-pooled",
+      "estimand": "Extra validation evidence required, as a percentage, when a campaign is designed against the pooled marginal coincident-miss ratio rather than under independence.",
+      "status": "withdrawn_as_stated",
+      "current_scientific_use": "forbidden",
+      "unit": "derived_arithmetic",
+      "lineage": {
+        "first_stated_in": "docs/GATE_B_MEASUREMENT_CONTRACT.md row G, refined by row K",
+        "superseded_by": "docs/ESTIMAND_RSS_DEFINITION_32.md section 6"
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_g.txt",
+        "evidence/measurement/result_k.txt",
+        "evidence/measurement/result_s.txt"
+      ],
+      "values_withdrawn": [
+        {
+          "label": "extra evidence, pooled marginal, score >= 0.3",
+          "value": "+26.0%",
+          "interval": "95% CI [25.0, 26.9]"
+        },
+        {
+          "label": "examples per subsystem at the measured lift",
+          "value": "97,596",
+          "interval": "95% CI [96,860, 98,332]"
+        },
+        {
+          "label": "examples per subsystem, result_g literal path",
+          "value": "97,581",
+          "interval": null
+        },
+        {
+          "label": "baseline examples per subsystem under independence",
+          "value": "77,460",
+          "interval": null
+        },
+        {
+          "label": "extra evidence, pooled conditional coefficient",
+          "value": "+7.5%",
+          "interval": null
+        },
+        {
+          "label": "Result S inflation factor at score 0.30, reasserted 2026-09-06 and re-withdrawn the same day",
+          "value": "1.260"
+        },
+        {
+          "label": "Result S compounded automation-and-human multiplier",
+          "value": "1.522x"
+        }
+      ],
+      "source_identity": {
+        "source_id": "S-01",
+        "custody_state": "primary_retained",
+        "exact_proposition": "Corollary 3 of arXiv:1708.06374: assuming for any pair i != j that e_i^m, e_j^m are one sided c-approximate independent, and the same for e_i^g, e_j^g, and P[e_i^m] <= p and P[e_i^g] <= p for every i, then P[e^m or e^g] <= 6 c p^2."
+      },
+      "refutation": {
+        "reason_code": "scope_arity_mismatch",
+        "statement": "Corollary 3 bounds a three-subsystem majority-vote fusion over two mistake types, miss and ghost, with the constant 6 arising as three subsystems by a union bound. The Gate B measurement is a two-channel pair with no fusion rule, covers miss-miss only, is defined on detection misses rather than the corollary's safety-critic mistakes, and the corollary's own example count carries no confidence level, so a 95 percent sampling interval on a derived example count assigns precision the source quantity does not have. The corollary's c is additionally a single constant bounding every pair simultaneously, so the corresponding empirical quantity is a supremum over pairs and strata, not a pooled point estimate."
+      },
+      "reconsideration_requirements": [
+        "Replace the bridge N proportional to 1/p with a stated estimator carrying a stated confidence level, or declare it an order-of-magnitude device that carries no interval.",
+        "Define c on safety-critic mistakes, or bound rather than assume the transfer from detection misses to safety-critic mistakes.",
+        "Measure ghost-ghost dependence, which Corollary 3 requires alongside miss-miss.",
+        "Match the arity and fusion rule of the system under analysis, or derive and retain a two-channel corollary.",
+        "Use the uniform bound the corollary requires rather than a pooled estimate."
+      ],
+      "notes": "The direction survives the withdrawal and carries no number: if the measured dependence transfers to safety-critic mistakes, a campaign sized under independence is undersized. 2026-09-06: docs/RESULT_S_CORRECTED_SAFETY_CALCULUS.md reasserted the withdrawn pooled figures as a sqrt(c) correction without meeting any of the five requirements; the reconciliation check caught it, the document now carries the correction first, and the figures stay withdrawn as stated. Transcript evidence/measurement/result_s.txt is historical bytes."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.evidence-cost-worst-group",
+      "estimand": "Extra validation evidence required when a campaign is designed against the worst eligible group's coincident-miss ratio.",
+      "status": "withdrawn_as_stated",
+      "current_scientific_use": "forbidden",
+      "unit": "derived_arithmetic",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_I_WORST_GROUP_DEPENDENCE.md section 'Why it matters'",
+        "superseded_by": "docs/ESTIMAND_RSS_DEFINITION_32.md section 6"
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_i.txt",
+        "evidence/measurement/result_j.txt"
+      ],
+      "values_withdrawn": [
+        {
+          "label": "extra evidence, worst eligible group, mapillary x megvii",
+          "value": "+163.5%",
+          "interval": null
+        },
+        {
+          "label": "extra evidence, worst eligible group, mapillary x pointpillars",
+          "value": "+53.3%",
+          "interval": null
+        },
+        {
+          "label": "extra evidence, worst eligible group, megvii x pointpillars",
+          "value": "+153.5%",
+          "interval": null
+        },
+        {
+          "label": "extra evidence, pooled, mapillary x pointpillars",
+          "value": "+4.9%",
+          "interval": null
+        },
+        {
+          "label": "extra evidence, pooled, megvii x pointpillars",
+          "value": "+14.6%",
+          "interval": null
+        }
+      ],
+      "source_identity": {
+        "source_id": "S-01",
+        "custody_state": "primary_retained",
+        "exact_proposition": "Same Corollary 3 conversion as the pooled claim."
+      },
+      "refutation": {
+        "reason_code": "scope_arity_mismatch",
+        "statement": "Identical grounds to the pooled claim. The worst-group multipliers are computed from data-derived c values by result_i and result_j, so the arithmetic is sound, but the conversion from c to a validation-evidence multiplier is the withdrawn step, not the c estimate."
+      },
+      "reconsideration_requirements": [
+        "All five requirements listed for the pooled claim.",
+        "Additionally, the worst-group c must carry its M4 reference-error identification bound, because a sub-percent reference error moves c further than the effect being converted."
+      ],
+      "notes": "The underlying worst-group c estimates are unaffected and remain measured. Only the conversion to an evidence budget is withdrawn."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.result-g-derivation",
+      "estimand": "Result G, presented as a derived and bounded conversion of measured dependence into a validation-evidence requirement.",
+      "status": "withdrawn_as_stated",
+      "current_scientific_use": "forbidden",
+      "unit": "derived_arithmetic",
+      "lineage": {
+        "first_stated_in": "docs/GATE_B_MEASUREMENT_CONTRACT.md row G",
+        "superseded_by": "docs/CLAIM_AUDIT_2026-08-29.md section 3.3"
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_g.txt"
+      ],
+      "values_withdrawn": [
+        {
+          "label": "the whole Result G table at both marginal and conditional coefficients",
+          "value": "see transcript",
+          "interval": null
+        }
+      ],
+      "source_identity": {
+        "source_id": "S-01",
+        "custody_state": "primary_retained",
+        "exact_proposition": "Same Corollary 3 conversion."
+      },
+      "refutation": {
+        "reason_code": "no_data_path",
+        "statement": "tools/measure/result_g.py reads no data of any kind. Its MARGINAL and CONDITIONAL dictionaries are hand-transcribed rounded constants copied from another result's printed output. Result G is arithmetic over literals, not a measurement, and it reproduces byte-identically precisely because it depends on nothing. The transcription is demonstrably lossy: result_g reports 97,581 examples from the rounded literal 1.587 while result_k computes 97,596 from the full-precision 1.587483, a difference of 15 examples that exists only because a rounded number was retyped."
+      },
+      "reconsideration_requirements": [
+        "Bind every coefficient to a data path with an exact input digest rather than a transcribed literal.",
+        "Then satisfy every requirement listed for the pooled evidence-cost claim, since the conversion step is withdrawn independently of the provenance defect."
+      ],
+      "notes": "This defect is the same class as the previously withdrawn accuracy claim, where result_h.py bound MAP and never read it. Determinism did not catch it, and cannot: a script with no inputs is trivially deterministic."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.rss-baseline-attribution",
+      "estimand": "Whether the constant 77,460 is a figure published by the RSS primary source.",
+      "status": "narrowed",
+      "current_scientific_use": "permitted",
+      "unit": "not_applicable",
+      "lineage": {
+        "first_stated_in": "tools/measure/result_k_evidence_cost_interval.py line 46 code comment, and evidence/measurement/result_g.txt line 6",
+        "superseded_by": "docs/PRIMARY_SOURCE_CUSTODY_2026-08-29.md entry S-01"
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_g.txt",
+        "evidence/measurement/result_k.txt"
+      ],
+      "values_withdrawn": [
+        {
+          "label": "described as RSS's own worked example or worked target",
+          "value": "77,460",
+          "interval": null
+        }
+      ],
+      "source_identity": {
+        "source_id": "S-01",
+        "custody_state": "primary_retained",
+        "exact_proposition": "The primary text states: instead of taking order of 10^9 examples, it suffices to take order of 10^5 examples and test each system separately."
+      },
+      "refutation": {
+        "reason_code": "precision_not_in_source",
+        "statement": "The number 77,460 does not appear in the primary text. It is a Reiyah derivation, 1 divided by the square root of 1e-9 over 6, consistent with the text's stated order of 10^5. result_g.txt already annotated this correctly with the parenthetical that the paper says order of 10^5; the mislabel is confined to the result_k code comment and the result_k transcript's phrase RSS's own worked target."
+      },
+      "reconsideration_requirements": [
+        "None. The correct attribution is a Reiyah derivation from a retained primary corollary, and that attribution is now recorded."
+      ]
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.coincident-miss-ratio",
+      "estimand": "c_s, the observed-to-expected coincident-miss ratio at a declared universe, matcher, stratum, pair, and operating point.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "object_track",
+      "lineage": {
+        "first_stated_in": "docs/GATE_B_MEASUREMENT_CONTRACT.md rows D, E, I, J, K, L",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_d.txt",
+        "evidence/measurement/result_e.txt",
+        "evidence/measurement/result_i.txt",
+        "evidence/measurement/result_j.txt",
+        "evidence/measurement/result_k.txt",
+        "evidence/measurement/result_l.txt"
+      ],
+      "source_identity": {
+        "source_id": "S-01",
+        "custody_state": "primary_retained",
+        "exact_proposition": "Definition 32 of arXiv:1708.06374: two Bernoulli random variables r1, r2 are called one side c-approximate independent if P[r1 and r2] <= c P[r1] P[r2]. c_s is the smallest constant satisfying it for that stratum and pair."
+      },
+      "reconsideration_requirements": [
+        "These estimates are unaffected by the evidence-cost withdrawals and remain measured.",
+        "They are not causal evidence of common cause or of protective diversity, are not comparable across unmatched marginals, and carry no reference-error identification bound until M4 is executed."
+      ],
+      "notes": "Reported only with both marginals, the joint probability, the cell counts, the eligible denominator, the operating point, the clustering unit, and the uncertainty method. A bare c is not a reportable result."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.reference-error-identification",
+      "estimand": "Bounds on c under reference-process error across omitted opportunities, false opportunities, class error, attribute error, localization error, track linkage error, and stratum assignment error.",
+      "status": "unknown",
+      "current_scientific_use": "forbidden",
+      "unit": "object_track",
+      "lineage": {
+        "first_stated_in": "docs/RESEARCH_GAP_REGISTER.md RGA-027",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/estimand_counterexamples.txt"
+      ],
+      "source_identity": {
+        "source_id": "not_applicable",
+        "custody_state": "not_applicable",
+        "exact_proposition": "No reference-error bound has been computed."
+      },
+      "refutation": {
+        "reason_code": "operand_non_observed",
+        "statement": "No blinded reannotation has been performed, so no error budget is estimated and no bound exists at any level of the L0 to L3 ladder. Counterexample CE-5 shows a 0.50 percent reference error moves c from exactly 1.0000 to 0.5512 or to 1.3673, which exceeds most effects of interest. This is unknown, not zero and not negligible."
+      },
+      "reconsideration_requirements": [
+        "Estimate delta, the bound on how much the reference error rate VARIES ACROSS CELLS. Proposition M4-1 establishes that c is scale invariant, so the overall annotation error rate is irrelevant to this estimand and a design powered for it is powered for the wrong quantity.",
+        "Execute the blinded reannotation design in docs/PREREGISTRATION_MODALITY_CONTRAST_0_1_0.md section 10.3, with annotators blind to channel outputs, prior labels, and stratum assignment, and with deliberate oversampling of the both-miss cell.",
+        "Report identification bounds as an outer interval containing the clustered sampling interval, never collapsed.",
+        "Establish that the reference process is independent of every evaluated channel. Channel-dependent contamination yields `invalid`, not a wider interval, and no bound repairs it.",
+        "Only L3, supported by blinded reannotation, may carry a headline, and only after independent replication."
+      ],
+      "notes": "The solver is implemented and adversarially tested on synthetic fixtures only: tools/measure/m4_partial_identification.py. No measured stratum has been bounded. At delta = 0.05 the fixture stratum's set already covers 1.0."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.joint-silent-miss",
+      "estimand": "Rate of joint silent misses, meaning both channels miss and no qualifying indication or fallback occurs before a prespecified deadline.",
+      "status": "unknown",
+      "current_scientific_use": "forbidden",
+      "unit": "object_track",
+      "lineage": {
+        "first_stated_in": "docs/CONTRACT_CAUGHT_AN_ERROR.md",
+        "superseded_by": "docs/MONITOR_INTERFACE_CONTRACT_0_1_0.md"
+      },
+      "retained_transcripts": [],
+      "source_identity": {
+        "source_id": "not_applicable",
+        "custody_state": "not_applicable",
+        "exact_proposition": "The measurement source observes no warning and no fallback."
+      },
+      "refutation": {
+        "reason_code": "scope_operand_incomplete",
+        "statement": "Silence is a property of the downstream response path, not of the detection channels. Two channels missing an object establishes nothing about whether anything downstream announced it. The measured quantity is joint observed miss."
+      },
+      "reconsideration_requirements": [
+        "An audited monitor adapter satisfying every field and every admissibility gate in docs/MONITOR_INTERFACE_CONTRACT_0_1_0.md.",
+        "Until then report joint observed miss or unknown, and keep silent_to_system, not_communicated, and communicated_unacknowledged distinct."
+      ],
+      "notes": "2026-09-06: the word silent was removed from H5, H6 and the human-channel README, which had used it for a both-channel total miss; joint total miss is the permitted phrase."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.human-channel-miss",
+      "estimand": "Object-level human miss M^H, and any human-automation coincident-miss ratio derived from it.",
+      "status": "not_established",
+      "current_scientific_use": "forbidden",
+      "unit": "object_track",
+      "lineage": {
+        "first_stated_in": "docs/MATHEMATICAL_SPECIFICATION.md section 5.4",
+        "superseded_by": "docs/HUMAN_CHANNEL_FEASIBILITY_2026-08-29.md"
+      },
+      "retained_transcripts": [],
+      "source_identity": {
+        "source_id": "not_applicable",
+        "custody_state": "not_applicable",
+        "exact_proposition": "No audited public dataset supplies real driver gaze with control authority, an independent object or track reference, and awareness or response evidence beyond gaze."
+      },
+      "refutation": {
+        "reason_code": "not_identified",
+        "statement": "Gaze is not awareness. The construction that a gaze ray failing to intersect an object box implies a human miss is rejected: its negation is an unmeasured state, not a miss. The required dataset intersection is empty across DR(eye)VE, MAAD, Look Both Ways, BDD-A, DADA-2000, and LOOK."
+      },
+      "reconsideration_requirements": [
+        "The minimum synchronized pilot in docs/HUMAN_CHANNEL_FEASIBILITY_2026-08-29.md section 4.",
+        "Human-subjects review, consent, and recruitment, none of which is authorized.",
+        "When awareness is not identified the output is human_state unknown, never miss equals one."
+      ],
+      "notes": "2026-09-06: H5 and H6 measure an in-lab gaze-attention proxy on BDD-A, registered separately as cross-agent claims. That proxy is not the object-level M^H of a naturalistic driver, so this claim stays not_established."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.modality-separation",
+      "estimand": "Difference in the coincident-miss ratio between same-modality and cross-modality detector pairs, at a declared operating point.",
+      "status": "inconclusive",
+      "current_scientific_use": "forbidden",
+      "unit": "object_track",
+      "lineage": {
+        "first_stated_in": "docs/GATE_B_MEASUREMENT_CONTRACT.md row H",
+        "superseded_by": "evidence/measurement/result_h_instance_unit.txt"
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_h.txt",
+        "evidence/measurement/result_h_instance_unit.txt"
+      ],
+      "values_withdrawn": [
+        {
+          "label": "separation across six detector pairs and three lidar architectures",
+          "value": "see transcript",
+          "interval": null
+        }
+      ],
+      "source_identity": {
+        "source_id": "S-01",
+        "custody_state": "primary_retained",
+        "exact_proposition": "The primary text argues that camera and lidar remain approximately independent for miss mistakes because their shared weather causes produce different mistake types. This is the mechanism such a contrast would test."
+      },
+      "refutation": {
+        "reason_code": "scope_operand_incomplete",
+        "statement": "Three of the six published pairs used CenterPoint, which Result J excluded for weak provenance and did not readmit, and matched_centerpoint.json is absent from the worktree so the published table is not reproducible. After removal one same-modality pair and two cross-modality pairs remain. The preregistration requires each arm to contain at least two pairs sharing no channel; the same-modality arm holds one pair and both cross-modality pairs share Mapillary, so neither arm has internal replication. The instance-clustered difference excludes zero, marginal +0.222 CI [+0.203, +0.241] and conditional +0.184 CI [+0.170, +0.195], but the design cannot support a supported or contradicted state whatever the interval says."
+      },
+      "reconsideration_requirements": [
+        "At least two same-modality pairs sharing no channel, and at least two cross-modality pairs sharing no channel.",
+        "A second independent camera detector, since all cross-modality pairs currently share Mapillary. No modern camera-only nuScenes predictions are published, so obtaining one means running inference, which is outside current authority.",
+        "Matched marginals or marginals as declared covariates, per the preregistration.",
+        "Reference-error identification bounds, currently unknown.",
+        "Independent replication on a disjoint split with a different reference process."
+      ],
+      "notes": "The unit debt Audit 1 raised for D, G and H is closed by this restatement. The estimate agrees with Result K to three decimals on both point and interval from an independent estimator, which cross-validates both."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.conditional-coincident-miss-convergence",
+      "estimand": "Conditional camera-lidar coincident-miss coefficient after stratifying on class, range, visibility, weather and motion on a common support, with its instance-clustered interval; and its survival across a second lidar, every operating threshold, E-value sensitivity, and a second camera.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "object_track",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_L_CONVERGENCE.md; robustness in docs/RESULT_M..Q",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_l.txt",
+        "evidence/measurement/result_m.txt",
+        "evidence/measurement/result_n.txt",
+        "evidence/measurement/result_o.txt",
+        "evidence/measurement/result_q.txt"
+      ],
+      "source_identity": {
+        "source_id": "S-01",
+        "custody_state": "primary_retained",
+        "exact_proposition": "Definition 32 of arXiv:1708.06374, the one sided c-approximate independence coefficient; every c below is the smallest constant satisfying it for its declared pair, stratum, and operating point."
+      },
+      "reconsideration_requirements": [
+        "Reference-error identification bound (M4) before any stratum-level headline.",
+        "Independent replication on a disjoint split with a different reference process."
+      ],
+      "notes": "Association after declared conditioning on public benchmark outputs. Reported with both marginals, the joint, counts, denominator, operating point, clustering unit and uncertainty. Not causal, not a safety finding. num_lidar_pts is an inadmissible covariate: it lies on the measured path."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.coefficient-not-marginal-invariant",
+      "estimand": "Whether a small c certifies redundancy: c is smallest exactly where the absolute joint-miss rate is largest, because a ratio is deflated by its marginals.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "object_track",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_P_COEFFICIENT_VS_ABSOLUTE.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_p.txt"
+      ],
+      "source_identity": {
+        "source_id": "S-01",
+        "custody_state": "primary_retained",
+        "exact_proposition": "Definition 32 of arXiv:1708.06374, the one sided c-approximate independence coefficient; every c below is the smallest constant satisfying it for its declared pair, stratum, and operating point."
+      },
+      "notes": "A bare c is never a redundancy certificate; the absolute joint-miss vector must accompany it."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.modality-grid-coupling-order",
+      "estimand": "Ordering of the marginal coincident-miss coefficient across the 2x2 modality grid: lidar-lidar highest, camera-camera inside the cross-modality band, camera-lidar lowest.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "object_track",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_Q_CAMERA_AXIS_AND_MODALITY_GRID.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_q.txt"
+      ],
+      "source_identity": {
+        "source_id": "S-01",
+        "custody_state": "primary_retained",
+        "exact_proposition": "Definition 32 of arXiv:1708.06374, the one sided c-approximate independence coefficient; every c below is the smallest constant satisfying it for its declared pair, stratum, and operating point."
+      },
+      "notes": "One pair per cell except camera-lidar; the same-kind versus cross-kind reading rests on one lidar-lidar pair and one camera-camera pair and is not internally replicated. Modality-separation as a difference-in-c claim remains inconclusive (see modality-separation)."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.accuracy-coupling-residual",
+      "estimand": "Whether stronger detectors couple more with the camera: about four fifths of the apparent trend is marginal arithmetic; a small residual survives a matched-marginal comparison.",
+      "status": "narrowed",
+      "current_scientific_use": "permitted",
+      "unit": "object_track",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_R_ACCURACY_COUPLING.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_r.txt"
+      ],
+      "source_identity": {
+        "source_id": "S-01",
+        "custody_state": "primary_retained",
+        "exact_proposition": "Definition 32 of arXiv:1708.06374, the one sided c-approximate independence coefficient; every c below is the smallest constant satisfying it for its declared pair, stratum, and operating point."
+      },
+      "notes": "Supersedes the withdrawn Result H accuracy claim only in the narrowed form: an order-of-magnitude smaller residual, stated as measured, not as a mechanism."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.evidence-cost-direction",
+      "estimand": "Direction of the validation-evidence correction under RSS Corollary 3 when c > 1: holding the bound fixed, the admissible per-channel rate shrinks as 1/sqrt(c), so a campaign sized under independence is undersized; qualitative and conditional only.",
+      "status": "derived",
+      "current_scientific_use": "permitted",
+      "unit": "derived_arithmetic",
+      "lineage": {
+        "first_stated_in": "docs/ESTIMAND_RSS_DEFINITION_32.md section 6.4; restated in docs/RESULT_S_CORRECTED_SAFETY_CALCULUS.md correction",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_s.txt"
+      ],
+      "source_identity": {
+        "source_id": "S-01",
+        "custody_state": "primary_retained",
+        "exact_proposition": "Definition 32 of arXiv:1708.06374, the one sided c-approximate independence coefficient; every c below is the smallest constant satisfying it for its declared pair, stratum, and operating point."
+      },
+      "reconsideration_requirements": [
+        "Identical to the five requirements under evidence-cost-pooled; until then this claim is qualitative."
+      ],
+      "notes": "Carries no percentage, count, interval, or multiplier. Every figure belongs to evidence-cost-pooled and is forbidden until its five requirements are met."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.human-observation-state-in-conflict",
+      "estimand": "Driver off-road gaze proportion and eyes-forward-throughout rate in 100-Car crash and near-crash events against baseline epochs, and the gaze at the conflict instant anchored to event_end.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "event",
+      "lineage": {
+        "first_stated_in": "human-channel/H1_DRIVER_OBSERVATION.md; human-channel/H2_GLANCE_AT_CONFLICT.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "human-channel/evidence/h1_driver_observation.txt",
+        "human-channel/evidence/h2_glance_at_conflict.txt"
+      ],
+      "source_identity": {
+        "source_id": "100car",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "100-Car Data, VTTI Dataverse doi:10.15787/VTT1/CEU6RB, CC0 1.0; publisher record retained under evidence/sources and local files verified by MD5 on 2026-09-06."
+      },
+      "notes": "Descriptive, not driver-clustered, 2003-2004 data. Forward means a glance through the windshield, not detection of the hazard. No Video is kept unknown."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.human-observation-response-coincidence",
+      "estimand": "Within-agent coincident-failure coefficient between the driver's observation channel (climax gaze not Forward) and response channel (No reaction) in 100-Car events, and the eyes-forward-yet-no-reaction cell.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "event",
+      "lineage": {
+        "first_stated_in": "human-channel/H3_OBSERVATION_RESPONSE_JOINT.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "human-channel/evidence/h3_observation_response_joint.txt"
+      ],
+      "source_identity": {
+        "source_id": "100car",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Same source as human-observation-state-in-conflict."
+      },
+      "notes": "Includes a causal component (not looking impairs reacting) and is not pure latent dependence. Crash-subset cells are small (n=56, both-fail 8) and illustrative. Not driver-clustered."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.l3-takeover-distraction-delay",
+      "estimand": "Mean takeover time by non-driving task and by task group (none, cognitive-only, visual-manual) in the DCPT L3 simulator study.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "trial",
+      "lineage": {
+        "first_stated_in": "human-channel/H4_DCPT_TAKEOVER.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "human-channel/evidence/h4_dcpt_takeover.txt"
+      ],
+      "source_identity": {
+        "source_id": "dcpt",
+        "custody_state": "third_party_retained",
+        "exact_proposition": "DCPT, Zenodo doi:10.5281/zenodo.17354775, CC BY 4.0 as recorded by the publisher; three files retained in Git and verified by MD5 against the publisher record on 2026-09-06."
+      },
+      "notes": "Simulator, random takeover request, so readiness-to-response only, not cross-agent dependence. Descriptive across trials, not participant-clustered."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.cross-agent-coincidence-detectable-set",
+      "estimand": "Cross-agent coincident-miss coefficient between a pretrained detector's low-score misses and low gaze-heatmap attention on BDD-A, over detectable objects.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "object",
+      "lineage": {
+        "first_stated_in": "human-channel/H5_CROSS_AGENT_JOINT.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "human-channel/evidence/h5_cross_agent_joint.txt"
+      ],
+      "source_identity": {
+        "source_id": "bdda",
+        "custody_state": "third_party_unretained_terms_unretrieved",
+        "exact_proposition": "BDD-A, Xia et al. 2018, arXiv:1711.06406; terms not retrieved after three recorded attempts on 2026-09-06."
+      },
+      "reconsideration_requirements": [
+        "Retained BDD-A terms before any redistribution or publication use.",
+        "Ground-truth boxes or a reference process independent of both channels."
+      ],
+      "notes": "Measured on the detector's own detections, so a floor on cross-agent dependence, not a certificate of independence. Engaged in-lab observers, aggregate heatmap. Pretrained torchvision Faster R-CNN executed on the frames; nothing trained."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.cross-agent-total-miss-coincidence",
+      "estimand": "Cross-agent coincident-miss coefficient between a deployed edge detector's total misses on reference-detector objects and low gaze attention on BDD-A, with a clip-clustered bootstrap interval.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "object",
+      "lineage": {
+        "first_stated_in": "human-channel/H6_TOTAL_BOTH_MISS.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "human-channel/evidence/h6_total_both_miss.txt"
+      ],
+      "source_identity": {
+        "source_id": "bdda",
+        "custody_state": "third_party_unretained_terms_unretrieved",
+        "exact_proposition": "Same source as cross-agent-coincidence-detectable-set."
+      },
+      "notes": "Reference is a strong detector, not human ground truth, so a lower bound on the true joint miss. Interval grazes 1.0 from below; reported as approximately independent and pointedly not the same-kind pattern. The word silent is not used. Two pretrained torchvision detectors executed; nothing trained."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.llm-jury-coincidence-mmlu",
+      "estimand": "Marginal and difficulty-conditional coincident-wrong coefficients across seven public base models on MMLU, same-family versus cross-family, and the jury's effective number of independent models.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "item",
+      "lineage": {
+        "first_stated_in": "llm-generalization/RESULT_T_LLM_INDEPENDENCE.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "llm-generalization/evidence/result_t.txt"
+      ],
+      "source_identity": {
+        "source_id": "open-llm-leaderboard-old",
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "Open LLM Leaderboard v1 per-sample details on Hugging Face; licence not stated on the dataset card; per-question parquet files downloaded at run time and joined by example hash."
+      },
+      "notes": "Marginal c includes shared question difficulty; conditional removes the measurable part. Descriptive, one benchmark. No LLM executed."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.llm-agreement-reliability",
+      "estimand": "P(correct | two models agree) and the unanimous-yet-wrong rate of the seven-model jury on MMLU, from outputs alone.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "item",
+      "lineage": {
+        "first_stated_in": "llm-generalization/RESULT_U_AGREEMENT_RELIABILITY.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "llm-generalization/evidence/result_u.txt"
+      ],
+      "source_identity": {
+        "source_id": "open-llm-leaderboard-old",
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "Same source as llm-jury-coincidence-mmlu."
+      },
+      "notes": "Agreement is the argmax choice. Specific to these models and this benchmark."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.llm-monitor-in-domain",
+      "estimand": "Held-out AUC, Brier, ECE and unanimous-item risk of a coupling-aware logistic-regression monitor fitted on a split of the same seven-model MMLU jury, against the naive risk = 1 - agreement baseline.",
+      "status": "derived",
+      "current_scientific_use": "permitted",
+      "unit": "item",
+      "lineage": {
+        "first_stated_in": "llm-generalization/RESULT_V_DEPLOYED_MONITOR.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "llm-generalization/evidence/result_v.txt"
+      ],
+      "source_identity": {
+        "source_id": "open-llm-leaderboard-old",
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "Same source as llm-jury-coincidence-mmlu."
+      },
+      "reconsideration_requirements": [
+        "Transfer to a disjoint jury and a second benchmark without refitting (llm-monitor-transfer).",
+        "Validation on real driving channel outputs rather than benchmark outputs."
+      ],
+      "notes": "A demonstration instrument, in-domain only: the held-out items come from the same jury and benchmark the monitor was fitted on. Deployability rests on the transfer claim, not this one. A logistic-regression monitor is fitted; no LLM executed."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.llm-jury-coincidence-arc-replication",
+      "estimand": "Replication of the MMLU jury coefficients, effective independent models, and agreement reliability on ARC-Challenge with six of the seven models (Falcon auto-dropped for non-joining hashes).",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "item",
+      "lineage": {
+        "first_stated_in": "llm-generalization/RESULT_W_SECOND_BENCHMARK.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "llm-generalization/evidence/result_w.txt"
+      ],
+      "source_identity": {
+        "source_id": "open-llm-leaderboard-old",
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "Same source as llm-jury-coincidence-mmlu; task arc:challenge 25-shot."
+      },
+      "notes": "Same models, different benchmark; a robustness replication by the same authors with shared code, which is never independent validation."
+    }
+  ]
+}
