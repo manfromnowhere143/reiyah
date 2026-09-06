@@ -46,6 +46,11 @@ The tools expect `eventEyeglance.txt`, `eventVideoReduced.txt`, `baselineEyeglan
   13,904 objects. Cross-agent c = 0.97, approximately independent, in contrast to same-kind
   redundancy (two sensors 1.15, one human's eyes-x-hands 1.46). Same-kind redundancy is a trap;
   different-kind (human x machine) roughly holds - on detectable objects, with an engaged human.
+- [`H6_TOTAL_BOTH_MISS.md`](H6_TOTAL_BOTH_MISS.md) - the deepest version, with an interval. A strong
+  reference detector defines objects present, a realistic edge detector is the deployed automation
+  (totally blind to 84.5% of them), and the total joint silent miss with human neglect is c = 0.981,
+  clip-clustered 95% CI [0.962, 0.998]. Even at total blindness the human-machine pairing is not
+  worse than independent, in sharp contrast to same-kind redundancy.
 
 ## Discipline
 

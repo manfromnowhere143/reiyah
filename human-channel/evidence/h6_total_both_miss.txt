@@ -1,0 +1,27 @@
+  ...20 clips, 1212 reference objects
+  ...40 clips, 2975 reference objects
+  ...60 clips, 4792 reference objects
+  ...80 clips, 6270 reference objects
+  ...100 clips, 7735 reference objects
+====================================================================================
+HUMAN CHANNEL H6 - the total-both-miss (deployed automation totally blind AND human ignores)
+BDD-A validation, 100 clips, 533 frames, 7735 reference objects
+reference: FasterRCNN-v2 >= 0.6; deployed: SSDLite >= 0.25; IoU 0.5
+====================================================================================
+
+  automation miss = deployed detector has NO box on the object (total/operating miss)
+  human miss = gaze attention below median (0.005)
+  P(automation totally misses a present object): 84.5%
+  P(human misses)                              : 50.0%
+  P(BOTH miss = the joint silent miss)         : 41.4%
+  expected if independent                      : 42.2%
+  coefficient c                                : 0.981
+  clip-clustered bootstrap 95% CI              : [0.962, 0.998]  (96 clips)
+  verdict                                      : excludes 1.0
+  2x2 [both,autoOnly,humOnly,neither]          : 3203, 3330, 664, 538
+
+------------------------------------------------------------------------------------
+NON-CLAIMS: reference is a strong detector, not human GT, so this is the joint miss on
+the strong-model-detectable set, still a lower bound; BDD-A gaze is in-lab aggregate;
+SSDLite is one edge detector, not any product; descriptive, not clustered; research-use
+data (Xia 2018); proposed; no released 1.2 byte involved.
