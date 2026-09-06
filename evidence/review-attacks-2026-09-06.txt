@@ -1,0 +1,28 @@
+============================================================================================
+REVIEW INSTRUMENT 3: attack suite
+============================================================================================
+  [PASS] ATK-1 sensor monitor label permutation: true AUC 0.792, permuted [0.499, 0.499, 0.501]
+  loaded meta-llama__Llama-2-7b-hf on mmlu: 13937 questions (run 2023-08-19T16:35:46.942696, 2023 format)
+  loaded meta-llama__Llama-2-13b-hf on mmlu: 13937 questions (run 2023-08-19T22:35:38.117975, 2023 format)
+  loaded meta-llama__Llama-2-70b-hf on mmlu: 13937 questions (run 2023-08-22T09:05:23.035851, 2023 format)
+  loaded mistralai__Mistral-7B-v0.1 on mmlu: 13937 questions (run 2023-09-27T15-30-59.039834, 2023 format)
+  loaded tiiuae__falcon-7b on mmlu: 13937 questions (run 2023-07-19T10:51:47.706539, 2023 format)
+  loaded mosaicml__mpt-7b on mmlu: 13937 questions (run 2023-08-22T15:05:51.358534, 2023 format)
+  loaded Qwen__Qwen-7B on mmlu: 13937 questions (run 2023-10-13T06-37-24.832652, 2023 format)
+  gold check Llama-2-7b-hf on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Llama-2-13b-hf on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Llama-2-70b-hf on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Mistral-7B-v0.1 on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check falcon-7b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check mpt-7b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Qwen-7B on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  [PASS] ATK-2 LLM monitor label permutation: true AUC 0.851, permuted [0.51, 0.486, 0.506]
+  [PASS] ATK-3 leave-one-model-out, MMLU jury: drop Llama-2-7b-hf: marg 1.332 cond 1.129 n_eff 3.32/6; drop Llama-2-13b-hf: marg 1.279 cond 1.130 n_eff 3.56/6; drop Llama-2-70b-hf: marg 1.257 cond 1.113 n_eff 3.37/6; drop Mistral-7B-v0.1: marg 1.253 cond 1.116 n_eff 3.59/6; drop falcon-7b: marg 1.437 cond 1.119 n_eff 2.94/6; drop mpt-7b: marg 1.425 cond 1.119 n_eff 3.01/6; drop Qwen-7B: marg 1.281 cond 1.121 n_eff 3.50/6
+  [PASS] ATK-4 leave-one-class-out, camera x lidar inflation: drop barrier: 1.597; drop bicycle: 1.594; drop bus: 1.588; drop car: 1.373; drop construction_vehicle: 1.594; drop motorcycle: 1.593; drop pedestrian: 1.653; drop traffic_cone: 1.606; drop trailer: 1.605; drop truck: 1.621
+  [PASS] ATK-5 seed sensitivity, AF full-jury band vs retained [2.08, 2.13]: seed 1: [2.08, 2.13]; seed 2: [2.08, 2.13]; seed 3: [2.08, 2.13]
+
+  RESULT: PASS  (0 attack(s) succeeded: [])
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: advisory self-review with criteria stated in advance; passing an attack is not
+independent validation. No detector or LLM is executed. No released 1.2 byte is involved.

@@ -41,6 +41,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--replay", default="", help="comma-separated replay classes to regenerate")
     ap.add_argument("--json", default="", help="write the machine-readable report here")
+    ap.add_argument("--attacks", action="store_true", help="also run the attack suite (review instrument 3; several minutes)")
     a = ap.parse_args()
     replay = {c for c in a.replay.split(",") if c}
     unknown = replay - set(CLASSES)
@@ -140,6 +141,14 @@ def main():
     rc = subprocess.run([sys.executable, "tools/measure/review_register_coverage.py"], capture_output=True, text=True)
     last = [l for l in rc.stdout.splitlines() if l.strip().startswith("RESULT:")]
     check("REVIEW    the register and the result documents describe the same program", rc.returncode == 0, last[-1].strip() if last else rc.stderr[:200])
+
+    if a.attacks:
+        ra = subprocess.run([sys.executable, "tools/measure/review_attacks.py"], capture_output=True, text=True)
+        last = [l for l in ra.stdout.splitlines() if l.strip().startswith("RESULT:")]
+        check("REVIEW    the attack suite: every attack with a stated criterion fails to break its result", ra.returncode == 0, last[-1].strip() if last else ra.stderr[:200])
+    else:
+        report["checks"].append({"check": "REVIEW    attack suite", "state": "not_run_here", "detail": "pass --attacks to run"})
+        print("  [SKIP] REVIEW    attack suite not run here (pass --attacks); its last retained transcript is under evidence/")
 
     report["result"] = "pass" if fails == 0 else "fail"
     print(f"\n  RESULT: {report['result'].upper()}  ({fails} failing check(s))")

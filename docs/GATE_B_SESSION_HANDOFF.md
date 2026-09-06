@@ -418,6 +418,14 @@ was deleted and no check was weakened.
    differs, stated. A second detector pass on the accelerator path was byte-identical.
 20. **Result AH3 added** (register `0.2.12`): the ghost coefficient against the time-shift null is
    4.6 to 9.8 on a second camera, a second lidar and a second operating point, no band reaching 1.
+25. **Review instrument, part 3, the attack suite** (`tools/measure/review_attacks.py`, run by the
+   Gate B check with `--attacks`): label permutation for the sensor and LLM monitors, leave-one-model-out
+   for the MMLU jury, leave-one-class-out for the camera x lidar inflation, seed sensitivity for the
+   AF band, each with its criterion written first. The first draft of the permutation attacks was
+   itself defective (within-scene permutation scored against true labels; the invariant is named in
+   the tool) and was corrected; after correction all five attacks fail to break their results
+   (permuted AUCs 0.49 to 0.51 against true 0.79 and 0.85; every leave-one-out jury and class keeps
+   the law's direction; every seed reproduces the band). Transcript retained under `evidence/`.
 24. **Result AI, the first preregistered test** (register `0.2.15`): eight falsifiable predictions
    of the LLM law committed before any run on Winogrande, eight supported by the retained
    transcript. Four procedural deviations, each about the archive's file formats and each
