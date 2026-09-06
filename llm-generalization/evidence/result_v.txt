@@ -1,0 +1,29 @@
+loading models...
+========================================================================================
+RESULT V - the deployed monitor: coupling-corrected joint-failure risk from outputs
+seven-model jury on MMLU; train 8362, held-out test 5575; base ensemble error 38.4%
+========================================================================================
+
+  held-out performance (higher AUC better; lower Brier and ECE better):
+  estimator                              AUC    Brier     ECE
+  naive: risk = 1 - agreement          0.719    0.204   0.045
+  MONITOR: coupling-aware, calibrated   0.845    0.155   0.015
+
+  on held-out UNANIMOUS items (326 of 5575):
+    actual wrong rate           : 9.5%
+    naive risk (1 - agreement)  : 0.0%   (says unanimity = certainty)
+    MONITOR risk                : 11.6%   (learned the coupling)
+
+  monitor reliability on held-out data (predicted risk vs actual wrong rate):
+    risk band 1: predicted   1.6%   actual   3.0%   (n=1115)
+    risk band 2: predicted  12.1%   actual  12.0%   (n=1115)
+    risk band 3: predicted  38.5%   actual  39.7%   (n=1115)
+    risk band 4: predicted  62.7%   actual  61.6%   (n=1115)
+    risk band 5: predicted  77.4%   actual  75.9%   (n=1115)
+
+----------------------------------------------------------------------------------------
+NON-CLAIMS: demonstration instrument on public MMLU outputs, retained as proposed. The
+features are channel-agnostic but this is calibrated and evaluated on one benchmark and
+one jury; not a deployed product, not a safety determination, not a driving result. The
+naive baseline is the ensemble's own implicit assumption, shown for contrast. No released
+1.2 byte is involved.

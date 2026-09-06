@@ -27,6 +27,12 @@ the per-question parquet files from Hugging Face).
   the time (both wrong together 35% of the time), and when all seven agree they are still wrong 10.4%
   of the time. Agreement is a systematically over-trusted signal, and the amount is measurable from
   the outputs with no ground truth, the seed of a live monitor.
+- [`RESULT_V_DEPLOYED_MONITOR.md`](RESULT_V_DEPLOYED_MONITOR.md) - the instrument itself. A
+  coupling-aware risk estimator, calibrated on a training split and evaluated on a held-out test
+  split from outputs alone, beats the naive agreement heuristic on every metric (AUC 0.845 vs 0.719,
+  ECE 0.015 vs 0.045). On held-out unanimous items the naive ensemble assigns 0% risk while the true
+  wrong rate is 9.5%; the monitor assigns 11.6%, catching the coupled-failure blind spot. Its
+  features are channel-agnostic, so the same form applies to two sensors or a human and a machine.
 
 ## Discipline
 
