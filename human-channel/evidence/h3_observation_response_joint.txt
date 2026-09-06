@@ -1,0 +1,31 @@
+====================================================================================
+HUMAN CHANNEL H3 - joint failure of the human's observation and response channels
+100-Car NDS; obs fail = gaze not forward at the conflict instant; resp fail = no reaction
+====================================================================================
+
+events in the 2x2 (known gaze and known reaction): 770
+  all events: n=770
+    P(obs fail = gaze not forward)      : 28.8%
+    P(resp fail = no reaction)          : 7.4%
+    P(both fail)                        : 3.1%
+    expected if independent P_obs*P_resp: 2.1%
+    coefficient c = observed/expected   : 1.46
+    looked forward yet DID NOT react    : 4.3%  (n=33)
+  crashes: n=56
+    P(obs fail = gaze not forward)      : 30.4%
+    P(resp fail = no reaction)          : 37.5%
+    P(both fail)                        : 14.3%
+    expected if independent P_obs*P_resp: 11.4%
+    coefficient c = observed/expected   : 1.25
+    looked forward yet DID NOT react    : 23.2%  (n=13)
+  near-crashes: n=714
+    P(obs fail = gaze not forward)      : 28.7%
+    P(resp fail = no reaction)          : 5.0%
+    P(both fail)                        : 2.2%
+    expected if independent P_obs*P_resp: 1.4%
+    coefficient c = observed/expected   : 1.55
+    looked forward yet DID NOT react    : 2.8%  (n=20)
+
+NON-CLAIMS: within-agent joint (the human's two channels), not the cross-agent
+human-automation joint, which needs takeover data. Descriptive, not driver-clustered,
+2003-2004 CC0 data. c is illustrative on these counts, not an inferential test.
