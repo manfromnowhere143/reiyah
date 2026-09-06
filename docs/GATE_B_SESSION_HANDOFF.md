@@ -275,9 +275,10 @@ with an engaged human; the LLM monitor is validated on two benchmarks and one ju
 
 ## 11. The next smallest actions
 
-1. **Operator decisions recorded in section 14 that only Daniel can take:** whether `origin/main`
-   stays at the Gate B tip or returns to the released `1.2.0` commit, and whether the DCPT payload
-   stays in public history once its licence bytes are retained.
+1. **Operator decisions, taken 2026-09-06.** Daniel instructed the session to go public with
+   whatever is needed and to take the decisions; `origin/main` is fast-forwarded to the reconciled
+   branch tip (governance event, decision section), and the DCPT payload stays in public history
+   under its retained CC BY 4.0 record and NOTICE attribution.
 2. **Retain an independent external review.** Operator action; cannot be self-performed. This is the
    real frontier.
 3. Retain the BDD-A terms once the portal is reachable; DCPT and 100-Car custody is retained and

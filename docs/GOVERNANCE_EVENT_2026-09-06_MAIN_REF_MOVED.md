@@ -25,10 +25,19 @@ public `main` ref along the `gate-b-measurement` history, ending at `3450415` (R
 3. No public-distribution receipt, rights observation, or transport observation binds any Gate B
    commit. A push is a publisher act with no scientific, acceptance, or publication authority.
 
+## Decision, 2026-09-06
+
+The operator, Daniel Wahnich, instructed the same day, in his own words: "I don't have a problem
+to go public with whatever needed." Under that instruction the public `main` ref is fast-forwarded
+to the tip of `gate-b-measurement` that carries the reconciled corrections, so that the public front
+page no longer asserts the withdrawn evidence-cost figure that `3450415` carried. The decision is
+recorded here with its rationale; it confers no scientific, acceptance, or transport authority, and
+every artifact on `main` remains `proposed`. A publisher receipt for a Gate B commit does not exist
+and is not implied by the push.
+
 ## Disposition
 
-Recorded, not reversed. Which commit the public `main` ref should name is an operator decision.
-Until it is taken, readers of the public repository must resolve state from the exact commit they
+Recorded and acted on as above. Readers of the public repository must resolve state from the exact commit they
 read and from its receipts, never from the branch name. Every Gate B artifact remains `proposed`.
 This record creates no acceptance, no authority, and no transport verification, and it modifies no
 released `1.2` byte.
