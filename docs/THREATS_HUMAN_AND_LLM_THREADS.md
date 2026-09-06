@@ -41,11 +41,12 @@ naturalistic driver, and H3 and H4 show a distracted human's channels collapse. 
 miss entirely are unobservable without ground truth. Only a synchronized naturalistic pilot with
 human-subjects review answers it; not authorized.
 
-### 5. H5 has no band; H6 does (open, minor)
+### 5. H5 has no band; H6 does (answered)
 
-H6's clip-clustered band [0.962, 0.998] covers the deeper construction. H5's 0.972 is a point
-estimate on a detector-defined object set. Rerunning H5 with a clustered bootstrap requires
-executing the detector on the video again and is scoped, not done.
+H5b re-executed the detector with the clip id recorded per object: c = 0.962 with a
+clip-clustered band [0.927, 0.993] on 117 clips. The sample differs from H5's retained run (519
+against 651 frames; H5's arguments were not recorded), and the three cross-agent estimates agree
+within the band.
 
 ### 6. BDD-A terms are not retained (open)
 

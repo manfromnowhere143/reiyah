@@ -1,0 +1,30 @@
+  ...20 clips, 1430 objects
+  ...40 clips, 3370 objects
+  ...60 clips, 5520 objects
+  ...80 clips, 7257 objects
+  ...100 clips, 9059 objects
+  ...120 clips, 11104 objects
+====================================================================================
+HUMAN CHANNEL H5b - cross-agent joint with a clip-clustered band
+BDD-A validation, 120 clips, 519 frames, 11104 driving objects
+====================================================================================
+
+  automation miss = score < 0.5; human miss = gaze attention < median (0.005)
+  P(automation miss)              : 26.8%
+  P(human miss)                   : 50.0%
+  P(both miss)                    : 12.9%
+  expected if independent         : 13.4%
+  cross-agent coefficient c       : 0.962
+  2x2 counts [both,autoOnly,humOnly,neither]: 1434, 1547, 4118, 4005
+  clip-clustered bootstrap 95% band: [0.927, 0.993]  (117 clips, B = 2000)
+
+  Pearson corr(automation score, human attention): -0.035
+  positive means the machine is unsure about the same objects people ignore.
+
+------------------------------------------------------------------------------------
+NON-CLAIMS: same measurement as H5 with a band; the median split is recomputed on the
+full sample and held fixed inside the bootstrap. BDD-A gaze is an in-lab aggregate over observers, not one naturalistic
+driver; object set is detector detections (a lower bound, objects both totally missed
+are unobservable without GT boxes); descriptive, not clustered; c > 1 includes shared
+scene difficulty, not claimed as pure latent dependence. Research-use data (Xia 2018),
+retained as proposed; no released 1.2 byte involved.

@@ -208,7 +208,7 @@ object-level monitor transfers to a changed camera (loss 0.005 AUC) and not to a
 
 | domain | same-kind pairing | cross-kind pairing |
 |---|---|---|
-| sensors | two lidars, c = 1.29 | camera x lidar, c = 1.10 to 1.15; human x machine, c ~ 0.98 |
+| sensors | two lidars, c = 1.29; four sensors = 2.10 [2.08, 2.13] independent (AF) | camera x lidar, c = 1.10 to 1.15; human x machine, c = 0.96 [0.93, 0.99] (H5b) and 0.98 [0.96, 1.00] (H6) |
 | the human | eyes x hands, c = 1.46 [1.04, 1.90], event-resampled (H7) | (the human x machine cell above) |
 | LLM juries | same family c = 1.52 (MMLU), 1.87 (ARC), 2.43 (HellaSwag) | cross family c = 1.29 (MMLU), 1.73 (ARC), 2.30 (HellaSwag) |
 
@@ -409,6 +409,9 @@ was deleted and no check was weakened.
 18. **Result AH2 added** (register `0.2.10`): 54 percent [46, 64] of coincident ghosts do not recur
    half a second later, against 61 to 77 percent recurrence for real objects; unannotated objects
    cannot account for the coincidence, and the persistent minority is bounded.
+19. **H5b added** (register `0.2.11`): the cross-agent coefficient re-measured with the clip id
+   recorded, 0.962 [0.927, 0.993]; H5's exact arguments were never recorded and its sample
+   differs, stated. A second detector pass tests byte identity on the accelerator path.
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.

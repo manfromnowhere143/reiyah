@@ -87,7 +87,7 @@ includes zero on the other two benchmarks, so it is a MMLU finding, not a genera
 
 | domain | same-kind pairing | cross-kind pairing |
 |---|---|---|
-| sensors | two lidars, c = 1.29; four sensors = 2.10 [2.08, 2.13] independent | camera x lidar, c = 1.10 to 1.15; human x machine, c ~ 1 |
+| sensors | two lidars, c = 1.29; four sensors = 2.10 [2.08, 2.13] independent | camera x lidar, c = 1.10 to 1.15; human x machine, c = 0.96 [0.93, 0.99] and 0.98 [0.96, 1.00] |
 | the human | eyes x hands, c = 1.46 [1.04, 1.90], event-resampled | (n/a) |
 | LLM juries | same family, c = 1.52 (MMLU), 1.87 (ARC), 2.43 (HellaSwag) | cross family, c = 1.29 (MMLU), 1.73 (ARC), 2.30 (HellaSwag) |
 

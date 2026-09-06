@@ -32,7 +32,7 @@ BDD-A validation, 120 clips, 651 frames, **13,904 driving objects**.
 | P(human miss) | 50.0% |
 | P(both miss) | 13.1% |
 | expected if independent | 13.5% |
-| **cross-agent coefficient c** | **0.972** |
+| **cross-agent coefficient c** | **0.972** (re-measured 2026-09-06 with a clip-clustered band, H5b: 0.962 [0.927, 0.993]) |
 | Pearson corr(automation score, human attention) | -0.022 |
 
 The coefficient is indistinguishable from 1, and the correlation is essentially zero, stable from a

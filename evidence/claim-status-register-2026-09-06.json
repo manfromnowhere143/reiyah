@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -543,7 +543,8 @@
         "superseded_by": null
       },
       "retained_transcripts": [
-        "human-channel/evidence/h5_cross_agent_joint.txt"
+        "human-channel/evidence/h5_cross_agent_joint.txt",
+        "human-channel/evidence/h5b_cross_agent_interval.txt"
       ],
       "source_identity": {
         "source_id": "bdda",
@@ -554,7 +555,7 @@
         "Retained BDD-A terms before any redistribution or publication use.",
         "Ground-truth boxes or a reference process independent of both channels."
       ],
-      "notes": "Measured on the detector's own detections, so a floor on cross-agent dependence, not a certificate of independence. Engaged in-lab observers, aggregate heatmap. Pretrained torchvision Faster R-CNN executed on the frames; nothing trained."
+      "notes": "Measured on the detector's own detections, so a floor on cross-agent dependence, not a certificate of independence. Engaged in-lab observers, aggregate heatmap. Pretrained torchvision Faster R-CNN executed on the frames; nothing trained. 2026-09-06 H5b: re-measured with the clip id recorded, c = 0.962, clip-clustered band [0.927, 0.993] on 117 clips; H5's sample (651 frames) differs from H5b's (519 frames) because H5's arguments were not recorded; both agree within the band."
     },
     {
       "claim_id": "reiyah.gate-b.claim.cross-agent-total-miss-coincidence",

@@ -1,7 +1,7 @@
 {
   "manifest_kind": "gate-b-replay-manifest",
   "artifact_id": "reiyah.gate-b.replay-manifest",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "note": "Rows with replay_class argv_unrecorded_historical are retained transcripts whose exact command line was not recorded per transcript when they were produced; their digests are checked, they are never replayed by this tool, and adding an argv is a later, append-only step.",
@@ -543,6 +543,23 @@
         "docs/RESULT_AH2_GHOST_PERSISTENCE.md"
       ],
       "timeout_s": 7200,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "human-channel/evidence/h5b_cross_agent_interval.txt",
+      "sha256": "sha256:a778a4060458b774ebc6f147511f66a625eb9907b30f8697d74bfc1682f9de65",
+      "tool": "human-channel/tools/h5b_cross_agent_interval.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "human-channel/tools/h5b_cross_agent_interval.py",
+        "120",
+        "0.4"
+      ],
+      "replay_class": "heavy_inference",
+      "results": [
+        "human-channel/H5B_CROSS_AGENT_INTERVAL.md"
+      ],
+      "timeout_s": 9000,
       "stderr_merged": true
     }
   ]
