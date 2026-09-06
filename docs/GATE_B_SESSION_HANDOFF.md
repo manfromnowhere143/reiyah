@@ -214,7 +214,8 @@ object-level monitor transfers to a changed camera (loss 0.005 AUC) and not to a
 
 Similar channels share a substrate and share their blind spots; genuinely different ones do not. The
 independence assumption is a load-bearing fiction wherever redundancy is claimed, and it fails most
-for the systems that share the most.
+for the systems that share the most. The same-kind ordering holds when channels operate in
+comparable regimes; a near-blind channel reads as independent of everything (AJ, falsified at 0.50).
 
 ## 6. The unit and the estimand
 
@@ -418,6 +419,11 @@ was deleted and no check was weakened.
    differs, stated. A second detector pass on the accelerator path was byte-identical.
 20. **Result AH3 added** (register `0.2.12`): the ghost coefficient against the time-shift null is
    4.6 to 9.8 on a second camera, a second lidar and a second operating point, no band reaching 1.
+26. **Result AJ, the second preregistered test** (register `0.2.16`): four of five predictions
+   supported, including the first mechanism-based forecast (Result P's deflation, on every pair at
+   both new operating points) and the first numerical-range forecast; AJ-2, the same-kind ordering,
+   falsified at 0.50 where one camera misses 94 percent of objects, recorded as falsified and the
+   law's second arm narrowed to comparable regimes.
 25. **Review instrument, part 3, the attack suite** (`tools/measure/review_attacks.py`, run by the
    Gate B check with `--attacks`): label permutation for the sensor and LLM monitors, leave-one-model-out
    for the MMLU jury, leave-one-class-out for the camera x lidar inflation, seed sensitivity for the

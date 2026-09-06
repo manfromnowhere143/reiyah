@@ -32,6 +32,11 @@ then 0.50, two runs, byte identity required, transcript retained as
 `evidence/measurement/result_aj.txt`. Verdicts per prediction from the transcript alone, recorded
 in the result document and the register, whichever way they fall.
 
+## Outcome
+
+Four of five supported; AJ-2 falsified at 0.50, where one camera misses 94 percent of objects;
+see [`RESULT_AJ_SENSOR_JURY_OPERATING_POINTS.md`](../RESULT_AJ_SENSOR_JURY_OPERATING_POINTS.md).
+
 ## Non-claims
 
 A preregistration, not a result. Released detector outputs on the public nuScenes validation split;

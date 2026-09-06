@@ -95,7 +95,11 @@ predictions committed before the run; all eight held
 | LLM juries | same family, c = 1.52 (MMLU), 1.87 (ARC), 2.43 (HellaSwag) | cross family, c = 1.29 (MMLU), 1.73 (ARC), 2.30 (HellaSwag) |
 
 **Redundancy across genuinely different kinds buys independence; redundancy across similar kinds
-does not.** Similar channels share a substrate and share their blind spots. Genuinely different
+does not**, when the channels operate in comparable regimes: a preregistered test at a stricter
+operating point ([AJ](RESULT_AJ_SENSOR_JURY_OPERATING_POINTS.md)) falsified the same-kind ordering
+where one camera misses 94 percent of objects, because a near-blind channel reads as independent of
+everything, the marginal artifact of Result P; the same test confirmed P's mechanism on every pair
+at both new operating points. Similar channels share a substrate and share their blind spots. Genuinely different
 ones do not. The independence assumption is a load-bearing fiction wherever redundancy is claimed,
 and it fails most for the systems that share the most.
 

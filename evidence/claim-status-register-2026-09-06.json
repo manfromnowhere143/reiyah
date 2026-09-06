@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -410,7 +410,7 @@
     {
       "claim_id": "reiyah.gate-b.claim.modality-grid-coupling-order",
       "estimand": "Ordering of the marginal coincident-miss coefficient across the 2x2 modality grid: lidar-lidar highest, camera-camera inside the cross-modality band, camera-lidar lowest.",
-      "status": "measured",
+      "status": "narrowed",
       "current_scientific_use": "permitted",
       "unit": "object_track",
       "lineage": {
@@ -418,14 +418,15 @@
         "superseded_by": null
       },
       "retained_transcripts": [
-        "evidence/measurement/result_q.txt"
+        "evidence/measurement/result_q.txt",
+        "evidence/measurement/result_aj.txt"
       ],
       "source_identity": {
         "source_id": "S-01",
         "custody_state": "primary_retained",
         "exact_proposition": "Definition 32 of arXiv:1708.06374, the one sided c-approximate independence coefficient; every c below is the smallest constant satisfying it for its declared pair, stratum, and operating point."
       },
-      "notes": "One pair per cell except camera-lidar; the same-kind versus cross-kind reading rests on one lidar-lidar pair and one camera-camera pair and is not internally replicated. Modality-separation as a difference-in-c claim remains inconclusive (see modality-separation)."
+      "notes": "One pair per cell except camera-lidar; the same-kind versus cross-kind reading rests on one lidar-lidar pair and one camera-camera pair and is not internally replicated. Modality-separation as a difference-in-c claim remains inconclusive (see modality-separation). Narrowed 2026-09-06 by Result AJ: the same-kind ordering holds at 0.10 and 0.30 and is falsified at 0.50, where FCOS3D misses 93.9 percent of objects and reads as independent of everything (the marginal artifact of Result P). Stated as: same-kind pairs are the least independent when channels operate in comparable regimes."
     },
     {
       "claim_id": "reiyah.gate-b.claim.accuracy-coupling-residual",
@@ -1032,6 +1033,26 @@
         "exact_proposition": "Same source as llm-jury-coincidence-mmlu; task winogrande 5-shot; per model the latest 5-shot run with numeric predictions; gold from the answer field or recovered at join, checked against every row's acc (100 percent on every model)."
       },
       "notes": "Eight of eight supported. Directional only: the program has no model that forecasts a number beyond thresholds, recorded as its honest limit. Four procedural deviations (gold mapping, join by example text, run selection with gold recovery, per-pair range output) were each committed before the corresponding rerun; none touched a prediction. No band reported; the marginal coefficient on a two-choice task is bounded above by the error rates."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.sensor-jury-preregistered-operating-points",
+      "estimand": "Five preregistered predictions for the four-detector jury at 0.10 and 0.50: every pair above independence with a band excluding 1; same-kind pairs least independent with non-overlapping bands; full jury below 3; every pair's inflation ordered by threshold as Result P's mechanism predicts; full jury within [1.5, 3.0].",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "object_track",
+      "lineage": {
+        "first_stated_in": "docs/preregistrations/PREREGISTRATION_AJ_SENSOR_JURY_OPERATING_POINTS_2026-09-06.md (predictions, committed before the run); docs/RESULT_AJ_SENSOR_JURY_OPERATING_POINTS.md (outcome)",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_aj.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Result AF tool imported unchanged with SCORE assigned to 0.10 and 0.50; released predictions for four detectors, each match set gated at published mAP."
+      },
+      "notes": "AJ-1, AJ-3, AJ-4, AJ-5 supported; AJ-2 falsified at 0.50 (two-camera pair 1.88 [1.87, 1.90] of 2 above every cross-kind pair) and supported at 0.10. AJ-4 is the first mechanism-based forecast and held on all twelve pair comparisons. The effective-independence quantity saturates toward the jury size as miss rates approach 1; reported only beside its miss rates."
     }
   ]
 }
