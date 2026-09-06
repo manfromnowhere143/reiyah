@@ -1,168 +1,229 @@
 # Gate B Session Handoff
 
 Read `AGENTS.md` first, then this. Resolve every state from the exact artifacts named here, never
-from this prose. This file is a continuation contract, not authority.
+from this prose. This file is a continuation contract, not authority. It is the mission baton: a
+fresh session should be able to inherit the whole program, its standards, and its exact state from
+this one file plus the records it names.
 
-## 1. Where you are, and where this work is
+## 0. Where you are, and where this work is
 
-**This work is not on the branch you are probably sitting on.**
+**This work is not on the branch you are probably sitting on.** It lives in a dedicated worktree,
+on its own branch, cut from a released commit so no `1.2.0` byte is ever touched.
 
-| Worktree | Branch | Contents | Uncommitted |
-|---|---|---|---|
-| `~/workspace/reiyah` | `gate-a-1.2.1-continuity` | the 1.2.1 continuity workstream, **another owner** | 28 paths, leave them alone |
-| `~/workspace/reiyah-gate-b` | `gate-b-measurement` | everything described below | 0, all pushed |
+| Worktree | Branch | Contents |
+|---|---|---|
+| `~/workspace/reiyah` | a Gate A continuity branch, **another owner** | leave its worktree and its uncommitted paths alone; never switch branches inside it |
+| `~/workspace/reiyah-gate-b` | `gate-b-measurement` | everything described below |
 
 ```sh
-cd ~/workspace/reiyah-gate-b && git log --oneline -1     # expect 2ee1693 or later
+cd ~/workspace/reiyah-gate-b
+git remote get-url origin      # https://github.com/manfromnowhere143/reiyah.git
+git branch --show-current      # gate-b-measurement
+git log --oneline -1           # 3450415 (Result W) or later
+git status --short             # clean, or only docs/GENERAL_SYNTHESIS.md until committed
 ```
 
-Branch cut from released `d42d4d2`, so no `1.2.0` byte is touched and the `1.2.1` workstream is
-undisturbed. **Never switch branches inside `~/workspace/reiyah`**: that would drag 28 uncommitted
-paths belonging to someone else. Use the worktree.
+Branch cut from a released commit, so no `1.2.x` byte is touched and the Gate A continuity
+workstream is undisturbed. Published at
+`https://github.com/manfromnowhere143/reiyah/tree/gate-b-measurement`.
 
-Published at `https://github.com/manfromnowhere143/reiyah/tree/gate-b-measurement`.
+## 1. The mission, in one paragraph
 
-## 2. What this workstream is
+Every safety and ensemble argument for autonomous and AI systems rests on one load-bearing
+assumption: that redundant channels fail independently. It is almost never measured. This program
+measures it, with a single estimand, across three domains: two automation sensors, the human, and
+AI juries. The finding, stated to its evidence and no further, is a law: **redundancy across
+genuinely different kinds buys independence; redundancy across similar kinds does not.** The program
+also corrects the safety calculus that the assumption feeds, and builds a live monitor that reads
+the coupling from channel outputs alone. HARBOR (Human-Automation Readiness, Belief & Operational
+Risk) is the proposed working research program; every scientific, benchmark, standards, safety, and
+comparative claim stays `proposed` until eligible retained evidence and an authorized external
+decision say otherwise. **No model is executed in the analysis lane.** The one place inference ran is
+recorded in section 8, on a separate GPU box, to produce a second camera detector's predictions.
 
-Gate A established that Reiyah can state what would have to be true for a measurement to be
-believable, tested against 611 deterministic synthetic fixtures. Gate B applies those contracts to
-measurements taken from public data. The contract authorizing it is
+The single reading of the whole program is [`GENERAL_SYNTHESIS.md`](GENERAL_SYNTHESIS.md). The
+contract authorizing the measurement lane is
 [`GATE_B_MEASUREMENT_CONTRACT.md`](GATE_B_MEASUREMENT_CONTRACT.md), lifecycle `proposed`.
 
-**No model is executed anywhere in this work.** It reads publicly licensed dataset metadata and
-publicly released prediction files and computes contingency tables. GA-15 is not engaged.
+## 2. The standards (read this before you touch anything)
 
-## 3. Exact state
+These are absolute and they are the reason the work is credible. A fresh session that keeps only
+these has the mission.
+
+1. **Honesty above all.** Every claim carries the epistemic state of its evidence. A computed number
+   is not a measurement, a passing validator is not acceptance, a checksum is not truth, and
+   generated prose is not evidence. State results forward as information the work bought, never
+   soften a null and never inflate a finding. The mission is to earn the trust of the best
+   engineering minds in the world by being more honest than they expect, not louder.
+2. **Everything stays `proposed`.** No scientific support, safety finding, compliance determination,
+   comparative claim about any vendor, operator acceptance, or runtime authorization is asserted by
+   any artifact here. The lifecycle states are distinct values with distinct histories; missing,
+   unmeasured, out-of-distribution, and abstained never collapse into zero, false, or a confident
+   label.
+3. **Corrections are permanent and additive.** Eighteen-plus claims have been withdrawn or narrowed;
+   every correction made the result smaller. All remain in place with their refutations attached.
+   **Do not tidy them away.** The machine-readable reconciliation point is
+   [`claim-status-register-2026-08-29.json`](../evidence/claim-status-register-2026-08-29.json), and
+   `tools/measure/check_claim_reconciliation.py` fails closed if any live prose states a figure the
+   register forbids. The register, not any prose, is the truth.
+4. **Marginal and conditional are never conflated.** The marginal coefficient includes shared
+   difficulty; the conditional removes the measurable part and reports what is left. Always report
+   both, and name which one a sentence means.
+5. **No released byte is modified.** No `1.2` architecture byte is touched by any of this work. New
+   schema and contract successors are `proposed` against the release, never applied in place. Never
+   weaken a substitution guard, a validator, or a check to make a run pass; a validator that refuses
+   real data because its frozen contract names a fixture is working as designed.
+6. **Reproducible and seeded.** Every tool re-runs byte-identically. If one does not, stop and find
+   out why before trusting anything it produced. Large intermediates are gitignored and regenerated;
+   never admit a detector match set that fails its `--validate` accuracy gate.
+7. **Red-team your own work.** Every result names the objection a reviewer would raise and answers
+   it or records it as open. Two defects found in this program's own scripts were recorded rather
+   than quietly fixed.
+8. **No em dash in any repository document.** Plain reviewable Markdown, JSON, and deterministic
+   scripts. Match the README's voice: precise, honest, real numbers, no ornament.
+9. **Commits are Daniel-authored only.** Plain messages, no `Co-Authored-By` trailer, no Claude
+   attribution. Daniel's authorship alone.
+10. **No company names in any public or outward-facing artifact.** A LinkedIn post or comment, or
+    anything shared outside the repo, carries the science only: the coefficient, the law, the
+    numbers. Never name a vendor. Inside the repo, vendor pointers exist only as bounded,
+    evidence-ineligible comparator references that establish no claim.
+11. **Separation by law.** Reiyah is independent of Aweb and Odeya. Never couple their code, claims,
+    or infrastructure. The engine repo `~/workspace/reiyah` forbids runtime and network inside it;
+    enter it only through its own baton and never drag its worktree.
+12. **Host stewardship is narrow and recoverable.** Disk cleanup removes only exact inactive,
+    re-downloadable, cloud-backed targets after checking ownership and process use; never delete
+    personal files, credentials, active runtimes, or unrelated repositories to make a run succeed.
+13. **Do the plain work yourself.** A file move, an unzip, a small script: do it, do not delegate a
+    trivial operation back to the operator.
+
+## 3. Exact current state
 
 | Item | State |
 |---|---|
-| Branch | `gate-b-measurement`, clean, **8 commits unpushed** as of 2026-08-29 |
-| Schema successor | `schemas/v1.3/`, **proposed** |
-| Executable contract successor | `manifests/definitions/joint-silent-miss-contract-1.3.0.json`, **proposed, not in the registry, and NOT REGISTRABLE FROM THIS LANE**; see section 10 |
-| Real records | 8,976 built, **0 semantic violations**, validated by a **port**; the 3 worst-group records by a **spec reimplementation**, which is weaker still |
-| Claim status | machine-readable in [`claim-status-register-2026-08-29.json`](../evidence/claim-status-register-2026-08-29.json); enforced by `tools/measure/check_claim_reconciliation.py` |
-| Evidence-cost figures | **withdrawn as stated**, retained with lineage; see [`ESTIMAND_RSS_DEFINITION_32.md`](ESTIMAND_RSS_DEFINITION_32.md) section 6 |
-| Reference-error identification | **`unknown`**; no blinded reannotation performed; solver exercised on synthetic fixtures only |
+| Worktree / branch | `~/workspace/reiyah-gate-b`, `gate-b-measurement` |
+| HEAD | `3450415` (Result W) |
+| Pushed | all commits pushed to `origin/gate-b-measurement` |
+| Uncommitted | `docs/GENERAL_SYNTHESIS.md` until committed with this handoff |
+| Schema successor | `schemas/v1.3/`, **proposed**, not applied to any released byte |
+| Executable contract successor | `1.3.0` joint-silent-miss contract, **proposed, not registrable from this lane** (section 12) |
+| Record validation | `port` or `spec_reimplementation` only; the shipped module can validate only its frozen synthetic fixture |
 | Operator acceptance | none |
 | Scientific support | none |
+| External independent review | **none: this is the one open item that would raise confidence** |
 | Released `1.2` bytes modified | none |
 
-## 4. What was measured
+## 4. The complete arc, by domain
 
-Transcripts in `evidence/measurement/`, tooling in `tools/measure/`. Results A through H are
-tabulated in [`GATE_B_MEASUREMENT_CONTRACT.md`](GATE_B_MEASUREMENT_CONTRACT.md) section 3. The
-headline facts:
+Transcripts in `evidence/` and the per-thread `evidence/` folders; tooling in `tools/measure/`,
+`human-channel/tools/`, and `llm-generalization/tools/`. The three READMEs
+(`README.md`, `human-channel/README.md`, `llm-generalization/README.md`) narrate each thread.
 
-- The official nuScenes evaluation removes **12,694 of 134,565** validation ground-truth objects,
-  **9.43%**, before scoring any detector. Ten adversarial audits pass, including one that
-  reproduces nuScenes' published 6,019 validation samples exactly.
-- A per-object matcher reproduces published mAP on four detectors: Megvii 51.97 against 51.90,
-  Mapillary 29.58 against 29.80, PointPillars 29.54 against 29.50. CenterPoint reconstructs 61.59
-  and is **not validated** against a confirmed figure.
-- Redundancy is weakest on the close-range car. Pooled conditional lift 1.156, worst eligible
-  group 6.946 with a simultaneous band of [2.221, 11.671]. Across three detector pairs the
-  worst region is a close-range car every time; the exact stratum is pair-specific. See
-  [`RESULT_I_WORST_GROUP_DEPENDENCE.md`](RESULT_I_WORST_GROUP_DEPENDENCE.md) and
-  [`RESULT_J_WORST_REGION_ACROSS_PAIRS.md`](RESULT_J_WORST_REGION_ACROSS_PAIRS.md).
-- Camera and lidar failures are not independent. Marginal lift 1.587 at score 0.3, conditional
-  1.156 after stratifying on class, range and visibility, cluster-robust 95% interval
-  [1.144, 1.166] at the tracked-instance unit. The CMH of 4,924 was computed at the box
-  unit; design effect 5.02, so the honest statistic is about 982 on 1 df.
-- **WITHDRAWN, historical.** This bullet formerly converted the measured dependence into a
-  validation-evidence budget. Every such figure is withdrawn from current scientific use. The
-  superseded values are retained in
-  [`claim-status-register-2026-08-29.json`](../evidence/claim-status-register-2026-08-29.json)
-  and in the Result G, I, J and K transcripts. RSS Corollary 3 is a three-subsystem
-  majority-vote bound over safety-critic miss **and** ghost mistakes; it is not a validated
-  conversion from a measured two-channel detection-miss `c` into a validation-mile or
-  evidence-budget multiplier. See
-  [`ESTIMAND_RSS_DEFINITION_32.md`](ESTIMAND_RSS_DEFINITION_32.md) section 6 for the five
-  conditions that would have to hold before any such figure returns.
-- **SUPERSEDED.** This bullet formerly read that across six detector pairs, same-modality and
-  cross-modality separate completely. Three of those six pairs used CenterPoint, which section 9a
-  itself excluded for weak provenance and did not readmit, and `matched_centerpoint.json` is not
-  in this worktree, so the six-pair table is not reproducible here. Restated at the instance unit
-  with CenterPoint removed, three pairs survive: one same-modality and two cross-modality. The
-  difference does exclude zero, marginal `+0.222` 95% CI `[+0.203, +0.241]` and conditional
-  `+0.184` 95% CI `[+0.170, +0.195]`, but the same-modality arm holds a single pair and both
-  cross-modality pairs share Mapillary, so neither arm has internal replication and the verdict is
-  **`inconclusive` by construction**. See
-  [`result_h_instance_unit.txt`](../evidence/measurement/result_h_instance_unit.txt).
-  The separate claim that joint-failure odds **rise with the accuracy of both models**
-  (7.01, 15.86, 31.99) remains **withdrawn**: no computation produced it, the trend has a
-  permutation p of 0.167 on three non-independent points, and two pairs at identical
-  weaker-model accuracy differ by 2.26x. See
-  [`AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md`](AUDIT_INFERENCE_UNIT_AND_ACCURACY_CLAIM.md).
+**Domain one: two automation channels (nuScenes).** A camera detector and a lidar detector miss the
+same objects more than independence predicts. Conditional `c = 1.151`, 95% CI [1.138, 1.160], after
+stratifying on class, range and visibility on a common support, with the marginal at `1.587`. It
+survives four independent robustness axes: a second lidar (M), every operating threshold (N),
+unmeasured confounding with an E-value of 2 to 3 (O), and a second camera, FCOS3D, run for this
+program (Q, and Q-depth). Two sharpening results keep it honest: the coefficient is smallest exactly
+where the sensors jointly miss most, so `c` alone cannot certify redundancy (P); and an inviting
+accuracy trend is mostly the marginal arithmetic of the miss rate, not coupling (R). The 2x2 modality
+grid: two lidars couple most (1.29), a camera and a lidar less (1.10 to 1.15). The worst eligible
+group is a close-range car at lift 6.946, band [2.221, 11.671] on 34 instances (I, J); never quote
+it without the band. Results L, M, N, O, P, Q, R; red-team in
+[`MEASUREMENT_THREATS_TO_VALIDITY.md`](MEASUREMENT_THREATS_TO_VALIDITY.md).
 
-## 5. Corrections, all of them
+**Domain two: the human (100-Car NDS, DCPT, BDD-A).** In real conflicts the driver was looking
+forward two thirds of the time: observation is not detection (H2). The human's own two channels,
+looking and acting, fail together at `c = 1.46`, the same shape the sensors show (H3). In Level 3
+automation a visual-manual distraction slows takeover by about a quarter (H4). The cross-agent
+question no prior work had measured, a validated detector against the driver gaze heatmap taken to
+the automation's total blindness with a clip-clustered interval, gives `c = 0.98`, approximately
+independent (H5, H6). This is where the law's other arm shows: a human and a machine are genuinely
+different kinds, and their redundancy holds. Files `human-channel/H1..H6_*.md`.
 
-Eighteen claims have now been withdrawn or narrowed. Every one made the result smaller. All remain
-in place with their refutations attached; **do not tidy them away**. The machine-readable current
-status of every claim is
-[`claim-status-register-2026-08-29.json`](../evidence/claim-status-register-2026-08-29.json), and
-`tools/measure/check_claim_reconciliation.py` fails closed if any live prose artifact states a
-figure the register forbids. **The register, not this prose, is the reconciliation point.**
+**Domain three: AI juries (Open LLM Leaderboard v1, MMLU and ARC-Challenge).** Seven models fail
+together; same-lineage more than cross-lineage; the residual survives difficulty conditioning; a
+seven-model jury has the effective diversity of 3.6 (T). Agreement is over-trusted: two agreeing are
+correct 64.8% of the time, all seven agreeing are still wrong 10.4% (U). It replicates on
+ARC-Challenge, where a six-model jury carries the diversity of 1.6 and unanimity is wrong 37.2% (W).
+No LLM inference: this reads public per-question outputs and joins by example hash. Files
+`llm-generalization/RESULT_T..W_*.md`.
 
-The 2026-08-29 audit added seven: the pooled evidence-cost figures, the worst-group evidence-cost
-figures, the whole of Result G on a second and independent ground,
-the withdrawn attribution of `77,460` to the primary source,
-the identification of `c` with an Eckhardt and Lee intensity function, the
-provenance of the worst-group records, and Result H's six-pair separation. Full table in
-[`CLAIM_AUDIT_2026-08-29.md`](CLAIM_AUDIT_2026-08-29.md) section 3.1.
+**The correction (S).** Required validation evidence in the redundancy argument scales as `sqrt(c)`,
+reproduced against RSS's own worked example. With the measured coefficient, a same-kind redundancy
+needs at least 26% more validation evidence than the argument claims (a lower bound); the
+human-machine layer needs almost none. Two coupled sensors give the joint-failure protection of one
+and a half independent channels. File [`RESULT_S_CORRECTED_SAFETY_CALCULUS.md`](RESULT_S_CORRECTED_SAFETY_CALCULUS.md).
 
-| Claim | Verdict |
-|---|---|
-| Censoring biases dependence toward independence | false, it inflates about 3% |
-| Dependence is worst at long range | false, worst up close |
-| Qiu's published estimate inherits the filter | false, independent pipeline |
-| Zero lidar points implies undetectable | false, 18.13% recovered |
-| Quote the conditional coefficient against RSS | wrong quantity for that bound |
-| Evidence scales linearly in c | superseded twice: the sqrt(c) replacement is itself now **withdrawn as stated**, see the register |
-| GA-15 forbids this work living in Reiyah | false, over-cautious; work folded back in |
-| Both-channel miss is a joint **silent** miss | false, silence is not establishable here |
-| Every record is `nonidentifiable_unknown` | false, unknown does not propagate from an unreached operand |
+**The instrument (V).** A monitor that sees only the channels' outputs, with no ground truth,
+returns a calibrated probability the ensemble is wrong, having learned the coupling from a labeled
+calibration set. On held-out data it beats the naive agreement heuristic on every metric (AUC 0.845
+against 0.719, ECE 0.015 against 0.045); on unanimous items where the naive assumption assigns 0%
+risk it assigns the 11.6% the data carries against a true 9.5%. Its features are channel-agnostic, so
+the same form applies to two sensors or a human and a machine. File
+`llm-generalization/RESULT_V_DEPLOYED_MONITOR.md`.
 
-**Wherever Results D, E, G or H are described as measuring joint *silent* misses, the word silent
-is wrong and must be removed.** They measure both-channel misses. RSS Definition 32 concerns joint
-subsystem error rather than silence, so that work is unaffected in substance.
+## 5. The law, and the headline coefficients
 
-## 6. What the contract taught us
+| domain | same-kind pairing | cross-kind pairing |
+|---|---|---|
+| sensors | two lidars, c = 1.29 | camera x lidar, c = 1.10 to 1.15; human x machine, c ~ 0.98 |
+| the human | eyes x hands, c = 1.46 | (the human x machine cell above) |
+| LLM juries | same family c = 1.52 (MMLU), 1.87 (ARC) | cross family c = 1.29 (MMLU), 1.73 (ARC) |
 
-Five refusals, each correct, each revealing that the usage was wrong rather than the contract.
+Similar channels share a substrate and share their blind spots; genuinely different ones do not. The
+independence assumption is a load-bearing fiction wherever redundancy is claimed, and it fails most
+for the systems that share the most.
 
-1. Channel roles were encoded in property names, so machine against machine was inexpressible.
-2. `object_ref.record_kind` was pinned to `vehicle_object`, so a pedestrian could not be an
-   opportunity. **The most serious**, for a mission naming vulnerable road users.
-3. Eight sections rejected a non-observed state, so a partial measurement was unrepresentable,
-   which inverts Reiyah's own status model one level up.
-4. Silent joint miss requires warning and fallback, which this source does not observe.
-5. Unknown propagation is conditional on the operand being reached.
+## 6. The unit and the estimand
 
-Limits 1 to 3 were found by pointing the schema at real data. Limit 4 by reading the semantic
-rules. **Limit 5 only surrendered to executing them**, which is why executing matters.
+The estimand is the RSS Definition 32 coincidence coefficient
+`c = P(A fails and B fails) / [P(A fails) P(B fails)]`; `c = 1` is independence. It is not specific
+to sensors, which is why the finding travels across domains unchanged. See
+[`ESTIMAND_RSS_DEFINITION_32.md`](ESTIMAND_RSS_DEFINITION_32.md).
 
-Details: [`SCHEMA_1_3_FINDINGS.md`](SCHEMA_1_3_FINDINGS.md),
-[`CONTRACT_CAUGHT_AN_ERROR.md`](CONTRACT_CAUGHT_AN_ERROR.md),
-[`FIRST_SEMANTICALLY_VALIDATED_MEASUREMENT.md`](FIRST_SEMANTICALLY_VALIDATED_MEASUREMENT.md).
+The statistical unit matters more than it looks. An opportunity set is one common object over a time
+series; nuScenes objects are tracked, so 8,976 instances at a mean of 15 observations are the correct
+unit, and treating the boxes as independent is a clustering error the program's own traps table
+catches. Any future analysis clusters on `instance_token`; the LLM and human threads carry their own
+clustered intervals (clip-clustered for BDD-A, example-joined for the juries).
 
-## 7. The unit, which matters more than it looks
+## 7. Corrections already on the record
 
-The contract requires every row to bind the same `object_ref` and `occurred_at` to be strictly
-increasing. That is not a limitation: an opportunity set is **one common object over a time
-series**, as section 5.11 of the mathematical specification states.
+Every withdrawn or narrowed claim stays with its refutation attached; the register is the
+reconciliation point. A non-exhaustive reminder of the shape of them: censoring inflates dependence
+rather than deflating it; dependence is worst up close, not at long range; the evidence-budget
+figures were withdrawn and only the `sqrt(c)` correction (S) returned them under stated conditions;
+the word `silent` is wrong for a both-channel miss without an audited monitor adapter and must not
+be used; Result H's cross-modality separation is `inconclusive` by construction because neither arm
+has internal replication. Full tables in
+[`CLAIM_AUDIT_2026-08-29.md`](CLAIM_AUDIT_2026-08-29.md) and the register.
 
-nuScenes objects are tracked, so 8,976 instances at mean 15 observations fit exactly. **This is
-also the correct statistical unit**: treating fifteen near-identical boxes of one tracked object
-as independent is the clustering error in our own traps table. The contract demanded the right unit
-before we thought to apply it. Any future analysis must cluster on `instance_token`.
+## 8. Compute, data, and the one inference run
 
-## 8. Reproducing
+`sentinel-gpu` in `us-west1-a`: `g2-standard-8`, NVIDIA L4 24 GB, normally TERMINATED, about one
+dollar an hour running and near zero stopped. **Stop it when not computing.** It belongs to
+Sentinel; do not downgrade its torch. It holds the full nuScenes trainval set. The camera axis
+(Result Q, FCOS3D) is the one place inference ran: in a container (`uniad:latest`, torch 1.9/cu111,
+mmdet3d 0.17.1), with `--ipc=host` for the DataLoader and a CPU-side patch of `torch.inverse` for
+the L4. The predictions were validated by mAP reproduction before use, like every other detector.
+
+Local analysis venv: `~/bdda-venv` (torch 2.14/torchvision 0.29 with MPS, `datasets`,
+`huggingface_hub`, `sklearn`, `scipy`; ffmpeg present). The human and LLM threads run from it, for
+example `bdda-venv/bin/python llm-generalization/tools/result_t_llm_independence.py`.
+
+Public data sources, retained by custody state: nuScenes trainval metadata (SHA-256 pinned in
+section 9), the four detectors' released prediction files, 100-Car NDS (CC0), the DCPT L3 takeover
+set, BDD-A driver attention (research-use), and the Open LLM Leaderboard v1 per-question parquet
+files (`open-llm-leaderboard-old` on Hugging Face). A URL is not retained evidence; a source held
+only as a pointer may not be characterized as if retained.
+
+## 9. Reproducing the sensor spine
 
 ```sh
 cd ~/workspace/reiyah-gate-b
 python3 tools/measure/fetch_predictions.py predictions        # ~250 MB, HTTP range requests
 curl -o meta.tgz https://motional-nuscenes.s3.amazonaws.com/public/v1.0/v1.0-trainval_meta.tgz
-shasum -a 256 meta.tgz    # must be db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b
+shasum -a 256 meta.tgz    # db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b
 python3 tools/measure/build_gt_cache.py gt_val_cache.json < meta.tgz
 python3 tools/measure/match.py gt_val_cache.json predictions/megvii_val.json matched_megvii.json --validate 51.9
 python3 tools/measure/match.py gt_val_cache.json predictions/mapillary_val.json matched_mapillary.json --validate 29.8
@@ -171,171 +232,61 @@ python3 tools/measure/build_joint_records_per_instance.py gt_val_cache.json \
 python3 tools/measure/semantic_joint_1_3.py joint_records_per_instance.jsonl
 ```
 
-No GPU. Large intermediates are gitignored and reproducible. **Never use a bare pipe over an
-unreliable connection**: one silently corrupted transfer was caught only because `gsutil cp`
-verifies CRC32C, and a pipe would have carried it into the analysis.
+No GPU for the spine. Never use a bare pipe over an unreliable connection; one silently corrupted
+transfer was caught only because a checksummed copy verified CRC32C. The human and LLM threads
+reproduce from their own README commands.
 
-**`gcloud` needs interactive reauth** (`gcloud auth login`). Not blocking, because the official
-Motional S3 source is public and gives better provenance anyway.
+## 10. What is proven, and what is open
 
-## 9. Compute, already built
+Proven and reproducible from this repository: the coefficient exceeds 1 for similar-kind redundancy
+across three domains and two benchmarks; it is approximately 1 for a human and a machine; the
+required evidence is understated by the measured amount; and a calibrated output-only monitor
+corrects the over-confidence. Every result is `proposed`, self-checked against independent anchors,
+robustness-tested, and red-teamed.
 
-`sentinel-gpu` in `us-west1-a`: `g2-standard-8`, NVIDIA L4 24 GB, currently TERMINATED, with
-`/datasets/nuscenes-full` holding the complete trainval set including 342 GB of sweeps. About one
-dollar an hour running, near zero stopped. **Stop it when not computing.** Not needed for anything
-described above.
+Open, and named plainly: **no independent external review has been retained.** That is the honest
+ceiling on current confidence and the single most valuable next thing. It cannot be self-performed.
+Beyond it: the driving results are association after declared conditioning on public benchmarks, not
+a certificate about any deployed system; the human results are on naturalistic and simulator data
+with an engaged human; the LLM monitor is validated on two benchmarks and one jury, not deployed.
 
-Its torch is 2.9.1 with CUDA 12.9, while mmcv 2.1.0 ships wheels only to cu121. **Do not downgrade
-torch on that box**, it belongs to Sentinel. Use a container if inference is ever required.
+## 11. The next smallest actions
 
-## 9a. Session of 2026-08-28, what changed and what to distrust
+1. **Commit `docs/GENERAL_SYNTHESIS.md`** with this handoff so the tree is clean and the fresh
+   session inherits the single reading (Daniel-authored, no trailer). If this handoff already reads
+   `clean` in section 3, that is done.
+2. **Retain an independent external review.** Operator action; cannot be self-performed. This is the
+   real frontier.
+3. Optional hardening already scoped: a monitor cross-model transfer test (train the coupling
+   estimator on one jury, test on a disjoint jury); the monitor validated on real driving outputs
+   rather than benchmark outputs; a third benchmark for the LLM law.
 
-Seven results and audits were added in one session. Read this section before trusting any
-number quoted elsewhere in this file, because two long-standing figures were corrected.
+Continue only the smallest unresolved step. Engineering pressure raises the burden of proof; it
+never raises confidence by itself.
 
-**Corrected, do not use the old values.**
-
-- Result E's CMH of 4,924 was computed at the box unit. The design effect is 5.02, so the
-  honest statistic is about 982 on 1 df. The point estimate 1.156 is unchanged and the
-  conclusion stands. `audit_result_e_clustering.py`.
-- "Joint-failure odds rise with the accuracy of both models" is **withdrawn**. No
-  computation produced it: `result_h.py` binds `MAP` and never reads it. Permutation p is
-  0.167 on three non-independent points, two of which rest on CenterPoint's unvalidated
-  accuracy, and two pairs at identical weaker-model accuracy differ by 2.26x.
-  `audit_result_h_accuracy_claim.py`.
-- Result I's worst-stratum identity is **pair-specific**, narrowed by Result J. Its
-  regional finding holds across all three pairs.
-
-**Added.**
-
-| Result | One line |
-|---|---|
-| I | Pooling hid it: worst eligible group `car` 0-20 m `v80-100` at lift 6.946, simultaneous 95% [2.221, 11.671], against a pooled 1.156. Survives four attacks. Evidence base is 34 instances; never quote without the band. |
-| J | The worst *region* generalises across three pairs, the worst *stratum* does not. One pair's extremum has a lower bound of 0.992 and is **not established**. |
-| K | The marginal `c` at the instance unit with an interval, which stands. Its evidence-cost columns are **withdrawn as stated**; the superseded figures are retained in the transcript and the register. Pays Audit 1's interval debt for D and G. |
-| L | The conditional coefficient **converges and not to independence**: 1.151, 95% CI [1.138, 1.160], on a common support. Closes open question 2. |
-| M | First `worst_group_evaluation` records from measured data. The unknown-group rule fires for real. Closes open question 3. |
-
-**A trap now on the record.** Conditioning on `num_lidar_pts` moves the coefficient
--0.044, ten times more than any admissible covariate. It is the lidar return itself and
-sits on the path being measured. It looks like convergence and is mechanical. Never use
-it. See [`RESULT_L_CONVERGENCE.md`](RESULT_L_CONVERGENCE.md).
-
-**Two defects found in this session's own work, both recorded rather than quietly fixed.**
-
-1. The first robustness script coerced an ineligible stratum into a numeric rank of 110
-   and reported a false FAIL. The coercion was removed; the criterion was not loosened.
-   Recorded in [`RESULT_I_WORST_GROUP_DEPENDENCE.md`](RESULT_I_WORST_GROUP_DEPENDENCE.md).
-2. The first worst-group mutation set reported nine FAILs that were mutations inapplicable
-   to their record, not rule defects. The set is now precondition-aware and the run fails
-   unless every rule is rejected by at least one applicable replay somewhere.
-
-**A new `1.3` schema limit.** `joint_silent_miss` is a bare `$ref` where its seven sibling
-sections are a `oneOf` with `nonObservedMeasurement`, so a record that did not measure
-joint silent misses cannot be expressed without fabricating four identities. The section
-is omitted, the whole-record schema failure is retained as the evidence, and a one-line
-`1.4` successor change is proposed. See
-[`SCHEMA_1_3_FINDING_JOINT_SILENT_MISS.md`](SCHEMA_1_3_FINDING_JOINT_SILENT_MISS.md).
-**Do not apply it to a released `1.3` byte.**
-
-**Reproducibility.** `matched_pointpillars.json` was rebuilt and gated at 29.54 against a
-published 29.50 before use. All `matched_*.json` are gitignored; regenerate with
-`tools/measure/match.py` and never admit a match set that fails its `--validate` gate.
-CenterPoint remains excluded for weak provenance and is not readmitted.
-
-**Every new tool is seeded and re-runs byte-identically.** If one does not, stop and find
-out why before trusting anything it produced.
-
-## 10. The next smallest action
-
-**The former first item is REVOKED as unreachable from this lane, on verified grounds.** It read:
-release the `1.3.0` executable contract into the definition registry so the shipped science module
-rather than a port can execute these checks. The 2026-08-29 audit established that this cannot be
-done here, and the reason is now bound to bytes rather than inferred.
-
-`tools/gate_a_1_2_0_science.py` in this worktree is Git blob
-`a32c6cfa948ee1005a99937e54670991999db253`, byte-identical to the frozen Gate A `C_packet` copy at
-`801eacf`. Its guard `executable_contract_binding_violations` compares the registry entry against
-`FROZEN_EXECUTABLE_CONTRACT_DEFINITIONS`, a constant **inside that released module**, by exact
-equality. The bound `1.2.0` contract hardcodes synthetic subject identities:
-`reiyah.opportunity-set.synthetic-joint-observed` and siblings, `reiyah.object.synthetic_vehicle`,
-and synthetic human and automation channel refs. **The artifact of record can therefore only ever
-validate the synthetic fixture it was frozen against.** Registering a `1.3.0` contract would
-require changing a released Gate A byte, which is prohibited in place and needs a Gate A science
-module successor. That is another lane.
-
-So the `1.3.0` proposal's own diagnosis is confirmed correct, the port was forced rather than
-chosen, and the honest validation state of every Gate B record is `port` or `spec_reimplementation`
-until a Gate A successor exists. See [`CLAIM_AUDIT_2026-08-29.md`](CLAIM_AUDIT_2026-08-29.md)
-section 4.
-
-**Do not weaken the substitution guard.** It may not be removed, relaxed to a subset check, or
-made advisory. It is working exactly as designed: it is refusing real data because the contract it
-was frozen against names a fixture. If the choice is between a validator that refuses real data and
-one that can be talked into anything, keep the refusal.
-
-The next smallest actions that ARE reachable from this lane, in order:
-
-1. **DONE, 2026-08-29, and the result got smaller.** Result H restated at the instance unit with
-   CenterPoint removed. Three pairs survive. The arm difference excludes zero, but the
-   same-modality arm holds one pair and both cross-modality pairs share Mapillary, so the design
-   verdict is `inconclusive` by construction. Audit 1's unit debt for D, G and H is now closed.
-   Tool `result_h_instance_unit.py`, transcript `result_h_instance_unit.txt`. The marginal `c`
-   for `mapillary x megvii` reproduces Result K's `1.587` and its interval `[1.564, 1.612]`
-   exactly, from a separate estimator and a different replicate count, which is a real
-   cross-check on both.
-2. A second independent camera detector. All three cross-modality pairs share Mapillary, so that
-   column has no internal replication, and no modern camera-only nuScenes predictions are published
-   anywhere. Obtaining one means running inference.
-2. **CLOSED** by [`RESULT_L_CONVERGENCE.md`](RESULT_L_CONVERGENCE.md). On a common support the
-   sequence converges to 1.151, 95% CI [1.138, 1.160], excluding independence. Weather and motion
-   state each move it by only -0.004. `num_lidar_pts` was decided **inadmissible**: it is the lidar
-   return itself and conditioning on it blocks the measured path, moving the estimate -0.044 for
-   mechanical reasons. Object size and truncation are not in the cache and remain untested.
-3. **CLOSED.** `worst_group_evaluation` now has three records built from measured data, and the
-   unknown-group rule has fired against something real: grouping by motion state yields
-   disposition `unknown` with no extremum, because 315 of 8,976 tracked objects appear in fewer
-   than two keyframes and their motion membership is not derivable. 67 of those are vulnerable
-   road users. Ten semantic rules with 23 rejection replays, all rejecting for their declared
-   reason. Tools `build_worst_group_records.py` and `semantic_worst_group_1_3.py`; records at
-   `evidence/measurement/worst-group-records.jsonl`. It surfaced a new `1.3` limit, recorded in
-   [`SCHEMA_1_3_FINDING_JOINT_SILENT_MISS.md`](SCHEMA_1_3_FINDING_JOINT_SILENT_MISS.md).
-
-## 11. Standards
-
-Plain reviewable Markdown, JSON and deterministic scripts. **No em dash in any repository
-document.** Every claim carries the epistemic state of its evidence. A computed number is not a
-measurement, a passing validator is not acceptance, a checksum is not truth, and generated prose is
-not evidence. Failures are information: keep them as diagnostics, open findings, contradictions or
-retractions, and never weaken a check to make a run pass.
-
-## 12. Required closeout
-
-State, separately and from exact records: worktree, branch, commit, and cleanliness; which schemas
-and contracts are proposed against released; how many records validate and against which validator,
-the ported one, the spec reimplementation, or the shipped one; every claim withdrawn since the last
-handoff; and the next smallest authorized action.
-
-Add, since 2026-08-29:
-
-1. the reconciliation check must pass, and its result must be stated;
-2. every reproduction that is a dependency of corrected prose must be re-run and its
-   byte-identity stated;
-3. source custody state must be stated per source, distinguishing `primary_retained`,
-   `primary_pointer_only`, `third_party_unretained`, and `unavailable`, and no claim may
-   characterise a source held only as a pointer;
-4. any statement of novelty must be given as `no prior instance found in this bounded search`
-   with the search scope named, never as novelty;
-5. disclosed dependence must be stated: no Gate B result is independently replicated, and shared
-   compute, code, authorship, or evaluation is never independent validation.
-
-## 13. What is blocked, and by what
+## 12. What is blocked, and by what
 
 | Blocked | Blocker | Lane |
 |---|---|---|
-| Registering the `1.3.0` contract so the artifact of record runs | The frozen expectation lives inside a released Gate A module and is compared by exact equality | Gate A |
-| Any evidence-budget figure | Five conditions in `ESTIMAND_RSS_DEFINITION_32.md` section 6.4 | Gate B, open |
-| Bounding `c` on any measured stratum | No blinded reannotation; `delta` unestimated | Gate B, needs authorization |
-| A second independent camera detector | No modern camera-only nuScenes predictions are published; obtaining one means running inference | Outside current authority |
-| Object-level `M^H` | No audited public dataset identifies it; pilot needs human-subjects review | Outside current authority |
-| Any use of the word `silent` | No audited monitor adapter | Gate B contract design done, adapter absent |
+| Registering the `1.3.0` contract so the shipped module runs these checks | the frozen expectation lives inside a released Gate A module and is compared by exact equality; changing it would edit a released byte | Gate A successor |
+| Any evidence-budget figure beyond the `sqrt(c)` correction | conditions in `ESTIMAND_RSS_DEFINITION_32.md` section 6.4 | Gate B, open |
+| Bounding `c` on a measured stratum by reference-error rate | no blinded reannotation performed | Gate B, needs authorization |
+| Any use of the word `silent` | no audited monitor adapter | contract design done, adapter absent |
+| Object-level human miss on real data at scale | no audited public dataset identifies it; a pilot needs human-subjects review | outside current authority |
+| A scientific, safety, or comparative claim | eligible retained evidence and an authorized external decision | outside this lane |
+
+## 13. Required closeout
+
+State, separately and from exact records: worktree, branch, commit, and cleanliness; which schemas
+and contracts are `proposed` against released; how many records validate and against which validator
+(the port, the spec reimplementation, or the shipped module); every claim withdrawn since the last
+handoff and that `check_claim_reconciliation.py` passes; every reproduction that a corrected prose
+depends on re-run with its byte-identity stated; source custody per source; that no result is
+independently replicated and shared compute or authorship is never independent validation; operator
+acceptance, scientific support, external-review, runtime, and Gate B authority states; and the next
+smallest authorized action.
+
+A successful measurement is an honest descriptive result on public data. It is never, by itself,
+scientific support, safety validation, standards compliance, product readiness, competitive
+superiority, operator acceptance, or runtime authority. Say only what the evidence says, and say the
+open item every time.
