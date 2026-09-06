@@ -41,6 +41,11 @@ The tools expect `eventEyeglance.txt`, `eventVideoReduced.txt`, `baselineEyeglan
   manual distraction (game, messaging, reading, eating) slows the automation-to-human takeover by
   +0.47 s (+24%) versus no task; cognitive-only load costs almost nothing. The kind of distraction
   is what matters, and the human-as-backup assumption is weakest for the tasks people do on a phone.
+- [`H5_CROSS_AGENT_JOINT.md`](H5_CROSS_AGENT_JOINT.md) - the cross-agent joint (BDD-A, research-use):
+  a validated detector on the frames (automation) against the driver gaze heatmap (human) over
+  13,904 objects. Cross-agent c = 0.97, approximately independent, in contrast to same-kind
+  redundancy (two sensors 1.15, one human's eyes-x-hands 1.46). Same-kind redundancy is a trap;
+  different-kind (human x machine) roughly holds - on detectable objects, with an engaged human.
 
 ## Discipline
 

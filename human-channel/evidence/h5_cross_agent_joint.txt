@@ -1,0 +1,28 @@
+  ...20 clips, 1801 objects
+  ...40 clips, 4204 objects
+  ...60 clips, 6917 objects
+  ...80 clips, 9092 objects
+  ...100 clips, 11300 objects
+  ...120 clips, 13904 objects
+====================================================================================
+HUMAN CHANNEL H5 - cross-agent joint: human attention x automation detection
+BDD-A validation, 120 clips, 651 frames, 13904 driving objects
+====================================================================================
+
+  automation miss = score < 0.5; human miss = gaze attention < median (0.005)
+  P(automation miss)              : 27.0%
+  P(human miss)                   : 50.0%
+  P(both miss)                    : 13.1%
+  expected if independent         : 13.5%
+  cross-agent coefficient c       : 0.972
+  2x2 counts [both,autoOnly,humOnly,neither]: 1821, 1927, 5131, 5025
+
+  Pearson corr(automation score, human attention): -0.022
+  positive means the machine is unsure about the same objects people ignore.
+
+------------------------------------------------------------------------------------
+NON-CLAIMS: BDD-A gaze is an in-lab aggregate over observers, not one naturalistic
+driver; object set is detector detections (a lower bound, objects both totally missed
+are unobservable without GT boxes); descriptive, not clustered; c > 1 includes shared
+scene difficulty, not claimed as pure latent dependence. Research-use data (Xia 2018),
+retained as proposed; no released 1.2 byte involved.
