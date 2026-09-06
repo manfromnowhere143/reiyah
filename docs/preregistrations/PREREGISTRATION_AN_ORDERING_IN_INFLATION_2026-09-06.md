@@ -35,6 +35,11 @@ then 0.40, two runs, byte identity required, transcript retained as
 `evidence/measurement/result_an.txt`. Verdicts from this transcript together with the retained
 AF and AJ transcripts for the neighbour values, stated as such.
 
+## Outcome
+
+AN-4 and AN-5 supported; AN-1 falsified at 0.40 (bands touch); AN-2 falsified; AN-6 falsified at
+0.40; AN-3 recorded. See [`RESULT_AN_ORDERING_IN_INFLATION.md`](../RESULT_AN_ORDERING_IN_INFLATION.md).
+
 ## Non-claims
 
 A preregistration, not a result. Released detector outputs on the public nuScenes validation split;

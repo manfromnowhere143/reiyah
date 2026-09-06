@@ -1,7 +1,7 @@
 {
   "manifest_kind": "gate-b-replay-manifest",
   "artifact_id": "reiyah.gate-b.replay-manifest",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "note": "Rows with replay_class argv_unrecorded_historical are retained transcripts whose exact command line was not recorded per transcript when they were produced; their digests are checked, they are never replayed by this tool, and adding an argv is a later, append-only step.",
@@ -683,6 +683,21 @@
         "human-channel/H6B_BLINDNESS_CHECK.md"
       ],
       "timeout_s": 9000,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "evidence/measurement/result_an.txt",
+      "sha256": "sha256:9b9939169874c989611a0009b50271e910e21a8f82775478a2efa7ed63612373",
+      "tool": "tools/measure/result_an_ordering_in_inflation.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "tools/measure/result_an_ordering_in_inflation.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "docs/RESULT_AN_ORDERING_IN_INFLATION.md"
+      ],
+      "timeout_s": 7200,
       "stderr_merged": true
     }
   ]

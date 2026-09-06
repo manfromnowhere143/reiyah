@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.22",
+  "version": "0.2.23",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -426,7 +426,7 @@
         "custody_state": "primary_retained",
         "exact_proposition": "Definition 32 of arXiv:1708.06374, the one sided c-approximate independence coefficient; every c below is the smallest constant satisfying it for its declared pair, stratum, and operating point."
       },
-      "notes": "One pair per cell except camera-lidar; the same-kind versus cross-kind reading rests on one lidar-lidar pair and one camera-camera pair and is not internally replicated. Modality-separation as a difference-in-c claim remains inconclusive (see modality-separation). Narrowed 2026-09-06 by Result AJ: the same-kind ordering holds at 0.10 and 0.30 and is falsified at 0.50, where FCOS3D misses 93.9 percent of objects and reads as independent of everything (the marginal artifact of Result P). Stated as: same-kind pairs are the least independent when channels operate in comparable regimes. Narrowed further 2026-09-06: at 0.50 the two-lidar pair (1.56 of 2) also exceeds the Mapillary x Megvii cross pair (1.53), so the near-blind camera is not the whole reason; the same-kind ordering holds at 0.10 and 0.30 and fails at 0.50 for reasons not identified beyond Result P's marginal artifact. Result AM (exploratory, 2026-09-06): at 0.50 the two-lidar pair's inflation equals or exceeds every cross pair's in every range band (1.25 against 1.24 and 1.19 overall), so the lidar-pair reversal recorded by AJ lives in the effective-independence summary, not in the inflation; the camera pair collapses with FCOS3D 89 to 100 percent blind by band. Suggests, does not establish, stating the ordering in the inflation quantity; a preregistration in that quantity is the next step."
+      "notes": "One pair per cell except camera-lidar; the same-kind versus cross-kind reading rests on one lidar-lidar pair and one camera-camera pair and is not internally replicated. Modality-separation as a difference-in-c claim remains inconclusive (see modality-separation). Narrowed 2026-09-06 by Result AJ: the same-kind ordering holds at 0.10 and 0.30 and is falsified at 0.50, where FCOS3D misses 93.9 percent of objects and reads as independent of everything (the marginal artifact of Result P). Stated as: same-kind pairs are the least independent when channels operate in comparable regimes. Narrowed further 2026-09-06: at 0.50 the two-lidar pair (1.56 of 2) also exceeds the Mapillary x Megvii cross pair (1.53), so the near-blind camera is not the whole reason; the same-kind ordering holds at 0.10 and 0.30 and fails at 0.50 for reasons not identified beyond Result P's marginal artifact. Result AM (exploratory, 2026-09-06): at 0.50 the two-lidar pair's inflation equals or exceeds every cross pair's in every range band (1.25 against 1.24 and 1.19 overall), so the lidar-pair reversal recorded by AJ lives in the effective-independence summary, not in the inflation; the camera pair collapses with FCOS3D 89 to 100 percent blind by band. Suggests, does not establish, stating the ordering in the inflation quantity; a preregistration in that quantity is the next step. Result AN (2026-09-06, preregistered in the inflation quantity): the two-lidar pair is the most coupled pair at 0.10, 0.20, 0.30, 0.40 and 0.50 by point, bands non-overlapping at four of five; the two-camera pair is above every cross pair only at 0.30 (at 0.20 it is below FCOS3D x Megvii, 1.82 against 1.85). Final narrowed statement: lidar-lidar most coupled at every operating point; camera-camera not established above cross pairs."
     },
     {
       "claim_id": "reiyah.gate-b.claim.accuracy-coupling-residual",
@@ -1163,6 +1163,28 @@
         "exact_proposition": "Same source as llm-jury-coincidence-mmlu; both juries on the 13,937 shared MMLU questions."
       },
       "notes": "Jury A mean 1.094 [1.088, 1.098], same-family 1.178, cross-family 1.080; jury B mean 1.016 [1.014, 1.019]. Per-pair minima below 1 in both juries. MMLU only; the other jury's error fraction is still a proxy for difficulty."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.sensor-ordering-inflation-preregistered",
+      "estimand": "Six preregistered predictions at 0.20 and 0.40 in the inflation quantity: lidar-pair ordering with non-overlapping bands, camera-pair ordering at 0.20, interpolation of every pair's inflation and the jury's effective independence between measured neighbours, and the three-channel sub-jury ordering.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "object_track",
+      "lineage": {
+        "first_stated_in": "docs/preregistrations/PREREGISTRATION_AN_ORDERING_IN_INFLATION_2026-09-06.md (predictions, committed before the run); docs/RESULT_AN_ORDERING_IN_INFLATION.md (outcome)",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_an.txt",
+        "evidence/measurement/result_af.txt",
+        "evidence/measurement/result_aj.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Result AF tool imported unchanged with SCORE assigned to 0.20 and 0.40; neighbour values from the retained AF and AJ transcripts as the preregistration stated."
+      },
+      "notes": "AN-4 (twelve of twelve) and AN-5 (0.20 at the boundary) supported; AN-1 falsified at 0.40 (bands touch), AN-2 falsified (cameras 1.82 [1.79, 1.85] below FCOS3D x Megvii 1.85 [1.82, 1.89]), AN-6 falsified at 0.40 (FCOS3D + 2 lidars 2.13 above 2 cameras + Megvii 2.12); AN-3 recorded. The coefficient's motion with the threshold is understood; the pair ordering is not general."
     }
   ]
 }

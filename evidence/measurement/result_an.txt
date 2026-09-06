@@ -1,0 +1,112 @@
+
+############################################################################################
+# RESULT AN  score >= 0.20  ::  result_af_sensor_jury (imported unchanged, SCORE assigned)
+############################################################################################
+============================================================================================
+RESULT AF - the sensor jury in the LLM jury's quantity: effective independent channels
+nuScenes val, 134565 annotated objects (121871 with any lidar or radar return), 8976 tracked instances,
+four detectors at score >= 0.2; instance-clustered bootstrap, B = 1000, seed 20260906
+============================================================================================
+
+  per-detector miss rate, all objects:
+    Mapillary (camera)         39.5%   (eligible only 35.1%)
+    FCOS3D (camera)            43.0%   (eligible only 38.8%)
+    Megvii (lidar)             22.0%   (eligible only 17.2%)
+    PointPillars (lidar)       37.8%   (eligible only 33.4%)
+
+  all annotated objects:
+    jury                                    k  P(all miss)             inflation     effective independent
+    full jury: 2 cameras + 2 lidars         4        13.4%     9.55 [9.06, 10.05]      1.94 [1.92, 1.96] of 4
+    two cameras                             2        30.9%     1.82 [1.79, 1.85]      1.32 [1.32, 1.33] of 2
+    two lidars                              2        19.0%     2.29 [2.24, 2.34]      1.38 [1.36, 1.39] of 2
+    Mapillary x Megvii (camera x lidar)     2        16.3%     1.88 [1.85, 1.91]      1.54 [1.52, 1.55] of 2
+    Mapillary x PointPillars                2        23.2%     1.56 [1.53, 1.58]      1.53 [1.52, 1.55] of 2
+    FCOS3D x Megvii                         2        17.5%     1.85 [1.82, 1.89]      1.55 [1.54, 1.56] of 2
+    FCOS3D x PointPillars                   2        25.3%     1.55 [1.53, 1.58]      1.52 [1.51, 1.53] of 2
+    2 cameras + Megvii                      3        14.8%     3.98 [3.86, 4.12]      1.81 [1.79, 1.83] of 3
+    2 cameras + PointPillars                3        20.2%     3.14 [3.05, 3.24]      1.75 [1.73, 1.77] of 3
+    Mapillary + 2 lidars                    3        14.6%     4.46 [4.31, 4.63]      1.74 [1.72, 1.76] of 3
+    FCOS3D + 2 lidars                       3        15.5%     4.35 [4.21, 4.50]      1.74 [1.72, 1.76] of 3
+
+  eligible objects only:
+    jury                                    k  P(all miss)             inflation     effective independent
+    full jury: 2 cameras + 2 lidars         4         9.2%    11.80 [11.16, 12.49]      2.04 [2.02, 2.07] of 4
+    two cameras                             2        26.3%     1.93 [1.90, 1.97]      1.34 [1.33, 1.35] of 2
+    two lidars                              2        14.3%     2.50 [2.44, 2.56]      1.41 [1.40, 1.43] of 2
+    Mapillary x Megvii (camera x lidar)     2        11.7%     1.95 [1.90, 1.99]      1.60 [1.58, 1.61] of 2
+    Mapillary x PointPillars                2        18.6%     1.59 [1.56, 1.62]      1.57 [1.56, 1.58] of 2
+    FCOS3D x Megvii                         2        12.9%     1.94 [1.90, 1.98]      1.61 [1.59, 1.63] of 2
+    FCOS3D x PointPillars                   2        20.6%     1.59 [1.56, 1.62]      1.55 [1.54, 1.56] of 2
+    2 cameras + Megvii                      3        10.4%     4.47 [4.30, 4.64]      1.90 [1.87, 1.92] of 3
+    2 cameras + PointPillars                3        15.7%     3.45 [3.33, 3.56]      1.80 [1.78, 1.82] of 3
+    Mapillary + 2 lidars                    3        10.2%     5.09 [4.91, 5.31]      1.82 [1.79, 1.84] of 3
+    FCOS3D + 2 lidars                       3        11.1%     4.99 [4.79, 5.18]      1.82 [1.79, 1.84] of 3
+
+  reading against the LLM juries (Results T, W, Y): 7 models on MMLU 3.60 [3.53, 3.68] of 7;
+  6 on ARC-Challenge 1.64 [1.57, 1.71] of 6; 7 on HellaSwag 1.28 [1.27, 1.30] of 7.
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: released detector outputs on the public nuScenes validation split, marginal
+coefficients at one operating point including shared scene difficulty, retained as proposed.
+Miss is the validated matcher's absence of a match at 0.30; the two cameras and two lidars
+were all trained on the nuScenes training split, a shared-data threat already on record.
+Descriptive, not a safety determination, not a certificate about any deployed system. No
+detector is executed. No released 1.2 byte is involved.
+
+############################################################################################
+# RESULT AN  score >= 0.40  ::  result_af_sensor_jury (imported unchanged, SCORE assigned)
+############################################################################################
+============================================================================================
+RESULT AF - the sensor jury in the LLM jury's quantity: effective independent channels
+nuScenes val, 134565 annotated objects (121871 with any lidar or radar return), 8976 tracked instances,
+four detectors at score >= 0.4; instance-clustered bootstrap, B = 1000, seed 20260906
+============================================================================================
+
+  per-detector miss rate, all objects:
+    Mapillary (camera)         55.9%   (eligible only 52.0%)
+    FCOS3D (camera)            81.9%   (eligible only 80.1%)
+    Megvii (lidar)             48.9%   (eligible only 44.5%)
+    PointPillars (lidar)       55.5%   (eligible only 51.7%)
+
+  all annotated objects:
+    jury                                    k  P(all miss)             inflation     effective independent
+    full jury: 2 cameras + 2 lidars         4        30.3%     2.44 [2.37, 2.52]      2.38 [2.35, 2.41] of 4
+    two cameras                             2        53.4%     1.17 [1.16, 1.18]      1.68 [1.67, 1.70] of 2
+    two lidars                              2        37.6%     1.39 [1.37, 1.40]      1.50 [1.49, 1.52] of 2
+    Mapillary x Megvii (camera x lidar)     2        37.2%     1.36 [1.35, 1.38]      1.53 [1.52, 1.54] of 2
+    Mapillary x PointPillars                2        39.8%     1.28 [1.27, 1.30]      1.57 [1.56, 1.59] of 2
+    FCOS3D x Megvii                         2        46.2%     1.16 [1.15, 1.16]      1.82 [1.80, 1.83] of 2
+    FCOS3D x PointPillars                   2        50.8%     1.12 [1.11, 1.13]      1.80 [1.79, 1.82] of 2
+    2 cameras + Megvii                      3        36.5%     1.63 [1.60, 1.66]      2.12 [2.10, 2.14] of 3
+    2 cameras + PointPillars                3        38.9%     1.53 [1.51, 1.56]      2.15 [2.13, 2.17] of 3
+    Mapillary + 2 lidars                    3        30.7%     2.03 [1.98, 2.07]      1.88 [1.86, 1.91] of 3
+    FCOS3D + 2 lidars                       3        36.2%     1.63 [1.60, 1.66]      2.13 [2.11, 2.15] of 3
+
+  eligible objects only:
+    jury                                    k  P(all miss)             inflation     effective independent
+    full jury: 2 cameras + 2 lidars         4        25.0%     2.61 [2.53, 2.69]      2.47 [2.44, 2.50] of 4
+    two cameras                             2        49.3%     1.18 [1.18, 1.19]      1.70 [1.69, 1.72] of 2
+    two lidars                              2        32.5%     1.41 [1.39, 1.44]      1.53 [1.52, 1.55] of 2
+    Mapillary x Megvii (camera x lidar)     2        32.2%     1.39 [1.37, 1.41]      1.56 [1.54, 1.57] of 2
+    Mapillary x PointPillars                2        35.0%     1.30 [1.29, 1.32]      1.60 [1.58, 1.61] of 2
+    FCOS3D x Megvii                         2        41.6%     1.17 [1.16, 1.18]      1.85 [1.83, 1.87] of 2
+    FCOS3D x PointPillars                   2        46.6%     1.13 [1.12, 1.13]      1.83 [1.82, 1.85] of 2
+    2 cameras + Megvii                      3        31.4%     1.70 [1.67, 1.73]      2.18 [2.16, 2.21] of 3
+    2 cameras + PointPillars                3        34.1%     1.58 [1.55, 1.61]      2.20 [2.17, 2.22] of 3
+    Mapillary + 2 lidars                    3        25.4%     2.12 [2.07, 2.18]      1.94 [1.92, 1.96] of 3
+    FCOS3D + 2 lidars                       3        31.1%     1.69 [1.66, 1.72]      2.20 [2.17, 2.22] of 3
+
+  reading against the LLM juries (Results T, W, Y): 7 models on MMLU 3.60 [3.53, 3.68] of 7;
+  6 on ARC-Challenge 1.64 [1.57, 1.71] of 6; 7 on HellaSwag 1.28 [1.27, 1.30] of 7.
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: released detector outputs on the public nuScenes validation split, marginal
+coefficients at one operating point including shared scene difficulty, retained as proposed.
+Miss is the validated matcher's absence of a match at 0.30; the two cameras and two lidars
+were all trained on the nuScenes training split, a shared-data threat already on record.
+Descriptive, not a safety determination, not a certificate about any deployed system. No
+detector is executed. No released 1.2 byte is involved.
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: preregistered replication of Result AF at two operating points; every caveat of
+Result AF applies. No detector is executed. No released 1.2 byte is involved.

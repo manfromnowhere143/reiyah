@@ -419,9 +419,11 @@ assumption is a load-bearing fiction wherever redundancy is claimed, in sensors,
 in AI juries alike. The law replicates on ARC-Challenge and HellaSwag, where the residual beyond
 shared difficulty is nearly zero, so the lineage mechanism is benchmark-dependent while the marginal
 law is not, and it forecast a fourth benchmark, Winogrande, with eight predictions committed before
-the run, all eight supported. A second preregistered forecast, for the sensor jury at two new
-operating points, held on four of five predictions and failed on one: where a camera misses 94
-percent of objects the same-kind ordering does not hold, and that failure is recorded as a failure. A coupling-aware monitor fitted on one jury reads seven unseen model families almost
+the run, all eight supported. Two further preregistered forecasts for the sensor jury at four new
+operating points confirmed how the coefficient moves with the threshold on every pair and failed on
+the general same-kind ordering: the two-lidar pair is the most coupled pair at every point measured,
+and the two-camera pair is reliably above the cross pairs only at one, so the sensor arm of the law
+is now stated exactly that narrowly, and each failure is recorded as a failure. A coupling-aware monitor fitted on one jury reads seven unseen model families almost
 without loss and fails across benchmarks without recalibration; carried to the driving channels at
 the scene level it adds nothing over what the stack already knows, and at the object level a
 non-linear monitor reads cross-channel context as a measurable improvement on three of four

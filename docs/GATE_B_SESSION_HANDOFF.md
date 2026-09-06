@@ -428,6 +428,11 @@ was deleted and no check was weakened.
    strict-threshold rows, AE and X2 and U and AI sentences corrected in place, and the AD verdict
    rule stated. Every document carries its own "Adversarial reading, 2026-09-06" section. Register
    `0.2.18`.
+33. **Result AN, the fourth preregistered test** (register `0.2.23`): interpolation forecasts held
+   twelve of twelve; the ordering forecasts failed at 0.20 (camera pair below a cross pair) and
+   0.40 (bands touch; a three-channel reversal). The sensor arm is restated: the two-lidar pair is
+   the most coupled pair at all five operating points, the two-camera pair reliably above cross
+   pairs only at 0.30.
 32. **H6b**: the H6 edge detector's blindness verified genuine and size-driven (register `0.2.21`);
    the Frechet ceiling caveat on H6 stands.
    The H6b commit `1d20d40` was made while two Gate B checks failed (two unbound frame-size numbers

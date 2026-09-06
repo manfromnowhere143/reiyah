@@ -99,11 +99,13 @@ predictions committed before the run; all eight held
 | LLM juries | same family, c = 1.52 (MMLU), 1.87 (ARC), 2.43 (HellaSwag) | cross family, c = 1.29 (MMLU), 1.73 (ARC), 2.30 (HellaSwag) |
 
 **Redundancy across genuinely different kinds buys independence; redundancy across similar kinds
-does not**, at the operating points where it was observed: a preregistered test
-([AJ](RESULT_AJ_SENSOR_JURY_OPERATING_POINTS.md)) found the same-kind ordering at 0.10 and 0.30 and
-not at 0.50, where a near-blind camera and a lidar pair both cross the ordering for reasons not yet
-identified beyond the marginal artifact of Result P; the same test confirmed P's mechanism on every
-pair at both new operating points. Similar channels share a substrate and share their blind spots. Genuinely different
+does not**, stated for the sensors to its evidence: across five operating points the two-lidar pair
+is the most coupled pair every time, with non-overlapping bands at four of five, while the
+two-camera pair is reliably above the cross pairs only at 0.30
+([AJ](RESULT_AJ_SENSOR_JURY_OPERATING_POINTS.md), [AN](RESULT_AN_ORDERING_IN_INFLATION.md)). Two
+preregistered tests confirmed the coefficient's motion with the threshold on every pair (Result
+P's mechanism, and interpolation between measured points) and falsified the general same-kind
+ordering; both are recorded. Similar channels share a substrate and share their blind spots. Genuinely different
 ones do not. The independence assumption is a load-bearing fiction wherever redundancy is claimed,
 and it fails most for the systems that share the most.
 
