@@ -62,6 +62,10 @@ question and checked against every row's own correctness flag.
   fix that would make the monitor portable across tasks, a label-free within-model quantile
   normalization of the margins, does not repair task transfer and costs channel transfer (AUC 0.853
   to 0.787 on the unseen jury). The task failure is a signal problem, not a scale problem.
+- [`RESULT_AE_LEAVE_ONE_BENCHMARK_OUT.md`](RESULT_AE_LEAVE_ONE_BENCHMARK_OUT.md) - the last
+  transfer question: fitted on two benchmarks and read on the third, the monitor is no better than a
+  single-benchmark fit, and on HellaSwag it is worse than chance (AUC 0.37 to 0.39). Fit per task,
+  read across channels; the boundary of the instrument is recorded as firmly as its successes.
 
 ## Discipline
 
