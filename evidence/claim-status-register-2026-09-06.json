@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -772,6 +772,94 @@
         "Only then may the two-sensor conjecture be called refuted rather than unsupported."
       ],
       "notes": "Permitted use is as a negative result only: AUC 0.788 against 0.785 across folds, inside the spread. Together with sensor-scene-blindness-monitor this leaves the claim that the LLM monitor form applies to two sensors as a conjecture with two failed tests."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.llm-coefficient-intervals",
+      "estimand": "Question-resampled percentile bootstrap intervals (B = 1000) on the marginal and conditional coincident-wrong coefficients, same-minus-cross margins, jury inflation, effective independent models, agreement reliability and unanimous-wrong rate, on MMLU, ARC-Challenge and HellaSwag.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "item",
+      "lineage": {
+        "first_stated_in": "llm-generalization/RESULT_AC_LLM_INTERVALS.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "llm-generalization/evidence/result_ac.txt"
+      ],
+      "source_identity": {
+        "source_id": "open-llm-leaderboard-old",
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "Same source as llm-jury-coincidence-mmlu; tasks hendrycksTest (MMLU), arc:challenge, hellaswag."
+      },
+      "notes": "Intervals cover sampling variation over questions only, not model selection, prompt format, or benchmark choice; questions are not clustered by subject."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.llm-lineage-excess-beyond-difficulty",
+      "estimand": "Same-family minus cross-family conditional coincident-wrong coefficient (beyond leave-the-pair-out difficulty), per benchmark.",
+      "status": "narrowed",
+      "current_scientific_use": "permitted",
+      "unit": "item",
+      "lineage": {
+        "first_stated_in": "llm-generalization/RESULT_T_LLM_INDEPENDENCE.md finding 2; narrowed by llm-generalization/RESULT_AC_LLM_INTERVALS.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "llm-generalization/evidence/result_t.txt",
+        "llm-generalization/evidence/result_ac.txt"
+      ],
+      "source_identity": {
+        "source_id": "open-llm-leaderboard-old",
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "Same source as llm-jury-coincidence-mmlu; tasks hendrycksTest (MMLU), arc:challenge, hellaswag."
+      },
+      "refutation": {
+        "reason_code": "scope_population_mismatch",
+        "statement": "Supported on MMLU (0.058 [0.050, 0.066]); the interval includes zero on ARC-Challenge (0.007 [-0.008, 0.021]) and HellaSwag (-0.001 [-0.004, 0.002]). The general statement that same-lineage models share blind spots beyond shared difficulty is narrowed to MMLU; the marginal same-family excess holds on all three."
+      },
+      "notes": "Result T's unification paragraph carries the narrowing note. Same-family pairs are the three Llama sizes only."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.llm-monitor-label-free-normalization",
+      "estimand": "Change in the Result X transfer metrics when per-model margins are replaced by within-model empirical quantiles on the set read, with no label used, monitor fitted once on jury A / MMLU.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "item",
+      "lineage": {
+        "first_stated_in": "llm-generalization/RESULT_X2_LABEL_FREE_NORMALIZATION.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "llm-generalization/evidence/result_x2.txt"
+      ],
+      "source_identity": {
+        "source_id": "open-llm-leaderboard-old",
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "Same source as llm-jury-coincidence-mmlu; tasks hendrycksTest (MMLU), arc:challenge, hellaswag."
+      },
+      "notes": "A negative result stated as measured: the normalization leaves task transfer at or near the naive baseline with broken calibration and lowers channel-transfer AUC from 0.853 to 0.787. One normalization tested, stated in advance. Task transfer is a signal problem, not a scale problem; the llm-monitor-transfer requirement to retest after a normalization is met and the failure stands."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.sensor-monitor-replication",
+      "estimand": "The Result Z and AA increments over their baselines on FCOS3D x Megvii at 0.30, Mapillary x PointPillars at 0.30, and Mapillary x Megvii at 0.50, five-fold grouped over scenes, linear models.",
+      "status": "inconclusive",
+      "current_scientific_use": "permitted",
+      "unit": "not_applicable",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_AB_SENSOR_MONITOR_REPLICATION.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_ab.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Released nuScenes validation predictions for Mapillary, FCOS3D, Megvii and PointPillars, each match set gated at published mAP; scene table from the pinned meta.tgz."
+      },
+      "reconsideration_requirements": [
+        "The non-linear test (Result AD) on the same four configurations."
+      ],
+      "notes": "Permitted as a negative result only: on every configuration the linear coupling-aware increment is inside the fold spread. Units are the keyframe (Z form) and the detection box (AA form)."
     }
   ]
 }

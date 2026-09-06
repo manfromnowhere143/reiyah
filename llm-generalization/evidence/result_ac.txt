@@ -1,0 +1,100 @@
+============================================================================================
+RESULT AC - bootstrap intervals for every LLM-jury coefficient, three benchmarks
+question-resampled, B = 1000, seed 20260906; definitions as Results T and U
+============================================================================================
+  loaded meta-llama__Llama-2-7b-hf on mmlu: 13937 questions (run 2023-08-19T16:35:46.942696, 2023 format)
+  loaded meta-llama__Llama-2-13b-hf on mmlu: 13937 questions (run 2023-08-19T22:35:38.117975, 2023 format)
+  loaded meta-llama__Llama-2-70b-hf on mmlu: 13937 questions (run 2023-08-22T09:05:23.035851, 2023 format)
+  loaded mistralai__Mistral-7B-v0.1 on mmlu: 13937 questions (run 2023-09-27T15-30-59.039834, 2023 format)
+  loaded tiiuae__falcon-7b on mmlu: 13937 questions (run 2023-07-19T10:51:47.706539, 2023 format)
+  loaded mosaicml__mpt-7b on mmlu: 13937 questions (run 2023-08-22T15:05:51.358534, 2023 format)
+  loaded Qwen__Qwen-7B on mmlu: 13937 questions (run 2023-10-13T06-37-24.832652, 2023 format)
+  gold check Llama-2-7b-hf on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Llama-2-13b-hf on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Llama-2-70b-hf on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Mistral-7B-v0.1 on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check falcon-7b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check mpt-7b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Qwen-7B on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+
+  mmlu: 7 models (Llama-2-7b-hf, Llama-2-13b-hf, Llama-2-70b-hf, Mistral-7B-v0.1, falcon-7b, mpt-7b, Qwen-7B), 13937 questions
+    quantity                              point     2.5%    97.5%
+    marginal c, mean                      1.323    1.313    1.334
+    marginal c, cross-family              1.290    1.281    1.300
+    conditional c, mean                   1.098    1.096    1.101
+    conditional c, cross-family           1.090    1.087    1.093
+    P(all wrong) / independent           14.167   13.265   15.125
+    effective independent models          3.604    3.534    3.676
+    P(correct | two agree), mean          0.648    0.640    0.655
+    unanimous share                       0.055    0.052    0.059
+    unanimous-yet-wrong                   0.104    0.081    0.124
+    marginal c, same-family               1.522    1.502    1.542
+    conditional c, same-family            1.148    1.141    1.156
+    same minus cross, marginal            0.232    0.217    0.247
+    same minus cross, conditional         0.058    0.050    0.066
+  loaded meta-llama__Llama-2-7b-hf on arc: 1170 questions (run 2023-08-19T16:35:46.942696, 2023 format)
+  loaded meta-llama__Llama-2-13b-hf on arc: 1170 questions (run 2023-08-19T22:35:38.117975, 2023 format)
+  loaded meta-llama__Llama-2-70b-hf on arc: 1170 questions (run 2023-08-22T09:05:23.035851, 2023 format)
+  loaded mistralai__Mistral-7B-v0.1 on arc: 1170 questions (run 2023-09-27T15-30-59.039834, 2023 format)
+  loaded tiiuae__falcon-7b on arc: 1172 questions (run 2023-07-19T10:51:47.706539, 2023 format)
+  loaded mosaicml__mpt-7b on arc: 1170 questions (run 2023-08-22T15:05:51.358534, 2023 format)
+  loaded Qwen__Qwen-7B on arc: 1170 questions (run 2023-10-13T06-37-24.832652, 2023 format)
+  dropped (non-joining hashes) on arc: ['falcon-7b']
+  gold check Llama-2-7b-hf on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+  gold check Llama-2-13b-hf on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+  gold check Llama-2-70b-hf on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+  gold check Mistral-7B-v0.1 on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+  gold check mpt-7b on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+  gold check Qwen-7B on arc: acc == (chosen == gold) on 100.00% of 1170 rows (file gold)
+
+  arc: 6 models (Llama-2-7b-hf, Llama-2-13b-hf, Llama-2-70b-hf, Mistral-7B-v0.1, mpt-7b, Qwen-7B), 1170 questions
+    quantity                              point     2.5%    97.5%
+    marginal c, mean                      1.761    1.689    1.844
+    marginal c, cross-family              1.733    1.664    1.814
+    conditional c, mean                   1.057    1.050    1.064
+    conditional c, cross-family           1.056    1.048    1.065
+    P(all wrong) / independent           27.792   22.002   36.131
+    effective independent models          1.637    1.568    1.714
+    P(correct | two agree), mean          0.579    0.550    0.609
+    unanimous share                       0.519    0.491    0.547
+    unanimous-yet-wrong                   0.372    0.335    0.409
+    marginal c, same-family               1.874    1.787    1.977
+    conditional c, same-family            1.063    1.051    1.076
+    same minus cross, marginal            0.142    0.095    0.188
+    same minus cross, conditional         0.007   -0.008    0.021
+  loaded meta-llama__Llama-2-7b-hf on hellaswag: 10019 questions (run 2023-08-19T16:35:46.942696, 2023 format)
+  loaded meta-llama__Llama-2-13b-hf on hellaswag: 10019 questions (run 2023-08-19T22:35:38.117975, 2023 format)
+  loaded meta-llama__Llama-2-70b-hf on hellaswag: 10019 questions (run 2023-08-22T09:05:23.035851, 2023 format)
+  loaded mistralai__Mistral-7B-v0.1 on hellaswag: 10019 questions (run 2023-09-27T15-30-59.039834, 2023 format)
+  loaded tiiuae__falcon-7b on hellaswag: 10019 questions (run 2023-07-19T10:51:47.706539, 2023 format)
+  loaded mosaicml__mpt-7b on hellaswag: 10019 questions (run 2023-08-22T15:05:51.358534, 2023 format)
+  loaded Qwen__Qwen-7B on hellaswag: 10019 questions (run 2023-10-13T06-37-24.832652, 2023 format)
+  gold check Llama-2-7b-hf on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check Llama-2-13b-hf on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check Llama-2-70b-hf on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check Mistral-7B-v0.1 on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check falcon-7b on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check mpt-7b on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+  gold check Qwen-7B on hellaswag: acc == (chosen == gold) on 100.00% of 10019 rows (file gold)
+
+  hellaswag: 7 models (Llama-2-7b-hf, Llama-2-13b-hf, Llama-2-70b-hf, Mistral-7B-v0.1, falcon-7b, mpt-7b, Qwen-7B), 10019 questions
+    quantity                              point     2.5%    97.5%
+    marginal c, mean                      2.319    2.270    2.369
+    marginal c, cross-family              2.301    2.253    2.350
+    conditional c, mean                   1.028    1.026    1.030
+    conditional c, cross-family           1.028    1.026    1.030
+    P(all wrong) / independent          209.550  183.738  239.683
+    effective independent models          1.281    1.266    1.297
+    P(correct | two agree), mean          0.625    0.616    0.635
+    unanimous share                       0.793    0.785    0.801
+    unanimous-yet-wrong                   0.340    0.330    0.351
+    marginal c, same-family               2.428    2.373    2.485
+    conditional c, same-family            1.027    1.024    1.030
+    same minus cross, marginal            0.126    0.111    0.142
+    same minus cross, conditional        -0.001   -0.004    0.002
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: public leaderboard outputs, retained as proposed. Intervals are question-
+resampled percentile bootstraps and describe sampling variation over questions only; they
+do not cover model selection, prompt format, or benchmark choice. Descriptive, not a safety
+determination, not a driving result. No LLM is executed. No released 1.2 byte is involved.

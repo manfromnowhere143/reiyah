@@ -76,7 +76,10 @@ ARC-Challenge, where a six-model jury has the effective diversity of 1.6 and una
 of the time ([W](../llm-generalization/RESULT_W_SECOND_BENCHMARK.md)), and on HellaSwag, where the
 jury's effective diversity is 1.28 and the residual beyond shared difficulty is nearly zero, so the
 lineage mechanism is benchmark-dependent while the marginal law is not
-([Y](../llm-generalization/RESULT_Y_THIRD_BENCHMARK.md)).
+([Y](../llm-generalization/RESULT_Y_THIRD_BENCHMARK.md)). Every one of these quantities carries a
+question-resampled interval that excludes the null ([AC](../llm-generalization/RESULT_AC_LLM_INTERVALS.md));
+the same-lineage excess that survives difficulty conditioning is 0.058 [0.050, 0.066] on MMLU and
+includes zero on the other two benchmarks, so it is a MMLU finding, not a general one.
 
 ## The law
 
@@ -116,12 +119,15 @@ reads a second jury of seven unseen families at an AUC of 0.853 against an in-do
 0.856, so the coupling it learned is a property of redundancy, not of the channels it learned it
 from; read on a second benchmark it falls to the naive baseline and its calibration breaks
 ([X](../llm-generalization/RESULT_X_MONITOR_TRANSFER.md)). The instrument is portable across
-channels and must be calibrated on the task it reads. Carried to the driving channels as a
+channels and must be calibrated on the task it reads; a label-free rescaling of the margins does not
+repair the task failure and costs channel transfer ([X2](../llm-generalization/RESULT_X2_LABEL_FREE_NORMALIZATION.md)).
+Carried to the driving channels as a
 scene-level estimator of how many present objects both sensors missed, the coupling-aware form does
 not beat a baseline that scales with how many objects the fusion reports
 ([Z](RESULT_Z_SCENE_BLINDNESS_MONITOR.md), `inconclusive`), and at the object level, on
 detections only one channel reports, cross-channel context adds nothing to the detection's own
-attributes ([AA](RESULT_AA_DISAGREEMENT_MONITOR.md)). A jointly missed object leaves no output, so
+attributes ([AA](RESULT_AA_DISAGREEMENT_MONITOR.md)), on three pairs and two operating points
+([AB](RESULT_AB_SENSOR_MONITOR_REPLICATION.md)). A jointly missed object leaves no output, so
 the sentence that the same form applies to two sensors is a conjecture with two failed tests, not a
 result. What the measured coupling changes is the evidence calculus and the credit given to
 redundancy; it has not been shown to be readable live from sensor outputs.

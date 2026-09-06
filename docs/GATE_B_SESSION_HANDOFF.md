@@ -152,7 +152,11 @@ seven-model jury has the effective diversity of 3.6 (T). Agreement is over-trust
 correct 64.8% of the time, all seven agreeing are still wrong 10.4% (U). It replicates on
 ARC-Challenge, where a six-model jury carries the diversity of 1.6 and unanimity is wrong 37.2% (W),
 and on HellaSwag, where the jury's diversity is 1.28 and the conditional residual is only 1.03, so the
-lineage mechanism is benchmark-dependent while the marginal law is not (Y, 2026-09-06).
+lineage mechanism is benchmark-dependent while the marginal law is not (Y, 2026-09-06). Every
+quantity carries a question-resampled interval (AC): the same-family excess beyond difficulty is
+0.058 [0.050, 0.066] on MMLU and includes zero on the other two, so Result T's lineage statement is
+narrowed to MMLU. A label-free margin normalization does not repair the monitor's task transfer and
+costs its channel transfer (X2).
 No LLM inference: this reads public per-question outputs and joins by example hash. Files
 `llm-generalization/RESULT_T..W_*.md`.
 
@@ -182,7 +186,10 @@ that the same form applies to two sensors is a conjecture with one failed test, 
 (AA, 2026-09-06):** on detections only one channel reports, the detection's own attributes predict
 realness at AUC 0.79 against 0.68 for its score alone, and six cross-channel context features add
 0.003, inside the fold spread. Two estimands, no support. File
-[`RESULT_AA_DISAGREEMENT_MONITOR.md`](RESULT_AA_DISAGREEMENT_MONITOR.md).
+[`RESULT_AA_DISAGREEMENT_MONITOR.md`](RESULT_AA_DISAGREEMENT_MONITOR.md). Replicated on a second
+camera, a second lidar and a second operating point with the same verdict
+([`RESULT_AB_SENSOR_MONITOR_REPLICATION.md`](RESULT_AB_SENSOR_MONITOR_REPLICATION.md)). The
+non-linear test the register required is Result AD.
 
 ## 5. The law, and the headline coefficients
 
@@ -283,11 +290,9 @@ with an engaged human; the LLM monitor is validated on two benchmarks and one ju
    real frontier.
 3. Retain the BDD-A terms once the portal is reachable; DCPT and 100-Car custody is retained and
    verified (section 14), the leaderboard archive states no licence.
-4. Optional hardening still open: a label-free margin normalization so LLM task transfer can be
-   retested; a second detector pair and operating point for the sensor monitors before the
-   two-sensor conjecture is called refuted rather than unsupported. The cross-jury transfer (X),
-   the third benchmark (Y), the scene-level sensor monitor (Z) and the per-object disagreement
-   monitor (AA) are done.
+4. Optional hardening still open: the non-linear sensor monitors on all four configurations (AD,
+   running at this closeout; its first configuration showed the per-object context increment
+   emerges with a boosted model). Done: X, X2, Y, Z, AA, AB, AC.
 
 Continue only the smallest unresolved step. Engineering pressure raises the burden of proof; it
 never raises confidence by itself.
@@ -346,6 +351,12 @@ was deleted and no check was weakened.
    tests. Transcript `evidence/measurement/result_aa.txt` byte-identical across three runs;
    registered as `sensor-disagreement-realness` and `sensor-disagreement-context-increment`
    (register `0.2.4`).
+11. **Results X2, AB and AC added.** X2: a label-free margin normalization, stated in advance, does
+   not repair task transfer and costs channel transfer. AB: Z and AA replicate on a second camera,
+   a second lidar and a second operating point with the same inconclusive verdict. AC: bootstrap
+   intervals on every LLM quantity; Result T's lineage-beyond-difficulty statement is narrowed to
+   MMLU. Transcripts byte-identical across repeated runs; register `0.2.5`. An external review
+   request is drafted in [`EXTERNAL_REVIEW_REQUEST_2026-09-06.md`](EXTERNAL_REVIEW_REQUEST_2026-09-06.md).
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.

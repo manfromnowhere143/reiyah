@@ -42,8 +42,10 @@ example. `wrong_m(q)` is model `m` answering `q` incorrectly, and
    same questions wrong more than independence predicts. A jury is not the sum of independent
    opinions it is treated as.
 
-2. **The same-kind versus cross-kind law replicates.** Models of one lineage (three Llama sizes)
-   fail together more than models of different lineages (1.522 versus 1.290), exactly as two
+2. **The same-kind versus cross-kind law replicates.** (Narrowed on 2026-09-06 by Result AC: the
+   same-family excess beyond shared difficulty is 0.058 [0.050, 0.066] on MMLU and includes zero on
+   ARC-Challenge and HellaSwag; the marginal excess holds on all three.) Models of one lineage (three
+   Llama sizes) fail together more than models of different lineages (1.522 versus 1.290), exactly as two
    same-modality sensors fail together more than a camera and a lidar. Similar systems share their
    blind spots; genuinely different systems are more independent. The same law, in a different
    domain.

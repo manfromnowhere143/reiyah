@@ -53,6 +53,15 @@ question and checked against every row's own correctness flag.
   with the effective diversity of 1.28, unanimity on 79% of questions and wrong on 34% of those), and
   the residual beyond shared difficulty is nearly zero (conditional c 1.03). The marginal law is
   robust across three benchmarks; the lineage mechanism is benchmark-dependent and stated so.
+- [`RESULT_AC_LLM_INTERVALS.md`](RESULT_AC_LLM_INTERVALS.md) - question-resampled bootstrap
+  intervals on every headline quantity, three benchmarks. Every marginal statement holds with a band
+  that excludes the null. The same-family excess beyond shared difficulty is 0.058 [0.050, 0.066] on
+  MMLU and includes zero on ARC-Challenge and HellaSwag, so Result T's lineage statement is
+  narrowed to MMLU.
+- [`RESULT_X2_LABEL_FREE_NORMALIZATION.md`](RESULT_X2_LABEL_FREE_NORMALIZATION.md) - the cheap
+  fix that would make the monitor portable across tasks, a label-free within-model quantile
+  normalization of the margins, does not repair task transfer and costs channel transfer (AUC 0.853
+  to 0.787 on the unseen jury). The task failure is a signal problem, not a scale problem.
 
 ## Discipline
 
