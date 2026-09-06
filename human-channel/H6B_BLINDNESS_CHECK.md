@@ -18,6 +18,7 @@ and class, and tests the three named defects directly.
 
 BDD-A validation, 120 clips, 651 frames, 9,545 reference objects. Category lists of the two models
 are identical.
+<!-- review-exempt: 1280=frame width, a property of the video written 720x1280 in the transcript; 320=the deployed detector's input side, from its model name -->
 
 | condition | total-miss rate |
 |---|---|

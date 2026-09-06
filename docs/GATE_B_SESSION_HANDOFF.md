@@ -430,6 +430,10 @@ was deleted and no check was weakened.
    `0.2.18`.
 32. **H6b**: the H6 edge detector's blindness verified genuine and size-driven (register `0.2.21`);
    the Frechet ceiling caveat on H6 stands.
+   The H6b commit `1d20d40` was made while two Gate B checks failed (two unbound frame-size numbers
+   and the document not yet named by a claim), because the closeout chained the check's output
+   instead of its exit code; corrected in the next commit, and the closeout now gates on the exit
+   code. Recorded as a process defect.
 31. **Result AL**: difficulty measured by the independent jury; jury A's residual and lineage
    excess survive (1.094; 0.098 [0.089, 0.108]) and jury B's residual falls to 1.016. Answers T's
    strongest objection with a measurement. Register `0.2.20`.

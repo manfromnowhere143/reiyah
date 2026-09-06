@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.21",
+  "version": "0.2.22",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -577,7 +577,7 @@
         "custody_state": "third_party_unretained",
         "exact_proposition": "BDD-A, Xia et al. 2018, arXiv:1711.06406, downloaded from the Berkeley DeepDrive portal; terms retained on 2026-09-06 from an Internet Archive snapshot of the BDD100K documentation licence page (Regents' licence: educational, research and not-for-profit use, copying and distribution with notice), which states it covers data and labels downloaded from that portal. Data not redistributed."
       },
-      "notes": "Reference is a strong detector, not human ground truth, so a lower bound on the true joint miss. Interval grazes 1.0 from below; reported as approximately independent and pointedly not the same-kind pattern. The word silent is not used. Two pretrained torchvision detectors executed; nothing trained. Narrowed 2026-09-06: with P(automation miss) 84.5 percent and P(human miss) 50 percent the coefficient is confined to about [0.82, 1.18] by the Frechet bounds, so approximate independence is nearly forced by the marginals; the informative human-machine evidence is cross-agent-coincidence-detectable-set (ceiling 2.0). The 84.5 percent total-miss rate is not verified as genuine blindness rather than a pipeline defect. H6b (2026-09-06) verified the 84 percent total-miss rate as genuine and size-driven (100 percent on the smallest box quartile, 42.6 on the largest; IoU 0.3 recovers three points; category lists identical). The Frechet-ceiling caveat stands.",
+      "notes": "Reference is a strong detector, not human ground truth, so a lower bound on the true joint miss. Interval grazes 1.0 from below; reported as approximately independent and pointedly not the same-kind pattern. The word silent is not used. Two pretrained torchvision detectors executed; nothing trained. Narrowed 2026-09-06: with P(automation miss) 84.5 percent and P(human miss) 50 percent the coefficient is confined to about [0.82, 1.18] by the Frechet bounds, so approximate independence is nearly forced by the marginals; the informative human-machine evidence is cross-agent-coincidence-detectable-set (ceiling 2.0). The 84.5 percent total-miss rate is not verified as genuine blindness rather than a pipeline defect. H6b (2026-09-06) verified the 84 percent total-miss rate as genuine and size-driven (100 percent on the smallest box quartile, 42.6 on the largest; IoU 0.3 recovers three points; category lists identical). The Frechet-ceiling caveat stands. Diagnostic document: human-channel/H6B_BLINDNESS_CHECK.md.",
       "reconsideration_requirements": []
     },
     {
