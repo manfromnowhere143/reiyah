@@ -56,6 +56,10 @@ The tools expect `eventEyeglance.txt`, `eventVideoReduced.txt`, `baselineEyeglan
 - [`H5B_CROSS_AGENT_INTERVAL.md`](H5B_CROSS_AGENT_INTERVAL.md) - H5 re-measured with the clip
   id per object: c = 0.962, clip-clustered band [0.927, 0.993], upper bound below 1. The
   human-machine cell now carries a band at both depths (H5b, H6).
+- [`H6B_BLINDNESS_CHECK.md`](H6B_BLINDNESS_CHECK.md) - the edge detector's 84 percent total-miss
+  rate in H6 is genuine and size-driven (100 percent on the smallest quarter of boxes, 42.6 on the
+  largest), not a matching or class-mapping defect; the marginals still cap H6's coefficient near
+  1.18, so the human-machine cell rests on H5 and H5b.
 - [`H7_INTERVALS.md`](H7_INTERVALS.md) - bands on every human-channel headline. The eyes x hands
   coefficient is 1.46 [1.04, 1.90] over all events (event-resampled, not driver-clustered) and does
   not exclude 1 in either severity subgroup; the visual-manual takeover delay is +0.47 s [+0.21,

@@ -1,0 +1,36 @@
+  category lists identical: True
+  ...20 clips, 1212 reference objects
+  ...40 clips, 2975 reference objects
+  ...60 clips, 4792 reference objects
+  ...80 clips, 6270 reference objects
+  ...100 clips, 7735 reference objects
+  ...120 clips, 9545 reference objects
+====================================================================================
+HUMAN CHANNEL H6b - is the edge detector's total-miss rate genuine, size-driven blindness?
+BDD-A validation, 120 clips, 651 frames, 9545 reference objects (same definitions as H6)
+====================================================================================
+
+  total-miss rate, H6 definition (score >= 0.25, IoU >= 0.5): 84.0%
+  under looser matching (IoU >= 0.3)                      : 80.7%
+  under a looser deployed score (>= 0.10)                 : 62.7%
+
+  by reference box area quartile (pixels^2 in the 720x1280 frame):
+    smallest quarter   area        0 to      607: n=  2386  miss 100.0%  (IoU 0.3:  99.7%, score 0.10:  96.9%)
+    second             area      607 to     1875: n=  2386  miss  99.4%  (IoU 0.3:  97.4%, score 0.10:  83.7%)
+    third              area     1875 to     7454: n=  2386  miss  94.0%  (IoU 0.3:  88.7%, score 0.10:  54.3%)
+    largest quarter    area     7454 to   806688: n=  2387  miss  42.6%  (IoU 0.3:  37.2%, score 0.10:  16.1%)
+
+  by reference class:
+    car            n=  6433  miss  80.9%
+    traffic light  n=  1243  miss  99.3%
+    person         n=  1136  miss  93.5%
+    truck          n=   435  miss  64.1%
+    bus            n=   126  miss  64.3%
+    stop sign      n=    81  miss  97.5%
+    motorcycle     n=    47  miss  80.9%
+    bicycle        n=    44  miss  95.5%
+
+------------------------------------------------------------------------------------
+NON-CLAIMS: same detectors, thresholds, alignment and matching as H6; a diagnostic of the
+automation channel's miss rate, not a re-measurement of the coefficient. Research-use data
+(Xia 2018), retained as proposed; no released 1.2 byte involved.

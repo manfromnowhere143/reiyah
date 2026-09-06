@@ -428,6 +428,8 @@ was deleted and no check was weakened.
    strict-threshold rows, AE and X2 and U and AI sentences corrected in place, and the AD verdict
    rule stated. Every document carries its own "Adversarial reading, 2026-09-06" section. Register
    `0.2.18`.
+32. **H6b**: the H6 edge detector's blindness verified genuine and size-driven (register `0.2.21`);
+   the Frechet ceiling caveat on H6 stands.
 31. **Result AL**: difficulty measured by the independent jury; jury A's residual and lineage
    excess survive (1.094; 0.098 [0.089, 0.108]) and jury B's residual falls to 1.016. Answers T's
    strongest objection with a measurement. Register `0.2.20`.

@@ -95,8 +95,10 @@ A context-free reader (model-assisted, advisory, same model family as the author
    whose marginals permit values of 2 or 3. The register entry is narrowed to say so; the
    human-machine cell of the law rests on H5 and H5b, whose ceiling is 2.0.
 2. An 84.5 percent total-miss rate for a small edge detector at 0.25 on objects a strong detector
-   finds at 0.6 is not verified as genuine blindness; a resolution, class-mapping or matching
-   defect would produce the same number. Open, and the register requirement now names it.
+   finds at 0.6 was not verified as genuine blindness. H6b verified it the same evening: the miss is
+   size-driven (100 percent on the smallest quarter of boxes, 42.6 on the largest), loosening the
+   match recovers three points, and the category lists are identical. Genuine, and the ceiling caveat
+   in point 1 stands.
 3. The band uses 96 of 100 clips; four lack gaze video or reference objects.
 
 ## Non-claims
