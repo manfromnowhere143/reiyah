@@ -83,7 +83,7 @@ a live estimate of it, ground-truth-free, that a system reads from its own chann
 
 A demonstration instrument on public MMLU outputs, retained as `proposed`. The features are
 channel-agnostic in form, but the claim that the same form applies to two sensors was tested on
-2026-09-06 at the scene level and not supported (Result Z, `inconclusive`); it is a conjecture, not
-a result. This is calibrated and evaluated on one benchmark and one jury; it is not a
+2026-09-06 at the scene level (Result Z) and at the object level (Result AA) and not supported by
+either; it is a conjecture with two failed tests, not a result. This is calibrated and evaluated on one benchmark and one jury; it is not a
 deployed product, not a safety determination, and not a driving result. The naive baseline is the
 ensemble's own implicit assumption, shown for contrast. No released `1.2` byte is involved.

@@ -178,7 +178,11 @@ baseline and its calibration breaks. Channel transfer holds, task transfer does 
 scene-level estimator of jointly missed objects on the camera and lidar channels, the coupling-aware
 form does not beat a density baseline (Spearman 0.60 against 0.61 across scene folds), so the claim
 that the same form applies to two sensors is a conjecture with one failed test, `inconclusive`. File
-[`RESULT_Z_SCENE_BLINDNESS_MONITOR.md`](RESULT_Z_SCENE_BLINDNESS_MONITOR.md).
+[`RESULT_Z_SCENE_BLINDNESS_MONITOR.md`](RESULT_Z_SCENE_BLINDNESS_MONITOR.md). **The per-object test
+(AA, 2026-09-06):** on detections only one channel reports, the detection's own attributes predict
+realness at AUC 0.79 against 0.68 for its score alone, and six cross-channel context features add
+0.003, inside the fold spread. Two estimands, no support. File
+[`RESULT_AA_DISAGREEMENT_MONITOR.md`](RESULT_AA_DISAGREEMENT_MONITOR.md).
 
 ## 5. The law, and the headline coefficients
 
@@ -278,10 +282,11 @@ with an engaged human; the LLM monitor is validated on two benchmarks and one ju
    real frontier.
 3. Retain the BDD-A terms once the portal is reachable; DCPT and 100-Car custody is retained and
    verified (section 14), the leaderboard archive states no licence.
-4. Optional hardening still open: a per-object sensor monitor (disagreements on reported objects,
-   a different estimand from Z); a label-free margin normalization so task transfer can be
-   retested. The cross-jury transfer (X), the third benchmark (Y), and the scene-level sensor
-   monitor (Z, inconclusive) are done.
+4. Optional hardening still open: a label-free margin normalization so LLM task transfer can be
+   retested; a second detector pair and operating point for the sensor monitors before the
+   two-sensor conjecture is called refuted rather than unsupported. The cross-jury transfer (X),
+   the third benchmark (Y), the scene-level sensor monitor (Z) and the per-object disagreement
+   monitor (AA) are done.
 
 Continue only the smallest unresolved step. Engineering pressure raises the burden of proof; it
 never raises confidence by itself.
@@ -334,6 +339,12 @@ was deleted and no check was weakened.
    byte-identical across three runs; registered as `sensor-scene-blindness-monitor` (register
    `0.2.3`); the untested sentence in Result V is annotated. The pinned `meta.tgz` was re-fetched
    and its SHA-256 matched the handoff's value.
+10. **Result AA added**, the per-object disagreement monitor: realness of a single-channel
+   detection is predictable from its own attributes (measured), and cross-channel context adds
+   nothing inside the fold spread (inconclusive). The two-sensor conjecture now has two failed
+   tests. Transcript `evidence/measurement/result_aa.txt` byte-identical across three runs;
+   registered as `sensor-disagreement-realness` and `sensor-disagreement-context-increment`
+   (register `0.2.4`).
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.

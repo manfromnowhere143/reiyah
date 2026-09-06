@@ -1,0 +1,44 @@
+============================================================================================
+RESULT AA - per-object disagreement monitor: is a single-channel detection real?
+camera=Mapillary lidar=Megvii at score >= 0.3; 5953 keyframes; 90946 single-channel detections (37142 camera-only, 53804 lidar-only); real in 43.7% (camera-only 31.8%, lidar-only 51.9%)
+  labeler self-check, camera: 72093 of 72093 objects the validated matcher scored >= 0.3 are marked real by the labeler (100.00%)
+  labeler self-check, lidar: 88824 of 88824 objects the validated matcher scored >= 0.3 are marked real by the labeler (100.00%)
+============================================================================================
+
+  held-out scenes (60 of 150), camera-only detections, n = 13941, real 31.2%:
+    estimator            AUC    Brier     ECE
+    score alone        0.590    0.221   0.087
+    own features       0.653    0.209   0.065
+    own + context      0.648    0.210   0.065
+
+  held-out scenes (60 of 150), lidar-only detections, n = 20800, real 51.7%:
+    estimator            AUC    Brier     ECE
+    score alone        0.715    0.216   0.057
+    own features       0.835    0.167   0.033
+    own + context      0.844    0.163   0.036
+
+  held-out scenes (60 of 150), both-only detections, n = 34741, real 43.5%:
+    estimator            AUC    Brier     ECE
+    score alone        0.676    0.218   0.010
+    own features       0.788    0.184   0.017
+    own + context      0.792    0.182   0.016
+
+  five-fold grouped cross-validation over scenes, all single-channel detections:
+    score alone     AUC 0.679 +/- 0.011   Brier 0.218 +/- 0.005   ECE 0.017 +/- 0.005
+    own features    AUC 0.785 +/- 0.009   Brier 0.185 +/- 0.004   ECE 0.021 +/- 0.003
+    own + context   AUC 0.788 +/- 0.008   Brier 0.184 +/- 0.004   ECE 0.020 +/- 0.002
+
+  context-only signal, held out: AUC of each context feature alone against realness
+    agreement                 0.527
+    n_only_camera             0.518
+    n_only_lidar              0.550
+    nearest_other_channel_m   0.610
+    other_within_5m           0.585
+    score_of_agreeing_pairs   0.513
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: two released detectors on the public nuScenes validation split, retained as
+proposed. Realness is defined by a same-class annotated object within 2 m, a labeling
+matcher self-checked against the validated per-object matcher. Descriptive, not a safety
+determination, not a certificate about any deployed system. Logistic and isotonic models
+are fitted; no detector is executed. No released 1.2 byte is involved.

@@ -119,8 +119,12 @@ from; read on a second benchmark it falls to the naive baseline and its calibrat
 channels and must be calibrated on the task it reads. Carried to the driving channels as a
 scene-level estimator of how many present objects both sensors missed, the coupling-aware form does
 not beat a baseline that scales with how many objects the fusion reports
-([Z](RESULT_Z_SCENE_BLINDNESS_MONITOR.md), `inconclusive`): a jointly missed object leaves no
-output, so the sentence that the same form applies to two sensors is a conjecture, not a result.
+([Z](RESULT_Z_SCENE_BLINDNESS_MONITOR.md), `inconclusive`), and at the object level, on
+detections only one channel reports, cross-channel context adds nothing to the detection's own
+attributes ([AA](RESULT_AA_DISAGREEMENT_MONITOR.md)). A jointly missed object leaves no output, so
+the sentence that the same form applies to two sensors is a conjecture with two failed tests, not a
+result. What the measured coupling changes is the evidence calculus and the credit given to
+redundancy; it has not been shown to be readable live from sensor outputs.
 
 ## What is proven, and what is open
 

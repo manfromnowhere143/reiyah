@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -727,6 +727,51 @@
         "A non-linear monitor, stated in advance, before any claim that the form carries over."
       ],
       "notes": "Permitted use is as a negative result only: the monitor's increment over the proportional baseline is inside the cross-validation spread on every metric, so the sentence that the LLM monitor form applies to two sensors is a conjecture with one failed scene-level test, not a result. Unit is the keyframe, which the schema does not enumerate; recorded here in notes."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.sensor-disagreement-realness",
+      "estimand": "Held-out AUC, Brier and ECE for predicting whether a detection reported by exactly one of two channels matches an annotated object, from the detection's own score, class, distance from ego and channel, against its isotonic-calibrated score alone; per channel and pooled; scene-clustered.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "detection_box",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_AA_DISAGREEMENT_MONITOR.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_aa.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Mapillary and Megvii released nuScenes validation predictions at score 0.30; realness by a same-class annotated object within 2 m, one-to-one by score, self-checked against the validated matcher (100 percent on both channels); scene table from the pinned meta.tgz."
+      },
+      "notes": "A per-channel calibration result useful to a fusion rule, not a coupling result: camera-only detections are real 31.8 percent of the time and predictable at AUC 0.65, lidar-only 51.9 percent and 0.84. One pair, one operating point."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.sensor-disagreement-context-increment",
+      "estimand": "Increment in held-out AUC, Brier and ECE from adding six output-only cross-channel context features to the own-feature realness model, across five scene folds.",
+      "status": "inconclusive",
+      "current_scientific_use": "permitted",
+      "unit": "detection_box",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_AA_DISAGREEMENT_MONITOR.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_aa.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Mapillary and Megvii released nuScenes validation predictions at score 0.30; realness by a same-class annotated object within 2 m, one-to-one by score, self-checked against the validated matcher (100 percent on both channels); scene table from the pinned meta.tgz."
+      },
+      "reconsideration_requirements": [
+        "A second detector pair and operating point.",
+        "A non-linear monitor stated in advance.",
+        "Only then may the two-sensor conjecture be called refuted rather than unsupported."
+      ],
+      "notes": "Permitted use is as a negative result only: AUC 0.788 against 0.785 across folds, inside the spread. Together with sensor-scene-blindness-monitor this leaves the claim that the LLM monitor form applies to two sensors as a conjecture with two failed tests."
     }
   ]
 }
