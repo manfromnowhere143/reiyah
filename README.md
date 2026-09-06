@@ -424,7 +424,10 @@ the scene level it adds nothing over what the stack already knows, and at the ob
 non-linear monitor reads cross-channel context as a measurable improvement on three of four
 configurations; fit per task, read across channels. Four sensors provide the joint-failure
 protection of about two independent channels, in the same quantity that gives a seven-model jury
-3.6. The full reading is in
+3.6. And the mistake type the redundancy argument also assumes independent, the phantom object,
+is measured for the first time: the camera and the lidar report phantoms at the same place and
+instant six times more often than a same-road, different-instant null predicts, and at least half
+of those coincidences are momentary. The full reading is in
 [`docs/GATE_B_FINDINGS_SYNTHESIS.md`](docs/GATE_B_FINDINGS_SYNTHESIS.md),
 [`human-channel/`](human-channel/), and [`llm-generalization/`](llm-generalization/).
 

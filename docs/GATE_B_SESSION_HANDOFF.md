@@ -406,6 +406,9 @@ was deleted and no check was weakened.
    coincide 11.7 times above a rotation null and 6.2 [4.6, 10.3] times above a within-scene
    time-shift null; the rotation null is shown weak by a sanity row and the class table points at
    annotation gaps, both stated. Evidence-cost condition three is measured, not identified.
+18. **Result AH2 added** (register `0.2.10`): 54 percent [46, 64] of coincident ghosts do not recur
+   half a second later, against 61 to 77 percent recurrence for real objects; unannotated objects
+   cannot account for the coincidence, and the persistent minority is bounded.
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.

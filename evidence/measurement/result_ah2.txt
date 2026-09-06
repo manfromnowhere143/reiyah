@@ -1,0 +1,20 @@
+============================================================================================
+RESULT AH2 - persistence of coincident ghosts across consecutive keyframes (0.5 s), map coordinates
+camera=Mapillary lidar=Megvii at score >= 0.3; ghost and coincidence as in Result AH; 150 scenes
+scene-clustered bootstrap, B = 500, seed 20260906
+============================================================================================
+
+  set                             items    recur within 2 m next keyframe          95% band
+  coincident ghosts                3597                             45.9%  [35.9, 53.5]
+  lone camera ghosts              20138                             39.1%  [35.8, 42.7]
+  lone lidar ghosts               19660                             30.3%  [28.0, 32.6]
+  true camera detections          76796                             76.9%  [74.9, 78.7]
+  static annotated objects        96068                             60.5%  [58.1, 63.0]
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: released detector outputs on the public nuScenes validation split, retained as
+proposed. Recurrence in map coordinates over 0.5 s cannot separate a static unannotated
+object from a static reflective artifact both channels hallucinate at; it separates persistent
+from momentary. Ego-static keyframes are included (map coordinates do not depend on ego
+motion). One pair, one operating point. Not a safety determination. No detector is executed.
+No released 1.2 byte is involved.

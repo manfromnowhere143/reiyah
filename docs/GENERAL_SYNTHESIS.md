@@ -107,7 +107,9 @@ yet meet its five stated conditions. Reiyah reports `c` with its absolute-risk v
 evidence-budget percentage. The corollary's other mistake type, the ghost, has now been measured
 once: the camera and the lidar report phantom objects at the same place and instant six times more
 often than a same-road, same-sensor, different-instant null predicts, 6.2 [4.6, 10.3], an upper
-bound where the annotation itself is incomplete ([AH](RESULT_AH_GHOST_COINCIDENCE.md)). The
+bound where the annotation itself is incomplete ([AH](RESULT_AH_GHOST_COINCIDENCE.md)); at least
+half of those coincident phantoms are momentary, not persistent structure or annotation gaps
+([AH2](RESULT_AH2_GHOST_PERSISTENCE.md)). The
 human-machine layer, at `c` about 1, adds essentially no correction.
 Two coupled sensors provide the joint-failure protection of about one and a half independent
 channels, and a seven-model jury the diversity of 3.6; both are illustrative effective-count

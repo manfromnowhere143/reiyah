@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -990,6 +990,26 @@
         "A ghost definition on safety-critic assertions, not all detections, before any Corollary 3 use."
       ],
       "notes": "The load-bearing coefficient is 6.18 [4.60, 10.31] against the within-scene time-shift null; the rotation-null coefficients (11.7, 11.8) are inflated by road geometry as the sanity row (true detections 8.1 above the same null) shows. Upper bound in the reference-error direction; lenient ghost definition in the other. Evidence-cost condition three is measured, not identified."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.ghost-persistence",
+      "estimand": "Recurrence rate within 2 m in the next keyframe (0.5 s, map coordinates, same scene) of coincident ghosts, lone camera ghosts, lone lidar ghosts, true camera detections and static annotated objects, with scene-clustered bands.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "detection_box",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_AH2_GHOST_PERSISTENCE.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_ah2.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Same detections and ghost definition as Result AH; annotated instances tracked by instance token; scene table from the pinned meta.tgz."
+      },
+      "notes": "Coincident ghosts recur 45.9 percent [35.9, 53.5]; lone camera ghosts 39.1, lone lidar ghosts 30.3, true camera detections 76.9, static annotated objects 60.5. Bounds the reference-error threat on ghost-coincidence: the momentary share is a lower bound on shared hallucination; persistence does not separate real from artifactual."
     }
   ]
 }

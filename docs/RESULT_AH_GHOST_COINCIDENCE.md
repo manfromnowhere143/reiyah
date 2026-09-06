@@ -65,7 +65,9 @@ barrier 15.3, traffic cone 16.5.
    repeated instances are most plausibly under-annotated. The register's reference-error
    identification is `unknown`, so `c_ghost` is an upper bound in that direction. The car,
    pedestrian and truck rows, where annotation is most complete, still sit near 9 against the
-   rotation null.
+   rotation null. Result AH2 bounds this threat: 54 percent [46, 64] of coincident ghosts do not
+   recur half a second later, where an unannotated static object would recur about 61 to 77
+   percent of the time, so unannotated objects cannot account for them all.
 
 4. **What this does to the evidence-cost claim.** Condition three, ghost-ghost dependence, is now
    measured and is not small. It is not identified as a bound, because of point 3, and conditions
