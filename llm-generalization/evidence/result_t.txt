@@ -1,0 +1,43 @@
+loading models...
+  loaded meta-llama__Llama-2-7b-hf: 13937 questions
+  loaded meta-llama__Llama-2-13b-hf: 13937 questions
+  loaded meta-llama__Llama-2-70b-hf: 13937 questions
+  loaded mistralai__Mistral-7B-v0.1: 13937 questions
+  loaded tiiuae__falcon-7b: 13937 questions
+  loaded mosaicml__mpt-7b: 13937 questions
+  loaded Qwen__Qwen-7B: 13937 questions
+========================================================================================
+RESULT T - the independence assumption beyond driving: LLM juries
+MMLU 5-shot, 7 models, 13937 questions answered by all
+========================================================================================
+
+  per-model error rate:
+    meta-llama__Llama-2-7b-hf        Llama    wrong 54.0%
+    meta-llama__Llama-2-13b-hf       Llama    wrong 44.5%
+    meta-llama__Llama-2-70b-hf       Llama    wrong 30.8%
+    mistralai__Mistral-7B-v0.1       Mistral  wrong 37.4%
+    tiiuae__falcon-7b                Falcon   wrong 72.7%
+    mosaicml__mpt-7b                 MPT      wrong 69.9%
+    Qwen__Qwen-7B                    Qwen     wrong 41.6%
+
+  marginal coefficient c across all 21 model pairs:
+    mean 1.323, range [1.019, 1.967]
+  same-family pairs (3): mean marginal c = 1.522
+  cross-family pairs (18): mean marginal c = 1.290
+
+  CONDITIONAL c (beyond shared question difficulty), all pairs:
+    mean 1.097, range [0.971, 1.358]
+  same-family conditional c : 1.148
+  cross-family conditional c: 1.088
+
+  the 7-model jury, all wrong on the same question:
+    observed P(all wrong)      : 8.31%
+    if independent (prod p)    : 0.5865%
+    inflation over independence: 14x
+    effective independent models: 3.60  (you have 7, you got ~3.6)
+
+----------------------------------------------------------------------------------------
+NON-CLAIMS: public leaderboard per-question correctness on one benchmark (MMLU 5-shot);
+the estimand is the same as the sensor and human work; c > 1 includes shared question
+difficulty at the marginal level (the conditional c removes the measurable part of it);
+descriptive, retained as proposed; a generalization demonstration, not a driving result.

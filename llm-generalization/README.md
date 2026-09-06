@@ -1,0 +1,30 @@
+# LLM generalization
+
+The camera-lidar and human-channel work measured the independence assumption in driving. This
+thread shows the estimand is not about driving at all: it applies to any two channels a system
+calls independent. The largest unmeasured such assumption in AI is the LLM jury, self-consistency,
+majority vote, and multi-model cross-checking, all of which assume the models err independently.
+
+## Source
+
+Public v1 Open LLM Leaderboard per-question results (`open-llm-leaderboard-old` on Hugging Face),
+MMLU 5-shot, per-question correctness, joined across models by a hash of the example. Same method as
+the sensor work: public per-item predictions and the Definition 32 coefficient. No LLM inference.
+
+Reproduce: `bdda-venv/bin/python llm-generalization/tools/result_t_llm_independence.py` (downloads
+the per-question parquet files from Hugging Face).
+
+## Result
+
+- [`RESULT_T_LLM_INDEPENDENCE.md`](RESULT_T_LLM_INDEPENDENCE.md) - seven models, five families,
+  13,937 MMLU questions. LLM juries fail together (marginal c = 1.32, every pair above 1); the
+  same-kind-vs-cross-kind law replicates (same family 1.52 vs cross family 1.29); the coupling
+  survives difficulty conditioning (conditional c = 1.10); and a seven-model jury has the effective
+  diversity of 3.6 independent models. The independence assumption is a load-bearing fiction
+  wherever redundancy is claimed, in sensors, in the human, and in AI juries alike.
+
+## Discipline
+
+Public data, descriptive, retained as `proposed`, the marginal coefficient includes shared question
+difficulty (the conditional removes the measurable part), a generalization demonstration and not a
+driving result. No released `1.2` byte involved.
