@@ -1,0 +1,151 @@
+
+############################################################################################
+# RESULT AH3  P2 FCOS3D x Megvii @0.30  ::  result_ah_ghost_coincidence
+# the imported tool's own header line names its default channels; this banner is the configuration run
+############################################################################################
+============================================================================================
+RESULT AH - ghost-ghost coincidence: do the camera and the lidar report phantom objects at the same places?
+camera=Mapillary lidar=Megvii at score >= 0.3; 5953 keyframes; ghost = no annotated object of any class within 2.0 m
+camera detections 60441, ghosts 7258 (12.0%); lidar detections 119670, ghosts 23840 (19.9%)
+rotation null: K = 100 per keyframe; band: scene-clustered bootstrap, B = 500, seed 20260906
+time-shift null: 2666 keyframes with a heading and a partner ten keyframes away; 1173 keyframes without a heading (ego moved under 0.5 m)
+============================================================================================
+
+  quantity                                                                          value          95% band
+  P(lidar ghost within 2 m | camera ghost), observed                               14.40%  [10.46, 18.28]
+  same, rotation null                                                               1.34%  [0.94, 1.86]
+  same, 180-degree null                                                             0.69%  [0.50, 0.91]
+  P(camera ghost within 2 m | lidar ghost), observed                                4.74%  [3.24, 6.35]
+  same, rotation null                                                               0.43%  [0.29, 0.60]
+  sanity: P(lidar TRUE detection within 2 m | camera TRUE detection), observed     91.82%  [90.99, 92.46]
+  same, rotation null                                                              11.12%  [10.27, 12.06]
+  P(lidar ghost within 2 m | camera ghost), keyframes with a time-shift partner    14.93%  [11.12, 18.52]
+  same, within-scene time-shift null (about 5 s, same road, same sensor)            1.52%  [0.89, 2.41]
+
+  coefficient                                                                       value          95% band
+  c_ghost, camera -> lidar, against the rotation null                               10.78  [9.31, 12.53]
+  c_ghost, camera -> lidar, against the 180-degree null                             20.90  [14.25, 31.48]
+  c_ghost, lidar -> camera, against the rotation null                               11.03  [9.13, 13.11]
+  c_real (sanity), camera -> lidar true detections                                   8.26  [7.60, 9.01]
+  c_ghost, camera -> lidar, against the within-scene time-shift null                 9.80  [7.08, 14.82]
+
+  camera ghosts by class (observed coincidence / null share):
+    car                  n=  3934  observed   9.61%  null   0.99%  c_ghost   9.70
+    pedestrian           n=  1040  observed  14.90%  null   1.31%  c_ghost  11.41
+    truck                n=   620  observed   9.52%  null   0.96%  c_ghost   9.90
+    barrier              n=   514  observed  42.80%  null   4.54%  c_ghost   9.42
+    traffic_cone         n=   392  observed  49.23%  null   2.99%  c_ghost  16.49
+    bus                  n=   165  observed   5.45%  null   0.57%  c_ghost   9.51
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: released detector outputs on the public nuScenes validation split, retained as
+proposed. A ghost is defined against the annotation set, which is itself a reference process
+with unknown error (register: reference-error-identification unknown); an unannotated real
+object makes both channels' true reports look like coincident ghosts, so c_ghost is an
+upper bound in that direction and the class-agnostic 2 m rule is deliberately lenient in the
+other. The rotation null keeps range but not the road geometry, so part of any excess is
+shared scene structure, exactly as the marginal miss coefficient includes shared difficulty.
+One pair, one operating point. Not a safety determination. No detector is executed. No
+released 1.2 byte is involved.
+
+############################################################################################
+# RESULT AH3  P3 Mapillary x PointPillars @0.30  ::  result_ah_ghost_coincidence
+# the imported tool's own header line names its default channels; this banner is the configuration run
+############################################################################################
+============================================================================================
+RESULT AH - ghost-ghost coincidence: do the camera and the lidar report phantom objects at the same places?
+camera=Mapillary lidar=Megvii at score >= 0.3; 5953 keyframes; ghost = no annotated object of any class within 2.0 m
+camera detections 103008, ghosts 24432 (23.7%); lidar detections 100994, ghosts 18926 (18.7%)
+rotation null: K = 100 per keyframe; band: scene-clustered bootstrap, B = 500, seed 20260906
+time-shift null: 3492 keyframes with a heading and a partner ten keyframes away; 1173 keyframes without a heading (ego moved under 0.5 m)
+============================================================================================
+
+  quantity                                                                          value          95% band
+  P(lidar ghost within 2 m | camera ghost), observed                               12.45%  [7.70, 17.63]
+  same, rotation null                                                               1.26%  [0.70, 1.93]
+  same, 180-degree null                                                             0.77%  [0.38, 1.29]
+  P(camera ghost within 2 m | lidar ghost), observed                               17.93%  [11.11, 24.04]
+  same, rotation null                                                               1.88%  [1.05, 2.67]
+  sanity: P(lidar TRUE detection within 2 m | camera TRUE detection), observed     74.19%  [72.51, 75.72]
+  same, rotation null                                                               9.35%  [8.40, 10.26]
+  P(lidar ghost within 2 m | camera ghost), keyframes with a time-shift partner    11.90%  [7.61, 17.39]
+  same, within-scene time-shift null (about 5 s, same road, same sensor)            2.59%  [0.85, 4.95]
+
+  coefficient                                                                       value          95% band
+  c_ghost, camera -> lidar, against the rotation null                                9.85  [8.76, 11.40]
+  c_ghost, camera -> lidar, against the 180-degree null                             16.09  [11.88, 23.45]
+  c_ghost, lidar -> camera, against the rotation null                                9.52  [8.30, 11.39]
+  c_real (sanity), camera -> lidar true detections                                   7.93  [7.29, 8.70]
+  c_ghost, camera -> lidar, against the within-scene time-shift null                 4.60  [3.43, 9.69]
+
+  camera ghosts by class (observed coincidence / null share):
+    car                  n=  9905  observed   4.01%  null   0.85%  c_ghost   4.74
+    barrier              n=  4660  observed  41.74%  null   3.24%  c_ghost  12.88
+    pedestrian           n=  3058  observed  15.21%  null   1.28%  c_ghost  11.89
+    truck                n=  1933  observed   3.78%  null   0.82%  c_ghost   4.63
+    traffic_cone         n=   560  observed  20.36%  null   1.63%  c_ghost  12.52
+    bicycle              n=   447  observed   1.79%  null   0.60%  c_ghost   2.96
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: released detector outputs on the public nuScenes validation split, retained as
+proposed. A ghost is defined against the annotation set, which is itself a reference process
+with unknown error (register: reference-error-identification unknown); an unannotated real
+object makes both channels' true reports look like coincident ghosts, so c_ghost is an
+upper bound in that direction and the class-agnostic 2 m rule is deliberately lenient in the
+other. The rotation null keeps range but not the road geometry, so part of any excess is
+shared scene structure, exactly as the marginal miss coefficient includes shared difficulty.
+One pair, one operating point. Not a safety determination. No detector is executed. No
+released 1.2 byte is involved.
+
+############################################################################################
+# RESULT AH3  P4 Mapillary x Megvii @0.50  ::  result_ah_ghost_coincidence
+# the imported tool's own header line names its default channels; this banner is the configuration run
+############################################################################################
+============================================================================================
+RESULT AH - ghost-ghost coincidence: do the camera and the lidar report phantom objects at the same places?
+camera=Mapillary lidar=Megvii at score >= 0.5; 5953 keyframes; ghost = no annotated object of any class within 2.0 m
+camera detections 48443, ghosts 5161 (10.7%); lidar detections 59832, ghosts 3738 (6.2%)
+rotation null: K = 100 per keyframe; band: scene-clustered bootstrap, B = 500, seed 20260906
+time-shift null: 1093 keyframes with a heading and a partner ten keyframes away; 1173 keyframes without a heading (ego moved under 0.5 m)
+============================================================================================
+
+  quantity                                                                          value          95% band
+  P(lidar ghost within 2 m | camera ghost), observed                                6.98%  [4.66, 9.43]
+  same, rotation null                                                               0.40%  [0.22, 0.69]
+  same, 180-degree null                                                             0.17%  [0.04, 0.34]
+  P(camera ghost within 2 m | lidar ghost), observed                                8.94%  [5.54, 12.74]
+  same, rotation null                                                               0.48%  [0.23, 0.83]
+  sanity: P(lidar TRUE detection within 2 m | camera TRUE detection), observed     74.66%  [72.09, 77.18]
+  same, rotation null                                                               7.74%  [7.19, 8.20]
+  P(lidar ghost within 2 m | camera ghost), keyframes with a time-shift partner     7.74%  [5.38, 10.47]
+  same, within-scene time-shift null (about 5 s, same road, same sensor)            1.01%  [0.32, 1.94]
+
+  coefficient                                                                       value          95% band
+  c_ghost, camera -> lidar, against the rotation null                               17.25  [13.15, 24.86]
+  c_ghost, camera -> lidar, against the 180-degree null                             40.00  [18.49, 152.68]
+  c_ghost, lidar -> camera, against the rotation null                               18.72  [13.33, 28.78]
+  c_real (sanity), camera -> lidar true detections                                   9.65  [9.00, 10.43]
+  c_ghost, camera -> lidar, against the within-scene time-shift null                 7.66  [3.82, 24.33]
+
+  camera ghosts by class (observed coincidence / null share):
+    car                  n=  1253  observed  11.57%  null   0.55%  c_ghost  21.15
+    barrier              n=   980  observed  14.18%  null   0.79%  c_ghost  18.05
+    pedestrian           n=   177  observed   4.52%  null   1.09%  c_ghost   4.15
+    truck                n=   155  observed   8.39%  null   0.43%  c_ghost  19.51
+    traffic_cone         n=    55  observed  83.64%  null   5.93%  c_ghost  14.11
+    bus                  n=    49  observed   6.12%  null   0.36%  c_ghost  17.06
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: released detector outputs on the public nuScenes validation split, retained as
+proposed. A ghost is defined against the annotation set, which is itself a reference process
+with unknown error (register: reference-error-identification unknown); an unannotated real
+object makes both channels' true reports look like coincident ghosts, so c_ghost is an
+upper bound in that direction and the class-agnostic 2 m rule is deliberately lenient in the
+other. The rotation null keeps range but not the road geometry, so part of any excess is
+shared scene structure, exactly as the marginal miss coefficient includes shared difficulty.
+One pair, one operating point. Not a safety determination. No detector is executed. No
+released 1.2 byte is involved.
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: replication of Result AH on released nuScenes validation predictions, retained as
+proposed; every caveat of Result AH applies to each configuration. No detector is executed.

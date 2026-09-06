@@ -412,6 +412,8 @@ was deleted and no check was weakened.
 19. **H5b added** (register `0.2.11`): the cross-agent coefficient re-measured with the clip id
    recorded, 0.962 [0.927, 0.993]; H5's exact arguments were never recorded and its sample
    differs, stated. A second detector pass on the accelerator path was byte-identical.
+20. **Result AH3 added** (register `0.2.12`): the ghost coefficient against the time-shift null is
+   4.6 to 9.8 on a second camera, a second lidar and a second operating point, no band reaching 1.
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.

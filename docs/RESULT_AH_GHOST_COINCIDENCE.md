@@ -75,10 +75,14 @@ barrier 15.3, traffic cone 16.5.
    adds is direction: a redundancy argument that assumed independent ghosts assumed something
    further from the data than the miss assumption was.
 
+Replicated the same day on a second camera, a second lidar and a second operating point, with
+time-shift coefficients of 4.6 to 9.8 and no band reaching 1
+([AH3](RESULT_AH3_GHOST_REPLICATION.md)).
+
 ## Non-claims
 
 Released detector outputs on the public nuScenes validation split, retained as `proposed`. One pair,
-one operating point, one ghost definition stated in advance; the annotation set is a reference
+one operating point in this document, four in AH3, one ghost definition stated in advance; the annotation set is a reference
 process with unknown error, and the class-agnostic 2 m rule is lenient by design. The time-shift
 null excludes the 1,173 keyframes whose ego moved under 0.5 m. Not a safety determination, not a
 certificate about any deployed system. Transcript `evidence/measurement/result_ah.txt` re-runs

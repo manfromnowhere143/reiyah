@@ -36,8 +36,14 @@ and what would move it. `tools/measure/check_claim_reconciliation.py` must pass 
    figure derived from it is withdrawn as stated with five unmet conditions; confirm none is asserted.
 4. **The LLM monitor transfers across juries and not across benchmarks** (V, X). Gold for the
    2024-format leaderboard files is recovered at join time; verify the per-row check.
-5. **The two-sensor monitor conjecture is unsupported** (Z, AA). A reviewer who builds a sensor
-   monitor that beats the density and own-feature baselines outside the fold spread overturns this.
+5. **The two-sensor monitor form is readable at the object level with a non-linear model and not
+   at the scene level** (Z, AA, AB, AD, AG). A reviewer who builds a scene-level monitor that beats
+   the density baseline outside the fold spread, or shows the object-level increment is leakage,
+   changes this.
+6. **Ghosts coincide far beyond independence** (AH, AH2, AH3). The load-bearing null is the
+   within-scene time-shift; the reference-error threat is bounded by AH2, not removed. A reviewer
+   who shows the coincident ghosts are annotation gaps at a rate above the momentary share
+   overturns the coefficient's size, not its direction.
 
 ## Reproduction
 

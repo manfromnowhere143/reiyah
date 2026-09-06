@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -978,7 +978,8 @@
         "superseded_by": null
       },
       "retained_transcripts": [
-        "evidence/measurement/result_ah.txt"
+        "evidence/measurement/result_ah.txt",
+        "evidence/measurement/result_ah3.txt"
       ],
       "source_identity": {
         "source_id": "nuscenes-val-released-predictions",
@@ -987,7 +988,7 @@
       },
       "reconsideration_requirements": [
         "Reference-error identification (register: unknown) before c_ghost is used as a bound; barrier and traffic-cone rows are the likely annotation-gap cases.",
-        "A second pair and operating point.",
+        "A second pair and operating point: done, Result AH3 (time-shift coefficients 9.80 [7.08, 14.82], 4.60 [3.43, 9.69], 7.66 [3.82, 24.33]).",
         "A ghost definition on safety-critic assertions, not all detections, before any Corollary 3 use."
       ],
       "notes": "The load-bearing coefficient is 6.18 [4.60, 10.31] against the within-scene time-shift null; the rotation-null coefficients (11.7, 11.8) are inflated by road geometry as the sanity row (true detections 8.1 above the same null) shows. Upper bound in the reference-error direction; lenient ghost definition in the other. Evidence-cost condition three is measured, not identified."
