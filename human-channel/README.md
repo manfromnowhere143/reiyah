@@ -29,6 +29,10 @@ The tools expect `eventEyeglance.txt`, `eventVideoReduced.txt`, `baselineEyeglan
   (crashes 28.3% vs baseline 17.3%), the real signal is that eyes-forward-throughout collapses from
   39% in normal driving to under 5% in conflicts, and a residual of conflicts happened with the
   driver looking forward the entire window: observation is not sufficiency.
+- [`H2_GLANCE_AT_CONFLICT.md`](H2_GLANCE_AT_CONFLICT.md) - the gaze at the conflict instant, anchored
+  to event_end. In about two thirds of crashes (67.8%) the driver was looking forward at the moment
+  it happened. Eyes-on-road is necessary, not sufficient: a channel being on is not the channel
+  succeeding, the human-side twin of the camera-lidar result.
 
 ## Discipline
 
