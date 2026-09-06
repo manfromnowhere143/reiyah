@@ -1,0 +1,48 @@
+============================================================================================
+RESULT Z - scene-level joint-blindness monitor from camera and lidar outputs alone
+channels camera=Mapillary lidar=Megvii at score >= 0.3; 6019 keyframes scored, 5953 with annotated objects; 134565 objects; 150 scenes from the scene table; 92 timestamp-gap segments over all keyframes as a cross-check, 0 scenes straddle a segment
+============================================================================================
+
+  joint-miss count per keyframe: mean 5.66, median 4, max 47, zero in 9.5% of keyframes; objects per keyframe mean 22.6; fusion reports 26.3 objects per keyframe
+  (eligible-only target, objects with any lidar or radar return: mean 4.08)
+
+  held-out scenes (60 of 150; 2358 keyframes), target = joint misses over all annotated objects:
+    estimator         Spearman  Pearson     MAE  AUC top-quartile
+    constant             0.000    0.000    4.32             0.500
+    proportional         0.673    0.545    3.15             0.829
+    monitor              0.684    0.561    3.19             0.851
+    calibration by predicted quintile, predicted/actual joint misses: 2.3/1.3  3.9/2.2  5.0/4.9  6.5/7.0  10.7/10.5
+
+  held-out scenes (60 of 150; 2358 keyframes), target = joint misses over eligible objects only:
+    estimator         Spearman  Pearson     MAE  AUC top-quartile
+    constant             0.000    0.000    3.05             0.500
+    proportional         0.642    0.562    2.26             0.819
+    monitor              0.647    0.597    2.26             0.844
+
+  five-fold grouped cross-validation over scenes, target = all annotated objects:
+    constant        Spearman 0.000 +/- 0.000   MAE 4.06 +/- 0.51   AUC 0.500 +/- 0.000
+    proportional    Spearman 0.611 +/- 0.088   MAE 3.18 +/- 0.38   AUC 0.804 +/- 0.042
+    monitor         Spearman 0.600 +/- 0.079   MAE 3.20 +/- 0.37   AUC 0.811 +/- 0.045
+
+  monitor coefficients on standardized features (log rate):
+    n_only_lidar        +0.294
+    agreement           +0.290
+    score_cam           -0.285
+    score_both          +0.227
+    n_both              -0.148
+    score_lidar         -0.143
+    n_only_cam          +0.143
+    vru_disagreements   +0.084
+    score_only_lidar    +0.073
+    n_either            +0.073
+    score_only_cam      +0.054
+    n_cam               -0.045
+    n_lidar             +0.040
+    frac_low_score      -0.022
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: two released detectors on the public nuScenes validation split, retained as
+proposed. The target counts annotated objects both channels missed, a lower bound on what
+is present. Scenes come from the scene table in the pinned metadata archive. Descriptive,
+not a safety determination, not a certificate about any deployed system. A Poisson
+regression is fitted; no detector is executed. No released 1.2 byte is involved.

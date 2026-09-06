@@ -116,7 +116,11 @@ reads a second jury of seven unseen families at an AUC of 0.853 against an in-do
 0.856, so the coupling it learned is a property of redundancy, not of the channels it learned it
 from; read on a second benchmark it falls to the naive baseline and its calibration breaks
 ([X](../llm-generalization/RESULT_X_MONITOR_TRANSFER.md)). The instrument is portable across
-channels and must be calibrated on the task it reads.
+channels and must be calibrated on the task it reads. Carried to the driving channels as a
+scene-level estimator of how many present objects both sensors missed, the coupling-aware form does
+not beat a baseline that scales with how many objects the fusion reports
+([Z](RESULT_Z_SCENE_BLINDNESS_MONITOR.md), `inconclusive`): a jointly missed object leaves no
+output, so the sentence that the same form applies to two sensors is a conjecture, not a result.
 
 ## What is proven, and what is open
 

@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -702,6 +702,31 @@
         "exact_proposition": "Same source as llm-jury-coincidence-mmlu; task hellaswag, leaderboard v1 10-shot setting."
       },
       "notes": "Direction replicates on all counts; the conditional residual is 1.03 with a same-family margin of 0.01, so the lineage mechanism is registered as benchmark-dependent, not universal. The marginal law (coupling far above independence, agreement over-trusted) is the robust statement across three benchmarks. Same authors and code as T, U, W; never independent validation."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.sensor-scene-blindness-monitor",
+      "estimand": "Held-out Spearman, Pearson, MAE and top-quartile AUC of a Poisson monitor that predicts the number of annotated objects both camera and lidar missed in a keyframe from the two channels' detections alone, against constant and proportional baselines, scene-clustered.",
+      "status": "inconclusive",
+      "current_scientific_use": "permitted",
+      "unit": "not_applicable",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_Z_SCENE_BLINDNESS_MONITOR.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_z.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Mapillary and Megvii released nuScenes validation predictions at score 0.30, the validated matcher's per-object match sets, and the scene table from the pinned meta.tgz (SHA-256 db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b)."
+      },
+      "reconsideration_requirements": [
+        "A per-object estimand (disagreement on reported objects) rather than a scene-level count.",
+        "More than one detector pair and operating point.",
+        "A non-linear monitor, stated in advance, before any claim that the form carries over."
+      ],
+      "notes": "Permitted use is as a negative result only: the monitor's increment over the proportional baseline is inside the cross-validation spread on every metric, so the sentence that the LLM monitor form applies to two sensors is a conjecture with one failed scene-level test, not a result. Unit is the keyframe, which the schema does not enumerate; recorded here in notes."
     }
   ]
 }

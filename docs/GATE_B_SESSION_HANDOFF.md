@@ -174,7 +174,11 @@ the same form applies to two sensors or a human and a machine. File
 once on jury A and never refitted, the monitor reads seven models from seven unseen families at AUC
 0.853 against an in-domain ceiling of 0.856; read on ARC-Challenge it falls to or below the naive
 baseline and its calibration breaks. Channel transfer holds, task transfer does not. File
-`llm-generalization/RESULT_X_MONITOR_TRANSFER.md`.
+`llm-generalization/RESULT_X_MONITOR_TRANSFER.md`. **The sensor test (Z, 2026-09-06):** as a
+scene-level estimator of jointly missed objects on the camera and lidar channels, the coupling-aware
+form does not beat a density baseline (Spearman 0.60 against 0.61 across scene folds), so the claim
+that the same form applies to two sensors is a conjecture with one failed test, `inconclusive`. File
+[`RESULT_Z_SCENE_BLINDNESS_MONITOR.md`](RESULT_Z_SCENE_BLINDNESS_MONITOR.md).
 
 ## 5. The law, and the headline coefficients
 
@@ -274,9 +278,10 @@ with an engaged human; the LLM monitor is validated on two benchmarks and one ju
    real frontier.
 3. Retain the BDD-A terms once the portal is reachable; DCPT and 100-Car custody is retained and
    verified (section 14), the leaderboard archive states no licence.
-4. Optional hardening still open: the monitor validated on real driving channel outputs rather
-   than benchmark outputs; a label-free margin normalization so task transfer can be retested.
-   The cross-jury transfer test (X) and the third benchmark (Y) are done.
+4. Optional hardening still open: a per-object sensor monitor (disagreements on reported objects,
+   a different estimand from Z); a label-free margin normalization so task transfer can be
+   retested. The cross-jury transfer (X), the third benchmark (Y), and the scene-level sensor
+   monitor (Z, inconclusive) are done.
 
 Continue only the smallest unresolved step. Engineering pressure raises the burden of proof; it
 never raises confidence by itself.
@@ -324,6 +329,11 @@ was deleted and no check was weakened.
 8. **Result Y added**, the third benchmark (HellaSwag), transcript `llm-generalization/evidence/result_y_hellaswag.txt`
    byte-identical across two runs, registered as `llm-jury-coincidence-hellaswag-replication`
    (register `0.2.2`), with the near-zero conditional residual stated as the headline nuance.
+9. **Result Z added**, the scene-level sensor monitor, verdict `inconclusive`: the coupling-aware
+   form does not beat density on the driving channels. Transcript `evidence/measurement/result_z.txt`
+   byte-identical across three runs; registered as `sensor-scene-blindness-monitor` (register
+   `0.2.3`); the untested sentence in Result V is annotated. The pinned `meta.tgz` was re-fetched
+   and its SHA-256 matched the handoff's value.
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.
