@@ -1,0 +1,459 @@
+{
+  "manifest_kind": "gate-b-replay-manifest",
+  "artifact_id": "reiyah.gate-b.replay-manifest",
+  "version": "0.1.0",
+  "lifecycle_status": "proposed",
+  "created_on": "2026-09-06",
+  "note": "Rows with replay_class argv_unrecorded_historical are retained transcripts whose exact command line was not recorded per transcript when they were produced; their digests are checked, they are never replayed by this tool, and adding an argv is a later, append-only step.",
+  "transcripts": [
+    {
+      "transcript": "llm-generalization/evidence/result_t.txt",
+      "sha256": "sha256:1a53ddc34fa5d73714af2db5c43a94175c9022896427b31b06cc5feba327a560",
+      "tool": "llm-generalization/tools/result_t_llm_independence.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "llm-generalization/tools/result_t_llm_independence.py"
+      ],
+      "replay_class": "network_cached",
+      "results": [
+        "llm-generalization/RESULT_T_LLM_INDEPENDENCE.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "llm-generalization/evidence/result_u.txt",
+      "sha256": "sha256:b076cdb1e998308f325e19492ff29f7c2f2643805f0c6675b8acabc9de20e768",
+      "tool": "llm-generalization/tools/result_u_agreement_reliability.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "llm-generalization/tools/result_u_agreement_reliability.py"
+      ],
+      "replay_class": "network_cached",
+      "results": [
+        "llm-generalization/RESULT_U_AGREEMENT_RELIABILITY.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "llm-generalization/evidence/result_v.txt",
+      "sha256": "sha256:674580d2d92acbc5926954a724e1e6481c0f6d269fe0951074dfc38217ea2b8f",
+      "tool": "llm-generalization/tools/result_v_deployed_monitor.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "llm-generalization/tools/result_v_deployed_monitor.py"
+      ],
+      "replay_class": "network_cached",
+      "results": [
+        "llm-generalization/RESULT_V_DEPLOYED_MONITOR.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "llm-generalization/evidence/result_w.txt",
+      "sha256": "sha256:de517421a1d5cb007fd3ac87abbc2466d62714793857b570d53971b2b171273d",
+      "tool": "llm-generalization/tools/result_w_second_benchmark.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "llm-generalization/tools/result_w_second_benchmark.py"
+      ],
+      "replay_class": "network_cached",
+      "results": [
+        "llm-generalization/RESULT_W_SECOND_BENCHMARK.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "llm-generalization/evidence/result_x.txt",
+      "sha256": "sha256:88ea5d4074bd8dbca32899d250acebe5d2cf3ec4d1240898ad39f6ab78943813",
+      "tool": "llm-generalization/tools/result_x_monitor_transfer.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "llm-generalization/tools/result_x_monitor_transfer.py"
+      ],
+      "replay_class": "network_cached",
+      "results": [
+        "llm-generalization/RESULT_X_MONITOR_TRANSFER.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "llm-generalization/evidence/result_x2.txt",
+      "sha256": "sha256:a3d75afc170213442d149e7331ed8b57b42764946e62a9776d4716d0a82f6368",
+      "tool": "llm-generalization/tools/result_x2_label_free_normalization.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "llm-generalization/tools/result_x2_label_free_normalization.py"
+      ],
+      "replay_class": "network_cached",
+      "results": [
+        "llm-generalization/RESULT_X2_LABEL_FREE_NORMALIZATION.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "llm-generalization/evidence/result_y_hellaswag.txt",
+      "sha256": "sha256:4705e9abe3ac09ac14201dd3af214defa2bae28eb147c661752b453358bc16d1",
+      "tool": "llm-generalization/tools/result_y_third_benchmark.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "llm-generalization/tools/result_y_third_benchmark.py",
+        "hellaswag"
+      ],
+      "replay_class": "network_cached",
+      "results": [
+        "llm-generalization/RESULT_Y_THIRD_BENCHMARK.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "llm-generalization/evidence/result_ac.txt",
+      "sha256": "sha256:0f7bdcfd02d3da1b151047644e56ef8860283f4c7c0759c37d8530706ce750d4",
+      "tool": "llm-generalization/tools/result_ac_llm_intervals.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "llm-generalization/tools/result_ac_llm_intervals.py"
+      ],
+      "replay_class": "network_cached",
+      "results": [
+        "llm-generalization/RESULT_AC_LLM_INTERVALS.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "human-channel/evidence/h1_driver_observation.txt",
+      "sha256": "sha256:d90d441c0a465221024dde6fb5fd62aae4a5ba78d4cd12dd74b8e166b1179e0f",
+      "tool": "human-channel/tools/h1_driver_observation.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "human-channel/tools/h1_driver_observation.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "human-channel/H1_DRIVER_OBSERVATION.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "human-channel/evidence/h2_glance_at_conflict.txt",
+      "sha256": "sha256:e485fce5f6b43dc7e7f38a33d21f34bf1310e3f810a83c7024bf8e05339fee3d",
+      "tool": "human-channel/tools/h2_glance_at_conflict.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "human-channel/tools/h2_glance_at_conflict.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "human-channel/H2_GLANCE_AT_CONFLICT.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "human-channel/evidence/h3_observation_response_joint.txt",
+      "sha256": "sha256:a457e3720ce44d2cf0f5325c6635485820bf79aa9b65422e3160fed2665cfc08",
+      "tool": "human-channel/tools/h3_observation_response_joint.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "human-channel/tools/h3_observation_response_joint.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "human-channel/H3_OBSERVATION_RESPONSE_JOINT.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "human-channel/evidence/h4_dcpt_takeover.txt",
+      "sha256": "sha256:ce828a87ae455a5ad54fd94f755b5e936bad735f3325976f2c410c1cfac663d8",
+      "tool": "human-channel/tools/h4_dcpt_takeover.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "human-channel/tools/h4_dcpt_takeover.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "human-channel/H4_DCPT_TAKEOVER.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "human-channel/evidence/h5_cross_agent_joint.txt",
+      "sha256": "sha256:c4209d9949bfce45f768f68fed192667f463d65714f9a86edd7b69578409abbb",
+      "tool": "human-channel/tools/h5_cross_agent_joint.py",
+      "argv": [],
+      "replay_class": "heavy_inference",
+      "results": [
+        "human-channel/H5_CROSS_AGENT_JOINT.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "human-channel/evidence/h6_total_both_miss.txt",
+      "sha256": "sha256:d490f1f3917b0fe067c25f5e2bc7ea8ed0d429c50cf826a81983b8bfa12dcd23",
+      "tool": "human-channel/tools/h6_total_both_miss.py",
+      "argv": [],
+      "replay_class": "heavy_inference",
+      "results": [
+        "human-channel/H6_TOTAL_BOTH_MISS.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "human-channel/evidence/h7_intervals.txt",
+      "sha256": "sha256:6619d3e7ed13d96cb313755671806fffd0813d204211656c72299e3aeb1d3464",
+      "tool": "human-channel/tools/h7_intervals.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "human-channel/tools/h7_intervals.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "human-channel/H7_INTERVALS.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "evidence/measurement/result_z.txt",
+      "sha256": "sha256:f39bb7e333bb8cce9f18376d3971a3d41592d89e2c6e663cceeea938a2a9c000",
+      "tool": "tools/measure/result_z_scene_blindness_monitor.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "tools/measure/result_z_scene_blindness_monitor.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "docs/RESULT_Z_SCENE_BLINDNESS_MONITOR.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "evidence/measurement/result_aa.txt",
+      "sha256": "sha256:8c521b2fabc9cce612dd8590c3e303cdc8cb160ff5a29ca685bdf5d5da4fb285",
+      "tool": "tools/measure/result_aa_disagreement_monitor.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "tools/measure/result_aa_disagreement_monitor.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "docs/RESULT_AA_DISAGREEMENT_MONITOR.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "evidence/measurement/result_ab.txt",
+      "sha256": "sha256:e692d2065dc00b45abf684d313aa1b2dfddafe0c72b5fa7147606be7cb085dca",
+      "tool": "tools/measure/result_ab_sensor_monitor_replication.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "tools/measure/result_ab_sensor_monitor_replication.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "docs/RESULT_AB_SENSOR_MONITOR_REPLICATION.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "evidence/measurement/result_b.txt",
+      "sha256": "sha256:07a4f0404815b24300434f88041a4185896233a2fda08312635789189b71161d",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_d.txt",
+      "sha256": "sha256:b8f2a3ddadbd344e5476a55c8237a26fd89cb8fbdafea21ba74949f3800a9903",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_e.txt",
+      "sha256": "sha256:40b615699b465cf2ef54fd965001c5f6ff68a9cb5d050214d670535eb16eaf72",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_f.txt",
+      "sha256": "sha256:27bb66607b4c63b1af3c05015a8cffcb7fe0ea378f8a6318814dd991df8af695",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_g.txt",
+      "sha256": "sha256:e5c8bb53f80d0dd03e5166d1cffa319397a8c13d9e59f46523e619766fd1273c",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_h.txt",
+      "sha256": "sha256:e150df1bec9d36087fea2cca62238f644ccde71af699283784454bfd00dfde3f",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_i.txt",
+      "sha256": "sha256:6ca9f297a7de0df81806fba3e6d190e3b98d1a7728950158be7d408eb2914e26",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_j.txt",
+      "sha256": "sha256:49ddb35f6fd2ebf7534966b211f97491fbce14b6a81549857199fe8bee7c90c7",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_k.txt",
+      "sha256": "sha256:3282f70f5bef61900378db79bf077bfea779b0ddf7afb0eeaac544cc135dd37a",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_l.txt",
+      "sha256": "sha256:d1e123df5be493a17b605a6527c3fad6ba347f947aee84ab21c3007d2fd8a726",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_m.txt",
+      "sha256": "sha256:046a8a4ef9dbca8df92bb4693fc78ae817fdab8f2383890d265af6c14964fa74",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [
+        "docs/RESULT_M_CROSS_DETECTOR_REPLICATION.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_n.txt",
+      "sha256": "sha256:f672311eab85e1d4d1c56b67036481bb4a5c9ef11ca26c073c1517aece8dd652",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [
+        "docs/RESULT_N_THRESHOLD_ROBUSTNESS.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_o.txt",
+      "sha256": "sha256:6556344115847bc076fa1b544b2b5bc21c4678d8685f9a6582d647c8eb426ff9",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [
+        "docs/RESULT_O_SENSITIVITY_EVALUE.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_p.txt",
+      "sha256": "sha256:7ceb39d079a5a5fff4709fe6585f768dca4dcfd3a80ba67c44b05d48248f556a",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [
+        "docs/RESULT_P_COEFFICIENT_VS_ABSOLUTE.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_q.txt",
+      "sha256": "sha256:d364e847ede5111c320c086d9c81a870a847dee2e38416b3a9576d6e669d1497",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [
+        "docs/RESULT_Q_CAMERA_AXIS_AND_MODALITY_GRID.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_r.txt",
+      "sha256": "sha256:4506ae3f1fb9ce6cbaea4e293509f287c0ddec3c44c320eecd2c4e231766aa9c",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [
+        "docs/RESULT_R_ACCURACY_COUPLING.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    },
+    {
+      "transcript": "evidence/measurement/result_s.txt",
+      "sha256": "sha256:980797145168cadff6c8676057a1ab6df3207a3a09949abc53c9bd4353ec1c39",
+      "tool": "tools/measure (see docs)",
+      "argv": [],
+      "replay_class": "argv_unrecorded_historical",
+      "results": [
+        "docs/RESULT_S_CORRECTED_SAFETY_CALCULUS.md"
+      ],
+      "timeout_s": 7200,
+      "stderr_merged": false
+    }
+  ]
+}

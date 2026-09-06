@@ -309,9 +309,21 @@ never raises confidence by itself.
 | Object-level human miss on real data at scale | no audited public dataset identifies it; a pilot needs human-subjects review | outside current authority |
 | A scientific, safety, or comparative claim | eligible retained evidence and an authorized external decision | outside this lane |
 
+## 12a. The Gate B check
+
+`python3 tools/measure/gate_b_check.py` is the lane's discipline as one fail-closed command. It
+verifies every retained transcript against the SHA-256 recorded in
+`validation/gate-b-replay-manifest.json`, replays the transcripts of the classes named by
+`--replay` and requires byte identity, runs the register and reconciliation check, verifies the
+custody digests, and enforces the style rules (no em dash, document headers, resolving links). It
+writes a machine-readable report with `--json`. Without `--replay` every transcript is reported as
+`not_replayed_here`, a distinct state never counted as replicated; rows of class
+`argv_unrecorded_historical` are digest-checked and never replayed. Run it before every closeout
+and retain its report under `evidence/`.
+
 ## 13. Required closeout
 
-State, separately and from exact records: worktree, branch, commit, and cleanliness; which schemas
+Run the Gate B check (section 12a) and retain its report. State, separately and from exact records: worktree, branch, commit, and cleanliness; which schemas
 and contracts are `proposed` against released; how many records validate and against which validator
 (the port, the spec reimplementation, or the shipped module); every claim withdrawn since the last
 handoff and that `check_claim_reconciliation.py` passes; every reproduction that a corrected prose
