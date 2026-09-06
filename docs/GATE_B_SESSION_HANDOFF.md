@@ -418,6 +418,11 @@ was deleted and no check was weakened.
    differs, stated. A second detector pass on the accelerator path was byte-identical.
 20. **Result AH3 added** (register `0.2.12`): the ghost coefficient against the time-shift null is
    4.6 to 9.8 on a second camera, a second lidar and a second operating point, no band reaching 1.
+23. **Review instrument, part 2.** The register and the documents must describe the same program:
+   every claim points to an existing path and, unless its status is unknown or not_established, a
+   transcript; every result document is named by a claim; lifecycle lines agree with statuses;
+   every withdrawn value has lineage. First run found five result documents not named explicitly
+   by any claim; the register now names them (`0.2.14`). Integrated into the Gate B check.
 22. **Review instrument, part 1.** Every number in every result document is now classified as
    bound to its own transcript, bound elsewhere, derived by one arithmetic step, exempt with a
    reason, or unbound; 1,751 numbers across 33 documents, two findings on first run (a rounded

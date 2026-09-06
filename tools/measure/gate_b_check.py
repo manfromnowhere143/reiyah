@@ -137,6 +137,10 @@ def main():
     last = [l for l in rb.stdout.splitlines() if l.strip().startswith("RESULT:")]
     check("REVIEW    every number in every result document is bound to retained bytes", rb.returncode == 0, last[-1].strip() if last else rb.stderr[:200])
 
+    rc = subprocess.run([sys.executable, "tools/measure/review_register_coverage.py"], capture_output=True, text=True)
+    last = [l for l in rc.stdout.splitlines() if l.strip().startswith("RESULT:")]
+    check("REVIEW    the register and the result documents describe the same program", rc.returncode == 0, last[-1].strip() if last else rc.stderr[:200])
+
     report["result"] = "pass" if fails == 0 else "fail"
     print(f"\n  RESULT: {report['result'].upper()}  ({fails} failing check(s))")
     if a.json:

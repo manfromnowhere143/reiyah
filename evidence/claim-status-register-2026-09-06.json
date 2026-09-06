@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -366,7 +366,7 @@
       "current_scientific_use": "permitted",
       "unit": "object_track",
       "lineage": {
-        "first_stated_in": "docs/RESULT_L_CONVERGENCE.md; robustness in docs/RESULT_M..Q",
+        "first_stated_in": "docs/RESULT_L_CONVERGENCE.md; robustness in docs/RESULT_M_CROSS_DETECTOR_REPLICATION.md, docs/RESULT_N_THRESHOLD_ROBUSTNESS.md, docs/RESULT_O_SENSITIVITY_EVALUE.md, docs/RESULT_Q_CAMERA_AXIS_AND_MODALITY_GRID.md",
         "superseded_by": null
       },
       "retained_transcripts": [
@@ -555,7 +555,7 @@
         "BDD-A terms: retained from an archive snapshot on 2026-09-06; research use permitted.",
         "Ground-truth boxes or a reference process independent of both channels."
       ],
-      "notes": "Measured on the detector's own detections, so a floor on cross-agent dependence, not a certificate of independence. Engaged in-lab observers, aggregate heatmap. Pretrained torchvision Faster R-CNN executed on the frames; nothing trained. 2026-09-06 H5b: re-measured with the clip id recorded, c = 0.962, clip-clustered band [0.927, 0.993] on 117 clips; H5's sample (651 frames) differs from H5b's (519 frames) because H5's arguments were not recorded; both agree within the band."
+      "notes": "Measured on the detector's own detections, so a floor on cross-agent dependence, not a certificate of independence. Engaged in-lab observers, aggregate heatmap. Pretrained torchvision Faster R-CNN executed on the frames; nothing trained. 2026-09-06 H5b: re-measured with the clip id recorded, c = 0.962, clip-clustered band [0.927, 0.993] on 117 clips; H5's sample (651 frames) differs from H5b's (519 frames) because H5's arguments were not recorded; both agree within the band. Band: human-channel/H5B_CROSS_AGENT_INTERVAL.md."
     },
     {
       "claim_id": "reiyah.gate-b.claim.cross-agent-total-miss-coincidence",
@@ -991,7 +991,7 @@
         "A second pair and operating point: done, Result AH3 (time-shift coefficients 9.80 [7.08, 14.82], 4.60 [3.43, 9.69], 7.66 [3.82, 24.33]).",
         "A ghost definition on safety-critic assertions, not all detections, before any Corollary 3 use."
       ],
-      "notes": "The load-bearing coefficient is 6.18 [4.60, 10.31] against the within-scene time-shift null; the rotation-null coefficients (11.7, 11.8) are inflated by road geometry as the sanity row (true detections 8.1 above the same null) shows. Upper bound in the reference-error direction; lenient ghost definition in the other. Evidence-cost condition three is measured, not identified."
+      "notes": "The load-bearing coefficient is 6.18 [4.60, 10.31] against the within-scene time-shift null; the rotation-null coefficients (11.7, 11.8) are inflated by road geometry as the sanity row (true detections 8.1 above the same null) shows. Upper bound in the reference-error direction; lenient ghost definition in the other. Evidence-cost condition three is measured, not identified. Replication: docs/RESULT_AH3_GHOST_REPLICATION.md."
     },
     {
       "claim_id": "reiyah.gate-b.claim.ghost-persistence",
