@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -494,7 +494,7 @@
     {
       "claim_id": "reiyah.gate-b.claim.human-observation-response-coincidence",
       "estimand": "Within-agent coincident-failure coefficient between the driver's observation channel (climax gaze not Forward) and response channel (No reaction) in 100-Car events, and the eyes-forward-yet-no-reaction cell.",
-      "status": "measured",
+      "status": "narrowed",
       "current_scientific_use": "permitted",
       "unit": "event",
       "lineage": {
@@ -502,14 +502,15 @@
         "superseded_by": null
       },
       "retained_transcripts": [
-        "human-channel/evidence/h3_observation_response_joint.txt"
+        "human-channel/evidence/h3_observation_response_joint.txt",
+        "human-channel/evidence/h7_intervals.txt"
       ],
       "source_identity": {
         "source_id": "100car",
         "custody_state": "primary_pointer_only",
         "exact_proposition": "Same source as human-observation-state-in-conflict."
       },
-      "notes": "Includes a causal component (not looking impairs reacting) and is not pure latent dependence. Crash-subset cells are small (n=56, both-fail 8) and illustrative. Not driver-clustered."
+      "notes": "Includes a causal component (not looking impairs reacting) and is not pure latent dependence. Crash-subset cells are small (n=56, both-fail 8) and illustrative. Not driver-clustered. Narrowed 2026-09-06 by H7: event-resampled 95% band [1.036, 1.897] over 770 events; the crash [0.693, 1.867] and near-crash [0.990, 2.139] subgroups do not exclude 1. Quote with the band."
     },
     {
       "claim_id": "reiyah.gate-b.claim.l3-takeover-distraction-delay",
@@ -860,6 +861,26 @@
         "The non-linear test (Result AD) on the same four configurations."
       ],
       "notes": "Permitted as a negative result only: on every configuration the linear coupling-aware increment is inside the fold spread. Units are the keyframe (Z form) and the detection box (AA form)."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.human-channel-intervals",
+      "estimand": "Event-resampled bootstrap bands for the H2 and H3 quantities and a participant-clustered band for the H4 takeover contrasts, B = 2000.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "event",
+      "lineage": {
+        "first_stated_in": "human-channel/H7_INTERVALS.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "human-channel/evidence/h7_intervals.txt"
+      ],
+      "source_identity": {
+        "source_id": "100car+dcpt",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "100-Car Data (CC0, publisher record retained) and DCPT (CC BY 4.0, three files retained); parsing imported from the H3 and H4 tools."
+      },
+      "notes": "The 100-Car bands are not driver-clustered and understate uncertainty if events cluster within drivers. The DCPT visual-manual delay is +0.474 s [+0.214, +0.732]; cognitive-only includes zero."
     }
   ]
 }

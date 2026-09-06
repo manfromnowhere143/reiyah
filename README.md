@@ -354,7 +354,8 @@ The sensors are one kind of channel. HARBOR's target is the human and the automa
 encounter, so the human channel is measured too, on public naturalistic and simulator data. In real
 crash and near-crash events the driver was looking forward at the moment of the conflict two thirds
 of the time: observation is not detection. The human's own two channels, looking and acting, fail
-together with the same coefficient the sensors do, `c = 1.46`. And in modern Level 3 automation a
+together with the same coefficient the sensors do, `c = 1.46`, with a band of [1.04, 1.90] that
+excludes independence narrowly. And in modern Level 3 automation a
 visual-manual distraction slows the human's takeover by a quarter.
 
 Then the cross-agent question, the one no prior work had measured: do a human and a machine go blind

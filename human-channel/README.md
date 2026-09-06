@@ -53,6 +53,10 @@ The tools expect `eventEyeglance.txt`, `eventVideoReduced.txt`, `baselineEyeglan
   (totally blind to 84.5% of them), and the total joint miss with human neglect is c = 0.981,
   clip-clustered 95% CI [0.962, 0.998]. Even at total blindness the human-machine pairing is not
   worse than independent, in sharp contrast to same-kind redundancy.
+- [`H7_INTERVALS.md`](H7_INTERVALS.md) - bands on every human-channel headline. The eyes x hands
+  coefficient is 1.46 [1.04, 1.90] over all events (event-resampled, not driver-clustered) and does
+  not exclude 1 in either severity subgroup; the visual-manual takeover delay is +0.47 s [+0.21,
+  +0.73] participant-clustered. The human same-kind cell holds narrowly and is quoted with its band.
 
 ## Discipline
 

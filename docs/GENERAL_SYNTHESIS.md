@@ -56,8 +56,10 @@ couple most (1.29), a camera and a lidar less (1.10 to 1.15).
 On the 100-Car Naturalistic Driving Study, in real conflicts the driver was looking forward at the
 moment of the event two thirds of the time: observation is not detection
 ([human-channel H2](../human-channel/H2_GLANCE_AT_CONFLICT.md)). The human's own two channels,
-looking and acting, fail together with the same coefficient the sensors do, `c = 1.46`
-([H3](../human-channel/H3_OBSERVATION_RESPONSE_JOINT.md)). In modern Level 3 automation a
+looking and acting, fail together with the same coefficient the sensors do, `c = 1.46`, with an
+event-resampled band of [1.04, 1.90] that excludes independence narrowly over all events and not
+in either severity subgroup ([H3](../human-channel/H3_OBSERVATION_RESPONSE_JOINT.md),
+[H7](../human-channel/H7_INTERVALS.md)). In modern Level 3 automation a
 visual-manual distraction slows the human's takeover by a quarter
 ([H4](../human-channel/H4_DCPT_TAKEOVER.md)). And the cross-agent question no prior work had
 measured: a validated detector against the driver gaze heatmap, taken to the automation's total
@@ -86,7 +88,7 @@ includes zero on the other two benchmarks, so it is a MMLU finding, not a genera
 | domain | same-kind pairing | cross-kind pairing |
 |---|---|---|
 | sensors | two lidars, c = 1.29 | camera x lidar, c = 1.10 to 1.15; human x machine, c ~ 1 |
-| the human | eyes x hands, c = 1.46 | (n/a) |
+| the human | eyes x hands, c = 1.46 [1.04, 1.90], event-resampled | (n/a) |
 | LLM juries | same family, c = 1.52 (MMLU), 1.87 (ARC), 2.43 (HellaSwag) | cross family, c = 1.29 (MMLU), 1.73 (ARC), 2.30 (HellaSwag) |
 
 **Redundancy across genuinely different kinds buys independence; redundancy across similar kinds

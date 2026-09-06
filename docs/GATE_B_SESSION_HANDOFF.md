@@ -139,7 +139,8 @@ it without the band. Results L, M, N, O, P, Q, R; red-team in
 
 **Domain two: the human (100-Car NDS, DCPT, BDD-A).** In real conflicts the driver was looking
 forward two thirds of the time: observation is not detection (H2). The human's own two channels,
-looking and acting, fail together at `c = 1.46`, the same shape the sensors show (H3). In Level 3
+looking and acting, fail together at `c = 1.46`, band [1.04, 1.90] over all events and including 1 in
+each severity subgroup (H3, H7), the same shape the sensors show at far lower precision. In Level 3
 automation a visual-manual distraction slows takeover by about a quarter (H4). The cross-agent
 question no prior work had measured, a validated detector against the driver gaze heatmap taken to
 the automation's total blindness with a clip-clustered interval, gives `c = 0.98`, approximately
@@ -196,7 +197,7 @@ non-linear test the register required is Result AD.
 | domain | same-kind pairing | cross-kind pairing |
 |---|---|---|
 | sensors | two lidars, c = 1.29 | camera x lidar, c = 1.10 to 1.15; human x machine, c ~ 0.98 |
-| the human | eyes x hands, c = 1.46 | (the human x machine cell above) |
+| the human | eyes x hands, c = 1.46 [1.04, 1.90], event-resampled (H7) | (the human x machine cell above) |
 | LLM juries | same family c = 1.52 (MMLU), 1.87 (ARC), 2.43 (HellaSwag) | cross family c = 1.29 (MMLU), 1.73 (ARC), 2.30 (HellaSwag) |
 
 Similar channels share a substrate and share their blind spots; genuinely different ones do not. The
@@ -357,6 +358,8 @@ was deleted and no check was weakened.
    intervals on every LLM quantity; Result T's lineage-beyond-difficulty statement is narrowed to
    MMLU. Transcripts byte-identical across repeated runs; register `0.2.5`. An external review
    request is drafted in [`EXTERNAL_REVIEW_REQUEST_2026-09-06.md`](EXTERNAL_REVIEW_REQUEST_2026-09-06.md).
+12. **H7 added**, bands on every human-channel headline; the eyes x hands cell is narrowed to
+   1.46 [1.04, 1.90] (register `0.2.6`), and the DCPT delay survives participant clustering.
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.

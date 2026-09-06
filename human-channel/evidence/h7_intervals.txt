@@ -1,0 +1,37 @@
+========================================================================================
+HUMAN CHANNEL H7 - intervals for the human-channel coefficients
+100-Car: event-resampled bootstrap, not driver-clustered (no driver id in the public files);
+DCPT: participant-clustered bootstrap; B = 2000, seed 20260906
+========================================================================================
+
+  all events: 775 events with known gaze, 770 with known gaze and reaction
+    quantity                                    point     2.5%    97.5%
+    gaze forward at the instant (H2)            0.711    0.680    0.742
+    coefficient c (H3)                          1.460    1.036    1.897
+    looked forward yet no reaction (H3)         0.043    0.030    0.057
+
+  crashes: 58 events with known gaze, 56 with known gaze and reaction
+    quantity                                    point     2.5%    97.5%
+    gaze forward at the instant (H2)            0.690    0.569    0.810
+    coefficient c (H3)                          1.255    0.693    1.867
+    looked forward yet no reaction (H3)         0.232    0.125    0.357
+
+  near-crashes: 717 events with known gaze, 714 with known gaze and reaction
+    quantity                                    point     2.5%    97.5%
+    gaze forward at the instant (H2)            0.713    0.681    0.746
+    coefficient c (H3)                          1.548    0.990    2.139
+    looked forward yet no reaction (H3)         0.028    0.015    0.041
+
+  DCPT takeover (H4): 1080 trials, 40 participants, participant-clustered
+    quantity                                    point     2.5%    97.5%
+    visual-manual minus no task, s              0.474    0.214    0.732
+    cognitive-only minus no task, s             0.094   -0.107    0.277
+    visual-manual relative to no task           0.239    0.103    0.399
+
+----------------------------------------------------------------------------------------
+NON-CLAIMS: descriptive intervals on public CC0 (100-Car) and CC BY 4.0 (DCPT) data,
+retained as proposed. The 100-Car intervals are event-resampled and understate
+uncertainty if events cluster within drivers; the DCPT interval is participant-clustered.
+H3's coefficient includes a causal component and is not pure latent dependence. Not a
+causal claim, not a safety determination, not a claim about any product. No released 1.2
+byte is involved.

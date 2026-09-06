@@ -32,7 +32,9 @@ when `driver_reaction` is `No reaction`, the driver did nothing.
 
 ## What it says
 
-1. **The human's redundancy is not independent either.** Observation and response fail together
+1. **The human's redundancy is not independent either.** (Band added 2026-09-06 by H7: 1.46 with an
+   event-resampled 95% interval of [1.04, 1.90] over all events; the crash and near-crash subgroups
+   do not exclude 1.) Observation and response fail together
    about 1.46 times more than independence predicts. This is the same shape, and nearly the same
    magnitude, as the conditional camera-lidar coefficient. The assumption that a driver who is
    looking will also act does not hold cleanly.
