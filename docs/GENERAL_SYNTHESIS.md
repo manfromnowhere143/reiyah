@@ -108,8 +108,12 @@ ground truth, returns a calibrated probability that the ensemble is wrong, havin
 coupling from a labeled calibration set ([V](../llm-generalization/RESULT_V_DEPLOYED_MONITOR.md)).
 On held-out data it beats the naive agreement heuristic on every metric (AUC 0.845 against 0.719,
 expected calibration error 0.015 against 0.045), and on unanimous items where the naive assumption
-assigns zero risk it assigns the 11.6% the data actually carries. Its features are channel-agnostic,
-so the same monitor form applies to two sensors or a human and a machine.
+assigns zero risk it assigns the 11.6% the data actually carries. Fitted once and never refitted, it
+reads a second jury of seven unseen families at an AUC of 0.853 against an in-domain ceiling of
+0.856, so the coupling it learned is a property of redundancy, not of the channels it learned it
+from; read on a second benchmark it falls to the naive baseline and its calibration breaks
+([X](../llm-generalization/RESULT_X_MONITOR_TRANSFER.md)). The instrument is portable across
+channels and must be calibrated on the task it reads.
 
 ## What is proven, and what is open
 
@@ -124,7 +128,8 @@ Open, and stated plainly: no independent external review has been retained, whic
 ceiling on current confidence and the next thing that would raise it; the driving results are
 association after declared conditioning on public benchmarks, not a certificate about any deployed
 system; the human results are on naturalistic and simulator data with an engaged human; and the
-LLM monitor is validated on two benchmarks and one jury, not deployed. The law is stated to its
+LLM monitor is validated across two juries on one benchmark, fails across benchmarks without
+recalibration, and is not deployed. The law is stated to its
 evidence and no further.
 
 ## Non-claims

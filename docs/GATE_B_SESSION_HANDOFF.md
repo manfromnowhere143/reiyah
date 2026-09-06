@@ -168,7 +168,11 @@ calibration set. On held-out data it beats the naive agreement heuristic on ever
 against 0.719, ECE 0.015 against 0.045); on unanimous items where the naive assumption assigns 0%
 risk it assigns the 11.6% the data carries against a true 9.5%. Its features are channel-agnostic, so
 the same form applies to two sensors or a human and a machine. File
-`llm-generalization/RESULT_V_DEPLOYED_MONITOR.md`.
+`llm-generalization/RESULT_V_DEPLOYED_MONITOR.md`. **The transfer test (X, 2026-09-06):** fitted
+once on jury A and never refitted, the monitor reads seven models from seven unseen families at AUC
+0.853 against an in-domain ceiling of 0.856; read on ARC-Challenge it falls to or below the naive
+baseline and its calibration breaks. Channel transfer holds, task transfer does not. File
+`llm-generalization/RESULT_X_MONITOR_TRANSFER.md`.
 
 ## 5. The law, and the headline coefficients
 
@@ -268,9 +272,9 @@ with an engaged human; the LLM monitor is validated on two benchmarks and one ju
    real frontier.
 3. Retain the BDD-A terms once the portal is reachable; DCPT and 100-Car custody is retained and
    verified (section 14), the leaderboard archive states no licence.
-4. Optional hardening already scoped: a monitor cross-model transfer test (train the coupling
-   estimator on one jury, test on a disjoint jury); the monitor validated on real driving outputs
-   rather than benchmark outputs; a third benchmark for the LLM law.
+4. Optional hardening still open: the monitor validated on real driving channel outputs rather
+   than benchmark outputs; a label-free margin normalization so task transfer can be retested; a
+   third benchmark for the LLM law. The cross-jury transfer test is done (Result X).
 
 Continue only the smallest unresolved step. Engineering pressure raises the burden of proof; it
 never raises confidence by itself.
@@ -313,6 +317,8 @@ was deleted and no check was weakened.
    human-channel and LLM claim with its unit, source custody, and reconsideration requirements, and
    the check now reads the newest register; the widened register caught two more unmarked Result S
    lines, which were marked.
+7. **Result X added**, the monitor transfer test, with transcript `llm-generalization/evidence/result_x.txt`
+   byte-identical across three runs and registered as `llm-monitor-transfer` (register `0.2.1`).
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.

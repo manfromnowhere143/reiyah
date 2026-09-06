@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -634,7 +634,7 @@
         "exact_proposition": "Same source as llm-jury-coincidence-mmlu."
       },
       "reconsideration_requirements": [
-        "Transfer to a disjoint jury and a second benchmark without refitting (llm-monitor-transfer).",
+        "Transfer to a disjoint jury without refitting: done, llm-monitor-transfer (holds across juries on the same benchmark).",
         "Validation on real driving channel outputs rather than benchmark outputs."
       ],
       "notes": "A demonstration instrument, in-domain only: the held-out items come from the same jury and benchmark the monitor was fitted on. Deployability rests on the transfer claim, not this one. A logistic-regression monitor is fitted; no LLM executed."
@@ -658,6 +658,30 @@
         "exact_proposition": "Same source as llm-jury-coincidence-mmlu; task arc:challenge 25-shot."
       },
       "notes": "Same models, different benchmark; a robustness replication by the same authors with shared code, which is never independent validation."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.llm-monitor-transfer",
+      "estimand": "AUC, Brier, ECE and unanimous-item risk of the Result V monitor fitted once on jury A / MMLU and read without refitting on a disjoint seven-family jury on MMLU (X1, X4) and on ARC-Challenge (X2), and on jury A on ARC-Challenge (X3), each against the naive baseline and an in-domain refit ceiling.",
+      "status": "derived",
+      "current_scientific_use": "permitted",
+      "unit": "item",
+      "lineage": {
+        "first_stated_in": "llm-generalization/RESULT_X_MONITOR_TRANSFER.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "llm-generalization/evidence/result_x.txt"
+      ],
+      "source_identity": {
+        "source_id": "open-llm-leaderboard-old",
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "Same source as llm-jury-coincidence-mmlu; second jury from seven other families; 2024-format files carry no gold, recovered at join time from a 2023-format model on the same question and verified against every row's acc flag (100 percent on every model and benchmark)."
+      },
+      "reconsideration_requirements": [
+        "Task transfer is contradicted as measured; it may be retested only after a label-free margin normalization is defined and retained.",
+        "Validation on real driving channel outputs before any deployability language beyond channel transfer."
+      ],
+      "notes": "Two-sided and stated so: channel transfer holds (AUC 0.853 against a 0.856 ceiling on seven unseen families), task transfer fails (at or below the naive baseline on ARC-Challenge with broken calibration). Any claim of deployability without task-level recalibration is forbidden by this entry. A logistic-regression monitor is fitted; no LLM executed."
     }
   ]
 }

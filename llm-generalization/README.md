@@ -14,7 +14,9 @@ Result V fits and calibrates a logistic-regression monitor on those outputs, the
 in this thread, and reports it on a held-out split.
 
 Reproduce: `bdda-venv/bin/python llm-generalization/tools/result_t_llm_independence.py` (downloads
-the per-question parquet files from Hugging Face).
+the per-question parquet files from Hugging Face). Result X reads a second jury whose 2024-format
+files carry no gold answer; gold is recovered at join time from a 2023-format model on the same
+question and checked against every row's own correctness flag.
 
 ## Result
 
@@ -40,6 +42,12 @@ the per-question parquet files from Hugging Face).
   conditional 1.05, a six-model jury with the effective diversity of 1.6, and unanimous-yet-wrong
   37% (against 10% on MMLU). On harder material the coupling sharpens. The findings are not an MMLU
   artifact.
+- [`RESULT_X_MONITOR_TRANSFER.md`](RESULT_X_MONITOR_TRANSFER.md) - the transfer test, both halves.
+  Fitted once on jury A and never refitted, the monitor reads seven models from seven unseen
+  families at AUC 0.853 against an in-domain ceiling of 0.856 (ECE 0.032 vs 0.015): channel
+  transfer holds. Read on ARC-Challenge it falls to or below the naive baseline and its calibration
+  breaks: task transfer does not hold. The instrument is portable across channels and must be
+  calibrated on the task it reads.
 
 ## Discipline
 
