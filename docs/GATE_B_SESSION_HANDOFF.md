@@ -428,6 +428,9 @@ was deleted and no check was weakened.
    strict-threshold rows, AE and X2 and U and AI sentences corrected in place, and the AD verdict
    rule stated. Every document carries its own "Adversarial reading, 2026-09-06" section. Register
    `0.2.18`.
+31. **Result AL**: difficulty measured by the independent jury; jury A's residual and lineage
+   excess survive (1.094; 0.098 [0.089, 0.108]) and jury B's residual falls to 1.016. Answers T's
+   strongest objection with a measurement. Register `0.2.20`.
 30. **Result AM (exploratory)**: the AJ falsification split into a summary-statistic artifact (the
    lidar pair keeps its rank in the inflation quantity in every range band at 0.50) and a
    measurement fact (the camera pair collapses with the second camera 89 to 100 percent blind).

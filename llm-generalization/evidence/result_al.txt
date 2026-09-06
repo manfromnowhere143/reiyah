@@ -1,0 +1,55 @@
+  loaded meta-llama__Llama-2-7b-hf on mmlu: 13937 questions (run 2023-08-19T16:35:46.942696, 2023 format)
+  loaded meta-llama__Llama-2-13b-hf on mmlu: 13937 questions (run 2023-08-19T22:35:38.117975, 2023 format)
+  loaded meta-llama__Llama-2-70b-hf on mmlu: 13937 questions (run 2023-08-22T09:05:23.035851, 2023 format)
+  loaded mistralai__Mistral-7B-v0.1 on mmlu: 13937 questions (run 2023-09-27T15-30-59.039834, 2023 format)
+  loaded tiiuae__falcon-7b on mmlu: 13937 questions (run 2023-07-19T10:51:47.706539, 2023 format)
+  loaded mosaicml__mpt-7b on mmlu: 13937 questions (run 2023-08-22T15:05:51.358534, 2023 format)
+  loaded Qwen__Qwen-7B on mmlu: 13937 questions (run 2023-10-13T06-37-24.832652, 2023 format)
+  gold check Llama-2-7b-hf on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Llama-2-13b-hf on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Llama-2-70b-hf on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Mistral-7B-v0.1 on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check falcon-7b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check mpt-7b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check Qwen-7B on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  loaded 01-ai__Yi-6B on mmlu: 13937 questions (run 2023-11-02T10-48-20.025919, 2024, gold recovered at join format)
+  loaded EleutherAI__gpt-neox-20b on mmlu: 13937 questions (run 2023-07-20T10:44:54.391639, 2023 format)
+  loaded google__gemma-7b on mmlu: 13937 questions (run 2024-02-16T08-54-11.990054, 2024, gold recovered at join format)
+  loaded microsoft__phi-2 on mmlu: 13937 questions (run 2023-12-14T09-31-24.484620, 2024, gold recovered at join format)
+  loaded bigscience__bloom-7b1 on mmlu: 13937 questions (run 2023-08-01T14:42:42.953249, 2023 format)
+  loaded stabilityai__stablelm-base-alpha-7b on mmlu: 13937 questions (run 2023-07-19T17:27:18.412966, 2023 format)
+  loaded openlm-research__open_llama_7b_v2 on mmlu: 13937 questions (run 2023-08-23T15:22:49.203021, 2023 format)
+  gold check Yi-6B on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (recovered gold)
+  gold check gpt-neox-20b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check gemma-7b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (recovered gold)
+  gold check phi-2 on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (recovered gold)
+  gold check bloom-7b1 on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check stablelm-base-alpha-7b on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+  gold check open_llama_7b_v2 on mmlu: acc == (chosen == gold) on 100.00% of 13937 rows (file gold)
+============================================================================================
+RESULT AL - the conditional coefficient with difficulty measured by an independent jury
+MMLU, 13937 questions answered by both juries; jury A 7 models, jury B 7 models; B = 500, seed 20260906
+============================================================================================
+
+  jury A pairs, difficulty from jury B:
+    quantity                                                point     2.5%    97.5%
+    same-jury difficulty (Result T definition), mean        1.098    1.096    1.101
+    other-jury difficulty, mean                             1.094    1.088    1.098
+    other-jury difficulty, per-pair min                     0.941    0.929    0.949
+    other-jury difficulty, per-pair max                     1.356    1.334    1.378
+    other-jury difficulty, same-family                      1.178    1.167    1.189
+    other-jury difficulty, cross-family                     1.080    1.075    1.084
+    other-jury difficulty, same minus cross                 0.098    0.089    0.108
+
+  jury B pairs, difficulty from jury A:
+    quantity                                                point     2.5%    97.5%
+    same-jury difficulty (Result T definition), mean        1.089    1.087    1.092
+    other-jury difficulty, mean                             1.016    1.014    1.019
+    other-jury difficulty, per-pair min                     0.936    0.926    0.947
+    other-jury difficulty, per-pair max                     1.149    1.137    1.164
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: public leaderboard outputs, retained as proposed. Difficulty from the other jury
+is still a proxy (the fraction of seven other models that err); it is independent of the pair
+being measured but not of item difficulty as such. MMLU only. No LLM is executed. No
+released 1.2 byte is involved.

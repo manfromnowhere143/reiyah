@@ -66,6 +66,10 @@ question and checked against every row's own correctness flag.
   transfer question: fitted on two benchmarks and read on the third, the monitor is no better than a
   single-benchmark fit, and on HellaSwag it is worse than chance (AUC 0.37 to 0.39). Fit per task,
   read across channels; the boundary of the instrument is recorded as firmly as its successes.
+- [`RESULT_AL_CROSS_JURY_DIFFICULTY.md`](RESULT_AL_CROSS_JURY_DIFFICULTY.md) - difficulty measured
+  by an independent jury. Jury A's residual stays at 1.094 [1.088, 1.098] and its same-family excess
+  grows to 0.098 [0.089, 0.108]; jury B, seven unrelated families, falls to 1.016 [1.014, 1.019].
+  The coupling that survives an independent difficulty measure is concentrated in shared lineage.
 - [`RESULT_AI_PREREGISTERED_WINOGRANDE.md`](RESULT_AI_PREREGISTERED_WINOGRANDE.md) - the first
   preregistered test: eight falsifiable predictions committed before the run on a two-choice
   benchmark the program had never examined, eight supported (every pair above 1, minimum 2.26; a

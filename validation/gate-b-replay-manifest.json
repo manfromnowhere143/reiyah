@@ -1,7 +1,7 @@
 {
   "manifest_kind": "gate-b-replay-manifest",
   "artifact_id": "reiyah.gate-b.replay-manifest",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "note": "Rows with replay_class argv_unrecorded_historical are retained transcripts whose exact command line was not recorded per transcript when they were produced; their digests are checked, they are never replayed by this tool, and adding an argv is a later, append-only step.",
@@ -651,6 +651,21 @@
         "docs/RESULT_AM_ORDERING_FAILURE_DIAGNOSTIC.md"
       ],
       "timeout_s": 3600,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "llm-generalization/evidence/result_al.txt",
+      "sha256": "sha256:fa972ae791fb57dc349bb6fcc2562a81eb53cf469a536763277224c86bb41c8d",
+      "tool": "llm-generalization/tools/result_al_cross_jury_difficulty.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "llm-generalization/tools/result_al_cross_jury_difficulty.py"
+      ],
+      "replay_class": "network_cached",
+      "results": [
+        "llm-generalization/RESULT_AL_CROSS_JURY_DIFFICULTY.md"
+      ],
+      "timeout_s": 7200,
       "stderr_merged": true
     }
   ]

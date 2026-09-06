@@ -81,7 +81,11 @@ lineage mechanism is benchmark-dependent while the marginal law is not
 ([Y](../llm-generalization/RESULT_Y_THIRD_BENCHMARK.md)). Every one of these quantities carries a
 question-resampled interval that excludes the null ([AC](../llm-generalization/RESULT_AC_LLM_INTERVALS.md));
 the same-lineage excess that survives difficulty conditioning is 0.058 [0.050, 0.066] on MMLU and
-includes zero on the other two benchmarks, so it is a MMLU finding, not a general one. The law was
+includes zero on the other two benchmarks, so it is a MMLU finding, not a general one. With
+difficulty measured by an independent seven-family jury the MMLU residual stays at 1.094 and the
+same-family excess grows to 0.098 [0.089, 0.108], while the unrelated jury itself falls to 1.016
+[1.014, 1.019]: the coupling that survives an independent difficulty measure is concentrated in
+shared lineage ([AL](../llm-generalization/RESULT_AL_CROSS_JURY_DIFFICULTY.md)). The law was
 then used to forecast a fourth benchmark it had never seen, Winogrande, with eight falsifiable
 predictions committed before the run; all eight held
 ([AI](../llm-generalization/RESULT_AI_PREREGISTERED_WINOGRANDE.md)).

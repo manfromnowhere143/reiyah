@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.19",
+  "version": "0.2.20",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -822,7 +822,7 @@
         "reason_code": "scope_population_mismatch",
         "statement": "Supported on MMLU (0.058 [0.050, 0.066]); the interval includes zero on ARC-Challenge (0.007 [-0.008, 0.021]) and HellaSwag (-0.001 [-0.004, 0.002]). The general statement that same-lineage models share blind spots beyond shared difficulty is narrowed to MMLU; the marginal same-family excess holds on all three."
       },
-      "notes": "Result T's unification paragraph carries the narrowing note. Same-family pairs are the three Llama sizes only."
+      "notes": "Result T's unification paragraph carries the narrowing note. Same-family pairs are the three Llama sizes only. Result AL (2026-09-06): with difficulty measured by an independent seven-family jury the MMLU same-family excess is 0.098 [0.089, 0.108]; the unrelated jury's own residual beyond jury A's difficulty is 1.016 [1.014, 1.019]. The lineage statement on MMLU is strengthened, still one lineage."
     },
     {
       "claim_id": "reiyah.gate-b.claim.llm-monitor-label-free-normalization",
@@ -1144,6 +1144,26 @@
         "exact_proposition": "Result AF definitions imported unchanged; all annotated objects; no bands."
       },
       "notes": "Exploratory, not preregistered, no bands; permitted as a diagnostic only. It changes no verdict."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.llm-conditional-independent-difficulty",
+      "estimand": "Conditional coincident-wrong coefficient of jury A pairs with difficulty measured by jury B (fraction of seven other-family models wrong, five quantiles), and of jury B pairs with difficulty from jury A, on MMLU, with question-resampled bands.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "item",
+      "lineage": {
+        "first_stated_in": "llm-generalization/RESULT_AL_CROSS_JURY_DIFFICULTY.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "llm-generalization/evidence/result_al.txt"
+      ],
+      "source_identity": {
+        "source_id": "open-llm-leaderboard-old",
+        "custody_state": "third_party_unretained",
+        "exact_proposition": "Same source as llm-jury-coincidence-mmlu; both juries on the 13,937 shared MMLU questions."
+      },
+      "notes": "Jury A mean 1.094 [1.088, 1.098], same-family 1.178, cross-family 1.080; jury B mean 1.016 [1.014, 1.019]. Per-pair minima below 1 in both juries. MMLU only; the other jury's error fraction is still a proxy for difficulty."
     }
   ]
 }

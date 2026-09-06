@@ -90,7 +90,9 @@ A context-free reader (model-assisted, advisory, same model family as the author
    difficulty conditioning, only the mean does. The sentence "the coupling survives conditioning"
    is a statement about the mean.
 2. Difficulty is estimated from the other five models' errors, so the residual is measured against
-   a proxy built from the same coupled jury; a finer, independent difficulty measure could move it.
+   a proxy built from the same coupled jury. Answered the same evening by Result AL: with difficulty
+   measured by an independent seven-family jury the residual is 1.094 [1.088, 1.098] and the
+   same-family excess 0.098 [0.089, 0.108].
 3. "Half the votes you convened are, in effect, echoes" is a reading of the effective-model count,
    which is a summary statistic of the all-wrong rate, not a count of redundant models.
 
