@@ -48,6 +48,15 @@ of the tool, `result_ai_winogrande.py`, that maps `answer` to a gold index and r
 which the mapping disagrees with the file's own `acc` flag on any row. No prediction is changed.
 This amendment was committed before the amended tool was run.
 
+## Deviation 2, recorded before any result was read
+
+The amended tool joined only three of seven models: the `hashes` field is stored as a string in
+the Llama Winogrande runs and is absent in Qwen's 2024-format file. The three-model output is not
+the test and is not read as one. The procedure is amended a second time: questions join by the
+SHA-256 of the verbatim `example` text, as Result X does for both formats, and gold is taken from
+`answer` when `gold` is absent or empty, with the same per-row `acc` check. No prediction is
+changed. Committed before the run.
+
 ## Non-claims
 
 A preregistration, not a result. Public leaderboard outputs; no LLM is executed; no released `1.2`

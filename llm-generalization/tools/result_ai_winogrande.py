@@ -2,11 +2,14 @@
 
 This is a copy of the Result Y tool with one procedural change, recorded as a deviation in the
 preregistration: the Winogrande parquet files carry no `gold` index, only an `answer` string
-("1" or "2") naming the correct option, so gold is mapped from `answer` when `gold` is absent and
-checked against every row's own `acc` flag; the run refuses any model on which the check is not
+("1" or "2") naming the correct option, so gold is mapped from `answer` when `gold` is absent or empty and
+checked against every row's own `acc` flag; and (deviation 2) questions join by the SHA-256 of
+the verbatim example text, as in Result X, because the `hashes` field is a string in some runs
+and absent in 2024-format files; the run refuses any model on which the check is not
 100 percent. Every definition, the join rule, the auto-drop rule and the printed quantities are
 those of Result Y. The eight predictions are not touched.
 """
+import hashlib
 from itertools import combinations
 
 import numpy as np
@@ -37,13 +40,16 @@ def load(model):
     for f in sorted(x for x in files if x.startswith(best)):
         try:
             df = pd.read_parquet(hf_hub_download(rid, f, repo_type="dataset"))
-            df["qhash"] = df["hashes"].apply(lambda h: h["example"])
+            # deviation 2: join by the SHA-256 of the verbatim example text, as Result X does for
+            # both leaderboard formats; the `hashes` field is a string in some Winogrande runs and
+            # absent in 2024-format files
+            df["qhash"] = df["example"].apply(lambda s: hashlib.sha256(str(s).encode()).hexdigest())
             pr = df["predictions"].apply(lambda p: np.array(p, dtype=float))
             df["chosen"] = pr.apply(lambda a: int(np.argmax(a)))
-            if "gold" not in df.columns:
+            if "gold" not in df.columns or df["gold"].apply(lambda g: hasattr(g, "__len__") and not isinstance(g, str) and len(g) == 0).all():
                 df["gold"] = df["answer"].astype(int) - 1          # Winogrande: answer "1"/"2"
             df["gold"] = df["gold"].astype(int)
-            df["acc"] = df["acc"].astype(float)
+            df["acc"] = df["metrics"].apply(lambda m: float(m["acc"])) if "metrics" in df.columns else df["acc"].astype(float)
             agree = float(((df["chosen"] == df["gold"]).astype(float) == df["acc"]).mean())
             if agree < 1.0:
                 raise ValueError(f"gold mapping disagrees with acc on {100*(1-agree):.2f}% of rows")
@@ -88,7 +94,7 @@ def main():
     W = (A == 0).values.astype(int)
     n = len(A)
     print("=" * 84)
-    print(f"RESULT Y - the LLM law on a third benchmark")
+    print(f"RESULT AI - the preregistered test of the LLM law on Winogrande")
     print(f"{len(names)} models, {n} questions answered by all")
     print("=" * 84)
 
