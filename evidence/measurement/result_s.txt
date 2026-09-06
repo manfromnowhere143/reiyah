@@ -1,0 +1,43 @@
+==========================================================================================
+RESULT S - the corrected safety calculus (RSS Corollary 3 with c measured)
+pair fixed by argv[3]=matched_megvii.json; target P_e = 1e-09
+==========================================================================================
+
+### self-check: RSS's own worked example (c = 1) ###
+  N(c=1, P_e=1e-9) = sqrt(6 / 1e-9) = 77,460
+  RSS states 'on the order of 10^5'. Reproduced: 77,460 ~ 10^5. OK
+
+### automation redundancy (camera x lidar), evidence corrected by measured c ###
+   score>=  marginal c  sqrt(c) infl     N corrected    extra vs RSS
+      0.10       2.271         1.507         116,724          39,265
+      0.20       1.878         1.370         106,146          28,686
+      0.30       1.587         1.260          97,596          20,136
+      0.40       1.363         1.168          90,447          12,987
+      0.50       1.239         1.113          86,216           8,757
+
+### the headline number ###
+  At a 0.30 operating point the measured marginal coefficient is 1.587.
+  RSS's independence-based evidence figure is understated by a factor of
+  sqrt(1.587) = 1.260, i.e. at least 26% more
+  validation evidence is required than Corollary 3 claims, for this pair.
+  This is a LOWER bound: the benchmark removes camera-only-visible objects before
+  scoring (Result A), biasing the coefficient toward independence.
+
+### the human redundancy RSS does not model ###
+  If the safety case credits the human as a redundant channel (L2/L3), that
+  redundancy carries its own measured dependence c = 1.46 (Result H3),
+  a further sqrt(1.46) = 1.208x that RSS corrects by 0.
+  Two credited redundancy layers compound: automation sqrt(1.587) times
+  human sqrt(1.46) = 1.522x the RSS evidence figure.
+
+### interpretation: effective number of independent channels ###
+  Two channels with dependence c=1.587 at miss rates (0.46, 0.34) provide
+  the joint-failure protection of 1.50 truly-independent channels, not 2.
+  You provisioned two sensors and received the redundancy of 1.50.
+  (This quantity depends on the operating miss rate; stated as illustrative.)
+
+------------------------------------------------------------------------------------------
+NON-CLAIMS: a correction to a published formula using coefficients measured on two
+public detection outputs, retained as proposed. Not a certification, not a required
+evidence figure for any real system, not a safety determination. RSS's constant 6 and
+the sqrt(c) scaling are reproduced from the retained primary text; c is a lower bound.
