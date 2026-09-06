@@ -348,6 +348,72 @@ coefficient's marginal sensitivity, clustering, single-benchmark scope, detectio
 fused subsystem, and the absence of external audit. Some are answered, one strengthens the finding,
 and the rest are left open and scoped rather than hidden.
 
+### Both sides of the windshield
+
+The sensors are one kind of channel. HARBOR's target is the human and the automation as one
+encounter, so the human channel is measured too, on public naturalistic and simulator data. In real
+crash and near-crash events the driver was looking forward at the moment of the conflict two thirds
+of the time: observation is not detection. The human's own two channels, looking and acting, fail
+together with the same coefficient the sensors do, `c = 1.46`. And in modern Level 3 automation a
+visual-manual distraction slows the human's takeover by a quarter.
+
+Then the cross-agent question, the one no prior work had measured: do a human and a machine go blind
+to the same objects. A validated detector on the frames against the driver gaze heatmap, over
+thousands of objects and taken all the way to the automation's total blindness with a clustered
+interval, gives `c = 0.98`, approximately independent. Same-kind redundancy fails together; a human
+and a machine, built and failing differently, are the one pairing where the independence a safety
+case assumes roughly survives.
+
+### The number a safety case consumes
+
+RSS Corollary 3 reduces required validation evidence by assuming independence, and the reduction
+scales as `sqrt(c)`. Reproducing RSS's own worked example and substituting the measured coefficient,
+the corrected calculus says a same-kind redundancy needs at least 26% more validation evidence than
+Corollary 3 claims, a lower bound, while the human-machine layer needs almost none. Two coupled
+sensors provide the joint-failure protection of one and a half independent channels, not two.
+
+### One law, three domains
+
+The estimand is not about cars. It applies to any two channels a system calls independent. Carried
+to LLM juries, self-consistency and multi-model cross-checking, the same law appears: seven models
+fail together on the same questions, models of one lineage more than models of different lineages,
+and a seven-model jury has the effective diversity of 3.6 independent models.
+
+```mermaid
+flowchart TB
+    LAW["one estimand, one law<br/>redundancy across DIFFERENT kinds buys independence<br/>across SIMILAR kinds it does not"]
+    subgraph SENS["sensors"]
+        S1["two lidars<br/>c 1.29, together"]
+        S2["camera x lidar<br/>c 1.10 to 1.15"]
+        S3["human x machine<br/>c about 1, independent"]
+    end
+    subgraph HUM["one human"]
+        H1["eyes x hands<br/>c 1.46, together"]
+    end
+    subgraph LLMS["LLM juries"]
+        L1["same family<br/>c 1.52, together"]
+        L2["cross family<br/>c 1.29"]
+    end
+    S1 --> LAW
+    S2 --> LAW
+    S3 --> LAW
+    H1 --> LAW
+    L1 --> LAW
+    L2 --> LAW
+    classDef law fill:#1a237e,stroke:#1a237e,color:#ffffff;
+    classDef same fill:#ffebee,stroke:#b71c1c,color:#b71c1c;
+    classDef cross fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20;
+    class LAW law;
+    class S1,H1,L1 same;
+    class S2,S3,L2 cross;
+```
+
+Similar systems share their blind spots. Genuinely different ones do not. The independence
+assumption is a load-bearing fiction wherever redundancy is claimed, in sensors, in the human, and
+in AI juries alike, and the full reading is in
+[`docs/GATE_B_FINDINGS_SYNTHESIS.md`](docs/GATE_B_FINDINGS_SYNTHESIS.md),
+[`human-channel/`](human-channel/), and [`llm-generalization/`](llm-generalization/).
+
 ## Reproduce the static checks
 
 Authoritative replay is intentionally bound to the exact resolved canonical root
