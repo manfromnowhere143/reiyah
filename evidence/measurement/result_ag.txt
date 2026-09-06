@@ -1,0 +1,46 @@
+============================================================================================
+RESULT AG - sensor monitor transfer: boosted per-object monitor fitted once on P1, read on P2, P3, P4
+self-check against Result AA on P1: rows (90946, 37142, 53804) expected (90946, 37142, 53804)
+============================================================================================
+
+  P1 Mapillary x Megvii @0.30  [in-domain (fitted on P1 training scenes)]  held-out scenes, n = 34741, real 43.5%
+    estimator                                        AUC    Brier     ECE
+    score alone, calibrated on target              0.676    0.218   0.010
+    P1 monitor, own features                       0.845    0.159   0.024
+    P1 monitor, own + context                      0.866    0.148   0.020
+    in-domain ceiling, own + context, refit        0.866    0.148   0.020
+      camera-only (n=13941): P1 own+context AUC 0.772, ceiling 0.772, score alone 0.590
+      lidar-only (n=20800): P1 own+context AUC 0.893, ceiling 0.893, score alone 0.715
+
+  P2 FCOS3D x Megvii @0.30  [TRANSFER, no refit]  held-out scenes, n = 31945, real 57.0%
+    estimator                                        AUC    Brier     ECE
+    score alone, calibrated on target              0.696    0.216   0.006
+    P1 monitor, own features                       0.858    0.152   0.043
+    P1 monitor, own + context                      0.872    0.144   0.031
+    in-domain ceiling, own + context, refit        0.877    0.139   0.009
+      camera-only (n=4580): P1 own+context AUC 0.714, ceiling 0.752, score alone 0.526
+      lidar-only (n=27365): P1 own+context AUC 0.885, ceiling 0.888, score alone 0.710
+
+  P3 Mapillary x PointPillars @0.30  [TRANSFER, no refit]  held-out scenes, n = 35066, real 48.0%
+    estimator                                        AUC    Brier     ECE
+    score alone, calibrated on target              0.693    0.221   0.012
+    P1 monitor, own features                       0.710    0.232   0.132
+    P1 monitor, own + context                      0.750    0.214   0.099
+    in-domain ceiling, own + context, refit        0.822    0.172   0.020
+      camera-only (n=18172): P1 own+context AUC 0.788, ceiling 0.801, score alone 0.656
+      lidar-only (n=16894): P1 own+context AUC 0.780, ceiling 0.843, score alone 0.736
+
+  P4 Mapillary x Megvii @0.50  [TRANSFER, no refit]  held-out scenes, n = 17485, real 76.9%
+    estimator                                        AUC    Brier     ECE
+    score alone, calibrated on target              0.649    0.169   0.005
+    P1 monitor, own features                       0.821    0.134   0.066
+    P1 monitor, own + context                      0.818    0.135   0.075
+    in-domain ceiling, own + context, refit        0.859    0.109   0.015
+      camera-only (n=6928): P1 own+context AUC 0.755, ceiling 0.846, score alone 0.545
+      lidar-only (n=10557): P1 own+context AUC 0.838, ceiling 0.855, score alone 0.676
+
+--------------------------------------------------------------------------------------------
+NON-CLAIMS: released detector outputs on the public nuScenes validation split, retained as
+proposed. Transfer is across detector pairs that share the nuScenes training split and, in
+P2 and P3, share one channel with P1. One boosted model class, no tuning. Descriptive, not a
+safety determination. No detector is executed. No released 1.2 byte is involved.

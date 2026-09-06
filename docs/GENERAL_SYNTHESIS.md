@@ -127,7 +127,10 @@ Carried to the driving channels, the coupling-aware form is not readable at the 
 transferred monitor is worse than chance ([AE](../llm-generalization/RESULT_AE_LEAVE_ONE_BENCHMARK_OUT.md)):
 fit per task, read across channels. In the jury's own quantity, four sensors provide the
 joint-failure protection of 2.10 [2.08, 2.13] independent channels
-([AF](RESULT_AF_SENSOR_JURY.md)).
+([AF](RESULT_AF_SENSOR_JURY.md)). The object-level sensor monitor obeys the same transfer law as
+the LLM monitor: fitted once, it reads a changed camera almost losslessly and not a changed lidar
+or operating point ([AG](RESULT_AG_SENSOR_MONITOR_TRANSFER.md)); portable across like channels,
+calibrated for the semantics it reads.
 
 ## What is proven, and what is open
 

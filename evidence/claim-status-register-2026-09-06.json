@@ -1,7 +1,7 @@
 {
   "schema_id": "https://schemas.reiyah.invalid/gate-b/1.4/claim-status-register.schema.json",
   "artifact_id": "reiyah.artifact.gate-b-claim-status-register-2026-09-06",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "predecessor": {
@@ -945,6 +945,26 @@
         "exact_proposition": "Released nuScenes validation predictions for Mapillary, FCOS3D, Megvii and PointPillars, each match set gated at published mAP; scene table from the pinned meta.tgz."
       },
       "notes": "Full jury 2.10 [2.08, 2.13] of 4; same-kind pairs 1.43 to 1.45 of 2, cross-kind pairs 1.52 to 1.64 of 2, marginal at one operating point. A bootstrap defect in the first draft (whole-instance resampling under the eligible mask) is recorded in the tool and corrected."
+    },
+    {
+      "claim_id": "reiyah.gate-b.claim.sensor-monitor-pair-transfer",
+      "estimand": "Held-out AUC, Brier and ECE of the boosted object-level realness monitor fitted once on Mapillary x Megvii at 0.30 and read without refit on FCOS3D x Megvii, Mapillary x PointPillars, and Mapillary x Megvii at 0.50, against the target-calibrated score-alone baseline and the in-domain refit ceiling.",
+      "status": "measured",
+      "current_scientific_use": "permitted",
+      "unit": "detection_box",
+      "lineage": {
+        "first_stated_in": "docs/RESULT_AG_SENSOR_MONITOR_TRANSFER.md",
+        "superseded_by": null
+      },
+      "retained_transcripts": [
+        "evidence/measurement/result_ag.txt"
+      ],
+      "source_identity": {
+        "source_id": "nuscenes-val-released-predictions",
+        "custody_state": "primary_pointer_only",
+        "exact_proposition": "Released nuScenes validation predictions for four detectors, each match set gated at published mAP; row construction copied from Result AA and self-checked to its exact counts."
+      },
+      "notes": "Transfer loss 0.005 AUC to a changed camera, 0.072 with broken calibration to a changed lidar, 0.041 to a changed operating point. All configurations share the nuScenes training split and the transfer pairs share one channel with the primary; within-ecosystem transfer only. Same law as llm-monitor-transfer: portable across like channels, calibrated for the semantics read."
     }
   ]
 }

@@ -196,7 +196,10 @@ AUC outside the fold spread on three of four configurations and inside it on one
 null stands. The conjecture is restated: readable at the object level with a non-linear monitor,
 not at the scene level ([`RESULT_AD_NONLINEAR_SENSOR_MONITOR.md`](RESULT_AD_NONLINEAR_SENSOR_MONITOR.md)).
 In the jury quantity, four sensors give 2.10 [2.08, 2.13] independent channels
-([`RESULT_AF_SENSOR_JURY.md`](RESULT_AF_SENSOR_JURY.md)).
+([`RESULT_AF_SENSOR_JURY.md`](RESULT_AF_SENSOR_JURY.md)). Fitted once on the primary pair, the
+object-level monitor transfers to a changed camera (loss 0.005 AUC) and not to a changed lidar
+(0.072, calibration broken) or operating point (0.041): the same transfer law as the LLM monitor
+([`RESULT_AG_SENSOR_MONITOR_TRANSFER.md`](RESULT_AG_SENSOR_MONITOR_TRANSFER.md)).
 
 ## 5. The law, and the headline coefficients
 
@@ -297,7 +300,8 @@ with an engaged human; the LLM monitor is validated on two benchmarks and one ju
    real frontier.
 3. Retain the BDD-A terms once the portal is reachable; DCPT and 100-Car custody is retained and
    verified (section 14), the leaderboard archive states no licence.
-4. Done this session: X, X2, Y, Z, AA, AB, AC, AD, AE, AF, H7, the Gate B check. Open and
+4. Done this session: X, X2, Y, Z, AA, AB, AC, AD, AE, AF, AG, H7, the Gate B check, the red team
+   for the newer threads. Open and
    scoped: a monitor on real driving channel outputs beyond the public benchmark; the H5 cross-agent
    coefficient with a clustered band (H6 has one); a second dataset for the shared-training-data
    threat.
@@ -393,6 +397,8 @@ was deleted and no check was weakened.
 15. **Red team for the newer threads** consolidated in
    [`THREATS_HUMAN_AND_LLM_THREADS.md`](THREATS_HUMAN_AND_LLM_THREADS.md), sixteen threats marked
    answered, stated, or open, linked from the review request.
+16. **Result AG added** (register `0.2.8`): the sensor monitor's transfer across pairs follows the
+   score semantics of the changed channel, the same law as the LLM monitor.
 2. **The statement that no model is executed in the analysis lane was false.** H5 and H6 execute
    pretrained torchvision detectors on BDD-A frames; Result V fits a logistic-regression monitor.
    Section 1 and the thread READMEs now say exactly what runs.

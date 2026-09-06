@@ -1,7 +1,7 @@
 {
   "manifest_kind": "gate-b-replay-manifest",
   "artifact_id": "reiyah.gate-b.replay-manifest",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "lifecycle_status": "proposed",
   "created_on": "2026-09-06",
   "note": "Rows with replay_class argv_unrecorded_historical are retained transcripts whose exact command line was not recorded per transcript when they were produced; their digests are checked, they are never replayed by this tool, and adding an argv is a later, append-only step.",
@@ -498,6 +498,21 @@
         "docs/RESULT_AF_SENSOR_JURY.md"
       ],
       "timeout_s": 7200,
+      "stderr_merged": true
+    },
+    {
+      "transcript": "evidence/measurement/result_ag.txt",
+      "sha256": "sha256:6861abfeb88c7148a31f94982a680131ef0c9c5a4eff8e53b2d076a14261d6ac",
+      "tool": "tools/measure/result_ag_sensor_monitor_transfer.py",
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "tools/measure/result_ag_sensor_monitor_transfer.py"
+      ],
+      "replay_class": "local_deterministic",
+      "results": [
+        "docs/RESULT_AG_SENSOR_MONITOR_TRANSFER.md"
+      ],
+      "timeout_s": 9000,
       "stderr_merged": true
     }
   ]
