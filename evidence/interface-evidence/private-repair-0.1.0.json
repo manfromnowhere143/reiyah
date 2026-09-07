@@ -1,0 +1,57 @@
+{
+  "artifact_id": "reiyah.console-private-repair.0.1.0",
+  "changes": [
+    {
+      "after_sha256": "d322d000b0020ac1edf1c59f43644adae9b8017b16a584f5bd700b95edad5d8a",
+      "before_sha256": "3092103d658ed1b2120b72fb3e436423e881bd83e3c3b3f6e825237ae3ae3659",
+      "path": "src/lib/gateb.ts"
+    },
+    {
+      "after_sha256": "2e8e0995803ce175529948dbf3da8c5a212adcb2eae7e50176243be1a754736c",
+      "before_sha256": "57284c49907e988bb823de8a6cb3181d0e71708a19beaedba928f366cd542364",
+      "path": "src/stations/Measurement.tsx"
+    },
+    {
+      "after_sha256": "2aa7aabbb95ab27772dc65bccf220c3ffae916db14f4de1085c70622d0bc5e41",
+      "before_sha256": "c4be89a10307623cca231cab2ab9135c95aabf8fa08053f96912594b01b6953b",
+      "path": "src/stations/SameHazard.tsx"
+    },
+    {
+      "after_sha256": "598550e878443dfa405922e899700fc3dcfc0a80715f0fd6c38ce2db67ef3cb0",
+      "before_sha256": "48b2a94091180650cbbee5c357dfbc19896d95920c2b58b9baedbc3a571ee318",
+      "path": "src/stations/Monitor.tsx"
+    }
+  ],
+  "console_source_head": "b316d4bf618cc0e6fbf3b485a23fe94d876623d2",
+  "limits": [
+    "Private preparation only; owner source, index and head untouched",
+    "Not a hermetic build or browser test"
+  ],
+  "owner_application": "not_applied",
+  "patch_bytes": 8860,
+  "patch_replay": "four changed files reproduce exact private candidate bytes",
+  "patch_sha256": "2dff9f7bd74c8e60d55bde5e9eaa4c42be753982baaf27c3801e5ffd6e93c878",
+  "scope": "Private review patch only: Gate B digest-before-parse, two register consumers, convergence/header checks, missing comparison remains unknown",
+  "status": "proposed",
+  "typecheck": {
+    "argv": [
+      "node",
+      "/Users/danielwahnich/workspace/reiyah-console/node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "--project",
+      "/Users/danielwahnich/.codex/reports/reiyah/interface-evidence-2026-09-07/private/console-repair/tsconfig.json"
+    ],
+    "elapsed_seconds": 2.078271083999425,
+    "exit_code": 0,
+    "scope": "Private four-file repair over captured source; read-only existing dependencies; noEmit, no build, no service",
+    "started_utc": "2026-09-07T10:08:45.815480+00:00",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "unresolved_probe_families": [
+    "F02",
+    "F03",
+    "F04"
+  ],
+  "version": "0.1.0"
+}

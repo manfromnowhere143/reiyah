@@ -1,18 +1,18 @@
 # Current research navigation, 2026-09-07
 
-Latest checkpoint: `research/2026-09-07-reference-identification`, extending
-`2ae14e78e63fe674fcfd216d9dbb67765c2adff2`. Read the
-[identification findings](REFERENCE_IDENTIFICATION_FINDINGS_2026-09-07.md),
-[clock census](OPPORTUNITY_CLOCK_AUDIT_2026-09-07.md) and
-[closeout](REFERENCE_IDENTIFICATION_CLOSEOUT_2026-09-07.md). Exact synthetic worlds have
-identical observed detector/reference distributions and true coefficients 1 and 25/9.
-The metadata-only census supplies 4,682 candidate anchors across 150 scenes; it supplies no
-physical coverage guarantee or online availability times. Fourteen new controls pass.
-The proposed independent opportunity pilot has not been sampled or adjudicated. The original
-240-case detection study remains frozen, with no independent human judgments supplied.
-All inherited experiments, release operands and other sessions' work remain preserved.
-Operator acceptance remains unaccepted. The M4 bound and reference-noise corrections still
-apply; the present work does not turn those corrections into a safety certificate.
+Latest checkpoint: `research/2026-09-07-interface-evidence`, extending
+`9aceb3d1d39b27b54d1fdfe6f91a3828b2cb50c5`. Read the
+[interface findings](INTERFACE_EVIDENCE_REVIEW_2026-09-07.md) and
+[closeout](INTERFACE_EVIDENCE_CLOSEOUT_2026-09-07.md). Captured console consumers accept
+several mismatched or incomplete records; a private four-file repair closes the tested
+Gate B digest, register-selection and unknown-comparison paths. Report, path-addressed
+record and receipt-version failures remain explicit. The separate owner worktrees are
+unchanged. No new measurement of physical truth or acceptance is implied.
+
+The [reference-identification checkpoint](REFERENCE_IDENTIFICATION_CLOSEOUT_2026-09-07.md)
+still supplies exact ambiguity witnesses and the metadata clock census. Its proposed
+opportunity pilot remains unselected, and the original 240-case detection study still
+awaits independent human judgments. All prior corrections and frozen studies remain intact.
 
 Read [the research continuation and stopping point](RESEARCH_CONTINUATION_2026-09-07.md)
 first for this local research branch. It extends the frozen reference-study commit

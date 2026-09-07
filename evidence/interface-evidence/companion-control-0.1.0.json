@@ -1,0 +1,50 @@
+{
+  "artifact_id": "reiyah.companion-matcher-control.0.1.0",
+  "status": "completed",
+  "synthetic_fixture": true,
+  "empty_table_expected_map": 0,
+  "deliberately_wrong_target_map": 50,
+  "scope": "Known failure mode, already corrected in the research lineage; not a new empirical defect",
+  "cases": [
+    {
+      "variant": "historical_companion",
+      "source_sha256": "60f1c5e098579252fe5f19059eb861a71ffa2029c07c40a395206a78de70c8fb",
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "/Users/danielwahnich/.codex/reports/reiyah/interface-evidence-2026-09-07/private/reiyah-measure/tools/match.py",
+        "/Users/danielwahnich/.codex/reports/reiyah/interface-evidence-2026-09-07/private/measure-matcher-control/gt.json",
+        "/Users/danielwahnich/.codex/reports/reiyah/interface-evidence-2026-09-07/private/measure-matcher-control/predictions.json",
+        "/Users/danielwahnich/.codex/reports/reiyah/interface-evidence-2026-09-07/private/measure-matcher-control/historical_companion.json",
+        "--validate",
+        "50.0"
+      ],
+      "exit_code": 0,
+      "artifact_written": true,
+      "declared_validation_failed": true,
+      "elapsed_seconds": 0.10079954192042351,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "022f71c16fa273abdfb88f4a55c273f7b6ca68752e94a30f01b5ea783c781936"
+    },
+    {
+      "variant": "research_corrected",
+      "source_sha256": "d77ec99ddf93870d7948b18621d184c79a26589def18dbc6d59ba44f1c65ff05",
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "/Users/danielwahnich/.codex/reports/reiyah/interface-evidence-2026-09-07/baseline/tools/measure/match.py",
+        "/Users/danielwahnich/.codex/reports/reiyah/interface-evidence-2026-09-07/private/measure-matcher-control/gt.json",
+        "/Users/danielwahnich/.codex/reports/reiyah/interface-evidence-2026-09-07/private/measure-matcher-control/predictions.json",
+        "/Users/danielwahnich/.codex/reports/reiyah/interface-evidence-2026-09-07/private/measure-matcher-control/research_corrected.json",
+        "--validate",
+        "50.0"
+      ],
+      "exit_code": 1,
+      "artifact_written": false,
+      "declared_validation_failed": true,
+      "elapsed_seconds": 0.06184662505984306,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "6c627a53610e5485a6ae6652e249c0330e4c6ceb2d7ebba657f823d9739ba9ec"
+    }
+  ]
+}

@@ -73,6 +73,12 @@ time anchors across 150 scenes, with explicit capture offsets and unknown online
 It prepares an [independent opportunity study](docs/INDEPENDENT_OPPORTUNITY_STUDY_DESIGN_2026-09-07.md)
 whose sampling frame includes times when every object-level observer could be silent.
 
+The [interface audit](docs/INTERFACE_EVIDENCE_REVIEW_2026-09-07.md) traces how results
+reach the research console. Isolated source probes find that a displayed digest does not
+always bind the displayed value, and that missing comparisons can become zero. A private
+repair and a [single-bundle consumer design](docs/MEASUREMENT_CONSUMER_DESIGN_2026-09-07.md)
+make the required correction reviewable without changing the active UI worktree.
+
 The [developer-access investigation](docs/DEVELOPER_ACCESS_RESEARCH_2026-09-07.md) compares
 existing evaluation products and the July 2026 MCP specification. Free access is a proposed
 adoption strategy; an external engineer must first obtain independently confirmed value.
@@ -85,8 +91,10 @@ The [developer-value checkpoint](docs/DEVELOPER_VALUE_CLOSEOUT_2026-09-07.md) re
 validation scope and the preceding local delivery boundary. The
 [cache-policy checkpoint](docs/SELECTION_POLICY_CLOSEOUT_2026-09-07.md) records the selection
 audit and reference-noise correction. The [M4 checkpoint](docs/M4_BOUND_CLOSEOUT_2026-09-07.md)
-records corrected mathematical bounds. The [latest checkpoint](docs/REFERENCE_IDENTIFICATION_CLOSEOUT_2026-09-07.md)
-records exact ambiguity witnesses, the clock census and the next physical study design. The [vision review](docs/VISION_REVIEW_2026-09-07.md)
+records corrected mathematical bounds. The [identification checkpoint](docs/REFERENCE_IDENTIFICATION_CLOSEOUT_2026-09-07.md)
+records exact ambiguity witnesses, the clock census and the next physical study design. The
+[latest checkpoint](docs/INTERFACE_EVIDENCE_CLOSEOUT_2026-09-07.md) records consumer failure
+probes and a privately tested repair. The [vision review](docs/VISION_REVIEW_2026-09-07.md)
 separates the desired company scale from the evidence needed to justify a product.
 The next scientific observation is independent blinded review of the prepared cases. No human
 judgments or physical false-positive rates have been supplied by the new tools.
@@ -125,6 +133,8 @@ flowchart TB
     IS --> R
     CT["Official scene and sample clocks; no object-output selection"] --> CW["Candidate time anchors, capture offsets and explicit availability unknowns"]
     CW --> R
+    R --> IC["Display and receipt must bind the same interpreted result"]
+    IC --> IP["Consumer probes: private repair tested; broader snapshot gaps retained"]
     A --> P2["Frozen probability sample and original sensor evidence"]
     P2 --> R2["Blinded independent review: pending"]
     R2 --> U2["Unresolved cases retained in support intervals"]
