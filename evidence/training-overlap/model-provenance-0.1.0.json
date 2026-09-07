@@ -1,0 +1,44 @@
+{
+  "artifact_id": "reiyah.training-model-provenance.0.1.0",
+  "checkpoint_identity": [
+    {
+      "bytes": 220360111,
+      "matches_official_download": true,
+      "model": "fcos3d",
+      "sha256": "35aaaad0467f0758e77e192c4c320707c1881a0efbe653150d759b65eaec71c3"
+    },
+    {
+      "bytes": 35917497,
+      "matches_official_download": true,
+      "model": "centerpoint",
+      "sha256": "358fbe3b39a235b9c505bed31f2ee9f2b77ae7c58503ab4a09ab643a59f230f7"
+    }
+  ],
+  "experimental_implications": [
+    "Existing nuScenes detector weights are not eligible initialization for a test of disjoint nuScenes training histories",
+    "Common upstream backbone pretraining must be explicitly bounded; it does not establish wholly independent model histories",
+    "Partition annotation rows, derived info caches, augmentation object databases and temporal sweep references together; a train-scene split alone is insufficient",
+    "Pin and verify the fresh execution environment; the inspected historical invocation used the mutable tag uniad:latest"
+  ],
+  "lifecycle_status": "exploratory",
+  "recipe_observations": {
+    "centerpoint_augmentation": "ObjectSample uses db_sampler with nuscenes_dbinfos_train.pkl",
+    "centerpoint_sweep_loader": "LoadPointsFromMultiSweeps, sweeps_num=9 in the selected 0.075-voxel recipe",
+    "fcos3d_base_pretrained": "open-mmlab://detectron2/resnet101_caffe",
+    "fcos3d_finetune_load_from": "work_dirs/fcos3d_nus/latest.pth"
+  },
+  "reference_relative_dependence_effect": null,
+  "remaining_unknowns": [
+    "Exact original training sample lineage beyond upstream recipe declarations",
+    "Independent pretraining exposure audit",
+    "Fresh container, dependency and converter identity and successful training/geometry smoke test",
+    "Prospective calibration logs, common step budget, initialization repetitions and minimum useful effect"
+  ],
+  "source_ledger": "model-source-ledger-0.1.0.json",
+  "source_ledger_sha256": "2877b1a9c7ffd53b44f39ce8017835e5e2c1f8cc177d6945afca566a21b3776a",
+  "training_intervention": "not_started",
+  "upstream_commit": "f1107977dfd26155fc1f83779ee6535d2468f449",
+  "upstream_commit_date": "2021-10-08T08:07:15Z",
+  "upstream_release": "MMDetection3D v0.17.1",
+  "version": "0.1.0"
+}

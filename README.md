@@ -39,6 +39,16 @@ reproduce their private predictions exactly. The
 [next experiment](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) separates
 shared detector training from dataset transfer; it has not been run.
 
+## Training data inventory completed
+
+The [training-input census](docs/TRAINING_INPUT_FINDINGS_2026-09-07.md) finds all
+536,780 requested camera/lidar files across the official training and validation
+splits. A separate directory enumeration agrees on every filename and size.
+Existing checkpoints match official downloads, while their recipes identify
+shared detector initialization and object-sampling databases that must be
+controlled before a disjoint-training comparison. Sensor decoding and new
+detector training remain outstanding.
+
 ## Reference study now implemented
 
 The [reference-adjudication study](docs/REFERENCE_ADJUDICATION_STUDY_2026-09-07.md) freezes

@@ -1,0 +1,231 @@
+{
+  "artifact_id": "reiyah.training-input-execution.0.1.0",
+  "cloud_closeout": {
+    "all_task_resources_removed": true,
+    "basis": "publisher-performed API readback",
+    "observation_utc": "2026-09-07T16:02:16.030836+00:00",
+    "original_disk_identities_and_attachments_preserved": true,
+    "original_instance_state": "TERMINATED",
+    "private_readback_sha256": "c81ce8bb3e8722cbc8c318d88ff2c662124939706515f988607dd291a891d115"
+  },
+  "gate_a_operator_acceptance": "unaccepted",
+  "gpu_start": {
+    "operation_error_code": "ZONE_RESOURCE_POOL_EXHAUSTED_WITH_DETAILS",
+    "operation_status": "DONE",
+    "started": false,
+    "submission_exit_code": 0
+  },
+  "independent_human_reference_judgments": 0,
+  "inherited_tool_tests": {
+    "failed": 0,
+    "passed": 93
+  },
+  "lifecycle_status": "exploratory",
+  "new_detector_fits": 0,
+  "phases": [
+    {
+      "elapsed_seconds": 141.09196158405393,
+      "ended_utc": "2026-09-07T15:43:59.509947+00:00",
+      "exit_code": 0,
+      "phase": "prepare-sensor-request-2",
+      "receipt_sha256": "af377b17147965ce620d30db3dc9b67486a82a93fea53335f81c2130d44b4fd7",
+      "spec_sha256": "73e5db01e77e9b7d6c8c5f7b8d8c8cb123762e816c2aac99bdeeb8d65636ee01",
+      "started_utc": "2026-09-07T15:41:38.417938+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 114,
+          "sha256": "61f10c13f5cfb3977b5a4b59f3ffe2a7fccbd3a10c388ef2acb6510933098361"
+        },
+        "stdout.txt": {
+          "bytes": 1050,
+          "sha256": "ae03427cd106b4bf498f349fa13be4452d1d933f507797b10fd482d0a0e050d5"
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 89.50438333291095,
+      "ended_utc": "2026-09-07T15:52:47.207095+00:00",
+      "exit_code": 0,
+      "phase": "scan-sensors-1",
+      "receipt_sha256": "24f5cebac986fe56b27f0233f3ffeaac0da971b1ecf58b00564399cb1c49da71",
+      "spec_sha256": "93b2c8a5f0ebd6483527d7d9fa628691ec4ae07e5183cea8f0e379bf56dcf379",
+      "started_utc": "2026-09-07T15:51:17.702648+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 202,
+          "sha256": "5444cd70365e9587f6e2d566306f73340b6fd59461883752c13d03c35bc9bafb"
+        },
+        "stdout.txt": {
+          "bytes": 3242,
+          "sha256": "013056bf7b71d06ddaebc3aceddca3215de31cbccf0ed1b179040783d90b62c4"
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 22.417407708941028,
+      "ended_utc": "2026-09-07T15:54:55.429679+00:00",
+      "exit_code": 0,
+      "phase": "recount-sensor-files-1",
+      "receipt_sha256": "ded8e89c00e0896045ffb08fddd2420f86fbdfb1d1024e17b56ad07c082b172a",
+      "spec_sha256": "23b0efba1a84badc84a33c7baec6307bde381dc295b50fc585e0dffa2ff6c75a",
+      "started_utc": "2026-09-07T15:54:33.012162+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 202,
+          "sha256": "5444cd70365e9587f6e2d566306f73340b6fd59461883752c13d03c35bc9bafb"
+        },
+        "stdout.txt": {
+          "bytes": 1246,
+          "sha256": "1cad153a6da5ef1a8dbdee3d05817093092324131a357ff2558326541c9fd5c5"
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 21.046493917005137,
+      "ended_utc": "2026-09-07T15:57:09.471086+00:00",
+      "exit_code": 0,
+      "phase": "source-table-digests-1",
+      "receipt_sha256": "92afc6a07d1ca9102199c857d82d256b94302434f3869f77bfc71581a13aa9cd",
+      "spec_sha256": "01790d6608fa722debdfb43d1c268c6679c531766f7652493a04f8076bf6ba31",
+      "started_utc": "2026-09-07T15:56:48.424490+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 202,
+          "sha256": "5444cd70365e9587f6e2d566306f73340b6fd59461883752c13d03c35bc9bafb"
+        },
+        "stdout.txt": {
+          "bytes": 1161,
+          "sha256": "b2bcbcdec5856d35d30a8698ec20cb5c5ba8ea083c30ee6a9675a3d134db7844"
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 3.661898666061461,
+      "ended_utc": "2026-09-07T15:58:15.089964+00:00",
+      "exit_code": 0,
+      "phase": "local-table-digests-1",
+      "receipt_sha256": "e59506c3e6aba13e89c95c9efe3431269bfe5ba9d97c66a5637d3df293e90c72",
+      "spec_sha256": "165113e6f6e49a17e712921893f71a58d8adf457c3fd72c1096902beac01805e",
+      "started_utc": "2026-09-07T15:58:11.427965+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 814,
+          "sha256": "a5f637b4a0ce3b7d821524e8e9876619c49c5b8e6db2a1f97d7d85ac1c2bdfca"
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 1.4924198749940842,
+      "ended_utc": "2026-09-07T15:52:04.732387+00:00",
+      "exit_code": 0,
+      "phase": "fetch-model-provenance-1",
+      "receipt_sha256": "005402e019aa3db7f4d9cafab2df1fd3d321d749b9d75eec07d0ab6a5db45854",
+      "spec_sha256": "c4d6ffa30b09880ab954e5b611d7e91304ea8d25462d39b6ab48a978f1b8aaeb",
+      "started_utc": "2026-09-07T15:52:03.239877+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 7914,
+          "sha256": "569cec5b51b0c93fb66c68e7b379424a05ff7db32d42f702aee349793fcbac33"
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 132.65423983405344,
+      "ended_utc": "2026-09-07T15:54:48.646337+00:00",
+      "exit_code": 0,
+      "phase": "fetch-checkpoint-bytes-1",
+      "receipt_sha256": "298a622d66c5533058667b0f4503e9d2dee1601053e016cf090c39b7b926cd29",
+      "spec_sha256": "0f3b247ff686a52b0611a774733ad0f34f96cd1a8f5cc471d6a45ddde541e74d",
+      "started_utc": "2026-09-07T15:52:35.992010+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 2056,
+          "sha256": "c6953609bcb4017c4a8d1e31406ff05fbf618547991ea4978cdfb9532cb42967"
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 2.8422490840312093,
+      "ended_utc": "2026-09-07T15:55:42.791577+00:00",
+      "exit_code": 0,
+      "phase": "trace-model-configs-1",
+      "receipt_sha256": "a7e2c04dea7cc3409619d1e1c96820459a4a6f4a7bc5e38b4032b798830e53ee",
+      "spec_sha256": "5093805e4fde3d25ce78598a5f7cecd9039320e5193fc8f47ed5b3a847f8705c",
+      "started_utc": "2026-09-07T15:55:39.949226+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 8174,
+          "sha256": "babb3bf7a051653034fb4b789c2709024317c71e63f026a50684b552f4462424"
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 1.9033602079143748,
+      "ended_utc": "2026-09-07T16:07:27.654471+00:00",
+      "exit_code": 0,
+      "phase": "research-tests-1",
+      "receipt_sha256": "1bf9022f6500a2ff580a67a57c25a63f6af16a9fdfc66ced3b05e2b516f95fe7",
+      "spec_sha256": "95229257da244b51d79230aef30086f38fa6f7f366b6fb90eef0f4a8182b6110",
+      "started_utc": "2026-09-07T16:07:25.750967+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 8186,
+          "sha256": "79348ed2d495dbc4dc041ad9250390c330de4348fc3674ce8ac27aa3f6ee5632"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "elapsed_seconds": 6.129245582967997,
+      "ended_utc": "2026-09-07T16:07:31.880370+00:00",
+      "exit_code": 0,
+      "phase": "tool-tests-1",
+      "receipt_sha256": "3eb4ed500a87df739317ee621aa959320f4415e1ede8cb5abef2b1b82fcabc8a",
+      "spec_sha256": "8fe8323fdc406db00cf6ac91ef31c1664a28ce9e5958f28f4dcbd915503d0e27",
+      "started_utc": "2026-09-07T16:07:25.751007+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 16468,
+          "sha256": "9a462a5f2a51597d21feeec6984e1f9924583f745bd0f0c93286ecde8f9661b0"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ],
+  "private_custody_root": "~/.codex/reports/reiyah/training-overlap-2026-09-07/",
+  "research_tests": {
+    "failed": 0,
+    "passed": 56
+  },
+  "sources": {
+    "private/hash_source_tables.py": "f5828c7357933fd3b7b920b6fbfb43f44442409c0351e303533d8d56ab540457",
+    "private/recount_training_files.py": "3b7d9e9c7502914589c5808c185183f449e1f7401d34844fc4c2b71f96516180",
+    "private/trace_model_configs.py": "365fa11d69c2a07c40982ee5ab9e4073101b6b6d15d64f5c6c7e4f0fc2b2a9aa",
+    "tests/test_training_sensor_inventory.py": "d9eb230def7ac613c932d93c94680cf74e2d720d74860e092b19ffcaff7a5237",
+    "tools/measure/inventory_training_sensors.py": "1b6e1664cf828ce400503ad569941efd0789d9a73c7a8543023da580c60e63fa"
+  },
+  "validation_scope": "Research adapter/tests and Gate B development consistency; no Gate A release replay, historical full replay or independent scientific review",
+  "version": "0.1.0"
+}

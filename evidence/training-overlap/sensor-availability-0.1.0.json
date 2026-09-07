@@ -1,0 +1,213 @@
+{
+  "artifact_id": "reiyah.training-sensor-availability-public.0.1.0",
+  "asset_count": 536780,
+  "by_channel": [
+    {
+      "channel": "CAM_BACK",
+      "kind": "keyframe",
+      "split": "train",
+      "states": {
+        "present_nonempty": 28130
+      }
+    },
+    {
+      "channel": "CAM_BACK_LEFT",
+      "kind": "keyframe",
+      "split": "train",
+      "states": {
+        "present_nonempty": 28130
+      }
+    },
+    {
+      "channel": "CAM_BACK_RIGHT",
+      "kind": "keyframe",
+      "split": "train",
+      "states": {
+        "present_nonempty": 28130
+      }
+    },
+    {
+      "channel": "CAM_FRONT",
+      "kind": "keyframe",
+      "split": "train",
+      "states": {
+        "present_nonempty": 28130
+      }
+    },
+    {
+      "channel": "CAM_FRONT_LEFT",
+      "kind": "keyframe",
+      "split": "train",
+      "states": {
+        "present_nonempty": 28130
+      }
+    },
+    {
+      "channel": "CAM_FRONT_RIGHT",
+      "kind": "keyframe",
+      "split": "train",
+      "states": {
+        "present_nonempty": 28130
+      }
+    },
+    {
+      "channel": "LIDAR_TOP",
+      "kind": "keyframe",
+      "split": "train",
+      "states": {
+        "present_nonempty": 28130
+      }
+    },
+    {
+      "channel": "LIDAR_TOP",
+      "kind": "sweep",
+      "split": "train",
+      "states": {
+        "present_nonempty": 245255
+      }
+    },
+    {
+      "channel": "CAM_BACK",
+      "kind": "keyframe",
+      "split": "val",
+      "states": {
+        "present_nonempty": 6019
+      }
+    },
+    {
+      "channel": "CAM_BACK_LEFT",
+      "kind": "keyframe",
+      "split": "val",
+      "states": {
+        "present_nonempty": 6019
+      }
+    },
+    {
+      "channel": "CAM_BACK_RIGHT",
+      "kind": "keyframe",
+      "split": "val",
+      "states": {
+        "present_nonempty": 6019
+      }
+    },
+    {
+      "channel": "CAM_FRONT",
+      "kind": "keyframe",
+      "split": "val",
+      "states": {
+        "present_nonempty": 6019
+      }
+    },
+    {
+      "channel": "CAM_FRONT_LEFT",
+      "kind": "keyframe",
+      "split": "val",
+      "states": {
+        "present_nonempty": 6019
+      }
+    },
+    {
+      "channel": "CAM_FRONT_RIGHT",
+      "kind": "keyframe",
+      "split": "val",
+      "states": {
+        "present_nonempty": 6019
+      }
+    },
+    {
+      "channel": "LIDAR_TOP",
+      "kind": "keyframe",
+      "split": "val",
+      "states": {
+        "present_nonempty": 6019
+      }
+    },
+    {
+      "channel": "LIDAR_TOP",
+      "kind": "sweep",
+      "split": "val",
+      "states": {
+        "present_nonempty": 52482
+      }
+    }
+  ],
+  "frames": {
+    "train": {
+      "all_seven_present_nonempty": 28130
+    },
+    "val": {
+      "all_seven_present_nonempty": 6019
+    }
+  },
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "File size/metadata only; payload content, readability, calibration, decoding and provenance not validated",
+    "Multiple nonempty copies are unresolved without content comparison; per-root states remain private",
+    "Archives and roots outside the declared scan are not searched",
+    "Lidar sweeps are grouped by metadata sample association, not a particular loader's temporal support",
+    "Observation assumes immutable roots; not a race-resistant scanner for changing filesystems"
+  ],
+  "model_training_readiness": "not_established",
+  "observation_sha256": "61c82f3b61da298df53cd4024f84d7f12a2843fa81e77b95fa0def068528f1f6",
+  "observed_utc": "2026-09-07T15:52:47.207095+00:00",
+  "private_report_sha256": "3816a1f25b4dc071ce1244c7c5c1e709244fcd3f31f348795ac5d6f82aa83bfc",
+  "public_projection": "Per-log identifiers omitted; complete aggregate file states preserved",
+  "request": {
+    "artifact_id": "reiyah.training-sensor-request.0.1.0",
+    "asset_count": 536780,
+    "channels": [
+      "CAM_BACK",
+      "CAM_BACK_LEFT",
+      "CAM_BACK_RIGHT",
+      "CAM_FRONT",
+      "CAM_FRONT_LEFT",
+      "CAM_FRONT_RIGHT",
+      "LIDAR_TOP"
+    ],
+    "inputs": {
+      "array_reader_sha256": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+      "builder_sha256": "1b6e1664cf828ce400503ad569941efd0789d9a73c7a8543023da580c60e63fa",
+      "metadata_reader_sha256": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+      "metadata_sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b",
+      "split_reader_sha256": "35e6a37eebb2c0b8b3683a2954099c58d559054b50a92a31dca8786b52cebce5",
+      "splits_sha256": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd"
+    },
+    "sample_counts": {
+      "train": 28130,
+      "val": 6019
+    },
+    "scene_counts": {
+      "train": 700,
+      "val": 150
+    },
+    "scope": "six camera keyframes and LIDAR_TOP keyframes/sweeps assigned to official train/val samples",
+    "version": "0.1.0"
+  },
+  "request_sha256": "588a6fae1577ea378417885c46bb0b6fbce848b986a0a8dfd5ac3ac98a1585c7",
+  "root_count": 1,
+  "scanner_sha256": "1b6e1664cf828ce400503ad569941efd0789d9a73c7a8543023da580c60e63fa",
+  "sensor_payload_validity": "not_checked",
+  "single_present_copy_bytes": [
+    {
+      "bytes": 44967149603,
+      "kind": "keyframe",
+      "split": "train"
+    },
+    {
+      "bytes": 170312567040,
+      "kind": "sweep",
+      "split": "train"
+    },
+    {
+      "bytes": 9533714090,
+      "kind": "keyframe",
+      "split": "val"
+    },
+    {
+      "bytes": 36445156480,
+      "kind": "sweep",
+      "split": "val"
+    }
+  ],
+  "version": "0.1.0"
+}

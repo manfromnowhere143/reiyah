@@ -2,9 +2,16 @@
 
 Document ID: `reiyah.training-overlap-next-experiment.2026-09-07`
 
-Version: `0.1.0`
+Version: `0.1.1`
 
 Lifecycle status: `proposed`
+
+Availability update: the [completed input census](TRAINING_INPUT_FINDINGS_2026-09-07.md)
+finds all requested files for every proposed partition. It also identifies
+pretrained-detector reuse and the CenterPoint object database as training
+exposure routes. File contents, partition-contained derived inputs and the
+prospective fitting protocol still need verification. The contrast below is
+unchanged and has not been executed.
 
 The preceding metadata census establishes a feasible log partition, not a
 training intervention. Moving to a second dataset and disjoint training at
@@ -104,7 +111,8 @@ question. The [research-board review](RESEARCH_BOARD_2026-09-07.md) and
 [RSS transfer correction](RSS_TRANSFER_AND_RARE_EVENT_LIMITS_2026-09-07.md)
 remain necessary reading before making an external safety inference.
 
-The next bounded action is a sensor-file and model-provenance inventory that
-can turn this design into an executable, budgeted protocol. Independent human
+The next bounded action is to build partition-contained annotation caches,
+object databases and temporal source lists, followed by a geometry/loader smoke
+test and a prospectively fixed fitting budget. Independent human
 reference adjudication remains the separate highest-value scientific need.
 No further tuning of the stopped spatial-summary attempt is planned.

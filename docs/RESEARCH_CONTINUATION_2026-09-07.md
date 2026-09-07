@@ -1,3 +1,23 @@
+# Training-input continuation, 2026-09-07
+
+Read the [training-input findings](TRAINING_INPUT_FINDINGS_2026-09-07.md) and
+[checkpoint](TRAINING_INPUT_CLOSEOUT_2026-09-07.md) first. All 536,780 requested
+camera/lidar files are present and nonempty; a separate enumeration agrees on
+every filename and size. Seven cloud metadata tables match the retained archive.
+Both existing checkpoints match fresh upstream downloads. The recipes expose
+shared initialization and object-database routes that must be controlled before
+new disjoint training. No training effect is measured.
+
+Register `0.2.26` is `evidence/claim-status-register-2026-09-07T160458Z.json`.
+The GPU start failed for capacity; temporary CPU reader/disks were removed and
+the original VM remains stopped. The next action is partition-contained derived
+training inputs, a geometry/loader smoke test and a fixed training/calibration
+budget. Gate A is unaccepted; independent human judgments remain absent. Older
+blocks below are historical. The canonical and separate owner worktrees remain
+untouched; resolve main integration from Git and the task's delivery record.
+
+---
+
 # Engine continuation, 2026-09-07
 
 The interrupted engine work is recovered in `research/2026-09-07-engine-recovery`,

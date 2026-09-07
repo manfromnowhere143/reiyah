@@ -1,0 +1,333 @@
+{
+  "artifact_id": "reiyah.training-model-source-ledger.0.1.0",
+  "checkpoints": [
+    {
+      "access": "unauthenticated public upstream download",
+      "bytes": 220360111,
+      "cloud_checkpoint_sha256": "35aaaad0467f0758e77e192c4c320707c1881a0efbe653150d759b65eaec71c3",
+      "custody": "private; no weights published or deserialized",
+      "full_byte_hash_matches": true,
+      "id": "fcos3d",
+      "last_modified": "Tue, 02 Nov 2021 17:08:21 GMT",
+      "redistribution": "checkpoint-specific permission not established by source-code license",
+      "resolved_url": "https://download.openmmlab.com/mmdetection3d/v0.1.0_models/fcos3d/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d_finetune/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d_finetune_20210427_091419-35aaaad0.pth",
+      "retrieved_utc": "2026-09-07T15:52:36.052415+00:00",
+      "sha256": "35aaaad0467f0758e77e192c4c320707c1881a0efbe653150d759b65eaec71c3",
+      "url": "https://download.openmmlab.com/mmdetection3d/v0.1.0_models/fcos3d/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d_finetune/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d_finetune_20210427_091419-35aaaad0.pth"
+    },
+    {
+      "access": "unauthenticated public upstream download",
+      "bytes": 35917497,
+      "cloud_checkpoint_sha256": "358fbe3b39a235b9c505bed31f2ee9f2b77ae7c58503ab4a09ab643a59f230f7",
+      "custody": "private; no weights published or deserialized",
+      "full_byte_hash_matches": true,
+      "id": "centerpoint",
+      "last_modified": "Tue, 02 Nov 2021 17:07:53 GMT",
+      "redistribution": "checkpoint-specific permission not established by source-code license",
+      "resolved_url": "https://download.openmmlab.com/mmdetection3d/v0.1.0_models/centerpoint/centerpoint_0075voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus/centerpoint_0075voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus_20200925_230905-358fbe3b.pth",
+      "retrieved_utc": "2026-09-07T15:52:36.052653+00:00",
+      "sha256": "358fbe3b39a235b9c505bed31f2ee9f2b77ae7c58503ab4a09ab643a59f230f7",
+      "url": "https://download.openmmlab.com/mmdetection3d/v0.1.0_models/centerpoint/centerpoint_0075voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus/centerpoint_0075voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus_20200925_230905-358fbe3b.pth"
+    }
+  ],
+  "config_closure": {
+    "artifact_id": "reiyah.model-config-closure.0.1.0",
+    "files": [
+      {
+        "access": "unauthenticated public upstream",
+        "base_configs": [],
+        "bytes": 4915,
+        "custody": "private third-party source bytes",
+        "id": "configs/_base_/datasets/nus-3d.py",
+        "observed_utc": "2026-09-07T15:55:41.983423+00:00",
+        "redistribution": "no payload publication; upstream Apache-2.0 source license separately retained",
+        "sha256": "89f7e6d1fa1707826b6d409d522cddea06ab6489ab030222e25cd83af7e77445",
+        "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/_base_/datasets/nus-3d.py"
+      },
+      {
+        "access": "reused exact privately retained source",
+        "base_configs": [],
+        "bytes": 3230,
+        "custody": "private third-party source bytes",
+        "id": "configs/_base_/datasets/nus-mono3d.py",
+        "observed_utc": "2026-09-07T15:55:40.422034+00:00",
+        "redistribution": "no payload publication; upstream Apache-2.0 source license separately retained",
+        "sha256": "5b9632ef9ed3d858622a717790601aa35520ff39b2d322f9687cec72b7b71a34",
+        "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/_base_/datasets/nus-mono3d.py"
+      },
+      {
+        "access": "unauthenticated public upstream",
+        "base_configs": [],
+        "bytes": 485,
+        "custody": "private third-party source bytes",
+        "id": "configs/_base_/default_runtime.py",
+        "observed_utc": "2026-09-07T15:55:41.218483+00:00",
+        "redistribution": "no payload publication; upstream Apache-2.0 source license separately retained",
+        "sha256": "778df7b551bf0348f09490f0e8df0252d2bd8c006ba916153a6b0f74e4b5c988",
+        "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/_base_/default_runtime.py"
+      },
+      {
+        "access": "unauthenticated public upstream",
+        "base_configs": [],
+        "bytes": 3275,
+        "custody": "private third-party source bytes",
+        "id": "configs/_base_/models/centerpoint_01voxel_second_secfpn_nus.py",
+        "observed_utc": "2026-09-07T15:55:42.375384+00:00",
+        "redistribution": "no payload publication; upstream Apache-2.0 source license separately retained",
+        "sha256": "f6163544fe3e3418b515313057fec34242126440fb278684cc055f210f2a5b04",
+        "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/_base_/models/centerpoint_01voxel_second_secfpn_nus.py"
+      },
+      {
+        "access": "reused exact privately retained source",
+        "base_configs": [],
+        "bytes": 2279,
+        "custody": "private third-party source bytes",
+        "id": "configs/_base_/models/fcos3d.py",
+        "observed_utc": "2026-09-07T15:55:40.422553+00:00",
+        "redistribution": "no payload publication; upstream Apache-2.0 source license separately retained",
+        "sha256": "bab967a7491acbdf3924ce743dc581b91156ec1bef13548ac6bb9885722c4621",
+        "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/_base_/models/fcos3d.py"
+      },
+      {
+        "access": "unauthenticated public upstream",
+        "base_configs": [],
+        "bytes": 797,
+        "custody": "private third-party source bytes",
+        "id": "configs/_base_/schedules/cyclic_20e.py",
+        "observed_utc": "2026-09-07T15:55:42.781862+00:00",
+        "redistribution": "no payload publication; upstream Apache-2.0 source license separately retained",
+        "sha256": "66cf50b2bbcf06e9b2fe4f2be35f406e45d1d78bef9bea48a73335dd741295e2",
+        "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/_base_/schedules/cyclic_20e.py"
+      },
+      {
+        "access": "unauthenticated public upstream",
+        "base_configs": [],
+        "bytes": 319,
+        "custody": "private third-party source bytes",
+        "id": "configs/_base_/schedules/mmdet_schedule_1x.py",
+        "observed_utc": "2026-09-07T15:55:40.803373+00:00",
+        "redistribution": "no payload publication; upstream Apache-2.0 source license separately retained",
+        "sha256": "b2234be7d7e85b929c966c3c938124ac0e674a34207acf638e9a970a7c366c38",
+        "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/_base_/schedules/mmdet_schedule_1x.py"
+      },
+      {
+        "access": "unauthenticated public upstream",
+        "base_configs": [
+          "configs/centerpoint/centerpoint_01voxel_second_secfpn_4x8_cyclic_20e_nus.py"
+        ],
+        "bytes": 4386,
+        "custody": "private third-party source bytes",
+        "id": "configs/centerpoint/centerpoint_0075voxel_second_secfpn_4x8_cyclic_20e_nus.py",
+        "observed_utc": "2026-09-07T15:55:40.421354+00:00",
+        "redistribution": "no payload publication; upstream Apache-2.0 source license separately retained",
+        "sha256": "8eae793b35c239d9b46486b6705e3031939b8d28666a8ff07078abfeb81c6f7a",
+        "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/centerpoint/centerpoint_0075voxel_second_secfpn_4x8_cyclic_20e_nus.py"
+      },
+      {
+        "access": "reused exact privately retained source",
+        "base_configs": [
+          "configs/centerpoint/centerpoint_0075voxel_second_secfpn_4x8_cyclic_20e_nus.py"
+        ],
+        "bytes": 131,
+        "custody": "private third-party source bytes",
+        "id": "configs/centerpoint/centerpoint_0075voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus.py",
+        "observed_utc": "2026-09-07T15:55:39.989384+00:00",
+        "redistribution": "no payload publication; upstream Apache-2.0 source license separately retained",
+        "sha256": "5c54e597d44d1f844d94b6502a75e24f3d169e46d3f333f069dafd55abb5043d",
+        "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/centerpoint/centerpoint_0075voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus.py"
+      },
+      {
+        "access": "unauthenticated public upstream",
+        "base_configs": [
+          "configs/_base_/datasets/nus-3d.py",
+          "configs/_base_/models/centerpoint_01voxel_second_secfpn_nus.py",
+          "configs/_base_/schedules/cyclic_20e.py",
+          "configs/_base_/default_runtime.py"
+        ],
+        "bytes": 5466,
+        "custody": "private third-party source bytes",
+        "id": "configs/centerpoint/centerpoint_01voxel_second_secfpn_4x8_cyclic_20e_nus.py",
+        "observed_utc": "2026-09-07T15:55:41.603509+00:00",
+        "redistribution": "no payload publication; upstream Apache-2.0 source license separately retained",
+        "sha256": "6ee141aaa97ea635cab2b8d1a45e5c391d49210d10dfc1455b0609ff768f9a64",
+        "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/centerpoint/centerpoint_01voxel_second_secfpn_4x8_cyclic_20e_nus.py"
+      },
+      {
+        "access": "reused exact privately retained source",
+        "base_configs": [
+          "configs/_base_/datasets/nus-mono3d.py",
+          "configs/_base_/models/fcos3d.py",
+          "configs/_base_/schedules/mmdet_schedule_1x.py",
+          "configs/_base_/default_runtime.py"
+        ],
+        "bytes": 2385,
+        "custody": "private third-party source bytes",
+        "id": "configs/fcos3d/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d.py",
+        "observed_utc": "2026-09-07T15:55:39.989879+00:00",
+        "redistribution": "no payload publication; upstream Apache-2.0 source license separately retained",
+        "sha256": "31377d1c1d7999bffaf80b438e951e8d72f901ca805d8ba943a3af4afa59626c",
+        "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/fcos3d/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d.py"
+      },
+      {
+        "access": "reused exact privately retained source",
+        "base_configs": [
+          "configs/fcos3d/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d.py"
+        ],
+        "bytes": 274,
+        "custody": "private third-party source bytes",
+        "id": "configs/fcos3d/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d_finetune.py",
+        "observed_utc": "2026-09-07T15:55:39.988861+00:00",
+        "redistribution": "no payload publication; upstream Apache-2.0 source license separately retained",
+        "sha256": "b7922a15ec550057e5afb9bbf5c61db75140f58eaa402f766e1a621d70ff2b68",
+        "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/fcos3d/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d_finetune.py"
+      }
+    ],
+    "lifecycle_status": "exploratory",
+    "method": "literal _base_ traversal; no upstream config executed; does not evaluate the resulting merged configuration",
+    "roots": [
+      "configs/fcos3d/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d_finetune.py",
+      "configs/centerpoint/centerpoint_0075voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus.py"
+    ],
+    "upstream_commit": "f1107977dfd26155fc1f83779ee6535d2468f449",
+    "version": "0.1.0"
+  },
+  "entries": [
+    {
+      "access": "unauthenticated public upstream",
+      "bytes": 14806,
+      "content_type": "application/json; charset=utf-8",
+      "custody": "private retained bytes; no third-party payload published",
+      "id": "release-commit.json",
+      "kind": "upstream release identity",
+      "last_modified": "Fri, 08 Oct 2021 08:07:15 GMT",
+      "redistribution": "not authorized by this record; source license retained separately",
+      "resolved_url": "https://api.github.com/repos/open-mmlab/mmdetection3d/commits/v0.17.1",
+      "retrieved_utc": "2026-09-07T15:52:03.297959+00:00",
+      "sha256": "4e29a942d259bec028a08b61a66528ce82a148f852e2bd5ce0380f65fb7f14fc",
+      "url": "https://api.github.com/repos/open-mmlab/mmdetection3d/commits/v0.17.1"
+    },
+    {
+      "access": "unauthenticated public upstream",
+      "bytes": 11400,
+      "content_type": "text/plain; charset=utf-8",
+      "custody": "private retained bytes; no third-party payload published",
+      "id": "LICENSE",
+      "kind": "upstream configuration or license",
+      "last_modified": null,
+      "redistribution": "not authorized by this record; source license retained separately",
+      "resolved_url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/LICENSE",
+      "retrieved_utc": "2026-09-07T15:52:03.767426+00:00",
+      "sha256": "02c5c55e19772184872c6c455553b15e4acac4b3a757550e7374f47723868ce1",
+      "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/LICENSE"
+    },
+    {
+      "access": "unauthenticated public upstream",
+      "bytes": 1689,
+      "content_type": "text/plain; charset=utf-8",
+      "custody": "private retained bytes; no third-party payload published",
+      "id": "configs__fcos3d__metafile.yml",
+      "kind": "upstream configuration or license",
+      "last_modified": null,
+      "redistribution": "not authorized by this record; source license retained separately",
+      "resolved_url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/fcos3d/metafile.yml",
+      "retrieved_utc": "2026-09-07T15:52:03.767590+00:00",
+      "sha256": "330ac3d7a66ec8a3979964d74506d71b4603d01d9766868da249797db53ab0c9",
+      "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/fcos3d/metafile.yml"
+    },
+    {
+      "access": "unauthenticated public upstream",
+      "bytes": 274,
+      "content_type": "text/plain; charset=utf-8",
+      "custody": "private retained bytes; no third-party payload published",
+      "id": "configs__fcos3d__fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d_finetune.py",
+      "kind": "upstream configuration or license",
+      "last_modified": null,
+      "redistribution": "not authorized by this record; source license retained separately",
+      "resolved_url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/fcos3d/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d_finetune.py",
+      "retrieved_utc": "2026-09-07T15:52:03.767689+00:00",
+      "sha256": "b7922a15ec550057e5afb9bbf5c61db75140f58eaa402f766e1a621d70ff2b68",
+      "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/fcos3d/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d_finetune.py"
+    },
+    {
+      "access": "unauthenticated public upstream",
+      "bytes": 2385,
+      "content_type": "text/plain; charset=utf-8",
+      "custody": "private retained bytes; no third-party payload published",
+      "id": "configs__fcos3d__fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d.py",
+      "kind": "upstream configuration or license",
+      "last_modified": null,
+      "redistribution": "not authorized by this record; source license retained separately",
+      "resolved_url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/fcos3d/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d.py",
+      "retrieved_utc": "2026-09-07T15:52:03.767786+00:00",
+      "sha256": "31377d1c1d7999bffaf80b438e951e8d72f901ca805d8ba943a3af4afa59626c",
+      "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/fcos3d/fcos3d_r101_caffe_fpn_gn-head_dcn_2x8_1x_nus-mono3d.py"
+    },
+    {
+      "access": "unauthenticated public upstream",
+      "bytes": 2279,
+      "content_type": "text/plain; charset=utf-8",
+      "custody": "private retained bytes; no third-party payload published",
+      "id": "configs___base___models__fcos3d.py",
+      "kind": "upstream configuration or license",
+      "last_modified": null,
+      "redistribution": "not authorized by this record; source license retained separately",
+      "resolved_url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/_base_/models/fcos3d.py",
+      "retrieved_utc": "2026-09-07T15:52:04.231074+00:00",
+      "sha256": "bab967a7491acbdf3924ce743dc581b91156ec1bef13548ac6bb9885722c4621",
+      "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/_base_/models/fcos3d.py"
+    },
+    {
+      "access": "unauthenticated public upstream",
+      "bytes": 3230,
+      "content_type": "text/plain; charset=utf-8",
+      "custody": "private retained bytes; no third-party payload published",
+      "id": "configs___base___datasets__nus-mono3d.py",
+      "kind": "upstream configuration or license",
+      "last_modified": null,
+      "redistribution": "not authorized by this record; source license retained separately",
+      "resolved_url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/_base_/datasets/nus-mono3d.py",
+      "retrieved_utc": "2026-09-07T15:52:04.254513+00:00",
+      "sha256": "5b9632ef9ed3d858622a717790601aa35520ff39b2d322f9687cec72b7b71a34",
+      "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/_base_/datasets/nus-mono3d.py"
+    },
+    {
+      "access": "unauthenticated public upstream",
+      "bytes": 4268,
+      "content_type": "text/plain; charset=utf-8",
+      "custody": "private retained bytes; no third-party payload published",
+      "id": "configs__centerpoint__metafile.yml",
+      "kind": "upstream configuration or license",
+      "last_modified": null,
+      "redistribution": "not authorized by this record; source license retained separately",
+      "resolved_url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/centerpoint/metafile.yml",
+      "retrieved_utc": "2026-09-07T15:52:04.314393+00:00",
+      "sha256": "225634a53c57a60a1beef808ea5e5eceb7d1c6f892af2e0d1678526dffd91fec",
+      "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/centerpoint/metafile.yml"
+    },
+    {
+      "access": "unauthenticated public upstream",
+      "bytes": 131,
+      "content_type": "text/plain; charset=utf-8",
+      "custody": "private retained bytes; no third-party payload published",
+      "id": "configs__centerpoint__centerpoint_0075voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus.py",
+      "kind": "upstream configuration or license",
+      "last_modified": null,
+      "redistribution": "not authorized by this record; source license retained separately",
+      "resolved_url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/centerpoint/centerpoint_0075voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus.py",
+      "retrieved_utc": "2026-09-07T15:52:04.328605+00:00",
+      "sha256": "5c54e597d44d1f844d94b6502a75e24f3d169e46d3f333f069dafd55abb5043d",
+      "url": "https://raw.githubusercontent.com/open-mmlab/mmdetection3d/f1107977dfd26155fc1f83779ee6535d2468f449/configs/centerpoint/centerpoint_0075voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus.py"
+    }
+  ],
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Source bytes and model weights are retained privately; no third-party payload is published",
+    "Upstream recipes and weight equality do not provide exact original training sample logs or independent scientific validation",
+    "Source-code license is not treated as checkpoint or dataset redistribution permission"
+  ],
+  "private_custody_root": "~/.codex/reports/reiyah/training-overlap-2026-09-07/external-sources/",
+  "upstream_commit": "f1107977dfd26155fc1f83779ee6535d2468f449",
+  "upstream_commit_date": "2021-10-08T08:07:15Z",
+  "upstream_release": "v0.17.1",
+  "version": "0.1.0"
+}
