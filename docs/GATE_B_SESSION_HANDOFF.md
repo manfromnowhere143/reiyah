@@ -1,6 +1,16 @@
 # Current developer-value and research continuation, 2026-09-07
 
-Latest checkpoint: `research/2026-09-07-interface-evidence`, extending
+Latest checkpoint: `research/2026-09-07-physical-reference-transfer`, extending
+`ed10cff36d48b30dfddab9484de1da8b289444ae`. Read the
+[sampling and RSS interpretation findings](RSS_TRANSFER_AND_RARE_EVENT_LIMITS_2026-09-07.md),
+[physical-reference assessment](PHYSICAL_REFERENCE_OPTIONS_2026-09-07.md), and
+[closeout](PHYSICAL_REFERENCE_TRANSFER_CLOSEOUT_2026-09-07.md). Eleven new tests pass;
+the exact synthetic sampling limits also pass a separately written numerical check.
+No physical failure rate, reduced safety budget or new dataset is inferred. The NPL
+portal's public client was inspected; protected data and application terms remain
+unaccessed. Independent judgments for the frozen 240-case study are still pending.
+
+The preceding interface checkpoint is `ed10cff36d48b30dfddab9484de1da8b289444ae`, extending
 `9aceb3d1d39b27b54d1fdfe6f91a3828b2cb50c5`. Read the
 [interface findings](INTERFACE_EVIDENCE_REVIEW_2026-09-07.md) and
 [closeout](INTERFACE_EVIDENCE_CLOSEOUT_2026-09-07.md). Captured console consumers accept

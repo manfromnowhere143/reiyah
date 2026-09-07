@@ -79,6 +79,14 @@ always bind the displayed value, and that missing comparisons can become zero. A
 repair and a [single-bundle consumer design](docs/MEASUREMENT_CONSUMER_DESIGN_2026-09-07.md)
 make the required correction reviewable without changing the active UI worktree.
 
+The [RSS transfer and rare-event audit](docs/RSS_TRANSFER_AND_RARE_EVENT_LIMITS_2026-09-07.md)
+separates conditional, aggregate and operating-distribution coefficients. Exact synthetic
+controls show why measuring dependence between very rare failures can itself require billions
+of independent observations. This is a limit on a proposed inference, not a measured vehicle
+failure rate. The [physical-reference assessment](docs/PHYSICAL_REFERENCE_OPTIONS_2026-09-07.md)
+examines current NPL/Met Office work and a falsifiable route toward a joint response law with
+independent targets, time and sensor state. Data access and suitability remain unresolved.
+
 The [developer-access investigation](docs/DEVELOPER_ACCESS_RESEARCH_2026-09-07.md) compares
 existing evaluation products and the July 2026 MCP specification. Free access is a proposed
 adoption strategy; an external engineer must first obtain independently confirmed value.
@@ -93,8 +101,11 @@ validation scope and the preceding local delivery boundary. The
 audit and reference-noise correction. The [M4 checkpoint](docs/M4_BOUND_CLOSEOUT_2026-09-07.md)
 records corrected mathematical bounds. The [identification checkpoint](docs/REFERENCE_IDENTIFICATION_CLOSEOUT_2026-09-07.md)
 records exact ambiguity witnesses, the clock census and the next physical study design. The
-[latest checkpoint](docs/INTERFACE_EVIDENCE_CLOSEOUT_2026-09-07.md) records consumer failure
-probes and a privately tested repair. The [vision review](docs/VISION_REVIEW_2026-09-07.md)
+[interface checkpoint](docs/INTERFACE_EVIDENCE_CLOSEOUT_2026-09-07.md) records consumer failure
+probes and a privately tested repair. The
+[latest checkpoint](docs/PHYSICAL_REFERENCE_TRANSFER_CLOSEOUT_2026-09-07.md) records the
+sampling-limit derivation, its separate numerical check and the physical-reference preflight.
+The [vision review](docs/VISION_REVIEW_2026-09-07.md)
 separates the desired company scale from the evidence needed to justify a product.
 The next scientific observation is independent blinded review of the prepared cases. No human
 judgments or physical false-positive rates have been supplied by the new tools.
@@ -135,6 +146,8 @@ flowchart TB
     CW --> R
     R --> IC["Display and receipt must bind the same interpreted result"]
     IC --> IP["Consumer probes: private repair tested; broader snapshot gaps retained"]
+    RL["Exact rare-event and mixture probability laws"] --> RB["Sampling limits and explicit transport assumptions"]
+    RB --> R
     A --> P2["Frozen probability sample and original sensor evidence"]
     P2 --> R2["Blinded independent review: pending"]
     R2 --> U2["Unresolved cases retained in support intervals"]
@@ -145,8 +158,9 @@ flowchart TB
 Some inherited experiments execute pretrained detectors; others fit classifiers or analyze
 archived outputs. There is no inspected driving runtime, original perception backbone, learned
 occupancy/world model, online belief tracker or validated recovery policy. The available review
-instrument checks numbers and claim/document consistency; a separate interactive UI session
-was not available in the inspected refs.
+instrument checks numbers and claim/document consistency. The later interface audit inspects
+captured console code and executes isolated source probes; it does not establish the behavior
+of a deployed UI or repair the owner's worktree.
 
 ## Repository and authority state
 

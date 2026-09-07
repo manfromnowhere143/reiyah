@@ -1,0 +1,76 @@
+{
+  "added_files": [
+    "docs/PHYSICAL_REFERENCE_OPTIONS_2026-09-07.md",
+    "docs/PHYSICAL_REFERENCE_TRANSFER_CLOSEOUT_2026-09-07.md",
+    "docs/RSS_TRANSFER_AND_RARE_EVENT_LIMITS_2026-09-07.md",
+    "evidence/physical-reference-transfer/closure-0.1.0.json",
+    "evidence/physical-reference-transfer/custody-0.1.0.json",
+    "evidence/physical-reference-transfer/gate-b-check-0.1.0.json",
+    "evidence/physical-reference-transfer/limits-0.1.0.json",
+    "evidence/physical-reference-transfer/numeric-check-0.1.0.json",
+    "evidence/physical-reference-transfer/physical-reference-preflight-0.1.0.json",
+    "evidence/physical-reference-transfer/source-ledger-0.1.0.json",
+    "tests/test_rare_event_dependence_limits.py",
+    "tools/measure/check_rare_event_limits.py",
+    "tools/measure/rare_event_dependence_limits.py"
+  ],
+  "artifact_id": "reiyah.physical-reference-transfer-closure.2026-09-07",
+  "bound_candidate_files": {
+    "README.md": "d63f13454a29965deecfcb7d8c7dc01613e6f36cce20919aa773430a22bc9138",
+    "docs/GATE_B_SESSION_HANDOFF.md": "30cb8be96b42ef5fb6eb27791f44a4a7840e69c63b1dd8ee04d6c531243f8d09",
+    "docs/PHYSICAL_REFERENCE_OPTIONS_2026-09-07.md": "05355062aaa60b84f18b8288a1a19712ec5d26b9b4b507981002c6360d2823c3",
+    "docs/PHYSICAL_REFERENCE_TRANSFER_CLOSEOUT_2026-09-07.md": "87ab1f7076f26734047a9f75bd328d443900e657956cc116cfb3a66eb37b04db",
+    "docs/RESEARCH_CONTINUATION_2026-09-07.md": "acac32093d8b4f31d2c5e03bf62c377a6880983bee586313a2a6425559fa5c89",
+    "docs/RSS_TRANSFER_AND_RARE_EVENT_LIMITS_2026-09-07.md": "7d405af71ffaa6aec923c4d538fe0483b83bccebce851d0723406af36cd29032",
+    "docs/SESSION_HANDOFF.md": "d717e7b50af46a363b138381f2b3ea6f09b81b6d2c8887fbed4db838a683552f",
+    "evidence/physical-reference-transfer/custody-0.1.0.json": "54be613049efe78718c7a4202d846386d49844d4b015633ec460a854d5bf659c",
+    "evidence/physical-reference-transfer/gate-b-check-0.1.0.json": "c2a29efded82f5be4e0d3abb0b91d0ae072ef5ecdf01407bfa3a6b4568e74eba",
+    "evidence/physical-reference-transfer/limits-0.1.0.json": "d8252b34837a88b6f9c8985e52a8fb556eac1d2394c9ca06c5f28c95e03cac40",
+    "evidence/physical-reference-transfer/numeric-check-0.1.0.json": "11466ccdb37093ff7073f0f1083b2145918651729b37f11d438a4d60a0d94105",
+    "evidence/physical-reference-transfer/physical-reference-preflight-0.1.0.json": "04afb8f0185a3702d1ca2ce666a9fb1c4194e198234c3ba0587f557c4807df16",
+    "evidence/physical-reference-transfer/source-ledger-0.1.0.json": "de91dc902ab2704248a37ca566e1e171f4617cbeb363e9ba0c69e2e789b1dd64",
+    "tests/test_rare_event_dependence_limits.py": "f0c0c7601d9811600df829bcb5233e5165b039d86ff7d76994c7397626d13db8",
+    "tools/measure/check_rare_event_limits.py": "3876c24fa031129abe93f3484c950fa56b0722d3fab0c489258a1f3ec26d7b2a",
+    "tools/measure/rare_event_dependence_limits.py": "f5cbb0d9af186dd74ff7150ab0fe02f731c838180a380eaa26e5abd1bbc8fb09"
+  },
+  "checker_private_locator": "physical-reference-transfer-2026-09-07/private/verify_checkpoint.py",
+  "checker_sha256": "47804fd4d8787499f3259084118aa1086f0ed96ba015634059186720b371f5fc",
+  "exact_derivation_replay_equal": true,
+  "gate_a_release_evidence": false,
+  "historical_replay_states": {
+    "argv_unrecorded_historical": 17,
+    "not_replayed_here": 35
+  },
+  "limits": [
+    "Source custody and candidate consistency only",
+    "No independent human review",
+    "No Gate A release replay or operational risk certificate"
+  ],
+  "mode": "development",
+  "modified_predecessor_navigation": [
+    "README.md",
+    "docs/GATE_B_SESSION_HANDOFF.md",
+    "docs/RESEARCH_CONTINUATION_2026-09-07.md",
+    "docs/SESSION_HANDOFF.md"
+  ],
+  "new_tests_passed": 11,
+  "operator_acceptance": "unaccepted",
+  "parent": "ed10cff36d48b30dfddab9484de1da8b289444ae",
+  "physical_performance": null,
+  "separate_numerical_checks": 6,
+  "source_digests_checked": {
+    "P01-tool-extract": "9b745241bb6b23680c0afadc2f4f791897208d888664d1d4a4bb1f9907f64d23",
+    "P02": "6739b86c639eaca02af5d758cc274ca7a61d3225089b00c60bd00949db5fac87",
+    "P03": "cf965df0817b484cdcc76e390e755ebe7f374810a9192e191749ab72d2cedaac",
+    "P04": "899cfa142818675f7156143c6f46b763c685bc0d4fbcb5ca59c5b777bfa2c15f",
+    "P06": "5092c4560bd8bfe091da6b5f427f88d3fc1fcf3a24c740d2ae4e9cb986478477",
+    "P07": "6a0b492c8f4ee8bf4649ad9446988ebf806cdab07a024b07af5b542ffe49da33",
+    "P08": "3402cc0449e5334087fd9847c9a58589ec77413d3fb0ae0f833b96f32a50410d",
+    "P09": "885e9c6468000123e270dd5765b868771033e665392a6db506bb59902cc5ad7f",
+    "P10": "2fcb15508d15f801235ba7411a3a0b178fa6d89a1a1c0a158eb3669b3658cfa3",
+    "P11": "5f46041e5e13d066d9ab4b3a6841b24bdca29ccbf54f6b417b85b753d4ada573"
+  },
+  "status": "pass",
+  "unchanged_predecessor_files": 1175,
+  "version": "0.1.0"
+}

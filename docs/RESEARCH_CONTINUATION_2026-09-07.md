@@ -26,7 +26,8 @@ also remains untouched. Read their current states before any future integration.
 | Cache selection and reference-noise interpretation | `ca548d4fd66180e9c2e2aa4a789a366c23903401` | Raw-metadata selection reconstruction and exact noise counterexample |
 | M4 rectangular bounds | `2ae14e78e63fe674fcfd216d9dbb67765c2adff2` | Historical F-03 correction, rational extrema and a separate algebra checker |
 | Reference identification and opportunity clocks | `9aceb3d1d39b27b54d1fdfe6f91a3828b2cb50c5` | Exact compatible-world witnesses, bounded reference-error sensitivity and a raw-metadata anchor census |
-| Evidence consumers | `research/2026-09-07-interface-evidence` | Read-only companion/console review, executed consumer failures and a private four-file repair |
+| Evidence consumers | `ed10cff36d48b30dfddab9484de1da8b289444ae` | Read-only companion/console review, executed consumer failures and a private four-file repair |
+| Physical-reference and transfer feasibility | `research/2026-09-07-physical-reference-transfer` | Exact sampling limits, RSS probability-law correction and NPL source/access preflight |
 
 The final local commit identity for the last row is recorded by the private `delivery.json`
 and can be resolved from the branch. It must not be inferred from a remembered hash or a
@@ -44,12 +45,14 @@ Private task custody is under:
   m4-bounds-2026-09-07/
   reference-identification-2026-09-07/
   interface-evidence-2026-09-07/
+  physical-reference-transfer-2026-09-07/
 ```
 
-The last directory contains an exported `baseline/` at `9aceb3d`, the reviewable
+The last directory contains an exported `baseline/` at `ed10cff`, the reviewable
 `implementation/`, synthetic controls, completed checks, an exact candidate delta, a patch
-and the final Git readback. Raw data and primary payloads remain in preceding task custody. These exports are not replacements for the canonical
-repository identity gate. A new session must begin at the canonical Reiyah root and inspect
+and the final Git readback. Original dataset payloads remain in earlier task custody; this
+directory also retains the newly retrieved primary literature and public portal artifacts
+privately. These exports are not replacements for the canonical repository identity gate. A new session must begin at the canonical Reiyah root and inspect
 the local research ref without overwriting the active owners' work.
 
 ## Task ledger
@@ -71,6 +74,8 @@ the local research ref without overwriting the active owners' work.
 | R13 | Identify which observations can constrain reference transitions and opportunities missed by every channel | Exact counterexamples and proposed independent-opportunity design completed | Obtain independent observations; do not infer latent truth from observer agreement |
 | R14 | Establish a sampling population from scene clocks without object-output selection | Metadata census completed; 4,682 eligible anchors in 150 scenes | Freeze a new pilot protocol and evidence presentation before sampling; payload validity and online availability remain unknown |
 | R15 | Verify that the displayed result, claim interpretation and receipt concern the same bytes | Seven failure families reproduced; narrow private repair tested | Console owner reviews the bound patch; complete a single typed bundle with reordering tests and real-browser verification |
+| R16 | Determine whether directly measuring rare dependence makes safety-validation evidence cheaper | Exact synthetic limits and source review completed | Require an explicit supported transport/structural argument before proposing cost reductions |
+| R17 | Find a physical-reference source for testing that transport structure | NPL source/access preflight completed; suitability unresolved | Establish common target-times, original data rights, response predicates and episode coverage before selecting a new study |
 
 R02 remains the highest-value scientific dependency. R04-R07 supplement it; they do not
 replace missing judgments with more software. No human or model was impersonated as an
@@ -189,6 +194,23 @@ question and frozen sample. A broader identification study requires its own pros
 population, observations and protocol. Do not sell or describe the current packets as a
 reference certificate. The [vision disposition](VISION_REVIEW_2026-09-07.md) records the
 useful commercial hypotheses and the unsupported transitions to authority or adoption.
+
+## Sampling feasibility and physical-reference follow-up
+
+The [RSS transfer audit](RSS_TRANSFER_AND_RARE_EVENT_LIMITS_2026-09-07.md) narrows the older
+attribution of a strata supremum to RSS itself and distinguishes the conditional aggregate
+from a coefficient on an operating mixture. The [exact synthetic limits](../evidence/physical-reference-transfer/limits-0.1.0.json)
+show that 100,000 paired iid observations can have at most .05002 power to distinguish
+coefficients one and two at significance .05 when both known marginal failure rates are
+one in 100,000. These are authored probability laws, not measured vehicle failure rates.
+The zero-event sample requirements are independently checked, not restored safety budgets.
+
+The [physical-reference assessment](PHYSICAL_REFERENCE_OPTIONS_2026-09-07.md) reviews current
+NPL/Met Office work and its public access client. No protected sensor data, application terms
+or paired-target census was obtained. The proposed response-state experiment requires its
+own common opportunities, independent reference, rights and protocol. No reviewer or
+physical observation is replaced by this source investigation. See the
+[latest closeout](PHYSICAL_REFERENCE_TRANSFER_CLOSEOUT_2026-09-07.md) for completed checks.
 
 ## Cloud, checks and authority
 

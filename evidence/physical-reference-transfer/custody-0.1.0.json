@@ -1,0 +1,103 @@
+{
+  "artifact_id": "reiyah.physical-reference-transfer-process-custody.2026-09-07",
+  "bound_sources": {
+    "tests/test_rare_event_dependence_limits.py": "f0c0c7601d9811600df829bcb5233e5165b039d86ff7d76994c7397626d13db8",
+    "tools/measure/check_rare_event_limits.py": "3876c24fa031129abe93f3484c950fa56b0722d3fab0c489258a1f3ec26d7b2a",
+    "tools/measure/rare_event_dependence_limits.py": "f5cbb0d9af186dd74ff7150ab0fe02f731c838180a380eaa26e5abd1bbc8fb09"
+  },
+  "completed_processes": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_rare_event_dependence_limits.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "finished_utc": "2026-09-07T11:04:05.754477+00:00",
+      "private_capture_prefix": "physical-reference-transfer-2026-09-07/checks/unit-3",
+      "source_after": {
+        "tests/test_rare_event_dependence_limits.py": "f0c0c7601d9811600df829bcb5233e5165b039d86ff7d76994c7397626d13db8",
+        "tools/measure/check_rare_event_limits.py": "3876c24fa031129abe93f3484c950fa56b0722d3fab0c489258a1f3ec26d7b2a",
+        "tools/measure/rare_event_dependence_limits.py": "f5cbb0d9af186dd74ff7150ab0fe02f731c838180a380eaa26e5abd1bbc8fb09"
+      },
+      "source_before": {
+        "tests/test_rare_event_dependence_limits.py": "f0c0c7601d9811600df829bcb5233e5165b039d86ff7d76994c7397626d13db8",
+        "tools/measure/check_rare_event_limits.py": "3876c24fa031129abe93f3484c950fa56b0722d3fab0c489258a1f3ec26d7b2a",
+        "tools/measure/rare_event_dependence_limits.py": "f5cbb0d9af186dd74ff7150ab0fe02f731c838180a380eaa26e5abd1bbc8fb09"
+      },
+      "started_utc": "2026-09-07T11:04:05.665603+00:00",
+      "stderr_sha256": "a55901bb28ec1b96a35bb2ab4bd0f026f1dc16bad04456d946714701fccdfab5",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/measure/rare_event_dependence_limits.py"
+      ],
+      "exit_code": 0,
+      "finished_utc": "2026-09-07T10:55:05.257392+00:00",
+      "private_capture_prefix": "physical-reference-transfer-2026-09-07/checks/derivation-2",
+      "started_utc": "2026-09-07T10:55:05.233017+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d8252b34837a88b6f9c8985e52a8fb556eac1d2394c9ca06c5f28c95e03cac40"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/measure/check_rare_event_limits.py",
+        "evidence/physical-reference-transfer/limits-0.1.0.json"
+      ],
+      "exit_code": 0,
+      "finished_utc": "2026-09-07T11:04:05.783124+00:00",
+      "private_capture_prefix": "physical-reference-transfer-2026-09-07/checks/separate-numeric-2",
+      "source_after": {
+        "tests/test_rare_event_dependence_limits.py": "f0c0c7601d9811600df829bcb5233e5165b039d86ff7d76994c7397626d13db8",
+        "tools/measure/check_rare_event_limits.py": "3876c24fa031129abe93f3484c950fa56b0722d3fab0c489258a1f3ec26d7b2a",
+        "tools/measure/rare_event_dependence_limits.py": "f5cbb0d9af186dd74ff7150ab0fe02f731c838180a380eaa26e5abd1bbc8fb09"
+      },
+      "source_before": {
+        "tests/test_rare_event_dependence_limits.py": "f0c0c7601d9811600df829bcb5233e5165b039d86ff7d76994c7397626d13db8",
+        "tools/measure/check_rare_event_limits.py": "3876c24fa031129abe93f3484c950fa56b0722d3fab0c489258a1f3ec26d7b2a",
+        "tools/measure/rare_event_dependence_limits.py": "f5cbb0d9af186dd74ff7150ab0fe02f731c838180a380eaa26e5abd1bbc8fb09"
+      },
+      "started_utc": "2026-09-07T11:04:05.754937+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "11466ccdb37093ff7073f0f1083b2145918651729b37f11d438a4d60a0d94105"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/Users/danielwahnich/.codex/reports/reiyah/physical-reference-transfer-2026-09-07/implementation/tools/measure/gate_b_check.py",
+        "--json",
+        "/Users/danielwahnich/.codex/reports/reiyah/physical-reference-transfer-2026-09-07/implementation/evidence/physical-reference-transfer/gate-b-check-0.1.0.json"
+      ],
+      "elapsed_seconds": 1.648196249967441,
+      "exit_code": 0,
+      "private_capture_prefix": "physical-reference-transfer-2026-09-07/checks/gate-b-check-2",
+      "producer_sha256": "e899d1e49f9594a526f532949bff15e6ea1141627fe292517915a0bd05024d92",
+      "started_utc": "2026-09-07T11:09:45.535165+00:00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "28d35bcd7a72f78cf8c7a1b0306e2ee916255cc9b74ed0642e3831e0527e3699"
+    }
+  ],
+  "mode": "development",
+  "scope_limits": [
+    "Gate B development checks are not release validation",
+    "Inherited transcript digests are not new replays",
+    "Unknown physical performance remains null"
+  ],
+  "separate_numerical_checks": 6,
+  "source_identity_scope": "supervised captures and checkpoint source association; no hermetic execution or independent-attestation claim",
+  "test_count": 11,
+  "version": "0.1.0"
+}
