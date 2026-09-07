@@ -1,5 +1,15 @@
 # Current developer-value and research continuation, 2026-09-07
 
+Latest checkpoint: `research/2026-09-07-selection-policy`, based on
+`beccb6b50babfe9b203b8b8e4aad59c304003a89`. The
+[cache-policy audit](CACHE_SELECTION_AUDIT_2026-09-07.md) reconstructs the declared cache
+selection and official validation census from raw metadata. The
+[reference-noise correction](REFERENCE_NOISE_INTERPRETATION_2026-09-07.md) preserves M4's
+rescaling identity while refuting its broader uniform-corruption immunity interpretation.
+Read [the closeout](SELECTION_POLICY_CLOSEOUT_2026-09-07.md) for exact completed work and
+the restart boundary. Existing study endpoints, historical transcripts and claim registers
+are preserved. The current detection study does not itself validate a safety certificate.
+
 Read [the current task ledger and shutdown handoff](RESEARCH_CONTINUATION_2026-09-07.md)
 first. The local `research/2026-09-07-developer-value` candidate extends reference-study
 commit `9d8a18eab7144bd02b1f64c41bc8f179f32ee653`. It adds an offline portable reference

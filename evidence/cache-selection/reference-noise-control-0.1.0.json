@@ -1,0 +1,76 @@
+{
+  "analyzer_sha256": "8aad61629ce79a1d6484cf2dbc10028851dfd7a205e94f522f4bd9cea0aba6db",
+  "artifact_id": "reiyah.uniform-reference-noise-counterexample.0.1.0",
+  "claim_refuted": "Every outcome-independent uniform reference-label corruption leaves c unchanged",
+  "claim_supported": "Common positive rescaling leaves c unchanged",
+  "controls": [
+    "True channel errors are independent",
+    "Reference flip rate is constant over true error cells",
+    "Proportional-rescaling invariant holds",
+    "Independent-reference ablation preserves c=1 at matched noisy marginals",
+    "Zero reference noise reproduces truth"
+  ],
+  "data_kind": "authored exact synthetic probability model",
+  "independent_reference_flips": {
+    "c": "1",
+    "cells": {
+      "00": "1681/2500",
+      "01": "369/2500",
+      "10": "369/2500",
+      "11": "81/2500"
+    },
+    "p_A": "9/50",
+    "p_AB": "81/2500",
+    "p_B": "9/50"
+  },
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "No observed detector, human or physical safety performance is estimated",
+    "Shared binary label corruption is not claimed to be the nuScenes matching-error mechanism",
+    "This does not refute M4's rescaling theorem; it refutes the broader immunity interpretation",
+    "No novelty is claimed for this elementary label-noise construction"
+  ],
+  "proportional_rescaling": {
+    "c": "1",
+    "cells": {
+      "00": "189/100",
+      "01": "21/100",
+      "10": "21/100",
+      "11": "7/300"
+    },
+    "p_A": "1/10",
+    "p_AB": "1/100",
+    "p_B": "1/10"
+  },
+  "reference_flip_probability_given_each_true_cell": {
+    "00": "1/10",
+    "01": "1/10",
+    "10": "1/10",
+    "11": "1/10"
+  },
+  "shared_uniform_reference_flip": {
+    "c": "25/9",
+    "cells": {
+      "00": "73/100",
+      "01": "9/100",
+      "10": "9/100",
+      "11": "9/100"
+    },
+    "p_A": "9/50",
+    "p_AB": "9/100",
+    "p_B": "9/50"
+  },
+  "truth": {
+    "c": "1",
+    "cells": {
+      "00": "81/100",
+      "01": "9/100",
+      "10": "9/100",
+      "11": "1/100"
+    },
+    "p_A": "1/10",
+    "p_AB": "1/100",
+    "p_B": "1/10"
+  },
+  "version": "0.1.0"
+}

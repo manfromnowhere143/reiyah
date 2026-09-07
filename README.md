@@ -48,6 +48,17 @@ correction and separately examines frames omitted by the object-row cache. An in
 numerical implementation agrees on every retained prediction classification. Physical truth
 remains outside that computational check.
 
+The [cache-policy reconstruction](docs/CACHE_SELECTION_AUDIT_2026-09-07.md) independently
+derives the declared class, distance and official split selection from raw metadata. Every
+cache annotation ID and checked metadata field agrees. A correct cache still requires a
+correctly scoped physical interpretation.
+
+The [reference-noise correction](docs/REFERENCE_NOISE_INTERPRETATION_2026-09-07.md) narrows
+M4's broad immunity wording: proportional count rescaling preserves the coincidence ratio,
+but uniform shared reference-label corruption can change it. An exact synthetic construction
+and a control with matched noisy marginals make the distinction executable. No measured
+detector performance is claimed by that example.
+
 The [developer-access investigation](docs/DEVELOPER_ACCESS_RESEARCH_2026-09-07.md) compares
 existing evaluation products and the July 2026 MCP specification. Free access is a proposed
 adoption strategy; an external engineer must first obtain independently confirmed value.
@@ -57,7 +68,10 @@ codebases and scientific authorities remain separate.
 
 Use the [research continuation ledger](docs/RESEARCH_CONTINUATION_2026-09-07.md) to resume.
 The [current closeout](docs/DEVELOPER_VALUE_CLOSEOUT_2026-09-07.md) records completed runs,
-validation scope and the local delivery boundary.
+validation scope and the preceding local delivery boundary. The
+[latest checkpoint](docs/SELECTION_POLICY_CLOSEOUT_2026-09-07.md) records the cache-policy
+audit and mathematical correction. The [vision review](docs/VISION_REVIEW_2026-09-07.md)
+separates the desired company scale from the evidence needed to justify a product.
 The next scientific observation is independent blinded review of the prepared cases. No human
 judgments or physical false-positive rates have been supplied by the new tools.
 
@@ -84,6 +98,10 @@ flowchart TB
     FC --> FS["Separate omitted-frame sensitivity; frozen sample unchanged"]
     FS --> AP
     AP --> R
+    D --> CP["Reconstruct declared cache selection from raw metadata and retained SDK sources"]
+    CP --> R
+    RN["Synthetic shared-reference noise controls"] --> RI["Corrected interpretation; no physical performance estimate"]
+    RI --> R
     A --> P2["Frozen probability sample and original sensor evidence"]
     P2 --> R2["Blinded independent review: pending"]
     R2 --> U2["Unresolved cases retained in support intervals"]

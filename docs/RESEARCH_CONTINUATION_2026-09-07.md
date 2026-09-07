@@ -6,11 +6,11 @@ Version: `0.1.0`
 
 Lifecycle status: `exploratory`
 
-The operator requested autonomous research and implementation, a read-only review of Sentinel,
-Telos and Inbar for useful lessons, and a durable stopping point before a laptop shutdown.
-At 07:14 UTC on September 7 the available window was extended by approximately 90 minutes.
-The shutdown target is therefore approximately 08:44 UTC, not a claim about when the laptop
-will actually be powered off. No work should depend on the laptop remaining awake afterward.
+The operator requested autonomous research and implementation and a read-only review of
+Sentinel, Telos and Inbar for useful lessons. An earlier shutdown window was extended and
+then explicitly canceled: the operator subsequently said the machine would remain open for
+the next 24 hours. The earlier approximate 08:44 UTC stopping target is superseded. Work
+continues with durable checkpoints; completed evidence never depends on a surviving process.
 
 ## Exact research lineage and workspace boundary
 
@@ -22,7 +22,8 @@ also remains untouched. Read their current states before any future integration.
 | --- | --- | --- |
 | Research board and AO | `4deb1d19ef1db6fa37fb6b20ca0b4ffda93c4bcc` | System reconstruction, primary research, 25-part verdict, reference correction and two validator repairs |
 | Frozen reference study | `9d8a18eab7144bd02b1f64c41bc8f179f32ee653` | Sampling, raw evidence retrieval, 240 blinded packets, unknown-preserving analysis |
-| Developer value and sibling review | `research/2026-09-07-developer-value` | Selected sibling recalculations, current interface research, portable population auditor and continuation ledger |
+| Developer value and sibling review | `beccb6b50babfe9b203b8b8e4aad59c304003a89` | Selected sibling recalculations, current interface research, portable population auditor and continuation ledger |
+| Cache selection and reference-noise interpretation | `research/2026-09-07-selection-policy` | Raw-metadata selection reconstruction, exact noise counterexample and updated stopping point |
 
 The final local commit identity for the last row is recorded by the private `delivery.json`
 and can be resolved from the branch. It must not be inferred from a remembered hash or a
@@ -36,9 +37,10 @@ Private task custody is under:
   research-board-2026-09-07/
   reference-study-2026-09-07/
   developer-value-2026-09-07/
+  selection-policy-2026-09-07/
 ```
 
-The last directory contains an exported `baseline/` at `9d8a18e`, the reviewable
+The last directory contains an exported `baseline/` at `beccb6b`, the reviewable
 `implementation/`, retained source pointers and private payloads, checks, an exact candidate
 delta, a patch and the final Git readback. These exports are not replacements for the canonical
 repository identity gate. A new session must begin at the canonical Reiyah root and inspect
@@ -57,6 +59,9 @@ the local research ref without overwriting the active owners' work.
 | R07 | Add MCP/API access | Deferred pending demonstrated workflow value | Pin current protocol and test actual clients only when an integration is justified |
 | R08 | Investigate predictive joint-miss monitoring or intervention benefit | Conditional on reference adequacy | Freeze prospective populations, input-only baselines, temporal controls, false-alarm costs and scene transfer |
 | R09 | Check whether an object-row cache omits frame opportunities | Completed retrospective sensitivity | Keep the complete frame census separate from object reference eligibility in future adapters |
+| R10 | Reconstruct the cache's declared inclusion policy from raw metadata and upstream sources | Completed; exact membership and checked fields agree | Preserve the scoped result; this does not establish physical completeness or full SDK conformance |
+| R11 | Test the external vision review's inference from M4 to general reference-error immunity | Broad interpretation corrected by an exact counterexample | Model reference transitions and opportunity selection explicitly before interpreting an error budget |
+| R12 | Determine whether numerical M4 extrema are valid outer bounds and distinguish undefined from unbounded | Next bounded investigation | Construct analytic counterexamples before proposing a replacement solver |
 
 R02 remains the highest-value scientific dependency. R04-R07 supplement it; they do not
 replace missing judgments with more software. No human or model was impersonated as an
@@ -124,6 +129,28 @@ The current MCP comparison is pinned to protocol revision **2026-07-28**, whose 
 are retained. Older retrieved 2025 pages remain historical comparisons; they are not the
 current interface recommendation. FiftyOne already documents MCP-assisted evaluation.
 No novelty or performance advantage is claimed for wrapping a tool in that protocol.
+
+## Latest completed checks and interpretation correction
+
+Read [the latest checkpoint](SELECTION_POLICY_CLOSEOUT_2026-09-07.md) and
+[cache-policy result](CACHE_SELECTION_AUDIT_2026-09-07.md). The raw-metadata reconstruction
+compares all 134,565 selected annotation IDs and the named metadata fields, with zero
+disagreements. The official validation census independently reconstructed from the retained
+split has 6,019 frames, matching both prediction files. This new check closes the earlier
+official-split limitation for these exact inputs; the earlier replay records remain unchanged.
+
+Read [the reference-noise correction](REFERENCE_NOISE_INTERPRETATION_2026-09-07.md) before
+using the older M4 interpretation or the operator-supplied model vision as a roadmap. M4's
+rescaling theorem is true; its broad immunity reading is not. Shared, uniformly applied
+reference-label corruption can create measured dependence between independent observers.
+The exact construction is synthetic and does not identify the real data's noise mechanism.
+
+The prepared 240-case detection study does not identify a complete opportunity census of
+true joint misses or a safety-critical reference transition model. Preserve its original
+question and frozen sample. A broader identification study requires its own prospective
+population, observations and protocol. Do not sell or describe the current packets as a
+reference certificate. The [vision disposition](VISION_REVIEW_2026-09-07.md) records the
+useful commercial hypotheses and the unsupported transitions to authority or adoption.
 
 ## Cloud, checks and authority
 

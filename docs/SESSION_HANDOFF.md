@@ -1,5 +1,12 @@
 # Current research navigation, 2026-09-07
 
+The latest local continuation is `research/2026-09-07-selection-policy`, extending
+`beccb6b50babfe9b203b8b8e4aad59c304003a89`. Read the
+[selection-policy checkpoint](SELECTION_POLICY_CLOSEOUT_2026-09-07.md) and
+[reference-noise interpretation correction](REFERENCE_NOISE_INTERPRETATION_2026-09-07.md)
+before the earlier context below. All active worktrees and frozen empirical protocols remain
+under their existing ownership and exact identities. No acceptance state is changed.
+
 Read [the research continuation and stopping point](RESEARCH_CONTINUATION_2026-09-07.md)
 first for this local research branch. It extends the frozen reference-study commit
 `9d8a18eab7144bd02b1f64c41bc8f179f32ee653` with a bounded sibling-research audit, a portable

@@ -1,0 +1,85 @@
+{
+  "artifact_id": "reiyah.cache-selection-public-specification.0.1.0",
+  "disclosure": "Aggregate policy projection; the full scene-identifier list remains in private custody",
+  "private_spec_sha256": "c7912f816af9b92b26c5aeb9b39e5521db10aa3153246276f2674b16c446ca2d",
+  "specification": {
+    "artifact_id": "reiyah.cache-selection-spec.0.1.0",
+    "failure_criterion": "Any extra or missing ID, or a disagreement in the checked cache fields",
+    "historical_split_sha256": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd",
+    "inputs": {
+      "gt_val_cache.json": {
+        "bytes": 51063137,
+        "sha256": "7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd"
+      },
+      "meta.tgz": {
+        "bytes": 461678030,
+        "sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b"
+      },
+      "predictions/mapillary_val.json": {
+        "bytes": 343998291,
+        "sha256": "f948e9778fb9a332d748f7e504fbade04f0c00c2699d7b0af757cacdbd567e99"
+      },
+      "predictions/megvii_val.json": {
+        "bytes": 224899254,
+        "sha256": "e7a995c31692ac95a86b56208e0b5d82a4ab908df8d0a9b9474d70adb693eab4"
+      }
+    },
+    "lifecycle_status": "exploratory",
+    "policy": {
+      "bike_rack_filter_applied": false,
+      "boundary": "strictly less than class range",
+      "distance": "exact squared Euclidean XY distance from keyframe LIDAR_TOP ego pose",
+      "mapping": {
+        "human.pedestrian.adult": "pedestrian",
+        "human.pedestrian.child": "pedestrian",
+        "human.pedestrian.construction_worker": "pedestrian",
+        "human.pedestrian.police_officer": "pedestrian",
+        "movable_object.barrier": "barrier",
+        "movable_object.trafficcone": "traffic_cone",
+        "vehicle.bicycle": "bicycle",
+        "vehicle.bus.bendy": "bus",
+        "vehicle.bus.rigid": "bus",
+        "vehicle.car": "car",
+        "vehicle.construction": "construction_vehicle",
+        "vehicle.motorcycle": "motorcycle",
+        "vehicle.trailer": "trailer",
+        "vehicle.truck": "truck"
+      },
+      "point_filter_applied": false,
+      "ranges_m": {
+        "barrier": 30,
+        "bicycle": 40,
+        "bus": 50,
+        "car": 50,
+        "construction_vehicle": 50,
+        "motorcycle": 40,
+        "pedestrian": 40,
+        "traffic_cone": 30,
+        "trailer": 50,
+        "truck": 50
+      },
+      "source_interpretation": "Literal fields from manually inspected, hash-bound upstream code; not a general Python semantics parser",
+      "validation_scene_count": 150,
+      "validation_scene_names_sha256": "69a48df630eeadbef8a8fdc6f7f80827d396a719b1009c7185e48c3850bf97d3"
+    },
+    "question": "Does the retained cache implement its declared split, mapped-class and strict planar range selection?",
+    "scope": "Declared cache policy, with point and bike-rack filters intentionally unapplied; not full SDK conformance",
+    "source_ledger_sha256": "a79e0a805228900e329aa1352f02dc35d1c897f90c2f6f90487a4a8e843db1a5",
+    "source_payloads": {
+      "P02": "217f96cca4e80f790c4674ef72257a6863ee9a85b0ce185bc56488afc32c7a0b",
+      "P03": "aec85e921c5c89161ae65bec38acd1f72ad48c203f13bceaca4c14a0cd2e2b48",
+      "P04": "9853cb47dd898c85e2032507e6bb419460f173e6b9a3e069675efe0839e72fe7",
+      "P05": "0a499ec3fc863786467844e37a37456cb10d61050acb8b5b6e38bc9f5ddc1b9f",
+      "P06": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd",
+      "P07": "2f43f04335316ee361ed2b75e5da8e152ac7d832145a44caa111344ef4c6fa73"
+    },
+    "sources": {
+      "audit_cache_selection.py": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+      "reference_population_audit.py": "20357fac547358063116d6652b2dc31f0c4a6a45feb1112db35d5bddadc70cbd",
+      "replay_reference_population_audit.py": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993"
+    },
+    "success_criterion": "Exact annotation-ID set equality and zero checked cache-field disagreements",
+    "version": "0.1.0"
+  },
+  "version": "0.1.0"
+}
