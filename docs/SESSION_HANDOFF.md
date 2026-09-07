@@ -1,31 +1,23 @@
-> Research branch navigation, 2026-09-07: this branch contains the isolated
+# Current research navigation, 2026-09-07
 
-## Reference-study continuation, 2026-09-07
+Read [the research continuation and stopping point](RESEARCH_CONTINUATION_2026-09-07.md)
+first for this local research branch. It extends the frozen reference-study commit
+`9d8a18eab7144bd02b1f64c41bc8f179f32ee653` with a bounded sibling-research audit, a portable
+reference-population tool and a current developer-access investigation. The active canonical
+Gate A and separate Gate B worktrees remain under their existing owners.
 
-The isolated `research/2026-09-07-reference-study` revision extends research-board commit
-`4deb1d19ef1db6fa37fb6b20ca0b4ffda93c4bcc`. The concurrently active Gate A and Gate B worktrees
-were not edited or switched. Gate B tip `9464ff79a823a91037604bb8343e984b29c128a5` adds a
-historical replay capture over the board’s original `fd094c0` base; it is not silently merged.
+The [research board](RESEARCH_BOARD_2026-09-07.md) and
+[board closeout](RESEARCH_BOARD_CLOSEOUT_2026-09-07.md) reconstruct the original inspected
+snapshots. The [implemented reference study](REFERENCE_ADJUDICATION_STUDY_2026-09-07.md)
+and [study closeout](REFERENCE_STUDY_CLOSEOUT_2026-09-07.md) retain the failed first design,
+the frozen replacement and the 240 prepared evidence packets. Independent human judgments
+remain pending. The current [task ledger](RESEARCH_CONTINUATION_2026-09-07.md) names the next
+observation and the exact private custody needed to resume it.
 
-Read the [implemented study](REFERENCE_ADJUDICATION_STUDY_2026-09-07.md) and its
-[closeout](REFERENCE_STUDY_CLOSEOUT_2026-09-07.md). Protocol 0.1.0 failed a pre-label precision
-check and is retained. Protocol 0.2.0 selects 60 detections in each of four reference strata,
-240 cases across 93 scenes; the selection was reproduced exactly. The uncertainty estimator
-uses finite-population randomization, retains unresolved cases and makes no unseen-scene
-guarantee. Raw assets, opaque case mappings and selection keys remain in private custody.
-Independent human reviewers have not been supplied or impersonated.
-
-The next authorized action is independent assignment and blinded review of this frozen cohort,
-then analysis into a new output identity. Do not train on reference-relative flags as physical
-truth or relabel disagreements under the same protocol. Existing Gate A release bytes and
-operator acceptance remain unchanged; development checks do not create acceptance.
-
-> [research-board investigation](RESEARCH_BOARD_2026-09-07.md) and
-> [research closeout](RESEARCH_BOARD_CLOSEOUT_2026-09-07.md), based on Gate B commit
-> `fd094c066437e67cefbb86f363dd1bef7ccf8e6e`. Read the
-> [Gate B handoff](GATE_B_SESSION_HANDOFF.md) for this branch's next research action.
-> The inherited Gate A handoff below describes its original exact artifacts. This navigation
-> update does not make the branch a newly validated Gate A release or imply operator acceptance.
+This navigation is not a newly validated Gate A release. The inherited Gate A handoff below
+refers to its original exact artifacts; current operator acceptance remains unaccepted.
+Research-branch changes do not silently merge Gate B's separate historical replay update at
+`9464ff79a823a91037604bb8343e984b29c128a5` or authorize a product runtime or publication.
 
 # Reiyah Session Handoff
 

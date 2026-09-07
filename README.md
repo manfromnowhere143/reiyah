@@ -35,6 +35,32 @@ failed its precision check and remains retained; its replacement was frozen befo
 judgments. All physical-performance estimates remain null until the required observations exist.
 This is a private offline research experiment, not a new perception model or driving runtime.
 
+## Portable tools and the next evidence
+
+The [offline population auditor](docs/REFERENCE_AUDIT_DEMO_2026-09-07.md) returns replayable
+geometric witnesses while keeping excluded annotations, unmatched predictions and unavailable
+references distinct. Its synthetic example runs without a dataset download, model or API key.
+This is a conventional geometric calculation with an explicit interpretation boundary, not a
+new perception algorithm or a benchmark win.
+
+The [real-data replay](docs/REFERENCE_AUDIT_REAL_DATA_2026-09-07.md) reproduces AO's reference
+correction and separately examines frames omitted by the object-row cache. An independent
+numerical implementation agrees on every retained prediction classification. Physical truth
+remains outside that computational check.
+
+The [developer-access investigation](docs/DEVELOPER_ACCESS_RESEARCH_2026-09-07.md) compares
+existing evaluation products and the July 2026 MCP specification. Free access is a proposed
+adoption strategy; an external engineer must first obtain independently confirmed value.
+The [Sentinel, Telos and Inbar review](docs/SIBLING_RESEARCH_TRANSFER_2026-09-07.md) carries
+over experimental controls and independently recalculates selected retained records. Their
+codebases and scientific authorities remain separate.
+
+Use the [research continuation ledger](docs/RESEARCH_CONTINUATION_2026-09-07.md) to resume.
+The [current closeout](docs/DEVELOPER_VALUE_CLOSEOUT_2026-09-07.md) records completed runs,
+validation scope and the local delivery boundary.
+The next scientific observation is independent blinded review of the prepared cases. No human
+judgments or physical false-positive rates have been supplied by the new tools.
+
 ## What actually runs
 
 ```mermaid
@@ -53,6 +79,11 @@ flowchart TB
     T --> R["Review checks, documents and static figures"]
     D --> A["Reference population audit"]
     A --> T
+    D --> AP["Portable table audit and exact proximity witnesses"]
+    D --> FC["Sample-table frame census and explicit empty or unavailable references"]
+    FC --> FS["Separate omitted-frame sensitivity; frozen sample unchanged"]
+    FS --> AP
+    AP --> R
     A --> P2["Frozen probability sample and original sensor evidence"]
     P2 --> R2["Blinded independent review: pending"]
     R2 --> U2["Unresolved cases retained in support intervals"]

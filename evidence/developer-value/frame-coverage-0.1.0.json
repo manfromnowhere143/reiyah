@@ -1,0 +1,62 @@
+{
+  "artifact_id": "reiyah.reference-frame-coverage.0.1.0",
+  "changes_frozen_study": false,
+  "channels": {
+    "camera": {
+      "all_prediction_frame_selected_detections": 103030,
+      "omitted_frame_audit_counts": {
+        "evaluation_reference_near": 0,
+        "excluded_reference_near": 2,
+        "reference_unknown": 0,
+        "unmatched_in_supplied_wider_reference": 20
+      },
+      "omitted_frame_selected_detections": 22,
+      "physical_false_positive_rate": null
+    },
+    "lidar": {
+      "all_prediction_frame_selected_detections": 119872,
+      "omitted_frame_audit_counts": {
+        "evaluation_reference_near": 0,
+        "excluded_reference_near": 26,
+        "reference_unknown": 0,
+        "unmatched_in_supplied_wider_reference": 176
+      },
+      "omitted_frame_selected_detections": 202,
+      "physical_false_positive_rate": null
+    }
+  },
+  "coverage": {
+    "cache_samples": 5953,
+    "cache_scene_count": 150,
+    "metadata_scene_census_samples": 6019,
+    "omitted_cache_samples": 66,
+    "prediction_keys_equal_metadata_scene_census": true,
+    "prediction_samples": 6019,
+    "prediction_scene_count": 150,
+    "same_scene_universe": true
+  },
+  "inputs_unchanged": true,
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "The supplied prediction universe is cross-checked against the same observed scenes; official split membership not independently rederived",
+    "Existing AO and study estimands are cache-conditioned; extension is a separate retrospective sensitivity",
+    "Annotation presence and proximity do not establish physical detection correctness"
+  ],
+  "omitted_frame_annotation_count": 303,
+  "omitted_frames_with_annotations": 63,
+  "omitted_frames_with_empty_annotation_table": 3,
+  "private_output_closure": [
+    {
+      "byte_size": 134033,
+      "path": "bundles.jsonl",
+      "sha256": "ad47055c291a1e3b8a4fe969ba7889bd97341fc8d79191dd059dd69ba5199e11"
+    },
+    {
+      "byte_size": 268987,
+      "path": "reports.jsonl",
+      "sha256": "3dc9faa58036dad20e8f35505c8abfe742b39286fac9ed2c556cea64fb31ddd8"
+    }
+  ],
+  "spec_sha256": "8c9e145cf9ad31cede45584f7699f448bae1e21e211d6ee3a7810d23e65c42a8",
+  "version": "0.1.0"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "reiyah.reference-population-input.v1",
+  "artifact_id": "reiyah.reference-audit.synthetic-demo.0.1.0",
+  "upstream_selection_id": "synthetic.four-predictions.v1",
+  "evaluation_scope_id": "synthetic.evaluation-reference.v1",
+  "wider_reference_scope_id": "synthetic.wider-reference.v1",
+  "radius_m": "2",
+  "frames": [
+    {
+      "id": "synthetic-frame-1",
+      "timestamp_us": 1000000,
+      "coordinate_frame_id": "synthetic-world-xy-m",
+      "reference_state": "available",
+      "annotations": [
+        {"id": "included-object", "xy_m": ["5", "0"]},
+        {"id": "excluded-object", "xy_m": ["55", "0"]}
+      ],
+      "evaluation_annotation_ids": ["included-object"],
+      "predictions": [
+        {"id": "prediction-1", "xy_m": ["5.2", "0"]},
+        {"id": "prediction-2", "xy_m": ["55.2", "0"]},
+        {"id": "prediction-3", "xy_m": ["75", "0"]}
+      ]
+    },
+    {
+      "id": "synthetic-frame-2",
+      "timestamp_us": 1500000,
+      "coordinate_frame_id": "synthetic-world-xy-m",
+      "reference_state": "unavailable",
+      "annotations": null,
+      "evaluation_annotation_ids": null,
+      "predictions": [{"id": "prediction-4", "xy_m": ["55.2", "0"]}]
+    }
+  ]
+}

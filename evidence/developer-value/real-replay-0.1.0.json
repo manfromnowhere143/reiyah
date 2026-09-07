@@ -1,0 +1,64 @@
+{
+  "artifact_id": "reiyah.reference-population-real-replay-result.0.1.0",
+  "cache_annotation_membership_and_xy_verified": true,
+  "channels": {
+    "camera": {
+      "below_threshold": 693124,
+      "counts": {
+        "evaluation_reference_near": 78576,
+        "excluded_reference_near": 3151,
+        "reference_unknown": 0,
+        "unmatched_in_supplied_wider_reference": 21281
+      },
+      "physical_false_positive_rate": null,
+      "rejected_class": 0,
+      "samples": 5953,
+      "selected_predictions": 103008
+    },
+    "lidar": {
+      "below_threshold": 361796,
+      "counts": {
+        "evaluation_reference_near": 95830,
+        "excluded_reference_near": 5728,
+        "reference_unknown": 0,
+        "unmatched_in_supplied_wider_reference": 18112
+      },
+      "physical_false_positive_rate": null,
+      "rejected_class": 0,
+      "samples": 5953,
+      "selected_predictions": 119670
+    }
+  },
+  "inputs_unchanged": true,
+  "lifecycle_status": "exploratory",
+  "limitations": [
+    "Same retained predictions and reference as AO, not independent sensor inference",
+    "An independent numeric implementation, not independent annotation truth",
+    "Raw bundles and per-prediction reports retained privately",
+    "Upstream evaluator filtering policy not independently reconstructed"
+  ],
+  "private_output_closure": [
+    {
+      "byte_size": 29345102,
+      "path": "camera.bundles.jsonl",
+      "sha256": "85b2169af98dd17c6dd199f9d7db658be113574f104c24affeed827389a07539"
+    },
+    {
+      "byte_size": 66196726,
+      "path": "camera.reports.jsonl",
+      "sha256": "0c4789cc43c71ef4c16bcfcf870fe3a5340f95eac3b4e464aa90670801076fb1"
+    },
+    {
+      "byte_size": 30576173,
+      "path": "lidar.bundles.jsonl",
+      "sha256": "7a250af12cb5f98d0e4be7bee800336c8a94ddd09231e72c5a8bddb8958b91c7"
+    },
+    {
+      "byte_size": 75352851,
+      "path": "lidar.reports.jsonl",
+      "sha256": "5d51855f544f5643755f9b5ac54dcef6c199e0be31a0d19cc114c12b26830a35"
+    }
+  ],
+  "spec_sha256": "0a36cee9f5c94ecb23b4dc95117766f582128e483b51200b034c24bcee061d17",
+  "version": "0.1.0"
+}

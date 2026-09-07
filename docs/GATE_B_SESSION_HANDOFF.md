@@ -1,3 +1,20 @@
+# Current developer-value and research continuation, 2026-09-07
+
+Read [the current task ledger and shutdown handoff](RESEARCH_CONTINUATION_2026-09-07.md)
+first. The local `research/2026-09-07-developer-value` candidate extends reference-study
+commit `9d8a18eab7144bd02b1f64c41bc8f179f32ee653`. It adds an offline portable reference
+auditor, selected sibling evidence recalculations and a current interface/value investigation.
+It does not add an MCP service, merge sibling code, run perception inference or produce human
+adjudication. The prepared reference study remains the scientific priority.
+
+The earlier continuation blocks below preserve their dated context. In particular, the board's
+original instruction to design the reference study is superseded by the completed preparation
+at `9d8a18e`; it is not an instruction to restart sampling. Use the current ledger to resolve
+what is completed, proposed, pending or deferred. Existing protocols and claim registers are
+unchanged, and no passing development check supplies independent acceptance.
+
+---
+
 # Research-board continuation, 2026-09-07
 
 ## Reference-study continuation, 2026-09-07

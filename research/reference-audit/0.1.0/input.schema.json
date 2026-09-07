@@ -1,0 +1,173 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "upstream_selection_id",
+    "evaluation_scope_id",
+    "wider_reference_scope_id",
+    "radius_m",
+    "frames"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "reiyah.reference-population-input.v1"
+    },
+    "artifact_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "upstream_selection_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "evaluation_scope_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "wider_reference_scope_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "radius_m": {
+      "$ref": "#/$defs/decimal"
+    },
+    "frames": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/frame"
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:reiyah:reference-population-input:0.1.0",
+  "title": "Reiyah supplied reference population audit input 0.1.0",
+  "$comment": "The offline implementation also enforces positive radius, distinct scopes, unique IDs, subset membership, byte size and distance-work budget. Alignment and selection truth are caller declarations.",
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]{0,159}$(?![\\s\\S])"
+    },
+    "decimal": {
+      "type": "string",
+      "pattern": "^-?(?:0|[1-9][0-9]{0,11})(?:\\.[0-9]{1,32})?$(?![\\s\\S])"
+    },
+    "point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "xy_m"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "xy_m": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "$ref": "#/$defs/decimal"
+          }
+        }
+      }
+    },
+    "frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "timestamp_us",
+        "coordinate_frame_id",
+        "reference_state",
+        "annotations",
+        "evaluation_annotation_ids",
+        "predictions"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "timestamp_us": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "coordinate_frame_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "reference_state": {
+          "enum": [
+            "available",
+            "unavailable",
+            "withheld",
+            "invalid"
+          ]
+        },
+        "annotations": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/point"
+              }
+            }
+          ]
+        },
+        "evaluation_annotation_ids": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/identifier"
+              }
+            }
+          ]
+        },
+        "predictions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/point"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "reference_state": {
+                "const": "available"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "annotations": {
+                "type": "array"
+              },
+              "evaluation_annotation_ids": {
+                "type": "array"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "annotations": {
+                "type": "null"
+              },
+              "evaluation_annotation_ids": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

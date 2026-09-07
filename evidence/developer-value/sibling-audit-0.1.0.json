@@ -1,0 +1,108 @@
+{
+  "analyzer_sha256": "037ec3655a90404ea015747dbdde04f9f47c4a353a0f2cc077a6cc8f5858ad63",
+  "artifact_id": "reiyah.sibling-evidence-audit.0.1.0",
+  "inbar": {
+    "agreement": [
+      746,
+      750
+    ],
+    "always_negative_accuracy": [
+      686,
+      750
+    ],
+    "always_negative_clears_frozen_90_percent_rule": true,
+    "confusion": {
+      "false_negative": 4,
+      "false_positive": 0,
+      "true_negative": 686,
+      "true_positive": 60
+    },
+    "exact_commands": 334,
+    "historical_execution_artifact_retained": false,
+    "informative_cells": 750,
+    "measurement_cells": 1125,
+    "prediction_cells": 75,
+    "scope": "Reaggregation of retrospective reconstructed cells; not historical run recovery or a new simulator experiment"
+  },
+  "lifecycle_status": "exploratory",
+  "scientific_authority_imported": false,
+  "sentinel": {
+    "all_arm_ncap_reproduce": true,
+    "arm_collision_fraction": {
+      "off": 0.5225,
+      "placebo": 0.505,
+      "union": 0.4275
+    },
+    "arm_episode_counts": {
+      "off": 400,
+      "placebo": 400,
+      "union": 400
+    },
+    "arm_ncap_class_weighted": {
+      "off": 2.135,
+      "placebo": 2.5376,
+      "union": 2.9058
+    },
+    "bootstrap_draw_count": 10000,
+    "bootstrap_draws_missing_a_class": 69,
+    "distinct_scene_identifiers": 14,
+    "frame_rows_missing_pair_key": 6219,
+    "historical_primary_ci": [
+      -0.1901,
+      0.8866
+    ],
+    "historical_report_frame_count": 0,
+    "placebo_brake_rows": 859,
+    "placebo_frame_rows": 6219,
+    "primary_interval_reproduces": true,
+    "primary_union_minus_placebo": 0.3683,
+    "scenario_class_pairs": 20,
+    "scope": "Independent aggregation of retained execution logs; no new simulation or safe-progress replay"
+  },
+  "source_ledger_sha256": "25c8418b8d2a0a305f4e766005aef9aa9d2e7bfb3144fa2d89fe796fd8e6f74a",
+  "telos": {
+    "certified_correct": {
+      "adjusted_flags": 8,
+      "complete_case": [
+        10,
+        42
+      ],
+      "flagged_instrument_failures": 2,
+      "flags": 10,
+      "missing": 12,
+      "missing_upper": [
+        22,
+        54
+      ],
+      "observed": 42,
+      "observed_lower": [
+        10,
+        54
+      ],
+      "opportunities": 54
+    },
+    "certified_yet_wrong": {
+      "adjusted_flags": 2,
+      "complete_case": [
+        4,
+        9
+      ],
+      "flagged_instrument_failures": 2,
+      "flags": 4,
+      "missing": 4,
+      "missing_upper": [
+        8,
+        13
+      ],
+      "observed": 9,
+      "observed_lower": [
+        4,
+        13
+      ],
+      "opportunities": 13
+    },
+    "external_semantic_ground_truth": "unestablished",
+    "scope": "Reaggregation of retained adjudicator rows; labels and instrument-failure diagnoses not independently verified"
+  },
+  "version": "0.1.0"
+}

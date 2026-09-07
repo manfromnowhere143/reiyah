@@ -1,0 +1,42 @@
+{
+  "adapter_sha256": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+  "artifact_id": "reiyah.reference-population-real-replay.0.1.0",
+  "auditor_sha256": "20357fac547358063116d6652b2dc31f0c4a6a45feb1112db35d5bddadc70cbd",
+  "classes": [
+    "barrier",
+    "bicycle",
+    "bus",
+    "car",
+    "construction_vehicle",
+    "motorcycle",
+    "pedestrian",
+    "traffic_cone",
+    "trailer",
+    "truck"
+  ],
+  "expected_input_record_sha256": "327cb685db2ffcc206ba9da6e0213c81e73c2926db7ba18b8cc651a41184612e",
+  "inputs": {
+    "gt_val_cache.json": {
+      "bytes": 51063137,
+      "sha256": "7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd"
+    },
+    "meta.tgz": {
+      "bytes": 461678030,
+      "sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b"
+    },
+    "predictions/mapillary_val.json": {
+      "bytes": 343998291,
+      "sha256": "f948e9778fb9a332d748f7e504fbade04f0c00c2699d7b0af757cacdbd567e99"
+    },
+    "predictions/megvii_val.json": {
+      "bytes": 224899254,
+      "sha256": "e7a995c31692ac95a86b56208e0b5d82a4ab908df8d0a9b9474d70adb693eab4"
+    }
+  },
+  "lifecycle_status": "exploratory",
+  "radius_m": "2",
+  "raw_numeric_policy": "decimal tokens retained exactly; no coordinate rounding",
+  "score_threshold": "0.3",
+  "selection": "all and only sample tokens in the retained ground-truth cache",
+  "version": "0.1.0"
+}

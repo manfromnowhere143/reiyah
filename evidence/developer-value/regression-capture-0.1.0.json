@@ -1,0 +1,62 @@
+[
+  {
+    "check_id": "portable-regression",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/measure",
+      "-p",
+      "test_reference_population_audit.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "captured_at_utc": "2026-09-07T07:32:10.315056+00:00",
+    "python_version": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "streams": {
+      "stdout": {
+        "byte_size": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "private_locator": "developer-value-2026-09-07/checks/portable-regression.stdout"
+      },
+      "stderr": {
+        "byte_size": 2191,
+        "sha256": "0912a7a1458c905b847f9c126c1c23a7ca7eacb09cd7bcaf6e785d0dc29a80e4",
+        "private_locator": "developer-value-2026-09-07/checks/portable-regression.stderr"
+      }
+    }
+  },
+  {
+    "check_id": "adapter-regression",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/measure",
+      "-p",
+      "test_reference_replay_adapter.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "captured_at_utc": "2026-09-07T07:32:10.481197+00:00",
+    "python_version": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "streams": {
+      "stdout": {
+        "byte_size": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "private_locator": "developer-value-2026-09-07/checks/adapter-regression.stdout"
+      },
+      "stderr": {
+        "byte_size": 1456,
+        "sha256": "ad710c5e3bc6e4f4303df0f78a69f4443eba72e5657a231188d89ba115fbceee",
+        "private_locator": "developer-value-2026-09-07/checks/adapter-regression.stderr"
+      }
+    }
+  }
+]
