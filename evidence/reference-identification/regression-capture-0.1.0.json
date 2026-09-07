@@ -1,0 +1,38 @@
+{
+  "artifact_id": "reiyah.reference-identification-regression-capture.0.1.0",
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tools/measure",
+    "-p",
+    "test_reference_identification.py",
+    "-v"
+  ],
+  "completed_utc": "2026-09-07T09:18:05.435284+00:00",
+  "elapsed_seconds": 0.08683137502521276,
+  "exit_code": 0,
+  "gate_a_release": false,
+  "mode": "development",
+  "sources": {
+    "tools/measure/reference_identification_counterexamples.py": "09052518f26b857c23494b0a1602bac62ed001815bbdf5c5fdecf760a12cb4b0",
+    "tools/measure/test_reference_identification.py": "9c42ac1c61b88354e75ce39040bc003aa1515de41aad99843afc01396c4f6046"
+  },
+  "started_utc": "2026-09-07T09:18:05.348469+00:00",
+  "streams": {
+    "stderr": {
+      "bytes": 1646,
+      "path": "regression.stderr",
+      "sha256": "3d9b38534b387548cb39089a860214c32360aaae30b51578503fa597adc462a3"
+    },
+    "stdout": {
+      "bytes": 0,
+      "path": "regression.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "version": "0.1.0"
+}

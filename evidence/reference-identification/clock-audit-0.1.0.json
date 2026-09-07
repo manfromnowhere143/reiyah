@@ -1,0 +1,107 @@
+{
+  "artifact_id": "reiyah.opportunity-clock-audit.0.1.0",
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "No annotation or prediction table was parsed; selection depends only on official scene membership and clock extent",
+    "Sensor metadata presence does not establish payload validity, online availability or physical observability",
+    "Context eligibility measures scene extent, not continuous visibility or adequate reference coverage",
+    "No pilot sample, independent labels, physical error rate or safety claim was produced"
+  ],
+  "metadata_tables_read": {
+    "calibrated_sensor.json": 10200,
+    "sample.json": 34149,
+    "sample_data.json": 2631083,
+    "scene.json": 850,
+    "sensor.json": 12
+  },
+  "private_output_closure": [
+    {
+      "bytes": 11100181,
+      "path": "frame-clock.private.jsonl",
+      "sha256": "ae760c52d4038287a3910633dbb08eb7c25da64d676dcd5dfd2c7b28261e89ec"
+    },
+    {
+      "bytes": 18150,
+      "path": "scene-clock.private.jsonl",
+      "sha256": "fc45be2653923319285e753c68c2e4d421cc2635fefede2eea928db89dddf730"
+    }
+  ],
+  "result": {
+    "adjacent_anchor_gap_us": {
+      "count": 5869,
+      "max": 650830,
+      "min": 398234
+    },
+    "anchors_with_all_required_keyframe_metadata": 6019,
+    "clock_context_us_each_side": 2000000,
+    "context_anchor_count": 4682,
+    "online_availability_times": "unmeasured",
+    "per_channel": {
+      "CAM_BACK": {
+        "absolute_p95_nearest_rank_us": 12917,
+        "later_than_anchor_capture_count": 0,
+        "metadata_missing": 0,
+        "metadata_present": 6019,
+        "signed_max_us": -7473,
+        "signed_min_us": -17202
+      },
+      "CAM_BACK_LEFT": {
+        "absolute_p95_nearest_rank_us": 3053,
+        "later_than_anchor_capture_count": 1117,
+        "metadata_missing": 0,
+        "metadata_present": 6019,
+        "signed_max_us": 2106,
+        "signed_min_us": -7355
+      },
+      "CAM_BACK_RIGHT": {
+        "absolute_p95_nearest_rank_us": 22403,
+        "later_than_anchor_capture_count": 0,
+        "metadata_missing": 0,
+        "metadata_present": 6019,
+        "signed_max_us": -17296,
+        "signed_min_us": -26647
+      },
+      "CAM_FRONT": {
+        "absolute_p95_nearest_rank_us": 38049,
+        "later_than_anchor_capture_count": 0,
+        "metadata_missing": 0,
+        "metadata_present": 6019,
+        "signed_max_us": -33055,
+        "signed_min_us": -42356
+      },
+      "CAM_FRONT_LEFT": {
+        "absolute_p95_nearest_rank_us": 45666,
+        "later_than_anchor_capture_count": 0,
+        "metadata_missing": 0,
+        "metadata_present": 6019,
+        "signed_max_us": -40362,
+        "signed_min_us": -49961
+      },
+      "CAM_FRONT_RIGHT": {
+        "absolute_p95_nearest_rank_us": 30023,
+        "later_than_anchor_capture_count": 0,
+        "metadata_missing": 0,
+        "metadata_present": 6019,
+        "signed_max_us": -24665,
+        "signed_min_us": -34278
+      },
+      "LIDAR_TOP": {
+        "absolute_p95_nearest_rank_us": 0,
+        "later_than_anchor_capture_count": 0,
+        "metadata_missing": 0,
+        "metadata_present": 6019,
+        "signed_max_us": 0,
+        "signed_min_us": 0
+      }
+    },
+    "physical_joint_error_coefficient": null,
+    "physical_opportunity_completeness": "unknown",
+    "pilot_selection": "not_performed",
+    "sample_anchor_count": 6019,
+    "scenes_with_context_anchors": 150,
+    "sensor_payload_validity": "not_checked",
+    "validation_scene_count": 150
+  },
+  "spec_sha256": "c28c682f636bae807a313847b90a217ab4daec99f1a50031b301a1105302c8c9",
+  "version": "0.1.0"
+}

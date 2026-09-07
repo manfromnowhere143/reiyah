@@ -1,16 +1,18 @@
 # Current developer-value and research continuation, 2026-09-07
 
-Latest checkpoint: `research/2026-09-07-m4-bounds`, based on
-`ca548d4fd66180e9c2e2aa4a789a366c23903401`. The
-[M4 bound audit](M4_RECTANGULAR_BOUND_FINDINGS_2026-09-07.md) reproduces a wrong infinity
-classification in retained fixture F-03; its correct supremum on the stated rectangle is
-49.75 and is not attained. A separate off-grid counterexample motivates rational enclosures
-and independent algebra checks. All seven direct historical rectangular report calls and
-nine authored controls were checked; the coupled differential experiment was not replayed.
-Read [the closeout](M4_BOUND_CLOSEOUT_2026-09-07.md) for exact completed work and restart
-instructions. Historical source, transcripts, study endpoints and claim registers remain
-preserved. The earlier [reference-noise correction](REFERENCE_NOISE_INTERPRETATION_2026-09-07.md)
-still applies; neither correction supplies missing physical observations.
+Latest checkpoint: `research/2026-09-07-reference-identification`, extending
+`2ae14e78e63fe674fcfd216d9dbb67765c2adff2`. Read the
+[identification findings](REFERENCE_IDENTIFICATION_FINDINGS_2026-09-07.md),
+[clock census](OPPORTUNITY_CLOCK_AUDIT_2026-09-07.md) and
+[closeout](REFERENCE_IDENTIFICATION_CLOSEOUT_2026-09-07.md). Exact synthetic worlds have
+identical observed detector/reference distributions and true coefficients 1 and 25/9.
+The metadata-only census supplies 4,682 candidate anchors across 150 scenes; it supplies no
+physical coverage guarantee or online availability times. Fourteen new controls pass.
+The proposed independent opportunity pilot has not been sampled or adjudicated. The original
+240-case detection study remains frozen, with no independent human judgments supplied.
+All inherited experiments, release operands and other sessions' work remain preserved.
+Operator acceptance remains unaccepted. The M4 bound and reference-noise corrections still
+apply; the present work does not turn those corrections into a safety certificate.
 
 Read [the current task ledger and shutdown handoff](RESEARCH_CONTINUATION_2026-09-07.md)
 first. The local `research/2026-09-07-developer-value` candidate extends reference-study

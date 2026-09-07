@@ -65,6 +65,14 @@ A new rational solver and separate algebra checker distinguish undefined coeffic
 finite boundary limits and genuine divergence. These bounds concern a declared mathematical
 domain; reference-process validity and sampling uncertainty require additional evidence.
 
+The [identification controls](docs/REFERENCE_IDENTIFICATION_FINDINGS_2026-09-07.md) construct
+two worlds with identical detector/reference observations but different true dependence.
+They show what additional reference information must establish. The
+[metadata-only clock census](docs/OPPORTUNITY_CLOCK_AUDIT_2026-09-07.md) finds 4,682 candidate
+time anchors across 150 scenes, with explicit capture offsets and unknown online availability.
+It prepares an [independent opportunity study](docs/INDEPENDENT_OPPORTUNITY_STUDY_DESIGN_2026-09-07.md)
+whose sampling frame includes times when every object-level observer could be silent.
+
 The [developer-access investigation](docs/DEVELOPER_ACCESS_RESEARCH_2026-09-07.md) compares
 existing evaluation products and the July 2026 MCP specification. Free access is a proposed
 adoption strategy; an external engineer must first obtain independently confirmed value.
@@ -73,11 +81,12 @@ over experimental controls and independently recalculates selected retained reco
 codebases and scientific authorities remain separate.
 
 Use the [research continuation ledger](docs/RESEARCH_CONTINUATION_2026-09-07.md) to resume.
-The [current closeout](docs/DEVELOPER_VALUE_CLOSEOUT_2026-09-07.md) records completed runs,
+The [developer-value checkpoint](docs/DEVELOPER_VALUE_CLOSEOUT_2026-09-07.md) records completed runs,
 validation scope and the preceding local delivery boundary. The
 [cache-policy checkpoint](docs/SELECTION_POLICY_CLOSEOUT_2026-09-07.md) records the selection
-audit and reference-noise correction. The [latest checkpoint](docs/M4_BOUND_CLOSEOUT_2026-09-07.md)
-records the corrected mathematical bounds and their independently checked witnesses. The [vision review](docs/VISION_REVIEW_2026-09-07.md)
+audit and reference-noise correction. The [M4 checkpoint](docs/M4_BOUND_CLOSEOUT_2026-09-07.md)
+records corrected mathematical bounds. The [latest checkpoint](docs/REFERENCE_IDENTIFICATION_CLOSEOUT_2026-09-07.md)
+records exact ambiguity witnesses, the clock census and the next physical study design. The [vision review](docs/VISION_REVIEW_2026-09-07.md)
 separates the desired company scale from the evidence needed to justify a product.
 The next scientific observation is independent blinded review of the prepared cases. No human
 judgments or physical false-positive rates have been supplied by the new tools.
@@ -112,6 +121,10 @@ flowchart TB
     MB["Declared synthetic cell ranges"] --> MS["Rational extrema and explicit undefinedness"]
     MS --> MC["Separate algebra check of bounds and witnesses"]
     MC --> R
+    OE["Same observable law, different admissible latent truths"] --> IS["Identified set and missing reference information"]
+    IS --> R
+    CT["Official scene and sample clocks; no object-output selection"] --> CW["Candidate time anchors, capture offsets and explicit availability unknowns"]
+    CW --> R
     A --> P2["Frozen probability sample and original sensor evidence"]
     P2 --> R2["Blinded independent review: pending"]
     R2 --> U2["Unresolved cases retained in support intervals"]

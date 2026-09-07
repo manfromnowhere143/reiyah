@@ -1,0 +1,41 @@
+{
+  "artifact_id": "reiyah.reference-identification-clock-audit-capture.0.1.0",
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "tools/measure/audit_opportunity_clock.py",
+    "--meta",
+    "/Users/danielwahnich/.codex/reports/reiyah/developer-value-2026-09-07/private/real-replay-inputs/meta.tgz",
+    "--spec",
+    "evidence/reference-identification/clock-spec-0.1.0.json",
+    "--output-dir",
+    "/Users/danielwahnich/.codex/reports/reiyah/reference-identification-2026-09-07/private/clock-audit-1"
+  ],
+  "completed_utc": "2026-09-07T09:33:58.494958+00:00",
+  "elapsed_seconds": 119.48226499999873,
+  "exit_code": 0,
+  "gate_a_release": false,
+  "mode": "development",
+  "sources": {
+    "evidence/nuscenes_splits_devkit.py": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd",
+    "tools/measure/audit_cache_selection.py": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+    "tools/measure/audit_opportunity_clock.py": "0ed5c3716755accbea31d59c4c7564ea6f176090f8744809ef627ac77cb1a7d2",
+    "tools/measure/reference_population_audit.py": "20357fac547358063116d6652b2dc31f0c4a6a45feb1112db35d5bddadc70cbd",
+    "tools/measure/replay_reference_population_audit.py": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+    "tools/measure/test_opportunity_clock.py": "55ed826a66fdc27ee2ccba24388dd14adba9b4c0f48d506f89c8af0549a66264"
+  },
+  "started_utc": "2026-09-07T09:31:59.012754+00:00",
+  "streams": {
+    "stderr": {
+      "bytes": 100,
+      "path": "clock-audit.stderr",
+      "sha256": "8d72f73b2cb0c851c20d349a1e5f33c63b1fa0a25f80c4727bc420baa1709cb8"
+    },
+    "stdout": {
+      "bytes": 3585,
+      "path": "clock-audit.stdout",
+      "sha256": "57b1492386b6230005543a8ab3e76a5e1964e42cd99284af3e196e354a45767c"
+    }
+  },
+  "version": "0.1.0"
+}

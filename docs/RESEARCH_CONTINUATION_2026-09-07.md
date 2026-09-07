@@ -24,7 +24,8 @@ also remains untouched. Read their current states before any future integration.
 | Frozen reference study | `9d8a18eab7144bd02b1f64c41bc8f179f32ee653` | Sampling, raw evidence retrieval, 240 blinded packets, unknown-preserving analysis |
 | Developer value and sibling review | `beccb6b50babfe9b203b8b8e4aad59c304003a89` | Selected sibling recalculations, current interface research, portable population auditor and continuation ledger |
 | Cache selection and reference-noise interpretation | `ca548d4fd66180e9c2e2aa4a789a366c23903401` | Raw-metadata selection reconstruction and exact noise counterexample |
-| M4 rectangular bounds | `research/2026-09-07-m4-bounds` | Historical F-03 correction, rational extrema and a separate algebra checker |
+| M4 rectangular bounds | `2ae14e78e63fe674fcfd216d9dbb67765c2adff2` | Historical F-03 correction, rational extrema and a separate algebra checker |
+| Reference identification and opportunity clocks | `research/2026-09-07-reference-identification` | Exact compatible-world witnesses, bounded reference-error sensitivity and a raw-metadata anchor census |
 
 The final local commit identity for the last row is recorded by the private `delivery.json`
 and can be resolved from the branch. It must not be inferred from a remembered hash or a
@@ -40,9 +41,10 @@ Private task custody is under:
   developer-value-2026-09-07/
   selection-policy-2026-09-07/
   m4-bounds-2026-09-07/
+  reference-identification-2026-09-07/
 ```
 
-The last directory contains an exported `baseline/` at `ca548d4`, the reviewable
+The last directory contains an exported `baseline/` at `2ae14e7`, the reviewable
 `implementation/`, synthetic controls, completed checks, an exact candidate delta, a patch
 and the final Git readback. Raw data and primary payloads remain in preceding task custody. These exports are not replacements for the canonical
 repository identity gate. A new session must begin at the canonical Reiyah root and inspect
@@ -64,7 +66,8 @@ the local research ref without overwriting the active owners' work.
 | R10 | Reconstruct the cache's declared inclusion policy from raw metadata and upstream sources | Completed; exact membership and checked fields agree | Preserve the scoped result; this does not establish physical completeness or full SDK conformance |
 | R11 | Test the external vision review's inference from M4 to general reference-error immunity | Broad interpretation corrected by an exact counterexample | Model reference transitions and opportunity selection explicitly before interpreting an error budget |
 | R12 | Determine whether numerical M4 extrema are valid outer bounds and distinguish undefined from unbounded | Completed for the nonnegative rectangular domain | Use the new solver and separate algebra checker; F-03 is corrected; do not silently apply this to coupled models |
-| R13 | Identify which observations can constrain reference transitions and opportunities missed by every channel | Next scientific design investigation | Construct observationally equivalent worlds and determine which independent observations distinguish them |
+| R13 | Identify which observations can constrain reference transitions and opportunities missed by every channel | Exact counterexamples and proposed independent-opportunity design completed | Obtain independent observations; do not infer latent truth from observer agreement |
+| R14 | Establish a sampling population from scene clocks without object-output selection | Metadata census completed; 4,682 eligible anchors in 150 scenes | Freeze a new pilot protocol and evidence presentation before sampling; payload validity and online availability remain unknown |
 
 R02 remains the highest-value scientific dependency. R04-R07 supplement it; they do not
 replace missing judgments with more software. No human or model was impersonated as an
@@ -135,7 +138,7 @@ No novelty or performance advantage is claimed for wrapping a tool in that proto
 
 ## Latest completed checks and interpretation correction
 
-Read [the latest checkpoint](SELECTION_POLICY_CLOSEOUT_2026-09-07.md) and
+Read [the cache-policy checkpoint](SELECTION_POLICY_CLOSEOUT_2026-09-07.md) and
 [cache-policy result](CACHE_SELECTION_AUDIT_2026-09-07.md). The raw-metadata reconstruction
 compares all 134,565 selected annotation IDs and the named metadata fields, with zero
 disagreements. The official validation census independently reconstructed from the retained
@@ -156,6 +159,17 @@ explicit definedness and a separate global-inequality checker. Twenty-one regres
 pass, including a finite lattice of 1,296 rectangles and forged-bound rejections. These checks
 neither validate coupled reference-error constraints nor repeat the historical differential
 experiment. Its original source and transcript remain unchanged.
+
+Read [the identification findings](REFERENCE_IDENTIFICATION_FINDINGS_2026-09-07.md) and
+[latest closeout](REFERENCE_IDENTIFICATION_CLOSEOUT_2026-09-07.md). The same full observed
+binary detector/reference law admits true coefficients 1 and 25/9. The constructed total
+reference-flip budget has sharp bounds only for its declared synthetic table; its eight-percent
+threshold is not a nuScenes result. The [clock preflight](OPPORTUNITY_CLOCK_AUDIT_2026-09-07.md)
+parses five raw metadata tables, including 2,631,083 sample-data rows, without parsing annotations
+or predictions. It finds 4,682 context-eligible anchors and retains every channel's capture
+offset. Sensor payloads and online availability have not been validated by this computation.
+The [new study design](INDEPENDENT_OPPORTUNITY_STUDY_DESIGN_2026-09-07.md) remains proposed;
+no independent opportunity pilot has been selected or judged.
 
 The prepared 240-case detection study does not identify a complete opportunity census of
 true joint misses or a safety-critical reference transition model. Preserve its original

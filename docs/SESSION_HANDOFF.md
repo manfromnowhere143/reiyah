@@ -1,14 +1,18 @@
 # Current research navigation, 2026-09-07
 
-The latest local continuation is `research/2026-09-07-m4-bounds`, extending
-`ca548d4fd66180e9c2e2aa4a789a366c23903401`. Read the
-[M4 bound checkpoint](M4_BOUND_CLOSEOUT_2026-09-07.md) and
-[corrected findings](M4_RECTANGULAR_BOUND_FINDINGS_2026-09-07.md) before the earlier context.
-The retained F-03 synthetic fixture has finite supremum 49.75, not an infinite supremum.
-The historical source and transcript remain unchanged; the new component does not validate
-M4's coupled differential model or the physical reference. All active worktrees and frozen
-empirical protocols remain under their existing ownership and exact identities. No acceptance
-state is changed.
+Latest checkpoint: `research/2026-09-07-reference-identification`, extending
+`2ae14e78e63fe674fcfd216d9dbb67765c2adff2`. Read the
+[identification findings](REFERENCE_IDENTIFICATION_FINDINGS_2026-09-07.md),
+[clock census](OPPORTUNITY_CLOCK_AUDIT_2026-09-07.md) and
+[closeout](REFERENCE_IDENTIFICATION_CLOSEOUT_2026-09-07.md). Exact synthetic worlds have
+identical observed detector/reference distributions and true coefficients 1 and 25/9.
+The metadata-only census supplies 4,682 candidate anchors across 150 scenes; it supplies no
+physical coverage guarantee or online availability times. Fourteen new controls pass.
+The proposed independent opportunity pilot has not been sampled or adjudicated. The original
+240-case detection study remains frozen, with no independent human judgments supplied.
+All inherited experiments, release operands and other sessions' work remain preserved.
+Operator acceptance remains unaccepted. The M4 bound and reference-noise corrections still
+apply; the present work does not turn those corrections into a safety certificate.
 
 Read [the research continuation and stopping point](RESEARCH_CONTINUATION_2026-09-07.md)
 first for this local research branch. It extends the frozen reference-study commit
