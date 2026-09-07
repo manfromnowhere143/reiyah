@@ -1,3 +1,35 @@
+# Research-board continuation, 2026-09-07
+
+The isolated research candidate follows exact Gate B commit
+`fd094c066437e67cefbb86f363dd1bef7ccf8e6e`; neither active worktree was edited or switched.
+Read [the board report](RESEARCH_BOARD_2026-09-07.md),
+[Result AO](RESULT_AO_REFERENCE_POPULATION_AUDIT.md), and
+[the closeout](RESEARCH_BOARD_CLOSEOUT_2026-09-07.md) before the inherited handoff below.
+
+Completed scope: independently reimplemented reference-population and scene-cluster sensitivity;
+corrected matcher failure/output behavior and replay exit checking; added executable regressions;
+retained aggregate results and primary-source retrieval metadata; replaced the universal-law
+synthesis with scoped findings; corrected the ghost-reference and E-value interpretations.
+The new register is `evidence/claim-status-register-2026-09-07.json`, version `0.2.24`, with exact
+predecessor binding. The replay manifest is version `0.1.14`; every inherited transcript is kept.
+The final validation record, not this prose, determines checker and replay results.
+
+The demonstrated reference defect applies to the ghost series' claimed annotation coverage.
+It does not invalidate miss coefficients on their declared filtered population. The fuller
+reference does not independently determine physical reality. The human belief/readiness constructs,
+causal policy benefits and universal transfer remain unestablished. The concurrent user-supplied
+Claude review agreed with the reference-first direction and supplied the useful scope correction;
+it does not provide independent numerical replication.
+
+Next action: design and preregister independent scene-stratified adjudication of the unmatched
+cases and controls, retaining unresolved labels. Integrate this research commit only from its
+exact branch/commit after reconciling the current engine and UI owners' changes. Do not switch
+branches or overwrite their worktrees. No cloud/model sweep, participant collection, product
+runtime, publication or operator acceptance is inferred. All code and documents remain proposals
+or exploratory measurements under the repository's authority boundaries.
+
+---
+
 # Gate B Session Handoff
 
 Read `AGENTS.md` first, then this. Resolve every state from the exact artifacts named here, never

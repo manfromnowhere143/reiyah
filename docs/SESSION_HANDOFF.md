@@ -1,3 +1,11 @@
+> Research branch navigation, 2026-09-07: this branch contains the isolated
+> [research-board investigation](RESEARCH_BOARD_2026-09-07.md) and
+> [research closeout](RESEARCH_BOARD_CLOSEOUT_2026-09-07.md), based on Gate B commit
+> `fd094c066437e67cefbb86f363dd1bef7ccf8e6e`. Read the
+> [Gate B handoff](GATE_B_SESSION_HANDOFF.md) for this branch's next research action.
+> The inherited Gate A handoff below describes its original exact artifacts. This navigation
+> update does not make the branch a newly validated Gate A release or imply operator acceptance.
+
 # Reiyah Session Handoff
 
 Gate A `1.2.0` remains operator-unaccepted; architecture status must be resolved from the exact canonical report and repeated byte-identical release replay.

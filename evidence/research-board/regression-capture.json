@@ -1,0 +1,29 @@
+{
+  "artifact_id": "reiyah.research-board-regression-capture.2026-09-07",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "argv": [
+    "/opt/homebrew/bin/python3.14",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tools/measure",
+    "-p",
+    "test_research_board_regressions.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "seconds": 4.434,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "0b519237dbab1f2ca391d99f3e7e8c9193fd11f270dbdf057b9ae3b23a1be4d4",
+  "stderr_text": "test_nonfinite_and_out_of_range_comparators_are_refused (test_research_board_regressions.MatcherExitTests.test_nonfinite_and_out_of_range_comparators_are_refused) ... ok\ntest_rejected_accuracy_does_not_create_artifact (test_research_board_regressions.MatcherExitTests.test_rejected_accuracy_does_not_create_artifact) ... ok\ntest_rejected_accuracy_preserves_existing_artifact (test_research_board_regressions.MatcherExitTests.test_rejected_accuracy_preserves_existing_artifact) ... ok\ntest_valid_zero_accuracy_emits_valid_empty_match_set (test_research_board_regressions.MatcherExitTests.test_valid_zero_accuracy_emits_valid_empty_match_set) ... ok\ntest_annotation_stream_handles_utf8_split_across_reads (test_research_board_regressions.ReferencePopulationTests.test_annotation_stream_handles_utf8_split_across_reads) ... ok\ntest_annotation_stream_rejects_incomplete_or_malformed_reference (test_research_board_regressions.ReferencePopulationTests.test_annotation_stream_rejects_incomplete_or_malformed_reference) ... ok\ntest_audit_cannot_overwrite_source_input (test_research_board_regressions.ReferencePopulationTests.test_audit_cannot_overwrite_source_input) ... ok\ntest_ego_relative_transport_does_not_preserve_static_world_geometry (test_research_board_regressions.ReferencePopulationTests.test_ego_relative_transport_does_not_preserve_static_world_geometry) ... ok\ntest_empty_donor_is_zero_coincidence (test_research_board_regressions.ReferencePopulationTests.test_empty_donor_is_zero_coincidence) ... ok\ntest_excluding_an_annotation_can_create_a_false_absence_flag (test_research_board_regressions.ReferencePopulationTests.test_excluding_an_annotation_can_create_a_false_absence_flag) ... ok\ntest_missing_reference_cannot_certify_absence (test_research_board_regressions.ReferencePopulationTests.test_missing_reference_cannot_certify_absence) ... ok\ntest_missing_sample_and_empty_sample_are_different (test_research_board_regressions.ReferencePopulationTests.test_missing_sample_and_empty_sample_are_different) ... ok\ntest_matching_stdout_cannot_hide_failed_process (test_research_board_regressions.ReplayExitTests.test_matching_stdout_cannot_hide_failed_process) ... ok\ntest_successful_matching_producer_is_accepted (test_research_board_regressions.ReplayExitTests.test_successful_matching_producer_is_accepted) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 4.078s\n\nOK\n",
+  "tool_hashes": {
+    "match.py": "d77ec99ddf93870d7948b18621d184c79a26589def18dbc6d59ba44f1c65ff05",
+    "gate_b_check.py": "e899d1e49f9594a526f532949bff15e6ea1141627fe292517915a0bd05024d92",
+    "result_ao_reference_population_audit.py": "1eba6214317b4eb0ae60bdd4f08c6dea4522bbedca886a59c5f9b8572316ebed",
+    "test_research_board_regressions.py": "369428e1556ef4f93ccfb3b48465926b094b5a50f007190a2d1f55615c390a79"
+  },
+  "scope": "Offline development regressions; not release validation, physical evidence or independent scientific review"
+}

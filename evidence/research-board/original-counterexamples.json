@@ -1,0 +1,140 @@
+{
+  "unmodified_gate_b_digest": {
+    "returncode": 0
+  },
+  "matcher_failed_accuracy_gate": {
+    "returncode": 0,
+    "failure_diagnostic_observed": true,
+    "output_exists": true,
+    "emitted_output": {
+      "matched_at_2m": {
+        "car": {},
+        "truck": {},
+        "bus": {},
+        "trailer": {},
+        "construction_vehicle": {},
+        "pedestrian": {},
+        "motorcycle": {},
+        "bicycle": {},
+        "traffic_cone": {},
+        "barrier": {}
+      },
+      "reconstructed_mAP": 0.0
+    },
+    "finding_confirmed": true
+  },
+  "replay_nonzero_exit": {
+    "producer_returncode": 17,
+    "producer_stdout_sha256": "1a53ddc34fa5d73714af2db5c43a94175c9022896427b31b06cc5feba327a560",
+    "checker_returncode": 0,
+    "checker_result": "pass",
+    "item": {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "replicated",
+      "transcript": "llm-generalization/evidence/result_t.txt"
+    },
+    "finding_confirmed": true
+  },
+  "evalue_each_arm_claim_counterexample": {
+    "target_rr": 1.8,
+    "evalue": 3.0,
+    "exposure_confounder_strength": 2.0,
+    "confounder_outcome_strength": 9.0,
+    "bias_factor": 1.8,
+    "one_arm_below_evalue_but_bias_factor_sufficient": true
+  },
+  "conditional_ratio_cancellation": {
+    "equal_size_strata": [
+      {
+        "pA": 0.5,
+        "pB": 0.5,
+        "pAB": 0.4,
+        "c": 1.6
+      },
+      {
+        "pA": 0.5,
+        "pB": 0.5,
+        "pAB": 0.1,
+        "c": 0.4
+      }
+    ],
+    "pooled_observed_over_stratified_independence_expected": 1.0,
+    "conditional_independence": false
+  },
+  "frechet_bounds": [
+    {
+      "pA": 0.5,
+      "pB": 0.5,
+      "c_min": 0.0,
+      "c_max": 2.0
+    },
+    {
+      "pA": 0.85,
+      "pB": 0.5,
+      "c_min": 0.8235294117647061,
+      "c_max": 1.1764705882352942
+    },
+    {
+      "pA": 0.99,
+      "pB": 0.5,
+      "c_min": 0.98989898989899,
+      "c_max": 1.0101010101010102
+    },
+    {
+      "pA": 0.2,
+      "pB": 0.2,
+      "c_min": 0.0,
+      "c_max": 4.999999999999999
+    }
+  ],
+  "pairwise_independence_not_joint": {
+    "equiprobable_binary_failure_states": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "marginals": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "all_pairwise_c": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "all_fail_probability": 0.25,
+    "independent_all_fail_probability": 0.125
+  },
+  "heterogeneous_independent_effective_count": {
+    "independent_miss_probabilities": [
+      0.1,
+      0.9
+    ],
+    "all_fail_probability": 0.09,
+    "reported_formula_count": 3.4739311883324127,
+    "actual_independent_channels": 2
+  },
+  "artifact_id": "reiyah.research-board-counterexamples.2026-09-07",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "scope": "Original-consumer probes and exact mathematical counterexamples; not physical scientific data or independent peer review"
+}

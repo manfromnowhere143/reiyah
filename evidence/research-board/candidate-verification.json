@@ -1,0 +1,76 @@
+{
+  "artifact_id": "reiyah.research-board-candidate-verification.2026-09-07",
+  "checks": [
+    {
+      "check": "manifest_predecessor",
+      "detail": "history/research-board-2026-09-07/gate-b-replay-manifest-0.1.13.json",
+      "state": "pass"
+    },
+    {
+      "check": "all_inherited_replay_rows_preserved",
+      "detail": {
+        "current": 52,
+        "inherited": 51
+      },
+      "state": "pass"
+    },
+    {
+      "check": "inherited_transcript_bytes_preserved",
+      "detail": [],
+      "state": "pass"
+    },
+    {
+      "check": "ao_tool_and_transcript_bindings",
+      "detail": {
+        "tool": "1eba6214317b4eb0ae60bdd4f08c6dea4522bbedca886a59c5f9b8572316ebed",
+        "transcript": "sha256:e0d9a643dc68e4e3f852fd4f6154decfbe0f9846fab25acfa127e8c6398bb102"
+      },
+      "state": "pass"
+    },
+    {
+      "check": "ao_repeated_successful_exact_bytes",
+      "detail": "Two local executions; not independent scientific replication",
+      "state": "pass"
+    },
+    {
+      "check": "ao_source_stability_and_public_aggregate",
+      "detail": "Original input hashes retained; source-derived cases remain private",
+      "state": "pass"
+    },
+    {
+      "check": "register_predecessor",
+      "detail": "evidence/claim-status-register-2026-09-06.json",
+      "state": "pass"
+    },
+    {
+      "check": "claim_ids_preserved_unique",
+      "detail": {
+        "after": 48,
+        "before": 47
+      },
+      "state": "pass"
+    },
+    {
+      "check": "regression_tool_bytes_and_exit",
+      "detail": "Recorded regression process must bind current tested tools",
+      "state": "pass"
+    },
+    {
+      "check": "released_contract_directories_unchanged",
+      "detail": [],
+      "state": "pass"
+    },
+    {
+      "check": "changed_document_relative_links",
+      "detail": {
+        "broken": [],
+        "documents": 13
+      },
+      "state": "pass"
+    }
+  ],
+  "lifecycle_status": "exploratory",
+  "result": "pass",
+  "scope": "Offline development bindings, not scientific support or Gate A release validation",
+  "version": "0.1.0"
+}

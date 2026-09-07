@@ -2,9 +2,19 @@
 
 Document ID: `reiyah.result-ak-ghost-operating-point`
 
-Version: `0.1.0`
+Version: `0.1.1`
 
 Lifecycle status: `proposed`; the predictions were `preregistered` before the run; four are falsified
+
+> Reference correction, 2026-09-07: the historical ghost label in this analysis means absence
+> from a class/range-filtered annotation cache. [Result AO](RESULT_AO_REFERENCE_POPULATION_AUDIT.md)
+> demonstrates material differences from the complete annotation reference. Neither reference
+> certifies physical nonexistence. Physical ghost interpretations and any automatic upper-bound
+> reading of the coincidence ratio are withdrawn as stated. Numerical results below remain
+> historical, reference-relative observations; they have not been physically adjudicated or all
+> recomputed under the corrected reference. True-detection controls use that same selected
+> reference and do not independently resolve the missing-reference issue.
+
 
 ## What was predicted, and what the bytes say
 
