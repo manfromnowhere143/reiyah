@@ -1,0 +1,24 @@
+{
+  "artifact_id": "reiyah.training-partition-verification-plan.0.1.0",
+  "checks": [
+    "Exact input and producer identities; complete strict JSON import into bounded-memory SQLite index",
+    "All ordinary foreign keys and annotation attributes resolve; sequence counts, endpoints, reciprocal links, scene containment and time order agree",
+    "Whole-log group selection equals frozen scene/sample counts; metadata references remain inside subset",
+    "Full SDK table load with exact upstream 1.2.0 source identities and retained real map files",
+    "Every sample emits six camera keyframes, a lidar keyframe, up to nine real previous lidar frames and all annotation identities",
+    "Every emitted sensor source belongs to the exact preceding request whose full file inventory is retained",
+    "First sample of first named scene per selected log: SDK boxes match explicit world-to-ego-to-sensor matrix transforms for seven channels to absolute tolerance 1e-8",
+    "Missing velocity remains NaN; short lidar histories are retained as short",
+    "All authored and inherited offline unit checks and Gate B development checks"
+  ],
+  "lifecycle_status": "proposed",
+  "not_checked": [
+    "Pixel/point decoding",
+    "Model-specific preprocessing, voxelization and detector prediction geometry",
+    "Object point database payload construction",
+    "Training, calibration, independent physical truth and causal effect"
+  ],
+  "scope": "All three previously frozen training proposals plus the full official validation set. No selection by detector results.",
+  "selection_policy": "Fixed before running any subset SDK smoke; no adjustment based on geometry outcomes",
+  "version": "0.1.0"
+}

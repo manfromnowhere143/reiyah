@@ -1,0 +1,1537 @@
+{
+  "artifact_id": "reiyah.training-partition-results.0.1.0",
+  "index_sha256": "00930ec6f2cc5472f897fed3169c3deabfbfd57b8d9acc767b2054a71b4b3f4a",
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "SDK and explicit matrix calculation use the same source calibrations/annotations; no independent physical reference",
+    "Maps, taxonomies and possibly calibration records remain shared context",
+    "Object identities are not tracked across scenes; separate instance tokens are not separate physical objects",
+    "No camera/lidar payload decoding, model preprocessing, object point database or fitting occurred"
+  ],
+  "pair_checks": {
+    "all_three_proposals_pass": true,
+    "camera_lidar_filename_overlap_between_groups": 0,
+    "disjoint_within_each_pair_and_from_validation": [
+      "log",
+      "scene",
+      "sample",
+      "instance"
+    ],
+    "each_training_pair": {
+      "logs": 50,
+      "samples": 28130,
+      "scenes": 700
+    },
+    "temporal_source_rows_identical_across_proposals": true,
+    "training_source_rows_compared_per_proposal": 28130,
+    "validation_samples": 6019
+  },
+  "scope": "Actual metadata bundles and SDK-derived temporal source lists. Repeated proposals are not independent observations.",
+  "source_sha256": "af4751df5ecd131cb64540a3b1e2a4eafb86cd0e375c2039824c4a0b61de3f1f",
+  "subsets": [
+    {
+      "name": "val",
+      "sdk": {
+        "annotations": 192041,
+        "artifact_id": "reiyah.nuscenes-subset-sdk-smoke.0.1.0",
+        "converter_max_sweeps": 10,
+        "dependency_versions": {
+          "numpy": "1.26.4",
+          "opencv-python-headless": "4.11.0.86",
+          "pillow": "12.3.0",
+          "pyquaternion": "0.9.9",
+          "scikit-learn": "1.9.0",
+          "scipy": "1.17.1"
+        },
+        "geometry": {
+          "boxes_checked": 2898,
+          "logs": 18,
+          "max_center_error_m": 1.1368683772161603e-13,
+          "max_rotation_matrix_error": 1.9984014443252818e-15,
+          "selection": "first sample of lexicographically first scene in every selected log; all seven channels",
+          "sensor_calls": 126,
+          "tolerance": "1e-8 absolute",
+          "velocity_states": {
+            "all_nan_unavailable": 7,
+            "finite": 407
+          }
+        },
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "SDK metadata and explicit coordinate transforms only; not a detector preprocessing or prediction test",
+          "Temporal lists include up to ten real previous lidar candidates; the recipe can draw nine of ten",
+          "Camera/lidar payloads are not local to this SDK root and are not opened",
+          "Unavailable velocity stays NaN; no zero substitution",
+          "No causal or independent physical-reference claim"
+        ],
+        "loader_selection": "not_run; all cached candidates audited",
+        "map_payloads": [
+          {
+            "bytes": 1537492,
+            "sha256": "05ca03d0ba4bba61d84b4bdb6144abb93ec8923554fe116af4aa859f21af5652"
+          },
+          {
+            "bytes": 1784272,
+            "sha256": "0f125aa902db06fd2ba17cbddd10c602124f59991b9b4061c13e281f2e476373"
+          },
+          {
+            "bytes": 1410125,
+            "sha256": "55de71c4a70289eba0cbf2c75f8d2f81580e94c422d8d9a7e6b0740ca2f7a289"
+          },
+          {
+            "bytes": 1060975,
+            "sha256": "bbbd05286eea0835844548922834781309e0542a75a12f38bf247b04a04c85f3"
+          }
+        ],
+        "maps_result_sha256": "d7cef191862a99a741a87755c022cd43d7e323e78d89b0fd6a17a1b869b0ddd8",
+        "model_training": "not_run",
+        "object_point_database": "not_built",
+        "previous_lidar_counts": {
+          "0": 150,
+          "10": 5852,
+          "8": 9,
+          "9": 8
+        },
+        "private_result_sha256": "c44c8cf2d5fdc403c8fc6d9eedb06f531a1a2bb697aaf78b63c892d03f7733ee",
+        "python": "3.11.15",
+        "recipe_loader_sweeps_num": 9,
+        "request_sha256": "588a6fae1577ea378417885c46bb0b6fbce848b986a0a8dfd5ac3ac98a1585c7",
+        "samples": 6019,
+        "sdk_helper_sha256": {
+          "nuscenes.utils.data_classes": "9fd4eb980630af3177768e248de4fa48f5cacf36a1327ec16da56cdc9a64a3ae",
+          "nuscenes.utils.geometry_utils": "6dca908d593e90645d67f0ddf00f3ca7d4d45f6fcf12933da0a70f9eb62caf33",
+          "nuscenes.utils.map_mask": "257e621ab54a73d6b0fb3455aeded45359577630545dd2d44cd90dcadbfc6340"
+        },
+        "sdk_source_sha256": "7d511213c3fa4452f4c0c68fb05c299e803ad7ca3f369275f756958287307871",
+        "sdk_version": "1.2.0",
+        "sensor_payload_decoding": "not_run",
+        "source_sha256": "3d1267551fcac705096207517fd43f21ad773e0789dcccfbe5c1a9edb85b9199",
+        "subset_result_sha256": "e73ec9590f5357e2d1e1f63a8bcc41327b23fa606976655330d8ec0c985646a0",
+        "temporal_source_sha256": "ba842f6f653f6535cbf014475884b55d325ddc9b720a211aa9172e681e7f9614",
+        "unique_requested_sensor_files": 94522,
+        "version": "0.1.0"
+      },
+      "subset": {
+        "artifact_id": "reiyah.nuscenes-training-subset.0.1.1",
+        "binding": {
+          "partition": "val",
+          "splits_sha256": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd"
+        },
+        "index_sha256": "00930ec6f2cc5472f897fed3169c3deabfbfd57b8d9acc767b2054a71b4b3f4a",
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "Metadata only; no sensor decoding, detector fitting or object point database",
+          "Shared maps and taxonomies are not disjoint empirical exposure",
+          "Instance identities do not track physical objects across scenes",
+          "All sensor metadata retained; earlier file census covers only six camera keyframes and lidar",
+          "Prospective training/calibration/initialization protocol remains unresolved"
+        ],
+        "log_count": 18,
+        "map_reference_projection": [
+          {
+            "original_log_references": 37,
+            "selected_log_references": 8
+          },
+          {
+            "original_log_references": 5,
+            "selected_log_references": 1
+          },
+          {
+            "original_log_references": 26,
+            "selected_log_references": 6
+          },
+          {
+            "original_log_references": 15,
+            "selected_log_references": 3
+          }
+        ],
+        "outside_subset_references": 0,
+        "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+        "row_changes": "map.log_tokens projection only; selected non-map values preserved exactly",
+        "scene_count": 150,
+        "source": {
+          "array_reader_sha256": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+          "complete": true,
+          "filename_aliases": {
+            "by_channel": {
+              "RADAR_BACK_LEFT": 2,
+              "RADAR_BACK_RIGHT": 4,
+              "RADAR_FRONT": 6,
+              "RADAR_FRONT_LEFT": 4,
+              "RADAR_FRONT_RIGHT": 4
+            },
+            "cross_log_aliases": 0,
+            "policy": "Two radar keyframes at different scene endpoints in one log, equal timestamp, sensor, pose and calibration values",
+            "preserved_reference_rows": 20,
+            "radar_boundary_filename_aliases": 10,
+            "scope": "complete source metadata"
+          },
+          "metadata_sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b",
+          "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+          "reader_sha256": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+          "version": "0.1.1"
+        },
+        "tables": {
+          "attribute": {
+            "bytes": 1092,
+            "rows": 8,
+            "sha256": "bb5822d33b6e6f4605dd28181457a63749bef4660e2cd9c6034bb25de7ae0729"
+          },
+          "calibrated_sensor": {
+            "bytes": 526803,
+            "rows": 1800,
+            "sha256": "d3780a9e9b6f84000e77835daef990100682ebf3e14e79c92844a09fcda58d52"
+          },
+          "category": {
+            "bytes": 4587,
+            "rows": 23,
+            "sha256": "90f0af0ca1be74b1c01853fb30ae84799ca92ddd04136cbbcf340aa2e1b5f351"
+          },
+          "ego_pose": {
+            "bytes": 105448360,
+            "rows": 463409,
+            "sha256": "3ba234dbc39b11ee0f8c54f88e431b0d085ba69bfdde47ec72c2efc323710d82"
+          },
+          "instance": {
+            "bytes": 2613693,
+            "rows": 10996,
+            "sha256": "6fc7f2daa391123c5d95615c3906b921d9879c7bf04714e61562a11f4becb762"
+          },
+          "log": {
+            "bytes": 2971,
+            "rows": 18,
+            "sha256": "a3e84f7a0787ec637cb0559a560c6bcd383fc41c6f1155d0e188607cd1c2ba65"
+          },
+          "map": {
+            "bytes": 1209,
+            "rows": 4,
+            "sha256": "d2e4fe28a37123b99b3743d445677ba1b1eb2942bc156edc286e3243ce05672f"
+          },
+          "sample": {
+            "bytes": 1242355,
+            "rows": 6019,
+            "sha256": "9d63c3686cea0abb54a45e1ff8f978e4c24b199c2030fec732e0f78ea6203e44"
+          },
+          "sample_annotation": {
+            "bytes": 88485946,
+            "rows": 192041,
+            "sha256": "09779acebccb98324896f5cec4e828ae76353be06769ae93d58f76e8f75783c0"
+          },
+          "sample_data": {
+            "bytes": 225426499,
+            "rows": 463409,
+            "sha256": "aefeab58829c2e79a431151b31c7499b68bb7947a4b4f9b8ac08f0bc112f3c09"
+          },
+          "scene": {
+            "bytes": 48517,
+            "rows": 150,
+            "sha256": "f57ff6a4150346a3e9a080f25bac177af242a5dc4f8095ab18b57ba2b5e410fb"
+          },
+          "sensor": {
+            "bytes": 1102,
+            "rows": 12,
+            "sha256": "c2325d4ed144d1a21cb10893543525e2520305345089a18b90f4c69d0c95f3f4"
+          },
+          "visibility": {
+            "bytes": 391,
+            "rows": 4,
+            "sha256": "97f0cba636f44ed9158d50d7f7d75ea26eaa56efbb1cf2c64d378b53e0b095db"
+          }
+        },
+        "version": "0.1.1"
+      },
+      "subset_result_sha256": "e73ec9590f5357e2d1e1f63a8bcc41327b23fa606976655330d8ec0c985646a0"
+    },
+    {
+      "name": "20260910-1",
+      "sdk": {
+        "annotations": 544182,
+        "artifact_id": "reiyah.nuscenes-subset-sdk-smoke.0.1.0",
+        "converter_max_sweeps": 10,
+        "dependency_versions": {
+          "numpy": "1.26.4",
+          "opencv-python-headless": "4.11.0.86",
+          "pillow": "12.3.0",
+          "pyquaternion": "0.9.9",
+          "scikit-learn": "1.9.0",
+          "scipy": "1.17.1"
+        },
+        "geometry": {
+          "boxes_checked": 4228,
+          "logs": 26,
+          "max_center_error_m": 1.1368683772161603e-13,
+          "max_rotation_matrix_error": 2.220446049250313e-15,
+          "selection": "first sample of lexicographically first scene in every selected log; all seven channels",
+          "sensor_calls": 182,
+          "tolerance": "1e-8 absolute",
+          "velocity_states": {
+            "all_nan_unavailable": 7,
+            "finite": 597
+          }
+        },
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "SDK metadata and explicit coordinate transforms only; not a detector preprocessing or prediction test",
+          "Temporal lists include up to ten real previous lidar candidates; the recipe can draw nine of ten",
+          "Camera/lidar payloads are not local to this SDK root and are not opened",
+          "Unavailable velocity stays NaN; no zero substitution",
+          "No causal or independent physical-reference claim"
+        ],
+        "loader_selection": "not_run; all cached candidates audited",
+        "map_payloads": [
+          {
+            "bytes": 1537492,
+            "sha256": "05ca03d0ba4bba61d84b4bdb6144abb93ec8923554fe116af4aa859f21af5652"
+          },
+          {
+            "bytes": 1784272,
+            "sha256": "0f125aa902db06fd2ba17cbddd10c602124f59991b9b4061c13e281f2e476373"
+          },
+          {
+            "bytes": 1410125,
+            "sha256": "55de71c4a70289eba0cbf2c75f8d2f81580e94c422d8d9a7e6b0740ca2f7a289"
+          },
+          {
+            "bytes": 1060975,
+            "sha256": "bbbd05286eea0835844548922834781309e0542a75a12f38bf247b04a04c85f3"
+          }
+        ],
+        "maps_result_sha256": "d7cef191862a99a741a87755c022cd43d7e323e78d89b0fd6a17a1b869b0ddd8",
+        "model_training": "not_run",
+        "object_point_database": "not_built",
+        "previous_lidar_counts": {
+          "0": 375,
+          "10": 14692,
+          "8": 11,
+          "9": 7
+        },
+        "private_result_sha256": "06cff9a1809783e3993e21c78d4d6c1fe2d8a52d452f40520d47f9c95c263d56",
+        "python": "3.11.15",
+        "recipe_loader_sweeps_num": 9,
+        "request_sha256": "588a6fae1577ea378417885c46bb0b6fbce848b986a0a8dfd5ac3ac98a1585c7",
+        "samples": 15085,
+        "sdk_helper_sha256": {
+          "nuscenes.utils.data_classes": "9fd4eb980630af3177768e248de4fa48f5cacf36a1327ec16da56cdc9a64a3ae",
+          "nuscenes.utils.geometry_utils": "6dca908d593e90645d67f0ddf00f3ca7d4d45f6fcf12933da0a70f9eb62caf33",
+          "nuscenes.utils.map_mask": "257e621ab54a73d6b0fb3455aeded45359577630545dd2d44cd90dcadbfc6340"
+        },
+        "sdk_source_sha256": "7d511213c3fa4452f4c0c68fb05c299e803ad7ca3f369275f756958287307871",
+        "sdk_version": "1.2.0",
+        "sensor_payload_decoding": "not_run",
+        "source_sha256": "3d1267551fcac705096207517fd43f21ad773e0789dcccfbe5c1a9edb85b9199",
+        "subset_result_sha256": "a438ef8558bfe79de79221f825593289ee294a9a3c612c4b49a1f0f034cc0fe0",
+        "temporal_source_sha256": "78593f1b0e67ba32840e6ade7d2f0cc19fc734c8c63657078e487430be658d6b",
+        "unique_requested_sensor_files": 236905,
+        "version": "0.1.0"
+      },
+      "subset": {
+        "artifact_id": "reiyah.nuscenes-training-subset.0.1.1",
+        "binding": {
+          "partition": "1",
+          "proposal_sha256": "33bb7eae5bc47dd6fbd57acc2a117d8f4abd52b1b6338776189429bf2ccb5147",
+          "seed": 20260910,
+          "splits_sha256": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd"
+        },
+        "index_sha256": "00930ec6f2cc5472f897fed3169c3deabfbfd57b8d9acc767b2054a71b4b3f4a",
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "Metadata only; no sensor decoding, detector fitting or object point database",
+          "Shared maps and taxonomies are not disjoint empirical exposure",
+          "Instance identities do not track physical objects across scenes",
+          "All sensor metadata retained; earlier file census covers only six camera keyframes and lidar",
+          "Prospective training/calibration/initialization protocol remains unresolved"
+        ],
+        "log_count": 26,
+        "map_reference_projection": [
+          {
+            "original_log_references": 37,
+            "selected_log_references": 11
+          },
+          {
+            "original_log_references": 5,
+            "selected_log_references": 2
+          },
+          {
+            "original_log_references": 26,
+            "selected_log_references": 9
+          },
+          {
+            "original_log_references": 15,
+            "selected_log_references": 4
+          }
+        ],
+        "outside_subset_references": 0,
+        "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+        "row_changes": "map.log_tokens projection only; selected non-map values preserved exactly",
+        "scene_count": 375,
+        "source": {
+          "array_reader_sha256": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+          "complete": true,
+          "filename_aliases": {
+            "by_channel": {
+              "RADAR_BACK_LEFT": 2,
+              "RADAR_BACK_RIGHT": 4,
+              "RADAR_FRONT": 6,
+              "RADAR_FRONT_LEFT": 4,
+              "RADAR_FRONT_RIGHT": 4
+            },
+            "cross_log_aliases": 0,
+            "policy": "Two radar keyframes at different scene endpoints in one log, equal timestamp, sensor, pose and calibration values",
+            "preserved_reference_rows": 20,
+            "radar_boundary_filename_aliases": 10,
+            "scope": "complete source metadata"
+          },
+          "metadata_sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b",
+          "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+          "reader_sha256": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+          "version": "0.1.1"
+        },
+        "tables": {
+          "attribute": {
+            "bytes": 1092,
+            "rows": 8,
+            "sha256": "bb5822d33b6e6f4605dd28181457a63749bef4660e2cd9c6034bb25de7ae0729"
+          },
+          "calibrated_sensor": {
+            "bytes": 1316883,
+            "rows": 4500,
+            "sha256": "43b13dceb618f1ede04e27d6a4f7cf68025aa901965a56d3f0030700b8982270"
+          },
+          "category": {
+            "bytes": 4587,
+            "rows": 23,
+            "sha256": "90f0af0ca1be74b1c01853fb30ae84799ca92ddd04136cbbcf340aa2e1b5f351"
+          },
+          "ego_pose": {
+            "bytes": 264402570,
+            "rows": 1162832,
+            "sha256": "d74eb681d8f40eb1cd3cf302b5b30760aee715d36f6b8cf3bbb87e39482a3bb8"
+          },
+          "instance": {
+            "bytes": 6731683,
+            "rows": 28318,
+            "sha256": "eaff77d1daf0303cc21bee045dc7266acc032b838fc897af1a06a1ca54ebf29f"
+          },
+          "log": {
+            "bytes": 4295,
+            "rows": 26,
+            "sha256": "1c038da5ec12057ced68b01584be07642cbb8d6780e7d424932eba427b887e91"
+          },
+          "map": {
+            "bytes": 1489,
+            "rows": 4,
+            "sha256": "74519243919321c2b580b5dd02ea780f4cfe4beec7d6bb10f35ee4767cf8d75d"
+          },
+          "sample": {
+            "bytes": 3113683,
+            "rows": 15085,
+            "sha256": "e597b70b849b15f460667b52088549915ec5c72ffb61205829a394e2e4fec2ee"
+          },
+          "sample_annotation": {
+            "bytes": 250625664,
+            "rows": 544182,
+            "sha256": "ccc531af0e6bbf88c2bf2b20a487aad7cf40746bc9f1d8c80eb8ebd856eb9743"
+          },
+          "sample_data": {
+            "bytes": 565661643,
+            "rows": 1162832,
+            "sha256": "0188c087ed4b949d8a2cd5c3fbb57d63460ddd53b35219f9a636d25c93bb4f7e"
+          },
+          "scene": {
+            "bytes": 120887,
+            "rows": 375,
+            "sha256": "3de2486c04054a309ebec28042cf7776132811cbef9e3d2a7a0596039e368e88"
+          },
+          "sensor": {
+            "bytes": 1102,
+            "rows": 12,
+            "sha256": "c2325d4ed144d1a21cb10893543525e2520305345089a18b90f4c69d0c95f3f4"
+          },
+          "visibility": {
+            "bytes": 391,
+            "rows": 4,
+            "sha256": "97f0cba636f44ed9158d50d7f7d75ea26eaa56efbb1cf2c64d378b53e0b095db"
+          }
+        },
+        "version": "0.1.1"
+      },
+      "subset_result_sha256": "a438ef8558bfe79de79221f825593289ee294a9a3c612c4b49a1f0f034cc0fe0"
+    },
+    {
+      "name": "20260910-2",
+      "sdk": {
+        "annotations": 429964,
+        "artifact_id": "reiyah.nuscenes-subset-sdk-smoke.0.1.0",
+        "converter_max_sweeps": 10,
+        "dependency_versions": {
+          "numpy": "1.26.4",
+          "opencv-python-headless": "4.11.0.86",
+          "pillow": "12.3.0",
+          "pyquaternion": "0.9.9",
+          "scikit-learn": "1.9.0",
+          "scipy": "1.17.1"
+        },
+        "geometry": {
+          "boxes_checked": 5530,
+          "logs": 24,
+          "max_center_error_m": 1.2789769243681803e-13,
+          "max_rotation_matrix_error": 1.9984014443252818e-15,
+          "selection": "first sample of lexicographically first scene in every selected log; all seven channels",
+          "sensor_calls": 168,
+          "tolerance": "1e-8 absolute",
+          "velocity_states": {
+            "all_nan_unavailable": 11,
+            "finite": 779
+          }
+        },
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "SDK metadata and explicit coordinate transforms only; not a detector preprocessing or prediction test",
+          "Temporal lists include up to ten real previous lidar candidates; the recipe can draw nine of ten",
+          "Camera/lidar payloads are not local to this SDK root and are not opened",
+          "Unavailable velocity stays NaN; no zero substitution",
+          "No causal or independent physical-reference claim"
+        ],
+        "loader_selection": "not_run; all cached candidates audited",
+        "map_payloads": [
+          {
+            "bytes": 1537492,
+            "sha256": "05ca03d0ba4bba61d84b4bdb6144abb93ec8923554fe116af4aa859f21af5652"
+          },
+          {
+            "bytes": 1784272,
+            "sha256": "0f125aa902db06fd2ba17cbddd10c602124f59991b9b4061c13e281f2e476373"
+          },
+          {
+            "bytes": 1410125,
+            "sha256": "55de71c4a70289eba0cbf2c75f8d2f81580e94c422d8d9a7e6b0740ca2f7a289"
+          },
+          {
+            "bytes": 1060975,
+            "sha256": "bbbd05286eea0835844548922834781309e0542a75a12f38bf247b04a04c85f3"
+          }
+        ],
+        "maps_result_sha256": "d7cef191862a99a741a87755c022cd43d7e323e78d89b0fd6a17a1b869b0ddd8",
+        "model_training": "not_run",
+        "object_point_database": "not_built",
+        "previous_lidar_counts": {
+          "0": 325,
+          "10": 12685,
+          "8": 19,
+          "9": 16
+        },
+        "private_result_sha256": "664184e48bd7fa6e37dc2c8b23f910b55945435ff2ff8ff5e5ccad6e1fd4906a",
+        "python": "3.11.15",
+        "recipe_loader_sweeps_num": 9,
+        "request_sha256": "588a6fae1577ea378417885c46bb0b6fbce848b986a0a8dfd5ac3ac98a1585c7",
+        "samples": 13045,
+        "sdk_helper_sha256": {
+          "nuscenes.utils.data_classes": "9fd4eb980630af3177768e248de4fa48f5cacf36a1327ec16da56cdc9a64a3ae",
+          "nuscenes.utils.geometry_utils": "6dca908d593e90645d67f0ddf00f3ca7d4d45f6fcf12933da0a70f9eb62caf33",
+          "nuscenes.utils.map_mask": "257e621ab54a73d6b0fb3455aeded45359577630545dd2d44cd90dcadbfc6340"
+        },
+        "sdk_source_sha256": "7d511213c3fa4452f4c0c68fb05c299e803ad7ca3f369275f756958287307871",
+        "sdk_version": "1.2.0",
+        "sensor_payload_decoding": "not_run",
+        "source_sha256": "3d1267551fcac705096207517fd43f21ad773e0789dcccfbe5c1a9edb85b9199",
+        "subset_result_sha256": "5e08b07eb283e4ce4727f0aa8fb60c603851eeef3da94c023ab7adcd98a919b2",
+        "temporal_source_sha256": "9997e30e2db4a0ff04462b04d2ad856749ba5f23199ed9eb99e96807b80416f9",
+        "unique_requested_sensor_files": 204887,
+        "version": "0.1.0"
+      },
+      "subset": {
+        "artifact_id": "reiyah.nuscenes-training-subset.0.1.1",
+        "binding": {
+          "partition": "2",
+          "proposal_sha256": "33bb7eae5bc47dd6fbd57acc2a117d8f4abd52b1b6338776189429bf2ccb5147",
+          "seed": 20260910,
+          "splits_sha256": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd"
+        },
+        "index_sha256": "00930ec6f2cc5472f897fed3169c3deabfbfd57b8d9acc767b2054a71b4b3f4a",
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "Metadata only; no sensor decoding, detector fitting or object point database",
+          "Shared maps and taxonomies are not disjoint empirical exposure",
+          "Instance identities do not track physical objects across scenes",
+          "All sensor metadata retained; earlier file census covers only six camera keyframes and lidar",
+          "Prospective training/calibration/initialization protocol remains unresolved"
+        ],
+        "log_count": 24,
+        "map_reference_projection": [
+          {
+            "original_log_references": 37,
+            "selected_log_references": 11
+          },
+          {
+            "original_log_references": 5,
+            "selected_log_references": 2
+          },
+          {
+            "original_log_references": 26,
+            "selected_log_references": 8
+          },
+          {
+            "original_log_references": 15,
+            "selected_log_references": 3
+          }
+        ],
+        "outside_subset_references": 0,
+        "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+        "row_changes": "map.log_tokens projection only; selected non-map values preserved exactly",
+        "scene_count": 325,
+        "source": {
+          "array_reader_sha256": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+          "complete": true,
+          "filename_aliases": {
+            "by_channel": {
+              "RADAR_BACK_LEFT": 2,
+              "RADAR_BACK_RIGHT": 4,
+              "RADAR_FRONT": 6,
+              "RADAR_FRONT_LEFT": 4,
+              "RADAR_FRONT_RIGHT": 4
+            },
+            "cross_log_aliases": 0,
+            "policy": "Two radar keyframes at different scene endpoints in one log, equal timestamp, sensor, pose and calibration values",
+            "preserved_reference_rows": 20,
+            "radar_boundary_filename_aliases": 10,
+            "scope": "complete source metadata"
+          },
+          "metadata_sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b",
+          "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+          "reader_sha256": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+          "version": "0.1.1"
+        },
+        "tables": {
+          "attribute": {
+            "bytes": 1092,
+            "rows": 8,
+            "sha256": "bb5822d33b6e6f4605dd28181457a63749bef4660e2cd9c6034bb25de7ae0729"
+          },
+          "calibrated_sensor": {
+            "bytes": 1138854,
+            "rows": 3900,
+            "sha256": "c0b9b7c933ad13b43bd9247f67c2683c73dae9d9a10c150e2e26047b1c8c6c1f"
+          },
+          "category": {
+            "bytes": 4587,
+            "rows": 23,
+            "sha256": "90f0af0ca1be74b1c01853fb30ae84799ca92ddd04136cbbcf340aa2e1b5f351"
+          },
+          "ego_pose": {
+            "bytes": 228595278,
+            "rows": 1004842,
+            "sha256": "22d15b6e3b8c94bccdace6acdb7d02279c3beab65a53866e0548dba6ccebc2c1"
+          },
+          "instance": {
+            "bytes": 5959218,
+            "rows": 25072,
+            "sha256": "676fe29189cd6ccb636c3f5b302f3432d506c538953ebbe30bc70bbd9df70454"
+          },
+          "log": {
+            "bytes": 3961,
+            "rows": 24,
+            "sha256": "2efa77f76d0754e7ee7355786b2716d48148d76b407dab81dca66c2e7657fcd5"
+          },
+          "map": {
+            "bytes": 1419,
+            "rows": 4,
+            "sha256": "fdede4b62744d7000bf610cb0598801b9bb3ebcbd3f314a2a8b166fecec33de2"
+          },
+          "sample": {
+            "bytes": 2692563,
+            "rows": 13045,
+            "sha256": "0f8b98b6c4a467d50f8653553ca9ef45b50a75b5e9e19b9cfb62ba003c1178ad"
+          },
+          "sample_annotation": {
+            "bytes": 198234648,
+            "rows": 429964,
+            "sha256": "dce2216f7499119110504ca8661aa14d86157fd6b14cc6b71bc7279d6ab0a367"
+          },
+          "sample_data": {
+            "bytes": 488813169,
+            "rows": 1004842,
+            "sha256": "9376283a1d01cb06b94a3422d87e80f95328aed73f42a5e4b8f61e09b68988d6"
+          },
+          "scene": {
+            "bytes": 102985,
+            "rows": 325,
+            "sha256": "e7ec88887e2023434428fb6813fbf9e63cb50aaf22c59233ca91de5f4004a5c5"
+          },
+          "sensor": {
+            "bytes": 1102,
+            "rows": 12,
+            "sha256": "c2325d4ed144d1a21cb10893543525e2520305345089a18b90f4c69d0c95f3f4"
+          },
+          "visibility": {
+            "bytes": 391,
+            "rows": 4,
+            "sha256": "97f0cba636f44ed9158d50d7f7d75ea26eaa56efbb1cf2c64d378b53e0b095db"
+          }
+        },
+        "version": "0.1.1"
+      },
+      "subset_result_sha256": "5e08b07eb283e4ce4727f0aa8fb60c603851eeef3da94c023ab7adcd98a919b2"
+    },
+    {
+      "name": "20260911-1",
+      "sdk": {
+        "annotations": 439069,
+        "artifact_id": "reiyah.nuscenes-subset-sdk-smoke.0.1.0",
+        "converter_max_sweeps": 10,
+        "dependency_versions": {
+          "numpy": "1.26.4",
+          "opencv-python-headless": "4.11.0.86",
+          "pillow": "12.3.0",
+          "pyquaternion": "0.9.9",
+          "scikit-learn": "1.9.0",
+          "scipy": "1.17.1"
+        },
+        "geometry": {
+          "boxes_checked": 5075,
+          "logs": 26,
+          "max_center_error_m": 1.2789769243681803e-13,
+          "max_rotation_matrix_error": 2.220446049250313e-15,
+          "selection": "first sample of lexicographically first scene in every selected log; all seven channels",
+          "sensor_calls": 182,
+          "tolerance": "1e-8 absolute",
+          "velocity_states": {
+            "all_nan_unavailable": 7,
+            "finite": 718
+          }
+        },
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "SDK metadata and explicit coordinate transforms only; not a detector preprocessing or prediction test",
+          "Temporal lists include up to ten real previous lidar candidates; the recipe can draw nine of ten",
+          "Camera/lidar payloads are not local to this SDK root and are not opened",
+          "Unavailable velocity stays NaN; no zero substitution",
+          "No causal or independent physical-reference claim"
+        ],
+        "loader_selection": "not_run; all cached candidates audited",
+        "map_payloads": [
+          {
+            "bytes": 1537492,
+            "sha256": "05ca03d0ba4bba61d84b4bdb6144abb93ec8923554fe116af4aa859f21af5652"
+          },
+          {
+            "bytes": 1784272,
+            "sha256": "0f125aa902db06fd2ba17cbddd10c602124f59991b9b4061c13e281f2e476373"
+          },
+          {
+            "bytes": 1410125,
+            "sha256": "55de71c4a70289eba0cbf2c75f8d2f81580e94c422d8d9a7e6b0740ca2f7a289"
+          },
+          {
+            "bytes": 1060975,
+            "sha256": "bbbd05286eea0835844548922834781309e0542a75a12f38bf247b04a04c85f3"
+          }
+        ],
+        "maps_result_sha256": "d7cef191862a99a741a87755c022cd43d7e323e78d89b0fd6a17a1b869b0ddd8",
+        "model_training": "not_run",
+        "object_point_database": "not_built",
+        "previous_lidar_counts": {
+          "0": 347,
+          "10": 13599,
+          "8": 16,
+          "9": 7
+        },
+        "private_result_sha256": "4c31792610585ab8a4d0439da00e1ef4c9e069983a4a012b7686e2ba65ed438d",
+        "python": "3.11.15",
+        "recipe_loader_sweeps_num": 9,
+        "request_sha256": "588a6fae1577ea378417885c46bb0b6fbce848b986a0a8dfd5ac3ac98a1585c7",
+        "samples": 13969,
+        "sdk_helper_sha256": {
+          "nuscenes.utils.data_classes": "9fd4eb980630af3177768e248de4fa48f5cacf36a1327ec16da56cdc9a64a3ae",
+          "nuscenes.utils.geometry_utils": "6dca908d593e90645d67f0ddf00f3ca7d4d45f6fcf12933da0a70f9eb62caf33",
+          "nuscenes.utils.map_mask": "257e621ab54a73d6b0fb3455aeded45359577630545dd2d44cd90dcadbfc6340"
+        },
+        "sdk_source_sha256": "7d511213c3fa4452f4c0c68fb05c299e803ad7ca3f369275f756958287307871",
+        "sdk_version": "1.2.0",
+        "sensor_payload_decoding": "not_run",
+        "source_sha256": "3d1267551fcac705096207517fd43f21ad773e0789dcccfbe5c1a9edb85b9199",
+        "subset_result_sha256": "d9fa9667240d837035491917da5ef84da2dcbb5b3f8f9a06e14bacd87f489c3c",
+        "temporal_source_sha256": "03eca2e399d4ad1e9dd4cd1ef9de9aebe324dd3e0a1f9b77d9cb87ce0c99cb4c",
+        "unique_requested_sensor_files": 219442,
+        "version": "0.1.0"
+      },
+      "subset": {
+        "artifact_id": "reiyah.nuscenes-training-subset.0.1.1",
+        "binding": {
+          "partition": "1",
+          "proposal_sha256": "dac2ca432938817dc428f7d22d39e689ba7b8f04d4e730ace1f0f3b2a6c2b583",
+          "seed": 20260911,
+          "splits_sha256": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd"
+        },
+        "index_sha256": "00930ec6f2cc5472f897fed3169c3deabfbfd57b8d9acc767b2054a71b4b3f4a",
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "Metadata only; no sensor decoding, detector fitting or object point database",
+          "Shared maps and taxonomies are not disjoint empirical exposure",
+          "Instance identities do not track physical objects across scenes",
+          "All sensor metadata retained; earlier file census covers only six camera keyframes and lidar",
+          "Prospective training/calibration/initialization protocol remains unresolved"
+        ],
+        "log_count": 26,
+        "map_reference_projection": [
+          {
+            "original_log_references": 37,
+            "selected_log_references": 11
+          },
+          {
+            "original_log_references": 5,
+            "selected_log_references": 2
+          },
+          {
+            "original_log_references": 26,
+            "selected_log_references": 9
+          },
+          {
+            "original_log_references": 15,
+            "selected_log_references": 4
+          }
+        ],
+        "outside_subset_references": 0,
+        "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+        "row_changes": "map.log_tokens projection only; selected non-map values preserved exactly",
+        "scene_count": 347,
+        "source": {
+          "array_reader_sha256": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+          "complete": true,
+          "filename_aliases": {
+            "by_channel": {
+              "RADAR_BACK_LEFT": 2,
+              "RADAR_BACK_RIGHT": 4,
+              "RADAR_FRONT": 6,
+              "RADAR_FRONT_LEFT": 4,
+              "RADAR_FRONT_RIGHT": 4
+            },
+            "cross_log_aliases": 0,
+            "policy": "Two radar keyframes at different scene endpoints in one log, equal timestamp, sensor, pose and calibration values",
+            "preserved_reference_rows": 20,
+            "radar_boundary_filename_aliases": 10,
+            "scope": "complete source metadata"
+          },
+          "metadata_sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b",
+          "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+          "reader_sha256": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+          "version": "0.1.1"
+        },
+        "tables": {
+          "attribute": {
+            "bytes": 1092,
+            "rows": 8,
+            "sha256": "bb5822d33b6e6f4605dd28181457a63749bef4660e2cd9c6034bb25de7ae0729"
+          },
+          "calibrated_sensor": {
+            "bytes": 1218605,
+            "rows": 4164,
+            "sha256": "34cb4054b578e41fbcde71e48f16aa1b0f2d4e914cfdbe210a83c0488ec68175"
+          },
+          "category": {
+            "bytes": 4587,
+            "rows": 23,
+            "sha256": "90f0af0ca1be74b1c01853fb30ae84799ca92ddd04136cbbcf340aa2e1b5f351"
+          },
+          "ego_pose": {
+            "bytes": 244918627,
+            "rows": 1076901,
+            "sha256": "23252e3f219cb130c7366bbf5d302ff284183cc88904c3ccc4444b77a13eeeec"
+          },
+          "instance": {
+            "bytes": 5728239,
+            "rows": 24099,
+            "sha256": "771f2187866a36c214cfbd6c6457897126eafec5660e6132747b807673444b77"
+          },
+          "log": {
+            "bytes": 4295,
+            "rows": 26,
+            "sha256": "c968531e074937730d78179216e0fd4874e64f223db9f3cc84c8455c1c970865"
+          },
+          "map": {
+            "bytes": 1489,
+            "rows": 4,
+            "sha256": "b451b429847b93cee754bf20ff3ebbb1785a4d341b5329b056b8215aec02b1b6"
+          },
+          "sample": {
+            "bytes": 2883347,
+            "rows": 13969,
+            "sha256": "bb7c29c25fc295ff221f0f30017e4db12f882ffd7822d9ae4c5910c2619a3d82"
+          },
+          "sample_annotation": {
+            "bytes": 202717600,
+            "rows": 439069,
+            "sha256": "32e5db3e65d388ebce356ec20fe720e86fac17a8fd8232a82fd13133b17b151f"
+          },
+          "sample_data": {
+            "bytes": 523866892,
+            "rows": 1076901,
+            "sha256": "3adb03c10142e2a4fde40db377c985aa0443f5fdb2cefa0926f80aa052b3158d"
+          },
+          "scene": {
+            "bytes": 111113,
+            "rows": 347,
+            "sha256": "5c2ba22eaf70753ea8f282e8f9e4501c6cb2b0e48f429a062d5b5674146c7f8d"
+          },
+          "sensor": {
+            "bytes": 1102,
+            "rows": 12,
+            "sha256": "c2325d4ed144d1a21cb10893543525e2520305345089a18b90f4c69d0c95f3f4"
+          },
+          "visibility": {
+            "bytes": 391,
+            "rows": 4,
+            "sha256": "97f0cba636f44ed9158d50d7f7d75ea26eaa56efbb1cf2c64d378b53e0b095db"
+          }
+        },
+        "version": "0.1.1"
+      },
+      "subset_result_sha256": "d9fa9667240d837035491917da5ef84da2dcbb5b3f8f9a06e14bacd87f489c3c"
+    },
+    {
+      "name": "20260911-2",
+      "sdk": {
+        "annotations": 535077,
+        "artifact_id": "reiyah.nuscenes-subset-sdk-smoke.0.1.0",
+        "converter_max_sweeps": 10,
+        "dependency_versions": {
+          "numpy": "1.26.4",
+          "opencv-python-headless": "4.11.0.86",
+          "pillow": "12.3.0",
+          "pyquaternion": "0.9.9",
+          "scikit-learn": "1.9.0",
+          "scipy": "1.17.1"
+        },
+        "geometry": {
+          "boxes_checked": 4683,
+          "logs": 24,
+          "max_center_error_m": 9.947598300641403e-14,
+          "max_rotation_matrix_error": 1.9984014443252818e-15,
+          "selection": "first sample of lexicographically first scene in every selected log; all seven channels",
+          "sensor_calls": 168,
+          "tolerance": "1e-8 absolute",
+          "velocity_states": {
+            "all_nan_unavailable": 11,
+            "finite": 658
+          }
+        },
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "SDK metadata and explicit coordinate transforms only; not a detector preprocessing or prediction test",
+          "Temporal lists include up to ten real previous lidar candidates; the recipe can draw nine of ten",
+          "Camera/lidar payloads are not local to this SDK root and are not opened",
+          "Unavailable velocity stays NaN; no zero substitution",
+          "No causal or independent physical-reference claim"
+        ],
+        "loader_selection": "not_run; all cached candidates audited",
+        "map_payloads": [
+          {
+            "bytes": 1537492,
+            "sha256": "05ca03d0ba4bba61d84b4bdb6144abb93ec8923554fe116af4aa859f21af5652"
+          },
+          {
+            "bytes": 1784272,
+            "sha256": "0f125aa902db06fd2ba17cbddd10c602124f59991b9b4061c13e281f2e476373"
+          },
+          {
+            "bytes": 1410125,
+            "sha256": "55de71c4a70289eba0cbf2c75f8d2f81580e94c422d8d9a7e6b0740ca2f7a289"
+          },
+          {
+            "bytes": 1060975,
+            "sha256": "bbbd05286eea0835844548922834781309e0542a75a12f38bf247b04a04c85f3"
+          }
+        ],
+        "maps_result_sha256": "d7cef191862a99a741a87755c022cd43d7e323e78d89b0fd6a17a1b869b0ddd8",
+        "model_training": "not_run",
+        "object_point_database": "not_built",
+        "previous_lidar_counts": {
+          "0": 353,
+          "10": 13778,
+          "8": 14,
+          "9": 16
+        },
+        "private_result_sha256": "a5ddc242b61a310009108d77bfa2b148a88e460aace3bb14015d2056e59a96b5",
+        "python": "3.11.15",
+        "recipe_loader_sweeps_num": 9,
+        "request_sha256": "588a6fae1577ea378417885c46bb0b6fbce848b986a0a8dfd5ac3ac98a1585c7",
+        "samples": 14161,
+        "sdk_helper_sha256": {
+          "nuscenes.utils.data_classes": "9fd4eb980630af3177768e248de4fa48f5cacf36a1327ec16da56cdc9a64a3ae",
+          "nuscenes.utils.geometry_utils": "6dca908d593e90645d67f0ddf00f3ca7d4d45f6fcf12933da0a70f9eb62caf33",
+          "nuscenes.utils.map_mask": "257e621ab54a73d6b0fb3455aeded45359577630545dd2d44cd90dcadbfc6340"
+        },
+        "sdk_source_sha256": "7d511213c3fa4452f4c0c68fb05c299e803ad7ca3f369275f756958287307871",
+        "sdk_version": "1.2.0",
+        "sensor_payload_decoding": "not_run",
+        "source_sha256": "3d1267551fcac705096207517fd43f21ad773e0789dcccfbe5c1a9edb85b9199",
+        "subset_result_sha256": "89282367844135cc951e8e10fdcc4bcde406c1b9c7d8596decd3947da639eb9e",
+        "temporal_source_sha256": "51e659736d37131a000ad3b5b3c8f935089756b43d23acb2c127ab3830886947",
+        "unique_requested_sensor_files": 222350,
+        "version": "0.1.0"
+      },
+      "subset": {
+        "artifact_id": "reiyah.nuscenes-training-subset.0.1.1",
+        "binding": {
+          "partition": "2",
+          "proposal_sha256": "dac2ca432938817dc428f7d22d39e689ba7b8f04d4e730ace1f0f3b2a6c2b583",
+          "seed": 20260911,
+          "splits_sha256": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd"
+        },
+        "index_sha256": "00930ec6f2cc5472f897fed3169c3deabfbfd57b8d9acc767b2054a71b4b3f4a",
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "Metadata only; no sensor decoding, detector fitting or object point database",
+          "Shared maps and taxonomies are not disjoint empirical exposure",
+          "Instance identities do not track physical objects across scenes",
+          "All sensor metadata retained; earlier file census covers only six camera keyframes and lidar",
+          "Prospective training/calibration/initialization protocol remains unresolved"
+        ],
+        "log_count": 24,
+        "map_reference_projection": [
+          {
+            "original_log_references": 37,
+            "selected_log_references": 11
+          },
+          {
+            "original_log_references": 5,
+            "selected_log_references": 2
+          },
+          {
+            "original_log_references": 26,
+            "selected_log_references": 8
+          },
+          {
+            "original_log_references": 15,
+            "selected_log_references": 3
+          }
+        ],
+        "outside_subset_references": 0,
+        "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+        "row_changes": "map.log_tokens projection only; selected non-map values preserved exactly",
+        "scene_count": 353,
+        "source": {
+          "array_reader_sha256": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+          "complete": true,
+          "filename_aliases": {
+            "by_channel": {
+              "RADAR_BACK_LEFT": 2,
+              "RADAR_BACK_RIGHT": 4,
+              "RADAR_FRONT": 6,
+              "RADAR_FRONT_LEFT": 4,
+              "RADAR_FRONT_RIGHT": 4
+            },
+            "cross_log_aliases": 0,
+            "policy": "Two radar keyframes at different scene endpoints in one log, equal timestamp, sensor, pose and calibration values",
+            "preserved_reference_rows": 20,
+            "radar_boundary_filename_aliases": 10,
+            "scope": "complete source metadata"
+          },
+          "metadata_sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b",
+          "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+          "reader_sha256": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+          "version": "0.1.1"
+        },
+        "tables": {
+          "attribute": {
+            "bytes": 1092,
+            "rows": 8,
+            "sha256": "bb5822d33b6e6f4605dd28181457a63749bef4660e2cd9c6034bb25de7ae0729"
+          },
+          "calibrated_sensor": {
+            "bytes": 1237132,
+            "rows": 4236,
+            "sha256": "faf6b20aa1eb3a714ef9b8cfafa19e44ee40a236681fc4883b006fc1c835e940"
+          },
+          "category": {
+            "bytes": 4587,
+            "rows": 23,
+            "sha256": "90f0af0ca1be74b1c01853fb30ae84799ca92ddd04136cbbcf340aa2e1b5f351"
+          },
+          "ego_pose": {
+            "bytes": 248079221,
+            "rows": 1090773,
+            "sha256": "80ec8882bfc8fcc8b5794f46e31d52556b05a7cf1341b0ce34ae3be0aa45429d"
+          },
+          "instance": {
+            "bytes": 6962662,
+            "rows": 29291,
+            "sha256": "8f1d0b790bedd2b56e36adf2f4e9b10dee0a2121f4249ddc2d3e2a1f868edbe2"
+          },
+          "log": {
+            "bytes": 3961,
+            "rows": 24,
+            "sha256": "3ec3507c998a3fe6956bebd438e15a4fd7babf3a8ce97fb7ca8c9e4dc58af7d8"
+          },
+          "map": {
+            "bytes": 1419,
+            "rows": 4,
+            "sha256": "d8e5182335ae16419365f1a5aa1d51222045906df84f97e51f9cf570a8c9f73e"
+          },
+          "sample": {
+            "bytes": 2922899,
+            "rows": 14161,
+            "sha256": "ec70ccc966680cbbafc676ff7fb09b14c47685262425c53f575b056aa8487b7a"
+          },
+          "sample_annotation": {
+            "bytes": 246142712,
+            "rows": 535077,
+            "sha256": "c4a107b33c81e540433575f1faf9969e73402f4e0e1806b558914e8188c43d0e"
+          },
+          "sample_data": {
+            "bytes": 530607920,
+            "rows": 1090773,
+            "sha256": "8edfa3633f5382f0da52fa5c29c2f632f7b335bd670b017d134531b741221613"
+          },
+          "scene": {
+            "bytes": 112759,
+            "rows": 353,
+            "sha256": "1739b6373a086c482e5b20ffe49d71f2963e34ecaa0eaf7046a8e818b593b8b0"
+          },
+          "sensor": {
+            "bytes": 1102,
+            "rows": 12,
+            "sha256": "c2325d4ed144d1a21cb10893543525e2520305345089a18b90f4c69d0c95f3f4"
+          },
+          "visibility": {
+            "bytes": 391,
+            "rows": 4,
+            "sha256": "97f0cba636f44ed9158d50d7f7d75ea26eaa56efbb1cf2c64d378b53e0b095db"
+          }
+        },
+        "version": "0.1.1"
+      },
+      "subset_result_sha256": "89282367844135cc951e8e10fdcc4bcde406c1b9c7d8596decd3947da639eb9e"
+    },
+    {
+      "name": "20260912-1",
+      "sdk": {
+        "annotations": 364334,
+        "artifact_id": "reiyah.nuscenes-subset-sdk-smoke.0.1.0",
+        "converter_max_sweeps": 10,
+        "dependency_versions": {
+          "numpy": "1.26.4",
+          "opencv-python-headless": "4.11.0.86",
+          "pillow": "12.3.0",
+          "pyquaternion": "0.9.9",
+          "scikit-learn": "1.9.0",
+          "scipy": "1.17.1"
+        },
+        "geometry": {
+          "boxes_checked": 5110,
+          "logs": 26,
+          "max_center_error_m": 1.1368683772161603e-13,
+          "max_rotation_matrix_error": 2.220446049250313e-15,
+          "selection": "first sample of lexicographically first scene in every selected log; all seven channels",
+          "sensor_calls": 182,
+          "tolerance": "1e-8 absolute",
+          "velocity_states": {
+            "all_nan_unavailable": 11,
+            "finite": 719
+          }
+        },
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "SDK metadata and explicit coordinate transforms only; not a detector preprocessing or prediction test",
+          "Temporal lists include up to ten real previous lidar candidates; the recipe can draw nine of ten",
+          "Camera/lidar payloads are not local to this SDK root and are not opened",
+          "Unavailable velocity stays NaN; no zero substitution",
+          "No causal or independent physical-reference claim"
+        ],
+        "loader_selection": "not_run; all cached candidates audited",
+        "map_payloads": [
+          {
+            "bytes": 1537492,
+            "sha256": "05ca03d0ba4bba61d84b4bdb6144abb93ec8923554fe116af4aa859f21af5652"
+          },
+          {
+            "bytes": 1784272,
+            "sha256": "0f125aa902db06fd2ba17cbddd10c602124f59991b9b4061c13e281f2e476373"
+          },
+          {
+            "bytes": 1410125,
+            "sha256": "55de71c4a70289eba0cbf2c75f8d2f81580e94c422d8d9a7e6b0740ca2f7a289"
+          },
+          {
+            "bytes": 1060975,
+            "sha256": "bbbd05286eea0835844548922834781309e0542a75a12f38bf247b04a04c85f3"
+          }
+        ],
+        "maps_result_sha256": "d7cef191862a99a741a87755c022cd43d7e323e78d89b0fd6a17a1b869b0ddd8",
+        "model_training": "not_run",
+        "object_point_database": "not_built",
+        "previous_lidar_counts": {
+          "0": 290,
+          "10": 11295,
+          "8": 14,
+          "9": 9
+        },
+        "private_result_sha256": "127e2bd76319ae7d154f96d6f45f9b7c27bff93dbd04e60c3819c1a32e582ff6",
+        "python": "3.11.15",
+        "recipe_loader_sweeps_num": 9,
+        "request_sha256": "588a6fae1577ea378417885c46bb0b6fbce848b986a0a8dfd5ac3ac98a1585c7",
+        "samples": 11608,
+        "sdk_helper_sha256": {
+          "nuscenes.utils.data_classes": "9fd4eb980630af3177768e248de4fa48f5cacf36a1327ec16da56cdc9a64a3ae",
+          "nuscenes.utils.geometry_utils": "6dca908d593e90645d67f0ddf00f3ca7d4d45f6fcf12933da0a70f9eb62caf33",
+          "nuscenes.utils.map_mask": "257e621ab54a73d6b0fb3455aeded45359577630545dd2d44cd90dcadbfc6340"
+        },
+        "sdk_source_sha256": "7d511213c3fa4452f4c0c68fb05c299e803ad7ca3f369275f756958287307871",
+        "sdk_version": "1.2.0",
+        "sensor_payload_decoding": "not_run",
+        "source_sha256": "3d1267551fcac705096207517fd43f21ad773e0789dcccfbe5c1a9edb85b9199",
+        "subset_result_sha256": "4f694621bdcc83f666068bae548fa915a2dc66c3bb64c9a5b706138261b1d8d2",
+        "temporal_source_sha256": "e31fad1109e191aa76226c0ac2279b7ec007ca2789152bf9e57be7c43c9ea473",
+        "unique_requested_sensor_files": 182260,
+        "version": "0.1.0"
+      },
+      "subset": {
+        "artifact_id": "reiyah.nuscenes-training-subset.0.1.1",
+        "binding": {
+          "partition": "1",
+          "proposal_sha256": "e92ec72f73fad763fbd5629fe321f53c72bdbcf9f02b8a9f5a25275b313ebbb0",
+          "seed": 20260912,
+          "splits_sha256": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd"
+        },
+        "index_sha256": "00930ec6f2cc5472f897fed3169c3deabfbfd57b8d9acc767b2054a71b4b3f4a",
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "Metadata only; no sensor decoding, detector fitting or object point database",
+          "Shared maps and taxonomies are not disjoint empirical exposure",
+          "Instance identities do not track physical objects across scenes",
+          "All sensor metadata retained; earlier file census covers only six camera keyframes and lidar",
+          "Prospective training/calibration/initialization protocol remains unresolved"
+        ],
+        "log_count": 26,
+        "map_reference_projection": [
+          {
+            "original_log_references": 37,
+            "selected_log_references": 11
+          },
+          {
+            "original_log_references": 5,
+            "selected_log_references": 2
+          },
+          {
+            "original_log_references": 26,
+            "selected_log_references": 9
+          },
+          {
+            "original_log_references": 15,
+            "selected_log_references": 4
+          }
+        ],
+        "outside_subset_references": 0,
+        "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+        "row_changes": "map.log_tokens projection only; selected non-map values preserved exactly",
+        "scene_count": 290,
+        "source": {
+          "array_reader_sha256": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+          "complete": true,
+          "filename_aliases": {
+            "by_channel": {
+              "RADAR_BACK_LEFT": 2,
+              "RADAR_BACK_RIGHT": 4,
+              "RADAR_FRONT": 6,
+              "RADAR_FRONT_LEFT": 4,
+              "RADAR_FRONT_RIGHT": 4
+            },
+            "cross_log_aliases": 0,
+            "policy": "Two radar keyframes at different scene endpoints in one log, equal timestamp, sensor, pose and calibration values",
+            "preserved_reference_rows": 20,
+            "radar_boundary_filename_aliases": 10,
+            "scope": "complete source metadata"
+          },
+          "metadata_sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b",
+          "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+          "reader_sha256": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+          "version": "0.1.1"
+        },
+        "tables": {
+          "attribute": {
+            "bytes": 1092,
+            "rows": 8,
+            "sha256": "bb5822d33b6e6f4605dd28181457a63749bef4660e2cd9c6034bb25de7ae0729"
+          },
+          "calibrated_sensor": {
+            "bytes": 1015900,
+            "rows": 3480,
+            "sha256": "6a49d35193ceaadd069df4498274278bfd6b4fe200e8522e3a78166974a64b43"
+          },
+          "category": {
+            "bytes": 4587,
+            "rows": 23,
+            "sha256": "90f0af0ca1be74b1c01853fb30ae84799ca92ddd04136cbbcf340aa2e1b5f351"
+          },
+          "ego_pose": {
+            "bytes": 203481524,
+            "rows": 894732,
+            "sha256": "8a3ebc28a93920cbd2933563b1981bbcb365c44606f5ea42f15407f014cb8a06"
+          },
+          "instance": {
+            "bytes": 5093096,
+            "rows": 21429,
+            "sha256": "9c66bd5a983df0c503afc9b5f83129a35326e2ea6e879f2d75485633f55bcd9f"
+          },
+          "log": {
+            "bytes": 4295,
+            "rows": 26,
+            "sha256": "3ffe4d5a521caa48b519054e4c32584ebe5ae6a9b8129a361b9528143e116c84"
+          },
+          "map": {
+            "bytes": 1489,
+            "rows": 4,
+            "sha256": "4655a01eccc96ab04e3c70f43d7c959de356f9d15c0da2ef65a4b20a1972a10f"
+          },
+          "sample": {
+            "bytes": 2395907,
+            "rows": 11608,
+            "sha256": "08e85130cf953b1addb9af32f8574ae962bce00986b8bc6a4169764f2f2df532"
+          },
+          "sample_annotation": {
+            "bytes": 168391526,
+            "rows": 364334,
+            "sha256": "934c1277d0de5af51b2e5fe63de760da53a48d5f3bfeabb065cf0629523fcd8b"
+          },
+          "sample_data": {
+            "bytes": 435245988,
+            "rows": 894732,
+            "sha256": "0a9f269ddf7da3fa9b0459ffa2f6250bb81789ab840e879a7f425edb4b9a4d01"
+          },
+          "scene": {
+            "bytes": 91284,
+            "rows": 290,
+            "sha256": "d52a8d78e91a4fb993ba9680aa1e79fd82cbd760361be37b00de8c62e4601373"
+          },
+          "sensor": {
+            "bytes": 1102,
+            "rows": 12,
+            "sha256": "c2325d4ed144d1a21cb10893543525e2520305345089a18b90f4c69d0c95f3f4"
+          },
+          "visibility": {
+            "bytes": 391,
+            "rows": 4,
+            "sha256": "97f0cba636f44ed9158d50d7f7d75ea26eaa56efbb1cf2c64d378b53e0b095db"
+          }
+        },
+        "version": "0.1.1"
+      },
+      "subset_result_sha256": "4f694621bdcc83f666068bae548fa915a2dc66c3bb64c9a5b706138261b1d8d2"
+    },
+    {
+      "name": "20260912-2",
+      "sdk": {
+        "annotations": 609812,
+        "artifact_id": "reiyah.nuscenes-subset-sdk-smoke.0.1.0",
+        "converter_max_sweeps": 10,
+        "dependency_versions": {
+          "numpy": "1.26.4",
+          "opencv-python-headless": "4.11.0.86",
+          "pillow": "12.3.0",
+          "pyquaternion": "0.9.9",
+          "scikit-learn": "1.9.0",
+          "scipy": "1.17.1"
+        },
+        "geometry": {
+          "boxes_checked": 4648,
+          "logs": 24,
+          "max_center_error_m": 1.2789769243681803e-13,
+          "max_rotation_matrix_error": 1.9984014443252818e-15,
+          "selection": "first sample of lexicographically first scene in every selected log; all seven channels",
+          "sensor_calls": 168,
+          "tolerance": "1e-8 absolute",
+          "velocity_states": {
+            "all_nan_unavailable": 7,
+            "finite": 657
+          }
+        },
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "SDK metadata and explicit coordinate transforms only; not a detector preprocessing or prediction test",
+          "Temporal lists include up to ten real previous lidar candidates; the recipe can draw nine of ten",
+          "Camera/lidar payloads are not local to this SDK root and are not opened",
+          "Unavailable velocity stays NaN; no zero substitution",
+          "No causal or independent physical-reference claim"
+        ],
+        "loader_selection": "not_run; all cached candidates audited",
+        "map_payloads": [
+          {
+            "bytes": 1537492,
+            "sha256": "05ca03d0ba4bba61d84b4bdb6144abb93ec8923554fe116af4aa859f21af5652"
+          },
+          {
+            "bytes": 1784272,
+            "sha256": "0f125aa902db06fd2ba17cbddd10c602124f59991b9b4061c13e281f2e476373"
+          },
+          {
+            "bytes": 1410125,
+            "sha256": "55de71c4a70289eba0cbf2c75f8d2f81580e94c422d8d9a7e6b0740ca2f7a289"
+          },
+          {
+            "bytes": 1060975,
+            "sha256": "bbbd05286eea0835844548922834781309e0542a75a12f38bf247b04a04c85f3"
+          }
+        ],
+        "maps_result_sha256": "d7cef191862a99a741a87755c022cd43d7e323e78d89b0fd6a17a1b869b0ddd8",
+        "model_training": "not_run",
+        "object_point_database": "not_built",
+        "previous_lidar_counts": {
+          "0": 410,
+          "10": 16082,
+          "8": 16,
+          "9": 14
+        },
+        "private_result_sha256": "c2bdf459b4832a837dc29b9f0c28558f6eba6f07eef70750c93d86d5156da8d1",
+        "python": "3.11.15",
+        "recipe_loader_sweeps_num": 9,
+        "request_sha256": "588a6fae1577ea378417885c46bb0b6fbce848b986a0a8dfd5ac3ac98a1585c7",
+        "samples": 16522,
+        "sdk_helper_sha256": {
+          "nuscenes.utils.data_classes": "9fd4eb980630af3177768e248de4fa48f5cacf36a1327ec16da56cdc9a64a3ae",
+          "nuscenes.utils.geometry_utils": "6dca908d593e90645d67f0ddf00f3ca7d4d45f6fcf12933da0a70f9eb62caf33",
+          "nuscenes.utils.map_mask": "257e621ab54a73d6b0fb3455aeded45359577630545dd2d44cd90dcadbfc6340"
+        },
+        "sdk_source_sha256": "7d511213c3fa4452f4c0c68fb05c299e803ad7ca3f369275f756958287307871",
+        "sdk_version": "1.2.0",
+        "sensor_payload_decoding": "not_run",
+        "source_sha256": "3d1267551fcac705096207517fd43f21ad773e0789dcccfbe5c1a9edb85b9199",
+        "subset_result_sha256": "ae36a4e50c0010590f80e14a3f546fbf89b240f934342c4c583083500ef79758",
+        "temporal_source_sha256": "d2d6568909d9ac3507f46b05092145c450842b7aaa678452f04b5eccfc64ffe9",
+        "unique_requested_sensor_files": 259532,
+        "version": "0.1.0"
+      },
+      "subset": {
+        "artifact_id": "reiyah.nuscenes-training-subset.0.1.1",
+        "binding": {
+          "partition": "2",
+          "proposal_sha256": "e92ec72f73fad763fbd5629fe321f53c72bdbcf9f02b8a9f5a25275b313ebbb0",
+          "seed": 20260912,
+          "splits_sha256": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd"
+        },
+        "index_sha256": "00930ec6f2cc5472f897fed3169c3deabfbfd57b8d9acc767b2054a71b4b3f4a",
+        "lifecycle_status": "exploratory",
+        "limits": [
+          "Metadata only; no sensor decoding, detector fitting or object point database",
+          "Shared maps and taxonomies are not disjoint empirical exposure",
+          "Instance identities do not track physical objects across scenes",
+          "All sensor metadata retained; earlier file census covers only six camera keyframes and lidar",
+          "Prospective training/calibration/initialization protocol remains unresolved"
+        ],
+        "log_count": 24,
+        "map_reference_projection": [
+          {
+            "original_log_references": 37,
+            "selected_log_references": 11
+          },
+          {
+            "original_log_references": 5,
+            "selected_log_references": 2
+          },
+          {
+            "original_log_references": 26,
+            "selected_log_references": 8
+          },
+          {
+            "original_log_references": 15,
+            "selected_log_references": 3
+          }
+        ],
+        "outside_subset_references": 0,
+        "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+        "row_changes": "map.log_tokens projection only; selected non-map values preserved exactly",
+        "scene_count": 410,
+        "source": {
+          "array_reader_sha256": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+          "complete": true,
+          "filename_aliases": {
+            "by_channel": {
+              "RADAR_BACK_LEFT": 2,
+              "RADAR_BACK_RIGHT": 4,
+              "RADAR_FRONT": 6,
+              "RADAR_FRONT_LEFT": 4,
+              "RADAR_FRONT_RIGHT": 4
+            },
+            "cross_log_aliases": 0,
+            "policy": "Two radar keyframes at different scene endpoints in one log, equal timestamp, sensor, pose and calibration values",
+            "preserved_reference_rows": 20,
+            "radar_boundary_filename_aliases": 10,
+            "scope": "complete source metadata"
+          },
+          "metadata_sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b",
+          "producer_sha256": "6e33f77d943df538c0c44b8c69843cf8b84f2e413580a20ba38b56119571a6d1",
+          "reader_sha256": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+          "version": "0.1.1"
+        },
+        "tables": {
+          "attribute": {
+            "bytes": 1092,
+            "rows": 8,
+            "sha256": "bb5822d33b6e6f4605dd28181457a63749bef4660e2cd9c6034bb25de7ae0729"
+          },
+          "calibrated_sensor": {
+            "bytes": 1439837,
+            "rows": 4920,
+            "sha256": "f1303f1267373033841cea7902031c663bf3b6122b21da153449ecdb3298d0cb"
+          },
+          "category": {
+            "bytes": 4587,
+            "rows": 23,
+            "sha256": "90f0af0ca1be74b1c01853fb30ae84799ca92ddd04136cbbcf340aa2e1b5f351"
+          },
+          "ego_pose": {
+            "bytes": 289516324,
+            "rows": 1272942,
+            "sha256": "61b7defa003d2ac50baab359338a2e63b1d430ac99f6ad74f12cb015b84ae644"
+          },
+          "instance": {
+            "bytes": 7597805,
+            "rows": 31961,
+            "sha256": "72b09656216d029763087ff4cc3a6637eba90f7e419f1d77eea03a05eafea7c8"
+          },
+          "log": {
+            "bytes": 3961,
+            "rows": 24,
+            "sha256": "b9b6bab64a5372fe93e821fe106cb949918a08c9cfe8f82748a02e234156520f"
+          },
+          "map": {
+            "bytes": 1419,
+            "rows": 4,
+            "sha256": "637384abfa43fb51ff4b7f505d37b962f82f41dec628d4c5607a4ff2505b5d69"
+          },
+          "sample": {
+            "bytes": 3410339,
+            "rows": 16522,
+            "sha256": "3679af9131ff906c00b43dc5f646c0fca4ea979bf8894234d4996c3f198da55c"
+          },
+          "sample_annotation": {
+            "bytes": 280468786,
+            "rows": 609812,
+            "sha256": "a23690216aa6412553d74e887cf619d3c85d60bc7398e0d01560d488d31ef40c"
+          },
+          "sample_data": {
+            "bytes": 619228824,
+            "rows": 1272942,
+            "sha256": "ce0853228d701a9b4f2a08c2a69c69d91846ce6dd0a8c81da04189b5bcf45a4d"
+          },
+          "scene": {
+            "bytes": 132588,
+            "rows": 410,
+            "sha256": "58ac80fc7c9c9a1fc3a82fab813e3f39e33e6e30b1f3fbf1eedaa7fead413ed8"
+          },
+          "sensor": {
+            "bytes": 1102,
+            "rows": 12,
+            "sha256": "c2325d4ed144d1a21cb10893543525e2520305345089a18b90f4c69d0c95f3f4"
+          },
+          "visibility": {
+            "bytes": 391,
+            "rows": 4,
+            "sha256": "97f0cba636f44ed9158d50d7f7d75ea26eaa56efbb1cf2c64d378b53e0b095db"
+          }
+        },
+        "version": "0.1.1"
+      },
+      "subset_result_sha256": "ae36a4e50c0010590f80e14a3f546fbf89b240f934342c4c583083500ef79758"
+    }
+  ],
+  "version": "0.1.0"
+}

@@ -1,3 +1,21 @@
+# Training-partition continuation, 2026-09-07
+
+Read the [partition checkpoint](TRAINING_PARTITION_CHECKPOINT_2026-09-07.md) first.
+All six training metadata subsets and the full validation subset passed the
+SDK load and bounded geometry/source-list checks. The ten-candidate lidar
+source rule and within-log radar boundary aliases are explicit. Metadata and
+source lists remain private; own aggregates and tools are retained publicly.
+
+Register `0.2.27` is `evidence/claim-status-register-2026-09-07T175315Z.json`; all 54 predecessor rows are unchanged.
+The next action is actual model-specific caches, object point database and
+payload/preprocessing checks, with fitting/calibration choices frozen before
+new outcomes. No detector fits or independent human judgments occurred.
+Gate A remains unaccepted. Owner worktrees and UI files are preserved.
+Resolve final main integration and publisher readbacks from Git and the task
+`training-partitions-2026-09-07/delivery.json`. Older blocks below are historical.
+
+---
+
 # Training-input continuation, 2026-09-07
 
 Read the [training-input findings](TRAINING_INPUT_FINDINGS_2026-09-07.md) and

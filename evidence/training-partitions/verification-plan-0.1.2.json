@@ -1,0 +1,31 @@
+{
+  "artifact_id": "reiyah.training-partition-verification-plan.0.1.2",
+  "change_basis": "Initial real import failed on a global filename uniqueness assumption. Full duplicate census found ten radar boundary aliases (twenty records), all within a log with equal timestamp/pose/calibration. Preserve both records only under that explicit rule; cross-log, camera/lidar and inconsistent-geometry aliases still fail. No subset SDK outcomes have been observed.",
+  "checks": [
+    "Exact input and producer identities; complete strict JSON import into bounded-memory SQLite index",
+    "All ordinary foreign keys and annotation attributes resolve; sequence counts, endpoints, reciprocal links, scene containment and time order agree",
+    "Every filename alias is explicitly accounted for; only two consistent radar scene-boundary records within one log may share a path",
+    "Whole-log group selection equals frozen scene/sample counts; metadata references remain inside subset",
+    "Full SDK table load with exact upstream 1.2.0 source identities and retained real map files",
+    "Every sample emits six camera keyframes, a lidar keyframe, up to ten real previous lidar candidates and all annotation identities",
+    "Every emitted sensor source belongs to the exact preceding request whose full file inventory is retained",
+    "First sample of first named scene per selected log: SDK boxes match explicit world-to-ego-to-sensor matrix transforms for seven channels to absolute tolerance 1e-8",
+    "Missing velocity remains NaN; short lidar histories are retained as short",
+    "All authored and inherited offline unit checks and Gate B development checks"
+  ],
+  "created_utc": "2026-09-07T17:21:54.153742+00:00",
+  "lifecycle_status": "proposed",
+  "not_checked": [
+    "Pixel/point decoding",
+    "Model-specific preprocessing, voxelization and detector prediction geometry",
+    "Object point database payload construction",
+    "Training, calibration, independent physical truth and causal effect"
+  ],
+  "predecessor": {
+    "path": "evidence/training-partitions/verification-plan-0.1.1.json",
+    "sha256": "ed484cd98b4fe596ce4aafebbc3cf3e6722d0e1adc35c677151421d1bf8a3a50"
+  },
+  "scope": "All three previously frozen training proposals plus the full official validation set. No selection by detector results.",
+  "selection_policy": "Fixed before running any subset SDK smoke; no adjustment based on geometry outcomes",
+  "version": "0.1.2"
+}

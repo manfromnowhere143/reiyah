@@ -2,15 +2,17 @@
 
 Document ID: `reiyah.training-overlap-next-experiment.2026-09-07`
 
-Version: `0.1.1`
+Version: `0.1.2`
 
 Lifecycle status: `proposed`
 
 Availability update: the [completed input census](TRAINING_INPUT_FINDINGS_2026-09-07.md)
 finds all requested files for every proposed partition. It also identifies
 pretrained-detector reuse and the CenterPoint object database as training
-exposure routes. File contents, partition-contained derived inputs and the
-prospective fitting protocol still need verification. The contrast below is
+exposure routes. The [metadata subset checkpoint](TRAINING_PARTITION_CHECKPOINT_2026-09-07.md)
+now verifies contained SDK tables and temporal source candidates. Pixel/point
+contents, model-specific caches and object point databases, preprocessing and
+the prospective fitting protocol still need verification. The contrast below is
 unchanged and has not been executed.
 
 The preceding metadata census establishes a feasible log partition, not a
@@ -111,8 +113,9 @@ question. The [research-board review](RESEARCH_BOARD_2026-09-07.md) and
 [RSS transfer correction](RSS_TRANSFER_AND_RARE_EVENT_LIMITS_2026-09-07.md)
 remain necessary reading before making an external safety inference.
 
-The next bounded action is to build partition-contained annotation caches,
-object databases and temporal source lists, followed by a geometry/loader smoke
-test and a prospectively fixed fitting budget. Independent human
+The next bounded action is to build model-specific annotation caches and
+object point databases from the checked metadata/source lists, verify actual
+payload decoding and model preprocessing geometry, and fix the prospective
+fitting/calibration budget. Independent human
 reference adjudication remains the separate highest-value scientific need.
 No further tuning of the stopped spatial-summary attempt is planned.

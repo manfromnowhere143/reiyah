@@ -39,6 +39,14 @@ reproduce their private predictions exactly. The
 [next experiment](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) separates
 shared detector training from dataset transfer; it has not been run.
 
+## Training metadata subsets checked
+
+The [partition checkpoint](docs/TRAINING_PARTITION_CHECKPOINT_2026-09-07.md)
+builds the six frozen training metadata subsets and full validation subset.
+All seven load in the official SDK and pass contained-source and sampled
+coordinate checks. Actual model preprocessing, object point databases and
+new detector fits remain the next work.
+
 ## Training data inventory completed
 
 The [training-input census](docs/TRAINING_INPUT_FINDINGS_2026-09-07.md) finds all

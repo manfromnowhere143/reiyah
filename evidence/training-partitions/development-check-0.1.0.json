@@ -1,0 +1,371 @@
+{
+  "checks": [
+    {
+      "check": "MANIFEST  every retained transcript exists with its recorded SHA-256",
+      "detail": "52 transcripts",
+      "state": "pass"
+    },
+    {
+      "check": "REPLAY    every replayed process exits zero with the expected normalized transcript",
+      "detail": "0 replicated, 52 not replayed here",
+      "state": "pass"
+    },
+    {
+      "check": "REGISTER  newest register validates and reconciliation passes",
+      "detail": "RESULT: PASS - no live artifact asserts a forbidden figure",
+      "state": "pass"
+    },
+    {
+      "check": "CUSTODY   retained publisher records and committed payloads match their digests",
+      "detail": "4 sources",
+      "state": "pass"
+    },
+    {
+      "check": "STYLE     no em dash in live Markdown",
+      "detail": "137 files",
+      "state": "pass"
+    },
+    {
+      "check": "STYLE     every result document carries Document ID, Version, Lifecycle status",
+      "detail": "",
+      "state": "pass"
+    },
+    {
+      "check": "STYLE     every relative Markdown link resolves",
+      "detail": "",
+      "state": "pass"
+    },
+    {
+      "check": "REVIEW    every number in every result document is bound to retained bytes",
+      "detail": "RESULT: PASS  (0 document(s) with unbound numbers of 42)",
+      "state": "pass"
+    },
+    {
+      "check": "REVIEW    the register and the result documents describe the same program",
+      "detail": "RESULT: PASS  (0 finding(s))",
+      "state": "pass"
+    },
+    {
+      "check": "REVIEW    attack suite",
+      "detail": "pass --attacks to run",
+      "state": "not_run_here"
+    }
+  ],
+  "items": [
+    {
+      "digest_state": "digest_match",
+      "replay_class": "network_cached",
+      "replay_state": "not_replayed_here",
+      "transcript": "llm-generalization/evidence/result_t.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "network_cached",
+      "replay_state": "not_replayed_here",
+      "transcript": "llm-generalization/evidence/result_u.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "network_cached",
+      "replay_state": "not_replayed_here",
+      "transcript": "llm-generalization/evidence/result_v.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "network_cached",
+      "replay_state": "not_replayed_here",
+      "transcript": "llm-generalization/evidence/result_w.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "network_cached",
+      "replay_state": "not_replayed_here",
+      "transcript": "llm-generalization/evidence/result_x.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "network_cached",
+      "replay_state": "not_replayed_here",
+      "transcript": "llm-generalization/evidence/result_x2.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "network_cached",
+      "replay_state": "not_replayed_here",
+      "transcript": "llm-generalization/evidence/result_y_hellaswag.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "network_cached",
+      "replay_state": "not_replayed_here",
+      "transcript": "llm-generalization/evidence/result_ac.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "human-channel/evidence/h1_driver_observation.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "human-channel/evidence/h2_glance_at_conflict.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "human-channel/evidence/h3_observation_response_joint.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "human-channel/evidence/h4_dcpt_takeover.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "heavy_inference",
+      "replay_state": "not_replayed_here",
+      "transcript": "human-channel/evidence/h5_cross_agent_joint.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "heavy_inference",
+      "replay_state": "not_replayed_here",
+      "transcript": "human-channel/evidence/h6_total_both_miss.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "human-channel/evidence/h7_intervals.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_z.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_aa.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_ab.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_b.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_d.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_e.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_f.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_g.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_h.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_i.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_j.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_k.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_l.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_m.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_n.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_o.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_p.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_q.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_r.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "argv_unrecorded_historical",
+      "replay_state": "argv_unrecorded_historical",
+      "transcript": "evidence/measurement/result_s.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_ad.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "network_cached",
+      "replay_state": "not_replayed_here",
+      "transcript": "llm-generalization/evidence/result_ae.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_af.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_ag.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_ah.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_ah2.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "heavy_inference",
+      "replay_state": "not_replayed_here",
+      "transcript": "human-channel/evidence/h5b_cross_agent_interval.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_ah3.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "network_cached",
+      "replay_state": "not_replayed_here",
+      "transcript": "llm-generalization/evidence/result_ai_winogrande.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_aj.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_ak.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_ah2b.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_am.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "network_cached",
+      "replay_state": "not_replayed_here",
+      "transcript": "llm-generalization/evidence/result_al.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "heavy_inference",
+      "replay_state": "not_replayed_here",
+      "transcript": "human-channel/evidence/h6b_blindness_check.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_an.txt"
+    },
+    {
+      "digest_state": "digest_match",
+      "replay_class": "local_deterministic",
+      "replay_state": "not_replayed_here",
+      "transcript": "evidence/measurement/result_ao.json"
+    }
+  ],
+  "result": "pass",
+  "tool": "gate_b_check",
+  "version": "0.1.1"
+}
