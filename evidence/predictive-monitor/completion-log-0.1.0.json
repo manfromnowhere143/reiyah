@@ -1,0 +1,39 @@
+{
+  "artifact_id": "reiyah.predictive-monitor-completion-audit.0.1.0",
+  "auditor_sha256": "798a420f6714b4eec27c9f613b7c554c61053db42b8743a960dd2265478f97a7",
+  "complete_planned_experiments": [
+    "y_h1000000"
+  ],
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Computational audit of fixed shared predictions, not independent physical validation",
+    "Does not refit models, verify runtime timings or reconstruct internal tuning predictions",
+    "Producer process completion must also be checked against its retained process capture"
+  ],
+  "log_resampled_equal_scene_checked": false,
+  "numeric_audit": {
+    "artifact_id": "reiyah.predictive-monitor-independent-reaggregation.0.1.0",
+    "checked": [
+      {
+        "experiment": "y_h1000000",
+        "log_comparisons": 2,
+        "models": 6,
+        "rows": 5693,
+        "scene_comparisons": 2
+      }
+    ],
+    "checker_sha256": "94a6084797eaa01d154739fe1bcb8ed4ccd1c98dcd8396a16e6f6b27ce85b3ea",
+    "lifecycle_status": "exploratory",
+    "limits": [
+      "Separate numeric implementation over shared retained predictions; no independent human review",
+      "Does not refit models, reproduce internal tuning predictions, or validate physical reference truth"
+    ],
+    "result_sha256": "08aff21fc731ea1d82cc70e8ac9feaec727cded3fb4db2d4e4b9ce364ff17d48",
+    "status": "pass",
+    "version": "0.1.0"
+  },
+  "result_sha256": "08aff21fc731ea1d82cc70e8ac9feaec727cded3fb4db2d4e4b9ce364ff17d48",
+  "spec_sha256": "e1f50faf8b01ec0a336b76a913d3c794d6e840215ea8b373ff07d645a12e4cd3",
+  "status": "pass",
+  "version": "0.1.0"
+}

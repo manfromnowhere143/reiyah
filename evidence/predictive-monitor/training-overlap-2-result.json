@@ -1,0 +1,109 @@
+{
+  "artifact_id": "reiyah.training-overlap-probe-preflight.0.1.0",
+  "excluded_training_scenes": 0,
+  "input_sha256": {
+    "meta": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b",
+    "splits": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd"
+  },
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Metadata group partitions only; not four trained models, fresh predictions or an overlap intervention result",
+    "All proposed training groups exclude every official validation log; sample budgets remain unequal",
+    "Pretraining data provenance and raw training sensor availability remain unchecked"
+  ],
+  "official_train_scenes": 700,
+  "official_validation_scenes": 150,
+  "proposed_partitions": [
+    {
+      "partition_sizes": [
+        {
+          "locations": {
+            "boston-seaport": 11,
+            "singapore-hollandvillage": 2,
+            "singapore-onenorth": 9,
+            "singapore-queenstown": 4
+          },
+          "partition": 1,
+          "sample_count": 15085,
+          "scene_count": 375
+        },
+        {
+          "locations": {
+            "boston-seaport": 11,
+            "singapore-hollandvillage": 2,
+            "singapore-onenorth": 8,
+            "singapore-queenstown": 3
+          },
+          "partition": 2,
+          "sample_count": 13045,
+          "scene_count": 325
+        }
+      ],
+      "seed": 20260910,
+      "sha256": "33bb7eae5bc47dd6fbd57acc2a117d8f4abd52b1b6338776189429bf2ccb5147"
+    },
+    {
+      "partition_sizes": [
+        {
+          "locations": {
+            "boston-seaport": 11,
+            "singapore-hollandvillage": 2,
+            "singapore-onenorth": 9,
+            "singapore-queenstown": 4
+          },
+          "partition": 1,
+          "sample_count": 13969,
+          "scene_count": 347
+        },
+        {
+          "locations": {
+            "boston-seaport": 11,
+            "singapore-hollandvillage": 2,
+            "singapore-onenorth": 8,
+            "singapore-queenstown": 3
+          },
+          "partition": 2,
+          "sample_count": 14161,
+          "scene_count": 353
+        }
+      ],
+      "seed": 20260911,
+      "sha256": "dac2ca432938817dc428f7d22d39e689ba7b8f04d4e730ace1f0f3b2a6c2b583"
+    },
+    {
+      "partition_sizes": [
+        {
+          "locations": {
+            "boston-seaport": 11,
+            "singapore-hollandvillage": 2,
+            "singapore-onenorth": 9,
+            "singapore-queenstown": 4
+          },
+          "partition": 1,
+          "sample_count": 11608,
+          "scene_count": 290
+        },
+        {
+          "locations": {
+            "boston-seaport": 11,
+            "singapore-hollandvillage": 2,
+            "singapore-onenorth": 8,
+            "singapore-queenstown": 3
+          },
+          "partition": 2,
+          "sample_count": 16522,
+          "scene_count": 410
+        }
+      ],
+      "seed": 20260912,
+      "sha256": "e92ec72f73fad763fbd5629fe321f53c72bdbcf9f02b8a9f5a25275b313ebbb0"
+    }
+  ],
+  "remaining_training_logs": 50,
+  "shared_train_validation_logs": 0,
+  "source_sha256": "35e6a37eebb2c0b8b3683a2954099c58d559054b50a92a31dca8786b52cebce5",
+  "train_logs": 50,
+  "training_effect_on_dependence": null,
+  "validation_logs": 18,
+  "version": "0.1.0"
+}

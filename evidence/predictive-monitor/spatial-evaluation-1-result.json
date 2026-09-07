@@ -1,0 +1,1634 @@
+{
+  "artifact_id": "reiyah.predictive-monitor-spatial-evaluation.0.2.0",
+  "baseline_result_sha256": "08aff21fc731ea1d82cc70e8ac9feaec727cded3fb4db2d4e4b9ce364ff17d48",
+  "experiments": {
+    "y_h1000000": {
+      "actual_target_offset_us": {
+        "max": 1149618,
+        "median": 999781.0,
+        "min": 850419
+      },
+      "excluded_clock_anchors": 326,
+      "folds": [
+        {
+          "fold": 0,
+          "high_count_threshold": 8.0,
+          "models": {
+            "constant": {
+              "alert_threshold": 5.95160539785947,
+              "test": {
+                "alert_fraction": 0.0,
+                "deviance_frame_mean": 7.517222209216963,
+                "deviance_scene_mean": 7.515480482125906,
+                "frames": 1395,
+                "high_count_auc": 0.5,
+                "high_count_false_alarm_rate": 0.0,
+                "mae": 5.257077810634604,
+                "mean_misses_unflagged": 4.67741935483871,
+                "miss_fraction_in_alerts": 0.0,
+                "misses_outside_alerts": 6525,
+                "misses_total": 6525,
+                "observed_mean": 4.67741935483871,
+                "predicted_mean": 5.951605397859468,
+                "predicted_to_observed_count_ratio": 1.2724121885078863,
+                "scene_loss_max": 48.667557059049095,
+                "scene_loss_median": 5.247335967302988,
+                "scene_loss_p90": 10.987400127830984,
+                "scenes": 37
+              }
+            },
+            "joint_history": {
+              "alert_threshold": 7.700819650167109,
+              "candidate_index": 0,
+              "inner_groups": 14,
+              "inner_scene_deviance": [
+                2.9937586682993933,
+                3.0902850576007537,
+                3.176666808269772
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.6553007919574156,
+                  "predict_seconds": 0.007056124974042177,
+                  "prediction_rows": 1269
+                },
+                {
+                  "fit_seconds": 0.632647457998246,
+                  "predict_seconds": 0.009340542019344866,
+                  "prediction_rows": 1600
+                },
+                {
+                  "fit_seconds": 0.6355638339882717,
+                  "predict_seconds": 0.0083014159463346,
+                  "prediction_rows": 1429
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 0.8084645409835503,
+                "predict_seconds": 0.008252584026195109,
+                "prediction_rows": 1395
+              },
+              "test": {
+                "alert_fraction": 0.17562724014336917,
+                "deviance_frame_mean": 2.614047109646786,
+                "deviance_scene_mean": 2.618602305755888,
+                "frames": 1395,
+                "high_count_auc": 0.9533071202786714,
+                "high_count_false_alarm_rate": 0.055846422338568937,
+                "mae": 2.674249529562672,
+                "mean_misses_unflagged": 2.466086956521739,
+                "miss_fraction_in_alerts": 0.5653639846743295,
+                "misses_outside_alerts": 2836,
+                "misses_total": 6525,
+                "observed_mean": 4.67741935483871,
+                "predicted_mean": 4.6399853698634645,
+                "predicted_to_observed_count_ratio": 0.9919968721777063,
+                "scene_loss_max": 17.272300521069507,
+                "scene_loss_median": 2.0605723994892227,
+                "scene_loss_p90": 4.222679723848276,
+                "scenes": 37
+              }
+            },
+            "marginal_history": {
+              "alert_threshold": 7.666827807993384,
+              "candidate_index": 0,
+              "inner_groups": 14,
+              "inner_scene_deviance": [
+                3.0717899411104823,
+                3.1651601962134466,
+                3.2876010387359065
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.553135999944061,
+                  "predict_seconds": 0.006851040991023183,
+                  "prediction_rows": 1269
+                },
+                {
+                  "fit_seconds": 0.5256323750363663,
+                  "predict_seconds": 0.008933166973292828,
+                  "prediction_rows": 1600
+                },
+                {
+                  "fit_seconds": 0.519444957957603,
+                  "predict_seconds": 0.008100708946585655,
+                  "prediction_rows": 1429
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 0.6816354589536786,
+                "predict_seconds": 0.007848666049540043,
+                "prediction_rows": 1395
+              },
+              "test": {
+                "alert_fraction": 0.16989247311827957,
+                "deviance_frame_mean": 2.751361234363161,
+                "deviance_scene_mean": 2.7548447813330394,
+                "frames": 1395,
+                "high_count_auc": 0.9457971502064103,
+                "high_count_false_alarm_rate": 0.053228621291448515,
+                "mae": 2.743332715650576,
+                "mean_misses_unflagged": 2.5276338514680483,
+                "miss_fraction_in_alerts": 0.5514176245210728,
+                "misses_outside_alerts": 2927,
+                "misses_total": 6525,
+                "observed_mean": 4.67741935483871,
+                "predicted_mean": 4.462984815398888,
+                "predicted_to_observed_count_ratio": 0.9541553743266586,
+                "scene_loss_max": 16.68535046388935,
+                "scene_loss_median": 2.0950740085966544,
+                "scene_loss_p90": 4.668183006820812,
+                "scenes": 37
+              }
+            },
+            "proportional_union": {
+              "alert_threshold": 8.578766983223316,
+              "test": {
+                "alert_fraction": 0.13189964157706094,
+                "deviance_frame_mean": 2.6483930042684096,
+                "deviance_scene_mean": 2.6568246220380165,
+                "frames": 1395,
+                "high_count_auc": 0.9498430020255542,
+                "high_count_false_alarm_rate": 0.027050610820244327,
+                "mae": 2.433406326682486,
+                "mean_misses_unflagged": 2.871180842279108,
+                "miss_fraction_in_alerts": 0.4671264367816092,
+                "misses_outside_alerts": 3477,
+                "misses_total": 6525,
+                "observed_mean": 4.67741935483871,
+                "predicted_mean": 3.950627569142738,
+                "predicted_to_observed_count_ratio": 0.844616928575344,
+                "scene_loss_max": 23.72255386137026,
+                "scene_loss_median": 1.5315421990128444,
+                "scene_loss_p90": 4.141898713182732,
+                "scenes": 37
+              }
+            },
+            "shuffled_training_labels": {
+              "alert_policy": "not_evaluated",
+              "refit_timing": {
+                "fit_seconds": 1.0562927919672802,
+                "predict_seconds": 0.011308207991532981,
+                "prediction_rows": 1395
+              },
+              "scene_deviance": 7.2253795369062646
+            },
+            "spatial_history": {
+              "alert_threshold": 7.710144694204853,
+              "candidate_index": 0,
+              "inner_groups": 14,
+              "inner_scene_deviance": [
+                3.0055305222232156,
+                3.071303186572461,
+                3.097956885211511
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.7730199591023847,
+                  "predict_seconds": 0.007106874953024089,
+                  "prediction_rows": 1269
+                },
+                {
+                  "fit_seconds": 0.7398229589452967,
+                  "predict_seconds": 0.00950579100754112,
+                  "prediction_rows": 1600
+                },
+                {
+                  "fit_seconds": 0.7398386669810861,
+                  "predict_seconds": 0.008730833069421351,
+                  "prediction_rows": 1429
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 0.9554592909989879,
+                "predict_seconds": 0.008145750034600496,
+                "prediction_rows": 1395
+              },
+              "test": {
+                "alert_fraction": 0.16989247311827957,
+                "deviance_frame_mean": 2.5413776176780423,
+                "deviance_scene_mean": 2.5440256938063306,
+                "frames": 1395,
+                "high_count_auc": 0.9553747275314172,
+                "high_count_false_alarm_rate": 0.04712041884816754,
+                "mae": 2.619483267313276,
+                "mean_misses_unflagged": 2.461139896373057,
+                "miss_fraction_in_alerts": 0.5632183908045977,
+                "misses_outside_alerts": 2850,
+                "misses_total": 6525,
+                "observed_mean": 4.67741935483871,
+                "predicted_mean": 4.525037619908078,
+                "predicted_to_observed_count_ratio": 0.9674218359803477,
+                "scene_loss_max": 15.997667510718955,
+                "scene_loss_median": 1.9311056312358303,
+                "scene_loss_p90": 4.357854064663464,
+                "scenes": 37
+              }
+            },
+            "unavailable_oracle": {
+              "alert_policy": "not_evaluated",
+              "refit_timing": {
+                "fit_seconds": 1.2285660830093548,
+                "predict_seconds": 0.01185854198411107,
+                "prediction_rows": 1395
+              },
+              "scene_deviance": 1.3450510551367043
+            }
+          },
+          "shared_collection_logs": 0,
+          "test_frames": 1395,
+          "test_scenes": 37,
+          "train_frames": 4298,
+          "train_scenes": 113
+        },
+        {
+          "fold": 1,
+          "high_count_threshold": 7.0,
+          "models": {
+            "constant": {
+              "alert_threshold": 5.3949044585987265,
+              "test": {
+                "alert_fraction": 0.0,
+                "deviance_frame_mean": 4.567234829931703,
+                "deviance_scene_mean": 4.594385836797336,
+                "frames": 1297,
+                "high_count_auc": 0.5,
+                "high_count_false_alarm_rate": 0.0,
+                "mae": 3.965368390553408,
+                "mean_misses_unflagged": 6.468003084040093,
+                "miss_fraction_in_alerts": 0.0,
+                "misses_outside_alerts": 8389,
+                "misses_total": 8389,
+                "observed_mean": 6.468003084040093,
+                "predicted_mean": 5.394904458598726,
+                "predicted_to_observed_count_ratio": 0.8340912007155259,
+                "scene_loss_max": 30.01502893190981,
+                "scene_loss_median": 3.196738140099624,
+                "scene_loss_p90": 7.507337023052483,
+                "scenes": 34
+              }
+            },
+            "joint_history": {
+              "alert_threshold": 8.08999424619685,
+              "candidate_index": 0,
+              "inner_groups": 14,
+              "inner_scene_deviance": [
+                2.815168251260577,
+                2.9357944098895565,
+                2.9920488959402083
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.6325807919492945,
+                  "predict_seconds": 0.009377417038194835,
+                  "prediction_rows": 1698
+                },
+                {
+                  "fit_seconds": 0.6800750830443576,
+                  "predict_seconds": 0.007228125003166497,
+                  "prediction_rows": 1248
+                },
+                {
+                  "fit_seconds": 0.6533694160170853,
+                  "predict_seconds": 0.008011500001884997,
+                  "prediction_rows": 1450
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 0.8213326670229435,
+                "predict_seconds": 0.007492415956221521,
+                "prediction_rows": 1297
+              },
+              "test": {
+                "alert_fraction": 0.28835774865073244,
+                "deviance_frame_mean": 2.3353769609588433,
+                "deviance_scene_mean": 2.345306301950339,
+                "frames": 1297,
+                "high_count_auc": 0.828925316083505,
+                "high_count_false_alarm_rate": 0.12105263157894737,
+                "mae": 2.9019026426722827,
+                "mean_misses_unflagged": 4.640303358613218,
+                "miss_fraction_in_alerts": 0.4894504708546907,
+                "misses_outside_alerts": 4283,
+                "misses_total": 8389,
+                "observed_mean": 6.468003084040093,
+                "predicted_mean": 6.733139321271677,
+                "predicted_to_observed_count_ratio": 1.040991977552672,
+                "scene_loss_max": 6.957263564783535,
+                "scene_loss_median": 1.6922850109421539,
+                "scene_loss_p90": 4.573834761741307,
+                "scenes": 34
+              }
+            },
+            "marginal_history": {
+              "alert_threshold": 8.264529371276724,
+              "candidate_index": 0,
+              "inner_groups": 14,
+              "inner_scene_deviance": [
+                2.976770161083527,
+                3.0828599289121335,
+                3.102089229353831
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.5317014580359682,
+                  "predict_seconds": 0.009251666953787208,
+                  "prediction_rows": 1698
+                },
+                {
+                  "fit_seconds": 0.5663498330395669,
+                  "predict_seconds": 0.007146249990910292,
+                  "prediction_rows": 1248
+                },
+                {
+                  "fit_seconds": 0.5522801249753684,
+                  "predict_seconds": 0.007901625009253621,
+                  "prediction_rows": 1450
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 0.7065855000400916,
+                "predict_seconds": 0.0077324999729171395,
+                "prediction_rows": 1297
+              },
+              "test": {
+                "alert_fraction": 0.2791056283731688,
+                "deviance_frame_mean": 2.264093873906984,
+                "deviance_scene_mean": 2.27275373057645,
+                "frames": 1297,
+                "high_count_auc": 0.8254925022052337,
+                "high_count_false_alarm_rate": 0.11842105263157894,
+                "mae": 2.763704369817463,
+                "mean_misses_unflagged": 4.671657754010695,
+                "miss_fraction_in_alerts": 0.47931815472642747,
+                "misses_outside_alerts": 4368,
+                "misses_total": 8389,
+                "observed_mean": 6.468003084040093,
+                "predicted_mean": 6.744911888798123,
+                "predicted_to_observed_count_ratio": 1.0428121015342908,
+                "scene_loss_max": 6.930631632622226,
+                "scene_loss_median": 1.7299663460891592,
+                "scene_loss_p90": 4.184188729019219,
+                "scenes": 34
+              }
+            },
+            "proportional_union": {
+              "alert_threshold": 8.25728186474377,
+              "test": {
+                "alert_fraction": 0.2744795682343871,
+                "deviance_frame_mean": 2.801338077868124,
+                "deviance_scene_mean": 2.826646144003731,
+                "frames": 1297,
+                "high_count_auc": 0.8033691071253553,
+                "high_count_false_alarm_rate": 0.12105263157894737,
+                "mae": 3.2427930420720004,
+                "mean_misses_unflagged": 4.9192348565356,
+                "miss_fraction_in_alerts": 0.44820598402670164,
+                "misses_outside_alerts": 4629,
+                "misses_total": 8389,
+                "observed_mean": 6.468003084040093,
+                "predicted_mean": 6.609544837195279,
+                "predicted_to_observed_count_ratio": 1.0218833774993774,
+                "scene_loss_max": 11.588775295483341,
+                "scene_loss_median": 2.0561259805330314,
+                "scene_loss_p90": 5.182447129233158,
+                "scenes": 34
+              }
+            },
+            "shuffled_training_labels": {
+              "alert_policy": "not_evaluated",
+              "refit_timing": {
+                "fit_seconds": 1.0895859999582171,
+                "predict_seconds": 0.010205334052443504,
+                "prediction_rows": 1297
+              },
+              "scene_deviance": 5.12638191643331
+            },
+            "spatial_history": {
+              "alert_threshold": 7.97256571924433,
+              "candidate_index": 0,
+              "inner_groups": 14,
+              "inner_scene_deviance": [
+                2.847020274042379,
+                3.0153049366226905,
+                3.027827777388478
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.7323031249688938,
+                  "predict_seconds": 0.00914454204030335,
+                  "prediction_rows": 1698
+                },
+                {
+                  "fit_seconds": 0.7926264579873532,
+                  "predict_seconds": 0.007363958051428199,
+                  "prediction_rows": 1248
+                },
+                {
+                  "fit_seconds": 0.7687439590226859,
+                  "predict_seconds": 0.008121207938529551,
+                  "prediction_rows": 1450
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 0.9723320830380544,
+                "predict_seconds": 0.0075894169276580215,
+                "prediction_rows": 1297
+              },
+              "test": {
+                "alert_fraction": 0.29067077872012337,
+                "deviance_frame_mean": 2.2988393859815415,
+                "deviance_scene_mean": 2.3083311792634804,
+                "frames": 1297,
+                "high_count_auc": 0.8303489169852005,
+                "high_count_false_alarm_rate": 0.12763157894736843,
+                "mae": 2.8905205912904424,
+                "mean_misses_unflagged": 4.619565217391305,
+                "miss_fraction_in_alerts": 0.49338419358683994,
+                "misses_outside_alerts": 4250,
+                "misses_total": 8389,
+                "observed_mean": 6.468003084040093,
+                "predicted_mean": 6.712559699396308,
+                "predicted_to_observed_count_ratio": 1.0378102193487913,
+                "scene_loss_max": 7.600508171703636,
+                "scene_loss_median": 1.617070986882656,
+                "scene_loss_p90": 4.406813137591008,
+                "scenes": 34
+              }
+            },
+            "unavailable_oracle": {
+              "alert_policy": "not_evaluated",
+              "refit_timing": {
+                "fit_seconds": 1.2847075830213726,
+                "predict_seconds": 0.010898416978307068,
+                "prediction_rows": 1297
+              },
+              "scene_deviance": 1.2081804735718809
+            }
+          },
+          "shared_collection_logs": 0,
+          "test_frames": 1297,
+          "test_scenes": 34,
+          "train_frames": 4396,
+          "train_scenes": 116
+        },
+        {
+          "fold": 2,
+          "high_count_threshold": 7.0,
+          "models": {
+            "constant": {
+              "alert_threshold": 5.53582694907616,
+              "test": {
+                "alert_fraction": 0.0,
+                "deviance_frame_mean": 3.766425965228364,
+                "deviance_scene_mean": 3.776996670065656,
+                "frames": 1255,
+                "high_count_auc": 0.5,
+                "high_count_false_alarm_rate": 0.0,
+                "mae": 3.5649355709204644,
+                "mean_misses_unflagged": 6.005577689243028,
+                "miss_fraction_in_alerts": 0.0,
+                "misses_outside_alerts": 7537,
+                "misses_total": 7537,
+                "observed_mean": 6.005577689243028,
+                "predicted_mean": 5.53582694907616,
+                "predicted_to_observed_count_ratio": 0.9217809235890383,
+                "scene_loss_max": 20.20998993844116,
+                "scene_loss_median": 2.060173051267053,
+                "scene_loss_p90": 7.866541592985171,
+                "scenes": 33
+              }
+            },
+            "joint_history": {
+              "alert_threshold": 8.28910159999475,
+              "candidate_index": 0,
+              "inner_groups": 14,
+              "inner_scene_deviance": [
+                2.859678758240969,
+                2.890859086441713,
+                2.8973179254369246
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.6817387910559773,
+                  "predict_seconds": 0.007077166927047074,
+                  "prediction_rows": 1297
+                },
+                {
+                  "fit_seconds": 0.6514965000096709,
+                  "predict_seconds": 0.009036708972416818,
+                  "prediction_rows": 1518
+                },
+                {
+                  "fit_seconds": 0.6403462919406593,
+                  "predict_seconds": 0.009327500010840595,
+                  "prediction_rows": 1623
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 0.8322129590669647,
+                "predict_seconds": 0.006761165917851031,
+                "prediction_rows": 1255
+              },
+              "test": {
+                "alert_fraction": 0.09800796812749003,
+                "deviance_frame_mean": 2.9207002781370677,
+                "deviance_scene_mean": 2.916490572973451,
+                "frames": 1255,
+                "high_count_auc": 0.8251334326780932,
+                "high_count_false_alarm_rate": 0.02771362586605081,
+                "mae": 2.9044611201937363,
+                "mean_misses_unflagged": 5.451413427561837,
+                "miss_fraction_in_alerts": 0.1812392198487462,
+                "misses_outside_alerts": 6171,
+                "misses_total": 7537,
+                "observed_mean": 6.005577689243028,
+                "predicted_mean": 4.537610945982427,
+                "predicted_to_observed_count_ratio": 0.7555661055072239,
+                "scene_loss_max": 15.422183398678508,
+                "scene_loss_median": 1.5650969850970278,
+                "scene_loss_p90": 6.37500884330533,
+                "scenes": 33
+              }
+            },
+            "marginal_history": {
+              "alert_threshold": 8.184592896526237,
+              "candidate_index": 0,
+              "inner_groups": 14,
+              "inner_scene_deviance": [
+                2.809576472517019,
+                2.8877100317695352,
+                2.883960159892733
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.5805649169487879,
+                  "predict_seconds": 0.0069818750489503145,
+                  "prediction_rows": 1297
+                },
+                {
+                  "fit_seconds": 0.5379025830188766,
+                  "predict_seconds": 0.008259749971330166,
+                  "prediction_rows": 1518
+                },
+                {
+                  "fit_seconds": 0.6480026670033112,
+                  "predict_seconds": 0.008463332895189524,
+                  "prediction_rows": 1623
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 0.7086126670474187,
+                "predict_seconds": 0.0066527079325169325,
+                "prediction_rows": 1255
+              },
+              "test": {
+                "alert_fraction": 0.11235059760956176,
+                "deviance_frame_mean": 2.997292313615374,
+                "deviance_scene_mean": 2.992511593934269,
+                "frames": 1255,
+                "high_count_auc": 0.824765342531629,
+                "high_count_false_alarm_rate": 0.03464203233256351,
+                "mae": 2.949689997185949,
+                "mean_misses_unflagged": 5.410233393177738,
+                "miss_fraction_in_alerts": 0.20034496484012207,
+                "misses_outside_alerts": 6027,
+                "misses_total": 7537,
+                "observed_mean": 6.005577689243028,
+                "predicted_mean": 4.504868079266729,
+                "predicted_to_observed_count_ratio": 0.7501140293856635,
+                "scene_loss_max": 16.387353106813674,
+                "scene_loss_median": 1.5341950083372333,
+                "scene_loss_p90": 5.925035741473835,
+                "scenes": 33
+              }
+            },
+            "proportional_union": {
+              "alert_threshold": 8.682879213719517,
+              "test": {
+                "alert_fraction": 0.0549800796812749,
+                "deviance_frame_mean": 3.088597139594907,
+                "deviance_scene_mean": 3.090730540190174,
+                "frames": 1255,
+                "high_count_auc": 0.7774583375386643,
+                "high_count_false_alarm_rate": 0.026558891454965358,
+                "mae": 3.039417281646734,
+                "mean_misses_unflagged": 5.802698145025295,
+                "miss_fraction_in_alerts": 0.08690460395382778,
+                "misses_outside_alerts": 6882,
+                "misses_total": 7537,
+                "observed_mean": 6.005577689243028,
+                "predicted_mean": 4.901354357977812,
+                "predicted_to_observed_count_ratio": 0.8161337029669835,
+                "scene_loss_max": 20.301871125058863,
+                "scene_loss_median": 1.596288986521847,
+                "scene_loss_p90": 6.420829505225028,
+                "scenes": 33
+              }
+            },
+            "shuffled_training_labels": {
+              "alert_policy": "not_evaluated",
+              "refit_timing": {
+                "fit_seconds": 1.098815166973509,
+                "predict_seconds": 0.010789124993607402,
+                "prediction_rows": 1255
+              },
+              "scene_deviance": 4.305076191201968
+            },
+            "spatial_history": {
+              "alert_threshold": 8.383111311947372,
+              "candidate_index": 0,
+              "inner_groups": 14,
+              "inner_scene_deviance": [
+                2.883581422298466,
+                2.946704251307767,
+                2.9325174190844496
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.785396832972765,
+                  "predict_seconds": 0.007893000030890107,
+                  "prediction_rows": 1297
+                },
+                {
+                  "fit_seconds": 0.757396333036013,
+                  "predict_seconds": 0.008553833002224565,
+                  "prediction_rows": 1518
+                },
+                {
+                  "fit_seconds": 0.7409712079679593,
+                  "predict_seconds": 0.008574457955546677,
+                  "prediction_rows": 1623
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 0.9751391250174493,
+                "predict_seconds": 0.006719874916598201,
+                "prediction_rows": 1255
+              },
+              "test": {
+                "alert_fraction": 0.09482071713147411,
+                "deviance_frame_mean": 3.0018643946818337,
+                "deviance_scene_mean": 2.997454275017594,
+                "frames": 1255,
+                "high_count_auc": 0.8232365810362331,
+                "high_count_false_alarm_rate": 0.028868360277136258,
+                "mae": 2.9346549227247083,
+                "mean_misses_unflagged": 5.456866197183099,
+                "miss_fraction_in_alerts": 0.1775242138782009,
+                "misses_outside_alerts": 6199,
+                "misses_total": 7537,
+                "observed_mean": 6.005577689243028,
+                "predicted_mean": 4.488037669902075,
+                "predicted_to_observed_count_ratio": 0.7473115663695242,
+                "scene_loss_max": 15.509108300098513,
+                "scene_loss_median": 1.5070086910753306,
+                "scene_loss_p90": 6.501975883274646,
+                "scenes": 33
+              }
+            },
+            "unavailable_oracle": {
+              "alert_policy": "not_evaluated",
+              "refit_timing": {
+                "fit_seconds": 1.286909915972501,
+                "predict_seconds": 0.010487542022019625,
+                "prediction_rows": 1255
+              },
+              "scene_deviance": 0.8653711002338069
+            }
+          },
+          "shared_collection_logs": 0,
+          "test_frames": 1255,
+          "test_scenes": 33,
+          "train_frames": 4438,
+          "train_scenes": 117
+        },
+        {
+          "fold": 3,
+          "high_count_threshold": 8.0,
+          "models": {
+            "constant": {
+              "alert_threshold": 5.707907907907908,
+              "test": {
+                "alert_fraction": 0.0,
+                "deviance_frame_mean": 4.069681962382284,
+                "deviance_scene_mean": 4.0672618883937135,
+                "frames": 698,
+                "high_count_auc": 0.5,
+                "high_count_false_alarm_rate": 0.0,
+                "mae": 3.7299316508485565,
+                "mean_misses_unflagged": 5.148997134670487,
+                "miss_fraction_in_alerts": 0.0,
+                "misses_outside_alerts": 3594,
+                "misses_total": 3594,
+                "observed_mean": 5.148997134670487,
+                "predicted_mean": 5.7079079079079085,
+                "predicted_to_observed_count_ratio": 1.1085475013132222,
+                "scene_loss_max": 11.819618976570622,
+                "scene_loss_median": 3.083074758839281,
+                "scene_loss_p90": 8.780828159608676,
+                "scenes": 18
+              }
+            },
+            "joint_history": {
+              "alert_threshold": 8.141693635528306,
+              "candidate_index": 0,
+              "inner_groups": 15,
+              "inner_scene_deviance": [
+                3.0063654938456934,
+                3.066068374668687,
+                3.0970278188458114
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.7395440000109375,
+                  "predict_seconds": 0.008882833062671125,
+                  "prediction_rows": 1560
+                },
+                {
+                  "fit_seconds": 0.713192000053823,
+                  "predict_seconds": 0.009357542032375932,
+                  "prediction_rows": 1684
+                },
+                {
+                  "fit_seconds": 0.6797235420672223,
+                  "predict_seconds": 0.009767457959242165,
+                  "prediction_rows": 1751
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 0.8992214589379728,
+                "predict_seconds": 0.00428345799446106,
+                "prediction_rows": 698
+              },
+              "test": {
+                "alert_fraction": 0.23638968481375358,
+                "deviance_frame_mean": 2.4770112614958073,
+                "deviance_scene_mean": 2.477606050962951,
+                "frames": 698,
+                "high_count_auc": 0.8499148418491485,
+                "high_count_false_alarm_rate": 0.14233576642335766,
+                "mae": 2.961714702023911,
+                "mean_misses_unflagged": 3.855534709193246,
+                "miss_fraction_in_alerts": 0.4282136894824708,
+                "misses_outside_alerts": 2055,
+                "misses_total": 3594,
+                "observed_mean": 5.148997134670487,
+                "predicted_mean": 6.067322218062496,
+                "predicted_to_observed_count_ratio": 1.1783502805252148,
+                "scene_loss_max": 5.609658402171348,
+                "scene_loss_median": 2.0660429720411546,
+                "scene_loss_p90": 4.726077737719543,
+                "scenes": 18
+              }
+            },
+            "marginal_history": {
+              "alert_threshold": 8.125620965937804,
+              "candidate_index": 0,
+              "inner_groups": 15,
+              "inner_scene_deviance": [
+                3.0716312718294536,
+                3.100251568256742,
+                3.1461552559733006
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.6110610839677975,
+                  "predict_seconds": 0.008897125022485852,
+                  "prediction_rows": 1560
+                },
+                {
+                  "fit_seconds": 0.5883747090119869,
+                  "predict_seconds": 0.009310915949754417,
+                  "prediction_rows": 1684
+                },
+                {
+                  "fit_seconds": 0.5696454580174759,
+                  "predict_seconds": 0.010773499961942434,
+                  "prediction_rows": 1751
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 0.7701229170197621,
+                "predict_seconds": 0.004275124985724688,
+                "prediction_rows": 698
+              },
+              "test": {
+                "alert_fraction": 0.2148997134670487,
+                "deviance_frame_mean": 2.3442278271926993,
+                "deviance_scene_mean": 2.3449092194191046,
+                "frames": 698,
+                "high_count_auc": 0.8645620437956203,
+                "high_count_false_alarm_rate": 0.11678832116788321,
+                "mae": 2.8208848156355684,
+                "mean_misses_unflagged": 3.852189781021898,
+                "miss_fraction_in_alerts": 0.41263216471897607,
+                "misses_outside_alerts": 2111,
+                "misses_total": 3594,
+                "observed_mean": 5.148997134670487,
+                "predicted_mean": 5.922053619773877,
+                "predicted_to_observed_count_ratio": 1.1501372917646537,
+                "scene_loss_max": 5.143210443464591,
+                "scene_loss_median": 2.1117928669360833,
+                "scene_loss_p90": 4.041168919992867,
+                "scenes": 18
+              }
+            },
+            "proportional_union": {
+              "alert_threshold": 8.659706139185237,
+              "test": {
+                "alert_fraction": 0.15329512893982808,
+                "deviance_frame_mean": 2.3574742123889543,
+                "deviance_scene_mean": 2.3592989552862353,
+                "frames": 698,
+                "high_count_auc": 0.864963503649635,
+                "high_count_false_alarm_rate": 0.06204379562043796,
+                "mae": 2.736806718136495,
+                "mean_misses_unflagged": 4.1302876480541455,
+                "miss_fraction_in_alerts": 0.32081246521981077,
+                "misses_outside_alerts": 2441,
+                "misses_total": 3594,
+                "observed_mean": 5.148997134670487,
+                "predicted_mean": 5.240797085738287,
+                "predicted_to_observed_count_ratio": 1.0178287050209582,
+                "scene_loss_max": 5.557102171812252,
+                "scene_loss_median": 1.8912286942417889,
+                "scene_loss_p90": 3.9329099727398815,
+                "scenes": 18
+              }
+            },
+            "shuffled_training_labels": {
+              "alert_policy": "not_evaluated",
+              "refit_timing": {
+                "fit_seconds": 1.1630924589699134,
+                "predict_seconds": 0.0068182500544935465,
+                "prediction_rows": 698
+              },
+              "scene_deviance": 4.191796861519819
+            },
+            "spatial_history": {
+              "alert_threshold": 8.120388808545213,
+              "candidate_index": 0,
+              "inner_groups": 15,
+              "inner_scene_deviance": [
+                2.989216454706211,
+                3.0441859167363536,
+                3.0722945149055434
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.8850405829725787,
+                  "predict_seconds": 0.008412667084485292,
+                  "prediction_rows": 1560
+                },
+                {
+                  "fit_seconds": 0.8182185409823433,
+                  "predict_seconds": 0.009070125059224665,
+                  "prediction_rows": 1684
+                },
+                {
+                  "fit_seconds": 0.7872412920696661,
+                  "predict_seconds": 0.009060790995135903,
+                  "prediction_rows": 1751
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 1.0536142500350252,
+                "predict_seconds": 0.0042859159875661135,
+                "prediction_rows": 698
+              },
+              "test": {
+                "alert_fraction": 0.24641833810888253,
+                "deviance_frame_mean": 2.474226592378539,
+                "deviance_scene_mean": 2.474896757709587,
+                "frames": 698,
+                "high_count_auc": 0.8524330900243309,
+                "high_count_false_alarm_rate": 0.15328467153284672,
+                "mae": 2.9521803563209716,
+                "mean_misses_unflagged": 3.8555133079847907,
+                "miss_fraction_in_alerts": 0.4357262103505843,
+                "misses_outside_alerts": 2028,
+                "misses_total": 3594,
+                "observed_mean": 5.148997134670487,
+                "predicted_mean": 6.051944398724888,
+                "predicted_to_observed_count_ratio": 1.1753637146104543,
+                "scene_loss_max": 5.943235340831798,
+                "scene_loss_median": 2.0494213845788005,
+                "scene_loss_p90": 4.619760177849486,
+                "scenes": 18
+              }
+            },
+            "unavailable_oracle": {
+              "alert_policy": "not_evaluated",
+              "refit_timing": {
+                "fit_seconds": 1.364382709027268,
+                "predict_seconds": 0.005956207984127104,
+                "prediction_rows": 698
+              },
+              "scene_deviance": 1.144712225496608
+            }
+          },
+          "shared_collection_logs": 0,
+          "test_frames": 698,
+          "test_scenes": 18,
+          "train_frames": 4995,
+          "train_scenes": 132
+        },
+        {
+          "fold": 4,
+          "high_count_threshold": 7.0,
+          "models": {
+            "constant": {
+              "alert_threshold": 5.6071044133476855,
+              "test": {
+                "alert_fraction": 0.0,
+                "deviance_frame_mean": 3.924538538867194,
+                "deviance_scene_mean": 3.9379492055097645,
+                "frames": 1048,
+                "high_count_auc": 0.5,
+                "high_count_false_alarm_rate": 0.0,
+                "mae": 3.661046927254948,
+                "mean_misses_unflagged": 5.782442748091603,
+                "miss_fraction_in_alerts": 0.0,
+                "misses_outside_alerts": 6060,
+                "misses_total": 6060,
+                "observed_mean": 5.782442748091603,
+                "predicted_mean": 5.6071044133476855,
+                "predicted_to_observed_count_ratio": 0.969677462902372,
+                "scene_loss_max": 16.724015993852962,
+                "scene_loss_median": 3.062226659449589,
+                "scene_loss_p90": 7.118799435194,
+                "scenes": 28
+              }
+            },
+            "joint_history": {
+              "alert_threshold": 8.238652348685516,
+              "candidate_index": 0,
+              "inner_groups": 15,
+              "inner_scene_deviance": [
+                2.6632809243260556,
+                2.7115808558629935,
+                2.7302751750947722
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.720657708006911,
+                  "predict_seconds": 0.006899458006955683,
+                  "prediction_rows": 1248
+                },
+                {
+                  "fit_seconds": 0.6116300830617547,
+                  "predict_seconds": 0.010898167034611106,
+                  "prediction_rows": 1869
+                },
+                {
+                  "fit_seconds": 0.6936919169966131,
+                  "predict_seconds": 0.00856783299241215,
+                  "prediction_rows": 1528
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 0.8635867920238525,
+                "predict_seconds": 0.006279457942582667,
+                "prediction_rows": 1048
+              },
+              "test": {
+                "alert_fraction": 0.3301526717557252,
+                "deviance_frame_mean": 3.5454308721134593,
+                "deviance_scene_mean": 3.529632129701246,
+                "frames": 1048,
+                "high_count_auc": 0.7410254435946136,
+                "high_count_false_alarm_rate": 0.22589531680440772,
+                "mae": 3.557252326698611,
+                "mean_misses_unflagged": 4.464387464387465,
+                "miss_fraction_in_alerts": 0.48283828382838284,
+                "misses_outside_alerts": 3134,
+                "misses_total": 6060,
+                "observed_mean": 5.782442748091603,
+                "predicted_mean": 6.373579514333814,
+                "predicted_to_observed_count_ratio": 1.102229592577861,
+                "scene_loss_max": 13.738714406085867,
+                "scene_loss_median": 2.7234098272349567,
+                "scene_loss_p90": 7.108065953815069,
+                "scenes": 28
+              }
+            },
+            "marginal_history": {
+              "alert_threshold": 8.259624279974775,
+              "candidate_index": 0,
+              "inner_groups": 15,
+              "inner_scene_deviance": [
+                2.647647584834651,
+                2.671044390069892,
+                2.7005628491643257
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.6116451659472659,
+                  "predict_seconds": 0.0070936670526862144,
+                  "prediction_rows": 1248
+                },
+                {
+                  "fit_seconds": 0.5089055000571534,
+                  "predict_seconds": 0.010504666017368436,
+                  "prediction_rows": 1869
+                },
+                {
+                  "fit_seconds": 0.5848308749264106,
+                  "predict_seconds": 0.008673083037137985,
+                  "prediction_rows": 1528
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 0.741067040944472,
+                "predict_seconds": 0.006090042064897716,
+                "prediction_rows": 1048
+              },
+              "test": {
+                "alert_fraction": 0.3244274809160305,
+                "deviance_frame_mean": 3.8620612758310857,
+                "deviance_scene_mean": 3.8462921650745154,
+                "frames": 1048,
+                "high_count_auc": 0.7079761476994678,
+                "high_count_false_alarm_rate": 0.24517906336088155,
+                "mae": 3.8214411611610615,
+                "mean_misses_unflagged": 4.9025423728813555,
+                "miss_fraction_in_alerts": 0.4272277227722772,
+                "misses_outside_alerts": 3471,
+                "misses_total": 6060,
+                "observed_mean": 5.782442748091603,
+                "predicted_mean": 6.528992580494202,
+                "predicted_to_observed_count_ratio": 1.1291063076498224,
+                "scene_loss_max": 13.324474976629958,
+                "scene_loss_median": 2.66416083573085,
+                "scene_loss_p90": 9.467002191292291,
+                "scenes": 28
+              }
+            },
+            "proportional_union": {
+              "alert_threshold": 8.338773223290437,
+              "test": {
+                "alert_fraction": 0.4112595419847328,
+                "deviance_frame_mean": 4.6094082135825305,
+                "deviance_scene_mean": 4.595503618283133,
+                "frames": 1048,
+                "high_count_auc": 0.7061367486268673,
+                "high_count_false_alarm_rate": 0.30578512396694213,
+                "mae": 4.39870858311375,
+                "mean_misses_unflagged": 4.307941653160454,
+                "miss_fraction_in_alerts": 0.5613861386138614,
+                "misses_outside_alerts": 2658,
+                "misses_total": 6060,
+                "observed_mean": 5.782442748091603,
+                "predicted_mean": 7.990219221670181,
+                "predicted_to_observed_count_ratio": 1.3818068885000576,
+                "scene_loss_max": 17.93530727621261,
+                "scene_loss_median": 3.289238080775552,
+                "scene_loss_p90": 10.324195077084012,
+                "scenes": 28
+              }
+            },
+            "shuffled_training_labels": {
+              "alert_policy": "not_evaluated",
+              "refit_timing": {
+                "fit_seconds": 1.1754025829723105,
+                "predict_seconds": 0.009977917070500553,
+                "prediction_rows": 1048
+              },
+              "scene_deviance": 3.974842056806491
+            },
+            "spatial_history": {
+              "alert_threshold": 8.122813845383302,
+              "candidate_index": 0,
+              "inner_groups": 15,
+              "inner_scene_deviance": [
+                2.6784925054485003,
+                2.7186992464353312,
+                2.7060091402000332
+              ],
+              "inner_selected_timings": [
+                {
+                  "fit_seconds": 0.8273875000886619,
+                  "predict_seconds": 0.007155624916777015,
+                  "prediction_rows": 1248
+                },
+                {
+                  "fit_seconds": 0.6953390419948846,
+                  "predict_seconds": 0.009957708069123328,
+                  "prediction_rows": 1869
+                },
+                {
+                  "fit_seconds": 0.7839903329731897,
+                  "predict_seconds": 0.008095583994872868,
+                  "prediction_rows": 1528
+                }
+              ],
+              "refit_timing": {
+                "fit_seconds": 1.0026361249620095,
+                "predict_seconds": 0.006260333000682294,
+                "prediction_rows": 1048
+              },
+              "test": {
+                "alert_fraction": 0.3482824427480916,
+                "deviance_frame_mean": 3.6350735614685643,
+                "deviance_scene_mean": 3.6206469257760268,
+                "frames": 1048,
+                "high_count_auc": 0.7329064216415996,
+                "high_count_false_alarm_rate": 0.24242424242424243,
+                "mae": 3.649079899162142,
+                "mean_misses_unflagged": 4.392386530014641,
+                "miss_fraction_in_alerts": 0.504950495049505,
+                "misses_outside_alerts": 3000,
+                "misses_total": 6060,
+                "observed_mean": 5.782442748091603,
+                "predicted_mean": 6.4849871157712125,
+                "predicted_to_observed_count_ratio": 1.1214961216713253,
+                "scene_loss_max": 13.622832245232582,
+                "scene_loss_median": 2.8881090082399727,
+                "scene_loss_p90": 7.4803920839965805,
+                "scenes": 28
+              }
+            },
+            "unavailable_oracle": {
+              "alert_policy": "not_evaluated",
+              "refit_timing": {
+                "fit_seconds": 1.3040661250706762,
+                "predict_seconds": 0.008685166947543621,
+                "prediction_rows": 1048
+              },
+              "scene_deviance": 1.3756043034062204
+            }
+          },
+          "shared_collection_logs": 0,
+          "test_frames": 1048,
+          "test_scenes": 28,
+          "train_frames": 4645,
+          "train_scenes": 122
+        }
+      ],
+      "frames": 5693,
+      "horizon_us": 1000000,
+      "log_resampled_equal_scene_comparison": {
+        "conditional_on_fixed_predictions": true,
+        "estimand": "equal_scene_mean_deviance",
+        "improvement": -0.007699735770021636,
+        "logs": 18,
+        "percentile_95": [
+          -0.052775010454139494,
+          0.039215157413658296
+        ],
+        "relative_improvement": -0.002774349653855923,
+        "relative_percentile_95": [
+          -0.017847833018578816,
+          0.014911067295140024
+        ],
+        "resamples": 3000,
+        "sampling_unit": "collection_log",
+        "scenes": 150,
+        "seed": 20260909
+      },
+      "logs": 18,
+      "models": {
+        "constant": {
+          "alert_fraction": 0.0,
+          "deviance_frame_mean": 4.934243376271971,
+          "deviance_scene_mean": 4.949307187648631,
+          "frames": 5693,
+          "high_count_auc": 0.38525865719694063,
+          "high_count_false_alarm_rate": 0.0,
+          "location_groups": {
+            "boston-seaport": {
+              "deviance_scene_mean": 3.4112914525316316,
+              "frames": 2920,
+              "mae": 3.411459031418958,
+              "scenes": 77
+            },
+            "singapore-hollandvillage": {
+              "deviance_scene_mean": 7.286389899158406,
+              "frames": 572,
+              "mae": 4.790540892332422,
+              "scenes": 15
+            },
+            "singapore-onenorth": {
+              "deviance_scene_mean": 7.830860201762903,
+              "frames": 1320,
+              "mae": 5.692385156370013,
+              "scenes": 35
+            },
+            "singapore-queenstown": {
+              "deviance_scene_mean": 4.189160032751369,
+              "frames": 881,
+              "mae": 3.604281263765932,
+              "scenes": 23
+            }
+          },
+          "mae": 4.108724743007853,
+          "mean_misses_unflagged": 5.639381696820657,
+          "miss_fraction_in_alerts": 0.0,
+          "misses_outside_alerts": 32105,
+          "misses_total": 32105,
+          "observed_mean": 5.639381696820657,
+          "predicted_mean": 5.6398223395073215,
+          "predicted_to_observed_count_ratio": 1.0000781367019211,
+          "scene_loss_max": 48.667557059049095,
+          "scene_loss_median": 3.2595841807887833,
+          "scene_loss_p90": 9.706899506065794,
+          "scenes": 150
+        },
+        "joint_history": {
+          "alert_fraction": 0.22009485332864923,
+          "deviance_frame_mean": 2.772812910571208,
+          "deviance_scene_mean": 2.775329980242475,
+          "frames": 5693,
+          "high_count_auc": 0.8399273563491614,
+          "high_count_false_alarm_rate": 0.10430054374691053,
+          "location_groups": {
+            "boston-seaport": {
+              "deviance_scene_mean": 2.860910771561507,
+              "frames": 2920,
+              "mae": 3.2249461090087816,
+              "scenes": 77
+            },
+            "singapore-hollandvillage": {
+              "deviance_scene_mean": 2.1498137676894644,
+              "frames": 572,
+              "mae": 1.6003787134360357,
+              "scenes": 15
+            },
+            "singapore-onenorth": {
+              "deviance_scene_mean": 2.8746099405657093,
+              "frames": 1320,
+              "mae": 3.436662640739688,
+              "scenes": 35
+            },
+            "singapore-queenstown": {
+              "deviance_scene_mean": 2.7456875300431913,
+              "frames": 881,
+              "mae": 2.345139477133266,
+              "scenes": 23
+            }
+          },
+          "mae": 2.9746569168315213,
+          "mean_misses_unflagged": 4.161936936936937,
+          "miss_fraction_in_alerts": 0.4244198722940352,
+          "misses_outside_alerts": 18479,
+          "misses_total": 32105,
+          "observed_mean": 5.639381696820657,
+          "predicted_mean": 5.58841827983248,
+          "predicted_to_observed_count_ratio": 0.9909629424415607,
+          "scene_loss_max": 17.272300521069507,
+          "scene_loss_median": 1.9561248008375982,
+          "scene_loss_p90": 5.307782544782837,
+          "scenes": 150
+        },
+        "marginal_history": {
+          "alert_fraction": 0.21605480414544176,
+          "deviance_frame_mean": 2.8491115001638407,
+          "deviance_scene_mean": 2.8524020861358865,
+          "frames": 5693,
+          "high_count_auc": 0.8345227515628558,
+          "high_count_false_alarm_rate": 0.10454770143351458,
+          "location_groups": {
+            "boston-seaport": {
+              "deviance_scene_mean": 2.9693084564562966,
+              "frames": 2920,
+              "mae": 3.2772935967375827,
+              "scenes": 77
+            },
+            "singapore-hollandvillage": {
+              "deviance_scene_mean": 2.0719266460184995,
+              "frames": 572,
+              "mae": 1.5348333998405288,
+              "scenes": 15
+            },
+            "singapore-onenorth": {
+              "deviance_scene_mean": 2.97447260803142,
+              "frames": 1320,
+              "mae": 3.4266313137345965,
+              "scenes": 35
+            },
+            "singapore-queenstown": {
+              "deviance_scene_mean": 2.7842661218204747,
+              "frames": 881,
+              "mae": 2.402278376109416,
+              "scenes": 23
+            }
+          },
+          "mae": 3.0014373073361296,
+          "mean_misses_unflagged": 4.235715886175218,
+          "miss_fraction_in_alerts": 0.411182058869335,
+          "misses_outside_alerts": 18904,
+          "misses_total": 32105,
+          "observed_mean": 5.639381696820657,
+          "predicted_mean": 5.551308910537933,
+          "predicted_to_observed_count_ratio": 0.9843825456375159,
+          "scene_loss_max": 16.68535046388935,
+          "scene_loss_median": 1.9082085480343118,
+          "scene_loss_p90": 5.164492957458482,
+          "scenes": 150
+        },
+        "proportional_union": {
+          "alert_fraction": 0.20147549622343228,
+          "deviance_frame_mean": 3.1056051196597543,
+          "deviance_scene_mean": 3.116960468299261,
+          "frames": 5693,
+          "high_count_auc": 0.8236566672099033,
+          "high_count_false_alarm_rate": 0.09935739001482946,
+          "location_groups": {
+            "boston-seaport": {
+              "deviance_scene_mean": 3.383806082739396,
+              "frames": 2920,
+              "mae": 3.62505760085389,
+              "scenes": 77
+            },
+            "singapore-hollandvillage": {
+              "deviance_scene_mean": 1.5933992153453362,
+              "frames": 572,
+              "mae": 1.152022684389815,
+              "scenes": 15
+            },
+            "singapore-onenorth": {
+              "deviance_scene_mean": 3.3320971808699524,
+              "frames": 1320,
+              "mae": 3.50635447112325,
+              "scenes": 35
+            },
+            "singapore-queenstown": {
+              "deviance_scene_mean": 2.889852709275101,
+              "frames": 881,
+              "mae": 2.3412005701152836,
+              "scenes": 23
+            }
+          },
+          "mae": 3.150379549291866,
+          "mean_misses_unflagged": 4.418609766827981,
+          "miss_fraction_in_alerts": 0.3743342158542283,
+          "misses_outside_alerts": 20087,
+          "misses_total": 32105,
+          "observed_mean": 5.639381696820657,
+          "predicted_mean": 5.66779043425509,
+          "predicted_to_observed_count_ratio": 1.0050375624424304,
+          "scene_loss_max": 23.72255386137026,
+          "scene_loss_median": 1.8744867169305222,
+          "scene_loss_p90": 6.343588866249618,
+          "scenes": 150
+        },
+        "shuffled_training_labels": {
+          "alert_fraction": null,
+          "alert_policy": "not_evaluated",
+          "deviance_frame_mean": 5.119869704997511,
+          "deviance_scene_mean": 5.136343089545785,
+          "frames": 5693,
+          "high_count_auc": 0.4765689410876319,
+          "high_count_false_alarm_rate": null,
+          "location_groups": {
+            "boston-seaport": {
+              "deviance_scene_mean": 3.7091165846547325,
+              "frames": 2920,
+              "mae": 3.5192775842952613,
+              "scenes": 77
+            },
+            "singapore-hollandvillage": {
+              "deviance_scene_mean": 6.484336970643866,
+              "frames": 572,
+              "mae": 4.303567884674343,
+              "scenes": 15
+            },
+            "singapore-onenorth": {
+              "deviance_scene_mean": 8.263863042410334,
+              "frames": 1320,
+              "mae": 5.677692007113673,
+              "scenes": 35
+            },
+            "singapore-queenstown": {
+              "deviance_scene_mean": 4.2760532769319095,
+              "frames": 881,
+              "mae": 3.631740990378087,
+              "scenes": 23
+            }
+          },
+          "mae": 4.115940389616903,
+          "mean_misses_unflagged": null,
+          "miss_fraction_in_alerts": null,
+          "misses_outside_alerts": null,
+          "misses_total": 32105,
+          "observed_mean": 5.639381696820657,
+          "predicted_mean": 5.463334894662274,
+          "predicted_to_observed_count_ratio": 0.9687826056786272,
+          "scene_loss_max": 51.52778173949401,
+          "scene_loss_median": 3.5282685305832815,
+          "scene_loss_p90": 9.673828276396264,
+          "scenes": 150
+        },
+        "spatial_history": {
+          "alert_fraction": 0.22308097663797646,
+          "deviance_frame_mean": 2.780734854998051,
+          "deviance_scene_mean": 2.783029716012497,
+          "frames": 5693,
+          "high_count_auc": 0.8397627346234755,
+          "high_count_false_alarm_rate": 0.10776075135936727,
+          "mae": 2.9810352917370797,
+          "mean_misses_unflagged": 4.143567714221117,
+          "miss_fraction_in_alerts": 0.42915433733063385,
+          "misses_outside_alerts": 18327,
+          "misses_total": 32105,
+          "observed_mean": 5.639381696820657,
+          "predicted_mean": 5.563258101748479,
+          "predicted_to_observed_count_ratio": 0.9865014288507737,
+          "scene_loss_max": 15.997667510718955,
+          "scene_loss_median": 1.9374683413103093,
+          "scene_loss_p90": 5.166273522796767,
+          "scenes": 150
+        },
+        "unavailable_oracle": {
+          "alert_fraction": null,
+          "alert_policy": "not_evaluated",
+          "deviance_frame_mean": 1.189455480586353,
+          "deviance_scene_mean": 1.1901600800235383,
+          "frames": 5693,
+          "high_count_auc": 0.9437269818459902,
+          "high_count_false_alarm_rate": null,
+          "location_groups": {
+            "boston-seaport": {
+              "deviance_scene_mean": 1.0924504766604197,
+              "frames": 2920,
+              "mae": 1.8974870144292924,
+              "scenes": 77
+            },
+            "singapore-hollandvillage": {
+              "deviance_scene_mean": 1.0731763505596108,
+              "frames": 572,
+              "mae": 0.8392937253896615,
+              "scenes": 15
+            },
+            "singapore-onenorth": {
+              "deviance_scene_mean": 1.4095408075188351,
+              "frames": 1320,
+              "mae": 2.2557528898890515,
+              "scenes": 35
+            },
+            "singapore-queenstown": {
+              "deviance_scene_mean": 1.2597283382228266,
+              "frames": 881,
+              "mae": 1.6088352068968534,
+              "scenes": 23
+            }
+          },
+          "mae": 1.8295653829239584,
+          "mean_misses_unflagged": null,
+          "miss_fraction_in_alerts": null,
+          "misses_outside_alerts": null,
+          "misses_total": 32105,
+          "observed_mean": 5.639381696820657,
+          "predicted_mean": 5.478806275405865,
+          "predicted_to_observed_count_ratio": 0.9715260590526581,
+          "scene_loss_max": 3.6024473530861356,
+          "scene_loss_median": 1.0844937764790306,
+          "scene_loss_p90": 1.9060036383092056,
+          "scenes": 150
+        }
+      },
+      "paired_log_comparisons": {
+        "spatial_history_vs_joint_history": {
+          "base_group_mean_deviance": 2.7564143081529795,
+          "candidate_group_mean_deviance": 2.7446245933261255,
+          "conditional_on_fixed_predictions": true,
+          "group_unit": "collection_log",
+          "groups": 18,
+          "improvement": 0.011789714826853795,
+          "percentile_95": [
+            -0.03323296458712085,
+            0.055615311915239315
+          ],
+          "relative_improvement": 0.0042771925802234925,
+          "relative_percentile_95": [
+            -0.012035267221170404,
+            0.020552760992049817
+          ],
+          "resamples": 3000
+        },
+        "spatial_history_vs_marginal_history": {
+          "base_group_mean_deviance": 2.767643986067521,
+          "candidate_group_mean_deviance": 2.7446245933261255,
+          "conditional_on_fixed_predictions": true,
+          "group_unit": "collection_log",
+          "groups": 18,
+          "improvement": 0.02301939274139549,
+          "percentile_95": [
+            -0.07611032689950202,
+            0.13530534599253333
+          ],
+          "relative_improvement": 0.008317324358651776,
+          "relative_percentile_95": [
+            -0.028648501475198724,
+            0.04628998329429794
+          ],
+          "resamples": 3000
+        }
+      },
+      "paired_scene_comparisons": {
+        "spatial_history_vs_joint_history": {
+          "base_group_mean_deviance": 2.775329980242475,
+          "candidate_group_mean_deviance": 2.783029716012497,
+          "conditional_on_fixed_predictions": true,
+          "group_unit": "scene",
+          "groups": 150,
+          "improvement": -0.007699735770021663,
+          "percentile_95": [
+            -0.042073055357482306,
+            0.029761907212955015
+          ],
+          "relative_improvement": -0.0027743496538559184,
+          "relative_percentile_95": [
+            -0.015235772027692529,
+            0.010214162242432871
+          ],
+          "resamples": 3000
+        },
+        "spatial_history_vs_marginal_history": {
+          "base_group_mean_deviance": 2.8524020861358865,
+          "candidate_group_mean_deviance": 2.783029716012497,
+          "conditional_on_fixed_predictions": true,
+          "group_unit": "scene",
+          "groups": 150,
+          "improvement": 0.06937237012338959,
+          "percentile_95": [
+            -0.0077591543298382104,
+            0.1528918019928436
+          ],
+          "relative_improvement": 0.024320684121139274,
+          "relative_percentile_95": [
+            -0.0028087149511854424,
+            0.052295336775064274
+          ],
+          "resamples": 3000
+        }
+      },
+      "scenes": 150,
+      "split_unit": "logs",
+      "target": "y",
+      "target_sum": 32105
+    }
+  },
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Adaptive exploratory follow-up after observing the 0.1.0 log-holdout results",
+    "Associations and projected sites are output hypotheses, not confirmed tracks or physical objects",
+    "Collection-log resampling does not establish independent deployments or capture refitting uncertainty"
+  ],
+  "online_warning_lead_time": null,
+  "physical_failure_rate": null,
+  "private_outputs": {
+    "folds.private.jsonl": {
+      "bytes": 27375,
+      "sha256": "e368ebb8d46266606f2b30ca32be77e97a8a0cea5e114302de84c068f6d79e24"
+    },
+    "geometry.private.npz": {
+      "bytes": 270705,
+      "sha256": "2c53f813fed33edf570822b76ba68c651093f39c82fd644e4535293a5fd29956"
+    },
+    "predictions.private.jsonl": {
+      "bytes": 4668828,
+      "sha256": "832682ec1a2ec67ff63010393034e0360aed923e988d10863750945042cbc139"
+    }
+  },
+  "safety_benefit": null,
+  "spatial_feature_names": [
+    "stationary.sites",
+    "stationary.site_score_mean",
+    "stationary.r2.both_absent",
+    "stationary.r2.one_absent",
+    "stationary.r2.both_present",
+    "stationary.r2.absent_fraction",
+    "stationary.r2.high_score_both_absent",
+    "stationary.r4.both_absent",
+    "stationary.r4.one_absent",
+    "stationary.r4.both_present",
+    "stationary.r4.absent_fraction",
+    "stationary.r4.high_score_both_absent",
+    "velocity.sites",
+    "velocity.site_score_mean",
+    "velocity.r2.both_absent",
+    "velocity.r2.one_absent",
+    "velocity.r2.both_present",
+    "velocity.r2.absent_fraction",
+    "velocity.r2.high_score_both_absent",
+    "velocity.r4.both_absent",
+    "velocity.r4.one_absent",
+    "velocity.r4.both_present",
+    "velocity.r4.absent_fraction",
+    "velocity.r4.high_score_both_absent",
+    "camera.lost_r2",
+    "camera.lost_r4",
+    "lidar.lost_r2",
+    "lidar.lost_r4",
+    "previous_available",
+    "older_available",
+    "previous_age_seconds",
+    "older_age_seconds",
+    "velocity_unassociated_sites"
+  ],
+  "spec_sha256": "1ed5bb9bc7ab4f566f93e423dcd0daba043a11f3c45fed4cd62be66b26a94ab5",
+  "split_unit": "logs",
+  "version": "0.2.0"
+}

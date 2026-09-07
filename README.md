@@ -26,6 +26,19 @@ The research revision repairs two concrete validation defects: failed mAP valida
 writes a new matcher artifact, and a replay must exit successfully as well as reproduce the
 expected transcript. Regression tests exercise the original counterexamples.
 
+## Predictive monitor experiment recovered
+
+The [output-only monitor experiment](docs/PREDICTIVE_MONITOR_FINDINGS_2026-09-07.md)
+compares cross-channel history with equally tuned marginal-history baselines.
+Its future-count improvement is 2.7020% under collection-log holdouts, with a
+descriptive interval including zero; spatial continuity slightly increases the
+primary loss. Neither meets the declared usefulness screen. A new completion
+audit rejects missing experiments and a forged spatial interval that the original
+checker accepted. Original results are preserved, and fresh log/spatial refits
+reproduce their private predictions exactly. The
+[next experiment](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) separates
+shared detector training from dataset transfer; it has not been run.
+
 ## Reference study now implemented
 
 The [reference-adjudication study](docs/REFERENCE_ADJUDICATION_STUDY_2026-09-07.md) freezes

@@ -1,3 +1,27 @@
+# Engine continuation, 2026-09-07
+
+The interrupted engine work is recovered in `research/2026-09-07-engine-recovery`,
+extending `6925e7e114246c558a7905f1dbe7b0a393068c7d`. Read the
+[engine checkpoint](ENGINE_RECOVERY_CLOSEOUT_2026-09-07.md),
+[predictive-monitor findings](PREDICTIVE_MONITOR_FINDINGS_2026-09-07.md), and
+[next training experiment](TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) first.
+The last successful inherited process was the training-log preflight at 14:04:33 UTC.
+All three monitor runs now pass the completion audit. Fresh log/spatial refits
+reproduce private prediction bytes; their timing-bearing full reports differ.
+The two old-checker acceptance defects are reproduced and rejected by the successor.
+The output-summary feature expansion stops with its negative/unresolved results.
+
+Claim register `0.2.25` is `evidence/claim-status-register-2026-09-07T150115Z.json`.
+All older continuation blocks below retain their historical context. Resolve
+main integration from the exact Git refs and the recovery task's delivery record;
+do not infer it from an earlier block saying no merge was authorized. The operator
+now requested checked integration. Gate A acceptance remains unaccepted, and
+the frozen reference study still has zero independent human judgments. UI/UX
+owner worktrees remain separate. The next engine action is the training sensor-file
+and model-provenance inventory, followed by a prospectively fixed experiment.
+
+---
+
 # Current developer-value and research continuation, 2026-09-07
 
 Latest checkpoint: `research/2026-09-07-physical-reference-transfer`, extending

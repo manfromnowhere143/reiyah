@@ -1,0 +1,805 @@
+{
+  "artifact_id": "reiyah.predictive-monitor-verification.0.1.0",
+  "checks": [
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "capture_id": "unit-all-1",
+      "ended_utc": "2026-09-07T15:08:06.005578+00:00",
+      "exit_code": 0,
+      "private_custody": "engine-recovery-2026-09-07/checks/unit-all-1",
+      "receipt_sha256": "cefb8b42bf546188e7767fbcb029fede7daffacaa7ad8bf84aa09b73924e5ab7",
+      "started_utc": "2026-09-07T15:08:04.503282+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 6556,
+          "sha256": "ab87c975314e8bf1f495a11ac3a266cc6ff09938bf364f23936b0a56b85396c9"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/measure",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "capture_id": "tools-regressions-1",
+      "ended_utc": "2026-09-07T15:08:10.047400+00:00",
+      "exit_code": 0,
+      "private_custody": "engine-recovery-2026-09-07/checks/tools-regressions-1",
+      "receipt_sha256": "5aa292601d89c4e206611f198995f4b29b566cce56348e9ebe3cc78e98c32c82",
+      "started_utc": "2026-09-07T15:08:04.503283+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 16468,
+          "sha256": "2a74a1d93a2a98dba52a260a2364b07021d04ca39a30921343d81b3beee1c931"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/audit_predictive_monitor_completion.py",
+        "--run-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/scene-evaluation-1",
+        "--dataset",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/data-build-2/dataset.private.npz",
+        "--output",
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-recovery-2026-09-07/private/completion-scene-2.json"
+      ],
+      "capture_id": "completion-scene-2",
+      "ended_utc": "2026-09-07T15:01:55.738580+00:00",
+      "exit_code": 0,
+      "private_custody": "engine-recovery-2026-09-07/checks/completion-scene-2",
+      "receipt_sha256": "3f63c2fe598daeb286e9f44cfadc30d8a8150bafc9350782445e97aa70a0d804",
+      "started_utc": "2026-09-07T15:01:53.834902+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 1785,
+          "sha256": "5c89e20f200c6441b231b767e521bb29eab19d977f7ff5688dc73a370a2c9f2f"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/audit_predictive_monitor_completion.py",
+        "--run-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/log-evaluation-1",
+        "--dataset",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/data-build-2/dataset.private.npz",
+        "--output",
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-recovery-2026-09-07/private/completion-log-2.json"
+      ],
+      "capture_id": "completion-log-2",
+      "ended_utc": "2026-09-07T15:01:56.286803+00:00",
+      "exit_code": 0,
+      "private_custody": "engine-recovery-2026-09-07/checks/completion-log-2",
+      "receipt_sha256": "ea64641fc52890a9e37c598b31b35ec77bec8e50d3bc36477366170da050f7b5",
+      "started_utc": "2026-09-07T15:01:55.774551+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 1434,
+          "sha256": "029d38d868c7ad12ef35de25506e7672373ca4e62b558030e37139d94866152d"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/audit_predictive_monitor_completion.py",
+        "--run-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/spatial-evaluation-1",
+        "--dataset",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/data-build-2/dataset.private.npz",
+        "--output",
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-recovery-2026-09-07/private/completion-spatial-2.json"
+      ],
+      "capture_id": "completion-spatial-2",
+      "ended_utc": "2026-09-07T15:01:56.887853+00:00",
+      "exit_code": 0,
+      "private_custody": "engine-recovery-2026-09-07/checks/completion-spatial-2",
+      "receipt_sha256": "a031bec1da068026863ad769bdd040b0a01c3abe17b5d7f7c4a29ee2f82acb0c",
+      "started_utc": "2026-09-07T15:01:56.322471+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 1433,
+          "sha256": "3e364544f7cb9dbf314380d3c1f09d6420d32c0a18d49e736d53c9fb94ca419c"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/evaluate_predictive_monitor.py",
+        "--spec",
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-recovery-2026-09-07/implementation/research/predictive-monitor/0.1.0/log-analysis-spec.json",
+        "--dataset",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/data-build-2/dataset.private.npz",
+        "--output-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-recovery-2026-09-07/private/refit-log-1"
+      ],
+      "capture_id": "refit-log-1",
+      "ended_utc": "2026-09-07T15:01:08.349680+00:00",
+      "exit_code": 0,
+      "private_custody": "engine-recovery-2026-09-07/checks/refit-log-1",
+      "receipt_sha256": "bfbc37078b48d7129a78bea4f17677466793aa71c8ed49d2129b27c5045123df",
+      "started_utc": "2026-09-07T14:59:14.547508+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 725,
+          "sha256": "f6b59ea0a1f38091076bb3509988e3539ac47432f772a4204bb452e6e54f16af"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/spatial_continuity_monitor.py",
+        "--spec",
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-recovery-2026-09-07/implementation/research/predictive-monitor/0.2.0/spatial-analysis-spec.json",
+        "--dataset",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/data-build-2/dataset.private.npz",
+        "--data-root",
+        "/Users/danielwahnich/.codex/reports/reiyah/developer-value-2026-09-07/private/real-replay-inputs",
+        "--baseline-run",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/log-evaluation-1",
+        "--output-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-recovery-2026-09-07/private/refit-spatial-1"
+      ],
+      "capture_id": "refit-spatial-1",
+      "ended_utc": "2026-09-07T15:03:11.624569+00:00",
+      "exit_code": 0,
+      "private_custody": "engine-recovery-2026-09-07/checks/refit-spatial-1",
+      "receipt_sha256": "84d5edeb10103dbe4f4c4b380fd3b00addec8c56ba32e48656e9cc4aedc0c254",
+      "started_utc": "2026-09-07T15:01:52.662865+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 687,
+          "sha256": "f278dca5f07da3156944a227d1e595dfa7ae218193fc2f3e46539080e471d7fd"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/prepare_training_overlap_probe.py",
+        "--meta",
+        "/Users/danielwahnich/.codex/reports/reiyah/developer-value-2026-09-07/private/real-replay-inputs/meta.tgz",
+        "--splits",
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-recovery-2026-09-07/implementation/evidence/nuscenes_splits_devkit.py",
+        "--output-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-recovery-2026-09-07/private/training-overlap-replay-1"
+      ],
+      "capture_id": "training-overlap-replay-1",
+      "ended_utc": "2026-09-07T15:04:51.885469+00:00",
+      "exit_code": 0,
+      "private_custody": "engine-recovery-2026-09-07/checks/training-overlap-replay-1",
+      "receipt_sha256": "5737c28ec4d81a09f750610af567f39bd4abe75f699fb2bc8044103ca0960925",
+      "started_utc": "2026-09-07T15:04:48.426781+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 2397,
+          "sha256": "8edb37abee5b1203d4417c26c730e69476543a36e678f6a121281409c9a44202"
+        }
+      }
+    }
+  ],
+  "development_check": {
+    "historical_attack_suite": "not_run_here",
+    "historical_replay": "not_replayed_here",
+    "path": "evidence/predictive-monitor/gate-b-development-0.1.0.json",
+    "result": "pass",
+    "sha256": "f82d37f0482e838bc89799e46b01235c7a10725056a3e8bf2ddf28c396aff01e"
+  },
+  "failed_attempts_retained": [
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/build_predictive_monitor_dataset.py",
+        "--spec",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/implementation/research/predictive-monitor/0.1.0/data-spec.json",
+        "--data-root",
+        "/Users/danielwahnich/.codex/reports/reiyah/developer-value-2026-09-07/private/real-replay-inputs",
+        "--output-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/data-build-1"
+      ],
+      "capture_id": "data-build-1",
+      "ended_utc": "2026-09-07T13:29:18.447874+00:00",
+      "exit_code": 2,
+      "private_custody": "predictive-monitor-2026-09-07/checks/data-build-1",
+      "receipt_sha256": "edaf6496be8dc0f5762afbd02fe0a636fdbfd1e71e73ded1fa2a66e20aa6d5e5",
+      "started_utc": "2026-09-07T13:29:17.644770+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 67,
+          "sha256": "45b8559bfbe52fc0314c56dc6ed6924634caa07a529557566ff673261b26a3c3"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/prepare_training_overlap_probe.py",
+        "--meta",
+        "/Users/danielwahnich/.codex/reports/reiyah/developer-value-2026-09-07/private/real-replay-inputs/meta.tgz",
+        "--splits",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/implementation/evidence/nuscenes_splits_devkit.py",
+        "--output-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/training-overlap-1"
+      ],
+      "capture_id": "training-overlap-1",
+      "ended_utc": "2026-09-07T14:01:54.468075+00:00",
+      "exit_code": 1,
+      "private_custody": "predictive-monitor-2026-09-07/checks/training-overlap-1",
+      "receipt_sha256": "db8846c43bdd4d6b397fe51f084b9d465c6223c695c976a0171704f6a999a84c",
+      "started_utc": "2026-09-07T14:01:54.127996+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 2056,
+          "sha256": "7a406c4a37c366fa77ae8b93044460b82baaecafb99a644085859ff8622dfda1"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/audit_predictive_monitor_completion.py",
+        "--run-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/scene-evaluation-1",
+        "--dataset",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/data-build-2/dataset.private.npz",
+        "--output",
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-recovery-2026-09-07/private/completion-scene-1.json"
+      ],
+      "capture_id": "completion-scene-1",
+      "ended_utc": "2026-09-07T14:57:10.756980+00:00",
+      "exit_code": 2,
+      "private_custody": "engine-recovery-2026-09-07/checks/completion-scene-1",
+      "receipt_sha256": "d158bdf10397bc5fd6a4a95b5cf4681569dd0e8df43f9ed069e76885279481a4",
+      "started_utc": "2026-09-07T14:57:10.626561+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 71,
+          "sha256": "ee067a86cd375d866e57304cfe6c7588f429099c52a55a027fd1f3476eaed8bf"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ],
+  "known_bad_reproductions": [
+    {
+      "case": "empty-experiments",
+      "checker_sha256": "94a6084797eaa01d154739fe1bcb8ed4ccd1c98dcd8396a16e6f6b27ce85b3ea",
+      "exit_code": 0,
+      "legacy_stdout_sha256": "798dcd8b6ed0df724f92b678fa18f1ad239670b7dda5d48714dd53396aad2169",
+      "reported_status": "pass",
+      "result_sha256": "c16d7eab6688160ae77ac037937fe551b493ccb36de94ad5545697c46354f33b",
+      "successor_diagnostic": {
+        "diagnostic": "planned experiment population differs",
+        "status": "invalid"
+      },
+      "successor_exit_code": 2,
+      "successor_stderr_sha256": "5d011be07b799a56f6d53fa7340ef2fc599d94da23e773f8bd5847e3b468c883",
+      "successor_success_artifact_present": false
+    },
+    {
+      "case": "forged-log-scene-band",
+      "checker_sha256": "94a6084797eaa01d154739fe1bcb8ed4ccd1c98dcd8396a16e6f6b27ce85b3ea",
+      "exit_code": 0,
+      "legacy_stdout_sha256": "ba26b8637102650229cd07079d2e7c07d014482500ad83035d511136f4ab30c9",
+      "reported_status": "pass",
+      "result_sha256": "8db2ee76a194acbf452172df3e36204a4ab1eab193fc516db9563bea2e508a0c",
+      "successor_diagnostic": {
+        "diagnostic": "log-scene interval differs",
+        "status": "invalid"
+      },
+      "successor_exit_code": 2,
+      "successor_stderr_sha256": "a92868aa11fe5998ff86c197584836b515f762c7ca38e975d7cf9765b9499252",
+      "successor_success_artifact_present": false
+    }
+  ],
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Development and fixed-prediction computational evidence only; no independent human review",
+    "Scene experiment reaggregated but not refitted during recovery",
+    "Refit full reports differ in every explicitly listed timing path; private numeric artifacts match exactly",
+    "Historical Gate B replay and Gate A release validation are not repeated by these checks",
+    "The metadata recount uses shared retained sources; it is not new training or physical observation"
+  ],
+  "original_producer_captures": [
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/build_predictive_monitor_dataset.py",
+        "--spec",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/implementation/research/predictive-monitor/0.1.0/data-spec-0.1.1.json",
+        "--data-root",
+        "/Users/danielwahnich/.codex/reports/reiyah/developer-value-2026-09-07/private/real-replay-inputs",
+        "--output-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/data-build-2"
+      ],
+      "capture_id": "data-build-2",
+      "ended_utc": "2026-09-07T13:34:39.102474+00:00",
+      "exit_code": 0,
+      "private_custody": "predictive-monitor-2026-09-07/checks/data-build-2",
+      "receipt_sha256": "bc43f9618826e993b71b2278a8bfa9ffc7fc8df924f50dd475ee38d16491288d",
+      "started_utc": "2026-09-07T13:30:28.610719+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 133,
+          "sha256": "1c0a3b752cbfda92cc25c20e8d62942b0b347616f7ed6813d24aadf4d3c61be4"
+        },
+        "stdout.txt": {
+          "bytes": 2628,
+          "sha256": "3cd3e212c20844d1867e61839fddddd20696b5091cdd1b8112816a5ca488c0d8"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/evaluate_predictive_monitor.py",
+        "--spec",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/implementation/research/predictive-monitor/0.1.0/scene-analysis-spec.json",
+        "--dataset",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/data-build-2/dataset.private.npz",
+        "--output-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/scene-evaluation-1"
+      ],
+      "capture_id": "scene-evaluation-1",
+      "ended_utc": "2026-09-07T13:48:13.209354+00:00",
+      "exit_code": 0,
+      "private_custody": "predictive-monitor-2026-09-07/checks/scene-evaluation-1",
+      "receipt_sha256": "2c0a32085affec36e229e326eba5b023fb655b00e3b0f2cb5fa20682a05becb1",
+      "started_utc": "2026-09-07T13:38:33.500437+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 6042,
+          "sha256": "9feeae8edd5bfbb1f235e08914234653bf13f8f0397b151635fab1214ff94e67"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/evaluate_predictive_monitor.py",
+        "--spec",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/implementation/research/predictive-monitor/0.1.0/log-analysis-spec.json",
+        "--dataset",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/data-build-2/dataset.private.npz",
+        "--output-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/log-evaluation-1"
+      ],
+      "capture_id": "log-evaluation-1",
+      "ended_utc": "2026-09-07T13:40:22.027579+00:00",
+      "exit_code": 0,
+      "private_custody": "predictive-monitor-2026-09-07/checks/log-evaluation-1",
+      "receipt_sha256": "8da77bef4880207aef094cf947aad28a3c9a492af0c3ec60fd3c608de45eb8ec",
+      "started_utc": "2026-09-07T13:38:33.500476+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 725,
+          "sha256": "f01bd75c6cf4d919483c39e2e7f796141e831f6e95ba8d0f1f8c439cacf9b83c"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/spatial_continuity_monitor.py",
+        "--spec",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/implementation/research/predictive-monitor/0.2.0/spatial-analysis-spec.json",
+        "--dataset",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/data-build-2/dataset.private.npz",
+        "--data-root",
+        "/Users/danielwahnich/.codex/reports/reiyah/developer-value-2026-09-07/private/real-replay-inputs",
+        "--baseline-run",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/log-evaluation-1",
+        "--output-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/spatial-evaluation-1"
+      ],
+      "capture_id": "spatial-evaluation-1",
+      "ended_utc": "2026-09-07T13:53:33.134162+00:00",
+      "exit_code": 0,
+      "private_custody": "predictive-monitor-2026-09-07/checks/spatial-evaluation-1",
+      "receipt_sha256": "aef4f4342547a0ce233201c1356fea0e76adf6c0f6cc52bc2b8ee492c659461a",
+      "started_utc": "2026-09-07T13:52:20.859782+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 687,
+          "sha256": "f278dca5f07da3156944a227d1e595dfa7ae218193fc2f3e46539080e471d7fd"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/audit_collection_log_dependence.py",
+        "--cache",
+        "/Users/danielwahnich/.codex/reports/reiyah/developer-value-2026-09-07/private/real-replay-inputs/gt_val_cache.json",
+        "--dataset",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/data-build-2/dataset.private.npz",
+        "--output",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/collection-log-sensitivity.json"
+      ],
+      "capture_id": "cluster-sensitivity-1",
+      "ended_utc": "2026-09-07T13:40:43.490142+00:00",
+      "exit_code": 0,
+      "private_custody": "predictive-monitor-2026-09-07/checks/cluster-sensitivity-1",
+      "receipt_sha256": "4b1d85771cc70f35eb0abaf06efe2af989a903837c1e9a1766ec0aaf0c57d83b",
+      "started_utc": "2026-09-07T13:40:42.039087+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 1517,
+          "sha256": "1b14c3fe3a4196918c26f03a6b1a116a9c435b2eba78ec40f1ec820c7f422bb3"
+        }
+      }
+    },
+    {
+      "argv": [
+        "/Users/danielwahnich/.codex/reports/reiyah/research-board-2026-09-07/plot-env/bin/python",
+        "-B",
+        "tools/measure/prepare_training_overlap_probe.py",
+        "--meta",
+        "/Users/danielwahnich/.codex/reports/reiyah/developer-value-2026-09-07/private/real-replay-inputs/meta.tgz",
+        "--splits",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/implementation/evidence/nuscenes_splits_devkit.py",
+        "--output-dir",
+        "/Users/danielwahnich/.codex/reports/reiyah/predictive-monitor-2026-09-07/private/training-overlap-2"
+      ],
+      "capture_id": "training-overlap-2",
+      "ended_utc": "2026-09-07T14:04:33.284801+00:00",
+      "exit_code": 0,
+      "private_custody": "predictive-monitor-2026-09-07/checks/training-overlap-2",
+      "receipt_sha256": "7ac23292b53a3efce4c0c5962e22f4fda7d28211730fd310431247c8e7a5445f",
+      "started_utc": "2026-09-07T14:04:29.924151+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 2397,
+          "sha256": "8edb37abee5b1203d4417c26c730e69476543a36e678f6a121281409c9a44202"
+        }
+      }
+    }
+  ],
+  "original_research_parent": "6925e7e114246c558a7905f1dbe7b0a393068c7d",
+  "refit_comparison": [
+    {
+      "analysis": "log",
+      "changed_report_paths": [
+        "/experiments/y_h1000000/folds/0/models/joint_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/joint_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/0/models/joint_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/joint_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/0/models/joint_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/joint_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/0/models/joint_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/joint_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/0/models/marginal_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/marginal_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/0/models/marginal_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/marginal_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/0/models/marginal_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/marginal_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/0/models/marginal_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/marginal_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/0/models/shuffled_training_labels/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/shuffled_training_labels/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/0/models/unavailable_oracle/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/unavailable_oracle/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/joint_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/joint_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/joint_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/joint_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/joint_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/joint_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/joint_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/joint_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/marginal_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/marginal_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/marginal_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/marginal_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/marginal_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/marginal_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/marginal_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/marginal_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/shuffled_training_labels/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/shuffled_training_labels/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/unavailable_oracle/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/unavailable_oracle/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/joint_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/joint_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/joint_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/joint_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/joint_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/joint_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/joint_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/joint_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/marginal_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/marginal_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/marginal_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/marginal_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/marginal_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/marginal_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/marginal_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/marginal_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/shuffled_training_labels/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/shuffled_training_labels/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/unavailable_oracle/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/unavailable_oracle/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/joint_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/joint_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/joint_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/joint_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/joint_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/joint_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/joint_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/joint_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/marginal_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/marginal_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/marginal_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/marginal_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/marginal_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/marginal_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/marginal_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/marginal_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/shuffled_training_labels/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/shuffled_training_labels/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/unavailable_oracle/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/unavailable_oracle/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/joint_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/joint_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/joint_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/joint_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/joint_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/joint_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/joint_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/joint_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/marginal_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/marginal_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/marginal_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/marginal_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/marginal_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/marginal_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/marginal_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/marginal_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/shuffled_training_labels/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/shuffled_training_labels/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/unavailable_oracle/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/unavailable_oracle/refit_timing/predict_seconds"
+      ],
+      "full_report_bytes_equal": false,
+      "only_elapsed_timing_fields_differ": true,
+      "original_result_sha256": "08aff21fc731ea1d82cc70e8ac9feaec727cded3fb4db2d4e4b9ce364ff17d48",
+      "private_output_bytes_equal": {
+        "folds.private.jsonl": true,
+        "predictions.private.jsonl": true
+      },
+      "refit_result_sha256": "269ea075ec1d1132b09fdb65a2563da536a1bd576368a34c6e27fc3f3c8dc161"
+    },
+    {
+      "analysis": "spatial",
+      "changed_report_paths": [
+        "/experiments/y_h1000000/folds/0/models/spatial_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/spatial_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/0/models/spatial_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/spatial_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/0/models/spatial_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/spatial_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/0/models/spatial_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/0/models/spatial_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/spatial_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/spatial_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/spatial_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/spatial_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/spatial_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/spatial_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/1/models/spatial_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/1/models/spatial_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/spatial_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/spatial_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/spatial_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/spatial_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/spatial_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/spatial_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/2/models/spatial_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/2/models/spatial_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/spatial_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/spatial_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/spatial_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/spatial_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/spatial_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/spatial_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/3/models/spatial_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/3/models/spatial_history/refit_timing/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/spatial_history/inner_selected_timings/0/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/spatial_history/inner_selected_timings/0/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/spatial_history/inner_selected_timings/1/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/spatial_history/inner_selected_timings/1/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/spatial_history/inner_selected_timings/2/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/spatial_history/inner_selected_timings/2/predict_seconds",
+        "/experiments/y_h1000000/folds/4/models/spatial_history/refit_timing/fit_seconds",
+        "/experiments/y_h1000000/folds/4/models/spatial_history/refit_timing/predict_seconds"
+      ],
+      "full_report_bytes_equal": false,
+      "only_elapsed_timing_fields_differ": true,
+      "original_result_sha256": "b50585273a21753b56919158db992745871b7a917a8a9ef88c2bd0569394decf",
+      "private_output_bytes_equal": {
+        "folds.private.jsonl": true,
+        "geometry.private.npz": true,
+        "predictions.private.jsonl": true
+      },
+      "refit_result_sha256": "35949f10b4f93cadd39393dd246e9f722ad5307b872f5c0f481a9dfb37d7b8e4"
+    }
+  ],
+  "retained_output_sha256": {
+    "evidence/predictive-monitor/collection-log-sensitivity-0.1.0.json": "5de41c47fb06a8585b140b88168dea8bb3edab8eadd21f92060f7b93341b3ec7",
+    "evidence/predictive-monitor/completion-log-0.1.0.json": "be4ed01552600f35da6110bcbd8db52c09a53d1e9885dbeeb69b94ea7f20219d",
+    "evidence/predictive-monitor/completion-scene-0.1.0.json": "c5a6fb1a6112b1341139f360d105e4b874f7dfdcd15453e050020f2b8da88f10",
+    "evidence/predictive-monitor/completion-spatial-0.1.0.json": "176c709ff18dc9375f91875eb51ee5c02a6d562aea6cd3a4522bd414d3ed31a4",
+    "evidence/predictive-monitor/data-build-2-result.json": "1d70e0cac74f88929249897e26c0bed7bba3a008ecdf885ac3dd9c46d162d37e",
+    "evidence/predictive-monitor/log-evaluation-1-result.json": "08aff21fc731ea1d82cc70e8ac9feaec727cded3fb4db2d4e4b9ce364ff17d48",
+    "evidence/predictive-monitor/research-source-ledger-0.1.0.json": "9d56fd824bae08c36ce3bb4cee7e6efa3067683720a80969667b6ea10fdcbc48",
+    "evidence/predictive-monitor/scene-evaluation-1-result.json": "e7eceb67ded40a12fe193cdff16b0dcd7b28b657d6727725c06a0611c08bc8f3",
+    "evidence/predictive-monitor/spatial-evaluation-1-result.json": "b50585273a21753b56919158db992745871b7a917a8a9ef88c2bd0569394decf",
+    "evidence/predictive-monitor/training-overlap-2-result.json": "024a10799ed98e6bc5737933fdf47f4465f695aea04a8b112678e9e7b72b6724"
+  },
+  "source_sha256": {
+    "research/predictive-monitor/0.1.0/PLAN.md": "d29e4ace8b7108e5c079938793f50bb91fc6e2838ccc65b7a10f5169814a8699",
+    "research/predictive-monitor/0.1.0/TRANSFER_EXTENSION.md": "52f3a8380d9d5090bcd47f2b315dbe2a7f4c2c4e81fa002d5066643870f1fb76",
+    "research/predictive-monitor/0.1.0/data-spec-0.1.1.json": "9d169821ef95c089681b0ca2c9ae0071c7521d661c7d9bf82127f1dc3b9603ff",
+    "research/predictive-monitor/0.1.0/data-spec.json": "50253981630615462a8191fb525180fb60f95dd1f8f4f89c1e891cf2ca09e67d",
+    "research/predictive-monitor/0.1.0/log-analysis-spec.json": "e1f50faf8b01ec0a336b76a913d3c794d6e840215ea8b373ff07d645a12e4cd3",
+    "research/predictive-monitor/0.1.0/scene-analysis-spec.json": "d221cde240a7abc1698aed458d751f0480e42e2ea618b1c47dbc4432e227e998",
+    "research/predictive-monitor/0.2.0/PLAN.md": "02c1f7f42b05ea8c8bf2e5a8ebd318db8e202808554bbfcbcca895e193c74648",
+    "research/predictive-monitor/0.2.0/spatial-analysis-spec.json": "1ed5bb9bc7ab4f566f93e423dcd0daba043a11f3c45fed4cd62be66b26a94ab5",
+    "tests/test_collection_log_dependence.py": "43b41d26c8666fee23f81a28dc0e88b3966e653b5ff7f41ff3af8a3a9f95ea98",
+    "tests/test_predictive_monitor.py": "7c891b1742682f8388aa889b829d315e029c9f55f430b17d4bc3f71e3f71ecbc",
+    "tests/test_predictive_monitor_completion.py": "a49bf1b8c522f64415e5da43cd687661f4cede2635ddfbc89a1aeccd7ec114fd",
+    "tests/test_spatial_continuity_monitor.py": "ff84a164b624460ab1a16948d47aa6025489f86287d9766f66381e2763031287",
+    "tools/measure/audit_collection_log_dependence.py": "b60d909c9b88462d070344e11afbcc5338c9d1c37ff501596f9684ac030f579b",
+    "tools/measure/audit_predictive_monitor_completion.py": "798a420f6714b4eec27c9f613b7c554c61053db42b8743a960dd2265478f97a7",
+    "tools/measure/build_predictive_monitor_dataset.py": "01ea0aac667f6f1321beea690ed420357e160b6dfc2084e8414d1f12e347d4f0",
+    "tools/measure/check_predictive_monitor_results.py": "94a6084797eaa01d154739fe1bcb8ed4ccd1c98dcd8396a16e6f6b27ce85b3ea",
+    "tools/measure/evaluate_predictive_monitor.py": "72799cee9bec62fa7e133bb0cf9052546efdfa770a5949fb9940923ab21ac5d9",
+    "tools/measure/prepare_training_overlap_probe.py": "35e6a37eebb2c0b8b3683a2954099c58d559054b50a92a31dca8786b52cebce5",
+    "tools/measure/spatial_continuity_monitor.py": "f7aa1718c8f97cac57506a024d14e6c4fc34fd08fbaef9e6ec77aa564d7ea31b"
+  },
+  "status": "pass",
+  "test_counts": {
+    "tools-regressions-1": 93,
+    "unit-all-1": 46
+  },
+  "training_metadata_recount": {
+    "artifact_id": "reiyah.training-overlap-recount.0.1.0",
+    "lifecycle_status": "exploratory",
+    "limits": [
+      "Separate implementation over shared metadata; no detector training or physical reference observations"
+    ],
+    "proposals": [
+      {
+        "disjoint_and_complete": true,
+        "partition_bytes_identical": true,
+        "private_sha256": "33bb7eae5bc47dd6fbd57acc2a117d8f4abd52b1b6338776189429bf2ccb5147",
+        "sample_counts_recounted": true,
+        "seed": 20260910
+      },
+      {
+        "disjoint_and_complete": true,
+        "partition_bytes_identical": true,
+        "private_sha256": "dac2ca432938817dc428f7d22d39e689ba7b8f04d4e730ace1f0f3b2a6c2b583",
+        "sample_counts_recounted": true,
+        "seed": 20260911
+      },
+      {
+        "disjoint_and_complete": true,
+        "partition_bytes_identical": true,
+        "private_sha256": "e92ec72f73fad763fbd5629fe321f53c72bdbcf9f02b8a9f5a25275b313ebbb0",
+        "sample_counts_recounted": true,
+        "seed": 20260912
+      }
+    ],
+    "shared_logs": 0,
+    "status": "pass",
+    "training_logs": 50,
+    "training_scenes": 700,
+    "validation_logs": 18,
+    "validation_scenes": 150,
+    "version": "0.1.0"
+  },
+  "version": "0.1.0"
+}

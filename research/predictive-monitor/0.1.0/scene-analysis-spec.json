@@ -1,0 +1,63 @@
+{
+  "alert_quantile": 0.8,
+  "artifact_id": "reiyah.predictive-monitor-analysis-spec.0.1.0",
+  "bootstrap_resamples": 3000,
+  "bootstrap_seed": 20260909,
+  "dataset_sha256": "8dfd5f32656251981fa3774a4b73f6f5074517faa0102125e9eabc51a35b7637",
+  "feature_variants": [
+    "density_current",
+    "marginal_current",
+    "joint_current",
+    "marginal_history",
+    "joint_history"
+  ],
+  "horizon_tolerance_us": 150000,
+  "horizons_us": [
+    0,
+    1000000
+  ],
+  "inner_folds": 3,
+  "lifecycle_status": "exploratory",
+  "numpy_version": "2.4.2",
+  "outer_folds": 5,
+  "physical_performance_claim": false,
+  "primary_comparison": "joint_history_vs_marginal_history on y at 1000000 us",
+  "prior_benchmark_exploration": true,
+  "retained_utc": "2026-09-07T13:38:33.409206+00:00",
+  "seed": 20260907,
+  "sklearn_version": "1.8.0",
+  "source_sha256": {
+    "research/predictive-monitor/0.1.0/PLAN.md": "d29e4ace8b7108e5c079938793f50bb91fc6e2838ccc65b7a10f5169814a8699",
+    "research/predictive-monitor/0.1.0/TRANSFER_EXTENSION.md": "52f3a8380d9d5090bcd47f2b315dbe2a7f4c2c4e81fa002d5066643870f1fb76",
+    "tests/test_predictive_monitor.py": "7c891b1742682f8388aa889b829d315e029c9f55f430b17d4bc3f71e3f71ecbc",
+    "tools/measure/audit_cache_selection.py": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+    "tools/measure/build_predictive_monitor_dataset.py": "01ea0aac667f6f1321beea690ed420357e160b6dfc2084e8414d1f12e347d4f0",
+    "tools/measure/check_predictive_monitor_results.py": "94a6084797eaa01d154739fe1bcb8ed4ccd1c98dcd8396a16e6f6b27ce85b3ea",
+    "tools/measure/evaluate_predictive_monitor.py": "72799cee9bec62fa7e133bb0cf9052546efdfa770a5949fb9940923ab21ac5d9",
+    "tools/measure/reference_population_audit.py": "20357fac547358063116d6652b2dc31f0c4a6a45feb1112db35d5bddadc70cbd",
+    "tools/measure/replay_reference_population_audit.py": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993"
+  },
+  "split_unit": "scenes",
+  "targets": [
+    "y",
+    "y_point"
+  ],
+  "tree_candidates": [
+    {
+      "l2_regularization": 1.0,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 40
+    },
+    {
+      "l2_regularization": 1.0,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 40
+    },
+    {
+      "l2_regularization": 10.0,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 80
+    }
+  ],
+  "version": "0.1.0"
+}

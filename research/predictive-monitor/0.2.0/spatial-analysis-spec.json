@@ -1,0 +1,71 @@
+{
+  "adaptive_after_prior_results": true,
+  "alert_quantile": 0.8,
+  "artifact_id": "reiyah.predictive-monitor-spatial-spec.0.2.0",
+  "baseline_result_sha256": "08aff21fc731ea1d82cc70e8ac9feaec727cded3fb4db2d4e4b9ce364ff17d48",
+  "bootstrap_resamples": 3000,
+  "bootstrap_seed": 20260909,
+  "dataset_sha256": "8dfd5f32656251981fa3774a4b73f6f5074517faa0102125e9eabc51a35b7637",
+  "feature_variants": [
+    "marginal_history",
+    "joint_history"
+  ],
+  "horizon_tolerance_us": 150000,
+  "horizons_us": [
+    1000000
+  ],
+  "inner_folds": 3,
+  "lifecycle_status": "exploratory",
+  "numpy_version": "2.4.2",
+  "outer_folds": 5,
+  "physical_performance_claim": false,
+  "prediction_files": {
+    "camera": "predictions/mapillary_val.json",
+    "lidar": "predictions/megvii_val.json"
+  },
+  "prediction_sha256": {
+    "predictions/mapillary_val.json": "f948e9778fb9a332d748f7e504fbade04f0c00c2699d7b0af757cacdbd567e99",
+    "predictions/megvii_val.json": "e7a995c31692ac95a86b56208e0b5d82a4ab908df8d0a9b9474d70adb693eab4"
+  },
+  "primary_comparison": "joint_history_vs_marginal_history on y at 1000000 us",
+  "prior_benchmark_exploration": true,
+  "retained_utc": "2026-09-07T13:52:20.772001+00:00",
+  "seed": 20260907,
+  "sklearn_version": "1.8.0",
+  "source_sha256": {
+    "research/predictive-monitor/0.1.0/PLAN.md": "d29e4ace8b7108e5c079938793f50bb91fc6e2838ccc65b7a10f5169814a8699",
+    "research/predictive-monitor/0.1.0/TRANSFER_EXTENSION.md": "52f3a8380d9d5090bcd47f2b315dbe2a7f4c2c4e81fa002d5066643870f1fb76",
+    "research/predictive-monitor/0.2.0/PLAN.md": "02c1f7f42b05ea8c8bf2e5a8ebd318db8e202808554bbfcbcca895e193c74648",
+    "tests/test_predictive_monitor.py": "7c891b1742682f8388aa889b829d315e029c9f55f430b17d4bc3f71e3f71ecbc",
+    "tests/test_spatial_continuity_monitor.py": "ff84a164b624460ab1a16948d47aa6025489f86287d9766f66381e2763031287",
+    "tools/measure/audit_cache_selection.py": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+    "tools/measure/build_predictive_monitor_dataset.py": "01ea0aac667f6f1321beea690ed420357e160b6dfc2084e8414d1f12e347d4f0",
+    "tools/measure/check_predictive_monitor_results.py": "94a6084797eaa01d154739fe1bcb8ed4ccd1c98dcd8396a16e6f6b27ce85b3ea",
+    "tools/measure/evaluate_predictive_monitor.py": "72799cee9bec62fa7e133bb0cf9052546efdfa770a5949fb9940923ab21ac5d9",
+    "tools/measure/reference_population_audit.py": "20357fac547358063116d6652b2dc31f0c4a6a45feb1112db35d5bddadc70cbd",
+    "tools/measure/replay_reference_population_audit.py": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+    "tools/measure/spatial_continuity_monitor.py": "f7aa1718c8f97cac57506a024d14e6c4fc34fd08fbaef9e6ec77aa564d7ea31b"
+  },
+  "split_unit": "logs",
+  "targets": [
+    "y"
+  ],
+  "tree_candidates": [
+    {
+      "l2_regularization": 1.0,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 40
+    },
+    {
+      "l2_regularization": 1.0,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 40
+    },
+    {
+      "l2_regularization": 10.0,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 80
+    }
+  ],
+  "version": "0.2.0"
+}
