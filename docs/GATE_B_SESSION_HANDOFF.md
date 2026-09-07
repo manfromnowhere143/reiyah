@@ -428,6 +428,9 @@ was deleted and no check was weakened.
    strict-threshold rows, AE and X2 and U and AI sentences corrected in place, and the AD verdict
    rule stated. Every document carries its own "Adversarial reading, 2026-09-06" section. Register
    `0.2.18`.
+34. **Full replay with the attack suite retained** on the tree at `abd9312`: 27 of 27 replayable
+   transcripts byte-identical, every attack failed to break its result, all ten checks pass; report
+   `evidence/gate-b-check-2026-09-06-replay-and-attacks.json`.
 33. **Result AN, the fourth preregistered test** (register `0.2.23`): interpolation forecasts held
    twelve of twelve; the ordering forecasts failed at 0.20 (camera pair below a cross pair) and
    0.40 (bands touch; a three-channel reversal). The sensor arm is restated: the two-lidar pair is
