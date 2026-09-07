@@ -1,4 +1,25 @@
 > Research branch navigation, 2026-09-07: this branch contains the isolated
+
+## Reference-study continuation, 2026-09-07
+
+The isolated `research/2026-09-07-reference-study` revision extends research-board commit
+`4deb1d19ef1db6fa37fb6b20ca0b4ffda93c4bcc`. The concurrently active Gate A and Gate B worktrees
+were not edited or switched. Gate B tip `9464ff79a823a91037604bb8343e984b29c128a5` adds a
+historical replay capture over the board’s original `fd094c0` base; it is not silently merged.
+
+Read the [implemented study](REFERENCE_ADJUDICATION_STUDY_2026-09-07.md) and its
+[closeout](REFERENCE_STUDY_CLOSEOUT_2026-09-07.md). Protocol 0.1.0 failed a pre-label precision
+check and is retained. Protocol 0.2.0 selects 60 detections in each of four reference strata,
+240 cases across 93 scenes; the selection was reproduced exactly. The uncertainty estimator
+uses finite-population randomization, retains unresolved cases and makes no unseen-scene
+guarantee. Raw assets, opaque case mappings and selection keys remain in private custody.
+Independent human reviewers have not been supplied or impersonated.
+
+The next authorized action is independent assignment and blinded review of this frozen cohort,
+then analysis into a new output identity. Do not train on reference-relative flags as physical
+truth or relabel disagreements under the same protocol. Existing Gate A release bytes and
+operator acceptance remain unchanged; development checks do not create acceptance.
+
 > [research-board investigation](RESEARCH_BOARD_2026-09-07.md) and
 > [research closeout](RESEARCH_BOARD_CLOSEOUT_2026-09-07.md), based on Gate B commit
 > `fd094c066437e67cefbb86f363dd1bef7ccf8e6e`. Read the

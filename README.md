@@ -26,6 +26,15 @@ The research revision repairs two concrete validation defects: failed mAP valida
 writes a new matcher artifact, and a replay must exit successfully as well as reproduce the
 expected transcript. Regression tests exercise the original counterexamples.
 
+## Reference study now implemented
+
+The [reference-adjudication study](docs/REFERENCE_ADJUDICATION_STUDY_2026-09-07.md) freezes
+a probability sample of 240 detections across 93 scenes and prepares original sensor evidence
+with per-sensor geometry, timestamps and explicit missing states. The first sampling design
+failed its precision check and remains retained; its replacement was frozen before independent
+judgments. All physical-performance estimates remain null until the required observations exist.
+This is a private offline research experiment, not a new perception model or driving runtime.
+
 ## What actually runs
 
 ```mermaid
@@ -44,6 +53,9 @@ flowchart TB
     T --> R["Review checks, documents and static figures"]
     D --> A["Reference population audit"]
     A --> T
+    A --> P2["Frozen probability sample and original sensor evidence"]
+    P2 --> R2["Blinded independent review: pending"]
+    R2 --> U2["Unresolved cases retained in support intervals"]
   end
   C -. "proposed empirical ports, incomplete integration" .-> T
 ```
@@ -116,8 +128,9 @@ its selected immutable commit. A Gate B development check is not a substitute. S
 | Mathematical limits on safety transfer | [RSS estimand analysis](docs/ESTIMAND_RSS_DEFINITION_32.md) |
 | Public-data permissions and retained custody | [Public-data custody](docs/PUBLIC_DATA_CUSTODY_2026-09-06.md), [NOTICE](NOTICE) |
 
-The next scientific choice is one reference-validity study with independent adjudication, followed
-only if justified by a temporal monitor experiment against strong calibrated baselines. The prior
+The reference-validity study is now implemented; independent adjudication is the next scientific
+action. Only if that evidence warrants it should a temporal monitor be tested against strong
+calibrated baselines. The prior
 results, failed forecasts and withdrawn interpretations stay discoverable. Reiyah should earn
 trust by resolving those boundaries, not by expanding its claims faster than its evidence.
 

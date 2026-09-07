@@ -125,7 +125,7 @@ class ReplayExitTests(unittest.TestCase):
             scratch = pathlib.Path(temp)
             # Copy only tracked artifact directories relevant to this checker. No input caches.
             for name in ['docs', 'evidence', 'schemas', 'validation', 'tools',
-                         'human-channel', 'llm-generalization']:
+                         'human-channel', 'llm-generalization', 'research']:
                 shutil.copytree(ROOT / name, scratch / name,
                                 ignore=shutil.ignore_patterns('__pycache__'))
             for p in ROOT.glob('*.md'):

@@ -1,0 +1,23 @@
+{
+  "artifact_id": "reiyah.reference-study.board-regression.0.2.0",
+  "version": "0.2.0",
+  "status": "pass",
+  "tests": 14,
+  "observed_process_exit_code": 0,
+  "argv": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tools/measure",
+    "-p",
+    "test_research_board_regressions.py",
+    "-v"
+  ],
+  "input_closure_sha256": "42c14aa76e01230f5aca298da3291526ffe1ef5aa1ebddde868f3af351be9455",
+  "capture_scope": "Process exit and complete final test summary observed; earlier streaming output remains in the tool log. This is not a retained full stdout/stderr byte capture.",
+  "final_tool_output": "ok\ntest_valid_zero_accuracy_emits_valid_empty_match_set (test_research_board_regressions.MatcherExitTests.test_valid_zero_accuracy_emits_valid_empty_match_set) ... ok\ntest_annotation_stream_handles_utf8_split_across_reads (test_research_board_regressions.ReferencePopulationTests.test_annotation_stream_handles_utf8_split_across_reads) ... ok\ntest_annotation_stream_rejects_incomplete_or_malformed_reference (test_research_board_regressions.ReferencePopulationTests.test_annotation_stream_rejects_incomplete_or_malformed_reference) ... ok\ntest_audit_cannot_overwrite_source_input (test_research_board_regressions.ReferencePopulationTests.test_audit_cannot_overwrite_source_input) ... ok\ntest_ego_relative_transport_does_not_preserve_static_world_geometry (test_research_board_regressions.ReferencePopulationTests.test_ego_relative_transport_does_not_preserve_static_world_geometry) ... ok\ntest_empty_donor_is_zero_coincidence (test_research_board_regressions.ReferencePopulationTests.test_empty_donor_is_zero_coincidence) ... ok\ntest_excluding_an_annotation_can_create_a_false_absence_flag (test_research_board_regressions.ReferencePopulationTests.test_excluding_an_annotation_can_create_a_false_absence_flag) ... ok\ntest_missing_reference_cannot_certify_absence (test_research_board_regressions.ReferencePopulationTests.test_missing_reference_cannot_certify_absence) ... ok\ntest_missing_sample_and_empty_sample_are_different (test_research_board_regressions.ReferencePopulationTests.test_missing_sample_and_empty_sample_are_different) ... ok\ntest_matching_stdout_cannot_hide_failed_process (test_research_board_regressions.ReplayExitTests.test_matching_stdout_cannot_hide_failed_process) ... ok\ntest_successful_matching_producer_is_accepted (test_research_board_regressions.ReplayExitTests.test_successful_matching_producer_is_accepted) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 4.234s\n\nOK\n",
+  "gate_a_release_evidence": false
+}
