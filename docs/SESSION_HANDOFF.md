@@ -1,3 +1,72 @@
+# Engine continuation, 2026-09-07
+
+The interrupted engine work is recovered in `research/2026-09-07-engine-recovery`,
+extending `6925e7e114246c558a7905f1dbe7b0a393068c7d`. Read the
+[engine checkpoint](ENGINE_RECOVERY_CLOSEOUT_2026-09-07.md),
+[predictive-monitor findings](PREDICTIVE_MONITOR_FINDINGS_2026-09-07.md), and
+[next training experiment](TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) first.
+The last successful inherited process was the training-log preflight at 14:04:33 UTC.
+All three monitor runs now pass the completion audit. Fresh log/spatial refits
+reproduce private prediction bytes; their timing-bearing full reports differ.
+The two old-checker acceptance defects are reproduced and rejected by the successor.
+The output-summary feature expansion stops with its negative/unresolved results.
+
+Claim register `0.2.25` is `evidence/claim-status-register-2026-09-07T150115Z.json`.
+All older continuation blocks below retain their historical context. Resolve
+main integration from the exact Git refs and the recovery task's delivery record;
+do not infer it from an earlier block saying no merge was authorized. The operator
+now requested checked integration. Gate A acceptance remains unaccepted, and
+the frozen reference study still has zero independent human judgments. UI/UX
+owner worktrees remain separate. The next engine action is the training sensor-file
+and model-provenance inventory, followed by a prospectively fixed experiment.
+
+---
+
+# Current research navigation, 2026-09-07
+
+Latest checkpoint: `research/2026-09-07-physical-reference-transfer`, extending
+`ed10cff36d48b30dfddab9484de1da8b289444ae`. Read the
+[sampling and RSS interpretation findings](RSS_TRANSFER_AND_RARE_EVENT_LIMITS_2026-09-07.md),
+[physical-reference assessment](PHYSICAL_REFERENCE_OPTIONS_2026-09-07.md), and
+[closeout](PHYSICAL_REFERENCE_TRANSFER_CLOSEOUT_2026-09-07.md). Eleven new tests pass;
+the exact synthetic sampling limits also pass a separately written numerical check.
+No physical failure rate, reduced safety budget or new dataset is inferred. The NPL
+portal's public client was inspected; protected data and application terms remain
+unaccessed. Independent judgments for the frozen 240-case study are still pending.
+
+The preceding interface checkpoint is `ed10cff36d48b30dfddab9484de1da8b289444ae`, extending
+`9aceb3d1d39b27b54d1fdfe6f91a3828b2cb50c5`. Read the
+[interface findings](INTERFACE_EVIDENCE_REVIEW_2026-09-07.md) and
+[closeout](INTERFACE_EVIDENCE_CLOSEOUT_2026-09-07.md). Captured console consumers accept
+several mismatched or incomplete records; a private four-file repair closes the tested
+Gate B digest, register-selection and unknown-comparison paths. Report, path-addressed
+record and receipt-version failures remain explicit. The separate owner worktrees are
+unchanged. No new measurement of physical truth or acceptance is implied.
+
+The [reference-identification checkpoint](REFERENCE_IDENTIFICATION_CLOSEOUT_2026-09-07.md)
+still supplies exact ambiguity witnesses and the metadata clock census. Its proposed
+opportunity pilot remains unselected, and the original 240-case detection study still
+awaits independent human judgments. All prior corrections and frozen studies remain intact.
+
+Read [the research continuation and stopping point](RESEARCH_CONTINUATION_2026-09-07.md)
+first for this local research branch. It extends the frozen reference-study commit
+`9d8a18eab7144bd02b1f64c41bc8f179f32ee653` with a bounded sibling-research audit, a portable
+reference-population tool and a current developer-access investigation. The active canonical
+Gate A and separate Gate B worktrees remain under their existing owners.
+
+The [research board](RESEARCH_BOARD_2026-09-07.md) and
+[board closeout](RESEARCH_BOARD_CLOSEOUT_2026-09-07.md) reconstruct the original inspected
+snapshots. The [implemented reference study](REFERENCE_ADJUDICATION_STUDY_2026-09-07.md)
+and [study closeout](REFERENCE_STUDY_CLOSEOUT_2026-09-07.md) retain the failed first design,
+the frozen replacement and the 240 prepared evidence packets. Independent human judgments
+remain pending. The current [task ledger](RESEARCH_CONTINUATION_2026-09-07.md) names the next
+observation and the exact private custody needed to resume it.
+
+This navigation is not a newly validated Gate A release. The inherited Gate A handoff below
+refers to its original exact artifacts; current operator acceptance remains unaccepted.
+Research-branch changes do not silently merge Gate B's separate historical replay update at
+`9464ff79a823a91037604bb8343e984b29c128a5` or authorize a product runtime or publication.
+
 # Reiyah Session Handoff
 
 Gate A `1.2.0` remains operator-unaccepted; architecture status must be resolved from the exact canonical report and repeated byte-identical release replay.

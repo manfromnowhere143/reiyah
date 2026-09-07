@@ -1,0 +1,337 @@
+{
+  "artifact_id": "reiyah.console-evidence-source-probes.0.1.0",
+  "version": "0.1.0",
+  "status": "completed",
+  "mode": "offline_source_probe",
+  "console_validation_status": "not_established",
+  "variant": "private_four_file_repair",
+  "source_head": "b316d4bf618cc0e6fbf3b485a23fe94d876623d2",
+  "source_worktree_clean_at_capture": false,
+  "source_snapshot_identity": {
+    "state": "observed",
+    "head": "9464ff79a823a91037604bb8343e984b29c128a5",
+    "branch": "gate-b-measurement",
+    "worktree_clean": true,
+    "commit_count": 105,
+    "root": "/Users/danielwahnich/workspace/reiyah-gate-b"
+  },
+  "gate_a_snapshot_identity": {
+    "state": "observed",
+    "head": "74fbacc77a3c74d3a4962f488b589ee614a4c575",
+    "branch": "gate-a-1.2.9-readiness-input-seal-truth-contract",
+    "worktree_clean": true,
+    "root": "/Users/danielwahnich/workspace/reiyah"
+  },
+  "controls": [
+    {
+      "id": "C01",
+      "result": "positive_control",
+      "row_count": 6,
+      "terminal_c": 1.151
+    },
+    {
+      "id": "F01",
+      "result": "repair_control_passed",
+      "altered_bytes_rejected": true,
+      "headline": "∅"
+    },
+    {
+      "id": "F02",
+      "result": "contract_violation_reproduced",
+      "index_digest_check_passed": true,
+      "report_digest_matches": false,
+      "invalid_report_returned_by_boot_verifier": true
+    },
+    {
+      "id": "C02",
+      "result": "positive_control",
+      "altered_index_rejected": true
+    },
+    {
+      "id": "F03",
+      "result": "contract_violation_reproduced",
+      "uncatalogued_mock_record": true,
+      "state": "observed",
+      "self_computed_digest": true,
+      "scope": "client API; no assertion this fabricated record exists on the deployed server"
+    },
+    {
+      "id": "F04",
+      "result": "contract_violation_reproduced",
+      "earlier_parsed_c": 1.151,
+      "later_byte_c": 1.159,
+      "later_proof_equal": true,
+      "later_proof_matches_earlier_digest": false,
+      "scope": "consumer and proof functions; React receipt timing not exercised"
+    },
+    {
+      "id": "F05-Measurement",
+      "result": "repair_control_passed",
+      "latest_available_path": "evidence/claim-status-register-2026-09-06.json",
+      "selected_path": "evidence/claim-status-register-2026-09-06.json",
+      "selected_version": "0.2.23",
+      "selected_claims": 47
+    },
+    {
+      "id": "F05-SameHazard",
+      "result": "repair_control_passed",
+      "latest_available_path": "evidence/claim-status-register-2026-09-06.json",
+      "selected_path": "evidence/claim-status-register-2026-09-06.json",
+      "selected_version": "0.2.23",
+      "selected_claims": 47
+    },
+    {
+      "id": "C03-Monitor",
+      "result": "positive_control",
+      "latest_available_path": "evidence/claim-status-register-2026-09-06.json",
+      "selected_path": "evidence/claim-status-register-2026-09-06.json",
+      "selected_version": "0.2.23",
+      "selected_claims": 47
+    },
+    {
+      "id": "C03-Law",
+      "result": "positive_control",
+      "latest_available_path": "evidence/claim-status-register-2026-09-06.json",
+      "selected_path": "evidence/claim-status-register-2026-09-06.json",
+      "selected_version": "0.2.23",
+      "selected_claims": 47
+    },
+    {
+      "id": "F06",
+      "result": "repair_control_passed",
+      "missing_aa": true,
+      "generated_stat_subtitle": "Spearman, five-fold over scenes · does not beat the density baseline · register inconclusive · per-object realness AUC ∅, context adds ∅ · measured"
+    },
+    {
+      "id": "F07",
+      "result": "repair_control_passed",
+      "malformed_number_rejected": true,
+      "missing_terminal_row_rejected": true,
+      "empty_h4_rejected": true
+    },
+    {
+      "id": "C04",
+      "result": "positive_control",
+      "supplied_equal_auc_difference": 0,
+      "missing_comparator_remains_unknown": true,
+      "retained_h4_trials": 1080,
+      "retained_h4_participants": 40
+    },
+    {
+      "id": "C05",
+      "result": "positive_control",
+      "invalid_binding_controls_rejected": 4
+    }
+  ],
+  "bound_sources": [
+    {
+      "bytes": 27385,
+      "path": "public/snapshot/gateb/manifest.json",
+      "sha256": "47fdfa621ec5c8283cefc4346572d04bb8c01521b7cfbe6b5e3abad41bc5af1c",
+      "tracked": true
+    },
+    {
+      "bytes": 79484,
+      "path": "public/snapshot/gateb/raw/evidence__claim-status-register-2026-09-06.json",
+      "sha256": "8b51fb876cfee961f70808e0ad16ad01b8d4735f41211160215794889e89f6d7",
+      "tracked": true
+    },
+    {
+      "bytes": 2656,
+      "path": "public/snapshot/gateb/raw/evidence__measurement__result_aa.txt",
+      "sha256": "8c521b2fabc9cce612dd8590c3e303cdc8cb160ff5a29ca685bdf5d5da4fb285",
+      "tracked": true
+    },
+    {
+      "bytes": 19880,
+      "path": "public/snapshot/gateb/raw/evidence__measurement__result_ab.txt",
+      "sha256": "e692d2065dc00b45abf684d313aa1b2dfddafe0c72b5fa7147606be7cb085dca",
+      "tracked": true
+    },
+    {
+      "bytes": 2982,
+      "path": "public/snapshot/gateb/raw/evidence__measurement__result_h_instance_unit.txt",
+      "sha256": "a3ca7b32ae8958d1080322462a30fda96e464699e9dfa96605d4e4f71909e49f",
+      "tracked": true
+    },
+    {
+      "bytes": 3698,
+      "path": "public/snapshot/gateb/raw/evidence__measurement__result_l.txt",
+      "sha256": "d1e123df5be493a17b605a6527c3fad6ba347f947aee84ab21c3007d2fd8a726",
+      "tracked": true
+    },
+    {
+      "bytes": 4968,
+      "path": "public/snapshot/gateb/raw/evidence__measurement__result_n.txt",
+      "sha256": "f672311eab85e1d4d1c56b67036481bb4a5c9ef11ca26c073c1517aece8dd652",
+      "tracked": true
+    },
+    {
+      "bytes": 5781,
+      "path": "public/snapshot/gateb/raw/evidence__measurement__result_o.txt",
+      "sha256": "6556344115847bc076fa1b544b2b5bc21c4678d8685f9a6582d647c8eb426ff9",
+      "tracked": true
+    },
+    {
+      "bytes": 4946,
+      "path": "public/snapshot/gateb/raw/evidence__measurement__result_p.txt",
+      "sha256": "7ceb39d079a5a5fff4709fe6585f768dca4dcfd3a80ba67c44b05d48248f556a",
+      "tracked": true
+    },
+    {
+      "bytes": 5855,
+      "path": "public/snapshot/gateb/raw/evidence__measurement__result_q.txt",
+      "sha256": "d364e847ede5111c320c086d9c81a870a847dee2e38416b3a9576d6e669d1497",
+      "tracked": true
+    },
+    {
+      "bytes": 2961,
+      "path": "public/snapshot/gateb/raw/evidence__measurement__result_z.txt",
+      "sha256": "f39bb7e333bb8cce9f18376d3971a3d41592d89e2c6e663cceeea938a2a9c000",
+      "tracked": true
+    },
+    {
+      "bytes": 6068,
+      "path": "public/snapshot/gateb/raw/human-channel__H5_CROSS_AGENT_JOINT.md",
+      "sha256": "5cde5edd9df08331c7f034709365c1fe08dcec65ac099f29015b9f100fbce8f1",
+      "tracked": true
+    },
+    {
+      "bytes": 1579,
+      "path": "public/snapshot/gateb/raw/human-channel__evidence__h3_observation_response_joint.txt",
+      "sha256": "a457e3720ce44d2cf0f5325c6635485820bf79aa9b65422e3160fed2665cfc08",
+      "tracked": true
+    },
+    {
+      "bytes": 1971,
+      "path": "public/snapshot/gateb/raw/human-channel__evidence__h4_dcpt_takeover.txt",
+      "sha256": "ce828a87ae455a5ad54fd94f755b5e936bad735f3325976f2c410c1cfac663d8",
+      "tracked": true
+    },
+    {
+      "bytes": 1457,
+      "path": "public/snapshot/gateb/raw/human-channel__evidence__h5_cross_agent_joint.txt",
+      "sha256": "c4209d9949bfce45f768f68fed192667f463d65714f9a86edd7b69578409abbb",
+      "tracked": true
+    },
+    {
+      "bytes": 1612,
+      "path": "public/snapshot/gateb/raw/human-channel__evidence__h6_total_both_miss.txt",
+      "sha256": "d490f1f3917b0fe067c25f5e2bc7ea8ed0d429c50cf826a81983b8bfa12dcd23",
+      "tracked": true
+    },
+    {
+      "bytes": 2387,
+      "path": "public/snapshot/gateb/raw/human-channel__evidence__h7_intervals.txt",
+      "sha256": "6619d3e7ed13d96cb313755671806fffd0813d204211656c72299e3aeb1d3464",
+      "tracked": true
+    },
+    {
+      "bytes": 8094,
+      "path": "public/snapshot/gateb/raw/llm-generalization__evidence__result_ac.txt",
+      "sha256": "0f7bdcfd02d3da1b151047644e56ef8860283f4c7c0759c37d8530706ce750d4",
+      "tracked": true
+    },
+    {
+      "bytes": 2128,
+      "path": "public/snapshot/gateb/raw/llm-generalization__evidence__result_t.txt",
+      "sha256": "1a53ddc34fa5d73714af2db5c43a94175c9022896427b31b06cc5feba327a560",
+      "tracked": true
+    },
+    {
+      "bytes": 2324,
+      "path": "public/snapshot/gateb/raw/llm-generalization__evidence__result_u.txt",
+      "sha256": "b076cdb1e998308f325e19492ff29f7c2f2643805f0c6675b8acabc9de20e768",
+      "tracked": true
+    },
+    {
+      "bytes": 1693,
+      "path": "public/snapshot/gateb/raw/llm-generalization__evidence__result_v.txt",
+      "sha256": "674580d2d92acbc5926954a724e1e6481c0f6d269fe0951074dfc38217ea2b8f",
+      "tracked": true
+    },
+    {
+      "bytes": 9074,
+      "path": "public/snapshot/gateb/raw/llm-generalization__evidence__result_x.txt",
+      "sha256": "88ea5d4074bd8dbca32899d250acebe5d2cf3ec4d1240898ad39f6ab78943813",
+      "tracked": true
+    },
+    {
+      "bytes": 8896,
+      "path": "public/snapshot/gateb/raw/llm-generalization__evidence__result_x2.txt",
+      "sha256": "a3d75afc170213442d149e7331ed8b57b42764946e62a9776d4716d0a82f6368",
+      "tracked": true
+    },
+    {
+      "bytes": 7328,
+      "path": "public/snapshot/manifest.json",
+      "sha256": "aa139075a4063dee7fcb99ebce1cc805084dcb81e6968176df42be591f10726e",
+      "tracked": true
+    },
+    {
+      "bytes": 505497,
+      "path": "public/snapshot/raw/index",
+      "sha256": "998f953fa35c908206cf93bd21d3000f96caf6ae044b7424d8dccf4826223af8"
+    },
+    {
+      "bytes": 105,
+      "path": "public/snapshot/raw/index-sidecar",
+      "sha256": "5b72c1933a178e0481f258b9aef1f3e176b440e409066e113cb8dd10f27617c0"
+    },
+    {
+      "bytes": 10880,
+      "path": "src/boot/ProofBoot.tsx",
+      "sha256": "080b4fcb9044e636a065a4f7985492d51c6c61662092f3a4b3bec2e0adb8b607",
+      "tracked": true
+    },
+    {
+      "bytes": 13357,
+      "path": "src/lib/evidence.ts",
+      "sha256": "b29e953e44375920fe38b9159a11ccc48dafb3673d96ca6ef0a399f9467316a4",
+      "tracked": true
+    },
+    {
+      "bytes": 31607,
+      "path": "src/lib/gateb.ts",
+      "sha256": "d322d000b0020ac1edf1c59f43644adae9b8017b16a584f5bd700b95edad5d8a",
+      "tracked": true
+    },
+    {
+      "bytes": 17802,
+      "path": "src/stations/Law.tsx",
+      "sha256": "73926fc7840d7561c6e0dfb0d6b6554e30d399b5c8285478ec5d0df85a3ac954",
+      "tracked": true
+    },
+    {
+      "bytes": 13730,
+      "path": "src/stations/Measurement.tsx",
+      "sha256": "2e8e0995803ce175529948dbf3da8c5a212adcb2eae7e50176243be1a754736c",
+      "tracked": true
+    },
+    {
+      "bytes": 13443,
+      "path": "src/stations/Monitor.tsx",
+      "sha256": "598550e878443dfa405922e899700fc3dcfc0a80715f0fd6c38ce2db67ef3cb0",
+      "tracked": true
+    },
+    {
+      "bytes": 15841,
+      "path": "src/stations/SameHazard.tsx",
+      "sha256": "2aa7aabbb95ab27772dc65bccf220c3ffae916db14f4de1085c70622d0bc5e41",
+      "tracked": true
+    }
+  ],
+  "toolchain": {
+    "node": "v20.18.3",
+    "typescript": "5.9.3",
+    "typescript_sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675"
+  },
+  "limits": [
+    "Mocked HTTP responses; no live network or deployment read",
+    "React effects and DOM are not executed",
+    "No independent human usability study",
+    "Owner worktree unchanged; repair variant exists only in private review custody",
+    "F02, F03 and F04 are outside the four-file repair and remain reproduced",
+    "Digest equality would not establish scientific truth or operator acceptance"
+  ]
+}

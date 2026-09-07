@@ -1,0 +1,71 @@
+{
+  "artifact_id": "reiyah.cache-selection-result.0.1.0",
+  "inputs_and_sources_unchanged": true,
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Current upstream source does not establish the exact historical SDK execution environment",
+    "Literal policy extraction is tied to inspected sources; it is not a generic code verifier",
+    "Selection code is independent of the cache builder; raw data and streaming reader are shared",
+    "Annotation membership is not physical object truth, benchmark compliance or scientific acceptance"
+  ],
+  "private_output_closure": [
+    {
+      "bytes": 61586423,
+      "path": "annotation-dispositions.private.jsonl",
+      "sha256": "3d238111d25f4ac240c8bff3025db46c33293996684b1b1cd948b3947370c6c9"
+    },
+    {
+      "bytes": 75,
+      "path": "membership-differences.private.json",
+      "sha256": "75f2af804368935bb5fdb8e2a3843967b8c656e706e449e0d14bc260066485f3"
+    }
+  ],
+  "result": {
+    "annotation_membership": {
+      "cache_absent_from_expected": 0,
+      "cache_metadata_mismatches": 0,
+      "expected_absent_from_cache": 0,
+      "expected_annotation_count": 134565,
+      "retained_cache_annotation_count": 134565,
+      "status": "supported"
+    },
+    "frames_with_selected_annotations": 5953,
+    "frames_without_selected_annotations": 66,
+    "included_class_counts": {
+      "barrier": 16911,
+      "bicycle": 2060,
+      "bus": 2085,
+      "car": 59522,
+      "construction_vehicle": 1599,
+      "motorcycle": 2009,
+      "pedestrian": 25678,
+      "traffic_cone": 12491,
+      "trailer": 2446,
+      "truck": 9764
+    },
+    "included_zero_point_annotations": 12694,
+    "physical_false_positive_rate": null,
+    "prediction_census": {
+      "camera": {
+        "extra_nonvalidation_frames": 0,
+        "frame_count": 6019,
+        "missing_official_validation_frames": 0
+      },
+      "lidar": {
+        "extra_nonvalidation_frames": 0,
+        "frame_count": 6019,
+        "missing_official_validation_frames": 0
+      }
+    },
+    "selection_reason_counts": {
+      "included": 134565,
+      "outside_class_range": 52963,
+      "unmapped_category": 4513
+    },
+    "validation_annotation_count": 192041,
+    "validation_frame_count": 6019,
+    "validation_scene_count": 150
+  },
+  "spec_sha256": "c7912f816af9b92b26c5aeb9b39e5521db10aa3153246276f2674b16c446ca2d",
+  "version": "0.1.0"
+}

@@ -1,0 +1,86 @@
+{
+  "artifact_id": "reiyah.reference-study.design-precision.0.1.0",
+  "version": "0.1.0",
+  "lifecycle_status": "failed",
+  "scope": "Distribution-free precision of the proposed design, not detector performance",
+  "selection_sha256": "c5a58b64a12212d02aa422ab8814d59bdda6858d99f0dca84632b0ee79a38277",
+  "groups": {
+    "cache_near_control": {
+      "state": "awaiting_independent_review",
+      "population_n": 78576,
+      "sampled_n": 60,
+      "resolved_n": 0,
+      "unresolved_or_unreviewed_n": 60,
+      "ht_lower_estimate": 0.0,
+      "ht_upper_estimate": 1.012077479128487,
+      "confidence_level": 0.95,
+      "scene_sampling_margin": 0.8455556135523858,
+      "within_scene_sampling_margin": 0.23868341501499263,
+      "confidence_set": [
+        0.0,
+        1.0
+      ],
+      "point_estimate": null,
+      "physical_truth_estimate": null,
+      "assumption": "Randomized finite-population sample; fixed potential review outcomes. Does not cover systematic reviewer error."
+    },
+    "excluded_annotation_near": {
+      "state": "awaiting_independent_review",
+      "population_n": 3151,
+      "sampled_n": 43,
+      "resolved_n": 0,
+      "unresolved_or_unreviewed_n": 43,
+      "ht_lower_estimate": 0.0,
+      "ht_upper_estimate": 1.0869565217391308,
+      "confidence_level": 0.95,
+      "scene_sampling_margin": 3.807995690490523,
+      "within_scene_sampling_margin": 0.5376830287769777,
+      "confidence_set": [
+        0.0,
+        1.0
+      ],
+      "point_estimate": null,
+      "physical_truth_estimate": null,
+      "assumption": "Randomized finite-population sample; fixed potential review outcomes. Does not cover systematic reviewer error."
+    },
+    "full_unmatched_coincident": {
+      "state": "awaiting_independent_review",
+      "population_n": 2351,
+      "sampled_n": 43,
+      "resolved_n": 0,
+      "unresolved_or_unreviewed_n": 43,
+      "ht_lower_estimate": 0.0,
+      "ht_upper_estimate": 1.5801786473840913,
+      "confidence_level": 0.95,
+      "scene_sampling_margin": 5.465875980567782,
+      "within_scene_sampling_margin": 0.7779538669045161,
+      "confidence_set": [
+        0.0,
+        1.0
+      ],
+      "point_estimate": null,
+      "physical_truth_estimate": null,
+      "assumption": "Randomized finite-population sample; fixed potential review outcomes. Does not cover systematic reviewer error."
+    },
+    "full_unmatched_unpaired": {
+      "state": "awaiting_independent_review",
+      "population_n": 18930,
+      "sampled_n": 60,
+      "resolved_n": 0,
+      "unresolved_or_unreviewed_n": 60,
+      "ht_lower_estimate": 0.0,
+      "ht_upper_estimate": 1.1238774432118326,
+      "confidence_level": 0.95,
+      "scene_sampling_margin": 1.1670757055333523,
+      "within_scene_sampling_margin": 0.273324955584239,
+      "confidence_set": [
+        0.0,
+        1.0
+      ],
+      "point_estimate": null,
+      "physical_truth_estimate": null,
+      "assumption": "Randomized finite-population sample; fixed potential review outcomes. Does not cover systematic reviewer error."
+    }
+  },
+  "conclusion": "Each worst-case sampling margin exceeds one before unresolved mass; this design cannot narrow any confidence set below [0,1]. Retain it as a design counterexample; supersede before independent judgments."
+}

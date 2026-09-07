@@ -1,0 +1,80 @@
+{
+  "artifact_id": "reiyah.protocol.reference-adjudication.0.2.0",
+  "version": "0.2.0",
+  "lifecycle_status": "exploratory",
+  "date": "2026-09-07",
+  "base_research_commit": "4deb1d19ef1db6fa37fb6b20ca0b4ffda93c4bcc",
+  "prospective_scope": "Selection and analysis rules frozen before new independent judgments; inputs and aggregate AO findings were previously explored. This is not unseen-data preregistration or operator acceptance.",
+  "question": "How often does a reference-relative unmatched camera detection have independently reviewable evidence of a physical object compatible with its location, and how sensitive is that assessment to timing and reference population?",
+  "population": "Every Mapillary validation detection with score >= 0.3 in every sample present in the retained ground-truth cache; all 150 scenes, no restriction by temporal-null eligibility. This output-conditioned audit cannot measure objects missed by both detectors.",
+  "score_threshold": 0.3,
+  "association_radius_m": 2.0,
+  "selection": "Uniform without replacement detections within each of four disjoint reference strata over the complete eligible population. Domain-separated HMAC-SHA256 priorities with a new private random 256-bit key committed before selection. Preserve scene identities and all empty population cells. No replacement after evidence inspection.",
+  "strata": [
+    "cache_near_control",
+    "excluded_annotation_near",
+    "full_unmatched_coincident",
+    "full_unmatched_unpaired"
+  ],
+  "stratum_rules": [
+    "cache_near_control: nearest retained cache annotation XY distance <= 2 m",
+    "excluded_annotation_near: cache distance > 2 m and nearest complete annotation XY distance <= 2 m",
+    "full_unmatched_coincident: both reference distances > 2 m and a score-qualified lidar detection also unmatched to the complete reference is within 2 m XY",
+    "full_unmatched_unpaired: both reference distances > 2 m, with no such lidar detection"
+  ],
+  "reference_semantics": "Any annotation class; nearest center distance, not box overlap or prediction correctness. Complete table is more inclusive, not physical truth. Missing reference samples or detector sample keys abort selection; empty detector lists remain observed empty lists.",
+  "case_evidence": "Six original camera images and top lidar for the keyframe and preceding/following keyframe in the same scene when those frames exist; exact raw-asset hashes, own sensor timestamp, own ego pose and calibration. Missing assets and scene boundaries remain explicit. No reference annotations, detector names, scores, stratum labels or derived truth flags in reviewer packets.",
+  "geometry": "Global candidate center at sample timestamp; project using inverse per-sensor ego pose and extrinsics with nuScenes wxyz quaternions. Markers in other frames show a fixed world location, not an estimated object trajectory. No missing velocity imputed to zero. Unknown sensor calibration accuracy and lidar per-point acquisition times remain unknown.",
+  "timing_sensitivity_speed_bounds_mps": [
+    0.0,
+    5.0,
+    15.0,
+    30.0
+  ],
+  "timing_sensitivity_semantics": "Diagnostic displacements V * absolute sensor/sample time difference, conditional on the stated speed bound. Zero is a static-object sensitivity scenario, not a default motion estimate. These are not calibrated uncertainty intervals and do not bound annotation error.",
+  "review": "Two independent human reviewers, assigned before packets are opened, judge whether a physical object is supported at a location compatible with the candidate center within 2 m XY at the sample time. Any class qualifies. Reviewers must cite actual packet evidence, consider visibility and motion, and use unresolved if object center or timing cannot be localized. Inconsistent requires sufficient visibility and affirmative evidence of incompatibility, never annotation absence alone. Consensus is a fallible measurement, not independent proof of reality. A third reviewer may resolve disagreement only in a separately versioned phase; no adjudication is silently substituted.",
+  "review_outcomes": [
+    "supported",
+    "inconsistent",
+    "unresolved",
+    "not_reviewed"
+  ],
+  "validity_states": [
+    "usable",
+    "missing",
+    "sensor_invalid",
+    "out_of_distribution",
+    "abstained"
+  ],
+  "primary_estimand": "Finite-population fraction of eligible camera detections in each declared stratum that would receive concordant support from the specified two-reviewer protocol. The SRS audit can estimate this detection-weighted finite-population quantity despite scene clustering. It does not estimate a new-scene distribution or physical truth.",
+  "analysis": "Concordant supported => [1,1]; concordant inconsistent => [0,0]; disagreement, missing, invalid, abstained, unresolved or absent review => [0,1]. Per-stratum sample means estimate finite-population endpoints because inclusion probabilities are equal within each stratum. Report 95% simultaneous confidence sets for all four population fractions using Hoeffding without replacement and Bonferroni over eight one-sided tails: epsilon_g=sqrt(log(8/alpha)/(2*n_g)), zero for a census. Intersect confidence sets, not sample counts, with [0,1]. This randomization bound does not assume IID physical objects or scenes; it does assume fixed potential review outcomes and the declared sampling design. No inference to unseen scenes or environments.",
+  "confidence_level": 0.95,
+  "baselines": [
+    "Original filtered-reference flag",
+    "Complete-reference flag",
+    "Independent blinded sensor review",
+    "Timing sensitivity under each stated speed bound"
+  ],
+  "ablations": [
+    "Reference population: cache versus complete table",
+    "Current frame versus temporal context: separate future protocol required before collecting paired judgments",
+    "Camera-only versus multimodal evidence: separate randomized exposure protocol required; no causal effect claimed in this phase"
+  ],
+  "failure_criteria": [
+    "Any audited physical support in an unmatched group falsifies interpreting all such flags as physically nonexistent objects",
+    "Unavailable or unresolvable evidence prevents physical labeling; high unresolved mass invalidates a sharp physical-performance conclusion",
+    "An apparent group difference whose confidence sets permit either ordering is inconclusive",
+    "Audit code or geometry fails a known-bad control: affected packets are invalid, preserved and superseded, never repaired under the same identifier"
+  ],
+  "success_criteria": [
+    "Independent judgments materially narrow the support interval in at least one unmatched group without conditioning away unresolved cases",
+    "Every reported finding survives disclosure of the sampling weights, reference changes, timing assumptions and reviewer disagreement",
+    "A useful improvement over the complete-reference baseline must be shown on a separately frozen cohort; this pilot alone cannot establish transfer or frontier performance"
+  ],
+  "next_decision": "If unresolved mass makes the intervals uninformative, stop a physical-performance estimate and investigate observability. If they narrow, use the independently reviewed pilot to design a separately frozen confirmation cohort and causal-prefix monitor comparison. Do not reinterpret this cohort as unseen-scene validation.",
+  "custody": "Raw public-dataset assets and selected cases remain private; aggregate provenance and original code only may enter this research branch. No dataset payload redistribution, runtime deployment, training, independent reviewer impersonation, or Gate A acceptance is authorized by this protocol.",
+  "supersedes_protocol_sha256": "d3832d7928efcbc2e197ccb7a096420c19ede9b36e01120b631866467370f123",
+  "supersession_reason": "Pre-label design check rejected distribution-free precision of scene-cluster sample; population is a fixed finite detection set, so randomizing individual audit opportunities is valid without an IID-world assumption.",
+  "cases_per_stratum": 60,
+  "confidence_scope": "Simultaneous across the four predefined groups; physical reviewer error is outside this probability statement."
+}

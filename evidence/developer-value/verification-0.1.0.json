@@ -1,0 +1,85 @@
+{
+  "artifact_id": "reiyah.developer-value-verification.0.1.0",
+  "bound_files": {
+    "evidence/developer-value/frame-coverage-0.1.0.json": "5f2489b44f6795c7903f9947a2b819bbd69ac644d68ee4511bb6861ee71354b0",
+    "evidence/developer-value/frame-coverage-capture-0.1.0.json": "ed2bbc87ac110a4dcf18681b895bcaebf1a639e599ff5dad85bc1f3720250c21",
+    "evidence/developer-value/frame-coverage-spec-0.1.0.json": "8c9e145cf9ad31cede45584f7699f448bae1e21e211d6ee3a7810d23e65c42a8",
+    "evidence/developer-value/numerical-comparison-0.1.0.json": "c4dacef9e06786b22d5dd69b102a984367253027233e83a7053e494c9de045c1",
+    "evidence/developer-value/numerical-comparison-capture-0.1.0.json": "f83df57c7ad09a1eff8ec10d35122b329c392c2eb23ef63f2bc427743ade4480",
+    "evidence/developer-value/real-replay-0.1.0.json": "5e30e68046bcb691fab2efc114f5e4f390131db952647db9a47f272b88193615",
+    "evidence/developer-value/real-replay-capture-0.1.0.json": "4382b2d16ba979c693939d89eaca126cf5a9e1a2ae6fade9a37b31d4f9e339fa",
+    "evidence/developer-value/real-replay-spec-0.1.0.json": "0a36cee9f5c94ecb23b4dc95117766f582128e483b51200b034c24bcee061d17",
+    "evidence/developer-value/reference-audit-demo-0.1.0.json": "c6609be0bfaf99544ff340a3664e2d018908cf9179547ab7da9bb1462b896565",
+    "evidence/developer-value/regression-capture-0.1.0.json": "edbda3ae4dcdd9de42340e3459d756d40914e2f14995c078887f477d2df380ae",
+    "evidence/developer-value/sibling-audit-0.1.0.json": "6bf9436fbcd8a63ca3a75251e5aed8286c9c449f9f3b365234218fbb6b55a877",
+    "evidence/developer-value/sibling-source-ledger-0.1.0.json": "25c8418b8d2a0a305f4e766005aef9aa9d2e7bfb3144fa2d89fe796fd8e6f74a",
+    "evidence/developer-value/source-ledger-0.1.0.json": "dc4173b5699be74d4433b2632e0b5808b785782d5a83462a9f4e5a57d34364eb",
+    "research/reference-audit/0.1.0/demo.json": "7cc430411a6f8e5052457286110cdcc98f7ece3dc0ef27c2b008c31cbe809cc7",
+    "research/reference-audit/0.1.0/input.schema.json": "0e62bba924c40cf13fa75c9b997eaabd560c67f223a62520eb36ca37915b0578",
+    "tools/measure/audit_reference_frame_coverage.py": "1edc6c4639b8c542b07150ac09f8f2da241ad217512500d4ab0476749a1dca19",
+    "tools/measure/audit_sibling_evidence.py": "037ec3655a90404ea015747dbdde04f9f47c4a353a0f2cc077a6cc8f5858ad63",
+    "tools/measure/compare_reference_replays.py": "cfd7fae045c50633bc60638b8c7e83ff913721e6eac6e806f0d3b2c923322bbf",
+    "tools/measure/reference_population_audit.py": "20357fac547358063116d6652b2dc31f0c4a6a45feb1112db35d5bddadc70cbd",
+    "tools/measure/replay_reference_population_audit.py": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+    "tools/measure/test_reference_population_audit.py": "ef904946eea124902b7e8bc276cd1d39008d408eb3a800639267200e365c605e",
+    "tools/measure/test_reference_replay_adapter.py": "1862a7d2bab623fd5d2966e114394e908bb727ffb7950e84a7fe52daf3480d06",
+    "tools/measure/verify_developer_value.py": "8f5c41de26eefcf113f3484fc54d9f9534ad586d7a3359d218e4b9e861536567"
+  },
+  "checks": [
+    {
+      "check": "schema_and_demo",
+      "detail": "Draft 2020-12 schema and exact current demo replay",
+      "state": "pass"
+    },
+    {
+      "check": "sibling_sources_and_arithmetic",
+      "detail": "32 exact selected Git blobs; three independent reaggregations",
+      "state": "pass"
+    },
+    {
+      "check": "primary_source_custody",
+      "detail": "10 private primary payloads; no Gate A eligibility inferred",
+      "state": "pass"
+    },
+    {
+      "check": "real-replay",
+      "detail": "Successful captured process, source bindings and every private bundle/report digest",
+      "state": "pass"
+    },
+    {
+      "check": "frame-coverage",
+      "detail": "Successful captured process, source bindings and every private bundle/report digest",
+      "state": "pass"
+    },
+    {
+      "check": "numerical_comparison",
+      "detail": "222902 retained classifications agree; shared source construction remains a limitation",
+      "state": "pass"
+    },
+    {
+      "check": "real_data_tables",
+      "detail": "Both numerical tables bind to aggregates; changed-count counterexample rejected",
+      "state": "pass"
+    },
+    {
+      "check": "new_regressions",
+      "detail": "12 portable-auditor and 7 adapter controls passed with captured streams",
+      "state": "pass"
+    },
+    {
+      "check": "protected_predecessor",
+      "detail": "748 release files and the claim register remain byte-identical to 9d8a18e",
+      "state": "pass"
+    }
+  ],
+  "gate_a_release": false,
+  "limitations": [
+    "Observed local execution and byte integrity, not independent scientific acceptance",
+    "Inherited historical experiments are not all freshly replayed",
+    "Table guard covers the named real-data tables, not arbitrary prose semantics"
+  ],
+  "mode": "development",
+  "operator_acceptance": "unaccepted",
+  "status": "pass",
+  "version": "0.1.0"
+}

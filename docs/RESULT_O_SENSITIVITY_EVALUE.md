@@ -1,56 +1,30 @@
-# Result O: how strong an unmeasured common cause would have to be to explain the coupling
+# Result O: descriptive sensitivity analysis, interpretation corrected
 
 Document ID: `reiyah.result-o-sensitivity-evalue`
 
-Version: `0.1.0`
+Version: `0.1.1`
 
-Lifecycle status: `proposed`
+Lifecycle status: `corrected`
 
-## The caveat every result declares, now quantified
+The retained numerical sweep is historical. The original statement that **each** confounding arm
+must individually exceed the E-value was wrong. Under the bounding-factor formulation, the
+E-value is an equal-strength benchmark and a lower bound on the maximum strength required for
+explanation, not the minimum required on each arm separately. An unequal pair can explain the
+association with one arm below that benchmark.
 
-Results L, M and N each end on the same honest sentence: the residual camera-lidar
-dependence is measured after the covariates nuScenes annotates, and an **unmeasured** common
-cause of both failures could in principle produce it. Object size and truncation are the
-named candidates; occlusion finer than the coarse visibility bin is another. Until now that
-caveat was only declared. This result measures it.
+The [research-board report](RESEARCH_BOARD_2026-09-07.md) gives an explicit counterexample.
+The primary [Ding-VanderWeele paper](https://arxiv.org/abs/1507.03984) supplies the bounding-factor
+framework. The sensitivity parameters and target risk ratio still require substantive justification;
+this calculation does not identify a causal effect of camera failure on lidar failure.
 
-The standard instrument is the **E-value** (VanderWeele and Ding, *Annals of Internal
-Medicine*, 2017): the minimum strength of association, on the risk-ratio scale, that an
-unmeasured confounder would need with **both** the exposure and the outcome, beyond the
-measured covariates, to move an observed conditional association all the way to the null. A
-large E-value means only an implausibly strong hidden factor could account for the finding; a
-small one means a weak factor could.
+## Retained calculation
 
-The framing fits this problem exactly. Take camera failure as the exposure and lidar failure
-as the outcome; the unmeasured confounder the E-value bounds is a **common cause of both** -
-precisely the latent shared difficulty a critic invokes. So the E-value answers the skeptic's
-real objection in the skeptic's own terms: *how much* unmeasured shared difficulty would it
-take.
-
-## Method
-
-For each score threshold and each detector pair, on the same L5 common support as Results L,
-M and N (five admissible confounders; the ground-truth-fixed 131,722-row population), compute
-the Mantel-Haenszel conditional risk ratio of lidar-miss comparing camera-miss objects to
-camera-hit objects, directly from the same 2x2 cells the coefficient uses:
-
-```
-a = camera miss AND lidar miss     b = camera miss AND lidar hit
-c = camera hit  AND lidar miss     d = camera hit  AND lidar hit
-RR_MH = sum_i a_i (c_i + d_i)/n_i  /  sum_i c_i (a_i + b_i)/n_i      (Greenland-Robins)
-```
-
-The risk ratio is taken directly from the counts, so no odds-ratio-to-risk-ratio
-approximation is involved and the common-outcome caveat of the OR-based E-value does not
-apply. Uncertainty is the identical instance-clustered bootstrap. The E-value
-`E(x) = x + sqrt(x(x-1))` is reported for the point estimate and, as the method requires for a
-finding, for the confidence bound nearest the null.
-
-**Self-check.** The Mantel-Haenszel odds ratio at `score >= 0.30` is `2.776` for the Megvii
-pair, against Result E's independently derived conditional MH OR of `2.810` on the shallower
-class x range x visibility stratification. Adding weather and motion lowers it slightly, as it
-should, which confirms the machinery reproduces the established conditional association before
-any E-value is computed on it.
+For the original deepest-stratum support, the script computes a Mantel-Haenszel risk ratio of
+lidar miss comparing camera-miss objects with camera-hit objects, and a bootstrap interval
+resampling tracked instances. It then applies `E(x) = x + sqrt(x(x - 1))` to the risk ratio and
+its near-null confidence bound. The formula is not a sensitivity analysis of the normalized
+joint-miss coefficient itself. A new scene-cluster interval for that separate coefficient is in
+[Result AO](RESULT_AO_REFERENCE_POPULATION_AUDIT.md); it does not replace the intervals below.
 
 ## The sweep
 
@@ -74,75 +48,22 @@ any E-value is computed on it.
 | 0.40 | 1.355 [1.321, 1.391] | 2.094 | 2.048 | 1.972 |
 | 0.50 | 1.355 [1.315, 1.398] | 2.071 | 2.048 | 1.958 |
 
-## Answer
+## Permitted interpretation
 
-At the `score >= 0.30` reference point, an unmeasured common cause of camera failure and
-lidar failure would have to be associated with **each**, on the risk-ratio scale and beyond
-class, range, visibility, weather and motion, by a factor of at least:
+The table describes the original selected population and assumptions. Unmeasured object size,
+truncation, occlusion or shared reference error remain possible explanations. No empirical
+measurement here determines that such explanations are implausible. Conditioning on additional
+variables need not monotonically lower an association statistic.
 
-- **3.03** for Mapillary x Megvii (2.88 for the near-null 95% bound),
-- **2.13** for Mapillary x PointPillars (2.05 for the near-null 95% bound),
+RSS permits bounded dependence under specified safety-critic events. This detector-level analysis
+does not refute RSS, quantify a vendor's safety, or justify the withdrawn evidence-budget figures.
 
-to explain the coupling away. A hidden factor weaker than that on either arm cannot account
-for it; one at least that strong on both could. For scale, that is an unmeasured shared
-difficulty comparable to the strongest **measured** covariate effects in this data, not a
-slight residual imbalance the conditioning happened to miss.
+## Historical generator and custody
 
-Two things stated as measured, neither softened nor oversold:
+[The original transcript](../evidence/measurement/result_o.txt) and
+[original generator](../tools/measure/result_o_sensitivity_evalue.py) remain unchanged to preserve
+reproduction lineage, including their overinterpretation. Their printed prose is superseded by
+this correction and the current register; a byte-identical replay does not readmit it.
 
-1. **The E-value falls as the threshold tightens** (Megvii 4.73 to 2.28; PointPillars 3.16 to
-   2.05), tracking the coupling's own attenuation in Result N. The strictest operating points
-   ask the least of a confounder; the loosest ask the most.
-
-2. **The E-value bounds plausibility; it does not test existence.** Object size and truncation
-   are named unmeasured candidates. This result says how strong such a factor would have to
-   be, not that one is present or absent.
-
-## The three robustness axes
-
-With this result the finding stands on three independent axes, each answering a distinct
-cheap objection on evidence rather than assertion:
-
-| Axis | Result | Objection answered |
-|---|---|---|
-| the detector | M | "it is one model pair" - survives a second, architecturally distinct lidar backbone |
-| the score threshold | N | "0.3 is cherry-picked" - conditional coefficient excludes 1.0 across the whole 0.1-0.5 range |
-| unmeasured confounding | O | "you did not measure everything" - a hidden common cause must reach RR >= ~2-3 on both arms to nullify |
-
-The one axis still open is the camera detector: every pair shares the single Mapillary camera
-model, so robustness to the *camera* choice is untested and needs a second camera-only
-detector.
-
-## Consequence
-
-RSS Definition 32's channel-independence assumption fails on this evidence not only across
-detectors and operating points but robustly to unmeasured shared difficulty: the residual
-coupling cannot be an artifact of one omitted covariate unless that covariate is strong. The
-safety-argument premise in Result G is correspondingly harder to dismiss.
-
-## Provenance
-
-`evidence/measurement/result_o.txt` records both commands, both full sweeps, and the
-odds-ratio self-check against Result E.
-
-## Adversarial reading, 2026-09-06
-
-A context-free reader (model-assisted, advisory, same model family as the author) read this document against its transcript alone. The points below are the ones that changed a sentence; the full record is `evidence/review-model-assisted-2026-09-06.json`.
-
-1. The E-value neither rules unmeasured confounding in nor out, as the transcript's non-claims say;
-   "robustly to unmeasured shared difficulty" overstated that and is withdrawn as a sentence. An
-   E-value of about 2 is not large in data where the range band alone moved the coefficient by
-   0.132, and named candidates (object size, truncation, fine occlusion) could plausibly carry that
-   strength on both channels. The result bounds the confounder's required strength; it does not
-   make it implausible.
-2. The comparison "comparable to the strongest measured covariate effects" had no numbers behind
-   it in this transcript and is withdrawn as a sentence.
-3. Two transcript non-claims are added: association after declared conditioning, not a causal
-   effect; bounded by the covariates the benchmark annotates.
-
-## Non-claims
-
-No scientific support, safety finding, compliance determination, comparative claim about any
-detector or vendor, and no operator acceptance. The E-value bounds unmeasured confounding; it
-neither rules it in nor out. Two published detection outputs on one public split, retained as
-`proposed`. No released `1.2` byte is modified.
+No scientific support, safety finding, standards compliance, physical causal identification,
+comparative vendor claim or operator acceptance is established by this correction.

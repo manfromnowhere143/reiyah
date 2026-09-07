@@ -1,0 +1,79 @@
+{
+  "analyzer_sha256": "ff06980294fa6e66bd7a8c768c253a36c57aa8e6e0c345d6a6c1694ca482417d",
+  "input_artifact_id": "reiyah.m4-control.off-grid-maximum.0.1.0",
+  "input_sha256": "bfd84a483278cd6934b13185b2c557d1af4f7cf54d3108b888dc7fd57e655176",
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Bounds concern the declared rectangle, not a justified empirical reference model",
+    "Sampling uncertainty, unknown constraints and coupled reference-error constraints are not supplied by this calculation",
+    "Mathematical witnesses are not physical-reference or safety certificates"
+  ],
+  "result": {
+    "box": [
+      [
+        "0",
+        "11"
+      ],
+      [
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1"
+      ]
+    ],
+    "cell_order": [
+      "both",
+      "a_only",
+      "b_only",
+      "neither"
+    ],
+    "defined_domain_exists": true,
+    "empty_universe_feasible": false,
+    "infimum": {
+      "attained": true,
+      "value": "0",
+      "witness": {
+        "cell_masses": [
+          "0",
+          "1",
+          "1",
+          "1"
+        ],
+        "coefficient": "0",
+        "kind": "defined_point"
+      }
+    },
+    "model": "nonnegative rectangular cell masses",
+    "state": "all_positive_universes_defined",
+    "supremum": {
+      "attained_on_defined_domain": true,
+      "enclosure_width": "0",
+      "kind": "finite",
+      "refinements": 0,
+      "requested_width": "1/1000000000000",
+      "requested_width_met": true,
+      "supremum_enclosure": [
+        "9/8",
+        "9/8"
+      ],
+      "witness": {
+        "cell_masses": [
+          "3",
+          "1",
+          "1",
+          "1"
+        ],
+        "coefficient": "9/8",
+        "kind": "defined_point"
+      }
+    },
+    "undefined_positive_universe_feasible": false
+  },
+  "schema_version": "reiyah.rectangular-coincidence-bounds.v1"
+}

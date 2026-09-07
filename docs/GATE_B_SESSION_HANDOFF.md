@@ -1,3 +1,121 @@
+# Engine continuation, 2026-09-07
+
+The interrupted engine work is recovered in `research/2026-09-07-engine-recovery`,
+extending `6925e7e114246c558a7905f1dbe7b0a393068c7d`. Read the
+[engine checkpoint](ENGINE_RECOVERY_CLOSEOUT_2026-09-07.md),
+[predictive-monitor findings](PREDICTIVE_MONITOR_FINDINGS_2026-09-07.md), and
+[next training experiment](TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) first.
+The last successful inherited process was the training-log preflight at 14:04:33 UTC.
+All three monitor runs now pass the completion audit. Fresh log/spatial refits
+reproduce private prediction bytes; their timing-bearing full reports differ.
+The two old-checker acceptance defects are reproduced and rejected by the successor.
+The output-summary feature expansion stops with its negative/unresolved results.
+
+Claim register `0.2.25` is `evidence/claim-status-register-2026-09-07T150115Z.json`.
+All older continuation blocks below retain their historical context. Resolve
+main integration from the exact Git refs and the recovery task's delivery record;
+do not infer it from an earlier block saying no merge was authorized. The operator
+now requested checked integration. Gate A acceptance remains unaccepted, and
+the frozen reference study still has zero independent human judgments. UI/UX
+owner worktrees remain separate. The next engine action is the training sensor-file
+and model-provenance inventory, followed by a prospectively fixed experiment.
+
+---
+
+# Current developer-value and research continuation, 2026-09-07
+
+Latest checkpoint: `research/2026-09-07-physical-reference-transfer`, extending
+`ed10cff36d48b30dfddab9484de1da8b289444ae`. Read the
+[sampling and RSS interpretation findings](RSS_TRANSFER_AND_RARE_EVENT_LIMITS_2026-09-07.md),
+[physical-reference assessment](PHYSICAL_REFERENCE_OPTIONS_2026-09-07.md), and
+[closeout](PHYSICAL_REFERENCE_TRANSFER_CLOSEOUT_2026-09-07.md). Eleven new tests pass;
+the exact synthetic sampling limits also pass a separately written numerical check.
+No physical failure rate, reduced safety budget or new dataset is inferred. The NPL
+portal's public client was inspected; protected data and application terms remain
+unaccessed. Independent judgments for the frozen 240-case study are still pending.
+
+The preceding interface checkpoint is `ed10cff36d48b30dfddab9484de1da8b289444ae`, extending
+`9aceb3d1d39b27b54d1fdfe6f91a3828b2cb50c5`. Read the
+[interface findings](INTERFACE_EVIDENCE_REVIEW_2026-09-07.md) and
+[closeout](INTERFACE_EVIDENCE_CLOSEOUT_2026-09-07.md). Captured console consumers accept
+several mismatched or incomplete records; a private four-file repair closes the tested
+Gate B digest, register-selection and unknown-comparison paths. Report, path-addressed
+record and receipt-version failures remain explicit. The separate owner worktrees are
+unchanged. No new measurement of physical truth or acceptance is implied.
+
+The [reference-identification checkpoint](REFERENCE_IDENTIFICATION_CLOSEOUT_2026-09-07.md)
+still supplies exact ambiguity witnesses and the metadata clock census. Its proposed
+opportunity pilot remains unselected, and the original 240-case detection study still
+awaits independent human judgments. All prior corrections and frozen studies remain intact.
+
+Read [the current task ledger and shutdown handoff](RESEARCH_CONTINUATION_2026-09-07.md)
+first. The local `research/2026-09-07-developer-value` candidate extends reference-study
+commit `9d8a18eab7144bd02b1f64c41bc8f179f32ee653`. It adds an offline portable reference
+auditor, selected sibling evidence recalculations and a current interface/value investigation.
+It does not add an MCP service, merge sibling code, run perception inference or produce human
+adjudication. The prepared reference study remains the scientific priority.
+
+The earlier continuation blocks below preserve their dated context. In particular, the board's
+original instruction to design the reference study is superseded by the completed preparation
+at `9d8a18e`; it is not an instruction to restart sampling. Use the current ledger to resolve
+what is completed, proposed, pending or deferred. Existing protocols and claim registers are
+unchanged, and no passing development check supplies independent acceptance.
+
+---
+
+# Research-board continuation, 2026-09-07
+
+## Reference-study continuation, 2026-09-07
+
+The isolated `research/2026-09-07-reference-study` revision extends research-board commit
+`4deb1d19ef1db6fa37fb6b20ca0b4ffda93c4bcc`. The concurrently active Gate A and Gate B worktrees
+were not edited or switched. Gate B tip `9464ff79a823a91037604bb8343e984b29c128a5` adds a
+historical replay capture over the board’s original `fd094c0` base; it is not silently merged.
+
+Read the [implemented study](REFERENCE_ADJUDICATION_STUDY_2026-09-07.md) and its
+[closeout](REFERENCE_STUDY_CLOSEOUT_2026-09-07.md). Protocol 0.1.0 failed a pre-label precision
+check and is retained. Protocol 0.2.0 selects 60 detections in each of four reference strata,
+240 cases across 93 scenes; the selection was reproduced exactly. The uncertainty estimator
+uses finite-population randomization, retains unresolved cases and makes no unseen-scene
+guarantee. Raw assets, opaque case mappings and selection keys remain in private custody.
+Independent human reviewers have not been supplied or impersonated.
+
+The next authorized action is independent assignment and blinded review of this frozen cohort,
+then analysis into a new output identity. Do not train on reference-relative flags as physical
+truth or relabel disagreements under the same protocol. Existing Gate A release bytes and
+operator acceptance remain unchanged; development checks do not create acceptance.
+
+
+The isolated research candidate follows exact Gate B commit
+`fd094c066437e67cefbb86f363dd1bef7ccf8e6e`; neither active worktree was edited or switched.
+Read [the board report](RESEARCH_BOARD_2026-09-07.md),
+[Result AO](RESULT_AO_REFERENCE_POPULATION_AUDIT.md), and
+[the closeout](RESEARCH_BOARD_CLOSEOUT_2026-09-07.md) before the inherited handoff below.
+
+Completed scope: independently reimplemented reference-population and scene-cluster sensitivity;
+corrected matcher failure/output behavior and replay exit checking; added executable regressions;
+retained aggregate results and primary-source retrieval metadata; replaced the universal-law
+synthesis with scoped findings; corrected the ghost-reference and E-value interpretations.
+The new register is `evidence/claim-status-register-2026-09-07.json`, version `0.2.24`, with exact
+predecessor binding. The replay manifest is version `0.1.14`; every inherited transcript is kept.
+The final validation record, not this prose, determines checker and replay results.
+
+The demonstrated reference defect applies to the ghost series' claimed annotation coverage.
+It does not invalidate miss coefficients on their declared filtered population. The fuller
+reference does not independently determine physical reality. The human belief/readiness constructs,
+causal policy benefits and universal transfer remain unestablished. The concurrent user-supplied
+Claude review agreed with the reference-first direction and supplied the useful scope correction;
+it does not provide independent numerical replication.
+
+Next action: design and preregister independent scene-stratified adjudication of the unmatched
+cases and controls, retaining unresolved labels. Integrate this research commit only from its
+exact branch/commit after reconciling the current engine and UI owners' changes. Do not switch
+branches or overwrite their worktrees. No cloud/model sweep, participant collection, product
+runtime, publication or operator acceptance is inferred. All code and documents remain proposals
+or exploratory measurements under the repository's authority boundaries.
+
+---
+
 # Gate B Session Handoff
 
 Read `AGENTS.md` first, then this. Resolve every state from the exact artifacts named here, never

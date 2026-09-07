@@ -1,0 +1,51 @@
+{
+  "$comment": "This structural schema is supplemented by runtime checks for ordered intervals, positive tolerance, duplicate properties, exact literals and a 16 KiB input bound. This is a mathematical task input, not an empirical reference model.",
+  "$defs": {
+    "exact": {
+      "pattern": "^(?:0|[1-9][0-9]{0,31})(?:\\.[0-9]{1,32}|/[1-9][0-9]{0,31})?$",
+      "type": "string"
+    }
+  },
+  "$id": "https://reiyah.invalid/research/m4-rectangular/0.1.0/input.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]{0,159}$",
+      "type": "string"
+    },
+    "box": {
+      "items": {
+        "items": {
+          "$ref": "#/$defs/exact"
+        },
+        "maxItems": 2,
+        "minItems": 2,
+        "type": "array"
+      },
+      "maxItems": 4,
+      "minItems": 4,
+      "type": "array"
+    },
+    "max_refinements": {
+      "maximum": 512,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "reiyah.rectangular-coincidence-input.v1"
+    },
+    "tolerance": {
+      "$ref": "#/$defs/exact"
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "box",
+    "tolerance",
+    "max_refinements"
+  ],
+  "title": "Reiyah rectangular coincidence input, version 1",
+  "type": "object"
+}

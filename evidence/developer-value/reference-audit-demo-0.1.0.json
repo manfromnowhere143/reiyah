@@ -1,0 +1,107 @@
+{
+  "analyzer_sha256": "20357fac547358063116d6652b2dc31f0c4a6a45feb1112db35d5bddadc70cbd",
+  "boundary": "inclusive",
+  "counts": {
+    "evaluation_reference_near": 1,
+    "excluded_reference_near": 1,
+    "reference_unknown": 1,
+    "unmatched_in_supplied_wider_reference": 1
+  },
+  "evaluation_scope_id": "synthetic.evaluation-reference.v1",
+  "exclusion_fraction_among_observed_evaluation_unmatched": {
+    "denominator": 2,
+    "identified": true,
+    "numerator": 1
+  },
+  "input_artifact_id": "reiyah.reference-audit.synthetic-demo.0.1.0",
+  "input_sha256": "7cc430411a6f8e5052457286110cdcc98f7ece3dc0ef27c2b008c31cbe809cc7",
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Membership is supplied, not independently reconstructed from an upstream evaluator",
+    "Caller supplies alignment and timestamps; no calibration or motion validation",
+    "A supplied wider table is not certified exhaustive of the physical world",
+    "Exact arithmetic concerns the input decimals, not sensor accuracy",
+    "Rows are proximity witnesses, not one-to-one detection matches"
+  ],
+  "metric": "squared Euclidean distance in the supplied aligned XY plane",
+  "physical_false_positive_rate": null,
+  "radius_m": "2",
+  "rows": [
+    {
+      "frame_id": "synthetic-frame-1",
+      "nearest_evaluation_reference": {
+        "annotation_id": "included-object",
+        "distance_squared_m2": {
+          "denominator": "25",
+          "numerator": "1"
+        }
+      },
+      "nearest_wider_reference": {
+        "annotation_id": "included-object",
+        "distance_squared_m2": {
+          "denominator": "25",
+          "numerator": "1"
+        }
+      },
+      "physical_object_presence": "unknown",
+      "prediction_id": "prediction-1",
+      "reference_state": "available",
+      "status": "evaluation_reference_near"
+    },
+    {
+      "frame_id": "synthetic-frame-1",
+      "nearest_evaluation_reference": {
+        "annotation_id": "included-object",
+        "distance_squared_m2": {
+          "denominator": "25",
+          "numerator": "63001"
+        }
+      },
+      "nearest_wider_reference": {
+        "annotation_id": "excluded-object",
+        "distance_squared_m2": {
+          "denominator": "25",
+          "numerator": "1"
+        }
+      },
+      "physical_object_presence": "unknown",
+      "prediction_id": "prediction-2",
+      "reference_state": "available",
+      "status": "excluded_reference_near"
+    },
+    {
+      "frame_id": "synthetic-frame-1",
+      "nearest_evaluation_reference": {
+        "annotation_id": "included-object",
+        "distance_squared_m2": {
+          "denominator": "1",
+          "numerator": "4900"
+        }
+      },
+      "nearest_wider_reference": {
+        "annotation_id": "excluded-object",
+        "distance_squared_m2": {
+          "denominator": "1",
+          "numerator": "400"
+        }
+      },
+      "physical_object_presence": "unknown",
+      "prediction_id": "prediction-3",
+      "reference_state": "available",
+      "status": "unmatched_in_supplied_wider_reference"
+    },
+    {
+      "frame_id": "synthetic-frame-2",
+      "nearest_evaluation_reference": null,
+      "nearest_wider_reference": null,
+      "physical_object_presence": "unknown",
+      "prediction_id": "prediction-4",
+      "reference_state": "unavailable",
+      "status": "reference_unknown"
+    }
+  ],
+  "schema_version": "reiyah.reference-population-audit.v1",
+  "unknown_reference_prediction_count": 1,
+  "upstream_selection_id": "synthetic.four-predictions.v1",
+  "wider_reference_scope_id": "synthetic.wider-reference.v1"
+}

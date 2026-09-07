@@ -1,0 +1,47 @@
+{
+  "artifact_id": "reiyah.reference-audit-numerical-comparison.0.1.0",
+  "camera": {
+    "classification_disagreements": 0,
+    "counts": {
+      "evaluation_reference_near": 78576,
+      "excluded_reference_near": 3151,
+      "unmatched_in_supplied_wider_reference": 21281
+    },
+    "frames": 5953,
+    "margin_scope": "Numerical diagnostic on input coordinates, not a physical error bound",
+    "minimum_floating_point_distance_to_radius_m": 1.9981580366534857e-05,
+    "predictions": 103008
+  },
+  "comparator_sha256": "cfd7fae045c50633bc60638b8c7e83ff913721e6eac6e806f0d3b2c923322bbf",
+  "environment": {
+    "numpy": "2.4.2",
+    "python": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "scipy": "1.17.1"
+  },
+  "lidar": {
+    "classification_disagreements": 0,
+    "counts": {
+      "evaluation_reference_near": 95830,
+      "excluded_reference_near": 5728,
+      "unmatched_in_supplied_wider_reference": 18112
+    },
+    "frames": 5953,
+    "margin_scope": "Numerical diagnostic on input coordinates, not a physical error bound",
+    "minimum_floating_point_distance_to_radius_m": 0.00017132121506735487,
+    "predictions": 119670
+  },
+  "lifecycle_status": "exploratory",
+  "omitted_frames": {
+    "classification_disagreements": 0,
+    "counts": {
+      "excluded_reference_near": 28,
+      "unmatched_in_supplied_wider_reference": 196
+    },
+    "frames": 132,
+    "margin_scope": "Numerical diagnostic on input coordinates, not a physical error bound",
+    "minimum_floating_point_distance_to_radius_m": 0.020791165949570534,
+    "predictions": 224
+  },
+  "scope": "Every retained per-prediction classification; source bundle construction is shared",
+  "version": "0.1.0"
+}

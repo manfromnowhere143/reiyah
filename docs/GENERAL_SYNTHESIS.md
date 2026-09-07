@@ -1,178 +1,77 @@
-# The independence assumption, measured: sensors, humans, and AI
+# What the measurement program currently supports
 
 Document ID: `reiyah.general-synthesis`
 
-Version: `0.1.0`
+Version: `0.2.0`
 
-Lifecycle status: `proposed`
+Lifecycle status: `corrected`
 
-This is the single reading of the whole measurement program. Each claim links to the result that
-establishes it; every number is measured on public data and reproducible from this repository. The
-non-claims at the foot are the exact boundary of what has and has not been shown. This document
-supersedes nothing and modifies no released architecture byte; it ties the results together.
+Reiyah measures coincident errors on declared public-data populations and tests whether observable
+outputs can predict some of those errors. The program supports descriptive findings, not a
+universal law of independence, a vehicle safety bound, or a validated human-belief estimator.
+The [research-board report](RESEARCH_BOARD_2026-09-07.md) reconstructs the implementation,
+compares relevant primary research through the review date, and defines the next experiments.
+The [claim register](../evidence/claim-status-register-2026-09-07.json) is the current reconciliation
+point. Prior transcripts and the previous synthesis remain discoverable in Git history.
 
-## The one claim
+## Sensors
 
-Every safety and ensemble argument for autonomous and AI systems rests on a single load-bearing
-assumption: that redundant channels fail independently. It is almost never measured. Measured with
-one estimand across three domains, it fails wherever the channels are of a similar kind, holds only
-where they are genuinely different, understates the safety-evidence budget by a measurable factor,
-and can be monitored live from the channels' outputs alone.
+On the existing nuScenes camera/lidar pair, excess joint misses survive the declared conditioning.
+The new [reference audit](RESULT_AO_REFERENCE_POPULATION_AUDIT.md) reproduces the conditional
+ratio and uses whole scenes for resampling. It also demonstrates that the filtered reference
+creates many of the original ghost flags: those predictions are near annotations that the cache
+excluded. Complete annotations still do not establish exhaustive physical truth.
 
-## The estimand, and why it travels
+The temporal coincidence analysis shows an association among unmatched detections. Its magnitude
+and meaning depend on reference coverage, donor selection and whether the null preserves
+world-fixed or ego-relative geometry. It is not the Bernoulli safety-critic coefficient in RSS.
+The descriptive sensor result is useful. Its cause and safety consequence remain unestablished.
 
-For two channels `A` and `B` observing the same opportunity, the coincidence coefficient of RSS
-Definition 32 is
+The operating-point studies show why marginals and absolute joint loss must accompany a normalized
+coefficient. Preregistered same-kind ordering forecasts were partly falsified. A channel that is
+nearly blind can force the coefficient toward one. Different sensing modalities do not guarantee
+independent failures, and similar architectures do not determine a universal dependence ordering.
 
-```
-c = P(A fails and B fails) / [ P(A fails) * P(B fails) ].
-```
+## Humans
 
-`c = 1` is independence; `c > 1` means the channels fail together beyond independence. This is not
-specific to sensors. `A` and `B` can be a camera and a lidar, a driver's observation and response,
-or two language models judging the same question. The estimand is the same, so the finding travels.
+The human thread measures looking, responding, takeover latency and gaze allocation in different
+public datasets. These are different variables. They do not establish object-specific belief or
+recoverability. The BDD-A detector/gaze construction uses detector-selected opportunities and
+aggregate laboratory attention. Its near-one coefficient cannot certify complementary human and
+machine detection, particularly when one channel is nearly always labeled as missing.
 
-The method is the same in every domain: take public per-item predictions, admit a channel only if
-it reproduces its published accuracy, compute `c`, test it against every cheap dismissal, and
-red-team it. Nothing is claimed that a public reproduction cannot recover.
+## Language-model juries and monitors
 
-## Domain one: two automation channels
+Archived question outputs show coincident errors and benchmark-specific lineage associations.
+Correlated errors and difficulty mixtures have substantial prior literature. The homogeneous
+independent-equivalent summary is an arithmetic convention, not a literal identified count of
+independent models. The same formula in two domains does not make their latent constructs equal.
 
-On the nuScenes benchmark a camera detector and a lidar detector miss the same objects more than
-independence predicts, `c = 1.151` after conditioning on class, range, visibility, weather and
-motion ([Result L](RESULT_L_CONVERGENCE.md)), and it survives four independent robustness axes:
-a second lidar ([M](RESULT_M_CROSS_DETECTOR_REPLICATION.md)), every operating threshold
-([N](RESULT_N_THRESHOLD_ROBUSTNESS.md)), unmeasured confounding with an E-value of 2 to 3
-([O](RESULT_O_SENSITIVITY_EVALUE.md)), and a second camera ([Q](RESULT_Q_CAMERA_AXIS_AND_MODALITY_GRID.md)).
-Two sharpening results keep the method honest: the coefficient is smallest exactly where the sensors
-jointly miss the most objects, so `c` alone cannot certify redundancy
-([P](RESULT_P_COEFFICIENT_VS_ABSOLUTE.md)); and an inviting accuracy trend is mostly the marginal
-arithmetic of `P`, not coupling ([R](RESULT_R_ACCURACY_COUPLING.md)). The workstream red-teams
-itself ([threats](MEASUREMENT_THREATS_TO_VALIDITY.md)). The 2x2 modality grid shows two lidars
-couple most (1.29), a camera and a lidar less (1.10 to 1.15).
+A calibrated logistic monitor predicts jury correctness within some tested settings. Other results
+record failed benchmark transfer. Sensor monitors similarly use conventional fitted models and
+reference-defined labels. They have not shown a general ability to identify jointly unseen objects,
+robust risk control under shift, or superiority over all relevant calibrated baselines.
 
-## Domain two: the human
+## Evidence and limits
 
-On the 100-Car Naturalistic Driving Study, in real conflicts the driver was looking forward at the
-moment of the event two thirds of the time: observation is not detection
-([human-channel H2](../human-channel/H2_GLANCE_AT_CONFLICT.md)). The human's own two channels,
-looking and acting, fail together with the same coefficient the sensors do, `c = 1.46`, with an
-event-resampled band of [1.04, 1.90] that excludes independence narrowly over all events and not
-in either severity subgroup, inside a population selected on the outcome ([H3](../human-channel/H3_OBSERVATION_RESPONSE_JOINT.md),
-[H7](../human-channel/H7_INTERVALS.md)). In modern Level 3 automation a
-visual-manual distraction slows the human's takeover by a quarter
-([H4](../human-channel/H4_DCPT_TAKEOVER.md)). And the cross-agent question no prior work had
-measured: a validated detector against the driver gaze heatmap, taken to the automation's total
-blindness with a clustered interval, gives `c = 0.98`, approximately independent
-([H5](../human-channel/H5_CROSS_AGENT_JOINT.md), [H6](../human-channel/H6_TOTAL_BOTH_MISS.md)).
+The repository preserves rejected predictions, corrections and reproducible operands. That
+practice should continue. Internal consistency and passing checks are not independent scientific
+verification. The research-board probes found that the original matcher could fail its accuracy
+gate yet emit an output, and the replay consumer could accept a failed process as replicated.
+The isolated research revision repairs both and retains regression tests.
 
-## Domain three: AI juries
+Result O's claim that each confounding arm must individually exceed the E-value is corrected in
+its [current document](RESULT_O_SENSITIVITY_EVALUE.md). The historical generator and transcript
+remain an exact record of what was printed, including the overinterpretation. Historical numerical
+reproduction does not endorse that prose.
 
-Carried to LLM ensembles, self-consistency and multi-model cross-checking, the same law appears.
-On MMLU, seven models fail together, models of one lineage more than of different lineages, and a
-seven-model jury has the effective diversity of 3.6 independent models
-([T](../llm-generalization/RESULT_T_LLM_INDEPENDENCE.md)). Agreement is an over-trusted signal:
-when two models agree they are correct 65% of the time, and when all seven agree they are still
-wrong 10% ([U](../llm-generalization/RESULT_U_AGREEMENT_RELIABILITY.md)). The finding replicates on
-ARC-Challenge, where a six-model jury has the effective diversity of 1.6 and unanimity is wrong 37%
-of the time ([W](../llm-generalization/RESULT_W_SECOND_BENCHMARK.md)), and on HellaSwag, where the
-jury's effective diversity is 1.28 and the residual beyond shared difficulty is nearly zero, so the
-lineage mechanism is benchmark-dependent while the marginal law is not
-([Y](../llm-generalization/RESULT_Y_THIRD_BENCHMARK.md)). Every one of these quantities carries a
-question-resampled interval that excludes the null ([AC](../llm-generalization/RESULT_AC_LLM_INTERVALS.md));
-the same-lineage excess that survives difficulty conditioning is 0.058 [0.050, 0.066] on MMLU and
-includes zero on the other two benchmarks, so it is a MMLU finding, not a general one. With
-difficulty measured by an independent seven-family jury the MMLU residual stays at 1.094 and the
-same-family excess grows to 0.098 [0.089, 0.108], while the unrelated jury itself falls to 1.016
-[1.014, 1.019]: the coupling that survives an independent difficulty measure is concentrated in
-shared lineage ([AL](../llm-generalization/RESULT_AL_CROSS_JURY_DIFFICULTY.md)). The law was
-then used to forecast a fourth benchmark it had never seen, Winogrande, with eight falsifiable
-predictions committed before the run; all eight held
-([AI](../llm-generalization/RESULT_AI_PREREGISTERED_WINOGRANDE.md)).
+## Next scientific choice
 
-## The law
+Complete one reference-validity study before expanding the model roster: define the opportunity
+population independently of detector outputs, compare justified references and temporal nulls,
+and independently adjudicate uncertain cases. If a residual physical effect survives, test whether
+causally available temporal evidence improves a decision beyond equally calibrated baselines.
+If it does not, retain the narrower auditing result and change the thesis.
 
-| domain | same-kind pairing | cross-kind pairing |
-|---|---|---|
-| sensors | two lidars, c = 1.29; four sensors = 2.10 [2.08, 2.13] independent | camera x lidar, c = 1.10 to 1.15; human x machine, c = 0.96 [0.93, 0.99] (ceiling 2.0 from the marginals; the total-blindness construction's ceiling is 1.18 and carries little) |
-| the human | eyes x hands, c = 1.46 [1.04, 1.90], event-resampled | (n/a) |
-| LLM juries | same family, c = 1.52 (MMLU), 1.87 (ARC), 2.43 (HellaSwag) | cross family, c = 1.29 (MMLU), 1.73 (ARC), 2.30 (HellaSwag) |
-
-**Redundancy across genuinely different kinds buys independence; redundancy across similar kinds
-does not**, stated for the sensors to its evidence: across five operating points the two-lidar pair
-is the most coupled pair every time, with non-overlapping bands at four of five, while the
-two-camera pair is reliably above the cross pairs only at 0.30
-([AJ](RESULT_AJ_SENSOR_JURY_OPERATING_POINTS.md), [AN](RESULT_AN_ORDERING_IN_INFLATION.md)). Two
-preregistered tests confirmed the coefficient's motion with the threshold on every pair (Result
-P's mechanism, and interpolation between measured points) and falsified the general same-kind
-ordering; both are recorded. Similar channels share a substrate and share their blind spots. Genuinely different
-ones do not. The independence assumption is a load-bearing fiction wherever redundancy is claimed,
-and it fails most for the systems that share the most.
-
-## The consequence, corrected
-
-Under RSS Corollary 3 ([S](RESULT_S_CORRECTED_SAFETY_CALCULUS.md)), holding the bound fixed, the
-admissible per-channel error rate shrinks as `1/sqrt(c)`, so a validation campaign sized under
-independence is undersized wherever `c > 1`. The evidence-budget percentages once derived from this
-are withdrawn as stated and remain withdrawn: the corollary concerns a three-subsystem vote over miss
-and ghost mistakes on safety-critic errors, and the measured two-channel detection-miss `c` does not
-yet meet its five stated conditions. Reiyah reports `c` with its absolute-risk vector and no
-evidence-budget percentage. The corollary's other mistake type, the ghost, has now been measured
-once: the camera and the lidar report phantom objects at the same place and instant six times more
-often than a same-road, same-sensor, different-instant null predicts, 6.2 [4.6, 10.3], an upper
-bound where the annotation itself is incomplete ([AH](RESULT_AH_GHOST_COINCIDENCE.md)), at the 0.30
-and 0.50 operating points and not at 0.10, where a preregistered numeric forecast failed four of six
-([AK](RESULT_AK_GHOST_OPERATING_POINT.md)); about half of those coincident phantoms are momentary
-against the fair reference of coincident true detections ([AH2](RESULT_AH2_GHOST_PERSISTENCE.md),
-[AH2b](RESULT_AH2B_COINCIDENT_TRUE_RECURRENCE.md)). The
-human-machine layer, at `c` about 1, adds essentially no correction.
-Two coupled sensors provide the joint-failure protection of about one and a half independent
-channels, and a seven-model jury the diversity of 3.6; both are illustrative effective-count
-readings, not evidence budgets.
-
-## The instrument
-
-The coupling can be read live. A monitor that sees only the channels' outputs on an item, with no
-ground truth, returns a calibrated probability that the ensemble is wrong, having learned the
-coupling from a labeled calibration set ([V](../llm-generalization/RESULT_V_DEPLOYED_MONITOR.md)).
-On held-out data it beats the naive agreement heuristic on every metric (AUC 0.845 against 0.719,
-expected calibration error 0.015 against 0.045), and on unanimous items where the naive assumption
-assigns zero risk it assigns the 11.6% the data actually carries. Fitted once and never refitted, it
-reads a second jury of seven unseen families at an AUC of 0.853 against an in-domain ceiling of
-0.856, so the coupling it learned is a property of redundancy, not of the channels it learned it
-from; read on a second benchmark it falls to the naive baseline and its calibration breaks
-([X](../llm-generalization/RESULT_X_MONITOR_TRANSFER.md)). The instrument is portable across
-channels and must be calibrated on the task it reads; a label-free rescaling of the margins does not
-repair the task failure and costs channel transfer ([X2](../llm-generalization/RESULT_X2_LABEL_FREE_NORMALIZATION.md)).
-Carried to the driving channels, the coupling-aware form is not readable at the scene level, where a jointly missed object leaves no output ([Z](RESULT_Z_SCENE_BLINDNESS_MONITOR.md), [AB](RESULT_AB_SENSOR_MONITOR_REPLICATION.md)); at the object level, on detections only one channel reports, a non-linear monitor reads cross-channel context as a measurable improvement on three of four configurations ([AA](RESULT_AA_DISAGREEMENT_MONITOR.md), [AD](RESULT_AD_NONLINEAR_SENSOR_MONITOR.md)). The sentence that the same form applies to two sensors is replaced by that statement. What the measured coupling changes with certainty is the evidence calculus and the credit given to redundancy; live readability is object-level only. Fitting the monitor on two benchmarks does not transfer to a third, and on HellaSwag the
-transferred monitor is worse than chance ([AE](../llm-generalization/RESULT_AE_LEAVE_ONE_BENCHMARK_OUT.md)):
-fit per task, read across channels. In the jury's own quantity, four sensors provide the
-joint-failure protection of 2.10 [2.08, 2.13] independent channels
-([AF](RESULT_AF_SENSOR_JURY.md)). The object-level sensor monitor obeys the same transfer law as
-the LLM monitor: fitted once, it reads a changed camera almost losslessly and not a changed lidar
-or operating point ([AG](RESULT_AG_SENSOR_MONITOR_TRANSFER.md)); portable across like channels,
-calibrated for the semantics it reads.
-
-## What is proven, and what is open
-
-Proven, and reproducible from this repository: the coefficient exceeds 1 for similar-kind redundancy
-across three domains and two benchmarks; it is approximately 1 for a human and a machine; a campaign
-sized under independence is undersized in the direction and ordering the coefficient gives, with no
-percentage claimed; and a calibrated, output-only monitor corrects the over-confidence. Every result is `proposed`, self-checked against independent anchors,
-robustness-tested, and red-teamed, with the marginal and conditional coefficients kept distinct and
-the demonstrations labeled as demonstrations.
-
-Open, and stated plainly: no independent external review has been retained, which is the honest
-ceiling on current confidence and the next thing that would raise it; the driving results are
-association after declared conditioning on public benchmarks, not a certificate about any deployed
-system; the human results are on naturalistic and simulator data with an engaged human; and the
-LLM monitor is validated across two juries on one benchmark, fails across benchmarks without
-recalibration, and is not deployed. The law is stated to its
-evidence and no further.
-
-## Non-claims
-
-A synthesis of measurements on public data, retained as `proposed`. No scientific support, safety
-finding, compliance determination, comparative claim about any vendor, operator acceptance, or
-runtime authorization is asserted. RSS is reproduced from retained primary text under fair use for
-analysis. No released `1.2` architecture byte is modified by this workstream.
+Gate A remains operator-unaccepted. This research branch is not a release-mode Gate A validation,
+a repaired readiness implementation, an independently reviewed safety case or a product runtime.

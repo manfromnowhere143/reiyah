@@ -1,0 +1,36 @@
+{
+  "artifact_id": "reiyah.m4-bounds-example-solver-capture.0.1.0",
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "tools/measure/rectangular_coincidence_bounds.py",
+    "research/m4-rectangular/0.1.0/example.json"
+  ],
+  "completed_utc": "2026-09-07T08:56:41.608026+00:00",
+  "elapsed_seconds": 0.0414640000090003,
+  "exit_code": 0,
+  "gate_a_release": false,
+  "independent_review": false,
+  "mode": "development",
+  "sources": {
+    "research/m4-rectangular/0.1.0/controls.json": "310e788a90c0d69cc6f7c595c592bbd0709601d48cd6ae19ebb0967524477e34",
+    "tools/measure/audit_m4_bounds.py": "b295cf406573f0fa5d98aa3138672e057cbf827cbf713d29c2392a78b248e517",
+    "tools/measure/check_rectangular_bounds.py": "51cf742854e17dbdf4c3b313719d1ea108a563a29ca2fd23d31e38c6ead5c0e7",
+    "tools/measure/rectangular_coincidence_bounds.py": "ff06980294fa6e66bd7a8c768c253a36c57aa8e6e0c345d6a6c1694ca482417d",
+    "tools/measure/test_rectangular_bounds.py": "c153e30c355d3c9f89eb366c7d0ee093ec1e708d3456dd45d5e106012a53a83c"
+  },
+  "started_utc": "2026-09-07T08:56:41.566137+00:00",
+  "streams": {
+    "stderr": {
+      "byte_size": 0,
+      "path": "example-solver.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "byte_size": 1902,
+      "path": "example-solver.stdout",
+      "sha256": "79584b24b18fa557ea0d8920bbaaa92fc4c21fbbcf92c47602468037225588a3"
+    }
+  },
+  "version": "0.1.0"
+}

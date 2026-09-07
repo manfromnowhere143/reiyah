@@ -1,0 +1,156 @@
+{
+  "artifact_id": "reiyah.gate-b.result-ao-reference-population-audit",
+  "environment": {
+    "numpy": "2.5.2",
+    "python": "3.14.2",
+    "scipy": "1.18.1"
+  },
+  "ghost_reference_population": {
+    "camera": {
+      "detections_at_0_30": 103008,
+      "flagged_as_ghost_by_cache": 24432,
+      "fraction_of_original_ghost_flags_reclassified": 0.1289702030124427,
+      "within_2m_of_excluded_annotation": 3151
+    },
+    "lidar": {
+      "detections_at_0_30": 119670,
+      "flagged_as_ghost_by_cache": 23840,
+      "fraction_of_original_ghost_flags_reclassified": 0.24026845637583893,
+      "within_2m_of_excluded_annotation": 5728
+    }
+  },
+  "input_hashes_unchanged_after_read": true,
+  "inputs": {
+    "gt_val_cache.json": {
+      "bytes": 51063137,
+      "sha256": "7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd"
+    },
+    "matched_mapillary.json": {
+      "bytes": 2997490,
+      "sha256": "a8fef4a1e7dbf0fed84ae1220332fcb97196e468ebf23cb77fe835871466caca"
+    },
+    "matched_megvii.json": {
+      "bytes": 3421406,
+      "sha256": "2ce14fcca8235438d2f9b2ab844f83e21413e97a2ab0cf597f445bac6e35a0c1"
+    },
+    "meta.tgz": {
+      "bytes": 461678030,
+      "sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b"
+    },
+    "predictions/mapillary_val.json": {
+      "bytes": 343998291,
+      "sha256": "f948e9778fb9a332d748f7e504fbade04f0c00c2699d7b0af757cacdbd567e99"
+    },
+    "predictions/megvii_val.json": {
+      "bytes": 224899254,
+      "sha256": "e7a995c31692ac95a86b56208e0b5d82a4ab908df8d0a9b9474d70adb693eab4"
+    }
+  },
+  "kind": "exploratory_offline_sensitivity",
+  "lifecycle_status": "exploratory",
+  "nonclaims": [
+    "No new model execution",
+    "No independent physical adjudication",
+    "No safety or causal conclusion",
+    "No operator acceptance"
+  ],
+  "scene_clustering": {
+    "conditional_ratio": 1.151053054297223,
+    "note": "Fixed original deepest-stratum support; scenes are bootstrap units, not assumed fully independent geography samples.",
+    "replicates": 2000,
+    "scene_bootstrap_percentile_95": [
+      1.1287492044218514,
+      1.1662061991639139
+    ],
+    "scenes": 150,
+    "score_threshold": 0.3,
+    "seed": 20260907,
+    "support_rows": 131722,
+    "total_rows": 134565,
+    "tracked_instances": 8976
+  },
+  "temporal_null_sensitivity": {
+    "filtered_cache": {
+      "fixed_heading_support": {
+        "camera_candidate_opportunities": 17801,
+        "ego_relative_null_expected_count": 431.5,
+        "ego_relative_ratio": 6.285052143684821,
+        "ego_relative_scene_bootstrap_percentile_95": [
+          4.702391078033978,
+          10.381008838733496
+        ],
+        "ego_relative_undefined_bootstrap_replicates": 0,
+        "observed_coincidence_count": 2712,
+        "scope": "Unmatched detections; reference absence does not prove physical nonexistence",
+        "world_fixed_null_expected_count": 543.5,
+        "world_fixed_ratio": 4.989880404783809,
+        "world_fixed_scene_bootstrap_percentile_95": [
+          3.971889308952886,
+          7.197413519757206
+        ],
+        "world_fixed_undefined_bootstrap_replicates": 0
+      },
+      "historical_nonempty_donors": {
+        "camera_candidate_opportunities": 17230,
+        "ego_relative_null_expected_count": 434.5,
+        "ego_relative_ratio": 6.1795166858458,
+        "ego_relative_scene_bootstrap_percentile_95": [
+          4.637004973359891,
+          10.092109374999998
+        ],
+        "ego_relative_undefined_bootstrap_replicates": 0,
+        "observed_coincidence_count": 2685,
+        "scope": "Unmatched detections; reference absence does not prove physical nonexistence",
+        "world_fixed_null_expected_count": 550.5,
+        "world_fixed_ratio": 4.877384196185286,
+        "world_fixed_scene_bootstrap_percentile_95": [
+          3.892933559898046,
+          6.954462360714754
+        ],
+        "world_fixed_undefined_bootstrap_replicates": 0
+      }
+    },
+    "full_annotations": {
+      "fixed_heading_support": {
+        "camera_candidate_opportunities": 15487,
+        "ego_relative_null_expected_count": 245.0,
+        "ego_relative_ratio": 6.893877551020408,
+        "ego_relative_scene_bootstrap_percentile_95": [
+          4.605334051724138,
+          16.129544346235903
+        ],
+        "ego_relative_undefined_bootstrap_replicates": 0,
+        "observed_coincidence_count": 1689,
+        "scope": "Unmatched detections; reference absence does not prove physical nonexistence",
+        "world_fixed_null_expected_count": 389.0,
+        "world_fixed_ratio": 4.341902313624678,
+        "world_fixed_scene_bootstrap_percentile_95": [
+          3.5995996692920236,
+          6.2296121468026335
+        ],
+        "world_fixed_undefined_bootstrap_replicates": 0
+      },
+      "historical_nonempty_donors": {
+        "camera_candidate_opportunities": 14549,
+        "ego_relative_null_expected_count": 249.0,
+        "ego_relative_ratio": 6.694779116465863,
+        "ego_relative_scene_bootstrap_percentile_95": [
+          4.516967097947035,
+          15.31925094136632
+        ],
+        "ego_relative_undefined_bootstrap_replicates": 0,
+        "observed_coincidence_count": 1667,
+        "scope": "Unmatched detections; reference absence does not prove physical nonexistence",
+        "world_fixed_null_expected_count": 398.5,
+        "world_fixed_ratio": 4.183186951066499,
+        "world_fixed_scene_bootstrap_percentile_95": [
+          3.4743484384189185,
+          5.907478328173374
+        ],
+        "world_fixed_undefined_bootstrap_replicates": 0
+      }
+    }
+  },
+  "tool_sha256": "1eba6214317b4eb0ae60bdd4f08c6dea4522bbedca886a59c5f9b8572316ebed",
+  "version": "0.1.0"
+}

@@ -1,0 +1,49 @@
+{
+  "artifact_id": "reiyah.collection-log-coefficient-sensitivity.0.1.0",
+  "input_sha256": {
+    "cache": "7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd",
+    "dataset": "8dfd5f32656251981fa3774a4b73f6f5074517faa0102125e9eabc51a35b7637"
+  },
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Same selected reference, deepest retrospective covariates, score .30 and fixed full-population support as AO",
+    "Changes the uncertainty sensitivity, not the conditional aggregate estimand or reference validity",
+    "Eighteen collection logs are not eighteen proven independent deployments",
+    "Neither bootstrap includes benchmark selection, detector training or reference-model uncertainty"
+  ],
+  "physical_coefficient": null,
+  "resampling": {
+    "logs": {
+      "coefficient": 1.151053054297223,
+      "groups": 18,
+      "leave_one_group_out_max": 1.1557438262614308,
+      "leave_one_group_out_min": 1.137864851234729,
+      "percentile_95": [
+        1.1217961881014882,
+        1.1705217953760256
+      ],
+      "resamples": 2000,
+      "scene_or_log_independence_established": false,
+      "seed": 20260907,
+      "undefined_resamples": 0
+    },
+    "scenes": {
+      "coefficient": 1.151053054297223,
+      "groups": 150,
+      "leave_one_group_out_max": 1.1530960406684785,
+      "leave_one_group_out_min": 1.1468587238594254,
+      "percentile_95": [
+        1.1287492044218514,
+        1.1662061991639139
+      ],
+      "resamples": 2000,
+      "scene_or_log_independence_established": false,
+      "seed": 20260907,
+      "undefined_resamples": 0
+    }
+  },
+  "source_sha256": "b60d909c9b88462d070344e11afbcc5338c9d1c37ff501596f9684ac030f579b",
+  "strata": 294,
+  "support_rows": 131722,
+  "version": "0.1.0"
+}

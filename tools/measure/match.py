@@ -117,6 +117,9 @@ def main():
     validate = None
     if "--validate" in sys.argv:
         validate = float(sys.argv[sys.argv.index("--validate") + 1])
+        if not math.isfinite(validate) or not 0.0 <= validate <= 100.0:
+            print("REFUSED: published mAP must be finite and in [0, 100]", file=sys.stderr)
+            return 2
 
     gt, preds = load(gt_path, pred_path)
     print(f"GT objects: {len(gt):,}   prediction samples: {len(preds):,}", file=sys.stderr)
@@ -161,6 +164,7 @@ def main():
         if not ok:
             print("MATCHER DOES NOT REPRODUCE THE OFFICIAL METRIC. Do not use downstream.",
                   file=sys.stderr)
+            return 1
 
     out = {"matched_at_2m": {c: {str(k): v for k, v in m.items()}
                              for c, m in matched_all.items()},
@@ -168,7 +172,8 @@ def main():
     with open(out_path, "w") as f:
         json.dump(out, f)
     print(f"wrote {out_path}", file=sys.stderr)
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

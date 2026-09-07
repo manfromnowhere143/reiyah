@@ -1,0 +1,640 @@
+{
+  "artifact_id": "reiyah.reference-identification-counterexamples.0.1.0",
+  "binary_error_cell_order": [
+    "both",
+    "a_only",
+    "b_only",
+    "neither"
+  ],
+  "complete_observable_probabilities": {
+    "000": "73/200",
+    "001": "9/200",
+    "010": "9/200",
+    "011": "9/200",
+    "100": "9/200",
+    "101": "9/200",
+    "110": "9/200",
+    "111": "73/200"
+  },
+  "complete_observable_probability_order": [
+    "A",
+    "B",
+    "R"
+  ],
+  "data_kind": "authored exact synthetic probability models",
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Complete binary opportunities are assumed only in the first construction",
+    "The second construction concerns an unobserved opportunity population and a different selection problem",
+    "The 8 percent threshold applies only to the authored table and total binary reference-flip budget",
+    "No calibrated error budget, independent human judgment, physical estimate or safety conclusion is supplied",
+    "The examples are elementary identifiability controls; no novelty claim"
+  ],
+  "minimum_total_reference_error_budget_allowing_c_at_most_one_in_this_fixture": "2/25",
+  "observationally_equivalent_worlds": {
+    "dependent_detectors_perfect_reference": {
+      "joint_probabilities": {
+        "0000": "73/200",
+        "0001": "0",
+        "0010": "9/200",
+        "0011": "0",
+        "0100": "9/200",
+        "0101": "0",
+        "0110": "9/200",
+        "0111": "0",
+        "1000": "0",
+        "1001": "9/200",
+        "1010": "0",
+        "1011": "9/200",
+        "1100": "0",
+        "1101": "9/200",
+        "1110": "0",
+        "1111": "73/200"
+      },
+      "joint_probability_order": [
+        "Y",
+        "A",
+        "B",
+        "R"
+      ],
+      "reference_error_probability": "0",
+      "reference_relative_coefficient": "25/9",
+      "reference_relative_error_cells": [
+        "9/100",
+        "9/100",
+        "9/100",
+        "73/100"
+      ],
+      "true_coefficient": "25/9",
+      "true_coefficient_given_truth": {
+        "0": "25/9",
+        "1": "25/9"
+      },
+      "true_error_cells": [
+        "9/100",
+        "9/100",
+        "9/100",
+        "73/100"
+      ]
+    },
+    "independent_detectors_noisy_reference": {
+      "joint_probabilities": {
+        "0000": "729/2000",
+        "0001": "81/2000",
+        "0010": "81/2000",
+        "0011": "9/2000",
+        "0100": "81/2000",
+        "0101": "9/2000",
+        "0110": "9/2000",
+        "0111": "1/2000",
+        "1000": "1/2000",
+        "1001": "9/2000",
+        "1010": "9/2000",
+        "1011": "81/2000",
+        "1100": "9/2000",
+        "1101": "81/2000",
+        "1110": "81/2000",
+        "1111": "729/2000"
+      },
+      "joint_probability_order": [
+        "Y",
+        "A",
+        "B",
+        "R"
+      ],
+      "reference_error_probability": "1/10",
+      "reference_relative_coefficient": "25/9",
+      "reference_relative_error_cells": [
+        "9/100",
+        "9/100",
+        "9/100",
+        "73/100"
+      ],
+      "true_coefficient": "1",
+      "true_coefficient_given_truth": {
+        "0": "1",
+        "1": "1"
+      },
+      "true_error_cells": [
+        "1/100",
+        "9/100",
+        "9/100",
+        "81/100"
+      ]
+    }
+  },
+  "omitted_opportunity_pair": {
+    "observation_scope": "Recorded object opportunities; this does not assert identical raw sensor images",
+    "same_recorded_cells_in_both_worlds": [
+      "100",
+      "900",
+      "900",
+      "8100"
+    ],
+    "world_one": {
+      "true_coefficient": "1",
+      "unrecorded_true_both_errors": 0
+    },
+    "world_two": {
+      "true_cells": [
+        "150",
+        "900",
+        "900",
+        "8100"
+      ],
+      "true_coefficient": "67/49",
+      "unrecorded_true_both_errors": 50
+    }
+  },
+  "reference_error_budget_sensitivity": [
+    {
+      "lower_world": {
+        "joint_probabilities": {
+          "0000": "73/200",
+          "0001": "0",
+          "0010": "9/200",
+          "0011": "0",
+          "0100": "9/200",
+          "0101": "0",
+          "0110": "9/200",
+          "0111": "0",
+          "1000": "0",
+          "1001": "9/200",
+          "1010": "0",
+          "1011": "9/200",
+          "1100": "0",
+          "1101": "9/200",
+          "1110": "0",
+          "1111": "73/200"
+        },
+        "joint_probability_order": [
+          "Y",
+          "A",
+          "B",
+          "R"
+        ],
+        "reference_error_probability": "0",
+        "reference_relative_coefficient": "25/9",
+        "reference_relative_error_cells": [
+          "9/100",
+          "9/100",
+          "9/100",
+          "73/100"
+        ],
+        "true_coefficient": "25/9",
+        "true_coefficient_given_truth": {
+          "0": "25/9",
+          "1": "25/9"
+        },
+        "true_error_cells": [
+          "9/100",
+          "9/100",
+          "9/100",
+          "73/100"
+        ]
+      },
+      "sharp_interval": [
+        "25/9",
+        "25/9"
+      ],
+      "total_reference_error_budget": "0",
+      "upper_world": {
+        "joint_probabilities": {
+          "0000": "73/200",
+          "0001": "0",
+          "0010": "9/200",
+          "0011": "0",
+          "0100": "9/200",
+          "0101": "0",
+          "0110": "9/200",
+          "0111": "0",
+          "1000": "0",
+          "1001": "9/200",
+          "1010": "0",
+          "1011": "9/200",
+          "1100": "0",
+          "1101": "9/200",
+          "1110": "0",
+          "1111": "73/200"
+        },
+        "joint_probability_order": [
+          "Y",
+          "A",
+          "B",
+          "R"
+        ],
+        "reference_error_probability": "0",
+        "reference_relative_coefficient": "25/9",
+        "reference_relative_error_cells": [
+          "9/100",
+          "9/100",
+          "9/100",
+          "73/100"
+        ],
+        "true_coefficient": "25/9",
+        "true_coefficient_given_truth": {
+          "0": "25/9",
+          "1": "25/9"
+        },
+        "true_error_cells": [
+          "9/100",
+          "9/100",
+          "9/100",
+          "73/100"
+        ]
+      }
+    },
+    {
+      "lower_world": {
+        "joint_probabilities": {
+          "0000": "73/200",
+          "0001": "1/200",
+          "0010": "9/200",
+          "0011": "0",
+          "0100": "9/200",
+          "0101": "0",
+          "0110": "1/25",
+          "0111": "0",
+          "1000": "0",
+          "1001": "1/25",
+          "1010": "0",
+          "1011": "9/200",
+          "1100": "0",
+          "1101": "9/200",
+          "1110": "1/200",
+          "1111": "73/200"
+        },
+        "joint_probability_order": [
+          "Y",
+          "A",
+          "B",
+          "R"
+        ],
+        "reference_error_probability": "1/100",
+        "reference_relative_coefficient": "25/9",
+        "reference_relative_error_cells": [
+          "9/100",
+          "9/100",
+          "9/100",
+          "73/100"
+        ],
+        "true_coefficient": "800/289",
+        "true_coefficient_given_truth": {
+          "0": "800/289",
+          "1": "800/289"
+        },
+        "true_error_cells": [
+          "2/25",
+          "9/100",
+          "9/100",
+          "37/50"
+        ]
+      },
+      "sharp_interval": [
+        "800/289",
+        "900/323"
+      ],
+      "total_reference_error_budget": "1/100",
+      "upper_world": {
+        "joint_probabilities": {
+          "0000": "73/200",
+          "0001": "0",
+          "0010": "1/25",
+          "0011": "0",
+          "0100": "9/200",
+          "0101": "1/200",
+          "0110": "9/200",
+          "0111": "0",
+          "1000": "0",
+          "1001": "9/200",
+          "1010": "1/200",
+          "1011": "9/200",
+          "1100": "0",
+          "1101": "1/25",
+          "1110": "0",
+          "1111": "73/200"
+        },
+        "joint_probability_order": [
+          "Y",
+          "A",
+          "B",
+          "R"
+        ],
+        "reference_error_probability": "1/100",
+        "reference_relative_coefficient": "25/9",
+        "reference_relative_error_cells": [
+          "9/100",
+          "9/100",
+          "9/100",
+          "73/100"
+        ],
+        "true_coefficient": "900/323",
+        "true_coefficient_given_truth": {
+          "0": "900/323",
+          "1": "900/323"
+        },
+        "true_error_cells": [
+          "9/100",
+          "1/10",
+          "2/25",
+          "73/100"
+        ]
+      }
+    },
+    {
+      "lower_world": {
+        "joint_probabilities": {
+          "0000": "73/200",
+          "0001": "1/40",
+          "0010": "9/200",
+          "0011": "0",
+          "0100": "9/200",
+          "0101": "0",
+          "0110": "1/50",
+          "0111": "0",
+          "1000": "0",
+          "1001": "1/50",
+          "1010": "0",
+          "1011": "9/200",
+          "1100": "0",
+          "1101": "9/200",
+          "1110": "1/40",
+          "1111": "73/200"
+        },
+        "joint_probability_order": [
+          "Y",
+          "A",
+          "B",
+          "R"
+        ],
+        "reference_error_probability": "1/20",
+        "reference_relative_coefficient": "25/9",
+        "reference_relative_error_cells": [
+          "9/100",
+          "9/100",
+          "9/100",
+          "73/100"
+        ],
+        "true_coefficient": "400/169",
+        "true_coefficient_given_truth": {
+          "0": "400/169",
+          "1": "400/169"
+        },
+        "true_error_cells": [
+          "1/25",
+          "9/100",
+          "9/100",
+          "39/50"
+        ]
+      },
+      "sharp_interval": [
+        "400/169",
+        "900/299"
+      ],
+      "total_reference_error_budget": "1/20",
+      "upper_world": {
+        "joint_probabilities": {
+          "0000": "73/200",
+          "0001": "0",
+          "0010": "1/50",
+          "0011": "0",
+          "0100": "9/200",
+          "0101": "1/40",
+          "0110": "9/200",
+          "0111": "0",
+          "1000": "0",
+          "1001": "9/200",
+          "1010": "1/40",
+          "1011": "9/200",
+          "1100": "0",
+          "1101": "1/50",
+          "1110": "0",
+          "1111": "73/200"
+        },
+        "joint_probability_order": [
+          "Y",
+          "A",
+          "B",
+          "R"
+        ],
+        "reference_error_probability": "1/20",
+        "reference_relative_coefficient": "25/9",
+        "reference_relative_error_cells": [
+          "9/100",
+          "9/100",
+          "9/100",
+          "73/100"
+        ],
+        "true_coefficient": "900/299",
+        "true_coefficient_given_truth": {
+          "0": "900/299",
+          "1": "900/299"
+        },
+        "true_error_cells": [
+          "9/100",
+          "7/50",
+          "1/25",
+          "73/100"
+        ]
+      }
+    },
+    {
+      "lower_world": {
+        "joint_probabilities": {
+          "0000": "73/200",
+          "0001": "1/25",
+          "0010": "9/200",
+          "0011": "0",
+          "0100": "9/200",
+          "0101": "0",
+          "0110": "1/200",
+          "0111": "0",
+          "1000": "0",
+          "1001": "1/200",
+          "1010": "0",
+          "1011": "9/200",
+          "1100": "0",
+          "1101": "9/200",
+          "1110": "1/25",
+          "1111": "73/200"
+        },
+        "joint_probability_order": [
+          "Y",
+          "A",
+          "B",
+          "R"
+        ],
+        "reference_error_probability": "2/25",
+        "reference_relative_coefficient": "25/9",
+        "reference_relative_error_cells": [
+          "9/100",
+          "9/100",
+          "9/100",
+          "73/100"
+        ],
+        "true_coefficient": "1",
+        "true_coefficient_given_truth": {
+          "0": "1",
+          "1": "1"
+        },
+        "true_error_cells": [
+          "1/100",
+          "9/100",
+          "9/100",
+          "81/100"
+        ]
+      },
+      "sharp_interval": [
+        "1",
+        "45/13"
+      ],
+      "total_reference_error_budget": "2/25",
+      "upper_world": {
+        "joint_probabilities": {
+          "0000": "73/200",
+          "0001": "0",
+          "0010": "1/200",
+          "0011": "0",
+          "0100": "9/200",
+          "0101": "1/25",
+          "0110": "9/200",
+          "0111": "0",
+          "1000": "0",
+          "1001": "9/200",
+          "1010": "1/25",
+          "1011": "9/200",
+          "1100": "0",
+          "1101": "1/200",
+          "1110": "0",
+          "1111": "73/200"
+        },
+        "joint_probability_order": [
+          "Y",
+          "A",
+          "B",
+          "R"
+        ],
+        "reference_error_probability": "2/25",
+        "reference_relative_coefficient": "25/9",
+        "reference_relative_error_cells": [
+          "9/100",
+          "9/100",
+          "9/100",
+          "73/100"
+        ],
+        "true_coefficient": "45/13",
+        "true_coefficient_given_truth": {
+          "0": "45/13",
+          "1": "45/13"
+        },
+        "true_error_cells": [
+          "9/100",
+          "17/100",
+          "1/100",
+          "73/100"
+        ]
+      }
+    },
+    {
+      "lower_world": {
+        "joint_probabilities": {
+          "0000": "73/200",
+          "0001": "9/200",
+          "0010": "9/200",
+          "0011": "0",
+          "0100": "9/200",
+          "0101": "0",
+          "0110": "0",
+          "0111": "0",
+          "1000": "0",
+          "1001": "0",
+          "1010": "0",
+          "1011": "9/200",
+          "1100": "0",
+          "1101": "9/200",
+          "1110": "9/200",
+          "1111": "73/200"
+        },
+        "joint_probability_order": [
+          "Y",
+          "A",
+          "B",
+          "R"
+        ],
+        "reference_error_probability": "9/100",
+        "reference_relative_coefficient": "25/9",
+        "reference_relative_error_cells": [
+          "9/100",
+          "9/100",
+          "9/100",
+          "73/100"
+        ],
+        "true_coefficient": "0",
+        "true_coefficient_given_truth": {
+          "0": "0",
+          "1": "0"
+        },
+        "true_error_cells": [
+          "0",
+          "9/100",
+          "9/100",
+          "41/50"
+        ]
+      },
+      "sharp_interval": [
+        "0",
+        "100/27"
+      ],
+      "total_reference_error_budget": "9/100",
+      "upper_world": {
+        "joint_probabilities": {
+          "0000": "73/200",
+          "0001": "0",
+          "0010": "0",
+          "0011": "0",
+          "0100": "9/200",
+          "0101": "9/200",
+          "0110": "9/200",
+          "0111": "0",
+          "1000": "0",
+          "1001": "9/200",
+          "1010": "9/200",
+          "1011": "9/200",
+          "1100": "0",
+          "1101": "0",
+          "1110": "0",
+          "1111": "73/200"
+        },
+        "joint_probability_order": [
+          "Y",
+          "A",
+          "B",
+          "R"
+        ],
+        "reference_error_probability": "9/100",
+        "reference_relative_coefficient": "25/9",
+        "reference_relative_error_cells": [
+          "9/100",
+          "9/100",
+          "9/100",
+          "73/100"
+        ],
+        "true_coefficient": "100/27",
+        "true_coefficient_given_truth": {
+          "0": "100/27",
+          "1": "100/27"
+        },
+        "true_error_cells": [
+          "9/100",
+          "9/50",
+          "0",
+          "73/100"
+        ]
+      }
+    }
+  ],
+  "same_complete_observable_distribution": true,
+  "source_sha256": "09052518f26b857c23494b0a1602bac62ed001815bbdf5c5fdecf760a12cb4b0",
+  "true_coefficient_point_identified": false,
+  "version": "0.1.0"
+}

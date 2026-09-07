@@ -1,0 +1,29 @@
+{
+  "artifact_id": "reiyah.predictive-monitor-data-spec.0.1.1",
+  "input_sha256": {
+    "gt_val_cache.json": "7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd",
+    "meta.tgz": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b",
+    "predictions/mapillary_val.json": "f948e9778fb9a332d748f7e504fbade04f0c00c2699d7b0af757cacdbd567e99",
+    "predictions/megvii_val.json": "e7a995c31692ac95a86b56208e0b5d82a4ab908df8d0a9b9474d70adb693eab4"
+  },
+  "lifecycle_status": "exploratory",
+  "matching_radius_m": 2.0,
+  "prediction_files": {
+    "camera": "predictions/mapillary_val.json",
+    "lidar": "predictions/megvii_val.json"
+  },
+  "retained_utc": "2026-09-07T13:30:28.579098+00:00",
+  "score_threshold": 0.3,
+  "source_sha256": {
+    "evidence/nuscenes_splits_devkit.py": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd",
+    "tools/measure/audit_cache_selection.py": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+    "tools/measure/build_predictive_monitor_dataset.py": "01ea0aac667f6f1321beea690ed420357e160b6dfc2084e8414d1f12e347d4f0",
+    "tools/measure/match.py": "d77ec99ddf93870d7948b18621d184c79a26589def18dbc6d59ba44f1c65ff05",
+    "tools/measure/reference_population_audit.py": "20357fac547358063116d6652b2dc31f0c4a6a45feb1112db35d5bddadc70cbd",
+    "tools/measure/replay_reference_population_audit.py": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+    "tools/measure/result_ao_reference_population_audit.py": "1eba6214317b4eb0ae60bdd4f08c6dea4522bbedca886a59c5f9b8572316ebed"
+  },
+  "split_source": "evidence/nuscenes_splits_devkit.py",
+  "supersedes_spec_sha256": "50253981630615462a8191fb525180fb60f95dd1f8f4f89c1e891cf2ca09e67d",
+  "version": "0.1.1"
+}

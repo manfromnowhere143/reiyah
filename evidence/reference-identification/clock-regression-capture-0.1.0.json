@@ -1,0 +1,42 @@
+{
+  "artifact_id": "reiyah.reference-identification-clock-regression-capture.0.1.0",
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tools/measure",
+    "-p",
+    "test_opportunity_clock.py",
+    "-v"
+  ],
+  "completed_utc": "2026-09-07T09:31:59.012065+00:00",
+  "elapsed_seconds": 0.08528649993240833,
+  "exit_code": 0,
+  "gate_a_release": false,
+  "mode": "development",
+  "sources": {
+    "evidence/nuscenes_splits_devkit.py": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd",
+    "tools/measure/audit_cache_selection.py": "0553aa146a27eb23962a3442081ba8e01b726592b5fbba0e6167150d3e7dcc61",
+    "tools/measure/audit_opportunity_clock.py": "0ed5c3716755accbea31d59c4c7564ea6f176090f8744809ef627ac77cb1a7d2",
+    "tools/measure/reference_population_audit.py": "20357fac547358063116d6652b2dc31f0c4a6a45feb1112db35d5bddadc70cbd",
+    "tools/measure/replay_reference_population_audit.py": "5cc2cb8423d63fc5b5ae9b94cc00ec325f127890f21b2ee90996b393dbfca993",
+    "tools/measure/test_opportunity_clock.py": "55ed826a66fdc27ee2ccba24388dd14adba9b4c0f48d506f89c8af0549a66264"
+  },
+  "started_utc": "2026-09-07T09:31:58.926684+00:00",
+  "streams": {
+    "stderr": {
+      "bytes": 1058,
+      "path": "clock-regression.stderr",
+      "sha256": "a52e8dae7a22cc5ef489da90a8f401374bfb94e887a160028d3cbffbaa809846"
+    },
+    "stdout": {
+      "bytes": 0,
+      "path": "clock-regression.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "version": "0.1.0"
+}

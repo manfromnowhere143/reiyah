@@ -1,0 +1,41 @@
+{
+  "artifact_id": "reiyah.research-board-ao-replay-capture.2026-09-07",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "runs": [
+    {
+      "run": 1,
+      "returncode": 0,
+      "bytes": 5695,
+      "sha256": "e0d9a643dc68e4e3f852fd4f6154decfbe0f9846fab25acfa127e8c6398bb102",
+      "seconds": 64.21,
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "-B",
+        "tools/measure/result_ao_reference_population_audit.py",
+        "--data-root",
+        "/Users/danielwahnich/workspace/reiyah-gate-b"
+      ],
+      "optional_private_cases_recorded": true,
+      "private_case_output_locator": "research-board-2026-09-07/checks/ao-private-cases-validated-1.json",
+      "note": "The executed argv additionally used --private-cases-output at the declared private custody locator; that path does not affect aggregate stdout."
+    },
+    {
+      "run": 2,
+      "returncode": 0,
+      "bytes": 5695,
+      "sha256": "e0d9a643dc68e4e3f852fd4f6154decfbe0f9846fab25acfa127e8c6398bb102",
+      "seconds": 64.647,
+      "argv": [
+        "/Users/danielwahnich/bdda-venv/bin/python",
+        "-B",
+        "tools/measure/result_ao_reference_population_audit.py",
+        "--data-root",
+        "/Users/danielwahnich/workspace/reiyah-gate-b"
+      ],
+      "optional_private_cases_recorded": true,
+      "private_case_output_locator": "research-board-2026-09-07/checks/ao-private-cases-validated-2.json",
+      "note": "The executed argv additionally used --private-cases-output at the declared private custody locator; that path does not affect aggregate stdout."
+    }
+  ]
+}

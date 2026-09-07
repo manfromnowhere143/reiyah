@@ -1,601 +1,251 @@
 # Reiyah
 
-Reiyah is a pre-implementation, open-source research architecture for HARBOR, the proposed
-Human-Automation Readiness, Belief & Operational Risk program. It is an evidence and benchmark
-engine for falsifiable analysis of shared human-automation driving situations. It is not a
-driver-monitoring classifier, an autonomy stack, a safety case, or a runtime system.
+Reiyah is an evidence architecture and an offline research program studying what can be inferred
+about joint failures of observers. Its proposed HARBOR mission covers object-level human and
+vehicle belief, readiness, recoverability, explicit unknowns and causal policy effects. Current
+experiments measure narrower quantities on public detector, human-proxy and language-model data.
 
-For a specific object at a specific time, HARBOR asks what the human and automation could each
-observe, what each had reason to believe, what decisions and interventions followed, what outcome
-occurred, and what retained evidence can support each statement.
+The [research-board report](docs/RESEARCH_BOARD_2026-09-07.md) gives the complete reconstruction,
+2026 primary-source review, scorecard and research program. **The current evidence does not
+establish a frontier perception system, a universal independence law, human belief measurement,
+or deployable safety guarantees.** The strongest immediate opportunity is making invalid
+physical-world inferences detectable and explainable.
 
-> Gate A covers static architecture, deterministic fixtures, and offline validation only. An
-> `architecture_complete` result is not operator acceptance, scientific support, safety
-> validation, standards compliance, product readiness, or runtime authorization.
+## Current research result
 
-## Current status
+[Result AO](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md) independently reanalyzes retained
+nuScenes inputs. The conditional camera/lidar miss ratio is 1.151053; a whole-scene bootstrap
+interval is [1.128749, 1.166206]. This supports a bounded descriptive association.
 
-Gate A `1.2.0` is an operator-unaccepted correction candidate. It preserves the proposed
-`reiyah.mission@1.1.0` mission and introduces the proposed
-`reiyah.protocol.harbor-gate-a@1.2.0` protocol successor. The correction responds to retained
-counterexamples against the public `1.1.2` packet. It does not add a runtime, execute a study,
-produce empirical evidence, or support a safety, compliance, causal-benefit, product-readiness,
-or superiority conclusion.
+The same audit finds that 3,151 of 24,432 camera ghost flags and 5,728 of 23,840 lidar ghost flags
+are within two meters of annotations excluded from the original reference cache. These are
+reference-label changes, not proof that every prediction is correct. Temporal coincidence
+ratios also depend on the chosen null. Physical ghost identity remains unresolved.
 
-The index deliberately records `candidate_pending_canonical_report`. Only a passing release-mode
-report that exact-binds that index may classify those bytes as `architecture_complete`. During
-construction, or whenever the report and index do not reconcile exactly, architecture status is
-not complete.
+The research revision repairs two concrete validation defects: failed mAP validation no longer
+writes a new matcher artifact, and a replay must exit successfully as well as reproduce the
+expected transcript. Regression tests exercise the original counterexamples.
 
-| Surface | Meaning |
-|---|---|
-| Architecture state | Resolve only from the exact `1.2.0` canonical report and repeated byte-identical clean release replay. Until that evidence exists and passes, the state is not complete. |
-| Operator state | `unaccepted`. Acceptance requires a current exact-binding record whose decision is `accepted`, a validator-accepted append-only decision chain, and independent verification of operator identity and authority. |
-| External control | GA-17 remains `not_evaluated` by offline repository validation. |
-| Runtime | Unauthorized. No product runtime, model execution, live network dependency, cloud execution, private-data ingestion, deployment, or physical-control integration is present. |
-| Later gates | Gate B is not defined or authorized. |
-| Public remote | A distribution channel only; it has no scientific, safety, standards, acceptance, or publication authority. Publisher readback is an assertion, not independent transport verification. |
+## Predictive monitor experiment recovered
 
-Architecture completion and operator acceptance are deliberately separate:
+The [output-only monitor experiment](docs/PREDICTIVE_MONITOR_FINDINGS_2026-09-07.md)
+compares cross-channel history with equally tuned marginal-history baselines.
+Its future-count improvement is 2.7020% under collection-log holdouts, with a
+descriptive interval including zero; spatial continuity slightly increases the
+primary loss. Neither meets the declared usefulness screen. A new completion
+audit rejects missing experiments and a forged spatial interval that the original
+checker accepted. Original results are preserved, and fresh log/spatial refits
+reproduce their private predictions exactly. The
+[next experiment](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) separates
+shared detector training from dataset transfer; it has not been run.
+
+## Reference study now implemented
+
+The [reference-adjudication study](docs/REFERENCE_ADJUDICATION_STUDY_2026-09-07.md) freezes
+a probability sample of 240 detections across 93 scenes and prepares original sensor evidence
+with per-sensor geometry, timestamps and explicit missing states. The first sampling design
+failed its precision check and remains retained; its replacement was frozen before independent
+judgments. All physical-performance estimates remain null until the required observations exist.
+This is a private offline research experiment, not a new perception model or driving runtime.
+
+## Portable tools and the next evidence
+
+The [offline population auditor](docs/REFERENCE_AUDIT_DEMO_2026-09-07.md) returns replayable
+geometric witnesses while keeping excluded annotations, unmatched predictions and unavailable
+references distinct. Its synthetic example runs without a dataset download, model or API key.
+This is a conventional geometric calculation with an explicit interpretation boundary, not a
+new perception algorithm or a benchmark win.
+
+The [real-data replay](docs/REFERENCE_AUDIT_REAL_DATA_2026-09-07.md) reproduces AO's reference
+correction and separately examines frames omitted by the object-row cache. An independent
+numerical implementation agrees on every retained prediction classification. Physical truth
+remains outside that computational check.
+
+The [cache-policy reconstruction](docs/CACHE_SELECTION_AUDIT_2026-09-07.md) independently
+derives the declared class, distance and official split selection from raw metadata. Every
+cache annotation ID and checked metadata field agrees. A correct cache still requires a
+correctly scoped physical interpretation.
+
+The [reference-noise correction](docs/REFERENCE_NOISE_INTERPRETATION_2026-09-07.md) narrows
+M4's broad immunity wording: proportional count rescaling preserves the coincidence ratio,
+but uniform shared reference-label corruption can change it. An exact synthetic construction
+and a control with matched noisy marginals make the distinction executable. No measured
+detector performance is claimed by that example.
+
+The [M4 bound audit](docs/M4_RECTANGULAR_BOUND_FINDINGS_2026-09-07.md) corrects a retained
+synthetic result: F-03 has a finite supremum of 49.75, despite the historical infinity label.
+A new rational solver and separate algebra checker distinguish undefined coefficients,
+finite boundary limits and genuine divergence. These bounds concern a declared mathematical
+domain; reference-process validity and sampling uncertainty require additional evidence.
+
+The [identification controls](docs/REFERENCE_IDENTIFICATION_FINDINGS_2026-09-07.md) construct
+two worlds with identical detector/reference observations but different true dependence.
+They show what additional reference information must establish. The
+[metadata-only clock census](docs/OPPORTUNITY_CLOCK_AUDIT_2026-09-07.md) finds 4,682 candidate
+time anchors across 150 scenes, with explicit capture offsets and unknown online availability.
+It prepares an [independent opportunity study](docs/INDEPENDENT_OPPORTUNITY_STUDY_DESIGN_2026-09-07.md)
+whose sampling frame includes times when every object-level observer could be silent.
+
+The [interface audit](docs/INTERFACE_EVIDENCE_REVIEW_2026-09-07.md) traces how results
+reach the research console. Isolated source probes find that a displayed digest does not
+always bind the displayed value, and that missing comparisons can become zero. A private
+repair and a [single-bundle consumer design](docs/MEASUREMENT_CONSUMER_DESIGN_2026-09-07.md)
+make the required correction reviewable without changing the active UI worktree.
+
+The [RSS transfer and rare-event audit](docs/RSS_TRANSFER_AND_RARE_EVENT_LIMITS_2026-09-07.md)
+separates conditional, aggregate and operating-distribution coefficients. Exact synthetic
+controls show why measuring dependence between very rare failures can itself require billions
+of independent observations. This is a limit on a proposed inference, not a measured vehicle
+failure rate. The [physical-reference assessment](docs/PHYSICAL_REFERENCE_OPTIONS_2026-09-07.md)
+examines current NPL/Met Office work and a falsifiable route toward a joint response law with
+independent targets, time and sensor state. Data access and suitability remain unresolved.
+
+The [developer-access investigation](docs/DEVELOPER_ACCESS_RESEARCH_2026-09-07.md) compares
+existing evaluation products and the July 2026 MCP specification. Free access is a proposed
+adoption strategy; an external engineer must first obtain independently confirmed value.
+The [Sentinel, Telos and Inbar review](docs/SIBLING_RESEARCH_TRANSFER_2026-09-07.md) carries
+over experimental controls and independently recalculates selected retained records. Their
+codebases and scientific authorities remain separate.
+
+Use the [research continuation ledger](docs/RESEARCH_CONTINUATION_2026-09-07.md) to resume.
+The [developer-value checkpoint](docs/DEVELOPER_VALUE_CLOSEOUT_2026-09-07.md) records completed runs,
+validation scope and the preceding local delivery boundary. The
+[cache-policy checkpoint](docs/SELECTION_POLICY_CLOSEOUT_2026-09-07.md) records the selection
+audit and reference-noise correction. The [M4 checkpoint](docs/M4_BOUND_CLOSEOUT_2026-09-07.md)
+records corrected mathematical bounds. The [identification checkpoint](docs/REFERENCE_IDENTIFICATION_CLOSEOUT_2026-09-07.md)
+records exact ambiguity witnesses, the clock census and the next physical study design. The
+[interface checkpoint](docs/INTERFACE_EVIDENCE_CLOSEOUT_2026-09-07.md) records consumer failure
+probes and a privately tested repair. The
+[latest checkpoint](docs/PHYSICAL_REFERENCE_TRANSFER_CLOSEOUT_2026-09-07.md) records the
+sampling-limit derivation, its separate numerical check and the physical-reference preflight.
+The [vision review](docs/VISION_REVIEW_2026-09-07.md)
+separates the desired company scale from the evidence needed to justify a product.
+The next scientific observation is independent blinded review of the prepared cases. No human
+judgments or physical false-positive rates have been supplied by the new tools.
+
+## What actually runs
+
+```mermaid
+flowchart TB
+  subgraph STATIC["Gate A: static contracts"]
+    M["Versioned mission, protocols and source records"] --> V["Offline schema and adversarial fixture validation"]
+    V --> C["Exact contract diagnostics; acceptance remains separate"]
+  end
+  subgraph RESEARCH["Gate B: offline experiments"]
+    D["Public annotations and retained predictions"] --> P["Declared population and object matching"]
+    P --> J["Joint-error counts, strata and intervals"]
+    P --> E["Fitted error monitors"]
+    H["Human proxy and LLM question records"] --> J
+    J --> T["Retained transcripts and claim register"]
+    E --> T
+    T --> R["Review checks, documents and static figures"]
+    D --> A["Reference population audit"]
+    A --> T
+    D --> AP["Portable table audit and exact proximity witnesses"]
+    D --> FC["Sample-table frame census and explicit empty or unavailable references"]
+    FC --> FS["Separate omitted-frame sensitivity; frozen sample unchanged"]
+    FS --> AP
+    AP --> R
+    D --> CP["Reconstruct declared cache selection from raw metadata and retained SDK sources"]
+    CP --> R
+    RN["Synthetic shared-reference noise controls"] --> RI["Corrected interpretation; no physical performance estimate"]
+    RI --> R
+    MB["Declared synthetic cell ranges"] --> MS["Rational extrema and explicit undefinedness"]
+    MS --> MC["Separate algebra check of bounds and witnesses"]
+    MC --> R
+    OE["Same observable law, different admissible latent truths"] --> IS["Identified set and missing reference information"]
+    IS --> R
+    CT["Official scene and sample clocks; no object-output selection"] --> CW["Candidate time anchors, capture offsets and explicit availability unknowns"]
+    CW --> R
+    R --> IC["Display and receipt must bind the same interpreted result"]
+    IC --> IP["Consumer probes: private repair tested; broader snapshot gaps retained"]
+    RL["Exact rare-event and mixture probability laws"] --> RB["Sampling limits and explicit transport assumptions"]
+    RB --> R
+    A --> P2["Frozen probability sample and original sensor evidence"]
+    P2 --> R2["Blinded independent review: pending"]
+    R2 --> U2["Unresolved cases retained in support intervals"]
+  end
+  C -. "proposed empirical ports, incomplete integration" .-> T
+```
+
+Some inherited experiments execute pretrained detectors; others fit classifiers or analyze
+archived outputs. There is no inspected driving runtime, original perception backbone, learned
+occupancy/world model, online belief tracker or validated recovery policy. The available review
+instrument checks numbers and claim/document consistency. The later interface audit inspects
+captured console code and executes isolated source probes; it does not establish the behavior
+of a deployed UI or repair the owner's worktree.
+
+## Repository and authority state
+
+The research-board investigation froze Gate A at
+`74fbacc77a3c74d3a4962f488b589ee614a4c575` and Gate B at
+`fd094c066437e67cefbb86f363dd1bef7ccf8e6e`. This research revision is based on Gate B and does not
+merge or replace the concurrently active engine or UI work.
+
+Gate A's latest inspected K129 route passed its locked contract replay, while explicitly reporting
+that the readiness correction is contracted, not reviewed or implemented. Operator acceptance
+remains `unaccepted`. The inherited architecture records are not silently upgraded by these
+empirical experiments or by passing development checks. Released mission/protocol/schema/fixture
+bytes remain historical versioned artifacts. This branch's changed README and handoff are research
+navigation, not a newly validated Gate A release packet.
 
 ```mermaid
 flowchart LR
-  A["Versioned static artifacts"] --> I["Evidence index"]
-  I --> V["Offline fail-closed replay"]
-  V --> R["Report bound to the exact index digest"]
-  R --> C["architecture_complete<br/>GA-01 through GA-16"]
-  I --> D["Decision record in a validated<br/>append-only chain"]
-  R --> D
-  M["Exact mission and protocol releases"] --> D
-  D --> G["Composite operator state"]
-  H["Independent identity and<br/>authority verification"] --> G
-  G -->|decision is accepted| O["accepted"]
-  G -->|decision is rejected or deferred| N["rejected or deferred"]
-  V -. cannot by itself evaluate GA-17 .-> G
-  O -. does not itself authorize runtime .-> X["Gate B remains undefined"]
+  B["Exact artifact bytes"] --> D["Deterministic validation"]
+  D --> I["Integrity and tested contract behavior"]
+  O["Independent observations and explicit assumptions"] --> S["Scoped scientific assessment"]
+  I --> S
+  A["Exact operator decision and verified authority"] --> G["Acceptance state"]
+  S -. "does not automatically grant acceptance" .-> G
 ```
 
-The diagram describes repository governance, not a deployed system.
+The configured GitHub remote is a distribution channel. Repository text, signatures, checksums,
+model-assisted review and publisher readback do not create scientific or safety authority.
 
-## Resolve the exact current identity
+## Reproduce the research checks
 
-The indexed packet cannot contain its own digest, its later Git commit, an event rights record
-that binds that commit, or a post-publication receipt without creating a cycle. The validation
-plan permits only one exact event-specific future-rights exclusion and rejects broad rights
-prefixes. Resolve the current state in this order:
-
-1. Verify [`GATE_A_EVIDENCE_INDEX.json`](gate/GATE_A_EVIDENCE_INDEX.json) against its
-   [`SHA-256 sidecar`](gate/GATE_A_EVIDENCE_INDEX.sha256).
-2. Select the canonical report in [`gate/validation-reports/`](gate/validation-reports/) whose
-   `index_binding.sha256` equals that sidecar digest.
-3. Run the offline validator and require the report, index, repository inventory, fixtures, and
-   declared controls to reconcile with zero diagnostics.
-4. For publication identity, select the unique highest valid record in
-   [`gate/public-distribution-receipts/`](gate/public-distribution-receipts/) whose linear history
-   exact-binds that index, report, published commit, repository, rights observation, and the
-   publisher's retained readback assertions.
-5. Resolve acceptance separately. The current index, report, mission, and protocol must be bound
-   by the head of a validator-accepted decision chain; that head must say `accepted`; and operator
-   identity and authority must be independently verified. Otherwise no accepted state may be
-   inferred from repository bytes.
-6. Resolve independent transport verification only from a distinct authorized observation record
-   that exact-binds the same repository, commit, index, and report bytes. A publisher receipt,
-   branch tip, or older receipt is not a substitute.
-
-### Exact public predecessor
-
-Gate A `1.1.2` is the immutable public predecessor for this correction:
-
-| Item | Gate A `1.1.2` identity |
-|---|---|
-| Indexed packet commit | `ad1a8cae6ad17f26f5a07f43fb60b6c9f55b4b1b` |
-| Receipt-bearing repository commit | `656d826cfe6938fd628c0ede7ea15929fe11d90e` |
-| Evidence-index digest | `sha256:17f3a2e601e9cb4e1c0cd0f97561b1da9ffdc7d5893ed4af4eaccbaf8a67989f` |
-| Validation-report digest | `sha256:06fc3114522c16625da337fe25c71b1fd53abeeaf9c31a11748afc06eb5d66d8` |
-| Distribution-receipt digest | `sha256:e7f3bedac49423d4ba042419056896c507d26ee2bd9a706981abf2131dcda19d` |
-| Receipt sequence | `3` |
-| Mission release | `reiyah.mission@1.1.0` |
-| Protocol release | `reiyah.protocol.harbor-gate-a@1.1.0` |
-| Exact state | `architecture_complete`, `unaccepted`, GA-17 `not_evaluated`, runtime `false` |
-
-The predecessor receipt records a publisher's static public-distribution assertions. It is not an
-independent observation of remote transport and creates no scientific evidence, operator
-acceptance, compliance result, or runtime authority. The exact collision-prone predecessor index
-and sidecar are preserved under [`history/gate-a-1.1.2/`](history/gate-a-1.1.2/).
-
-### Why the successor exists
-
-Gate A `1.1.0` established the first receipt-bound public Gate A architecture. A
-forensic release review then found that its operator-decision interface required the `1.1.0`
-protocol release to claim an older schema identity, so a truthful decision record could not
-satisfy the contract. Gate A `1.1.1` corrected that governance defect, preserved the original
-mission and protocol releases, froze the predecessor bytes, and added exact index, report, and
-receipt replay without changing a scientific proposition.
-
-After `1.1.2` was published, a forensic challenge found twelve gaps. Eight were scientific:
-incomplete policy-distribution and trajectory-weight checks, asserted rather than derived causal
-adjustment validity, confident readiness despite required unknown capabilities, unreconciled
-recovery summaries, incomplete transfer eligibility, unqualified conformal guarantees,
-non-exhaustive OOD/selective denominators, and asserted worst-group eligibility. Four concerned
-validation integrity: unenforced string formats, live-tree time-of-check/time-of-use exposure,
-imports before isolation, and publisher self-attestation presented as independent transport
-proof.
-
-The Gate A `1.2.0` candidate is intended to correct these defects through executable operands,
-deterministic derivations, reason-specific counterexamples, a byte-locked pre-runtime launcher,
-one immutable candidate projection, and a separate transport-observation interface. Closure
-requires the final immutable release replay; this prose does not establish it. The retained
-[`adversarial review`](docs/GATE_A_1_1_2_ADVERSARIAL_REVIEW.md) is an advisory integrity input,
-not independent scientific evidence. Every unchanged `1.1.2` indexed artifact must remain
-byte-identical; every changed or added path must be explicit in the `1.2.0` validation plan.
-
-A second adversarial pass over the developing successor found sixteen candidate-integration
-risks. They include belief and observation reconciliation, joint-event identifiability,
-assumption-evidence eligibility, typed-reference substitution, governance chronology, canonical
-report count consistency, and premature completion language. The proposed protocol now binds the
-[`candidate consistency review`](docs/GATE_A_1_2_0_CONSISTENCY_REVIEW.md) and eleven high-level
-executable contracts. Those findings remain open until repeated byte-identical immutable release
-replay derives their exact closure from the same candidate snapshot.
-
-## Research thesis
-
-HARBOR treats the human and automation as distinct actors with potentially different information
-sets. It compares their uncertainty about the same object without treating either channel as
-ground truth or collapsing disagreement into a single score.
-
-```mermaid
-flowchart TB
-  C["Common encounter, object, and index time"]
-  HI["Human information set<br/>available before index time"]
-  AI["Automation information set<br/>available before index time"]
-  HB["Human latent-belief record<br/>uncertainty or explicit abstention"]
-  AB["Automation latent-belief record<br/>uncertainty or explicit abstention"]
-  J["Joint assessment<br/>agreement, complementarity, and silent miss"]
-  R["Contextual readiness assessment<br/>task, horizon, capability, loss, and uncertainty"]
-  Y["Recoverability event process<br/>request, recovered state, censoring, and competing events"]
-  E["Retained evidence and provenance<br/>identity is not truth"]
-
-  C --> HI
-  C --> AI
-  HI --> HB
-  AI --> AB
-  HB --> J
-  AB --> J
-  C --> R
-  C --> Y
-  E -. method and provenance .-> HI
-  E -. method and provenance .-> AI
-  E -. bounded support .-> J
-  E -. bounded support .-> R
-  E -. bounded support .-> Y
-```
-
-This is a research view, not a sensing, inference, alerting, intervention, or vehicle-control
-pipeline. The architecture keeps observation, latent belief, decision, intervention, outcome,
-and evidence separate in identity, provenance, and time. Missing, unmeasured,
-out-of-distribution, sensor-invalid, and abstained are distinct states. None may silently become
-zero, false, normal, negative, or a confident label.
-
-## Research surfaces
-
-| Surface | Gate A static contract |
-|---|---|
-| Object-level belief | Identified actor, object, state space, frozen information set, uncertainty, calibration target, applicability domain, and abstention. |
-| Readiness | Named task and context, index time, horizon, capability set, loss, uncertainty, and intervention; never a universal person label. |
-| Recoverability | Perturbation or request, recovered-state definition, time-to-event treatment, censoring, competing events, and observation coverage. |
-| Joint silent miss | Common opportunity, per-channel validity, detection and warning windows, dependence treatment, and fallback availability. |
-| Causal and sequential policy effects | Exact policy and comparator versions, assignment and propensity records, support, estimand, estimator, uncertainty, and sensitivity assumptions. |
-| Explicit unknowns | Selective prediction, abstention, out-of-distribution state, conformal applicability, denominators, and coverage-performance reporting. |
-| Transfer and worst groups | Frozen source and target domains, access chronology, adaptation limits, complete group universe, intersections, validity, and simultaneous uncertainty. |
-| Research and assurance governance | Preregistration, datasets, benchmarks, ODDs, scenarios, tests, hazards, arguments, evidence, defeaters, and change impact without safety authority. |
-
-The formal quantities and invalid-state behavior are defined in the
-[`mathematical specification`](docs/MATHEMATICAL_SPECIFICATION.md). Five closed-shape application
-schemas make these research surfaces machine-reviewable without collecting data or executing a
-model, policy, simulation, or study.
-
-## Gate A boundary
-
-| Included | Excluded |
-|---|---|
-| Scientific charter, claims, non-claims, and status model | Product runtime, live services, cloud execution, or deployment |
-| Append-only mission, protocol, definition, and research-function releases | Model training, inference, or monitoring |
-| Source custody, dated standards gap mappings, and public distribution controls | Vehicle sensing, alerts, actuation, or physical control |
-| Closed Draft 2020-12 schemas | Private, secret, or operational human and vehicle data |
-| Synthetic known-good and reason-specific known-bad fixtures | Operational data collection or empirical publication machinery |
-| Read-only deterministic validation | Safety, compliance, causal-benefit, or superiority claims |
-| Evidence index, canonical report, and external decision procedure | Operator acceptance inferred from tests, signatures, or consensus |
-
-An artifact with mixed permitted and forbidden behavior is forbidden in full. Gate A validation
-is offline; live network and cloud execution are prohibited.
-
-## Evidence discipline
-
-A URL is a discovery pointer, not retained evidence. Positive standards or benchmark mappings
-require exact permitted bytes, identity, version, publication date, scope, comparator, content
-digest, limitations, and an explicit custody and redistribution state. The repository currently
-contains four eligible ISO Open Data metadata payloads, not normative ISO text. Four NIST or UN
-records and all 38 frontier records covering primary methods, official specifications, and
-bounded Tesla and Mobileye company comparators remain pointer only and evidence ineligible.
-
-Company statements, papers, standards pages, generated prose, signatures, checksums, passing
-tests, and consensus may motivate a question or provide an integrity signal. They do not become
-independent proof of effectiveness, safety, compliance, deployment, or comparative advantage.
-See the [`source policy`](docs/SOURCE_POLICY.md), [`standards crosswalk`](docs/STANDARDS_CROSSWALK.md),
-and [`2026 frontier baseline`](docs/FRONTIER_BASELINE_2026.md).
-
-## Rigor under pressure
-
-Hard problems tighten the method. When ambiguity survives review, Reiyah stops at the narrowest
-affected boundary, preserves the unknown state, records the strongest plausible falsifier, makes
-assumptions, denominators, time, provenance, and residual risk explicit, adds the smallest
-reason-specific counterexample, and replays the unchanged contract. A deadline, prestigious
-source, confident model, generated signature, consensus, or passing test cannot promote a claim
-or weaken an expected failure.
-
-Failures, contradictions, null results, invalid analyses, corrections, and retractions remain
-discoverable. A blocked result is preferable to a plausible default.
-
-## The measurement, the engine's first evidence
-
-The `gate-b-measurement` branch carries the first empirical stress test of a HARBOR construct on
-public data. It takes the dependence treatment named in the joint-silent-miss surface and measures
-it directly, using only published or reproduced detector outputs on the nuScenes validation split.
-No private data, no deployed system, and no released `1.2` architecture byte are involved. Every
-result is retained as `proposed`, and several of this workstream's own claims were withdrawn on
-evidence and left standing with their refutations attached. A full reading with a figure is in
-[`docs/GATE_B_FINDINGS_SYNTHESIS.md`](docs/GATE_B_FINDINGS_SYNTHESIS.md).
-
-### The claim under test, and the number it never measures
-
-Mobileye's RSS paper argues that direct statistical validation of an autonomous vehicle is
-infeasible, then escapes that cost with a redundancy argument: Definition 32 posits that subsystem
-errors are `c`-approximately independent, and Corollary 3 uses it to cut the required evidence by
-about four orders of magnitude. The coefficient `c` is assumed and is never estimated anywhere in
-the paper. This workstream measures it.
-
-```mermaid
-flowchart TD
-    A["Direct AV validation<br/>~10^9 hours, infeasible"] --> B["RSS redundancy:<br/>combine subsystems"]
-    B --> C["Definition 32<br/>assume c-approximate<br/>independence"]
-    C --> D["Corollary 3<br/>required evidence<br/>falls to ~10^5"]
-    C -. "c is assumed,<br/>never measured" .-> GAP["the gap"]
-    GAP --> M["measure c on the<br/>public benchmark"]
-    M --> R["c above 1 after conditioning,<br/>across detectors, thresholds,<br/>and plausible confounding"]
-    R --> CON["the reduction is optimistic;<br/>independence fails on evidence"]
-    classDef rss fill:#e3f2fd,stroke:#1565c0,color:#0d47a1;
-    classDef gap fill:#fff8e1,stroke:#f9a825,color:#e65100;
-    classDef res fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20;
-    class A,B,C,D rss;
-    class GAP,M gap;
-    class R,CON res;
-```
-
-### How it is measured, and how each step is checked
-
-A per-object matcher reimplements the nuScenes devkit accumulation but keeps the match set the
-devkit discards, so each ground-truth object gets the score of the detection that matched it. A
-detector is admitted only if that matcher reproduces its published mAP; otherwise nothing
-downstream is believed. The retained coefficient is the observed joint-miss rate divided by what
-independence predicts within each stratum of five admissible confounders, which is exactly the
-smallest admissible constant in RSS Definition 32.
-
-```mermaid
-flowchart LR
-    subgraph SRC["public inputs, nothing private"]
-        NUS["nuScenes val<br/>6,019 samples<br/>134,565 objects"]
-        DET["detectors<br/>2 camera, 3 lidar<br/>published + reproduced"]
-    end
-    subgraph MEAS["measurement, every step validated"]
-        MATCH["per-object matcher<br/>keeps the match set<br/>the devkit discards"]
-        VAL{"reproduces<br/>published mAP?"}
-        CELL["2x2 miss table per stratum<br/>class, range, visibility,<br/>weather, motion"]
-        COEF["conditional coefficient<br/>c = P(both miss) / P_A P_B"]
-    end
-    NUS --> MATCH
-    DET --> MATCH
-    MATCH --> VAL
-    VAL -- "no: discard" --> STOP["not a result"]
-    VAL -- "yes" --> CELL --> COEF
-    classDef src fill:#eef2ff,stroke:#3949ab,color:#1a237e;
-    classDef meas fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20;
-    classDef stop fill:#ffebee,stroke:#b71c1c,color:#b71c1c;
-    class NUS,DET src;
-    class MATCH,VAL,CELL,COEF meas;
-    class STOP stop;
-```
-
-### What survived the checks
-
-The headline is that a camera detector and a lidar detector fail on the same objects more than
-independence predicts, `c = 1.151` for the first pair after five confounders, and that this
-survives every cheap way to dismiss it. One measurement becomes a finding by clearing four
-independent robustness axes and two sharpening results.
-
-```mermaid
-flowchart TB
-    C(("conditional c above 1<br/>1.151"))
-    C --- M["M, second lidar<br/>survives, 1.096"]
-    C --- N["N, thresholds 0.1 to 0.5<br/>survives, 10 of 10"]
-    C --- O["O, unmeasured confounding<br/>E-value 2 to 3 to nullify"]
-    C --- Q["Q, second camera<br/>survives, 1.107 and 1.072"]
-    C -. sharpened by .-> P["P, c is smallest where<br/>joint-miss is largest"]
-    C -. sharpened by .-> R["R, accuracy trend is<br/>mostly the P artifact"]
-    classDef core fill:#1a237e,stroke:#1a237e,color:#ffffff;
-    classDef axis fill:#e8eaf6,stroke:#3949ab,color:#1a237e;
-    classDef sharp fill:#fff3e0,stroke:#e65100,color:#bf360c;
-    class C core;
-    class M,N,O,Q axis;
-    class P,R sharp;
-```
-
-Two of those deserve a sentence, because they are where the method earns its keep. Result P shows
-the coefficient is smallest exactly where the two sensors jointly miss the most real objects, since
-a ratio is deflated by its marginals, so `c` alone cannot certify redundancy. Result R takes an
-inviting trend, that stronger detectors appear to couple more, and finds that about four fifths of
-it is the same marginal arithmetic P identified; only a small residual survives a matched-marginal
-comparison. The dramatic version of each claim is the one the method refuses to make.
-
-None of this is a safety finding, a compliance determination, or a comparative claim about any
-vendor. It is association after declared conditioning on two public detection outputs, reproducible
-from this repository, and bounded by the covariates nuScenes annotates. It is evidence that the
-architecture's constructs are measurable and that the assumption they target fails where it has
-been tested, not a certificate about any deployed system.
-
-The workstream red-teams itself in [`docs/MEASUREMENT_THREATS_TO_VALIDITY.md`](docs/MEASUREMENT_THREATS_TO_VALIDITY.md):
-shared training data, the benchmark's own filter, the matcher, incomplete conditioning, the
-coefficient's marginal sensitivity, clustering, single-benchmark scope, detection as a proxy for a
-fused subsystem, and the absence of external audit. Some are answered, one strengthens the finding,
-and the rest are left open and scoped rather than hidden.
-
-### Both sides of the windshield
-
-The sensors are one kind of channel. HARBOR's target is the human and the automation as one
-encounter, so the human channel is measured too, on public naturalistic and simulator data. In real
-crash and near-crash events the driver was looking forward at the moment of the conflict two thirds
-of the time: observation is not detection. The human's own two channels, looking and acting, fail
-together with the same coefficient the sensors do, `c = 1.46`, with a band of [1.04, 1.90] that
-excludes independence narrowly. And in modern Level 3 automation a
-visual-manual distraction slows the human's takeover by a quarter.
-
-Then the cross-agent question, the one no prior work had measured: do a human and a machine go blind
-to the same objects. A validated detector on the frames against the driver gaze heatmap, over
-thousands of objects and taken all the way to the automation's total blindness with a clustered
-interval, gives `c = 0.98`, approximately independent. Same-kind redundancy fails together; a human
-and a machine, built and failing differently, are the one pairing where the independence a safety
-case assumes roughly survives.
-
-### The number a safety case consumes
-
-RSS Corollary 3 reduces required validation evidence by assuming independence. Holding its bound
-fixed, the admissible per-channel error rate shrinks as `1/sqrt(c)`, so a campaign sized under
-independence is undersized wherever `c > 1`, and by more in the worst group than in the pooled
-estimate. The evidence-budget percentages once derived from this are withdrawn as stated: the
-corollary bounds a three-subsystem vote over miss and ghost mistakes on safety-critic errors, and
-the measured two-channel detection-miss `c` does not yet meet its five stated conditions (Result S
-correction; estimand document section 6.4). Reiyah reports `c` with its absolute-risk vector and no
-evidence-budget percentage. The human-machine layer, at `c` about 1, adds essentially no correction.
-Two coupled sensors provide the joint-failure protection of about one and a half independent
-channels, an illustrative interpretation that depends on the operating miss rates.
-
-### One law, three domains
-
-The estimand is not about cars. It applies to any two channels a system calls independent. Carried
-to LLM juries, self-consistency and multi-model cross-checking, the same law appears: seven models
-fail together on the same questions, models of one lineage more than models of different lineages,
-and a seven-model jury has the effective diversity of 3.6 independent models.
-
-```mermaid
-flowchart TB
-    LAW["one estimand, one law<br/>redundancy across DIFFERENT kinds buys independence<br/>across SIMILAR kinds it does not"]
-    subgraph SENS["sensors"]
-        S1["two lidars<br/>c 1.29, together"]
-        S2["camera x lidar<br/>c 1.10 to 1.15"]
-        S3["human x machine<br/>c about 1, independent"]
-    end
-    subgraph HUM["one human"]
-        H1["eyes x hands<br/>c 1.46, together"]
-    end
-    subgraph LLMS["LLM juries"]
-        L1["same family<br/>c 1.52, together"]
-        L2["cross family<br/>c 1.29"]
-    end
-    S1 --> LAW
-    S2 --> LAW
-    S3 --> LAW
-    H1 --> LAW
-    L1 --> LAW
-    L2 --> LAW
-    classDef law fill:#1a237e,stroke:#1a237e,color:#ffffff;
-    classDef same fill:#ffebee,stroke:#b71c1c,color:#b71c1c;
-    classDef cross fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20;
-    class LAW law;
-    class S1,H1,L1 same;
-    class S2,S3,L2 cross;
-```
-
-Similar systems share their blind spots. Genuinely different ones do not. The independence
-assumption is a load-bearing fiction wherever redundancy is claimed, in sensors, in the human, and
-in AI juries alike. The law replicates on ARC-Challenge and HellaSwag, where the residual beyond
-shared difficulty is nearly zero, so the lineage mechanism is benchmark-dependent while the marginal
-law is not, and it forecast a fourth benchmark, Winogrande, with eight predictions committed before
-the run, all eight supported. Two further preregistered forecasts for the sensor jury at four new
-operating points confirmed how the coefficient moves with the threshold on every pair and failed on
-the general same-kind ordering: the two-lidar pair is the most coupled pair at every point measured,
-and the two-camera pair is reliably above the cross pairs only at one, so the sensor arm of the law
-is now stated exactly that narrowly, and each failure is recorded as a failure. A coupling-aware monitor fitted on one jury reads seven unseen model families almost
-without loss and fails across benchmarks without recalibration; carried to the driving channels at
-the scene level it adds nothing over what the stack already knows, and at the object level a
-non-linear monitor reads cross-channel context as a measurable improvement on three of four
-configurations; fit per task, read across channels. Four sensors provide the joint-failure
-protection of about two independent channels, in the same quantity that gives a seven-model jury
-3.6. And the mistake type the redundancy argument also assumes independent, the phantom object,
-is measured for the first time: the camera and the lidar report phantoms at the same place and
-instant six times more often than a same-road, different-instant null predicts at the 0.30
-operating point, four to ten times on three more configurations at 0.30 and 0.50, and not at 0.10,
-where a preregistered numeric forecast failed; about half of those coincidences are momentary. The full reading is in
-[`docs/GATE_B_FINDINGS_SYNTHESIS.md`](docs/GATE_B_FINDINGS_SYNTHESIS.md),
-[`human-channel/`](human-channel/), and [`llm-generalization/`](llm-generalization/).
-
-## Reproduce the static checks
-
-Authoritative replay is intentionally bound to the exact resolved canonical root
-`/Users/danielwahnich/workspace/reiyah`. The validation-plan-bound launcher, primary validator,
-science module, and toolchain lock fail closed for an ordinary clone at any other path. External
-path portability is not provided at Gate A; moving the repository, using an alias or symlink, or
-bypassing the identity preflight produces a different, untrusted analysis rather than an
-equivalent Reiyah validation.
-
-Gate A `1.2.0` must start through the reviewed launcher. The launcher enters the locked macOS
-Seatbelt policy before CPython starts, clears ambient loader state, invokes isolated no-site,
-no-bytecode Python, and verifies exact platform, executable, standard-library, extension-module,
-and dependency bytes. In release mode it performs two separately loaded, state-reset evaluations
-of the same repository projection. Their pre-report stage evidence and index bytes must match before
-the report can record `architecture_complete`. Direct Python invocation is rejected.
-
-For a read-only development replay from the verified Reiyah Git root:
+Use an environment with `numpy`, `scipy` and `jsonschema` for the checker and regression suite:
 
 ```sh
-tools/gate_a_1_2_0.sh --snapshot-mode development --output human
+python -B tools/measure/gate_b_check.py --json /tmp/reiyah-gate-b-check.json
+python -B -m unittest discover -s tools/measure -p test_research_board_regressions.py -v
+python -B tools/measure/result_ao_reference_population_audit.py --data-root /path/to/local/reiyah-data
 ```
 
-For deterministic machine-readable development output:
+The digest check does not replay prior experiments unless replay is explicitly selected. The
+manifest distinguishes local deterministic, network-cached, heavy-inference and historically
+unrecorded commands. Result AO records exact input hashes and library versions; reproducing its
+bytes requires the matching inputs and numerical environment. Source-derived annotation cases
+can be written to a private path with `--private-cases-output`; they are not in the public aggregate.
 
-```sh
-tools/gate_a_1_2_0.sh --snapshot-mode development --output json \
-  > /tmp/reiyah-gate-a-validation-1.2.0.json
-```
+Gate A release evidence must be produced by the exact locked launcher and validation plan for
+its selected immutable commit. A Gate B development check is not a substitute. See the
+[repository contract](AGENTS.md) and the [architecture handoff](docs/SESSION_HANDOFF.md).
 
-A development replay uses one observational snapshot and is never release evidence. Release
-bootstrap is a three-state, acyclic procedure. Start from a clean committed `C0` in which the
-candidate is otherwise complete, including the two fresh capture manifests, but the current
-index, sidecar, and report paths are absent. Never redirect bootstrap output to a repository path:
-the shell opens that path before the validator captures its snapshot and thereby makes the
-release tree dirty.
+## Read the complete story
 
-```sh
-set -eu
-
-index_tmp=/tmp/reiyah-gate-a-index-1.2.0.json
-report_tmp=/tmp/reiyah-gate-a-validation-1.2.0.json
-
-test -z "$(git status --porcelain=v1 --untracked-files=all)"
-test ! -e gate/GATE_A_EVIDENCE_INDEX.json
-test ! -e gate/GATE_A_EVIDENCE_INDEX.sha256
-test ! -e gate/validation-reports/gate-a-validation-1.2.0.json
-
-tools/gate_a_1_2_0.sh --snapshot-mode release --output json --emit-index \
-  > "$index_tmp"
-cp "$index_tmp" gate/GATE_A_EVIDENCE_INDEX.json
-index_digest=$(shasum -a 256 "$index_tmp" | awk '{print $1}')
-printf 'sha256:%s  gate/GATE_A_EVIDENCE_INDEX.json\n' "$index_digest" \
-  > gate/GATE_A_EVIDENCE_INDEX.sha256
-git add gate/GATE_A_EVIDENCE_INDEX.json gate/GATE_A_EVIDENCE_INDEX.sha256
-git commit --amend --no-edit
-
-tools/gate_a_1_2_0.sh --snapshot-mode release --output json --emit-report \
-  > "$report_tmp"
-cp "$report_tmp" gate/validation-reports/gate-a-validation-1.2.0.json
-git add gate/validation-reports/gate-a-validation-1.2.0.json
-git commit --amend --no-edit
-```
-
-The first amend creates `C_index`; the second creates `C_packet`. `--emit-report` requires exact
-committed index and sidecar readback and internally compares two separately loaded, fresh-worker
-S01 through S19 evaluations before emitting S20. The parent also performs a complete production
-replay over its immutable snapshot and requires every child token row, nested row, selector row,
-index byte, publication-state result, and report-driving section to equal that outer replay. The
-outer replay is a substitution guard, not a third independent evaluator. Once `C_packet` exists,
-two ordinary complete launcher invocations must be byte-identical to each other and the canonical
-report:
-
-```sh
-tools/gate_a_1_2_0.sh --snapshot-mode release --output json \
-  > /tmp/reiyah-gate-a-validation-1.2.0-a.json
-tools/gate_a_1_2_0.sh --snapshot-mode release --output json \
-  > /tmp/reiyah-gate-a-validation-1.2.0-b.json
-cmp /tmp/reiyah-gate-a-validation-1.2.0-a.json \
-  /tmp/reiyah-gate-a-validation-1.2.0-b.json
-cmp /tmp/reiyah-gate-a-validation-1.2.0-a.json \
-  gate/validation-reports/gate-a-validation-1.2.0.json
-```
-
-The later direct-child `C_receipt` state is checked by a release-blocking, non-emitted guard. It
-validates the real rights record and sequence-four receipt and proves that the candidate
-projection, index, and report remain byte-identical to `C_packet`. The unchanged canonical report
-does not and cannot contain evidence about that later commit, and the receipt cannot claim remote
-readback of the commit that contains the receipt itself.
-
-A successful release run requires exit code `0`, zero diagnostics, every current-replay
-known-good fixture to pass, every current-replay known-bad fixture to fail for its declared
-primary rule, exact byte and schema attestation for every catalog row, exact predecessor
-inheritance, exact index and projection reconciliation, and GA-01 through GA-16 to pass. The
-report's same-snapshot correction closure must list exactly `CR-001` through `CR-016`, with
-required findings equal to closed findings and no open finding. The
-validator always leaves GA-17 and independent transport verification `not_evaluated`; it cannot
-create acceptance, scientific evidence, or runtime authority.
-
-Retained historical fixture rows remain byte-attested and schema-identified in the catalog, but
-they are not counted as current `1.2.0` replay evidence.
-
-The immutable `1.1.2` predecessor checked 68 schemas, 241 normative instances, 196 fixtures, 17
-of 17 known-good cases, 179 of 179 known-bad cases, 1,010 of 1,010 required-property mutations,
-and 347 indexed artifacts with zero diagnostics. These counts describe only the exact predecessor
-bytes; the `1.2.0` totals must be read from its final canonical report.
-
-## Review and navigation
-
-| Purpose | Start here |
+| Purpose | Artifact |
 |---|---|
-| Authority and session continuity | [`AGENTS.md`](AGENTS.md), [`SESSION_HANDOFF.md`](docs/SESSION_HANDOFF.md) |
-| Mission and claim boundary | [`scientific charter`](docs/SCIENTIFIC_CHARTER.md), [`claims and non-claims`](docs/CLAIMS_AND_NON_CLAIMS.md), [`status model`](docs/STATUS_MODEL.md) |
-| Gate decision procedure | [`pre-implementation gate`](docs/PRE_IMPLEMENTATION_GATE.md), [`gate records`](gate/) |
-| Scientific and technical review | [`architecture`](docs/ARCHITECTURE.md), [`mathematical specification`](docs/MATHEMATICAL_SPECIFICATION.md), [`threat model`](docs/THREAT_MODEL.md) |
-| Research frontier and open gaps | [`research operating model`](docs/RESEARCH_OPERATING_MODEL.md), [`2026 frontier baseline`](docs/FRONTIER_BASELINE_2026.md), [`research gap register`](docs/RESEARCH_GAP_REGISTER.md) |
-| Measurement findings (this branch, proposed) | [`Gate B findings synthesis`](docs/GATE_B_FINDINGS_SYNTHESIS.md), [`measurement contract`](docs/GATE_B_MEASUREMENT_CONTRACT.md), [`Gate B handoff`](docs/GATE_B_SESSION_HANDOFF.md) |
-| Evidence and standards review | [`source policy`](docs/SOURCE_POLICY.md), [`standards crosswalk`](docs/STANDARDS_CROSSWALK.md), [`evidence records`](evidence/) |
-| Deterministic replay | [`validation guide`](docs/VALIDATION.md), [`validation plan`](validation/), [`fixture catalog`](fixtures/fixture-catalog.json) |
-| Contribution or disclosure | [`CONTRIBUTING.md`](CONTRIBUTING.md), [`SECURITY.md`](SECURITY.md) |
+| What exists, what is unproven, and what to investigate next | [Research-board report](docs/RESEARCH_BOARD_2026-09-07.md) |
+| Current bounded interpretation of all research threads | [Corrected synthesis](docs/GENERAL_SYNTHESIS.md) |
+| New measurement, limitations and exact replay | [Result AO](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md) |
+| Current claim status and predecessor lineage | [Claim register](evidence/claim-status-register-2026-09-07.json) |
+| Source versions, private custody and public pointers | [Research source ledger](evidence/research-board-source-ledger-2026-09-07.json) |
+| Executed checks and unresolved implementation risks | [Research closeout](docs/RESEARCH_BOARD_CLOSEOUT_2026-09-07.md) |
+| Existing measurement contract and history | [Gate B contract](docs/GATE_B_MEASUREMENT_CONTRACT.md), [Gate B handoff](docs/GATE_B_SESSION_HANDOFF.md) |
+| Original scientific architecture | [Architecture](docs/ARCHITECTURE.md), [scientific charter](docs/SCIENTIFIC_CHARTER.md) |
+| Mathematical limits on safety transfer | [RSS estimand analysis](docs/ESTIMAND_RSS_DEFINITION_32.md) |
+| Public-data permissions and retained custody | [Public-data custody](docs/PUBLIC_DATA_CUSTODY_2026-09-06.md), [NOTICE](NOTICE) |
 
-Every repository session must verify the named project, working directory, Git root, repository
-contract, worktree state, and handoff before making a repository-specific change. Never discard
-unrelated work or reuse a published release identifier.
-
-## Open risks and next authorized action
-
-- HARBOR's name, constructs, estimands, thresholds, and every scientific claim remain proposed.
-- No eligible empirical dataset, executed study, benchmark result, policy log, construct-validity
-  result, subgroup analysis, independent replication, safety review, standards review, or legal
-  opinion exists.
-- The frontier baseline remains discovery material and cannot support a protocol or superiority
-  claim.
-- A finite schema, threat model, and fixture suite cannot prove that every scientific, security,
-  rights, or release threat is known.
-- The retained adversarial review is model-assisted advisory work. No independently retained
-  external scientific, safety, standards, or security review is established by this packet.
-- Authoritative replay is canonical-path-bound; portability to an arbitrary public clone remains
-  explicitly unsupported at Gate A.
-
-If the Gate A `1.2.0` index, sidecar, canonical report, historical `1.1.2` snapshot, fixtures, or
-validator support is absent or inconsistent, continue only the bounded static correction. Once
-release replay is byte-identical to the canonical report and classifies the exact current bytes
-as `architecture_complete`, the exact bytes are eligible for independent advisory review and,
-under separate explicit publication authority, public distribution. Publication requires a
-current event-specific rights observation, exact packet/report bindings, and an append-only
-publisher receipt. Independent transport verification, operator acceptance, Gate B, cloud use,
-and runtime remain separate and unauthorized.
+The reference-validity study is now implemented; independent adjudication is the next scientific
+action. Only if that evidence warrants it should a temporal monitor be tested against strong
+calibrated baselines. The prior
+results, failed forecasts and withdrawn interpretations stay discoverable. Reiyah should earn
+trust by resolving those boundaries, not by expanding its claims faster than its evidence.
 
 ## Open source and citation
 
-Reiyah-authored code, schemas, fixtures, and documentation are licensed under the
-[`Apache License 2.0`](LICENSE). Contributions use the same terms. The repository licence does
-not relicense third-party material; see [`NOTICE`](NOTICE) and the
-[`public distribution inventory`](evidence/public-distribution-inventory-1.1.0.json) for the
-bounded evidence payloads and required attribution.
-
-Use [`CITATION.cff`](CITATION.cff) and cite the exact evidence-index digest reviewed. When public
-distribution identity matters, also cite the unique highest valid append-only receipt that
-exact-binds that same index, its canonical report, and packet commit. A publisher's readback is an
-assertion. Cite independent transport verification only when a distinct authorized observation
-record binds the same exact bytes. Never substitute a mutable branch name, repository
-availability, or an older receipt.
+Repository code is distributed under [Apache-2.0](LICENSE). Third-party datasets, model outputs
+and source documents retain their own terms; the code license does not relicense them. See
+[NOTICE](NOTICE) and [CITATION.cff](CITATION.cff). No third-party research paper payload is added
+by this review. The new local research commit has Daniel Wahnich as its sole author.
