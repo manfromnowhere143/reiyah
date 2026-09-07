@@ -1,0 +1,301 @@
+{
+  "artifact_id": "reiyah.m4-rectangular-controls.0.1.0",
+  "authored_cases": [
+    {
+      "expected": {
+        "exact_supremum": "9/8",
+        "infimum": "0",
+        "supremum_kind": "finite"
+      },
+      "input": {
+        "artifact_id": "reiyah.m4-control.off-grid-maximum.0.1.0",
+        "box": [
+          [
+            "0",
+            "11"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      }
+    },
+    {
+      "expected": {
+        "exact_supremum": "10",
+        "infimum": "101/11",
+        "supremum_kind": "finite"
+      },
+      "input": {
+        "artifact_id": "reiyah.m4-control.finite-undefined-limit.0.1.0",
+        "box": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "10",
+            "10"
+          ],
+          [
+            "90",
+            "90"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      }
+    },
+    {
+      "expected": {
+        "exact_supremum": null,
+        "infimum": "2",
+        "supremum_kind": "unbounded"
+      },
+      "input": {
+        "artifact_id": "reiyah.m4-control.genuine-divergence.0.1.0",
+        "box": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      }
+    },
+    {
+      "expected": {
+        "exact_supremum": "0",
+        "infimum": "0",
+        "supremum_kind": "finite"
+      },
+      "input": {
+        "artifact_id": "reiyah.m4-control.defined-zero-and-undefined.0.1.0",
+        "box": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      }
+    },
+    {
+      "expected": {
+        "exact_supremum": null,
+        "infimum": null,
+        "supremum_kind": null
+      },
+      "input": {
+        "artifact_id": "reiyah.m4-control.entirely-undefined.0.1.0",
+        "box": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "10",
+            "10"
+          ],
+          [
+            "90",
+            "90"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      }
+    },
+    {
+      "expected": {
+        "exact_supremum": null,
+        "infimum": null,
+        "supremum_kind": null
+      },
+      "input": {
+        "artifact_id": "reiyah.m4-control.empty-universe.0.1.0",
+        "box": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      }
+    },
+    {
+      "expected": {
+        "exact_supremum": "1",
+        "infimum": "1",
+        "supremum_kind": "finite"
+      },
+      "input": {
+        "artifact_id": "reiyah.m4-control.zero-neither-mass.0.1.0",
+        "box": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      }
+    },
+    {
+      "expected": {
+        "exact_supremum": null,
+        "infimum": "0",
+        "supremum_kind": "finite"
+      },
+      "input": {
+        "artifact_id": "reiyah.m4-control.irrational-maximum.0.1.0",
+        "box": [
+          [
+            "0",
+            "10"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      }
+    },
+    {
+      "expected": {
+        "exact_supremum": null,
+        "infimum": "0",
+        "supremum_kind": "finite"
+      },
+      "input": {
+        "artifact_id": "reiyah.m4-control.exhausted-refinement-budget.0.1.0",
+        "box": [
+          [
+            "0",
+            "10"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "max_refinements": 0,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      }
+    }
+  ],
+  "domain": "nonnegative rectangular cell masses",
+  "historical_replay": {
+    "direct_report_call_count": 7,
+    "method": "extract literal cell and budget assignments and direct report calls from the retained source AST; run optimise only",
+    "not_replayed": [
+      "main",
+      "random_probe",
+      "optimise_differential"
+    ],
+    "source_function": "main"
+  },
+  "historical_sources": {
+    "evidence/measurement/m4_partial_identification.txt": "b22b6cf1a1b24c09718139e59863f5f5bb7b912668a499dcf66e5efa3e39e4e8",
+    "tools/measure/m4_partial_identification.py": "812e42cbcc450b5504ea8004f280e2e0b744cbb3b6bfd8d3fa507352576af9b3"
+  },
+  "lifecycle_status": "exploratory",
+  "version": "0.1.0"
+}

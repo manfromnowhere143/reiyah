@@ -1,11 +1,14 @@
 # Current research navigation, 2026-09-07
 
-The latest local continuation is `research/2026-09-07-selection-policy`, extending
-`beccb6b50babfe9b203b8b8e4aad59c304003a89`. Read the
-[selection-policy checkpoint](SELECTION_POLICY_CLOSEOUT_2026-09-07.md) and
-[reference-noise interpretation correction](REFERENCE_NOISE_INTERPRETATION_2026-09-07.md)
-before the earlier context below. All active worktrees and frozen empirical protocols remain
-under their existing ownership and exact identities. No acceptance state is changed.
+The latest local continuation is `research/2026-09-07-m4-bounds`, extending
+`ca548d4fd66180e9c2e2aa4a789a366c23903401`. Read the
+[M4 bound checkpoint](M4_BOUND_CLOSEOUT_2026-09-07.md) and
+[corrected findings](M4_RECTANGULAR_BOUND_FINDINGS_2026-09-07.md) before the earlier context.
+The retained F-03 synthetic fixture has finite supremum 49.75, not an infinite supremum.
+The historical source and transcript remain unchanged; the new component does not validate
+M4's coupled differential model or the physical reference. All active worktrees and frozen
+empirical protocols remain under their existing ownership and exact identities. No acceptance
+state is changed.
 
 Read [the research continuation and stopping point](RESEARCH_CONTINUATION_2026-09-07.md)
 first for this local research branch. It extends the frozen reference-study commit

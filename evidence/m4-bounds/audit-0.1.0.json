@@ -1,0 +1,1765 @@
+{
+  "artifact_id": "reiyah.m4-rectangular-audit.0.1.0",
+  "authored_controls": [
+    {
+      "algebra_check": {
+        "domain": "all_positive_universes_defined",
+        "lower_polynomial_minimum": "0",
+        "lower_polynomial_minimum_at": "0",
+        "status": "verified",
+        "upper": "finite rational enclosure verified",
+        "upper_polynomial_minimum": "0",
+        "upper_polynomial_minimum_at": "3"
+      },
+      "canonical_input_sha256": "d7f2bcd797403619cede60f1f92e5412b39cf1d08568e2ad4f1b0448ba1600e5",
+      "historical": {
+        "extremum_points": [
+          [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            2.75,
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "grid_infimum": 0.0,
+        "grid_supremum": 1.1244444444444444,
+        "unbounded_flag": false
+      },
+      "input": {
+        "artifact_id": "reiyah.m4-control.off-grid-maximum.0.1.0",
+        "box": [
+          [
+            "0",
+            "11"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      },
+      "result": {
+        "box": [
+          [
+            "0",
+            "11"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": false,
+        "infimum": {
+          "attained": true,
+          "value": "0",
+          "witness": {
+            "cell_masses": [
+              "0",
+              "1",
+              "1",
+              "1"
+            ],
+            "coefficient": "0",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "all_positive_universes_defined",
+        "supremum": {
+          "attained_on_defined_domain": true,
+          "enclosure_width": "0",
+          "kind": "finite",
+          "refinements": 0,
+          "requested_width": "1/1000000000000",
+          "requested_width_met": true,
+          "supremum_enclosure": [
+            "9/8",
+            "9/8"
+          ],
+          "witness": {
+            "cell_masses": [
+              "3",
+              "1",
+              "1",
+              "1"
+            ],
+            "coefficient": "9/8",
+            "kind": "defined_point"
+          }
+        },
+        "undefined_positive_universe_feasible": false
+      }
+    },
+    {
+      "algebra_check": {
+        "domain": "some_positive_universes_undefined",
+        "lower_polynomial_minimum": "0",
+        "lower_polynomial_minimum_at": "0",
+        "status": "verified",
+        "upper": "finite rational enclosure verified",
+        "upper_polynomial_minimum": "0",
+        "upper_polynomial_minimum_at": "0"
+      },
+      "canonical_input_sha256": "8c7da82baf8c8ad9abc38a84115651567157eafce6508250735bb25d0241636e",
+      "historical": {
+        "extremum_points": [
+          [
+            1.0,
+            0.0,
+            10.0,
+            90.0
+          ],
+          [
+            0.05,
+            0.0,
+            10.0,
+            90.0
+          ]
+        ],
+        "grid_infimum": 9.181818181818182,
+        "grid_supremum": 9.955223880597014,
+        "unbounded_flag": true
+      },
+      "input": {
+        "artifact_id": "reiyah.m4-control.finite-undefined-limit.0.1.0",
+        "box": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "10",
+            "10"
+          ],
+          [
+            "90",
+            "90"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      },
+      "result": {
+        "box": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "10",
+            "10"
+          ],
+          [
+            "90",
+            "90"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": false,
+        "infimum": {
+          "attained": true,
+          "value": "101/11",
+          "witness": {
+            "cell_masses": [
+              "1",
+              "0",
+              "10",
+              "90"
+            ],
+            "coefficient": "101/11",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "some_positive_universes_undefined",
+        "supremum": {
+          "attained_on_defined_domain": false,
+          "enclosure_width": "0",
+          "kind": "finite",
+          "refinements": 0,
+          "requested_width": "1/1000000000000",
+          "requested_width_met": true,
+          "supremum_enclosure": [
+            "10",
+            "10"
+          ],
+          "witness": {
+            "a_upper": "1",
+            "approach": "a=a_upper/k for positive integer k tending to infinity",
+            "kind": "finite_boundary_limit",
+            "limit_cell_masses": [
+              "0",
+              "0",
+              "10",
+              "90"
+            ],
+            "limit_coefficient": "10",
+            "limit_point_is_defined": false
+          }
+        },
+        "undefined_positive_universe_feasible": true
+      }
+    },
+    {
+      "algebra_check": {
+        "domain": "some_positive_universes_undefined",
+        "lower_polynomial_minimum": "0",
+        "status": "verified",
+        "upper": "unbounded by an explicit positive-domain sequence"
+      },
+      "canonical_input_sha256": "cb3f68241bb101c048d04d64a22f99790eb1dc0fc69af5060cf3a8065cca19bb",
+      "input": {
+        "artifact_id": "reiyah.m4-control.genuine-divergence.0.1.0",
+        "box": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      },
+      "result": {
+        "box": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": false,
+        "infimum": {
+          "attained": true,
+          "value": "2",
+          "witness": {
+            "cell_masses": [
+              "1",
+              "0",
+              "0",
+              "1"
+            ],
+            "coefficient": "2",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "some_positive_universes_undefined",
+        "supremum": {
+          "attained_on_defined_domain": false,
+          "kind": "unbounded",
+          "supremum_enclosure": null,
+          "witness": {
+            "a_upper": "1",
+            "cell_masses": [
+              "a_upper/k",
+              "0",
+              "0",
+              "1"
+            ],
+            "coefficient": "1 + (d/a_upper)*k",
+            "integer_k_minimum": 1,
+            "kind": "diverging_sequence"
+          }
+        },
+        "undefined_positive_universe_feasible": true
+      }
+    },
+    {
+      "algebra_check": {
+        "domain": "some_positive_universes_undefined",
+        "lower_polynomial_minimum": "0",
+        "lower_polynomial_minimum_at": "0",
+        "status": "verified",
+        "upper": "finite rational enclosure verified",
+        "upper_polynomial_minimum": "0",
+        "upper_polynomial_minimum_at": "0"
+      },
+      "canonical_input_sha256": "d3763393c38fad849c9933f986bdaf8174aaf46c512cda9dbeb648ef17aff4a9",
+      "input": {
+        "artifact_id": "reiyah.m4-control.defined-zero-and-undefined.0.1.0",
+        "box": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      },
+      "result": {
+        "box": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": true,
+        "infimum": {
+          "attained": true,
+          "value": "0",
+          "witness": {
+            "cell_masses": [
+              "0",
+              "1",
+              "1",
+              "0"
+            ],
+            "coefficient": "0",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "some_positive_universes_undefined",
+        "supremum": {
+          "attained_on_defined_domain": true,
+          "enclosure_width": "0",
+          "kind": "finite",
+          "refinements": 0,
+          "requested_width": "1/1000000000000",
+          "requested_width_met": true,
+          "supremum_enclosure": [
+            "0",
+            "0"
+          ],
+          "witness": {
+            "cell_masses": [
+              "0",
+              "1",
+              "1",
+              "0"
+            ],
+            "coefficient": "0",
+            "kind": "defined_point"
+          }
+        },
+        "undefined_positive_universe_feasible": true
+      }
+    },
+    {
+      "algebra_check": {
+        "domain": "undefined_on_all_positive_universes",
+        "global_inequalities": "no defined coefficient exists",
+        "status": "verified"
+      },
+      "canonical_input_sha256": "ecd1bbace8a8e9bd62cbdbc80d953ece4c55db17d741d935024c1826368393df",
+      "input": {
+        "artifact_id": "reiyah.m4-control.entirely-undefined.0.1.0",
+        "box": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "10",
+            "10"
+          ],
+          [
+            "90",
+            "90"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      },
+      "result": {
+        "box": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "10",
+            "10"
+          ],
+          [
+            "90",
+            "90"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": false,
+        "empty_universe_feasible": false,
+        "infimum": null,
+        "model": "nonnegative rectangular cell masses",
+        "state": "undefined_on_all_positive_universes",
+        "supremum": null,
+        "undefined_positive_universe_feasible": true
+      }
+    },
+    {
+      "algebra_check": {
+        "domain": "empty_universe_only",
+        "global_inequalities": "no defined coefficient exists",
+        "status": "verified"
+      },
+      "canonical_input_sha256": "2fbbc46d16c8f24f184e770662d5fff0a04f92c53f9cb1d786749c1c24fc40dc",
+      "input": {
+        "artifact_id": "reiyah.m4-control.empty-universe.0.1.0",
+        "box": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      },
+      "result": {
+        "box": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": false,
+        "empty_universe_feasible": true,
+        "infimum": null,
+        "model": "nonnegative rectangular cell masses",
+        "state": "empty_universe_only",
+        "supremum": null,
+        "undefined_positive_universe_feasible": false
+      }
+    },
+    {
+      "algebra_check": {
+        "domain": "all_positive_universes_defined",
+        "lower_polynomial_minimum": "0",
+        "lower_polynomial_minimum_at": "0",
+        "status": "verified",
+        "upper": "finite rational enclosure verified",
+        "upper_polynomial_minimum": "0",
+        "upper_polynomial_minimum_at": "0"
+      },
+      "canonical_input_sha256": "8a996ac781327872037e715f13558e5589ff3ba078aa0416c46a30ff51af1466",
+      "input": {
+        "artifact_id": "reiyah.m4-control.zero-neither-mass.0.1.0",
+        "box": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      },
+      "result": {
+        "box": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": true,
+        "infimum": {
+          "attained": true,
+          "value": "1",
+          "witness": {
+            "cell_masses": [
+              "1",
+              "0",
+              "0",
+              "0"
+            ],
+            "coefficient": "1",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "all_positive_universes_defined",
+        "supremum": {
+          "attained_on_defined_domain": true,
+          "enclosure_width": "0",
+          "kind": "finite",
+          "refinements": 0,
+          "requested_width": "1/1000000000000",
+          "requested_width_met": true,
+          "supremum_enclosure": [
+            "1",
+            "1"
+          ],
+          "witness": {
+            "cell_masses": [
+              "1",
+              "0",
+              "0",
+              "0"
+            ],
+            "coefficient": "1",
+            "kind": "defined_point"
+          }
+        },
+        "undefined_positive_universe_feasible": false
+      }
+    },
+    {
+      "algebra_check": {
+        "domain": "all_positive_universes_defined",
+        "lower_polynomial_minimum": "0",
+        "lower_polynomial_minimum_at": "0",
+        "status": "verified",
+        "upper": "finite rational enclosure verified",
+        "upper_polynomial_minimum": "248901532045662280932873708475136303233479/18955993288996549585449998644793835078433711414415696",
+        "upper_polynomial_minimum_at": "226307090606808042064912719/81556461059727901566384782"
+      },
+      "canonical_input_sha256": "2e694c38289bcbb46dba608242d685d97b063a3154491efc148cff01b710495b",
+      "input": {
+        "artifact_id": "reiyah.m4-control.irrational-maximum.0.1.0",
+        "box": [
+          [
+            "0",
+            "10"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "max_refinements": 256,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      },
+      "result": {
+        "box": [
+          [
+            "0",
+            "10"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": false,
+        "infimum": {
+          "attained": true,
+          "value": "0",
+          "witness": {
+            "cell_masses": [
+              "0",
+              "1",
+              "2",
+              "3"
+            ],
+            "coefficient": "0",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "all_positive_universes_defined",
+        "supremum": {
+          "attained_on_defined_domain": true,
+          "enclosure_width": "29516090788879980629200808002446564764175/40517030764382496838630502412560595860018485317306028",
+          "kind": "finite",
+          "refinements": 43,
+          "requested_width": "1/1000000000000",
+          "requested_width_met": true,
+          "supremum_enclosure": [
+            "470976473785991746764067065/348641782196587904383766777",
+            "156992157928663915588022355/116213927398799964804829964"
+          ],
+          "witness": {
+            "a_bracket": [
+              "6101963580515/2199023255552",
+              "12203927161035/4398046511104"
+            ],
+            "derivative_polynomial_coefficients": [
+              "-3",
+              "4",
+              "12"
+            ],
+            "derivative_signs": [
+              "positive",
+              "negative"
+            ],
+            "fixed_bcd": [
+              "1",
+              "2",
+              "3"
+            ],
+            "kind": "unique_stationary_root",
+            "supremum_lower_witness": {
+              "cell_masses": [
+                "12203927161035/4398046511104",
+                "1",
+                "2",
+                "3"
+              ],
+              "coefficient": "470976473785991746764067065/348641782196587904383766777",
+              "kind": "defined_point"
+            },
+            "supremum_upper_rule": "high*(high+b+c+d)/((low+b)*(low+c))"
+          }
+        },
+        "undefined_positive_universe_feasible": false
+      }
+    },
+    {
+      "algebra_check": {
+        "domain": "all_positive_universes_defined",
+        "lower_polynomial_minimum": "0",
+        "lower_polynomial_minimum_at": "0",
+        "status": "verified",
+        "upper": "finite rational enclosure verified",
+        "upper_polynomial_minimum": "160",
+        "upper_polynomial_minimum_at": "0"
+      },
+      "canonical_input_sha256": "a9e9348f4c51e422d549ecc443fbebcbd885fe0bb042e03bde901d8cd9d0413a",
+      "input": {
+        "artifact_id": "reiyah.m4-control.exhausted-refinement-budget.0.1.0",
+        "box": [
+          [
+            "0",
+            "10"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "max_refinements": 0,
+        "schema_version": "reiyah.rectangular-coincidence-input.v1",
+        "tolerance": "1/1000000000000"
+      },
+      "result": {
+        "box": [
+          [
+            "0",
+            "10"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": false,
+        "infimum": {
+          "attained": true,
+          "value": "0",
+          "witness": {
+            "cell_masses": [
+              "0",
+              "1",
+              "2",
+              "3"
+            ],
+            "coefficient": "0",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "all_positive_universes_defined",
+        "supremum": {
+          "attained_on_defined_domain": true,
+          "enclosure_width": "2600/33",
+          "kind": "finite",
+          "refinements": 0,
+          "requested_width": "1/1000000000000",
+          "requested_width_met": false,
+          "supremum_enclosure": [
+            "40/33",
+            "80"
+          ],
+          "witness": {
+            "a_bracket": [
+              "0",
+              "10"
+            ],
+            "derivative_polynomial_coefficients": [
+              "-3",
+              "4",
+              "12"
+            ],
+            "derivative_signs": [
+              "positive",
+              "negative"
+            ],
+            "fixed_bcd": [
+              "1",
+              "2",
+              "3"
+            ],
+            "kind": "unique_stationary_root",
+            "supremum_lower_witness": {
+              "cell_masses": [
+                "10",
+                "1",
+                "2",
+                "3"
+              ],
+              "coefficient": "40/33",
+              "kind": "defined_point"
+            },
+            "supremum_upper_rule": "high*(high+b+c+d)/((low+b)*(low+c))"
+          }
+        },
+        "undefined_positive_universe_feasible": false
+      }
+    }
+  ],
+  "historical_constants": {
+    "grid_per_dimension": 21,
+    "random_probes_not_replayed": 200000,
+    "seed": 20260829
+  },
+  "historical_globals_unchanged": true,
+  "historical_report_calls": [
+    {
+      "algebra_check": {
+        "domain": "all_positive_universes_defined",
+        "lower_polynomial_minimum": "0",
+        "lower_polynomial_minimum_at": "100",
+        "status": "verified",
+        "upper": "finite rational enclosure verified",
+        "upper_polynomial_minimum": "0",
+        "upper_polynomial_minimum_at": "100"
+      },
+      "case_id": "historical-01",
+      "comparison": "finite_extrema_agree_with_float_rounding",
+      "corrected": {
+        "box": [
+          [
+            "100",
+            "100"
+          ],
+          [
+            "900",
+            "900"
+          ],
+          [
+            "900",
+            "900"
+          ],
+          [
+            "8100",
+            "8100"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": false,
+        "infimum": {
+          "attained": true,
+          "value": "1",
+          "witness": {
+            "cell_masses": [
+              "100",
+              "900",
+              "900",
+              "8100"
+            ],
+            "coefficient": "1",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "all_positive_universes_defined",
+        "supremum": {
+          "attained_on_defined_domain": true,
+          "enclosure_width": "0",
+          "kind": "finite",
+          "refinements": 0,
+          "requested_width": "1/1000000000000",
+          "requested_width_met": true,
+          "supremum_enclosure": [
+            "1",
+            "1"
+          ],
+          "witness": {
+            "cell_masses": [
+              "100",
+              "900",
+              "900",
+              "8100"
+            ],
+            "coefficient": "1",
+            "kind": "defined_point"
+          }
+        },
+        "undefined_positive_universe_feasible": false
+      },
+      "historical": {
+        "extremum_points": [
+          [
+            100.0,
+            900.0,
+            900.0,
+            8100.0
+          ],
+          [
+            100.0,
+            900.0,
+            900.0,
+            8100.0
+          ]
+        ],
+        "grid_infimum": 1.0,
+        "grid_supremum": 1.0,
+        "unbounded_flag": false
+      },
+      "historical_tie_single_miss": false,
+      "literal_budgets": {
+        "class_or_stratum_error": 0.0,
+        "false_opportunities": 0.0,
+        "localization_or_pose_error": 0.0,
+        "omitted_true_opportunities": 0.0
+      },
+      "literal_cells": [
+        100.0,
+        900.0,
+        900.0,
+        8100.0
+      ],
+      "name": "L0-equivalent (zero budgets, for reference only)",
+      "rectangle_extrema_respect_historical_tie": null,
+      "source_line": 283
+    },
+    {
+      "algebra_check": {
+        "domain": "all_positive_universes_defined",
+        "lower_polynomial_minimum": "0",
+        "lower_polynomial_minimum_at": "0",
+        "status": "verified",
+        "upper": "finite rational enclosure verified",
+        "upper_polynomial_minimum": "0",
+        "upper_polynomial_minimum_at": "200"
+      },
+      "case_id": "historical-02",
+      "comparison": "finite_extrema_agree_with_float_rounding",
+      "corrected": {
+        "box": [
+          [
+            "0",
+            "200"
+          ],
+          [
+            "800",
+            "1000"
+          ],
+          [
+            "800",
+            "1000"
+          ],
+          [
+            "8000",
+            "8200"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": false,
+        "infimum": {
+          "attained": true,
+          "value": "0",
+          "witness": {
+            "cell_masses": [
+              "0",
+              "1000",
+              "1000",
+              "8000"
+            ],
+            "coefficient": "0",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "all_positive_universes_defined",
+        "supremum": {
+          "attained_on_defined_domain": true,
+          "enclosure_width": "0",
+          "kind": "finite",
+          "refinements": 0,
+          "requested_width": "1/1000000000000",
+          "requested_width_met": true,
+          "supremum_enclosure": [
+            "2",
+            "2"
+          ],
+          "witness": {
+            "cell_masses": [
+              "200",
+              "800",
+              "800",
+              "8200"
+            ],
+            "coefficient": "2",
+            "kind": "defined_point"
+          }
+        },
+        "undefined_positive_universe_feasible": false
+      },
+      "historical": {
+        "extremum_points": [
+          [
+            0.0,
+            800.0,
+            800.0,
+            8000.0
+          ],
+          [
+            200.0,
+            800.0,
+            800.0,
+            8200.0
+          ]
+        ],
+        "grid_infimum": 0.0,
+        "grid_supremum": 2.0,
+        "unbounded_flag": false
+      },
+      "historical_tie_single_miss": false,
+      "literal_budgets": {
+        "class_or_stratum_error": 25.0,
+        "false_opportunities": 50.0,
+        "localization_or_pose_error": 25.0,
+        "omitted_true_opportunities": 50.0
+      },
+      "literal_cells": [
+        100.0,
+        900.0,
+        900.0,
+        8100.0
+      ],
+      "name": "L1  mechanism budgets, no cell assumption",
+      "rectangle_extrema_respect_historical_tie": null,
+      "source_line": 285
+    },
+    {
+      "algebra_check": {
+        "domain": "all_positive_universes_defined",
+        "lower_polynomial_minimum": "0",
+        "lower_polynomial_minimum_at": "0",
+        "status": "verified",
+        "upper": "finite rational enclosure verified",
+        "upper_polynomial_minimum": "0",
+        "upper_polynomial_minimum_at": "200"
+      },
+      "case_id": "historical-03",
+      "comparison": "finite_extrema_agree_with_float_rounding",
+      "corrected": {
+        "box": [
+          [
+            "0",
+            "200"
+          ],
+          [
+            "800",
+            "1000"
+          ],
+          [
+            "800",
+            "1000"
+          ],
+          [
+            "8000",
+            "8200"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": false,
+        "infimum": {
+          "attained": true,
+          "value": "0",
+          "witness": {
+            "cell_masses": [
+              "0",
+              "1000",
+              "1000",
+              "8000"
+            ],
+            "coefficient": "0",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "all_positive_universes_defined",
+        "supremum": {
+          "attained_on_defined_domain": true,
+          "enclosure_width": "0",
+          "kind": "finite",
+          "refinements": 0,
+          "requested_width": "1/1000000000000",
+          "requested_width_met": true,
+          "supremum_enclosure": [
+            "2",
+            "2"
+          ],
+          "witness": {
+            "cell_masses": [
+              "200",
+              "800",
+              "800",
+              "8200"
+            ],
+            "coefficient": "2",
+            "kind": "defined_point"
+          }
+        },
+        "undefined_positive_universe_feasible": false
+      },
+      "historical": {
+        "extremum_points": [
+          [
+            0.0,
+            800.0,
+            800.0,
+            8000.0
+          ],
+          [
+            200.0,
+            800.0,
+            800.0,
+            8200.0
+          ]
+        ],
+        "grid_infimum": 0.0,
+        "grid_supremum": 2.0,
+        "unbounded_flag": false
+      },
+      "historical_tie_single_miss": true,
+      "literal_budgets": {
+        "class_or_stratum_error": 25.0,
+        "false_opportunities": 50.0,
+        "localization_or_pose_error": 25.0,
+        "omitted_true_opportunities": 50.0
+      },
+      "literal_cells": [
+        100.0,
+        900.0,
+        900.0,
+        8100.0
+      ],
+      "name": "L2  L1 plus non-differential restriction on the single-miss cells",
+      "rectangle_extrema_respect_historical_tie": true,
+      "source_line": 287
+    },
+    {
+      "algebra_check": {
+        "domain": "all_positive_universes_defined",
+        "lower_polynomial_minimum": "0",
+        "lower_polynomial_minimum_at": "87",
+        "status": "verified",
+        "upper": "finite rational enclosure verified",
+        "upper_polynomial_minimum": "0",
+        "upper_polynomial_minimum_at": "115"
+      },
+      "case_id": "historical-04",
+      "comparison": "finite_extrema_agree_with_float_rounding",
+      "corrected": {
+        "box": [
+          [
+            "87",
+            "115"
+          ],
+          [
+            "887",
+            "915"
+          ],
+          [
+            "887",
+            "915"
+          ],
+          [
+            "8087",
+            "8115"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": false,
+        "infimum": {
+          "attained": true,
+          "value": "72529/83667",
+          "witness": {
+            "cell_masses": [
+              "87",
+              "915",
+              "915",
+              "8087"
+            ],
+            "coefficient": "72529/83667",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "all_positive_universes_defined",
+        "supremum": {
+          "attained_on_defined_domain": true,
+          "enclosure_width": "0",
+          "kind": "finite",
+          "refinements": 0,
+          "requested_width": "1/1000000000000",
+          "requested_width_met": true,
+          "supremum_enclosure": [
+            "287615/251001",
+            "287615/251001"
+          ],
+          "witness": {
+            "cell_masses": [
+              "115",
+              "887",
+              "887",
+              "8115"
+            ],
+            "coefficient": "287615/251001",
+            "kind": "defined_point"
+          }
+        },
+        "undefined_positive_universe_feasible": false
+      },
+      "historical": {
+        "extremum_points": [
+          [
+            87.0,
+            915.0,
+            915.0,
+            8087.0
+          ],
+          [
+            115.0,
+            887.0,
+            887.0,
+            8115.0
+          ]
+        ],
+        "grid_infimum": 0.8668770243943251,
+        "grid_supremum": 1.1458719287970964,
+        "unbounded_flag": false
+      },
+      "historical_tie_single_miss": true,
+      "literal_budgets": {
+        "class_or_stratum_error": 3.0,
+        "false_opportunities": 6.0,
+        "localization_or_pose_error": 4.0,
+        "omitted_true_opportunities": 8.0
+      },
+      "literal_cells": [
+        100.0,
+        900.0,
+        900.0,
+        8100.0
+      ],
+      "name": "L3  budgets from a blinded reannotation (fixture values)",
+      "rectangle_extrema_respect_historical_tie": true,
+      "source_line": 292
+    },
+    {
+      "algebra_check": {
+        "domain": "all_positive_universes_defined",
+        "lower_polynomial_minimum": "0",
+        "lower_polynomial_minimum_at": "67",
+        "status": "verified",
+        "upper": "finite rational enclosure verified",
+        "upper_polynomial_minimum": "0",
+        "upper_polynomial_minimum_at": "95"
+      },
+      "case_id": "historical-05",
+      "comparison": "finite_extrema_agree_with_float_rounding",
+      "corrected": {
+        "box": [
+          [
+            "67",
+            "95"
+          ],
+          [
+            "1487",
+            "1515"
+          ],
+          [
+            "387",
+            "415"
+          ],
+          [
+            "8007",
+            "8035"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": false,
+        "infimum": {
+          "attained": true,
+          "value": "167567/190631",
+          "witness": {
+            "cell_masses": [
+              "67",
+              "1515",
+              "415",
+              "8007"
+            ],
+            "coefficient": "167567/190631",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "all_positive_universes_defined",
+        "supremum": {
+          "attained_on_defined_domain": true,
+          "enclosure_width": "0",
+          "kind": "finite",
+          "refinements": 0,
+          "requested_width": "1/1000000000000",
+          "requested_width_met": true,
+          "supremum_enclosure": [
+            "237595/190631",
+            "237595/190631"
+          ],
+          "witness": {
+            "cell_masses": [
+              "95",
+              "1487",
+              "387",
+              "8035"
+            ],
+            "coefficient": "237595/190631",
+            "kind": "defined_point"
+          }
+        },
+        "undefined_positive_universe_feasible": false
+      },
+      "historical": {
+        "extremum_points": [
+          [
+            67.0,
+            1515.0,
+            415.0,
+            8007.0
+          ],
+          [
+            95.0,
+            1487.0,
+            387.0,
+            8035.0
+          ]
+        ],
+        "grid_infimum": 0.8790123327265765,
+        "grid_supremum": 1.2463607702839516,
+        "unbounded_flag": false
+      },
+      "historical_tie_single_miss": false,
+      "literal_budgets": {
+        "class_or_stratum_error": 3.0,
+        "false_opportunities": 6.0,
+        "localization_or_pose_error": 4.0,
+        "omitted_true_opportunities": 8.0
+      },
+      "literal_cells": [
+        80.0,
+        1500.0,
+        400.0,
+        8020.0
+      ],
+      "name": "L1  no cell assumption",
+      "rectangle_extrema_respect_historical_tie": null,
+      "source_line": 318
+    },
+    {
+      "algebra_check": {
+        "domain": "all_positive_universes_defined",
+        "lower_polynomial_minimum": "0",
+        "lower_polynomial_minimum_at": "67",
+        "status": "verified",
+        "upper": "finite rational enclosure verified",
+        "upper_polynomial_minimum": "0",
+        "upper_polynomial_minimum_at": "95"
+      },
+      "case_id": "historical-06",
+      "comparison": "finite_extrema_agree_with_float_rounding",
+      "corrected": {
+        "box": [
+          [
+            "67",
+            "95"
+          ],
+          [
+            "1487",
+            "1515"
+          ],
+          [
+            "387",
+            "415"
+          ],
+          [
+            "8007",
+            "8035"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": false,
+        "infimum": {
+          "attained": true,
+          "value": "167567/190631",
+          "witness": {
+            "cell_masses": [
+              "67",
+              "1515",
+              "415",
+              "8007"
+            ],
+            "coefficient": "167567/190631",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "all_positive_universes_defined",
+        "supremum": {
+          "attained_on_defined_domain": true,
+          "enclosure_width": "0",
+          "kind": "finite",
+          "refinements": 0,
+          "requested_width": "1/1000000000000",
+          "requested_width_met": true,
+          "supremum_enclosure": [
+            "237595/190631",
+            "237595/190631"
+          ],
+          "witness": {
+            "cell_masses": [
+              "95",
+              "1487",
+              "387",
+              "8035"
+            ],
+            "coefficient": "237595/190631",
+            "kind": "defined_point"
+          }
+        },
+        "undefined_positive_universe_feasible": false
+      },
+      "historical": {
+        "extremum_points": [
+          [
+            67.0,
+            1515.0,
+            415.0,
+            8007.0
+          ],
+          [
+            95.0,
+            1487.0,
+            387.0,
+            8035.0
+          ]
+        ],
+        "grid_infimum": 0.8790123327265765,
+        "grid_supremum": 1.2463607702839516,
+        "unbounded_flag": false
+      },
+      "historical_tie_single_miss": true,
+      "literal_budgets": {
+        "class_or_stratum_error": 3.0,
+        "false_opportunities": 6.0,
+        "localization_or_pose_error": 4.0,
+        "omitted_true_opportunities": 8.0
+      },
+      "literal_cells": [
+        80.0,
+        1500.0,
+        400.0,
+        8020.0
+      ],
+      "name": "L2 as first written  tie the single-miss cells",
+      "rectangle_extrema_respect_historical_tie": true,
+      "source_line": 320
+    },
+    {
+      "algebra_check": {
+        "domain": "some_positive_universes_undefined",
+        "lower_polynomial_minimum": "0",
+        "lower_polynomial_minimum_at": "0",
+        "status": "verified",
+        "upper": "finite rational enclosure verified",
+        "upper_polynomial_minimum": "0",
+        "upper_polynomial_minimum_at": "0"
+      },
+      "case_id": "historical-07",
+      "comparison": "undefined_misclassified_as_unbounded",
+      "corrected": {
+        "box": [
+          [
+            "0",
+            "22"
+          ],
+          [
+            "0",
+            "23"
+          ],
+          [
+            "20",
+            "60"
+          ],
+          [
+            "935",
+            "975"
+          ]
+        ],
+        "cell_order": [
+          "both",
+          "a_only",
+          "b_only",
+          "neither"
+        ],
+        "defined_domain_exists": true,
+        "empty_universe_feasible": false,
+        "infimum": {
+          "attained": true,
+          "value": "0",
+          "witness": {
+            "cell_masses": [
+              "0",
+              "23",
+              "60",
+              "935"
+            ],
+            "coefficient": "0",
+            "kind": "defined_point"
+          }
+        },
+        "model": "nonnegative rectangular cell masses",
+        "state": "some_positive_universes_undefined",
+        "supremum": {
+          "attained_on_defined_domain": false,
+          "enclosure_width": "0",
+          "kind": "finite",
+          "refinements": 0,
+          "requested_width": "1/1000000000000",
+          "requested_width_met": true,
+          "supremum_enclosure": [
+            "199/4",
+            "199/4"
+          ],
+          "witness": {
+            "a_upper": "22",
+            "approach": "a=a_upper/k for positive integer k tending to infinity",
+            "kind": "finite_boundary_limit",
+            "limit_cell_masses": [
+              "0",
+              "0",
+              "20",
+              "975"
+            ],
+            "limit_coefficient": "199/4",
+            "limit_point_is_defined": false
+          }
+        },
+        "undefined_positive_universe_feasible": true
+      },
+      "historical": {
+        "extremum_points": [
+          [
+            0.0,
+            1.15,
+            20.0,
+            935.0
+          ],
+          [
+            1.1,
+            0.0,
+            20.0,
+            975.0
+          ]
+        ],
+        "grid_infimum": 0.0,
+        "grid_supremum": 47.2085308056872,
+        "unbounded_flag": true
+      },
+      "historical_tie_single_miss": false,
+      "literal_budgets": {
+        "class_or_stratum_error": 5.0,
+        "false_opportunities": 10.0,
+        "localization_or_pose_error": 5.0,
+        "omitted_true_opportunities": 10.0
+      },
+      "literal_cells": [
+        2.0,
+        3.0,
+        40.0,
+        955.0
+      ],
+      "name": "thin stratum, budget exceeds the A-miss marginal",
+      "rectangle_extrema_respect_historical_tie": null,
+      "source_line": 393
+    }
+  ],
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "All direct rectangular report calls in retained main were exercised; the full historical experiment was not replayed",
+    "Historical differential constraints and reference-error process validity are outside this audit",
+    "Independent algorithmic check, written in the same session; no independent human mathematical review",
+    "Synthetic exact mathematics; no changed camera-lidar measurements, empirical identification or safety claim"
+  ],
+  "sources": {
+    "evidence/measurement/m4_partial_identification.txt": "b22b6cf1a1b24c09718139e59863f5f5bb7b912668a499dcf66e5efa3e39e4e8",
+    "research/m4-rectangular/0.1.0/controls.json": "310e788a90c0d69cc6f7c595c592bbd0709601d48cd6ae19ebb0967524477e34",
+    "tools/measure/audit_m4_bounds.py": "b295cf406573f0fa5d98aa3138672e057cbf827cbf713d29c2392a78b248e517",
+    "tools/measure/check_rectangular_bounds.py": "51cf742854e17dbdf4c3b313719d1ea108a563a29ca2fd23d31e38c6ead5c0e7",
+    "tools/measure/m4_partial_identification.py": "812e42cbcc450b5504ea8004f280e2e0b744cbb3b6bfd8d3fa507352576af9b3",
+    "tools/measure/rectangular_coincidence_bounds.py": "ff06980294fa6e66bd7a8c768c253a36c57aa8e6e0c345d6a6c1694ca482417d"
+  },
+  "version": "0.1.0"
+}

@@ -23,7 +23,8 @@ also remains untouched. Read their current states before any future integration.
 | Research board and AO | `4deb1d19ef1db6fa37fb6b20ca0b4ffda93c4bcc` | System reconstruction, primary research, 25-part verdict, reference correction and two validator repairs |
 | Frozen reference study | `9d8a18eab7144bd02b1f64c41bc8f179f32ee653` | Sampling, raw evidence retrieval, 240 blinded packets, unknown-preserving analysis |
 | Developer value and sibling review | `beccb6b50babfe9b203b8b8e4aad59c304003a89` | Selected sibling recalculations, current interface research, portable population auditor and continuation ledger |
-| Cache selection and reference-noise interpretation | `research/2026-09-07-selection-policy` | Raw-metadata selection reconstruction, exact noise counterexample and updated stopping point |
+| Cache selection and reference-noise interpretation | `ca548d4fd66180e9c2e2aa4a789a366c23903401` | Raw-metadata selection reconstruction and exact noise counterexample |
+| M4 rectangular bounds | `research/2026-09-07-m4-bounds` | Historical F-03 correction, rational extrema and a separate algebra checker |
 
 The final local commit identity for the last row is recorded by the private `delivery.json`
 and can be resolved from the branch. It must not be inferred from a remembered hash or a
@@ -38,11 +39,12 @@ Private task custody is under:
   reference-study-2026-09-07/
   developer-value-2026-09-07/
   selection-policy-2026-09-07/
+  m4-bounds-2026-09-07/
 ```
 
-The last directory contains an exported `baseline/` at `beccb6b`, the reviewable
-`implementation/`, retained source pointers and private payloads, checks, an exact candidate
-delta, a patch and the final Git readback. These exports are not replacements for the canonical
+The last directory contains an exported `baseline/` at `ca548d4`, the reviewable
+`implementation/`, synthetic controls, completed checks, an exact candidate delta, a patch
+and the final Git readback. Raw data and primary payloads remain in preceding task custody. These exports are not replacements for the canonical
 repository identity gate. A new session must begin at the canonical Reiyah root and inspect
 the local research ref without overwriting the active owners' work.
 
@@ -61,7 +63,8 @@ the local research ref without overwriting the active owners' work.
 | R09 | Check whether an object-row cache omits frame opportunities | Completed retrospective sensitivity | Keep the complete frame census separate from object reference eligibility in future adapters |
 | R10 | Reconstruct the cache's declared inclusion policy from raw metadata and upstream sources | Completed; exact membership and checked fields agree | Preserve the scoped result; this does not establish physical completeness or full SDK conformance |
 | R11 | Test the external vision review's inference from M4 to general reference-error immunity | Broad interpretation corrected by an exact counterexample | Model reference transitions and opportunity selection explicitly before interpreting an error budget |
-| R12 | Determine whether numerical M4 extrema are valid outer bounds and distinguish undefined from unbounded | Next bounded investigation | Construct analytic counterexamples before proposing a replacement solver |
+| R12 | Determine whether numerical M4 extrema are valid outer bounds and distinguish undefined from unbounded | Completed for the nonnegative rectangular domain | Use the new solver and separate algebra checker; F-03 is corrected; do not silently apply this to coupled models |
+| R13 | Identify which observations can constrain reference transitions and opportunities missed by every channel | Next scientific design investigation | Construct observationally equivalent worlds and determine which independent observations distinguish them |
 
 R02 remains the highest-value scientific dependency. R04-R07 supplement it; they do not
 replace missing judgments with more software. No human or model was impersonated as an
@@ -144,6 +147,15 @@ using the older M4 interpretation or the operator-supplied model vision as a roa
 rescaling theorem is true; its broad immunity reading is not. Shared, uniformly applied
 reference-label corruption can create measured dependence between independent observers.
 The exact construction is synthetic and does not identify the real data's noise mechanism.
+
+Read [the M4 bound correction](M4_RECTANGULAR_BOUND_FINDINGS_2026-09-07.md) and
+[its checkpoint](M4_BOUND_CLOSEOUT_2026-09-07.md). The retained F-03 mathematical fixture
+has finite supremum 49.75 despite its older infinity label. Seven direct historical rectangular
+calls and nine authored controls were checked. The replacement uses rational enclosures,
+explicit definedness and a separate global-inequality checker. Twenty-one regression tests
+pass, including a finite lattice of 1,296 rectangles and forged-bound rejections. These checks
+neither validate coupled reference-error constraints nor repeat the historical differential
+experiment. Its original source and transcript remain unchanged.
 
 The prepared 240-case detection study does not identify a complete opportunity census of
 true joint misses or a safety-critical reference transition model. Preserve its original

@@ -59,6 +59,12 @@ but uniform shared reference-label corruption can change it. An exact synthetic 
 and a control with matched noisy marginals make the distinction executable. No measured
 detector performance is claimed by that example.
 
+The [M4 bound audit](docs/M4_RECTANGULAR_BOUND_FINDINGS_2026-09-07.md) corrects a retained
+synthetic result: F-03 has a finite supremum of 49.75, despite the historical infinity label.
+A new rational solver and separate algebra checker distinguish undefined coefficients,
+finite boundary limits and genuine divergence. These bounds concern a declared mathematical
+domain; reference-process validity and sampling uncertainty require additional evidence.
+
 The [developer-access investigation](docs/DEVELOPER_ACCESS_RESEARCH_2026-09-07.md) compares
 existing evaluation products and the July 2026 MCP specification. Free access is a proposed
 adoption strategy; an external engineer must first obtain independently confirmed value.
@@ -69,8 +75,9 @@ codebases and scientific authorities remain separate.
 Use the [research continuation ledger](docs/RESEARCH_CONTINUATION_2026-09-07.md) to resume.
 The [current closeout](docs/DEVELOPER_VALUE_CLOSEOUT_2026-09-07.md) records completed runs,
 validation scope and the preceding local delivery boundary. The
-[latest checkpoint](docs/SELECTION_POLICY_CLOSEOUT_2026-09-07.md) records the cache-policy
-audit and mathematical correction. The [vision review](docs/VISION_REVIEW_2026-09-07.md)
+[cache-policy checkpoint](docs/SELECTION_POLICY_CLOSEOUT_2026-09-07.md) records the selection
+audit and reference-noise correction. The [latest checkpoint](docs/M4_BOUND_CLOSEOUT_2026-09-07.md)
+records the corrected mathematical bounds and their independently checked witnesses. The [vision review](docs/VISION_REVIEW_2026-09-07.md)
 separates the desired company scale from the evidence needed to justify a product.
 The next scientific observation is independent blinded review of the prepared cases. No human
 judgments or physical false-positive rates have been supplied by the new tools.
@@ -102,6 +109,9 @@ flowchart TB
     CP --> R
     RN["Synthetic shared-reference noise controls"] --> RI["Corrected interpretation; no physical performance estimate"]
     RI --> R
+    MB["Declared synthetic cell ranges"] --> MS["Rational extrema and explicit undefinedness"]
+    MS --> MC["Separate algebra check of bounds and witnesses"]
+    MC --> R
     A --> P2["Frozen probability sample and original sensor evidence"]
     P2 --> R2["Blinded independent review: pending"]
     R2 --> U2["Unresolved cases retained in support intervals"]

@@ -1,14 +1,16 @@
 # Current developer-value and research continuation, 2026-09-07
 
-Latest checkpoint: `research/2026-09-07-selection-policy`, based on
-`beccb6b50babfe9b203b8b8e4aad59c304003a89`. The
-[cache-policy audit](CACHE_SELECTION_AUDIT_2026-09-07.md) reconstructs the declared cache
-selection and official validation census from raw metadata. The
-[reference-noise correction](REFERENCE_NOISE_INTERPRETATION_2026-09-07.md) preserves M4's
-rescaling identity while refuting its broader uniform-corruption immunity interpretation.
-Read [the closeout](SELECTION_POLICY_CLOSEOUT_2026-09-07.md) for exact completed work and
-the restart boundary. Existing study endpoints, historical transcripts and claim registers
-are preserved. The current detection study does not itself validate a safety certificate.
+Latest checkpoint: `research/2026-09-07-m4-bounds`, based on
+`ca548d4fd66180e9c2e2aa4a789a366c23903401`. The
+[M4 bound audit](M4_RECTANGULAR_BOUND_FINDINGS_2026-09-07.md) reproduces a wrong infinity
+classification in retained fixture F-03; its correct supremum on the stated rectangle is
+49.75 and is not attained. A separate off-grid counterexample motivates rational enclosures
+and independent algebra checks. All seven direct historical rectangular report calls and
+nine authored controls were checked; the coupled differential experiment was not replayed.
+Read [the closeout](M4_BOUND_CLOSEOUT_2026-09-07.md) for exact completed work and restart
+instructions. Historical source, transcripts, study endpoints and claim registers remain
+preserved. The earlier [reference-noise correction](REFERENCE_NOISE_INTERPRETATION_2026-09-07.md)
+still applies; neither correction supplies missing physical observations.
 
 Read [the current task ledger and shutdown handoff](RESEARCH_CONTINUATION_2026-09-07.md)
 first. The local `research/2026-09-07-developer-value` candidate extends reference-study
