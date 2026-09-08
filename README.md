@@ -39,13 +39,24 @@ reproduce their private predictions exactly. The
 [next experiment](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) separates
 shared detector training from dataset transfer; it has not been run.
 
+## Actual model inputs and adapters checked
+
+The [model-input checkpoint](docs/MODEL_INPUT_CHECKPOINT_2026-09-07.md) runs the
+pinned historical preprocessing on 204 metadata-selected samples across 68
+collection logs. All samples and 1,224 camera images pass the bounded checks.
+The historical lidar test recipe changes inputs on 129 cases across two seeds;
+an explicit nearest-sweep loader is stable on all 204. Synthetic camera probes
+reproduce caller-dimension mutation and inverse-velocity loss, and verify copy
+and coordinate safeguards. These checks do not measure prediction improvement.
+Full training caches, object point databases and detector fits remain pending.
+
 ## Training metadata subsets checked
 
 The [partition checkpoint](docs/TRAINING_PARTITION_CHECKPOINT_2026-09-07.md)
 builds the six frozen training metadata subsets and full validation subset.
 All seven load in the official SDK and pass contained-source and sampled
-coordinate checks. Actual model preprocessing, object point databases and
-new detector fits remain the next work.
+coordinate checks. The later model-input checkpoint checks a fixed smoke
+population; full training inputs and new detector fits remain the next work.
 
 ## Training data inventory completed
 
@@ -54,8 +65,9 @@ The [training-input census](docs/TRAINING_INPUT_FINDINGS_2026-09-07.md) finds al
 splits. A separate directory enumeration agrees on every filename and size.
 Existing checkpoints match official downloads, while their recipes identify
 shared detector initialization and object-sampling databases that must be
-controlled before a disjoint-training comparison. Sensor decoding and new
-detector training remain outstanding.
+controlled before a disjoint-training comparison. The later smoke checkpoint
+decodes 2,713 distinct files; full payload validation and new detector training
+remain outstanding.
 
 ## Reference study now implemented
 

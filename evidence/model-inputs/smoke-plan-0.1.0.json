@@ -1,0 +1,28 @@
+{
+  "artifact_id": "reiyah.model-input-smoke-plan.0.1.0",
+  "checks": [
+    "Retain exact loaded framework, image and converter/loader/box/config identities before execution",
+    "Decode six JPEG camera keyframes and lidar keyframe plus every available one of ten historical candidates for each selected sample; retain every failure without replacing a selected sample",
+    "Run actual available framework converter, camera/point loaders and box adapters; distinguish pinned historical source from available runtime",
+    "Compare scalar-first rigid transforms against converter outputs with 1e-8 absolute tolerance",
+    "Check box dimension/center conventions through actual output adapters with 1e-4 absolute tolerance; record orientation projections separately from full 3D metadata rotations",
+    "Run unmodified test recipe with NumPy seeds 20260907 and 20260908, same metadata and payloads; compare actual point rows/source draws",
+    "Compare explicit nearest-sweep loader with both seeds as a deterministic prospective option, not a revised historical result",
+    "Retain numerical unavailable velocities and annotation filtering explicitly; no imputation counted as observed motion"
+  ],
+  "lifecycle_status": "proposed",
+  "limits": [
+    "This is a deterministic metadata-selected engineering smoke population, not a random statistical sample or full payload census",
+    "No fitting, detector-performance estimate, full object-point database or Gate A acceptance",
+    "A historical-runtime mismatch is retained as a finding and cannot be concealed by replacing upstream functions"
+  ],
+  "selection": {
+    "other_proposals": "Same source population; not separately executed here",
+    "partition_sha256": "33bb7eae5bc47dd6fbd57acc2a117d8f4abd52b1b6338776189429bf2ccb5147",
+    "rule": "First, second and middle sample by timestamp of lexicographically first scene in each of 50 training and 18 validation logs from proposal 20260910, selected before payload/model outcomes",
+    "sample_count": 204,
+    "selection_sha256": "43e73e0c55d307084439e73e067c38af8337cdb5530b81844004a0aefc984390"
+  },
+  "version": "0.1.0",
+  "written_utc": "2026-09-07T20:00:03.196268+00:00"
+}

@@ -1,3 +1,36 @@
+# Model-input continuation, 2026-09-08
+
+Read the [model-input checkpoint](MODEL_INPUT_CHECKPOINT_2026-09-07.md) first.
+All 204 selected samples, 1,224 camera images and 24 retrieved output files pass
+the retained checks and recount. Historical lidar inputs change on 129 cases
+across two seeds. The nearest-sweep loader is stable on all 204. Synthetic camera
+probes reproduce dimension mutation and inverse-velocity loss and verify the
+copy/coordinate wrappers, including unavailable velocity. All 173 offline tests
+and the three additional malformed-image rejection cases pass.
+
+Register `0.2.28` is `evidence/claim-status-register-2026-09-08T042402Z.json`; all 55 predecessor rows are unchanged.
+No detector fits, predictions, full training object databases or independent
+human judgments were produced. Gate A remains operator-unaccepted. Owner
+worktrees and UI/UX files are preserved.
+
+The original GPU VM is stopped after an idle census, with both original disks
+retained. Google reauthentication and cloud retrieval are complete. Private task:
+`~/.codex/reports/reiyah/model-inputs-2026-09-07/`. The initial readback's JSON
+key-order discrepancy is explained and retained; every original cloud result
+is reproduced byte for byte from stdout with the producer's integer-key sorting.
+Do not rerun `private/resume_after_auth.py`, whose phase identities are consumed.
+Resolve checked main integration and publisher readbacks from Git and this task's
+`delivery.json`. These records do not establish independent transport verification.
+
+The next work is full contained model caches and object point databases, followed
+by a frozen unavailable-velocity loss policy, calibration population,
+initialization exposure and common optimization budget before new fits. The
+historical FCOS3D geometry gap still needs a controlled full-export replay.
+The [training experiment](TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) remains
+unexecuted. Earlier dated blocks below retain their historical context.
+
+---
+
 # Training-partition continuation, 2026-09-07
 
 Read the [partition checkpoint](TRAINING_PARTITION_CHECKPOINT_2026-09-07.md) first.

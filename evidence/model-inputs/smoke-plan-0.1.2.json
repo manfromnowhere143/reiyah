@@ -1,0 +1,60 @@
+{
+  "artifact_id": "reiyah.model-input-smoke-plan.0.1.2",
+  "checks": [
+    "Retain exact loaded framework, image and converter/loader/box/config identities before execution",
+    "Decode six JPEG camera keyframes and lidar keyframe plus every available one of ten historical candidates for each selected sample; retain every failure without replacing a selected sample",
+    "Run actual available framework converter, camera/point loaders and box adapters; distinguish pinned historical source from available runtime",
+    "Compare scalar-first rigid transforms against converter outputs with 1e-8 absolute tolerance",
+    "Check box dimension/center conventions through actual output adapters with 1e-4 absolute tolerance; record orientation projections separately from full 3D metadata rotations",
+    "Run unmodified test recipe with NumPy seeds 20260907 and 20260908, same metadata and payloads; compare actual point rows/source draws",
+    "Compare explicit nearest-sweep loader with both seeds as a deterministic prospective option, not a revised historical result",
+    "Retain numerical unavailable velocities and annotation filtering explicitly; no imputation counted as observed motion"
+  ],
+  "extensions_before_execution": [
+    "Execute actual full historical test pipelines, and separately compare point-loader candidate policies",
+    "Probe repeated camera export on two asymmetric synthetic boxes, record caller mutation, dimensions and inverse velocity; require isolated-copy wrapper to preserve caller and repeated results",
+    "Generate fresh upstream lidar info and monocular COCO annotation caches only for this fixed smoke population",
+    "Preserve original upstream NaN velocities in private caches and report counts; do not treat them as observed zero motion",
+    "Use original authorized box, which now starts successfully; data bind mount read-only, network disabled, exact existing container image, bounded memory/CPU; no image modification"
+  ],
+  "implementation_corrections": [
+    "First converter attempt replaced SDK sample table and invalidated its reverse indexes; it failed before sensor smoke and emitted no passing result. Successor uses selected iteration view with all SDK lookup methods bound to the unchanged contained subset. Selected population stays identical.",
+    "Synthetic probe confirmed input dimension mutation and x,z inverse velocity loss. A separate wrapper will preserve caller tensors and the actual camera x,z velocity, including NaN; upstream image and files remain unchanged."
+  ],
+  "lifecycle_status": "proposed",
+  "limits": [
+    "This is a deterministic metadata-selected engineering smoke population, not a random statistical sample or full payload census",
+    "No fitting, detector-performance estimate, full object-point database or Gate A acceptance",
+    "A historical-runtime mismatch is retained as a finding and cannot be concealed by replacing upstream functions"
+  ],
+  "numeric_policy": {
+    "box_parameter_absolute": 0.0001,
+    "float32_point_and_image_absolute": 0.0001,
+    "float32_point_and_image_relative": 1e-06,
+    "rigid_transform_absolute": 1e-08,
+    "voxel_identity": "Exact coordinates, first-occurrence order, occupancy and retained point values, with float32 reference arithmetic"
+  },
+  "runtime": {
+    "framework": "MMDetection3D 0.17.1",
+    "identity_sha256": "5fcffa8ad39cee3b0c51726184bc56fbdc71972906d7b935f2d627692b444d2f",
+    "image_id": "sha256:f73ef38840631211983ea0dde0cf1ecdfa6dbc84ef6cd0bfb900427da6d601cb",
+    "mmcv": "1.4.0",
+    "numpy": "1.22.4",
+    "sdk": "1.1.11",
+    "source_comparison": "Loaded camera export, lidar dataset, point loaders and camera/lidar box classes exactly match retained upstream commit f1107977dfd26155fc1f83779ee6535d2468f449",
+    "torch": "1.9.1+cu111"
+  },
+  "selection": {
+    "other_proposals": "Same source population; not separately executed here",
+    "partition_sha256": "33bb7eae5bc47dd6fbd57acc2a117d8f4abd52b1b6338776189429bf2ccb5147",
+    "rule": "First, second and middle sample by timestamp of lexicographically first scene in each of 50 training and 18 validation logs from proposal 20260910, selected before payload/model outcomes",
+    "sample_count": 204,
+    "selection_sha256": "43e73e0c55d307084439e73e067c38af8337cdb5530b81844004a0aefc984390"
+  },
+  "supersedes": {
+    "path": "evidence/model-inputs/smoke-plan-0.1.1.json",
+    "sha256": "72c252e2a799506df9b1dfc55062d01865242994e9f6aaf1e9f971bddb349cdc"
+  },
+  "version": "0.1.2",
+  "written_utc": "2026-09-07T20:16:23.255537+00:00"
+}
