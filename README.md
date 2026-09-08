@@ -1,281 +1,278 @@
 # Reiyah
 
-Reiyah is an evidence architecture and an offline research program studying what can be inferred
-about joint failures of observers. Its proposed HARBOR mission covers object-level human and
-vehicle belief, readiness, recoverability, explicit unknowns and causal policy effects. Current
-experiments measure narrower quantities on public detector, human-proxy and language-model data.
+**An evidence and benchmark engine for shared failures in human-automation systems.**
 
-The [research-board report](docs/RESEARCH_BOARD_2026-09-07.md) gives the complete reconstruction,
-2026 primary-source review, scorecard and research program. **The current evidence does not
-establish a frontier perception system, a universal independence law, human belief measurement,
-or deployable safety guarantees.** The strongest immediate opportunity is making invalid
-physical-world inferences detectable and explainable.
+Two observers can each perform well and still miss the same object. Reiyah studies that gap:
+what each channel could observe, where their errors coincide, what the reference actually
+establishes, and how much uncertainty remains in the conclusion.
 
-## Current research result
+HARBOR is the proposed research program: **Human-Automation Readiness, Belief & Operational
+Risk**. Its full scope connects object-level belief, readiness, recoverability, joint silent
+misses, causal policy effects, explicit unknowns, transfer and worst-group evaluation. The
+implemented engine currently performs offline measurement, reference audits, controlled
+experiments and reproducible evidence checks. Human belief and recovery under intervention
+remain research targets requiring their own observations.
 
-[Result AO](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md) independently reanalyzes retained
-nuScenes inputs. The conditional camera/lidar miss ratio is 1.151053; a whole-scene bootstrap
-interval is [1.128749, 1.166206]. This supports a bounded descriptive association.
+[Architecture](docs/ARCHITECTURE.md) · [Mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) ·
+[Research findings](docs/GENERAL_SYNTHESIS.md) · [Next experiment](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) ·
+[Run the auditor](#run-the-offline-auditor)
 
-The same audit finds that 3,151 of 24,432 camera ghost flags and 5,728 of 23,840 lidar ghost flags
-are within two meters of annotations excluded from the original reference cache. These are
-reference-label changes, not proof that every prediction is correct. Temporal coincidence
-ratios also depend on the chosen null. Physical ghost identity remains unresolved.
+## One encounter, distinct information sets
 
-The research revision repairs two concrete validation defects: failed mAP validation no longer
-writes a new matcher artifact, and a replay must exit successfully as well as reproduce the
-expected transcript. Regression tests exercise the original counterexamples.
-
-## Predictive monitor experiment recovered
-
-The [output-only monitor experiment](docs/PREDICTIVE_MONITOR_FINDINGS_2026-09-07.md)
-compares cross-channel history with equally tuned marginal-history baselines.
-Its future-count improvement is 2.7020% under collection-log holdouts, with a
-descriptive interval including zero; spatial continuity slightly increases the
-primary loss. Neither meets the declared usefulness screen. A new completion
-audit rejects missing experiments and a forged spatial interval that the original
-checker accepted. Original results are preserved, and fresh log/spatial refits
-reproduce their private predictions exactly. The
-[next experiment](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) separates
-shared detector training from dataset transfer; it has not been run.
-
-## Actual model inputs and adapters checked
-
-The [model-input checkpoint](docs/MODEL_INPUT_CHECKPOINT_2026-09-07.md) runs the
-pinned historical preprocessing on 204 metadata-selected samples across 68
-collection logs. All samples and 1,224 camera images pass the bounded checks.
-The historical lidar test recipe changes inputs on 129 cases across two seeds;
-an explicit nearest-sweep loader is stable on all 204. Synthetic camera probes
-reproduce caller-dimension mutation and inverse-velocity loss, and verify copy
-and coordinate safeguards. These checks do not measure prediction improvement.
-Full training caches, object point databases and detector fits remain pending.
-
-## Training metadata subsets checked
-
-The [partition checkpoint](docs/TRAINING_PARTITION_CHECKPOINT_2026-09-07.md)
-builds the six frozen training metadata subsets and full validation subset.
-All seven load in the official SDK and pass contained-source and sampled
-coordinate checks. The later model-input checkpoint checks a fixed smoke
-population; full training inputs and new detector fits remain the next work.
-
-## Training data inventory completed
-
-The [training-input census](docs/TRAINING_INPUT_FINDINGS_2026-09-07.md) finds all
-536,780 requested camera/lidar files across the official training and validation
-splits. A separate directory enumeration agrees on every filename and size.
-Existing checkpoints match official downloads, while their recipes identify
-shared detector initialization and object-sampling databases that must be
-controlled before a disjoint-training comparison. The later smoke checkpoint
-decodes 2,713 distinct files; full payload validation and new detector training
-remain outstanding.
-
-## Reference study now implemented
-
-The [reference-adjudication study](docs/REFERENCE_ADJUDICATION_STUDY_2026-09-07.md) freezes
-a probability sample of 240 detections across 93 scenes and prepares original sensor evidence
-with per-sensor geometry, timestamps and explicit missing states. The first sampling design
-failed its precision check and remains retained; its replacement was frozen before independent
-judgments. All physical-performance estimates remain null until the required observations exist.
-This is a private offline research experiment, not a new perception model or driving runtime.
-
-## Portable tools and the next evidence
-
-The [offline population auditor](docs/REFERENCE_AUDIT_DEMO_2026-09-07.md) returns replayable
-geometric witnesses while keeping excluded annotations, unmatched predictions and unavailable
-references distinct. Its synthetic example runs without a dataset download, model or API key.
-This is a conventional geometric calculation with an explicit interpretation boundary, not a
-new perception algorithm or a benchmark win.
-
-The [real-data replay](docs/REFERENCE_AUDIT_REAL_DATA_2026-09-07.md) reproduces AO's reference
-correction and separately examines frames omitted by the object-row cache. An independent
-numerical implementation agrees on every retained prediction classification. Physical truth
-remains outside that computational check.
-
-The [cache-policy reconstruction](docs/CACHE_SELECTION_AUDIT_2026-09-07.md) independently
-derives the declared class, distance and official split selection from raw metadata. Every
-cache annotation ID and checked metadata field agrees. A correct cache still requires a
-correctly scoped physical interpretation.
-
-The [reference-noise correction](docs/REFERENCE_NOISE_INTERPRETATION_2026-09-07.md) narrows
-M4's broad immunity wording: proportional count rescaling preserves the coincidence ratio,
-but uniform shared reference-label corruption can change it. An exact synthetic construction
-and a control with matched noisy marginals make the distinction executable. No measured
-detector performance is claimed by that example.
-
-The [M4 bound audit](docs/M4_RECTANGULAR_BOUND_FINDINGS_2026-09-07.md) corrects a retained
-synthetic result: F-03 has a finite supremum of 49.75, despite the historical infinity label.
-A new rational solver and separate algebra checker distinguish undefined coefficients,
-finite boundary limits and genuine divergence. These bounds concern a declared mathematical
-domain; reference-process validity and sampling uncertainty require additional evidence.
-
-The [identification controls](docs/REFERENCE_IDENTIFICATION_FINDINGS_2026-09-07.md) construct
-two worlds with identical detector/reference observations but different true dependence.
-They show what additional reference information must establish. The
-[metadata-only clock census](docs/OPPORTUNITY_CLOCK_AUDIT_2026-09-07.md) finds 4,682 candidate
-time anchors across 150 scenes, with explicit capture offsets and unknown online availability.
-It prepares an [independent opportunity study](docs/INDEPENDENT_OPPORTUNITY_STUDY_DESIGN_2026-09-07.md)
-whose sampling frame includes times when every object-level observer could be silent.
-
-The [interface audit](docs/INTERFACE_EVIDENCE_REVIEW_2026-09-07.md) traces how results
-reach the research console. Isolated source probes find that a displayed digest does not
-always bind the displayed value, and that missing comparisons can become zero. A private
-repair and a [single-bundle consumer design](docs/MEASUREMENT_CONSUMER_DESIGN_2026-09-07.md)
-make the required correction reviewable without changing the active UI worktree.
-
-The [RSS transfer and rare-event audit](docs/RSS_TRANSFER_AND_RARE_EVENT_LIMITS_2026-09-07.md)
-separates conditional, aggregate and operating-distribution coefficients. Exact synthetic
-controls show why measuring dependence between very rare failures can itself require billions
-of independent observations. This is a limit on a proposed inference, not a measured vehicle
-failure rate. The [physical-reference assessment](docs/PHYSICAL_REFERENCE_OPTIONS_2026-09-07.md)
-examines current NPL/Met Office work and a falsifiable route toward a joint response law with
-independent targets, time and sensor state. Data access and suitability remain unresolved.
-
-The [developer-access investigation](docs/DEVELOPER_ACCESS_RESEARCH_2026-09-07.md) compares
-existing evaluation products and the July 2026 MCP specification. Free access is a proposed
-adoption strategy; an external engineer must first obtain independently confirmed value.
-The [Sentinel, Telos and Inbar review](docs/SIBLING_RESEARCH_TRANSFER_2026-09-07.md) carries
-over experimental controls and independently recalculates selected retained records. Their
-codebases and scientific authorities remain separate.
-
-Use the [research continuation ledger](docs/RESEARCH_CONTINUATION_2026-09-07.md) to resume.
-The [developer-value checkpoint](docs/DEVELOPER_VALUE_CLOSEOUT_2026-09-07.md) records completed runs,
-validation scope and the preceding local delivery boundary. The
-[cache-policy checkpoint](docs/SELECTION_POLICY_CLOSEOUT_2026-09-07.md) records the selection
-audit and reference-noise correction. The [M4 checkpoint](docs/M4_BOUND_CLOSEOUT_2026-09-07.md)
-records corrected mathematical bounds. The [identification checkpoint](docs/REFERENCE_IDENTIFICATION_CLOSEOUT_2026-09-07.md)
-records exact ambiguity witnesses, the clock census and the next physical study design. The
-[interface checkpoint](docs/INTERFACE_EVIDENCE_CLOSEOUT_2026-09-07.md) records consumer failure
-probes and a privately tested repair. The
-[latest checkpoint](docs/PHYSICAL_REFERENCE_TRANSFER_CLOSEOUT_2026-09-07.md) records the
-sampling-limit derivation, its separate numerical check and the physical-reference preflight.
-The [vision review](docs/VISION_REVIEW_2026-09-07.md)
-separates the desired company scale from the evidence needed to justify a product.
-The next scientific observation is independent blinded review of the prepared cases. No human
-judgments or physical false-positive rates have been supplied by the new tools.
-
-## What actually runs
+The unit of inquiry is a particular object, encounter and time. A camera output, a lidar
+output, a driver's gaze and a takeover action carry different information. Reiyah's architecture
+keeps **observation, latent belief, decision, intervention, outcome and evidence** separate.
+An observation can support an inference only under an explicit measurement model.
 
 ```mermaid
 flowchart TB
-  subgraph STATIC["Gate A: static contracts"]
-    M["Versioned mission, protocols and source records"] --> V["Offline schema and adversarial fixture validation"]
-    V --> C["Exact contract diagnostics; acceptance remains separate"]
-  end
-  subgraph RESEARCH["Gate B: offline experiments"]
-    D["Public annotations and retained predictions"] --> P["Declared population and object matching"]
-    P --> J["Joint-error counts, strata and intervals"]
-    P --> E["Fitted error monitors"]
-    H["Human proxy and LLM question records"] --> J
-    J --> T["Retained transcripts and claim register"]
-    E --> T
-    T --> R["Review checks, documents and static figures"]
-    D --> A["Reference population audit"]
-    A --> T
-    D --> AP["Portable table audit and exact proximity witnesses"]
-    D --> FC["Sample-table frame census and explicit empty or unavailable references"]
-    FC --> FS["Separate omitted-frame sensitivity; frozen sample unchanged"]
-    FS --> AP
-    AP --> R
-    D --> CP["Reconstruct declared cache selection from raw metadata and retained SDK sources"]
-    CP --> R
-    RN["Synthetic shared-reference noise controls"] --> RI["Corrected interpretation; no physical performance estimate"]
-    RI --> R
-    MB["Declared synthetic cell ranges"] --> MS["Rational extrema and explicit undefinedness"]
-    MS --> MC["Separate algebra check of bounds and witnesses"]
-    MC --> R
-    OE["Same observable law, different admissible latent truths"] --> IS["Identified set and missing reference information"]
-    IS --> R
-    CT["Official scene and sample clocks; no object-output selection"] --> CW["Candidate time anchors, capture offsets and explicit availability unknowns"]
-    CW --> R
-    R --> IC["Display and receipt must bind the same interpreted result"]
-    IC --> IP["Consumer probes: private repair tested; broader snapshot gaps retained"]
-    RL["Exact rare-event and mixture probability laws"] --> RB["Sampling limits and explicit transport assumptions"]
-    RB --> R
-    A --> P2["Frozen probability sample and original sensor evidence"]
-    P2 --> R2["Blinded independent review: pending"]
-    R2 --> U2["Unresolved cases retained in support intervals"]
-  end
-  C -. "proposed empirical ports, incomplete integration" .-> T
+  C["Common encounter<br/>Object and index time"]
+  C --> H["Human information<br/>available by index time"]
+  C --> A["Automation information<br/>available by index time"]
+  H -. "requires a validated measurement<br/>model" .-> HB["Human belief and uncertainty"]
+  A -. "requires a validated measurement<br/>model" .-> AB["Automation belief and<br/>uncertainty"]
+  HB --> J["Joint assessment: agreement,<br/>complementarity and silent miss"]
+  AB --> J
+  C --> R["Readiness: task, horizon,<br/>capabilities and loss"]
+  C --> Y["Recoverability: intervention,<br/>recovery, censoring and<br/>competing events"]
+  E["Reference observations,<br/>assumptions and provenance"] -. "bounded support" .-> J
+  E -. "bounded support" .-> R
+  E -. "bounded support" .-> Y
 ```
 
-Some inherited experiments execute pretrained detectors; others fit classifiers or analyze
-archived outputs. There is no inspected driving runtime, original perception backbone, learned
-occupancy/world model, online belief tracker or validated recovery policy. The available review
-instrument checks numbers and claim/document consistency. The later interface audit inspects
-captured console code and executes isolated source probes; it does not establish the behavior
-of a deployed UI or repair the owner's worktree.
+This diagram describes the research architecture. Gaze and takeover proxies do not by
+themselves establish a person's object-level belief. The current measurement program addresses
+parts of this architecture; it does not implement a driving controller or validated belief tracker.
 
-## Repository and authority state
+## How the measurement engine works
 
-The research-board investigation froze Gate A at
-`74fbacc77a3c74d3a4962f488b589ee614a4c575` and Gate B at
-`fd094c066437e67cefbb86f363dd1bef7ccf8e6e`. This research revision is based on Gate B and does not
-merge or replace the concurrently active engine or UI work.
-
-Gate A's latest inspected K129 route passed its locked contract replay, while explicitly reporting
-that the readiness correction is contracted, not reviewed or implemented. Operator acceptance
-remains `unaccepted`. The inherited architecture records are not silently upgraded by these
-empirical experiments or by passing development checks. Released mission/protocol/schema/fixture
-bytes remain historical versioned artifacts. This branch's changed README and handoff are research
-navigation, not a newly validated Gate A release packet.
+The engine makes the opportunity population explicit before counting failures. Matching is
+conditional on a declared reference, sensor validity and evaluation policy. Empty output,
+missing output, excluded references and an unobserved physical object have different meanings.
 
 ```mermaid
 flowchart LR
-  B["Exact artifact bytes"] --> D["Deterministic validation"]
-  D --> I["Integrity and tested contract behavior"]
-  O["Independent observations and explicit assumptions"] --> S["Scoped scientific assessment"]
-  I --> S
-  A["Exact operator decision and verified authority"] --> G["Acceptance state"]
-  S -. "does not automatically grant acceptance" .-> G
+  D["Public metadata, sensor records<br/>and retained detector outputs"] --> O["Declared opportunities,<br/>timestamps and channel<br/>availability"]
+  O --> P["Reference selection: classes,<br/>ranges and exclusions"]
+  P --> M["Per-object matching with<br/>retained associations"]
+  M --> V{"Required matcher validation<br/>passes?"}
+  V -- "no" --> F["Failed producer; no new admitted<br/>match artifact"]
+  V -- "yes" --> T["Marginal and joint errors,<br/>strata and coverage"]
+  T --> U["Absolute rates, coincidence<br/>ratios and clustered uncertainty"]
+  U --> R["Retained results, corrections<br/>and claim status"]
+  P --> A["Reference population audit"]
+  A --> R
 ```
 
-The configured GitHub remote is a distribution channel. Repository text, signatures, checksums,
-model-assisted review and publisher readback do not create scientific or safety authority.
+The [matcher](tools/measure/match.py) retains per-object associations that aggregate benchmark
+scores omit. The [reference audit](tools/measure/result_ao_reference_population_audit.py)
+reconstructs the consequences of changing reference coverage. The
+[research checker](tools/measure/gate_b_check.py) verifies retained identities and consistency;
+when replay is requested, successful process exit and the expected transcript are both required.
 
-## Reproduce the research checks
+| Research surface | What is represented | Current evidence boundary |
+|---|---|---|
+| Object-level belief | Actor, object, information set, state space, uncertainty and abstention | Static contracts; independent belief measurement remains outstanding |
+| Readiness | Task, context, horizon, capability requirements and loss | Proposed construct; no universal readiness score |
+| Recoverability | Intervention or request, recovered state, censoring and competing events | Event and causal contracts; recovery benefit has not been established |
+| Joint failures | Common opportunities, marginal errors, joint errors, conditions and intervals | Implemented offline detector analyses on declared benchmark populations |
+| Reference validity | Included and excluded annotations, proximity witnesses and unresolved cases | Implemented audits; physical adjudication is a separate observation |
+| Causal policy effects | Versioned policies, assignment, propensities, support and estimands | Contracts and experiment designs; no measured driving intervention effect |
+| Transfer and worst groups | Domain boundaries, subgroup support, held-out comparisons and uncertainty | Bounded experiments, including retained transfer failures |
+| Explicit unknowns | Missing, unmeasured, sensor-invalid, out-of-distribution and abstained states | Distinct states and denominators; unavailable labels must not become observed zeros |
 
-Use an environment with `numpy`, `scipy` and `jsonschema` for the checker and regression suite:
+## What the joint-error statistic measures
+
+For two reference-relative miss indicators, the coincidence ratio compares observed joint
+miss probability with the product of the two marginal miss probabilities. Conditional analyses
+make that comparison within declared strata and retain the support used for aggregation.
+A ratio alone is insufficient: its meaning changes with the marginal error rates.
+
+```mermaid
+flowchart TB
+  O["Same declared object<br/>opportunities"] --> A["Channel A miss probability"]
+  O --> B["Channel B miss probability"]
+  O --> J["Observed joint-miss probability"]
+  A --> P["Independent-product comparison"]
+  B --> P
+  J --> C["Coincidence ratio on defined<br/>support"]
+  P --> C
+  C --> E["Report together: marginals,<br/>joint rate, coverage, strata and<br/>uncertainty"]
+  J --> E
+  A --> E
+  B --> E
+```
+
+The [Result AO reanalysis](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md) retains a conditional
+camera/lidar ratio of **1.151053**, with whole-scene bootstrap interval
+**[1.128749, 1.166206]**. The original deepest-stratum support contains 131,722 of 134,565
+reference rows across 150 scenes. The interval describes resampling uncertainty on that
+population; it does not cover reference errors or establish a causal sensing mechanism.
+
+Earlier experiments investigate detector choice, thresholds, marginal-rate effects and
+unmeasured difficulty. Their current interpretation is collected in the
+[corrected synthesis](docs/GENERAL_SYNTHESIS.md) and
+[claim register](evidence/claim-status-register-2026-09-08T042402Z.json).
+The [RSS estimand analysis](docs/ESTIMAND_RSS_DEFINITION_32.md) states the additional conditions
+needed to connect a benchmark statistic to that safety argument. This two-channel measurement
+has not established those conditions or a vehicle safety rate.
+
+## A reference error the engine can expose
+
+A prediction can be unmatched because the evaluator excluded a nearby annotation. That is a
+detectable measurement issue; it does not settle whether the prediction is physically correct.
+
+```mermaid
+flowchart LR
+  P["Prediction unmatched against the<br/>selected reference"] --> C["Compare with the complete<br/>retained annotation table"]
+  C --> N{"Excluded annotation within the<br/>declared distance?"}
+  N -- "yes" --> W["Geometric witness to a<br/>reference-relative label change"]
+  N -- "no" --> U["Remains unmatched under this<br/>reference"]
+  W --> H["Independent sensor review for<br/>physical interpretation"]
+  U --> H
+  H --> E["Supported judgment or explicitly<br/>unresolved case"]
+```
+
+At score threshold 0.30, Result AO finds **3,151 of 24,432 camera flags** and
+**5,728 of 23,840 lidar flags** within two meters of annotations excluded from the original
+reference cache. These are changes under a specified geometric predicate, not independently
+confirmed correct detections. The [real-data replay](docs/REFERENCE_AUDIT_REAL_DATA_2026-09-07.md)
+and [cache-policy reconstruction](docs/CACHE_SELECTION_AUDIT_2026-09-07.md) check the calculation
+and selection policy separately.
+
+The [reference study](docs/REFERENCE_ADJUDICATION_STUDY_2026-09-07.md) prepares a frozen sample
+of **240 detections across 93 scenes**, with original sensor evidence and explicit unresolved
+states. Independent human judgments remain unavailable, so physical-performance estimates
+remain unestablished. The instrument is prepared; the missing observations remain visible.
+
+## Current engine development
+
+The next discriminating question is whether common training exposure contributes to coincident
+detector errors. The [experiment design](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md)
+keeps architectures and test opportunities fixed while comparing shared and disjoint training
+pairings. Dataset transfer is a subsequent comparison, so two interventions are not conflated.
+
+```mermaid
+flowchart TB
+  U["Training group U: collection<br/>logs disjoint from V and<br/>validation"]
+  V["Training group V: collection<br/>logs disjoint from U and<br/>validation"]
+  U -. "planned fit" .-> CU["Camera U"]
+  U -. "planned fit" .-> LU["Lidar U"]
+  V -. "planned fit" .-> CV["Camera V"]
+  V -. "planned fit" .-> LV["Lidar V"]
+  CU --> S["Shared training<br/>Camera U + Lidar U<br/>Camera V + Lidar V"]
+  LU --> S
+  CV --> S
+  LV --> S
+  CU --> D["Disjoint training<br/>Camera U + Lidar V<br/>Camera V + Lidar U"]
+  LU --> D
+  CV --> D
+  LV --> D
+  S --> T["Same held-out opportunities<br/>Calibrated operating points<br/>Full coverage"]
+  D --> T
+  T --> R["Joint-risk contrast<br/>Marginal contribution<br/>Covariance contrast"]
+```
+
+The four detector fits in this diagram are planned. The latest completed preparation checkpoints
+are concrete and separately documented:
+
+| Checkpoint | Retained result |
+|---|---|
+| [Training input inventory](docs/TRAINING_INPUT_FINDINGS_2026-09-07.md) | All 536,780 requested camera/lidar filenames are present and nonempty; a separate directory enumeration agrees |
+| [Contained metadata partitions](docs/TRAINING_PARTITION_CHECKPOINT_2026-09-07.md) | Six proposed training subsets and the full validation subset load and pass declared containment checks |
+| [Actual model inputs](docs/MODEL_INPUT_CHECKPOINT_2026-09-07.md) | Historical preprocessing checked on 204 metadata-selected samples across 68 logs, covering 1,224 camera images and 2,713 distinct sensor files |
+| [Temporal input control](docs/MODEL_INPUT_CHECKPOINT_2026-09-07.md) | The historical lidar test recipe changes inputs on 129 smoke cases across two seeds; explicit nearest-sweep loading is stable on all 204 |
+| [Camera adapter controls](docs/MODEL_INPUT_CHECKPOINT_2026-09-07.md) | Synthetic probes reproduce caller-dimension mutation and inverse-velocity loss, then check copy and coordinate safeguards |
+
+Full model caches, separate training object databases and the fitting protocol are the next
+preparation stage. Initialization history, object sampling, calibration, equal optimization
+budgets and training uncertainty must be controlled before interpreting the comparison.
+These engineering checks do not establish a detector accuracy gain.
+
+The [predictive monitor experiment](docs/PREDICTIVE_MONITOR_FINDINGS_2026-09-07.md) remains
+part of the record: its future-count improvement under collection-log holdouts was 2.7020%,
+with a descriptive interval including zero; spatial continuity slightly worsened the primary
+loss. Neither passed the declared usefulness screen. That result informs the next experiment.
+
+## Evidence architecture and reproducibility
+
+Gate A supplies versioned scientific contracts, schemas, counterexamples and locked offline
+validation. Gate B supplies empirical research tools and retained measurements. Their integration
+is incomplete, and an empirical result does not silently amend an accepted contract.
+
+```mermaid
+flowchart LR
+  subgraph CONTRACT["Gate A: static contracts"]
+    M["Mission, protocol, definitions<br/>and assumptions"] --> F["Schemas and reason-specific<br/>counterexamples"]
+    F --> L["Locked replay of an immutable<br/>candidate"]
+    L --> I["Integrity and contract<br/>diagnostics"]
+  end
+  subgraph RESEARCH["Gate B: offline research"]
+    D["Versioned sources and declared<br/>opportunities"] --> X["Experiments and controls"]
+    X --> T["Original outputs, failures and<br/>corrections"]
+    T --> C["Scoped findings and claim<br/>register"]
+  end
+  I -. "contract requirements;<br/>integration remains incomplete" .-> C
+  O["Independent observations and<br/>explicit assumptions"] --> C
+  A["Exact operator decision and<br/>verified authority"] --> G["Acceptance state"]
+```
+
+Gate A remains **operator-unaccepted**. Passing checks establish their tested scope; they do not
+create scientific validation, standards compliance, safety approval or deployment authority.
+The [architecture handoff](docs/SESSION_HANDOFF.md) and its referenced validation plans govern
+exact Gate A release replay. This README is research navigation, not a new Gate A release packet.
+
+Original results, failed producers, null findings, corrections and retractions remain
+discoverable. Public Git contains Reiyah code, documentation and permitted aggregate evidence.
+Source-derived datasets, weights and review materials retain their own access and redistribution
+terms. A matching digest establishes identity; physical correctness needs appropriate observations.
+
+### Run the offline auditor
+
+The portable synthetic example requires no sensor dataset, model or API key. Follow the
+[demo instructions](docs/REFERENCE_AUDIT_DEMO_2026-09-07.md) for the command and its expected
+geometric witnesses. The [real-data adapter](docs/REFERENCE_AUDIT_REAL_DATA_2026-09-07.md)
+uses separately retained inputs.
+
+For research consistency checks, use an environment with `numpy`, `scipy` and `jsonschema`:
 
 ```sh
 python -B tools/measure/gate_b_check.py --json /tmp/reiyah-gate-b-check.json
 python -B -m unittest discover -s tools/measure -p test_research_board_regressions.py -v
-python -B tools/measure/result_ao_reference_population_audit.py --data-root /path/to/local/reiyah-data
 ```
 
-The digest check does not replay prior experiments unless replay is explicitly selected. The
-manifest distinguishes local deterministic, network-cached, heavy-inference and historically
-unrecorded commands. Result AO records exact input hashes and library versions; reproducing its
-bytes requires the matching inputs and numerical environment. Source-derived annotation cases
-can be written to a private path with `--private-cases-output`; they are not in the public aggregate.
+The default checker verifies retained transcript digests without rerunning the historical
+experiments. Replay classes and their requirements are declared in the
+[replay manifest](validation/gate-b-replay-manifest.json). Gate A release validation uses its
+own exact locked launcher and immutable projection; these research commands are development
+checks. Dataset-dependent numerical reproduction requires the recorded input and environment
+identities.
 
-Gate A release evidence must be produced by the exact locked launcher and validation plan for
-its selected immutable commit. A Gate B development check is not a substitute. See the
-[repository contract](AGENTS.md) and the [architecture handoff](docs/SESSION_HANDOFF.md).
+## Research map
 
-## Read the complete story
-
-| Purpose | Artifact |
+| Read for | Start here |
 |---|---|
-| What exists, what is unproven, and what to investigate next | [Research-board report](docs/RESEARCH_BOARD_2026-09-07.md) |
-| Current bounded interpretation of all research threads | [Corrected synthesis](docs/GENERAL_SYNTHESIS.md) |
-| New measurement, limitations and exact replay | [Result AO](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md) |
-| Current claim status and predecessor lineage | [Claim register](evidence/claim-status-register-2026-09-07.json) |
-| Source versions, private custody and public pointers | [Research source ledger](evidence/research-board-source-ledger-2026-09-07.json) |
-| Executed checks and unresolved implementation risks | [Research closeout](docs/RESEARCH_BOARD_CLOSEOUT_2026-09-07.md) |
-| Existing measurement contract and history | [Gate B contract](docs/GATE_B_MEASUREMENT_CONTRACT.md), [Gate B handoff](docs/GATE_B_SESSION_HANDOFF.md) |
-| Original scientific architecture | [Architecture](docs/ARCHITECTURE.md), [scientific charter](docs/SCIENTIFIC_CHARTER.md) |
-| Mathematical limits on safety transfer | [RSS estimand analysis](docs/ESTIMAND_RSS_DEFINITION_32.md) |
-| Public-data permissions and retained custody | [Public-data custody](docs/PUBLIC_DATA_CUSTODY_2026-09-06.md), [NOTICE](NOTICE) |
+| Mission and scientific structure | [Scientific charter](docs/SCIENTIFIC_CHARTER.md), [architecture](docs/ARCHITECTURE.md), [mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) |
+| Current interpretation of sensor, human-proxy and LLM experiments | [Corrected synthesis](docs/GENERAL_SYNTHESIS.md), [current claim register](evidence/claim-status-register-2026-09-08T042402Z.json) |
+| Research review and future investigations | [Research-board report](docs/RESEARCH_BOARD_2026-09-07.md), [next training experiment](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) |
+| Reference validity and physical adjudication | [Result AO](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md), [reference study](docs/REFERENCE_ADJUDICATION_STUDY_2026-09-07.md), [portable auditor](docs/REFERENCE_AUDIT_DEMO_2026-09-07.md) |
+| Temporal and observational limits | [Monitor findings](docs/PREDICTIVE_MONITOR_FINDINGS_2026-09-07.md), [threats to validity](docs/MEASUREMENT_THREATS_TO_VALIDITY.md) |
+| Retained mathematical corrections | [Reference-noise interpretation](docs/REFERENCE_NOISE_INTERPRETATION_2026-09-07.md), [M4 bound audit](docs/M4_RECTANGULAR_BOUND_FINDINGS_2026-09-07.md) |
+| Measurement history and continuation | [Gate B contract](docs/GATE_B_MEASUREMENT_CONTRACT.md), [Gate B handoff](docs/GATE_B_SESSION_HANDOFF.md) |
+| Source custody and standards scope | [Source policy](docs/SOURCE_POLICY.md), [standards crosswalk](docs/STANDARDS_CROSSWALK.md), [public-data custody](docs/PUBLIC_DATA_CUSTODY_2026-09-06.md) |
+| Repository contribution and disclosure | [Repository contract](AGENTS.md), [contribution guide](CONTRIBUTING.md), [security policy](SECURITY.md) |
 
-The reference-validity study is now implemented; independent adjudication is the next scientific
-action. Only if that evidence warrants it should a temporal monitor be tested against strong
-calibrated baselines. The prior
-results, failed forecasts and withdrawn interpretations stay discoverable. Reiyah should earn
-trust by resolving those boundaries, not by expanding its claims faster than its evidence.
+Historical human-channel studies measure gaze and takeover proxies. LLM experiments investigate
+error coincidence and monitor transfer on archived answer populations, including failed benchmark
+transfer. These remain separately scoped lines of research; they do not establish a universal
+independence law or substitute for measurements of human and vehicle belief on the same encounter.
 
-## Open source and citation
+## Author, license and citation
 
-Repository code is distributed under [Apache-2.0](LICENSE). Third-party datasets, model outputs
-and source documents retain their own terms; the code license does not relicense them. See
-[NOTICE](NOTICE) and [CITATION.cff](CITATION.cff). No third-party research paper payload is added
-by this review. The new local research commit has Daniel Wahnich as its sole author.
+**Created and maintained by Daniel Wahnich.**
+
+Reiyah-authored code and documentation are distributed under [Apache-2.0](LICENSE).
+Third-party materials retain their own terms; see [NOTICE](NOTICE). Use
+[CITATION.cff](CITATION.cff) and cite the exact result or artifact identity reviewed.
+The configured GitHub repository distributes the work; publisher readback is an assertion,
+not independent scientific or transport verification.

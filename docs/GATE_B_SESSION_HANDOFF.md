@@ -712,3 +712,14 @@ A successful measurement is an honest descriptive result on public data. It is n
 scientific support, safety validation, standards compliance, product readiness, competitive
 superiority, operator acceptance, or runtime authority. Say only what the evidence says, and say the
 open item every time.
+
+
+## 2026-09-08: architecture presentation restored
+
+The research README again explains the HARBOR research surfaces, implemented measurement
+flow, joint-error statistic, reference audit, proposed shared-training comparison and evidence
+contracts in six Mermaid views. It retains the current bounded interpretations, links the
+latest completed model-input checkpoint and distinguishes planned fits from executed checks.
+The original experimental records and released Gate A artifacts are unchanged. This is a
+research-navigation correction; Gate A remains operator-unaccepted. Engine cache and
+annotation-consumer work continues in its separate private candidate.
