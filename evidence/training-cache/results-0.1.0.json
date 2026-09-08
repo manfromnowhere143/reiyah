@@ -1,0 +1,129 @@
+{
+  "annotation_probes": {
+    "bad_geometry_or_velocity_rejections": 4,
+    "camera_annotations_after_parser": 7388,
+    "camera_images": 1224,
+    "lidar_annotations": 5289,
+    "samples": 204,
+    "synthetic_augmentation": [
+      {
+        "case": "lidar_training_transforms",
+        "known_velocity_matches_separate_formula": true,
+        "observed_zero_retained": true,
+        "unavailable_pair_retained": true
+      },
+      {
+        "case": "camera_training_transforms",
+        "known_velocity_matches_separate_formula": true,
+        "observed_zero_retained": true,
+        "unavailable_pair_retained": true
+      },
+      {
+        "after_range_filter_boxes": 2,
+        "after_range_filter_unavailable": 0,
+        "case": "actual_object_sampling_and_range_filter",
+        "sampled_boxes": 3,
+        "sampled_unavailable": 1
+      }
+    ],
+    "unavailable_camera_velocity": 40,
+    "unavailable_lidar_velocity": 32
+  },
+  "artifact_id": "reiyah.training-cache-checkpoint.0.1.0",
+  "checkpoint_scope": "Completed loss/parser controls and full validation cache; training caches running at handoff",
+  "gate_a_operator_acceptance": "unaccepted",
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Engineering preparation, not a detector accuracy or safety result",
+    "Synthetic gradient and augmentation checks do not establish full training readiness",
+    "Full training-group outputs require fresh receipts, retrieval and independent recount before use"
+  ],
+  "loss_probes": {
+    "actual_head_cases": 16,
+    "all_unavailable_estimated_velocity_error": null,
+    "bad_input_rejections": 9,
+    "configured_losses": [
+      "CenterPoint L1",
+      "FCOS3D SmoothL1"
+    ],
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "normalization": "upstream denominators unchanged",
+    "unavailable_targets": "Original losses become nonfinite; FCOS3D gradients also become nonfinite. Masking before arithmetic preserves observed losses/full gradients and geometry gradients, with zero unavailable-velocity gradient."
+  },
+  "pending": {
+    "detector_fits": 0,
+    "fitting_protocol": "calibration, initialization, common steps and uncertainty design not frozen",
+    "physical_adjudication": "zero independent human judgments",
+    "shared_training_effect": null,
+    "training_group_1": {
+      "samples": 15085,
+      "state": "running_at_recorded_time"
+    },
+    "training_group_2": {
+      "samples": 13045,
+      "state": "running_at_recorded_time"
+    },
+    "training_object_databases": "not_started"
+  },
+  "plan_completion": "partial; training-group caches require completion and recount, object databases not begun",
+  "recorded_utc": "2026-09-08T05:48:35.503692+00:00",
+  "reporting_correction": {
+    "applies_to": "Every run of this frozen 0.1.0 producer, including the two pending training groups",
+    "corrected_scope": "The pinned upstream camera exporter calls mmcv.imread for image dimensions. Camera decoding occurs there; this does not establish complete training preprocessing or independent JPEG integrity checks. Lidar point payload decoding is not run by this cache builder.",
+    "field": "payload_decoding",
+    "original_bytes_preserved": true,
+    "original_result_sha256": "75a71c9aaef356a82603e6aa1067aebcf28a9f1745e432bba58552aaa6d5eb07",
+    "original_value": "not_run_here",
+    "producer_sha256": "ddadc2a5a2d3c288c13b7716c1012cbb65b07b9a32261a905d75e17c383fea0d"
+  },
+  "retained_records": {
+    "annotation-velocity-probe-0.1.1.json": {
+      "path": "evidence/training-cache/annotation-velocity-probe-0.1.1.json",
+      "sha256": "27efacc5ee214b2dd63dca95a1065d10982576b2d959730e4e5a6ffef4fdd829"
+    },
+    "observed-velocity-probe-0.1.1.json": {
+      "path": "evidence/training-cache/observed-velocity-probe-0.1.1.json",
+      "sha256": "e4d4924ec6dc9147bac26f5484c47b86f215a35106eed5ce9f9b9b61b48c7f7b"
+    },
+    "original-validation-cache-0.1.0.json": {
+      "path": "evidence/training-cache/original-validation-cache-0.1.0.json",
+      "sha256": "75a71c9aaef356a82603e6aa1067aebcf28a9f1745e432bba58552aaa6d5eb07"
+    },
+    "validation-cache-recount-0.1.1.json": {
+      "path": "evidence/training-cache/validation-cache-recount-0.1.1.json",
+      "sha256": "906c90760e3cc8d652403fc0dc8b34a8f28900e3bdd04f9cda2cca048ffe360d"
+    }
+  },
+  "validation_cache": {
+    "camera_annotations": 227623,
+    "camera_cache_sha256": "b1260ec453f936c5216e0c1025f937bddb7e03218fc4ceb1427cfd2f5d166314",
+    "camera_images": 36114,
+    "camera_velocity": {
+      "observed": 227013,
+      "total": 227623,
+      "unavailable": 610
+    },
+    "info_cache_sha256": "368ca5fb0d0c5f12fde908f40430c53bfea00a33975a17870d0bc817ce17afcd",
+    "lidar_velocity": {
+      "observed": 191522,
+      "total": 192041,
+      "unavailable": 519
+    },
+    "samples": 6019,
+    "subset_sha256": "e73ec9590f5357e2d1e1f63a8bcc41327b23fa606976655330d8ec0c985646a0"
+  },
+  "validation_recount": {
+    "checker_sha256": "846d934e505123d4c345461beabbee647c1bfb0989a74d45d164efa85b5343d2",
+    "limits": [
+      "Recounts owned output identities, opportunities, source point-count filter, geometry validity and missingness",
+      "Camera export omits original annotation tokens; individual camera reference identity and physical correctness are not established",
+      "Does not independently recompute all camera projections or all velocity numerical values"
+    ],
+    "state": "pass",
+    "zero_sensor_point_reference": 29778
+  },
+  "version": "0.1.0"
+}

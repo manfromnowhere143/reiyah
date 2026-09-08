@@ -1,0 +1,141 @@
+{
+  "artifact_id": "reiyah.training-cache-source-ledger.0.1.0",
+  "container_image_id": "sha256:f73ef38840631211983ea0dde0cf1ecdfa6dbc84ef6cd0bfb900427da6d601cb",
+  "custody": "Primary bytes retained privately. Public content is own code, aggregate results, source comparisons and pointers. No third-party payload added.",
+  "framework": {
+    "access_terms": "Public exact-commit source archive without authentication",
+    "archive_sha256": "eed7992eb2e6a80599c8ca7bcfabb52160362346f6542ecc0e7bf51381a7696c",
+    "archive_url": "https://codeload.github.com/open-mmlab/mmdetection3d/tar.gz/f1107977dfd26155fc1f83779ee6535d2468f449",
+    "commit": "f1107977dfd26155fc1f83779ee6535d2468f449",
+    "license": "Apache-2.0",
+    "license_sha256": "02c5c55e19772184872c6c455553b15e4acac4b3a757550e7374f47723868ce1",
+    "name": "MMDetection3D",
+    "publication_time_utc": "2021-10-08T08:07:15Z",
+    "redistribution_terms": "Apache-2.0 license retained; no third-party payload is placed in public Git",
+    "repository": "https://github.com/open-mmlab/mmdetection3d",
+    "version": "0.17.1"
+  },
+  "lifecycle_status": "exploratory",
+  "loaded_annotation_source_comparisons": [
+    {
+      "loaded_equals_retained_primary_source": true,
+      "module": "mmdet3d.core.bbox.structures.cam_box3d",
+      "sha256": "ca98c2bdd763bc8e8aadfd51163a7066647f758fbf06eebad3eddaec2558b2ab"
+    },
+    {
+      "loaded_equals_retained_primary_source": true,
+      "module": "mmdet3d.core.bbox.structures.lidar_box3d",
+      "sha256": "8badeb5b932fd162768e25d3a94467cc0dd0aef9c11caac043cae7eca8cc00c3"
+    },
+    {
+      "loaded_equals_retained_primary_source": true,
+      "module": "mmdet3d.datasets.nuscenes_dataset",
+      "sha256": "4d93801d0a79d61f633c6837236e15209c0d84a34f51b3d708ee5242aab48cc8"
+    },
+    {
+      "loaded_equals_retained_primary_source": true,
+      "module": "mmdet3d.datasets.nuscenes_mono_dataset",
+      "sha256": "9116c5f4b5669981a690c3a9ef3bb5401a7f28493afcefb072738adcb1bcf20d"
+    },
+    {
+      "loaded_equals_retained_primary_source": true,
+      "module": "mmdet3d.datasets.pipelines.dbsampler",
+      "sha256": "415b40b1676d25a11185ae93a0a26f68ed4ba4dffe96312cd4884886956b760d"
+    },
+    {
+      "loaded_equals_retained_primary_source": true,
+      "module": "mmdet3d.datasets.pipelines.transforms_3d",
+      "sha256": "6de2e1227e507bc4c319418e1e40e3271c67cf71243d2fc271e25b766ddd7191"
+    }
+  ],
+  "loaded_loss_head_source_comparisons": [
+    {
+      "loaded_equals_retained_primary_source": true,
+      "module": "mmdet.models.losses.smooth_l1_loss",
+      "sha256": "80d5444f6071806866bfb5f24ed6c2ff6f855aab51f84f8adc1ef5277ca9dd12"
+    },
+    {
+      "loaded_equals_retained_primary_source": true,
+      "module": "mmdet.models.losses.utils",
+      "sha256": "bfdd050cc67e73fdf23bb98d2b326693b3159733148b6527d16196b8247269db"
+    },
+    {
+      "loaded_equals_retained_primary_source": true,
+      "module": "mmdet3d.models.dense_heads.centerpoint_head",
+      "sha256": "bcd71630a6ff354c1ff6582ed4a9d36c2c6d5aeb92060d23887a1e974648a1e4"
+    },
+    {
+      "loaded_equals_retained_primary_source": true,
+      "module": "mmdet3d.models.dense_heads.fcos_mono3d_head",
+      "sha256": "ea8c8e429c5d41531ead25624e21340c3bd0ebe8f4763cea086c187943210d13"
+    }
+  ],
+  "mmdet_loss_source": {
+    "access_terms": "Public publisher download without authentication",
+    "artifact_id": "reiyah.mmdet-loss-source.0.1.0",
+    "lifecycle_status": "exploratory",
+    "members": {
+      "mmdet-2.14.0.dist-info/LICENSE": "02c5c55e19772184872c6c455553b15e4acac4b3a757550e7374f47723868ce1",
+      "mmdet-2.14.0.dist-info/METADATA": "4f4a7faf98b54e4dc1f19b979953206516048c6475598284c702d3c42346fb66",
+      "mmdet/models/losses/smooth_l1_loss.py": "80d5444f6071806866bfb5f24ed6c2ff6f855aab51f84f8adc1ef5277ca9dd12",
+      "mmdet/models/losses/utils.py": "bfdd050cc67e73fdf23bb98d2b326693b3159733148b6527d16196b8247269db"
+    },
+    "publisher_metadata_sha256": "9019c9392dfc6987a047551bc017716ada9157a876f2f5b886110de9fdce208b",
+    "publisher_metadata_url": "https://pypi.org/pypi/mmdet/2.14.0/json",
+    "redistribution_terms": "Retained wheel declares Apache-2.0; its license digest matches the retained license. Third-party payload remains private; only own digests, comparisons and pointers are distributed.",
+    "retrieved_utc": "2026-09-08T04:55:27.624383+00:00",
+    "version": "0.1.0",
+    "wheel": {
+      "bytes": 618165,
+      "filename": "mmdet-2.14.0-py3-none-any.whl",
+      "published_utc": "2021-06-29T14:51:04.323056Z",
+      "sha256": "a1e8637bfa268942a5249e6d0200b6d4d87b800adfb0efe9c244b0d6625a95e8",
+      "url": "https://files.pythonhosted.org/packages/27/c3/a97f6ed8a440f3ba623c0614fca91cd1c53a361435d3bbdcff4ff1aa125a/mmdet-2.14.0-py3-none-any.whl"
+    }
+  },
+  "predecessor_model_input_ledger": {
+    "path": "evidence/model-inputs/source-ledger-0.1.0.json",
+    "sha256": "9c2aba0b62dcc6a86a16bb8469d82106868c652c994dbccb6d15ff01a2b961c5"
+  },
+  "runtime_identity_sha256": "5fcffa8ad39cee3b0c51726184bc56fbdc71972906d7b935f2d627692b444d2f",
+  "runtime_versions": {
+    "cv2": "4.8.0",
+    "mmcv": "1.4.0",
+    "mmdet": "2.14.0",
+    "mmdet3d": "0.17.1",
+    "numpy": "1.22.4",
+    "torch": "1.9.1+cu111",
+    "torchvision": "0.10.1+cu111"
+  },
+  "sdk": {
+    "access_terms": "Public publisher download without account or authentication; retained license applies to SDK code, not dataset rights",
+    "artifact_id": "reiyah.model-input-sdk-source.0.1.0",
+    "image_source_matches_wheel": {
+      "nuscenes.nuscenes": "18d71f75dd530aea15b97577e4909e2a0f4b5f6403bd83c15270ca8f9648dfd0",
+      "nuscenes.utils.data_classes": "9fd4eb980630af3177768e248de4fa48f5cacf36a1327ec16da56cdc9a64a3ae",
+      "nuscenes.utils.geometry_utils": "1a13c565f9203529fe363d239c6fec8b8e42430db4c63e18a2985861a0b9ae15"
+    },
+    "license": {
+      "declared": "apache-2.0",
+      "public_payload_redistribution": "none",
+      "sha256": "2f43f04335316ee361ed2b75e5da8e152ac7d832145a44caa111344ef4c6fa73",
+      "wheel_member": "nuscenes_devkit-1.1.11.dist-info/LICENSE.txt"
+    },
+    "lifecycle_status": "exploratory",
+    "payload_custody": "Private, outside public Git",
+    "publisher_metadata_sha256": "cb8d652d2b3dd17c86331be5cf451bcda56b9c1b2317b6ce8893f704a8c09f53",
+    "publisher_metadata_url": "https://pypi.org/pypi/nuscenes-devkit/1.1.11/json",
+    "redistribution_terms": "Apache-2.0 recorded from wheel LICENSE.txt; no third-party payload is placed in public Git",
+    "retrieved_utc": "2026-09-07T20:32:37.929419+00:00",
+    "terms": "Read retained wheel metadata and license; no dataset rights or scientific authority inferred",
+    "version": "0.1.0",
+    "wheel": {
+      "bytes": 313058,
+      "filename": "nuscenes_devkit-1.1.11-py3-none-any.whl",
+      "published_utc": "2023-09-25T01:32:38.076362Z",
+      "sha256": "f8ab21957b86590bdb23931de70d569dc0184142e5a4c83ec22a3493e99640d6",
+      "url": "https://files.pythonhosted.org/packages/b0/06/9029f796dcf7854f0681f11ae81fe42542fb15e02830f6b4239749f59739/nuscenes_devkit-1.1.11-py3-none-any.whl"
+    }
+  },
+  "version": "0.1.0"
+}

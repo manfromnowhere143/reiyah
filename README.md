@@ -112,7 +112,7 @@ population; it does not cover reference errors or establish a causal sensing mec
 Earlier experiments investigate detector choice, thresholds, marginal-rate effects and
 unmeasured difficulty. Their current interpretation is collected in the
 [corrected synthesis](docs/GENERAL_SYNTHESIS.md) and
-[claim register](evidence/claim-status-register-2026-09-08T042402Z.json).
+[claim register](evidence/claim-status-register-2026-09-08T054835Z.json).
 The [RSS estimand analysis](docs/ESTIMAND_RSS_DEFINITION_32.md) states the additional conditions
 needed to connect a benchmark statistic to that safety argument. This two-channel measurement
 has not established those conditions or a vehicle safety rate.
@@ -184,8 +184,10 @@ are concrete and separately documented:
 | [Temporal input control](docs/MODEL_INPUT_CHECKPOINT_2026-09-07.md) | The historical lidar test recipe changes inputs on 129 smoke cases across two seeds; explicit nearest-sweep loading is stable on all 204 |
 | [Camera adapter controls](docs/MODEL_INPUT_CHECKPOINT_2026-09-07.md) | Synthetic probes reproduce caller-dimension mutation and inverse-velocity loss, then check copy and coordinate safeguards |
 
-Full model caches, separate training object databases and the fitting protocol are the next
-preparation stage. Initialization history, object sampling, calibration, equal optimization
+The [cache and unavailable-velocity checkpoint](docs/TRAINING_CACHE_CHECKPOINT_2026-09-08.md)
+adds actual CPU/CUDA loss checks, annotation-consumer controls and a complete validation cache.
+Training-group cache builds are running at its recorded handoff time. Separate training object
+databases and the fitting protocol remain the next preparation stage. Initialization history, object sampling, calibration, equal optimization
 budgets and training uncertainty must be controlled before interpreting the comparison.
 These engineering checks do not establish a detector accuracy gain.
 
@@ -253,7 +255,7 @@ identities.
 | Read for | Start here |
 |---|---|
 | Mission and scientific structure | [Scientific charter](docs/SCIENTIFIC_CHARTER.md), [architecture](docs/ARCHITECTURE.md), [mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) |
-| Current interpretation of sensor, human-proxy and LLM experiments | [Corrected synthesis](docs/GENERAL_SYNTHESIS.md), [current claim register](evidence/claim-status-register-2026-09-08T042402Z.json) |
+| Current interpretation of sensor, human-proxy and LLM experiments | [Corrected synthesis](docs/GENERAL_SYNTHESIS.md), [current claim register](evidence/claim-status-register-2026-09-08T054835Z.json) |
 | Research review and future investigations | [Research-board report](docs/RESEARCH_BOARD_2026-09-07.md), [next training experiment](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) |
 | Reference validity and physical adjudication | [Result AO](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md), [reference study](docs/REFERENCE_ADJUDICATION_STUDY_2026-09-07.md), [portable auditor](docs/REFERENCE_AUDIT_DEMO_2026-09-07.md) |
 | Temporal and observational limits | [Monitor findings](docs/PREDICTIVE_MONITOR_FINDINGS_2026-09-07.md), [threats to validity](docs/MEASUREMENT_THREATS_TO_VALIDITY.md) |

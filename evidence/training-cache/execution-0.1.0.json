@@ -1,0 +1,178 @@
+{
+  "artifact_id": "reiyah.training-cache-execution.0.1.0",
+  "cloud_resources": {
+    "cleanup": "Incoming session inspects fresh activity, retrieves results and stops the original VM if no owner work needs it",
+    "handoff_vm_state": "RUNNING for the two cache builds",
+    "memory_limit_change": "Original VM retained; U container ceiling raised from 12 to 14 GiB and V from 10 to 13 GiB after fresh available-memory census",
+    "new_disks": 0,
+    "new_instances": 0,
+    "original_vm_state": "TERMINATED"
+  },
+  "completed_processes": {
+    "annotation-probe-1": {
+      "elapsed_seconds": 14.349969375063665,
+      "ended_utc": "2026-09-08T05:19:44.423537+00:00",
+      "exit_code": 1,
+      "receipt_sha256": "866dc7b5703d1f2dac54ae6a880de207ee583fec829021b914f1354ac19609fb",
+      "spec_sha256": "1552226b2d0703cef816483cbe122efc98bf2eda82d69d1f853664488b15d680",
+      "started_utc": "2026-09-08T05:19:30.073474+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 1007,
+          "sha256": "3fa1d1a6d68e611c0b889147dbd1d748329b2177c960108ee2333df204bb1be7"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "supervisor_sha256": "188f60b9a18500b1a3d7a6b23e5c70f11068bc242efaf3bc6a05787e22c955ec"
+    },
+    "annotation-probe-2": {
+      "elapsed_seconds": 21.147195291006938,
+      "ended_utc": "2026-09-08T05:20:54.307910+00:00",
+      "exit_code": 0,
+      "receipt_sha256": "051de6e257c2ea38bfe3680ce0ccdbbad3cdd8e43be5e850edbff3854af0f98a",
+      "spec_sha256": "4e380ce4b6ae7cf98761ef0a746a1cda943edd5dcee0e81761e2ecaa3317fcdd",
+      "started_utc": "2026-09-08T05:20:33.160622+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 749,
+          "sha256": "67aba2c832effc70bbf7be2c49f6b2573aa5b5a75429342020784dc8c4a08f3e"
+        },
+        "stdout.txt": {
+          "bytes": 4286,
+          "sha256": "a13fa52c3329a3633c9f98b2fcd0e551522e1fd5bd6d87f9a485e3b8a8a082f8"
+        }
+      },
+      "supervisor_sha256": "188f60b9a18500b1a3d7a6b23e5c70f11068bc242efaf3bc6a05787e22c955ec"
+    },
+    "cache-val-1": {
+      "elapsed_seconds": 1670.4611807079054,
+      "ended_utc": "2026-09-08T05:15:10.518742+00:00",
+      "exit_code": 0,
+      "receipt_sha256": "7abb5ca0bb37a7159e2a2a3001edf9baa2a813341aedb7f5e5b112c134e976b8",
+      "spec_sha256": "254a4f1467e6b2027052102794280c85d51ed1e795ee07cb7e07ab4039f8e4e3",
+      "started_utc": "2026-09-08T04:47:20.057483+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 545,
+          "sha256": "498bebec23194d3d6157bb03662c7bbacc6f0b7f458e9c15e6bec603de247736"
+        },
+        "stdout.txt": {
+          "bytes": 965543,
+          "sha256": "b5b6da20d42bc36715fcd3b9b2bf565c01d3622877e5b4c05b925ebe7ce729c3"
+        }
+      },
+      "supervisor_sha256": "188f60b9a18500b1a3d7a6b23e5c70f11068bc242efaf3bc6a05787e22c955ec"
+    },
+    "val-recount-1": {
+      "elapsed_seconds": 4.239031207980588,
+      "ended_utc": "2026-09-08T05:41:36.046325+00:00",
+      "exit_code": 1,
+      "receipt_sha256": "7e060da881c61b4d5abec11e53323d0b99ff4bee4d964d94f6c017f260909d1d",
+      "spec_sha256": "182e13be1d18003db051d7dc78559dd76cd03b3325022b4902106e5376401538",
+      "started_utc": "2026-09-08T05:41:31.807215+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 585,
+          "sha256": "66728dab7bd5c0b180da69387ec69f88aec52769c37144be382fbc001fa8834d"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "supervisor_sha256": "188f60b9a18500b1a3d7a6b23e5c70f11068bc242efaf3bc6a05787e22c955ec"
+    },
+    "val-recount-2": {
+      "elapsed_seconds": 7.2805746250087395,
+      "ended_utc": "2026-09-08T05:43:22.338440+00:00",
+      "exit_code": 0,
+      "receipt_sha256": "fae0b1b7521ece62370339d2ced1f752855cea3802bd524140797605671735cb",
+      "spec_sha256": "a18f9c793cab6b5a515b4f0333345766f731e0fc966fe6a1e50b310ef72c5ee1",
+      "started_utc": "2026-09-08T05:43:15.057781+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 938,
+          "sha256": "0d27502f83091d16d35df841e7c5e964f429cd72953eac86777db12e15ef4354"
+        }
+      },
+      "supervisor_sha256": "188f60b9a18500b1a3d7a6b23e5c70f11068bc242efaf3bc6a05787e22c955ec"
+    },
+    "velocity-probe-1": {
+      "elapsed_seconds": 27.01400241605006,
+      "ended_utc": "2026-09-08T04:45:15.463606+00:00",
+      "exit_code": 1,
+      "receipt_sha256": "b1f59975b4a13ab0b4529e99b8f440e6e8d94c1ad9f460244513455add8cb56c",
+      "spec_sha256": "7affce2bb810536dcd40a3d7d20177989b556caa7d19ccd8634b4ca25395bafc",
+      "started_utc": "2026-09-08T04:44:48.449477+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 2062,
+          "sha256": "39dccae4a95ffd7feba53e8a457982dc38d057c3ade958f6316f293504850491"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "supervisor_sha256": "188f60b9a18500b1a3d7a6b23e5c70f11068bc242efaf3bc6a05787e22c955ec"
+    },
+    "velocity-probe-2": {
+      "elapsed_seconds": 25.16253616695758,
+      "ended_utc": "2026-09-08T04:49:15.755968+00:00",
+      "exit_code": 0,
+      "receipt_sha256": "992eb9f6e2fe571c3bcbfe6bf5cdb47e767780d3f4acc9ac1ae7ca8844424104",
+      "spec_sha256": "9c5a1d995bbee67b474b5e1ecc6fa7053de082bab044d395a801d067e599c54c",
+      "started_utc": "2026-09-08T04:48:50.593312+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 1084,
+          "sha256": "ef84add6850958dd15f55a06fdb9c00895ee13870fbefd85d47ec15a37f1d14d"
+        },
+        "stdout.txt": {
+          "bytes": 11852,
+          "sha256": "888ac3dba333a64aa277b834680adc8c1e30796829158c89d0e2fb656a084921"
+        }
+      },
+      "supervisor_sha256": "188f60b9a18500b1a3d7a6b23e5c70f11068bc242efaf3bc6a05787e22c955ec"
+    }
+  },
+  "failed_attempts": {
+    "annotation-probe-1": "Required camera dataset data_root argument omitted; supplied under a new run identity",
+    "val-recount-1": "Empty source-reference array inferred floating dtype; explicit boolean dtype in successor checker",
+    "velocity-probe-1": "Leaf synthetic prediction tensor reached upstream in-place sigmoid; corrected nonleaf fixture under a new run identity"
+  },
+  "gate_a_operator_acceptance": "unaccepted",
+  "historical_experiments_replayed_here": 0,
+  "independent_human_judgments": 0,
+  "lifecycle_status": "exploratory",
+  "new_detector_fits": 0,
+  "producer_sources": {
+    "annotation_velocity_bridge.py": "88ee3026f329c6bbaa7a288a3e44ae2c38c2f27821b411a70312afaa14137b9b",
+    "build_model_training_cache.py": "ddadc2a5a2d3c288c13b7716c1012cbb65b07b9a32261a905d75e17c383fea0d",
+    "observed_velocity.py": "945b2d0e4531805fe75f3dbd7fdd92a7bd569d2beefa5bff11ee46fa2fbc85ed",
+    "probe_annotation_velocity.py": "d33bb883a8ea58c9b99ee77c1022137f706bbe68bd4e491e8b02dd923f6acff6",
+    "probe_observed_velocity.py": "42197d64924349db572cdc9b100e0acd6ee86a77a0c0e7dba67860a3606f63ae"
+  },
+  "recorded_utc": "2026-09-08T05:52:50.049819+00:00",
+  "running_processes": {
+    "cache-train-1-1": {
+      "progress_snapshot_sha256": "854871b195043b0a93d6ac41e55d1585ba8c8db6d3db493035fbb3a006d6b326",
+      "receipt": "not_yet_available",
+      "state": "running_at_recorded_time"
+    },
+    "cache-train-2-1": {
+      "progress_snapshot_sha256": "b71170d4c0bb88076367a588a7954f354138d6d146d0fccc0bd231d1232b7023",
+      "receipt": "not_yet_available",
+      "state": "running_at_recorded_time"
+    }
+  },
+  "validation": "Actual runtime probes plus separate completed-cache recount; final repository development report is linked by the private distribution record",
+  "version": "0.1.0"
+}

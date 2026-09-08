@@ -1,0 +1,37 @@
+{
+  "artifact_id": "reiyah.training-cache-plan.0.1.0",
+  "checks": [
+    "Test actual configured L1 and SmoothL1 losses with finite labels, unknown paired velocity, all-unavailable targets, and nonfinite predictions; retain original and masked losses and gradients",
+    "Use actual CenterPoint and FCOS3D heads on synthetic prediction tensors to exercise their target/loss paths without model fitting or sensor inference",
+    "Unavailable labels contribute exactly zero regression gradient; all observed examples retain upstream loss and gradient with the original normalization denominator",
+    "Reject partially unavailable paired velocity, infinite labels, nonfinite predictions and malformed geometry rather than silently sanitizing them",
+    "Build fresh upstream annotation caches for both complete frozen training groups and full validation, retaining every source opportunity and unavailable velocity",
+    "Construct new object point databases only from their corresponding training group; preserve missing velocity and record all filters, zero-point entries, source identities, decoded point counts and storage limits",
+    "Check original private outputs independently before checked main integration"
+  ],
+  "lifecycle_status": "proposed",
+  "limits": [
+    "Engineering preparation, no new detector performance or shared-training effect",
+    "Original historical model-input results and producer files remain unchanged",
+    "No Gate A acceptance or independent human reference judgment"
+  ],
+  "parent_main": "07e9b78f3dccbee0b3d663c47f0e24e21874e921",
+  "population": {
+    "groups": {
+      "1": 15085,
+      "2": 13045,
+      "val": 6019
+    },
+    "proposal": 20260910,
+    "source": "Original complete contained subsets; no sample is selected by detector outcomes"
+  },
+  "runtime_image": "sha256:f73ef38840631211983ea0dde0cf1ecdfa6dbc84ef6cd0bfb900427da6d601cb",
+  "storage": {
+    "action_on_limit": "Stop with retained incomplete state; no passing completion artifact",
+    "maximum_new_object_payload_bytes": 60000000000,
+    "minimum_free_bytes": 30000000000
+  },
+  "training": "not_started; calibration, initialization, common optimization budget and effect/uncertainty protocol still require freezing",
+  "version": "0.1.0",
+  "written_utc": "2026-09-08T04:40:54.866467+00:00"
+}

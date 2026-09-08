@@ -1,0 +1,580 @@
+{
+  "adapter_sha256": "945b2d0e4531805fe75f3dbd7fdd92a7bd569d2beefa5bff11ee46fa2fbc85ed",
+  "artifact_id": "reiyah.observed-velocity-probe.0.1.1",
+  "component_checks": [
+    {
+      "all_observed": {
+        "gradient": [
+          [
+            0.125,
+            0.125
+          ],
+          [
+            0.125,
+            -0.125
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 0.875,
+        "loss_state": "finite"
+      },
+      "all_unavailable_contribution": {
+        "gradient": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 0.0,
+        "loss_state": "finite"
+      },
+      "all_unavailable_estimated_velocity_error": null,
+      "architecture": "CenterPoint",
+      "device": "cpu",
+      "loss_config": {
+        "loss_weight": 0.25,
+        "reduction": "mean",
+        "type": "L1Loss"
+      },
+      "masked_unavailable": {
+        "gradient": [
+          [
+            0.125,
+            0.125
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 0.375,
+        "loss_state": "finite"
+      },
+      "upstream_after_zero_imputation": {
+        "gradient": [
+          [
+            0.125,
+            0.125
+          ],
+          [
+            0.125,
+            -0.125
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 1.25,
+        "loss_state": "finite"
+      },
+      "upstream_with_nan_and_zero_weight": {
+        "gradient": [
+          [
+            0.125,
+            0.125
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": null,
+        "loss_state": "nonfinite"
+      }
+    },
+    {
+      "all_observed": {
+        "gradient": [
+          [
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            -0.5
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 3.3888888359069824,
+        "loss_state": "finite"
+      },
+      "all_unavailable_contribution": {
+        "gradient": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 0.0,
+        "loss_state": "finite"
+      },
+      "all_unavailable_estimated_velocity_error": null,
+      "architecture": "FCOS3D",
+      "device": "cpu",
+      "loss_config": {
+        "beta": 0.1111111111111111,
+        "loss_weight": 1.0,
+        "type": "SmoothL1Loss"
+      },
+      "masked_unavailable": {
+        "gradient": [
+          [
+            0.5,
+            0.5
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 1.4444444179534912,
+        "loss_state": "finite"
+      },
+      "upstream_after_zero_imputation": {
+        "gradient": [
+          [
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            -0.5
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 4.888888835906982,
+        "loss_state": "finite"
+      },
+      "upstream_with_nan_and_zero_weight": {
+        "gradient": null,
+        "gradient_finite": false,
+        "loss": null,
+        "loss_state": "nonfinite"
+      }
+    },
+    {
+      "all_observed": {
+        "gradient": [
+          [
+            0.125,
+            0.125
+          ],
+          [
+            0.125,
+            -0.125
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 0.875,
+        "loss_state": "finite"
+      },
+      "all_unavailable_contribution": {
+        "gradient": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 0.0,
+        "loss_state": "finite"
+      },
+      "all_unavailable_estimated_velocity_error": null,
+      "architecture": "CenterPoint",
+      "device": "cuda",
+      "loss_config": {
+        "loss_weight": 0.25,
+        "reduction": "mean",
+        "type": "L1Loss"
+      },
+      "masked_unavailable": {
+        "gradient": [
+          [
+            0.125,
+            0.125
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 0.375,
+        "loss_state": "finite"
+      },
+      "upstream_after_zero_imputation": {
+        "gradient": [
+          [
+            0.125,
+            0.125
+          ],
+          [
+            0.125,
+            -0.125
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 1.25,
+        "loss_state": "finite"
+      },
+      "upstream_with_nan_and_zero_weight": {
+        "gradient": [
+          [
+            0.125,
+            0.125
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": null,
+        "loss_state": "nonfinite"
+      }
+    },
+    {
+      "all_observed": {
+        "gradient": [
+          [
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            -0.5
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 3.3888888359069824,
+        "loss_state": "finite"
+      },
+      "all_unavailable_contribution": {
+        "gradient": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 0.0,
+        "loss_state": "finite"
+      },
+      "all_unavailable_estimated_velocity_error": null,
+      "architecture": "FCOS3D",
+      "device": "cuda",
+      "loss_config": {
+        "beta": 0.1111111111111111,
+        "loss_weight": 1.0,
+        "type": "SmoothL1Loss"
+      },
+      "masked_unavailable": {
+        "gradient": [
+          [
+            0.5,
+            0.5
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 1.4444444179534912,
+        "loss_state": "finite"
+      },
+      "upstream_after_zero_imputation": {
+        "gradient": [
+          [
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            -0.5
+          ]
+        ],
+        "gradient_finite": true,
+        "loss": 4.888888835906982,
+        "loss_state": "finite"
+      },
+      "upstream_with_nan_and_zero_weight": {
+        "gradient": null,
+        "gradient_finite": false,
+        "loss": null,
+        "loss_state": "nonfinite"
+      }
+    }
+  ],
+  "detector_fits": 0,
+  "head_checks": [
+    {
+      "architecture": "CenterPoint",
+      "cases": [
+        {
+          "full_gradient_sha256": "19c70291ec75ca851e47e9156273576aea5797aa3d8332624f91484cd0707eaa",
+          "geometry_gradient_sha256": "90005f8734bf40e4ec3c212c1cd413f95595aae52c79dcf2d1999410c4a5732b",
+          "gradient_finite": true,
+          "masked_loss": false,
+          "regression_loss": 0.9197683930397034,
+          "regression_loss_state": "finite",
+          "unknown_velocity": false,
+          "velocity_gradient_l1": 0.09999000281095505
+        },
+        {
+          "full_gradient_sha256": "19c70291ec75ca851e47e9156273576aea5797aa3d8332624f91484cd0707eaa",
+          "geometry_gradient_sha256": "90005f8734bf40e4ec3c212c1cd413f95595aae52c79dcf2d1999410c4a5732b",
+          "gradient_finite": true,
+          "masked_loss": true,
+          "regression_loss": 0.9197683930397034,
+          "regression_loss_state": "finite",
+          "unknown_velocity": false,
+          "velocity_gradient_l1": 0.09999000281095505
+        },
+        {
+          "full_gradient_sha256": "c6ffbcae1902b379b1f4484d526f8e32ddf100a7e6aa4a00ff1a973310cd3e0a",
+          "geometry_gradient_sha256": "90005f8734bf40e4ec3c212c1cd413f95595aae52c79dcf2d1999410c4a5732b",
+          "gradient_finite": true,
+          "masked_loss": false,
+          "regression_loss": null,
+          "regression_loss_state": "nonfinite",
+          "unknown_velocity": true,
+          "velocity_gradient_l1": 0.0
+        },
+        {
+          "full_gradient_sha256": "c6ffbcae1902b379b1f4484d526f8e32ddf100a7e6aa4a00ff1a973310cd3e0a",
+          "geometry_gradient_sha256": "90005f8734bf40e4ec3c212c1cd413f95595aae52c79dcf2d1999410c4a5732b",
+          "gradient_finite": true,
+          "masked_loss": true,
+          "regression_loss": 0.7697833776473999,
+          "regression_loss_state": "finite",
+          "unknown_velocity": true,
+          "velocity_gradient_l1": 0.0
+        }
+      ],
+      "device": "cpu"
+    },
+    {
+      "architecture": "FCOS3D",
+      "cases": [
+        {
+          "full_gradient_sha256": "f45474039b20f31db57ee12a590a68f77ccd824cdb57e9e6fce9a0b64b85256d",
+          "geometry_gradient_sha256": "1a38793c1b20e871b04a27a7eb3b42f5d2e11f5b1e66fbee7ee4881626cb7205",
+          "gradient_finite": true,
+          "masked_loss": false,
+          "regression_loss": 17.811111450195312,
+          "regression_loss_state": "finite",
+          "unknown_velocity": false,
+          "velocity_gradient_l1": 0.10000000149011612
+        },
+        {
+          "full_gradient_sha256": "f45474039b20f31db57ee12a590a68f77ccd824cdb57e9e6fce9a0b64b85256d",
+          "geometry_gradient_sha256": "1a38793c1b20e871b04a27a7eb3b42f5d2e11f5b1e66fbee7ee4881626cb7205",
+          "gradient_finite": true,
+          "masked_loss": true,
+          "regression_loss": 17.811111450195312,
+          "regression_loss_state": "finite",
+          "unknown_velocity": false,
+          "velocity_gradient_l1": 0.10000000149011612
+        },
+        {
+          "full_gradient_sha256": null,
+          "geometry_gradient_sha256": "1a38793c1b20e871b04a27a7eb3b42f5d2e11f5b1e66fbee7ee4881626cb7205",
+          "gradient_finite": false,
+          "masked_loss": false,
+          "regression_loss": null,
+          "regression_loss_state": "nonfinite",
+          "unknown_velocity": true,
+          "velocity_gradient_l1": null
+        },
+        {
+          "full_gradient_sha256": "e6e6c746faba2a8abc708ce85220a7a406f326510b63aef1b6140f6269c2f40a",
+          "geometry_gradient_sha256": "1a38793c1b20e871b04a27a7eb3b42f5d2e11f5b1e66fbee7ee4881626cb7205",
+          "gradient_finite": true,
+          "masked_loss": true,
+          "regression_loss": 17.666667938232422,
+          "regression_loss_state": "finite",
+          "unknown_velocity": true,
+          "velocity_gradient_l1": 0.0
+        }
+      ],
+      "device": "cpu"
+    },
+    {
+      "architecture": "CenterPoint",
+      "cases": [
+        {
+          "full_gradient_sha256": "19c70291ec75ca851e47e9156273576aea5797aa3d8332624f91484cd0707eaa",
+          "geometry_gradient_sha256": "90005f8734bf40e4ec3c212c1cd413f95595aae52c79dcf2d1999410c4a5732b",
+          "gradient_finite": true,
+          "masked_loss": false,
+          "regression_loss": 0.9197683930397034,
+          "regression_loss_state": "finite",
+          "unknown_velocity": false,
+          "velocity_gradient_l1": 0.09999000281095505
+        },
+        {
+          "full_gradient_sha256": "19c70291ec75ca851e47e9156273576aea5797aa3d8332624f91484cd0707eaa",
+          "geometry_gradient_sha256": "90005f8734bf40e4ec3c212c1cd413f95595aae52c79dcf2d1999410c4a5732b",
+          "gradient_finite": true,
+          "masked_loss": true,
+          "regression_loss": 0.9197683930397034,
+          "regression_loss_state": "finite",
+          "unknown_velocity": false,
+          "velocity_gradient_l1": 0.09999000281095505
+        },
+        {
+          "full_gradient_sha256": "c6ffbcae1902b379b1f4484d526f8e32ddf100a7e6aa4a00ff1a973310cd3e0a",
+          "geometry_gradient_sha256": "90005f8734bf40e4ec3c212c1cd413f95595aae52c79dcf2d1999410c4a5732b",
+          "gradient_finite": true,
+          "masked_loss": false,
+          "regression_loss": null,
+          "regression_loss_state": "nonfinite",
+          "unknown_velocity": true,
+          "velocity_gradient_l1": 0.0
+        },
+        {
+          "full_gradient_sha256": "c6ffbcae1902b379b1f4484d526f8e32ddf100a7e6aa4a00ff1a973310cd3e0a",
+          "geometry_gradient_sha256": "90005f8734bf40e4ec3c212c1cd413f95595aae52c79dcf2d1999410c4a5732b",
+          "gradient_finite": true,
+          "masked_loss": true,
+          "regression_loss": 0.7697833776473999,
+          "regression_loss_state": "finite",
+          "unknown_velocity": true,
+          "velocity_gradient_l1": 0.0
+        }
+      ],
+      "device": "cuda"
+    },
+    {
+      "architecture": "FCOS3D",
+      "cases": [
+        {
+          "full_gradient_sha256": "f45474039b20f31db57ee12a590a68f77ccd824cdb57e9e6fce9a0b64b85256d",
+          "geometry_gradient_sha256": "1a38793c1b20e871b04a27a7eb3b42f5d2e11f5b1e66fbee7ee4881626cb7205",
+          "gradient_finite": true,
+          "masked_loss": false,
+          "regression_loss": 17.811111450195312,
+          "regression_loss_state": "finite",
+          "unknown_velocity": false,
+          "velocity_gradient_l1": 0.10000000149011612
+        },
+        {
+          "full_gradient_sha256": "f45474039b20f31db57ee12a590a68f77ccd824cdb57e9e6fce9a0b64b85256d",
+          "geometry_gradient_sha256": "1a38793c1b20e871b04a27a7eb3b42f5d2e11f5b1e66fbee7ee4881626cb7205",
+          "gradient_finite": true,
+          "masked_loss": true,
+          "regression_loss": 17.811111450195312,
+          "regression_loss_state": "finite",
+          "unknown_velocity": false,
+          "velocity_gradient_l1": 0.10000000149011612
+        },
+        {
+          "full_gradient_sha256": null,
+          "geometry_gradient_sha256": "1a38793c1b20e871b04a27a7eb3b42f5d2e11f5b1e66fbee7ee4881626cb7205",
+          "gradient_finite": false,
+          "masked_loss": false,
+          "regression_loss": null,
+          "regression_loss_state": "nonfinite",
+          "unknown_velocity": true,
+          "velocity_gradient_l1": null
+        },
+        {
+          "full_gradient_sha256": "e6e6c746faba2a8abc708ce85220a7a406f326510b63aef1b6140f6269c2f40a",
+          "geometry_gradient_sha256": "1a38793c1b20e871b04a27a7eb3b42f5d2e11f5b1e66fbee7ee4881626cb7205",
+          "gradient_finite": true,
+          "masked_loss": true,
+          "regression_loss": 17.666667938232422,
+          "regression_loss_state": "finite",
+          "unknown_velocity": true,
+          "velocity_gradient_l1": 0.0
+        }
+      ],
+      "device": "cuda"
+    }
+  ],
+  "lifecycle_status": "exploratory",
+  "limit": "Synthetic tensors exercise actual losses and target generation; no detector accuracy or full training readiness",
+  "modules": {
+    "mmdet.models.losses.smooth_l1_loss": {
+      "path": "/usr/local/lib/python3.8/dist-packages/mmdet/models/losses/smooth_l1_loss.py",
+      "retained_file": "mmdet__models__losses__smooth_l1_loss.py",
+      "sha256": "80d5444f6071806866bfb5f24ed6c2ff6f855aab51f84f8adc1ef5277ca9dd12"
+    },
+    "mmdet.models.losses.utils": {
+      "path": "/usr/local/lib/python3.8/dist-packages/mmdet/models/losses/utils.py",
+      "retained_file": "mmdet__models__losses__utils.py",
+      "sha256": "bfdd050cc67e73fdf23bb98d2b326693b3159733148b6527d16196b8247269db"
+    },
+    "mmdet3d.models.dense_heads.centerpoint_head": {
+      "path": "/usr/local/lib/python3.8/dist-packages/mmdet3d/models/dense_heads/centerpoint_head.py",
+      "retained_file": "mmdet3d__models__dense_heads__centerpoint_head.py",
+      "sha256": "bcd71630a6ff354c1ff6582ed4a9d36c2c6d5aeb92060d23887a1e974648a1e4"
+    },
+    "mmdet3d.models.dense_heads.fcos_mono3d_head": {
+      "path": "/usr/local/lib/python3.8/dist-packages/mmdet3d/models/dense_heads/fcos_mono3d_head.py",
+      "retained_file": "mmdet3d__models__dense_heads__fcos_mono3d_head.py",
+      "sha256": "ea8c8e429c5d41531ead25624e21340c3bd0ebe8f4763cea086c187943210d13"
+    }
+  },
+  "producer_sha256": "42197d64924349db572cdc9b100e0acd6ee86a77a0c0e7dba67860a3606f63ae",
+  "rejected": [
+    {
+      "case": "partial_unknown",
+      "reason": "partially unavailable or infinite velocity"
+    },
+    {
+      "case": "infinite_velocity",
+      "reason": "partially unavailable or infinite velocity"
+    },
+    {
+      "case": "wrong_width",
+      "reason": "velocity must have two components per annotation"
+    },
+    {
+      "case": "nan_prediction_at_unknown_target",
+      "reason": "nonfinite regression prediction"
+    },
+    {
+      "case": "infinite_prediction",
+      "reason": "nonfinite regression prediction"
+    },
+    {
+      "case": "infinite_target",
+      "reason": "infinite regression target"
+    },
+    {
+      "case": "nan_weight",
+      "reason": "invalid regression weight"
+    },
+    {
+      "case": "negative_weight",
+      "reason": "invalid regression weight"
+    },
+    {
+      "case": "shape_mismatch",
+      "reason": "regression prediction and target shapes differ"
+    }
+  ],
+  "sensor_inference": "not_run",
+  "version": "0.1.1"
+}

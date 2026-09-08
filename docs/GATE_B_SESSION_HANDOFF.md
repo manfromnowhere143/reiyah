@@ -723,3 +723,14 @@ latest completed model-input checkpoint and distinguishes planned fits from exec
 The original experimental records and released Gate A artifacts are unchanged. This is a
 research-navigation correction; Gate A remains operator-unaccepted. Engine cache and
 annotation-consumer work continues in its separate private candidate.
+
+
+## 2026-09-08: incoming engine session
+
+Read [ENGINE_BUILD_HANDOFF_2026-09-08.md](ENGINE_BUILD_HANDOFF_2026-09-08.md) and
+[TRAINING_CACHE_CHECKPOINT_2026-09-08.md](TRAINING_CACHE_CHECKPOINT_2026-09-08.md).
+The loss/parser probes and validation-cache recount are complete. Training caches
+remain running at this checkpoint; object databases and fits remain unstarted.
+The private machine handoff binds live-job inspection commands, private artifacts,
+source hashes, retained failures, cloud resource changes and the outstanding
+historical repository-attribution request. Preserve both active owner worktrees.

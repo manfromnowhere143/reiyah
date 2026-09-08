@@ -1,3 +1,29 @@
+# Engine handoff checkpoint, 2026-09-08
+
+Read [ENGINE_BUILD_HANDOFF_2026-09-08.md](ENGINE_BUILD_HANDOFF_2026-09-08.md) and
+`~/.codex/reports/reiyah/training-cache-2026-09-08/private/HANDOFF.json` first.
+The operator requested a proper stopping point for the incoming engine session.
+Completed: actual CPU/CUDA regression probes, annotation and synthetic augmentation
+checks, and the full validation cache with separate recount. Two training-group
+cache builds are running at the recorded checkpoint time; resolve their receipt
+files and cloud state before acting. Object databases and new detector fits have
+not started. The original cache producer's camera-decoding field is explicitly
+corrected in the new result record without changing the original bytes.
+
+The README architecture repair is on main at `cddd73fc1f727555f84431ca1e19baa6692966a6`
+with six rendered Mermaid views. The current checkpoint register is `0.2.29`,
+`evidence/claim-status-register-2026-09-08T054835Z.json`; all 56 predecessor claims are unchanged.
+Both owner worktrees and UI files are preserved. Gate A remains operator-unaccepted;
+independent human judgments remain unavailable. An additional repository-attribution
+request is recorded with its exact state in the private handoff.
+
+The original VM is intentionally running for the cache jobs. Its exact identity,
+containers, memory-limit adjustments, output paths and finish/stop procedure are in
+the private handoff. Older stopped-VM statements below are historical. Resolve final
+checked main integration and publisher readback from the task's `delivery.json`.
+
+---
+
 # Model-input continuation, 2026-09-08
 
 Read the [model-input checkpoint](MODEL_INPUT_CHECKPOINT_2026-09-07.md) first.

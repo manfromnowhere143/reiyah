@@ -1,0 +1,122 @@
+{
+  "adapters": {
+    "annotation_velocity_bridge.py": "88ee3026f329c6bbaa7a288a3e44ae2c38c2f27821b411a70312afaa14137b9b",
+    "observed_velocity.py": "945b2d0e4531805fe75f3dbd7fdd92a7bd569d2beefa5bff11ee46fa2fbc85ed"
+  },
+  "artifact_id": "reiyah.annotation-velocity-probe.0.1.1",
+  "detector_fits": 0,
+  "groups": [
+    {
+      "camera_cache_sha256": "0cedb99799d3350ca5f518ec97c5dd3d4da7571116097ddbe14a95732854e568",
+      "counts": {
+        "camera_annotations": 2514,
+        "camera_images": 468,
+        "camera_unavailable": 9,
+        "lidar_annotations": 1832,
+        "lidar_samples": 78,
+        "lidar_unavailable": 8
+      },
+      "group": "1",
+      "lidar_cache_sha256": "7bb44cf69e3c0116d7a3f098bdee1ccd76798e64a3c5db89aa6f57b69b7881b0",
+      "source_result_sha256": "63d2d0243a8fdfea2562d8de8080bb99a2908e8e02f36133035f9f5979c18461"
+    },
+    {
+      "camera_cache_sha256": "8f7ad26bf60f6632bf095ccfbd63bee04eeca3ed39e53825a86ecdc1752e945d",
+      "counts": {
+        "camera_annotations": 3239,
+        "camera_images": 432,
+        "camera_unavailable": 17,
+        "lidar_annotations": 2227,
+        "lidar_samples": 72,
+        "lidar_unavailable": 14
+      },
+      "group": "2",
+      "lidar_cache_sha256": "4736a3103024120035cb3081f0f7ed71adb8109de855b9e885e959f0ef23bd03",
+      "source_result_sha256": "56fc66415fa01606e7bee5f4b45e19d3c755c6ab5c6cabd439177c7bf8925ca1"
+    },
+    {
+      "camera_cache_sha256": "ae9825bbf7e2f2e58c4130db9d5ab5a7c56e486656f3c7299db643f6a64eb16c",
+      "counts": {
+        "camera_annotations": 1635,
+        "camera_images": 324,
+        "camera_unavailable": 14,
+        "lidar_annotations": 1230,
+        "lidar_samples": 54,
+        "lidar_unavailable": 10
+      },
+      "group": "val",
+      "lidar_cache_sha256": "4449657f51c006db1b9f6b4e0eaa30881be935d230779b5f1c729b24f34b6712",
+      "source_result_sha256": "b68c0a60d4e3a13fdb6453cf6a9809cb705fa19d92689d80fc4b83ebb75a4003"
+    }
+  ],
+  "lifecycle_status": "exploratory",
+  "limit": "Parser smoke population plus synthetic augmentation, not full training readiness",
+  "modules": {
+    "mmdet3d.core.bbox.structures.cam_box3d": {
+      "path": "/usr/local/lib/python3.8/dist-packages/mmdet3d/core/bbox/structures/cam_box3d.py",
+      "sha256": "ca98c2bdd763bc8e8aadfd51163a7066647f758fbf06eebad3eddaec2558b2ab"
+    },
+    "mmdet3d.core.bbox.structures.lidar_box3d": {
+      "path": "/usr/local/lib/python3.8/dist-packages/mmdet3d/core/bbox/structures/lidar_box3d.py",
+      "sha256": "8badeb5b932fd162768e25d3a94467cc0dd0aef9c11caac043cae7eca8cc00c3"
+    },
+    "mmdet3d.datasets.nuscenes_dataset": {
+      "path": "/usr/local/lib/python3.8/dist-packages/mmdet3d/datasets/nuscenes_dataset.py",
+      "sha256": "4d93801d0a79d61f633c6837236e15209c0d84a34f51b3d708ee5242aab48cc8"
+    },
+    "mmdet3d.datasets.nuscenes_mono_dataset": {
+      "path": "/usr/local/lib/python3.8/dist-packages/mmdet3d/datasets/nuscenes_mono_dataset.py",
+      "sha256": "9116c5f4b5669981a690c3a9ef3bb5401a7f28493afcefb072738adcb1bcf20d"
+    },
+    "mmdet3d.datasets.pipelines.dbsampler": {
+      "path": "/usr/local/lib/python3.8/dist-packages/mmdet3d/datasets/pipelines/dbsampler.py",
+      "sha256": "415b40b1676d25a11185ae93a0a26f68ed4ba4dffe96312cd4884886956b760d"
+    },
+    "mmdet3d.datasets.pipelines.transforms_3d": {
+      "path": "/usr/local/lib/python3.8/dist-packages/mmdet3d/datasets/pipelines/transforms_3d.py",
+      "sha256": "6de2e1227e507bc4c319418e1e40e3271c67cf71243d2fc271e25b766ddd7191"
+    }
+  },
+  "producer_sha256": "d33bb883a8ea58c9b99ee77c1022137f706bbe68bd4e491e8b02dd923f6acff6",
+  "rejected": [
+    {
+      "case": "nan_geometry",
+      "reason": "invalid annotation geometry"
+    },
+    {
+      "case": "negative_dimension",
+      "reason": "invalid annotation geometry"
+    },
+    {
+      "case": "partial_velocity",
+      "reason": "partially unavailable or infinite velocity"
+    },
+    {
+      "case": "infinite_velocity",
+      "reason": "partially unavailable or infinite velocity"
+    }
+  ],
+  "sensor_inference": "not_run",
+  "synthetic_augmentation": [
+    {
+      "case": "lidar_training_transforms",
+      "known_velocity_matches_separate_formula": true,
+      "observed_zero_retained": true,
+      "unavailable_pair_retained": true
+    },
+    {
+      "case": "camera_training_transforms",
+      "known_velocity_matches_separate_formula": true,
+      "observed_zero_retained": true,
+      "unavailable_pair_retained": true
+    },
+    {
+      "after_range_filter_boxes": 2,
+      "after_range_filter_unavailable": 0,
+      "case": "actual_object_sampling_and_range_filter",
+      "sampled_boxes": 3,
+      "sampled_unavailable": 1
+    }
+  ],
+  "version": "0.1.1"
+}
