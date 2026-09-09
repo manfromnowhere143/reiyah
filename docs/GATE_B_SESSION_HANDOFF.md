@@ -1,3 +1,28 @@
+# Discovery record custody continuation, 2026-09-09
+
+Read the [discovery checkpoint](PERCEPTION_DISCOVERY_CHECKPOINT_2026-09-09.md),
+[interface](../research/perception-discovery/0.1.0/README.md) and
+[machine record](../research/perception-discovery/0.1.0/checkpoint.json) first.
+The Engine now seals and verifies canonical unassisted records against the exact observation
+package, with complete occurrence accounting and explicit inspection/exposure states.
+Proposals can cite capture, pixel-region or raw-point evidence. Empty proposals never establish
+an empty physical world. Distinct handles and local timestamps do not prove independence or
+prior blinding; no assisted-data release is authorized by the pair checker.
+
+The only real-data record created is an unassigned draft with all 725 development occurrences
+not inspected. Its attempted seal was rejected for the declared unassigned-reviewer reason.
+No human review, new cohort or study seed was fabricated. Synthetic record tests remain
+engineering fixtures. The open-reference paired-loss comparison remains [-8,8].
+
+Next: bind the staged reference workflow to exact locked discovery, assisted-proposal and
+adjudication sources without promoting custody to physical truth or coverage. Independent
+reviewers, a competent comparator, adjudication and full freeze precede the proposed study.
+Gate A remains unaccepted; owner checkouts, Console, historical evidence and parallel research
+retain their existing scope. Resolve integration and publisher readback through the machine
+checkpoint, Git and the private delivery record.
+
+---
+
 # Raw observation disclosure continuation, 2026-09-09
 
 Read the [observation checkpoint](PERCEPTION_OBSERVATION_CHECKPOINT_2026-09-09.md),

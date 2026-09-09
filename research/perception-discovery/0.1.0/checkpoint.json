@@ -1,0 +1,191 @@
+{
+  "artifact_id": "reiyah.perception-discovery.checkpoint",
+  "authority": {
+    "assisted_data_release": "not_authorized_by_this_tool",
+    "gate_a_operator_acceptance": "unaccepted",
+    "offline_engine": "operator_authorized",
+    "scientific_efficacy": "not_established"
+  },
+  "development_draft": {
+    "byte_size": 83932,
+    "private_record": "private/development-draft.private.json",
+    "sha256": "5620fcfb6a99f892d19d18bd0650c2c5aac634044ab62d101606687c521f64cb"
+  },
+  "development_summary": {
+    "record_sha256": "5620fcfb6a99f892d19d18bd0650c2c5aac634044ab62d101606687c521f64cb",
+    "submission_state": "unassigned_draft",
+    "summary": {
+      "blinding": "unknown",
+      "capture_occurrences": 725,
+      "completion_clock_accuracy": "not_established",
+      "human_independence": "not_established",
+      "inspection_states": {
+        "not_inspected": 725
+      },
+      "physical_absence_from_zero_proposals": "not_established",
+      "physical_reference_coverage": "not_established",
+      "proposals": 0,
+      "recorded_capture_inspection": "incomplete",
+      "reviewer_identity": "unassigned"
+    }
+  },
+  "implementation_files": [
+    {
+      "byte_size": 86,
+      "repository_path": "tools/perception_discovery/__init__.py",
+      "sha256": "de89355206dff0045cf0c0931ed371bed7d02dab8f1d0c839ed7388411bdea8d"
+    },
+    {
+      "byte_size": 2021,
+      "repository_path": "tools/perception_discovery/__main__.py",
+      "sha256": "f7115e75abaf1a8735c1557b0ec869e58daf2d10de1c6aedb5ed718c4f6536e1"
+    },
+    {
+      "byte_size": 5448,
+      "repository_path": "tools/perception_discovery/custody.py",
+      "sha256": "0108db4755b3e9ea8215d8497f3b6c6a66426817c8ff9070ae6f53873995eb9f"
+    },
+    {
+      "byte_size": 11433,
+      "repository_path": "tools/perception_discovery/records.py",
+      "sha256": "e182a0ec010ff3ccd77936e48724427ae3e97b2d1f94a3074d51fc530a8f04e0"
+    }
+  ],
+  "interface": {
+    "byte_size": 9103,
+    "repository_path": "research/perception-discovery/0.1.0/README.md",
+    "sha256": "841f4416d24f5a56939d770f96758ddcbad022eadcfdbca63ccbf0be52470f09"
+  },
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Record content remains a submitted proposal; structural validity does not establish observation accuracy",
+    "Different reviewer handles do not prove separate people or independent sensor evidence",
+    "Unattested local seal times and reported exposure do not prove the sequence of actual information access",
+    "Verification binds the embedded canonical record; its original-file digest remains a producer assertion without the retained source file",
+    "Empty proposal lists do not establish absent physical objects or complete reference worlds"
+  ],
+  "live_unassigned_rejection": {
+    "diagnostic": {
+      "code": "DISCOVERY_REVIEWER",
+      "detail": "An unassigned draft cannot be sealed as a submitted record",
+      "status": "invalid"
+    },
+    "exit_code": 2,
+    "receipt": {
+      "byte_size": 1458,
+      "private_record": "checks/development-unassigned-rejection/receipt.json",
+      "sha256": "bdc42eb9503669cc9594dd8f56186d453dd6c9759acaa380d1f84d46e11c60d5"
+    },
+    "sealed_output_created": false
+  },
+  "next_step": "Bind the staged reference workflow to exact locked discovery, assisted-proposal and adjudication sources without promoting custody to object truth or reference completeness",
+  "observation_checkpoint": {
+    "byte_size": 12048,
+    "repository_path": "research/perception-observation/0.1.0/checkpoint.json",
+    "sha256": "47779c0f133ddb69045e8636e7d532d4497aed2d76ebe8b405c512e7d540513b"
+  },
+  "observation_package_seal_sha256": "3f7dcdb06d659360d3d93688a4efe60739525cc0282a509930df7947d55ac5c1",
+  "parent_commit": "b3423d0d9d917587c1ffebcbe0f0aa23be402835",
+  "readme_update": {
+    "scope": "Current implementation pointer and one checkpoint row; all six Mermaid sources unchanged"
+  },
+  "source_closure": {
+    "tools/perception_decision/__init__.py": "53d4c1fb5ce4982c2dfec949b7fa84ec67c52496eb445782fee10b0b6f6bde0f",
+    "tools/perception_decision/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "tools/perception_decision/checker.py": "64e342e00a4c2683f9db5fa2cb8213959a357bd5c3099296a090564527134da4",
+    "tools/perception_decision/cli.py": "419fa07442ebf2ff4ea9484ad0f7b235aab291c50eee52d5cb0374209cf7b7ee",
+    "tools/perception_decision/contract.py": "aed6e16f0d2b09b85abccbf4aeac5e74abb42e699c4ce8d9be34073523327134",
+    "tools/perception_decision/kernel.py": "7a5a630c9265108cc0d0a1c3e065292d62425b3a0cbfa7ae0ec942b9233f5ecc",
+    "tools/perception_decision/nuscenes.py": "ff5f6bd5509fcd656b2420af7b531ae601b12e77975270209dbb1dbea92f6eb4",
+    "tools/perception_discovery/__init__.py": "de89355206dff0045cf0c0931ed371bed7d02dab8f1d0c839ed7388411bdea8d",
+    "tools/perception_discovery/__main__.py": "f7115e75abaf1a8735c1557b0ec869e58daf2d10de1c6aedb5ed718c4f6536e1",
+    "tools/perception_discovery/custody.py": "0108db4755b3e9ea8215d8497f3b6c6a66426817c8ff9070ae6f53873995eb9f",
+    "tools/perception_discovery/records.py": "e182a0ec010ff3ccd77936e48724427ae3e97b2d1f94a3074d51fc530a8f04e0",
+    "tools/perception_geometry/__init__.py": "f48c9f24aa73ec8ed3614a9bcb05cb041d5fd6eeee7b664303d15cf432733f00",
+    "tools/perception_geometry/__main__.py": "67a8a65c48401e1309cdd8d42ac824a149a2534bd1697db3d87dc901bd4620ef",
+    "tools/perception_geometry/algebra.py": "72c3786489c18175a007f531410884311bbc1dee2ee2831d41ba9cd0a9ea13f0",
+    "tools/perception_geometry/bind.py": "1f52a269c4e4b94b6b9fe33c048a50b1a5c2e4b382fe1687d6dad0d93840fa69",
+    "tools/perception_inputs/__init__.py": "72a4b32a5dbeea671e7fc3589209cab0a8a7f8badab26d496e70e10edc06c4d4",
+    "tools/perception_inputs/__main__.py": "220f2a8e9baf67787d07a17f04b835c3813d2ce18ab7492ec7bc460f663fbe16",
+    "tools/perception_inputs/catalog.py": "908106f97eaad6326407a47fc3da0ff0e483d70ba9687bb84d028d1e69e0531c",
+    "tools/perception_inputs/clock.py": "1de238923caf890a748a9032481f86cdbdda355b5eef32264a994b9a357e0a5a",
+    "tools/perception_inputs/sensors.py": "1fec7a087c7a58b233096a01ef7ecf34f06085aa73af5da3eec043db579c711c",
+    "tools/perception_inputs/source_io.py": "65da8ba76d03aed2e3ac556729e2ea19fc12996c808805bb173bc782c4e0af76",
+    "tools/perception_observation/__init__.py": "e83dc0acf86c213309235c925ddd811b307c4232d64756ebcd9edd2e5621e818",
+    "tools/perception_observation/__main__.py": "0d9349224e4964e181e361062bbe2315142d5b651aab20808e08ef4f79822ec2",
+    "tools/perception_observation/contract.py": "ad507712773a990a9ab1a68817761a8d87c48c0a9c4ef16ec3d9623b34929545",
+    "tools/perception_observation/formats.py": "29ce13adf643e8f063dea9ab7f3e495bfa63b24ff7a374e93842cfe762a1050a",
+    "tools/perception_observation/package.py": "059251f1124b57003707767663066a6898fed0888ba3ce14abdaaa65f3d75991",
+    "tools/perception_windows/__init__.py": "a689128ed8c53650ccc854c5bd1faa1ba1181fd0e8e181b91e92d417c48893dd",
+    "tools/perception_windows/__main__.py": "e4507826d40c9cd436f788b2664f0d2bf7acbb6910d121d3af2fd90c83252283",
+    "tools/perception_windows/payloads.py": "c3cc9dd20a4f76df08575a684f8cbd0f1e1f51e796d5a6cb1903f484dfc4515f",
+    "tools/perception_windows/timeline.py": "b256bdb2afeb3e0c563b4e53abe5aeaa6581a0b2ff6309690734052d7b093209"
+  },
+  "study": {
+    "adjudication": "not_secured",
+    "development_drafts_created": 1,
+    "independent_comparator": "not_secured",
+    "independent_reviewers": 0,
+    "physical_review": "not_performed",
+    "previous_open_unit_loss_enclosure": [
+      -8,
+      8
+    ],
+    "prospective_cohort": null,
+    "real_human_records_created": 0,
+    "seed": null,
+    "synthetic_review_fixtures": "engineering checks only"
+  },
+  "test_file": {
+    "byte_size": 14046,
+    "repository_path": "tests/test_perception_discovery.py",
+    "sha256": "0a40a5b286234ddc05f298606b7c6926613ae2b90facf231e61347076b86d788"
+  },
+  "validation": {
+    "final_all_tests_pass": true,
+    "gate_a_release_replay": "not_run; no released Gate A artifact or acceptance change",
+    "gate_b_report": {
+      "byte_size": 12294,
+      "private_record": "checks/gate-b/result.json",
+      "sha256": "8a951e77b30090cc465cf0a9fd73919e6f3379ac64dbd2bff8b4f71a74892d39"
+    },
+    "historical_experiments_rerun": 0,
+    "historical_transcripts_hash_verified": 52,
+    "measurement_tests": 93,
+    "new_discovery_tests": 24,
+    "receipts": [
+      {
+        "byte_size": 870,
+        "private_record": "checks/discovery-tests-1/receipt.json",
+        "sha256": "465155942761544635748aec2bd52aa4dc95317f420b351ae42cd8c737bf7457"
+      },
+      {
+        "byte_size": 1288,
+        "private_record": "checks/development-draft-1/receipt.json",
+        "sha256": "cc5eb34969e7f154748cf0f794f634a3ddb58ee4168a49d2832327b7778f024e"
+      },
+      {
+        "byte_size": 1458,
+        "private_record": "checks/development-unassigned-rejection/receipt.json",
+        "sha256": "bdc42eb9503669cc9594dd8f56186d453dd6c9759acaa380d1f84d46e11c60d5"
+      },
+      {
+        "byte_size": 872,
+        "private_record": "checks/unit-repo/receipt.json",
+        "sha256": "58264350eb851982a393127aa15fc1047002d05f840a263a1189a9d6e8362fec"
+      },
+      {
+        "byte_size": 873,
+        "private_record": "checks/unit-tools/receipt.json",
+        "sha256": "d414aa554d333ea131104625f686c587ae82b7c751f994fa09bd103870802718"
+      },
+      {
+        "byte_size": 922,
+        "private_record": "checks/gate-b/receipt.json",
+        "sha256": "2c9532babd4edd6b1279674aacba15c538abd52b49c3d67c6dd6ee2df89dbb5b"
+      }
+    ],
+    "repository_tests": 238
+  },
+  "version": "0.1.0"
+}

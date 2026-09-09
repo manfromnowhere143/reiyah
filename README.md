@@ -19,7 +19,7 @@ measurement and reference-audit research motivates the current focus. Human beli
 under intervention and cross-domain product value require their own observations.
 
 [Engine architecture and mathematics](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) ·
-[Current implementation](docs/PERCEPTION_OBSERVATION_CHECKPOINT_2026-09-09.md) ·
+[Current implementation](docs/PERCEPTION_DISCOVERY_CHECKPOINT_2026-09-09.md) ·
 [Research findings](docs/GENERAL_SYNTHESIS.md) · [Selected study](#current-engine-development) ·
 [Run the auditor](#run-the-offline-auditor)
 
@@ -187,6 +187,7 @@ The implemented pieces form one offline comparison pipeline:
 | [Raw windows](docs/PERCEPTION_WINDOW_CHECKPOINT_2026-09-09.md) | Two existing development windows contain 566 decoded camera images and 159 lidar files, with timestamp gaps retained |
 | [Spatial and time operands](docs/PERCEPTION_GEOMETRY_CHECKPOINT_2026-09-09.md) | Nominal transforms for the same 725 captures; 723 differ from their anchor timestamp, with no object-motion imputation |
 | [Raw observation disclosure](docs/PERCEPTION_OBSERVATION_CHECKPOINT_2026-09-09.md) | All 725 captures packaged with neutral IDs and a separate custody map; raw bytes, relative times and unavailable states are checked before review |
+| [Discovery record custody](docs/PERCEPTION_DISCOVERY_CHECKPOINT_2026-09-09.md) | Exact package binding, explicit inspection states and immutable submitted records; draft generation supplies no human judgment |
 
 The proposed study selects **60 scenes**, then one eligible anchor per scene, only after the
 input, method, reviewer, comparator and adjudication freeze. Two independent reviewers first
