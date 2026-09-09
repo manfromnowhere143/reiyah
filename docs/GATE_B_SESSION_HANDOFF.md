@@ -1,3 +1,22 @@
+# Perception-decision engine continuation, 2026-09-09
+
+Read [the selected architecture](PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md)
+and the [prospective study plan](../research/perception-decision/0.1.0/study-plan.json).
+The operator requested implementation after the completed comparison review. The next work is
+an offline paired-loss engine for lidar alone versus the same lidar plus available camera
+outputs. The first slice implements explicit comparison inputs and checked synthetic bounds.
+The physical study is not selected or run; its independent reviewers, conventional comparator,
+adjudication arrangement and valid observation windows remain prerequisites.
+
+This supersedes the earlier training-first continuation for planning purposes. The later private
+training closeout records all three model caches complete and the original VM stopped; those
+are historical observations, not fresh cloud checks. No detector fits were completed. Preserve
+all original checkpoints and negative results. Gate A remains operator-unaccepted. Both active
+owner worktrees and the Console remain separate. Current implementation status and verification
+will be recorded in a new engine checkpoint, not by changing these planning bytes.
+
+---
+
 # Model-input continuation, 2026-09-08
 
 Read the [model-input checkpoint](MODEL_INPUT_CHECKPOINT_2026-09-07.md) first.

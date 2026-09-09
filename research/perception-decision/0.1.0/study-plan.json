@@ -1,0 +1,225 @@
+{
+  "artifact_id": "reiyah.perception-decision.study-plan",
+  "augmentation": {
+    "gate_squared_m2": {
+      "denominator": "1",
+      "numerator": "4"
+    },
+    "order": "descending score; original-file-order ties",
+    "preserve_every_base_detection_unchanged": true,
+    "suppress_when": "same class and squared XY distance strictly less than 4 to any retained detection"
+  },
+  "comparator": {
+    "adjudication": "Independent arrangement, conflict rules and consequential-error rubric required before freeze; no self-adjudicated superiority.",
+    "author": "competent independent analyst; not yet secured",
+    "paired_bound_mathematics_allowed": true,
+    "same_information_and_assumptions": true,
+    "stage_outputs": "seal before comparing methods",
+    "workflow_freeze": "before selection"
+  },
+  "configuration_roles": {
+    "augmented": {
+      "additions_output": {
+        "byte_size": 343998291,
+        "path": "mapillary_val.json",
+        "sha256": "f948e9778fb9a332d748f7e504fbade04f0c00c2699d7b0af757cacdbd567e99"
+      },
+      "additions_producer": "Mapillary/MonoDIS camera",
+      "preserves": "base",
+      "role_id": "augmented"
+    },
+    "base": {
+      "output": {
+        "byte_size": 224899254,
+        "path": "megvii_val.json",
+        "sha256": "e7a995c31692ac95a86b56208e0b5d82a4ab908df8d0a9b9474d70adb693eab4"
+      },
+      "producer": "Megvii/CBGS lidar",
+      "role_id": "base"
+    }
+  },
+  "decision_fields": {
+    "improvement_criterion": {
+      "excluded": "upper <= tolerance",
+      "not_evaluated": "no valid required computation/certificate/input/model basis",
+      "supported": "lower > tolerance",
+      "unresolved": "otherwise"
+    },
+    "preference": {
+      "equivalent_within_tolerance": "lower >= -tolerance and upper <= tolerance",
+      "not_evaluated": "no valid required computation/certificate/input/model basis",
+      "prefer_augmented": "lower > tolerance",
+      "prefer_base": "upper < -tolerance",
+      "unresolved": "otherwise"
+    }
+  },
+  "implementation_status": "starting_offline_research_engine",
+  "lifecycle_status": "proposed",
+  "limits": [
+    "Historical detector outputs do not benchmark current frontier models.",
+    "Detection-count loss excludes latency, planner response and crash loss.",
+    "A reference-model enclosure is not a physical 95% interval.",
+    "One resolved addition comparison is not demonstrated software superiority.",
+    "This design does not establish a buyer, valuation or product-runtime authority."
+  ],
+  "matching": {
+    "certificate": "matching plus vertex cover of equal size for each configuration",
+    "count_duplicate_unmatched_predictions_as_FP": true,
+    "distance_tie_objective": null,
+    "gate_comparison": "strict_less_than",
+    "gate_squared_m2": {
+      "denominator": "1",
+      "numerator": "4"
+    },
+    "numerical_policy": "exact source-decimal squared comparisons; physical/calibration/time uncertainty separate",
+    "objective": "maximum_cardinality",
+    "same_class": true,
+    "witness_tie_policy": "deterministic stable-identity traversal; exact implementation bound before freeze"
+  },
+  "metadata_archive": {
+    "byte_size": 461678030,
+    "path": "meta.tgz",
+    "sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b"
+  },
+  "not_selected": [
+    "PointPillars companion comparison",
+    "artificial reference query-allocation challenge",
+    "four-detector training intervention"
+  ],
+  "operator_execution_instruction_recorded_utc": "2026-09-09T09:46:22.319506+00:00",
+  "outcome_dimensions": [
+    "computation_validity",
+    "cohort_comparison_resolution",
+    "independently_adjudicated_differentiation",
+    "workflow_cost_and_repeated_external_value"
+  ],
+  "pointer_policy": "Source paths are basenames for identification only; payloads are not distributed or resolved relative to this plan. Private custody retains exact source locations. Bind required real inputs before execution.",
+  "population": {
+    "context_eligible_anchor_count": 4682,
+    "context_seconds_each_side": 2,
+    "exclusion": "Candidate closed +/-2-second window intersects a prior development case exposed-interval hull, including its declared context and exposed sensor timestamps, in the same scene.",
+    "metadata_feasibility": {
+      "byte_size": 1547,
+      "path": "metadata-feasibility.json",
+      "sha256": "cb204a6ed2ff9400ce59fef92f9e30559aa81421cfb004c008781e585194a90f"
+    },
+    "parent_anchor_count": 6019,
+    "post_exclusion_anchor_count": 2935,
+    "post_exclusion_scene_count": 138,
+    "primary_weights": "exactly 1/60 per selected anchor",
+    "random_seed": null,
+    "raw_window_validation": "not_completed",
+    "sample": "60 eligible scenes uniform without replacement, then one eligible anchor uniform within each selected scene.",
+    "seed_rule": "fresh seed after exact method/protocol/input/reviewer/comparator/seed procedure freeze",
+    "selected_anchors": null,
+    "size": 60,
+    "substitution_policy": "none; retain every selected anchor and explicit unavailable state",
+    "target_of_inference": "fixed_selected_cohort"
+  },
+  "preregistration_status": "not_preregistered",
+  "primary": {
+    "FN_penalty": {
+      "denominator": "1",
+      "numerator": "1"
+    },
+    "FP_penalty": {
+      "denominator": "1",
+      "numerator": "1"
+    },
+    "H0": "Delta <= 1/10",
+    "H1": "Delta > 1/10",
+    "coarse_bound_per_anchor": "[-b*r,a*r]; r = retained additions; [-r,r] for the primary loss",
+    "contrast": "mean(loss_base - loss_augmented)",
+    "loss_kind": "additive_detection_count_v1",
+    "physical_truth_coverage": "not_established_by_enclosure",
+    "statistical_confidence_level": null,
+    "tolerance": {
+      "denominator": "10",
+      "numerator": "1"
+    },
+    "uncertainty": "verified outer enclosure of model-compatible contrasts",
+    "units": "error_units_per_anchor"
+  },
+  "reference_cache_policy": "Filtered historical gt_val_cache.json is not a complete physical reference. Bind full annotation tables and raw observation windows separately.",
+  "reference_review": {
+    "cross_anchor_constraints": "preserve or identify conservative per-anchor projection",
+    "human_discovery_reviewers": 2,
+    "phase_1": "Independent timestamped raw-camera/lidar discovery; no annotations, detector overlays, configuration identities or prior rankings. Lock both records.",
+    "phase_2": "Full annotations and anonymized predictions for proposal-assisted inspection; retain phase and original alternatives.",
+    "raw_sensor_independence": "not_established by separate reviewers",
+    "unlisted_matchable_objects": "retain possible effects with justified relaxation or unconditional fallback; no arbitrary closure",
+    "world_model": "Shared object presence/class/alias/geometry/time alternatives; preserve joint constraints and base-neighbor matching paths."
+  },
+  "scope": "One finite-cohort blinded reference study of a nested offline output addition; no deployment or causal-modality inference.",
+  "secondary": {
+    "FN_FP_weights": [
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    "no_primary_selection_after_results": true,
+    "reports": [
+      "retained additions",
+      "matched-count change",
+      "unmatched-output change",
+      "per-class contributions and opportunity counts",
+      "unreviewable anchors",
+      "reference disagreements and assumption sensitivities",
+      "total analyst/reviewer/integration/compute/repair effort"
+    ]
+  },
+  "source_identity_observation": {
+    "record": {
+      "byte_size": 1863,
+      "path": "input-availability.json",
+      "sha256": "3969336a009f55f9e27e79a1c10a541787ca0bb5676064f82348072ef571d215"
+    },
+    "reverification_required_at_W0": true,
+    "verification_utc": "2026-09-08T17:14:26.083513+00:00"
+  },
+  "source_profile_sha256": "1a949f8d4f0c7744713d6cbdcad8ea69d912ff13a3c6285035d3474b52c40523",
+  "study_status": "not_started",
+  "supersedes_for_planning": {
+    "byte_size": 34837,
+    "path": "CONSOLIDATED_DECISION.md",
+    "sha256": "cd624f5b9b22a1f3d21a4b6a155dcf0898a4a9e44331ee2254422af4a540b1e0"
+  },
+  "target": {
+    "class_mapping_binding": "required_before_freeze",
+    "classes": [
+      "car",
+      "truck",
+      "bus",
+      "trailer",
+      "construction_vehicle",
+      "pedestrian",
+      "motorcycle",
+      "bicycle",
+      "traffic_cone",
+      "barrier"
+    ],
+    "detection_range": "nominal global XY relative to anchor ego XY",
+    "object_range": "true center in each shared reference interpretation",
+    "range_comparison": "less_than_or_equal",
+    "range_squared_m2": {
+      "denominator": "1",
+      "numerator": "2500"
+    },
+    "reference_time": "anchor timestamp; retrospective raw context, not runtime availability",
+    "score_comparison": "greater_than_or_equal",
+    "score_threshold": {
+      "denominator": "10",
+      "numerator": "3"
+    }
+  },
+  "version": "0.2.0"
+}
