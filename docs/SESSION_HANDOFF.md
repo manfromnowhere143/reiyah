@@ -1,3 +1,23 @@
+# Raw observation-window continuation, 2026-09-09
+
+Read the [window checkpoint](PERCEPTION_WINDOW_CHECKPOINT_2026-09-09.md),
+[interface](../research/perception-windows/0.1.0/README.md) and
+[machine record](../research/perception-windows/0.1.0/checkpoint.json) first.
+The two existing development windows now contain all 725 recorded captures: 566 fully decoded
+camera images and 159 lidar files. Initial incomplete inventories and reports remain retained.
+The adapter preserves clock population, all sweeps, timestamp gaps and explicit custody/decoder
+states. All 257 offline unit tests pass. Complete recorded windows do not establish physical
+reference completeness; the previous paired-loss interval is unchanged.
+
+Next: check spatial/time operands and implement the locked blinded-observation boundary without
+passing operational catalogs or detector hints to discovery reviewers. Independent reviewers,
+the conventional comparator, adjudication and the full freeze remain prerequisites to the
+60-scene study; no cohort or seed exists. Gate A remains unaccepted. Existing evidence, main
+README, owner checkouts, parallel research and Console work are preserved. Final integration,
+cloud closeout and publisher readback are resolved from Git and the private delivery record.
+
+---
+
 # Joint reference-compiler continuation, 2026-09-09
 
 Read the [reference checkpoint](PERCEPTION_REFERENCE_CHECKPOINT_2026-09-09.md),

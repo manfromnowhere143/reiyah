@@ -14,7 +14,7 @@ CHANNELS = ('LIDAR_TOP', 'CAM_FRONT', 'CAM_FRONT_LEFT', 'CAM_FRONT_RIGHT',
 TABLES = ('sensor.json', 'calibrated_sensor.json', 'sample_data.json', 'ego_pose.json')
 
 
-def _table_streams(stream, stack):
+def _table_streams(stream, stack, tables=TABLES):
     """Copy selected tables to unlinked descriptors to resolve forward references."""
     files, seen, expanded = {}, set(), 0
     try:
@@ -27,7 +27,7 @@ def _table_streams(stream, stack):
                 seen.add(member.name)
                 expanded += member.size
                 require(0 <= member.size and expanded <= 4 << 30, 'METADATA_SIZE', 'Expanded metadata exceeds its limit')
-                if path.name not in TABLES:
+                if path.name not in tables:
                     continue
                 require(member.name == 'v1.0-trainval/' + path.name and member.isfile() and path.name not in files,
                         'METADATA_ARCHIVE', 'Ambiguous sensor table identity')
@@ -44,7 +44,7 @@ def _table_streams(stream, stack):
                 files[path.name] = output
     except (tarfile.TarError, EOFError) as exc:
         raise Invalid('METADATA_ARCHIVE', 'Malformed sensor metadata archive') from exc
-    require(set(files) == set(TABLES), 'METADATA_TABLE', 'Required sensor table is absent')
+    require(set(files) == set(tables), 'METADATA_TABLE', 'Required sensor table is absent')
     return files
 
 
