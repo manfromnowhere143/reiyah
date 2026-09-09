@@ -1,0 +1,574 @@
+{
+  "artifact_id": "reiyah.perception-reference.synthetic-example",
+  "catalog": {
+    "anchors": [
+      {
+        "anchor_timestamp_us": 1000000,
+        "nominal_ego_xy": {
+          "state": "observed",
+          "timestamp_us": 1000000,
+          "value": [
+            {
+              "denominator": "1",
+              "numerator": "0"
+            },
+            {
+              "denominator": "1",
+              "numerator": "0"
+            }
+          ]
+        },
+        "sample_token": "sample-0"
+      },
+      {
+        "anchor_timestamp_us": 2000000,
+        "nominal_ego_xy": {
+          "state": "observed",
+          "timestamp_us": 2000000,
+          "value": [
+            {
+              "denominator": "1",
+              "numerator": "0"
+            },
+            {
+              "denominator": "1",
+              "numerator": "0"
+            }
+          ]
+        },
+        "sample_token": "sample-1"
+      }
+    ],
+    "artifact_id": "reiyah.perception-inputs.catalog",
+    "sources": {
+      "base": {
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "state": "observed"
+      },
+      "camera": {
+        "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "state": "observed"
+      },
+      "metadata": {
+        "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "state": "observed"
+      }
+    },
+    "version": "0.1.0"
+  },
+  "comparison": {
+    "anchors": [
+      {
+        "additions": {
+          "state": "observed",
+          "value": [
+            {
+              "id": "camera:0",
+              "record_sha256": "16742bb93fb1540a08e8e9370892637b691327a2c2abef050dc581ce7bd8a244"
+            }
+          ]
+        },
+        "base": {
+          "state": "observed",
+          "value": [
+            {
+              "id": "base:0",
+              "record_sha256": "e9f1f524246221398071606ca07241705ec89eb80f267cba48b81c484ec87394"
+            }
+          ]
+        },
+        "id": "anchor-0",
+        "reference": {
+          "reason": "No reviewed physical-reference constraints supplied",
+          "state": "open"
+        },
+        "weight": {
+          "denominator": "2",
+          "numerator": "1"
+        }
+      },
+      {
+        "additions": {
+          "state": "observed",
+          "value": [
+            {
+              "id": "camera:0",
+              "record_sha256": "8f1e37c51e81da5fc3cf8d1658292255b9eb4f38f4382426bf500a476e7b282a"
+            }
+          ]
+        },
+        "base": {
+          "state": "observed",
+          "value": [
+            {
+              "id": "base:0",
+              "record_sha256": "8d964364438e1e05fc0a30cbe5e7065a511a39485db57cc91bf2b75439cb392d"
+            }
+          ]
+        },
+        "id": "anchor-1",
+        "reference": {
+          "reason": "No reviewed physical-reference constraints supplied",
+          "state": "open"
+        },
+        "weight": {
+          "denominator": "2",
+          "numerator": "1"
+        }
+      }
+    ],
+    "artifact_id": "reiyah.perception-decision.input",
+    "assumptions": [
+      "Constructed point-reference test, not physical observations."
+    ],
+    "cohort_id": "synthetic-cohort",
+    "comparison_id": "synthetic-comparison",
+    "evidence_kind": "synthetic",
+    "input_scope": "normalized_research_graphs",
+    "loss": {
+      "false_negative": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "false_positive": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "tolerance": {
+        "denominator": "10",
+        "numerator": "1"
+      }
+    },
+    "model": {
+      "clauses": [],
+      "variables": []
+    },
+    "version": "0.1.0"
+  },
+  "evidence_kind": "synthetic",
+  "interpretation": "Constructed joint worlds; placeholder source/basis identities, no real sensor observations or reviewer judgments.",
+  "normalizations": [
+    {
+      "anchor_id": "anchor-0",
+      "artifact_id": "reiyah.perception-decision.normalization",
+      "ego_xy": [
+        {
+          "denominator": "1",
+          "numerator": "0"
+        },
+        {
+          "denominator": "1",
+          "numerator": "0"
+        }
+      ],
+      "input_counts": {
+        "base": 1,
+        "camera": 1
+      },
+      "normalized_anchor_sha256": "bc1f87c7c27595fc5d8ca2da6b9e9f5e43399c73ad3d003976b1816f96d013ad",
+      "policy": "reiyah.nuscenes-nested-comparison.0.1.0",
+      "qualified_records": [
+        {
+          "detection": {
+            "id": "base:0",
+            "record_sha256": "e9f1f524246221398071606ca07241705ec89eb80f267cba48b81c484ec87394"
+          },
+          "record": {
+            "class": "car",
+            "policy": "reiyah.nuscenes-nested-comparison.0.1.0",
+            "sample_token": "sample-0",
+            "score": {
+              "denominator": "5",
+              "numerator": "4"
+            },
+            "source": "base",
+            "source_index": 0,
+            "source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "xy": [
+              {
+                "denominator": "1",
+                "numerator": "0"
+              },
+              {
+                "denominator": "1",
+                "numerator": "0"
+              }
+            ]
+          }
+        },
+        {
+          "detection": {
+            "id": "camera:0",
+            "record_sha256": "16742bb93fb1540a08e8e9370892637b691327a2c2abef050dc581ce7bd8a244"
+          },
+          "record": {
+            "class": "car",
+            "policy": "reiyah.nuscenes-nested-comparison.0.1.0",
+            "sample_token": "sample-0",
+            "score": {
+              "denominator": "5",
+              "numerator": "4"
+            },
+            "source": "camera",
+            "source_index": 0,
+            "source_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "xy": [
+              {
+                "denominator": "1",
+                "numerator": "3"
+              },
+              {
+                "denominator": "1",
+                "numerator": "0"
+              }
+            ]
+          }
+        }
+      ],
+      "reference_scope": "open_unreviewed",
+      "sample_token": "sample-0",
+      "source_availability": {
+        "base": "observed",
+        "camera": "observed"
+      },
+      "source_sha256": {
+        "base": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "camera": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "clock": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      },
+      "trace": [
+        {
+          "blocked_by": null,
+          "range_eligible": true,
+          "retention": "base_retained",
+          "score_eligible": true,
+          "source": "base",
+          "source_index": 0
+        },
+        {
+          "blocked_by": null,
+          "range_eligible": true,
+          "retention": "addition_retained",
+          "score_eligible": true,
+          "source": "camera",
+          "source_index": 0
+        }
+      ],
+      "unused_prediction_fields": [
+        "translation_z",
+        "size",
+        "rotation",
+        "velocity",
+        "attribute_name"
+      ],
+      "upstream_source_verification": "caller_obligation",
+      "version": "0.1.0"
+    },
+    {
+      "anchor_id": "anchor-1",
+      "artifact_id": "reiyah.perception-decision.normalization",
+      "ego_xy": [
+        {
+          "denominator": "1",
+          "numerator": "0"
+        },
+        {
+          "denominator": "1",
+          "numerator": "0"
+        }
+      ],
+      "input_counts": {
+        "base": 1,
+        "camera": 1
+      },
+      "normalized_anchor_sha256": "0d21097e40a528f64c2fa778e9d59fc77d0ae2a4511e310a866eb0d65379935a",
+      "policy": "reiyah.nuscenes-nested-comparison.0.1.0",
+      "qualified_records": [
+        {
+          "detection": {
+            "id": "base:0",
+            "record_sha256": "8d964364438e1e05fc0a30cbe5e7065a511a39485db57cc91bf2b75439cb392d"
+          },
+          "record": {
+            "class": "car",
+            "policy": "reiyah.nuscenes-nested-comparison.0.1.0",
+            "sample_token": "sample-1",
+            "score": {
+              "denominator": "5",
+              "numerator": "4"
+            },
+            "source": "base",
+            "source_index": 0,
+            "source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "xy": [
+              {
+                "denominator": "1",
+                "numerator": "0"
+              },
+              {
+                "denominator": "1",
+                "numerator": "0"
+              }
+            ]
+          }
+        },
+        {
+          "detection": {
+            "id": "camera:0",
+            "record_sha256": "8f1e37c51e81da5fc3cf8d1658292255b9eb4f38f4382426bf500a476e7b282a"
+          },
+          "record": {
+            "class": "car",
+            "policy": "reiyah.nuscenes-nested-comparison.0.1.0",
+            "sample_token": "sample-1",
+            "score": {
+              "denominator": "5",
+              "numerator": "4"
+            },
+            "source": "camera",
+            "source_index": 0,
+            "source_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "xy": [
+              {
+                "denominator": "1",
+                "numerator": "3"
+              },
+              {
+                "denominator": "1",
+                "numerator": "0"
+              }
+            ]
+          }
+        }
+      ],
+      "reference_scope": "open_unreviewed",
+      "sample_token": "sample-1",
+      "source_availability": {
+        "base": "observed",
+        "camera": "observed"
+      },
+      "source_sha256": {
+        "base": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "camera": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "clock": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      },
+      "trace": [
+        {
+          "blocked_by": null,
+          "range_eligible": true,
+          "retention": "base_retained",
+          "score_eligible": true,
+          "source": "base",
+          "source_index": 0
+        },
+        {
+          "blocked_by": null,
+          "range_eligible": true,
+          "retention": "addition_retained",
+          "score_eligible": true,
+          "source": "camera",
+          "source_index": 0
+        }
+      ],
+      "unused_prediction_fields": [
+        "translation_z",
+        "size",
+        "rotation",
+        "velocity",
+        "attribute_name"
+      ],
+      "upstream_source_verification": "caller_obligation",
+      "version": "0.1.0"
+    }
+  ],
+  "reference": {
+    "artifact_id": "reiyah.perception-reference.input",
+    "coordinate_frame": "nominal_global_xy",
+    "inputs": {
+      "catalog_sha256": "cf275b9107f1515bb8d8e8245b2335e6f654c253a8d59212275fbc02e0879669",
+      "comparison_sha256": "5744c7d1d0f8a7b13728d7660b492751c238ef463bee0b56db26ecacb2d1a531",
+      "normalizations_sha256": "b0e6989f4e5221ad263bc3d4fc7d52178922fda0f6a81153a8e39abed3e66a3f"
+    },
+    "joint_coverage": {
+      "basis_sha256": "f30194fcb339a147215ca747202327b03fc554ad95ac6b355aa34ea970d717d0",
+      "state": "assumed_complete",
+      "statement": "Synthetic envelope for a constructed computational test only."
+    },
+    "version": "0.1.0",
+    "worlds": [
+      {
+        "anchors": [
+          {
+            "anchor_id": "anchor-0",
+            "objects": [
+              {
+                "class": "car",
+                "id": "known",
+                "members": [
+                  "known"
+                ],
+                "record_sha256": "84900cbbc0f56c6ff6c881850791e749658f7b43d8fd27b83f9df8184b19702e",
+                "state": "point",
+                "timestamp_us": 1000000,
+                "xy": [
+                  {
+                    "denominator": "2",
+                    "numerator": "3"
+                  },
+                  {
+                    "denominator": "1",
+                    "numerator": "0"
+                  }
+                ]
+              }
+            ],
+            "unlisted_objects": {
+              "basis_sha256": "f30194fcb339a147215ca747202327b03fc554ad95ac6b355aa34ea970d717d0",
+              "state": "excluded_by_assumption",
+              "statement": "Synthetic envelope for a constructed computational test only."
+            }
+          },
+          {
+            "anchor_id": "anchor-1",
+            "objects": [
+              {
+                "class": "car",
+                "id": "known",
+                "members": [
+                  "known"
+                ],
+                "record_sha256": "b07b1ffb5830e13e85bbbe227a84bb8d486b74971b54b9a6d1d07da3df8cc490",
+                "state": "point",
+                "timestamp_us": 2000000,
+                "xy": [
+                  {
+                    "denominator": "2",
+                    "numerator": "3"
+                  },
+                  {
+                    "denominator": "1",
+                    "numerator": "0"
+                  }
+                ]
+              },
+              {
+                "class": "car",
+                "id": "disputed",
+                "members": [
+                  "disputed"
+                ],
+                "record_sha256": "77ab0bad71ddd213c9324aa065d796bbc5e872f87664a07145745909bccac80e",
+                "state": "point",
+                "timestamp_us": 2000000,
+                "xy": [
+                  {
+                    "denominator": "1",
+                    "numerator": "-1"
+                  },
+                  {
+                    "denominator": "1",
+                    "numerator": "0"
+                  }
+                ]
+              }
+            ],
+            "unlisted_objects": {
+              "basis_sha256": "f30194fcb339a147215ca747202327b03fc554ad95ac6b355aa34ea970d717d0",
+              "state": "excluded_by_assumption",
+              "statement": "Synthetic envelope for a constructed computational test only."
+            }
+          }
+        ],
+        "basis_sha256": "70056b5ee93a7f08f583971157cf1ea50b8f27cbb89371e308a2a7b984b43590",
+        "id": "absent"
+      },
+      {
+        "anchors": [
+          {
+            "anchor_id": "anchor-0",
+            "objects": [
+              {
+                "class": "car",
+                "id": "known",
+                "members": [
+                  "known"
+                ],
+                "record_sha256": "84900cbbc0f56c6ff6c881850791e749658f7b43d8fd27b83f9df8184b19702e",
+                "state": "point",
+                "timestamp_us": 1000000,
+                "xy": [
+                  {
+                    "denominator": "2",
+                    "numerator": "3"
+                  },
+                  {
+                    "denominator": "1",
+                    "numerator": "0"
+                  }
+                ]
+              },
+              {
+                "class": "car",
+                "id": "disputed",
+                "members": [
+                  "disputed"
+                ],
+                "record_sha256": "b1bba33702294553ecea0fcde605335172327e25290be64769fea281dfc555df",
+                "state": "point",
+                "timestamp_us": 1000000,
+                "xy": [
+                  {
+                    "denominator": "1",
+                    "numerator": "-1"
+                  },
+                  {
+                    "denominator": "1",
+                    "numerator": "0"
+                  }
+                ]
+              }
+            ],
+            "unlisted_objects": {
+              "basis_sha256": "f30194fcb339a147215ca747202327b03fc554ad95ac6b355aa34ea970d717d0",
+              "state": "excluded_by_assumption",
+              "statement": "Synthetic envelope for a constructed computational test only."
+            }
+          },
+          {
+            "anchor_id": "anchor-1",
+            "objects": [
+              {
+                "class": "car",
+                "id": "known",
+                "members": [
+                  "known"
+                ],
+                "record_sha256": "b07b1ffb5830e13e85bbbe227a84bb8d486b74971b54b9a6d1d07da3df8cc490",
+                "state": "point",
+                "timestamp_us": 2000000,
+                "xy": [
+                  {
+                    "denominator": "2",
+                    "numerator": "3"
+                  },
+                  {
+                    "denominator": "1",
+                    "numerator": "0"
+                  }
+                ]
+              }
+            ],
+            "unlisted_objects": {
+              "basis_sha256": "f30194fcb339a147215ca747202327b03fc554ad95ac6b355aa34ea970d717d0",
+              "state": "excluded_by_assumption",
+              "statement": "Synthetic envelope for a constructed computational test only."
+            }
+          }
+        ],
+        "basis_sha256": "87f7439876e4033adb5735dd9e8a4031ef2be2239574b1a83398efca11784151",
+        "id": "present"
+      }
+    ]
+  },
+  "version": "0.1.0"
+}

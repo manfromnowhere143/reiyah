@@ -1,3 +1,24 @@
+# Joint reference-compiler continuation, 2026-09-09
+
+Read the [reference checkpoint](PERCEPTION_REFERENCE_CHECKPOINT_2026-09-09.md),
+[interface and example](../research/perception-reference/0.1.0/README.md), and
+[machine record](../research/perception-reference/0.1.0/checkpoint.json) first.
+The Engine compiles explicit joint point interpretations from source-bound comparison,
+normalization, catalog and reference inputs. It preserves cohort-wide choices, alias grouping,
+class/geometry/time alternatives and open-reference fallback. All 238 offline tests pass.
+The constructed joint example yields [0,0] only within its stated model; the same two previously
+exposed development anchors remain unresolved at [-8,8] without physical judgments.
+
+Next: check raw observation-window payload identity, decodability and timing, then connect
+locked reviewer observations to shared alternatives. Complementary reference research can use
+this narrow contract after review. Two independent reviewers, the conventional comparator,
+adjudication and checked windows remain prerequisites; no study cohort or seed exists.
+Gate A remains unaccepted. Source pipeline, core, existing evidence, selected planning bytes,
+owner checkouts and UI work are preserved. Resolve integration from Git and the reference task
+delivery record; publisher readback is not independent transport verification.
+
+---
+
 # Verified perception-input continuation, 2026-09-09
 
 Read the [input checkpoint](PERCEPTION_INPUT_CHECKPOINT_2026-09-09.md),
