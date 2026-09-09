@@ -1,3 +1,23 @@
+# Engine session transfer, 2026-09-09
+
+Read the [consolidated Engine handoff](PERCEPTION_ENGINE_HANDOFF_2026-09-09.md) and
+[machine continuation](../research/perception-engine-handoff/0.1.0/handoff.json) first.
+The completed implementation parent is `9b9097f57ef32b19b0eaff0af911c09ef1e15234`; this
+transfer adds documentation only. The latest 331 passing tests remain exact-bound retained
+development evidence, not a new test run or a Gate A release. All 725 package assets were
+freshly rehashed during closeout.
+
+Next is comparison/observation population binding. Its prepared private export has no code
+changes or runs. Use a fresh current-main candidate, preserving other owner checkouts.
+The same two exposed development windows remain unresolved at [-8,8]. No study cohort, seed
+or human judgments exist; independent reviewers, comparator and adjudication remain needed.
+Gate A remains unaccepted. The consolidated handoff records architecture, mathematical limits,
+implementation boundaries, meaningful rejection tests and the exact next action.
+
+Earlier blocks below remain unchanged as dated history.
+
+---
+
 # Discovery record custody continuation, 2026-09-09
 
 Read the [discovery checkpoint](PERCEPTION_DISCOVERY_CHECKPOINT_2026-09-09.md),

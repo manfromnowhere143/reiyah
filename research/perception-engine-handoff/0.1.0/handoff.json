@@ -1,0 +1,221 @@
+{
+  "active_background_work_started_by_this_engine_session": [],
+  "artifact_id": "reiyah.perception-engine.handoff",
+  "authority": {
+    "authority_from_this_handoff": false,
+    "deployment": false,
+    "gate_a_operator_acceptance": "unaccepted",
+    "independent_scientific_replication": false,
+    "offline_engine_implementation": "explicit_operator_instruction_recorded_in_selected_plan",
+    "physical_control": false,
+    "professional_commit_and_main_integration": "authorized",
+    "publisher_readback_is_independent_transport": false
+  },
+  "bindings": {
+    "architecture": {
+      "byte_size": 12518,
+      "repository_path": "docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md",
+      "sha256": "d98516a2eb35b377dab9ed76d09160e94aac5049baec92c46a5f0b8a9a3e4e28"
+    },
+    "continuation": {
+      "byte_size": 13483,
+      "repository_path": "docs/PERCEPTION_ENGINE_HANDOFF_2026-09-09.md",
+      "sha256": "c9a12085fca11d4e6b93c272ff4bccb3cc53192a359d9bfd1a7a8e26e6c3d6cc"
+    },
+    "core_checkpoint": {
+      "byte_size": 4823,
+      "repository_path": "research/perception-decision/0.1.0/implementation-status.json",
+      "sha256": "ee2c878cbf0c36c2fad394f41631ef2fb81528be559f52a0bbf54213eb9acd90"
+    },
+    "discovery_checkpoint": {
+      "byte_size": 9639,
+      "repository_path": "research/perception-discovery/0.1.0/checkpoint.json",
+      "sha256": "be2fd67a27010538ce4e5dc578a7e20e0b33aa33b4d7a9d2b5bea59cff0503fd"
+    },
+    "geometry_checkpoint": {
+      "byte_size": 12733,
+      "repository_path": "research/perception-geometry/0.1.0/checkpoint.json",
+      "sha256": "f62d8175b1989ec2aab2028f35c9418d1a9148e8353f9c4581d530c9db653e08"
+    },
+    "input_checkpoint": {
+      "byte_size": 12642,
+      "repository_path": "research/perception-inputs/0.1.0/checkpoint.json",
+      "sha256": "81a2f03c6b34b7d0ddf56184c6e63090cb6bb0938cf0c1ea2380447a6de6e9f5"
+    },
+    "observation_checkpoint": {
+      "byte_size": 12048,
+      "repository_path": "research/perception-observation/0.1.0/checkpoint.json",
+      "sha256": "47779c0f133ddb69045e8636e7d532d4497aed2d76ebe8b405c512e7d540513b"
+    },
+    "reference_checkpoint": {
+      "byte_size": 10527,
+      "repository_path": "research/perception-reference/0.1.0/checkpoint.json",
+      "sha256": "de78e04c39eceb30aa720b4863f6ad41b0c4b7b21180423852ac71122d4d34ea"
+    },
+    "study_plan": {
+      "byte_size": 8983,
+      "repository_path": "research/perception-decision/0.1.0/study-plan.json",
+      "sha256": "17a8ca67b6448190a4889ebec93e7317e0ff79b22cd5603a8f0c06b5ab22ac9e"
+    },
+    "windows_checkpoint": {
+      "byte_size": 8155,
+      "repository_path": "research/perception-windows/0.1.0/checkpoint.json",
+      "sha256": "796501a78d6bf0943a33a05aed4abb461540d58d163c0b0a178c1d6cf7d07584"
+    }
+  },
+  "current_development": {
+    "camera_images": 566,
+    "capture_occurrences": 725,
+    "delivered_states": {
+      "delivered": 725
+    },
+    "draft_inspection": {
+      "not_inspected": 725
+    },
+    "lidar_files": 159,
+    "lidar_point_records": 5521024,
+    "nominal_geometry": "recorded operands checked; physical accuracy not established",
+    "open_reference_unit_loss_enclosure": [
+      "-8",
+      "8"
+    ],
+    "physical_coverage": "not_established",
+    "previously_exposed_windows": 2,
+    "real_human_judgments": 0,
+    "sealed_real_discovery_records": 0,
+    "unassigned_drafts": 1,
+    "unassigned_seal_rejected_as": "DISCOVERY_REVIEWER"
+  },
+  "handoff_commit_resolution": "Use the containing Git commit and publisher delivery record; no self-referential hash.",
+  "handoff_state": "completed_implementation_checkpoint_with_next_slice_unimplemented",
+  "implementation_parent": "9b9097f57ef32b19b0eaff0af911c09ef1e15234",
+  "implemented": [
+    "normalized_comparison_contract",
+    "exact_count_bound",
+    "maximum_matching_certificate",
+    "separate_certificate_checker",
+    "joint_finite_reference_models",
+    "conservative_open_reference_fallback",
+    "atomic_decision_packets",
+    "full_source_and_clock_adapter",
+    "joint_point_reference_compiler",
+    "raw_window_validation",
+    "nominal_geometry_and_time",
+    "restricted_observation_package",
+    "discovery_record_custody"
+  ],
+  "integration": {
+    "ai_coauthor_trailer": false,
+    "author_and_committer": "Daniel Wahnich <cogitoergosum143@gmail.com>",
+    "mode": "isolated current-main export and private index; exact unrelated bytes; compare-and-swap refs; normal push and commit-pinned readback"
+  },
+  "lifecycle_status": "exploratory",
+  "mission": {
+    "augmented": "same base plus retained Mapillary/MonoDIS camera output",
+    "base": "retained Megvii/CBGS lidar output",
+    "commercial_and_frontier_value": "not_established",
+    "console": "future checked-packet consumer; another owner controls UI",
+    "decision": "whether a fixed additional detector merits further integration study under declared additive loss and shared reference uncertainty",
+    "engine": "offline checked paired-loss enclosure and explicit decision states",
+    "first_domain": "automotive perception",
+    "measure": "retained observations and exploratory measurement; no automatic claim admission",
+    "primary_user": "perception-validation lead"
+  },
+  "next_slice": {
+    "acceptance_checks": [
+      "wrong_valid_package",
+      "wrong_sample_or_time",
+      "wrong_catalog_or_metadata",
+      "swapped_resealed_asset",
+      "duplicate_omitted_or_extra_anchor",
+      "unavailable_state_preservation",
+      "fresh_output_identity",
+      "same_two_development_windows"
+    ],
+    "code_changes": 0,
+    "id": "comparison_observation_population_binding",
+    "scope": [
+      "verify exact package and separately selected seal",
+      "replay source-bound neutral projection",
+      "require comparison/window/sample/scene/time bijection",
+      "bind catalog metadata and normalization source roles",
+      "check delivered image bytes and PLY point bodies against retained original inventory",
+      "preserve unavailable evidence and unknown physical coverage"
+    ],
+    "state": "design_and_unmodified_preflight_only",
+    "subsequent_task": "bind locked discovery, assisted proposals and adjudication to shared reference alternatives",
+    "test_executions": 0
+  },
+  "not_implemented": [
+    "comparison_observation_population_binding",
+    "reviewed_source_content_to_reference_alternatives_binding",
+    "automatic_authorized_assisted_phase_release"
+  ],
+  "preserve": [
+    "owner_checkouts",
+    "Console_UI_owner_lane",
+    "parallel_tail_dependence_owner_lane",
+    "released_Gate_A_bytes",
+    "historical_empirical_transcripts_and_claim_register",
+    "selected_architecture_and_study_plan_bytes",
+    "raw_private_payloads_outside_public_git"
+  ],
+  "private_continuation_locator": "Operator Reiyah Research START_HERE index; contains exact local inputs, custody, run commands and communication record",
+  "read_order": [
+    "AGENTS.md",
+    "docs/SESSION_HANDOFF.md",
+    "docs/PERCEPTION_ENGINE_HANDOFF_2026-09-09.md",
+    "docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md",
+    "research/perception-decision/0.1.0/study-plan.json",
+    "research/perception-observation/0.1.0/README.md",
+    "research/perception-discovery/0.1.0/README.md"
+  ],
+  "standards": [
+    "source and expected identity before interpretation",
+    "observation distinct from latent state and physical truth",
+    "closed bounded interfaces and exact numerical policy",
+    "separate checker with explicit shared trusted surface",
+    "complete opportunity population and unavailable states",
+    "preserve adverse reference alternatives and failed runs",
+    "meaningful negative fixtures for consequential rejection paths",
+    "no conversion of tests/checksums/consensus into scientific acceptance",
+    "no empirical result, superiority or valuation claim without evidence"
+  ],
+  "study": {
+    "adjudication": "not_secured",
+    "independent_comparator": "not_secured",
+    "independent_reviewers_secured": 0,
+    "physical_review": "pending",
+    "preregistration_status": "not_preregistered",
+    "primary": "equal-cohort mean of loss_base minus loss_augmented with unit FN/FP penalties",
+    "sampling": "after full freeze, uniform 60 eligible scenes without replacement then one eligible anchor per scene",
+    "scene_count_planned": 60,
+    "seed": null,
+    "selected_cohort": null,
+    "status": "not_started",
+    "tolerance": "1/10 error units per anchor",
+    "uncertainty": "model-relative enclosure, no physical or sampling confidence level inferred"
+  },
+  "verification": {
+    "baseline_blobs_checked": 1356,
+    "closeout_audit": {
+      "byte_size": 2213,
+      "private_record": "checks/closeout-audit-2/result.json",
+      "sha256": "3724fc7a999a4677b6ec99ba24a82f9b7a8724c53747cbbf7b7f70db59c76c8e"
+    },
+    "gate_a_release_replay": "not_run; no released Gate A change or acceptance asserted",
+    "initial_closeout_reader_failure": "retained privately; observation list-format versus discovery dictionary-format handled explicitly in corrected reader",
+    "new_empirical_experiments": 0,
+    "package_assets_freshly_rehashed": 725,
+    "retained_gate_b_check": "pass",
+    "retained_implementation_tests": {
+      "execution_commit": "9b9097f57ef32b19b0eaff0af911c09ef1e15234",
+      "measurement": 93,
+      "repository": 238,
+      "rerun_for_handoff": false,
+      "status": "pass",
+      "total": 331
+    }
+  },
+  "version": "0.1.0"
+}
