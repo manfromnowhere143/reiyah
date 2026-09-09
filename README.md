@@ -1,20 +1,26 @@
 # Reiyah
 
-**An evidence and benchmark engine for shared failures in human-automation systems.**
+**An offline evaluation engine for perception decisions under uncertain reference evidence.**
 
-Two observers can each perform well and still miss the same object. Reiyah studies that gap:
-what each channel could observe, where their errors coincide, what the reference actually
-establishes, and how much uncertainty remains in the conclusion.
+Does an added detector improve a perception configuration once missed objects, false detections
+and disputed reference interpretations are counted together? Reiyah computes bounds on that
+comparison, using the same opportunities and reference interpretation for both configurations.
+When the evidence cannot settle the choice, the result remains unresolved.
+
+The current Engine binds source outputs and clocks, preserves shared reference alternatives,
+computes exact paired-loss enclosures and checks matching certificates. Raw-window and nominal
+geometry adapters prepare the evidence for physical review. The first user is a perception
+validation lead deciding whether an added detector merits a further integration study.
 
 HARBOR is the proposed research program: **Human-Automation Readiness, Belief & Operational
-Risk**. Its full scope connects object-level belief, readiness, recoverability, joint silent
-misses, causal policy effects, explicit unknowns, transfer and worst-group evaluation. The
-implemented engine currently performs offline measurement, reference audits, controlled
-experiments and reproducible evidence checks. Human belief and recovery under intervention
-remain research targets requiring their own observations.
+Risk**. Its broader scope connects object-level belief, readiness, recoverability, joint silent
+misses, causal policy effects, explicit unknowns, transfer and worst-group evaluation. Retained
+measurement and reference-audit research motivates the current focus. Human belief, recovery
+under intervention and cross-domain product value require their own observations.
 
-[Architecture](docs/ARCHITECTURE.md) · [Mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) ·
-[Research findings](docs/GENERAL_SYNTHESIS.md) · [Next experiment](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) ·
+[Engine architecture and mathematics](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) ·
+[Current implementation](docs/PERCEPTION_GEOMETRY_CHECKPOINT_2026-09-09.md) ·
+[Research findings](docs/GENERAL_SYNTHESIS.md) · [Selected study](#current-engine-development) ·
 [Run the auditor](#run-the-offline-auditor)
 
 ## One encounter, distinct information sets
@@ -44,7 +50,7 @@ This diagram describes the research architecture. Gaze and takeover proxies do n
 themselves establish a person's object-level belief. The current measurement program addresses
 parts of this architecture; it does not implement a driving controller or validated belief tracker.
 
-## How the measurement engine works
+## The measurement research it builds on
 
 The engine makes the opportunity population explicit before counting failures. Matching is
 conditional on a declared reference, sensor validity and evaluation policy. Empty output,
@@ -147,60 +153,67 @@ remain unestablished. The instrument is prepared; the missing observations remai
 
 ## Current engine development
 
-The next discriminating question is whether common training exposure contributes to coincident
-detector errors. The [experiment design](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md)
-keeps architectures and test opportunities fixed while comparing shared and disjoint training
-pairings. Dataset transfer is a subsequent comparison, so two interventions are not conflated.
+The selected comparison preserves the existing lidar detector's outputs and adds retained camera
+detections under a fixed suppression rule. The Engine evaluates both configurations against
+each shared reference interpretation, including disputed objects that can change competing
+matches through the base detector. Misses and false detections both contribute to the loss.
 
 ```mermaid
-flowchart TB
-  U["Training group U: collection<br/>logs disjoint from V and<br/>validation"]
-  V["Training group V: collection<br/>logs disjoint from U and<br/>validation"]
-  U -. "planned fit" .-> CU["Camera U"]
-  U -. "planned fit" .-> LU["Lidar U"]
-  V -. "planned fit" .-> CV["Camera V"]
-  V -. "planned fit" .-> LV["Lidar V"]
-  CU --> S["Shared training<br/>Camera U + Lidar U<br/>Camera V + Lidar V"]
-  LU --> S
-  CV --> S
-  LV --> S
-  CU --> D["Disjoint training<br/>Camera U + Lidar V<br/>Camera V + Lidar U"]
-  LU --> D
-  CV --> D
-  LV --> D
-  S --> T["Same held-out opportunities<br/>Calibrated operating points<br/>Full coverage"]
-  D --> T
-  T --> R["Joint-risk contrast<br/>Marginal contribution<br/>Covariance contrast"]
+flowchart LR
+  S["Bound clocks and retained<br/>detector outputs"] --> N["Fixed base and<br/>retained additions"]
+  R["Raw sensor windows,<br/>nominal geometry and times"] --> H["Blinded physical review<br/>Pending independent reviewers"]
+  H -. "reviewed observations" .-> W["Shared reference alternatives<br/>and explicit coverage assumptions"]
+  N --> K["Paired miss / false-detection<br/>loss enclosure"]
+  W --> K
+  K --> V["Separate certificate checker"]
+  V --> P["Scoped decision packet<br/>Unresolved when necessary"]
 ```
 
-The four detector fits in this diagram are planned. The latest completed preparation checkpoints
-are concrete and separately documented:
+For r retained additions and nonnegative miss/false-detection penalties a and b, the base-minus-
+augmented loss difference lies in **[-b r, a r]** before tighter reference evidence is available.
+No additions gives exactly zero. Restricted, explicitly shared reference models can narrow this
+enclosure. This conventional count-loss identity does not establish crash-risk reduction, causal
+benefit or physical-reference completeness. The
+[architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) specifies the estimand,
+matching counterexample, decision rules and limits.
+
+The implemented pieces form one offline comparison pipeline:
 
 | Checkpoint | Retained result |
 |---|---|
-| [Training input inventory](docs/TRAINING_INPUT_FINDINGS_2026-09-07.md) | All 536,780 requested camera/lidar filenames are present and nonempty; a separate directory enumeration agrees |
-| [Contained metadata partitions](docs/TRAINING_PARTITION_CHECKPOINT_2026-09-07.md) | Six proposed training subsets and the full validation subset load and pass declared containment checks |
-| [Actual model inputs](docs/MODEL_INPUT_CHECKPOINT_2026-09-07.md) | Historical preprocessing checked on 204 metadata-selected samples across 68 logs, covering 1,224 camera images and 2,713 distinct sensor files |
-| [Temporal input control](docs/MODEL_INPUT_CHECKPOINT_2026-09-07.md) | The historical lidar test recipe changes inputs on 129 smoke cases across two seeds; explicit nearest-sweep loading is stable on all 204 |
-| [Camera adapter controls](docs/MODEL_INPUT_CHECKPOINT_2026-09-07.md) | Synthetic probes reproduce caller-dimension mutation and inverse-velocity loss, then check copy and coordinate safeguards |
+| [Decision core](docs/PERCEPTION_DECISION_CHECKPOINT_2026-09-09.md) | Exact loss bounds, maximum-matching certificates, a separate checker and an atomic packet |
+| [Source inputs](docs/PERCEPTION_INPUT_CHECKPOINT_2026-09-09.md) | All 6,019 validation clock anchors retained; 2,935 meet the recorded context and prior-exposure exclusion rule |
+| [Joint reference compiler](docs/PERCEPTION_REFERENCE_CHECKPOINT_2026-09-09.md) | Shared presence, identity, class, geometry and time alternatives; open-reference fallback when coverage is unknown |
+| [Raw windows](docs/PERCEPTION_WINDOW_CHECKPOINT_2026-09-09.md) | Two existing development windows contain 566 decoded camera images and 159 lidar files, with timestamp gaps retained |
+| [Spatial and time operands](docs/PERCEPTION_GEOMETRY_CHECKPOINT_2026-09-09.md) | Nominal transforms for the same 725 captures; 723 differ from their anchor timestamp, with no object-motion imputation |
 
-The [cache and unavailable-velocity checkpoint](docs/TRAINING_CACHE_CHECKPOINT_2026-09-08.md)
-adds actual CPU/CUDA loss checks, annotation-consumer controls and a complete validation cache.
-Training-group cache builds are running at its recorded handoff time. Separate training object
-databases and the fitting protocol remain the next preparation stage. Initialization history, object sampling, calibration, equal optimization
-budgets and training uncertainty must be controlled before interpreting the comparison.
-These engineering checks do not establish a detector accuracy gain.
+The proposed study selects **60 scenes**, then one eligible anchor per scene, only after the
+input, method, reviewer, comparator and adjudication freeze. Two independent reviewers first
+inspect raw evidence without detector hints. A competent independent conventional analyst gets
+the same staged evidence and may compute the same bounds. Reviewers, comparator and adjudication
+remain prerequisites; **no prospective cohort or seed has been selected**. The two exposed
+development anchors remain unresolved at [-8,8] under unit penalties and open reference coverage.
+
+The [shared/disjoint training design](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md)
+remains an unexecuted research route, with retained
+[inventory](docs/TRAINING_INPUT_FINDINGS_2026-09-07.md),
+[partition](docs/TRAINING_PARTITION_CHECKPOINT_2026-09-07.md),
+[model-input](docs/MODEL_INPUT_CHECKPOINT_2026-09-07.md) and
+[cache](docs/TRAINING_CACHE_CHECKPOINT_2026-09-08.md) preparation. It is not the selected next study.
 
 The [predictive monitor experiment](docs/PREDICTIVE_MONITOR_FINDINGS_2026-09-07.md) remains
 part of the record: its future-count improvement under collection-log holdouts was 2.7020%,
 with a descriptive interval including zero; spatial continuity slightly worsened the primary
-loss. Neither passed the declared usefulness screen. That result informs the next experiment.
+loss. Neither passed the declared usefulness screen.
 
 ## Evidence architecture and reproducibility
 
 Gate A supplies versioned scientific contracts, schemas, counterexamples and locked offline
-validation. Gate B supplies empirical research tools and retained measurements. Their integration
-is incomplete, and an empirical result does not silently amend an accepted contract.
+validation. Gate B supplies empirical research tools, the offline decision Engine and retained
+measurements. Their integration is incomplete, and an empirical result does not silently amend
+an accepted contract. The [Gate A architecture](docs/ARCHITECTURE.md) documents that static
+packet; the [selected Engine architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md)
+and implementation checkpoints describe current development.
 
 ```mermaid
 flowchart LR
@@ -213,6 +226,8 @@ flowchart LR
     D["Versioned sources and declared<br/>opportunities"] --> X["Experiments and controls"]
     X --> T["Original outputs, failures and<br/>corrections"]
     T --> C["Scoped findings and claim<br/>register"]
+    D --> E["Offline comparison Engine:<br/>shared references and checked bounds"]
+    E --> P["Scoped decision packet"]
   end
   I -. "contract requirements;<br/>integration remains incomplete" .-> C
   O["Independent observations and<br/>explicit assumptions"] --> C
@@ -254,9 +269,10 @@ identities.
 
 | Read for | Start here |
 |---|---|
+| Current Engine direction and implementation | [Selected architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md), [latest checkpoint](docs/PERCEPTION_GEOMETRY_CHECKPOINT_2026-09-09.md), [decision interface](research/perception-decision/0.1.0/README.md) |
 | Mission and scientific structure | [Scientific charter](docs/SCIENTIFIC_CHARTER.md), [architecture](docs/ARCHITECTURE.md), [mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) |
 | Current interpretation of sensor, human-proxy and LLM experiments | [Corrected synthesis](docs/GENERAL_SYNTHESIS.md), [current claim register](evidence/claim-status-register-2026-09-08T054835Z.json) |
-| Research review and future investigations | [Research-board report](docs/RESEARCH_BOARD_2026-09-07.md), [next training experiment](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) |
+| Selected study and earlier investigations | [60-scene study design](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md#one-prospective-study), [research-board report](docs/RESEARCH_BOARD_2026-09-07.md), [earlier training design](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) |
 | Reference validity and physical adjudication | [Result AO](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md), [reference study](docs/REFERENCE_ADJUDICATION_STUDY_2026-09-07.md), [portable auditor](docs/REFERENCE_AUDIT_DEMO_2026-09-07.md) |
 | Temporal and observational limits | [Monitor findings](docs/PREDICTIVE_MONITOR_FINDINGS_2026-09-07.md), [threats to validity](docs/MEASUREMENT_THREATS_TO_VALIDITY.md) |
 | Retained mathematical corrections | [Reference-noise interpretation](docs/REFERENCE_NOISE_INTERPRETATION_2026-09-07.md), [M4 bound audit](docs/M4_RECTANGULAR_BOUND_FINDINGS_2026-09-07.md) |

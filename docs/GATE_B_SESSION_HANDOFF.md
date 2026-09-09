@@ -1,3 +1,27 @@
+# Spatial and time operand continuation, 2026-09-09
+
+Read the [geometry checkpoint](PERCEPTION_GEOMETRY_CHECKPOINT_2026-09-09.md),
+[interface](../research/perception-geometry/0.1.0/README.md) and
+[machine record](../research/perception-geometry/0.1.0/checkpoint.json) first.
+The same 725 development captures now have checked nominal transforms and aligned recorded
+pose/capture times. All 8,700 separately calculated Hamilton-product comparisons agree.
+Capture times differ from their anchor in 723 cases; object motion and physical timing and
+calibration accuracy remain unmeasured. The open-reference loss enclosure remains [-8,8].
+
+README direction, navigation and diagrams now identify the selected perception-comparison
+study. The older training route remains linked as history. Original Gate A architecture and
+selected design bytes are preserved. Gate A remains unaccepted; no new study cohort or seed
+exists. Raw payloads, physical reviewers, comparator and adjudication retain their own states.
+
+Next: implement the locked phase-1 observation boundary on these same development windows,
+with raw evidence and explicit geometry/time semantics, excluding annotations, detector names,
+scores, historical candidate hints and operational catalogs. Independent human reviewers,
+conventional comparator, adjudication and full freeze precede any prospective study selection.
+Owner checkouts, Console and parallel research are preserved. Resolve final validation and
+publisher readback from the machine checkpoint, Git and the private delivery record.
+
+---
+
 # Raw observation-window continuation, 2026-09-09
 
 Read the [window checkpoint](PERCEPTION_WINDOW_CHECKPOINT_2026-09-09.md),
