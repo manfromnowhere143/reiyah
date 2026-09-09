@@ -1,3 +1,24 @@
+# Verified perception-input continuation, 2026-09-09
+
+Read the [input checkpoint](PERCEPTION_INPUT_CHECKPOINT_2026-09-09.md),
+[guide](../research/perception-inputs/0.1.0/README.md) and
+[machine record](../research/perception-inputs/0.1.0/checkpoint.json) first.
+The full-source adapter preserves all 6,019 validation clock anchors; 2,935 anchors across
+138 scenes satisfy the declared history-exclusion rule. Both output files and all 42,133
+camera/lidar keyframe metadata records join. Raw sensor-window validity remains unchecked.
+All 223 offline unit tests pass. Two previously exposed development frames traverse source
+extraction, normalization, computation and certificate verification; their open-reference
+interval stays unresolved. This is engineering validation, not a scientific benchmark.
+
+Next: implement the reviewed-reference adapter and check raw observation windows. Preserve
+shared matching alternatives and unknown physical coverage. The 60-scene study has no selected
+cohort or seed; independent reviewers, comparator and adjudication remain prerequisites.
+Gate A remains unaccepted. Original evidence, selected planning bytes, core implementation,
+owner checkouts and UI work are preserved. Resolve main integration and publisher readback
+from Git and the perception-inputs task delivery record. Earlier blocks below are historical.
+
+---
+
 # Checked perception-decision core, 2026-09-09
 
 Read the [implementation checkpoint](PERCEPTION_DECISION_CHECKPOINT_2026-09-09.md),

@@ -1,0 +1,316 @@
+{
+  "artifact_id": "reiyah.perception-inputs.checkpoint",
+  "authority_state": "offline_research_only",
+  "clock_cross_check": {
+    "all_compared_fields_match": true,
+    "anchor_ids_and_clock_fields_checked": 6019,
+    "artifact_id": "reiyah.perception-inputs.clock-comparison",
+    "catalog_sha256": "a14889ce4b52fa35edeab87f9ce29dc0157dfdb31be3f9ddc445bf8d5130e166",
+    "clock_identity_unchanged_by_sensor_enrichment": true,
+    "eligible_identity_set_count": 2935,
+    "keyframe_metadata_records_checked": 42133,
+    "scope": "Separate calculation against retained project records; not independent human or physical validation",
+    "source_sha256": "8ba2a095d5e4195fc44740ec7272e1271bdbf1eacd035b428182bfa0813162c1",
+    "version": "0.1.0"
+  },
+  "code_status": "complete_source_inventory_clock_exclusions_sensor_metadata_and_frame_extraction_implemented",
+  "cohort_selection_status": "not_selected",
+  "development_integration": {
+    "artifact_id": "reiyah.perception-inputs.development-integration",
+    "catalog_sha256": "a14889ce4b52fa35edeab87f9ce29dc0157dfdb31be3f9ddc445bf8d5130e166",
+    "certificate_checked": true,
+    "input_sha256": "c93210ce58b19ebd9f6b5f61d9e5d35e604386787a3398d9df70f0acda54bb1c",
+    "new_study_cohort_selected": false,
+    "normalization_sha256": "cfdec4ccfcf24f6fbcc4acacb64dac95dc9a4d5ada5e634b6e8f4e2bd6a49a12",
+    "packet_sha256": "bad7286d0a032967a4e93c2bb29df3b27abeeaed3fac4f888e9cab5350948ecf",
+    "result": {
+      "authority_state": "research_only",
+      "bounds": {
+        "lower": {
+          "denominator": "1",
+          "numerator": "-8"
+        },
+        "upper": {
+          "denominator": "1",
+          "numerator": "8"
+        }
+      },
+      "decision": {
+        "improvement_criterion": "unresolved",
+        "preference": "unresolved"
+      },
+      "enclosure_kind": "conservative_open_reference",
+      "execution_status": "succeeded",
+      "model_status": "consistent",
+      "physical_coverage": "not_established",
+      "reference_scope": "conditional_reference_graph",
+      "sampling_scope": "fixed_selected_cohort",
+      "statistical_confidence_level": null
+    },
+    "scope": "Mechanical integration on previously exposed frames with open references; no efficacy study",
+    "selected_development_frames": 2,
+    "selection_rule": "first two distinct prior anchor times in case-ID order",
+    "source_sha256": "2d57ce056e1a4c11f68d68da4afe78b51ce46ab4eee338925101f4067c1afd3d",
+    "version": "0.1.0"
+  },
+  "final_data_equivalence": {
+    "all_data_and_population_fields_identical": true,
+    "artifact_id": "reiyah.perception-inputs.final-catalog-equivalence",
+    "changed_top_level_fields": [
+      "implementation_sha256",
+      "source_identities"
+    ],
+    "clock_comparison_sha256": "5587b4e3e3e4ab227779032bb3d69ddfcaae3f7758524f40b323dfedc49e3b6d",
+    "current_and_snapshotted_code_files_verified": 13,
+    "development_checks": [
+      {
+        "receipt_sha256": "a44b5dbd06834fa9acb15e57888026f23db19967fdf76206abdedf0940b258da",
+        "run": "unit-repo-closeout",
+        "test_count": 130
+      },
+      {
+        "receipt_sha256": "ff137cccccc981a649350c2d933b63514b3019076b8501af2ad0f52ee3b37a36",
+        "run": "unit-tools",
+        "test_count": 93
+      }
+    ],
+    "development_integration_sha256": "357f6c4708b39a06872d52ad8ff6e87bc16a0fa46ca290be5a2d27983f358214",
+    "final_catalog_sha256": "038089ed22b6f4ca5e05d250310f6457e3f4a533bcc32bdc6b422dd7b90b2d65",
+    "prior_catalog_sha256": "a14889ce4b52fa35edeab87f9ce29dc0157dfdb31be3f9ddc445bf8d5130e166",
+    "recorded_utc": "2026-09-09T11:30:13.055615+00:00",
+    "scope": "Transitive exact equality to separately checked clock and development integration; no new physical or efficacy evidence.",
+    "version": "0.1.0"
+  },
+  "gate_a_operator_acceptance": "unaccepted",
+  "implementation_sha256": "59643e2037c6913f47a5f9bbe40a8887fc52d1a7ab777b89efd64f94017fb6fe",
+  "independent_comparator": "not_secured",
+  "independent_human_review_count": 0,
+  "input_identities": {
+    "base": {
+      "byte_size": 224899254,
+      "path": "megvii_val.json",
+      "sha256": "e7a995c31692ac95a86b56208e0b5d82a4ab908df8d0a9b9474d70adb693eab4"
+    },
+    "camera": {
+      "byte_size": 343998291,
+      "path": "mapillary_val.json",
+      "sha256": "f948e9778fb9a332d748f7e504fbade04f0c00c2699d7b0af757cacdbd567e99"
+    },
+    "exposures": {
+      "byte_size": 11820202,
+      "path": "packets.private.json",
+      "sha256": "b588bb851465315dbdebc1754ece8a9d62b33c2306e302a4ede8298383c9dacf"
+    },
+    "metadata": {
+      "byte_size": 461678030,
+      "path": "meta.tgz",
+      "sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b"
+    },
+    "splits": {
+      "byte_size": 20272,
+      "path": "nuscenes_splits_devkit.py",
+      "sha256": "eab6fa5e2536a2a85bd9451fb35771833e262b4b96319a6b26fee1dce8f4e2cd"
+    }
+  },
+  "lifecycle_status": "exploratory",
+  "limitations": [
+    "Only supplied historical exposure records determine exclusions; no claim of globally unseen benchmark data.",
+    "Keyframe and nominal ego metadata do not establish raw sensor payload/window validity or physical accuracy.",
+    "Source identity checking and certificate verification are not independent scientific adjudication or OS-enforced isolation.",
+    "Exact frame descriptors must be consumed from an expected-digest-checked catalog.",
+    "Nonfinite unused velocity remains opaque; no unavailable field is imputed.",
+    "The two-frame integration establishes mechanical behavior with open references, not held-out efficacy.",
+    "No new model inference, training, human reference judgments, causal effects or architecture superiority."
+  ],
+  "next_authorized_work": [
+    "Implement reviewed reference-to-graph constraints while retaining shared geometry, class, alias, time and matching alternatives.",
+    "Check raw sensor-window identity, decodability, timing and explicitly unavailable observations on existing development inputs.",
+    "Retain open-reference fallback wherever unlisted matchable objects or joint alternatives are not bounded.",
+    "Freeze method, input, reviewer, comparator and adjudication arrangements before any new cohort seed or selection."
+  ],
+  "parent_main_commit": "e19049b8a02c621bb92f504d0f47d1cfe6d2a13d",
+  "physical_study_status": "not_started",
+  "pointer_policy": "All input and private-result paths are identification basenames only, not public payloads or relative file references. Private task custody records exact paths and bytes.",
+  "preserved_history": {
+    "claim_register_row_count": 57,
+    "claim_rows_modified": 0,
+    "empirical_transcript_count": 52,
+    "experiments_rerun_here": 0,
+    "gate_a_releases_modified": false,
+    "owner_checkouts_modified": false,
+    "ui_modified": false
+  },
+  "real_catalog": {
+    "byte_size": 25998480,
+    "clock_and_exclusion_sha256": "3ade79294cb48693987f460e0850302047d99fac5283415bede4852c015210c5",
+    "path": "catalog.private.json",
+    "request_file_sha256": "58c5addae01f7c445e574ee86f5e47111c9a49f0fc562e3638e37868c478d1df",
+    "run_id": "real-catalog-final",
+    "sha256": "038089ed22b6f4ca5e05d250310f6457e3f4a533bcc32bdc6b422dd7b90b2d65",
+    "summary": {
+      "clock_anchor_count": 6019,
+      "cohort_seed": null,
+      "context_anchor_count": 4682,
+      "eligible_anchor_count": 2935,
+      "eligible_scene_count": 138,
+      "exposure_history": {
+        "case_count": 240,
+        "exposed_assets": 4956,
+        "scene_boundary_placeholders": 84
+      },
+      "physical_reference_validity": "not_established",
+      "prediction_availability": {
+        "base": {
+          "observed": 6019
+        },
+        "camera": {
+          "observed": 6019
+        }
+      },
+      "prediction_comparison": "not_performed",
+      "scene_count": 150,
+      "selected_cohort": null,
+      "sensor_metadata": {
+        "anchor_ego_states": {
+          "missing": 0,
+          "observed": 6019,
+          "unknown": 0
+        },
+        "missing_keyframe_metadata": {
+          "CAM_BACK": 0,
+          "CAM_BACK_LEFT": 0,
+          "CAM_BACK_RIGHT": 0,
+          "CAM_FRONT": 0,
+          "CAM_FRONT_LEFT": 0,
+          "CAM_FRONT_RIGHT": 0,
+          "LIDAR_TOP": 0
+        },
+        "requested_pose_count": 6019,
+        "required_channels": [
+          "LIDAR_TOP",
+          "CAM_FRONT",
+          "CAM_FRONT_LEFT",
+          "CAM_FRONT_RIGHT",
+          "CAM_BACK",
+          "CAM_BACK_LEFT",
+          "CAM_BACK_RIGHT"
+        ],
+        "resolved_pose_count": 6019,
+        "scope": "requested_validation_keyframes_and_lidar_poses_only",
+        "sensor_payload_validity": "not_checked"
+      },
+      "sensor_window_validity": "not_checked"
+    }
+  },
+  "recorded_utc": "2026-09-09T11:33:39.773074+00:00",
+  "retained_correction": {
+    "code": "CLOCK_IDENTITY",
+    "correction": "Historical evidence IDs may begin with signed frame offsets. They use a distinct validated opaque-record syntax; dataset ID validation was not weakened.",
+    "exit_code": 2,
+    "failed_run_id": "real-catalog-1",
+    "partial_catalog_written": false,
+    "source_reconstruction_limit": "The failed run emitted no contemporaneous source manifest. Its reconstructed source is labeled as reconstruction in private custody.",
+    "stderr_sha256": "8fb3412fdfa84ab4be90337a81744437cc18e35f7a28743771e51296d58c2304"
+  },
+  "source_identities": [
+    {
+      "path": "tools/perception_decision/__init__.py",
+      "sha256": "53d4c1fb5ce4982c2dfec949b7fa84ec67c52496eb445782fee10b0b6f6bde0f"
+    },
+    {
+      "path": "tools/perception_decision/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "tools/perception_decision/checker.py",
+      "sha256": "64e342e00a4c2683f9db5fa2cb8213959a357bd5c3099296a090564527134da4"
+    },
+    {
+      "path": "tools/perception_decision/cli.py",
+      "sha256": "419fa07442ebf2ff4ea9484ad0f7b235aab291c50eee52d5cb0374209cf7b7ee"
+    },
+    {
+      "path": "tools/perception_decision/contract.py",
+      "sha256": "aed6e16f0d2b09b85abccbf4aeac5e74abb42e699c4ce8d9be34073523327134"
+    },
+    {
+      "path": "tools/perception_decision/kernel.py",
+      "sha256": "7a5a630c9265108cc0d0a1c3e065292d62425b3a0cbfa7ae0ec942b9233f5ecc"
+    },
+    {
+      "path": "tools/perception_decision/nuscenes.py",
+      "sha256": "ff5f6bd5509fcd656b2420af7b531ae601b12e77975270209dbb1dbea92f6eb4"
+    },
+    {
+      "path": "tools/perception_inputs/__init__.py",
+      "sha256": "72a4b32a5dbeea671e7fc3589209cab0a8a7f8badab26d496e70e10edc06c4d4"
+    },
+    {
+      "path": "tools/perception_inputs/__main__.py",
+      "sha256": "220f2a8e9baf67787d07a17f04b835c3813d2ce18ab7492ec7bc460f663fbe16"
+    },
+    {
+      "path": "tools/perception_inputs/catalog.py",
+      "sha256": "908106f97eaad6326407a47fc3da0ff0e483d70ba9687bb84d028d1e69e0531c"
+    },
+    {
+      "path": "tools/perception_inputs/clock.py",
+      "sha256": "1de238923caf890a748a9032481f86cdbdda355b5eef32264a994b9a357e0a5a"
+    },
+    {
+      "path": "tools/perception_inputs/sensors.py",
+      "sha256": "fbb93aae125430a4ffa588eb0b1e1fc606564e69f35659c4d25e097b5d4fc3ec"
+    },
+    {
+      "path": "tools/perception_inputs/source_io.py",
+      "sha256": "65da8ba76d03aed2e3ac556729e2ea19fc12996c808805bb173bc782c4e0af76"
+    },
+    {
+      "path": "tests/test_perception_inputs.py",
+      "sha256": "2dc004b31f354c73e969de479545e77d5f533494a13993347da915280017d62e"
+    }
+  ],
+  "validation": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "kind": "development_unit_tests",
+      "recorded_utc": "2026-09-09T11:22:31.864357+00:00",
+      "run_id": "unit-repo-closeout",
+      "stderr_sha256": "12ae8ddc79dc6beac8180ebfd0b2ccf6cbcd75b541ec4b9ab13c6dfaa9b3bb2f",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_count": 130
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/measure",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "kind": "development_unit_tests",
+      "recorded_utc": "2026-09-09T11:16:25.753175+00:00",
+      "run_id": "unit-tools",
+      "stderr_sha256": "14678dd37b57ac9706ed20d9efa195cea280cdd0fd4df909fdf374ac7e5a110f",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_count": 93
+    }
+  ],
+  "version": "0.1.0"
+}
