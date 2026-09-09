@@ -1,3 +1,23 @@
+# Checked perception-decision core, 2026-09-09
+
+Read the [implementation checkpoint](PERCEPTION_DECISION_CHECKPOINT_2026-09-09.md),
+[usage and semantics](../research/perception-decision/0.1.0/README.md), and
+[machine continuation](../research/perception-decision/0.1.0/implementation-status.json).
+The normalized paired-loss core, separate certificate checker, offline CLI and exact per-frame
+nuScenes output adapter are implemented. All 199 offline unit tests pass. The synthetic matching
+ambiguity remains unresolved at [-1,1] and its packet passes a separate verification process.
+These are computational checks, not a new empirical benchmark or physical-reference judgment.
+
+Next: bind complete source files, build clock-derived input and raw-window availability records,
+and implement reviewed reference constraints without closing unknown physical alternatives.
+Do not select the 60-scene study before its method/input/reviewer/comparator/adjudication freeze.
+No independent reviewers or comparator have been secured. No cohort seed, model fits or new
+physical study results exist. Gate A remains unaccepted. Original evidence, owner checkouts and
+UI work are preserved. Resolve checked main integration from Git and the task delivery record;
+a publisher readback does not constitute independent transport verification.
+
+---
+
 # Perception-decision engine continuation, 2026-09-09
 
 Read [the selected architecture](PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md)

@@ -1,0 +1,94 @@
+{
+  "anchors": [
+    {
+      "additions": {
+        "state": "observed",
+        "value": [
+          {
+            "id": "added-1",
+            "record_sha256": "ec6486c32fa954bf314318a263685b3279b195dda3b55b21b2888aa3a1dda0d7"
+          }
+        ]
+      },
+      "base": {
+        "state": "observed",
+        "value": [
+          {
+            "id": "base-1",
+            "record_sha256": "81cc895ef30f60af8ecb51c5155279bdb93f8dab8e54bc21ba1e9228b6e42ba3"
+          }
+        ]
+      },
+      "id": "anchor-1",
+      "reference": {
+        "edges": [
+          {
+            "detection": "base-1",
+            "object": "known",
+            "when": []
+          },
+          {
+            "detection": "base-1",
+            "object": "disputed",
+            "when": []
+          },
+          {
+            "detection": "added-1",
+            "object": "known",
+            "when": []
+          }
+        ],
+        "objects": [
+          {
+            "id": "known",
+            "when": []
+          },
+          {
+            "id": "disputed",
+            "when": [
+              {
+                "value": true,
+                "variable": "disputed_present"
+              }
+            ]
+          }
+        ],
+        "state": "finite"
+      },
+      "weight": {
+        "denominator": "1",
+        "numerator": "1"
+      }
+    }
+  ],
+  "artifact_id": "reiyah.perception-decision.input",
+  "assumptions": [
+    "Synthetic graph from the declared 1D center-distance example; not physical observations.",
+    "Coordinates: base 0, added 3, known object 1.5, disputed object -1; strict 2 m eligibility."
+  ],
+  "cohort_id": "synthetic-one-anchor",
+  "comparison_id": "synthetic-matching-ambiguity",
+  "evidence_kind": "synthetic",
+  "input_scope": "normalized_research_graphs",
+  "loss": {
+    "false_negative": {
+      "denominator": "1",
+      "numerator": "1"
+    },
+    "false_positive": {
+      "denominator": "1",
+      "numerator": "1"
+    },
+    "tolerance": {
+      "denominator": "10",
+      "numerator": "1"
+    }
+  },
+  "model": {
+    "clauses": [],
+    "variables": [
+      "disputed_present"
+    ]
+  },
+  "version": "0.1.0"
+}

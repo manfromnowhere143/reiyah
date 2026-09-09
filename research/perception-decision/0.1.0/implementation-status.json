@@ -1,0 +1,125 @@
+{
+  "architecture_commit": "62c10cb3bf50fcb0e4b1393dd08f2350db30fd9a",
+  "artifact_id": "reiyah.perception-decision.implementation-status",
+  "code_status": "offline_normalized_core_and_per_frame_adapter_implemented",
+  "cohort_selection_status": "not_selected",
+  "gate_a_operator_acceptance": "unaccepted",
+  "historical_evidence_policy": "Existing 52 transcript results and 57 claim-register rows remain unchanged; integrity checking is not a rerun.",
+  "independent_comparator": "not_secured",
+  "independent_human_review_count": 0,
+  "lifecycle_status": "exploratory",
+  "limitations": [
+    "Per-frame adapter assumes upstream source checking; it has only synthetic validation in this checkpoint.",
+    "Finite graph bounds are model-relative, not a physical-truth confidence interval.",
+    "Producer and checker share the parser, rational representation, schema and resource policy.",
+    "These are offline development checks, not Gate A locked release validation or independent scientific review.",
+    "No new detector inference, fits, physical judgments or scientific benchmark results."
+  ],
+  "main_parent": "f9715f665af3b1ca320b233c74680eaec3bbd553",
+  "next_authorized_work": [
+    "Bind and parse complete prediction and metadata source bytes without outcome-based scene selection.",
+    "Build a clock-derived input manifest and raw-window availability adapter with explicit missing-frame states.",
+    "Implement the reference-to-graph adapter preserving geometry, class, alias and cross-anchor constraints; retain open-reference fallback.",
+    "Check study feasibility and reviewer/comparator prerequisites before any new cohort seed or selection."
+  ],
+  "physical_reference_validity": "not_established",
+  "physical_study_status": "not_started",
+  "recorded_utc": "2026-09-09T10:31:32.767747+00:00",
+  "source_identities": [
+    {
+      "path": "research/perception-decision/0.1.0/input.schema.json",
+      "sha256": "525c23d734a594d8c64ba3128c454314348345b84bebc615c1732e89750847a0"
+    },
+    {
+      "path": "research/perception-decision/0.1.0/matching-ambiguity.json",
+      "sha256": "831cff117814354d64d0140318cd60d6d7f45884e29e9f99f7230f8ed5746efe"
+    },
+    {
+      "path": "tests/test_perception_decision.py",
+      "sha256": "a5cedcdbf4d98ffe9971bfc2098ed7e5f1da88660deb039c53812df6766e47d3"
+    },
+    {
+      "path": "tests/test_perception_nuscenes.py",
+      "sha256": "7a54be32c25a4818b260969903b7e5e63759642b163d96cd004dc907921d243f"
+    },
+    {
+      "path": "tools/perception_decision/__init__.py",
+      "sha256": "53d4c1fb5ce4982c2dfec949b7fa84ec67c52496eb445782fee10b0b6f6bde0f"
+    },
+    {
+      "path": "tools/perception_decision/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "tools/perception_decision/checker.py",
+      "sha256": "64e342e00a4c2683f9db5fa2cb8213959a357bd5c3099296a090564527134da4"
+    },
+    {
+      "path": "tools/perception_decision/cli.py",
+      "sha256": "419fa07442ebf2ff4ea9484ad0f7b235aab291c50eee52d5cb0374209cf7b7ee"
+    },
+    {
+      "path": "tools/perception_decision/contract.py",
+      "sha256": "aed6e16f0d2b09b85abccbf4aeac5e74abb42e699c4ce8d9be34073523327134"
+    },
+    {
+      "path": "tools/perception_decision/kernel.py",
+      "sha256": "7a5a630c9265108cc0d0a1c3e065292d62425b3a0cbfa7ae0ec942b9233f5ecc"
+    },
+    {
+      "path": "tools/perception_decision/nuscenes.py",
+      "sha256": "ff5f6bd5509fcd656b2420af7b531ae601b12e77975270209dbb1dbea92f6eb4"
+    }
+  ],
+  "synthetic_demonstration": {
+    "bounds": [
+      "-1",
+      "1"
+    ],
+    "input_sha256": "831cff117814354d64d0140318cd60d6d7f45884e29e9f99f7230f8ed5746efe",
+    "kind": "constructed_case_not_empirical_evidence",
+    "packet_sha256": "87eae944cc0d0020fb9686c13725f1323a2ff4548890b7f030413a7495785f98",
+    "preference": "unresolved",
+    "run_exit_code": 0,
+    "verify_exit_code": 0
+  },
+  "validation": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "kind": "development_unit_tests",
+      "recorded_utc": "2026-09-09T10:31:03.076085+00:00",
+      "stderr_sha256": "b9f5e7ae2c31cdff4660004e56ed6d589c48b5a70ee35f546079321bc12a35ef",
+      "test_count": 106
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/measure",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "kind": "development_unit_tests",
+      "recorded_utc": "2026-09-09T10:26:32.348371+00:00",
+      "stderr_sha256": "614cdebb5cf0e6cd4c2ba264083340cf68b7a1fbd9328aebbc321a16a2175451",
+      "test_count": 93
+    }
+  ],
+  "version": "0.1.0"
+}

@@ -1,0 +1,396 @@
+{
+  "$comment": "Patterns require end of input explicitly; a dollar anchor can accept a trailing line terminator.",
+  "$defs": {
+    "detection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+          "type": "string"
+        },
+        "record_sha256": {
+          "pattern": "^[a-f0-9]{64}(?![\\s\\S])",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "record_sha256"
+      ],
+      "type": "object"
+    },
+    "edge": {
+      "additionalProperties": false,
+      "properties": {
+        "detection": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+          "type": "string"
+        },
+        "object": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+          "type": "string"
+        },
+        "when": {
+          "items": {
+            "$ref": "#/$defs/literal"
+          },
+          "maxItems": 64,
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "required": [
+        "detection",
+        "object",
+        "when"
+      ],
+      "type": "object"
+    },
+    "literal": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "boolean"
+        },
+        "variable": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+          "type": "string"
+        }
+      },
+      "required": [
+        "variable",
+        "value"
+      ],
+      "type": "object"
+    },
+    "object": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+          "type": "string"
+        },
+        "when": {
+          "items": {
+            "$ref": "#/$defs/literal"
+          },
+          "maxItems": 64,
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "when"
+      ],
+      "type": "object"
+    },
+    "rational": {
+      "additionalProperties": false,
+      "properties": {
+        "denominator": {
+          "pattern": "^[1-9][0-9]{0,17}(?![\\s\\S])",
+          "type": "string"
+        },
+        "numerator": {
+          "pattern": "^(0|-?[1-9][0-9]{0,17})(?![\\s\\S])",
+          "type": "string"
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "urn:reiyah:perception-decision:input:0.1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "anchors": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "additions": {
+            "oneOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "state": {
+                    "const": "observed"
+                  },
+                  "value": {
+                    "items": {
+                      "$ref": "#/$defs/detection"
+                    },
+                    "maxItems": 512,
+                    "minItems": 0,
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "state",
+                  "value"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "reason": {
+                    "maxLength": 1024,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "state": {
+                    "enum": [
+                      "missing",
+                      "unmeasured",
+                      "sensor_invalid",
+                      "abstained",
+                      "outside_support",
+                      "unknown"
+                    ]
+                  }
+                },
+                "required": [
+                  "state",
+                  "reason"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "base": {
+            "oneOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "state": {
+                    "const": "observed"
+                  },
+                  "value": {
+                    "items": {
+                      "$ref": "#/$defs/detection"
+                    },
+                    "maxItems": 512,
+                    "minItems": 0,
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "state",
+                  "value"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "reason": {
+                    "maxLength": 1024,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "state": {
+                    "enum": [
+                      "missing",
+                      "unmeasured",
+                      "sensor_invalid",
+                      "abstained",
+                      "outside_support",
+                      "unknown"
+                    ]
+                  }
+                },
+                "required": [
+                  "state",
+                  "reason"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+            "type": "string"
+          },
+          "reference": {
+            "oneOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "reason": {
+                    "maxLength": 1024,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "state": {
+                    "const": "open"
+                  }
+                },
+                "required": [
+                  "state",
+                  "reason"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "edges": {
+                    "items": {
+                      "$ref": "#/$defs/edge"
+                    },
+                    "maxItems": 2048,
+                    "minItems": 0,
+                    "type": "array"
+                  },
+                  "objects": {
+                    "items": {
+                      "$ref": "#/$defs/object"
+                    },
+                    "maxItems": 128,
+                    "minItems": 0,
+                    "type": "array"
+                  },
+                  "state": {
+                    "const": "finite"
+                  }
+                },
+                "required": [
+                  "state",
+                  "objects",
+                  "edges"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "weight": {
+            "$ref": "#/$defs/rational"
+          }
+        },
+        "required": [
+          "id",
+          "weight",
+          "base",
+          "additions",
+          "reference"
+        ],
+        "type": "object"
+      },
+      "maxItems": 128,
+      "minItems": 1,
+      "type": "array"
+    },
+    "artifact_id": {
+      "const": "reiyah.perception-decision.input"
+    },
+    "assumptions": {
+      "items": {
+        "maxLength": 1024,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "type": "array"
+    },
+    "cohort_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+      "type": "string"
+    },
+    "comparison_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+      "type": "string"
+    },
+    "evidence_kind": {
+      "enum": [
+        "synthetic",
+        "conditional_reference_graph"
+      ]
+    },
+    "input_scope": {
+      "const": "normalized_research_graphs"
+    },
+    "loss": {
+      "additionalProperties": false,
+      "properties": {
+        "false_negative": {
+          "$ref": "#/$defs/rational"
+        },
+        "false_positive": {
+          "$ref": "#/$defs/rational"
+        },
+        "tolerance": {
+          "$ref": "#/$defs/rational"
+        }
+      },
+      "required": [
+        "false_negative",
+        "false_positive",
+        "tolerance"
+      ],
+      "type": "object"
+    },
+    "model": {
+      "additionalProperties": false,
+      "properties": {
+        "clauses": {
+          "items": {
+            "items": {
+              "$ref": "#/$defs/literal"
+            },
+            "maxItems": 64,
+            "minItems": 0,
+            "type": "array"
+          },
+          "maxItems": 128,
+          "minItems": 0,
+          "type": "array"
+        },
+        "feasible_assignment": {
+          "items": {
+            "type": "boolean"
+          },
+          "maxItems": 64,
+          "minItems": 0,
+          "type": "array"
+        },
+        "variables": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+            "type": "string"
+          },
+          "maxItems": 64,
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "required": [
+        "variables",
+        "clauses"
+      ],
+      "type": "object"
+    },
+    "version": {
+      "const": "0.1.0"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "version",
+    "comparison_id",
+    "input_scope",
+    "evidence_kind",
+    "assumptions",
+    "cohort_id",
+    "loss",
+    "model",
+    "anchors"
+  ],
+  "title": "Normalized conditional comparison input; no physical-coverage assertion",
+  "type": "object"
+}
