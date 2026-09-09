@@ -1,3 +1,28 @@
+# Raw observation disclosure continuation, 2026-09-09
+
+Read the [observation checkpoint](PERCEPTION_OBSERVATION_CHECKPOINT_2026-09-09.md),
+[interface](../research/perception-observation/0.1.0/README.md) and
+[machine record](../research/perception-observation/0.1.0/checkpoint.json) first.
+All 725 captures from the same two development windows are delivered in a verified package.
+JPEG bytes are unchanged; a fixed PLY wrapper preserves every lidar point field. A separately
+sourced PLY reader recovers all 5,521,024 point records byte-for-byte. The first private reader
+build failed on an old linkage declaration; its source, compiler transcript and one-line
+compatibility fix remain retained. No third-party reader code or raw payload enters public Git.
+
+Neutral IDs, relative times, nominal geometry and explicit unavailable states cross the
+disclosure boundary. Source paths, clocks, identities, detector hints and annotations remain
+separate. No source-anonymity, human-independence or physical-reference guarantee is inferred.
+The open-reference comparison remains [-8,8]; no study cohort or seed exists.
+
+Next: lock unassisted discovery records against the exact package, keeping missing review
+coverage distinct from a reviewed absence; both reviewer records must precede assisted review.
+Independent human reviewers, comparator, adjudication and a complete study freeze remain
+prerequisites. Gate A remains unaccepted. Owner checkouts, Console, historical measurement
+records and the separate research lane remain untouched. Resolve final validation and
+publisher readback from the machine checkpoint, Git and the private delivery record.
+
+---
+
 # Spatial and time operand continuation, 2026-09-09
 
 Read the [geometry checkpoint](PERCEPTION_GEOMETRY_CHECKPOINT_2026-09-09.md),

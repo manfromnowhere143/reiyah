@@ -1,0 +1,338 @@
+{
+  "artifact_id": "reiyah.perception-observation.checkpoint",
+  "authority": {
+    "gate_a_operator_acceptance": "unaccepted",
+    "offline_engine": "operator_authorized",
+    "parallel_results_admitted": false,
+    "scientific_efficacy": "not_established"
+  },
+  "camera_files": 566,
+  "development_custody": {
+    "byte_size": 915607,
+    "private_record": "private/development-custody-1.private.json",
+    "sha256": "66697ea31f68ca2b5f8fd2dc3015fdad90be47d30adea47efc9df4f6be2fadad"
+  },
+  "development_manifest": {
+    "byte_size": 2733827,
+    "private_record": "private/development-reviewer-package-1/manifest.json",
+    "sha256": "15a8651f07771de3f0f25f8c9d7285be9f0c9f3d783b2f7478f965d35707ff09"
+  },
+  "development_request": {
+    "byte_size": 963,
+    "private_record": "private/development-request.private.json",
+    "sha256": "1cc2780991de7bf3588988b0496062997c12908ce599efbf20319541e419853b"
+  },
+  "development_seal": {
+    "byte_size": 383,
+    "private_record": "private/development-reviewer-package-1/SEAL.json",
+    "sha256": "3f7dcdb06d659360d3d93688a4efe60739525cc0282a509930df7947d55ac5c1"
+  },
+  "development_summary": {
+    "capture_occurrences": 725,
+    "delivered_bytes": 187657462,
+    "distinct_captures": 725,
+    "evidence_states": {
+      "delivered": 725
+    },
+    "human_review": "not_established",
+    "physical_reference_coverage": "not_established",
+    "windows": 2
+  },
+  "external_format_check": {
+    "adaptation": {
+      "byte_size": 404,
+      "private_record": "private/ply-reader/adaptation.json",
+      "sha256": "9d5bdcf365d49434d36770e05ab8f6e102c6721ec670962c90f452bb9e181b68"
+    },
+    "all_recovered_point_field_bytes_equal_source": true,
+    "failed_initial_compile_retained": true,
+    "files": 159,
+    "independent_human_review": false,
+    "point_records": 5521024,
+    "reader": "Original Stanford PLY 1.1 C reader with one linkage-declaration compatibility fix; no parser/conversion changes",
+    "record": {
+      "byte_size": 42488,
+      "private_record": "checks/ply-interoperability-1/result.json",
+      "sha256": "a6ca5b784ff44859f111b371226808be0677974562980bf077eb2ed88fdf2aac"
+    },
+    "source": {
+      "byte_size": 1779,
+      "private_record": "private/check_ply_interoperability.py",
+      "sha256": "857c2927f10dd6085b3adf0742a5eab36ccb4bd424ccaa4b5ad91dd936ad11ad"
+    },
+    "status": "pass",
+    "third_party_code_added_to_public_git": false
+  },
+  "implementation_files": [
+    {
+      "byte_size": 85,
+      "repository_path": "tools/perception_observation/__init__.py",
+      "sha256": "e83dc0acf86c213309235c925ddd811b307c4232d64756ebcd9edd2e5621e818"
+    },
+    {
+      "byte_size": 1486,
+      "repository_path": "tools/perception_observation/__main__.py",
+      "sha256": "0d9349224e4964e181e361062bbe2315142d5b651aab20808e08ef4f79822ec2"
+    },
+    {
+      "byte_size": 10264,
+      "repository_path": "tools/perception_observation/contract.py",
+      "sha256": "ad507712773a990a9ab1a68817761a8d87c48c0a9c4ef16ec3d9623b34929545"
+    },
+    {
+      "byte_size": 3572,
+      "repository_path": "tools/perception_observation/formats.py",
+      "sha256": "29ce13adf643e8f063dea9ab7f3e495bfa63b24ff7a374e93842cfe762a1050a"
+    },
+    {
+      "byte_size": 18699,
+      "repository_path": "tools/perception_observation/package.py",
+      "sha256": "059251f1124b57003707767663066a6898fed0888ba3ce14abdaaa65f3d75991"
+    }
+  ],
+  "input_identities": {
+    "geometry_report": {
+      "byte_size": 7519025,
+      "sha256": "e647d6dab582e9ce70e3fd04123a6bb74743a91fb8471fa14362943819733d65"
+    },
+    "inventory": {
+      "byte_size": 186381,
+      "sha256": "ecf03626ba3fe82d163350c10c565e29359a0c49275848b2e9edaf0df5b9d31d"
+    },
+    "window_report": {
+      "byte_size": 593495,
+      "sha256": "a8736080d61ccf9a524874554a4516510e8215bd50f088be23842e6cb4fff6a0"
+    }
+  },
+  "interface": {
+    "byte_size": 10004,
+    "repository_path": "research/perception-observation/0.1.0/README.md",
+    "sha256": "f07610e3eadb1d643304123ccdccec1257b303150c4291767ffa0ef205a5e504"
+  },
+  "lidar_files": 159,
+  "lidar_point_records": 5521024,
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Disclosure restricts listed metadata, not public-source identification or information encoded in pixels/points",
+    "Geometric operand computation remains a bound upstream dependency",
+    "Byte integrity and complete file delivery do not establish physical observation completeness or reviewer independence",
+    "A verifier result covers opened bytes; the host can mutate files afterward"
+  ],
+  "next_step": "Seal unassisted discovery records against the exact package without equating structural completeness with human independence or physical reference completeness",
+  "parent_commit": "bd9bb6e79e645174f1dbbd435244854632fe1623",
+  "ply_header_bytes": 26076,
+  "profile": "unassisted_raw_relative_time.0.1.0",
+  "readme_update": {
+    "gate_a_and_selected_architecture_bytes_preserved": true,
+    "scope": "Current implementation pointer and one checkpoint row; all six Mermaid sources unchanged"
+  },
+  "runtime": {
+    "byteorder": "little",
+    "pillow": {
+      "decoder_module_sha256": "45c3360f256bf7776887c68233cff09d62880d0d0472044cf4424e54870c5254",
+      "jpeg_version": "6.2",
+      "libjpeg_turbo_version": "3.1.4.1",
+      "truncated_image_tolerance": false,
+      "version": "12.3.0"
+    },
+    "platform": "darwin",
+    "python": "3.14.2"
+  },
+  "source_basis": {
+    "byte_size": 2504,
+    "repository_path": "research/perception-observation/0.1.0/source-basis.json",
+    "sha256": "6fe577bc03d37b2ae5952cc45deea705660e991be6ec94c29404418fbc7cc372"
+  },
+  "source_closure": [
+    [
+      "perception_observation/__init__.py",
+      "e83dc0acf86c213309235c925ddd811b307c4232d64756ebcd9edd2e5621e818"
+    ],
+    [
+      "perception_observation/__main__.py",
+      "0d9349224e4964e181e361062bbe2315142d5b651aab20808e08ef4f79822ec2"
+    ],
+    [
+      "perception_observation/contract.py",
+      "ad507712773a990a9ab1a68817761a8d87c48c0a9c4ef16ec3d9623b34929545"
+    ],
+    [
+      "perception_observation/formats.py",
+      "29ce13adf643e8f063dea9ab7f3e495bfa63b24ff7a374e93842cfe762a1050a"
+    ],
+    [
+      "perception_observation/package.py",
+      "059251f1124b57003707767663066a6898fed0888ba3ce14abdaaa65f3d75991"
+    ],
+    [
+      "perception_geometry/__init__.py",
+      "f48c9f24aa73ec8ed3614a9bcb05cb041d5fd6eeee7b664303d15cf432733f00"
+    ],
+    [
+      "perception_geometry/__main__.py",
+      "67a8a65c48401e1309cdd8d42ac824a149a2534bd1697db3d87dc901bd4620ef"
+    ],
+    [
+      "perception_geometry/algebra.py",
+      "72c3786489c18175a007f531410884311bbc1dee2ee2831d41ba9cd0a9ea13f0"
+    ],
+    [
+      "perception_geometry/bind.py",
+      "1f52a269c4e4b94b6b9fe33c048a50b1a5c2e4b382fe1687d6dad0d93840fa69"
+    ],
+    [
+      "perception_windows/__init__.py",
+      "a689128ed8c53650ccc854c5bd1faa1ba1181fd0e8e181b91e92d417c48893dd"
+    ],
+    [
+      "perception_windows/__main__.py",
+      "e4507826d40c9cd436f788b2664f0d2bf7acbb6910d121d3af2fd90c83252283"
+    ],
+    [
+      "perception_windows/payloads.py",
+      "c3cc9dd20a4f76df08575a684f8cbd0f1e1f51e796d5a6cb1903f484dfc4515f"
+    ],
+    [
+      "perception_windows/timeline.py",
+      "b256bdb2afeb3e0c563b4e53abe5aeaa6581a0b2ff6309690734052d7b093209"
+    ],
+    [
+      "perception_inputs/__init__.py",
+      "72a4b32a5dbeea671e7fc3589209cab0a8a7f8badab26d496e70e10edc06c4d4"
+    ],
+    [
+      "perception_inputs/__main__.py",
+      "220f2a8e9baf67787d07a17f04b835c3813d2ce18ab7492ec7bc460f663fbe16"
+    ],
+    [
+      "perception_inputs/catalog.py",
+      "908106f97eaad6326407a47fc3da0ff0e483d70ba9687bb84d028d1e69e0531c"
+    ],
+    [
+      "perception_inputs/clock.py",
+      "1de238923caf890a748a9032481f86cdbdda355b5eef32264a994b9a357e0a5a"
+    ],
+    [
+      "perception_inputs/sensors.py",
+      "1fec7a087c7a58b233096a01ef7ecf34f06085aa73af5da3eec043db579c711c"
+    ],
+    [
+      "perception_inputs/source_io.py",
+      "65da8ba76d03aed2e3ac556729e2ea19fc12996c808805bb173bc782c4e0af76"
+    ],
+    [
+      "perception_decision/__init__.py",
+      "53d4c1fb5ce4982c2dfec949b7fa84ec67c52496eb445782fee10b0b6f6bde0f"
+    ],
+    [
+      "perception_decision/__main__.py",
+      "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    ],
+    [
+      "perception_decision/checker.py",
+      "64e342e00a4c2683f9db5fa2cb8213959a357bd5c3099296a090564527134da4"
+    ],
+    [
+      "perception_decision/cli.py",
+      "419fa07442ebf2ff4ea9484ad0f7b235aab291c50eee52d5cb0374209cf7b7ee"
+    ],
+    [
+      "perception_decision/contract.py",
+      "aed6e16f0d2b09b85abccbf4aeac5e74abb42e699c4ce8d9be34073523327134"
+    ],
+    [
+      "perception_decision/kernel.py",
+      "7a5a630c9265108cc0d0a1c3e065292d62425b3a0cbfa7ae0ec942b9233f5ecc"
+    ],
+    [
+      "perception_decision/nuscenes.py",
+      "ff5f6bd5509fcd656b2420af7b531ae601b12e77975270209dbb1dbea92f6eb4"
+    ]
+  ],
+  "source_raw_bytes": 187631386,
+  "study": {
+    "adjudication": "not_secured",
+    "independent_comparator": "not_secured",
+    "independent_reviewers": 0,
+    "physical_review": "not_performed",
+    "previous_open_unit_loss_enclosure": [
+      -8,
+      8
+    ],
+    "prospective_cohort": null,
+    "seed": null,
+    "two_development_anchors": "previously exposed; no new study selection"
+  },
+  "test_file": {
+    "byte_size": 18628,
+    "repository_path": "tests/test_perception_observation.py",
+    "sha256": "472c3a60b4535bf81547faef0a8c8674cbf01ee6fcf840ce00ff9923414f71a2"
+  },
+  "validation": {
+    "final_all_tests_pass": true,
+    "gate_a_release_replay": "not_run; no Gate A release or acceptance change",
+    "gate_b_report": {
+      "byte_size": 12294,
+      "private_record": "checks/gate-b/result.json",
+      "sha256": "6e7cdb83b1c4f75c4c81ad67340ce9d2da5a4c6756d0a69156c5c992431412b1"
+    },
+    "historical_experiments_rerun": 0,
+    "historical_transcripts_hash_verified": 52,
+    "measurement_tests": 93,
+    "new_observation_tests": 29,
+    "receipts": [
+      {
+        "byte_size": 875,
+        "private_record": "checks/observation-tests-1/receipt.json",
+        "sha256": "b5f16c8d3e907b36c6de2376174c0b04b520f18291155f47a77f9162eea5dbb0"
+      },
+      {
+        "byte_size": 875,
+        "private_record": "checks/observation-tests-2/receipt.json",
+        "sha256": "4e69bcd38a41763232714fd4007e278f012bd1a33a0c24d640ee2d1b38e3a93b"
+      },
+      {
+        "byte_size": 1375,
+        "private_record": "checks/development-package-1/receipt.json",
+        "sha256": "da6616089c2f6ef8c58704e294a89b3e67501b64cd1788ea6edad24772d9ec25"
+      },
+      {
+        "byte_size": 1088,
+        "private_record": "checks/development-package-verify-1/receipt.json",
+        "sha256": "c116cacee593a9aa0a2a84f350344b9819091149487dfc273fa79ce957d5688f"
+      },
+      {
+        "byte_size": 1304,
+        "private_record": "checks/ply-reader-build-1/receipt.json",
+        "sha256": "5dfa268df155a3603e435e72677c7090346e491147b3955c5e7a8b6c624cc3b6"
+      },
+      {
+        "byte_size": 1305,
+        "private_record": "checks/ply-reader-build-2/receipt.json",
+        "sha256": "ef245412800d2ae903bd29314ae2a0f918551952ac2ad058317d980f12bee264"
+      },
+      {
+        "byte_size": 955,
+        "private_record": "checks/ply-interoperability-1/receipt.json",
+        "sha256": "2a7106e1e136fe6fb393cd15038a881b2ba7a60ef4f119eb2c43ad4946ba788f"
+      },
+      {
+        "byte_size": 874,
+        "private_record": "checks/unit-repo/receipt.json",
+        "sha256": "e5d19607e63be4bfe7a893035e20bd4ed45f775406128908f9e09df5674099ed"
+      },
+      {
+        "byte_size": 874,
+        "private_record": "checks/unit-tools/receipt.json",
+        "sha256": "a6ee4735fa80f8add7348b2d8890b1bc77399be589d997737e8d5173037b26a1"
+      },
+      {
+        "byte_size": 925,
+        "private_record": "checks/gate-b/receipt.json",
+        "sha256": "b3ee9a34f9ab0749c6b20d33900bfa221c393e6081913b02c0b68250b0b910d0"
+      }
+    ],
+    "repository_tests": 214
+  },
+  "version": "0.1.0"
+}
