@@ -1,3 +1,23 @@
+# Successor judgment and method selection, 2026-09-10
+
+Read the [successor brief](ENGINE_SUCCESSOR_BRIEF_2026-09-10.md) and
+[machine continuation 0.2.0](../research/perception-engine-handoff/0.2.0/handoff.json) first.
+The operator asks the receiving session to exercise independent judgment, challenge the prior
+plan and improve the route when evidence supports it. The proposed population-binding task is
+a grounded recommendation, not a limit on creative reasoning. A changed proposal needs a short
+decision record; historical evidence and frozen protocols retain their identities and controls.
+
+This revision sharpens the handoff only. Implementation and all prior test/evidence bytes remain
+unchanged from the completed Engine checkpoint. The physical study is unselected and unrun,
+with independent reviewers, comparator and adjudication still required. Gate A is unaccepted.
+Use current primary sources for a material unfamiliar or time-sensitive technical choice, and
+require a relevant dated comparison before calling any result state of the art. After verifying
+live state, choose the strongest authorized next task and begin work without ritual reconfirmation.
+
+Earlier records below are preserved at their own dates.
+
+---
+
 # Engine session transfer, 2026-09-09
 
 Read the [consolidated Engine handoff](PERCEPTION_ENGINE_HANDOFF_2026-09-09.md) and
