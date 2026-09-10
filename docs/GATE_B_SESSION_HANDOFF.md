@@ -1,3 +1,32 @@
+# Complete later source assistance, 2026-09-10
+
+Read the [assistance checkpoint](PERCEPTION_ASSISTANCE_CHECKPOINT_2026-09-10.md),
+[interface](../research/perception-assistance/0.1.0/README.md) and
+[machine evidence](../research/perception-assistance/0.1.0/checkpoint.json) first.
+The Engine prepares one common later inspection packet from complete source keyframe
+membership, annotation joins and freshly indexed predictions. The same two exposed windows
+contain 16 keyframes, 960 annotations and 4,876 predictions. Two corrected private preparations
+are byte-identical; a separately structured reader confirms every selected source projection.
+
+All 309 repository tests and 93 measurement tests pass. Typed global transforms and source
+endpoint checks reject the retained review forgeries. Earlier attempts and harness corrections
+remain retained. Source values are suggestions, not physical judgments; identifiers are masked
+without a blindness guarantee. No assistance was released, no review performed and no reference
+constraint admitted. The real open-reference unit-loss enclosure remains [-8,8]. Gate A is
+unaccepted; the 60-scene physical study remains unselected and unrun with no seed.
+
+Next: assign competent independent discovery reviewers, conventional analysis and adjudication;
+finish practical viewing and preserve both discoveries before assisted inspection. Before
+comparison, prepare identical neutral row-to-retained-detection mappings and complete comparison
+operands for both analysts. Preserve logical delivery stages, initial conclusions, corrections
+and all effort. This packet is preparation, not release permission or a completed physical study.
+Offline Engine work/main integration remain explicitly authorized. Preserve other owner
+checkouts, frozen protocols, Console ownership and the separate research lane.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Development review preparation, 2026-09-10
 
 Read the [rehearsal checkpoint](PERCEPTION_REHEARSAL_CHECKPOINT_2026-09-10.md),
