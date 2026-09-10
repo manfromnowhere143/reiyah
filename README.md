@@ -19,7 +19,7 @@ measurement and reference-audit research motivates the current focus. Human beli
 under intervention and cross-domain product value require their own observations.
 
 [Engine architecture and mathematics](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) ·
-[Current implementation](docs/PERCEPTION_BINDING_CHECKPOINT_2026-09-10.md) ·
+[Current implementation](docs/PERCEPTION_ADMISSION_CHECKPOINT_2026-09-10.md) ·
 [Research findings](docs/GENERAL_SYNTHESIS.md) · [Selected study](#current-engine-development) ·
 [Run the auditor](#run-the-offline-auditor)
 
@@ -189,6 +189,7 @@ The implemented pieces form one offline comparison pipeline:
 | [Raw observation disclosure](docs/PERCEPTION_OBSERVATION_CHECKPOINT_2026-09-09.md) | All 725 captures packaged with neutral IDs and a separate custody map; raw bytes, relative times and unavailable states are checked before review |
 | [Discovery record custody](docs/PERCEPTION_DISCOVERY_CHECKPOINT_2026-09-09.md) | Exact package binding, explicit inspection states and immutable submitted records; draft generation supplies no human judgment |
 | [Comparison/observation binding](docs/PERCEPTION_BINDING_CHECKPOINT_2026-09-10.md) | Exact anchor/sample/scene/time correspondence and delivered images/point bodies checked against the retained inventory; physical review remains outstanding |
+| [Reviewed-source admission](docs/PERCEPTION_ADMISSION_CHECKPOINT_2026-09-10.md) | Exact staged review contents and complete proposal accounting preserve shared interpretations; synthetic finite/open comparisons and forged-record rejections are checked |
 
 The proposed study selects **60 scenes**, then one eligible anchor per scene, only after the
 input, method, reviewer, comparator and adjudication freeze. Two independent reviewers first
@@ -272,7 +273,7 @@ identities.
 
 | Read for | Start here |
 |---|---|
-| Current Engine direction and implementation | [Selected architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md), [latest checkpoint](docs/PERCEPTION_BINDING_CHECKPOINT_2026-09-10.md), [decision interface](research/perception-decision/0.1.0/README.md) |
+| Current Engine direction and implementation | [Selected architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md), [latest checkpoint](docs/PERCEPTION_ADMISSION_CHECKPOINT_2026-09-10.md), [decision interface](research/perception-decision/0.1.0/README.md) |
 | Mission and scientific structure | [Scientific charter](docs/SCIENTIFIC_CHARTER.md), [architecture](docs/ARCHITECTURE.md), [mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) |
 | Current interpretation of sensor, human-proxy and LLM experiments | [Corrected synthesis](docs/GENERAL_SYNTHESIS.md), [current claim register](evidence/claim-status-register-2026-09-08T054835Z.json) |
 | Selected study and earlier investigations | [60-scene study design](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md#one-prospective-study), [research-board report](docs/RESEARCH_BOARD_2026-09-07.md), [earlier training design](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) |

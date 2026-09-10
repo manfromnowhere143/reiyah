@@ -1,3 +1,38 @@
+# Reviewed-source admission, 2026-09-10
+
+Read the [admission checkpoint](PERCEPTION_ADMISSION_CHECKPOINT_2026-09-10.md),
+[interface](../research/perception-admission/0.1.0/README.md) and
+[machine record](../research/perception-admission/0.1.0/checkpoint.json) first.
+The new entry point freshly binds the comparison and observation package, verifies two selected
+sealed discoveries, validates assisted proposals and consumes a complete adjudication ledger.
+Every original proposal is accounted for in every supplied joint world. Unknown coverage,
+incomplete inspection and unresolved dispositions remain open; opaque or fabricated basis fields
+cannot substitute for actual source contents. The existing lower-level compiler remains an
+explicit assumed-model interface and does not acquire reviewed-source admission automatically.
+
+All 283 repository tests and 93 measurement tests pass, including 24 new admission tests.
+A retained synthetic demonstration produces identical reports, separately checked [0,0] bounds
+for coupled alternatives, [-1,1] when coverage is unknown, and rejection when a proposal is
+omitted. Internal review exposed a contradictory chronology case hidden by a missing intermediate
+time; its failing regression and correction remain retained. These are engineering checks.
+
+The real development comparison remains [-8,8], with zero human judgments. No new physical
+measurement, cohort, seed, assisted-data release or study acceptance is claimed. Gate A remains
+unaccepted. Offline Engine work and main integration retain explicit operator authorization.
+Other owner checkouts, measurement code, original evidence, accepted manifests and study rules
+remain unchanged. Resolve exact integrated commit and publisher readback through Git and the
+private continuation packet, not earlier chronology.
+
+Next: prepare a bounded review-workflow rehearsal on already exposed development evidence and
+compare it with an equally informed conventional analyst once independent reviewers are secured.
+Record effort, disagreement, corrections and decisions. The unselected 60-scene study still
+requires the complete reviewer/comparator/adjudication and method freeze before selection.
+Console and parallel research have separate owners; return reviewable inputs across those lanes.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Comparison and observation binding, 2026-09-10
 
 Read the [binding checkpoint](PERCEPTION_BINDING_CHECKPOINT_2026-09-10.md),
