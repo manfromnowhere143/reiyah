@@ -19,7 +19,7 @@ measurement and reference-audit research motivates the current focus. Human beli
 under intervention and cross-domain product value require their own observations.
 
 [Engine architecture and mathematics](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) ·
-[Current implementation](docs/PERCEPTION_ADMISSION_CHECKPOINT_2026-09-10.md) ·
+[Current implementation](docs/PERCEPTION_REHEARSAL_CHECKPOINT_2026-09-10.md) ·
 [Research findings](docs/GENERAL_SYNTHESIS.md) · [Selected study](#current-engine-development) ·
 [Run the auditor](#run-the-offline-auditor)
 
@@ -190,6 +190,7 @@ The implemented pieces form one offline comparison pipeline:
 | [Discovery record custody](docs/PERCEPTION_DISCOVERY_CHECKPOINT_2026-09-09.md) | Exact package binding, explicit inspection states and immutable submitted records; draft generation supplies no human judgment |
 | [Comparison/observation binding](docs/PERCEPTION_BINDING_CHECKPOINT_2026-09-10.md) | Exact anchor/sample/scene/time correspondence and delivered images/point bodies checked against the retained inventory; physical review remains outstanding |
 | [Reviewed-source admission](docs/PERCEPTION_ADMISSION_CHECKPOINT_2026-09-10.md) | Exact staged review contents and complete proposal accounting preserve shared interpretations; synthetic finite/open comparisons and forged-record rejections are checked |
+| [Development review preparation](docs/PERCEPTION_REHEARSAL_CHECKPOINT_2026-09-10.md) | Separate unassigned discovery folders, neutral capture navigation and equal analyst/effort instructions; actual human workflow and assisted material remain outstanding |
 
 The proposed study selects **60 scenes**, then one eligible anchor per scene, only after the
 input, method, reviewer, comparator and adjudication freeze. Two independent reviewers first

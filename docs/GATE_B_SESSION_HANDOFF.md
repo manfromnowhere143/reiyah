@@ -1,3 +1,31 @@
+# Development review preparation, 2026-09-10
+
+Read the [rehearsal checkpoint](PERCEPTION_REHEARSAL_CHECKPOINT_2026-09-10.md),
+[interface](../research/perception-rehearsal/0.1.0/README.md) and
+[proposed plan](../research/perception-rehearsal/0.1.0/plan.json) first.
+The Engine now prepares separate discovery folders, neutral capture navigation, a common
+analyst task and explicit effort accounting from a freshly bound comparison and observation
+package. Two private preparations over the same 725 previously exposed captures are
+byte-identical. All roles remain unassigned and every capture remains uninspected.
+
+All 295 repository tests and 93 measurement tests pass, including 12 new preparation checks.
+Exact source and repeat-output evidence are in the checkpoint. A wrong test
+diagnostic expectation and an unfinished documentation link were retained and corrected.
+No human review, assistance release, physical measurement, new cohort or decision occurred.
+The real open-reference unit-loss enclosure remains [-8,8]; Gate A remains unaccepted.
+
+Next: confirm independent reviewers, a competent conventional analyst, independent adjudication
+and a practical JPEG/PLY viewing workflow; preserve both discoveries before assisted inspection.
+Prepare one later packet of full annotations and anonymized predictions with identical staged
+delivery. Observe usability, supported decisions, disagreement, consequential corrections and
+all effort. This descriptive rehearsal does not alter the unselected, unrun 60-scene study.
+Offline Engine work/main integration retain explicit operator authorization. Console, research
+lanes, other owner checkouts and frozen protocols retain their own ownership and scope.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Reviewed-source admission, 2026-09-10
 
 Read the [admission checkpoint](PERCEPTION_ADMISSION_CHECKPOINT_2026-09-10.md),
