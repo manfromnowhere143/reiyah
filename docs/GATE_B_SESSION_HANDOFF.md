@@ -1,3 +1,32 @@
+# Comparison and observation binding, 2026-09-10
+
+Read the [binding checkpoint](PERCEPTION_BINDING_CHECKPOINT_2026-09-10.md),
+[interface](../research/perception-binding/0.1.0/README.md) and
+[machine record](../research/perception-binding/0.1.0/checkpoint.json) first.
+The Engine now checks exact anchor/sample/scene/time correspondence between a detector
+comparison and its observation package, and checks delivered images and lidar point bodies
+against the retained original inventory. The same two exposed development windows passed:
+725 captures, including 566 images and 159 lidar files. Two fresh private reports reproduced
+byte-for-byte. All 259 repository tests and 93 measurement tests pass, including 21 new tests.
+
+Valid resealed asset substitutes and a byte-identical neutral package at a shifted absolute
+clock are rejected. A reproduced negative-metadata-size boundary defect was corrected; the
+failing regression and earlier fixture-assertion correction remain retained. Missing evidence
+and missing detector outputs keep their distinct states. No new physical judgment was supplied.
+
+Next: version and implement admission of locked discovery, assisted proposals and adjudication
+into shared reference alternatives, requiring this exact comparison/observation binding. The
+existing reference compiler remains unchanged. Independent reviewers, a competent conventional
+comparator, adjudication and full freeze remain prerequisites to the unselected, unrun study.
+The open-reference unit-loss enclosure remains [-8,8]. Gate A is unaccepted; offline Engine
+work and main integration have separate explicit operator authorization. No deployment or
+scientific acceptance is inferred. Resolve final commit and publisher readback through Git and
+the private continuation packet; other owner checkouts and research lanes are preserved.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Successor judgment and method selection, 2026-09-10
 
 Read the [successor brief](ENGINE_SUCCESSOR_BRIEF_2026-09-10.md) and

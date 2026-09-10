@@ -1,0 +1,330 @@
+{
+  "artifact_id": "reiyah.perception-binding.checkpoint",
+  "authority": {
+    "decision_changed": "not_established",
+    "deployment_authorized": false,
+    "gate_a_operator_acceptance": "unaccepted",
+    "independent_scientific_review": "not_performed",
+    "main_integration": "operator_authorized",
+    "offline_engine": "operator_authorized",
+    "physical_reference_coverage": "not_established",
+    "reference_constraints_admitted": false
+  },
+  "checkpoint_note": {
+    "byte_size": 5775,
+    "repository_path": "docs/PERCEPTION_BINDING_CHECKPOINT_2026-09-10.md",
+    "sha256": "42714e149bbd19f3bbbcf10f6abecdd5c721b507b20db64fe9cd092ae6db0d7e"
+  },
+  "current_limits": [
+    "separately_selected_expected_input_identities_and_original_inventory",
+    "upstream_catalog_and_normalization_not_recomputed",
+    "upstream_nominal_geometry_not_recomputed",
+    "shared_parsers_projection_package_verifier_and_joined_detection_consumer",
+    "local_python_imports_jsonschema_and_image_decoder",
+    "nondelivered_reason_assertions_not_reobserved"
+  ],
+  "development": {
+    "camera_images": 566,
+    "capture_occurrences": 725,
+    "delivered_bytes": 187657462,
+    "direct_audit": {
+      "byte_size": 442,
+      "private_record": "checks/direct-result-audit/stdout.txt",
+      "sha256": "b0dfd3ac1535b7b8c2f5209b95be189a46b7072e056854585d0dadfb2c001719"
+    },
+    "direct_audit_independence": "separately structured calculation, same author and same input sources; not independent scientific review",
+    "direct_audit_source": {
+      "byte_size": 5261,
+      "private_record": "private/audit_result.py",
+      "sha256": "70682e6b332e01c2c5bd249179717e7ac88776bc407eba7ece7f284941065159"
+    },
+    "distinct_captures": 725,
+    "lidar_files": 159,
+    "lidar_point_records": 5521024,
+    "population": "same_two_previously_exposed_development_windows",
+    "reports": [
+      {
+        "byte_size": 1030066,
+        "private_record": "private/development-report-1.json",
+        "sha256": "6f97892a33494ede133b726ca785af1cf00a21e1e3dd9b20782c77bc7713b006"
+      },
+      {
+        "byte_size": 1030066,
+        "private_record": "private/development-report-2.json",
+        "sha256": "6f97892a33494ede133b726ca785af1cf00a21e1e3dd9b20782c77bc7713b006"
+      }
+    ],
+    "reports_byte_identical": true,
+    "source_content_checks": {
+      "matched": 725
+    },
+    "windows": 2
+  },
+  "implementation_files": [
+    {
+      "byte_size": 14637,
+      "repository_path": "tools/perception_binding.py",
+      "sha256": "2d4757a5ca2eb2ee81bc61a5cd208cc020d0654d8c88e8cc8facf7c47dd47d87"
+    }
+  ],
+  "interface": {
+    "byte_size": 7929,
+    "repository_path": "research/perception-binding/0.1.0/README.md",
+    "sha256": "6c35f58b5b278a992fff6c2e9fe461e55c47fc31b10cb83e5210ef8279ff72cf"
+  },
+  "lifecycle_status": "exploratory",
+  "next_action": "Version the reviewed-source admission contract, then bind locked discovery, assisted proposals and adjudication to shared reference alternatives using the exact comparison/observation binding; preserve disagreement and unresolved coverage; use synthetic records until independent human review is available",
+  "parent_commit": "9060409f7417acfb28dbe810599ad72ec88cc6af",
+  "predecessor": {
+    "byte_size": 6085,
+    "repository_path": "research/perception-engine-handoff/0.2.0/handoff.json",
+    "sha256": "c85750b4a17f52c8a86c9a1ac4f254d7b098245890064150026c5b53c6e560d7"
+  },
+  "reference_compiler_integration": "unchanged; the next reviewed-source admission consumer must require this binding",
+  "resource_observation": {
+    "general_performance_benchmark": false,
+    "maximum_resident_set_size_bytes": 255000576,
+    "other_test_processes_concurrent": true,
+    "peak_memory_footprint_bytes": 147966080,
+    "run": "development-binding-1",
+    "wall_seconds_reported_by_time": "6.02"
+  },
+  "retained_corrections": [
+    {
+      "correction": "Correct assertion to s0/s1 after inspecting the fixture; no production rule changed",
+      "finding": "Expected scene names were used where the existing synthetic metadata has scene tokens",
+      "kind": "fixture_assertion",
+      "run": "binding-tests-1"
+    },
+    {
+      "correction": "Require a bounded nonnegative integer metadata byte size; known-bad fixture now rejects BINDING_SOURCE",
+      "finding": "Matching negative metadata sizes passed an equality-only source join",
+      "kind": "implementation_boundary",
+      "run": "negative-metadata-regression"
+    }
+  ],
+  "runtime": {
+    "byteorder": "little",
+    "jsonschema": "4.26.0",
+    "pillow": {
+      "decoder_module_sha256": "45c3360f256bf7776887c68233cff09d62880d0d0472044cf4424e54870c5254",
+      "jpeg_version": "6.2",
+      "libjpeg_turbo_version": "3.1.4.1",
+      "truncated_image_tolerance": false,
+      "version": "12.3.0"
+    },
+    "platform": "darwin",
+    "python": "3.14.2"
+  },
+  "source_closure": {
+    "research/perception-decision/0.1.0/input.schema.json": "525c23d734a594d8c64ba3128c454314348345b84bebc615c1732e89750847a0",
+    "tools/perception_binding.py": "2d4757a5ca2eb2ee81bc61a5cd208cc020d0654d8c88e8cc8facf7c47dd47d87",
+    "tools/perception_decision/__init__.py": "53d4c1fb5ce4982c2dfec949b7fa84ec67c52496eb445782fee10b0b6f6bde0f",
+    "tools/perception_decision/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "tools/perception_decision/checker.py": "64e342e00a4c2683f9db5fa2cb8213959a357bd5c3099296a090564527134da4",
+    "tools/perception_decision/cli.py": "419fa07442ebf2ff4ea9484ad0f7b235aab291c50eee52d5cb0374209cf7b7ee",
+    "tools/perception_decision/contract.py": "aed6e16f0d2b09b85abccbf4aeac5e74abb42e699c4ce8d9be34073523327134",
+    "tools/perception_decision/kernel.py": "7a5a630c9265108cc0d0a1c3e065292d62425b3a0cbfa7ae0ec942b9233f5ecc",
+    "tools/perception_decision/nuscenes.py": "ff5f6bd5509fcd656b2420af7b531ae601b12e77975270209dbb1dbea92f6eb4",
+    "tools/perception_discovery/__init__.py": "de89355206dff0045cf0c0931ed371bed7d02dab8f1d0c839ed7388411bdea8d",
+    "tools/perception_discovery/__main__.py": "f7115e75abaf1a8735c1557b0ec869e58daf2d10de1c6aedb5ed718c4f6536e1",
+    "tools/perception_discovery/custody.py": "0108db4755b3e9ea8215d8497f3b6c6a66426817c8ff9070ae6f53873995eb9f",
+    "tools/perception_discovery/records.py": "e182a0ec010ff3ccd77936e48724427ae3e97b2d1f94a3074d51fc530a8f04e0",
+    "tools/perception_geometry/__init__.py": "f48c9f24aa73ec8ed3614a9bcb05cb041d5fd6eeee7b664303d15cf432733f00",
+    "tools/perception_geometry/__main__.py": "67a8a65c48401e1309cdd8d42ac824a149a2534bd1697db3d87dc901bd4620ef",
+    "tools/perception_geometry/algebra.py": "72c3786489c18175a007f531410884311bbc1dee2ee2831d41ba9cd0a9ea13f0",
+    "tools/perception_geometry/bind.py": "1f52a269c4e4b94b6b9fe33c048a50b1a5c2e4b382fe1687d6dad0d93840fa69",
+    "tools/perception_inputs/__init__.py": "72a4b32a5dbeea671e7fc3589209cab0a8a7f8badab26d496e70e10edc06c4d4",
+    "tools/perception_inputs/__main__.py": "220f2a8e9baf67787d07a17f04b835c3813d2ce18ab7492ec7bc460f663fbe16",
+    "tools/perception_inputs/catalog.py": "908106f97eaad6326407a47fc3da0ff0e483d70ba9687bb84d028d1e69e0531c",
+    "tools/perception_inputs/clock.py": "1de238923caf890a748a9032481f86cdbdda355b5eef32264a994b9a357e0a5a",
+    "tools/perception_inputs/sensors.py": "1fec7a087c7a58b233096a01ef7ecf34f06085aa73af5da3eec043db579c711c",
+    "tools/perception_inputs/source_io.py": "65da8ba76d03aed2e3ac556729e2ea19fc12996c808805bb173bc782c4e0af76",
+    "tools/perception_observation/__init__.py": "e83dc0acf86c213309235c925ddd811b307c4232d64756ebcd9edd2e5621e818",
+    "tools/perception_observation/__main__.py": "0d9349224e4964e181e361062bbe2315142d5b651aab20808e08ef4f79822ec2",
+    "tools/perception_observation/contract.py": "ad507712773a990a9ab1a68817761a8d87c48c0a9c4ef16ec3d9623b34929545",
+    "tools/perception_observation/formats.py": "29ce13adf643e8f063dea9ab7f3e495bfa63b24ff7a374e93842cfe762a1050a",
+    "tools/perception_observation/package.py": "059251f1124b57003707767663066a6898fed0888ba3ce14abdaaa65f3d75991",
+    "tools/perception_reference.py": "77ef5517f5febbfdaa7bb0ea7394806282548efa610c173cba58993e99fc9235",
+    "tools/perception_windows/__init__.py": "a689128ed8c53650ccc854c5bd1faa1ba1181fd0e8e181b91e92d417c48893dd",
+    "tools/perception_windows/__main__.py": "e4507826d40c9cd436f788b2664f0d2bf7acbb6910d121d3af2fd90c83252283",
+    "tools/perception_windows/payloads.py": "c3cc9dd20a4f76df08575a684f8cbd0f1e1f51e796d5a6cb1903f484dfc4515f",
+    "tools/perception_windows/timeline.py": "b256bdb2afeb3e0c563b4e53abe5aeaa6581a0b2ff6309690734052d7b093209"
+  },
+  "study": {
+    "adjudication": "not_secured",
+    "cohort": null,
+    "conventional_comparator": "not_secured",
+    "human_judgments_created": 0,
+    "independent_reviewers": 0,
+    "new_detector_performance_result": false,
+    "previous_open_unit_loss_enclosure": [
+      "-8",
+      "8"
+    ],
+    "seed": null
+  },
+  "test_file": {
+    "byte_size": 23029,
+    "repository_path": "tests/test_perception_binding.py",
+    "sha256": "596efa394603121ef813aedda4abe39cefcfe9226638d60615c861320bec4174"
+  },
+  "validation": {
+    "final_all_tests_pass": true,
+    "gate_a_release_replay": "not_run; no Gate A acceptance or release claim",
+    "gate_b_report": {
+      "byte_size": 12294,
+      "private_record": "private/gate-b-report.json",
+      "sha256": "44c21d62217bab55b791946d75743d62bbde74dd31ac4fbb189a8b43a8a4f18f"
+    },
+    "gate_b_scope": "source and retained-evidence check before final documentation; final documentation check is retained separately in private delivery",
+    "historical_experiments_replayed": 0,
+    "historical_transcripts_hash_verified": 52,
+    "measurement_tests": 93,
+    "new_binding_tests": 21,
+    "repository_tests": 259,
+    "runs": [
+      {
+        "exit_code": 1,
+        "receipt": {
+          "byte_size": 865,
+          "private_record": "checks/binding-tests-1/receipt.json",
+          "sha256": "c0f56d173def6710a81811b2c88746eed78933051d596475f540f1fdc8f279f3"
+        },
+        "run": "binding-tests-1",
+        "source_snapshot": {
+          "byte_size": 35521,
+          "private_record": "private/binding-tests-1.sources.json",
+          "sha256": "1ceae82b5ed985ad68c6f1991bb01e04ea09a6e4bf4495029daa8dcb78c91117"
+        }
+      },
+      {
+        "exit_code": 0,
+        "receipt": {
+          "byte_size": 865,
+          "private_record": "checks/binding-tests-2/receipt.json",
+          "sha256": "ef9a9109e65986bc285f9bc55958ec07b39dceb885c37937786b0f01febd0610"
+        },
+        "run": "binding-tests-2",
+        "source_snapshot": {
+          "byte_size": 35521,
+          "private_record": "private/binding-tests-2.sources.json",
+          "sha256": "b64ce2004b1846c03f53e7609b6e7150131ce841be0bc331a48cc520b8da4903"
+        }
+      },
+      {
+        "exit_code": 1,
+        "receipt": {
+          "byte_size": 952,
+          "private_record": "checks/negative-metadata-regression/receipt.json",
+          "sha256": "52bd7be03b8dd1a6c3e88c9c939f5b845a910956c87d164f8f7753b11c6fe462"
+        },
+        "run": "negative-metadata-regression",
+        "source_snapshot": {
+          "byte_size": 35521,
+          "private_record": "private/negative-metadata-regression.sources.json",
+          "sha256": "97197087291dd44211a2efba6df88124362a5c16b88aba7e89afccd1eac99a7f"
+        }
+      },
+      {
+        "exit_code": 0,
+        "receipt": {
+          "byte_size": 865,
+          "private_record": "checks/binding-tests-3/receipt.json",
+          "sha256": "8eb1c26185eb5eba656ca7478489277fd9c2ceab193c05496a8d36e6fa0d97e7"
+        },
+        "run": "binding-tests-3",
+        "source_snapshot": {
+          "byte_size": 35521,
+          "private_record": "private/binding-tests-3.sources.json",
+          "sha256": "e3eeab3b64161edf416f68ce45a85e4c6185fc654817e822a1c0d054f42f89b0"
+        }
+      },
+      {
+        "exit_code": 0,
+        "receipt": {
+          "byte_size": 871,
+          "private_record": "checks/repository-tests/receipt.json",
+          "sha256": "b29eb42fa6c8772383772404d2d48a38e8a67888c6ba86c96c419ec69a210dda"
+        },
+        "run": "repository-tests",
+        "source_snapshot": {
+          "byte_size": 35521,
+          "private_record": "private/repository-tests.sources.json",
+          "sha256": "e3eeab3b64161edf416f68ce45a85e4c6185fc654817e822a1c0d054f42f89b0"
+        }
+      },
+      {
+        "exit_code": 0,
+        "receipt": {
+          "byte_size": 871,
+          "private_record": "checks/measurement-tests/receipt.json",
+          "sha256": "06ac33d2186c7e08ef049601e3d8a221b55d98b7268c89a6f04b8de5697f1768"
+        },
+        "run": "measurement-tests",
+        "source_snapshot": {
+          "byte_size": 35521,
+          "private_record": "private/measurement-tests.sources.json",
+          "sha256": "e3eeab3b64161edf416f68ce45a85e4c6185fc654817e822a1c0d054f42f89b0"
+        }
+      },
+      {
+        "exit_code": 0,
+        "receipt": {
+          "byte_size": 919,
+          "private_record": "checks/gate-b-check/receipt.json",
+          "sha256": "3dc2420d3558a1928747276b882ab17768229b8a7777f86ff2f4893fb5da349c"
+        },
+        "run": "gate-b-check",
+        "source_snapshot": {
+          "byte_size": 35521,
+          "private_record": "private/gate-b-check.sources.json",
+          "sha256": "e3eeab3b64161edf416f68ce45a85e4c6185fc654817e822a1c0d054f42f89b0"
+        }
+      },
+      {
+        "exit_code": 0,
+        "receipt": {
+          "byte_size": 1222,
+          "private_record": "checks/development-binding-1/receipt.json",
+          "sha256": "d9d092780f727c7791a93347579268797f24521ff21137bed82ae8ff332f3c7b"
+        },
+        "run": "development-binding-1",
+        "source_snapshot": {
+          "byte_size": 35521,
+          "private_record": "private/development-binding-1.sources.json",
+          "sha256": "e3eeab3b64161edf416f68ce45a85e4c6185fc654817e822a1c0d054f42f89b0"
+        }
+      },
+      {
+        "exit_code": 0,
+        "receipt": {
+          "byte_size": 1189,
+          "private_record": "checks/development-binding-2/receipt.json",
+          "sha256": "384e3578aa49eb187373e66a66d1c440a448bcfcfe80c40cb34a0e11adc9122e"
+        },
+        "run": "development-binding-2",
+        "source_snapshot": {
+          "byte_size": 35521,
+          "private_record": "private/development-binding-2.sources.json",
+          "sha256": "e3eeab3b64161edf416f68ce45a85e4c6185fc654817e822a1c0d054f42f89b0"
+        }
+      },
+      {
+        "exit_code": 0,
+        "receipt": {
+          "byte_size": 864,
+          "private_record": "checks/direct-result-audit/receipt.json",
+          "sha256": "3ad2de3ccac9c6a66c1a7c7fd131080ae2af4472e8fc58b89e3fff79ea062741"
+        },
+        "run": "direct-result-audit",
+        "source_snapshot": {
+          "byte_size": 35693,
+          "private_record": "private/direct-result-audit.sources.json",
+          "sha256": "1f788610cfe93ca283eb2aba26ebc493c78796af1090973bd0fcbf9046fab1e9"
+        }
+      }
+    ]
+  },
+  "version": "0.1.0"
+}
