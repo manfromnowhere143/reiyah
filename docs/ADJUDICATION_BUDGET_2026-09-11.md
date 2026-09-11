@@ -4,11 +4,34 @@ Document ID: `reiyah.adjudication-budget.2026-09-11`
 
 Version: `0.1.0`
 
-Lifecycle status: `proposed`
+Lifecycle status: `corrected`
 
 Lane: independent research, parallel to the Engine. Changes no released byte, no frozen protocol,
 no Engine file and no owner checkout. Creates no acceptance, no reviewer and no scientific
 authority. Gate A remains unaccepted and the physical study has not run.
+
+## Correction of 11 September 2026, read first
+
+The Engine lane published a constructed counterexample that refutes this document's central count.
+Eight disjoint copies per anchor at two half weight anchors, **every one of the sixteen candidate
+objects confirmed present**, and the enclosure stays at its full `[-8, 8]` width. This lane rebuilt
+that construction in its own packet format and its producer and checker reproduce `[-8, 8]`
+independently, so the two implementations agree and the refutation stands.
+
+**Withdrawn as stated:** that sixteen adjudications close the comparison, and that `r` is an upper
+bound on the number of judgements. The reasoning behind the second, "since `r` additions cannot
+yield more than `r` gain", was the error: the gain also moves with disputed objects near the **base**
+that no addition can reach, so confirming everything an addition could match settles nothing.
+
+**Retained:** the threshold law and the stopping rule. `tau = (t + b*r)/(a + b)` is exact, and review
+may halt as soon as the gain is placed on one side of it. What is not available is a count derived
+from `r`. The number of judgements depends on the reference model's structure and is unknown until
+discovery enumerates the candidate objects.
+
+The per-addition arithmetic below is retained only for the declared special case in which each
+addition's conversion is settled independently, meaning no disputed object reachable by the base can
+change the matching. Everything else in this document is unchanged, including the withdrawn counts,
+so the record shows what was published.
 
 ## The question and the result
 

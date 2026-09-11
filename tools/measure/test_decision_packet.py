@@ -501,3 +501,75 @@ class ConversionCorrection(unittest.TestCase):
         corrected = Fraction(self.load("megvii-mapillary-added030.json")["conversion_rate"])
         self.assertEqual(Fraction(budget["conversion_prior"]["value"]), corrected)
 
+
+class SixteenObjectRefutation(unittest.TestCase):
+    """The Engine lane's counterexample, rebuilt here and agreeing exactly.
+
+    Confirming every candidate object an addition could match leaves the enclosure
+    at full width, because the gain also moves with disputed objects near the base
+    that no addition can reach. This refutes the withdrawn claim that r
+    adjudications close the comparison, and it is pinned so the claim cannot return.
+    """
+
+    @staticmethod
+    def anchor_case(anchor_id, copies=8):
+        position = {}
+        base, added, objects = [], [], []
+        for k in range(copies):
+            offset = Fraction(6 * k)
+            base.append({"id": f"b{k}", "class": "car"}); position[f"b{k}"] = offset
+            added.append({"id": f"c{k}", "class": "car"}); position[f"c{k}"] = offset + 3
+            objects.append({"id": f"k{k}", "class": "car"}); position[f"k{k}"] = offset + Fraction(3, 2)
+            objects.append({"id": f"d{k}", "class": "car"}); position[f"d{k}"] = offset - 1
+
+        def edges(present):
+            return [[d["id"], o] for d in base + added for o in present
+                    if abs(position[d["id"]] - position[o]) < 2]
+
+        known = [f"k{k}" for k in range(copies)]
+        every = sorted(known + [f"d{k}" for k in range(copies)])
+        return {"schema_id": "reiyah.decision-packet.case", "anchor_id": anchor_id,
+                "loss": {"false_negative": "1", "false_positive": "1"},
+                "base_detections": base, "added_detections": added, "objects": objects,
+                "worlds": [{"world_id": "disputed_absent", "objects_present": known,
+                            "edges": edges(known)},
+                           {"world_id": "disputed_present", "objects_present": every,
+                            "edges": edges(every)}]}
+
+    def test_every_candidate_object_confirmed_leaves_the_enclosure_at_full_width(self):
+        lower = upper = Fraction(0)
+        for name in ("anchor-A", "anchor-B"):
+            case = self.anchor_case(name)
+            report = producer.build(case)
+            checker.verify(case, report)
+            self.assertEqual(report["retained_additions"], 8)
+            lower += Fraction(1, 2) * Fraction(report["enclosure"]["lower"])
+            upper += Fraction(1, 2) * Fraction(report["enclosure"]["upper"])
+        self.assertEqual((lower, upper), (Fraction(-8), Fraction(8)),
+                         "must reproduce the Engine lane's published [-8, 8]")
+
+    def test_the_candidate_objects_really_are_confirmed_in_both_worlds(self):
+        case = self.anchor_case("anchor-A")
+        for world in case["worlds"]:
+            for k in range(8):
+                self.assertIn(f"k{k}", world["objects_present"])
+
+    def test_the_uncertainty_is_unreachable_from_every_addition(self):
+        """No addition has an edge to a disputed object, which is the whole point."""
+        case = self.anchor_case("anchor-A")
+        added = {entry["id"] for entry in case["added_detections"]}
+        present_world = case["worlds"][1]
+        for detection, obj in present_world["edges"]:
+            if obj.startswith("d"):
+                self.assertNotIn(detection, added)
+
+    def test_the_withdrawn_upper_bound_is_false(self):
+        """r adjudications do not bound the work: gain moves without any addition edge."""
+        case = self.anchor_case("anchor-A")
+        report = producer.build(case)
+        absent = next(w for w in report["worlds"] if w["world_id"] == "disputed_absent")
+        present = next(w for w in report["worlds"] if w["world_id"] == "disputed_present")
+        self.assertEqual(absent["tp_augmented"] - absent["tp_base"], 0)
+        self.assertEqual(present["tp_augmented"] - present["tp_base"], 8)
+        self.assertNotEqual(absent["delta"], present["delta"])
+

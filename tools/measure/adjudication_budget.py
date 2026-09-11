@@ -19,14 +19,27 @@ counts exceed one.
 The expected cost follows once a conversion prior is supplied, and this program
 takes that prior from the lane's own measured conversion rate rather than a guess.
 
-Declared model, stated because it is an approximation. A reviewer adjudicates
-objects, not detections, and the gain is a maximum matching over the admitted
-objects rather than a sum of independent per-addition outcomes. Two retained
-additions can still compete for one object, because suppression separates an
-addition from the base rather than from another addition. The sequential model
-below treats each retained addition as one conversion trial; it is exact when no
-two retained additions can match the same object and is an upper bound on the
-number of judgements otherwise, since r additions cannot yield more than r gain.
+Correction of 11 September 2026, read before using any count below.
+
+Version 0.1.0 of this module claimed that r adjudications close the comparison and
+that r is an upper bound on the number of judgements, "since r additions cannot
+yield more than r gain". **Both claims are wrong and are withdrawn.** The Engine
+lane published a constructed counterexample, reproduced independently by this
+lane's own producer and checker: eight disjoint copies per anchor at two half
+weight anchors, every one of the sixteen candidate objects confirmed present, and
+the enclosure stays at its full [-8,8] width. The uncertainty that moves the gain
+sits in disputed objects near the base which no addition can reach, so confirming
+everything an addition could match settles nothing.
+
+What survives is the stopping rule, not the count. The threshold law below is exact
+and unaffected: review may halt as soon as the gain is placed on one side of tau.
+How many judgements that takes is a property of the reference model's structure,
+not of r, and it is unknown until discovery enumerates the candidate objects.
+
+The per-addition trial arithmetic is therefore retained only for the declared
+special case in which each addition's conversion is settled independently, that is
+when no disputed object reachable by the base can change the matching. It is not a
+general budget and must not be quoted as one.
 
 Exact rational arithmetic. Standard library only. No data is read.
 """
@@ -104,6 +117,9 @@ def main(argv):
     report = {"artifact_id": "reiyah.decision-evidence.adjudication-budget", "version": "0.1.0",
               "loss": {"false_negative": str(a), "false_positive": str(b),
                        "tolerance": str(tolerance)},
+              "count_status": ("withdrawn as a general budget; the per-addition counts below apply only "
+                               "to the declared independent-conversion special case, see the module docstring "
+                               "and docs/ADJUDICATION_BUDGET_2026-09-11.md"),
               "conversion_prior": {"value": str(prior), "decimal": round(float(prior), 6),
                                    "source": "this lane's corrected full-split measurement at the 0.30 floor, base held fixed",
                                    "status": "a prior, not a property of these anchors"},
@@ -149,13 +165,16 @@ def main(argv):
             "expected_total_judgements": round(float(sum(e for e, _s in rows)), 3),
             "probability_supported_each": [round(float(s), 6) for _e, s in rows]})
     report["reading"] = (
-        "review does not have to measure the gain. It has to place the gain on one side of tau, "
-        "which ends as soon as either stopping count is reached. The budget is therefore bounded "
-        "before any judgement is made, and its expected size follows from a measured conversion rate")
+        "review does not have to measure the gain. It has to place the gain on one side of tau, and "
+        "that stopping rule is exact. The number of judgements it takes is not bounded by r: "
+        "confirming every candidate object can leave the enclosure at full width when disputed "
+        "objects near the base can change the matching. The counts here hold only for the declared "
+        "independent-conversion special case")
     report["non_claims"] = (
-        "a declared sequential model over retained additions, not a reviewer protocol, not a "
-        "physical reference, and not a claim that any person is available. The prior is measured on "
-        "a different population and is falsifiable by the review it budgets")
+        "a declared sequential model over retained additions in a special case, not a general "
+        "adjudication budget, not a reviewer protocol, not a physical reference, and not a claim "
+        "that any person is available. The prior is measured on a different population and is "
+        "falsifiable by the review it budgets")
     json.dump(report, sys.stdout, indent=2, sort_keys=True)
     sys.stdout.write("\n")
     return 0
