@@ -1,0 +1,65 @@
+{
+  "artifact_id": "reiyah.decision-evidence.addition-monotonicity",
+  "conclusion": "the addition decision under this loss is a one-dimensional comparison of the conversion rate against b/(a+b). A recall-monotone criterion cannot express it, and a detection benchmark publishes neither the conversion rate nor the operational penalty ratio, so a benchmark improvement does not determine the addition decision in either direction",
+  "disagreements": {
+    "count_by_penalty_ratio": {
+      "1": 201,
+      "2": 201,
+      "4": 201
+    },
+    "meaning": "cases where recall does not decrease, so a recall-monotone rule says add, while the additive loss worsens",
+    "of_total_cases": 404,
+    "why_the_counts_coincide_here": "at these node counts the only augmentations that worsen the loss are those with zero gain, and a zero gain worsens it at every penalty ratio. The ratio dependence needs more retained additions than an exhaustive graph enumeration can reach, so it is shown separately below over the realisable gain and r pairs"
+  },
+  "exhaustive_cases": 404,
+  "facts_verified": [
+    "maximum matching never decreases when detections are added to a preserved base",
+    "the gain never exceeds the number of retained additions",
+    "sign(delta) equals sign(conversion - b/(a+b)) at every enumerated graph"
+  ],
+  "non_claims": "this is an exact statement about the declared additive loss and the declared matching. It is not a claim about mAP, which penalises precision through ranking and is not recall-monotone, and it carries no planner, safety or crash-risk consequence",
+  "realisable_gain_and_r": {
+    "pairs_enumerated": 90,
+    "reading": "the count of worsening pairs falls as the penalty ratio rises, which is the ratio dependence the graph enumeration is too small to expose",
+    "realisability": "every pair with 0 <= gain <= r is achieved by a graph: give `gain` additions their own object unreachable from the base, and leave the rest isolated",
+    "threshold_by_penalty_ratio": {
+      "1": "1/2",
+      "2": "1/3",
+      "4": "1/5"
+    },
+    "worsening_pairs_by_penalty_ratio": {
+      "1": 48,
+      "2": 34,
+      "4": 23
+    }
+  },
+  "sizes_enumerated": [
+    {
+      "added": 1,
+      "base": 1,
+      "objects": 1
+    },
+    {
+      "added": 1,
+      "base": 1,
+      "objects": 2
+    },
+    {
+      "added": 1,
+      "base": 2,
+      "objects": 2
+    },
+    {
+      "added": 2,
+      "base": 1,
+      "objects": 2
+    },
+    {
+      "added": 2,
+      "base": 2,
+      "objects": 2
+    }
+  ],
+  "version": "0.1.0",
+  "violations": []
+}

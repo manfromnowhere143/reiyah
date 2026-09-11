@@ -304,3 +304,68 @@ class ReferenceResolution(unittest.TestCase):
                 checked += 1
         self.assertGreater(checked, 8)
 
+class ConversionRate(unittest.TestCase):
+    """The retained full-split measurements, and the arithmetic that reads them."""
+
+    @staticmethod
+    def retained():
+        import glob
+        import json
+        import os
+        root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..",
+                            "evidence", "decision-packet")
+        out = []
+        for path in sorted(glob.glob(os.path.join(root, "conversion-*.json"))):
+            with open(path, "r", encoding="utf-8") as handle:
+                out.append(json.load(handle))
+        return out
+
+    def test_every_retained_measurement_is_internally_consistent(self):
+        entries = self.retained()
+        self.assertGreaterEqual(len(entries), 5)
+        for entry in entries:
+            population = entry["population"]
+            gain = entry["true_positive_gain"]
+            self.assertEqual(gain, population["tp_augmented"] - population["tp_base"])
+            self.assertTrue(0 <= gain <= population["retained_additions"])
+            self.assertEqual(Fraction(entry["conversion_rate"]),
+                             Fraction(gain, population["retained_additions"]))
+
+    def test_improvement_flags_match_the_threshold_law(self):
+        for entry in self.retained():
+            conversion = Fraction(entry["conversion_rate"])
+            for ratio_text, flag in entry["improves_loss_at"].items():
+                a, b = Fraction(int(ratio_text)), Fraction(1)
+                self.assertEqual(flag, conversion > b / (a + b),
+                                 f"{entry['base_detector']}+{entry['added_detector']} at {ratio_text}")
+
+    def test_direction_and_operating_point_both_move_the_answer(self):
+        """The two facts the findings lead with, read off the retained bytes."""
+        by_key = {(e["base_detector"], e["added_detector"], e["rule"]["score_floor"]):
+                  Fraction(e["conversion_rate"]) for e in self.retained()}
+        forward = by_key[("megvii", "mapillary", "3/10")]
+        reverse = by_key[("mapillary", "megvii", "3/10")]
+        self.assertLess(forward, reverse)
+        loose = by_key[("megvii", "mapillary", "1/10")]
+        strict = by_key[("megvii", "mapillary", "1/2")]
+        self.assertLess(loose, forward)
+        self.assertLess(forward, strict)
+        # the operating point moves the required penalty ratio further than the modality does
+        span_floor = (1 / loose - 1) / (1 / strict - 1)
+        cross = by_key[("megvii", "pointpillars", "3/10")]
+        span_modality = max(forward, cross) / min(forward, cross)
+        self.assertGreater(span_floor, span_modality)
+
+    def test_exhaustive_monotonicity_record_has_no_violations(self):
+        import json
+        import os
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..",
+                            "evidence", "decision-packet", "addition-monotonicity.json")
+        with open(path, "r", encoding="utf-8") as handle:
+            record = json.load(handle)
+        self.assertEqual(record["violations"], [])
+        self.assertGreater(record["exhaustive_cases"], 400)
+        counts = record["realisable_gain_and_r"]["worsening_pairs_by_penalty_ratio"]
+        values = [counts[k] for k in sorted(counts, key=lambda x: Fraction(x))]
+        self.assertEqual(values, sorted(values, reverse=True))
+

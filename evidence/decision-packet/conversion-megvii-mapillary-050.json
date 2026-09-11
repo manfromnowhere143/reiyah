@@ -1,0 +1,58 @@
+{
+  "added_detector": "mapillary",
+  "artifact_id": "reiyah.decision-evidence.conversion-rate",
+  "base_detector": "megvii",
+  "conversion_decimal": 0.669237,
+  "conversion_rate": "5380/8039",
+  "elapsed_seconds": 16.78,
+  "improves_loss_at": {
+    "1": true,
+    "2": true,
+    "4": true,
+    "9": true
+  },
+  "inputs": {
+    "gt_val_cache.json": "sha256:7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd",
+    "mapillary_val.json": "sha256:f948e9778fb9a332d748f7e504fbade04f0c00c2699d7b0af757cacdbd567e99",
+    "megvii_val.json": "sha256:e7a995c31692ac95a86b56208e0b5d82a4ab908df8d0a9b9474d70adb693eab4"
+  },
+  "inputs_unchanged_across_the_run": true,
+  "peak_memory_mb": 1664.6,
+  "population": {
+    "base_detections": 59832,
+    "camera_before_suppression": 48443,
+    "keyframes": 5953,
+    "objects": 134565,
+    "retained_additions": 16078,
+    "tp_augmented": 64884,
+    "tp_base": 54124
+  },
+  "rule": {
+    "classes": [
+      "barrier",
+      "bicycle",
+      "bus",
+      "car",
+      "construction_vehicle",
+      "motorcycle",
+      "pedestrian",
+      "traffic_cone",
+      "trailer",
+      "truck"
+    ],
+    "match_radius_m": "2",
+    "matching": "maximum same-class one-to-one, per keyframe",
+    "max_range_m": "50",
+    "score_floor": "1/2",
+    "suppression_radius_m": "2"
+  },
+  "scope": "one declared rule on one public split with released detector outputs, against the retained filtered annotation cache. Reference relative, descriptive, no sampling statement, and not a claim about any deployed stack",
+  "threshold_by_penalty_ratio": {
+    "a_over_b_1": "1/2",
+    "a_over_b_2": "1/3",
+    "a_over_b_4": "1/5",
+    "a_over_b_9": "1/10"
+  },
+  "true_positive_gain": 10760,
+  "version": "0.1.0"
+}
