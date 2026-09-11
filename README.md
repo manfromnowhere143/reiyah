@@ -17,6 +17,8 @@ judgments have been supplied. Source binding, equal analyst inputs and checked c
 implemented; a changed engineering decision and an advantage over conventional analysis remain
 unproven. The [11 September review](docs/ENGINE_CREDIBILITY_REVIEW_2026-09-11.md) makes those
 obligations, the current computational limits and relevant prior work explicit.
+The new [observation-cost example](research/perception-review-cost/0.1.0/README.md) shows why
+counting retained additions does not budget the observations needed to assess them.
 
 HARBOR is the proposed research program: **Human-Automation Readiness, Belief & Operational
 Risk**. Its broader scope connects object-level belief, readiness, recoverability, joint silent

@@ -1,3 +1,30 @@
+# Observation cost and the shared decision, 2026-09-11
+
+Read the [synthetic query-cost example](../research/perception-review-cost/0.1.0/README.md) and
+[verification](../research/perception-review-cost/0.1.0/verification.json). One retained addition
+can require two exact object-presence queries in the specified worst-case construction, even
+with its associated object already confirmed. Matching gain is bounded by the addition count;
+physical discovery and review effort are not bounded by that identity.
+
+A standard-library calculation minimizes worst-case query depth over the permitted observation
+trees for 1, 2, 4 and 8 disputed base-only objects. Two isolated invocations reproduce the same
+3,270 bytes. The unchanged Engine and its separate certificate checker confirm all four worlds
+of the two-object case; an omitted permitted world is rejected. The actual 9/7 addition counts
+and half weights imply a joint improvement criterion of total gain at least 9, not two separate
+anchor decisions. This arithmetic supplies no observed gain, transfer prior or review prediction.
+
+No core algorithm, physical judgment, study protocol or owner checkout changed. Prior tests
+remain prior evidence; no full-suite or historical-experiment replay is claimed. The real
+comparison remains [-8,8], the 60-scene study remains unselected/unrun, and Gate A is unaccepted.
+Next: actual independent discovery, common staged evidence, conventional analysis and
+adjudication; record what each observation resolves and all effort. Do not promise a 16-judgment
+budget. A potential unit-propagation optimization is unimplemented and remains secondary to
+valid reference evidence. Offline Engine/main integration authority persists.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Reader and mathematical review, 2026-09-11
 
 Read the [current credibility review](ENGINE_CREDIBILITY_REVIEW_2026-09-11.md) and

@@ -1,0 +1,140 @@
+{
+  "artifact_id": "reiyah.perception-review-cost.synthetic-calculation",
+  "cases": [
+    {
+      "candidate_evidence_identical_in_every_world": true,
+      "candidate_to_known_object_edge": [
+        "added",
+        "A"
+      ],
+      "disputed_base_only_objects": 1,
+      "minimum_worst_case_exact_presence_queries": 1,
+      "possible_unit_loss_differences": [
+        -1,
+        1
+      ],
+      "retained_additions": 1
+    },
+    {
+      "all_worlds": [
+        {
+          "augmented_tp": 1,
+          "base_tp": 1,
+          "delta": -1,
+          "loss_augmented": 1,
+          "loss_base": 0,
+          "presence": [
+            false,
+            false
+          ]
+        },
+        {
+          "augmented_tp": 2,
+          "base_tp": 1,
+          "delta": 1,
+          "loss_augmented": 0,
+          "loss_base": 1,
+          "presence": [
+            false,
+            true
+          ]
+        },
+        {
+          "augmented_tp": 2,
+          "base_tp": 1,
+          "delta": 1,
+          "loss_augmented": 0,
+          "loss_base": 1,
+          "presence": [
+            true,
+            false
+          ]
+        },
+        {
+          "augmented_tp": 2,
+          "base_tp": 1,
+          "delta": 1,
+          "loss_augmented": 1,
+          "loss_base": 2,
+          "presence": [
+            true,
+            true
+          ]
+        }
+      ],
+      "candidate_evidence_identical_in_every_world": true,
+      "candidate_to_known_object_edge": [
+        "added",
+        "A"
+      ],
+      "disputed_base_only_objects": 2,
+      "minimum_worst_case_exact_presence_queries": 2,
+      "possible_unit_loss_differences": [
+        -1,
+        1
+      ],
+      "retained_additions": 1
+    },
+    {
+      "candidate_evidence_identical_in_every_world": true,
+      "candidate_to_known_object_edge": [
+        "added",
+        "A"
+      ],
+      "disputed_base_only_objects": 4,
+      "minimum_worst_case_exact_presence_queries": 4,
+      "possible_unit_loss_differences": [
+        -1,
+        1
+      ],
+      "retained_additions": 1
+    },
+    {
+      "candidate_evidence_identical_in_every_world": true,
+      "candidate_to_known_object_edge": [
+        "added",
+        "A"
+      ],
+      "disputed_base_only_objects": 8,
+      "minimum_worst_case_exact_presence_queries": 8,
+      "possible_unit_loss_differences": [
+        -1,
+        1
+      ],
+      "retained_additions": 1
+    }
+  ],
+  "evidence_kind": "synthetic",
+  "expected_human_effort": "not_established",
+  "physical_judgments": "not_measured",
+  "query": "Reveal one disputed object presence bit exactly; all other operands fixed.",
+  "version": "0.1.0",
+  "weighted_cohort_arithmetic": {
+    "example": {
+      "anchor_deltas": [
+        5,
+        -3
+      ],
+      "cohort_preference": "prefer_augmented",
+      "gains": [
+        7,
+        2
+      ],
+      "weighted_delta": 1
+    },
+    "false_negative_penalty": "1",
+    "false_positive_penalty": "1",
+    "improvement_supported_iff_total_gain_at_least": 9,
+    "limit": "Possible integer gains only; no observed gains, priors or review outcomes.",
+    "retained_additions": [
+      9,
+      7
+    ],
+    "tolerance": "1/10",
+    "weighted_delta": "gain_1 + gain_2 - 8",
+    "weights": [
+      "1/2",
+      "1/2"
+    ]
+  }
+}

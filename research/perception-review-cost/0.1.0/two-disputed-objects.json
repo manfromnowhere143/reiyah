@@ -1,0 +1,110 @@
+{
+  "anchors": [
+    {
+      "additions": {
+        "state": "observed",
+        "value": [
+          {
+            "id": "added-1",
+            "record_sha256": "ec6486c32fa954bf314318a263685b3279b195dda3b55b21b2888aa3a1dda0d7"
+          }
+        ]
+      },
+      "base": {
+        "state": "observed",
+        "value": [
+          {
+            "id": "base-1",
+            "record_sha256": "81cc895ef30f60af8ecb51c5155279bdb93f8dab8e54bc21ba1e9228b6e42ba3"
+          }
+        ]
+      },
+      "id": "anchor-1",
+      "reference": {
+        "edges": [
+          {
+            "detection": "base-1",
+            "object": "known",
+            "when": []
+          },
+          {
+            "detection": "base-1",
+            "object": "disputed-0",
+            "when": []
+          },
+          {
+            "detection": "base-1",
+            "object": "disputed-1",
+            "when": []
+          },
+          {
+            "detection": "added-1",
+            "object": "known",
+            "when": []
+          }
+        ],
+        "objects": [
+          {
+            "id": "known",
+            "when": []
+          },
+          {
+            "id": "disputed-0",
+            "when": [
+              {
+                "value": true,
+                "variable": "b0_present"
+              }
+            ]
+          },
+          {
+            "id": "disputed-1",
+            "when": [
+              {
+                "value": true,
+                "variable": "b1_present"
+              }
+            ]
+          }
+        ],
+        "state": "finite"
+      },
+      "weight": {
+        "denominator": "1",
+        "numerator": "1"
+      }
+    }
+  ],
+  "artifact_id": "reiyah.perception-decision.input",
+  "assumptions": [
+    "Synthetic finite graph; no physical observation or human judgment.",
+    "Coordinates: base 0, addition 3, known object 1.5, disputed objects -1 and -0.5; same class and strict 2 m eligibility.",
+    "Known object, class and coordinates are assumed exact. Each allowed query reveals exactly one disputed presence bit."
+  ],
+  "cohort_id": "synthetic-one-anchor",
+  "comparison_id": "synthetic-two-disputed-neighbors",
+  "evidence_kind": "synthetic",
+  "input_scope": "normalized_research_graphs",
+  "loss": {
+    "false_negative": {
+      "denominator": "1",
+      "numerator": "1"
+    },
+    "false_positive": {
+      "denominator": "1",
+      "numerator": "1"
+    },
+    "tolerance": {
+      "denominator": "10",
+      "numerator": "1"
+    }
+  },
+  "model": {
+    "clauses": [],
+    "variables": [
+      "b0_present",
+      "b1_present"
+    ]
+  },
+  "version": "0.1.0"
+}

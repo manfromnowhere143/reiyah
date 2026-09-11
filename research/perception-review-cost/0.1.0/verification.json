@@ -1,0 +1,185 @@
+{
+  "artifact_id": "reiyah.perception-review-cost.verification",
+  "baseline_commit": "3ed0226370a6138d741d7605071db0c25124cc66",
+  "date": "2026-09-11",
+  "engine_check": {
+    "fixed_world_direct_loss_agreement": [
+      {
+        "delta": -1,
+        "presence": [
+          false,
+          false
+        ]
+      },
+      {
+        "delta": 1,
+        "presence": [
+          false,
+          true
+        ]
+      },
+      {
+        "delta": 1,
+        "presence": [
+          true,
+          false
+        ]
+      },
+      {
+        "delta": 1,
+        "presence": [
+          true,
+          true
+        ]
+      }
+    ],
+    "input_sha256": "7bcd32463e324979b8d1687f8dadcf7051a65c477e68ec8c30daeb13eca77f19",
+    "omitted_world_rejected": {
+      "code": "CERTIFICATE_INVALID",
+      "detail": "The proof omitted a permitted reference interpretation"
+    },
+    "packet_sha256": "02f259dfeb553d3a08f99aa1851f3cf7f1de8163ed45506165dc14a8a882e189",
+    "producer_sha256": "8aedc82fe744101ca0fedb44981e0cb71cb7d2137deec270ce6827a56fc16a09",
+    "result": {
+      "authority_state": "research_only",
+      "bounds": {
+        "lower": {
+          "denominator": "1",
+          "numerator": "-1"
+        },
+        "upper": {
+          "denominator": "1",
+          "numerator": "1"
+        }
+      },
+      "decision": {
+        "improvement_criterion": "unresolved",
+        "preference": "unresolved"
+      },
+      "enclosure_kind": "exact_for_finite_model",
+      "execution_status": "succeeded",
+      "model_status": "consistent",
+      "physical_coverage": "not_established",
+      "reference_scope": "synthetic",
+      "sampling_scope": "fixed_selected_cohort",
+      "statistical_confidence_level": null
+    },
+    "separate_checker_with_producer_forbidden": {
+      "certificate_checked": true,
+      "producer_matches_current_source": true,
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "1"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "unresolved",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "exact_for_finite_model",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "reference_scope": "synthetic",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null
+      }
+    }
+  },
+  "evidence_kind": "synthetic",
+  "non_claims": {
+    "full_test_suite_rerun": false,
+    "gate_a_accepted": false,
+    "human_effort_measured": false,
+    "independent_external_review": false,
+    "new_detector_performance_result": false,
+    "physical_review": false
+  },
+  "public_inputs": {
+    "research/perception-review-cost/0.1.0/expected.json": {
+      "byte_size": 3270,
+      "sha256": "ad5b9ba03ab58d9e9c6c26e93c4ad8c1d133ae6c98868fa906f0c2f49fed5d84"
+    },
+    "research/perception-review-cost/0.1.0/reproduce.py": {
+      "byte_size": 4181,
+      "sha256": "aca8b7c93bc8275ee762d6b839e00855ad928242c1a68844e52b9079e995a378"
+    },
+    "research/perception-review-cost/0.1.0/two-disputed-certificate.json": {
+      "byte_size": 1900,
+      "sha256": "02f259dfeb553d3a08f99aa1851f3cf7f1de8163ed45506165dc14a8a882e189"
+    },
+    "research/perception-review-cost/0.1.0/two-disputed-objects.json": {
+      "byte_size": 2607,
+      "sha256": "7bcd32463e324979b8d1687f8dadcf7051a65c477e68ec8c30daeb13eca77f19"
+    }
+  },
+  "sharing": "The Engine/checker share the validated input parser, rational representation and declared reference graph; they do not share a matching algorithm.",
+  "stdio_reproductions": [
+    {
+      "argv": [
+        "python",
+        "-I",
+        "-S",
+        "-B",
+        "research/perception-review-cost/0.1.0/reproduce.py"
+      ],
+      "exit_code": 0,
+      "output_bytes": 3270,
+      "output_sha256": "ad5b9ba03ab58d9e9c6c26e93c4ad8c1d133ae6c98868fa906f0c2f49fed5d84"
+    },
+    {
+      "argv": [
+        "python3",
+        "-I",
+        "-S",
+        "-B",
+        "research/perception-review-cost/0.1.0/reproduce.py"
+      ],
+      "exit_code": 0,
+      "output_bytes": 3270,
+      "output_sha256": "ad5b9ba03ab58d9e9c6c26e93c4ad8c1d133ae6c98868fa906f0c2f49fed5d84"
+    }
+  ],
+  "unchanged_trusted_source": {
+    "research/perception-decision/0.1.0/input.schema.json": {
+      "byte_size": 9925,
+      "sha256": "525c23d734a594d8c64ba3128c454314348345b84bebc615c1732e89750847a0"
+    },
+    "tools/perception_decision/__init__.py": {
+      "byte_size": 98,
+      "sha256": "53d4c1fb5ce4982c2dfec949b7fa84ec67c52496eb445782fee10b0b6f6bde0f"
+    },
+    "tools/perception_decision/__main__.py": {
+      "byte_size": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    "tools/perception_decision/checker.py": {
+      "byte_size": 9686,
+      "sha256": "64e342e00a4c2683f9db5fa2cb8213959a357bd5c3099296a090564527134da4"
+    },
+    "tools/perception_decision/cli.py": {
+      "byte_size": 4025,
+      "sha256": "419fa07442ebf2ff4ea9484ad0f7b235aab291c50eee52d5cb0374209cf7b7ee"
+    },
+    "tools/perception_decision/contract.py": {
+      "byte_size": 5767,
+      "sha256": "aed6e16f0d2b09b85abccbf4aeac5e74abb42e699c4ce8d9be34073523327134"
+    },
+    "tools/perception_decision/kernel.py": {
+      "byte_size": 6961,
+      "sha256": "7a5a630c9265108cc0d0a1c3e065292d62425b3a0cbfa7ae0ec942b9233f5ecc"
+    },
+    "tools/perception_decision/nuscenes.py": {
+      "byte_size": 8613,
+      "sha256": "ff5f6bd5509fcd656b2420af7b531ae601b12e77975270209dbb1dbea92f6eb4"
+    }
+  },
+  "version": "0.1.0"
+}
