@@ -1,0 +1,37 @@
+{
+  "added_detector": "pointpillars",
+  "artifact_id": "reiyah.decision-evidence.conversion-rate",
+  "base_detector": "megvii",
+  "break_even_a_over_b": "16773/6001",
+  "conversion_decimal": 0.263502,
+  "conversion_rate": "6001/22774",
+  "elapsed_seconds": 35.62,
+  "frames_skipped_for_unknown_ego": 66,
+  "inputs": {
+    "gt_val_cache.json": "sha256:7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd",
+    "megvii_val.json": "sha256:e7a995c31692ac95a86b56208e0b5d82a4ab908df8d0a9b9474d70adb693eab4",
+    "pointpillars-val.json": "sha256:6ab3a283f06ae165e4ba894d85d2bcb0e89ae12b1c7716d8570e07559fc14588"
+  },
+  "population": {
+    "base_detections": 115648,
+    "candidates_before_suppression": 100750,
+    "frames_without_reference_objects": 0,
+    "keyframes": 5953,
+    "objects": 134565,
+    "retained_additions": 22774,
+    "tp_augmented": 94963,
+    "tp_base": 88962
+  },
+  "scope": "one declared variant on one public split with released detector outputs against the retained filtered annotation cache. Reference relative, descriptive, finite population, no sampling statement",
+  "true_positive_gain": 6001,
+  "variant": {
+    "added_score_floor": "3/10",
+    "base_score_floor": "3/10",
+    "include_frames_without_reference_objects": true,
+    "match_radius_m": "2",
+    "max_range_m": "50",
+    "range_limit_applied_to_predictions": true,
+    "suppression_radius_m": "2"
+  },
+  "version": "0.2.0"
+}

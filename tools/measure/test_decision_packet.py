@@ -442,3 +442,62 @@ class AdjudicationBudget(unittest.TestCase):
             need_s, need_f = self.B.stopping_counts(r, tau)
             self.assertEqual(min(need_s + need_f - 1, r), r)
 
+
+class ConversionCorrection(unittest.TestCase):
+    """The three defects, pinned so they cannot return silently."""
+
+    @staticmethod
+    def load(name):
+        import json
+        import os
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..",
+                            "evidence", "decision-packet", "corrected", name)
+        with open(path, "r", encoding="utf-8") as handle:
+            return json.load(handle)
+
+    def test_each_variant_records_every_choice_it_made(self):
+        for name in ("megvii-mapillary-added030.json", "mapillary-megvii-030.json",
+                     "megvii-pointpillars-030.json"):
+            variant = self.load(name)["variant"]
+            for key in ("base_score_floor", "added_score_floor",
+                        "include_frames_without_reference_objects",
+                        "range_limit_applied_to_predictions"):
+                self.assertIn(key, variant, name)
+
+    def test_range_filter_on_predictions_changes_the_answer(self):
+        """Defect 3 was material, so the corrected run must differ from the published one."""
+        published = self.load("defect-isolation-v0-as-published.json")
+        ranged = self.load("defect-isolation-v2-range.json")
+        self.assertFalse(published["variant"]["range_limit_applied_to_predictions"])
+        self.assertTrue(ranged["variant"]["range_limit_applied_to_predictions"])
+        self.assertLess(ranged["population"]["retained_additions"],
+                        published["population"]["retained_additions"])
+        self.assertGreater(Fraction(ranged["conversion_rate"]),
+                           Fraction(published["conversion_rate"]))
+
+    def test_including_empty_frames_was_negligible_but_is_recorded(self):
+        published = self.load("defect-isolation-v0-as-published.json")
+        framed = self.load("defect-isolation-v1-frames.json")
+        self.assertGreater(framed["population"]["keyframes"], published["population"]["keyframes"])
+        self.assertEqual(framed["true_positive_gain"], published["true_positive_gain"])
+
+    def test_the_withdrawn_sweep_is_not_reproducible_with_a_fixed_base(self):
+        """The 69x claim came from moving the base too; with it fixed the span is far smaller."""
+        loose = Fraction(self.load("megvii-mapillary-added010.json")["conversion_rate"])
+        strict = Fraction(self.load("megvii-mapillary-added050.json")["conversion_rate"])
+        span = (1 / loose - 1) / (1 / strict - 1)
+        self.assertLess(float(span), 10.0)
+        self.assertGreater(float(span), 1.0)
+        for name in ("megvii-mapillary-added010.json", "megvii-mapillary-added050.json"):
+            self.assertEqual(self.load(name)["variant"]["base_score_floor"], "3/10")
+
+    def test_the_budget_prior_is_the_corrected_conversion(self):
+        import json
+        import os
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..",
+                            "evidence", "decision-packet", "adjudication-budget.json")
+        with open(path, "r", encoding="utf-8") as handle:
+            budget = json.load(handle)
+        corrected = Fraction(self.load("megvii-mapillary-added030.json")["conversion_rate"])
+        self.assertEqual(Fraction(budget["conversion_prior"]["value"]), corrected)
+

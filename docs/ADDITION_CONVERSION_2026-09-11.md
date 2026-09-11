@@ -4,11 +4,28 @@ Document ID: `reiyah.addition-conversion.2026-09-11`
 
 Version: `0.1.0`
 
-Lifecycle status: `proposed`
+Lifecycle status: `corrected`
 
 Lane: independent research, parallel to the Engine. Changes no released byte, no frozen protocol,
 no Engine file and no owner checkout. Creates no acceptance and no scientific authority. Gate A
 remains unaccepted.
+
+## Correction of 11 September 2026, read first
+
+External review of this lane's published code found three defects in the measurement behind this
+document. They are reproduced and isolated on the real data in
+[the correction](CONVERSION_CORRECTION_2026-09-11.md).
+
+- One score floor was applied to the base and the addition **together**, so the floor sweep below
+  changed the installed configuration as well as the candidate. **The claim that the required
+  penalty ratio moves by about a factor of 69, and the figures `0.0284`, `34.24`, `0.6692` and
+  `0.494`, are withdrawn as stated.** Holding the base fixed, the corrected span is `5.45x`.
+- Keyframes with no eligible reference object were skipped. Effect here was negligible.
+- The declared `50 m` limit was applied to annotations and not to predictions. Correcting it moves
+  the headline conversion from `0.2960` to `0.3182` and the break-even from `2.379` to `2.143`.
+
+The corrected numbers are in the correction document. Everything below is retained unchanged,
+including the withdrawn figures, so the record shows what was published.
 
 ## The question and the result
 

@@ -2,22 +2,22 @@
   "anchors": [
     {
       "excluded_needs_non_conversions": 5,
-      "expected_decimal": 6.834,
-      "expected_judgements_at_prior": "41794945094084264855/6115597639891380481",
+      "expected_decimal": 6.966,
+      "expected_judgements_at_prior": "6013291320350750941130435374764956755/863290840992653548194660489893485761",
       "gain_threshold_tau": "91/20",
-      "probability_decimal": 0.09394,
-      "probability_supported_at_prior": "128112964156032140736/1363778273695777847263",
+      "probability_decimal": 0.122606,
+      "probability_supported_at_prior": "3286156904970437183879876997118719810368/26802590740298914710799624229723052421767",
       "retained_additions": 9,
       "supported_needs_conversions": 5,
       "worst_case_judgements": 9
     },
     {
       "excluded_needs_non_conversions": 4,
-      "expected_decimal": 5.362,
-      "expected_judgements_at_prior": "659381000507692/122978496247489",
+      "expected_decimal": 5.448,
+      "expected_judgements_at_prior": "4879639520030024660061798172/895607764380538130565517329",
       "gain_threshold_tau": "71/20",
-      "probability_decimal": 0.120864,
-      "probability_supported_at_prior": "3314592441564624/27424204663190047",
+      "probability_decimal": 0.150796,
+      "probability_supported_at_prior": "4193033007356400636318327885392/27805934260722567339667616513463",
       "retained_additions": 7,
       "supported_needs_conversions": 4,
       "worst_case_judgements": 7
@@ -25,10 +25,10 @@
   ],
   "artifact_id": "reiyah.decision-evidence.adjudication-budget",
   "conversion_prior": {
-    "decimal": 0.295964,
-    "source": "this lane's full-split measurement at the 0.30 floor",
+    "decimal": 0.318163,
+    "source": "this lane's corrected full-split measurement at the 0.30 floor, base held fixed",
     "status": "a prior, not a property of these anchors",
-    "value": "66/223"
+    "value": "9878/31047"
   },
   "loss": {
     "false_negative": "1",
@@ -46,11 +46,11 @@
       ]
     },
     {
-      "conversion_prior": "66/223",
-      "expected_total_judgements": 12.196,
+      "conversion_prior": "9878/31047",
+      "expected_total_judgements": 12.414,
       "probability_supported_each": [
-        0.09394,
-        0.120864
+        0.122606,
+        0.150796
       ]
     },
     {
@@ -72,10 +72,10 @@
   ],
   "reading": "review does not have to measure the gain. It has to place the gain on one side of tau, which ends as soon as either stopping count is reached. The budget is therefore bounded before any judgement is made, and its expected size follows from a measured conversion rate",
   "totals": {
-    "expected_decimal": 12.196,
-    "expected_with_stopping_at_prior": "74585302868331280323/6115597639891380481",
+    "expected_decimal": 12.414,
+    "expected_with_stopping_at_prior": "10716854947784671877633717574442326703/863290840992653548194660489893485761",
     "judgements_if_every_addition_is_adjudicated": 16,
-    "saving_against_full_adjudication": 3.804,
+    "saving_against_full_adjudication": 3.586,
     "worst_case_with_stopping": 16
   },
   "version": "0.1.0"

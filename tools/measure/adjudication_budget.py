@@ -95,13 +95,17 @@ def main(argv):
     # Retained additions per anchor of the open comparison. Structural parameters only.
     anchors = [int(x) for x in argv[1:]] or [9, 7]
     # The lane's measured conversion rate on the full split at the same floor.
-    prior = Fraction(66, 223)
+    # Corrected 11 September 2026: the earlier 66/223 came from a measurement whose
+    # code applied one score floor to base and addition together, omitted keyframes
+    # with no reference object and did not range filter predictions. See
+    # docs/CONVERSION_CORRECTION_2026-09-11.md.
+    prior = Fraction("9878/31047")
 
     report = {"artifact_id": "reiyah.decision-evidence.adjudication-budget", "version": "0.1.0",
               "loss": {"false_negative": str(a), "false_positive": str(b),
                        "tolerance": str(tolerance)},
               "conversion_prior": {"value": str(prior), "decimal": round(float(prior), 6),
-                                   "source": "this lane's full-split measurement at the 0.30 floor",
+                                   "source": "this lane's corrected full-split measurement at the 0.30 floor, base held fixed",
                                    "status": "a prior, not a property of these anchors"},
               "anchors": []}
     total_worst = 0
@@ -132,7 +136,7 @@ def main(argv):
         "saving_against_full_adjudication": round(
             float(Fraction(sum(anchors)) - total_expected), 3)}
     report["prior_sensitivity"] = []
-    for text in ("1/10", "66/223", "1/2", "3/4"):
+    for text in ("1/10", "9878/31047", "1/2", "3/4"):
         p = Fraction(text)
         rows = []
         for r in anchors:
