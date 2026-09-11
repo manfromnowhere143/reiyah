@@ -8,9 +8,15 @@ comparison, using the same opportunities and reference interpretation for both c
 When the evidence cannot settle the choice, the result remains unresolved.
 
 The current Engine binds source outputs and clocks, preserves shared reference alternatives,
-computes exact paired-loss enclosures and checks matching certificates. Raw-window and nominal
-geometry adapters and restricted raw-evidence packages prepare physical review. The first user is a perception
-validation lead deciding whether an added detector merits a further integration study.
+computes paired-loss enclosures with exact arithmetic and checks matching certificates. Raw-window,
+nominal geometry and restricted observation packages prepare physical review. The intended user
+is a perception-validation lead deciding whether an added detector merits further integration work.
+
+The current two development anchors still give **[-8,8]** under unit penalties. No human reference
+judgments have been supplied. Source binding, equal analyst inputs and checked computations are
+implemented; a changed engineering decision and an advantage over conventional analysis remain
+unproven. The [11 September review](docs/ENGINE_CREDIBILITY_REVIEW_2026-09-11.md) makes those
+obligations, the current computational limits and relevant prior work explicit.
 
 HARBOR is the proposed research program: **Human-Automation Readiness, Belief & Operational
 Risk**. Its broader scope connects object-level belief, readiness, recoverability, joint silent
@@ -19,7 +25,7 @@ measurement and reference-audit research motivates the current focus. Human beli
 under intervention and cross-domain product value require their own observations.
 
 [Engine architecture and mathematics](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) ·
-[Current implementation](docs/PERCEPTION_ASSISTANCE_CHECKPOINT_2026-09-10.md) ·
+[Current implementation](docs/PERCEPTION_OPERANDS_CHECKPOINT_2026-09-11.md) ·
 [Research findings](docs/GENERAL_SYNTHESIS.md) · [Selected study](#current-engine-development) ·
 [Run the auditor](#run-the-offline-auditor)
 
@@ -89,8 +95,8 @@ when replay is requested, successful process exit and the expected transcript ar
 
 ## What the joint-error statistic measures
 
-For two reference-relative miss indicators, the coincidence ratio compares observed joint
-miss probability with the product of the two marginal miss probabilities. Conditional analyses
+For two reference-relative miss indicators with a nonzero marginal product, the coincidence ratio
+compares observed joint miss probability with that product. Conditional analyses
 make that comparison within declared strata and retain the support used for aggregation.
 A ratio alone is insufficient: its meaning changes with the marginal error rates.
 
@@ -131,9 +137,9 @@ detectable measurement issue; it does not settle whether the prediction is physi
 ```mermaid
 flowchart LR
   P["Prediction unmatched against the<br/>selected reference"] --> C["Compare with the complete<br/>retained annotation table"]
-  C --> N{"Excluded annotation within the<br/>declared distance?"}
-  N -- "yes" --> W["Geometric witness to a<br/>reference-relative label change"]
-  N -- "no" --> U["Remains unmatched under this<br/>reference"]
+  C --> N{"Excluded annotation within 2 m?<br/>Proximity predicate, any class"}
+  N -- "yes" --> W["Changed geometric<br/>proximity flag"]
+  N -- "no" --> U["Proximity flag unchanged"]
   W --> H["Independent sensor review for<br/>physical interpretation"]
   U --> H
   H --> E["Supported judgment or explicitly<br/>unresolved case"]
@@ -141,8 +147,9 @@ flowchart LR
 
 At score threshold 0.30, Result AO finds **3,151 of 24,432 camera flags** and
 **5,728 of 23,840 lidar flags** within two meters of annotations excluded from the original
-reference cache. These are changes under a specified geometric predicate, not independently
-confirmed correct detections. The [real-data replay](docs/REFERENCE_AUDIT_REAL_DATA_2026-09-07.md)
+reference cache. This predicate uses distance <=2 m and can include another class. It does not
+establish an eligible same-class, one-to-one match under the Engine's strict <2 m rule or a
+physically correct detection. The [real-data replay](docs/REFERENCE_AUDIT_REAL_DATA_2026-09-07.md)
 and [cache-policy reconstruction](docs/CACHE_SELECTION_AUDIT_2026-09-07.md) check the calculation
 and selection policy separately.
 
@@ -161,21 +168,42 @@ matches through the base detector. Misses and false detections both contribute t
 ```mermaid
 flowchart LR
   S["Bound clocks and retained<br/>detector outputs"] --> N["Fixed base and<br/>retained additions"]
-  R["Raw sensor windows,<br/>nominal geometry and times"] --> H["Blinded physical review<br/>Pending independent reviewers"]
-  H -. "reviewed observations" .-> W["Shared reference alternatives<br/>and explicit coverage assumptions"]
+  R["Bound raw observation package:<br/>sensor windows, geometry and times"] --> H["Independent raw discovery<br/>Reviewers unassigned"]
+  H -. "lock both records, then common<br/>assistance and adjudication" .-> W["Shared reference alternatives<br/>or open coverage"]
   N --> K["Paired miss / false-detection<br/>loss enclosure"]
   W --> K
   K --> V["Separate certificate checker"]
+  N --> V
+  W --> V
   V --> P["Scoped decision packet<br/>Unresolved when necessary"]
 ```
 
-For r retained additions and nonnegative miss/false-detection penalties a and b, the base-minus-
-augmented loss difference lies in **[-b r, a r]** before tighter reference evidence is available.
-No additions gives exactly zero. Restricted, explicitly shared reference models can narrow this
+For r retained additions at one anchor and nonnegative miss/false-detection penalties a and b,
+the base-minus-augmented loss difference lies in **[-b r, a r]** before tighter reference evidence is available.
+With observed required outputs and a consistent model, no additions gives exactly zero.
+Missing required outputs or inconsistent assumptions leave the comparison unevaluated.
+Restricted, explicitly shared reference models can narrow this
 enclosure. This conventional count-loss identity does not establish crash-risk reduction, causal
 benefit or physical-reference completeness. The
 [architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) specifies the estimand,
 matching counterexample, decision rules and limits.
+
+For common nonnegative anchor weights summing to one, replace r by the weighted addition count
+R. The two development anchors retain 9 and 7 additions with weights 1/2, so R=8. All extrema use
+one shared interpretation across configurations and any coupled anchors. Independent optimization
+of their separate losses can discard useful information.
+
+The checker verifies matching and equal-size vertex-cover witnesses without calling the producer's
+matcher. Both share input parsing, schema validation and rational conventions; physical graph
+coverage remains a separate premise. Complete finite enumeration is capped at 4,096 raw Boolean
+assignments and 2,000,000 estimated work units. Above that limit, the Engine can retain a count
+bound if model consistency has a checked witness; otherwise the decision stays unevaluated.
+These limits are explicit computational controls, not demonstrated large-scale performance.
+
+Neutral identifiers do not guarantee anonymity or blindness. Independent discoveries must be
+preserved before assistance is revealed. The [public synthetic examples](research/perception-decision-review/0.1.0/README.md)
+show why confirming every candidate object need not resolve the comparison: an uncertain object
+near a base detection can still change which matches are possible.
 
 The implemented pieces form one offline comparison pipeline:
 
@@ -253,10 +281,18 @@ terms. A matching digest establishes identity; physical correctness needs approp
 
 ### Run the offline auditor
 
-The portable synthetic example requires no sensor dataset, model or API key. Follow the
-[demo instructions](docs/REFERENCE_AUDIT_DEMO_2026-09-07.md) for the command and its expected
-geometric witnesses. The [real-data adapter](docs/REFERENCE_AUDIT_REAL_DATA_2026-09-07.md)
-uses separately retained inputs.
+Start with the [current paired-decision examples](research/perception-decision-review/0.1.0/README.md).
+Their independent reference calculation needs only the Python standard library:
+
+```sh
+python3 -B research/perception-decision-review/0.1.0/reproduce.py
+```
+
+The [Engine guide](research/perception-decision/0.1.0/README.md) gives commands to produce and
+separately verify a hash-bound packet. It requires `jsonschema`, but no sensor dataset, model
+or API key. The earlier [reference-proximity demo](docs/REFERENCE_AUDIT_DEMO_2026-09-07.md) and
+[real-data replay](docs/REFERENCE_AUDIT_REAL_DATA_2026-09-07.md) remain a different calculation;
+they do not implement the Engine's paired matching loss.
 
 For research consistency checks, use an environment with `numpy`, `scipy` and `jsonschema`:
 
@@ -277,6 +313,7 @@ identities.
 | Read for | Start here |
 |---|---|
 | Current Engine direction and implementation | [Selected architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md), [latest checkpoint](docs/PERCEPTION_OPERANDS_CHECKPOINT_2026-09-11.md), [decision interface](research/perception-decision/0.1.0/README.md) |
+| Present evidence, limits and comparison with prior work | [11 September review](docs/ENGINE_CREDIBILITY_REVIEW_2026-09-11.md), [reproducible decision examples](research/perception-decision-review/0.1.0/README.md) |
 | Mission and scientific structure | [Scientific charter](docs/SCIENTIFIC_CHARTER.md), [architecture](docs/ARCHITECTURE.md), [mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) |
 | Current interpretation of sensor, human-proxy and LLM experiments | [Corrected synthesis](docs/GENERAL_SYNTHESIS.md), [current claim register](evidence/claim-status-register-2026-09-08T054835Z.json) |
 | Selected study and earlier investigations | [60-scene study design](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md#one-prospective-study), [research-board report](docs/RESEARCH_BOARD_2026-09-07.md), [earlier training design](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) |

@@ -1,0 +1,97 @@
+{
+  "artifact_id": "reiyah.engine-credibility.sources",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "review_date": "2026-09-11",
+  "scope": "Targeted primary-source review, not an exhaustive 2026 performance ranking",
+  "sources": [
+    {
+      "title": "TIDE",
+      "inspected_scope": "ECCV 2020 paper, error-oracle construction and annotation discussion",
+      "design_consequence": "Conventional error diagnosis is a comparator; no novelty inferred from reference-error reporting.",
+      "assets": [
+        {
+          "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480562.pdf",
+          "version": "ECCV 2020 conference paper; exact ECVA PDF",
+          "terms": "Public conference copy for private reading; no redistribution permission established here; no payload redistribution.",
+          "retrieved_utc": "2026-09-11T14:37:22.645253+00:00",
+          "http_status": 200,
+          "final_url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480562.pdf",
+          "content_type": "application/pdf",
+          "status": "retained_private",
+          "byte_size": 4328907,
+          "sha256": "14646346ca038f6ea141b895c09d0aacc51657adbdc94460ea696c651d783a85"
+        }
+      ],
+      "code_or_experiments_reexecuted": false
+    },
+    {
+      "title": "Noise-Aware Evaluation of Object Detectors",
+      "inspected_scope": "WACV 2025 sections 3.1-3.4, evaluation setup and limitations",
+      "design_consequence": "Distinguish estimated expected noise adjustments from shared-world loss enclosures and physical coverage.",
+      "assets": [
+        {
+          "url": "https://openaccess.thecvf.com/content/WACV2025/papers/Llerena_Noise-Aware_Evaluation_of_Object_Detectors_WACV_2025_paper.pdf",
+          "version": "WACV 2025 accepted open-access paper; February 2025; CVF page lists pp. 9304-9313",
+          "terms": "Public conference copy for reading. Copyright retained by authors/holders; no third-party payload will be redistributed.",
+          "retrieved_utc": "2026-09-11T14:37:21.930593+00:00",
+          "http_status": 200,
+          "final_url": "https://openaccess.thecvf.com/content/WACV2025/papers/Llerena_Noise-Aware_Evaluation_of_Object_Detectors_WACV_2025_paper.pdf",
+          "content_type": "application/pdf",
+          "status": "retained_private",
+          "byte_size": 1482859,
+          "sha256": "c892876ab35822e763b2714d54bd5b7db921bf485adda11914b3d1c8b3ee0d91"
+        },
+        {
+          "url": "https://openaccess.thecvf.com/content/WACV2025/html/Llerena_Noise-Aware_Evaluation_of_Object_Detectors_WACV_2025_paper.html",
+          "version": "WACV 2025 publication metadata and access terms",
+          "terms": "Public metadata/access statement; retained privately, not redistributed.",
+          "retrieved_utc": "2026-09-11T14:37:21.930952+00:00",
+          "http_status": 200,
+          "final_url": "https://openaccess.thecvf.com/content/WACV2025/html/Llerena_Noise-Aware_Evaluation_of_Object_Detectors_WACV_2025_paper.html",
+          "content_type": "text/html; charset=UTF-8",
+          "status": "retained_private",
+          "byte_size": 5473,
+          "sha256": "2608ddeaa4e474fb86d0a520d0f32a5e6660e16b0caa1277d3933b472d31f2f4"
+        }
+      ],
+      "code_or_experiments_reexecuted": false
+    },
+    {
+      "title": "Calibrating Probabilistic Object Detectors with Annotator Disagreement",
+      "inspected_scope": "arXiv:2605.24722v1 sections 3-4, dataset and limitation descriptions",
+      "design_consequence": "Preserve annotator records; do not convert absent annotation to background without an explicit inspection model.",
+      "assets": [
+        {
+          "url": "https://arxiv.org/html/2605.24722v1",
+          "version": "arXiv:2605.24722v1, 2026-05-23; HTML says Journal: Neurocomputing; journal publication not independently established",
+          "terms": "CC BY-NC-SA 4.0 per primary HTML; retained for private reading, no payload redistribution or method adoption.",
+          "retrieved_utc": "2026-09-11T14:37:21.931046+00:00",
+          "http_status": 200,
+          "final_url": "https://arxiv.org/html/2605.24722v1",
+          "content_type": "text/html; charset=utf-8",
+          "status": "retained_private",
+          "byte_size": 403607,
+          "sha256": "8023f583b9faae54d66520d8ebae99588a374f468897e4bc663c18df863f86da"
+        },
+        {
+          "url": "https://arxiv.org/abs/2605.24722v1",
+          "version": "arXiv version and submission metadata, 2026-05-23",
+          "terms": "Public metadata; retained privately, not redistributed.",
+          "retrieved_utc": "2026-09-11T14:37:22.576341+00:00",
+          "http_status": 200,
+          "final_url": "https://arxiv.org/abs/2605.24722v1",
+          "content_type": "text/html; charset=utf-8",
+          "status": "retained_private",
+          "byte_size": 42127,
+          "sha256": "7f811503de3ee3dd3596596db7f8bd05c7a30e96c3bd33055710b83aee366e0c"
+        }
+      ],
+      "code_or_experiments_reexecuted": false
+    }
+  ],
+  "payloads": "Retained privately; no third-party payload in public Git",
+  "gate_a_evidence_admission": false,
+  "scientific_validation_of_reiyah": false,
+  "publication_date_limit": "TIDE conference year and WACV conference month known; exact publication days not established. The 2026 arXiv version has an exact submission date; journal publication status not established."
+}

@@ -1,3 +1,30 @@
+# Reader and mathematical review, 2026-09-11
+
+Read the [current credibility review](ENGINE_CREDIBILITY_REVIEW_2026-09-11.md) and
+[public synthetic examples](../research/perception-decision-review/0.1.0/README.md).
+The README now distinguishes proximity flags from same-class one-to-one matching, feeds the
+same operands to producer and checker, exposes shared trusted code and raw-assignment limits,
+and describes independent review as pending. Its implementation link points to the operand
+checkpoint. All six diagrams were inspected; two were clarified.
+
+A standard-library reference calculation reproduces matching competition, shared-target
+cancellation and cross-anchor coupling. Two fresh runs produce identical 1,312 bytes, including
+512 small labelled graphs and six penalty pairs. Internal checks against the unchanged Engine
+and separate checker confirm the key examples and a resource-limit case. These are synthetic
+checks; the prior 414 tests remain prior evidence. Targeted primary work through 11 September
+2026 informs the current comparison and limits; it establishes no performance ranking.
+
+The real open-reference result remains [-8,8] with no human judgments. Next: competent independent
+discovery reviewers, an equally informed conventional analyst and adjudication on the prepared
+development kit; preserve staged exposure and all effort. Once actual interpretations exist,
+prepare the same admitted-reference operands for both methods. The 60-scene study remains
+unselected and unrun. Gate A is unaccepted. Offline Engine/main integration authority persists;
+preserve other checkouts, the separate research lane and Console ownership.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Equal analysis operands, 2026-09-11
 
 Read the [operand checkpoint](PERCEPTION_OPERANDS_CHECKPOINT_2026-09-11.md),
