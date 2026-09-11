@@ -1,0 +1,104 @@
+{
+  "adjudications_that_close_it": 16,
+  "anchors": 2,
+  "artifact_id": "reiyah.decision-evidence.reference-resolution",
+  "conversion_threshold": "1/2",
+  "conversion_threshold_meaning": "the addition improves the loss exactly when more than this fraction of added detections match objects the base missed",
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1",
+    "tolerance": "1/10"
+  },
+  "narrowing_per_resolved_addition": [
+    "1",
+    "1"
+  ],
+  "note": "the schedule assumes the worst case, that every adjudication so far confirmed no new object. A real review narrows faster when additions do convert. The count of adjudications is fixed in advance; the outcome is not",
+  "observed_conversion_on_this_lane_s_real_anchors": {
+    "above_threshold": false,
+    "anchors": 8,
+    "as_decimal": 0.2667,
+    "conversion_rate": "4/15",
+    "reading": "a prior, not a prediction about the retained comparison: a different population, a different reference and a different anchor selection. It is falsifiable by the sixteen adjudications and that is the point",
+    "retained_additions": 45,
+    "true_positive_gain": 12
+  },
+  "open_enclosure_is_the_coarse_bound": true,
+  "open_reference_enclosure": [
+    "-8",
+    "8"
+  ],
+  "schedule": [
+    {
+      "adjudications_done": 0,
+      "worst_case_width": "16"
+    },
+    {
+      "adjudications_done": 1,
+      "worst_case_width": "15"
+    },
+    {
+      "adjudications_done": 2,
+      "worst_case_width": "14"
+    },
+    {
+      "adjudications_done": 3,
+      "worst_case_width": "13"
+    },
+    {
+      "adjudications_done": 4,
+      "worst_case_width": "12"
+    },
+    {
+      "adjudications_done": 5,
+      "worst_case_width": "11"
+    },
+    {
+      "adjudications_done": 6,
+      "worst_case_width": "10"
+    },
+    {
+      "adjudications_done": 7,
+      "worst_case_width": "9"
+    },
+    {
+      "adjudications_done": 8,
+      "worst_case_width": "8"
+    },
+    {
+      "adjudications_done": 9,
+      "worst_case_width": "7"
+    },
+    {
+      "adjudications_done": 10,
+      "worst_case_width": "6"
+    },
+    {
+      "adjudications_done": 11,
+      "worst_case_width": "5"
+    },
+    {
+      "adjudications_done": 12,
+      "worst_case_width": "4"
+    },
+    {
+      "adjudications_done": 13,
+      "worst_case_width": "3"
+    },
+    {
+      "adjudications_done": 14,
+      "worst_case_width": "2"
+    },
+    {
+      "adjudications_done": 15,
+      "worst_case_width": "1"
+    },
+    {
+      "adjudications_done": 16,
+      "worst_case_width": "0"
+    }
+  ],
+  "version": "0.1.0",
+  "weighted_retained_additions": "8",
+  "why_it_is_trivial": "no object is declared to exist, so the true-positive gain is only bounded by zero and r; the interval is the arithmetic of ignorance, not a measurement"
+}

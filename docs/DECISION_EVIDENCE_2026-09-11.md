@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.decision-evidence.2026-09-11`
 
-Version: `0.1.0`
+Version: `0.2.0`
 
 Lifecycle status: `proposed`
 
@@ -118,6 +118,49 @@ penalties are a research tolerance rather than a safety weighting. Nothing here 
 right ratio; that is the engineering team's to declare, and the packet makes the consequence of
 their declaration immediate.
 
+## What the retained open comparison actually needs
+
+The Engine's own comparison returns `[-8, 8]`. Applying the arithmetic above to its declared
+structure shows that interval **is exactly the coarse count bound** `[-b*R, a*R]` for a weighted
+retained-addition total of `R = 8` under unit penalties. It is the arithmetic of ignorance rather
+than a measurement, and the cause is specific: the reference is in the `open` state with no admitted
+interpretation, so the true-positive gain is bounded only by `0` and `r`.
+
+That turns the blocking dependency into a counted task. Under the declared additive loss,
+
+```text
+delta > 0   exactly when   (TP gain) / r  >  b / (a + b)
+```
+
+so with unit penalties the addition pays off exactly when **more than half** the added detections
+match objects the base missed. Resolving one addition's status narrows its anchor's interval by
+`(a + b) * weight`, which here is exactly `1`.
+
+| adjudications completed | worst-case enclosure width |
+|---:|---:|
+| 0 | 16 |
+| 4 | 12 |
+| 8 | 8 |
+| 12 | 4 |
+| 16 | 0 |
+
+**Sixteen adjudications close the comparison completely**, and the count is fixed in advance even
+though the outcome is not. The schedule above is the worst case, in which no adjudication so far has
+confirmed a new object; a real review narrows faster whenever an addition converts.
+
+### A falsifiable prior
+
+On this lane's eight real anchors, under the declared rule, the added camera detections converted to
+new true positives at `12` of `45`, a rate of `4/15`, about `0.267`. That is well below the `1/2`
+threshold. It is a **prior and not a prediction** about the retained comparison: a different
+population, a different reference and a different anchor selection. It is falsifiable by exactly the
+sixteen adjudications above, which is the point of stating it.
+
+If those sixteen judgments put the conversion above one half, this prior is wrong and the addition
+pays off under unit penalties. If they land near `4/15`, the comparison resolves against the
+addition and the question is closed at a cost of sixteen human decisions rather than a sixty-scene
+study. Either outcome is worth more than the interval that stands today.
+
 ## Compared with the conventional alternatives, on the same evidence
 
 | disclosure | bytes for eight anchors | computes `delta` | reader can verify `TP` |
@@ -166,6 +209,18 @@ The exact missing information needed to run this on the Engine's comparison is i
 neutral row-to-detection mapping and its admitted interpretations, which are the Engine owner's to
 supply.
 
+## The exact missing information
+
+For this lane to run the same producer and checker on the Engine's real comparison rather than on
+its own anchors, two things are needed and nothing else:
+
+1. the two anchors' neutral detection-to-object candidate edges per admitted interpretation, which
+   is what `reference.state = open` currently withholds; and
+2. the admitted interpretations themselves, that is which objects are declared present in each.
+
+Both are the Engine owner's to supply, and the second is the one that requires people. No format,
+no aggregate and no further mathematics substitutes for it.
+
 ## What is established, and what is not
 
 Computationally valid: the arithmetic of each declared comparison inside its declared
@@ -178,6 +233,7 @@ is untested, because no external engineer has used it.
 
 ```sh
 python3 -B -m unittest discover -s tools/measure -p test_decision_packet.py
+python3 -B tools/measure/reference_resolution.py
 python3 -B tools/measure/decision_packet.py research/decision-packet/0.1.0/cases/real.megvii-plus-mapillary.00.json
 python3 -B tools/measure/check_decision_packet.py \
     research/decision-packet/0.1.0/cases/real.megvii-plus-mapillary.00.json \

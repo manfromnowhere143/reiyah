@@ -249,3 +249,58 @@ class BoundsHold(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+class ReferenceResolution(unittest.TestCase):
+    """What an open comparison costs to close, in adjudications."""
+
+    import reference_resolution as R
+
+    def test_open_reference_gives_exactly_the_coarse_bound(self):
+        a = b = Fraction(1)
+        weights = [Fraction(1, 2), Fraction(1, 2)]
+        additions = [9, 7]
+        lower, upper = self.R.enclosure(weights, additions, a, b)
+        weighted = sum(w * r for w, r in zip(weights, additions))
+        self.assertEqual((lower, upper), (-b * weighted, a * weighted))
+        self.assertEqual((lower, upper), (Fraction(-8), Fraction(8)))
+
+    def test_each_adjudication_narrows_by_a_known_amount(self):
+        a = b = Fraction(1)
+        weights = [Fraction(1, 2), Fraction(1, 2)]
+        additions = [9, 7]
+        widths = []
+        for settled in range(sum(additions) + 1):
+            per = [min(settled, additions[0]), max(0, settled - additions[0])]
+            lower, upper = self.R.enclosure(weights, additions, a, b, [0, 0], per)
+            widths.append(upper - lower)
+        self.assertEqual(widths[0], Fraction(16))
+        self.assertEqual(widths[-1], Fraction(0))
+        steps = {widths[i] - widths[i + 1] for i in range(len(widths) - 1)}
+        self.assertEqual(steps, {Fraction(1)})
+
+    def test_threshold_is_the_penalty_ratio(self):
+        self.assertEqual(self.R.threshold(Fraction(1), Fraction(1)), Fraction(1, 2))
+        self.assertEqual(self.R.threshold(Fraction(4), Fraction(1)), Fraction(1, 5))
+        self.assertEqual(self.R.threshold(Fraction(1), Fraction(4)), Fraction(4, 5))
+
+    def test_threshold_agrees_with_the_packet_arithmetic(self):
+        """dTP/r > b/(a+b) must agree with delta > 0 computed from a real packet."""
+        import glob
+        import json
+        import os
+        root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..",
+                            "evidence", "decision-packet")
+        checked = 0
+        for path in sorted(glob.glob(os.path.join(root, "*-report.json"))):
+            with open(path, "r", encoding="utf-8") as handle:
+                entry = json.load(handle)
+            a = Fraction(entry["loss"]["false_negative"])
+            b = Fraction(entry["loss"]["false_positive"])
+            r = entry["retained_additions"]
+            for w in entry["worlds"]:
+                gain = w["tp_augmented"] - w["tp_base"]
+                positive = Fraction(w["delta"]) > 0
+                self.assertEqual(positive, Fraction(gain, r) > self.R.threshold(a, b) if r else False)
+                checked += 1
+        self.assertGreater(checked, 8)
+
