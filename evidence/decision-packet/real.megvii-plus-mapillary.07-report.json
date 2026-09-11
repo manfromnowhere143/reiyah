@@ -1,0 +1,286 @@
+{
+  "added_detections": [
+    "c0",
+    "c1",
+    "c2",
+    "c3"
+  ],
+  "anchor_id": "real.megvii-plus-mapillary.07",
+  "artifact_id": "reiyah.decision-packet.report",
+  "base_detections": [
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4",
+    "b5",
+    "b6",
+    "b7"
+  ],
+  "coarse_bound": {
+    "lower": "-4",
+    "upper": "4"
+  },
+  "enclosure": {
+    "lower": "-4",
+    "upper": "-4"
+  },
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1"
+  },
+  "objects": [
+    "o0",
+    "o1",
+    "o2",
+    "o3",
+    "o4",
+    "o5",
+    "o6",
+    "o7"
+  ],
+  "retained_additions": 4,
+  "scope": "one anchor, the declared reference interpretations only, and the declared additive loss. Not F1, not planner behaviour, not crash risk. An enclosure over declared worlds is not physical confidence coverage",
+  "version": "0.1.0",
+  "worlds": [
+    {
+      "augmented_certificate": {
+        "cover": {
+          "detections": [
+            "b0",
+            "b1",
+            "b2",
+            "b3",
+            "b4",
+            "b5"
+          ],
+          "objects": []
+        },
+        "matching": [
+          [
+            "b0",
+            "o3"
+          ],
+          [
+            "b1",
+            "o1"
+          ],
+          [
+            "b2",
+            "o7"
+          ],
+          [
+            "b3",
+            "o2"
+          ],
+          [
+            "b4",
+            "o0"
+          ],
+          [
+            "b5",
+            "o6"
+          ]
+        ]
+      },
+      "base_certificate": {
+        "cover": {
+          "detections": [
+            "b0",
+            "b1",
+            "b2",
+            "b3",
+            "b4",
+            "b5"
+          ],
+          "objects": []
+        },
+        "matching": [
+          [
+            "b0",
+            "o3"
+          ],
+          [
+            "b1",
+            "o1"
+          ],
+          [
+            "b2",
+            "o7"
+          ],
+          [
+            "b3",
+            "o2"
+          ],
+          [
+            "b4",
+            "o0"
+          ],
+          [
+            "b5",
+            "o6"
+          ]
+        ]
+      },
+      "delta": "-4",
+      "edges": [
+        [
+          "b0",
+          "o3"
+        ],
+        [
+          "b1",
+          "o1"
+        ],
+        [
+          "b2",
+          "o7"
+        ],
+        [
+          "b3",
+          "o2"
+        ],
+        [
+          "b4",
+          "o0"
+        ],
+        [
+          "b5",
+          "o6"
+        ]
+      ],
+      "objects_present": [
+        "o0",
+        "o1",
+        "o2",
+        "o3",
+        "o4",
+        "o5",
+        "o6",
+        "o7"
+      ],
+      "tp_augmented": 6,
+      "tp_base": 6,
+      "world_id": "w_all"
+    },
+    {
+      "augmented_certificate": {
+        "cover": {
+          "detections": [
+            "b0",
+            "b1",
+            "b2",
+            "b3",
+            "b4",
+            "b5"
+          ],
+          "objects": []
+        },
+        "matching": [
+          [
+            "b0",
+            "o3"
+          ],
+          [
+            "b1",
+            "o1"
+          ],
+          [
+            "b2",
+            "o7"
+          ],
+          [
+            "b3",
+            "o2"
+          ],
+          [
+            "b4",
+            "o0"
+          ],
+          [
+            "b5",
+            "o6"
+          ]
+        ]
+      },
+      "base_certificate": {
+        "cover": {
+          "detections": [
+            "b0",
+            "b1",
+            "b2",
+            "b3",
+            "b4",
+            "b5"
+          ],
+          "objects": []
+        },
+        "matching": [
+          [
+            "b0",
+            "o3"
+          ],
+          [
+            "b1",
+            "o1"
+          ],
+          [
+            "b2",
+            "o7"
+          ],
+          [
+            "b3",
+            "o2"
+          ],
+          [
+            "b4",
+            "o0"
+          ],
+          [
+            "b5",
+            "o6"
+          ]
+        ]
+      },
+      "delta": "-4",
+      "edges": [
+        [
+          "b0",
+          "o3"
+        ],
+        [
+          "b1",
+          "o1"
+        ],
+        [
+          "b2",
+          "o7"
+        ],
+        [
+          "b3",
+          "o2"
+        ],
+        [
+          "b4",
+          "o0"
+        ],
+        [
+          "b5",
+          "o6"
+        ]
+      ],
+      "objects_present": [
+        "o0",
+        "o1",
+        "o2",
+        "o3",
+        "o5",
+        "o6",
+        "o7"
+      ],
+      "tp_augmented": 6,
+      "tp_base": 6,
+      "world_id": "w_undisputed"
+    }
+  ]
+}

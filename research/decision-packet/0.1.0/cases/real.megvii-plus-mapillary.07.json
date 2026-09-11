@@ -1,0 +1,173 @@
+{
+  "added_detections": [
+    {
+      "class": "pedestrian",
+      "id": "c0"
+    },
+    {
+      "class": "truck",
+      "id": "c1"
+    },
+    {
+      "class": "car",
+      "id": "c2"
+    },
+    {
+      "class": "car",
+      "id": "c3"
+    }
+  ],
+  "anchor_id": "real.megvii-plus-mapillary.07",
+  "base_detections": [
+    {
+      "class": "car",
+      "id": "b0"
+    },
+    {
+      "class": "car",
+      "id": "b1"
+    },
+    {
+      "class": "bus",
+      "id": "b2"
+    },
+    {
+      "class": "car",
+      "id": "b3"
+    },
+    {
+      "class": "truck",
+      "id": "b4"
+    },
+    {
+      "class": "pedestrian",
+      "id": "b5"
+    },
+    {
+      "class": "car",
+      "id": "b6"
+    },
+    {
+      "class": "barrier",
+      "id": "b7"
+    }
+  ],
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1"
+  },
+  "objects": [
+    {
+      "class": "truck",
+      "id": "o0"
+    },
+    {
+      "class": "car",
+      "id": "o1"
+    },
+    {
+      "class": "car",
+      "id": "o2"
+    },
+    {
+      "class": "car",
+      "id": "o3"
+    },
+    {
+      "class": "truck",
+      "id": "o4"
+    },
+    {
+      "class": "car",
+      "id": "o5"
+    },
+    {
+      "class": "pedestrian",
+      "id": "o6"
+    },
+    {
+      "class": "bus",
+      "id": "o7"
+    }
+  ],
+  "schema_id": "reiyah.decision-packet.case",
+  "worlds": [
+    {
+      "edges": [
+        [
+          "b0",
+          "o3"
+        ],
+        [
+          "b1",
+          "o1"
+        ],
+        [
+          "b2",
+          "o7"
+        ],
+        [
+          "b3",
+          "o2"
+        ],
+        [
+          "b4",
+          "o0"
+        ],
+        [
+          "b5",
+          "o6"
+        ]
+      ],
+      "objects_present": [
+        "o0",
+        "o1",
+        "o2",
+        "o3",
+        "o4",
+        "o5",
+        "o6",
+        "o7"
+      ],
+      "world_id": "w_all"
+    },
+    {
+      "edges": [
+        [
+          "b0",
+          "o3"
+        ],
+        [
+          "b1",
+          "o1"
+        ],
+        [
+          "b2",
+          "o7"
+        ],
+        [
+          "b3",
+          "o2"
+        ],
+        [
+          "b4",
+          "o0"
+        ],
+        [
+          "b5",
+          "o6"
+        ]
+      ],
+      "objects_present": [
+        "o0",
+        "o1",
+        "o2",
+        "o3",
+        "o5",
+        "o6",
+        "o7"
+      ],
+      "world_id": "w_undisputed"
+    }
+  ]
+}

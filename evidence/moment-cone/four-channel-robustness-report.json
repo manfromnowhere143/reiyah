@@ -1,0 +1,41 @@
+{
+  "artifact_id": "reiyah.moment-cone.report",
+  "certificate": {
+    "box_margin_ratio": "12953544/72361",
+    "expanded_coefficients": [
+      "0",
+      "4761",
+      "-32361",
+      "67600",
+      "-40000"
+    ],
+    "form": "x(1-x)",
+    "functional_at_centre": "-1619193/125000",
+    "functional_box_worst_case": "-12881183/1000000",
+    "polynomial_coefficients": [
+      "-69",
+      "200"
+    ]
+  },
+  "channel_count": 4,
+  "measure": null,
+  "moments": [
+    "0.215738",
+    "0.109442",
+    "0.072654",
+    "0.060246"
+  ],
+  "notes": [],
+  "opportunities": null,
+  "population_label": "nuScenes val, four detectors with the count-truncated channel removed, floor 0.10",
+  "reason": "an exact nonnegative polynomial has negative expectation for every moment vector in the declared box",
+  "rounding_half_width": [
+    "1/2000000",
+    "1/2000000",
+    "1/2000000",
+    "1/2000000"
+  ],
+  "silence_histogram": null,
+  "verdict": "infeasible_over_box",
+  "version": "0.1.0"
+}

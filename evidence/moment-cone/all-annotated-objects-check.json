@@ -1,0 +1,28 @@
+{
+  "checked": {
+    "degree": 5,
+    "functional_at_centre": "-22834531/1000000",
+    "functional_box_worst_case": "-20007089/1000000",
+    "multiplier": "x"
+  },
+  "receipt": {
+    "assertions_checked": [
+      "the multiplier is one of the four forms nonnegative on [0,1]",
+      "the stated expansion equals multiplier times the square of the stated polynomial",
+      "the linear functional at the declared moments is the stated value and is negative",
+      "the box worst case is the stated value, and is negative for a whole-box verdict"
+    ],
+    "fields_not_verified": [
+      "artifact_id",
+      "version",
+      "population_label",
+      "reason",
+      "notes"
+    ],
+    "note": "this receipt binds the exact bytes checked. Fields listed as not verified carry no confirmation of any kind, including the population label, which is not custody",
+    "report_sha256": "sha256:6d5d53c1a8336593a1e8e38d48f1af62a576e0b53b6035ef4945a0ccf25a8496",
+    "task_sha256": "sha256:4ca73ea335dabec6c5fb07956ccf4c8d2e562dda34198c89413411ff9dbefb0c"
+  },
+  "result": "confirmed",
+  "verdict": "infeasible_over_box"
+}

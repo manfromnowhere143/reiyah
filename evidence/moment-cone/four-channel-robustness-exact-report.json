@@ -1,0 +1,47 @@
+{
+  "artifact_id": "reiyah.moment-cone.report",
+  "certificate": {
+    "box_margin_ratio": "exact",
+    "expanded_coefficients": [
+      "0",
+      "9",
+      "-57",
+      "112",
+      "-64"
+    ],
+    "form": "x(1-x)",
+    "functional_at_centre": "-8057/538260",
+    "functional_box_worst_case": "-8057/538260",
+    "polynomial_coefficients": [
+      "-3",
+      "8"
+    ]
+  },
+  "channel_count": 4,
+  "measure": null,
+  "moments": [
+    "116123/538260",
+    "4909/44855",
+    "39107/538260",
+    "8107/134565"
+  ],
+  "notes": [],
+  "opportunities": 134565,
+  "population_label": "nuScenes val, four detectors with the count-truncated channel removed, floor 0.10, exact integer silence histogram",
+  "reason": "an exact nonnegative polynomial has negative expectation for the exact moments of the declared silence histogram",
+  "rounding_half_width": [
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "silence_histogram": [
+    75804,
+    24292,
+    19683,
+    6679,
+    8107
+  ],
+  "verdict": "infeasible_exact",
+  "version": "0.1.0"
+}

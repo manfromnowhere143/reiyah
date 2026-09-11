@@ -1,0 +1,62 @@
+====================================================================================
+DISCLOSURE SUFFICIENCY: what the silence histogram does and does not determine
+three channels, 1 means silent, two populations of two equally weighted rows
+====================================================================================
+  population A: rows 011 100
+    marginals            ['1/2', '1/2', '1/2']
+    silence histogram    {1: 1/2, 2: 1/2}
+    subset-averaged m_k  ['1', '1/2', '1/6', '0']
+  population B: rows 010 101
+    marginals            ['1/2', '1/2', '1/2']
+    silence histogram    {1: 1/2, 2: 1/2}
+    subset-averaged m_k  ['1', '1/2', '1/6', '0']
+
+  every published summary identical: True
+
+  the labelled query the two populations answer differently:
+    population A: P(channel 1 silent) = 1/2, P(channels 1 and 3 both silent) = 0
+    population B: P(channel 1 silent) = 1/2, P(channels 1 and 3 both silent) = 1/2
+    adding channel 3 to an installed channel 1 removes all of its silence in A
+    and none of it in B. The decision differs maximally on identical summaries.
+
+  exact range of P(channels 1 and 3 both silent) over every population
+  consistent with those marginals and that histogram:
+    [0, 1/2]  width 1/2
+    the Frechet interval permitted by the marginals alone is [0, 1/2]
+    The probe lattice is a search, not the proof. The proof is that both
+    endpoints are attained by the two populations above, and the Frechet
+    bound caps the interval, so the range is exactly the Frechet interval:
+    the histogram removes none of the ambiguity in this labelled query (True).
+
+====================================================================================
+WHAT A PORTABLE REPORT MUST CARRY, BY DECISION
+====================================================================================
+  average all-silent rate over k-subsets
+      carry: silence histogram
+      sufficient
+  all-silent rate for one named subset
+      carry: silence histogram
+      NOT sufficient
+  value of adding named channel j to installed set C
+      carry: the two rates for C and C+{j}
+      sufficient
+  value of every candidate addition to installed C
+      carry: one rate per candidate plus the rate for C
+      sufficient
+  every labelled subset query
+      carry: all 2^K cell counts
+      sufficient and minimal
+  value of a channel never measured
+      carry: a model, and its validity certificate
+      no summary suffices
+
+  For K = 5 the full labelled disclosure is 32 counts per stratum, which is
+  smaller than the histogram plus marginals people have been tempted to ship,
+  and it answers every labelled query. Compactness was never the constraint.
+
+  DISCLOSURE BOUNDARY. Cell counts are not anonymous. A stratum holding n
+  opportunities discloses the exact multiset of per-object silence patterns,
+  and at n = 1 it discloses one object's pattern across every channel. Repeated
+  releases of one population under different stratifications permit linkage.
+  A minimum cell occupancy and a release ledger are therefore part of the
+  contract, not an operational detail. Compactness is not privacy.

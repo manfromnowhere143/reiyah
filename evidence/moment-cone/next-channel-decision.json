@@ -1,0 +1,95 @@
+{
+  "artifact_id": "reiyah.moment-cone.next-channel-decision",
+  "decisions": [
+    {
+      "candidate": "mapillary",
+      "independent_prediction": "14579776/402394205",
+      "installed": [
+        "fcos3d",
+        "megvii",
+        "pointpillars",
+        "centerpoint"
+      ],
+      "installed_all_silent": "2368/44855",
+      "installed_and_candidate_all_silent": "6382/134565",
+      "observed_benefit": "722/134565",
+      "prediction_over_observed": "21869664/3238531"
+    },
+    {
+      "candidate": "fcos3d",
+      "independent_prediction": "72727683/2011971025",
+      "installed": [
+        "mapillary",
+        "megvii",
+        "pointpillars",
+        "centerpoint"
+      ],
+      "installed_all_silent": "2329/44855",
+      "installed_and_candidate_all_silent": "6382/134565",
+      "observed_benefit": "121/26913",
+      "prediction_over_observed": "218183049/27137275"
+    },
+    {
+      "candidate": "megvii",
+      "independent_prediction": "852473206/18107739225",
+      "installed": [
+        "mapillary",
+        "fcos3d",
+        "pointpillars",
+        "centerpoint"
+      ],
+      "installed_all_silent": "7319/134565",
+      "installed_and_candidate_all_silent": "6382/134565",
+      "observed_benefit": "937/134565",
+      "prediction_over_observed": "852473206/126087405"
+    },
+    {
+      "candidate": "pointpillars",
+      "independent_prediction": "300429206/6035913075",
+      "installed": [
+        "mapillary",
+        "fcos3d",
+        "megvii",
+        "centerpoint"
+      ],
+      "installed_all_silent": "8107/134565",
+      "installed_and_candidate_all_silent": "6382/134565",
+      "observed_benefit": "115/8971",
+      "prediction_over_observed": "300429206/77374875"
+    },
+    {
+      "candidate": "centerpoint",
+      "independent_prediction": "940387847/18107739225",
+      "installed": [
+        "mapillary",
+        "fcos3d",
+        "megvii",
+        "pointpillars"
+      ],
+      "installed_all_silent": "7861/134565",
+      "installed_and_candidate_all_silent": "6382/134565",
+      "observed_benefit": "493/44855",
+      "prediction_over_observed": "940387847/199021635"
+    }
+  ],
+  "inputs": {
+    "gt_val_cache.json": "sha256:7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd",
+    "matched_centerpoint.json": "sha256:6a8be866b3316857f44787a3676b1557d9d8dfb6a945f16f469bb10877326275",
+    "matched_fcos3d.json": "sha256:dd7fa5d2fe13b34a4bf6762f4c8cd512e629c88bcbbb5227dfa58cf46ae8cdf4",
+    "matched_mapillary.json": "sha256:a8fef4a1e7dbf0fed84ae1220332fcb97196e468ebf23cb77fe835871466caca",
+    "matched_megvii.json": "sha256:2ce14fcca8235438d2f9b2ab844f83e21413e97a2ab0cf597f445bac6e35a0c1",
+    "matched_pointpillars.json": "sha256:46b0f70daf6e18f08a4a439c502e7026c2b5d67bcffbb2109f92b314478f484e"
+  },
+  "marginal_silent_rates": {
+    "centerpoint": "14938/134565",
+    "fcos3d": "13628/44855",
+    "mapillary": "2814/8971",
+    "megvii": "18091/134565",
+    "pointpillars": "7797/44855"
+  },
+  "opportunities": 134565,
+  "query": "benefit(C, j) = P(all of C silent) - P(all of C and j silent)",
+  "scope": "miss only, one shared reference and opportunity population; carries no false-positive term, no unmatched predictions and no matching competition",
+  "score_floor": "0.10",
+  "version": "0.1.0"
+}

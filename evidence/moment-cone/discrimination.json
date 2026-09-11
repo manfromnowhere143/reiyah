@@ -1,0 +1,151 @@
+{
+  "artifact_id": "reiyah.moment-cone.discrimination",
+  "conclusion": "the diagnostic tests representability by a scalar iid mixture. For independent channels, heterogeneous rates alone reject; perfect coupling is accepted; and in general m2 - m1^2 = meanCov - Var(p)/(K-1), so a heterogeneous dependent population can sit inside the cone. Membership isolates neither coupling nor heterogeneity. It is an assumption check for a mixture-based bound and no verdict of it should be quoted as a dependence result",
+  "controls": {
+    "general_decomposition": {
+      "example": "a heterogeneous and dependent law that still satisfies the second moment condition",
+      "identity_holds": true,
+      "inside_the_second_moment_condition": true,
+      "m2_minus_m1_squared": "29/192",
+      "mean_pair_covariance": "5/32",
+      "rates": [
+        "1/2",
+        "3/8",
+        "1/4"
+      ],
+      "reading": "positive dependence can offset the heterogeneity penalty, so cone membership isolates neither coupling nor heterogeneity",
+      "statement": "m2 - m1^2 = meanCov - Var(p)/(K-1) for any joint law",
+      "variance": "1/96"
+    },
+    "measured_rates_under_independence": {
+      "channels": [
+        "mapillary",
+        "fcos3d",
+        "megvii",
+        "pointpillars",
+        "centerpoint"
+      ],
+      "dependence_present": false,
+      "moments": [
+        "139511/672825",
+        "497088709/12071826150",
+        "38064532711577/4873335857624250",
+        "2324602753017193124/1639451099203018003125",
+        "3635685483134628111188/14707515810950274506034375"
+      ],
+      "rates": {
+        "centerpoint": "14938/134565",
+        "fcos3d": "13627/44855",
+        "mapillary": "42214/134565",
+        "megvii": "18091/134565",
+        "pointpillars": "23387/134565"
+      },
+      "reading": "these five channels, made mutually independent at their own measured rates, already fall outside the cone. A rejection therefore cannot be read as evidence that the channels fail together",
+      "variance_over_named_channels": "3289970134/452693480625",
+      "verdict": "infeasible",
+      "witness": {
+        "form": "x",
+        "functional": "-69550594814513502556961/30277125",
+        "polynomial_coefficients": [
+          "-497088709",
+          "2503106362",
+          "0"
+        ]
+      }
+    },
+    "perfect_coupling": {
+      "all_representable": true,
+      "cases": [
+        {
+          "benefit_of_one_more_identical_channel": "0",
+          "moments": [
+            "1/10",
+            "1/10",
+            "1/10",
+            "1/10",
+            "1/10"
+          ],
+          "p": "1/10",
+          "representing_measure": "(1 - 1/10) delta_0 + 1/10 delta_1",
+          "verdict": "representable"
+        },
+        {
+          "benefit_of_one_more_identical_channel": "0",
+          "moments": [
+            "1/2",
+            "1/2",
+            "1/2",
+            "1/2",
+            "1/2"
+          ],
+          "p": "1/2",
+          "representing_measure": "(1 - 1/2) delta_0 + 1/2 delta_1",
+          "verdict": "representable"
+        },
+        {
+          "benefit_of_one_more_identical_channel": "0",
+          "moments": [
+            "9/10",
+            "9/10",
+            "9/10",
+            "9/10",
+            "9/10"
+          ],
+          "p": "9/10",
+          "representing_measure": "(1 - 9/10) delta_0 + 9/10 delta_1",
+          "verdict": "representable"
+        }
+      ],
+      "statement": "identical perfectly coupled channels give m_k = p for every k"
+    },
+    "variance_identity": {
+      "all_equal": true,
+      "cases": [
+        {
+          "equal": true,
+          "m2_minus_m1_squared": "-1/16",
+          "minus_variance_over_k_minus_1": "-1/16",
+          "rates": [
+            "1/4",
+            "3/4"
+          ]
+        },
+        {
+          "equal": true,
+          "m2_minus_m1_squared": "-31/900",
+          "minus_variance_over_k_minus_1": "-31/900",
+          "rates": [
+            "1/10",
+            "1/5",
+            "7/10"
+          ]
+        },
+        {
+          "equal": true,
+          "m2_minus_m1_squared": "0",
+          "minus_variance_over_k_minus_1": "0",
+          "rates": [
+            "1/3",
+            "1/3",
+            "1/3",
+            "1/3"
+          ]
+        },
+        {
+          "equal": true,
+          "m2_minus_m1_squared": "-1644985067/905386961250",
+          "minus_variance_over_k_minus_1": "-1644985067/905386961250",
+          "rates": [
+            "42214/134565",
+            "13627/44855",
+            "18091/134565",
+            "23387/134565",
+            "14938/134565"
+          ]
+        }
+      ],
+      "statement": "for mutually independent Bernoulli channels, m2 - m1^2 = -Var(p)/(K-1)"
+    }
+  },
+  "version": "0.1.0"
+}

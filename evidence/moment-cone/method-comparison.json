@@ -1,0 +1,92 @@
+{
+  "artifact_id": "reiyah.moment-cone.method-comparison",
+  "populations": {
+    "all annotated objects": {
+      "exact": {
+        "certificate": {
+          "box_margin_ratio": "22834531/2827442",
+          "expanded_coefficients": [
+            "0",
+            "54289",
+            "-533570",
+            "1777025",
+            "-2290000",
+            "1000000"
+          ],
+          "form": "x",
+          "functional_at_centre": "-22834531/1000000",
+          "functional_box_worst_case": "-20007089/1000000",
+          "polynomial_coefficients": [
+            "233",
+            "-1145",
+            "1000"
+          ]
+        },
+        "seconds": 0.001,
+        "verdict": "infeasible_over_box"
+      },
+      "grid": {
+        "error_level_reachable": {
+          "200": {
+            "1/1000": true,
+            "1/10000": true,
+            "1/100000": true,
+            "1/1000000": false,
+            "1/10000000": false
+          },
+          "800": {
+            "1/1000": true,
+            "1/10000": true,
+            "1/100000": true,
+            "1/1000000": false,
+            "1/10000000": false
+          }
+        },
+        "seconds": 85.769,
+        "sound_for_feasibility": true,
+        "sound_for_infeasibility": false
+      },
+      "retained_verdict": "refuted",
+      "screen": {
+        "note": "every admissible finite difference is nonnegative",
+        "refutes": false,
+        "seconds": 3e-05
+      }
+    },
+    "most observable": {
+      "exact": {
+        "certificate": null,
+        "seconds": 7.177,
+        "verdict": "feasible_over_box"
+      },
+      "grid": {
+        "error_level_reachable": {
+          "200": {
+            "1/1000": true,
+            "1/10000": true,
+            "1/100000": true,
+            "1/1000000": true,
+            "1/10000000": true
+          },
+          "800": {
+            "1/1000": true,
+            "1/10000": true,
+            "1/100000": true,
+            "1/1000000": true,
+            "1/10000000": true
+          }
+        },
+        "seconds": 58.75,
+        "sound_for_feasibility": true,
+        "sound_for_infeasibility": false
+      },
+      "retained_verdict": "not refuted",
+      "screen": {
+        "note": "every admissible finite difference is nonnegative",
+        "refutes": false,
+        "seconds": 1.7e-05
+      }
+    }
+  },
+  "version": "0.1.0"
+}

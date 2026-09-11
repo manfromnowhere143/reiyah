@@ -1,0 +1,181 @@
+{
+  "absent_row_meaning": "an annotation row absent from a channel's matched table is an evaluated miss for that channel, not unavailable input; the coverage counts above let a reader check that claim",
+  "artifact_id": "reiyah.moment-cone.silence-histograms",
+  "channel_coverage": {
+    "centerpoint": {
+      "rows_with_a_matched_detection": 119627,
+      "rows_without": 14938
+    },
+    "fcos3d": {
+      "rows_with_a_matched_detection": 103495,
+      "rows_without": 31070
+    },
+    "mapillary": {
+      "rows_with_a_matched_detection": 101778,
+      "rows_without": 32787
+    },
+    "megvii": {
+      "rows_with_a_matched_detection": 116474,
+      "rows_without": 18091
+    },
+    "pointpillars": {
+      "rows_with_a_matched_detection": 115805,
+      "rows_without": 18760
+    }
+  },
+  "channels": [
+    "mapillary",
+    "fcos3d",
+    "megvii",
+    "pointpillars",
+    "centerpoint"
+  ],
+  "disclosure": "aggregate counts only: no annotation token, prediction, coordinate, row index or file path is emitted. These are counts over a public benchmark split at the granularity the redundancy-scaling lane already publishes. They are not automatically anonymous and were assessed as such, not assumed to be so because they are small",
+  "elapsed_seconds": 2.258,
+  "gates": {
+    "failures": [],
+    "histograms_checked": 2,
+    "row_counts_checked": 7
+  },
+  "input_identity_prebound": true,
+  "inputs": {
+    "gt_val_cache.json": "sha256:7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd",
+    "matched_centerpoint.json": "sha256:6a8be866b3316857f44787a3676b1557d9d8dfb6a945f16f469bb10877326275",
+    "matched_fcos3d.json": "sha256:dd7fa5d2fe13b34a4bf6762f4c8cd512e629c88bcbbb5227dfa58cf46ae8cdf4",
+    "matched_mapillary.json": "sha256:a8fef4a1e7dbf0fed84ae1220332fcb97196e468ebf23cb77fe835871466caca",
+    "matched_megvii.json": "sha256:2ce14fcca8235438d2f9b2ab844f83e21413e97a2ab0cf597f445bac6e35a0c1",
+    "matched_pointpillars.json": "sha256:46b0f70daf6e18f08a4a439c502e7026c2b5d67bcffbb2109f92b314478f484e"
+  },
+  "inputs_unchanged_across_the_run": true,
+  "populations": {
+    "all annotated objects": {
+      "moments": [
+        "139514/672825",
+        "23057/224275",
+        "93419/1345650",
+        "37378/672825",
+        "6382/134565"
+      ],
+      "opportunities": 134565,
+      "silence_histogram": [
+        70970,
+        25485,
+        18533,
+        7727,
+        5468,
+        6382
+      ]
+    },
+    "most observable": {
+      "moments": [
+        "1098/25049",
+        "1292/125245",
+        "549/125245",
+        "354/125245",
+        "55/25049"
+      ],
+      "opportunities": 25049,
+      "silence_histogram": [
+        21344,
+        2475,
+        864,
+        232,
+        79,
+        55
+      ]
+    },
+    "radar returns at least 3": {
+      "moments": [
+        "13183/109450",
+        "943/19900",
+        "6057/218900",
+        "1104/54725",
+        "35/2189"
+      ],
+      "opportunities": 21890,
+      "silence_histogram": [
+        14881,
+        3526,
+        1950,
+        725,
+        458,
+        350
+      ]
+    },
+    "range 0-20 m": {
+      "moments": [
+        "10421/91040",
+        "13249/273120",
+        "5649/182080",
+        "551/22760",
+        "371/18208"
+      ],
+      "opportunities": 54624,
+      "silence_histogram": [
+        38411,
+        8225,
+        4199,
+        1629,
+        1047,
+        1113
+      ]
+    },
+    "range 20-30 m": {
+      "moments": [
+        "39869/191215",
+        "7613/76486",
+        "5025/76486",
+        "10006/191215",
+        "1723/38243"
+      ],
+      "opportunities": 38243,
+      "silence_histogram": [
+        19597,
+        7705,
+        5496,
+        2331,
+        1391,
+        1723
+      ]
+    },
+    "range 30-40 m": {
+      "moments": [
+        "19852/65965",
+        "4115/26386",
+        "7048/65965",
+        "5704/65965",
+        "978/13193"
+      ],
+      "opportunities": 26386,
+      "silence_histogram": [
+        9092,
+        6128,
+        5462,
+        2120,
+        1628,
+        1956
+      ]
+    },
+    "range 40-50 m": {
+      "moments": [
+        "14339/38280",
+        "32629/153120",
+        "421/2784",
+        "1169/9570",
+        "265/2552"
+      ],
+      "opportunities": 15312,
+      "silence_histogram": [
+        3870,
+        3427,
+        3376,
+        1647,
+        1402,
+        1590
+      ]
+    }
+  },
+  "score_floor": "0.10",
+  "total_annotation_rows": 134565,
+  "version": "0.1.0"
+}

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/manfromnowhere143/reiyah/research/moment-cone/0.1.0/input.schema.json",
+  "title": "Moment-cone decision task",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "channel_count"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "reiyah.moment-cone.task"
+    },
+    "population_label": {
+      "type": "string",
+      "description": "Free text naming the population these moments summarise. Not an identifier and not evidence of custody."
+    },
+    "channel_count": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12
+    },
+    "moments": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {
+        "type": "string",
+        "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+        "description": "Subset-averaged k-wise all-silent rate as an exact plain decimal string. Floats are refused so that no value is silently rounded."
+      }
+    },
+    "rounding_half_width": {
+      "description": "Half width of the interval each printed moment stands for. A single string applies to every moment. Omitting it asserts the moments are exact.",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+          }
+        }
+      ]
+    },
+    "coarse_denominator": {
+      "type": "integer",
+      "minimum": 2
+    },
+    "fine_denominator": {
+      "type": "integer",
+      "minimum": 2
+    },
+    "silence_histogram": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 13,
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "description": "Count of opportunities on which exactly s channels were silent, for s = 0..channel_count. Exact integers, so the derived moments are exact rationals and no rounding box exists. Preferred over printed decimals wherever the counts are known."
+    }
+  },
+  "oneOf": [
+    {
+      "required": [
+        "moments"
+      ],
+      "not": {
+        "required": [
+          "silence_histogram"
+        ]
+      }
+    },
+    {
+      "required": [
+        "silence_histogram"
+      ],
+      "not": {
+        "anyOf": [
+          {
+            "required": [
+              "moments"
+            ]
+          },
+          {
+            "required": [
+              "rounding_half_width"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

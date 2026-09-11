@@ -1,0 +1,82 @@
+{
+  "actual_checker_acceptance": {
+    "checked": {
+      "centre_atoms": 1,
+      "corners_checked": 2
+    },
+    "verdict": "feasible_over_box"
+  },
+  "commit": "b0c33d9d3aa55fa34b140bb5f4936f0faca2f79c",
+  "finding": "false whole-box feasibility acceptance",
+  "forged_report": {
+    "measure": {
+      "centre": [
+        [
+          "1/2",
+          "1"
+        ]
+      ],
+      "corners": [
+        {
+          "moments": [
+            "1",
+            "1/2",
+            "13/50",
+            "7/50"
+          ],
+          "support": [
+            [
+              "2/5",
+              "1/2"
+            ],
+            [
+              "3/5",
+              "1/2"
+            ]
+          ]
+        },
+        {
+          "moments": [
+            "1",
+            "1/2",
+            "13/50",
+            "169/1250"
+          ],
+          "support": [
+            [
+              "0",
+              "1/26"
+            ],
+            [
+              "13/25",
+              "25/26"
+            ]
+          ]
+        }
+      ]
+    },
+    "moments": [
+      "0.5",
+      "0.25"
+    ],
+    "rounding_half_width": [
+      "0",
+      "1/100"
+    ],
+    "verdict": "feasible_over_box"
+  },
+  "omitted_corner_variance": "-1/100",
+  "task": {
+    "channel_count": 2,
+    "moments": [
+      "0.5",
+      "0.25"
+    ],
+    "population_label": "synthetic forged corner coverage",
+    "rounding_half_width": [
+      "0",
+      "0.01"
+    ],
+    "schema_id": "reiyah.moment-cone.task"
+  }
+}

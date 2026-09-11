@@ -1,0 +1,30 @@
+{
+  "checked": {
+    "centre_atoms": 6,
+    "corners_checked": 32,
+    "corners_declared": 32
+  },
+  "receipt": {
+    "assertions_checked": [
+      "every atom lies in [0,1] and every weight is nonnegative",
+      "the weights sum to one",
+      "the declared moments are reproduced exactly",
+      "for a whole-box verdict, the supplied corner set equals the declared corner set"
+    ],
+    "fields_not_verified": [
+      "artifact_id",
+      "version",
+      "population_label",
+      "reason",
+      "notes",
+      "atom_count",
+      "atom_grid",
+      "box_state"
+    ],
+    "note": "this receipt binds the exact bytes checked. Fields listed as not verified carry no confirmation of any kind, including the population label, which is not custody",
+    "report_sha256": "sha256:a4170f41aaf0f21fc6ed725a6d377f9e07079bde93e732069cf921d23896169f",
+    "task_sha256": "sha256:3423095f678c8d797b224f075d7e5973e7dde4ece114c148bd2f64af6c6a666e"
+  },
+  "result": "confirmed",
+  "verdict": "feasible_over_box"
+}

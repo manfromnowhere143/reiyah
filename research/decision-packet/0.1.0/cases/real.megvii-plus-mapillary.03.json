@@ -1,0 +1,120 @@
+{
+  "added_detections": [
+    {
+      "class": "motorcycle",
+      "id": "c0"
+    }
+  ],
+  "anchor_id": "real.megvii-plus-mapillary.03",
+  "base_detections": [
+    {
+      "class": "car",
+      "id": "b0"
+    },
+    {
+      "class": "car",
+      "id": "b1"
+    },
+    {
+      "class": "car",
+      "id": "b2"
+    },
+    {
+      "class": "motorcycle",
+      "id": "b3"
+    },
+    {
+      "class": "bicycle",
+      "id": "b4"
+    },
+    {
+      "class": "pedestrian",
+      "id": "b5"
+    }
+  ],
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1"
+  },
+  "objects": [
+    {
+      "class": "car",
+      "id": "o0"
+    },
+    {
+      "class": "motorcycle",
+      "id": "o1"
+    },
+    {
+      "class": "pedestrian",
+      "id": "o2"
+    },
+    {
+      "class": "bicycle",
+      "id": "o3"
+    },
+    {
+      "class": "pedestrian",
+      "id": "o4"
+    },
+    {
+      "class": "pedestrian",
+      "id": "o5"
+    },
+    {
+      "class": "car",
+      "id": "o6"
+    },
+    {
+      "class": "car",
+      "id": "o7"
+    },
+    {
+      "class": "bicycle",
+      "id": "o8"
+    }
+  ],
+  "schema_id": "reiyah.decision-packet.case",
+  "worlds": [
+    {
+      "edges": [
+        [
+          "b0",
+          "o0"
+        ],
+        [
+          "b1",
+          "o7"
+        ],
+        [
+          "b2",
+          "o6"
+        ],
+        [
+          "b4",
+          "o3"
+        ],
+        [
+          "b4",
+          "o8"
+        ],
+        [
+          "b5",
+          "o5"
+        ]
+      ],
+      "objects_present": [
+        "o0",
+        "o1",
+        "o2",
+        "o3",
+        "o4",
+        "o5",
+        "o6",
+        "o7",
+        "o8"
+      ],
+      "world_id": "w_all"
+    }
+  ]
+}
