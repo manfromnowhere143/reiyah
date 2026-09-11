@@ -369,3 +369,76 @@ class ConversionRate(unittest.TestCase):
         values = [counts[k] for k in sorted(counts, key=lambda x: Fraction(x))]
         self.assertEqual(values, sorted(values, reverse=True))
 
+class AdjudicationBudget(unittest.TestCase):
+    """The stopping rule, checked against an independent simulation and by hand."""
+
+    import adjudication_budget as B
+
+    def test_threshold_matches_the_contract_decision_rule(self):
+        """tau is where (a+b)g - b*r crosses the tolerance."""
+        a = b = Fraction(1)
+        t = Fraction(1, 10)
+        for r in range(1, 20):
+            tau = self.B.threshold(r, a, b, t)
+            for gain in range(0, r + 1):
+                delta = (a + b) * gain - b * r
+                self.assertEqual(delta > t, Fraction(gain) > tau, f"r={r} gain={gain}")
+
+    def test_stopping_counts_are_the_smallest_that_decide(self):
+        a = b = Fraction(1)
+        t = Fraction(1, 10)
+        for r in range(1, 20):
+            tau = self.B.threshold(r, a, b, t)
+            need_s, need_f = self.B.stopping_counts(r, tau)
+            # need_s conversions force the supported branch whatever the rest do
+            self.assertGreater(Fraction(need_s), tau)
+            if need_s > 1:
+                self.assertLessEqual(Fraction(need_s - 1), tau)
+            # need_f failures force the excluded branch whatever the rest do
+            self.assertLessEqual(Fraction(r - need_f), tau)
+            if need_f > 1:
+                self.assertGreater(Fraction(r - need_f + 1), tau)
+
+    def test_expected_trials_matches_an_independent_simulation(self):
+        import random
+        random.seed(20260911)
+        p = Fraction(66, 223)
+        for need_s, need_f in ((5, 5), (4, 4), (3, 7)):
+            exact = float(self.B.expected_trials(need_s, need_f, p))
+            trials = 0
+            runs = 40000
+            threshold = float(p)
+            for _ in range(runs):
+                s = f = 0
+                while s < need_s and f < need_f:
+                    if random.random() < threshold:
+                        s += 1
+                    else:
+                        f += 1
+                    trials += 1
+            simulated = trials / runs
+            self.assertAlmostEqual(exact, simulated, delta=0.08,
+                                   msg=f"{need_s}/{need_f}: exact {exact} simulated {simulated}")
+
+    def test_probability_supported_is_a_probability_and_monotone_in_the_prior(self):
+        values = [self.B.probability_supported(5, 5, Fraction(k, 20)) for k in range(0, 21)]
+        for value in values:
+            self.assertTrue(0 <= value <= 1)
+        self.assertEqual(values, sorted(values))
+        self.assertEqual(self.B.probability_supported(5, 5, Fraction(1, 2)), Fraction(1, 2))
+
+    def test_fair_prior_gives_an_even_split_by_symmetry(self):
+        """With equal stopping counts and p = 1/2 the race is symmetric."""
+        for need in (2, 3, 5, 8):
+            self.assertEqual(self.B.probability_supported(need, need, Fraction(1, 2)),
+                             Fraction(1, 2))
+
+    def test_worst_case_is_reported_honestly(self):
+        """For these anchors stopping saves nothing in the worst case, and says so."""
+        a = b = Fraction(1)
+        t = Fraction(1, 10)
+        for r in (9, 7):
+            tau = self.B.threshold(r, a, b, t)
+            need_s, need_f = self.B.stopping_counts(r, tau)
+            self.assertEqual(min(need_s + need_f - 1, r), r)
+
