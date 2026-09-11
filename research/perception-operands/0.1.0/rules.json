@@ -1,0 +1,54 @@
+{
+  "artifact_id": "reiyah.perception-operands.rules",
+  "version": "0.1.0",
+  "normalization_policy": "reiyah.nuscenes-nested-comparison.0.1.0",
+  "coordinate_frame": "nominal_source_global_xy_metres_at_comparison_keyframe",
+  "target_classes": ["barrier", "bicycle", "bus", "car", "construction_vehicle", "motorcycle", "pedestrian", "traffic_cone", "trailer", "truck"],
+  "unknown_prediction_class": "invalid_input_no_silent_mapping_or_drop",
+  "score_eligibility": {"operator": ">=", "threshold": {"numerator": "3", "denominator": "10"}},
+  "range_eligibility": {"distance": "squared_xy_to_nominal_ego", "operator": "<=", "threshold_metres_squared": 2500},
+  "base_retention": "all_score_and_range_eligible_base_rows_in_source_order_no_base_suppression",
+  "candidate_order": "descending_score_then_ascending_original_row_index",
+  "candidate_suppression": {
+    "class": "same_class_only",
+    "distance": "squared_xy",
+    "operator": "<",
+    "threshold_metres_squared": 4,
+    "blocker_search": "first_base_row_in_retained_order_then_previously_retained_candidate_rows",
+    "suppressed_candidate_can_block_later_candidate": false,
+    "base_unavailable": "candidate_retention_unknown_never_empty"
+  },
+  "augmentation": "all_normalized_base_detections_plus_retained_candidate_detections",
+  "reference_stage": "open_before_review",
+  "source_annotation_authority": "suggestions_only_no_automatic_reference_objects_or_edges",
+  "later_reference_rule": {
+    "object_eligibility": "declared_target_class_and_squared_xy_to_ego_at_most_2500",
+    "matching": "maximum_same_class_one_to_one_cardinality_with_strict_xy_distance_below_2_metres",
+    "geometry": "nominal_xy_at_anchor_keyframe_no_interpolation",
+    "uncertainty": "both_configurations_and_all_anchors_share_each_declared_joint_interpretation",
+    "admission": "separately_bound_review_discovery_assistance_and_adjudication_required"
+  },
+  "loss": {
+    "per_anchor": "false_negative_penalty*(reference_object_count-TP)+false_positive_penalty*(detection_count-TP)",
+    "difference": "loss_base-loss_augmented",
+    "equivalent_difference": "(false_negative_penalty+false_positive_penalty)*(TP_augmented-TP_base)-false_positive_penalty*retained_addition_count",
+    "population": "sum_of_anchor_weight_times_per_anchor_difference",
+    "penalties_weights_tolerance": "exact_rationals_in_comparison.json",
+    "open_reference_bound": "[-false_positive_penalty*weighted_retained_addition_count,false_negative_penalty*weighted_retained_addition_count]",
+    "missing_output": "input_blocked_no_empty_array_or_loss_imputation"
+  },
+  "decision_rules": {
+    "improvement_supported": "lower>tolerance",
+    "improvement_excluded": "upper<=tolerance",
+    "prefer_augmented": "lower>tolerance",
+    "prefer_base": "upper<(-tolerance)",
+    "equivalent_within_tolerance": "lower>=(-tolerance)_and_upper<=tolerance",
+    "otherwise": "unresolved"
+  },
+  "evidence_limits": [
+    "fixed_selected_population_no_sampling_confidence",
+    "numerical_exactness_does_not_establish_physical_reference_coverage",
+    "no_F1_planner_behavior_crash_risk_or_causal_claim",
+    "no_reviewer_acceptance_or_blinding_claim"
+  ]
+}

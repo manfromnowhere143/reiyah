@@ -1,0 +1,207 @@
+{
+  "artifact_id": "reiyah.perception-operands.checkpoint",
+  "checks": {
+    "context-regression-before-fix": {
+      "byte_size": 1037,
+      "private_record": "checks/context-regression-before-fix/receipt.json",
+      "sha256": "abce5b0f28834627b8528516a8ae90ea81b6723c5ba05427e04ff8fde6b27087"
+    },
+    "development-2": {
+      "byte_size": 1545,
+      "private_record": "checks/development-2/receipt.json",
+      "sha256": "8df05e8bb3647a70763a1eea6ecad6a7c951fe37939d5940bad22be82ac3d9f6"
+    },
+    "development-3": {
+      "byte_size": 1545,
+      "private_record": "checks/development-3/receipt.json",
+      "sha256": "075a0fae8d899a93bc0d9fe1a06923b327cb7da091517a64050d16c0288d926f"
+    },
+    "independent-accounting": {
+      "byte_size": 1479,
+      "private_record": "checks/independent-accounting/receipt.json",
+      "sha256": "d1f0177de736a22acea3a6bb15b4e23b1ef069bc52398ebdb5a706d1b427ff6c"
+    },
+    "independent_calculation": {
+      "byte_size": 9026,
+      "private_record": "private/check_operands_independently.py",
+      "sha256": "ee92fa44a910b04000f2204a3ec75afa22dbc3223c48349c92b4bbb6d1711262"
+    },
+    "independent_result": {
+      "byte_size": 902,
+      "private_record": "checks/independent-accounting/stdout.txt",
+      "sha256": "4dc7a61b03f41cc005621d04d987e74804ee79715ca0f9dbc89555d1e1c604c8"
+    },
+    "initial_contract": {
+      "byte_size": 2595,
+      "private_record": "private/INITIAL_CONTRACT.md",
+      "sha256": "4b0f46a15c97bf6d6a9f76aa41d3b5be94923113ba842e9dce4ce520d1257e71"
+    },
+    "measurement-tests": {
+      "byte_size": 1001,
+      "private_record": "checks/measurement-tests/receipt.json",
+      "sha256": "d66ba3fe370ce1bdac1e7f26cd7e16f9e108aa4618dd0390fd0ea50cc55eeb82"
+    },
+    "neutral-count-bound": {
+      "byte_size": 1336,
+      "private_record": "checks/neutral-count-bound/receipt.json",
+      "sha256": "865a703ad878c1c6e945198123a600065d2c340435dda314b23e6c4b7598dbe3"
+    },
+    "repeat_readback": {
+      "byte_size": 1375,
+      "private_record": "private/repeat-readback.json",
+      "sha256": "eef332b730cfd598b9f1109ebc43471dbf7f90818950a502a147e51ac9728c33"
+    },
+    "repository-tests": {
+      "byte_size": 998,
+      "private_record": "checks/repository-tests/receipt.json",
+      "sha256": "4a55199c63dd2dfdf802045a78a859f616e34b7198fc33568a6418a4628e7b79"
+    }
+  },
+  "common_files": [
+    {
+      "byte_size": 4901,
+      "path": "common/ANALYST.md",
+      "sha256": "04595e85c524ed79b78d5c2be5884161b94b6a71a114297852fab09b692dee32"
+    },
+    {
+      "byte_size": 3992,
+      "path": "common/SOURCE_READER.md",
+      "sha256": "80a97909c7698cff61e7242eda5c444c2cad7badd120e902e296523f14d98153"
+    },
+    {
+      "byte_size": 2856476,
+      "path": "common/assistance.json",
+      "sha256": "82de8a82272164445cffd873342faff136b37170f63f54419238b5d8ec0c46d4"
+    },
+    {
+      "byte_size": 14147,
+      "path": "common/comparison.json",
+      "sha256": "fbb2610aef00687e429bb71d805c4c1f321ec14978005e9fbdf44048bb5547b4"
+    },
+    {
+      "byte_size": 201394,
+      "path": "common/operands.json",
+      "sha256": "0fb2f0dd3ae8cb962af11bdcd4ca0ad234a1f05cf2aa4052ecfc61fcf36bd899"
+    },
+    {
+      "byte_size": 3176,
+      "path": "common/rules.json",
+      "sha256": "b3c08d560f751c5ebef9284bfc8974feb8fde48c455b9ff512e005c59fd8c878"
+    }
+  ],
+  "comparator": "Conventional exact threshold/range/suppression and count-bound calculation on the same pinned rows; no Reiyah imports in that private calculation.",
+  "cost": {
+    "development-2": {
+      "child_max_rss_bytes_macos": 300433408,
+      "elapsed_seconds": 8.916525459033437
+    },
+    "development-3": {
+      "child_max_rss_bytes_macos": 312393728,
+      "elapsed_seconds": 8.754799084039405
+    },
+    "independent-accounting": {
+      "child_max_rss_bytes_macos": 83050496,
+      "elapsed_seconds": 0.1432829579571262
+    }
+  },
+  "cost_interpretation": "Observed local process costs; some verification overlapped; not a benchmark or full person effort. The separate accounting omits source preparation and asset binding.",
+  "next": "Use actual competent reviewers, conventional analysis and adjudication. Lock discoveries before assistance, record effort and prepare identically mapped admitted references once those judgments exist. Do not combine the research lane's different population or assumed references.",
+  "nonclaims": {
+    "assisted_disclosure": false,
+    "gate_a_acceptance": "unaccepted",
+    "human_judgments": 0,
+    "new_cohort_or_seed": false,
+    "new_physical_decision_evidence": false,
+    "physical_study_run": false,
+    "reference_constraints_admitted": false,
+    "representation_replay_bound": [
+      -8,
+      8
+    ]
+  },
+  "population": {
+    "comparison_anchors": 2,
+    "context_keyframes": 16,
+    "mapped_rows": 648,
+    "qualified_records": 158,
+    "retained": {
+      "additions": {
+        "state": "observed",
+        "value": 16
+      },
+      "base": {
+        "state": "observed",
+        "value": 85
+      }
+    }
+  },
+  "preparation": {
+    "byte_size": 6213,
+    "private_record": "private/development-packet-3/PREPARATION.json",
+    "sha256": "4853a8ce959422f819795e86bf7a36b7fce9d43444ec7bdf2250f33c4885bf0a"
+  },
+  "question": "Can both analysts trace every retained comparison detection and normalization disposition to the same complete assistance rows?",
+  "result": "Both corrected preparations are byte-identical; an independently structured conventional calculation confirms all 648 dispositions, 158 qualified records and all retained detections.",
+  "scope": "Open-reference pre-review stage only. Finite references and nonempty joint models are rejected, never discarded.",
+  "shared_trust": [
+    "Expected upstream full-source scan and annotation projection",
+    "Bound catalog, comparison, observation inventory and nominal geometry",
+    "Existing source projection, strict parsers, normalizer and population/asset binding",
+    "Python runtime, JSON, Fraction, Decimal, jsonschema and image decoder"
+  ],
+  "source_closure": {
+    "research/perception-assistance/0.1.0/READER.md": "80a97909c7698cff61e7242eda5c444c2cad7badd120e902e296523f14d98153",
+    "research/perception-decision/0.1.0/input.schema.json": "525c23d734a594d8c64ba3128c454314348345b84bebc615c1732e89750847a0",
+    "research/perception-operands/0.1.0/ANALYST.md": "04595e85c524ed79b78d5c2be5884161b94b6a71a114297852fab09b692dee32",
+    "research/perception-operands/0.1.0/rules.json": "b3c08d560f751c5ebef9284bfc8974feb8fde48c455b9ff512e005c59fd8c878",
+    "tools/perception_assistance.py": "f336420cbfaf736b82497e52fe6b6f7430c22dbc3e73a55171d89ebea2cf81c7",
+    "tools/perception_assistance_sources.py": "7f9025d64275fe1464a41fdb7e8cd87b3a789b75e034992f5ad23ba11cc4558a",
+    "tools/perception_binding.py": "2d4757a5ca2eb2ee81bc61a5cd208cc020d0654d8c88e8cc8facf7c47dd47d87",
+    "tools/perception_decision/__init__.py": "53d4c1fb5ce4982c2dfec949b7fa84ec67c52496eb445782fee10b0b6f6bde0f",
+    "tools/perception_decision/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "tools/perception_decision/checker.py": "64e342e00a4c2683f9db5fa2cb8213959a357bd5c3099296a090564527134da4",
+    "tools/perception_decision/cli.py": "419fa07442ebf2ff4ea9484ad0f7b235aab291c50eee52d5cb0374209cf7b7ee",
+    "tools/perception_decision/contract.py": "aed6e16f0d2b09b85abccbf4aeac5e74abb42e699c4ce8d9be34073523327134",
+    "tools/perception_decision/kernel.py": "7a5a630c9265108cc0d0a1c3e065292d62425b3a0cbfa7ae0ec942b9233f5ecc",
+    "tools/perception_decision/nuscenes.py": "ff5f6bd5509fcd656b2420af7b531ae601b12e77975270209dbb1dbea92f6eb4",
+    "tools/perception_discovery/__init__.py": "de89355206dff0045cf0c0931ed371bed7d02dab8f1d0c839ed7388411bdea8d",
+    "tools/perception_discovery/__main__.py": "f7115e75abaf1a8735c1557b0ec869e58daf2d10de1c6aedb5ed718c4f6536e1",
+    "tools/perception_discovery/custody.py": "0108db4755b3e9ea8215d8497f3b6c6a66426817c8ff9070ae6f53873995eb9f",
+    "tools/perception_discovery/records.py": "e182a0ec010ff3ccd77936e48724427ae3e97b2d1f94a3074d51fc530a8f04e0",
+    "tools/perception_geometry/__init__.py": "f48c9f24aa73ec8ed3614a9bcb05cb041d5fd6eeee7b664303d15cf432733f00",
+    "tools/perception_geometry/__main__.py": "67a8a65c48401e1309cdd8d42ac824a149a2534bd1697db3d87dc901bd4620ef",
+    "tools/perception_geometry/algebra.py": "72c3786489c18175a007f531410884311bbc1dee2ee2831d41ba9cd0a9ea13f0",
+    "tools/perception_geometry/bind.py": "1f52a269c4e4b94b6b9fe33c048a50b1a5c2e4b382fe1687d6dad0d93840fa69",
+    "tools/perception_inputs/__init__.py": "72a4b32a5dbeea671e7fc3589209cab0a8a7f8badab26d496e70e10edc06c4d4",
+    "tools/perception_inputs/__main__.py": "220f2a8e9baf67787d07a17f04b835c3813d2ce18ab7492ec7bc460f663fbe16",
+    "tools/perception_inputs/catalog.py": "908106f97eaad6326407a47fc3da0ff0e483d70ba9687bb84d028d1e69e0531c",
+    "tools/perception_inputs/clock.py": "1de238923caf890a748a9032481f86cdbdda355b5eef32264a994b9a357e0a5a",
+    "tools/perception_inputs/sensors.py": "1fec7a087c7a58b233096a01ef7ecf34f06085aa73af5da3eec043db579c711c",
+    "tools/perception_inputs/source_io.py": "65da8ba76d03aed2e3ac556729e2ea19fc12996c808805bb173bc782c4e0af76",
+    "tools/perception_observation/__init__.py": "e83dc0acf86c213309235c925ddd811b307c4232d64756ebcd9edd2e5621e818",
+    "tools/perception_observation/__main__.py": "0d9349224e4964e181e361062bbe2315142d5b651aab20808e08ef4f79822ec2",
+    "tools/perception_observation/contract.py": "ad507712773a990a9ab1a68817761a8d87c48c0a9c4ef16ec3d9623b34929545",
+    "tools/perception_observation/formats.py": "29ce13adf643e8f063dea9ab7f3e495bfa63b24ff7a374e93842cfe762a1050a",
+    "tools/perception_observation/package.py": "059251f1124b57003707767663066a6898fed0888ba3ce14abdaaa65f3d75991",
+    "tools/perception_operands.py": "23a3ca1033132301cb0ce4a8515c3a8803e2aa41ce74cc1584959b9d8c267ff4",
+    "tools/perception_reference.py": "77ef5517f5febbfdaa7bb0ea7394806282548efa610c173cba58993e99fc9235",
+    "tools/perception_windows/__init__.py": "a689128ed8c53650ccc854c5bd1faa1ba1181fd0e8e181b91e92d417c48893dd",
+    "tools/perception_windows/__main__.py": "e4507826d40c9cd436f788b2664f0d2bf7acbb6910d121d3af2fd90c83252283",
+    "tools/perception_windows/payloads.py": "c3cc9dd20a4f76df08575a684f8cbd0f1e1f51e796d5a6cb1903f484dfc4515f",
+    "tools/perception_windows/timeline.py": "b256bdb2afeb3e0c563b4e53abe5aeaa6581a0b2ff6309690734052d7b093209"
+  },
+  "status": "exploratory_preparation",
+  "test_counts": {
+    "measurement": 93,
+    "new_operands_tests": 12,
+    "repository": 321
+  },
+  "unproven": [
+    "Physical reference accuracy and completeness",
+    "Actual reviewer independence and exposure order",
+    "Interactive viewing and human usability",
+    "Changed engineering decision",
+    "Repeated product value"
+  ],
+  "version": "0.1.0"
+}

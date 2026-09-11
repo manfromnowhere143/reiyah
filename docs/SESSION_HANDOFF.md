@@ -1,3 +1,32 @@
+# Equal analysis operands, 2026-09-11
+
+Read the [operand checkpoint](PERCEPTION_OPERANDS_CHECKPOINT_2026-09-11.md),
+[interface](../research/perception-operands/0.1.0/README.md) and
+[machine evidence](../research/perception-operands/0.1.0/checkpoint.json) first.
+Both methods now have one prepared common comparison with complete neutral row mappings,
+normalization dispositions, loss rules, weights and tolerance. The two exposed anchors have
+648 prediction rows, 85 retained base detections and 16 retained additions. The unchanged
+16-keyframe source assistance remains inspection context. Corrected preparations are byte-identical.
+
+All 321 repository tests and 93 measurement tests pass. A separate calculation imports no Reiyah
+code and confirms every disposition and retained detection. The existing separate certificate
+checker accepts the neutral comparison; the open-reference bound remains [-8,8]. Context-state,
+count and sample forgeries fail after a retained reproduced defect and correction. Unavailable
+counts remain explicit. These checks do not supply physical judgments or external review.
+
+Next: use competent independent discovery reviewers, a conventional analyst and adjudication;
+complete practical viewing and preserve discoveries before assistance. Once actual judgments
+exist, prepare identical admitted-reference operands and mappings for both methods. This version
+rejects finite references and nonempty joint models instead of silently reopening them. Keep other
+research populations and assumed-reference exercises separate. Record initial conclusions,
+corrections, exposure order and all effort. No assistance was released or reference admitted.
+The physical study remains unselected and unrun; Gate A remains unaccepted. Offline Engine/main
+integration authority persists. Preserve Console, research lanes and other owner checkouts.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Complete later source assistance, 2026-09-10
 
 Read the [assistance checkpoint](PERCEPTION_ASSISTANCE_CHECKPOINT_2026-09-10.md),

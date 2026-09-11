@@ -192,6 +192,7 @@ The implemented pieces form one offline comparison pipeline:
 | [Reviewed-source admission](docs/PERCEPTION_ADMISSION_CHECKPOINT_2026-09-10.md) | Exact staged review contents and complete proposal accounting preserve shared interpretations; synthetic finite/open comparisons and forged-record rejections are checked |
 | [Development review preparation](docs/PERCEPTION_REHEARSAL_CHECKPOINT_2026-09-10.md) | Separate unassigned discovery folders, neutral capture navigation and equal analyst/effort instructions; actual human workflow remains outstanding |
 | [Common assistance preparation](docs/PERCEPTION_ASSISTANCE_CHECKPOINT_2026-09-10.md) | Complete source assistance for 16 development keyframes, with 960 annotations and 4,876 predictions; identical private preparations, no assisted disclosure or physical judgments |
+| [Equal analysis operands](docs/PERCEPTION_OPERANDS_CHECKPOINT_2026-09-11.md) | Every comparison row and suppression disposition mapped to the same assistance for both analysts; identical private preparations and separate conventional accounting; physical references remain open |
 
 The proposed study selects **60 scenes**, then one eligible anchor per scene, only after the
 input, method, reviewer, comparator and adjudication freeze. Two independent reviewers first
@@ -275,7 +276,7 @@ identities.
 
 | Read for | Start here |
 |---|---|
-| Current Engine direction and implementation | [Selected architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md), [latest checkpoint](docs/PERCEPTION_ASSISTANCE_CHECKPOINT_2026-09-10.md), [decision interface](research/perception-decision/0.1.0/README.md) |
+| Current Engine direction and implementation | [Selected architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md), [latest checkpoint](docs/PERCEPTION_OPERANDS_CHECKPOINT_2026-09-11.md), [decision interface](research/perception-decision/0.1.0/README.md) |
 | Mission and scientific structure | [Scientific charter](docs/SCIENTIFIC_CHARTER.md), [architecture](docs/ARCHITECTURE.md), [mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) |
 | Current interpretation of sensor, human-proxy and LLM experiments | [Corrected synthesis](docs/GENERAL_SYNTHESIS.md), [current claim register](evidence/claim-status-register-2026-09-08T054835Z.json) |
 | Selected study and earlier investigations | [60-scene study design](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md#one-prospective-study), [research-board report](docs/RESEARCH_BOARD_2026-09-07.md), [earlier training design](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) |
