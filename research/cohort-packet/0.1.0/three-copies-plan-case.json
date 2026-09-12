@@ -1,0 +1,436 @@
+{
+  "anchors": [
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "c0"
+        },
+        {
+          "class": "car",
+          "id": "c1"
+        },
+        {
+          "class": "car",
+          "id": "c2"
+        }
+      ],
+      "base_detections": [
+        {
+          "class": "car",
+          "id": "b0"
+        },
+        {
+          "class": "car",
+          "id": "b1"
+        },
+        {
+          "class": "car",
+          "id": "b2"
+        }
+      ],
+      "id": "A",
+      "objects": [
+        {
+          "class": "car",
+          "id": "k0"
+        },
+        {
+          "class": "car",
+          "id": "k1"
+        },
+        {
+          "class": "car",
+          "id": "k2"
+        },
+        {
+          "class": "car",
+          "id": "d0"
+        },
+        {
+          "class": "car",
+          "id": "d1"
+        },
+        {
+          "class": "car",
+          "id": "d2"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "1"
+    }
+  ],
+  "cohort_id": "three-copies",
+  "joint_worlds": [
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k0"
+            ],
+            [
+              "b1",
+              "k1"
+            ],
+            [
+              "b2",
+              "k2"
+            ],
+            [
+              "c0",
+              "k0"
+            ],
+            [
+              "c1",
+              "k1"
+            ],
+            [
+              "c2",
+              "k2"
+            ]
+          ],
+          "objects_present": [
+            "k0",
+            "k1",
+            "k2"
+          ]
+        }
+      },
+      "world_id": "m000"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k0"
+            ],
+            [
+              "b0",
+              "d0"
+            ],
+            [
+              "b1",
+              "k1"
+            ],
+            [
+              "b2",
+              "k2"
+            ],
+            [
+              "c0",
+              "k0"
+            ],
+            [
+              "c1",
+              "k1"
+            ],
+            [
+              "c2",
+              "k2"
+            ]
+          ],
+          "objects_present": [
+            "k0",
+            "k1",
+            "k2",
+            "d0"
+          ]
+        }
+      },
+      "world_id": "m100"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k0"
+            ],
+            [
+              "b1",
+              "k1"
+            ],
+            [
+              "b1",
+              "d1"
+            ],
+            [
+              "b2",
+              "k2"
+            ],
+            [
+              "c0",
+              "k0"
+            ],
+            [
+              "c1",
+              "k1"
+            ],
+            [
+              "c2",
+              "k2"
+            ]
+          ],
+          "objects_present": [
+            "k0",
+            "k1",
+            "k2",
+            "d1"
+          ]
+        }
+      },
+      "world_id": "m010"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k0"
+            ],
+            [
+              "b0",
+              "d0"
+            ],
+            [
+              "b1",
+              "k1"
+            ],
+            [
+              "b1",
+              "d1"
+            ],
+            [
+              "b2",
+              "k2"
+            ],
+            [
+              "c0",
+              "k0"
+            ],
+            [
+              "c1",
+              "k1"
+            ],
+            [
+              "c2",
+              "k2"
+            ]
+          ],
+          "objects_present": [
+            "k0",
+            "k1",
+            "k2",
+            "d0",
+            "d1"
+          ]
+        }
+      },
+      "world_id": "m110"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k0"
+            ],
+            [
+              "b1",
+              "k1"
+            ],
+            [
+              "b2",
+              "k2"
+            ],
+            [
+              "b2",
+              "d2"
+            ],
+            [
+              "c0",
+              "k0"
+            ],
+            [
+              "c1",
+              "k1"
+            ],
+            [
+              "c2",
+              "k2"
+            ]
+          ],
+          "objects_present": [
+            "k0",
+            "k1",
+            "k2",
+            "d2"
+          ]
+        }
+      },
+      "world_id": "m001"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k0"
+            ],
+            [
+              "b0",
+              "d0"
+            ],
+            [
+              "b1",
+              "k1"
+            ],
+            [
+              "b2",
+              "k2"
+            ],
+            [
+              "b2",
+              "d2"
+            ],
+            [
+              "c0",
+              "k0"
+            ],
+            [
+              "c1",
+              "k1"
+            ],
+            [
+              "c2",
+              "k2"
+            ]
+          ],
+          "objects_present": [
+            "k0",
+            "k1",
+            "k2",
+            "d0",
+            "d2"
+          ]
+        }
+      },
+      "world_id": "m101"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k0"
+            ],
+            [
+              "b1",
+              "k1"
+            ],
+            [
+              "b1",
+              "d1"
+            ],
+            [
+              "b2",
+              "k2"
+            ],
+            [
+              "b2",
+              "d2"
+            ],
+            [
+              "c0",
+              "k0"
+            ],
+            [
+              "c1",
+              "k1"
+            ],
+            [
+              "c2",
+              "k2"
+            ]
+          ],
+          "objects_present": [
+            "k0",
+            "k1",
+            "k2",
+            "d1",
+            "d2"
+          ]
+        }
+      },
+      "world_id": "m011"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k0"
+            ],
+            [
+              "b0",
+              "d0"
+            ],
+            [
+              "b1",
+              "k1"
+            ],
+            [
+              "b1",
+              "d1"
+            ],
+            [
+              "b2",
+              "k2"
+            ],
+            [
+              "b2",
+              "d2"
+            ],
+            [
+              "c0",
+              "k0"
+            ],
+            [
+              "c1",
+              "k1"
+            ],
+            [
+              "c2",
+              "k2"
+            ]
+          ],
+          "objects_present": [
+            "k0",
+            "k1",
+            "k2",
+            "d0",
+            "d1",
+            "d2"
+          ]
+        }
+      },
+      "world_id": "m111"
+    }
+  ],
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1",
+    "tolerance": "1/10"
+  },
+  "schema_id": "reiyah.cohort-packet.case"
+}
