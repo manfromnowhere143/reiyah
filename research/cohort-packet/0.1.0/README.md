@@ -42,6 +42,12 @@ Python's `Fraction` and integer arithmetic.
 | `oppositely-coupled` | joint `[0, 0]`, relaxation `[-1, 1]` | reproduces the Engine lane's published example |
 | `matching-trap` | `[-1, 1]` | one anchor, disputed object reachable only by the base |
 | `open-two-anchor` | `[-8, 8]`, state `open_reference_only` | the live comparison's actual state |
+| `conditional-inertness-case` | plan depth 1 | from the Engine lane: a question inert on its own and decisive once another is answered absent. Retained so that inert questions are never discarded before planning |
+| `adaptive-beats-fixed-case` | plan depth **2**, smallest fixed resolving set **3** | the retained witness that a fixed resolving set bounds the adaptive optimum from above only, and so can never certify it |
+
+`answer-prerequisites.json` records which questions have a defined measurement, at what stage each
+may be asked, and what is missing. Presence questions are supported. Reachability, calibration and
+timing questions are not, and each is recorded as a named missing prerequisite rather than assumed.
 
 ## Scope
 

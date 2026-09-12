@@ -1,0 +1,324 @@
+{
+  "anchors": [
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "A_c0"
+        }
+      ],
+      "base_detections": [
+        {
+          "class": "car",
+          "id": "A_b0"
+        }
+      ],
+      "id": "A",
+      "objects": [
+        {
+          "class": "car",
+          "id": "A_k"
+        },
+        {
+          "class": "car",
+          "id": "A_d"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "2/5"
+    },
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "B_c0"
+        }
+      ],
+      "base_detections": [
+        {
+          "class": "car",
+          "id": "B_b0"
+        }
+      ],
+      "id": "B",
+      "objects": [
+        {
+          "class": "car",
+          "id": "B_k"
+        },
+        {
+          "class": "car",
+          "id": "B_d"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "3/10"
+    },
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "C_c0"
+        }
+      ],
+      "base_detections": [
+        {
+          "class": "car",
+          "id": "C_b0"
+        }
+      ],
+      "id": "C",
+      "objects": [
+        {
+          "class": "car",
+          "id": "C_k"
+        },
+        {
+          "class": "car",
+          "id": "C_d"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "3/10"
+    }
+  ],
+  "cohort_id": "adaptive-beats-fixed",
+  "joint_worlds": [
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "A_b0",
+              "A_k"
+            ],
+            [
+              "A_c0",
+              "A_k"
+            ]
+          ],
+          "objects_present": [
+            "A_k"
+          ]
+        },
+        "B": {
+          "edges": [
+            [
+              "B_b0",
+              "B_k"
+            ],
+            [
+              "B_c0",
+              "B_k"
+            ]
+          ],
+          "objects_present": [
+            "B_k"
+          ]
+        },
+        "C": {
+          "edges": [
+            [
+              "C_b0",
+              "C_k"
+            ],
+            [
+              "C_b0",
+              "C_d"
+            ],
+            [
+              "C_c0",
+              "C_k"
+            ]
+          ],
+          "objects_present": [
+            "C_k",
+            "C_d"
+          ]
+        }
+      },
+      "world_id": "c_only"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "A_b0",
+              "A_k"
+            ],
+            [
+              "A_c0",
+              "A_k"
+            ]
+          ],
+          "objects_present": [
+            "A_k"
+          ]
+        },
+        "B": {
+          "edges": [
+            [
+              "B_b0",
+              "B_k"
+            ],
+            [
+              "B_b0",
+              "B_d"
+            ],
+            [
+              "B_c0",
+              "B_k"
+            ]
+          ],
+          "objects_present": [
+            "B_k",
+            "B_d"
+          ]
+        },
+        "C": {
+          "edges": [
+            [
+              "C_b0",
+              "C_k"
+            ],
+            [
+              "C_c0",
+              "C_k"
+            ]
+          ],
+          "objects_present": [
+            "C_k"
+          ]
+        }
+      },
+      "world_id": "b_only"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "A_b0",
+              "A_k"
+            ],
+            [
+              "A_c0",
+              "A_k"
+            ]
+          ],
+          "objects_present": [
+            "A_k"
+          ]
+        },
+        "B": {
+          "edges": [
+            [
+              "B_b0",
+              "B_k"
+            ],
+            [
+              "B_b0",
+              "B_d"
+            ],
+            [
+              "B_c0",
+              "B_k"
+            ]
+          ],
+          "objects_present": [
+            "B_k",
+            "B_d"
+          ]
+        },
+        "C": {
+          "edges": [
+            [
+              "C_b0",
+              "C_k"
+            ],
+            [
+              "C_b0",
+              "C_d"
+            ],
+            [
+              "C_c0",
+              "C_k"
+            ]
+          ],
+          "objects_present": [
+            "C_k",
+            "C_d"
+          ]
+        }
+      },
+      "world_id": "b_and_c"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "A_b0",
+              "A_k"
+            ],
+            [
+              "A_b0",
+              "A_d"
+            ],
+            [
+              "A_c0",
+              "A_k"
+            ]
+          ],
+          "objects_present": [
+            "A_k",
+            "A_d"
+          ]
+        },
+        "B": {
+          "edges": [
+            [
+              "B_b0",
+              "B_k"
+            ],
+            [
+              "B_c0",
+              "B_k"
+            ]
+          ],
+          "objects_present": [
+            "B_k"
+          ]
+        },
+        "C": {
+          "edges": [
+            [
+              "C_b0",
+              "C_k"
+            ],
+            [
+              "C_b0",
+              "C_d"
+            ],
+            [
+              "C_c0",
+              "C_k"
+            ]
+          ],
+          "objects_present": [
+            "C_k",
+            "C_d"
+          ]
+        }
+      },
+      "world_id": "a_and_c"
+    }
+  ],
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1",
+    "tolerance": "1/10"
+  },
+  "schema_id": "reiyah.cohort-packet.case"
+}

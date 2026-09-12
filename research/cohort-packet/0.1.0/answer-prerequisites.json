@@ -1,0 +1,57 @@
+{
+  "artifact_id": "reiyah.resolution-plan.answer-prerequisites",
+  "version": "0.1.0",
+  "date": "2026-09-12",
+  "purpose": "Record which questions a resolution plan may actually ask, what measurement would answer each one, at what stage it may be asked, and what is missing today. It is a statement of prerequisites, not a schema and not a workflow.",
+  "assumed_answer_model": {
+    "statement": "every permitted question is answerable, truthfully, as a binary, at equal cost",
+    "status": "an assumption about an observation procedure, not an observation",
+    "consequence_if_false": "the reported worst-case depth is not a guarantee. It remains a lower bound on the work only in the sense that no smaller tree exists; it says nothing about whether the tree can be executed."
+  },
+  "answers_the_planner_models": ["present", "absent"],
+  "answers_the_planner_does_not_model": [
+    {"answer": "unable to judge", "note": "the observer looked and could not decide. Distinct from absent."},
+    {"answer": "ambiguous", "note": "more than one reading is defensible. Distinct from a coin flip between present and absent."},
+    {"answer": "no evidence at that location", "note": "nothing was recorded there. Distinct from an object that is not there."},
+    {"answer": "not exposed", "note": "the observer was not permitted or able to see that region or window."},
+    {"answer": "answered at unequal cost", "note": "two questions may both be answerable and not be equally expensive. Depth counts answers, not effort."}
+  ],
+  "mechanism_available_now": "a case may set \"answerable\": false on a declared object, with an \"answer_obstacle\" string. The planner then excludes that question from the permitted set, and if it would have divided the witness cell the result is the distinct state blocked_by_unanswerable_questions rather than an ambiguity claim.",
+  "question_kinds": [
+    {
+      "kind": "object_presence",
+      "asks": "is the named reference object present at this anchor",
+      "supported": true,
+      "defined_measurement": "membership of the object identifier in objects_present for that anchor, inside an admitted joint reference interpretation",
+      "stage": "after a joint reference interpretation has been admitted for every finite anchor, and before the cohort comparison is reported",
+      "missing_for_the_live_comparison": "the live two-anchor comparison has no admitted joint world at all. Its state is open_reference_only with enclosure [-8, 8], so there is no population over which any presence question could be asked. This is the prerequisite, and it is external to this lane.",
+      "who_supplies_it": "the owning lane, by admitting reference interpretations. Not this program, and not by default."
+    },
+    {
+      "kind": "match_reachability",
+      "asks": "could this detection have matched that object",
+      "supported": false,
+      "why_not": "the planner reads match edges as a declared input of the case. It does not measure them. Two admitted worlds that agree on presence and disagree on edges are exactly the geometry ambiguity the planner reports as unresolvable, and no presence question reaches it.",
+      "defined_measurement_would_need": [
+        "a stated matching rule, including the distance function and its threshold",
+        "the frame and units the rule is evaluated in",
+        "the sensor pose and calibration that place both the detection and the object in that frame",
+        "a rule for detections and objects that fall outside the declared range or exposure limit"
+      ],
+      "status": "no such measurement is declared in this lane. Naming a question 'geometry' does not define it."
+    },
+    {
+      "kind": "timing_or_calibration",
+      "asks": "were the detection and the reference object recorded at the same instant, in the same calibrated frame",
+      "supported": false,
+      "why_not": "no timing or calibration quantity appears anywhere in the case format, so no answer to this question could change any number this program computes.",
+      "defined_measurement_would_need": [
+        "a declared timestamp for each detection and each reference object",
+        "a declared tolerance for what counts as the same instant",
+        "a calibration record with its own uncertainty"
+      ],
+      "status": "not declared. Recorded here so that it is not later assumed to have been covered."
+    }
+  ],
+  "scope": "This record states what would be required. It does not assert that any observer, exposure record, competence claim or adjudication exists, and it creates none. No human judgment is described here, and none has been obtained by this lane."
+}

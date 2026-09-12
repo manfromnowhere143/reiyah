@@ -1,0 +1,95 @@
+{
+  "anchors": [
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "c"
+        }
+      ],
+      "base_detections": [],
+      "id": "A",
+      "objects": [
+        {
+          "class": "car",
+          "id": "q"
+        },
+        {
+          "class": "car",
+          "id": "r"
+        },
+        {
+          "class": "car",
+          "id": "t"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "1"
+    }
+  ],
+  "cohort_id": "synthetic-conditional-relevance",
+  "joint_worlds": [
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [],
+          "objects_present": []
+        }
+      },
+      "world_id": "q0r0"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "c",
+              "t"
+            ]
+          ],
+          "objects_present": [
+            "r",
+            "t"
+          ]
+        }
+      },
+      "world_id": "q0r1"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "c",
+              "t"
+            ]
+          ],
+          "objects_present": [
+            "q",
+            "t"
+          ]
+        }
+      },
+      "world_id": "q1r0"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [],
+          "objects_present": [
+            "q",
+            "r"
+          ]
+        }
+      },
+      "world_id": "q1r1"
+    }
+  ],
+  "label": "constructed counterexample; no human judgments or physical admission",
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1",
+    "tolerance": "1/10"
+  },
+  "schema_id": "reiyah.cohort-packet.case"
+}

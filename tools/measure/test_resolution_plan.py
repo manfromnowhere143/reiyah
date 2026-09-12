@@ -1,10 +1,15 @@
 """Tests for the exact resolution planner, including an independent minimality check."""
 from fractions import Fraction
 from itertools import combinations
+import json
+import os
 import unittest
 
 import cohort_packet as producer
 import resolution_plan as planner
+
+CASES = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
+    os.path.abspath(__file__)))), "research", "cohort-packet", "0.1.0")
 
 LOSS = {"false_negative": "1", "false_positive": "1", "tolerance": "1/10"}
 POS = {"b0": Fraction(0), "c0": Fraction(3), "k": Fraction(3, 2), "d": Fraction(-1)}
@@ -144,6 +149,99 @@ class Planning(unittest.TestCase):
                 planner.plan(case)
         finally:
             planner.MAX_QUESTIONS = original
+
+
+class AnEmptyPopulationIsNotAnAmbiguousOne(unittest.TestCase):
+    """Retained defect from version 0.1.0.
+
+    A cohort with no admitted joint world was reported as
+    `unresolvable_by_declared_questions`, with an empty list of
+    indistinguishable worlds and a reason describing worlds that could not be
+    told apart. There were no worlds. The absence of a reference basis was
+    dressed up as an observed property of a model that had never been stated.
+    """
+
+    def case(self):
+        path = os.path.join(CASES, "open-two-anchor.json")
+        with open(path, "r", encoding="utf-8") as handle:
+            return json.load(handle)
+
+    def test_zero_admitted_worlds_is_reported_as_a_missing_reference(self):
+        result = planner.plan(self.case())
+        self.assertEqual(result["state"], "no_admitted_reference")
+
+    def test_zero_admitted_worlds_is_never_called_geometry_ambiguity(self):
+        result = planner.plan(self.case())
+        self.assertNotEqual(result["state"], "unresolvable_by_declared_questions")
+        for word in ("indistinguishable", "cannot separate", "differ only"):
+            self.assertNotIn(word, result["reason"])
+
+    def test_the_conditional_count_bound_is_preserved(self):
+        result = planner.plan(self.case())
+        self.assertEqual(result["enclosure"], {"lower": "-8", "upper": "8"})
+        self.assertEqual(result["improvement_criterion"], "unresolved")
+
+    def test_the_missing_prerequisite_is_named_rather_than_implied(self):
+        result = planner.plan(self.case())
+        self.assertIn("reference", result["prerequisite"])
+
+    def test_an_ambiguity_claim_must_carry_a_witness_of_two_or_more_worlds(self):
+        path = os.path.join(CASES, "geometry-ambiguity-plan-case.json")
+        with open(path, "r", encoding="utf-8") as handle:
+            finite = json.load(handle)
+        result = planner.plan(finite)
+        self.assertEqual(result["state"], "unresolvable_by_declared_questions")
+        self.assertGreaterEqual(len(result["witness_cell"]), 2)
+        self.assertEqual(planner.criterion_for(finite, set(result["witness_cell"])),
+                         "unresolved")
+
+
+class AnUnanswerableQuestionIsNotAFreeOne(unittest.TestCase):
+    """The depth is a guarantee only under a declared answer model."""
+
+    def case(self):
+        path = os.path.join(CASES, "adaptive-beats-fixed-case.json")
+        with open(path, "r", encoding="utf-8") as handle:
+            return json.load(handle)
+
+    def test_the_answer_model_is_reported_as_an_assumption(self):
+        result = planner.plan(self.case())
+        self.assertIn("not an observation", result["answer_model"]["status"])
+
+    def test_marking_a_question_unanswerable_removes_it_from_the_plan(self):
+        case = self.case()
+        for anchor in case["anchors"]:
+            if anchor["id"] == "B":
+                for entry in anchor["objects"]:
+                    if entry["id"] == "B_d":
+                        entry["answerable"] = False
+        result = planner.plan(case)
+        asked = {(q["anchor"], q["object"]) for q in planner.presence_questions(case)}
+        self.assertNotIn(("B", "B_d"), asked)
+        self.assertNotEqual(result.get("first_question"),
+                            {"anchor": "B", "object": "B_d"})
+
+    def test_removing_answerable_questions_can_make_the_comparison_unresolvable(self):
+        case = self.case()
+        for anchor in case["anchors"]:
+            for entry in anchor["objects"]:
+                if entry["id"].endswith("_d") and anchor["id"] in ("A", "C"):
+                    entry["answerable"] = False
+        result = planner.plan(case)
+        self.assertEqual(result["state"], "blocked_by_unanswerable_questions")
+        self.assertGreaterEqual(len(result["witness_cell"]), 2)
+        self.assertTrue(result["withheld_questions"])
+
+    def test_an_unanswerable_obstacle_is_not_reported_as_an_ambiguous_reference(self):
+        """The two causes are different and the wrong one is the flattering one."""
+        case = self.case()
+        for anchor in case["anchors"]:
+            for entry in anchor["objects"]:
+                if entry["id"].endswith("_d") and anchor["id"] in ("A", "C"):
+                    entry["answerable"] = False
+        result = planner.plan(case)
+        self.assertNotEqual(result["state"], "unresolvable_by_declared_questions")
+        self.assertIn("observation procedure", result["reason"])
 
 
 if __name__ == "__main__":
