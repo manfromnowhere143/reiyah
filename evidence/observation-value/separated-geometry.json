@@ -1,0 +1,115 @@
+{
+  "artifact_id": "reiyah.observation-value.report",
+  "cohort_id": "separated",
+  "counts": {
+    "already_settled": 2,
+    "inert": 2
+  },
+  "enclosure": {
+    "lower": "1",
+    "upper": "1"
+  },
+  "improvement_criterion": "supported",
+  "preference": "prefer_augmented",
+  "questions": [
+    {
+      "absent_worlds": [],
+      "already_settled": true,
+      "anchor": "A",
+      "classification": "already_settled",
+      "note": "this object has the same presence in every admitted world",
+      "object": "n0",
+      "present_worlds": [
+        "far_d",
+        "far_no_d",
+        "no_far_d",
+        "no_far_no_d"
+      ]
+    },
+    {
+      "absent_worlds": [],
+      "already_settled": true,
+      "anchor": "A",
+      "classification": "already_settled",
+      "note": "this object has the same presence in every admitted world",
+      "object": "n3",
+      "present_worlds": [
+        "far_d",
+        "far_no_d",
+        "no_far_d",
+        "no_far_no_d"
+      ]
+    },
+    {
+      "absent_worlds": [
+        "no_far_d",
+        "no_far_no_d"
+      ],
+      "anchor": "A",
+      "cells": {
+        "absent": {
+          "enclosure": [
+            "1",
+            "1"
+          ],
+          "improvement_criterion": "supported",
+          "preference": "prefer_augmented",
+          "width": "0"
+        },
+        "present": {
+          "enclosure": [
+            "1",
+            "1"
+          ],
+          "improvement_criterion": "supported",
+          "preference": "prefer_augmented",
+          "width": "0"
+        }
+      },
+      "classification": "inert",
+      "object": "far",
+      "present_worlds": [
+        "far_d",
+        "far_no_d"
+      ]
+    },
+    {
+      "absent_worlds": [
+        "far_no_d",
+        "no_far_no_d"
+      ],
+      "anchor": "A",
+      "cells": {
+        "absent": {
+          "enclosure": [
+            "1",
+            "1"
+          ],
+          "improvement_criterion": "supported",
+          "preference": "prefer_augmented",
+          "width": "0"
+        },
+        "present": {
+          "enclosure": [
+            "1",
+            "1"
+          ],
+          "improvement_criterion": "supported",
+          "preference": "prefer_augmented",
+          "width": "0"
+        }
+      },
+      "classification": "inert",
+      "object": "d",
+      "present_worlds": [
+        "far_d",
+        "no_far_d"
+      ]
+    }
+  ],
+  "ranking_basis": "exact effect on the declared enclosure. No probability over reference interpretations is used, because none has been established; this is not an expected-value ordering",
+  "scope": "the declared alternatives only. A question absent from the declared worlds is not classified here, and discovering new alternatives is a separate obligation this module does not discharge",
+  "state": "computed",
+  "version": "0.1.0",
+  "width": "0"
+}

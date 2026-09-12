@@ -180,6 +180,10 @@ def verify(case, report):
     if report.get("state") == "unresolved":
         if finite and case_worlds:
             raise Rejected("unresolved claimed while finite anchors have admitted worlds")
+        only_known(report.get("decision", {}), {"improvement_criterion", "preference"}, "decision")
+        if report["decision"].get("improvement_criterion") != "not_evaluated" \
+                or report["decision"].get("preference") != "not_evaluated":
+            raise Rejected("an unresolved cohort must report both decisions as not_evaluated")
         return {"state": "unresolved", "worlds_checked": 0, "matcher_invoked": False,
                 "note": "an unresolved cohort asserts nothing and is accepted as such"}
 
@@ -243,10 +247,20 @@ def verify(case, report):
     if (exact(report["enclosure"]["lower"], "enclosure lower") != lower
             or exact(report["enclosure"]["upper"], "enclosure upper") != upper):
         raise Rejected("enclosure is not the range the declared worlds support")
+    only_known(report.get("decision", {}), {"improvement_criterion", "preference"}, "decision")
     decision = ("supported" if lower > tolerance else
                 "excluded" if upper <= tolerance else "unresolved")
-    if report["decision"]["improvement_criterion"] != decision:
+    if report["decision"].get("improvement_criterion") != decision:
         raise Rejected("improvement criterion does not follow from the enclosure")
+    # Version 0.1.0 emitted a preference and never checked it, so any preference
+    # could be forged and confirmed, including prefer_augmented. It is the claim a
+    # reader cares about most, so it is derived here rather than trusted.
+    preference = ("prefer_augmented" if lower > tolerance else
+                  "prefer_base" if upper < -tolerance else
+                  "equivalent_within_tolerance" if lower >= -tolerance and upper <= tolerance
+                  else "unresolved")
+    if report["decision"].get("preference") != preference:
+        raise Rejected("preference does not follow from the enclosure")
     relaxation = report.get("separate_anchor_relaxation")
     if relaxation is not None:
         rlow = exact(relaxation["lower"], "relaxation lower")
@@ -257,7 +271,7 @@ def verify(case, report):
     return {"state": report.get("state"), "worlds_checked": len(values),
             "finite_anchors": len(finite), "matcher_invoked": False,
             "enclosure": {"lower": str(lower), "upper": str(upper)},
-            "decision": decision,
+            "decision": decision, "preference": preference,
             "establishes": "the joint weighted comparison inside the declared interpretations",
             "does_not_establish": ["that the declared interpretations are admitted by review",
                                    "that any object exists",
