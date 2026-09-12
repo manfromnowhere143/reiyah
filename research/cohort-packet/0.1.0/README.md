@@ -44,6 +44,7 @@ Python's `Fraction` and integer arithmetic.
 | `open-two-anchor` | `[-8, 8]`, state `open_reference_only` | the live comparison's actual state |
 | `conditional-inertness-case` | plan depth 1 | from the Engine lane: a question inert on its own and decisive once another is answered absent. Retained so that inert questions are never discarded before planning |
 | `adaptive-beats-fixed-case` | plan depth **2**, smallest fixed resolving set **3** | the retained witness that a fixed resolving set bounds the adaptive optimum from above only, and so can never certify it |
+| `adaptive-beats-fixed-varying-edges-case` | plan depth **2**, smallest fixed resolving set **3** | the same gap with one anchor and four worlds. `a_and_c` holds a strict superset of the objects of `c_only` and a lower value, because the two worlds disagree about which detection could have matched `dC`. Retained as the instance showing that the gain monotonicity theorem needs its fixed edge set, and that a world value can fall as objects are added |
 
 `answer-prerequisites.json` records which questions have a defined measurement, at what stage each
 may be asked, and what is missing. Presence questions are supported. Reachability, calibration and

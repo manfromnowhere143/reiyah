@@ -2,10 +2,11 @@
 
 Document ID: `reiyah.resolution-plan.2026-09-12`
 
-Version: `0.2.0`
+Version: `0.3.0`
 
-Supersedes: `0.1.0` of the same document ID. The corrections are stated in full below and the
-superseded claims are quoted rather than removed.
+Supersedes: `0.2.0`, which superseded `0.1.0`, of the same document ID. Every correction is stated
+in full below and every superseded claim is quoted rather than removed. Version `0.3.0` retracts a
+sentence of `0.2.0`; the retraction is the first section, because it was the more confident claim.
 
 Lifecycle status: `proposed`
 
@@ -30,6 +31,7 @@ declared questions and its cost is the **worst-case** number of answers required
 | three independent copies | resolvable | **3 observations** worst case, of 3 available |
 | conditional inertness | resolvable | **1 observation**; an initially inert question is retained, not discarded |
 | adaptive beats fixed | resolvable | **2 observations**, where the smallest fixed set of questions is **3** |
+| adaptive beats fixed, varying edges | resolvable | the same gap with **one anchor and four worlds**, and a world value that falls as objects are added |
 | geometry ambiguity | **unresolvable by declared questions** | no presence question separates `d_reachable` from `d_unreachable` |
 | the live two-anchor comparison | **no admitted reference** | there is no joint world to ask about |
 
@@ -88,10 +90,11 @@ two questions resolves the comparison, so the smallest fixed set is three. Adapt
 observation here, and the fixed number would have certified `3` as correct while the truth was `2`.
 
 The case was not invented to fit. An exhaustive search over all labelled structures on three
-questions returned the smallest gap example, and it was rejected: it required a world value that
-falls when a reference object is added, which the additive loss does not permit. The search was then
-restricted to monotone labellings, which returned the structure above, and it was realised with three
-copies of the matching-trap gadget.
+questions returned a smaller gap example first, which was set aside because it needs a world value
+that falls when a reference object is added. The search was then restricted to monotone labellings,
+which returned the structure above, and it was realised with three copies of the matching-trap
+gadget. **Setting the smaller example aside was right; the reason given for it was wrong.** See the
+next section.
 
 ## The negative result is the one that matters
 
@@ -176,22 +179,87 @@ prerequisite this lane cannot supply and does not create: an admitted joint refe
 for each finite anchor. The planner now says so in those words, and names the prerequisite, instead
 of reporting an ambiguity it cannot have observed.
 
-## A side result, with its exact scope
+## Retraction: the monotonicity claim was true of the wrong thing
 
-The correction above rested on world values being monotone in object presence. That was tested, not
-assumed. Across every bipartite gadget with up to three base detections, two added detections and
-three reference objects, and a further 400,000 randomly generated gadgets with up to four base
-detections, three added detections and five objects, **no case was found where adding a reference
-object decreases the additive delta**. This is a negative search result over a stated family. It is
-not a theorem, and it is not offered as one; a proof or a counterexample outside that family would
-both be useful.
+Version 0.2.0 said of the smaller gap example:
+
+> "it required a world value that falls when a reference object is added, which the additive loss
+> does not permit"
+
+and supported it with a search:
+
+> "Across every bipartite gadget with up to three base detections, two added detections and three
+> reference objects, and a further 400,000 randomly generated gadgets [...] **no case was found where
+> adding a reference object decreases the additive delta**."
+
+The search was sound and its conclusion is now a theorem. The sentence that quoted it was not, because
+the search varied the objects while holding **one edge set fixed**, and a cohort case does no such
+thing. Each joint world declares its own match edges as well as its own present objects, which is the
+whole point of the geometry ambiguity this document reports elsewhere. Two worlds may disagree about
+which detection could have matched which object, and across that disagreement nothing constrains the
+value at all.
+
+`adaptive-beats-fixed-varying-edges-case.json` is the instance. One anchor, one base detection, one
+added detection, four worlds:
+
+| world | present objects | value |
+|---|---|---|
+| `none` | `k` | `-1` |
+| `c_only` | `k`, `dC` | `+1` |
+| `b_only` | `k`, `dB` | `+1` |
+| `a_and_c` | `k`, `dA`, `dC` | `-1` |
+
+`a_and_c` has a strict superset of the objects of `c_only` and a lower value. The additive loss
+permits it. The two worlds disagree about `dC`: one says the added detection could have matched it,
+the other says only the base detection could. Fixing either world's edge set restores monotonicity,
+which is asserted as a test.
+
+So the smaller example was realisable all along, and with one anchor and four worlds it is the better
+witness of the adaptive gap. Both cases are retained. The theorem below is what the search was
+actually evidence for, and its hypothesis is the part that was dropped when it was quoted.
+
+## Theorem: adding a reference object never lowers the gain
+
+Let the detections be `D = B + C`, base and added, over objects `O`, with a **fixed** edge set. For a
+present-object set `S` let `nu_X(S)` be the maximum matching between detections `X` and objects `S`.
+Then `gain(S) = nu_D(S) - nu_B(S)` is nondecreasing in `S`, so `delta` is too.
+
+By the defect form of Konig's theorem, `nu_X(S) = |X| - def_X(S)` where
+`def_X(S) = max over T of ( |T| - |N(T) & S| )`, so `gain(S) = |C| - def_D(S) + def_B(S)`. Writing
+`Delta_X` for the drop in `def_X` when one object `d` is added, the claim is exactly
+`Delta_D >= Delta_B`.
+
+`Delta_X` is 0 or 1, and it is 1 precisely when every maximizer over `X` has `d` in its
+neighbourhood. The function `T -> |T| - |N(T) & S|` is supermodular, because `|T|` is modular and
+`|N(.) & S|` is submodular. So if `T0` maximizes over `B` with value `k` and `T*` maximizes over `D`
+with value `m`, then
+
+```
+k + m = val(T0) + val(T*) <= val(T0 | T*) + val(T0 & T*) <= m + k
+```
+
+since the union is a subset of `D` and the intersection is a subset of `B`. Both inequalities are
+tight, so `T0 & T*` is itself a maximizer over `B`. If `Delta_B = 1` that intersection contains `d`
+in its neighbourhood, and it sits inside `T*`, so `d` is in `N(T*)` as well. `T*` was arbitrary, so
+`Delta_D = 1`. QED.
+
+`gain_monotonicity.py` evaluates each step as a separate predicate, so a misstated step fails on its
+own rather than being carried by the conclusion. All four steps hold on **5,620** exhaustive
+instances, every edge set on every shape with up to two base detections, two added detections and
+three objects, and on **2,000** random instances with up to four base detections, three added
+detections and five objects. The module's default tier is the fast one, 668 exhaustive and 150
+random, which runs in about 15 seconds.
+
+The hypothesis is the result. A search that found no counterexample was reported as a fact about the
+loss; it was a fact about the loss **at a fixed edge set**, and the conditions under which a claim
+was measured are part of the claim.
 
 ## Verification
 
-Thirty-four tests across two files, `0.02` seconds for the planner on the witness case and `0.19`
-seconds for both suites. Reports are byte-identical across runs; the witness case report hashes to
-`d664a6bd0ca07064722beb8c4f4b86865ccefb1b876ff9ccb16fd02c5c4f217e`. All 271 tests in `tools/measure`
-pass.
+Forty-four tests across three files, `0.02` seconds for the planner on the witness case and `1.8`
+seconds for the monotonicity tests. Reports are byte-identical across runs; the witness case report
+hashes to `d664a6bd0ca07064722beb8c4f4b86865ccefb1b876ff9ccb16fd02c5c4f217e`. All 281 tests in
+`tools/measure` pass.
 
 ## Limits
 
@@ -214,6 +282,8 @@ python3 -B tools/measure/resolution_plan.py research/cohort-packet/0.1.0/geometr
 python3 -B tools/measure/check_resolution_plan.py research/cohort-packet/0.1.0/geometry-ambiguity-plan-case.json /tmp/plan.json
 python3 -B -m unittest discover -s tools/measure -p 'test_resolution_plan.py'
 python3 -B -m unittest discover -s tools/measure -p 'test_check_resolution_plan.py'
+python3 -B tools/measure/gain_monotonicity.py
+python3 -B -m unittest discover -s tools/measure -p 'test_gain_monotonicity.py'
 ```
 
 No data is read. Exact rational arithmetic, standard library only.
