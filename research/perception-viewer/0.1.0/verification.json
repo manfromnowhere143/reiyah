@@ -1,0 +1,173 @@
+{
+  "artifact_id": "reiyah.perception-viewer.verification",
+  "checks": {
+    "extract-1": {
+      "exit_code": 0,
+      "receipt_sha256": "1f09cd8f393ca8e6175a05ed48dd96b5b7c21d3f046ffd17291287bcc986f7d1"
+    },
+    "extract-2": {
+      "exit_code": 0,
+      "receipt_sha256": "363652d2be662d94c9aaad388f078682420dcdcf85b6f8c57c08555918bed7eb"
+    },
+    "fable-selected-tests": {
+      "exit_code": 0,
+      "receipt_sha256": "9b01c773530b3103a1914722b443066dcdbd040b1787840a5faaa48af8e478b4"
+    },
+    "measurement-tests-2": {
+      "exit_code": 0,
+      "receipt_sha256": "1006b03870794ce292c4ac9bc81c129116fbc2f1a7a6c2071a65861d77b644ad"
+    },
+    "native-probe-3": {
+      "exit_code": 0,
+      "receipt_sha256": "4660b51715f2268b877332e3efabb7f23a06442f2dc317890dd801ac8ac020f8"
+    },
+    "prepare-2": {
+      "exit_code": 0,
+      "receipt_sha256": "e15c0409694aa921c5d576a0c8fce356437a71b704e05e3b10b70c9fc2138d35"
+    },
+    "repository-tests": {
+      "exit_code": 0,
+      "receipt_sha256": "50ac53f6d7360b76ba630b3c3dce9e1c437aa2b5257bc193615aa4b407ce3b2c"
+    },
+    "research-check-2": {
+      "exit_code": 0,
+      "receipt_sha256": "8c78f27ff267b688fdc533a80bbb8d4611dadc7bb7ed04b65ae9b2eeb45e3d7f"
+    },
+    "source-package-verify": {
+      "exit_code": 0,
+      "receipt_sha256": "2cbf15205ea2bc555f94276f098b571b54d4a27c375a8cb407f2e9437f82ca85"
+    }
+  },
+  "cost_limits": "Single local runs; some independent checks overlap. Process elapsed/RSS are not human effort. Onboarding, interaction, repair and comparison person-time remain unmeasured.",
+  "date": "2026-09-12",
+  "engineering_selection": {
+    "artifact_id": "reiyah.engine-viewer.cli-original-check",
+    "each_record_matches_original_raw": true,
+    "human_review": false,
+    "interactive_observation": false,
+    "original_raw_offsets": [
+      0,
+      347200,
+      694380
+    ],
+    "ply_offsets": [
+      164,
+      347364,
+      694544
+    ],
+    "point_indices": [
+      0,
+      17360,
+      34719
+    ],
+    "report_bytes": 1651,
+    "report_sha256": "c60cbe177e4a85ff8fb2ec7faa673a3d25b8b217b12bfeb47c3833ecae7b7045",
+    "reports_byte_identical": true,
+    "selection_origin": "programmatic",
+    "version": "0.1.0"
+  },
+  "gate_a": "unaccepted",
+  "human_judgments_created": 0,
+  "implementation": {
+    "tests/blender_perception_viewer_probe.py": {
+      "byte_size": 7879,
+      "sha256": "9072247db08ccadcd8a9ef54ee57aea01b44de1d3604b3a6329750a21e6cf745"
+    },
+    "tests/test_perception_viewer.py": {
+      "byte_size": 5878,
+      "sha256": "fc35f5b880c9d39fb0660ee371e88449c12f7b8b1002e8f4a1cd62cd6772b571"
+    },
+    "tools/perception_viewer.py": {
+      "byte_size": 14758,
+      "sha256": "d6d24b94a54d627b48d2eb4a8b8ff352e40529fae50a65204cb640e7415d0693"
+    }
+  },
+  "inherited_warning": "repository tests retain unclosed SQLite ResourceWarnings; origin not traced in this checkpoint",
+  "measured_costs": {
+    "extract-1": {
+      "elapsed_seconds": 1.2447967079933733,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 249184256
+    },
+    "extract-2": {
+      "elapsed_seconds": 1.2414894169196486,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 246939648
+    },
+    "fable-selected-tests": {
+      "elapsed_seconds": 0.07157075009308755,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 21643264
+    },
+    "measurement-tests-2": {
+      "elapsed_seconds": 5.707685042056255,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 77217792
+    },
+    "native-probe-3": {
+      "elapsed_seconds": 2.420180583023466,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 302383104
+    },
+    "prepare-2": {
+      "elapsed_seconds": 1.2284661249723285,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 245596160
+    },
+    "repository-tests": {
+      "elapsed_seconds": 43.83562429097947,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 202162176
+    },
+    "research-check-2": {
+      "elapsed_seconds": 1.7577039159368724,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 26165248
+    },
+    "source-package-verify": {
+      "elapsed_seconds": 3.5550804579397663,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 93044736
+    }
+  },
+  "missing_evidence": [
+    "interactive display and selection",
+    "actual participant usability and time",
+    "independent human reference judgments",
+    "external scientific review",
+    "image pixel equivalence"
+  ],
+  "publication": "P005 operator-reported published; permalink/platform formatting uncaptured; no new publication or outreach",
+  "real_comparison_interval": [
+    "-8",
+    "8"
+  ],
+  "research_check_scope": {
+    "attack_suite": "not_run_here",
+    "historical_experiments_replayed": 0,
+    "retained_transcript_hashes": 52
+  },
+  "retained_failures": [
+    "initial Edit Mode attribute extraction",
+    "index diagnosis before complete bijection check",
+    "measurement and research checks started before linked checkpoint document existed"
+  ],
+  "retained_private_packet": "engine-viewer-2026-09-12",
+  "source": {
+    "all_original_raw_records_equal_ply_body": true,
+    "binding_sha256": "91bdef63da3008ea43d083be4149d0c998228007358ba9a9966ca9705bebaea2",
+    "capture_id": "capture-000001",
+    "ply_header_bytes": 164,
+    "point_count": 34720,
+    "source_package_seal_sha256": "3f7dcdb06d659360d3d93688a4efe60739525cc0282a509930df7947d55ac5c1"
+  },
+  "source_commit": "936c08de2cda269d84aede7aa6bcefb8af5f4ab2",
+  "state": "background_conformance_checked_interactive_unobserved",
+  "test_counts": {
+    "focused_fable_selected_outbox": 9,
+    "measurement": 93,
+    "native_probe": 17,
+    "repository": 351
+  },
+  "version": "0.1.0"
+}

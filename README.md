@@ -22,6 +22,10 @@ counting retained additions does not budget the observations needed to assess th
 The [reviewed-operand stage](research/perception-reviewed-operands/0.1.0/README.md) now preserves
 the same admitted joint model and complete review basis for both analysts. Its synthetic checks
 leave the real comparison unresolved; actual human review and practical viewing remain missing.
+The [native selection procedure](research/perception-viewer/0.1.0/README.md) now prepares a
+Blender capture and checks saved point selections against original record indices. Its
+background conformance is established. The agent's GUI probe is blocked by a missing native
+socket; actual interactive display and human usability remain unobserved.
 
 HARBOR is the proposed research program: **Human-Automation Readiness, Belief & Operational
 Risk**. Its broader scope connects object-level belief, readiness, recoverability, joint silent

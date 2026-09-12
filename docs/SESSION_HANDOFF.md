@@ -1,3 +1,51 @@
+# Native point-selection checkpoint, 2026-09-12
+
+Read the [checkpoint](PERCEPTION_VIEWER_CHECKPOINT_2026-09-12.md),
+[adapter contract](../research/perception-viewer/0.1.0/README.md),
+[opening procedure](../research/perception-viewer/0.1.0/OPENING.md) and
+[verification](../research/perception-viewer/0.1.0/verification.json). A native Blender scene
+now carries persistent original record indices and supports ordinary selection plus Save As.
+Offline extraction verifies every source field and rejects changed geometry or identity.
+One development capture's 34,720 PLY records match its original raw capture exactly.
+Programmatic save/reopen, reverse ordering and 15 rejection cases pass; no GUI or human
+selection was observed. The initial Edit Mode attribute failure and its correction are retained.
+
+All 351 repository tests and 93 measurement tests pass, as does the research consistency
+check (52 retained transcript hashes; no historical experiment or attack-suite replay).
+Two CLI extractions produce byte-identical 1,651-byte reports, independently checked against
+the original raw record slices. Existing SQLite ResourceWarnings remain retained and untraced.
+The premature documentation-check failure is also retained; its missing link was completed
+before rerunning the affected checks. These results are engineering evidence only.
+
+The current desktop inspection failed before returning app state: native-pipe path unavailable,
+OS error 2; the default socket was absent. No permission or gcloud diagnosis follows. The
+private `engine-viewer-2026-09-12` packet holds an exact prepared file, manual opening/selection
+procedure and separate return instructions. Next: a person opens that file, reports actual
+point display, selects visible points and saves a new scene for source-index verification,
+with real onboarding/interaction/repair time. This bounded viewer exercise supplies no
+independent discovery record, reference judgment or inspection of the whole population.
+
+Fable's immutable observation-value outbox at 681efcc8dc693c0215403b93bca6a96b7faba4c5 was
+selected and inspected privately. The corrected checker rejects the three original coupled-case
+preference forgeries. Its nine focused tests pass. Continue the research direction with a
+scope correction: a currently inert question can become decisive after another answer restricts
+joint worlds. The exact XOR counterexample is retained for Fable; recompute after accepted
+answers, preserve unassisted discovery, and count actual effort against a competent analyst.
+No Fable source, branch or Engine comparison interface was changed by that review.
+
+P005 is now operator-reported published on 12 September. The older unpublished/deferred notes
+below are historical. Its permalink and exact platform formatting remain uncaptured. No further
+publication or outreach is authorized. The commitment to equal evidence and all effort counted
+continues. The real comparison remains [-8,8], zero human reference judgments are supplied,
+the physical study has no cohort or seed and is unrun, and Gate A remains unaccepted. Current
+offline Engine/main integration authority is separate from Gate A acceptance. Preserve all
+owner checkouts, released protocols, full joint alternatives, weights, loss, tolerance, matching
+competition and explicit unknown states.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Reviewed joint operands, 2026-09-12
 
 Read the [checkpoint](PERCEPTION_REVIEWED_OPERANDS_CHECKPOINT_2026-09-12.md),
