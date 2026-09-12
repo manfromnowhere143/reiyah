@@ -1,0 +1,155 @@
+{
+  "adversarial_tests": 12,
+  "artifact_id": "reiyah.image-fidelity.verification",
+  "checks": {
+    "adversarial-1": {
+      "exit_code": 0,
+      "receipt_sha256": "7874f0cf8bf1e215275448d8a3ad451d9b3a2a7412d2c128441ffde8580f92e5"
+    },
+    "adversarial-3": {
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "receipt_sha256": "2d1da4c0d2bd8d7f6c05b527eee8554f0c407359f26581386fbc574bb1eeeb5c"
+    },
+    "comparison-1": {
+      "exit_code": 0,
+      "receipt_sha256": "eab4b5aa32a5aef82f2508205e422b8529c2f6a8fb2bc4bbfb73e595a38e5a78"
+    },
+    "comparison-2": {
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "receipt_sha256": "fdcc959a112037a60ebe5dc518ceb1bbd78cb091bc2ba800e6b79552b698443c"
+    },
+    "measurement-tests": {
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "receipt_sha256": "ccf1e996e1c3ab2809bdb1177188e94b6d753e14f35a5bcd1012796562ce0697"
+    },
+    "native-1": {
+      "exit_code": 0,
+      "receipt_sha256": "3bc738d743e5ad6e4b0b1d408978dd69355e7c1b7b6ab33b57640e7a368c0d91"
+    },
+    "native-3": {
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "receipt_sha256": "18c4ea92d03f463c79d23f43c8d7fed79dc3f46cd2fce96ff23b52cf546f2274"
+    },
+    "research-check": {
+      "exit_code": 0,
+      "receipt_sha256": "d969f4ee4e3011dcfc92af892959838f6aebc14e6ad955a8cef99f1ee8d0ce77"
+    },
+    "wrong-size-2": {
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "receipt_sha256": "edd4795cacc5d2673ab86f4a4b5623ca0a4d9b11f32b789bebd2cfe6fdec5cff"
+    }
+  },
+  "date": "2026-09-12",
+  "gate_a": "unaccepted",
+  "human_review": "not_performed",
+  "implementation": {
+    "research/perception-image-fidelity/0.1.0/probe.py": {
+      "byte_size": 10335,
+      "sha256": "40ac92ee291287349fb985520d0e6cbcc8328a4394e9ec7b29a8740439ccbb98"
+    },
+    "research/perception-image-fidelity/0.1.0/test_probe.py": {
+      "byte_size": 4550,
+      "sha256": "c5d19cd90256b2c96e95176838f0b56fbadc4bd7d3cccbd80ba226ede06c2bc3"
+    }
+  },
+  "inherited_engine_test_evidence": {
+    "checkpoint": "70f08f1",
+    "measurement": 93,
+    "native_point_checks": 17,
+    "replayed_here": false,
+    "repository": 351
+  },
+  "interactive_display": "not_observed",
+  "measured_costs": {
+    "adversarial-1": {
+      "elapsed_seconds": 0.06552704097703099,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 24264704
+    },
+    "adversarial-3": {
+      "elapsed_seconds": 0.07292916695587337,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 23396352
+    },
+    "comparison-1": {
+      "elapsed_seconds": 0.5132881669560447,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 113360896
+    },
+    "comparison-2": {
+      "elapsed_seconds": 0.5414551250869408,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 120717312
+    },
+    "measurement-tests": {
+      "elapsed_seconds": 5.6142636250006035,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 77824000
+    },
+    "native-1": {
+      "elapsed_seconds": 2.722198208095506,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 321847296
+    },
+    "native-3": {
+      "elapsed_seconds": 1.0846765420865268,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 321355776
+    },
+    "wrong-size-2": {
+      "elapsed_seconds": 1.133036374929361,
+      "includes_process_startup": true,
+      "peak_process_rss_bytes_macos": 224722944
+    }
+  },
+  "missing": [
+    "Interactive point or image display and selection",
+    "Actual participant usability and effort",
+    "Independent human reference judgments",
+    "External scientific review",
+    "Pixel conformance for remaining 565 delivered camera captures"
+  ],
+  "new_human_reference_judgments": 0,
+  "physical_truth": "not_established",
+  "publication": "P005 operator-reported published; no new publication/outreach",
+  "real_comparison_interval": [
+    "-8",
+    "8"
+  ],
+  "research_consistency": "PASS; 52 retained transcript hashes; zero historical experiments replayed; attack suite not run here",
+  "result": {
+    "captures": 1,
+    "comparison_report": {
+      "byte_size": 890,
+      "sha256": "a4046924914436e98bb0880aee18d11a3323e012faa7d9e44b88a51d3d6ad0b2"
+    },
+    "dimensions": [
+      1600,
+      900
+    ],
+    "encoded_dimensions_checked_before_native_import": true,
+    "exact_binary32_byte_grid": true,
+    "exploratory_and_final_native_buffers_identical": true,
+    "initial_and_final_reports_byte_identical": true,
+    "mismatched_samples": 0,
+    "opaque_alpha": true,
+    "orientation": "native bottom-up to comparator top-down",
+    "original_and_neutral_jpeg_identical": true,
+    "rgb_samples": 4320000,
+    "selection": "First delivered CAM_FRONT in already exposed neutral package; selected before decoding",
+    "wrong_size_request_rejected_before_native_import": true
+  },
+  "retained_failures": [
+    "Native header-check implementation initially imported an unavailable jsonschema dependency. Wrong-size and positive attempts failed for that dependency rather than the requested check; both are retained. The corrected standalone header check and unchanged full comparison profile pass."
+  ],
+  "retained_private_packet": "engine-image-fidelity-2026-09-12",
+  "scope": "One-capture application-buffer correspondence with shared libjpeg lineage; no independent codec validation, display fidelity, benchmark, physical-study or state-of-the-art claim",
+  "source_commit": "70f08f1c19ff3fc27f005d7b80938cda178e245d",
+  "validation_scope": "12 focused tests, current 93 measurement tests and native/CLI controls. The unchanged 351-test Engine suite and 17 point checks remain inherited evidence, not rerun counts.",
+  "version": "0.1.0"
+}

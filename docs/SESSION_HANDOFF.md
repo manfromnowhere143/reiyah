@@ -1,3 +1,39 @@
+# Camera pixel correspondence, 2026-09-12
+
+Read the [checkpoint](PERCEPTION_IMAGE_FIDELITY_CHECKPOINT_2026-09-12.md),
+[coordinate rule and replay](../research/perception-image-fidelity/0.1.0/README.md) and
+[verification](../research/perception-image-fidelity/0.1.0/verification.json). One first-in-order
+camera capture's original/neutral JPEG bytes agree, and all 4,320,000 decoded RGB samples
+match Blender 5.1.2 and Pillow 12.3.0 after exact byte-grid recovery and row reversal.
+Image coordinates are explicitly zero-based from the top left; decoded raster indices are
+not byte offsets in compressed JPEG. Both applications share libjpeg lineage. Twelve focused
+adversarial tests pass; this does not establish all-camera or independent codec conformance.
+
+No Engine admission/common operand interface, comparator source or mathematical model changed.
+No GUI display/selection or human review was observed. The default desktop socket remains
+absent; no identical bootstrap was retried. The service application exists, but the reason no
+endpoint appears is unestablished. No screen-permission or cloud-login diagnosis follows.
+The already prepared point exercise and separate return path remain the concrete next action:
+an actual participant opens the exact file, selects visible points, saves a fresh scene and
+records actual experience/time for subsequent original-record extraction. Native buffer
+checks cannot substitute for that observation or independent discovery.
+
+The private `engine-image-fidelity-2026-09-12` continuation preserves selected identities,
+primary sources, complete process receipts and its exact state. The closed previous packets
+and owner checkouts remain preserved. Fable owns the planner follow-up from immutable 5cf4c91;
+no new Fable output or reference interpretation is accepted in this checkpoint.
+
+The real result remains [-8,8], with no human reference judgments or external scientific
+review. Gate A remains unaccepted; the physical study has no selected cohort/seed and is unrun.
+Keep joint alternatives, weights, loss, tolerance, matching competition and explicit unknowns.
+P005 is operator-reported published; older unpublished/deferred notes are historical. No
+further publication or outreach is authorized. Equal staged evidence and all effort counted
+remain the comparison obligation.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Native point-selection checkpoint, 2026-09-12
 
 Read the [checkpoint](PERCEPTION_VIEWER_CHECKPOINT_2026-09-12.md),
