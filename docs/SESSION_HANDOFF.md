@@ -1,3 +1,32 @@
+# Native desktop prerequisite diagnosed, 2026-09-12
+
+Read the [checkpoint](PERCEPTION_DESKTOP_RECOVERY_2026-09-12.md),
+[diagnosis](../research/perception-desktop-recovery/0.1.0/README.md) and
+[verification](../research/perception-desktop-recovery/0.1.0/verification.json).
+The retained native-pipe failure is now bound to a loader crash during the exact earlier
+Blender-inspection request. The installed service requires a Swift concurrency symbol
+missing on this macOS 14.4 host. Two retained crashes and the installed binary's UUID and
+import table agree; on-disk signature verification succeeds. Recovery remains unperformed.
+
+The next automated step requires a compatible official native service/runtime combination,
+then a successful official app-state observation. No working replacement or minimum working
+OS version has been selected. No repeated unchanged bootstrap, system/security setting change
+or other owner process interruption occurred. The existing manual Blender exercise remains
+ready and unreturned. Actual GUI selection, participant effort and human references remain
+missing. Loader diagnosis and background conformance do not provide those observations.
+
+The Engine comparison/admission interfaces and Fable source/ref/status/outboxes are untouched.
+The prior consumer findings remain scoped to the selected 81ba0c6 release; newer Fable
+exchanges are not accepted by this diagnosis. Real bounds remain [-8,8]; keep joint worlds,
+matching competition, weights, loss, tolerance and unknowns. Gate A is unaccepted, and the
+physical study is unrun with no selected cohort or seed. P005 is operator-reported published;
+no further publication or outreach is authorized. The private continuation is
+`engine-desktop-recovery-2026-09-12`.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Review-plan consumption, 2026-09-12
 
 Read the [checkpoint](PERCEPTION_PLAN_CONSUMPTION_CHECKPOINT_2026-09-12.md),

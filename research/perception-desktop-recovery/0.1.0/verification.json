@@ -1,0 +1,126 @@
+{
+  "artifact_id": "reiyah.desktop-recovery.verification",
+  "build_sdk": "26.4",
+  "candidate_test_scope": "Documentation/research consistency only; no changed Engine, native viewer or comparator code",
+  "correlation": {
+    "crash_capture_utc": "2026-09-12T08:47:46.794300+00:00",
+    "launch_and_crash_inside_request": true,
+    "request_end_utc": "2026-09-12T08:47:51.847000+00:00",
+    "request_start_utc": "2026-09-12T08:47:46.247000+00:00",
+    "service_launch_utc": "2026-09-12T08:47:46.643100+00:00"
+  },
+  "costs_seconds": {
+    "native-load-commands": 0.0617390830302611,
+    "native-undefined-symbols": 18.925853374996223,
+    "os-version": 0.008111499948427081
+  },
+  "date": "2026-09-12",
+  "declared_binary_minos": "14.4",
+  "fable_source_changed": false,
+  "gate_a": "unaccepted",
+  "host_os": "macOS 14.4 (23E214)",
+  "human_references": 0,
+  "independent_checks": [
+    "Installed and plugin-cache executables have identical SHA-256",
+    "Mach-O UUID equals the crashing image UUID in both selected reports",
+    "Mach-O import table independently names the same required symbol",
+    "Live OS build matches both crash reports",
+    "Read-only strict signature verification passes"
+  ],
+  "inference": "Unchanged launch requests will not resolve this recorded loader incompatibility. A compatible official native build/runtime is the prerequisite before another GUI request.",
+  "installed_binary_sha256": "b47f564a5dee10fc8f21f6c8b2aee934b30ad04feee33746053253b3661df4e0",
+  "installed_binary_uuid": "61C0B615-7F27-3A07-8D97-77ABC7139236",
+  "missing_symbol": "_swift_task_addPriorityEscalationHandler",
+  "new_gui_launch_attempts": 0,
+  "not_established": [
+    "No working replacement service build or minimum working OS version was selected",
+    "Screen/Accessibility permission state is untested; it cannot explain or repair this missing-symbol loader termination",
+    "Human usability and reference judgments remain absent",
+    "No new interactive viewer observation occurred",
+    "Other post-startup issues or endpoint overrides are not ruled out"
+  ],
+  "other_owner_processes_interrupted": false,
+  "prior_attempt_identity": {
+    "byte_size": 1759,
+    "sha256": "16fa97b33e12c8981138a4fc4959fc65be564497b806c24c71ee49bba3154fa7"
+  },
+  "private_diagnosis_sha256": "873c6baf0afc0df0362c23c2497e25764613eab8f903ad37cd129ed43c168300",
+  "publication": "P005 operator-reported published; no new social publication or outreach",
+  "real_bounds": [
+    "-8",
+    "8"
+  ],
+  "recovery_state": "not_recovered; demonstrated loader prerequisite",
+  "required_library": "/usr/lib/swift/libswift_Concurrency.dylib",
+  "retained_private_packet": "engine-desktop-recovery-2026-09-12",
+  "scope": "Local environment diagnosis, not viewer usability or scientific evidence",
+  "service_build": "1000366",
+  "service_version": "26.708.1000366",
+  "signature_check": "valid on disk; satisfies designated requirement. This checks code integrity, not compatibility or permission state.",
+  "source_bindings": {
+    "SERVICE_LOG.json": {
+      "byte_size": 278,
+      "sha256": "98d017c5fb818cd59def4c24b06e3f300fd8b7888b1818b0306dd26811dea078"
+    },
+    "SERVICE_LOG.stdout.txt": {
+      "byte_size": 44,
+      "sha256": "9f56fca152030dba9e8ee76dee4fc8967ab667507b5878f0f9ab819d55b6b9a6"
+    },
+    "SERVICE_PREFLIGHT.json": {
+      "byte_size": 1409,
+      "sha256": "9d0f98e25b9f15f08b68b76fd902b18bb57511a6602a39d75112807ec7875235"
+    },
+    "SkyComputerUseService-2026-09-12-104559.ips": {
+      "byte_size": 7006,
+      "sha256": "6ee119a4b45f2c1a52fc210ccbe46750bafb6c858b691affa4e6225b002c459a"
+    },
+    "SkyComputerUseService-2026-09-12-104559.ips.summary.json": {
+      "byte_size": 2360,
+      "sha256": "660b92e3203fd1d6334fdc246cae5aa63e64c4b21d4a5fff95675cad5d4d1d6b"
+    },
+    "SkyComputerUseService-2026-09-12-114747.ips": {
+      "byte_size": 7006,
+      "sha256": "c906fb72654a11ba330fdf4427b563a356592f90bf842e147caf4e63d9291be3"
+    },
+    "SkyComputerUseService-2026-09-12-114747.ips.summary.json": {
+      "byte_size": 2360,
+      "sha256": "4bb4f337de57f0df9320c9a9f588e47574b1e3c9ed5cab2adad1eb9666dd9b28"
+    },
+    "create_client.js": {
+      "byte_size": 954,
+      "sha256": "52bb6e6dd638119f69c4b75cb767495356523cb05a68d879865e943a5c307b71"
+    },
+    "native-load-commands.stdout.txt": {
+      "byte_size": 29039,
+      "sha256": "2dfaa7db2147194254e69ace9d890b8f8e1b572cbaaa3eea69033856a456cef4"
+    },
+    "native-pipe.js": {
+      "byte_size": 8286,
+      "sha256": "3b294dcb269ad65166b184bcca48c7bab0698162ca7a4fc8c7b4978990b82bf2"
+    },
+    "native-undefined-symbols.stdout.txt": {
+      "byte_size": 82251,
+      "sha256": "b032b3e75500ead9ad722fc242fae2474bd8f6a7a3fd661e33fac7379f286e0d"
+    },
+    "os-version.stdout.txt": {
+      "byte_size": 64,
+      "sha256": "b3613cef58aa12ca20e37b12ea1e5d216e41c09d68af102980e99be21983c23f"
+    },
+    "signature-details.stderr.txt": {
+      "byte_size": 1153,
+      "sha256": "333ebe249838f663c3feca6a57106db100d1b89f48a082f5151d861b32f57c89"
+    },
+    "signature.json": {
+      "byte_size": 252,
+      "sha256": "cd449054a543d14ead4e9b630ce02f6415d869848571ac307a26aef67cb1db53"
+    },
+    "signature.stderr.txt": {
+      "byte_size": 181,
+      "sha256": "d5d11116b8b903ea44a34ecb70484cf12716acb866dacd6836f7db017bbcef4b"
+    }
+  },
+  "source_main": "2be7b8f960cec2d4396af4a199d16f2bb610138c",
+  "strong_undefined_import": "(undefined) external _swift_task_addPriorityEscalationHandler (from libswift_Concurrency)",
+  "system_or_security_settings_changed": false,
+  "version": "0.1.0"
+}
