@@ -1,0 +1,141 @@
+{
+  "accepted_forgeries": 6,
+  "artifact_id": "reiyah.plan-consumption.verification",
+  "candidate_measurement_tests": 93,
+  "checks": {
+    "consumer-replay-1": {
+      "exit_code": 0,
+      "receipt_sha256": "54f55dbcf7b92eac0c74647dc5ac839afce2d6644e6626850c6124698663cc0b"
+    },
+    "fable-live-open-check": {
+      "exit_code": 0,
+      "receipt_sha256": "62b55c6340a84f629f0beb2be9b9277a365f95d4dbe5448f7d6eb7a89df6e253"
+    },
+    "fable-live-open-plan": {
+      "exit_code": 0,
+      "receipt_sha256": "98527913e3f840d847ee88fc10a68164ef74d2e37a855c1241205d926359dc4b"
+    },
+    "fable-plan-tests": {
+      "exit_code": 0,
+      "receipt_sha256": "a0f1e317c048767ac9b72bc68660b110f2b0017d030f156cfae4b258b8033249"
+    },
+    "live-open-bridge": {
+      "exit_code": 0,
+      "receipt_sha256": "493a4ccd5bbac1da05931bc0df266ac9dbf5a9536b8424b154114eb109845e15"
+    },
+    "measurement-tests": {
+      "exit_code": 0,
+      "receipt_sha256": "d088f58ff88e070d8be7633d9e1fc98be95a09c2b4c6dee5fee554b585a9889f"
+    },
+    "research-check": {
+      "exit_code": 0,
+      "receipt_sha256": "c9c0f670f807721017f171c0d47aa14a7e5d1de027fca8809c9240d7e1c5d46e"
+    }
+  },
+  "consumer_decision": "Retain scoped honest results; hold full report consumption pending owning-lane correction and new immutable exchange",
+  "costs": {
+    "consumer-replay-1": {
+      "elapsed_seconds": 0.07332420907914639,
+      "includes_startup": true,
+      "peak_process_rss_bytes_macos": 23363584
+    },
+    "fable-live-open-check": {
+      "elapsed_seconds": 0.02781758306082338,
+      "includes_startup": true,
+      "peak_process_rss_bytes_macos": 15384576
+    },
+    "fable-live-open-plan": {
+      "elapsed_seconds": 0.02690075000282377,
+      "includes_startup": true,
+      "peak_process_rss_bytes_macos": 14761984
+    },
+    "fable-plan-tests": {
+      "elapsed_seconds": 0.15007579198572785,
+      "includes_startup": true,
+      "peak_process_rss_bytes_macos": 20725760
+    },
+    "live-open-bridge": {
+      "elapsed_seconds": 0.09423924994189292,
+      "includes_startup": true,
+      "peak_process_rss_bytes_macos": 30425088
+    },
+    "measurement-tests": {
+      "elapsed_seconds": 5.7718970000278205,
+      "includes_startup": true,
+      "peak_process_rss_bytes_macos": 75808768
+    },
+    "research-check": {
+      "elapsed_seconds": 1.76624324999284,
+      "includes_startup": true,
+      "peak_process_rss_bytes_macos": 26312704
+    }
+  },
+  "date": "2026-09-12",
+  "gate_a": "unaccepted",
+  "honest_controls": 3,
+  "human_reference_judgments_created": 0,
+  "implementation": {
+    "research/perception-plan-consumption/0.1.0/replay.py": {
+      "byte_size": 6545,
+      "sha256": "9cc75fd1cfc22f68b608c4a1fd62456cd300c8085f76c5bd373ac9f24a32b9b9"
+    }
+  },
+  "interface_identity": {
+    "advertised": "reiyah.resolution-plan.report 0.2.0",
+    "emitted_check_version": "0.1.0",
+    "emitted_plan_version": "0.1.0"
+  },
+  "live_source_bound_check": {
+    "depth_reported": false,
+    "engine_bounds": [
+      "-8",
+      "8"
+    ],
+    "every_base_addition_identifier_and_class_preserved": true,
+    "fable_bounds": [
+      "-8",
+      "8"
+    ],
+    "fable_state": "no_admitted_reference",
+    "loss": "unit FN/FP; tolerance 1/10",
+    "new_finite_worlds": 0,
+    "retained_additions": [
+      9,
+      7
+    ],
+    "shared_source_inputs": "Previously exposed common comparison and operands, privately exact-bound; no physical reference supplied",
+    "weights": [
+      "1/2",
+      "1/2"
+    ]
+  },
+  "not_replayed": [
+    "Fable monotonicity gadget search",
+    "full Fable repository/measurement suites",
+    "unchanged full Engine suite",
+    "GUI exercise",
+    "physical study"
+  ],
+  "publication": "P005 operator-reported published; no further publication/outreach",
+  "refused_controls": 2,
+  "research_consistency": {
+    "experiments_replayed_here": 0,
+    "retained_transcripts_bound": 52,
+    "scope": "Offline development consistency check, not Gate A release",
+    "state": "pass"
+  },
+  "result": {
+    "byte_size": 3069,
+    "sha256": "4d888000f460e9edbb7a6f37cafccc46c1dae0f483df47edc927ad7bc3657082"
+  },
+  "retained_private_packet": "engine-plan-consumption-2026-09-12",
+  "scope": "Consumer engineering review and pinned defect reproduction; no replacement planner/checker, scientific acceptance or measured human effort",
+  "selected_fable_source": "81ba0c6c00a6e6b727aab5719b71c262c341c27e",
+  "selected_fable_tests": 34,
+  "selected_manifest_files": 19,
+  "selected_manifest_sha256": "2b4de77f24ec481233d2d4ffd3d1a05c3ceef05ecf28ecacae1052399a70e6b5",
+  "shared_trusted_calculation": "Fable planner and checker both use cohort_packet.build for enclosure/criterion/matching; distinct search procedures do not establish independent matching evidence.",
+  "source_main": "b758349266d40cd41fa53f7fce73399ca4e38a65",
+  "source_selection": "Source files equal exact Git blobs; generated outputs equal declared manifest digests; old dependencies separately selected and unchanged at current source.",
+  "version": "0.1.0"
+}

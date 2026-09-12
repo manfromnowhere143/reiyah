@@ -1,3 +1,36 @@
+# Review-plan consumption, 2026-09-12
+
+Read the [checkpoint](PERCEPTION_PLAN_CONSUMPTION_CHECKPOINT_2026-09-12.md),
+[consumer reproduction](../research/perception-plan-consumption/0.1.0/README.md) and
+[verification](../research/perception-plan-consumption/0.1.0/verification.json). Fable's sealed
+0.2.0 exchange at 81ba0c6c00a6e6b727aab5719b71c262c341c27e is now reviewed as a consumer.
+The source-bound real open operands still give [-8,8], with no admitted reference and no
+question depth. Three honest constructed controls and 34 focused Fable tests pass.
+
+Full report consumption remains on hold: six forged reports are accepted, including two
+invented witness names in the zero-world open case, altered bounds/criteria and a false
+single-world explanation. Two existing rejection controls still reject. The advertised
+0.2.0 report interface differs from emitted 0.1.0. Fable owns those repairs; Engine's own
+outbox retains the exact counterexamples. No Fable source/ref/status/output or Engine
+admission/common comparison interface was changed. No replacement planner was built.
+A corrected exchange requires a new immutable identity and a new consumer review.
+
+The prepared point exercise remains unreturned. The form is unfilled and the default desktop
+socket remains absent; no unchanged bootstrap was retried. Actual display/selection, human
+usability and time, independent reference judgments and external scientific review remain
+missing. The ready native opening/selection/Save As exercise is still the next human action.
+The research review supplies no discovery, reference interpretation or answer to a question.
+
+The real comparison remains [-8,8]; keep joint alternatives, weights, loss, tolerance,
+matching competition and unknowns. Gate A is unaccepted. The physical study has no selected
+cohort or seed and is unrun. P005 is operator-reported published; older notes are historical.
+No new outreach or publication is authorized. Preserve every owner checkout and closed
+packet; the exact private continuation is `engine-plan-consumption-2026-09-12`.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Camera pixel correspondence, 2026-09-12
 
 Read the [checkpoint](PERCEPTION_IMAGE_FIDELITY_CHECKPOINT_2026-09-12.md),
