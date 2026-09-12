@@ -1,3 +1,34 @@
+# Reviewed joint operands, 2026-09-12
+
+Read the [checkpoint](PERCEPTION_REVIEWED_OPERANDS_CHECKPOINT_2026-09-12.md),
+[interface](../research/perception-reviewed-operands/0.1.0/README.md),
+[analyst procedure](../research/perception-reviewed-operands/0.1.0/ANALYST.md) and
+[verification](../research/perception-reviewed-operands/0.1.0/verification.json). A separate
+preparer binds caller-selected admission/request/assistance identities and freshly reconstructs
+their contents. The private common folder carries full admission bytes, canonical-to-neutral
+mappings and the unchanged joint mathematical model. An inverse structural check rejects lost
+worlds/edges/assumptions even when interval endpoints agree. The open stage remains unchanged.
+
+All 336 repository tests, 93 measurement tests and the research repository check pass.
+Four source-bound synthetic cases reproduce byte-identically and agree with direct geometry
+and the separately owned cohort comparator on their scoped intervals. Adversarial verification
+retains a corrected inherited stage-label defect and a research-checker preference-field defect.
+The comparator source at 4f6ee31e is consumed privately for conformance only; its branch/code is
+not integrated or changed here. No external scientific review or human evidence is created.
+
+The real comparison remains [-8,8]. Current Computer Use again failed during native-pipe
+startup before Blender inspection; interactive point selection and reviewer usability remain
+unverified. No permissions or cloud-login diagnosis follows. Next: consume the frozen synthetic
+exchange, repair the comparator's preference check in its own lane, establish usable viewing,
+then obtain actual independent discovery, assisted review and adjudication with equal evidence
+and retained effort. No cohort or seed is selected. Gate A remains unaccepted; authorized offline
+Engine/main integration continues. Preserve owner checkouts, frozen protocols and other lanes.
+The LinkedIn post is unpublished and its publication decision remains deferred.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Observation cost and the shared decision, 2026-09-11
 
 Read the [synthetic query-cost example](../research/perception-review-cost/0.1.0/README.md) and

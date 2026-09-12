@@ -19,6 +19,9 @@ unproven. The [11 September review](docs/ENGINE_CREDIBILITY_REVIEW_2026-09-11.md
 obligations, the current computational limits and relevant prior work explicit.
 The new [observation-cost example](research/perception-review-cost/0.1.0/README.md) shows why
 counting retained additions does not budget the observations needed to assess them.
+The [reviewed-operand stage](research/perception-reviewed-operands/0.1.0/README.md) now preserves
+the same admitted joint model and complete review basis for both analysts. Its synthetic checks
+leave the real comparison unresolved; actual human review and practical viewing remain missing.
 
 HARBOR is the proposed research program: **Human-Automation Readiness, Belief & Operational
 Risk**. Its broader scope connects object-level belief, readiness, recoverability, joint silent
@@ -27,7 +30,7 @@ measurement and reference-audit research motivates the current focus. Human beli
 under intervention and cross-domain product value require their own observations.
 
 [Engine architecture and mathematics](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) ·
-[Current implementation](docs/PERCEPTION_OPERANDS_CHECKPOINT_2026-09-11.md) ·
+[Current implementation](docs/PERCEPTION_REVIEWED_OPERANDS_CHECKPOINT_2026-09-12.md) ·
 [Research findings](docs/GENERAL_SYNTHESIS.md) · [Selected study](#current-engine-development) ·
 [Run the auditor](#run-the-offline-auditor)
 

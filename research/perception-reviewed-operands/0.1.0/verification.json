@@ -1,0 +1,234 @@
+{
+  "artifact_id": "reiyah.perception-reviewed-operands.verification",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "base_commit": "0e4530ac3821ddb3d77b399ec9cd41f34035b5ef",
+  "source_files": {
+    "tools/perception_reviewed_operands.py": {
+      "byte_size": 15018,
+      "sha256": "adf910a61baafc3cde6f831943f2c731fbdaf7b5db9802b4d4e7b39df78e731e"
+    },
+    "tests/test_perception_reviewed_operands.py": {
+      "byte_size": 18375,
+      "sha256": "10aec3a21eecefc481356aed6c3bdf9a329d976cad7f0f09ce8329a756602630"
+    },
+    "research/perception-reviewed-operands/0.1.0/ANALYST.md": {
+      "byte_size": 3431,
+      "sha256": "426157e39c03b9138156e690957321763abb4ab5fc37e2d7601bc11db25b5b3b"
+    },
+    "research/perception-reviewed-operands/0.1.0/README.md": {
+      "byte_size": 4937,
+      "sha256": "ce90110f6bad1a156f248cbe086a279c037ef884df1bfa4f4582643a32cdb085"
+    }
+  },
+  "targeted_tests": {
+    "child_max_rss_bytes_macos": 64782336,
+    "elapsed_seconds": 12.471627083024941,
+    "ended_utc": "2026-09-12T07:58:52.940407+00:00",
+    "exit_code": 0,
+    "spec_path_unchanged": true,
+    "spec_sha256": "ff0c221c71c75be282005387a95d9f071099ceb2fe24f0f581f89f056eeec655",
+    "started_utc": "2026-09-12T07:58:40.468660+00:00",
+    "streams": {
+      "stderr.txt": {
+        "bytes": 2991,
+        "sha256": "0723d01b1aa1ed214c906360078d6d4992b8e9f0999627e0157361499830729f"
+      },
+      "stdout.txt": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "supervisor_path_unchanged": true,
+    "supervisor_sha256": "7e99c336723a7cd1262beb2c862eb4488a3830ecb35f962604e8a24afdd68acf"
+  },
+  "synthetic_conformance": {
+    "artifact_id": "reiyah.engine-next.synthetic-conformance",
+    "cases": [
+      {
+        "admission_bytes": 135368,
+        "bounds": [
+          "-1",
+          "1"
+        ],
+        "case": "matching-trap",
+        "comparator_and_checker_seconds": 0.0003088749945163727,
+        "declared_world_values": [
+          "-1",
+          "1"
+        ],
+        "direct_geometry_seconds": 0.0012107080547139049,
+        "engine_and_checker_seconds": 0.00028370809741318226,
+        "preparation_seconds": 0.20204649993684143,
+        "preparation_sha256": "976bbb95b4fc0fe4db79709fb57fa2a3bf168bcf8c1b75dddb9f5c5decf55d6c",
+        "repeat_byte_identical": true,
+        "source_checked": true,
+        "total_packet_bytes": 188115
+      },
+      {
+        "admission_bytes": 140874,
+        "bounds": [
+          "0",
+          "0"
+        ],
+        "case": "coupled-three",
+        "comparator_and_checker_seconds": 0.00038054189644753933,
+        "declared_world_values": [
+          "0",
+          "0",
+          "0"
+        ],
+        "direct_geometry_seconds": 0.0014054999919608235,
+        "engine_and_checker_seconds": 0.00031700008548796177,
+        "preparation_seconds": 0.20067191706039011,
+        "preparation_sha256": "2e1984eb63e4649ac8b7472ef188d092700483120e2ae66663afe89c37cf47fa",
+        "repeat_byte_identical": true,
+        "source_checked": true,
+        "total_packet_bytes": 195775
+      },
+      {
+        "admission_bytes": 134342,
+        "bounds": [
+          "-1",
+          "1"
+        ],
+        "case": "unknown",
+        "comparator_and_checker_seconds": 0.00012374995276331902,
+        "declared_world_values": null,
+        "direct_geometry_seconds": null,
+        "engine_and_checker_seconds": 0.00012149999383836985,
+        "preparation_seconds": 0.1953361249761656,
+        "preparation_sha256": "0e0afd7fb25b85755ef6f9f676a607185e481ff0f3baf743d153a0d13f1ea58b",
+        "repeat_byte_identical": true,
+        "source_checked": true,
+        "total_packet_bytes": 185875
+      },
+      {
+        "admission_bytes": 130005,
+        "bounds": [
+          "-1",
+          "-1"
+        ],
+        "case": "finite-empty",
+        "comparator_and_checker_seconds": 0.00022449996322393417,
+        "declared_world_values": [
+          "-1",
+          "-1"
+        ],
+        "direct_geometry_seconds": 0.0011704169446602464,
+        "engine_and_checker_seconds": 0.00018524995539337397,
+        "preparation_seconds": 0.19491991598624736,
+        "preparation_sha256": "6f7031068dd9a80d3f49785382461d2ea79363cebcd8dac4f44d0e6c75fd59ae",
+        "repeat_byte_identical": true,
+        "source_checked": true,
+        "total_packet_bytes": 179984
+      }
+    ],
+    "comparator_limit": "Contradictory preference accepted by its checker; retained forgery and request to owner. Comparator not integrated into Engine.",
+    "comparison_scope": "Same synthetic source-bound admission and graphs, no physical review or external scientific validation.",
+    "timing_scope": "One bounded local observation per case, warm same-process timings; no runtime ranking, human-effort or product-advantage claim.",
+    "version": "0.1.0"
+  },
+  "primary_reading": {
+    "artifact_id": "reiyah.engine-next.primary-reading",
+    "version": "0.1.0",
+    "retrieved_utc": "2026-09-12T07:50:22.497055+00:00",
+    "url": "https://arxiv.org/html/2605.24722v1",
+    "final_url": "https://arxiv.org/html/2605.24722v1",
+    "version_read": "arXiv:2605.24722v1, 2026-05-23",
+    "publication_status": "Exact arXiv preprint version; journal status not independently established",
+    "byte_size": 403607,
+    "sha256": "8023f583b9faae54d66520d8ebae99588a374f468897e4bc663c18df863f86da",
+    "access_terms": "Public arXiv HTML, CC BY-NC-SA 4.0 per page",
+    "redistribution": "Private reading only in this task; no payload redistribution",
+    "inspected_scope": "Sections 3.1-3.3; multi-annotator clustering and absent-annotation/background premise",
+    "design_consequence": "Preserve full disagreement and source locators. Do not transfer a clustering or background-imputation premise into joint-world admission. Calibration to an annotation distribution is a different target from a robust additive-loss comparison.",
+    "method_or_code_adopted": false,
+    "state_of_the_art_comparison": false
+  },
+  "full_candidate_validation": {
+    "status": "passed",
+    "repository_tests": 336,
+    "measurement_tests": 93,
+    "total_tests": 429,
+    "gate_b_check": "passed",
+    "receipts": {
+      "repository-tests": {
+        "child_max_rss_bytes_macos": 204259328,
+        "elapsed_seconds": 44.879565709037706,
+        "ended_utc": "2026-09-12T08:02:05.481000+00:00",
+        "exit_code": 0,
+        "spec_path_unchanged": true,
+        "spec_sha256": "e8cef4ab3a22dd6d853b185b96b44b4634d648055deb8d6a7051f887ed0c9fc9",
+        "started_utc": "2026-09-12T08:01:20.601329+00:00",
+        "streams": {
+          "stderr.txt": {
+            "bytes": 2268,
+            "sha256": "e5719c03f8318c33b9af1f4e3d007c9aa9f395d3f1406ac95b816dcbeed504ca"
+          },
+          "stdout.txt": {
+            "bytes": 370,
+            "sha256": "9aca8981e615dc93028da28f120da524c2f3b4ec4a72473460918c4cc413da4d"
+          }
+        },
+        "supervisor_path_unchanged": true,
+        "supervisor_sha256": "7e99c336723a7cd1262beb2c862eb4488a3830ecb35f962604e8a24afdd68acf",
+        "tests": 336,
+        "command": "python -B -m unittest discover -s tests -p test_*.py"
+      },
+      "measurement-tests": {
+        "child_max_rss_bytes_macos": 81166336,
+        "elapsed_seconds": 6.019365917076357,
+        "ended_utc": "2026-09-12T08:01:26.620809+00:00",
+        "exit_code": 0,
+        "spec_path_unchanged": true,
+        "spec_sha256": "4c1efeab637fa10e3498f474cdbba13ecb4073735c13271bcd59c717d3c73490",
+        "started_utc": "2026-09-12T08:01:20.601329+00:00",
+        "streams": {
+          "stderr.txt": {
+            "bytes": 880,
+            "sha256": "099707448eda858444acaa0fb9357d8cbd253cf3a8bd1296e4e3759bcc425eed"
+          },
+          "stdout.txt": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "supervisor_path_unchanged": true,
+        "supervisor_sha256": "7e99c336723a7cd1262beb2c862eb4488a3830ecb35f962604e8a24afdd68acf",
+        "tests": 93,
+        "command": "python -B -m unittest discover -s tools/measure -p test_*.py"
+      },
+      "gate-b-check": {
+        "child_max_rss_bytes_macos": 26378240,
+        "elapsed_seconds": 1.8113637500209734,
+        "ended_utc": "2026-09-12T08:01:22.412830+00:00",
+        "exit_code": 0,
+        "spec_path_unchanged": true,
+        "spec_sha256": "5d557c85aabc379a11423955de3d4c1fbea0d350560e2122026cd9d710eada99",
+        "started_utc": "2026-09-12T08:01:20.601328+00:00",
+        "streams": {
+          "stderr.txt": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "stdout.txt": {
+            "bytes": 1260,
+            "sha256": "ce438bf3411471c04e38f0674149d134c997534b65091deee15c8b276e657b94"
+          }
+        },
+        "supervisor_path_unchanged": true,
+        "supervisor_sha256": "7e99c336723a7cd1262beb2c862eb4488a3830ecb35f962604e8a24afdd68acf",
+        "tests": null,
+        "command": "python -B tools/measure/gate_b_check.py --json FRESH_PRIVATE_REPORT"
+      }
+    },
+    "scope": "Authorized offline Engine candidate checks; no Gate A release evidence. The suite emitted unclosed SQLite-connection ResourceWarnings, retained in captured stderr; their allocation source was not traced in this checkpoint."
+  },
+  "authority": "Engineering integrity and synthetic checks only; no physical coverage, independent scientific review, acceptance or transport verification.",
+  "retained_initial_failure": {
+    "diagnostic": "Inherited rule stage label contradicted reviewed operands",
+    "failing_regression_receipt_sha256": "d4659fc67015ea7049d5d26e4f1651cd58159f60b667ba9c42c7be6926e3d784",
+    "corrected_by": "Stage-specific rules metadata with unchanged predecessor mathematics; regression passes."
+  }
+}
