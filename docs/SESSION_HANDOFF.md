@@ -1,3 +1,29 @@
+# Interpretation-specific matching conformance, 2026-09-12
+
+Read the [checkpoint](PERCEPTION_VARYING_MATCH_2026-09-12.md),
+[exact realization and replay](../research/perception-varying-match/0.1.0/README.md)
+and [verification](../research/perception-varying-match/0.1.0/verification.json).
+The existing compiler/common projection preserves the selected four-world research
+case, including changing matching competition. Its per-world differences are
+-1, +1, +1, -1. Two valid but substituted models preserve the entire aggregate
+result while changing individual decisions; the structural check rejects both.
+Three focused regressions are added; all 33 relevant geometric/common tests pass.
+No Engine runtime/interface or Fable source/ref/status/outbox changed.
+
+Only the immutable constructed case at 2ad46bb was consumed. No planner, theorem
+or later checker correction is accepted here. The private continuation is
+`engine-varying-match-2026-09-12`; its outbox carries exact conformance inputs.
+The ready participant exercise remains unreturned. The desktop loader diagnosis
+is retained, with no compatible replacement selected or unchanged launch repeated.
+Actual usability, human references and external scientific review remain missing.
+Real bounds remain [-8,8]; Gate A is unaccepted and the physical study is unrun
+with no cohort/seed selected. P005 is operator-reported published; no further
+publication or outreach is authorized. Preserve all owner checkouts and closed packets.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Native desktop prerequisite diagnosed, 2026-09-12
 
 Read the [checkpoint](PERCEPTION_DESKTOP_RECOVERY_2026-09-12.md),

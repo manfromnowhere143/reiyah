@@ -1,0 +1,185 @@
+{
+  "actual_interactive_observation": "not_performed",
+  "artifact_id": "reiyah.varying-match.verification",
+  "baseline": {
+    "byte_size": 16484,
+    "method": "Exhaustive partial injections directly from exact positions, computing both full losses",
+    "path": "tests/test_perception_reference.py",
+    "sha256": "b5e1ecc410c4323df65c833294a6742e7fb711dc8b94206e25f0ad6221d71b84",
+    "unchanged_from_source_main": true
+  },
+  "certificate_scope": "Separate matching/cover checker; producer matcher disabled while checking. Parser, schemas, rational and graph semantics shared.",
+  "checks": {
+    "replay-1": {
+      "child_max_rss_bytes_macos": 38633472,
+      "elapsed_seconds": 0.20105204195715487,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "b005bb87c685db12246e3cacd3b8f92744e0d419c1e7f534ae2272ae12009f2d"
+    },
+    "targeted-1": {
+      "child_max_rss_bytes_macos": 63258624,
+      "elapsed_seconds": 12.285677957930602,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "2e7674e75f449434ed12ae5b3c1337a3052746729d8429be99bb459a83619b64"
+    },
+    "varying-match-1": {
+      "child_max_rss_bytes_macos": 39714816,
+      "elapsed_seconds": 0.23313670908100903,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "392e344d904c63e2cd3f3b5f041f9b651986dc3f0801eea492f3343edb45b687"
+    }
+  },
+  "date": "2026-09-12",
+  "gate_a": "unaccepted",
+  "geometry_comparisons_budgeted": 16,
+  "human_reference_judgments_created": 0,
+  "implementation_changed": false,
+  "independent_external_scientific_review": "missing",
+  "interface_changed": false,
+  "new_case_scope": "Direct compiler/common projection conformance, not a full admission replay or human reference packet",
+  "new_regression_tests": 3,
+  "not_replayed": [
+    "unchanged full repository suite",
+    "unchanged measurement suite",
+    "research planner/checker/theorem algorithms",
+    "GUI bootstrap",
+    "physical study"
+  ],
+  "participant_effort": "not_measured",
+  "physical_study": "unrun; no cohort or seed selected",
+  "publication": "P005 operator-reported published; no further publication or outreach",
+  "real_bounds": [
+    "-8",
+    "8"
+  ],
+  "reports": {
+    "edge-substitution": {
+      "projection_check": "REVIEWED_SEMANTICS",
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "1"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "unresolved",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "exact_for_finite_model",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "reference_scope": "synthetic",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null
+      },
+      "world_deltas": {
+        "a_and_c": "1",
+        "b_only": "1",
+        "c_only": "1",
+        "none": "-1"
+      }
+    },
+    "honest": {
+      "projection_check": "accepted",
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "1"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "unresolved",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "exact_for_finite_model",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "reference_scope": "synthetic",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null
+      },
+      "world_deltas": {
+        "a_and_c": "-1",
+        "b_only": "1",
+        "c_only": "1",
+        "none": "-1"
+      }
+    },
+    "world-swap": {
+      "projection_check": "REVIEWED_SEMANTICS",
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "1"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "unresolved",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "exact_for_finite_model",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "reference_scope": "synthetic",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null
+      },
+      "world_deltas": {
+        "a_and_c": "1",
+        "b_only": "1",
+        "c_only": "-1",
+        "none": "-1"
+      }
+    }
+  },
+  "reproduction_source": {
+    "byte_size": 9759,
+    "path": "tests/test_perception_varying_match.py",
+    "sha256": "cf5e42dfdb01c3e96d5d9b06f0c2dfd68c68f3d18a3cf81ffcb39e0dc44cd7f5"
+  },
+  "result": {
+    "byte_size": 2117,
+    "sha256": "bbca04441e282d96c3ffde2a237a660eb3c6244ca875b9b99b7fb1110942e4d6"
+  },
+  "retained_private_packet": "engine-varying-match-2026-09-12",
+  "retained_replay_files": 14,
+  "selected_research_case": {
+    "byte_size": 2258,
+    "git_blob_bytes_equal": true,
+    "local_path": "case.json",
+    "manifest_sha256": "b36a06dc02ca92752a8fc767cf19d8ad1dd1c02f0657f7dc1f9ed9680c5f70ca",
+    "original_path": "research/cohort-packet/0.1.0/adaptive-beats-fixed-varying-edges-case.json",
+    "scope": "One public constructed case from same repository; no Fable code or generated theorem/planner/checker result consumed",
+    "sha256": "655b0afaecc89bd6544ae59c6f842705713e17e6924447d5c09742276a324194",
+    "source_commit": "2ad46bb4d34e88d6586609eab00069a807d53ae7",
+    "source_tree": "870732833e7e5cbc6e92e3ea67459430da55ebee"
+  },
+  "source_files_bound_in_replay": 36,
+  "source_main": "cf4dc5cd4bb0e82f3129caa3df22410058e8acad",
+  "targeted_tests_passed": 33,
+  "version": "0.1.0"
+}

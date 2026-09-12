@@ -1,0 +1,136 @@
+{
+  "anchors": [
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "c0"
+        }
+      ],
+      "base_detections": [
+        {
+          "class": "car",
+          "id": "b0"
+        }
+      ],
+      "id": "A",
+      "objects": [
+        {
+          "class": "car",
+          "id": "k"
+        },
+        {
+          "class": "car",
+          "id": "dA"
+        },
+        {
+          "class": "car",
+          "id": "dB"
+        },
+        {
+          "class": "car",
+          "id": "dC"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "1"
+    }
+  ],
+  "cohort_id": "adaptive-beats-fixed-varying-edges",
+  "joint_worlds": [
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k"
+            ],
+            [
+              "c0",
+              "k"
+            ]
+          ],
+          "objects_present": [
+            "k"
+          ]
+        }
+      },
+      "world_id": "none"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k"
+            ],
+            [
+              "c0",
+              "dC"
+            ]
+          ],
+          "objects_present": [
+            "k",
+            "dC"
+          ]
+        }
+      },
+      "world_id": "c_only"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k"
+            ],
+            [
+              "c0",
+              "dB"
+            ]
+          ],
+          "objects_present": [
+            "k",
+            "dB"
+          ]
+        }
+      },
+      "world_id": "b_only"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k"
+            ],
+            [
+              "b0",
+              "dA"
+            ],
+            [
+              "b0",
+              "dC"
+            ]
+          ],
+          "objects_present": [
+            "k",
+            "dA",
+            "dC"
+          ]
+        }
+      },
+      "world_id": "a_and_c"
+    }
+  ],
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1",
+    "tolerance": "1/10"
+  },
+  "schema_id": "reiyah.cohort-packet.case"
+}
