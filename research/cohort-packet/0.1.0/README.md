@@ -46,6 +46,9 @@ Python's `Fraction` and integer arithmetic.
 | `adaptive-beats-fixed-case` | plan depth **2**, smallest fixed resolving set **3** | the retained witness that a fixed resolving set bounds the adaptive optimum from above only, and so can never certify it |
 | `adaptive-beats-fixed-varying-edges-case` | plan depth **2**, smallest fixed resolving set **3** | the same gap with one anchor and four worlds. `a_and_c` holds a strict superset of the objects of `c_only` and a lower value, because the two worlds disagree about which detection could have matched `dC`. Retained as the instance showing that the gain monotonicity theorem needs its fixed edge set, and that a world value can fall as objects are added |
 
+| `worst-group-masking-case` | cohort `supported` at `3/5`, group `low_light` `excluded` at `-1` | the cohort average is correct and hides a group harmed in the only admitted reading. The cohort report does not mention that group at all |
+| `worst-group-flip-case` | worst group jointly `[-1, -1]`, separate relaxation `[-1, 1]` | two groups trade places between the two admitted readings. Each group alone is unresolved; jointly, some group is harmed in every reading. Treating groups one at a time loses the negative result entirely |
+
 `answer-prerequisites.json` records which questions have a defined measurement, at what stage each
 may be asked, and what is missing. Presence questions are supported. Reachability, calibration and
 timing questions are not, and each is recorded as a named missing prerequisite rather than assumed.

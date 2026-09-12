@@ -1,0 +1,149 @@
+{
+  "anchors": [
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "A_c0"
+        }
+      ],
+      "base_detections": [
+        {
+          "class": "car",
+          "id": "A_b0"
+        }
+      ],
+      "group": "group_a",
+      "id": "A",
+      "objects": [
+        {
+          "class": "car",
+          "id": "A_k"
+        },
+        {
+          "class": "car",
+          "id": "A_d"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "1/2"
+    },
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "B_c0"
+        }
+      ],
+      "base_detections": [
+        {
+          "class": "car",
+          "id": "B_b0"
+        }
+      ],
+      "group": "group_b",
+      "id": "B",
+      "objects": [
+        {
+          "class": "car",
+          "id": "B_k"
+        },
+        {
+          "class": "car",
+          "id": "B_d"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "1/2"
+    }
+  ],
+  "cohort_id": "worst-group-flip",
+  "joint_worlds": [
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "A_b0",
+              "A_k"
+            ],
+            [
+              "A_b0",
+              "A_d"
+            ],
+            [
+              "A_c0",
+              "A_k"
+            ]
+          ],
+          "objects_present": [
+            "A_k",
+            "A_d"
+          ]
+        },
+        "B": {
+          "edges": [
+            [
+              "B_b0",
+              "B_k"
+            ],
+            [
+              "B_c0",
+              "B_k"
+            ]
+          ],
+          "objects_present": [
+            "B_k"
+          ]
+        }
+      },
+      "world_id": "a_helped"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "A_b0",
+              "A_k"
+            ],
+            [
+              "A_c0",
+              "A_k"
+            ]
+          ],
+          "objects_present": [
+            "A_k"
+          ]
+        },
+        "B": {
+          "edges": [
+            [
+              "B_b0",
+              "B_k"
+            ],
+            [
+              "B_b0",
+              "B_d"
+            ],
+            [
+              "B_c0",
+              "B_k"
+            ]
+          ],
+          "objects_present": [
+            "B_k",
+            "B_d"
+          ]
+        }
+      },
+      "world_id": "b_helped"
+    }
+  ],
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1",
+    "tolerance": "1/10"
+  },
+  "schema_id": "reiyah.cohort-packet.case"
+}

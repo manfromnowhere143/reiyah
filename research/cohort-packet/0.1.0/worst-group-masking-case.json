@@ -1,0 +1,157 @@
+{
+  "anchors": [
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "day_a_c0"
+        }
+      ],
+      "base_detections": [
+        {
+          "class": "car",
+          "id": "day_a_b0"
+        }
+      ],
+      "group": "clear_daylight",
+      "id": "day_a",
+      "objects": [
+        {
+          "class": "car",
+          "id": "day_a_k"
+        },
+        {
+          "class": "car",
+          "id": "day_a_d"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "2/5"
+    },
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "day_b_c0"
+        }
+      ],
+      "base_detections": [
+        {
+          "class": "car",
+          "id": "day_b_b0"
+        }
+      ],
+      "group": "clear_daylight",
+      "id": "day_b",
+      "objects": [
+        {
+          "class": "car",
+          "id": "day_b_k"
+        },
+        {
+          "class": "car",
+          "id": "day_b_d"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "2/5"
+    },
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "night_a_c0"
+        }
+      ],
+      "base_detections": [
+        {
+          "class": "car",
+          "id": "night_a_b0"
+        }
+      ],
+      "group": "low_light",
+      "id": "night_a",
+      "objects": [
+        {
+          "class": "car",
+          "id": "night_a_k"
+        },
+        {
+          "class": "car",
+          "id": "night_a_d"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "1/5"
+    }
+  ],
+  "cohort_id": "worst-group-masking",
+  "joint_worlds": [
+    {
+      "per_anchor": {
+        "day_a": {
+          "edges": [
+            [
+              "day_a_b0",
+              "day_a_k"
+            ],
+            [
+              "day_a_b0",
+              "day_a_d"
+            ],
+            [
+              "day_a_c0",
+              "day_a_k"
+            ]
+          ],
+          "objects_present": [
+            "day_a_k",
+            "day_a_d"
+          ]
+        },
+        "day_b": {
+          "edges": [
+            [
+              "day_b_b0",
+              "day_b_k"
+            ],
+            [
+              "day_b_b0",
+              "day_b_d"
+            ],
+            [
+              "day_b_c0",
+              "day_b_k"
+            ]
+          ],
+          "objects_present": [
+            "day_b_k",
+            "day_b_d"
+          ]
+        },
+        "night_a": {
+          "edges": [
+            [
+              "night_a_b0",
+              "night_a_k"
+            ],
+            [
+              "night_a_c0",
+              "night_a_k"
+            ]
+          ],
+          "objects_present": [
+            "night_a_k"
+          ]
+        }
+      },
+      "world_id": "single_reading"
+    }
+  ],
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1",
+    "tolerance": "1/10"
+  },
+  "schema_id": "reiyah.cohort-packet.case"
+}
