@@ -1,0 +1,45 @@
+{
+  "anchors": [
+    {
+      "id": "A",
+      "reference_state": "open",
+      "retained_additions": 9,
+      "weight": "1/2"
+    },
+    {
+      "id": "B",
+      "reference_state": "open",
+      "retained_additions": 7,
+      "weight": "1/2"
+    }
+  ],
+  "artifact_id": "reiyah.cohort-packet.report",
+  "coarse_bound": {
+    "lower": "-8",
+    "upper": "8"
+  },
+  "cohort_id": "open-two-anchor",
+  "decision": {
+    "improvement_criterion": "unresolved",
+    "preference": "unresolved"
+  },
+  "enclosure": {
+    "lower": "-8",
+    "upper": "8"
+  },
+  "joint_worlds": [],
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1",
+    "tolerance": "1/10"
+  },
+  "open_contribution": {
+    "lower": "-8",
+    "upper": "8"
+  },
+  "reason": "every anchor is open; the enclosure is the weighted count bound",
+  "scope": "the declared cohort, the declared joint worlds and the declared additive loss. An enclosure over admitted worlds is not physical coverage, and the separate relaxation is reported only to show it is wider, never as a result",
+  "separate_anchor_relaxation": null,
+  "state": "open_reference_only",
+  "version": "0.1.0"
+}

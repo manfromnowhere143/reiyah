@@ -2,13 +2,42 @@
 
 Document ID: `reiyah.decision-evidence.2026-09-11`
 
-Version: `0.2.0`
+Version: `0.3.0`
 
-Lifecycle status: `proposed`
+Lifecycle status: `corrected`
 
 Lane: independent research, parallel to the Engine. Changes no released byte, no frozen protocol,
 no Engine file and no owner checkout. Creates no acceptance and no scientific authority. Gate A
 remains unaccepted.
+
+## Correction of 12 September 2026, read first
+
+Two claims below are withdrawn and one is wrong. The record is left intact; this banner is the
+current reading.
+
+**Withdrawn: the sixteen-judgment schedule and its cost.** A section below states that sixteen
+adjudications close the comparison and prices the answer at sixteen human decisions. A constructed
+counterexample from the Engine lane, rebuilt and reproduced independently here, shows every
+candidate object an addition could match can be settled while the enclosure stays at full width,
+because the gain also moves with disputed objects near the base that no addition can reach. See
+[the budget correction](ADJUDICATION_BUDGET_2026-09-11.md). The threshold law and the stopping rule
+survive; **no judgement count and no expected review cost is available.**
+
+**Withdrawn: the conversion prior as a forecast of the review outcome.** The per-anchor Bernoulli
+race it fed targets a different quantity from the declared decision. With equal weights and retained
+additions of nine and seven the criterion is a single joint one, and completing both per-anchor
+races can leave it unresolved. No transferred outcome probability is claimed.
+
+**Wrong as written: "the Engine admits unfiltered source annotations."** It does not. Source
+assistance supplies **suggestions only**; the Engine's own rules record
+`source_annotation_authority: suggestions_only_no_automatic_reference_objects_or_edges`, and no
+reference admission has occurred. The correct statement is that this lane used the retained filtered
+annotation cache as a reference while the Engine has admitted none, which makes the two less
+comparable than the original sentence suggested, not more.
+
+**Superseded: the single-anchor scope.** The declared comparison is a weighted cohort over shared
+joint worlds, and per-anchor enclosures may not be summed. See
+[the cohort comparison](COHORT_COMPARISON_2026-09-12.md).
 
 ## The question and the result
 

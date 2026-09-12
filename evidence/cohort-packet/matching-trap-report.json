@@ -1,0 +1,159 @@
+{
+  "anchors": [
+    {
+      "id": "A",
+      "reference_state": "finite",
+      "retained_additions": 1,
+      "weight": "1"
+    }
+  ],
+  "artifact_id": "reiyah.cohort-packet.report",
+  "coarse_bound": {
+    "lower": "-1",
+    "upper": "1"
+  },
+  "cohort_id": "matching-trap",
+  "decision": {
+    "improvement_criterion": "unresolved",
+    "preference": "unresolved"
+  },
+  "enclosure": {
+    "lower": "-1",
+    "upper": "1"
+  },
+  "joint_worlds": [
+    {
+      "anchors": [
+        {
+          "anchor": "A",
+          "augmented_certificate": {
+            "cover": {
+              "detections": [],
+              "objects": [
+                "k"
+              ]
+            },
+            "matching": [
+              [
+                "b0",
+                "k"
+              ]
+            ]
+          },
+          "base_certificate": {
+            "cover": {
+              "detections": [
+                "b0"
+              ],
+              "objects": []
+            },
+            "matching": [
+              [
+                "b0",
+                "k"
+              ]
+            ]
+          },
+          "delta": "-1",
+          "edges": [
+            [
+              "b0",
+              "k"
+            ],
+            [
+              "c0",
+              "k"
+            ]
+          ],
+          "objects_present": [
+            "k"
+          ],
+          "tp_augmented": 1,
+          "tp_base": 1
+        }
+      ],
+      "finite_contribution": "-1",
+      "world_id": "absent"
+    },
+    {
+      "anchors": [
+        {
+          "anchor": "A",
+          "augmented_certificate": {
+            "cover": {
+              "detections": [
+                "b0",
+                "c0"
+              ],
+              "objects": []
+            },
+            "matching": [
+              [
+                "b0",
+                "d"
+              ],
+              [
+                "c0",
+                "k"
+              ]
+            ]
+          },
+          "base_certificate": {
+            "cover": {
+              "detections": [
+                "b0"
+              ],
+              "objects": []
+            },
+            "matching": [
+              [
+                "b0",
+                "d"
+              ]
+            ]
+          },
+          "delta": "1",
+          "edges": [
+            [
+              "b0",
+              "d"
+            ],
+            [
+              "b0",
+              "k"
+            ],
+            [
+              "c0",
+              "k"
+            ]
+          ],
+          "objects_present": [
+            "k",
+            "d"
+          ],
+          "tp_augmented": 2,
+          "tp_base": 1
+        }
+      ],
+      "finite_contribution": "1",
+      "world_id": "present"
+    }
+  ],
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1",
+    "tolerance": "1/10"
+  },
+  "open_contribution": {
+    "lower": "0",
+    "upper": "0"
+  },
+  "scope": "the declared cohort, the declared joint worlds and the declared additive loss. An enclosure over admitted worlds is not physical coverage, and the separate relaxation is reported only to show it is wider, never as a result",
+  "separate_anchor_relaxation": {
+    "lower": "-1",
+    "status": "a relaxation of the joint enclosure, never the declared result",
+    "upper": "1"
+  },
+  "state": "computed",
+  "version": "0.1.0"
+}

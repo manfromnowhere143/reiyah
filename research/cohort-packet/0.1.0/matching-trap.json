@@ -1,0 +1,85 @@
+{
+  "anchors": [
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "c0"
+        }
+      ],
+      "base_detections": [
+        {
+          "class": "car",
+          "id": "b0"
+        }
+      ],
+      "id": "A",
+      "objects": [
+        {
+          "class": "car",
+          "id": "k"
+        },
+        {
+          "class": "car",
+          "id": "d"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "1"
+    }
+  ],
+  "cohort_id": "matching-trap",
+  "joint_worlds": [
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k"
+            ],
+            [
+              "c0",
+              "k"
+            ]
+          ],
+          "objects_present": [
+            "k"
+          ]
+        }
+      },
+      "world_id": "absent"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "b0",
+              "k"
+            ],
+            [
+              "b0",
+              "d"
+            ],
+            [
+              "c0",
+              "k"
+            ]
+          ],
+          "objects_present": [
+            "k",
+            "d"
+          ]
+        }
+      },
+      "world_id": "present"
+    }
+  ],
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1",
+    "tolerance": "1/10"
+  },
+  "schema_id": "reiyah.cohort-packet.case"
+}
