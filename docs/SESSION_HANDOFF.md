@@ -1,3 +1,40 @@
+# Checked viewer preparation, 2026-09-13
+
+Read the [checkpoint](PERCEPTION_VIEWER_PREPARATION_2026-09-13.md),
+[coordinator procedure](../research/perception-viewer-preparation/0.1.0/README.md) and
+[verification](../research/perception-viewer-preparation/0.1.0/verification.json).
+A small command now derives the existing viewer binding and source arguments from a completely
+verified observation package. Capture and expected seal remain explicit. The development binding
+is byte-identical to the manual baseline; native extraction preserves the earlier exact report
+and original indices. All 379 repository tests pass, including ten new preparation tests.
+The earlier 93 measurement tests are retained with unchanged source, not replayed.
+
+No participant observation or reference judgment was supplied. The existing manual exercise
+remains ready; its return takes priority. Desktop capability remains diagnosed and unavailable,
+with no unchanged bootstrap retry. Background preparation does not establish practical usability.
+
+A separate immutable consumer review of Fable c70e6ce confirms its six earlier forgery repairs.
+Full negative-report consumption remains on hold: a decided and permitted-question-divisible
+witness is accepted as undecided and unsplittable; missing report identities also pass.
+The exact synthetic cases and current-version reports are in this Engine checkpoint's consumer
+outbox. Findings apply only to selected bytes. Fable owns any correction; no Fable source,
+ref, status or outbox was changed and no planner was integrated.
+
+Continue from the sealed engine-viewer-preparation-2026-09-13 packet in a fresh candidate.
+Before more viewer machinery, assess the remaining path from an actual saved selection to a
+source-bound proposal, including how an unsuccessful or ambiguous interaction stays unknown.
+Compare the existing discovery locator and manual transcription first. Do not fabricate a
+participant, release later assistance or duplicate Fable's planning/comparator work.
+
+Joint alternatives, matching, weights, loss, tolerance and unknowns are unchanged. Real bounds
+[-8,8]; Gate A unaccepted; physical study unrun with no cohort or seed. P005 is operator-reported
+published; no further publication or outreach. Preserve all owner checkouts and closed packets.
+The authorized autonomous Engine window continues.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Native viewer output custody, 2026-09-13
 
 Read the [checkpoint](PERCEPTION_VIEWER_CUSTODY_2026-09-13.md),

@@ -1,0 +1,179 @@
+{
+  "added_installed_dependency": false,
+  "artifact_id": "reiyah.viewer-preparation.verification",
+  "assumptions": [
+    "Expected package seal selected separately",
+    "Stable source and output directory hierarchy",
+    "Complete verifier, record profile and selected Python/native runtimes trusted"
+  ],
+  "baseline": {
+    "action_count_limit": "Logical procedure steps, not UI clicks or independent human-effort evidence",
+    "human_minutes": "unmeasured",
+    "logical_coordinator_actions": 5,
+    "manifest_derived_record_values": 3
+  },
+  "binding_and_selection_versions": "0.1.0 unchanged",
+  "blender": {
+    "byte_size": 167811856,
+    "expected_version": "5.1.2",
+    "sha256": "e0b80264bea559673212e0afc819fb33f3cef8b3dcfcc8d994b195132857ac8a"
+  },
+  "checks": {
+    "development-bind": {
+      "child_max_rss_bytes_macos": 80625664,
+      "elapsed_seconds": 3.3656214169459417,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "82b20b9f4e402a9d2f9ac70f67b599af96e90dab7a2760f9484a577c9d41c8bf"
+    },
+    "development-extract": {
+      "child_max_rss_bytes_macos": 216203264,
+      "elapsed_seconds": 2.8229853329248726,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "ed52374c003b57a9778192e7e0800fdf42f0e38177e4792568253e473ec582bc"
+    },
+    "development-prepare": {
+      "child_max_rss_bytes_macos": 223100928,
+      "elapsed_seconds": 2.854937667027116,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "44f3882580185e9b9e025caf27404f08124f78531d03ae4f0fb8a9a985f013e2"
+    },
+    "fable-correction-consumer": {
+      "child_max_rss_bytes_macos": 19677184,
+      "elapsed_seconds": 0.05909445893485099,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "b430591efbc7e0635cd444cd4dd5a3f2207b2a0c350c48eb913da07e2ba017be"
+    },
+    "focused-1": {
+      "child_max_rss_bytes_macos": 52641792,
+      "elapsed_seconds": 1.8633114590775222,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "af4d593762fcf4128ce20e317e5aff0ecdf9722b53d155a5ec5c81d94bb61e16"
+    },
+    "manual-audit": {
+      "child_max_rss_bytes_macos": 92487680,
+      "elapsed_seconds": 3.5075632908847183,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "5333cfea84d46a7544e43b4262c4d293e71b79de65b610e80eb8a6dbf8ad07fe"
+    },
+    "repository-tests": {
+      "child_max_rss_bytes_macos": 157499392,
+      "elapsed_seconds": 53.4512674579164,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "aaa6de96383d11709beafbead0c951745e9b0f079460795042de6afe7f564e31"
+    },
+    "research-consistency": {
+      "child_max_rss_bytes_macos": 24920064,
+      "elapsed_seconds": 1.698201832943596,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "a98267c616a2ec2d19e94540239d234467a03c86d1ddba003547781fa3b94b9a"
+    }
+  },
+  "date": "2026-09-13",
+  "decision": "Add one small bind command; complete verification plus fresh hash-bound manifest selection, existing canonical binding and atomic non-overwriting output",
+  "development_capture": {
+    "all_original_records_verified": 34720,
+    "binding": {
+      "byte_size": 353,
+      "sha256": "91bdef63da3008ea43d083be4149d0c998228007358ba9a9966ca9705bebaea2"
+    },
+    "independent_original_record_slices": [
+      0,
+      17360,
+      34719
+    ],
+    "manual_binding_byte_identical": true,
+    "native_argv": "Source argument array consumed verbatim by existing adapter",
+    "prior_programmatic_selection_byte_identical": true,
+    "selection": {
+      "byte_size": 1651,
+      "sha256": "c60cbe177e4a85ff8fb2ec7faa673a3d25b8b217b12bfeb47c3833ecae7b7045"
+    },
+    "selection_basis": "Previously exposed first LIDAR_TOP, no new study selection"
+  },
+  "fable_consumer_review": {
+    "decision": "Retain scoped repairs; hold full negative-report consumption",
+    "fresh_report_version": "0.3.0",
+    "honest_controls_accepted": 4,
+    "manifest_sha256": "1ac89839ed3d0ed5cd5916b330caf9166a2bda64420ed39add4281d84ed550db",
+    "missing_report_identity_accepted": true,
+    "new_semantic_forgery_accepted": true,
+    "prior_forgeries_refused": 6,
+    "prior_rejection_controls_refused": 2,
+    "result_sha256": "6c7fc0feb303c7f2f6f76153918a1448e8a5003c10532deac3347e64e348d171",
+    "scope": "Consumer review only; no Fable implementation integrated or source/ref/status/outbox changed; no claim about unselected newer releases",
+    "source_commit": "c70e6ce2a2ebf9ed05a2fedb364d58579c46844a"
+  },
+  "limits": [
+    "No actual GUI or participant observation",
+    "No human reference records created",
+    "No physical truth established by byte identity",
+    "No new study selection or assistance release",
+    "Gate A unaccepted",
+    "No state-of-the-art claim"
+  ],
+  "native_adapter_changed": false,
+  "new_module": {
+    "byte_size": 3793,
+    "sha256": "bc22980fea173c404d8265c564605460aeca0f1f80288227bd8662c349139ea1"
+  },
+  "new_test_file": {
+    "byte_size": 7518,
+    "sha256": "1922c47f80a907bc16008fa2f843e99912011bdc86c5af1e3f1cf8d84dc7ed9c"
+  },
+  "primary_basis": "Existing source-bound Blender 5.1 documentation and Python directory-identity documentation retained in the preceding viewer packets; no new native operation or mathematical claim",
+  "private_checkpoint": "engine-viewer-preparation-2026-09-13",
+  "publication": "P005 operator-reported published; no further publication or outreach",
+  "question": "Can a coordinator prepare the existing point viewer without transcribing manifest-derived source identities?",
+  "real_comparison": {
+    "additions": [
+      9,
+      7
+    ],
+    "anchor_weights": [
+      "1/2",
+      "1/2"
+    ],
+    "bounds": [
+      "-8",
+      "8"
+    ],
+    "false_detection_penalty": "1",
+    "miss_penalty": "1",
+    "reference_state": "open",
+    "tolerance": "1/10"
+  },
+  "runtime_cost_limit": "Single local processes including startup. Native operations overlapped. No isolated speed or human-effort comparison. Native scene/temporary paths/receipts vary.",
+  "runtime_selection": {
+    "artifact_id": "reiyah.engine.selected-runtime",
+    "files_rechecked": 4219,
+    "inventory_path": "/Users/danielwahnich/.codex/reports/reiyah/engine-discovery-custody-2026-09-13/private/RUNTIME_INVENTORY_FINAL.json",
+    "inventory_sha256": "f2e111e1364ddcf4727b213738cd7c5a8e48de81000aea0c8448f7275b9b79a4",
+    "path": "/Users/danielwahnich/.codex/reports/reiyah/engine-discovery-custody-2026-09-13/private/runtime/bin/python",
+    "use": "Read-only execution with PYTHONPATH empty and bytecode disabled; no installation into the closed task runtime",
+    "version": "0.1.0"
+  },
+  "serious_comparator": "Correct manual source-binding procedure on the same explicitly selected development capture",
+  "source_binding_record": {
+    "byte_size": 14813,
+    "sha256": "6dcb49849bc4eb80695b5afbac7f30a386cd6a70580e3e1c42e293f353699491"
+  },
+  "source_files_bound": 81,
+  "source_fingerprint": "8703679d0dfa371880ec5c8b3fab38be274cd9dbb3316239b87f5fdc0069506a",
+  "source_main": "80d2b5d307410c82e8fee667dbf1c18f62a912a8",
+  "tests": {
+    "focused_preparation_and_viewer": 30,
+    "measurement_retained_not_replayed": 93,
+    "new_preparation_tests": 10,
+    "repository": 379,
+    "retained_measurement_files_unchanged": 107
+  },
+  "version": "0.1.0"
+}
