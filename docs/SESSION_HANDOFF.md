@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.7`
+Version: `0.1.8`
 
 Lifecycle status: `exploratory`
 
@@ -23,8 +23,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This window-verification checkpoint starts from main
-`172ff2d82b4a74a1d9aa7389e9707171cfebabdf`, tree `43cd90373ad92ad7ee333e9afa7f402b7f5e532d`.
+uncommitted ownership before acting. This prediction-input checkpoint starts from main
+`227e2fd60b6b618a3ccb8f6d0f31018dcd564765`, tree `0b5bc1a09d33def649388b9f87f32516f6e35624`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -44,13 +44,15 @@ Private continuation instructions remain at `~/.codex/reports/reiyah/`:
 
 - `engine-continuation-2026-09-12/COPY_TO_CODEX.txt` and `SOURCE_BINDINGS.json`;
 - `engine-research-successor-2026-09-12/STANDARDS.md`, `TWO_LANES.md` and `OPERATIONS.md`;
-- `engine-autonomous-2026-09-13/WINDOW.json`, which identifies the active Engine task; and
-- that task's `LANE_STATUS.json`, then its `START_HERE.md` and exact closeout when completed.
+- `engine-autonomous-2026-09-13/WINDOW.json`, the completed earlier ten-hour window;
+- `engine-prediction-only-inputs-2026-09-13/LANE_STATUS.json`, then its `START_HERE.md` and exact closeout; and
+- that new task's `COPY_TO_FABLE.txt` and `SOURCE_BINDINGS.json` for the separately requested Fable continuation.
 
 Read the complete selected instructions. Reconcile their dated state against this continuation
-and live evidence. The explicit operator-authorized Engine work continues through
-**2026-09-13 15:58:25 UTC**; a bounded checkpoint does not end that window. Consult the window
-record for its final status; do not treat an expired time window as still active. This does not authorize
+and live evidence. The earlier ten-hour window ended at **2026-09-13 15:58:25 UTC** and is complete.
+Daniel separately instructed continuing Engine work alongside Fable and updating the current
+README, roadmap and diagrams. Keep using fresh task identities; do not reopen that window or a
+closed packet. The Fable continuation does not transfer the Engine mission. This does not authorize
 new outreach, deployment, physical control, a cloud campaign or physical-study selection.
 
 ## Current evidence and remaining observation
@@ -66,9 +68,16 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 | Are Fable's requested checker repairs accepted? | The [matching-trace consumer review](PERCEPTION_MATCHING_TRACE_2026-09-13.md) accepts only selected `5762ac01a157a3603181df1486df8a836d711f06` bytes and retained probes. Broader robustness claims were not adopted. Earlier defects remain historical evidence. |
 | What do Engine's command costs measure? | [Command accounting](ENGINE_EFFORT_ACCOUNTING_2026-09-13.md) reconstructs 204 outer runs across fourteen selected closed checkpoints. It excludes 124 copied receipts and retains 33 nested details without adding them again. Reported durations, UTC interval coverage and unmeasured human effort remain distinct. |
 | Does sharing preserve original partition worlds? | [Partition conformance](PERCEPTION_PARTITION_CONFORMANCE_2026-09-13.md) checks 5,400 explicit tiny cases against original full graphs and direct partial injections. Original operands, shared-node member identity, ordered provenance and joint loss are checked beyond the core certificate. No compiler defect was found in this grid. |
+| Can research receive predictions without annotation reads? | [Prediction-only inputs](PERCEPTION_PREDICTIONS_2026-09-13.md) retain all 4,876 submitted rows across the 16 exposed development frames, with original bytes and indices. Two guarded runs agree; a separate conventional reader checks every selected row. Historical selection independence and physical association are not established. |
+| What does Fable's raw experiment establish? | [The selected consumer review](FABLE_RAW_CONSUMER_REVIEW_2026-09-13.md) verifies nine aggregate thresholds and retains third-channel, zero-intersection, source-identity and greedy-order probes. Full raw association and Fable's reported 557 tests were not replayed. No research implementation was merged. |
 
-The retained latest full repository suite passed **404 tests**, including five member-equivalence additions,
-with no resource warnings. The earlier [database-lifetime trace](PERCEPTION_CATALOG_LIFETIME_2026-09-13.md)
+The latest full repository suite passed **418 tests**, including 14 prediction-input additions,
+with no resource warnings. Eight additional standalone controls attack the separate source reader
+with the Engine producer disabled. Two real preparations retain identical packet bytes; extraction
+access controls reject all three annotation-bearing inputs and observe no unexpected read attempt.
+The [prediction verification](../research/perception-predictions/0.1.0/verification.json) binds current
+source, outputs, costs and limitations. The prior 404-test suite remains retained evidence for its
+own checkpoint. The earlier [database-lifetime trace](PERCEPTION_CATALOG_LIFETIME_2026-09-13.md)
 attributes the previous warnings to test fixtures; its correction is retained. The **93 measurement
 tests** remain retained from their earlier exact source bindings, not newly replayed; all 107
 source files were rechecked. [Member-equivalence verification](../research/perception-reference-equivalence/0.1.0/verification.json)
@@ -110,9 +119,14 @@ commands, not a speed comparison. A missing capture-parent directory stopped the
 before child execution; that setup failure and the fresh corrected attempt remain retained.
 No production, frozen protocol, source payload or human review record changed.
 
-Fable's remote tip `814f26b26970399ecd255c9dca720f6620b3a059` was observed during this task.
-Its newer claims were not consumed or accepted through that mutable ref. Select a newly sealed
-exchange for any later review; do not repeat previously repaired defects as current.
+Fable's selected `overlap-parity-0.1.0` and `raw-association-0.1.0` exchanges bind source commits
+`aea2730a6e149bf40bbe53684b68f3f2b3954580` and `73ac8137465f9ae863ea215161cdbaced5fb2d7a`.
+All 13 payloads were verified. The current [consumer review](FABLE_RAW_CONSUMER_REVIEW_2026-09-13.md)
+states what was reproduced and what remains a research-lane obligation. A third detector is not
+guaranteed to identify the sign; a source filename-literal test is not runtime access verification.
+Select a newly sealed exchange for later corrections rather than repeating historical defects.
+The README and [dated roadmap](ENGINE_ROADMAP_2026-09-13.md) now connect this result to the original
+mission, prior failures, common-operand comparison and next falsifiable product checks.
 
 An actual participant return takes priority. The new, exposed development opening is
 `~/.codex/reports/reiyah/engine-anchor-opening-2026-09-13/private/opening/OPENING.md`, returning

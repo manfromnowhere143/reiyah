@@ -12,20 +12,29 @@ computes paired-loss enclosures with exact arithmetic and checks matching certif
 nominal geometry and restricted observation packages prepare physical review. The intended user
 is a perception-validation lead deciding whether an added detector merits further integration work.
 
-The current two development anchors still give **[-8,8]** under unit penalties. No human reference
-judgments have been supplied. Source binding, equal analyst inputs and checked computations are
-implemented; a changed engineering decision and an advantage over conventional analysis remain
-unproven. The [11 September review](docs/ENGINE_CREDIBILITY_REVIEW_2026-09-11.md) makes those
-obligations, the current computational limits and relevant prior work explicit.
-The new [observation-cost example](research/perception-review-cost/0.1.0/README.md) shows why
-counting retained additions does not budget the observations needed to assess them.
-The [reviewed-operand stage](research/perception-reviewed-operands/0.1.0/README.md) now preserves
-the same admitted joint model and complete review basis for both analysts. Its synthetic checks
-leave the real comparison unresolved; actual human review and practical viewing remain missing.
-The [native selection procedure](research/perception-viewer/0.1.0/README.md) now prepares a
-Blender capture and checks saved point selections against original record indices. Its
-background conformance is established. The agent's GUI probe is blocked by a missing native
-socket; actual interactive display and human usability remain unobserved.
+As checked on **13 September 2026**, the two development anchors still give **[-8,8]** under unit
+penalties. No qualifying human reference judgments have been admitted. Source binding, common
+analyst inputs and checked computations are implemented; an improved integration decision and
+an advantage over competent conventional analysis remain unproven.
+
+The [current checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) prepares all **4,876 original
+prediction rows across 16 exposed development keyframes** without reading annotation-bearing
+inputs during extraction. Original bytes, duplicate rows and zero-based source indices survive.
+A separately written source reader agrees on every selected row. This provides inputs for
+association research; it supplies no physical correspondences or human references.
+
+The [reviewed-operand stage](research/perception-reviewed-operands/0.1.0/README.md) preserves
+joint interpretations and complete provenance for both analysts. [Reference sharing and its
+conformance checks](docs/PERCEPTION_PARTITION_CONFORMANCE_2026-09-13.md) reduce unnecessary
+compiler expansion while preserving original worlds and matching competition. These are
+engineering checks on declared models.
+
+The [anchor opening procedure](docs/PERCEPTION_ANCHOR_OPENING_2026-09-13.md) prepares a Blender
+capture and traces saved point selections to original records. Background import/save/reopen
+checks pass; **actual interactive viewing and participant usability remain unobserved**. The
+native desktop service has a diagnosed Swift-loader incompatibility. Browser discovery returned
+no available connection in the retained check; screen permissions and cloud login were not
+established causes. The prepared opening remains available for an actual participant.
 
 HARBOR is the proposed research program: **Human-Automation Readiness, Belief & Operational
 Risk**. Its broader scope connects object-level belief, readiness, recoverability, joint silent
@@ -34,8 +43,8 @@ measurement and reference-audit research motivates the current focus. Human beli
 under intervention and cross-domain product value require their own observations.
 
 [Engine architecture and mathematics](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) ·
-[Current implementation](docs/PERCEPTION_REVIEWED_OPERANDS_CHECKPOINT_2026-09-12.md) ·
-[Research findings](docs/GENERAL_SYNTHESIS.md) · [Selected study](#current-engine-development) ·
+[Current state and roadmap](docs/ENGINE_ROADMAP_2026-09-13.md) ·
+[Research findings](docs/GENERAL_SYNTHESIS.md) · [Proposed study](#current-engine-development) ·
 [Run the auditor](#run-the-offline-auditor)
 
 ## One encounter, distinct information sets
@@ -72,7 +81,7 @@ conditional on a declared reference, sensor validity and evaluation policy. Empt
 missing output, excluded references and an unobserved physical object have different meanings.
 
 ```mermaid
-flowchart LR
+flowchart TB
   D["Public metadata, sensor records<br/>and retained detector outputs"] --> O["Declared opportunities,<br/>timestamps and channel<br/>availability"]
   O --> P["Reference selection: classes,<br/>ranges and exclusions"]
   P --> M["Per-object matching with<br/>retained associations"]
@@ -138,13 +147,28 @@ The [RSS estimand analysis](docs/ESTIMAND_RSS_DEFINITION_32.md) states the addit
 needed to connect a benchmark statistic to that safety argument. This two-channel measurement
 has not established those conditions or a vehicle safety rate.
 
+The separate research lane has since tested whether a dependence coefficient adds useful
+ordering information over ordinary overlap. The [Engine consumer review](docs/FABLE_RAW_CONSUMER_REVIEW_2026-09-13.md)
+retains **270/270 agreement** on the selected aggregate comparisons. Under exactly matched
+marginals, the ordering is algebraically the same as intersection and Jaccard ordering.
+Comparing wider coefficient margins across different actual marginals did not establish stronger
+evidence; that interpretation is withdrawn. Earlier claims about worsening dependence across
+operating points also remain corrected, with their original records preserved.
+
+Fable's first raw-submission experiment leaves the dependence sign unresolved on its nine
+selected preparations. The consumer rechecks the threshold arithmetic, not the full raw grid.
+Adding a third detector does **not** guarantee identification: physical-object validity,
+association, unknown population and valid denominators still matter. The bounded counterexamples
+and remaining constructor obligations are recorded in the same review. These research results
+do not replace the Engine's paired detector loss.
+
 ## A reference error the engine can expose
 
 A prediction can be unmatched because the evaluator excluded a nearby annotation. That is a
 detectable measurement issue; it does not settle whether the prediction is physically correct.
 
 ```mermaid
-flowchart LR
+flowchart TB
   P["Prediction unmatched against the<br/>selected reference"] --> C["Compare with the complete<br/>retained annotation table"]
   C --> N{"Excluded annotation within 2 m?<br/>Proximity predicate, any class"}
   N -- "yes" --> W["Changed geometric<br/>proximity flag"]
@@ -175,16 +199,18 @@ each shared reference interpretation, including disputed objects that can change
 matches through the base detector. Misses and false detections both contribute to the loss.
 
 ```mermaid
-flowchart LR
-  S["Bound clocks and retained<br/>detector outputs"] --> N["Fixed base and<br/>retained additions"]
-  R["Bound raw observation package:<br/>sensor windows, geometry and times"] --> H["Independent raw discovery<br/>Reviewers unassigned"]
-  H -. "lock both records, then common<br/>assistance and adjudication" .-> W["Shared reference alternatives<br/>or open coverage"]
-  N --> K["Paired miss / false-detection<br/>loss enclosure"]
-  W --> K
+flowchart TB
+  S["Bound clocks and original<br/>submitted detections"] --> N["Fixed base and additions<br/>Complete row dispositions"]
+  R["Original sensor captures<br/>Exact custody and opening"] -. "actual participation missing" .-> H["Independent unassisted discovery<br/>Lock both records"]
+  H -. "then release equal assistance<br/>and retain adjudication" .-> W["Complete joint reference alternatives<br/>Open when coverage is unknown"]
+  N --> O["Same operands for both analysts<br/>Weights, loss, tolerance and provenance"]
+  W --> O
+  O --> K["Engine paired-loss enclosure<br/>Guarded sharing and matching"]
+  O --> C["Competent conventional analysis<br/>Same evidence and permitted methods"]
   K --> V["Separate certificate checker"]
-  N --> V
-  W --> V
-  V --> P["Scoped decision packet<br/>Unresolved when necessary"]
+  O --> V
+  V --> P["Compare decisions and all effort<br/>Real result remains unresolved"]
+  C --> P
 ```
 
 For r retained additions at one anchor and nonnegative miss/false-detection penalties a and b,
@@ -230,6 +256,13 @@ The implemented pieces form one offline comparison pipeline:
 | [Development review preparation](docs/PERCEPTION_REHEARSAL_CHECKPOINT_2026-09-10.md) | Separate unassigned discovery folders, neutral capture navigation and equal analyst/effort instructions; actual human workflow remains outstanding |
 | [Common assistance preparation](docs/PERCEPTION_ASSISTANCE_CHECKPOINT_2026-09-10.md) | Complete source assistance for 16 development keyframes, with 960 annotations and 4,876 predictions; identical private preparations, no assisted disclosure or physical judgments |
 | [Equal analysis operands](docs/PERCEPTION_OPERANDS_CHECKPOINT_2026-09-11.md) | Every comparison row and suppression disposition mapped to the same assistance for both analysts; identical private preparations and separate conventional accounting; physical references remain open |
+| [Reviewed joint operands](docs/PERCEPTION_REVIEWED_OPERANDS_CHECKPOINT_2026-09-12.md) | Both analysts receive the same complete admitted model on synthetic conformance cases; no real reference admission |
+| [Viewer and anchor custody](docs/PERCEPTION_ANCHOR_OPENING_2026-09-13.md) | Original point indices, exact anchor capture and saved-selection checks; actual interaction remains missing |
+| [Reference sharing and identity](docs/PERCEPTION_REFERENCE_EQUIVALENCE_2026-09-13.md) | Member-aware sharing preserves world-local sources and matching; earlier fallbacks and resource bounds remain explicit |
+| [Partition conformance](docs/PERCEPTION_PARTITION_CONFORMANCE_2026-09-13.md) | 5,400 tiny original-world cases, including competing matches, agree with direct partial-injection calculations |
+| [Effort accounting](docs/ENGINE_EFFORT_ACCOUNTING_2026-09-13.md) | Command durations, overlapping intervals and copied receipts distinguished; human effort remains unmeasured |
+| [Real comparison refresh](docs/ENGINE_WINDOW_CHECKPOINT_2026-09-13.md) | Original [-8,8] packet reproduced byte for byte, forged decisions rejected and all 648 comparison source-row dispositions rechecked |
+| [Prediction-only inputs](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) | Exact original arrays and record indices for 4,876 predictions; annotation reads blocked during extraction and separate conventional retrieval agrees |
 
 The proposed study selects **60 scenes**, then one eligible anchor per scene, only after the
 input, method, reviewer, comparator and adjudication freeze. Two independent reviewers first
@@ -250,6 +283,35 @@ part of the record: its future-count improvement under collection-log holdouts w
 with a descriptive interval including zero; spatial continuity slightly worsened the primary
 loss. Neither passed the declared usefulness screen.
 
+## The next decision, and who owns it
+
+Engine owns common inputs, admission, custody, viewing and main integration. Fable owns the
+independent research, comparator, association experiments and checkers on its separate research
+ref. Selected immutable exchanges connect the lanes; a mutable branch tip or a chat verdict is
+insufficient evidence. The [dated roadmap](docs/ENGINE_ROADMAP_2026-09-13.md) gives the next
+falsifier for each gap and the boundary between implemented work and proposed research.
+
+```mermaid
+flowchart TB
+  S["Original submitted detections<br/>Exposed development selection"] --> E["Engine: exact row preparation<br/>Source hashes and original indices"]
+  E --> X["Selected immutable exchange<br/>Same source evidence"]
+  X --> F["Fable: declared association model<br/>Overlap baseline and uncertainty"]
+  F --> Q["Checked conditional result<br/>Or explicit unresolved state"]
+  Q --> A["What observation or repair<br/>could change the integration choice?"]
+  A -. "requires actual evidence" .-> R["Staged independent review<br/>Admission remains with Engine"]
+  R -. "when available" .-> C["Same joint operands, both analysts<br/>Decision usefulness and all effort"]
+```
+
+This research exchange does not release detector hints to discovery reviewers. Both independent
+unassisted records must still be locked before assistance is released.
+
+The first product proof is a useful engineering choice against a competent analyst using the
+same evidence, mathematics and abstention, with preparation, verification, review, computation,
+integration and repair counted. More architecture or a different scalar does not establish that
+advantage. Source fidelity, useful abstention or a simpler review procedure may earn it. A fresh
+blind validation, crossed sensor/training study or broader HARBOR claim requires its own inputs,
+protocol and evidence; none has run through this checkpoint.
+
 ## Evidence architecture and reproducibility
 
 Gate A supplies versioned scientific contracts, schemas, counterexamples and locked offline
@@ -260,7 +322,7 @@ packet; the [selected Engine architecture](docs/PERCEPTION_DECISION_ARCHITECTURE
 and implementation checkpoints describe current development.
 
 ```mermaid
-flowchart LR
+flowchart TB
   subgraph CONTRACT["Gate A: static contracts"]
     M["Mission, protocol, definitions<br/>and assumptions"] --> F["Schemas and reason-specific<br/>counterexamples"]
     F --> L["Locked replay of an immutable<br/>candidate"]
@@ -321,7 +383,8 @@ identities.
 
 | Read for | Start here |
 |---|---|
-| Current Engine direction and implementation | [Selected architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md), [latest checkpoint](docs/PERCEPTION_OPERANDS_CHECKPOINT_2026-09-11.md), [decision interface](research/perception-decision/0.1.0/README.md) |
+| Current Engine direction and implementation | [Dated roadmap](docs/ENGINE_ROADMAP_2026-09-13.md), [latest checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md), [current continuation](docs/SESSION_HANDOFF.md), [decision interface](research/perception-decision/0.1.0/README.md) |
+| Independent research and its corrections | [Selected Fable consumer review](docs/FABLE_RAW_CONSUMER_REVIEW_2026-09-13.md); exact research commits and scope are retained there, separate from main integration |
 | Present evidence, limits and comparison with prior work | [11 September review](docs/ENGINE_CREDIBILITY_REVIEW_2026-09-11.md), [reproducible decision examples](research/perception-decision-review/0.1.0/README.md) |
 | Mission and scientific structure | [Scientific charter](docs/SCIENTIFIC_CHARTER.md), [architecture](docs/ARCHITECTURE.md), [mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) |
 | Current interpretation of sensor, human-proxy and LLM experiments | [Corrected synthesis](docs/GENERAL_SYNTHESIS.md), [current claim register](evidence/claim-status-register-2026-09-08T054835Z.json) |
