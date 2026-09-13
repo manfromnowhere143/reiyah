@@ -1,0 +1,1530 @@
+{
+  "artifact_id": "reiyah.operating-point-dependence.counts",
+  "channels": [
+    {
+      "modality": "lidar",
+      "name": "centerpoint"
+    },
+    {
+      "modality": "camera",
+      "name": "fcos3d"
+    },
+    {
+      "modality": "camera",
+      "name": "mapillary"
+    },
+    {
+      "modality": "lidar",
+      "name": "megvii"
+    },
+    {
+      "modality": "lidar",
+      "name": "pointpillars"
+    }
+  ],
+  "population": {
+    "definition": "annotated objects in the retained nuScenes validation cache",
+    "match_rule": "matched at 2 m, per class, as recorded in the retained caches",
+    "objects": 134565
+  },
+  "rows": [
+    {
+      "both_captured": 97872,
+      "both_missed": 9315,
+      "first": "centerpoint",
+      "first_missed": 14938,
+      "first_only": 21755,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "fcos3d",
+      "second_missed": 31070,
+      "second_only": 5623,
+      "threshold": 0.05
+    },
+    {
+      "both_captured": 96405,
+      "both_missed": 9565,
+      "first": "centerpoint",
+      "first_missed": 14938,
+      "first_only": 23222,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "mapillary",
+      "second_missed": 32787,
+      "second_only": 5373,
+      "threshold": 0.05
+    },
+    {
+      "both_captured": 113013,
+      "both_missed": 11477,
+      "first": "centerpoint",
+      "first_missed": 14938,
+      "first_only": 6614,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 18091,
+      "second_only": 3461,
+      "threshold": 0.05
+    },
+    {
+      "both_captured": 109415,
+      "both_missed": 8548,
+      "first": "centerpoint",
+      "first_missed": 14938,
+      "first_only": 10212,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 18760,
+      "second_only": 6390,
+      "threshold": 0.05
+    },
+    {
+      "both_captured": 90042,
+      "both_missed": 19334,
+      "first": "fcos3d",
+      "first_missed": 31070,
+      "first_only": 13453,
+      "kind": "same_modality",
+      "modalities": [
+        "camera",
+        "camera"
+      ],
+      "second": "mapillary",
+      "second_missed": 32787,
+      "second_only": 11736,
+      "threshold": 0.05
+    },
+    {
+      "both_captured": 96029,
+      "both_missed": 10625,
+      "first": "fcos3d",
+      "first_missed": 31070,
+      "first_only": 7466,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 18091,
+      "second_only": 20445,
+      "threshold": 0.05
+    },
+    {
+      "both_captured": 94529,
+      "both_missed": 9794,
+      "first": "fcos3d",
+      "first_missed": 31070,
+      "first_only": 8966,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 18760,
+      "second_only": 21276,
+      "threshold": 0.05
+    },
+    {
+      "both_captured": 94402,
+      "both_missed": 10715,
+      "first": "mapillary",
+      "first_missed": 32787,
+      "first_only": 7376,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 18091,
+      "second_only": 22072,
+      "threshold": 0.05
+    },
+    {
+      "both_captured": 92808,
+      "both_missed": 9790,
+      "first": "mapillary",
+      "first_missed": 32787,
+      "first_only": 8970,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 18760,
+      "second_only": 22997,
+      "threshold": 0.05
+    },
+    {
+      "both_captured": 107382,
+      "both_missed": 9668,
+      "first": "megvii",
+      "first_missed": 18091,
+      "first_only": 9092,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 18760,
+      "second_only": 8423,
+      "threshold": 0.05
+    },
+    {
+      "recall_of_union": 0.967064,
+      "threshold": 0.05,
+      "union_captured": 130133
+    },
+    {
+      "both_captured": 90078,
+      "both_missed": 11335,
+      "first": "centerpoint",
+      "first_missed": 14938,
+      "first_only": 29549,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "fcos3d",
+      "second_missed": 40884,
+      "second_only": 3603,
+      "threshold": 0.1
+    },
+    {
+      "both_captured": 88732,
+      "both_missed": 11315,
+      "first": "centerpoint",
+      "first_missed": 14938,
+      "first_only": 30895,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "mapillary",
+      "second_missed": 42210,
+      "second_only": 3623,
+      "threshold": 0.1
+    },
+    {
+      "both_captured": 113013,
+      "both_missed": 11477,
+      "first": "centerpoint",
+      "first_missed": 14938,
+      "first_only": 6614,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 18091,
+      "second_only": 3461,
+      "threshold": 0.1
+    },
+    {
+      "both_captured": 106332,
+      "both_missed": 10096,
+      "first": "centerpoint",
+      "first_missed": 14938,
+      "first_only": 13295,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 23391,
+      "second_only": 4842,
+      "threshold": 0.1
+    },
+    {
+      "both_captured": 79807,
+      "both_missed": 28336,
+      "first": "fcos3d",
+      "first_missed": 40884,
+      "first_only": 13874,
+      "kind": "same_modality",
+      "modalities": [
+        "camera",
+        "camera"
+      ],
+      "second": "mapillary",
+      "second_missed": 42210,
+      "second_only": 12548,
+      "threshold": 0.1
+    },
+    {
+      "both_captured": 88603,
+      "both_missed": 13013,
+      "first": "fcos3d",
+      "first_missed": 40884,
+      "first_only": 5078,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 18091,
+      "second_only": 27871,
+      "threshold": 0.1
+    },
+    {
+      "both_captured": 84724,
+      "both_missed": 14434,
+      "first": "fcos3d",
+      "first_missed": 40884,
+      "first_only": 8957,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 23391,
+      "second_only": 26450,
+      "threshold": 0.1
+    },
+    {
+      "both_captured": 87150,
+      "both_missed": 12886,
+      "first": "mapillary",
+      "first_missed": 42210,
+      "first_only": 5205,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 18091,
+      "second_only": 29324,
+      "threshold": 0.1
+    },
+    {
+      "both_captured": 82973,
+      "both_missed": 14009,
+      "first": "mapillary",
+      "first_missed": 42210,
+      "first_only": 9382,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 23391,
+      "second_only": 28201,
+      "threshold": 0.1
+    },
+    {
+      "both_captured": 104524,
+      "both_missed": 11441,
+      "first": "megvii",
+      "first_missed": 18091,
+      "first_only": 11950,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 23391,
+      "second_only": 6650,
+      "threshold": 0.1
+    },
+    {
+      "recall_of_union": 0.952573,
+      "threshold": 0.1,
+      "union_captured": 128183
+    },
+    {
+      "both_captured": 73269,
+      "both_missed": 18361,
+      "first": "centerpoint",
+      "first_missed": 21838,
+      "first_only": 39458,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "fcos3d",
+      "second_missed": 57819,
+      "second_only": 3477,
+      "threshold": 0.2
+    },
+    {
+      "both_captured": 77160,
+      "both_missed": 17519,
+      "first": "centerpoint",
+      "first_missed": 21838,
+      "first_only": 35567,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "mapillary",
+      "second_missed": 53086,
+      "second_only": 4319,
+      "threshold": 0.2
+    },
+    {
+      "both_captured": 101661,
+      "both_missed": 18479,
+      "first": "centerpoint",
+      "first_missed": 21838,
+      "first_only": 11066,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 29545,
+      "second_only": 3359,
+      "threshold": 0.2
+    },
+    {
+      "both_captured": 81697,
+      "both_missed": 19887,
+      "first": "centerpoint",
+      "first_missed": 21838,
+      "first_only": 31030,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 50917,
+      "second_only": 1951,
+      "threshold": 0.2
+    },
+    {
+      "both_captured": 65239,
+      "both_missed": 41579,
+      "first": "fcos3d",
+      "first_missed": 57819,
+      "first_only": 11507,
+      "kind": "same_modality",
+      "modalities": [
+        "camera",
+        "camera"
+      ],
+      "second": "mapillary",
+      "second_missed": 53086,
+      "second_only": 16240,
+      "threshold": 0.2
+    },
+    {
+      "both_captured": 70707,
+      "both_missed": 23506,
+      "first": "fcos3d",
+      "first_missed": 57819,
+      "first_only": 6039,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 29545,
+      "second_only": 34313,
+      "threshold": 0.2
+    },
+    {
+      "both_captured": 59814,
+      "both_missed": 33985,
+      "first": "fcos3d",
+      "first_missed": 57819,
+      "first_only": 16932,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 50917,
+      "second_only": 23834,
+      "threshold": 0.2
+    },
+    {
+      "both_captured": 73821,
+      "both_missed": 21887,
+      "first": "mapillary",
+      "first_missed": 53086,
+      "first_only": 7658,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 29545,
+      "second_only": 31199,
+      "threshold": 0.2
+    },
+    {
+      "both_captured": 61832,
+      "both_missed": 31270,
+      "first": "mapillary",
+      "first_missed": 53086,
+      "first_only": 19647,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 50917,
+      "second_only": 21816,
+      "threshold": 0.2
+    },
+    {
+      "both_captured": 79680,
+      "both_missed": 25577,
+      "first": "megvii",
+      "first_missed": 29545,
+      "first_only": 25340,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 50917,
+      "second_only": 3968,
+      "threshold": 0.2
+    },
+    {
+      "recall_of_union": 0.897982,
+      "threshold": 0.2,
+      "union_captured": 120837
+    },
+    {
+      "both_captured": 49243,
+      "both_missed": 26305,
+      "first": "centerpoint",
+      "first_missed": 28671,
+      "first_only": 56651,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "fcos3d",
+      "second_missed": 82956,
+      "second_only": 2366,
+      "threshold": 0.3
+    },
+    {
+      "both_captured": 67353,
+      "both_missed": 23931,
+      "first": "centerpoint",
+      "first_missed": 28671,
+      "first_only": 38541,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "mapillary",
+      "second_missed": 62472,
+      "second_only": 4740,
+      "threshold": 0.3
+    },
+    {
+      "both_captured": 85770,
+      "both_missed": 25617,
+      "first": "centerpoint",
+      "first_missed": 28671,
+      "first_only": 20124,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 45741,
+      "second_only": 3054,
+      "threshold": 0.3
+    },
+    {
+      "both_captured": 68037,
+      "both_missed": 26633,
+      "first": "centerpoint",
+      "first_missed": 28671,
+      "first_only": 37857,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 64490,
+      "second_only": 2038,
+      "threshold": 0.3
+    },
+    {
+      "both_captured": 44355,
+      "both_missed": 55218,
+      "first": "fcos3d",
+      "first_missed": 82956,
+      "first_only": 7254,
+      "kind": "same_modality",
+      "modalities": [
+        "camera",
+        "camera"
+      ],
+      "second": "mapillary",
+      "second_missed": 62472,
+      "second_only": 27738,
+      "threshold": 0.3
+    },
+    {
+      "both_captured": 45898,
+      "both_missed": 40030,
+      "first": "fcos3d",
+      "first_missed": 82956,
+      "first_only": 5711,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 45741,
+      "second_only": 42926,
+      "threshold": 0.3
+    },
+    {
+      "both_captured": 38549,
+      "both_missed": 51430,
+      "first": "fcos3d",
+      "first_missed": 82956,
+      "first_only": 13060,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 64490,
+      "second_only": 31526,
+      "threshold": 0.3
+    },
+    {
+      "both_captured": 60063,
+      "both_missed": 33711,
+      "first": "mapillary",
+      "first_missed": 62472,
+      "first_only": 12030,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 45741,
+      "second_only": 28761,
+      "threshold": 0.3
+    },
+    {
+      "both_captured": 49300,
+      "both_missed": 41697,
+      "first": "mapillary",
+      "first_missed": 62472,
+      "first_only": 22793,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 64490,
+      "second_only": 20775,
+      "threshold": 0.3
+    },
+    {
+      "both_captured": 61868,
+      "both_missed": 37534,
+      "first": "megvii",
+      "first_missed": 45741,
+      "first_only": 26956,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 64490,
+      "second_only": 8207,
+      "threshold": 0.3
+    },
+    {
+      "recall_of_union": 0.848296,
+      "threshold": 0.3,
+      "union_captured": 114151
+    },
+    {
+      "both_captured": 23504,
+      "both_missed": 35390,
+      "first": "centerpoint",
+      "first_missed": 36270,
+      "first_only": 74791,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "fcos3d",
+      "second_missed": 110181,
+      "second_only": 880,
+      "threshold": 0.4
+    },
+    {
+      "both_captured": 54886,
+      "both_missed": 31809,
+      "first": "centerpoint",
+      "first_missed": 36270,
+      "first_only": 43409,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "mapillary",
+      "second_missed": 75218,
+      "second_only": 4461,
+      "threshold": 0.4
+    },
+    {
+      "both_captured": 66132,
+      "both_missed": 33593,
+      "first": "centerpoint",
+      "first_missed": 36270,
+      "first_only": 32163,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 65756,
+      "second_only": 2677,
+      "threshold": 0.4
+    },
+    {
+      "both_captured": 57707,
+      "both_missed": 34035,
+      "first": "centerpoint",
+      "first_missed": 36270,
+      "first_only": 40588,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 74623,
+      "second_only": 2235,
+      "threshold": 0.4
+    },
+    {
+      "both_captured": 21071,
+      "both_missed": 71905,
+      "first": "fcos3d",
+      "first_missed": 110181,
+      "first_only": 3313,
+      "kind": "same_modality",
+      "modalities": [
+        "camera",
+        "camera"
+      ],
+      "second": "mapillary",
+      "second_missed": 75218,
+      "second_only": 38276,
+      "threshold": 0.4
+    },
+    {
+      "both_captured": 20837,
+      "both_missed": 62209,
+      "first": "fcos3d",
+      "first_missed": 110181,
+      "first_only": 3547,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 65756,
+      "second_only": 47972,
+      "threshold": 0.4
+    },
+    {
+      "both_captured": 18072,
+      "both_missed": 68311,
+      "first": "fcos3d",
+      "first_missed": 110181,
+      "first_only": 6312,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 74623,
+      "second_only": 41870,
+      "threshold": 0.4
+    },
+    {
+      "both_captured": 43705,
+      "both_missed": 50114,
+      "first": "mapillary",
+      "first_missed": 75218,
+      "first_only": 15642,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 65756,
+      "second_only": 25104,
+      "threshold": 0.4
+    },
+    {
+      "both_captured": 38282,
+      "both_missed": 53558,
+      "first": "mapillary",
+      "first_missed": 75218,
+      "first_only": 21065,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 74623,
+      "second_only": 21660,
+      "threshold": 0.4
+    },
+    {
+      "both_captured": 44726,
+      "both_missed": 50540,
+      "first": "megvii",
+      "first_missed": 65756,
+      "first_only": 24083,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 74623,
+      "second_only": 15216,
+      "threshold": 0.4
+    },
+    {
+      "recall_of_union": 0.789173,
+      "threshold": 0.4,
+      "union_captured": 106195
+    },
+    {
+      "both_captured": 8017,
+      "both_missed": 45695,
+      "first": "centerpoint",
+      "first_missed": 45937,
+      "first_only": 80611,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "fcos3d",
+      "second_missed": 126306,
+      "second_only": 242,
+      "threshold": 0.5
+    },
+    {
+      "both_captured": 39090,
+      "both_missed": 42800,
+      "first": "centerpoint",
+      "first_missed": 45937,
+      "first_only": 49538,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "mapillary",
+      "second_missed": 92338,
+      "second_only": 3137,
+      "threshold": 0.5
+    },
+    {
+      "both_captured": 51232,
+      "both_missed": 43098,
+      "first": "centerpoint",
+      "first_missed": 45937,
+      "first_only": 37396,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 80494,
+      "second_only": 2839,
+      "threshold": 0.5
+    },
+    {
+      "both_captured": 48605,
+      "both_missed": 42960,
+      "first": "centerpoint",
+      "first_missed": 45937,
+      "first_only": 40023,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 82983,
+      "second_only": 2977,
+      "threshold": 0.5
+    },
+    {
+      "both_captured": 6926,
+      "both_missed": 91005,
+      "first": "fcos3d",
+      "first_missed": 126306,
+      "first_only": 1333,
+      "kind": "same_modality",
+      "modalities": [
+        "camera",
+        "camera"
+      ],
+      "second": "mapillary",
+      "second_missed": 92338,
+      "second_only": 35301,
+      "threshold": 0.5
+    },
+    {
+      "both_captured": 7363,
+      "both_missed": 79598,
+      "first": "fcos3d",
+      "first_missed": 126306,
+      "first_only": 896,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 80494,
+      "second_only": 46708,
+      "threshold": 0.5
+    },
+    {
+      "both_captured": 6179,
+      "both_missed": 80903,
+      "first": "fcos3d",
+      "first_missed": 126306,
+      "first_only": 2080,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 82983,
+      "second_only": 45403,
+      "threshold": 0.5
+    },
+    {
+      "both_captured": 30162,
+      "both_missed": 68429,
+      "first": "mapillary",
+      "first_missed": 92338,
+      "first_only": 12065,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 80494,
+      "second_only": 23909,
+      "threshold": 0.5
+    },
+    {
+      "both_captured": 27168,
+      "both_missed": 67924,
+      "first": "mapillary",
+      "first_missed": 92338,
+      "first_only": 15059,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 82983,
+      "second_only": 24414,
+      "threshold": 0.5
+    },
+    {
+      "both_captured": 32931,
+      "both_missed": 61843,
+      "first": "megvii",
+      "first_missed": 80494,
+      "first_only": 21140,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 82983,
+      "second_only": 18651,
+      "threshold": 0.5
+    },
+    {
+      "recall_of_union": 0.7139,
+      "threshold": 0.5,
+      "union_captured": 96066
+    },
+    {
+      "both_captured": 1723,
+      "both_missed": 59547,
+      "first": "centerpoint",
+      "first_missed": 59589,
+      "first_only": 73253,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "fcos3d",
+      "second_missed": 132800,
+      "second_only": 42,
+      "threshold": 0.6
+    },
+    {
+      "both_captured": 21635,
+      "both_missed": 57959,
+      "first": "centerpoint",
+      "first_missed": 59589,
+      "first_only": 53341,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "mapillary",
+      "second_missed": 111300,
+      "second_only": 1630,
+      "threshold": 0.6
+    },
+    {
+      "both_captured": 39427,
+      "both_missed": 55632,
+      "first": "centerpoint",
+      "first_missed": 59589,
+      "first_only": 35549,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 91181,
+      "second_only": 3957,
+      "threshold": 0.6
+    },
+    {
+      "both_captured": 38578,
+      "both_missed": 54504,
+      "first": "centerpoint",
+      "first_missed": 59589,
+      "first_only": 36398,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 90902,
+      "second_only": 5085,
+      "threshold": 0.6
+    },
+    {
+      "both_captured": 1392,
+      "both_missed": 110927,
+      "first": "fcos3d",
+      "first_missed": 132800,
+      "first_only": 373,
+      "kind": "same_modality",
+      "modalities": [
+        "camera",
+        "camera"
+      ],
+      "second": "mapillary",
+      "second_missed": 111300,
+      "second_only": 21873,
+      "threshold": 0.6
+    },
+    {
+      "both_captured": 1661,
+      "both_missed": 91077,
+      "first": "fcos3d",
+      "first_missed": 132800,
+      "first_only": 104,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 91181,
+      "second_only": 41723,
+      "threshold": 0.6
+    },
+    {
+      "both_captured": 1275,
+      "both_missed": 90412,
+      "first": "fcos3d",
+      "first_missed": 132800,
+      "first_only": 490,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 90902,
+      "second_only": 42388,
+      "threshold": 0.6
+    },
+    {
+      "both_captured": 18575,
+      "both_missed": 86491,
+      "first": "mapillary",
+      "first_missed": 111300,
+      "first_only": 4690,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 91181,
+      "second_only": 24809,
+      "threshold": 0.6
+    },
+    {
+      "both_captured": 15376,
+      "both_missed": 83013,
+      "first": "mapillary",
+      "first_missed": 111300,
+      "first_only": 7889,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 90902,
+      "second_only": 28287,
+      "threshold": 0.6
+    },
+    {
+      "both_captured": 24801,
+      "both_missed": 72319,
+      "first": "megvii",
+      "first_missed": 91181,
+      "first_only": 18583,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 90902,
+      "second_only": 18862,
+      "threshold": 0.6
+    },
+    {
+      "recall_of_union": 0.621358,
+      "threshold": 0.6,
+      "union_captured": 83613
+    },
+    {
+      "both_captured": 101,
+      "both_missed": 81927,
+      "first": "centerpoint",
+      "first_missed": 81932,
+      "first_only": 52532,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "fcos3d",
+      "second_missed": 134459,
+      "second_only": 5,
+      "threshold": 0.7
+    },
+    {
+      "both_captured": 6957,
+      "both_missed": 80547,
+      "first": "centerpoint",
+      "first_missed": 81932,
+      "first_only": 45676,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "mapillary",
+      "second_missed": 126223,
+      "second_only": 1385,
+      "threshold": 0.7
+    },
+    {
+      "both_captured": 26305,
+      "both_missed": 73923,
+      "first": "centerpoint",
+      "first_missed": 81932,
+      "first_only": 26328,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 100251,
+      "second_only": 8009,
+      "threshold": 0.7
+    },
+    {
+      "both_captured": 25160,
+      "both_missed": 71399,
+      "first": "centerpoint",
+      "first_missed": 81932,
+      "first_only": 27473,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 98872,
+      "second_only": 10533,
+      "threshold": 0.7
+    },
+    {
+      "both_captured": 29,
+      "both_missed": 126146,
+      "first": "fcos3d",
+      "first_missed": 134459,
+      "first_only": 77,
+      "kind": "same_modality",
+      "modalities": [
+        "camera",
+        "camera"
+      ],
+      "second": "mapillary",
+      "second_missed": 126223,
+      "second_only": 8313,
+      "threshold": 0.7
+    },
+    {
+      "both_captured": 106,
+      "both_missed": 100251,
+      "first": "fcos3d",
+      "first_missed": 134459,
+      "first_only": 0,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 100251,
+      "second_only": 34208,
+      "threshold": 0.7
+    },
+    {
+      "both_captured": 89,
+      "both_missed": 98855,
+      "first": "fcos3d",
+      "first_missed": 134459,
+      "first_only": 17,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 98872,
+      "second_only": 35604,
+      "threshold": 0.7
+    },
+    {
+      "both_captured": 7584,
+      "both_missed": 99493,
+      "first": "mapillary",
+      "first_missed": 126223,
+      "first_only": 758,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 100251,
+      "second_only": 26730,
+      "threshold": 0.7
+    },
+    {
+      "both_captured": 5598,
+      "both_missed": 96128,
+      "first": "mapillary",
+      "first_missed": 126223,
+      "first_only": 2744,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 98872,
+      "second_only": 30095,
+      "threshold": 0.7
+    },
+    {
+      "both_captured": 18253,
+      "both_missed": 82811,
+      "first": "megvii",
+      "first_missed": 100251,
+      "first_only": 16061,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 98872,
+      "second_only": 17440,
+      "threshold": 0.7
+    },
+    {
+      "recall_of_union": 0.505094,
+      "threshold": 0.7,
+      "union_captured": 67968
+    },
+    {
+      "both_captured": 0,
+      "both_missed": 113860,
+      "first": "centerpoint",
+      "first_missed": 113860,
+      "first_only": 20705,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "fcos3d",
+      "second_missed": 134565,
+      "second_only": 0,
+      "threshold": 0.8
+    },
+    {
+      "both_captured": 224,
+      "both_missed": 113531,
+      "first": "centerpoint",
+      "first_missed": 113860,
+      "first_only": 20481,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "mapillary",
+      "second_missed": 134012,
+      "second_only": 329,
+      "threshold": 0.8
+    },
+    {
+      "both_captured": 10047,
+      "both_missed": 98968,
+      "first": "centerpoint",
+      "first_missed": 113860,
+      "first_only": 10658,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 109626,
+      "second_only": 14892,
+      "threshold": 0.8
+    },
+    {
+      "both_captured": 8519,
+      "both_missed": 95464,
+      "first": "centerpoint",
+      "first_missed": 113860,
+      "first_only": 12186,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 107650,
+      "second_only": 18396,
+      "threshold": 0.8
+    },
+    {
+      "both_captured": 0,
+      "both_missed": 134012,
+      "first": "fcos3d",
+      "first_missed": 134565,
+      "first_only": 0,
+      "kind": "same_modality",
+      "modalities": [
+        "camera",
+        "camera"
+      ],
+      "second": "mapillary",
+      "second_missed": 134012,
+      "second_only": 553,
+      "threshold": 0.8
+    },
+    {
+      "both_captured": 0,
+      "both_missed": 109626,
+      "first": "fcos3d",
+      "first_missed": 134565,
+      "first_only": 0,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 109626,
+      "second_only": 24939,
+      "threshold": 0.8
+    },
+    {
+      "both_captured": 0,
+      "both_missed": 107650,
+      "first": "fcos3d",
+      "first_missed": 134565,
+      "first_only": 0,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 107650,
+      "second_only": 26915,
+      "threshold": 0.8
+    },
+    {
+      "both_captured": 500,
+      "both_missed": 109573,
+      "first": "mapillary",
+      "first_missed": 134012,
+      "first_only": 53,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "megvii",
+      "second_missed": 109626,
+      "second_only": 24439,
+      "threshold": 0.8
+    },
+    {
+      "both_captured": 305,
+      "both_missed": 107402,
+      "first": "mapillary",
+      "first_missed": 134012,
+      "first_only": 248,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 107650,
+      "second_only": 26610,
+      "threshold": 0.8
+    },
+    {
+      "both_captured": 12095,
+      "both_missed": 94806,
+      "first": "megvii",
+      "first_missed": 109626,
+      "first_only": 12844,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "second": "pointpillars",
+      "second_missed": 107650,
+      "second_only": 14820,
+      "threshold": 0.8
+    },
+    {
+      "recall_of_union": 0.349868,
+      "threshold": 0.8,
+      "union_captured": 47080
+    }
+  ],
+  "source_provenance": {
+    "held_by": "the Gate B measurement lane worktree, read only",
+    "note": "only aggregate integer counts are retained here. No raw record, score, annotation token or source identifier is copied into this lane",
+    "sha256": {
+      "gt_val_cache.json": "7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd",
+      "matched_centerpoint.json": "6a8be866b3316857f44787a3676b1557d9d8dfb6a945f16f469bb10877326275",
+      "matched_fcos3d.json": "dd7fa5d2fe13b34a4bf6762f4c8cd512e629c88bcbbb5227dfa58cf46ae8cdf4",
+      "matched_mapillary.json": "a8fef4a1e7dbf0fed84ae1220332fcb97196e468ebf23cb77fe835871466caca",
+      "matched_megvii.json": "2ce14fcca8235438d2f9b2ab844f83e21413e97a2ab0cf597f445bac6e35a0c1",
+      "matched_pointpillars.json": "46b0f70daf6e18f08a4a439c502e7026c2b5d67bcffbb2109f92b314478f484e"
+    }
+  },
+  "version": "0.1.0"
+}
