@@ -1,7 +1,7 @@
 """Exact world graphs, provenance and conservative boundaries after node sharing."""
 from copy import deepcopy
 from fractions import Fraction
-from itertools import product
+from itertools import permutations, product
 import json
 from pathlib import Path
 import unittest
@@ -20,6 +20,32 @@ def locally_named_worlds(count=64, base_duplicates=1):
     args[0]['worlds'] = [world('world-'+str(wi), [[
         object_at('local-'+str(wi)+'-'+str(oi), x, members=['proposal-'+str(oi)])
         for oi, x in enumerate((0, 3, 30))]]) for wi in range(count)]
+    return args
+
+
+def permuted_member_worlds(count=64):
+    args = locally_named_worlds(count)
+    orders = list(permutations(range(3)))
+    for wi, w in enumerate(args[0]['worlds']):
+        for oi, obj in enumerate(w['anchors'][0]['objects']):
+            obj['members'] = ['proposal-'+str(oi)+'-'+str(j) for j in orders[wi % 6]]
+            obj['record_sha256'] = digest({'synthetic_source': {k: v for k, v in obj.items() if k != 'record_sha256'}})
+    return args
+
+
+def member_order_budget_worlds():
+    args = inputs(2, base_duplicates=128)
+    small = inputs(2)
+    args[1]['anchors'][1], args[2][1] = small[1]['anchors'][1], small[2][1]
+    args[0]['inputs'] = {'comparison_sha256': digest(args[1]),
+        'normalizations_sha256': digest(args[2]), 'catalog_sha256': digest(args[3])}
+    for wi in range(64):
+        heavy = [object_at('world-'+str(wi)+'-object-'+str(i), 0,
+                 members=['heavy-'+str(i)+'-'+str(j) for j in ((0, 1) if wi % 2 else (1, 0))])
+                 for i in range(128)]
+        light = [object_at('world-'+str(wi)+'-light-'+str(i), x, time=2_000_000,
+                 members=['light-proposal-'+str(i)]) for i, x in enumerate((0, 3, 30))]
+        args[0]['worlds'].append(world('world-'+str(wi), [heavy, light]))
     return args
 
 
@@ -160,8 +186,7 @@ class ReferenceSharingTests(unittest.TestCase):
 
     def test_equal_edges_do_not_merge_different_declared_objects(self):
         variants = [lambda o: o.update(members=['other-proposal']),
-                    lambda o: o.update(xy=xy(Fraction(8, 5))), lambda o: o.update(**{'class': 'truck'}),
-                    lambda o: o.update(members=['two', 'one'])]
+                    lambda o: o.update(xy=xy(Fraction(8, 5))), lambda o: o.update(**{'class': 'truck'})]
         for change in variants:
             with self.subTest(change=variants.index(change)):
                 args = inputs(); first = object_at('known', Fraction(3, 2), members=['one', 'two'])
@@ -170,6 +195,44 @@ class ReferenceSharingTests(unittest.TestCase):
                 compiled, _, _, _ = self.exact_worlds(args)
                 self.assertEqual(len(compiled['anchors'][0]['reference']['objects']), 2)
                 self.assertTrue(all(o['when'] for o in compiled['anchors'][0]['reference']['objects']))
+
+    def test_member_order_preserves_every_original_source_and_finite_world(self):
+        args = permuted_member_worlds()
+        compiled, receipt, _, totals = self.exact_worlds(args)
+        self.assertEqual(totals, [1]*64)
+        self.assertEqual(len(compiled['anchors'][0]['reference']['objects']), 3)
+        self.assertEqual(receipt['geometry_comparisons_budgeted'], 6)
+        self.assertEqual(len(receipt['object_mapping']), 192)
+        first = [m for m in receipt['object_mapping'] if m['object_id'].endswith('-0')]
+        self.assertEqual(len({tuple(m['members']) for m in first}), 6)
+        self.assertEqual(len({m['graph_id'] for m in first}), 1)
+
+    def test_permuted_members_do_not_hide_an_adverse_last_world(self):
+        args = permuted_member_worlds()
+        args[0]['worlds'][-1]['anchors'][0]['objects'][1]['xy'] = xy(6)
+        compiled, receipt, _, totals = self.exact_worlds(args)
+        self.assertEqual(totals, [1]*63+[-1])
+        self.assertEqual(len(compiled['anchors'][0]['reference']['objects']), 66)
+        self.assertEqual(len(receipt['object_mapping']), 192)
+
+    def test_member_group_splits_preserve_matching_competition(self):
+        args = inputs()
+        self.assertEqual(len(args[1]['anchors'][0]['additions']['value']), 1)
+        point = Fraction(3, 2)
+        args[0]['worlds'] = [world('merged', [[object_at('merged', point, members=['b', 'a'])]]),
+            world('split', [[object_at('first', point, members=['a']), object_at('second', point, members=['b'])]])]
+        compiled, _, _, totals = self.exact_worlds(args)
+        self.assertEqual(totals, [-1, 1])
+        self.assertEqual(len(compiled['anchors'][0]['reference']['objects']), 3)
+
+    def test_member_order_budget_fallback_keeps_the_previous_renamed_plan(self):
+        args = member_order_budget_worlds()
+        compiled, receipt, packet = self.checked(args)
+        self.assertEqual([a['reference']['state'] for a in compiled['anchors']], ['open', 'finite'])
+        self.assertEqual([contract.rational(packet['result']['bounds'][s]) for s in ('lower', 'upper')], [0, 1])
+        self.assertEqual(kernel._capacity(compiled), (64, 5056))
+        self.assertEqual(len(receipt['object_mapping']), 8384)
+        self.assertEqual(len(compiled['anchors'][1]['reference']['objects']), 3)
 
     def test_local_object_names_do_not_prevent_exact_member_sharing(self):
         # Local names and record digests remain distinct in provenance; all

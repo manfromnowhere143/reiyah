@@ -185,7 +185,13 @@ def compile_model(spec, case, normalizations, catalog):
         for entries in reasons.values():
             entries.add('joint_interpretation_coverage_unknown')
     world_ids, mappings, geometry_work = set(), [], 0
-    records, common = [], {}
+    records, common, ordered_common = [], {}, {}
+
+    def intersection(previous, eligible):
+        return {members: (value if eligible[members][0] == value[0] else (None, *value[1:]))
+                for members, value in previous.items()
+                if members in eligible and eligible[members][1:] == value[1:]}
+
     for wi, world in enumerate(worlds):
         _fields(world, 'id basis_sha256 anchors')
         wid = identity(world['id'])
@@ -238,18 +244,18 @@ def compile_model(spec, case, normalizations, catalog):
                 # and separate record digests remain in each world's mapping.
                 eligible[tuple(aliases)] = (oid, obj['class'], time,
                                  tuple((q['numerator'], q['denominator']) for q in obj['xy']))
-            common[name] = (eligible if wi == 0 else
-                            {members: (value if eligible[members][0] == value[0] else (None, *value[1:]))
-                             for members, value in common[name].items()
-                             if members in eligible and eligible[members][1:] == value[1:]})
+            # Membership is a partition, not a sequence of association roles.
+            # Sort only this lookup key; source order and digests stay in mappings.
+            groups = {tuple(sorted(members)): value for members, value in eligible.items()}
+            common[name] = groups if wi == 0 else intersection(common[name], groups)
+            ordered_common[name] = eligible if wi == 0 else intersection(ordered_common[name], eligible)
 
-    # Equal member groups, class, time and coordinates give one node per world,
-    # regardless of local names. A retained non-None name also qualifies under
-    # the previous, stricter sharing policy. Keep that plan as a fallback.
-    def sharing_plan(same_names):
+    # Equal member sets, class, time and canonical coordinates give one node
+    # per world. Keep both previous ordered-member plans as budget fallbacks.
+    def sharing_plan(groups, same_names=False):
         return {name: {members: 'shared:o'+str(i) for i, members in enumerate(
                     m for m, value in values.items() if not same_names or value[0] is not None)}
-                if len(worlds) > 1 else {} for name, values in common.items()}
+                if len(worlds) > 1 else {} for name, values in groups.items()}
 
     counts = {name: 0 for name in anchors}
     for _, mapping, _, _ in records:
@@ -275,14 +281,18 @@ def compile_model(spec, case, normalizations, catalog):
     # Expansion can exhaust evaluator work or geometry needed by later anchors.
     # Preserve the previous plan and its guard before ordinary world nodes.
     # These are metadata preflights; geometry is materialized only once below.
-    shared = sharing_plan(same_names=False)
+    shared, ordered_plan = sharing_plan(common), False
     if not within_budget(shared, guard_geometry=True):
-        shared = sharing_plan(same_names=True)
-        if not within_budget(shared):
-            shared = {name: {} for name in anchors}
+        shared, ordered_plan = sharing_plan(ordered_common), True
+        if not within_budget(shared, guard_geometry=True):
+            shared = sharing_plan(ordered_common, same_names=True)
+            if not within_budget(shared):
+                shared = {name: {} for name in anchors}
     emitted = {name: set() for name in anchors}
     for wi, mapping, label, point in records:
         name, members = mapping['anchor_id'], tuple(mapping['members'])
+        if not ordered_plan:
+            members = tuple(sorted(members))
         graph_id = shared[name].get(members, mapping['graph_id'])
         mapping['graph_id'] = graph_id
         # No partial finite graph is emitted after an unknown or resource fallback.

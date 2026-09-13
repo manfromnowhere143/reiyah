@@ -156,6 +156,53 @@ class ReviewedOperandsTests(unittest.TestCase):
         self.assertFalse(prepared['assisted_evidence_released'])
         self.assertEqual(case['evidence_kind'], 'synthetic')
 
+    def test_member_order_sharing_preserves_admitted_source_bytes_and_rejects_rewriting(self):
+        other = self.root/'member-order'; other.mkdir()
+        def merge(ledger):
+            for wi, world in enumerate(ledger['worlds']):
+                for entry in world['windows']:
+                    members = [m for o in entry['objects'] for m in o['members']]
+                    members += [r['member'] for r in entry['unrepresented']]
+                    obj = entry['objects'][0]
+                    obj['members'] = members if wi == 0 else list(reversed(members))
+                    obj['id'] = 'world-'+str(wi)+'-merged'
+                    obj['rationale'] = 'Synthetic alternative that associates both proposals with one point object.'
+                    entry['objects'], entry['unrepresented'] = [obj], []
+        inputs = prepared_inputs(other, merge)
+        packet_path = other/'common-packet'
+        prepared = reviewed.run(packet_path, **inputs)
+        self.assertEqual(reviewed.check(packet_path, prepared['preparation_sha256'], **inputs)['status'],
+                         'checked_against_selected_sources')
+        report = contract.parse(inputs['admission_report'].read_bytes())
+        self.assertEqual((packet_path/'common/admission.json').read_bytes(), inputs['admission_report'].read_bytes())
+        case = contract.parse((packet_path/'common/comparison.json').read_bytes())
+        self.assertEqual([len(a['reference']['objects']) for a in case['anchors']], [1, 1])
+        mappings = report['compilation']['object_mapping']
+        self.assertEqual(len(mappings), 4)
+        for anchor in report['compiled_input']['anchors']:
+            rows = [m for m in mappings if m['anchor_id'] == anchor['id']]
+            self.assertEqual(rows[0]['members'], list(reversed(rows[1]['members'])))
+            self.assertNotEqual(rows[0]['record_sha256'], rows[1]['record_sha256'])
+            self.assertEqual(rows[0]['graph_id'], rows[1]['graph_id'])
+        packet = kernel.produce(case); checker.check(case, packet)
+        self.assertEqual(direct_world_losses(report), [-1, -1])
+        self.assertEqual([contract.rational(packet['result']['bounds'][s]) for s in ('lower', 'upper')], [-1, -1])
+        self.assertFalse(prepared['assisted_evidence_released'])
+        self.assertEqual(case['evidence_kind'], 'synthetic')
+        # Rebinding a reordered provenance file cannot legitimize changed source
+        # serialization, even though member-set geometry and loss are unchanged.
+        path = packet_path/'common/renamings.json'
+        renamings = contract.parse(path.read_bytes())
+        self.assertEqual(renamings['object_mapping'], mappings)
+        renamings['object_mapping'][0]['members'].reverse()
+        data = contract.encoded(renamings); path.write_bytes(data)
+        receipt = contract.parse((packet_path/'PREPARATION.json').read_bytes())
+        for row in receipt['files']:
+            if row['path'] == 'common/renamings.json':
+                row.update(byte_size=len(data), sha256=reviewed.digest(data))
+        data = contract.encoded(receipt); (packet_path/'PREPARATION.json').write_bytes(data)
+        self.reject('REVIEWED_PACKET', lambda: reviewed.check(packet_path, reviewed.digest(data), **inputs))
+
     def test_cross_anchor_coupling_and_unused_world_encoding(self):
         other = self.root/'coupled'; other.mkdir()
         def change(ledger):

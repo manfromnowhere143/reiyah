@@ -1,0 +1,469 @@
+{
+  "additional_algorithmic_cost": "At most 32 proposal members are sorted per eligible object and per mapping lookup. A second bounded common-group map retains the old ordered plan; no extra geometric pass or solver limit is introduced.",
+  "artifact_id": "reiyah.engine.reference-equivalence.verification",
+  "baseline": {
+    "canonical": {
+      "bounds": [
+        "1",
+        "1"
+      ],
+      "capacity": [
+        64,
+        5056
+      ],
+      "compiler_sha256": "5ad8b6e0e860fe514b04f76db8f11f7453eb63e5b9585b6b186407173eac7b55",
+      "geometry_comparisons": 6,
+      "graph_nodes": [
+        3
+      ],
+      "input_sha256": "4bbfb59873f41aca52a56938e0f9cba9e9f7bbba2669425cf5c06de139f91c86",
+      "mapping_rows": 192,
+      "output_sha256": {
+        "compilation": "b7a6d823459da7ac0e0c5f860ef4e73bd9c1fc36c70b864c85618e0085b0f0d5",
+        "compiled": "dfef27ae7614b465fd0062c2e1d252c805f7bed3fa68770086f60b8abccc3097",
+        "packet": "3d311aca88195c8bcf09448ddc07ad7454b6c4783d91ef1c547d90709cad4bb1"
+      },
+      "states": [
+        "finite"
+      ],
+      "worlds": 64
+    },
+    "member-order": {
+      "bounds": [
+        "-1",
+        "1"
+      ],
+      "capacity": [
+        64,
+        448
+      ],
+      "compiler_sha256": "5ad8b6e0e860fe514b04f76db8f11f7453eb63e5b9585b6b186407173eac7b55",
+      "geometry_comparisons": 256,
+      "graph_nodes": [
+        0
+      ],
+      "input_sha256": "99ab3174f0692e54022fd84bc25b96a379b8857961fd7988768c41ef5019b483",
+      "mapping_rows": 192,
+      "output_sha256": {
+        "compilation": "38bf4a0b32650cdf75e51ad35b3bc6578a9421ce3263bfa6002645fc9c20abb0",
+        "compiled": "eed0c4a3f3f799d52f74d0711983d8629e56b885c11d2d3ded74acd48b7d67a0",
+        "packet": "fcef10692eb1746efeab0b996baadfd6576a6f5034810f12c40139ec17e74366"
+      },
+      "states": [
+        "open"
+      ],
+      "worlds": 64
+    }
+  },
+  "baseline_compiler": {
+    "byte_size": 20150,
+    "sha256": "5ad8b6e0e860fe514b04f76db8f11f7453eb63e5b9585b6b186407173eac7b55"
+  },
+  "budget_control": {
+    "artifact_id": "reiyah.engine.reference-equivalence.budget-control",
+    "independent_check_scope": "Separate core checker and exact previous output identity; not exhaustive original-coordinate injections on the 128-object heavy anchor",
+    "interpretation": "Dropping the previous ordered-member/name-independent plan loses a finite light anchor. Retaining it preserves exact prior compiled, receipt and packet bytes.",
+    "results": {
+      "baseline": {
+        "bounds": [
+          "0",
+          "1"
+        ],
+        "capacity": [
+          64,
+          5056
+        ],
+        "compiler_sha256": "5ad8b6e0e860fe514b04f76db8f11f7453eb63e5b9585b6b186407173eac7b55",
+        "geometry_comparisons": 2199,
+        "graph_nodes": [
+          0,
+          3
+        ],
+        "input_sha256": "ac7e92576ef1f7022f991cd8e678736c1cc76df41f2dd71b67eb775496d6766a",
+        "mapping_rows": 8384,
+        "output_sha256": {
+          "compilation": "1563312a4cf42bc56d4270fb4597c46c87d5ab3943ae7170c4cf6901b7433b7a",
+          "compiled": "e1c964f95c93ef207666e4f0d5ffd2ca40e7c44b2ddbe0f5f5c32ee4817fe9eb",
+          "packet": "69808f59197ccd1891e903a11b207037a9435b37df7f9ca36dd639cd3ef44e6a"
+        },
+        "states": [
+          "open",
+          "finite"
+        ],
+        "worlds": 64
+      },
+      "candidate": {
+        "bounds": [
+          "0",
+          "1"
+        ],
+        "capacity": [
+          64,
+          5056
+        ],
+        "compiler_sha256": "c3205a813c01d635b7b514304b037bff1bf2941e2c2472430566010ec6b2be34",
+        "geometry_comparisons": 2199,
+        "graph_nodes": [
+          0,
+          3
+        ],
+        "input_sha256": "ac7e92576ef1f7022f991cd8e678736c1cc76df41f2dd71b67eb775496d6766a",
+        "mapping_rows": 8384,
+        "output_sha256": {
+          "compilation": "1563312a4cf42bc56d4270fb4597c46c87d5ab3943ae7170c4cf6901b7433b7a",
+          "compiled": "e1c964f95c93ef207666e4f0d5ffd2ca40e7c44b2ddbe0f5f5c32ee4817fe9eb",
+          "packet": "69808f59197ccd1891e903a11b207037a9435b37df7f9ca36dd639cd3ef44e6a"
+        },
+        "states": [
+          "open",
+          "finite"
+        ],
+        "worlds": 64
+      },
+      "without_previous_plan": {
+        "bounds": [
+          "-1",
+          "1"
+        ],
+        "capacity": [
+          64,
+          448
+        ],
+        "compiler_sha256": "d151fa83560de176c11a8f9fa2570c92afe1cb7c9158113e9e7d8c85621ea22d",
+        "geometry_comparisons": 2449,
+        "graph_nodes": [
+          0,
+          0
+        ],
+        "input_sha256": "ac7e92576ef1f7022f991cd8e678736c1cc76df41f2dd71b67eb775496d6766a",
+        "mapping_rows": 8384,
+        "output_sha256": {
+          "compilation": "ff30519535cec42cbb7cba62318ff64637e7e654e6f3f4e920329cf2361ba34c",
+          "compiled": "d857e3d6557c326877c4b31b1918196b8336e8999f4ab82c4cd15cc8a3519dbf",
+          "packet": "fcef10692eb1746efeab0b996baadfd6576a6f5034810f12c40139ec17e74366"
+        },
+        "states": [
+          "open",
+          "open"
+        ],
+        "worlds": 64
+      }
+    },
+    "source_kind": "Synthetic normalized graph operands only; no human admission or physical reference",
+    "version": "0.1.0"
+  },
+  "candidate": {
+    "canonical": {
+      "bounds": [
+        "1",
+        "1"
+      ],
+      "capacity": [
+        64,
+        5056
+      ],
+      "compiler_sha256": "c3205a813c01d635b7b514304b037bff1bf2941e2c2472430566010ec6b2be34",
+      "geometry_comparisons": 6,
+      "graph_nodes": [
+        3
+      ],
+      "input_sha256": "4bbfb59873f41aca52a56938e0f9cba9e9f7bbba2669425cf5c06de139f91c86",
+      "mapping_rows": 192,
+      "output_sha256": {
+        "compilation": "b7a6d823459da7ac0e0c5f860ef4e73bd9c1fc36c70b864c85618e0085b0f0d5",
+        "compiled": "dfef27ae7614b465fd0062c2e1d252c805f7bed3fa68770086f60b8abccc3097",
+        "packet": "3d311aca88195c8bcf09448ddc07ad7454b6c4783d91ef1c547d90709cad4bb1"
+      },
+      "states": [
+        "finite"
+      ],
+      "worlds": 64
+    },
+    "member-order": {
+      "bounds": [
+        "1",
+        "1"
+      ],
+      "capacity": [
+        64,
+        5056
+      ],
+      "compiler_sha256": "c3205a813c01d635b7b514304b037bff1bf2941e2c2472430566010ec6b2be34",
+      "geometry_comparisons": 6,
+      "graph_nodes": [
+        3
+      ],
+      "input_sha256": "99ab3174f0692e54022fd84bc25b96a379b8857961fd7988768c41ef5019b483",
+      "mapping_rows": 192,
+      "output_sha256": {
+        "compilation": "c11faabf19a535827a10161bf8cc03bd9762d48d6654d8af5e736d2a6bad218e",
+        "compiled": "f57569c609622ff4883f3178f8607211785d3a0b5e82d3af7fd6dc1b439e82ec",
+        "packet": "3d311aca88195c8bcf09448ddc07ad7454b6c4783d91ef1c547d90709cad4bb1"
+      },
+      "states": [
+        "finite"
+      ],
+      "worlds": 64
+    }
+  },
+  "candidate_compiler": {
+    "byte_size": 20734,
+    "sha256": "c3205a813c01d635b7b514304b037bff1bf2941e2c2472430566010ec6b2be34"
+  },
+  "claims_not_made": [
+    "physical reference validity",
+    "measured reviewer-effort advantage",
+    "new scientific algorithm",
+    "state of the art",
+    "all finite inputs will fit the fixed budgets"
+  ],
+  "common_example": {
+    "anchors": 2,
+    "direct_world_losses": [
+      -1,
+      -1
+    ],
+    "files_retained": 274,
+    "forged_source_order_rejection": "REVIEWED_PACKET",
+    "human_judgments": "none; explicitly synthetic records",
+    "nodes_per_anchor": [
+      1,
+      1
+    ],
+    "prepared_sha256": "54f1d40790fb1db5c3aeca3d664147cf1cbe50d3cc8cd39e772cde7b1b5bc262",
+    "source_admission_bytes_unchanged": true,
+    "source_mapping_rows": 4,
+    "summary": {
+      "byte_size": 3893,
+      "sha256": "239b74dfa7da1c1d63736a58b5b20932dbcfeb20d15690040819ec5552a2ada0"
+    },
+    "worlds": 2
+  },
+  "cost_limits": "Single local command measurements; public replays ran concurrently, and the budget probe overlapped the repository suite. Do not treat these timings as a paired latency benchmark or total human effort.",
+  "costs": [
+    {
+      "check": "baseline",
+      "child_max_rss_bytes_macos": 41238528,
+      "elapsed_seconds": 0.2796006250428036,
+      "ended_utc": "2026-09-13T13:54:10.833013+00:00",
+      "exit_code": 1,
+      "receipt": {
+        "byte_size": 1095,
+        "sha256": "d258451a9583b5af834aa46b1b085ad09f4bef4d768e79a33576c00696f259b4"
+      },
+      "started_utc": "2026-09-13T13:54:10.553301+00:00"
+    },
+    {
+      "check": "baseline-2",
+      "child_max_rss_bytes_macos": 42369024,
+      "elapsed_seconds": 0.25769666698761284,
+      "ended_utc": "2026-09-13T13:55:23.821745+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1099,
+        "sha256": "8d8fbbe814348fd2f6449571306f632b841b740ae6bbb4280e654fa5d19ab8dd"
+      },
+      "started_utc": "2026-09-13T13:55:23.563956+00:00"
+    },
+    {
+      "check": "candidate",
+      "child_max_rss_bytes_macos": 42926080,
+      "elapsed_seconds": 0.2698277090676129,
+      "ended_utc": "2026-09-13T13:57:35.464620+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1097,
+        "sha256": "a7c69668d7a8bc990a5ba35bf901f0f8543d78ae489d9a7f9b91670a10563e2b"
+      },
+      "started_utc": "2026-09-13T13:57:35.194682+00:00"
+    },
+    {
+      "check": "focused",
+      "child_max_rss_bytes_macos": 193036288,
+      "elapsed_seconds": 21.340017374954186,
+      "ended_utc": "2026-09-13T14:00:05.237610+00:00",
+      "exit_code": 1,
+      "receipt": {
+        "byte_size": 1104,
+        "sha256": "62282767ed1ebffe65d373556148589e70339bbb2907476b18a45c621b657362"
+      },
+      "started_utc": "2026-09-13T13:59:43.897514+00:00"
+    },
+    {
+      "check": "split-fixture",
+      "child_max_rss_bytes_macos": 40271872,
+      "elapsed_seconds": 0.21753841603640467,
+      "ended_utc": "2026-09-13T14:01:48.890514+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1133,
+        "sha256": "b262019efb611573a1ce7c9222f551bab8723e5aa0bad964018bd585baf35cce"
+      },
+      "started_utc": "2026-09-13T14:01:48.672872+00:00"
+    },
+    {
+      "check": "budget-control",
+      "child_max_rss_bytes_macos": 107905024,
+      "elapsed_seconds": 1.5722017500083894,
+      "ended_utc": "2026-09-13T14:03:24.722944+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1088,
+        "sha256": "57d20e0e80db79e0ce6c0360033b3db2f979eac2136e7258c155d906ccc5addc"
+      },
+      "started_utc": "2026-09-13T14:03:23.150628+00:00"
+    },
+    {
+      "check": "repository-tests",
+      "child_max_rss_bytes_macos": 298909696,
+      "elapsed_seconds": 62.13555166707374,
+      "ended_utc": "2026-09-13T14:04:25.286310+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1051,
+        "sha256": "7fe61ca30cfb08fe0bf62cc964006528e4244451867012aaa5b22e73b848bdbb"
+      },
+      "started_utc": "2026-09-13T14:03:23.150628+00:00"
+    },
+    {
+      "check": "common-example",
+      "child_max_rss_bytes_macos": 56868864,
+      "elapsed_seconds": 1.4139890000224113,
+      "ended_utc": "2026-09-13T14:06:20.365976+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1089,
+        "sha256": "9c280baecabe293fcf795898349e7a808cf6af59861cdc9d900282464d9e2ff5"
+      },
+      "started_utc": "2026-09-13T14:06:18.951876+00:00"
+    },
+    {
+      "check": "public-replay-1",
+      "child_max_rss_bytes_macos": 104513536,
+      "elapsed_seconds": 0.8272163340589032,
+      "ended_utc": "2026-09-13T14:08:14.687540+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1306,
+        "sha256": "f5a69b0c243cf09359717a5274d22ecb7e0c992f7586494b6568754aa44626a5"
+      },
+      "started_utc": "2026-09-13T14:08:13.860185+00:00"
+    },
+    {
+      "check": "public-replay-2",
+      "child_max_rss_bytes_macos": 103596032,
+      "elapsed_seconds": 0.8290922499727458,
+      "ended_utc": "2026-09-13T14:08:14.689404+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1306,
+        "sha256": "e163fa389ebec0a76827c44996964678c8839aa7a316f9d85109d6514dcdf1c4"
+      },
+      "started_utc": "2026-09-13T14:08:13.860185+00:00"
+    },
+    {
+      "check": "retain-packets",
+      "child_max_rss_bytes_macos": 37322752,
+      "elapsed_seconds": 0.18976829200983047,
+      "ended_utc": "2026-09-13T14:17:08.980326+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1090,
+        "sha256": "29769f307e874c63ab740e1ce52ec1276a25d3b404f390f2904e7569a0720710"
+      },
+      "started_utc": "2026-09-13T14:17:08.790445+00:00"
+    }
+  ],
+  "decision": "Share exact all-world member sets independently of their source-list order; preserve ordered source records and both prior sharing plans as budget fallbacks. Do not change the canonical rational parser.",
+  "external_scientific_review": "missing",
+  "gate_a": "unaccepted",
+  "human_references": "none_admitted",
+  "independent_check_scope": [
+    "Original-coordinate partial injections, full per-world edges, source mappings and losses on tiny worlds",
+    "Separate core matcher/checker with producer matcher disabled during checking",
+    "Exact previous output bytes on the dense budget control; no combinatorial original-coordinate brute force on its 128-object anchor"
+  ],
+  "interactive_observation": "not_performed",
+  "lifecycle_status": "exploratory",
+  "mathematical_claim": "A nonempty, disjoint member set identifies at most one eligible object in each admitted world. Equal class/time/canonical point gives the same strict-distance edges. Sharing is a per-world right-vertex bijection preserving the complete matching graph and both maximum matching values. Joint choices, all source orders and digests remain.",
+  "measurement_tests": {
+    "binding": {
+      "byte_size": 20401,
+      "sha256": "1616653a515e53c05944fd444632d2184316b2b6426ec84f8ac53e9b7e315801"
+    },
+    "current_replay": false,
+    "retained_passed": 93,
+    "source_files_rechecked": 107
+  },
+  "private_evidence_root": "~/.codex/reports/reiyah/engine-reference-equivalence-2026-09-13",
+  "public_replay": {
+    "byte_size": 5963,
+    "sha256": "3a1cb496e4efbca02d236dc996c8273b95cffb28ff5698b12cdc8de1381cf56f"
+  },
+  "real_comparison_bounds": [
+    "-8",
+    "8"
+  ],
+  "repeated_replay_output": {
+    "byte_size": 4145,
+    "sha256": "8d268e720f317f248febb8352dfed521e190de2c6afd902b14ee0c3ac318e3aa"
+  },
+  "repository_tests": {
+    "fresh_passed": 404,
+    "new": 5,
+    "receipt": {
+      "byte_size": 1051,
+      "sha256": "7fe61ca30cfb08fe0bf62cc964006528e4244451867012aaa5b22e73b848bdbb"
+    },
+    "resource_warnings": 0,
+    "source_binding": {
+      "byte_size": 32552,
+      "sha256": "edcb4bacd666cbba2c2c1b240c6956346d7bd23a7e9e6c3999abb6f4c6569f4a"
+    },
+    "source_files": 182
+  },
+  "retained_core_packets": {
+    "manifest": {
+      "byte_size": 2578,
+      "sha256": "bb69c420c5a240347bdcffc00e78e90d111cbefab00b5310befc6654e9e79414"
+    },
+    "packet_count": 7,
+    "scope": "Reproduced from retained compiled inputs, checked, and matched to previously recorded output digests; full packet bytes now retained"
+  },
+  "retained_failures": {
+    "counterfactual_compiler_without_prior_plan": {
+      "byte_size": 20617,
+      "sha256": "d151fa83560de176c11a8f9fa2570c92afe1cb7c9158113e9e7d8c85621ea22d"
+    },
+    "initial_scope": {
+      "artifact_id": "reiyah.engine.reference-equivalence.scope-correction",
+      "finding": "The shared contract.rational parser requires reduced canonical numerators and denominators; equal noncanonical spellings are inadmissible, so no numerical representation repair is warranted",
+      "initial_failure": "semantic normalization failed on INVALID_RATIONAL before the rational-spelling compilation; original canonical and member-order outputs were already retained",
+      "initial_probe_sha256": "c3cadbf96622375acaabba42539406b86110bf7024c4665022838232f958563f",
+      "preservation": "Initial probe, stderr, canonical and member-order inputs/outputs preserved; next run uses a fresh output identity and explicitly verifies rational rejection in both compilers",
+      "retained_route": "Proposal member order alone can prevent all-world sharing while every exact original world loss remains 1",
+      "version": "0.1.0"
+    },
+    "previous_order_sensitive_test": {
+      "byte_size": 24802,
+      "sha256": "c651c5ee57b3bf4f5694dd59b3a01d4fd914c10afc84a19b15441200e8a929c0"
+    },
+    "split_fixture": {
+      "artifact_id": "reiyah.engine.reference-equivalence.fixture-correction",
+      "correction": "Retain the established base at 0 and camera at 3, with reference point(s) at 3/2. Both detectors can match each point, the addition is retained, and splitting one reference into two changes matching competition. Assert the retained-addition precondition.",
+      "failure": "New split-association fixture put camera and base at the same point. Existing candidate suppression removes the addition, so the independent losses are both zero. The expected [-1,1] did not describe those operands.",
+      "preserved": "Failed source and full 39-test transcript remain. No normalizer, suppression threshold, loss or rejection expectation is weakened.",
+      "test_source_sha256": "566a8599450766d94db485e83b1a6393fab71edcf2d18410c2b5864340198009",
+      "version": "0.1.0"
+    }
+  },
+  "semantic_input_sha256": "c6c8a4fa8309af08661171d24eaff37bc8f7d93c1c658f198274753986c6e255",
+  "source_main": "2048e3e0dd10eaaed2849aace9e0039ddd654e09",
+  "trusted_code": [
+    "Shared exact parser and normalization lineage",
+    "Existing comparison input contract and fixture constructors",
+    "Native Engine admission and common preparation/checker in the explicitly synthetic source-to-common example"
+  ],
+  "unknown_states_preserved": true,
+  "version": "0.1.0"
+}

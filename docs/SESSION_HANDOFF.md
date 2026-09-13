@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.3`
+Version: `0.1.4`
 
 Lifecycle status: `exploratory`
 
@@ -23,8 +23,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This anchor-opening checkpoint starts from main
-`fe937a8b398a58456ed2a4394488b385a7139590`, tree `2e60b4f04c4bc276a838a42ff8d7b9a21c47d4c8`.
+uncommitted ownership before acting. This member-equivalence checkpoint starts from main
+`2048e3e0dd10eaaed2849aace9e0039ddd654e09`, tree `35c2041a377a19cf35475cb66d4818a1a74b0d6b`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -57,20 +57,22 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 | Question | Checked result and evidence |
 |---|---|
 | Can both analysts receive the same reviewed joint operands? | [Reviewed operands](PERCEPTION_REVIEWED_OPERANDS_CHECKPOINT_2026-09-12.md) preserve the complete joint alternatives, weights, loss, tolerance, matching and provenance. Synthetic conformance is engineering evidence. |
-| Can unnecessary compiler expansion be reduced? | [Guarded reference sharing](PERCEPTION_REFERENCE_SHARING_2026-09-13.md) and [local reference identity](PERCEPTION_REFERENCE_IDENTITY_2026-09-13.md) improve bounded synthetic cases while preserving original world/source mappings. Failed evaluator and geometry-budget candidates remain retained; the final design preserves the previous plan when broader sharing cannot fit. No limits were raised. |
+| Can unnecessary compiler expansion be reduced? | [Guarded reference sharing](PERCEPTION_REFERENCE_SHARING_2026-09-13.md), [local reference identity](PERCEPTION_REFERENCE_IDENTITY_2026-09-13.md) and [member equivalence](PERCEPTION_REFERENCE_EQUIVALENCE_2026-09-13.md) improve bounded synthetic cases while preserving original world/source mappings and member order. Both previous sharing plans remain available when broader sharing cannot fit. Failed candidates and unchanged limits remain explicit. |
 | Does the sharing guard omit edge-condition cost? | [Dense work-bound audit](PERCEPTION_REFERENCE_WORKBOUND_2026-09-13.md) disproved that suspicion: compiled edges have empty conditions. The existing guard bounds the declared evaluator estimate. No production repair was justified. |
 | Can shared matching nodes be traced to their own original sources? | [Matching trace](PERCEPTION_MATCHING_TRACE_2026-09-13.md) checks ten synthetic endpoints using world, anchor and object together; incomplete joins and a substituted other-world digest fail. Whole-capture custody does not establish point selection or physical correspondence. |
 | Is the native viewing procedure ready? | [The anchor opening](PERCEPTION_ANCHOR_OPENING_2026-09-13.md) selects a unique delivered capture at the declared anchor timestamp from all 725 supplied occurrences. Every original point record is retained; save/reopen, vertex reordering and stale-capture rejection pass. [Checked preparation](PERCEPTION_VIEWER_PREPARATION_2026-09-13.md), [output custody](PERCEPTION_VIEWER_CUSTODY_2026-09-13.md) and [selection boundary](PERCEPTION_SELECTION_EVIDENCE_2026-09-13.md) supply the unchanged adapter. Actual interactive viewing and participant usability remain unobserved. |
 | Are Fable's requested checker repairs accepted? | The [matching-trace consumer review](PERCEPTION_MATCHING_TRACE_2026-09-13.md) accepts only selected `5762ac01a157a3603181df1486df8a836d711f06` bytes and retained probes. Broader robustness claims were not adopted. Earlier defects remain historical evidence. |
 
-The latest full repository suite passed **399 tests** at the reference-identity checkpoint above.
-The subsequent [database-lifetime trace](PERCEPTION_CATALOG_LIFETIME_2026-09-13.md) locates its four
-SQLite warnings in test fixtures. Only those fixture scopes changed; the affected **12 tests**
-were rerun and passed without resource warnings. No new tests or production changes were added.
-The **93 measurement tests** remain retained from their earlier exact source bindings, not newly
-replayed; their 107 source files were rechecked. [Reference-identity verification](../research/perception-reference-identity/0.1.0/verification.json)
-records sources, outputs, first failures, repairs, costs and limits. The source-to-common example
-and finite `[1,1]` naming control are synthetic. They add no human judgment or participant evidence.
+The latest full repository suite passed **404 tests**, including five member-equivalence additions,
+with no resource warnings. The earlier [database-lifetime trace](PERCEPTION_CATALOG_LIFETIME_2026-09-13.md)
+attributes the previous warnings to test fixtures; its correction is retained. The **93 measurement
+tests** remain retained from their earlier exact source bindings, not newly replayed; all 107
+source files were rechecked. [Member-equivalence verification](../research/perception-reference-equivalence/0.1.0/verification.json)
+records exact inputs, outputs, direct tiny-world checks, first failures, corrections and costs.
+The ordering control reaches finite `[1,1]`; the synthetic admission example preserves original
+member order in common operands and rejects rehashed provenance rewriting. The proposed rational
+normalization was withdrawn because the parser already rejects noncanonical spellings. These
+examples add no human judgment, interactive observation or participant evidence.
 
 An actual participant return takes priority. The new, exposed development opening is
 `~/.codex/reports/reiyah/engine-anchor-opening-2026-09-13/private/opening/OPENING.md`, returning
