@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.6`
+Version: `0.1.7`
 
 Lifecycle status: `exploratory`
 
@@ -23,8 +23,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This partition-conformance checkpoint starts from main
-`edcef820c69b96d01be9d2f74dfa69af34c18c1a`, tree `d1f4a71b5a94e08976fdd4992348912bd5141b40`.
+uncommitted ownership before acting. This window-verification checkpoint starts from main
+`172ff2d82b4a74a1d9aa7389e9707171cfebabdf`, tree `43cd90373ad92ad7ee333e9afa7f402b7f5e532d`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -49,13 +49,15 @@ Private continuation instructions remain at `~/.codex/reports/reiyah/`:
 
 Read the complete selected instructions. Reconcile their dated state against this continuation
 and live evidence. The explicit operator-authorized Engine work continues through
-**2026-09-13 15:58:25 UTC**; a bounded checkpoint does not end that window. This does not authorize
+**2026-09-13 15:58:25 UTC**; a bounded checkpoint does not end that window. Consult the window
+record for its final status; do not treat an expired time window as still active. This does not authorize
 new outreach, deployment, physical control, a cloud campaign or physical-study selection.
 
 ## Current evidence and remaining observation
 
 | Question | Checked result and evidence |
 |---|---|
+| Does the real comparison survive the Engine changes? | [Window verification](ENGINE_WINDOW_CHECKPOINT_2026-09-13.md) reproduces the retained real packet byte for byte at [-8,8], rejects seven forged reports and reruns conventional accounting over all 648 source rows. It adds no physical reference. |
 | Can both analysts receive the same reviewed joint operands? | [Reviewed operands](PERCEPTION_REVIEWED_OPERANDS_CHECKPOINT_2026-09-12.md) preserve the complete joint alternatives, weights, loss, tolerance, matching and provenance. Synthetic conformance is engineering evidence. |
 | Can unnecessary compiler expansion be reduced? | [Guarded reference sharing](PERCEPTION_REFERENCE_SHARING_2026-09-13.md), [local reference identity](PERCEPTION_REFERENCE_IDENTITY_2026-09-13.md) and [member equivalence](PERCEPTION_REFERENCE_EQUIVALENCE_2026-09-13.md) improve bounded synthetic cases while preserving original world/source mappings and member order. Both previous sharing plans remain available when broader sharing cannot fit. Failed candidates and unchanged limits remain explicit. |
 | Does the sharing guard omit edge-condition cost? | [Dense work-bound audit](PERCEPTION_REFERENCE_WORKBOUND_2026-09-13.md) disproved that suspicion: compiled edges have empty conditions. The existing guard bounds the declared evaluator estimate. No production repair was justified. |
@@ -98,7 +100,17 @@ before consuming these finite conformance claims. This is not a physical referen
 or a human-effort comparison. Browser discovery at 15:16:35 UTC still returned no available
 browser; no interactive viewing was inferred from code or background checks.
 
-Fable's remote tip `a3912dcea6606b40727e6b549fb09cfeaccc7cf0` was observed during this task.
+The final [real-comparison verification](../research/engine-window-verification/0.1.0/verification.json)
+checks all 16 prior closed window packets and their 9,103 file bindings. Two current producer runs
+reproduce the original 854-byte packet exactly. The checker also passes with producer functions
+disabled and rejects seven changed decisions or scope claims. The unchanged conventional reader
+rechecks all 648 source-row dispositions and reproduces its earlier output. The combined refresh
+took 1.183 seconds; conventional accounting took 0.150 seconds. These are different scoped
+commands, not a speed comparison. A missing capture-parent directory stopped the first supervisor
+before child execution; that setup failure and the fresh corrected attempt remain retained.
+No production, frozen protocol, source payload or human review record changed.
+
+Fable's remote tip `814f26b26970399ecd255c9dca720f6620b3a059` was observed during this task.
 Its newer claims were not consumed or accepted through that mutable ref. Select a newly sealed
 exchange for any later review; do not repeat previously repaired defects as current.
 

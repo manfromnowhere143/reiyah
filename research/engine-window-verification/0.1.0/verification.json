@@ -1,0 +1,380 @@
+{
+  "anchors": [
+    {
+      "anchor": "window-0001",
+      "base": 48,
+      "reference": "open",
+      "retained_additions": 9,
+      "unweighted_lower": "-9",
+      "unweighted_upper": "9",
+      "weight": "1/2"
+    },
+    {
+      "anchor": "window-0002",
+      "base": 37,
+      "reference": "open",
+      "retained_additions": 7,
+      "unweighted_lower": "-7",
+      "unweighted_upper": "7",
+      "weight": "1/2"
+    }
+  ],
+  "artifact_id": "reiyah.engine.window-verification",
+  "bounds": [
+    "-8",
+    "8"
+  ],
+  "checks": {
+    "conventional-rows": {
+      "child_max_rss_bytes_macos": 82624512,
+      "command": [
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-discovery-custody-2026-09-13/private/runtime/bin/python",
+        "-B",
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-window-verification-2026-09-13/private/check_operands_independently.py",
+        "--assistance",
+        "/Users/danielwahnich/.codex/reports/reiyah/perception-assistance-2026-09-10/private/development-packet-3",
+        "--assistance-sha256",
+        "76b073ac33c4f3481e144d7768f397576fcc473a3ffce9e833b5d5e416256a6e",
+        "--operands",
+        "/Users/danielwahnich/.codex/reports/reiyah/perception-operands-2026-09-11/private/development-packet-3",
+        "--operands-sha256",
+        "4853a8ce959422f819795e86bf7a36b7fce9d43444ec7bdf2250f33c4885bf0a"
+      ],
+      "ended_utc": "2026-09-13T15:44:37.207130+00:00",
+      "receipt": {
+        "byte_size": 1555,
+        "private_path": "checks/conventional-rows/receipt.json",
+        "sha256": "870a98e3c0b45a6ecc5564b09b380dcd0faa4a956d05d4a10bd7ffbd3167283b"
+      },
+      "reported_elapsed_seconds": 0.15023858402855694,
+      "started_utc": "2026-09-13T15:44:37.056795+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 902,
+          "sha256": "4dc7a61b03f41cc005621d04d987e74804ee79715ca0f9dbc89555d1e1c604c8"
+        }
+      }
+    },
+    "real-refresh-2": {
+      "child_max_rss_bytes_macos": 70205440,
+      "command": [
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-discovery-custody-2026-09-13/private/runtime/bin/python",
+        "-B",
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-window-verification-2026-09-13/private/verify_real.py"
+      ],
+      "ended_utc": "2026-09-13T15:43:35.443509+00:00",
+      "receipt": {
+        "byte_size": 1081,
+        "private_path": "checks/real-refresh-2/receipt.json",
+        "sha256": "572be50063bf9228c8a6a16432fdd9a50fe0542dc83a47facac602e36947edcf"
+      },
+      "reported_elapsed_seconds": 1.1832925410708413,
+      "started_utc": "2026-09-13T15:43:34.260107+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 562,
+          "sha256": "a8d90d2a67e2982f5790095b036cc8b5a23ca27c1efcc06b52eeb07e3537062e"
+        }
+      }
+    },
+    "research-consistency": {
+      "child_max_rss_bytes_macos": 24821760,
+      "command": [
+        "/Users/danielwahnich/.codex/reports/reiyah/engine-discovery-custody-2026-09-13/private/runtime/bin/python",
+        "-B",
+        "tools/measure/gate_b_check.py"
+      ],
+      "ended_utc": "2026-09-13T15:43:45.595813+00:00",
+      "receipt": {
+        "byte_size": 1008,
+        "private_path": "checks/research-consistency/receipt.json",
+        "sha256": "b9e811c8446bb66b369f60c51f3d3e62834125089c7b28bc254d0ac2d5d46e6d"
+      },
+      "reported_elapsed_seconds": 1.7025412080110982,
+      "started_utc": "2026-09-13T15:43:43.893174+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 1260,
+          "sha256": "c1cf48b8e5eda4158cdd55e60ac7235655ea69ac9b4bb970eb6fc6fff7f40f79"
+        }
+      }
+    }
+  },
+  "conventional_output_byte_identical_to_retained": true,
+  "conventional_totals": {
+    "additions": 16,
+    "all_comparison_rows": 648,
+    "anchors": 2,
+    "base": 85,
+    "ineligible": 490,
+    "qualified_records": 158,
+    "suppressed": 57
+  },
+  "cost_limits": "Local supervisor intervals include stream hashing; combined refresh includes custody verification, both packet runs, controls and closed-packet checks. Conventional calculation omits acquisition and physical review. Human effort unmeasured; no speed or effort advantage claimed.",
+  "current_checker_producer_disabled": true,
+  "decision": {
+    "improvement_criterion": "unresolved",
+    "preference": "unresolved"
+  },
+  "external_scientific_review": "missing",
+  "fable_claims_consumed": false,
+  "fable_remote_observed": "814f26b26970399ecd255c9dca720f6620b3a059",
+  "forgery_controls": [
+    {
+      "code": "CERTIFICATE_INVALID",
+      "mutation": "preference",
+      "packet_sha256": "f180e58560242afb5e573068c3c5dcf1e3bf7bea3cb1e85533a3f28a796eb286",
+      "rejected": true,
+      "value": "prefer_augmented"
+    },
+    {
+      "code": "CERTIFICATE_INVALID",
+      "mutation": "preference",
+      "packet_sha256": "4e0da64146571e00cf8d07d21e3efb6105dafac0c0290bf7e8a0e4dd21ad17e3",
+      "rejected": true,
+      "value": "prefer_base"
+    },
+    {
+      "code": "CERTIFICATE_INVALID",
+      "mutation": "preference",
+      "packet_sha256": "fd3a6e774c35700da1d83700148948bb005da181eff310882a10bea742d2a2e8",
+      "rejected": true,
+      "value": "equivalent_within_tolerance"
+    },
+    {
+      "code": "CERTIFICATE_INVALID",
+      "mutation": "improvement_criterion",
+      "packet_sha256": "2cbf6092595247ac46ada0272c9f706d0ca337b5fad84271d8e09082ff3450f7",
+      "rejected": true,
+      "value": "supported"
+    },
+    {
+      "code": "CERTIFICATE_INVALID",
+      "mutation": "physical_coverage",
+      "packet_sha256": "25f3befb43ac42dcb64af988b384565909a0e5a7323246c3473b65906a26b752",
+      "rejected": true,
+      "value": "established"
+    },
+    {
+      "code": "CERTIFICATE_INVALID",
+      "mutation": "enclosure_kind",
+      "packet_sha256": "2390f5a62644240e30c8144626a5621095c1ed7adbad39c24daafb32faadd01f",
+      "rejected": true,
+      "value": "exact_for_finite_model"
+    },
+    {
+      "code": "CERTIFICATE_INVALID",
+      "mutation": "lower_bound",
+      "packet_sha256": "d9ee4b0324e70cb86cccd7e02700699bc681da32104cbbb7df5aebb0e38091ea",
+      "rejected": true,
+      "value": "0"
+    }
+  ],
+  "gate_a": "unaccepted",
+  "human_references": "none_admitted",
+  "limits": [
+    "Original retained normalized input only; no source reimport or physical revalidation",
+    "Conservative open-reference enclosure, not an attained finite world or physical non-identifiability proof",
+    "Current checker shares Engine contract/parser and the Python runtime",
+    "No human reference, interactive observation, participant usability or scientific acceptance supplied"
+  ],
+  "p005": "operator_reported_published_no_further_outreach_authorized",
+  "packet": {
+    "byte_size": 854,
+    "sha256": "dbc9ed046c835bcba11ed8a9b44ff6282d59df625019d5cbd567a082da958346"
+  },
+  "participant_usability": "unobserved",
+  "physical_study": "unselected_unrun",
+  "prior_packet_byte_identical": true,
+  "prior_window_closed_files_rechecked": 9103,
+  "prior_window_packets": [
+    {
+      "closeout_sha256": "739bc9ef958b60436375a16324874f94dbfadee47eb46afb3b3315d29b8a4acf",
+      "files": 220,
+      "task": "engine-discovery-custody-2026-09-13"
+    },
+    {
+      "closeout_sha256": "bac5fc43862cf0e80a04cdcf63a40a39b6c55ee2d323d024236ba227c328a907",
+      "files": 367,
+      "task": "engine-output-separation-2026-09-13"
+    },
+    {
+      "closeout_sha256": "3743de2cfd0d0db00bdd5fe667f957c6a7870155421d540763f98195604030e4",
+      "files": 402,
+      "task": "engine-viewer-custody-2026-09-13"
+    },
+    {
+      "closeout_sha256": "eacf59dc893f3fbb68cc5ac84986a004a858e2b2df47e73a07f20481c0eae4f4",
+      "files": 356,
+      "task": "engine-viewer-preparation-2026-09-13"
+    },
+    {
+      "closeout_sha256": "d5cd95dbf8eb27a804ae44621d4f28c7a14c42931b81db5c3e731cdb419827c6",
+      "files": 185,
+      "task": "engine-selection-evidence-2026-09-13"
+    },
+    {
+      "closeout_sha256": "0402e98d3abfbc1a399a55a0f3397e42d809efd1af461e6df22728af2cbbcb7e",
+      "files": 465,
+      "task": "engine-reference-sharing-2026-09-13"
+    },
+    {
+      "closeout_sha256": "88a3e7bf0aa98d2f8e1925aa15a8e9287d3f371d7021186d64daa69f46a0fd30",
+      "files": 1048,
+      "task": "engine-matching-trace-2026-09-13"
+    },
+    {
+      "closeout_sha256": "75b215d2585109b9e64082ba152520947220df9c54986bec0e86ba362dfd9206",
+      "files": 495,
+      "task": "engine-reference-workbound-2026-09-13"
+    },
+    {
+      "closeout_sha256": "daec242d53f0bab9a0936844de4150b09bf1392ed0f5aaa925e60b2ae7b2de9f",
+      "files": 29,
+      "task": "engine-chrome-observation-2026-09-13"
+    },
+    {
+      "closeout_sha256": "1898de92c7b5290575767b8be1ec3093864a85f3509b35e362f05b1bfb38aa2f",
+      "files": 108,
+      "task": "engine-handoff-navigation-2026-09-13"
+    },
+    {
+      "closeout_sha256": "d4435c6cc5a79adeb32638e1d0b7662aa3e6b80f0e6f5669e32101e0e2ced4cb",
+      "files": 1006,
+      "task": "engine-reference-identity-2026-09-13"
+    },
+    {
+      "closeout_sha256": "01cc56cab0bdfc454cfc1e85bf41569a9cb76fa8b346ff6cf8f3cf52d44231bf",
+      "files": 150,
+      "task": "engine-catalog-lifetime-2026-09-13"
+    },
+    {
+      "closeout_sha256": "ff246fda98bc39bbb956b6c0971d5800e3f83191c090a61cb99889814677ad63",
+      "files": 186,
+      "task": "engine-anchor-opening-2026-09-13"
+    },
+    {
+      "closeout_sha256": "d0a3830f383ea7885506f3340f67a80b01b92479cb0b49afebcd425498a44986",
+      "files": 905,
+      "task": "engine-reference-equivalence-2026-09-13"
+    },
+    {
+      "closeout_sha256": "9c41900e5264b1752ae1cd2ae71bdc9f95cf173d78e16babb4a88218a4ca3e04",
+      "files": 2931,
+      "task": "engine-effort-accounting-2026-09-13"
+    },
+    {
+      "closeout_sha256": "76a5903a2bcd3e20a4f259cab0a15a3a853a494464d84906c831929d91aada13",
+      "files": 250,
+      "task": "engine-partition-conformance-2026-09-13"
+    }
+  ],
+  "question": "Does the retained real comparison remain unresolved after Engine changes, with its original source accounting preserved?",
+  "repeat_packet_byte_identical": true,
+  "retained_tests": {
+    "measurement": 93,
+    "prior_accounting": 8,
+    "prior_partition_audit": 8,
+    "replayed_in_this_checkpoint": false,
+    "repository": 404
+  },
+  "selected_source": {
+    "checkpoint": {
+      "byte_size": 10862,
+      "path": "research/perception-operands/0.1.0/checkpoint.json",
+      "sha256": "d6d585877bdf0d6b7c569ee3bd2d308956288383782821e46a17e4b41ca41f3a"
+    },
+    "common_files_checked": [
+      {
+        "byte_size": 4901,
+        "path": "common/ANALYST.md",
+        "sha256": "04595e85c524ed79b78d5c2be5884161b94b6a71a114297852fab09b692dee32"
+      },
+      {
+        "byte_size": 3992,
+        "path": "common/SOURCE_READER.md",
+        "sha256": "80a97909c7698cff61e7242eda5c444c2cad7badd120e902e296523f14d98153"
+      },
+      {
+        "byte_size": 2856476,
+        "path": "common/assistance.json",
+        "sha256": "82de8a82272164445cffd873342faff136b37170f63f54419238b5d8ec0c46d4"
+      },
+      {
+        "byte_size": 14147,
+        "path": "common/comparison.json",
+        "sha256": "fbb2610aef00687e429bb71d805c4c1f321ec14978005e9fbdf44048bb5547b4"
+      },
+      {
+        "byte_size": 201394,
+        "path": "common/operands.json",
+        "sha256": "0fb2f0dd3ae8cb962af11bdcd4ca0ad234a1f05cf2aa4052ecfc61fcf36bd899"
+      },
+      {
+        "byte_size": 3176,
+        "path": "common/rules.json",
+        "sha256": "b3c08d560f751c5ebef9284bfc8974feb8fde48c455b9ff512e005c59fd8c878"
+      }
+    ],
+    "comparison": {
+      "byte_size": 14147,
+      "sha256": "fbb2610aef00687e429bb71d805c4c1f321ec14978005e9fbdf44048bb5547b4"
+    },
+    "preparation": {
+      "byte_size": 6213,
+      "sha256": "4853a8ce959422f819795e86bf7a36b7fce9d43444ec7bdf2250f33c4885bf0a"
+    },
+    "source_closed_files_checked": 158,
+    "source_closeout": {
+      "byte_size": 28600,
+      "sha256": "02b2af62dd929fd2d2c1c0889a907f155d48b1aa95a7e738d7701287ed87c7a6"
+    }
+  },
+  "setup_failure": {
+    "attempt": "private/real-refresh-command.json",
+    "command_executed": false,
+    "correction": "Create task checks parent, use new capture identity real-refresh-2",
+    "elapsed_seconds": null,
+    "elapsed_status": "not_captured_by_supervisor",
+    "error": "FileNotFoundError: checks parent directory absent",
+    "exit_code": 1,
+    "phase": "supervisor destination mkdir before child execution",
+    "recorded_utc": "2026-09-13T15:43:34.227408+00:00"
+  },
+  "shared_trust": [
+    "Retained source projection and normalization inputs, preparation and custody records",
+    "Existing Engine parser, contract, producer and checker for packet tests; count arithmetic separately derived",
+    "Unchanged conventional script imports no Engine code but trusts upstream assistance scanning and projection",
+    "Selected Python 3.14.2 runtime and operating system"
+  ],
+  "source_commit": "172ff2d82b4a74a1d9aa7389e9707171cfebabdf",
+  "source_scripts": {
+    "check_operands_independently.py": {
+      "byte_size": 9026,
+      "sha256": "ee92fa44a910b04000f2204a3ec75afa22dbc3223c48349c92b4bbb6d1711262"
+    },
+    "run_capture.py": {
+      "byte_size": 2052,
+      "sha256": "7e99c336723a7cd1262beb2c862eb4488a3830ecb35f962604e8a24afdd68acf"
+    },
+    "verify_real.py": {
+      "byte_size": 7241,
+      "sha256": "11381cf9eb3e853b24a0b4d267ffff5c41945b34813ca59470e33c13303af4f4"
+    }
+  },
+  "status": "exploratory_engineering_check",
+  "tolerance": "1/10",
+  "version": "0.1.0"
+}
