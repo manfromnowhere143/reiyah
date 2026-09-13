@@ -2,12 +2,61 @@
 
 Document ID: `reiyah.raw-association.2026-09-13`
 
-Version: `0.1.0`
+Version: `0.2.0`
+
+Supersedes `0.1.0`. A consumer review found five defects; all five were reproduced against the exact
+source before repair, and two of them were withdrawn claims rather than code faults.
 
 Lifecycle status: `proposed`
 
 Lane: independent research and conventional comparator. Changes no Engine file, no common operand,
 no admission, viewer, shared handoff or main. Gate A remains unaccepted.
+
+## Five corrections, reproduced before repair
+
+**One. A third channel is not an identification condition.** This lane asked a consumer for a third
+channel on the ground that it would make the sign identifiable. It does not. At
+`(w, x, y, u) = (1, 2, 2, 1)`, with a third channel reporting, `c(0) = 2/3` and `c(4) = 50/49`.
+The sufficient condition is `w * u > x * y`, which an extra channel need not produce, and a channel's
+report is not a physical object. **The request is withdrawn and replaced.**
+
+**Two. An undefined threshold is not an undetermined sign.** The routine returned one `undefined`
+state whenever `x * y / w` had no value. At `w = 0, x = y = 1, u = 0` the threshold is undefined and
+`c(m) = 1 - 1/(m+1)^2 < 1` for every admissible `m`: the sign is fully determined. Invalid, undefined
+and unresolved are now three states, in `reiyah.joint-sign-domain.2026-09-13`, with the complete
+classification verified exhaustively against direct evaluation on all `6^4` small tables.
+
+The threshold formula is corrected too. It is `(x*y - w*u)/w`, not `x*y/w`. The two agree only when
+`u = 0`, which is why the old form happened to be right here and would have been wrong the moment a
+third channel appeared.
+
+**Three. The annotation count does not bound unseen physical opportunities.** Version 0.1.0 used
+`162,021 > 134,565` to call one setting implausible. Physical objects, per frame opportunities,
+repeated records, false positives and unmatched predictions are different units, and nothing here
+converts between them. **That inference is withdrawn**; the ratio is retained as a labelled scale.
+
+**Four. A filename literal test is not a runtime boundary.** The reader checked the basename and
+never the bytes, so substituted content under an allowed name was accepted, which a consumer probe
+demonstrated. Inputs are now bound by full path and expected SHA-256, verified before parsing, and
+the substitution is a test. The mechanism's scope is declared: an allowlist and a digest check inside
+one module, not an operating system sandbox, and historical exposure is not undone by present
+isolation.
+
+**Five. The association order is a model choice with an observable cost.** On one class with left
+positions `0` and `0.9`, right positions `0.5` and `-0.8` and radius `1`, the greedy rule joins one
+pair as given and two after reversal. A maximum cardinality rule is now implemented alongside it and
+compared rather than argued about.
+
+## Which choice actually carries the uncertainty
+
+| choice | effect on the deciding threshold |
+|---|---|
+| admissibility radius, 1 m to 4 m | **14.0x** |
+| assignment rule, greedy against maximum cardinality | **6.4%**, and the state never changes |
+
+Across all nine settings the two rules give the same classification. **The fragility is in the
+admissibility threshold, not the assignment algorithm**, which says where an engineer's effort
+belongs: justifying the radius, not perfecting the matcher.
 
 ## The result, stated first
 
@@ -53,7 +102,7 @@ That threshold is not stable under choices nobody can fix without annotations:
 
 | score cutoff | radius | both channels | first only | second only | `m_star` | against 134,565 annotated |
 |---|---|---|---|---|---|---|
-| 0.2 | 1 m | 63,836 | 127,465 | 81,142 | **162,021** | **1.20x, more unseen than annotated** |
+| 0.2 | 1 m | 63,836 | 127,465 | 81,142 | **162,021** | 1.20x, a scale and not a bound |
 | 0.2 | 2 m | 85,845 | 105,456 | 59,133 | 72,642 | 0.54x |
 | 0.3 | 1 m | 50,614 | 69,258 | 52,416 | 71,724 | 0.53x |
 | 0.3 | 2 m | 65,889 | 53,983 | 37,141 | 30,430 | 0.23x |
@@ -94,7 +143,7 @@ python3 -B tools/measure/raw_association.py
 python3 -B -m unittest discover -s tools/measure -p 'test_raw_association.py'
 ```
 
-Eighteen tests, standard library only, exact integer counts with rational thresholds. The retained
+Thirty one tests, standard library only, exact integer counts with rational thresholds. The retained
 counts carry the digests of both submissions. No payload is redistributed and no source identifier
 is retained.
 

@@ -1,86 +1,190 @@
 {
-  "annotated_population_for_scale_only": 134565,
-  "annotated_population_note": "used only to express m_star as a fraction, after the table was built. It enters no threshold, no filter and no association",
+  "annotated_record_count_for_scale_only": 134565,
   "artifact_id": "reiyah.raw-association.counts",
-  "association_rule": "same class, one to one, nearest neighbour within tau metres in the submitted global frame, unmatched detections retained and visible",
+  "association_rules": {
+    "greedy": "same class, one to one, nearest first, order dependent",
+    "maximum_cardinality": "same admissibility, matched to maximum cardinality, order invariant"
+  },
   "constructor": "tools/measure/raw_association.py",
   "grid": [
     {
       "both_channels": 63836,
       "first_only": 127465,
+      "rule": "greedy",
       "score_minimum": 0.2,
       "second_only": 81142,
+      "seconds": 0.2,
+      "tau": 1.0
+    },
+    {
+      "both_channels": 64066,
+      "first_only": 127235,
+      "rule": "max-cardinality",
+      "score_minimum": 0.2,
+      "second_only": 80912,
+      "seconds": 0.4,
       "tau": 1.0
     },
     {
       "both_channels": 85845,
       "first_only": 105456,
+      "rule": "greedy",
       "score_minimum": 0.2,
       "second_only": 59133,
+      "seconds": 0.2,
+      "tau": 2.0
+    },
+    {
+      "both_channels": 86586,
+      "first_only": 104715,
+      "rule": "max-cardinality",
+      "score_minimum": 0.2,
+      "second_only": 58392,
+      "seconds": 0.4,
       "tau": 2.0
     },
     {
       "both_channels": 99233,
       "first_only": 92068,
+      "rule": "greedy",
       "score_minimum": 0.2,
       "second_only": 45745,
+      "seconds": 0.2,
+      "tau": 4.0
+    },
+    {
+      "both_channels": 100766,
+      "first_only": 90535,
+      "rule": "max-cardinality",
+      "score_minimum": 0.2,
+      "second_only": 44212,
+      "seconds": 0.4,
       "tau": 4.0
     },
     {
       "both_channels": 50614,
       "first_only": 69258,
+      "rule": "greedy",
       "score_minimum": 0.3,
       "second_only": 52416,
+      "seconds": 0.1,
+      "tau": 1.0
+    },
+    {
+      "both_channels": 50715,
+      "first_only": 69157,
+      "rule": "max-cardinality",
+      "score_minimum": 0.3,
+      "second_only": 52315,
+      "seconds": 0.2,
       "tau": 1.0
     },
     {
       "both_channels": 65889,
       "first_only": 53983,
+      "rule": "greedy",
       "score_minimum": 0.3,
       "second_only": 37141,
+      "seconds": 0.1,
+      "tau": 2.0
+    },
+    {
+      "both_channels": 66205,
+      "first_only": 53667,
+      "rule": "max-cardinality",
+      "score_minimum": 0.3,
+      "second_only": 36825,
+      "seconds": 0.2,
       "tau": 2.0
     },
     {
       "both_channels": 73846,
       "first_only": 46026,
+      "rule": "greedy",
       "score_minimum": 0.3,
       "second_only": 29184,
+      "seconds": 0.1,
+      "tau": 4.0
+    },
+    {
+      "both_channels": 74593,
+      "first_only": 45279,
+      "rule": "max-cardinality",
+      "score_minimum": 0.3,
+      "second_only": 28437,
+      "seconds": 0.2,
       "tau": 4.0
     },
     {
       "both_channels": 25501,
       "first_only": 34366,
+      "rule": "greedy",
       "score_minimum": 0.5,
       "second_only": 22942,
+      "seconds": 0.1,
+      "tau": 1.0
+    },
+    {
+      "both_channels": 25506,
+      "first_only": 34361,
+      "rule": "max-cardinality",
+      "score_minimum": 0.5,
+      "second_only": 22937,
+      "seconds": 0.1,
       "tau": 1.0
     },
     {
       "both_channels": 31314,
       "first_only": 28553,
+      "rule": "greedy",
       "score_minimum": 0.5,
       "second_only": 17129,
+      "seconds": 0.1,
+      "tau": 2.0
+    },
+    {
+      "both_channels": 31343,
+      "first_only": 28524,
+      "rule": "max-cardinality",
+      "score_minimum": 0.5,
+      "second_only": 17100,
+      "seconds": 0.1,
       "tau": 2.0
     },
     {
       "both_channels": 33494,
       "first_only": 26373,
+      "rule": "greedy",
       "score_minimum": 0.5,
       "second_only": 14949,
+      "seconds": 0.0,
+      "tau": 4.0
+    },
+    {
+      "both_channels": 33633,
+      "first_only": 26234,
+      "rule": "max-cardinality",
+      "score_minimum": 0.5,
+      "second_only": 14810,
+      "seconds": 0.1,
       "tau": 4.0
     }
   ],
   "information_boundary": {
+    "bound_by": "full path plus expected SHA-256, verified before parsing",
     "excluded": [
       "any annotation or ground truth file",
-      "any matched_* cache, which contains only annotation matched detections",
+      "any matched_* cache",
       "any frame list, class filter or score threshold chosen by inspecting annotations",
       "any association rule tuned against annotations"
     ],
+    "mechanism_scope": "a digest check and an allowlist inside this module. It is not an operating system sandbox and does not constrain native code, and historical exposure of these submissions is not undone by present isolation",
     "opened": [
       "megvii_val.json",
       "mapillary_val.json"
     ]
   },
+  "scale_note": "a record count, not a bound on unseen physical opportunities. Physical objects, per frame opportunities, repeated records, false positives and unmatched predictions are different units and nothing here converts between them",
   "source_provenance": {
     "sha256": {
       "mapillary_val.json": "f948e9778fb9a332d748f7e504fbade04f0c00c2699d7b0af757cacdbd567e99",
@@ -88,5 +192,6 @@
     },
     "state": "exposed nuScenes validation submissions, retained originals, no payload redistributed"
   },
-  "version": "0.1.0"
+  "supersedes": "0.1.0, which bound inputs by basename only and used the annotation count as a bound",
+  "version": "0.2.0"
 }
