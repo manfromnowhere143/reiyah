@@ -1,0 +1,85 @@
+{
+  "anchors": [
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "d"
+        }
+      ],
+      "base_detections": [],
+      "id": "anchor_a",
+      "objects": [
+        {
+          "answerable": false,
+          "class": "car",
+          "id": "P"
+        },
+        {
+          "answerable": true,
+          "class": "car",
+          "id": "X"
+        },
+        {
+          "answerable": false,
+          "class": "car",
+          "id": "Y"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "1"
+    }
+  ],
+  "cohort_id": "synthetic-withheld-witness",
+  "joint_worlds": [
+    {
+      "per_anchor": {
+        "anchor_a": {
+          "edges": [],
+          "objects_present": []
+        }
+      },
+      "world_id": "w0"
+    },
+    {
+      "per_anchor": {
+        "anchor_a": {
+          "edges": [
+            [
+              "d",
+              "P"
+            ]
+          ],
+          "objects_present": [
+            "P"
+          ]
+        }
+      },
+      "world_id": "w1"
+    },
+    {
+      "per_anchor": {
+        "anchor_a": {
+          "edges": [
+            [
+              "d",
+              "P"
+            ]
+          ],
+          "objects_present": [
+            "P",
+            "X",
+            "Y"
+          ]
+        }
+      },
+      "world_id": "w2"
+    }
+  ],
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1",
+    "tolerance": "1/10"
+  },
+  "schema_id": "reiyah.cohort-packet.case"
+}

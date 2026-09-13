@@ -2,7 +2,10 @@
 
 Document ID: `reiyah.resolution-plan.2026-09-12`
 
-Version: `0.4.0`
+Version: `0.5.0`
+
+Supersedes `0.4.0`. A consumer found two further defects in the repaired checker, both reproduced
+here before repair.
 
 Supersedes `0.3.0` of the same document ID. The checker described below had a hole and it was found
 by a consumer, not by this lane.
@@ -293,6 +296,29 @@ six are retained as regressions built from this lane's own cases.
 The exchange also advertised report interface `0.2.0` while the report carried no version field at
 all. The planner now emits `reiyah.resolution-plan.report 0.3.0` and the checker refuses a report
 that declares anything else.
+
+## Correction: the premises were checked for one state and not the others
+
+Version 0.2.0 of the checker repaired six forged reports. A consumer then found two more, and both
+reproduce against the exact published bytes.
+
+**A blocked report could name a witness that was decided and separable.** Every witnessed negative
+state makes the same two claims about its cell: the cell is undecided, and no permitted question
+divides it. Version 0.2.0 checked both for a geometry ambiguity and **neither** for a blocked report.
+So a report could name a cell whose worlds both support the addition, which a permitted question
+separates, and have it certified. An obstruction elsewhere in the case does not verify the cell the
+report actually names.
+
+The repair is not a check per reported example. The two premises are now one function, applied by
+every state that names a witness, and a test asserts there are exactly four call sites and one
+definition, so a state cannot be added later that forgets them.
+
+**A report with no identity was accepted.** Version 0.2.0 required the artifact id and version to
+*match if present*, which an absent field satisfies. The selected interface requires both. An absent
+field is not a satisfied requirement, and both are now required outright.
+
+Three of this lane's own adversaries had to be given a valid identity so that each still fails for
+the premise it probes rather than for the new one.
 
 ## Limits
 

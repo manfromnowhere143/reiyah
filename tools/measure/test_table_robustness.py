@@ -1,5 +1,6 @@
 """Tests for the bounded correction model over an observed capture table."""
 from fractions import Fraction
+import json
 import os
 import random
 import sys
@@ -345,6 +346,183 @@ class RobustnessIsClaimRelative(unittest.TestCase):
         """It is only sound for the sign, and the constant search must not use it."""
         result = self.constant_breakdown(Fraction(3, 2))
         self.assertIn("x_to_w", result["moves_searched"])
+
+
+class TheLowerBoundIsAProofNotASearch(unittest.TestCase):
+    """A conventional argument that discharges the obligation the search cannot.
+
+    Evaluating one adverse table proves that attack works. It does not prove no
+    cheaper attack exists. The bound discharges exactly that second obligation,
+    in constant arithmetic per level.
+    """
+
+    def exhaustive_worst(self, table, k):
+        worst = None
+        for total in range(0, k + 1):
+            for allocation in robust._allocations(total, len(robust.ADVERSE_FOR_THE_SIGN)):
+                leaving = {cell: 0 for cell in "wxyu"}
+                for (source, _), amount in zip(robust.ADVERSE_FOR_THE_SIGN, allocation):
+                    leaving[source] += amount
+                if any(leaving[cell] > table[cell] for cell in "wxyu"):
+                    continue
+                corrected = robust._apply(table, allocation, robust.ADVERSE_FOR_THE_SIGN)
+                margin = (corrected["w"] * corrected["u"]
+                          - corrected["x"] * corrected["y"])
+                if worst is None or margin < worst:
+                    worst = margin
+        return worst
+
+    def test_it_never_overstates_on_the_retained_table(self):
+        for k in range(0, 13):
+            with self.subTest(k=k):
+                self.assertLessEqual(robust.margin_lower_bound(RETAINED, k),
+                                     self.exhaustive_worst(RETAINED, k))
+
+    def test_it_is_tight_from_two_moves_onward_and_loose_by_one_below(self):
+        """A bound, not the worst case. Stating where it is tight is part of the claim."""
+        self.assertEqual(self.exhaustive_worst(RETAINED, 0)
+                         - robust.margin_lower_bound(RETAINED, 0), 2)
+        self.assertEqual(self.exhaustive_worst(RETAINED, 1)
+                         - robust.margin_lower_bound(RETAINED, 1), 1)
+        for k in range(2, 13):
+            with self.subTest(k=k):
+                self.assertEqual(robust.margin_lower_bound(RETAINED, k),
+                                 self.exhaustive_worst(RETAINED, k))
+
+    def test_it_never_overstates_on_random_tables(self):
+        rng = random.Random(20260913)
+        checked = 0
+        for _ in range(40):
+            table = {cell: rng.randint(1, 10) for cell in "wxyu"}
+            for k in range(0, min(4, table["u"]) + 1):
+                checked += 1
+                with self.subTest(table=table, k=k):
+                    self.assertLessEqual(robust.margin_lower_bound(table, k),
+                                         self.exhaustive_worst(table, k))
+        self.assertGreater(checked, 100)
+
+    def test_the_single_endpoint_form_is_unsound_and_the_counterexample_is_retained(self):
+        """w*(u-k) alone fails whenever u exceeds w. Reproduced, not asserted."""
+        table = {"w": 2, "x": 10, "y": 13, "u": 4}
+        k = 1
+        naive = table["w"] * (table["u"] - k) - ((table["x"] + table["y"] + k) ** 2) // 4
+        true_worst = self.exhaustive_worst(table, k)
+        self.assertGreater(naive, true_worst)
+        self.assertEqual(naive, -138)
+        self.assertEqual(true_worst, -139)
+        self.assertLessEqual(robust.margin_lower_bound(table, k), true_worst)
+
+    def test_the_two_endpoints_coincide_when_the_pair_misses_do_not_exceed_the_joint_captures(self):
+        self.assertLessEqual(RETAINED["u"], RETAINED["w"])
+        w, u, k = RETAINED["w"], RETAINED["u"], 11
+        self.assertEqual(min(w * (u - k), (w - k) * u), w * (u - k))
+
+    def test_the_bound_proves_eleven_safe_and_the_witness_breaks_twelve(self):
+        self.assertEqual(robust.margin_lower_bound(RETAINED, 11), 35)
+        self.assertEqual(robust.margin_lower_bound(RETAINED, 12), -9)
+        witness = {"w": 27, "x": 17, "y": 18, "u": 11}
+        self.assertEqual(witness["w"] * witness["u"] - witness["x"] * witness["y"], -9)
+        self.assertFalse(robust.settles_the_sign(witness))
+
+
+class TheCertifiedBreakdownCostsFarLess(unittest.TestCase):
+    def test_it_agrees_with_the_full_enumeration(self):
+        certified = robust.certified_breakdown(RETAINED, moves=robust.ADVERSE_FOR_THE_SIGN)
+        full = robust.breakdown(RETAINED)
+        self.assertEqual(certified["breakdown_number"], full["breakdown_number"])
+        self.assertTrue(certified["bound_and_search_agree"])
+
+    def test_the_proof_removes_every_level_below(self):
+        certified = robust.certified_breakdown(RETAINED, moves=robust.ADVERSE_FOR_THE_SIGN)
+        self.assertEqual(certified["levels_proved_safe_by_bound"], 11)
+        self.assertEqual(certified["search_needed_only_from"], 12)
+        self.assertGreater(certified["bound_at_the_last_proved_level"], 0)
+        self.assertLessEqual(certified["bound_at_the_first_unproved_level"], 0)
+
+    def test_the_two_obligations_are_reported_separately(self):
+        obligations = robust.certified_breakdown(
+            RETAINED, moves=robust.ADVERSE_FOR_THE_SIGN)["obligations"]
+        self.assertIn("lower bound", obligations["no_cheaper_attack_exists"])
+        self.assertIn("complete disproof", obligations["this_attack_works"])
+
+
+class TheCertificateDoesNotOverstateWhatOneTableProves(unittest.TestCase):
+    def test_a_breaking_table_is_called_a_complete_disproof(self):
+        result = robust.analyse(
+            RETAINED, {"u_to_x": 6, "u_to_y": 6, "u_removed": 11, "w_to_x": 5, "w_removed": 5})
+        self.assertFalse(result["sign_survives_every_admissible_table"])
+        self.assertIn("complete disproof",
+                      result["worst_admissible_completion"]["certificate"])
+
+    def test_a_surviving_table_is_not_called_a_proof(self):
+        result = robust.analyse(RETAINED, {"u_to_x": 2})
+        self.assertTrue(result["sign_survives_every_admissible_table"])
+        certificate = result["worst_admissible_completion"]["certificate"]
+        self.assertIn("NOT a one line proof", certificate)
+        self.assertIn("property of the search", certificate)
+
+
+class TheInterfaceDistinguishesMissingFromEmpty(unittest.TestCase):
+    def run_cli(self, payload):
+        import subprocess, tempfile
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as handle:
+            json.dump(payload, handle)
+            path = handle.name
+        module = os.path.join(os.path.dirname(os.path.abspath(__file__)), "table_robustness.py")
+        return subprocess.run([sys.executable, "-B", module, path],
+                              capture_output=True, text=True)
+
+    def test_a_missing_budget_is_refused_rather_than_silently_emptied(self):
+        done = self.run_cli({"observed_table": RETAINED})
+        self.assertEqual(done.returncode, 1)
+        self.assertIn("no budget was declared", done.stderr)
+
+    def test_a_null_budget_is_refused_separately(self):
+        done = self.run_cli({"observed_table": RETAINED, "budget": None})
+        self.assertEqual(done.returncode, 1)
+        self.assertIn("null", done.stderr)
+
+    def test_an_explicitly_empty_budget_is_honoured(self):
+        done = self.run_cli({"observed_table": RETAINED, "budget": {}})
+        self.assertEqual(done.returncode, 0)
+        self.assertEqual(json.loads(done.stdout)["declared_budget"], {})
+
+    def test_a_budget_free_breakdown_must_be_asked_for_explicitly(self):
+        done = self.run_cli({"observed_table": RETAINED, "breakdown": True})
+        self.assertEqual(done.returncode, 0)
+        self.assertEqual(json.loads(done.stdout)["breakdown_number"], 12)
+
+    def test_asking_for_both_is_refused(self):
+        done = self.run_cli({"observed_table": RETAINED, "budget": {}, "breakdown": True})
+        self.assertEqual(done.returncode, 1)
+        self.assertIn("not both", done.stderr)
+
+
+class AnInvalidBoundIsNotASmallOne(unittest.TestCase):
+    def test_a_negative_ceiling_is_refused(self):
+        with self.assertRaises(robust.BudgetError):
+            robust.breakdown(RETAINED, ceiling=-1)
+
+    def test_a_boolean_ceiling_is_refused(self):
+        with self.assertRaises(robust.BudgetError):
+            robust.breakdown(RETAINED, ceiling=True)
+
+    def test_a_truncated_search_is_not_called_complete(self):
+        result = robust.breakdown(RETAINED, moves=robust.ADVERSE_FOR_THE_SIGN, ceiling=5)
+        self.assertEqual(result["state"], "no_breakdown_within_the_searched_range")
+        self.assertFalse(result["search_was_exhaustive"])
+        self.assertIn("not a complete answer", result["reason"])
+
+    def test_an_interrupted_level_is_distinguished_from_the_finished_ones(self):
+        original = robust.MAX_BREAKDOWN_ALLOCATIONS
+        robust.MAX_BREAKDOWN_ALLOCATIONS = 30
+        try:
+            result = robust.breakdown(RETAINED)
+            self.assertEqual(result["state"], "unresolved")
+            self.assertEqual(result["interrupted_at_level"],
+                             result["levels_fully_searched"] + 1)
+        finally:
+            robust.MAX_BREAKDOWN_ALLOCATIONS = original
 
 
 if __name__ == "__main__":

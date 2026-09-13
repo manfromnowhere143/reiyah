@@ -35,7 +35,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cohort_packet import CaseError, build  # noqa: E402
 
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 ACCEPTED_REPORT_VERSIONS = ("0.3.0",)
 ARTIFACT_ID = "reiyah.resolution-plan.report"
 MAX_WORLDS = 64
@@ -71,13 +71,22 @@ def _verify_reported_facts(case, result, report):
     forgeries were accepted. The facts are now recomputed wherever they are
     stated and required wherever the state is meant to carry them.
     """
-    if result.get("artifact_id") not in (None, ARTIFACT_ID):
+    # Version 0.2.0 treated a missing artifact id or version as acceptable, so a
+    # report could omit its identity and be checked anyway. The selected interface
+    # requires both, and an absent field is not a satisfied requirement.
+    if "artifact_id" not in result:
+        raise PlanRefused(
+            f"the report declares no artifact_id; {ARTIFACT_ID!r} is required")
+    if result["artifact_id"] != ARTIFACT_ID:
         raise PlanRefused(
             f"report declares artifact {result['artifact_id']!r}, not {ARTIFACT_ID!r}")
-    version = result.get("version")
-    if version is not None and version not in ACCEPTED_REPORT_VERSIONS:
+    if "version" not in result:
         raise PlanRefused(
-            f"report declares interface version {version!r}; this checker accepts "
+            "the report declares no interface version; this checker accepts "
+            f"{', '.join(ACCEPTED_REPORT_VERSIONS)}")
+    if result["version"] not in ACCEPTED_REPORT_VERSIONS:
+        raise PlanRefused(
+            f"report declares interface version {result['version']!r}; this checker accepts "
             f"{', '.join(ACCEPTED_REPORT_VERSIONS)}")
     truth = report["enclosure"]
     stated = result.get("enclosure")
@@ -95,6 +104,29 @@ def _verify_reported_facts(case, result, report):
     if "improvement_criterion" not in result:
         raise PlanRefused("the report states no improvement criterion")
     return criterion
+
+
+def _verify_obstruction(case, cell, questions, label):
+    """Every witnessed negative state makes the same two claims about its cell.
+
+    The cell is undecided, and no permitted question divides it. Version 0.2.0
+    checked both for a geometry ambiguity and neither for a blocked report, so a
+    blocked report could name a cell that was decided AND separable and have it
+    accepted. An obstruction somewhere else in the case does not certify the cell
+    the report actually names. The contract is applied here once, by every state
+    that names a witness, rather than re-stated per state and forgotten in one.
+    """
+    verdict = _criterion(case, cell)
+    if verdict in DECIDED:
+        raise PlanRefused(
+            f"{label}: the named cell {sorted(cell)} recomputes as {verdict!r}, so it is decided "
+            "and witnesses no obstruction")
+    for key, yes in questions.items():
+        if cell & yes and cell - yes:
+            raise PlanRefused(
+                f"{label}: the permitted question {key} divides the named cell {sorted(cell)}, so "
+                "the cell is separable and witnesses no obstruction")
+    return verdict
 
 
 def _verify_witness(case, witness, minimum, label):
@@ -289,7 +321,9 @@ def check(case, result):
                     f"within depth {MAX_DEPTH}")
             witness = result.get("witness_cell") or []
             if result["state"] == "blocked_by_unanswerable_questions":
-                witness = sorted(_verify_witness(case, witness, 2, "unanswerable block"))
+                cell = _verify_witness(case, witness, 2, "unanswerable block")
+                _verify_obstruction(case, cell, questions, "unanswerable block")
+                witness = sorted(cell)
                 withheld = result.get("withheld_questions") or []
                 if not withheld:
                     raise PlanRefused(
@@ -315,16 +349,13 @@ def check(case, result):
                     "would have divided it")
             elif result["state"] == "unresolvable_by_declared_questions":
                 cell = _verify_witness(case, witness, 2, "geometry ambiguity")
-                if _criterion(case, cell) in DECIDED:
-                    raise PlanRefused("the witness cell is decided, so it witnesses nothing")
-                for key, yes in questions.items():
-                    if cell & yes and cell - yes:
-                        raise PlanRefused(f"question {key} does divide the declared witness cell")
+                _verify_obstruction(case, cell, questions, "geometry ambiguity")
                 findings["verified"] = (
                     f"witness cell {sorted(cell)} names declared worlds, is undecided, and no "
                     "declared question divides it")
             elif result["state"] == "undecided_single_world":
                 cell = _verify_witness(case, witness, 1, "single world")
+                _verify_obstruction(case, cell, questions, "single world")
                 if len(cell) != 1:
                     raise PlanRefused(
                         f"undecided_single_world names {len(cell)} worlds. More than one world is "
@@ -333,18 +364,15 @@ def check(case, result):
                     raise PlanRefused(
                         f"undecided_single_world requires every anchor finite; {open_anchors} "
                         "are open, so the obstacle is an absent reference")
-                if _criterion(case, cell) in DECIDED:
-                    raise PlanRefused("the named world is decided, so it witnesses nothing")
                 findings["verified"] = (
                     f"the single declared world {sorted(cell)} is undecided and every anchor "
                     "is finite")
             elif result["state"] == "unresolvable_due_to_open_anchors":
                 cell = _verify_witness(case, witness, 1, "open anchors")
+                _verify_obstruction(case, cell, questions, "open anchors")
                 if not open_anchors:
                     raise PlanRefused(
                         "unresolvable_due_to_open_anchors is claimed, but every anchor is finite")
-                if _criterion(case, cell) in DECIDED:
-                    raise PlanRefused("the named cell is decided, so it witnesses nothing")
                 findings["verified"] = (
                     f"cell {sorted(cell)} is undecided and the open anchors {open_anchors} "
                     "contribute the interval that leaves it so")

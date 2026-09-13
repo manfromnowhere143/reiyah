@@ -54,7 +54,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import joint_miss_identification as identification  # noqa: E402
 
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 MAX_TABLES = 4_000_000
 
 # Each allowance names objects leaving one cell for another, or leaving entirely.
@@ -210,6 +210,81 @@ def _apply(observed, allocation, moves):
     return table
 
 
+def margin_lower_bound(observed, k):
+    """A proved lower bound on the sign margin after at most k elementary moves.
+
+    Derived from the move model alone, in three steps.
+
+    One. `w' >= w - j` where `j` objects leave `w`, and `u' >= u - i` where `i`
+    leave `u`. Objects arriving only raise them, so the bounds hold whatever else
+    the adversary does.
+
+    Two. With `i + j <= k`, the product is at least `(w-j)(u-i)`, and using fewer
+    than `k` moves only raises it, so the minimum sits on `i + j = k`. As a
+    function of `j` that is `(w-j)(u-k+j)`, a downward parabola, so it is
+    minimised at an endpoint: `j = 0` gives `w(u-k)`, and `j = k` gives `(w-k)u`.
+    **Both endpoints must be taken**, because which is smaller depends on whether
+    `u` exceeds `w`. A bound quoting only `w(u-k)` is unsound whenever `u > w`;
+    that form was checked against exhaustive search on 732 table and k pairs and
+    failed 285 of them, while the two endpoint form failed none.
+
+    Three. Each elementary move raises `x' + y'` by at most one, so
+    `x' + y' <= x + y + k`, and for non negative integers with a fixed sum the
+    product is largest when they are as equal as possible, giving
+    `x'y' <= floor((x+y+k)^2 / 4)`.
+
+    Together: `margin >= min(w(u-k), (w-k)u) - floor((x+y+k)^2/4)`, with the
+    factors clamped at zero. It is a bound, not the worst case: it was tight on
+    354 of those 732 pairs and loose by at most 42 on the rest.
+    """
+    for cell in "wxyu":
+        _count(cell, observed[cell])
+    _count("k", k)
+    w, x, y, u = (observed[cell] for cell in "wxyu")
+    product = min(w * max(0, u - k), max(0, w - k) * u)
+    return product - ((x + y + k) ** 2) // 4
+
+
+def certified_breakdown(observed, moves=None):
+    """The breakdown number for the sign, proved rather than enumerated below it.
+
+    The bound rules out every level it can in constant arithmetic, and the search
+    then runs only from the first level the bound cannot rule out. On the retained
+    table that is a proof for k <= 11 and a search at k = 12 alone, instead of
+    enumerating every level from one.
+
+    The two obligations are different and are reported separately. A breaking
+    table is a complete disproof on its own. A proved bound is what rules out the
+    cheaper attacks; evaluating one surviving table never does that.
+    """
+    proved_safe = 0
+    available = sum(observed[cell] for cell in "wxyu")
+    while proved_safe < available and margin_lower_bound(observed, proved_safe + 1) > 0:
+        proved_safe += 1
+    found = breakdown(observed, moves=moves, ceiling=available)
+    result = {
+        "artifact_id": "reiyah.table-robustness.certified-breakdown", "version": VERSION,
+        "levels_proved_safe_by_bound": proved_safe,
+        "bound_at_the_last_proved_level": margin_lower_bound(observed, proved_safe),
+        "bound_at_the_first_unproved_level": margin_lower_bound(observed, proved_safe + 1)
+                                             if proved_safe < available else None,
+        "search_needed_only_from": proved_safe + 1,
+        "obligations": {
+            "no_cheaper_attack_exists": ("discharged by the lower bound for every level up to "
+                                         f"{proved_safe}, in constant arithmetic per level"),
+            "this_attack_works": ("discharged by the explicit breaking table, which is a complete "
+                                  "disproof on its own")},
+    }
+    if found.get("state") == "computed":
+        result.update({"state": "computed", "breakdown_number": found["breakdown_number"],
+                       "minimal_breaking_corrections": found["minimal_breaking_corrections"],
+                       "allocations_examined_by_search": found["allocations_examined"],
+                       "bound_and_search_agree": found["breakdown_number"] == proved_safe + 1})
+    else:
+        result.update({"state": found.get("state"), "reason": found.get("reason")})
+    return result
+
+
 def breakdown(observed, constant=None, ceiling=None, moves=None):
     """The fewest wrong objects that could destroy the claim, with no budget declared.
 
@@ -231,7 +306,12 @@ def breakdown(observed, constant=None, ceiling=None, moves=None):
                 "reason": ("the claim does not hold on the observed table itself, so no correction "
                            "is needed to destroy it")}
     moves = tuple(moves) if moves else MOVES
-    limit = ceiling if ceiling is not None else sum(observed[cell] for cell in "wxyu")
+    available = sum(observed[cell] for cell in "wxyu")
+    if ceiling is not None:
+        # Version 0.2.0 accepted a negative ceiling, searched nothing, and called
+        # the empty answer complete. An invalid bound is not a small one.
+        _count("the search ceiling", ceiling)
+    limit = ceiling if ceiling is not None else available
     examined = 0
     for total in range(1, limit + 1):
         breaking = []
@@ -242,7 +322,10 @@ def breakdown(observed, constant=None, ceiling=None, moves=None):
                         "reason": (f"the search passed {MAX_BREAKDOWN_ALLOCATIONS} allocations "
                                    "without reaching a breakdown. This is a resource limit on "
                                    "this search, not a statement that no breakdown exists"),
-                        "searched_up_to_total": total}
+                        "levels_fully_searched": total - 1,
+                        "interrupted_at_level": total,
+                        "note": ("totals up to and including the fully searched level were "
+                                 "exhausted; the interrupted level was not")}
             leaving = {cell: 0 for cell in "wxyu"}
             for (source, _), amount in zip(moves, allocation):
                 leaving[source] += amount
@@ -267,10 +350,18 @@ def breakdown(observed, constant=None, ceiling=None, moves=None):
                     "reading": (f"the claim fails only if at least {total} recorded objects are "
                                 "wrong, in one of the combinations listed. Fewer than that, in any "
                                 "combination, leaves it standing")}
+    complete = limit >= available
     return {"state": "no_breakdown_within_the_searched_range",
-            "reason": (f"no combination of up to {limit} corrections destroys the claim. The "
-                       "search range is the objects available to move, so this is a complete "
-                       "answer for the adverse moves modelled")}
+            "levels_fully_searched": limit,
+            "objects_available_to_move": available,
+            "search_was_exhaustive": complete,
+            "reason": (f"no combination of up to {limit} corrections destroys the claim, and {limit} "
+                       "covers every object available to move, so this is complete for the moves "
+                       "modelled" if complete else
+                       f"no combination of up to {limit} corrections destroys the claim. The "
+                       f"declared ceiling stops below the {available} objects available to move, "
+                       "so a larger combination was never examined and this is not a complete "
+                       "answer")}
 
 
 def analyse(observed, budget):
@@ -309,8 +400,14 @@ def analyse(observed, budget):
             "table": worst[1], "margin": worst[0],
             "corrections_applied": worst_moves or {},
             "settles_the_sign": worst[0] > 0,
-            "certificate": ("evaluate w * u - x * y on this table. The claim is checked by one "
-                            "evaluation, not by trusting this search")},
+            "certificate": (
+                "this table breaks the claim, and one evaluation of w * u - x * y on it confirms "
+                "that. A breaking table is a complete disproof by itself"
+                if worst[0] <= 0 else
+                "this table has the smallest margin the search found, and evaluating it confirms "
+                "only that this table does not break the claim. It is NOT a one line proof that "
+                "no admissible table does; that rests on the enumeration being complete for the "
+                "declared budget, which is a property of the search and not of this table")},
         "tolerance_by_correction_kind": {
             move_name(source, target): single_allowance_tolerance(observed, source, target)
             for source, target in MOVES},
@@ -338,7 +435,30 @@ def main(argv):
     with open(argv[1], "r", encoding="utf-8") as handle:
         declared = json.load(handle)
     try:
-        result = analyse(declared["observed_table"], declared.get("budget", {}))
+        if "observed_table" not in declared:
+            raise BudgetError("the input declares no observed_table")
+        wants_breakdown = declared.get("breakdown", False)
+        has_budget = "budget" in declared
+        if wants_breakdown and has_budget:
+            raise BudgetError(
+                "declare either a budget analysis or a budget free breakdown, not both. They "
+                "answer different questions")
+        if wants_breakdown:
+            result = breakdown(declared["observed_table"])
+        elif not has_budget:
+            # Version 0.2.0 turned a missing budget into an empty one, which is a
+            # different request with a different answer. Missing, null and an
+            # explicitly empty budget are three different declarations.
+            raise BudgetError(
+                "no budget was declared. A budget analysis requires an explicit \"budget\" "
+                "object, which may be empty to mean no corrections are admitted. To ask the "
+                "budget free question instead, declare \"breakdown\": true")
+        elif declared["budget"] is None:
+            raise BudgetError(
+                "the declared budget is null. Use an empty object to admit no corrections, or "
+                "\"breakdown\": true to ask the budget free question")
+        else:
+            result = analyse(declared["observed_table"], declared["budget"])
     except (BudgetError, KeyError) as error:
         sys.stderr.write(f"declaration refused: {error}\n")
         return 1

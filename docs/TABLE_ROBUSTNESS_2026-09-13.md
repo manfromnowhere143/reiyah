@@ -2,7 +2,10 @@
 
 Document ID: `reiyah.table-robustness.2026-09-13`
 
-Version: `0.2.0`
+Version: `0.3.0`
+
+Supersedes `0.2.0`. It adds a proof where there was only a search, corrects a certificate that
+claimed more than one table can show, and repairs two interface defects a consumer reproduced.
 
 Supersedes `0.1.0` of the same document ID. It removes the declared budget from the critical path and
 refines one number this lane published one commit earlier.
@@ -158,6 +161,75 @@ captures, and that move **raises** the sign margin from `491` to `563` while pus
 from `1679/1188` past `3/2`. The correction that most strengthens one claim is the one that destroys
 the other. An observation programme cannot verify "the errors that matter" without first saying which
 claim it is defending, and the two verification tasks are not the same task.
+
+## A proof, where there was only a search
+
+Enumerating millions of allocations and finding no cheaper attack is evidence that the search found
+nothing. It is not a proof that nothing is there. A conventional argument discharges that obligation
+directly, and it was derived here from the move model rather than taken on trust.
+
+With at most `k` elementary moves:
+
+1. `w' >= w - j` when `j` objects leave `w`, and `u' >= u - i` when `i` leave `u`. Arrivals only
+   raise them.
+2. With `i + j = k` the product is at least `(w-j)(u-k+j)`, a downward parabola in `j`, so it is
+   minimised at an **endpoint**: `w(u-k)` or `(w-k)u`.
+3. Each move raises `x' + y'` by at most one, so `x'y' <= floor((x+y+k)^2/4)`.
+
+```
+margin  >=  min( w*(u-k), (w-k)*u )  -  floor( (x+y+k)^2 / 4 )
+```
+
+On the retained table this gives `35` at `k = 11` and `-9` at `k = 12`, and the table
+`(w,x,y,u) = (27,17,18,11)` attains `-9` exactly. **The breakdown number of 12 is therefore proved,
+not merely searched**: the bound rules out every cheaper attack, and one explicit table supplies the
+attack that works.
+
+The cost comparison is decisive. The bound is constant arithmetic per level. The full twelve move
+enumeration is 2,704,155 allocations and about 8 seconds. Running the bound first and searching only
+from the first level it cannot rule out needs 18,563 allocations and about 38 milliseconds, and
+returns the same number.
+
+### The bound as first stated is unsound, and the counterexample is retained
+
+Step two must take **both** endpoints. A form quoting only `w(u-k)` is correct when `u <= w`, which
+happens to hold on the retained table, and wrong when it does not. Checked against exhaustive search
+on 732 table and `k` pairs, the single endpoint form **failed 285 of them**. The smallest retained
+counterexample is `w=2, x=10, y=13, u=4` at `k=1`, where it claims `-138` and the true worst margin
+is `-139`.
+
+The two endpoint form failed none of the 732, was tight on 354, and was loose by at most 42
+elsewhere. On the retained table it is loose by 2 at `k = 0` and by 1 at `k = 1`, and exact from
+`k = 2` onward. It is a bound, and where it is tight is part of the claim rather than an aside.
+
+## Correction: what one table can and cannot certify
+
+Version 0.2.0 attached the same certificate wording to every worst completion:
+
+> "evaluate `w * u - x * y` on this table. The claim is checked by one evaluation, not by trusting
+> this search"
+
+That is true of a table that **breaks** the claim, which is a complete disproof on its own. It is
+false of a table that survives. Evaluating a positive margin table confirms only that this table does
+not break the claim; that no admissible table does rests on the enumeration being complete, which is
+a property of the search and not of the table. The two cases now carry different wording, asserted as
+tests.
+
+## Correction: two interface defects
+
+**A missing budget silently became an empty one.** The module declares that a budget is required and
+is never invented, and then the command line turned an absent `budget` key into `{}` and ran a budget
+analysis the caller never asked for. Missing, null and explicitly empty are three different
+declarations. A missing budget is now refused, a null budget is refused with its own reason, an
+explicitly empty budget means no corrections are admitted, and the budget free question must be asked
+for by name with `"breakdown": true`. Asking for both at once is refused, because they answer
+different questions.
+
+**An invalid ceiling was described as a complete answer.** `ceiling=-1` searched nothing and reported
+that no combination destroys the claim, calling the result complete. An invalid bound is not a small
+one; it is now refused. A ceiling that is valid but stops below the objects available to move reports
+`search_was_exhaustive: false` with a reason saying so, and a search interrupted by the allocation cap
+now distinguishes the levels it fully searched from the level it was interrupted in.
 
 ## A coefficient certificate is not an integration decision
 

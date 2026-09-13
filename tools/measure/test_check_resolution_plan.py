@@ -166,7 +166,8 @@ class RefusesForgedNegatives(unittest.TestCase):
     def test_claiming_unresolvable_when_a_plan_exists_is_refused(self):
         case = load("adaptive-beats-fixed-case.json")
         report = producer.build(case)
-        forged = {"state": "unresolvable_by_declared_questions",
+        forged = {"artifact_id": planner.ARTIFACT_ID, "version": planner.REPORT_VERSION,
+                  "state": "unresolvable_by_declared_questions",
                   "enclosure": report["enclosure"],
                   "improvement_criterion": report["decision"]["improvement_criterion"],
                   "witness_cell": ["b_only", "c_only"], "reason": "invented"}
@@ -178,7 +179,8 @@ class RefusesForgedNegatives(unittest.TestCase):
         """Retained defect: version 0.1.0 described zero worlds this way."""
         case = load("open-two-anchor.json")
         report = producer.build(case)
-        forged = {"state": "unresolvable_by_declared_questions",
+        forged = {"artifact_id": planner.ARTIFACT_ID, "version": planner.REPORT_VERSION,
+                  "state": "unresolvable_by_declared_questions",
                   "enclosure": report["enclosure"],
                   "improvement_criterion": report["decision"]["improvement_criterion"],
                   "indistinguishable_world_groups": [], "witness_cell": [],
@@ -198,7 +200,8 @@ class RefusesForgedNegatives(unittest.TestCase):
     def test_no_admitted_reference_is_refused_when_worlds_exist(self):
         case = load("adaptive-beats-fixed-case.json")
         report = producer.build(case)
-        forged = {"state": "no_admitted_reference", "reason": "invented",
+        forged = {"artifact_id": planner.ARTIFACT_ID, "version": planner.REPORT_VERSION,
+                  "state": "no_admitted_reference", "reason": "invented",
                   "enclosure": report["enclosure"],
                   "improvement_criterion": report["decision"]["improvement_criterion"]}
         with self.assertRaises(checker.PlanRefused) as caught:
@@ -284,6 +287,50 @@ class TheSixConsumerForgeries(unittest.TestCase):
         self.assertIn(honest["version"], checker.ACCEPTED_REPORT_VERSIONS)
         forged = dict(honest, version="0.2.0")
         self.assertIn("interface version", self.refuse(case, forged))
+
+    def test_seven_a_decided_and_divisible_witness_is_refused_on_a_blocked_report(self):
+        """Consumer probe: 0.2.0 checked the obstruction premises for a geometry
+        ambiguity and for no other state, so a blocked report could name a cell
+        that was both decided and separated by a permitted question."""
+        case = load("constructed-withheld-witness.json")
+        honest = planner.plan(case)
+        self.assertEqual(honest["state"], "blocked_by_unanswerable_questions")
+        forged = dict(honest, witness_cell=["w1", "w2"],
+                      withheld_questions=[{"anchor": "anchor_a", "object": "Y"}])
+        self.assertEqual(checker._criterion(case, {"w1", "w2"}), "supported")
+        with self.assertRaises(checker.PlanRefused) as caught:
+            checker.check(case, forged)
+        self.assertIn("witnesses no obstruction", str(caught.exception))
+
+    def test_seven_b_a_separable_witness_is_refused_even_when_undecided(self):
+        case = load("constructed-withheld-witness.json")
+        honest = planner.plan(case)
+        forged = dict(honest, witness_cell=["w0", "w2"],
+                      withheld_questions=[{"anchor": "anchor_a", "object": "Y"}])
+        with self.assertRaises(checker.PlanRefused) as caught:
+            checker.check(case, forged)
+        self.assertIn("witnesses no obstruction", str(caught.exception))
+
+    def test_eight_a_report_without_identity_is_refused(self):
+        """Consumer probe: absent artifact_id and version were accepted."""
+        case = load("adaptive-beats-fixed-case.json")
+        honest = planner.plan(case)
+        for missing, phrase in (("artifact_id", "declares no artifact_id"),
+                                ("version", "declares no interface version")):
+            forged = {k: v for k, v in honest.items() if k != missing}
+            with self.subTest(missing=missing):
+                with self.assertRaises(checker.PlanRefused) as caught:
+                    checker.check(case, forged)
+                self.assertIn(phrase, str(caught.exception))
+
+    def test_every_witnessed_state_shares_one_obstruction_contract(self):
+        """The premises are checked in one place so no state can omit them."""
+        source = open(os.path.join(os.path.dirname(os.path.abspath(checker.__file__)),
+                                   "check_resolution_plan.py"), encoding="utf-8").read()
+        call_sites = source.count("_verify_obstruction(case, cell, questions")
+        definitions = source.count("def _verify_obstruction(")
+        self.assertEqual(definitions, 1)
+        self.assertEqual(call_sites - definitions, 4)
 
     def test_the_three_honest_reports_are_still_accepted(self):
         for name in ("open-two-anchor.json", "adaptive-beats-fixed-case.json",
