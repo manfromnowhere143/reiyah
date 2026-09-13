@@ -1,7 +1,7 @@
 {
   "artifact_id": "reiyah.fable.lane-status",
   "branch": "research/2026-09-10-moment-cone",
-  "checkpoint_source": "afda1ba8c2e0dcdde6e456e863740bf61c488bd4, reviewed as label-free-recovery-0.1.0",
+  "checkpoint_source": "aea2730a6e149bf40bbe53684b68f3f2b3954580, extended with the raw association experiment",
   "costs": {
     "gate_b_check": "PASS 0 failing",
     "measurement_tests": "537 in tools/measure, about 62 s"
@@ -13,10 +13,15 @@
     "empirically, ordinary Jaccard reproduces the coefficient's ordering in 270 of 270 pairwise comparisons in this lane's own retained counts",
     "therefore the coefficient earns nothing over ordinary overlap for the ordering claim, and this lane should stop implying otherwise",
     "withdrawn: the label free margin being wider does not establish stronger evidence, because the two views were never at matched marginals. Actual label free miss fractions are 0.238, 0.299 and 0.363 against the annotated 0.300, 0.400 and 0.500",
-    "the association caveat is moved into the result sentence: the caches hold only annotation matched detections, so this is an ablation conditional on that association"
+    "the association caveat is moved into the result sentence: the caches hold only annotation matched detections, so this is an ablation conditional on that association",
+    "the recommended forward experiment is done: an annotation inaccessible constructor over the two original prediction submissions, opening those two files and nothing else, with the boundary asserted by a test over the module's own json literals",
+    "on raw two channel detections with the annotation inaccessible the sign of the dependence coefficient is NOT identified: m_star = x*y/w spans 11,771 to 162,021 across defensible score and radius choices, a ratio of 13.8",
+    "at score 0.2 and radius 1 m, positive coupling would require 162,021 unseen objects against 134,565 the public annotation records at all, which makes it implausible rather than merely unproven",
+    "the ordinary overlap baseline shares this exactly, since its intersection count is the same w, so this is a property of the two channel annotation free setting and not of one statistic",
+    "the five channel modality comparison is declared unresolved on raw inputs rather than approximated, because two submissions give no third observer"
   ],
   "lane": "independent research and conventional comparator",
-  "next_falsifier": "Build an annotation inaccessible constructor over the two original prediction submissions, megvii_val and mapillary_val, with a declared association rule, and show whether it supports any conclusion the overlap baseline does not. Two channels give no third observer, so the modality comparison is out of reach there and must be declared unresolved rather than approximated.",
+  "next_falsifier": "Either a third already authorized original prediction submission, which would populate the empty both-missed cell and make the sign identifiable on raw inputs, or an externally justified association rule that does not come from annotations. Without one of those, no scalar over these two channels can support a sign, and this lane should not produce one.",
   "open_and_unowned": [
     "the Engine comparison remains [-8,8] with no admitted human references",
     "external scientific review and reviewer usability evidence are missing",

@@ -1,0 +1,92 @@
+{
+  "annotated_population_for_scale_only": 134565,
+  "annotated_population_note": "used only to express m_star as a fraction, after the table was built. It enters no threshold, no filter and no association",
+  "artifact_id": "reiyah.raw-association.counts",
+  "association_rule": "same class, one to one, nearest neighbour within tau metres in the submitted global frame, unmatched detections retained and visible",
+  "constructor": "tools/measure/raw_association.py",
+  "grid": [
+    {
+      "both_channels": 63836,
+      "first_only": 127465,
+      "score_minimum": 0.2,
+      "second_only": 81142,
+      "tau": 1.0
+    },
+    {
+      "both_channels": 85845,
+      "first_only": 105456,
+      "score_minimum": 0.2,
+      "second_only": 59133,
+      "tau": 2.0
+    },
+    {
+      "both_channels": 99233,
+      "first_only": 92068,
+      "score_minimum": 0.2,
+      "second_only": 45745,
+      "tau": 4.0
+    },
+    {
+      "both_channels": 50614,
+      "first_only": 69258,
+      "score_minimum": 0.3,
+      "second_only": 52416,
+      "tau": 1.0
+    },
+    {
+      "both_channels": 65889,
+      "first_only": 53983,
+      "score_minimum": 0.3,
+      "second_only": 37141,
+      "tau": 2.0
+    },
+    {
+      "both_channels": 73846,
+      "first_only": 46026,
+      "score_minimum": 0.3,
+      "second_only": 29184,
+      "tau": 4.0
+    },
+    {
+      "both_channels": 25501,
+      "first_only": 34366,
+      "score_minimum": 0.5,
+      "second_only": 22942,
+      "tau": 1.0
+    },
+    {
+      "both_channels": 31314,
+      "first_only": 28553,
+      "score_minimum": 0.5,
+      "second_only": 17129,
+      "tau": 2.0
+    },
+    {
+      "both_channels": 33494,
+      "first_only": 26373,
+      "score_minimum": 0.5,
+      "second_only": 14949,
+      "tau": 4.0
+    }
+  ],
+  "information_boundary": {
+    "excluded": [
+      "any annotation or ground truth file",
+      "any matched_* cache, which contains only annotation matched detections",
+      "any frame list, class filter or score threshold chosen by inspecting annotations",
+      "any association rule tuned against annotations"
+    ],
+    "opened": [
+      "megvii_val.json",
+      "mapillary_val.json"
+    ]
+  },
+  "source_provenance": {
+    "sha256": {
+      "mapillary_val.json": "f948e9778fb9a332d748f7e504fbade04f0c00c2699d7b0af757cacdbd567e99",
+      "megvii_val.json": "e7a995c31692ac95a86b56208e0b5d82a4ab908df8d0a9b9474d70adb693eab4"
+    },
+    "state": "exposed nuScenes validation submissions, retained originals, no payload redistributed"
+  },
+  "version": "0.1.0"
+}
