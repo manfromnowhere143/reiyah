@@ -1,4 +1,5 @@
 """Tests for the bounded correction model over an observed capture table."""
+from fractions import Fraction
 import os
 import random
 import sys
@@ -235,6 +236,115 @@ class ACoefficientCertificateIsNotAnIntegrationDecision(unittest.TestCase):
                 entry = report["joint_worlds"][0]["anchors"][0]
                 self.assertIn("base_certificate", entry)
                 self.assertIn("augmented_certificate", entry)
+
+
+class TheBreakdownNumberNeedsNoDeclaredBudget(unittest.TestCase):
+    """Inverting the question removes the input nobody could verify.
+
+    A declared correction budget has to be defended, and one smaller than reality
+    gives a confident wrong answer. The breakdown number asks instead how many
+    recorded objects would have to be wrong, in the most damaging combination,
+    before the claim fails. An observation programme can judge that against its
+    own process rather than committing to a budget in advance.
+    """
+
+    def test_the_sign_survives_eleven_wrong_objects_in_any_combination(self):
+        result = robust.breakdown(RETAINED, moves=robust.ADVERSE_FOR_THE_SIGN)
+        self.assertEqual(result["breakdown_number"], 12)
+        self.assertEqual(result["of_how_many_recorded_objects"], 73)
+
+    def test_mixing_beats_every_single_kind_of_error(self):
+        """A per kind tolerance is not a breakdown number, and here it is off by one."""
+        twelve_one_way = dict(RETAINED)
+        twelve_one_way["u"] -= 12
+        twelve_one_way["x"] += 12
+        self.assertTrue(robust.settles_the_sign(twelve_one_way))
+
+        six_and_six = dict(RETAINED)
+        six_and_six["u"] -= 12
+        six_and_six["x"] += 6
+        six_and_six["y"] += 6
+        self.assertFalse(robust.settles_the_sign(six_and_six))
+
+    def test_every_minimal_attack_on_the_sign_splits_the_pair_misses(self):
+        result = robust.breakdown(RETAINED, moves=robust.ADVERSE_FOR_THE_SIGN)
+        for attack in result["minimal_breaking_corrections"]:
+            with self.subTest(attack=attack["corrections"]):
+                self.assertEqual(set(attack["corrections"]), {"u_to_x", "u_to_y"})
+                self.assertEqual(sum(attack["corrections"].values()), 12)
+
+    def test_restricting_to_adverse_moves_is_verified_not_assumed(self):
+        """The full twelve move search returns the same number, 200 times slower."""
+        full = robust.breakdown(RETAINED)
+        restricted = robust.breakdown(RETAINED, moves=robust.ADVERSE_FOR_THE_SIGN)
+        self.assertEqual(full["breakdown_number"], restricted["breakdown_number"])
+        self.assertGreater(full["allocations_examined"],
+                           100 * restricted["allocations_examined"])
+
+    def test_a_claim_already_false_needs_no_correction(self):
+        result = robust.breakdown({"w": 1, "x": 5, "y": 5, "u": 1})
+        self.assertEqual(result["state"], "already_false")
+
+    def test_exhaustion_is_unresolved_and_never_impossibility(self):
+        original = robust.MAX_BREAKDOWN_ALLOCATIONS
+        robust.MAX_BREAKDOWN_ALLOCATIONS = 20
+        try:
+            result = robust.breakdown(RETAINED)
+            self.assertEqual(result["state"], "unresolved")
+            self.assertIn("not a statement that no breakdown exists", result["reason"])
+        finally:
+            robust.MAX_BREAKDOWN_ALLOCATIONS = original
+
+
+class RobustnessIsClaimRelative(unittest.TestCase):
+    """The sign and the quantitative constant are threatened by opposite errors.
+
+    Definition 32 asks for a constant, not a sign, so this is the robustness that
+    an RSS style argument actually depends on, and it is the fragile one.
+    """
+
+    def constant_breakdown(self, constant):
+        return robust.breakdown(RETAINED, constant=constant, ceiling=12)
+
+    def test_the_observed_constant_breaks_at_a_single_wrong_object(self):
+        observed = robust.supremum_over_unseen(RETAINED)
+        self.assertEqual(observed, Fraction(1679, 1188))
+        self.assertEqual(self.constant_breakdown(observed)["breakdown_number"], 1)
+
+    def test_a_tight_constant_is_far_more_fragile_than_the_sign(self):
+        sign = robust.breakdown(RETAINED, moves=robust.ADVERSE_FOR_THE_SIGN)["breakdown_number"]
+        constant = self.constant_breakdown(Fraction(3, 2))["breakdown_number"]
+        self.assertEqual(constant, 2)
+        self.assertLess(constant, sign / 5)
+
+    def test_a_looser_constant_buys_robustness(self):
+        numbers = [self.constant_breakdown(k)["breakdown_number"]
+                   for k in (Fraction(3, 2), Fraction(8, 5), Fraction(2))]
+        self.assertEqual(numbers, sorted(numbers))
+        self.assertEqual(numbers, [2, 4, 10])
+
+    def test_the_same_correction_helps_the_sign_and_destroys_the_constant(self):
+        """x_to_w raises the margin and raises the coefficient at once."""
+        moved = dict(RETAINED)
+        moved["x"] -= 2
+        moved["w"] += 2
+        before = RETAINED["w"] * RETAINED["u"] - RETAINED["x"] * RETAINED["y"]
+        after = moved["w"] * moved["u"] - moved["x"] * moved["y"]
+        self.assertGreater(after, before)
+        self.assertGreater(robust.supremum_over_unseen(moved), Fraction(3, 2))
+        self.assertLess(robust.supremum_over_unseen(RETAINED), Fraction(3, 2))
+
+    def test_the_cheapest_attacks_on_the_two_claims_are_different_moves(self):
+        sign = robust.breakdown(RETAINED, moves=robust.ADVERSE_FOR_THE_SIGN)
+        constant = self.constant_breakdown(Fraction(3, 2))
+        sign_moves = set(sign["minimal_breaking_corrections"][0]["corrections"])
+        constant_moves = set(constant["minimal_breaking_corrections"][0]["corrections"])
+        self.assertFalse(sign_moves & constant_moves)
+
+    def test_the_adverse_restriction_is_not_applied_to_a_constant_claim(self):
+        """It is only sound for the sign, and the constant search must not use it."""
+        result = self.constant_breakdown(Fraction(3, 2))
+        self.assertIn("x_to_w", result["moves_searched"])
 
 
 if __name__ == "__main__":

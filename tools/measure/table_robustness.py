@@ -45,18 +45,33 @@ reported as one.
 
 Exact integer arithmetic, standard library only, no data read, no probability.
 """
+from fractions import Fraction
 from itertools import product
 import json
 import os
 import sys
 
-VERSION = "0.1.0"
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import joint_miss_identification as identification  # noqa: E402
+
+VERSION = "0.2.0"
 MAX_TABLES = 4_000_000
 
 # Each allowance names objects leaving one cell for another, or leaving entirely.
 MOVES = (("u", "x"), ("u", "y"), ("w", "x"), ("w", "y"),
          ("x", "w"), ("y", "w"), ("x", "u"), ("y", "u"),
          ("w", None), ("x", None), ("y", None), ("u", None))
+
+# For the SIGN claim an adversary only ever moves objects out of the two cells
+# that support it, because the other six corrections strictly raise the margin.
+# That is a verified optimisation, not an assumption: the default search uses all
+# twelve moves, and a test asserts the restricted search returns the same
+# breakdown number. The restriction is NOT valid for a declared constant claim,
+# where the adversary wants to raise the coefficient rather than lower a margin,
+# so it is never applied there.
+ADVERSE_FOR_THE_SIGN = (("u", "x"), ("u", "y"), ("w", "x"), ("w", "y"),
+                        ("u", None), ("w", None))
+MAX_BREAKDOWN_ALLOCATIONS = 5_000_000
 
 
 class BudgetError(Exception):
@@ -144,6 +159,118 @@ def admissible_tables(observed, budget):
         if any(value < 0 for value in table.values()):
             continue
         yield table, applied
+
+
+def supremum_over_unseen(table):
+    """The smallest constant c admissible for this table, over every unseen count."""
+    counts = {}
+    if table["w"]:
+        counts[(1, 1, 0)] = table["w"]
+    if table["x"]:
+        counts[(1, 0, 0)] = table["x"]
+    if table["y"]:
+        counts[(0, 1, 0)] = table["y"]
+    if table["u"]:
+        counts[(0, 0, 1)] = table["u"]
+    if not counts:
+        return None
+    parts = identification.margins(counts)
+    span = identification.range_over(parts, 0, None)
+    if span.get("state") != "computed":
+        return None
+    return Fraction(span["supremum"])
+
+
+def _holds(table, constant):
+    """The claim under attack: the sign, or a declared Definition 32 constant."""
+    if constant is None:
+        return table["w"] * table["u"] > table["x"] * table["y"]
+    reached = supremum_over_unseen(table)
+    return reached is not None and reached <= constant
+
+
+def _allocations(total, slots):
+    """Every way to split `total` objects across `slots` correction kinds."""
+    if slots == 1:
+        yield (total,)
+        return
+    for first in range(total + 1):
+        for rest in _allocations(total - first, slots - 1):
+            yield (first,) + rest
+
+
+def _apply(observed, allocation, moves):
+    table = dict(observed)
+    for (source, target), amount in zip(moves, allocation):
+        if not amount:
+            continue
+        table[source] -= amount
+        if target:
+            table[target] += amount
+    return table
+
+
+def breakdown(observed, constant=None, ceiling=None, moves=None):
+    """The fewest wrong objects that could destroy the claim, with no budget declared.
+
+    A declared correction budget is an input someone has to defend, and a budget
+    smaller than reality gives a confident wrong answer. Inverting the question
+    removes that dependence: instead of asking whether a claim survives a budget,
+    this asks how many objects would have to be wrong, in the most damaging
+    combination, before it fails. An observation programme can then judge whether
+    that many errors is plausible, which is a question about its own process
+    rather than a number it must commit to in advance.
+
+    Returns the breakdown number and every minimal allocation achieving it. They
+    are minimal by construction, because no smaller total breaks the claim.
+    """
+    for cell in "wxyu":
+        _count(cell, observed[cell])
+    if not _holds(observed, constant):
+        return {"state": "already_false",
+                "reason": ("the claim does not hold on the observed table itself, so no correction "
+                           "is needed to destroy it")}
+    moves = tuple(moves) if moves else MOVES
+    limit = ceiling if ceiling is not None else sum(observed[cell] for cell in "wxyu")
+    examined = 0
+    for total in range(1, limit + 1):
+        breaking = []
+        for allocation in _allocations(total, len(moves)):
+            examined += 1
+            if examined > MAX_BREAKDOWN_ALLOCATIONS:
+                return {"state": "unresolved",
+                        "reason": (f"the search passed {MAX_BREAKDOWN_ALLOCATIONS} allocations "
+                                   "without reaching a breakdown. This is a resource limit on "
+                                   "this search, not a statement that no breakdown exists"),
+                        "searched_up_to_total": total}
+            leaving = {cell: 0 for cell in "wxyu"}
+            for (source, _), amount in zip(moves, allocation):
+                leaving[source] += amount
+            if any(leaving[cell] > observed[cell] for cell in "wxyu"):
+                continue
+            table = _apply(observed, allocation, moves)
+            if not _holds(table, constant):
+                breaking.append({
+                    "corrections": {move_name(s, t): n
+                                    for (s, t), n in zip(moves, allocation) if n},
+                    "table": table,
+                    "margin": table["w"] * table["u"] - table["x"] * table["y"]})
+        if breaking:
+            return {"state": "computed",
+                    "breakdown_number": total,
+                    "of_how_many_recorded_objects": sum(observed[c] for c in "wxyu"),
+                    "minimal_breaking_corrections": breaking,
+                    "allocations_examined": examined,
+                    "moves_searched": [move_name(s, t) for s, t in moves],
+                    "claim": ("c > 1 for every unseen count" if constant is None
+                              else f"c <= {constant} for every unseen count"),
+                    "reading": (f"the claim fails only if at least {total} recorded objects are "
+                                "wrong, in one of the combinations listed. Fewer than that, in any "
+                                "combination, leaves it standing")}
+    return {"state": "no_breakdown_within_the_searched_range",
+            "reason": (f"no combination of up to {limit} corrections destroys the claim. The "
+                       "search range is the objects available to move, so this is a complete "
+                       "answer for the adverse moves modelled")}
 
 
 def analyse(observed, budget):

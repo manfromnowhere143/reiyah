@@ -2,7 +2,10 @@
 
 Document ID: `reiyah.table-robustness.2026-09-13`
 
-Version: `0.1.0`
+Version: `0.2.0`
+
+Supersedes `0.1.0` of the same document ID. It removes the declared budget from the critical path and
+refines one number this lane published one commit earlier.
 
 Lifecycle status: `proposed`
 
@@ -92,6 +95,70 @@ and only then removes the rest. **A model that jittered each count on its own wo
 Nothing here invents an error budget, a sampling frame, a probability or a human judgement. The
 budget is an input, defended by whoever declares it, and the module refuses to run without one.
 
+## Removing the budget from the critical path
+
+Version 0.1.0 closed by naming its own open obligation: **nothing verifies that a declared
+correction budget is large enough, and a budget smaller than reality gives a confident wrong
+answer.** A required input that nobody can check is a weakness, so the question is inverted.
+
+Instead of asking whether a claim survives a declared budget, ask **how many recorded objects would
+have to be wrong, in the most damaging combination, before the claim fails**. That number needs no
+budget. An observation programme can weigh it against its own process, which is a question it is
+competent to answer, rather than committing to a budget in advance.
+
+On the retained table, of 73 recorded objects:
+
+```
+the sign  c > 1  fails only if at least 12 of them are wrong,
+and only in a combination that splits the pair misses between both channels.
+```
+
+The search is over every allocation of corrections across all twelve move kinds, so no direction is
+assumed away. Restricting to the six that can damage the sign returns the same number in 18,563
+allocations instead of 2,704,155, and that restriction is **asserted as a test rather than taken on
+trust**, because it is sound for the sign and not for the constant claim below.
+
+## Correction: a per kind tolerance is not a breakdown number
+
+Version 0.1.0 published the tolerance table above and it remains correct as stated: twelve
+misassociations into `x` alone are survivable, and the thirteenth breaks the sign. It would be wrong
+to read that as "the conclusion tolerates twelve wrong objects". **It tolerates eleven.**
+
+Twelve objects moved from `u` to `x` leave the sign standing. Twelve objects split six into `x` and
+six into `y` do not. The reason is that the right hand side is a product: balancing the growth
+between `x` and `y` maximises `x * y`, so a mixed attack is strictly more damaging than any single
+kind. Every minimal breaking attack on the sign is such a split, and none is a single kind.
+
+This is why the exhaustive search earns its cost over the per kind table. The per kind numbers are
+each true about their own kind and understate the attack by one when read together.
+
+## The quantitative claim is an order of magnitude more fragile
+
+Definition 32 asks for a **constant**, not a sign, so the robustness an RSS style argument depends on
+is the robustness of the constant. It is far worse.
+
+| claim | breakdown | cheapest attack |
+|---|---|---|
+| `c > 1`, the sign | **12** of 73 | 5 pair misses into `x`, 7 into `y` |
+| `c <= 1679/1188`, the observed constant | **1** | one pair miss object was ineligible |
+| `c <= 3/2` | **2** | 2 single captures were really joint captures |
+| `c <= 8/5` | 4 | the same move |
+| `c <= 2` | 10 | the same move |
+| `c <= 3` | more than 12 | none found within 12 |
+
+Two things follow, and the second is the one worth carrying.
+
+A tight constant is destroyed by **two** wrong objects where the sign needs twelve. A programme that
+reported the sign as robust and then quoted the constant as though the same robustness applied would
+be wrong by a factor of six on this table.
+
+And the two claims are threatened by **opposite errors**. The cheapest attack on the sign moves pair
+misses into single captures. The cheapest attack on the constant moves single captures into joint
+captures, and that move **raises** the sign margin from `491` to `563` while pushing the coefficient
+from `1679/1188` past `3/2`. The correction that most strengthens one claim is the one that destroys
+the other. An observation programme cannot verify "the errors that matter" without first saying which
+claim it is defending, and the two verification tasks are not the same task.
+
 ## A coefficient certificate is not an integration decision
 
 `ghost-burden-none` and `ghost-burden-three` have the **same capture table**: the same object captured
@@ -149,8 +216,10 @@ with no admitted reference.
 python3 -B -m unittest discover -s tools/measure -p 'test_table_robustness.py'
 ```
 
-Nineteen tests, about 0.06 seconds. Exact integer arithmetic, standard library only, no data read,
-no probability.
+Thirty six tests, about 20 seconds, the bulk of it the full twelve move search that verifies the six
+move restriction. Exact integer and rational arithmetic, standard library only, no data read, no
+probability. The breakdown search returns `unresolved` when it passes its allocation cap, because a
+resource limit is not an impossibility result.
 
 ## Non-claims
 
