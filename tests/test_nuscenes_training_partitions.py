@@ -1,4 +1,5 @@
 """Counterexamples for cross-partition references and altered metadata values."""
+from contextlib import closing
 import copy
 from decimal import Decimal
 import json
@@ -102,12 +103,13 @@ class NuScenesPartitionTests(unittest.TestCase):
                 rows["sample_data"].append(copy.deepcopy(rows["sample_data"][0]))
             with self.subTest(label=label), self.assertRaises((ValueError, sqlite3.IntegrityError)):
                 self.index(rows, label + ".sqlite")
-            with sqlite3.connect(self.root / (label + ".sqlite")) as db:
+            with closing(sqlite3.connect(self.root / (label + ".sqlite"))) as db:
                 self.assertEqual(db.execute("SELECT name FROM sqlite_master WHERE name='provenance'").fetchall(), [])
 
     def test_cross_partition_temporal_reference_is_rejected_even_if_target_exists_globally(self):
         path = self.index()
-        with sqlite3.connect(path) as db:
+        # Commit the adversarial mutation before closing the fixture connection.
+        with closing(sqlite3.connect(path)) as db, db:
             db.execute("UPDATE sample_data SET prev=? WHERE token=?", (builder.CHANNELS[0] + "v0", builder.CHANNELS[0] + "u0"))
         with self.assertRaisesRegex(ValueError, "reference outside subset: sample_data.prev"):
             self.subset(path)

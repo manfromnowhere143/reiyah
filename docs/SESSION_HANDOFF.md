@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.1`
+Version: `0.1.2`
 
 Lifecycle status: `exploratory`
 
@@ -23,8 +23,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This reference-identity checkpoint starts from main
-`61d290bb77dca41b9af0198b3254d2d359e32942`, tree `514667222dfe9862d602e2b142188ed72aad10ba`.
+uncommitted ownership before acting. This fixture-lifetime checkpoint starts from main
+`8e3e55d5cd4a28ea5f838a85722bf615ade88339`, tree `270418531fe2c9f9fe2d3cb5aff37104c6f2bf61`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -63,7 +63,10 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 | Is the native viewing procedure ready? | [Checked preparation](PERCEPTION_VIEWER_PREPARATION_2026-09-13.md), [output custody](PERCEPTION_VIEWER_CUSTODY_2026-09-13.md) and [selection boundary](PERCEPTION_SELECTION_EVIDENCE_2026-09-13.md) retain source identity and original indices. Background imports, programmatic selections and pixel checks are not interactive or human observations. |
 | Are Fable's requested checker repairs accepted? | The [matching-trace consumer review](PERCEPTION_MATCHING_TRACE_2026-09-13.md) accepts only selected `5762ac01a157a3603181df1486df8a836d711f06` bytes and retained probes. Broader robustness claims were not adopted. Earlier defects remain historical evidence. |
 
-The latest repository suite passed **399 tests** on the exact reference-identity candidate sources.
+The latest full repository suite passed **399 tests** at the reference-identity checkpoint above.
+The subsequent [database-lifetime trace](PERCEPTION_CATALOG_LIFETIME_2026-09-13.md) locates its four
+SQLite warnings in test fixtures. Only those fixture scopes changed; the affected **12 tests**
+were rerun and passed without resource warnings. No new tests or production changes were added.
 The **93 measurement tests** remain retained from their earlier exact source bindings, not newly
 replayed; their 107 source files were rechecked. [Reference-identity verification](../research/perception-reference-identity/0.1.0/verification.json)
 records sources, outputs, first failures, repairs, costs and limits. The source-to-common example
