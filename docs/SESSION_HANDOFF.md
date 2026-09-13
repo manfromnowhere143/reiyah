@@ -1,3 +1,30 @@
+# Review-workflow output separation, 2026-09-13
+
+Read the [checkpoint](PERCEPTION_OUTPUT_SEPARATION_2026-09-13.md),
+[complete workflow reproduction](../research/perception-output-separation/0.1.0/README.md) and
+[verification](../research/perception-output-separation/0.1.0/verification.json).
+Seven Engine writers now reject filesystem aliases into protected source directories.
+Nine actual synthetic bypasses and 18 existing rejection controls are retained; all 27 cases
+now meet their rejection/source-preservation expectations. One shared directory-identity
+helper also serves discovery. A rejected new package may retain empty partial directories,
+but no payloads, private custody file or completion seal. The stable-filesystem limit is explicit.
+
+All 364 repository tests and 93 measurement tests pass, including 34 focused tests. No schema,
+comparison model, frozen protocol or Fable source/ref/status/outbox changed. Older source digests
+remain bound to their historical commits. Continue from `engine-output-separation-2026-09-13`
+in a fresh candidate. Next: test whether viewer exports/extractions can contaminate a source
+package, before changing its package-location/input contract. Do not duplicate Fable's work.
+
+Actual participant return, interactive usability, independent human references and external
+scientific review remain missing. The ready exercise is preserved; no unchanged bootstrap
+was retried. Real bounds remain [-8,8]; Gate A is unaccepted. The physical study is unrun with
+no cohort or seed. P005 is operator-reported published; no further publication or outreach.
+The authorized autonomous Engine work window continues; this is a bounded checkpoint.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Discovery package custody, 2026-09-13
 
 Read the [checkpoint](PERCEPTION_DISCOVERY_CUSTODY_2026-09-13.md),

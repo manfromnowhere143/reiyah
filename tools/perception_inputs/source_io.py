@@ -1,10 +1,11 @@
-"""Bounded source snapshots and strict incremental JSON container framing."""
+"""Bounded source snapshots, private output paths and strict JSON framing."""
 from contextlib import contextmanager
 import codecs
 from decimal import Decimal, InvalidOperation
 import hashlib
 import json
 import os
+from pathlib import Path
 import stat
 import tempfile
 
@@ -17,6 +18,22 @@ MAX_VALUE_BYTES = 1 << 20
 def require(condition, code, detail):
     if not condition:
         raise Invalid(code, detail)
+
+
+def private_output_path(output, forbidden_directories, code, detail):
+    """Resolve an output outside existing source directories on a stable filesystem.
+
+    Directory identities catch case aliases as well as symlinks. Returning the
+    resolved parent avoids following a subsequently retargeted parent symlink;
+    concurrent directory replacement and mount changes are outside this guard.
+    """
+    target = Path(output)
+    parent = target.parent.resolve(strict=True)
+    ancestors = [p.stat() for p in (parent, *parent.parents)]
+    for directory in forbidden_directories:
+        identity = Path(directory).stat()
+        require(not any(os.path.samestat(a, identity) for a in ancestors), code, detail)
+    return parent / target.name
 
 
 def digest_value(value):

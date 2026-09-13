@@ -9,7 +9,7 @@ from tools.perception_decision.cli import atomic_write
 from tools.perception_decision.contract import Invalid, encoded, parse
 from tools.perception_geometry.bind import read
 from tools.perception_inputs.sensors import CHANNELS
-from tools.perception_inputs.source_io import digest_value, require
+from tools.perception_inputs.source_io import digest_value, private_output_path, require
 from tools.perception_windows import payloads
 from tools.perception_windows.__main__ import runtime
 from tools.perception_windows.timeline import relative_path
@@ -223,6 +223,11 @@ def build(request, output, custody):
     try:
         output.mkdir(mode=0o700)
         (output/'assets').mkdir(mode=0o700)
+        # The prospective output now exists, so directory identity can reject
+        # case aliases missed by the preliminary lexical check. Failure leaves
+        # only an unsealed partial directory, before any disclosure/custody write.
+        custody = private_output_path(custody, (output,), 'OBS_CUSTODY',
+                                      'Custody must be outside the disclosure directory')
         mapping = []
         for record, (token, row) in zip(manifest['captures'], source_rows.items()):
             spec = assets.get(row['filename'])

@@ -14,7 +14,7 @@ from tools import perception_admission as admission, perception_binding as bindi
 from tools import perception_operands as operands
 from tools.perception_decision import contract
 from tools.perception_decision.cli import atomic_write
-from tools.perception_inputs.source_io import require
+from tools.perception_inputs.source_io import private_output_path, require
 
 ROOT = Path(__file__).resolve().parent.parent
 GUIDES = ROOT/'research/perception-reviewed-operands/0.1.0'
@@ -181,9 +181,8 @@ def destination(output, inputs):
     request = contract.parse(operands.checked_bytes(inputs['binding_request'],
         inputs['binding_request_sha256'], binding.REQUEST_LIMIT))
     binding.request_contract(request)
-    for forbidden in (ROOT, Path(inputs['assistance']).resolve(), Path(request['package']['path']).resolve()):
-        require(not output.resolve().is_relative_to(forbidden), 'REVIEWED_OUTPUT', 'Output overlaps code or source inputs')
-    return output
+    return private_output_path(output, (ROOT, inputs['assistance'], request['package']['path']),
+                               'REVIEWED_OUTPUT', 'Output overlaps code or source inputs')
 
 
 def run(output, **inputs):

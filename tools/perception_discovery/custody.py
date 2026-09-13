@@ -6,7 +6,7 @@ from pathlib import Path
 
 from tools.perception_decision.cli import atomic_write
 from tools.perception_decision.contract import encoded, load, parse
-from tools.perception_inputs.source_io import digest_value, require
+from tools.perception_inputs.source_io import digest_value, private_output_path, require
 from tools.perception_observation import package as observations
 from tools.perception_observation.contract import closed
 from . import records
@@ -31,16 +31,8 @@ def manifest(path, expected_seal):
 
 
 def private_output(package, output):
-    """Keep review files outside the evidence tree on a stable local filesystem."""
-    target = Path(output)
-    parent = target.parent.resolve(strict=True)
-    package_identity = Path(package).stat()
-    # Path spelling alone misses case aliases on case-insensitive filesystems.
-    require(not any(os.path.samestat(p.stat(), package_identity) for p in (parent, *parent.parents)),
-            'DISCOVERY_PRIVATE_OUTPUT', 'Discovery records must remain outside the observation package')
-    # Do not follow a subsequently retargeted output-parent symlink at write time.
-    # This is not protection against concurrent directory replacement or mounts.
-    return parent / target.name
+    return private_output_path(output, (package,), 'DISCOVERY_PRIVATE_OUTPUT',
+                               'Discovery records must remain outside the observation package')
 
 
 def make_draft(package, expected_seal, record_id, output):

@@ -18,7 +18,7 @@ from tools.perception_decision.cli import atomic_write
 from tools.perception_discovery.custody import manifest as verified_manifest
 from tools.perception_geometry.bind import read, source
 from tools.perception_inputs.clock import identity, timestamp
-from tools.perception_inputs.source_io import digest_value, require, snapshot
+from tools.perception_inputs.source_io import digest_value, private_output_path, require, snapshot
 from tools.perception_observation import contract, formats, package
 from tools.perception_windows import payloads
 
@@ -215,8 +215,8 @@ def run(request_path, expected, output):
     require(not os.path.lexists(output), 'OUTPUT_EXISTS', 'Binding report identity already exists')
     request = decision.load(request_path, expected, REQUEST_LIMIT, validate_input=False)
     request_contract(request)
-    require(not Path(output).resolve().is_relative_to(Path(request['package']['path']).resolve()),
-            'BINDING_PRIVATE_OUTPUT', 'Private binding report must be outside the observation package')
+    output = private_output_path(output, (request['package']['path'],), 'BINDING_PRIVATE_OUTPUT',
+                                 'Private binding report must be outside the observation package')
     report = build(request)
     decision.load(request_path, expected, REQUEST_LIMIT, validate_input=False)
     report['request_file_sha256'] = expected

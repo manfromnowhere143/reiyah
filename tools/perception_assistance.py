@@ -11,7 +11,7 @@ from tools.perception_decision import contract as decision, nuscenes
 from tools.perception_decision.cli import atomic_write
 from tools.perception_discovery import custody
 from tools.perception_geometry.bind import read
-from tools.perception_inputs.source_io import require, snapshot
+from tools.perception_inputs.source_io import private_output_path, require, snapshot
 from tools.perception_observation import package
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -152,8 +152,8 @@ def run(request_path, expected, base_label, output):
     require(not os.path.lexists(output), 'OUTPUT_EXISTS', 'Refuse an existing preparation identity')
     request = decision.load(request_path, expected, binding.REQUEST_LIMIT, validate_input=False)
     binding.request_contract(request)
-    for forbidden in (ROOT, Path(request['package']['path']).resolve()):
-        require(not output.resolve().is_relative_to(forbidden), 'ASSISTANCE_OUTPUT', 'Output must be outside code and source package')
+    output = private_output_path(output, (ROOT, request['package']['path']), 'ASSISTANCE_OUTPUT',
+                                 'Output must be outside code and source package')
     files, context = materialize(request, base_label)
     decision.load(request_path, expected, binding.REQUEST_LIMIT, validate_input=False)
     receipt = {'artifact_id': 'reiyah.perception-assistance.preparation', 'version': '0.1.0',

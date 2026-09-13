@@ -1,0 +1,452 @@
+{
+  "actual_human_records_created": 0,
+  "after_bindings": {
+    "byte_size": 14369,
+    "sha256": "81aacfa7ce26eb1cdf4c026b78e4741c77e0750bed90bc016c40d71d48c9a554"
+  },
+  "after_source_sha256": "1b37991c52387686b7b49a4a1544ee0d30cefae8554ca05a11cb12e902bd6733",
+  "artifact_id": "reiyah.output-separation.verification",
+  "assumptions": [
+    "Stable local directory hierarchy",
+    "Existing protected directories at final identity check",
+    "No concurrent directory replacement, mount change or privileged mutation"
+  ],
+  "baseline": "Direct source inventories and fresh existing package/assistance verification against separately retained expected identities",
+  "before_bindings": {
+    "byte_size": 14189,
+    "sha256": "c5c2b926d9a172c703650d74e356b6c8289655d96c5404b8027bd2a933c34a03"
+  },
+  "before_source_sha256": "f27146d67cae65f3f11bb6e53f7770f5d2c6dc004e8e46d8f025e6dfba4ed719",
+  "bound_source_files_after": 79,
+  "bound_source_files_before": 78,
+  "case_alias_bypasses_before": 9,
+  "cases_skipped_on_this_host": 0,
+  "checks": {
+    "measurement-tests": {
+      "child_max_rss_bytes_macos": 71581696,
+      "elapsed_seconds": 5.988826249958947,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "8d83726e585c0c7eb418892c8da550acd10e486c4f1e9c680982324928712832"
+    },
+    "repository-tests": {
+      "child_max_rss_bytes_macos": 160153600,
+      "elapsed_seconds": 51.14362850005273,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "b11e604789a8e0292bc2efe50267a5ac4813b933de083eafe5bfb66ac5f8d4b1"
+    },
+    "repro-after": {
+      "child_max_rss_bytes_macos": 63553536,
+      "elapsed_seconds": 12.20054920797702,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "d70595d85d8b461f110c5d254dd13006973e4b4a5b9dfcb9554fea955b540f74"
+    },
+    "repro-before": {
+      "child_max_rss_bytes_macos": 62390272,
+      "elapsed_seconds": 12.51181458402425,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "374fdd9fd62b68a7b44901a5d2747123d62691b76919d7f559103e5881e653ad"
+    },
+    "targeted-after": {
+      "child_max_rss_bytes_macos": 68616192,
+      "elapsed_seconds": 13.058838207973167,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "31ec6170e3e26dc47313a661d81230a3091ac1c43825d191680ef36cbb807afc"
+    }
+  },
+  "complete_workflow_cases": [
+    {
+      "after_operation": "BINDING_PRIVATE_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "BINDING_PRIVATE_OUTPUT",
+      "before_verification": "verified",
+      "case": "binding-package-direct",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "BINDING_PRIVATE_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "BINDING_PRIVATE_OUTPUT",
+      "before_verification": "verified",
+      "case": "binding-package-symlink",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "BINDING_PRIVATE_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 1,
+      "before_operation": "succeeded",
+      "before_verification": "OBS_FILE_SET",
+      "case": "binding-package-case_alias",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "ADMISSION_PRIVATE_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "ADMISSION_PRIVATE_OUTPUT",
+      "before_verification": "verified",
+      "case": "admission-package-direct",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "ADMISSION_PRIVATE_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "ADMISSION_PRIVATE_OUTPUT",
+      "before_verification": "verified",
+      "case": "admission-package-symlink",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "ADMISSION_PRIVATE_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 1,
+      "before_operation": "succeeded",
+      "before_verification": "OBS_FILE_SET",
+      "case": "admission-package-case_alias",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "REHEARSAL_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "REHEARSAL_OUTPUT",
+      "before_verification": "verified",
+      "case": "rehearsal-package-direct",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "REHEARSAL_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "REHEARSAL_OUTPUT",
+      "before_verification": "verified",
+      "case": "rehearsal-package-symlink",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "REHEARSAL_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 23,
+      "before_operation": "succeeded",
+      "before_verification": "OBS_FILE_SET",
+      "case": "rehearsal-package-case_alias",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "ASSISTANCE_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "ASSISTANCE_OUTPUT",
+      "before_verification": "verified",
+      "case": "assistance-package-direct",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "ASSISTANCE_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "ASSISTANCE_OUTPUT",
+      "before_verification": "verified",
+      "case": "assistance-package-symlink",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "ASSISTANCE_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 10,
+      "before_operation": "succeeded",
+      "before_verification": "OBS_FILE_SET",
+      "case": "assistance-package-case_alias",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "OPERANDS_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "OPERANDS_OUTPUT",
+      "before_verification": "verified",
+      "case": "operands-package-direct",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "OPERANDS_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "OPERANDS_OUTPUT",
+      "before_verification": "verified",
+      "case": "operands-package-symlink",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "OPERANDS_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 11,
+      "before_operation": "succeeded",
+      "before_verification": "OBS_FILE_SET",
+      "case": "operands-package-case_alias",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "REVIEWED_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "REVIEWED_OUTPUT",
+      "before_verification": "verified",
+      "case": "reviewed-package-direct",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "REVIEWED_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "REVIEWED_OUTPUT",
+      "before_verification": "verified",
+      "case": "reviewed-package-symlink",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "REVIEWED_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 13,
+      "before_operation": "succeeded",
+      "before_verification": "OBS_FILE_SET",
+      "case": "reviewed-package-case_alias",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "OPERANDS_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "OPERANDS_OUTPUT",
+      "before_verification": "verified",
+      "case": "operands-assistance-direct",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "OPERANDS_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "OPERANDS_OUTPUT",
+      "before_verification": "verified",
+      "case": "operands-assistance-symlink",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "OPERANDS_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 11,
+      "before_operation": "succeeded",
+      "before_verification": "OPERANDS_ASSISTANCE",
+      "case": "operands-assistance-case_alias",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "REVIEWED_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "REVIEWED_OUTPUT",
+      "before_verification": "verified",
+      "case": "reviewed-assistance-direct",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "REVIEWED_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 0,
+      "before_operation": "REVIEWED_OUTPUT",
+      "before_verification": "verified",
+      "case": "reviewed-assistance-symlink",
+      "original_files_modified": []
+    },
+    {
+      "after_operation": "REVIEWED_OUTPUT",
+      "after_output_exists": false,
+      "after_source_unchanged": true,
+      "after_verification": "verified",
+      "before_added_entries": 13,
+      "before_operation": "succeeded",
+      "before_verification": "OPERANDS_ASSISTANCE",
+      "case": "reviewed-assistance-case_alias",
+      "original_files_modified": []
+    },
+    {
+      "after_completion_seal": false,
+      "after_files_written": 0,
+      "after_operation": "OBS_CUSTODY",
+      "after_partial_directories": [],
+      "after_verification": "unsealed",
+      "before_files_written": 0,
+      "before_operation": "OBS_CUSTODY",
+      "before_verification": "unsealed",
+      "case": "observation-new-package-direct"
+    },
+    {
+      "after_completion_seal": false,
+      "after_files_written": 0,
+      "after_operation": "OBS_CUSTODY",
+      "after_partial_directories": [],
+      "after_verification": "unsealed",
+      "before_files_written": 0,
+      "before_operation": "OBS_CUSTODY",
+      "before_verification": "unsealed",
+      "case": "observation-new-package-symlink"
+    },
+    {
+      "after_completion_seal": false,
+      "after_files_written": 0,
+      "after_operation": "OBS_CUSTODY",
+      "after_partial_directories": [
+        "assets"
+      ],
+      "after_verification": "unsealed",
+      "before_files_written": 74,
+      "before_operation": "succeeded",
+      "before_verification": "OBS_FILE_SET",
+      "case": "observation-new-package-case_alias"
+    }
+  ],
+  "cost_limit": "Elapsed times include interpreter startup and complete synthetic fixtures. Parallel processes shared the host. No human effort or relative performance is inferred.",
+  "date": "2026-09-13",
+  "decision": "Use one shared directory-identity guard; check prospective disclosure output after directory creation and before writing any file",
+  "determinism_limit": "Actual local seal clocks and temporary source paths vary, so returned.json and some assistance inventories do not have deterministic bytes. The compact result table excludes those fields.",
+  "external_scientific_review": "missing",
+  "fable_changes_consumed": false,
+  "fable_source_or_ref_mutations": false,
+  "focused_tests_passed": 34,
+  "gate_a": "unaccepted",
+  "human_reference_judgments": "missing",
+  "interactive_observation": "not_performed",
+  "mathematical_model_changed": false,
+  "measurement_tests_passed": 93,
+  "new_tests": 5,
+  "next_falsifier": "Test whether existing viewer export/extraction output placement can contaminate a source package before changing its input contract",
+  "partial_output": "A rejected new observation preparation can retain empty root/assets directories, with no payload, custody file or completion seal",
+  "physical_study": "unrun; no selected cohort or seed",
+  "primary_reading": {
+    "access": "Public official documentation; ordinary unauthenticated HTTPS retrieval",
+    "accessed_utc": "2026-09-13T06:09:46.002844+00:00",
+    "artifact_id": "reiyah.discovery-custody.primary-reading",
+    "claim_limit": "Path semantics only; not a security guarantee against concurrent filesystem renames",
+    "custody": "Full pages retained privately for reproducibility; no payload redistribution in Git",
+    "files": [
+      {
+        "byte_size": 266954,
+        "content_type": "text/html",
+        "etag": "\"6aa62f15-412ca\"",
+        "last_modified": "Sun, 13 Sep 2026 05:05:25 GMT",
+        "path": "pathlib.html",
+        "resolved_url": "https://docs.python.org/3.14/library/pathlib.html",
+        "sha256": "1dbdb04f1dd6eb5fa990694112d1487f91610688405508649052e15667ae5279",
+        "status": 200,
+        "url": "https://docs.python.org/3.14/library/pathlib.html"
+      },
+      {
+        "byte_size": 90844,
+        "content_type": "text/html",
+        "etag": "\"6aa62f13-162dc\"",
+        "last_modified": "Sun, 13 Sep 2026 05:05:23 GMT",
+        "path": "python-license.html",
+        "resolved_url": "https://docs.python.org/3.14/license.html",
+        "sha256": "fdbdc1951dd84d5dabf12556bf9e52e8fc8810cdef26dca0ab5c7dbb79b94811",
+        "status": 200,
+        "url": "https://docs.python.org/3.14/license.html"
+      }
+    ],
+    "license_reference": "https://docs.python.org/3.14/license.html",
+    "purpose": "Path.resolve follows symlinks and eliminates dot-dot; is_relative_to is lexical and needs resolved inputs",
+    "source_version": "Python documentation 3.14 series; fetched page title retained in bytes. Actual local runtime recorded separately.",
+    "version": "0.1.0"
+  },
+  "private_checkpoint": "engine-output-separation-2026-09-13",
+  "publication": "P005 operator-reported published; no further publication or outreach",
+  "question": "Can private outputs enter protected source directories through filesystem aliases?",
+  "real_bounds": [
+    "-8",
+    "8"
+  ],
+  "repository_tests_passed": 364,
+  "reproducer": {
+    "byte_size": 9846,
+    "path": "research/perception-output-separation/0.1.0/reproduce.py",
+    "sha256": "27f6bce326e3b165f606ebd8fa89748fdbc17ae14eb35160df607d41e6bef4e0"
+  },
+  "reproducer_unchanged_between_before_and_after": true,
+  "result_identities": {
+    "after": {
+      "byte_size": 9956,
+      "sha256": "09156169c1e8947c017cc2c276bfba07dbb03bccddd8162f730ede33af382cf0"
+    },
+    "before": {
+      "byte_size": 15851,
+      "sha256": "73dbd52b4ed481c3a1b49347b161e9bf6b7c842f6bf56375eccbcfc7de0c37c4"
+    }
+  },
+  "retained_warnings": "Existing SQLite ResourceWarnings remain in the full passing repository transcript; origin not traced here",
+  "runtime_selection": {
+    "files_rechecked": 4219,
+    "interpreter_relative_path": "private/runtime/bin/python",
+    "inventory_relative_path": "private/RUNTIME_INVENTORY_FINAL.json",
+    "inventory_sha256": "f2e111e1364ddcf4727b213738cd7c5a8e48de81000aea0c8448f7275b9b79a4",
+    "source_packet": "engine-discovery-custody-2026-09-13",
+    "use": "Read-only execution with PYTHONPATH empty and bytecode disabled; no installation into the closed task runtime"
+  },
+  "schemas_changed": false,
+  "shared_guard": "tools/perception_inputs/source_io.py:private_output_path",
+  "source_main": "7fd06ea8adfb9370e486e78a6ea50f8ea33aec72",
+  "unchanged_direct_and_symlink_controls": 18,
+  "version": "0.1.0"
+}

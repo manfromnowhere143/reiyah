@@ -17,7 +17,7 @@ from tools.perception_decision import contract as decision
 from tools.perception_decision.cli import atomic_write
 from tools.perception_discovery import custody
 from tools.perception_geometry.bind import read
-from tools.perception_inputs.source_io import digest_value, require, snapshot
+from tools.perception_inputs.source_io import digest_value, private_output_path, require, snapshot
 from tools.perception_observation import contract
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -259,8 +259,8 @@ def run(request_path, expected, assistance_path, preparation_digest, output):
     require(not os.path.lexists(output), 'OUTPUT_EXISTS', 'Refuse an existing preparation identity')
     request = decision.load(request_path, expected, binding.REQUEST_LIMIT, validate_input=False)
     binding.request_contract(request)
-    for forbidden in (ROOT, Path(assistance_path).resolve(), Path(request['package']['path']).resolve()):
-        require(not output.resolve().is_relative_to(forbidden), 'OPERANDS_OUTPUT', 'Output overlaps code or source inputs')
+    output = private_output_path(output, (ROOT, assistance_path, request['package']['path']),
+                                 'OPERANDS_OUTPUT', 'Output overlaps code or source inputs')
     try:
         original, receipt = load_assistance(assistance_path, preparation_digest, expected)
         files, context = materialize(request, original, receipt)

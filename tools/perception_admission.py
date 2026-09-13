@@ -12,7 +12,7 @@ from tools.perception_decision.cli import atomic_write
 from tools.perception_discovery import custody, records
 from tools.perception_geometry.bind import read, source
 from tools.perception_inputs.clock import identity
-from tools.perception_inputs.source_io import digest_value, require, snapshot
+from tools.perception_inputs.source_io import digest_value, private_output_path, require, snapshot
 from tools.perception_observation.contract import closed
 
 VERSION = '0.1.0'
@@ -298,8 +298,8 @@ def run(request_path, expected, output):
     request_contract(request)
     binding_request = read(request['binding_request'], binding.REQUEST_LIMIT)
     binding.request_contract(binding_request)
-    require(not Path(output).resolve().is_relative_to(Path(binding_request['package']['path']).resolve()),
-            'ADMISSION_PRIVATE_OUTPUT', 'Review contents must remain outside the observation package')
+    output = private_output_path(output, (binding_request['package']['path'],), 'ADMISSION_PRIVATE_OUTPUT',
+                                 'Review contents must remain outside the observation package')
     report = build(request)
     contract.load(request_path, expected, REQUEST_LIMIT, validate_input=False)
     report['request_file_sha256'] = expected

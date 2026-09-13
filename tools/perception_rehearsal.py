@@ -16,7 +16,7 @@ from tools.perception_decision import contract as decision
 from tools.perception_decision.cli import atomic_write
 from tools.perception_discovery import custody, records
 from tools.perception_inputs.sensors import CHANNELS
-from tools.perception_inputs.source_io import require, snapshot
+from tools.perception_inputs.source_io import private_output_path, require, snapshot
 from tools.perception_observation import package
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -126,10 +126,9 @@ def run(request_path, expected, rehearsal_id, output):
     require(not os.path.lexists(output), 'OUTPUT_EXISTS', 'Preparation identity already exists')
     request = decision.load(request_path, expected, binding.REQUEST_LIMIT, validate_input=False)
     binding.request_contract(request)
-    for forbidden in (ROOT, Path(request['package']['path']).resolve()):
-        require(not output.resolve().is_relative_to(forbidden), 'REHEARSAL_OUTPUT',
-                'Preparation must be outside the source tree and observation package')
     require(output.parent.is_dir(), 'REHEARSAL_OUTPUT', 'Output parent must already exist')
+    output = private_output_path(output, (ROOT, request['package']['path']), 'REHEARSAL_OUTPUT',
+                                 'Preparation must be outside the source tree and observation package')
     files, context = materialize(request, rehearsal_id)
     decision.load(request_path, expected, binding.REQUEST_LIMIT, validate_input=False)
     receipt = {'artifact_id': 'reiyah.perception-rehearsal.preparation', 'version': '0.1.0',
