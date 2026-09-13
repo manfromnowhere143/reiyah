@@ -2,7 +2,10 @@
 
 Document ID: `reiyah.label-free-recovery.2026-09-13`
 
-Version: `0.1.0`
+Version: `0.2.0`
+
+Supersedes `0.1.0`. It withdraws the wider margin claim and moves the association caveat into the
+result sentence.
 
 Lifecycle status: `proposed`
 
@@ -23,6 +26,23 @@ without labels can actually do. The annotation supplies nothing.
 
 Every comparison is same modality against cross modality **inside one matched operating point**,
 never across them, because clause 4 of `docs/ESTIMAND_RSS_DEFINITION_32.md` forbids the latter.
+
+## Correction, before the result
+
+Two corrections from an Engine consumer review, both reproduced here.
+
+**The wider margin claim is withdrawn.** The two views were never at matched marginals. The label
+free rows sit at actual miss fractions of `0.238`, `0.299` and `0.363` against the annotated `0.300`,
+`0.400` and `0.500`, on smaller per pair populations. A wider margin across different marginals and
+populations establishes nothing. See `reiyah.overlap-parity.2026-09-13`.
+
+**Ordinary Jaccard overlap reproduces this ordering in all 270 available comparisons.** For the
+ordering claim, the coefficient earns nothing over the conventional baseline.
+
+**And the caveat belongs here, not in a later paragraph:** the retained caches contain only detections
+matched to annotated objects, so annotation based membership, correspondence and unmatched detection
+filtering remain in the inputs. What follows is a useful ablation **conditional on that association**,
+not an end to end annotation free measurement.
 
 ## The result: two of three
 

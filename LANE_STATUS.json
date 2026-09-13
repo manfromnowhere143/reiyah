@@ -1,46 +1,35 @@
 {
   "artifact_id": "reiyah.fable.lane-status",
   "branch": "research/2026-09-10-moment-cone",
+  "checkpoint_source": "afda1ba8c2e0dcdde6e456e863740bf61c488bd4, reviewed as label-free-recovery-0.1.0",
   "costs": {
-    "bound_then_search": "18,563 allocations, about 38 ms, same answer",
-    "full_twelve_move_enumeration": "2,704,155 allocations, about 8 s",
-    "measurement_tests": "438 in tools/measure, about 62 s"
+    "gate_b_check": "PASS 0 failing",
+    "measurement_tests": "537 in tools/measure, about 62 s"
   },
   "date": "2026-09-13",
   "established_this_checkpoint": [
-    "the coupling ordering can be reached from channel agreement alone, with the annotation supplying neither the population nor the joint miss cell, and with thresholds matched on the label free population",
-    "two of three matched operating points recover it, and where they do the label free margin is wider than the annotated one, +0.658 against +0.352 and +0.194 against +0.117",
-    "it fails at exactly one point, 0.50, which is where the annotated margin was +0.004 and had already been flagged as too thin to carry weight",
-    "the limitation that matters: the retained caches hold only detections that matched an annotated object, so this removes the annotation from the population and the joint miss cell and NOT from the association between channels"
+    "derived independently: under an exactly matched universe, ordering by the coefficient equals ordering by intersection size for every common unseen count, since c1-c2 = (N+m)(w1-w2)/(d+m)^2",
+    "Jaccard induces the same ordering at k>0, checked on 4000 random configurations with no disagreement",
+    "empirically, ordinary Jaccard reproduces the coefficient's ordering in 270 of 270 pairwise comparisons in this lane's own retained counts",
+    "therefore the coefficient earns nothing over ordinary overlap for the ordering claim, and this lane should stop implying otherwise",
+    "withdrawn: the label free margin being wider does not establish stronger evidence, because the two views were never at matched marginals. Actual label free miss fractions are 0.238, 0.299 and 0.363 against the annotated 0.300, 0.400 and 0.500",
+    "the association caveat is moved into the result sentence: the caches hold only annotation matched detections, so this is an ablation conditional on that association"
   ],
   "lane": "independent research and conventional comparator",
-  "next_falsifier": "Raw detections from two or more channels over a shared log, associated across channels without reference to any annotation, with the annotation held back until afterwards. That single input decides whether the method runs on unlabelled fleet logs or only on benchmarks.",
-  "not_owned": [
-    "admission, common operands, custody and output guards, viewer integration",
-    "shared README and session handoff, main integration",
-    "the tail lane and the Console"
-  ],
+  "next_falsifier": "Build an annotation inaccessible constructor over the two original prediction submissions, megvii_val and mapillary_val, with a declared association rule, and show whether it supports any conclusion the overlap baseline does not. Two channels give no third observer, so the modality comparison is out of reach there and must be declared unresolved rather than approximated.",
   "open_and_unowned": [
-    "human reference judgments, participant usability evidence, external scientific review",
-    "the two-window comparison remains [-8, 8] with no admitted reference",
+    "the Engine comparison remains [-8,8] with no admitted human references",
+    "external scientific review and reviewer usability evidence are missing",
     "Gate A unaccepted; the physical study unselected and unrun"
   ],
-  "owned_files": [
-    "tools/measure/cohort_packet.py and its checker and tests",
-    "tools/measure/resolution_plan.py, check_resolution_plan.py and their tests",
-    "tools/measure/observation_value.py, conventional_comparator.py, worst_group.py",
-    "tools/measure/admission_sensitivity.py, gain_monotonicity.py, joint_miss_identification.py",
-    "research/cohort-packet/0.1.0/, research/joint-miss-identification/0.1.0/",
-    "docs/ files whose document ID begins reiyah.moment-cone, reiyah.resolution-plan, reiyah.conventional-comparator, reiyah.worst-group, reiyah.admission-sensitivity, reiyah.joint-miss-identification"
-  ],
-  "owner_identity": "Daniel Wahnich",
-  "question": "What does an added observer contribute to a detector integration decision, what assumptions carry that conclusion, and what must be observed before relying on it?",
-  "selected_source_for_this_checkpoint": "9f09f5e30ee8ad4de259fcaf74f3dd4bc0e07a2a",
-  "version": "0.1.0",
-  "what_the_separate_checker_verifies": [
-    "every fact a plan report states, recomputed from the cohort packet",
-    "witness identity, distinctness and both obstruction premises on the named cell",
-    "each state's own premise, and the report's declared interface identity",
-    "it does NOT verify the reason text, the answer model, or the search node count"
+  "question": "does this lane's dependence coefficient earn anything over a competent conventional analyst using ordinary set overlap, and what survives of the label free result",
+  "version": "0.2.0",
+  "what_survives": "the label free view reaches the same ordering as the annotated view at two of three operating points; the credit belongs to channel agreement, which ordinary overlap also captures",
+  "where_value_must_now_be_earned": [
+    "faithful source preparation from the two available original prediction submissions",
+    "useful abstention",
+    "sensitivity to association error, bounded in theory and never measured",
+    "a cheaper review procedure measured against an analyst given the same overlap",
+    "a better integration choice under the additive detector loss"
   ]
 }
