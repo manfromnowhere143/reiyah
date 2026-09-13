@@ -51,6 +51,8 @@ Python's `Fraction` and integer arithmetic.
 
 | `detector-moved-reaches` and `detector-moved-misses` | verdict flips `supported` to `excluded`, asserted share stays `1` | one admitted reading and the same reference objects in both. Only one added detection moves. Retained as the counterexample to this lane's claim that a decisive verdict is carried entirely by the admission decision |
 
+| `ghost-burden-none` and `ghost-burden-three` | `supported` at `+1` against `excluded` at `-2` | the same capture table in both: the same object captured by both channels, the same `tp_base` and `tp_augmented`. Only the false positive burden differs. Retained to show that a dependence coefficient certificate does not determine the integration decision |
+
 `answer-prerequisites.json` records which questions have a defined measurement, at what stage each
 may be asked, and what is missing. Presence questions are supported. Reachability, calibration and
 timing questions are not, and each is recorded as a named missing prerequisite rather than assumed.
