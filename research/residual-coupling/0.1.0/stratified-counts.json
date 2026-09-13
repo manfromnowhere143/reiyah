@@ -1,0 +1,2404 @@
+{
+  "artifact_id": "reiyah.residual-coupling.counts",
+  "channels": [
+    {
+      "modality": "lidar",
+      "name": "centerpoint"
+    },
+    {
+      "modality": "camera",
+      "name": "fcos3d"
+    },
+    {
+      "modality": "camera",
+      "name": "mapillary"
+    },
+    {
+      "modality": "lidar",
+      "name": "megvii"
+    },
+    {
+      "modality": "lidar",
+      "name": "pointpillars"
+    }
+  ],
+  "pairs": [
+    {
+      "both_missed": 9315,
+      "first": "centerpoint",
+      "first_missed": 14938,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "population": 134565,
+      "second": "fcos3d",
+      "second_missed": 31070,
+      "strata": {
+        "annotated_visibility": {
+          "cells": [
+            {
+              "both_missed": 6054,
+              "first_missed": 8537,
+              "level": "v0-40",
+              "objects": 32113,
+              "second_missed": 14621
+            },
+            {
+              "both_missed": 836,
+              "first_missed": 1513,
+              "level": "v40-60",
+              "objects": 13757,
+              "second_missed": 3644
+            },
+            {
+              "both_missed": 1006,
+              "first_missed": 1797,
+              "level": "v60-80",
+              "objects": 18650,
+              "second_missed": 4022
+            },
+            {
+              "both_missed": 1419,
+              "first_missed": 3091,
+              "level": "v80-100",
+              "objects": 70045,
+              "second_missed": 8783
+            }
+          ],
+          "levels": 4
+        },
+        "lidar_return_density": {
+          "cells": [
+            {
+              "both_missed": 4804,
+              "first_missed": 7292,
+              "level": "0",
+              "objects": 16162,
+              "second_missed": 7981
+            },
+            {
+              "both_missed": 2530,
+              "first_missed": 4248,
+              "level": "1-5",
+              "objects": 41293,
+              "second_missed": 12040
+            },
+            {
+              "both_missed": 608,
+              "first_missed": 1074,
+              "level": "21-100",
+              "objects": 26670,
+              "second_missed": 3485
+            },
+            {
+              "both_missed": 1231,
+              "first_missed": 1944,
+              "level": "6-20",
+              "objects": 32906,
+              "second_missed": 6494
+            },
+            {
+              "both_missed": 142,
+              "first_missed": 380,
+              "level": "over-100",
+              "objects": 17534,
+              "second_missed": 1070
+            }
+          ],
+          "levels": 5
+        },
+        "object_class": {
+          "cells": [
+            {
+              "both_missed": 1115,
+              "first_missed": 1498,
+              "level": "barrier",
+              "objects": 16911,
+              "second_missed": 2805
+            },
+            {
+              "both_missed": 286,
+              "first_missed": 480,
+              "level": "bicycle",
+              "objects": 2060,
+              "second_missed": 770
+            },
+            {
+              "both_missed": 202,
+              "first_missed": 307,
+              "level": "bus",
+              "objects": 2085,
+              "second_missed": 634
+            },
+            {
+              "both_missed": 3169,
+              "first_missed": 5733,
+              "level": "car",
+              "objects": 59522,
+              "second_missed": 11244
+            },
+            {
+              "both_missed": 627,
+              "first_missed": 769,
+              "level": "construction_vehicle",
+              "objects": 1599,
+              "second_missed": 1077
+            },
+            {
+              "both_missed": 239,
+              "first_missed": 339,
+              "level": "motorcycle",
+              "objects": 2009,
+              "second_missed": 767
+            },
+            {
+              "both_missed": 1365,
+              "first_missed": 1870,
+              "level": "pedestrian",
+              "objects": 25678,
+              "second_missed": 7426
+            },
+            {
+              "both_missed": 643,
+              "first_missed": 1322,
+              "level": "traffic_cone",
+              "objects": 12491,
+              "second_missed": 1828
+            },
+            {
+              "both_missed": 597,
+              "first_missed": 764,
+              "level": "trailer",
+              "objects": 2446,
+              "second_missed": 1347
+            },
+            {
+              "both_missed": 1072,
+              "first_missed": 1856,
+              "level": "truck",
+              "objects": 9764,
+              "second_missed": 3172
+            }
+          ],
+          "levels": 10
+        },
+        "physical_difficulty_combined": {
+          "expected_under_conditional_independence": "3267482804990366149643188437119001843568586365056122866225142285230489191443745470621566752520930783749952610118056598101099311/531664228137853447483362503469517537862712500489289939340592341168773111026990419392931912388167386577925192487701208432000",
+          "levels": 100,
+          "note": "sufficient statistics only; the cell table is large",
+          "observed_joint_miss": 9315
+        },
+        "range_from_ego": {
+          "cells": [
+            {
+              "both_missed": 242,
+              "first_missed": 418,
+              "level": "0-10",
+              "objects": 15938,
+              "second_missed": 1372
+            },
+            {
+              "both_missed": 1482,
+              "first_missed": 2540,
+              "level": "10-20",
+              "objects": 38686,
+              "second_missed": 5149
+            },
+            {
+              "both_missed": 2456,
+              "first_missed": 3773,
+              "level": "20-30",
+              "objects": 38243,
+              "second_missed": 9066
+            },
+            {
+              "both_missed": 2706,
+              "first_missed": 4215,
+              "level": "30-40",
+              "objects": 26386,
+              "second_missed": 9260
+            },
+            {
+              "both_missed": 2429,
+              "first_missed": 3992,
+              "level": "40-50",
+              "objects": 15312,
+              "second_missed": 6223
+            }
+          ],
+          "levels": 5
+        },
+        "scene_condition": {
+          "cells": [
+            {
+              "both_missed": 7728,
+              "first_missed": 12318,
+              "level": "clear",
+              "objects": 108404,
+              "second_missed": 25330
+            },
+            {
+              "both_missed": 211,
+              "first_missed": 298,
+              "level": "night",
+              "objects": 3468,
+              "second_missed": 1031
+            },
+            {
+              "both_missed": 1376,
+              "first_missed": 2322,
+              "level": "rain",
+              "objects": 22693,
+              "second_missed": 4709
+            }
+          ],
+          "levels": 3
+        }
+      }
+    },
+    {
+      "both_missed": 9565,
+      "first": "centerpoint",
+      "first_missed": 14938,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "population": 134565,
+      "second": "mapillary",
+      "second_missed": 32787,
+      "strata": {
+        "annotated_visibility": {
+          "cells": [
+            {
+              "both_missed": 6290,
+              "first_missed": 8537,
+              "level": "v0-40",
+              "objects": 32113,
+              "second_missed": 15267
+            },
+            {
+              "both_missed": 834,
+              "first_missed": 1513,
+              "level": "v40-60",
+              "objects": 13757,
+              "second_missed": 3721
+            },
+            {
+              "both_missed": 987,
+              "first_missed": 1797,
+              "level": "v60-80",
+              "objects": 18650,
+              "second_missed": 4083
+            },
+            {
+              "both_missed": 1454,
+              "first_missed": 3091,
+              "level": "v80-100",
+              "objects": 70045,
+              "second_missed": 9716
+            }
+          ],
+          "levels": 4
+        },
+        "lidar_return_density": {
+          "cells": [
+            {
+              "both_missed": 5156,
+              "first_missed": 7292,
+              "level": "0",
+              "objects": 16162,
+              "second_missed": 8734
+            },
+            {
+              "both_missed": 2440,
+              "first_missed": 4248,
+              "level": "1-5",
+              "objects": 41293,
+              "second_missed": 12604
+            },
+            {
+              "both_missed": 611,
+              "first_missed": 1074,
+              "level": "21-100",
+              "objects": 26670,
+              "second_missed": 3760
+            },
+            {
+              "both_missed": 1157,
+              "first_missed": 1944,
+              "level": "6-20",
+              "objects": 32906,
+              "second_missed": 6076
+            },
+            {
+              "both_missed": 201,
+              "first_missed": 380,
+              "level": "over-100",
+              "objects": 17534,
+              "second_missed": 1613
+            }
+          ],
+          "levels": 5
+        },
+        "object_class": {
+          "cells": [
+            {
+              "both_missed": 883,
+              "first_missed": 1498,
+              "level": "barrier",
+              "objects": 16911,
+              "second_missed": 2236
+            },
+            {
+              "both_missed": 275,
+              "first_missed": 480,
+              "level": "bicycle",
+              "objects": 2060,
+              "second_missed": 683
+            },
+            {
+              "both_missed": 206,
+              "first_missed": 307,
+              "level": "bus",
+              "objects": 2085,
+              "second_missed": 779
+            },
+            {
+              "both_missed": 3645,
+              "first_missed": 5733,
+              "level": "car",
+              "objects": 59522,
+              "second_missed": 13350
+            },
+            {
+              "both_missed": 627,
+              "first_missed": 769,
+              "level": "construction_vehicle",
+              "objects": 1599,
+              "second_missed": 1084
+            },
+            {
+              "both_missed": 203,
+              "first_missed": 339,
+              "level": "motorcycle",
+              "objects": 2009,
+              "second_missed": 619
+            },
+            {
+              "both_missed": 1215,
+              "first_missed": 1870,
+              "level": "pedestrian",
+              "objects": 25678,
+              "second_missed": 6189
+            },
+            {
+              "both_missed": 587,
+              "first_missed": 1322,
+              "level": "traffic_cone",
+              "objects": 12491,
+              "second_missed": 2313
+            },
+            {
+              "both_missed": 637,
+              "first_missed": 764,
+              "level": "trailer",
+              "objects": 2446,
+              "second_missed": 1604
+            },
+            {
+              "both_missed": 1287,
+              "first_missed": 1856,
+              "level": "truck",
+              "objects": 9764,
+              "second_missed": 3930
+            }
+          ],
+          "levels": 10
+        },
+        "physical_difficulty_combined": {
+          "expected_under_conditional_independence": "101361115426733657549913414568362680946115629535357609613087345766407736429047502336324317311770046057071567691988109504484873/15190406518224384213810357241986215367506071442551141124016924033393517457914011982655197496804782473655005499648605955200",
+          "levels": 100,
+          "note": "sufficient statistics only; the cell table is large",
+          "observed_joint_miss": 9565
+        },
+        "range_from_ego": {
+          "cells": [
+            {
+              "both_missed": 175,
+              "first_missed": 418,
+              "level": "0-10",
+              "objects": 15938,
+              "second_missed": 1417
+            },
+            {
+              "both_missed": 1282,
+              "first_missed": 2540,
+              "level": "10-20",
+              "objects": 38686,
+              "second_missed": 4352
+            },
+            {
+              "both_missed": 2455,
+              "first_missed": 3773,
+              "level": "20-30",
+              "objects": 38243,
+              "second_missed": 9294
+            },
+            {
+              "both_missed": 2908,
+              "first_missed": 4215,
+              "level": "30-40",
+              "objects": 26386,
+              "second_missed": 10414
+            },
+            {
+              "both_missed": 2745,
+              "first_missed": 3992,
+              "level": "40-50",
+              "objects": 15312,
+              "second_missed": 7310
+            }
+          ],
+          "levels": 5
+        },
+        "scene_condition": {
+          "cells": [
+            {
+              "both_missed": 7856,
+              "first_missed": 12318,
+              "level": "clear",
+              "objects": 108404,
+              "second_missed": 26453
+            },
+            {
+              "both_missed": 219,
+              "first_missed": 298,
+              "level": "night",
+              "objects": 3468,
+              "second_missed": 1085
+            },
+            {
+              "both_missed": 1490,
+              "first_missed": 2322,
+              "level": "rain",
+              "objects": 22693,
+              "second_missed": 5249
+            }
+          ],
+          "levels": 3
+        }
+      }
+    },
+    {
+      "both_missed": 11477,
+      "first": "centerpoint",
+      "first_missed": 14938,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "population": 134565,
+      "second": "megvii",
+      "second_missed": 18091,
+      "strata": {
+        "annotated_visibility": {
+          "cells": [
+            {
+              "both_missed": 6974,
+              "first_missed": 8537,
+              "level": "v0-40",
+              "objects": 32113,
+              "second_missed": 9844
+            },
+            {
+              "both_missed": 1122,
+              "first_missed": 1513,
+              "level": "v40-60",
+              "objects": 13757,
+              "second_missed": 2017
+            },
+            {
+              "both_missed": 1316,
+              "first_missed": 1797,
+              "level": "v60-80",
+              "objects": 18650,
+              "second_missed": 2137
+            },
+            {
+              "both_missed": 2065,
+              "first_missed": 3091,
+              "level": "v80-100",
+              "objects": 70045,
+              "second_missed": 4093
+            }
+          ],
+          "levels": 4
+        },
+        "lidar_return_density": {
+          "cells": [
+            {
+              "both_missed": 6195,
+              "first_missed": 7292,
+              "level": "0",
+              "objects": 16162,
+              "second_missed": 7884
+            },
+            {
+              "both_missed": 3092,
+              "first_missed": 4248,
+              "level": "1-5",
+              "objects": 41293,
+              "second_missed": 6044
+            },
+            {
+              "both_missed": 662,
+              "first_missed": 1074,
+              "level": "21-100",
+              "objects": 26670,
+              "second_missed": 1286
+            },
+            {
+              "both_missed": 1333,
+              "first_missed": 1944,
+              "level": "6-20",
+              "objects": 32906,
+              "second_missed": 2520
+            },
+            {
+              "both_missed": 195,
+              "first_missed": 380,
+              "level": "over-100",
+              "objects": 17534,
+              "second_missed": 357
+            }
+          ],
+          "levels": 5
+        },
+        "object_class": {
+          "cells": [
+            {
+              "both_missed": 1190,
+              "first_missed": 1498,
+              "level": "barrier",
+              "objects": 16911,
+              "second_missed": 1993
+            },
+            {
+              "both_missed": 367,
+              "first_missed": 480,
+              "level": "bicycle",
+              "objects": 2060,
+              "second_missed": 692
+            },
+            {
+              "both_missed": 214,
+              "first_missed": 307,
+              "level": "bus",
+              "objects": 2085,
+              "second_missed": 312
+            },
+            {
+              "both_missed": 4617,
+              "first_missed": 5733,
+              "level": "car",
+              "objects": 59522,
+              "second_missed": 6686
+            },
+            {
+              "both_missed": 587,
+              "first_missed": 769,
+              "level": "construction_vehicle",
+              "objects": 1599,
+              "second_missed": 843
+            },
+            {
+              "both_missed": 247,
+              "first_missed": 339,
+              "level": "motorcycle",
+              "objects": 2009,
+              "second_missed": 435
+            },
+            {
+              "both_missed": 1555,
+              "first_missed": 1870,
+              "level": "pedestrian",
+              "objects": 25678,
+              "second_missed": 2828
+            },
+            {
+              "both_missed": 936,
+              "first_missed": 1322,
+              "level": "traffic_cone",
+              "objects": 12491,
+              "second_missed": 1815
+            },
+            {
+              "both_missed": 554,
+              "first_missed": 764,
+              "level": "trailer",
+              "objects": 2446,
+              "second_missed": 741
+            },
+            {
+              "both_missed": 1210,
+              "first_missed": 1856,
+              "level": "truck",
+              "objects": 9764,
+              "second_missed": 1746
+            }
+          ],
+          "levels": 10
+        },
+        "physical_difficulty_combined": {
+          "expected_under_conditional_independence": "2643899789731694684146776942020366896638552257143147580801262126294588642920445442719809261640111279482039988156368407853683939/531664228137853447483362503469517537862712500489289939340592341168773111026990419392931912388167386577925192487701208432000",
+          "levels": 100,
+          "note": "sufficient statistics only; the cell table is large",
+          "observed_joint_miss": 11477
+        },
+        "range_from_ego": {
+          "cells": [
+            {
+              "both_missed": 247,
+              "first_missed": 418,
+              "level": "0-10",
+              "objects": 15938,
+              "second_missed": 566
+            },
+            {
+              "both_missed": 1836,
+              "first_missed": 2540,
+              "level": "10-20",
+              "objects": 38686,
+              "second_missed": 3077
+            },
+            {
+              "both_missed": 2857,
+              "first_missed": 3773,
+              "level": "20-30",
+              "objects": 38243,
+              "second_missed": 4903
+            },
+            {
+              "both_missed": 3352,
+              "first_missed": 4215,
+              "level": "30-40",
+              "objects": 26386,
+              "second_missed": 5070
+            },
+            {
+              "both_missed": 3185,
+              "first_missed": 3992,
+              "level": "40-50",
+              "objects": 15312,
+              "second_missed": 4475
+            }
+          ],
+          "levels": 5
+        },
+        "scene_condition": {
+          "cells": [
+            {
+              "both_missed": 9586,
+              "first_missed": 12318,
+              "level": "clear",
+              "objects": 108404,
+              "second_missed": 15052
+            },
+            {
+              "both_missed": 243,
+              "first_missed": 298,
+              "level": "night",
+              "objects": 3468,
+              "second_missed": 398
+            },
+            {
+              "both_missed": 1648,
+              "first_missed": 2322,
+              "level": "rain",
+              "objects": 22693,
+              "second_missed": 2641
+            }
+          ],
+          "levels": 3
+        }
+      }
+    },
+    {
+      "both_missed": 8548,
+      "first": "centerpoint",
+      "first_missed": 14938,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "population": 134565,
+      "second": "pointpillars",
+      "second_missed": 18760,
+      "strata": {
+        "annotated_visibility": {
+          "cells": [
+            {
+              "both_missed": 5110,
+              "first_missed": 8537,
+              "level": "v0-40",
+              "objects": 32113,
+              "second_missed": 8062
+            },
+            {
+              "both_missed": 812,
+              "first_missed": 1513,
+              "level": "v40-60",
+              "objects": 13757,
+              "second_missed": 2040
+            },
+            {
+              "both_missed": 1033,
+              "first_missed": 1797,
+              "level": "v60-80",
+              "objects": 18650,
+              "second_missed": 2518
+            },
+            {
+              "both_missed": 1593,
+              "first_missed": 3091,
+              "level": "v80-100",
+              "objects": 70045,
+              "second_missed": 6140
+            }
+          ],
+          "levels": 4
+        },
+        "lidar_return_density": {
+          "cells": [
+            {
+              "both_missed": 4175,
+              "first_missed": 7292,
+              "level": "0",
+              "objects": 16162,
+              "second_missed": 5310
+            },
+            {
+              "both_missed": 2377,
+              "first_missed": 4248,
+              "level": "1-5",
+              "objects": 41293,
+              "second_missed": 6547
+            },
+            {
+              "both_missed": 588,
+              "first_missed": 1074,
+              "level": "21-100",
+              "objects": 26670,
+              "second_missed": 2396
+            },
+            {
+              "both_missed": 1236,
+              "first_missed": 1944,
+              "level": "6-20",
+              "objects": 32906,
+              "second_missed": 3707
+            },
+            {
+              "both_missed": 172,
+              "first_missed": 380,
+              "level": "over-100",
+              "objects": 17534,
+              "second_missed": 800
+            }
+          ],
+          "levels": 5
+        },
+        "object_class": {
+          "cells": [
+            {
+              "both_missed": 907,
+              "first_missed": 1498,
+              "level": "barrier",
+              "objects": 16911,
+              "second_missed": 1967
+            },
+            {
+              "both_missed": 452,
+              "first_missed": 480,
+              "level": "bicycle",
+              "objects": 2060,
+              "second_missed": 1587
+            },
+            {
+              "both_missed": 238,
+              "first_missed": 307,
+              "level": "bus",
+              "objects": 2085,
+              "second_missed": 679
+            },
+            {
+              "both_missed": 2130,
+              "first_missed": 5733,
+              "level": "car",
+              "objects": 59522,
+              "second_missed": 2740
+            },
+            {
+              "both_missed": 598,
+              "first_missed": 769,
+              "level": "construction_vehicle",
+              "objects": 1599,
+              "second_missed": 1027
+            },
+            {
+              "both_missed": 294,
+              "first_missed": 339,
+              "level": "motorcycle",
+              "objects": 2009,
+              "second_missed": 1062
+            },
+            {
+              "both_missed": 1313,
+              "first_missed": 1870,
+              "level": "pedestrian",
+              "objects": 25678,
+              "second_missed": 3306
+            },
+            {
+              "both_missed": 772,
+              "first_missed": 1322,
+              "level": "traffic_cone",
+              "objects": 12491,
+              "second_missed": 2348
+            },
+            {
+              "both_missed": 502,
+              "first_missed": 764,
+              "level": "trailer",
+              "objects": 2446,
+              "second_missed": 956
+            },
+            {
+              "both_missed": 1342,
+              "first_missed": 1856,
+              "level": "truck",
+              "objects": 9764,
+              "second_missed": 3088
+            }
+          ],
+          "levels": 10
+        },
+        "physical_difficulty_combined": {
+          "expected_under_conditional_independence": "17276736645355608796528631154474002658889140220393322544823667696997650739591607055017164972001075553812833123135525132704819/4583312311533219374856573305771702912609590521459396028798209837661837164025779477525275106794546436016596486962941452000",
+          "levels": 100,
+          "note": "sufficient statistics only; the cell table is large",
+          "observed_joint_miss": 8548
+        },
+        "range_from_ego": {
+          "cells": [
+            {
+              "both_missed": 191,
+              "first_missed": 418,
+              "level": "0-10",
+              "objects": 15938,
+              "second_missed": 1048
+            },
+            {
+              "both_missed": 1651,
+              "first_missed": 2540,
+              "level": "10-20",
+              "objects": 38686,
+              "second_missed": 4465
+            },
+            {
+              "both_missed": 2300,
+              "first_missed": 3773,
+              "level": "20-30",
+              "objects": 38243,
+              "second_missed": 5715
+            },
+            {
+              "both_missed": 2437,
+              "first_missed": 4215,
+              "level": "30-40",
+              "objects": 26386,
+              "second_missed": 4575
+            },
+            {
+              "both_missed": 1969,
+              "first_missed": 3992,
+              "level": "40-50",
+              "objects": 15312,
+              "second_missed": 2957
+            }
+          ],
+          "levels": 5
+        },
+        "scene_condition": {
+          "cells": [
+            {
+              "both_missed": 7102,
+              "first_missed": 12318,
+              "level": "clear",
+              "objects": 108404,
+              "second_missed": 15618
+            },
+            {
+              "both_missed": 142,
+              "first_missed": 298,
+              "level": "night",
+              "objects": 3468,
+              "second_missed": 332
+            },
+            {
+              "both_missed": 1304,
+              "first_missed": 2322,
+              "level": "rain",
+              "objects": 22693,
+              "second_missed": 2810
+            }
+          ],
+          "levels": 3
+        }
+      }
+    },
+    {
+      "both_missed": 19334,
+      "first": "fcos3d",
+      "first_missed": 31070,
+      "kind": "same_modality",
+      "modalities": [
+        "camera",
+        "camera"
+      ],
+      "population": 134565,
+      "second": "mapillary",
+      "second_missed": 32787,
+      "strata": {
+        "annotated_visibility": {
+          "cells": [
+            {
+              "both_missed": 10515,
+              "first_missed": 14621,
+              "level": "v0-40",
+              "objects": 32113,
+              "second_missed": 15267
+            },
+            {
+              "both_missed": 2008,
+              "first_missed": 3644,
+              "level": "v40-60",
+              "objects": 13757,
+              "second_missed": 3721
+            },
+            {
+              "both_missed": 2209,
+              "first_missed": 4022,
+              "level": "v60-80",
+              "objects": 18650,
+              "second_missed": 4083
+            },
+            {
+              "both_missed": 4602,
+              "first_missed": 8783,
+              "level": "v80-100",
+              "objects": 70045,
+              "second_missed": 9716
+            }
+          ],
+          "levels": 4
+        },
+        "lidar_return_density": {
+          "cells": [
+            {
+              "both_missed": 6115,
+              "first_missed": 7981,
+              "level": "0",
+              "objects": 16162,
+              "second_missed": 8734
+            },
+            {
+              "both_missed": 7215,
+              "first_missed": 12040,
+              "level": "1-5",
+              "objects": 41293,
+              "second_missed": 12604
+            },
+            {
+              "both_missed": 1958,
+              "first_missed": 3485,
+              "level": "21-100",
+              "objects": 26670,
+              "second_missed": 3760
+            },
+            {
+              "both_missed": 3408,
+              "first_missed": 6494,
+              "level": "6-20",
+              "objects": 32906,
+              "second_missed": 6076
+            },
+            {
+              "both_missed": 638,
+              "first_missed": 1070,
+              "level": "over-100",
+              "objects": 17534,
+              "second_missed": 1613
+            }
+          ],
+          "levels": 5
+        },
+        "object_class": {
+          "cells": [
+            {
+              "both_missed": 1510,
+              "first_missed": 2805,
+              "level": "barrier",
+              "objects": 16911,
+              "second_missed": 2236
+            },
+            {
+              "both_missed": 541,
+              "first_missed": 770,
+              "level": "bicycle",
+              "objects": 2060,
+              "second_missed": 683
+            },
+            {
+              "both_missed": 446,
+              "first_missed": 634,
+              "level": "bus",
+              "objects": 2085,
+              "second_missed": 779
+            },
+            {
+              "both_missed": 6877,
+              "first_missed": 11244,
+              "level": "car",
+              "objects": 59522,
+              "second_missed": 13350
+            },
+            {
+              "both_missed": 897,
+              "first_missed": 1077,
+              "level": "construction_vehicle",
+              "objects": 1599,
+              "second_missed": 1084
+            },
+            {
+              "both_missed": 472,
+              "first_missed": 767,
+              "level": "motorcycle",
+              "objects": 2009,
+              "second_missed": 619
+            },
+            {
+              "both_missed": 4034,
+              "first_missed": 7426,
+              "level": "pedestrian",
+              "objects": 25678,
+              "second_missed": 6189
+            },
+            {
+              "both_missed": 1194,
+              "first_missed": 1828,
+              "level": "traffic_cone",
+              "objects": 12491,
+              "second_missed": 2313
+            },
+            {
+              "both_missed": 1089,
+              "first_missed": 1347,
+              "level": "trailer",
+              "objects": 2446,
+              "second_missed": 1604
+            },
+            {
+              "both_missed": 2274,
+              "first_missed": 3172,
+              "level": "truck",
+              "objects": 9764,
+              "second_missed": 3930
+            }
+          ],
+          "levels": 10
+        },
+        "physical_difficulty_combined": {
+          "expected_under_conditional_independence": "86252853481135914544622803586039086478487494789451983798804136946663404200274398918685598040831799090591109274087874213256524131/7336966348302377575270402547879342022505432506752201162900174308129068932172467787622460390956709934775367656330276676361600",
+          "levels": 100,
+          "note": "sufficient statistics only; the cell table is large",
+          "observed_joint_miss": 19334
+        },
+        "range_from_ego": {
+          "cells": [
+            {
+              "both_missed": 706,
+              "first_missed": 1372,
+              "level": "0-10",
+              "objects": 15938,
+              "second_missed": 1417
+            },
+            {
+              "both_missed": 2586,
+              "first_missed": 5149,
+              "level": "10-20",
+              "objects": 38686,
+              "second_missed": 4352
+            },
+            {
+              "both_missed": 5492,
+              "first_missed": 9066,
+              "level": "20-30",
+              "objects": 38243,
+              "second_missed": 9294
+            },
+            {
+              "both_missed": 6158,
+              "first_missed": 9260,
+              "level": "30-40",
+              "objects": 26386,
+              "second_missed": 10414
+            },
+            {
+              "both_missed": 4392,
+              "first_missed": 6223,
+              "level": "40-50",
+              "objects": 15312,
+              "second_missed": 7310
+            }
+          ],
+          "levels": 5
+        },
+        "scene_condition": {
+          "cells": [
+            {
+              "both_missed": 15695,
+              "first_missed": 25330,
+              "level": "clear",
+              "objects": 108404,
+              "second_missed": 26453
+            },
+            {
+              "both_missed": 680,
+              "first_missed": 1031,
+              "level": "night",
+              "objects": 3468,
+              "second_missed": 1085
+            },
+            {
+              "both_missed": 2959,
+              "first_missed": 4709,
+              "level": "rain",
+              "objects": 22693,
+              "second_missed": 5249
+            }
+          ],
+          "levels": 3
+        }
+      }
+    },
+    {
+      "both_missed": 10625,
+      "first": "fcos3d",
+      "first_missed": 31070,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "population": 134565,
+      "second": "megvii",
+      "second_missed": 18091,
+      "strata": {
+        "annotated_visibility": {
+          "cells": [
+            {
+              "both_missed": 6774,
+              "first_missed": 14621,
+              "level": "v0-40",
+              "objects": 32113,
+              "second_missed": 9844
+            },
+            {
+              "both_missed": 1032,
+              "first_missed": 3644,
+              "level": "v40-60",
+              "objects": 13757,
+              "second_missed": 2017
+            },
+            {
+              "both_missed": 1128,
+              "first_missed": 4022,
+              "level": "v60-80",
+              "objects": 18650,
+              "second_missed": 2137
+            },
+            {
+              "both_missed": 1691,
+              "first_missed": 8783,
+              "level": "v80-100",
+              "objects": 70045,
+              "second_missed": 4093
+            }
+          ],
+          "levels": 4
+        },
+        "lidar_return_density": {
+          "cells": [
+            {
+              "both_missed": 5109,
+              "first_missed": 7981,
+              "level": "0",
+              "objects": 16162,
+              "second_missed": 7884
+            },
+            {
+              "both_missed": 3288,
+              "first_missed": 12040,
+              "level": "1-5",
+              "objects": 41293,
+              "second_missed": 6044
+            },
+            {
+              "both_missed": 686,
+              "first_missed": 3485,
+              "level": "21-100",
+              "objects": 26670,
+              "second_missed": 1286
+            },
+            {
+              "both_missed": 1409,
+              "first_missed": 6494,
+              "level": "6-20",
+              "objects": 32906,
+              "second_missed": 2520
+            },
+            {
+              "both_missed": 133,
+              "first_missed": 1070,
+              "level": "over-100",
+              "objects": 17534,
+              "second_missed": 357
+            }
+          ],
+          "levels": 5
+        },
+        "object_class": {
+          "cells": [
+            {
+              "both_missed": 1318,
+              "first_missed": 2805,
+              "level": "barrier",
+              "objects": 16911,
+              "second_missed": 1993
+            },
+            {
+              "both_missed": 419,
+              "first_missed": 770,
+              "level": "bicycle",
+              "objects": 2060,
+              "second_missed": 692
+            },
+            {
+              "both_missed": 178,
+              "first_missed": 634,
+              "level": "bus",
+              "objects": 2085,
+              "second_missed": 312
+            },
+            {
+              "both_missed": 3555,
+              "first_missed": 11244,
+              "level": "car",
+              "objects": 59522,
+              "second_missed": 6686
+            },
+            {
+              "both_missed": 689,
+              "first_missed": 1077,
+              "level": "construction_vehicle",
+              "objects": 1599,
+              "second_missed": 843
+            },
+            {
+              "both_missed": 292,
+              "first_missed": 767,
+              "level": "motorcycle",
+              "objects": 2009,
+              "second_missed": 435
+            },
+            {
+              "both_missed": 1767,
+              "first_missed": 7426,
+              "level": "pedestrian",
+              "objects": 25678,
+              "second_missed": 2828
+            },
+            {
+              "both_missed": 769,
+              "first_missed": 1828,
+              "level": "traffic_cone",
+              "objects": 12491,
+              "second_missed": 1815
+            },
+            {
+              "both_missed": 566,
+              "first_missed": 1347,
+              "level": "trailer",
+              "objects": 2446,
+              "second_missed": 741
+            },
+            {
+              "both_missed": 1072,
+              "first_missed": 3172,
+              "level": "truck",
+              "objects": 9764,
+              "second_missed": 1746
+            }
+          ],
+          "levels": 10
+        },
+        "physical_difficulty_combined": {
+          "expected_under_conditional_independence": "2888626252317815913180663027997918370628734580726464034953486268537846704917178511984449638051683973171037114033125623975569893/403130019137493273366505634498864946291507280590780283675833753193904886383102625693541779722896150262382838259905311888000",
+          "levels": 100,
+          "note": "sufficient statistics only; the cell table is large",
+          "observed_joint_miss": 10625
+        },
+        "range_from_ego": {
+          "cells": [
+            {
+              "both_missed": 289,
+              "first_missed": 1372,
+              "level": "0-10",
+              "objects": 15938,
+              "second_missed": 566
+            },
+            {
+              "both_missed": 1670,
+              "first_missed": 5149,
+              "level": "10-20",
+              "objects": 38686,
+              "second_missed": 3077
+            },
+            {
+              "both_missed": 2919,
+              "first_missed": 9066,
+              "level": "20-30",
+              "objects": 38243,
+              "second_missed": 4903
+            },
+            {
+              "both_missed": 3119,
+              "first_missed": 9260,
+              "level": "30-40",
+              "objects": 26386,
+              "second_missed": 5070
+            },
+            {
+              "both_missed": 2628,
+              "first_missed": 6223,
+              "level": "40-50",
+              "objects": 15312,
+              "second_missed": 4475
+            }
+          ],
+          "levels": 5
+        },
+        "scene_condition": {
+          "cells": [
+            {
+              "both_missed": 8896,
+              "first_missed": 25330,
+              "level": "clear",
+              "objects": 108404,
+              "second_missed": 15052
+            },
+            {
+              "both_missed": 259,
+              "first_missed": 1031,
+              "level": "night",
+              "objects": 3468,
+              "second_missed": 398
+            },
+            {
+              "both_missed": 1470,
+              "first_missed": 4709,
+              "level": "rain",
+              "objects": 22693,
+              "second_missed": 2641
+            }
+          ],
+          "levels": 3
+        }
+      }
+    },
+    {
+      "both_missed": 9794,
+      "first": "fcos3d",
+      "first_missed": 31070,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "population": 134565,
+      "second": "pointpillars",
+      "second_missed": 18760,
+      "strata": {
+        "annotated_visibility": {
+          "cells": [
+            {
+              "both_missed": 5714,
+              "first_missed": 14621,
+              "level": "v0-40",
+              "objects": 32113,
+              "second_missed": 8062
+            },
+            {
+              "both_missed": 998,
+              "first_missed": 3644,
+              "level": "v40-60",
+              "objects": 13757,
+              "second_missed": 2040
+            },
+            {
+              "both_missed": 1188,
+              "first_missed": 4022,
+              "level": "v60-80",
+              "objects": 18650,
+              "second_missed": 2518
+            },
+            {
+              "both_missed": 1894,
+              "first_missed": 8783,
+              "level": "v80-100",
+              "objects": 70045,
+              "second_missed": 6140
+            }
+          ],
+          "levels": 4
+        },
+        "lidar_return_density": {
+          "cells": [
+            {
+              "both_missed": 3740,
+              "first_missed": 7981,
+              "level": "0",
+              "objects": 16162,
+              "second_missed": 5310
+            },
+            {
+              "both_missed": 3162,
+              "first_missed": 12040,
+              "level": "1-5",
+              "objects": 41293,
+              "second_missed": 6547
+            },
+            {
+              "both_missed": 945,
+              "first_missed": 3485,
+              "level": "21-100",
+              "objects": 26670,
+              "second_missed": 2396
+            },
+            {
+              "both_missed": 1720,
+              "first_missed": 6494,
+              "level": "6-20",
+              "objects": 32906,
+              "second_missed": 3707
+            },
+            {
+              "both_missed": 227,
+              "first_missed": 1070,
+              "level": "over-100",
+              "objects": 17534,
+              "second_missed": 800
+            }
+          ],
+          "levels": 5
+        },
+        "object_class": {
+          "cells": [
+            {
+              "both_missed": 1151,
+              "first_missed": 2805,
+              "level": "barrier",
+              "objects": 16911,
+              "second_missed": 1967
+            },
+            {
+              "both_missed": 691,
+              "first_missed": 770,
+              "level": "bicycle",
+              "objects": 2060,
+              "second_missed": 1587
+            },
+            {
+              "both_missed": 334,
+              "first_missed": 634,
+              "level": "bus",
+              "objects": 2085,
+              "second_missed": 679
+            },
+            {
+              "both_missed": 1669,
+              "first_missed": 11244,
+              "level": "car",
+              "objects": 59522,
+              "second_missed": 2740
+            },
+            {
+              "both_missed": 791,
+              "first_missed": 1077,
+              "level": "construction_vehicle",
+              "objects": 1599,
+              "second_missed": 1027
+            },
+            {
+              "both_missed": 523,
+              "first_missed": 767,
+              "level": "motorcycle",
+              "objects": 2009,
+              "second_missed": 1062
+            },
+            {
+              "both_missed": 1769,
+              "first_missed": 7426,
+              "level": "pedestrian",
+              "objects": 25678,
+              "second_missed": 3306
+            },
+            {
+              "both_missed": 734,
+              "first_missed": 1828,
+              "level": "traffic_cone",
+              "objects": 12491,
+              "second_missed": 2348
+            },
+            {
+              "both_missed": 670,
+              "first_missed": 1347,
+              "level": "trailer",
+              "objects": 2446,
+              "second_missed": 956
+            },
+            {
+              "both_missed": 1462,
+              "first_missed": 3172,
+              "level": "truck",
+              "objects": 9764,
+              "second_missed": 3088
+            }
+          ],
+          "levels": 10
+        },
+        "physical_difficulty_combined": {
+          "expected_under_conditional_independence": "14372530436210078674716643229100931638501707454633433968562551273342710243850456562650140379846354394624959798633343867890892763/2292801983844492992272000796212294382032947658360062863406304471290334041303896183632018872173971854617302392603211461363000",
+          "levels": 100,
+          "note": "sufficient statistics only; the cell table is large",
+          "observed_joint_miss": 9794
+        },
+        "range_from_ego": {
+          "cells": [
+            {
+              "both_missed": 328,
+              "first_missed": 1372,
+              "level": "0-10",
+              "objects": 15938,
+              "second_missed": 1048
+            },
+            {
+              "both_missed": 1753,
+              "first_missed": 5149,
+              "level": "10-20",
+              "objects": 38686,
+              "second_missed": 4465
+            },
+            {
+              "both_missed": 2949,
+              "first_missed": 9066,
+              "level": "20-30",
+              "objects": 38243,
+              "second_missed": 5715
+            },
+            {
+              "both_missed": 2808,
+              "first_missed": 9260,
+              "level": "30-40",
+              "objects": 26386,
+              "second_missed": 4575
+            },
+            {
+              "both_missed": 1956,
+              "first_missed": 6223,
+              "level": "40-50",
+              "objects": 15312,
+              "second_missed": 2957
+            }
+          ],
+          "levels": 5
+        },
+        "scene_condition": {
+          "cells": [
+            {
+              "both_missed": 8103,
+              "first_missed": 25330,
+              "level": "clear",
+              "objects": 108404,
+              "second_missed": 15618
+            },
+            {
+              "both_missed": 237,
+              "first_missed": 1031,
+              "level": "night",
+              "objects": 3468,
+              "second_missed": 332
+            },
+            {
+              "both_missed": 1454,
+              "first_missed": 4709,
+              "level": "rain",
+              "objects": 22693,
+              "second_missed": 2810
+            }
+          ],
+          "levels": 3
+        }
+      }
+    },
+    {
+      "both_missed": 10715,
+      "first": "mapillary",
+      "first_missed": 32787,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "population": 134565,
+      "second": "megvii",
+      "second_missed": 18091,
+      "strata": {
+        "annotated_visibility": {
+          "cells": [
+            {
+              "both_missed": 6951,
+              "first_missed": 15267,
+              "level": "v0-40",
+              "objects": 32113,
+              "second_missed": 9844
+            },
+            {
+              "both_missed": 1045,
+              "first_missed": 3721,
+              "level": "v40-60",
+              "objects": 13757,
+              "second_missed": 2017
+            },
+            {
+              "both_missed": 1078,
+              "first_missed": 4083,
+              "level": "v60-80",
+              "objects": 18650,
+              "second_missed": 2137
+            },
+            {
+              "both_missed": 1641,
+              "first_missed": 9716,
+              "level": "v80-100",
+              "objects": 70045,
+              "second_missed": 4093
+            }
+          ],
+          "levels": 4
+        },
+        "lidar_return_density": {
+          "cells": [
+            {
+              "both_missed": 5421,
+              "first_missed": 8734,
+              "level": "0",
+              "objects": 16162,
+              "second_missed": 7884
+            },
+            {
+              "both_missed": 3159,
+              "first_missed": 12604,
+              "level": "1-5",
+              "objects": 41293,
+              "second_missed": 6044
+            },
+            {
+              "both_missed": 692,
+              "first_missed": 3760,
+              "level": "21-100",
+              "objects": 26670,
+              "second_missed": 1286
+            },
+            {
+              "both_missed": 1283,
+              "first_missed": 6076,
+              "level": "6-20",
+              "objects": 32906,
+              "second_missed": 2520
+            },
+            {
+              "both_missed": 160,
+              "first_missed": 1613,
+              "level": "over-100",
+              "objects": 17534,
+              "second_missed": 357
+            }
+          ],
+          "levels": 5
+        },
+        "object_class": {
+          "cells": [
+            {
+              "both_missed": 1017,
+              "first_missed": 2236,
+              "level": "barrier",
+              "objects": 16911,
+              "second_missed": 1993
+            },
+            {
+              "both_missed": 401,
+              "first_missed": 683,
+              "level": "bicycle",
+              "objects": 2060,
+              "second_missed": 692
+            },
+            {
+              "both_missed": 203,
+              "first_missed": 779,
+              "level": "bus",
+              "objects": 2085,
+              "second_missed": 312
+            },
+            {
+              "both_missed": 4006,
+              "first_missed": 13350,
+              "level": "car",
+              "objects": 59522,
+              "second_missed": 6686
+            },
+            {
+              "both_missed": 684,
+              "first_missed": 1084,
+              "level": "construction_vehicle",
+              "objects": 1599,
+              "second_missed": 843
+            },
+            {
+              "both_missed": 232,
+              "first_missed": 619,
+              "level": "motorcycle",
+              "objects": 2009,
+              "second_missed": 435
+            },
+            {
+              "both_missed": 1574,
+              "first_missed": 6189,
+              "level": "pedestrian",
+              "objects": 25678,
+              "second_missed": 2828
+            },
+            {
+              "both_missed": 734,
+              "first_missed": 2313,
+              "level": "traffic_cone",
+              "objects": 12491,
+              "second_missed": 1815
+            },
+            {
+              "both_missed": 614,
+              "first_missed": 1604,
+              "level": "trailer",
+              "objects": 2446,
+              "second_missed": 741
+            },
+            {
+              "both_missed": 1250,
+              "first_missed": 3930,
+              "level": "truck",
+              "objects": 9764,
+              "second_missed": 1746
+            }
+          ],
+          "levels": 10
+        },
+        "physical_difficulty_combined": {
+          "expected_under_conditional_independence": "11351158052017347670982412336722275650098284773671394439199282980134916733193720720530708850727403122655016942859034480875932677/1467393269660475515054080509575868404501086501350440232580034861625813786434493557524492078191341986955073531266055335272320",
+          "levels": 100,
+          "note": "sufficient statistics only; the cell table is large",
+          "observed_joint_miss": 10715
+        },
+        "range_from_ego": {
+          "cells": [
+            {
+              "both_missed": 221,
+              "first_missed": 1417,
+              "level": "0-10",
+              "objects": 15938,
+              "second_missed": 566
+            },
+            {
+              "both_missed": 1369,
+              "first_missed": 4352,
+              "level": "10-20",
+              "objects": 38686,
+              "second_missed": 3077
+            },
+            {
+              "both_missed": 2852,
+              "first_missed": 9294,
+              "level": "20-30",
+              "objects": 38243,
+              "second_missed": 4903
+            },
+            {
+              "both_missed": 3310,
+              "first_missed": 10414,
+              "level": "30-40",
+              "objects": 26386,
+              "second_missed": 5070
+            },
+            {
+              "both_missed": 2963,
+              "first_missed": 7310,
+              "level": "40-50",
+              "objects": 15312,
+              "second_missed": 4475
+            }
+          ],
+          "levels": 5
+        },
+        "scene_condition": {
+          "cells": [
+            {
+              "both_missed": 8897,
+              "first_missed": 26453,
+              "level": "clear",
+              "objects": 108404,
+              "second_missed": 15052
+            },
+            {
+              "both_missed": 255,
+              "first_missed": 1085,
+              "level": "night",
+              "objects": 3468,
+              "second_missed": 398
+            },
+            {
+              "both_missed": 1563,
+              "first_missed": 5249,
+              "level": "rain",
+              "objects": 22693,
+              "second_missed": 2641
+            }
+          ],
+          "levels": 3
+        }
+      }
+    },
+    {
+      "both_missed": 9790,
+      "first": "mapillary",
+      "first_missed": 32787,
+      "kind": "cross_modality",
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "population": 134565,
+      "second": "pointpillars",
+      "second_missed": 18760,
+      "strata": {
+        "annotated_visibility": {
+          "cells": [
+            {
+              "both_missed": 5674,
+              "first_missed": 15267,
+              "level": "v0-40",
+              "objects": 32113,
+              "second_missed": 8062
+            },
+            {
+              "both_missed": 995,
+              "first_missed": 3721,
+              "level": "v40-60",
+              "objects": 13757,
+              "second_missed": 2040
+            },
+            {
+              "both_missed": 1127,
+              "first_missed": 4083,
+              "level": "v60-80",
+              "objects": 18650,
+              "second_missed": 2518
+            },
+            {
+              "both_missed": 1994,
+              "first_missed": 9716,
+              "level": "v80-100",
+              "objects": 70045,
+              "second_missed": 6140
+            }
+          ],
+          "levels": 4
+        },
+        "lidar_return_density": {
+          "cells": [
+            {
+              "both_missed": 3860,
+              "first_missed": 8734,
+              "level": "0",
+              "objects": 16162,
+              "second_missed": 5310
+            },
+            {
+              "both_missed": 3003,
+              "first_missed": 12604,
+              "level": "1-5",
+              "objects": 41293,
+              "second_missed": 6547
+            },
+            {
+              "both_missed": 975,
+              "first_missed": 3760,
+              "level": "21-100",
+              "objects": 26670,
+              "second_missed": 2396
+            },
+            {
+              "both_missed": 1673,
+              "first_missed": 6076,
+              "level": "6-20",
+              "objects": 32906,
+              "second_missed": 3707
+            },
+            {
+              "both_missed": 279,
+              "first_missed": 1613,
+              "level": "over-100",
+              "objects": 17534,
+              "second_missed": 800
+            }
+          ],
+          "levels": 5
+        },
+        "object_class": {
+          "cells": [
+            {
+              "both_missed": 931,
+              "first_missed": 2236,
+              "level": "barrier",
+              "objects": 16911,
+              "second_missed": 1967
+            },
+            {
+              "both_missed": 626,
+              "first_missed": 683,
+              "level": "bicycle",
+              "objects": 2060,
+              "second_missed": 1587
+            },
+            {
+              "both_missed": 381,
+              "first_missed": 779,
+              "level": "bus",
+              "objects": 2085,
+              "second_missed": 679
+            },
+            {
+              "both_missed": 1806,
+              "first_missed": 13350,
+              "level": "car",
+              "objects": 59522,
+              "second_missed": 2740
+            },
+            {
+              "both_missed": 803,
+              "first_missed": 1084,
+              "level": "construction_vehicle",
+              "objects": 1599,
+              "second_missed": 1027
+            },
+            {
+              "both_missed": 434,
+              "first_missed": 619,
+              "level": "motorcycle",
+              "objects": 2009,
+              "second_missed": 1062
+            },
+            {
+              "both_missed": 1577,
+              "first_missed": 6189,
+              "level": "pedestrian",
+              "objects": 25678,
+              "second_missed": 3306
+            },
+            {
+              "both_missed": 774,
+              "first_missed": 2313,
+              "level": "traffic_cone",
+              "objects": 12491,
+              "second_missed": 2348
+            },
+            {
+              "both_missed": 761,
+              "first_missed": 1604,
+              "level": "trailer",
+              "objects": 2446,
+              "second_missed": 956
+            },
+            {
+              "both_missed": 1697,
+              "first_missed": 3930,
+              "level": "truck",
+              "objects": 9764,
+              "second_missed": 3088
+            }
+          ],
+          "levels": 10
+        },
+        "physical_difficulty_combined": {
+          "expected_under_conditional_independence": "3045891449837488685208730438019861257988678711448017891408550484534880863419806863748578110466740963506775846032129781546308777/458560396768898598454400159242458876406589531672012572681260894258066808260779236726403774434794370923460478520642292272600",
+          "levels": 100,
+          "note": "sufficient statistics only; the cell table is large",
+          "observed_joint_miss": 9790
+        },
+        "range_from_ego": {
+          "cells": [
+            {
+              "both_missed": 271,
+              "first_missed": 1417,
+              "level": "0-10",
+              "objects": 15938,
+              "second_missed": 1048
+            },
+            {
+              "both_missed": 1510,
+              "first_missed": 4352,
+              "level": "10-20",
+              "objects": 38686,
+              "second_missed": 4465
+            },
+            {
+              "both_missed": 2907,
+              "first_missed": 9294,
+              "level": "20-30",
+              "objects": 38243,
+              "second_missed": 5715
+            },
+            {
+              "both_missed": 2942,
+              "first_missed": 10414,
+              "level": "30-40",
+              "objects": 26386,
+              "second_missed": 4575
+            },
+            {
+              "both_missed": 2160,
+              "first_missed": 7310,
+              "level": "40-50",
+              "objects": 15312,
+              "second_missed": 2957
+            }
+          ],
+          "levels": 5
+        },
+        "scene_condition": {
+          "cells": [
+            {
+              "both_missed": 8039,
+              "first_missed": 26453,
+              "level": "clear",
+              "objects": 108404,
+              "second_missed": 15618
+            },
+            {
+              "both_missed": 211,
+              "first_missed": 1085,
+              "level": "night",
+              "objects": 3468,
+              "second_missed": 332
+            },
+            {
+              "both_missed": 1540,
+              "first_missed": 5249,
+              "level": "rain",
+              "objects": 22693,
+              "second_missed": 2810
+            }
+          ],
+          "levels": 3
+        }
+      }
+    },
+    {
+      "both_missed": 9668,
+      "first": "megvii",
+      "first_missed": 18091,
+      "kind": "same_modality",
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "population": 134565,
+      "second": "pointpillars",
+      "second_missed": 18760,
+      "strata": {
+        "annotated_visibility": {
+          "cells": [
+            {
+              "both_missed": 5601,
+              "first_missed": 9844,
+              "level": "v0-40",
+              "objects": 32113,
+              "second_missed": 8062
+            },
+            {
+              "both_missed": 967,
+              "first_missed": 2017,
+              "level": "v40-60",
+              "objects": 13757,
+              "second_missed": 2040
+            },
+            {
+              "both_missed": 1125,
+              "first_missed": 2137,
+              "level": "v60-80",
+              "objects": 18650,
+              "second_missed": 2518
+            },
+            {
+              "both_missed": 1975,
+              "first_missed": 4093,
+              "level": "v80-100",
+              "objects": 70045,
+              "second_missed": 6140
+            }
+          ],
+          "levels": 4
+        },
+        "lidar_return_density": {
+          "cells": [
+            {
+              "both_missed": 4341,
+              "first_missed": 7884,
+              "level": "0",
+              "objects": 16162,
+              "second_missed": 5310
+            },
+            {
+              "both_missed": 3055,
+              "first_missed": 6044,
+              "level": "1-5",
+              "objects": 41293,
+              "second_missed": 6547
+            },
+            {
+              "both_missed": 669,
+              "first_missed": 1286,
+              "level": "21-100",
+              "objects": 26670,
+              "second_missed": 2396
+            },
+            {
+              "both_missed": 1423,
+              "first_missed": 2520,
+              "level": "6-20",
+              "objects": 32906,
+              "second_missed": 3707
+            },
+            {
+              "both_missed": 180,
+              "first_missed": 357,
+              "level": "over-100",
+              "objects": 17534,
+              "second_missed": 800
+            }
+          ],
+          "levels": 5
+        },
+        "object_class": {
+          "cells": [
+            {
+              "both_missed": 1063,
+              "first_missed": 1993,
+              "level": "barrier",
+              "objects": 16911,
+              "second_missed": 1967
+            },
+            {
+              "both_missed": 646,
+              "first_missed": 692,
+              "level": "bicycle",
+              "objects": 2060,
+              "second_missed": 1587
+            },
+            {
+              "both_missed": 235,
+              "first_missed": 312,
+              "level": "bus",
+              "objects": 2085,
+              "second_missed": 679
+            },
+            {
+              "both_missed": 2160,
+              "first_missed": 6686,
+              "level": "car",
+              "objects": 59522,
+              "second_missed": 2740
+            },
+            {
+              "both_missed": 640,
+              "first_missed": 843,
+              "level": "construction_vehicle",
+              "objects": 1599,
+              "second_missed": 1027
+            },
+            {
+              "both_missed": 368,
+              "first_missed": 435,
+              "level": "motorcycle",
+              "objects": 2009,
+              "second_missed": 1062
+            },
+            {
+              "both_missed": 1738,
+              "first_missed": 2828,
+              "level": "pedestrian",
+              "objects": 25678,
+              "second_missed": 3306
+            },
+            {
+              "both_missed": 1044,
+              "first_missed": 1815,
+              "level": "traffic_cone",
+              "objects": 12491,
+              "second_missed": 2348
+            },
+            {
+              "both_missed": 468,
+              "first_missed": 741,
+              "level": "trailer",
+              "objects": 2446,
+              "second_missed": 956
+            },
+            {
+              "both_missed": 1306,
+              "first_missed": 1746,
+              "level": "truck",
+              "objects": 9764,
+              "second_missed": 3088
+            }
+          ],
+          "levels": 10
+        },
+        "physical_difficulty_combined": {
+          "expected_under_conditional_independence": "2849775710668849766321642633401594647552491402377592568702035082881206543529672061634241715768178867151114648581042577491766057/655086281098426569220571656060655537723699330960017960973229848940095440372541766752005392049706244176372112172346131818000",
+          "levels": 100,
+          "note": "sufficient statistics only; the cell table is large",
+          "observed_joint_miss": 9668
+        },
+        "range_from_ego": {
+          "cells": [
+            {
+              "both_missed": 258,
+              "first_missed": 566,
+              "level": "0-10",
+              "objects": 15938,
+              "second_missed": 1048
+            },
+            {
+              "both_missed": 1923,
+              "first_missed": 3077,
+              "level": "10-20",
+              "objects": 38686,
+              "second_missed": 4465
+            },
+            {
+              "both_missed": 2736,
+              "first_missed": 4903,
+              "level": "20-30",
+              "objects": 38243,
+              "second_missed": 5715
+            },
+            {
+              "both_missed": 2757,
+              "first_missed": 5070,
+              "level": "30-40",
+              "objects": 26386,
+              "second_missed": 4575
+            },
+            {
+              "both_missed": 1994,
+              "first_missed": 4475,
+              "level": "40-50",
+              "objects": 15312,
+              "second_missed": 2957
+            }
+          ],
+          "levels": 5
+        },
+        "scene_condition": {
+          "cells": [
+            {
+              "both_missed": 8133,
+              "first_missed": 15052,
+              "level": "clear",
+              "objects": 108404,
+              "second_missed": 15618
+            },
+            {
+              "both_missed": 163,
+              "first_missed": 398,
+              "level": "night",
+              "objects": 3468,
+              "second_missed": 332
+            },
+            {
+              "both_missed": 1372,
+              "first_missed": 2641,
+              "level": "rain",
+              "objects": 22693,
+              "second_missed": 2810
+            }
+          ],
+          "levels": 3
+        }
+      }
+    }
+  ],
+  "population": {
+    "definition": "annotated objects in the retained nuScenes validation cache",
+    "match_rule": "matched at 2 m per class as recorded in the retained caches",
+    "objects": 134565,
+    "operating_point": "every matched detection in the cache, the highest capture point"
+  },
+  "source_provenance": {
+    "held_by": "the Gate B measurement lane worktree, read only",
+    "note": "only aggregate integer counts are retained. No raw record, score, annotation token or source identifier is copied here",
+    "sha256": {
+      "gt_val_cache.json": "7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd",
+      "matched_centerpoint.json": "6a8be866b3316857f44787a3676b1557d9d8dfb6a945f16f469bb10877326275",
+      "matched_fcos3d.json": "dd7fa5d2fe13b34a4bf6762f4c8cd512e629c88bcbbb5227dfa58cf46ae8cdf4",
+      "matched_mapillary.json": "a8fef4a1e7dbf0fed84ae1220332fcb97196e468ebf23cb77fe835871466caca",
+      "matched_megvii.json": "2ce14fcca8235438d2f9b2ab844f83e21413e97a2ab0cf597f445bac6e35a0c1",
+      "matched_pointpillars.json": "46b0f70daf6e18f08a4a439c502e7026c2b5d67bcffbb2109f92b314478f484e"
+    }
+  },
+  "stratifying_variables": {
+    "annotated_visibility": "annotated visibility band",
+    "lidar_return_density": "annotated lidar point count, bucketed",
+    "object_class": "annotated class",
+    "physical_difficulty_combined": "lidar return density, range and visibility jointly",
+    "range_from_ego": "distance from the ego vehicle in 10 m bands",
+    "scene_condition": "annotated scene condition"
+  },
+  "version": "0.1.0"
+}
