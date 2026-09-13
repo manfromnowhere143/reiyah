@@ -2,7 +2,10 @@
 
 Document ID: `reiyah.operating-point-dependence.2026-09-13`
 
-Version: `0.2.0`
+Version: `0.3.0`
+
+Supersedes `0.2.0`. It withdraws this document's central interpretation, which violated a normative
+clause of this programme's own estimand contract.
 
 Supersedes `0.1.0`, withdrawing one claim.
 
@@ -69,6 +72,27 @@ system runs at, which is the high capture end, and that is exactly where the ind
 is worst.** A redundancy claim validated at a conservative threshold can look sound and be wrong by a
 large factor where it ships. Nothing in a validation report would show it, because the coefficient is
 not usually computed at all.
+
+## Withdrawn: the reading of the operating point curve
+
+`docs/ESTIMAND_RSS_DEFINITION_32.md` carries a normative clause, number 4:
+
+> "`c` is not comparable across operating points. Any contrast must match or condition on marginals."
+
+and counterexample CE-4 shows why: one channel's operating point moved with the coupling structure
+**untouched** sends `c` from `1.8186` to `1.2262`.
+
+This document compared `c` across nine operating points and read the movement as evidence that
+independence is worst where a system deploys. **That violated the contract, and the interpretation
+is withdrawn.** An external review found it; this lane did not.
+
+The permitted quantity is the absolute excess joint miss rate, `P(both) - P(A) P(B)`, which is not a
+ratio of shrinking marginals. It **reverses** the reading. The burden peaks at intermediate capture,
+near `0.898`, at `66.2 to 139.5` per thousand objects, and falls to `38.8 to 87.4` at the highest
+capture examined. The ratio rose while the burden fell, which is exactly the artifact CE-4 predicts.
+
+The curve of `c` below is retained as an observation. It must not be read as a statement about
+coupling. See `reiyah.excess-joint-risk.2026-09-13`.
 
 ## Withdrawn: the lidar specific reading
 
