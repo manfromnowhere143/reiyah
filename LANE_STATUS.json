@@ -1,25 +1,24 @@
 {
   "artifact_id": "reiyah.fable.lane-status",
   "branch": "research/2026-09-10-moment-cone",
-  "checkpoint_source": "73ac8137465f9ae863ea215161cdbaced5fb2d7a, corrected by this checkpoint",
+  "checkpoint_source": "ded19fc42af628309333884e526df6079d3b76e3, extended with the Engine packet experiment",
   "costs": {
     "gate_b_check": "PASS 0 failing",
-    "measurement_tests": "581 in tools/measure, about 62 s",
-    "raw_grid": "18 preparations over two original submissions, both association rules"
+    "measurement_tests": "600 in tools/measure, about 62 s",
+    "packet_grid": "20 preparations over 4,876 original rows, maximum cardinality association"
   },
   "date": "2026-09-13",
   "established_this_checkpoint": [
-    "five consumer findings reproduced against the exact source before repair; two were withdrawn claims rather than code faults",
-    "withdrawn: that a third channel makes the sign identifiable. At (w,x,y,u)=(1,2,2,1) with u>0, c(0)=2/3 and c(4)=50/49. The sufficient condition is w*u > x*y, which a third channel need not produce",
-    "withdrawn: that an undefined threshold means an undetermined sign. At w=0,x=y=1,u=0 the threshold is undefined and c(m) < 1 at every m",
-    "corrected: the threshold is (x*y - w*u)/w, not x*y/w. They agree only when u=0, so the old form would have failed the moment a third channel appeared",
-    "the complete classification over non negative m has five states plus an invalid domain, verified exhaustively against direct evaluation with no contradiction",
-    "withdrawn: that the annotation record count makes a setting implausible. Different units, no error model converts between them; retained as a labelled scale",
-    "repaired: inputs are bound by full path and expected SHA-256 verified before parsing, since the basename check accepted substituted bytes in a consumer probe",
-    "measured: the admissibility radius moves the deciding threshold by 14.0x, while greedy against maximum cardinality moves it by 6.4% and never changes the state in nine of nine settings"
+    "consumed the Engine original-predictions-0.1.0 packet: 4,876 submitted rows over 16 exposed frames, every row carrying its own digest, producer performing no association and admitting no reference",
+    "the bounded end to end case returns ABSTAIN, and for two reasons rather than one",
+    "without admitted references the sign of the additive loss is open, which was expected",
+    "and r, the retained additions, is not determined by the rows either: it spans 89 to 2,661 across defensible preparations, a ratio of 29.9, so the coarse bound spans [-89,89] to [-2661,2661]",
+    "the score cutoff moves r by 21.6x and the association radius by 2.9x, so the cutoff dominates by about seven to one",
+    "this reverses the previous checkpoint, where the radius dominated the dependence threshold 14x against 6 percent. Different decisions are sensitive to different preparation choices and neither can be assumed from the other",
+    "the overlap parity holds for a third time: unmatched additions are an overlap quantity and a conventional analyst computes the same r. The sensitivity decomposition is the entire added value"
   ],
   "lane": "independent research and conventional comparator",
-  "next_falsifier": "The Engine's original-predictions-0.1.0 packet supplies 4,876 original rows over 16 exposed keyframes with per row provenance. Build one bounded end to end case on those exact rows, with a declared cost unit and error model, and show whether it supports a specific next review action that a competent overlap analyst would not obtain as cheaply. If it does not, retain the parity.",
+  "next_falsifier": "The added value is now one thing only: a sensitivity decomposition that overlap does not report. Test whether it changes an action. Give a competent analyst the same rows and ask which preparation knob to justify first; if they reach the same ordering unaided, the decomposition earns nothing and this route should stop.",
   "open_and_unowned": [
     "the Engine comparison remains [-8,8] with no admitted human references",
     "external scientific review and reviewer usability evidence are missing",

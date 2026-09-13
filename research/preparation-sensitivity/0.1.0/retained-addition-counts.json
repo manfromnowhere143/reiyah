@@ -1,0 +1,183 @@
+{
+  "artifact_id": "reiyah.preparation-sensitivity.counts",
+  "association_rule": "same class, maximum cardinality within tau, order invariant",
+  "consumed_packet": {
+    "artifact_id": "reiyah.perception-predictions.packet",
+    "association_performed_by_producer": false,
+    "coordinate_authority": "nominal_submission_global_frame_not_physical_accuracy",
+    "exposure": "exposed_retrospective_development",
+    "frames": 16,
+    "predictions_sha256": "330b91ca70e885a073274cc4fabacad7274a59aeb2d445300a9c69c86ee04356",
+    "reference_judgments_admitted": false,
+    "request_sha256": "6d131aacb5a6df3e01b9399260a5b2f40a161946ef9bcb7262ed43bcc50d3315",
+    "rows_with_per_row_digests": 4876
+  },
+  "grid": [
+    {
+      "added_rows_kept": 3077,
+      "associated": 416,
+      "association_radius_m": 0.5,
+      "base_rows_kept": 1799,
+      "retained_additions": 2661,
+      "score_minimum": 0.0
+    },
+    {
+      "added_rows_kept": 3077,
+      "associated": 662,
+      "association_radius_m": 1.0,
+      "base_rows_kept": 1799,
+      "retained_additions": 2415,
+      "score_minimum": 0.0
+    },
+    {
+      "added_rows_kept": 3077,
+      "associated": 878,
+      "association_radius_m": 2.0,
+      "base_rows_kept": 1799,
+      "retained_additions": 2199,
+      "score_minimum": 0.0
+    },
+    {
+      "added_rows_kept": 3077,
+      "associated": 1034,
+      "association_radius_m": 4.0,
+      "base_rows_kept": 1799,
+      "retained_additions": 2043,
+      "score_minimum": 0.0
+    },
+    {
+      "added_rows_kept": 1501,
+      "associated": 368,
+      "association_radius_m": 0.5,
+      "base_rows_kept": 1799,
+      "retained_additions": 1133,
+      "score_minimum": 0.1
+    },
+    {
+      "added_rows_kept": 1501,
+      "associated": 595,
+      "association_radius_m": 1.0,
+      "base_rows_kept": 1799,
+      "retained_additions": 906,
+      "score_minimum": 0.1
+    },
+    {
+      "added_rows_kept": 1501,
+      "associated": 775,
+      "association_radius_m": 2.0,
+      "base_rows_kept": 1799,
+      "retained_additions": 726,
+      "score_minimum": 0.1
+    },
+    {
+      "added_rows_kept": 1501,
+      "associated": 896,
+      "association_radius_m": 4.0,
+      "base_rows_kept": 1799,
+      "retained_additions": 605,
+      "score_minimum": 0.1
+    },
+    {
+      "added_rows_kept": 823,
+      "associated": 302,
+      "association_radius_m": 0.5,
+      "base_rows_kept": 963,
+      "retained_additions": 521,
+      "score_minimum": 0.2
+    },
+    {
+      "added_rows_kept": 823,
+      "associated": 461,
+      "association_radius_m": 1.0,
+      "base_rows_kept": 963,
+      "retained_additions": 362,
+      "score_minimum": 0.2
+    },
+    {
+      "added_rows_kept": 823,
+      "associated": 573,
+      "association_radius_m": 2.0,
+      "base_rows_kept": 963,
+      "retained_additions": 250,
+      "score_minimum": 0.2
+    },
+    {
+      "added_rows_kept": 823,
+      "associated": 645,
+      "association_radius_m": 4.0,
+      "base_rows_kept": 963,
+      "retained_additions": 178,
+      "score_minimum": 0.2
+    },
+    {
+      "added_rows_kept": 614,
+      "associated": 241,
+      "association_radius_m": 0.5,
+      "base_rows_kept": 684,
+      "retained_additions": 373,
+      "score_minimum": 0.3
+    },
+    {
+      "added_rows_kept": 614,
+      "associated": 348,
+      "association_radius_m": 1.0,
+      "base_rows_kept": 684,
+      "retained_additions": 266,
+      "score_minimum": 0.3
+    },
+    {
+      "added_rows_kept": 614,
+      "associated": 426,
+      "association_radius_m": 2.0,
+      "base_rows_kept": 684,
+      "retained_additions": 188,
+      "score_minimum": 0.3
+    },
+    {
+      "added_rows_kept": 614,
+      "associated": 475,
+      "association_radius_m": 4.0,
+      "base_rows_kept": 684,
+      "retained_additions": 139,
+      "score_minimum": 0.3
+    },
+    {
+      "added_rows_kept": 266,
+      "associated": 94,
+      "association_radius_m": 0.5,
+      "base_rows_kept": 299,
+      "retained_additions": 172,
+      "score_minimum": 0.5
+    },
+    {
+      "added_rows_kept": 266,
+      "associated": 133,
+      "association_radius_m": 1.0,
+      "base_rows_kept": 299,
+      "retained_additions": 133,
+      "score_minimum": 0.5
+    },
+    {
+      "added_rows_kept": 266,
+      "associated": 164,
+      "association_radius_m": 2.0,
+      "base_rows_kept": 299,
+      "retained_additions": 102,
+      "score_minimum": 0.5
+    },
+    {
+      "added_rows_kept": 266,
+      "associated": 177,
+      "association_radius_m": 4.0,
+      "base_rows_kept": 299,
+      "retained_additions": 89,
+      "score_minimum": 0.5
+    }
+  ],
+  "quantity": "retained_additions r counts added rows that associate with no base row. The additive loss delta = (a+b)(TP_augmented - TP_base) - b*r is bounded by [-b*r, a*r] whatever the references turn out to be",
+  "roles": {
+    "added": "the other submission; the candidate for integration",
+    "base": "the submission whose digest matches the recorded base source"
+  },
+  "version": "0.1.0"
+}
