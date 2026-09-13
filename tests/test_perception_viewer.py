@@ -4,6 +4,7 @@ from pathlib import Path
 import struct
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from tools import perception_viewer as v
 
@@ -106,6 +107,85 @@ class ViewerTests(unittest.TestCase):
         # Core validates the absence of selection; extract must separately refuse
         # to create a report. The native Blender probe exercises that rejection.
         self.assertEqual(v.verify_rows(self.body, self.rows, [], v.IDENTITY), [])
+
+    def source_context(self, root):
+        package = root/'package'; (package/'assets').mkdir(parents=True)
+        # Context-only fixture: these seal bytes are NOT a valid observation
+        # package. Full package verification remains an explicit prior step.
+        seal = b'{"synthetic_context_only":true}\n'
+        (package/'SEAL.json').write_bytes(seal)
+        asset = package/'assets'/('capture-000001.ply'); asset.write_bytes(self.ply)
+        binding = deepcopy(self.binding); binding['package_seal_sha256'] = v.sha(seal)
+        raw = v.encoded(binding); binding_path = root/'binding.json'; binding_path.write_bytes(raw)
+        return package, asset, binding, binding_path, v.sha(raw)
+
+    def test_package_context_requires_selected_file_not_just_identical_bytes(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td); package, asset, binding, _, _ = self.source_context(root)
+            self.assertTrue(v.package_source(package, asset, binding).samefile(package))
+            for copy in (root/'copied.ply', package/'assets'/'capture-000002.ply'):
+                copy.write_bytes(asset.read_bytes())
+                self.rejects('VIEW_PACKAGE', v.package_source, package, copy, binding)
+            other = root/'other'; (other/'assets').mkdir(parents=True)
+            (other/'SEAL.json').write_bytes((package/'SEAL.json').read_bytes())
+            (other/'assets'/'capture-000001.ply').write_bytes(asset.read_bytes())
+            self.rejects('VIEW_PACKAGE', v.package_source, other, asset, binding)
+
+    def test_wrong_package_seal_rejected_without_output(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td); package, asset, binding, _, _ = self.source_context(root)
+            (package/'SEAL.json').write_bytes(b'{"other":true}\n')
+            self.rejects('VIEW_BOUND', v.package_source, package, asset, binding)
+
+    def test_output_rejects_package_root_assets_and_filesystem_aliases(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td); package, _, _, _, _ = self.source_context(root)
+            link = root/'package-link'; link.symlink_to(package, target_is_directory=True)
+            for parent in (package, package/'assets', link):
+                self.rejects('VIEW_OUTPUT', v.private_output, parent/'new', package)
+            case = root/'PACKAGE'
+            if case.exists() and case.samefile(package):
+                self.rejects('VIEW_OUTPUT', v.private_output, case/'new', package)
+            else:
+                # Native reproduction also reports this platform limitation.
+                self.skipTest('Case aliases unavailable; preceding root/assets/symlink cases passed')
+
+    def test_cli_rejects_source_checkout_output_before_native_preparation(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td); package, asset, _, binding, digest = self.source_context(root)
+            output = Path(v.__file__).resolve().parents[1]/'viewer-forbidden-output'
+            argv = ['prepare', '--package', str(package), '--binding', str(binding),
+                    '--binding-sha256', digest, '--asset', str(asset), '--output', str(output)]
+            with patch.object(v, 'prepare', side_effect=AssertionError('Native preparation reached')):
+                self.rejects('VIEW_OUTPUT', v.main, argv)
+            self.assertFalse(output.exists())
+
+    def test_cli_pins_private_destination_before_parent_symlink_retarget(self):
+        for action in ('prepare', 'extract'):
+            with self.subTest(action=action), tempfile.TemporaryDirectory() as td:
+                root = Path(td); package, asset, _, binding, digest = self.source_context(root)
+                private = root/'private'; private.mkdir()
+                link = root/'output-link'; link.symlink_to(private, target_is_directory=True)
+                argv = [action, '--package', str(package), '--binding', str(binding),
+                        '--binding-sha256', digest, '--asset', str(asset), '--output', str(link/'new')]
+
+                def retarget(*args):
+                    link.unlink(); link.symlink_to(package, target_is_directory=True)
+                    if action == 'prepare':
+                        # Stand-in isolates path custody; the separate native
+                        # reproduction checks actual Blender save/extraction.
+                        dest = args[-1]; self.assertEqual(dest, private.resolve()/'new')
+                        dest.mkdir(); return dest
+                    return {'point_indices': [1]}
+
+                if action == 'extract':
+                    scene = root/'synthetic.blend'; scene.write_bytes(b'context-only')
+                    argv += ['--scene', str(scene), '--scene-bytes', str(scene.stat().st_size),
+                             '--scene-sha256', v.sha(scene.read_bytes())]
+                with patch.object(v, action, side_effect=retarget), patch.object(v, 'runtime', return_value={}), patch('builtins.print'):
+                    v.main(argv)
+                self.assertTrue((private/'new').exists())
+                self.assertFalse((package/'new').exists())
 
 
 if __name__ == '__main__':

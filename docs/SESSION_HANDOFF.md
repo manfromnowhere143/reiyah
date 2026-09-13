@@ -1,3 +1,33 @@
+# Native viewer output custody, 2026-09-13
+
+Read the [checkpoint](PERCEPTION_VIEWER_CUSTODY_2026-09-13.md),
+[updated coordinator commands](../research/perception-viewer-custody/0.1.0/README.md) and
+[verification](../research/perception-viewer-custody/0.1.0/verification.json).
+Current native viewer CLI commands require `--package`; binding and selection records stay
+0.1.0. The CLI checks the located seal/capture against the selected binding and refuses output
+inside the package or source checkout before native writes. Eight actual synthetic mutation
+cases now reject without modifying the source. Complete package verification remains a prior
+obligation; the new checks do not authenticate every package member or physical truth.
+
+All 20 focused and 369 repository tests pass. The earlier 93 measurement tests are retained
+with 107 measurement files checked unchanged, not replayed here. The already selected real
+development capture prepares/extracts successfully; its 1,651-byte programmatic selection
+report is identical to the earlier output and its three original records match direct slices.
+No participant display, selection or review was observed. The existing manual exercise remains
+ready. Human references, actual usability and external scientific review are still missing.
+
+No Fable implementation/ref/status/outbox, frozen protocol, joint model, matching, weights,
+loss, tolerance or unknown state changed. Real bounds remain [-8,8]; Gate A is unaccepted and
+the physical study has no selected cohort/seed. P005 is operator-reported published; no further
+publication or outreach. Continue from `engine-viewer-custody-2026-09-13` in a fresh candidate.
+Next assess checked capture-to-binding preparation, starting with manual steps and incorrect
+source selections. Avoid another viewer/planner. Actual participant return takes priority.
+The authorized autonomous work window continues; all older owner checkouts remain preserved.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Review-workflow output separation, 2026-09-13
 
 Read the [checkpoint](PERCEPTION_OUTPUT_SEPARATION_2026-09-13.md),

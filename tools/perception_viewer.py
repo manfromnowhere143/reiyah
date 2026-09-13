@@ -115,6 +115,33 @@ def point_body(data, binding):
     return body
 
 
+def package_source(package, asset, binding):
+    """Locate the previously verified package; do not duplicate its full verifier."""
+    root = Path(package).resolve(strict=True)
+    seal = root/'SEAL.json'
+    read_bound(seal, seal.stat().st_size, binding['package_seal_sha256'], 8192)
+    expected_asset = root/'assets'/(binding['capture_id']+'.ply')
+    require(Path(asset).samefile(expected_asset), 'VIEW_PACKAGE',
+            'Selected asset is not the named capture in the declared package')
+    return root
+
+
+def private_output(output, package):
+    """Keep CLI output outside source directories on a stable local filesystem.
+
+    Kept standard-library-only so the native adapter needs no Engine dependencies.
+    Directory replacement and mount changes are outside this guard's scope.
+    """
+    target = Path(output)
+    parent = target.parent.resolve(strict=True)
+    ancestors = [p.stat() for p in (parent, *parent.parents)]
+    for source in (Path(package), Path(__file__).resolve().parents[1]):
+        identity = source.stat()
+        require(not any(os.path.samestat(a, identity) for a in ancestors),
+                'VIEW_OUTPUT', 'Output must remain outside the observation package and source checkout')
+    return parent/target.name
+
+
 def verify_rows(body, rows, selected, matrix):
     """Verify a bijection onto ALL original records, including unselected records.
 
@@ -266,6 +293,8 @@ def main(argv):
     parser.add_argument('action', choices=('prepare', 'extract'))
     parser.add_argument('--binding', required=True)
     parser.add_argument('--binding-sha256', required=True)
+    parser.add_argument('--package', required=True,
+                        help='Observation directory already verified against the binding seal')
     parser.add_argument('--asset', required=True)
     parser.add_argument('--output', required=True)
     parser.add_argument('--scene')
@@ -277,17 +306,19 @@ def main(argv):
     binding = parse_binding(raw_binding)
     data = read_bound(args.asset, binding['asset']['byte_size'], binding['asset']['sha256'], 20*MAX_POINTS+256)
     point_body(data, binding)
+    package = package_source(args.package, args.asset, binding)
+    output = private_output(args.output, package)
     if args.action == 'prepare':
         require(args.scene is None and args.scene_sha256 is None and args.scene_bytes is None,
                 'VIEW_ARGUMENT', 'Scene input is only valid for extraction')
-        target = prepare(binding, args.binding_sha256, data, args.output)
+        target = prepare(binding, args.binding_sha256, data, output)
         print(json.dumps({'state': 'prepared_not_interactively_observed', 'scene': str(target),
                           'runtime': runtime()}, sort_keys=True))
     else:
         require(args.scene is not None, 'VIEW_ARGUMENT', 'Extraction requires a separately bound scene')
         scene = read_bound(args.scene, args.scene_bytes, args.scene_sha256, MAX_SCENE_BYTES)
         report = extract(binding, args.binding_sha256, data, scene)
-        with open(args.output, 'xb') as f:
+        with open(output, 'xb') as f:
             f.write(encoded(report))
         print(json.dumps({'state': 'selection_bytes_verified', 'selected_points': len(report['point_indices'])}, sort_keys=True))
 

@@ -1,0 +1,373 @@
+{
+  "actual_interactive_observation": false,
+  "added_dependency": false,
+  "after_cases": [
+    {
+      "added_files": 0,
+      "case": "prepare-root",
+      "diagnostics": [
+        "VIEW_OUTPUT"
+      ],
+      "exit_code": 2,
+      "source_unchanged": true,
+      "state": "rejected",
+      "verification": "verified"
+    },
+    {
+      "added_files": 0,
+      "case": "prepare-assets",
+      "diagnostics": [
+        "VIEW_OUTPUT"
+      ],
+      "exit_code": 2,
+      "source_unchanged": true,
+      "state": "rejected",
+      "verification": "verified"
+    },
+    {
+      "added_files": 0,
+      "case": "prepare-symlink",
+      "diagnostics": [
+        "VIEW_OUTPUT"
+      ],
+      "exit_code": 2,
+      "source_unchanged": true,
+      "state": "rejected",
+      "verification": "verified"
+    },
+    {
+      "added_files": 0,
+      "case": "prepare-case_alias",
+      "diagnostics": [
+        "VIEW_OUTPUT"
+      ],
+      "exit_code": 2,
+      "source_unchanged": true,
+      "state": "rejected",
+      "verification": "verified"
+    },
+    {
+      "added_files": 0,
+      "case": "extract-root",
+      "diagnostics": [
+        "VIEW_OUTPUT"
+      ],
+      "exit_code": 2,
+      "source_unchanged": true,
+      "state": "rejected",
+      "verification": "verified"
+    },
+    {
+      "added_files": 0,
+      "case": "extract-assets",
+      "diagnostics": [
+        "VIEW_OUTPUT"
+      ],
+      "exit_code": 2,
+      "source_unchanged": true,
+      "state": "rejected",
+      "verification": "verified"
+    },
+    {
+      "added_files": 0,
+      "case": "extract-symlink",
+      "diagnostics": [
+        "VIEW_OUTPUT"
+      ],
+      "exit_code": 2,
+      "source_unchanged": true,
+      "state": "rejected",
+      "verification": "verified"
+    },
+    {
+      "added_files": 0,
+      "case": "extract-case_alias",
+      "diagnostics": [
+        "VIEW_OUTPUT"
+      ],
+      "exit_code": 2,
+      "source_unchanged": true,
+      "state": "rejected",
+      "verification": "verified"
+    }
+  ],
+  "artifact_id": "reiyah.viewer-custody.verification",
+  "assumptions": [
+    "Stable filesystem hierarchy",
+    "Complete package verification and binding selection precede this CLI",
+    "Native Blender 5.1.2 parser/runtime remains trusted"
+  ],
+  "before_cases": [
+    {
+      "added_files": 1,
+      "case": "prepare-root",
+      "diagnostics": [],
+      "exit_code": 0,
+      "source_unchanged": false,
+      "state": "contaminated",
+      "verification": "OBS_FILE_SET"
+    },
+    {
+      "added_files": 1,
+      "case": "prepare-assets",
+      "diagnostics": [],
+      "exit_code": 0,
+      "source_unchanged": false,
+      "state": "contaminated",
+      "verification": "OBS_FILE_SET"
+    },
+    {
+      "added_files": 1,
+      "case": "prepare-symlink",
+      "diagnostics": [],
+      "exit_code": 0,
+      "source_unchanged": false,
+      "state": "contaminated",
+      "verification": "OBS_FILE_SET"
+    },
+    {
+      "added_files": 1,
+      "case": "prepare-case_alias",
+      "diagnostics": [],
+      "exit_code": 0,
+      "source_unchanged": false,
+      "state": "contaminated",
+      "verification": "OBS_FILE_SET"
+    },
+    {
+      "added_files": 1,
+      "case": "extract-root",
+      "diagnostics": [],
+      "exit_code": 0,
+      "source_unchanged": false,
+      "state": "contaminated",
+      "verification": "OBS_FILE_SET"
+    },
+    {
+      "added_files": 1,
+      "case": "extract-assets",
+      "diagnostics": [],
+      "exit_code": 0,
+      "source_unchanged": false,
+      "state": "contaminated",
+      "verification": "OBS_FILE_SET"
+    },
+    {
+      "added_files": 1,
+      "case": "extract-symlink",
+      "diagnostics": [],
+      "exit_code": 0,
+      "source_unchanged": false,
+      "state": "contaminated",
+      "verification": "OBS_FILE_SET"
+    },
+    {
+      "added_files": 1,
+      "case": "extract-case_alias",
+      "diagnostics": [],
+      "exit_code": 0,
+      "source_unchanged": false,
+      "state": "contaminated",
+      "verification": "OBS_FILE_SET"
+    }
+  ],
+  "cases_skipped_on_this_host": 0,
+  "checks": {
+    "development-extract": {
+      "child_max_rss_bytes_macos": 220692480,
+      "elapsed_seconds": 1.733520417008549,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "c659fc9b07c2f7b639c0d8f76f6500168d4e27c82b0416681faa3efdf52520bf"
+    },
+    "development-package-verify": {
+      "child_max_rss_bytes_macos": 103645184,
+      "elapsed_seconds": 3.7980046670418233,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "303e7049de535328bdad3d7fbdbc7d410aca7e60b5ef9556ebada49db4eb1e93"
+    },
+    "development-prepare": {
+      "child_max_rss_bytes_macos": 223428608,
+      "elapsed_seconds": 1.757991874939762,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "08974922ea488768deabf93800dd2c7ed6edf93e948351486bc4e7e8124be773"
+    },
+    "repository-tests": {
+      "child_max_rss_bytes_macos": 154763264,
+      "elapsed_seconds": 51.79321441601496,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "16b535fd09a5637042a20aa7b38a7d5d93622a4058ba8bed4259df1a725d4193"
+    },
+    "repro-after": {
+      "child_max_rss_bytes_macos": 232177664,
+      "elapsed_seconds": 7.234812583075836,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "5a48f660b448bf9a73b640ffa1dce657dcfd44729cd167e102d0742c9b675efd"
+    },
+    "repro-before": {
+      "child_max_rss_bytes_macos": 235143168,
+      "elapsed_seconds": 9.29615162499249,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "f75ad0a5542801a2c362fa1a72c42901bb6502028e033a167357b75d80539e52"
+    },
+    "targeted-after": {
+      "child_max_rss_bytes_macos": 30916608,
+      "elapsed_seconds": 0.12815145798958838,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "6bc9951476d61da390aec98b74be151d57964c1f39e666e96ea29cc5259a744d"
+    }
+  },
+  "date": "2026-09-13",
+  "decision": "Require explicit CLI package location, bind its seal and capture file to the selected binding, and reject output inside sources by filesystem identity before native writing",
+  "deficiency": "Eight native preparation/extraction paths succeeded, then package verification failed OBS_FILE_SET",
+  "determinism_limit": "Native scene bytes, temporary paths, timestamps and process receipts vary. Compact results/source bindings exclude those variable fields.",
+  "development_capture": {
+    "all_report_bytes_identical_to_prior_output": true,
+    "complete_package_verification": "passed",
+    "original_point_records": 34720,
+    "original_raw_and_ply_slices_agree": true,
+    "prior_source_packet": "engine-viewer-2026-09-12",
+    "programmatic_selected_indices": [
+      0,
+      17360,
+      34719
+    ],
+    "selection_basis": "Previously exposed first LIDAR_TOP; no new cohort or study selection",
+    "selection_report": {
+      "byte_size": 1651,
+      "sha256": "c60cbe177e4a85ff8fb2ec7faa673a3d25b8b217b12bfeb47c3833ecae7b7045"
+    }
+  },
+  "engine_runtime": {
+    "installed_files_rechecked": 4219,
+    "inventory_sha256": "f2e111e1364ddcf4727b213738cd7c5a8e48de81000aea0c8448f7275b9b79a4",
+    "python": "3.14.2",
+    "source_packet": "engine-discovery-custody-2026-09-13",
+    "use": "Read-only execution with empty PYTHONPATH and bytecode disabled"
+  },
+  "external_scientific_review": "missing",
+  "fable_changes_consumed": false,
+  "fable_source_or_ref_mutations": false,
+  "focused_tests_passed": 20,
+  "full_package_verifier_duplicated": false,
+  "gate_a": "unaccepted",
+  "human_reference_records_created": 0,
+  "mathematical_model_changed": false,
+  "native_runtime": {
+    "binary": {
+      "byte_size": 167811856,
+      "sha256": "e0b80264bea559673212e0afc819fb33f3cef8b3dcfcc8d994b195132857ac8a"
+    },
+    "blender_version": "5.1.2",
+    "build_hash": "ec6e62d40fa9",
+    "python": "3.13.9"
+  },
+  "new_unit_tests": 5,
+  "next_falsifier": "Count manual source-binding preparation steps and challenge incorrect capture/package selections before adding a checked preparation interface",
+  "physical_study": "unrun; no cohort or seed selected",
+  "primary_reading": {
+    "access_terms": "Public official documentation, unauthenticated HTTPS; no account or private data",
+    "accessed_utc": "2026-09-13T07:46:45.168294+00:00",
+    "actual_embedded_python": "3.13.9",
+    "artifact_id": "reiyah.viewer-custody.primary-reading",
+    "custody": "Private research retention only; no third-party payload redistribution in Git",
+    "documentation": "Python 3.13 series as retrieved; page patch version retained in full HTML",
+    "files": [
+      {
+        "byte_size": 244206,
+        "content_type": "text/html",
+        "last_modified": "Sun, 13 Sep 2026 06:05:51 GMT",
+        "path": "pathlib.html",
+        "resolved_url": "https://docs.python.org/3.13/library/pathlib.html",
+        "sha256": "b055cded271a86b28619565761fa7a1fa274556559aa6a7b6c4a89d4fb8256ba",
+        "status": 200,
+        "url": "https://docs.python.org/3.13/library/pathlib.html"
+      },
+      {
+        "byte_size": 86582,
+        "content_type": "text/html",
+        "last_modified": "Sun, 13 Sep 2026 06:05:50 GMT",
+        "path": "os-path.html",
+        "resolved_url": "https://docs.python.org/3.13/library/os.path.html",
+        "sha256": "00bb2fb79105843513bd6fa4f6ffb1415063979e5b6e597f9a7e651f30cfdb57",
+        "status": 200,
+        "url": "https://docs.python.org/3.13/library/os.path.html"
+      },
+      {
+        "byte_size": 86988,
+        "content_type": "text/html",
+        "last_modified": "Sun, 13 Sep 2026 06:05:50 GMT",
+        "path": "license.html",
+        "resolved_url": "https://docs.python.org/3.13/license.html",
+        "sha256": "437b0b44fbeb1e544b4940f8d01f738d8c9a17f21236b56fba520b40fcd11564",
+        "status": 200,
+        "url": "https://docs.python.org/3.13/license.html"
+      }
+    ],
+    "license_reference": "https://docs.python.org/3.13/license.html",
+    "scope": "Directory identity and resolved path semantics for the Blender 3.13 runtime; no filesystem sandbox or human usability claim",
+    "version": "0.1.0"
+  },
+  "private_checkpoint": "engine-viewer-custody-2026-09-13",
+  "private_output_controls": {
+    "exact_original_record_indices": [
+      1
+    ],
+    "pristine_package_preserved": true,
+    "private_extract": "pass",
+    "private_prepare": "pass"
+  },
+  "publication": "P005 operator-reported published; no further publication or outreach",
+  "question": "Can native viewer outputs contaminate their already verified source observation package?",
+  "real_bounds": [
+    "-8",
+    "8"
+  ],
+  "record_versions_changed": false,
+  "repository_tests_passed": 369,
+  "reproducer": {
+    "byte_size": 10768,
+    "path": "research/perception-viewer-custody/0.1.0/reproduce.py",
+    "sha256": "55040d8fb81d8277486fa171f5ca74f555262332d787c1a80d7cbaf68cb4f811"
+  },
+  "required_cli_argument_added": "--package",
+  "retained_measurement": {
+    "passed": 93,
+    "prior_receipt_sha256": "8d83726e585c0c7eb418892c8da550acd10e486c4f1e9c680982324928712832",
+    "selection_record": {
+      "byte_size": 20006,
+      "sha256": "c836f2021d3f8ef3fe13b0f931018a3953d2dc619e8dd7f967141f83ff58f9f5"
+    },
+    "source_commit": "ae6a37173897157cd39c073fceb396514a6a3e56",
+    "state": "retained_exact_source_binding_not_current_replay",
+    "unchanged_tracked_measurement_files": 107
+  },
+  "runtime_cost_limit": "Single local process runs, including startup; some shared the host. Individual nested native RSS is cumulative child maximum. No human-effort or performance win inferred.",
+  "same_reproducer_bytes_before_and_after": true,
+  "serious_comparator": "Existing native adapter plus complete package verifier against the original expected seal, direct file inventories and original raw record slices",
+  "source_binding_records": {
+    "after": {
+      "byte_size": 14327,
+      "sha256": "8af87474b2fedbccb3d7e5cb70a368ca7687c2badab2f206e6a1de0dc9db7419"
+    },
+    "before": {
+      "byte_size": 14326,
+      "sha256": "66a5017140a49a5f5ea00100f263faf151b0d6614e89b039a422a033da0e1162"
+    }
+  },
+  "source_files_bound": 79,
+  "source_hashes": {
+    "after": "976f15d1a0be7bf2db0d10ebd3f0668ce922854bde307ea1e7d8b171922661cc",
+    "before": "d9f4afac9642ef1811db19724269e95efde0ff8e9144fb1eb9f9395d50f1ebe0"
+  },
+  "source_location_check_limit": "Checks seal bytes and the selected capture file location; does not establish every package member, human authorship or physical truth",
+  "source_main": "ae6a37173897157cd39c073fceb396514a6a3e56",
+  "version": "0.1.0",
+  "warnings_retained": "Blender C-locale fallback and inherited SQLite ResourceWarnings; origins not repaired by this task"
+}
