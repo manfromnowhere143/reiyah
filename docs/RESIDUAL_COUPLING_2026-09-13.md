@@ -2,7 +2,9 @@
 
 Document ID: `reiyah.residual-coupling.2026-09-13`
 
-Version: `0.1.0`
+Version: `0.2.0`
+
+Supersedes `0.1.0`, withdrawing one claim.
 
 Lifecycle status: `proposed`
 
@@ -66,6 +68,22 @@ lidar pair.
 Stated for a safety case: a redundancy argument that conditions on range, occlusion and sensor
 return density, which is a good argument, still underestimates two lidar joint failure by a factor of
 about **2.2**.
+
+## Withdrawn: the residual magnitude
+
+This document reported a residual of `2.22 to 2.31` for two lidar pairs after conditioning on
+lidar return density, range and visibility. **That magnitude is withdrawn as unidentified.**
+
+Coarse strata leave within bucket variation, and that alone manufactures apparent residue. Refining
+the stratification from 100 cells to 25,285 pulls the same figure to `1.41 to 1.59`, and it is still
+falling at the finest level the data supports. The number described the stratification rather than
+the channels. No replacement magnitude is offered, because the sequence has not converged and the
+finest cells average about five objects, where the pooled estimator is not reliable.
+
+The qualitative conclusion of this document stands and is strengthened elsewhere: conditioning on
+difficulty does not remove the coupling, and the ordering between same and cross modality survives
+every refinement. See `reiyah.modality-coupling.2026-09-13`, where it also survives matched
+marginals.
 
 ## What this does not settle
 

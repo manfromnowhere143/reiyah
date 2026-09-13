@@ -1,0 +1,1010 @@
+{
+  "artifact_id": "reiyah.modality-coupling.counts",
+  "channels": [
+    {
+      "modality": "lidar",
+      "name": "centerpoint"
+    },
+    {
+      "modality": "camera",
+      "name": "fcos3d"
+    },
+    {
+      "modality": "camera",
+      "name": "mapillary"
+    },
+    {
+      "modality": "lidar",
+      "name": "megvii"
+    },
+    {
+      "modality": "lidar",
+      "name": "pointpillars"
+    }
+  ],
+  "design": {
+    "difficulty_control": "three stratification levels, from none to 7458 cells, to test whether any residue is an artifact of coarse strata",
+    "marginal_control": "each channel is thresholded to the same miss rate, so the marginals are identical by construction and the coefficient is comparable across pairs",
+    "why_both": "the coefficient is not marginal free and rises as miss rates fall, so an ordering found at unmatched marginals may be an artifact of one modality simply detecting more"
+  },
+  "grid": [
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1629656161/134565",
+          "observed_joint_miss": 22933,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "3104540416512946541375198890348623411959337065796999185153878005657300665842471653548445771724789269247559911957802385759347729/166749235188690399437963694269985045966032556971640935520458507002933384822101540627783190703561589426712901280233560826400",
+          "observed_joint_miss": 22933,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "1630099794283923137567435841420804698967685908493806810276208816857699993298563839073141347416488649637047999322759747527007/81620745106504420649020816814504195183929851753022305373393778764880733692326388412658346942118916249471427147059392000",
+          "observed_joint_miss": 22933,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "centerpoint",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.3,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.299996,
+      "realised_miss_rate_second": 0.299996,
+      "second": "fcos3d"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1629656161/134565",
+          "observed_joint_miss": 22646,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "4639320004791996258304292488205378560056785622663065103476926068584173385739068810837889303274964247005314715245486272637442879/244565544943412585842346751595978067416847750225073372096672476937635631072415592920748679698556997825845588544342555878720",
+          "observed_joint_miss": 22646,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "40773563362728018064437344258720077122395615958544245433518163342493773425833095381349852314586117943135328446405501391/2012941331422127371239538739629678287065449633841923285325879914296160937464890707622036769806622182338744873904000",
+          "observed_joint_miss": 22646,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "centerpoint",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.3,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.299996,
+      "realised_miss_rate_second": 0.299996,
+      "second": "mapillary"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1629656161/134565",
+          "observed_joint_miss": 31040,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "36363857411982612421557563122483778648752862528487063504436073159403842311050369681270998678531862302338744085328410680722883853/1834241587075594393817600636969835505626358126688050290725043577032267233043116946905615097739177483693841914082569169090400",
+          "observed_joint_miss": 31040,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "1514025483949409864362609861548596301592667150380447804717864578461472602646979195676845415407499481288278728212961081337/66629179678779118897159850460819751170554981022875351325219411236637333626388888500129262809892992856711369099640320",
+          "observed_joint_miss": 31040,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "centerpoint",
+      "kind": "same_modality",
+      "matched_miss_rate": 0.3,
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.299996,
+      "realised_miss_rate_second": 0.299996,
+      "second": "megvii"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1630544279/134565",
+          "observed_joint_miss": 28167,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "4318929715907193991072509983951285524539790575157457820657729506060328466352983748094453145571431048343945129792296761697770637/229280198384449299227200079621229438203294765836006286340630447129033404130389618363201887217397185461730239260321146136300",
+          "observed_joint_miss": 28167,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "35673057076226831252444298812434369895364605541237348648629306278463442078354566094008845458266626676374900129988239177/1627532305214445077747174811854520342650645099761162619609048430007591898152071553592389769533776994007406323969280",
+          "observed_joint_miss": 28167,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "centerpoint",
+      "kind": "same_modality",
+      "matched_miss_rate": 0.3,
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.299996,
+      "realised_miss_rate_second": 0.30016,
+      "second": "pointpillars"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1629656161/134565",
+          "observed_joint_miss": 27200,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "4459384557361006466922354278588893482939268177952558593851510824694207643862586361040107507176954525653394468746413447256134757/244565544943412585842346751595978067416847750225073372096672476937635631072415592920748679698556997825845588544342555878720",
+          "observed_joint_miss": 27200,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "68924384344831207658753418618720878228113047249929604472133256515397392914958008753562616172447820905991213371873023152309/3400864379437684193709200700604341465997077156375929390558074115203363903846932850527431122588288177061309464460808000",
+          "observed_joint_miss": 27200,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "fcos3d",
+      "kind": "same_modality",
+      "matched_miss_rate": 0.3,
+      "modalities": [
+        "camera",
+        "camera"
+      ],
+      "realised_miss_rate_first": 0.299996,
+      "realised_miss_rate_second": 0.299996,
+      "second": "mapillary"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1629656161/134565",
+          "observed_joint_miss": 22583,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "5083591120266318765663773943218920864255051905383693079056612940893238636996020562597637257365638498292580445357471770961637911/282191013396245291356553944149205462404055096413546198573083627235733420468171837985479245806027305183667986781933718321600",
+          "observed_joint_miss": 22583,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "321058068709730155345515392259426721806202395320528447857387082058687935580915806243356854930002644611341065299204712478063/16324149021300884129804163362900839036785970350604461074678755752976146738465277682531669388423783249894285429411878400",
+          "observed_joint_miss": 22583,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "fcos3d",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.3,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.299996,
+      "realised_miss_rate_second": 0.299996,
+      "second": "megvii"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1630544279/134565",
+          "observed_joint_miss": 21928,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "15827534247592888005565996287424095646814333864371023888287093576842194544657266767896031040957893993079261883210615959867145489/917120793537797196908800318484917752813179063344025145362521788516133616521558473452807548869588741846920957041284584545200",
+          "observed_joint_miss": 21928,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "22414340962606011942165467649788450785773595794489521661575618309312258986321565772784642164452542944849968734589990334949/1166010644378634580700297383064345645484712167900318648191339696641153338461805548752262099173127374992448959243705600",
+          "observed_joint_miss": 21928,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "fcos3d",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.3,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.299996,
+      "realised_miss_rate_second": 0.30016,
+      "second": "pointpillars"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1629656161/134565",
+          "observed_joint_miss": 21861,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "64462966890682623770611032909010181608198097672058401956031274801602046543681943564610520390591148771454663395392848124133853/3543401114798791449468947429672240907227582588019028862600296681217554782272031192708616048950405648012830897483954736000",
+          "observed_joint_miss": 21861,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "5329407412251348751945033722452709460277935408060319961846031307751067729882028765460689085419514272757021081126446309467/272069150355014735496736056048347317279766172510074351244645929216269112307754628042194489807063054164904757156864640",
+          "observed_joint_miss": 21861,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "mapillary",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.3,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.299996,
+      "realised_miss_rate_second": 0.299996,
+      "second": "megvii"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1630544279/134565",
+          "observed_joint_miss": 21437,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "313940528618364757546576661937365684768687696709934628132512500653588394170377680387151842657136303178049156914371548309525629/17982760657603866606054908205586622604179981634196571477696505657179090520030558302996226448423308663665116804731070285200",
+          "observed_joint_miss": 21437,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "1190911783002043435701132823895697940599206793081058703537982530573898797730327685115675899897459480869139621828843397353/61833897807957894431076376374624390290855948297744170737419529367333889160853324555044202228877966855660172081105600",
+          "observed_joint_miss": 21437,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "mapillary",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.3,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.299996,
+      "realised_miss_rate_second": 0.30016,
+      "second": "pointpillars"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1630544279/134565",
+          "observed_joint_miss": 27787,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "577494733754279522250496351752212562214688602065293384711957562300322125439384809955998243664371114398479236980073893350673491/31624854949579213686510355809824750097006174598069832598707647879866676431777878394924398236882370408514515760044296018800",
+          "observed_joint_miss": 27787,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "3688571606828302524860505717196989750637492376215987431343532458221876607299698372348029897016891597891598575421259462613/173661159801073235423448546413838713157297556921324053985944210138044114238992315771613504132167906913768993929913600",
+          "observed_joint_miss": 27787,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "megvii",
+      "kind": "same_modality",
+      "matched_miss_rate": 0.3,
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.299996,
+      "realised_miss_rate_second": 0.30016,
+      "second": "pointpillars"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "107652/5",
+          "observed_joint_miss": 35274,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "2496595312150278166832316517044441410216000933332387854271049950258197710907602332258717851016554249488121323776597546328159/83004868634066177654882823647833989755921718105170164301069941941907287222514116522111281461633518132584030866257994800",
+          "observed_joint_miss": 35274,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "11103011490517495003986553646699523227873944962735399711968534866346420799310657598499656377187132132622691057238729857883/348806603019249660893251353908137586256110477577018399031597345149062964497121318002813448470593659185775329688288000",
+          "observed_joint_miss": 35274,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "centerpoint",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.4,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.4,
+      "realised_miss_rate_second": 0.4,
+      "second": "fcos3d"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "107652/5",
+          "observed_joint_miss": 34611,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "21914193775189588919624106056714213064755576668591615555651427149319192649064783493990631590642873884507969878073128497737907/718549609071020642385552801727518120275143231358189482009262183974719799836689366907829003697722992789533401528800552000",
+          "observed_joint_miss": 34611,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "12543410838030147504121533322096054188679890636963961558601029264396513455562943003125273422632739072196033988873708582963/392407428396655868504907773146654784538124287274145698910547013292695835059261482753165129529417866583997245899324000",
+          "observed_joint_miss": 34611,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "centerpoint",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.4,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.4,
+      "realised_miss_rate_second": 0.4,
+      "second": "mapillary"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "107652/5",
+          "observed_joint_miss": 40931,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "731239249824671023826959837606490269461219494701567281701615915604652053204885562744199072121975150425589674776697312850605689/24071411903879191519916018857871857029217298250499347647310283163153113294529093791412271623873720258449368951214818492000",
+          "observed_joint_miss": 40931,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "856364257159638418955739419268415462913146157191909774495311602806278968416242337648772113916719063693373077840389092909/25731634648961040557698870370272444887745854903222668781019476281488251479295834934633778985535597808786704649136000",
+          "observed_joint_miss": 40931,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "centerpoint",
+      "kind": "same_modality",
+      "matched_miss_rate": 0.4,
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.4,
+      "realised_miss_rate_second": 0.4,
+      "second": "megvii"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "21532",
+          "observed_joint_miss": 39106,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "3134346677261654819984190617047705181010478742874326410408446013111913463491041018683658306134104104859037763129322754824767/105345347500565389583877544235763050456093208973738939375537344258875769341483999087143420673407966120128529326979512000",
+          "observed_joint_miss": 39106,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "1698154646454816314354482599970735321256856332569342223521882176515162252907295740759791421170533747190166318488793199957/51463269297922081115397740740544889775491709806445337562038952562976502958591669869267557971071195617573409298272000",
+          "observed_joint_miss": 39106,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "centerpoint",
+      "kind": "same_modality",
+      "matched_miss_rate": 0.4,
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.4,
+      "realised_miss_rate_second": 0.40003,
+      "second": "pointpillars"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "107652/5",
+          "observed_joint_miss": 40412,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "411953936371630144299130906586785287585722364897910306905148911944937890168206760018205931257152765331774268875952933322532563/13688370052802943237444780872909220191241478557373509632276444604718412186888932439594142520441623012640611299123650515600",
+          "observed_joint_miss": 40412,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "29427867664348289388939840996634613125102041074181757025053031674189754277499997480415787018455014791599704426385684569/899223791495950342070121814014897267582516434790039500411970945320825992556037242339352491430007450307062259244000",
+          "observed_joint_miss": 40412,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "fcos3d",
+      "kind": "same_modality",
+      "matched_miss_rate": 0.4,
+      "modalities": [
+        "camera",
+        "camera"
+      ],
+      "realised_miss_rate_first": 0.4,
+      "realised_miss_rate_second": 0.4,
+      "second": "mapillary"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "107652/5",
+          "observed_joint_miss": 34376,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "13242016918380437880544254751963576832099975366625922370274497032368216042135302662021346236761939304862303706293007098934711353/458560396768898598454400159242458876406589531672012572681260894258066808260779236726403774434794370923460478520642292272600",
+          "observed_joint_miss": 34376,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "212720445873863240573156962411391604479595506337529854003357247201254000363366482598810564211461200744549077948168174415507/6801728758875368387418401401208682931994154312751858781116148230406727807693865701054862245176576354122618928921616000",
+          "observed_joint_miss": 34376,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "fcos3d",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.4,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.4,
+      "realised_miss_rate_second": 0.4,
+      "second": "megvii"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "21532",
+          "observed_joint_miss": 33504,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "1337064892562506719950415367629138983888803141891384912359115765372611539062793450910672615902735347026006678990575053776061/47219502820841662860538052180971437910319426610581806943623209603096080140124004296707815619492276578551729027740228320",
+          "observed_joint_miss": 33504,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "10668593361058947894763128785373190906566791037649391055612231128074847086916261933788058838693929865271598421476134349359/348806603019249660893251353908137586256110477577018399031597345149062964497121318002813448470593659185775329688288000",
+          "observed_joint_miss": 33504,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "fcos3d",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.4,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.4,
+      "realised_miss_rate_second": 0.40003,
+      "second": "pointpillars"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "107652/5",
+          "observed_joint_miss": 33459,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "7971802778634401545012610321892498717232014072195679380969401843746453894085621409652245127795484022045322979414778001678937861/273767401056058864748895617458184403824829571147470192645528892094368243737778648791882850408832460252812225982473010312000",
+          "observed_joint_miss": 33459,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "2530070580025515181157146320112775392101299704100419495777077311312148649691713628888223669710609231212653272150732697612043/81620745106504420649020816814504195183929851753022305373393778764880733692326388412658346942118916249471427147059392000",
+          "observed_joint_miss": 33459,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "mapillary",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.4,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.4,
+      "realised_miss_rate_second": 0.4,
+      "second": "megvii"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "21532",
+          "observed_joint_miss": 32809,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "27776985367727060297318254546681755977992989255451264320119721416404580329883110611429708824579456683081680700366156272439/972489275967130583239420051216944229108633277258057179251786396652250148262875645769568794256843261576104130489901000",
+          "observed_joint_miss": 32809,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "70528022450647468093835458031117904486822641997357092392894700199256376290103442620851255695832005481109106426030192889/2311678517800623673077512654766743944259936891158442998000276956068900353810082372625420497964170053513974939024000",
+          "observed_joint_miss": 32809,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "mapillary",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.4,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.4,
+      "realised_miss_rate_second": 0.40003,
+      "second": "pointpillars"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "21532",
+          "observed_joint_miss": 37787,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "15209372370195575817380318930584791370861039707482490390972732757773672976910303096888999586696242731970209723386861760426481/528112860496255439887596636234548976628572534460454419764206949508311422619807942792126885218005724891696969389199922000",
+          "observed_joint_miss": 37787,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "24993547917655122738149133888218478033670601352435609848142415616841279897253919872866164515583970705463047835671818350061/784814856793311737009815546293309569076248574548291397821094026585391670118522965506330259058835733167994491798648000",
+          "observed_joint_miss": 37787,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "megvii",
+      "kind": "same_modality",
+      "matched_miss_rate": 0.4,
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.4,
+      "realised_miss_rate_second": 0.40003,
+      "second": "pointpillars"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "4527002089/134565",
+          "observed_joint_miss": 48347,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "1383153560519704259735012383247573675510675555989820430103677483825329027365683859921411057326218268889312809717136814916655883/32292985687950605524957757693130906789196445892395251597271893961835690722590087093408716509492561332638061867650865653000",
+          "observed_joint_miss": 48347,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "64344089204459775230606733977705909620089770035784767069137795558974906559307536519288280996932534825645918637775313691973/1431942896605340713140716084464985880419821960579338690761294364296153222672392779169444683195068706131077669246656000",
+          "observed_joint_miss": 48347,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "centerpoint",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.5,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.500004,
+      "realised_miss_rate_second": 0.500004,
+      "second": "fcos3d"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "4527002089/134565",
+          "observed_joint_miss": 47862,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "15883753913056088555434131353824367760218716065403529624537015442746787947571887297508914210324692780938751766183224447568169461/366848317415118878763520127393967101125271625337610058145008715406453446608623389381123019547835496738768382816513833818080",
+          "observed_joint_miss": 47862,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "257881864729628388801944207452979654642257812149517869983067572327021090720992526180688411427326376985868070444051947969/5723754916304657829524601459642650433655669828402686211317936799781257622182776186020921945450134379345822380579200",
+          "observed_joint_miss": 47862,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "centerpoint",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.5,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.500004,
+      "realised_miss_rate_second": 0.500004,
+      "second": "mapillary"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "4527002089/134565",
+          "observed_joint_miss": 51372,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "260426185177436862595981454607783831582998930489890950259497532676994036109459355583391949155385859911235767581342403621778312523/6114138623585314646058668789899451685421193755626834302416811923440890776810389823018716992463924945646139713608563896968000",
+          "observed_joint_miss": 51372,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "1851694072231935494095217634601003195355784025191025775686641769188695721078939771628945513222819027874017213511285150093/41056712830233611996489344474096677657912400278180234091244355515533568255697378477192327435673499119452428142384000",
+          "observed_joint_miss": 51372,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "centerpoint",
+      "kind": "same_modality",
+      "matched_miss_rate": 0.5,
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.500004,
+      "realised_miss_rate_second": 0.500004,
+      "second": "megvii"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1509023124/44855",
+          "observed_joint_miss": 50112,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "511871227378943759582053955705522369269519846976696235250764494311836488480060729519682309280546564816523352043232674875767136893/12228277247170629292117337579798903370842387511253668604833623846881781553620779646037433984927849891292279427217127793936000",
+          "observed_joint_miss": 50112,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "17108205022167591965522399585007554594299337956960384925374122153625847916586068920582752713422318644838256332098055973023/381405350964973928266452415021047641046401176415992081184083078340564176132366300993730593187471571259212276388128000",
+          "observed_joint_miss": 50112,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "centerpoint",
+      "kind": "same_modality",
+      "matched_miss_rate": 0.5,
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.500004,
+      "realised_miss_rate_second": 0.500011,
+      "second": "pointpillars"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "4527002089/134565",
+          "observed_joint_miss": 53458,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "2131766309304383853604567247545907143838212508354955113273855805470727126786969938479170671028222614902188277384593215086096907/49574096947989037670745963161346905557469138559136494343920096676547763055219376943395002641599391451184916596826193759200",
+          "observed_joint_miss": 53458,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "7862661210791879812020088991056159034837242390266778967567888670598366539506210852803992780096119831614716820051890277999/170043218971884209685460035030217073299853857818796469527903705760168195192346642526371556129414408853065473223040400",
+          "observed_joint_miss": 53458,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "fcos3d",
+      "kind": "same_modality",
+      "matched_miss_rate": 0.5,
+      "modalities": [
+        "camera",
+        "camera"
+      ],
+      "realised_miss_rate_first": 0.500004,
+      "realised_miss_rate_second": 0.500004,
+      "second": "mapillary"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "4527002089/134565",
+          "observed_joint_miss": 47365,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "172490975954347228766826805490390252614407316086303520364740900150491643249491087671037797026908820406121349288497287331768869/4164944566475009976879202172956029758461303648247162331346602127684530501914434484345175062986324894854318606000384126000",
+          "observed_joint_miss": 47365,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "86421981177155769773026633579702591481483551242139735406742773796997721631212166506419360094374048549933573803584355801053/1943351073964390967833828971773909409141186946500531080318899494401922230769675914587103498621878958320748265406176000",
+          "observed_joint_miss": 47365,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "fcos3d",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.5,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.500004,
+      "realised_miss_rate_second": 0.500004,
+      "second": "megvii"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1509023124/44855",
+          "observed_joint_miss": 45882,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "8880279197130026810915250097746171675251041928227117414761491043041521199101617891479705045767609081796361540578215514455458277/218362093699475523073523885353551845907899776986672653657743282980031813457513922250668464016568748058790704057448710606000",
+          "observed_joint_miss": 45882,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "159606828524722603210311613068058853099161052281081997599501751884675929423637589428045702644556093232322155642390536253/3690574475786960600878134238311819279432530826235408996807459701794209336784517472086197637100692541574942446512000",
+          "observed_joint_miss": 45882,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "fcos3d",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.5,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.500004,
+      "realised_miss_rate_second": 0.500011,
+      "second": "pointpillars"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "4527002089/134565",
+          "observed_joint_miss": 46576,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "3910752530726423088706924531185007480681384192826934344444010780009702245674876203380617106489419107009353263209683422707047833/94063671132081763785517981383068487468018365471182066191027875745244473489390612661826415268675768394555995593977906107200",
+          "observed_joint_miss": 46576,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "89935933999919335654559670756329156312373551406386650708177957522776619007438351695569995770136633943019724835512928973691/2040518627662610516225520420362604879598246293825557634334844469122018342308159710316458673552972906236785678676484800",
+          "observed_joint_miss": 46576,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "mapillary",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.5,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.500004,
+      "realised_miss_rate_second": 0.500004,
+      "second": "megvii"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1509023124/44855",
+          "observed_joint_miss": 45660,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "108382323299784419939364218374405261809939711348315926892675901062618241364455016287252174109136268172943582240154216801745017/2646813256963339673618471337618810253429088205899062468578706460364021981303199057583860169897803006773220655241802552800",
+          "observed_joint_miss": 45660,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "44144095065835391714195447332142321061747948015239592944096021405386622135507246623430555589562050264837587432806705405859/1020259313831305258112760210181302439799123146912778817167422234561009171154079855158229336776486453118392839338242400",
+          "observed_joint_miss": 45660,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "mapillary",
+      "kind": "cross_modality",
+      "matched_miss_rate": 0.5,
+      "modalities": [
+        "camera",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.500004,
+      "realised_miss_rate_second": 0.500011,
+      "second": "pointpillars"
+    },
+    {
+      "conditioned": {
+        "0": {
+          "cells": 1,
+          "expected_under_conditional_independence": "1509023124/44855",
+          "observed_joint_miss": 48482,
+          "variables": "none"
+        },
+        "1": {
+          "cells": 100,
+          "expected_under_conditional_independence": "250083169058981476249762745702080438016539696401577022780943684796631615575026383927985709697628771483809918330713107784260635651/6114138623585314646058668789899451685421193755626834302416811923440890776810389823018716992463924945646139713608563896968000",
+          "observed_joint_miss": 48482,
+          "variables": "visibility, range 10 m, lidar return band"
+        },
+        "2": {
+          "cells": 7458,
+          "expected_under_conditional_independence": "104944156277709763008938164580478368986297230423675552601927382092860526250373345476791840264918898395094033420251915138073/2400610150191306489677082847485417505409701522147714863923346434261198049774305541548774910062321066160924327854688000",
+          "observed_joint_miss": 48482,
+          "variables": "visibility, range 5 m, lidar return count to 60, class"
+        }
+      },
+      "first": "megvii",
+      "kind": "same_modality",
+      "matched_miss_rate": 0.5,
+      "modalities": [
+        "lidar",
+        "lidar"
+      ],
+      "realised_miss_rate_first": 0.500004,
+      "realised_miss_rate_second": 0.500011,
+      "second": "pointpillars"
+    }
+  ],
+  "population": {
+    "definition": "annotated objects in the retained nuScenes validation cache",
+    "match_rule": "matched at 2 m per class as recorded in the retained caches",
+    "objects": 134565
+  },
+  "source_provenance": {
+    "held_by": "the Gate B measurement lane worktree, read only",
+    "note": "aggregate integer counts and exact rationals only",
+    "sha256": {
+      "gt_val_cache.json": "7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd",
+      "matched_centerpoint.json": "6a8be866b3316857f44787a3676b1557d9d8dfb6a945f16f469bb10877326275",
+      "matched_fcos3d.json": "dd7fa5d2fe13b34a4bf6762f4c8cd512e629c88bcbbb5227dfa58cf46ae8cdf4",
+      "matched_mapillary.json": "a8fef4a1e7dbf0fed84ae1220332fcb97196e468ebf23cb77fe835871466caca",
+      "matched_megvii.json": "2ce14fcca8235438d2f9b2ab844f83e21413e97a2ab0cf597f445bac6e35a0c1",
+      "matched_pointpillars.json": "46b0f70daf6e18f08a4a439c502e7026c2b5d67bcffbb2109f92b314478f484e"
+    }
+  },
+  "version": "0.1.0"
+}

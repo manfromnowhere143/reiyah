@@ -2,7 +2,9 @@
 
 Document ID: `reiyah.operating-point-dependence.2026-09-13`
 
-Version: `0.1.0`
+Version: `0.2.0`
+
+Supersedes `0.1.0`, withdrawing one claim.
 
 Lifecycle status: `proposed`
 
@@ -67,6 +69,19 @@ system runs at, which is the high capture end, and that is exactly where the ind
 is worst.** A redundancy claim validated at a conservative threshold can look sound and be wrong by a
 large factor where it ships. Nothing in a validation report would show it, because the coefficient is
 not usually computed at all.
+
+## Withdrawn: the lidar specific reading
+
+This document reported that the most coupled pair is always a **lidar** pair. That is withdrawn.
+
+The coefficient is not marginal free and rises as miss rates fall, which this document itself
+measured. The lidar channels here detect more than the camera channels, so the lidar ordering could
+be an artifact of the marginals, and it is. Thresholding every channel to the same miss rate reverses
+it: at a matched rate of `0.50` the two camera pair exceeds every lidar pair.
+
+What survives, and is established in `reiyah.modality-coupling.2026-09-13`, is the weaker and
+marginal free statement: **same** modality pairs are strictly more coupled than **cross** modality
+pairs, at every matched miss rate and every conditioning level.
 
 ## What this is not
 
