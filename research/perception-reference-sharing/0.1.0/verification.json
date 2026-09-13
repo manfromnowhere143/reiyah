@@ -1,0 +1,627 @@
+{
+  "artifact_id": "reiyah.reference-sharing.verification",
+  "baseline_commit": "146573cc21cbb8c4efa6a78c8c11455168f77edb",
+  "bound_source_files": 188,
+  "budget_counterexample": {
+    "budget-after": {
+      "capture": {
+        "child_max_rss_bytes_macos": 69844992,
+        "elapsed_seconds": 0.4727910420624539,
+        "exit_code": 0,
+        "receipt": {
+          "byte_size": 1281,
+          "path": "checks/budget-after/receipt.json",
+          "sha256": "0999e5401ff8a6ff91564c3270356fc8e6b12d62895575c046c0494ea9347ac2"
+        }
+      },
+      "files": [
+        {
+          "byte_size": 2272691,
+          "path": "private/budget-after/inputs.json",
+          "sha256": "19ff66355daaeb83a2d925717c01920b8df52df93a852956c253462b178d4e68"
+        },
+        {
+          "byte_size": 18480,
+          "path": "private/budget-after/compiled.json",
+          "sha256": "5fa2fd3677e1ef62cce05012db312c5385f34b485ed28435473790b1a3f878c2"
+        },
+        {
+          "byte_size": 1690534,
+          "path": "private/budget-after/compilation.json",
+          "sha256": "4100323e6d80fb4d6061a407d5422b4902090231364f3f71dbb3b3462b55659a"
+        },
+        {
+          "byte_size": 596,
+          "path": "private/budget-after/packet.json",
+          "sha256": "1777a017e4303fbd58d227a9b16b962e313f016b1ac186fb860b68919ccb87ec"
+        },
+        {
+          "byte_size": 772,
+          "path": "private/budget-after/summary.json",
+          "sha256": "9a7405a65f9be943a3067faa931ba61249cf3b9193434b23c6c92413cf77513a"
+        }
+      ],
+      "summary": {
+        "anchor_states": {
+          "anchor-0": "finite",
+          "anchor-1": "finite"
+        },
+        "compile_seconds": 0.215855999966152,
+        "core_capacity": [
+          64,
+          4295872
+        ],
+        "direct_expected": [
+          "0",
+          "0"
+        ],
+        "evaluation_seconds": 0.0001409159740433097,
+        "geometry_comparisons_budgeted": 16514,
+        "result": {
+          "authority_state": "research_only",
+          "bounds": {
+            "lower": {
+              "denominator": "1",
+              "numerator": "-1"
+            },
+            "upper": {
+              "denominator": "1",
+              "numerator": "1"
+            }
+          },
+          "decision": {
+            "improvement_criterion": "unresolved",
+            "preference": "unresolved"
+          },
+          "enclosure_kind": "unconditional_count_bound",
+          "execution_status": "resource_limited",
+          "model_status": "consistent",
+          "physical_coverage": "not_established",
+          "reference_scope": "synthetic",
+          "sampling_scope": "fixed_selected_cohort",
+          "statistical_confidence_level": null
+        },
+        "sizes": {
+          "compiled": 18480,
+          "input": 2272691,
+          "receipt": 1690534
+        }
+      }
+    },
+    "budget-baseline": {
+      "capture": {
+        "child_max_rss_bytes_macos": 67551232,
+        "elapsed_seconds": 0.47359562502242625,
+        "exit_code": 0,
+        "receipt": {
+          "byte_size": 1287,
+          "path": "checks/budget-baseline/receipt.json",
+          "sha256": "0876834f9840373d465afcf5227ca604b4152260f2bdb8044520f0502705a62a"
+        }
+      },
+      "files": [
+        {
+          "byte_size": 2272691,
+          "path": "private/budget-baseline/inputs.json",
+          "sha256": "19ff66355daaeb83a2d925717c01920b8df52df93a852956c253462b178d4e68"
+        },
+        {
+          "byte_size": 37778,
+          "path": "private/budget-baseline/compiled.json",
+          "sha256": "5c5a5c3a6a76ad481ca79b2ed913617d21b1c5e22de1bc1b2c644230b24d5365"
+        },
+        {
+          "byte_size": 1664531,
+          "path": "private/budget-baseline/compilation.json",
+          "sha256": "9aff3832d17beda9b25ed4b73db0e70f3b5d242d293376eb2e004b1533bb514e"
+        },
+        {
+          "byte_size": 16120,
+          "path": "private/budget-baseline/packet.json",
+          "sha256": "44c93b04ab125e976645d8a6cb87cd9c05503f4e8db5c01865930e59f64fcd26"
+        },
+        {
+          "byte_size": 764,
+          "path": "private/budget-baseline/summary.json",
+          "sha256": "97f327e23fdfd1e4121e37ddb32fc424b7ba4fee3276db67e56484ab8080f17b"
+        }
+      ],
+      "summary": {
+        "anchor_states": {
+          "anchor-0": "open",
+          "anchor-1": "finite"
+        },
+        "compile_seconds": 0.21466420800425112,
+        "core_capacity": [
+          64,
+          124096
+        ],
+        "direct_expected": [
+          "0",
+          "0"
+        ],
+        "evaluation_seconds": 0.004583041998557746,
+        "geometry_comparisons_budgeted": 16640,
+        "result": {
+          "authority_state": "research_only",
+          "bounds": {
+            "lower": {
+              "denominator": "1",
+              "numerator": "0"
+            },
+            "upper": {
+              "denominator": "1",
+              "numerator": "1"
+            }
+          },
+          "decision": {
+            "improvement_criterion": "unresolved",
+            "preference": "unresolved"
+          },
+          "enclosure_kind": "conservative_open_reference",
+          "execution_status": "succeeded",
+          "model_status": "consistent",
+          "physical_coverage": "not_established",
+          "reference_scope": "synthetic",
+          "sampling_scope": "fixed_selected_cohort",
+          "statistical_confidence_level": null
+        },
+        "sizes": {
+          "compiled": 37778,
+          "input": 2272691,
+          "receipt": 1664531
+        }
+      }
+    },
+    "budget-guarded": {
+      "capture": {
+        "child_max_rss_bytes_macos": 78921728,
+        "elapsed_seconds": 0.5561394999967888,
+        "exit_code": 0,
+        "receipt": {
+          "byte_size": 1283,
+          "path": "checks/budget-guarded/receipt.json",
+          "sha256": "02688542f78fb9e87788b1a1634b24530c26189a82edb8d88f207e1ce16205ca"
+        }
+      },
+      "files": [
+        {
+          "byte_size": 2272691,
+          "path": "private/budget-guarded/inputs.json",
+          "sha256": "19ff66355daaeb83a2d925717c01920b8df52df93a852956c253462b178d4e68"
+        },
+        {
+          "byte_size": 37778,
+          "path": "private/budget-guarded/compiled.json",
+          "sha256": "5c5a5c3a6a76ad481ca79b2ed913617d21b1c5e22de1bc1b2c644230b24d5365"
+        },
+        {
+          "byte_size": 1664531,
+          "path": "private/budget-guarded/compilation.json",
+          "sha256": "9aff3832d17beda9b25ed4b73db0e70f3b5d242d293376eb2e004b1533bb514e"
+        },
+        {
+          "byte_size": 16120,
+          "path": "private/budget-guarded/packet.json",
+          "sha256": "44c93b04ab125e976645d8a6cb87cd9c05503f4e8db5c01865930e59f64fcd26"
+        },
+        {
+          "byte_size": 764,
+          "path": "private/budget-guarded/summary.json",
+          "sha256": "c367b079e4549e156484c37a83092817b6ce6813f1083a693b53280f54586e89"
+        }
+      ],
+      "summary": {
+        "anchor_states": {
+          "anchor-0": "open",
+          "anchor-1": "finite"
+        },
+        "compile_seconds": 0.28358291694894433,
+        "core_capacity": [
+          64,
+          124096
+        ],
+        "direct_expected": [
+          "0",
+          "0"
+        ],
+        "evaluation_seconds": 0.010647916002199054,
+        "geometry_comparisons_budgeted": 16640,
+        "result": {
+          "authority_state": "research_only",
+          "bounds": {
+            "lower": {
+              "denominator": "1",
+              "numerator": "0"
+            },
+            "upper": {
+              "denominator": "1",
+              "numerator": "1"
+            }
+          },
+          "decision": {
+            "improvement_criterion": "unresolved",
+            "preference": "unresolved"
+          },
+          "enclosure_kind": "conservative_open_reference",
+          "execution_status": "succeeded",
+          "model_status": "consistent",
+          "physical_coverage": "not_established",
+          "reference_scope": "synthetic",
+          "sampling_scope": "fixed_selected_cohort",
+          "statistical_confidence_level": null
+        },
+        "sizes": {
+          "compiled": 37778,
+          "input": 2272691,
+          "receipt": 1664531
+        }
+      }
+    }
+  },
+  "checks": "Every finite world graph and per-world source digest/member mapping in both selected cases; ten new regressions including 125 three-world patterns, malformed/unknown inputs and conditional loss-neutral structural forgery. Original resource rejection is retained on unshareable objects. No core/checker/schema/limit changes.",
+  "compiler": {
+    "byte_size": 19332,
+    "path": "candidate/tools/perception_reference.py",
+    "sha256": "acb2fe1e87e08aeb0c448ffab55322f233786e20a4810422bc209be434649e69"
+  },
+  "cost_limits": "Measured single processes on selected local runtime; not controlled latency benchmarks or human-effort estimates. Graph/receipt bytes can increase versus a conservative open fallback. Guarded large-process RSS exceeds earlier baseline. Two-phase validation retains temporary per-row descriptors. All initial attempts, evaluation and correction are counted, not only favorable final runs.",
+  "decisions": [
+    {
+      "byte_size": 4662,
+      "path": "private/DECISION.json",
+      "sha256": "c9db55d9e15e7e32e3571d32cd1a5bbd38c00204e716800583cfc869d4e32a2f"
+    },
+    {
+      "byte_size": 2982,
+      "path": "private/BUDGET_DECISION.json",
+      "sha256": "acacbdf4b5ceabc741c3bbfe909fd0c51131e2f1cf4ba29df3d5e40fea73cd12"
+    }
+  ],
+  "fable_boundary": "No Fable source, ref, outbox, status or process changed. Coordinator continuation read; robustness model and checker repairs remain its responsibility. No newer correction consumed.",
+  "lifecycle_status": "exploratory",
+  "physical_evidence": {
+    "admitted_human_references": 0,
+    "external_scientific_review": "missing",
+    "gate_a": "unaccepted",
+    "interactive_observation": false,
+    "physical_study": "unrun, no cohort or seed",
+    "real_bounds": [
+      "-8",
+      "8"
+    ]
+  },
+  "publication": "P005 operator-reported published; no further publication or outreach",
+  "recorded_utc": "2026-09-13T10:18:36.137140+00:00",
+  "runtime": {
+    "artifact_id": "reiyah.engine.selected-runtime",
+    "files_rechecked": 4219,
+    "inventory_path": "/Users/danielwahnich/.codex/reports/reiyah/engine-discovery-custody-2026-09-13/private/RUNTIME_INVENTORY_FINAL.json",
+    "inventory_sha256": "f2e111e1364ddcf4727b213738cd7c5a8e48de81000aea0c8448f7275b9b79a4",
+    "path": "/Users/danielwahnich/.codex/reports/reiyah/engine-discovery-custody-2026-09-13/private/runtime/bin/python",
+    "use": "Read-only execution with PYTHONPATH empty and bytecode disabled; no installation into the closed task runtime",
+    "version": "0.1.0"
+  },
+  "scope": "Engine compiler change plus existing common-interface conformance; all constructed cases synthetic, no human judgments or physical observations",
+  "small_cases": [
+    {
+      "before_cost": {
+        "checker_seconds": 5.1833922043442726e-05,
+        "compile_seconds": 0.0052195420721545815,
+        "direct_seconds": 0.027441540965810418,
+        "kernel_seconds": 3.804103471338749e-05
+      },
+      "before_geometry_work": 256,
+      "before_output": {
+        "byte_size": 33467,
+        "path": "private/baseline/historical-repeated-65.json",
+        "sha256": "da9411029956ecd8e5cc7806968afb46dca638d0fb6f7354c1643bb3dacdcfc7"
+      },
+      "before_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "1"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "unresolved",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "conservative_open_reference",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "reference_scope": "synthetic",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null
+      },
+      "before_size": {
+        "compilation_bytes": 25998,
+        "compiled_bytes": 1315,
+        "graph_edges": {
+          "anchor-0": 0
+        },
+        "graph_objects": {
+          "anchor-0": 0
+        },
+        "mapping_rows": 130
+      },
+      "case": "historical-repeated-65",
+      "current_cost": {
+        "checker_seconds": 0.00016095803584903479,
+        "compile_seconds": 0.007787125068716705,
+        "direct_seconds": 0.028362332959659398,
+        "kernel_seconds": 0.000196542008779943
+      },
+      "current_geometry_work": 130,
+      "current_graph_checks": {
+        "finite_world_anchor_graphs_checked": 2,
+        "open_world_anchor_rows": [],
+        "source_mapping_rows_checked": 130
+      },
+      "current_output": {
+        "byte_size": 39821,
+        "path": "private/public-replay-final/historical-repeated-65.json",
+        "sha256": "55eec0fa251377cc4487c61297ce910af936ae0400aaa7745a532bfd1f62edee"
+      },
+      "current_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "-1"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "excluded",
+          "preference": "prefer_base"
+        },
+        "enclosure_kind": "exact_for_finite_model",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "reference_scope": "synthetic",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null
+      },
+      "current_size": {
+        "compilation_bytes": 26463,
+        "compiled_bytes": 6790,
+        "graph_edges": {
+          "anchor-0": 65
+        },
+        "graph_objects": {
+          "anchor-0": 65
+        },
+        "mapping_rows": 130
+      },
+      "direct_bounds": {
+        "lower": {
+          "denominator": "1",
+          "numerator": "-1"
+        },
+        "upper": {
+          "denominator": "1",
+          "numerator": "-1"
+        }
+      },
+      "input_sha256": "46e8c47051ae642c15fb84a00e6466ef26dac2c75a87598747928f929ffc66ce"
+    },
+    {
+      "before_cost": {
+        "checker_seconds": 0.0006792499916628003,
+        "compile_seconds": 0.01212095795199275,
+        "direct_seconds": 0.006155041977763176,
+        "kernel_seconds": 0.0006116250297054648
+      },
+      "before_geometry_work": 434,
+      "before_output": {
+        "byte_size": 68807,
+        "path": "private/baseline/seventeen-worlds.json",
+        "sha256": "6a54e340e536df12f36c5a85dbd112f81a64fd77f16398445f950ee9e9a377b1"
+      },
+      "before_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "2",
+            "numerator": "-3"
+          },
+          "upper": {
+            "denominator": "2",
+            "numerator": "3"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "unresolved",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "conservative_open_reference",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "reference_scope": "synthetic",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null
+      },
+      "before_size": {
+        "compilation_bytes": 36784,
+        "compiled_bytes": 14230,
+        "graph_edges": {
+          "anchor-0": 0,
+          "anchor-1": 42
+        },
+        "graph_objects": {
+          "anchor-0": 0,
+          "anchor-1": 25
+        },
+        "mapping_rows": 161
+      },
+      "case": "seventeen-worlds",
+      "current_cost": {
+        "checker_seconds": 0.0008227500366047025,
+        "compile_seconds": 0.01128550001885742,
+        "direct_seconds": 0.007294457987882197,
+        "kernel_seconds": 0.0008195830741897225
+      },
+      "current_geometry_work": 74,
+      "current_graph_checks": {
+        "finite_world_anchor_graphs_checked": 34,
+        "open_world_anchor_rows": [],
+        "source_mapping_rows_checked": 161
+      },
+      "current_output": {
+        "byte_size": 74054,
+        "path": "private/public-replay-final/seventeen-worlds.json",
+        "sha256": "8790eb2bdb4b29497f4a4b6951ccdac0166ab83f091c2e50cde1eb0219eee857"
+      },
+      "current_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "2",
+            "numerator": "1"
+          },
+          "upper": {
+            "denominator": "2",
+            "numerator": "3"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "supported",
+          "preference": "prefer_augmented"
+        },
+        "enclosure_kind": "exact_for_finite_model",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "reference_scope": "synthetic",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null
+      },
+      "current_size": {
+        "compilation_bytes": 37216,
+        "compiled_bytes": 14598,
+        "graph_edges": {
+          "anchor-0": 3,
+          "anchor-1": 42
+        },
+        "graph_objects": {
+          "anchor-0": 8,
+          "anchor-1": 25
+        },
+        "mapping_rows": 161
+      },
+      "direct_bounds": {
+        "lower": {
+          "denominator": "2",
+          "numerator": "1"
+        },
+        "upper": {
+          "denominator": "2",
+          "numerator": "3"
+        }
+      },
+      "input_sha256": "c56e80c23e56704c8e6cc95de1b2e0fdd7ef19a6d1a5d6a151510c8c807b2aac"
+    }
+  ],
+  "source_bindings": {
+    "byte_size": 33913,
+    "path": "private/AFTER_BINDINGS.json",
+    "sha256": "56d990c256befdd9e4467c584f87e50c946bee8db2ff8d7859c4b2fb1f97a4c9"
+  },
+  "source_fingerprint_sha256": "a08dcd38b7df20a7d6d60fce13dde85c80157bd142bdaeca34ab73245755aa4c",
+  "trusted_surface": [
+    "normalization and source/parser contracts",
+    "canonical rational representation",
+    "compiler geometry premises; independently structured direct coordinate oracle used for selected finite cases",
+    "core producer and checker share strict parsing but not the matching algorithm"
+  ],
+  "validation": {
+    "focused_pre_guard": {
+      "child_max_rss_bytes_macos": 61489152,
+      "elapsed_seconds": 13.166216042009182,
+      "exit_code": 0,
+      "passed": 42,
+      "receipt": {
+        "byte_size": 1170,
+        "path": "checks/focused-tests/receipt.json",
+        "sha256": "ea1ed538524786c9e869a9bf42130776b069106c95ddff1d2964a91e502ea87b"
+      }
+    },
+    "guarded_reference_tests": {
+      "child_max_rss_bytes_macos": 80478208,
+      "elapsed_seconds": 1.0386030419031158,
+      "exit_code": 0,
+      "passed": 25,
+      "receipt": {
+        "byte_size": 1080,
+        "path": "checks/guarded-sharing-tests/receipt.json",
+        "sha256": "bff73a0befbc637f7745c14026d7229e5f116e7398fec2544fa8905184f2d423"
+      }
+    },
+    "measurement": {
+      "binding": {
+        "byte_size": 20348,
+        "path": "private/RETAINED_MEASUREMENT.json",
+        "sha256": "4ed8616543eb70f4ef2239061adb4015ebc8501910808f22cf75597acffc9d46"
+      },
+      "passed_retained_not_replayed": 93,
+      "unchanged_bound_files": 107
+    },
+    "original_representation_test_failures": [
+      {
+        "child_max_rss_bytes_macos": 39387136,
+        "elapsed_seconds": 0.2470119590871036,
+        "exit_code": 1,
+        "receipt": {
+          "byte_size": 1034,
+          "path": "checks/original-reference-tests/receipt.json",
+          "sha256": "b4683d69553d0781062aa8bf24a5f15866d2199c68adfe9f7046e55c07cfeaaf"
+        }
+      },
+      {
+        "child_max_rss_bytes_macos": 62078976,
+        "elapsed_seconds": 12.246319875004701,
+        "exit_code": 1,
+        "receipt": {
+          "byte_size": 1085,
+          "path": "checks/original-common-tests/receipt.json",
+          "sha256": "5c2bd671689c7759b4a950890d77fe254ef7160213a5d7a17dd7f61c70c48a67"
+        }
+      }
+    ],
+    "public_replay_final": {
+      "child_max_rss_bytes_macos": 33554432,
+      "elapsed_seconds": 0.17322116601280868,
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1476,
+        "path": "checks/public-replay-final/receipt.json",
+        "sha256": "db7ac787fa669bd1a8213d8ff4ce07a412efdf6f9a3f93ecbac29d7accc8c306"
+      }
+    },
+    "repository_tests": {
+      "child_max_rss_bytes_macos": 172916736,
+      "elapsed_seconds": 55.662346417084336,
+      "exit_code": 0,
+      "passed": 390,
+      "receipt": {
+        "byte_size": 1064,
+        "path": "checks/repository-tests/receipt.json",
+        "sha256": "b98031fcfcdd2acb9d5f02023c50cff22b17e3606e8d4c1d34e239e285d94ccb"
+      }
+    }
+  },
+  "version": "0.1.0"
+}

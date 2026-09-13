@@ -1,3 +1,47 @@
+# Guarded reference sharing, 2026-09-13
+
+The [compiler checkpoint](PERCEPTION_REFERENCE_SHARING_2026-09-13.md) preserves identical
+all-world objects once while retaining every joint world, matching graph and source mapping.
+The synthetic 17-world case reaches [1/2,3/2] instead of [-3/2,3/2]; the original repeated-65
+case reaches [-1,-1] instead of [-1,1]. Direct coordinate-based partial injections agree.
+
+Unrestricted sharing failed a larger downstream-budget counterexample, widening [0,1] to
+[-1,1]. That failed implementation and its outputs are retained. The final conservative
+preflight declines sharing when it cannot guarantee the evaluator budget; the larger case
+recovers its original compiled input, compilation receipt and checked packet byte for byte.
+Kernel, checker, schemas and limits are unchanged. This is a conditional compiler improvement,
+not a claim that new information weakens robust knowledge or that every graph gets cheaper.
+
+All 390 repository tests pass, including ten new sharing/budget/provenance regressions.
+The earlier 93 measurement tests are retained with 107 unchanged files, not replayed.
+[Verification](../research/perception-reference-sharing/0.1.0/verification.json) retains exact
+sources, measured costs and failures. The final larger run used more memory than the baseline;
+no latency or human-review-effort advantage is claimed. Common projection remains structural.
+
+Graph IDs are representation identities. Multiple world-specific source records may name one
+shared node; retain all mappings and use anchor, world and object when tracing provenance.
+Freshly select/rebuild admission and common output bytes under the chosen compiler. Prior
+reports stay bound to their original code; no closed admission or exchange is overwritten.
+
+Fable's 13 September continuation was read. Its robustness/error model and checker repairs
+remain in its own lane. No newer correction was accepted here and no Fable source/ref/status/
+outbox/process was changed. The earlier c70e6ce consumer finding remains a scoped held review.
+
+Continue in a fresh task from verified main. Next assess whether a checked matching endpoint
+can be traced through the existing common packet to the correct world's original reference
+record and detector row after sharing. Start with the existing manual joins; add an interface
+only if a concrete ambiguity or missing check earns it. Do not duplicate Fable's planner,
+robustness analysis or comparator. Actual participant return still takes priority.
+
+Human references, actual participant usability and external scientific review are missing.
+Real bounds [-8,8]; Gate A unaccepted; physical study unrun with no cohort or seed. P005 is
+operator-reported published; no further publication or outreach. Preserve all owner checkouts
+and closed packets. The autonomous window continues through 15:58:25 UTC on 13 September.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Selection evidence boundary, 2026-09-13
 
 The [audit and procedure](PERCEPTION_SELECTION_EVIDENCE_2026-09-13.md) retain the existing

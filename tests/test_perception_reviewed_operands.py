@@ -154,7 +154,7 @@ class ReviewedOperandsTests(unittest.TestCase):
             c['anchors'][1]['weight'] = contract.wire(Fraction(2, 3))
         edits = [lambda c: c['model']['clauses'].append([{'variable': c['model']['variables'][0], 'value': False}]),
             lambda c: c['anchors'][0]['reference']['edges'].pop(),
-            lambda c: c['anchors'][0]['reference']['objects'][0].update(when=[]),
+            lambda c: next(o for o in c['anchors'][0]['reference']['objects'] if o['when']).update(when=[]),
             weights, lambda c: c['loss'].update(tolerance=contract.wire(Fraction(1, 5))),
             lambda c: c['assumptions'].pop()]
         for index, edit in enumerate(edits):

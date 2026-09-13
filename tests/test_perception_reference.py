@@ -113,7 +113,12 @@ class ReferenceTests(unittest.TestCase):
         self.assertEqual(result['decision']['preference'], 'unresolved')
         self.assertEqual(receipt['joint_world_count'], 2)
         self.assertEqual(args, before)
-        self.assertEqual(sum(e['detection'] == 'base:0' for e in compiled['anchors'][0]['reference']['edges']), 3)
+        ref = compiled['anchors'][0]['reference']
+        for encoding, wanted in zip(receipt['world_encodings'], (1, 2)):
+            assignment = {q['variable']: q['value'] for q in encoding['when']}
+            objects = {o['id'] for o in ref['objects']
+                       if all(assignment[q['variable']] == q['value'] for q in o['when'])}
+            self.assertEqual(sum(e['detection'] == 'base:0' and e['object'] in objects for e in ref['edges']), wanted)
 
     def test_joint_choice_is_not_replaced_by_independent_anchor_choices(self):
         args = trap(2)
@@ -167,7 +172,11 @@ class ReferenceTests(unittest.TestCase):
 
     def test_compilation_resource_limit_preserves_open_bound_without_clipping(self):
         args = inputs();objects = [object_at('object-'+str(i), 0) for i in range(65)]
-        args[0]['worlds'] = [world('one', [deepcopy(objects)]), world('two', [deepcopy(objects)])]
+        # Different declared geometry prevents sharing, even with identical edges.
+        # The original repeated-65 case and its open baseline remain in the
+        # reference-sharing research packet; that case now fits without clipping.
+        other = [object_at('object-'+str(i), Fraction(1, 10)) for i in range(65)]
+        args[0]['worlds'] = [world('one', [deepcopy(objects)]), world('two', [other])]
         compiled, receipt, result = self.checked(args)
         self.assertEqual(receipt['joint_world_count'], 2)
         self.assertEqual(compiled['anchors'][0]['reference']['state'], 'open')

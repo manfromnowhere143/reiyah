@@ -185,6 +185,7 @@ def compile_model(spec, case, normalizations, catalog):
         for entries in reasons.values():
             entries.add('joint_interpretation_coverage_unknown')
     world_ids, mappings, geometry_work = set(), [], 0
+    records, common = [], {}
     for wi, world in enumerate(worlds):
         _fields(world, 'id basis_sha256 anchors')
         wid = identity(world['id'])
@@ -202,7 +203,7 @@ def compile_model(spec, case, normalizations, catalog):
             name = entry['anchor_id']
             if not _coverage(entry['unlisted_objects'], 'excluded_by_assumption'):
                 reasons[name].add('unlisted_matchable_objects_not_bounded')
-            ids, members = set(), set()
+            ids, members, eligible = set(), set(), {}
             for oi, obj in enumerate(_list(entry['objects'], 128)):
                 require(type(obj) is dict and obj.get('state') in ('point', 'unresolved'),
                         'REFERENCE_FIELDS', 'Explicit point or unresolved object state is required')
@@ -229,26 +230,62 @@ def compile_model(spec, case, normalizations, catalog):
                 if obj['class'] == 'outside_target' or _distance2(point, geometry[name]['ego']) > 2500:
                     continue
                 graph_id = 'w' + str(wi) + ':o' + str(oi)
-                mappings.append({'anchor_id': name, 'world_id': wid, 'object_id': oid, 'graph_id': graph_id,
-                                 'record_sha256': obj['record_sha256'], 'members': aliases})
-                # Validate all remaining input objects, but stop materializing a graph
-                # once its anchor must remain open. No partial finite graph is emitted.
-                if reasons[name]:
-                    continue
-                if len(refs[name]['objects']) == 128:
+                mapping = {'anchor_id': name, 'world_id': wid, 'object_id': oid, 'graph_id': graph_id,
+                           'record_sha256': obj['record_sha256'], 'members': aliases}
+                mappings.append(mapping)
+                records.append((wi, mapping, obj['class'], point))
+                # Compare exact declared content, not equal losses or edge sets.
+                # Each world's separate record digest remains in its mapping row.
+                eligible[oid] = (tuple(aliases), obj['class'], time,
+                                 tuple((q['numerator'], q['denominator']) for q in obj['xy']))
+            common[name] = (eligible if wi == 0 else
+                            {oid: value for oid, value in common[name].items()
+                             if eligible.get(oid) == value})
+
+    # Validate every world before sharing. An invariant object is present once in
+    # each admitted world, so its single graph node needs no world condition.
+    # This retains the complete joint model, including unused-code exclusions.
+    shared = {name: {oid: 'shared:o'+str(i) for i, oid in enumerate(values)}
+              if len(worlds) > 1 else {} for name, values in common.items()}
+    # Newly finite graphs must not push the evaluator into its global count-only
+    # fallback. Bound its current work estimate before selecting this representation.
+    # A sparse graph may fit when this bound does not; keep the ordinary world
+    # nodes in that case instead of raising a limit or evaluating two candidates.
+    counts = {name: 0 for name in anchors}
+    for _, mapping, _, _ in records:
+        counts[mapping['anchor_id']] += 1
+    work = 1 + bits + sum(map(len, result['model']['clauses']))
+    for name, anchor in anchors.items():
+        count = counts[name] - len(shared[name]) * (len(worlds)-1)
+        if reasons[name] or count > 128 or any(anchor[r]['state'] != 'observed' for r in ('base', 'additions')):
+            continue
+        size = len(geometry[name]['detections'])
+        work += bits * (count-len(shared[name])) + 4 * (size+1) * (count+min(2048, size*count)+1)
+    if (1 << bits) > contract.MAX_WORLDS or (1 << bits) * work > contract.MAX_WORK:
+        shared = {name: {} for name in anchors}
+    emitted = {name: set() for name in anchors}
+    for wi, mapping, label, point in records:
+        name, oid = mapping['anchor_id'], mapping['object_id']
+        graph_id = shared[name].get(oid, mapping['graph_id'])
+        mapping['graph_id'] = graph_id
+        # No partial finite graph is emitted after an unknown or resource fallback.
+        if reasons[name] or graph_id in emitted[name]:
+            continue
+        if len(refs[name]['objects']) == 128:
+            reasons[name].add('compiled_graph_exceeds_core_resource_scope')
+            continue
+        if geometry_work + len(geometry[name]['detections']) > MAX_GEOMETRY_COMPARISONS:
+            reasons[name].add('reference_geometry_work_limit')
+            continue
+        geometry_work += len(geometry[name]['detections'])
+        emitted[name].add(graph_id)
+        refs[name]['objects'].append({'id': graph_id, 'when': [] if oid in shared[name] else condition(wi)})
+        for did, kind, center in geometry[name]['detections']:
+            if kind == label and _distance2(center, point) < 4:
+                if len(refs[name]['edges']) == 2048:
                     reasons[name].add('compiled_graph_exceeds_core_resource_scope')
-                    continue
-                if geometry_work + len(geometry[name]['detections']) > MAX_GEOMETRY_COMPARISONS:
-                    reasons[name].add('reference_geometry_work_limit')
-                    continue
-                geometry_work += len(geometry[name]['detections'])
-                refs[name]['objects'].append({'id': graph_id, 'when': condition(wi)})
-                for did, label, center in geometry[name]['detections']:
-                    if label == obj['class'] and _distance2(center, point) < 4:
-                        if len(refs[name]['edges']) == 2048:
-                            reasons[name].add('compiled_graph_exceeds_core_resource_scope')
-                            break
-                        refs[name]['edges'].append({'detection': did, 'object': graph_id, 'when': []})
+                    break
+                refs[name]['edges'].append({'detection': did, 'object': graph_id, 'when': []})
     for name, anchor in anchors.items():
         if any(anchor[role]['state'] != 'observed' for role in ('base', 'additions')):
             reasons[name].add('required_predictions_unavailable')
