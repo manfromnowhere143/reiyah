@@ -1,0 +1,49 @@
+{
+  "artifact_id": "reiyah.preparation-robustness.preregistration",
+  "version": "0.1.0",
+  "declared_before_any_result_was_seen": true,
+  "named_claim": {
+    "text": "same modality detector pairs are more coupled than cross modality pairs at matched miss rates",
+    "published_by_this_lane_in": "modality-coupling-0.1.0",
+    "why_audit_our_own": "auditing a claim this lane published is the most honest available demonstration, and the claim carries an engineering consequence: buy sensor diversity rather than software diversity"
+  },
+  "fixed_target_predicate": "min over same modality pairs of c  >  max over cross modality pairs of c",
+  "fixed_population": "annotated objects in the retained nuScenes validation cache, subsetted only by the declared scope family below",
+  "fixed_configurations": "five public detectors, each thresholded to the same miss rate on the population in scope",
+  "fixed_matched_miss_rate": "0.30, a single value declared in advance so the result is not selected across rates",
+  "fixed_estimand": "c = P(both miss) / (P(A misses) P(B misses)), the estimand bound in docs/ESTIMAND_RSS_DEFINITION_32.md",
+  "admissible_preparation_family": {
+    "kind": "evaluation definition scope choices that do NOT change any detector output",
+    "why_admissible": "each is a standard published scope choice in 3D detection evaluation, and each changes which annotated objects are in scope rather than what any detector reports",
+    "P1_class_scope": ["all_classes", "vehicles_only", "vulnerable_road_users_only", "exclude_static_furniture"],
+    "P2_range_band": ["all_ranges", "within_30m", "within_50m", "beyond_30m"],
+    "P3_visibility_floor": ["all_visibility", "exclude_worst_band", "best_band_only"],
+    "total_preparations": 48
+  },
+  "explicitly_excluded_from_the_uncertainty_family": {
+    "detector_score_cutoff": "raising it changes the system being evaluated, so it is a configuration comparison and not uncertainty about one fixed configuration. It is held at the matched miss rate instead",
+    "association_radius": "the retained caches record matching at one radius only, so this lane cannot vary it here and does not pretend to"
+  },
+  "outcome_categories": {
+    "flip_witness": "the target predicate is true under one admissible preparation and false under another",
+    "robust": "the target predicate holds under every admissible preparation",
+    "unresolved": "the predicate is undefined somewhere, for example a channel that misses nothing in scope"
+  },
+  "baseline": {
+    "method": "the ordinary full grid over the same family, which is multiverse analysis",
+    "citation": "Bell, Kampman, Dodge and Lawrence, Modeling the Machine Learning Multiverse, NeurIPS 2022, arXiv:2206.05985v2",
+    "standard": "this lane runs the full grid, so the grid IS the baseline. Anything claimed beyond the grid must earn its cost separately, and if nothing does, the parity is the result"
+  },
+  "effort_to_count": ["setup", "validation", "computation", "interpretation", "repair"],
+  "commitments": [
+    "the family above is not widened after results are seen",
+    "a count ratio is not converted into a safety or review cost ratio",
+    "a preparation that changes the system is labelled a configuration comparison",
+    "if no flip exists, the stable or unresolved result is published as the result"
+  ],
+  "not_established_by_this_experiment": [
+    "anything about physical risk, human effort, or industry practice",
+    "any independent human reference; the annotation is retrospective and annotation conditional",
+    "any change to the live Engine comparison, which remains [-8,8] with no admitted human reference"
+  ]
+}
