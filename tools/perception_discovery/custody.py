@@ -30,8 +30,22 @@ def manifest(path, expected_seal):
         os.close(fd)
 
 
+def private_output(package, output):
+    """Keep review files outside the evidence tree on a stable local filesystem."""
+    target = Path(output)
+    parent = target.parent.resolve(strict=True)
+    package_identity = Path(package).stat()
+    # Path spelling alone misses case aliases on case-insensitive filesystems.
+    require(not any(os.path.samestat(p.stat(), package_identity) for p in (parent, *parent.parents)),
+            'DISCOVERY_PRIVATE_OUTPUT', 'Discovery records must remain outside the observation package')
+    # Do not follow a subsequently retargeted output-parent symlink at write time.
+    # This is not protection against concurrent directory replacement or mounts.
+    return parent / target.name
+
+
 def make_draft(package, expected_seal, record_id, output):
     require(not os.path.lexists(output), 'OUTPUT_EXISTS', 'Draft identity already exists')
+    output = private_output(package, output)
     m = manifest(package, expected_seal)
     draft = records.draft(m, expected_seal, record_id)
     summary = records.validate(draft, m, expected_seal)
@@ -43,6 +57,7 @@ def make_draft(package, expected_seal, record_id, output):
 
 def seal_record(record_path, expected_record, package, expected_package_seal, output):
     require(not os.path.lexists(output), 'OUTPUT_EXISTS', 'Sealed record identity already exists')
+    output = private_output(package, output)
     before, environment = source_digest(), observations.runtime()
     record = load(record_path, expected_record, records.MAX_RECORD, validate_input=False)
     m = manifest(package, expected_package_seal)

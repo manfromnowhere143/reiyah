@@ -3,6 +3,9 @@ from copy import deepcopy
 import hashlib
 import json
 from pathlib import Path
+import shutil
+import subprocess
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -10,7 +13,7 @@ from unittest.mock import patch
 from tools.perception_decision.contract import Invalid, encoded
 from tools.perception_discovery import records, custody
 from tools.perception_observation import package
-from tests.test_perception_observation import fixture
+from tests.test_perception_observation import fixture, tree
 
 
 class DiscoveryTests(unittest.TestCase):
@@ -207,6 +210,82 @@ class DiscoveryTests(unittest.TestCase):
         path,sha=self.seal(self.submit());original=path.read_bytes()
         self.rejected(lambda:custody.make_draft(self.package,self.sha,'a'*32,path),'OUTPUT_EXISTS')
         self.rejected(lambda:self.seal(self.submit()),'OUTPUT_EXISTS');self.assertEqual(path.read_bytes(),original)
+
+    def protected_outputs(self, action):
+        submitted=self.root/'synthetic-submission.json';data=encoded(self.submit());submitted.write_bytes(data)
+        submitted_sha=hashlib.sha256(data).hexdigest()
+        for form in ('root','assets','alias','case_alias'):
+            evidence=self.root/('evidence-'+form);shutil.copytree(self.package,evidence)
+            if form=='alias':
+                alias=self.root/'output-alias';alias.symlink_to(evidence,target_is_directory=True)
+                output=alias/'review.json'
+            else:output=(evidence/'assets' if form=='assets' else evidence)/'review.json'
+            before=tree(evidence);package.verify(evidence,self.sha)
+            with self.subTest(action=action,form=form):
+                if form=='case_alias':
+                    alias=evidence.with_name(evidence.name.upper())
+                    if not alias.exists() or not alias.samefile(evidence):
+                        self.skipTest('Filesystem does not resolve this case alias')
+                    output=alias/'review.json'
+                if action=='draft':
+                    fn=lambda:custody.make_draft(evidence,self.sha,'c'*32,output)
+                else:
+                    fn=lambda:custody.seal_record(submitted,submitted_sha,evidence,self.sha,output)
+                self.rejected(fn,'DISCOVERY_PRIVATE_OUTPUT')
+                self.assertFalse(output.exists())
+                self.assertEqual(tree(evidence),before)
+                package.verify(evidence,self.sha)
+
+    def test_draft_cannot_contaminate_its_sealed_observation_package(self):
+        self.protected_outputs('draft')
+
+    def test_seal_cannot_contaminate_its_sealed_observation_package(self):
+        self.protected_outputs('seal')
+
+    def test_private_output_sibling_with_similar_name_remains_usable(self):
+        before=tree(self.package)
+        private=self.root/'package-private';private.mkdir()
+        draft=private/'draft.json'
+        result=custody.make_draft(self.package,self.sha,'c'*32,draft)
+        self.assertEqual(result['submission_state'],'unassigned_draft')
+        record=json.loads(draft.read_bytes())
+        self.assertIsNone(record['reviewer_id'])
+        self.assertEqual(record['proposals'],[])
+        source=private/'submission.json';data=encoded(self.submit());source.write_bytes(data)
+        sealed=private/'sealed.json'
+        result=custody.seal_record(source,hashlib.sha256(data).hexdigest(),self.package,self.sha,sealed)
+        custody.verify_record(sealed,result['sealed_record_sha256'],self.package,self.sha)
+        self.assertEqual(tree(self.package),before)
+
+    def test_cli_rejects_in_package_output_before_any_mutation(self):
+        before=tree(self.package);out=self.package/'private-review.json'
+        result=subprocess.run([sys.executable,'-B','-m','tools.perception_discovery','draft',
+            '--package',str(self.package),'--package-seal-sha256',self.sha,
+            '--record-id','c'*32,'--output',str(out)],cwd=Path(__file__).resolve().parents[1],capture_output=True)
+        self.assertEqual(result.returncode,2)
+        self.assertEqual(json.loads(result.stderr)['code'],'DISCOVERY_PRIVATE_OUTPUT')
+        self.assertEqual(result.stdout,b'')
+        self.assertEqual(tree(self.package),before)
+
+    def test_output_parent_symlink_retargeting_does_not_redirect_the_write(self):
+        before=tree(self.package);read_manifest=custody.manifest
+        submitted=self.root/'synthetic-submission.json';data=encoded(self.submit());submitted.write_bytes(data)
+        for action in ('draft','seal'):
+            private=self.root/('private-'+action);private.mkdir()
+            alias=self.root/('alias-'+action);alias.symlink_to(private,target_is_directory=True)
+            def retarget(*args):
+                m=read_manifest(*args)
+                alias.unlink();alias.symlink_to(self.package,target_is_directory=True)
+                return m
+            with self.subTest(action=action),patch.object(custody,'manifest',side_effect=retarget):
+                if action=='draft':
+                    custody.make_draft(self.package,self.sha,'c'*32,alias/'review.json')
+                else:
+                    custody.seal_record(submitted,hashlib.sha256(data).hexdigest(),self.package,self.sha,alias/'review.json')
+            self.assertTrue((private/'review.json').is_file())
+            self.assertFalse((self.package/'review.json').exists())
+            self.assertEqual(tree(self.package),before)
+            package.verify(self.package,self.sha)
 
 
 if __name__=='__main__':unittest.main()

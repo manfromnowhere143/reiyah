@@ -1,3 +1,31 @@
+# Discovery package custody, 2026-09-13
+
+Read the [checkpoint](PERCEPTION_DISCOVERY_CUSTODY_2026-09-13.md),
+[correction and reproduction](../research/perception-discovery-custody/0.1.0/README.md) and
+[verification](../research/perception-discovery-custody/0.1.0/verification.json).
+Discovery drafts/seals can no longer write inside their own sealed observation package.
+Eight before-change mutation cases are retained; all eight now reject without changing the
+package. Directory identity catches case aliases that resolved path spelling misses.
+Valid private outputs and output-parent symlink retargeting controls pass. The guard assumes
+a stable directory hierarchy and is not a filesystem sandbox.
+
+All 359 repository tests and 93 measurement tests pass in a task-local environment, including
+29 discovery tests. Missing-dependency failures, recovery costs and existing SQLite warnings
+are retained. No schema, comparison model or Fable source/ref/status/outbox changed.
+The next bounded Engine question is whether the remaining private-output guards share the
+observed case-alias defect. Continue from `engine-discovery-custody-2026-09-13` within the
+active autonomous work window; preserve its closed evidence and all older owner checkouts.
+
+Supported Browser access has no available connection; no native bootstrap was retried.
+The ready actual participant exercise remains unreturned. Human references, interactive
+usability and external scientific review remain missing. Real bounds remain [-8,8].
+Gate A is unaccepted; the physical study is unrun with no cohort or seed selected.
+P005 is operator-reported published; no further publication or outreach is authorized.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Interpretation-specific matching conformance, 2026-09-12
 
 Read the [checkpoint](PERCEPTION_VARYING_MATCH_2026-09-12.md),

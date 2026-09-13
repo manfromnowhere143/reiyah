@@ -1,0 +1,477 @@
+{
+  "actual_human_records_created": 0,
+  "actual_interactive_observation": "not_performed",
+  "after": {
+    "actual_human_records_created": 0,
+    "artifact_id": "reiyah.discovery-custody.reproduction",
+    "cases": [
+      {
+        "added_files": [],
+        "case": "draft-root",
+        "changed_original_files": [],
+        "operation": "DISCOVERY_PRIVATE_OUTPUT",
+        "original_file_count": 73,
+        "package_after": "verified",
+        "package_unchanged": true,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [],
+        "case": "draft-assets",
+        "changed_original_files": [],
+        "operation": "DISCOVERY_PRIVATE_OUTPUT",
+        "original_file_count": 73,
+        "package_after": "verified",
+        "package_unchanged": true,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [],
+        "case": "draft-alias",
+        "changed_original_files": [],
+        "operation": "DISCOVERY_PRIVATE_OUTPUT",
+        "original_file_count": 73,
+        "package_after": "verified",
+        "package_unchanged": true,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [],
+        "case": "draft-case_alias",
+        "changed_original_files": [],
+        "operation": "DISCOVERY_PRIVATE_OUTPUT",
+        "original_file_count": 73,
+        "package_after": "verified",
+        "package_unchanged": true,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [],
+        "case": "seal-root",
+        "changed_original_files": [],
+        "operation": "DISCOVERY_PRIVATE_OUTPUT",
+        "original_file_count": 73,
+        "package_after": "verified",
+        "package_unchanged": true,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [],
+        "case": "seal-assets",
+        "changed_original_files": [],
+        "operation": "DISCOVERY_PRIVATE_OUTPUT",
+        "original_file_count": 73,
+        "package_after": "verified",
+        "package_unchanged": true,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [],
+        "case": "seal-alias",
+        "changed_original_files": [],
+        "operation": "DISCOVERY_PRIVATE_OUTPUT",
+        "original_file_count": 73,
+        "package_after": "verified",
+        "package_unchanged": true,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [],
+        "case": "seal-case_alias",
+        "changed_original_files": [],
+        "operation": "DISCOVERY_PRIVATE_OUTPUT",
+        "original_file_count": 73,
+        "package_after": "verified",
+        "package_unchanged": true,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      }
+    ],
+    "custody_source_sha256": "adc8e84b2fc2a7b8c18aa3ce1515996f6210d8493efb32c75164d2cae7050361",
+    "expectation_met": true,
+    "expected_state": "protected",
+    "scope": "Synthetic package mutation/rejection controls, not a human review or admission",
+    "skipped_cases": [],
+    "version": "0.1.0"
+  },
+  "artifact_id": "reiyah.discovery-custody.verification",
+  "assumptions": [
+    "Stable local directory hierarchy",
+    "No concurrent directory replacement or mount change",
+    "Existing input verifier, limits and record semantics remain required"
+  ],
+  "baseline": "Direct before/after file inventory and unchanged observation package verifier on fresh synthetic packages",
+  "before": {
+    "actual_human_records_created": 0,
+    "artifact_id": "reiyah.discovery-custody.reproduction",
+    "cases": [
+      {
+        "added_files": [
+          "review.json"
+        ],
+        "case": "draft-root",
+        "changed_original_files": [],
+        "operation": "succeeded",
+        "original_file_count": 73,
+        "package_after": "OBS_FILE_SET",
+        "package_unchanged": false,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [
+          "assets/review.json"
+        ],
+        "case": "draft-assets",
+        "changed_original_files": [],
+        "operation": "succeeded",
+        "original_file_count": 73,
+        "package_after": "OBS_FILE_SET",
+        "package_unchanged": false,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [
+          "review.json"
+        ],
+        "case": "draft-alias",
+        "changed_original_files": [],
+        "operation": "succeeded",
+        "original_file_count": 73,
+        "package_after": "OBS_FILE_SET",
+        "package_unchanged": false,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [
+          "review.json"
+        ],
+        "case": "draft-case_alias",
+        "changed_original_files": [],
+        "operation": "succeeded",
+        "original_file_count": 73,
+        "package_after": "OBS_FILE_SET",
+        "package_unchanged": false,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [
+          "review.json"
+        ],
+        "case": "seal-root",
+        "changed_original_files": [],
+        "operation": "succeeded",
+        "original_file_count": 73,
+        "package_after": "OBS_FILE_SET",
+        "package_unchanged": false,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [
+          "assets/review.json"
+        ],
+        "case": "seal-assets",
+        "changed_original_files": [],
+        "operation": "succeeded",
+        "original_file_count": 73,
+        "package_after": "OBS_FILE_SET",
+        "package_unchanged": false,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [
+          "review.json"
+        ],
+        "case": "seal-alias",
+        "changed_original_files": [],
+        "operation": "succeeded",
+        "original_file_count": 73,
+        "package_after": "OBS_FILE_SET",
+        "package_unchanged": false,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      },
+      {
+        "added_files": [
+          "review.json"
+        ],
+        "case": "seal-case_alias",
+        "changed_original_files": [],
+        "operation": "succeeded",
+        "original_file_count": 73,
+        "package_after": "OBS_FILE_SET",
+        "package_unchanged": false,
+        "source_package_seal_sha256": "191a46eda0cdc4a09457164f0d04e46cff87e96ec100bf7acfa5768288619c8b"
+      }
+    ],
+    "custody_source_sha256": "0108db4755b3e9ea8215d8497f3b6c6a66426817c8ff9070ae6f53873995eb9f",
+    "expectation_met": true,
+    "expected_state": "vulnerable",
+    "scope": "Synthetic package mutation/rejection controls, not a human review or admission",
+    "skipped_cases": [],
+    "version": "0.1.0"
+  },
+  "bound_source_files": 36,
+  "case_alias_observation": {
+    "alias_basename": "PACKAGE",
+    "alias_exists": true,
+    "alias_samefile": true,
+    "artifact_id": "reiyah.discovery-custody.case-alias-probe",
+    "decision": "Compare output parent ancestor filesystem identities, not only resolved path spelling",
+    "lexical_resolved_containment": false,
+    "observed_utc": "2026-09-13T06:22:03.153125+00:00",
+    "original_basename": "package",
+    "prior_six_case_reproducer_sha256": "2c694c2c12fed3fac7a6a27c7ca3c45ce6f3c9a364f898f3fb5c9e1ef50094b5",
+    "scope": "Task-owned temporary directory only; no existing observation package changed",
+    "version": "0.1.0"
+  },
+  "checks": {
+    "guard-before": {
+      "child_max_rss_bytes_macos": 39747584,
+      "elapsed_seconds": 0.2273919170256704,
+      "exit_code": 1,
+      "includes_startup": true,
+      "receipt_sha256": "285d4299892bd91039dd79c90cd27f98973a5c4f1b6e5e1495bb1b58b2b2c854"
+    },
+    "guard-before-2": {
+      "child_max_rss_bytes_macos": 51544064,
+      "elapsed_seconds": 2.706331916968338,
+      "exit_code": 1,
+      "includes_startup": true,
+      "receipt_sha256": "55acdebf19b673f9a3c5ca3a8e97a53d2c988aa0a75f8f493591c7f8b669cf02"
+    },
+    "measurement-tests": {
+      "child_max_rss_bytes_macos": 34291712,
+      "elapsed_seconds": 0.8038223749026656,
+      "exit_code": 1,
+      "includes_startup": true,
+      "receipt_sha256": "589ef2c816660732e875651aadc21fb436f5b359f218ddf0084f54e458e48179"
+    },
+    "measurement-tests-complete": {
+      "child_max_rss_bytes_macos": 72286208,
+      "elapsed_seconds": 12.851937334053218,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "3f80768a52a1b30cc46cdcaadc1388f2b32ca135f1ac5b8a8b5af3af4e1472c3"
+    },
+    "repository-tests": {
+      "child_max_rss_bytes_macos": 74940416,
+      "elapsed_seconds": 41.91950795892626,
+      "exit_code": 1,
+      "includes_startup": true,
+      "receipt_sha256": "6a40ae5bd5a457fc91e857394d75ef0aa333a29f88286858b38e8037ecd7367d"
+    },
+    "repository-tests-complete": {
+      "child_max_rss_bytes_macos": 150618112,
+      "elapsed_seconds": 70.38299837498926,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "93f107b428b928d3ba0718cbbb735f135291cf9939c42dcadf8b430654c5f774"
+    },
+    "repro-after": {
+      "child_max_rss_bytes_macos": 50429952,
+      "elapsed_seconds": 0.6954022919526324,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "4d2ddb49831cde7e7c5bc2dbe7757987394bfef646195f7f77fa06c010346c67"
+    },
+    "repro-before": {
+      "child_max_rss_bytes_macos": 49397760,
+      "elapsed_seconds": 0.6147017909679562,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "7d3f60ed5635f6b297eb6cdaf373524030575a82ae8fd9f46f5a15616b010b8a"
+    },
+    "repro-before-eight": {
+      "child_max_rss_bytes_macos": 48168960,
+      "elapsed_seconds": 0.7073134579695761,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "c1bb43108b65bd10fb05cda3a39e1874cbcafd6f5676f632037515389e88303f"
+    },
+    "research-consistency": {
+      "child_max_rss_bytes_macos": 25280512,
+      "elapsed_seconds": 1.9631419579964131,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "f17c32279925075cabc3b0d51676dad1d83cdac347a0c2149a5ba84665fa1564"
+    },
+    "runtime-create": {
+      "child_max_rss_bytes_macos": 99237888,
+      "elapsed_seconds": 1.7117254169424996,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "5ef21b8174c122cac21a17c2e52223563bd45cda78a9245b51028180f89d30f2"
+    },
+    "runtime-install": {
+      "child_max_rss_bytes_macos": 127303680,
+      "elapsed_seconds": 3.437295833020471,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "abaa39525aeab49fb4925262d6143aeff89c33d1e6c1ea0245468c7fc22d525b"
+    },
+    "runtime-regression-install": {
+      "child_max_rss_bytes_macos": 193396736,
+      "elapsed_seconds": 44.07174541603308,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "f38939cc1190fe6c8d0ebfbe4e5dc8efd3d884c48a3341083710e3b04a3d0989"
+    },
+    "targeted-after": {
+      "child_max_rss_bytes_macos": 53002240,
+      "elapsed_seconds": 4.389401291962713,
+      "exit_code": 0,
+      "includes_startup": true,
+      "receipt_sha256": "7f19e3af0f732a72fa91f01229dc2ee0900adb2ad1cbef1fbdc9b708fcac4ffe"
+    }
+  },
+  "cost_limits": "Process elapsed and peak child RSS include startup and fixture preparation. Parallel test processes shared this host; no relative speed, human-effort or state-of-the-art claim.",
+  "date": "2026-09-13",
+  "decision": "Reject in-package destinations using directory identity and write through the resolved private parent",
+  "discovery_tests_passed": 29,
+  "fable_mutations": false,
+  "gate_a": "unaccepted",
+  "implementation_changed": true,
+  "independent_external_scientific_review": "missing",
+  "interface_changed": false,
+  "measurement_tests_passed": 93,
+  "new_regression_tests": 5,
+  "next_engine_check": "Review remaining Engine output guards against the observed case-alias failure without changing Fable code",
+  "participant_effort": "not_measured",
+  "physical_study": "unrun; no cohort or seed selected",
+  "primary_reading": {
+    "access": "Public official documentation; ordinary unauthenticated HTTPS retrieval",
+    "accessed_utc": "2026-09-13T06:09:46.002844+00:00",
+    "artifact_id": "reiyah.discovery-custody.primary-reading",
+    "claim_limit": "Path semantics only; not a security guarantee against concurrent filesystem renames",
+    "custody": "Full pages retained privately for reproducibility; no payload redistribution in Git",
+    "files": [
+      {
+        "byte_size": 266954,
+        "content_type": "text/html",
+        "etag": "\"6aa62f15-412ca\"",
+        "last_modified": "Sun, 13 Sep 2026 05:05:25 GMT",
+        "path": "pathlib.html",
+        "resolved_url": "https://docs.python.org/3.14/library/pathlib.html",
+        "sha256": "1dbdb04f1dd6eb5fa990694112d1487f91610688405508649052e15667ae5279",
+        "status": 200,
+        "url": "https://docs.python.org/3.14/library/pathlib.html"
+      },
+      {
+        "byte_size": 90844,
+        "content_type": "text/html",
+        "etag": "\"6aa62f13-162dc\"",
+        "last_modified": "Sun, 13 Sep 2026 05:05:23 GMT",
+        "path": "python-license.html",
+        "resolved_url": "https://docs.python.org/3.14/license.html",
+        "sha256": "fdbdc1951dd84d5dabf12556bf9e52e8fc8810cdef26dca0ab5c7dbb79b94811",
+        "status": 200,
+        "url": "https://docs.python.org/3.14/license.html"
+      }
+    ],
+    "license_reference": "https://docs.python.org/3.14/license.html",
+    "purpose": "Path.resolve follows symlinks and eliminates dot-dot; is_relative_to is lexical and needs resolved inputs",
+    "source_version": "Python documentation 3.14 series; fetched page title retained in bytes. Actual local runtime recorded separately.",
+    "version": "0.1.0"
+  },
+  "production_source": {
+    "after": {
+      "byte_size": 6261,
+      "sha256": "adc8e84b2fc2a7b8c18aa3ce1515996f6210d8493efb32c75164d2cae7050361"
+    },
+    "before": {
+      "byte_size": 5448,
+      "sha256": "0108db4755b3e9ea8215d8497f3b6c6a66426817c8ff9070ae6f53873995eb9f"
+    },
+    "path": "tools/perception_discovery/custody.py"
+  },
+  "publication": "P005 operator-reported published; no further publication or outreach",
+  "question": "Can discovery output contaminate its own sealed observation package?",
+  "real_bounds": [
+    "-8",
+    "8"
+  ],
+  "repository_tests_passed": 359,
+  "reproducer": {
+    "byte_size": 5574,
+    "path": "research/perception-discovery-custody/0.1.0/reproduce.py",
+    "sha256": "bad0af1ae026ffadb664af7bce2a743c7b22fe10a7f076506cea12464a235279"
+  },
+  "research_consistency": "PASS; 52 retained transcript identities checked; no experiment replay and no attack-suite replay",
+  "result_identities": {
+    "after": {
+      "byte_size": 2614,
+      "sha256": "05c2e2bb3430fe018f84668da07ca54be7460cf05787ee9916402ca1e89156f3"
+    },
+    "before": {
+      "byte_size": 2653,
+      "sha256": "3b3c57d5668f75a7140835c832395f5b02812aed95f88101f2736b693a2243e9"
+    }
+  },
+  "retained_failures": [
+    "Initial guard regression could not import Pillow in the earlier selected interpreter: 3 errors before the behavior was exercised",
+    "With discovery dependencies restored, 3 expected-rejection regression methods failed in 7 assertions before the correction",
+    "Eight fresh before-change mutation probes all succeeded and invalidated their packages; no original file overwritten",
+    "First broad suites lacked NumPy: 6 repository import errors and 2 measurement import errors; no expectations weakened",
+    "Existing SQLite ResourceWarnings remain in the passing repository transcript; origin not traced in this checkpoint"
+  ],
+  "retained_private_packet": "engine-discovery-custody-2026-09-13",
+  "runtime": {
+    "inventory_sha256": "f2e111e1364ddcf4727b213738cd7c5a8e48de81000aea0c8448f7275b9b79a4",
+    "packages": [
+      {
+        "name": "attrs",
+        "version": "26.1.0"
+      },
+      {
+        "name": "joblib",
+        "version": "1.5.3"
+      },
+      {
+        "name": "jsonschema",
+        "version": "4.26.0"
+      },
+      {
+        "name": "jsonschema-specifications",
+        "version": "2025.9.1"
+      },
+      {
+        "name": "numpy",
+        "version": "2.4.2"
+      },
+      {
+        "name": "pillow",
+        "version": "12.3.0"
+      },
+      {
+        "name": "pip",
+        "version": "25.3"
+      },
+      {
+        "name": "referencing",
+        "version": "0.37.0"
+      },
+      {
+        "name": "rpds-py",
+        "version": "2026.6.3"
+      },
+      {
+        "name": "scikit-learn",
+        "version": "1.8.0"
+      },
+      {
+        "name": "scipy",
+        "version": "1.17.1"
+      },
+      {
+        "name": "threadpoolctl",
+        "version": "3.6.0"
+      }
+    ],
+    "platform": "macOS-14.4-arm64-arm-64bit-Mach-O",
+    "python": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "scope": "Task-local venv and selected executable bytes; excludes bytecode caches and does not freeze system libraries or the OS",
+    "selected_inventory_files": 4219
+  },
+  "source_bindings_sha256": "c3b34c6aacea68ec1be95eadbbf24a22de1a306e44f578cf83678d69d8658e5b",
+  "source_main": "f7ae44dcd30510ec695cc5271abd89ecb026192f",
+  "version": "0.1.0",
+  "viewer_prerequisite": "Supported Browser has no available connection; native loader diagnosis remains retained. Actual participant exercise still unreturned."
+}
