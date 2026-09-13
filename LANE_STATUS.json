@@ -8,14 +8,13 @@
   },
   "date": "2026-09-13",
   "established_this_checkpoint": [
-    "this lane violated clause 4 of its own estimand contract by comparing c across operating points and reading the movement as coupling; an external review caught it and the interpretation is withdrawn",
-    "the permitted quantity, the absolute excess joint miss rate, reverses the reading: the burden peaks at intermediate capture near 0.898 at 66.2 to 139.5 per thousand and falls to 38.8 to 87.4 at the highest capture",
-    "the novelty claim is corrected: label free reliability and dependence assessment has direct prior art in Berk et al 2019 and Jaffe et al 2015, and only a narrow Definition 32 sign and bound may be new",
-    "negative result: the failure is diffuse. The worst 5 percent of the population carries 7 to 14 percent of the excess and the worst quarter carries 31 to 45, so there is no small region to exclude and the blind spot atlas idea is refuted",
-    "suggestive only, two pairs per cell: changing architecture on the same sensor lands inside the same architecture coupling range while changing the sensor moves out of it"
+    "the coupling ordering can be reached from channel agreement alone, with the annotation supplying neither the population nor the joint miss cell, and with thresholds matched on the label free population",
+    "two of three matched operating points recover it, and where they do the label free margin is wider than the annotated one, +0.658 against +0.352 and +0.194 against +0.117",
+    "it fails at exactly one point, 0.50, which is where the annotated margin was +0.004 and had already been flagged as too thin to carry weight",
+    "the limitation that matters: the retained caches hold only detections that matched an annotated object, so this removes the annotation from the population and the joint miss cell and NOT from the association between channels"
   ],
   "lane": "independent research and conventional comparator",
-  "next_falsifier": "A crossed design with several pairs per cell, varying sensor modality, training corpus, architecture and pretraining independently, is what turns the architecture observation into evidence. Until then the ordering may be sensor physics or construction lineage and this lane cannot separate them.",
+  "next_falsifier": "Raw detections from two or more channels over a shared log, associated across channels without reference to any annotation, with the annotation held back until afterwards. That single input decides whether the method runs on unlabelled fleet logs or only on benchmarks.",
   "not_owned": [
     "admission, common operands, custody and output guards, viewer integration",
     "shared README and session handoff, main integration",
