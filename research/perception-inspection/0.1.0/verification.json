@@ -1,0 +1,139 @@
+{
+  "artifact_id": "reiyah.engine.inspection.verification",
+  "changed_behavior": "Viewer documentation supplies required --package for preparation and extraction. Runtime unchanged.",
+  "checks": [
+    {
+      "elapsed_seconds": 0.22450354206375778,
+      "exit_code": 0,
+      "name": "source-audit",
+      "peak_child_rss_bytes_macos": 29736960,
+      "receipt_sha256": "634898155f3787b3ce161d74ccc2336bf0d7d033631c54fe52b49e13085b0ab7"
+    },
+    {
+      "elapsed_seconds": 3.5236160829663277,
+      "exit_code": 0,
+      "name": "package-verification",
+      "peak_child_rss_bytes_macos": 85065728,
+      "receipt_sha256": "3c8f0671d50513af491d3351c5be997e447ab793cb90dd6a39837f88c930e87e"
+    },
+    {
+      "elapsed_seconds": 3.1365228329086676,
+      "exit_code": 2,
+      "name": "documented-extraction-failure",
+      "peak_child_rss_bytes_macos": 197853184,
+      "receipt_sha256": "cd9bd0d28a4866ada28373ca8d13b5a13fa29b871d95dd3c60328691367fc078"
+    },
+    {
+      "elapsed_seconds": 1.206059042015113,
+      "exit_code": 0,
+      "name": "corrected-control-extraction",
+      "peak_child_rss_bytes_macos": 246497280,
+      "receipt_sha256": "a13ed67c51dd046aa2fe62d9e2cfce853ee9bd165a2c2ba101d43025cf509dd7"
+    },
+    {
+      "elapsed_seconds": 0.6462931249989197,
+      "exit_code": 2,
+      "name": "pristine-empty-selection",
+      "peak_child_rss_bytes_macos": 248135680,
+      "receipt_sha256": "d2a415c203110a360a72acecac1111e7c050b0ecd66bfa2dc7835fd3f27587e3"
+    }
+  ],
+  "gate_a": "unaccepted",
+  "headline_checks": [
+    {
+      "countercheck": "Pristine scene still fails VIEW_EMPTY_SELECTION",
+      "headline": "Documented extraction failure repaired",
+      "not_established": [
+        "interactive viewing",
+        "participant usability",
+        "human attribution"
+      ],
+      "scope": "Required package argument; selected local Blender 5.1.2 control",
+      "support": [
+        "documented-extraction-failure",
+        "corrected-control-extraction"
+      ]
+    },
+    {
+      "headline": "Original record identity verified",
+      "not_established": [
+        "physical synchronization",
+        "point-to-object correspondence",
+        "reference completeness"
+      ],
+      "scope": "34720 exact raw records; three programmatic selected records; same declared capture and anchor timestamp",
+      "shared_trust": [
+        "Selected original custody and source metadata",
+        "Python byte reader and JSON",
+        "Blender native parser and existing adapter for scene inspection"
+      ],
+      "support": [
+        "source-audit",
+        "package-verification",
+        "private/CONTROL_READBACK.json"
+      ]
+    },
+    {
+      "countercheck": "Programmatic report explicitly states no human review or reference judgment",
+      "headline": "Human admission remains missing",
+      "not_established": [
+        "all possible external returns",
+        "participant unavailability",
+        "decision-cost superiority"
+      ],
+      "scope": "Both known return folders and both staged discovery drafts at recorded time",
+      "support": [
+        "private/SOURCE_AUDIT.json"
+      ]
+    }
+  ],
+  "human_effort": "unmeasured",
+  "inputs": {
+    "binding_sha256": "007cf2491d4a4a837f6a6180c15cd1cf4229f25849d412a1beb503c2e1cb0f38",
+    "blender_executable_sha256": "e0b80264bea559673212e0afc819fb33f3cef8b3dcfcc8d994b195132857ac8a",
+    "control_origin": "Retained 13 September programmatic selection; no new selection or human observation",
+    "control_scene_sha256": "de1f5daa51b8d26adba8038614e30483b0f4fa0f1c74298dae9475f16923fd15",
+    "opening_scene_sha256": "90facdc2888867d5b784285c5cb43005920ba418e453aa2a46db4b7a28b84faa",
+    "package_seal_sha256": "3f7dcdb06d659360d3d93688a4efe60739525cc0282a509930df7947d55ac5c1",
+    "raw_point_body_sha256": "331054aa5887a65f5c7a8a6d5177c393cc5112d9a86f633d7c6bc7e391212b3b"
+  },
+  "lifecycle_status": "exploratory",
+  "next_falsifier": "Actual participant opens exact anchor, selects visible point and saves an attributable return whose original records verify.",
+  "output": {
+    "byte_identical_to_retained_report": true,
+    "indices": [
+      0,
+      17360,
+      34719
+    ],
+    "selection_bytes": 1651,
+    "selection_sha256": "83f6f58d003a19e706c6e4b6f675bb6f692b1b77bbf2a619bdf3b08c46ba1060"
+  },
+  "prior_test_evidence": "418 repository and 93 measurement tests retained; not rerun",
+  "private_task": "engine-inspection-2026-09-14",
+  "real_comparison": {
+    "interval": [
+      "-8",
+      "8"
+    ],
+    "new_real_decision_replay": false,
+    "reference_admission": "not_performed"
+  },
+  "research_alignment": {
+    "engine_responsibility": "Inspection, source identity, staged admission and identical common operands",
+    "fable_responsibility": "Bounded preparation experiment, corrections and comparator; ordinary sweep and relevant multiverse methods",
+    "new_scientific_proposal_consumed": false,
+    "selected_review_manifest_sha256": "a6718da4a253bc1fdb86972af48da2fc3b4cad3701799261c9f930e244b43652",
+    "selected_route_manifest_sha256": "b6cfe4f4eb2630715bb9f3f268c866ddfc833cfdabeb248be16d6c489c8c9f05"
+  },
+  "research_consistency": {
+    "elapsed_seconds": 1.7807007919764146,
+    "exit_code": 0,
+    "mode": "retained transcript identity check; no historical experiment replay",
+    "receipt_sha256": "6fd0e92c6508526271d2d9668065802dbeb5757b45c765601411b61ef0be5755"
+  },
+  "source_commit": "b871461a39758e51c3d7ea171f75a9ff1a735022",
+  "source_tree": "55ad2c5ed1f1cb9d577e7625cf3e7c930a347650",
+  "validation_mode": "development procedure check, not locked Gate A release",
+  "version": "0.1.0"
+}

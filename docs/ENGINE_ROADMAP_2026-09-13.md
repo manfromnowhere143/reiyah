@@ -1,6 +1,6 @@
 # Reiyah: the decision, the evidence and the next checks
 
-Document ID: `reiyah.engine.roadmap`. Version: `0.1.1`. Status: `exploratory`. Dated 13 September 2026.
+Document ID: `reiyah.engine.roadmap`. Version: `0.1.2`. Status: `exploratory`. Updated 14 September 2026.
 
 Reiyah's present product question is whether a perception-validation lead can make a better
 added-detector integration choice, or reach the same defensible choice with less total effort,
@@ -44,7 +44,7 @@ flowchart TB
 | Practical inspection | Engine: consume one actual opening/selection return against its exact original capture and indices | Observable interaction and participant effort, including a failed or unreviewable return |
 | Independent physical references | Engine coordinates the authorized staged protocol; reviewers supply actual observations | Both unassisted records locked before assistance, complete disagreements and admitted joint alternatives |
 | Raw association uncertainty | Fable: use selected original rows, preserve unmatched records and order, compare a declared rule with a serious baseline | A checked decision or abstention stable to a defensible association/error model, or a retained counterexample |
-| Conditional inference and input boundary | Fable: connect the checked sign classifier to its raw-report entry point, retain factor-specific sensitivity and inspect runtime read guarantees | One consistent consumed verdict over the declared domain; default source substitution now rejects, but complete read isolation is not established |
+| Preparation assumptions and inference | Fable: seal the review-cost corrections and test one named claim over justified preparation alternatives against an ordinary sweep | A checked flip, robustness result or unresolved outcome under explicit target semantics; physical uncertainty, evaluation definitions and configuration changes remain distinct |
 | Equal useful comparison | Both lanes: same opportunities, references, weights, loss, tolerance and source evidence | One defensible integration choice with measured preparation, computation, verification, review and repair effort |
 | Generalization and stronger scientific claims | Separate future protocol and appropriately diverse inputs; no new cohort selected here | Held-out validation and dated primary comparisons that survive marginal, association and shared-data controls |
 
@@ -53,6 +53,14 @@ usability or external scientific review are available at this checkpoint. A miss
 does not justify invented judgments, repeated identical desktop bootstraps or more viewer
 architecture. Continue useful bounded work while retaining the ready opening and its exact
 missing prerequisite.
+
+The [14 September inspection check](PERCEPTION_INSPECTION_2026-09-14.md) repairs a required
+argument missing from the viewer guide and verifies extraction against an existing programmatic
+control. It adds no participant observation. The operator's preparation-proposal assessment
+fits this split: research identifies a consequential assumption; inspection obtains evidence
+about it. Its selected 20-row preparation grid only abstains. Treat a benchmark experiment as
+retrospective and annotation-conditional, compare ordinary sweeps and relevant multiverse methods,
+and check each headline's assumptions and counterexamples before publishing a checkpoint.
 
 The next input packet and a conditional impossibility result can both be useful. Neither is the
 product proof. Test the simplest competent method first; retain parity if it succeeds. A changed

@@ -1,8 +1,8 @@
-# Reiyah Engine continuation, 2026-09-13
+# Reiyah Engine continuation, 2026-09-14
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.9`
+Version: `0.1.10`
 
 Lifecycle status: `exploratory`
 
@@ -10,6 +10,12 @@ The real two-window comparison remains **[-8,8]**. The Engine can preserve and c
 reference alternatives, but no qualifying human references have been admitted. Actual
 participant usability and external scientific review remain missing. Gate A is unaccepted;
 the prospective physical study has not run and has no selected cohort or seed.
+
+The [14 September inspection checkpoint](PERCEPTION_INSPECTION_2026-09-14.md) corrects the viewer
+guide's missing `--package` argument. Its original command failure, corrected programmatic
+extraction and empty-selection rejection are retained; all 34,720 selected raw records agree.
+No participant return has arrived and no reference was admitted. This is a procedure/documentation
+repair; the Engine implementation and current joint-operand interfaces are unchanged.
 
 This is current Engine navigation, not a new Gate A release or an authority source. The complete
 previous handoff is preserved byte for byte in [the dated archive](SESSION_HANDOFF_ARCHIVE_2026-09-13.md):
@@ -23,8 +29,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This successor-readiness checkpoint starts from main
-`97c3ffd7a70e4d4dc8edc2b76e76bb177bc8ecc2`, tree `1ea5b81afe0fa9156c0470752134c35a2a0a7238`.
+uncommitted ownership before acting. This inspection checkpoint starts from main
+`b871461a39758e51c3d7ea171f75a9ff1a735022`, tree `55ad2c5ed1f1cb9d577e7625cf3e7c930a347650`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -40,9 +46,13 @@ or processes, or duplicate that implementation. Read current lane status before 
 overlapping work. Exchange only through separately selected immutable outboxes; a chat verdict
 or mutable branch tip is insufficient. No ownership transfer is implied by a consumer review.
 
-The complete next-session instruction is
+The complete continuation is
+`~/.codex/reports/reiyah/engine-review-value-2026-09-13/COPY_TO_CODEX.txt`.
+It supersedes the selected research state and next-task assessment in the predecessor
 `~/.codex/reports/reiyah/engine-successor-ready-2026-09-13/COPY_TO_CODEX.txt`.
-Read it completely, followed by that directory's `START_HERE.md`, `STANDARDS.md`, `TWO_LANES.md`,
+The current inspection packet is `~/.codex/reports/reiyah/engine-inspection-2026-09-14/`;
+read its `START_HERE.md` and `private/HANDOFF.json`, preserving its closed outputs.
+Read the predecessor's `START_HERE.md`, `STANDARDS.md`, `TWO_LANES.md`,
 `OPERATIONS.md`, `SOURCE_BINDINGS.json` and `private/HANDOFF.json`. These current instructions
 replace obsolete operational details in the 12 September handoffs while preserving their
 historical evidence and scientific obligations. The source bindings name those predecessors,
@@ -72,7 +82,7 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 | What do Engine's command costs measure? | [Command accounting](ENGINE_EFFORT_ACCOUNTING_2026-09-13.md) reconstructs 204 outer runs across fourteen selected closed checkpoints. It excludes 124 copied receipts and retains 33 nested details without adding them again. Reported durations, UTC interval coverage and unmeasured human effort remain distinct. |
 | Does sharing preserve original partition worlds? | [Partition conformance](PERCEPTION_PARTITION_CONFORMANCE_2026-09-13.md) checks 5,400 explicit tiny cases against original full graphs and direct partial injections. Original operands, shared-node member identity, ordered provenance and joint loss are checked beyond the core certificate. No compiler defect was found in this grid. |
 | Can research receive predictions without annotation reads? | [Prediction-only inputs](PERCEPTION_PREDICTIONS_2026-09-13.md) retain all 4,876 submitted rows across the 16 exposed development frames, with original bytes and indices. Two guarded runs agree; a separate conventional reader checks every selected row. Historical selection independence and physical association are not established. |
-| What does Fable's latest correction establish? | [The current consumer review](FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md) checks 2,401 small-table sign classifications, 18 aggregate thresholds and default source-digest rejection. The raw helper remains disconnected from the corrected classifier, and the 14.025× span combines score/radius/rule changes. Full raw association and Fable's reported 581 tests were not replayed. No research implementation was merged. |
+| What did the selected sign/custody correction establish? | [The current consumer review](FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md) checks 2,401 small-table sign classifications, 18 aggregate thresholds and default source-digest rejection. The raw helper remains disconnected from the corrected classifier, and the 14.025× span combines score/radius/rule changes. Full raw association and Fable's reported 581 tests were not replayed. No research implementation was merged. |
 
 The latest full repository suite passed **418 tests**, including 14 prediction-input additions,
 with no resource warnings. Eight additional standalone controls attack the separate source reader
@@ -122,7 +132,7 @@ commands, not a speed comparison. A missing capture-parent directory stopped the
 before child execution; that setup failure and the fresh corrected attempt remain retained.
 No production, frozen protocol, source payload or human review record changed.
 
-Fable's latest selected `sign-domain-and-boundary-0.1.0` exchange binds source commit
+The earlier selected `sign-domain-and-boundary-0.1.0` exchange binds source commit
 `ded19fc42af628309333884e526df6079d3b76e3`, manifest SHA-256
 `d747b88e6bcd4f30a9207a407b2a23fea4929da2031824fa09f89f3f89f0e9fb`.
 All ten payloads were verified. The current [consumer review](FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md)
@@ -139,7 +149,24 @@ mission, prior failures, common-operand comparison and next falsifiable product 
 Their nine Mermaid sources are unchanged from the rendered prediction-input checkpoint.
 No implementation, test, frozen protocol or older owner checkout changes in this successor audit.
 
-An actual participant return takes priority. The new, exposed development opening is
+The subsequent private review selects Fable's `review-cost-0.1.0` at
+`77cefc1ca4a8dfe90f0a63956bd234d0ee07edbc`. Its conditional equal-weight depth-sixteen result
+does not establish sixteen human judgments. Retained alternative-weight, matching-competition
+and prior-free adaptive counterexamples constrain that interpretation; they are synthetic
+mathematical evidence. The exact review manifest is
+`a6718da4a253bc1fdb86972af48da2fc3b4cad3701799261c9f930e244b43652`.
+
+Daniel's 14 September steering supports the bounded preparation-proposal assessment as compatible
+research within Reiyah. Fable tests preparation assumptions; Engine continues inspection.
+The selected 20-row grid only abstains. Distinguish fixed-comparison uncertainty, evaluation
+definitions and configuration changes; benchmark references remain annotation-conditional.
+Read `~/.codex/reports/reiyah/preparation-proposal-review-2026-09-14/ASSESSMENT.md` and its
+sealed `route-assessment-0.1.0`, manifest
+`b6cfe4f4eb2630715bb9f3f268c866ddfc833cfdabeb248be16d6c489c8c9f05`.
+Check each new headline against its exact assumptions, evidence and retained counterexamples
+before integration. No preparation experiment or correction is adopted from an unsealed tip.
+
+An actual participant return takes priority. The exposed development opening is
 `~/.codex/reports/reiyah/engine-anchor-opening-2026-09-13/private/opening/OPENING.md`, returning
 to `~/.codex/reports/reiyah/engine-anchor-input-2026-09-13/`. It uses the capture whose declared
 timestamp equals the first window's anchor, with all surrounding observations retained. The older

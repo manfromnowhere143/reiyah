@@ -36,6 +36,11 @@ native desktop service has a diagnosed Swift-loader incompatibility. Browser dis
 no available connection in the retained check; screen permissions and cloud login were not
 established causes. The prepared opening remains available for an actual participant.
 
+The [14 September inspection check](docs/PERCEPTION_INSPECTION_2026-09-14.md) corrects a missing
+required argument in the viewer guide, verifies original-record extraction on a retained
+programmatic control and rejects the pristine scene as an empty selection. Participant returns
+and staged human references remain missing.
+
 HARBOR is the proposed research program: **Human-Automation Readiness, Belief & Operational
 Risk**. Its broader scope connects object-level belief, readiness, recoverability, joint silent
 misses, causal policy effects, explicit unknowns, transfer and worst-group evaluation. Retained

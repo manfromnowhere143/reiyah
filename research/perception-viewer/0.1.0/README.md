@@ -44,6 +44,7 @@ Use the installed, separately identified Blender 5.1.2 binary. From the reposito
 "$BLENDER" --background --factory-startup --disable-autoexec --python-exit-code 2 \
   --python tools/perception_viewer.py -- prepare \
   --binding /private/binding.json --binding-sha256 EXPECTED_BINDING_SHA256 \
+  --package /private/observation-package \
   --asset /private/observation-package/assets/capture-000001.ply \
   --output /private/new-opening-directory
 ```
@@ -62,10 +63,17 @@ separate custody, then extract to a **new** output file:
 "$BLENDER" --background --factory-startup --disable-autoexec --python-exit-code 2 \
   --python tools/perception_viewer.py -- extract \
   --binding /private/binding.json --binding-sha256 EXPECTED_BINDING_SHA256 \
+  --package /private/observation-package \
   --asset /private/observation-package/assets/capture-000001.ply \
   --scene /private/submitted-selection.blend --scene-sha256 EXPECTED_SCENE_SHA256 \
   --scene-bytes ACTUAL_INTEGER_BYTE_SIZE --output /private/new-selection.json
 ```
+
+Both commands require `--package`: use the same observation directory already verified against
+the separately retained seal. Its named capture must be the selected `--asset`. The output
+parent must exist and lie outside both the source checkout and observation package. The
+[14 September procedure check](../../../docs/PERCEPTION_INSPECTION_2026-09-14.md) retains the
+earlier missing-argument failure and a corrected extraction of a programmatic control.
 
 The adapter loads a verified temporary snapshot with scripts disabled. A saved Edit Mode
 scene must leave Edit Mode **inside that temporary background copy** before its attribute
