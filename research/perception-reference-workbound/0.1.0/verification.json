@@ -1,0 +1,396 @@
+{
+  "artifact_id": "reiyah.perception-reference-workbound.verification",
+  "baseline": {
+    "artifact_id": "reiyah.engine.workbound.baseline-selection",
+    "byte_size": 17119,
+    "dependencies": "Every other tracked tools file is identical between selected baseline and current HEAD; use current unchanged dependencies read-only",
+    "sha256": "77ef5517f5febbfdaa7bb0ea7394806282548efa610c173cba58993e99fc9235",
+    "source_commit": "146573cc21cbb8c4efa6a78c8c11455168f77edb",
+    "source_path": "tools/perception_reference.py",
+    "version": "0.1.0"
+  },
+  "compiler": {
+    "byte_size": 19332,
+    "sha256": "acb2fe1e87e08aeb0c448ffab55322f233786e20a4810422bc209be434649e69"
+  },
+  "dated_utc": "2026-09-13T11:08:37.611507+00:00",
+  "decision": "Reject the missing-edge-cost hypothesis; retain the current compiler and add one dense adjacent-boundary regression",
+  "disproved_assumption": "Compiler edges were assumed to carry world conditions; selected source emits empty edge conditions, with all activation carried by objects",
+  "fable_changes": false,
+  "fable_selection": "No new selection here; preceding 5762ac0 consumer acceptance stays scoped to its closed Engine exchange",
+  "gate_a": "unaccepted",
+  "limits": [
+    "Synthetic computational fixture, not physically validated traffic",
+    "Direct injection and count proof uses declared exact coordinates; upstream normalization remains trusted",
+    "Core checker independent of producer matcher, sharing parser/contract",
+    "No current compiler defect found",
+    "No human reference, usability, scientific review, latency advantage or state-of-the-art claim"
+  ],
+  "probe_source": {
+    "byte_size": 4906,
+    "sha256": "f7c4a4d17a53223374712d1a863f2576524e4a2a0d8c9eafef47fc3661aae8dd"
+  },
+  "probes": [
+    {
+      "actual_selected_work": 1830336,
+      "files": {
+        "compilation.json": {
+          "byte_size": 656516,
+          "sha256": "3178cab0c5f4b5ccf7fce67678f4983bff034bcd888d0c02cc219f65a03e37ff"
+        },
+        "compiled.json": {
+          "byte_size": 64594,
+          "sha256": "c31e95ef1b540b9957b62cc058b5dcec6311ca89b4de09f601df564172fede8c"
+        },
+        "inputs.json": {
+          "byte_size": 857742,
+          "sha256": "ed9482abfe965e47f2a92a8f9942690bd1f292e6284e4cdb94b47186094e44fc"
+        },
+        "packet.json": {
+          "byte_size": 51020,
+          "sha256": "5791bdcd2397f72c5782b7b2456515fa3a479bb9a14efd256a020d974a33ef6a"
+        },
+        "summary.json": {
+          "byte_size": 1127,
+          "sha256": "11198fac2b354e88c9c14fe08316eb61ac732e83795fae918f65eddd378490cc"
+        }
+      },
+      "invariant_objects": 46,
+      "mode": "current",
+      "preflight_if_shared": 1830848,
+      "process": {
+        "child_max_rss_bytes_macos": 47562752,
+        "elapsed_seconds": 0.42824291705619544,
+        "ended_utc": "2026-09-13T10:59:16.367222+00:00",
+        "started_utc": "2026-09-13T10:59:15.938875+00:00"
+      },
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "0"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "0"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "excluded",
+          "preference": "equivalent_within_tolerance"
+        },
+        "enclosure_kind": "exact_for_finite_model",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "reference_scope": "synthetic",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null
+      }
+    },
+    {
+      "actual_selected_work": 58304,
+      "files": {
+        "compilation.json": {
+          "byte_size": 647077,
+          "sha256": "9343072613cfb421fb6abec2144d4c5efacfb48febe301771e59318751df7bf6"
+        },
+        "compiled.json": {
+          "byte_size": 22075,
+          "sha256": "1a56368b112e2b43b88ec376d91ddafd9f72d87b60ff5f332b5a513828c1935e"
+        },
+        "inputs.json": {
+          "byte_size": 857742,
+          "sha256": "ed9482abfe965e47f2a92a8f9942690bd1f292e6284e4cdb94b47186094e44fc"
+        },
+        "packet.json": {
+          "byte_size": 14145,
+          "sha256": "a6fc7f07103aac44ad265f5c7195e425acb48f451e8a86aa2738a69403956f30"
+        },
+        "summary.json": {
+          "byte_size": 1011,
+          "sha256": "78528693fd330e4f6b36e7ae394b37fecec656e7e5f4c15b881cbf18bb28090d"
+        }
+      },
+      "invariant_objects": 46,
+      "mode": "pre-sharing",
+      "preflight_if_shared": 1830848,
+      "process": {
+        "child_max_rss_bytes_macos": 45170688,
+        "elapsed_seconds": 0.3696959170047194,
+        "ended_utc": "2026-09-13T10:59:33.886491+00:00",
+        "started_utc": "2026-09-13T10:59:33.516693+00:00"
+      },
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "0"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "excluded",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "conservative_open_reference",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "reference_scope": "synthetic",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null
+      }
+    },
+    {
+      "actual_selected_work": 1994176,
+      "files": {
+        "compilation.json": {
+          "byte_size": 789536,
+          "sha256": "646fbe7e313e8488b1c8110aa7fcef33647b08d251e5474d987ba8b54467b76b"
+        },
+        "compiled.json": {
+          "byte_size": 68764,
+          "sha256": "1595ae37e46635064cc6988fdc0f3d61392c906e71d9ca5062a704a9a6dc5dc1"
+        },
+        "inputs.json": {
+          "byte_size": 1026702,
+          "sha256": "09633ae4808249c3b6de712bdc862386101adf2794d81fdf97c7028e2c86444e"
+        },
+        "packet.json": {
+          "byte_size": 51020,
+          "sha256": "5791bdcd2397f72c5782b7b2456515fa3a479bb9a14efd256a020d974a33ef6a"
+        },
+        "summary.json": {
+          "byte_size": 1127,
+          "sha256": "aaf0a93fa6f6cf149dc224b6669df6ee3b63a154b8c4d607f30a4745204b4b60"
+        }
+      },
+      "invariant_objects": 56,
+      "mode": "current",
+      "preflight_if_shared": 1994688,
+      "process": {
+        "child_max_rss_bytes_macos": 52674560,
+        "elapsed_seconds": 0.47692679101601243,
+        "ended_utc": "2026-09-13T11:00:41.359896+00:00",
+        "started_utc": "2026-09-13T11:00:40.882863+00:00"
+      },
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "0"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "0"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "excluded",
+          "preference": "equivalent_within_tolerance"
+        },
+        "enclosure_kind": "exact_for_finite_model",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "reference_scope": "synthetic",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null
+      }
+    },
+    {
+      "actual_selected_work": 58304,
+      "files": {
+        "compilation.json": {
+          "byte_size": 791177,
+          "sha256": "25e00d5122f234219a1febd7f40e9c7eb696facfbd1e816562cf6f882ebb46a2"
+        },
+        "compiled.json": {
+          "byte_size": 22075,
+          "sha256": "177df23921cd29e6f7d1ae321edaa695a7be29404ff1c8ca8c60e635422eccad"
+        },
+        "inputs.json": {
+          "byte_size": 1043598,
+          "sha256": "bc606d33166206d79d410dc4aa6b435374d9361f4d8b03bbcde32bfa41e83f50"
+        },
+        "packet.json": {
+          "byte_size": 14145,
+          "sha256": "a6fc7f07103aac44ad265f5c7195e425acb48f451e8a86aa2738a69403956f30"
+        },
+        "summary.json": {
+          "byte_size": 1007,
+          "sha256": "9fcfa8a742c5a2b833aa75cd6f608e96487ba3c9f85d93260d47b57d4de3844f"
+        }
+      },
+      "invariant_objects": 57,
+      "mode": "current",
+      "preflight_if_shared": 2011072,
+      "process": {
+        "child_max_rss_bytes_macos": 48267264,
+        "elapsed_seconds": 0.3905479171080515,
+        "ended_utc": "2026-09-13T11:00:42.137390+00:00",
+        "started_utc": "2026-09-13T11:00:41.746745+00:00"
+      },
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "0"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "excluded",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "conservative_open_reference",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "reference_scope": "synthetic",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null
+      }
+    },
+    {
+      "actual_selected_work": 58304,
+      "files": {
+        "compilation.json": {
+          "byte_size": 791177,
+          "sha256": "25e00d5122f234219a1febd7f40e9c7eb696facfbd1e816562cf6f882ebb46a2"
+        },
+        "compiled.json": {
+          "byte_size": 22075,
+          "sha256": "177df23921cd29e6f7d1ae321edaa695a7be29404ff1c8ca8c60e635422eccad"
+        },
+        "inputs.json": {
+          "byte_size": 1043598,
+          "sha256": "bc606d33166206d79d410dc4aa6b435374d9361f4d8b03bbcde32bfa41e83f50"
+        },
+        "packet.json": {
+          "byte_size": 14145,
+          "sha256": "a6fc7f07103aac44ad265f5c7195e425acb48f451e8a86aa2738a69403956f30"
+        },
+        "summary.json": {
+          "byte_size": 1011,
+          "sha256": "a3b7317319e879b122e1a0473fc970d126cb1c29144ed7a74d18151f1dccde6c"
+        }
+      },
+      "invariant_objects": 57,
+      "mode": "pre-sharing",
+      "preflight_if_shared": 2011072,
+      "process": {
+        "child_max_rss_bytes_macos": 48807936,
+        "elapsed_seconds": 0.4238919169874862,
+        "ended_utc": "2026-09-13T11:06:40.146404+00:00",
+        "started_utc": "2026-09-13T11:06:39.722410+00:00"
+      },
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "0"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "excluded",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "conservative_open_reference",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "reference_scope": "synthetic",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null
+      }
+    }
+  ],
+  "production_code_changed": false,
+  "proof_obligation": "Existing preflight bounds the declared core work estimate when sharing is selected; it is not a measured runtime or memory bound",
+  "real_bounds": [
+    "-8",
+    "8"
+  ],
+  "same_input_baseline_equality": {
+    "artifact_id": "reiyah.engine.workbound.baseline-equality",
+    "files": [
+      {
+        "byte_size": 1043598,
+        "path": "inputs.json",
+        "sha256": "bc606d33166206d79d410dc4aa6b435374d9361f4d8b03bbcde32bfa41e83f50"
+      },
+      {
+        "byte_size": 22075,
+        "path": "compiled.json",
+        "sha256": "177df23921cd29e6f7d1ae321edaa695a7be29404ff1c8ca8c60e635422eccad"
+      },
+      {
+        "byte_size": 791177,
+        "path": "compilation.json",
+        "sha256": "25e00d5122f234219a1febd7f40e9c7eb696facfbd1e816562cf6f882ebb46a2"
+      },
+      {
+        "byte_size": 14145,
+        "path": "packet.json",
+        "sha256": "a6fc7f07103aac44ad265f5c7195e425acb48f451e8a86aa2738a69403956f30"
+      }
+    ],
+    "invariant_objects": 57,
+    "meaning": "Current guard declines sharing and exactly recovers the selected pre-sharing compiler artifacts for these same inputs",
+    "version": "0.1.0"
+  },
+  "source_base": "840ef7c4844854457d90e6800d579c0d1b029f36",
+  "source_inventory": {
+    "byte_size": 54934,
+    "files": 299,
+    "sha256": "b80e30827b938abc6f91a15de100e9d1f2d79f365f621e7bc77b1a1d955997a6"
+  },
+  "test_changed": {
+    "byte_size": 17035,
+    "path": "tests/test_perception_reference_sharing.py",
+    "sha256": "6589231602057d089e58bf58b5dc4ecf053b4298b998ed17db8b73ead3b543e0"
+  },
+  "validation": {
+    "measurement_files_rechecked": 107,
+    "measurement_tests_retained_not_replayed": 93,
+    "new_tests": 1,
+    "repository_process": {
+      "child_max_rss_bytes_macos": 181190656,
+      "elapsed_seconds": 53.47366066707764,
+      "ended_utc": "2026-09-13T11:05:17.622864+00:00",
+      "started_utc": "2026-09-13T11:04:24.149123+00:00"
+    },
+    "repository_receipt": {
+      "byte_size": 1065,
+      "sha256": "42efb2490194a71114649ee6912b3a3b9c3535b7404f47bbcb6c646383ce535c"
+    },
+    "repository_tests_fresh": 391,
+    "runtime_selection": {
+      "artifact_id": "reiyah.engine.selected-runtime",
+      "files_rechecked": 4219,
+      "inventory_path": "/Users/danielwahnich/.codex/reports/reiyah/engine-discovery-custody-2026-09-13/private/RUNTIME_INVENTORY_FINAL.json",
+      "inventory_sha256": "f2e111e1364ddcf4727b213738cd7c5a8e48de81000aea0c8448f7275b9b79a4",
+      "path": "/Users/danielwahnich/.codex/reports/reiyah/engine-discovery-custody-2026-09-13/private/runtime/bin/python",
+      "use": "Read-only execution with PYTHONPATH empty and bytecode disabled; no installation into the closed task runtime",
+      "version": "0.1.0"
+    }
+  },
+  "version": "0.1.0"
+}

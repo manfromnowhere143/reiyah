@@ -1,3 +1,36 @@
+# Reference work bound confirmed, 2026-09-13
+
+The [dense boundary audit](PERCEPTION_REFERENCE_WORKBOUND_2026-09-13.md) disproved the suspected
+missing edge-cost defect. Compiled edges have empty conditions; object guards control activation.
+The existing preflight bounds the unchanged evaluator work estimate. No production correction,
+new interface or higher limit is justified. The failed suspicion and exact evidence are retained.
+
+With 64 synthetic worlds, 56 invariant objects fit at 1,994,176 work units and yield [0,0].
+At 57, the guard declines sharing and preserves [-1,0], with current/baseline compiled input,
+receipt and packet byte-identical on the same inputs. Direct coordinate injections and count
+upper bounds establish the finite joint value zero; no physical observation is involved.
+
+All 391 repository tests pass, including one new dense adjacent-boundary regression. Earlier
+93 measurement tests remain retained against 107 unchanged files, not replayed. See
+[verification](../research/perception-reference-workbound/0.1.0/verification.json) for exact
+sources, outputs and costs. The bound is on the declared evaluator estimate, not elapsed time
+or memory. Fable's planner/robustness/checker lane was untouched; no new exchange selected here.
+
+Next inspect the official Chrome capability for a separate observable viewing path. Establish
+its actual prerequisites once, without retrying the unchanged native bootstrap or assuming
+screen permissions/gcloud. If no independent path exists, retain that result and the existing
+manual viewer procedure; do not build another viewer without a working observation path.
+Actual participant return still takes priority. Preserve all older owner checkouts and packets.
+
+Real bounds [-8,8]; human references, actual participant usability and external scientific
+review missing. Gate A unaccepted; physical study unrun with no cohort/seed. P005 operator-
+reported published; no further publication or outreach. Continue through 15:58:25 UTC on
+13 September. This checkpoint does not finish the autonomous mission.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Matching source trace and consumer repair, 2026-09-13
 
 The [checked procedure](PERCEPTION_MATCHING_TRACE_2026-09-13.md) follows all ten matching

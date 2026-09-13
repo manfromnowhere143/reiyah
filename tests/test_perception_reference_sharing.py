@@ -145,6 +145,39 @@ class ReferenceSharingTests(unittest.TestCase):
                 self.assertEqual(len(compiled['anchors'][0]['reference']['objects']), 2)
                 self.assertTrue(all(o['when'] for o in compiled['anchors'][0]['reference']['objects']))
 
+    def test_dense_graph_at_adjacent_sharing_budget_boundary(self):
+        # Seven predictions connect to every active object on anchor 0. The
+        # single addition on anchor 1 has no edge. Direct deltas are +1/-1,
+        # so equal weights give zero in all 64 worlds. The first representation
+        # fits; the next must retain the ordinary mixed [-1,0] enclosure.
+        for stable_count, bounds, capacity in [(56, [0, 0], 1_994_176),
+                                                (57, [-1, 0], 58_304)]:
+            with self.subTest(stable_objects=stable_count):
+                args = inputs(2, base_duplicates=6)
+                small = inputs(2, base_duplicates=0)
+                args[1]['anchors'][1], args[2][1] = small[1]['anchors'][1], small[2][1]
+                args[0]['inputs'] = {'comparison_sha256': digest(args[1]),
+                    'normalizations_sha256': digest(args[2]), 'catalog_sha256': digest(args[3])}
+                stable = [object_at('invariant-'+str(i), Fraction(3, 2)) for i in range(stable_count)]
+                args[0]['worlds'] = [world('world-'+str(i), [
+                    deepcopy(stable)+[object_at('varying', Fraction(1500+i, 1000))],
+                    [object_at('unmatched', 30, time=2_000_000)]]) for i in range(64)]
+                compiled, receipt, packet = self.checked(args)
+                self.assertEqual(packet['result']['execution_status'], 'succeeded')
+                self.assertEqual([contract.rational(packet['result']['bounds'][s])
+                                  for s in ('lower', 'upper')], bounds)
+                self.assertEqual(kernel._capacity(compiled), (64, capacity))
+                self.assertEqual(len(receipt['world_encodings']), 64)
+                self.assertEqual(len(receipt['object_mapping']), 64*(stable_count+2))
+                if stable_count == 56:
+                    self.assertEqual([len(a['reference']['objects']) for a in compiled['anchors']], [120, 1])
+                    for w in packet['proof']['worlds']:
+                        first, second = w['anchors']
+                        self.assertEqual([len(first[r]['matching']) for r in ('base', 'augmented')], [6, 7])
+                        self.assertEqual([len(second[r]['matching']) for r in ('base', 'augmented')], [0, 0])
+                else:
+                    self.assertEqual([a['reference']['state'] for a in compiled['anchors']], ['open', 'finite'])
+
     def test_absence_and_geometry_patterns_preserve_each_world_graph(self):
         # Every three-world pattern of absence, matching competition, class and range.
         choices = [None, ('car', Fraction(3, 2)), ('car', -1), ('truck', -1), ('car', 51)]
