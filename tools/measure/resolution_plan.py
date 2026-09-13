@@ -56,6 +56,8 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cohort_packet import CaseError, build  # noqa: E402
 
+ARTIFACT_ID = "reiyah.resolution-plan.report"
+REPORT_VERSION = "0.3.0"
 MAX_WORLDS = 64
 MAX_QUESTIONS = 32
 MAX_NODES = 200000
@@ -137,13 +139,15 @@ ANSWER_MODEL = {
 def plan(case):
     report = build(case)
     if report.get("enclosure") is None:
-        return {"state": report.get("state"), "reason": report.get("reason"),
+        return {"artifact_id": ARTIFACT_ID, "version": REPORT_VERSION,
+                "state": report.get("state"), "reason": report.get("reason"),
                 "answer_model": ANSWER_MODEL}
     worlds = [w["world_id"] for w in case["joint_worlds"]]
     if not worlds:
         # No admitted joint world at all. The count bound stands; nothing has been
         # said about the world, so there is no model to be ambiguous about.
-        return {"state": "no_admitted_reference",
+        return {"artifact_id": ARTIFACT_ID, "version": REPORT_VERSION,
+                "state": "no_admitted_reference",
                 "reason": ("there is no admitted joint reference interpretation. The enclosure is "
                            "the conditional count bound and no question is available, because "
                            "nothing has been asserted that an observation could confirm or deny. "
@@ -232,7 +236,8 @@ def plan(case):
             state = "unresolved_without_witness"
             reason = ("the search returned no plan and no stuck cell was recorded. This is a "
                       "defect in this program, not a statement about the cohort")
-        return {"state": state, "reason": reason,
+        return {"artifact_id": ARTIFACT_ID, "version": REPORT_VERSION,
+                "state": state, "reason": reason,
                 "witness_cell": witness, "open_anchors": open_anchors,
                 "withheld_questions": [{"anchor": q["anchor"], "object": q["object"]}
                                        for q in withheld],
@@ -241,7 +246,8 @@ def plan(case):
                 "improvement_criterion": report["decision"]["improvement_criterion"],
                 "questions_available": len(questions), "search_nodes": nodes[0],
                 "answer_model": ANSWER_MODEL}
-    return {"state": "resolvable", "enclosure": report["enclosure"],
+    return {"artifact_id": ARTIFACT_ID, "version": REPORT_VERSION,
+            "state": "resolvable", "enclosure": report["enclosure"],
             "answer_model": ANSWER_MODEL,
             "improvement_criterion": report["decision"]["improvement_criterion"],
             "worst_case_observations": root["depth"],

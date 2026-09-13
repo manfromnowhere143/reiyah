@@ -2,7 +2,9 @@
 
 Document ID: `reiyah.worst-group.2026-09-12`
 
-Version: `0.1.0`
+Version: `0.2.0`
+
+Supersedes `0.1.0` of the same document ID, correcting one overstated sentence.
 
 Lifecycle status: `proposed`
 
@@ -79,6 +81,23 @@ relaxation, and the checker refuses them as an answer.
 The inequality is asserted on 200 random grouped cohorts, where the lower ends agreed every time,
 the separate upper end was never below the joint one, and it was strictly above it often enough for
 the test to require it.
+
+## Correction: a labelled relaxation is a valid conservative bound
+
+Version 0.1.0 wrote:
+
+> "**a bound computed one part at a time is a relaxation of the bound computed over one shared world,
+> and a relaxation is never a result.**"
+
+The second half is too strong. A sound relaxation is a valid conservative bound, and reporting one is
+legitimate provided it is labelled as a relaxation and not passed off as the sharp answer. What the
+flip case shows is narrower and still worth having: the relaxation can be so much weaker that it
+loses a decisive negative result which the joint computation retains. That is a reason to compute
+jointly, not a reason to call conservative bounds invalid.
+
+Neither this result nor the dependence coefficient establishes whether a vehicle is safe to ship. A
+synthetic detector loss comparison and an object level dependence constant are inputs to an
+engineering argument, not the argument.
 
 ## What this does not do
 

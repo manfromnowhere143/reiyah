@@ -139,5 +139,48 @@ class ItRefusesWhatItCannotEnumerate(unittest.TestCase):
         self.assertIn("cannot discharge the dependence", result["scope"])
 
 
+class TheShareIsNotACausalAttribution(unittest.TestCase):
+    """Retained counterexample to this lane's own published sentence.
+
+    Version 0.1.0 wrote that every decisive verdict was "carried entirely by the
+    admission decision" and that "the detectors narrow nothing that the admission
+    had not already narrowed". Both cases below have one admitted reading and the
+    same reference objects. Only one added detection moves. The verdict flips and
+    the share does not, so the sentence was false.
+    """
+
+    def cases(self):
+        return load("detector-moved-reaches.json"), load("detector-moved-misses.json")
+
+    def test_the_reference_objects_are_identical(self):
+        reaches, misses = self.cases()
+        self.assertEqual(reaches["joint_worlds"][0]["per_anchor"]["A"]["objects_present"],
+                         misses["joint_worlds"][0]["per_anchor"]["A"]["objects_present"])
+
+    def test_only_one_added_detection_edge_differs(self):
+        reaches, misses = self.cases()
+        a = {tuple(e) for e in reaches["joint_worlds"][0]["per_anchor"]["A"]["edges"]}
+        b = {tuple(e) for e in misses["joint_worlds"][0]["per_anchor"]["A"]["edges"]}
+        self.assertEqual(a - b, {("c0", "k")})
+        self.assertEqual(b - a, set())
+
+    def test_the_verdict_flips(self):
+        reaches, misses = self.cases()
+        self.assertEqual(sens.analyse(reaches)["criterion"], "supported")
+        self.assertEqual(sens.analyse(misses)["criterion"], "excluded")
+
+    def test_the_share_does_not_move(self):
+        for case in self.cases():
+            result = sens.analyse(case)
+            with self.subTest(cohort=case["cohort_id"]):
+                self.assertEqual(Fraction(result["how_much_is_asserted"]["asserted_share"]), 1)
+
+    def test_the_module_now_says_what_the_share_is_not(self):
+        result = sens.analyse(load("detector-moved-reaches.json"))
+        note = result["how_much_is_asserted"]["what_it_is_not"]
+        self.assertIn("not a claim that the verdict came from the admission", note)
+        self.assertIn("three different things", note)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -2,7 +2,9 @@
 
 Document ID: `reiyah.admission-sensitivity.2026-09-12`
 
-Version: `0.1.0`
+Version: `0.2.0`
+
+Supersedes `0.1.0` of the same document ID. It retracts this document's central sentence.
 
 Lifecycle status: `proposed`
 
@@ -86,6 +88,33 @@ That gives the programme a sharper target than "build a better comparison". The 
 finished. What is not finished, and what the value now provably depends on, is a defensible account
 of which readings are admissible and whether the set of them is complete. No amount of further work
 on the arithmetic moves that.
+
+## Retraction: the share is not a causal attribution
+
+Version 0.1.0 of this document said, in bold:
+
+> "**Every decisive verdict this lane has ever produced is carried entirely by the admission
+> decision.**"
+
+and, of the decisive cases:
+
+> "the detectors narrow nothing that the admission had not already narrowed"
+
+That is false, and the counterexample is small. `detector-moved-reaches` and `detector-moved-misses`
+each declare **one** admitted reading with the **same** reference objects. They differ in a single
+edge: whether the added detection could have matched one object. The verdict flips from `supported`
+to `excluded`, and the asserted share stays exactly `1` in both.
+
+So a share of `1` says the admitted readings contracted the interval to a point. **Which** point is
+then determined by the detections, and the share cannot see that at all. What the figure measures is
+interval contraction against a structural baseline. It is a sensitivity figure. It is not evidence
+about where the information came from, and it is not a causal attribution of a verdict. Version 0.1.0
+collapsed the three, and the module now reports what the share is not alongside what it is.
+
+What survives is narrower and still worth having: with a single admitted reading the enclosure is a
+point whatever the detections say, so the instrument reports no uncertainty about a reading that
+nobody has shown to be the only admissible one. That is a statement about what the instrument
+discloses, not about where a verdict came from.
 
 ## Limits
 

@@ -47,9 +47,26 @@ class TheCaptureRecaptureFillReturnsItsOwnAssumption(unittest.TestCase):
 
     def test_the_report_names_the_circularity(self):
         report = jm.analyse(jm.two_channel_counts(10, 5, 5))
-        self.assertEqual(report["capture_recapture"]["coefficient_there"], "1")
-        self.assertIn("reported its own assumption",
-                      report["capture_recapture"]["circularity"])
+        plug_in = report["capture_recapture_plug_in"]
+        self.assertEqual(plug_in["coefficient_there"], "1")
+        self.assertIn("reported its own assumption", plug_in["circularity"])
+
+    def test_the_identity_is_scoped_to_this_estimator_and_its_domain(self):
+        """It is not a statement about capture recapture methods in general."""
+        plug_in = jm.analyse(jm.two_channel_counts(10, 5, 5))["capture_recapture_plug_in"]
+        self.assertIn("not about capture recapture methods in general", plug_in["scope"])
+        self.assertEqual(plug_in["defined_when"],
+                         "some object is detected by both channels, so w > 0")
+
+    def test_the_fitted_count_need_not_be_an_integer(self):
+        """c = 1 is then attained off the grid the count actually lives on."""
+        plug_in = jm.analyse(jm.two_channel_counts(10, 5, 5))["capture_recapture_plug_in"]
+        self.assertEqual(plug_in["fitted_count"], "5/2")
+        self.assertFalse(plug_in["fitted_count_is_an_integer"])
+
+    def test_it_is_absent_where_it_is_undefined(self):
+        self.assertIsNone(
+            jm.analyse(jm.two_channel_counts(0, 5, 5))["capture_recapture_plug_in"])
 
 
 class TheSignQuestionReducesExactly(unittest.TestCase):
@@ -80,7 +97,7 @@ class TheSignQuestionReducesExactly(unittest.TestCase):
 
     def test_a_bound_below_the_threshold_decides_the_other_way(self):
         report = jm.analyse(jm.two_channel_counts(10, 5, 5), low=0, high=2)
-        self.assertEqual(report["sign_question"]["verdict"]["state"], "c_at_most_1")
+        self.assertEqual(report["sign_question"]["verdict"]["state"], "c_less_than_1")
 
     def test_a_bound_spanning_the_threshold_decides_nothing(self):
         report = jm.analyse(jm.two_channel_counts(10, 5, 5), low=0, high=8)
@@ -91,14 +108,14 @@ class TwoChannelsDoNotIdentifyTheCoefficient(unittest.TestCase):
     def test_the_unbounded_range_spans_values_below_and_above_one(self):
         report = jm.analyse(jm.two_channel_counts(10, 5, 5))
         unbounded = report["coefficient_range_with_no_bound_at_all"]
-        self.assertLess(Fraction(unbounded["lower"]), 1)
-        self.assertGreater(Fraction(unbounded["upper"]), 1)
+        self.assertLess(Fraction(unbounded["minimum"]), 1)
+        self.assertGreater(Fraction(unbounded["maximum"]), 1)
 
     def test_the_supremum_is_the_interior_maximum(self):
         unbounded = jm.analyse(jm.two_channel_counts(10, 5, 5))[
             "coefficient_range_with_no_bound_at_all"]
-        self.assertEqual(unbounded["upper"], "4/3")
-        self.assertEqual(unbounded["upper_at_m"], 10)
+        self.assertEqual(unbounded["maximum"], "4/3")
+        self.assertEqual(unbounded["maximum_at_m"], 10)
 
     def test_a_reference_is_required_for_the_sign(self):
         report = jm.analyse(jm.two_channel_counts(10, 5, 5))
@@ -155,7 +172,8 @@ class TheLimitIsNotAnAttainedExtreme(unittest.TestCase):
         unbounded = jm.analyse(SETTLED)["coefficient_range_with_no_bound_at_all"]
         self.assertEqual(unbounded["infimum"], "1")
         self.assertFalse(unbounded["infimum_attained"])
-        self.assertGreater(Fraction(unbounded["lower"]), 1)
+        self.assertIsNone(unbounded["minimum"])
+        self.assertTrue(unbounded["no_minimum_exists"])
 
     def test_an_attained_minimum_is_reported_as_attained(self):
         unbounded = jm.analyse(jm.two_channel_counts(10, 5, 5))[
@@ -178,9 +196,9 @@ class TheRangeIsNotReadOffTheEndpoints(unittest.TestCase):
     def test_the_module_reports_the_interior_value(self):
         declared = jm.analyse(jm.two_channel_counts(10, 5, 5), low=2, high=30)[
             "coefficient_range_under_the_declared_bound"]
-        self.assertEqual(declared["upper"], "4/3")
-        self.assertEqual(declared["upper_at_m"], 10)
-        self.assertNotIn(declared["upper_at_m"], (2, 30))
+        self.assertEqual(declared["maximum"], "4/3")
+        self.assertEqual(declared["maximum_at_m"], 10)
+        self.assertNotIn(declared["maximum_at_m"], (2, 30))
 
     def test_the_bracketing_finds_the_true_extremes(self):
         """Checked against a full scan, on two and three channel tables alike."""
@@ -193,15 +211,17 @@ class TheRangeIsNotReadOffTheEndpoints(unittest.TestCase):
             scan = [jm.coefficient(parts, m) for m in range(low, high + 1)]
             scan = [v for v in scan if v is not None]
             with self.subTest(counts=counts):
-                self.assertEqual(Fraction(report["upper"]), max(scan))
-                self.assertEqual(Fraction(report["lower"]), min(scan))
+                self.assertEqual(Fraction(report["maximum"]), max(scan))
+                self.assertEqual(Fraction(report["minimum"]), min(scan))
 
 
 class DegenerateCountsAreStatesNotZeros(unittest.TestCase):
-    def test_no_joint_detection_leaves_the_threshold_undefined(self):
+    def test_no_joint_detection_removes_the_threshold_but_not_the_sign(self):
+        """Reproduced defect: 0.2.0 reported undetermined here."""
         report = jm.analyse(jm.two_channel_counts(0, 5, 5))
         self.assertIsNone(report["sign_question"]["threshold"])
-        self.assertEqual(report["sign_question"]["verdict"]["state"], "undetermined")
+        self.assertIn("settled outright", report["sign_question"]["threshold_absent_because"])
+        self.assertEqual(report["sign_question"]["verdict"]["state"], "c_less_than_1")
 
     def test_a_channel_that_misses_nothing_leaves_the_ratio_undefined(self):
         self.assertIsNone(jm.coefficient(jm.margins(jm.two_channel_counts(10, 0, 0)), 0))
@@ -226,6 +246,132 @@ class ItEstimatesNothing(unittest.TestCase):
         for phrase in ("No population is sampled", "no channel is named",
                        "no value of c is estimated"):
             self.assertIn(phrase, scope)
+
+
+class ADefinition32ConstantIsQuantitativeNotASign(unittest.TestCase):
+    """The retained primary text states P[both] <= c P[A] P[B]: a constant, not a sign.
+
+    An earlier version of this lane's document said a third channel "can give only
+    the sign unless the dark figure is also bounded". This lane's own arithmetic
+    contradicted it, and the supremum it already computed is exactly the smallest
+    admissible constant.
+    """
+
+    def test_a_constant_is_supplied_with_no_reference_at_all(self):
+        for counts, expected in ((SETTLED, "1679/1188"),
+                                 (jm.two_channel_counts(10, 5, 5), "4/3")):
+            constant = jm.analyse(counts)["definition_32_constant"]
+            with self.subTest(counts=counts):
+                self.assertEqual(constant["state"], "computed")
+                self.assertEqual(constant["smallest_admissible_constant"], expected)
+
+    def test_the_constant_really_bounds_every_admissible_count(self):
+        for counts in (SETTLED, jm.two_channel_counts(10, 5, 5)):
+            parts = jm.margins(counts)
+            bound = Fraction(jm.analyse(counts)["definition_32_constant"][
+                "smallest_admissible_constant"])
+            for m in (0, 1, 2, 9, 37, 500, 10 ** 5):
+                value = jm.coefficient(parts, m)
+                if value is None:
+                    continue
+                with self.subTest(counts=counts, m=m):
+                    self.assertLessEqual(value, bound)
+
+    def test_it_is_the_smallest_such_constant(self):
+        parts = jm.margins(SETTLED)
+        bound = Fraction(jm.analyse(SETTLED)["definition_32_constant"][
+            "smallest_admissible_constant"])
+        attained = any(jm.coefficient(parts, m) == bound for m in range(0, 200))
+        self.assertTrue(attained)
+
+    def test_the_report_says_what_definition_32_does_not_supply(self):
+        constant = jm.analyse(SETTLED)["definition_32_constant"]
+        missing = constant["what_it_does_not_supply"]
+        self.assertIn("marginal miss bounds", missing)
+        self.assertIn("safety critic event", missing)
+        self.assertIn("ghost", missing)
+
+    def test_a_tighter_reference_bound_gives_a_tighter_constant(self):
+        loose = Fraction(jm.analyse(jm.two_channel_counts(10, 5, 5))[
+            "definition_32_constant"]["smallest_admissible_constant"])
+        tight = Fraction(jm.analyse(jm.two_channel_counts(10, 5, 5), low=0, high=2)[
+            "definition_32_constant"]["smallest_admissible_constant"])
+        self.assertLess(tight, loose)
+
+
+class TheSixReproducedIdentificationDefects(unittest.TestCase):
+    """Every counterexample an Engine review raised against version 0.2.0.
+
+    Each was reproduced against the exact source before any repair, and each is
+    retained here with the behaviour that was wrong and the behaviour that
+    replaces it. They were three separate kinds of fault: code defects, an
+    incomplete classification, and prose broader than what was computed.
+    """
+
+    def test_one_the_boundary_the_published_condition_got_wrong(self):
+        """Published prose said a*b <= u*S gives c > 1. At equality c(0) = 1."""
+        counts = {(1, 1, 0): 1, (1, 0, 1): 1, (0, 1, 1): 1, (0, 0, 1): 1}
+        parts = jm.margins(counts)
+        self.assertEqual(parts["a"] * parts["b"], parts["u"] * parts["S"])
+        self.assertEqual(jm.coefficient(parts, 0), Fraction(1))
+        state, reason = jm.sign_over(parts, 0, None)
+        self.assertEqual(state, "c_at_least_1")
+        self.assertIn("does not establish", reason)
+
+    def test_two_a_range_with_no_minimum_reports_none(self):
+        """0.2.0 named 21/11 the smallest value; m = 2 gives 11/6."""
+        counts = {(1, 1, 0): 10, (0, 0, 1): 10}
+        parts = jm.margins(counts)
+        self.assertLess(jm.coefficient(parts, 2), jm.coefficient(parts, 1))
+        unbounded = jm.range_over(parts, 0, None)
+        self.assertIsNone(unbounded["minimum"])
+        self.assertTrue(unbounded["no_minimum_exists"])
+        self.assertEqual(unbounded["infimum"], "1")
+        self.assertFalse(unbounded["infimum_attained"])
+        self.assertEqual(unbounded["maximum"], "2")
+
+    def test_three_zero_joint_detections_still_settle_the_sign(self):
+        """0.2.0 reported undetermined; c(m) = 1 - 1/(m+1)^2 is below 1 always."""
+        parts = jm.margins(jm.two_channel_counts(0, 1, 1))
+        for m in (0, 1, 5, 1000):
+            self.assertLess(jm.coefficient(parts, m), 1)
+        self.assertEqual(jm.sign_over(parts, 0, None)[0], "c_less_than_1")
+
+    def test_four_an_undefined_coefficient_is_not_a_sign_verdict(self):
+        """0.2.0 reported c_at_most_1 where the ratio had no value."""
+        parts = jm.margins(jm.two_channel_counts(10, 0, 5))
+        self.assertIsNone(jm.coefficient(parts, 0))
+        self.assertEqual(jm.sign_over(parts, 0, 0)[0], "undefined")
+        report = jm.analyse(jm.two_channel_counts(10, 0, 5), low=0, high=0)
+        self.assertEqual(report["sign_question"]["verdict"]["state"], "undefined")
+        self.assertFalse(report["coefficient_defined_at_zero"])
+
+    def test_five_a_constant_coefficient_attains_its_limit(self):
+        """0.2.0 declared the limit never attained, which a constant one contradicts."""
+        parts = jm.margins({(0, 0, 1): 10})
+        for m in (0, 3, 99):
+            self.assertEqual(jm.coefficient(parts, m), Fraction(1))
+        self.assertEqual(jm.sign_over(parts, 0, None)[0], "c_equals_1")
+        unbounded = jm.range_over(parts, 0, None)
+        self.assertTrue(unbounded["as_m_grows"]["attained"])
+
+    def test_six_boolean_bounds_are_refused(self):
+        parts = jm.margins(jm.two_channel_counts(10, 5, 5))
+        for bad in ({"low": True}, {"high": False}):
+            with self.subTest(bound=bad):
+                with self.assertRaises(jm.CountError):
+                    jm.range_over(parts, **bad)
+
+    def test_the_identified_set_is_declared_discrete(self):
+        """Counts are integers, so an interval encloses the set, it does not list it."""
+        unbounded = jm.range_over(jm.margins(jm.two_channel_counts(10, 5, 5)), 0, None)
+        self.assertIn("discrete", unbounded["identified_set"])
+
+    def test_the_retained_three_channel_result_survives_every_repair(self):
+        report = jm.analyse(SETTLED)
+        self.assertEqual(report["sign_question"]["verdict"]["state"], "c_greater_than_1")
+        self.assertEqual(report["sign_question"]["threshold"], "-491/27")
+        self.assertTrue(report["sign_question"]["settled_without_any_reference"])
 
 
 if __name__ == "__main__":

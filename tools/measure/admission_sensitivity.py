@@ -34,9 +34,18 @@ space eliminated by the choice of readings rather than by the detectors:
 
   asserted_share = ( (E_low - C_low) + (C_high - E_high) ) / ( C_high - C_low )
 
-A share near one means the conclusion is mostly a consequence of whoever chose
-the readings. This is reported for every cohort, including the ones this lane is
-pleased with.
+A share near one means the admitted readings contracted the interval to nearly a
+point. It does NOT mean the verdict came from the admission rather than from the
+detectors, and version 0.1.0 of this module said that it did. The counterexample
+is retained as `detector-moved-reaches` and `detector-moved-misses`: one admitted
+reading, the same reference objects in both, and a single added detection moved
+so that it reaches an object in one and nothing in the other. The verdict flips
+from `supported` to `excluded` while the share stays exactly `1`. The admission
+fixed the interval to a point; the detections decided which point.
+
+So the share measures INTERVAL CONTRACTION against a structural baseline. It is a
+sensitivity figure. It is not evidence about where the information came from, and
+it is not a causal attribution of the verdict. Those three are kept apart here.
 
 REQUIRED EXCLUSION. For a decisive verdict the report states the exact sentence
 that must be true of every reading nobody admitted, and says whether the coarse
@@ -57,7 +66,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cohort_packet import CaseError, build  # noqa: E402
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 MAX_WORLDS = 32
 
 
@@ -132,9 +141,13 @@ def analyse(case):
         "coarse_bound": report["coarse_bound"],
         "how_much_is_asserted": {
             "asserted_share": str(asserted),
-            "meaning": ("the fraction of the structurally possible answer space eliminated by the "
-                        "choice of admitted readings rather than by the detectors. The coarse "
-                        "bound holds whatever anyone admits"),
+            "meaning": ("the fraction of the structurally possible answer space that the admitted "
+                        "readings contract away. The coarse bound holds whatever anyone admits"),
+            "what_it_is_not": ("not a claim that the verdict came from the admission rather than "
+                               "the detectors. With one admitted reading the share is 1 whatever "
+                               "the detections say, and moving a single added detection flips the "
+                               "verdict at an unchanged share. Sensitivity, evidence and causal "
+                               "attribution are three different things"),
             "eliminated_below": str(low - coarse_low),
             "eliminated_above": str(coarse_high - high)},
         "required_exclusion": {

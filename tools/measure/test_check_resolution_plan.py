@@ -12,6 +12,7 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import check_resolution_plan as checker  # noqa: E402
+import cohort_packet as producer  # noqa: E402
 import resolution_plan as planner  # noqa: E402
 
 CASES = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
@@ -164,7 +165,10 @@ class RefusesForgedPlans(unittest.TestCase):
 class RefusesForgedNegatives(unittest.TestCase):
     def test_claiming_unresolvable_when_a_plan_exists_is_refused(self):
         case = load("adaptive-beats-fixed-case.json")
+        report = producer.build(case)
         forged = {"state": "unresolvable_by_declared_questions",
+                  "enclosure": report["enclosure"],
+                  "improvement_criterion": report["decision"]["improvement_criterion"],
                   "witness_cell": ["b_only", "c_only"], "reason": "invented"}
         with self.assertRaises(checker.PlanRefused) as caught:
             checker.check(case, forged)
@@ -173,12 +177,15 @@ class RefusesForgedNegatives(unittest.TestCase):
     def test_an_empty_population_may_not_be_called_geometry_ambiguity(self):
         """Retained defect: version 0.1.0 described zero worlds this way."""
         case = load("open-two-anchor.json")
+        report = producer.build(case)
         forged = {"state": "unresolvable_by_declared_questions",
+                  "enclosure": report["enclosure"],
+                  "improvement_criterion": report["decision"]["improvement_criterion"],
                   "indistinguishable_world_groups": [], "witness_cell": [],
                   "reason": "some admitted worlds differ in a way questions cannot separate"}
         with self.assertRaises(checker.PlanRefused) as caught:
             checker.check(case, forged)
-        self.assertIn("without a witness cell", str(caught.exception))
+        self.assertIn("the case declares none", str(caught.exception))
 
     def test_geometry_ambiguity_needs_an_undivided_witness(self):
         case = load("geometry-ambiguity-plan-case.json")
@@ -186,11 +193,14 @@ class RefusesForgedNegatives(unittest.TestCase):
         forged = dict(honest, witness_cell=[honest["witness_cell"][0]])
         with self.assertRaises(checker.PlanRefused) as caught:
             checker.check(case, forged)
-        self.assertIn("witness cell of at least two worlds", str(caught.exception))
+        self.assertIn("a witness of at least 2 world(s) is required", str(caught.exception))
 
     def test_no_admitted_reference_is_refused_when_worlds_exist(self):
         case = load("adaptive-beats-fixed-case.json")
-        forged = {"state": "no_admitted_reference", "reason": "invented"}
+        report = producer.build(case)
+        forged = {"state": "no_admitted_reference", "reason": "invented",
+                  "enclosure": report["enclosure"],
+                  "improvement_criterion": report["decision"]["improvement_criterion"]}
         with self.assertRaises(checker.PlanRefused) as caught:
             checker.check(case, forged)
         self.assertIn("the case declares 4 joint worlds", str(caught.exception))
@@ -199,6 +209,88 @@ class RefusesForgedNegatives(unittest.TestCase):
         case = load("adaptive-beats-fixed-case.json")
         with self.assertRaises(checker.PlanRefused):
             checker.check(case, {"state": "looks_fine"})
+
+
+class TheSixConsumerForgeries(unittest.TestCase):
+    """Reproduced from an Engine consumer review of checker 0.1.0.
+
+    All six were ACCEPTED by checker 0.1.0. Each is reconstructed here from this
+    lane's own retained cases, which are byte identical to the ones the consumer
+    used, so the regression does not depend on a private packet. Version 0.1.0
+    verified the plan tree and took the reported enclosure, criterion and witness
+    identities on trust in every state but `resolvable`. The repair recomputes
+    every stated fact and verifies that a witness names real, distinct, declared
+    worlds.
+    """
+
+    def honest(self, name):
+        case = load(name)
+        return case, planner.plan(case), producer.build(case)
+
+    def refuse(self, case, forged):
+        with self.assertRaises(checker.PlanRefused) as caught:
+            checker.check(case, forged)
+        return str(caught.exception)
+
+    def test_one_an_altered_open_enclosure_is_refused(self):
+        case, honest, _ = self.honest("open-two-anchor.json")
+        forged = dict(honest, enclosure={"lower": "100", "upper": "100"})
+        self.assertIn("the report states enclosure", self.refuse(case, forged))
+
+    def test_two_an_altered_open_criterion_is_refused(self):
+        case, honest, _ = self.honest("open-two-anchor.json")
+        forged = dict(honest, improvement_criterion="supported")
+        self.assertIn("the cohort packet computes", self.refuse(case, forged))
+
+    def test_three_an_altered_adaptive_criterion_is_refused(self):
+        case, honest, _ = self.honest("adaptive-beats-fixed-case.json")
+        forged = dict(honest, improvement_criterion="supported")
+        self.assertIn("the cohort packet computes", self.refuse(case, forged))
+
+    def test_four_an_invented_witness_identity_is_refused(self):
+        case, honest, _ = self.honest("geometry-ambiguity-plan-case.json")
+        forged = dict(honest, witness_cell=["invented_a", "invented_b"])
+        self.assertIn("which the case does not declare", self.refuse(case, forged))
+
+    def test_five_a_false_single_world_state_is_refused(self):
+        case, honest, _ = self.honest("geometry-ambiguity-plan-case.json")
+        forged = dict(honest, state="undecided_single_world", witness_cell=[])
+        self.assertIn("a witness of at least 1 world(s) is required",
+                      self.refuse(case, forged))
+
+    def test_five_b_a_two_world_cell_is_not_a_single_world(self):
+        case, honest, _ = self.honest("geometry-ambiguity-plan-case.json")
+        forged = dict(honest, state="undecided_single_world")
+        message = self.refuse(case, forged)
+        self.assertTrue("names 2 worlds" in message or "every anchor finite" in message, message)
+
+    def test_six_a_zero_world_case_may_not_claim_ambiguity(self):
+        case, honest, report = self.honest("open-two-anchor.json")
+        forged = dict(honest, state="unresolvable_by_declared_questions",
+                      witness_cell=["invented_a", "invented_b"],
+                      indistinguishable_world_groups=[["invented_a", "invented_b"]])
+        self.assertIn("the case declares none", self.refuse(case, forged))
+
+    def test_a_repeated_witness_world_is_refused(self):
+        case, honest, _ = self.honest("geometry-ambiguity-plan-case.json")
+        name = honest["witness_cell"][0]
+        forged = dict(honest, witness_cell=[name, name])
+        self.assertIn("repeats a world", self.refuse(case, forged))
+
+    def test_the_advertised_interface_version_is_the_emitted_one(self):
+        """The exchange advertised 0.2.0 while the report carried no version at all."""
+        case, honest, _ = self.honest("adaptive-beats-fixed-case.json")
+        self.assertEqual(honest["artifact_id"], checker.ARTIFACT_ID)
+        self.assertIn(honest["version"], checker.ACCEPTED_REPORT_VERSIONS)
+        forged = dict(honest, version="0.2.0")
+        self.assertIn("interface version", self.refuse(case, forged))
+
+    def test_the_three_honest_reports_are_still_accepted(self):
+        for name in ("open-two-anchor.json", "adaptive-beats-fixed-case.json",
+                     "geometry-ambiguity-plan-case.json"):
+            case, honest, _ = self.honest(name)
+            with self.subTest(case=name):
+                checker.check(case, honest)
 
 
 if __name__ == "__main__":

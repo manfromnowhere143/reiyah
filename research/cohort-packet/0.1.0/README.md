@@ -49,6 +49,8 @@ Python's `Fraction` and integer arithmetic.
 | `worst-group-masking-case` | cohort `supported` at `3/5`, group `low_light` `excluded` at `-1` | the cohort average is correct and hides a group harmed in the only admitted reading. The cohort report does not mention that group at all |
 | `worst-group-flip-case` | worst group jointly `[-1, -1]`, separate relaxation `[-1, 1]` | two groups trade places between the two admitted readings. Each group alone is unresolved; jointly, some group is harmed in every reading. Treating groups one at a time loses the negative result entirely |
 
+| `detector-moved-reaches` and `detector-moved-misses` | verdict flips `supported` to `excluded`, asserted share stays `1` | one admitted reading and the same reference objects in both. Only one added detection moves. Retained as the counterexample to this lane's claim that a decisive verdict is carried entirely by the admission decision |
+
 `answer-prerequisites.json` records which questions have a defined measurement, at what stage each
 may be asked, and what is missing. Presence questions are supported. Reachability, calibration and
 timing questions are not, and each is recorded as a named missing prerequisite rather than assumed.

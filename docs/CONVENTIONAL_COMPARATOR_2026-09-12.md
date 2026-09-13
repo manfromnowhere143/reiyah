@@ -2,7 +2,9 @@
 
 Document ID: `reiyah.conventional-comparator.2026-09-12`
 
-Version: `0.1.0`
+Version: `0.2.0`
+
+Supersedes `0.1.0` of the same document ID, correcting how the comparator was characterised.
 
 Lifecycle status: `proposed`
 
@@ -98,6 +100,24 @@ cohort it reports that a reference was never asserted.
 
 Where no reading is admitted at all, the conventional method has nothing to run, and it fills the gap
 by assuming. That is the live comparison's situation.
+
+## Correction: the comparator was given one policy, not its best one
+
+Version 0.1.0 implemented two readings and treated the complete annotation reading, which fills a
+missing reference with emptiness, as the conventional alternative. A competent conventional analyst
+is not obliged to do that. They may **abstain**, they may **retain an open bound**, and they may
+**evaluate every supplied interpretation** and report the spread. Forcing missing as empty and then
+calling the result the strongest conventional alternative overstates the comparison.
+
+The corrected reading is this. Missing as empty is a real and common policy, and where it is used it
+does land on the most adverse endpoint, which is worth knowing. It is not the best an analyst can do,
+and this lane should not claim a margin over a policy it chose on the analyst's behalf.
+
+The equivalence result stands: on a finite cohort the enclosure is what the conventional method gives
+when run once per admitted reading and compared. Mathematical equivalence of the output is not the
+whole of the value, though. **Automation, error prevention and total analyst effort** remain possible
+sources of value, and none of them has been measured here. Saying the instrument adds "confirmation
+only" describes the number it produces, not the cost of producing it.
 
 ## Limits
 

@@ -2,7 +2,10 @@
 
 Document ID: `reiyah.joint-miss-identification.2026-09-13`
 
-Version: `0.1.0`
+Version: `0.2.0`
+
+Supersedes `0.1.0` of the same document ID, correcting four statements. Every superseded claim is
+quoted below rather than removed.
 
 Lifecycle status: `proposed`
 
@@ -106,6 +109,72 @@ On the three channel table the coefficient descends towards `1` from above, so t
 attained extreme are different things**, and the report now carries both separately with an
 attainment flag. The earlier figure was not a rounding matter; it was a bound stated where no bound
 held.
+
+## Corrections to version 0.1.0
+
+An Engine review supplied counterexamples against the released module. All were reproduced against
+the exact source before any repair, and the repairs are at the source of each fault rather than in
+the adversary.
+
+**The published boundary condition was wrong by one relation.** Version 0.1.0 said:
+
+> "If `a * b  <=  u * S` the threshold is at or below zero, so `c > 1` for **every** admissible dark
+> figure"
+
+At equality the threshold is exactly zero and `c(0) = 1`, so strict inequality does not follow. The
+counts `110 = 101 = 011 = 001 = 1` are the witness. The condition for strict positivity is
+`a * b < u * S`; equality gives a separate state, `c_at_least_1`, reaching `1` only at a dark figure
+of zero. The code used `< 0` and was right; the prose was not.
+
+**Three classifications were missing, and one verdict was emitted where none existed.** Where no
+object is detected by both channels the sign condition stops involving the dark figure at all, so
+the sign is settled outright rather than left open; version 0.1.0 reported `undetermined` because it
+could not divide by `w`. The absence of a division is not the absence of a conclusion. Counts
+`n10 = n01 = 1, n11 = 0` give `c(m) = 1 - 1/(m+1)^2 < 1` everywhere, and a constant table gives
+`c = 1` everywhere, which also refutes the blanket statement that the limit is never attained.
+Separately, `n11 = 10, n10 = 0, n01 = 5` with the count pinned at zero reported `c_at_most_1` while
+the coefficient had no value there. **An undefined ratio is not a sign verdict**, and it is now its
+own state.
+
+**A range was reported where no minimum exists.** With no upper bound, version 0.1.0 invented a
+ceiling from the stationary points and reported the extremes over that window. On `w = 10` with
+`x = y = u = 10` there is no stationary point, the window was two integers wide, and the report named
+`21/11` as the smallest value when `m = 2` gives `11/6` and no smallest value exists at all. Correct
+infimum fields did not excuse a contradictory minimum field. The candidates are now the bound's own
+ends and the stationary points inside it, which is complete because the coefficient has at most two
+interior extrema, and `minimum` is reported as absent when it does not exist. The declared bounds are
+also counts now, so a boolean no longer passes as one.
+
+**The identified set is discrete.** Version 0.1.0 wrote that "every value between `0` and that
+maximum" is consistent with the observed counts. The dark figure is an integer, so the identified set
+is a discrete set and the interval reported is its enclosure, not a list of reachable values.
+
+**The plug in identity is about one estimator on its own domain.** It holds for the two channel
+Lincoln and Petersen plug in where some object is detected by both channels. It is not a statement
+about capture recapture methods in general, and estimators that model dependence explicitly or use
+more than two channels are outside it. The fitted count is also generally not an integer: on the
+retained counts it is `5/2`, so `c = 1` is attained off the grid the count actually lives on.
+
+## Correction: a constant, not a sign
+
+Version 0.1.0 closed by saying a third channel "can give only the sign unless the dark figure is also
+bounded". This lane's own arithmetic contradicted that in the same document. Definition 32 of the
+retained primary source reads `P[r1 and r2] <= c P[r1] P[r2]`: a **quantitative upper constant**. The
+supremum of the coefficient over every admissible dark figure is exactly the smallest constant that
+holds whatever the dark figure turns out to be, and it was already being computed.
+
+| table | reference used | smallest admissible constant |
+|---|---|---|
+| three channel `w=27, x=10, y=13, u=23` | none | `c <= 1679/1188` |
+| two channel `10, 5, 5` | none | `c <= 4/3` |
+
+So an additional source supplies a Definition 32 constant with no reference annotation at all, and a
+tighter dark figure bound tightens it. That is a stronger result than the one withdrawn.
+
+It is also not enough on its own. A sign test does not discharge Definition 32, which asks for a
+number. And the majority vote redundancy argument of Corollary 3 needs marginal miss bounds for each
+channel and a specified safety critic event, and covers ghost mistakes as well as misses. None of
+those is computed here, and the report says so in the field that carries the constant.
 
 ## Limits
 

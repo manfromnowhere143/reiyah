@@ -2,7 +2,10 @@
 
 Document ID: `reiyah.resolution-plan.2026-09-12`
 
-Version: `0.3.0`
+Version: `0.4.0`
+
+Supersedes `0.3.0` of the same document ID. The checker described below had a hole and it was found
+by a consumer, not by this lane.
 
 Supersedes: `0.2.0`, which superseded `0.1.0`, of the same document ID. Every correction is stated
 in full below and every superseded claim is quoted rather than removed. Version `0.3.0` retracts a
@@ -260,6 +263,36 @@ Forty-four tests across three files, `0.02` seconds for the planner on the witne
 seconds for the monotonicity tests. Reports are byte-identical across runs; the witness case report
 hashes to `d664a6bd0ca07064722beb8c4f4b86865ccefb1b876ff9ccb16fd02c5c4f217e`. All 281 tests in
 `tools/measure` pass.
+
+## Correction: the checker verified the plan and trusted the facts
+
+An Engine consumer review ran six forged reports against checker `0.1.0`. **All six were accepted**,
+and all six were reproduced here against the exact published source before any repair.
+
+| forged report | why 0.1.0 accepted it |
+|---|---|
+| open enclosure changed from `[-8, 8]` to `[100, 100]` | the enclosure was only compared in the `resolvable` state |
+| open criterion changed to `supported` | the criterion was never recomputed in a negative state |
+| adaptive criterion changed to `supported` | same |
+| geometry witness replaced by two undeclared names | witness identities were never checked against the case |
+| two world geometry case relabelled `undecided_single_world` with an empty witness | the state's premise was never checked |
+| zero world open case relabelled geometry ambiguity with invented witnesses | no state premise tied the claim to a non empty population |
+
+The cause is one sentence long. Version 0.1.0 checked the **plan tree** thoroughly, node by node, and
+took the **reported facts** on trust everywhere except the `resolvable` state. A careful tree around
+an invented enclosure passed. It also listed unchecked fields, and did not list these.
+
+Version 0.2.0 recomputes every stated fact from the cohort packet wherever it appears, requires an
+enclosure and a criterion in every state, requires a witness to name real, distinct, declared worlds,
+and checks each state's premise: `undecided_single_world` needs exactly one world and every anchor
+finite, `unresolvable_due_to_open_anchors` needs an open anchor, and no state about admitted worlds
+may be claimed on a population with none. All six forgeries are now refused with the defect named,
+both of the consumer's rejection controls still refuse, and the three honest reports still pass. The
+six are retained as regressions built from this lane's own cases.
+
+The exchange also advertised report interface `0.2.0` while the report carried no version field at
+all. The planner now emits `reiyah.resolution-plan.report 0.3.0` and the checker refuses a report
+that declares anything else.
 
 ## Limits
 

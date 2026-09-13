@@ -106,7 +106,7 @@ import math
 import os
 import sys
 
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 
 
 class CountError(Exception):
@@ -117,6 +117,22 @@ def _nonneg(name, value):
     if not isinstance(value, int) or isinstance(value, bool) or value < 0:
         raise CountError(f"{name} must be a non negative integer, not {value!r}")
     return value
+
+
+def _bound(name, value, allow_none=False):
+    """The declared bounds are counts too, and obey the same discipline.
+
+    Version 0.2.0 checked only `value < 0` here, so a boolean passed as an
+    integer and was reported back as the count at which an extreme was attained.
+    """
+    if value is None and allow_none:
+        return None
+    return _nonneg(name, value)
+
+
+def _defined_at(parts, m):
+    """c is undefined only where a channel misses nothing, which needs m = 0."""
+    return (parts["a"] + m) * (parts["b"] + m) != 0
 
 
 def margins(counts, pair=(0, 1)):
@@ -174,10 +190,80 @@ def coefficient(parts, m):
 
 
 def sign_threshold(parts):
-    """c > 1 exactly when m exceeds this. None when both channels detect nothing jointly."""
+    """c > 1 exactly when m exceeds this, when a threshold exists at all.
+
+    The sign condition is `m * w > a * b - u * S`. Dividing by `w` is only
+    available when `w > 0`; version 0.2.0 treated the absence of that division as
+    the absence of a sign conclusion, which is a different thing. When `w = 0` the
+    condition no longer involves `m` at all and the sign is settled outright, so
+    `sign_over` is the complete classification and this returns None.
+    """
     if parts["w"] == 0:
         return None
     return Fraction(parts["a"] * parts["b"] - parts["u"] * parts["S"], parts["w"])
+
+
+def sign_over(parts, low=0, high=None):
+    """The complete sign classification over the declared integer bound.
+
+    Returns a state and the reason for it. Every branch is reachable and each is
+    a different fact about the population, so none of them collapses into
+    `undetermined`.
+    """
+    a, b, u, s, w = parts["a"], parts["b"], parts["u"], parts["S"], parts["w"]
+    gap = a * b - u * s
+
+    smallest = low if _defined_at(parts, low) else low + 1
+    if high is not None and smallest > high:
+        return ("undefined",
+                "the coefficient is undefined at every count the declared bound allows, because a "
+                "channel misses nothing there. An undefined ratio is not a sign")
+
+    if w == 0:
+        # The condition m * w > gap loses its dependence on m entirely.
+        if gap < 0:
+            return ("c_greater_than_1",
+                    "no object was detected by both channels, and a * b is below u * S, so c "
+                    "exceeds 1 at every admissible count")
+        if gap == 0:
+            return ("c_equals_1",
+                    "no object was detected by both channels, and a * b equals u * S, so c is "
+                    "exactly 1 at every admissible count. The coefficient is constant")
+        return ("c_less_than_1",
+                "no object was detected by both channels, and a * b is above u * S, so c is below "
+                "1 at every admissible count")
+
+    threshold = Fraction(gap, w)
+    if Fraction(smallest) > threshold:
+        return ("c_greater_than_1",
+                f"every count the declared bound allows exceeds the threshold {threshold}, so c "
+                "exceeds 1")
+    if Fraction(smallest) == threshold:
+        return ("c_at_least_1",
+                f"the smallest count the declared bound allows sits exactly on the threshold "
+                f"{threshold}, so c is at least 1 everywhere, reaching 1 only at that count. The "
+                "published condition a * b <= u * S covered this case and claimed strict "
+                "inequality, which it does not establish")
+    if high is None:
+        return ("undetermined",
+                f"the declared bound is unbounded above and reaches past the threshold "
+                f"{threshold}, so both a positively coupled and a not positively coupled "
+                "population are consistent with these counts")
+    if Fraction(high) <= threshold:
+        if Fraction(high) == threshold and Fraction(smallest) == threshold:
+            return ("c_equals_1",
+                    f"the declared bound pins the count to the threshold {threshold}, where c is "
+                    "exactly 1")
+        if Fraction(high) < threshold:
+            return ("c_less_than_1",
+                    f"every count the declared bound allows is below the threshold {threshold}, "
+                    "so c is below 1")
+        return ("c_at_most_1",
+                f"every count the declared bound allows is at or below the threshold {threshold}, "
+                "so c is at most 1, reaching 1 at the threshold itself")
+    return ("undetermined",
+            f"the declared bound spans the threshold {threshold}, so both a positively coupled "
+            "and a not positively coupled population are consistent with these counts")
 
 
 def lincoln_petersen(parts):
@@ -218,88 +304,133 @@ def _candidates(parts, low, high):
 
 
 def range_over(parts, low=0, high=None):
-    """The exact range of c as m runs over the integers in [low, high]."""
-    if low < 0:
-        raise CountError("the lower bound on the joint silent miss count cannot be negative")
+    """The exact range of c as m runs over the INTEGERS in [low, high].
+
+    The identified set is discrete, because m counts objects. The interval
+    reported is its enclosure, not a claim that every value inside is reachable.
+
+    Version 0.2.0 handled an unbounded upper end by inventing a ceiling from the
+    stationary points and reporting the extremes over that truncated window. Where
+    no stationary point existed the window was two integers wide, and the reported
+    lower value was simply not the smallest: on w=10, x=y=10, u=10 it named 21/11
+    at m=1 while m=2 gives 11/6 and no minimum exists at all. The candidates are
+    now the bound's own ends together with the stationary points inside it, which
+    is complete because c has at most two interior extrema, and the limit at
+    infinity is carried separately with an attainment flag.
+    """
+    low = _bound("the lower bound on the joint silent miss count", low)
+    high = _bound("the upper bound on the joint silent miss count", high, allow_none=True)
     if high is not None and high < low:
         raise CountError("the upper bound is below the lower bound")
 
-    unbounded = high is None
-    ceiling = high
-    if unbounded:
-        reach = max(_stationary_candidates(parts), default=low)
-        ceiling = max(low, reach + 1)
-
-    values = [(m, coefficient(parts, m)) for m in _candidates(parts, low, ceiling)]
+    points = {low} if high is None else {low, high}
+    points.update(m for m in _stationary_candidates(parts)
+                  if m >= low and (high is None or m <= high))
+    values = [(m, coefficient(parts, m)) for m in sorted(points)]
     values = [(m, v) for m, v in values if v is not None]
     if not values:
         return {"state": "undefined",
-                "reason": ("every admissible joint silent miss count leaves a channel with no "
-                           "misses at all, so the ratio has no value")}
+                "reason": ("the coefficient is undefined at every count the declared bound "
+                           "allows, because a channel misses nothing there")}
 
     lowest = min(values, key=lambda pair: pair[1])
     highest = max(values, key=lambda pair: pair[1])
     result = {"state": "computed",
-              "lower": str(lowest[1]), "lower_at_m": lowest[0],
-              "upper": str(highest[1]), "upper_at_m": highest[0],
-              "bounded_above": not unbounded}
-    if not unbounded:
+              "identified_set": ("discrete: the joint silent miss count is an integer, so the "
+                                 "values below enclose the identified set rather than listing it"),
+              "bounded_above": high is not None}
+    if high is not None:
+        result.update({"minimum": str(lowest[1]), "minimum_at_m": lowest[0],
+                       "maximum": str(highest[1]), "maximum_at_m": highest[0],
+                       "infimum": str(lowest[1]), "infimum_attained": True,
+                       "supremum": str(highest[1]), "supremum_attained": True})
         return result
 
-    # With no upper bound, c tends to 1 as m grows. That limit is part of the
-    # range's closure and is NOT reached at any count. An earlier version reported
-    # only the extremes over the candidate integers, which understated the reach
-    # of the range whenever c descended towards 1 from one side. An unattained
-    # limit and an attained extreme are different things and stay different here.
+    # Unbounded above. c tends to 1, and that limit is reached only if c is
+    # constant at 1. An unattained limit is not a minimum and is not reported as
+    # one: the minimum and maximum fields appear only when they exist.
     limit = Fraction(1)
-    result["as_m_grows"] = {"limit": "1", "attained": False}
+    constant = all(value == limit for _, value in values) and parts["w"] == 0
+    result["as_m_grows"] = {"limit": "1", "attained": bool(constant)}
     if limit < lowest[1]:
-        result["infimum"] = "1"
-        result["infimum_attained"] = False
-        result["lower_is_the_smallest_attained_value"] = True
+        result.update({"infimum": "1", "infimum_attained": False})
+        result["minimum"] = None
+        result["no_minimum_exists"] = True
     else:
-        result["infimum"] = str(lowest[1])
-        result["infimum_attained"] = True
+        result.update({"infimum": str(lowest[1]), "infimum_attained": True,
+                       "minimum": str(lowest[1]), "minimum_at_m": lowest[0]})
     if limit > highest[1]:
-        result["supremum"] = "1"
-        result["supremum_attained"] = False
-        result["upper_is_the_largest_attained_value"] = True
+        result.update({"supremum": "1", "supremum_attained": False})
+        result["maximum"] = None
+        result["no_maximum_exists"] = True
     else:
-        result["supremum"] = str(highest[1])
-        result["supremum_attained"] = True
+        result.update({"supremum": str(highest[1]), "supremum_attained": True,
+                       "maximum": str(highest[1]), "maximum_at_m": highest[0]})
     return result
+
+
+def _admissible_constant(parts, low, high):
+    """The smallest constant `c` that Definition 32 admits, over every allowed count.
+
+    Definition 32 of the retained primary source states `P[r1 and r2] <= c P[r1]
+    P[r2]`: a QUANTITATIVE upper constant, not a sign. A sign verdict does not
+    discharge it. The supremum of the coefficient over every admissible
+    unobservable count is exactly the smallest constant that holds whatever that
+    count turns out to be, so it is computed here and reported as what it is.
+
+    An earlier version of this lane's document said a third channel "can give only
+    the sign unless the dark figure is also bounded". This lane's own arithmetic
+    contradicted that: the retained three channel table bounds the coefficient
+    above by 1679/1188 with no bound on the dark figure at all.
+    """
+    span = range_over(parts, low, high)
+    if span.get("state") != "computed":
+        return {"state": "undefined",
+                "reason": span.get("reason", "the coefficient has no value over this bound")}
+    return {"state": "computed",
+            "smallest_admissible_constant": span["supremum"],
+            "attained": span["supremum_attained"],
+            "holds_for": ("every unobservable count the declared bound allows, with no further "
+                          "assumption about that count"),
+            "definition": ("the smallest c with P[both miss] <= c P[A misses] P[B misses], which "
+                           "is Definition 32's constant for this pair and stratum"),
+            "what_it_does_not_supply": (
+                "Definition 32 is one ingredient. A majority vote redundancy argument of the kind "
+                "in Corollary 3 also needs marginal miss bounds for each channel and a specified "
+                "safety critic event, and it covers ghost mistakes as well as misses. None of "
+                "those is computed here")}
 
 
 def analyse(counts, pair=(0, 1), low=0, high=None):
     """The identification report for one declared channel pair."""
     parts = margins(counts, pair)
+    low = _bound("the lower bound on the joint silent miss count", low)
+    high = _bound("the upper bound on the joint silent miss count", high, allow_none=True)
     threshold = sign_threshold(parts)
     fill = lincoln_petersen(parts)
+    state, reason = sign_over(parts, low, high)
+    everywhere, _ = sign_over(parts, 0, None)
+    settled_without_reference = everywhere not in ("undetermined", "undefined")
 
-    if threshold is None:
-        sign = {"state": "undetermined",
-                "reason": ("no object was detected by both named channels, so the threshold is "
-                           "undefined and the sign question has no reduction here")}
-    elif threshold < 0:
-        sign = {"state": "c_greater_than_1",
-                "reason": ("the threshold is below zero, so c exceeds 1 for every admissible "
-                           "joint silent miss count. The other channels already observe enough of "
-                           "what this pair both missed to settle the sign without a reference")}
-    elif high is not None and Fraction(high) <= threshold:
-        sign = {"state": "c_at_most_1",
-                "reason": (f"the declared bound puts the joint silent miss count at or below "
-                           f"{threshold}, so c is at most 1")}
-    elif Fraction(low) > threshold:
-        sign = {"state": "c_greater_than_1",
-                "reason": (f"the declared bound puts the joint silent miss count above "
-                           f"{threshold}, so c exceeds 1")}
-    else:
-        sign = {"state": "undetermined",
-                "reason": (f"the declared bound spans the threshold {threshold}, so both a "
-                           "positively coupled and a not positively coupled population are "
-                           "consistent with these counts")}
+    fitted = None
+    if fill is not None:
+        fitted = {
+            "estimator": "the two channel Lincoln and Petersen plug in",
+            "defined_when": "some object is detected by both channels, so w > 0",
+            "fitted_count": str(fill),
+            "fitted_count_is_an_integer": fill.denominator == 1,
+            "coefficient_there": str(coefficient(parts, fill)),
+            "circularity": ("this estimator is derived by assuming the two channels are "
+                            "independent, which is the statement c = 1, so the plug in returns "
+                            "c = 1 exactly for every table. A pipeline that fills the "
+                            "unobservable cell this way and then reports c has reported its own "
+                            "assumption"),
+            "scope": ("a statement about this estimator on its defined domain, not about capture "
+                      "recapture methods in general. Estimators that model dependence explicitly, "
+                      "or that use more than two channels, are not covered by it. Where the "
+                      "fitted count is not an integer, c = 1 is attained only off the integer "
+                      "grid the count actually lives on")}
 
-    settled_without_reference = threshold is not None and threshold < 0
     return {
         "artifact_id": "reiyah.joint-miss-identification.report", "version": VERSION,
         "channels": parts["channels"],
@@ -309,28 +440,28 @@ def analyse(counts, pair=(0, 1), low=0, high=None):
                              "pair_both_detect": parts["w"]},
         "unobservable_cell": ("the objects no channel reported. It is part of the numerator of c "
                               "and it is never supplied here"),
+        "coefficient_defined_at_zero": _defined_at(parts, 0),
         "declared_bound_on_the_unobservable_cell": {"low": low, "high": high},
         "coefficient_range_under_the_declared_bound": range_over(parts, low, high),
         "coefficient_range_with_no_bound_at_all": range_over(parts, 0, None),
-        "capture_recapture": {
-            "dark_figure": str(fill) if fill is not None else None,
-            "coefficient_there": (str(coefficient(parts, fill)) if fill is not None else None),
-            "circularity": ("for two channels, filling the unobservable cell this way gives c = 1 "
-                            "exactly, because the estimator is derived by assuming the channels "
-                            "are independent, which is the statement c = 1. A pipeline that does "
-                            "this and reports c has reported its own assumption")},
+        "capture_recapture_plug_in": fitted,
         "sign_question": {
             "reduction": "c > 1 if and only if m * w > a * b - u * S",
             "threshold": str(threshold) if threshold is not None else None,
+            "threshold_absent_because": (None if threshold is not None else
+                                         "w is zero, so the condition does not involve m and the "
+                                         "sign is settled outright rather than left open"),
             "settled_without_any_reference": settled_without_reference,
-            "verdict": sign},
+            "verdict": {"state": state, "reason": reason},
+            "verdict_over_every_admissible_count": everywhere},
+        "definition_32_constant": _admissible_constant(parts, low, high),
         "what_a_reference_must_deliver": (
             "a bound on the number of objects no channel reported, tight enough to fall entirely "
             "on one side of the threshold. Tighter buys precision in c; looser leaves the sign "
             "open however many objects are annotated"
             if not settled_without_reference else
-            "nothing, for the sign question. The observed margins already place the threshold "
-            "below zero, so no bound on the unobservable cell can change the sign"),
+            "nothing, for the sign question. The observed margins settle the sign at every "
+            "admissible count, so no bound on the unobservable cell can change it"),
         "non_monotonicity": (
             "c is not monotone in the unobservable count, so evaluating it at the ends of a bound "
             "is not its range. The range here is computed from the exact stationary points"),

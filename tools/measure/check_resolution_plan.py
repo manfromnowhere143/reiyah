@@ -35,7 +35,9 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cohort_packet import CaseError, build  # noqa: E402
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
+ACCEPTED_REPORT_VERSIONS = ("0.3.0",)
+ARTIFACT_ID = "reiyah.resolution-plan.report"
 MAX_WORLDS = 64
 MAX_QUESTIONS = 32
 MAX_DEPTH = 16
@@ -58,6 +60,59 @@ def _criterion(case, cell):
     if report.get("enclosure") is None:
         return None
     return report["decision"]["improvement_criterion"]
+
+
+def _verify_reported_facts(case, result, report):
+    """Recompute every fact the report states and refuse a mismatch.
+
+    Version 0.1.0 verified the plan tree thoroughly and took the reported
+    enclosure and criterion on trust in every state but `resolvable`. A report
+    could therefore carry any enclosure and any criterion it liked, and six such
+    forgeries were accepted. The facts are now recomputed wherever they are
+    stated and required wherever the state is meant to carry them.
+    """
+    if result.get("artifact_id") not in (None, ARTIFACT_ID):
+        raise PlanRefused(
+            f"report declares artifact {result['artifact_id']!r}, not {ARTIFACT_ID!r}")
+    version = result.get("version")
+    if version is not None and version not in ACCEPTED_REPORT_VERSIONS:
+        raise PlanRefused(
+            f"report declares interface version {version!r}; this checker accepts "
+            f"{', '.join(ACCEPTED_REPORT_VERSIONS)}")
+    truth = report["enclosure"]
+    stated = result.get("enclosure")
+    if stated is None:
+        raise PlanRefused("the report states no enclosure; every state here carries one")
+    if stated != truth:
+        raise PlanRefused(
+            f"the report states enclosure {stated}, the cohort packet computes {truth}")
+    criterion = report["decision"]["improvement_criterion"]
+    for field in ("improvement_criterion", "criterion"):
+        if field in result and result[field] != criterion:
+            raise PlanRefused(
+                f"the report states {field} {result[field]!r}, the cohort packet computes "
+                f"{criterion!r}")
+    if "improvement_criterion" not in result:
+        raise PlanRefused("the report states no improvement criterion")
+    return criterion
+
+
+def _verify_witness(case, witness, minimum, label):
+    """A witness must name real, distinct, declared worlds."""
+    if not isinstance(witness, list):
+        raise PlanRefused(f"{label}: the witness cell is not a list")
+    if len(witness) < minimum:
+        raise PlanRefused(
+            f"{label}: a witness of at least {minimum} world(s) is required, {len(witness)} given")
+    if len(set(witness)) != len(witness):
+        raise PlanRefused(f"{label}: the witness cell repeats a world")
+    declared = {w["world_id"] for w in case["joint_worlds"]}
+    invented = [name for name in witness if name not in declared]
+    if invented:
+        raise PlanRefused(
+            f"{label}: the witness names {invented}, which the case does not declare. An "
+            "invented witness witnesses nothing")
+    return set(witness)
 
 
 def _declared_object(case, key):
@@ -203,6 +258,9 @@ def check(case, result):
                 "state": result["state"], "worlds": len(worlds)}
 
     if result["state"] in NEGATIVE_STATES:
+        criterion = _verify_reported_facts(case, result, report)
+        open_anchors = [a["id"] for a in case["anchors"]
+                        if a.get("reference_state") != "finite"]
         if result["state"] == "no_admitted_reference":
             if worlds:
                 raise PlanRefused(
@@ -211,8 +269,18 @@ def check(case, result):
             if result.get("indistinguishable_world_groups"):
                 raise PlanRefused(
                     "an empty world population cannot exhibit indistinguishable worlds")
+            if result.get("witness_cell"):
+                raise PlanRefused("an empty world population cannot supply a witness cell")
             findings["verified"] = "no joint world is admitted; the enclosure is the count bound"
         else:
+            if not worlds:
+                raise PlanRefused(
+                    f"state {result['state']!r} describes a property of admitted worlds, but the "
+                    "case declares none. An absent reference is a different state")
+            if criterion != "unresolved":
+                raise PlanRefused(
+                    f"claims {result['state']!r} while the cohort criterion is {criterion!r}. "
+                    "A decided comparison needs no plan")
             questions = permitted_questions(case)
             cache = {}
             if resolvable_within(case, frozenset(worlds), MAX_DEPTH, questions, cache):
@@ -221,6 +289,7 @@ def check(case, result):
                     f"within depth {MAX_DEPTH}")
             witness = result.get("witness_cell") or []
             if result["state"] == "blocked_by_unanswerable_questions":
+                witness = sorted(_verify_witness(case, witness, 2, "unanswerable block"))
                 withheld = result.get("withheld_questions") or []
                 if not withheld:
                     raise PlanRefused(
@@ -245,19 +314,40 @@ def check(case, result):
                     "it, and each named withheld question is marked unanswerable in the case and "
                     "would have divided it")
             elif result["state"] == "unresolvable_by_declared_questions":
-                if len(witness) < 2:
-                    raise PlanRefused(
-                        "geometry ambiguity is claimed without a witness cell of at least two "
-                        "worlds. An absent or single-world population is a different state")
-                if _criterion(case, set(witness)) in DECIDED:
+                cell = _verify_witness(case, witness, 2, "geometry ambiguity")
+                if _criterion(case, cell) in DECIDED:
                     raise PlanRefused("the witness cell is decided, so it witnesses nothing")
                 for key, yes in questions.items():
-                    if set(witness) & yes and set(witness) - yes:
-                        raise PlanRefused(
-                            f"question {key} does divide the declared witness cell")
+                    if cell & yes and cell - yes:
+                        raise PlanRefused(f"question {key} does divide the declared witness cell")
                 findings["verified"] = (
-                    f"witness cell {sorted(witness)} is undecided and no declared question "
-                    "divides it")
+                    f"witness cell {sorted(cell)} names declared worlds, is undecided, and no "
+                    "declared question divides it")
+            elif result["state"] == "undecided_single_world":
+                cell = _verify_witness(case, witness, 1, "single world")
+                if len(cell) != 1:
+                    raise PlanRefused(
+                        f"undecided_single_world names {len(cell)} worlds. More than one world is "
+                        "an ambiguity claim and belongs to a different state")
+                if open_anchors:
+                    raise PlanRefused(
+                        f"undecided_single_world requires every anchor finite; {open_anchors} "
+                        "are open, so the obstacle is an absent reference")
+                if _criterion(case, cell) in DECIDED:
+                    raise PlanRefused("the named world is decided, so it witnesses nothing")
+                findings["verified"] = (
+                    f"the single declared world {sorted(cell)} is undecided and every anchor "
+                    "is finite")
+            elif result["state"] == "unresolvable_due_to_open_anchors":
+                cell = _verify_witness(case, witness, 1, "open anchors")
+                if not open_anchors:
+                    raise PlanRefused(
+                        "unresolvable_due_to_open_anchors is claimed, but every anchor is finite")
+                if _criterion(case, cell) in DECIDED:
+                    raise PlanRefused("the named cell is decided, so it witnesses nothing")
+                findings["verified"] = (
+                    f"cell {sorted(cell)} is undecided and the open anchors {open_anchors} "
+                    "contribute the interval that leaves it so")
             else:
                 findings["verified"] = f"no plan exists within depth {MAX_DEPTH}"
         findings["fields_not_verified"] = ["reason", "answer_model", "search_nodes"]
@@ -266,12 +356,11 @@ def check(case, result):
     if result["state"] != "resolvable":
         raise PlanRefused(f"unknown state {result['state']!r}")
 
+    _verify_reported_facts(case, result, report)
     questions = permitted_questions(case)
     declared = result.get("worst_case_observations")
-    if not isinstance(declared, int) or declared < 0:
+    if not isinstance(declared, int) or isinstance(declared, bool) or declared < 0:
         raise PlanRefused("worst_case_observations is not a non-negative integer")
-    if result.get("enclosure") != report["enclosure"]:
-        raise PlanRefused("the declared enclosure does not match the cohort packet")
 
     seen = []
     depth = _check_node(case, result["plan"], frozenset(worlds), questions, [], seen)
