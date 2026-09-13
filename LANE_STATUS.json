@@ -1,30 +1,29 @@
 {
   "artifact_id": "reiyah.fable.lane-status",
   "branch": "research/2026-09-10-moment-cone",
-  "checkpoint_source": "ded19fc42af628309333884e526df6079d3b76e3, extended with the Engine packet experiment",
+  "checkpoint_source": "f1b0a5f560aab14d7c085554d23b9cb8fc4f906c, extended with the review cost result",
   "costs": {
+    "exact_game_solutions": "single and multi anchor adaptive games up to 400 records",
     "gate_b_check": "PASS 0 failing",
-    "measurement_tests": "600 in tools/measure, about 62 s",
-    "packet_grid": "20 preparations over 4,876 original rows, maximum cardinality association"
+    "measurement_tests": "620 in tools/measure, about 63 s"
   },
   "date": "2026-09-13",
   "established_this_checkpoint": [
-    "consumed the Engine original-predictions-0.1.0 packet: 4,876 submitted rows over 16 exposed frames, every row carrying its own digest, producer performing no association and admitting no reference",
-    "the bounded end to end case returns ABSTAIN, and for two reasons rather than one",
-    "without admitted references the sign of the additive loss is open, which was expected",
-    "and r, the retained additions, is not determined by the rows either: it spans 89 to 2,661 across defensible preparations, a ratio of 29.9, so the coarse bound spans [-89,89] to [-2661,2661]",
-    "the score cutoff moves r by 21.6x and the association radius by 2.9x, so the cutoff dominates by about seven to one",
-    "this reverses the previous checkpoint, where the radius dominated the dependence threshold 14x against 6 percent. Different decisions are sensitive to different preparation choices and neither can be assumed from the other",
-    "the overlap parity holds for a third time: unmatched additions are an overlap quantity and a conventional analyst computes the same r. The sensitivity decomposition is the entire added value"
+    "the three parities were all scalar summaries computed from counts, which is where a simple baseline competes. This checkpoint asks a decision procedure question instead",
+    "a ranked review queue cannot narrow the bound faster than an arbitrary one: each judgement narrows it by exactly a+b whichever record it is. The prioritised review list is refuted before being built",
+    "the worst case number of reference judgements to decide the sign is r, every retained addition, verified exhaustively for r up to 15 across seven penalty pairs including b=0",
+    "a first draft claimed b=0 was an exception; a test caught it before publication. The adversary answers not real every time, so the cost is r again and the result is universal",
+    "the live Engine comparison, anchors 9 and 7 at equal weight giving [-8,8], costs exactly 16 worst case judgements, invariant to every anchor split and every weighting tested",
+    "combined with the previous checkpoint: r moves 29.9x across defensible preparations, and r then fixes the review cost exactly, so the entire human cost is set by preparation before anyone looks at anything"
   ],
   "lane": "independent research and conventional comparator",
-  "next_falsifier": "The added value is now one thing only: a sensitivity decomposition that overlap does not report. Test whether it changes an action. Give a competent analyst the same rows and ask which preparation knob to justify first; if they reach the same ordering unaided, the decomposition earns nothing and this route should stop.",
+  "next_falsifier": "The result is worst case. Establish whether a justified prior over which additions are real exists in any authorized retained evidence. If one does, the expected case may fall below r and prioritisation may recover value; if none does, this lane should stop looking for a review saving and say the cost is preparation bound.",
   "open_and_unowned": [
     "the Engine comparison remains [-8,8] with no admitted human references",
     "external scientific review and reviewer usability evidence are missing",
     "Gate A unaccepted; the physical study unselected and unrun"
   ],
-  "question": "does this lane's dependence coefficient earn anything over a competent conventional analyst using ordinary set overlap, and what survives of the label free result",
+  "question": "after three parities with ordinary overlap, what can this lane establish that a scalar summary cannot",
   "version": "0.2.0",
   "what_survives": "the label free view reaches the same ordering as the annotated view at two of three operating points; the credit belongs to channel agreement, which ordinary overlap also captures",
   "where_value_must_now_be_earned": [
