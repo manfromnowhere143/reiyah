@@ -1,3 +1,35 @@
+# Selection evidence boundary, 2026-09-13
+
+The [audit and procedure](PERCEPTION_SELECTION_EVIDENCE_2026-09-13.md) retain the existing
+discovery locator; no production converter or schema is added. The exact development selection
+fits unchanged. One new synthetic boundary regression confirms the viewer preserves 4097
+selected indices while the 4096-index locator limit refuses them without truncation.
+The earlier 379 repository tests and 93 measurement tests are retained against unchanged source,
+not reported as new execution. [Verification](../research/perception-selection-evidence/0.1.0/verification.json)
+binds the current audit, new test, retained checks and costs.
+
+The exposed development exercise requests no object judgment. Even a successful participant
+return cannot become independent discovery. Preserve the actual review roles, staged delivery,
+unknown inspection/class/exposure states and separate selection custody. The return remains
+missing; no object proposal, human record or interactive observation was produced.
+
+Next assess the reference compiler's representation budget on repeated objects across joint
+alternatives. Establish a concrete unnecessary open fallback, exact direct per-world comparator,
+measured cost and a falsifier before changing code. Retain all worlds, adverse geometry,
+matching competition and per-world source mappings. This is Engine compilation work, separate
+from Fable's planner/comparator. Its selected c70e6ce consumer findings remain in the preceding
+closed exchange; no newer Fable artifact was selected here.
+
+Continue in fresh engine-reference-sharing-2026-09-13 from verified main. Preserve all older
+checkouts and closed packets. Real bounds [-8,8]; Gate A unaccepted; physical study unrun with
+no cohort or seed. Human references, actual usability and external scientific review are missing.
+P005 is operator-reported published; no further publication or outreach. The autonomous window
+continues through 15:58:25 UTC on 13 September.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Checked viewer preparation, 2026-09-13
 
 Read the [checkpoint](PERCEPTION_VIEWER_PREPARATION_2026-09-13.md),
