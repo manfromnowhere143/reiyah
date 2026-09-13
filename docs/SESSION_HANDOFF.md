@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.4`
+Version: `0.1.5`
 
 Lifecycle status: `exploratory`
 
@@ -23,8 +23,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This member-equivalence checkpoint starts from main
-`2048e3e0dd10eaaed2849aace9e0039ddd654e09`, tree `35c2041a377a19cf35475cb66d4818a1a74b0d6b`.
+uncommitted ownership before acting. This command-accounting checkpoint starts from main
+`dbee94d382942c4be2e535f1df3c4b5ac40f92f5`, tree `6d7479c4e90f2bc9a725479c51f82d5c75bf0477`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -62,8 +62,9 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 | Can shared matching nodes be traced to their own original sources? | [Matching trace](PERCEPTION_MATCHING_TRACE_2026-09-13.md) checks ten synthetic endpoints using world, anchor and object together; incomplete joins and a substituted other-world digest fail. Whole-capture custody does not establish point selection or physical correspondence. |
 | Is the native viewing procedure ready? | [The anchor opening](PERCEPTION_ANCHOR_OPENING_2026-09-13.md) selects a unique delivered capture at the declared anchor timestamp from all 725 supplied occurrences. Every original point record is retained; save/reopen, vertex reordering and stale-capture rejection pass. [Checked preparation](PERCEPTION_VIEWER_PREPARATION_2026-09-13.md), [output custody](PERCEPTION_VIEWER_CUSTODY_2026-09-13.md) and [selection boundary](PERCEPTION_SELECTION_EVIDENCE_2026-09-13.md) supply the unchanged adapter. Actual interactive viewing and participant usability remain unobserved. |
 | Are Fable's requested checker repairs accepted? | The [matching-trace consumer review](PERCEPTION_MATCHING_TRACE_2026-09-13.md) accepts only selected `5762ac01a157a3603181df1486df8a836d711f06` bytes and retained probes. Broader robustness claims were not adopted. Earlier defects remain historical evidence. |
+| What do Engine's command costs measure? | [Command accounting](ENGINE_EFFORT_ACCOUNTING_2026-09-13.md) reconstructs 204 outer runs across fourteen selected closed checkpoints. It excludes 124 copied receipts and retains 33 nested details without adding them again. Reported durations, UTC interval coverage and unmeasured human effort remain distinct. |
 
-The latest full repository suite passed **404 tests**, including five member-equivalence additions,
+The retained latest full repository suite passed **404 tests**, including five member-equivalence additions,
 with no resource warnings. The earlier [database-lifetime trace](PERCEPTION_CATALOG_LIFETIME_2026-09-13.md)
 attributes the previous warnings to test fixtures; its correction is retained. The **93 measurement
 tests** remain retained from their earlier exact source bindings, not newly replayed; all 107
@@ -73,6 +74,21 @@ The ordering control reaches finite `[1,1]`; the synthetic admission example pre
 member order in common operands and rejects rehashed provenance rewriting. The proposed rational
 normalization was withdrawn because the parser already rejects noncanonical spellings. These
 examples add no human judgment, interactive observation or participant evidence.
+
+The current accounting audit changes no runtime, tools or repository tests. Its eight fresh
+standalone checks include all 1,024 subsets of ten tiny intervals, plus a separate source reader
+and an independent sweep of the recorded timeline. Public analysis repeats byte for byte.
+The fourteen-checkpoint selection ends at 14:26:40.949062 UTC; its recorded outer durations sum
+to 1,066.581210004165767142 seconds and its UTC interval union is 996.660066 seconds. This does
+not measure total work over the 30,495.949062-second selected clock span. Missing human effort
+remains unmeasured, and the Chrome checkpoint's absent canonical receipts do not imply zero cost.
+Read its [verification](../research/engine-effort-accounting/0.1.0/verification.json) and private
+source selection before consuming a total. Prospective preparation, verification, review,
+computation, integration and repair costs remain required for both analysts' fair comparison.
+
+Fable's remote tip `a3912dcea6606b40727e6b549fb09cfeaccc7cf0` was observed during this task.
+Its newer claims were not consumed or accepted through that mutable ref. Select a newly sealed
+exchange for any later review; do not repeat previously repaired defects as current.
 
 An actual participant return takes priority. The new, exposed development opening is
 `~/.codex/reports/reiyah/engine-anchor-opening-2026-09-13/private/opening/OPENING.md`, returning

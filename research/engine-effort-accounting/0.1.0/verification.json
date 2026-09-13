@@ -1,0 +1,555 @@
+{
+  "analyzer": {
+    "byte_size": 9394,
+    "sha256": "9f14c130913d8fe208076f9e9fa8b52706c89d7b0bf6d70b19a0040cf2553250"
+  },
+  "artifact_id": "reiyah.engine.effort-accounting.verification",
+  "cost_limit": "Selected supervisor intervals include its stream hashing; setup, edits, reasoning, uncaptured commands, source retrieval and human effort incompletely measured. This audit is outside the fourteen-checkpoint input scope.",
+  "costs_for_preparing_this_audit_separate_from_input": [
+    {
+      "check": "accounting-tests",
+      "child_max_rss_bytes_macos": 22216704,
+      "elapsed_seconds": 0.08660045894794166,
+      "ended_utc": "2026-09-13T14:44:50.379625+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1046,
+        "sha256": "d5f2ad446381a909d0ef8f0264bf328424158404e4ad6eb83c91a2736f55ee20"
+      },
+      "started_utc": "2026-09-13T14:44:50.292920+00:00"
+    },
+    {
+      "check": "accounting-tests-final",
+      "child_max_rss_bytes_macos": 22069248,
+      "elapsed_seconds": 0.07777737500146031,
+      "ended_utc": "2026-09-13T14:49:05.823124+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1046,
+        "sha256": "98f39e825f64e30037ae17b77e3fc81e19761dc923bc2e31d13b0301037efb12"
+      },
+      "started_utc": "2026-09-13T14:49:05.745238+00:00"
+    },
+    {
+      "check": "extract",
+      "child_max_rss_bytes_macos": 20824064,
+      "elapsed_seconds": 0.13225979101844132,
+      "ended_utc": "2026-09-13T14:42:28.264432+00:00",
+      "exit_code": 1,
+      "receipt": {
+        "byte_size": 1073,
+        "sha256": "463595d2f14ec029c3f0ce8956707dafe46cedb849670acba08bd85b9bf32c9d"
+      },
+      "started_utc": "2026-09-13T14:42:28.132074+00:00"
+    },
+    {
+      "check": "extract-2",
+      "child_max_rss_bytes_macos": 20414464,
+      "elapsed_seconds": 0.3187994590261951,
+      "ended_utc": "2026-09-13T14:44:29.128729+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1072,
+        "sha256": "22f4043b528996b4388a1b5fb28f0d7ade3339ae661bccf6e1b04deb451eb01f"
+      },
+      "started_utc": "2026-09-13T14:44:28.809835+00:00"
+    },
+    {
+      "check": "replay-1",
+      "child_max_rss_bytes_macos": 19496960,
+      "elapsed_seconds": 0.06620079092681408,
+      "ended_utc": "2026-09-13T14:44:50.359261+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1117,
+        "sha256": "6a39f569200bdf42ca908a07f5126fb89aa756573fe739b8b9c002c264c19fa0"
+      },
+      "started_utc": "2026-09-13T14:44:50.292944+00:00"
+    },
+    {
+      "check": "replay-2",
+      "child_max_rss_bytes_macos": 19709952,
+      "elapsed_seconds": 0.06668891594745219,
+      "ended_utc": "2026-09-13T14:44:50.359718+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1117,
+        "sha256": "ea090f5955f63b62338de67dbacfdc365ca766738891eade53f08cb8982d65e9"
+      },
+      "started_utc": "2026-09-13T14:44:50.292916+00:00"
+    },
+    {
+      "check": "source-check",
+      "child_max_rss_bytes_macos": 19873792,
+      "elapsed_seconds": 0.09856395795941353,
+      "ended_utc": "2026-09-13T14:46:20.299214+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1070,
+        "sha256": "13e1b0e0b820be965e270e008a967c69fe9a9bae8822faf4f9c0cb38b46f9c6f"
+      },
+      "started_utc": "2026-09-13T14:46:20.200537+00:00"
+    }
+  ],
+  "external_scientific_review": "missing",
+  "fable": "No comparator, planner, checker, error-model, source, ref or exchange modified; a3912dcea6606b40727e6b549fb09cfeaccc7cf0 observed only",
+  "first_failure_and_correction": {
+    "correction": "Copied spec capture_dir names the original execution. Require exact spec and receipt agreement; corrected run uses a new output identity.",
+    "reason": "First extractor assumed outbox display names retain checks/job; two consumer outboxes shorten that path. No public observations were emitted.",
+    "receipt": {
+      "byte_size": 1073,
+      "sha256": "463595d2f14ec029c3f0ce8956707dafe46cedb849670acba08bd85b9bf32c9d"
+    },
+    "source": {
+      "byte_size": 7004,
+      "sha256": "1efd28b791737192c477596d12eabfe9df157fe3aaa5e52d98c4c370509d8a05"
+    }
+  },
+  "fresh_validation": {
+    "full_timeline_endpoint_sweep": "pass",
+    "repeated_output": "byte_identical",
+    "separate_original_receipt_projection_check": "pass",
+    "standalone_tests": 8,
+    "tiny_interval_subsets": 1024
+  },
+  "gate_a": "unaccepted",
+  "human_references": "none_admitted",
+  "independent_source_check": {
+    "all_receipt_paths": 361,
+    "artifact_id": "reiyah.engine.effort-accounting.source-check",
+    "check_structure": "Original receipts -> Decimal sums and UTC endpoint sweep; no import of analyze.py; every projected command field compared",
+    "copied_receipts_seconds_wrongly_added": "711.363577086711300517",
+    "limits": "The all-path sum is a deliberately incorrect accounting control, not a competent analyst baseline; nonzero exit does not itself establish a defect",
+    "maximum_reported_outer_command_concurrency": 4,
+    "naive_all_receipt_paths_seconds": "1799.208466967684213459",
+    "nested_receipts_seconds_wrongly_added": "21.2636798768071458",
+    "nonzero_exit_commands": [
+      {
+        "elapsed_seconds": "0.2273919170256704",
+        "exit_code": 1,
+        "id": "engine-discovery-custody-2026-09-13/checks/guard-before/receipt.json"
+      },
+      {
+        "elapsed_seconds": "2.706331916968338",
+        "exit_code": 1,
+        "id": "engine-discovery-custody-2026-09-13/checks/guard-before-2/receipt.json"
+      },
+      {
+        "elapsed_seconds": "0.8038223749026656",
+        "exit_code": 1,
+        "id": "engine-discovery-custody-2026-09-13/checks/measurement-tests/receipt.json"
+      },
+      {
+        "elapsed_seconds": "94.35772520804312",
+        "exit_code": 128,
+        "id": "engine-discovery-custody-2026-09-13/checks/push/receipt.json"
+      },
+      {
+        "elapsed_seconds": "41.91950795892626",
+        "exit_code": 1,
+        "id": "engine-discovery-custody-2026-09-13/checks/repository-tests/receipt.json"
+      },
+      {
+        "elapsed_seconds": "12.246319875004701",
+        "exit_code": 1,
+        "id": "engine-reference-sharing-2026-09-13/checks/original-common-tests/receipt.json"
+      },
+      {
+        "elapsed_seconds": "0.2470119590871036",
+        "exit_code": 1,
+        "id": "engine-reference-sharing-2026-09-13/checks/original-reference-tests/receipt.json"
+      },
+      {
+        "elapsed_seconds": "0.15699316700920463",
+        "exit_code": 1,
+        "id": "engine-reference-identity-2026-09-13/checks/baseline-renamed/receipt.json"
+      },
+      {
+        "elapsed_seconds": "0.15701195900328457",
+        "exit_code": 1,
+        "id": "engine-reference-identity-2026-09-13/checks/baseline-stable/receipt.json"
+      },
+      {
+        "elapsed_seconds": "1.6850945830810815",
+        "exit_code": 1,
+        "id": "engine-reference-identity-2026-09-13/checks/research-consistency/receipt.json"
+      },
+      {
+        "elapsed_seconds": "1.049497708096169",
+        "exit_code": 2,
+        "id": "engine-anchor-opening-2026-09-13/checks/native-probe/receipt.json"
+      },
+      {
+        "elapsed_seconds": "1.2166532500414178",
+        "exit_code": 2,
+        "id": "engine-anchor-opening-2026-09-13/checks/stale-capture/receipt.json"
+      },
+      {
+        "elapsed_seconds": "0.2796006250428036",
+        "exit_code": 1,
+        "id": "engine-reference-equivalence-2026-09-13/checks/baseline/receipt.json"
+      },
+      {
+        "elapsed_seconds": "21.340017374954186",
+        "exit_code": 1,
+        "id": "engine-reference-equivalence-2026-09-13/checks/focused/receipt.json"
+      }
+    ],
+    "nonzero_exit_seconds_sum": "178.39297987718600570",
+    "reported_monotonic_seconds_sum": "1066.581210004165767142",
+    "reported_utc_union_microseconds": 996660066,
+    "source_commands_rechecked": 204,
+    "version": "0.1.0"
+  },
+  "observations": {
+    "byte_size": 148604,
+    "sha256": "65100740c113306a43fe65aea790b97e732ed62390bbebcc2498b316b55ad872"
+  },
+  "participant_usability": "unobserved",
+  "post_status": "P005 operator-reported published; no further publication or outreach authorized",
+  "primary_sources": [
+    {
+      "access": "Public official Python documentation; retained privately",
+      "byte_size": 128613,
+      "displayed_version": "Python 3.14.7; runtime is 3.14.2",
+      "path": "python-time.html",
+      "purpose": "Document the existing receipt clock and resource semantics; not a performance comparison",
+      "redistribution": "Python documentation PSF License Version 2; examples Zero-Clause BSD; raw payload not distributed in Git or outbox",
+      "resolved_url": "https://docs.python.org/3.14/library/time.html",
+      "retrieved_utc": "2026-09-13T14:37:52.184974+00:00",
+      "sha256": "492f856e974b3c930054b9c5a908662394d65b84e56c10ce318e78ad1a7a3b57",
+      "source": "https://docs.python.org/3.14/library/time.html"
+    },
+    {
+      "access": "Public official Python documentation; retained privately",
+      "byte_size": 54588,
+      "displayed_version": "Python 3.14.7; runtime is 3.14.2",
+      "path": "python-resource.html",
+      "purpose": "Document the existing receipt clock and resource semantics; not a performance comparison",
+      "redistribution": "Python documentation PSF License Version 2; examples Zero-Clause BSD; raw payload not distributed in Git or outbox",
+      "resolved_url": "https://docs.python.org/3.14/library/resource.html",
+      "retrieved_utc": "2026-09-13T14:37:52.509594+00:00",
+      "sha256": "6f3c1addeaad2aa916c829c75239a7a7b69cfc3f1f2370f010940b144b979ea4",
+      "source": "https://docs.python.org/3.14/library/resource.html"
+    },
+    {
+      "access": "Installed Apple Command Line Tools SDK manual; read locally",
+      "byte_size": 6291,
+      "document_date": "June 4, 1993 (embedded manual date)",
+      "path": "getrusage.2",
+      "purpose": "Darwin clock and getrusage units and limits; source date does not identify installed OS version",
+      "redistribution": "Embedded Berkeley copyright and license retained in private source bytes; no raw payload in Git or outbox",
+      "retrieved_utc": "2026-09-13T14:37:52.510425+00:00",
+      "sha256": "b4f4ed265c063282cb851254a5c903f9c1bc484f4e6bb720703c758583eff8b9",
+      "source": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man/man2/getrusage.2"
+    },
+    {
+      "access": "Installed Apple Command Line Tools SDK manual; read locally",
+      "byte_size": 5998,
+      "document_date": "January 26, 2016 (embedded manual date)",
+      "path": "clock_gettime.3",
+      "purpose": "Darwin clock and getrusage units and limits; source date does not identify installed OS version",
+      "redistribution": "Embedded Berkeley copyright and license retained in private source bytes; no raw payload in Git or outbox",
+      "retrieved_utc": "2026-09-13T14:37:52.511141+00:00",
+      "sha256": "d09d561f8939fa9c8ebb67733b81034747ffd7ab504049920d08e8b36c7242fc",
+      "source": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man/man3/clock_gettime.3"
+    }
+  ],
+  "private_extractor": {
+    "byte_size": 7308,
+    "sha256": "e956cbf65bf80f79c276c3d161f059519d99caa659cab6489a75fa7b54e7eb96"
+  },
+  "private_source_checker": {
+    "byte_size": 4507,
+    "sha256": "376cd557f24030b87cab774a03b14675807682e0603c9eb241e372759ab13ae5"
+  },
+  "public_replay_output": {
+    "byte_size": 7821,
+    "sha256": "99175a4a41fcfe59a01a74727023d80c83d3260ef235545c6c56f8da8847ce2a"
+  },
+  "real_bounds": [
+    "-8",
+    "8"
+  ],
+  "result": {
+    "artifact_id": "reiyah.engine.effort-accounting.result",
+    "by_checkpoint": {
+      "engine-anchor-opening-2026-09-13": {
+        "command_count": 13,
+        "exit_code_counts": {
+          "0": 11,
+          "2": 2
+        },
+        "maximum_reported_child_rss_bytes_macos": 274563072,
+        "measurement_state": "captured_commands_only",
+        "reported_monotonic_seconds_sum": "29.291019667056388826",
+        "reported_utc_interval_seconds_sum": "29.292365",
+        "reported_utc_overlap_excess_seconds": "0",
+        "reported_utc_union_seconds": "29.292365"
+      },
+      "engine-catalog-lifetime-2026-09-13": {
+        "command_count": 11,
+        "exit_code_counts": {
+          "0": 11
+        },
+        "maximum_reported_child_rss_bytes_macos": 52150272,
+        "measurement_state": "captured_commands_only",
+        "reported_monotonic_seconds_sum": "15.525454793241806854",
+        "reported_utc_interval_seconds_sum": "15.5268",
+        "reported_utc_overlap_excess_seconds": "0.675225",
+        "reported_utc_union_seconds": "14.851575"
+      },
+      "engine-chrome-observation-2026-09-13": {
+        "command_count": 0,
+        "exit_code_counts": {},
+        "maximum_reported_child_rss_bytes_macos": null,
+        "measurement_state": "no_canonical_receipts",
+        "reported_monotonic_seconds_sum": null,
+        "reported_utc_interval_seconds_sum": null,
+        "reported_utc_overlap_excess_seconds": null,
+        "reported_utc_union_seconds": null
+      },
+      "engine-discovery-custody-2026-09-13": {
+        "command_count": 22,
+        "exit_code_counts": {
+          "0": 17,
+          "1": 4,
+          "128": 1
+        },
+        "maximum_reported_child_rss_bytes_macos": 193396736,
+        "measurement_state": "captured_commands_only",
+        "reported_monotonic_seconds_sum": "291.019570874632335996",
+        "reported_utc_interval_seconds_sum": "291.021966",
+        "reported_utc_overlap_excess_seconds": "16.314802",
+        "reported_utc_union_seconds": "274.707164"
+      },
+      "engine-handoff-navigation-2026-09-13": {
+        "command_count": 9,
+        "exit_code_counts": {
+          "0": 9
+        },
+        "maximum_reported_child_rss_bytes_macos": 47235072,
+        "measurement_state": "captured_commands_only",
+        "reported_monotonic_seconds_sum": "25.73460141592659056",
+        "reported_utc_interval_seconds_sum": "25.735642",
+        "reported_utc_overlap_excess_seconds": "2.666964",
+        "reported_utc_union_seconds": "23.068678"
+      },
+      "engine-matching-trace-2026-09-13": {
+        "command_count": 11,
+        "exit_code_counts": {
+          "0": 11
+        },
+        "maximum_reported_child_rss_bytes_macos": 55296000,
+        "measurement_state": "captured_commands_only",
+        "reported_monotonic_seconds_sum": "12.250857124803588036",
+        "reported_utc_interval_seconds_sum": "12.251948",
+        "reported_utc_overlap_excess_seconds": "0",
+        "reported_utc_union_seconds": "12.251948"
+      },
+      "engine-output-separation-2026-09-13": {
+        "command_count": 12,
+        "exit_code_counts": {
+          "0": 12
+        },
+        "maximum_reported_child_rss_bytes_macos": 160153600,
+        "measurement_state": "captured_commands_only",
+        "reported_monotonic_seconds_sum": "115.490933667984793624",
+        "reported_utc_interval_seconds_sum": "115.492301",
+        "reported_utc_overlap_excess_seconds": "18.189579",
+        "reported_utc_union_seconds": "97.302722"
+      },
+      "engine-reference-equivalence-2026-09-13": {
+        "command_count": 18,
+        "exit_code_counts": {
+          "0": 16,
+          "1": 2
+        },
+        "maximum_reported_child_rss_bytes_macos": 298909696,
+        "measurement_state": "captured_commands_only",
+        "reported_monotonic_seconds_sum": "105.485083252191542146",
+        "reported_utc_interval_seconds_sum": "105.487045",
+        "reported_utc_overlap_excess_seconds": "2.399671",
+        "reported_utc_union_seconds": "103.087374"
+      },
+      "engine-reference-identity-2026-09-13": {
+        "command_count": 36,
+        "exit_code_counts": {
+          "0": 33,
+          "1": 3
+        },
+        "maximum_reported_child_rss_bytes_macos": 289505280,
+        "measurement_state": "captured_commands_only",
+        "reported_monotonic_seconds_sum": "130.594682748778722105",
+        "reported_utc_interval_seconds_sum": "130.598912",
+        "reported_utc_overlap_excess_seconds": "20.83704",
+        "reported_utc_union_seconds": "109.761872"
+      },
+      "engine-reference-sharing-2026-09-13": {
+        "command_count": 20,
+        "exit_code_counts": {
+          "0": 18,
+          "1": 2
+        },
+        "maximum_reported_child_rss_bytes_macos": 172916736,
+        "measurement_state": "captured_commands_only",
+        "reported_monotonic_seconds_sum": "93.76841354253701768",
+        "reported_utc_interval_seconds_sum": "93.78182",
+        "reported_utc_overlap_excess_seconds": "0.180887",
+        "reported_utc_union_seconds": "93.600933"
+      },
+      "engine-reference-workbound-2026-09-13": {
+        "command_count": 13,
+        "exit_code_counts": {
+          "0": 13
+        },
+        "maximum_reported_child_rss_bytes_macos": 181190656,
+        "measurement_state": "captured_commands_only",
+        "reported_monotonic_seconds_sum": "66.06673458323348508",
+        "reported_utc_interval_seconds_sum": "66.068061",
+        "reported_utc_overlap_excess_seconds": "0",
+        "reported_utc_union_seconds": "66.068061"
+      },
+      "engine-selection-evidence-2026-09-13": {
+        "command_count": 9,
+        "exit_code_counts": {
+          "0": 9
+        },
+        "maximum_reported_child_rss_bytes_macos": 88653824,
+        "measurement_state": "captured_commands_only",
+        "reported_monotonic_seconds_sum": "11.480526958126574797",
+        "reported_utc_interval_seconds_sum": "11.481527",
+        "reported_utc_overlap_excess_seconds": "0.138774",
+        "reported_utc_union_seconds": "11.342753"
+      },
+      "engine-viewer-custody-2026-09-13": {
+        "command_count": 14,
+        "exit_code_counts": {
+          "0": 14
+        },
+        "maximum_reported_child_rss_bytes_macos": 235143168,
+        "measurement_state": "captured_commands_only",
+        "reported_monotonic_seconds_sum": "88.83469270810019051",
+        "reported_utc_interval_seconds_sum": "88.836343",
+        "reported_utc_overlap_excess_seconds": "5.659954",
+        "reported_utc_union_seconds": "83.176389"
+      },
+      "engine-viewer-preparation-2026-09-13": {
+        "command_count": 16,
+        "exit_code_counts": {
+          "0": 16
+        },
+        "maximum_reported_child_rss_bytes_macos": 223100928,
+        "measurement_state": "captured_commands_only",
+        "reported_monotonic_seconds_sum": "81.038638667552730928",
+        "reported_utc_interval_seconds_sum": "81.040412",
+        "reported_utc_overlap_excess_seconds": "2.89218",
+        "reported_utc_union_seconds": "78.148232"
+      }
+    },
+    "coverage": "selected_outer_commands_only; uncovered intervals are not idle time",
+    "cpu_time": "not_recorded_by_selected_receipts",
+    "excluded_copies": 124,
+    "nested_details_not_added": 33,
+    "outside_captured_utc_intervals_seconds": "29499.288996",
+    "participant_review_effort": "unmeasured",
+    "scope": {
+      "ended_utc": "2026-09-13T14:26:40.949062+00:00",
+      "started_utc": "2026-09-13T05:58:25Z"
+    },
+    "scope_utc_seconds": "30495.949062",
+    "system_peak_memory": "not_measured",
+    "total": {
+      "command_count": 204,
+      "exit_code_counts": {
+        "0": 190,
+        "1": 11,
+        "128": 1,
+        "2": 2
+      },
+      "maximum_reported_child_rss_bytes_macos": 298909696,
+      "measurement_state": "captured_commands_only",
+      "reported_monotonic_seconds_sum": "1066.581210004165767142",
+      "reported_utc_interval_seconds_sum": "1066.615142",
+      "reported_utc_overlap_excess_seconds": "69.955076",
+      "reported_utc_union_seconds": "996.660066"
+    },
+    "total_human_effort": "unmeasured",
+    "verification_scope": "projection structure and exact arithmetic; original receipt extraction is a separate private check",
+    "version": "0.1.0"
+  },
+  "retained_validation": {
+    "bindings": {
+      "RETAINED_MEASUREMENT.json": {
+        "files_rechecked": 107,
+        "manifest": {
+          "byte_size": 20401,
+          "sha256": "1616653a515e53c05944fd444632d2184316b2b6426ec84f8ac53e9b7e315801"
+        },
+        "source_packet": "engine-reference-equivalence-2026-09-13"
+      },
+      "TEST_SOURCE_SELECTION.json": {
+        "files_rechecked": 182,
+        "manifest": {
+          "byte_size": 32552,
+          "sha256": "edcb4bacd666cbba2c2c1b240c6956346d7bd23a7e9e6c3999abb6f4c6569f4a"
+        },
+        "source_packet": "engine-reference-equivalence-2026-09-13"
+      }
+    },
+    "measurement_tests": 93,
+    "repository_tests": 404,
+    "state": "Retained, not replayed; selected source files rechecked"
+  },
+  "runtime_clock_observation": {
+    "monotonic": {
+      "adjustable": false,
+      "implementation": "mach_absolute_time()",
+      "monotonic": true,
+      "resolution": 4.166666666666666e-08
+    },
+    "python": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "recorded_utc": "2026-09-13T14:44:29.105874+00:00",
+    "time": {
+      "adjustable": true,
+      "implementation": "clock_gettime(CLOCK_REALTIME)",
+      "monotonic": false,
+      "resolution": 1.0000000000000002e-06
+    }
+  },
+  "selected_closed_bytes_rechecked": 178033113,
+  "selected_closed_checkpoints": 14,
+  "selected_closed_files_rechecked": 5922,
+  "selected_window": {
+    "byte_size": 4507,
+    "sha256": "4e457e2672f13011d14c564c64c94e0988afcecf4208f7687aae7d9eb108de5c"
+  },
+  "shared_trusted_code": [
+    "Retained capture supervisor 7e99c336723a7cd1262beb2c862eb4488a3830ecb35f962604e8a24afdd68acf",
+    "Selected Python 3.14.2 standard library; operating system clocks and resource accounting",
+    "Source extraction and selected checkpoint completeness are separate from public arithmetic checks"
+  ],
+  "source_commit": "dbee94d382942c4be2e535f1df3c4b5ac40f92f5",
+  "source_extraction": {
+    "artifact_id": "reiyah.engine.effort-accounting.extraction",
+    "canonical_commands": 204,
+    "limitations": "Integrity and arithmetic only; no independent execution attestation or participant effort",
+    "nested_check": "Parent --output path names the child directory; nested command code uses synchronous subprocess.run; no absent child UTC end invented",
+    "nested_details": 33,
+    "observations": {
+      "byte_size": 148604,
+      "sha256": "65100740c113306a43fe65aea790b97e732ed62390bbebcc2498b316b55ad872"
+    },
+    "receipt_copies": 124,
+    "selected_source_files": 1176,
+    "source_check": "Each selected receipt, spec, stream and supervisor matches its selected closeout row; specs bind original capture paths",
+    "supervisor_sha256": "7e99c336723a7cd1262beb2c862eb4488a3830ecb35f962604e8a24afdd68acf",
+    "version": "0.1.0"
+  },
+  "status": "exploratory",
+  "targeted_tests": {
+    "byte_size": 7516,
+    "sha256": "04d5ca755779d0932e2c42edec09741dc72f8183c855888993af96f62c2ca4ba"
+  },
+  "version": "0.1.0"
+}
