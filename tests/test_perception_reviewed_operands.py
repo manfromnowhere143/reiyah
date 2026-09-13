@@ -121,6 +121,41 @@ class ReviewedOperandsTests(unittest.TestCase):
             self.assertEqual(rules[key], previous[key])
         self.assertEqual(common['rules_sha256'], reviewed.digest(files['common/rules.json']))
 
+    def test_local_reference_names_remain_source_bound_in_common_operands(self):
+        other = self.root/'local-names'; other.mkdir()
+        def rename(ledger):
+            for wi, world in enumerate(ledger['worlds']):
+                for ai, entry in enumerate(world['windows']):
+                    for oi, obj in enumerate(entry['objects']):
+                        obj['id'] = 'local-'+str(wi)+'-'+str(ai)+'-'+str(oi)
+        inputs = prepared_inputs(other, rename)
+        packet_path = other/'common-packet'
+        prepared = reviewed.run(packet_path, **inputs)
+        self.assertEqual(reviewed.check(packet_path, prepared['preparation_sha256'], **inputs)['status'],
+                         'checked_against_selected_sources')
+        report = contract.parse(inputs['admission_report'].read_bytes())
+        self.assertEqual((packet_path/'common/admission.json').read_bytes(), inputs['admission_report'].read_bytes())
+        renamings = contract.parse((packet_path/'common/renamings.json').read_bytes())
+        self.assertEqual(renamings['object_mapping'], report['compilation']['object_mapping'])
+        self.assertEqual(renamings['world_encodings'], report['compilation']['world_encodings'])
+        source = {(w['id'], a['anchor_id'], o['id']): o for w in report['reference']['worlds']
+                  for a in w['anchors'] for o in a['objects']}
+        self.assertEqual(len(source), len(renamings['object_mapping']))
+        for row in renamings['object_mapping']:
+            original = source[row['world_id'], row['anchor_id'], row['object_id']]
+            self.assertEqual((row['record_sha256'], row['members']),
+                             (original['record_sha256'], original['members']))
+        case = contract.parse((packet_path/'common/comparison.json').read_bytes())
+        self.assertEqual([len(a['reference']['objects']) for a in case['anchors']], [2, 2])
+        self.assertEqual(case['model'], report['compiled_input']['model'])
+        packet = kernel.produce(case); checker.check(case, packet)
+        direct = direct_world_losses(report)
+        self.assertEqual(direct, [-1, 1])
+        self.assertEqual([contract.rational(packet['result']['bounds'][s]) for s in ('lower', 'upper')],
+                         [min(direct), max(direct)])
+        self.assertFalse(prepared['assisted_evidence_released'])
+        self.assertEqual(case['evidence_kind'], 'synthetic')
+
     def test_cross_anchor_coupling_and_unused_world_encoding(self):
         other = self.root/'coupled'; other.mkdir()
         def change(ledger):

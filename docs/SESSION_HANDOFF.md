@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.0`
+Version: `0.1.1`
 
 Lifecycle status: `exploratory`
 
@@ -23,8 +23,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This navigation change starts from main
-`ba1009349cd5615fab475465dd860585136c9ce2`, tree `32f9a15132a61d27eb09a1ec361db6911309f82a`.
+uncommitted ownership before acting. This reference-identity checkpoint starts from main
+`61d290bb77dca41b9af0198b3254d2d359e32942`, tree `514667222dfe9862d602e2b142188ed72aad10ba`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -57,17 +57,17 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 | Question | Checked result and evidence |
 |---|---|
 | Can both analysts receive the same reviewed joint operands? | [Reviewed operands](PERCEPTION_REVIEWED_OPERANDS_CHECKPOINT_2026-09-12.md) preserve the complete joint alternatives, weights, loss, tolerance, matching and provenance. Synthetic conformance is engineering evidence. |
-| Can unnecessary compiler expansion be reduced? | [Guarded reference sharing](PERCEPTION_REFERENCE_SHARING_2026-09-13.md) improves bounded synthetic cases. The failed unrestricted version and its adverse budget example remain retained. No limits were raised. |
+| Can unnecessary compiler expansion be reduced? | [Guarded reference sharing](PERCEPTION_REFERENCE_SHARING_2026-09-13.md) and [local reference identity](PERCEPTION_REFERENCE_IDENTITY_2026-09-13.md) improve bounded synthetic cases while preserving original world/source mappings. Failed evaluator and geometry-budget candidates remain retained; the final design preserves the previous plan when broader sharing cannot fit. No limits were raised. |
 | Does the sharing guard omit edge-condition cost? | [Dense work-bound audit](PERCEPTION_REFERENCE_WORKBOUND_2026-09-13.md) disproved that suspicion: compiled edges have empty conditions. The existing guard bounds the declared evaluator estimate. No production repair was justified. |
 | Can shared matching nodes be traced to their own original sources? | [Matching trace](PERCEPTION_MATCHING_TRACE_2026-09-13.md) checks ten synthetic endpoints using world, anchor and object together; incomplete joins and a substituted other-world digest fail. Whole-capture custody does not establish point selection or physical correspondence. |
 | Is the native viewing procedure ready? | [Checked preparation](PERCEPTION_VIEWER_PREPARATION_2026-09-13.md), [output custody](PERCEPTION_VIEWER_CUSTODY_2026-09-13.md) and [selection boundary](PERCEPTION_SELECTION_EVIDENCE_2026-09-13.md) retain source identity and original indices. Background imports, programmatic selections and pixel checks are not interactive or human observations. |
 | Are Fable's requested checker repairs accepted? | The [matching-trace consumer review](PERCEPTION_MATCHING_TRACE_2026-09-13.md) accepts only selected `5762ac01a157a3603181df1486df8a836d711f06` bytes and retained probes. Broader robustness claims were not adopted. Earlier defects remain historical evidence. |
 
-The latest repository suite passed **391 tests** at `ba1009349cd5615fab475465dd860585136c9ce2`.
+The latest repository suite passed **399 tests** on the exact reference-identity candidate sources.
 The **93 measurement tests** remain retained from their earlier exact source bindings, not newly
-replayed. [Work-bound verification](../research/perception-reference-workbound/0.1.0/verification.json)
-records sources, outputs, costs and limits. This documentation change adds no test count or
-scientific evidence; its source preservation and navigation checks are retained separately.
+replayed; their 107 source files were rechecked. [Reference-identity verification](../research/perception-reference-identity/0.1.0/verification.json)
+records sources, outputs, first failures, repairs, costs and limits. The source-to-common example
+and finite `[1,1]` naming control are synthetic. They add no human judgment or participant evidence.
 
 An actual participant return takes priority. The prepared, exposed development exercise is
 `~/.codex/reports/reiyah/engine-viewer-2026-09-12/private/opening-2/OPENING.md`.

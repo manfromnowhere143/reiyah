@@ -15,6 +15,32 @@ from tests.test_perception_reference import digest, independent_matching, inputs
 CASES = Path(__file__).resolve().parents[1]/'research/perception-reference-sharing/0.1.0/cases'
 
 
+def locally_named_worlds(count=64, base_duplicates=1):
+    args = inputs(base_duplicates=base_duplicates)
+    args[0]['worlds'] = [world('world-'+str(wi), [[
+        object_at('local-'+str(wi)+'-'+str(oi), x, members=['proposal-'+str(oi)])
+        for oi, x in enumerate((0, 3, 30))]]) for wi in range(count)]
+    return args
+
+
+def geometry_budget_worlds():
+    """Actual geometry-cap regression, within each compiler file-size cap."""
+    args = inputs(32, base_duplicates=512)
+    small = inputs(32, base_duplicates=8)
+    args[1]['anchors'][-1], args[2][-1] = small[1]['anchors'][-1], small[2][-1]
+    args[0]['inputs'] = {'comparison_sha256': digest(args[1]),
+        'normalizations_sha256': digest(args[2]), 'catalog_sha256': digest(args[3])}
+    for wi in range(3):
+        anchors = [[object_at('w'+str(wi)+'o'+str(oi), 0 if oi < 3 else 30+wi,
+                    time=(ai+1)*1_000_000, members=['a'+str(ai)+'p'+str(oi)])
+                    for oi in range(45)] for ai in range(31)]
+        anchors.append([object_at('last-'+str(oi),
+            (0 if oi < 8 else 3 if oi == 8 else 30)+Fraction(wi, 10),
+            time=32_000_000, members=['last-proposal-'+str(oi)]) for oi in range(42)])
+        args[0]['worlds'].append(world('world-'+str(wi), anchors))
+    return args
+
+
 class ReferenceSharingTests(unittest.TestCase):
     def checked(self, args):
         before = deepcopy(args)
@@ -133,7 +159,7 @@ class ReferenceSharingTests(unittest.TestCase):
         self.assertEqual(len(receipt['object_mapping']), 8256)
 
     def test_equal_edges_do_not_merge_different_declared_objects(self):
-        variants = [lambda o: o.update(id='other'), lambda o: o.update(members=['other-proposal']),
+        variants = [lambda o: o.update(members=['other-proposal']),
                     lambda o: o.update(xy=xy(Fraction(8, 5))), lambda o: o.update(**{'class': 'truck'}),
                     lambda o: o.update(members=['two', 'one'])]
         for change in variants:
@@ -144,6 +170,86 @@ class ReferenceSharingTests(unittest.TestCase):
                 compiled, _, _, _ = self.exact_worlds(args)
                 self.assertEqual(len(compiled['anchors'][0]['reference']['objects']), 2)
                 self.assertTrue(all(o['when'] for o in compiled['anchors'][0]['reference']['objects']))
+
+    def test_local_object_names_do_not_prevent_exact_member_sharing(self):
+        # Local names and record digests remain distinct in provenance; all
+        # geometric worlds are checked against original-coordinate injections.
+        args = locally_named_worlds()
+        compiled, receipt, packet, totals = self.exact_worlds(args)
+        self.assertEqual(totals, [1]*64)
+        self.assertEqual(len(compiled['anchors'][0]['reference']['objects']), 3)
+        self.assertEqual(receipt['geometry_comparisons_budgeted'], 6)
+        self.assertEqual(len({m['object_id'] for m in receipt['object_mapping']}), 192)
+        self.assertEqual(len({m['record_sha256'] for m in receipt['object_mapping']}), 192)
+        self.assertEqual(packet['result']['decision']['preference'], 'prefer_augmented')
+
+    def test_renamed_objects_preserve_an_adverse_last_world(self):
+        args = locally_named_worlds()
+        args[0]['worlds'][-1]['anchors'][0]['objects'][1]['xy'] = xy(6)
+        compiled, receipt, _, totals = self.exact_worlds(args)
+        self.assertEqual(totals, [1]*63+[-1])
+        self.assertEqual(len(compiled['anchors'][0]['reference']['objects']), 66)
+        self.assertEqual(len(receipt['object_mapping']), 192)
+
+    def test_coincident_objects_with_distinct_members_stay_distinct(self):
+        args = locally_named_worlds(3, base_duplicates=2)
+        for w in args[0]['worlds']:
+            objects = w['anchors'][0]['objects']
+            objects[1]['xy'], objects[2]['xy'] = xy(0), xy(3)
+        compiled, _, packet, totals = self.exact_worlds(args)
+        self.assertEqual(totals, [1, 1, 1])
+        self.assertEqual(len(compiled['anchors'][0]['reference']['objects']), 3)
+        self.assertEqual(len(compiled['model']['clauses']), 1)  # Unused fourth code stays excluded.
+        for w in packet['proof']['worlds']:
+            self.assertEqual(len(w['anchors'][0]['base']['matching']), 2)
+            self.assertEqual(len(w['anchors'][0]['augmented']['matching']), 3)
+
+    def test_reused_local_names_follow_the_correct_world_member(self):
+        args = locally_named_worlds(3)
+        for wi, w in enumerate(args[0]['worlds']):
+            for oi, obj in enumerate(w['anchors'][0]['objects']):
+                obj['id'] = 'local-'+str((wi+oi) % 3)
+        _, receipt, _, totals = self.exact_worlds(args)
+        self.assertEqual(totals, [1, 1, 1])
+        local_zero = [m for m in receipt['object_mapping'] if m['object_id'] == 'local-0']
+        self.assertEqual(len({m['graph_id'] for m in local_zero}), 3)
+        self.assertEqual(len({tuple(m['members']) for m in local_zero}), 3)
+
+    def test_local_names_preserve_joint_anchor_constraints(self):
+        args = json.loads((CASES/'seventeen-worlds.json').read_bytes())
+        for wi, w in enumerate(args[0]['worlds']):
+            for ai, anchor in enumerate(w['anchors']):
+                for oi, obj in enumerate(anchor['objects']):
+                    obj['id'] = 'local-'+str(wi)+'-'+str(ai)+'-'+str(oi)
+                    obj['record_sha256'] = digest(['synthetic renamed record', obj])
+        compiled, receipt, _, totals = self.exact_worlds(args)
+        self.assertEqual(totals, [Fraction(1, 2) if i % 2 == 0 else Fraction(3, 2) for i in range(17)])
+        self.assertEqual([len(a['reference']['objects']) for a in compiled['anchors']], [8, 25])
+        self.assertEqual(len(receipt['object_mapping']), 161)
+
+    def test_expanded_sharing_budget_retains_the_previous_plan(self):
+        # Broader sharing makes the heavy anchor too costly under the global
+        # preflight. Discarding every shared node also loses the small anchor.
+        # The previous plan must survive, including exact original report bytes.
+        args = inputs(2, base_duplicates=128)
+        small = inputs(2)
+        args[1]['anchors'][1], args[2][1] = small[1]['anchors'][1], small[2][1]
+        args[0]['inputs'] = {'comparison_sha256': digest(args[1]),
+            'normalizations_sha256': digest(args[2]), 'catalog_sha256': digest(args[3])}
+        for wi in range(64):
+            heavy = [object_at('world-'+str(wi)+'-object-'+str(i), 0,
+                     members=['heavy-proposal-'+str(i)]) for i in range(128)]
+            light = [object_at('light-'+str(i), x, time=2_000_000,
+                     members=['light-proposal-'+str(i)]) for i, x in enumerate((0, 3, 30))]
+            args[0]['worlds'].append(world('world-'+str(wi), [heavy, light]))
+        compiled, receipt, packet = self.checked(args)
+        self.assertEqual([a['reference']['state'] for a in compiled['anchors']], ['open', 'finite'])
+        self.assertEqual([contract.rational(packet['result']['bounds'][s]) for s in ('lower', 'upper')], [0, 1])
+        self.assertEqual(kernel._capacity(compiled), (64, 5056))
+        self.assertEqual(len(receipt['object_mapping']), 8384)
+        self.assertEqual(digest(compiled), '510811e4a60397a223d21295eb1d3460f99cb898a013f47718e8b75e19747e44')
+        self.assertEqual(digest(receipt), '351f5c57af43c75a2f7cb82c3215f01daac6403d8bb23a4d34941beb02eef830')
+        self.assertEqual(digest(packet), '69808f59197ccd1891e903a11b207037a9435b37df7f9ca36dd639cd3ef44e6a')
 
     def test_dense_graph_at_adjacent_sharing_budget_boundary(self):
         # Seven predictions connect to every active object on anchor 0. The
@@ -177,6 +283,24 @@ class ReferenceSharingTests(unittest.TestCase):
                         self.assertEqual([len(second[r]['matching']) for r in ('base', 'augmented')], [0, 0])
                 else:
                     self.assertEqual([a['reference']['state'] for a in compiled['anchors']], ['open', 'finite'])
+
+    def test_expanded_geometry_budget_retains_the_last_finite_anchor(self):
+        # Heavy anchors remain open, but wider sharing lets them consume more
+        # geometry before their graph caps stop emission. Evaluator work alone
+        # misses this. Preserve the old plan instead of starving the last anchor.
+        args = geometry_budget_worlds()
+        for value, limit in zip(args, (4 << 20, 4 << 20, 16 << 20, 128 << 20)):
+            self.assertLessEqual(len(contract.encoded(value)), limit)
+        compiled, receipt, packet = self.checked(args)
+        self.assertEqual([a['reference']['state'] for a in compiled['anchors']], ['open']*31+['finite'])
+        self.assertEqual([contract.rational(packet['result']['bounds'][s]) for s in ('lower', 'upper')],
+                         [Fraction(-15, 16), 1])
+        self.assertEqual(receipt['geometry_comparisons_budgeted'], 748575)
+        self.assertEqual(kernel._capacity(compiled), (4, 52548))
+        self.assertEqual(len(receipt['object_mapping']), 4311)
+        self.assertEqual(digest(compiled), 'e1709913ecee38679d12fc1b53a9f385d8fdf443ba31431ed8e6c0b686d9c89a')
+        self.assertEqual(digest(receipt), 'ecbd0fb540427a23b3691c3fff7541ec09d94717cf0142b2728ae8d4d9bcc563')
+        self.assertEqual(digest(packet), 'bcdb235527da49300e8f698b4abd6a05d64aef65448ac34e5b9a0cae05658c00')
 
     def test_absence_and_geometry_patterns_preserve_each_world_graph(self):
         # Every three-world pattern of absence, matching competition, class and range.

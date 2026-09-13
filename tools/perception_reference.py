@@ -234,39 +234,56 @@ def compile_model(spec, case, normalizations, catalog):
                            'record_sha256': obj['record_sha256'], 'members': aliases}
                 mappings.append(mapping)
                 records.append((wi, mapping, obj['class'], point))
-                # Compare exact declared content, not equal losses or edge sets.
-                # Each world's separate record digest remains in its mapping row.
-                eligible[oid] = (tuple(aliases), obj['class'], time,
+                # Member groups are disjoint within a world. Local object names
+                # and separate record digests remain in each world's mapping.
+                eligible[tuple(aliases)] = (oid, obj['class'], time,
                                  tuple((q['numerator'], q['denominator']) for q in obj['xy']))
             common[name] = (eligible if wi == 0 else
-                            {oid: value for oid, value in common[name].items()
-                             if eligible.get(oid) == value})
+                            {members: (value if eligible[members][0] == value[0] else (None, *value[1:]))
+                             for members, value in common[name].items()
+                             if members in eligible and eligible[members][1:] == value[1:]})
 
-    # Validate every world before sharing. An invariant object is present once in
-    # each admitted world, so its single graph node needs no world condition.
-    # This retains the complete joint model, including unused-code exclusions.
-    shared = {name: {oid: 'shared:o'+str(i) for i, oid in enumerate(values)}
-              if len(worlds) > 1 else {} for name, values in common.items()}
-    # Newly finite graphs must not push the evaluator into its global count-only
-    # fallback. Bound its current work estimate before selecting this representation.
-    # A sparse graph may fit when this bound does not; keep the ordinary world
-    # nodes in that case instead of raising a limit or evaluating two candidates.
+    # Equal member groups, class, time and coordinates give one node per world,
+    # regardless of local names. A retained non-None name also qualifies under
+    # the previous, stricter sharing policy. Keep that plan as a fallback.
+    def sharing_plan(same_names):
+        return {name: {members: 'shared:o'+str(i) for i, members in enumerate(
+                    m for m, value in values.items() if not same_names or value[0] is not None)}
+                if len(worlds) > 1 else {} for name, values in common.items()}
+
     counts = {name: 0 for name in anchors}
     for _, mapping, _, _ in records:
         counts[mapping['anchor_id']] += 1
-    work = 1 + bits + sum(map(len, result['model']['clauses']))
-    for name, anchor in anchors.items():
-        count = counts[name] - len(shared[name]) * (len(worlds)-1)
-        if reasons[name] or count > 128 or any(anchor[r]['state'] != 'observed' for r in ('base', 'additions')):
-            continue
-        size = len(geometry[name]['detections'])
-        work += bits * (count-len(shared[name])) + 4 * (size+1) * (count+min(2048, size*count)+1)
-    if (1 << bits) > contract.MAX_WORLDS or (1 << bits) * work > contract.MAX_WORK:
-        shared = {name: {} for name in anchors}
+
+    def within_budget(plan, *, guard_geometry=False):
+        work = 1 + bits + sum(map(len, result['model']['clauses']))
+        geometry_bound = 0
+        for name, anchor in anchors.items():
+            count = counts[name] - len(plan[name]) * (len(worlds)-1)
+            if reasons[name]:
+                continue
+            size = len(geometry[name]['detections'])
+            # Even an ultimately open anchor can consume geometry. At most
+            # 128 nodes are emitted; early edge exhaustion only lowers cost.
+            geometry_bound += size * min(128, count)
+            if count > 128 or any(anchor[r]['state'] != 'observed' for r in ('base', 'additions')):
+                continue
+            work += bits * (count-len(plan[name])) + 4 * (size+1) * (count+min(2048, size*count)+1)
+        return ((not guard_geometry or geometry_bound <= MAX_GEOMETRY_COMPARISONS) and
+                (1 << bits) <= contract.MAX_WORLDS and (1 << bits) * work <= contract.MAX_WORK)
+
+    # Expansion can exhaust evaluator work or geometry needed by later anchors.
+    # Preserve the previous plan and its guard before ordinary world nodes.
+    # These are metadata preflights; geometry is materialized only once below.
+    shared = sharing_plan(same_names=False)
+    if not within_budget(shared, guard_geometry=True):
+        shared = sharing_plan(same_names=True)
+        if not within_budget(shared):
+            shared = {name: {} for name in anchors}
     emitted = {name: set() for name in anchors}
     for wi, mapping, label, point in records:
-        name, oid = mapping['anchor_id'], mapping['object_id']
-        graph_id = shared[name].get(oid, mapping['graph_id'])
+        name, members = mapping['anchor_id'], tuple(mapping['members'])
+        graph_id = shared[name].get(members, mapping['graph_id'])
         mapping['graph_id'] = graph_id
         # No partial finite graph is emitted after an unknown or resource fallback.
         if reasons[name] or graph_id in emitted[name]:
@@ -279,7 +296,7 @@ def compile_model(spec, case, normalizations, catalog):
             continue
         geometry_work += len(geometry[name]['detections'])
         emitted[name].add(graph_id)
-        refs[name]['objects'].append({'id': graph_id, 'when': [] if oid in shared[name] else condition(wi)})
+        refs[name]['objects'].append({'id': graph_id, 'when': [] if members in shared[name] else condition(wi)})
         for did, kind, center in geometry[name]['detections']:
             if kind == label and _distance2(center, point) < 4:
                 if len(refs[name]['edges']) == 2048:
