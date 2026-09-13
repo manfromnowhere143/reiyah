@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.2`
+Version: `0.1.3`
 
 Lifecycle status: `exploratory`
 
@@ -23,8 +23,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This fixture-lifetime checkpoint starts from main
-`8e3e55d5cd4a28ea5f838a85722bf615ade88339`, tree `270418531fe2c9f9fe2d3cb5aff37104c6f2bf61`.
+uncommitted ownership before acting. This anchor-opening checkpoint starts from main
+`fe937a8b398a58456ed2a4394488b385a7139590`, tree `2e60b4f04c4bc276a838a42ff8d7b9a21c47d4c8`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -60,7 +60,7 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 | Can unnecessary compiler expansion be reduced? | [Guarded reference sharing](PERCEPTION_REFERENCE_SHARING_2026-09-13.md) and [local reference identity](PERCEPTION_REFERENCE_IDENTITY_2026-09-13.md) improve bounded synthetic cases while preserving original world/source mappings. Failed evaluator and geometry-budget candidates remain retained; the final design preserves the previous plan when broader sharing cannot fit. No limits were raised. |
 | Does the sharing guard omit edge-condition cost? | [Dense work-bound audit](PERCEPTION_REFERENCE_WORKBOUND_2026-09-13.md) disproved that suspicion: compiled edges have empty conditions. The existing guard bounds the declared evaluator estimate. No production repair was justified. |
 | Can shared matching nodes be traced to their own original sources? | [Matching trace](PERCEPTION_MATCHING_TRACE_2026-09-13.md) checks ten synthetic endpoints using world, anchor and object together; incomplete joins and a substituted other-world digest fail. Whole-capture custody does not establish point selection or physical correspondence. |
-| Is the native viewing procedure ready? | [Checked preparation](PERCEPTION_VIEWER_PREPARATION_2026-09-13.md), [output custody](PERCEPTION_VIEWER_CUSTODY_2026-09-13.md) and [selection boundary](PERCEPTION_SELECTION_EVIDENCE_2026-09-13.md) retain source identity and original indices. Background imports, programmatic selections and pixel checks are not interactive or human observations. |
+| Is the native viewing procedure ready? | [The anchor opening](PERCEPTION_ANCHOR_OPENING_2026-09-13.md) selects a unique delivered capture at the declared anchor timestamp from all 725 supplied occurrences. Every original point record is retained; save/reopen, vertex reordering and stale-capture rejection pass. [Checked preparation](PERCEPTION_VIEWER_PREPARATION_2026-09-13.md), [output custody](PERCEPTION_VIEWER_CUSTODY_2026-09-13.md) and [selection boundary](PERCEPTION_SELECTION_EVIDENCE_2026-09-13.md) supply the unchanged adapter. Actual interactive viewing and participant usability remain unobserved. |
 | Are Fable's requested checker repairs accepted? | The [matching-trace consumer review](PERCEPTION_MATCHING_TRACE_2026-09-13.md) accepts only selected `5762ac01a157a3603181df1486df8a836d711f06` bytes and retained probes. Broader robustness claims were not adopted. Earlier defects remain historical evidence. |
 
 The latest full repository suite passed **399 tests** at the reference-identity checkpoint above.
@@ -72,12 +72,16 @@ replayed; their 107 source files were rechecked. [Reference-identity verificatio
 records sources, outputs, first failures, repairs, costs and limits. The source-to-common example
 and finite `[1,1]` naming control are synthetic. They add no human judgment or participant evidence.
 
-An actual participant return takes priority. The prepared, exposed development exercise is
-`~/.codex/reports/reiyah/engine-viewer-2026-09-12/private/opening-2/OPENING.md`.
-Its return folder is `~/.codex/reports/reiyah/engine-viewer-input-2026-09-12/`.
-At this checkpoint the selection file is absent and the observation form remains unfilled.
-Verify any later return without changing the closed opening packet. This exercise requests no
-object judgment and cannot be relabeled independent discovery even if a participant completes it.
+An actual participant return takes priority. The new, exposed development opening is
+`~/.codex/reports/reiyah/engine-anchor-opening-2026-09-13/private/opening/OPENING.md`, returning
+to `~/.codex/reports/reiyah/engine-anchor-input-2026-09-13/`. It uses the capture whose declared
+timestamp equals the first window's anchor, with all surrounding observations retained. The older
+`engine-viewer-2026-09-12/private/opening-2/OPENING.md` exercise and its separate
+`engine-viewer-input-2026-09-12/` return folder remain intact; that capture is 1,998,383 microseconds
+before the anchor. Both selection files are absent and both forms unfilled at this checkpoint.
+Verify a later return against its own exact opening/binding without changing a closed packet.
+These exercises request no object judgment and cannot be relabeled independent discovery.
+Declared timestamps do not establish physical synchronization or correspondence.
 
 The next viewing falsifier is one supported connection followed by an observable opening and
 selection. The native desktop service has a retained Swift-loader incompatibility; this was

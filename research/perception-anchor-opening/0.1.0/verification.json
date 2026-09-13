@@ -1,0 +1,280 @@
+{
+  "adapter": {
+    "byte_size": 16262,
+    "sha256": "e2f05bb79bd353234df0f056babb07fdbc53379b5b13302494608ba9012a5412"
+  },
+  "artifact_id": "reiyah.engine.anchor-opening.verification",
+  "binding": {
+    "byte_size": 353,
+    "sha256": "007cf2491d4a4a837f6a6180c15cd1cf4229f25849d412a1beb503c2e1cb0f38"
+  },
+  "blender_binary": {
+    "byte_size": 167811856,
+    "sha256": "e0b80264bea559673212e0afc819fb33f3cef8b3dcfcc8d994b195132857ac8a"
+  },
+  "comparator": "Manual lookup of the same complete verified observation manifest, original source file and existing Blender opening. No participant timing or measured effort advantage is claimed.",
+  "complete_raw_ply_body_equality": true,
+  "costs": [
+    {
+      "check": "occurrence-audit",
+      "child_max_rss_bytes_macos": 87982080,
+      "elapsed_seconds": 3.3990149170858786,
+      "ended_utc": "2026-09-13T13:25:35.929899+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1078,
+        "sha256": "589eca023432cb90b3229bc5d6ff98a0a638530d69aaf346d15885479f014854"
+      },
+      "started_utc": "2026-09-13T13:25:32.530767+00:00"
+    },
+    {
+      "check": "selected-source",
+      "child_max_rss_bytes_macos": 195411968,
+      "elapsed_seconds": 0.2276117498986423,
+      "ended_utc": "2026-09-13T13:33:40.464961+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1083,
+        "sha256": "3d43b6ca5c3ca0967967498477ab1d71626370cb167c579e93abdfe9df529014"
+      },
+      "started_utc": "2026-09-13T13:33:40.237243+00:00"
+    },
+    {
+      "check": "binding",
+      "child_max_rss_bytes_macos": 81805312,
+      "elapsed_seconds": 3.3821223750710487,
+      "ended_utc": "2026-09-13T13:33:56.966345+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1418,
+        "sha256": "704ee50165af7a69a46284e0a85ba48115f146573c342fbf386cc861a41f01dd"
+      },
+      "started_utc": "2026-09-13T13:33:53.584116+00:00"
+    },
+    {
+      "check": "native-prepare",
+      "child_max_rss_bytes_macos": 217563136,
+      "elapsed_seconds": 3.093136416049674,
+      "ended_utc": "2026-09-13T13:34:34.279399+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1801,
+        "sha256": "814316262f38322dd64ec8f78400c5d4663ea355b5f4c0dd85d960d77f8b85d8"
+      },
+      "started_utc": "2026-09-13T13:34:31.186177+00:00"
+    },
+    {
+      "check": "native-probe",
+      "child_max_rss_bytes_macos": 219447296,
+      "elapsed_seconds": 1.049497708096169,
+      "ended_utc": "2026-09-13T13:35:15.108522+00:00",
+      "exit_code": 2,
+      "receipt": {
+        "byte_size": 1400,
+        "sha256": "886c0a62f190e5238a1af87281ea0e8119745f966b58f5c4aca2ca07c675c938"
+      },
+      "started_utc": "2026-09-13T13:35:14.058871+00:00"
+    },
+    {
+      "check": "native-probe-2",
+      "child_max_rss_bytes_macos": 274563072,
+      "elapsed_seconds": 2.1505685419542715,
+      "ended_utc": "2026-09-13T13:35:48.092827+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1282,
+        "sha256": "557d40e685adbfba149373a416f13619efcf0fe1dd4e8023104d5ed94fe4638d"
+      },
+      "started_utc": "2026-09-13T13:35:45.942176+00:00"
+    },
+    {
+      "check": "stale-capture",
+      "child_max_rss_bytes_macos": 232325120,
+      "elapsed_seconds": 1.2166532500414178,
+      "ended_utc": "2026-09-13T13:36:42.719443+00:00",
+      "exit_code": 2,
+      "receipt": {
+        "byte_size": 2088,
+        "sha256": "13a54437a06d1cc2f2bf39731f133c245f693347f01b61e5e8d9c2cf0e411737"
+      },
+      "started_utc": "2026-09-13T13:36:41.502700+00:00"
+    }
+  ],
+  "decision": "Prepare the same-window zero-offset capture with the existing adapter and an explicit temporal opening procedure; preserve the earlier exercise and every supplied observation. No production change or second viewer is justified.",
+  "declared_offset_us": 0,
+  "delivered_occurrences": 725,
+  "earlier_exercise_offset_us": -1998383,
+  "fable_code_or_ref_changed": false,
+  "first_next_falsifier": "One actual opening, visible selection and saved return, checked against this exact binding; record failure, ambiguity, time and help instead of converting background operations into participant evidence.",
+  "gate_a": "unaccepted",
+  "interactive_observation": "not_performed",
+  "lifecycle_status": "exploratory",
+  "measurement_tests": "93 retained, not replayed",
+  "motion_compensation": "not_established",
+  "native_probe": {
+    "byte_size": 7879,
+    "sha256": "9072247db08ccadcd8a9ef54ee57aea01b44de1d3604b3a6329750a21e6cf745"
+  },
+  "native_probe_report": {
+    "byte_size": 3018,
+    "sha256": "911ee243694dbbed6a6ecb97cb2738b30e631ebd1d0542c7de13abd712a2502f"
+  },
+  "native_results": [
+    {
+      "case": "pristine_has_no_selection",
+      "result": "VIEW_EMPTY_SELECTION"
+    },
+    {
+      "case": "save_reopen_selection",
+      "point_indices": [
+        0,
+        17360,
+        34719
+      ],
+      "result": "pass"
+    },
+    {
+      "case": "persistent_index_survives_reverse_vertex_order",
+      "result": "pass"
+    },
+    {
+      "case": "unselected_x_one_ulp",
+      "result": "VIEW_FIELDS"
+    },
+    {
+      "case": "unselected_y_one_ulp",
+      "result": "VIEW_FIELDS"
+    },
+    {
+      "case": "unselected_z_one_ulp",
+      "result": "VIEW_FIELDS"
+    },
+    {
+      "case": "unselected_intensity_one_ulp",
+      "result": "VIEW_FIELDS"
+    },
+    {
+      "case": "unselected_ring_one_ulp",
+      "result": "VIEW_FIELDS"
+    },
+    {
+      "case": "duplicate_original_index",
+      "result": "VIEW_INDEX"
+    },
+    {
+      "case": "removed_original_index",
+      "result": "VIEW_INDEX"
+    },
+    {
+      "case": "deleted_point",
+      "result": "VIEW_SCENE"
+    },
+    {
+      "case": "added_edge",
+      "result": "VIEW_SCENE"
+    },
+    {
+      "case": "changed_transform",
+      "result": "VIEW_TRANSFORM"
+    },
+    {
+      "case": "wrong_capture",
+      "result": "VIEW_BINDING"
+    },
+    {
+      "case": "wrong_binding",
+      "result": "VIEW_BINDING"
+    },
+    {
+      "case": "added_modifier",
+      "result": "VIEW_SCENE"
+    },
+    {
+      "case": "embedded_text",
+      "result": "VIEW_SCENE"
+    }
+  ],
+  "occurrences_retained": 725,
+  "package_seal_sha256": "3f7dcdb06d659360d3d93688a4efe60739525cc0282a509930df7947d55ac5c1",
+  "participant_usability": "not_measured",
+  "physical_clock_accuracy": "not_established",
+  "physical_correspondence": "not_established",
+  "ply_asset": {
+    "byte_size": 694564,
+    "sha256": "ba6ab55702814190bbf925f56d330eabc04fe77c382afb2604ba861f28143e10"
+  },
+  "ply_header_bytes": 164,
+  "point_count": 34720,
+  "preparation": {
+    "byte_size": 3793,
+    "sha256": "bc22980fea173c404d8265c564605460aeca0f1f80288227bd8662c349139ea1"
+  },
+  "private_evidence_root": "~/.codex/reports/reiyah/engine-anchor-opening-2026-09-13",
+  "question": "Can the existing viewer prepare the unique delivered LIDAR_TOP occurrence at the declared anchor timestamp and preserve original source-record identity?",
+  "raw_capture": {
+    "byte_size": 694400,
+    "sha256": "331054aa5887a65f5c7a8a6d5177c393cc5112d9a86f633d7c6bc7e391212b3b"
+  },
+  "real_comparison_bounds": [
+    "-8",
+    "8"
+  ],
+  "reference_judgments": "none_created_or_admitted",
+  "repository_suite": "399 prior full-suite tests retained at reference-identity; subsequent 12 changed fixture-module tests retained at catalog-lifetime. No broad suite rerun here.",
+  "retained_initial_failure": "The first native-probe command retained the adapter script argument. It exited during argument parsing before creating output. A fresh command selects the probe directly; adapter source and expected rejection controls did not change.",
+  "runtime": {
+    "blender_build_hash": "ec6e62d40fa9",
+    "blender_version": "5.1.2",
+    "python": "3.13.9"
+  },
+  "runtime_code_changed": false,
+  "scene": {
+    "byte_size": 539650,
+    "sha256": "90facdc2888867d5b784285c5cb43005920ba418e453aa2a46db4b7a28b84faa"
+  },
+  "selected_capture": "capture-000041",
+  "selected_record_trace": [
+    {
+      "all_selected_records_equal_original_raw_bytes": true,
+      "byte_size": 1651,
+      "point_indices": [
+        0,
+        17360,
+        34719
+      ],
+      "report": "programmatic-selection.json",
+      "sha256": "83f6f58d003a19e706c6e4b6f675bb6f692b1b77bbf2a619bdf3b08c46ba1060"
+    },
+    {
+      "all_selected_records_equal_original_raw_bytes": true,
+      "byte_size": 1651,
+      "point_indices": [
+        0,
+        17360,
+        34719
+      ],
+      "report": "reordered-selection.json",
+      "sha256": "565cf020f0bf0af9607a1fdf2e40243e5656bc3fa659f7a74843d419563a73d1"
+    }
+  ],
+  "selected_window": "window-0001",
+  "separately_structured_checks": [
+    "Original raw file equals the complete PLY body, outside Blender",
+    "Selected and reordered report records are sliced directly from the bound original raw capture"
+  ],
+  "source_commit": "fe937a8b398a58456ed2a4394488b385a7139590",
+  "source_index_record_bytes": 20,
+  "stale_capture_control": {
+    "expected_exit_code": 2,
+    "observed_code": "VIEW_BINDING",
+    "output_created": false
+  },
+  "third_party_payloads": "Original and derived capture bytes remain private; no capture payload is included in this verification artifact.",
+  "trusted_code": [
+    "Existing package/custody verifier for manifest admission",
+    "Existing native adapter for scene extraction and field verification; the native probe invokes this same code",
+    "Native Blender 5.1.2 PLY import, save and load implementation"
+  ],
+  "version": "0.1.0",
+  "windows_retained": 2
+}
