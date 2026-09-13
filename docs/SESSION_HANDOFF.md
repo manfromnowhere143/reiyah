@@ -1,3 +1,44 @@
+# Matching source trace and consumer repair, 2026-09-13
+
+The [checked procedure](PERCEPTION_MATCHING_TRACE_2026-09-13.md) follows all ten matching
+endpoints in the retained synthetic fixture to their correct world-specific reference records
+and original detector rows. Existing full-context joins suffice; no production interface,
+schema or protocol changed. One shared node has four distinct source record digests.
+The replay refuses incomplete joins and a substituted other-world digest, verifies original
+prediction array indices, and checks both referenced images against exact original bytes.
+
+The proposals name whole captures, with no point or pixel selection. Their captures precede
+the declared reference positions by two seconds. Source traceability establishes neither motion
+reconstruction nor physical correspondence. The comparison stays [-1,1] on this synthetic
+fixture. Actual participant observation and independent human judgments remain missing.
+
+Fable's sealed 5762ac0 correction was selected by manifest
+`4fc0d308d6deb8deae8619b619e2a0b6a2ae66fa71ab63d1493a402975a6e691`.
+The two requested repairs now reject the retained wrong-witness and missing-identity probes;
+six earlier forgeries and two rejection controls also fail, while all four honest reports pass.
+Accept those repairs for these bytes and probes. Preserve earlier failures. Broader robustness
+claims were not adopted; no Fable code, branch, status, outbox or process was changed.
+
+[Verification](../research/perception-matching-trace/0.1.0/verification.json) binds fresh trace
+and consumer runs. The existing 390 repository tests and 93 measurement tests are retained
+against unchanged source, not reported as fresh execution. Source preparation and trace costs
+are measured separately. This provides no human-effort advantage or scientific acceptance.
+
+Continue in a fresh Engine candidate. The next falsifier targets the reference compiler's
+work preflight: conditional edge literals may be missing from its cost accounting. Compare
+an exact dense conditional example with the existing evaluator before changing the guard.
+This is Engine compilation work, separate from Fable's planner, robustness model and comparator.
+An actual participant return still takes priority. Preserve all owner checkouts and closed packets.
+
+Real bounds [-8,8]; no admitted human references; actual participant usability and external
+scientific review missing. Gate A unaccepted; physical study unrun with no cohort or seed.
+P005 operator-reported published; no further publication or outreach. The autonomous window
+continues through 15:58:25 UTC on 13 September; this checkpoint does not end the mission.
+
+Earlier records below remain unchanged as dated history.
+
+---
+
 # Guarded reference sharing, 2026-09-13
 
 The [compiler checkpoint](PERCEPTION_REFERENCE_SHARING_2026-09-13.md) preserves identical

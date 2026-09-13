@@ -1,0 +1,156 @@
+{
+  "artifact_id": "reiyah.perception-matching-trace.verification",
+  "cost_scope": "Single local runs; not latency comparisons. Private checkpoint records investigation, preparation, verification, documentation and integration elapsed time separately. No human effort measurement.",
+  "dated_utc": "2026-09-13T10:49:23.752204+00:00",
+  "external_scientific_review": "missing",
+  "fable_consumer": {
+    "honest_controls_accepted": 4,
+    "manifest_sha256": "4fc0d308d6deb8deae8619b619e2a0b6a2ae66fa71ab63d1493a402975a6e691",
+    "new_forgery_probes_rejected": 2,
+    "payloads_checked": 10,
+    "prior_forgeries_rejected": 6,
+    "prior_rejection_controls_rejected": 2,
+    "results": {
+      "byte_size": 8188,
+      "sha256": "43471c28bcd9f6cdbba72642fd64062c87c54636a0cce287180d7272341b0ff4"
+    },
+    "scope": "Selected consumer repairs only, not broader robustness science or every checker claim",
+    "shared_trust": "Planner and checker use the unchanged cohort_packet.py; retained tiny witness proof independently counts three losses and the permitted split",
+    "source_binding": {
+      "source_commit": "5762ac01a157a3603181df1486df8a836d711f06",
+      "source_files": [
+        {
+          "byte_size": 14444,
+          "exported_as": "cohort_packet.py",
+          "path": "tools/measure/cohort_packet.py",
+          "sha256": "c991e79bfcd89f0d961393bc152f388b5f4d89f3cc2a030d02ad04fd26a71b9c"
+        },
+        {
+          "byte_size": 14628,
+          "exported_as": "resolution_plan.py",
+          "path": "tools/measure/resolution_plan.py",
+          "sha256": "ef07e4486daf30fb999f8a65b702807831dab3ebef065c447f3e60c235c52d5f"
+        },
+        {
+          "byte_size": 21415,
+          "exported_as": "check_resolution_plan.py",
+          "path": "tools/measure/check_resolution_plan.py",
+          "sha256": "cd10f8e4f2c56bfdfb0a42bb47f972dbf5711d23a665c31b384e2d685bb4671d"
+        }
+      ]
+    },
+    "source_commit": "5762ac01a157a3603181df1486df8a836d711f06",
+    "source_or_ref_changes": false
+  },
+  "fresh_processes": {
+    "baseline-1": {
+      "child_max_rss_bytes_macos": 55296000,
+      "elapsed_seconds": 1.1065263339551166,
+      "ended_utc": "2026-09-13T10:36:58.731367+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-13T10:36:57.624738+00:00"
+    },
+    "fable-premise-consumer-1": {
+      "child_max_rss_bytes_macos": 19300352,
+      "elapsed_seconds": 0.051359124947339296,
+      "ended_utc": "2026-09-13T10:39:47.064816+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-13T10:39:47.013352+00:00"
+    },
+    "trace-final": {
+      "child_max_rss_bytes_macos": 42008576,
+      "elapsed_seconds": 0.41654479096177965,
+      "ended_utc": "2026-09-13T10:47:47.220002+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-13T10:47:46.803351+00:00"
+    }
+  },
+  "gate_a": "unaccepted",
+  "new_source": {
+    "byte_size": 12394,
+    "path": "research/perception-matching-trace/0.1.0/replay.py",
+    "sha256": "24da1c0ecac0770421203583500bc15fe3423c1586a3d12cff1abd85b9262af1"
+  },
+  "next_falsifier": "Account for conditional edge literals in the compiler work guard; compare a permitted dense conditional graph to the unchanged evaluator estimate before editing.",
+  "participant_usability": "missing",
+  "production_code_changes": false,
+  "real_comparison": {
+    "additions": [
+      9,
+      7
+    ],
+    "bounds": [
+      "-8",
+      "8"
+    ],
+    "false_negative": "1",
+    "false_positive": "1",
+    "human_references": "none_admitted",
+    "tolerance": "1/10",
+    "weights": [
+      "1/2",
+      "1/2"
+    ]
+  },
+  "retained_validation": {
+    "measurement_files_rechecked": 107,
+    "measurement_tests": 93,
+    "measurement_tests_freshly_run": false,
+    "repository_tests": 390,
+    "repository_tests_freshly_run": false,
+    "source_record": {
+      "byte_size": 32994,
+      "sha256": "26bb9aee47fcbef81b3fdd978d7f52a22a914e0894370252ce1c01994b3d7755"
+    },
+    "tools_and_tests_files_rechecked": 182
+  },
+  "selected_synthetic_inputs": {
+    "SELECTED_INPUTS.json": {
+      "byte_size": 905,
+      "sha256": "ed66ab5622cead9a086e95c10cf3cd189c707905fc2485c7588e2a95e8148940"
+    },
+    "decision.json": {
+      "byte_size": 2309,
+      "sha256": "1b07ec8e6c6cf3e4c8fc3eb0dd7440c5a5ceacfb780111a9b2370b7ec8837100"
+    },
+    "reviewed/PREPARATION.json": {
+      "byte_size": 7075,
+      "sha256": "e60eb2f03c337c90a77486526df7ddca03d4bcd4cf3a228cc4f39e99d9480b2d"
+    },
+    "reviewed/common/comparison.json": {
+      "byte_size": 2671,
+      "sha256": "1cd3d96850f6ad4cf4a72851b2717581f34b0a9e9751f39b9cac8c71fcadd7c4"
+    }
+  },
+  "source_base": "cd63737bcc07f8b8e0e28cd9d3b11006fc352320",
+  "source_inventory": {
+    "byte_size": 54553,
+    "files": 297,
+    "sha256": "702fa5b4cbd323e81f233c805f08b6ee46c105c46d9b28ce6ee972667146085a"
+  },
+  "trace_claims": {
+    "capture_only_locator_kept_unavailable": true,
+    "capture_precedes_reference_position_us": 2000000,
+    "full_capture_bytes_equal_original": true,
+    "incomplete_joins_refused": 3,
+    "matching_pairs": 10,
+    "original_prediction_arrays": 4,
+    "original_row_indices": "all zero, checked against original arrays; eight other rows fail source-value correspondence",
+    "other_world_digest_refused": true,
+    "shared_node_distinct_reference_digests": 4,
+    "unique_capture_assets": 2
+  },
+  "trace_limits": [
+    "Explicitly synthetic two-world fixture only",
+    "No point or pixel observation",
+    "No physical association or motion reconstruction",
+    "No participant viewing, identity or independence",
+    "Existing source/admission/normalization and decision checker are shared trusted code",
+    "Not an alternate admission, release or general-purpose validator"
+  ],
+  "trace_result": {
+    "byte_size": 20470,
+    "sha256": "6b08e9f2e3da63dfbdbc68eb8a121462c57121a5719eb5d96405062a1f99156d"
+  },
+  "version": "0.1.0"
+}
