@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.8`
+Version: `0.1.9`
 
 Lifecycle status: `exploratory`
 
@@ -23,8 +23,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This prediction-input checkpoint starts from main
-`227e2fd60b6b618a3ccb8f6d0f31018dcd564765`, tree `0b5bc1a09d33def649388b9f87f32516f6e35624`.
+uncommitted ownership before acting. This successor-readiness checkpoint starts from main
+`97c3ffd7a70e4d4dc8edc2b76e76bb177bc8ecc2`, tree `1ea5b81afe0fa9156c0470752134c35a2a0a7238`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -40,18 +40,21 @@ or processes, or duplicate that implementation. Read current lane status before 
 overlapping work. Exchange only through separately selected immutable outboxes; a chat verdict
 or mutable branch tip is insufficient. No ownership transfer is implied by a consumer review.
 
-Private continuation instructions remain at `~/.codex/reports/reiyah/`:
-
-- `engine-continuation-2026-09-12/COPY_TO_CODEX.txt` and `SOURCE_BINDINGS.json`;
-- `engine-research-successor-2026-09-12/STANDARDS.md`, `TWO_LANES.md` and `OPERATIONS.md`;
-- `engine-autonomous-2026-09-13/WINDOW.json`, the completed earlier ten-hour window;
-- `engine-prediction-only-inputs-2026-09-13/LANE_STATUS.json`, then its `START_HERE.md` and exact closeout; and
-- that new task's `COPY_TO_FABLE.txt` and `SOURCE_BINDINGS.json` for the separately requested Fable continuation.
+The complete next-session instruction is
+`~/.codex/reports/reiyah/engine-successor-ready-2026-09-13/COPY_TO_CODEX.txt`.
+Read it completely, followed by that directory's `START_HERE.md`, `STANDARDS.md`, `TWO_LANES.md`,
+`OPERATIONS.md`, `SOURCE_BINDINGS.json` and `private/HANDOFF.json`. These current instructions
+replace obsolete operational details in the 12 September handoffs while preserving their
+historical evidence and scientific obligations. The source bindings name those predecessors,
+the completed `engine-autonomous-2026-09-13/WINDOW.json`, and the closed
+`engine-prediction-only-inputs-2026-09-13` checkpoint. Its `COPY_TO_FABLE.txt` was supplied by
+Daniel to the separate research session; this successor preparation does not restart that lane.
 
 Read the complete selected instructions. Reconcile their dated state against this continuation
 and live evidence. The earlier ten-hour window ended at **2026-09-13 15:58:25 UTC** and is complete.
-Daniel separately instructed continuing Engine work alongside Fable and updating the current
-README, roadmap and diagrams. Keep using fresh task identities; do not reopen that window or a
+Daniel separately instructed continuing Engine work alongside Fable, updating the current
+README, roadmap and diagrams, then reaching a clean stopping point with a professional successor
+packet. Keep using fresh task identities; do not reopen that window or a
 closed packet. The Fable continuation does not transfer the Engine mission. This does not authorize
 new outreach, deployment, physical control, a cloud campaign or physical-study selection.
 
@@ -69,7 +72,7 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 | What do Engine's command costs measure? | [Command accounting](ENGINE_EFFORT_ACCOUNTING_2026-09-13.md) reconstructs 204 outer runs across fourteen selected closed checkpoints. It excludes 124 copied receipts and retains 33 nested details without adding them again. Reported durations, UTC interval coverage and unmeasured human effort remain distinct. |
 | Does sharing preserve original partition worlds? | [Partition conformance](PERCEPTION_PARTITION_CONFORMANCE_2026-09-13.md) checks 5,400 explicit tiny cases against original full graphs and direct partial injections. Original operands, shared-node member identity, ordered provenance and joint loss are checked beyond the core certificate. No compiler defect was found in this grid. |
 | Can research receive predictions without annotation reads? | [Prediction-only inputs](PERCEPTION_PREDICTIONS_2026-09-13.md) retain all 4,876 submitted rows across the 16 exposed development frames, with original bytes and indices. Two guarded runs agree; a separate conventional reader checks every selected row. Historical selection independence and physical association are not established. |
-| What does Fable's raw experiment establish? | [The selected consumer review](FABLE_RAW_CONSUMER_REVIEW_2026-09-13.md) verifies nine aggregate thresholds and retains third-channel, zero-intersection, source-identity and greedy-order probes. Full raw association and Fable's reported 557 tests were not replayed. No research implementation was merged. |
+| What does Fable's latest correction establish? | [The current consumer review](FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md) checks 2,401 small-table sign classifications, 18 aggregate thresholds and default source-digest rejection. The raw helper remains disconnected from the corrected classifier, and the 14.025× span combines score/radius/rule changes. Full raw association and Fable's reported 581 tests were not replayed. No research implementation was merged. |
 
 The latest full repository suite passed **418 tests**, including 14 prediction-input additions,
 with no resource warnings. Eight additional standalone controls attack the separate source reader
@@ -119,14 +122,22 @@ commands, not a speed comparison. A missing capture-parent directory stopped the
 before child execution; that setup failure and the fresh corrected attempt remain retained.
 No production, frozen protocol, source payload or human review record changed.
 
-Fable's selected `overlap-parity-0.1.0` and `raw-association-0.1.0` exchanges bind source commits
-`aea2730a6e149bf40bbe53684b68f3f2b3954580` and `73ac8137465f9ae863ea215161cdbaced5fb2d7a`.
-All 13 payloads were verified. The current [consumer review](FABLE_RAW_CONSUMER_REVIEW_2026-09-13.md)
-states what was reproduced and what remains a research-lane obligation. A third detector is not
-guaranteed to identify the sign; a source filename-literal test is not runtime access verification.
-Select a newly sealed exchange for later corrections rather than repeating historical defects.
+Fable's latest selected `sign-domain-and-boundary-0.1.0` exchange binds source commit
+`ded19fc42af628309333884e526df6079d3b76e3`, manifest SHA-256
+`d747b88e6bcd4f30a9207a407b2a23fea4929da2031824fa09f89f3f89f0e9fb`.
+All ten payloads were verified. The current [consumer review](FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md)
+distinguishes accepted repairs, remaining exported-helper/prose issues and factor-specific cost
+of preparation choices. The automatic-third-channel and annotation-count-bound claims are now
+explicitly withdrawn by Fable. Select a newly sealed exchange for later corrections rather than
+repeating historical defects. The previous raw/overlap exchanges remain bound in their closed packet.
+The Engine's custody answer is exact: the 4,876 selected rows provide no declared per-row
+coordinate or timing error bounds. Nominal geometry and timestamps do not justify an association
+radius. The fresh audit rechecks 655 payload bindings across three closed Engine packets, both
+original submissions and all selected arrays; no physical reference is added.
 The README and [dated roadmap](ENGINE_ROADMAP_2026-09-13.md) now connect this result to the original
 mission, prior failures, common-operand comparison and next falsifiable product checks.
+Their nine Mermaid sources are unchanged from the rendered prediction-input checkpoint.
+No implementation, test, frozen protocol or older owner checkout changes in this successor audit.
 
 An actual participant return takes priority. The new, exposed development opening is
 `~/.codex/reports/reiyah/engine-anchor-opening-2026-09-13/private/opening/OPENING.md`, returning

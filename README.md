@@ -155,12 +155,15 @@ Comparing wider coefficient margins across different actual marginals did not es
 evidence; that interpretation is withdrawn. Earlier claims about worsening dependence across
 operating points also remain corrected, with their original records preserved.
 
-Fable's first raw-submission experiment leaves the dependence sign unresolved on its nine
-selected preparations. The consumer rechecks the threshold arithmetic, not the full raw grid.
-Adding a third detector does **not** guarantee identification: physical-object validity,
-association, unknown population and valid denominators still matter. The bounded counterexamples
-and remaining constructor obligations are recorded in the same review. These research results
-do not replace the Engine's paired detector loss.
+Fable's raw-submission experiment leaves the dependence sign unresolved on its selected
+preparations. The [latest correction review](docs/FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md)
+checks 18 aggregate thresholds, 2,401 small-table sign classifications and the default rejection
+of substituted source bytes. Adding a third detector does **not** guarantee identification;
+Fable has withdrawn that claim. Its raw-report helper still needs to use the corrected sign
+contract. The 14.025× spread varies score, radius and rule together; radius-only spans at fixed
+score and rule are 2.627×–4.133×. These conditional research results do not replace paired
+detector loss or establish physical associations. No per-row coordinate or timing error bounds
+are supplied by the Engine's original-row packet.
 
 ## A reference error the engine can expose
 
@@ -384,7 +387,7 @@ identities.
 | Read for | Start here |
 |---|---|
 | Current Engine direction and implementation | [Dated roadmap](docs/ENGINE_ROADMAP_2026-09-13.md), [latest checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md), [current continuation](docs/SESSION_HANDOFF.md), [decision interface](research/perception-decision/0.1.0/README.md) |
-| Independent research and its corrections | [Selected Fable consumer review](docs/FABLE_RAW_CONSUMER_REVIEW_2026-09-13.md); exact research commits and scope are retained there, separate from main integration |
+| Independent research and its corrections | [Current sign/custody consumer review](docs/FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md), [earlier raw/overlap review](docs/FABLE_RAW_CONSUMER_REVIEW_2026-09-13.md); exact research commits and scope remain separate from main integration |
 | Present evidence, limits and comparison with prior work | [11 September review](docs/ENGINE_CREDIBILITY_REVIEW_2026-09-11.md), [reproducible decision examples](research/perception-decision-review/0.1.0/README.md) |
 | Mission and scientific structure | [Scientific charter](docs/SCIENTIFIC_CHARTER.md), [architecture](docs/ARCHITECTURE.md), [mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) |
 | Current interpretation of sensor, human-proxy and LLM experiments | [Corrected synthesis](docs/GENERAL_SYNTHESIS.md), [current claim register](evidence/claim-status-register-2026-09-08T054835Z.json) |

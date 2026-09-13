@@ -1,6 +1,6 @@
 # Reiyah: the decision, the evidence and the next checks
 
-Document ID: `reiyah.engine.roadmap`. Version: `0.1.0`. Status: `exploratory`. Dated 13 September 2026.
+Document ID: `reiyah.engine.roadmap`. Version: `0.1.1`. Status: `exploratory`. Dated 13 September 2026.
 
 Reiyah's present product question is whether a perception-validation lead can make a better
 added-detector integration choice, or reach the same defensible choice with less total effort,
@@ -23,7 +23,7 @@ an object-detection result does not validate them by analogy.
 
 The [README](../README.md) links the retained findings and historical protocols. The
 [current continuation](SESSION_HANDOFF.md) records exact Engine state; the
-[Fable consumer review](FABLE_RAW_CONSUMER_REVIEW_2026-09-13.md) separates inspected research
+[Fable correction review](FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md) separates inspected research
 claims from main implementation. Earlier failures remain part of the evidence.
 
 ```mermaid
@@ -44,7 +44,7 @@ flowchart TB
 | Practical inspection | Engine: consume one actual opening/selection return against its exact original capture and indices | Observable interaction and participant effort, including a failed or unreviewable return |
 | Independent physical references | Engine coordinates the authorized staged protocol; reviewers supply actual observations | Both unassisted records locked before assistance, complete disagreements and admitted joint alternatives |
 | Raw association uncertainty | Fable: use selected original rows, preserve unmatched records and order, compare a declared rule with a serious baseline | A checked decision or abstention stable to a defensible association/error model, or a retained counterexample |
-| Conditional inference and input boundary | Fable: enforce source identity, trace runtime reads and repair zero/equality/third-channel claims | A sound set of conclusions over the declared feasible population; invalid and undefined cases preserved |
+| Conditional inference and input boundary | Fable: connect the checked sign classifier to its raw-report entry point, retain factor-specific sensitivity and inspect runtime read guarantees | One consistent consumed verdict over the declared domain; default source substitution now rejects, but complete read isolation is not established |
 | Equal useful comparison | Both lanes: same opportunities, references, weights, loss, tolerance and source evidence | One defensible integration choice with measured preparation, computation, verification, review and repair effort |
 | Generalization and stronger scientific claims | Separate future protocol and appropriately diverse inputs; no new cohort selected here | Held-out validation and dated primary comparisons that survive marginal, association and shared-data controls |
 
@@ -59,6 +59,11 @@ product proof. Test the simplest competent method first; retain parity if it suc
 decision, justified abstention, better observation or reduced measured effort can earn priority
 over a new statistic. A proposed route can be replaced after stating its deficiency, alternative,
 assumptions, comparator, cost and next falsifier.
+
+The delivered predictions carry nominal coordinates and sample identities, without declared
+per-row localization or timing error bounds. Research may explore a declared association family;
+its radius is not thereby a measured physical tolerance. The successor should prioritize actual
+participant returns and consume newly sealed Fable work without duplicating that lane.
 
 ## Ownership and authority
 
