@@ -1,0 +1,868 @@
+{
+  "artifact_id": "reiyah.engine.partition-conformance.verification",
+  "audit_tests": {
+    "byte_size": 5507,
+    "sha256": "2f3f27af212b25dcaf2d402bf7ccc4319425ab1671e09389e2c4efe87c4ca812"
+  },
+  "browser_availability": {
+    "byte_size": 580,
+    "sha256": "d0906d6af8addb9bf5eec05799a6821314e19cbe8c341ab11b994479c0cc020d"
+  },
+  "browser_observation": "2026-09-13T15:16:35.158Z existing runtime discovery returned []",
+  "case_row_count": 5400,
+  "cli_validation": {
+    "case": 192,
+    "case_output": {
+      "byte_size": 46864,
+      "sha256": "d0b76533ffde72bfdeb22c76cbce494341989c5a919b7563b26102a4d3c6490c"
+    },
+    "expected_bounds": [
+      "0",
+      "0"
+    ],
+    "invalid_exit_code": 2,
+    "invalid_stderr": {
+      "byte_size": 106,
+      "sha256": "56df7a255101573df3b282efa33233736cae308f18b692f1fb97d2d71cac699a"
+    },
+    "out_of_domain_limit": 5401
+  },
+  "compiler": {
+    "byte_size": 20734,
+    "sha256": "c3205a813c01d635b7b514304b037bff1bf2941e2c2472430566010ec6b2be34"
+  },
+  "complete_output": {
+    "byte_size": 3753153,
+    "sha256": "43029aaf31d9184923df9b01ff42977885959fd8cb376891bd7167813841a542"
+  },
+  "complete_output_repeated_in": [
+    "complete-2",
+    "complete-3"
+  ],
+  "cost_limits": "Local reported supervisor intervals and per-supervisor child RSS observations; no human effort, CPU time or controlled speed comparison. All failed and precursor runs retained.",
+  "costs": [
+    {
+      "check": "audit-tests",
+      "child_max_rss_bytes_macos": 37945344,
+      "elapsed_seconds": 0.20543412503320724,
+      "ended_utc": "2026-09-13T15:10:21.448928+00:00",
+      "exit_code": 1,
+      "receipt": {
+        "byte_size": 1059,
+        "sha256": "584ff7971e94d61a7453f5246839d56be1871674848b3d7481031662608c7491"
+      },
+      "started_utc": "2026-09-13T15:10:21.243357+00:00"
+    },
+    {
+      "check": "audit-tests-complete",
+      "child_max_rss_bytes_macos": 39862272,
+      "elapsed_seconds": 0.18558737495914102,
+      "ended_utc": "2026-09-13T15:15:39.601227+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1059,
+        "sha256": "fabfacf2b4b528cf972254b15c6a6c2405cef072ba24fd515967cc6260f144f2"
+      },
+      "started_utc": "2026-09-13T15:15:39.415481+00:00"
+    },
+    {
+      "check": "audit-tests-final",
+      "child_max_rss_bytes_macos": 36995072,
+      "elapsed_seconds": 0.14833070803433657,
+      "ended_utc": "2026-09-13T15:11:18.557968+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1059,
+        "sha256": "d74d32843ef4d6629f9009ee3436e74c2f15efe6e3490851479365fc814ac886"
+      },
+      "started_utc": "2026-09-13T15:11:18.409512+00:00"
+    },
+    {
+      "check": "cli-example",
+      "child_max_rss_bytes_macos": 38338560,
+      "elapsed_seconds": 0.1725339579861611,
+      "ended_utc": "2026-09-13T15:29:17.858823+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1160,
+        "sha256": "da30c72cd6e5fc4e5fd0a6ece1643df259f5cdf0dd191c07cc50f3729ca40397"
+      },
+      "started_utc": "2026-09-13T15:29:17.686167+00:00"
+    },
+    {
+      "check": "cli-invalid",
+      "child_max_rss_bytes_macos": 37896192,
+      "elapsed_seconds": 0.16628216695971787,
+      "ended_utc": "2026-09-13T15:29:17.852594+00:00",
+      "exit_code": 2,
+      "receipt": {
+        "byte_size": 1161,
+        "sha256": "3033d9771f20e82420a4b3b04b01c71ec5d4a79d774b4dde1081e67c306fcee3"
+      },
+      "started_utc": "2026-09-13T15:29:17.686167+00:00"
+    },
+    {
+      "check": "complete-1",
+      "child_max_rss_bytes_macos": 43941888,
+      "elapsed_seconds": 18.877740291994996,
+      "ended_utc": "2026-09-13T15:12:14.719261+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1137,
+        "sha256": "0bebb8c85a3be353a7f337f0598992a99789777b39d26ffbd80d23a40a57d86a"
+      },
+      "started_utc": "2026-09-13T15:11:55.841429+00:00"
+    },
+    {
+      "check": "complete-2",
+      "child_max_rss_bytes_macos": 43024384,
+      "elapsed_seconds": 18.162856749957427,
+      "ended_utc": "2026-09-13T15:16:39.800114+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1137,
+        "sha256": "0e62f8965000099727fee004e5b16422582c83a8e5cbc5ee33a981be7c4e1d66"
+      },
+      "started_utc": "2026-09-13T15:16:21.637166+00:00"
+    },
+    {
+      "check": "complete-3",
+      "child_max_rss_bytes_macos": 42500096,
+      "elapsed_seconds": 18.200089000049047,
+      "ended_utc": "2026-09-13T15:17:47.118322+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1137,
+        "sha256": "58d8f0ec2849e56d4b0e4b969fefb6e19ad1fecd66014c5f1a1a6bda25c286e3"
+      },
+      "started_utc": "2026-09-13T15:17:28.918158+00:00"
+    },
+    {
+      "check": "examples",
+      "child_max_rss_bytes_macos": 66879488,
+      "elapsed_seconds": 0.23161091597285122,
+      "ended_utc": "2026-09-13T15:18:51.141654+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1090,
+        "sha256": "fd124c656fba8d9c9d1ad365330d3cb7e257de378e7a69efc5519ee50951b13f"
+      },
+      "started_utc": "2026-09-13T15:18:50.909950+00:00"
+    },
+    {
+      "check": "pilot",
+      "child_max_rss_bytes_macos": 39665664,
+      "elapsed_seconds": 0.3820815000217408,
+      "ended_utc": "2026-09-13T15:06:07.830020+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1160,
+        "sha256": "510bfe90b08e37d1988da7860631e1c51552ad4f0d42d5f9d1c8c7a2bb425a98"
+      },
+      "started_utc": "2026-09-13T15:06:07.447831+00:00"
+    },
+    {
+      "check": "research-consistency",
+      "child_max_rss_bytes_macos": 24576000,
+      "elapsed_seconds": 1.7218565420480445,
+      "ended_utc": "2026-09-13T15:26:19.917929+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1010,
+        "sha256": "2e38bdef37cf968900150f54c1363689d1983c7c8145d5a9246a965577fd3a2e"
+      },
+      "started_utc": "2026-09-13T15:26:18.195956+00:00"
+    },
+    {
+      "check": "sharing-control-after",
+      "child_max_rss_bytes_macos": 38977536,
+      "elapsed_seconds": 0.15867408295162022,
+      "ended_utc": "2026-09-13T15:15:39.574334+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1092,
+        "sha256": "e6de5d66890b85789e2df877740a56e0c0e53ece849f3a75faaf7cfb818fdaee"
+      },
+      "started_utc": "2026-09-13T15:15:39.415480+00:00"
+    },
+    {
+      "check": "sharing-control-before",
+      "child_max_rss_bytes_macos": 34865152,
+      "elapsed_seconds": 0.15567516593728215,
+      "ended_utc": "2026-09-13T15:14:29.295104+00:00",
+      "exit_code": 1,
+      "receipt": {
+        "byte_size": 1094,
+        "sha256": "9a947427dc32a99a69c98c11d66ddb0229bb222957d3302ec33e9a47f1c2057f"
+      },
+      "started_utc": "2026-09-13T15:14:29.139321+00:00"
+    },
+    {
+      "check": "weight-control-after",
+      "child_max_rss_bytes_macos": 37568512,
+      "elapsed_seconds": 0.18259949993807822,
+      "ended_utc": "2026-09-13T15:10:21.426076+00:00",
+      "exit_code": 0,
+      "receipt": {
+        "byte_size": 1091,
+        "sha256": "527556b602be3041e68d0298f5f8b5be618823236d06aaa9a22719cbebc18042"
+      },
+      "started_utc": "2026-09-13T15:10:21.243358+00:00"
+    },
+    {
+      "check": "weight-control-before",
+      "child_max_rss_bytes_macos": 36536320,
+      "elapsed_seconds": 0.163375583011657,
+      "ended_utc": "2026-09-13T15:08:30.113502+00:00",
+      "exit_code": 1,
+      "receipt": {
+        "byte_size": 1091,
+        "sha256": "e55c10e2bcf97aee793bf130cd0d4ec2fde6c21cc189d45a2d9eb84b8be64629"
+      },
+      "started_utc": "2026-09-13T15:08:29.950009+00:00"
+    }
+  ],
+  "domain": {
+    "anchors_per_world": 2,
+    "artifact_id": "reiyah.engine.partition-conformance.domain",
+    "cases": 5400,
+    "dimensions": {
+      "class_rule": 2,
+      "geometry": 3,
+      "left_partition": 15,
+      "right_partition": 15,
+      "source_spelling": 2,
+      "weights": 2
+    },
+    "go_decision": "Proceed with one bounded full grid; monitor time and memory. Not an efficiency comparison.",
+    "original_planning_record": {
+      "byte_size": 851,
+      "sha256": "2b77d9cbdfbc68b78fd5b814ebfa7b2f84204aefefe572ae2ea332d2fef1a9d6"
+    },
+    "pilot": {
+      "auditor_state": "Initial weight guard incomplete; cost pilot only; final audit controls corrected before full grid",
+      "cases": 48,
+      "child_max_rss_bytes_macos": 39665664,
+      "elapsed_seconds": 0.3820815000217408
+    },
+    "planning_extrapolation_seconds": 42.98416875244584,
+    "planning_replay_sha256": "1de18c19046de860009e48c263dea80034eddbd7316b32c30acde8c1a49155d9",
+    "planning_state": "Cost expansion decision before adding the shared-identity guard; selected final reproducer bound separately",
+    "proposal_records_per_anchor": 4,
+    "version": "0.1.0",
+    "worlds_per_case": 2
+  },
+  "examples": {
+    "artifact_id": "reiyah.engine.partition-conformance.examples",
+    "files": [
+      {
+        "byte_size": 54992,
+        "case": 0,
+        "path": "private/examples/case-0000.json",
+        "sha256": "873910ef56718d0b8f4424d0b0a8d18c3115b443794c6eecb2226c088e1120dd"
+      },
+      {
+        "byte_size": 52744,
+        "case": 4,
+        "path": "private/examples/case-0004.json",
+        "sha256": "16a865cc224c1dc85925c5cd049bd142c9c7c3438fe999242c44a5c6d3966bd9"
+      },
+      {
+        "byte_size": 51066,
+        "case": 12,
+        "path": "private/examples/case-0012.json",
+        "sha256": "d86e6cf9cf2684203883058b0d4352dfd0950c856b23c9d3a4960945c5326b83"
+      },
+      {
+        "byte_size": 49840,
+        "case": 16,
+        "path": "private/examples/case-0016.json",
+        "sha256": "700adcbd11cc1ab0cbf9fb92d0058ee55499449ba82f479a41e75d965b46bc50"
+      },
+      {
+        "byte_size": 50167,
+        "case": 28,
+        "path": "private/examples/case-0028.json",
+        "sha256": "5a0dd68f0990f81283b605c26451a7181b7e8906ea6962b62b4f0dc492edcddf"
+      },
+      {
+        "byte_size": 50168,
+        "case": 29,
+        "path": "private/examples/case-0029.json",
+        "sha256": "622cd6b3f076b5d99e27f8ad17d8530c715ae3c326a82695ee9b7291e5158383"
+      },
+      {
+        "byte_size": 42903,
+        "case": 2498,
+        "path": "private/examples/case-2498.json",
+        "sha256": "aa431fbd7bc38de37b565129999dd7a1b3e6d49706219cd4ef9bdad7ddfd703f"
+      },
+      {
+        "byte_size": 32820,
+        "case": 3074,
+        "path": "private/examples/case-3074.json",
+        "sha256": "cb117736e021def84b17505285ba6f2bbbb07f6c5fda251e2ee799055fe77c11"
+      }
+    ],
+    "scope": "Post-run examples for each observed arithmetic result and declared controls; full grid rows retained, no physical-study selection",
+    "selection": {
+      "different-groups-equal-graphs": 2498,
+      "first-bounds--1,-1": 12,
+      "first-bounds--1/3,1/3": 29,
+      "first-bounds-0,0": 28,
+      "first-bounds-1,1": 0,
+      "mixed-classes": 4,
+      "permuted-full-member-group": 3074,
+      "strict-distance-boundary": 16
+    },
+    "summary": {
+      "artifact_id": "reiyah.engine.partition-conformance.result",
+      "bounds_counts": [
+        {
+          "bounds": [
+            "-1",
+            "-1"
+          ],
+          "count": 1692
+        },
+        {
+          "bounds": [
+            "-1/3",
+            "1/3"
+          ],
+          "count": 888
+        },
+        {
+          "bounds": [
+            "0",
+            "0"
+          ],
+          "count": 888
+        },
+        {
+          "bounds": [
+            "1",
+            "1"
+          ],
+          "count": 1932
+        }
+      ],
+      "case_rows_sha256": "7270538ccd28876b8665ddb71dbc3a4cd66e9d684180f51fca740471e036bfe1",
+      "cases_checked": 5400,
+      "compiled_nodes_checked": 47088,
+      "compiler_sha256": "c3205a813c01d635b7b514304b037bff1bf2941e2c2472430566010ec6b2be34",
+      "complete_declared_grid": true,
+      "declared_cases": 5400,
+      "evidence_kind": "synthetic_compiler_conformance",
+      "human_references": "none_admitted",
+      "original_active_edges_checked": 42000,
+      "partition_definition": [
+        [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "partitions": 15,
+      "physical_coverage": "not_established",
+      "real_bounds": [
+        "-8",
+        "8"
+      ],
+      "source_mappings_checked": 53280,
+      "version": "0.1.0"
+    },
+    "version": "0.1.0"
+  },
+  "external_scientific_review": "missing",
+  "fable": "No comparator, planner, checker, error-model, source, ref, status, outbox or process change",
+  "final_summary": {
+    "artifact_id": "reiyah.engine.partition-conformance.result",
+    "bounds_counts": [
+      {
+        "bounds": [
+          "-1",
+          "-1"
+        ],
+        "count": 1692
+      },
+      {
+        "bounds": [
+          "-1/3",
+          "1/3"
+        ],
+        "count": 888
+      },
+      {
+        "bounds": [
+          "0",
+          "0"
+        ],
+        "count": 888
+      },
+      {
+        "bounds": [
+          "1",
+          "1"
+        ],
+        "count": 1932
+      }
+    ],
+    "case_rows_sha256": "7270538ccd28876b8665ddb71dbc3a4cd66e9d684180f51fca740471e036bfe1",
+    "cases_checked": 5400,
+    "compiled_nodes_checked": 47088,
+    "compiler_sha256": "c3205a813c01d635b7b514304b037bff1bf2941e2c2472430566010ec6b2be34",
+    "complete_declared_grid": true,
+    "declared_cases": 5400,
+    "evidence_kind": "synthetic_compiler_conformance",
+    "human_references": "none_admitted",
+    "original_active_edges_checked": 42000,
+    "partition_definition": [
+      [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      [
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    ],
+    "partitions": 15,
+    "physical_coverage": "not_established",
+    "real_bounds": [
+      "-8",
+      "8"
+    ],
+    "source_mappings_checked": 53280,
+    "version": "0.1.0"
+  },
+  "fresh_targeted_tests": 8,
+  "gate_a": "unaccepted",
+  "human_references": "none_admitted",
+  "participant_usability": "unobserved",
+  "post": "P005 operator-reported published; no further publication or outreach",
+  "prior_incomplete_auditor_full_run": {
+    "check": "complete-1",
+    "output": {
+      "byte_size": 3753153,
+      "sha256": "43029aaf31d9184923df9b01ff42977885959fd8cb376891bd7167813841a542"
+    },
+    "source": {
+      "byte_size": 13894,
+      "sha256": "1de18c19046de860009e48c263dea80034eddbd7316b32c30acde8c1a49155d9"
+    },
+    "status": "Retained precursor, not final identity-guard evidence"
+  },
+  "real_bounds": [
+    "-8",
+    "8"
+  ],
+  "reproducer": {
+    "byte_size": 14196,
+    "sha256": "80177b48c67c6213de16d0d73a92519257cbc97742f3db03c7f2854ed0275eb5"
+  },
+  "retained_validation": {
+    "measurement_tests": 93,
+    "prior_accounting_verification": {
+      "byte_size": 22843,
+      "sha256": "796b0d61cc6f758f4357af29986fa295508381facf297959cc0fffd6e9889286"
+    },
+    "prior_command_accounting_tests": 8,
+    "repository_tests": 404,
+    "source_bindings": {
+      "RETAINED_MEASUREMENT.json": {
+        "files_rechecked": 107,
+        "manifest": {
+          "byte_size": 20401,
+          "sha256": "1616653a515e53c05944fd444632d2184316b2b6426ec84f8ac53e9b7e315801"
+        }
+      },
+      "TEST_SOURCE_SELECTION.json": {
+        "files_rechecked": 182,
+        "manifest": {
+          "byte_size": 32552,
+          "sha256": "edcb4bacd666cbba2c2c1b240c6956346d7bd23a7e9e6c3999abb6f4c6569f4a"
+        }
+      }
+    },
+    "state": "Retained without replay; source bindings rechecked"
+  },
+  "scientific_scope": "Finite conformance to the existing declared Engine contract; no new method, benchmark performance or state-of-the-art claim. Synthetic partitions do not define an admissible physical error model or cost.",
+  "shared_trusted_code": [
+    "tests/test_perception_reference.py input construction and source normalization",
+    "tools/perception_reference.py selected compiler c3205a813c01d635b7b514304b037bff1bf2941e2c2472430566010ec6b2be34",
+    "Engine contract canonical serialization and producer/checker; checker called with producer matching-certificate routine disabled",
+    "Selected Python 3.14.2 standard library and existing read-only runtime; source inspector uses separate rational parsing, geometry edges and cardinality-ordered partial injections"
+  ],
+  "source_commit": "edcef820c69b96d01be9d2f74dfa69af34c18c1a",
+  "source_corrections": [
+    {
+      "after_check": "weight-control-after",
+      "after_output": {
+        "byte_size": 72240,
+        "sha256": "a6027568b2f4ac46d1422bfbc2bfa21585f186edfa545b78f5c5118c9062b41f"
+      },
+      "after_verdict": "ORIGINAL_OPERANDS",
+      "before_check": "weight-control-before",
+      "before_output": {
+        "byte_size": 72243,
+        "sha256": "4f35839828a16919b18bf7570835532f01eb891e68bfaf5bcbea56de26dae044"
+      },
+      "before_source": {
+        "byte_size": 12916,
+        "sha256": "d3bb0b6e80139f77b421d998fc49bbb3db450e1db0b8b6a5f499eca278b391a9"
+      },
+      "kind": "original_operand_guard",
+      "scope": "New auditor defect, not selected compiler or Fable defect"
+    },
+    {
+      "after_check": "sharing-control-after",
+      "after_output": {
+        "byte_size": 38316,
+        "sha256": "3909005f08d136ebc947c470375eb7c9130215e1fb24d47322e960f6dfd51476"
+      },
+      "after_verdict": "SHARED_NODE_IDENTITY",
+      "before_check": "sharing-control-before",
+      "before_output": {
+        "byte_size": 38316,
+        "sha256": "4ea2627bb70ba77bf74cdb5a17a479ff93a7c56f26d386977813b817917eeaa5"
+      },
+      "before_source": {
+        "byte_size": 13894,
+        "sha256": "1de18c19046de860009e48c263dea80034eddbd7316b32c30acde8c1a49155d9"
+      },
+      "kind": "shared_identity_guard",
+      "scope": "New auditor defect, not selected compiler or Fable defect"
+    },
+    {
+      "before_check": "audit-tests",
+      "before_source": {
+        "byte_size": 4306,
+        "sha256": "714d4717786b928de090a2a08ff78109d51985fa40e0f4bc02948894d1450f76"
+      },
+      "before_transcript": {
+        "byte_size": 1941,
+        "sha256": "f37d10b54f7db4751e753d98a71ac021830536287b8434eb694a12dabaf70b07"
+      },
+      "correction": "Select the actual full member partition, index 8, by content instead of assuming lexical final index 14 is the merged group. No generator or compiler change.",
+      "kind": "fixture_partition_index"
+    }
+  ],
+  "status": "exploratory",
+  "version": "0.1.0"
+}

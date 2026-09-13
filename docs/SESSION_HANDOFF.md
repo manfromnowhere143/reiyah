@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.5`
+Version: `0.1.6`
 
 Lifecycle status: `exploratory`
 
@@ -23,8 +23,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This command-accounting checkpoint starts from main
-`dbee94d382942c4be2e535f1df3c4b5ac40f92f5`, tree `6d7479c4e90f2bc9a725479c51f82d5c75bf0477`.
+uncommitted ownership before acting. This partition-conformance checkpoint starts from main
+`edcef820c69b96d01be9d2f74dfa69af34c18c1a`, tree `d1f4a71b5a94e08976fdd4992348912bd5141b40`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -63,6 +63,7 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 | Is the native viewing procedure ready? | [The anchor opening](PERCEPTION_ANCHOR_OPENING_2026-09-13.md) selects a unique delivered capture at the declared anchor timestamp from all 725 supplied occurrences. Every original point record is retained; save/reopen, vertex reordering and stale-capture rejection pass. [Checked preparation](PERCEPTION_VIEWER_PREPARATION_2026-09-13.md), [output custody](PERCEPTION_VIEWER_CUSTODY_2026-09-13.md) and [selection boundary](PERCEPTION_SELECTION_EVIDENCE_2026-09-13.md) supply the unchanged adapter. Actual interactive viewing and participant usability remain unobserved. |
 | Are Fable's requested checker repairs accepted? | The [matching-trace consumer review](PERCEPTION_MATCHING_TRACE_2026-09-13.md) accepts only selected `5762ac01a157a3603181df1486df8a836d711f06` bytes and retained probes. Broader robustness claims were not adopted. Earlier defects remain historical evidence. |
 | What do Engine's command costs measure? | [Command accounting](ENGINE_EFFORT_ACCOUNTING_2026-09-13.md) reconstructs 204 outer runs across fourteen selected closed checkpoints. It excludes 124 copied receipts and retains 33 nested details without adding them again. Reported durations, UTC interval coverage and unmeasured human effort remain distinct. |
+| Does sharing preserve original partition worlds? | [Partition conformance](PERCEPTION_PARTITION_CONFORMANCE_2026-09-13.md) checks 5,400 explicit tiny cases against original full graphs and direct partial injections. Original operands, shared-node member identity, ordered provenance and joint loss are checked beyond the core certificate. No compiler defect was found in this grid. |
 
 The retained latest full repository suite passed **404 tests**, including five member-equivalence additions,
 with no resource warnings. The earlier [database-lifetime trace](PERCEPTION_CATALOG_LIFETIME_2026-09-13.md)
@@ -75,7 +76,7 @@ member order in common operands and rejects rehashed provenance rewriting. The p
 normalization was withdrawn because the parser already rejects noncanonical spellings. These
 examples add no human judgment, interactive observation or participant evidence.
 
-The current accounting audit changes no runtime, tools or repository tests. Its eight fresh
+The prior accounting audit changed no runtime, tools or repository tests. Its eight retained
 standalone checks include all 1,024 subsets of ten tiny intervals, plus a separate source reader
 and an independent sweep of the recorded timeline. Public analysis repeats byte for byte.
 The fourteen-checkpoint selection ends at 14:26:40.949062 UTC; its recorded outer durations sum
@@ -85,6 +86,17 @@ remains unmeasured, and the Chrome checkpoint's absent canonical receipts do not
 Read its [verification](../research/engine-effort-accounting/0.1.0/verification.json) and private
 source selection before consuming a total. Prospective preparation, verification, review,
 computation, integration and repair costs remain required for both analysts' fair comparison.
+
+The current partition audit adds eight fresh fault/coverage checks and two byte-identical full
+grid runs, checking 42,000 active edges and 53,280 source mappings. The two runs took 18.163 and
+18.200 reported command seconds. The new audit initially accepted changed compiled weights and
+sharing across different member groups when numerical results agreed; both failed controls,
+source versions and corrections are retained. A mistaken test partition index was corrected by
+selecting its member content. No compiler, runtime, repository test, Fable source or protocol
+changed. Read its [verification](../research/perception-partition-conformance/0.1.0/verification.json)
+before consuming these finite conformance claims. This is not a physical reference-error model
+or a human-effort comparison. Browser discovery at 15:16:35 UTC still returned no available
+browser; no interactive viewing was inferred from code or background checks.
 
 Fable's remote tip `a3912dcea6606b40727e6b549fb09cfeaccc7cf0` was observed during this task.
 Its newer claims were not consumed or accepted through that mutable ref. Select a newly sealed
