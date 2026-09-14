@@ -1,0 +1,55 @@
+{
+  "also_run_unchanged": [
+    "the insertion family, one insertion per unmatched retained detection at its own position",
+    "an independent source reconstruction from the original tables, to the same standard as the first case: membership, categories, ego pose, range filter, suppression rule and both matchings rebuilt here before any result is accepted"
+  ],
+  "artifact_id": "reiyah.label-dependence.preregistration",
+  "declared_outcomes": {
+    "all_three_are_published": true,
+    "inconclusive": "the search exceeds the declared budget before finding a set. A lower bound on the ratio is reported and no replication claim is made either way",
+    "non_replication": "fragility ratio greater than 1. The second verdict carries redundancy the first did not, and the first finding narrows to its own cohort",
+    "replication": "fragility ratio 1. The second verdict is also at its arithmetic floor, and the first result repeats whatever the raw breakdown numbers are"
+  },
+  "fixed_before_the_case_exists": true,
+  "held_fixed": [
+    "the declared loss and its penalties",
+    "the anchor weights as the case declares them",
+    "the tolerance as the case declares it",
+    "every prediction and its score",
+    "both configurations",
+    "the class map",
+    "the geometry",
+    "the suppression rule"
+  ],
+  "if_the_case_differs_structurally": "if the second case has an unsupported baseline, an open reference, more than one admitted reading or a different loss, that is reported as a structural difference and the ratio is not forced onto it",
+  "question": "does the first case's sensitivity result repeat on a second decision, once the different anchor weights and the different margin to the threshold are accounted for",
+  "recorded_utc": "2026-09-14T16:45:20.958145+00:00",
+  "search": {
+    "budget": "250000 subset evaluations, declared here rather than chosen after the fact",
+    "no_pruning": "subsets are not pruned by single deletion effect. Two labels can each be absorbed alone and be decisive together, because the matching reassigns around either one and not around both. A search that discarded labels with no individual effect would miss exactly those",
+    "start_size": "the arithmetic floor, since no smaller set can cross"
+  },
+  "status_at_writing": "the second case has not been delivered. Its anchor weights, its margin to the tolerance and its label count are unknown to this lane. This document is written now so that the analysis cannot be shaped by the answer",
+  "the_confound_this_exists_to_prevent": {
+    "statement": "deleting one annotation reduces its anchor's gain by at most one, so it moves the weighted decision by at most (a + b) times that anchor's weight. A case whose margin above the tolerance exceeds that step cannot be changed by any single deletion, whatever its labels are",
+    "why_it_matters": "reporting that as robustness would be a false result. The first case's breakdown number of 1 is not comparable to a second case's breakdown number unless both are read against their own arithmetic",
+    "worked_example": "with unit penalties, two anchors at weight 1/2 and a tolerance of 1/10, a decision of +1 has a floor of 1 and a decision of +3 has a floor of 3"
+  },
+  "the_measure": {
+    "fragility_ratio": "k_observed / k_floor",
+    "k_floor": "ceil( (weighted decision - tolerance) / max_i (a + b) * weight_i )",
+    "k_observed": "the smallest number of single label deletions that changes the improvement criterion, searched exhaustively by increasing size",
+    "reading": {
+      "1": "the verdict is as fragile as its own arithmetic allows",
+      "greater than 1": "the labels carry redundancy beyond what arithmetic forces",
+      "unreached": "the search budget was exceeded and no ratio is claimed"
+    }
+  },
+  "version": "0.3.0",
+  "what_is_not_claimed_whatever_the_result": [
+    "that any annotation is wrong",
+    "that a count of hypothetical corrections is a probability",
+    "that two cases are a generalization result",
+    "anything about the open physical comparison, which stays at its own state"
+  ]
+}

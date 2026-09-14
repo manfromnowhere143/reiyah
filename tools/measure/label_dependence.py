@@ -43,9 +43,11 @@ import sys
 import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from itertools import combinations  # noqa: E402
+
 from cohort_packet import CaseError, build, maximum_matching  # noqa: E402
 
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 PREREGISTRATION = "24cb90eff90f60431fd92cd25e504842eb24898e1ec40c1cc4399601e38cfe5d"
 INSERTION_PREREGISTRATION = "38af5ed9442632919b51751ee09693da2a13ca62626291624613f3978a9c8c72"
 
@@ -211,6 +213,119 @@ def classify(baseline, results, tolerance):
                                      "highest": str(max(deltas)) if deltas else None},
             "distinct_weighted_deltas": sorted({str(d) for d in deltas},
                                                key=lambda s: Fraction(s))}
+
+
+def arithmetic_floor(case):
+    """The fewest deletions that could cross the tolerance, on arithmetic alone.
+
+    Deleting one annotation reduces its anchor's gain by at most one, so it moves
+    the weighted decision by at most `(a + b) * weight_i`. With `k` deletions the
+    decision can fall by at most `k` times the largest such step. So no set smaller
+    than
+
+        k_floor = ceil( (D - tolerance) / max_i (a + b) * weight_i )
+
+    can change the criterion, whatever the labels are.
+
+    This matters because a case with a comfortable margin can be robust to any
+    single deletion for a reason that has nothing to do with its labels. Reporting
+    that as robustness would be a false result, and the two cases this lane is
+    comparing do not share a margin or a weighting.
+    """
+    loss = case["loss"]
+    a = Fraction(loss["false_negative"])
+    b = Fraction(loss["false_positive"])
+    tolerance = Fraction(loss["tolerance"])
+    baseline = evaluate(case)
+    decision = Fraction(baseline["weighted_delta"])
+    step = max((a + b) * Fraction(anchor["weight"]) for anchor in case["anchors"])
+    margin = decision - tolerance
+    if margin <= 0:
+        return {"criterion": baseline["criterion"], "margin": str(margin),
+                "largest_single_step": str(step), "k_floor": 0,
+                "note": "the criterion is not supported, so no deletion is needed to change it"}
+    floor = -((-margin) // step)
+    return {"criterion": baseline["criterion"], "weighted_delta": str(decision),
+            "tolerance": str(tolerance), "margin": str(margin),
+            "largest_single_step": str(step), "k_floor": int(floor),
+            "why": ("one deletion moves one anchor's gain by at most one, so the decision moves "
+                    "by at most (a + b) times that anchor's weight"),
+            "consequence": ("no set of fewer than k_floor deletions can change the criterion on "
+                            "this case, whatever its labels are. Robustness below k_floor is "
+                            "arithmetic and is not evidence about the annotation")}
+
+
+def breakdown(case, budget=250000):
+    """The smallest set of deletions that changes the criterion, searched by size.
+
+    No pruning by single deletion effect is applied, and that is deliberate. Two
+    labels can each be absorbed alone and decisive together: the matching reassigns
+    around either one, and not around both. A search that discarded labels with no
+    individual effect would miss exactly those, so every subset is recomputed.
+    """
+    baseline = evaluate(case)
+    rows = labels(case)
+    floor = arithmetic_floor(case)
+    start = time.perf_counter()
+    evaluations = 0
+    for size in range(max(1, floor["k_floor"]), len(rows) + 1):
+        total = 1
+        for index in range(size):
+            total = total * (len(rows) - index) // (index + 1)
+        if evaluations + total > budget:
+            return {"state": "bracketed", "k_floor": floor["k_floor"],
+                    "searched_up_to": size - 1, "evaluations": evaluations,
+                    "budget": budget, "witness": None,
+                    "seconds": round(time.perf_counter() - start, 3),
+                    "conclusion": (f"no set of {size - 1} or fewer deletions changes the criterion; "
+                                   f"size {size} exceeds the declared evaluation budget and no "
+                                   "smallest set is claimed")}
+        for chosen in combinations(rows, size):
+            evaluations += 1
+            edited = case
+            for row in chosen:
+                edited = without(edited, row["anchor"], row["_id"])
+            outcome = evaluate(edited)
+            if outcome["criterion"] != baseline["criterion"]:
+                return {"state": "found", "k_observed": size, "k_floor": floor["k_floor"],
+                        "at_the_arithmetic_floor": size == floor["k_floor"],
+                        "fragility_ratio": str(Fraction(size, max(floor["k_floor"], 1))),
+                        "evaluations": evaluations,
+                        "seconds": round(time.perf_counter() - start, 3),
+                        "witness": [{"anchor": r["anchor"], "local_index": r["local_index"],
+                                     "class": r["class"]} for r in chosen],
+                        "weighted_delta": outcome["weighted_delta"],
+                        "criterion": outcome["criterion"]}
+    return {"state": "none_exists", "k_floor": floor["k_floor"], "evaluations": evaluations,
+            "seconds": round(time.perf_counter() - start, 3), "witness": None}
+
+
+def fragility(path, expected=None, budget=250000):
+    """The comparable quantity across cases with different weights and margins."""
+    found = digest(path)
+    if expected is not None and found != expected:
+        return {"state": "digest_mismatch", "expected_sha256": expected, "found_sha256": found}
+    with open(path, "r", encoding="utf-8") as handle:
+        case = json.load(handle)
+    floor = arithmetic_floor(case)
+    result = breakdown(case, budget)
+    return {
+        "artifact_id": "reiyah.label-dependence.fragility", "version": VERSION,
+        "case_sha256": found,
+        "arithmetic_floor": floor,
+        "breakdown": result,
+        "reading": ({"fragility_ratio": result.get("fragility_ratio"),
+                     "meaning": ("one means the verdict is as fragile as its own arithmetic "
+                                 "allows: the smallest set that could possibly cross does cross. "
+                                 "Larger means the labels carry real redundancy")}
+                    if result.get("state") == "found" else
+                    {"fragility_ratio": None,
+                     "meaning": ("the search did not reach a smallest set within its budget, so no "
+                                 "ratio is claimed")}),
+        "scope": ("deletions only, one supplied benchmark interpretation. The ratio compares a "
+                  "case against its own arithmetic, which is what makes two cases with different "
+                  "weights and margins comparable at all. It is not a probability"),
+    }
 
 
 def analyse(path, expected=None):

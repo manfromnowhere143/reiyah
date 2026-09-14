@@ -2,15 +2,21 @@
 
 Document ID: `reiyah.label-dependence.2026-09-14`
 
-Version: `0.1.0`
+Version: `0.2.0`
 
 Lifecycle status: `proposed`
 
 Date: 2026-09-14. Lane: independent research.
 
+Supersedes `0.1.0` of the same document ID. Nothing in it is withdrawn. One measure is added,
+because a second case is coming with different anchor weights and a different margin, and a raw
+breakdown number cannot be compared across those.
+
 Preregistrations fixed before any result:
 `24cb90eff90f60431fd92cd25e504842eb24898e1ec40c1cc4399601e38cfe5d` (deletions),
-`38af5ed9442632919b51751ee09693da2a13ca62626291624613f3978a9c8c72` (insertions).
+`38af5ed9442632919b51751ee09693da2a13ca62626291624613f3978a9c8c72` (insertions),
+`7a513c501c5ada227206ed5028f78b436b36cd83ae9db3f8a648fad8e3f82b81` (the second case, fixed
+before that case exists).
 
 Artifacts: [`research/label-dependence/0.1.0/deletion-family.json`](../research/label-dependence/0.1.0/deletion-family.json),
 [`research/label-dependence/0.2.0/insertion-family.json`](../research/label-dependence/0.2.0/insertion-family.json),
@@ -123,8 +129,49 @@ nominal ego XY the common operands carry, which a different lane produced at a d
 One sensitivity is worth recording: the closest excluded annotation sits at **50.28 metres** against
 a 50 metre boundary. The membership is 0.28 metres from changing.
 
+## Reading a breakdown number against its own arithmetic
+
+A breakdown number of 1 is not comparable across cases, and saying "the second case survived every
+single deletion, so it is robust" would be a false result waiting to happen.
+
+Deleting one annotation reduces its anchor's gain by at most one, so it moves the weighted decision
+by at most `(a + b) * weight_i`. With `k` deletions the decision can fall by at most `k` times the
+largest such step. So no set smaller than
+
+```text
+k_floor = ceil( (weighted decision - tolerance) / max_i (a + b) * weight_i )
+```
+
+can change the criterion, **whatever the labels are**. A case with a comfortable margin is immune
+to any single deletion for a reason that has nothing to do with its annotation.
+
+The comparable quantity is therefore the breakdown number read against that floor:
+
+```text
+fragility ratio = k_observed / k_floor
+```
+
+A ratio of 1 means the verdict is as fragile as its own arithmetic allows: the smallest set that
+could possibly cross does cross. A larger ratio means the labels carry real redundancy.
+
+| case | decision | tolerance | margin | largest step | k_floor | k_observed | ratio |
+|---|---|---|---|---|---:|---:|---:|
+| this one | +1 | 1/10 | 9/10 | 1 | 1 | 1 | **1** |
+
+This cohort sits exactly at its floor. Retained in
+[`research/label-dependence/0.3.0/first-case-fragility.json`](../research/label-dependence/0.3.0/first-case-fragility.json).
+
+Two properties of the search are worth stating because both are easy to get wrong. It starts at the
+floor, since no smaller set can cross. And it prunes nothing: two labels can each be absorbed alone
+and be decisive together, because the matching reassigns around either one and not around both. A
+search that discarded labels with no individual effect would miss exactly those, and a retained test
+constructs that case.
+
 ## Next falsifier
 
-A second development case. If its verdict has a breakdown number well above one, then fragility is
-a property of this cohort rather than of the method, and the finding narrows. If it is also one,
-the question becomes why a benchmark delta this small is being read as a decision at all.
+A second development case, whose analysis is preregistered at
+`7a513c501c5ada227206ed5028f78b436b36cd83ae9db3f8a648fad8e3f82b81`, fixed before that case exists.
+If its fragility ratio is comfortably above one, then fragility is a property of this cohort rather
+than of the method, and this finding narrows. If it is also one, the question becomes why a
+benchmark delta this small is being read as an integration decision at all. A search that exceeds
+its declared budget is reported as inconclusive and claims neither.

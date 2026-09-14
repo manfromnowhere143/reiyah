@@ -100,6 +100,81 @@ class Arithmetic(unittest.TestCase):
         self.assertIn("changes_to_unresolved", events)
 
 
+class FloorAndRatio(unittest.TestCase):
+    """A comfortable margin can make robustness arithmetic rather than evidence."""
+
+    def test_the_floor_follows_from_weights_penalties_and_margin(self):
+        case = carrier_case()
+        floor = dependence.arithmetic_floor(case)
+        self.assertEqual(floor["margin"], "9/10")
+        self.assertEqual(floor["largest_single_step"], "2")
+        self.assertEqual(floor["k_floor"], 1)
+
+    def test_a_wider_margin_raises_the_floor_so_no_single_deletion_can_cross(self):
+        """The confound, in one case: breakdown 2, yet as fragile as arithmetic allows."""
+        case = {
+            "schema_id": "reiyah.cohort-packet.case", "cohort_id": "wide-margin",
+            "loss": {"false_negative": "1", "false_positive": "1", "tolerance": "0"},
+            "anchors": [{"id": "A", "weight": "1", "reference_state": "finite",
+                         "base_detections": [],
+                         "added_detections": [{"id": "c%d" % i, "class": "car"} for i in range(3)],
+                         "objects": [{"id": "o%d" % i, "class": "car"} for i in range(3)]}],
+            "joint_worlds": [{"world_id": "labels", "per_anchor": {"A": {
+                "objects_present": ["o0", "o1", "o2"],
+                "edges": [["c0", "o0"], ["c1", "o1"], ["c2", "o2"]]}}}]}
+        floor = dependence.arithmetic_floor(case)
+        self.assertEqual(floor["weighted_delta"], "3")
+        self.assertEqual(floor["largest_single_step"], "2")
+        self.assertEqual(floor["k_floor"], 2)
+        for single in ("o0", "o1", "o2"):
+            after = dependence.evaluate(dependence.without(case, "A", single))
+            self.assertEqual(after["criterion"], "supported", single)
+        result = dependence.breakdown(case)
+        self.assertEqual(result["k_observed"], 2)
+        self.assertTrue(result["at_the_arithmetic_floor"])
+        self.assertEqual(result["fragility_ratio"], "1")
+
+    def test_a_case_at_its_floor_is_reported_as_such(self):
+        case = carrier_case()
+        result = dependence.breakdown(case)
+        self.assertEqual(result["state"], "found")
+        self.assertEqual(result["k_observed"], 1)
+        self.assertEqual(result["k_floor"], 1)
+        self.assertTrue(result["at_the_arithmetic_floor"])
+        self.assertEqual(result["fragility_ratio"], "1")
+
+    def test_redundancy_shows_as_a_ratio_above_one(self):
+        """Two labels each absorbed alone, decisive together. No pruning could find this."""
+        case = {
+            "schema_id": "reiyah.cohort-packet.case", "cohort_id": "redundant",
+            "loss": {"false_negative": "1", "false_positive": "1", "tolerance": "1/10"},
+            "anchors": [{"id": "A", "weight": "1", "reference_state": "finite",
+                         "base_detections": [],
+                         "added_detections": [{"id": "c0", "class": "car"}],
+                         "objects": [{"id": "o0", "class": "car"}, {"id": "o1", "class": "car"}]}],
+            "joint_worlds": [{"world_id": "labels", "per_anchor": {"A": {
+                "objects_present": ["o0", "o1"],
+                "edges": [["c0", "o0"], ["c0", "o1"]]}}}]}
+        baseline = dependence.evaluate(case)
+        self.assertEqual(baseline["criterion"], "supported")
+        for single in ("o0", "o1"):
+            self.assertEqual(
+                dependence.evaluate(dependence.without(case, "A", single))["criterion"],
+                "supported")
+        result = dependence.breakdown(case)
+        self.assertEqual(result["k_observed"], 2)
+        self.assertEqual(result["k_floor"], 1)
+        self.assertFalse(result["at_the_arithmetic_floor"])
+        self.assertEqual(result["fragility_ratio"], "2")
+
+    def test_the_search_brackets_rather_than_claims_past_its_budget(self):
+        case = carrier_case()
+        result = dependence.breakdown(case, budget=0)
+        self.assertEqual(result["state"], "bracketed")
+        self.assertIsNone(result["witness"])
+        self.assertIn("no smallest set is claimed", result["conclusion"])
+
+
 class Forgeries(unittest.TestCase):
     def setUp(self):
         self.case = carrier_case()
@@ -184,6 +259,14 @@ class TheRealCase(unittest.TestCase):
                          {"lowest": "1", "highest": "2"})
         self.assertIsNone(fresh["pairs"]["witness"])
         self.assertIsNone(fresh["breakdown_number"])
+
+    def test_the_first_case_sits_exactly_at_its_arithmetic_floor(self):
+        result = dependence.fragility(CASE)
+        self.assertEqual(result["arithmetic_floor"]["k_floor"], 1)
+        self.assertEqual(result["arithmetic_floor"]["margin"], "9/10")
+        self.assertEqual(result["breakdown"]["k_observed"], 1)
+        self.assertTrue(result["breakdown"]["at_the_arithmetic_floor"])
+        self.assertEqual(result["reading"]["fragility_ratio"], "1")
 
     def test_no_source_identifier_reaches_a_retained_artifact(self):
         import re

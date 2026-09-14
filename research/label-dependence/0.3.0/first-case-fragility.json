@@ -1,0 +1,38 @@
+{
+  "arithmetic_floor": {
+    "consequence": "no set of fewer than k_floor deletions can change the criterion on this case, whatever its labels are. Robustness below k_floor is arithmetic and is not evidence about the annotation",
+    "criterion": "supported",
+    "k_floor": 1,
+    "largest_single_step": "1",
+    "margin": "9/10",
+    "tolerance": "1/10",
+    "weighted_delta": "1",
+    "why": "one deletion moves one anchor's gain by at most one, so the decision moves by at most (a + b) times that anchor's weight"
+  },
+  "artifact_id": "reiyah.label-dependence.fragility",
+  "breakdown": {
+    "at_the_arithmetic_floor": true,
+    "criterion": "excluded",
+    "evaluations": 17,
+    "fragility_ratio": "1",
+    "k_floor": 1,
+    "k_observed": 1,
+    "seconds": 0.018,
+    "state": "found",
+    "weighted_delta": "0",
+    "witness": [
+      {
+        "anchor": "window-0001",
+        "class": "traffic_cone",
+        "local_index": 16
+      }
+    ]
+  },
+  "case_sha256": "ebfebf67d847a1b7b019a81910a6ad99860f0ce86616cd5b7f3a71e11aa2a19f",
+  "reading": {
+    "fragility_ratio": "1",
+    "meaning": "one means the verdict is as fragile as its own arithmetic allows: the smallest set that could possibly cross does cross. Larger means the labels carry real redundancy"
+  },
+  "scope": "deletions only, one supplied benchmark interpretation. The ratio compares a case against its own arithmetic, which is what makes two cases with different weights and margins comparable at all. It is not a probability",
+  "version": "0.3.0"
+}
