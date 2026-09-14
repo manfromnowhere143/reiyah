@@ -1,6 +1,6 @@
 # Reiyah: the decision, the evidence and the next checks
 
-Document ID: `reiyah.engine.roadmap`. Version: `0.1.5`. Status: `exploratory`. Updated 14 September 2026.
+Document ID: `reiyah.engine.roadmap`. Version: `0.1.6`. Status: `exploratory`. Updated 14 September 2026.
 
 The [product and funding thesis](PRODUCT_AND_FUNDING_THESIS_2026-09-14.md) explains the destination:
 an evidence engine that helps AI engineering teams substantiate system changes and, longer term,
@@ -26,6 +26,7 @@ an object-detection result does not validate them by analogy.
 | Independent comparator findings | Overlap parity and conditional raw-table uncertainty; claims withdrawn where premises failed | Coefficient superiority or guaranteed identification from adding a third channel |
 | Automated annotation connection | Exact source labels feed the existing fixed-loss Engine; two-anchor conditional result [1,1] | Independent label truth, held-out benefit or lower total effort |
 | Additional case preparation | Existing interfaces prepare 14 remaining exposed frames; original rows, normalization and common traces checked | A second detector verdict, independent scene validation or measured low integration effort |
+| Second automated comparison | Same interfaces give [2/7,2/7] under 737 included labels; seven frames improve, six worsen, one is unchanged | Independent scenes, physical label truth, or separate Fable reconstruction of this second result |
 
 The [README](../README.md) links the retained findings and historical protocols. The
 [current continuation](SESSION_HANDOFF.md) records exact Engine state; the
@@ -52,8 +53,8 @@ flowchart TB
 
 | Gap | Owner and next concrete check | Evidence that would change the choice |
 |---|---|---|
-| Automated benchmark result | Engine supplies exact two-anchor label/prediction bytes; Fable reconstructs conventionally and checks a bounded single-label deletion challenge | Source/graph/verdict discrepancy, or an explicit hypothetical error that changes the criterion; retain parity and limitations |
-| Preparation reuse | Engine has prepared all 14 remaining exposed frames through existing interfaces, with 588 base detections and 94 additions; evaluate after the first challenge | Same source rules and complete accounting survive the second case without further bespoke repair |
+| Automated benchmark result | First case baseline and 106 single deletions checked; six witnesses confirmed. Engine supplies the completed 14-frame second case to Fable | Separate reconstruction discrepancy or a declared error-family result; retain parity and limitations |
+| Preparation reuse | Second case executed through existing interfaces, with 588 base detections, 94 additions and 737 included labels; private audit control repair retained | Repeated usefulness and full effort accounting beyond these two exposed scenes |
 | Practical inspection | Engine: one assisted selection now traces to original records; use a working copy to repair the observed overwrite and save-path problems | A later participant can complete the revised procedure, with actual effort and failures recorded |
 | Independent physical references | Engine coordinates the authorized staged protocol; reviewers supply actual observations | Both unassisted records locked before assistance, complete disagreements and admitted joint alternatives |
 | Raw association uncertainty | Fable: use selected original rows, preserve unmatched records and order, compare a declared rule with a serious baseline | A checked decision or abstention stable to a defensible association/error model, or a retained counterexample |
@@ -92,9 +93,10 @@ per-row localization or timing error bounds. Research may explore a declared ass
 its radius is not thereby a measured physical tolerance. The successor should consume the sealed
 benchmark-case challenge without duplicating Fable's lane. Do not fabricate actual readings from
 counterfactual label edits. Test a second available case after the first is checked, before expansion.
-The [second input is now prepared and checked](PERCEPTION_CASE_PORTABILITY_2026-09-14.md), with
-selection fixed before its verdict. Its 14 frames are additional observations from the same two
-scenes; no new prospective/frozen-study cohort or independent-scene claim follows.
+The [second comparison is now executed and checked](PERCEPTION_SECOND_CASE_2026-09-14.md), with
+selection fixed before its verdict. It returns [2/7,2/7] under its label policy. Its 14 frames are
+additional observations from the same two scenes; no prospective/frozen-study or independent-scene
+claim follows. Fable owns the next bounded sensitivity study on its exact exported bytes.
 
 ## Ownership and authority
 

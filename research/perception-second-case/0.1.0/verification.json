@@ -1,0 +1,642 @@
+{
+  "artifact_id": "reiyah.second-case.verification",
+  "audit_control_correction": {
+    "artifact_id": "reiyah.second-case.audit-control-correction",
+    "corrected_auditor_sha256": "a82e919e9c07e296a415021d028f1b377726882576472e8e632584fc88f88b1f",
+    "correction": "Perturb the exact numerator by its denominator, producing a different rational result, and require every mutation to differ from the original.",
+    "failure": "The inherited forged_decision control set numerator to2. The new actual bound is2/7, so it made no change and the audit correctly refused to count it as a rejected forgery.",
+    "original_auditor_sha256": "3735527b6a2b2f2c9ad3c18af3d11afbefa382713b9f345f7bcd4090c6a6b262",
+    "scope": "Private audit portability failure; Engine producer result and source checks are unchanged. First failed command and auditor retained.",
+    "version": "0.1.0"
+  },
+  "broad_tests": "No Engine implementation or schema change. Previous430 repository and93 measurement tests retained as prior results; no new broad rerun. Fable732/309 claims not replayed here.",
+  "case_sha256": "d5d84eaf8eb558733ee619e657a73655c38c0b8be5263d5b0099cbe87fd3b5b7",
+  "commands": {
+    "annotation-case": {
+      "child_max_rss_bytes_macos": 255885312,
+      "elapsed_seconds": 26.306068500038236,
+      "ended_utc": "2026-09-14T16:28:05.254287+00:00",
+      "exit_code": 0,
+      "spec_path_unchanged": true,
+      "spec_sha256": "2fd5fe059ed5ce4065f3279756e5396a2a6b65aa4fa1cf3a403196a179aa06fa",
+      "started_utc": "2026-09-14T16:27:38.947972+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 3990,
+          "sha256": "41957206f9a56528c11a5c685e0af34bcb22aaa503fc61d2c272d54ca9f76c5e"
+        }
+      },
+      "supervisor_path_unchanged": true,
+      "supervisor_sha256": "7e99c336723a7cd1262beb2c862eb4488a3830ecb35f962604e8a24afdd68acf"
+    },
+    "fable-review": {
+      "child_max_rss_bytes_macos": 33406976,
+      "elapsed_seconds": 2.648668416077271,
+      "ended_utc": "2026-09-14T16:27:09.118014+00:00",
+      "exit_code": 0,
+      "spec_path_unchanged": true,
+      "spec_sha256": "a58a37d6e479ca70e891132b8474c67b9ab18ff4001e843dac5f3b28412a73b1",
+      "started_utc": "2026-09-14T16:27:06.469247+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 660,
+          "sha256": "232197178e10e6f2e733a5a0763b9875f275918b2dcbd5cea4818f59894674ac"
+        }
+      },
+      "supervisor_path_unchanged": true,
+      "supervisor_sha256": "7e99c336723a7cd1262beb2c862eb4488a3830ecb35f962604e8a24afdd68acf"
+    },
+    "insertion-scope": {
+      "child_max_rss_bytes_macos": 18907136,
+      "elapsed_seconds": 0.23130724998191,
+      "ended_utc": "2026-09-14T16:29:13.373405+00:00",
+      "exit_code": 0,
+      "spec_path_unchanged": true,
+      "spec_sha256": "e6ff51e68c199cb5d6a6d19a40ab3d4a395d833fdcfc971416bca9612b909ea4",
+      "started_utc": "2026-09-14T16:29:13.141998+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 1219,
+          "sha256": "c12aafdbbc9b89d16c82f8194a840886eb21f219845298ba953f859cc100fb4a"
+        }
+      },
+      "supervisor_path_unchanged": true,
+      "supervisor_sha256": "7e99c336723a7cd1262beb2c862eb4488a3830ecb35f962604e8a24afdd68acf"
+    },
+    "second-case-export": {
+      "child_max_rss_bytes_macos": 36782080,
+      "elapsed_seconds": 0.16884854203090072,
+      "ended_utc": "2026-09-14T16:32:41.039560+00:00",
+      "exit_code": 0,
+      "spec_path_unchanged": true,
+      "spec_sha256": "89b1dfcfd140304a8de982ec61f5f2ce48c934d89694fc1b76dd2222d7912ea7",
+      "started_utc": "2026-09-14T16:32:40.870612+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 289,
+          "sha256": "0d1c52ae9ae5687af4c282fa3ac140e1128b9d0eca4cad1f051592f496ef11ee"
+        }
+      },
+      "supervisor_path_unchanged": true,
+      "supervisor_sha256": "7e99c336723a7cd1262beb2c862eb4488a3830ecb35f962604e8a24afdd68acf"
+    },
+    "source-audit": {
+      "child_max_rss_bytes_macos": 255344640,
+      "elapsed_seconds": 27.289129166165367,
+      "ended_utc": "2026-09-14T16:30:00.618666+00:00",
+      "exit_code": 1,
+      "spec_path_unchanged": true,
+      "spec_sha256": "b3e106ca5d23dda82e4e22be0f9fe2dea45c99dae4a41daa5deef1eb890871a1",
+      "started_utc": "2026-09-14T16:29:33.329436+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 334,
+          "sha256": "c7119189e56def219c770daa0fc2a7950b1ef25730adce20f19d9a8fbafbe9bc"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "supervisor_path_unchanged": true,
+      "supervisor_sha256": "7e99c336723a7cd1262beb2c862eb4488a3830ecb35f962604e8a24afdd68acf"
+    },
+    "source-audit-2": {
+      "child_max_rss_bytes_macos": 210534400,
+      "elapsed_seconds": 27.687208250164986,
+      "ended_utc": "2026-09-14T16:31:01.966745+00:00",
+      "exit_code": 0,
+      "spec_path_unchanged": true,
+      "spec_sha256": "b463c79538d428db586860583acaa94ad68cf6315fb82ec7637827086c5fc927",
+      "started_utc": "2026-09-14T16:30:34.279456+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 3841,
+          "sha256": "011063740b78b9da8bf822d22ade684e5bad2956a3898247f5c4eaba49b46337"
+        }
+      },
+      "supervisor_path_unchanged": true,
+      "supervisor_sha256": "7e99c336723a7cd1262beb2c862eb4488a3830ecb35f962604e8a24afdd68acf"
+    }
+  },
+  "conditional_result": {
+    "authority_state": "research_only",
+    "bounds": {
+      "lower": {
+        "denominator": "7",
+        "numerator": "2"
+      },
+      "upper": {
+        "denominator": "7",
+        "numerator": "2"
+      }
+    },
+    "decision": {
+      "improvement_criterion": "supported",
+      "preference": "prefer_augmented"
+    },
+    "enclosure_kind": "exact_for_finite_model",
+    "execution_status": "succeeded",
+    "model_status": "consistent",
+    "physical_coverage": "not_established",
+    "reference_scope": "conditional_reference_graph",
+    "sampling_scope": "fixed_selected_cohort",
+    "statistical_confidence_level": null
+  },
+  "consumer_audit": {
+    "artifact_id": "reiyah.annotation-case.consumer-audit",
+    "not_checked": [
+      "physical label truth",
+      "independent model inference reproduction",
+      "human effort",
+      "official benchmark metric"
+    ],
+    "packet_sha256": "329fc44df95dde7c49348bf9ff0ad6a66db0952a51c3c6b247aa6d16c2129b0c",
+    "producer_and_reference_compiler_not_called": true,
+    "refused_mutations": [
+      "wrong_original_index",
+      "wrong_source_geometry",
+      "missing_annotation",
+      "missing_edge",
+      "missing_object",
+      "forged_decision",
+      "forged_human_readings",
+      "forged_safety_claim"
+    ],
+    "result": {
+      "per_anchor": [
+        {
+          "anchor_id": "remaining-window-0001",
+          "delta": 5,
+          "loss_augmented": 16,
+          "loss_base": 21,
+          "objects": 58,
+          "tp_augmented": 49,
+          "tp_base": 41
+        },
+        {
+          "anchor_id": "remaining-window-0002",
+          "delta": 4,
+          "loss_augmented": 17,
+          "loss_base": 21,
+          "objects": 54,
+          "tp_augmented": 47,
+          "tp_base": 41
+        },
+        {
+          "anchor_id": "remaining-window-0003",
+          "delta": 3,
+          "loss_augmented": 13,
+          "loss_base": 16,
+          "objects": 56,
+          "tp_augmented": 49,
+          "tp_base": 44
+        },
+        {
+          "anchor_id": "remaining-window-0004",
+          "delta": 5,
+          "loss_augmented": 21,
+          "loss_base": 26,
+          "objects": 61,
+          "tp_augmented": 49,
+          "tp_base": 43
+        },
+        {
+          "anchor_id": "remaining-window-0006",
+          "delta": 1,
+          "loss_augmented": 24,
+          "loss_base": 25,
+          "objects": 63,
+          "tp_augmented": 48,
+          "tp_base": 45
+        },
+        {
+          "anchor_id": "remaining-window-0007",
+          "delta": 4,
+          "loss_augmented": 26,
+          "loss_base": 30,
+          "objects": 66,
+          "tp_augmented": 51,
+          "tp_base": 46
+        },
+        {
+          "anchor_id": "remaining-window-0008",
+          "delta": 1,
+          "loss_augmented": 25,
+          "loss_base": 26,
+          "objects": 66,
+          "tp_augmented": 55,
+          "tp_base": 50
+        },
+        {
+          "anchor_id": "remaining-window-0009",
+          "delta": 0,
+          "loss_augmented": 18,
+          "loss_base": 18,
+          "objects": 44,
+          "tp_augmented": 31,
+          "tp_base": 28
+        },
+        {
+          "anchor_id": "remaining-window-0010",
+          "delta": -2,
+          "loss_augmented": 20,
+          "loss_base": 18,
+          "objects": 43,
+          "tp_augmented": 32,
+          "tp_base": 30
+        },
+        {
+          "anchor_id": "remaining-window-0011",
+          "delta": -6,
+          "loss_augmented": 23,
+          "loss_base": 17,
+          "objects": 44,
+          "tp_augmented": 30,
+          "tp_base": 29
+        },
+        {
+          "anchor_id": "remaining-window-0013",
+          "delta": -3,
+          "loss_augmented": 21,
+          "loss_base": 18,
+          "objects": 45,
+          "tp_augmented": 31,
+          "tp_base": 29
+        },
+        {
+          "anchor_id": "remaining-window-0014",
+          "delta": -1,
+          "loss_augmented": 24,
+          "loss_base": 23,
+          "objects": 46,
+          "tp_augmented": 31,
+          "tp_base": 29
+        },
+        {
+          "anchor_id": "remaining-window-0015",
+          "delta": -3,
+          "loss_augmented": 19,
+          "loss_base": 16,
+          "objects": 46,
+          "tp_augmented": 33,
+          "tp_base": 32
+        },
+        {
+          "anchor_id": "remaining-window-0016",
+          "delta": -4,
+          "loss_augmented": 26,
+          "loss_base": 22,
+          "objects": 45,
+          "tp_augmented": 27,
+          "tp_base": 27
+        }
+      ],
+      "rows_scanned": 1166187,
+      "source_rows_checked": 841,
+      "weighted_delta": "2/7"
+    },
+    "shared_trusted_code": [
+      "JSONStream",
+      "snapshot",
+      "archive table reader",
+      "core contract and certificate checker"
+    ],
+    "version": "0.1.0"
+  },
+  "disposition_check": {
+    "artifact_id": "reiyah.second-case.disposition-check",
+    "complete_ordered_dispositions_agree": true,
+    "included": 737,
+    "outside_range": 101,
+    "shared_surface": "Source-audited labels, retained official category map and nominal ego coordinates; no physical-label validation.",
+    "source_audited_labels": 841,
+    "unmapped": 3,
+    "version": "0.1.0"
+  },
+  "fable_compatibility": {
+    "case_sha256": "d5d84eaf8eb558733ee619e657a73655c38c0b8be5263d5b0099cbe87fd3b5b7",
+    "decision": {
+      "improvement_criterion": "supported",
+      "preference": "prefer_augmented"
+    },
+    "enclosure": {
+      "lower": "2/7",
+      "upper": "2/7"
+    },
+    "independent_fable_lane_reconstruction": false,
+    "source_commit": "284c2d711fa5de323912fedce07c3c0c8ad084f4",
+    "source_geometry_agrees": true
+  },
+  "first_case_review": {
+    "baseline": {
+      "criterion": "supported",
+      "preference": "prefer_augmented",
+      "weighted_delta": "1"
+    },
+    "case_sha256": "ebfebf67d847a1b7b019a81910a6ad99860f0ce86616cd5b7f3a71e11aa2a19f",
+    "general_rule_counterexample": {
+      "detection_xy": {
+        "d0": [
+          "0",
+          "0"
+        ],
+        "d1": [
+          "3",
+          "0"
+        ]
+      },
+      "exact_metric_neighbors": [
+        "d1"
+      ],
+      "existing_object_xy": [
+        "3/2",
+        "0"
+      ],
+      "function_insertion_neighbors": [
+        "d0",
+        "d1"
+      ],
+      "insert_at": "d1",
+      "scope": "Synthetic structural counterexample to reconstructing exact distances from shared-object topology. Does not claim an error in these20 real-case single-insertion edge sets.",
+      "source_graph_edges": [
+        [
+          "d0",
+          "o"
+        ],
+        [
+          "d1",
+          "o"
+        ]
+      ],
+      "strict_distance": 2
+    },
+    "manifest_sha256": "809a8800e9079bc51db2b38caf96417bbd45229e4e32cf8f29ebdc43d971729d",
+    "original_graph_pair_cases_checked": 190,
+    "original_graph_pair_range": [
+      "1",
+      "3"
+    ],
+    "outcome_counts": {
+      "excluded / equivalent_within_tolerance": 6,
+      "supported / prefer_augmented": 100
+    },
+    "real_pair_outcome_mismatches": 0,
+    "real_single_edge_mismatches": 0,
+    "single_deletions_checked": 106,
+    "top_level_manifest_case_hash_mismatch": {
+      "actual_case": "ebfebf67d847a1b7b019a81910a6ad99860f0ce86616cd5b7f3a71e11aa2a19f",
+      "declared_top_level": "8e79f3636ef337d7ea2f12ec213e67106d7d4afce55bdafb6c63ba10d667f299",
+      "same": false
+    },
+    "witnesses": [
+      {
+        "anchor": "window-0001",
+        "class": "traffic_cone",
+        "criterion": "excluded",
+        "local_index": 16,
+        "preference": "equivalent_within_tolerance",
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0001",
+        "class": "traffic_cone",
+        "criterion": "excluded",
+        "local_index": 31,
+        "preference": "equivalent_within_tolerance",
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0001",
+        "class": "traffic_cone",
+        "criterion": "excluded",
+        "local_index": 58,
+        "preference": "equivalent_within_tolerance",
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0002",
+        "class": "car",
+        "criterion": "excluded",
+        "local_index": 5,
+        "preference": "equivalent_within_tolerance",
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0002",
+        "class": "car",
+        "criterion": "excluded",
+        "local_index": 16,
+        "preference": "equivalent_within_tolerance",
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0002",
+        "class": "car",
+        "criterion": "excluded",
+        "local_index": 36,
+        "preference": "equivalent_within_tolerance",
+        "weighted_delta": "0"
+      }
+    ]
+  },
+  "limits": [
+    "Same two exposed scenes; not independent-scene validation.",
+    "All14 originally declared frames retained, including6 that worsen.",
+    "No human readings admitted; original physical-reference case stays[-8,8].",
+    "New hypothetical second-case edits remain Fable-owned, unexecuted in this Engine task.",
+    "Command costs do not measure total preparation, human effort or integration cost."
+  ],
+  "nested_transport_recheck": {
+    "artifact_id": "reiyah.fable.nested-transport-recheck",
+    "nested_publisher_state_accepted": true,
+    "refused": [
+      {
+        "control": 0,
+        "reason": "header field transport_verification_state sets a transport state to 'independently_verified' at depth 1. The seal owns that field at every depth and it stays 'asserted_unverified'"
+      },
+      {
+        "control": 1,
+        "reason": "header field publication.transport_verification_state sets a transport state to 'independently_verified' at depth 2. The seal owns that field at every depth and it stays 'asserted_unverified'"
+      },
+      {
+        "control": 2,
+        "reason": "header field publication.0.transport_state sets a transport state to 'independently_verified' at depth 3. The seal owns that field at every depth and it stays 'asserted_unverified'"
+      }
+    ],
+    "scope": "Direct reproduction of root, nested-object and nested-array transport guard; no broad Fable suite replay.",
+    "source_commit": "284c2d711fa5de323912fedce07c3c0c8ad084f4",
+    "version": "0.1.0"
+  },
+  "next": "Fable reconstructs the second case, declares a bounded label-error family before inspecting its outcomes, and checks robustness with the same evidence and competent ordinary-analysis options.",
+  "packet_sha256": "329fc44df95dde7c49348bf9ff0ad6a66db0952a51c3c6b247aa6d16c2129b0c",
+  "per_anchor": [
+    {
+      "anchor_id": "remaining-window-0001",
+      "delta": 5,
+      "loss_augmented": 16,
+      "loss_base": 21,
+      "objects": 58,
+      "tp_augmented": 49,
+      "tp_base": 41
+    },
+    {
+      "anchor_id": "remaining-window-0002",
+      "delta": 4,
+      "loss_augmented": 17,
+      "loss_base": 21,
+      "objects": 54,
+      "tp_augmented": 47,
+      "tp_base": 41
+    },
+    {
+      "anchor_id": "remaining-window-0003",
+      "delta": 3,
+      "loss_augmented": 13,
+      "loss_base": 16,
+      "objects": 56,
+      "tp_augmented": 49,
+      "tp_base": 44
+    },
+    {
+      "anchor_id": "remaining-window-0004",
+      "delta": 5,
+      "loss_augmented": 21,
+      "loss_base": 26,
+      "objects": 61,
+      "tp_augmented": 49,
+      "tp_base": 43
+    },
+    {
+      "anchor_id": "remaining-window-0006",
+      "delta": 1,
+      "loss_augmented": 24,
+      "loss_base": 25,
+      "objects": 63,
+      "tp_augmented": 48,
+      "tp_base": 45
+    },
+    {
+      "anchor_id": "remaining-window-0007",
+      "delta": 4,
+      "loss_augmented": 26,
+      "loss_base": 30,
+      "objects": 66,
+      "tp_augmented": 51,
+      "tp_base": 46
+    },
+    {
+      "anchor_id": "remaining-window-0008",
+      "delta": 1,
+      "loss_augmented": 25,
+      "loss_base": 26,
+      "objects": 66,
+      "tp_augmented": 55,
+      "tp_base": 50
+    },
+    {
+      "anchor_id": "remaining-window-0009",
+      "delta": 0,
+      "loss_augmented": 18,
+      "loss_base": 18,
+      "objects": 44,
+      "tp_augmented": 31,
+      "tp_base": 28
+    },
+    {
+      "anchor_id": "remaining-window-0010",
+      "delta": -2,
+      "loss_augmented": 20,
+      "loss_base": 18,
+      "objects": 43,
+      "tp_augmented": 32,
+      "tp_base": 30
+    },
+    {
+      "anchor_id": "remaining-window-0011",
+      "delta": -6,
+      "loss_augmented": 23,
+      "loss_base": 17,
+      "objects": 44,
+      "tp_augmented": 30,
+      "tp_base": 29
+    },
+    {
+      "anchor_id": "remaining-window-0013",
+      "delta": -3,
+      "loss_augmented": 21,
+      "loss_base": 18,
+      "objects": 45,
+      "tp_augmented": 31,
+      "tp_base": 29
+    },
+    {
+      "anchor_id": "remaining-window-0014",
+      "delta": -1,
+      "loss_augmented": 24,
+      "loss_base": 23,
+      "objects": 46,
+      "tp_augmented": 31,
+      "tp_base": 29
+    },
+    {
+      "anchor_id": "remaining-window-0015",
+      "delta": -3,
+      "loss_augmented": 19,
+      "loss_base": 16,
+      "objects": 46,
+      "tp_augmented": 33,
+      "tp_base": 32
+    },
+    {
+      "anchor_id": "remaining-window-0016",
+      "delta": -4,
+      "loss_augmented": 26,
+      "loss_base": 22,
+      "objects": 45,
+      "tp_augmented": 27,
+      "tp_base": 27
+    }
+  ],
+  "plan_sha256": "aad1a88c30822488627e6420c390c828248c54103d9747f13f1576c03d74c670",
+  "private_task": "engine-second-case-2026-09-14-zw58_irx",
+  "request_sha256": "7d03484a9736a1eb79c32b8a2e5f30e595074942ec39ae1ef9636fa7626cb788",
+  "source_commit": "c358db390409f0a245387c2390e8fa693635d511",
+  "source_tree": "f9bad0e5fd678853742a7caafc2e889654f480c3",
+  "status": "exploratory",
+  "summary": {
+    "dispositions": {
+      "included": 737,
+      "outside_nominal_50m": 101,
+      "unmapped_category": 3
+    },
+    "improving_anchors": 7,
+    "included_annotations": 737,
+    "source_annotation_count": 841,
+    "unchanged_anchors": 1,
+    "weighted_loss_augmented": "293/14",
+    "weighted_loss_base": "297/14",
+    "worsening_anchors": 6
+  },
+  "version": "0.1.0"
+}

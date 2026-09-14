@@ -1,6 +1,6 @@
 # What Reiyah is being built to become
 
-Document ID: `reiyah.product-and-funding-thesis`. Version: `0.1.0`. Dated 14 September 2026.
+Document ID: `reiyah.product-and-funding-thesis`. Version: `0.1.1`. Dated 14 September 2026.
 Status: proposed product direction, with completed engineering evidence identified below.
 
 **Reiyah is being built as an evidence engine for AI engineering decisions.** It should help a
@@ -84,11 +84,17 @@ annotations to a fixed comparison with 85 base detections and 16 additions. Weig
 from **23.5 to 22.5** under its declared label policy. One anchor improves and the other worsens.
 The original question with open physical references stays unresolved at **[-8,8]**.
 
-The [next preparation check](PERCEPTION_CASE_PORTABILITY_2026-09-14.md) reuses existing
-interfaces on 14 additional exposed frames: 4,228 source rows, 588 base detections and 94
-additions. A separate source-accounting implementation checks the preparation. Its detector
-verdict has not been evaluated. These frames come from the same two scenes; this is a test of
-preparation reuse, not evidence of generalization to new scenes.
+The [second comparison](PERCEPTION_SECOND_CASE_2026-09-14.md) reuses those interfaces on 14
+additional exposed frames: 4,228 source rows, 588 base detections, 94 additions and 737 included
+labels. Its weighted improvement is **2/7**, above the fixed 1/10 threshold. Seven frames improve,
+six worsen and one is unchanged. A separate source audit checks all selected records and graph
+edges. These frames come from the same two scenes, so this does not establish generalization to
+new scenes. Fable receives the exact second case for its separate challenge.
+
+The first case's label-deletion challenge is also checked: six single deletions reduce its
+improvement from +1 to zero. That identifies a concrete sensitivity under a declared hypothetical
+error family. It does not establish that any of those labels is wrong or that reviewing them
+alone settles every uncertainty about the scene.
 
 The first case's implementation validation passed 430 repository tests and 93 measurement
 tests. The new preparation check retains its failures and corrections. Human decision value,
@@ -101,8 +107,8 @@ for a future study; no reviewer task is required from Daniel to continue this au
 
 | Milestone | Concrete deliverable | Acceptance or falsification check |
 |---|---|---|
-| Challenge the actual first case | Separate reconstruction and the declared baseline-plus-single-label-deletion experiment | Retain every disagreement and every criterion change; a draw is valid |
-| Repeat through the same interfaces | Evaluate the prepared second case after the first challenge, without redesigning the Engine | Account for all inputs, adverse outcomes, additional code and repair effort |
+| Challenge the actual first case | Baseline and all 106 single deletions checked; six criterion-changing witnesses retained | Keep the insertion-family scope, source-binding correction and geometry counterexample explicit |
+| Repeat through the same interfaces | Second comparison executed; complete source audit and export available | Fable independently reconstructs the second case and tests a declared error family; retain adverse outcomes and repair costs |
 | Demonstrate an actionable dependency | A source-bound example explaining what observation would change a named engineering choice | A competent analyst given the same evidence can challenge the dependency and its scope |
 | Test a recurring customer workflow | A bounded comparison on a validation team's actual integration question | Measure preparation, checking, interpretation, computation, integration and repair for both methods |
 | Test reuse across a revision | One changed system, with a retained record of what evidence was reused and rechecked | Full recomputation catches any invalid reuse; measured savings exceed bookkeeping cost |

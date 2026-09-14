@@ -37,8 +37,11 @@ calculation under declared label assumptions, not an official nuScenes score or 
 The [next case preparation](docs/PERCEPTION_CASE_PORTABILITY_2026-09-14.md) uses existing Engine
 interfaces on 14 further exposed frames: 4,228 source rows, 588 retained base detections and 94
 additions. Separate source accounting agrees, and the original case reproduces exactly. This
-checks preparation reuse; the new detector verdict has not been evaluated. The remaining frames
-come from the same two scenes and do not constitute independent scene validation.
+checks preparation reuse. The [completed second comparison](docs/PERCEPTION_SECOND_CASE_2026-09-14.md)
+now uses 737 included benchmark labels and gives a weighted improvement of **2/7** at tolerance
+1/10: seven frames improve, six worsen and one is unchanged. Exact source and geometry checks
+pass, and existing Fable code agrees in a compatibility replay. These additional frames come
+from the same two scenes and do not constitute independent scene validation.
 
 The [prediction checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) prepares all **4,876 original
 prediction rows across 16 exposed development keyframes** without reading annotation-bearing

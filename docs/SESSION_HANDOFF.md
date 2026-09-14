@@ -2,15 +2,29 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.13`
+Version: `0.1.14`
 
 Lifecycle status: `exploratory`
 
-The [next case preparation](PERCEPTION_CASE_PORTABILITY_2026-09-14.md) now checks 14 remaining
+The [second annotation-conditioned case](PERCEPTION_SECOND_CASE_2026-09-14.md) is now executed:
+14 additional exposed frames, 841 source labels, 737 included, 588 base detections and 94 additions.
+Weighted loss falls from 297/14 to 293/14; [2/7,2/7] is supported at tolerance 1/10. Seven frames
+improve, six worsen and one is unchanged. Source records and graph geometry pass a separate
+audit; existing Fable producer/checker code agrees in an Engine-lane compatibility replay.
+No Engine implementation changed. One reused private audit control required correction.
+
+Fable's first-case baseline and all 106 single deletions are checked; six deletions change +1 to 0.
+The consumer review retains an incorrect top-level case hash, a [1,3] pair-insertion range, and
+an executable counterexample to deriving metric insertion edges from graph neighborhoods.
+On the actual first case all 20 single-edge sets and 190 pair outcomes still agree with geometry.
+Fable owns the second case's conventional reconstruction and bounded sensitivity analysis.
+
+The preceding [case preparation](PERCEPTION_CASE_PORTABILITY_2026-09-14.md) checked 14 remaining
 exposed frames through existing Engine interfaces: 4,228 source rows, 588 base detections and
 94 additions. The first two anchors reproduce exactly. A separate source-accounting audit
 checks the preparation and refuses nine mutations after repairing its own missed common-trace
-check. No Engine implementation changed and no second-case detector verdict was computed.
+check. No Engine implementation changed and no detector verdict was computed at that preparation
+checkpoint; the subsequent computation is linked above.
 The [product and funding thesis](PRODUCT_AND_FUNDING_THESIS_2026-09-14.md) now states the intended
 customer, larger technical ambition and concrete proof milestones. This is proposed positioning,
 not a funding submission or an observed customer relationship.
@@ -49,8 +63,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This annotation checkpoint starts from main
-`5a9e702705a94eb333e507d9e1f2b016b17b5263`, tree `7516fc37ed1b7ddd963fd74355bd21deba1439e6`.
+uncommitted ownership before acting. This second-case checkpoint starts from main
+`c358db390409f0a245387c2390e8fa693635d511`, tree `f9bad0e5fd678853742a7caafc2e889654f480c3`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -66,19 +80,29 @@ or processes, or duplicate that implementation. Read current lane status before 
 overlapping work. Exchange only through separately selected immutable outboxes; a chat verdict
 or mutable branch tip is insufficient. No ownership transfer is implied by a consumer review.
 
-Current preparation evidence is at
+Preceding preparation evidence is at
 `~/.codex/reports/reiyah/engine-case-portability-2026-09-14-idui4k54/`.
 It starts from main `91af9b59947d136b359a79135f3b2efdf7d687ff`, tree
 `296c5a9c3584946d98e317920294ed5411c13ff9`. Read its `START_HERE.md`, `PLAN.json`,
-`CLOSEOUT.json`, sealed source bindings and `COPY_TO_CODEX.txt`. At this task's opening,
-Fable remains at `0045314b2e37885ca407c46d3a0dac936f8d7185`, without a newly sealed first-case
-challenge. A later remote observation at 16:16 UTC found
-`284c2d711fa5de323912fedce07c3c0c8ad084f4`; no new sealed exchange had been selected or accepted.
-Refresh that observation before acting. Do not duplicate its comparator task.
-The second input has a ready request for the existing annotation adapter. Its verdict follows
-the first challenge; preparation within the same two scenes is not held-out generalization.
+`CLOSEOUT.json`, sealed source bindings and `COPY_TO_CODEX.txt`. Fable's reply arrived during that
+closeout. The selected manifest is
+`809a8800e9079bc51db2b38caf96417bbd45229e4e32cf8f29ebdc43d971729d`, source
+`284c2d711fa5de323912fedce07c3c0c8ad084f4`. Its first-case numerical and scope review is linked above.
+The second annotation request was then evaluated without changing its selection or target.
 
-Current private annotation evidence is at
+The following computation is retained at
+`~/.codex/reports/reiyah/engine-second-case-2026-09-14-zw58_irx/`.
+Read its `START_HERE.md`, `PLAN.json`, `SOURCE_BINDINGS.json`, `CLOSEOUT.json` and sealed
+`OUTBOX/second-annotation-case-0.1.0/REQUEST.md`. It starts from main
+`c358db390409f0a245387c2390e8fa693635d511`, tree `f9bad0e5fd678853742a7caafc2e889654f480c3`.
+The evaluated Engine packet is `329fc44df95dde7c49348bf9ff0ad6a66db0952a51c3c6b247aa6d16c2129b0c`;
+the exported Fable case is `d5d84eaf8eb558733ee619e657a73655c38c0b8be5263d5b0099cbe87fd3b5b7`.
+The 14-frame selection is inherited unchanged from the preparation plan. No second-case
+sensitivity family has been evaluated by the Engine lane. Common operands and source maps
+already contain exact nominal coordinates for Fable's geometric edits; do not infer distances
+from a graph-only export. The original physical-reference case remains [-8,8].
+
+The first private annotation case is at
 `~/.codex/reports/reiyah/engine-annotation-case-2026-09-14-a63851u3/`.
 Read `START_HERE.md`, `PLAN.json`, `COPY_TO_CODEX.txt`, the selected source/input bindings and
 sealed `OUTBOX/annotation-conditional-case-0.1.0`. The new adapter uses existing reference and
@@ -120,6 +144,7 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 
 | Question | Checked result and evidence |
 |---|---|
+| Does the same procedure run on a second declared input? | [Second comparison](PERCEPTION_SECOND_CASE_2026-09-14.md): [2/7,2/7], 737 included labels, 14 frames, with six worsening anchors retained. Source/geometry audit and existing Fable compatibility pass; separate Fable reconstruction is next. |
 | Can another input case use the existing Engine interfaces? | [Case preparation](PERCEPTION_CASE_PORTABILITY_2026-09-14.md) checks all 4,876 original rows, reproduces the initial case and prepares the other 14 frames with 588 base/94 additions. A separate source calculation agrees. No second verdict or core/schema extension. |
 | Can the fixed comparison run without new human reviewers? | [Annotation replay](PERCEPTION_ANNOTATION_CASE_2026-09-14.md) scans all 1,166,187 annotation rows, selects the exact 119 at the two anchors, includes 106 under the fixed policy and gives [1,1]. Source/geometry audit and matching witnesses pass. This is a separate benchmark-conditional result; the original physical-reference case stays open. |
 | Does the real comparison survive the Engine changes? | [Window verification](ENGINE_WINDOW_CHECKPOINT_2026-09-13.md) reproduces the retained real packet byte for byte at [-8,8], rejects seven forged reports and reruns conventional accounting over all 648 source rows. It adds no physical reference. |
@@ -139,10 +164,11 @@ The annotation adapter's preceding full repository suite passed **430 tests**, i
 adapter tests. The 93 measurement tests and `gate_b_check` also passed at that implementation
 checkpoint. This preparation/documentation task leaves those source files unchanged and uses
 targeted private source checks; those broad suites are not counted as new runs.
-The final computation packet binds all current perception implementation bytes. Consumer source
-audit and eight mutation controls pass; existing Fable cohort code agrees on [1,1] in an Engine-lane
-compatibility replay. Human effort and a separate Fable-lane source reconstruction are unmeasured
-and pending respectively. Exact receipts and limits are in the annotation checkpoint.
+Both computation packets bind their perception implementation bytes. The second source audit
+and eight mutation controls pass; existing Fable cohort code agrees on [2/7,2/7] in an Engine-lane
+compatibility replay. Fable has supplied the first-case reconstruction; its separate reconstruction
+of the second case is pending. Human effort remains unmeasured. Exact receipts and limits are in
+the respective annotation checkpoints.
 
 The preceding full repository suite passed **418 tests**, including 14 prediction-input additions,
 with no resource warnings. Eight additional standalone controls attack the separate source reader
@@ -241,11 +267,11 @@ same bootstrap. Command-line launch plus user-supplied screenshots worked for th
 it is distinct from agent GUI interaction. Preserve any genuine later returns in fresh custody.
 
 Both discovery records remain unassigned and unfilled. The completed assisted inspection stays
-separate from physical object adjudication. Continue the automated annotation route now: consume
-Fable's exact conventional reconstruction and bounded label-error challenge; repair any concrete
-Engine defect. No new viewer, compiler or fixture campaign is justified by unavailable reviewers.
-After this case is checked, declare a second available case before expanding. A later genuine
-review record still follows the unchanged staged protocol.
+separate from physical object adjudication. Continue the automated route: the second exact case
+is supplied for Fable's reconstruction and bounded label-error challenge; repair any concrete
+Engine defect that it exposes. Preserve adverse anchors and account for weights, tolerance and
+margin when comparing the two cases. No new viewer, compiler or fixture campaign is justified by
+unavailable reviewers. A later genuine review record still follows the unchanged staged protocol.
 
 ## Preserve the comparison and review protocol
 
