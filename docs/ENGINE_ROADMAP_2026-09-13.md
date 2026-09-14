@@ -1,6 +1,6 @@
 # Reiyah: the decision, the evidence and the next checks
 
-Document ID: `reiyah.engine.roadmap`. Version: `0.1.3`. Status: `exploratory`. Updated 14 September 2026.
+Document ID: `reiyah.engine.roadmap`. Version: `0.1.4`. Status: `exploratory`. Updated 14 September 2026.
 
 Reiyah's present product question is whether a perception-validation lead can make a better
 added-detector integration choice, or reach the same defensible choice with less total effort,
@@ -20,6 +20,7 @@ an object-detection result does not validate them by analogy.
 | Compiler and provenance checks | Guarded reference sharing, original member identity, matching traces and finite conformance | Unlimited scale, a runtime product or proof over every possible compiler input |
 | Current prediction preparation | Exact original selected rows, no annotation reads during extraction and separate source agreement | Annotation-independent historical selection or cross-channel physical association |
 | Independent comparator findings | Overlap parity and conditional raw-table uncertainty; claims withdrawn where premises failed | Coefficient superiority or guaranteed identification from adding a third channel |
+| Automated annotation connection | Exact source labels feed the existing fixed-loss Engine; two-anchor conditional result [1,1] | Independent label truth, held-out benefit or lower total effort |
 
 The [README](../README.md) links the retained findings and historical protocols. The
 [current continuation](SESSION_HANDOFF.md) records exact Engine state; the
@@ -30,12 +31,14 @@ claims from main implementation. Earlier failures remain part of the evidence.
 flowchart TB
   O["Original source evidence"] --> I["Explicit selection and identity"]
   I --> S["Assisted visible selection<br/>Original record trace checked"]
-  S -. "does not admit a reference" .-> H["Actual staged review<br/>Still required"]
+  S -. "does not admit a reference" .-> H["Future staged review<br/>Separate physical-reference study"]
   H -. "qualifying records only" .-> M
   I --> M["Declared observation model<br/>Associations and unknowns"]
+  I --> B["Benchmark label target<br/>Separate conditional experiment"]
+  B --> M
   M --> D["Paired detector loss<br/>Complete joint alternatives"]
   D --> C["Checked conditional conclusion<br/>Or unresolved result"]
-  C --> U["Named engineering choice<br/>and all effort measured"]
+  C --> U["Named engineering choice<br/>Measure usefulness and total effort"]
   C -. "missing premise" .-> Q["Specific next observation<br/>or falsifying construction"]
   Q -. "actual evidence only" .-> M
 ```
@@ -44,6 +47,7 @@ flowchart TB
 
 | Gap | Owner and next concrete check | Evidence that would change the choice |
 |---|---|---|
+| Automated benchmark result | Engine supplies exact two-anchor label/prediction bytes; Fable reconstructs conventionally and checks a bounded single-label deletion challenge | Source/graph/verdict discrepancy, or an explicit hypothetical error that changes the criterion; retain parity and limitations |
 | Practical inspection | Engine: one assisted selection now traces to original records; use a working copy to repair the observed overwrite and save-path problems | A later participant can complete the revised procedure, with actual effort and failures recorded |
 | Independent physical references | Engine coordinates the authorized staged protocol; reviewers supply actual observations | Both unassisted records locked before assistance, complete disagreements and admitted joint alternatives |
 | Raw association uncertainty | Fable: use selected original rows, preserve unmatched records and order, compare a declared rule with a serious baseline | A checked decision or abstention stable to a defensible association/error model, or a retained counterexample |
@@ -51,12 +55,17 @@ flowchart TB
 | Equal useful comparison | Both lanes: same opportunities, references, weights, loss, tolerance and source evidence | One defensible integration choice with measured preparation, computation, verification, review and repair effort |
 | Generalization and stronger scientific claims | Separate future protocol and appropriately diverse inputs; no new cohort selected here | Held-out validation and dated primary comparisons that survive marginal, association and shared-data controls |
 
-The real comparison remains **[-8,8]**. The [assisted inspection](PERCEPTION_ASSISTED_INSPECTION_2026-09-14.md)
+The original comparison with open physical references remains **[-8,8]**. A
+[separate annotation-conditional replay](PERCEPTION_ANNOTATION_CASE_2026-09-14.md) gives **[1,1]**
+on the same fixed two anchors: +3 at the first, -1 at the second, with equal weights. It includes
+106 of 119 exact source annotations under the declared rules. The [assisted inspection](PERCEPTION_ASSISTED_INSPECTION_2026-09-14.md)
 verifies one user-reported selection with retained screenshots and unchanged source records.
 Repeated guidance and a save-path repair were required. Qualifying human references, reliable
 usability, measured decision value and external scientific review remain missing. Preserve this
 result without converting a highlighted point into an object judgment or inventing references.
-The next consequential evidence is actual staged review, followed by one fair decision comparison.
+Daniel's later explicit instruction selects continued automated engineering without supplying
+reviewers. The next check is Fable's conventional reconstruction and bounded label-error challenge.
+Independent physical review is preserved as a separate future claim and does not block that work.
 
 The [14 September inspection check](PERCEPTION_INSPECTION_2026-09-14.md) repairs a required
 argument missing from the viewer guide and verifies extraction against an existing programmatic
@@ -74,8 +83,9 @@ assumptions, comparator, cost and next falsifier.
 
 The delivered predictions carry nominal coordinates and sample identities, without declared
 per-row localization or timing error bounds. Research may explore a declared association family;
-its radius is not thereby a measured physical tolerance. The successor should prioritize actual
-participant returns and consume newly sealed Fable work without duplicating that lane.
+its radius is not thereby a measured physical tolerance. The successor should consume the sealed
+benchmark-case challenge without duplicating Fable's lane. Do not fabricate actual readings from
+counterfactual label edits. Test a second available case after the first is checked, before expansion.
 
 ## Ownership and authority
 

@@ -12,12 +12,19 @@ computes paired-loss enclosures with exact arithmetic and checks matching certif
 nominal geometry and restricted observation packages prepare physical review. The intended user
 is a perception-validation lead deciding whether an added detector merits further integration work.
 
-As checked on **14 September 2026**, the two development anchors still give **[-8,8]** under unit
-penalties. No qualifying human reference judgments have been admitted. Source binding, common
-analyst inputs and checked computations are implemented; an improved integration decision and
-an advantage over competent conventional analysis remain unproven.
+As checked on **14 September 2026**, a [new automated replay](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md)
+on the two existing development anchors gives **[1,1]**, conditional on the retained benchmark
+labels and Reiyah's fixed rules. Weighted loss falls from 23.5 to 22.5; one anchor improves and
+the other worsens. The original comparison with open physical references still gives **[-8,8]**.
+No qualifying human reference judgments have been admitted. An independently demonstrated
+integration benefit or advantage over competent conventional analysis remains unproven.
 
-The [current checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) prepares all **4,876 original
+The [annotation adapter](research/perception-annotations/0.1.0/README.md) provides an executable
+development route without new reviewer input. It preserves exact label/source identity and
+uses the existing joint-reference compiler and maximum-matching checks. This is a retrospective
+calculation under declared label assumptions, not an official nuScenes score or physical validation.
+
+The [prediction checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) prepares all **4,876 original
 prediction rows across 16 exposed development keyframes** without reading annotation-bearing
 inputs during extraction. Original bytes, duplicate rows and zero-based source indices survive.
 A separately written source reader agrees on every selected row. This provides inputs for
@@ -274,6 +281,7 @@ The implemented pieces form one offline comparison pipeline:
 | [Effort accounting](docs/ENGINE_EFFORT_ACCOUNTING_2026-09-13.md) | Command durations, overlapping intervals and copied receipts distinguished; human effort remains unmeasured |
 | [Real comparison refresh](docs/ENGINE_WINDOW_CHECKPOINT_2026-09-13.md) | Original [-8,8] packet reproduced byte for byte, forged decisions rejected and all 648 comparison source-row dispositions rechecked |
 | [Prediction-only inputs](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) | Exact original arrays and record indices for 4,876 predictions; annotation reads blocked during extraction and separate conventional retrieval agrees |
+| [Annotation-conditional replay](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md) | All 119 source labels at the two anchors accounted for; 106 included; fixed paired loss [1,1] with literal row custody and checked matching |
 
 The proposed study selects **60 scenes**, then one eligible anchor per scene, only after the
 input, method, reviewer, comparator and adjudication freeze. Two independent reviewers first
@@ -306,15 +314,21 @@ falsifier for each gap and the boundary between implemented work and proposed re
 flowchart TB
   S["Original submitted detections<br/>Exposed development selection"] --> E["Engine: exact row preparation<br/>Source hashes and original indices"]
   E --> X["Selected immutable exchange<br/>Same source evidence"]
-  X --> F["Fable: declared association model<br/>Overlap baseline and uncertainty"]
+  B["Retained benchmark labels<br/>Explicit conditional target"] --> E
+  X --> F["Fable: conventional comparator<br/>Source reconstruction and label tests"]
   F --> Q["Checked conditional result<br/>Or explicit unresolved state"]
   Q --> A["What observation or repair<br/>could change the integration choice?"]
+  Q --> C["Same joint operands, both analysts<br/>Measure usefulness and total effort"]
   A -. "requires actual evidence" .-> R["Staged independent review<br/>Admission remains with Engine"]
-  R -. "when available" .-> C["Same joint operands, both analysts<br/>Decision usefulness and all effort"]
+  R -. "when available" .-> C
 ```
 
 This research exchange does not release detector hints to discovery reviewers. Both independent
 unassisted records must still be locked before assistance is released.
+
+The current automated comparison uses the declared benchmark target while physical review stays
+separate. Fable's next check is conventional source reconstruction and a bounded single-label
+deletion diagnostic, preserving hypothetical stress tests as distinct from actual observations.
 
 The first product proof is a useful engineering choice against a competent analyst using the
 same evidence, mathematics and abstention, with preparation, verification, review, computation,
@@ -394,7 +408,7 @@ identities.
 
 | Read for | Start here |
 |---|---|
-| Current Engine direction and implementation | [Dated roadmap](docs/ENGINE_ROADMAP_2026-09-13.md), [latest checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md), [current continuation](docs/SESSION_HANDOFF.md), [decision interface](research/perception-decision/0.1.0/README.md) |
+| Current Engine direction and implementation | [Dated roadmap](docs/ENGINE_ROADMAP_2026-09-13.md), [latest checkpoint](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md), [current continuation](docs/SESSION_HANDOFF.md), [decision interface](research/perception-decision/0.1.0/README.md) |
 | Independent research and its corrections | [Current sign/custody consumer review](docs/FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md), [earlier raw/overlap review](docs/FABLE_RAW_CONSUMER_REVIEW_2026-09-13.md); exact research commits and scope remain separate from main integration |
 | Present evidence, limits and comparison with prior work | [11 September review](docs/ENGINE_CREDIBILITY_REVIEW_2026-09-11.md), [reproducible decision examples](research/perception-decision-review/0.1.0/README.md) |
 | Mission and scientific structure | [Scientific charter](docs/SCIENTIFIC_CHARTER.md), [architecture](docs/ARCHITECTURE.md), [mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) |

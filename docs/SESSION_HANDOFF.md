@@ -2,15 +2,22 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.11`
+Version: `0.1.12`
 
 Lifecycle status: `exploratory`
 
-The real two-window comparison remains **[-8,8]**. The Engine can preserve and check joint
-reference alternatives, but no qualifying human references have been admitted. One assisted
-selection return is now verified; reliable participant usability, measured decision value and
-external scientific review remain missing. Gate A is unaccepted;
-the prospective physical study has not run and has no selected cohort or seed.
+The new [annotation-conditional replay](PERCEPTION_ANNOTATION_CASE_2026-09-14.md) gives **[1,1]**
+on the same two development anchors. All 119 source annotations are accounted for and 106 meet
+the fixed target; weighted loss falls from 23.5 to 22.5. The original comparison with open
+physical references remains **[-8,8]**, with zero admitted human readings. Reliable participant
+usability, measured decision value and external scientific review remain missing. Gate A is
+unaccepted; the prospective physical study has no selected cohort or seed and has not run.
+
+Daniel explicitly requested continued autonomous engineering without supplying reviewers. That
+steering selects a separate automated benchmark-label route; it supersedes the previous immediate
+instruction to stop at unavailable staged review. Do not ask Daniel to repeat the point-selection
+exercise or provide reviewers to continue this route. Preserve the original review protocol and
+open comparison. The new conditional result does not admit source labels as human judgments.
 
 The [assisted inspection checkpoint](PERCEPTION_ASSISTED_INSPECTION_2026-09-14.md) verifies an
 actual saved selection accompanied by user screenshots and a reported click. One original index
@@ -33,8 +40,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This assisted checkpoint starts from main
-`fd1bba47c4a69ae9514d40c4acfbf9bfb9639552`, tree `a52eb40585ba7184d9df7b090895c3abeff4dfe6`.
+uncommitted ownership before acting. This annotation checkpoint starts from main
+`5a9e702705a94eb333e507d9e1f2b016b17b5263`, tree `7516fc37ed1b7ddd963fd74355bd21deba1439e6`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -50,7 +57,15 @@ or processes, or duplicate that implementation. Read current lane status before 
 overlapping work. Exchange only through separately selected immutable outboxes; a chat verdict
 or mutable branch tip is insufficient. No ownership transfer is implied by a consumer review.
 
-Current private inspection evidence is at
+Current private annotation evidence is at
+`~/.codex/reports/reiyah/engine-annotation-case-2026-09-14-a63851u3/`.
+Read `START_HERE.md`, `PLAN.json`, `COPY_TO_CODEX.txt`, the selected source/input bindings and
+sealed `OUTBOX/annotation-conditional-case-0.1.0`. The new adapter uses existing reference and
+common interfaces. Fable receives one benchmark world, while the original human-review case
+continues to have no admitted worlds. Fable's current source is separately owned; the Engine
+consumer replay of its existing cohort producer is compatibility evidence only.
+
+Preserved private inspection evidence is at
 `~/.codex/reports/reiyah/engine-anchor-assisted-inspection-2026-09-14-zsz33ba9/`.
 Read `START_HERE.md`, `COPY_TO_CODEX.txt`, the sealed closeout and selected input bindings.
 The original historical opening path was saved over during the participant exercise; its exact
@@ -84,6 +99,7 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 
 | Question | Checked result and evidence |
 |---|---|
+| Can the fixed comparison run without new human reviewers? | [Annotation replay](PERCEPTION_ANNOTATION_CASE_2026-09-14.md) scans all 1,166,187 annotation rows, selects the exact 119 at the two anchors, includes 106 under the fixed policy and gives [1,1]. Source/geometry audit and matching witnesses pass. This is a separate benchmark-conditional result; the original physical-reference case stays open. |
 | Does the real comparison survive the Engine changes? | [Window verification](ENGINE_WINDOW_CHECKPOINT_2026-09-13.md) reproduces the retained real packet byte for byte at [-8,8], rejects seven forged reports and reruns conventional accounting over all 648 source rows. It adds no physical reference. |
 | Can both analysts receive the same reviewed joint operands? | [Reviewed operands](PERCEPTION_REVIEWED_OPERANDS_CHECKPOINT_2026-09-12.md) preserve the complete joint alternatives, weights, loss, tolerance, matching and provenance. Synthetic conformance is engineering evidence. |
 | Can unnecessary compiler expansion be reduced? | [Guarded reference sharing](PERCEPTION_REFERENCE_SHARING_2026-09-13.md), [local reference identity](PERCEPTION_REFERENCE_IDENTITY_2026-09-13.md) and [member equivalence](PERCEPTION_REFERENCE_EQUIVALENCE_2026-09-13.md) improve bounded synthetic cases while preserving original world/source mappings and member order. Both previous sharing plans remain available when broader sharing cannot fit. Failed candidates and unchanged limits remain explicit. |
@@ -97,16 +113,23 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 | Can research receive predictions without annotation reads? | [Prediction-only inputs](PERCEPTION_PREDICTIONS_2026-09-13.md) retain all 4,876 submitted rows across the 16 exposed development frames, with original bytes and indices. Two guarded runs agree; a separate conventional reader checks every selected row. Historical selection independence and physical association are not established. |
 | What did the selected sign/custody correction establish? | [The current consumer review](FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md) checks 2,401 small-table sign classifications, 18 aggregate thresholds and default source-digest rejection. The raw helper remains disconnected from the corrected classifier, and the 14.025× span combines score/radius/rule changes. Full raw association and Fable's reported 581 tests were not replayed. No research implementation was merged. |
 
-The latest full repository suite passed **418 tests**, including 14 prediction-input additions,
+The annotation adapter's latest full repository suite passed **430 tests**, including 12 new
+adapter tests. The 93 measurement tests and `gate_b_check` also passed on the current candidate.
+The final computation packet binds all current perception implementation bytes. Consumer source
+audit and eight mutation controls pass; existing Fable cohort code agrees on [1,1] in an Engine-lane
+compatibility replay. Human effort and a separate Fable-lane source reconstruction are unmeasured
+and pending respectively. Exact receipts and limits are in the annotation checkpoint.
+
+The preceding full repository suite passed **418 tests**, including 14 prediction-input additions,
 with no resource warnings. Eight additional standalone controls attack the separate source reader
 with the Engine producer disabled. Two real preparations retain identical packet bytes; extraction
 access controls reject all three annotation-bearing inputs and observe no unexpected read attempt.
 The [prediction verification](../research/perception-predictions/0.1.0/verification.json) binds current
 source, outputs, costs and limitations. The prior 404-test suite remains retained evidence for its
 own checkpoint. The earlier [database-lifetime trace](PERCEPTION_CATALOG_LIFETIME_2026-09-13.md)
-attributes the previous warnings to test fixtures; its correction is retained. The **93 measurement
-tests** remain retained from their earlier exact source bindings, not newly replayed; all 107
-source files were rechecked. [Member-equivalence verification](../research/perception-reference-equivalence/0.1.0/verification.json)
+attributes the previous warnings to test fixtures; its correction is retained. At that preceding
+checkpoint the **93 measurement tests** were retained from earlier exact bindings rather than
+replayed; all 107 source files were rechecked. [Member-equivalence verification](../research/perception-reference-equivalence/0.1.0/verification.json)
 records exact inputs, outputs, direct tiny-world checks, first failures, corrections and costs.
 The ordering control reaches finite `[1,1]`; the synthetic admission example preserves original
 member order in common operands and rejects rehashed provenance rewriting. The proposed rational
@@ -193,10 +216,12 @@ same Swift-loader failure; permissions and gcloud were not established causes. D
 same bootstrap. Command-line launch plus user-supplied screenshots worked for this exercise;
 it is distinct from agent GUI interaction. Preserve any genuine later returns in fresh custody.
 
-Actual staged reference observations now take priority over another point-selection rehearsal.
-Both discovery records remain unassigned and unfilled. If no qualifying new input exists, retain
-the open references and state the precise phase/participant dependency. No new viewer, compiler
-or fixture campaign is justified by that absence.
+Both discovery records remain unassigned and unfilled. The completed assisted inspection stays
+separate from physical object adjudication. Continue the automated annotation route now: consume
+Fable's exact conventional reconstruction and bounded label-error challenge; repair any concrete
+Engine defect. No new viewer, compiler or fixture campaign is justified by unavailable reviewers.
+After this case is checked, declare a second available case before expanding. A later genuine
+review record still follows the unchanged staged protocol.
 
 ## Preserve the comparison and review protocol
 

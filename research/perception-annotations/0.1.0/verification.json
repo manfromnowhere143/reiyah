@@ -1,0 +1,283 @@
+{
+  "artifact_id": "reiyah.perception-annotations.verification",
+  "base_commit": "5a9e702705a94eb333e507d9e1f2b016b17b5263",
+  "commands": {
+    "consumer-audit": {
+      "child_max_rss_bytes_macos": 223363072,
+      "elapsed_seconds": 24.657017417019233,
+      "exit_code": 0,
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 1282,
+          "sha256": "6fa55bbe2b26886f953845cd25da58c60b16a0de6b810c609ed2eb1f15af92a6"
+        }
+      }
+    },
+    "fable-compatibility": {
+      "child_max_rss_bytes_macos": 19841024,
+      "elapsed_seconds": 0.03796716593205929,
+      "exit_code": 0,
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 1596,
+          "sha256": "d4d82e55697f4767314d7b7a1230c646ee08c7a655d6107e54b4e48f3154adce"
+        }
+      }
+    },
+    "gate-b": {
+      "child_max_rss_bytes_macos": 25968640,
+      "elapsed_seconds": 1.978226832812652,
+      "exit_code": 0,
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 1260,
+          "sha256": "c1b56e387cf725bd1485912fc69df601dd7eeba486a8a646d04ec67b5d757409"
+        }
+      }
+    },
+    "measurement-tests": {
+      "child_max_rss_bytes_macos": 72810496,
+      "elapsed_seconds": 6.268808208173141,
+      "exit_code": 0,
+      "streams": {
+        "stderr.txt": {
+          "bytes": 880,
+          "sha256": "eee1cd48ac7f2b14ecfb59645052a94b6fe52904492c28509cce803bc5b51ee4"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    "prediction-source-refresh": {
+      "child_max_rss_bytes_macos": 39583744,
+      "elapsed_seconds": 0.39433395816013217,
+      "exit_code": 0,
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 673,
+          "sha256": "b94671b3d450501495bc4c148f593b79851b85d583b1ab85b2cf1bf0360c6b36"
+        }
+      }
+    },
+    "replay-1": {
+      "child_max_rss_bytes_macos": 239140864,
+      "elapsed_seconds": 26.43056762497872,
+      "exit_code": 0,
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 1926,
+          "sha256": "3357869e70bddf816fc3bad580c2009f5fc56acfcedd6c2eca5314fab5e8836d"
+        }
+      }
+    },
+    "replay-2": {
+      "child_max_rss_bytes_macos": 215924736,
+      "elapsed_seconds": 27.289340374991298,
+      "exit_code": 0,
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 1926,
+          "sha256": "3357869e70bddf816fc3bad580c2009f5fc56acfcedd6c2eca5314fab5e8836d"
+        }
+      }
+    },
+    "repository-tests": {
+      "child_max_rss_bytes_macos": 294617088,
+      "elapsed_seconds": 63.38108474994078,
+      "exit_code": 0,
+      "streams": {
+        "stderr.txt": {
+          "bytes": 1178,
+          "sha256": "7d1f16c5adf6aeb19a84c88b6025e367ef0e5427a0a7023315e19d76393b6aff"
+        },
+        "stdout.txt": {
+          "bytes": 370,
+          "sha256": "9aca8981e615dc93028da28f120da524c2f3b4ec4a72473460918c4cc413da4d"
+        }
+      }
+    },
+    "targeted-1": {
+      "child_max_rss_bytes_macos": 40173568,
+      "elapsed_seconds": 0.3168195828329772,
+      "exit_code": 0,
+      "streams": {
+        "stderr.txt": {
+          "bytes": 2069,
+          "sha256": "1023532cec107b0da6de2f86b32cde0b2f8dff958037d0a32138eeeed1b6af7a"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  },
+  "date": "2026-09-14",
+  "first_failures_and_corrections": [
+    "Official v1.2.0 source URLs and root LICENSE path were absent (404); selected exact commit and LICENSE.txt instead.",
+    "Runtime inventory audit initially assumed only ordinary files and stopped on a symlink record. Corrected reader checks link targets and resolved file bytes; all 4219 entries match.",
+    "A documentation patch had malformed diff syntax and made no changes; corrected patch applied."
+  ],
+  "gate_b": "passed retained research consistency check; not historical replay or Gate A release",
+  "lifecycle_status": "exploratory",
+  "next_falsifier": "Fable independently reconstructs the same benchmark comparison, then tests an explicitly hypothetical at-most-one included-annotation deletion family without admitting those worlds as physical evidence.",
+  "performance_scope": "Different commands do different work. Some overlap. No fair speed comparison or measured human-effort claim.",
+  "result": {
+    "admitted_human_readings": 0,
+    "anchors": [
+      {
+        "addition_count": 9,
+        "anchor_id": "window-0001",
+        "base_count": 48,
+        "included_annotations": 61,
+        "original_anchor_id": "prior-development-1",
+        "reference_state": "finite"
+      },
+      {
+        "addition_count": 7,
+        "anchor_id": "window-0002",
+        "base_count": 37,
+        "included_annotations": 45,
+        "original_anchor_id": "prior-development-2",
+        "reference_state": "finite"
+      }
+    ],
+    "annotation_rows_scanned": 1166187,
+    "artifact_id": "reiyah.perception-annotations.result",
+    "comparison_sha256": "45308db6cec4b5034100f780a2ecd8beb1779b8101cac7c77b343b511ed1afa1",
+    "evidence_kind": "benchmark_annotation_conditional",
+    "excluded_annotations": 13,
+    "human_effort": "unmeasured",
+    "independent_label_accuracy": "not_established",
+    "official_nuscenes_score": false,
+    "original_common_comparison_sha256": "fbb2610aef00687e429bb71d805c4c1f321ec14978005e9fbdf44048bb5547b4",
+    "original_reference_changed": false,
+    "physical_safety_claim": false,
+    "policy": "reiyah.annotation-conditional-fixed-comparison.0.1.0",
+    "reference_sha256": "1e0ea38b55bfb20d7c0b1a127dd12c593b51f095d371bf1f68c9ecaeee4c9024",
+    "request_sha256": "c3ba74d731fefe9d0c08078bfdcb2e04ce9fc167d9d829f06d6667976b1b731b",
+    "result": {
+      "authority_state": "research_only",
+      "bounds": {
+        "lower": {
+          "denominator": "1",
+          "numerator": "1"
+        },
+        "upper": {
+          "denominator": "1",
+          "numerator": "1"
+        }
+      },
+      "decision": {
+        "improvement_criterion": "supported",
+        "preference": "prefer_augmented"
+      },
+      "enclosure_kind": "exact_for_finite_model",
+      "execution_status": "succeeded",
+      "model_status": "consistent",
+      "physical_coverage": "not_established",
+      "reference_scope": "conditional_reference_graph",
+      "sampling_scope": "fixed_selected_cohort",
+      "statistical_confidence_level": null
+    },
+    "shared_trusted_code": [
+      "source JSON/archives",
+      "normalization lineage",
+      "reference compiler",
+      "neutral projection",
+      "core contract and witness checker"
+    ],
+    "source_annotation_count": 119,
+    "upstream_prediction_qualification": "inherited separately bound source qualification; not model inference reproduction",
+    "version": "0.1.0"
+  },
+  "source_and_geometry_check": {
+    "artifact_id": "reiyah.annotation-case.consumer-audit",
+    "not_checked": [
+      "physical label truth",
+      "independent model inference reproduction",
+      "human effort",
+      "official benchmark metric"
+    ],
+    "packet_sha256": "11f25fca339977097ef4046820f9ddf1015beb0e1984a305fafab225a14f90e3",
+    "producer_and_reference_compiler_not_called": true,
+    "refused_mutations": [
+      "wrong_original_index",
+      "wrong_source_geometry",
+      "missing_annotation",
+      "missing_edge",
+      "missing_object",
+      "forged_decision",
+      "forged_human_readings",
+      "forged_safety_claim"
+    ],
+    "result": {
+      "per_anchor": [
+        {
+          "anchor_id": "window-0001",
+          "delta": 3,
+          "loss_augmented": 26,
+          "loss_base": 29,
+          "objects": 61,
+          "tp_augmented": 46,
+          "tp_base": 40
+        },
+        {
+          "anchor_id": "window-0002",
+          "delta": -1,
+          "loss_augmented": 19,
+          "loss_base": 18,
+          "objects": 45,
+          "tp_augmented": 35,
+          "tp_base": 32
+        }
+      ],
+      "rows_scanned": 1166187,
+      "source_rows_checked": 119,
+      "weighted_delta": "1"
+    },
+    "shared_trusted_code": [
+      "JSONStream",
+      "snapshot",
+      "archive table reader",
+      "core contract and certificate checker"
+    ],
+    "version": "0.1.0"
+  },
+  "source_files": {
+    "tests/test_perception_annotations.py": "baff3a221b0c333e60859986b6690284d01022e795fafebfdc146ff33874458c",
+    "tools/perception_annotations.py": "3738e39608417ad160742cebe2f46fff792ed5bf3ec5dd1ecd9ebe75e47253f6"
+  },
+  "test_counts": {
+    "focused_adapter_subset": 12,
+    "measurement": 93,
+    "repository": 430
+  },
+  "version": "0.1.0"
+}
