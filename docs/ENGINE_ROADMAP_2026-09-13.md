@@ -1,6 +1,6 @@
 # Reiyah: the decision, the evidence and the next checks
 
-Document ID: `reiyah.engine.roadmap`. Version: `0.1.6`. Status: `exploratory`. Updated 14 September 2026.
+Document ID: `reiyah.engine.roadmap`. Version: `0.1.7`. Status: `exploratory`. Updated 14 September 2026.
 
 The [product and funding thesis](PRODUCT_AND_FUNDING_THESIS_2026-09-14.md) explains the destination:
 an evidence engine that helps AI engineering teams substantiate system changes and, longer term,
@@ -26,7 +26,8 @@ an object-detection result does not validate them by analogy.
 | Independent comparator findings | Overlap parity and conditional raw-table uncertainty; claims withdrawn where premises failed | Coefficient superiority or guaranteed identification from adding a third channel |
 | Automated annotation connection | Exact source labels feed the existing fixed-loss Engine; two-anchor conditional result [1,1] | Independent label truth, held-out benefit or lower total effort |
 | Additional case preparation | Existing interfaces prepare 14 remaining exposed frames; original rows, normalization and common traces checked | A second detector verdict, independent scene validation or measured low integration effort |
-| Second automated comparison | Same interfaces give [2/7,2/7] under 737 included labels; seven frames improve, six worsen, one is unchanged | Independent scenes, physical label truth, or separate Fable reconstruction of this second result |
+| Second automated comparison | Same interfaces give [2/7,2/7] under 737 included labels; returned Fable single-deletion family and two crossing pairs checked | Independent scenes, physical label truth or measured workflow value |
+| Actual dependency trace | Single and joint deletion witnesses open original annotation/detector records and exact available capture bytes; unavailable captures explicit | Object-to-pixel/point association, human judgment or total-effort savings |
 
 The [README](../README.md) links the retained findings and historical protocols. The
 [current continuation](SESSION_HANDOFF.md) records exact Engine state; the
@@ -44,6 +45,7 @@ flowchart TB
   B --> M
   M --> D["Paired detector loss<br/>Complete joint alternatives"]
   D --> C["Checked conditional conclusion<br/>Or unresolved result"]
+  C --> T["Checked joint dependency<br/>Original records and available captures"]
   C --> U["Named engineering choice<br/>Measure usefulness and total effort"]
   C -. "missing premise" .-> Q["Specific next observation<br/>or falsifying construction"]
   Q -. "actual evidence only" .-> M
@@ -53,7 +55,8 @@ flowchart TB
 
 | Gap | Owner and next concrete check | Evidence that would change the choice |
 |---|---|---|
-| Automated benchmark result | First case baseline and 106 single deletions checked; six witnesses confirmed. Engine supplies the completed 14-frame second case to Fable | Separate reconstruction discrepancy or a declared error-family result; retain parity and limitations |
+| Automated benchmark result | Both returned deletion challenges checked; minimum crossing group has one label in the first case and two in the second | Results from a different scene or another declared error family; retain weights, margin and ordinary-analyst shortcuts |
+| Dependency consumption | Engine: reusable source trace now works on both cases, including joint deletions and missing captures | A separate consumer fails to recover the correct source, silently substitutes evidence or cannot use the result |
 | Preparation reuse | Second case executed through existing interfaces, with 588 base detections, 94 additions and 737 included labels; private audit control repair retained | Repeated usefulness and full effort accounting beyond these two exposed scenes |
 | Practical inspection | Engine: one assisted selection now traces to original records; use a working copy to repair the observed overwrite and save-path problems | A later participant can complete the revised procedure, with actual effort and failures recorded |
 | Independent physical references | Engine coordinates the authorized staged protocol; reviewers supply actual observations | Both unassisted records locked before assistance, complete disagreements and admitted joint alternatives |
@@ -71,7 +74,8 @@ Repeated guidance and a save-path repair were required. Qualifying human referen
 usability, measured decision value and external scientific review remain missing. Preserve this
 result without converting a highlighted point into an object judgment or inventing references.
 Daniel's later explicit instruction selects continued automated engineering without supplying
-reviewers. The next check is Fable's conventional reconstruction and bounded label-error challenge.
+reviewers. The [dependency checkpoint](PERCEPTION_DEPENDENCY_TRACE_2026-09-14.md) consumes Fable's
+second-case result and makes the checked witnesses inspectable through existing source formats.
 Independent physical review is preserved as a separate future claim and does not block that work.
 
 The [14 September inspection check](PERCEPTION_INSPECTION_2026-09-14.md) repairs a required
@@ -96,7 +100,8 @@ counterfactual label edits. Test a second available case after the first is chec
 The [second comparison is now executed and checked](PERCEPTION_SECOND_CASE_2026-09-14.md), with
 selection fixed before its verdict. It returns [2/7,2/7] under its label policy. Its 14 frames are
 additional observations from the same two scenes; no prospective/frozen-study or independent-scene
-claim follows. Fable owns the next bounded sensitivity study on its exact exported bytes.
+claim follows. The returned sensitivity result is now checked. Fable owns the remaining
+insertion-coordinate repair and explicit accounting for its planned second-case insertion family.
 
 ## Ownership and authority
 

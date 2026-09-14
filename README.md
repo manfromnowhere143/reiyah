@@ -43,6 +43,13 @@ now uses 737 included benchmark labels and gives a weighted improvement of **2/7
 pass, and existing Fable code agrees in a compatibility replay. These additional frames come
 from the same two scenes and do not constitute independent scene validation.
 
+The [dependency trace](docs/PERCEPTION_DEPENDENCY_TRACE_2026-09-14.md) now opens the original
+records behind six individual first-case witnesses and two joint second-case witnesses. Both
+two-label groups reduce the second result from 2/7 to zero. The command preserves the group,
+original annotation and detector indices, exact capture bytes, camera timing offsets and missing
+captures. It supplies an inspectable conditional argument; label truth and measured workflow
+value remain open. The core comparison and common formats are unchanged.
+
 The [prediction checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) prepares all **4,876 original
 prediction rows across 16 exposed development keyframes** without reading annotation-bearing
 inputs during extraction. Original bytes, duplicate rows and zero-based source indices survive.

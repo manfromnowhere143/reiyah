@@ -1,0 +1,312 @@
+{
+  "actual_cases": [
+    {
+      "capture_states": {
+        "original_and_delivered_bytes_verified": 14
+      },
+      "case": "trace-first-reviewed",
+      "file_count": 30,
+      "joint_groups": 6,
+      "original_record_files": 22,
+      "packet_sha256": "5f4acd33d63ef5b88e9365d71453880955b3580f5ac15f99e9ffb65a048cb432",
+      "targets": 6,
+      "trace_sha256": "f1a40c6f9d674f47b9c1e7bca0fa90288ea1241906a41d0b8cc271cc23d25e4d"
+    },
+    {
+      "capture_states": {
+        "capture_not_in_supplied_package": 6,
+        "original_and_delivered_bytes_verified": 8
+      },
+      "case": "trace-second-reviewed",
+      "file_count": 18,
+      "joint_groups": 2,
+      "original_record_files": 13,
+      "packet_sha256": "474f252495e11d15ce23d5da15c5da5491f8091db4913c7e5d01dcd65dad56a8",
+      "targets": 3,
+      "trace_sha256": "d85c6f4244ec360d068802bce010ca5ae3392cf5f2c53ec0e773d617574fc636"
+    }
+  ],
+  "artifact_id": "reiyah.annotation-trace.verification",
+  "consumer_review": {
+    "arithmetic_floor": 2,
+    "artifact_id": "reiyah.dependency-trace.consumer-review",
+    "carriers": 53,
+    "case_sha256": "d5d84eaf8eb558733ee619e657a73655c38c0b8be5263d5b0099cbe87fd3b5b7",
+    "checked_crossing_pairs": 2,
+    "chronology_correction": {
+      "before_delivery_to_fable": "Fable-reported; no independent exposure audit",
+      "claim_before_case_existed": "contradicted by retained command chronology",
+      "engine_second_case_completed_utc": "2026-09-14T16:28:05.254287+00:00",
+      "fable_preregistration_recorded_utc": "2026-09-14T16:45:20.958145+00:00"
+    },
+    "counts": {
+      "supported": 737
+    },
+    "fable_manifest_sha256": "184ec42921f46f8403bbf48657d8774542d1344f6ec0b4e5258fdf582295a0e3",
+    "fable_repairs": {
+      "empty_geometry": "refused",
+      "original_metric_control": "passes",
+      "unsupported_case_header": "refused"
+    },
+    "largest_single_step": "1/7",
+    "margin": "13/70",
+    "minimality": "Any object deletion changes either maximum matching by at most one. Their difference changes by at most one; one weighted deletion moves delta by at most (a+b)*weight. Here one cannot cross tolerance; checked two-label witness reaches zero. Thus minimum is exactly two under this family.",
+    "missing_capture": "explicit unavailability preserved",
+    "new_fable_defect": {
+      "actual_case_insertion_results": "not invalidated by this control; no second-case insertion family consumed",
+      "coordinates_full": {
+        "d0": [
+          "2",
+          "0"
+        ],
+        "d1": [
+          "3",
+          "0"
+        ]
+      },
+      "full_neighbors": [
+        "d0",
+        "d1"
+      ],
+      "kind": "incomplete_coordinate_map_silently_omits_same_class_edge",
+      "omitted": "d0",
+      "partial_neighbors": [
+        "d1"
+      ],
+      "source_commit": "762e1aae2f9dfe6df0808f735d5276dc9d7d963a",
+      "synthetic_only": true
+    },
+    "not_established": [
+      "physical label truth",
+      "human effort savings",
+      "independent-scene generalization",
+      "state of the art superiority"
+    ],
+    "range": [
+      "1/7",
+      "2/7"
+    ],
+    "refused_trace_substitutions": [
+      {
+        "code": "TRACE_JOIN",
+        "control": "wrong_world"
+      },
+      {
+        "code": "TRACE_INDEX",
+        "control": "wrong_local_index"
+      },
+      {
+        "code": "TRACE_JOIN",
+        "control": "unqualified_anchor"
+      },
+      {
+        "code": "TRACE_CASE",
+        "control": "wrong_case_digest"
+      },
+      {
+        "code": "TRACE_MAPPING",
+        "control": "same_graph_wrong_source_record"
+      },
+      {
+        "code": "TRACE_SCOPE",
+        "control": "open_is_not_empty"
+      },
+      {
+        "code": "TRACE_WITNESS",
+        "control": "joint_witness_misreported_as_individual"
+      },
+      {
+        "code": "TRACE_CAPTURE",
+        "control": "wrong_capture_timestamp"
+      },
+      {
+        "code": "TRACE_CAPTURE",
+        "control": "wrong_capture_sample"
+      },
+      {
+        "code": "SOURCE_DIGEST",
+        "control": "altered_original_capture"
+      }
+    ],
+    "shared_trusted_code": [
+      "Engine matching producer/certificate checker; trace source helpers for mutation probes; source JSON/archive readers"
+    ],
+    "single_deletions_checked": 737,
+    "unresolved_plan_item": "Preregistration says also run the unchanged insertion family on the second case; selected outbox retains only the corrected first-case insertion family. Second-case execution or explicit amendment is not supplied.",
+    "version": "0.1.0"
+  },
+  "costs": {
+    "consumer-check": {
+      "child_max_rss_bytes_macos": 255213568,
+      "elapsed_seconds": 39.66685466701165,
+      "ended_utc": "2026-09-14T17:21:06.010588+00:00",
+      "exit_code": 1,
+      "started_utc": "2026-09-14T17:20:26.343446+00:00"
+    },
+    "consumer-check-2": {
+      "child_max_rss_bytes_macos": 300236800,
+      "elapsed_seconds": 40.318735708948225,
+      "ended_utc": "2026-09-14T17:23:02.064656+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:22:21.745834+00:00"
+    },
+    "gate-b": {
+      "child_max_rss_bytes_macos": 26066944,
+      "elapsed_seconds": 1.8121189158409834,
+      "ended_utc": "2026-09-14T17:15:52.808940+00:00",
+      "exit_code": 1,
+      "started_utc": "2026-09-14T17:15:50.993557+00:00"
+    },
+    "gate-b-final": {
+      "child_max_rss_bytes_macos": 25509888,
+      "elapsed_seconds": 1.7811024999246001,
+      "ended_utc": "2026-09-14T17:27:29.345317+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:27:27.563894+00:00"
+    },
+    "gate-b-reviewed": {
+      "child_max_rss_bytes_macos": 24543232,
+      "elapsed_seconds": 1.7674957909621298,
+      "ended_utc": "2026-09-14T17:36:46.412639+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:36:44.645012+00:00"
+    },
+    "measurement-final": {
+      "child_max_rss_bytes_macos": 73121792,
+      "elapsed_seconds": 5.802505500148982,
+      "ended_utc": "2026-09-14T17:27:33.364905+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:27:27.562307+00:00"
+    },
+    "measurement-reviewed": {
+      "child_max_rss_bytes_macos": 71892992,
+      "elapsed_seconds": 5.6694749591406435,
+      "ended_utc": "2026-09-14T17:36:50.314597+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:36:44.645012+00:00"
+    },
+    "measurement-tests": {
+      "child_max_rss_bytes_macos": 74203136,
+      "elapsed_seconds": 5.987765750149265,
+      "ended_utc": "2026-09-14T17:15:56.973160+00:00",
+      "exit_code": 1,
+      "started_utc": "2026-09-14T17:15:50.985274+00:00"
+    },
+    "repository-reviewed": {
+      "child_max_rss_bytes_macos": 289439744,
+      "elapsed_seconds": 63.57431025011465,
+      "ended_utc": "2026-09-14T17:36:11.898114+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:35:08.323672+00:00"
+    },
+    "repository-tests": {
+      "child_max_rss_bytes_macos": 302825472,
+      "elapsed_seconds": 62.8411978748627,
+      "ended_utc": "2026-09-14T17:16:53.838044+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:15:50.986608+00:00"
+    },
+    "targeted-final": {
+      "child_max_rss_bytes_macos": 47644672,
+      "elapsed_seconds": 0.30655154190026224,
+      "ended_utc": "2026-09-14T17:27:27.868986+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:27:27.562310+00:00"
+    },
+    "targeted-reviewed": {
+      "child_max_rss_bytes_macos": 41566208,
+      "elapsed_seconds": 0.2936032919678837,
+      "ended_utc": "2026-09-14T17:34:58.053191+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:34:57.759487+00:00"
+    },
+    "trace-1": {
+      "child_max_rss_bytes_macos": 231292928,
+      "elapsed_seconds": 25.44342379202135,
+      "ended_utc": "2026-09-14T17:08:35.460687+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:08:10.017188+00:00"
+    },
+    "trace-first": {
+      "child_max_rss_bytes_macos": 220626944,
+      "elapsed_seconds": 25.07507749996148,
+      "ended_utc": "2026-09-14T17:11:59.742330+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:11:34.667152+00:00"
+    },
+    "trace-first-final": {
+      "child_max_rss_bytes_macos": 243515392,
+      "elapsed_seconds": 25.91694458411075,
+      "ended_utc": "2026-09-14T17:18:30.619594+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:18:04.702564+00:00"
+    },
+    "trace-first-reviewed": {
+      "child_max_rss_bytes_macos": 184647680,
+      "elapsed_seconds": 25.933466375106946,
+      "ended_utc": "2026-09-14T17:35:34.257251+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:35:08.323661+00:00"
+    },
+    "trace-second": {
+      "child_max_rss_bytes_macos": 43122688,
+      "elapsed_seconds": 0.17355283303186297,
+      "ended_utc": "2026-09-14T17:11:34.842203+00:00",
+      "exit_code": 2,
+      "started_utc": "2026-09-14T17:11:34.668550+00:00"
+    },
+    "trace-second-2": {
+      "child_max_rss_bytes_macos": 332840960,
+      "elapsed_seconds": 25.292999790981412,
+      "ended_utc": "2026-09-14T17:12:43.546125+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:12:18.253030+00:00"
+    },
+    "trace-second-final": {
+      "child_max_rss_bytes_macos": 277217280,
+      "elapsed_seconds": 26.06320933299139,
+      "ended_utc": "2026-09-14T17:18:30.765873+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:18:04.702600+00:00"
+    },
+    "trace-second-reviewed": {
+      "child_max_rss_bytes_macos": 195674112,
+      "elapsed_seconds": 26.098124332958832,
+      "ended_utc": "2026-09-14T17:35:34.421882+00:00",
+      "exit_code": 0,
+      "started_utc": "2026-09-14T17:35:08.323661+00:00"
+    }
+  },
+  "lifecycle_status": "exploratory",
+  "limits": [
+    "Two exposed scenes; no independent-scene or held-out validation",
+    "No physical object judgment or new human reference",
+    "No measured human-effort or customer-value advantage",
+    "Research command, not a deployed Console integration"
+  ],
+  "source_base_commit": "216976127e4754d69a6fb0b47599b27c2a8a9d02",
+  "source_base_tree": "716110e9b35c0d9c85bba5e638fbcc9c0fb2d1a1",
+  "validation": {
+    "changed_mermaid": "Both changed sources rendered and visually inspected; readable and no clipping",
+    "exported_class_controls": {
+      "after_repair": "base detection, added detection and object class alterations refused; source-dependent class joins now complete",
+      "before_repair": "wrong class accepted"
+    },
+    "final_gate_b": "pass; no historical experiment replay or Gate A release",
+    "final_measurement_tests": {
+      "result": "pass",
+      "tests": 93
+    },
+    "final_targeted_trace_tests": {
+      "result": "pass",
+      "tests": 11
+    },
+    "repository_suite": {
+      "result": "pass",
+      "scope": "Final trace implementation, including complete exported class bindings; documentation-only finalization follows.",
+      "tests": 441
+    },
+    "trace_mutation_controls": 10
+  },
+  "version": "0.1.0"
+}

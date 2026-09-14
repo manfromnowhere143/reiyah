@@ -2,22 +2,29 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.14`
+Version: `0.1.15`
 
 Lifecycle status: `exploratory`
 
-The [second annotation-conditioned case](PERCEPTION_SECOND_CASE_2026-09-14.md) is now executed:
-14 additional exposed frames, 841 source labels, 737 included, 588 base detections and 94 additions.
-Weighted loss falls from 297/14 to 293/14; [2/7,2/7] is supported at tolerance 1/10. Seven frames
-improve, six worsen and one is unchanged. Source records and graph geometry pass a separate
-audit; existing Fable producer/checker code agrees in an Engine-lane compatibility replay.
-No Engine implementation changed. One reused private audit control required correction.
+The [dependency trace](PERCEPTION_DEPENDENCY_TRACE_2026-09-14.md) now opens checked label
+witnesses as exact original annotation, sample, instance, category and incident detector rows,
+with available capture bytes and missing keyframes explicit. Six individual first-case witnesses
+and two joint second-case groups work through the same offline command. The second groups share
+one label; no individual-flip claim follows from membership. Core and common formats are unchanged.
 
-Fable's first-case baseline and all 106 single deletions are checked; six deletions change +1 to 0.
-The consumer review retains an incorrect top-level case hash, a [1,3] pair-insertion range, and
-an executable counterexample to deriving metric insertion edges from graph neighborhoods.
-On the actual first case all 20 single-edge sets and 190 pair outcomes still agree with geometry.
-Fable owns the second case's conventional reconstruction and bounded sensitivity analysis.
+Fable's sealed second-case reply at `762e1aae2f9dfe6df0808f735d5276dc9d7d963a`, manifest
+`184ec42921f46f8403bbf48657d8774542d1344f6ec0b4e5258fdf582295a0e3`, has 20 checked payloads and
+16 matching committed blobs. Engine recomputation agrees on all 737 single deletions, the same
+53 gain-carrying labels and both crossing pairs. The second case's improvement 2/7 falls to zero
+under either pair. One deletion cannot cross tolerance by the per-object bound; minimum two is
+checked without exhaustive pair search. Both cases use the same two exposed scenes.
+
+The consumer accepts the original geometric counterexample repair but reproduces a remaining
+Fable defect: a partially populated coordinate map silently drops another same-class edge.
+Fable reports preregistration before receipt. Its claim that this preceded the case's existence
+is contradicted by the retained Engine computation, which finished earlier. The planned second-case insertion family is not supplied
+or explicitly amended. Preserve these qualifications and route the sealed consumer reply to
+Fable's owner; do not edit its research source or repeat the completed deletion search.
 
 The preceding [case preparation](PERCEPTION_CASE_PORTABILITY_2026-09-14.md) checked 14 remaining
 exposed frames through existing Engine interfaces: 4,228 source rows, 588 base detections and
@@ -63,8 +70,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This second-case checkpoint starts from main
-`c358db390409f0a245387c2390e8fa693635d511`, tree `f9bad0e5fd678853742a7caafc2e889654f480c3`.
+uncommitted ownership before acting. This dependency checkpoint starts from main
+`216976127e4754d69a6fb0b47599b27c2a8a9d02`, tree `716110e9b35c0d9c85bba5e638fbcc9c0fb2d1a1`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -79,6 +86,14 @@ work on `research/2026-09-10-moment-cone`. Do not edit or move its source, branc
 or processes, or duplicate that implementation. Read current lane status before selecting
 overlapping work. Exchange only through separately selected immutable outboxes; a chat verdict
 or mutable branch tip is insufficient. No ownership transfer is implied by a consumer review.
+
+The current private checkpoint is
+`~/.codex/reports/reiyah/engine-dependency-trace-2026-09-14-3_e7tw_w/`.
+Read `START_HERE.md`, both plan records, source bindings, `CLOSEOUT.json`, `PACKET_SEAL.json`,
+and `COPY_TO_CODEX.txt`. Its `private/trace-first-reviewed/OPEN_EVIDENCE.md` and
+`private/trace-second-reviewed/OPEN_EVIDENCE.md` open the completed evidence procedures.
+`COPY_TO_FABLE.txt` records the bounded consumer correction and contains no new scene assignment.
+No human review is required from Daniel. Select a fresh task for subsequent work.
 
 Preceding preparation evidence is at
 `~/.codex/reports/reiyah/engine-case-portability-2026-09-14-idui4k54/`.
@@ -98,7 +113,8 @@ Read its `START_HERE.md`, `PLAN.json`, `SOURCE_BINDINGS.json`, `CLOSEOUT.json` a
 The evaluated Engine packet is `329fc44df95dde7c49348bf9ff0ad6a66db0952a51c3c6b247aa6d16c2129b0c`;
 the exported Fable case is `d5d84eaf8eb558733ee619e657a73655c38c0b8be5263d5b0099cbe87fd3b5b7`.
 The 14-frame selection is inherited unchanged from the preparation plan. No second-case
-sensitivity family has been evaluated by the Engine lane. Common operands and source maps
+sensitivity family was evaluated by the Engine lane at that closed checkpoint. The subsequent
+dependency checkpoint consumes Fable's actual result and checks its declared deletions. Common operands and source maps
 already contain exact nominal coordinates for Fable's geometric edits; do not infer distances
 from a graph-only export. The original physical-reference case remains [-8,8].
 
@@ -144,7 +160,8 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 
 | Question | Checked result and evidence |
 |---|---|
-| Does the same procedure run on a second declared input? | [Second comparison](PERCEPTION_SECOND_CASE_2026-09-14.md): [2/7,2/7], 737 included labels, 14 frames, with six worsening anchors retained. Source/geometry audit and existing Fable compatibility pass; separate Fable reconstruction is next. |
+| Does the same procedure run on a second declared input? | [Second comparison](PERCEPTION_SECOND_CASE_2026-09-14.md): [2/7,2/7], 737 included labels, 14 frames, with six worsening anchors retained. Source/geometry audit and returned Fable deletion challenge now pass consumer checks; the dependency trace opens its witnesses. |
+| Can checked dependencies open original evidence? | [Dependency trace](PERCEPTION_DEPENDENCY_TRACE_2026-09-14.md) follows nine distinct labels across both cases; joint groups, source indices, exact available captures and six unavailable camera keyframes remain explicit. |
 | Can another input case use the existing Engine interfaces? | [Case preparation](PERCEPTION_CASE_PORTABILITY_2026-09-14.md) checks all 4,876 original rows, reproduces the initial case and prepares the other 14 frames with 588 base/94 additions. A separate source calculation agrees. No second verdict or core/schema extension. |
 | Can the fixed comparison run without new human reviewers? | [Annotation replay](PERCEPTION_ANNOTATION_CASE_2026-09-14.md) scans all 1,166,187 annotation rows, selects the exact 119 at the two anchors, includes 106 under the fixed policy and gives [1,1]. Source/geometry audit and matching witnesses pass. This is a separate benchmark-conditional result; the original physical-reference case stays open. |
 | Does the real comparison survive the Engine changes? | [Window verification](ENGINE_WINDOW_CHECKPOINT_2026-09-13.md) reproduces the retained real packet byte for byte at [-8,8], rejects seven forged reports and reruns conventional accounting over all 648 source rows. It adds no physical reference. |
@@ -160,15 +177,17 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 | Can research receive predictions without annotation reads? | [Prediction-only inputs](PERCEPTION_PREDICTIONS_2026-09-13.md) retain all 4,876 submitted rows across the 16 exposed development frames, with original bytes and indices. Two guarded runs agree; a separate conventional reader checks every selected row. Historical selection independence and physical association are not established. |
 | What did the selected sign/custody correction establish? | [The current consumer review](FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md) checks 2,401 small-table sign classifications, 18 aggregate thresholds and default source-digest rejection. The raw helper remains disconnected from the corrected classifier, and the 14.025× span combines score/radius/rule changes. Full raw association and Fable's reported 581 tests were not replayed. No research implementation was merged. |
 
-The annotation adapter's preceding full repository suite passed **430 tests**, including 12 new
-adapter tests. The 93 measurement tests and `gate_b_check` also passed at that implementation
-checkpoint. This preparation/documentation task leaves those source files unchanged and uses
-targeted private source checks; those broad suites are not counted as new runs.
-Both computation packets bind their perception implementation bytes. The second source audit
-and eight mutation controls pass; existing Fable cohort code agrees on [2/7,2/7] in an Engine-lane
-compatibility replay. Fable has supplied the first-case reconstruction; its separate reconstruction
-of the second case is pending. Human effort remains unmeasured. Exact receipts and limits are in
-the respective annotation checkpoints.
+The dependency checkpoint's repository suite passes **441 tests**, including eleven focused trace
+checks. The first 93-test measurement run had two failures caused by an existing em-dash table
+placeholder in the first annotation document; the consistency check found the same cause. The
+placeholder and the historical validation wording are corrected without changing a validator.
+Final measurement and consistency receipts are bound in this checkpoint's verification record.
+The trace's first second-case attempt also exposed a research-report decimal/parser mismatch;
+its corrected boundary preserves rational-only Engine operands. A failed capture adversary
+mistook explicit unavailability for accepted wrong identity; its corrected available-capture
+control is retained. Final source review also caught an accepted exported class mismatch; all detection and object
+classes now join to bound sources, with three refusal controls and fresh actual replays. Source,
+failures, repairs, costs and shared trusted code are explicit.
 
 The preceding full repository suite passed **418 tests**, including 14 prediction-input additions,
 with no resource warnings. Eight additional standalone controls attack the separate source reader
@@ -268,8 +287,10 @@ it is distinct from agent GUI interaction. Preserve any genuine later returns in
 
 Both discovery records remain unassigned and unfilled. The completed assisted inspection stays
 separate from physical object adjudication. Continue the automated route: the second exact case
-is supplied for Fable's reconstruction and bounded label-error challenge; repair any concrete
-Engine defect that it exposes. Preserve adverse anchors and account for weights, tolerance and
+and both returned deletion witnesses are checked. The next Engine consumer should follow a
+joint dependency to the same original records, with missing captures and joint membership visible.
+A Console integration must read Console's own contract and consume these existing artifacts.
+Keep any expansion to distinct scenes separate from the frozen physical study. Preserve adverse anchors and account for weights, tolerance and
 margin when comparing the two cases. No new viewer, compiler or fixture campaign is justified by
 unavailable reviewers. A later genuine review record still follows the unchanged staged protocol.
 

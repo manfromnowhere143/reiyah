@@ -1,6 +1,6 @@
 # The fixed detector change, conditional on benchmark labels
 
-Document ID: `reiyah.engine.annotation-case`. Version: `0.1.0`.
+Document ID: `reiyah.engine.annotation-case`. Version: `0.1.1`.
 Status: `exploratory`. Dated 14 September 2026.
 
 The added detector improves the declared weighted loss by **1** under the retained benchmark
@@ -10,7 +10,7 @@ labels, exceeding tolerance **1/10**. The first anchor improves and the second w
 |---|---:|---:|---:|---:|---:|
 | window-0001 | 61 | 48 / 9 | 40 / 46 | 29 / 26 | +3 |
 | window-0002 | 45 | 37 / 7 | 32 / 35 | 18 / 19 | -1 |
-| Equal-weight result | 106 total | 85 / 16 total | — | 23.5 / 22.5 | **+1** |
+| Equal-weight result | 106 total | 85 / 16 total | Not aggregated here | 23.5 / 22.5 | **+1** |
 
 These are the same two previously exposed frames and the same received detector outputs.
 The source scan covers 1,166,187 annotation rows and selects all 119 annotations at those
@@ -61,6 +61,11 @@ suite and `gate_b_check`. The latter checks retained research consistency, not a
 or a replay of historical physical experiments. Fable's selected existing cohort producer and
 checker accept the exact export and agree on **[1,1]**. That replay was performed in the Engine
 lane and does not stand in for Fable's forthcoming independent source audit or an effort study.
+
+Those earlier validation commands preceded this document's final table edit. The later
+dependency-trace checkpoint found that the table's em dash violated the live documentation
+check and caused two measurement regressions to fail. Version 0.1.1 replaces that placeholder
+with explicit text; the prior failed check and the unchanged numerical results are retained.
 
 ## Exact bindings and cost
 
