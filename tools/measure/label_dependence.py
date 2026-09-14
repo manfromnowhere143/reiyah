@@ -47,7 +47,7 @@ from itertools import combinations  # noqa: E402
 
 from cohort_packet import CaseError, build, maximum_matching  # noqa: E402
 
-VERSION = "0.3.0"
+VERSION = "0.4.0"
 PREREGISTRATION = "24cb90eff90f60431fd92cd25e504842eb24898e1ec40c1cc4399601e38cfe5d"
 INSERTION_PREREGISTRATION = "38af5ed9442632919b51751ee09693da2a13ca62626291624613f3978a9c8c72"
 
@@ -107,16 +107,50 @@ def unmatched_detections(case):
     return out
 
 
-def with_insertions(case, hypotheses):
+class GeometryRequired(ValueError):
+    """An insertion needs coordinates, and this module will not guess them."""
+
+
+def positions(operands_path):
+    """Detection coordinates per anchor, from the common operands.
+
+    Exact rationals, not floats, because the 2 metre rule is a strict inequality and
+    a boundary case decided by rounding would be a silent error.
+    """
+    with open(operands_path, "r", encoding="utf-8") as handle:
+        operands = json.load(handle)
+    out = {}
+    for anchor in operands["anchors"]:
+        rows = {}
+        for record in anchor["qualified_records"]:
+            body = record["record"]
+            rows[record["detection"]["id"]] = (
+                Fraction(int(body["xy"][0]["numerator"]), int(body["xy"][0]["denominator"])),
+                Fraction(int(body["xy"][1]["numerator"]), int(body["xy"][1]["denominator"])))
+        out[anchor["anchor_id"]] = rows
+    return out
+
+
+def with_insertions(case, hypotheses, coordinates):
     """The same case with a missed object added at each named detection's own position.
 
-    Reachability is recomputed under the declared rule rather than assigned: the new
-    object is joined to every retained detection of the same class that the exporter
-    already joined to that detection's neighbourhood. Concretely, the inserted object
-    inherits the edges of its detection's same class peers that reach it, which on
-    this export means the detection itself and any same class detection already
-    sharing one of its objects.
+    0.4.0 CORRECTION. Version 0.2.0 joined the inserted object to every same class
+    detection that already shared one of its detection's objects. That is a graph
+    neighbourhood and not a distance. The consumer's retained control shows the gap:
+    detections at (0, 0) and (3, 0) sharing an object at (1.5, 0), and an insertion at
+    (3, 0). Under the declared strict 2 metre rule only the detection at (3, 0)
+    reaches it; the graph rule connects both. On the first case all 20 singles and
+    190 pairs happened to agree with the coordinates, which is luck and not a reason.
+
+    Reachability is now the declared rule applied to the supplied coordinates: same
+    class, strictly within 2 metres of the insertion's position. Coordinates are
+    required. Without them this raises rather than falling back on a heuristic.
     """
+    if not coordinates:
+        raise GeometryRequired(
+            "an insertion needs the detection coordinates from the common operands. "
+            "The graph neighbourhood rule used in 0.2.0 is withdrawn because it is not a "
+            "distance, and no substitute is guessed here")
     edited = copy.deepcopy(case)
     by_anchor = {}
     for index, row in enumerate(hypotheses):
@@ -132,21 +166,23 @@ def with_insertions(case, hypotheses):
             rows = by_anchor.get(anchor_id)
             if not rows:
                 continue
+            here = coordinates.get(anchor_id)
+            if not here:
+                raise GeometryRequired(f"no coordinates supplied for anchor {anchor_id}")
             source = next(a for a in case["anchors"] if a["id"] == anchor_id)
             classes = {d["id"]: d["class"]
                        for d in source["base_detections"] + source["added_detections"]}
-            neighbourhood = {}
-            for detection, obj in body["edges"]:
-                neighbourhood.setdefault(obj, set()).add(detection)
             for index, row in rows:
                 name = f"inserted-{index}"
+                if row["detection"] not in here:
+                    raise GeometryRequired(f"no coordinate for detection {row['detection']}")
+                x, y = here[row["detection"]]
                 body["objects_present"].append(name)
-                reach = {row["detection"]}
-                for obj, holders in neighbourhood.items():
-                    if row["detection"] in holders:
-                        reach |= {d for d in holders if classes.get(d) == row["class"]}
-                for detection in sorted(reach):
-                    if classes.get(detection) == row["class"]:
+                for detection, klass in sorted(classes.items()):
+                    if klass != row["class"] or detection not in here:
+                        continue
+                    other = here[detection]
+                    if (x - other[0]) ** 2 + (y - other[1]) ** 2 < 4:
                         body["edges"].append([detection, name])
     return edited
 
@@ -371,11 +407,12 @@ def analyse(path, expected=None):
     }
 
 
-def insertion_family(path, expected=None, pairs=True):
+def insertion_family(path, operands_path, expected=None, pairs=True):
     """The declared insertion family: one missed object per unmatched retained detection."""
     found = digest(path)
     if expected is not None and found != expected:
         return {"state": "digest_mismatch", "expected_sha256": expected, "found_sha256": found}
+    coordinates = positions(operands_path)
     with open(path, "r", encoding="utf-8") as handle:
         case = json.load(handle)
     baseline = evaluate(case)
@@ -383,7 +420,7 @@ def insertion_family(path, expected=None, pairs=True):
     start = time.perf_counter()
     singles = []
     for index, row in enumerate(candidates):
-        outcome = evaluate(with_insertions(case, [row]))
+        outcome = evaluate(with_insertions(case, [row], coordinates))
         singles.append({"anchor": row["anchor"], "class": row["class"], "role": row["role"],
                         "outcome": outcome})
     crossings = [s for s in singles if s["outcome"]["criterion"] != baseline["criterion"]]
@@ -408,15 +445,20 @@ def insertion_family(path, expected=None, pairs=True):
                                    "weighted_delta": c["outcome"]["weighted_delta"],
                                    "criterion": c["outcome"]["criterion"]}
                                   for c in crossings[:12]]},
+        "geometry": ("the declared strict 2 metre rule applied to the supplied coordinates. The "
+                     "0.2.0 graph neighbourhood rule is withdrawn"),
         "direction": ("an insertion that only the added configuration reaches raises the delta; "
                       "one that the base also reaches does not. Which way the annotation actually "
                       "fails is not established here"),
     }
     if not crossings and pairs:
+        pair_deltas = []
         found_pair = None
         for i in range(len(candidates)):
             for j in range(i + 1, len(candidates)):
-                outcome = evaluate(with_insertions(case, [candidates[i], candidates[j]]))
+                outcome = evaluate(with_insertions(case, [candidates[i], candidates[j]],
+                                                   coordinates))
+                pair_deltas.append(Fraction(outcome["weighted_delta"]))
                 if outcome["criterion"] != baseline["criterion"]:
                     found_pair = {"first": {"anchor": candidates[i]["anchor"],
                                             "class": candidates[i]["class"],
@@ -429,9 +471,14 @@ def insertion_family(path, expected=None, pairs=True):
                     break
             if found_pair:
                 break
-        result["pairs"] = {"searched": True, "witness": found_pair,
-                           "conclusion": ("a pair changes the criterion" if found_pair
-                                          else "no single and no pair changes the criterion")}
+        result["pairs"] = {
+            "searched": True, "cases": len(pair_deltas), "witness": found_pair,
+            "weighted_delta_range": {"lowest": str(min(pair_deltas)) if pair_deltas else None,
+                                     "highest": str(max(pair_deltas)) if pair_deltas else None},
+            "conclusion": ("a pair changes the criterion" if found_pair
+                           else "no single and no pair changes the criterion"),
+            "note": ("the pair extrema are recorded separately from the singles. 0.2.0 reported "
+                     "the singles range only, which understated the reach of this family")}
     result["breakdown_number"] = (1 if crossings else
                                   (2 if result.get("pairs", {}).get("witness") else None))
     result["cost"] = {"seconds": round(time.perf_counter() - start, 4)}

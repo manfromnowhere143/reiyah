@@ -91,6 +91,41 @@ class Seal(unittest.TestCase):
             self.assertIn("origin", entry)
 
 
+class CaseBinding(unittest.TestCase):
+    """A header may not name a case its payloads are not about."""
+
+    def setUp(self):
+        self.root, self.head = repository()
+        self.outbox = tempfile.mkdtemp()
+        with open(os.path.join(self.outbox, "kept.json"), "w", encoding="utf-8") as handle:
+            handle.write('{"version": "1"}\n')
+        with open(os.path.join(self.outbox, "report.json"), "w", encoding="utf-8") as handle:
+            json.dump({"case_sha256": "a" * 64, "finding": "about case a"}, handle)
+
+    def test_the_label_dependence_failure_is_refused(self):
+        """The exact shape that shipped: a real digest, for the wrong case."""
+        header = {"case_sha256": "b" * 64}
+        with self.assertRaises(seal.SealError) as caught:
+            seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"}, header)
+        self.assertIn("no payload records", str(caught.exception))
+        self.assertFalse(os.path.exists(os.path.join(self.outbox, "MANIFEST.json")))
+
+    def test_a_header_matching_its_payloads_is_accepted(self):
+        header = {"case_sha256": "a" * 64}
+        result = seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"}, header)
+        self.assertEqual(result["committed"], 1)
+
+    def test_a_nested_case_claim_is_checked_too(self):
+        header = {"consumed": {"common_case_sha256": "c" * 64}}
+        with self.assertRaises(seal.SealError):
+            seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"}, header)
+
+    def test_a_header_with_no_case_claim_is_left_alone(self):
+        result = seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"},
+                           {"note": "no case named"})
+        self.assertEqual(result["committed"], 1)
+
+
 class TransportBoundary(unittest.TestCase):
     """A publisher cannot verify its own transport, and the seal refuses to say it did."""
 

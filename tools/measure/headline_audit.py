@@ -198,6 +198,38 @@ REGISTER = [
         "status": "standing, bounded",
     },
     {
+        "headline": ("the fragility result replicates on a second case: both verdicts sit exactly "
+                     "at their arithmetic floor, fragility ratio 1"),
+        "checkpoint": "label-dependence-0.4.0",
+        "assumptions": ["the declared loss, tolerance, weights, class map, geometry and suppression rule",
+                        "a deletion is a hypothetical spurious label correction and nothing else",
+                        "two cases drawn from the same two scenes, neither held out"],
+        "refuted_by": [],
+        "bounded_by": [
+            {"artifact": "research/label-dependence/0.4.0/second-case-singles.json",
+             "limits": ("the second case's 737 single deletions changed nothing, which its floor of "
+                        "2 forces. A single deletion family on that case is arithmetically "
+                        "incapable of a criterion change and is not evidence about its annotation"),
+             "published_in": "label-dependence-0.4.0"},
+            {"artifact": "research/annotation-case/0.2.0/source-reconstruction.json",
+             "limits": ("both cases come from the same two scenes and neither is held out, so two "
+                        "cases at ratio 1 do not establish that the ratio distinguishes cases at "
+                        "all. The closest excluded label sits 6.5 centimetres outside the range"),
+             "published_in": "annotation-case-0.2.0"}],
+        "status": "standing, bounded",
+    },
+    {
+        "headline": "nobody does this, of the label dependence family",
+        "checkpoint": "label-dependence-0.1.0",
+        "assumptions": ["that two cases license a statement about industry practice"],
+        "refuted_by": [
+            {"artifact": "docs/LABEL_DEPENDENCE_2026-09-14.md",
+             "shows": ("this lane holds no evidence about what anyone else runs. The sentence was "
+                       "an inference from two cases and is withdrawn in version 0.3.0"),
+             "published_in": "label-dependence-0.4.0"}],
+        "status": "withdrawn",
+    },
+    {
         "headline": "every decisive verdict is carried entirely by the admission decision",
         "checkpoint": "admission-sensitivity-0.2.0",
         "assumptions": ["that a decisive verdict pins the enclosure to a point",

@@ -1,0 +1,70 @@
+{
+  "artifact_id": "reiyah.label-dependence.insertion-report",
+  "baseline": {
+    "criterion": "supported",
+    "enclosure": {
+      "lower": "1",
+      "upper": "1"
+    },
+    "per_anchor": {
+      "window-0001": {
+        "delta": "3",
+        "tp_augmented": 46,
+        "tp_base": 40
+      },
+      "window-0002": {
+        "delta": "-1",
+        "tp_augmented": 35,
+        "tp_base": 32
+      }
+    },
+    "point": true,
+    "preference": "prefer_augmented",
+    "weighted_delta": "1"
+  },
+  "breakdown_number": null,
+  "candidates": {
+    "by_anchor": {
+      "window-0001": 11,
+      "window-0002": 9
+    },
+    "by_role": {
+      "added": 7,
+      "base": 13
+    },
+    "total": 20
+  },
+  "case_sha256": "ebfebf67d847a1b7b019a81910a6ad99860f0ce86616cd5b7f3a71e11aa2a19f",
+  "cost": {
+    "seconds": 0.2336
+  },
+  "direction": "an insertion that only the added configuration reaches raises the delta; one that the base also reaches does not. Which way the annotation actually fails is not established here",
+  "geometry": "the declared strict 2 metre rule applied to the supplied coordinates. The 0.2.0 graph neighbourhood rule is withdrawn",
+  "pairs": {
+    "cases": 190,
+    "conclusion": "no single and no pair changes the criterion",
+    "note": "the pair extrema are recorded separately from the singles. 0.2.0 reported the singles range only, which understated the reach of this family",
+    "searched": true,
+    "weighted_delta_range": {
+      "highest": "3",
+      "lowest": "1"
+    },
+    "witness": null
+  },
+  "preregistration_sha256": "38af5ed9442632919b51751ee09693da2a13ca62626291624613f3978a9c8c72",
+  "scope": "one insertion rule on one supplied benchmark interpretation. Counts of hypothetical corrections are not likelihoods, and no claim is made about how often this annotation actually misses an object",
+  "singles": {
+    "cases": 20,
+    "criterion_changes": 0,
+    "distinct_weighted_deltas": [
+      "1",
+      "2"
+    ],
+    "weighted_delta_range": {
+      "highest": "2",
+      "lowest": "1"
+    },
+    "witnesses": []
+  },
+  "version": "0.4.0"
+}

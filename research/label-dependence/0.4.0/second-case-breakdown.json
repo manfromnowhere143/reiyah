@@ -1,0 +1,61 @@
+{
+  "arithmetic_floor": {
+    "consequence": "no set of fewer than k_floor deletions can change the criterion on this case, whatever its labels are. Robustness below k_floor is arithmetic and is not evidence about the annotation",
+    "criterion": "supported",
+    "k_floor": 2,
+    "largest_single_step": "1/7",
+    "margin": "13/70",
+    "tolerance": "1/10",
+    "weighted_delta": "2/7",
+    "why": "one deletion moves one anchor's gain by at most one, so the decision moves by at most (a + b) times that anchor's weight"
+  },
+  "artifact_id": "reiyah.label-dependence.second-case-breakdown",
+  "at_the_arithmetic_floor": true,
+  "baseline": {
+    "criterion": "supported",
+    "weighted_delta": "2/7"
+  },
+  "cost_seconds": 0.0083,
+  "evaluations": 2,
+  "fragility_ratio": "1",
+  "k_floor": 2,
+  "k_observed": 2,
+  "preregistration_sha256": "7a513c501c5ada227206ed5028f78b436b36cd83ae9db3f8a648fad8e3f82b81",
+  "same_anchor_control": {
+    "criterion": "excluded",
+    "labels": [
+      {
+        "anchor": "remaining-window-0001",
+        "class": "barrier",
+        "local_index": 20
+      },
+      {
+        "anchor": "remaining-window-0001",
+        "class": "traffic_cone",
+        "local_index": 24
+      }
+    ],
+    "note": "two carriers inside one anchor are not guaranteed independent; this is recorded as an adversarial control on the construction",
+    "weighted_delta": "0"
+  },
+  "version": "0.4.0",
+  "why_no_exhaustive_pair_search": "the floor is 2, so no set of size 1 can cross and any size 2 set that crosses is minimal. A single verified witness therefore settles k_observed exactly, and enumerating all 271216 pairs would establish nothing further about the minimum",
+  "witness": [
+    {
+      "anchor": "remaining-window-0001",
+      "class": "barrier",
+      "local_index": 20
+    },
+    {
+      "anchor": "remaining-window-0002",
+      "class": "barrier",
+      "local_index": 7
+    }
+  ],
+  "witness_construction": "matching is computed per anchor, so two gain carrying labels in different anchors each remove one unit of gain independently. Each unit costs (a+b)*weight = 1/7, so the pair removes 2/7 and the decision reaches 0, at or below the tolerance. The construction is then verified by full recomputation rather than trusted",
+  "witness_outcome": {
+    "criterion": "excluded",
+    "preference": "equivalent_within_tolerance",
+    "weighted_delta": "0"
+  }
+}

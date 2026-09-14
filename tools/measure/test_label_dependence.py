@@ -16,6 +16,8 @@ import cohort_packet as packet  # noqa: E402
 import label_dependence as dependence  # noqa: E402
 
 CASE = os.environ.get("REIYAH_ANNOTATION_CASE")
+OPERANDS = os.environ.get("REIYAH_OPERANDS")
+SECOND = os.environ.get("REIYAH_SECOND_CASE")
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DELETION = os.path.join(ROOT, "research", "label-dependence", "0.1.0", "deletion-family.json")
 INSERTION = os.path.join(ROOT, "research", "label-dependence", "0.2.0", "insertion-family.json")
@@ -81,14 +83,46 @@ class Arithmetic(unittest.TestCase):
                          theirs["per_anchor"]["A"]["tp_augmented"])
 
     def test_an_insertion_at_an_unmatched_detection_can_only_help_that_configuration(self):
+        from fractions import Fraction
         case = carrier_case()
         case["joint_worlds"][0]["per_anchor"]["A"]["edges"] = [["b0", "o0"], ["b1", "o1"]]
+        coordinates = {"A": {"b0": (Fraction(0), Fraction(0)), "b1": (Fraction(10), Fraction(0)),
+                             "c0": (Fraction(20), Fraction(0))}}
         candidates = dependence.unmatched_detections(case)
         self.assertTrue(any(c["detection"] == "c0" for c in candidates))
         target = next(c for c in candidates if c["detection"] == "c0")
         before = dependence.evaluate(case)
-        after = dependence.evaluate(dependence.with_insertions(case, [target]))
+        after = dependence.evaluate(dependence.with_insertions(case, [target], coordinates))
         self.assertGreater(float(after["weighted_delta"]), float(before["weighted_delta"]))
+
+    def test_the_insertion_rule_is_a_distance_and_not_a_graph_neighbourhood(self):
+        """The consumer's control: two detections sharing an object, 3 metres apart."""
+        from fractions import Fraction
+        case = {
+            "schema_id": "reiyah.cohort-packet.case", "cohort_id": "insertion-geometry-control",
+            "loss": {"false_negative": "1", "false_positive": "1", "tolerance": "0"},
+            "anchors": [{"id": "A", "weight": "1", "reference_state": "finite",
+                         "base_detections": [{"id": "d_left", "class": "car"}],
+                         "added_detections": [{"id": "d_right", "class": "car"}],
+                         "objects": [{"id": "o_mid", "class": "car"}]}],
+            "joint_worlds": [{"world_id": "labels", "per_anchor": {"A": {
+                "objects_present": ["o_mid"],
+                "edges": [["d_left", "o_mid"], ["d_right", "o_mid"]]}}}]}
+        coordinates = {"A": {"d_left": (Fraction(0), Fraction(0)),
+                             "d_right": (Fraction(3), Fraction(0))}}
+        target = [c for c in dependence.unmatched_detections(case)
+                  if c["detection"] == "d_right"]
+        edited = dependence.with_insertions(case, target, coordinates)
+        new = [e for e in edited["joint_worlds"][0]["per_anchor"]["A"]["edges"]
+               if e[1].startswith("inserted-")]
+        self.assertEqual(new, [["d_right", "inserted-0"]])
+
+    def test_an_insertion_without_coordinates_is_refused_not_guessed(self):
+        case = carrier_case()
+        target = dependence.unmatched_detections(case)[:1] or [
+            {"anchor": "A", "detection": "c0", "class": "car", "role": "added"}]
+        with self.assertRaises(dependence.GeometryRequired):
+            dependence.with_insertions(case, target, None)
 
     def test_the_three_outcomes_are_kept_apart(self):
         case = carrier_case()
@@ -249,8 +283,9 @@ class TheRealCase(unittest.TestCase):
         result = checker.verify(case, fresh)
         self.assertEqual(result["witnesses_confirmed"], 6)
 
+    @unittest.skipUnless(OPERANDS and os.path.exists(OPERANDS or ""), "operands not supplied")
     def test_the_insertion_family_never_lowers_the_verdict(self):
-        fresh = dependence.insertion_family(CASE)
+        fresh = dependence.insertion_family(CASE, OPERANDS)
         with open(INSERTION, "r", encoding="utf-8") as handle:
             stored = json.load(handle)
         self.assertEqual(fresh["candidates"], stored["candidates"])
@@ -259,6 +294,9 @@ class TheRealCase(unittest.TestCase):
                          {"lowest": "1", "highest": "2"})
         self.assertIsNone(fresh["pairs"]["witness"])
         self.assertIsNone(fresh["breakdown_number"])
+        self.assertEqual(fresh["pairs"]["cases"], 190)
+        self.assertEqual(fresh["pairs"]["weighted_delta_range"],
+                         {"lowest": "1", "highest": "3"})
 
     def test_the_first_case_sits_exactly_at_its_arithmetic_floor(self):
         result = dependence.fragility(CASE)
@@ -275,6 +313,55 @@ class TheRealCase(unittest.TestCase):
                 text = handle.read()
             self.assertEqual(re.findall(r"\b[0-9a-f]{32}\b", text), [])
             self.assertEqual(re.findall(r"configuration-\d+-row-\d+", text), [])
+
+
+@unittest.skipUnless(SECOND and os.path.exists(SECOND or ""), "the second case is not supplied")
+class TheSecondCase(unittest.TestCase):
+    """Replication, and the floor that stops a forced zero being read as robustness."""
+
+    def test_its_floor_is_two_so_no_single_deletion_could_ever_cross(self):
+        with open(SECOND, "r", encoding="utf-8") as handle:
+            case = json.load(handle)
+        floor = dependence.arithmetic_floor(case)
+        self.assertEqual(floor["weighted_delta"], "2/7")
+        self.assertEqual(floor["margin"], "13/70")
+        self.assertEqual(floor["largest_single_step"], "1/7")
+        self.assertEqual(floor["k_floor"], 2)
+
+    def test_the_retained_singles_and_breakdown_reproduce(self):
+        with open(os.path.join(ROOT, "research", "label-dependence", "0.4.0",
+                               "second-case-singles.json"), encoding="utf-8") as handle:
+            singles = json.load(handle)
+        self.assertEqual(singles["family"]["deletions"], 737)
+        self.assertEqual(singles["criterion_changes"], 0)
+        self.assertEqual(singles["criterion_counts"], {"supported": 737})
+        self.assertEqual(singles["signed_loss_difference_range"],
+                         {"lowest": "1/7", "highest": "2/7"})
+        self.assertEqual(singles["gain_carrying_labels"]["count"], 53)
+        with open(os.path.join(ROOT, "research", "label-dependence", "0.4.0",
+                               "second-case-breakdown.json"), encoding="utf-8") as handle:
+            breakdown = json.load(handle)
+        self.assertEqual(breakdown["k_floor"], 2)
+        self.assertEqual(breakdown["k_observed"], 2)
+        self.assertEqual(breakdown["fragility_ratio"], "1")
+        self.assertEqual(breakdown["witness_outcome"]["criterion"], "excluded")
+
+    def test_the_witness_verifies_by_recomputation(self):
+        with open(SECOND, "r", encoding="utf-8") as handle:
+            case = json.load(handle)
+        with open(os.path.join(ROOT, "research", "label-dependence", "0.4.0",
+                               "second-case-breakdown.json"), encoding="utf-8") as handle:
+            breakdown = json.load(handle)
+        rows = {(r["anchor"], r["local_index"]): r for r in dependence.labels(case)}
+        edited = case
+        for named in breakdown["witness"]:
+            row = rows[(named["anchor"], named["local_index"])]
+            self.assertEqual(row["class"], named["class"])
+            edited = dependence.without(edited, row["anchor"], row["_id"])
+        outcome = dependence.evaluate(edited)
+        self.assertEqual(outcome["weighted_delta"], "0")
+        self.assertEqual(outcome["criterion"], "excluded")
+        self.assertEqual(dependence.evaluate(case)["criterion"], "supported")
 
 
 if __name__ == "__main__":

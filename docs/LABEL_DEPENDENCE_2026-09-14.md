@@ -2,15 +2,17 @@
 
 Document ID: `reiyah.label-dependence.2026-09-14`
 
-Version: `0.2.0`
+Version: `0.3.0`
 
 Lifecycle status: `proposed`
 
 Date: 2026-09-14. Lane: independent research.
 
-Supersedes `0.1.0` of the same document ID. Nothing in it is withdrawn. One measure is added,
-because a second case is coming with different anchor weights and a different margin, and a raw
-breakdown number cannot be compared across those.
+Supersedes `0.2.0`, which superseded `0.1.0`. Version `0.2.0` added the arithmetic floor, because a
+second case was coming with different anchor weights and a different margin. Version `0.3.0`
+withdraws two sentences of overreach and corrects when the insertion family was declared. The
+measured results are unchanged. The second case is reported in
+[`LABEL_DEPENDENCE_SECOND_CASE_2026-09-14.md`](LABEL_DEPENDENCE_SECOND_CASE_2026-09-14.md).
 
 Preregistrations fixed before any result:
 `24cb90eff90f60431fd92cd25e504842eb24898e1ec40c1cc4399601e38cfe5d` (deletions),
@@ -102,11 +104,15 @@ All of it. The family is 107 recomputations and costs **0.108 seconds**; the ins
 another 0.217 seconds. An analyst holding the same bytes can run both. This is not a capability
 this lane has and others lack.
 
-What is different is that it was run at all, declared before it was run, reported with the three
-outcomes kept apart, and shipped with six independently checkable witnesses. Conventional
-benchmarking reports a delta. It does not report which labels the delta rests on. On this cohort
-that difference is the whole finding, and it hands a validation lead a job they can actually do:
-look at six labels out of 106, not at 106.
+What is different is that it was run at all, declared before its own outcomes, reported with the
+three outcomes kept apart, and shipped with six independently checkable witnesses. On this cohort
+that is the whole finding, and it names six labels out of 106 rather than a delta alone.
+
+Two sentences from version 0.1.0 are withdrawn. "Nobody does this" was an inference about industry
+practice from two cases and this lane has no evidence for it. And six correct labels would not be a
+measured reduction of review work: they settle this deletion family on this cohort and no other
+error family. The insertion declaration was fixed before its own outcomes and after the deletion
+result, not before every result in this checkpoint.
 
 ## The source reconstruction underneath
 

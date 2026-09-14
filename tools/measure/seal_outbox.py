@@ -28,6 +28,11 @@ authorized observation. Every manifest now carries
 `transport_verification_state: asserted_unverified`, and a header that claims
 independent transport is refused rather than corrected in prose later.
 
+A header may also not assert a case digest that none of its payloads records. The
+label dependence packet named the physical open case while every payload was about
+the annotation case; both digests were real, so nothing looked wrong. The header is
+now checked against what the payloads themselves say.
+
 The 0.2.0 guard read that field at the root only. A nested copy passed, so a
 manifest could carry `asserted_unverified` at its root and `independently_verified`
 one level down, and a reader could quote either. The consumer reproduced it and
@@ -43,7 +48,7 @@ import os
 import subprocess
 import sys
 
-VERSION = "0.3.0"
+VERSION = "0.4.0"
 
 
 TRANSPORT_STATE = "asserted_unverified"
@@ -55,6 +60,7 @@ class SealError(Exception):
 
 
 TRANSPORT_FIELDS = ("transport_verification_state", "transport_state", "transport_status")
+CASE_FIELDS = ("case_sha256", "consumed_case_sha256", "common_case_sha256")
 
 
 def _fields(value, path=()):
@@ -66,6 +72,45 @@ def _fields(value, path=()):
     elif isinstance(value, list):
         for index, item in enumerate(value):
             yield from _fields(item, path + (str(index),))
+
+
+def case_digests_in_payloads(directory):
+    """Every case digest the payloads themselves record, at any depth."""
+    found = set()
+    for name in sorted(os.listdir(directory)):
+        if name.startswith("MANIFEST") or not name.endswith(".json"):
+            continue
+        try:
+            with open(os.path.join(directory, name), "r", encoding="utf-8") as handle:
+                body = json.load(handle)
+        except (ValueError, OSError):
+            continue
+        for path, value in _fields(body):
+            if str(path[-1]) in CASE_FIELDS and isinstance(value, str):
+                found.add(value)
+    return found
+
+
+def refuse_unsupported_case_claim(header, directory):
+    """A header may not assert a case digest none of its payloads is about.
+
+    The label dependence packet asserted the physical open case's digest while every
+    payload recorded the annotation case's. Both digests were real, so nothing looked
+    wrong, and a reader binding the packet to the wrong case would have found the
+    reports did not describe it. The header is now checked against what the payloads
+    themselves say rather than against the author's memory.
+    """
+    declared = {str(value) for path, value in _fields(header or {})
+                if str(path[-1]) in CASE_FIELDS and isinstance(value, str)}
+    if not declared:
+        return
+    supported = case_digests_in_payloads(directory)
+    unsupported = sorted(declared - supported)
+    if unsupported:
+        raise SealError(
+            f"the header asserts case digest(s) {unsupported} that no payload records. The "
+            f"payloads record {sorted(supported) or 'no case digest at all'}. Bind the header to "
+            "the case the payloads are actually about")
 
 
 def refuse_transport_claim(header):
@@ -140,6 +185,7 @@ def classify(directory, declared, repository, commit):
 def seal(directory, repository, commit, declared, header=None):
     """Write the manifest, or refuse and write nothing."""
     refuse_transport_claim(header)
+    refuse_unsupported_case_claim(header, directory)
     records, refusals = classify(directory, declared, repository, commit)
     if refusals:
         raise SealError("origin could not be established for: " + "; ".join(refusals))
