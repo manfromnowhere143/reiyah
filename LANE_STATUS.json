@@ -1,25 +1,24 @@
 {
   "artifact_id": "reiyah.fable.lane-status",
   "branch": "research/2026-09-10-moment-cone",
-  "checkpoint_source": "77cefc1ca4a8dfe90f0a63956bd234d0ee07edbc, corrected and extended by this checkpoint",
+  "checkpoint_source": "b65428d3df8c07c9ea17e92a19357adb30a70b51, corrected by this checkpoint",
   "costs": {
     "gate_b_check": "PASS 0 failing",
     "headline_audit": "all clear",
-    "measurement_tests": "637 in tools/measure, about 63 s",
-    "preparation_grid": "48 preparations over 134,565 annotated objects, about 6.7 s"
+    "measurement_tests": "in tools/measure",
+    "two_arm_grid": "48 preparations x 2 arms, about 9.7 s"
   },
   "date": "2026-09-13",
   "established_this_checkpoint": [
-    "three review-cost claims withdrawn, all reproduced before repair: weight invariance false at (99/100,1/100) where the same function returns 9; the r-independent-bits model invalid because matching competition is global; and no-ordering-without-a-prior contradicted by this lane's own resolution-plan-0.3.0 artifact",
-    "process repair: headline_audit registers every headline with its assumptions and the retained artifacts that could refute it, and blocks a standing headline one of them contradicts",
-    "the preparation family was digested at 8e633b95 before any result was computed, and the score cutoff was excluded as a configuration change rather than uncertainty",
-    "the modality claim is NOT robust: it holds in 30 of 48 pre-registered evaluation scopes, fails in 5, undefined in 13, and every failure is a close range band",
-    "the responsible pair is centerpoint/pointpillars at 2.092 falling below centerpoint/fcos3d at 2.124; the worst failing margin is -0.1057 against +0.4409 where it holds, so it is not a knife edge",
-    "the modality headline is reclassified from standing to qualified: the scope was part of the claim and was not stated when it was published",
-    "parity holds a fourth time: the ordinary multiverse grid is the method that produced this, not a competitor beaten by it"
+    "fourth withdrawal: the flip witness reported one checkpoint ago is withdrawn. Every preparation re-thresholded each detector inside its subset, moving the score cutoff by up to +0.521, so it changed the operating point as well as the scope",
+    "with the cutoffs held at their full scope values, all five previously failing cells hold, by margins from +0.151 to +1.512",
+    "the other arm is not clean either: fixing the cutoffs leaves marginals unmatched in 0 of 48 preparations, and the estimand contract says the coefficient is not comparable across marginals",
+    "the result is a structural obstruction: no preparation in this family isolates the scope effect for a marginal dependent estimand, because a population subset changes the marginals",
+    "row 19 delivered: every comparison now records its actual cutoffs, achieved miss rates, kept counts and what it changes",
+    "the modality headline remains qualified: it holds at full scope with matched marginals, and the sub scope audit is obstructed rather than adverse"
   ],
   "lane": "independent research and conventional comparator",
-  "next_falsifier": "The close range failure suggests that both modalities are strong nearby so residual failures become object specific rather than modality specific. That reading is untested. Stratify the close range band by object property and check whether the same modality advantage returns inside any stratum; if it does not, the modality claim is scope bound rather than conditional.",
+  "next_falsifier": "The obstruction is specific to a marginal dependent estimand. Test whether the absolute excess joint miss rate, which is not a ratio of marginals, can be audited across the same 48 scopes with the cutoffs fixed. If it can, the auditability problem belongs to the coefficient and not to the question.",
   "open_and_unowned": [
     "the Engine comparison remains [-8,8] with no admitted human references",
     "external scientific review and reviewer usability evidence are missing",

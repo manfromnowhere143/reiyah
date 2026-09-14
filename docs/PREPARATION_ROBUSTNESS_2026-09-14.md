@@ -2,7 +2,9 @@
 
 Document ID: `reiyah.preparation-robustness.2026-09-14`
 
-Version: `0.1.0`
+Version: `0.2.0`
+
+Supersedes `0.1.0`, which reported a flip witness. Answering one consumer question withdrew it.
 
 Lifecycle status: `proposed`
 
@@ -54,6 +56,51 @@ and **none changes any detector's output**.
 The detector score cutoff is deliberately **excluded**. Raising it changes the system being
 evaluated, so a flip obtained that way is a configuration comparison and not uncertainty about one
 fixed configuration. It is held at the matched miss rate instead.
+
+## Withdrawn: the flip witness
+
+Version 0.1.0 reported that the claim fails in 5 of 48 evaluation scopes, every failure at close
+range. A consumer required each comparison to state whether it changes scope, operating point,
+evidence interpretation, or several of these. Answering that withdrew the result.
+
+Each preparation re-thresholded every detector to the same miss rate **inside its own subset**. That
+keeps marginals comparable, which the estimand contract requires, and it silently moves the score
+cutoff with the scope. On vehicles within 30 metres at the best visibility band the cutoffs move by
+up to **`+0.521`**. So every one of the 48 preparations changed the scope **and** the operating point
+of every detector, and the checkpoint did not say so.
+
+Holding the cutoffs at their full scope values, so the configuration is genuinely fixed, **all five
+failing cells hold**, by margins from `+0.151` to `+1.512`.
+
+**The flip was an operating point effect, not a scope effect. It is withdrawn.**
+
+## And the other arm is not clean either
+
+Fixing the cutoffs leaves the marginals unmatched. In **0 of 48** preparations do the five detectors
+reach the same miss rate, and this lane's own estimand contract states that the coefficient is not
+comparable across marginals. The one failure in that arm, vulnerable road users within 30 metres,
+spans achieved miss rates from `0.210` to `0.337`, so it is not a clean counterexample either.
+
+## The result is an obstruction, not an answer
+
+| arm | marginals | operating point |
+|---|---|---|
+| matched rate | comparable, in 9 of 35 exactly equal | **moves with the scope** |
+| fixed cutoff | **never matched, 0 of 48** | fixed |
+
+**No preparation in this family isolates the scope effect for this estimand**, because the
+coefficient is marginal dependent and a population subset changes the marginals. That is a
+structural statement about auditing a marginal dependent quantity across sub populations, and it is
+worth more than the flip would have been, because it says why the audit cannot be completed rather
+than reporting a result that a second question dissolves.
+
+What survives is narrower and carries its scope: the claim holds at full scope with matched
+marginals, and this family cannot extend it to sub scopes.
+
+**The consumer requirement did the work, not the method.** Asking what each comparison changes
+withdrew a published result and replaced it with an obstruction.
+
+## The withdrawn version's result
 
 ## The result: the claim is not robust
 

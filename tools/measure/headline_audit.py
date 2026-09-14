@@ -62,6 +62,17 @@ REGISTER = [
         "status": "withdrawn",
     },
     {
+        "headline": "the modality claim is not robust to evaluation scope, with five close range flip witnesses",
+        "checkpoint": "preparation-robustness-0.1.0",
+        "assumptions": ["each preparation changes only the evaluation scope"],
+        "refuted_by": [
+            {"artifact": "research/preparation-robustness/0.2.0/preparation-grid.json",
+             "shows": ("every preparation also moved each detector's score cutoff, by up to +0.521. "
+                       "Holding the cutoffs fixed, all five failing cells hold by +0.151 to +1.512"),
+             "published_in": "preparation-robustness-0.2.0"}],
+        "status": "withdrawn",
+    },
+    {
         "headline": "same modality pairs are more coupled than cross modality pairs",
         "checkpoint": "modality-coupling-0.1.0",
         "assumptions": ["matched miss rates", "one annotated population", "one match rule",
@@ -69,13 +80,14 @@ REGISTER = [
                         "and, discovered later, ONE evaluation scope"],
         "refuted_by": [
             {"artifact": "research/preparation-robustness/0.1.0/preparation-grid.json",
-             "shows": ("the predicate fails in 5 of 48 pre-registered evaluation scopes, every one "
-                       "of them a close range band, with a worst margin of -0.1057 against +0.4409 "
-                       "where it holds"),
-             "published_in": "preparation-robustness-0.1.0"}],
+             "shows": ("an audit across 48 pre-registered evaluation scopes could not be "
+                       "completed. The matched rate arm moves the operating point with the scope; "
+                       "the fixed cutoff arm never matches marginals, in 0 of 48. No preparation "
+                       "isolates the scope effect for a marginal dependent estimand"),
+             "published_in": "preparation-robustness-0.2.0"}],
         "status": "qualified",
-        "qualification": ("holds at full scope and fails within 30 metres. The scope is part of the "
-                          "claim and was not stated when it was published"),
+        "qualification": ("holds at full scope with matched marginals. The audit across sub scopes "
+                          "is obstructed rather than adverse, and the scope is part of the claim"),
     },
 ]
 

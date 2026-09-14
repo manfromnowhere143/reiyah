@@ -1,45 +1,43 @@
-"""Auditing one of this lane's own published claims across admissible preparations.
+"""Why this claim cannot be audited across evaluation scopes, and the flip that was not one.
 
-The claim under audit is this lane's own, from `modality-coupling-0.1.0`: same
-modality detector pairs are more coupled than cross modality pairs at matched miss
-rates. It carries an engineering consequence, which is to buy sensor diversity
-rather than software diversity, so it is worth knowing whether it survives the
-preparation choices an analyst is free to make.
+Version 0.1.0 of this module reported a flip witness: the modality claim held in
+30 pre-registered evaluation scopes and failed in 5, every failure at close range.
+A consumer required each comparison to state whether it changes scope, operating
+point, evidence interpretation, or several of these. Answering that question
+withdrew the flip.
 
-THE DISCIPLINE, WHICH MATTERS MORE THAN THE METHOD. The family of alternative
-preparations was written down and digested **before any result was computed**, at
-`8e633b95e594c8b9c13061cb0af2ce19e0049a317013f3687a3c742144ac367c`, so that
-widening it after seeing the outcome would be visible. Forty eight preparations,
-formed from class scope, range band and visibility floor. Each is a standard
-published evaluation scope choice and **none changes any detector's output**: they
-change which annotated objects are in scope.
+WHAT WENT WRONG. Each preparation re-thresholded every detector to the same miss
+rate **inside its own subset**. That keeps marginals comparable, which the estimand
+contract requires, and it silently moves the score cutoff with the scope. On
+vehicles within 30 metres at the best visibility band the cutoffs move by up to
+`+0.521`. So every one of the 48 preparations changed the evaluation scope **and**
+the operating point of every detector, and the checkpoint did not say so.
 
-The detector score cutoff is deliberately excluded from that family. Raising it
-changes the system being evaluated, so a flip obtained that way would be a
-configuration comparison and not uncertainty about one fixed configuration. It is
-held fixed at the matched miss rate instead.
+Holding the cutoffs at their full scope values instead, so the configuration is
+genuinely fixed, **all five failing cells hold**, by margins from `+0.151` to
+`+1.512`. **The flip was an operating point effect, not a scope effect, and it is
+withdrawn.**
 
-THE RESULT: THE CLAIM IS NOT ROBUST. The predicate holds in 30 preparations, fails
-in **5**, and is undefined in 13 where a marginal vanishes or the population is too
-small. The five failures are not scattered: **every one of them is a close range
-scope.** At vehicles within 30 metres the ordering interleaves, with
-`centerpoint/pointpillars` at 2.092, a same modality pair, falling below
-`centerpoint/fcos3d` at 2.124 and `fcos3d/megvii` at 2.118, both cross modality.
+AND THE OTHER ARM IS NOT CLEAN EITHER. Fixing the cutoffs leaves the marginals
+unmatched: in **0 of 48** preparations do the five detectors reach the same miss
+rate, and this lane's own estimand contract states that the coefficient is not
+comparable across marginals. The one failure in that arm, vulnerable road users
+within 30 metres, spans achieved miss rates from `0.210` to `0.337`, so it is not
+a clean counterexample either.
 
-The margin matters as much as the sign. At full scope the claim holds by `+0.3523`
-with all four same modality pairs above all six cross pairs. At close range
-vehicles it fails by `-0.0317`. That is thin, and this lane has already been
-burned once by a thin margin, so the failure is reported with its margin attached
-and the thinness stated rather than a bare boolean.
+THE RESULT IS AN OBSTRUCTION, NOT AN ANSWER.
 
-WHAT THE COMPARATOR GETS. The baseline is the ordinary full grid over the same
-family, which is multiverse analysis in the sense of Bell, Kampman, Dodge and
-Lawrence, NeurIPS 2022. **This lane ran that grid, so the grid is not a competitor
-it beat; it is the method that produced the result.** Nothing here outperforms an
-analyst who sweeps the same family. What the procedure adds is the pre-registered
-family, the separation of evaluation scope from configuration change, and the
-named responsible pair. That is discipline, not algorithmic advantage, and it
-should not be sold as one.
+    matched rate arm    marginals comparable, operating point moves with the scope
+    fixed cutoff arm    operating point fixed, marginals never matched
+
+**No preparation in this family isolates the scope effect for this estimand.** That
+is a structural statement about auditing a marginal dependent quantity across
+population subsets, and it is worth more than the flip would have been, because it
+says why the audit cannot be completed rather than reporting a result that a
+second question dissolves.
+
+What survives is narrower and stated with its scope attached: the claim holds at
+full scope with matched marginals, and this family cannot extend it to sub scopes.
 
 Exact rational arithmetic, standard library only. Reads one retained grid.
 """
@@ -48,12 +46,13 @@ import json
 import os
 import sys
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 COUNTS = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
-    os.path.abspath(__file__)))), "research", "preparation-robustness", "0.1.0",
+    os.path.abspath(__file__)))), "research", "preparation-robustness", "0.2.0",
     "preparation-grid.json")
-PREREGISTRATION = os.path.join(os.path.dirname(COUNTS), "PREREGISTRATION.json")
-THIN = Fraction(1, 10)
+PREREGISTRATION = os.path.join(os.path.dirname(os.path.dirname(COUNTS)), "0.1.0",
+                               "PREREGISTRATION.json")
+ARMS = ("matched_rate", "fixed_cutoff")
 
 
 class GridError(Exception):
@@ -65,82 +64,72 @@ def load(path=COUNTS):
         data = json.load(handle)
     if data.get("artifact_id") != "reiyah.preparation-robustness.counts":
         raise GridError("the file is not the retained preparation robustness grid")
+    if data.get("version") != VERSION:
+        raise GridError(f"this module reads grid {VERSION}, not {data.get('version')}")
     return data
 
 
-def margin(row):
-    """min(same) - max(cross), the quantity the predicate thresholds at zero."""
-    if row.get("state") != "computed":
-        return None
-    return Fraction(row["same_min"]) - Fraction(row["cross_max"])
+def computed(data, arm):
+    return [row for row in data["grid"] if row.get(arm, {}).get("state") == "computed"]
 
 
-def outcome(data=None):
-    data = data or load()
-    rows = data["grid"]
-    holds = [r for r in rows if r.get("predicate") is True]
-    fails = [r for r in rows if r.get("predicate") is False]
-    undefined = [r for r in rows if r.get("predicate") is None]
-    return {"preparations": len(rows), "holds": len(holds), "fails": len(fails),
-            "undefined": len(undefined),
-            "verdict": ("flip_witness" if fails and holds else
-                        "robust" if not fails and holds else "unresolved")}
+def cutoff_movement(data):
+    """How far the score cutoff moves from its full scope value in the matched arm."""
+    reference = data["reference_cutoffs_at_full_scope"]
+    worst = None
+    for row in computed(data, "matched_rate"):
+        cuts = row["matched_rate"]["cutoffs"]
+        move = max(abs(cuts[n] - reference[n]) for n in reference)
+        if worst is None or move > worst["largest_move"]:
+            worst = {"scope": [row["P1"], row["P2"], row["P3"]], "largest_move": move,
+                     "cutoffs": cuts, "reference": reference}
+    return worst
 
 
-def flip_witnesses(data=None):
-    data = data or load()
-    out = []
-    for row in data["grid"]:
-        if row.get("predicate") is not False:
-            continue
-        gap = margin(row)
-        out.append({"class_scope": row["P1"], "range_band": row["P2"],
-                    "visibility_floor": row["P3"], "population": row["population"],
-                    "same_modality": [row["same_min"], row["same_max"]],
-                    "cross_modality": [row["cross_min"], row["cross_max"]],
-                    "margin": str(gap), "thin": abs(gap) < THIN})
-    return out
+def arm_summary(data, arm):
+    rows = computed(data, arm)
+    fails = [r for r in rows if not r[arm]["predicate"]]
+    matched = [r for r in rows if r[arm]["marginals_matched"]]
+    return {"computed": len(rows), "fails": len(fails),
+            "preparations_with_matched_marginals": len(matched),
+            "failing_scopes": [[r["P1"], r["P2"], r["P3"]] for r in fails]}
 
 
 def report(data=None):
     data = data or load()
-    result = outcome(data)
-    witnesses = flip_witnesses(data)
-    holding = [margin(r) for r in data["grid"] if r.get("predicate") is True]
-    bands = {w["range_band"] for w in witnesses}
+    matched = arm_summary(data, "matched_rate")
+    fixed = arm_summary(data, "fixed_cutoff")
+    movement = cutoff_movement(data)
     return {
         "artifact_id": "reiyah.preparation-robustness.report", "version": VERSION,
         "named_claim": data["named_claim"],
-        "claim_published_by_this_lane_in": "modality-coupling-0.1.0",
         "preregistration_sha256": data["preregistration_sha256"],
-        "family_kind": data["family_kind"],
-        "excluded_as_configuration_change": data["excluded_as_configuration_change"],
-        **result,
-        "flip_witnesses": witnesses,
-        "every_failure_shares_a_range_band": len(bands) == 1,
-        "the_shared_band": sorted(bands),
-        "largest_holding_margin": str(max(holding)) if holding else None,
-        "worst_failing_margin": str(min(Fraction(w["margin"]) for w in witnesses))
-                                if witnesses else None,
-        "margins_are_thin_where_it_fails": all(w["thin"] for w in witnesses),
-        "baseline": {
-            "method": "the ordinary full grid over the same family, which is multiverse analysis",
-            "citation": ("Bell, Kampman, Dodge and Lawrence, Modeling the Machine Learning "
-                         "Multiverse, NeurIPS 2022, arXiv:2206.05985v2"),
-            "honest_position": ("this lane ran that grid, so the grid is not a competitor it beat, "
-                                "it is the method that produced the result. Nothing here "
-                                "outperforms an analyst sweeping the same family")},
-        "what_the_discipline_added": [
-            "the family was digested before any result was computed, so widening it afterwards "
-            "would be visible",
-            "evaluation scope was separated from configuration change, so a score cutoff flip "
-            "cannot be passed off as uncertainty about a fixed configuration",
-            "the responsible pair is named rather than left as a boolean",
-        ],
+        "withdrawn": {
+            "claim": ("the modality claim is not robust to evaluation scope, with five flip "
+                      "witnesses at close range"),
+            "why": ("every preparation re-thresholded each detector inside its own subset, so it "
+                    "changed the operating point as well as the scope. With the cutoffs held at "
+                    "their full scope values all five failing cells hold"),
+            "largest_cutoff_movement": movement},
+        "arms": {"matched_rate": matched, "fixed_cutoff": fixed},
+        "neither_arm_isolates_the_scope": {
+            "matched_rate": "marginals comparable, operating point moves with the scope",
+            "fixed_cutoff": (f"operating point fixed, marginals matched in "
+                             f"{fixed['preparations_with_matched_marginals']} of "
+                             f"{fixed['computed']} preparations"),
+            "consequence": ("no preparation in this family isolates the scope effect for this "
+                            "estimand, because the coefficient is marginal dependent and a "
+                            "population subset changes the marginals")},
+        "what_survives": ("the claim holds at full scope with matched marginals. This family "
+                          "cannot extend it to sub scopes, and the scope is part of the claim"),
+        "what_the_consumer_requirement_bought": (
+            "asking what each comparison changes withdrew a published flip witness and replaced it "
+            "with a structural obstruction. The requirement did the work, not the method"),
         "not_established": [
+            "that the claim fails in any sub scope; the one fixed cutoff failure spans unmatched "
+            "miss rates from 0.210 to 0.337 and is not a clean counterexample",
             "anything about physical risk, human effort or industry practice",
-            "that the close range structure has the causal reading it suggests",
-            "any independent human reference; this is retrospective and annotation conditional",
+            "any independent human reference; retrospective and annotation conditional",
             "any change to the live Engine comparison, which remains [-8,8]",
         ],
     }
