@@ -91,5 +91,42 @@ class Seal(unittest.TestCase):
             self.assertIn("origin", entry)
 
 
+class TransportBoundary(unittest.TestCase):
+    """A publisher cannot verify its own transport, and the seal refuses to say it did."""
+
+    def setUp(self):
+        self.root, self.head = repository()
+        self.outbox = tempfile.mkdtemp()
+        with open(os.path.join(self.outbox, "kept.json"), "w", encoding="utf-8") as handle:
+            handle.write('{"version": "1"}\n')
+
+    def test_every_manifest_carries_the_asserted_unverified_state(self):
+        seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"})
+        with open(os.path.join(self.outbox, "MANIFEST.json"), encoding="utf-8") as handle:
+            manifest = json.load(handle)
+        self.assertEqual(manifest["transport_verification_state"], "asserted_unverified")
+        self.assertIn("publisher", manifest["transport_boundary"])
+
+    def test_the_comparator_0_2_0_wording_is_refused(self):
+        """The exact field that shipped in comparator-0.2.0's sealed manifest."""
+        header = {"publication": {
+            "independent_transport_verification":
+                "a fresh clone of the pushed ref returned the same tree"}}
+        with self.assertRaises(seal.SealError) as caught:
+            seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"}, header)
+        self.assertIn("publisher readback", str(caught.exception))
+        self.assertFalse(os.path.exists(os.path.join(self.outbox, "MANIFEST.json")))
+
+    def test_the_claim_is_refused_in_a_value_as_well_as_a_key(self):
+        header = {"note": "this clone is an independent transport verification of the push"}
+        with self.assertRaises(seal.SealError):
+            seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"}, header)
+
+    def test_an_honest_publisher_readback_header_is_accepted(self):
+        header = {"publication": {"publisher_readback": "a fresh clone returned the same tree"}}
+        result = seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"}, header)
+        self.assertEqual(result["committed"], 1)
+
+
 if __name__ == "__main__":
     unittest.main()
