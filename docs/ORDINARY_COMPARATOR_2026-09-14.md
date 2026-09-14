@@ -1,6 +1,21 @@
 # The strongest ordinary comparator, end to end
 
-Date: 2026-09-14. Lane: independent research. Lifecycle status: `proposed`.
+Date: 2026-09-14. Lane: independent research. Lifecycle status: `corrected`.
+
+> **Corrected by [`COMPARATOR_CORRECTIONS_2026-09-14.md`](COMPARATOR_CORRECTIONS_2026-09-14.md).**
+> Seven statements on this page are wrong and are withdrawn there. The text below is left
+> as it was written so the corrections have something to point at. Read the successor first.
+>
+> | on this page | corrected to |
+> |---|---|
+> | 386 certified shortest | 386 have a shortest list; **378** carry the certificate, 8 are searched optima |
+> | both ends checkable in linear time | linear in a **supplied** cover and its sets. This implementation recomputes the sets: 36, 136 and 528 comparisons on the 8, 16 and 32 pair controls |
+> | the live comparison waits on a reference | true here, but the rule behind it was wrong. An open reference beside an already settled criterion waits on nothing |
+> | 33 distinct preparations | 33 aggregate signatures on this page. Membership over exact source rows, computed in 0.4.0, gives the same 33 and is what establishes it |
+> | 184 of 309 repository tests, Pillow absent from every interpreter | **309 of 309** pass on the runtime supplied with the Engine packet, which has Pillow 12.3.0 |
+>
+> The observation checker as shipped with this page also accepted four forged open state
+> reports on a valid packet. That is repaired in 0.2.0 and the forgeries are retained as tests.
 
 Artifacts:
 [`research/comparator/0.1.0/end-to-end.json`](../research/comparator/0.1.0/end-to-end.json),

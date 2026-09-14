@@ -117,8 +117,75 @@ REGISTER = [
             {"artifact": "research/comparator/0.1.0/verification-cost.json",
              "limits": ("checking rather than recomputing is measured slower on every retained "
                         "case, and only overtakes recomputation between 30 and 90 detections"),
-             "published_in": "comparator-0.1.0"}],
+             "published_in": "comparator-0.1.0"},
+            {"artifact": "research/comparator/0.2.0/end-to-end.json",
+             "limits": ("checking a supplied cover is linear in the supplied sets. The "
+                        "implemented checker recomputes those sets and performs one comparison "
+                        "per pair of admitted readings: 36, 136 and 528 on the 8, 16 and 32 pair "
+                        "controls. The unqualified linear time wording is withdrawn"),
+             "published_in": "comparator-0.2.0"}],
         "status": "standing, bounded",
+    },
+    {
+        "headline": "386 of the generated cases carry a minimum size certificate",
+        "checkpoint": "comparator-0.1.0",
+        "assumptions": ["that a shortest list found by search is a certificate result"],
+        "refuted_by": [
+            {"artifact": "research/comparator/0.2.0/end-to-end.json",
+             "shows": ("replaying the same 1400 cases gives 386 with a shortest list, of which "
+                       "378 have a packing that meets the cover and 8 do not. The first is "
+                       "size 4, seed 9, where the search finds 2 and the packing forces 1"),
+             "published_in": "comparator-0.2.0"}],
+        "status": "withdrawn",
+        "successor": "378 of 717 cases needing a list carry a minimum size certificate",
+    },
+    {
+        "headline": "an open reference means the decision is waiting on that reference",
+        "checkpoint": "comparator-0.1.0",
+        "assumptions": ["that an open interval always leaves the criterion open"],
+        "refuted_by": [
+            {"artifact": "research/cohort-packet/0.1.0/settled-with-open-reference-case.json",
+             "shows": ("a cohort whose enclosure is 4/5 to 1 at tolerance 1/10. The criterion is "
+                       "supported across the whole open interval, so nothing is waiting, yet "
+                       "0.1.0 reported waits_on_a_reference and both checkers accepted it"),
+             "published_in": "comparator-0.2.0"}],
+        "status": "withdrawn",
+        "successor": ("the criterion is read first. An open reference is preserved without being "
+                      "turned into an outstanding question"),
+    },
+    {
+        "headline": "the grid's 48 labels name 33 distinct preparations",
+        "checkpoint": "preparation-robustness-0.3.0",
+        "assumptions": ["that equal population and equal kept counts establish equal members"],
+        "refuted_by": [],
+        "bounded_by": [
+            {"artifact": "tools/measure/premise_corrections.py",
+             "limits": ("0.3.0 grouped on aggregate counts alone, which two different row sets "
+                        "can share. 0.4.0 evaluates the declared predicates against the exact "
+                        "source rows, digests each selected index sequence, and carries a "
+                        "control with equal counts and disjoint members. The 33 survives on "
+                        "membership; the 0.3.0 grouping did not establish it"),
+             "published_in": "preparation-robustness-0.4.0"}],
+        "status": "standing, bounded",
+    },
+    {
+        "headline": "every decisive verdict is carried entirely by the admission decision",
+        "checkpoint": "admission-sensitivity-0.2.0",
+        "assumptions": ["that a decisive verdict pins the enclosure to a point",
+                        "that the asserted share is one whenever the verdict is decisive"],
+        "refuted_by": [
+            {"artifact": "research/cohort-packet/0.1.0/decisive-interval-case.json",
+             "shows": ("every anchor finite, both readings supported at different values, "
+                       "enclosure [1, 3] against a coarse bound of [-3, 3] and an asserted share "
+                       "of 2/3. An open reference is not the explanation"),
+             "published_in": "comparator-0.2.0"},
+            {"artifact": "research/cohort-packet/0.1.0/settled-with-open-reference-case.json",
+             "shows": "decisive at [4/5, 1] with an asserted share of 9/10",
+             "published_in": "comparator-0.2.0"}],
+        "status": "withdrawn",
+        "successor": ("removing readings can only narrow and admitting more can only widen, so a "
+                      "decisive verdict rests on the completeness of the admitted set. The share "
+                      "of one was a property of the four cases then retained"),
     },
 ]
 

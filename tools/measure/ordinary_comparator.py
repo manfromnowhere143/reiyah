@@ -49,7 +49,7 @@ import cohort_packet as packet  # noqa: E402
 import conventional_comparator as conventional  # noqa: E402
 import observation_cover as cover  # noqa: E402
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CASES = os.path.join(ROOT, "research", "cohort-packet", "0.1.0")
 
@@ -208,10 +208,12 @@ def synthetic_case(size, seed):
 
 def conformance(sizes=(4, 6, 8, 10, 12, 16, 20), per_size=200):
     """Exercise every state on synthetic joint worlds, checking each one."""
-    rows, totals = [], {"covered": 0, "bracketed": 0, "already_decided": 0}
+    names = ("already_decided", "certified_shortest", "searched_shortest", "bracketed",
+             "waits_on_a_reference", "no_admitted_reading", "not_evaluated")
+    rows, totals = [], {name: 0 for name in names}
     diffs, lengths, checked = [], [], 0
     for size in sizes:
-        states = {"covered": 0, "bracketed": 0, "already_decided": 0}
+        states = {name: 0 for name in names}
         local_diff, local_length = [], []
         for seed in range(per_size):
             case = synthetic_case(size, seed)
@@ -240,17 +242,146 @@ def conformance(sizes=(4, 6, 8, 10, 12, 16, 20), per_size=200):
                      "states": states,
                      "mean_disputed": round(sum(local_diff) / len(local_diff), 3) if local_diff else None,
                      "mean_list": round(sum(local_length) / len(local_length), 3) if local_length else None})
-    needing = totals["covered"] + totals["bracketed"]
+    needing = totals["certified_shortest"] + totals["searched_shortest"] + totals["bracketed"]
     return {
         "instances": len(sizes) * per_size,
         "instances_both_checkers_accepted": checked,
         "by_size": rows,
         "states": totals,
-        "certified_shortest_share": (str(Fraction(totals["covered"], needing)) if needing else None),
+        "corrects": ("0.1.0 counted every case with a shortest list as certified. A searched "
+                     "optimum whose packing does not meet it is not a certificate, and is now "
+                     "counted as its own state"),
+        "cases_needing_a_list": needing,
+        "certified_shortest_share": ("%d of %d" % (totals["certified_shortest"], needing)
+                                     if needing else None),
+        "searched_but_not_certified": totals["searched_shortest"],
         "mean_disputed": round(sum(diffs) / len(diffs), 3) if diffs else None,
         "mean_list": round(sum(lengths) / len(lengths), 3) if lengths else None,
         "scope": ("a generator written in this lane. The shares describe these instances only. "
                   "No claim is made about how often a real cohort is already decided"),
+    }
+
+
+def star_case(discordant):
+    """One centre reading and k satellites, each disagreeing with the centre.
+
+    A control for the checking cost. It has k discordant pairs and k+1 readings, so
+    it separates the size of the supplied certificate from the number of comparisons
+    the implemented checker performs.
+    """
+    base = [{"id": "b0", "class": "car"}]
+    added = [{"id": "c0", "class": "car"}]
+    objects = [{"id": "o%d" % i, "class": "car"} for i in range(discordant + 1)]
+    present = [o["id"] for o in objects]
+    joint = [{"world_id": "centre",
+              "per_anchor": {"A": {"objects_present": present, "edges": [["c0", "o0"]]}}}]
+    for index in range(discordant):
+        name = "o%d" % (index + 1)
+        joint.append({"world_id": "s%d" % index,
+                      "per_anchor": {"A": {"objects_present": present,
+                                           "edges": [["b0", name], ["c0", name]]}}})
+    return {"schema_id": "reiyah.cohort-packet.case", "cohort_id": "star-%d" % discordant,
+            "anchors": [{"id": "A", "weight": "1", "reference_state": "finite",
+                         "base_detections": base, "added_detections": added,
+                         "objects": objects}],
+            "joint_worlds": joint,
+            "loss": {"false_negative": "1", "false_positive": "1", "tolerance": "0"}}
+
+
+def checking_cost(sizes=(8, 16, 32)):
+    """What the implemented checker actually does, in traced operations.
+
+    0.1.0 said the list is checked in linear time. That is true of the mathematics and
+    false of this implementation. Checking a supplied cover against supplied separating
+    sets is linear in their total size. The implemented checker does not trust the
+    supplied sets: it recomputes them from the packet, which compares every pair of
+    admitted readings, discordant or not. These are traced counts, not timings.
+    """
+    rows = []
+    for count in sizes:
+        case = star_case(count)
+        report = roundtrip(packet.build(case))
+        listing = roundtrip(cover.analyse(case))
+        cover_checker.verify(report, listing)
+        worlds = len(report["joint_worlds"])
+        entry = listing["observation_list"]
+        pack = len(entry["packing"])
+        rows.append({
+            "discordant_pairs": count, "admitted_readings": worlds,
+            "pair_verdict_comparisons": worlds * (worlds - 1) // 2,
+            "packing_overlap_comparisons": pack * (pack - 1) // 2,
+            "separating_sets_recomputed": len(entry["separating_sets"]),
+            "supplied_certificate_atoms": entry["checkable_cover"]["count"]})
+    return {
+        "what_is_linear": ("checking a supplied cover against supplied separating sets, in the "
+                           "total size of those sets"),
+        "what_this_implementation_costs": ("one comparison per pair of admitted readings, because "
+                                           "it recomputes the separating sets instead of trusting "
+                                           "them, plus one overlap test per pair of packing members"),
+        "why_it_is_not_a_defect": ("a checker that trusted the reported separating sets would "
+                                   "accept a report that omitted a discordant pair, which is a "
+                                   "forgery this lane already retains. The quadratic cost buys "
+                                   "independence and is stated rather than optimised away"),
+        "traced": rows,
+        "note": "traced operation counts on constructed controls, not timing measurements",
+        "corrects": "the unqualified linear time claim in comparator 0.1.0",
+    }
+
+
+ENGINE_CASE_SHA256 = "8e79f3636ef337d7ea2f12ec213e67106d7d4afce55bdafb6c63ba10d667f299"
+
+
+def compatibility(path=None, expected=ENGINE_CASE_SHA256):
+    """Acknowledge the Engine's source bound comparison without copying it in.
+
+    The case is another owner's private export and its detection identifiers are
+    source derived row references. They are not copied into this repository. What is
+    recorded here is the digest that binds the bytes, the structure in counts, and
+    the result both checkers accept. If the file is not supplied the record says so
+    and names the digest it would need.
+    """
+    if not path or not os.path.exists(path):
+        return {"state": "unavailable", "expected_sha256": expected,
+                "reason": ("the Engine's source bound case is private to its owner and was not "
+                           "supplied to this run. Its digest is recorded so the result can be "
+                           "reproduced against the exact bytes")}
+    found = digest(path)
+    if found != expected:
+        return {"state": "digest_mismatch", "expected_sha256": expected, "found_sha256": found,
+                "reason": "the supplied bytes are not the case this record is about"}
+    with open(path, "r", encoding="utf-8") as handle:
+        case = json.load(handle)
+    report = roundtrip(packet.build(case))
+    listing = roundtrip(cover.analyse(case))
+    packet_result = packet_checker.verify(case, report)
+    cover_result = cover_checker.verify(report, listing)
+    return {
+        "state": "checked",
+        "sha256": found,
+        "cohort_id": case["cohort_id"],
+        "custody": ("read only from the owner's sealed outbox. No byte of it is copied into this "
+                    "repository, and no detection identifier is reproduced here"),
+        "structure": [{"anchor": a["id"], "weight": a["weight"],
+                       "reference_state": a["reference_state"],
+                       "base_detections": len(a["base_detections"]),
+                       "added_detections": len(a["added_detections"]),
+                       "declared_objects": len(a.get("objects", []))} for a in case["anchors"]],
+        "admitted_readings": len(case.get("joint_worlds", [])),
+        "loss": case["loss"],
+        "result": {"packet_state": report["state"], "enclosure": report["enclosure"],
+                   "coarse_bound": report["coarse_bound"],
+                   "improvement_criterion": report["decision"]["improvement_criterion"],
+                   "preference": report["decision"]["preference"],
+                   "observation_state": listing["state"],
+                   "open_anchors": listing["open_anchors"],
+                   "observation_list": listing["observation_list"]},
+        "checked_by_separate_checkers": {
+            "cohort_packet": packet_result.get("established", packet_result),
+            "observation_cover": cover_result.get("established", cover_result)},
+        "what_this_does_not_do": [
+            "it admits no reading, invents no object and creates no human reference",
+            "an open reference is preserved, not replaced by a fixture",
+            "the enclosure is a count bound over an open reference, not a measurement"],
     }
 
 
@@ -312,7 +443,11 @@ def costs(entries):
                           for entry in entries}},
             "basis": "the disputed set against the checkable cover, both recomputed by the checker",
             "against_the_analyst": ("this is where the lane earns something measurable. The list "
-                                    "is shorter and both of its ends are checkable in linear time")},
+                                    "is shorter, and a supplied cover with its separating sets is "
+                                    "checked in time linear in their total size. The implemented "
+                                    "checker recomputes those sets from the packet rather than "
+                                    "trusting them, which costs one comparison per pair of "
+                                    "admitted readings. See checking_cost below")},
         "integration": {
             "unit": "modules a consumer must trust, and what they share",
             "value": {"producer_modules": ["cohort_packet", "observation_cover"],
@@ -362,6 +497,8 @@ def report():
                     "note": "command timings on one machine. No human effort is measured here"},
         "cases": entries,
         "synthetic_conformance": conformance(),
+        "checking_cost": checking_cost(),
+        "engine_case_compatibility": compatibility(os.environ.get("REIYAH_ENGINE_CASE")),
         "costs": costs(entries),
         "limits": [
             "every verdict here is over admitted readings, never over the physical world",

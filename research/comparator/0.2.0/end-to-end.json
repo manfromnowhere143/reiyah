@@ -1,0 +1,1770 @@
+{
+  "artifact_id": "reiyah.ordinary-comparator.end-to-end",
+  "cases": [
+    {
+      "case": "open-two-anchor.json",
+      "checked_by_separate_checkers": {
+        "cohort_packet": {
+          "decision": "unresolved",
+          "does_not_establish": [
+            "that the declared interpretations are admitted by review",
+            "that any object exists",
+            "physical coverage, planner behaviour or risk"
+          ],
+          "enclosure": {
+            "lower": "-8",
+            "upper": "8"
+          },
+          "establishes": "the joint weighted comparison inside the declared interpretations",
+          "finite_anchors": 0,
+          "matcher_invoked": false,
+          "preference": "unresolved",
+          "state": "open_reference_only",
+          "worlds_checked": 0
+        },
+        "observation_cover": [
+          "an open anchor leaves an interval no reading narrows",
+          "the criterion is unresolved and no determining list is offered",
+          "whether the readings would still disagree at either open extreme"
+        ]
+      },
+      "command_time_ms": {
+        "analyst_readings_ms": 0.04056,
+        "build_ms": 0.03687,
+        "cover_build_ms": 0.04493,
+        "cover_check_ms": 0.00683,
+        "packet_check_ms": 0.04412
+      },
+      "conventional": {
+        "complete_annotation": {
+          "contribution_from_treating_missing_as_empty": "-8",
+          "equals_the_lower_endpoint_of_the_true_bound": true,
+          "open_anchors_treated_as_empty": [
+            "A",
+            "B"
+          ],
+          "value_with_the_least_favourable_admitted_reading": "-8",
+          "value_with_the_most_favourable_admitted_reading": "-8",
+          "verdict_either_way": "excluded"
+        },
+        "equivalence": {
+          "claim": "not applicable: the equivalence is stated only for a cohort whose anchors are all finite and which admits at least one reading",
+          "holds": null
+        },
+        "single_interpretation": {
+          "agreement": "no admitted reading, so the conventional method has nothing to run",
+          "readings": []
+        },
+        "what_the_instrument_adds": "the conventional method must still produce a number, and does so by assuming what is missing. The instrument reports that nothing is known"
+      },
+      "declared_decision": {
+        "formula": "delta = (a + b) * (TP_augmented - TP_base) - b * r",
+        "loss": {
+          "false_negative": "1",
+          "false_positive": "1",
+          "tolerance": "1/10"
+        },
+        "question": "does the added detector improve the weighted cohort beyond the tolerance"
+      },
+      "identity": {
+        "admitted_readings": 0,
+        "anchors": 2,
+        "base_detections": 0,
+        "cohort_id": "open-two-anchor",
+        "open_anchors": 2,
+        "path": "research/cohort-packet/0.1.0/open-two-anchor.json",
+        "retained_additions": 16,
+        "sha256": "895500939a7eda2a657e6a3ec9ee76b50c53828b856bfa21883763b1c3b374df"
+      },
+      "instrument": {
+        "enclosure": {
+          "lower": "-8",
+          "upper": "8"
+        },
+        "improvement_criterion": "unresolved",
+        "preference": "unresolved",
+        "state": "open_reference_only"
+      },
+      "observations_that_would_change_the_decision": {
+        "atoms": null,
+        "certified_list": null,
+        "checkable_cover": null,
+        "diff_the_analyst_gets_free": null,
+        "lower_bound": null,
+        "note": "an open anchor contributes a count interval no reading can narrow, and the criterion is unresolved. The decision waits on a reference at these anchors",
+        "state": "waits_on_a_reference"
+      },
+      "why_selected": "the live two window comparison, with no admitted reading",
+      "witness_or_obstruction": {
+        "detail": "every anchor is open, so the enclosure is the weighted count bound and no certificate applies",
+        "enclosure": {
+          "lower": "-8",
+          "upper": "8"
+        },
+        "kind": "obstruction",
+        "name": "no admitted reading"
+      }
+    },
+    {
+      "case": "matching-trap.json",
+      "checked_by_separate_checkers": {
+        "cohort_packet": {
+          "decision": "unresolved",
+          "does_not_establish": [
+            "that the declared interpretations are admitted by review",
+            "that any object exists",
+            "physical coverage, planner behaviour or risk"
+          ],
+          "enclosure": {
+            "lower": "-1",
+            "upper": "1"
+          },
+          "establishes": "the joint weighted comparison inside the declared interpretations",
+          "finite_anchors": 1,
+          "matcher_invoked": false,
+          "preference": "unresolved",
+          "state": "computed",
+          "worlds_checked": 2
+        },
+        "observation_cover": [
+          "every field the report carries was checked, none was skipped by an early return",
+          "every reported verdict follows from the packet's own certificates",
+          "the disputed set is the one the readings support",
+          "every discordant pair appears with its exact separating set",
+          "the reported lists meet every separating set",
+          "the packing is disjoint, so no shorter list exists than its size",
+          "a shortest claim is accepted only when the packing meets the cover"
+        ]
+      },
+      "command_time_ms": {
+        "analyst_readings_ms": 0.07173,
+        "build_ms": 0.05886,
+        "cover_build_ms": 0.08388,
+        "cover_check_ms": 0.0294,
+        "packet_check_ms": 0.05891
+      },
+      "conventional": {
+        "complete_annotation": {
+          "contribution_from_treating_missing_as_empty": "0",
+          "equals_the_lower_endpoint_of_the_true_bound": true,
+          "open_anchors_treated_as_empty": [],
+          "value_with_the_least_favourable_admitted_reading": "-1",
+          "value_with_the_most_favourable_admitted_reading": "1",
+          "verdict_either_way": "depends"
+        },
+        "equivalence": {
+          "claim": "with every anchor finite, the criterion is unresolved exactly when the single-interpretation verdicts disagree, and is their common verdict otherwise",
+          "expected_criterion": "unresolved",
+          "holds": true,
+          "observed_criterion": "unresolved"
+        },
+        "single_interpretation": {
+          "agreement": "the admitted readings disagree: absent=excluded, present=supported",
+          "readings": [
+            {
+              "finite_value": "-1",
+              "verdict": "excluded",
+              "verdict_if_open_anchors_were_most_favourable": "excluded",
+              "world_id": "absent"
+            },
+            {
+              "finite_value": "1",
+              "verdict": "supported",
+              "verdict_if_open_anchors_were_most_favourable": "supported",
+              "world_id": "present"
+            }
+          ]
+        },
+        "what_the_instrument_adds": "the conventional verdict here is decided by which reading is chosen, not by the detectors. The enclosure reports that, and a single point estimate cannot"
+      },
+      "declared_decision": {
+        "formula": "delta = (a + b) * (TP_augmented - TP_base) - b * r",
+        "loss": {
+          "false_negative": "1",
+          "false_positive": "1",
+          "tolerance": "1/10"
+        },
+        "question": "does the added detector improve the weighted cohort beyond the tolerance"
+      },
+      "identity": {
+        "admitted_readings": 2,
+        "anchors": 1,
+        "base_detections": 1,
+        "cohort_id": "matching-trap",
+        "open_anchors": 0,
+        "path": "research/cohort-packet/0.1.0/matching-trap.json",
+        "retained_additions": 1,
+        "sha256": "eafc24ce151c3e10681a3b8dc5d471ffe90d4a2f13126ab0da239d8a8590b516"
+      },
+      "instrument": {
+        "enclosure": {
+          "lower": "-1",
+          "upper": "1"
+        },
+        "improvement_criterion": "unresolved",
+        "preference": "unresolved",
+        "state": "computed"
+      },
+      "observations_that_would_change_the_decision": {
+        "atoms": [
+          "A|edge|b0|d"
+        ],
+        "certified_list": 1,
+        "checkable_cover": 1,
+        "diff_the_analyst_gets_free": 2,
+        "lower_bound": 1,
+        "note": "1 atoms meet every separating set and a packing of 1 disjoint separating sets forces that length, so no shorter list exists",
+        "state": "certified_shortest"
+      },
+      "why_selected": "one addition, one disputed object, opposite losses",
+      "witness_or_obstruction": {
+        "certificates": [
+          {
+            "anchor": "A",
+            "augmented_cover": 1,
+            "augmented_matching": 1,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 1,
+            "tp_base": 1,
+            "world": "absent"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 2,
+            "augmented_matching": 2,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 2,
+            "tp_base": 1,
+            "world": "present"
+          }
+        ],
+        "detail": "no reading is wrong, and they do not agree on the verdict",
+        "discordant_pairs": [
+          [
+            "absent",
+            "present"
+          ]
+        ],
+        "every_matching_meets_a_cover_of_equal_size": true,
+        "kind": "obstruction",
+        "name": "readings with opposite verdicts"
+      }
+    },
+    {
+      "case": "oppositely-coupled.json",
+      "checked_by_separate_checkers": {
+        "cohort_packet": {
+          "decision": "excluded",
+          "does_not_establish": [
+            "that the declared interpretations are admitted by review",
+            "that any object exists",
+            "physical coverage, planner behaviour or risk"
+          ],
+          "enclosure": {
+            "lower": "0",
+            "upper": "0"
+          },
+          "establishes": "the joint weighted comparison inside the declared interpretations",
+          "finite_anchors": 2,
+          "matcher_invoked": false,
+          "preference": "equivalent_within_tolerance",
+          "state": "computed",
+          "worlds_checked": 2
+        },
+        "observation_cover": [
+          "the criterion is determined over the whole enclosure, open interval included",
+          "no observation can change it, and none is requested",
+          "any open reference is named and left open"
+        ]
+      },
+      "command_time_ms": {
+        "analyst_readings_ms": 0.11265,
+        "build_ms": 0.10286,
+        "cover_build_ms": 0.1184,
+        "cover_check_ms": 0.03465,
+        "packet_check_ms": 0.08812
+      },
+      "conventional": {
+        "complete_annotation": {
+          "contribution_from_treating_missing_as_empty": "0",
+          "equals_the_lower_endpoint_of_the_true_bound": true,
+          "open_anchors_treated_as_empty": [],
+          "value_with_the_least_favourable_admitted_reading": "0",
+          "value_with_the_most_favourable_admitted_reading": "0",
+          "verdict_either_way": "excluded"
+        },
+        "equivalence": {
+          "claim": "with every anchor finite, the criterion is unresolved exactly when the single-interpretation verdicts disagree, and is their common verdict otherwise",
+          "expected_criterion": "excluded",
+          "holds": true,
+          "observed_criterion": "excluded"
+        },
+        "single_interpretation": {
+          "agreement": "every admitted reading gives 'excluded'",
+          "readings": [
+            {
+              "finite_value": "0",
+              "verdict": "excluded",
+              "verdict_if_open_anchors_were_most_favourable": "excluded",
+              "world_id": "A_present"
+            },
+            {
+              "finite_value": "0",
+              "verdict": "excluded",
+              "verdict_if_open_anchors_were_most_favourable": "excluded",
+              "world_id": "B_present"
+            }
+          ]
+        },
+        "what_the_instrument_adds": "confirmation only. A conventional analyst committing to any admitted reading reaches the same verdict, and the enclosure agrees with it"
+      },
+      "declared_decision": {
+        "formula": "delta = (a + b) * (TP_augmented - TP_base) - b * r",
+        "loss": {
+          "false_negative": "1",
+          "false_positive": "1",
+          "tolerance": "1/10"
+        },
+        "question": "does the added detector improve the weighted cohort beyond the tolerance"
+      },
+      "identity": {
+        "admitted_readings": 2,
+        "anchors": 2,
+        "base_detections": 2,
+        "cohort_id": "oppositely-coupled",
+        "open_anchors": 0,
+        "path": "research/cohort-packet/0.1.0/oppositely-coupled.json",
+        "retained_additions": 2,
+        "sha256": "94f44af057f1e1eb3581f3592e768eaab8c92fb8b8b3c9e30a2b18a690f34232"
+      },
+      "instrument": {
+        "enclosure": {
+          "lower": "0",
+          "upper": "0"
+        },
+        "improvement_criterion": "excluded",
+        "preference": "equivalent_within_tolerance",
+        "state": "computed"
+      },
+      "observations_that_would_change_the_decision": {
+        "atoms": null,
+        "certified_list": 0,
+        "checkable_cover": null,
+        "diff_the_analyst_gets_free": 4,
+        "lower_bound": 0,
+        "note": "the improvement criterion is excluded over the whole enclosure 0 to 0, so no further observation changes it",
+        "state": "already_decided"
+      },
+      "why_selected": "two anchors constrained to disagree",
+      "witness_or_obstruction": {
+        "certificates": [
+          {
+            "anchor": "A",
+            "augmented_cover": 2,
+            "augmented_matching": 2,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 2,
+            "tp_base": 1,
+            "world": "A_present"
+          },
+          {
+            "anchor": "B",
+            "augmented_cover": 1,
+            "augmented_matching": 1,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 1,
+            "tp_base": 1,
+            "world": "A_present"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 1,
+            "augmented_matching": 1,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 1,
+            "tp_base": 1,
+            "world": "B_present"
+          },
+          {
+            "anchor": "B",
+            "augmented_cover": 2,
+            "augmented_matching": 2,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 2,
+            "tp_base": 1,
+            "world": "B_present"
+          }
+        ],
+        "detail": "every matching is at most every cover, so equal sizes force optimality without rerunning a matcher",
+        "every_matching_meets_a_cover_of_equal_size": true,
+        "kind": "witness",
+        "name": "matching and cover of equal size at every anchor"
+      }
+    },
+    {
+      "case": "worst-group-flip-case.json",
+      "checked_by_separate_checkers": {
+        "cohort_packet": {
+          "decision": "excluded",
+          "does_not_establish": [
+            "that the declared interpretations are admitted by review",
+            "that any object exists",
+            "physical coverage, planner behaviour or risk"
+          ],
+          "enclosure": {
+            "lower": "0",
+            "upper": "0"
+          },
+          "establishes": "the joint weighted comparison inside the declared interpretations",
+          "finite_anchors": 2,
+          "matcher_invoked": false,
+          "preference": "equivalent_within_tolerance",
+          "state": "computed",
+          "worlds_checked": 2
+        },
+        "observation_cover": [
+          "the criterion is determined over the whole enclosure, open interval included",
+          "no observation can change it, and none is requested",
+          "any open reference is named and left open"
+        ]
+      },
+      "command_time_ms": {
+        "analyst_readings_ms": 0.11304,
+        "build_ms": 0.10268,
+        "cover_build_ms": 0.11926,
+        "cover_check_ms": 0.03449,
+        "packet_check_ms": 0.09048
+      },
+      "conventional": {
+        "complete_annotation": {
+          "contribution_from_treating_missing_as_empty": "0",
+          "equals_the_lower_endpoint_of_the_true_bound": true,
+          "open_anchors_treated_as_empty": [],
+          "value_with_the_least_favourable_admitted_reading": "0",
+          "value_with_the_most_favourable_admitted_reading": "0",
+          "verdict_either_way": "excluded"
+        },
+        "equivalence": {
+          "claim": "with every anchor finite, the criterion is unresolved exactly when the single-interpretation verdicts disagree, and is their common verdict otherwise",
+          "expected_criterion": "excluded",
+          "holds": true,
+          "observed_criterion": "excluded"
+        },
+        "single_interpretation": {
+          "agreement": "every admitted reading gives 'excluded'",
+          "readings": [
+            {
+              "finite_value": "0",
+              "verdict": "excluded",
+              "verdict_if_open_anchors_were_most_favourable": "excluded",
+              "world_id": "a_helped"
+            },
+            {
+              "finite_value": "0",
+              "verdict": "excluded",
+              "verdict_if_open_anchors_were_most_favourable": "excluded",
+              "world_id": "b_helped"
+            }
+          ]
+        },
+        "what_the_instrument_adds": "confirmation only. A conventional analyst committing to any admitted reading reaches the same verdict, and the enclosure agrees with it"
+      },
+      "declared_decision": {
+        "formula": "delta = (a + b) * (TP_augmented - TP_base) - b * r",
+        "loss": {
+          "false_negative": "1",
+          "false_positive": "1",
+          "tolerance": "1/10"
+        },
+        "question": "does the added detector improve the weighted cohort beyond the tolerance"
+      },
+      "identity": {
+        "admitted_readings": 2,
+        "anchors": 2,
+        "base_detections": 2,
+        "cohort_id": "worst-group-flip",
+        "open_anchors": 0,
+        "path": "research/cohort-packet/0.1.0/worst-group-flip-case.json",
+        "retained_additions": 2,
+        "sha256": "2f4c1462380c9431957137e4d93964b41a1dc5c875cf1a63ec8e689bbee0b025"
+      },
+      "instrument": {
+        "enclosure": {
+          "lower": "0",
+          "upper": "0"
+        },
+        "improvement_criterion": "excluded",
+        "preference": "equivalent_within_tolerance",
+        "state": "computed"
+      },
+      "observations_that_would_change_the_decision": {
+        "atoms": null,
+        "certified_list": 0,
+        "checkable_cover": null,
+        "diff_the_analyst_gets_free": 4,
+        "lower_bound": 0,
+        "note": "the improvement criterion is excluded over the whole enclosure 0 to 0, so no further observation changes it",
+        "state": "already_decided"
+      },
+      "why_selected": "a cohort whose worst group changes with the reading",
+      "witness_or_obstruction": {
+        "certificates": [
+          {
+            "anchor": "A",
+            "augmented_cover": 2,
+            "augmented_matching": 2,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 2,
+            "tp_base": 1,
+            "world": "a_helped"
+          },
+          {
+            "anchor": "B",
+            "augmented_cover": 1,
+            "augmented_matching": 1,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 1,
+            "tp_base": 1,
+            "world": "a_helped"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 1,
+            "augmented_matching": 1,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 1,
+            "tp_base": 1,
+            "world": "b_helped"
+          },
+          {
+            "anchor": "B",
+            "augmented_cover": 2,
+            "augmented_matching": 2,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 2,
+            "tp_base": 1,
+            "world": "b_helped"
+          }
+        ],
+        "detail": "every matching is at most every cover, so equal sizes force optimality without rerunning a matcher",
+        "every_matching_meets_a_cover_of_equal_size": true,
+        "kind": "witness",
+        "name": "matching and cover of equal size at every anchor"
+      }
+    },
+    {
+      "case": "three-copies-plan-case.json",
+      "checked_by_separate_checkers": {
+        "cohort_packet": {
+          "decision": "unresolved",
+          "does_not_establish": [
+            "that the declared interpretations are admitted by review",
+            "that any object exists",
+            "physical coverage, planner behaviour or risk"
+          ],
+          "enclosure": {
+            "lower": "-3",
+            "upper": "3"
+          },
+          "establishes": "the joint weighted comparison inside the declared interpretations",
+          "finite_anchors": 1,
+          "matcher_invoked": false,
+          "preference": "unresolved",
+          "state": "computed",
+          "worlds_checked": 8
+        },
+        "observation_cover": [
+          "every field the report carries was checked, none was skipped by an early return",
+          "every reported verdict follows from the packet's own certificates",
+          "the disputed set is the one the readings support",
+          "every discordant pair appears with its exact separating set",
+          "the reported lists meet every separating set",
+          "the packing is disjoint, so no shorter list exists than its size",
+          "a shortest claim is accepted only when the packing meets the cover"
+        ]
+      },
+      "command_time_ms": {
+        "analyst_readings_ms": 0.31895,
+        "build_ms": 0.29016,
+        "cover_build_ms": 0.36763,
+        "cover_check_ms": 0.10567,
+        "packet_check_ms": 0.20261
+      },
+      "conventional": {
+        "complete_annotation": {
+          "contribution_from_treating_missing_as_empty": "0",
+          "equals_the_lower_endpoint_of_the_true_bound": true,
+          "open_anchors_treated_as_empty": [],
+          "value_with_the_least_favourable_admitted_reading": "-3",
+          "value_with_the_most_favourable_admitted_reading": "3",
+          "verdict_either_way": "depends"
+        },
+        "equivalence": {
+          "claim": "with every anchor finite, the criterion is unresolved exactly when the single-interpretation verdicts disagree, and is their common verdict otherwise",
+          "expected_criterion": "unresolved",
+          "holds": true,
+          "observed_criterion": "unresolved"
+        },
+        "single_interpretation": {
+          "agreement": "the admitted readings disagree: m000=excluded, m100=excluded, m010=excluded, m110=supported, m001=excluded, m101=supported, m011=supported, m111=supported",
+          "readings": [
+            {
+              "finite_value": "-3",
+              "verdict": "excluded",
+              "verdict_if_open_anchors_were_most_favourable": "excluded",
+              "world_id": "m000"
+            },
+            {
+              "finite_value": "-1",
+              "verdict": "excluded",
+              "verdict_if_open_anchors_were_most_favourable": "excluded",
+              "world_id": "m100"
+            },
+            {
+              "finite_value": "-1",
+              "verdict": "excluded",
+              "verdict_if_open_anchors_were_most_favourable": "excluded",
+              "world_id": "m010"
+            },
+            {
+              "finite_value": "1",
+              "verdict": "supported",
+              "verdict_if_open_anchors_were_most_favourable": "supported",
+              "world_id": "m110"
+            },
+            {
+              "finite_value": "-1",
+              "verdict": "excluded",
+              "verdict_if_open_anchors_were_most_favourable": "excluded",
+              "world_id": "m001"
+            },
+            {
+              "finite_value": "1",
+              "verdict": "supported",
+              "verdict_if_open_anchors_were_most_favourable": "supported",
+              "world_id": "m101"
+            },
+            {
+              "finite_value": "1",
+              "verdict": "supported",
+              "verdict_if_open_anchors_were_most_favourable": "supported",
+              "world_id": "m011"
+            },
+            {
+              "finite_value": "3",
+              "verdict": "supported",
+              "verdict_if_open_anchors_were_most_favourable": "supported",
+              "world_id": "m111"
+            }
+          ]
+        },
+        "what_the_instrument_adds": "the conventional verdict here is decided by which reading is chosen, not by the detectors. The enclosure reports that, and a single point estimate cannot"
+      },
+      "declared_decision": {
+        "formula": "delta = (a + b) * (TP_augmented - TP_base) - b * r",
+        "loss": {
+          "false_negative": "1",
+          "false_positive": "1",
+          "tolerance": "1/10"
+        },
+        "question": "does the added detector improve the weighted cohort beyond the tolerance"
+      },
+      "identity": {
+        "admitted_readings": 8,
+        "anchors": 1,
+        "base_detections": 3,
+        "cohort_id": "three-copies",
+        "open_anchors": 0,
+        "path": "research/cohort-packet/0.1.0/three-copies-plan-case.json",
+        "retained_additions": 3,
+        "sha256": "fb50490b836aa56d7f169c570b2de8775afe5011a1765b404c450e6e811497fe"
+      },
+      "instrument": {
+        "enclosure": {
+          "lower": "-3",
+          "upper": "3"
+        },
+        "improvement_criterion": "unresolved",
+        "preference": "unresolved",
+        "state": "computed"
+      },
+      "observations_that_would_change_the_decision": {
+        "atoms": [
+          "A|edge|b0|d0",
+          "A|edge|b1|d1",
+          "A|edge|b2|d2"
+        ],
+        "certified_list": 3,
+        "checkable_cover": 3,
+        "diff_the_analyst_gets_free": 6,
+        "lower_bound": 3,
+        "note": "3 atoms meet every separating set and a packing of 3 disjoint separating sets forces that length, so no shorter list exists",
+        "state": "certified_shortest"
+      },
+      "why_selected": "three weighted copies of one ambiguity",
+      "witness_or_obstruction": {
+        "certificates": [
+          {
+            "anchor": "A",
+            "augmented_cover": 3,
+            "augmented_matching": 3,
+            "base_cover": 3,
+            "base_matching": 3,
+            "tp_augmented": 3,
+            "tp_base": 3,
+            "world": "m000"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 4,
+            "augmented_matching": 4,
+            "base_cover": 3,
+            "base_matching": 3,
+            "tp_augmented": 4,
+            "tp_base": 3,
+            "world": "m100"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 4,
+            "augmented_matching": 4,
+            "base_cover": 3,
+            "base_matching": 3,
+            "tp_augmented": 4,
+            "tp_base": 3,
+            "world": "m010"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 5,
+            "augmented_matching": 5,
+            "base_cover": 3,
+            "base_matching": 3,
+            "tp_augmented": 5,
+            "tp_base": 3,
+            "world": "m110"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 4,
+            "augmented_matching": 4,
+            "base_cover": 3,
+            "base_matching": 3,
+            "tp_augmented": 4,
+            "tp_base": 3,
+            "world": "m001"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 5,
+            "augmented_matching": 5,
+            "base_cover": 3,
+            "base_matching": 3,
+            "tp_augmented": 5,
+            "tp_base": 3,
+            "world": "m101"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 5,
+            "augmented_matching": 5,
+            "base_cover": 3,
+            "base_matching": 3,
+            "tp_augmented": 5,
+            "tp_base": 3,
+            "world": "m011"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 6,
+            "augmented_matching": 6,
+            "base_cover": 3,
+            "base_matching": 3,
+            "tp_augmented": 6,
+            "tp_base": 3,
+            "world": "m111"
+          }
+        ],
+        "detail": "no reading is wrong, and they do not agree on the verdict",
+        "discordant_pairs": [
+          [
+            "m000",
+            "m110"
+          ],
+          [
+            "m000",
+            "m101"
+          ],
+          [
+            "m000",
+            "m011"
+          ],
+          [
+            "m000",
+            "m111"
+          ],
+          [
+            "m100",
+            "m110"
+          ],
+          [
+            "m100",
+            "m101"
+          ],
+          [
+            "m100",
+            "m011"
+          ],
+          [
+            "m100",
+            "m111"
+          ],
+          [
+            "m010",
+            "m110"
+          ],
+          [
+            "m010",
+            "m101"
+          ],
+          [
+            "m010",
+            "m011"
+          ],
+          [
+            "m010",
+            "m111"
+          ],
+          [
+            "m110",
+            "m001"
+          ],
+          [
+            "m001",
+            "m101"
+          ],
+          [
+            "m001",
+            "m011"
+          ],
+          [
+            "m001",
+            "m111"
+          ]
+        ],
+        "every_matching_meets_a_cover_of_equal_size": true,
+        "kind": "obstruction",
+        "name": "readings with opposite verdicts"
+      }
+    },
+    {
+      "case": "adaptive-beats-fixed-varying-edges-case.json",
+      "checked_by_separate_checkers": {
+        "cohort_packet": {
+          "decision": "unresolved",
+          "does_not_establish": [
+            "that the declared interpretations are admitted by review",
+            "that any object exists",
+            "physical coverage, planner behaviour or risk"
+          ],
+          "enclosure": {
+            "lower": "-1",
+            "upper": "1"
+          },
+          "establishes": "the joint weighted comparison inside the declared interpretations",
+          "finite_anchors": 1,
+          "matcher_invoked": false,
+          "preference": "unresolved",
+          "state": "computed",
+          "worlds_checked": 4
+        },
+        "observation_cover": [
+          "every field the report carries was checked, none was skipped by an early return",
+          "every reported verdict follows from the packet's own certificates",
+          "the disputed set is the one the readings support",
+          "every discordant pair appears with its exact separating set",
+          "the reported lists meet every separating set",
+          "the packing is disjoint, so no shorter list exists than its size",
+          "a shortest claim is accepted only when the packing meets the cover"
+        ]
+      },
+      "command_time_ms": {
+        "analyst_readings_ms": 0.11002,
+        "build_ms": 0.09738,
+        "cover_build_ms": 0.13635,
+        "cover_check_ms": 0.04996,
+        "packet_check_ms": 0.08849
+      },
+      "conventional": {
+        "complete_annotation": {
+          "contribution_from_treating_missing_as_empty": "0",
+          "equals_the_lower_endpoint_of_the_true_bound": true,
+          "open_anchors_treated_as_empty": [],
+          "value_with_the_least_favourable_admitted_reading": "-1",
+          "value_with_the_most_favourable_admitted_reading": "1",
+          "verdict_either_way": "depends"
+        },
+        "equivalence": {
+          "claim": "with every anchor finite, the criterion is unresolved exactly when the single-interpretation verdicts disagree, and is their common verdict otherwise",
+          "expected_criterion": "unresolved",
+          "holds": true,
+          "observed_criterion": "unresolved"
+        },
+        "single_interpretation": {
+          "agreement": "the admitted readings disagree: none=excluded, c_only=supported, b_only=supported, a_and_c=excluded",
+          "readings": [
+            {
+              "finite_value": "-1",
+              "verdict": "excluded",
+              "verdict_if_open_anchors_were_most_favourable": "excluded",
+              "world_id": "none"
+            },
+            {
+              "finite_value": "1",
+              "verdict": "supported",
+              "verdict_if_open_anchors_were_most_favourable": "supported",
+              "world_id": "c_only"
+            },
+            {
+              "finite_value": "1",
+              "verdict": "supported",
+              "verdict_if_open_anchors_were_most_favourable": "supported",
+              "world_id": "b_only"
+            },
+            {
+              "finite_value": "-1",
+              "verdict": "excluded",
+              "verdict_if_open_anchors_were_most_favourable": "excluded",
+              "world_id": "a_and_c"
+            }
+          ]
+        },
+        "what_the_instrument_adds": "the conventional verdict here is decided by which reading is chosen, not by the detectors. The enclosure reports that, and a single point estimate cannot"
+      },
+      "declared_decision": {
+        "formula": "delta = (a + b) * (TP_augmented - TP_base) - b * r",
+        "loss": {
+          "false_negative": "1",
+          "false_positive": "1",
+          "tolerance": "1/10"
+        },
+        "question": "does the added detector improve the weighted cohort beyond the tolerance"
+      },
+      "identity": {
+        "admitted_readings": 4,
+        "anchors": 1,
+        "base_detections": 1,
+        "cohort_id": "adaptive-beats-fixed-varying-edges",
+        "open_anchors": 0,
+        "path": "research/cohort-packet/0.1.0/adaptive-beats-fixed-varying-edges-case.json",
+        "retained_additions": 1,
+        "sha256": "655b0afaecc89bd6544ae59c6f842705713e17e6924447d5c09742276a324194"
+      },
+      "instrument": {
+        "enclosure": {
+          "lower": "-1",
+          "upper": "1"
+        },
+        "improvement_criterion": "unresolved",
+        "preference": "unresolved",
+        "state": "computed"
+      },
+      "observations_that_would_change_the_decision": {
+        "atoms": [
+          "A|edge|b0|dA",
+          "A|edge|c0|k"
+        ],
+        "certified_list": 2,
+        "checkable_cover": 2,
+        "diff_the_analyst_gets_free": 8,
+        "lower_bound": 2,
+        "note": "2 atoms meet every separating set and a packing of 2 disjoint separating sets forces that length, so no shorter list exists",
+        "state": "certified_shortest"
+      },
+      "why_selected": "readings that disagree about edges, not presence",
+      "witness_or_obstruction": {
+        "certificates": [
+          {
+            "anchor": "A",
+            "augmented_cover": 1,
+            "augmented_matching": 1,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 1,
+            "tp_base": 1,
+            "world": "none"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 2,
+            "augmented_matching": 2,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 2,
+            "tp_base": 1,
+            "world": "c_only"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 2,
+            "augmented_matching": 2,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 2,
+            "tp_base": 1,
+            "world": "b_only"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 1,
+            "augmented_matching": 1,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 1,
+            "tp_base": 1,
+            "world": "a_and_c"
+          }
+        ],
+        "detail": "no reading is wrong, and they do not agree on the verdict",
+        "discordant_pairs": [
+          [
+            "none",
+            "c_only"
+          ],
+          [
+            "none",
+            "b_only"
+          ],
+          [
+            "c_only",
+            "a_and_c"
+          ],
+          [
+            "b_only",
+            "a_and_c"
+          ]
+        ],
+        "every_matching_meets_a_cover_of_equal_size": true,
+        "kind": "obstruction",
+        "name": "readings with opposite verdicts"
+      }
+    },
+    {
+      "case": "sixteen-candidates-plan-case.json",
+      "checked_by_separate_checkers": {
+        "cohort_packet": {
+          "decision": "unresolved",
+          "does_not_establish": [
+            "that the declared interpretations are admitted by review",
+            "that any object exists",
+            "physical coverage, planner behaviour or risk"
+          ],
+          "enclosure": {
+            "lower": "-8",
+            "upper": "8"
+          },
+          "establishes": "the joint weighted comparison inside the declared interpretations",
+          "finite_anchors": 2,
+          "matcher_invoked": false,
+          "preference": "unresolved",
+          "state": "computed",
+          "worlds_checked": 2
+        },
+        "observation_cover": [
+          "every field the report carries was checked, none was skipped by an early return",
+          "every reported verdict follows from the packet's own certificates",
+          "the disputed set is the one the readings support",
+          "every discordant pair appears with its exact separating set",
+          "the reported lists meet every separating set",
+          "the packing is disjoint, so no shorter list exists than its size",
+          "a shortest claim is accepted only when the packing meets the cover"
+        ]
+      },
+      "command_time_ms": {
+        "analyst_readings_ms": 0.35604,
+        "build_ms": 0.34821,
+        "cover_build_ms": 0.39709,
+        "cover_check_ms": 0.05785,
+        "packet_check_ms": 0.20489
+      },
+      "conventional": {
+        "complete_annotation": {
+          "contribution_from_treating_missing_as_empty": "0",
+          "equals_the_lower_endpoint_of_the_true_bound": true,
+          "open_anchors_treated_as_empty": [],
+          "value_with_the_least_favourable_admitted_reading": "-8",
+          "value_with_the_most_favourable_admitted_reading": "8",
+          "verdict_either_way": "depends"
+        },
+        "equivalence": {
+          "claim": "with every anchor finite, the criterion is unresolved exactly when the single-interpretation verdicts disagree, and is their common verdict otherwise",
+          "expected_criterion": "unresolved",
+          "holds": true,
+          "observed_criterion": "unresolved"
+        },
+        "single_interpretation": {
+          "agreement": "the admitted readings disagree: no_disputed=excluded, disputed=supported",
+          "readings": [
+            {
+              "finite_value": "-8",
+              "verdict": "excluded",
+              "verdict_if_open_anchors_were_most_favourable": "excluded",
+              "world_id": "no_disputed"
+            },
+            {
+              "finite_value": "8",
+              "verdict": "supported",
+              "verdict_if_open_anchors_were_most_favourable": "supported",
+              "world_id": "disputed"
+            }
+          ]
+        },
+        "what_the_instrument_adds": "the conventional verdict here is decided by which reading is chosen, not by the detectors. The enclosure reports that, and a single point estimate cannot"
+      },
+      "declared_decision": {
+        "formula": "delta = (a + b) * (TP_augmented - TP_base) - b * r",
+        "loss": {
+          "false_negative": "1",
+          "false_positive": "1",
+          "tolerance": "1/10"
+        },
+        "question": "does the added detector improve the weighted cohort beyond the tolerance"
+      },
+      "identity": {
+        "admitted_readings": 2,
+        "anchors": 2,
+        "base_detections": 16,
+        "cohort_id": "sixteen-candidates",
+        "open_anchors": 0,
+        "path": "research/cohort-packet/0.1.0/sixteen-candidates-plan-case.json",
+        "retained_additions": 16,
+        "sha256": "72843eb1f2dc54d6dac55a5bc67b36cafd94d7e650f1658fd582b68fc370cebd"
+      },
+      "instrument": {
+        "enclosure": {
+          "lower": "-8",
+          "upper": "8"
+        },
+        "improvement_criterion": "unresolved",
+        "preference": "unresolved",
+        "state": "computed"
+      },
+      "observations_that_would_change_the_decision": {
+        "atoms": [
+          "A|edge|b0|d0"
+        ],
+        "certified_list": 1,
+        "checkable_cover": 1,
+        "diff_the_analyst_gets_free": 32,
+        "lower_bound": 1,
+        "note": "1 atoms meet every separating set and a packing of 1 disjoint separating sets forces that length, so no shorter list exists",
+        "state": "certified_shortest"
+      },
+      "why_selected": "a disputed set past the exact search budget",
+      "witness_or_obstruction": {
+        "certificates": [
+          {
+            "anchor": "A",
+            "augmented_cover": 8,
+            "augmented_matching": 8,
+            "base_cover": 8,
+            "base_matching": 8,
+            "tp_augmented": 8,
+            "tp_base": 8,
+            "world": "no_disputed"
+          },
+          {
+            "anchor": "B",
+            "augmented_cover": 8,
+            "augmented_matching": 8,
+            "base_cover": 8,
+            "base_matching": 8,
+            "tp_augmented": 8,
+            "tp_base": 8,
+            "world": "no_disputed"
+          },
+          {
+            "anchor": "A",
+            "augmented_cover": 16,
+            "augmented_matching": 16,
+            "base_cover": 8,
+            "base_matching": 8,
+            "tp_augmented": 16,
+            "tp_base": 8,
+            "world": "disputed"
+          },
+          {
+            "anchor": "B",
+            "augmented_cover": 16,
+            "augmented_matching": 16,
+            "base_cover": 8,
+            "base_matching": 8,
+            "tp_augmented": 16,
+            "tp_base": 8,
+            "world": "disputed"
+          }
+        ],
+        "detail": "no reading is wrong, and they do not agree on the verdict",
+        "discordant_pairs": [
+          [
+            "no_disputed",
+            "disputed"
+          ]
+        ],
+        "every_matching_meets_a_cover_of_equal_size": true,
+        "kind": "obstruction",
+        "name": "readings with opposite verdicts"
+      }
+    },
+    {
+      "case": "ghost-burden-three.json",
+      "checked_by_separate_checkers": {
+        "cohort_packet": {
+          "decision": "excluded",
+          "does_not_establish": [
+            "that the declared interpretations are admitted by review",
+            "that any object exists",
+            "physical coverage, planner behaviour or risk"
+          ],
+          "enclosure": {
+            "lower": "-2",
+            "upper": "-2"
+          },
+          "establishes": "the joint weighted comparison inside the declared interpretations",
+          "finite_anchors": 1,
+          "matcher_invoked": false,
+          "preference": "prefer_base",
+          "state": "computed",
+          "worlds_checked": 1
+        },
+        "observation_cover": [
+          "the criterion is determined over the whole enclosure, open interval included",
+          "no observation can change it, and none is requested",
+          "any open reference is named and left open"
+        ]
+      },
+      "command_time_ms": {
+        "analyst_readings_ms": 0.0497,
+        "build_ms": 0.04235,
+        "cover_build_ms": 0.05201,
+        "cover_check_ms": 0.01612,
+        "packet_check_ms": 0.04597
+      },
+      "conventional": {
+        "complete_annotation": {
+          "contribution_from_treating_missing_as_empty": "0",
+          "equals_the_lower_endpoint_of_the_true_bound": true,
+          "open_anchors_treated_as_empty": [],
+          "value_with_the_least_favourable_admitted_reading": "-2",
+          "value_with_the_most_favourable_admitted_reading": "-2",
+          "verdict_either_way": "excluded"
+        },
+        "equivalence": {
+          "claim": "with every anchor finite, the criterion is unresolved exactly when the single-interpretation verdicts disagree, and is their common verdict otherwise",
+          "expected_criterion": "excluded",
+          "holds": true,
+          "observed_criterion": "excluded"
+        },
+        "single_interpretation": {
+          "agreement": "every admitted reading gives 'excluded'",
+          "readings": [
+            {
+              "finite_value": "-2",
+              "verdict": "excluded",
+              "verdict_if_open_anchors_were_most_favourable": "excluded",
+              "world_id": "the_reading"
+            }
+          ]
+        },
+        "what_the_instrument_adds": "confirmation only. A conventional analyst committing to any admitted reading reaches the same verdict, and the enclosure agrees with it"
+      },
+      "declared_decision": {
+        "formula": "delta = (a + b) * (TP_augmented - TP_base) - b * r",
+        "loss": {
+          "false_negative": "1",
+          "false_positive": "1",
+          "tolerance": "1/10"
+        },
+        "question": "does the added detector improve the weighted cohort beyond the tolerance"
+      },
+      "identity": {
+        "admitted_readings": 1,
+        "anchors": 1,
+        "base_detections": 1,
+        "cohort_id": "ghost-burden-three",
+        "open_anchors": 0,
+        "path": "research/cohort-packet/0.1.0/ghost-burden-three.json",
+        "retained_additions": 4,
+        "sha256": "0d10b052da7166d5300bff457ff0a76a47f545031af26adb623aa0b87d364edc"
+      },
+      "instrument": {
+        "enclosure": {
+          "lower": "-2",
+          "upper": "-2"
+        },
+        "improvement_criterion": "excluded",
+        "preference": "prefer_base",
+        "state": "computed"
+      },
+      "observations_that_would_change_the_decision": {
+        "atoms": null,
+        "certified_list": 0,
+        "checkable_cover": null,
+        "diff_the_analyst_gets_free": 0,
+        "lower_bound": 0,
+        "note": "the improvement criterion is excluded over the whole enclosure -2 to -2, so no further observation changes it",
+        "state": "already_decided"
+      },
+      "why_selected": "a settled cohort carrying three unmatched additions",
+      "witness_or_obstruction": {
+        "certificates": [
+          {
+            "anchor": "A",
+            "augmented_cover": 2,
+            "augmented_matching": 2,
+            "base_cover": 1,
+            "base_matching": 1,
+            "tp_augmented": 2,
+            "tp_base": 1,
+            "world": "the_reading"
+          }
+        ],
+        "detail": "every matching is at most every cover, so equal sizes force optimality without rerunning a matcher",
+        "every_matching_meets_a_cover_of_equal_size": true,
+        "kind": "witness",
+        "name": "matching and cover of equal size at every anchor"
+      }
+    }
+  ],
+  "checking_cost": {
+    "corrects": "the unqualified linear time claim in comparator 0.1.0",
+    "note": "traced operation counts on constructed controls, not timing measurements",
+    "traced": [
+      {
+        "admitted_readings": 9,
+        "discordant_pairs": 8,
+        "packing_overlap_comparisons": 0,
+        "pair_verdict_comparisons": 36,
+        "separating_sets_recomputed": 8,
+        "supplied_certificate_atoms": 1
+      },
+      {
+        "admitted_readings": 17,
+        "discordant_pairs": 16,
+        "packing_overlap_comparisons": 0,
+        "pair_verdict_comparisons": 136,
+        "separating_sets_recomputed": 16,
+        "supplied_certificate_atoms": 1
+      },
+      {
+        "admitted_readings": 33,
+        "discordant_pairs": 32,
+        "packing_overlap_comparisons": 0,
+        "pair_verdict_comparisons": 528,
+        "separating_sets_recomputed": 32,
+        "supplied_certificate_atoms": 1
+      }
+    ],
+    "what_is_linear": "checking a supplied cover against supplied separating sets, in the total size of those sets",
+    "what_this_implementation_costs": "one comparison per pair of admitted readings, because it recomputes the separating sets instead of trusting them, plus one overlap test per pair of packing members",
+    "why_it_is_not_a_defect": "a checker that trusted the reported separating sets would accept a report that omitted a discordant pair, which is a forgery this lane already retains. The quadratic cost buys independence and is stated rather than optimised away"
+  },
+  "comparator": "a competent analyst with the same anchors, detections, loss, tolerance and admitted readings, an ordinary matcher, the freedom to abstain and the freedom to ask adaptive questions",
+  "costs": {
+    "computation": {
+      "against_the_analyst": "the analyst runs one matcher per reading. Building the enclosure runs the same matchers over the same readings, so the work is the same order and the measured times are close",
+      "basis": "mean over repeated builds, machine dependent",
+      "unit": "milliseconds of command time per case on one machine",
+      "value": {
+        "adaptive-beats-fixed-varying-edges-case.json": 0.09738,
+        "ghost-burden-three.json": 0.04235,
+        "matching-trap.json": 0.05886,
+        "open-two-anchor.json": 0.03687,
+        "oppositely-coupled.json": 0.10286,
+        "sixteen-candidates-plan-case.json": 0.34821,
+        "three-copies-plan-case.json": 0.29016,
+        "worst-group-flip-case.json": 0.10268
+      }
+    },
+    "human_effort": {
+      "basis": "no person has run either method on this cohort. Command time is not human effort and is not offered as a proxy for it",
+      "state": "unmeasured",
+      "unit": "person minutes",
+      "value": null
+    },
+    "integration": {
+      "against_the_analyst": "the analyst integrates nothing and trusts their own matcher. Four modules is a real cost this lane imposes and does not recover unless the checking is wanted",
+      "basis": "read from the import statements of the four modules",
+      "unit": "modules a consumer must trust, and what they share",
+      "value": {
+        "checker_modules": [
+          "check_cohort_packet",
+          "check_observation_cover"
+        ],
+        "checkers_import_from_producers": [],
+        "producer_modules": [
+          "cohort_packet",
+          "observation_cover"
+        ],
+        "shared_trusted_surface": [
+          "the json module",
+          "Fraction and integer arithmetic",
+          "the identifier and rational string conventions",
+          "the atom string convention"
+        ]
+      }
+    },
+    "interpretation": {
+      "against_the_analyst": "this is where the lane earns something measurable. The list is shorter, and a supplied cover with its separating sets is checked in time linear in their total size. The implemented checker recomputes those sets from the packet rather than trusting them, which costs one comparison per pair of admitted readings. See checking_cost below",
+      "basis": "the disputed set against the checkable cover, both recomputed by the checker",
+      "unit": "reading facts the lead is handed to go and settle",
+      "value": {
+        "cases_counted": 7,
+        "certified_or_checkable_list": 7,
+        "diff_the_analyst_gets_free": 56,
+        "per_case": {
+          "adaptive-beats-fixed-varying-edges-case.json": {
+            "diff": 8,
+            "list": 2
+          },
+          "ghost-burden-three.json": {
+            "diff": 0,
+            "list": 0
+          },
+          "matching-trap.json": {
+            "diff": 2,
+            "list": 1
+          },
+          "open-two-anchor.json": {
+            "diff": null,
+            "list": null
+          },
+          "oppositely-coupled.json": {
+            "diff": 4,
+            "list": 0
+          },
+          "sixteen-candidates-plan-case.json": {
+            "diff": 32,
+            "list": 1
+          },
+          "three-copies-plan-case.json": {
+            "diff": 6,
+            "list": 3
+          },
+          "worst-group-flip-case.json": {
+            "diff": 4,
+            "list": 0
+          }
+        }
+      }
+    },
+    "preparation": {
+      "against_the_analyst": "the analyst prepares the same readings. The preparation is shared and this lane earns nothing here",
+      "basis": "each case is a committed JSON file with a digest recorded above",
+      "unit": "case files written and retained before any result",
+      "value": 8
+    },
+    "repair": {
+      "against_the_analyst": "an analyst carries the same risk without a register. The register is a cost here and a discipline, not an advantage claimed over anyone",
+      "basis": "the standing headline register, which blocks a headline its own evidence refutes",
+      "unit": "claims this lane has withdrawn or qualified after retained counterexamples",
+      "value": {
+        "qualified": 1,
+        "register": "tools/measure/headline_audit.py",
+        "withdrawn": 4
+      }
+    },
+    "summary": {
+      "decided": 3,
+      "unresolved": 5,
+      "where_it_is_behind": [
+        "verification on a small cohort, measured slower than recomputation below about 60 detections",
+        "integration, four modules against none"
+      ],
+      "where_it_is_level": [
+        "the verdict itself, which the equivalence makes identical on a finite cohort",
+        "preparation",
+        "computation"
+      ],
+      "where_this_lane_is_ahead": [
+        "the observation list, shorter and checkable both ways"
+      ]
+    },
+    "verification": {
+      "against_the_analyst": "on these retained cases the certificate is slower than recomputing. It overtakes recomputation between 30 and 90 detections and reaches about 4.7 times faster at 900",
+      "basis": "see research/comparator/0.1.0/verification-cost.json for the scaling",
+      "unit": "milliseconds of command time per case, checker against recomputation",
+      "value": {
+        "adaptive-beats-fixed-varying-edges-case.json": {
+          "analyst_recompute": 0.11002,
+          "packet_check": 0.08849
+        },
+        "ghost-burden-three.json": {
+          "analyst_recompute": 0.0497,
+          "packet_check": 0.04597
+        },
+        "matching-trap.json": {
+          "analyst_recompute": 0.07173,
+          "packet_check": 0.05891
+        },
+        "open-two-anchor.json": {
+          "analyst_recompute": 0.04056,
+          "packet_check": 0.04412
+        },
+        "oppositely-coupled.json": {
+          "analyst_recompute": 0.11265,
+          "packet_check": 0.08812
+        },
+        "sixteen-candidates-plan-case.json": {
+          "analyst_recompute": 0.35604,
+          "packet_check": 0.20489
+        },
+        "three-copies-plan-case.json": {
+          "analyst_recompute": 0.31895,
+          "packet_check": 0.20261
+        },
+        "worst-group-flip-case.json": {
+          "analyst_recompute": 0.11304,
+          "packet_check": 0.09048
+        }
+      }
+    }
+  },
+  "decision": "delta = (a + b) * (TP_augmented - TP_base) - b * r over a weighted cohort",
+  "engine_case_compatibility": {
+    "admitted_readings": 0,
+    "checked_by_separate_checkers": {
+      "cohort_packet": {
+        "decision": "unresolved",
+        "does_not_establish": [
+          "that the declared interpretations are admitted by review",
+          "that any object exists",
+          "physical coverage, planner behaviour or risk"
+        ],
+        "enclosure": {
+          "lower": "-8",
+          "upper": "8"
+        },
+        "establishes": "the joint weighted comparison inside the declared interpretations",
+        "finite_anchors": 0,
+        "matcher_invoked": false,
+        "preference": "unresolved",
+        "state": "open_reference_only",
+        "worlds_checked": 0
+      },
+      "observation_cover": [
+        "an open anchor leaves an interval no reading narrows",
+        "the criterion is unresolved and no determining list is offered",
+        "whether the readings would still disagree at either open extreme"
+      ]
+    },
+    "cohort_id": "bound-comparison-anchors",
+    "custody": "read only from the owner's sealed outbox. No byte of it is copied into this repository, and no detection identifier is reproduced here",
+    "loss": {
+      "false_negative": "1",
+      "false_positive": "1",
+      "tolerance": "1/10"
+    },
+    "result": {
+      "coarse_bound": {
+        "lower": "-8",
+        "upper": "8"
+      },
+      "enclosure": {
+        "lower": "-8",
+        "upper": "8"
+      },
+      "improvement_criterion": "unresolved",
+      "observation_list": null,
+      "observation_state": "waits_on_a_reference",
+      "open_anchors": [
+        "window-0001",
+        "window-0002"
+      ],
+      "packet_state": "open_reference_only",
+      "preference": "unresolved"
+    },
+    "sha256": "8e79f3636ef337d7ea2f12ec213e67106d7d4afce55bdafb6c63ba10d667f299",
+    "state": "checked",
+    "structure": [
+      {
+        "added_detections": 9,
+        "anchor": "window-0001",
+        "base_detections": 48,
+        "declared_objects": 0,
+        "reference_state": "open",
+        "weight": "1/2"
+      },
+      {
+        "added_detections": 7,
+        "anchor": "window-0002",
+        "base_detections": 37,
+        "declared_objects": 0,
+        "reference_state": "open",
+        "weight": "1/2"
+      }
+    ],
+    "what_this_does_not_do": [
+      "it admits no reading, invents no object and creates no human reference",
+      "an open reference is preserved, not replaced by a fixture",
+      "the enclosure is a count bound over an open reference, not a measurement"
+    ]
+  },
+  "limits": [
+    "every verdict here is over admitted readings, never over the physical world",
+    "the live comparison remains open at [-8, 8] and no reading is invented for it",
+    "no person has run the comparator, so every human cost stays unmeasured",
+    "the observation list is a function of the shared readings, so the analyst could compute it too. What is measured is its length and its checkability, not exclusivity",
+    "the exact shortest list is only searched below a declared budget; past it the report brackets rather than claims"
+  ],
+  "runtime": {
+    "note": "command timings on one machine. No human effort is measured here",
+    "platform": "macOS-14.4-arm64-arm-64bit-Mach-O",
+    "python": "3.14.2"
+  },
+  "synthetic_conformance": {
+    "by_size": [
+      {
+        "instances": 200,
+        "mean_disputed": 15.665,
+        "mean_list": 0.795,
+        "objects": 4,
+        "readings": 4,
+        "states": {
+          "already_decided": 51,
+          "bracketed": 0,
+          "certified_shortest": 144,
+          "no_admitted_reading": 0,
+          "not_evaluated": 0,
+          "searched_shortest": 5,
+          "waits_on_a_reference": 0
+        }
+      },
+      {
+        "instances": 200,
+        "mean_disputed": 26.725,
+        "mean_list": 1.345,
+        "objects": 6,
+        "readings": 6,
+        "states": {
+          "already_decided": 8,
+          "bracketed": 59,
+          "certified_shortest": 130,
+          "no_admitted_reading": 0,
+          "not_evaluated": 0,
+          "searched_shortest": 3,
+          "waits_on_a_reference": 0
+        }
+      },
+      {
+        "instances": 200,
+        "mean_disputed": 38.025,
+        "mean_list": 1.425,
+        "objects": 8,
+        "readings": 8,
+        "states": {
+          "already_decided": 36,
+          "bracketed": 100,
+          "certified_shortest": 64,
+          "no_admitted_reading": 0,
+          "not_evaluated": 0,
+          "searched_shortest": 0,
+          "waits_on_a_reference": 0
+        }
+      },
+      {
+        "instances": 200,
+        "mean_disputed": 48.82,
+        "mean_list": 1.05,
+        "objects": 10,
+        "readings": 10,
+        "states": {
+          "already_decided": 84,
+          "bracketed": 86,
+          "certified_shortest": 30,
+          "no_admitted_reading": 0,
+          "not_evaluated": 0,
+          "searched_shortest": 0,
+          "waits_on_a_reference": 0
+        }
+      },
+      {
+        "instances": 200,
+        "mean_disputed": 59.28,
+        "mean_list": 0.69,
+        "objects": 12,
+        "readings": 12,
+        "states": {
+          "already_decided": 127,
+          "bracketed": 64,
+          "certified_shortest": 9,
+          "no_admitted_reading": 0,
+          "not_evaluated": 0,
+          "searched_shortest": 0,
+          "waits_on_a_reference": 0
+        }
+      },
+      {
+        "instances": 200,
+        "mean_disputed": 79.795,
+        "mean_list": 0.185,
+        "objects": 16,
+        "readings": 16,
+        "states": {
+          "already_decided": 181,
+          "bracketed": 18,
+          "certified_shortest": 1,
+          "no_admitted_reading": 0,
+          "not_evaluated": 0,
+          "searched_shortest": 0,
+          "waits_on_a_reference": 0
+        }
+      },
+      {
+        "instances": 200,
+        "mean_disputed": 99.925,
+        "mean_list": 0.04,
+        "objects": 20,
+        "readings": 20,
+        "states": {
+          "already_decided": 196,
+          "bracketed": 4,
+          "certified_shortest": 0,
+          "no_admitted_reading": 0,
+          "not_evaluated": 0,
+          "searched_shortest": 0,
+          "waits_on_a_reference": 0
+        }
+      }
+    ],
+    "cases_needing_a_list": 717,
+    "certified_shortest_share": "378 of 717",
+    "corrects": "0.1.0 counted every case with a shortest list as certified. A searched optimum whose packing does not meet it is not a certificate, and is now counted as its own state",
+    "instances": 1400,
+    "instances_both_checkers_accepted": 1400,
+    "mean_disputed": 52.605,
+    "mean_list": 0.79,
+    "scope": "a generator written in this lane. The shares describe these instances only. No claim is made about how often a real cohort is already decided",
+    "searched_but_not_certified": 8,
+    "states": {
+      "already_decided": 683,
+      "bracketed": 331,
+      "certified_shortest": 378,
+      "no_admitted_reading": 0,
+      "not_evaluated": 0,
+      "searched_shortest": 8,
+      "waits_on_a_reference": 0
+    }
+  },
+  "version": "0.2.0"
+}

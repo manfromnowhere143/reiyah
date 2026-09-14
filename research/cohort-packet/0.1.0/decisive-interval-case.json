@@ -1,0 +1,95 @@
+{
+  "anchors": [
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "c0"
+        },
+        {
+          "class": "car",
+          "id": "c1"
+        },
+        {
+          "class": "car",
+          "id": "c2"
+        }
+      ],
+      "base_detections": [],
+      "id": "A",
+      "objects": [
+        {
+          "class": "car",
+          "id": "o0"
+        },
+        {
+          "class": "car",
+          "id": "o1"
+        },
+        {
+          "class": "car",
+          "id": "o2"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "1"
+    }
+  ],
+  "cohort_id": "decisive-interval",
+  "joint_worlds": [
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "c0",
+              "o0"
+            ],
+            [
+              "c1",
+              "o1"
+            ]
+          ],
+          "objects_present": [
+            "o0",
+            "o1"
+          ]
+        }
+      },
+      "world_id": "two_present"
+    },
+    {
+      "per_anchor": {
+        "A": {
+          "edges": [
+            [
+              "c0",
+              "o0"
+            ],
+            [
+              "c1",
+              "o1"
+            ],
+            [
+              "c2",
+              "o2"
+            ]
+          ],
+          "objects_present": [
+            "o0",
+            "o1",
+            "o2"
+          ]
+        }
+      },
+      "world_id": "three_present"
+    }
+  ],
+  "label": "every anchor finite, the verdict decisive, and the enclosure still an interval",
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1",
+    "tolerance": "0"
+  },
+  "schema_id": "reiyah.cohort-packet.case"
+}

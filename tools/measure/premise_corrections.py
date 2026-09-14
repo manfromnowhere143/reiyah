@@ -56,10 +56,37 @@ import json
 import os
 import sys
 
-VERSION = "0.3.0"
+VERSION = "0.4.0"
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GRID = os.path.join(ROOT, "research", "preparation-robustness", "0.2.0", "preparation-grid.json")
 POPULATION = 134565
+
+GT_CACHE_DIGEST = "7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd"
+
+# The predicates the grid's labels name. They are reconstructed here rather than read
+# from a retained producer, because the producer that built the grid was not retained.
+# A reconstruction is worth nothing unless it is bound: these are accepted only when
+# they reproduce all 48 recorded populations exactly, and the check is reported.
+VEHICLES = ("car", "truck", "bus", "trailer", "construction_vehicle")
+VULNERABLE = ("pedestrian", "bicycle", "motorcycle")
+STATIC_FURNITURE = ("traffic_cone", "barrier")
+CLASS_PREDICATES = {
+    "all_classes": lambda row: True,
+    "vehicles_only": lambda row: row["cls"] in VEHICLES,
+    "vulnerable_road_users_only": lambda row: row["cls"] in VULNERABLE,
+    "exclude_static_furniture": lambda row: row["cls"] not in STATIC_FURNITURE,
+}
+RANGE_PREDICATES = {
+    "all_ranges": lambda row: True,
+    "within_50m": lambda row: row["dist"] <= 50.0,
+    "within_30m": lambda row: row["dist"] <= 30.0,
+    "beyond_30m": lambda row: row["dist"] > 30.0,
+}
+VISIBILITY_PREDICATES = {
+    "all_visibility": lambda row: True,
+    "exclude_worst_band": lambda row: row["vis"] != "v0-40",
+    "best_band_only": lambda row: row["vis"] == "v80-100",
+}
 
 SUBMISSION_DIGESTS = {
     "gt_val_cache.json": "7a7fb7c3913496a64bede26468d7f4b976366ccc8a3825092e16805363ea53fd",
@@ -218,6 +245,117 @@ def tie_rule(directory, data):
                            "is the score granularity of one submission, not a tolerance choice")}
 
 
+def membership(directory, data):
+    """Premise 6, on exact source rows rather than on equal totals.
+
+    Equal population and equal kept counts are an aggregate signature. Two different
+    row sets can carry the same totals, so the signature alone does not establish that
+    two labels name the same preparation. This reads the source rows, evaluates the
+    declared predicates, and digests the exact selected index sequence for each of the
+    48 labels. A duplicate is accepted only when the two index sequences are identical.
+    """
+    if not directory:
+        return {"state": "unavailable",
+                "reason": ("the annotation cache lives outside this repository under another "
+                           "owner and was not supplied to this run. Without it only the "
+                           "aggregate signature is established, and the stronger membership "
+                           "claim stays unaccepted"),
+                "input_expected": {"gt_val_cache.json": GT_CACHE_DIGEST}}
+    path = os.path.join(directory, "gt_val_cache.json")
+    if not os.path.exists(path):
+        return {"state": "unavailable", "reason": f"missing {path}",
+                "input_expected": {"gt_val_cache.json": GT_CACHE_DIGEST}}
+    found = digest(path)
+    with open(path, "r", encoding="utf-8") as handle:
+        rows = json.load(handle)
+
+    recorded = {(row["P1"], row["P2"], row["P3"]): row["population"] for row in data["grid"]}
+    selected, unmatched = {}, []
+    for name_class, keep_class in CLASS_PREDICATES.items():
+        for name_range, keep_range in RANGE_PREDICATES.items():
+            for name_vis, keep_vis in VISIBILITY_PREDICATES.items():
+                label = (name_class, name_range, name_vis)
+                indexes = [index for index, row in enumerate(rows)
+                           if keep_class(row) and keep_range(row) and keep_vis(row)]
+                selected[label] = indexes
+                if recorded.get(label) != len(indexes):
+                    unmatched.append({"label": list(label), "recorded": recorded.get(label),
+                                      "reconstructed": len(indexes)})
+    if unmatched:
+        return {"state": "predicates_not_bound", "input_sha256": found,
+                "labels_not_reproduced": unmatched,
+                "reason": ("the reconstructed predicates do not reproduce every recorded "
+                           "population, so no membership conclusion is drawn from them")}
+
+    digests = {label: hashlib.sha256(",".join(map(str, indexes)).encode()).hexdigest()
+               for label, indexes in selected.items()}
+    classes = {}
+    for label, value in digests.items():
+        classes.setdefault(value, []).append(label)
+    duplicates = [{"population": len(selected[group[0]]), "membership_sha256": value,
+                   "labels": [list(label) for label in sorted(group)]}
+                  for value, group in sorted(classes.items()) if len(group) > 1]
+
+    names = sorted(data["reference_cutoffs_at_full_scope"])
+    signatures = {}
+    for row in data["grid"]:
+        arm = row["fixed_cutoff"]
+        if arm["state"] != "computed":
+            continue
+        key = (row["population"], tuple(arm["kept_counts"][name] for name in names))
+        signatures.setdefault(key, []).append((row["P1"], row["P2"], row["P3"]))
+    by_signature = {frozenset(group) for group in signatures.values() if len(group) > 1}
+    by_membership = {frozenset(tuple(label) for label in
+                               [tuple(x) for x in entry["labels"]]) for entry in duplicates}
+    return {
+        "state": "verified",
+        "input_sha256": found,
+        "input_matches_the_bound_digest": found == GT_CACHE_DIGEST,
+        "predicates_bound_by": "all 48 recorded populations reproduced exactly",
+        "labels": len(selected),
+        "distinct_memberships": len(classes),
+        "duplicate_membership_groups": len(duplicates),
+        "rows_inside_a_duplicate_group": sum(len(entry["labels"]) for entry in duplicates),
+        "duplicates": duplicates,
+        "aggregate_groups_not_confirmed_by_membership":
+            [sorted(list(label) for label in group) for group in sorted(
+                by_signature - by_membership, key=lambda g: sorted(g))],
+        "membership_duplicates_the_aggregate_grouping_missed":
+            [sorted(list(label) for label in group) for group in sorted(
+                by_membership - by_signature, key=lambda g: sorted(g))],
+        "mechanism": {
+            "within_50m": ("the cache reaches %.3f metres and no further, so the predicate "
+                           "selects every row" % max(row["dist"] for row in rows)),
+            "beyond_30m": ("no static furniture row lies beyond 30 metres, so excluding it "
+                           "changes nothing there: %d such rows beyond 30 metres"
+                           % sum(1 for row in rows if row["cls"] in STATIC_FURNITURE
+                                 and row["dist"] > 30.0))},
+        "weighting": ("48 labelled runs and %d unique memberships are different denominators. "
+                      "Neither supplies independent trials, and the preregistered family of 48 "
+                      "labels is unchanged" % len(classes)),
+        "control": equal_counts_different_members(),
+    }
+
+
+def equal_counts_different_members():
+    """A control the aggregate method gets wrong and the membership method gets right.
+
+    Two selections of the same size over the same population, sharing no row. Equal
+    totals, disjoint members. Any grouping that reads only counts calls them one
+    preparation.
+    """
+    left, right = list(range(0, 100)), list(range(100, 200))
+    left_digest = hashlib.sha256(",".join(map(str, left)).encode()).hexdigest()
+    right_digest = hashlib.sha256(",".join(map(str, right)).encode()).hexdigest()
+    return {
+        "two_selections": {"size": len(left), "shared_rows": len(set(left) & set(right))},
+        "aggregate_signature_equal": len(left) == len(right),
+        "membership_digest_equal": left_digest == right_digest,
+        "conclusion": ("equal counts do not establish equal members. The aggregate grouping "
+                       "would merge these two and the membership grouping keeps them apart"),
+    }
+
+
 def report(submissions=None, path=GRID):
     data = load(path)
     return {
@@ -248,6 +386,7 @@ def report(submissions=None, path=GRID):
                            "measured against an analyst with ordinary tools"),
             "measured_so_far": "research/comparator/0.1.0/end-to-end.json"},
         "premise_6_duplicate_preparations": duplicate_preparations(data),
+        "premise_6_membership_verification": membership(submissions, data),
         "scope": ("this record corrects what was said about the retained grid. It does not "
                   "recompute the grid, does not change the preregistration, and creates no new "
                   "result about coupling"),

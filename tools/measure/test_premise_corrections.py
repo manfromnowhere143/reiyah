@@ -117,5 +117,44 @@ class TieRule(unittest.TestCase):
             self.assertTrue(found["detectors"][name]["matched_target_94196_attainable"])
 
 
+class Membership(unittest.TestCase):
+    """Equal totals are not equal members. The 33 is only earned on source rows."""
+
+    def test_absent_source_rows_leave_the_stronger_claim_unaccepted(self):
+        found = corrections.membership(None, corrections.load())
+        self.assertEqual(found["state"], "unavailable")
+        self.assertIn("gt_val_cache.json", found["input_expected"])
+        self.assertNotIn("distinct_memberships", found)
+
+    def test_the_control_shows_what_the_aggregate_method_gets_wrong(self):
+        control = corrections.equal_counts_different_members()
+        self.assertTrue(control["aggregate_signature_equal"])
+        self.assertFalse(control["membership_digest_equal"])
+        self.assertEqual(control["two_selections"]["shared_rows"], 0)
+
+    @unittest.skipUnless(os.path.isdir(SUBMISSIONS), "annotation cache not present")
+    def test_membership_is_verified_on_exact_source_rows(self):
+        found = corrections.membership(SUBMISSIONS, corrections.load())
+        self.assertEqual(found["state"], "verified")
+        self.assertTrue(found["input_matches_the_bound_digest"])
+        self.assertEqual(found["labels"], 48)
+        self.assertEqual(found["distinct_memberships"], 33)
+        self.assertEqual(found["duplicate_membership_groups"], 15)
+        self.assertEqual(found["rows_inside_a_duplicate_group"], 30)
+        self.assertEqual(found["aggregate_groups_not_confirmed_by_membership"], [])
+        self.assertEqual(found["membership_duplicates_the_aggregate_grouping_missed"], [])
+
+    @unittest.skipUnless(os.path.isdir(SUBMISSIONS), "annotation cache not present")
+    def test_a_predicate_that_does_not_reproduce_the_populations_draws_no_conclusion(self):
+        data = json.loads(json.dumps(corrections.load()))
+        for row in data["grid"]:
+            if row["P2"] == "within_30m":
+                row["population"] += 1
+        found = corrections.membership(SUBMISSIONS, data)
+        self.assertEqual(found["state"], "predicates_not_bound")
+        self.assertTrue(found["labels_not_reproduced"])
+        self.assertNotIn("distinct_memberships", found)
+
+
 if __name__ == "__main__":
     unittest.main()

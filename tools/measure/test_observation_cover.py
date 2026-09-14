@@ -68,6 +68,31 @@ class ObservationList(unittest.TestCase):
         self.assertEqual(listing["open_anchors"], ["A", "B"])
         self.assertIsNone(listing["observation_list"])
 
+    def test_an_open_reference_beside_a_settled_criterion_asks_for_nothing(self):
+        """The 0.1.0 defect: an open anchor was read as an outstanding question."""
+        report, listing = pair("settled-with-open-reference-case.json")
+        self.assertEqual(report["decision"]["improvement_criterion"], "supported")
+        self.assertEqual(report["enclosure"], {"lower": "4/5", "upper": "1"})
+        self.assertEqual(listing["state"], "already_decided")
+        self.assertEqual(listing["observation_list"]["count"], 0)
+        self.assertEqual(listing["open_reference_preserved"]["anchors"], ["O"])
+        self.assertEqual(listing["settles"]["the_improvement_criterion"], "supported")
+        checker.verify(report, listing)
+
+    def test_a_settled_criterion_is_not_a_settled_preference(self):
+        """Criterion and preference are different outputs and stay different."""
+        case = load("settled-with-open-reference-case.json")
+        case["loss"] = {"false_negative": "1", "false_positive": "1", "tolerance": "1/10"}
+        case["anchors"][0]["objects"] = []
+        case["joint_worlds"][0]["per_anchor"]["F"] = {"objects_present": [], "edges": []}
+        report = rounded(packet.build(case))
+        listing = rounded(cover.analyse(case))
+        self.assertEqual(report["decision"]["improvement_criterion"], "excluded")
+        self.assertEqual(listing["state"], "already_decided")
+        self.assertEqual(listing["settles"]["the_improvement_criterion"], "excluded")
+        self.assertEqual(listing["settles"]["the_preference_output"], report["decision"]["preference"])
+        checker.verify(report, listing)
+
     def test_a_decided_cohort_needs_no_observation_though_readings_differ(self):
         report, listing = pair("oppositely-coupled.json")
         self.assertEqual(listing["state"], "already_decided")
@@ -84,7 +109,7 @@ class ObservationList(unittest.TestCase):
 
     def test_a_large_disputed_set_is_certified_without_any_search(self):
         report, listing = pair("sixteen-candidates-plan-case.json")
-        self.assertEqual(listing["state"], "covered")
+        self.assertEqual(listing["state"], "certified_shortest")
         entry = listing["observation_list"]
         self.assertEqual(listing["disputed_atoms"]["count"], 32)
         self.assertEqual(entry["count"], 1)
@@ -103,21 +128,27 @@ class ObservationList(unittest.TestCase):
         self.assertLess(entry["bracket"]["lower"], entry["bracket"]["upper"])
         checker.verify(report, listing)
 
-    def test_a_certified_shortest_list_is_never_larger_than_a_search_finds(self):
+    def test_a_searched_optimum_is_never_reported_as_a_certificate(self):
+        """The 0.1.0 defect: covered was counted as certified, promoting 8 of 386."""
         rng = random.Random(31337)
-        certified = 0
+        certified = searched = 0
         for _ in range(400):
             case = random_case(rng)
             listing = rounded(cover.analyse(case))
-            if listing["state"] != "covered":
+            if listing["state"] == "searched_shortest":
+                entry = listing["observation_list"]
+                self.assertFalse(entry["certified_shortest"])
+                self.assertGreater(entry["count"], entry["lower_bound"])
+                searched += 1
+            if listing["state"] != "certified_shortest":
                 continue
             entry = listing["observation_list"]
-            self.assertGreaterEqual(entry["count"], entry["lower_bound"])
+            self.assertTrue(entry["certified_shortest"])
+            self.assertEqual(entry["count"], entry["lower_bound"])
             self.assertLessEqual(entry["count"], entry["checkable_cover"]["count"])
-            if entry["certified_shortest"]:
-                self.assertEqual(entry["count"], entry["lower_bound"])
-                certified += 1
+            certified += 1
         self.assertGreater(certified, 100)
+        self.assertGreater(searched, 0)
 
     def test_random_cohorts_verify_against_the_independent_checker(self):
         rng = random.Random(99)
@@ -131,7 +162,7 @@ class Forgeries(unittest.TestCase):
 
     def setUp(self):
         self.report, self.listing = pair("three-copies-plan-case.json")
-        self.assertEqual(self.listing["state"], "covered")
+        self.assertEqual(self.listing["state"], "certified_shortest")
 
     def refuse(self, mutate, fragment):
         forged = copy.deepcopy(self.listing)
@@ -177,11 +208,31 @@ class Forgeries(unittest.TestCase):
 
     def test_a_shortest_claim_the_packing_does_not_force_is_refused(self):
         def inflate(forged):
-            forged["observation_list"]["certified_shortest"] = True
             forged["observation_list"]["packing"] = forged["observation_list"]["packing"][:1]
             forged["observation_list"]["lower_bound"] = 1
             forged["observation_list"]["bracket"]["lower"] = 1
-        self.refuse(inflate, "without a packing of the same size")
+            forged["observation_list"]["gap"] = forged["observation_list"]["count"] - 1
+        self.refuse(inflate, "certified_shortest does not match")
+
+    def test_a_searched_optimum_relabelled_as_certified_is_refused(self):
+        def relabel(forged):
+            forged["observation_list"]["packing"] = forged["observation_list"]["packing"][:1]
+            forged["observation_list"]["lower_bound"] = 1
+            forged["observation_list"]["bracket"]["lower"] = 1
+            forged["observation_list"]["gap"] = forged["observation_list"]["count"] - 1
+            forged["observation_list"]["certified_shortest"] = False
+        self.refuse(relabel, "disagrees with its own certificate")
+
+    def test_an_unknown_field_is_refused(self):
+        self.refuse(lambda forged: forged.__setitem__("extra", {"anything": 1}),
+                    "fields this checker does not know")
+
+    def test_a_missing_required_field_is_refused(self):
+        self.refuse(lambda forged: forged.pop("preference"), "omits required fields")
+
+    def test_a_criterion_the_packet_does_not_report_is_refused(self):
+        self.refuse(lambda forged: forged.__setitem__("improvement_criterion", "supported"),
+                    "improvement criterion is not the packet")
 
     def test_a_reported_verdict_the_certificates_do_not_give_is_refused(self):
         def flip(forged):
@@ -198,8 +249,12 @@ class Forgeries(unittest.TestCase):
     def test_a_settled_claim_over_disagreeing_readings_is_refused(self):
         def settle(forged):
             forged["state"] = "already_decided"
-            forged["observation_list"] = {"count": 0, "atoms": []}
-        self.refuse(settle, "settled while readings disagree")
+            forged["observation_list"] = {"count": 0, "atoms": [], "lower_bound": 0}
+            forged["settles"] = {"the_improvement_criterion": "supported",
+                                 "the_preference_output": forged["preference"]}
+            forged.pop("readings")
+            forged.pop("scope")
+        self.refuse(settle, "already_decided is claimed while the criterion is")
 
     def test_an_inflated_matching_in_the_packet_is_refused(self):
         forged_packet = copy.deepcopy(self.report)
@@ -215,7 +270,7 @@ class Forgeries(unittest.TestCase):
         forged["cohort_id"] = report["cohort_id"]
         with self.assertRaises(checker.Rejected) as caught:
             checker.verify(report, forged)
-        self.assertIn("does not wait on a reference", str(caught.exception))
+        self.assertIn("packet state is not the packet", str(caught.exception))
 
     def test_duplicate_json_keys_are_refused(self):
         path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_forged_cover.json")
@@ -226,6 +281,81 @@ class Forgeries(unittest.TestCase):
                 checker.load(path)
         finally:
             os.remove(path)
+
+
+class OpenStateForgeries(unittest.TestCase):
+    """The 0.1.0 checker returned early on an open reference and checked nothing after it.
+
+    Every forgery here was accepted by 0.1.0 on an unchanged, valid open packet.
+    """
+
+    def setUp(self):
+        self.report, self.listing = pair("open-two-anchor.json")
+        self.assertEqual(self.listing["state"], "waits_on_a_reference")
+        checker.verify(self.report, self.listing)
+
+    def refuse(self, mutate, fragment):
+        forged = copy.deepcopy(self.listing)
+        mutate(forged)
+        with self.assertRaises(checker.Rejected) as caught:
+            checker.verify(self.report, forged)
+        self.assertIn(fragment, str(caught.exception))
+
+    def test_invented_open_anchor_names_are_refused(self):
+        self.refuse(lambda f: f.__setitem__("open_anchors", ["not-an-anchor", "invented"]),
+                    "reported open anchors are not the packet")
+
+    def test_a_false_supported_criterion_is_refused(self):
+        self.refuse(lambda f: f.__setitem__("improvement_criterion", "supported"),
+                    "improvement criterion is not the packet")
+
+    def test_an_invented_certified_list_is_refused(self):
+        def invent(forged):
+            forged["observation_list"] = {"count": 1, "atoms": ["A|present|ghost"],
+                                          "certified_shortest": True, "lower_bound": 1,
+                                          "bracket": {"lower": 1, "upper": 1}}
+        self.refuse(invent, "carries an observation list")
+
+    def test_an_invented_disputed_set_is_refused(self):
+        self.refuse(lambda f: f.__setitem__("disputed_atoms",
+                                            {"count": 1, "atoms": ["A|present|ghost"],
+                                             "basis": "invented"}),
+                    "not the one the readings support")
+
+    def test_an_unknown_field_is_refused(self):
+        self.refuse(lambda f: f.__setitem__("extra_unknown_field", {"anything": 1}),
+                    "fields this checker does not know")
+
+    def test_a_false_preference_is_refused(self):
+        self.refuse(lambda f: f.__setitem__("preference", "prefer_augmented"),
+                    "preference is not the packet")
+
+    def test_a_false_packet_state_is_refused(self):
+        self.refuse(lambda f: f.__setitem__("packet_state", "computed"),
+                    "packet state is not the packet")
+
+    def test_a_false_disagreement_flag_is_refused(self):
+        self.refuse(lambda f: f["reference_alone_may_not_settle_it"].__setitem__(
+            "readings_disagree_at_the_most_favourable_open_value", True), "recomputes to")
+
+    def test_an_inflated_reading_count_is_refused(self):
+        self.refuse(lambda f: f["reference_alone_may_not_settle_it"].__setitem__(
+            "admitted_readings", 2), "admitted reading count is not the packet")
+
+    def test_a_waiting_claim_on_a_settled_criterion_is_refused(self):
+        report, listing = pair("settled-with-open-reference-case.json")
+        forged = copy.deepcopy(listing)
+        forged["state"] = "waits_on_a_reference"
+        forged["observation_list"] = None
+        forged.pop("settles")
+        forged.pop("open_reference_preserved")
+        forged["reference_alone_may_not_settle_it"] = {
+            "admitted_readings": 1,
+            "readings_disagree_at_the_least_favourable_open_value": False,
+            "readings_disagree_at_the_most_favourable_open_value": False, "note": ""}
+        with self.assertRaises(checker.Rejected) as caught:
+            checker.verify(report, forged)
+        self.assertIn("while the criterion is", str(caught.exception))
 
 
 if __name__ == "__main__":

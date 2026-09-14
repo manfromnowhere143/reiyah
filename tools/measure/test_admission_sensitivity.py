@@ -57,7 +57,21 @@ class AdmissionIsMonotone(unittest.TestCase):
 
 
 class EveryDecisiveVerdictRestsOnCompleteness(unittest.TestCase):
-    """The finding. It is not favourable and it is not softened."""
+    """The finding. It is not favourable and it is not softened.
+
+    Two assertions that lived here are withdrawn. `decisive-interval-case` has every
+    anchor finite, a `supported` criterion and an enclosure of [1, 3] with an asserted
+    share of 2/3. `settled-with-open-reference-case` is decisive at [4/5, 1] with an
+    open anchor and a share of 9/10. So a decisive verdict does not pin the value to a
+    point and does not carry the whole conclusion in the admission. Those were
+    properties of the fixtures that happened to be retained, stated as properties of
+    decisive verdicts.
+
+    What survives is the monotonicity argument, which is where the finding actually
+    comes from: removing readings can only narrow the enclosure and admitting more can
+    only widen it, so a decisive verdict rests on the claim that the admitted set is
+    complete, and no evidence inside the cohort supports that claim.
+    """
 
     def decisive(self):
         for name, case in cases():
@@ -68,15 +82,46 @@ class EveryDecisiveVerdictRestsOnCompleteness(unittest.TestCase):
     def test_there_are_decisive_cases_to_talk_about(self):
         self.assertGreaterEqual(len(list(self.decisive())), 4)
 
-    def test_the_admitted_readings_pin_the_value_to_a_point(self):
+    def test_a_decisive_verdict_need_not_pin_the_value_to_a_point(self):
+        """Withdrawn claim, with its counterexamples retained rather than excluded."""
+        counterexamples = 0
         for name, result in self.decisive():
-            with self.subTest(case=name):
-                self.assertEqual(result["enclosure"]["lower"], result["enclosure"]["upper"])
+            if result["enclosure"]["lower"] != result["enclosure"]["upper"]:
+                counterexamples += 1
+        self.assertGreaterEqual(counterexamples, 2)
+        result = sens.analyse(load("decisive-interval-case.json"))
+        self.assertEqual(result["criterion"], "supported")
+        self.assertEqual(result["enclosure"], {"lower": "1", "upper": "3"})
+        self.assertEqual(Fraction(result["how_much_is_asserted"]["asserted_share"]),
+                         Fraction(2, 3))
 
-    def test_the_admission_carries_the_whole_conclusion(self):
-        for name, result in self.decisive():
+    def test_a_decisive_verdict_need_not_carry_the_whole_conclusion(self):
+        """The asserted share reaches one on many fixtures and is not forced to."""
+        shares = {name: Fraction(result["how_much_is_asserted"]["asserted_share"])
+                  for name, result in self.decisive()}
+        self.assertTrue(any(share == 1 for share in shares.values()))
+        self.assertTrue(any(share < 1 for share in shares.values()))
+        self.assertEqual(shares["settled-with-open-reference-case.json"], Fraction(9, 10))
+
+    def test_the_monotonicity_that_the_finding_actually_rests_on(self):
+        """Admitting a reading can only widen, so it can only destroy a decisive verdict."""
+        for name, case in cases():
+            worlds = case.get("joint_worlds") or []
+            if len(worlds) < 2:
+                continue
+            full = sens.analyse(case)
+            if full.get("enclosure") is None:
+                continue
+            smaller = json.loads(json.dumps(case))
+            smaller["joint_worlds"] = worlds[:-1]
+            narrowed = sens.analyse(smaller)
+            if narrowed.get("enclosure") is None:
+                continue
             with self.subTest(case=name):
-                self.assertEqual(Fraction(result["how_much_is_asserted"]["asserted_share"]), 1)
+                self.assertGreaterEqual(Fraction(narrowed["enclosure"]["lower"]),
+                                        Fraction(full["enclosure"]["lower"]))
+                self.assertLessEqual(Fraction(narrowed["enclosure"]["upper"]),
+                                     Fraction(full["enclosure"]["upper"]))
 
     def test_a_verdict_destroying_reading_is_structurally_permitted_in_all_of_them(self):
         for name, result in self.decisive():

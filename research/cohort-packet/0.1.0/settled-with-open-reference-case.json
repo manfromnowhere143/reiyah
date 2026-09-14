@@ -1,0 +1,61 @@
+{
+  "anchors": [
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "c0"
+        }
+      ],
+      "base_detections": [],
+      "id": "F",
+      "objects": [
+        {
+          "class": "car",
+          "id": "o0"
+        }
+      ],
+      "reference_state": "finite",
+      "weight": "9/10"
+    },
+    {
+      "added_detections": [
+        {
+          "class": "car",
+          "id": "d0"
+        }
+      ],
+      "base_detections": [],
+      "id": "O",
+      "objects": [],
+      "reference_state": "open",
+      "weight": "1/10"
+    }
+  ],
+  "cohort_id": "settled-with-open-reference",
+  "joint_worlds": [
+    {
+      "per_anchor": {
+        "F": {
+          "edges": [
+            [
+              "c0",
+              "o0"
+            ]
+          ],
+          "objects_present": [
+            "o0"
+          ]
+        }
+      },
+      "world_id": "w"
+    }
+  ],
+  "label": "a finite anchor that already settles the criterion, beside a reference that stays open",
+  "loss": {
+    "false_negative": "1",
+    "false_positive": "1",
+    "tolerance": "1/10"
+  },
+  "schema_id": "reiyah.cohort-packet.case"
+}

@@ -1,6 +1,13 @@
 # Corrections to the premises under the preparation robustness reading
 
-Date: 2026-09-14. Lane: independent research. Lifecycle status: `proposed`.
+Date: 2026-09-14. Lane: independent research. Lifecycle status: `corrected`.
+
+> **Section 6 is strengthened by
+> [`research/preparation-robustness/0.4.0/PREMISE_CORRECTIONS.json`](../research/preparation-robustness/0.4.0/PREMISE_CORRECTIONS.json),
+> described in [`COMPARATOR_CORRECTIONS_2026-09-14.md`](COMPARATOR_CORRECTIONS_2026-09-14.md).**
+> The grouping on this page reads population and kept counts only. Two different row sets can
+> share those totals, so it establishes 33 aggregate signatures. Membership over exact source
+> rows gives the same 33 and is what earns the claim.
 
 Artifact: [`research/preparation-robustness/0.3.0/PREMISE_CORRECTIONS.json`](../research/preparation-robustness/0.3.0/PREMISE_CORRECTIONS.json)
 Producer: [`tools/measure/premise_corrections.py`](../tools/measure/premise_corrections.py)

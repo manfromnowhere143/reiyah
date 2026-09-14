@@ -2,9 +2,11 @@
 
 Document ID: `reiyah.admission-sensitivity.2026-09-12`
 
-Version: `0.2.0`
+Version: `0.3.0`
 
-Supersedes `0.1.0` of the same document ID. It retracts this document's central sentence.
+Supersedes `0.2.0` of the same document ID, which superseded `0.1.0`. Version `0.2.0` retracted
+this document's original central sentence. Version `0.3.0` retracts its replacement, which was
+true of the four cases retained at the time and is not true of a decisive verdict in general.
 
 Lifecycle status: `proposed`
 
@@ -60,14 +62,25 @@ asserted_share = ( (E_low - C_low) + (C_high - E_high) ) / ( C_high - C_low )
 | `worst-group-flip-case` | 2 | `[0, 0]` | `[-1, 1]` | **1** |
 | `worst-group-masking-case` | 1 | `[3/5, 3/5]` | `[-1, 1]` | **1** |
 
-**Every decisive verdict this lane has ever produced is carried entirely by the admission decision.**
-In each one the admitted readings pin the value to a single point, the detectors narrow nothing that
-the admission had not already narrowed, and the coarse bound permits a reading that would destroy the
-verdict. Each of those conclusions stands only if the admitted set is complete, and that is not
-something the cohort can establish.
+In each of those four the admitted readings pin the value to a single point and the asserted share
+is `1`. **That was a property of the four cases retained at the time, not a property of a decisive
+verdict, and stating it as the latter was wrong.** Two cases retained on 14 September 2026 are
+decisive with an interval:
 
-This is not an arithmetic error and it is not a defect in the cases. It is a true statement about
-where the information in a decisive answer comes from, and it was not visible until it was measured.
+| decisive case | readings | enclosure | coarse bound | asserted share |
+|---|---|---|---|---|
+| `decisive-interval-case` | 2 | `[1, 3]` | `[-3, 3]` | **2/3** |
+| `settled-with-open-reference-case` | 1 | `[4/5, 1]` | `[-1, 1]` | **9/10** |
+
+The first has every anchor finite, so an open reference is not the explanation. Both readings
+support the addition at different values, the enclosure is an interval, and the verdict is
+`supported` across it.
+
+What survives is the monotonicity the finding actually rests on. Removing admitted readings can
+only narrow the enclosure and admitting more can only widen it, so a decisive verdict still rests
+on the claim that the admitted set is complete, and no evidence inside the cohort supports that
+claim. What is withdrawn is the stronger reading: that the admission fixes the answer to a point
+and the detectors add nothing. Where the asserted share is `1` that is a fact about those cases.
 
 The unresolved cases sit at the other extreme: most have an asserted share of `0`, their enclosure
 equal to the coarse bound, because nothing was admitted that eliminated anything. The live

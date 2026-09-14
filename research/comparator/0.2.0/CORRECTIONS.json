@@ -1,0 +1,175 @@
+{
+  "artifact_id": "reiyah.comparator.corrections",
+  "corrections": [
+    {
+      "also": "the stale committed LANE_STATUS.json is updated in the same commit",
+      "evidence": {
+        "committed_bytes": 2896,
+        "committed_sha256": "5a0894ffc67ce2b5c7fa00db9151b77423590ae1c1f55305e8481c495c53e47a",
+        "received_bytes": 5064,
+        "received_sha256": "607c7db6d3bf9b993f67edc05d1ef503d74d14c1b319ff456d87fb2af376f2f3"
+      },
+      "id": "C1",
+      "repair": "tools/measure/seal_outbox.py classifies every payload as committed or generated and compares each committed payload against its blob. A mismatch refuses the seal and writes no manifest",
+      "what_0_1_0_said": "every payload in the sealed packet came from the distributed commit",
+      "what_is_true": "seventeen did. LANE_STATUS.json was generated at seal time and declared under a repository path holding different bytes at that commit, so the packet's source binding failed as a whole"
+    },
+    {
+      "evidence": {
+        "case": "research/cohort-packet/0.1.0/settled-with-open-reference-case.json",
+        "criterion": "supported",
+        "enclosure": {
+          "lower": "4/5",
+          "upper": "1"
+        },
+        "reported_by_0_1_0": "waits_on_a_reference, accepted by both checkers",
+        "tolerance": "1/10"
+      },
+      "id": "C2",
+      "repair": "the criterion is read before the reference state. already_decided preserves the open anchors, names what it settles, and distinguishes the criterion from the preference",
+      "what_0_1_0_said": "an open reference means the decision waits on that reference",
+      "what_is_true": "a cohort can have an open anchor and a criterion already determined across the whole open interval. Nothing is waiting there"
+    },
+    {
+      "evidence": {
+        "forgeries_accepted_by_0_1_0": 4,
+        "forgeries_refused_by_0_2_0": 13,
+        "tests": "tools/measure/test_observation_cover.py, class OpenStateForgeries"
+      },
+      "id": "C3",
+      "repair": "every state runs the same field checks first: a whitelist of known fields, the criterion, preference, packet state and open anchors recomputed against the packet, then state specific semantics. No early return skips them",
+      "what_0_1_0_said": "the checker establishes the observation report",
+      "what_is_true": "the open state returned before any field check, so an unchanged valid packet accepted invented open anchor names, a false supported criterion, an invented certified list, and any unknown field"
+    },
+    {
+      "evidence": {
+        "cases_needing_a_list": 717,
+        "certified": "378 of 717",
+        "first_exception": {
+          "packing_forces": 1,
+          "searched": 2,
+          "seed": 9,
+          "size": 4
+        },
+        "searched_not_certified": 8,
+        "states": {
+          "already_decided": 683,
+          "bracketed": 331,
+          "certified_shortest": 378,
+          "no_admitted_reading": 0,
+          "not_evaluated": 0,
+          "searched_shortest": 8,
+          "waits_on_a_reference": 0
+        }
+      },
+      "id": "C4",
+      "repair": "covered is replaced by two states, certified_shortest and searched_shortest, so the aggregation cannot read a state name as a certificate again",
+      "what_0_1_0_said": "386 of the generated cases carry a minimum size certificate",
+      "what_is_true": "386 have a shortest list. 378 of those have a packing that meets the cover. 8 are searched optima the packing does not force"
+    },
+    {
+      "evidence": {
+        "note": "traced operation counts on constructed controls, not timing measurements",
+        "traced": [
+          {
+            "admitted_readings": 9,
+            "discordant_pairs": 8,
+            "packing_overlap_comparisons": 0,
+            "pair_verdict_comparisons": 36,
+            "separating_sets_recomputed": 8,
+            "supplied_certificate_atoms": 1
+          },
+          {
+            "admitted_readings": 17,
+            "discordant_pairs": 16,
+            "packing_overlap_comparisons": 0,
+            "pair_verdict_comparisons": 136,
+            "separating_sets_recomputed": 16,
+            "supplied_certificate_atoms": 1
+          },
+          {
+            "admitted_readings": 33,
+            "discordant_pairs": 32,
+            "packing_overlap_comparisons": 0,
+            "pair_verdict_comparisons": 528,
+            "separating_sets_recomputed": 32,
+            "supplied_certificate_atoms": 1
+          }
+        ]
+      },
+      "id": "C5",
+      "repair": "the claim is qualified and the operation counts are retained. The quadratic cost is kept deliberately, because a checker that trusted the reported separating sets would accept a report omitting a discordant pair",
+      "what_0_1_0_said": "both ends of the list are checkable in linear time",
+      "what_is_true": "checking a supplied cover against supplied separating sets is linear in their total size. The implemented checker recomputes those sets from the packet and compares every pair of admitted readings"
+    },
+    {
+      "evidence": {
+        "control": "equal counts, disjoint members, which the aggregate grouping merges",
+        "predicates_bound_by": "all 48 recorded populations reproduced exactly",
+        "successor": "research/preparation-robustness/0.4.0/PREMISE_CORRECTIONS.json"
+      },
+      "id": "C6",
+      "repair": "membership digests over the selected index sequences, with the control retained",
+      "what_0_1_0_said": "the grid's 48 labels name 33 distinct preparations",
+      "what_is_true": "0.3.0 grouped on population and five kept counts, which two different row sets can share. That established 33 aggregate signatures. Membership over exact source rows was computed afterwards and gives the same 33"
+    },
+    {
+      "evidence": {
+        "pillow": "12.3.0",
+        "repository_tests": "309 pass",
+        "runtime_python": "3.14.2"
+      },
+      "id": "C7",
+      "repair": "the claim is corrected and the repository suite is rerun on that runtime",
+      "what_0_1_0_said": "Pillow is absent from every interpreter on this machine",
+      "what_is_true": "four interpreters on PATH lack it. The runtime supplied with the Engine packet has Pillow 12.3.0, and all 309 repository tests pass on it"
+    },
+    {
+      "evidence": {
+        "decisive-interval-case": {
+          "anchors": "all finite",
+          "asserted_share": "2/3",
+          "coarse_bound": [
+            "-3",
+            "3"
+          ],
+          "criterion": "supported",
+          "enclosure": [
+            "1",
+            "3"
+          ]
+        },
+        "settled-with-open-reference-case": {
+          "asserted_share": "9/10",
+          "criterion": "supported",
+          "enclosure": [
+            "4/5",
+            "1"
+          ]
+        }
+      },
+      "found": "here, during the repair pass, by a fixture retained for C2",
+      "id": "C8",
+      "repair": "the claim is retracted in admission-sensitivity 0.3.0, both counterexamples are retained, and the test now asserts the monotonicity the finding actually rests on rather than the coincidence it was stated as",
+      "what_0_1_0_said": "admission-sensitivity 0.2.0: every decisive verdict this lane has produced is carried entirely by the admission decision, pinning the value to a point",
+      "what_is_true": "that was a property of the four decisive cases retained at the time. A decisive verdict does not pin the enclosure to a point, with or without an open reference",
+      "what_survives": "removing readings can only narrow the enclosure and admitting more can only widen it, so a decisive verdict rests on the completeness of the admitted set"
+    }
+  ],
+  "corrects": {
+    "artifact": "reiyah.ordinary-comparator.end-to-end",
+    "sha256": "83e67834227996f364d2a502055d526748dd1acd9479733cb6f4302734c21e36",
+    "status": "retained unchanged. Its numbers are history and are not rewritten",
+    "version": "0.1.0"
+  },
+  "found_by": "the Engine consumer review of 14 September 2026, reproduced here before any change",
+  "scope": "a correction record for one checkpoint. It is not independent scientific review, not human reference admission, and not evidence of decision value",
+  "version": "0.2.0",
+  "what_survives": [
+    "the finite reading equivalence, on the binary improvement criterion over a nonempty complete set",
+    "the selected 56 to 7 atom count across the eight cases",
+    "the cover and packing certificate, where the two meet",
+    "the measured verification crossover between 30 and 90 detections",
+    "the strict cutoff tie rule and the 22 object granularity obstruction, at the declared cutoff"
+  ]
+}

@@ -2,7 +2,11 @@
 
 Version: `0.1.0`
 
-Lifecycle status: `proposed`
+Lifecycle status: `corrected`
+
+> Corrected by [`0.2.0`](../0.2.0/README.md). Seven statements here are withdrawn there, including
+> the certified count, the linear time claim and the open reference rule. This version is retained
+> unchanged as history.
 
 One end to end comparison between this lane's instrument and a competent conventional analyst
 holding the same evidence, on the Engine's actual additive decision. Written so the answer can

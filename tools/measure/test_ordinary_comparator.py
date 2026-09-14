@@ -9,7 +9,8 @@ import check_cohort_packet as packet_checker  # noqa: E402
 import check_observation_cover as cover_checker  # noqa: E402
 import ordinary_comparator as comparator  # noqa: E402
 
-ARTIFACT = os.path.join(comparator.ROOT, "research", "comparator", "0.1.0", "end-to-end.json")
+ARTIFACT = os.path.join(comparator.ROOT, "research", "comparator", "0.2.0", "end-to-end.json")
+ENGINE_CASE = os.environ.get("REIYAH_ENGINE_CASE")
 
 
 class EndToEnd(unittest.TestCase):
@@ -87,9 +88,66 @@ class EndToEnd(unittest.TestCase):
         self.assertEqual(conformance["instances"],
                          conformance["instances_both_checkers_accepted"])
         self.assertGreaterEqual(conformance["instances"], 1000)
-        self.assertTrue(conformance["states"]["bracketed"] > 0)
-        self.assertTrue(conformance["states"]["covered"] > 0)
-        self.assertTrue(conformance["states"]["already_decided"] > 0)
+        for name in ("bracketed", "certified_shortest", "searched_shortest", "already_decided"):
+            self.assertGreater(conformance["states"][name], 0, name)
+
+    def test_a_searched_optimum_is_counted_apart_from_a_certificate(self):
+        """The 0.1.0 defect: 386 covered were all reported certified; 378 are."""
+        conformance = self.result["synthetic_conformance"]
+        states = conformance["states"]
+        self.assertEqual(states["certified_shortest"] + states["searched_shortest"], 386)
+        self.assertEqual(states["certified_shortest"], 378)
+        self.assertEqual(states["searched_shortest"], 8)
+        self.assertEqual(conformance["cases_needing_a_list"],
+                         states["certified_shortest"] + states["searched_shortest"]
+                         + states["bracketed"])
+        self.assertEqual(conformance["certified_shortest_share"], "378 of 717")
+        self.assertEqual(conformance["searched_but_not_certified"], 8)
+
+    def test_the_first_searched_but_uncertified_instance_is_where_it_was_reported(self):
+        listing = comparator.roundtrip(
+            __import__("observation_cover").analyse(comparator.synthetic_case(4, 9)))
+        self.assertEqual(listing["state"], "searched_shortest")
+        self.assertFalse(listing["observation_list"]["certified_shortest"])
+        self.assertEqual(listing["observation_list"]["count"], 2)
+        self.assertEqual(listing["observation_list"]["lower_bound"], 1)
+
+    def test_the_checking_cost_is_stated_in_traced_operations(self):
+        """The 0.1.0 claim of linear checking is corrected, not optimised away."""
+        cost = self.result["checking_cost"]
+        traced = {row["discordant_pairs"]: row for row in cost["traced"]}
+        self.assertEqual(traced[8]["pair_verdict_comparisons"], 36)
+        self.assertEqual(traced[16]["pair_verdict_comparisons"], 136)
+        self.assertEqual(traced[32]["pair_verdict_comparisons"], 528)
+        for row in cost["traced"]:
+            self.assertEqual(row["pair_verdict_comparisons"],
+                             row["admitted_readings"] * (row["admitted_readings"] - 1) // 2)
+            self.assertEqual(row["supplied_certificate_atoms"], 1)
+        self.assertIn("not timing", cost["note"])
+
+    def test_the_engine_case_is_acknowledged_without_being_copied_in(self):
+        record = self.result["engine_case_compatibility"]
+        if record["state"] == "unavailable":
+            self.assertEqual(record["expected_sha256"], comparator.ENGINE_CASE_SHA256)
+            self.skipTest("the owner's private case was not supplied to this run")
+        self.assertEqual(record["state"], "checked")
+        self.assertEqual(record["sha256"], comparator.ENGINE_CASE_SHA256)
+        self.assertEqual(record["admitted_readings"], 0)
+        self.assertEqual(record["result"]["enclosure"], {"lower": "-8", "upper": "8"})
+        self.assertEqual(record["result"]["improvement_criterion"], "unresolved")
+        self.assertEqual(record["result"]["observation_state"], "waits_on_a_reference")
+        self.assertIsNone(record["result"]["observation_list"])
+        self.assertEqual([row["base_detections"] for row in record["structure"]], [48, 37])
+        self.assertEqual([row["added_detections"] for row in record["structure"]], [9, 7])
+        text = json.dumps(record)
+        self.assertNotIn("row-00", text)
+
+    def test_a_case_whose_digest_does_not_match_is_refused(self):
+        path = os.path.join(comparator.ROOT, "research", "cohort-packet", "0.1.0",
+                            "open-two-anchor.json")
+        record = comparator.compatibility(path)
+        self.assertEqual(record["state"], "digest_mismatch")
+        self.assertNotIn("result", record)
 
     def test_the_conformance_generator_is_deterministic(self):
         first = comparator.synthetic_case(6, 3)
@@ -108,6 +166,7 @@ class EndToEnd(unittest.TestCase):
                              fresh_case["observations_that_would_change_the_decision"])
         self.assertEqual(stored["synthetic_conformance"]["states"],
                          self.result["synthetic_conformance"]["states"])
+        self.assertEqual(stored["checking_cost"]["traced"], self.result["checking_cost"]["traced"])
 
 
 if __name__ == "__main__":
