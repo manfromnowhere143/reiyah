@@ -1,6 +1,6 @@
 # Reiyah: the decision, the evidence and the next checks
 
-Document ID: `reiyah.engine.roadmap`. Version: `0.1.2`. Status: `exploratory`. Updated 14 September 2026.
+Document ID: `reiyah.engine.roadmap`. Version: `0.1.3`. Status: `exploratory`. Updated 14 September 2026.
 
 Reiyah's present product question is whether a perception-validation lead can make a better
 added-detector integration choice, or reach the same defensible choice with less total effort,
@@ -16,7 +16,7 @@ an object-detection result does not validate them by analogy.
 | Offline measurement research | Joint errors, marginal effects, source policies, retained failures and corrections | A universal independence law, causal mechanism or transferable safety rate |
 | Reference-population audits | Reconstructed exclusions and geometric proximity to omitted source annotations | Physical correctness of a detection or an admitted human judgment |
 | Paired decision Engine | Exact additive-loss bounds, joint alternatives and checkable maximum-matching witnesses | Truth of the selected reference/geometry model |
-| Review and common-operand preparation | Staged records, equal analyst evidence, source-to-observation custody and a ready native opening | Actual independent discoveries or participant usability |
+| Review and common-operand preparation | Staged records, equal analyst evidence, source custody and one verified assisted selection return | Independent discoveries, reliable usability or measured decision value |
 | Compiler and provenance checks | Guarded reference sharing, original member identity, matching traces and finite conformance | Unlimited scale, a runtime product or proof over every possible compiler input |
 | Current prediction preparation | Exact original selected rows, no annotation reads during extraction and separate source agreement | Annotation-independent historical selection or cross-channel physical association |
 | Independent comparator findings | Overlap parity and conditional raw-table uncertainty; claims withdrawn where premises failed | Coefficient superiority or guaranteed identification from adding a third channel |
@@ -29,6 +29,9 @@ claims from main implementation. Earlier failures remain part of the evidence.
 ```mermaid
 flowchart TB
   O["Original source evidence"] --> I["Explicit selection and identity"]
+  I --> S["Assisted visible selection<br/>Original record trace checked"]
+  S -. "does not admit a reference" .-> H["Actual staged review<br/>Still required"]
+  H -. "qualifying records only" .-> M
   I --> M["Declared observation model<br/>Associations and unknowns"]
   M --> D["Paired detector loss<br/>Complete joint alternatives"]
   D --> C["Checked conditional conclusion<br/>Or unresolved result"]
@@ -41,18 +44,19 @@ flowchart TB
 
 | Gap | Owner and next concrete check | Evidence that would change the choice |
 |---|---|---|
-| Practical inspection | Engine: consume one actual opening/selection return against its exact original capture and indices | Observable interaction and participant effort, including a failed or unreviewable return |
+| Practical inspection | Engine: one assisted selection now traces to original records; use a working copy to repair the observed overwrite and save-path problems | A later participant can complete the revised procedure, with actual effort and failures recorded |
 | Independent physical references | Engine coordinates the authorized staged protocol; reviewers supply actual observations | Both unassisted records locked before assistance, complete disagreements and admitted joint alternatives |
 | Raw association uncertainty | Fable: use selected original rows, preserve unmatched records and order, compare a declared rule with a serious baseline | A checked decision or abstention stable to a defensible association/error model, or a retained counterexample |
-| Preparation assumptions and inference | Fable: seal the review-cost corrections and test one named claim over justified preparation alternatives against an ordinary sweep | A checked flip, robustness result or unresolved outcome under explicit target semantics; physical uncertainty, evaluation definitions and configuration changes remain distinct |
+| Preparation assumptions and inference | Fable: the selected comparator 0.2.0 correction has source-bound consumer checks; stop fixture expansion until a real input or concrete defect arrives | A checked flip, robustness result or unresolved outcome under explicit target semantics; physical uncertainty, evaluation definitions and configuration changes remain distinct |
 | Equal useful comparison | Both lanes: same opportunities, references, weights, loss, tolerance and source evidence | One defensible integration choice with measured preparation, computation, verification, review and repair effort |
 | Generalization and stronger scientific claims | Separate future protocol and appropriately diverse inputs; no new cohort selected here | Held-out validation and dated primary comparisons that survive marginal, association and shared-data controls |
 
-The real comparison remains **[-8,8]**. No qualifying human references, actual participant
-usability or external scientific review are available at this checkpoint. A missing participant
-does not justify invented judgments, repeated identical desktop bootstraps or more viewer
-architecture. Continue useful bounded work while retaining the ready opening and its exact
-missing prerequisite.
+The real comparison remains **[-8,8]**. The [assisted inspection](PERCEPTION_ASSISTED_INSPECTION_2026-09-14.md)
+verifies one user-reported selection with retained screenshots and unchanged source records.
+Repeated guidance and a save-path repair were required. Qualifying human references, reliable
+usability, measured decision value and external scientific review remain missing. Preserve this
+result without converting a highlighted point into an object judgment or inventing references.
+The next consequential evidence is actual staged review, followed by one fair decision comparison.
 
 The [14 September inspection check](PERCEPTION_INSPECTION_2026-09-14.md) repairs a required
 argument missing from the viewer guide and verifies extraction against an existing programmatic

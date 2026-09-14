@@ -2,20 +2,24 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.10`
+Version: `0.1.11`
 
 Lifecycle status: `exploratory`
 
 The real two-window comparison remains **[-8,8]**. The Engine can preserve and check joint
-reference alternatives, but no qualifying human references have been admitted. Actual
-participant usability and external scientific review remain missing. Gate A is unaccepted;
+reference alternatives, but no qualifying human references have been admitted. One assisted
+selection return is now verified; reliable participant usability, measured decision value and
+external scientific review remain missing. Gate A is unaccepted;
 the prospective physical study has not run and has no selected cohort or seed.
 
-The [14 September inspection checkpoint](PERCEPTION_INSPECTION_2026-09-14.md) corrects the viewer
-guide's missing `--package` argument. Its original command failure, corrected programmatic
-extraction and empty-selection rejection are retained; all 34,720 selected raw records agree.
-No participant return has arrived and no reference was admitted. This is a procedure/documentation
-repair; the Engine implementation and current joint-operand interfaces are unchanged.
+The [assisted inspection checkpoint](PERCEPTION_ASSISTED_INSPECTION_2026-09-14.md) verifies an
+actual saved selection accompanied by user screenshots and a reported click. One original index
+is recovered and all 34,720 capture records agree. The saving procedure required repeated help
+and a Desktop fallback; the original opening path was saved over, and its exact original bytes
+were preserved from Blender backup. The revised working-copy procedure is a repair awaiting its
+own usability check. No reference was admitted; Engine implementation and joint operands are
+unchanged. The [earlier inspection checkpoint](PERCEPTION_INSPECTION_2026-09-14.md), including
+its missing `--package` correction and programmatic controls, remains historical evidence.
 
 This is current Engine navigation, not a new Gate A release or an authority source. The complete
 previous handoff is preserved byte for byte in [the dated archive](SESSION_HANDOFF_ARCHIVE_2026-09-13.md):
@@ -29,8 +33,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This inspection checkpoint starts from main
-`b871461a39758e51c3d7ea171f75a9ff1a735022`, tree `55ad2c5ed1f1cb9d577e7625cf3e7c930a347650`.
+uncommitted ownership before acting. This assisted checkpoint starts from main
+`fd1bba47c4a69ae9514d40c4acfbf9bfb9639552`, tree `a52eb40585ba7184d9df7b090895c3abeff4dfe6`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
@@ -45,6 +49,14 @@ work on `research/2026-09-10-moment-cone`. Do not edit or move its source, branc
 or processes, or duplicate that implementation. Read current lane status before selecting
 overlapping work. Exchange only through separately selected immutable outboxes; a chat verdict
 or mutable branch tip is insufficient. No ownership transfer is implied by a consumer review.
+
+Current private inspection evidence is at
+`~/.codex/reports/reiyah/engine-anchor-assisted-inspection-2026-09-14-zsz33ba9/`.
+Read `START_HERE.md`, `COPY_TO_CODEX.txt`, the sealed closeout and selected input bindings.
+The original historical opening path was saved over during the participant exercise; its exact
+original is preserved under this checkpoint's `inputs/verified-original-opening.blend`.
+Check its separately retained identity and work from a new copy. Do not blindly reopen the old
+path or replay a previous command with consumed output names.
 
 The complete continuation is
 `~/.codex/reports/reiyah/engine-review-value-2026-09-13/COPY_TO_CODEX.txt`.
@@ -77,7 +89,8 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 | Can unnecessary compiler expansion be reduced? | [Guarded reference sharing](PERCEPTION_REFERENCE_SHARING_2026-09-13.md), [local reference identity](PERCEPTION_REFERENCE_IDENTITY_2026-09-13.md) and [member equivalence](PERCEPTION_REFERENCE_EQUIVALENCE_2026-09-13.md) improve bounded synthetic cases while preserving original world/source mappings and member order. Both previous sharing plans remain available when broader sharing cannot fit. Failed candidates and unchanged limits remain explicit. |
 | Does the sharing guard omit edge-condition cost? | [Dense work-bound audit](PERCEPTION_REFERENCE_WORKBOUND_2026-09-13.md) disproved that suspicion: compiled edges have empty conditions. The existing guard bounds the declared evaluator estimate. No production repair was justified. |
 | Can shared matching nodes be traced to their own original sources? | [Matching trace](PERCEPTION_MATCHING_TRACE_2026-09-13.md) checks ten synthetic endpoints using world, anchor and object together; incomplete joins and a substituted other-world digest fail. Whole-capture custody does not establish point selection or physical correspondence. |
-| Is the native viewing procedure ready? | [The anchor opening](PERCEPTION_ANCHOR_OPENING_2026-09-13.md) selects a unique delivered capture at the declared anchor timestamp from all 725 supplied occurrences. Every original point record is retained; save/reopen, vertex reordering and stale-capture rejection pass. [Checked preparation](PERCEPTION_VIEWER_PREPARATION_2026-09-13.md), [output custody](PERCEPTION_VIEWER_CUSTODY_2026-09-13.md) and [selection boundary](PERCEPTION_SELECTION_EVIDENCE_2026-09-13.md) supply the unchanged adapter. Actual interactive viewing and participant usability remain unobserved. |
+| Is the native viewing procedure usable? | [One assisted return](PERCEPTION_ASSISTED_INSPECTION_2026-09-14.md) now verifies a reported selection and all original capture records. Repeated guidance, a Desktop fallback and original-file backup recovery were required. A safer working-copy procedure is specified; reliable usability and participant effort remain unmeasured. The native adapter is unchanged. |
+| Are the latest comparator corrections consumed? | Comparator 0.2.0 at `3e7a6638dead8e218b0f7448334625e266e30d4c` has 23 matching payloads, 20 matching committed blobs and 91 passing targeted consumer tests. The exact real case remains open at [-8,8]. Its publisher's fresh clone is readback, not independent transport verification. No research source is merged. |
 | Are Fable's requested checker repairs accepted? | The [matching-trace consumer review](PERCEPTION_MATCHING_TRACE_2026-09-13.md) accepts only selected `5762ac01a157a3603181df1486df8a836d711f06` bytes and retained probes. Broader robustness claims were not adopted. Earlier defects remain historical evidence. |
 | What do Engine's command costs measure? | [Command accounting](ENGINE_EFFORT_ACCOUNTING_2026-09-13.md) reconstructs 204 outer runs across fourteen selected closed checkpoints. It excludes 124 copied receipts and retains 33 nested details without adding them again. Reported durations, UTC interval coverage and unmeasured human effort remain distinct. |
 | Does sharing preserve original partition worlds? | [Partition conformance](PERCEPTION_PARTITION_CONFORMANCE_2026-09-13.md) checks 5,400 explicit tiny cases against original full graphs and direct partial injections. Original operands, shared-node member identity, ordered provenance and joint loss are checked beyond the core certificate. No compiler defect was found in this grid. |
@@ -166,26 +179,24 @@ sealed `route-assessment-0.1.0`, manifest
 Check each new headline against its exact assumptions, evidence and retained counterexamples
 before integration. No preparation experiment or correction is adopted from an unsealed tip.
 
-An actual participant return takes priority. The exposed development opening is
-`~/.codex/reports/reiyah/engine-anchor-opening-2026-09-13/private/opening/OPENING.md`, returning
-to `~/.codex/reports/reiyah/engine-anchor-input-2026-09-13/`. It uses the capture whose declared
-timestamp equals the first window's anchor, with all surrounding observations retained. The older
-`engine-viewer-2026-09-12/private/opening-2/OPENING.md` exercise and its separate
-`engine-viewer-input-2026-09-12/` return folder remain intact; that capture is 1,998,383 microseconds
-before the anchor. Both selection files are absent and both forms unfilled at this checkpoint.
-Verify a later return against its own exact opening/binding without changing a closed packet.
-These exercises request no object judgment and cannot be relabeled independent discovery.
-Declared timestamps do not establish physical synchronization or correspondence.
+The anchor selection is now present at `~/.codex/reports/reiyah/engine-anchor-input-2026-09-13/selection.blend`.
+It is an explicitly recorded agent copy of the user's Desktop save, SHA-256
+`307535b3517dd59fe06aba1610338d729cc587e47d9b029e890e81a7f50557d1`, 539,480 bytes. Extraction
+recovers original index 28,692 in capture-000041 at nominal timestamp 1533151283697607. The
+observation form remains unfilled; the chat report and seven screenshots are separate retained
+evidence. The older exercise concerns a capture 1,998,383 microseconds earlier and still has no
+return. Never substitute it. No object judgment or independent discovery is established.
 
-The next viewing falsifier is one supported connection followed by an observable opening and
-selection. The native desktop service has a retained Swift-loader incompatibility; this was
-not diagnosed as a permissions or gcloud problem. Do not retry an unchanged failed bootstrap.
-The separate `engine-chrome-observation-2026-09-13` checkpoint found Chrome running and valid
-native-host registration, with the extension enabled in `Default` but absent from the selected
-`Profile 1`. Browser selection still returned no available browser. Activation of the existing
-extension in the installed profile has been requested; no response or connection is assumed.
-Use the applicable current UI skill after that state changes. No second viewer is justified
-without an observable path. Continue useful independent Engine work while external input is absent.
+Use the revised working-copy procedure for a new actual participant, with one instruction at a
+time and explicit assistance/effort records. The native screen-control service still has the
+same Swift-loader failure; permissions and gcloud were not established causes. Do not retry the
+same bootstrap. Command-line launch plus user-supplied screenshots worked for this exercise;
+it is distinct from agent GUI interaction. Preserve any genuine later returns in fresh custody.
+
+Actual staged reference observations now take priority over another point-selection rehearsal.
+Both discovery records remain unassigned and unfilled. If no qualifying new input exists, retain
+the open references and state the precise phase/participant dependency. No new viewer, compiler
+or fixture campaign is justified by that absence.
 
 ## Preserve the comparison and review protocol
 

@@ -4,9 +4,12 @@ Interface ID: `reiyah.perception-viewer`; version `0.1.0`; status `exploratory`.
 
 The [adapter](../../../tools/perception_viewer.py) prepares a native Blender point scene
 and checks a saved selection against separately bound source bytes. A reviewer uses ordinary
-vertex selection and **Save As**; no add-on, embedded script, console command or new viewer
-is needed. The [opening procedure](OPENING.md) is prepared but has not been observed through
-the GUI. Background save/reopen conformance is distinct from interactive or human usability.
+vertex selection; no add-on, embedded script, console command or new viewer is needed.
+The [assisted return and revised coordinator procedure](../../../docs/PERCEPTION_ASSISTED_INSPECTION_2026-09-14.md)
+retain a real saved selection, repeated navigation assistance and an original-file overwrite.
+Use a verified working copy for a new exercise. The original [opening procedure](OPENING.md)
+remains a historical version; its exact destination entry proved difficult in the observed run.
+Background save/reopen conformance remains distinct from interactive or human usability.
 
 The baseline is Blender's native PLY import with the already retained exact options:
 scale 1, scene units off, forward Y/up Z, vertex merging off, custom attributes on.
@@ -116,8 +119,9 @@ See the [dated checkpoint](../../../docs/PERCEPTION_VIEWER_CHECKPOINT_2026-09-12
 reverses vertex order, and attacks fields, indices and geometry. Its selections are explicitly
 programmatic. No screenshot or independent human judgment is generated.
 
-The next falsifiable observation is a person opening the exact prepared capture, reporting
-whether points are visible, selecting visible points and saving a new scene whose extracted
-indices match the source. Record actual onboarding, active interaction, interruptions and
-repair time. The same procedure is available to both analysts at the authorized stage.
-Image pixel equivalence and a usable workflow for all captures remain separate questions.
+One assisted opening, reported selection and saved return now passes original-record extraction.
+It does not establish a reliable workflow for other people or captures. The next procedure check
+uses the revised working-copy route and records actual onboarding, active interaction,
+interruptions and repair. A copied initial scene must never be counted as a participant return.
+Do not repeat point-selection exercises merely to postpone the missing staged reference review.
+Image pixel equivalence, physical reference validity and decision value remain separate questions.

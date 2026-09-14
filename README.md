@@ -12,7 +12,7 @@ computes paired-loss enclosures with exact arithmetic and checks matching certif
 nominal geometry and restricted observation packages prepare physical review. The intended user
 is a perception-validation lead deciding whether an added detector merits further integration work.
 
-As checked on **13 September 2026**, the two development anchors still give **[-8,8]** under unit
+As checked on **14 September 2026**, the two development anchors still give **[-8,8]** under unit
 penalties. No qualifying human reference judgments have been admitted. Source binding, common
 analyst inputs and checked computations are implemented; an improved integration decision and
 an advantage over competent conventional analysis remain unproven.
@@ -29,17 +29,20 @@ conformance checks](docs/PERCEPTION_PARTITION_CONFORMANCE_2026-09-13.md) reduce 
 compiler expansion while preserving original worlds and matching competition. These are
 engineering checks on declared models.
 
-The [anchor opening procedure](docs/PERCEPTION_ANCHOR_OPENING_2026-09-13.md) prepares a Blender
-capture and traces saved point selections to original records. Background import/save/reopen
-checks pass; **actual interactive viewing and participant usability remain unobserved**. The
-native desktop service has a diagnosed Swift-loader incompatibility. Browser discovery returned
-no available connection in the retained check; screen permissions and cloud login were not
-established causes. The prepared opening remains available for an actual participant.
+The [assisted inspection](docs/PERCEPTION_ASSISTED_INSPECTION_2026-09-14.md) now has an actual
+saved selection accompanied by user-supplied screenshots and a reported click. The Engine
+recovers one original point index and verifies all 34,720 capture records unchanged. A separate
+reader checks the selected record directly against the raw capture. This establishes an
+assisted selection trace; it supplies no object judgment or admitted reference.
 
-The [14 September inspection check](docs/PERCEPTION_INSPECTION_2026-09-14.md) corrects a missing
-required argument in the viewer guide, verifies original-record extraction on a retained
-programmatic control and rejects the pristine scene as an empty selection. Participant returns
-and staged human references remain missing.
+The procedure required repeated guidance, a Desktop save fallback and recovery of an exact
+original from Blender's backup after its opening path was saved over. Active human effort and
+operator independence were not measured. The revised coordinator procedure opens a working
+copy and handles file custody; its simpler save route still needs an actual usability check.
+The [earlier inspection check](docs/PERCEPTION_INSPECTION_2026-09-14.md), including its missing
+required argument and programmatic controls, remains historical evidence. The native screen
+control service remains unavailable; launching Blender and guiding from supplied screenshots
+worked in this assisted exercise.
 
 HARBOR is the proposed research program: **Human-Automation Readiness, Belief & Operational
 Risk**. Its broader scope connects object-level belief, readiness, recoverability, joint silent
