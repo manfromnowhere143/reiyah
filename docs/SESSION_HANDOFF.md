@@ -2,9 +2,18 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.12`
+Version: `0.1.13`
 
 Lifecycle status: `exploratory`
+
+The [next case preparation](PERCEPTION_CASE_PORTABILITY_2026-09-14.md) now checks 14 remaining
+exposed frames through existing Engine interfaces: 4,228 source rows, 588 base detections and
+94 additions. The first two anchors reproduce exactly. A separate source-accounting audit
+checks the preparation and refuses nine mutations after repairing its own missed common-trace
+check. No Engine implementation changed and no second-case detector verdict was computed.
+The [product and funding thesis](PRODUCT_AND_FUNDING_THESIS_2026-09-14.md) now states the intended
+customer, larger technical ambition and concrete proof milestones. This is proposed positioning,
+not a funding submission or an observed customer relationship.
 
 The new [annotation-conditional replay](PERCEPTION_ANNOTATION_CASE_2026-09-14.md) gives **[1,1]**
 on the same two development anchors. All 119 source annotations are accounted for and 106 meet
@@ -57,6 +66,18 @@ or processes, or duplicate that implementation. Read current lane status before 
 overlapping work. Exchange only through separately selected immutable outboxes; a chat verdict
 or mutable branch tip is insufficient. No ownership transfer is implied by a consumer review.
 
+Current preparation evidence is at
+`~/.codex/reports/reiyah/engine-case-portability-2026-09-14-idui4k54/`.
+It starts from main `91af9b59947d136b359a79135f3b2efdf7d687ff`, tree
+`296c5a9c3584946d98e317920294ed5411c13ff9`. Read its `START_HERE.md`, `PLAN.json`,
+`CLOSEOUT.json`, sealed source bindings and `COPY_TO_CODEX.txt`. At this task's opening,
+Fable remains at `0045314b2e37885ca407c46d3a0dac936f8d7185`, without a newly sealed first-case
+challenge. A later remote observation at 16:16 UTC found
+`284c2d711fa5de323912fedce07c3c0c8ad084f4`; no new sealed exchange had been selected or accepted.
+Refresh that observation before acting. Do not duplicate its comparator task.
+The second input has a ready request for the existing annotation adapter. Its verdict follows
+the first challenge; preparation within the same two scenes is not held-out generalization.
+
 Current private annotation evidence is at
 `~/.codex/reports/reiyah/engine-annotation-case-2026-09-14-a63851u3/`.
 Read `START_HERE.md`, `PLAN.json`, `COPY_TO_CODEX.txt`, the selected source/input bindings and
@@ -99,6 +120,7 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 
 | Question | Checked result and evidence |
 |---|---|
+| Can another input case use the existing Engine interfaces? | [Case preparation](PERCEPTION_CASE_PORTABILITY_2026-09-14.md) checks all 4,876 original rows, reproduces the initial case and prepares the other 14 frames with 588 base/94 additions. A separate source calculation agrees. No second verdict or core/schema extension. |
 | Can the fixed comparison run without new human reviewers? | [Annotation replay](PERCEPTION_ANNOTATION_CASE_2026-09-14.md) scans all 1,166,187 annotation rows, selects the exact 119 at the two anchors, includes 106 under the fixed policy and gives [1,1]. Source/geometry audit and matching witnesses pass. This is a separate benchmark-conditional result; the original physical-reference case stays open. |
 | Does the real comparison survive the Engine changes? | [Window verification](ENGINE_WINDOW_CHECKPOINT_2026-09-13.md) reproduces the retained real packet byte for byte at [-8,8], rejects seven forged reports and reruns conventional accounting over all 648 source rows. It adds no physical reference. |
 | Can both analysts receive the same reviewed joint operands? | [Reviewed operands](PERCEPTION_REVIEWED_OPERANDS_CHECKPOINT_2026-09-12.md) preserve the complete joint alternatives, weights, loss, tolerance, matching and provenance. Synthetic conformance is engineering evidence. |
@@ -113,8 +135,10 @@ new outreach, deployment, physical control, a cloud campaign or physical-study s
 | Can research receive predictions without annotation reads? | [Prediction-only inputs](PERCEPTION_PREDICTIONS_2026-09-13.md) retain all 4,876 submitted rows across the 16 exposed development frames, with original bytes and indices. Two guarded runs agree; a separate conventional reader checks every selected row. Historical selection independence and physical association are not established. |
 | What did the selected sign/custody correction establish? | [The current consumer review](FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md) checks 2,401 small-table sign classifications, 18 aggregate thresholds and default source-digest rejection. The raw helper remains disconnected from the corrected classifier, and the 14.025× span combines score/radius/rule changes. Full raw association and Fable's reported 581 tests were not replayed. No research implementation was merged. |
 
-The annotation adapter's latest full repository suite passed **430 tests**, including 12 new
-adapter tests. The 93 measurement tests and `gate_b_check` also passed on the current candidate.
+The annotation adapter's preceding full repository suite passed **430 tests**, including 12 new
+adapter tests. The 93 measurement tests and `gate_b_check` also passed at that implementation
+checkpoint. This preparation/documentation task leaves those source files unchanged and uses
+targeted private source checks; those broad suites are not counted as new runs.
 The final computation packet binds all current perception implementation bytes. Consumer source
 audit and eight mutation controls pass; existing Fable cohort code agrees on [1,1] in an Engine-lane
 compatibility replay. Human effort and a separate Fable-lane source reconstruction are unmeasured

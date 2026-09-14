@@ -1,6 +1,16 @@
 # Reiyah
 
-**An offline evaluation engine for perception decisions under uncertain reference evidence.**
+**Building an evidence engine for engineering decisions about AI systems.**
+
+Reiyah is being built to help a team decide whether a system change deserves further integration,
+show what evidence supports that choice, and identify what could change the answer. Perception is
+the first application. The long-term ambition is dependable infrastructure for leading AI and
+robotics teams, including reuse of valid evidence as models, sensors and operating conditions change.
+
+Read the [product and funding thesis](docs/PRODUCT_AND_FUNDING_THESIS_2026-09-14.md) for the
+intended customer, technical research direction, current demonstration and next proof milestones.
+The implementation today is an offline research Engine for perception decisions under uncertain
+reference evidence.
 
 Does an added detector improve a perception configuration once missed objects, false detections
 and disputed reference interpretations are counted together? Reiyah computes bounds on that
@@ -23,6 +33,12 @@ The [annotation adapter](research/perception-annotations/0.1.0/README.md) provid
 development route without new reviewer input. It preserves exact label/source identity and
 uses the existing joint-reference compiler and maximum-matching checks. This is a retrospective
 calculation under declared label assumptions, not an official nuScenes score or physical validation.
+
+The [next case preparation](docs/PERCEPTION_CASE_PORTABILITY_2026-09-14.md) uses existing Engine
+interfaces on 14 further exposed frames: 4,228 source rows, 588 retained base detections and 94
+additions. Separate source accounting agrees, and the original case reproduces exactly. This
+checks preparation reuse; the new detector verdict has not been evaluated. The remaining frames
+come from the same two scenes and do not constitute independent scene validation.
 
 The [prediction checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) prepares all **4,876 original
 prediction rows across 16 exposed development keyframes** without reading annotation-bearing

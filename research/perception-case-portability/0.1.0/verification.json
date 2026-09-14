@@ -1,0 +1,250 @@
+{
+  "annotation_request": {
+    "byte_size": 1595,
+    "sha256": "7d03484a9736a1eb79c32b8a2e5f30e595074942ec39ae1ef9636fa7626cb788"
+  },
+  "artifact_id": "reiyah.case-portability.verification",
+  "base_commit": "91af9b59947d136b359a79135f3b2efdf7d687ff",
+  "base_tree": "296c5a9c3584946d98e317920294ed5411c13ff9",
+  "broad_tests": "Not rerun: Engine code is unchanged. Prior 430 repository and 93 measurement checks retained as prior evidence.",
+  "commands": {
+    "prepare-1": {
+      "child_max_rss_bytes_macos": 171081728,
+      "elapsed_seconds": 1.0148474997840822,
+      "ended_utc": "2026-09-14T15:54:28.700082+00:00",
+      "exit_code": 1,
+      "spec_sha256": "1f064700dd20699b1bbe72d602d3066e4ae4835ffb7320dc5e7ed7146e986918",
+      "started_utc": "2026-09-14T15:54:27.685140+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 1937,
+          "sha256": "c116dd4cd359e9c840b326815f065f0c1c3e94ca50d01d615bbd302e3f8089ce"
+        },
+        "stdout.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    "prepare-2": {
+      "child_max_rss_bytes_macos": 169492480,
+      "elapsed_seconds": 1.2389650410041213,
+      "ended_utc": "2026-09-14T15:56:00.161335+00:00",
+      "exit_code": 0,
+      "spec_sha256": "a7e6cdd5140cecba22d19035407ed3d918c1cfdbadc5a8391449b6e484496828",
+      "started_utc": "2026-09-14T15:55:58.922262+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 1769,
+          "sha256": "ce1fa36ad06f435fead0a4b24e93598ece1d494d754fdf6b22d965fda66cc19c"
+        }
+      }
+    },
+    "source-audit": {
+      "child_max_rss_bytes_macos": 169984000,
+      "elapsed_seconds": 1.4177806659135967,
+      "ended_utc": "2026-09-14T15:59:29.190088+00:00",
+      "exit_code": 0,
+      "spec_sha256": "7b355432cb46285fbd205deb59aa3634b81dccdc9337cc4c4f2324dd76abae9c",
+      "started_utc": "2026-09-14T15:59:27.772207+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 622,
+          "sha256": "04d71e3d0dee8173850c604367775e41b47fa0f1b940f581b9f279ad64aceb85"
+        }
+      }
+    },
+    "source-audit-2": {
+      "child_max_rss_bytes_macos": 180109312,
+      "elapsed_seconds": 1.2205205408390611,
+      "ended_utc": "2026-09-14T16:05:31.001291+00:00",
+      "exit_code": 0,
+      "spec_sha256": "800b0b828da0481bdb69f3fb11d241b115daab41f908e181b43a672ed163858a",
+      "started_utc": "2026-09-14T16:05:29.780657+00:00",
+      "streams": {
+        "stderr.txt": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.txt": {
+          "bytes": 644,
+          "sha256": "85c66922a7248165b2700a0b868377e75071c2f184254c923ac9496bc8e207d9"
+        }
+      }
+    }
+  },
+  "consumer_audit": {
+    "artifact_id": "reiyah.case-portability.consumer-audit",
+    "decision_evaluated": false,
+    "frames_checked": 14,
+    "normalizer_or_projection_called": false,
+    "original_literal_rows_checked": 4876,
+    "packet_sha256": "07cc20eaac68039fb063b266ec1afcbfc1bef382f7cfa87fb49604a28d517ad2",
+    "physical_accuracy_checked": false,
+    "refused_mutations": [
+      "dropped_base",
+      "weight_change",
+      "wrong_index",
+      "false_retention",
+      "wrong_source",
+      "finite_reference",
+      "false_decision_claim",
+      "false_admission",
+      "false_common_trace"
+    ],
+    "shared_trusted_code": [
+      "source snapshot",
+      "previously bound catalog clock and pose"
+    ],
+    "source_preparation_agrees": true,
+    "version": "0.1.0"
+  },
+  "consumer_code": {
+    "byte_size": 10485,
+    "sha256": "2cf0f696e021d7452616f303bead8a0f2a17478304dea416678db3467d24eaea"
+  },
+  "cost_boundary": "Command time and peak child RSS only. Different work and command control counts; not a method speedup. Recipe development, interpretation, integration and repair outside commands unmeasured.",
+  "date": "2026-09-14",
+  "next_falsifier": "Consume separately sealed Fable first-case challenge, then evaluate this declared second input using unchanged definitions and retain every adverse or unresolved result.",
+  "plan": {
+    "byte_size": 6558,
+    "sha256": "c7d52c2e89b984a0eadba30b49d3921588560370a25f4fa3fe548dfcf932b3f2"
+  },
+  "preparation": {
+    "addition_count": 94,
+    "annotation_rows_read": false,
+    "artifact_id": "reiyah.case-portability.preparation",
+    "base_count": 588,
+    "decision_evaluated": false,
+    "frame_count": 14,
+    "original_case_reproduced": true,
+    "original_prediction_rows_rechecked": 4876,
+    "per_frame": [
+      {
+        "additions": 11,
+        "base": 45,
+        "frame_id": "frame-0001",
+        "input_rows": 291
+      },
+      {
+        "additions": 8,
+        "base": 49,
+        "frame_id": "frame-0002",
+        "input_rows": 277
+      },
+      {
+        "additions": 7,
+        "base": 48,
+        "frame_id": "frame-0003",
+        "input_rows": 292
+      },
+      {
+        "additions": 7,
+        "base": 51,
+        "frame_id": "frame-0004",
+        "input_rows": 285
+      },
+      {
+        "additions": 5,
+        "base": 52,
+        "frame_id": "frame-0006",
+        "input_rows": 349
+      },
+      {
+        "additions": 6,
+        "base": 56,
+        "frame_id": "frame-0007",
+        "input_rows": 361
+      },
+      {
+        "additions": 9,
+        "base": 60,
+        "frame_id": "frame-0008",
+        "input_rows": 425
+      },
+      {
+        "additions": 6,
+        "base": 30,
+        "frame_id": "frame-0009",
+        "input_rows": 282
+      },
+      {
+        "additions": 6,
+        "base": 35,
+        "frame_id": "frame-0010",
+        "input_rows": 261
+      },
+      {
+        "additions": 8,
+        "base": 31,
+        "frame_id": "frame-0011",
+        "input_rows": 267
+      },
+      {
+        "additions": 7,
+        "base": 31,
+        "frame_id": "frame-0013",
+        "input_rows": 294
+      },
+      {
+        "additions": 5,
+        "base": 35,
+        "frame_id": "frame-0014",
+        "input_rows": 304
+      },
+      {
+        "additions": 5,
+        "base": 34,
+        "frame_id": "frame-0015",
+        "input_rows": 282
+      },
+      {
+        "additions": 4,
+        "base": 31,
+        "frame_id": "frame-0016",
+        "input_rows": 258
+      }
+    ],
+    "qualified_records": 1111,
+    "reference_judgments_admitted": 0,
+    "scope": "Case preparation portability within two already exposed scenes. A conditional detector verdict remains pending the first Fable challenge.",
+    "selected_input_rows": 4228,
+    "shared_trusted_code": [
+      "catalog clock/pose",
+      "source snapshots",
+      "normalizer",
+      "reference lineage check",
+      "common projection and inverse structural check"
+    ],
+    "source_frames_rechecked": 16,
+    "version": "0.1.0"
+  },
+  "preparation_packet": {
+    "byte_size": 5775,
+    "sha256": "07cc20eaac68039fb063b266ec1afcbfc1bef382f7cfa87fb49604a28d517ad2"
+  },
+  "private_task": "engine-case-portability-2026-09-14-idui4k54",
+  "recipe": {
+    "byte_size": 10292,
+    "sha256": "7c07806fd8715861d40777000fe0f19abe4f10509ee5b5c3d0603f9773188ce0"
+  },
+  "retained_first_counterexample": {
+    "artifact_id": "reiyah.case-portability.first-audit-counterexample",
+    "auditor_sha256": "17a4de0180af445cb762b3bd296c4cf6da0ff5b90ee2eaaa36a56993f3c2011b",
+    "mutation": "Changed common operands first trace row retention to addition_retained",
+    "result": "accepted",
+    "scope": "Private consumer audit omitted neutral trace equality; producer output itself remains unchanged and no Engine defect demonstrated.",
+    "version": "0.1.0"
+  },
+  "scope": "Existing-interface input preparation; no second detector verdict, Engine implementation change or independent-scene validation.",
+  "status": "exploratory",
+  "version": "0.1.0"
+}
