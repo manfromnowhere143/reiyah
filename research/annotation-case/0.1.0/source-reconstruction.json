@@ -1,0 +1,89 @@
+{
+  "artifact_id": "reiyah.fable.annotation-case.independent-reconstruction",
+  "built_from": [
+    "v1.0-trainval/sample_annotation.json",
+    "v1.0-trainval/sample.json",
+    "v1.0-trainval/instance.json",
+    "v1.0-trainval/category.json",
+    "v1.0-trainval/sample_data.json",
+    "v1.0-trainval/ego_pose.json",
+    "common/operands.json"
+  ],
+  "criterion": "supported",
+  "engine_claim": {
+    "weighted_delta": 1,
+    "weighted_loss": "23.5->22.5",
+    "window-0001": {
+      "delta": 3,
+      "loss": "29->26",
+      "tp": "40->46"
+    },
+    "window-0002": {
+      "delta": -1,
+      "loss": "18->19",
+      "tp": "32->35"
+    }
+  },
+  "independence": {
+    "agreement": "every reported quantity equals the Engine's claim: membership, classes, exclusions, retained detections, both matchings, both losses and the weighted delta",
+    "boundary_sensitivity": "the closest excluded annotation sits at 50.28 metres against a 50 metre boundary, a margin of 0.28 metres. The membership is not far from the boundary and a different declared range would change it",
+    "cross_check": "the ego translation this lane recovered from the original table, [1246.1489, 1090.7646], equals the nominal ego XY the common operands carry, which were produced by a different lane at a different time",
+    "digests": {
+      "category.json": "30f64fb175e5bd7db99892d90f9034481bca491f26600c5c0d1a56106b198dfe",
+      "common/operands.json": "0fb2f0dd3ae8cb962af11bdcd4ca0ad234a1f05cf2aa4052ecfc61fcf36bd899",
+      "instance.json": "8f8b19496ce45353874714ce23a9df7f47f48cb6203df2dd456ea0247d146461",
+      "meta.tgz": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b",
+      "sample.json": "6035ac58b6e971622be2bb1be15b917e7cb4e05ae984d6b339c27c1699c4ad9d",
+      "sample_annotation.json": "1f4f3835cb86f4efe49ccad3ae6f5f6a2d068422696de564c5892b5b06bea2a9"
+    },
+    "scope": "a reconstruction of the Engine's computation from the original tables. It establishes that the number is what the declared rules give on the declared bytes. It establishes nothing about whether the annotation is correct",
+    "suppression_rule_recovered": "same class, strictly within 2 metres, against the retained base and against previously retained candidates. Base only gives 10 additions at window-0001 instead of 9; adding candidate against candidate gives exactly 9 and 7",
+    "what_was_not_rebuilt": [
+      "the upstream detector inference, which was never rerun by anyone",
+      "the score threshold and the operand qualification, which are consumed from the common operands",
+      "the annotation itself, which is the benchmark's and is the thing under question"
+    ],
+    "what_was_rebuilt_here": [
+      "the 119 annotations at the two anchors, from the original sample_annotation table",
+      "their categories, through the original instance and category tables",
+      "the ego pose, from the original sample_data and ego_pose tables, by a targeted byte scan",
+      "the ego relative range of every annotation, by this lane's own quaternion transform",
+      "the range filter, which accounts for all 13 exclusions and no category is unmapped",
+      "the retained base detections and the suppression rule that produces the additions",
+      "both maximum matchings, by this lane's own matcher"
+    ]
+  },
+  "per_anchor": {
+    "window-0001": {
+      "added": 9,
+      "base": 48,
+      "delta": "3",
+      "edges_augmented": 62,
+      "edges_base": 53,
+      "gain": 6,
+      "loss_augmented": 26,
+      "loss_base": 29,
+      "objects": 61,
+      "tp_augmented": 46,
+      "tp_base": 40
+    },
+    "window-0002": {
+      "added": 7,
+      "base": 37,
+      "delta": "-1",
+      "edges_augmented": 57,
+      "edges_base": 54,
+      "gain": 3,
+      "loss_augmented": 19,
+      "loss_base": 18,
+      "objects": 45,
+      "tp_augmented": 35,
+      "tp_base": 32
+    }
+  },
+  "tolerance": "1/10",
+  "version": "0.1.0",
+  "weighted_delta": "1",
+  "weighted_loss_augmented": "45/2",
+  "weighted_loss_base": "47/2"
+}

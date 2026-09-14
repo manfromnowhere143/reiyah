@@ -169,6 +169,35 @@ REGISTER = [
         "status": "standing, bounded",
     },
     {
+        "headline": ("the benchmark verdict on this cohort rests on six of its 106 labels, and is "
+                     "fragile to a spurious label but not to a missed one"),
+        "checkpoint": "label-dependence-0.1.0",
+        "assumptions": [
+            "the declared loss, tolerance, class map, geometry, suppression rule and weights",
+            "a deletion is a hypothetical spurious label correction and nothing else",
+            "an insertion is placed at an unmatched retained detection's own position",
+            "two previously exposed development frames and one supplied benchmark interpretation"],
+        "refuted_by": [],
+        "bounded_by": [
+            {"artifact": "research/label-dependence/0.2.0/insertion-family.json",
+             "limits": ("the insertion family tested singles and pairs under one insertion rule. "
+                        "Localization error, class error and other insertion geometries are "
+                        "untested, so the asymmetry is established for these families only"),
+             "published_in": "label-dependence-0.2.0"},
+            {"artifact": "research/label-dependence/0.1.0/deletion-family.json",
+             "limits": ("no deletion made the addition harmful. The weighted delta range is 0 to "
+                        "1, so six deletions stop it helping and none makes it hurt. Six of 106 "
+                        "is a count, not a probability"),
+             "published_in": "label-dependence-0.1.0"},
+            {"artifact": "research/annotation-case/0.1.0/source-reconstruction.json",
+             "limits": ("the reconstruction establishes that the number follows from the declared "
+                        "rules on the declared bytes. It establishes nothing about whether any "
+                        "annotation is correct, and the closest excluded label sits 0.28 metres "
+                        "outside the range boundary"),
+             "published_in": "annotation-case-0.1.0"}],
+        "status": "standing, bounded",
+    },
+    {
         "headline": "every decisive verdict is carried entirely by the admission decision",
         "checkpoint": "admission-sensitivity-0.2.0",
         "assumptions": ["that a decisive verdict pins the enclosure to a point",

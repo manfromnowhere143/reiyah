@@ -1,0 +1,198 @@
+"""Tests for the label dependence families, their checker and the forgeries it refuses.
+
+The real case is another owner's private export, so the tests that need it are
+skipped unless REIYAH_ANNOTATION_CASE points at it. Everything else runs on cases
+built here, including the arithmetic that the real result depends on.
+"""
+import copy
+import json
+import os
+import sys
+import unittest
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import check_label_dependence as checker  # noqa: E402
+import cohort_packet as packet  # noqa: E402
+import label_dependence as dependence  # noqa: E402
+
+CASE = os.environ.get("REIYAH_ANNOTATION_CASE")
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+DELETION = os.path.join(ROOT, "research", "label-dependence", "0.1.0", "deletion-family.json")
+INSERTION = os.path.join(ROOT, "research", "label-dependence", "0.2.0", "insertion-family.json")
+
+
+def carrier_case():
+    """One anchor whose whole gain rests on a single label, and one that does not.
+
+    The added detection reaches `o2` and nothing else does, so deleting `o2` costs
+    exactly one unit of gain. `o0` and `o1` are reachable by both configurations,
+    so deleting either is absorbed by reassignment.
+    """
+    return {
+        "schema_id": "reiyah.cohort-packet.case", "cohort_id": "carrier",
+        "loss": {"false_negative": "1", "false_positive": "1", "tolerance": "1/10"},
+        "anchors": [{"id": "A", "weight": "1", "reference_state": "finite",
+                     "base_detections": [{"id": "b0", "class": "car"},
+                                         {"id": "b1", "class": "car"}],
+                     "added_detections": [{"id": "c0", "class": "car"}],
+                     "objects": [{"id": "o0", "class": "car"}, {"id": "o1", "class": "car"},
+                                 {"id": "o2", "class": "car"}]}],
+        "joint_worlds": [{"world_id": "labels", "per_anchor": {"A": {
+            "objects_present": ["o0", "o1", "o2"],
+            "edges": [["b0", "o0"], ["b1", "o1"], ["c0", "o2"]]}}}],
+    }
+
+
+class Arithmetic(unittest.TestCase):
+    def test_a_single_carrier_label_flips_the_criterion(self):
+        case = carrier_case()
+        baseline = dependence.evaluate(case)
+        self.assertEqual(baseline["weighted_delta"], "1")
+        self.assertEqual(baseline["criterion"], "supported")
+        without = dependence.evaluate(dependence.without(case, "A", "o2"))
+        self.assertEqual(without["weighted_delta"], "-1")
+        self.assertEqual(without["criterion"], "excluded")
+
+    def test_reassignment_absorbs_a_deletion_that_is_not_a_carrier(self):
+        case = carrier_case()
+        case["joint_worlds"][0]["per_anchor"]["A"]["edges"].append(["c0", "o0"])
+        baseline = dependence.evaluate(case)
+        after = dependence.evaluate(dependence.without(case, "A", "o0"))
+        self.assertEqual(baseline["per_anchor"]["A"]["tp_augmented"], 3)
+        self.assertEqual(after["per_anchor"]["A"]["tp_augmented"], 2)
+        self.assertEqual(after["per_anchor"]["A"]["tp_base"], 1)
+
+    def test_deleting_a_label_removes_it_from_every_world_and_edge(self):
+        case = carrier_case()
+        edited = dependence.without(case, "A", "o1")
+        self.assertNotIn("o1", [o["id"] for o in edited["anchors"][0]["objects"]])
+        body = edited["joint_worlds"][0]["per_anchor"]["A"]
+        self.assertNotIn("o1", body["objects_present"])
+        self.assertTrue(all(edge[1] != "o1" for edge in body["edges"]))
+        packet.build(edited)
+
+    def test_the_checker_reaches_the_same_numbers_by_its_own_matcher(self):
+        case = carrier_case()
+        mine = dependence.evaluate(case)
+        theirs = checker.decide(case)
+        self.assertEqual(mine["weighted_delta"], theirs["weighted_delta"])
+        self.assertEqual(mine["criterion"], theirs["criterion"])
+        self.assertEqual(mine["per_anchor"]["A"]["tp_augmented"],
+                         theirs["per_anchor"]["A"]["tp_augmented"])
+
+    def test_an_insertion_at_an_unmatched_detection_can_only_help_that_configuration(self):
+        case = carrier_case()
+        case["joint_worlds"][0]["per_anchor"]["A"]["edges"] = [["b0", "o0"], ["b1", "o1"]]
+        candidates = dependence.unmatched_detections(case)
+        self.assertTrue(any(c["detection"] == "c0" for c in candidates))
+        target = next(c for c in candidates if c["detection"] == "c0")
+        before = dependence.evaluate(case)
+        after = dependence.evaluate(dependence.with_insertions(case, [target]))
+        self.assertGreater(float(after["weighted_delta"]), float(before["weighted_delta"]))
+
+    def test_the_three_outcomes_are_kept_apart(self):
+        case = carrier_case()
+        baseline, rows, results = dependence.family(case)
+        events = dependence.classify(baseline, results, None)
+        self.assertIn("strict_loss_sign_changes", events)
+        self.assertIn("falls_to_zero_without_changing_sign", events)
+        self.assertIn("tolerance_crossings", events)
+        self.assertIn("changes_to_unresolved", events)
+
+
+class Forgeries(unittest.TestCase):
+    def setUp(self):
+        self.case = carrier_case()
+        baseline, rows, results = dependence.family(self.case)
+        self.report = {
+            "artifact_id": "reiyah.label-dependence.report",
+            "baseline": baseline,
+            "events": dependence.classify(baseline, results, None),
+            "robust_under_this_family": False, "breakdown_number": 1}
+        checker.verify(self.case, self.report)
+
+    def refuse(self, mutate, fragment):
+        forged = copy.deepcopy(self.report)
+        mutate(forged)
+        with self.assertRaises(checker.Rejected) as caught:
+            checker.verify(self.case, forged)
+        self.assertIn(fragment, str(caught.exception))
+
+    def test_a_witness_that_does_not_flip_is_refused(self):
+        def swap(forged):
+            forged["events"]["tolerance_crossings"] = [
+                {"anchor": "A", "local_index": 0, "class": "car", "weighted_delta": "-1"}]
+        self.refuse(swap, "does not change the criterion")
+
+    def test_a_witness_of_the_wrong_class_is_refused(self):
+        def wrong(forged):
+            forged["events"]["tolerance_crossings"][0]["class"] = "pedestrian"
+        self.refuse(wrong, "not a pedestrian")
+
+    def test_a_witness_outside_the_anchor_is_refused(self):
+        def outside(forged):
+            forged["events"]["tolerance_crossings"][0]["local_index"] = 99
+        self.refuse(outside, "outside")
+
+    def test_a_false_baseline_is_refused(self):
+        self.refuse(lambda f: f["baseline"].__setitem__("weighted_delta", "5"),
+                    "the case gives")
+
+    def test_a_robustness_claim_contradicted_by_its_own_witness_is_refused(self):
+        self.refuse(lambda f: f.__setitem__("robust_under_this_family", True),
+                    "claims robustness while carrying a witness")
+
+    def test_a_breakdown_of_one_with_no_witness_is_refused(self):
+        def empty(forged):
+            forged["events"]["tolerance_crossings"] = []
+        self.refuse(empty, "breakdown number of one is claimed with no witness")
+
+    def test_a_misreported_delta_is_refused(self):
+        self.refuse(lambda f: f["events"]["tolerance_crossings"][0].__setitem__(
+            "weighted_delta", "7"), "recomputes to")
+
+
+@unittest.skipUnless(CASE and os.path.exists(CASE), "the owner's annotation case is not supplied")
+class TheRealCase(unittest.TestCase):
+    """The result itself, checked against retained artifacts rather than rerun prose."""
+
+    def test_the_deletion_family_reproduces_and_every_witness_verifies(self):
+        with open(CASE, "r", encoding="utf-8") as handle:
+            case = json.load(handle)
+        with open(DELETION, "r", encoding="utf-8") as handle:
+            stored = json.load(handle)
+        fresh = dependence.analyse(CASE)
+        self.assertEqual(fresh["case_sha256"], stored["case_sha256"])
+        self.assertEqual(fresh["baseline"]["weighted_delta"], "1")
+        self.assertEqual(fresh["baseline"]["criterion"], "supported")
+        self.assertEqual(fresh["family"]["declared_cases"], 107)
+        self.assertEqual(len(fresh["events"]["tolerance_crossings"]), 6)
+        self.assertEqual(len(fresh["events"]["strict_loss_sign_changes"]), 0)
+        self.assertEqual(fresh["events"]["weighted_delta_range"],
+                         {"lowest": "0", "highest": "1"})
+        self.assertEqual(fresh["breakdown_number"], 1)
+        result = checker.verify(case, fresh)
+        self.assertEqual(result["witnesses_confirmed"], 6)
+
+    def test_the_insertion_family_never_lowers_the_verdict(self):
+        fresh = dependence.insertion_family(CASE)
+        with open(INSERTION, "r", encoding="utf-8") as handle:
+            stored = json.load(handle)
+        self.assertEqual(fresh["candidates"], stored["candidates"])
+        self.assertEqual(fresh["singles"]["criterion_changes"], 0)
+        self.assertEqual(fresh["singles"]["weighted_delta_range"],
+                         {"lowest": "1", "highest": "2"})
+        self.assertIsNone(fresh["pairs"]["witness"])
+        self.assertIsNone(fresh["breakdown_number"])
+
+    def test_no_source_identifier_reaches_a_retained_artifact(self):
+        import re
+        for path in (DELETION, INSERTION):
+            with open(path, "r", encoding="utf-8") as handle:
+                text = handle.read()
+            self.assertEqual(re.findall(r"\b[0-9a-f]{32}\b", text), [])
+            self.assertEqual(re.findall(r"configuration-\d+-row-\d+", text), [])
+
+
+if __name__ == "__main__":
+    unittest.main()

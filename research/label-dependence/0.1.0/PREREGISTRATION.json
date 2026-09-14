@@ -1,0 +1,49 @@
+{
+  "artifact_id": "reiyah.label-dependence.preregistration",
+  "case": {
+    "identity": "the Engine's annotation conditional export, two anchors, 106 included labels",
+    "sha256": "expected to be checked at run time"
+  },
+  "comparator": "the ordinary analyst is given the identical bytes and the identical family, and is allowed to reuse computation across cases. Both a naive recomputation and a reuse aware baseline are measured",
+  "declared_in_advance": {
+    "either_result_is_published": true,
+    "fragile_if": "any single deletion changes the improvement criterion away from supported",
+    "no_enlargement": "if no deletion flips the criterion, the family is not enlarged to chase a flip. A second, separately preregistered family may be declared, but its result is reported as its own family and never merged into this one",
+    "robust_under_this_family_if": "no single deletion changes the criterion"
+  },
+  "family": {
+    "cases": 107,
+    "composition": "the unchanged baseline plus each deletion of exactly one of the 106 included annotations, one at a time",
+    "held_fixed": [
+      "every prediction and its score",
+      "both configurations",
+      "the class map",
+      "the geometry",
+      "the suppression rule",
+      "the anchor weights",
+      "the tolerance",
+      "the loss and its penalties"
+    ]
+  },
+  "fixed_before_any_result": true,
+  "outcomes_kept_distinct": {
+    "change_to_unresolved": "the criterion becomes unresolved rather than merely changing value",
+    "loss_sign_change": "the weighted delta changes sign",
+    "note": "these are three different events and none of them is called an opposite preference flip",
+    "tolerance_crossing": "the weighted delta crosses the tolerance, changing the criterion"
+  },
+  "question": "does the supported verdict on this cohort survive the removal of any single annotation, one at a time",
+  "recomputation": "both the base and the augmented maximum matching are recomputed from scratch for every case, so matching competition and reassignment are preserved. No per case result is inferred from the baseline",
+  "recorded_outcomes": [
+    "the weighted delta for every case",
+    "the per anchor delta for every case",
+    "the improvement criterion and the preference for every case",
+    "the exact range of weighted deltas over the family",
+    "counts for every criterion and preference outcome"
+  ],
+  "recorded_utc": "2026-09-14T16:02:57.365608+00:00",
+  "scope": "one cohort, two previously exposed development frames, one supplied benchmark interpretation. Not two admitted human readings, not a physical reference, not a label accuracy assessment and not a generalization result",
+  "version": "0.1.0",
+  "what_a_deletion_means": "a hypothetical spurious label correction: the annotation is removed as if it should never have been there. It is not an observed annotation error, a probability model, a physical reading or a human admission. It does not test missing objects, localization error, class error or any other label error family",
+  "why_it_matters": "the conventional answer treats the annotation as complete and correct. If one spurious label carries the verdict, that answer is an artifact of the labels rather than of the detectors, and a validation lead should know which label"
+}

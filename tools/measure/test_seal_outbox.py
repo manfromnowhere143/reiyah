@@ -123,6 +123,39 @@ class TransportBoundary(unittest.TestCase):
             seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"}, header)
         self.assertIn("asserts independent transport", str(caught.exception))
 
+    def test_a_nested_transport_state_is_refused_at_every_depth(self):
+        """The consumer's reproduced defect: 0.2.0 checked the root field only."""
+        for header in (
+            {"publication": {"transport_verification_state": "independently_verified"}},
+            {"a": {"b": [{"transport_verification_state": "independently_verified"}]}},
+            {"checks": [{"transport_status": "independently_verified"}]},
+        ):
+            for name in list(os.listdir(self.outbox)):
+                if name.startswith("MANIFEST"):
+                    os.remove(os.path.join(self.outbox, name))
+            with self.assertRaises(seal.SealError) as caught:
+                seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"}, header)
+            self.assertIn("at every depth", str(caught.exception))
+            self.assertFalse(os.path.exists(os.path.join(self.outbox, "MANIFEST.json")))
+
+    def test_a_manifest_never_carries_two_transport_states(self):
+        header = {"publication": {"transport_verification_state": "asserted_unverified"}}
+        seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"}, header)
+        with open(os.path.join(self.outbox, "MANIFEST.json"), encoding="utf-8") as handle:
+            manifest = json.load(handle)
+        found = set()
+        stack = [manifest]
+        while stack:
+            node = stack.pop()
+            if isinstance(node, dict):
+                for key, value in node.items():
+                    if key in seal.TRANSPORT_FIELDS:
+                        found.add(value)
+                    stack.append(value)
+            elif isinstance(node, list):
+                stack.extend(node)
+        self.assertEqual(found, {"asserted_unverified"})
+
     def test_a_header_may_not_set_the_transport_field_itself(self):
         header = {"transport_verification_state": "independently_verified"}
         with self.assertRaises(seal.SealError) as caught:

@@ -1,0 +1,46 @@
+{
+  "artifact_id": "reiyah.label-dependence.preregistration",
+  "declared_in_advance": {
+    "both_directions_published": true,
+    "no_enlargement_beyond_pairs": "if no single and no pair changes the criterion, the result is reported as robustness to one and two misses and the family stops there",
+    "this_is_not_a_probability": "counts of hypothetical corrections are not likelihoods. No claim is made about how often this annotation actually misses"
+  },
+  "family": {
+    "held_fixed": [
+      "every prediction and its score",
+      "both configurations",
+      "the class map",
+      "the suppression rule",
+      "the anchor weights",
+      "the tolerance",
+      "the loss and its penalties",
+      "every existing annotation"
+    ],
+    "insertion_rule": "one insertion per retained detection that the augmented configuration leaves unmatched, placed at that detection's own position with that detection's class. No geometry is invented: the hypothesis is exactly 'this detection is right and the annotation missed the object'",
+    "reachability": "the inserted object is reachable by every retained detection of the same class within the declared 2 metre rule, recomputed, not assigned. That includes base detections, so an insertion can help the base as easily as the addition",
+    "sizes": "singles first; pairs only if no single changes the criterion, declared here in advance"
+  },
+  "fixed_before_any_result": true,
+  "justified_by": "the 0.1.0 result, not by a search for a flip. The deletion family found a breakdown number of 1, so the opposite direction is the next thing a validation lead needs and is the direction this benchmark is known to fail in",
+  "outcomes_kept_distinct": {
+    "fall_to_zero": "the delta reaches zero without changing sign",
+    "note": "three different events, never reported as one",
+    "strict_sign_change": "the weighted delta changes sign",
+    "tolerance_crossing": "the criterion changes"
+  },
+  "question": "if the annotation missed an object that a retained detection actually found, how many such misses would it take to change the improvement criterion, and in which direction does the conventional answer err",
+  "recomputation": "both matchings recomputed from scratch for every case",
+  "recorded_outcomes": [
+    "the weighted delta for every case",
+    "the criterion and preference",
+    "the exact range over the family",
+    "the smallest number of insertions that changes the criterion",
+    "whether the change is toward supported or away from it"
+  ],
+  "recorded_utc": "2026-09-14T16:05:34.210546+00:00",
+  "scope": "one cohort, two previously exposed development frames, one supplied benchmark interpretation, one insertion rule. Not a label accuracy assessment, not a physical reference, not evidence of decision value",
+  "separate_family": "this is a second family with its own declaration. Its results are reported as its own and are never merged into the 0.1.0 deletion family",
+  "version": "0.2.0",
+  "what_an_insertion_means": "a hypothetical missed label correction. It is not an observed object, a physical reading, a human admission or a claim that the detection is correct. It is the smallest well defined way to ask what a missed annotation would do",
+  "why_this_direction_matters": "a spurious label and a missed label are not symmetric under this loss. A missed label turns a correct detection into a counted false positive, so if the added detector finds objects the annotation lacks, the conventional answer understates it. Which way the annotation actually fails is not established here and is not assumed"
+}

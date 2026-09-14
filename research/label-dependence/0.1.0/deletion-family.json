@@ -1,0 +1,159 @@
+{
+  "artifact_id": "reiyah.label-dependence.report",
+  "baseline": {
+    "criterion": "supported",
+    "enclosure": {
+      "lower": "1",
+      "upper": "1"
+    },
+    "per_anchor": {
+      "window-0001": {
+        "delta": "3",
+        "tp_augmented": 46,
+        "tp_base": 40
+      },
+      "window-0002": {
+        "delta": "-1",
+        "tp_augmented": 35,
+        "tp_base": 32
+      }
+    },
+    "point": true,
+    "preference": "prefer_augmented",
+    "weighted_delta": "1"
+  },
+  "breakdown_meaning": "the smallest number of single label deletions in this family that changes the improvement criterion. One means the verdict does not survive a single spurious annotation among the named witnesses",
+  "breakdown_number": 1,
+  "case_sha256": "ebfebf67d847a1b7b019a81910a6ad99860f0ce86616cd5b7f3a71e11aa2a19f",
+  "cost": {
+    "note": "every case recomputes both matchings at both anchors. A result inferred from the baseline would miss matching reassignment",
+    "recomputations": 428,
+    "seconds": 0.1076
+  },
+  "events": {
+    "changes_to_unresolved": [],
+    "distinct_weighted_deltas": [
+      "0",
+      "1"
+    ],
+    "falls_to_zero_without_changing_sign": [
+      {
+        "anchor": "window-0001",
+        "baseline_weighted_delta": "1",
+        "class": "traffic_cone",
+        "local_index": 16,
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0001",
+        "baseline_weighted_delta": "1",
+        "class": "traffic_cone",
+        "local_index": 31,
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0001",
+        "baseline_weighted_delta": "1",
+        "class": "traffic_cone",
+        "local_index": 58,
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0002",
+        "baseline_weighted_delta": "1",
+        "class": "car",
+        "local_index": 5,
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0002",
+        "baseline_weighted_delta": "1",
+        "class": "car",
+        "local_index": 16,
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0002",
+        "baseline_weighted_delta": "1",
+        "class": "car",
+        "local_index": 36,
+        "weighted_delta": "0"
+      }
+    ],
+    "strict_loss_sign_changes": [],
+    "tolerance_crossings": [
+      {
+        "anchor": "window-0001",
+        "baseline_weighted_delta": "1",
+        "class": "traffic_cone",
+        "criterion": "excluded",
+        "local_index": 16,
+        "preference": "equivalent_within_tolerance",
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0001",
+        "baseline_weighted_delta": "1",
+        "class": "traffic_cone",
+        "criterion": "excluded",
+        "local_index": 31,
+        "preference": "equivalent_within_tolerance",
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0001",
+        "baseline_weighted_delta": "1",
+        "class": "traffic_cone",
+        "criterion": "excluded",
+        "local_index": 58,
+        "preference": "equivalent_within_tolerance",
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0002",
+        "baseline_weighted_delta": "1",
+        "class": "car",
+        "criterion": "excluded",
+        "local_index": 5,
+        "preference": "equivalent_within_tolerance",
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0002",
+        "baseline_weighted_delta": "1",
+        "class": "car",
+        "criterion": "excluded",
+        "local_index": 16,
+        "preference": "equivalent_within_tolerance",
+        "weighted_delta": "0"
+      },
+      {
+        "anchor": "window-0002",
+        "baseline_weighted_delta": "1",
+        "class": "car",
+        "criterion": "excluded",
+        "local_index": 36,
+        "preference": "equivalent_within_tolerance",
+        "weighted_delta": "0"
+      }
+    ],
+    "weighted_delta_range": {
+      "highest": "1",
+      "lowest": "0"
+    }
+  },
+  "family": {
+    "baseline": 1,
+    "declared_cases": 107,
+    "deletions": 106
+  },
+  "outcome_counts": {
+    "excluded / equivalent_within_tolerance": 6,
+    "supported / prefer_augmented": 100
+  },
+  "preregistration_sha256": "24cb90eff90f60431fd92cd25e504842eb24898e1ec40c1cc4399601e38cfe5d",
+  "robust_under_this_family": false,
+  "scope": "one deletion family on one supplied benchmark interpretation. Robustness here is robustness to single spurious labels and to nothing else. It is not a label accuracy assessment, a physical reference or evidence of decision value",
+  "tolerance": "1/10",
+  "version": "0.1.0"
+}
