@@ -117,10 +117,24 @@ class TransportBoundary(unittest.TestCase):
         self.assertIn("publisher readback", str(caught.exception))
         self.assertFalse(os.path.exists(os.path.join(self.outbox, "MANIFEST.json")))
 
-    def test_the_claim_is_refused_in_a_value_as_well_as_a_key(self):
-        header = {"note": "this clone is an independent transport verification of the push"}
-        with self.assertRaises(seal.SealError):
+    def test_a_nested_claiming_field_is_refused(self):
+        header = {"publication": {"checks": [{"transport_verified": True}]}}
+        with self.assertRaises(seal.SealError) as caught:
             seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"}, header)
+        self.assertIn("asserts independent transport", str(caught.exception))
+
+    def test_a_header_may_not_set_the_transport_field_itself(self):
+        header = {"transport_verification_state": "independently_verified"}
+        with self.assertRaises(seal.SealError) as caught:
+            seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"}, header)
+        self.assertIn("seal owns that field", str(caught.exception))
+
+    def test_a_record_correcting_the_wording_is_not_blocked_from_saying_it(self):
+        """The guard reads fields, not prose. A correction has to be able to name the error."""
+        header = {"correction": "the earlier manifest called this an independent transport "
+                                "verification; it is publisher readback"}
+        result = seal.seal(self.outbox, self.root, self.head, {"kept.json": "kept.json"}, header)
+        self.assertEqual(result["committed"], 1)
 
     def test_an_honest_publisher_readback_header_is_accepted(self):
         header = {"publication": {"publisher_readback": "a fresh clone returned the same tree"}}

@@ -48,16 +48,38 @@ class SealError(Exception):
     """The packet cannot be sealed with an accurate origin."""
 
 
+def _keys(value, path=()):
+    """Every key in the header, at any depth, with the path that reaches it."""
+    if isinstance(value, dict):
+        for key, inner in value.items():
+            yield path + (key,)
+            yield from _keys(inner, path + (key,))
+    elif isinstance(value, list):
+        for item in value:
+            yield from _keys(item, path)
+
+
 def refuse_transport_claim(header):
-    """A publisher may not label its own readback an independent verification."""
-    text = json.dumps(header or {}, sort_keys=True).lower()
-    for phrase in ("independent_transport", "independently transported",
-                   "independent transport"):
-        if phrase in text:
+    """A publisher may not label its own readback an independent verification.
+
+    The check is on the header's KEYS and on the transport field itself, not on
+    prose. A record that explains the correction has to be able to say the words;
+    what it may not do is carry a field asserting the state. The comparator 0.2.0
+    defect was exactly such a field, `independent_transport_verification`.
+    """
+    header = header or {}
+    for path in _keys(header):
+        name = str(path[-1]).lower().replace("-", "_").replace(" ", "_")
+        if "independent_transport" in name or "transport_verified" in name:
             raise SealError(
-                "the header claims independent transport verification. A publisher's own clone "
-                "of its own push is publisher readback; an independent transport state needs a "
-                "separately authorized observation record. See docs/STATUS_MODEL.md and RGA-020")
+                f"header field {'.'.join(map(str, path))} asserts independent transport "
+                "verification. A publisher's own clone of its own push is publisher readback; an "
+                "independent transport state needs a separately authorized observation record. "
+                "See docs/STATUS_MODEL.md and RGA-020")
+    declared = header.get("transport_verification_state")
+    if declared is not None and declared != TRANSPORT_STATE:
+        raise SealError(f"the header sets transport_verification_state to {declared!r}. The seal "
+                        f"owns that field and it stays {TRANSPORT_STATE!r}")
 
 
 def digest_bytes(data):
