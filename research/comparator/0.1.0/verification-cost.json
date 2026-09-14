@@ -1,0 +1,137 @@
+{
+  "artifact_id": "reiyah.comparator.verification-cost",
+  "decision": "the Engine additive loss delta = (a+b)(TP_augmented - TP_base) - b*r",
+  "question": "does verifying a reported enclosure by Konig certificate earn anything over an analyst re-running a maximum matcher with the same evidence",
+  "rows": [
+    {
+      "analyst_rerun_ms": 0.0049,
+      "case": "matching-trap",
+      "certificate_ms": 0.0611,
+      "detections": 2,
+      "edges": 5,
+      "ratio": 0.0799,
+      "source": "retained",
+      "worlds": 2
+    },
+    {
+      "analyst_rerun_ms": 0.0162,
+      "case": "oppositely-coupled",
+      "certificate_ms": 0.0864,
+      "detections": 4,
+      "edges": 10,
+      "ratio": 0.1879,
+      "source": "retained",
+      "worlds": 2
+    },
+    {
+      "analyst_rerun_ms": 0.034,
+      "case": "adaptive-beats-fixed-case",
+      "certificate_ms": 0.2065,
+      "detections": 6,
+      "edges": 30,
+      "ratio": 0.1647,
+      "source": "retained",
+      "worlds": 4
+    },
+    {
+      "analyst_rerun_ms": 0.026,
+      "case": "geometry-ambiguity-plan-case",
+      "certificate_ms": 0.0633,
+      "detections": 2,
+      "edges": 5,
+      "ratio": 0.4112,
+      "source": "retained",
+      "worlds": 2
+    },
+    {
+      "analyst_rerun_ms": 0.084,
+      "case": "sixteen-candidates-plan-case",
+      "certificate_ms": 0.2067,
+      "detections": 32,
+      "edges": 80,
+      "ratio": 0.4066,
+      "source": "retained",
+      "worlds": 2
+    },
+    {
+      "analyst_rerun_ms": 0.0099,
+      "case": "worst-group-flip-case",
+      "certificate_ms": 0.0888,
+      "detections": 4,
+      "edges": 10,
+      "ratio": 0.1115,
+      "source": "retained",
+      "worlds": 2
+    },
+    {
+      "analyst_rerun_ms": 0.0656,
+      "case": "three-copies-plan-case",
+      "certificate_ms": 0.1957,
+      "detections": 6,
+      "edges": 60,
+      "ratio": 0.3355,
+      "source": "retained",
+      "worlds": 8
+    },
+    {
+      "analyst_rerun_ms": 0.1075,
+      "case": "scale-20",
+      "certificate_ms": 0.1513,
+      "detections": 30,
+      "edges": 90,
+      "ratio": 0.7102,
+      "source": "synthetic",
+      "worlds": 1
+    },
+    {
+      "analyst_rerun_ms": 0.9125,
+      "case": "scale-60",
+      "certificate_ms": 0.5071,
+      "detections": 90,
+      "edges": 360,
+      "ratio": 1.7996,
+      "source": "synthetic",
+      "worlds": 1
+    },
+    {
+      "analyst_rerun_ms": 7.0188,
+      "case": "scale-150",
+      "certificate_ms": 1.852,
+      "detections": 225,
+      "edges": 1125,
+      "ratio": 3.7898,
+      "source": "synthetic",
+      "worlds": 1
+    },
+    {
+      "analyst_rerun_ms": 28.0575,
+      "case": "scale-300",
+      "certificate_ms": 6.1942,
+      "detections": 450,
+      "edges": 2700,
+      "ratio": 4.5296,
+      "source": "synthetic",
+      "worlds": 1
+    },
+    {
+      "analyst_rerun_ms": 123.8631,
+      "case": "scale-600",
+      "certificate_ms": 26.2998,
+      "detections": 900,
+      "edges": 7200,
+      "ratio": 4.7097,
+      "source": "synthetic",
+      "worlds": 1
+    }
+  ],
+  "runtime": {
+    "note": "command timings on one machine, not human effort",
+    "platform": "macOS-14.4-arm64-arm-64bit-Mach-O",
+    "python": "3.14.2"
+  },
+  "two_paths": {
+    "analyst_rerun": "recompute each maximum matching directly, which is what ordinary tools do",
+    "certificate": "check the matching is one to one on real edges, the cover covers every edge, and their sizes are equal. No matcher is implemented"
+  },
+  "version": "0.1.0"
+}

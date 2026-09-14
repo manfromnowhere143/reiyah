@@ -53,6 +53,8 @@ Python's `Fraction` and integer arithmetic.
 
 | `ghost-burden-none` and `ghost-burden-three` | `supported` at `+1` against `excluded` at `-2` | the same capture table in both: the same object captured by both channels, the same `tp_base` and `tp_augmented`. Only the false positive burden differs. Retained to show that a dependence coefficient certificate does not determine the integration decision |
 
+| `bracketed-observation-case` | 39 disputed atoms, observation list bracketed `[1, 2]` | the shortest list is not always pinned by its own certificate. The packing forces at least one atom and a cover of two is exhibited, so the report brackets instead of claiming. Retained so that the bracketed state stays exercised rather than disappearing behind the cases where the bounds happen to meet |
+
 `answer-prerequisites.json` records which questions have a defined measurement, at what stage each
 may be asked, and what is missing. Presence questions are supported. Reachability, calibration and
 timing questions are not, and each is recorded as a named missing prerequisite rather than assumed.

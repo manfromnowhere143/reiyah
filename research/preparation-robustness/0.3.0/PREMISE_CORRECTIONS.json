@@ -1,0 +1,502 @@
+{
+  "artifact_id": "reiyah.preparation-robustness.premise-corrections",
+  "corrects": {
+    "artifact": "reiyah.preparation-robustness.counts",
+    "preregistration_sha256": "8e633b95e594c8b9c13061cb0af2ce19e0049a317013f3687a3c742144ac367c",
+    "sha256": "b14bd70c70808ebc63f58f14c38f8c3a762decf13c8408c0da1d7062e9aabdc8",
+    "version": "0.2.0",
+    "what_is_corrected": "the interpretation only. The grid's numbers stand"
+  },
+  "premise_1_scope_and_cutoff": {
+    "correction": "the claim that every preparation moved every cutoff is withdrawn. The two rows that move nothing are the full population compared with itself, which is not a scope change",
+    "largest_move": {
+      "size": 0.521411,
+      "where": {
+        "detector": "megvii",
+        "from": 0.272641,
+        "preparation": [
+          "vehicles_only",
+          "within_30m",
+          "best_band_only"
+        ],
+        "to": 0.794052
+      }
+    },
+    "moved_all_five": 31,
+    "moved_at_least_one": 33,
+    "moved_cutoff_histogram": {
+      "0": 2,
+      "4": 2,
+      "5": 31
+    },
+    "moved_none": [
+      [
+        "all_classes",
+        "all_ranges",
+        "all_visibility"
+      ],
+      [
+        "all_classes",
+        "within_50m",
+        "all_visibility"
+      ]
+    ],
+    "rows_computed_in_the_matched_arm": 35,
+    "rows_not_computed": 13,
+    "rows_total": 48
+  },
+  "premise_2_residual_mismatch": {
+    "correction": "the marginals are described as approximately matched. They are not matched, the gap is stated in objects and in rate, and the obstruction is the score granularity of one submission, not a tolerance choice",
+    "detectors": {
+      "centerpoint": {
+        "covered_objects": 119627,
+        "cutoff": 0.446661,
+        "distinct_scores": 118751,
+        "kept_at_or_above": 94196,
+        "kept_strictly_above": 94196,
+        "matched_target_94196_attainable": true,
+        "nearest_attainable_above_94196": 94196,
+        "nearest_attainable_below_94196": 94196,
+        "rule_that_reproduces_it": "strictly greater than the cutoff",
+        "stored_kept_count": 94196,
+        "tied_exactly_at_the_cutoff": 0
+      },
+      "fcos3d": {
+        "covered_objects": 103495,
+        "cutoff": 0.097451,
+        "distinct_scores": 103238,
+        "kept_at_or_above": 94196,
+        "kept_strictly_above": 94196,
+        "matched_target_94196_attainable": true,
+        "nearest_attainable_above_94196": 94196,
+        "nearest_attainable_below_94196": 94196,
+        "rule_that_reproduces_it": "strictly greater than the cutoff",
+        "stored_kept_count": 94196,
+        "tied_exactly_at_the_cutoff": 0
+      },
+      "mapillary": {
+        "covered_objects": 101778,
+        "cutoff": 0.088672,
+        "distinct_scores": 101485,
+        "kept_at_or_above": 94196,
+        "kept_strictly_above": 94196,
+        "matched_target_94196_attainable": true,
+        "nearest_attainable_above_94196": 94196,
+        "nearest_attainable_below_94196": 94196,
+        "rule_that_reproduces_it": "strictly greater than the cutoff",
+        "stored_kept_count": 94196,
+        "tied_exactly_at_the_cutoff": 0
+      },
+      "megvii": {
+        "covered_objects": 116474,
+        "cutoff": 0.272641,
+        "distinct_scores": 116006,
+        "kept_at_or_above": 94196,
+        "kept_strictly_above": 94196,
+        "matched_target_94196_attainable": true,
+        "nearest_attainable_above_94196": 94196,
+        "nearest_attainable_below_94196": 94196,
+        "rule_that_reproduces_it": "strictly greater than the cutoff",
+        "stored_kept_count": 94196,
+        "tied_exactly_at_the_cutoff": 0
+      },
+      "pointpillars": {
+        "covered_objects": 115805,
+        "cutoff": 0.1492,
+        "distinct_scores": 9370,
+        "kept_at_or_above": 94200,
+        "kept_strictly_above": 94174,
+        "matched_target_94196_attainable": false,
+        "nearest_attainable_above_94196": 94200,
+        "nearest_attainable_below_94196": 94174,
+        "rule_that_reproduces_it": "strictly greater than the cutoff",
+        "stored_kept_count": 94174,
+        "tied_exactly_at_the_cutoff": 26
+      }
+    },
+    "full_scope_misses": {
+      "centerpoint": 40369,
+      "fcos3d": 40369,
+      "mapillary": 40369,
+      "megvii": 40369,
+      "pointpillars": 40391
+    },
+    "inputs": {
+      "matched_centerpoint.json": "6a8be866b3316857f44787a3676b1557d9d8dfb6a945f16f469bb10877326275",
+      "matched_fcos3d.json": "dd7fa5d2fe13b34a4bf6762f4c8cd512e629c88bcbbb5227dfa58cf46ae8cdf4",
+      "matched_mapillary.json": "a8fef4a1e7dbf0fed84ae1220332fcb97196e468ebf23cb77fe835871466caca",
+      "matched_megvii.json": "2ce14fcca8235438d2f9b2ab844f83e21413e97a2ab0cf597f445bac6e35a0c1",
+      "matched_pointpillars.json": "46b0f70daf6e18f08a4a439c502e7026c2b5d67bcffbb2109f92b314478f484e"
+    },
+    "residual_mismatch_objects": 22,
+    "residual_mismatch_rate": "22/134565",
+    "state": "recomputed",
+    "tie_rule": "strictly greater than the cutoff",
+    "why_no_exact_match": "the matched target is not an attainable kept count for every detector, so no cutoff of any precision produces it"
+  },
+  "premise_3_not_an_impossibility": {
+    "correction": "it is an empirical limitation of this fixed cutoff family on this population. Scope conditional statistics remain definable",
+    "earlier": "zero exact matches was read as a limit on subsetting",
+    "kept_distinct": [
+      "a descriptive comparison",
+      "a matched marginal comparison",
+      "a claim about a dependence mechanism"
+    ]
+  },
+  "premise_4_sensitivity_is_not_cause": {
+    "correction": "it identifies numerical sensitivity under this procedure. It does not identify a physical cause and does not rule out a scope by cutoff interaction",
+    "earlier": "the counterfactual cutoff calculation was read as isolating a cause",
+    "kept_distinct": [
+      "a fixed numerical cutoff",
+      "a fixed achieved operating rate"
+    ]
+  },
+  "premise_5_parity_is_a_hypothesis": {
+    "correction": "they constrain the methods and problems they were found on. Broader parity is a hypothesis, and an integration advantage has to be measured against an analyst with ordinary tools",
+    "earlier": "the parities were read as a general property of this kind of analysis",
+    "measured_so_far": "research/comparator/0.1.0/end-to-end.json"
+  },
+  "premise_6_duplicate_preparations": {
+    "consequence": "any share computed over the grid as though its 48 labels were 48 independent preparations is computed over fewer",
+    "distinct_preparations": 33,
+    "duplicate_groups": 15,
+    "duplicates": [
+      {
+        "kept_counts": [
+          12794,
+          10928,
+          11373,
+          11542,
+          10790
+        ],
+        "labels": [
+          [
+            "vulnerable_road_users_only",
+            "all_ranges",
+            "best_band_only"
+          ],
+          [
+            "vulnerable_road_users_only",
+            "within_50m",
+            "best_band_only"
+          ]
+        ],
+        "population": 14617
+      },
+      {
+        "kept_counts": [
+          10400,
+          10005,
+          9573,
+          10852,
+          10721
+        ],
+        "labels": [
+          [
+            "all_classes",
+            "beyond_30m",
+            "best_band_only"
+          ],
+          [
+            "exclude_static_furniture",
+            "beyond_30m",
+            "best_band_only"
+          ]
+        ],
+        "population": 14920
+      },
+      {
+        "kept_counts": [
+          18143,
+          15323,
+          16333,
+          16049,
+          15392
+        ],
+        "labels": [
+          [
+            "vulnerable_road_users_only",
+            "all_ranges",
+            "exclude_worst_band"
+          ],
+          [
+            "vulnerable_road_users_only",
+            "within_50m",
+            "exclude_worst_band"
+          ]
+        ],
+        "population": 21752
+      },
+      {
+        "kept_counts": [
+          17368,
+          17200,
+          16428,
+          18412,
+          18276
+        ],
+        "labels": [
+          [
+            "all_classes",
+            "beyond_30m",
+            "exclude_worst_band"
+          ],
+          [
+            "exclude_static_furniture",
+            "beyond_30m",
+            "exclude_worst_band"
+          ]
+        ],
+        "population": 27338
+      },
+      {
+        "kept_counts": [
+          22245,
+          18133,
+          19814,
+          19170,
+          19181
+        ],
+        "labels": [
+          [
+            "vulnerable_road_users_only",
+            "all_ranges",
+            "all_visibility"
+          ],
+          [
+            "vulnerable_road_users_only",
+            "within_50m",
+            "all_visibility"
+          ]
+        ],
+        "population": 29747
+      },
+      {
+        "kept_counts": [
+          31105,
+          31263,
+          30439,
+          32419,
+          31435
+        ],
+        "labels": [
+          [
+            "vehicles_only",
+            "all_ranges",
+            "best_band_only"
+          ],
+          [
+            "vehicles_only",
+            "within_50m",
+            "best_band_only"
+          ]
+        ],
+        "population": 36505
+      },
+      {
+        "kept_counts": [
+          21444,
+          22240,
+          20810,
+          23249,
+          23519
+        ],
+        "labels": [
+          [
+            "all_classes",
+            "beyond_30m",
+            "all_visibility"
+          ],
+          [
+            "exclude_static_furniture",
+            "beyond_30m",
+            "all_visibility"
+          ]
+        ],
+        "population": 41697
+      },
+      {
+        "kept_counts": [
+          43899,
+          42191,
+          41812,
+          43961,
+          42225
+        ],
+        "labels": [
+          [
+            "exclude_static_furniture",
+            "all_ranges",
+            "best_band_only"
+          ],
+          [
+            "exclude_static_furniture",
+            "within_50m",
+            "best_band_only"
+          ]
+        ],
+        "population": 51122
+      },
+      {
+        "kept_counts": [
+          44979,
+          45378,
+          44000,
+          47456,
+          45906
+        ],
+        "labels": [
+          [
+            "vehicles_only",
+            "all_ranges",
+            "exclude_worst_band"
+          ],
+          [
+            "vehicles_only",
+            "within_50m",
+            "exclude_worst_band"
+          ]
+        ],
+        "population": 56693
+      },
+      {
+        "kept_counts": [
+          58375,
+          58631,
+          58062,
+          57742,
+          56447
+        ],
+        "labels": [
+          [
+            "all_classes",
+            "all_ranges",
+            "best_band_only"
+          ],
+          [
+            "all_classes",
+            "within_50m",
+            "best_band_only"
+          ]
+        ],
+        "population": 70045
+      },
+      {
+        "kept_counts": [
+          51689,
+          53186,
+          50933,
+          55885,
+          54411
+        ],
+        "labels": [
+          [
+            "vehicles_only",
+            "all_ranges",
+            "all_visibility"
+          ],
+          [
+            "vehicles_only",
+            "within_50m",
+            "all_visibility"
+          ]
+        ],
+        "population": 75416
+      },
+      {
+        "kept_counts": [
+          63122,
+          60701,
+          60333,
+          63505,
+          61298
+        ],
+        "labels": [
+          [
+            "exclude_static_furniture",
+            "all_ranges",
+            "exclude_worst_band"
+          ],
+          [
+            "exclude_static_furniture",
+            "within_50m",
+            "exclude_worst_band"
+          ]
+        ],
+        "population": 78445
+      },
+      {
+        "kept_counts": [
+          80982,
+          80993,
+          80689,
+          80414,
+          79000
+        ],
+        "labels": [
+          [
+            "all_classes",
+            "all_ranges",
+            "exclude_worst_band"
+          ],
+          [
+            "all_classes",
+            "within_50m",
+            "exclude_worst_band"
+          ]
+        ],
+        "population": 102452
+      },
+      {
+        "kept_counts": [
+          73934,
+          71319,
+          70747,
+          75055,
+          73592
+        ],
+        "labels": [
+          [
+            "exclude_static_furniture",
+            "all_ranges",
+            "all_visibility"
+          ],
+          [
+            "exclude_static_furniture",
+            "within_50m",
+            "all_visibility"
+          ]
+        ],
+        "population": 105163
+      },
+      {
+        "kept_counts": [
+          94196,
+          94196,
+          94196,
+          94196,
+          94174
+        ],
+        "labels": [
+          [
+            "all_classes",
+            "all_ranges",
+            "all_visibility"
+          ],
+          [
+            "all_classes",
+            "within_50m",
+            "all_visibility"
+          ]
+        ],
+        "population": 134565
+      }
+    ],
+    "finding": "the cache reaches 50 metres and no further, so within_50m selects the whole population and duplicates all_ranges. The remaining coincidences are preparations that happen to select the same rows on this population",
+    "labels": 48,
+    "rows_inside_a_duplicate_group": 30,
+    "within_50m_is_the_identity_in": 12
+  },
+  "scope": "this record corrects what was said about the retained grid. It does not recompute the grid, does not change the preregistration, and creates no new result about coupling",
+  "version": "0.3.0"
+}

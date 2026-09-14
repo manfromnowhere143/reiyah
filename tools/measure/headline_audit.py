@@ -13,6 +13,11 @@ relied on, so the repair is mechanical rather than an intention to be careful. E
 headline is registered here with the assumptions it needs and the retained artifacts
 that could refute it, and the check runs before a checkpoint is published.
 
+A refutation and a bound are different things and are registered separately. An
+artifact that contradicts a headline blocks it. An artifact that limits its scope
+does not block it, and has to be cited anyway, because a standing headline with no
+stated limit is the shape most of this lane's withdrawn claims arrived in.
+
 What this does NOT do: it cannot know a counterexample nobody registered, it does not
 verify the arithmetic behind a claim, and a headline passing here is unexamined
 rather than confirmed. It catches one specific failure, which is a claim that
@@ -89,6 +94,32 @@ REGISTER = [
         "qualification": ("holds at full scope with matched marginals. The audit across sub scopes "
                           "is obstructed rather than adverse, and the scope is part of the claim"),
     },
+    {
+        "headline": ("the decision waits on a far shorter list of reading facts than the disputed "
+                     "set, and both ends of that list are checkable in linear time"),
+        "checkpoint": "comparator-0.1.0",
+        "assumptions": ["the admitted readings are the readings on offer",
+                        "an atom is an object presence or an admitted same class edge",
+                        "the verdict depends on a reading only through the declared loss "
+                        "and tolerance",
+                        "the measured rates come from a generator written in this lane"],
+        "refuted_by": [],
+        "bounded_by": [
+            {"artifact": "tools/measure/conventional_comparator.py",
+             "limits": ("the list is a function of the shared readings, so an analyst holding "
+                        "them could compute it too. Shorter and checkable, not exclusive"),
+             "published_in": "conventional-comparator-0.1.0"},
+            {"artifact": "research/cohort-packet/0.1.0/bracketed-observation-case.json",
+             "limits": ("39 disputed atoms whose shortest list is not pinned. The packing forces "
+                        "1 and a cover of 2 is exhibited, so the report brackets rather than "
+                        "claims"),
+             "published_in": "comparator-0.1.0"},
+            {"artifact": "research/comparator/0.1.0/verification-cost.json",
+             "limits": ("checking rather than recomputing is measured slower on every retained "
+                        "case, and only overtakes recomputation between 30 and 90 detections"),
+             "published_in": "comparator-0.1.0"}],
+        "status": "standing, bounded",
+    },
 ]
 
 
@@ -97,12 +128,12 @@ class AuditError(Exception):
 
 
 def artifacts_present(entry, root=ROOT):
-    """Every artifact a refutation cites must actually exist in the tree."""
+    """Every artifact a refutation or a bound cites must actually exist in the tree."""
     missing = []
-    for refutation in entry["refuted_by"]:
-        path = os.path.join(root, refutation["artifact"])
+    for citation in list(entry["refuted_by"]) + list(entry.get("bounded_by", [])):
+        path = os.path.join(root, citation["artifact"])
         if not os.path.exists(path):
-            missing.append(refutation["artifact"])
+            missing.append(citation["artifact"])
     return missing
 
 
@@ -117,6 +148,7 @@ def audit(register=None, root=ROOT):
             "headline": entry["headline"], "checkpoint": entry["checkpoint"],
             "status": entry["status"], "assumptions": entry["assumptions"],
             "refutations": len(entry["refuted_by"]),
+            "bounds": len(entry.get("bounded_by", [])),
             "cited_artifacts_missing": missing,
             "publishable": not blocked and not missing,
             "reason": ("a retained artifact refutes this standing headline" if blocked else
@@ -125,6 +157,9 @@ def audit(register=None, root=ROOT):
         "artifact_id": "reiyah.headline-audit.report", "version": VERSION,
         "registered": len(findings),
         "withdrawn": sum(1 for f in findings if f["status"] == "withdrawn"),
+        "standing_with_no_stated_bound": [f["headline"] for f, entry in zip(findings, register)
+                                          if entry["status"].startswith("standing")
+                                          and not entry.get("bounded_by")],
         "blocked": [f for f in findings if not f["publishable"]],
         "all_clear": all(f["publishable"] for f in findings),
         "findings": findings,
