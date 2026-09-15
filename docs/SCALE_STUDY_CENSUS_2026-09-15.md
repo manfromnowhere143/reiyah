@@ -2,9 +2,24 @@
 
 Document ID: `reiyah.scale-study.census.2026-09-15`
 
-Version: `0.1.0`
+Version: `0.2.0`
 
-Lifecycle status: `proposed`
+Lifecycle status: `corrected`
+
+> **Its central inference is withdrawn.** The Engine consumer supplied an executable counterexample
+> against my exact committed module: one base at `x=0`, one addition at `x=3`, three objects between
+> them. No single deletion changes the gain, every pair does, so the floor is 1 and the true minimum
+> is 2. My search only ever chose deletions that immediately removed one unit of gain, so
+> `k_observed` could only equal `k_floor` and the `certified_above_floor` branch was unreachable.
+> **Zero above-floor results therefore proved nothing.** The derivation was wrong too: `k_floor <= G`
+> bounds the gain that must be removed, not the number of deletions needed to remove it.
+>
+> What survives: the 1,124 witnesses are verified crossings at exactly `k_floor`, and the floor is a
+> proved lower bound, so each is its unit's exact minimum. Among the 1,127 supported units the floor
+> frequency lies in `[1124/1127, 1]` and the above-floor frequency in `[0, 3/1127]`, which is a
+> descriptive high floor frequency and not a theorem.
+>
+> Full record: [`research/scale-study/0.3.0/CORRECTION.json`](../research/scale-study/0.3.0/CORRECTION.json).
 
 Date: 2026-09-15. Lane: independent research.
 
@@ -33,10 +48,9 @@ single unit removal, and across 1,124 real units that never once happened.
 
 So the fragility ratio is not a property of the annotations. It restates the arithmetic. The two
 earlier case studies, presented as a replication because both showed ratio 1, were replicating a
-fact about the loss function. **The ratio is withdrawn as a quantity of interest.** The derivation
-and the census are retained as the reason.
-
-That is the main finding of this checkpoint and it is against my own proposal.
+fact about the loss function. **The ratio is withdrawn as a quantity of interest**, but not for the reason given here. It is
+withdrawn because it was never measured: the search could only ever return the floor. Whether any
+real unit has a minimum above its floor is now an open question, not a settled zero.
 
 ## What is underneath it, and this part is real
 

@@ -20,16 +20,44 @@ that, never folded into a frequency it did not earn.
 Exact rational arithmetic for the decision. Geometry is float from the source
 tables, which is what the source provides; the 2 metre rules are strict and are
 applied to squared distances to avoid a square root.
+
+0.2.0 REPAIRS, all four reproduced on the consumer's controls before any change.
+
+SEARCH. Version 0.1.0 grew a witness only from deletions that immediately removed
+one unit of gain, and reported `no_admissible_crossing` when none existed. That is
+a false negative. One base at x=0, one addition at x=3 and three objects between
+them: no single deletion changes the gain, every pair drops it, so the floor is 1
+and the true minimum is 2. The arithmetic floor bounds the gain that must be
+removed; it does NOT bound the number of deletions needed to remove it, and that
+was the error behind this lane's tautology claim. A stalled search is now bounded
+or unresolved, never a claim that no crossing exists, and a bounded exhaustive
+pass can certify a minimum above the floor.
+
+MISSING FRAMES. `unit([frame, None])` used to return exactly what `unit([frame])`
+returns, silently dropping a declared anchor and reweighting the rest. Missing,
+invalid and observed empty are three different states and are now three different
+outcomes.
+
+INVALID RECORDS. The qualifier accepted NaN and infinite scores, Boolean scores
+and NaN coordinates, because every comparison against them is False. The policy is
+now explicit: a malformed record fails its declared case rather than being quietly
+dropped and the remainder renormalised.
+
+WITNESSES. A count and an `at_floor` flag are not a certificate. Every reported
+witness now carries its ordered frame bindings, the annotation identities deleted,
+and the before and after decision.
 """
 from fractions import Fraction
 import json
+import math
 import os
 import sys
 import time
+from itertools import combinations
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 PROTOCOL = "4c601ca94bc1e34e155fda0b16a7e45d660c5084e913f5630938224b74686368"
 SCORE_CUTOFF = 0.30
 RANGE_LIMIT = 50.0
@@ -41,6 +69,15 @@ CLASSES = ("car", "truck", "bus", "trailer", "construction_vehicle",
            "pedestrian", "motorcycle", "bicycle", "traffic_cone", "barrier")
 
 
+class InvalidRecord(ValueError):
+    """A source record this study will not silently drop."""
+
+
+def finite(value):
+    return isinstance(value, (int, float)) and not isinstance(value, bool) \
+        and math.isfinite(value)
+
+
 def rotate_inverse(q, v):
     w, x, y, z = q
     r = [[1 - 2 * (y * y + z * z), 2 * (x * y - z * w), 2 * (x * z + y * w)],
@@ -49,19 +86,36 @@ def rotate_inverse(q, v):
     return [sum(r[j][i] * v[j] for j in range(3)) for i in range(3)]
 
 
-def qualify(rows, pose):
-    """Score cutoff, common range, declared classes. Order preserved as the source gives it."""
+def qualify(rows, pose, strict=True):
+    """Score cutoff, common range, declared classes. Order preserved as the source gives it.
+
+    A malformed record raises rather than being dropped. A Boolean is not a score,
+    and NaN passes every comparison, so neither is allowed to survive by accident.
+    """
     kept = []
     tr, q = pose["translation"], pose["rotation"]
+    if not (isinstance(tr, list) and len(tr) == 3 and all(finite(v) for v in tr)):
+        raise InvalidRecord("the pose translation is not three finite numbers")
+    if not (isinstance(q, list) and len(q) == 4 and all(finite(v) for v in q)):
+        raise InvalidRecord("the pose rotation is not four finite numbers")
     for index, row in enumerate(rows):
         name = row.get("detection_name")
+        score = row.get("detection_score")
+        g = row.get("translation")
+        if strict:
+            if name is not None and not isinstance(name, str):
+                raise InvalidRecord(f"row {index} has a non string class")
+            if score is not None and not finite(score):
+                raise InvalidRecord(f"row {index} has a score that is not a finite number")
+            if g is not None and not (isinstance(g, list) and len(g) == 3
+                                      and all(finite(v) for v in g)):
+                raise InvalidRecord(f"row {index} has a translation that is not three finite "
+                                    "numbers")
         if name not in CLASSES:
             continue
-        score = row.get("detection_score")
-        if not isinstance(score, (int, float)) or score < SCORE_CUTOFF:
+        if not finite(score) or score < SCORE_CUTOFF:
             continue
-        g = row.get("translation")
-        if not (isinstance(g, list) and len(g) == 3):
+        if not (isinstance(g, list) and len(g) == 3 and all(finite(v) for v in g)):
             continue
         rel = rotate_inverse(q, [g[0] - tr[0], g[1] - tr[1], g[2] - tr[2]])
         if rel[0] * rel[0] + rel[1] * rel[1] > RANGE_LIMIT * RANGE_LIMIT:
@@ -174,11 +228,59 @@ def arithmetic_floor(decision, frames):
     return {"margin": str(margin), "step": str(step), "k_floor": int(-((-margin) // step))}
 
 
-def unit(scene_frames, budget=200000):
+def all_references_witness(frames, weight):
+    """Deleting every qualifying reference. A valid, usually loose, crossing witness.
+
+    With no objects left both matchings are empty, so every frame contributes
+    `-b * r_f` and the decision is `-R/F <= 0 <= tolerance`. It is an upper bound on
+    the minimum and it always exists on this finite family, which is why a stalled
+    search never has to claim that no crossing exists.
+    """
+    members = {index: set(range(len(f.objects))) for index, f in enumerate(frames)
+               if f.objects}
+    value = sum((weight * f.delta(frozenset(members.get(i, ()))))
+                for i, f in enumerate(frames))
+    return members, value, sum(len(v) for v in members.values())
+
+
+def exhaustive_minimum(frames, weight, need, step, start_size, budget):
+    """Certify a minimum above the floor, or report how far the search reached.
+
+    Sizes are tried in order, so the first crossing found is the exact minimum. No
+    label is pruned for having no singleton effect, because the whole point of the
+    repaired search is that such labels can be decisive in combination.
+    """
+    slots = [(i, j) for i, f in enumerate(frames) for j in range(len(f.objects))]
+    evaluations = 0
+    for size in range(start_size, len(slots) + 1):
+        for chosen in combinations(slots, size):
+            evaluations += 1
+            if evaluations > budget:
+                return {"state": "budget", "searched_through": size - 1,
+                        "evaluations": evaluations}
+            per_frame = {}
+            for i, j in chosen:
+                per_frame.setdefault(i, set()).add(j)
+            value = sum((weight * frames[i].delta(frozenset(per_frame.get(i, ()))))
+                        for i in range(len(frames)))
+            if value <= TOLERANCE:
+                return {"state": "found", "size": size, "members": per_frame,
+                        "value": value, "evaluations": evaluations}
+    return {"state": "exhausted", "evaluations": evaluations}
+
+
+def unit(scene_frames, budget=200000, exhaustive_budget=200000):
     """One decision unit, with every stopping outcome distinct."""
-    frames = [f for f in scene_frames if f is not None]
-    if not frames:
-        return {"status": "missing_input"}
+    if not scene_frames:
+        return {"status": "missing_input", "reason": "no frames were supplied"}
+    if any(f is None for f in scene_frames):
+        # 0.2.0: a missing frame used to be dropped and the rest reweighted, which
+        # silently answered a different question from the declared one.
+        return {"status": "input_blocked", "declared_frames": len(scene_frames),
+                "missing_frames": sum(1 for f in scene_frames if f is None),
+                "reason": ("a declared frame is missing. Missing, invalid and observed empty "
+                           "are different states and this unit is not answered by dropping one")}
+    frames = list(scene_frames)
     if not any(f.objects for f in frames):
         return {"status": "empty_reference"}
     decision = decide(frames)
@@ -187,37 +289,19 @@ def unit(scene_frames, budget=200000):
         return {"status": "unsupported_baseline", "decision": str(decision)}
     floor = arithmetic_floor(decision, frames)
     base_gain = [f.gain() for f in frames]
-
-    # A deletion only affects its own frame, so a crossing set is built from per frame
-    # gain losses. Singles first, then within frame pairs, then across frames. No label
-    # is pruned for having no singleton effect: within frame pairs are searched in full.
-    evaluations = 0
-    carriers = []
-    for index, f in enumerate(frames):
-        for j in range(len(f.objects)):
-            evaluations += 1
-            lost = base_gain[index] - f.gain(frozenset([j]))
-            if lost:
-                carriers.append((index, j, lost))
-            if evaluations > budget:
-                return {"status": "budget_exhausted", "decision": str(decision),
-                        "k_floor": floor["k_floor"], "evaluations": evaluations}
     step = (PENALTY_FN + PENALTY_FP) * weight
     need = decision - TOLERANCE
     k = floor["k_floor"]
+    evaluations = 0
 
-    # Deletions in different frames are exactly independent, because the matching is
-    # per frame. Deletions inside one frame are not: the second can be absorbed by a
-    # reassignment the first opened. So the witness is grown one deletion at a time
-    # and the gain loss is REVERIFIED after each, never summed from singleton effects.
-    # Each deletion removes at most one unit of gain, so k_floor deletions is the
-    # fewest that can possibly cross; a verified witness of that size proves the
-    # minimum without any further search.
+    # Grow a witness one deletion at a time, reverifying the gain after each. A
+    # witness of floor size is the exact minimum, since the floor is a proved lower
+    # bound. Anything larger is only an upper bound until smaller sets are ruled out.
     dropped = {index: set() for index in range(len(frames))}
     current = list(base_gain)
     taken = 0
     lost_total = 0
-    while taken < len(carriers) + sum(len(f.objects) for f in frames):
+    while True:
         best = None
         for index, f in enumerate(frames):
             if current[index] == 0:
@@ -229,18 +313,17 @@ def unit(scene_frames, budget=200000):
                 if evaluations > budget:
                     return {"status": "budget_exhausted", "decision": str(decision),
                             "k_floor": k, "deletions_so_far": taken,
-                            "gain_removed_so_far": lost_total, "evaluations": evaluations}
-                after = f.gain(frozenset(dropped[index] | {j}))
-                if current[index] - after == 1:
-                    best = (index, j, after)
+                            "evaluations": evaluations}
+                if current[index] - f.gain(frozenset(dropped[index] | {j})) == 1:
+                    best = (index, j)
                     break
             if best:
                 break
         if best is None:
             break
-        index, j, after = best
+        index, j = best
         dropped[index].add(j)
-        current[index] = after
+        current[index] -= 1
         taken += 1
         lost_total += 1
         if step * lost_total >= need:
@@ -249,19 +332,40 @@ def unit(scene_frames, budget=200000):
     if step * lost_total >= need:
         check = sum((weight * frames[i].delta(frozenset(dropped[i])))
                     for i in range(len(frames)))
-        if check > TOLERANCE:
-            return {"status": "bounded_only", "decision": str(decision), "k_floor": k,
-                    "upper_bound": taken, "verified_decision_after": str(check),
-                    "reason": "the grown witness did not verify under full recomputation"}
-        return {"status": "certified_at_floor" if taken == k else "certified_above_floor",
-                "decision": str(decision), "k_floor": k, "k_observed": taken,
-                "verified_decision_after": str(check),
-                "fragility_ratio": str(Fraction(taken, k)) if k else None,
-                "at_floor": taken == k, "evaluations": evaluations,
-                "deletions_per_frame": {str(i): len(v) for i, v in dropped.items() if v},
-                "note": ("each deletion was verified to remove exactly one unit of gain, and no "
-                         "deletion can remove more, so a witness of k_floor size is minimal")}
+        if check <= TOLERANCE and taken == k:
+            return {"status": "certified_at_floor", "decision": str(decision),
+                    "k_floor": k, "k_observed": taken, "at_floor": True,
+                    "verified_decision_after": str(check), "evaluations": evaluations,
+                    "witness": {str(i): sorted(v) for i, v in dropped.items() if v},
+                    "note": ("the floor is a proved lower bound and this witness meets it, so "
+                             "it is the exact minimum")}
+        if check <= TOLERANCE:
+            upper = taken
+            upper_members = {i: set(v) for i, v in dropped.items() if v}
+        else:
+            upper_members, _value, upper = all_references_witness(frames, weight)
+    else:
+        # 0.2.0: the stall used to be reported as no crossing existing. It is not.
+        upper_members, _value, upper = all_references_witness(frames, weight)
 
-    return {"status": "no_admissible_crossing", "decision": str(decision),
-            "k_floor": k, "evaluations": evaluations,
-            "reason": "no set of single record deletions removes enough gain to cross"}
+    exact = exhaustive_minimum(frames, weight, need, step, k, exhaustive_budget)
+    if exact["state"] == "found":
+        value = exact["value"]
+        return {"status": "certified_at_floor" if exact["size"] == k else "certified_above_floor",
+                "decision": str(decision), "k_floor": k, "k_observed": exact["size"],
+                "at_floor": exact["size"] == k, "verified_decision_after": str(value),
+                "evaluations": evaluations + exact["evaluations"],
+                "witness": {str(i): sorted(v) for i, v in exact["members"].items()},
+                "note": ("every smaller size was searched in full, so this is the exact minimum")}
+    if exact["state"] == "exhausted":
+        return {"status": "no_admissible_crossing", "decision": str(decision), "k_floor": k,
+                "evaluations": evaluations + exact["evaluations"],
+                "reason": "every deleting set was searched and none crosses"}
+    return {"status": "bounded_only", "decision": str(decision), "k_floor": k,
+            "lower_bound": max(k, exact.get("searched_through", k) + 1),
+            "upper_bound": upper,
+            "upper_bound_witness": {str(i): sorted(v) for i, v in upper_members.items()},
+            "evaluations": evaluations + exact["evaluations"],
+            "reason": ("the growing search stalled and the exhaustive pass reached its budget. "
+                       "A crossing exists, its size lies in the reported bracket, and no minimum "
+                       "is claimed")}

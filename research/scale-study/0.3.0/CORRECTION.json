@@ -1,0 +1,63 @@
+{
+  "artifact_id": "reiyah.scale-study.correction",
+  "corrects": {
+    "artifact": "reiyah.scale-study.census-summary",
+    "status": "retained unchanged, including its 3000 unit index",
+    "version": "0.2.0"
+  },
+  "found_by": "the Engine consumer, with an executable counterexample against my exact committed module",
+  "module_reproduced_against": "a263ef8661d2169c710e79848145cc4145033d2a23631c0ab58e49cc3f67fbd6",
+  "not_claimed": [
+    "that the ratio is useful",
+    "that the ratio is novel",
+    "any superiority over any company",
+    "that malformed records occur in these submissions"
+  ],
+  "recorded_utc": "2026-09-15T09:35:49.804412+00:00",
+  "repairs": {
+    "1_stalled_search": "a stall is now bounded_only or unresolved, never a claim that no crossing exists. Deleting every qualifying reference is retained as a valid loose upper bound, since the final decision is -R/F <= 0 <= tolerance, and a bounded exhaustive pass by increasing size can now certify a minimum above the floor",
+    "2_missing_frames": "unit([frame, None]) returned exactly unit([frame]), silently dropping a declared anchor and reweighting. It now returns input_blocked",
+    "3_invalid_records": "NaN and infinite scores, Boolean scores and NaN coordinates were retained because every comparison against them is False. The policy is now explicit: a malformed record raises and fails its declared case rather than being dropped and the rest renormalised",
+    "4_witnesses": "a count and an at_floor flag are not a certificate. Every witness now carries its frame bindings, the annotation identities deleted and the before and after decision"
+  },
+  "the_counterexample": {
+    "my_0_1_0_answer": "no_admissible_crossing after six evaluations, which is a false negative",
+    "setup": "one frame, one class, unit penalties, weight 1, tolerance 1/10. Base at x=0, addition at x=3, three objects at x=1.1, 1.5, 1.9. Both detections reach every object under the strict 2 m rule",
+    "truth": {
+      "any_pair": "TP 1 and 1, delta -1",
+      "any_single": "TP 1 and 2, delta 1",
+      "exact_minimum": 2,
+      "floor": 1,
+      "no_deletion": "TP 1 and 2, delta 1"
+    }
+  },
+  "the_open_question_now": "whether any real unit has a minimum above its floor. The repaired search can find one and the census has not been rerun with the exhaustive pass, so the answer is unknown rather than zero",
+  "the_two_errors": {
+    "inference": "I then read zero above floor results across 1124 units as confirmation that the ratio is near tautological. The branch could not produce a non zero count, so the observation carried no information. The underlying derivation was also wrong: k_floor <= G bounds the GAIN that must be removed, not the NUMBER OF DELETIONS needed to remove it. The counterexample removes one unit of gain with two deletions",
+    "search": "the witness was grown only from deletions that immediately removed one unit of gain. When none exists the search stalled and reported that no crossing exists. Consequently k_observed could only ever equal k_floor and the certified_above_floor branch was unreachable"
+  },
+  "version": "0.3.0",
+  "what_survives_and_why": {
+    "correct_statement": "among the 1127 supported units, the floor frequency lies in [1124/1127, 1] and the above floor frequency in [0, 3/1127]. That is a descriptive high floor frequency on this declared census, conditional on the reported baselines and witnesses, and not a theorem",
+    "denominators_restated": {
+      "five_or_fewer": "169/1127",
+      "note": "computed from 1124 completed searches; the 3 unresolved floors exceed all three thresholds",
+      "one_percent_or_less_of_scene_labels": "271/1127",
+      "overturned_by_one_deletion": "37/1127"
+    },
+    "distribution": "min 1, median 26, max 575 over the 1124 completed searches, stated as such",
+    "the_1124_witnesses": "each is a verified crossing at exactly k_floor, and the floor is a proved lower bound, so each is the exact minimum for its unit. They are valid"
+  },
+  "which_census_assertions_depended_on_the_defective_path": {
+    "checked": true,
+    "conclusion": "no census execution needs to be repeated. The interpretation does",
+    "pilot_reproduction": "20 of 20 pilot units reproduce identically under the repaired module",
+    "qualifier_sweep": "the strict validator was run over every record of all five submissions across the full census: 5215626 predictions, 0 invalid. The malformed value defect is real in code and never fired on this data",
+    "stall_path": "the census produced zero no_admissible_crossing results, so no unit took the defective branch. The witnesses and their k values stand; only the inference from their uniformity fails"
+  },
+  "withdrawn": [
+    "the fragility ratio is near tautological on this loss and edit family",
+    "the census proves the measure empty",
+    "zero of 1124 resolved units exceeded the floor, therefore the ratio is constant"
+  ]
+}

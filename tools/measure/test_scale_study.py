@@ -106,6 +106,89 @@ class Arithmetic(unittest.TestCase):
         self.assertEqual(floor["k_floor"], 2)
 
 
+class TheConsumerCounterexample(unittest.TestCase):
+    """The floor bounds the gain to remove, not the number of deletions that removes it."""
+
+    def build(self):
+        objects = [obj("car", 1.1, 0, "a"), obj("car", 1.5, 0, "b"), obj("car", 1.9, 0, "c")]
+        base = [{"i": 0, "c": "car", "x": 0.0, "y": 0.0}]
+        added = [{"i": 1, "c": "car", "x": 3.0, "y": 0.0}]
+        return study.Frame(objects, base, added)
+
+    def test_no_single_deletion_moves_the_gain_and_every_pair_does(self):
+        f = self.build()
+        self.assertEqual(f.gain(), 1)
+        for j in range(3):
+            self.assertEqual(f.gain(frozenset([j])), 1)
+        for pair in ((0, 1), (0, 2), (1, 2)):
+            self.assertEqual(f.gain(frozenset(pair)), 0)
+            self.assertEqual(f.delta(frozenset(pair)), Fraction(-1))
+
+    def test_the_minimum_is_two_while_the_floor_is_one(self):
+        result = study.unit([self.build()])
+        self.assertEqual(result["status"], "certified_above_floor")
+        self.assertEqual(result["k_floor"], 1)
+        self.assertEqual(result["k_observed"], 2)
+        self.assertFalse(result["at_floor"])
+        self.assertEqual(len(sum(result["witness"].values(), [])), 2)
+        self.assertLessEqual(Fraction(result["verified_decision_after"]), study.TOLERANCE)
+
+    def test_a_stalled_search_never_claims_that_no_crossing_exists(self):
+        """0.1.0 returned no_admissible_crossing here. That was a false negative."""
+        result = study.unit([self.build()], exhaustive_budget=0)
+        self.assertNotEqual(result["status"], "no_admissible_crossing")
+        self.assertEqual(result["status"], "bounded_only")
+        self.assertEqual(result["k_floor"], 1)
+        self.assertGreaterEqual(result["upper_bound"], 1)
+        self.assertTrue(result["upper_bound_witness"])
+
+    def test_the_all_references_fallback_is_a_real_crossing(self):
+        frames = [self.build()]
+        weight = Fraction(1, 1)
+        members, value, size = study.all_references_witness(frames, weight)
+        self.assertLessEqual(value, study.TOLERANCE)
+        self.assertEqual(size, 3)
+
+    def test_the_general_family_scales_as_the_consumer_states(self):
+        """One base, one addition and m objects between them: floor 1, minimum m - 1."""
+        for m in (2, 3, 4):
+            objects = [obj("car", 1.0 + 0.9 * i / max(m - 1, 1), 0, "o%d" % i) for i in range(m)]
+            frame = study.Frame(objects, [{"i": 0, "c": "car", "x": 0.0, "y": 0.0}],
+                                [{"i": 1, "c": "car", "x": 2.5, "y": 0.0}])
+            result = study.unit([frame])
+            self.assertEqual(result["k_floor"], 1, m)
+            self.assertEqual(result["k_observed"], max(m - 1, 1), m)
+
+
+class InvalidRecords(unittest.TestCase):
+    """A malformed record fails its case rather than being dropped and the rest reweighted."""
+
+    def test_a_nan_score_is_refused(self):
+        with self.assertRaises(study.InvalidRecord):
+            study.qualify([row("car", 0, 0, float("nan"))], IDENTITY)
+
+    def test_an_infinite_score_is_refused(self):
+        with self.assertRaises(study.InvalidRecord):
+            study.qualify([row("car", 0, 0, float("inf"))], IDENTITY)
+
+    def test_a_boolean_is_not_a_score(self):
+        with self.assertRaises(study.InvalidRecord):
+            study.qualify([row("car", 0, 0, True)], IDENTITY)
+
+    def test_a_nan_coordinate_is_refused(self):
+        bad = {"detection_name": "car", "detection_score": 0.9,
+               "translation": [float("nan"), 0.0, 0.0]}
+        with self.assertRaises(study.InvalidRecord):
+            study.qualify([bad], IDENTITY)
+
+    def test_a_malformed_pose_is_refused(self):
+        with self.assertRaises(study.InvalidRecord):
+            study.qualify([row("car", 0, 0)], {"translation": [0.0, 0.0], "rotation": [1, 0, 0, 0]})
+
+    def test_valid_records_still_pass(self):
+        self.assertEqual(len(study.qualify([row("car", 0, 0)], IDENTITY)), 1)
+
+
 class StoppingOutcomes(unittest.TestCase):
     def frames_from(self, spec):
         return [study.Frame(o, b, a) for o, b, a in spec]
@@ -117,12 +200,29 @@ class StoppingOutcomes(unittest.TestCase):
     def test_a_missing_input_is_its_own_outcome(self):
         self.assertEqual(study.unit([])["status"], "missing_input")
 
+    def test_a_missing_frame_blocks_the_unit_rather_than_being_dropped(self):
+        """0.1.0 answered a different question by silently reweighting the rest."""
+        frame = study.Frame([obj("car", 0, 0)], [], [{"i": 0, "c": "car", "x": 0.0, "y": 0.0}])
+        alone = study.unit([frame])
+        blocked = study.unit([frame, None])
+        self.assertEqual(alone["status"], "certified_at_floor")
+        self.assertEqual(blocked["status"], "input_blocked")
+        self.assertEqual(blocked["declared_frames"], 2)
+        self.assertEqual(blocked["missing_frames"], 1)
+
     def test_an_unsupported_baseline_is_reported_not_discarded(self):
         frames = self.frames_from([([obj("car", 9, 9)], [], [{"i": 0, "c": "car", "x": 0.0,
                                                               "y": 0.0}])])
         result = study.unit(frames)
         self.assertEqual(result["status"], "unsupported_baseline")
         self.assertEqual(result["decision"], "-1")
+
+    def test_every_reported_witness_names_its_members(self):
+        frames = [study.Frame([obj("car", 0, 0)], [], [{"i": 0, "c": "car", "x": 0.0, "y": 0.0}])]
+        result = study.unit(frames)
+        self.assertIn("witness", result)
+        self.assertEqual(sum(len(v) for v in result["witness"].values()),
+                         result["k_observed"])
 
     def test_a_supported_unit_is_certified_at_its_floor(self):
         frames = self.frames_from([([obj("car", 0, 0)], [],
@@ -131,7 +231,8 @@ class StoppingOutcomes(unittest.TestCase):
         self.assertEqual(result["status"], "certified_at_floor")
         self.assertEqual(result["k_floor"], 1)
         self.assertEqual(result["k_observed"], 1)
-        self.assertEqual(result["fragility_ratio"], "1")
+        # the ratio is withdrawn, so the field is gone rather than reported as constant
+        self.assertNotIn("fragility_ratio", result)
         self.assertTrue(Fraction(result["verified_decision_after"]) <= study.TOLERANCE)
 
     def test_the_budget_is_an_outcome_and_not_a_silent_truncation(self):

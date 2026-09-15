@@ -230,12 +230,11 @@ REGISTER = [
                         "pilot, is what carries information"),
              "published_in": "scale-study-0.1.0"}],
         "status": "withdrawn",
-        "successor": ("the ratio is withdrawn as a quantity of interest. The census resolved 1124 "
-                      "units and zero exceeded the floor, confirming the derivation that it is "
-                      "near tautological on this loss and edit family. What replaces it is the "
-                      "absolute edit count distribution: median 26, range 1 to 575, and 24.1 "
-                      "percent of supported comparisons removable by one percent or less of their "
-                      "scene's annotations"),
+        "successor": ("the ratio is withdrawn, and the reason first given for withdrawing it was "
+                      "also wrong. The search could only ever return the floor, so zero above "
+                      "floor results proved nothing. What stands is the edit count distribution "
+                      "over 1124 completed searches, median 26 and range 1 to 575, with "
+                      "denominators 37/1127, 169/1127 and 271/1127 among supported units"),
     },
     {
         "headline": ("this lane's rigor exceeds NVIDIA's and Mobileye's, and the industry ships "
@@ -266,6 +265,25 @@ REGISTER = [
         "status": "withdrawn",
         "successor": ("fixed before this lane received or read the case, and before its computed "
                       "decision existed, with verified timestamps"),
+    },
+    {
+        "headline": ("the census proves the fragility ratio empty, because zero of 1124 resolved "
+                     "units exceeded the arithmetic floor"),
+        "checkpoint": "scale-census-0.2.0",
+        "assumptions": ["that the search could report an above floor result at all",
+                        "that k_floor <= total removable gain bounds the number of deletions"],
+        "refuted_by": [
+            {"artifact": "research/scale-study/0.3.0/CORRECTION.json",
+             "shows": ("an executable counterexample on the exact committed module: one base, one "
+                       "addition and three objects between them give floor 1 and minimum 2. The "
+                       "search only chose deletions that immediately removed one unit of gain, so "
+                       "k_observed could only equal k_floor and the above floor branch was "
+                       "unreachable. The floor bounds the gain to remove, not the deletions "
+                       "needed to remove it"),
+             "published_in": "scale-study-0.3.0"}],
+        "status": "withdrawn",
+        "successor": ("whether any real unit has a minimum above its floor is unknown. The "
+                      "repaired search can find one and the census has not been rerun with it"),
     },
     {
         "headline": "nobody does this, of the label dependence family",
