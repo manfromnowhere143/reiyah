@@ -117,6 +117,30 @@ class Arithmetic(unittest.TestCase):
                if e[1].startswith("inserted-")]
         self.assertEqual(new, [["d_right", "inserted-0"]])
 
+    def test_a_partial_coordinate_map_is_refused_not_silently_used(self):
+        """A map missing a same class detection drops an eligible edge."""
+        from fractions import Fraction
+        case = {
+            "schema_id": "reiyah.cohort-packet.case", "cohort_id": "partial-map-control",
+            "loss": {"false_negative": "1", "false_positive": "1", "tolerance": "0"},
+            "anchors": [{"id": "A", "weight": "1", "reference_state": "finite",
+                         "base_detections": [{"id": "b_near", "class": "car"}],
+                         "added_detections": [{"id": "c_here", "class": "car"}],
+                         "objects": [{"id": "o0", "class": "car"}]}],
+            "joint_worlds": [{"world_id": "labels", "per_anchor": {"A": {
+                "objects_present": ["o0"], "edges": [["b_near", "o0"]]}}}]}
+        target = [c for c in dependence.unmatched_detections(case)
+                  if c["detection"] == "c_here"]
+        complete = {"A": {"b_near": (Fraction(1), Fraction(0)),
+                          "c_here": (Fraction(0), Fraction(0))}}
+        edges = [e for e in dependence.with_insertions(case, target, complete)
+                 ["joint_worlds"][0]["per_anchor"]["A"]["edges"] if e[1].startswith("inserted-")]
+        self.assertEqual(len(edges), 2)
+        with self.assertRaises(dependence.GeometryRequired) as caught:
+            dependence.with_insertions(case, target,
+                                       {"A": {"c_here": (Fraction(0), Fraction(0))}})
+        self.assertIn("partial map", str(caught.exception))
+
     def test_an_insertion_without_coordinates_is_refused_not_guessed(self):
         case = carrier_case()
         target = dependence.unmatched_detections(case)[:1] or [

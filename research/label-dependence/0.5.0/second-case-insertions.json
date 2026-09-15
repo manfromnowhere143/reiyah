@@ -1,0 +1,142 @@
+{
+  "artifact_id": "reiyah.label-dependence.insertion-report",
+  "baseline": {
+    "criterion": "supported",
+    "enclosure": {
+      "lower": "2/7",
+      "upper": "2/7"
+    },
+    "per_anchor": {
+      "remaining-window-0001": {
+        "delta": "5",
+        "tp_augmented": 49,
+        "tp_base": 41
+      },
+      "remaining-window-0002": {
+        "delta": "4",
+        "tp_augmented": 47,
+        "tp_base": 41
+      },
+      "remaining-window-0003": {
+        "delta": "3",
+        "tp_augmented": 49,
+        "tp_base": 44
+      },
+      "remaining-window-0004": {
+        "delta": "5",
+        "tp_augmented": 49,
+        "tp_base": 43
+      },
+      "remaining-window-0006": {
+        "delta": "1",
+        "tp_augmented": 48,
+        "tp_base": 45
+      },
+      "remaining-window-0007": {
+        "delta": "4",
+        "tp_augmented": 51,
+        "tp_base": 46
+      },
+      "remaining-window-0008": {
+        "delta": "1",
+        "tp_augmented": 55,
+        "tp_base": 50
+      },
+      "remaining-window-0009": {
+        "delta": "0",
+        "tp_augmented": 31,
+        "tp_base": 28
+      },
+      "remaining-window-0010": {
+        "delta": "-2",
+        "tp_augmented": 32,
+        "tp_base": 30
+      },
+      "remaining-window-0011": {
+        "delta": "-6",
+        "tp_augmented": 30,
+        "tp_base": 29
+      },
+      "remaining-window-0013": {
+        "delta": "-3",
+        "tp_augmented": 31,
+        "tp_base": 29
+      },
+      "remaining-window-0014": {
+        "delta": "-1",
+        "tp_augmented": 31,
+        "tp_base": 29
+      },
+      "remaining-window-0015": {
+        "delta": "-3",
+        "tp_augmented": 33,
+        "tp_base": 32
+      },
+      "remaining-window-0016": {
+        "delta": "-4",
+        "tp_augmented": 27,
+        "tp_base": 27
+      }
+    },
+    "point": true,
+    "preference": "prefer_augmented",
+    "weighted_delta": "2/7"
+  },
+  "breakdown_number": null,
+  "candidates": {
+    "by_anchor": {
+      "remaining-window-0001": 7,
+      "remaining-window-0002": 10,
+      "remaining-window-0003": 6,
+      "remaining-window-0004": 9,
+      "remaining-window-0006": 9,
+      "remaining-window-0007": 11,
+      "remaining-window-0008": 14,
+      "remaining-window-0009": 5,
+      "remaining-window-0010": 9,
+      "remaining-window-0011": 9,
+      "remaining-window-0013": 7,
+      "remaining-window-0014": 9,
+      "remaining-window-0015": 6,
+      "remaining-window-0016": 8
+    },
+    "by_role": {
+      "added": 44,
+      "base": 75
+    },
+    "total": 119
+  },
+  "case_sha256": "d5d84eaf8eb558733ee619e657a73655c38c0b8be5263d5b0099cbe87fd3b5b7",
+  "cost": {
+    "seconds": 61.7535
+  },
+  "direction": "an insertion that only the added configuration reaches raises the delta; one that the base also reaches does not. Which way the annotation actually fails is not established here",
+  "geometry": "the declared strict 2 metre rule applied to the supplied coordinates. The 0.2.0 graph neighbourhood rule is withdrawn",
+  "pairs": {
+    "cases": 7021,
+    "conclusion": "no single and no pair changes the criterion",
+    "note": "the pair extrema are recorded separately from the singles. 0.2.0 reported the singles range only, which understated the reach of this family",
+    "searched": true,
+    "weighted_delta_range": {
+      "highest": "4/7",
+      "lowest": "2/7"
+    },
+    "witness": null
+  },
+  "preregistration_sha256": "38af5ed9442632919b51751ee09693da2a13ca62626291624613f3978a9c8c72",
+  "scope": "one insertion rule on one supplied benchmark interpretation. Counts of hypothetical corrections are not likelihoods, and no claim is made about how often this annotation actually misses an object",
+  "singles": {
+    "cases": 119,
+    "criterion_changes": 0,
+    "distinct_weighted_deltas": [
+      "2/7",
+      "3/7"
+    ],
+    "weighted_delta_range": {
+      "highest": "3/7",
+      "lowest": "2/7"
+    },
+    "witnesses": []
+  },
+  "version": "0.5.0"
+}

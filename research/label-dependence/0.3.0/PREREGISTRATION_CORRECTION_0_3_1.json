@@ -1,0 +1,36 @@
+{
+  "artifact_id": "reiyah.label-dependence.preregistration-correction",
+  "correct_form_for_future_preregistrations": "state exposure, not existence: fixed before this lane received, read or computed any part of the case, with the verified timestamps that support it",
+  "corrects": {
+    "artifact": "reiyah.label-dependence.preregistration",
+    "sha256": "7a513c501c5ada227206ed5028f78b436b36cd83ae9db3f8a648fad8e3f82b81",
+    "status": "retained unchanged. Its text is history and is not edited",
+    "version": "0.3.0"
+  },
+  "found_by": "the Engine strategic audit of 15 September 2026",
+  "recorded_utc": "2026-09-15T06:56:35.768184+00:00",
+  "the_false_statement": {
+    "field": "fixed_before_the_case_exists",
+    "supporting_text": "the second case has not been delivered",
+    "value_as_published": true,
+    "why_it_is_wrong": "the prepared second case operands existed at 2026-09-14T16:23:49Z in the engine-case-portability checkpoint, 21 minutes before this preregistration was recorded at 2026-09-14T16:45:20Z. The case existed. Saying it did not was a claim about the world made from this lane's own inbox"
+  },
+  "the_lesson_registered": "this lane has now made three claims about the world from inside its own inbox: that nobody runs this analysis, that its rigor exceeds named companies', and that a case did not exist because it had not arrived here. All three are withdrawn. The pattern is asserting absence from local absence, and it is now a named failure mode",
+  "version": "0.3.1",
+  "what_is_true_instead": {
+    "exposure": "the preregistration was fixed before the case was delivered to this lane, before this lane read any of its bytes, and before its computed decision existed anywhere that could be found",
+    "method": "every file under the two Engine checkpoints was read and timestamped by this lane, and the decision values were searched for directly",
+    "outcome_search": "no file carrying the second case decision 2/7, 293/14 or 297/14 existed before 16:45:20Z. The prepared operands existed; the computed decision did not",
+    "verified_timeline_utc": {
+      "CASE.json_this_lane_consumed_written": "2026-09-14T16:46:01",
+      "prepared_case_operands_existed": "2026-09-14T16:23:49",
+      "preregistration_pushed": "2026-09-14T16:48:18",
+      "this_preregistration_recorded": "2026-09-14T16:45:20"
+    }
+  },
+  "what_the_correction_does_not_change": [
+    "the second case result, which stands: floor 2, observed 2, fragility ratio 1",
+    "the first case result, which stands",
+    "that the measure was designed and published without knowledge of the second case's weights, margin or label count, which is the property that mattered scientifically"
+  ]
+}

@@ -219,6 +219,36 @@ REGISTER = [
         "status": "standing, bounded",
     },
     {
+        "headline": ("this lane's rigor exceeds NVIDIA's and Mobileye's, and the industry ships "
+                     "from benchmark deltas"),
+        "checkpoint": "strategic-verdict-2026-09-14",
+        "assumptions": ["that a high self retraction rate is evidence of superiority",
+                        "that two cases license a statement about how other companies decide"],
+        "refuted_by": [
+            {"artifact": "research/label-dependence/0.3.0/PREREGISTRATION_CORRECTION_0_3_1.json",
+             "shows": ("this lane holds no evidence about either company's validation practice. "
+                       "NVIDIA publishes robot policy evaluation and diagnostics and Foretellix "
+                       "sells traceable verification analysis; both are standards to meet rather "
+                       "than claims to beat. A retraction count documents corrections, not rigor"),
+             "published_in": "phase-1-preflight-0.1.0"}],
+        "status": "withdrawn",
+    },
+    {
+        "headline": ("the second case preregistration was fixed before the second case existed"),
+        "checkpoint": "label-dependence-0.4.0",
+        "assumptions": ["that a case not delivered here had not been prepared anywhere"],
+        "refuted_by": [
+            {"artifact": "research/label-dependence/0.3.0/PREREGISTRATION_CORRECTION_0_3_1.json",
+             "shows": ("the prepared case operands existed at 16:23:49Z, 21 minutes before the "
+                       "preregistration at 16:45:20Z. What is true is exposure: it was fixed "
+                       "before this lane received, read or computed any part of the case, and "
+                       "before the decision existed anywhere findable"),
+             "published_in": "phase-1-preflight-0.1.0"}],
+        "status": "withdrawn",
+        "successor": ("fixed before this lane received or read the case, and before its computed "
+                      "decision existed, with verified timestamps"),
+    },
+    {
         "headline": "nobody does this, of the label dependence family",
         "checkpoint": "label-dependence-0.1.0",
         "assumptions": ["that two cases license a statement about industry practice"],

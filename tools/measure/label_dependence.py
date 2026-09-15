@@ -47,7 +47,7 @@ from itertools import combinations  # noqa: E402
 
 from cohort_packet import CaseError, build, maximum_matching  # noqa: E402
 
-VERSION = "0.4.0"
+VERSION = "0.5.0"
 PREREGISTRATION = "24cb90eff90f60431fd92cd25e504842eb24898e1ec40c1cc4399601e38cfe5d"
 INSERTION_PREREGISTRATION = "38af5ed9442632919b51751ee09693da2a13ca62626291624613f3978a9c8c72"
 
@@ -144,7 +144,9 @@ def with_insertions(case, hypotheses, coordinates):
 
     Reachability is now the declared rule applied to the supplied coordinates: same
     class, strictly within 2 metres of the insertion's position. Coordinates are
-    required. Without them this raises rather than falling back on a heuristic.
+    required, and required in full: a map holding some same class detections and not
+    others silently drops eligible edges, which is worse than having no map at all,
+    so an incomplete one is refused.
     """
     if not coordinates:
         raise GeometryRequired(
@@ -172,6 +174,17 @@ def with_insertions(case, hypotheses, coordinates):
             source = next(a for a in case["anchors"] if a["id"] == anchor_id)
             classes = {d["id"]: d["class"]
                        for d in source["base_detections"] + source["added_detections"]}
+            # 0.5.0: a partial map is worse than no map. A same class detection missing
+            # from it is silently skipped, so an eligible edge disappears and the
+            # insertion looks less reachable than the declared rule makes it. Required
+            # geometry is now required in full, per anchor, before anything is built.
+            missing = sorted(d for d, k in classes.items()
+                             if k in {r["class"] for _i, r in rows} and d not in here)
+            if missing:
+                raise GeometryRequired(
+                    f"anchor {anchor_id} has no coordinate for same class detections {missing}. "
+                    "A partial map silently drops eligible edges, so it is refused rather than "
+                    "used")
             for index, row in rows:
                 name = f"inserted-{index}"
                 if row["detection"] not in here:

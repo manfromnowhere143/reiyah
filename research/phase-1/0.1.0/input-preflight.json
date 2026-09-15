@@ -1,0 +1,158 @@
+{
+  "artifact_id": "reiyah.fable.phase-1.input-preflight",
+  "detectors": {
+    "centerpoint": {
+      "bytes": 221909038,
+      "classes_outside_the_detection_set": [],
+      "classes_present": [
+        "barrier",
+        "bicycle",
+        "bus",
+        "car",
+        "construction_vehicle",
+        "motorcycle",
+        "pedestrian",
+        "traffic_cone",
+        "trailer",
+        "truck"
+      ],
+      "empty_frames": 0,
+      "meta": {
+        "use_camera": false,
+        "use_external": false,
+        "use_lidar": true,
+        "use_map": false,
+        "use_radar": false
+      },
+      "parse_seconds": 2.5,
+      "predictions": 478401,
+      "predictions_without_translation": 0,
+      "sample_tokens": 6019,
+      "sha256": "f3251fd0da96e22ba2dbde96b434d8a115d33851a4a4c4114ad09a0e0ca2f5f4",
+      "state": "qualified"
+    },
+    "fcos3d": {
+      "bytes": 204826448,
+      "classes_outside_the_detection_set": [],
+      "classes_present": [
+        "barrier",
+        "bicycle",
+        "bus",
+        "car",
+        "construction_vehicle",
+        "motorcycle",
+        "pedestrian",
+        "traffic_cone",
+        "trailer",
+        "truck"
+      ],
+      "empty_frames": 7,
+      "meta": {
+        "use_camera": true,
+        "use_external": false,
+        "use_lidar": false,
+        "use_map": false,
+        "use_radar": false
+      },
+      "parse_seconds": 2.1,
+      "predictions": 444706,
+      "predictions_without_translation": 0,
+      "sample_tokens": 6019,
+      "sha256": "e29d3dba83b7ddd7ec37b2e19f1ab05f5a2168900ad01eca98426f9fa93730eb",
+      "state": "qualified"
+    },
+    "mapillary": {
+      "bytes": 343998291,
+      "classes_outside_the_detection_set": [],
+      "classes_present": [
+        "barrier",
+        "bicycle",
+        "bus",
+        "car",
+        "construction_vehicle",
+        "motorcycle",
+        "pedestrian",
+        "traffic_cone",
+        "trailer",
+        "truck"
+      ],
+      "empty_frames": 0,
+      "meta": {
+        "use_camera": true,
+        "use_external": false,
+        "use_lidar": false,
+        "use_map": false,
+        "use_radar": false
+      },
+      "parse_seconds": 3.8,
+      "predictions": 799060,
+      "predictions_without_translation": 0,
+      "sample_tokens": 6019,
+      "sha256": "f948e9778fb9a332d748f7e504fbade04f0c00c2699d7b0af757cacdbd567e99",
+      "state": "qualified"
+    },
+    "megvii": {
+      "bytes": 224899254,
+      "classes_outside_the_detection_set": [],
+      "classes_present": [
+        "barrier",
+        "bicycle",
+        "bus",
+        "car",
+        "construction_vehicle",
+        "motorcycle",
+        "pedestrian",
+        "traffic_cone",
+        "trailer",
+        "truck"
+      ],
+      "empty_frames": 0,
+      "meta": {
+        "use_camera": false,
+        "use_external": false,
+        "use_lidar": true,
+        "use_map": false,
+        "use_radar": false
+      },
+      "parse_seconds": 2.3,
+      "predictions": 483959,
+      "predictions_without_translation": 0,
+      "sample_tokens": 6019,
+      "sha256": "e7a995c31692ac95a86b56208e0b5d82a4ab908df8d0a9b9474d70adb693eab4",
+      "state": "qualified"
+    },
+    "pointpillars": {
+      "bytes": 895962772,
+      "classes_outside_the_detection_set": [],
+      "classes_present": [
+        "barrier",
+        "bicycle",
+        "bus",
+        "car",
+        "construction_vehicle",
+        "motorcycle",
+        "pedestrian",
+        "traffic_cone",
+        "trailer",
+        "truck"
+      ],
+      "empty_frames": 0,
+      "meta": {
+        "use_camera": false,
+        "use_external": false,
+        "use_lidar": true,
+        "use_map": false,
+        "use_radar": false
+      },
+      "parse_seconds": 13.9,
+      "predictions": 3009500,
+      "predictions_without_translation": 0,
+      "sample_tokens": 6019,
+      "sha256": "6ab3a283f06ae165e4ba894d85d2bcb0e89ae12b1c7716d8570e07559fc14588",
+      "state": "qualified"
+    }
+  },
+  "scope": "a census of the complete original prediction submissions. It establishes what is present and parseable. It does not reproduce upstream inference and does not establish that any submission is correct",
+  "source_directory": "/Users/danielwahnich/workspace/reiyah-gate-b/predictions",
+  "version": "0.1.0"
+}
