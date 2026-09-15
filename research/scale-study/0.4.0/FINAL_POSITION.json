@@ -1,0 +1,35 @@
+{
+  "artifact_id": "reiyah.scale-study.final-position",
+  "recorded_utc": "2026-09-15T09:46:39.567705+00:00",
+  "reportable_form": "Among 3000 declared annotation conditional decisions under the Engine additive loss and the single record deletion family, 1127 were supported and all 1127 have an exact minimum equal to their arithmetic floor. 0 exceeded it and 0 remained unresolved. 1873 had an unsupported baseline.",
+  "scope": "150 scenes, 20 ordered pairs among five public submissions, one dataset, the Engine additive loss at a common 50 m range. Units share scenes, objects and detectors and are not independent experiments. Deletions are hypothetical; no annotation has been checked and no label error rate is established",
+  "supersedes": "0.3.0, which over withdrew. This is a correction to my own correction and it moves the conclusion back, precisely and with a proof",
+  "the_census_is_now_complete": {
+    "declared_units": 3000,
+    "minimum_above_floor": 0,
+    "minimum_equals_floor": 1127,
+    "note": "the three units that exhausted the 0.1.0 growing budget were rerun under the repaired module with a raised budget and all three certified at their floors, at 137, 283 and 256 deletions, in 7.1, 8.1 and 10.5 seconds",
+    "supported": 1127,
+    "unresolved": 0,
+    "unsupported_baseline": 1873
+  },
+  "the_stall_argument": {
+    "census_check": "the census reported no_admissible_crossing 0 times, and 0 certified units had k_observed different from k_floor",
+    "contrapositive": "a unit whose minimum exceeds its floor cannot let the search succeed, so it must stall, and 0.1.0 reported every stall as no_admissible_crossing",
+    "if_it_succeeds": "k deletions remove k units of gain, the decision crosses, so the minimum is at most k. The floor is a proved lower bound, so the minimum IS k",
+    "statement": "the growing search takes only deletions that remove exactly one unit of gain, so lost_total equals taken and it halts at taken = ceil(need/step) = k_floor exactly",
+    "therefore": "every supported unit that completed has minimum exactly equal to its floor. That is proved, not an artifact of the defective branch"
+  },
+  "the_three_positions_in_order": {
+    "final_0_4_0": "on this census every supported unit has an exact minimum equal to its arithmetic floor, proved, while the consumer counterexample shows a larger minimum is possible in principle. The result is contingent and informative",
+    "first_0_2_0": "the ratio is near tautological and the census proves the measure empty. WRONG: the derivation confused the gain to remove with the deletions needed",
+    "second_0_3_0": "whether any real unit exceeds its floor is unknown. OVER WITHDRAWN: it is unknown only where the search stalled, and the census had no stalls"
+  },
+  "version": "0.4.0",
+  "what_stays_withdrawn": [
+    "the fragility ratio is near tautological on this loss and edit family",
+    "k_floor <= total removable gain implies the floor is always reachable",
+    "the ratio is a useful or novel measure, which remains unestablished either way"
+  ],
+  "why_this_is_a_finding_and_not_a_tautology": "the consumer's counterexample has floor 1 and minimum 2, and the general family with m objects between one base and one addition has floor 1 and minimum m-1. A minimum above the floor is therefore possible under this very loss. That it never occurs across 1127 real supported decisions is a property of this data, not of the arithmetic, and it is the reason the earlier tautology claim was wrong"
+}

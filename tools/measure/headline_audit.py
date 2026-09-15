@@ -282,8 +282,25 @@ REGISTER = [
                        "needed to remove it"),
              "published_in": "scale-study-0.3.0"}],
         "status": "withdrawn",
-        "successor": ("whether any real unit has a minimum above its floor is unknown. The "
-                      "repaired search can find one and the census has not been rerun with it"),
+        "successor": ("the census is now complete and its result is proved by the stall argument: "
+                      "all 1127 supported units have a minimum exactly at their arithmetic floor, "
+                      "0 above and 0 unresolved. A minimum above the floor is possible under this "
+                      "loss, as the counterexample shows, so zero is a measurement about this "
+                      "data rather than a definition"),
+    },
+    {
+        "headline": "whether any real unit has a minimum above its floor is unknown",
+        "checkpoint": "scale-study-0.3.0",
+        "assumptions": ["that the defective branch blocked every route to the conclusion"],
+        "refuted_by": [
+            {"artifact": "research/scale-study/0.4.0/FINAL_POSITION.json",
+             "shows": ("the stall argument reaches it without that branch. A successful growing "
+                       "search proves the minimum equals the floor, and a minimum above the floor "
+                       "forces a stall. The census had zero stalls, so all 1127 supported units "
+                       "have minimum exactly at their floor. This was my own over correction, "
+                       "written after the first claim was refuted"),
+             "published_in": "scale-study-0.4.0"}],
+        "status": "withdrawn",
     },
     {
         "headline": "nobody does this, of the label dependence family",
