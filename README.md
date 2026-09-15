@@ -1,11 +1,11 @@
 # Reiyah
 
-**Building an evidence engine for engineering decisions about AI systems.**
+**Building decision assurance for changing autonomous systems under imperfect evidence.**
 
-Reiyah is being built to help a team decide whether a system change deserves further integration,
-show what evidence supports that choice, and identify what could change the answer. Perception is
-the first application. The long-term ambition is dependable infrastructure for leading AI and
-robotics teams, including reuse of valid evidence as models, sensors and operating conditions change.
+Reiyah is being built to help a team justify a system change: what the evidence supports,
+which assumptions remain open, what should be checked next, and what earlier work remains valid
+after another revision. Perception is the first application. The intended product is dependable
+decision infrastructure for AI and robotics engineering teams.
 
 Read the [product and funding thesis](docs/PRODUCT_AND_FUNDING_THESIS_2026-09-14.md) for the
 intended customer, technical research direction, current demonstration and next proof milestones.
@@ -50,14 +50,19 @@ original annotation and detector indices, exact capture bytes, camera timing off
 captures. It supplies an inspectable conditional argument; label truth and measured workflow
 value remain open. The core comparison and common formats are unchanged.
 
-The [15 September scale-study consumer review](docs/PERCEPTION_SCALE_CONSUMER_2026-09-15.md)
-finds a concrete search failure: no improving single deletion is incorrectly reported as no
-admissible crossing, although a two-label set crosses in the retained geometric counterexample.
-The 3,000-row census has consistent aggregate counts and floor arithmetic, but exact witness
-identities are not delivered. The reported near-universal floor frequency may be useful if those
-witnesses verify; it does not prove the ratio is universally constant or empty. The census has
-not been admitted into the decision view. Fable owns the correction; Engine retains its existing
-matching, missing-input and source-trace interfaces.
+The [15 September continuation](docs/DECISION_ASSURANCE_2026-09-15.md) checks a forty-frame
+case from an additional development scene: 2,299 references, 2,007 base detections and 738
+additions. Its improvement falls from **2.55 to 0.10** after a checked joint deletion of 49
+annotation records, exactly at the decision threshold. The minimum follows from a lower bound
+and a matching witness. Original source records and nominal preparation are checked; no label
+error or physical safety result is inferred. The 49 records span eleven dataset instance IDs.
+
+Fable's corrected final census reports all 1,127 supported units at their arithmetic floors,
+with 1,873 unsupported baselines among 3,000 declared units. The Engine has source-checked the
+complete delivered case, not every census witness. The corrected counterexample still proves
+that above-floor minima are possible. The [earlier failure and correction request](docs/PERCEPTION_SCALE_CONSUMER_2026-09-15.md)
+remain available. The next experiment compares bounded evidence reuse with full recomputation
+and a competent cached procedure; its advantage and total-effort savings remain unmeasured.
 
 The [prediction checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) prepares all **4,876 original
 prediction rows across 16 exposed development keyframes** without reading annotation-bearing

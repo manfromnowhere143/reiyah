@@ -2,35 +2,50 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.16`
+Version: `0.1.17`
 
 Lifecycle status: `exploratory`
 
-The [scale-study consumer](PERCEPTION_SCALE_CONSUMER_2026-09-15.md) selects Fable's sealed
-`scale-census-0.2.0` at `10ed423b479384b2160e39bcff4528c79c23c3bf`, manifest
-`1e550c00b36c2165bb41d549e842586d84655d13e0d0815e248a8ed37251e573`.
-All fifteen payloads and twelve committed origins agree. The preceding pilot's chronology
-correction 0.3.2 is consistent with the retained Engine receipt. The 3,000-row census covers all
-declared scene/pair keys with 1,124 reported floor witnesses, 1,873 unsupported baselines and
-three unresolved cases. Its summary arithmetic agrees; exact witness members and common
-case/source bindings are not delivered and no census witness is accepted. The research module
-is unchanged from the pilot and its counterexamples reproduce on the selected census bytes.
-The high reported floor frequency may be a useful empirical result if the witnesses verify;
-it does not prove the ratio universally constant or devoid of information.
+The [decision-assurance continuation](DECISION_ASSURANCE_2026-09-15.md) incorporates the operator's
+new direction: justify a specified autonomous-system change, expose controlling assumptions,
+identify useful next evidence and determine what prior work survives a revision. Perception and
+the existing Engine remain the foundation. The next bounded experiment compares revalidation
+with a competent cached procedure; no lower-total-effort or deployment advantage is established.
 
-A geometric counterexample reproduces a new search defect: three overlapping reference choices
-leave every singleton unchanged, but any pair reverses the decision. Research returns
-`no_admissible_crossing`; exhaustive enumeration and existing Engine certificates prove minimum
-two above floor one. The search only grows gain-reducing singletons, so every successful return
-is at its arithmetic floor; its current above-floor census question cannot be answered by that
-algorithm. Missing frames are also silently removed before weighting and four malformed numeric
-rows survive qualification. These are bounded entry-point failures, not evidence that actual
-source submissions contain malformed rows or that the reported floor witnesses are false.
+The current selected Fable outbox is `scale-final-0.4.0`, source
+`5aacbde150d28591c3c2c1bb7aaeeb51228ecc3e`, manifest
+`6276518a171496b98e5ec95fd22e826c386f49a7ef3efc5586c3ac3fc547981d`.
+All fifteen payloads and eleven committed origins agree. Its final census reports 1,127 supported
+units at their floors and 1,873 unsupported baselines, with no unresolved supported units.
+Exact members for all census witnesses are not supplied; one complete forty-frame case is now
+source-checked by the Engine. Earlier unresolved-state chronology remains valid history.
 
-Fable owns these repairs and the declared census. Engine owns the existing source adapter,
-common operands and consumer. Request one complete corrected pilot witness with its exact
-ordered frames, annotation identities and source digests; do not infer members from counts or
-implement the research optimizer. No human review is needed to continue the benchmark lane.
+The case binds 2,471 original annotation rows, 2,299 references, 2,007 base detections and 738
+additions. Existing native Engine inputs and certificates give 51/20 before and 1/10 after a
+49-record deletion. The lower bound and witness prove minimum 49 under this family. Original
+prediction spans, annotation/sample/instance/category joins and nominal poses agree. The 49
+members span eight frames and eleven dataset instance IDs. This is not a label-error count,
+physical-risk measurement or human workload. New scene capture bytes have not been verified.
+
+Research's ego-rotated range and source-order suppression differ from the native adapter's
+global-XY range and score-order suppression, despite equal membership in this case. Bind the
+chosen preparation explicitly. The repaired research counterexample now has floor one/minimum
+two; missing frames and malformed numbers have the expected outcomes. Null scores are still
+skipped and require a declared missing-field policy if strict rejection is promised.
+
+The current private checkpoint is
+`~/.codex/reports/reiyah/engine-frontier-continuation-2026-09-15-cghzq0wh/`.
+Read `START_HERE.md`, `SOURCE_BINDINGS.json`, `CLOSEOUT.json`, `PACKET_SEAL.json`, and the selected
+outbox manifest. `private/open-evidence-2/OPEN_EVIDENCE.md` opens all 49 checked members.
+`output/ASSESSMENT.md` retains the primary-source strategy review and `output/NEXT_EXPERIMENT.md`
+defines the next exact-revalidation assay and external-correction preflight. The initial private
+navigation failure and corrected execution are retained; Engine core and shared formats did not change.
+
+Fable owns the conventional cache/comparator and research method; Engine owns source custody,
+common inputs, inspection, implementation and main. Exchange sealed outputs. Do not implement
+Fable's search or create six speculative assurance modules. The earlier consumer and its false
+no-crossing witness remain in the dated document and closed packet. No human task is required
+from Daniel to continue automated engineering.
 
 The separate Console local commit `f09c156b0c6dd98d4a528bee057670fce2df9db5` opens both earlier
 Engine cases and preserves selected joint members, source records and available captures.
@@ -104,8 +119,8 @@ without adding another complete historical handoff to this entry point.
 
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
-uncommitted ownership before acting. This dependency checkpoint starts from main
-`216976127e4754d69a6fb0b47599b27c2a8a9d02`, tree `716110e9b35c0d9c85bba5e638fbcc9c0fb2d1a1`.
+uncommitted ownership before acting. This continuation starts from main
+`fce101d19084f4e127ddcfa60b0e39c963d0fbd4`, tree `45a27a2a2bbac04e99758c71dd19a736c0c37557`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit

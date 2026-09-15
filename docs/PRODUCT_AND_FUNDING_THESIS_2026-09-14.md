@@ -1,9 +1,9 @@
 # What Reiyah is being built to become
 
-Document ID: `reiyah.product-and-funding-thesis`. Version: `0.1.2`. Dated 14 September 2026.
+Document ID: `reiyah.product-and-funding-thesis`. Version: `0.1.3`. Dated 14 September 2026; updated 15 September 2026.
 Status: proposed product direction, with completed engineering evidence identified below.
 
-**Reiyah is being built as an evidence engine for AI engineering decisions.** It should help a
+**Reiyah is being built for decision assurance across changes to autonomous systems.** It should help a
 team decide whether a system change deserves further integration, show exactly what supports
 that choice, and identify which unresolved evidence could change the answer. Perception is the
 first application. The ambition is dependable infrastructure that leading AI and robotics teams
@@ -51,7 +51,7 @@ flowchart TB
   D --> L["Checked label-deletion dependency<br/>Joint witness and exact source records"]
   L --> O["Available capture context<br/>Missing evidence remains explicit"]
   O -. "research being tested" .-> N["Next evidence question<br/>What observation is worth obtaining?"]
-  D -. "long-term research direction" .-> R["Evidence reuse after a revision<br/>Recheck what the change invalidates"]
+  D -. "next bounded experiment" .-> R["Evidence reuse after a revision<br/>Recheck what the change invalidates"]
 ```
 
 ## The research ambition
@@ -68,6 +68,13 @@ Three research questions guide the next technology:
    valid work while invalidating evidence affected by changed data, configuration or interpretation.
    Matching competition makes this more demanding than checking whether a row changed.
 
+The [15 September continuation](DECISION_ASSURANCE_2026-09-15.md) makes revalidation the next
+bounded experiment: compare the same checked evidence change with full recomputation and a
+competent per-anchor cache, including dependency checking and repair. Exact computational reuse
+and statistical or physical validity remain separate. The six longer-term functions are evidence
+dependencies, decision definition, counterevidence, test selection, revalidation and runtime
+evidence. They form a research map; they are not six new subsystems to build now.
+
 Decision-directed observation and reuse across revisions are the intended expansion. Their
 advantage over capable existing methods is a research target. We will compare dated methods
 fairly before claiming novelty or state-of-the-art performance.
@@ -81,6 +88,11 @@ These are related evaluation efforts with different methods and scope. They set 
 competitive context; Reiyah must demonstrate its own advantage on its declared decision.
 
 ## What can be demonstrated today
+
+The [forty-frame source case](DECISION_ASSURANCE_2026-09-15.md) now extends the demonstration
+to an additional development scene. Original records support a checked change from 2.55 to 0.10
+under a joint 49-record deletion. It remains annotation-conditional. The next input candidate is
+an externally validated annotation revision, subject to source, terms and target qualification.
 
 The [first benchmark case](PERCEPTION_ANNOTATION_CASE_2026-09-14.md) connects 106 source
 annotations to a fixed comparison with 85 base detections and 16 additions. Weighted loss falls
