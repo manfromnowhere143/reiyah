@@ -50,6 +50,15 @@ original annotation and detector indices, exact capture bytes, camera timing off
 captures. It supplies an inspectable conditional argument; label truth and measured workflow
 value remain open. The core comparison and common formats are unchanged.
 
+The [15 September scale-study consumer review](docs/PERCEPTION_SCALE_CONSUMER_2026-09-15.md)
+finds a concrete search failure: no improving single deletion is incorrectly reported as no
+admissible crossing, although a two-label set crosses in the retained geometric counterexample.
+The 3,000-row census has consistent aggregate counts and floor arithmetic, but exact witness
+identities are not delivered. The reported near-universal floor frequency may be useful if those
+witnesses verify; it does not prove the ratio is universally constant or empty. The census has
+not been admitted into the decision view. Fable owns the correction; Engine retains its existing
+matching, missing-input and source-trace interfaces.
+
 The [prediction checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) prepares all **4,876 original
 prediction rows across 16 exposed development keyframes** without reading annotation-bearing
 inputs during extraction. Original bytes, duplicate rows and zero-based source indices survive.
@@ -341,8 +350,9 @@ flowchart TB
   S["Original submitted detections<br/>Exposed development selection"] --> E["Engine: exact row preparation<br/>Source hashes and original indices"]
   E --> X["Selected immutable exchange<br/>Same source evidence"]
   B["Retained benchmark labels<br/>Explicit conditional target"] --> E
-  X --> F["Fable: conventional comparator<br/>Source reconstruction and label tests"]
-  F --> Q["Checked conditional result<br/>Or explicit unresolved state"]
+  X --> F["Fable: scale study and comparator<br/>Complete witnesses and explicit search bounds"]
+  F --> V["Consumer checks source and claim<br/>Missing members remain unavailable"]
+  V --> Q["Checked conditional result<br/>Or explicit unresolved state"]
   Q --> A["What observation or repair<br/>could change the integration choice?"]
   Q --> C["Same joint operands, both analysts<br/>Measure usefulness and total effort"]
   A -. "requires actual evidence" .-> R["Staged independent review<br/>Admission remains with Engine"]
@@ -353,8 +363,9 @@ This research exchange does not release detector hints to discovery reviewers. B
 unassisted records must still be locked before assistance is released.
 
 The current automated comparison uses the declared benchmark target while physical review stays
-separate. Fable's next check is conventional source reconstruction and a bounded single-label
-deletion diagnostic, preserving hypothetical stress tests as distinct from actual observations.
+separate. Fable owns its declared scale study and the reproduced search/state corrections.
+The next Engine input is one exact pilot comparison with its complete deletion witness and
+source identities, preserving hypothetical edits as distinct from actual observations.
 
 The first product proof is a useful engineering choice against a competent analyst using the
 same evidence, mathematics and abstention, with preparation, verification, review, computation,

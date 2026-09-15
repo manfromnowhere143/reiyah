@@ -1,0 +1,54 @@
+{
+  "accepted_witnesses": 0,
+  "artifact_id": "reiyah.engine.scale-consumer.census-summary-check",
+  "case_inputs_supplied": false,
+  "claim_boundary": "These frequencies assume the reported baseline and floor witnesses are valid. Summary consistency alone does not establish them. Zero accepted census witnesses in this consumer.",
+  "cohort_consistency_checked": true,
+  "complete_ordered_pairs_per_scene": 20,
+  "conditional_above_floor_frequency_bounds": [
+    "0",
+    "3/1127"
+  ],
+  "conditional_floor_frequency_bounds": [
+    "1124/1127",
+    "1"
+  ],
+  "conditional_small_edit_frequencies": {
+    "five_or_less": "169/1127",
+    "one": "37/1127",
+    "one_percent_or_less": "271/1127"
+  },
+  "conditional_supported_denominator": 1127,
+  "counts": {
+    "budget_exhausted": 3,
+    "certified_at_floor": 1124,
+    "unsupported_baseline": 1873
+  },
+  "declared_index_units": 3000,
+  "detectors": 5,
+  "floor_arithmetic_rows_checked": 1127,
+  "index_sha256": "119f9a250d06d76902b107f851ea1c55479b261d93ce8e5bc3494252b4bc5bd1",
+  "module_identical_to_reproduced_pilot": true,
+  "reported_minima_distribution": {
+    "max": 575,
+    "median": "26.0",
+    "min": 1,
+    "normalised_max": "115/531",
+    "normalised_median": "16553/691335",
+    "normalised_min": "1/1772",
+    "population": "1124 rows reported certified_at_floor"
+  },
+  "reported_tail_counts": {
+    "five_or_less": 169,
+    "one": 37,
+    "one_percent_or_less": 271
+  },
+  "retained_unit_seconds_sum": "54889/125",
+  "scene_ids": 150,
+  "scope": "Checks delivered index arithmetic, census key completeness and conditional aggregate summaries; no raw case reconstruction or witness verification",
+  "source_commit": "10ed423b479384b2160e39bcff4528c79c23c3bf",
+  "source_executions_repeated": "none; only the byte-identical bounded module probes are replayed separately",
+  "unresolved_cannot_enter_one_or_five_or_one_percent_tail": "Their reported, arithmetically checked floors already exceed all three thresholds",
+  "version": "0.1.0",
+  "witness_members_supplied": false
+}

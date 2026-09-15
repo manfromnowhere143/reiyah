@@ -1,0 +1,120 @@
+{
+  "algorithm_limit": "Every chosen deletion loses exactly one gain unit and the loop stops at the first crossing. With the fixed equal weights and unit penalties, every successful search therefore returns k_floor. Its certified_above_floor branch cannot test for larger minima.",
+  "artifact_id": "reiyah.engine.scale-consumer.review",
+  "census_source": {
+    "commit": "10ed423b479384b2160e39bcff4528c79c23c3bf",
+    "committed_blobs_verified": 12,
+    "counterexamples_replayed": true,
+    "manifest_sha256": "1e550c00b36c2165bb41d549e842586d84655d13e0d0815e248a8ed37251e573",
+    "module_unchanged": true,
+    "payloads_verified": 15
+  },
+  "census_summary_check": "census-summary-check.json",
+  "certificate_delivery": "The rematching text supplies 20 baseline equalities. No exact pilot witness members or checker implementation was supplied in this outbox. No pilot witness is accepted through the Console.",
+  "chronology_correction": {
+    "status": "corrected statement accepted; no independent exposure audit",
+    "version": "0.3.2"
+  },
+  "engine_behavior": "Existing decision schema and missing-input states suffice for all bounded probes. No runtime or common-interface repair was justified.",
+  "joint_deletion": {
+    "conclusion": "no_admissible_crossing is false; failure to find an improving singleton is not a joint impossibility proof",
+    "exact_minimum": 2,
+    "fable_return": {
+      "decision": "1",
+      "evaluations": 6,
+      "k_floor": 1,
+      "reason": "no set of single record deletions removes enough gain to cross",
+      "status": "no_admissible_crossing"
+    },
+    "floor": 1,
+    "geometric_preparation": "base and addition both retained; every detection-object edge exists",
+    "ratio": "2"
+  },
+  "mathematical_limit": "k_floor <= total gain bounds required gain loss, not required deletion count. K_(2,m) with one base and one added detection has floor 1 but minimum m-1.",
+  "missing_frame": {
+    "conclusion": "the declared population and weights are changed silently",
+    "engine_result": {
+      "authority_state": "research_only",
+      "bounds": null,
+      "decision": {
+        "improvement_criterion": "not_evaluated",
+        "preference": "not_evaluated"
+      },
+      "enclosure_kind": "unavailable",
+      "execution_status": "input_blocked",
+      "model_status": "not_checked",
+      "physical_coverage": "not_established",
+      "reference_scope": "synthetic",
+      "sampling_scope": "fixed_selected_cohort",
+      "statistical_confidence_level": null
+    },
+    "fable_return": {
+      "at_floor": true,
+      "decision": "1",
+      "deletions_per_frame": {
+        "0": 1
+      },
+      "evaluations": 2,
+      "fragility_ratio": "1",
+      "k_floor": 1,
+      "k_observed": 1,
+      "note": "each deletion was verified to remove exactly one unit of gain, and no deletion can remove more, so a witness of k_floor size is minimal",
+      "status": "certified_at_floor",
+      "verified_decision_after": "-1"
+    },
+    "same_as_dropping_missing_frame": true
+  },
+  "not_established": [
+    "actual pilot label error",
+    "actual pilot witness validity",
+    "physical validity",
+    "human effort",
+    "dataset frequency of the synthetic failure"
+  ],
+  "pilot_consumer": {
+    "certified_rows_arithmetic_consistent": 10,
+    "exact_witness_members_supplied": false,
+    "meaning": "Aggregate summaries are readable; the selected exact dependency cannot be opened from this delivery.",
+    "packet_import_result": {
+      "code": "INPUT_SCHEMA",
+      "detail": ": Additional properties are not allowed ('protocol_sha256', 'seconds', 'selection_rule', 'units' were unexpected)"
+    },
+    "raw_pilot_witnesses_rechecked": 0,
+    "units": 20,
+    "unprovided": [
+      "ordered frame/sample identities",
+      "complete selected annotation member identities",
+      "common comparison and decision packet bindings",
+      "original row/source joins"
+    ],
+    "unsupported_baselines": 10
+  },
+  "qualification": [
+    {
+      "mutation": "nan_score",
+      "retained_rows": 1
+    },
+    {
+      "mutation": "infinite_score",
+      "retained_rows": 1
+    },
+    {
+      "mutation": "boolean_score",
+      "retained_rows": 1
+    },
+    {
+      "mutation": "nan_coordinate",
+      "retained_rows": 1
+    }
+  ],
+  "scope": "Synthetic counterexamples; exact pilot and census summary consistency; no raw case reconstruction or accepted research witness.",
+  "source": {
+    "commit": "6b5989a72b91d0f2111c365d525bef9b899fb7ca",
+    "committed_blobs_verified": 12,
+    "manifest_sha256": "750e37813f80dc75b6a2691e906e902a3a0312a626cc18056eabaa0193970dd4",
+    "module_sha256": "a263ef8661d2169c710e79848145cc4145033d2a23631c0ab58e49cc3f67fbd6",
+    "payloads_verified": 14
+  },
+  "status": "correction_required",
+  "version": "0.1.0"
+}

@@ -1,6 +1,6 @@
 # Reiyah: the decision, the evidence and the next checks
 
-Document ID: `reiyah.engine.roadmap`. Version: `0.1.7`. Status: `exploratory`. Updated 14 September 2026.
+Document ID: `reiyah.engine.roadmap`. Version: `0.1.8`. Status: `exploratory`. Updated 15 September 2026.
 
 The [product and funding thesis](PRODUCT_AND_FUNDING_THESIS_2026-09-14.md) explains the destination:
 an evidence engine that helps AI engineering teams substantiate system changes and, longer term,
@@ -28,6 +28,7 @@ an object-detection result does not validate them by analogy.
 | Additional case preparation | Existing interfaces prepare 14 remaining exposed frames; original rows, normalization and common traces checked | A second detector verdict, independent scene validation or measured low integration effort |
 | Second automated comparison | Same interfaces give [2/7,2/7] under 737 included labels; returned Fable single-deletion family and two crossing pairs checked | Independent scenes, physical label truth or measured workflow value |
 | Actual dependency trace | Single and joint deletion witnesses open original annotation/detector records and exact available capture bytes; unavailable captures explicit | Object-to-pixel/point association, human judgment or total-effort savings |
+| Scale-study consumption | Full census index and summary arithmetic checked; a false no-crossing result reproduced with existing Engine operands | Exact census-witness validity, universal ratio-one theorem or scale readiness |
 
 The [README](../README.md) links the retained findings and historical protocols. The
 [current continuation](SESSION_HANDOFF.md) records exact Engine state; the
@@ -46,6 +47,9 @@ flowchart TB
   M --> D["Paired detector loss<br/>Complete joint alternatives"]
   D --> C["Checked conditional conclusion<br/>Or unresolved result"]
   C --> T["Checked joint dependency<br/>Original records and available captures"]
+  P["Scale-study input"] --> J["Exact members and claim verification"]
+  J -. "missing or contradicted" .-> Q
+  J -. "qualifying complete input" .-> M
   C --> U["Named engineering choice<br/>Measure usefulness and total effort"]
   C -. "missing premise" .-> Q["Specific next observation<br/>or falsifying construction"]
   Q -. "actual evidence only" .-> M
@@ -56,12 +60,12 @@ flowchart TB
 | Gap | Owner and next concrete check | Evidence that would change the choice |
 |---|---|---|
 | Automated benchmark result | Both returned deletion challenges checked; minimum crossing group has one label in the first case and two in the second | Results from a different scene or another declared error family; retain weights, margin and ordinary-analyst shortcuts |
-| Dependency consumption | Engine: reusable source trace now works on both cases, including joint deletions and missing captures | A separate consumer fails to recover the correct source, silently substitutes evidence or cannot use the result |
+| Dependency consumption | Engine/Console: both earlier cases open locally; the new census lacks exact witness members | A complete pilot witness fails common-operand recomputation or exact original-record opening |
 | Preparation reuse | Second case executed through existing interfaces, with 588 base detections, 94 additions and 737 included labels; private audit control repair retained | Repeated usefulness and full effort accounting beyond these two exposed scenes |
 | Practical inspection | Engine: one assisted selection now traces to original records; use a working copy to repair the observed overwrite and save-path problems | A later participant can complete the revised procedure, with actual effort and failures recorded |
 | Independent physical references | Engine coordinates the authorized staged protocol; reviewers supply actual observations | Both unassisted records locked before assistance, complete disagreements and admitted joint alternatives |
 | Raw association uncertainty | Fable: use selected original rows, preserve unmatched records and order, compare a declared rule with a serious baseline | A checked decision or abstention stable to a defensible association/error model, or a retained counterexample |
-| Preparation assumptions and inference | Fable: the selected comparator 0.2.0 correction has source-bound consumer checks; stop fixture expansion until a real input or concrete defect arrives | A checked flip, robustness result or unresolved outcome under explicit target semantics; physical uncertainty, evaluation definitions and configuration changes remain distinct |
+| Scale-study search and interpretation | Fable: repair false no-crossing, missing-frame and invalid-number handling; retain bounded search outcomes and exact witnesses | The existing geometric joint-deletion control is classified correctly and a complete pilot witness can be consumed |
 | Equal useful comparison | Both lanes: same opportunities, references, weights, loss, tolerance and source evidence | One defensible integration choice with measured preparation, computation, verification, review and repair effort |
 | Generalization and stronger scientific claims | Separate future protocol and appropriately diverse inputs; no new cohort selected here | Held-out validation and dated primary comparisons that survive marginal, association and shared-data controls |
 
@@ -100,8 +104,15 @@ counterfactual label edits. Test a second available case after the first is chec
 The [second comparison is now executed and checked](PERCEPTION_SECOND_CASE_2026-09-14.md), with
 selection fixed before its verdict. It returns [2/7,2/7] under its label policy. Its 14 frames are
 additional observations from the same two scenes; no prospective/frozen-study or independent-scene
-claim follows. The returned sensitivity result is now checked. Fable owns the remaining
-insertion-coordinate repair and explicit accounting for its planned second-case insertion family.
+claim follows. The returned sensitivity result is checked. Fable's later sealed pilot reports
+coordinate and insertion-family repairs; these executions were not repeated in the current
+consumer. Its chronology correction is accepted. The [new consumer result](PERCEPTION_SCALE_CONSUMER_2026-09-15.md)
+identifies a false search-impossibility claim and missing exact witness delivery. The inequality
+between required gain loss and total gain does not prove a minimum edit count or near-constant
+ratio. The full census index is now checked for arithmetic and completeness of its declared
+keys; exact witnesses remain undelivered. The near-universal reported floor frequency can still
+be empirical evidence conditional on those witnesses verifying. Fable owns the correction and
+affected census work; Engine consumes exact cases.
 
 ## Ownership and authority
 

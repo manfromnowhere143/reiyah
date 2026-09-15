@@ -1,0 +1,107 @@
+{
+  "anchors": [
+    {
+      "additions": {
+        "state": "observed",
+        "value": [
+          {
+            "id": "added-1",
+            "record_sha256": "d5a1f5b9610fe2cda75fc6f956be053d239169df1d6bec27bf5c9e436deed2f6"
+          }
+        ]
+      },
+      "base": {
+        "state": "observed",
+        "value": [
+          {
+            "id": "base-1",
+            "record_sha256": "30f11252403d1630ba937023c50f8c24010a5994b153ebdb0354eb6987ced19c"
+          }
+        ]
+      },
+      "id": "anchor-1",
+      "reference": {
+        "edges": [
+          {
+            "detection": "base-1",
+            "object": "o0",
+            "when": []
+          },
+          {
+            "detection": "base-1",
+            "object": "o1",
+            "when": []
+          },
+          {
+            "detection": "base-1",
+            "object": "o2",
+            "when": []
+          },
+          {
+            "detection": "added-1",
+            "object": "o0",
+            "when": []
+          },
+          {
+            "detection": "added-1",
+            "object": "o1",
+            "when": []
+          },
+          {
+            "detection": "added-1",
+            "object": "o2",
+            "when": []
+          }
+        ],
+        "objects": [
+          {
+            "id": "o0",
+            "when": []
+          },
+          {
+            "id": "o1",
+            "when": []
+          },
+          {
+            "id": "o2",
+            "when": []
+          }
+        ],
+        "state": "finite"
+      },
+      "weight": {
+        "denominator": "1",
+        "numerator": "1"
+      }
+    }
+  ],
+  "artifact_id": "reiyah.perception-decision.input",
+  "assumptions": [
+    "Synthetic geometric counterexample: base x=0, addition x=3, same-class objects x=1.1,1.5,1.9.",
+    "Identity ego pose, score 0.9, <=50m range, strict <2m suppression and matching.",
+    "Hypothetical reference deletions; this is not a real dataset or physical observation."
+  ],
+  "cohort_id": "synthetic-single-anchor",
+  "comparison_id": "scale-consumer-joint-deletion",
+  "evidence_kind": "synthetic",
+  "input_scope": "normalized_research_graphs",
+  "loss": {
+    "false_negative": {
+      "denominator": "1",
+      "numerator": "1"
+    },
+    "false_positive": {
+      "denominator": "1",
+      "numerator": "1"
+    },
+    "tolerance": {
+      "denominator": "10",
+      "numerator": "1"
+    }
+  },
+  "model": {
+    "clauses": [],
+    "variables": []
+  },
+  "version": "0.1.0"
+}

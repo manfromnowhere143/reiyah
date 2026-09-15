@@ -1,10 +1,44 @@
-# Reiyah Engine continuation, 2026-09-14
+# Reiyah Engine continuation, 2026-09-15
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.15`
+Version: `0.1.16`
 
 Lifecycle status: `exploratory`
+
+The [scale-study consumer](PERCEPTION_SCALE_CONSUMER_2026-09-15.md) selects Fable's sealed
+`scale-census-0.2.0` at `10ed423b479384b2160e39bcff4528c79c23c3bf`, manifest
+`1e550c00b36c2165bb41d549e842586d84655d13e0d0815e248a8ed37251e573`.
+All fifteen payloads and twelve committed origins agree. The preceding pilot's chronology
+correction 0.3.2 is consistent with the retained Engine receipt. The 3,000-row census covers all
+declared scene/pair keys with 1,124 reported floor witnesses, 1,873 unsupported baselines and
+three unresolved cases. Its summary arithmetic agrees; exact witness members and common
+case/source bindings are not delivered and no census witness is accepted. The research module
+is unchanged from the pilot and its counterexamples reproduce on the selected census bytes.
+The high reported floor frequency may be a useful empirical result if the witnesses verify;
+it does not prove the ratio universally constant or devoid of information.
+
+A geometric counterexample reproduces a new search defect: three overlapping reference choices
+leave every singleton unchanged, but any pair reverses the decision. Research returns
+`no_admissible_crossing`; exhaustive enumeration and existing Engine certificates prove minimum
+two above floor one. The search only grows gain-reducing singletons, so every successful return
+is at its arithmetic floor; its current above-floor census question cannot be answered by that
+algorithm. Missing frames are also silently removed before weighting and four malformed numeric
+rows survive qualification. These are bounded entry-point failures, not evidence that actual
+source submissions contain malformed rows or that the reported floor witnesses are false.
+
+Fable owns these repairs and the declared census. Engine owns the existing source adapter,
+common operands and consumer. Request one complete corrected pilot witness with its exact
+ordered frames, annotation identities and source digests; do not infer members from counts or
+implement the research optimizer. No human review is needed to continue the benchmark lane.
+
+The separate Console local commit `f09c156b0c6dd98d4a528bee057670fce2df9db5` opens both earlier
+Engine cases and preserves selected joint members, source records and available captures.
+Its completed private checkpoint is `~/.codex/reports/reiyah/console-decision-flow-2026-09-15-t0e2udim/`.
+Read its own contract before Console changes; its deployment restriction remains in force.
+The current Engine consumer checkpoint is `~/.codex/reports/reiyah/engine-scale-consumer-2026-09-15-tmw4ob4q/`.
+Read its `START_HERE.md`, `SOURCE_BINDINGS.json`, `CLOSEOUT.json`, seal and outbox. Older consumer
+findings below describe their selected sources; later corrections do not rewrite those packets.
 
 The [dependency trace](PERCEPTION_DEPENDENCY_TRACE_2026-09-14.md) now opens checked label
 witnesses as exact original annotation, sample, instance, category and incident detector rows,
@@ -87,7 +121,7 @@ or processes, or duplicate that implementation. Read current lane status before 
 overlapping work. Exchange only through separately selected immutable outboxes; a chat verdict
 or mutable branch tip is insufficient. No ownership transfer is implied by a consumer review.
 
-The current private checkpoint is
+The preceding dependency checkpoint is
 `~/.codex/reports/reiyah/engine-dependency-trace-2026-09-14-3_e7tw_w/`.
 Read `START_HERE.md`, both plan records, source bindings, `CLOSEOUT.json`, `PACKET_SEAL.json`,
 and `COPY_TO_CODEX.txt`. Its `private/trace-first-reviewed/OPEN_EVIDENCE.md` and
