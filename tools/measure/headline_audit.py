@@ -216,6 +216,10 @@ REGISTER = [
                         "cases at ratio 1 do not establish that the ratio distinguishes cases at "
                         "all. The closest excluded label sits 6.5 centimetres outside the range"),
              "published_in": "annotation-case-0.2.0"},
+            {"artifact": "research/scale-study/0.2.0/census-summary.json",
+             "limits": ("0 of 1124 resolved census units exceeded the floor, so the ratio is "
+                        "empirically constant and reports nothing about the annotations"),
+             "published_in": "scale-study-0.2.0"},
             {"artifact": "research/scale-study/0.1.0/ratio-limit.json",
              "limits": ("the ratio is close to tautological on this loss and edit family. With "
                         "unit penalties and equal frame weights the floor is always at most the "
@@ -225,9 +229,13 @@ REGISTER = [
                         "reports on the annotations. The absolute edit count, 3 to 150 across the "
                         "pilot, is what carries information"),
              "published_in": "scale-study-0.1.0"}],
-        "status": "qualified",
-        "qualification": ("the replication holds and the ratio is near constant by construction. "
-                          "Report the absolute and normalised edit counts beside it"),
+        "status": "withdrawn",
+        "successor": ("the ratio is withdrawn as a quantity of interest. The census resolved 1124 "
+                      "units and zero exceeded the floor, confirming the derivation that it is "
+                      "near tautological on this loss and edit family. What replaces it is the "
+                      "absolute edit count distribution: median 26, range 1 to 575, and 24.1 "
+                      "percent of supported comparisons removable by one percent or less of their "
+                      "scene's annotations"),
     },
     {
         "headline": ("this lane's rigor exceeds NVIDIA's and Mobileye's, and the industry ships "

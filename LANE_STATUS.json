@@ -36,6 +36,13 @@
       "status": "replaced"
     }
   ],
+  "corrected_from_0_7_0": [
+    {
+      "claim_now": "withdrawn as a quantity of interest. True but empty: 0 of 1124 census units exceeded the floor because the arithmetic does not permit it",
+      "claim_then": "both verdicts sit at their arithmetic floor, fragility ratio 1, replicated",
+      "status": "withdrawn"
+    }
+  ],
   "costs": {
     "compatibility_check": "one recomputation on the exact case, about 0.001 s",
     "human_effort": "unmeasured. The screenshot receipt interval and command durations are not human active time",
@@ -43,7 +50,7 @@
   },
   "date": "2026-09-14",
   "lane": "independent research and conventional comparator",
-  "next_trigger": "run the declared census with every stopping outcome retained. The sharpened question is whether any unit reaches a ratio above one; a census with none is a negative result and will be reported as one",
+  "next_trigger": "a second dataset. If the normalised edit count distribution there differs materially, the shape is a property of nuScenes annotation density rather than of benchmark decisions. The narrower open question is whether a ratio above one is possible at all under this loss; impossible would be the cleaner result",
   "open_and_unowned": [
     "the declared census of up to 3000 units has not been run",
     "the physical comparison remains open at its own state and is untouched by this work",
@@ -52,17 +59,16 @@
     "Gate A unaccepted"
   ],
   "question": "does an added detector deserve further integration work, and what evidence is still missing before that answer means anything",
-  "supersedes": "0.6.0, whose next trigger sought a ratio above one. An outcome selected trigger is replaced by the declared population study, and the ratio itself is now qualified",
-  "version": "0.7.0",
+  "supersedes": "0.7.0, before the census ran",
+  "version": "0.8.0",
   "what_is_established_now": [
-    "the validation census rebuilt here: 6019 frames in 150 scenes, zero join failures, 192041 census annotations giving 148440 included under the common 50 m rule, 47 declared empty frames",
-    "all five original submissions qualify: 6019 frames each, 5215626 predictions, zero missing coordinates, bound by digest",
-    "the scale protocol is frozen at 4c601ca94bc1e34e155fda0b16a7e45d660c5084e913f5630938224b74686368 with the pilot selection rule published before the pilot ran",
-    "pilot of 20 units: 10 unsupported baselines retained as adverse, 10 certified at the arithmetic floor, 0 above it, 0 unresolved",
-    "the declared first falsifier did not fire: an independent implementation written from the protocol, sharing no matcher, agrees on 20 of 20 units as exact rationals",
-    "the fragility ratio is close to tautological on this loss and edit family. k_floor <= total removable gain always holds, so the floor is always reachable in principle and a ratio above one needs reassignment to block every remaining single unit removal. The headline is qualified",
-    "the informative quantity is the absolute edit count, 3 to 150 across the pilot, and its normalisation, 0.0033 to 0.0889 of a scene s annotations",
-    "a defect in this lane s own witness search found and repaired: summing single deletion losses within one frame is invalid because reassignment absorbs the second; the witness is now grown one deletion at a time with the gain reverified after each"
+    "the declared census ran in full: 3000 of 3000 units in 463 seconds, 0.146 s per unit",
+    "1873 units (62.4 percent) have an unsupported baseline: under the declared loss and tolerance the added detector does not clear the threshold. Retained as adverse first class results",
+    "1124 units certified at the arithmetic floor, 0 above it, 3 unresolved and retained",
+    "the fragility ratio is WITHDRAWN as a quantity of interest. Zero of 1124 resolved units exceeded the floor, confirming the derivation that it is near tautological on this loss and edit family. It restates the arithmetic rather than reporting on the annotations",
+    "what replaces it is the absolute edit count distribution: min 1, median 26, max 575; normalised min 0.0006, median 0.0239, max 0.2166",
+    "37 units are overturned by a single annotation deletion; 169 need five or fewer; 271 (24.1 percent of resolved) need one percent or less of their scene labels",
+    "the first falsifier did not fire: an independent implementation sharing no matcher agreed on 20 of 20 pilot units as exact rationals, and scale_study.py carries 22 tests including the non additivity adversary and 300 randomised agreements"
   ],
   "what_this_lane_will_not_do_while_that_input_is_absent": [
     "create synthetic readings or treat exposed benchmark annotations as independent references",

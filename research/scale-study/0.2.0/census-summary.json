@@ -1,0 +1,83 @@
+{
+  "artifact_id": "reiyah.scale-study.census-summary",
+  "computed_units": 3000,
+  "cost": {
+    "max_seconds_per_unit": 11.0,
+    "mean_seconds_per_unit": 0.146,
+    "total_seconds": 463.1
+  },
+  "declared_units": 3000,
+  "edit_count_distribution": {
+    "max": 575,
+    "mean": 44.2,
+    "median": 26.0,
+    "min": 1,
+    "p10": 3,
+    "p25": 10,
+    "p75": 60,
+    "p90": 106
+  },
+  "fragile_tail": {
+    "units_needing_five_or_fewer": 169,
+    "units_needing_one_percent_or_less_of_their_labels": 271,
+    "units_overturned_by_one_deletion": 37
+  },
+  "normalised_distribution": {
+    "deciles": [
+      0.0006,
+      0.0044,
+      0.0083,
+      0.0134,
+      0.0182,
+      0.0239,
+      0.0326,
+      0.0417,
+      0.0538,
+      0.0743,
+      0.2166
+    ],
+    "definition": "deletions divided by the qualifying annotations in that scene cohort",
+    "max": 0.2166,
+    "median": 0.0239,
+    "min": 0.0006
+  },
+  "protocol_sha256": "4c601ca94bc1e34e155fda0b16a7e45d660c5084e913f5630938224b74686368",
+  "ratio_result": {
+    "above_floor": 0,
+    "at_floor": 1124,
+    "finding": "zero of 1124 resolved units exceeded the arithmetic floor. The ratio is empirically constant across the census, confirming the derivation that it is near tautological on this loss and edit family. It carries no information beyond the arithmetic and is withdrawn as a quantity of interest",
+    "units_resolved": 1124
+  },
+  "reportable_form": "Among 3000 declared annotation conditional decisions under the Engine additive loss and the single record deletion family, 1124 were certified at their arithmetic floor, 0 above it, and 3 remained unresolved. 1873 had an unsupported baseline.",
+  "scope": "150 scenes, 20 ordered pairs among five public submissions, one dataset, the Engine additive loss. Units share scenes, objects and detectors and are not independent experiments. Deletions are hypothetical and no annotation has been checked. This is not official mAP or NDS and establishes no label error rate",
+  "seconds": 463.1,
+  "status_counts": {
+    "budget_exhausted": 3,
+    "certified_at_floor": 1124,
+    "unsupported_baseline": 1873
+  },
+  "unresolved_units": [
+    {
+      "addition": "pointpillars",
+      "base": "fcos3d",
+      "k_floor": 137,
+      "scene": "scene-0276",
+      "status": "budget_exhausted"
+    },
+    {
+      "addition": "megvii",
+      "base": "fcos3d",
+      "k_floor": 283,
+      "scene": "scene-0345",
+      "status": "budget_exhausted"
+    },
+    {
+      "addition": "pointpillars",
+      "base": "fcos3d",
+      "k_floor": 256,
+      "scene": "scene-0345",
+      "status": "budget_exhausted"
+    }
+  ],
+  "version": "0.2.0"
+}
