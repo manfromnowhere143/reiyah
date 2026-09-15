@@ -1,0 +1,115 @@
+{
+  "adversaries_retained": [
+    "the matching trap",
+    "joint pairs with zero singleton effect",
+    "equal capture table with opposite loss",
+    "tolerance boundary behaviour",
+    "unequal weights"
+  ],
+  "artifact_id": "reiyah.scale-study.protocol",
+  "bounds_and_proof": {
+    "a_witness_above_the_floor": "is an upper bound only and does not by itself prove a ratio above one",
+    "arithmetic_floor": "ceil( (decision - tolerance) / max_i (a+b) * weight_i ), a proved lower bound",
+    "exact_minimum": "claimed only when a witness meets the floor, or when all smaller admissible sets are ruled out within budget",
+    "no_pruning": "zero singleton effect annotations are retained, because a joint deletion can change the optimum through reassignment",
+    "witness": "an exhibited deleting set, an upper bound"
+  },
+  "budgets": {
+    "amendment": "any budget change is recorded as a dated amendment to this protocol before the remaining cases run",
+    "pilot": "set after the pilot measures parsing, preparation, search, checking, memory and storage"
+  },
+  "census": {
+    "detectors": [
+      "centerpoint",
+      "fcos3d",
+      "mapillary",
+      "megvii",
+      "pointpillars"
+    ],
+    "frames": 6019,
+    "frames_with_zero_qualifying_annotations": "retained as declared empty, not dropped. Empty, missing and failed inputs are three distinct states",
+    "input_identity": "research/phase-1/0.1.0/input-preflight.json, each submission bound by sha256",
+    "scenes": 150,
+    "source": "the nuScenes validation split as verified by this lane"
+  },
+  "comparison": {
+    "additions": "the second detector's qualifying rows that survive suppression against the base",
+    "base": "the first detector of the ordered pair, fully retained after qualification",
+    "form": "base plus suppressed additions, not model replacement",
+    "pairs": "all 20 ordered pairs among the five qualified submissions"
+  },
+  "decision_unit": {
+    "count": "150 scenes times 20 ordered pairs, up to 3000 declared units before input failures",
+    "explicitly_not": "3000 independent experiments. Units share scenes, objects and detectors. Frames inside a scene are correlated and the 20 ordered pairs reuse the same five submissions",
+    "justification": "a scene is the coarsest unit over which the declared loss is naturally weighted and the finest unit that does not treat consecutive frames of one drive as separate comparisons",
+    "unit": "one scene cohort under one ordered detector pair",
+    "weights": "equal frame weights within each scene cohort"
+  },
+  "edit_family": {
+    "correction_unit": "one frame annotation record, not a tracked object group",
+    "primary": "delete exactly one frame annotation record",
+    "recomputation": "both matchings recomputed in full; competition and reassignment preserved",
+    "secondary_families": "insertions are a separately declared family and are never pooled into the same breakdown number",
+    "status": "hypothetical perturbations, not discovered label errors"
+  },
+  "exposure_record": {
+    "earlier_protocols_do_not_cover_this": "the label dependence preregistrations 0.1.0 through 0.3.0 preregister the two case studies only",
+    "honesty_note": "this is lane reported exposure. No independent audit of what this lane has seen exists, and readers should treat it as good faith rather than proof",
+    "prior_cases": "two annotation conditional cases on 16 frames from two scenes are already computed and published by this lane. Those frames are exposed and their outcomes are known here",
+    "this_study": "no outcome of any comparison declared below has been computed by this lane. The pilot selection rule is published here before the pilot runs"
+  },
+  "frozen_before_any_scale_outcome": true,
+  "inclusion_and_rules": {
+    "class_map": "the ten nuScenes detection classes; unmapped categories are excluded and counted",
+    "matching": "maximum same class one to one, strict distance < 2 m",
+    "penalties": {
+      "false_negative": "1",
+      "false_positive": "1"
+    },
+    "population_warning": "the 134565 row class dependent cache is NOT the population here. Reference membership is derived from the qualified original tables and ego poses under the common 50 m rule",
+    "range": "common nominal XY <= 50 m, derived from the original tables and poses",
+    "score_cutoff": ">= 0.30",
+    "suppression": "same class, strict distance < 2 m, against the retained base and against earlier retained additions, in a bound published order",
+    "suppression_order": "ascending original source row index within the anchor, recorded per case",
+    "tolerance": "1/10"
+  },
+  "no_favourable_outcome_is_a_deliverable": "a constant ratio, a ratio that adds nothing beyond margin and edit count, or a census dominated by unresolved cases are all acceptable results and will be reported as found",
+  "pilot": {
+    "exposure": "pilot units are recorded separately from the remaining census",
+    "independent_check": "each pilot unit is recomputed by a separate ordinary rematching implementation that shares no matcher with the producer",
+    "rule": "order the 150 scene tokens ascending as strings; take scenes at index 0, 30, 60, 90 and 120. Order the 20 ordered pairs alphabetically by base then addition; take pairs at index 0, 5, 10 and 15. The pilot is the 20 resulting units",
+    "selection_rule_published_before_running": true
+  },
+  "question": "over a declared census of engineering comparisons, how many hypothetical single annotation deletions are needed to remove support under the declared loss and tolerance, how often is that minimum equal to its proved arithmetic floor, how often above it, and how often unresolved",
+  "recorded_utc": "2026-09-15T07:27:08.993921+00:00",
+  "reporting": {
+    "explicitly_not_claimed": [
+      "an annotation error rate or probability",
+      "that a floor ratio of one means a small physical perturbation",
+      "industry deployment practice, human savings, customer demand or novelty",
+      "any statement about a wider population without an explicit sampling and scene dependence model",
+      "official mAP or NDS: this is the Engine additive loss"
+    ],
+    "if_unresolved_cases_prevent_a_frequency": "bounds on the frequency with their denominator",
+    "reported_beside_the_ratio": [
+      "margin",
+      "maximum per edit change",
+      "absolute minimum edit count",
+      "minimum divided by population size",
+      "the stopping outcome"
+    ],
+    "required_form": "among N declared annotation conditional decisions under loss L and edit family F, X were certified at their arithmetic floor, Y above it, and Z remained unresolved"
+  },
+  "stopping_outcomes_all_retained": [
+    "certified_at_floor",
+    "certified_above_floor",
+    "bounded_only",
+    "no_admissible_crossing",
+    "unsupported_baseline",
+    "empty_reference",
+    "budget_exhausted",
+    "invalid_input",
+    "missing_input"
+  ],
+  "version": "0.1.0"
+}

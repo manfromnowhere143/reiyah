@@ -1,0 +1,63 @@
+{
+  "artifact_id": "reiyah.label-dependence.preregistration-correction",
+  "corrects": {
+    "artifact": "reiyah.label-dependence.preregistration-correction",
+    "sha256": "88cb4a3f5b17280b631f916990e9ff7b2cfe4f9fd4cbd8c9bd463b0ef7885be2",
+    "status": "retained unchanged, as is the 0.3.0 preregistration it corrected",
+    "version": "0.3.1"
+  },
+  "failure_mode_count": {
+    "instances": [
+      "nobody runs this analysis",
+      "this lane's rigor exceeds two named companies'",
+      "the second case did not exist",
+      "the second case outcome did not exist, searched for directly"
+    ],
+    "named": "asserting absence from local absence",
+    "note": "the fourth instance occurred inside the correction written about the third. A named failure mode is not a fixed one. The mechanical guard adopted here is that an absence claim requires an instrument demonstrated to find the thing when it is present, and the demonstration is retained with the claim"
+  },
+  "found_by": "the Engine consumer, which named the exact contradicting file",
+  "recorded_utc": "2026-09-15T07:26:26.875912+00:00",
+  "the_corrected_chronology_utc": {
+    "CASE.json_this_lane_consumed_written": "2026-09-14T16:46:01",
+    "conclusion": "the outcome existed seventeen minutes before the preregistration",
+    "preregistration_pushed": "2026-09-14T16:48:18",
+    "second_case_decision_computed": "2026-09-14T16:28:05",
+    "this_lane_recorded_the_preregistration": "2026-09-14T16:45:20"
+  },
+  "the_false_statement_in_0_3_1": {
+    "claim": "no file carrying the second case decision existed before 2026-09-14T16:45:20Z, searched for directly",
+    "contradicting_file": {
+      "content": "/result/bounds/lower and /result/bounds/upper each hold numerator 2 and denominator 7 as separate JSON fields",
+      "mtime_utc": "2026-09-14T16:28:05.208248",
+      "path": "engine-second-case-2026-09-14-zw58_irx/private/replay-1/decision-payload.json",
+      "producing_command_ended_utc": "2026-09-14T16:28:05.254287",
+      "receipt": "captures/annotation-case/receipt.json, exit 0, 26.31 s",
+      "sha256": "31009826ccc15acf15e68a2727bc78662fec08cedb34593f4f8ff3695b3920de"
+    },
+    "verified_here_to_be_wrong": true
+  },
+  "version": "0.3.2",
+  "what_is_unaffected": [
+    "the second case result: floor 2, observed 2, fragility ratio 1",
+    "the first case result: floor 1, observed 1, ratio 1",
+    "the arithmetic floor derivation, which follows from weights, penalties and margin alone",
+    "the executed insertion families on both cases"
+  ],
+  "what_the_preregistration_status_now_is": {
+    "evidential_effect": "materially weaker than what was published. A preregistration that precedes an outcome is strong; one that precedes only the author's reported exposure is a statement of good faith that a reader may reasonably discount",
+    "explicitly_not_claimed": "an independent exposure audit. Neither a timestamp nor an inbox proves what this lane had seen, and no third party has checked it",
+    "stands_as": "declared before this lane received or read the case, as this lane's own records report. That is lane reported exposure and nothing more",
+    "withdrawn": [
+      "fixed before the case existed",
+      "fixed before its outcome existed"
+    ]
+  },
+  "why_the_search_could_not_have_found_it": {
+    "correct_method": "walk the parsed structure for numerator and denominator pairs and compare them as values, never grep a rendered form of a structured number",
+    "how_the_data_is_stored": "an exact rational as {numerator, denominator}",
+    "instrument_used": "a regular expression for the rendered strings 2/7, 293/14 and 297/14",
+    "the_error": "the instrument was structurally incapable of finding what was claimed absent, and the absence was then reported as a verified fact. This lane stores its own rationals the same way, so the failure was avoidable by reading its own conventions",
+    "verified": "the literal string 2/7 does not appear anywhere in that file"
+  }
+}

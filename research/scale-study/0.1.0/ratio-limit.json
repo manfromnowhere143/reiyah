@@ -1,0 +1,28 @@
+{
+  "artifact_id": "reiyah.scale-study.ratio-limit",
+  "derivation": {
+    "conclusion": "k_floor <= G holds whenever R + tF >= 0, which is always. The floor is therefore always reachable in principle on this family, and a ratio above one requires reassignment to block every remaining single unit removal before the chain reaches the floor",
+    "decision": "D = (1/F) * sum_f (2 g_f - r_f), with g_f the gain and r_f the retained additions",
+    "floor": "k_floor = ceil( (D - t) * F / 2 )",
+    "removable_gain": "G = sum_f g_f, since each deletion removes at most one unit of gain",
+    "setting": "unit penalties, equal frame weights 1/F over F frames, tolerance t",
+    "step": "D*F = 2G - R where R = sum_f r_f, so k_floor = ceil( (2G - R - tF)/2 ) <= G"
+  },
+  "finding": "on this loss and this edit family the fragility ratio is close to tautological, so the two case replication carries much less information than it was presented with",
+  "predicted_exception": "a ratio above one needs the reassignment structure to exhaust every single unit removal early. The full census is now a test of whether that ever happens, and a census with none is a negative result to report",
+  "protocol_sha256": "4c601ca94bc1e34e155fda0b16a7e45d660c5084e913f5630938224b74686368",
+  "recorded_utc": "2026-09-15T07:38:38.954920+00:00",
+  "scope": "a statement about the Engine additive loss with unit penalties, equal frame weights and single record deletions. It does not transfer to another loss, another weighting or another edit family without its own derivation",
+  "version": "0.1.0",
+  "what_carries_the_information_instead": {
+    "absolute_edit_count": "k, which ranges from 3 to 150 across the ten resolved pilot units",
+    "normalised": "k divided by the scene's qualifying annotations, 0.0033 to 0.0889",
+    "why": "two decisions with the same ratio can need 3 or 150 corrections. That difference is what a validation lead would act on, and the ratio hides it"
+  },
+  "what_this_means_for_the_standing_headline": {
+    "action": "qualified in the register rather than withdrawn, with this derivation as the bound",
+    "but": "the ratio is structurally near constant on this family, so observing 1 twice, and now ten more times, is weak evidence of anything about the annotations. It largely restates the arithmetic",
+    "headline": "both verdicts sit exactly at their arithmetic floor, fragility ratio 1",
+    "still_true": true
+  }
+}

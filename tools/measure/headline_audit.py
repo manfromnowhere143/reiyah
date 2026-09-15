@@ -215,8 +215,19 @@ REGISTER = [
              "limits": ("both cases come from the same two scenes and neither is held out, so two "
                         "cases at ratio 1 do not establish that the ratio distinguishes cases at "
                         "all. The closest excluded label sits 6.5 centimetres outside the range"),
-             "published_in": "annotation-case-0.2.0"}],
-        "status": "standing, bounded",
+             "published_in": "annotation-case-0.2.0"},
+            {"artifact": "research/scale-study/0.1.0/ratio-limit.json",
+             "limits": ("the ratio is close to tautological on this loss and edit family. With "
+                        "unit penalties and equal frame weights the floor is always at most the "
+                        "total removable gain, so it is always reachable in principle and a ratio "
+                        "above one needs reassignment to block every remaining single unit "
+                        "removal. Observing 1 twelve times restates the arithmetic more than it "
+                        "reports on the annotations. The absolute edit count, 3 to 150 across the "
+                        "pilot, is what carries information"),
+             "published_in": "scale-study-0.1.0"}],
+        "status": "qualified",
+        "qualification": ("the replication holds and the ratio is near constant by construction. "
+                          "Report the absolute and normalised edit counts beside it"),
     },
     {
         "headline": ("this lane's rigor exceeds NVIDIA's and Mobileye's, and the industry ships "

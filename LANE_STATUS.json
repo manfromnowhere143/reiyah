@@ -24,6 +24,18 @@
       "status": "withdrawn"
     }
   ],
+  "corrected_from_0_6_0": [
+    {
+      "claim_now": "withdrawn. The decision existed at 16:28:05Z, seventeen minutes earlier, stored as separate numerator and denominator fields that a string search could not find. What stands is lane reported exposure only",
+      "claim_then": "the preregistration was fixed before the second case outcome existed",
+      "status": "withdrawn"
+    },
+    {
+      "claim_now": "an outcome selected trigger, replaced by the declared population study",
+      "claim_then": "next trigger: a case whose fragility ratio is above one",
+      "status": "replaced"
+    }
+  ],
   "costs": {
     "compatibility_check": "one recomputation on the exact case, about 0.001 s",
     "human_effort": "unmeasured. The screenshot receipt interval and command durations are not human active time",
@@ -31,24 +43,26 @@
   },
   "date": "2026-09-14",
   "lane": "independent research and conventional comparator",
-  "next_trigger": "a case whose fragility ratio is above one, which would show the ratio distinguishes cases rather than always returning one. A third case from a different scene would separate the finding from these two scenes, which is the larger gap and is not this lane to close",
+  "next_trigger": "run the declared census with every stopping outcome retained. The sharpened question is whether any unit reaches a ratio above one; a census with none is a negative result and will be reported as one",
   "open_and_unowned": [
-    "the physical comparison remains open at [-8,8] with zero admitted human readings",
-    "both cases draw on the same two scenes and neither is held out, so nothing here generalizes",
+    "the declared census of up to 3000 units has not been run",
+    "the physical comparison remains open at its own state and is untouched by this work",
     "no annotation has been checked, so no label error rate is established",
-    "no person has been measured against any named label list",
-    "Gate A unaccepted; the physical study unselected and unrun"
+    "units share scenes, objects and detectors and are not independent experiments",
+    "Gate A unaccepted"
   ],
   "question": "does an added detector deserve further integration work, and what evidence is still missing before that answer means anything",
-  "supersedes": "0.5.0, whose next trigger described the open physical case only. That case is unchanged and still open; the benchmark route has since produced two measured results and the status now says so",
-  "version": "0.6.0",
+  "supersedes": "0.6.0, whose next trigger sought a ratio above one. An outcome selected trigger is replaced by the declared population study, and the ratio itself is now qualified",
+  "version": "0.7.0",
   "what_is_established_now": [
-    "two annotation conditional cases, each reconstructed here from the original tables before being accepted, both matching their declared membership token for token",
-    "case one: 106 labels, weights 1/2, decision +1, margin 9/10, arithmetic floor 1, breakdown 1, fragility ratio 1. Six named single label witnesses, each independently confirmed",
-    "case two: 737 labels, weights 1/14, decision 2/7, margin 13/70, arithmetic floor 2, breakdown 2, fragility ratio 1. One verified two label witness; no exhaustive pair search was needed because the floor makes a size two witness minimal",
-    "the result replicates once weights and margin are accounted for. The raw breakdown numbers are 1 and 2 and comparing those directly would have said the second case was twice as robust",
-    "the second case single deletion family found zero criterion changes in 737 cases, which is forced by its floor and is not evidence about its annotation. The measure that prevents that misreading was published before the case arrived",
-    "three consumer reported defects reproduced and repaired: a packet header naming the wrong case, an insertion family recording only the singles range, and an insertion rule that was a graph neighbourhood rather than a distance"
+    "the validation census rebuilt here: 6019 frames in 150 scenes, zero join failures, 192041 census annotations giving 148440 included under the common 50 m rule, 47 declared empty frames",
+    "all five original submissions qualify: 6019 frames each, 5215626 predictions, zero missing coordinates, bound by digest",
+    "the scale protocol is frozen at 4c601ca94bc1e34e155fda0b16a7e45d660c5084e913f5630938224b74686368 with the pilot selection rule published before the pilot ran",
+    "pilot of 20 units: 10 unsupported baselines retained as adverse, 10 certified at the arithmetic floor, 0 above it, 0 unresolved",
+    "the declared first falsifier did not fire: an independent implementation written from the protocol, sharing no matcher, agrees on 20 of 20 units as exact rationals",
+    "the fragility ratio is close to tautological on this loss and edit family. k_floor <= total removable gain always holds, so the floor is always reachable in principle and a ratio above one needs reassignment to block every remaining single unit removal. The headline is qualified",
+    "the informative quantity is the absolute edit count, 3 to 150 across the pilot, and its normalisation, 0.0033 to 0.0889 of a scene s annotations",
+    "a defect in this lane s own witness search found and repaired: summing single deletion losses within one frame is invalid because reassignment absorbs the second; the witness is now grown one deletion at a time with the gain reverified after each"
   ],
   "what_this_lane_will_not_do_while_that_input_is_absent": [
     "create synthetic readings or treat exposed benchmark annotations as independent references",
