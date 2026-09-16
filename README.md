@@ -12,7 +12,7 @@ intended customer, technical research direction, current demonstration and next 
 The implementation today is an offline research Engine for perception decisions under uncertain
 reference evidence.
 
-Does an added detector improve a perception configuration once missed objects, false detections
+Does a replacement or added detector improve a perception configuration once missed objects, false detections
 and disputed reference interpretations are counted together? Reiyah computes bounds on that
 comparison, using the same opportunities and reference interpretation for both configurations.
 When the evidence cannot settle the choice, the result remains unresolved.
@@ -20,7 +20,19 @@ When the evidence cannot settle the choice, the result remains unresolved.
 The current Engine binds source outputs and clocks, preserves shared reference alternatives,
 computes paired-loss enclosures with exact arithmetic and checks matching certificates. Raw-window,
 nominal geometry and restricted observation packages prepare physical review. The intended user
-is a perception-validation lead deciding whether an added detector merits further integration work.
+is a perception-validation lead deciding whether a detector change merits further integration work.
+
+The [16 September implementation](docs/PERCEPTION_REVISION_AUDIT_2026-09-16.md) adds independent
+**A-to-B comparisons, checked certificate reuse and conditional audit sufficiency**. Its
+[versioned offline commands](research/perception-revision/0.1.0/README.md) preserve the legacy
+addition interface. A sufficient audit must exclude every allowed adverse reference interpretation;
+a smallest adverse witness does not identify a sufficient confirmed set.
+
+On the existing forty-frame case, the new checker reproduces two disjoint 49-record adverse
+witnesses and verifies a larger hypothetical sufficient set. Independently qualified standalone
+detector outputs give an annotation-conditional improvement of **209/20**. The bounded reuse
+assay preserves the result but is slower than full computation on this small workload. Lower
+total validation cost and an advantage over competent conventional analysis remain unestablished.
 
 As checked on **14 September 2026**, a [new automated replay](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md)
 on the two existing development anchors gives **[1,1]**, conditional on the retained benchmark
@@ -61,8 +73,8 @@ Fable's corrected final census reports all 1,127 supported units at their arithm
 with 1,873 unsupported baselines among 3,000 declared units. The Engine has source-checked the
 complete delivered case, not every census witness. The corrected counterexample still proves
 that above-floor minima are possible. The [earlier failure and correction request](docs/PERCEPTION_SCALE_CONSUMER_2026-09-15.md)
-remain available. The next experiment compares bounded evidence reuse with full recomputation
-and a competent cached procedure; its advantage and total-effort savings remain unmeasured.
+remain available. The subsequent Engine reuse assay and audit checker are linked above. Fable's
+competent cached procedure and observation-selection cost comparison remain separate deliverables.
 
 The [prediction checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) prepares all **4,876 original
 prediction rows across 16 exposed development keyframes** without reading annotation-bearing
@@ -251,14 +263,15 @@ remain unestablished. The instrument is prepared; the missing observations remai
 
 ## Current engine development
 
-The selected comparison preserves the existing lidar detector's outputs and adds retained camera
-detections under a fixed suppression rule. The Engine evaluates both configurations against
+The original selected study preserves the existing lidar detector's outputs and adds retained camera
+detections under a fixed suppression rule. The new replacement interface also accepts independent
+A and B outputs; this does not change the frozen study. The Engine evaluates both configurations against
 each shared reference interpretation, including disputed objects that can change competing
 matches through the base detector. Misses and false detections both contribute to the loss.
 
 ```mermaid
 flowchart TB
-  S["Bound clocks and original<br/>submitted detections"] --> N["Fixed base and additions<br/>Complete row dispositions"]
+  S["Bound clocks and original<br/>submitted detections"] --> N["Declared output A and output B<br/>Complete row dispositions"]
   R["Original sensor captures<br/>Exact custody and opening"] -. "actual participation missing" .-> H["Independent unassisted discovery<br/>Lock both records"]
   H -. "then release equal assistance<br/>and retain adjudication" .-> W["Complete joint reference alternatives<br/>Open when coverage is unknown"]
   N --> O["Same operands for both analysts<br/>Weights, loss, tolerance and provenance"]
@@ -267,7 +280,7 @@ flowchart TB
   O --> C["Competent conventional analysis<br/>Same evidence and permitted methods"]
   K --> V["Separate certificate checker"]
   O --> V
-  V --> P["Compare decisions and all effort<br/>Real result remains unresolved"]
+  V --> P["Compare conditional decisions and all effort<br/>Physical coverage remains open"]
   C --> P
 ```
 
@@ -302,6 +315,7 @@ The implemented pieces form one offline comparison pipeline:
 
 | Checkpoint | Retained result |
 |---|---|
+| [Replacement and audit checker](docs/PERCEPTION_REVISION_AUDIT_2026-09-16.md) | Independent A/B outputs, current-graph certificate reuse, bounded audit sufficiency and explicit adverse interpretations |
 | [Decision core](docs/PERCEPTION_DECISION_CHECKPOINT_2026-09-09.md) | Exact loss bounds, maximum-matching certificates, a separate checker and an atomic packet |
 | [Source inputs](docs/PERCEPTION_INPUT_CHECKPOINT_2026-09-09.md) | All 6,019 validation clock anchors retained; 2,935 meet the recorded context and prior-exposure exclusion rule |
 | [Joint reference compiler](docs/PERCEPTION_REFERENCE_CHECKPOINT_2026-09-09.md) | Shared presence, identity, class, geometry and time alternatives; open-reference fallback when coverage is unknown |

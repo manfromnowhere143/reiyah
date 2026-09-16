@@ -2,11 +2,19 @@
 
 Document ID: `reiyah.perception-decision.architecture`
 
-Version: `0.2.0`
+Version: `0.2.1`
 
 Lifecycle status: `proposed`
 
 ## Decision and scope
+
+The [16 September extension](PERCEPTION_REVISION_AUDIT_2026-09-16.md) implements independently
+declared A/B detector outputs, current-graph certificate reuse and bounded conditional audits.
+Its [versioned contract](../research/perception-revision/0.1.0/README.md) adds replacement semantics
+without changing the legacy addition contract or the frozen study described below. The common
+subgraph gives `-a*p-b*q <= delta <= a*q+b*p` for p A-only and q B-only detections. Audit sufficiency
+requires every interpretation compatible with supplied observations and the declared error family
+to support the criterion; neither a single adverse witness nor witness overlap proves that claim.
 
 Build an offline evaluation tool for the perception-validation lead deciding whether an
 additional detector merits a further integration study. Compare fixed outputs on the same

@@ -1,0 +1,242 @@
+{
+  "artifact_id": "reiyah.perception-revision.verification",
+  "authority": "research_only",
+  "checks": {
+    "assay-final": {
+      "bytes": 1113,
+      "elapsed_seconds": 12.218927999958396,
+      "exit_code": 0,
+      "receipt": "captures/assay-final/receipt.json",
+      "sha256": "ad514f7667fef80312f172d477907d8eb0e06be1f82c4c940ba64ac06eca4e9c"
+    },
+    "consistency": {
+      "bytes": 1149,
+      "elapsed_seconds": 1.8204225418157876,
+      "exit_code": 0,
+      "receipt": "captures/consistency/receipt.json",
+      "sha256": "d2df6cbd3d8db06abcee1e4e7dc7e2c962d614fcfe6113f8207a17047ce33a21"
+    },
+    "delivery-check": {
+      "bytes": 1098,
+      "elapsed_seconds": 0.6985340409446508,
+      "exit_code": 0,
+      "receipt": "captures/delivery-check/receipt.json",
+      "sha256": "53c4e7b24c9e59c8d1d3f535d59e5705665add32d950073da380310cb40f1683"
+    },
+    "measurement-tests": {
+      "bytes": 1076,
+      "elapsed_seconds": 6.167426709085703,
+      "exit_code": 0,
+      "receipt": "captures/measurement-tests/receipt.json",
+      "sha256": "16857a80e8d81e78e6342788e6f7e51c62961913e93725ad8898220cba4e5ec2"
+    },
+    "prepare-cases-01": {
+      "bytes": 1097,
+      "elapsed_seconds": 4.096309583168477,
+      "exit_code": 0,
+      "receipt": "captures/prepare-cases-01/receipt.json",
+      "sha256": "625b7d2de0c56b2308785a2ce4e5dacdaa475bb02c55d4fd6dcfc159de6bacfb"
+    },
+    "recd-qualification-02": {
+      "bytes": 1116,
+      "elapsed_seconds": 4.09173404192552,
+      "exit_code": 0,
+      "receipt": "captures/recd-qualification-02/receipt.json",
+      "sha256": "e4ad8cd2c37f2f47b6c5b9951be17dbaa03afa1379f3f9da1a78ec3f5158053e"
+    },
+    "repository-tests": {
+      "bytes": 1072,
+      "elapsed_seconds": 68.23607675009407,
+      "exit_code": 0,
+      "receipt": "captures/repository-tests/receipt.json",
+      "sha256": "4a2902b3181e6fac0c147a25d3615b17950ee7257a5c76ae25bfeeadd480ee9d"
+    }
+  },
+  "consistency_scope": "Current links, documentation and retained historical identities; historical experiments not rerun. Gate A release validation not performed.",
+  "conventional_cache_comparator": "Fable-owned deliverable pending",
+  "cost_scope": "CLI input loading, prior verification when applicable, computation, current proof checking, write and startup; source preparation and separate verification listed separately. No inference or human effort measured.",
+  "external_correction_status": "Metadata and format qualified; actual KITTI access, safe second predictions and broader error semantics unresolved",
+  "first_failures": [
+    {
+      "capture": "captures/revision-tests-01",
+      "cause": "Test requested more than 1000 exhaustive checks but sampled 888; expanded to all 512 edge masks rather than lowering requirement."
+    },
+    {
+      "capture": "captures/recd-qualification-01",
+      "cause": "Earlier source preflight mislabeled a commit as a tree; fresh Git metadata separates identities and confirms all inventory entries."
+    }
+  ],
+  "gate_a": "operator_unaccepted",
+  "human_audits": 0,
+  "implementation_sha256": "5ed79b9a93342fcb6f2c58bb9a7725599a16ce1de1d2b2f1ab14b9ccc90abdbb",
+  "physical_coverage": "not_established",
+  "private_checkpoint": "~/.codex/reports/reiyah/engine-replacement-audit-2026-09-16-p_4hjtex/",
+  "results": {
+    "audit_savings_on_replacement_at_k49": "zero additional queries required with or without prior observations",
+    "both_49_deletions": {
+      "denominator": "10",
+      "numerator": "1"
+    },
+    "conditional_sufficient_confirmation_set": 1664,
+    "confirmed_set_minimality": "not_established",
+    "legacy_before": {
+      "denominator": "20",
+      "numerator": "51"
+    },
+    "original_49_confirmed_set": "insufficient",
+    "original_deletion_reuse_counts": {
+      "computed_certificates": 10,
+      "reused_certificates": 70
+    },
+    "reference_count": 2299,
+    "replacement_improvement": {
+      "denominator": "20",
+      "numerator": "209"
+    },
+    "standalone_output_counts": {
+      "a": 2007,
+      "b": 2237
+    },
+    "witness_intersection": 0
+  },
+  "runtime": {
+    "jsonschema_version": "4.26.0",
+    "python": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]"
+  },
+  "source_base": "e23bfe49f2a42433f7aad4170578db504427508c",
+  "source_files": [
+    {
+      "bytes": 9925,
+      "path": "research/perception-decision/0.1.0/input.schema.json",
+      "sha256": "525c23d734a594d8c64ba3128c454314348345b84bebc615c1732e89750847a0"
+    },
+    {
+      "bytes": 620,
+      "path": "research/perception-revision/0.1.0/audit-confirmed-example.json",
+      "sha256": "e4417abee41a8b2378a82fab42fe63707fa3f6cabec68c466ee8193412f90965"
+    },
+    {
+      "bytes": 473,
+      "path": "research/perception-revision/0.1.0/audit-insufficient-example.json",
+      "sha256": "35c8c0edf4d2e7b24a0a5613a0538f78eb99d9469306928328652c077557f33d"
+    },
+    {
+      "bytes": 1980,
+      "path": "research/perception-revision/0.1.0/audit-request.schema.json",
+      "sha256": "194eca2312e8e5b867d0a45db751286f9a60c08d302292e60635da0854ccaeb6"
+    },
+    {
+      "bytes": 10074,
+      "path": "research/perception-revision/0.1.0/input.schema.json",
+      "sha256": "054cb8c1b7c91c515db44a5f27b8627ac39d0c452f9820fc519baa945a2a46ce"
+    },
+    {
+      "bytes": 1618,
+      "path": "research/perception-revision/0.1.0/replacement-example.json",
+      "sha256": "df5b8715898a4e6c7a3cdcbe7eaea9b993547a3c2ea535d189a9d43eec25ab0b"
+    },
+    {
+      "bytes": 24780,
+      "path": "tests/test_perception_revision.py",
+      "sha256": "0f2575aca3885e9c9321718cee8c7e14e96111931f7a600c623b81325060a110"
+    },
+    {
+      "bytes": 2789,
+      "path": "tests/test_perception_revision_nuscenes.py",
+      "sha256": "87f071fca215a8e75ad796fe153afb63a77909e87a44a46b1a1b9d4f315c8379"
+    },
+    {
+      "bytes": 98,
+      "path": "tools/perception_decision/__init__.py",
+      "sha256": "53d4c1fb5ce4982c2dfec949b7fa84ec67c52496eb445782fee10b0b6f6bde0f"
+    },
+    {
+      "bytes": 48,
+      "path": "tools/perception_decision/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "bytes": 9686,
+      "path": "tools/perception_decision/checker.py",
+      "sha256": "64e342e00a4c2683f9db5fa2cb8213959a357bd5c3099296a090564527134da4"
+    },
+    {
+      "bytes": 4025,
+      "path": "tools/perception_decision/cli.py",
+      "sha256": "419fa07442ebf2ff4ea9484ad0f7b235aab291c50eee52d5cb0374209cf7b7ee"
+    },
+    {
+      "bytes": 5767,
+      "path": "tools/perception_decision/contract.py",
+      "sha256": "aed6e16f0d2b09b85abccbf4aeac5e74abb42e699c4ce8d9be34073523327134"
+    },
+    {
+      "bytes": 6961,
+      "path": "tools/perception_decision/kernel.py",
+      "sha256": "7a5a630c9265108cc0d0a1c3e065292d62425b3a0cbfa7ae0ec942b9233f5ecc"
+    },
+    {
+      "bytes": 8613,
+      "path": "tools/perception_decision/nuscenes.py",
+      "sha256": "ff5f6bd5509fcd656b2420af7b531ae601b12e77975270209dbb1dbea92f6eb4"
+    },
+    {
+      "bytes": 79,
+      "path": "tools/perception_revision/__init__.py",
+      "sha256": "cd881200bf456fc72c0958032451fc0f193bcf5ac19ca69d773957f2bafac6ae"
+    },
+    {
+      "bytes": 48,
+      "path": "tools/perception_revision/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "bytes": 3710,
+      "path": "tools/perception_revision/audit.py",
+      "sha256": "c2e4c175d9dbae97db02c8b6849f1bd227bbf09a902b22450d663ac1275f3650"
+    },
+    {
+      "bytes": 9274,
+      "path": "tools/perception_revision/audit_checker.py",
+      "sha256": "1432c3d86de0586d355f0ac0000b439f184826073820ef65b329e2a20ab73836"
+    },
+    {
+      "bytes": 7171,
+      "path": "tools/perception_revision/checker.py",
+      "sha256": "afd8e70565932c6e8b8e31947284389b215f24bd9c30b449acbd9d3188d7b59f"
+    },
+    {
+      "bytes": 8136,
+      "path": "tools/perception_revision/cli.py",
+      "sha256": "41e566298601250fce543209a1b85a289c609d33c12bb582b676d3ff4ea128be"
+    },
+    {
+      "bytes": 8130,
+      "path": "tools/perception_revision/contract.py",
+      "sha256": "3c4290c1e1c27841000587d1d69bce929b61e46db5c14bc15652de4c313670a1"
+    },
+    {
+      "bytes": 6391,
+      "path": "tools/perception_revision/kernel.py",
+      "sha256": "39043ff033e74402861c8d75e1b69915212753a9687525bd2b14daa3671e1c9d"
+    },
+    {
+      "bytes": 3619,
+      "path": "tools/perception_revision/nuscenes.py",
+      "sha256": "bf88ba9215eaf0d21d1ad303a3825f22b423e049bf253bdf716f0f50b7243271"
+    }
+  ],
+  "status": "exploratory",
+  "test_counts": {
+    "independent_replacement_graph_penalty_cases": 2667,
+    "independent_single_anchor_deletion_losses": 6144,
+    "measurement": 93,
+    "new_revision_tests": 22,
+    "repository": 463
+  },
+  "version": "0.1.0",
+  "wall_time_medians_seconds": {
+    "full": 0.32710554101504385,
+    "reuse": 0.529268333921209
+  }
+}

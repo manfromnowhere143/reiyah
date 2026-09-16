@@ -1,15 +1,15 @@
 # Reiyah: the decision, the evidence and the next checks
 
-Document ID: `reiyah.engine.roadmap`. Version: `0.1.9`. Status: `exploratory`. Updated 15 September 2026.
+Document ID: `reiyah.engine.roadmap`. Version: `0.1.10`. Status: `exploratory`. Updated 16 September 2026.
 
 The [product and funding thesis](PRODUCT_AND_FUNDING_THESIS_2026-09-14.md) explains the destination:
 decision assurance for changing autonomous systems under imperfect evidence. The
-[15 September continuation](DECISION_ASSURANCE_2026-09-15.md) makes bounded evidence revalidation
-the next experiment, preserving perception as the first application. The milestones below make
-that ambition testable.
+[16 September implementation](PERCEPTION_REVISION_AUDIT_2026-09-16.md) supplies independent output
+replacement, bounded certificate reuse and a conditional audit checker. The next experiment
+compares observation-selection methods under the same checked stopping rule and complete costs.
 
 Reiyah's present product question is whether a perception-validation lead can make a better
-added-detector integration choice, or reach the same defensible choice with less total effort,
+detector-change integration choice, or reach the same defensible choice with less total effort,
 than a competent analyst given the same evidence. The broader HARBOR mission includes human
 belief, readiness, recoverability and causal policy effects. Those constructs remain distinct;
 an object-detection result does not validate them by analogy.
@@ -31,6 +31,7 @@ an object-detection result does not validate them by analogy.
 | Second automated comparison | Same interfaces give [2/7,2/7] under 737 included labels; returned Fable single-deletion family and two crossing pairs checked | Independent scenes, physical label truth or measured workflow value |
 | Actual dependency trace | Single and joint deletion witnesses open original annotation/detector records and exact available capture bytes; unavailable captures explicit | Object-to-pixel/point association, human judgment or total-effort savings |
 | Scale-study consumption | Corrected counterexample checked; one complete forty-frame, 49-record witness joins to original sources and native Engine results | Source verification of every census witness, physical error prevalence or a universal floor theorem |
+| Replacement and sufficient-audit checker | Independent A/B outputs, complete joint worlds, checked deletion bounds and disjoint-witness rejection | Minimum audit sets, genuine review answers or lower total validation cost; the small reuse assay is slower |
 
 The [README](../README.md) links the retained findings and historical protocols. The
 [current continuation](SESSION_HANDOFF.md) records exact Engine state; the
@@ -53,8 +54,10 @@ flowchart TB
   J -. "missing or contradicted" .-> Q
   J -. "qualifying complete input" .-> M
   C --> U["Named engineering choice<br/>Measure usefulness and total effort"]
-  C -. "next experiment" .-> R["Evidence revision<br/>Reuse or recheck under explicit dependencies"]
+  C --> R["Evidence revision<br/>Checked certificate reuse or recomputation"]
   R --> B0["Full calculation and competent cache<br/>Compare correctness and total cost"]
+  Q --> A0["Conditional audit checker<br/>Exclude every admitted adverse interpretation"]
+  A0 --> C
   C -. "missing premise" .-> Q["Specific next observation<br/>or falsifying construction"]
   Q -. "actual evidence only" .-> M
 ```
@@ -70,8 +73,9 @@ flowchart TB
 | Independent physical references | Engine coordinates the authorized staged protocol; reviewers supply actual observations | Both unassisted records locked before assistance, complete disagreements and admitted joint alternatives |
 | Raw association uncertainty | Fable: use selected original rows, preserve unmatched records and order, compare a declared rule with a serious baseline | A checked decision or abstention stable to a defensible association/error model, or a retained counterexample |
 | Scale-study final delivery | Fable: retain all claimed witness identities and qualify remaining missing-field policy; corrected joint-deletion and malformed-number controls now pass | Full witness reconstruction disagrees with the claimed census or a declared input is silently omitted |
-| Evidence reuse | Engine and Fable: compare the same checked evidence edit with full computation and a competent cached procedure | A false reuse, changed bound/criterion or overhead that removes the advantage |
-| Externally corrected evidence | Engine preflights published KITTI correction inputs and representation; Fable freezes the comparison before outcomes | Access, terms, geometry, soft-label or prediction requirements cannot be qualified |
+| Evidence reuse | Engine replay agrees with full results, but extra verification is slower on forty frames; Fable owns the competent-cache comparison | A false reuse, changed bound/criterion or overhead that removes the advantage |
+| Audit selection | Fable: compare random, geometric, influence and conventional sufficient-set methods using the current Engine checker | Any admitted adverse world survives asserted sufficiency, or a conventional method costs no more |
+| Externally corrected evidence | Source commit/tree and format preflight checked; original KITTI access, second safe prediction representation and broader correction semantics remain required | Soft labels, missing objects or changed geometry cannot be represented by deletion-only audits |
 | Equal useful comparison | Both lanes: same opportunities, references, weights, loss, tolerance and source evidence | One defensible integration choice with measured preparation, computation, verification, review and repair effort |
 | Generalization and stronger scientific claims | Separate future protocol and appropriately diverse inputs; no new cohort selected here | Held-out validation and dated primary comparisons that survive marginal, association and shared-data controls |
 

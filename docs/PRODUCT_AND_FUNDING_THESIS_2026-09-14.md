@@ -1,6 +1,6 @@
 # What Reiyah is being built to become
 
-Document ID: `reiyah.product-and-funding-thesis`. Version: `0.1.3`. Dated 14 September 2026; updated 15 September 2026.
+Document ID: `reiyah.product-and-funding-thesis`. Version: `0.1.4`. Dated 14 September 2026; updated 16 September 2026.
 Status: proposed product direction, with completed engineering evidence identified below.
 
 **Reiyah is being built for decision assurance across changes to autonomous systems.** It should help a
@@ -10,6 +10,13 @@ first application. The ambition is dependable infrastructure that leading AI and
 want to use as their models, sensors and operating conditions evolve.
 
 ## A short explanation for a funding conversation
+
+The [16 September implementation](PERCEPTION_REVISION_AUDIT_2026-09-16.md) adds independent
+detector replacement and a checker for sufficient reference observations. It exposes an important
+failure in the earlier audit proposal: a smallest adverse witness is not a sufficient audit set.
+The initial certificate-reuse assay is slower than fresh computation; the next product milestone
+remains lower complete validation effort under the same checked decision rule. This is implemented
+research infrastructure, without an established buyer, unique mathematical novelty or valuation.
 
 An engineering team wants to add a detector to an existing perception system. Finding more
 objects can help, but the addition can also introduce false detections. The comparison depends

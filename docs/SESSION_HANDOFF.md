@@ -1,16 +1,35 @@
-# Reiyah Engine continuation, 2026-09-15
+# Reiyah Engine continuation, 2026-09-16
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.17`
+Version: `0.1.18`
 
 Lifecycle status: `exploratory`
 
-The [decision-assurance continuation](DECISION_ASSURANCE_2026-09-15.md) incorporates the operator's
-new direction: justify a specified autonomous-system change, expose controlling assumptions,
-identify useful next evidence and determine what prior work survives a revision. Perception and
-the existing Engine remain the foundation. The next bounded experiment compares revalidation
-with a competent cached procedure; no lower-total-effort or deployment advantage is established.
+The [replacement and audit implementation](PERCEPTION_REVISION_AUDIT_2026-09-16.md) carries out
+the operator's corrected direction. `tools.perception_revision` provides independent A/B output
+comparison, current-graph certificate reuse, bounded audit sufficiency and observation rebinding
+under an explicit reference-context premise. The legacy Engine interface is unchanged. Joint
+worlds, missing inputs and unresolved conclusions remain explicit.
+
+The forty-frame replay agrees with fresh results before and after both disjoint 49-record
+deletions. The original witness is not a sufficient confirmed set. A simple set of 1,664
+hypothetical confirmations is sufficient under arbitrary deletions of the remaining declared
+records; no minimum-audit or actual human-work result follows. Independently prepared mapillary
+and megvii outputs contain 2,007 and 2,237 detections and give 209/20 improvement under the same
+2,299 conditional references. The bounded reuse assay is slower than full computation on this
+small workload. Fable's conventional-cache and audit-selection comparison remains outstanding.
+
+The next research task is to compare observation-selection procedures using the same audit
+checker, error family and answers, including a conventional sufficient-set method. Measure actual
+additional queries with and without applicable prior observations; witness overlap is insufficient.
+No lower-total-effort, physical-validation or deployment advantage has been established.
+
+Current validation passes 463 repository tests and 93 measurement tests. The 22 new tests include
+2,667 replacement graph/penalty calculations against independent partial-injection loss and
+6,144 direct deletion-loss checks, plus joint-world, adverse-proof, reuse and CLI binding controls.
+The research consistency receipt and final source bindings are in this checkpoint. Earlier test
+counts below describe their historical checkpoints and are not new replay evidence.
 
 The current selected Fable outbox is `scale-final-0.4.0`, source
 `5aacbde150d28591c3c2c1bb7aaeeb51228ecc3e`, manifest
@@ -34,12 +53,17 @@ two; missing frames and malformed numbers have the expected outcomes. Null score
 skipped and require a declared missing-field policy if strict rejection is promised.
 
 The current private checkpoint is
+`~/.codex/reports/reiyah/engine-replacement-audit-2026-09-16-p_4hjtex/`.
+Read `START_HERE.md`, `SOURCE_BINDINGS.json`, `CLOSEOUT.json`, `PACKET_SEAL.json`, and its outbox
+manifest. The public [verification record](../research/perception-revision/0.1.0/verification.json)
+binds the selected implementation and validation evidence. It retains the first test-coverage
+failure and the corrected REC✓D commit/tree metadata assertion. The external source's missing
+objects, changed boxes and soft labels are not covered by a deletion-only audit contract.
+
+The preceding source-custody checkpoint remains
 `~/.codex/reports/reiyah/engine-frontier-continuation-2026-09-15-cghzq0wh/`.
-Read `START_HERE.md`, `SOURCE_BINDINGS.json`, `CLOSEOUT.json`, `PACKET_SEAL.json`, and the selected
-outbox manifest. `private/open-evidence-2/OPEN_EVIDENCE.md` opens all 49 checked members.
-`output/ASSESSMENT.md` retains the primary-source strategy review and `output/NEXT_EXPERIMENT.md`
-defines the next exact-revalidation assay and external-correction preflight. The initial private
-navigation failure and corrected execution are retained; Engine core and shared formats did not change.
+Its `private/open-evidence-2/OPEN_EVIDENCE.md` opens the original 49 members, and its closed
+strategy and initial assay plans remain intact.
 
 Fable owns the conventional cache/comparator and research method; Engine owns source custody,
 common inputs, inspection, implementation and main. Exchange sealed outputs. Do not implement
@@ -120,7 +144,7 @@ without adding another complete historical handoff to this entry point.
 Start in `/Users/danielwahnich/workspace/reiyah`. Verify cwd, Git root, [AGENTS.md](../AGENTS.md),
 origin `https://github.com/manfromnowhere143/reiyah.git`, live main, remote refs, worktrees and
 uncommitted ownership before acting. This continuation starts from main
-`fce101d19084f4e127ddcfa60b0e39c963d0fbd4`, tree `45a27a2a2bbac04e99758c71dd19a736c0c37557`.
+`e23bfe49f2a42433f7aad4170578db504427508c`, tree `b6212586313eedc0a41f064cfa2de8510cab16bf`.
 Resolve a later tip from Git and its exact retained checkpoint; do not assume this base is current.
 
 The canonical owner checkout intentionally remains at older Gate A commit
