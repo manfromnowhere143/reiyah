@@ -1,0 +1,587 @@
+{
+  "artifact_id": "reiyah.perception-audit-components.verification",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "source_base": "58a870682aeca13a6d880bce7aa1d85341a1f4c6",
+  "private_checkpoint": "/Users/danielwahnich/.codex/reports/reiyah/engine-audit-components-2026-09-17-jqq_taoy",
+  "authority": "research_only",
+  "gate_a": "operator_unaccepted",
+  "implementation_sha256": "2d521cfc44ff238f56afb6d6ebead523a93894ee62e9d268346b9416de7daa2a",
+  "source_files": [
+    {
+      "path": "research/perception-decision/0.1.0/input.schema.json",
+      "bytes": 9925,
+      "sha256": "525c23d734a594d8c64ba3128c454314348345b84bebc615c1732e89750847a0"
+    },
+    {
+      "path": "research/perception-revision/0.1.0/audit-request.schema.json",
+      "bytes": 1980,
+      "sha256": "194eca2312e8e5b867d0a45db751286f9a60c08d302292e60635da0854ccaeb6"
+    },
+    {
+      "path": "research/perception-revision/0.1.0/input.schema.json",
+      "bytes": 10074,
+      "sha256": "054cb8c1b7c91c515db44a5f27b8627ac39d0c452f9820fc519baa945a2a46ce"
+    },
+    {
+      "path": "tests/test_perception_revision_components.py",
+      "bytes": 15039,
+      "sha256": "223959e1ad529c7b64d3f5398176b0d1ce9f0f756ca67726f5b458d31ea0d9c9"
+    },
+    {
+      "path": "tools/perception_decision/__init__.py",
+      "bytes": 98,
+      "sha256": "53d4c1fb5ce4982c2dfec949b7fa84ec67c52496eb445782fee10b0b6f6bde0f"
+    },
+    {
+      "path": "tools/perception_decision/__main__.py",
+      "bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "tools/perception_decision/checker.py",
+      "bytes": 9686,
+      "sha256": "64e342e00a4c2683f9db5fa2cb8213959a357bd5c3099296a090564527134da4"
+    },
+    {
+      "path": "tools/perception_decision/cli.py",
+      "bytes": 4025,
+      "sha256": "419fa07442ebf2ff4ea9484ad0f7b235aab291c50eee52d5cb0374209cf7b7ee"
+    },
+    {
+      "path": "tools/perception_decision/contract.py",
+      "bytes": 5767,
+      "sha256": "aed6e16f0d2b09b85abccbf4aeac5e74abb42e699c4ce8d9be34073523327134"
+    },
+    {
+      "path": "tools/perception_decision/kernel.py",
+      "bytes": 6961,
+      "sha256": "7a5a630c9265108cc0d0a1c3e065292d62425b3a0cbfa7ae0ec942b9233f5ecc"
+    },
+    {
+      "path": "tools/perception_decision/nuscenes.py",
+      "bytes": 8613,
+      "sha256": "ff5f6bd5509fcd656b2420af7b531ae601b12e77975270209dbb1dbea92f6eb4"
+    },
+    {
+      "path": "tools/perception_revision/__init__.py",
+      "bytes": 79,
+      "sha256": "cd881200bf456fc72c0958032451fc0f193bcf5ac19ca69d773957f2bafac6ae"
+    },
+    {
+      "path": "tools/perception_revision/__main__.py",
+      "bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "tools/perception_revision/audit.py",
+      "bytes": 4135,
+      "sha256": "c32718f32ffe028f9e3eddc2fecabe5116ca80e1cd3cc81409315cec466d1aa3"
+    },
+    {
+      "path": "tools/perception_revision/audit_checker.py",
+      "bytes": 10463,
+      "sha256": "d369146903768ac7087d003c33f0c385d3737c936624a30dfce157dc8946a389"
+    },
+    {
+      "path": "tools/perception_revision/checker.py",
+      "bytes": 7171,
+      "sha256": "afd8e70565932c6e8b8e31947284389b215f24bd9c30b449acbd9d3188d7b59f"
+    },
+    {
+      "path": "tools/perception_revision/cli.py",
+      "bytes": 8261,
+      "sha256": "935b9864c55450fa147e6714da5726cf5ee9ba74b296c4fb6834be7c21d1fde9"
+    },
+    {
+      "path": "tools/perception_revision/component_checker.py",
+      "bytes": 6255,
+      "sha256": "d12a2981f61cb905b6ac50d5ec37e9fd2a8c4d408c1821c98ace057241cfa7b8"
+    },
+    {
+      "path": "tools/perception_revision/component_plan.py",
+      "bytes": 6611,
+      "sha256": "c4f7d0811aed310948ff432ac969222ce1a173791aa28cf986c3e7cfccd21f63"
+    },
+    {
+      "path": "tools/perception_revision/component_producer.py",
+      "bytes": 1402,
+      "sha256": "c7a11caf18f6a34d39af0c52e629032ab80ba33257001248c836c49416ec590b"
+    },
+    {
+      "path": "tools/perception_revision/contract.py",
+      "bytes": 8130,
+      "sha256": "3c4290c1e1c27841000587d1d69bce929b61e46db5c14bc15652de4c313670a1"
+    },
+    {
+      "path": "tools/perception_revision/kernel.py",
+      "bytes": 6391,
+      "sha256": "39043ff033e74402861c8d75e1b69915212753a9687525bd2b14daa3671e1c9d"
+    },
+    {
+      "path": "tools/perception_revision/nuscenes.py",
+      "bytes": 3619,
+      "sha256": "bf88ba9215eaf0d21d1ad303a3825f22b423e049bf253bdf716f0f50b7243271"
+    }
+  ],
+  "checks": {
+    "repository-tests": {
+      "receipt": "captures/repository-tests/receipt.json",
+      "sha256": "d79519bdf2b40443aaba572bc8cb1e0dbc934368824c97294ac4935222ac489d",
+      "exit_code": 0,
+      "elapsed_seconds": 103.01730666588992
+    },
+    "measurement-tests": {
+      "receipt": "captures/measurement-tests/receipt.json",
+      "sha256": "b0205fb7d5a0d3e6fc385c561dc8055f905ba3f25f0eeda0557669d617f66c9f",
+      "exit_code": 0,
+      "elapsed_seconds": 7.535314624896273
+    },
+    "assay-final": {
+      "receipt": "captures/assay-final/receipt.json",
+      "sha256": "198825201510fedaa644d0492f8afa48834a2ca39b0db7d64deee9856065721c",
+      "exit_code": 0,
+      "elapsed_seconds": 4.485014042118564
+    },
+    "delivery-check": {
+      "receipt": "captures/delivery-check/receipt.json",
+      "sha256": "d09222e54d754fc6a2e85144a23fff5c19f94db2905ccdc1e23ef2d9ff6b1f92",
+      "exit_code": 0,
+      "elapsed_seconds": 14.325232208007947
+    },
+    "consistency": {
+      "receipt": "captures/consistency/receipt.json",
+      "sha256": "f6bafe4b700f326ce286850eec58e756542d45c1ec37017b8d5ab9798c0fba40",
+      "exit_code": 0,
+      "elapsed_seconds": 1.9644592499826103
+    }
+  },
+  "test_counts": {
+    "repository": 476,
+    "measurement": 93,
+    "new_component_tests": 13,
+    "independent_exact_cases": 1728,
+    "independent_forced_bound_cases": 128,
+    "previous_packets": 12,
+    "current_packets": 22,
+    "cli_commands": 16
+  },
+  "results": [
+    {
+      "case": "forty-373",
+      "observations": 373,
+      "plan": {
+        "combine_work": 620,
+        "limit": null,
+        "local_states": 1774,
+        "matching_work": 1167824
+      },
+      "component_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "10",
+            "numerator": "1"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "51"
+          }
+        },
+        "claim": "improvement_supported",
+        "counterexample_value": null,
+        "deletion_budget": 2299,
+        "enclosure_kind": "conservative_component_bound",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "observation_basis": "hypothetical",
+        "physical_coverage": "not_established",
+        "statistical_confidence_level": null,
+        "sufficiency": "unresolved",
+        "supplied_observations": 373
+      }
+    },
+    {
+      "case": "forty-480",
+      "observations": 480,
+      "plan": {
+        "combine_work": 513,
+        "limit": null,
+        "local_states": 1172,
+        "matching_work": 889500
+      },
+      "component_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "5",
+            "numerator": "3"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "51"
+          }
+        },
+        "claim": "improvement_supported",
+        "counterexample_value": null,
+        "deletion_budget": 2299,
+        "enclosure_kind": "exact_for_finite_error_family",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "observation_basis": "hypothetical",
+        "physical_coverage": "not_established",
+        "statistical_confidence_level": null,
+        "sufficiency": "sufficient",
+        "supplied_observations": 480
+      }
+    },
+    {
+      "case": "forty-530",
+      "observations": 530,
+      "plan": {
+        "combine_work": 545,
+        "limit": null,
+        "local_states": 1450,
+        "matching_work": 1168476
+      },
+      "component_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "5",
+            "numerator": "1"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "51"
+          }
+        },
+        "claim": "improvement_supported",
+        "counterexample_value": null,
+        "deletion_budget": 2299,
+        "enclosure_kind": "exact_for_finite_error_family",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "observation_basis": "hypothetical",
+        "physical_coverage": "not_established",
+        "statistical_confidence_level": null,
+        "sufficiency": "sufficient",
+        "supplied_observations": 530
+      }
+    },
+    {
+      "case": "first-9",
+      "observations": 9,
+      "plan": {
+        "combine_work": 11,
+        "limit": null,
+        "local_states": 12,
+        "matching_work": 612
+      },
+      "component_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "1"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "1"
+          }
+        },
+        "claim": "improvement_supported",
+        "counterexample_value": null,
+        "deletion_budget": 106,
+        "enclosure_kind": "exact_for_finite_error_family",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "observation_basis": "hypothetical",
+        "physical_coverage": "not_established",
+        "statistical_confidence_level": null,
+        "sufficiency": "sufficient",
+        "supplied_observations": 9
+      }
+    },
+    {
+      "case": "second-53",
+      "observations": 53,
+      "plan": {
+        "combine_work": 53,
+        "limit": null,
+        "local_states": 55,
+        "matching_work": 2088
+      },
+      "component_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "7",
+            "numerator": "1"
+          },
+          "upper": {
+            "denominator": "7",
+            "numerator": "2"
+          }
+        },
+        "claim": "improvement_supported",
+        "counterexample_value": null,
+        "deletion_budget": 737,
+        "enclosure_kind": "exact_for_finite_error_family",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "observation_basis": "hypothetical",
+        "physical_coverage": "not_established",
+        "statistical_confidence_level": null,
+        "sufficiency": "sufficient",
+        "supplied_observations": 53
+      }
+    },
+    {
+      "case": "pool-354-unbounded",
+      "observations": 354,
+      "plan": {
+        "combine_work": 639,
+        "limit": null,
+        "local_states": 2114,
+        "matching_work": 1252102
+      },
+      "component_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "4",
+            "numerator": "-3"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "51"
+          }
+        },
+        "claim": "improvement_supported",
+        "counterexample_value": null,
+        "deletion_budget": 2299,
+        "enclosure_kind": "conservative_component_bound",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "observation_basis": "hypothetical",
+        "physical_coverage": "not_established",
+        "statistical_confidence_level": null,
+        "sufficiency": "unresolved",
+        "supplied_observations": 354
+      }
+    },
+    {
+      "case": "pool-354-k49",
+      "observations": 354,
+      "plan": {
+        "combine_work": 25510,
+        "limit": null,
+        "local_states": 2114,
+        "matching_work": 1252102
+      },
+      "component_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "10",
+            "numerator": "11"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "51"
+          }
+        },
+        "claim": "improvement_supported",
+        "counterexample_value": null,
+        "deletion_budget": 49,
+        "enclosure_kind": "conservative_component_bound",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "observation_basis": "hypothetical",
+        "physical_coverage": "not_established",
+        "statistical_confidence_level": null,
+        "sufficiency": "sufficient",
+        "supplied_observations": 354
+      }
+    },
+    {
+      "case": "original-49",
+      "observations": 49,
+      "plan": {
+        "combine_work": 42857,
+        "limit": null,
+        "local_states": 2445,
+        "matching_work": 1263722
+      },
+      "component_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "10",
+            "numerator": "1"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "51"
+          }
+        },
+        "claim": "improvement_supported",
+        "counterexample_value": null,
+        "deletion_budget": 49,
+        "enclosure_kind": "conservative_component_bound",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "observation_basis": "hypothetical",
+        "physical_coverage": "not_established",
+        "statistical_confidence_level": null,
+        "sufficiency": "unresolved",
+        "supplied_observations": 49
+      }
+    },
+    {
+      "case": "forty-none-k48",
+      "observations": 0,
+      "plan": {
+        "combine_work": 46413,
+        "limit": null,
+        "local_states": 2496,
+        "matching_work": 1264698
+      },
+      "component_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "20",
+            "numerator": "3"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "51"
+          }
+        },
+        "claim": "improvement_supported",
+        "counterexample_value": null,
+        "deletion_budget": 48,
+        "enclosure_kind": "conservative_component_bound",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "observation_basis": "hypothetical",
+        "physical_coverage": "not_established",
+        "statistical_confidence_level": null,
+        "sufficiency": "sufficient",
+        "supplied_observations": 0
+      }
+    },
+    {
+      "case": "forty-none-unbounded",
+      "observations": 0,
+      "plan": {
+        "combine_work": 993,
+        "limit": null,
+        "local_states": 2496,
+        "matching_work": 1264698
+      },
+      "component_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "20",
+            "numerator": "-369"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "51"
+          }
+        },
+        "claim": "improvement_supported",
+        "counterexample_value": null,
+        "deletion_budget": 2299,
+        "enclosure_kind": "conservative_component_bound",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "observation_basis": "hypothetical",
+        "physical_coverage": "not_established",
+        "statistical_confidence_level": null,
+        "sufficiency": "unresolved",
+        "supplied_observations": 0
+      }
+    },
+    {
+      "case": "replacement-none-k49",
+      "observations": 0,
+      "plan": {
+        "combine_work": 151731,
+        "limit": null,
+        "local_states": 3548,
+        "matching_work": 1999998
+      },
+      "component_result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "8"
+          },
+          "upper": {
+            "denominator": "10",
+            "numerator": "129"
+          }
+        },
+        "claim": "improvement_supported",
+        "counterexample_value": null,
+        "deletion_budget": 49,
+        "enclosure_kind": "conservative_component_bound",
+        "execution_status": "succeeded",
+        "model_status": "consistent",
+        "observation_basis": "hypothetical",
+        "physical_coverage": "not_established",
+        "statistical_confidence_level": null,
+        "sufficiency": "sufficient",
+        "supplied_observations": 0
+      }
+    }
+  ],
+  "pool_counterexample": {
+    "confirmed_overlap": 0,
+    "deletions": 181,
+    "value": {
+      "denominator": "4",
+      "numerator": "-3"
+    }
+  },
+  "wall_medians_seconds": {
+    "components": 0.5018426661845297,
+    "legacy": 0.3797889589332044
+  },
+  "cost_scope": "CLI wall time includes loading, computation, checking, serialization and startup. Different proof conclusions; not a speedup. No human/inference cost.",
+  "first_limits": [
+    {
+      "capture": "captures/assay-01",
+      "source": "private/draft-01",
+      "result": "373 set exceeded work limit; no sufficiency claimed"
+    },
+    {
+      "capture": "captures/assay-02",
+      "source": "private/draft-02",
+      "result": "equivalent-neighborhood reduction alone still exceeded limit on 373"
+    }
+  ],
+  "research_exchange": {
+    "commit": "6fbd5f3b89f60698c3acca27f42d99aee0ab9d27",
+    "manifest_sha256": "4ffbc3219e11e495ff8e8a6e9481823d9e60141738832c6cb2b773a36cc07265",
+    "checked_payloads": 8,
+    "committed_origins": 7,
+    "private_candidates": "separately consumer-selected and bound; not attested by this manifest"
+  },
+  "not_established": [
+    "373-set sufficiency by this checker",
+    "minimum sufficient set optimality",
+    "new mathematical method",
+    "state-of-the-art superiority",
+    "physical label truth",
+    "human or total validation cost savings",
+    "external replication"
+  ],
+  "consistency_scope": "Current links/documentation and retained historical transcript identities; no Gate A release or historical experiment replay."
+}

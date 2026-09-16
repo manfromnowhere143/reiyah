@@ -110,6 +110,25 @@ def conclude(case, request, proof):
             result['sufficiency'] = 'unresolved'
         return result
     tolerance = rational(case['loss']['tolerance'])
+    if proof.get('kind') in ('component_deletions', 'component_resource_limit'):
+        from .component_checker import intervals as component_intervals
+        domains = [(bits, env, active) for bits, env in checked_worlds(case)
+                   if (active := domain(case, request, env)) is not None]
+        checked = component_intervals(case, domains, proof)
+        if checked is None:
+            result.update(execution_status='resource_limited', sufficiency='unresolved')
+        else:
+            intervals, exact = checked
+            if not intervals:
+                result['model_status'] = 'inconsistent'
+            else:
+                lower, upper = min(x[0] for x in intervals), max(x[1] for x in intervals)
+                status = ('sufficient' if lower > tolerance else
+                          'insufficient' if exact or upper <= tolerance else 'unresolved')
+                result.update(model_status='consistent', sufficiency=status,
+                              enclosure_kind='exact_for_finite_error_family' if exact else 'conservative_component_bound',
+                              bounds={'lower': wire(lower), 'upper': wire(upper)})
+        return result
     if proof.get('kind') == 'counterexample':
         _keys(proof, ('kind', 'assignment', 'deletions', 'anchors'))
         env = _assignment(proof['assignment'], case['model']['variables'])

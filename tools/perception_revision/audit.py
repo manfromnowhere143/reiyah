@@ -29,7 +29,9 @@ def world_proposal(case, env, removed):
     return rows, delta
 
 
-def produce(case, request, candidate=None):
+def produce(case, request, candidate=None, method='legacy'):
+    require(method in ('legacy', 'components'), 'AUDIT_METHOD', 'Unknown audit proof method')
+    require(candidate is None or method == 'legacy', 'AUDIT_METHOD', 'A supplied counterexample uses the legacy method')
     reason = unavailable(case)
     if reason is not None:
         proof = {'kind': 'unavailable', 'reason': reason}
@@ -50,6 +52,10 @@ def produce(case, request, candidate=None):
         return {'result': conclude(case, request, proof), 'proof': proof}
     selected = [(bits, env, active) for bits, env in worlds(case['model'])
                 if (active := domain(case, request, env)) is not None]
+    if method == 'components':
+        from .component_producer import propose
+        proof = propose(case, selected)
+        return {'result': conclude(case, request, proof), 'proof': proof}
     exact = enumeration_allowed(case, [row[2] for row in selected])
     proof = {'kind': 'enumerated_deletions' if exact else 'bounded_deletions', 'worlds': []}
     for bits, env, (required, free, budget) in selected:

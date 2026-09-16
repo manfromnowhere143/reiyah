@@ -1,10 +1,47 @@
-# Reiyah Engine continuation, 2026-09-16
+# Reiyah Engine continuation, 2026-09-17
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.18`
+Version: `0.1.19`
 
 Lifecycle status: `exploratory`
+
+The current [component audit checkpoint](PERCEPTION_AUDIT_COMPONENTS_2026-09-17.md) consumes the
+new independent research lane at `6fbd5f3b89f60698c3acca27f42d99aee0ab9d27`, branch
+`research/2026-09-16-audit-sufficiency`. Its outbox manifest is
+`4ffbc3219e11e495ff8e8a6e9481823d9e60141738832c6cb2b773a36cc07265`.
+All eight payloads and seven committed origins agree. Private candidate sets were separately
+consumer-selected, copied and bound; their sufficiency was not inherited from a solver claim.
+
+The new optional `audit --proof-method components` checks joint worlds, graph components,
+exchangeable free-reference groups and one shared deletion budget. It certifies the delivered
+9/53 sets on the first/second cases and 480/530 sets on the forty-frame case. The proposed 373
+set remains unresolved at lower bound 1/10. The 354-label pool is sufficient at k=49 but has a
+checked 181-record counterexample under arbitrary deletion. Minimum-set optimality and actual
+query savings are not checked here. Legacy commands retain their default behavior.
+
+The current private root is
+`~/.codex/reports/reiyah/engine-audit-components-2026-09-17-jqq_taoy/`.
+Read its START_HERE, SOURCE_BINDINGS, closeout, seal and consumer exchange before continuation.
+The [verification record](../research/perception-audit-components/0.1.0/verification.json) binds
+the implementation and validation. The earlier 16 September checkpoint below stays closed.
+Current validation passes 476 repository tests, 93 measurement tests, twelve previous packets,
+22 new packets and sixteen CLI commands. The component proof is more expensive than the older
+unresolved bound on the 480-label request; no equal-result speedup or human saving follows.
+
+Read the [two-lane mission and benchmark gates](REIYAH_NEXT_MISSION_2026-09-17.md). Engine owns
+common proof semantics, custody, current-world checking and source qualification. Fable owns
+selectors, conventional baselines and cost challenges. Its next consumer action is to use the
+common checker, including the cheap existing bound, and count actual queries and complete work.
+Shrinking a 480-query result to a 373-member certificate does not refund 107 queries. A later
+external test must freeze population, outcomes access, family and cost policy before running.
+No superiority headline or new post is ready from these development checks alone.
+
+Google Cloud account/project availability was checked read-only. No Reiyah dataset location was
+identified from the four bucket names; their contents were not consumed and no compute was started.
+The user-provided project is an available option, not a reason to start a cloud campaign.
+
+## Preceding implementation, 16 September
 
 The [replacement and audit implementation](PERCEPTION_REVISION_AUDIT_2026-09-16.md) carries out
 the operator's corrected direction. `tools.perception_revision` provides independent A/B output

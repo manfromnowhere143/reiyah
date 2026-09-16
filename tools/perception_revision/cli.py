@@ -67,6 +67,7 @@ def main(argv=None):
         if command == 'audit':
             sub.add_argument('--candidate', type=Path)
             sub.add_argument('--candidate-sha256')
+            sub.add_argument('--proof-method', choices=('legacy', 'components'), default='legacy')
         if command in ('run', 'rebind-audit'):
             sub.add_argument('--prior-input', type=Path, required=command == 'rebind-audit')
             sub.add_argument('--prior-input-sha256', required=command == 'rebind-audit')
@@ -102,7 +103,7 @@ def main(argv=None):
                     request = request_input(case, args.request, args.request_sha256)
                     require(bool(args.candidate) == bool(args.candidate_sha256), 'CANDIDATE_BINDING', 'Candidate requires an expected digest')
                     candidate = load_bytes(args.candidate, args.candidate_sha256, validate_input=False) if args.candidate else None
-                    payload = audit.produce(case, request, candidate)
+                    payload = audit.produce(case, request, candidate, method=args.proof_method)
                     audit_checker.check(case, request, payload)
                     packet.update(artifact_id='reiyah.perception-revision.audit-packet', request_sha256=args.request_sha256)
                 else:

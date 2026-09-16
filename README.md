@@ -34,6 +34,14 @@ detector outputs give an annotation-conditional improvement of **209/20**. The b
 assay preserves the result but is slower than full computation on this small workload. Lower
 total validation cost and an advantage over competent conventional analysis remain unestablished.
 
+The [17 September component checker](docs/PERCEPTION_AUDIT_COMPONENTS_2026-09-17.md) independently
+certifies delivered sets of 9 and 53 hypothetical confirmations on the first two cases, and 480
+and 530 on the forty-frame case, under their declared deletion families. The proposed 373 set
+remains unresolved by this bounded checker. These are sufficiency results, not minimum-query or
+human-time claims. The forty-frame direction is Mapillary camera base plus retained Megvii lidar
+additions. Read the [next mission and benchmark gates](docs/REIYAH_NEXT_MISSION_2026-09-17.md)
+for the Engine/research split and the evidence needed for a broader performance claim.
+
 As checked on **14 September 2026**, a [new automated replay](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md)
 on the two existing development anchors gives **[1,1]**, conditional on the retained benchmark
 labels and Reiyah's fixed rules. Weighted loss falls from 23.5 to 22.5; one anchor improves and
@@ -74,7 +82,8 @@ with 1,873 unsupported baselines among 3,000 declared units. The Engine has sour
 complete delivered case, not every census witness. The corrected counterexample still proves
 that above-floor minima are possible. The [earlier failure and correction request](docs/PERCEPTION_SCALE_CONSUMER_2026-09-15.md)
 remain available. The subsequent Engine reuse assay and audit checker are linked above. Fable's
-competent cached procedure and observation-selection cost comparison remain separate deliverables.
+observation-selection work is now consumed through the component checker above; a matched
+comparison with complete costs and the common stopping rule remains outstanding.
 
 The [prediction checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) prepares all **4,876 original
 prediction rows across 16 exposed development keyframes** without reading annotation-bearing
