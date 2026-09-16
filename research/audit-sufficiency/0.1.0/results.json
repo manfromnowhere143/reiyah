@@ -1,0 +1,2847 @@
+{
+ "module_version": "0.1.0",
+ "started": "2026-09-16T15:57:23",
+ "inputs": {
+  "AFTER_INPUT.json": "6a46e12f8278185d7d110dcd93cb315ac541dfc71ac324277e05f3efeb4c403a",
+  "BEFORE_INPUT.json": "2f4556f19f0b3f1b036ba0e36e947e70fa612dfd602791f30e6466d839069e4d",
+  "DISJOINT_WITNESS_PROBE.json": "f5bab2927f4601cc65c40845c41917f7f20eaf610275e517f9e7c787c944de6c",
+  "SOURCE_CASE.json": "0f0aa6c2657cb91711bef64d1f5fbdc8ec15d03e7b74d9003fa08e5f9cc77ecf",
+  "first_comparison.json": "45308db6cec4b5034100f780a2ecd8beb1779b8101cac7c77b343b511ed1afa1",
+  "second_comparison.json": "1531a27478cb81f3506c663faf5b175e087f1478671f1606ae1a3a6608221ac0"
+ },
+ "cases": {
+  "forty_frame": {
+   "structure": {
+    "delta": "51/20",
+    "criterion": "supported",
+    "margin": "49/20",
+    "labels": 2299,
+    "carriers": 361,
+    "carriers_with_base_edge": 7,
+    "additive_pool": 354,
+    "k_floor": 49,
+    "disjoint_floor_witnesses_constructed": 7,
+    "sufficient_audit_lower_bound": 306,
+    "seconds": 0.26,
+    "witness1_size": 49,
+    "witness1_delta": "1/10"
+   },
+   "certificates": {
+    "none": {
+     "unbounded": {
+      "criterion": "supported",
+      "delta": "51/20",
+      "tolerance": "1/10",
+      "margin": "49/20",
+      "confirmed": 0,
+      "budget": null,
+      "sound_max_drop": "21",
+      "sound": "unresolved",
+      "solver_max_drop": "21",
+      "solver": "insufficient",
+      "solver_unverified_anchors": 0,
+      "achieved_drop": "21",
+      "achieved": "crosses",
+      "counterexample_size": 538,
+      "counterexample_frames": 40,
+      "seconds": 0.608
+     },
+     "budget_49": {
+      "criterion": "supported",
+      "delta": "51/20",
+      "tolerance": "1/10",
+      "margin": "49/20",
+      "confirmed": 0,
+      "budget": 49,
+      "sound_max_drop": "49/20",
+      "sound": "unresolved",
+      "solver_max_drop": "49/20",
+      "solver": "insufficient",
+      "solver_unverified_anchors": 0,
+      "achieved_drop": "49/20",
+      "achieved": "crosses",
+      "counterexample_size": 49,
+      "counterexample_frames": 8,
+      "seconds": 12.824
+     },
+     "seconds": 13.43
+    },
+    "witness1": {
+     "unbounded": {
+      "criterion": "supported",
+      "delta": "51/20",
+      "tolerance": "1/10",
+      "margin": "49/20",
+      "confirmed": 49,
+      "budget": null,
+      "sound_max_drop": "21",
+      "sound": "unresolved",
+      "solver_max_drop": "373/20",
+      "solver": "insufficient",
+      "solver_unverified_anchors": 0,
+      "achieved_drop": "373/20",
+      "achieved": "crosses",
+      "counterexample_size": 493,
+      "counterexample_frames": 37,
+      "seconds": 0.601
+     },
+     "budget_49": {
+      "criterion": "supported",
+      "delta": "51/20",
+      "tolerance": "1/10",
+      "margin": "49/20",
+      "confirmed": 49,
+      "budget": 49,
+      "sound_max_drop": "49/20",
+      "sound": "unresolved",
+      "solver_max_drop": "49/20",
+      "solver": "insufficient",
+      "solver_unverified_anchors": 0,
+      "achieved_drop": "49/20",
+      "achieved": "crosses",
+      "counterexample_size": 49,
+      "counterexample_frames": 8,
+      "seconds": 14.539
+     },
+     "seconds": 15.14
+    },
+    "additive_pool": {
+     "unbounded": {
+      "criterion": "supported",
+      "delta": "51/20",
+      "tolerance": "1/10",
+      "margin": "49/20",
+      "confirmed": 354,
+      "budget": null,
+      "sound_max_drop": "209/10",
+      "sound": "unresolved",
+      "solver_max_drop": "33/10",
+      "solver": "insufficient",
+      "solver_unverified_anchors": 0,
+      "achieved_drop": "33/10",
+      "achieved": "crosses",
+      "counterexample_size": 181,
+      "counterexample_frames": 30,
+      "seconds": 0.575
+     },
+     "budget_49": {
+      "criterion": "supported",
+      "delta": "51/20",
+      "tolerance": "1/10",
+      "margin": "49/20",
+      "confirmed": 354,
+      "budget": 49,
+      "sound_max_drop": "49/20",
+      "sound": "unresolved",
+      "solver_max_drop": "27/20",
+      "solver": "sufficient",
+      "solver_unverified_anchors": 0,
+      "achieved_drop": "27/20",
+      "achieved": "does_not_cross",
+      "counterexample_size": 48,
+      "counterexample_frames": 14,
+      "seconds": 37.625
+     },
+     "seconds": 38.2
+    }
+   },
+   "policy_runs": [
+    {
+     "policy": "random",
+     "seed": 0,
+     "batch": 10,
+     "queries": 2020,
+     "rounds": 202,
+     "confirmed": 2020,
+     "absent_found": 0,
+     "final_delta": "51/20",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 81.86,
+     "budget_49_after": "sufficient"
+    },
+    {
+     "policy": "random",
+     "seed": 1,
+     "batch": 10,
+     "queries": 1960,
+     "rounds": 196,
+     "confirmed": 1960,
+     "absent_found": 0,
+     "final_delta": "51/20",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 74.89,
+     "budget_49_after": "sufficient"
+    },
+    {
+     "policy": "random",
+     "seed": 2,
+     "batch": 10,
+     "queries": 2000,
+     "rounds": 200,
+     "confirmed": 2000,
+     "absent_found": 0,
+     "final_delta": "51/20",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 76.27,
+     "budget_49_after": "sufficient"
+    },
+    {
+     "policy": "degree",
+     "seed": 0,
+     "batch": 10,
+     "queries": 1660,
+     "rounds": 166,
+     "confirmed": 1660,
+     "absent_found": 0,
+     "final_delta": "51/20",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 35.86,
+     "budget_49_after": "sufficient"
+    },
+    {
+     "policy": "addition_adjacent",
+     "seed": 0,
+     "batch": 10,
+     "queries": 480,
+     "rounds": 48,
+     "confirmed": 480,
+     "absent_found": 0,
+     "final_delta": "51/20",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 25.45,
+     "budget_49_after": "sufficient"
+    },
+    {
+     "policy": "influence",
+     "seed": 0,
+     "batch": 10,
+     "queries": 1170,
+     "rounds": 117,
+     "confirmed": 1170,
+     "absent_found": 0,
+     "final_delta": "51/20",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 58.67,
+     "budget_49_after": "sufficient"
+    },
+    {
+     "policy": "counterexample_guided",
+     "seed": 0,
+     "batch": 10,
+     "queries": 530,
+     "rounds": 53,
+     "confirmed": 530,
+     "absent_found": 0,
+     "final_delta": "51/20",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 58.82,
+     "budget_49_after": "sufficient"
+    }
+   ],
+   "injected_error_runs": [
+    {
+     "policy": "influence",
+     "seed": 0,
+     "batch": 10,
+     "queries": 1790,
+     "rounds": 179,
+     "confirmed": 1694,
+     "absent_found": 96,
+     "final_delta": "27/20",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 79.06,
+     "planted_absent": 124
+    },
+    {
+     "policy": "influence",
+     "seed": 1,
+     "batch": 10,
+     "queries": 1490,
+     "rounds": 149,
+     "confirmed": 1422,
+     "absent_found": 68,
+     "final_delta": "19/10",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 72.0,
+     "planted_absent": 106
+    },
+    {
+     "policy": "counterexample_guided",
+     "seed": 0,
+     "batch": 10,
+     "queries": 560,
+     "rounds": 56,
+     "confirmed": 531,
+     "absent_found": 29,
+     "final_delta": "8/5",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 60.34,
+     "planted_absent": 124
+    },
+    {
+     "policy": "counterexample_guided",
+     "seed": 1,
+     "batch": 10,
+     "queries": 540,
+     "rounds": 54,
+     "confirmed": 518,
+     "absent_found": 22,
+     "final_delta": "39/20",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 61.16,
+     "planted_absent": 106
+    }
+   ],
+   "reuse_under_changed_rule": [
+    {
+     "variant": "fn1_fp4",
+     "delta": "-213/10",
+     "criterion": "excluded",
+     "note": "criterion excluded under this rule; sufficiency of an exclusion is not modeled by the deletion family"
+    },
+    {
+     "variant": "fn4_fp1",
+     "delta": "681/20",
+     "criterion": "supported",
+     "fresh_queries": 180,
+     "fresh_solver": "sufficient",
+     "warm_prior_confirmed": 530,
+     "warm_extra_queries": 0,
+     "warm_solver": "sufficient",
+     "prior_confirmed_still_applicable": true,
+     "note": "same world and same observations; only loss or tolerance changed, so confirmed presence remains applicable"
+    },
+    {
+     "variant": "fn1_fp1_tol1_2",
+     "delta": "51/20",
+     "criterion": "supported",
+     "fresh_queries": 550,
+     "fresh_solver": "sufficient",
+     "warm_prior_confirmed": 530,
+     "warm_extra_queries": 20,
+     "warm_solver": "sufficient",
+     "prior_confirmed_still_applicable": true,
+     "note": "same world and same observations; only loss or tolerance changed, so confirmed presence remains applicable"
+    }
+   ],
+   "cache_check": {
+    "full_recompute_seconds": 0.0038,
+    "touched_anchor_recompute_seconds": 0.0122,
+    "touched_anchors": 8,
+    "note": "wall time on one Mac for matching only; excludes source preparation, hashing, verification and any human work"
+   }
+  },
+  "first": {
+   "structure": {
+    "delta": "1",
+    "criterion": "supported",
+    "margin": "9/10",
+    "labels": 106,
+    "carriers": 6,
+    "carriers_with_base_edge": 0,
+    "additive_pool": 6,
+    "k_floor": 1,
+    "disjoint_floor_witnesses_constructed": 6,
+    "sufficient_audit_lower_bound": 6
+   },
+   "policy_runs": [
+    {
+     "policy": "random",
+     "seed": 0,
+     "batch": 5,
+     "queries": 85,
+     "rounds": 17,
+     "confirmed": 85,
+     "absent_found": 0,
+     "final_delta": "1",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 0.2
+    },
+    {
+     "policy": "influence",
+     "seed": 0,
+     "batch": 5,
+     "queries": 45,
+     "rounds": 9,
+     "confirmed": 45,
+     "absent_found": 0,
+     "final_delta": "1",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 0.13
+    },
+    {
+     "policy": "counterexample_guided",
+     "seed": 0,
+     "batch": 5,
+     "queries": 13,
+     "rounds": 3,
+     "confirmed": 13,
+     "absent_found": 0,
+     "final_delta": "1",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 0.09
+    }
+   ]
+  },
+  "second": {
+   "structure": {
+    "delta": "2/7",
+    "criterion": "supported",
+    "margin": "13/70",
+    "labels": 737,
+    "carriers": 53,
+    "carriers_with_base_edge": 11,
+    "additive_pool": 42,
+    "k_floor": 2,
+    "disjoint_floor_witnesses_constructed": 26,
+    "sufficient_audit_lower_bound": 41
+   },
+   "policy_runs": [
+    {
+     "policy": "random",
+     "seed": 0,
+     "batch": 5,
+     "queries": 700,
+     "rounds": 140,
+     "confirmed": 700,
+     "absent_found": 0,
+     "final_delta": "2/7",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 11.27
+    },
+    {
+     "policy": "influence",
+     "seed": 0,
+     "batch": 5,
+     "queries": 75,
+     "rounds": 15,
+     "confirmed": 75,
+     "absent_found": 0,
+     "final_delta": "2/7",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 1.43
+    },
+    {
+     "policy": "counterexample_guided",
+     "seed": 0,
+     "batch": 5,
+     "queries": 65,
+     "rounds": 13,
+     "confirmed": 65,
+     "absent_found": 0,
+     "final_delta": "2/7",
+     "final_criterion": "supported",
+     "sound": "unresolved",
+     "solver": "sufficient",
+     "seconds": 2.35
+    }
+   ]
+  }
+ },
+ "seconds": 441.9,
+ "shrink": {
+  "addition_adjacent": {
+   "policy_source": "addition_adjacent",
+   "start_size": 480,
+   "minimal_size": 373,
+   "removed": 107,
+   "certificate_checks": 480,
+   "solver": "sufficient",
+   "sound": "unresolved",
+   "budget_49": "sufficient",
+   "seconds": 286.8,
+   "note": "inclusion-minimal sufficient set under the unbounded deletion family; a local minimum, not proved global"
+  }
+ },
+ "implicit_hitting_set": {
+  "first": {
+   "status": "optimal",
+   "minimum_sufficient_set_size": 9,
+   "iterations": 9,
+   "families": 10,
+   "solver_tier": "sufficient",
+   "sound_tier": "unresolved",
+   "budget_49": "sufficient",
+   "seconds": 0.7,
+   "history": [
+    {
+     "iteration": 1,
+     "families": 2,
+     "hitting_set_size": 2,
+     "lower_bound": 2,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 0.0
+    },
+    {
+     "iteration": 2,
+     "families": 3,
+     "hitting_set_size": 3,
+     "lower_bound": 3,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 0.0
+    },
+    {
+     "iteration": 3,
+     "families": 4,
+     "hitting_set_size": 4,
+     "lower_bound": 4,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 0.1
+    },
+    {
+     "iteration": 4,
+     "families": 5,
+     "hitting_set_size": 5,
+     "lower_bound": 5,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 0.1
+    },
+    {
+     "iteration": 5,
+     "families": 6,
+     "hitting_set_size": 6,
+     "lower_bound": 6,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 0.1
+    },
+    {
+     "iteration": 6,
+     "families": 7,
+     "hitting_set_size": 7,
+     "lower_bound": 7,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 0.1
+    },
+    {
+     "iteration": 7,
+     "families": 8,
+     "hitting_set_size": 7,
+     "lower_bound": 7,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 0.1
+    },
+    {
+     "iteration": 8,
+     "families": 9,
+     "hitting_set_size": 8,
+     "lower_bound": 8,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 0.1
+    },
+    {
+     "iteration": 9,
+     "families": 10,
+     "hitting_set_size": 9,
+     "lower_bound": 9,
+     "solver": "sufficient",
+     "sound": "unresolved",
+     "seconds": 0.2
+    }
+   ],
+   "delta": "1",
+   "margin": "9/10"
+  },
+  "second": {
+   "status": "optimal",
+   "minimum_sufficient_set_size": 53,
+   "iterations": 249,
+   "families": 1344,
+   "solver_tier": "sufficient",
+   "sound_tier": "unresolved",
+   "budget_49": "sufficient",
+   "seconds": 111.9,
+   "history": [
+    {
+     "iteration": 1,
+     "families": 8,
+     "hitting_set_size": 4,
+     "lower_bound": 4,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 0.5
+    },
+    {
+     "iteration": 2,
+     "families": 24,
+     "hitting_set_size": 8,
+     "lower_bound": 8,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 1.3
+    },
+    {
+     "iteration": 3,
+     "families": 39,
+     "hitting_set_size": 12,
+     "lower_bound": 12,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 2.1
+    },
+    {
+     "iteration": 4,
+     "families": 51,
+     "hitting_set_size": 14,
+     "lower_bound": 14,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 2.8
+    },
+    {
+     "iteration": 5,
+     "families": 65,
+     "hitting_set_size": 18,
+     "lower_bound": 18,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 3.6
+    },
+    {
+     "iteration": 6,
+     "families": 72,
+     "hitting_set_size": 19,
+     "lower_bound": 19,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 4.3
+    },
+    {
+     "iteration": 7,
+     "families": 88,
+     "hitting_set_size": 21,
+     "lower_bound": 21,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 5.0
+    },
+    {
+     "iteration": 8,
+     "families": 100,
+     "hitting_set_size": 21,
+     "lower_bound": 21,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 5.6
+    },
+    {
+     "iteration": 9,
+     "families": 114,
+     "hitting_set_size": 22,
+     "lower_bound": 22,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 6.3
+    },
+    {
+     "iteration": 10,
+     "families": 128,
+     "hitting_set_size": 24,
+     "lower_bound": 24,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 7.0
+    },
+    {
+     "iteration": 11,
+     "families": 143,
+     "hitting_set_size": 26,
+     "lower_bound": 26,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 7.6
+    },
+    {
+     "iteration": 12,
+     "families": 160,
+     "hitting_set_size": 26,
+     "lower_bound": 26,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 8.2
+    },
+    {
+     "iteration": 13,
+     "families": 174,
+     "hitting_set_size": 27,
+     "lower_bound": 27,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 8.8
+    },
+    {
+     "iteration": 14,
+     "families": 184,
+     "hitting_set_size": 28,
+     "lower_bound": 28,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 9.4
+    },
+    {
+     "iteration": 15,
+     "families": 199,
+     "hitting_set_size": 29,
+     "lower_bound": 29,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 10.1
+    },
+    {
+     "iteration": 16,
+     "families": 212,
+     "hitting_set_size": 29,
+     "lower_bound": 29,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 10.7
+    },
+    {
+     "iteration": 17,
+     "families": 226,
+     "hitting_set_size": 30,
+     "lower_bound": 30,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 11.4
+    },
+    {
+     "iteration": 18,
+     "families": 235,
+     "hitting_set_size": 30,
+     "lower_bound": 30,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 12.0
+    },
+    {
+     "iteration": 19,
+     "families": 245,
+     "hitting_set_size": 30,
+     "lower_bound": 30,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 12.7
+    },
+    {
+     "iteration": 20,
+     "families": 255,
+     "hitting_set_size": 30,
+     "lower_bound": 30,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 13.3
+    },
+    {
+     "iteration": 21,
+     "families": 263,
+     "hitting_set_size": 31,
+     "lower_bound": 31,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 13.9
+    },
+    {
+     "iteration": 22,
+     "families": 271,
+     "hitting_set_size": 31,
+     "lower_bound": 31,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 14.6
+    },
+    {
+     "iteration": 23,
+     "families": 280,
+     "hitting_set_size": 31,
+     "lower_bound": 31,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 15.2
+    },
+    {
+     "iteration": 24,
+     "families": 292,
+     "hitting_set_size": 32,
+     "lower_bound": 32,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 15.8
+    },
+    {
+     "iteration": 25,
+     "families": 304,
+     "hitting_set_size": 32,
+     "lower_bound": 32,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 16.3
+    },
+    {
+     "iteration": 26,
+     "families": 319,
+     "hitting_set_size": 33,
+     "lower_bound": 33,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 16.8
+    },
+    {
+     "iteration": 27,
+     "families": 330,
+     "hitting_set_size": 33,
+     "lower_bound": 33,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 17.3
+    },
+    {
+     "iteration": 28,
+     "families": 340,
+     "hitting_set_size": 33,
+     "lower_bound": 33,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 17.9
+    },
+    {
+     "iteration": 29,
+     "families": 352,
+     "hitting_set_size": 33,
+     "lower_bound": 33,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 18.5
+    },
+    {
+     "iteration": 30,
+     "families": 367,
+     "hitting_set_size": 34,
+     "lower_bound": 34,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 19.1
+    },
+    {
+     "iteration": 31,
+     "families": 378,
+     "hitting_set_size": 35,
+     "lower_bound": 35,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 19.6
+    },
+    {
+     "iteration": 32,
+     "families": 391,
+     "hitting_set_size": 35,
+     "lower_bound": 35,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 20.1
+    },
+    {
+     "iteration": 33,
+     "families": 401,
+     "hitting_set_size": 36,
+     "lower_bound": 36,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 20.6
+    },
+    {
+     "iteration": 34,
+     "families": 410,
+     "hitting_set_size": 36,
+     "lower_bound": 36,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 21.1
+    },
+    {
+     "iteration": 35,
+     "families": 420,
+     "hitting_set_size": 37,
+     "lower_bound": 37,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 21.7
+    },
+    {
+     "iteration": 36,
+     "families": 431,
+     "hitting_set_size": 37,
+     "lower_bound": 37,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 22.2
+    },
+    {
+     "iteration": 37,
+     "families": 443,
+     "hitting_set_size": 38,
+     "lower_bound": 38,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 22.6
+    },
+    {
+     "iteration": 38,
+     "families": 453,
+     "hitting_set_size": 38,
+     "lower_bound": 38,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 23.2
+    },
+    {
+     "iteration": 39,
+     "families": 462,
+     "hitting_set_size": 38,
+     "lower_bound": 38,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 23.6
+    },
+    {
+     "iteration": 40,
+     "families": 470,
+     "hitting_set_size": 39,
+     "lower_bound": 39,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 24.1
+    },
+    {
+     "iteration": 41,
+     "families": 481,
+     "hitting_set_size": 40,
+     "lower_bound": 40,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 24.5
+    },
+    {
+     "iteration": 42,
+     "families": 494,
+     "hitting_set_size": 40,
+     "lower_bound": 40,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 25.0
+    },
+    {
+     "iteration": 43,
+     "families": 504,
+     "hitting_set_size": 40,
+     "lower_bound": 40,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 25.4
+    },
+    {
+     "iteration": 44,
+     "families": 514,
+     "hitting_set_size": 40,
+     "lower_bound": 40,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 25.9
+    },
+    {
+     "iteration": 45,
+     "families": 524,
+     "hitting_set_size": 40,
+     "lower_bound": 40,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 26.4
+    },
+    {
+     "iteration": 46,
+     "families": 534,
+     "hitting_set_size": 41,
+     "lower_bound": 41,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 26.8
+    },
+    {
+     "iteration": 47,
+     "families": 541,
+     "hitting_set_size": 41,
+     "lower_bound": 41,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 27.3
+    },
+    {
+     "iteration": 48,
+     "families": 550,
+     "hitting_set_size": 41,
+     "lower_bound": 41,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 27.8
+    },
+    {
+     "iteration": 49,
+     "families": 558,
+     "hitting_set_size": 41,
+     "lower_bound": 41,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 28.3
+    },
+    {
+     "iteration": 50,
+     "families": 567,
+     "hitting_set_size": 42,
+     "lower_bound": 42,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 28.8
+    },
+    {
+     "iteration": 51,
+     "families": 577,
+     "hitting_set_size": 42,
+     "lower_bound": 42,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 29.3
+    },
+    {
+     "iteration": 52,
+     "families": 588,
+     "hitting_set_size": 42,
+     "lower_bound": 42,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 29.8
+    },
+    {
+     "iteration": 53,
+     "families": 597,
+     "hitting_set_size": 42,
+     "lower_bound": 42,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 30.2
+    },
+    {
+     "iteration": 54,
+     "families": 608,
+     "hitting_set_size": 42,
+     "lower_bound": 42,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 30.7
+    },
+    {
+     "iteration": 55,
+     "families": 615,
+     "hitting_set_size": 43,
+     "lower_bound": 43,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 31.1
+    },
+    {
+     "iteration": 56,
+     "families": 619,
+     "hitting_set_size": 43,
+     "lower_bound": 43,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 31.6
+    },
+    {
+     "iteration": 57,
+     "families": 626,
+     "hitting_set_size": 43,
+     "lower_bound": 43,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 32.0
+    },
+    {
+     "iteration": 58,
+     "families": 635,
+     "hitting_set_size": 43,
+     "lower_bound": 43,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 32.5
+    },
+    {
+     "iteration": 59,
+     "families": 643,
+     "hitting_set_size": 43,
+     "lower_bound": 43,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 32.9
+    },
+    {
+     "iteration": 60,
+     "families": 648,
+     "hitting_set_size": 43,
+     "lower_bound": 43,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 33.4
+    },
+    {
+     "iteration": 61,
+     "families": 658,
+     "hitting_set_size": 43,
+     "lower_bound": 43,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 33.8
+    },
+    {
+     "iteration": 62,
+     "families": 664,
+     "hitting_set_size": 43,
+     "lower_bound": 43,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 34.2
+    },
+    {
+     "iteration": 63,
+     "families": 670,
+     "hitting_set_size": 43,
+     "lower_bound": 43,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 34.7
+    },
+    {
+     "iteration": 64,
+     "families": 678,
+     "hitting_set_size": 44,
+     "lower_bound": 44,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 35.3
+    },
+    {
+     "iteration": 65,
+     "families": 684,
+     "hitting_set_size": 44,
+     "lower_bound": 44,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 35.8
+    },
+    {
+     "iteration": 66,
+     "families": 694,
+     "hitting_set_size": 44,
+     "lower_bound": 44,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 36.4
+    },
+    {
+     "iteration": 67,
+     "families": 698,
+     "hitting_set_size": 44,
+     "lower_bound": 44,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 36.9
+    },
+    {
+     "iteration": 68,
+     "families": 701,
+     "hitting_set_size": 44,
+     "lower_bound": 44,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 37.3
+    },
+    {
+     "iteration": 69,
+     "families": 712,
+     "hitting_set_size": 44,
+     "lower_bound": 44,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 37.8
+    },
+    {
+     "iteration": 70,
+     "families": 718,
+     "hitting_set_size": 44,
+     "lower_bound": 44,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 38.3
+    },
+    {
+     "iteration": 71,
+     "families": 724,
+     "hitting_set_size": 44,
+     "lower_bound": 44,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 38.7
+    },
+    {
+     "iteration": 72,
+     "families": 727,
+     "hitting_set_size": 44,
+     "lower_bound": 44,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 39.1
+    },
+    {
+     "iteration": 73,
+     "families": 733,
+     "hitting_set_size": 44,
+     "lower_bound": 44,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 39.6
+    },
+    {
+     "iteration": 74,
+     "families": 740,
+     "hitting_set_size": 44,
+     "lower_bound": 44,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 40.1
+    },
+    {
+     "iteration": 75,
+     "families": 748,
+     "hitting_set_size": 44,
+     "lower_bound": 44,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 40.6
+    },
+    {
+     "iteration": 76,
+     "families": 756,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 41.4
+    },
+    {
+     "iteration": 77,
+     "families": 760,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 41.9
+    },
+    {
+     "iteration": 78,
+     "families": 767,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 42.6
+    },
+    {
+     "iteration": 79,
+     "families": 773,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 43.3
+    },
+    {
+     "iteration": 80,
+     "families": 779,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 44.0
+    },
+    {
+     "iteration": 81,
+     "families": 785,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 44.6
+    },
+    {
+     "iteration": 82,
+     "families": 791,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 45.1
+    },
+    {
+     "iteration": 83,
+     "families": 797,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 45.6
+    },
+    {
+     "iteration": 84,
+     "families": 802,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 46.0
+    },
+    {
+     "iteration": 85,
+     "families": 806,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 46.3
+    },
+    {
+     "iteration": 86,
+     "families": 813,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 46.7
+    },
+    {
+     "iteration": 87,
+     "families": 820,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 47.2
+    },
+    {
+     "iteration": 88,
+     "families": 827,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 47.6
+    },
+    {
+     "iteration": 89,
+     "families": 832,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 48.0
+    },
+    {
+     "iteration": 90,
+     "families": 838,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 48.4
+    },
+    {
+     "iteration": 91,
+     "families": 847,
+     "hitting_set_size": 45,
+     "lower_bound": 45,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 49.0
+    },
+    {
+     "iteration": 92,
+     "families": 853,
+     "hitting_set_size": 46,
+     "lower_bound": 46,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 49.5
+    },
+    {
+     "iteration": 93,
+     "families": 859,
+     "hitting_set_size": 46,
+     "lower_bound": 46,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 49.9
+    },
+    {
+     "iteration": 94,
+     "families": 863,
+     "hitting_set_size": 46,
+     "lower_bound": 46,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 50.5
+    },
+    {
+     "iteration": 95,
+     "families": 868,
+     "hitting_set_size": 46,
+     "lower_bound": 46,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 50.9
+    },
+    {
+     "iteration": 96,
+     "families": 872,
+     "hitting_set_size": 46,
+     "lower_bound": 46,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 51.3
+    },
+    {
+     "iteration": 97,
+     "families": 877,
+     "hitting_set_size": 46,
+     "lower_bound": 46,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 51.6
+    },
+    {
+     "iteration": 98,
+     "families": 881,
+     "hitting_set_size": 46,
+     "lower_bound": 46,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 52.1
+    },
+    {
+     "iteration": 99,
+     "families": 887,
+     "hitting_set_size": 46,
+     "lower_bound": 46,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 52.6
+    },
+    {
+     "iteration": 100,
+     "families": 893,
+     "hitting_set_size": 47,
+     "lower_bound": 47,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 53.1
+    },
+    {
+     "iteration": 101,
+     "families": 898,
+     "hitting_set_size": 47,
+     "lower_bound": 47,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 53.7
+    },
+    {
+     "iteration": 102,
+     "families": 903,
+     "hitting_set_size": 47,
+     "lower_bound": 47,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 54.1
+    },
+    {
+     "iteration": 103,
+     "families": 908,
+     "hitting_set_size": 47,
+     "lower_bound": 47,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 54.5
+    },
+    {
+     "iteration": 104,
+     "families": 911,
+     "hitting_set_size": 47,
+     "lower_bound": 47,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 54.9
+    },
+    {
+     "iteration": 105,
+     "families": 916,
+     "hitting_set_size": 47,
+     "lower_bound": 47,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 55.4
+    },
+    {
+     "iteration": 106,
+     "families": 919,
+     "hitting_set_size": 47,
+     "lower_bound": 47,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 55.8
+    },
+    {
+     "iteration": 107,
+     "families": 923,
+     "hitting_set_size": 47,
+     "lower_bound": 47,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 56.2
+    },
+    {
+     "iteration": 108,
+     "families": 926,
+     "hitting_set_size": 47,
+     "lower_bound": 47,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 56.6
+    },
+    {
+     "iteration": 109,
+     "families": 929,
+     "hitting_set_size": 47,
+     "lower_bound": 47,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 57.0
+    },
+    {
+     "iteration": 110,
+     "families": 933,
+     "hitting_set_size": 47,
+     "lower_bound": 47,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 57.4
+    },
+    {
+     "iteration": 111,
+     "families": 938,
+     "hitting_set_size": 47,
+     "lower_bound": 47,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 57.8
+    },
+    {
+     "iteration": 112,
+     "families": 942,
+     "hitting_set_size": 47,
+     "lower_bound": 47,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 58.1
+    },
+    {
+     "iteration": 113,
+     "families": 946,
+     "hitting_set_size": 48,
+     "lower_bound": 48,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 58.5
+    },
+    {
+     "iteration": 114,
+     "families": 949,
+     "hitting_set_size": 48,
+     "lower_bound": 48,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 58.9
+    },
+    {
+     "iteration": 115,
+     "families": 953,
+     "hitting_set_size": 48,
+     "lower_bound": 48,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 59.3
+    },
+    {
+     "iteration": 116,
+     "families": 957,
+     "hitting_set_size": 48,
+     "lower_bound": 48,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 59.6
+    },
+    {
+     "iteration": 117,
+     "families": 962,
+     "hitting_set_size": 48,
+     "lower_bound": 48,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 60.0
+    },
+    {
+     "iteration": 118,
+     "families": 966,
+     "hitting_set_size": 48,
+     "lower_bound": 48,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 60.4
+    },
+    {
+     "iteration": 119,
+     "families": 970,
+     "hitting_set_size": 48,
+     "lower_bound": 48,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 60.7
+    },
+    {
+     "iteration": 120,
+     "families": 977,
+     "hitting_set_size": 49,
+     "lower_bound": 49,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 61.1
+    },
+    {
+     "iteration": 121,
+     "families": 982,
+     "hitting_set_size": 49,
+     "lower_bound": 49,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 61.5
+    },
+    {
+     "iteration": 122,
+     "families": 985,
+     "hitting_set_size": 49,
+     "lower_bound": 49,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 61.8
+    },
+    {
+     "iteration": 123,
+     "families": 992,
+     "hitting_set_size": 49,
+     "lower_bound": 49,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 62.2
+    },
+    {
+     "iteration": 124,
+     "families": 995,
+     "hitting_set_size": 49,
+     "lower_bound": 49,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 62.5
+    },
+    {
+     "iteration": 125,
+     "families": 1001,
+     "hitting_set_size": 49,
+     "lower_bound": 49,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 62.9
+    },
+    {
+     "iteration": 126,
+     "families": 1007,
+     "hitting_set_size": 49,
+     "lower_bound": 49,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 63.3
+    },
+    {
+     "iteration": 127,
+     "families": 1011,
+     "hitting_set_size": 49,
+     "lower_bound": 49,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 63.7
+    },
+    {
+     "iteration": 128,
+     "families": 1017,
+     "hitting_set_size": 49,
+     "lower_bound": 49,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 64.0
+    },
+    {
+     "iteration": 129,
+     "families": 1020,
+     "hitting_set_size": 49,
+     "lower_bound": 49,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 64.3
+    },
+    {
+     "iteration": 130,
+     "families": 1024,
+     "hitting_set_size": 49,
+     "lower_bound": 49,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 64.6
+    },
+    {
+     "iteration": 131,
+     "families": 1027,
+     "hitting_set_size": 50,
+     "lower_bound": 50,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 65.0
+    },
+    {
+     "iteration": 132,
+     "families": 1033,
+     "hitting_set_size": 50,
+     "lower_bound": 50,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 65.3
+    },
+    {
+     "iteration": 133,
+     "families": 1037,
+     "hitting_set_size": 50,
+     "lower_bound": 50,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 65.8
+    },
+    {
+     "iteration": 134,
+     "families": 1042,
+     "hitting_set_size": 50,
+     "lower_bound": 50,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 66.2
+    },
+    {
+     "iteration": 135,
+     "families": 1048,
+     "hitting_set_size": 50,
+     "lower_bound": 50,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 66.5
+    },
+    {
+     "iteration": 136,
+     "families": 1052,
+     "hitting_set_size": 50,
+     "lower_bound": 50,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 67.0
+    },
+    {
+     "iteration": 137,
+     "families": 1057,
+     "hitting_set_size": 50,
+     "lower_bound": 50,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 67.4
+    },
+    {
+     "iteration": 138,
+     "families": 1063,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 67.9
+    },
+    {
+     "iteration": 139,
+     "families": 1066,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 68.2
+    },
+    {
+     "iteration": 140,
+     "families": 1070,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 68.6
+    },
+    {
+     "iteration": 141,
+     "families": 1074,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 69.0
+    },
+    {
+     "iteration": 142,
+     "families": 1077,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 69.4
+    },
+    {
+     "iteration": 143,
+     "families": 1081,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 69.8
+    },
+    {
+     "iteration": 144,
+     "families": 1085,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 70.2
+    },
+    {
+     "iteration": 145,
+     "families": 1089,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 70.5
+    },
+    {
+     "iteration": 146,
+     "families": 1092,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 70.8
+    },
+    {
+     "iteration": 147,
+     "families": 1096,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 71.2
+    },
+    {
+     "iteration": 148,
+     "families": 1099,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 71.5
+    },
+    {
+     "iteration": 149,
+     "families": 1100,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 71.8
+    },
+    {
+     "iteration": 150,
+     "families": 1103,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 72.1
+    },
+    {
+     "iteration": 151,
+     "families": 1107,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 72.4
+    },
+    {
+     "iteration": 152,
+     "families": 1110,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 72.7
+    },
+    {
+     "iteration": 153,
+     "families": 1113,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 73.0
+    },
+    {
+     "iteration": 154,
+     "families": 1116,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 73.4
+    },
+    {
+     "iteration": 155,
+     "families": 1119,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 73.7
+    },
+    {
+     "iteration": 156,
+     "families": 1122,
+     "hitting_set_size": 51,
+     "lower_bound": 51,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 74.1
+    },
+    {
+     "iteration": 157,
+     "families": 1125,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 74.5
+    },
+    {
+     "iteration": 158,
+     "families": 1128,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 74.9
+    },
+    {
+     "iteration": 159,
+     "families": 1131,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 75.3
+    },
+    {
+     "iteration": 160,
+     "families": 1134,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 75.8
+    },
+    {
+     "iteration": 161,
+     "families": 1137,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 76.2
+    },
+    {
+     "iteration": 162,
+     "families": 1140,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 76.6
+    },
+    {
+     "iteration": 163,
+     "families": 1143,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 77.0
+    },
+    {
+     "iteration": 164,
+     "families": 1146,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 77.4
+    },
+    {
+     "iteration": 165,
+     "families": 1149,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 77.8
+    },
+    {
+     "iteration": 166,
+     "families": 1152,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 78.1
+    },
+    {
+     "iteration": 167,
+     "families": 1155,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 78.5
+    },
+    {
+     "iteration": 168,
+     "families": 1158,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 78.9
+    },
+    {
+     "iteration": 169,
+     "families": 1161,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 79.2
+    },
+    {
+     "iteration": 170,
+     "families": 1164,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 79.6
+    },
+    {
+     "iteration": 171,
+     "families": 1167,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 80.0
+    },
+    {
+     "iteration": 172,
+     "families": 1170,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 80.4
+    },
+    {
+     "iteration": 173,
+     "families": 1173,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 80.7
+    },
+    {
+     "iteration": 174,
+     "families": 1176,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 81.1
+    },
+    {
+     "iteration": 175,
+     "families": 1177,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 81.4
+    },
+    {
+     "iteration": 176,
+     "families": 1180,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 81.9
+    },
+    {
+     "iteration": 177,
+     "families": 1183,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 82.2
+    },
+    {
+     "iteration": 178,
+     "families": 1184,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 82.5
+    },
+    {
+     "iteration": 179,
+     "families": 1187,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 82.9
+    },
+    {
+     "iteration": 180,
+     "families": 1188,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 83.3
+    },
+    {
+     "iteration": 181,
+     "families": 1190,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 83.7
+    },
+    {
+     "iteration": 182,
+     "families": 1193,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 84.1
+    },
+    {
+     "iteration": 183,
+     "families": 1196,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 84.4
+    },
+    {
+     "iteration": 184,
+     "families": 1199,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 84.8
+    },
+    {
+     "iteration": 185,
+     "families": 1202,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 85.1
+    },
+    {
+     "iteration": 186,
+     "families": 1205,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 85.5
+    },
+    {
+     "iteration": 187,
+     "families": 1208,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 85.9
+    },
+    {
+     "iteration": 188,
+     "families": 1210,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 86.2
+    },
+    {
+     "iteration": 189,
+     "families": 1213,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 86.6
+    },
+    {
+     "iteration": 190,
+     "families": 1214,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 86.9
+    },
+    {
+     "iteration": 191,
+     "families": 1217,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 87.3
+    },
+    {
+     "iteration": 192,
+     "families": 1220,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 87.7
+    },
+    {
+     "iteration": 193,
+     "families": 1223,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 88.0
+    },
+    {
+     "iteration": 194,
+     "families": 1226,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 88.4
+    },
+    {
+     "iteration": 195,
+     "families": 1229,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 88.7
+    },
+    {
+     "iteration": 196,
+     "families": 1232,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 89.0
+    },
+    {
+     "iteration": 197,
+     "families": 1235,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 89.4
+    },
+    {
+     "iteration": 198,
+     "families": 1238,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 89.7
+    },
+    {
+     "iteration": 199,
+     "families": 1239,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 90.0
+    },
+    {
+     "iteration": 200,
+     "families": 1242,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 90.4
+    },
+    {
+     "iteration": 201,
+     "families": 1245,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 90.7
+    },
+    {
+     "iteration": 202,
+     "families": 1248,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 91.1
+    },
+    {
+     "iteration": 203,
+     "families": 1251,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 91.5
+    },
+    {
+     "iteration": 204,
+     "families": 1254,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 91.9
+    },
+    {
+     "iteration": 205,
+     "families": 1257,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 92.3
+    },
+    {
+     "iteration": 206,
+     "families": 1260,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 92.6
+    },
+    {
+     "iteration": 207,
+     "families": 1263,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 93.0
+    },
+    {
+     "iteration": 208,
+     "families": 1266,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 93.4
+    },
+    {
+     "iteration": 209,
+     "families": 1269,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 93.7
+    },
+    {
+     "iteration": 210,
+     "families": 1272,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 94.1
+    },
+    {
+     "iteration": 211,
+     "families": 1274,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 94.5
+    },
+    {
+     "iteration": 212,
+     "families": 1277,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 94.8
+    },
+    {
+     "iteration": 213,
+     "families": 1278,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 95.2
+    },
+    {
+     "iteration": 214,
+     "families": 1281,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 95.5
+    },
+    {
+     "iteration": 215,
+     "families": 1282,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 95.8
+    },
+    {
+     "iteration": 216,
+     "families": 1283,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 96.1
+    },
+    {
+     "iteration": 217,
+     "families": 1284,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 96.4
+    },
+    {
+     "iteration": 218,
+     "families": 1287,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 96.8
+    },
+    {
+     "iteration": 219,
+     "families": 1290,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 97.2
+    },
+    {
+     "iteration": 220,
+     "families": 1293,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 97.6
+    },
+    {
+     "iteration": 221,
+     "families": 1296,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 98.0
+    },
+    {
+     "iteration": 222,
+     "families": 1299,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 98.3
+    },
+    {
+     "iteration": 223,
+     "families": 1302,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 98.7
+    },
+    {
+     "iteration": 224,
+     "families": 1305,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 99.1
+    },
+    {
+     "iteration": 225,
+     "families": 1308,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 99.4
+    },
+    {
+     "iteration": 226,
+     "families": 1311,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 99.8
+    },
+    {
+     "iteration": 227,
+     "families": 1314,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 100.1
+    },
+    {
+     "iteration": 228,
+     "families": 1317,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 100.5
+    },
+    {
+     "iteration": 229,
+     "families": 1320,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 100.9
+    },
+    {
+     "iteration": 230,
+     "families": 1323,
+     "hitting_set_size": 52,
+     "lower_bound": 52,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 101.3
+    },
+    {
+     "iteration": 231,
+     "families": 1326,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 101.7
+    },
+    {
+     "iteration": 232,
+     "families": 1327,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 102.1
+    },
+    {
+     "iteration": 233,
+     "families": 1328,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 102.5
+    },
+    {
+     "iteration": 234,
+     "families": 1329,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 102.9
+    },
+    {
+     "iteration": 235,
+     "families": 1330,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 103.3
+    },
+    {
+     "iteration": 236,
+     "families": 1331,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 103.7
+    },
+    {
+     "iteration": 237,
+     "families": 1332,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 104.1
+    },
+    {
+     "iteration": 238,
+     "families": 1333,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 104.5
+    },
+    {
+     "iteration": 239,
+     "families": 1334,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 104.9
+    },
+    {
+     "iteration": 240,
+     "families": 1335,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 105.3
+    },
+    {
+     "iteration": 241,
+     "families": 1336,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 105.6
+    },
+    {
+     "iteration": 242,
+     "families": 1337,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 106.0
+    },
+    {
+     "iteration": 243,
+     "families": 1338,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 106.5
+    },
+    {
+     "iteration": 244,
+     "families": 1339,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 106.8
+    },
+    {
+     "iteration": 245,
+     "families": 1340,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 107.2
+    },
+    {
+     "iteration": 246,
+     "families": 1341,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 107.5
+    },
+    {
+     "iteration": 247,
+     "families": 1342,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 107.9
+    },
+    {
+     "iteration": 248,
+     "families": 1343,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "insufficient",
+     "sound": "unresolved",
+     "seconds": 108.2
+    },
+    {
+     "iteration": 249,
+     "families": 1344,
+     "hitting_set_size": 53,
+     "lower_bound": 53,
+     "solver": "sufficient",
+     "sound": "unresolved",
+     "seconds": 108.6
+    }
+   ],
+   "delta": "2/7",
+   "margin": "13/70"
+  },
+  "forty_frame": {
+   "status": "running_at_seal_time",
+   "lower_bound": 306,
+   "lower_bound_source": "additive pool cut, unchanged through at least 180 iterations and over 5,400 adverse sets",
+   "upper_bound": 373,
+   "upper_bound_source": "inclusion-minimal shrink of the addition-adjacent sufficient set"
+  }
+ }
+}
