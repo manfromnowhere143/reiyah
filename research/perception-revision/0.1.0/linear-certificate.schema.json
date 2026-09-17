@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:reiyah:perception-revision:linear-certificate:0.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["artifact_id", "version", "entries"],
+  "properties": {
+    "artifact_id": {"const": "reiyah.perception-revision.linear-certificate"},
+    "version": {"const": "0.1.0"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["anchor", "direction", "program_sha256", "multipliers"],
+        "properties": {
+          "anchor": {"type": "string"},
+          "direction": {"enum": ["b_minus_a", "a_minus_b"]},
+          "program_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}(?![\\s\\S])"},
+          "multipliers": {"type": "array", "items": {"$ref": "#/$defs/rational"}}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "string", "pattern": "^(0|[1-9][0-9]{0,77})(?![\\s\\S])"},
+        "denominator": {"type": "string", "pattern": "^[1-9][0-9]{0,77}(?![\\s\\S])"}
+      }
+    }
+  }
+}

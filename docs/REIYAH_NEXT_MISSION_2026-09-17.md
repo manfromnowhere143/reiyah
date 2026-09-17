@@ -1,6 +1,6 @@
 # Next mission and the evidence required to expand it
 
-Document ID: `reiyah.next-mission`. Version: `0.1.6`. Lifecycle status: `proposed`.
+Document ID: `reiyah.next-mission`. Version: `0.1.7`. Lifecycle status: `proposed`.
 
 ## Decision
 
@@ -20,7 +20,7 @@ simple methods and ambitious new methods compete under the same obligation.
 
 | Owner | Responsibility | Required next deliverable |
 |---|---|---|
-| Engine / Codex | Source qualification, independent A/B semantics, joint uncertainty, observation applicability, checked stopping and main integration | Supply the checked endpoint proof and scoped count minimum; consume a sealed next correction-family handoff and test its applicability without importing a solver claim |
+| Engine / Codex | Source qualification, independent A/B semantics, joint uncertainty, observation applicability, checked stopping and main integration | Supply the checked linear proof; consume complete ordered answer histories through native applicability and current-conclusion checks without importing a solver claim |
 | Independent research / Fable | Selection policies, strong conventional comparators, adversarial challenges and complete cost experiments | Include direct matching construction and the endpoint checker among the conventional baselines; report actual queries, proofs, deferrals, errors and complete costs; preserve method losses |
 
 Ownership remains separate. A new Engine exchange does not authorize altering the research
@@ -76,6 +76,16 @@ research lane's histories. It does not establish avoided queries or economic ben
 Consume it without restarting an already frozen experiment or changing that experiment's
 answers, cohort, seeds or selection rules after results are visible. A new contract
 requires a separately identified experiment version.
+
+The [linear-certificate checkpoint](PERCEPTION_LINEAR_BOUNDS_2026-09-17.md) now resolves
+the forty-frame 0.50 m case with no additional observations: lower bound 9/20 > 1/10.
+The stronger common checker must be available to all selectors in the next experiment.
+If it resolves a case before queries, that is a selector draw. The selected completed
+cost/reuse return retains aggregate summaries, but not ordered answers or per-prefix
+proofs. It cannot yet establish a native checked stopping point or reuse saving.
+Preserve those runs; specify and freeze a new version before collecting full histories.
+Across retained and fresh displacement replays, 375 of 376 supplied witnesses check;
+one remains work-limited. No physical error frequency or query-cost advantage follows.
 
 1. **Finish the common proof boundary.** Check complete local deletion coverage, shared global
    budgets, every compatible joint world and strict thresholds. An allowed counterexample under

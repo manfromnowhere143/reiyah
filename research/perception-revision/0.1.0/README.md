@@ -197,6 +197,36 @@ General A/B membership is supported; open references, missing outputs and latent
 joint-world inputs remain explicitly unavailable for this method. Existing graph,
 byte and work limits apply. See the [proof, controls and development results](../../../docs/PERCEPTION_LOCALIZATION_CERTIFICATES_2026-09-17.md).
 
+### Exact linear bounds
+
+An optional `--linear-certificate FILE --linear-certificate-sha256 SHA256` on
+`localization` or `position-audit` supplies nonnegative rational multipliers under
+the [linear certificate schema](linear-certificate.schema.json). The checker
+reconstructs a shared-edge matching/cover relaxation, binds its exact program digest,
+and derives a bound by exact weak duality. No optimizer is invoked by the Engine.
+The packet uses a `localization_linear` proof; existing verification commands check it.
+
+```sh
+python -B -m tools.perception_revision localization \
+  --input INPUT.json --input-sha256 INPUT_SHA256 \
+  --request POSITIONS.json --request-sha256 POSITIONS_SHA256 \
+  --linear-certificate COEFFICIENTS.json --linear-certificate-sha256 COEFFICIENTS_SHA256 \
+  --output PACKET.json
+```
+
+The standalone proof uses count bounds for absent directions. It does not also
+produce the ordinary matching envelope and need not improve both endpoints.
+Malformed, stale, negative or oversized proposals reject. Conditioning observations
+happens before checking the program binding; changed loss still needs a fresh
+conclusion. A displacement candidate cannot be combined with this universal proof.
+All existing work limits remain. See the [derivation, limits and checks](../../../docs/PERCEPTION_LINEAR_BOUNDS_2026-09-17.md).
+
+On the retained forty-frame 0.5 m case, the lower bound is 9/20 > 1/10 with no
+additional observations; the ordinary lower bound was -57/20 and unresolved.
+This resolves a conditional decision, not an exact worst-case optimum or a measured
+query-cost saving. The [small public example](linear-example/README.md) shows the
+shared-edge benefit without requiring a dataset or optimizer.
+
 ### Returned position observations and reuse
 
 `position-audit` conditions the existing position family on explicit returned centers

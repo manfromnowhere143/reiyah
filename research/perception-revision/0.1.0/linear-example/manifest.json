@@ -1,0 +1,75 @@
+{
+  "artifact_id": "reiyah.perception-revision.linear-example",
+  "basis": "constructed hypothetical geometry, not a benchmark observation",
+  "files": {
+    "coefficients.json": {
+      "bytes": 456,
+      "sha256": "18ef47d591a2a0f696671c6752e15cdf9cf434dc320f3a559de0f294e1ce1a79"
+    },
+    "geometry.json": {
+      "bytes": 1350,
+      "sha256": "d41a92e98b01c66635d5664fc8f484cba8cfb6b722bf5e3cf81990581af4d8fb"
+    },
+    "input.json": {
+      "bytes": 1337,
+      "sha256": "a6b7a1339c3f1023dda0060952bf767d29ad66c17de27b6dc66c7010949affda"
+    }
+  },
+  "linear": {
+    "authority_state": "research_only",
+    "bounds": {
+      "lower": {
+        "denominator": "1",
+        "numerator": "1"
+      },
+      "upper": {
+        "denominator": "1",
+        "numerator": "1"
+      }
+    },
+    "decision": {
+      "improvement_criterion": "supported",
+      "preference": "prefer_b"
+    },
+    "enclosure_kind": "constant_for_declared_geometry_family",
+    "execution_status": "succeeded",
+    "geometry_family": "independent_closed_reference_balls",
+    "model_status": "consistent",
+    "physical_coverage": "not_established",
+    "position_basis": "hypothetical",
+    "reference_scope": "synthetic",
+    "robustness": "robust",
+    "sampling_scope": "fixed_selected_cohort",
+    "statistical_confidence_level": null,
+    "witness_value": null
+  },
+  "ordinary": {
+    "authority_state": "research_only",
+    "bounds": {
+      "lower": {
+        "denominator": "1",
+        "numerator": "-1"
+      },
+      "upper": {
+        "denominator": "1",
+        "numerator": "1"
+      }
+    },
+    "decision": {
+      "improvement_criterion": "unresolved",
+      "preference": "unresolved"
+    },
+    "enclosure_kind": "conservative_geometry_enclosure",
+    "execution_status": "succeeded",
+    "geometry_family": "independent_closed_reference_balls",
+    "model_status": "consistent",
+    "physical_coverage": "not_established",
+    "position_basis": "hypothetical",
+    "reference_scope": "synthetic",
+    "robustness": "unresolved",
+    "sampling_scope": "fixed_selected_cohort",
+    "statistical_confidence_level": null,
+    "witness_value": null
+  },
+  "version": "0.1.0"
+}

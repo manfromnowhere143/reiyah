@@ -6,8 +6,14 @@ from .localization_contract import VERSION, displacement_graphs, matching_work, 
 from .localization_checker import conclude
 
 
-def produce(case, request, candidate=None):
+def produce(case, request, candidate=None, linear_certificate=None):
+    require(candidate is None or linear_certificate is None, 'LOCALIZATION_METHOD',
+            'Choose either a displacement or a universal linear bound')
     reason, prepared = prepare(case, request)
+    if reason is None and linear_certificate is not None:
+        proof = {'kind': 'localization_linear', 'version': VERSION,
+                 'linear_certificate': copy.deepcopy(linear_certificate)}
+        return {'result': conclude(case, request, proof), 'proof': proof}
     displaced = None
     if reason is None:
         displaced = displacement_graphs(request, prepared, candidate) if candidate is not None else None

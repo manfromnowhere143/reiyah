@@ -74,12 +74,14 @@ The [localization certificate checkpoint](docs/PERCEPTION_LOCALIZATION_CERTIFICA
 extends the Engine to declared reference-position uncertainty. On the forty-frame
 case, it proves improvement remains above 0.10 for **every class-preserving planar
 reference displacement up to 0.25 m**, with fixed detector outputs and matching
-rules. The conservative lower bound is 0.50; 0.50 m and 1.00 m remain unresolved.
+rules. The conservative lower bound is 0.50; the ordinary bound leaves 0.50 m
+and 1.00 m unresolved. The stronger 0.50 m result is described below.
 Separate geometric witnesses require actual shifts and exact graph recalculation.
 Two synthetic controls expose a strict-boundary defect and an unjustified conversion
 of bounded measurement error into fixed adjacency in the research proposal. The
-census aggregates reconcile, but its displacement and position-audit claims are not
-promoted to Engine-checked evidence. No human position measurements were performed.
+census aggregates reconcile. At that checkpoint displacement and position-audit
+claims were not promoted to Engine-checked evidence; the later replay below checks
+the supplied displacements. No human position measurements were performed.
 
 The [weighted split checker](docs/PERCEPTION_SPLIT_CERTIFICATES_2026-09-17.md)
 combines checked scene results without dropping unavailable members. Different
@@ -100,6 +102,16 @@ configurations, the same 2,299 hypothetical observations apply to both: one comp
 is supported and the other remains unresolved. The old proof rejects on the new
 outputs. This checks observation reuse without assuming conclusion reuse; saved
 queries and total-cost advantage still require the comparative experiment.
+
+The [exact linear certificate](docs/PERCEPTION_LINEAR_BOUNDS_2026-09-17.md) now proves
+the forty-frame verdict robust through **0.50 m** of per-record planar reference
+displacement, with a lower bound of **0.45 > 0.10** and **zero additional position
+observations**. It checks rational coefficients against independently reconstructed
+shared-edge constraints, without calling an optimizer. The upper bound is looser
+than the ordinary envelope; this is a stronger decision result, not an exact optimum
+or measured savings. All 542 repository tests pass. Across retained and fresh replays,
+375 of 376 supplied displacement witnesses check; one retains the unchanged work limit.
+The next cost comparison must give every selector access to these same proofs.
 
 As checked on **14 September 2026**, a [new automated replay](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md)
 on the two existing development anchors gives **[1,1]**, conditional on the retained benchmark

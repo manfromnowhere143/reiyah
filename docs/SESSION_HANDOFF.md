@@ -2,9 +2,45 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.26`
+Version: `0.1.27`
 
 Lifecycle status: `exploratory`
+
+The [linear-certificate checkpoint](PERCEPTION_LINEAR_BOUNDS_2026-09-17.md) adds
+optional exact rational linear proofs to localization and position-audit. It
+independently rebuilds a shared-edge matching/cover relaxation and checks weak-duality
+bounds without an optimizer. Partial proposals retain count bounds. Geometry,
+observation applicability, strict tolerance and the 2,000,000 work limit are preserved.
+
+On the exposed forty-frame 0.50 m family, the ordinary [-57/20,153/10] is unresolved;
+the new [9/20,369/20] supports improvement above 1/10, with zero supplied observations.
+The upper bound is looser; neither exact optimum nor complete-cost saving is claimed.
+Changing tolerance to 1/2 keeps the interval but makes the decision unresolved.
+The first combined-method work rejection is retained; the standalone proof avoids
+constructing an unnecessary ordinary matching certificate without raising a limit.
+
+All 542 repository tests pass, including nine new tests with 4,608 independent
+finite graph/role/direction checks. Seven fresh CLI calls pass their expected exits,
+including a negative-coefficient rejection. The remaining 235 displacement attempts
+yield 234 checked witnesses and one unchanged work limit. Together with the earlier
+141 post-check witnesses, the count is 375 checked / one work-limited, with no other
+failure. This is not a fresh replay of all 376 or of the full research search.
+
+Fresh root: `~/.codex/reports/reiyah/engine-linear-bounds-2026-09-17-9pp_3nju/`.
+Read PLAN, amendment, SOURCE_BINDINGS, assay-02 and CLI results, remaining-displacements,
+VERIFICATION, CLOSEOUT, packet seal and output/COPY_TO_FABLE. Selected research commit
+is b3125c4a97c0029a1f70aba7d0ab5105a9b3d233; all 38 payloads and declared committed
+origins match manifest f3236723041c938d120ef4e5f97d2fe2c0b97840343b95809f9f2b1f93a030f1.
+The owner and closed checkpoints remain unchanged. Gate A remains operator-unaccepted.
+
+Next consume complete ordered query/answer histories, native source/subject bindings
+and current proofs. The selected research cost/reuse drivers save aggregate counts,
+not these histories; their reported query savings are not promoted to native checked
+savings. Preserve completed experiments and require a separately frozen successor
+using common strong proofs and baselines. Zero-query cases are selector draws. Engine
+owns checking/applicability; research owns selection, optimization and complete costs.
+
+## Preceding position-observation checkpoint
 
 The [position-observation checkpoint](PERCEPTION_POSITION_OBSERVATIONS_2026-09-17.md)
 adds position-audit / verify-position-audit. It binds supplied answers to cohort,
@@ -686,3 +722,11 @@ P005 is **operator-reported published** on 12 September. The earlier unpublished
 are historical. Its promise of a fair detector decision comparison with all effort counted is
 retained in `~/.codex/memories/reiyah-public-narrative/README.md` and its P005 record. No further
 post, reply, invitation or outreach is authorized.
+
+P006 is **operator-reported published** on 17 September. Its final text and correction
+are retained with P001–P005 in the same private archive, under `records/2026-09-17-post-006.json`.
+It reports the 3,000 comparisons, 1,125 exact adverse deletion minima, checked 10/25 cm
+displacements and the forty-frame 372-label minimum under fixed matching eligibility.
+Its closing commitment remains the same justified decision with less total work.
+Permalink, exact publication time, live readback and engagement remain unknown.
+This publication report does not authorize another post, reply or outreach.

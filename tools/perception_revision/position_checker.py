@@ -13,7 +13,7 @@ def conclude(case, request, observations, proof):
     report, derived = condition(case, request, observations)
     _require(encoded(proof['conditioning']) == encoded(report), 'Incorrect applicability or conditioning claim')
     if derived is not None:
-        _require(type(proof['geometry']) is dict and proof['geometry'].get('kind') == 'localization_envelope',
+        _require(type(proof['geometry']) is dict and proof['geometry'].get('kind') in ('localization_envelope', 'localization_linear'),
                  'Only a universal enclosure proof is admitted; a point in an outer ball may violate the intersection')
         result = localization_checker.conclude(*derived, proof['geometry'])
     else:

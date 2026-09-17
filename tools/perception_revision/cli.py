@@ -15,11 +15,12 @@ from .contract import (AUDIT_SCHEMA, SCHEMA, Invalid, MAX_INPUT_BYTES, MAX_PACKE
 
 
 def implementation_digest():
+    from .linear_bounds import SCHEMA as LINEAR_SCHEMA
     root = Path(__file__).resolve().parents[2]
     paths = sorted(Path(__file__).parent.glob('*.py'))
     paths += sorted((root / 'tools/perception_decision').glob('*.py'))
     paths += [SCHEMA, AUDIT_SCHEMA, BOX_SCHEMA, localization_contract.REQUEST_SCHEMA,
-              localization_contract.WITNESS_SCHEMA, position_contract.SCHEMA,
+              localization_contract.WITNESS_SCHEMA, position_contract.SCHEMA, LINEAR_SCHEMA,
               root / 'research/perception-decision/0.1.0/input.schema.json']
     rows = [(str(p.relative_to(root)), hashlib.sha256(p.read_bytes()).hexdigest()) for p in paths]
     return hashlib.sha256(encoded(rows)).hexdigest()
@@ -89,6 +90,9 @@ def main(argv=None):
         if command in ('audit', 'localization'):
             sub.add_argument('--candidate', type=Path)
             sub.add_argument('--candidate-sha256')
+        if command in ('localization', 'position-audit'):
+            sub.add_argument('--linear-certificate', type=Path)
+            sub.add_argument('--linear-certificate-sha256')
         if command == 'audit':
             sub.add_argument('--proof-method', choices=('legacy', 'components', 'monotone'), default='legacy')
         if command in ('run', 'rebind-audit'):
@@ -110,6 +114,12 @@ def main(argv=None):
             answer['scope'] = 'Declared legacy augmented output; not standalone detector B'
         else:
             case = load(args.input, args.input_sha256)
+            linear_certificate = None
+            if args.command in ('localization', 'position-audit'):
+                require(bool(args.linear_certificate) == bool(args.linear_certificate_sha256),
+                        'LINEAR_BINDING', 'Linear certificate requires an expected digest')
+                if args.linear_certificate:
+                    linear_certificate = load_bytes(args.linear_certificate, args.linear_certificate_sha256, validate_input=False)
             if args.command in ('position-audit', 'verify-position-audit'):
                 request = localization_contract.validate_request(case, load_bytes(
                     args.request, args.request_sha256, validate_input=False))
@@ -122,7 +132,7 @@ def main(argv=None):
                     answer = {'certificate_checked': True, 'result': result,
                               'producer_matches_current_source': packet['producer_sha256'] == implementation_digest()}
                 else:
-                    payload = position_audit.produce(case, request, observations)
+                    payload = position_audit.produce(case, request, observations, linear_certificate=linear_certificate)
                     position_checker.check(case, request, observations, payload)
                     packet = {'artifact_id': 'reiyah.perception-revision.position-audit-packet', 'version': '0.1.0',
                               'comparison_id': case['comparison_id'], 'input_sha256': args.input_sha256,
@@ -141,7 +151,7 @@ def main(argv=None):
                 else:
                     require(bool(args.candidate) == bool(args.candidate_sha256), 'CANDIDATE_BINDING', 'Candidate requires an expected digest')
                     candidate = load_bytes(args.candidate, args.candidate_sha256, validate_input=False) if args.candidate else None
-                    payload = localization.produce(case, request, candidate)
+                    payload = localization.produce(case, request, candidate, linear_certificate=linear_certificate)
                     localization_checker.check(case, request, payload)
                     packet = {'artifact_id': 'reiyah.perception-revision.localization-packet', 'version': '0.1.0',
                               'comparison_id': case['comparison_id'], 'input_sha256': args.input_sha256,

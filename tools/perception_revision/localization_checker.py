@@ -12,7 +12,7 @@ def conclude(case, request, proof):
     result.update(geometry_family=request['family'], position_basis=request['position_basis'],
                   robustness='not_evaluated', witness_value=None)
     reason, prepared = prepare(case, request)
-    if reason is None and proof.get('kind') != 'localization_displacement' and matching_work(prepared) > MAX_WORK:
+    if reason is None and proof.get('kind') not in ('localization_displacement', 'localization_linear') and matching_work(prepared) > MAX_WORK:
         reason = 'matching_work_limit'
     if reason is not None:
         _require(encoded(proof) == encoded({'kind': 'localization_unavailable', 'version': VERSION, 'reason': reason}),
@@ -21,6 +21,29 @@ def conclude(case, request, proof):
                                       'resource_limited' if reason.endswith('_limit') else 'scope_unavailable')
         if reason.endswith('_limit'):
             result['robustness'] = 'unresolved'
+        return result
+    if proof.get('kind') == 'localization_linear':
+        from .linear_bounds import check as check_linear
+        _keys(proof, ('kind', 'version', 'linear_certificate'))
+        _require(proof['version'] == VERSION, 'Unknown linear proof version')
+        gains = check_linear(prepared, proof['linear_certificate'])
+        fn, fp = (rational(case['loss'][k]) for k in ('false_negative', 'false_positive'))
+        lower = upper = Fraction(0)
+        for row in prepared['rows']:
+            aa, bb, count = row['a'], row['b'], len(row['references'])
+            aid = row['anchor']['id']
+            lo = max(-min(len(aa - bb), count), gains.get((aid, 'b_minus_a'), -min(len(aa - bb), count)))
+            hi = min(min(len(bb - aa), count), -gains.get((aid, 'a_minus_b'), -min(len(bb - aa), count)))
+            _require(lo <= hi, 'Inconsistent checked linear bounds')
+            weight = rational(row['anchor']['weight'])
+            offset = fp * (len(bb) - len(aa))
+            lower += weight * ((fn + fp) * lo - offset)
+            upper += weight * ((fn + fp) * hi - offset)
+        tolerance = rational(case['loss']['tolerance'])
+        result.update(model_status='consistent', bounds={'lower': wire(lower), 'upper': wire(upper)},
+                      enclosure_kind='constant_for_declared_geometry_family' if lower == upper else 'conservative_linear_geometry_enclosure',
+                      decision=checked_classification(lower, upper, tolerance),
+                      robustness='robust' if lower > tolerance else 'excluded_for_family' if upper <= tolerance else 'unresolved')
         return result
     witness = proof.get('kind') == 'localization_displacement'
     _keys(proof, ('kind', 'version', 'anchors', 'candidate') if witness else ('kind', 'version', 'anchors'))

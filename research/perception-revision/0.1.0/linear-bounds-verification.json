@@ -1,0 +1,463 @@
+{
+  "artifact_id": "reiyah.perception-revision.linear-bounds-verification",
+  "base_commit": "c095b7847e2c0f7437c77b24692287a666d79d7d",
+  "checkpoint_root": "/Users/danielwahnich/.codex/reports/reiyah/engine-linear-bounds-2026-09-17-9pp_3nju",
+  "cost_reuse_review": {
+    "native_source_qualified_query_savings_checked": false,
+    "next_action": "A separately frozen successor retaining complete ordered answers, native applicability and per-prefix proofs; same strong stopping methods for all selectors.",
+    "ordered_histories_in_selected_drivers": false
+  },
+  "costs": {
+    "fresh_cli_seconds": {
+      "linear-produce": 3.0220239169429988,
+      "linear-verify": 1.4878080000635237,
+      "negative-coefficient": 2.081647166982293,
+      "ordinary-produce": 2.9144623749889433,
+      "ordinary-verify": 1.408306875033304,
+      "position-produce": 8.509430333040655,
+      "position-verify": 2.9756501668598503
+    },
+    "remaining_displacement_replay_supervisor_seconds": 151.956761874957,
+    "scope": "Nested operation and outer timings must not be added together. Excludes optimizer generation, acquisition and human work. No speed or complete-cost advantage established.",
+    "single_run_api_produce_and_check_seconds": {
+      "linear_produce_and_check": 2.3105174580123276,
+      "ordinary_produce_and_check": 2.150090000126511
+    }
+  },
+  "development": {
+    "api_assay_producer_sha256": "5701e2b026edf603e25a738fe01965ddbe7d537b9114a74d23105978cddba5d0",
+    "comparison": "Exposed forty-frame Mapillary base plus retained Megvii additions",
+    "family": "Fixed membership/classes/outputs; independent closed planar reference balls of radius 1/2 metre",
+    "final_current_source_recheck": true,
+    "input_output_bindings": [
+      {
+        "bytes": 827569,
+        "path": "private/assay-02/forty.input.json",
+        "sha256": "7ace51fee0dce0fc1c840b4c3cfb5ab57cec1d8ace4671e775be4c3d140d05ec"
+      },
+      {
+        "bytes": 1352231,
+        "path": "private/assay-02/forty.geometry.json",
+        "sha256": "7170f0e99514a3d2fcb8c9e86f885779f37bf991c85f362c93faea683d4575dd"
+      },
+      {
+        "bytes": 362596,
+        "path": "private/assay-02/forty.linear.json",
+        "sha256": "b479bb9a6ed0761dddc85d9c64c2c3c3f0110e0f86bf4917b30b050fc887dec6"
+      },
+      {
+        "bytes": 4224,
+        "path": "private/assay-02/COEFFICIENT_TRANSLATION.json",
+        "sha256": "07ad9251589b7c0c17f8f75cca889dc33a7364957261cfd6af8ec383a789ae22"
+      },
+      {
+        "bytes": 179450,
+        "path": "private/assay-02/forty.ordinary.payload.json",
+        "sha256": "f719ada0dc7ffb4e284013ac3af4697aae027c5d6de7d87b722004fdf923e273"
+      },
+      {
+        "bytes": 363314,
+        "path": "private/assay-02/forty.linear.payload.json",
+        "sha256": "f8e4b34b6a77310e467b2756be53d25fcebf73909ad23e699b4034204ab8d1a8"
+      },
+      {
+        "bytes": 257,
+        "path": "private/assay-02/forty.empty-observations.json",
+        "sha256": "85cd7d1ed9331b95c3c089805e7bd3bb9e056aa8c8aff22488a814c44850e16a"
+      },
+      {
+        "bytes": 363805,
+        "path": "private/assay-02/forty.position.payload.json",
+        "sha256": "568d212a95bc700578e03d44353622f2707a1886c497322b266e7c4d6d5183cf"
+      },
+      {
+        "bytes": 827568,
+        "path": "private/assay-02/forty.changed-tolerance.input.json",
+        "sha256": "5303058fa0e3c5cbd275f913ca380b2810f08042ba1372495c4de2bf86f48287"
+      },
+      {
+        "bytes": 363321,
+        "path": "private/assay-02/forty.changed-tolerance.payload.json",
+        "sha256": "5bf56eb734e8d93296b9c73ff89fa9600b55cb08fc8b49145acfd31c72ab5461"
+      }
+    ],
+    "new_physical_measurements": 0,
+    "public_example": {
+      "cli_calls": 3,
+      "linear_interval": [
+        "1",
+        "1"
+      ],
+      "ordinary_interval": [
+        "-1",
+        "1"
+      ],
+      "status": "pass"
+    },
+    "reference_records": 2299,
+    "results": {
+      "changed_tolerance": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "20",
+            "numerator": "9"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "369"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "unresolved",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "conservative_linear_geometry_enclosure",
+        "execution_status": "succeeded",
+        "geometry_family": "independent_closed_reference_balls",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "position_basis": "benchmark_reference",
+        "reference_scope": "conditional_reference_graph",
+        "robustness": "unresolved",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null,
+        "witness_value": null
+      },
+      "empty_observations": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "20",
+            "numerator": "9"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "369"
+          }
+        },
+        "conditioning_reason": null,
+        "conditioning_status": "available",
+        "decision": {
+          "improvement_criterion": "supported",
+          "preference": "prefer_b"
+        },
+        "enclosure_kind": "conservative_linear_geometry_enclosure",
+        "execution_status": "succeeded",
+        "geometry_family": "independent_intersections_of_prior_and_observed_closed_balls",
+        "model_status": "consistent",
+        "observation_basis": "hypothetical",
+        "partial_intersection_enclosures": 0,
+        "physical_coverage": "not_established",
+        "position_basis": "benchmark_reference",
+        "reference_scope": "conditional_reference_graph",
+        "robustness": "robust",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null,
+        "supplied_observation_count": 0,
+        "witness_value": null
+      },
+      "linear": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "20",
+            "numerator": "9"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "369"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "supported",
+          "preference": "prefer_b"
+        },
+        "enclosure_kind": "conservative_linear_geometry_enclosure",
+        "execution_status": "succeeded",
+        "geometry_family": "independent_closed_reference_balls",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "position_basis": "benchmark_reference",
+        "reference_scope": "conditional_reference_graph",
+        "robustness": "robust",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null,
+        "witness_value": null
+      },
+      "ordinary": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "20",
+            "numerator": "-57"
+          },
+          "upper": {
+            "denominator": "10",
+            "numerator": "153"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "unresolved",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "conservative_geometry_enclosure",
+        "execution_status": "succeeded",
+        "geometry_family": "independent_closed_reference_balls",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "position_basis": "benchmark_reference",
+        "reference_scope": "conditional_reference_graph",
+        "robustness": "unresolved",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null,
+        "witness_value": null
+      }
+    },
+    "retained_additions": 738
+  },
+  "displacements": {
+    "combined_checked": 375,
+    "combined_work_limited": 1,
+    "fresh_attempts": 235,
+    "fresh_checked": 234,
+    "fresh_checked_by_closed_radius": {
+      "0.5": 127,
+      "1.0": 107
+    },
+    "fresh_work_limited": 1,
+    "other_failures": 0,
+    "prior_closed_radius_counts": {
+      "0.1": 44,
+      "0.25": 97
+    },
+    "prior_result": {
+      "bytes": 301681,
+      "path": "/Users/danielwahnich/.codex/reports/reiyah/post-final-check-2026-09-17-j8pou19z/private/DISPLACEMENT_REPLAY.json",
+      "sha256": "ea79d0af9b0d0d626e4b6b709d467813a4aea704e15ee3f1ecaac2185c56dc51"
+    },
+    "retained_prior_attempts": 141,
+    "retained_prior_checked": 141,
+    "scope": "Counterfactual witnesses. Radius counts overlap; 141 preceding checks are retained, not repeated here. No full source rebuild or campaign/search replay.",
+    "work_limit": {
+      "epsilon": "0.5",
+      "error_code": "LOCALIZATION_WITNESS_WORK",
+      "unit": "centerpoint__pointpillars__scene-0105"
+    }
+  },
+  "method": {
+    "certificate_version": "0.1.0",
+    "geometry_work": 521340,
+    "independent_a_b_supported": true,
+    "limits_raised": false,
+    "linear_program_work_estimate": 416360,
+    "optimizer_called_by_engine": false,
+    "program": "shared_matching_box_lp.0.1.0",
+    "trusted_shared_code": "Schemas, rational geometry, native program construction and arithmetic. The research program compiler/optimizer/checker is not invoked."
+  },
+  "nonclaims": [
+    "No exact worst-case optimum or domination of both interval endpoints.",
+    "No measured physical truth, calibrated coverage, human-time or total-cost saving.",
+    "No new mathematical novelty, frontier superiority or acquisition-value result.",
+    "No independent external scientific replication or transport verification.",
+    "No new inference, cloud campaign, post or outreach."
+  ],
+  "producer_sha256": "12edf4649f781add0ed3b30744256967c6e9f739039d431e48df20e55cb8ecb9",
+  "research_source": {
+    "checked_committed_origins": 34,
+    "checked_payloads": 38,
+    "commit": "b3125c4a97c0029a1f70aba7d0ab5105a9b3d233",
+    "manifest_sha256": "f3236723041c938d120ef4e5f97d2fe2c0b97840343b95809f9f2b1f93a030f1"
+  },
+  "retained_bindings": {
+    "PLAN.md": {
+      "bytes": 1970,
+      "sha256": "605a822f79c0e9d9e26abecc2e595ba942d8cbebb4edd8efb6f6f5ca089fae4a"
+    },
+    "PLAN_AMENDMENT_01.md": {
+      "bytes": 1220,
+      "sha256": "f3417e1a523fe3b1a4a63c88bb9b06f33552e328ea7344a21421932ef284d541"
+    },
+    "SOURCE_BINDINGS.json": {
+      "bytes": 13913,
+      "sha256": "add4a4a3ee4b914641f60662eca605ba1d6f9c713186f7d942abcdb078a32210"
+    },
+    "captures/assay-01/receipt.json": {
+      "bytes": 1081,
+      "sha256": "4adb129b3380a66d7970decf850315dfcf8f46374a4c46018dfe8d87054cc1fd"
+    },
+    "captures/assay-01/stderr.txt": {
+      "bytes": 1108,
+      "sha256": "5b621442fbbffcb7c274ee8e0a9b147a1005e119c9c253c9f4ec3cfb55123713"
+    },
+    "captures/assay-01/stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "captures/assay-02/receipt.json": {
+      "bytes": 1083,
+      "sha256": "29274de592dbe1bf401d1d25896351d01c1d34b50d8312fad39d417a526b2cd5"
+    },
+    "captures/assay-02/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "captures/assay-02/stdout.txt": {
+      "bytes": 2630,
+      "sha256": "bb7e0a57a017962cd24c83ac3cf8a28435198018c53955e3b7f6c5aaa8dfb635"
+    },
+    "captures/cli-assay/receipt.json": {
+      "bytes": 1085,
+      "sha256": "93837ef6c85c346302a2098eab4102f16f496da6b361fef6a7d1f517523f6b4a"
+    },
+    "captures/cli-assay/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "captures/cli-assay/stdout.txt": {
+      "bytes": 853,
+      "sha256": "d45be9e2d5bc8006a8fcb4f3c4352e8ac47630dcbf873e7510565ac3ea8a70cb"
+    },
+    "captures/consistency/receipt.json": {
+      "bytes": 1141,
+      "sha256": "750f57b4083b8bb52844112a2b693a21ca04326db10e64caf626e04f0d77b5e0"
+    },
+    "captures/consistency/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "captures/consistency/stdout.txt": {
+      "bytes": 1260,
+      "sha256": "fee9e9b53ccf2d08f048de2c0cd7136a1ff1a473b783dbac5ac4afbf05fca1fc"
+    },
+    "captures/current-assay-check/receipt.json": {
+      "bytes": 2024,
+      "sha256": "95f1bd0b0e9988998cfb25e7b80ccbdf5160759189ede98710d01e5e44ad1853"
+    },
+    "captures/current-assay-check/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "captures/current-assay-check/stdout.txt": {
+      "bytes": 3050,
+      "sha256": "08eb51f67c45d7dab6b96abfb60c0491d2d5de9a26d6f67929f2d11a08e98755"
+    },
+    "captures/measurement-tests/receipt.json": {
+      "bytes": 1109,
+      "sha256": "9b5c73cdd2db725774d2887efb0cf83df77dbc8ba97e0a07b2ff75d1bbf4de70"
+    },
+    "captures/measurement-tests/stderr.txt": {
+      "bytes": 2425,
+      "sha256": "29b85d35ffec99e1694445877da7feb80a8ca558059949ff693ebbdb6bb93c74"
+    },
+    "captures/measurement-tests/stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "captures/public-example/receipt.json": {
+      "bytes": 1091,
+      "sha256": "3814cd9caae3a9ea0d570ea740a410974c48d837c42b4d0b3c3e3d85d6e5f628"
+    },
+    "captures/public-example/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "captures/public-example/stdout.txt": {
+      "bytes": 2312,
+      "sha256": "8a8aa7eecf557d97d1825cb3e0a7ab023ad72a8a84ceae2de0ad573641bd03cf"
+    },
+    "captures/remaining-displacements/receipt.json": {
+      "bytes": 1114,
+      "sha256": "950695d92ecb9526e169f92d5d599917d5a1cf29e3e7d7cbb4c5ef2076531938"
+    },
+    "captures/remaining-displacements/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "captures/remaining-displacements/stdout.txt": {
+      "bytes": 21236,
+      "sha256": "d63c02a2d45a8f98536c556f13a8595d183d5b8d60e477948b609b81f4c4a2c2"
+    },
+    "captures/repository-tests/receipt.json": {
+      "bytes": 1052,
+      "sha256": "83266b00b9a966ee748bb33aa6648ac5a31cc1b8bf2bb7e33b7019a9c8997232"
+    },
+    "captures/repository-tests/stderr.txt": {
+      "bytes": 91554,
+      "sha256": "61efbc7ab210e68fcee9049bb0431a729e75634b067c65f1fe02680a8ea5d626"
+    },
+    "captures/repository-tests/stdout.txt": {
+      "bytes": 370,
+      "sha256": "9aca8981e615dc93028da28f120da524c2f3b4ec4a72473460918c4cc413da4d"
+    },
+    "literature/SOURCE_LEDGER.json": {
+      "bytes": 1672,
+      "sha256": "5b39910d132e2591ec6e5e9386d6f7cbac1574120ce6751d6f038a1543a2e244"
+    },
+    "private/CONSISTENCY.json": {
+      "bytes": 12294,
+      "sha256": "0ec8aa93ea0982f9b3d00a5fea560d325704fad3110998eb0f895456375835be"
+    },
+    "private/CURRENT_ASSAY_CHECK.json": {
+      "bytes": 3898,
+      "sha256": "7e1d9e1f771de023abf732fa0ed9ce21aa1606eba17d1ec77f3c2afaedff35ba"
+    },
+    "private/SCHEMA_REVIEW_PROBE.json": {
+      "bytes": 120,
+      "sha256": "c46749cde67548f733581324c3fde2799312afeb3d00b48daa4e0b7c27430cf6"
+    },
+    "private/assay-01-source.py": {
+      "bytes": 6344,
+      "sha256": "356e88d0db673f089fcaedcf8a87d6f335ff57eef598f88d38361d1681220e16"
+    },
+    "private/assay-02/ASSAY_RESULT.json": {
+      "bytes": 4753,
+      "sha256": "98ea92223838b249a35766a0cacce647d627ec76209f35823fe88e4e96d5797c"
+    },
+    "private/assay.py": {
+      "bytes": 6353,
+      "sha256": "07ef782049784317c4306eb80c6521473b5e0d2f4641dd3f83a18c71f41556c9"
+    },
+    "private/cli-assay/RESULT.json": {
+      "bytes": 18152,
+      "sha256": "307581724fdb4ed171e4d3f1a0a7c8892a8f273e95c16282ef5907fedaeeb344"
+    },
+    "private/cli_assay.py": {
+      "bytes": 3539,
+      "sha256": "0b6aea32a2cd5d19ca2d4884625cac6e234f0b95b0a5788b8ae023895f84edd6"
+    },
+    "private/public_example.py": {
+      "bytes": 1424,
+      "sha256": "e0567a870bbed4cb3c40d7fc58d237a92e81bf790485e87313af0012f7a94d23"
+    },
+    "private/remaining-displacements/SOURCE_BINDINGS.json": {
+      "bytes": 28630,
+      "sha256": "8e76f81afe61fefe291b406ae4103da0a8a935a72e4842099002d64128098df1"
+    },
+    "private/remaining-displacements/private/DISPLACEMENT_REPLAY.json": {
+      "bytes": 500649,
+      "sha256": "c123db9510e3fcff5d97586a93f281ebf026024c11dd37961fd6ba755bed89bd"
+    },
+    "private/remaining-displacements/private/SELECTION.json": {
+      "bytes": 585299,
+      "sha256": "aee8d7096f69c3c333175a186be9cc654e5a03416c01ceec0d2034276ffb34d9"
+    },
+    "private/remaining-displacements/private/replay.py": {
+      "bytes": 7615,
+      "sha256": "7f502f762283da692df9e6879a33d2f5606d41e0b3b45fb4442cb3372a4a8d15"
+    }
+  },
+  "retained_failure": "Initial combined-method proof exceeded the unchanged 2,000,000 work limit. Standalone linear proof avoids unnecessary matching construction; limits not raised.",
+  "status": "exploratory",
+  "validation": {
+    "consistency": "pass; 52 historical transcripts bound, not replayed",
+    "forty_frame_cli_calls": 7,
+    "independently_enumerated_graph_role_direction_cases": 4608,
+    "new_linear_tests": 9,
+    "public_example_cli_calls": 3,
+    "repository_tests": 542,
+    "status": "pass",
+    "targeted_measurement_tests": 14
+  },
+  "version": "0.1.0"
+}
