@@ -339,6 +339,27 @@ PointPillars helps" holds on 59 scenes and on the split, and is overturned by 26
 helps" survives 8,481 deletions and 1 m of position error. A leaderboard that printed these two
 verdicts as two metric differences would show no such distinction.
 
+## Cross-implementation agreement with the Engine
+
+Dated 17 September 2026. `engine_agreement.py`; result in `engine-agreement.json`. Every rebuilt
+unit was converted to a strict-schema Engine input (coordinates and classes stripped; detection
+record digests are row-canonical, not the Engine's byte-span digests) and run through the
+Engine's producer and its separate certificate checker as exported from main at
+`e23bfe49f2a42433f7aad4170578db504427508c`.
+
+| Outcome | Units |
+|---|---:|
+| Engine exact enclosure equals this package's decision, criterion equal | 2,981 |
+| Engine resource limit (2,000,000 estimated work units) reached; sound count bound returned as unresolved | 19 |
+| Of those 19, this package's exact value lies inside the Engine's bound | 19 of 19 |
+| Disagreements | 0 |
+
+The split-level witness for the most fragile pair was also applied through the Engine: deleting
+the 260 named labels across the split moves "PointPillars + Mapillary" from 180911/959400
+(0.1886) to 31877/319800 (0.0997), at or below the tolerance, as computed by the Engine kernel
+and accepted by its checker. The Engine's matcher, this package's Hopcroft-Karp and the MILP
+adversary are three separate implementations that share only the parsed graph.
+
 ## Which error family threatens which verdict: insertion monotonicity
 
 Claim. Adding a reference object never decreases `TP_augmented - TP_base`. Hence an inserted
