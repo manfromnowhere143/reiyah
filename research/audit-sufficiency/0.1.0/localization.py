@@ -48,6 +48,7 @@ from scipy.optimize import Bounds, LinearConstraint, milp
 from scipy.sparse import lil_matrix
 
 from sufficiency import Case, hopcroft_karp, rational
+from dual_certificate import dual_bound
 
 NEAR = 2
 
@@ -133,7 +134,7 @@ class GeoAnchor:
         flips = self.flippable(confirmed)
         g0 = self.gain(self.present)
         if not flips:
-            return {'flips': [], 'gain_after': g0, 'solver_gain_after': g0, 'status': 'no_candidate', 'verified': True}
+            return {'flips': [], 'gain_after': g0, 'solver_gain_after': g0, 'status': 'no_candidate', 'verified': True, 'dual_gain_after': Fraction(g0)}
         fi = {(d, o): i for i, (d, o, _) in enumerate(flips)}
         nf = len(flips)
         all_pairs = sorted(self.present | {(d, o) for d, o, _ in flips})
@@ -187,10 +188,12 @@ class GeoAnchor:
         A = A.tocsr()[:r]
         integrality = np.zeros(n)
         integrality[:nf + nc] = 1
+        dual = dual_bound(cost, A, lo, hi)
         res = milp(c=cost, constraints=LinearConstraint(A, np.array(lo), np.array(hi)),
                    integrality=integrality, bounds=Bounds(0, 1), options={'time_limit': SOLVER_TIME_LIMIT})
         if res.status != 0:
-            return {'flips': None, 'gain_after': None, 'solver_gain_after': None, 'status': 'solver_%d' % res.status, 'verified': False}
+            return {'flips': None, 'gain_after': None, 'solver_gain_after': None, 'status': 'solver_%d' % res.status, 'verified': False,
+                    'dual_gain_after': None if dual is None else dual['bound']}
         chosen = [(d, o, p) for (d, o, p) in flips if res.x[fi[(d, o)]] > 0.5]
         edges = set(self.present)
         for d, o, p in chosen:
@@ -200,7 +203,8 @@ class GeoAnchor:
                 edges.add((d, o))
         exact = self.gain(edges)
         return {'flips': chosen, 'gain_after': exact, 'solver_gain_after': int(round(res.fun)),
-                'status': 'optimal', 'verified': exact == int(round(res.fun)), 'edges_after': edges}
+                'status': 'optimal', 'verified': exact == int(round(res.fun)), 'edges_after': edges,
+                'dual_gain_after': None if dual is None else dual['bound'], 'dual_certificate': None if dual is None else dual}
 
     def realize(self, chosen, confirmed=None, steps=25):
         """For each moved object, search a rational grid inside its admitted ball for a shift that
@@ -272,6 +276,8 @@ class GeoCase:
                     conf.setdefault(aid, {})[o] = (ox, oy, Fraction(0))
         sound = Fraction(0)
         solver = Fraction(0)
+        dual = Fraction(0)
+        dual_ok = True
         edges_after = {}
         chosen_all = []
         boundary_total = 0
@@ -283,6 +289,11 @@ class GeoCase:
             boundary_total += nb
             sound += a.weight * unit * min(g, nb) if g > 0 else 0
             adv = a.adversary(c, budget)
+            if adv.get('dual_gain_after') is None:
+                dual_ok = False
+            else:
+                # the adversary's objective is an integer gain, so the rational bound rounds up
+                dual += a.weight * unit * max(0, g - (-(-adv['dual_gain_after'].numerator // adv['dual_gain_after'].denominator)))
             if adv['status'] in ('optimal', 'no_candidate'):
                 solver += a.weight * unit * (g - adv['gain_after'])
                 if adv['flips']:
@@ -299,6 +310,8 @@ class GeoCase:
                                          'exact_adjacency_oracle_residual_zero' if oracle else 'returned_centre_with_residual_radius'),
                   'boundary_edges_unconfirmed': boundary_total,
                   'sound_max_drop': str(sound), 'sound': 'robust' if sound < margin else 'unresolved',
+                  'dual_max_drop': str(dual) if dual_ok else None,
+                  'dual': ('robust' if (dual_ok and dual < margin) else 'unresolved' if dual_ok else 'unavailable'),
                   'solver_max_drop': None if solver is None else str(solver)}
         if solver is None:
             result['status'] = 'solver_failed'

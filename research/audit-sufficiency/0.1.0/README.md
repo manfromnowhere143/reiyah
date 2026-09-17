@@ -475,6 +475,67 @@ added detector changes with the base held fixed. It is not a measurement under A
 of the base, and it is not witness overlap or a changed loss coefficient; it counts actual queries
 under the same checked stopping rule.
 
+## Solver-free certificates: robustness anyone can check
+
+Dated 17 September 2026. `dual_certificate.py`, `verify_dual_certificate.py`. Every `robust`
+and `sufficient` above rests on a mixed-integer solver having found the true optimum of the
+adversary program (the "solver tier"). A fourth tier removes that trust. Both adversaries are
+programs `minimise c^T x` subject to `lo <= A x <= hi`, `0 <= x <= 1`, some `x` integer. For any
+rational multipliers `y_lo >= 0`, `y_hi >= 0`, every feasible `x`, integer or not, satisfies
+
+```text
+c^T x >= y_lo^T lo - y_hi^T hi + sum_j min(0, r_j),    r = c - A^T (y_lo - y_hi)
+```
+
+(Neumaier and Shcherbina, 2004). The multipliers are taken from the LP relaxation's dual,
+converted to rationals, and the bound is evaluated exactly; since the objective is an integer
+gain it rounds up. A certificate is the multiplier vector per anchor. The checker
+`verify_dual_certificate.py` rebuilds the program from the unit geometry and the declared rules,
+evaluates the inequality with exact arithmetic, and never runs a solver. What it shares with the
+producer is the program construction; the rest is arithmetic.
+
+| Case and claim | Sound tier | Dual tier (certificate) | Solver tier |
+|---|---:|---:|---:|
+| Forty-frame verdict, position error 0.1 m (margin 49/20) | 39/4 unresolved | **3/20 robust** | 3/20 robust |
+| Forty-frame verdict, 0.25 m | 73/4 unresolved | **9/20 robust** | 9/20 robust |
+| Forty-frame verdict, 0.5 m | 99/5 unresolved | **21/10 robust** | 37/20 robust |
+| Forty-frame verdict, 1 m | 417/20 unresolved | 33/4 unresolved | 101/20 crosses |
+
+The 0.5 m robustness of the forty-frame verdict, which the Engine's conventional bound leaves
+unresolved and which was solver-tier only until now, is certified by
+`forty-frame-dual-certificate-0.5m.json` (40 anchor certificates, no annotation identities):
+
+```sh
+python -B verify_dual_certificate.py UNIT_JSON forty-frame-dual-certificate-0.5m.json
+# delta 51/20 margin 49/20 certified max drop 21/10
+# robust certified
+```
+
+For the deletion program the LP relaxation is half-integral (a vertex-cover relaxation) and the
+dual bound is far too loose to certify anything: 14 against a margin of 9/10 on the first case.
+Deletion sufficiency therefore stays solver-tier; the honest route to a checkable deletion
+certificate is the Engine's combinatorial construction (its 372-label proof), not LP duality.
+
+Tests: the dual bound never exceeds the exact optimum on random geometries, and a forged
+multiplier can only weaken a bound, never strengthen it; negative multipliers are refused.
+
+### The certificate tier across the census
+
+`dual_census.py`; aggregates in `dual-summary.json`. For every supported verdict and epsilon, the
+solver-free bound was evaluated alongside the solver tier.
+
+| Position error | Solver-tier robust | Certified solver-free (share) | Solver-robust but not certified | Certified where the solver tier was unresolved |
+|---|---:|---:|---:|---:|
+| 0.1 m | 1077 | **1077** (100.0%) | 0 | 0 |
+| 0.25 m | 986 | **980** (99.4%) | 6 | 0 |
+| 0.5 m | 813 | **784** (96.4%) | 29 | 0 |
+| 1.0 m | 495 | **415** (83.8%) | 80 | 17 |
+
+At 1 m the LP dual certifies 17 verdicts whose mixed-integer solve hit its 30 s limit: the
+relaxation is polynomial, terminates, and its multipliers are a proof. Where the dual tier does
+not certify, the verdict keeps its solver-tier status and the gap is the integrality gap of the
+flip program on that unit.
+
 ## Which error family threatens which verdict: insertion monotonicity
 
 Claim. Adding a reference object never decreases `TP_augmented - TP_base`. Hence an inserted

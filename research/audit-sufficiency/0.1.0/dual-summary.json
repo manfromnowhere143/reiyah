@@ -1,0 +1,50 @@
+{
+ "supported_units": 1125,
+ "by_epsilon": {
+  "0.1": {
+   "solver_robust": 1077,
+   "dual_certified_robust": 1077,
+   "solver_robust_and_dual_certified": 1077,
+   "solver_robust_not_dual_certified": 0,
+   "pairs": {
+    "insufficient_unchecked|unresolved": 48,
+    "robust|robust": 1077
+   }
+  },
+  "0.25": {
+   "solver_robust": 986,
+   "dual_certified_robust": 980,
+   "solver_robust_and_dual_certified": 980,
+   "solver_robust_not_dual_certified": 6,
+   "pairs": {
+    "insufficient_unchecked|unresolved": 139,
+    "robust|robust": 980,
+    "robust|unresolved": 6
+   }
+  },
+  "0.5": {
+   "solver_robust": 813,
+   "dual_certified_robust": 784,
+   "solver_robust_and_dual_certified": 784,
+   "solver_robust_not_dual_certified": 29,
+   "pairs": {
+    "insufficient_unchecked|unresolved": 312,
+    "robust|robust": 784,
+    "robust|unresolved": 29
+   }
+  },
+  "1.0": {
+   "solver_robust": 495,
+   "dual_certified_robust": 432,
+   "solver_robust_and_dual_certified": 415,
+   "solver_robust_not_dual_certified": 80,
+   "pairs": {
+    "insufficient_unchecked|unresolved": 587,
+    "robust|robust": 415,
+    "robust|unresolved": 80,
+    "solver_failed|unresolved": 26,
+    "solver_failed|robust": 17
+   }
+  }
+ }
+}

@@ -50,6 +50,7 @@ import time
 import numpy as np
 from scipy.optimize import Bounds, LinearConstraint, milp
 from scipy.sparse import lil_matrix
+from dual_certificate import dual_bound
 
 __version__ = "0.1.0"
 
@@ -149,7 +150,7 @@ class Anchor:
         if not cand:
             g = self.gain()
             return {'deleted': [], 'gain_after': g, 'solver_gain_after': g, 'status': 'no_candidate',
-                    'verified': True}
+                    'verified': True, 'dual_gain_after': Fraction(g)}
         xi = {o: i for i, o in enumerate(cand)}
         dets = self.base + self.additions
         n_x = len(cand)
@@ -192,16 +193,19 @@ class Anchor:
         A = A.tocsr()[:r]
         integrality = np.zeros(n)
         integrality[:n_x + n_c] = 1
+        dual = dual_bound(cost, A, lo, hi)
         res = milp(c=cost, constraints=LinearConstraint(A, np.array(lo), np.array(hi)),
                    integrality=integrality, bounds=Bounds(0, 1))
         if res.status != 0:
             return {'deleted': None, 'gain_after': None, 'solver_gain_after': None,
-                    'status': 'solver_' + str(res.status), 'verified': False}
+                    'status': 'solver_' + str(res.status), 'verified': False,
+                    'dual_gain_after': None if dual is None else dual['bound']}
         deleted = sorted(o for o in cand if res.x[xi[o]] > 0.5)
         solver_gain = int(round(res.fun))
         exact_gain = self.gain(frozenset(deleted))
         return {'deleted': deleted, 'gain_after': exact_gain, 'solver_gain_after': solver_gain,
-                'status': 'optimal', 'verified': exact_gain == solver_gain}
+                'status': 'optimal', 'verified': exact_gain == solver_gain,
+                'dual_gain_after': None if dual is None else dual['bound']}
 
 
 class Case:
@@ -263,6 +267,8 @@ class Case:
         unit = self.fn + self.fp
         sound_drop = Fraction(0)
         solver_drop = Fraction(0)
+        dual_drop = Fraction(0)
+        dual_ok = True
         counter = []
         per_anchor = []
         unverified = 0
@@ -273,6 +279,11 @@ class Case:
             s_units = min(g, free) if budget is None else min(g, free, budget)
             sound_drop += a.weight * unit * s_units
             adv = a.adversary(c, budget)
+            if adv.get('dual_gain_after') is None:
+                dual_ok = False
+            else:
+                d = adv['dual_gain_after']
+                dual_drop += a.weight * unit * max(0, g - (-(-d.numerator // d.denominator)))
             if adv['status'] == 'optimal' or adv['status'] == 'no_candidate':
                 units = g - adv['gain_after']
                 if not adv['verified']:
@@ -300,6 +311,8 @@ class Case:
             'margin': str(margin), 'confirmed': len(confirmed), 'budget': budget,
             'sound_max_drop': str(sound_drop),
             'sound': 'sufficient' if sound_drop < margin else 'unresolved',
+            'dual_max_drop': str(dual_drop) if dual_ok else None,
+            'dual': ('sufficient' if (dual_ok and dual_drop < margin) else 'unresolved' if dual_ok else 'unavailable'),
             'solver_max_drop': None if solver_drop is None else str(solver_drop),
             'solver': (None if solver_drop is None else
                        'sufficient' if solver_drop < margin else 'insufficient'),
