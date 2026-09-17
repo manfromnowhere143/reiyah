@@ -149,6 +149,44 @@ The method reserves full upper-endpoint work plus lower-endpoint matching work,
 within the existing 2,000,000 ceiling. The resulting bound is conservative when
 the error budget excludes its lower endpoint, unless both bounds coincide.
 
+## Reference-position uncertainty
+
+`localization` and `verify-localization` accept the existing A/B input plus a
+digest-bound `localization-request.schema.json` request. It supplies complete
+detection/reference coordinates, classes, source-record bindings, a strict matching
+threshold and an explicit residual radius for every reference. Coordinates use
+shared planar metres and exact rationals. The complete nominal graph must agree
+with the comparison input; missing coordinates cannot become zero.
+
+```sh
+python -B -m tools.perception_revision localization \
+  --input INPUT.json --input-sha256 INPUT_SHA256 \
+  --request POSITIONS.json --request-sha256 POSITIONS_SHA256 \
+  --output PACKET.json
+
+python -B -m tools.perception_revision verify-localization \
+  --input INPUT.json --input-sha256 INPUT_SHA256 \
+  --request POSITIONS.json --request-sha256 POSITIONS_SHA256 \
+  --packet PACKET.json --packet-sha256 PACKET_SHA256
+```
+
+An optional `--candidate DISPLACEMENTS.json --candidate-sha256 SHA256` on the
+producer checks a supplied `localization-witness.schema.json` candidate. It never
+searches for one or equates independent edge flips with realizable movement.
+The packet kind is `reiyah.perception-revision.localization-packet`, version 0.1.0.
+
+The finite unconditional model fixes reference membership/classes and detector
+outputs, with independent closed balls for reference centers. Bounds use checked
+matchings and covers on guaranteed/possible edges. The strict inner boundary is
+included as uncertain. A nonzero measurement radius stays nonzero. A successful
+point witness refutes robustness only when its exact loss reaches the adverse
+criterion; otherwise it leaves the universal question unresolved. These claims
+do not establish physical truth or measured uncertainty calibration.
+
+General A/B membership is supported; open references, missing outputs and latent
+joint-world inputs remain explicitly unavailable for this method. Existing graph,
+byte and work limits apply. See the [proof, controls and development results](../../../docs/PERCEPTION_LOCALIZATION_CERTIFICATES_2026-09-17.md).
+
 ## Fixed-world minimum deletion margins
 
 `deletion-margin` proposes a matching/vertex-cover certificate for the minimum number

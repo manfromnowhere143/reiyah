@@ -1,0 +1,543 @@
+{
+  "actual_position_measurements": 0,
+  "aggregate_check": {
+    "actual_shift_coordinates_in_selected_aggregate": false,
+    "artifact_id": "reiyah.localization.aggregate-check",
+    "result": "aggregate_counts_agree",
+    "scope": "Consumer recomputation of retained aggregate status counts only; no MILP census, displacement witness or position-audit claim revalidated.",
+    "status_counts": {
+      "0.1": {
+        "insufficient_realized": 42,
+        "insufficient_relaxed": 6,
+        "robust": 1077
+      },
+      "0.25": {
+        "insufficient_realized": 97,
+        "insufficient_relaxed": 42,
+        "robust": 986
+      },
+      "0.5": {
+        "insufficient_realized": 129,
+        "insufficient_relaxed": 183,
+        "robust": 813
+      },
+      "1.0": {
+        "insufficient_realized": 112,
+        "insufficient_relaxed": 472,
+        "robust": 491,
+        "solver_failed": 50
+      }
+    },
+    "units": 1125,
+    "version": "0.1.0"
+  },
+  "artifact_id": "reiyah.localization.development-verification",
+  "boundary_findings": [
+    {
+      "admitted_shift": [
+        "1/10",
+        "0"
+      ],
+      "exact_improvement_after": "-1",
+      "kind": "strict_inner_boundary",
+      "nominal_reference": [
+        "19/10",
+        "0"
+      ],
+      "radius": "1/10",
+      "reported_research_status": "robust",
+      "research_own_realizer_also_finds_shift": true,
+      "threshold": "2"
+    },
+    {
+      "admitted_shift": [
+        "1/20",
+        "0"
+      ],
+      "exact_improvement_after": "-1",
+      "kind": "nonzero_residual_is_not_fixed_adjacency",
+      "nominal_reference": [
+        "39/20",
+        "0"
+      ],
+      "radius": "1/10",
+      "reported_research_confirmed_status": "robust"
+    }
+  ],
+  "census_scope": "Aggregate status counts reconciled on a consumer-bound snapshot; solver campaign, geometric witnesses and position-audit sufficiency not revalidated",
+  "committed_origins_checked": 15,
+  "geometry_join": {
+    "anchors": 40,
+    "artifact_id": "reiyah.localization.geometry-join",
+    "detection_records_joined": 2745,
+    "geometry_source_sha256": "cb209d87ae87ab8156e0195cb709d8e3d0922b81287cabfb00bf695c2e0703e2",
+    "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+    "reference_records_joined": 2299,
+    "scope": "Exact source-ID, membership, weight, loss and nominal-edge join. Coordinates are exact decimal values of the sealed derived census source. Original raw sensor/prediction custody is not re-executed here. Reference record digests bind normalized rational point records; detection digests retain the native source identity.",
+    "version": "0.1.0"
+  },
+  "lifecycle_status": "exploratory",
+  "nonclaims": [
+    "An observed census row is falsely robust",
+    "Verification of all research solver optima or realized-displacement counts",
+    "Physical label error or measurement accuracy",
+    "Complete geometry extrema when bounds differ",
+    "Joint latent-world support by this method",
+    "Human-time, full-cost or state-of-the-art advantage"
+  ],
+  "payloads_checked": 16,
+  "producer_sha256": "538411b009e112b889d91f3c6f8a4418244780d150fe8b23516917e1e6f87744",
+  "retained_bindings": {
+    "PLAN.md": {
+      "bytes": 4293,
+      "sha256": "2c2a6bc8d74046c840e6fa1626b71c57100479d8fc09149e0b2d3d9f9d1c4032"
+    },
+    "SOURCE_BINDINGS.json": {
+      "bytes": 3944,
+      "sha256": "6943316a6c991953eca021bafd5118b24e5d9f21f009d625638292a8083f17d5"
+    },
+    "captures/assay-01/receipt.json": {
+      "bytes": 1119,
+      "sha256": "99752a562ac4f599060457e733cee1a7feddc4e4deb9310187bf24b3abacc538"
+    },
+    "captures/assay-02/receipt.json": {
+      "bytes": 1122,
+      "sha256": "d09291ec6d459059fe0bd42eb6569d35460166f7b0405b01916db1ad49c83031"
+    },
+    "captures/measurement-tests-01/receipt.json": {
+      "bytes": 1076,
+      "sha256": "fc5bbdb545e2104747bf3e8dd784aa15213f5a47879cd732e658e7a954160fa0"
+    },
+    "captures/measurement-tests-02/receipt.json": {
+      "bytes": 1096,
+      "sha256": "7cfacbb5e395c43260afcbf0a89900d138e3c4e42d9ef240bf73e55732ef28b4"
+    },
+    "captures/repository-tests-01/receipt.json": {
+      "bytes": 1064,
+      "sha256": "623408c5d83e5b19b1ff7e64553ad7ab71da525fa652cdc4fff5f92d83762306"
+    },
+    "captures/repository-tests-02/receipt.json": {
+      "bytes": 1064,
+      "sha256": "258972c39d8afe8b3f91619534dccfbefedaef10614cbb1d8ac006d45f5cc7ce"
+    },
+    "captures/targeted-01/receipt.json": {
+      "bytes": 1118,
+      "sha256": "a6848fc750f4056b0605398b4a85ae45099f0d6e7a094dfafb7206ab7ba25235"
+    },
+    "private/BOUNDARY_PROBE.json": {
+      "bytes": 2833,
+      "sha256": "2230311a2ad7283df81246aa340cc74f421e08002331b9ecceae16cd47abde85"
+    },
+    "private/GEOMETRY_SOURCE_BINDINGS.json": {
+      "bytes": 3233,
+      "sha256": "154b6d3c3c3175e6e104cb19b6a6c6aaadc147102daf6f6fb481999a33d44515"
+    },
+    "private/OWNER_REALIZER_PROBE.json": {
+      "bytes": 355,
+      "sha256": "6e9bfc143b16a28bbd51682797c3d3eade1e963b8b11eeca44dd9de07e046185"
+    },
+    "private/RESIDUAL_PROBE.json": {
+      "bytes": 2115,
+      "sha256": "5ed9c34da4e534cad7f39cf2f4cb58f2b7c62f46c6e2ca4d7f805f29b68e5e12"
+    },
+    "private/RESOURCE_ACCOUNTING_REVIEW.md": {
+      "bytes": 480,
+      "sha256": "dce88cc922522c1927ee901ea42dd546b1862565e18a6db1d3d11116f4ab237b"
+    },
+    "private/assay-02/AGGREGATE_CHECK.json": {
+      "bytes": 661,
+      "sha256": "8e89dfb778a8848ac1f57399c59858b53c2ec5910a9791b84ff6477328a53cd7"
+    },
+    "private/assay-02/ASSAY_RESULT.json": {
+      "bytes": 29175,
+      "sha256": "7c1d22ed8f076b1e9ca2aaadc9bff3045c2f69eea90fc73356af82609aba8341"
+    },
+    "private/assay-02/GEOMETRY_JOIN.json": {
+      "bytes": 652,
+      "sha256": "6ccbffba87319ab1da3e883b4a3091410a728a1cf166f3fe4fa844e0754186b8"
+    },
+    "private/boundary_probe.py": {
+      "bytes": 2449,
+      "sha256": "99fd76bfa3429c68cb93bd1d3d5b0b563926083782aec97845b6b9399fca8ed1"
+    },
+    "private/localization_assay.py": {
+      "bytes": 9522,
+      "sha256": "9e4dd2236e15058f9ee217ba8519e0f3d554e2f3ea341ca87569c3dad2034228"
+    },
+    "private/localization_assay_02.py": {
+      "bytes": 9517,
+      "sha256": "0e9e04f09322507675f0bc98099516986412427ecb035efe2e00fd693e6f8a5a"
+    },
+    "private/residual_probe.py": {
+      "bytes": 1269,
+      "sha256": "446797ecc9df79a39b3b3bd25f2c148590920622d6710f79e1a593995df7c2c8"
+    }
+  },
+  "rows": [
+    {
+      "case": "forty-e0",
+      "checking_seconds": 0.7245392920449376,
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "packet": {
+        "bytes": 180789,
+        "path": "private/assay-02/packets/forty-e0.json",
+        "sha256": "865ad866f3ddeba4fb5541e8f4751df7ad035f898f5ab2e71b8eed61b3dc7090"
+      },
+      "production_seconds": 1.4747532079927623,
+      "request_sha256": "aae37a4b4b5c09130e7d8e5570198d629bd2c2dd0de7b56bc397ad8857699d33",
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "20",
+            "numerator": "51"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "51"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "supported",
+          "preference": "prefer_b"
+        },
+        "enclosure_kind": "constant_for_declared_geometry_family",
+        "execution_status": "succeeded",
+        "geometry_family": "independent_closed_reference_balls",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "position_basis": "benchmark_reference",
+        "reference_scope": "conditional_reference_graph",
+        "robustness": "robust",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null,
+        "witness_value": null
+      }
+    },
+    {
+      "case": "forty-e0.1",
+      "checking_seconds": 0.7285821249242872,
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "packet": {
+        "bytes": 180877,
+        "path": "private/assay-02/packets/forty-e0.1.json",
+        "sha256": "5ac0b17b35563c0af4dd388cd2688439beb042d664d0b0590f2bac589a93b90c"
+      },
+      "production_seconds": 1.4701607911847532,
+      "request_sha256": "6176d4d983902f7054a6e5be3ac251535f5dd2dd62ff6e5ca9b3e2c24036e644",
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "5",
+            "numerator": "9"
+          },
+          "upper": {
+            "denominator": "10",
+            "numerator": "63"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "supported",
+          "preference": "prefer_b"
+        },
+        "enclosure_kind": "conservative_geometry_enclosure",
+        "execution_status": "succeeded",
+        "geometry_family": "independent_closed_reference_balls",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "position_basis": "benchmark_reference",
+        "reference_scope": "conditional_reference_graph",
+        "robustness": "robust",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null,
+        "witness_value": null
+      }
+    },
+    {
+      "case": "forty-e0.25",
+      "checking_seconds": 0.7317567919380963,
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "packet": {
+        "bytes": 180292,
+        "path": "private/assay-02/packets/forty-e0.25.json",
+        "sha256": "85c391475f66107b82601f8fe23386a5d0ab3c74f811d0f73c571fcbb5d753d7"
+      },
+      "production_seconds": 1.4729803749360144,
+      "request_sha256": "e9a02e8957de1adaec856209091c7ed47eac51c5d695df4dd908adc8ba7de096",
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "2",
+            "numerator": "1"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "229"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "supported",
+          "preference": "prefer_b"
+        },
+        "enclosure_kind": "conservative_geometry_enclosure",
+        "execution_status": "succeeded",
+        "geometry_family": "independent_closed_reference_balls",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "position_basis": "benchmark_reference",
+        "reference_scope": "conditional_reference_graph",
+        "robustness": "robust",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null,
+        "witness_value": null
+      }
+    },
+    {
+      "case": "forty-e0.5",
+      "checking_seconds": 0.7312857501674443,
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "packet": {
+        "bytes": 179833,
+        "path": "private/assay-02/packets/forty-e0.5.json",
+        "sha256": "f8dfe08153b7974037047677be8e7b597cf3aa1dfe241b6a584d1b2cd327423a"
+      },
+      "production_seconds": 1.4768164998386055,
+      "request_sha256": "d1d4a07340ea787364d4a257b355a59d36c88fd2a7c99b41bf5272c6e6738420",
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "20",
+            "numerator": "-57"
+          },
+          "upper": {
+            "denominator": "10",
+            "numerator": "153"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "unresolved",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "conservative_geometry_enclosure",
+        "execution_status": "succeeded",
+        "geometry_family": "independent_closed_reference_balls",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "position_basis": "benchmark_reference",
+        "reference_scope": "conditional_reference_graph",
+        "robustness": "unresolved",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null,
+        "witness_value": null
+      }
+    },
+    {
+      "case": "forty-e1",
+      "checking_seconds": 0.7290455000475049,
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "packet": {
+        "bytes": 170421,
+        "path": "private/assay-02/packets/forty-e1.json",
+        "sha256": "76477255a69e8353ef614e7a75a04dfe93ee0d2cebbfb1af29e9d07b3983a8ad"
+      },
+      "production_seconds": 1.4879878328647465,
+      "request_sha256": "9d8d07c4b5b79ba73ddd77c9ad3d32a81ae4cb8e6ffcb20eef83f5f5ce51876f",
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "10",
+            "numerator": "-129"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "361"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "unresolved",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "conservative_geometry_enclosure",
+        "execution_status": "succeeded",
+        "geometry_family": "independent_closed_reference_balls",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "position_basis": "benchmark_reference",
+        "reference_scope": "conditional_reference_graph",
+        "robustness": "unresolved",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null,
+        "witness_value": null
+      }
+    },
+    {
+      "case": "inner-boundary-enclosure",
+      "checking_seconds": 0.00046387501060962677,
+      "input_sha256": "6803c982715c91a10eedb87746a509e927fd0fb8e6dbbebcea3853e20f1d98e8",
+      "packet": {
+        "bytes": 1234,
+        "path": "private/assay-02/packets/inner-boundary-enclosure.json",
+        "sha256": "41cfcc7dac53932cf412899fef70aac38c049520098eb5f100afeb4db83da148"
+      },
+      "production_seconds": 0.0011279159225523472,
+      "request_sha256": "1894a3b4e4c677b89ff18d874c8c7bffbf6c3e9aebb11f8f8a9bad79457a9b09",
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "1"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "unresolved",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "conservative_geometry_enclosure",
+        "execution_status": "succeeded",
+        "geometry_family": "independent_closed_reference_balls",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "position_basis": "hypothetical",
+        "reference_scope": "synthetic",
+        "robustness": "unresolved",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null,
+        "witness_value": null
+      }
+    },
+    {
+      "case": "inner-boundary-witness",
+      "checking_seconds": 0.0005474581848829985,
+      "input_sha256": "6803c982715c91a10eedb87746a509e927fd0fb8e6dbbebcea3853e20f1d98e8",
+      "packet": {
+        "bytes": 1426,
+        "path": "private/assay-02/packets/inner-boundary-witness.json",
+        "sha256": "71e4e71f068ce14b611045bad4e5cdacfad56d6ef715110d5c88309ed9bc5c20"
+      },
+      "production_seconds": 0.0016334170941263437,
+      "request_sha256": "1894a3b4e4c677b89ff18d874c8c7bffbf6c3e9aebb11f8f8a9bad79457a9b09",
+      "result": {
+        "authority_state": "research_only",
+        "bounds": null,
+        "decision": {
+          "improvement_criterion": "not_evaluated",
+          "preference": "not_evaluated"
+        },
+        "enclosure_kind": "single_admitted_displacement",
+        "execution_status": "succeeded",
+        "geometry_family": "independent_closed_reference_balls",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "position_basis": "hypothetical",
+        "reference_scope": "synthetic",
+        "robustness": "refuted_by_displacement",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null,
+        "witness_value": {
+          "denominator": "1",
+          "numerator": "-1"
+        }
+      }
+    },
+    {
+      "case": "residual-radius-enclosure",
+      "checking_seconds": 0.0003542499616742134,
+      "input_sha256": "6803c982715c91a10eedb87746a509e927fd0fb8e6dbbebcea3853e20f1d98e8",
+      "packet": {
+        "bytes": 1234,
+        "path": "private/assay-02/packets/residual-radius-enclosure.json",
+        "sha256": "4c151c68e38a76fd8fc1272c400a006598d6e368598987a979a14b38340b6dd4"
+      },
+      "production_seconds": 0.0011070000473409891,
+      "request_sha256": "25beb503f1f5672c77300e9d06a9dcb95388ac133eafed0d58412ab56ec9440e",
+      "result": {
+        "authority_state": "research_only",
+        "bounds": {
+          "lower": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "upper": {
+            "denominator": "1",
+            "numerator": "1"
+          }
+        },
+        "decision": {
+          "improvement_criterion": "unresolved",
+          "preference": "unresolved"
+        },
+        "enclosure_kind": "conservative_geometry_enclosure",
+        "execution_status": "succeeded",
+        "geometry_family": "independent_closed_reference_balls",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "position_basis": "hypothetical",
+        "reference_scope": "synthetic",
+        "robustness": "unresolved",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null,
+        "witness_value": null
+      }
+    },
+    {
+      "case": "residual-radius-witness",
+      "checking_seconds": 0.0005190409719944,
+      "input_sha256": "6803c982715c91a10eedb87746a509e927fd0fb8e6dbbebcea3853e20f1d98e8",
+      "packet": {
+        "bytes": 1426,
+        "path": "private/assay-02/packets/residual-radius-witness.json",
+        "sha256": "7a183b9e4cffa83c9ac817994a1d6d43fcc714b31098ed4fe2d46d2bd7673d1e"
+      },
+      "production_seconds": 0.0014754170551896095,
+      "request_sha256": "25beb503f1f5672c77300e9d06a9dcb95388ac133eafed0d58412ab56ec9440e",
+      "result": {
+        "authority_state": "research_only",
+        "bounds": null,
+        "decision": {
+          "improvement_criterion": "not_evaluated",
+          "preference": "not_evaluated"
+        },
+        "enclosure_kind": "single_admitted_displacement",
+        "execution_status": "succeeded",
+        "geometry_family": "independent_closed_reference_balls",
+        "model_status": "consistent",
+        "physical_coverage": "not_established",
+        "position_basis": "hypothetical",
+        "reference_scope": "synthetic",
+        "robustness": "refuted_by_displacement",
+        "sampling_scope": "fixed_selected_cohort",
+        "statistical_confidence_level": null,
+        "witness_value": {
+          "denominator": "1",
+          "numerator": "-1"
+        }
+      }
+    }
+  ],
+  "scope": "Fixed output positions/membership/classes, finite unconditional reference membership and independent closed planar balls; strict same-class distance matching. Declared source coordinates and residual radii, not observed physical measurement accuracy.",
+  "source_commit": "eb0ac64038f125bc4d216fe8b378f78bc589e01f",
+  "source_manifest_sha256": "02bf603d4f4d70ad8fe1c3089b98fb860e81102d78621f7681dd56baa7bd52cd",
+  "timing_scope": "Exposed forty-frame development geometry and synthetic controls. Per-call local timings are not a speedup comparison or total validation costs; repository tests may overlap.",
+  "validation": {
+    "checked_packets": 18,
+    "first_failure": "Measurement test discovery initially named nonexistent tools/measure/tests; corrected to tools/measure with test_*.py. Original failure retained.",
+    "fresh_cli_commands": 18,
+    "independent_grid_loss_challenges": 2500,
+    "measurement_tests": 93,
+    "new_geometry_tests": 11,
+    "previous_372_deletion_packet_checked": true,
+    "repository_tests": 512,
+    "resource_review": "Final proof work accounting charges explicit displacement reconstruction. A new control, repository replay and fresh assay passed after this change.",
+    "result_cases": 9
+  },
+  "version": "0.1.0"
+}

@@ -1,6 +1,6 @@
 # Next mission and the evidence required to expand it
 
-Document ID: `reiyah.next-mission`. Version: `0.1.3`. Lifecycle status: `proposed`.
+Document ID: `reiyah.next-mission`. Version: `0.1.4`. Lifecycle status: `proposed`.
 
 ## Decision
 
@@ -50,6 +50,14 @@ reduction of queries already incurred. The method is weaker than components on t
 354-label request with budget 49 and unavailable for general output replacements.
 
 ## Sequence and stopping gates
+
+The [localization checkpoint](PERCEPTION_LOCALIZATION_CERTIFICATES_2026-09-17.md)
+now supplies a conventional geometric bound and exact displacement checker. The
+forty-frame case is checked robust through 0.25 m under its stated assumptions;
+0.50/1.00 m remain unresolved by that bound. Before comparing position-audit costs,
+the research lane must repair its strict inner boundary and retain measured residual
+uncertainty rather than freezing adjacency. A claimed realized counterexample must
+supply its actual displacements; aggregate counts cannot substitute for them.
 
 1. **Finish the common proof boundary.** Check complete local deletion coverage, shared global
    budgets, every compatible joint world and strict thresholds. An allowed counterexample under

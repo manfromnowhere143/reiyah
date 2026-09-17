@@ -70,6 +70,17 @@ instead of enumerating every deletion. These hypothetical confirmations establis
 neither minimum sequential query cost nor human-time savings. General replacements,
 geometry changes and bounded-budget cases still need their applicable proof methods.
 
+The [localization certificate checkpoint](docs/PERCEPTION_LOCALIZATION_CERTIFICATES_2026-09-17.md)
+extends the Engine to declared reference-position uncertainty. On the forty-frame
+case, it proves improvement remains above 0.10 for **every class-preserving planar
+reference displacement up to 0.25 m**, with fixed detector outputs and matching
+rules. The conservative lower bound is 0.50; 0.50 m and 1.00 m remain unresolved.
+Separate geometric witnesses require actual shifts and exact graph recalculation.
+Two synthetic controls expose a strict-boundary defect and an unjustified conversion
+of bounded measurement error into fixed adjacency in the research proposal. The
+census aggregates reconcile, but its displacement and position-audit claims are not
+promoted to Engine-checked evidence. No human position measurements were performed.
+
 As checked on **14 September 2026**, a [new automated replay](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md)
 on the two existing development anchors gives **[1,1]**, conditional on the retained benchmark
 labels and Reiyah's fixed rules. Weighted loss falls from 23.5 to 22.5; one anchor improves and

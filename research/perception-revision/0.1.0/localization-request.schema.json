@@ -1,0 +1,169 @@
+{
+  "$defs": {
+    "rational": {
+      "additionalProperties": false,
+      "properties": {
+        "denominator": {
+          "pattern": "^[1-9][0-9]{0,17}(?![\\s\\S])",
+          "type": "string"
+        },
+        "numerator": {
+          "pattern": "^(0|-?[1-9][0-9]{0,17})(?![\\s\\S])",
+          "type": "string"
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "urn:reiyah:perception-revision:localization-request:0.1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "anchors": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "detections": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "class": {
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+                  "type": "string"
+                },
+                "id": {
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+                  "type": "string"
+                },
+                "record_sha256": {
+                  "pattern": "^[a-f0-9]{64}(?![\\s\\S])",
+                  "type": "string"
+                },
+                "xy": {
+                  "items": {
+                    "$ref": "#/$defs/rational"
+                  },
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "id",
+                "record_sha256",
+                "class",
+                "xy"
+              ],
+              "type": "object"
+            },
+            "maxItems": 2048,
+            "type": "array"
+          },
+          "id": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+            "type": "string"
+          },
+          "references": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "class": {
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+                  "type": "string"
+                },
+                "id": {
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+                  "type": "string"
+                },
+                "radius": {
+                  "$ref": "#/$defs/rational"
+                },
+                "record_sha256": {
+                  "pattern": "^[a-f0-9]{64}(?![\\s\\S])",
+                  "type": "string"
+                },
+                "xy": {
+                  "items": {
+                    "$ref": "#/$defs/rational"
+                  },
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "id",
+                "record_sha256",
+                "class",
+                "xy",
+                "radius"
+              ],
+              "type": "object"
+            },
+            "maxItems": 128,
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "detections",
+          "references"
+        ],
+        "type": "object"
+      },
+      "maxItems": 128,
+      "type": "array"
+    },
+    "artifact_id": {
+      "const": "reiyah.perception-revision.localization-request"
+    },
+    "comparison_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+      "type": "string"
+    },
+    "coordinate_system": {
+      "const": "shared_planar_metres"
+    },
+    "family": {
+      "const": "independent_closed_reference_balls"
+    },
+    "matching_rule": {
+      "const": "strict_same_class_center_distance"
+    },
+    "position_basis": {
+      "enum": [
+        "hypothetical",
+        "benchmark_reference",
+        "supplied_external_records"
+      ]
+    },
+    "reference_context_sha256": {
+      "pattern": "^[a-f0-9]{64}(?![\\s\\S])",
+      "type": "string"
+    },
+    "threshold": {
+      "$ref": "#/$defs/rational"
+    },
+    "version": {
+      "const": "0.1.0"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "version",
+    "comparison_id",
+    "reference_context_sha256",
+    "coordinate_system",
+    "family",
+    "matching_rule",
+    "threshold",
+    "position_basis",
+    "anchors"
+  ],
+  "title": "Declared residual planar reference uncertainty with fixed detector outputs",
+  "type": "object"
+}

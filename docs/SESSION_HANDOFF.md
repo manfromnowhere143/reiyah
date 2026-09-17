@@ -2,9 +2,52 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.23`
+Version: `0.1.24`
 
 Lifecycle status: `exploratory`
+
+The [localization certificate checkpoint](PERCEPTION_LOCALIZATION_CERTIFICATES_2026-09-17.md)
+consumes research commit `eb0ac64038f125bc4d216fe8b378f78bc589e01f`, manifest
+`02bf603d4f4d70ad8fe1c3089b98fb860e81102d78621f7681dd56baa7bd52cd`.
+Sixteen payloads and fifteen committed origins agree. A selected snapshot of all
+1,125 aggregate rows reproduces the four status distributions; the full campaign,
+realized displacements and position-audit counts are not independently revalidated.
+The request/parts of closeout remain historical deletion text. Preserve owner files.
+
+Two retained synthetic controls show a false robust result at the strict inner
+distance boundary and that a confirmation with nonzero position error does not
+fix adjacency. The research realizer itself finds the omitted boundary shift.
+Actual per-object displacement coordinates are absent from the selected aggregate
+return. Do not call its counts Engine-checked geometric or physical counterexamples.
+
+New `localization` / `verify-localization` commands check rational coordinates,
+residual radii, complete nominal adjacency and graph-envelope matching/cover
+certificates. Optional explicit shifts require full geometric recomputation.
+Independent A/B outputs are supported; joint latent-world inputs, open references
+and missing outputs remain unavailable for this method. All existing byte, graph
+and work ceilings remain; no uncertainty is replaced by an exact position.
+
+The forty-frame decision is robust for all declared per-record shifts up to
+0.25 m (lower bound 1/2 > 1/10). At 0.50 m and 1.00 m this bound remains unresolved.
+The solver's stronger 0.50 m claim stays separate. The previous 372-label deletion
+packet still checks. These are exposed, conditional development calculations.
+
+Fresh root: `~/.codex/reports/reiyah/engine-localization-certificates-2026-09-17-0ynsueeo/`.
+Read PLAN, SOURCE_BINDINGS, private/GEOMETRY_SOURCE_BINDINGS, probes, final
+private/assay-02 results, VERIFICATION, CLOSEOUT, packet seal and consumer request.
+Validation passes 512 repository tests and 93 measurement tests, including eleven
+new geometry tests and 2,500 independent finite displacement-loss challenges.
+Eighteen packets and eighteen CLI commands check. The first wrong test-directory
+failure and the final displacement-work accounting correction remain retained.
+
+Next research action: repair the strict boundary and residual-measurement semantics;
+retain actual shifts and audit histories in a new sealed return. Engine next
+consumer-checks those artifacts and their applicability. Source qualification and
+main integration remain Engine-owned; selectors, stronger optimization and complete
+cost experiments remain research-owned. No cloud, inference, human measurement,
+post or outreach occurred. Gate A remains operator-unaccepted.
+
+## Preceding ordered-endpoint audit checkpoint
 
 The [ordered-endpoint audit checkpoint](PERCEPTION_MONOTONE_AUDIT_2026-09-17.md)
 adds `audit --proof-method monotone` with separate checking through `verify-audit`.

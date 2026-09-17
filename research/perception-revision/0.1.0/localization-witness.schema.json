@@ -1,0 +1,70 @@
+{
+  "$defs": {
+    "rational": {
+      "additionalProperties": false,
+      "properties": {
+        "denominator": {
+          "pattern": "^[1-9][0-9]{0,17}(?![\\s\\S])",
+          "type": "string"
+        },
+        "numerator": {
+          "pattern": "^(0|-?[1-9][0-9]{0,17})(?![\\s\\S])",
+          "type": "string"
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "urn:reiyah:perception-revision:localization-witness:0.1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "const": "reiyah.perception-revision.localization-witness"
+    },
+    "displacements": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "anchor": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+            "type": "string"
+          },
+          "object": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+            "type": "string"
+          },
+          "shift": {
+            "items": {
+              "$ref": "#/$defs/rational"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+          }
+        },
+        "required": [
+          "anchor",
+          "object",
+          "shift"
+        ],
+        "type": "object"
+      },
+      "maxItems": 16384,
+      "type": "array"
+    },
+    "version": {
+      "const": "0.1.0"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "version",
+    "displacements"
+  ],
+  "type": "object"
+}

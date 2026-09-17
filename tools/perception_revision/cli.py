@@ -6,7 +6,8 @@ import sys
 
 from tools.perception_decision.cli import atomic_write
 from tools.perception_decision.contract import load as legacy_load
-from . import audit, audit_checker, checker, kernel, margin, margin_checker
+from . import audit, audit_checker, checker, kernel, margin, margin_checker, localization, localization_checker
+from . import localization_contract
 from .boxes import BOX_SCHEMA, compile_alternatives
 from .contract import (AUDIT_SCHEMA, SCHEMA, Invalid, MAX_INPUT_BYTES, MAX_PACKET_BYTES, encoded, from_addition,
                        load, load_bytes, rebind_observations, require, validate_request)
@@ -16,7 +17,8 @@ def implementation_digest():
     root = Path(__file__).resolve().parents[2]
     paths = sorted(Path(__file__).parent.glob('*.py'))
     paths += sorted((root / 'tools/perception_decision').glob('*.py'))
-    paths += [SCHEMA, AUDIT_SCHEMA, BOX_SCHEMA, root / 'research/perception-decision/0.1.0/input.schema.json']
+    paths += [SCHEMA, AUDIT_SCHEMA, BOX_SCHEMA, localization_contract.REQUEST_SCHEMA,
+              localization_contract.WITNESS_SCHEMA, root / 'research/perception-decision/0.1.0/input.schema.json']
     rows = [(str(p.relative_to(root)), hashlib.sha256(p.read_bytes()).hexdigest()) for p in paths]
     return hashlib.sha256(encoded(rows)).hexdigest()
 
@@ -25,7 +27,7 @@ def request_input(case, path, digest):
     return validate_request(case, load_bytes(path, digest, validate_input=False))
 
 
-def read_packet(case, input_digest, path, digest, request_digest=None, *, margin_packet=False):
+def read_packet(case, input_digest, path, digest, request_digest=None, *, margin_packet=False, localization_packet=False):
     packet = load_bytes(path, digest, MAX_PACKET_BYTES, validate_input=False)
     fields = {'artifact_id', 'version', 'comparison_id', 'input_sha256', 'producer_sha256', 'payload'}
     if request_digest is not None:
@@ -34,6 +36,8 @@ def read_packet(case, input_digest, path, digest, request_digest=None, *, margin
     artifact = 'reiyah.perception-revision.audit-packet' if request_digest is not None else 'reiyah.perception-revision.packet'
     if margin_packet:
         artifact = 'reiyah.perception-revision.deletion-margin-packet'
+    if localization_packet:
+        artifact = 'reiyah.perception-revision.localization-packet'
     require(packet['artifact_id'] == artifact and packet['version'] == '0.1.0'
             and packet['comparison_id'] == case['comparison_id'] and packet['input_sha256'] == input_digest,
             'PACKET_BINDING', 'Wrong comparison, input, version or packet kind')
@@ -56,21 +60,22 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     subs = parser.add_subparsers(dest='command', required=True)
     for command in ('from-addition', 'from-box-alternatives', 'run', 'verify', 'audit', 'verify-audit',
-                    'rebind-audit', 'deletion-margin', 'verify-deletion-margin'):
+                    'rebind-audit', 'deletion-margin', 'verify-deletion-margin', 'localization', 'verify-localization'):
         sub = subs.add_parser(command)
         sub.add_argument('--input', type=Path, required=True)
         sub.add_argument('--input-sha256', required=True)
-        if command in ('verify', 'verify-audit', 'verify-deletion-margin'):
+        if command in ('verify', 'verify-audit', 'verify-deletion-margin', 'verify-localization'):
             sub.add_argument('--packet', type=Path, required=True)
             sub.add_argument('--packet-sha256', required=True)
         else:
             sub.add_argument('--output', type=Path, required=True)
-        if command in ('audit', 'verify-audit', 'rebind-audit'):
+        if command in ('audit', 'verify-audit', 'rebind-audit', 'localization', 'verify-localization'):
             sub.add_argument('--request', type=Path, required=True)
             sub.add_argument('--request-sha256', required=True)
-        if command == 'audit':
+        if command in ('audit', 'localization'):
             sub.add_argument('--candidate', type=Path)
             sub.add_argument('--candidate-sha256')
+        if command == 'audit':
             sub.add_argument('--proof-method', choices=('legacy', 'components', 'monotone'), default='legacy')
         if command in ('run', 'rebind-audit'):
             sub.add_argument('--prior-input', type=Path, required=command == 'rebind-audit')
@@ -91,7 +96,25 @@ def main(argv=None):
             answer['scope'] = 'Declared legacy augmented output; not standalone detector B'
         else:
             case = load(args.input, args.input_sha256)
-            if args.command == 'rebind-audit':
+            if args.command in ('localization', 'verify-localization'):
+                request = localization_contract.validate_request(case, load_bytes(
+                    args.request, args.request_sha256, validate_input=False))
+                if args.command == 'verify-localization':
+                    packet = read_packet(case, args.input_sha256, args.packet, args.packet_sha256,
+                                         args.request_sha256, localization_packet=True)
+                    result = localization_checker.check(case, request, packet['payload'])
+                    answer = {'certificate_checked': True, 'result': result,
+                              'producer_matches_current_source': packet['producer_sha256'] == implementation_digest()}
+                else:
+                    require(bool(args.candidate) == bool(args.candidate_sha256), 'CANDIDATE_BINDING', 'Candidate requires an expected digest')
+                    candidate = load_bytes(args.candidate, args.candidate_sha256, validate_input=False) if args.candidate else None
+                    payload = localization.produce(case, request, candidate)
+                    localization_checker.check(case, request, payload)
+                    packet = {'artifact_id': 'reiyah.perception-revision.localization-packet', 'version': '0.1.0',
+                              'comparison_id': case['comparison_id'], 'input_sha256': args.input_sha256,
+                              'request_sha256': args.request_sha256, 'producer_sha256': implementation_digest(), 'payload': payload}
+                    answer = {**write_output(args.output, packet), 'certificate_checked': True, 'result': payload['result']}
+            elif args.command == 'rebind-audit':
                 previous = load(args.prior_input, args.prior_input_sha256)
                 request = request_input(previous, args.request, args.request_sha256)
                 answer = write_output(args.output, rebind_observations(previous, request, case), MAX_INPUT_BYTES)
