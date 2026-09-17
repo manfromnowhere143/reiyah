@@ -197,6 +197,39 @@ General A/B membership is supported; open references, missing outputs and latent
 joint-world inputs remain explicitly unavailable for this method. Existing graph,
 byte and work limits apply. See the [proof, controls and development results](../../../docs/PERCEPTION_LOCALIZATION_CERTIFICATES_2026-09-17.md).
 
+### Returned position observations and reuse
+
+`position-audit` conditions the existing position family on explicit returned centers
+and closed residual radii. The [observation schema](position-observations.schema.json)
+binds each answer to its original reference subject and evidence digest. Use
+`position_contract.subject_digest(case, request, anchor_id, reference)` to construct
+the declared subject fingerprint. A source-qualified reference context must bind
+frame and time; a matching digest alone is not physical validation.
+
+```sh
+python3 -B -m tools.perception_revision position-audit \
+  --input INPUT.json --input-sha256 INPUT_SHA256 \
+  --request GEOMETRY.json --request-sha256 GEOMETRY_SHA256 \
+  --observations ANSWERS.json --observations-sha256 ANSWERS_SHA256 \
+  --output POSITION_PACKET.json
+
+python3 -B -m tools.perception_revision verify-position-audit \
+  --input INPUT.json --input-sha256 INPUT_SHA256 \
+  --request GEOMETRY.json --request-sha256 GEOMETRY_SHA256 \
+  --observations ANSWERS.json --observations-sha256 ANSWERS_SHA256 \
+  --packet POSITION_PACKET.json --packet-sha256 POSITION_PACKET_SHA256
+```
+
+The same answer bytes can be submitted on another output comparison when every
+subject and context still matches. The command recomputes the current conclusion.
+Prior and observed balls are intersected; partial intersections use an explicitly
+conservative enclosure. Disjoint balls produce inconsistent premises, no decision
+and CLI exit 3. Missing answers preserve prior uncertainty. Unknown subjects and
+repeated answers reject. This route admits only universal enclosure proofs, since
+a point in the enclosing ball may lie outside the intersection. Read the
+[mathematics, work limits and development checks](../../../docs/PERCEPTION_POSITION_OBSERVATIONS_2026-09-17.md).
+The supplied observation count is not a history of actual queries or saved work.
+
 ## Fixed-world minimum deletion margins
 
 `deletion-margin` proposes a matching/vertex-cover certificate for the minimum number

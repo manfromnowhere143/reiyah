@@ -2,9 +2,42 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.25`
+Version: `0.1.26`
 
 Lifecycle status: `exploratory`
+
+The [position-observation checkpoint](PERCEPTION_POSITION_OBSERVATIONS_2026-09-17.md)
+adds position-audit / verify-position-audit. It binds supplied answers to cohort,
+reference context and per-record subject; returned centers retain explicit residual
+error. Disjoint prior/observed balls produce inconsistent premises. Partial overlaps
+use a stated conservative enclosure. Changed outputs require a fresh checked proof.
+No legacy localization or deletion semantics or work limit is weakened.
+
+On the exposed forty-frame case, fixed prefixes of 0/100/500/1000 hypothetical
+nominal-center answers with residual 0.25 m remain unresolved; all 2,299 give
+[1/2,229/20]. Exact-center answers recover [51/20,51/20]. These are supplied premises,
+not observed human answers or a minimum query count. On the native census identity,
+the same 2,299 answer bytes apply to Mapillary + retained Megvii and Mapillary +
+retained PointPillars. The former gives [1/2,229/20]; the latter [-49/20,191/20]
+remains unresolved. The old proof rejects. The differently named historical
+forty-frame export rejects reuse on the census context; no identity was rewritten.
+
+All 533 repository tests pass, including 13 new tests and 1,856 independent finite
+intersection-world calculations across 128 problems. Eight development packets
+agree numerically with ordinary same-center recomputation; ten fresh CLI commands
+include the inconsistent-premise exit. The prior 0.25 m packet still checks.
+No complete-cost comparison, actual query saving or new physical truth is established.
+
+Fresh root: `~/.codex/reports/reiyah/engine-position-observations-2026-09-17-d8px4y6_/`.
+Read PLAN, private/ASSAY_PLAN and amendment, SOURCE_BINDINGS, assay-01 results,
+VERIFICATION, CLOSEOUT, packet seal and output/COPY_TO_FABLE. The selected sources
+are prior closed Engine checkpoints. Research HEAD 4bc28d8 has active unsealed owner
+edits, including cost/reuse work; none was adopted or modified. Do not duplicate or
+restart its ongoing experiment. Consume a fresh sealed return and test its actual
+histories under the declared checking contract. Preserve source applicability,
+complete costs and unresolved outcomes. Gate A remains operator-unaccepted.
+
+## Preceding weighted split checkpoint
 
 The [weighted split checkpoint](PERCEPTION_SPLIT_CERTIFICATES_2026-09-17.md)
 consumes research `4bc28d89a525f6d783d29bbfb3fef41544d6a4a9`, manifest

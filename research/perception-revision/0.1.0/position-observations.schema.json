@@ -1,0 +1,103 @@
+{
+  "$defs": {
+    "rational": {
+      "additionalProperties": false,
+      "properties": {
+        "denominator": {
+          "pattern": "^[1-9][0-9]{0,17}(?![\\s\\S])",
+          "type": "string"
+        },
+        "numerator": {
+          "pattern": "^(0|-?[1-9][0-9]{0,17})(?![\\s\\S])",
+          "type": "string"
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "urn:reiyah:perception-revision:position-observations:0.1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "const": "reiyah.perception-revision.position-observations"
+    },
+    "cohort_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+      "type": "string"
+    },
+    "observation_basis": {
+      "enum": [
+        "hypothetical",
+        "benchmark_reference",
+        "supplied_external_records"
+      ]
+    },
+    "observations": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "anchor": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+            "type": "string"
+          },
+          "evidence_sha256": {
+            "pattern": "^[a-f0-9]{64}(?![\\s\\S])",
+            "type": "string"
+          },
+          "object": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}(?![\\s\\S])",
+            "type": "string"
+          },
+          "radius": {
+            "$ref": "#/$defs/rational"
+          },
+          "subject_sha256": {
+            "pattern": "^[a-f0-9]{64}(?![\\s\\S])",
+            "type": "string"
+          },
+          "xy": {
+            "items": {
+              "$ref": "#/$defs/rational"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+          }
+        },
+        "required": [
+          "anchor",
+          "object",
+          "subject_sha256",
+          "evidence_sha256",
+          "xy",
+          "radius"
+        ],
+        "type": "object"
+      },
+      "maxItems": 16384,
+      "type": "array"
+    },
+    "reference_context_sha256": {
+      "pattern": "^[a-f0-9]{64}(?![\\s\\S])",
+      "type": "string"
+    },
+    "version": {
+      "const": "0.1.0"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "version",
+    "cohort_id",
+    "reference_context_sha256",
+    "observation_basis",
+    "observations"
+  ],
+  "title": "One bounded position observation per bound reference subject",
+  "type": "object"
+}

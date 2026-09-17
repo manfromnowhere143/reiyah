@@ -1,6 +1,6 @@
 # Next mission and the evidence required to expand it
 
-Document ID: `reiyah.next-mission`. Version: `0.1.5`. Lifecycle status: `proposed`.
+Document ID: `reiyah.next-mission`. Version: `0.1.6`. Lifecycle status: `proposed`.
 
 ## Decision
 
@@ -65,6 +65,17 @@ forty-frame case is checked robust through 0.25 m under its stated assumptions;
 the research lane must repair its strict inner boundary and retain measured residual
 uncertainty rather than freezing adjacency. A claimed realized counterexample must
 supply its actual displacements; aggregate counts cannot substitute for them.
+
+The [position-observation boundary](PERCEPTION_POSITION_OBSERVATIONS_2026-09-17.md)
+now accepts source-bound returned centers and residual errors. It checks subject
+applicability across output changes, retains partial intersection uncertainty and
+rejects vacuous support from conflicting premises. Identical hypothetical observations
+apply to two retained configurations, but the second decision stays unresolved and
+the first proof cannot be reused. This supplies a common checking interface for the
+research lane's histories. It does not establish avoided queries or economic benefit.
+Consume it without restarting an already frozen experiment or changing that experiment's
+answers, cohort, seeds or selection rules after results are visible. A new contract
+requires a separately identified experiment version.
 
 1. **Finish the common proof boundary.** Check complete local deletion coverage, shared global
    budgets, every compatible joint world and strict thresholds. An allowed counterexample under

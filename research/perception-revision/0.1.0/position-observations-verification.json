@@ -1,0 +1,282 @@
+{
+  "artifact_id": "reiyah.perception-revision.position-observations-verification",
+  "base_commit": "b41963ed8c9cc2b5a797b74d3532cde2f793797d",
+  "checkpoint_root": "/Users/danielwahnich/.codex/reports/reiyah/engine-position-observations-2026-09-17-d8px4y6_",
+  "costs": {
+    "api_production_seconds": 50.564932793146,
+    "assay_internal_seconds": 153.43798174988478,
+    "assay_supervisor_seconds": 154.56426533288322,
+    "conventional_same_center_production_and_check_seconds": 20.58257008297369,
+    "fresh_cli_seconds": 57.253795915748924,
+    "scope": "Named call scopes differ; API/CLI subcalls are included in the supervisor duration, not additional totals. Tests overlapped. These figures are not a fair complete-cost comparison or speed advantage.",
+    "separate_api_check_seconds": 21.884352708002552
+  },
+  "development": {
+    "answer_basis": "hypothetical nominal-center answers with stated residual radius",
+    "changed_configuration": {
+      "current": "Mapillary camera base plus retained PointPillars lidar additions",
+      "current_result": "unresolved",
+      "historical_different_context_rejected": true,
+      "identical_hypothetical_observation_bytes": 2299,
+      "initial": "Mapillary camera base plus retained Megvii lidar additions",
+      "old_proof_rejected": true
+    },
+    "eight_current_packets_and_eight_conventional_calculations": true,
+    "fresh_cli_calls": 10,
+    "fresh_cli_exit_counts": {
+      "0": 8,
+      "3": 2
+    },
+    "human_queries": 0,
+    "inputs": "Exposed prior forty-frame and two native census configurations for scene-0101",
+    "previous_quarter_metre_packet_checked": true,
+    "reference_position_measurements": 0,
+    "rows": [
+      {
+        "bounds": {
+          "lower": {
+            "denominator": "20",
+            "numerator": "-57"
+          },
+          "upper": {
+            "denominator": "10",
+            "numerator": "153"
+          }
+        },
+        "conventional_numerical_agreement": true,
+        "execution_status": "succeeded",
+        "name": "forty-prefix-0",
+        "robustness": "unresolved",
+        "supplied_observation_count": 0
+      },
+      {
+        "bounds": {
+          "lower": {
+            "denominator": "5",
+            "numerator": "-14"
+          },
+          "upper": {
+            "denominator": "5",
+            "numerator": "76"
+          }
+        },
+        "conventional_numerical_agreement": true,
+        "execution_status": "succeeded",
+        "name": "forty-prefix-100",
+        "robustness": "unresolved",
+        "supplied_observation_count": 100
+      },
+      {
+        "bounds": {
+          "lower": {
+            "denominator": "5",
+            "numerator": "-12"
+          },
+          "upper": {
+            "denominator": "5",
+            "numerator": "71"
+          }
+        },
+        "conventional_numerical_agreement": true,
+        "execution_status": "succeeded",
+        "name": "forty-prefix-500",
+        "robustness": "unresolved",
+        "supplied_observation_count": 500
+      },
+      {
+        "bounds": {
+          "lower": {
+            "denominator": "5",
+            "numerator": "-8"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "253"
+          }
+        },
+        "conventional_numerical_agreement": true,
+        "execution_status": "succeeded",
+        "name": "forty-prefix-1000",
+        "robustness": "unresolved",
+        "supplied_observation_count": 1000
+      },
+      {
+        "bounds": {
+          "lower": {
+            "denominator": "2",
+            "numerator": "1"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "229"
+          }
+        },
+        "conventional_numerical_agreement": true,
+        "execution_status": "succeeded",
+        "name": "forty-prefix-2299",
+        "robustness": "robust",
+        "supplied_observation_count": 2299
+      },
+      {
+        "bounds": {
+          "lower": {
+            "denominator": "20",
+            "numerator": "51"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "51"
+          }
+        },
+        "conventional_numerical_agreement": true,
+        "execution_status": "succeeded",
+        "name": "forty-all-exact",
+        "robustness": "robust",
+        "supplied_observation_count": 2299
+      },
+      {
+        "bounds": {
+          "lower": {
+            "denominator": "2",
+            "numerator": "1"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "229"
+          }
+        },
+        "conventional_numerical_agreement": true,
+        "execution_status": "succeeded",
+        "name": "census-initial",
+        "robustness": "robust",
+        "supplied_observation_count": 2299
+      },
+      {
+        "bounds": {
+          "lower": {
+            "denominator": "20",
+            "numerator": "-49"
+          },
+          "upper": {
+            "denominator": "20",
+            "numerator": "191"
+          }
+        },
+        "conventional_numerical_agreement": true,
+        "execution_status": "succeeded",
+        "name": "census-changed",
+        "robustness": "unresolved",
+        "supplied_observation_count": 2299
+      }
+    ]
+  },
+  "implementation": {
+    "changed_outputs_supported": true,
+    "commands": [
+      "position-audit",
+      "verify-position-audit"
+    ],
+    "family": "independent_intersections_of_prior_and_observed_closed_balls",
+    "limits_raised": false,
+    "method": "Exact subject applicability and two-ball nonemptiness/containment; smaller-ball outer enclosure; current matching/cover proof",
+    "old_decision_reuse": false,
+    "shared_trusted_code": "Schema, rational geometry and conditioning are shared by producer and checker; checker never calls a matching optimizer."
+  },
+  "nonclaims": [
+    "No measured human audit or query savings.",
+    "No minimum or optimal selection policy.",
+    "No statistical confidence, physical truth, safety or deployment claim.",
+    "No independent external replication or transport verification.",
+    "No frontier or acquisition-value claim.",
+    "No new inference, cloud resource or post/outreach.",
+    "The conservative outer enclosure need not attain its interval endpoints.",
+    "No proof that a stronger method cannot resolve the changed configuration."
+  ],
+  "producer_sha256": "4e870c43eb72e9c2466177e22c37187854153bb9e9f63a76d04b055c472fbd51",
+  "research_owner": {
+    "head_observed_at_start": "4bc28d89a525f6d783d29bbfb3fef41544d6a4a9",
+    "new_sealed_return_adopted": false,
+    "scope": "Continue its active cost/reuse experiment; do not restart it or change its frozen rules.",
+    "unsealed_owner_edits_preserved": true
+  },
+  "retained_bindings": {
+    "PLAN.md": {
+      "bytes": 3662,
+      "sha256": "eb245effe692e1a7613229e47c3eac9c32e752c93e1c9f36bf2838a5c80bac5e"
+    },
+    "SOURCE_BINDINGS.json": {
+      "bytes": 4844,
+      "sha256": "07dccf0d992a3ef19c7d2ad65aef2e9a024592d346b1aad910b09f7d3b7d906b"
+    },
+    "START.json": {
+      "bytes": 1051,
+      "sha256": "6bbafb592607f7d6dec08d3a07ee803d95eb7261d2daab82cc7bf331420763b4"
+    },
+    "captures/position-assay-01/receipt.json": {
+      "bytes": 1108,
+      "sha256": "f02c5a4d2b8ba6feeea9257440a4c2839c57ad297362bafd9d96cf194e4f006a"
+    },
+    "captures/position-assay-01/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "captures/position-assay-01/stdout.txt": {
+      "bytes": 1853,
+      "sha256": "6943a0d5d7857de5e4c7c78caf003f6e70db228e25e0bf3e26c82fe186520ba8"
+    },
+    "captures/position-tests-01/receipt.json": {
+      "bytes": 1117,
+      "sha256": "8a9a1042ea853b49a932fc7c78a9f362484d62e480f896ff86a717a7b1fd8466"
+    },
+    "captures/position-tests-01/stderr.txt": {
+      "bytes": 2563,
+      "sha256": "9023c0bb9e9f06206441c7a63cbee8673f49ec83719b0468ac069b5fe7b3f399"
+    },
+    "captures/position-tests-01/stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "captures/repository-tests-01/receipt.json": {
+      "bytes": 1050,
+      "sha256": "0c7c094471b537ce73309c0fa44d709a78dee9526a6446140b3d57b35cd7f9fa"
+    },
+    "captures/repository-tests-01/stderr.txt": {
+      "bytes": 1282,
+      "sha256": "e87f46803ccd60e269e2d8ea94507fcd938c1080c8e4c1e8b6f10fac59f7a6da"
+    },
+    "captures/repository-tests-01/stdout.txt": {
+      "bytes": 370,
+      "sha256": "9aca8981e615dc93028da28f120da524c2f3b4ec4a72473460918c4cc413da4d"
+    },
+    "private/ASSAY_PLAN.json": {
+      "bytes": 1464,
+      "sha256": "9da2e585ee561cc115c5902fcad47f91d2439d7b373af52a92e7ef002648121f"
+    },
+    "private/ASSAY_PLAN_AMENDMENT_01.md": {
+      "bytes": 1509,
+      "sha256": "7b778b129d44dac5bd1983f75e243f0b0425be373231ae9ebacf081fb6ec6f81"
+    },
+    "private/assay-01/ASSAY_RESULT.json": {
+      "bytes": 34450,
+      "sha256": "d91c437b3c1a89fe7b5a808b874364af74cded423e501212e354908f8d82b7ba"
+    },
+    "private/position_assay.py": {
+      "bytes": 13281,
+      "sha256": "349d08e4bef458b9a3c320c33f13143247c9bf4a9238fd0ba7033adf10c64dd5"
+    },
+    "sources/LITERATURE.json": {
+      "bytes": 1120,
+      "sha256": "58d5c00f8411a3b3e36bc2e3a9d2ca9f55ea5e783c2b6c9a4e1790a0ab1bd73f"
+    }
+  },
+  "status": "exploratory",
+  "validation": {
+    "finite_comparison_answer_problems": 128,
+    "independent_intersection_world_losses": 1856,
+    "measurement_suite": "Unchanged historical 93-test localization-checkpoint evidence; not replayed or counted as fresh here.",
+    "new_position_tests": 13,
+    "repository_tests": 533,
+    "tests_status": "pass"
+  },
+  "version": "0.1.0"
+}

@@ -92,6 +92,15 @@ effort. The original 3,000-case additive replay reproduces 2,981 exact agreement
 six split-wide minima exactly, retains lower/upper gaps for three, and checks all
 nine adverse sets by recomputing 170 changed scene comparisons.
 
+The [position-observation interface](docs/PERCEPTION_POSITION_OBSERVATIONS_2026-09-17.md)
+now checks whether returned positions and their residual errors remain applicable
+after detector outputs change. It combines prior and observed uncertainty, reports
+conflicting premises, and requires a fresh decision proof. On two existing forty-frame
+configurations, the same 2,299 hypothetical observations apply to both: one comparison
+is supported and the other remains unresolved. The old proof rejects on the new
+outputs. This checks observation reuse without assuming conclusion reuse; saved
+queries and total-cost advantage still require the comparative experiment.
+
 As checked on **14 September 2026**, a [new automated replay](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md)
 on the two existing development anchors gives **[1,1]**, conditional on the retained benchmark
 labels and Reiyah's fixed rules. Weighted loss falls from 23.5 to 22.5; one anchor improves and
