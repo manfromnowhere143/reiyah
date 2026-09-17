@@ -201,8 +201,7 @@ class GeoCase:
         started = time.perf_counter()
         case = self.case
         delta = case.delta()
-        if delta <= case.tolerance:
-            return {'criterion': 'excluded', 'delta': str(delta), 'status': 'not_applicable'}
+        excluded = delta <= case.tolerance
         margin = delta - case.tolerance
         unit = case.fn + case.fp
         conf = {}
@@ -230,12 +229,16 @@ class GeoCase:
                 break
         if budget is not None and solver is not None:
             sound = min(sound, budget * max(a.weight for a in self.anchors) * unit)
-        result = {'criterion': 'supported', 'delta': str(delta), 'margin': str(margin), 'epsilon': self.eps,
+        result = {'criterion': 'excluded' if excluded else 'supported', 'delta': str(delta), 'margin': str(margin), 'epsilon': self.eps,
                   'confirmed': len(confirmed), 'boundary_edges_unconfirmed': boundary_total,
                   'sound_max_drop': str(sound), 'sound': 'robust' if sound < margin else 'unresolved',
                   'solver_max_drop': None if solver is None else str(solver)}
         if solver is None:
             result['status'] = 'solver_failed'
+            return result
+        if excluded:
+            result['status'] = 'excluded_max_drop_only'
+            result['seconds'] = round(time.perf_counter() - started, 2)
             return result
         if solver < margin:
             result['status'] = 'robust'

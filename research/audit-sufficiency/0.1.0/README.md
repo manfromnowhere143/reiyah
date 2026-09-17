@@ -298,6 +298,47 @@ Limits: independent-flip relaxation (sound for robust, exhibited for realized, o
 planar displacement only; class-preserving; the same 2019 to 2020 submissions and correlated units
 as the deletion census; no human measurement occurred.
 
+## Split-level verdicts: the leaderboard margin
+
+Dated 17 September 2026. `split_level.py`; aggregates in `split-level.json`. The pair verdict on
+the whole validation split is the equal-weight mean of the 150 scene decisions under the same
+criterion. The deletion adversary spends deletions anywhere on the split, taking the largest
+per-deletion steps first from the additive pools (exact when the pools suffice, which they did for
+every supported pair). The position adversary's per-scene maxima add across all 150 scenes,
+excluded scenes included (their gain can still be lowered). A split-level position result is
+proven when the summed maxima stay below the margin; when they cross it is reported as not proven,
+because realization was checked per scene, not for the summed pattern.
+
+| Pair (base -> +addition) | Split delta | Scenes supported | Deletions to overturn (share of 148,441 labels) | Robust at 10 cm / 25 cm / 50 cm / 1 m | Largest proven epsilon |
+|---|---:|---:|---:|---|---|
+| centerpoint -> +fcos3d | -0.731 | 3 | excluded | | |
+| centerpoint -> +mapillary | -2.082 | 4 | excluded | | |
+| centerpoint -> +megvii | -1.209 | 11 | excluded | | |
+| centerpoint -> +pointpillars | -1.332 | 11 | excluded | | |
+| fcos3d -> +centerpoint | 1.800 | 86 | **4,972** (3.35%) | yes / yes / yes / no | 0.50 m |
+| fcos3d -> +mapillary | 0.927 | 86 | **2,420** (1.63%) | yes / yes / no / no | 0.25 m |
+| fcos3d -> +megvii | 2.970 | 114 | **8,481** (5.71%) | yes / yes / yes / yes | 1.00 m |
+| fcos3d -> +pointpillars | 1.764 | 99 | **4,902** (3.30%) | yes / yes / yes / yes | 1.00 m |
+| mapillary -> +centerpoint | -0.471 | 61 | excluded | | |
+| mapillary -> +fcos3d | 0.056 | 63 | excluded | | |
+| mapillary -> +megvii | 0.981 | 92 | **2,577** (1.74%) | yes / yes / no / no | 0.25 m |
+| mapillary -> +pointpillars | 0.431 | 77 | **968** (0.65%) | yes / yes / no / no | 0.25 m |
+| megvii -> +centerpoint | -2.058 | 16 | excluded | | |
+| megvii -> +fcos3d | -0.377 | 27 | excluded | | |
+| megvii -> +mapillary | -1.476 | 15 | excluded | | |
+| megvii -> +pointpillars | -1.081 | 20 | excluded | | |
+| pointpillars -> +centerpoint | 0.068 | 69 | excluded | | |
+| pointpillars -> +fcos3d | 0.690 | 108 | **1,733** (1.17%) | yes / yes / yes / no | 0.50 m |
+| pointpillars -> +mapillary | 0.189 | 59 | **260** (0.18%) | no / no / no / no | none proven |
+| pointpillars -> +megvii | 1.167 | 104 | **3,120** (2.10%) | yes / yes / yes / no | 0.50 m |
+
+Nine of twenty ordered pairs are supported on the split. Their margins differ by a factor of 30
+in labels (260 to 8,481) and from none proven to 1 m in position. "Adding Mapillary to
+PointPillars helps" holds on 59 scenes and on the split, and is overturned by 260 deletions
+(0.18% of labels); its position robustness is not proven even at 10 cm. "Adding Megvii to FCOS3D
+helps" survives 8,481 deletions and 1 m of position error. A leaderboard that printed these two
+verdicts as two metric differences would show no such distinction.
+
 ## Which error family threatens which verdict: insertion monotonicity
 
 Claim. Adding a reference object never decreases `TP_augmented - TP_base`. Hence an inserted

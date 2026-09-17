@@ -20,9 +20,13 @@ def _alarm(signum, frame):
     raise UnitTimeout()
 
 
+NO_AUDIT = False
+
+
 def one(args):
     import signal
-    path, EPS = args
+    global NO_AUDIT
+    path, EPS, NO_AUDIT = args
     raw = json.load(open(path))
     out = {'unit': raw['comparison_id'], 'labels': sum(len(a['reference']['objects']) for a in raw['anchors']), 'by_epsilon': {}}
     signal.signal(signal.SIGALRM, _alarm)
@@ -37,7 +41,7 @@ def one(args):
             continue
         row = {k: v for k, v in cert.items() if k in ('status', 'margin', 'solver_max_drop', 'sound', 'boundary_edges_unconfirmed', 'objects_moved', 'objects_unrealized', 'flips', 'achieved')}
         row['boundary_objects'] = len({(a.id, o) for a in geo.anchors for _, o, _ in a.boundary})
-        if cert.get('status', '').startswith('insufficient'):
+        if cert.get('status', '').startswith('insufficient') and not NO_AUDIT:
             try:
                 row['audit_guided'] = audit_counterexample_guided(geo, batch=20, max_rounds=40)
             except UnitTimeout:
@@ -56,12 +60,13 @@ def main():
             break
         EPS.append(float(v))
     workers = int(sys.argv[sys.argv.index('--workers') + 1]) if '--workers' in sys.argv else 4
-    supported = [r['unit'] for r in json.load(open(census))['rows'] if r['criterion'] == 'supported']
+    which = 'excluded' if '--excluded-units' in sys.argv else 'supported'
+    supported = [r['unit'] for r in json.load(open(census))['rows'] if r['criterion'] == which]
     files = [os.path.join(unit_dir, u + '.json') for u in sorted(supported)]
     t0 = time.perf_counter()
     rows = []
     with Pool(workers) as pool:
-        for i, row in enumerate(pool.imap_unordered(one, [(f, EPS) for f in files], chunksize=2), 1):
+        for i, row in enumerate(pool.imap_unordered(one, [(f, EPS, '--no-audit' in sys.argv) for f in files], chunksize=2), 1):
             rows.append(row)
             if i % 50 == 0 or i == len(files):
                 print('done', i, 'of', len(files), round(time.perf_counter() - t0, 1), flush=True)

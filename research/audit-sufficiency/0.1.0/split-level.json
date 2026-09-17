@@ -1,0 +1,376 @@
+{
+ "centerpoint -> +fcos3d": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "-46757/63960",
+  "criterion": "excluded",
+  "scenes_supported": 3
+ },
+ "centerpoint -> +mapillary": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "-6659011/3198000",
+  "criterion": "excluded",
+  "scenes_supported": 4
+ },
+ "centerpoint -> +megvii": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "-644331/533000",
+  "criterion": "excluded",
+  "scenes_supported": 11
+ },
+ "centerpoint -> +pointpillars": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "-12777589/9594000",
+  "criterion": "excluded",
+  "scenes_supported": 11
+ },
+ "fcos3d -> +centerpoint": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "17264497/9594000",
+  "criterion": "supported",
+  "scenes_supported": 86,
+  "deletions_to_overturn": 4972,
+  "deletions_share_of_labels": 0.0335,
+  "deletion_bound_kind": "exact_by_pool",
+  "localization": {
+   "0.1": {
+    "max_drop": "633299/4797000",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.25": {
+    "max_drop": "862327/2398500",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.5": {
+    "max_drop": "1820101/2398500",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "1.0": {
+    "max_drop": "9440507/4797000",
+    "robust": false,
+    "scenes_bounded_not_solved": 1
+   }
+  },
+  "largest_robust_epsilon_m": 0.5
+ },
+ "fcos3d -> +mapillary": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "8893909/9594000",
+  "criterion": "supported",
+  "scenes_supported": 86,
+  "deletions_to_overturn": 2420,
+  "deletions_share_of_labels": 0.0163,
+  "deletion_bound_kind": "exact_by_pool",
+  "localization": {
+   "0.1": {
+    "max_drop": "10477/61500",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.25": {
+    "max_drop": "449587/959400",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.5": {
+    "max_drop": "200153/184500",
+    "robust": false,
+    "scenes_bounded_not_solved": 0
+   },
+   "1.0": {
+    "max_drop": "1141501/399750",
+    "robust": false,
+    "scenes_bounded_not_solved": 1
+   }
+  },
+  "largest_robust_epsilon_m": 0.25
+ },
+ "fcos3d -> +megvii": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "28495547/9594000",
+  "criterion": "supported",
+  "scenes_supported": 114,
+  "deletions_to_overturn": 8481,
+  "deletions_share_of_labels": 0.05713,
+  "deletion_bound_kind": "exact_by_pool",
+  "localization": {
+   "0.1": {
+    "max_drop": "13427/119925",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.25": {
+    "max_drop": "245333/799500",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.5": {
+    "max_drop": "7169/10660",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "1.0": {
+    "max_drop": "112006/66625",
+    "robust": true,
+    "scenes_bounded_not_solved": 1
+   }
+  },
+  "largest_robust_epsilon_m": 1.0
+ },
+ "fcos3d -> +pointpillars": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "2116037/1199250",
+  "criterion": "supported",
+  "scenes_supported": 99,
+  "deletions_to_overturn": 4902,
+  "deletions_share_of_labels": 0.03302,
+  "deletion_bound_kind": "exact_by_pool",
+  "localization": {
+   "0.1": {
+    "max_drop": "409163/4797000",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.25": {
+    "max_drop": "379849/1599000",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.5": {
+    "max_drop": "2647937/4797000",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "1.0": {
+    "max_drop": "7633369/4797000",
+    "robust": true,
+    "scenes_bounded_not_solved": 1
+   }
+  },
+  "largest_robust_epsilon_m": 1.0
+ },
+ "mapillary -> +centerpoint": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "-1129927/2398500",
+  "criterion": "excluded",
+  "scenes_supported": 61
+ },
+ "mapillary -> +fcos3d": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "33472/599625",
+  "criterion": "excluded",
+  "scenes_supported": 63
+ },
+ "mapillary -> +megvii": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "235219/239850",
+  "criterion": "supported",
+  "scenes_supported": 92,
+  "deletions_to_overturn": 2577,
+  "deletions_share_of_labels": 0.01736,
+  "deletion_bound_kind": "exact_by_pool",
+  "localization": {
+   "0.1": {
+    "max_drop": "719383/4797000",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.25": {
+    "max_drop": "85364/199875",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.5": {
+    "max_drop": "4353671/4797000",
+    "robust": false,
+    "scenes_bounded_not_solved": 0
+   },
+   "1.0": {
+    "max_drop": "998737/399750",
+    "robust": false,
+    "scenes_bounded_not_solved": 9
+   }
+  },
+  "largest_robust_epsilon_m": 0.25
+ },
+ "mapillary -> +pointpillars": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "1377341/3198000",
+  "criterion": "supported",
+  "scenes_supported": 77,
+  "deletions_to_overturn": 968,
+  "deletions_share_of_labels": 0.00652,
+  "deletion_bound_kind": "exact_by_pool",
+  "localization": {
+   "0.1": {
+    "max_drop": "493147/4797000",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.25": {
+    "max_drop": "1486159/4797000",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.5": {
+    "max_drop": "652469/959400",
+    "robust": false,
+    "scenes_bounded_not_solved": 0
+   },
+   "1.0": {
+    "max_drop": "9061519/4797000",
+    "robust": false,
+    "scenes_bounded_not_solved": 8
+   }
+  },
+  "largest_robust_epsilon_m": 0.25
+ },
+ "megvii -> +centerpoint": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "-19740067/9594000",
+  "criterion": "excluded",
+  "scenes_supported": 16
+ },
+ "megvii -> +fcos3d": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "-3614003/9594000",
+  "criterion": "excluded",
+  "scenes_supported": 27
+ },
+ "megvii -> +mapillary": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "-4721339/3198000",
+  "criterion": "excluded",
+  "scenes_supported": 15
+ },
+ "megvii -> +pointpillars": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "-5186999/4797000",
+  "criterion": "excluded",
+  "scenes_supported": 20
+ },
+ "pointpillars -> +centerpoint": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "653759/9594000",
+  "criterion": "excluded",
+  "scenes_supported": 69
+ },
+ "pointpillars -> +fcos3d": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "3310163/4797000",
+  "criterion": "supported",
+  "scenes_supported": 108,
+  "deletions_to_overturn": 1733,
+  "deletions_share_of_labels": 0.01167,
+  "deletion_bound_kind": "exact_by_pool",
+  "localization": {
+   "0.1": {
+    "max_drop": "28819/399750",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.25": {
+    "max_drop": "49937/266500",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.5": {
+    "max_drop": "1942349/4797000",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "1.0": {
+    "max_drop": "740512/599625",
+    "robust": false,
+    "scenes_bounded_not_solved": 5
+   }
+  },
+  "largest_robust_epsilon_m": 0.5
+ },
+ "pointpillars -> +mapillary": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "180911/959400",
+  "criterion": "supported",
+  "scenes_supported": 59,
+  "deletions_to_overturn": 260,
+  "deletions_share_of_labels": 0.00175,
+  "deletion_bound_kind": "exact_by_pool",
+  "localization": {
+   "0.1": {
+    "max_drop": "6029/39000",
+    "robust": false,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.25": {
+    "max_drop": "973723/2398500",
+    "robust": false,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.5": {
+    "max_drop": "1073087/1199250",
+    "robust": false,
+    "scenes_bounded_not_solved": 0
+   },
+   "1.0": {
+    "max_drop": "2448997/959400",
+    "robust": false,
+    "scenes_bounded_not_solved": 5
+   }
+  },
+  "largest_robust_epsilon_m": 0.0
+ },
+ "pointpillars -> +megvii": {
+  "scenes": 150,
+  "labels": 148439,
+  "split_delta": "1243553/1066000",
+  "criterion": "supported",
+  "scenes_supported": 104,
+  "deletions_to_overturn": 3120,
+  "deletions_share_of_labels": 0.02102,
+  "deletion_bound_kind": "exact_by_pool",
+  "localization": {
+   "0.1": {
+    "max_drop": "217463/4797000",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.25": {
+    "max_drop": "147187/1199250",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "0.5": {
+    "max_drop": "169753/599625",
+    "robust": true,
+    "scenes_bounded_not_solved": 0
+   },
+   "1.0": {
+    "max_drop": "5807123/4797000",
+    "robust": false,
+    "scenes_bounded_not_solved": 5
+   }
+  },
+  "largest_robust_epsilon_m": 0.5
+ }
+}
