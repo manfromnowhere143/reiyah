@@ -1,0 +1,63 @@
+{
+  "arms": {
+    "A": [
+      "width",
+      "conventional independent flow matching"
+    ],
+    "B": [
+      "width",
+      "native matching/cover checking"
+    ],
+    "C": [
+      "prior_margin",
+      "native matching/cover checking"
+    ],
+    "D": [
+      "prior_margin",
+      "conventional independent flow matching"
+    ]
+  },
+  "artifact_id": "reiyah.correction-observation.plan",
+  "bounds": "For observed ranks mA,mB, one edit changes each by at most one; clip each rank to [0,nRole], convert paired loss, and intersect with unconditional count bounds. Exact and empty-output cases retain exactness. Global budget uses maximum single weighted downward/upward allowance. Both stopping arms use the same math. These bounds can be conservative.",
+  "budgets": {
+    "native_work_limit": 2000000,
+    "queries_per_case": "number of linked nonzero-width images",
+    "witness_candidates_per_image": 4096,
+    "worker_seconds": 600
+  },
+  "checks": [
+    "source manifest bindings",
+    "reserved outcome access absent by enumerated read paths",
+    "independent matching/native agreement",
+    "small exhaustive graph edit bounds and independent brute matching",
+    "subject/context mismatch, duplicate/reordered answer, invalid proof, missing-output, unknown-family rejection",
+    "mutation test that hidden correction contents do not change visible inputs or initial selection",
+    "replay every ordered query and stopping checkpoint",
+    "retain every case including blocked/unresolved"
+  ],
+  "costs": "Equal unit image counts; timings split preparation, policy, matching/proposal/checking, service and wall. Human preparation, engineering rates, review, integration and human time remain null. No 3x/2x claim from simulated costs.",
+  "decision_rule": "Stop selection/stopping superiority claims if conventional arms match. Inconclusive product economics absent real costs/workflows. Preserve counterexamples and narrow the next useful experiment; do not consume reserved outcomes to tune.",
+  "edit_semantics": "At most one insertion, deletion or replacement of an eligible reference rectangle; arbitrary valid geometry, no inferred correspondence. Per-image budget or one global edit across queried answers. Fixed eligibility policy; not changes to metric or predictions.",
+  "engine_commit": "38a50ec014cc83e86ea6f247df803ded2971b386",
+  "exposure": "Only the 64 previously exposed REC-D development .boxes.json files. Do not read source correction CSV/pickle or any of the 1433 reserved outcomes. Not preregistered or held out.",
+  "families": [
+    "exact_publisher",
+    "one_edit_per_image",
+    "one_edit_global"
+  ],
+  "frozen_utc": "2026-09-17T17:52:53.933807+00:00",
+  "membership": "64 singleton images in retained development order; 16 contiguous blocks of four; all-64 including six blocked; linked-58 cohort admitted solely by input availability. Never pool dependent case groups as independent revisions.",
+  "no_expansion": "No Engine algorithm or limit change, deployment, outreach, paid service, publication, main update or Gate A acceptance.",
+  "observations": "One whole-image publisher corrected-set answer. Simulated access to actual published corrections, no measured human observation. Separate worker sees visible input and queried answers only; no hidden alternatives, sizes or digests.",
+  "parent_commit": "7dd7d5f4c7f7c2f8319663a99ed2d910928ab9d1",
+  "question": "Do realistic whole-image reference observations support fewer justified queries than conventional baselines, and can residual annotation error make those observations insufficient?",
+  "selection": {
+    "prior_margin": "target sign from original-reference total delta (>0 positive; else nonpositive); largest count radius + target sign * original-reference delta, ties by width then development order; fixed per case, never corrected values",
+    "width": "largest initial count-interval width, ties by development order"
+  },
+  "status": "exploratory",
+  "stopping": "Strict improvement delta=L_A-L_B>0; excluded if upper<=0; unresolved otherwise. Query until decisive, every nonzero-width eligible image is queried, or resource failure. No precision upgrades or repeat observations in this instrument.",
+  "uncertainty": "Before each whole-image query the reference set is unrestricted, including arbitrary missing/changed boxes. Published original references are ranking hints only. Fixed outputs and metric.",
+  "version": "0.1.0",
+  "witness_search": "After fixed arms finish, recompute nominal full-reference outcomes for all linked cases. Search one-edit geometric counterexamples using deletions and inserting/replacing with each distinct output rectangle in deterministic order. Every candidate uses independent flow; retain first maximum positive and minimum negative effect per image and native-check selected witnesses. Opposite strict decisions in two admitted worlds prove insufficiency; no witness means only bounded-search failure."
+}

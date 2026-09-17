@@ -1,3 +1,55 @@
+# Reiyah correction-observation continuation, 2026-09-17
+
+Continuation version: `0.1.29`. Status: `exploratory`.
+
+The operator's September 17 handoff authorizes this isolated local research
+continuation. Read [the correction-observation result](../research/correction-observation/0.1.0/README.md)
+and its complete results table. Parent is local value-experiment commit
+`7dd7d5f4c7f7c2f8319663a99ed2d910928ab9d1`; Engine source remains
+`38a50ec014cc83e86ea6f247df803ded2971b386`. No Engine algorithm or limit changed.
+
+Fresh root:
+`~/.codex/reports/reiyah/correction-observation-2026-09-17-hi54oee7/`.
+Read SESSION, PLAN, FREEZE, sources/BINDINGS, PREPARATION, assay-01 RESULTS/REPLAY,
+REFINEMENT_PLAN/FREEZE, analysis-01, refinement-01 RESULTS/VERIFICATION and the
+TWO_EDIT_COROLLARY. The reproduction folder retains an independent execution of
+the same implementation and exposed data, not independent scientific replication.
+Raw operands, oracle answers and native proofs remain private outside Git.
+
+All 64 previously exposed REC-D images are retained, including six input-blocked
+images. The 82 dependent cases include singletons, fixed blocks, all-64 and linked-58.
+A/B and C/D share exact ordered query histories and outcomes on all 246 family/case
+pairs; all four arms tie on per-case counts. Exact publisher answers resolve all
+70 available cases, using 20 singleton, 14 block and 17 admitted-cohort queries.
+The initial residual-per-image and residual-global families use 20, 17 and 20
+queries, with 31 and 29 unresolved cases respectively. The 38 empty-output images
+are zero-query draws, not selector gains.
+
+A separately frozen full-observation follow-up tightens the residual matching
+bound and probes exact geometric boundaries. It proves opposite-decision worlds
+for all 31 residual-per-image unresolved cases. The stronger global-one-edit bound
+resolves one additional block; all remaining 28 unresolved cases have concrete
+counterexamples. The admitted cohort has nominal delta 5/58, universal one-edit
+lower 1/58, and a two-edit witness at -1/58. Thus its minimum arbitrary eligible
+reference edits to exclude strict improvement is two. This is conditional
+sensitivity, not measured error frequency, physical truth or a new query experiment.
+
+Thirteen targeted tests pass, including exhaustive small graph controls. Replay
+checks 984 allocated rows, 660 queries, 1,644 stopping points and 330 native proofs.
+Analysis checks another 176 native packets, 246 full-observation rows and 59
+opposite-decision compositions. All 69 retained source bindings match. Full private
+reproduction reproduces scientific results; the default research consistency check
+passes. Human costs, workflow demand and actual observation error remain unmeasured.
+
+Decision: stop selection/stopping superiority claims for this family; product
+economics are inconclusive and platform expansion remains stopped. The next useful
+work is to qualify a concrete chronological release comparison, the observation
+error contract and measured reviewer workflow using the prepared local brief.
+Do not tune on the 1,433 outcome-reserved images or reinterpret different detector
+names as chronological revisions. No outreach, paid service, publication,
+deployment, main update or Gate A acceptance occurred. Historical records below
+retain their original scopes. Gate A remains operator-unaccepted.
+
 # Reiyah bounded value experiment continuation, 2026-09-17
 
 Continuation version: `0.1.28`. Status: `exploratory`.

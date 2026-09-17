@@ -1,0 +1,13 @@
+{
+  "analysis": "Full-observation adequacy only, after original frozen arms. No claimed query savings from this followup. All bounds available equally to conventional and native arms. Preserve assay-01 and its 984 rows unchanged.",
+  "artifact_id": "reiyah.correction-observation.refinement-plan",
+  "bound": "For nominal reference and each single deletion, compute exact ranks. A newly inserted arbitrary object can raise each rank by zero or one. Take the lower with A increased at most one and B unchanged, upper with B increased at most one and A unchanged; union across nominal/deleted graphs, intersect initial count bounds. Native certificates for each finite graph; independent max flow checks every rank. This covers insertion/deletion/replacement and relaxes geometry of the new object.",
+  "checks": "Exhaustive small graph equality for disjoint outputs, independent flow/native rank agreement, selected geometric witnesses native checked, every combined witness obeys per-image/global budget and strict sign changes.",
+  "costs": "Separate followup compute timing; no human or economic measurements.",
+  "frozen_utc": "2026-09-17T18:08:33.672312+00:00",
+  "population": "Same 64 exposed development images and all 82 assigned cases; no reserve access.",
+  "status": "exploratory_post_assay_followup",
+  "trigger": "Initial residual bounds leave 31 dependent cases unresolved; first geometric probe proves ambiguity for only 14. Distinguish loose bounds from inadequate observations.",
+  "version": "0.1.0",
+  "witness_candidates": "For every fixed output rectangle: original; horizontal translations +/- width/3; vertical translations +/- height/3; each horizontal or vertical half rectangle; one-sided double-width and double-height expansions. Keep fixed height>=25 and magnitude limits. Deduplicate actual neighborhoods against both outputs. Enumerate each new neighborhood with no deletion and each single deletion, plus deletion-only worlds. Deterministic order; at most 2048 geometries and 10000 graph variants per image. These are hypothetical counterexamples, not observed annotation errors."
+}
