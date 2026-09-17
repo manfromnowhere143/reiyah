@@ -50,6 +50,15 @@ returns unresolved intervals for both reversals. All 240 image/block calculation
 the checker. This establishes reference sensitivity and preparation correctness; validation-cost
 savings and performance on the reserved population are still unmeasured.
 
+The [deletion-margin checkpoint](docs/PERCEPTION_DELETION_MARGIN_2026-09-17.md) adds
+a solver-independent matching/cover proof. On the selected 3,000 census graphs,
+it verifies the exact minimum adverse deletion count for **all 1,125 supported
+comparisons**, plus a necessary lower bound on confirmations. Another 1,865
+baselines are checked as excluded; ten reach the unchanged work limit. The median
+minimum is 27 deletions, or 2.41% of included labels. These are conditional graph
+results, not measured label errors, sufficient audit sets or saved validation cost.
+The new proof also supports independently declared A/B replacements.
+
 As checked on **14 September 2026**, a [new automated replay](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md)
 on the two existing development anchors gives **[1,1]**, conditional on the retained benchmark
 labels and Reiyah's fixed rules. Weighted loss falls from 23.5 to 22.5; one anchor improves and
@@ -85,19 +94,21 @@ annotation records, exactly at the decision threshold. The minimum follows from 
 and a matching witness. Original source records and nominal preparation are checked; no label
 error or physical safety result is inferred. The 49 records span eleven dataset instance IDs.
 
-Fable's corrected final census reports all 1,127 supported units at their arithmetic floors,
+Fable's earlier 15 September census reports all 1,127 supported units at their arithmetic floors,
 with 1,873 unsupported baselines among 3,000 declared units. The Engine has source-checked the
-complete delivered case, not every census witness. The corrected counterexample still proves
+complete delivered case at that checkpoint, not every census witness. The newer preparation and
+1,125 checked minima are reported above. The corrected counterexample still proves
 that above-floor minima are possible. The [earlier failure and correction request](docs/PERCEPTION_SCALE_CONSUMER_2026-09-15.md)
 remain available. The subsequent Engine reuse assay and audit checker are linked above. Fable's
 observation-selection work is now consumed through the component checker above; a matched
 comparison with complete costs and the common stopping rule remains outstanding.
 
-The [new census consumer review](docs/PERCEPTION_CENSUS_REVIEW_2026-09-17.md) checks the
+The [preceding census consumer review](docs/PERCEPTION_CENSUS_REVIEW_2026-09-17.md) checks the
 17 September research handoff and reconciles its 3,000 retained aggregate rows. It preserves the
 reported random/adversarial difference while identifying missing stable random-seed custody
-and a printed gate that does not reject mismatches. Census-wide solver claims have not been
-promoted to independently checked Engine certificates.
+and a printed gate that does not reject mismatches. The newer deletion-margin proofs above
+check the supported minima and necessary confirmation bounds. Census-wide sufficient-audit
+upper bounds and random trials remain outside that verification.
 
 The [prediction checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) prepares all **4,876 original
 prediction rows across 16 exposed development keyframes** without reading annotation-bearing

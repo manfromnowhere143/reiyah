@@ -113,6 +113,60 @@ geometry, identity, reviewer error and population shift need explicit additional
 `hypothetical`, `benchmark_reference` and `supplied_external_records` describe supplied premises;
 none authenticates an independent reviewer. No probability distribution over worlds is invented.
 
+## Fixed-world minimum deletion margins
+
+`deletion-margin` proposes a matching/vertex-cover certificate for the minimum number
+of reference deletions that defeats strict improvement. `verify-deletion-margin`
+checks that certificate without calling a matcher or trusting a numerical optimizer.
+The version 0.1.0 scope is one unconditional finite reference world, uniform anchor
+weights, observed A/B outputs and a positive sum of loss penalties. Independent
+replacements and preserved-base additions both fit this contract. Joint worlds,
+open references, unequal weights and zero loss steps remain explicitly unsupported
+by this particular proof method; the existing comparison and audit commands retain
+their broader contracts.
+
+Let `s = (false_negative + false_positive) * anchor_weight`. Any deletion can lower
+the loss improvement by at most s. If baseline delta exceeds tolerance t, the lower
+bound on an adverse deletion count is `ceil((delta-t)/s)`.
+
+For each B graph, the producer supplies a maximum matching and an equal-size vertex
+cover. A pool contains reference vertices in that cover with no A edges. Deleting
+any k members removes k cover vertices and k matched edges: the surviving matching
+and cover still have equal size. B's matching cardinality therefore drops by exactly
+k, while A is unchanged. If the combined pool contains the lower-bound count, that
+count is attained and is the exact minimum. The packet retains an explicit adverse
+subset and its loss. This is an application of established matching/cover reasoning,
+not a new matching theorem or a proof that real labels are wrong.
+
+With pool size m and exact minimum k, any sufficient set of **confirmed-present**
+observations must confirm at least `m-k+1` pool members, if the allowed deletion
+budget is at least k. Otherwise k unconfirmed pool members remain an adverse set.
+This is a necessary bound, not a sufficient audit, an optimum query count, or a
+claim about the result of contradictory audit answers. At a smaller error budget
+the bound does not apply. The existing audit command checks supplied observations
+under their actual budget and outcomes.
+
+The result states `exact`, `lower_bound_only`, or `criterion_already_excluded`.
+`lower_bound_only` leaves attainment unresolved; the method has not proved an adverse
+set exists. Already excluded comparisons have minimum zero. Input, packet, object,
+edge and 2,000,000-work limits are unchanged. The screening estimate also charges
+`D_B + T + E` per anchor for the additional cover traversal. Resource exhaustion
+produces a checked `resource_limited` result and no minimum claim.
+
+For the existing synthetic replacement (delta 2, strict tolerance 1), run:
+
+```sh
+python3 -B -m tools.perception_revision deletion-margin \
+  --input research/perception-revision/0.1.0/replacement-example.json \
+  --input-sha256 df5b8715898a4e6c7a3cdcbe7eaea9b993547a3c2ea535d189a9d43eec25ab0b \
+  --output /tmp/reiyah-deletion-margin-packet.json
+```
+
+The exact minimum is one, the pool has two members, and at least two confirmations
+are necessary when one deletion remains allowed. Use `verify-deletion-margin` with
+the same input and `--packet` / `--packet-sha256` to check the returned packet.
+This packet kind cannot be substituted for a comparison or audit packet.
+
 ## Three distinct reuse operations
 
 **Matching calculation.** `run` can consume a prior input and checked packet. For each current

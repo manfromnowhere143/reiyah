@@ -2,11 +2,41 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.21`
+Version: `0.1.22`
 
 Lifecycle status: `exploratory`
 
-The current [reference-correction checkpoint](PERCEPTION_REFERENCE_CORRECTIONS_2026-09-17.md)
+The [deletion-margin checkpoint](PERCEPTION_DELETION_MARGIN_2026-09-17.md) adds
+`deletion-margin` and `verify-deletion-margin`: a solver-independent matching/cover
+proof for fixed-world, uniformly weighted A/B comparisons. It proves an attained
+deletion lower bound and a necessary confirmed-present count, never audit sufficiency.
+Joint/open reference uncertainty remains outside this particular proof method.
+
+On a consumer-bound snapshot of all 3,000 census graphs, all 1,125 research-supported
+comparisons have checked exact minima and necessary confirmation bounds. Another
+1,865 baselines are checked as excluded; ten retain `resource_limited`. There are no
+disagreements on 2,990 evaluated graphs. Raw-source joins across the whole census,
+solver upper bounds and random trials are not revalidated. Model pairs and scenes
+are dependent. No human-time or superiority claim follows.
+
+The fresh root is `~/.codex/reports/reiyah/engine-deletion-margin-2026-09-17-3ydilss1/`.
+Read PLAN, SOURCE_BINDINGS, SNAPSHOT, GATE, RESULTS, VERIFICATION, final closeout/seal
+and the outbox request. All retained input/packet bytes have checked bindings.
+Validation passes 492 repository tests, 93 measurement tests, six new margin tests
+with 29,724 independent deletion calculations, and four CLI commands. The first
+test-fixture failure and source-parser mismatch remain retained; native admission
+and work limits were not loosened. Gate A remains unaccepted.
+
+Fable's observed localization commit `475ad6e9486feb77772c4c5456b09b9ed297e736` was
+not adopted as a sealed return. Its existing outbox still names `7501c2f`. Preserve
+the research owner's working tree. Next consume its fresh immutable handoff,
+including stable random seeds and a rejecting preparation gate; use these checked
+proofs in matched selection/cost and changed-comparison observation-reuse experiments.
+The Engine retains source/proof ownership. Fable retains selectors and baselines.
+
+## Preceding reference qualification and bounded census review
+
+The preceding [reference-correction checkpoint](PERCEPTION_REFERENCE_CORRECTIONS_2026-09-17.md)
 adds `from-box-alternatives`, an exact 2D adapter for mutually exclusive whole-image reference
 sets. It preserves the existing joint graph model and checker. REC✓D/KITTI publisher data are
 qualified in a fresh private root:

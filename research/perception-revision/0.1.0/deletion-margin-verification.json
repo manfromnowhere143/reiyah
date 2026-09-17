@@ -1,0 +1,166 @@
+{
+  "artifact_id": "reiyah.deletion-margin.census-verification",
+  "checks_of_persisted_bytes": {
+    "native_input_bindings": 3000,
+    "packet_bindings": 3000,
+    "raw_strict_json": 3000,
+    "result_readbacks": 3000
+  },
+  "claim_mismatches": [],
+  "cost_scope": "One local consumer pass including preparation, file IO, production and checking; not a speedup benchmark; other repository tests ran concurrently during part of the pass",
+  "execution_status": {
+    "resource_limited": 10,
+    "succeeded": 2990
+  },
+  "lifecycle_status": "exploratory",
+  "margin_status": {
+    "criterion_already_excluded": 1865,
+    "exact": 1125,
+    "not_evaluated": 10
+  },
+  "minimum_share_of_labels": {
+    "max": 0.2166,
+    "median": 0.0241,
+    "min": 0.0006,
+    "n": 1125,
+    "p10": 0.0044,
+    "p90": 0.0748
+  },
+  "necessary_confirmation_share": {
+    "max": 0.49,
+    "median": 0.115,
+    "min": 0.0048,
+    "n": 1125,
+    "p10": 0.0349,
+    "p90": 0.2305
+  },
+  "necessary_confirmations": {
+    "max": 755,
+    "median": 131,
+    "min": 4,
+    "n": 1125,
+    "p10": 35,
+    "p90": 289
+  },
+  "nonclaims": [
+    "Independent raw-source preparation of every census unit",
+    "Minimum sufficient audit",
+    "Human audit or saved validation cost",
+    "Reproduction of random trials or solver upper bounds",
+    "Statistical independence of 3,000 comparisons",
+    "Scientific novelty or frontier superiority"
+  ],
+  "phase_seconds": {
+    "checking_seconds": 7.037407058523968,
+    "preparation_seconds": 289.21727305906825,
+    "production_seconds": 17.453693547518924
+  },
+  "producer_sha256": "aaed2931a8c56ca35dc709db7a822305f04bfcb82084c6891b7875e884bbdc00",
+  "raw_source_census_rebuilt_here": false,
+  "rejections": [],
+  "resource_limited": [
+    {
+      "research_claimed_criterion": "excluded",
+      "unit": "centerpoint__fcos3d__scene-0018"
+    },
+    {
+      "research_claimed_criterion": "excluded",
+      "unit": "centerpoint__fcos3d__scene-0276"
+    },
+    {
+      "research_claimed_criterion": "excluded",
+      "unit": "centerpoint__mapillary__scene-0017"
+    },
+    {
+      "research_claimed_criterion": "excluded",
+      "unit": "centerpoint__mapillary__scene-0018"
+    },
+    {
+      "research_claimed_criterion": "excluded",
+      "unit": "centerpoint__mapillary__scene-0276"
+    },
+    {
+      "research_claimed_criterion": "excluded",
+      "unit": "centerpoint__megvii__scene-0017"
+    },
+    {
+      "research_claimed_criterion": "excluded",
+      "unit": "centerpoint__megvii__scene-0018"
+    },
+    {
+      "research_claimed_criterion": "excluded",
+      "unit": "centerpoint__megvii__scene-0276"
+    },
+    {
+      "research_claimed_criterion": "excluded",
+      "unit": "centerpoint__pointpillars__scene-0018"
+    },
+    {
+      "research_claimed_criterion": "excluded",
+      "unit": "centerpoint__pointpillars__scene-0276"
+    }
+  ],
+  "retained_bindings": {
+    "captures/census-01/receipt.json": {
+      "bytes": 1093,
+      "sha256": "6b7165be6e396da652527e46be35d1c308b05746ee66916bc31902a4aa043310"
+    },
+    "captures/measurement-tests-01/receipt.json": {
+      "bytes": 1086,
+      "sha256": "4304718b5b96cd22b873e287d85ab1f8ab713b339bf5930ab8da5c346724a182"
+    },
+    "captures/repository-tests-01/receipt.json": {
+      "bytes": 1054,
+      "sha256": "0b526f807bdab63c66f078fb333274f3aca5747a44d64d77a577e1bfda71aa34"
+    },
+    "captures/targeted-01/receipt.json": {
+      "bytes": 1102,
+      "sha256": "f43e4bdedabea953d85521ec2a4db4edf8423a9b67f69cf6d4ed36afc04c6ff5"
+    },
+    "captures/targeted-02/receipt.json": {
+      "bytes": 1102,
+      "sha256": "aee6c49b29d63c5881bb217f2a7377856d83867412b58776d4da102236690f2d"
+    },
+    "private/CLI_CHECK.json": {
+      "bytes": 3627,
+      "sha256": "afe351d71f972405cebc94ba43319ee513d63127dc0a061e2ee8c3296be29412"
+    },
+    "private/GATE.json": {
+      "bytes": 588,
+      "sha256": "4f15e0e15110e9051600f818984bbef2293fa8d895d74f052e3286a28f1cc939"
+    },
+    "private/RESULTS.json": {
+      "bytes": 4124923,
+      "sha256": "eea5897a56d730ecc4b0bf44a34d8f2a001b917dadd0897032f7605204bc2c03"
+    },
+    "private/SNAPSHOT.json": {
+      "bytes": 1036112,
+      "sha256": "9f76da9b722df87af195cf3cc13f8e72b5f8aed9b3be3ebaf027da0062b65b5c"
+    }
+  },
+  "seconds": 321.0038705000188,
+  "source_claim_commit": "7501c2f2e46baf23272564df924ce15fa005dda7",
+  "source_snapshot": "consumer_selected_graphs_matching_copied_private_index",
+  "states": {
+    "checked": 3000
+  },
+  "supported_minimums": {
+    "max": 575,
+    "median": 27,
+    "min": 1,
+    "n": 1125,
+    "p10": 3,
+    "p90": 106
+  },
+  "units": 3000,
+  "validation": {
+    "first_targeted_failure_retained": true,
+    "independent_small_graph_deletion_calculations": 29724,
+    "measurement_tests": 93,
+    "new_targeted_tests": 6,
+    "preparation_gate_known_bad_rejections": 6,
+    "real_cli_commands": 4,
+    "repository_tests": 492
+  },
+  "version": "0.1.0"
+}

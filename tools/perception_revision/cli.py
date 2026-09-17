@@ -6,7 +6,7 @@ import sys
 
 from tools.perception_decision.cli import atomic_write
 from tools.perception_decision.contract import load as legacy_load
-from . import audit, audit_checker, checker, kernel
+from . import audit, audit_checker, checker, kernel, margin, margin_checker
 from .boxes import BOX_SCHEMA, compile_alternatives
 from .contract import (AUDIT_SCHEMA, SCHEMA, Invalid, MAX_INPUT_BYTES, MAX_PACKET_BYTES, encoded, from_addition,
                        load, load_bytes, rebind_observations, require, validate_request)
@@ -25,13 +25,15 @@ def request_input(case, path, digest):
     return validate_request(case, load_bytes(path, digest, validate_input=False))
 
 
-def read_packet(case, input_digest, path, digest, request_digest=None):
+def read_packet(case, input_digest, path, digest, request_digest=None, *, margin_packet=False):
     packet = load_bytes(path, digest, MAX_PACKET_BYTES, validate_input=False)
     fields = {'artifact_id', 'version', 'comparison_id', 'input_sha256', 'producer_sha256', 'payload'}
     if request_digest is not None:
         fields.add('request_sha256')
     require(type(packet) is dict and set(packet) == fields, 'PACKET_SCHEMA', 'Unexpected packet fields')
     artifact = 'reiyah.perception-revision.audit-packet' if request_digest is not None else 'reiyah.perception-revision.packet'
+    if margin_packet:
+        artifact = 'reiyah.perception-revision.deletion-margin-packet'
     require(packet['artifact_id'] == artifact and packet['version'] == '0.1.0'
             and packet['comparison_id'] == case['comparison_id'] and packet['input_sha256'] == input_digest,
             'PACKET_BINDING', 'Wrong comparison, input, version or packet kind')
@@ -53,11 +55,12 @@ def write_output(path, value, limit=MAX_PACKET_BYTES):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     subs = parser.add_subparsers(dest='command', required=True)
-    for command in ('from-addition', 'from-box-alternatives', 'run', 'verify', 'audit', 'verify-audit', 'rebind-audit'):
+    for command in ('from-addition', 'from-box-alternatives', 'run', 'verify', 'audit', 'verify-audit',
+                    'rebind-audit', 'deletion-margin', 'verify-deletion-margin'):
         sub = subs.add_parser(command)
         sub.add_argument('--input', type=Path, required=True)
         sub.add_argument('--input-sha256', required=True)
-        if command in ('verify', 'verify-audit'):
+        if command in ('verify', 'verify-audit', 'verify-deletion-margin'):
             sub.add_argument('--packet', type=Path, required=True)
             sub.add_argument('--packet-sha256', required=True)
         else:
@@ -93,11 +96,15 @@ def main(argv=None):
                 request = request_input(previous, args.request, args.request_sha256)
                 answer = write_output(args.output, rebind_observations(previous, request, case), MAX_INPUT_BYTES)
                 answer['scope'] = 'Same declared reference context; no new physical validation'
-            elif args.command in ('verify', 'verify-audit'):
+            elif args.command in ('verify', 'verify-audit', 'verify-deletion-margin'):
                 request = request_input(case, args.request, args.request_sha256) if args.command == 'verify-audit' else None
                 packet = read_packet(case, args.input_sha256, args.packet, args.packet_sha256,
-                                     args.request_sha256 if request is not None else None)
-                result = audit_checker.check(case, request, packet['payload']) if request is not None else checker.check(case, packet['payload'])
+                                     args.request_sha256 if request is not None else None,
+                                     margin_packet=args.command == 'verify-deletion-margin')
+                if args.command == 'verify-deletion-margin':
+                    result = margin_checker.check(case, packet['payload'])
+                else:
+                    result = audit_checker.check(case, request, packet['payload']) if request is not None else checker.check(case, packet['payload'])
                 answer = {'certificate_checked': True, 'result': result,
                           'producer_matches_current_source': packet['producer_sha256'] == implementation_digest()}
             else:
@@ -105,7 +112,11 @@ def main(argv=None):
                           'comparison_id': case['comparison_id'], 'input_sha256': args.input_sha256,
                           'producer_sha256': implementation_digest()}
                 counters = None
-                if args.command == 'audit':
+                if args.command == 'deletion-margin':
+                    payload = margin.produce(case)
+                    margin_checker.check(case, payload)
+                    packet['artifact_id'] = 'reiyah.perception-revision.deletion-margin-packet'
+                elif args.command == 'audit':
                     request = request_input(case, args.request, args.request_sha256)
                     require(bool(args.candidate) == bool(args.candidate_sha256), 'CANDIDATE_BINDING', 'Candidate requires an expected digest')
                     candidate = load_bytes(args.candidate, args.candidate_sha256, validate_input=False) if args.candidate else None

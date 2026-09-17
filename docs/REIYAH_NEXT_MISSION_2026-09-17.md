@@ -1,6 +1,6 @@
 # Next mission and the evidence required to expand it
 
-Document ID: `reiyah.next-mission`. Version: `0.1.1`. Lifecycle status: `proposed`.
+Document ID: `reiyah.next-mission`. Version: `0.1.2`. Lifecycle status: `proposed`.
 
 ## Decision
 
@@ -32,6 +32,14 @@ and supplied a 2D whole-image-alternative adapter. Two checked preference revers
 the existing deletion family needs an explicit boundary. The next external benchmark protocol
 must prevent corrected reference sets from being visible before their query; the finite-alternative
 adapter assumes they are already supplied. It is not itself a blind audit procedure.
+
+The [deletion-margin proof](PERCEPTION_DELETION_MARGIN_2026-09-17.md) now checks exact
+minimum adverse deletion counts and necessary confirmation bounds for all 1,125
+supported census graphs. This removes solver optimality as a premise for those
+specific quantities. It does not settle the remaining sufficient-audit, query-cost
+or changed-system reuse questions. Its independent A/B contract is available for
+the research lane's replacement experiments; the consumed census itself remains
+preserved-base addition comparisons.
 
 ## Sequence and stopping gates
 
