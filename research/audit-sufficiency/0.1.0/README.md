@@ -262,6 +262,42 @@ one finite reference world; localization, class and insertion errors are not mod
 are conditional on the retained labels. Upper bounds come from one policy with batch 20 and are
 local, not minimal. Nothing here involves a human audit or a physical claim.
 
+## Localization-error census: the same 1,125 verdicts under label position error
+
+Dated 17 September 2026. `localization.py` and `localization_census.py`; aggregates in
+`localization-summary.json`. For every supported verdict and every epsilon, the certificate asks
+whether any reference in which each label position is within epsilon of the retained one can
+overturn the verdict. `robust` is proven under the independent-flip relaxation, so it holds for
+real displacements. `insufficient_realized` means an explicit displacement of specific objects,
+each within epsilon, has been exhibited that overturns the verdict: a physical counterexample.
+`insufficient_relaxed` means the relaxed adversary crosses but no realizing displacement was
+found for at least one object: unresolved between geometry and relaxation. `solver_failed`
+means an anchor MILP hit its 30 s limit and the unit is reported unresolved, never robust.
+When a verdict is not robust, the counterexample-guided audit confirms positions (batch 20, at
+most 40 rounds) until it is; the count is the audit cost.
+
+| Position error allowed | Robust, no audit | Physically realized counterexample | Relaxed only | Solver limit | Median positions to measure | Median share of labels | p90 share |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 0.1 m | 1077 (95.7%) | 42 | 6 | 0 | 8 | 0.9% | 2.3% |
+| 0.25 m | 986 (87.6%) | 97 | 42 | 0 | 20 | 1.8% | 3.8% |
+| 0.5 m | 813 (72.3%) | 129 | 183 | 0 | 20 | 2.9% | 6.6% |
+| 1.0 m | 491 (43.6%) | 112 | 472 | 50 | 53 | 5.6% | 11.9% |
+
+Every audit that ran restored robustness (573 of 584 at 1 m; 11 hit the time cap). Reading:
+
+1. **42 verdicts on this benchmark split (3.7%) are overturned by moving specific labels less
+   than 10 cm**, with the displacement exhibited; 97 (8.6%) by less than 25 cm. nuScenes annotation
+   accuracy is not stated to that precision, so these verdicts are not established by the labels.
+2. Where a verdict is not robust, robustness is restored by measuring a median of 8 positions
+   (10 cm) or 20 positions (25 cm): under 2% of the labels. The certificate names them.
+3. At 1 m about half of all supported verdicts depend on label positions; the deletion and
+   localization families together give each verdict a two-parameter robustness margin
+   (deletions, metres) that the scalar it summarizes does not carry.
+
+Limits: independent-flip relaxation (sound for robust, exhibited for realized, open for relaxed);
+planar displacement only; class-preserving; the same 2019 to 2020 submissions and correlated units
+as the deletion census; no human measurement occurred.
+
 ## Which error family threatens which verdict: insertion monotonicity
 
 Claim. Adding a reference object never decreases `TP_augmented - TP_base`. Hence an inserted

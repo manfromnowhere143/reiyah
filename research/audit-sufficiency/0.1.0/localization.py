@@ -35,6 +35,7 @@ from scipy.sparse import lil_matrix
 from sufficiency import Case, hopcroft_karp, rational
 
 NEAR = 2.0
+SOLVER_TIME_LIMIT = 30.0   # seconds per anchor MILP; a limit hit is reported as solver_failed, never as robust
 
 
 class GeoAnchor:
@@ -135,7 +136,7 @@ class GeoAnchor:
         integrality = np.zeros(n)
         integrality[:nf + nc] = 1
         res = milp(c=cost, constraints=LinearConstraint(A, np.array(lo), np.array(hi)),
-                   integrality=integrality, bounds=Bounds(0, 1))
+                   integrality=integrality, bounds=Bounds(0, 1), options={'time_limit': SOLVER_TIME_LIMIT})
         if res.status != 0:
             return {'flips': None, 'gain_after': None, 'solver_gain_after': None, 'status': 'solver_%d' % res.status, 'verified': False}
         chosen = [(d, o, p) for (d, o, p) in flips if res.x[fi[(d, o)]] > 0.5]
@@ -196,7 +197,7 @@ class GeoCase:
         self.eps = eps
         self.anchors = [GeoAnchor(a, eps) for a in raw['anchors']]
 
-    def certificate(self, confirmed=frozenset(), budget=None):
+    def certificate(self, confirmed=frozenset(), budget=None, realize=True):
         started = time.perf_counter()
         case = self.case
         delta = case.delta()
@@ -249,14 +250,18 @@ class GeoCase:
             moved = 0
             unrealized = 0
             for a, flips in chosen_all:
-                real = a.realize(flips)
-                moved += len(real)
-                unrealized += sum(1 for v in real.values() if v is None)
+                if realize:
+                    real = a.realize(flips)
+                    moved += len(real)
+                    unrealized += sum(1 for v in real.values() if v is None)
+                else:
+                    moved += len({o for _, o, _ in flips})
+                    unrealized = None
             result['objects_moved'] = moved
             result['objects_unrealized'] = unrealized
             result['flips'] = sum(len(f) for _, f in chosen_all)
             result['status'] = ('insufficient_realized' if (unrealized == 0 and total <= case.tolerance)
-                                else 'insufficient_relaxed')
+                                else 'insufficient_relaxed' if realize else 'insufficient_unchecked')
         result['seconds'] = round(time.perf_counter() - started, 2)
         result['_confirmed'] = sorted(confirmed)
         result['_moved'] = [(a.id, o) for a, flips in chosen_all for o in {o for _, o, _ in flips}]
@@ -266,7 +271,7 @@ class GeoCase:
 def audit_boundary_first(geo, batch=10, max_rounds=500):
     """Confirm the positions of objects with the most unconfirmed boundary edges until robust."""
     confirmed = set()
-    cert = geo.certificate(frozenset(confirmed))
+    cert = geo.certificate(frozenset(confirmed), realize=False)
     rounds = 0
     while cert.get('status', '').startswith('insufficient') and rounds < max_rounds:
         counts = {}
@@ -279,13 +284,13 @@ def audit_boundary_first(geo, batch=10, max_rounds=500):
             break
         confirmed.update(picks)
         rounds += 1
-        cert = geo.certificate(frozenset(confirmed))
+        cert = geo.certificate(frozenset(confirmed), realize=False)
     return {'confirmed_positions': len(confirmed), 'rounds': rounds, 'final_status': cert.get('status')}
 
 
 def audit_counterexample_guided(geo, batch=10, max_rounds=500):
     confirmed = set()
-    cert = geo.certificate(frozenset(confirmed))
+    cert = geo.certificate(frozenset(confirmed), realize=False)
     rounds = 0
     while cert.get('status', '').startswith('insufficient') and rounds < max_rounds:
         picks = [m for m in cert['_moved'] if m not in confirmed][:batch]
@@ -293,7 +298,7 @@ def audit_counterexample_guided(geo, batch=10, max_rounds=500):
             break
         confirmed.update(picks)
         rounds += 1
-        cert = geo.certificate(frozenset(confirmed))
+        cert = geo.certificate(frozenset(confirmed), realize=False)
     return {'confirmed_positions': len(confirmed), 'rounds': rounds, 'final_status': cert.get('status')}
 
 

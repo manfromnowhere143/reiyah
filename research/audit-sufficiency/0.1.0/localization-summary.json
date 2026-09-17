@@ -1,0 +1,607 @@
+{
+ "supported_units": 1125,
+ "epsilons": [
+  0.1,
+  0.25,
+  0.5,
+  1.0
+ ],
+ "by_epsilon": {
+  "0.1": {
+   "status": {
+    "robust": 1077,
+    "insufficient_realized": 42,
+    "insufficient_relaxed": 6
+   },
+   "robust_share": 0.9573,
+   "boundary_objects_share_of_labels": {
+    "n": 1125,
+    "min": 0.0,
+    "p10": 0.0091,
+    "median": 0.032,
+    "p90": 0.0866,
+    "max": 0.1771
+   },
+   "audit_positions": {
+    "n": 48,
+    "min": 1,
+    "p10": 3,
+    "median": 8,
+    "p90": 27,
+    "max": 60
+   },
+   "audit_share_of_labels": {
+    "n": 48,
+    "min": 0.0014,
+    "p10": 0.0041,
+    "median": 0.0093,
+    "p90": 0.0228,
+    "max": 0.0437
+   },
+   "audit_final_status": {
+    "robust": 48
+   },
+   "seconds": {
+    "n": 1125,
+    "min": 0.0,
+    "p10": 0.01,
+    "median": 0.06,
+    "p90": 0.21,
+    "max": 1.33
+   }
+  },
+  "0.25": {
+   "status": {
+    "robust": 986,
+    "insufficient_realized": 97,
+    "insufficient_relaxed": 42
+   },
+   "robust_share": 0.8764,
+   "boundary_objects_share_of_labels": {
+    "n": 1125,
+    "min": 0.0,
+    "p10": 0.0256,
+    "median": 0.0783,
+    "p90": 0.1948,
+    "max": 0.328
+   },
+   "audit_positions": {
+    "n": 139,
+    "min": 1,
+    "p10": 5,
+    "median": 20,
+    "p90": 40,
+    "max": 140
+   },
+   "audit_share_of_labels": {
+    "n": 139,
+    "min": 0.0023,
+    "p10": 0.0087,
+    "median": 0.0181,
+    "p90": 0.0379,
+    "max": 0.1066
+   },
+   "audit_final_status": {
+    "robust": 139
+   },
+   "seconds": {
+    "n": 1125,
+    "min": 0.0,
+    "p10": 0.02,
+    "median": 0.09,
+    "p90": 0.26,
+    "max": 2.35
+   }
+  },
+  "0.5": {
+   "status": {
+    "robust": 813,
+    "insufficient_realized": 129,
+    "insufficient_relaxed": 183
+   },
+   "robust_share": 0.7227,
+   "boundary_objects_share_of_labels": {
+    "n": 1125,
+    "min": 0.0,
+    "p10": 0.0548,
+    "median": 0.156,
+    "p90": 0.3245,
+    "max": 0.4878
+   },
+   "audit_positions": {
+    "n": 312,
+    "min": 2,
+    "p10": 11,
+    "median": 20,
+    "p90": 80,
+    "max": 260
+   },
+   "audit_share_of_labels": {
+    "n": 312,
+    "min": 0.002,
+    "p10": 0.012,
+    "median": 0.0292,
+    "p90": 0.0662,
+    "max": 0.1872
+   },
+   "audit_final_status": {
+    "robust": 312
+   },
+   "seconds": {
+    "n": 1125,
+    "min": 0.0,
+    "p10": 0.03,
+    "median": 0.17,
+    "p90": 0.81,
+    "max": 15.29
+   }
+  },
+  "1.0": {
+   "status": {
+    "robust": 491,
+    "insufficient_relaxed": 472,
+    "insufficient_realized": 112,
+    "solver_failed": 50
+   },
+   "robust_share": 0.4364,
+   "boundary_objects_share_of_labels": {
+    "n": 1125,
+    "min": 0.0204,
+    "p10": 0.1422,
+    "median": 0.3222,
+    "p90": 0.4898,
+    "max": 0.6433
+   },
+   "audit_positions": {
+    "n": 573,
+    "min": 1,
+    "p10": 20,
+    "median": 53,
+    "p90": 160,
+    "max": 420
+   },
+   "audit_share_of_labels": {
+    "n": 573,
+    "min": 0.0016,
+    "p10": 0.0178,
+    "median": 0.0556,
+    "p90": 0.1194,
+    "max": 0.2732
+   },
+   "audit_final_status": {
+    "robust": 573,
+    "timed_out": 11
+   },
+   "seconds": {
+    "n": 1125,
+    "min": 0.01,
+    "p10": 0.08,
+    "median": 0.56,
+    "p90": 16.56,
+    "max": 192.66
+   }
+  }
+ },
+ "by_pair": {
+  "centerpoint -> +fcos3d": {
+   "0.1": {
+    "insufficient_realized": 2,
+    "robust": 1
+   },
+   "0.25": {
+    "insufficient_realized": 2,
+    "robust": 1
+   },
+   "0.5": {
+    "insufficient_realized": 2,
+    "robust": 1
+   },
+   "1.0": {
+    "insufficient_relaxed": 2,
+    "insufficient_realized": 1
+   }
+  },
+  "centerpoint -> +mapillary": {
+   "0.1": {
+    "robust": 3,
+    "insufficient_realized": 1
+   },
+   "0.25": {
+    "robust": 3,
+    "insufficient_realized": 1
+   },
+   "0.5": {
+    "robust": 1,
+    "insufficient_relaxed": 2,
+    "insufficient_realized": 1
+   },
+   "1.0": {
+    "robust": 1,
+    "insufficient_relaxed": 3
+   }
+  },
+  "centerpoint -> +megvii": {
+   "0.1": {
+    "robust": 11
+   },
+   "0.25": {
+    "robust": 10,
+    "insufficient_realized": 1
+   },
+   "0.5": {
+    "robust": 9,
+    "insufficient_relaxed": 1,
+    "insufficient_realized": 1
+   },
+   "1.0": {
+    "robust": 7,
+    "insufficient_relaxed": 2,
+    "insufficient_realized": 1,
+    "solver_failed": 1
+   }
+  },
+  "centerpoint -> +pointpillars": {
+   "0.1": {
+    "robust": 11
+   },
+   "0.25": {
+    "robust": 10,
+    "insufficient_relaxed": 1
+   },
+   "0.5": {
+    "robust": 8,
+    "insufficient_realized": 2,
+    "insufficient_relaxed": 1
+   },
+   "1.0": {
+    "insufficient_relaxed": 5,
+    "robust": 4,
+    "insufficient_realized": 1,
+    "solver_failed": 1
+   }
+  },
+  "fcos3d -> +centerpoint": {
+   "0.1": {
+    "robust": 85,
+    "insufficient_realized": 1
+   },
+   "0.25": {
+    "robust": 82,
+    "insufficient_realized": 4
+   },
+   "0.5": {
+    "robust": 78,
+    "insufficient_relaxed": 2,
+    "insufficient_realized": 6
+   },
+   "1.0": {
+    "robust": 66,
+    "insufficient_relaxed": 14,
+    "insufficient_realized": 5,
+    "solver_failed": 1
+   }
+  },
+  "fcos3d -> +mapillary": {
+   "0.1": {
+    "robust": 78,
+    "insufficient_relaxed": 1,
+    "insufficient_realized": 7
+   },
+   "0.25": {
+    "robust": 65,
+    "insufficient_relaxed": 5,
+    "insufficient_realized": 16
+   },
+   "0.5": {
+    "robust": 41,
+    "insufficient_relaxed": 29,
+    "insufficient_realized": 16
+   },
+   "1.0": {
+    "insufficient_relaxed": 68,
+    "robust": 9,
+    "insufficient_realized": 8,
+    "solver_failed": 1
+   }
+  },
+  "fcos3d -> +megvii": {
+   "0.1": {
+    "robust": 112,
+    "insufficient_realized": 2
+   },
+   "0.25": {
+    "robust": 109,
+    "insufficient_realized": 5
+   },
+   "0.5": {
+    "robust": 103,
+    "insufficient_relaxed": 4,
+    "insufficient_realized": 7
+   },
+   "1.0": {
+    "insufficient_realized": 9,
+    "robust": 90,
+    "insufficient_relaxed": 14,
+    "solver_failed": 1
+   }
+  },
+  "fcos3d -> +pointpillars": {
+   "0.1": {
+    "robust": 97,
+    "insufficient_realized": 2
+   },
+   "0.25": {
+    "robust": 93,
+    "insufficient_realized": 4,
+    "insufficient_relaxed": 2
+   },
+   "0.5": {
+    "robust": 87,
+    "insufficient_realized": 8,
+    "insufficient_relaxed": 4
+   },
+   "1.0": {
+    "robust": 66,
+    "insufficient_relaxed": 23,
+    "insufficient_realized": 9,
+    "solver_failed": 1
+   }
+  },
+  "mapillary -> +centerpoint": {
+   "0.1": {
+    "robust": 58,
+    "insufficient_relaxed": 1,
+    "insufficient_realized": 2
+   },
+   "0.25": {
+    "robust": 50,
+    "insufficient_realized": 6,
+    "insufficient_relaxed": 5
+   },
+   "0.5": {
+    "insufficient_relaxed": 27,
+    "robust": 29,
+    "insufficient_realized": 5
+   },
+   "1.0": {
+    "insufficient_relaxed": 48,
+    "solver_failed": 5,
+    "robust": 8
+   }
+  },
+  "mapillary -> +fcos3d": {
+   "0.1": {
+    "robust": 58,
+    "insufficient_realized": 4,
+    "insufficient_relaxed": 1
+   },
+   "0.25": {
+    "insufficient_realized": 9,
+    "robust": 47,
+    "insufficient_relaxed": 7
+   },
+   "0.5": {
+    "insufficient_realized": 14,
+    "robust": 23,
+    "insufficient_relaxed": 26
+   },
+   "1.0": {
+    "insufficient_relaxed": 44,
+    "robust": 7,
+    "solver_failed": 6,
+    "insufficient_realized": 6
+   }
+  },
+  "mapillary -> +megvii": {
+   "0.1": {
+    "robust": 89,
+    "insufficient_realized": 3
+   },
+   "0.25": {
+    "robust": 84,
+    "insufficient_realized": 8
+   },
+   "0.5": {
+    "robust": 67,
+    "insufficient_realized": 14,
+    "insufficient_relaxed": 11
+   },
+   "1.0": {
+    "insufficient_relaxed": 48,
+    "insufficient_realized": 6,
+    "solver_failed": 8,
+    "robust": 30
+   }
+  },
+  "mapillary -> +pointpillars": {
+   "0.1": {
+    "robust": 72,
+    "insufficient_realized": 5
+   },
+   "0.25": {
+    "robust": 64,
+    "insufficient_realized": 7,
+    "insufficient_relaxed": 6
+   },
+   "0.5": {
+    "robust": 52,
+    "insufficient_relaxed": 18,
+    "insufficient_realized": 7
+   },
+   "1.0": {
+    "insufficient_relaxed": 40,
+    "robust": 27,
+    "solver_failed": 8,
+    "insufficient_realized": 2
+   }
+  },
+  "megvii -> +centerpoint": {
+   "0.1": {
+    "robust": 15,
+    "insufficient_relaxed": 1
+   },
+   "0.25": {
+    "robust": 14,
+    "insufficient_relaxed": 2
+   },
+   "0.5": {
+    "robust": 13,
+    "insufficient_relaxed": 2,
+    "insufficient_realized": 1
+   },
+   "1.0": {
+    "robust": 6,
+    "insufficient_relaxed": 10
+   }
+  },
+  "megvii -> +fcos3d": {
+   "0.1": {
+    "robust": 25,
+    "insufficient_realized": 2
+   },
+   "0.25": {
+    "insufficient_realized": 5,
+    "insufficient_relaxed": 2,
+    "robust": 20
+   },
+   "0.5": {
+    "insufficient_realized": 7,
+    "insufficient_relaxed": 7,
+    "robust": 13
+   },
+   "1.0": {
+    "insufficient_relaxed": 16,
+    "insufficient_realized": 9,
+    "robust": 2
+   }
+  },
+  "megvii -> +mapillary": {
+   "0.1": {
+    "robust": 14,
+    "insufficient_realized": 1
+   },
+   "0.25": {
+    "robust": 13,
+    "insufficient_relaxed": 1,
+    "insufficient_realized": 1
+   },
+   "0.5": {
+    "robust": 8,
+    "insufficient_relaxed": 6,
+    "insufficient_realized": 1
+   },
+   "1.0": {
+    "robust": 4,
+    "insufficient_relaxed": 10,
+    "insufficient_realized": 1
+   }
+  },
+  "megvii -> +pointpillars": {
+   "0.1": {
+    "robust": 20
+   },
+   "0.25": {
+    "robust": 18,
+    "insufficient_realized": 2
+   },
+   "0.5": {
+    "robust": 16,
+    "insufficient_realized": 2,
+    "insufficient_relaxed": 2
+   },
+   "1.0": {
+    "robust": 10,
+    "insufficient_relaxed": 8,
+    "insufficient_realized": 2
+   }
+  },
+  "pointpillars -> +centerpoint": {
+   "0.1": {
+    "robust": 69
+   },
+   "0.25": {
+    "robust": 68,
+    "insufficient_relaxed": 1
+   },
+   "0.5": {
+    "robust": 62,
+    "insufficient_relaxed": 4,
+    "insufficient_realized": 3
+   },
+   "1.0": {
+    "robust": 45,
+    "insufficient_relaxed": 16,
+    "insufficient_realized": 4,
+    "solver_failed": 4
+   }
+  },
+  "pointpillars -> +fcos3d": {
+   "0.1": {
+    "robust": 103,
+    "insufficient_realized": 4,
+    "insufficient_relaxed": 1
+   },
+   "0.25": {
+    "robust": 95,
+    "insufficient_realized": 8,
+    "insufficient_relaxed": 5
+   },
+   "0.5": {
+    "insufficient_realized": 18,
+    "robust": 75,
+    "insufficient_relaxed": 15
+   },
+   "1.0": {
+    "insufficient_relaxed": 46,
+    "robust": 28,
+    "insufficient_realized": 29,
+    "solver_failed": 5
+   }
+  },
+  "pointpillars -> +mapillary": {
+   "0.1": {
+    "robust": 53,
+    "insufficient_realized": 5,
+    "insufficient_relaxed": 1
+   },
+   "0.25": {
+    "robust": 41,
+    "insufficient_realized": 14,
+    "insufficient_relaxed": 4
+   },
+   "0.5": {
+    "insufficient_relaxed": 20,
+    "robust": 32,
+    "insufficient_realized": 7
+   },
+   "1.0": {
+    "insufficient_relaxed": 43,
+    "insufficient_realized": 8,
+    "robust": 5,
+    "solver_failed": 3
+   }
+  },
+  "pointpillars -> +megvii": {
+   "0.1": {
+    "robust": 103,
+    "insufficient_realized": 1
+   },
+   "0.25": {
+    "robust": 99,
+    "insufficient_relaxed": 1,
+    "insufficient_realized": 4
+   },
+   "0.5": {
+    "robust": 95,
+    "insufficient_relaxed": 2,
+    "insufficient_realized": 7
+   },
+   "1.0": {
+    "robust": 76,
+    "insufficient_relaxed": 12,
+    "solver_failed": 5,
+    "insufficient_realized": 11
+   }
+  }
+ }
+}

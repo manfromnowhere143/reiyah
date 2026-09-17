@@ -12,21 +12,37 @@ from multiprocessing import Pool
 
 from localization import GeoCase, audit_counterexample_guided
 
+class UnitTimeout(Exception):
+    pass
+
+
+def _alarm(signum, frame):
+    raise UnitTimeout()
+
+
 def one(args):
+    import signal
     path, EPS = args
     raw = json.load(open(path))
     out = {'unit': raw['comparison_id'], 'labels': sum(len(a['reference']['objects']) for a in raw['anchors']), 'by_epsilon': {}}
+    signal.signal(signal.SIGALRM, _alarm)
     for eps in EPS:
         t0 = time.perf_counter()
-        geo = GeoCase(raw, eps)
-        cert = geo.certificate()
+        signal.alarm(180)
+        try:
+            geo = GeoCase(raw, eps)
+            cert = geo.certificate()
+        except UnitTimeout:
+            out['by_epsilon'][str(eps)] = {'status': 'timed_out', 'seconds': round(time.perf_counter() - t0, 1)}
+            continue
         row = {k: v for k, v in cert.items() if k in ('status', 'margin', 'solver_max_drop', 'sound', 'boundary_edges_unconfirmed', 'objects_moved', 'objects_unrealized', 'flips', 'achieved')}
         row['boundary_objects'] = len({(a.id, o) for a in geo.anchors for _, o, _ in a.boundary})
         if cert.get('status', '').startswith('insufficient'):
-            if eps <= 0.5 or cert.get('boundary_edges_unconfirmed', 0) <= 1500:
+            try:
                 row['audit_guided'] = audit_counterexample_guided(geo, batch=20, max_rounds=40)
-            else:
-                row['audit_guided'] = {'skipped': 'more than 1500 boundary edges at this epsilon'}
+            except UnitTimeout:
+                row['audit_guided'] = {'timed_out': True}
+        signal.alarm(0)
         row['seconds'] = round(time.perf_counter() - t0, 2)
         out['by_epsilon'][str(eps)] = row
     return out
