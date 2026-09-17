@@ -93,6 +93,12 @@ remain available. The subsequent Engine reuse assay and audit checker are linked
 observation-selection work is now consumed through the component checker above; a matched
 comparison with complete costs and the common stopping rule remains outstanding.
 
+The [new census consumer review](docs/PERCEPTION_CENSUS_REVIEW_2026-09-17.md) checks the
+17 September research handoff and reconciles its 3,000 retained aggregate rows. It preserves the
+reported random/adversarial difference while identifying missing stable random-seed custody
+and a printed gate that does not reject mismatches. Census-wide solver claims have not been
+promoted to independently checked Engine certificates.
+
 The [prediction checkpoint](docs/PERCEPTION_PREDICTIONS_2026-09-13.md) prepares all **4,876 original
 prediction rows across 16 exposed development keyframes** without reading annotation-bearing
 inputs during extraction. Original bytes, duplicate rows and zero-based source indices survive.

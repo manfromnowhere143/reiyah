@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.20`
+Version: `0.1.21`
 
 Lifecycle status: `exploratory`
 
@@ -27,12 +27,28 @@ tests and 768 geometric controls. The new schema and compiler are part of the pr
 Gate A is still unaccepted. No model inference, cloud compute, human audit, public post or
 outreach occurred. No lower-cost or frontier-superiority claim follows from this checkpoint.
 
-During this task Daniel supplied Fable's census checkpoint at
-`7501c2f2e46baf23272564df924ce15fa005dda7`. Its branch and remote agree; the research checkout
-already has a subsequent modification to `census_units.py`. Preserve that work and consume only
-sealed checkpoint bytes. Its reported 3,000-case findings have not yet been independently
-accepted by this correction-source checkpoint. Engine's next action is its bounded consumer
-verification, while Fable continues its research. The earlier outbox identity below is historical.
+The subsequent [bounded census review](PERCEPTION_CENSUS_REVIEW_2026-09-17.md) consumes Fable's
+`7501c2f2e46baf23272564df924ce15fa005dda7`, manifest
+`0353f3914f9ccf9f9adef79b48552cdddfcc018d7d01826d625d44990935b276`.
+Twelve payloads and eleven committed origins match. A consumer-bound snapshot of 3,000 aggregate
+rows reproduces the nine summary distributions and twenty pair tables, including the reported
+1,048/930 random zero-crossing counts. It is not a fresh replay of the full census campaign.
+The current Engine rechecks the requested -3/4 pool counterexample, k=49 sufficiency and
+unresolved 373 set. The census's upper bound for that unit is 480, already checked previously.
+
+This review found two concrete reproduction repairs: seeds derived from process-randomized
+`hash()` are not retained, and `--gate` prints equality without rejecting a mismatch.
+The revised census also differs from the former preparation on two verdicts. Keep input
+versions and solver/Engine certificate tiers distinct. The review root is
+`~/.codex/reports/reiyah/engine-census-consumer-2026-09-17-2gpga26m/`.
+Read its PLAN, EXCHANGE_CHECK, aggregate and forty-frame checks, closeout, seal and consumer
+request. No Engine algorithm changed in this review; the preceding 486/93 suite results remain
+historical validation of unchanged code. Fresh research consistency is retained here.
+
+Preserve Fable's subsequent `census_units.py` draft and ongoing process. Its next sealed return
+should bind stable seeds, fail-closed gates and the selected new preparation. Engine's next
+action is to consume that return, expand proof checking under unchanged limits and freeze a
+prospective external cost protocol that withholds corrected operands until queried.
 
 ## Preceding component checker
 
