@@ -8,6 +8,16 @@ observations suffice to support strict improvement under a bounded deletion-erro
 The [implementation report](../../../docs/PERCEPTION_REVISION_AUDIT_2026-09-16.md) records the
 real case, corrections and costs. The legacy `tools.perception_decision` interface is unchanged.
 
+The [weighted split API](../../../docs/PERCEPTION_SPLIT_CERTIFICATES_2026-09-17.md)
+composes independently checked deletion-margin payloads for an explicitly declared
+population. It preserves unavailable members and different scene weights, and
+distinguishes a proved minimum from a lower/upper gap. The callable interface is
+`tools.perception_revision.split_margin.evaluate(members, expected_ids, tolerance)`.
+Each member has `id`, rational `weight`, native `case`, and deletion-margin
+`certificate` payload. Exact byte/digest binding belongs at the caller's IO boundary;
+the API validates every input and checks its proof. It is a conditional additions
+calculation, not a general joint-world aggregation or audit-cost claim.
+
 ## Comparison contract
 
 The [input schema](input.schema.json) replaces legacy `base` and `additions` with `output_a`

@@ -1,6 +1,6 @@
 # Next mission and the evidence required to expand it
 
-Document ID: `reiyah.next-mission`. Version: `0.1.4`. Lifecycle status: `proposed`.
+Document ID: `reiyah.next-mission`. Version: `0.1.5`. Lifecycle status: `proposed`.
 
 ## Decision
 
@@ -50,6 +50,13 @@ reduction of queries already incurred. The method is weaker than components on t
 354-label request with budget 49 and unavailable for general output replacements.
 
 ## Sequence and stopping gates
+
+The [weighted split checker](PERCEPTION_SPLIT_CERTIFICATES_2026-09-17.md) distinguishes
+an attained adverse set from a proved global minimum over differently weighted
+scenes. Preserve any lower/upper gap, every unavailable member and all declared
+weights. A pool optimum alone cannot justify a split-wide optimality claim. This
+composition remains an exposed conditional loss calculation, not a new benchmark
+metric, independent scene study or query-cost result.
 
 The [localization checkpoint](PERCEPTION_LOCALIZATION_CERTIFICATES_2026-09-17.md)
 now supplies a conventional geometric bound and exact displacement checker. The

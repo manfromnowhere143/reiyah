@@ -1,0 +1,445 @@
+{
+  "artifact_id": "reiyah.split.development-verification",
+  "composition": {
+    "adverse_sets_checked": 9,
+    "changed_scene_graphs_replayed": 170,
+    "excluded_aggregates": 7,
+    "members_checked": 3000,
+    "pairs": 20,
+    "resource_limited_member_certificates": 10,
+    "supported_bounded_minima": 3,
+    "supported_exact_minima": 6,
+    "unavailable_aggregates": 4
+  },
+  "cost_scope": "Local checking, loading, composition and witness replay; prior proof production and raw-source preparation are separate work. Not an end-to-end saving benchmark. The final test suite overlapped the assay; timings are not isolated measurements.",
+  "legacy_replay": {
+    "contradictions": 0,
+    "exact_agreements": 2981,
+    "resource_limited_containing": 19,
+    "selected_260_witness_reproduced": true
+  },
+  "lifecycle_status": "exploratory",
+  "nonclaims": [
+    "Optimality for the three bounded pairs",
+    "Geometric validation of the localization census",
+    "Observed physical label errors",
+    "Audit sufficiency or minimum adaptive query policy",
+    "Human effort, avoided inference or total-cost superiority",
+    "State-of-the-art novelty or independent scientific replication"
+  ],
+  "producer_sha256": "2bd10983a5b4fc080b8ff13510dde7d53b849fc8879c095121fa66ad312d3b11",
+  "research_commit": "4bc28d89a525f6d783d29bbfb3fef41544d6a4a9",
+  "research_manifest_sha256": "732618ef8d8104de589ff6a6ce879cbda10c88e8f78e1be537ff0583dced5f8a",
+  "retained_bindings": {
+    "PLAN.md": {
+      "bytes": 4312,
+      "sha256": "ee52bcb0c96ad876ff93babf4e1277b35c42937d1b725857197345f0415b8977"
+    },
+    "SOURCE_BINDINGS.json": {
+      "bytes": 4960,
+      "sha256": "249716c86f316aa84c4c87c21afdf061562473f1b41872f986daa4a922adeaf2"
+    },
+    "captures/legacy-replay-01/receipt.json": {
+      "bytes": 1752,
+      "sha256": "ff95db8f1752cf2df17d0297159364b5486f073e96df462065e59999b7b4d91e"
+    },
+    "captures/repository-tests-01/receipt.json": {
+      "bytes": 1046,
+      "sha256": "1f996f5c45cd354063170564ed594b7afbe4fb622ed350364486522f20ca5f6f"
+    },
+    "captures/repository-tests-02/receipt.json": {
+      "bytes": 1046,
+      "sha256": "c0090cf55886a45b26453dac8f06b2d564c822ba6fc9295446d99b39c7eef6f6"
+    },
+    "captures/split-assay-01/receipt.json": {
+      "bytes": 1098,
+      "sha256": "dc08dab0ca38ffdc260cc9ba70dc462455978b7d0603defe9a6cd1b3e450bf21"
+    },
+    "captures/split-assay-02/receipt.json": {
+      "bytes": 1100,
+      "sha256": "9ae2eecf797a2d0f9929c44ba318af1c7dde8b0e9252f6843510b120c727549f"
+    },
+    "captures/targeted-01/receipt.json": {
+      "bytes": 1112,
+      "sha256": "6b19ae8f0652fc9c3f186866c16078e40a7eab741af45f00016802e9effe9cd2"
+    },
+    "private/GAIN_CAPACITY_PROBE.json": {
+      "bytes": 1762,
+      "sha256": "42556cb20fae4891036133b409c4da272eddae37a3c978e2ea5a62601cf0667b"
+    },
+    "private/LEGACY_REPLAY.json": {
+      "bytes": 4850,
+      "sha256": "f0c46f0ee1249d45210a0e25120df9170b50085cb49ea55897ad903ad6da6cc4"
+    },
+    "private/LEGACY_REPLAY_CHECK.json": {
+      "bytes": 991,
+      "sha256": "a81e31c9a79d8f185b86ee85a226b766bb0479a30274d4477e78d4fff9d75d34"
+    },
+    "private/RETAINED_FAILURES.md": {
+      "bytes": 978,
+      "sha256": "5e61e83f0c3772658e151408370e303beaa5c440ab274b3398064edc0489c3fe"
+    },
+    "private/SNAPSHOT.json": {
+      "bytes": 3043283,
+      "sha256": "9b3604a47629a1272056431856ef90783cb2e8d37e14a26d61e7e641e2892e87"
+    },
+    "private/SPLIT_ASSAY_02.json": {
+      "bytes": 15325,
+      "sha256": "cc495705b98db5787d8c333df995d73991b60dec61ec0898e7b6fa1d303342d1"
+    },
+    "private/split_assay.py": {
+      "bytes": 9329,
+      "sha256": "349cb6aaa7d6490e42c7a6cf3263aba88e3985db3604b4bf9bcebc34ec63d705"
+    },
+    "private/split_assay_02.py": {
+      "bytes": 9338,
+      "sha256": "f8bbda3b5f48d2b393303c82aad6a710116896aee30e77c6090d69c4115ffbb2"
+    }
+  },
+  "rows": [
+    {
+      "baseline": null,
+      "claim": null,
+      "criterion": "not_evaluated",
+      "execution_status": "unavailable_members",
+      "lower": null,
+      "margin_status": "not_evaluated",
+      "members": 150,
+      "minimum": null,
+      "pair": "centerpoint -> +fcos3d",
+      "upper": null
+    },
+    {
+      "baseline": null,
+      "claim": null,
+      "criterion": "not_evaluated",
+      "execution_status": "unavailable_members",
+      "lower": null,
+      "margin_status": "not_evaluated",
+      "members": 150,
+      "minimum": null,
+      "pair": "centerpoint -> +mapillary",
+      "upper": null
+    },
+    {
+      "baseline": null,
+      "claim": null,
+      "criterion": "not_evaluated",
+      "execution_status": "unavailable_members",
+      "lower": null,
+      "margin_status": "not_evaluated",
+      "members": 150,
+      "minimum": null,
+      "pair": "centerpoint -> +megvii",
+      "upper": null
+    },
+    {
+      "baseline": null,
+      "claim": null,
+      "criterion": "not_evaluated",
+      "execution_status": "unavailable_members",
+      "lower": null,
+      "margin_status": "not_evaluated",
+      "members": 150,
+      "minimum": null,
+      "pair": "centerpoint -> +pointpillars",
+      "upper": null
+    },
+    {
+      "baseline": "17264497/9594000",
+      "changed_members": 16,
+      "claim": 4972,
+      "criterion": "supported",
+      "execution_status": "succeeded",
+      "lower": 4972,
+      "margin_status": "exact",
+      "members": 150,
+      "minimum": 4972,
+      "pair": "fcos3d -> +centerpoint",
+      "upper": 4972,
+      "witness_after": "318779/3198000",
+      "witness_before": "17264497/9594000"
+    },
+    {
+      "baseline": "8893909/9594000",
+      "changed_members": 15,
+      "claim": 2420,
+      "criterion": "supported",
+      "execution_status": "succeeded",
+      "lower": 2420,
+      "margin_status": "exact",
+      "members": 150,
+      "minimum": 2420,
+      "pair": "fcos3d -> +mapillary",
+      "upper": 2420,
+      "witness_after": "956309/9594000",
+      "witness_before": "8893909/9594000"
+    },
+    {
+      "baseline": "28495547/9594000",
+      "changed_members": 36,
+      "claim": 8481,
+      "criterion": "supported",
+      "execution_status": "succeeded",
+      "lower": 8458,
+      "margin_status": "bounded",
+      "members": 150,
+      "minimum": null,
+      "pair": "fcos3d -> +megvii",
+      "upper": 8481,
+      "witness_after": "957241/9594000",
+      "witness_before": "28495547/9594000"
+    },
+    {
+      "baseline": "2116037/1199250",
+      "changed_members": 33,
+      "claim": 4902,
+      "criterion": "supported",
+      "execution_status": "succeeded",
+      "lower": 4879,
+      "margin_status": "bounded",
+      "members": 150,
+      "minimum": null,
+      "pair": "fcos3d -> +pointpillars",
+      "upper": 4902,
+      "witness_after": "478373/4797000",
+      "witness_before": "2116037/1199250"
+    },
+    {
+      "baseline": "-1129927/2398500",
+      "claim": null,
+      "criterion": "excluded",
+      "execution_status": "succeeded",
+      "lower": 0,
+      "margin_status": "criterion_already_excluded",
+      "members": 150,
+      "minimum": 0,
+      "pair": "mapillary -> +centerpoint",
+      "upper": 0
+    },
+    {
+      "baseline": "33472/599625",
+      "claim": null,
+      "criterion": "excluded",
+      "execution_status": "succeeded",
+      "lower": 0,
+      "margin_status": "criterion_already_excluded",
+      "members": 150,
+      "minimum": 0,
+      "pair": "mapillary -> +fcos3d",
+      "upper": 0
+    },
+    {
+      "baseline": "235219/239850",
+      "changed_members": 15,
+      "claim": 2577,
+      "criterion": "supported",
+      "execution_status": "succeeded",
+      "lower": 2577,
+      "margin_status": "exact",
+      "members": 150,
+      "minimum": 2577,
+      "pair": "mapillary -> +megvii",
+      "upper": 2577,
+      "witness_after": "4781/47970",
+      "witness_before": "235219/239850"
+    },
+    {
+      "baseline": "1377341/3198000",
+      "changed_members": 8,
+      "claim": 968,
+      "criterion": "supported",
+      "execution_status": "succeeded",
+      "lower": 968,
+      "margin_status": "exact",
+      "members": 150,
+      "minimum": 968,
+      "pair": "mapillary -> +pointpillars",
+      "upper": 968,
+      "witness_after": "956983/9594000",
+      "witness_before": "1377341/3198000"
+    },
+    {
+      "baseline": "-19740067/9594000",
+      "claim": null,
+      "criterion": "excluded",
+      "execution_status": "succeeded",
+      "lower": 0,
+      "margin_status": "criterion_already_excluded",
+      "members": 150,
+      "minimum": 0,
+      "pair": "megvii -> +centerpoint",
+      "upper": 0
+    },
+    {
+      "baseline": "-3614003/9594000",
+      "claim": null,
+      "criterion": "excluded",
+      "execution_status": "succeeded",
+      "lower": 0,
+      "margin_status": "criterion_already_excluded",
+      "members": 150,
+      "minimum": 0,
+      "pair": "megvii -> +fcos3d",
+      "upper": 0
+    },
+    {
+      "baseline": "-4721339/3198000",
+      "claim": null,
+      "criterion": "excluded",
+      "execution_status": "succeeded",
+      "lower": 0,
+      "margin_status": "criterion_already_excluded",
+      "members": 150,
+      "minimum": 0,
+      "pair": "megvii -> +mapillary",
+      "upper": 0
+    },
+    {
+      "baseline": "-5186999/4797000",
+      "claim": null,
+      "criterion": "excluded",
+      "execution_status": "succeeded",
+      "lower": 0,
+      "margin_status": "criterion_already_excluded",
+      "members": 150,
+      "minimum": 0,
+      "pair": "megvii -> +pointpillars",
+      "upper": 0
+    },
+    {
+      "baseline": "653759/9594000",
+      "claim": null,
+      "criterion": "excluded",
+      "execution_status": "succeeded",
+      "lower": 0,
+      "margin_status": "criterion_already_excluded",
+      "members": 150,
+      "minimum": 0,
+      "pair": "pointpillars -> +centerpoint",
+      "upper": 0
+    },
+    {
+      "baseline": "3310163/4797000",
+      "changed_members": 26,
+      "claim": 1733,
+      "criterion": "supported",
+      "execution_status": "succeeded",
+      "lower": 1728,
+      "margin_status": "bounded",
+      "members": 150,
+      "minimum": null,
+      "pair": "pointpillars -> +fcos3d",
+      "upper": 1733,
+      "witness_after": "3827/38376",
+      "witness_before": "3310163/4797000"
+    },
+    {
+      "baseline": "180911/959400",
+      "changed_members": 3,
+      "claim": 260,
+      "criterion": "supported",
+      "execution_status": "succeeded",
+      "lower": 260,
+      "margin_status": "exact",
+      "members": 150,
+      "minimum": 260,
+      "pair": "pointpillars -> +mapillary",
+      "upper": 260,
+      "witness_after": "31877/319800",
+      "witness_before": "180911/959400"
+    },
+    {
+      "baseline": "1243553/1066000",
+      "changed_members": 18,
+      "claim": 3120,
+      "criterion": "supported",
+      "execution_status": "succeeded",
+      "lower": 3120,
+      "margin_status": "exact",
+      "members": 150,
+      "minimum": 3120,
+      "pair": "pointpillars -> +megvii",
+      "upper": 3120,
+      "witness_after": "319459/3198000",
+      "witness_before": "1243553/1066000"
+    }
+  ],
+  "scope": "Conditional fixed-world reference-record deletions for preserved-base additions on an explicit equal-scene mean; no official nuScenes metric or independent sample claim. Population membership/weights and source interpretation are premises. Existing member work limits unchanged.",
+  "source_committed_origins_checked": 20,
+  "source_graphs_byte_matched": 3000,
+  "source_payloads_checked": 21,
+  "unavailable": [
+    {
+      "members": [
+        {
+          "id": "centerpoint__fcos3d__scene-0018",
+          "reason": "resource_limited"
+        },
+        {
+          "id": "centerpoint__fcos3d__scene-0276",
+          "reason": "resource_limited"
+        }
+      ],
+      "pair": "centerpoint -> +fcos3d"
+    },
+    {
+      "members": [
+        {
+          "id": "centerpoint__mapillary__scene-0017",
+          "reason": "resource_limited"
+        },
+        {
+          "id": "centerpoint__mapillary__scene-0018",
+          "reason": "resource_limited"
+        },
+        {
+          "id": "centerpoint__mapillary__scene-0276",
+          "reason": "resource_limited"
+        }
+      ],
+      "pair": "centerpoint -> +mapillary"
+    },
+    {
+      "members": [
+        {
+          "id": "centerpoint__megvii__scene-0017",
+          "reason": "resource_limited"
+        },
+        {
+          "id": "centerpoint__megvii__scene-0018",
+          "reason": "resource_limited"
+        },
+        {
+          "id": "centerpoint__megvii__scene-0276",
+          "reason": "resource_limited"
+        }
+      ],
+      "pair": "centerpoint -> +megvii"
+    },
+    {
+      "members": [
+        {
+          "id": "centerpoint__pointpillars__scene-0018",
+          "reason": "resource_limited"
+        },
+        {
+          "id": "centerpoint__pointpillars__scene-0276",
+          "reason": "resource_limited"
+        }
+      ],
+      "pair": "centerpoint -> +pointpillars"
+    }
+  ],
+  "validation": {
+    "first_assay_rejected": "Local anchor names repeated across distinct declared scene cohorts. Corrected identity to cohort/anchor with a new rejection control; no duplicate-record guard removed.",
+    "independent_deletion_loss_calculations": 4096,
+    "new_tests": 8,
+    "prior_measurement_tests": {
+      "count": 93,
+      "scope": "Historical unchanged measurement code validation at the preceding 8daa697 checkpoint; not rerun or represented as fresh here."
+    },
+    "repository_tests": 520
+  },
+  "version": "0.1.0"
+}

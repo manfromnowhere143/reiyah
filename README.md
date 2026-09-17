@@ -81,6 +81,17 @@ of bounded measurement error into fixed adjacency in the research proposal. The
 census aggregates reconcile, but its displacement and position-audit claims are not
 promoted to Engine-checked evidence. No human position measurements were performed.
 
+The [weighted split checker](docs/PERCEPTION_SPLIT_CERTIFICATES_2026-09-17.md)
+combines checked scene results without dropping unavailable members. Different
+scene lengths give different per-deletion weights. An adverse set supplies an
+upper bound; a separate bound over every admissible deletion supplies the lower
+bound. The Engine reports an exact minimum only when they meet. This is a declared
+loss aggregate over exposed scenes, not an official benchmark score or saved audit
+effort. The original 3,000-case additive replay reproduces 2,981 exact agreements,
+19 enclosing resource-limit bounds and no contradictions. The new composition proves
+six split-wide minima exactly, retains lower/upper gaps for three, and checks all
+nine adverse sets by recomputing 170 changed scene comparisons.
+
 As checked on **14 September 2026**, a [new automated replay](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md)
 on the two existing development anchors gives **[1,1]**, conditional on the retained benchmark
 labels and Reiyah's fixed rules. Weighted loss falls from 23.5 to 22.5; one anchor improves and

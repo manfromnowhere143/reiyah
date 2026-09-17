@@ -2,9 +2,39 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.24`
+Version: `0.1.25`
 
 Lifecycle status: `exploratory`
+
+The [weighted split checkpoint](PERCEPTION_SPLIT_CERTIFICATES_2026-09-17.md)
+consumes research `4bc28d89a525f6d783d29bbfb3fef41544d6a4a9`, manifest
+`732618ef8d8104de589ff6a6ce879cbda10c88e8f78e1be537ff0583dced5f8a`.
+All 21 payloads and 20 committed origins match. All 3,000 graph bytes match the
+prior sealed snapshot and the selected owner copies. The requested legacy replay
+reproduces 2,981 exact agreements and 19 enclosing resource limits, no contradictions.
+It also reproduces the PointPillars + Mapillary 260-record counterexample.
+
+`split_margin.evaluate` checks member proofs and complete declared membership,
+then computes a universal weighted deletion lower bound and a realized pool upper
+bound. It returns an exact minimum only when these meet. It requires preserved-base
+additions and disjoint declared cohort/anchor records. Inputs with local names such
+as a-0 are distinguished by their scene cohort; duplicate records still reject.
+Existing per-member limits remain. Read the final split-verification for result
+counts, exact values, gaps, unavailable members and changed-graph replays. Six
+supported minima are exact, three remain bounded, seven aggregates are excluded and
+four are unavailable under ten member resource limits. All nine adverse sets have
+170 exact changed-scene replays. All 520 repository tests pass, including eight new
+composition tests and 4,096 independent deletion-loss calculations.
+
+Fresh root: `~/.codex/reports/reiyah/engine-split-certificates-2026-09-17-m2m8wbgj/`.
+Read PLAN, SOURCE_BINDINGS, private/SNAPSHOT, LEGACY_REPLAY_CHECK, final SPLIT_ASSAY_02,
+VERIFICATION, CLOSEOUT and packet seal. The first identity rejection and successful
+retry remain retained. The complete research continuation prompt is in output/.
+No owner branch, canonical checkout or closed report is changed. Gate A remains
+operator-unaccepted. Next consume corrected localization witnesses and full query
+histories; preserve outstanding optimum gaps and measure actual costs and reuse.
+
+## Preceding localization certificate checkpoint
 
 The [localization certificate checkpoint](PERCEPTION_LOCALIZATION_CERTIFICATES_2026-09-17.md)
 consumes research commit `eb0ac64038f125bc4d216fe8b378f78bc589e01f`, manifest
