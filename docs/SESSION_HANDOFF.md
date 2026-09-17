@@ -1,3 +1,48 @@
+# Reiyah bounded value experiment continuation, 2026-09-17
+
+Continuation version: `0.1.28`. Status: `exploratory`.
+
+The operator's September 17 continuation handoff authorizes this isolated local
+research experiment. Read [the current-bound results](../research/value-disproof/0.1.0/README.md)
+before further selection or platform work. Engine source remains pinned to
+`38a50ec014cc83e86ea6f247df803ded2971b386`; selected research implementation is
+`b3125c4a97c0029a1f70aba7d0ab5105a9b3d233`. No Engine algorithm or limit changed.
+
+The fresh root is
+`~/.codex/reports/reiyah/value-disproof-2026-09-17-93iqbzbr/`.
+Read SESSION, PLAN, FREEZE, INTERACTION_PLAN, SOURCE_VERIFICATION, PUBLIC_REPLAY,
+the two runs' RESULTS/REPLAY files and the live progress note. All per-record
+inputs, source exports, queries and native proofs stay private outside Git.
+
+All 20 assigned development cases/controls were evaluated in four arms. The
+direct construction reaches the necessary confirmation floor on 13 of 15
+addition cases. Direct baseline queries sum to 2,534; the necessary floors sum
+to 2,244, limiting possible improvement to 1.1292x under this all-present family.
+Standard IHS fallback gives 2,255 queries with either conventional or native
+checked stopping, with identical ordered queries and results. Both directions of
+the archived independent-output replacement remain unresolved at 512 queries each. Two
+position rows are zero-query draws; the stricter-threshold zero-query control
+remains unresolved. All arms resolve the same 17/20 rows; these are dependent
+development units, not 20 independent revisions.
+
+Ten targeted controls pass, including 144 independent finite graph/answer cases.
+Replay checks all 80 arm/case rows, 13,674 synthetic query events, 1,796 stopping
+points and 1,552 proof payloads. All 22 selected source bindings match prior
+records. The four public reproduction commands and default research consistency
+check pass. A relative-path preparation failure is retained before its correction.
+No outcome-reserved corrections, human measurements, paid service, contact,
+publication, deployment, main update or Gate A acceptance occurred.
+
+Decision: product value remains inconclusive. Stop the selection-superiority
+claim on this all-present development family; platform expansion remains stopped.
+The next executable action is to challenge a realistic replacement/correction
+family on already exposed development data without leaking corrected alternatives,
+then freeze a separate protocol before any reserved outcomes. The local
+[workflow brief](../research/value-disproof/0.1.0/WORKFLOW_BRIEF.md) prepares the
+customer and full-cost check; outreach is not authorized. Human preparation,
+review, integration and agreed cost rates remain unmeasured. Gate A is still
+operator-unaccepted. Historical checkpoints below retain their original scope.
+
 # Reiyah Engine continuation, 2026-09-17
 
 Document ID: `reiyah.engine.current-handoff`
