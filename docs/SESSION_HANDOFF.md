@@ -1,3 +1,46 @@
+# Reiyah release-source continuation, 2026-09-17
+
+Continuation version: `0.1.30`. Status: `exploratory`.
+
+The operator explicitly authorized committing and pushing completed Reiyah work,
+preserving the configured human author and committer and the existing scientific
+commit voice. This supersedes the earlier handoff's Git no-push boundary; it does
+not authorize outreach, social posts, paid services or deployment. Value-disproof
+commit `7dd7d5f4c7f7c2f8319663a99ed2d910928ab9d1` and correction-observation commit
+`32dae91530b8ee2e1e52e4aa6f7dff6a176141ed` were pushed by normal fast-forward to
+`origin/main`, then read back at the latter hash. That is publisher-authored
+transport readback, not independent verification or scientific acceptance.
+
+Read [the public release-source inventory](../research/release-sources/0.1.0/README.md).
+It records six publisher-generation candidates in two families, 49 privately
+retained metadata responses and zero admitted new prediction sets. The acquisition
+target remains unmet. Chronological generations, actual customer revisions,
+package releases, converted weights and uploaded assets remain distinct. Candidate
+weight bytes, common image membership and inference settings are still unverified.
+
+Fresh owned root:
+`~/.codex/reports/reiyah/release-sources-2026-09-17-otk429k8/`.
+Read SESSION, PUSH-01, source ledgers, logs, VERIFICATION and the current progress
+note. Five retained complete repository trees and their release metadata are
+inspected, with no complete prediction export admitted. EdgeFirst's pinned model
+cards provide three exact public validation-session leads; rendered session access
+could not be inspected because no browser connection was available. Do not relabel
+that tool limitation as absence of predictions or as an authentication restriction.
+
+All retained metadata bytes and candidate bindings are checked; the default
+repository consistency check passes without a new replay of historical experiments.
+The Engine remains unchanged at source commit
+`38a50ec014cc83e86ea6f247df803ded2971b386`. No weights, predictions, images or labels
+were acquired or inferred. All 1,433 REC-D outcome-reserved images remain closed.
+Human costs and customer demand remain unmeasured. Gate A is operator-unaccepted.
+
+Next inspect the three linked EdgeFirst public sessions for a complete downloadable
+prediction packet and qualify a second family's outputs using the concrete
+[source packet checklist](../research/release-sources/0.1.0/SOURCE_PACKET.md).
+Continue bounded useful research; a negative selector result stops its superiority
+claim and platform expansion, not all independent investigation. Historical records
+below retain their original action scopes and no-push statements.
+
 # Reiyah correction-observation continuation, 2026-09-17
 
 Continuation version: `0.1.29`. Status: `exploratory`.

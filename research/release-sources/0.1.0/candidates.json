@@ -1,0 +1,405 @@
+{
+  "id": "reiyah.release-sources.candidates",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "snapshot_date": "2026-09-17",
+  "acquisition_target": "Two modern detector families and three genuine checkpoints/revisions per family",
+  "target_state": "not_yet_satisfied",
+  "decision": "inconclusive",
+  "admitted_prediction_sets": 0,
+  "customer_revision_decisions": 0,
+  "generation_candidates": [
+    {
+      "id": "reiyah.release-candidate.yolov8n",
+      "version": "0.1.0",
+      "family": "ultralytics-yolo",
+      "sequence_order": 1,
+      "model": "yolov8n",
+      "chronology": {
+        "year": 2023,
+        "basis": "publisher generation chronology",
+        "exact_original_checkpoint_release_date": null,
+        "source_ids": [
+          "reiyah.release-source.038",
+          "reiyah.release-source.046"
+        ],
+        "qualification": "Year orders generations; it does not identify original checkpoint bytes or a customer revision sequence."
+      },
+      "source_repository": "ultralytics/ultralytics",
+      "source_commit": "6900c83b16eebee55c7b9de23b9ef447e6ff11e7",
+      "checkpoint": {
+        "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolov8n.pt",
+        "name": "yolov8n.pt",
+        "api_asset_id": 340060940,
+        "api_declared_bytes": 6549796,
+        "api_declared_digest": "sha256:f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "api_created_at": "2026-01-13T18:20:12Z",
+        "api_updated_at": "2026-01-13T18:20:13Z",
+        "container_tag": "v8.4.0",
+        "container_published_at": "2026-01-13T22:56:46Z",
+        "metadata_source_id": "reiyah.release-source.045",
+        "payload_status": "not_fetched",
+        "locally_verified_sha256": null,
+        "content_equality_to_original_release": "unverified"
+      },
+      "architecture_relationship": "successive publisher architectures, not training checkpoints of one fixed architecture",
+      "lifecycle_status": "exploratory",
+      "admission_status": "pending_prediction_and_protocol_qualification",
+      "prediction_payload": null,
+      "prediction_sha256": null,
+      "complete_image_index": null,
+      "common_dataset_candidate": "COCO val2017; common byte identity unverified",
+      "inference_and_postprocessing_contract": null,
+      "customer_revision_history": null,
+      "measured_human_cost": null,
+      "uncertainty_and_observation_contract": null
+    },
+    {
+      "id": "reiyah.release-candidate.yolo11n",
+      "version": "0.1.0",
+      "family": "ultralytics-yolo",
+      "sequence_order": 2,
+      "model": "yolo11n",
+      "chronology": {
+        "year": 2024,
+        "basis": "publisher generation chronology",
+        "exact_original_checkpoint_release_date": null,
+        "source_ids": [
+          "reiyah.release-source.036",
+          "reiyah.release-source.046"
+        ],
+        "qualification": "Year orders generations; it does not identify original checkpoint bytes or a customer revision sequence."
+      },
+      "source_repository": "ultralytics/ultralytics",
+      "source_commit": "6900c83b16eebee55c7b9de23b9ef447e6ff11e7",
+      "checkpoint": {
+        "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo11n.pt",
+        "name": "yolo11n.pt",
+        "api_asset_id": 340060970,
+        "api_declared_bytes": 5613764,
+        "api_declared_digest": "sha256:0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+        "api_created_at": "2026-01-13T18:20:17Z",
+        "api_updated_at": "2026-01-13T18:20:18Z",
+        "container_tag": "v8.4.0",
+        "container_published_at": "2026-01-13T22:56:46Z",
+        "metadata_source_id": "reiyah.release-source.045",
+        "payload_status": "not_fetched",
+        "locally_verified_sha256": null,
+        "content_equality_to_original_release": "unverified"
+      },
+      "architecture_relationship": "successive publisher architectures, not training checkpoints of one fixed architecture",
+      "lifecycle_status": "exploratory",
+      "admission_status": "pending_prediction_and_protocol_qualification",
+      "prediction_payload": null,
+      "prediction_sha256": null,
+      "complete_image_index": null,
+      "common_dataset_candidate": "COCO val2017; common byte identity unverified",
+      "inference_and_postprocessing_contract": null,
+      "customer_revision_history": null,
+      "measured_human_cost": null,
+      "uncertainty_and_observation_contract": null
+    },
+    {
+      "id": "reiyah.release-candidate.yolo26n",
+      "version": "0.1.0",
+      "family": "ultralytics-yolo",
+      "sequence_order": 3,
+      "model": "yolo26n",
+      "chronology": {
+        "year": 2026,
+        "basis": "publisher generation chronology",
+        "exact_original_checkpoint_release_date": null,
+        "source_ids": [
+          "reiyah.release-source.037",
+          "reiyah.release-source.046"
+        ],
+        "qualification": "Year orders generations; it does not identify original checkpoint bytes or a customer revision sequence."
+      },
+      "source_repository": "ultralytics/ultralytics",
+      "source_commit": "6900c83b16eebee55c7b9de23b9ef447e6ff11e7",
+      "checkpoint": {
+        "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n.pt",
+        "name": "yolo26n.pt",
+        "api_asset_id": 340096055,
+        "api_declared_bytes": 5544453,
+        "api_declared_digest": "sha256:9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+        "api_created_at": "2026-01-13T19:59:21Z",
+        "api_updated_at": "2026-01-13T19:59:21Z",
+        "container_tag": "v8.4.0",
+        "container_published_at": "2026-01-13T22:56:46Z",
+        "metadata_source_id": "reiyah.release-source.045",
+        "payload_status": "not_fetched",
+        "locally_verified_sha256": null,
+        "content_equality_to_original_release": "unverified"
+      },
+      "architecture_relationship": "successive publisher architectures, not training checkpoints of one fixed architecture",
+      "lifecycle_status": "exploratory",
+      "admission_status": "pending_prediction_and_protocol_qualification",
+      "prediction_payload": null,
+      "prediction_sha256": null,
+      "complete_image_index": null,
+      "common_dataset_candidate": "COCO val2017; common byte identity unverified",
+      "inference_and_postprocessing_contract": null,
+      "customer_revision_history": null,
+      "measured_human_cost": null,
+      "uncertainty_and_observation_contract": null
+    },
+    {
+      "id": "reiyah.release-candidate.rtdetr-r18",
+      "version": "0.1.0",
+      "family": "rtdetr",
+      "sequence_order": 1,
+      "model": "rtdetr-r18",
+      "chronology": {
+        "year": 2023,
+        "basis": "publisher family announcements",
+        "exact_original_checkpoint_release_date": null,
+        "source_ids": [
+          "reiyah.release-source.016",
+          "reiyah.release-source.012"
+        ],
+        "qualification": "Model announcement, PyTorch conversion, rerun checkpoint and asset-upload dates are separate events."
+      },
+      "source_repository": "lyuwenyu/RT-DETR",
+      "source_commit": "29320b6fd828f8e0987a71426cf2d961b09dfed7",
+      "checkpoint": {
+        "url": "https://github.com/lyuwenyu/storage/releases/download/v0.1/rtdetr_r18vd_dec3_6x_coco_from_paddle.pth",
+        "name": "rtdetr_r18vd_dec3_6x_coco_from_paddle.pth",
+        "api_asset_id": 134169350,
+        "api_declared_bytes": 81001853,
+        "api_declared_digest": null,
+        "api_created_at": "2023-11-06T11:26:25Z",
+        "api_updated_at": "2023-11-06T11:28:39Z",
+        "container_tag": "v0.1",
+        "container_published_at": "2023-08-10T07:32:43Z",
+        "metadata_source_id": "reiyah.release-source.027",
+        "payload_status": "not_fetched",
+        "locally_verified_sha256": null,
+        "content_equality_to_original_release": "unverified"
+      },
+      "architecture_relationship": "v1/v2 R18 candidates; v4 changes to HGNet, so backbone is a confound",
+      "lifecycle_status": "exploratory",
+      "admission_status": "pending_prediction_and_protocol_qualification",
+      "prediction_payload": null,
+      "prediction_sha256": null,
+      "complete_image_index": null,
+      "common_dataset_candidate": "COCO val2017; common byte identity unverified",
+      "inference_and_postprocessing_contract": null,
+      "customer_revision_history": null,
+      "measured_human_cost": null,
+      "uncertainty_and_observation_contract": null
+    },
+    {
+      "id": "reiyah.release-candidate.rtdetrv2-s-r18-rerun",
+      "version": "0.1.0",
+      "family": "rtdetr",
+      "sequence_order": 2,
+      "model": "rtdetrv2-s-r18-rerun",
+      "chronology": {
+        "year": 2024,
+        "basis": "publisher family announcements",
+        "exact_original_checkpoint_release_date": null,
+        "source_ids": [
+          "reiyah.release-source.016",
+          "reiyah.release-source.013"
+        ],
+        "qualification": "Model announcement, PyTorch conversion, rerun checkpoint and asset-upload dates are separate events."
+      },
+      "source_repository": "lyuwenyu/RT-DETR",
+      "source_commit": "29320b6fd828f8e0987a71426cf2d961b09dfed7",
+      "checkpoint": {
+        "url": "https://github.com/lyuwenyu/storage/releases/download/v0.2/rtdetrv2_r18vd_120e_coco_rerun_48.1.pth",
+        "name": "rtdetrv2_r18vd_120e_coco_rerun_48.1.pth",
+        "api_asset_id": 188285253,
+        "api_declared_bytes": 81198974,
+        "api_declared_digest": null,
+        "api_created_at": "2024-08-26T02:18:30Z",
+        "api_updated_at": "2024-08-26T02:18:50Z",
+        "container_tag": "v0.2",
+        "container_published_at": "2023-11-06T10:05:57Z",
+        "metadata_source_id": "reiyah.release-source.027",
+        "payload_status": "not_fetched",
+        "locally_verified_sha256": null,
+        "content_equality_to_original_release": "unverified"
+      },
+      "architecture_relationship": "v1/v2 R18 candidates; v4 changes to HGNet, so backbone is a confound",
+      "lifecycle_status": "exploratory",
+      "admission_status": "pending_prediction_and_protocol_qualification",
+      "prediction_payload": null,
+      "prediction_sha256": null,
+      "complete_image_index": null,
+      "common_dataset_candidate": "COCO val2017; common byte identity unverified",
+      "inference_and_postprocessing_contract": null,
+      "customer_revision_history": null,
+      "measured_human_cost": null,
+      "uncertainty_and_observation_contract": null
+    },
+    {
+      "id": "reiyah.release-candidate.rtdetrv4-s-hgnet",
+      "version": "0.1.0",
+      "family": "rtdetr",
+      "sequence_order": 3,
+      "model": "rtdetrv4-s-hgnet",
+      "chronology": {
+        "year": 2025,
+        "basis": "publisher family announcements",
+        "exact_original_checkpoint_release_date": null,
+        "source_ids": [
+          "reiyah.release-source.016",
+          "reiyah.release-source.003"
+        ],
+        "qualification": "Model announcement, PyTorch conversion, rerun checkpoint and asset-upload dates are separate events."
+      },
+      "source_repository": "RT-DETRs/RT-DETRv4",
+      "source_commit": "55fefaaed7efe2a5f72d0a18fd4e05965e35c292",
+      "checkpoint": {
+        "url": "https://drive.google.com/file/d/1jDAVxblqRPEWed7Hxm6GwcEl7zn72U6z",
+        "name": null,
+        "api_asset_id": null,
+        "api_declared_bytes": null,
+        "api_declared_digest": null,
+        "api_created_at": null,
+        "api_updated_at": null,
+        "container_tag": null,
+        "container_published_at": null,
+        "metadata_source_id": "reiyah.release-source.003",
+        "payload_status": "not_fetched",
+        "locally_verified_sha256": null,
+        "content_equality_to_original_release": "unverified"
+      },
+      "architecture_relationship": "v1/v2 R18 candidates; v4 changes to HGNet, so backbone is a confound",
+      "lifecycle_status": "exploratory",
+      "admission_status": "pending_prediction_and_protocol_qualification",
+      "prediction_payload": null,
+      "prediction_sha256": null,
+      "complete_image_index": null,
+      "common_dataset_candidate": "COCO val2017; common byte identity unverified",
+      "inference_and_postprocessing_contract": null,
+      "customer_revision_history": null,
+      "measured_human_cost": null,
+      "uncertainty_and_observation_contract": null
+    }
+  ],
+  "edgefirst_followup": [
+    {
+      "model": "yolov8-det",
+      "model_card_commit": "200126082b2c693bd8e1c698a91350be7b91b34c",
+      "model_card_source_id": "reiyah.release-source.011",
+      "session": "v-e89",
+      "url": "https://edgefirst.studio/public/validation/v-e89/details?mode=charts",
+      "publisher_claim": "Profiler emits per-image Arrow/Parquet predictions",
+      "predictions_download_url": null,
+      "prediction_sha256": null,
+      "access_status": "public linked page; rendered session not inspected because browser unavailable",
+      "qualification": "Compiled runtime outputs, not established as equal to native checkpoint outputs; not independent families."
+    },
+    {
+      "model": "yolo11-det",
+      "model_card_commit": "21662cab7270c5cd59d7a65d604b6b54d8944d78",
+      "model_card_source_id": "reiyah.release-source.007",
+      "session": "v-e93",
+      "url": "https://edgefirst.studio/public/validation/v-e93/details?mode=charts",
+      "publisher_claim": "Profiler emits per-image Arrow/Parquet predictions",
+      "predictions_download_url": null,
+      "prediction_sha256": null,
+      "access_status": "public linked page; rendered session not inspected because browser unavailable",
+      "qualification": "Compiled runtime outputs, not established as equal to native checkpoint outputs; not independent families."
+    },
+    {
+      "model": "yolo26-det",
+      "model_card_commit": "ad9a670a493f46f1e4d10b955b3598de6927082a",
+      "model_card_source_id": "reiyah.release-source.009",
+      "session": "v-e9c",
+      "url": "https://edgefirst.studio/public/validation/v-e9c/details?mode=charts",
+      "publisher_claim": "Profiler emits per-image Arrow/Parquet predictions",
+      "predictions_download_url": null,
+      "prediction_sha256": null,
+      "access_status": "public linked page; rendered session not inspected because browser unavailable",
+      "qualification": "Compiled runtime outputs, not established as equal to native checkpoint outputs; not independent families."
+    }
+  ],
+  "bounded_tree_scan": {
+    "name_expression": "(pred|result|detect|coco|weight)",
+    "suffixes": [
+      ".csv",
+      ".json",
+      ".jsonl",
+      ".npz",
+      ".parquet",
+      ".pkl",
+      ".zip"
+    ],
+    "trees": [
+      {
+        "source_id": "reiyah.release-source.044",
+        "tree_entries": 1176,
+        "truncated": false,
+        "filename_candidates": []
+      },
+      {
+        "source_id": "reiyah.release-source.018",
+        "tree_entries": 416,
+        "truncated": false,
+        "filename_candidates": []
+      },
+      {
+        "source_id": "reiyah.release-source.005",
+        "tree_entries": 159,
+        "truncated": false,
+        "filename_candidates": []
+      },
+      {
+        "source_id": "reiyah.release-source.025",
+        "tree_entries": 500,
+        "truncated": false,
+        "filename_candidates": []
+      },
+      {
+        "source_id": "reiyah.release-source.035",
+        "tree_entries": 28,
+        "truncated": false,
+        "filename_candidates": []
+      }
+    ],
+    "interpretation": "No candidate is a scoped filename-search result, not proof that no public prediction export exists."
+  },
+  "excluded_shortcuts": [
+    "Model sizes are not chronological releases.",
+    "Package tags, aggregate AP, training logs and ONNX graphs are not per-image prediction sets.",
+    "A release-container date is not the date of every asset subsequently uploaded into it.",
+    "An API-declared weight hash has not been locally verified by retaining its bytes."
+  ],
+  "open_chronology": [
+    {
+      "model": "yolo11n",
+      "observations": [
+        {
+          "event": "pinned model document release statement",
+          "date": "2024-09-10",
+          "source_id": "reiyah.release-source.036"
+        },
+        {
+          "event": "launch article visible date",
+          "date": "2024-09-27",
+          "source_id": "reiyah.release-source.049"
+        },
+        {
+          "event": "launch article structured datePublished",
+          "date": "2026-01-20T15:54:15.009Z",
+          "source_id": "reiyah.release-source.049"
+        },
+        {
+          "event": "ultralytics package v8.3.0 publication",
+          "date": "2024-09-30T01:00:15Z",
+          "source_id": "reiyah.release-source.047"
+        }
+      ],
+      "resolution": "Exact original checkpoint date remains unknown; coarse 2024 generation ordering only."
+    },
+    {
+      "model": "rtdetrv2-s-r18-rerun",
+      "observation": "The v0.2 storage container dates to 2023; the selected asset was uploaded 2024-08-26. Never use the container date as model chronology.",
+      "source_id": "reiyah.release-source.027"
+    }
+  ]
+}
