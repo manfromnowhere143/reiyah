@@ -71,7 +71,7 @@ def main(argv=None):
         if command == 'audit':
             sub.add_argument('--candidate', type=Path)
             sub.add_argument('--candidate-sha256')
-            sub.add_argument('--proof-method', choices=('legacy', 'components'), default='legacy')
+            sub.add_argument('--proof-method', choices=('legacy', 'components', 'monotone'), default='legacy')
         if command in ('run', 'rebind-audit'):
             sub.add_argument('--prior-input', type=Path, required=command == 'rebind-audit')
             sub.add_argument('--prior-input-sha256', required=command == 'rebind-audit')

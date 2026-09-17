@@ -1,0 +1,1718 @@
+{
+  "actual_observation_queries": 0,
+  "artifact_id": "reiyah.monotone-audit.development-verification",
+  "confirmation_count_result": {
+    "basis": "hypothetical present observations",
+    "case": "forty-372",
+    "checked_candidate_bounds": [
+      "3/20",
+      "51/20"
+    ],
+    "minimum_confirmed_present_count": 372,
+    "necessary_inequality": "(2*q - 738)/40 > 1/10",
+    "scope": "One fixed graph world, uniform weights, nonnegative penalties, unrestricted deletions of unconfirmed references, fixed output membership and matching eligibility.",
+    "smaller_control_bounds": [
+      "1/10",
+      "51/20"
+    ],
+    "threshold": "1/10",
+    "total_reference_records": 2299,
+    "total_retained_additions": 738
+  },
+  "lifecycle_status": "exploratory",
+  "new_packets_checked": 39,
+  "nonclaims": [
+    "Minimum sequential query cost with arbitrary answers",
+    "Human-time or total validation-cost savings",
+    "An independent physical truth audit",
+    "Applicability of monotonicity to general A/B replacements or geometry changes",
+    "Census-wide sufficient-set optimality",
+    "Held-out performance, scientific novelty or frontier superiority"
+  ],
+  "population": "Eleven exposed sealed requests plus two new hypothetical controls",
+  "previous_packets_checked": 24,
+  "producer_sha256": "9cb2e8d56b5e28939db1ced67e2714ecb15c2a608a415faad95cf451edc06199",
+  "retained_bindings": {
+    "PLAN.md": {
+      "bytes": 2973,
+      "sha256": "b4bd75e6a7c33f93829dc8d5713d6be9fdfe3d22abf8ea548fee4dbe61c00522"
+    },
+    "PLAN_AMENDMENT_01.md": {
+      "bytes": 1504,
+      "sha256": "4056ad2a13fbf1819d5e88b471d48c685e6739a9b927e2d393cf74676ba14904"
+    },
+    "SOURCE_BINDINGS.json": {
+      "bytes": 982,
+      "sha256": "861be655ddc24e2d671add7b94174e310219cd6811f9df56c3efdb4eff85b7df"
+    },
+    "captures/assay-01/receipt.json": {
+      "bytes": 1080,
+      "sha256": "8791864dfcb7699311e1ef580a493906112f637936a693ea5a066fab86daa608"
+    },
+    "captures/assay-02/receipt.json": {
+      "bytes": 1087,
+      "sha256": "c2f26c36e127106c052bd3211d2dab7dbf63e7aaa4f90ec8f0046e496ebfcd28"
+    },
+    "captures/construction-01/receipt.json": {
+      "bytes": 1097,
+      "sha256": "2711461fcf9a52e18a0c85cc29055bc89493ace1f967b92b724fdd8f400ee7ee"
+    },
+    "captures/measurement-tests-01/receipt.json": {
+      "bytes": 1086,
+      "sha256": "f4e8bbf0b9bba09b8404f058c3bfdeba11ea7212b3712084fc2a975d3eb6dfcd"
+    },
+    "captures/repository-tests-01/receipt.json": {
+      "bytes": 1054,
+      "sha256": "5fdb36f5d282449925e8b448af0cd964958dc8d6a366f07c0475bc91afb6e575"
+    },
+    "captures/targeted-01/receipt.json": {
+      "bytes": 1103,
+      "sha256": "8aa728040b45e3f02d314dd36423870b1216ed47765d48f858fef932fe11a877"
+    },
+    "captures/targeted-02/receipt.json": {
+      "bytes": 1103,
+      "sha256": "0cf68260de3f2ccf4ab62336f779c4ce02bb57e953a54c514023d8833f60ad96"
+    },
+    "private/ASSAY_PLAN.json": {
+      "bytes": 1125,
+      "sha256": "b4944e7d5369da478898b6f77283a405948c3d2009e43fb79a6bbff0601a215b"
+    },
+    "private/ASSAY_PLAN_02.json": {
+      "bytes": 1878,
+      "sha256": "735cba0f465a3251ae75a330bf1d7b45c3c8dcfc8ab8096412b94d8ae7b792c6"
+    },
+    "private/ASSAY_RESULT.json": {
+      "bytes": 51754,
+      "sha256": "d7b8c6d958fc6006294d546a3509d9da794cb34b6f8d9c5a9a782d8b2ea26f8b"
+    },
+    "private/CLI_RESULT.json": {
+      "bytes": 9771,
+      "sha256": "ecb64a07e3357a471bd2b12b0731919ffc78b61d2afd22b6967e2cf2cd3cdb1d"
+    },
+    "private/EXCHANGE_CHECK.json": {
+      "bytes": 8128,
+      "sha256": "4517e7ce81d0ffdd6c3afbf1e43f3b0748c45b8da2da4be0a862f8c5d523d04f"
+    },
+    "private/NO_A_EDGE_PROBE.json": {
+      "bytes": 117338,
+      "sha256": "153f953d900644deaf3d776fc07ac0c18dd1e4cf6cf3736c8d20ef7312a6ad58"
+    },
+    "private/OPTIMAL_CONTROL_BINDING.json": {
+      "bytes": 313,
+      "sha256": "15ed91b82cd25a37849eaa9a40796dccf37956b2b4f99d2230e76ca8d96b9b18"
+    },
+    "private/RESEARCH_NOTE_BINDING.json": {
+      "bytes": 331,
+      "sha256": "ce312ac276a14c91914e28586dc626bce07d7d63561f469564ac0e4956d14001"
+    },
+    "private/assay.py": {
+      "bytes": 6909,
+      "sha256": "f17b8081fe220c801bf3ce499e3d738d53d8d8953a4389ade7275526d60d0c5b"
+    },
+    "private/assay_02.py": {
+      "bytes": 7508,
+      "sha256": "9a4882ae5930db8094dbd1a70ca24914d8e013c9ca37d16d8cc19bfb5077c569"
+    },
+    "private/build_optimal_control.py": {
+      "bytes": 2632,
+      "sha256": "1c059a4543cc3501e0f1d75a8a47788d4a0215d47b976a1cd598b4a71f6a887a"
+    },
+    "private/controls/forty-371.request.json": {
+      "bytes": 62246,
+      "sha256": "aad4d7c85ef05af2073b858752cccf188da87062e0c431e564a338dd2a7e1635"
+    },
+    "private/controls/forty-372.request.json": {
+      "bytes": 62413,
+      "sha256": "272c73c67937c216c5d3c949cd156d0fb4cbb282412e4b493b6048fe0292f102"
+    }
+  },
+  "rows": [
+    {
+      "case": "first-9",
+      "comparability": {
+        "components": {
+          "same_bounds": true,
+          "same_enclosure_kind": true,
+          "same_sufficiency": true
+        },
+        "legacy": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        }
+      },
+      "input_sha256": "ef6891d08f3304f6849f3778e06a33bdc48c5482756f35618143695f0a9bcb5e",
+      "methods": {
+        "components": {
+          "median_kernel_seconds": 0.004633208038285375,
+          "packet": {
+            "bytes": 9588,
+            "path": "private/packets/first-9.components.packet.json",
+            "sha256": "fd5b947c97486c74284525cad67549f2fdb8d2d54a130487366261deba001f5a"
+          },
+          "proof_kind": "component_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "1",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "1",
+                "numerator": "1"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 106,
+            "enclosure_kind": "exact_for_finite_error_family",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 9
+          }
+        },
+        "legacy": {
+          "median_kernel_seconds": 0.001872709020972252,
+          "packet": {
+            "bytes": 14567,
+            "path": "private/packets/first-9.legacy.packet.json",
+            "sha256": "30d0a6c7644cb58aac103fa9d177f8e39e036f9fb283b765d20478474aca6fa5"
+          },
+          "proof_kind": "bounded_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "1",
+                "numerator": "-8"
+              },
+              "upper": {
+                "denominator": "1",
+                "numerator": "8"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 106,
+            "enclosure_kind": "conservative_deletion_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 9
+          }
+        },
+        "monotone": {
+          "median_kernel_seconds": 0.007614791858941317,
+          "packet": {
+            "bytes": 15757,
+            "path": "private/packets/first-9.monotone.packet.json",
+            "sha256": "43fbee0d547c3e0448311089c4edb49ec4b86d664f00ef7819092f011d9fe9f1"
+          },
+          "proof_kind": "monotone_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "1",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "1",
+                "numerator": "1"
+              }
+            },
+            "claim": "improvement_supported",
+            "confirmed_present_lower_bound": 9,
+            "counterexample_value": null,
+            "deletion_budget": 106,
+            "enclosure_kind": "exact_for_finite_error_family",
+            "execution_status": "succeeded",
+            "minimum_confirmed_present_count": 9,
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 9
+          }
+        }
+      },
+      "observations": 9,
+      "request_sha256": "08d3094fa7e32f1061f8ec8d73cb1bcaace0ac0f84339e438fca22c13ea7a4b4"
+    },
+    {
+      "case": "forty-373",
+      "comparability": {
+        "components": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        },
+        "legacy": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        }
+      },
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "methods": {
+        "components": {
+          "median_kernel_seconds": 0.36175770801492035,
+          "packet": {
+            "bytes": 1298204,
+            "path": "private/packets/forty-373.components.packet.json",
+            "sha256": "bbbd0d3f07bb63e4d21be53ef133825ca85a031acdc6db8500edec38d9005c99"
+          },
+          "proof_kind": "component_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "10",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "conservative_component_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 373
+          }
+        },
+        "legacy": {
+          "median_kernel_seconds": 0.0572713331785053,
+          "packet": {
+            "bytes": 180416,
+            "path": "private/packets/forty-373.legacy.packet.json",
+            "sha256": "c59999a1fd485bd53836f01e4e841a564ffa9a18b03f39629d599dfb1c206f84"
+          },
+          "proof_kind": "bounded_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "-369"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "369"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "conservative_deletion_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 373
+          }
+        },
+        "monotone": {
+          "median_kernel_seconds": 0.14715195912867785,
+          "packet": {
+            "bytes": 211662,
+            "path": "private/packets/forty-373.monotone.packet.json",
+            "sha256": "323627c738d90114465dbec418f649f063149996c33a842b876a5c6a5a371254"
+          },
+          "proof_kind": "monotone_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "3"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "confirmed_present_lower_bound": 372,
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "exact_for_finite_error_family",
+            "execution_status": "succeeded",
+            "minimum_confirmed_present_count": null,
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 373
+          }
+        }
+      },
+      "observations": 373,
+      "request_sha256": "54e6a6aaa9649d0dcea0971553602b8781ffdb1cc83994ae772c67484a6cba3c"
+    },
+    {
+      "case": "forty-480",
+      "comparability": {
+        "components": {
+          "same_bounds": true,
+          "same_enclosure_kind": true,
+          "same_sufficiency": true
+        },
+        "legacy": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        }
+      },
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "methods": {
+        "components": {
+          "median_kernel_seconds": 0.28403220907785,
+          "packet": {
+            "bytes": 933908,
+            "path": "private/packets/forty-480.components.packet.json",
+            "sha256": "93372f2306f6e38720a292d7f213ab71d1b9b5a556d45d9cda98b104a1b60cb5"
+          },
+          "proof_kind": "component_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "5",
+                "numerator": "3"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "exact_for_finite_error_family",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 480
+          }
+        },
+        "legacy": {
+          "median_kernel_seconds": 0.09959800005890429,
+          "packet": {
+            "bytes": 180416,
+            "path": "private/packets/forty-480.legacy.packet.json",
+            "sha256": "337d3e9a752b4449f510968b594c6c790dbdb9f9a05d44561a9ea3ab7a33abd1"
+          },
+          "proof_kind": "bounded_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "-369"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "369"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "conservative_deletion_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 480
+          }
+        },
+        "monotone": {
+          "median_kernel_seconds": 0.1347385838162154,
+          "packet": {
+            "bytes": 215927,
+            "path": "private/packets/forty-480.monotone.packet.json",
+            "sha256": "7b90122df9cbf03265448db9aa07792e3452db34bfafa9b714a2c0b3fd12c2a1"
+          },
+          "proof_kind": "monotone_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "5",
+                "numerator": "3"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "confirmed_present_lower_bound": 372,
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "exact_for_finite_error_family",
+            "execution_status": "succeeded",
+            "minimum_confirmed_present_count": null,
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 480
+          }
+        }
+      },
+      "observations": 480,
+      "request_sha256": "60867f523cb1e66d52fcfc0c99750538c1fdf87351f62bf5bc1dfa080db62afe"
+    },
+    {
+      "case": "forty-530",
+      "comparability": {
+        "components": {
+          "same_bounds": true,
+          "same_enclosure_kind": true,
+          "same_sufficiency": true
+        },
+        "legacy": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        }
+      },
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "methods": {
+        "components": {
+          "median_kernel_seconds": 0.3024334579240531,
+          "packet": {
+            "bytes": 1148066,
+            "path": "private/packets/forty-530.components.packet.json",
+            "sha256": "a1db1623af061c49bb79bb04f4cb8c9af3218883bcfc9b1d61bd3e781f016413"
+          },
+          "proof_kind": "component_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "5",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "exact_for_finite_error_family",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 530
+          }
+        },
+        "legacy": {
+          "median_kernel_seconds": 0.06765245809219778,
+          "packet": {
+            "bytes": 180416,
+            "path": "private/packets/forty-530.legacy.packet.json",
+            "sha256": "ea4a970c215de7af3aefbafadf700dba3bd4b011444a2528197be1b0a262d8ff"
+          },
+          "proof_kind": "bounded_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "-369"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "369"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "conservative_deletion_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 530
+          }
+        },
+        "monotone": {
+          "median_kernel_seconds": 0.1692039999179542,
+          "packet": {
+            "bytes": 225282,
+            "path": "private/packets/forty-530.monotone.packet.json",
+            "sha256": "86e23569944318cf1e63847c42a17b6e591c05d6646bd8b2febf5a46c0faca82"
+          },
+          "proof_kind": "monotone_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "5",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "confirmed_present_lower_bound": 372,
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "exact_for_finite_error_family",
+            "execution_status": "succeeded",
+            "minimum_confirmed_present_count": null,
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 530
+          }
+        }
+      },
+      "observations": 530,
+      "request_sha256": "ac407f68eb75ffff0c34c4e8babfec9f8ce70054e49e59c1c6d24cae234f180d"
+    },
+    {
+      "case": "forty-none-k48",
+      "comparability": {
+        "components": {
+          "same_bounds": true,
+          "same_enclosure_kind": false,
+          "same_sufficiency": true
+        },
+        "legacy": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": true
+        }
+      },
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "methods": {
+        "components": {
+          "median_kernel_seconds": 0.6720511249732226,
+          "packet": {
+            "bytes": 1556964,
+            "path": "private/packets/forty-none-k48.components.packet.json",
+            "sha256": "c8b5bdbe775acb4cbd509fa883d13470cabb91b2733223dd69f0cdd954422d39"
+          },
+          "proof_kind": "component_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "3"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 48,
+            "enclosure_kind": "conservative_component_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 0
+          }
+        },
+        "legacy": {
+          "median_kernel_seconds": 0.07523633283562958,
+          "packet": {
+            "bytes": 180408,
+            "path": "private/packets/forty-none-k48.legacy.packet.json",
+            "sha256": "46fa91b81f294ad10ba2c30269096bf1b102539641d620bd5806477171b94a44"
+          },
+          "proof_kind": "bounded_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "3"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "99"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 48,
+            "enclosure_kind": "conservative_deletion_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 0
+          }
+        },
+        "monotone": {
+          "median_kernel_seconds": 0.12011829111725092,
+          "packet": {
+            "bytes": 186501,
+            "path": "private/packets/forty-none-k48.monotone.packet.json",
+            "sha256": "26a2d13cc2a12e7a781caa57ebbead9b8811e26d598c6471a61cab51899c06df"
+          },
+          "proof_kind": "monotone_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "3"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "confirmed_present_lower_bound": null,
+            "counterexample_value": null,
+            "deletion_budget": 48,
+            "enclosure_kind": "conservative_monotone_bound",
+            "execution_status": "succeeded",
+            "minimum_confirmed_present_count": null,
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 0
+          }
+        }
+      },
+      "observations": 0,
+      "request_sha256": "eefe476868fc575db5901f1466539ffefbb516eb5c39ff3d7998721159a1a092"
+    },
+    {
+      "case": "forty-none-unbounded",
+      "comparability": {
+        "components": {
+          "same_bounds": true,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        },
+        "legacy": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        }
+      },
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "methods": {
+        "components": {
+          "median_kernel_seconds": 0.4900456659961492,
+          "packet": {
+            "bytes": 1556969,
+            "path": "private/packets/forty-none-unbounded.components.packet.json",
+            "sha256": "b43d185aa613ad652bd47e452b0e095fa5a1cafa9dcf754d7b2e35bb503bfd04"
+          },
+          "proof_kind": "component_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "-369"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "conservative_component_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 0
+          }
+        },
+        "legacy": {
+          "median_kernel_seconds": 0.09350345795974135,
+          "packet": {
+            "bytes": 180414,
+            "path": "private/packets/forty-none-unbounded.legacy.packet.json",
+            "sha256": "39a4e2ff36c611a3a254c31e0ebf533adbb9cd4af22b14422b2e911b22bcf43e"
+          },
+          "proof_kind": "bounded_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "-369"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "369"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "conservative_deletion_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 0
+          }
+        },
+        "monotone": {
+          "median_kernel_seconds": 0.1411458330694586,
+          "packet": {
+            "bytes": 186544,
+            "path": "private/packets/forty-none-unbounded.monotone.packet.json",
+            "sha256": "8891406e0690c32c4a5c3374971b7d5560577f60c38affae709f9770d1a0c6c7"
+          },
+          "proof_kind": "monotone_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "-369"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "confirmed_present_lower_bound": 372,
+            "counterexample_value": {
+              "denominator": "20",
+              "numerator": "-369"
+            },
+            "deletion_budget": 2299,
+            "enclosure_kind": "exact_for_finite_error_family",
+            "execution_status": "succeeded",
+            "minimum_confirmed_present_count": null,
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "insufficient",
+            "supplied_observations": 0
+          }
+        }
+      },
+      "observations": 0,
+      "request_sha256": "94142615ee3e5f02c912d98754a0a946ab01b301498c6155cd2cd4d21629e349"
+    },
+    {
+      "case": "original-49",
+      "comparability": {
+        "components": {
+          "same_bounds": true,
+          "same_enclosure_kind": false,
+          "same_sufficiency": true
+        },
+        "legacy": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": true
+        }
+      },
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "methods": {
+        "components": {
+          "median_kernel_seconds": 0.6201900828164071,
+          "packet": {
+            "bytes": 1547282,
+            "path": "private/packets/original-49.components.packet.json",
+            "sha256": "2f15e07c38868796dc26cb547ffebe3297d5e52a310e12dcfd1d1b76c0ed2c52"
+          },
+          "proof_kind": "component_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "10",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 49,
+            "enclosure_kind": "conservative_component_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 49
+          }
+        },
+        "legacy": {
+          "median_kernel_seconds": 0.10306783393025398,
+          "packet": {
+            "bytes": 180407,
+            "path": "private/packets/original-49.legacy.packet.json",
+            "sha256": "7205eae85733d60dd10e63a348b06bb853123ae0155e7758abf632912ee5d7da"
+          },
+          "proof_kind": "bounded_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "10",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "1",
+                "numerator": "5"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 49,
+            "enclosure_kind": "conservative_deletion_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 49
+          }
+        },
+        "monotone": {
+          "median_kernel_seconds": 0.14232516684569418,
+          "packet": {
+            "bytes": 189853,
+            "path": "private/packets/original-49.monotone.packet.json",
+            "sha256": "02855a0bc0bcc2ba161dbced097b5591244c5c751c771ebb886f24f6737b460e"
+          },
+          "proof_kind": "monotone_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "10",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "confirmed_present_lower_bound": null,
+            "counterexample_value": null,
+            "deletion_budget": 49,
+            "enclosure_kind": "conservative_monotone_bound",
+            "execution_status": "succeeded",
+            "minimum_confirmed_present_count": null,
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 49
+          }
+        }
+      },
+      "observations": 49,
+      "request_sha256": "629451097f90556bf2ba0c565ae10ae46a3b8509b25d89e9696fa1c2f0401f96"
+    },
+    {
+      "case": "pool-354-k49",
+      "comparability": {
+        "components": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        },
+        "legacy": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": true
+        }
+      },
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "methods": {
+        "components": {
+          "median_kernel_seconds": 0.5226328750140965,
+          "packet": {
+            "bytes": 1478710,
+            "path": "private/packets/pool-354-k49.components.packet.json",
+            "sha256": "aa621cdd70725bcd480c534c934c027fdc614be41744eecfb870ad3e68e29458"
+          },
+          "proof_kind": "component_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "10",
+                "numerator": "11"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 49,
+            "enclosure_kind": "conservative_component_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 354
+          }
+        },
+        "legacy": {
+          "median_kernel_seconds": 0.08347487519495189,
+          "packet": {
+            "bytes": 180408,
+            "path": "private/packets/pool-354-k49.legacy.packet.json",
+            "sha256": "059e282200864c26a993ab46cf44ea9d7f64d5993cd7c109d0753f6bf1ded13e"
+          },
+          "proof_kind": "bounded_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "10",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "1",
+                "numerator": "5"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 49,
+            "enclosure_kind": "conservative_deletion_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 354
+          }
+        },
+        "monotone": {
+          "median_kernel_seconds": 0.14271229202859104,
+          "packet": {
+            "bytes": 210285,
+            "path": "private/packets/pool-354-k49.monotone.packet.json",
+            "sha256": "06f6a0d44df20fd1057f78eec992466b288c70dbd65455b946e5387032d7384b"
+          },
+          "proof_kind": "monotone_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "10",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "confirmed_present_lower_bound": null,
+            "counterexample_value": null,
+            "deletion_budget": 49,
+            "enclosure_kind": "conservative_monotone_bound",
+            "execution_status": "succeeded",
+            "minimum_confirmed_present_count": null,
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 354
+          }
+        }
+      },
+      "observations": 354,
+      "request_sha256": "7262ff6058b2b2c37496966dc1b8f3965606df83065302aadd9cd76b6de3dfd7"
+    },
+    {
+      "case": "pool-354-unbounded",
+      "comparability": {
+        "components": {
+          "same_bounds": true,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        },
+        "legacy": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        }
+      },
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "methods": {
+        "components": {
+          "median_kernel_seconds": 0.34966833400540054,
+          "packet": {
+            "bytes": 1478711,
+            "path": "private/packets/pool-354-unbounded.components.packet.json",
+            "sha256": "72924c196128d59c4dc20f6c66389a7b95cb65f79d0e9893ebdbfb9a4fa3f794"
+          },
+          "proof_kind": "component_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "4",
+                "numerator": "-3"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "conservative_component_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 354
+          }
+        },
+        "legacy": {
+          "median_kernel_seconds": 0.09728583297692239,
+          "packet": {
+            "bytes": 180416,
+            "path": "private/packets/pool-354-unbounded.legacy.packet.json",
+            "sha256": "06c0c8730102f2f8791b6cad93d46640c3acefe023a80438e74808e0ee887070"
+          },
+          "proof_kind": "bounded_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "-369"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "369"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "conservative_deletion_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 354
+          }
+        },
+        "monotone": {
+          "median_kernel_seconds": 0.1345174580346793,
+          "packet": {
+            "bytes": 210322,
+            "path": "private/packets/pool-354-unbounded.monotone.packet.json",
+            "sha256": "a8edcb6e9e2da4d20c3e46f2f93715baca7f8071e34d7e32251504aafacb7665"
+          },
+          "proof_kind": "monotone_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "4",
+                "numerator": "-3"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "confirmed_present_lower_bound": 372,
+            "counterexample_value": {
+              "denominator": "4",
+              "numerator": "-3"
+            },
+            "deletion_budget": 2299,
+            "enclosure_kind": "exact_for_finite_error_family",
+            "execution_status": "succeeded",
+            "minimum_confirmed_present_count": null,
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "insufficient",
+            "supplied_observations": 354
+          }
+        }
+      },
+      "observations": 354,
+      "request_sha256": "7faec1bdee3febb9e62a533a38925b872a279868c134bc0480ff94b6f284858e"
+    },
+    {
+      "case": "replacement-none-k49",
+      "comparability": {
+        "components": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        },
+        "legacy": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        }
+      },
+      "input_sha256": "1cb877bb9661ba318936c70deb9a3faec45fc2aa6ae68eae7d89ab2ca9cff869",
+      "methods": {
+        "components": {
+          "median_kernel_seconds": 1.569027042016387,
+          "packet": {
+            "bytes": 3488835,
+            "path": "private/packets/replacement-none-k49.components.packet.json",
+            "sha256": "a5f77c8b0af053127477f5d28c35a575beaae199283d6cade9b2391457913982"
+          },
+          "proof_kind": "component_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "1",
+                "numerator": "8"
+              },
+              "upper": {
+                "denominator": "10",
+                "numerator": "129"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 49,
+            "enclosure_kind": "conservative_component_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 0
+          }
+        },
+        "legacy": {
+          "median_kernel_seconds": 0.057254166109487414,
+          "packet": {
+            "bytes": 511310,
+            "path": "private/packets/replacement-none-k49.legacy.packet.json",
+            "sha256": "43f18af6ba27afc15a1e4d49bfeeac5818e628406650227a4cd9b8d2701eb670"
+          },
+          "proof_kind": "bounded_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "1",
+                "numerator": "8"
+              },
+              "upper": {
+                "denominator": "10",
+                "numerator": "129"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 49,
+            "enclosure_kind": "conservative_deletion_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 0
+          }
+        },
+        "monotone": {
+          "median_kernel_seconds": 0.011413916945457458,
+          "packet": {
+            "bytes": 985,
+            "path": "private/packets/replacement-none-k49.monotone.packet.json",
+            "sha256": "6eb4fce775b31758e0e9513a78218ccff124cee70aa183dca85a877f6e69c256"
+          },
+          "proof_kind": "monotone_unavailable",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": null,
+            "claim": "improvement_supported",
+            "confirmed_present_lower_bound": null,
+            "counterexample_value": null,
+            "deletion_budget": 49,
+            "enclosure_kind": "unavailable",
+            "execution_status": "scope_unavailable",
+            "minimum_confirmed_present_count": null,
+            "model_status": "not_checked",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "not_evaluated",
+            "supplied_observations": 0
+          }
+        }
+      },
+      "observations": 0,
+      "request_sha256": "f7c92145e00397d14bd450cf0c2142e6295024975aef8a747c5a8c73e903b260"
+    },
+    {
+      "case": "second-53",
+      "comparability": {
+        "components": {
+          "same_bounds": true,
+          "same_enclosure_kind": true,
+          "same_sufficiency": true
+        },
+        "legacy": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        }
+      },
+      "input_sha256": "df632df3d1efe5df5bcac3f82e62089d44f47eb64e377e1632018c0f4364925b",
+      "methods": {
+        "components": {
+          "median_kernel_seconds": 0.06082133296877146,
+          "packet": {
+            "bytes": 55013,
+            "path": "private/packets/second-53.components.packet.json",
+            "sha256": "32f5057d5b53795730bc1288c174ef2785e3aba536bbc6d57e0a833e278a77c4"
+          },
+          "proof_kind": "component_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "7",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "7",
+                "numerator": "2"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 737,
+            "enclosure_kind": "exact_for_finite_error_family",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 53
+          }
+        },
+        "legacy": {
+          "median_kernel_seconds": 0.011859209043905139,
+          "packet": {
+            "bytes": 96262,
+            "path": "private/packets/second-53.legacy.packet.json",
+            "sha256": "26e0e1689ee924fd5ab3fa52f53b09ec4afd8050c443cbd03cdea83ed4ada0cf"
+          },
+          "proof_kind": "bounded_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "7",
+                "numerator": "-47"
+              },
+              "upper": {
+                "denominator": "7",
+                "numerator": "47"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 737,
+            "enclosure_kind": "conservative_deletion_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 53
+          }
+        },
+        "monotone": {
+          "median_kernel_seconds": 0.03547454182989895,
+          "packet": {
+            "bytes": 103673,
+            "path": "private/packets/second-53.monotone.packet.json",
+            "sha256": "0d6534ef0bb8f0145e3f82813109d7a37bebed8c1734d35511972226520b2447"
+          },
+          "proof_kind": "monotone_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "7",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "7",
+                "numerator": "2"
+              }
+            },
+            "claim": "improvement_supported",
+            "confirmed_present_lower_bound": 48,
+            "counterexample_value": null,
+            "deletion_budget": 737,
+            "enclosure_kind": "exact_for_finite_error_family",
+            "execution_status": "succeeded",
+            "minimum_confirmed_present_count": null,
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 53
+          }
+        }
+      },
+      "observations": 53,
+      "request_sha256": "7ffa7d3c1d0e5b4c4608c37da8e902f9535cdfb3ed019f9a4ebfdfd954de523e"
+    },
+    {
+      "case": "forty-371",
+      "comparability": {
+        "components": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        },
+        "legacy": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        }
+      },
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "methods": {
+        "components": {
+          "median_kernel_seconds": 0.43561529112048447,
+          "packet": {
+            "bytes": 1241876,
+            "path": "private/packets/forty-371.components.packet.json",
+            "sha256": "3d780cd946b035a5875b52f7205f8dd6d581dce71728c5d8d9faa5b8f307de71"
+          },
+          "proof_kind": "component_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "conservative_component_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 371
+          }
+        },
+        "legacy": {
+          "median_kernel_seconds": 0.08984562498517334,
+          "packet": {
+            "bytes": 180416,
+            "path": "private/packets/forty-371.legacy.packet.json",
+            "sha256": "b94f15e27e717d152f933c45eb228f996217cbe5fbf1081c2108546516b18c91"
+          },
+          "proof_kind": "bounded_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "-369"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "369"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "conservative_deletion_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 371
+          }
+        },
+        "monotone": {
+          "median_kernel_seconds": 0.1967595829628408,
+          "packet": {
+            "bytes": 211523,
+            "path": "private/packets/forty-371.monotone.packet.json",
+            "sha256": "51303d136e32e632d63ff1281b6442c66867ee18412cf611b868c014d2e5832a"
+          },
+          "proof_kind": "monotone_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "10",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "confirmed_present_lower_bound": 372,
+            "counterexample_value": {
+              "denominator": "10",
+              "numerator": "1"
+            },
+            "deletion_budget": 2299,
+            "enclosure_kind": "exact_for_finite_error_family",
+            "execution_status": "succeeded",
+            "minimum_confirmed_present_count": null,
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "insufficient",
+            "supplied_observations": 371
+          }
+        }
+      },
+      "observations": 371,
+      "request_sha256": "aad4d7c85ef05af2073b858752cccf188da87062e0c431e564a338dd2a7e1635"
+    },
+    {
+      "case": "forty-372",
+      "comparability": {
+        "components": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        },
+        "legacy": {
+          "same_bounds": false,
+          "same_enclosure_kind": false,
+          "same_sufficiency": false
+        }
+      },
+      "input_sha256": "4d4d52f0bc751570b12c3340d05356ad88e9cce687a083f89f2f81fe5243e4f9",
+      "methods": {
+        "components": {
+          "median_kernel_seconds": 0.44406012492254376,
+          "packet": {
+            "bytes": 1241693,
+            "path": "private/packets/forty-372.components.packet.json",
+            "sha256": "e556225ba46ab6fc1fe24f9c7c250b7cc52b979f493bfeeec0af66c91de5e727"
+          },
+          "proof_kind": "component_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "10",
+                "numerator": "1"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "conservative_component_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 372
+          }
+        },
+        "legacy": {
+          "median_kernel_seconds": 0.07089537498541176,
+          "packet": {
+            "bytes": 180416,
+            "path": "private/packets/forty-372.legacy.packet.json",
+            "sha256": "2779f38ab192c971e60ad00be337da428001236fcc9e87e27272559e0625e2d9"
+          },
+          "proof_kind": "bounded_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "-369"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "369"
+              }
+            },
+            "claim": "improvement_supported",
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "conservative_deletion_bound",
+            "execution_status": "succeeded",
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "unresolved",
+            "supplied_observations": 372
+          }
+        },
+        "monotone": {
+          "median_kernel_seconds": 0.11462250002659857,
+          "packet": {
+            "bytes": 211555,
+            "path": "private/packets/forty-372.monotone.packet.json",
+            "sha256": "99b515c2a6747196f7af38a608e208a1480124736edf21e8a40431adde8d304a"
+          },
+          "proof_kind": "monotone_deletions",
+          "result": {
+            "authority_state": "research_only",
+            "bounds": {
+              "lower": {
+                "denominator": "20",
+                "numerator": "3"
+              },
+              "upper": {
+                "denominator": "20",
+                "numerator": "51"
+              }
+            },
+            "claim": "improvement_supported",
+            "confirmed_present_lower_bound": 372,
+            "counterexample_value": null,
+            "deletion_budget": 2299,
+            "enclosure_kind": "exact_for_finite_error_family",
+            "execution_status": "succeeded",
+            "minimum_confirmed_present_count": 372,
+            "model_status": "consistent",
+            "observation_basis": "hypothetical",
+            "physical_coverage": "not_established",
+            "statistical_confidence_level": null,
+            "sufficiency": "sufficient",
+            "supplied_observations": 372
+          }
+        }
+      },
+      "observations": 372,
+      "request_sha256": "272c73c67937c216c5d3c949cd156d0fb4cbb282412e4b493b6048fe0292f102"
+    }
+  ],
+  "source_outbox_manifest_sha256": "d3baa20e4c1a5d960abf7e4752f7d60338dc7d0f6288ed337f34771e02af2051",
+  "timing_scope": "Median of five rotating-order local calls per method and request, including proof production and a separate check. Same validated in-memory operands. Preparation, file IO and fresh CLI costs are retained separately. Not an end-to-end speedup or an isolated machine benchmark.",
+  "validated_operand_loading_seconds": 5.362199292052537,
+  "validation": {
+    "first_assay_failure": "Preflight expected twelve source requests; the sealed manifest has eleven. No result was produced before that failure. Corrected inventory retains all eleven and the two explicit old counterexample packets.",
+    "fresh_cli_commands": 10,
+    "independent_reference_insertion_checks": 65761,
+    "independent_small_audit_problems": 9481,
+    "measurement_tests": 93,
+    "new_targeted_tests": 9,
+    "repository_tests": 501,
+    "timed_kernel_calls": 195
+  },
+  "version": "0.1.0"
+}

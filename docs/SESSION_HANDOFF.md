@@ -2,9 +2,46 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.22`
+Version: `0.1.23`
 
 Lifecycle status: `exploratory`
+
+The [ordered-endpoint audit checkpoint](PERCEPTION_MONOTONE_AUDIT_2026-09-17.md)
+adds `audit --proof-method monotone` with separate checking through `verify-audit`.
+For preserved-base additions, the matching-rank difference is monotone in the
+reference set. Checked smallest/largest sets replace deletion enumeration when
+their endpoints are admitted. Joint worlds, shared budgets, strict thresholds and
+unchanged limits remain explicit. General replacements reject this method's scope.
+
+The earlier 373-label request is now checked sufficient with exact [3/20, 51/20].
+A deterministic matching construction supplies 372 hypothetical confirmations,
+also sufficient with that interval. The necessary inequality
+`(2*q - 738)/40 > 1/10` proves q >= 372. This establishes the minimum number of
+confirmed-present labels for this forty-frame unrestricted-deletion case. The 371
+control gives lower endpoint 1/10 and is insufficient. It does not establish a
+minimum sequential query policy, human effort or minimum sets for other families.
+
+Fresh root: `~/.codex/reports/reiyah/engine-monotone-audit-2026-09-17-pqt93y5g/`.
+Read PLAN, PLAN_AMENDMENT_01, SOURCE_BINDINGS, private/ASSAY_PLAN_02,
+private/VERIFICATION, CLOSEOUT, final seal and the outbox consumer request. There are 13
+development requests, 24 previous and 39 new checked packets, 195 local timing
+calls and ten fresh-process CLI commands. All 501 repository and 93 measurement
+tests pass, including 65,761 independent insertion checks and 9,481 independently
+enumerated small audit problems. The initial inventory assertion failure is retained.
+
+Equal-interval local proof timings improve on the 480/530 requests but regress on
+the small first case. The component proof remains stronger on the 354/k49 request;
+the new proof preserves unresolved there. No human queries or full-cost savings
+were measured. The new method and direct matching construction should enter the
+research lane's common-baseline experiment before any superiority claim.
+
+Only the committed note at research commit `475ad6e` was retained as motivation.
+Its localization implementation remains an unsealed owner draft and was not adopted.
+Preserve that working tree. Engine's next action is to consume a fresh sealed return
+with stable seeds, rejecting input gates and the selected correction-family contract;
+the research lane retains selector and full-cost ownership. Gate A remains unaccepted.
+
+## Preceding deletion-margin checkpoint
 
 The [deletion-margin checkpoint](PERCEPTION_DELETION_MARGIN_2026-09-17.md) adds
 `deletion-margin` and `verify-deletion-margin`: a solver-independent matching/cover

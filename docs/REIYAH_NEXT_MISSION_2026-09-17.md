@@ -1,6 +1,6 @@
 # Next mission and the evidence required to expand it
 
-Document ID: `reiyah.next-mission`. Version: `0.1.2`. Lifecycle status: `proposed`.
+Document ID: `reiyah.next-mission`. Version: `0.1.3`. Lifecycle status: `proposed`.
 
 ## Decision
 
@@ -20,8 +20,8 @@ simple methods and ambitious new methods compete under the same obligation.
 
 | Owner | Responsibility | Required next deliverable |
 |---|---|---|
-| Engine / Codex | Source qualification, independent A/B semantics, joint uncertainty, observation applicability, checked stopping and main integration | Consumer-check the research sets and supply a bounded offline proof interface, including honest unresolved cases; then qualify the next distinct evidence source |
-| Independent research / Fable | Selection policies, strong conventional comparators, adversarial challenges and complete cost experiments | Replay the declared policies through the common checker; report queries, proofs, deferrals, errors and complete costs; preserve heuristic wins and guided-policy losses |
+| Engine / Codex | Source qualification, independent A/B semantics, joint uncertainty, observation applicability, checked stopping and main integration | Supply the checked endpoint proof and scoped count minimum; consume a sealed next correction-family handoff and test its applicability without importing a solver claim |
+| Independent research / Fable | Selection policies, strong conventional comparators, adversarial challenges and complete cost experiments | Include direct matching construction and the endpoint checker among the conventional baselines; report actual queries, proofs, deferrals, errors and complete costs; preserve method losses |
 
 Ownership remains separate. A new Engine exchange does not authorize altering the research
 branch or restarting its session. The selected research deliverable now lives on
@@ -41,15 +41,25 @@ or changed-system reuse questions. Its independent A/B contract is available for
 the research lane's replacement experiments; the consumed census itself remains
 preserved-base addition comparisons.
 
+The [ordered-endpoint proof](PERCEPTION_MONOTONE_AUDIT_2026-09-17.md) resolves the
+373-label request and certifies a different 372-label set attaining the necessary
+confirmed-present count for that forty-frame deletion family. It uses the monotone
+matching-rank difference for preserved-base additions. This is a simpler sufficient
+set construction to challenge selection methods with; it is not a retrospective
+reduction of queries already incurred. The method is weaker than components on the
+354-label request with budget 49 and unavailable for general output replacements.
+
 ## Sequence and stopping gates
 
 1. **Finish the common proof boundary.** Check complete local deletion coverage, shared global
    budgets, every compatible joint world and strict thresholds. An allowed counterexample under
-   a claimed sufficient result falsifies correctness. The 373-label case remains unresolved by
-   the current bounded checker; do not inherit a solver-tier conclusion as a verified certificate.
+   a claimed sufficient result falsifies correctness. The 373-label case is now checked by the
+   endpoint method; keep remaining unresolved cases and do not transfer the theorem to general
+   replacements or changed matching eligibility.
 2. **Run the competitive development benchmark.** Use the same input bytes, error family,
    query unit, answers and stopping checker for random, geometric/adjacency, influence,
-   counterexample-guided and applicable conventional sufficient-set or hitting-set procedures.
+   counterexample-guided, direct matching and applicable conventional sufficient-set or
+   hitting-set procedures.
    Run the cheap bound before a stronger proof when it already settles the decision. Preserve
    the costs of selection, preparation, loading, proof generation/checking and all earlier queries.
 3. **Freeze a prospective external test before revealing its outcomes.** First qualify the input,

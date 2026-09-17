@@ -110,6 +110,33 @@ def conclude(case, request, proof):
             result['sufficiency'] = 'unresolved'
         return result
     tolerance = rational(case['loss']['tolerance'])
+    if proof.get('kind') in ('monotone_deletions', 'monotone_unavailable'):
+        from .monotone_checker import bounds as monotone_bounds, confirmation_lower_bound
+        result.update(confirmed_present_lower_bound=None, minimum_confirmed_present_count=None)
+        domains = [(bits, env, active) for bits, env in checked_worlds(case)
+                   if (active := domain(case, request, env)) is not None]
+        checked = monotone_bounds(case, domains, proof)
+        if checked['limit'] is not None:
+            limited = checked['limit'] == 'endpoint_work_limit'
+            result.update(execution_status='resource_limited' if limited else 'scope_unavailable',
+                          sufficiency='unresolved' if limited else 'not_evaluated')
+        elif not checked['intervals']:
+            result['model_status'] = 'inconsistent'
+        else:
+            lower = min(v[0] for v in checked['intervals'])
+            upper = max(v[1] for v in checked['intervals'])
+            adverse = checked['adverse']
+            status = ('sufficient' if lower > tolerance else
+                      'insufficient' if adverse is not None else 'unresolved')
+            result.update(model_status='consistent', sufficiency=status,
+                          enclosure_kind='exact_for_finite_error_family' if checked['exact'] else 'conservative_monotone_bound',
+                          bounds={'lower': wire(lower), 'upper': wire(upper)},
+                          counterexample_value=wire(adverse) if adverse is not None else None)
+            floor = confirmation_lower_bound(case, request)
+            result['confirmed_present_lower_bound'] = floor
+            if floor is not None and len(request['observations']) == floor and status == 'sufficient':
+                result['minimum_confirmed_present_count'] = floor
+        return result
     if proof.get('kind') in ('component_deletions', 'component_resource_limit'):
         from .component_checker import intervals as component_intervals
         domains = [(bits, env, active) for bits, env in checked_worlds(case)

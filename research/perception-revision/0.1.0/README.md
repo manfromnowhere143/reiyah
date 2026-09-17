@@ -90,7 +90,7 @@ solve different problems; witness overlap is not a measure of saved audit work.
 
 The caller proposes observations or an adverse candidate. This package supplies a bounded
 checker and simple proof producer, not a minimum-audit-set optimizer or a learned query planner.
-There are three proof routes:
+Available proof routes:
 
 1. Complete enumeration of every compatible joint world and deletion set, within resource limits.
 2. A conservative universal bound checked in every compatible joint world. Deleting one object
@@ -101,6 +101,11 @@ There are three proof routes:
 3. One explicit adverse world with matching/cover certificates. The checker verifies observation
    compatibility, the deletion budget and failure of strict improvement. This proves insufficiency
    without pretending to enclose the entire error family.
+4. `--proof-method components` combines checked component calculations under one shared budget,
+   retaining conservative component bounds where complete local enumeration exceeds its limits.
+   See the [component proof report](../../../docs/PERCEPTION_AUDIT_COMPONENTS_2026-09-17.md).
+5. `--proof-method monotone` checks ordered reference endpoints for preserved-base additions,
+   as specified below. Its membership premise is checked explicitly.
 
 The audit checker reconstructs admissible domains and verifies cardinality certificates without
 calling a matching solver. Its `conclude` function is the normative conclusion calculation;
@@ -112,6 +117,37 @@ The family deletes declared reference objects only. Missing-object insertion, ch
 geometry, identity, reviewer error and population shift need explicit additional models.
 `hypothetical`, `benchmark_reference` and `supplied_external_records` describe supplied premises;
 none authenticates an independent reviewer. No probability distribution over worlds is invented.
+
+### Ordered reference endpoints for preserved-base additions
+
+`audit --proof-method monotone` checks two matching/cover endpoints per compatible
+joint world. It requires A's detection IDs to be a subset of B's; common eligibility
+is enforced by the shared graph contract. Under these premises the rank difference
+`TP_B-TP_A` is nondecreasing as references are added. The
+[argument and development result](../../../docs/PERCEPTION_MONOTONE_AUDIT_2026-09-17.md)
+explain this scope. General replacements return `scope_unavailable` for this method.
+
+The lower endpoint retains only confirmed-present references; the upper removes
+only required absences. If the global deletion budget admits the lower endpoint,
+the bounds are exact. Otherwise the checker intersects the monotone bound with the
+existing budget-aware bound. An infeasible lower endpoint cannot prove insufficiency.
+The checker preserves all joint worlds, contradictory answers, strict thresholds
+and unresolved cases. Existing method defaults remain unchanged.
+
+For fixed, uniformly weighted inputs with an unrestricted deletion budget and all
+answers present, the result can also contain `confirmed_present_lower_bound`.
+It follows from the maximum loss improvement achievable with that many remaining
+references. `minimum_confirmed_present_count` is non-null only when the checked
+sufficient request attains that lower bound. This is a minimum confirmed-present
+set under the declared family, not minimum human time or a policy optimal for
+arbitrary audit responses. Outside this additional scope the fields remain null.
+
+Proof kinds `monotone_deletions` and `monotone_unavailable`, version 0.1.0, carry
+complete joint-world assignments and lower/upper matching certificates or an exact
+admission reason. Use the ordinary `verify-audit` command for these packets.
+The method reserves full upper-endpoint work plus lower-endpoint matching work,
+within the existing 2,000,000 ceiling. The resulting bound is conservative when
+the error budget excludes its lower endpoint, unless both bounds coincide.
 
 ## Fixed-world minimum deletion margins
 

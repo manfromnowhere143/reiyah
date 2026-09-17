@@ -30,7 +30,7 @@ def world_proposal(case, env, removed):
 
 
 def produce(case, request, candidate=None, method='legacy'):
-    require(method in ('legacy', 'components'), 'AUDIT_METHOD', 'Unknown audit proof method')
+    require(method in ('legacy', 'components', 'monotone'), 'AUDIT_METHOD', 'Unknown audit proof method')
     require(candidate is None or method == 'legacy', 'AUDIT_METHOD', 'A supplied counterexample uses the legacy method')
     reason = unavailable(case)
     if reason is not None:
@@ -52,6 +52,10 @@ def produce(case, request, candidate=None, method='legacy'):
         return {'result': conclude(case, request, proof), 'proof': proof}
     selected = [(bits, env, active) for bits, env in worlds(case['model'])
                 if (active := domain(case, request, env)) is not None]
+    if method == 'monotone':
+        from .monotone_producer import propose
+        proof = propose(case, selected)
+        return {'result': conclude(case, request, proof), 'proof': proof}
     if method == 'components':
         from .component_producer import propose
         proof = propose(case, selected)

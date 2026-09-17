@@ -36,9 +36,9 @@ total validation cost and an advantage over competent conventional analysis rema
 
 The [17 September component checker](docs/PERCEPTION_AUDIT_COMPONENTS_2026-09-17.md) independently
 certifies delivered sets of 9 and 53 hypothetical confirmations on the first two cases, and 480
-and 530 on the forty-frame case, under their declared deletion families. The proposed 373 set
-remains unresolved by this bounded checker. These are sufficiency results, not minimum-query or
-human-time claims. The forty-frame direction is Mapillary camera base plus retained Megvii lidar
+and 530 on the forty-frame case, under their declared deletion families. That bounded method
+leaves the 373 set unresolved; the new endpoint proof below settles it. These are conditional
+reference results. The forty-frame direction is Mapillary camera base plus retained Megvii lidar
 additions. Read the [next mission and benchmark gates](docs/REIYAH_NEXT_MISSION_2026-09-17.md)
 for the Engine/research split and the evidence needed for a broader performance claim.
 
@@ -58,6 +58,17 @@ baselines are checked as excluded; ten reach the unchanged work limit. The media
 minimum is 27 deletions, or 2.41% of included labels. These are conditional graph
 results, not measured label errors, sufficient audit sets or saved validation cost.
 The new proof also supports independently declared A/B replacements.
+
+The [ordered-endpoint audit proof](docs/PERCEPTION_MONOTONE_AUDIT_2026-09-17.md) now
+certifies the 373-label set and a constructed **372-label set**. For this forty-frame
+case, 372 attains a checked necessary lower bound: it is the **minimum number of
+confirmed-present labels** that protects the strict decision against arbitrary
+deletion of all other declared labels. The interval is [0.15, 2.55]; a 371-label
+control reaches the excluded threshold of 0.10. This proof applies to preserved-base
+additions with fixed matching eligibility. It checks ordered reference endpoints
+instead of enumerating every deletion. These hypothetical confirmations establish
+neither minimum sequential query cost nor human-time savings. General replacements,
+geometry changes and bounded-budget cases still need their applicable proof methods.
 
 As checked on **14 September 2026**, a [new automated replay](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md)
 on the two existing development anchors gives **[1,1]**, conditional on the retained benchmark
