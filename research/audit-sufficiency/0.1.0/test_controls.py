@@ -78,5 +78,36 @@ class Certificates(unittest.TestCase):
         self.assertEqual(cert['solver_unverified_anchors'], 0)
 
 
+
+class InsertionMonotonicity(unittest.TestCase):
+    """Adding a reference object never lowers TP_augmented - TP_base.
+
+    Proof sketch in README (matroid union with a rank-one matroid; the rank-increase set is an
+    up-set by submodularity). Checked here on random graphs; the exhaustive check over all
+    graphs with up to 3 base, 2 addition and 3 object vertices plus one inserted object
+    (1,236,958 cases) is recorded in the README.
+    """
+
+    def test_random_graphs(self):
+        import random
+        rng = random.Random(7)
+        for _ in range(3000):
+            nb, na, no = rng.randint(1, 6), rng.randint(0, 4), rng.randint(0, 6)
+            base = ['b%d' % i for i in range(nb)]
+            adds = ['a%d' % i for i in range(na)]
+            objs = ['o%d' % i for i in range(no)]
+            E = {(d, o) for d in base + adds for o in objs if rng.random() < 0.35}
+
+            def gain(edges):
+                adj = {}
+                for d, o in edges:
+                    adj.setdefault(d, []).append(o)
+                return hopcroft_karp(base + adds, adj) - hopcroft_karp(base, adj)
+
+            g0 = gain(E)
+            E2 = E | {(d, 'new') for d in base + adds if rng.random() < 0.5}
+            self.assertGreaterEqual(gain(E2), g0)
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -212,9 +212,9 @@ def main():
                              for did, r in dets for o in objs
                              if o['c'] == r['c'] and (r['x'] - o['x']) ** 2 + (r['y'] - o['y']) ** 2 < NEAR]
                     anchors.append({'id': 'a-%d' % order[t][1], 'weight': {'numerator': str(w.numerator), 'denominator': str(w.denominator)},
-                                    'base': {'state': 'observed', 'value': [{'id': did} for did, _ in dets[:len(base)]]},
-                                    'additions': {'state': 'observed', 'value': [{'id': did} for did, _ in dets[len(base):]]},
-                                    'reference': {'state': 'finite', 'objects': [{'id': o['token'], 'when': []} for o in objs],
+                                    'base': {'state': 'observed', 'value': [{'id': did, 'class': r['c'], 'xy': [r['x'], r['y']]} for did, r in dets[:len(base)]]},
+                                    'additions': {'state': 'observed', 'value': [{'id': did, 'class': r['c'], 'xy': [r['x'], r['y']]} for did, r in dets[len(base):]]},
+                                    'reference': {'state': 'finite', 'objects': [{'id': o['token'], 'class': o['c'], 'xy': [o['x'], o['y']], 'when': []} for o in objs],
                                                   'edges': edges}})
                 case = {'artifact_id': 'reiyah.research.audit-sufficiency.census-unit', 'version': '0.1.0',
                         'comparison_id': '%s__%s__%s' % (base_name, add_name, s['name']),

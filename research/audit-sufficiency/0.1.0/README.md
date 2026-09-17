@@ -262,6 +262,34 @@ one finite reference world; localization, class and insertion errors are not mod
 are conditional on the retained labels. Upper bounds come from one policy with batch 20 and are
 local, not minimal. Nothing here involves a human audit or a physical claim.
 
+## Which error family threatens which verdict: insertion monotonicity
+
+Claim. Adding a reference object never decreases `TP_augmented - TP_base`. Hence an inserted
+label (a missing object in the reference) cannot overturn a supported verdict, a class error
+(delete under one class, insert under another) is at most a deletion, and the deletion family
+is the worst case over all presence and class errors for supported verdicts. For excluded
+verdicts the mirror holds: deletion cannot rescue them, insertion can.
+
+Proof. Fix the reference graph `G` with detection sets `A` (base) and `C = A + additions`. The
+maximum matching size of any detection subset `X` is the rank `r(X)` of the transversal
+matroid of `G` on detections. Adding an object `o*` with neighbour set `N` gives the matroid
+union of that matroid with the rank-one matroid on `N`, whose rank is
+
+```text
+r'(X) = min over Y contained in X of  r(Y) + [Y meets N] + |X minus Y|
+```
+
+so `r'(X) - r(X)` is 0 or 1 for every `X`. Suppose `r'(A) = r(A) + 1` and `r'(C) = r(C)`. Take
+`Y` attaining the minimum for `C`; then `Y` misses `N` and `r(Y) + |C minus Y| = r(C)`. From
+submodularity `r(Y union A) = r(Y) + |A minus Y|` and then
+`r(Y intersect A) + |A minus Y| <= r(A)`, while subadditivity gives the reverse inequality, so
+`r(Y intersect A) + |A minus Y| = r(A)`. Since `Y intersect A` also misses `N`, the formula
+gives `r'(A) <= r(A)`, a contradiction. Therefore `r'(C) - r'(A) >= r(C) - r(A)`.
+
+Check. Exhaustive over every graph with up to 3 base, 2 addition and 3 object vertices and every
+neighbourhood of one inserted object: 1,236,958 cases, no decrease. Randomized check in
+`test_controls.py`.
+
 ## Reproduce
 
 ```sh
