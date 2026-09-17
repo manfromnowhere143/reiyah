@@ -1,0 +1,79 @@
+{
+ "artifact_id": "reiyah.research.audit-sufficiency.cost-experiment-plan",
+ "version": "0.1.0",
+ "frozen_before_outcomes": true,
+ "cases": {
+  "development": [
+   "first_comparison.json (106 labels)",
+   "second_comparison.json (737 labels)",
+   "mapillary__megvii__scene-0101 (forty-frame, 2,299 labels)"
+  ],
+  "census_sample": [
+   "fcos3d__pointpillars__scene-0910",
+   "mapillary__megvii__scene-0915",
+   "fcos3d__megvii__scene-0554",
+   "fcos3d__megvii__scene-0269",
+   "fcos3d__pointpillars__scene-0557",
+   "pointpillars__mapillary__scene-0963",
+   "fcos3d__mapillary__scene-0636",
+   "fcos3d__centerpoint__scene-0782",
+   "pointpillars__mapillary__scene-0928",
+   "fcos3d__pointpillars__scene-0636",
+   "fcos3d__centerpoint__scene-0638",
+   "fcos3d__megvii__scene-0802"
+  ],
+  "selection_rule": "supported units with at most 1,500 labels, ordered by SHA-256 of the unit id, first 12; exposed development data, units share scenes and detectors, not held out"
+ },
+ "comparison_semantics": "preserved-base additions under the additive loss, unit penalties, equal frame weights, strict improvement above 1/10",
+ "families": {
+  "deletion": "whole-object deletion, unbounded count, one finite world",
+  "localization": "closed reference balls of radius 0.5 m, strict 2 m rule, independent-flip relaxation for the certificate, residual radius on answers"
+ },
+ "query_unit": "one reference record: deletion asks presence; localization asks centre and residual radius",
+ "answer_source": "retained benchmark labels as a declared computational oracle: present, centre = retained centre; residual radius 0 (exact-adjacency oracle) and 0.25 m (declared residual) as two variants for localization",
+ "stopping_obligation": "first solver-tier certificate (deletion: sufficient; localization: robust) at the declared budget; same checker for every selector; certificates recorded with solver status and time",
+ "budgets": {
+  "max_queries": "all labels",
+  "max_rounds": 200,
+  "solver_time_limit_seconds_per_anchor": 30,
+  "batch": 10
+ },
+ "seeds": "per (case, selector): int(sha256(case_id + selector)[:8], 16)",
+ "selectors": {
+  "deletion": [
+   "random",
+   "degree",
+   "addition_adjacent",
+   "influence",
+   "counterexample_guided",
+   "hitting_set_online"
+  ],
+  "localization": [
+   "random",
+   "boundary_first",
+   "counterexample_guided",
+   "hitting_set_online"
+  ]
+ },
+ "cheap_proofs_before_search": {
+  "deletion": "sound tier: every unconfirmed edge-bearing label removes at most one unit, capped by gain; if it certifies, no MILP is run that round",
+  "localization": "sound tier (Engine-style envelope): every unconfirmed flip removes at most one unit, capped by gain"
+ },
+ "costs_recorded": [
+  "queries until first checked decision (all earlier queries counted)",
+  "rounds",
+  "certificate calls",
+  "solver calls and solver seconds",
+  "selection seconds",
+  "total wall seconds",
+  "timeouts and solver limit hits",
+  "any false certificate (fails correctness)"
+ ],
+ "baseline_for_win_loss": "strongest applicable conventional selector on that case (fewest queries among random, degree/boundary_first, addition_adjacent, influence)",
+ "not_claimed": [
+  "human time",
+  "money",
+  "held-out generalization",
+  "independence between units"
+ ]
+}

@@ -244,7 +244,16 @@ def main():
         me = {(a['id'], e['detection'], e['object']) for a in mine['anchors'] for e in a['reference']['edges']}
         gb = [(a['id'], len(a['base']['value']), len(a['additions']['value'])) for a in g['anchors']]
         mb = [(a['id'], len(a['base']['value']), len(a['additions']['value'])) for a in mine['anchors']]
+        equal = gk == mk and ge == me and gb == mb
         print('GATE objects equal', gk == mk, len(gk), len(mk), 'edges equal', ge == me, len(ge), len(me), 'counts equal', gb == mb, flush=True)
+        if '--gate-negative-control' in sys.argv:
+            # the gate must reject a deliberately altered rebuild: drop one object from the rebuilt unit
+            mk_alt = set(list(mk)[:-1])
+            if mk_alt == gk:
+                raise SystemExit('GATE NEGATIVE CONTROL FAILED: altered rebuild passed')
+            print('GATE negative control: altered rebuild rejected', flush=True)
+        if not equal:
+            raise SystemExit('GATE FAILED: rebuilt unit differs from the sealed case')
 
 
 if __name__ == '__main__':

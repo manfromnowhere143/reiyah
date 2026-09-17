@@ -9,6 +9,7 @@ random deletion sets of size floor and 2*floor that overturn the criterion.
 Usage: python -B census_run.py UNIT_DIR OUT_JSON [--workers N] [--limit N]
 Aggregate rows only; no annotation identities are written.
 """
+import hashlib
 import json
 import os
 import random
@@ -68,7 +69,7 @@ def one(path):
            'carriers': carriers, 'carriers_with_base_edge': base_edge, 'additive_pool': pool,
            'audit_lower_bound': lb}
     if case.criterion(delta) == 'supported' and case.labels:
-        rng = random.Random(hash(raw['comparison_id']) & 0xffff)
+        rng = random.Random(int(hashlib.sha256(raw['comparison_id'].encode()).hexdigest()[:8], 16))
         rec = run_policy(case, 'addition_adjacent', batch=20)
         row.update({'audit_upper_bound': rec['confirmed'] if rec['solver'] == 'sufficient' else None,
                     'upper_bound_status': rec['solver'], 'policy_rounds': rec['rounds'],

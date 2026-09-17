@@ -1,0 +1,24 @@
+{
+ "engine_commit": "b41963ed8c9cc2b5a797b74d3532cde2f793797d",
+ "witness_cases": 376,
+ "refuted_by_displacement": 375,
+ "by_epsilon": {
+  "0.1": {
+   "refuted_by_displacement": 44
+  },
+  "0.25": {
+   "refuted_by_displacement": 97
+  },
+  "0.5": {
+   "refuted_by_displacement": 127,
+   "rejected: LOCALIZATION_WITNESS_WORK\",\"det": 1
+  },
+  "1.0": {
+   "refuted_by_displacement": 107
+  }
+ },
+ "note": "0.1 m witnesses come from the 0.2.1 recompute (decimal radius); 0.25, 0.5 and 1.0 m radii are exact in binary so 0.2.0 and 0.2.1 coincide there. The 0.2.0 run at 0.1 m had 41 boundary shifts rejected for exceeding the Engine radius by 5.5e-18 m; that record is retained privately as engine-localization-exchange.json (0.2.0).",
+ "radius_convention": "decimal text of the source value, as the Engine does",
+ "record_digests": "row-canonical, not byte spans",
+ "coordinates": "benchmark_reference basis"
+}

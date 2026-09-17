@@ -89,12 +89,12 @@ through joint deletion of labels whose single deletion changes nothing.
 |---|---:|---:|---:|---:|
 | First | **9 of 106** | 9 | 10 | 0.7 |
 | Second | **53 of 737** | 249 | 1,344 | 112 |
-| Forty-frame | interval **[306, 373]** | 150 and more | over 4,500 | see note |
+| Forty-frame | **372** (Engine: 372-label construction plus matching necessary bound, main `0d6f116`; this lane had bounded it to [306, 373]) | superseded | superseded | see note |
 
-For the forty-frame case the lower bound comes from the pool cut and did not move over the first 150
-iterations of the hitting-set loop; the upper bound is an inclusion-minimal sufficient set shrunk
-from the best policy result. The exact minimum lies in the interval; closing it needs a better
-adverse-set generator than random shrinking of the maximal counterexample.
+For the forty-frame case this lane's interval [306, 373] (pool cut below, shrunk certified set above)
+is superseded by the Engine's exact result of 372 for the unrestricted-deletion, confirmed-present
+count problem. That is a count of labels to confirm, not a minimum adaptive query policy and not a
+measured human effort.
 
 ### Queries to a certificate, forty-frame case, unbounded family
 
@@ -154,8 +154,8 @@ Matching is not the expensive operation in this workflow; nothing here should be
    354 individually influential no-base-edge labels still leaves 66 units removable by joint
    deletion of labels that are individually inert.
 2. The exact minimum audit is small on the small cases (9 of 106; 53 of 737) and provably large
-   on the forty-frame case (at least 306 of 2,299, at most 373). Robustness of that verdict to
-   reference deletion costs at least 13% of the labels, whatever policy is used.
+   on the forty-frame case (exactly 372 of 2,299 by the Engine's certificate). Robustness of that
+   verdict to reference deletion costs 16% of the labels, whatever policy is used.
 3. Selection heuristics are competitive with the exact adversary as selectors; the exact machinery
    earns its place as the stopping rule and as the certificate, not as the picker.
 4. Under a budget of 49 deletions the pool is sufficient; under unbounded deletion it is not. The
@@ -235,8 +235,8 @@ census quantifies how far apart the answers are on real detector outputs.
 | centerpoint -> +pointpillars | 11 | 10 | 3.5% | 5.9% | 10 |
 | fcos3d -> +centerpoint | 86 | 69 | 24.2% | 31.6% | 83 |
 | fcos3d -> +mapillary | 86 | 21 | 11.4% | 17.2% | 80 |
-| fcos3d -> +megvii | 114 | 65 | 19.7% | 24.8% | 111 |
-| fcos3d -> +pointpillars | 99 | 46 | 12.4% | 18.6% | 94 |
+| fcos3d -> +megvii (interval [8,458, 8,481]) | 114 | 65 | 19.7% | 24.8% | 111 |
+| fcos3d -> +pointpillars (interval [4,879, 4,902]) | 99 | 46 | 12.4% | 18.6% | 94 |
 | mapillary -> +centerpoint | 61 | 31 | 17.5% | 24.0% | 58 |
 | mapillary -> +fcos3d | 63 | 6 | 2.8% | 5.0% | 55 |
 | mapillary -> +megvii | 92 | 37 | 14.1% | 18.9% | 87 |
@@ -246,7 +246,7 @@ census quantifies how far apart the answers are on real detector outputs.
 | megvii -> +mapillary | 15 | 16 | 7.3% | 13.2% | 14 |
 | megvii -> +pointpillars | 20 | 18 | 5.0% | 8.2% | 18 |
 | pointpillars -> +centerpoint | 69 | 34 | 17.5% | 21.2% | 65 |
-| pointpillars -> +fcos3d | 108 | 14 | 6.0% | 8.6% | 97 |
+| pointpillars -> +fcos3d (interval [1,728, 1,733]) | 108 | 14 | 6.0% | 8.6% | 97 |
 | pointpillars -> +mapillary | 59 | 20 | 10.3% | 16.4% | 53 |
 | pointpillars -> +megvii | 104 | 31 | 13.6% | 16.8% | 99 |
 
@@ -262,54 +262,60 @@ one finite reference world; localization, class and insertion errors are not mod
 are conditional on the retained labels. Upper bounds come from one policy with batch 20 and are
 local, not minimal. Nothing here involves a human audit or a physical claim.
 
-## Localization-error census: the same 1,125 verdicts under label position error
+## Localization-error census: the same 1,125 verdicts under label position error (contract 0.2.0)
 
-Dated 17 September 2026. `localization.py` and `localization_census.py`; aggregates in
-`localization-summary.json`. For every supported verdict and every epsilon, the certificate asks
-whether any reference in which each label position is within epsilon of the retained one can
-overturn the verdict. `robust` is proven under the independent-flip relaxation, so it holds for
-real displacements. `insufficient_realized` means an explicit displacement of specific objects,
-each within epsilon, has been exhibited that overturns the verdict: a physical counterexample.
-`insufficient_relaxed` means the relaxed adversary crosses but no realizing displacement was
-found for at least one object: unresolved between geometry and relaxation. `solver_failed`
-means an anchor MILP hit its 30 s limit and the unit is reported unresolved, never robust.
-When a verdict is not robust, the counterexample-guided audit confirms positions (batch 20, at
-most 40 rounds) until it is; the count is the audit cost.
+Dated 17 September 2026, recomputed under `localization.py` 0.2.0 after the Engine's review
+found two defects in 0.1.0 (both reproduced on the Engine's retained controls before the repair,
+see `private/controls/`): a present edge at exactly the inner boundary was treated as fixed, and a
+confirmed position froze all edges regardless of measurement error. 0.2.0 uses exact rationals
+from the source decimals, closed balls with `guaranteed iff e < R and s < (R - e)^2` and
+`possible iff s < (R + e)^2`, and carries a returned centre and residual radius for every
+confirmed position. The residual-case witness this lane produces, shift (13/250, -21/250), is
+verified by the Engine's `localization` command as `refuted_by_displacement`.
 
-| Position error allowed | Robust, no audit | Physically realized counterexample | Relaxed only | Solver limit | Median positions to measure | Median share of labels | p90 share |
+`robust` is proven under the independent-flip relaxation and therefore holds for real
+displacements. `insufficient_realized` means a displacement of specific objects, each within
+epsilon, has been exhibited (vectors retained privately; Engine verification in
+`engine-localization-exchange.json`: 375 of 376 exhibited counterexamples are accepted by the Engine's
+`localization` command as `refuted_by_displacement`; the one exception hit the Engine's work limit). `insufficient_relaxed` means the relaxed adversary crosses
+but the grid search found no realizing displacement for at least one object: unresolved, never
+infeasible. `solver_failed` means an anchor MILP hit its 30 s limit: unresolved, never robust.
+
+| Position error allowed | Robust, no audit | Exhibited geometric counterexample | Relaxed only | Solver limit | Median positions to certify (exact-adjacency oracle) | Median share of labels | p90 share |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| 0.1 m | 1077 (95.7%) | 42 | 6 | 0 | 8 | 0.9% | 2.3% |
+| 0.1 m | 1077 (95.7%) | 44 | 4 | 0 | 8 | 0.9% | 2.3% |
 | 0.25 m | 986 (87.6%) | 97 | 42 | 0 | 20 | 1.8% | 3.8% |
-| 0.5 m | 813 (72.3%) | 129 | 183 | 0 | 20 | 2.9% | 6.6% |
-| 1.0 m | 491 (43.6%) | 112 | 472 | 50 | 53 | 5.6% | 11.9% |
+| 0.5 m | 813 (72.3%) | 128 | 184 | 0 | 20 | 2.9% | 6.3% |
+| 1.0 m | 495 (44.0%) | 107 | 480 | 43 | 48 | 5.6% | 11.8% |
 
-Every audit that ran restored robustness (573 of 584 at 1 m; 11 hit the time cap). Reading:
+The audit column uses the declared exact-adjacency oracle (returned centre = retained centre,
+residual radius 0). With a residual radius of half the perturbation (a 5 cm measurement against a
+10 cm question), the same guided audit certifies only 22 of 48 cases at 10 cm, 83 of 139 at 25 cm,
+173 of 312 at 50 cm and 273 of 566 at 1 m within its 40-round budget: a label measured to within
+its residual of the 2 m boundary stays uncertain however many other labels are measured.
+Certification depends on measurement precision at the boundary, not on the number of queries.
 
-1. **42 verdicts on this benchmark split (3.7%) are overturned by moving specific labels less
-   than 10 cm**, with the displacement exhibited; 97 (8.6%) by less than 25 cm. nuScenes annotation
-   accuracy is not stated to that precision, so these verdicts are not established by the labels.
-2. Where a verdict is not robust, robustness is restored by measuring a median of 8 positions
-   (10 cm) or 20 positions (25 cm): under 2% of the labels. The certificate names them.
-3. At 1 m about half of all supported verdicts depend on label positions; the deletion and
-   localization families together give each verdict a two-parameter robustness margin
-   (deletions, metres) that the scalar it summarizes does not carry.
-
-Limits: independent-flip relaxation (sound for robust, exhibited for realized, open for relaxed);
-planar displacement only; class-preserving; the same 2019 to 2020 submissions and correlated units
-as the deletion census; no human measurement occurred.
+Reading: 44 verdicts on this split are overturned by exhibited displacements of specific labels
+under 10 cm; 97 under 25 cm. Where a verdict is not robust and answers are exact, a median of 8
+(10 cm) or 20 (25 cm) measured positions restores it. Limits: independent-flip relaxation (sound
+for robust, exhibited for realized, open for relaxed); planar, class-preserving displacement; the
+same submissions and correlated units as the deletion census; no physical measurement occurred.
 
 ## Split-level verdicts: the leaderboard margin
 
 Dated 17 September 2026. `split_level.py`; aggregates in `split-level.json`. The pair verdict on
 the whole validation split is the equal-weight mean of the 150 scene decisions under the same
-criterion. The deletion adversary spends deletions anywhere on the split, taking the largest
-per-deletion steps first from the additive pools (exact when the pools suffice, which they did for
-every supported pair). The position adversary's per-scene maxima add across all 150 scenes,
+criterion. The deletion adversary spends deletions anywhere on the split. Two bounds are computed and kept
+apart: a universal lower bound (any deletion removes at most one gain unit, and a scene cannot lose
+more units than its gain, so take the largest possible weighted steps first), and an attained upper
+bound (a witness built from the additive pools, which is a convenient subset of the possible
+steps). The minimum is exact when the two coincide. The Engine's independent weighted composition
+(main `b41963e`) gives the same nine results: six exact minima and three intervals. The position adversary's per-scene maxima add across all 150 scenes,
 excluded scenes included (their gain can still be lowered). A split-level position result is
 proven when the summed maxima stay below the margin; when they cross it is reported as not proven,
 because realization was checked per scene, not for the summed pattern.
 
-| Pair (base -> +addition) | Split delta | Scenes supported | Deletions to overturn (share of 148,441 labels) | Robust at 10 cm / 25 cm / 50 cm / 1 m | Largest proven epsilon |
+| Pair (base -> +addition) | Split delta | Scenes supported | Deletions to overturn: attained witness (share of 148,441 labels); exact unless an interval is given | Robust at 10 cm / 25 cm / 50 cm / 1 m | Largest proven epsilon |
 |---|---:|---:|---:|---|---|
 | centerpoint -> +fcos3d | -0.731 | 3 | excluded | | |
 | centerpoint -> +mapillary | -2.082 | 4 | excluded | | |
@@ -317,8 +323,8 @@ because realization was checked per scene, not for the summed pattern.
 | centerpoint -> +pointpillars | -1.332 | 11 | excluded | | |
 | fcos3d -> +centerpoint | 1.800 | 86 | **4,972** (3.35%) | yes / yes / yes / no | 0.50 m |
 | fcos3d -> +mapillary | 0.927 | 86 | **2,420** (1.63%) | yes / yes / no / no | 0.25 m |
-| fcos3d -> +megvii | 2.970 | 114 | **8,481** (5.71%) | yes / yes / yes / yes | 1.00 m |
-| fcos3d -> +pointpillars | 1.764 | 99 | **4,902** (3.30%) | yes / yes / yes / yes | 1.00 m |
+| fcos3d -> +megvii (interval [8,458, 8,481]) | 2.970 | 114 | **8,481** (5.71%) | yes / yes / yes / yes | 1.00 m |
+| fcos3d -> +pointpillars (interval [4,879, 4,902]) | 1.764 | 99 | **4,902** (3.30%) | yes / yes / yes / yes | 1.00 m |
 | mapillary -> +centerpoint | -0.471 | 61 | excluded | | |
 | mapillary -> +fcos3d | 0.056 | 63 | excluded | | |
 | mapillary -> +megvii | 0.981 | 92 | **2,577** (1.74%) | yes / yes / no / no | 0.25 m |
@@ -328,12 +334,13 @@ because realization was checked per scene, not for the summed pattern.
 | megvii -> +mapillary | -1.476 | 15 | excluded | | |
 | megvii -> +pointpillars | -1.081 | 20 | excluded | | |
 | pointpillars -> +centerpoint | 0.068 | 69 | excluded | | |
-| pointpillars -> +fcos3d | 0.690 | 108 | **1,733** (1.17%) | yes / yes / yes / no | 0.50 m |
+| pointpillars -> +fcos3d (interval [1,728, 1,733]) | 0.690 | 108 | **1,733** (1.17%) | yes / yes / yes / no | 0.50 m |
 | pointpillars -> +mapillary | 0.189 | 59 | **260** (0.18%) | no / no / no / no | none proven |
 | pointpillars -> +megvii | 1.167 | 104 | **3,120** (2.10%) | yes / yes / yes / no | 0.50 m |
 
-Nine of twenty ordered pairs are supported on the split. Their margins differ by a factor of 30
-in labels (260 to 8,481) and from none proven to 1 m in position. "Adding Mapillary to
+Nine of twenty ordered pairs are supported on the split. Their attained margins differ by a factor
+of 30 in labels (260 to 8,481) and from none proven to 1 m in position. This is a conditional loss
+aggregate under the declared contract, not an official nuScenes leaderboard metric. "Adding Mapillary to
 PointPillars helps" holds on 59 scenes and on the split, and is overturned by 260 deletions
 (0.18% of labels); its position robustness is not proven even at 10 cm. "Adding Megvii to FCOS3D
 helps" survives 8,481 deletions and 1 m of position error. A leaderboard that printed these two
@@ -359,6 +366,114 @@ the 260 named labels across the split moves "PointPillars + Mapillary" from 1809
 (0.1886) to 31877/319800 (0.0997), at or below the tolerance, as computed by the Engine kernel
 and accepted by its checker. The Engine's matcher, this package's Hopcroft-Karp and the MILP
 adversary are three separate implementations that share only the parsed graph.
+
+## Cost to a checked decision: the frozen experiment
+
+Dated 17 September 2026. Plan frozen before any outcome in `PLAN_COST_EXPERIMENT.json`
+(SHA-256 `262128744a50e5fea0b5f089ef4cb76070f31fa0069aae6b8afdecfda6be83b9`); results in `cost-experiment.json`. Fifteen cases: the three
+development cases and twelve census units chosen by digest order (exposed development data,
+correlated units, not held out). Every selector uses the same checker (solver-tier certificate),
+the same batch of 10, the same declared oracle (retained labels; localization answers carry a
+residual radius of 0 or 0.25 m), a cheap sound proof tried and charged before every solver call,
+and a cap of 200 rounds. Queries are counted until the first checked decision; a run that does not
+certify within budget is `not certified`, never a win.
+
+### Deletion family: queries to a sufficiency certificate
+
+| Case | random | degree | addition-adjacent | influence | counterexample-guided | hitting set online | strongest conventional |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| first | 100 | 90 | 20 | 50 | 15 | 10 | 20 |
+| second | 730 | 560 | 330 | 80 | 66 | 55 | 80 |
+| forty | 2000 | 1660 | 480 | 1170 | 530 | 200 (budget exhausted) | 480 |
+| fcos3d__centerpoint__scene-0638 | 690 | 530 | 290 | 290 | 290 | 200 (budget exhausted) | 290 |
+| fcos3d__centerpoint__scene-0782 | 770 | 550 | 230 | 230 | 230 | 200 (budget exhausted) | 230 |
+| fcos3d__mapillary__scene-0636 | 460 | 280 | 130 | 120 | 120 | 116 | 120 |
+| fcos3d__megvii__scene-0269 | 450 | 460 | 240 | 160 | 340 | 90 | 160 |
+| fcos3d__megvii__scene-0554 | 650 | 450 | 230 | 190 | 280 | 183 | 190 |
+| fcos3d__megvii__scene-0802 | 320 | 160 | 80 | 80 | 80 | 71 | 80 |
+| fcos3d__pointpillars__scene-0557 | 500 | 250 | 120 | 100 | 110 | 99 | 100 |
+| fcos3d__pointpillars__scene-0636 | 450 | 290 | 140 | 130 | 130 | 128 | 130 |
+| fcos3d__pointpillars__scene-0910 | 930 | 480 | 200 | 170 | 190 | 167 | 170 |
+| mapillary__megvii__scene-0915 | 930 | 710 | 190 | 180 | 190 | 178 | 180 |
+| pointpillars__mapillary__scene-0928 | 1176 | 750 | 160 | 1030 | 271 | 118 | 160 |
+| pointpillars__mapillary__scene-0963 | 500 | 420 | 230 | 280 | 280 | 178 | 230 |
+
+Against the strongest conventional selector on each case: **hitting set online wins 12 of 12
+certified cases and fails to certify 3 within 200 rounds** (it adds about one label per round
+and needs more rounds on the largest cases); counterexample-guided wins 2, draws 5, loses 8.
+Computation is the price: hitting set online spent 395.4 s in the solver and 46.6 s in selection over
+the 15 cases against 65.9 s and 0.2 s for the addition-adjacent heuristic. Fewer queries, three to
+six times the computation; the plan asked for the tradeoff and this is it.
+
+### Localization family, 0.5 m: queries to a robustness certificate
+
+Ten of the thirteen cases with coordinates are robust at 0.5 m with no query under every
+selector (draws). The two that need queries:
+
+| Case | residual radius (m) | random | boundary-first | counterexample-guided | hitting set online |
+|---|---|---:|---:|---:|---:|
+| fcos3d__mapillary__scene-0636 | 0 | 190 | 20 | 20 | 9 |
+| fcos3d__mapillary__scene-0636 | 1/4 | 360 | 50 | 20 | 17 |
+| pointpillars__mapillary__scene-0928 | 0 | 1160 | 290 | 109 | 69 |
+| pointpillars__mapillary__scene-0928 | 1/4 | 1176 (budget exhausted) | 317 (no candidates) | 112 (no candidates) | 100 (no candidates) |
+
+With a 0.25 m residual against a 0.5 m question, no selector can certify the fragile case: the
+measured labels near the 2 m boundary remain uncertain. That is the precision limit, not a
+selection failure, and it is reported as `not certified`.
+
+### What this establishes and what it does not
+
+The exact machinery pays for itself as a **stopping rule** everywhere (no selector can stop
+without it) and as a **selector** only in the hitting-set form, at a computation cost. On the
+localization side most verdicts need no audit at 0.5 m; where they do, the guided and hitting-set
+selectors beat boundary-first by 3 to 4 times on the fragile case. Nothing here is a human-time or
+money saving, and the fifteen cases are not independent.
+
+## Reuse of obtained observations on a distinct comparison
+
+Dated 17 September 2026. `reuse_experiment.py`; results in `reuse-experiment.json`. Twenty pairs
+of supported units sharing the base detector and the scene, with a different addition detector
+(chosen deterministically by digest order). The first comparison is audited with the
+counterexample-guided selector (batch 10, exact-adjacency oracle for deletion; 0.25 m residual for
+localization at 0.5 m). Every observation actually obtained is checked for applicability to the
+second comparison record by record (same reference object present in the second unit), then the
+second comparison is audited fresh and again starting from the applicable observations.
+
+| First comparison (base / addition, scene) | Second addition | First-run queries | Applicable to second | Second fresh | Second warm |
+|---|---|---:|---:|---:|---:|
+| mapillary / megvii / scene-0635 | centerpoint | 530 | 530 | 510 | 120 |
+| fcos3d / pointpillars / scene-0910 | mapillary | 190 | 190 | 220 | 100 |
+| mapillary / megvii / scene-0915 | centerpoint | 190 | 190 | 250 | 70 |
+| fcos3d / megvii / scene-0554 | mapillary | 280 | 280 | 300 | 160 |
+| mapillary / pointpillars / scene-0969 | centerpoint | 300 | 300 | 450 | 210 |
+| fcos3d / megvii / scene-0269 | mapillary | 340 | 340 | 270 | 50 |
+| fcos3d / pointpillars / scene-0557 | megvii | 110 | 110 | 150 | 70 |
+| pointpillars / mapillary / scene-0963 | centerpoint | 280 | 280 | 200 | 90 |
+| fcos3d / mapillary / scene-0636 | pointpillars | 120 | 120 | 130 | 70 |
+| fcos3d / centerpoint / scene-0344 | pointpillars | 760 | 760 | 540 | 70 |
+| fcos3d / centerpoint / scene-0782 | megvii | 230 | 230 | 220 | 40 |
+| pointpillars / mapillary / scene-0928 | centerpoint | 271 | 271 | 400 | 160 |
+| fcos3d / mapillary / scene-0522 | centerpoint | 370 | 370 | 600 | 280 |
+| fcos3d / centerpoint / scene-0638 | pointpillars | 290 | 290 | 150 | 0 |
+| fcos3d / megvii / scene-0802 | centerpoint | 80 | 80 | 150 | 80 |
+| pointpillars / fcos3d / scene-0966 | centerpoint | 240 | 240 | 640 | 440 |
+| pointpillars / centerpoint / scene-0782 | megvii | 190 | 190 | 190 | 40 |
+| mapillary / fcos3d / scene-1062 | pointpillars | 39 | 39 | 50 | 30 |
+| mapillary / fcos3d / scene-0104 | centerpoint | 100 | 100 | 329 | 239 |
+| pointpillars / centerpoint / scene-0273 | megvii | 220 | 220 | 190 | 10 |
+
+Totals over the twenty pairs, deletion family: first plus second fresh 11069 queries; first plus
+second warm 7459; the second comparison needed 2329 queries with reuse against 5939 without
+(**39% of fresh**). Confirmed presence is a fact about the reference, so it carries across the
+change of the added detector; what changes is which of those facts the new verdict depends on.
+Localization at 0.5 m: fourteen of twenty second comparisons needed no query either way; reuse
+saved 35 of 265 second-run queries overall, and three second comparisons could not be certified
+under the 0.25 m residual (precision limit, as in the cost experiment).
+
+Scope: the comparison contract is preserved-base additions, so this measures reuse when the
+added detector changes with the base held fixed. It is not a measurement under A-to-B replacement
+of the base, and it is not witness overlap or a changed loss coefficient; it counts actual queries
+under the same checked stopping rule.
 
 ## Which error family threatens which verdict: insertion monotonicity
 

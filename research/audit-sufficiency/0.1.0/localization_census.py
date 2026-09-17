@@ -40,10 +40,17 @@ def one(args):
             out['by_epsilon'][str(eps)] = {'status': 'timed_out', 'seconds': round(time.perf_counter() - t0, 1)}
             continue
         row = {k: v for k, v in cert.items() if k in ('status', 'margin', 'solver_max_drop', 'sound', 'boundary_edges_unconfirmed', 'objects_moved', 'objects_unrealized', 'flips', 'achieved')}
+        if cert.get('_displacements'):
+            row['_displacements'] = cert['_displacements']
         row['boundary_objects'] = len({(a.id, o) for a in geo.anchors for _, o, _ in a.boundary})
         if cert.get('status', '').startswith('insufficient') and not NO_AUDIT:
             try:
-                row['audit_guided'] = audit_counterexample_guided(geo, batch=20, max_rounds=40)
+                a0 = audit_counterexample_guided(geo, batch=20, max_rounds=40, residual=0)
+                row['audit_guided'] = {k: v for k, v in a0.items() if not k.startswith('_')}
+                row['_audit_guided_history'] = a0['_history']
+                a1 = audit_counterexample_guided(geo, batch=20, max_rounds=40, residual=eps / 2)
+                row['audit_guided_residual_half_eps'] = {k: v for k, v in a1.items() if not k.startswith('_')}
+                row['_audit_guided_residual_half_eps_history'] = a1['_history']
             except UnitTimeout:
                 row['audit_guided'] = {'timed_out': True}
         signal.alarm(0)
@@ -71,6 +78,10 @@ def main():
             if i % 50 == 0 or i == len(files):
                 print('done', i, 'of', len(files), round(time.perf_counter() - t0, 1), flush=True)
                 json.dump({'epsilons': EPS, 'rows': rows, 'complete': i == len(files)}, open(out, 'w'), indent=1)
+                public = [{**{k: v for k, v in r.items() if k != 'by_epsilon'},
+                           'by_epsilon': {e: {k: v for k, v in row.items() if not k.startswith('_')} for e, row in r['by_epsilon'].items()}}
+                          for r in rows]
+                json.dump({'epsilons': EPS, 'rows': public, 'complete': i == len(files)}, open(out.replace('.json', '-public.json'), 'w'), indent=1)
 
 
 if __name__ == '__main__':

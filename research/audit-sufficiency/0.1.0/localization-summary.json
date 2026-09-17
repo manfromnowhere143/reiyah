@@ -10,8 +10,8 @@
   "0.1": {
    "status": {
     "robust": 1077,
-    "insufficient_realized": 42,
-    "insufficient_relaxed": 6
+    "insufficient_realized": 44,
+    "insufficient_relaxed": 4
    },
    "robust_share": 0.9573,
    "boundary_objects_share_of_labels": {
@@ -36,7 +36,7 @@
     "p10": 0.0041,
     "median": 0.0093,
     "p90": 0.0228,
-    "max": 0.0437
+    "max": 0.0423
    },
    "audit_final_status": {
     "robust": 48
@@ -44,10 +44,10 @@
    "seconds": {
     "n": 1125,
     "min": 0.0,
-    "p10": 0.01,
-    "median": 0.06,
-    "p90": 0.21,
-    "max": 1.33
+    "p10": 0.05,
+    "median": 0.19,
+    "p90": 0.7,
+    "max": 7.05
    }
   },
   "0.25": {
@@ -77,9 +77,9 @@
     "n": 139,
     "min": 0.0023,
     "p10": 0.0087,
-    "median": 0.0181,
-    "p90": 0.0379,
-    "max": 0.1066
+    "median": 0.0178,
+    "p90": 0.0382,
+    "max": 0.0929
    },
    "audit_final_status": {
     "robust": 139
@@ -87,17 +87,17 @@
    "seconds": {
     "n": 1125,
     "min": 0.0,
-    "p10": 0.02,
-    "median": 0.09,
-    "p90": 0.26,
-    "max": 2.35
+    "p10": 0.06,
+    "median": 0.21,
+    "p90": 0.62,
+    "max": 6.94
    }
   },
   "0.5": {
    "status": {
     "robust": 813,
-    "insufficient_realized": 129,
-    "insufficient_relaxed": 183
+    "insufficient_realized": 128,
+    "insufficient_relaxed": 184
    },
    "robust_share": 0.7227,
    "boundary_objects_share_of_labels": {
@@ -121,29 +121,29 @@
     "min": 0.002,
     "p10": 0.012,
     "median": 0.0292,
-    "p90": 0.0662,
-    "max": 0.1872
+    "p90": 0.0632,
+    "max": 0.1844
    },
    "audit_final_status": {
     "robust": 312
    },
    "seconds": {
     "n": 1125,
-    "min": 0.0,
-    "p10": 0.03,
-    "median": 0.17,
-    "p90": 0.81,
-    "max": 15.29
+    "min": 0.01,
+    "p10": 0.08,
+    "median": 0.31,
+    "p90": 1.7,
+    "max": 35.89
    }
   },
   "1.0": {
    "status": {
-    "robust": 491,
-    "insufficient_relaxed": 472,
-    "insufficient_realized": 112,
-    "solver_failed": 50
+    "robust": 495,
+    "insufficient_realized": 107,
+    "insufficient_relaxed": 480,
+    "solver_failed": 43
    },
-   "robust_share": 0.4364,
+   "robust_share": 0.44,
    "boundary_objects_share_of_labels": {
     "n": 1125,
     "min": 0.0204,
@@ -153,32 +153,33 @@
     "max": 0.6433
    },
    "audit_positions": {
-    "n": 573,
-    "min": 1,
+    "n": 566,
+    "min": 0,
     "p10": 20,
-    "median": 53,
+    "median": 48,
     "p90": 160,
     "max": 420
    },
    "audit_share_of_labels": {
-    "n": 573,
-    "min": 0.0016,
-    "p10": 0.0178,
-    "median": 0.0556,
-    "p90": 0.1194,
-    "max": 0.2732
+    "n": 566,
+    "min": 0.0,
+    "p10": 0.0177,
+    "median": 0.0559,
+    "p90": 0.1183,
+    "max": 0.3005
    },
    "audit_final_status": {
-    "robust": 573,
-    "timed_out": 11
+    "robust": 565,
+    "timed_out": 21,
+    "solver_failed": 1
    },
    "seconds": {
     "n": 1125,
     "min": 0.01,
-    "p10": 0.08,
-    "median": 0.56,
-    "p90": 16.56,
-    "max": 192.66
+    "p10": 0.16,
+    "median": 1.1,
+    "p90": 30.17,
+    "max": 201.04
    }
   }
  },
@@ -197,8 +198,8 @@
     "robust": 1
    },
    "1.0": {
-    "insufficient_relaxed": 2,
-    "insufficient_realized": 1
+    "insufficient_realized": 2,
+    "insufficient_relaxed": 1
    }
   },
   "centerpoint -> +mapillary": {
@@ -212,8 +213,7 @@
    },
    "0.5": {
     "robust": 1,
-    "insufficient_relaxed": 2,
-    "insufficient_realized": 1
+    "insufficient_relaxed": 3
    },
    "1.0": {
     "robust": 1,
@@ -234,10 +234,9 @@
     "insufficient_realized": 1
    },
    "1.0": {
-    "robust": 7,
+    "robust": 8,
     "insufficient_relaxed": 2,
-    "insufficient_realized": 1,
-    "solver_failed": 1
+    "insufficient_realized": 1
    }
   },
   "centerpoint -> +pointpillars": {
@@ -276,21 +275,20 @@
    },
    "1.0": {
     "robust": 66,
-    "insufficient_relaxed": 14,
-    "insufficient_realized": 5,
+    "insufficient_relaxed": 13,
+    "insufficient_realized": 6,
     "solver_failed": 1
    }
   },
   "fcos3d -> +mapillary": {
    "0.1": {
     "robust": 78,
-    "insufficient_relaxed": 1,
-    "insufficient_realized": 7
+    "insufficient_realized": 8
    },
    "0.25": {
     "robust": 65,
-    "insufficient_relaxed": 5,
-    "insufficient_realized": 16
+    "insufficient_realized": 16,
+    "insufficient_relaxed": 5
    },
    "0.5": {
     "robust": 41,
@@ -298,9 +296,9 @@
     "insufficient_realized": 16
    },
    "1.0": {
-    "insufficient_relaxed": 68,
+    "insufficient_relaxed": 70,
     "robust": 9,
-    "insufficient_realized": 8,
+    "insufficient_realized": 6,
     "solver_failed": 1
    }
   },
@@ -342,16 +340,15 @@
    },
    "1.0": {
     "robust": 66,
-    "insufficient_relaxed": 23,
-    "insufficient_realized": 9,
+    "insufficient_relaxed": 24,
+    "insufficient_realized": 8,
     "solver_failed": 1
    }
   },
   "mapillary -> +centerpoint": {
    "0.1": {
     "robust": 58,
-    "insufficient_relaxed": 1,
-    "insufficient_realized": 2
+    "insufficient_realized": 3
    },
    "0.25": {
     "robust": 50,
@@ -364,9 +361,10 @@
     "insufficient_realized": 5
    },
    "1.0": {
-    "insufficient_relaxed": 48,
-    "solver_failed": 5,
-    "robust": 8
+    "insufficient_relaxed": 49,
+    "solver_failed": 3,
+    "robust": 8,
+    "insufficient_realized": 1
    }
   },
   "mapillary -> +fcos3d": {
@@ -386,10 +384,10 @@
     "insufficient_relaxed": 26
    },
    "1.0": {
-    "insufficient_relaxed": 44,
+    "insufficient_relaxed": 42,
     "robust": 7,
-    "solver_failed": 6,
-    "insufficient_realized": 6
+    "solver_failed": 7,
+    "insufficient_realized": 7
    }
   },
   "mapillary -> +megvii": {
@@ -407,10 +405,10 @@
     "insufficient_relaxed": 11
    },
    "1.0": {
-    "insufficient_relaxed": 48,
-    "insufficient_realized": 6,
-    "solver_failed": 8,
-    "robust": 30
+    "insufficient_relaxed": 51,
+    "insufficient_realized": 5,
+    "solver_failed": 5,
+    "robust": 31
    }
   },
   "mapillary -> +pointpillars": {
@@ -420,19 +418,19 @@
    },
    "0.25": {
     "robust": 64,
-    "insufficient_realized": 7,
-    "insufficient_relaxed": 6
+    "insufficient_relaxed": 6,
+    "insufficient_realized": 7
    },
    "0.5": {
     "robust": 52,
-    "insufficient_relaxed": 18,
-    "insufficient_realized": 7
+    "insufficient_realized": 7,
+    "insufficient_relaxed": 18
    },
    "1.0": {
     "insufficient_relaxed": 40,
-    "robust": 27,
-    "solver_failed": 8,
-    "insufficient_realized": 2
+    "solver_failed": 6,
+    "robust": 28,
+    "insufficient_realized": 3
    }
   },
   "megvii -> +centerpoint": {
@@ -461,13 +459,13 @@
    },
    "0.25": {
     "insufficient_realized": 5,
-    "insufficient_relaxed": 2,
-    "robust": 20
+    "robust": 20,
+    "insufficient_relaxed": 2
    },
    "0.5": {
     "insufficient_realized": 7,
-    "insufficient_relaxed": 7,
-    "robust": 13
+    "robust": 13,
+    "insufficient_relaxed": 7
    },
    "1.0": {
     "insufficient_relaxed": 16,
@@ -492,8 +490,7 @@
    },
    "1.0": {
     "robust": 4,
-    "insufficient_relaxed": 10,
-    "insufficient_realized": 1
+    "insufficient_relaxed": 11
    }
   },
   "megvii -> +pointpillars": {
@@ -529,10 +526,10 @@
     "insufficient_realized": 3
    },
    "1.0": {
-    "robust": 45,
-    "insufficient_relaxed": 16,
-    "insufficient_realized": 4,
-    "solver_failed": 4
+    "robust": 46,
+    "insufficient_relaxed": 15,
+    "solver_failed": 4,
+    "insufficient_realized": 4
    }
   },
   "pointpillars -> +fcos3d": {
@@ -547,14 +544,14 @@
     "insufficient_relaxed": 5
    },
    "0.5": {
-    "insufficient_realized": 18,
+    "insufficient_realized": 19,
     "robust": 75,
-    "insufficient_relaxed": 15
+    "insufficient_relaxed": 14
    },
    "1.0": {
-    "insufficient_relaxed": 46,
+    "insufficient_relaxed": 50,
     "robust": 28,
-    "insufficient_realized": 29,
+    "insufficient_realized": 25,
     "solver_failed": 5
    }
   },
@@ -570,13 +567,13 @@
     "insufficient_relaxed": 4
    },
    "0.5": {
-    "insufficient_relaxed": 20,
+    "insufficient_relaxed": 21,
     "robust": 32,
-    "insufficient_realized": 7
+    "insufficient_realized": 6
    },
    "1.0": {
-    "insufficient_relaxed": 43,
-    "insufficient_realized": 8,
+    "insufficient_relaxed": 44,
+    "insufficient_realized": 7,
     "robust": 5,
     "solver_failed": 3
    }
@@ -593,14 +590,14 @@
    },
    "0.5": {
     "robust": 95,
-    "insufficient_relaxed": 2,
-    "insufficient_realized": 7
+    "insufficient_realized": 7,
+    "insufficient_relaxed": 2
    },
    "1.0": {
     "robust": 76,
     "insufficient_relaxed": 12,
-    "solver_failed": 5,
-    "insufficient_realized": 11
+    "insufficient_realized": 11,
+    "solver_failed": 5
    }
   }
  }
