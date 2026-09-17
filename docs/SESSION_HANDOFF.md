@@ -2,11 +2,41 @@
 
 Document ID: `reiyah.engine.current-handoff`
 
-Version: `0.1.19`
+Version: `0.1.20`
 
 Lifecycle status: `exploratory`
 
-The current [component audit checkpoint](PERCEPTION_AUDIT_COMPONENTS_2026-09-17.md) consumes the
+The current [reference-correction checkpoint](PERCEPTION_REFERENCE_CORRECTIONS_2026-09-17.md)
+adds `from-box-alternatives`, an exact 2D adapter for mutually exclusive whole-image reference
+sets. It preserves the existing joint graph model and checker. REC✓D/KITTI publisher data are
+qualified in a fresh private root:
+`~/.codex/reports/reiyah/engine-reference-corrections-2026-09-17-n4s6r72u/`.
+Read its PLAN, source ledgers, OUTCOME_ACCESS, OPERAND_POLICY, verification, closeout and seal.
+Third-party payloads remain private.
+
+A frozen 64-image development selection yields 58 linked and six input-blocked images. Original
+and corrected references reverse the A/B preference on images 005532 (7 to -1) and 007121
+(1 to -1). Admitting both produces unresolved [-1,7] and [-1,1]. There are 38 available images
+with empty retained outputs for both detectors. All 240 image/block packets pass; 207 exact
+results agree with a separate geometry/flow calculation and 33 retain blocked inputs.
+The 1,433 remaining images were not outcome-evaluated. Local source parsing is not independent
+blinding, and the supplied two alternatives do not cover arbitrary unseen corrections.
+
+Validation passes 486 repository tests and 93 measurement tests, including ten new adapter
+tests and 768 geometric controls. The new schema and compiler are part of the producer digest.
+Gate A is still unaccepted. No model inference, cloud compute, human audit, public post or
+outreach occurred. No lower-cost or frontier-superiority claim follows from this checkpoint.
+
+During this task Daniel supplied Fable's census checkpoint at
+`7501c2f2e46baf23272564df924ce15fa005dda7`. Its branch and remote agree; the research checkout
+already has a subsequent modification to `census_units.py`. Preserve that work and consume only
+sealed checkpoint bytes. Its reported 3,000-case findings have not yet been independently
+accepted by this correction-source checkpoint. Engine's next action is its bounded consumer
+verification, while Fable continues its research. The earlier outbox identity below is historical.
+
+## Preceding component checker
+
+The [component audit checkpoint](PERCEPTION_AUDIT_COMPONENTS_2026-09-17.md) consumes the
 new independent research lane at `6fbd5f3b89f60698c3acca27f42d99aee0ab9d27`, branch
 `research/2026-09-16-audit-sufficiency`. Its outbox manifest is
 `4ffbc3219e11e495ff8e8a6e9481823d9e60141738832c6cb2b773a36cc07265`.

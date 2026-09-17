@@ -45,6 +45,36 @@ a qualified graph; it does not reproduce upstream inference or validate physical
 
 ## Sufficient observations and counterexamples
 
+For already-qualified 2D references, `from-box-alternatives` compiles
+[whole-image rectangle alternatives](box-alternatives.schema.json) into the same graph contract.
+Each anchor selects its entire `before` or `after` set with one Boolean variable; sharing that
+variable or adding clauses preserves cross-anchor dependence. The adapter handles insertions,
+removals and changed geometry within those supplied sets. It does not discover missing objects
+or cover arbitrary unlisted corrections. See the
+[external-source development check](../../../docs/PERCEPTION_REFERENCE_CORRECTIONS_2026-09-17.md).
+
+Coordinates and IoU are exact rationals. Positive continuous pixel rectangles, inclusive IoU,
+same-ID geometry consistency and unknown states are checked. The adapter caps coordinate magnitude
+at 10,000,000 and screens at most 2,000,000 detection/reference pairs before edge construction.
+Native input, world, object and edge limits still apply. Source admission and any confidence,
+height, class or don't-care filtering happen upstream and must be declared in the assumptions.
+The opaque record digests remain provenance premises; this command cannot authenticate raw sources.
+
+The synthetic [geometry-change example](box-alternatives-example.json) produces interval [-2,2]:
+
+```sh
+python3 -B -m tools.perception_revision from-box-alternatives \
+  --input research/perception-revision/0.1.0/box-alternatives-example.json \
+  --input-sha256 440d8851f055eb06e189c6c1ac0f5f029270888ccc77a0de033c8d99297f071e \
+  --output /tmp/reiyah-box-graph.json
+```
+
+Then use `run` and `verify` with the compiled input and reported digest as below. Original
+and corrected objects cannot both be active in one anchor's world. An unavailable source remains
+open or unknown. The finite alternatives are already-known operands, not a blind audit oracle.
+
+### Deletion-family observations
+
 An [audit request](audit-request.schema.json) declares a total reference-deletion budget k and
 supplied `present`/`absent` answers. A qualified object is identified by anchor and object ID.
 The admitted family contains every original joint world and every deletion set of size at most

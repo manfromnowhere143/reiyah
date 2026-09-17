@@ -1,6 +1,6 @@
 # Next mission and the evidence required to expand it
 
-Document ID: `reiyah.next-mission`. Version: `0.1.0`. Lifecycle status: `proposed`.
+Document ID: `reiyah.next-mission`. Version: `0.1.1`. Lifecycle status: `proposed`.
 
 ## Decision
 
@@ -26,6 +26,12 @@ simple methods and ambitious new methods compete under the same obligation.
 Ownership remains separate. A new Engine exchange does not authorize altering the research
 branch or restarting its session. The selected research deliverable now lives on
 `research/2026-09-16-audit-sufficiency`; the older census branch remains preserved.
+
+The Engine has since [qualified a REC✓D/KITTI development source](PERCEPTION_REFERENCE_CORRECTIONS_2026-09-17.md)
+and supplied a 2D whole-image-alternative adapter. Two checked preference reversals show why
+the existing deletion family needs an explicit boundary. The next external benchmark protocol
+must prevent corrected reference sets from being visible before their query; the finite-alternative
+adapter assumes they are already supplied. It is not itself a blind audit procedure.
 
 ## Sequence and stopping gates
 

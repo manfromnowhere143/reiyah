@@ -42,6 +42,14 @@ human-time claims. The forty-frame direction is Mapillary camera base plus retai
 additions. Read the [next mission and benchmark gates](docs/REIYAH_NEXT_MISSION_2026-09-17.md)
 for the Engine/research split and the evidence needed for a broader performance claim.
 
+The [reference-correction checkpoint](docs/PERCEPTION_REFERENCE_CORRECTIONS_2026-09-17.md)
+qualifies a separate REC✓D/KITTI development source. On two of 58 available images in a
+64-image selection, original and corrected references reverse the detector preference; six
+images remain input-blocked. The new 2D adapter preserves those alternatives, and the Engine
+returns unresolved intervals for both reversals. All 240 image/block calculation packets pass
+the checker. This establishes reference sensitivity and preparation correctness; validation-cost
+savings and performance on the reserved population are still unmeasured.
+
 As checked on **14 September 2026**, a [new automated replay](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md)
 on the two existing development anchors gives **[1,1]**, conditional on the retained benchmark
 labels and Reiyah's fixed rules. Weighted loss falls from 23.5 to 22.5; one anchor improves and

@@ -1,6 +1,6 @@
 # Reiyah: the decision, the evidence and the next checks
 
-Document ID: `reiyah.engine.roadmap`. Version: `0.1.11`. Status: `exploratory`. Updated 17 September 2026.
+Document ID: `reiyah.engine.roadmap`. Version: `0.1.12`. Status: `exploratory`. Updated 17 September 2026.
 
 The [product and funding thesis](PRODUCT_AND_FUNDING_THESIS_2026-09-14.md) explains the destination:
 decision assurance for changing autonomous systems under imperfect evidence. The
@@ -14,6 +14,13 @@ delivered sufficient sets independently of the research MILP solver, while keepi
 boundary and source qualification to Engine, and competitive selection/cost experiments to the
 independent research lane. New domain expansion follows a measured win on a qualified, distinct
 population. The simple selector's win on one exposed case remains visible.
+
+The [REC✓D correction-source check](PERCEPTION_REFERENCE_CORRECTIONS_2026-09-17.md) now
+supplies 58 linked and six blocked development images with two checked preference reversals.
+Its whole-image original/corrected alternatives exercise insertion and changed geometry using
+the existing graph semantics. The 1,433 reserved images have not been outcome-evaluated. A future
+selection experiment must avoid exposing corrected operands before their query and specify a
+sound uncertainty model for every unqueried image.
 
 Reiyah's present product question is whether a perception-validation lead can make a better
 detector-change integration choice, or reach the same defensible choice with less total effort,

@@ -7,6 +7,7 @@ import sys
 from tools.perception_decision.cli import atomic_write
 from tools.perception_decision.contract import load as legacy_load
 from . import audit, audit_checker, checker, kernel
+from .boxes import BOX_SCHEMA, compile_alternatives
 from .contract import (AUDIT_SCHEMA, SCHEMA, Invalid, MAX_INPUT_BYTES, MAX_PACKET_BYTES, encoded, from_addition,
                        load, load_bytes, rebind_observations, require, validate_request)
 
@@ -15,7 +16,7 @@ def implementation_digest():
     root = Path(__file__).resolve().parents[2]
     paths = sorted(Path(__file__).parent.glob('*.py'))
     paths += sorted((root / 'tools/perception_decision').glob('*.py'))
-    paths += [SCHEMA, AUDIT_SCHEMA, root / 'research/perception-decision/0.1.0/input.schema.json']
+    paths += [SCHEMA, AUDIT_SCHEMA, BOX_SCHEMA, root / 'research/perception-decision/0.1.0/input.schema.json']
     rows = [(str(p.relative_to(root)), hashlib.sha256(p.read_bytes()).hexdigest()) for p in paths]
     return hashlib.sha256(encoded(rows)).hexdigest()
 
@@ -52,7 +53,7 @@ def write_output(path, value, limit=MAX_PACKET_BYTES):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     subs = parser.add_subparsers(dest='command', required=True)
-    for command in ('from-addition', 'run', 'verify', 'audit', 'verify-audit', 'rebind-audit'):
+    for command in ('from-addition', 'from-box-alternatives', 'run', 'verify', 'audit', 'verify-audit', 'rebind-audit'):
         sub = subs.add_parser(command)
         sub.add_argument('--input', type=Path, required=True)
         sub.add_argument('--input-sha256', required=True)
@@ -76,7 +77,12 @@ def main(argv=None):
             sub.add_argument('--prior-packet-sha256')
     args = parser.parse_args(argv)
     try:
-        if args.command == 'from-addition':
+        if args.command == 'from-box-alternatives':
+            source = load_bytes(args.input, args.input_sha256, validate_input=False)
+            converted = compile_alternatives(source)
+            answer = write_output(args.output, converted, MAX_INPUT_BYTES)
+            answer['scope'] = 'Declared 2D reference alternatives; no universal correction or physical-truth claim'
+        elif args.command == 'from-addition':
             converted = from_addition(legacy_load(args.input, args.input_sha256))
             answer = write_output(args.output, converted, MAX_INPUT_BYTES)
             answer['scope'] = 'Declared legacy augmented output; not standalone detector B'
