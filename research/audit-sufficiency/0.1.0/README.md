@@ -161,14 +161,122 @@ Matching is not the expensive operation in this workflow; nothing here should be
 4. Under a budget of 49 deletions the pool is sufficient; under unbounded deletion it is not. The
    family and budget must be declared with every audit claim.
 
+## Certified robustness census: 20 detector pairs, 150 scenes, 3,000 verdicts
+
+Dated 17 September 2026. `census_units.py` rebuilds every decision unit of the research lane's
+scale study from Reiyah custody (five retained nuScenes validation submissions, the v1.0-trainval
+tables, the devkit validation split) under the frozen protocol semantics; `census_run.py`
+computes, per unit, the exact decision, the arithmetic floor, the carrier structure and pool cut,
+a certified sufficient set (addition-adjacent policy, batch 20, solver-tier stopping rule), and a
+Monte Carlo comparator; `census_summary.py` aggregates and reconciles. Aggregates are in
+`census-summary.json`. Per-unit inputs and identity-bearing outputs stay private.
+
+Consistency gate: the rebuilt scene-0101 Mapillary-to-Megvii unit equals the sealed forty-frame
+case object for object (2,299) and edge for edge (2,803).
+
+### Reconciliation with the retained census index (research lane, 0.2.0 and 0.4.0)
+
+| Quantity | Equal | Differ |
+|---|---:|---:|
+| Supported versus excluded status | 2,998 | 2 |
+| Exact decision value | 2,830 | 170 |
+| Arithmetic floor | 2,941 | 59 |
+| Annotation, base and addition counts | 2,340 | 660 |
+
+Every count difference is one or two annotations within centimetres of the 50 m range boundary.
+Detections reconcile everywhere once the range is taken as planar distance in the global frame
+(the module docstring describes an ego-rotated rule; the retained index matches the global rule).
+For annotations no single ego-pose channel or file-order rule reproduces the retained counts, and
+the census driver that produced the index was not committed, so the exact reference point cannot
+be recovered from retained code. The residual is reported as found. Supported and excluded status
+agree on 2,998 of 3,000 units, so no conclusion below depends on it.
+
+### What every supported verdict carries
+
+| Quantity over the 1,125 supported verdicts | p10 | median | p90 | max |
+|---|---:|---:|---:|---:|
+| Floor: deletions that can overturn the verdict | 3 | 27 | 106 | 575 |
+| Floor as a share of the unit's labels | 0.4% | 2.4% | 7.5% | 21.7% |
+| Proven lower bound on a sufficient audit, share of labels | 3.5% | 11.5% | 23.1% | 49.0% |
+| Certified upper bound on a sufficient audit, share of labels | 6.8% | 17.7% | 29.5% | 79.8% |
+| Interval width, labels | 11 | 40 | 188 | 2,080 |
+| Carrier pool, share of labels | 4.8% | 14.8% | 28.4% | 54.6% |
+
+In all 1,125 supported units the additive pool is at least as large as the floor, so an exact
+crossing set of exactly `floor` deletions exists by construction. This proves per unit what the
+research lane's census reported empirically (minimum equals floor everywhere) and explains it:
+the sufficient condition holds in every unit. A minimum above the floor remains possible in
+principle (the joint-deletion trap) and occurs in none of these units.
+
+All 1,125 certified upper bounds reached solver-tier sufficiency; none returned unresolved.
+
+### The comparator: random label noise versus the exact adversary
+
+For each supported unit, 200 random deletion sets of size `floor` and 200 of size `2 x floor`
+were applied and the criterion recomputed exactly.
+
+| | Random never overturned the verdict in 200 trials | Mean overturn rate | Exact adverse set exists |
+|---|---:|---:|---|
+| Deletions = floor | **1,048 of 1,125 (93.2%)** | 0.35% | all 1,125 |
+| Deletions = 2 x floor | **930 of 1,125 (82.7%)** | 1.45% | all 1,125 |
+
+A robustness estimate based on random label perturbation at the exact flipping size reports
+"stable" for 93% of these verdicts. Each of them is overturned by a specific set of the same size.
+The two estimates answer different questions (typical noise versus worst-case error), and the
+census quantifies how far apart the answers are on real detector outputs.
+
+### By ordered pair (base -> +addition)
+
+| Pair | Supported of 150 | Median floor | Median lower bound | Median upper bound | Random never crossed at floor |
+|---|---:|---:|---:|---:|---:|
+| centerpoint -> +fcos3d | 3 | 1 | 7.6% | 8.9% | 1 |
+| centerpoint -> +mapillary | 4 | 5 | 6.2% | 9.8% | 3 |
+| centerpoint -> +megvii | 11 | 13 | 5.9% | 7.8% | 11 |
+| centerpoint -> +pointpillars | 11 | 10 | 3.5% | 5.9% | 10 |
+| fcos3d -> +centerpoint | 86 | 69 | 24.2% | 31.6% | 83 |
+| fcos3d -> +mapillary | 86 | 21 | 11.4% | 17.2% | 80 |
+| fcos3d -> +megvii | 114 | 65 | 19.7% | 24.8% | 111 |
+| fcos3d -> +pointpillars | 99 | 46 | 12.4% | 18.6% | 94 |
+| mapillary -> +centerpoint | 61 | 31 | 17.5% | 24.0% | 58 |
+| mapillary -> +fcos3d | 63 | 6 | 2.8% | 5.0% | 55 |
+| mapillary -> +megvii | 92 | 37 | 14.1% | 18.9% | 87 |
+| mapillary -> +pointpillars | 77 | 23 | 9.1% | 13.9% | 71 |
+| megvii -> +centerpoint | 16 | 22 | 9.4% | 15.5% | 15 |
+| megvii -> +fcos3d | 27 | 5 | 3.3% | 5.6% | 23 |
+| megvii -> +mapillary | 15 | 16 | 7.3% | 13.2% | 14 |
+| megvii -> +pointpillars | 20 | 18 | 5.0% | 8.2% | 18 |
+| pointpillars -> +centerpoint | 69 | 34 | 17.5% | 21.2% | 65 |
+| pointpillars -> +fcos3d | 108 | 14 | 6.0% | 8.6% | 97 |
+| pointpillars -> +mapillary | 59 | 20 | 10.3% | 16.4% | 53 |
+| pointpillars -> +megvii | 104 | 31 | 13.6% | 16.8% | 99 |
+
+Camera-base pairs (FCOS3D, Mapillary) are supported most often and need the largest audits;
+lidar-base pairs (CenterPoint, Megvii) are rarely improved by an addition. The three earlier
+development cases sit inside these distributions.
+
+### Limits of the census
+
+Units share scenes, objects and detectors; 3,000 is not 3,000 independent experiments. The
+detectors are 2019 to 2020 public submissions. The error family is whole-object deletion under
+one finite reference world; localization, class and insertion errors are not modeled. Verdicts
+are conditional on the retained labels. Upper bounds come from one policy with batch 20 and are
+local, not minimal. Nothing here involves a human audit or a physical claim.
+
 ## Reproduce
 
 ```sh
 python -B experiment.py INPUT_DIR PRIVATE_OUT_DIR results.json
 ```
 
+```sh
+python -B census_units.py META_DIR PREDICTIONS_DIR UNIT_DIR --splits nuscenes_splits_devkit.py --range-rule global_xy --gate BEFORE_INPUT.json
+python -B census_run.py UNIT_DIR census-results.json --workers 6
+python -B census_summary.py census-results.json fable-census-index-0.2.0.json fable-unresolved-closed-0.4.0.json census-summary.json
+```
+
 Inputs are the sealed comparison files from the Engine common exchange (`BEFORE_INPUT.json`,
-`AFTER_INPUT.json`, `SOURCE_CASE.json`) and the first and second case comparison inputs. They
+`AFTER_INPUT.json`, `SOURCE_CASE.json`), the first and second case comparison inputs, and for the
+census the retained prediction files and nuScenes tables in Reiyah custody. They
 contain nuScenes annotation tokens and stay private; their SHA-256 identities are recorded in
 `results.json`. Requires `numpy` and `scipy` (`scipy.optimize.milp`). The committed
 `results.json` holds aggregate counts and timings only.

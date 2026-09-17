@@ -1,0 +1,408 @@
+{
+ "units": 3000,
+ "supported": 1125,
+ "excluded": 1875,
+ "reconciliation_with_research_lane_census": {
+  "units_compared": 3000,
+  "decision_equal": 2830,
+  "decision_differs": {
+   "count": 170,
+   "first": [
+    {
+     "unit": "centerpoint__megvii__scene-0552",
+     "fable": "-90/41",
+     "here": "-88/41"
+    },
+    {
+     "unit": "fcos3d__megvii__scene-0552",
+     "fable": "22/41",
+     "here": "24/41"
+    },
+    {
+     "unit": "mapillary__megvii__scene-0552",
+     "fable": "-59/41",
+     "here": "-57/41"
+    },
+    {
+     "unit": "pointpillars__megvii__scene-0552",
+     "fable": "5/41",
+     "here": "7/41"
+    },
+    {
+     "unit": "centerpoint__mapillary__scene-0636",
+     "fable": "-71/40",
+     "here": "-7/4"
+    }
+   ]
+  },
+  "floor_equal": 2941,
+  "floor_differs": {
+   "count": 59,
+   "first": [
+    {
+     "unit": "fcos3d__megvii__scene-0552",
+     "fable": 9,
+     "here": 10
+    },
+    {
+     "unit": "pointpillars__megvii__scene-0552",
+     "fable": 1,
+     "here": 2
+    },
+    {
+     "unit": "fcos3d__mapillary__scene-0636",
+     "fable": 17,
+     "here": 18
+    },
+    {
+     "unit": "fcos3d__megvii__scene-0105",
+     "fable": 265,
+     "here": 264
+    },
+    {
+     "unit": "mapillary__megvii__scene-0105",
+     "fable": 119,
+     "here": 118
+    }
+   ]
+  },
+  "counts_equal": 2340,
+  "counts_differ": {
+   "count": 660,
+   "first": [
+    {
+     "unit": "centerpoint__fcos3d__scene-0552",
+     "fable": [
+      838,
+      990,
+      123
+     ],
+     "here": [
+      839,
+      990,
+      123
+     ]
+    },
+    {
+     "unit": "centerpoint__mapillary__scene-0552",
+     "fable": [
+      838,
+      990,
+      284
+     ],
+     "here": [
+      839,
+      990,
+      284
+     ]
+    },
+    {
+     "unit": "centerpoint__megvii__scene-0552",
+     "fable": [
+      838,
+      990,
+      156
+     ],
+     "here": [
+      839,
+      990,
+      156
+     ]
+    },
+    {
+     "unit": "centerpoint__pointpillars__scene-0552",
+     "fable": [
+      838,
+      990,
+      132
+     ],
+     "here": [
+      839,
+      990,
+      132
+     ]
+    },
+    {
+     "unit": "fcos3d__centerpoint__scene-0552",
+     "fable": [
+      838,
+      463,
+      617
+     ],
+     "here": [
+      839,
+      463,
+      617
+     ]
+    }
+   ]
+  },
+  "status_equal": 2998,
+  "status_differs": {
+   "count": 2,
+   "first": [
+    {
+     "unit": "fcos3d__pointpillars__scene-0929",
+     "fable": "certified_at_floor",
+     "here": "excluded"
+    },
+    {
+     "unit": "mapillary__pointpillars__scene-0929",
+     "fable": "certified_at_floor",
+     "here": "excluded"
+    }
+   ]
+  }
+ },
+ "floor_deletions": {
+  "n": 1125,
+  "min": 1,
+  "p10": 3,
+  "median": 27,
+  "p90": 106,
+  "max": 575,
+  "mean": 44.7813
+ },
+ "floor_share_of_labels": {
+  "n": 1125,
+  "min": 0.0006,
+  "p10": 0.0044,
+  "median": 0.0241,
+  "p90": 0.0748,
+  "max": 0.2166,
+  "mean": 0.033
+ },
+ "exact_crossing_at_floor": {
+  "pool": 1125
+ },
+ "audit_lower_bound_share": {
+  "n": 1125,
+  "min": 0.0048,
+  "p10": 0.0349,
+  "median": 0.115,
+  "p90": 0.2305,
+  "max": 0.49,
+  "mean": 0.1264
+ },
+ "audit_upper_bound_share": {
+  "n": 1125,
+  "min": 0.0161,
+  "p10": 0.0677,
+  "median": 0.1765,
+  "p90": 0.2945,
+  "max": 0.7983,
+  "mean": 0.184
+ },
+ "upper_bound_status": {
+  "sufficient": 1125
+ },
+ "interval_width_labels": {
+  "n": 1125,
+  "min": 0,
+  "p10": 11,
+  "median": 40,
+  "p90": 188,
+  "max": 2080,
+  "mean": 81.1751
+ },
+ "monte_carlo_cross_rate_at_floor": {
+  "n": 1125,
+  "min": 0.0,
+  "p10": 0.0,
+  "median": 0.0,
+  "p90": 0.0,
+  "max": 0.215,
+  "mean": 0.0035
+ },
+ "monte_carlo_cross_rate_at_2x_floor": {
+  "n": 1125,
+  "min": 0.0,
+  "p10": 0.0,
+  "median": 0.0,
+  "p90": 0.02,
+  "max": 0.785,
+  "mean": 0.0145
+ },
+ "units_where_random_never_crossed_at_floor_but_exact_set_exists": 1048,
+ "units_where_random_never_crossed_at_2x_floor_but_exact_set_exists": 930,
+ "carrier_pool_share": {
+  "n": 1125,
+  "min": 0.0077,
+  "p10": 0.0483,
+  "median": 0.1477,
+  "p90": 0.2841,
+  "max": 0.5458,
+  "mean": 0.1583
+ },
+ "seconds_per_supported_unit": {
+  "n": 1125,
+  "min": 0.2,
+  "p10": 0.8,
+  "median": 2.8,
+  "p90": 11.1,
+  "max": 927.3,
+  "mean": 12.3521
+ },
+ "by_pair": {
+  "centerpoint -> +fcos3d": {
+   "units": 150,
+   "supported": 3,
+   "median_floor": 1,
+   "median_lower_bound_share": 0.0759,
+   "median_upper_bound_share": 0.0893,
+   "random_never_crossed_at_floor": 1
+  },
+  "centerpoint -> +mapillary": {
+   "units": 150,
+   "supported": 4,
+   "median_floor": 5,
+   "median_lower_bound_share": 0.0615,
+   "median_upper_bound_share": 0.0976,
+   "random_never_crossed_at_floor": 3
+  },
+  "centerpoint -> +megvii": {
+   "units": 150,
+   "supported": 11,
+   "median_floor": 13,
+   "median_lower_bound_share": 0.0591,
+   "median_upper_bound_share": 0.078,
+   "random_never_crossed_at_floor": 11
+  },
+  "centerpoint -> +pointpillars": {
+   "units": 150,
+   "supported": 11,
+   "median_floor": 10,
+   "median_lower_bound_share": 0.0349,
+   "median_upper_bound_share": 0.0585,
+   "random_never_crossed_at_floor": 10
+  },
+  "fcos3d -> +centerpoint": {
+   "units": 150,
+   "supported": 86,
+   "median_floor": 69,
+   "median_lower_bound_share": 0.2416,
+   "median_upper_bound_share": 0.3163,
+   "random_never_crossed_at_floor": 83
+  },
+  "fcos3d -> +mapillary": {
+   "units": 150,
+   "supported": 86,
+   "median_floor": 21,
+   "median_lower_bound_share": 0.114,
+   "median_upper_bound_share": 0.1721,
+   "random_never_crossed_at_floor": 80
+  },
+  "fcos3d -> +megvii": {
+   "units": 150,
+   "supported": 114,
+   "median_floor": 65,
+   "median_lower_bound_share": 0.1971,
+   "median_upper_bound_share": 0.2481,
+   "random_never_crossed_at_floor": 111
+  },
+  "fcos3d -> +pointpillars": {
+   "units": 150,
+   "supported": 99,
+   "median_floor": 46,
+   "median_lower_bound_share": 0.1243,
+   "median_upper_bound_share": 0.1856,
+   "random_never_crossed_at_floor": 94
+  },
+  "mapillary -> +centerpoint": {
+   "units": 150,
+   "supported": 61,
+   "median_floor": 31,
+   "median_lower_bound_share": 0.175,
+   "median_upper_bound_share": 0.2398,
+   "random_never_crossed_at_floor": 58
+  },
+  "mapillary -> +fcos3d": {
+   "units": 150,
+   "supported": 63,
+   "median_floor": 6,
+   "median_lower_bound_share": 0.0284,
+   "median_upper_bound_share": 0.05,
+   "random_never_crossed_at_floor": 55
+  },
+  "mapillary -> +megvii": {
+   "units": 150,
+   "supported": 92,
+   "median_floor": 37,
+   "median_lower_bound_share": 0.1407,
+   "median_upper_bound_share": 0.1895,
+   "random_never_crossed_at_floor": 87
+  },
+  "mapillary -> +pointpillars": {
+   "units": 150,
+   "supported": 77,
+   "median_floor": 23,
+   "median_lower_bound_share": 0.0909,
+   "median_upper_bound_share": 0.1392,
+   "random_never_crossed_at_floor": 71
+  },
+  "megvii -> +centerpoint": {
+   "units": 150,
+   "supported": 16,
+   "median_floor": 22,
+   "median_lower_bound_share": 0.0945,
+   "median_upper_bound_share": 0.1547,
+   "random_never_crossed_at_floor": 15
+  },
+  "megvii -> +fcos3d": {
+   "units": 150,
+   "supported": 27,
+   "median_floor": 5,
+   "median_lower_bound_share": 0.0326,
+   "median_upper_bound_share": 0.0556,
+   "random_never_crossed_at_floor": 23
+  },
+  "megvii -> +mapillary": {
+   "units": 150,
+   "supported": 15,
+   "median_floor": 16,
+   "median_lower_bound_share": 0.0731,
+   "median_upper_bound_share": 0.1321,
+   "random_never_crossed_at_floor": 14
+  },
+  "megvii -> +pointpillars": {
+   "units": 150,
+   "supported": 20,
+   "median_floor": 18,
+   "median_lower_bound_share": 0.0503,
+   "median_upper_bound_share": 0.0818,
+   "random_never_crossed_at_floor": 18
+  },
+  "pointpillars -> +centerpoint": {
+   "units": 150,
+   "supported": 69,
+   "median_floor": 34,
+   "median_lower_bound_share": 0.1752,
+   "median_upper_bound_share": 0.2116,
+   "random_never_crossed_at_floor": 65
+  },
+  "pointpillars -> +fcos3d": {
+   "units": 150,
+   "supported": 108,
+   "median_floor": 14,
+   "median_lower_bound_share": 0.0597,
+   "median_upper_bound_share": 0.0863,
+   "random_never_crossed_at_floor": 97
+  },
+  "pointpillars -> +mapillary": {
+   "units": 150,
+   "supported": 59,
+   "median_floor": 20,
+   "median_lower_bound_share": 0.1032,
+   "median_upper_bound_share": 0.1644,
+   "random_never_crossed_at_floor": 53
+  },
+  "pointpillars -> +megvii": {
+   "units": 150,
+   "supported": 104,
+   "median_floor": 31,
+   "median_lower_bound_share": 0.1361,
+   "median_upper_bound_share": 0.1684,
+   "random_never_crossed_at_floor": 99
+  }
+ }
+}
