@@ -1,3 +1,60 @@
+# Reiyah loss-tradeoff continuation, 2026-09-18
+
+Continuation version: `0.1.34`. Status: `exploratory`.
+
+Read [the penalty-tradeoff result](../research/loss-tradeoff/0.1.0/README.md).
+The previous 2D result is published at
+`c41d10fde268fc5d4f08f76f320edea0f1b7cb78`; PUSH-03 in the active owned packet
+retains normal push and publisher readback. Daniel remains sole author/committer.
+The original ten-hour start remains 2026-09-17 22:28:16 UTC. An unverified gap
+from 02:37:47.214604 to 15:07:11 UTC on September 18 is excluded from useful
+work; its cause is unknown. See checkpoints/INTERRUPTION_01.json. The earliest
+ten-hour point after that exclusion is 2026-09-18 20:57:39.785396 UTC, subject
+to actual useful work and further interruptions. This is still an intermediate
+checkpoint, not a claim that ten useful hours were completed.
+
+Against the supplied 305 eligible reference projections, YOLO11n has 297
+eligible predictions, 170 matches, 127 false positives and 135 misses;
+YOLO26n has 218 predictions, 149 matches, 69 false positives and 156 misses.
+Thus the candidate has 58 fewer false positives and 21 more misses. Nominal
+strict improvement requires miss/false-positive penalty below 58/21; equality
+excludes it. These are counts against the declared proxy, not physical errors
+or benchmark AP. Common penalty shares are decision premises, not measured
+human or economic costs.
+
+The 900-binding freeze precedes weighted outcomes and admits 19 existing
+uncertainty families, nine displayed shares and the complete share continuum.
+All 1,387 case/family rows, 12,483 displayed rows and 5,137 continuum cells
+verify. Displayed outcomes: 2,901 supported, 4,763 excluded, 4,819 unresolved,
+with no omitted or failed allocation. Separate direct FP/FN arithmetic checks
+2,240 source components, 557 distinct world matchings and 557 native proofs.
+Every unresolved cell has attained opposite decisions. All 24 controls pass.
+
+With one arbitrary reference edit per image, the primary decision is unresolved
+for every common penalty share, including the two pure-cost endpoints. Under
+the 5-pixel two-coordinate family, support requires the miss/false-positive
+ratio below 40/39; at equality it becomes unresolved. Earlier equal-penalty
+query floors, conventional parity, broader adverse worlds and geometric
+thresholds retain their original meanings. No selector is optimized here.
+
+Private packet: `~/.codex/reports/reiyah/value-10h-2026-09-18-c1y8k9yc/`.
+Read PROGRESS checkpoint10, private/loss-tradeoff-01 FREEZE and trade-01
+RESULTS/VERIFICATION. Derivation and verification processes take 1.865709250
+and 9.648084542 seconds. Earlier source inference/search/proofs are reused,
+with their costs preserved. No new inference, image access or download occurs.
+Public derived tables and figures retain nuScenes attribution and terms;
+raw geometry, individual answer operands and proofs remain private.
+
+Next inspect the supplied projection's annotation/camera timestamp alignment
+in the already retained source code and metadata for the same 64 inputs.
+An alternative motion/interpolation model would be a declared assumption,
+with missing brackets or invalid inputs retained explicitly; freeze any new
+scored protocol first. This authorizes no new image population or reserve use.
+All 1,433 reserved images stay closed. Controller remains historical 74fbacc;
+Engine source remains 38a50ec014cc83e86ea6f247df803ded2971b386. Savings, real
+revision histories, customer demand and human costs remain unproved. No
+platform expansion or outreach. Gate A remains operator-unaccepted.
+
 # Reiyah two-coordinate continuation, 2026-09-18
 
 Continuation version: `0.1.33`. Status: `exploratory`.

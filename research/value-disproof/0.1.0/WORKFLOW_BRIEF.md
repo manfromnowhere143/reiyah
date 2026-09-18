@@ -1,6 +1,6 @@
 # Workflow and case request brief
 
-Version 0.1.3, 18 September 2026. Prepared locally; no outreach sent.
+Version 0.1.4, 18 September 2026. Prepared locally; no outreach sent.
 
 Purpose: determine whether a recurring perception revision decision is expensive
 because of uncertain reference evidence, and whether resolving that uncertainty
@@ -39,6 +39,17 @@ world at 5.03125 pixels. All evaluated extrema verify; the reported critical
 bracket is not an exact infimum or a measured reviewer tolerance. Allowing
 both coordinates to move widens the stress family. Equal false-positive and
 miss penalties are another explicit premise still needing owner justification.
+
+The [penalty-tradeoff study](../../loss-tradeoff/0.1.0/README.md) makes that premise
+concrete: against the supplied projection, the candidate has 58 fewer false
+positives and 21 more misses. Nominal strict improvement requires the miss
+penalty to be less than 58/21 times the false-positive penalty. With a 5-pixel
+two-coordinate residual, universal support requires a ratio below 40/39.
+The broader one-edit-per-image primary family remains unresolved for every
+common nonnegative penalty share. An owner must justify the actual loss,
+the cost of an unresolved decision and the residual reference contract before
+interpreting this proxy as a release criterion. These decision weights are
+not measured human costs or evidence of customer demand.
 
 A decision owner would need to provide genuine old/new revision provenance,
 the actual release criterion, complete image membership with failures retained,
