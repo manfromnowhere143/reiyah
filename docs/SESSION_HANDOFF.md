@@ -1,3 +1,66 @@
+# Reiyah reference-timing continuation, 2026-09-18
+
+Continuation version: `0.1.35`. Status: `exploratory`.
+
+Read [the reference-timing result](../research/reference-timing/0.1.0/README.md).
+The previous penalty study is published at
+`8af38a49c109860695babb4c77377bed2ad66224`; PUSH-04 in the active packet retains
+normal push and publisher readback. Daniel remains sole author and committer.
+The ten-hour mission remains active. Original start: 2026-09-17 22:28:16 UTC.
+The unverified gap from 02:37:47.214604 to 15:07:11 UTC on September 18 is
+excluded. The earliest adjusted point is 2026-09-18 20:57:39.785396 UTC,
+subject to actual useful work and further interruptions. This intermediate
+checkpoint does not establish ten useful hours.
+
+A separately frozen temporal sensitivity model retains the same 64 exposed
+images, two prediction packets and 73 overlapping cases. It interpolates
+global car centers and orientations at camera time under explicit source,
+bracket and census assumptions. The SDK's keyframe convention is intentional;
+neither the timestamp offset nor this alternative model establishes an
+annotation error or corrected physical truth.
+
+All 64 projections/computations verify. Of 1,035 current car annotations,
+973 have usable modeled geometry: 281 eligible, four below height and 688
+outside the canvas. The remaining 62 retain unavailable motion. The primary
+current-census partial contract has bounds [-43/64,99/64] and checked worlds
+-21/64 and 61/64. It is unresolved. Its strict counterpart is blocked by 25
+images. The adjacent-census union adds 45 preceding-only instances on the 63
+images with preceding membership; the scene-start image's union remains
+unavailable, blocking its full-population partial case. No subset replaces it.
+
+All 292 case/contract rows are retained: 63 supported, 91 excluded, 57
+unresolved and 81 input-blocked. Fifty unresolved rows have opposing worlds;
+seven retain a bound gap. These are conditional, overlapping development
+cases. No selector is tuned and no savings are established. The earlier
+parity, query floors, geometric stress and penalty results remain intact.
+
+The 265-binding freeze precedes new projections/scores. All 51 unit controls,
+eight synthetic cross-runtime images, 36 synthetic case rows and 13 deliberate
+fault probes pass. Independent scalar geometry checks all 973 modeled objects;
+maximum coordinate disagreement is 9.8453e-11 pixels. Separate matching and
+native checking verify 115 proofs. Preparation takes 55.448330375 process
+seconds; projection 3.078273333, analysis 2.832030166 and verification 2.759913166.
+First failures, nested costs, public derived reports and a visually checked
+PNG/SVG remain retained with nuScenes attribution. No new image read,
+inference, dependency installation or asset download occurs.
+
+Private active packet:
+`~/.codex/reports/reiyah/value-10h-2026-09-18-c1y8k9yc/`.
+Read PROGRESS checkpoint11 and private/reference-timing-01 FREEZE, metadata-01,
+projection-01 and timing-01 results/verification. Scientific files bound by
+that freeze must not be edited. Public packaging and all source restrictions
+are in research/reference-timing/0.1.0.
+
+Next investigate the seven retained bound-gap rows under a separately frozen
+mathematical follow-up. Distinguish loose rank/geometry bounds from actual
+opposite worlds; preserve the already proven primary ambiguity. Use the same
+inputs, permit no new images or inference, and retain any search limit rather
+than manufacturing completeness. All 1,433 reserved images stay closed.
+Controller remains historical 74fbacc; Engine source remains
+38a50ec014cc83e86ea6f247df803ded2971b386. Human costs, customer demand and
+meaningful real revision histories remain unproved. No platform expansion or
+outreach. Gate A remains operator-unaccepted. Continue useful work.
+
 # Reiyah loss-tradeoff continuation, 2026-09-18
 
 Continuation version: `0.1.34`. Status: `exploratory`.

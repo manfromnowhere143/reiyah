@@ -1,6 +1,6 @@
 # Workflow and case request brief
 
-Version 0.1.4, 18 September 2026. Prepared locally; no outreach sent.
+Version 0.1.5, 18 September 2026. Prepared locally; no outreach sent.
 
 Purpose: determine whether a recurring perception revision decision is expensive
 because of uncertain reference evidence, and whether resolving that uncertainty
@@ -50,6 +50,19 @@ common nonnegative penalty share. An owner must justify the actual loss,
 the cost of an unresolved decision and the residual reference contract before
 interpreting this proxy as a release criterion. These decision weights are
 not measured human costs or evidence of customer demand.
+
+The [camera-time sensitivity](../../reference-timing/0.1.0/README.md) tests one
+explicit interpolation premise while retaining missing motion. The current
+census has 62 unavailable car instances across 25 images. Allowing their
+geometry/presence to remain unknown leaves the primary comparison unresolved,
+with checked worlds on both sides of strict improvement. Including preceding-
+only cars also leaves one image's census unavailable, blocking the complete
+population for that broader contract. Interpolation is not a human correction
+or evidence that publisher annotations are wrong. An owner needs to establish
+what time, visibility and object census the reference actually covers, how
+missing tracks are adjudicated, and which uncertainty survives that process.
+Seven development case rows still have loose bounds; tightening those is a
+separate mathematical question, not permission to erase unknown inputs.
 
 A decision owner would need to provide genuine old/new revision provenance,
 the actual release criterion, complete image membership with failures retained,
