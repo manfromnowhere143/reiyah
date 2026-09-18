@@ -1,0 +1,121 @@
+{
+  "artifact_id": "reiyah.mission-costs.publication-sources",
+  "copies": [
+    {
+      "bytes": 449865,
+      "private_source": "private/mission-costs-01/report-02/RECONCILIATION.json",
+      "public_file": "reconciliation.json",
+      "sha256": "fe594b7100ebe96ea9841f06b19f9fb513dc0ef7ce23e775a5b06997af3427d2"
+    },
+    {
+      "bytes": 628,
+      "private_source": "private/mission-costs-01/report-02/VERIFICATION.json",
+      "public_file": "verification.json",
+      "sha256": "5c120253629d765707d09988563c786367015daafadbabab7e2bf912f28e0398"
+    },
+    {
+      "bytes": 36627,
+      "private_source": "private/mission-costs-01/supplement-report-01/SUPPLEMENT.json",
+      "public_file": "supplement.json",
+      "sha256": "424ed85268c4dc82fd28c87ca3b4f3323c4db4afc86dfd1b8cf2a7d3b9522893"
+    },
+    {
+      "bytes": 624,
+      "private_source": "private/mission-costs-01/supplement-report-01/VERIFICATION.json",
+      "public_file": "supplement-verification.json",
+      "sha256": "6edc6d9b473708e2123e09e1bea148ec1568f459ebb3031885fe634a085b8ac9"
+    },
+    {
+      "bytes": 544074,
+      "private_source": "private/mission-costs-01/final-appendix-01/REPORT.json",
+      "public_file": "final-appendix.json",
+      "sha256": "899937f0e72b1d1548dcc12c9d72780a02fae8a28becc00a64864ef11419b06b"
+    },
+    {
+      "bytes": 552,
+      "private_source": "private/mission-costs-01/final-appendix-01/VERIFICATION.json",
+      "public_file": "final-appendix-verification.json",
+      "sha256": "ef53544ae5a3e57134b4a521f3470c52d8511953ccf35413aeb14e0593eec47c"
+    },
+    {
+      "bytes": 10357,
+      "private_source": "private/mission-costs-01/OUTCOMES-02.json",
+      "public_file": "outcomes.json",
+      "sha256": "2c841f675c4491332dec1969a2423fb7b4e3f5db39a2169e4f2e0beb7abf3b36"
+    },
+    {
+      "bytes": 19234,
+      "private_source": "private/mission-costs-01/FOLLOWUP-OUTCOMES-02.json",
+      "public_file": "followup-outcomes.json",
+      "sha256": "b5f7d20fd77637841dd3a3fa184117b07a80e1bc14ec6ebba9d2df95a844b010"
+    },
+    {
+      "bytes": 11744,
+      "private_source": "private/cost_supplement.py",
+      "public_file": "cost_supplement.py",
+      "sha256": "234f13c9939e6059ada40815c03733b26de45912d23315e0a46529b33bb00740"
+    },
+    {
+      "bytes": 7316,
+      "private_source": "private/cost_supplement_verify.py",
+      "public_file": "cost_supplement_verify.py",
+      "sha256": "8bdd26999190c09811c0d38fc692ac7106d9648616ae7bd3bfe412fad0505c35"
+    },
+    {
+      "bytes": 4869,
+      "private_source": "private/test_cost_supplement.py",
+      "public_file": "test_cost_supplement.py",
+      "sha256": "d58eed44f642592b984c7c0661d2813220f195a7c6214a94c6d6ecfc67370bf4"
+    },
+    {
+      "bytes": 11033,
+      "private_source": "private/finish_costs.py",
+      "public_file": "finish_costs.py",
+      "sha256": "d4f57ed83d961bb0e1631a815097841b02a82b9a00a245fe527f704864883c66"
+    },
+    {
+      "bytes": 11154,
+      "private_source": "private/outcome_inventory.py",
+      "public_file": "outcome_inventory.py",
+      "sha256": "ddf4a62d50253eae99c8e40571ce7ebe5d30631b44258ff8711caad14a45358b"
+    },
+    {
+      "bytes": 4732,
+      "private_source": "private/outcome_followup_inventory.py",
+      "public_file": "outcome_followup_inventory.py",
+      "sha256": "b23b0edd21a19fa389bcdf6b40998ea8f9a19b9fa66ced3113b05f81244a2632"
+    }
+  ],
+  "freezes": [
+    {
+      "cutoff_utc": "2026-09-18T20:31:14.150356+00:00",
+      "private_source": "private/mission-costs-01/snapshot-02/FREEZE.json",
+      "scope": "core",
+      "sha256": "25bbfd486f9c88e0e83cd96dbf78fe8ebb12618e9ea8024d1b000671e3681da0"
+    },
+    {
+      "cutoff_utc": "2026-09-18T19:54:49.829014+00:00",
+      "private_source": "private/mission-costs-01/supplement-snapshot-01/FREEZE.json",
+      "scope": "supplement",
+      "sha256": "30236e86634b8462599d43651400c9779f17cccf1bb688ffd10fa8e3240787e3"
+    },
+    {
+      "cutoff_utc": "2026-09-18T20:35:15.149302+00:00",
+      "private_source": "private/mission-costs-01/final-appendix-01/FREEZE.json",
+      "scope": "final-appendix",
+      "sha256": "447166db66b7f15a076af0a6010ce8156f67fb49c7b8a0fe3907c8e9502c5df0"
+    }
+  ],
+  "publication_check": {
+    "checker_public_file": "check_cost_publication.py",
+    "checker_sha256": "140090fc81d3c8150e0f6168185aef7f8a580175da2a6455bfc0f7e03c9e671b",
+    "public_file": "publication-check.json",
+    "scope": "14 declared copies, complete 381 state/proof input coverage and 1676 nested timers; 4 fault controls. The checker and its report are additional authored review artifacts, not self-certified copies.",
+    "sha256": "14259b95668b33c57473e0eb9112d1bf3ce42ce438b5928455a586b861baa357"
+  },
+  "publisher_integrity_record_not_independent_replication": true,
+  "raw_source_payloads_distributed": false,
+  "snapshot_utc": "2026-09-18T20:37:25.625698+00:00",
+  "source_receipts_require_private_custody": true,
+  "version": "0.1.0"
+}

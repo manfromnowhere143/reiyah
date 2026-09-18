@@ -1,3 +1,68 @@
+# Reiyah bounded experiment: costs and outcomes, 2026-09-18
+
+Continuation version: `0.1.41`. Status: `exploratory`.
+
+Read [the cost packet](../research/mission-costs/0.1.0/README.md) and
+[complete outcome reconciliation](../research/mission-costs/0.1.0/OUTCOMES.md).
+The witness follow-up and publication correction are distributed through
+`24a895ee5198b35f9efecbfc546aa59144b0939c`. PUSH-10/PUSH-11 retain normal
+pushes and exact publisher readback. Preserve Daniel as author and committer.
+
+The assignment moved from actual cached outputs to two admitted local packets,
+a frozen four-arm comparison and bounded sensitivity/witness studies. Three
+public EdgeFirst files contain every COCO val2017 member but remain inadmissible
+because of historical checkpoint/settings/terms gaps and zero-extent rows.
+No RT-DETR packet is admitted. The local YOLO11n/YOLO26n packets cover all
+64 preselected exposed images with explicit empties and no missing/failed
+members. They are one family and two publisher generations, not genuine
+three-revision customer evidence. All 1,433 reserved images remain closed.
+
+The competent baseline and checked stopping retain identical query histories
+and decisions. The baseline attains all 99 resolved retrospective query floors;
+the candidate selector improves none and is worse on four cases. All 120
+unresolved full-answer rows have opposing worlds. Independently optimized
+nominal unit losses are 207 old and 210 new. The joint retained policy/penalty
+envelope favors new only for positive miss/FP penalties below 1/16. No deployed
+policy is chosen; no savings, timed human work or demand is established.
+
+The last witness follow-up retains all 7,707 operating rows and closes all
+110 one-edit evidence gaps without changing a universal decision or bound.
+All 1,167 unresolved one-edit rows now have opposing worlds. Overall, 1,511
+of 1,790 unresolved operating rows have opposing worlds; 279 partial timing
+gaps remain unproved on one side. All 2,199 blocked operating rows remain
+blocked. The earlier timing-only study has opposing worlds for all 57 of its
+unresolved rows. These overlapping scopes must not be summed as independent
+decisions. A corrected CSV preserves both the first encoding and its correction.
+
+Core accounting is frozen at 20:31:14.150356 UTC; its appendix at
+20:35:15.149302 UTC. Together they retain 301 outer events, including 21
+failures, with interval union 1,386.684986 seconds. Duration-only, nested and
+copied timers remain separate. Download bodies total 230,321,747 bytes;
+146 staged model calls charge 11.847570214 prediction seconds, nested in
+export processes. Caps hold. Twenty-eight core controls, four supplement
+controls, actual source/rational/sweep checks and four final timer-inventory
+fault controls pass. Human/full economics and total useful seconds remain
+unknown. Later final checks and push/readback are retained in private closeout
+receipts; the public cutoff is not falsely described as all mission cost.
+
+Private packet: `~/.codex/reports/reiyah/value-10h-2026-09-18-c1y8k9yc/`.
+Read CLOSEOUT.md, CLOSEOUT.json, PROGRESS.md and the latest numbered PUSH
+receipt for final duration and publisher status. Original start remains
+2026-09-17 22:28:16 UTC. Exclude the 44,963.785396-second unverified gap;
+earliest adjusted ten-hour point is 2026-09-18 20:57:39.785396 UTC. Do not
+infer useful hours from measured command seconds or count execution after
+the session ends. All original freezes, first failures and corrected versions
+remain retained. Never modify closed scientific or accounting sources.
+
+Next scientific work requires an explicitly bounded question: actual qualified
+revision inputs and owner-defined observation/cost semantics, or a separately
+frozen optional-object search for the retained 279 timing gaps. A reserved
+study requires its own frozen protocol and verified exposure boundary.
+No selector tuning can overcome already witnessed missing information.
+No outreach, platform expansion, training, paid compute or reserved access
+is implied. Controller remains historical 74fbacc; Engine source remains
+38a50ec014cc83e86ea6f247df803ded2971b386. Gate A remains operator-unaccepted.
+
 # Reiyah operating-witness continuation, 2026-09-18
 
 Continuation version: `0.1.40`. Status: `exploratory`.
