@@ -1,6 +1,6 @@
 # Workflow and case request brief
 
-Version 0.1.1, 18 September 2026. Prepared locally; no outreach sent.
+Version 0.1.2, 18 September 2026. Prepared locally; no outreach sent.
 
 Purpose: determine whether a recurring perception revision decision is expensive
 because of uncertain reference evidence, and whether resolving that uncertainty
@@ -24,6 +24,14 @@ not a timed human correction. Allowing one arbitrary eligible box edit per
 image leaves the primary decision unresolved; an admissible 15-image world
 reverses it. That stress budget is not a measured annotation-error rate.
 The derived result portions retain the [nuScenes attribution and terms](../../public-predictions/0.1.0/DISTRIBUTION.md).
+
+A separately frozen [localized translation test](../../reference-translation/0.1.0/README.md)
+keeps the primary proxy decision supported at 4 pixels, while an admissible
+world at approximately 7.7109 pixels changes 19 images and reverses it. The
+exact critical infimum is about 7.6792 pixels and is not attained. This only
+allows one fixed-size reference translated along one axis per image. It
+identifies a concrete precision question for an owner; it does not measure
+how often a reviewer makes that error or certify simultaneous two-axis motion.
 
 A decision owner would need to provide genuine old/new revision provenance,
 the actual release criterion, complete image membership with failures retained,

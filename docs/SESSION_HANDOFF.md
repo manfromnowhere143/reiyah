@@ -1,3 +1,46 @@
+# Reiyah localized-reference continuation, 2026-09-18
+
+Continuation version: `0.1.32`. Status: `exploratory`.
+
+Read [the axis-translation result](../research/reference-translation/0.1.0/README.md).
+The previous complete prediction experiment was committed and pushed as
+`d38a3ae6aa1e3d4f10bdda787dd80f1735a8e502`, with Daniel as author/committer;
+PUSH-01 in the active owned packet retains normal push and publisher readback.
+That is not independent transport verification or scientific replication.
+The ten-hour mission remains active: original start 2026-09-17 22:28:16 UTC,
+minimum target 2026-09-18 08:28:16 UTC. This result is an intermediate checkpoint.
+
+The separately frozen follow-up retains the same 64 exposed inputs, 305 eligible
+references and 73 overlapping cases at eight fixed pixel radii. It permits one
+existing fixed-size reference per image to move along one axis, wholly inside
+its image, with correlated errors allowed across images. All 584 assigned rows
+complete. The primary interval remains positive at 1, 2 and 4 pixels, but
+crosses zero at 8 pixels. The exact reversal-radius infimum is approximately
+7.6792058 pixels and is not attained: the worst total is 1 at the boundary and
+-1 immediately after. A checked 7.7108577-pixel world changes 19 images. The
+broader arbitrary-edit 15-image threshold and all baseline parity findings
+remain unchanged; these stress sets do not measure actual annotation error.
+
+Private continuation: `~/.codex/reports/reiyah/value-10h-2026-09-18-c1y8k9yc/`.
+Read PROGRESS checkpoint07, private/translation-01 FREEZE and its translation-01
+RESULTS/VERIFICATION. The freeze binds 163 input/code artifacts. All 26 controls
+pass. Separate piecewise-overlap and augmenting-path verification checks 8,050
+cells, 1,668 matching states, 512 image/radius rows, 443 native proofs and
+1,168 composed worlds. Raw geometry and proof payloads stay private; derived
+tables and figures retain the stated nuScenes attribution and source terms.
+Search and verification processes take 2.862765458 and 17.038830083 seconds;
+human and full economic costs remain unknown. No new downloads or inference.
+
+Next freeze a full two-coordinate translation contract on the same inputs,
+using sound geometric edge envelopes and bounded spatial refinement. Axis-only
+exactness cannot certify arbitrary 2D displacement; retain any bound gaps.
+Do not alter frozen prior results, tune selectors, consume new images or reopen
+any of the 1,433 outcome-reserved images. Canonical controller remains clean at
+historical 74fbacc; use the owned candidate. Engine source is unchanged at
+38a50ec014cc83e86ea6f247df803ded2971b386. Savings and demand remain unproven,
+platform expansion stays stopped, and Gate A remains operator-unaccepted.
+Historical handoffs below retain their original scopes.
+
 # Reiyah public-prediction continuation, 2026-09-18
 
 Continuation version: `0.1.31`. Status: `exploratory`.
