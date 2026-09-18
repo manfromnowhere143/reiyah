@@ -2,6 +2,11 @@
 
 Continuation version: `0.1.40`. Status: `exploratory`.
 
+Publication correction after `5611b53`: the new witness CSV's 4,088 anchor
+thresholds now serialize as exact rational strings. The first dictionary-text
+encoding remains in history; no outcome, bound or private result changed.
+Final cross-table validation checks every identity and corrected threshold.
+
 Read [the operating-policy witness refinement](../research/operating-witness/0.1.0/README.md).
 The preceding joint-envelope study is published at
 `cc59ec6ed9befe657712b7565ee175fb35cb066b`; PUSH-09 retains normal push and

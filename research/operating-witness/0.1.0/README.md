@@ -2,6 +2,12 @@
 
 Version `0.1.0`, 18 September 2026. Status `exploratory`.
 
+Publication correction: the first CSV at `5611b53` serialized the 4,088
+anchor thresholds as dictionary text. They now use exact `numerator/denominator`
+strings. Case outcomes, bounds, identities and private scientific results are
+unchanged. Both CSV digests are retained in [summary.json](summary.json);
+the first published version remains in Git history.
+
 All **110 targeted one-edit bound gaps now have checked worlds on opposite
 sides of strict improvement**. The finite search uses the existing 64-image
 development operands at their already retained score thresholds. Every one

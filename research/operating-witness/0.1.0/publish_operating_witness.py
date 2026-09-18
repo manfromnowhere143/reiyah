@@ -29,6 +29,7 @@ def publish(session, area, output):
         for index, row in enumerate(result[section]):
             previous = parent[section][index]
             record = {k: row.get(k, '') for k in ('cell_id', 'threshold', 'case_id', 'group', 'family', 'allocated_images', 'decision')}
+            if section == 'anchor_rows': record['threshold'] = wire(row['threshold'])
             record.update(section=section, row_index=index, blocked_image_count=len(row['blocked_images']),
                           previous_evidence=previous['evidence'] or '', evidence=row['evidence'] or '',
                           selected_target=(section, index) in targets)
