@@ -1,0 +1,277 @@
+{
+  "artifact_id": "reiyah.public-predictions.sources",
+  "cached_candidates": [
+    {
+      "admission": "incomplete",
+      "bytes": 14754709,
+      "explicit_null_annotation_samples": 0,
+      "image_membership": {
+        "count": 5000,
+        "dimension_mismatches": 0,
+        "extra": 0,
+        "missing": 0,
+        "reference_index_sha256": "e8c7f7908f1d7278341fae127d0da654f102f11bd7b21d8aeefa635b8c810b6f"
+      },
+      "model": "yolov8n",
+      "prediction_file": "edgefirst-v-e89-predictions.parquet",
+      "prediction_sha256": "f041bc5beb2aa7e421fb6e7844e17ed56796d3eec1385c66cf33161f9b0e54cb",
+      "public_session_url": "https://edgefirst.studio/public/validation/v-e89/details?mode=charts",
+      "remaining": [
+        "Exact checkpoint bytes are not bound to the historical run. Public metadata provides the model artifact name; a documented GET for the YOLO11 model returned HTTP 401 Unauthorized. HEAD responses were frontend headers and did not establish checkpoint access. No authenticated retry was made.",
+        "Full actual preprocessing/decoding argument record is absent from available run artifacts. Model-card/default settings cannot prove historical overrides absent.",
+        "Prediction payload redistribution terms are not established. Studio terms URL returns a frontend shell; fetched payloads stay private."
+      ],
+      "session": "v-e89",
+      "table_rows": 744885,
+      "timing_count": 4995,
+      "timing_count_interpretation": "Not prediction coverage: all 5000 IDs are present; exact timing exclusion rule has not been established."
+    },
+    {
+      "admission": "incomplete",
+      "bytes": 14293625,
+      "explicit_null_annotation_samples": 1,
+      "image_membership": {
+        "count": 5000,
+        "dimension_mismatches": 0,
+        "extra": 0,
+        "missing": 0,
+        "reference_index_sha256": "e8c7f7908f1d7278341fae127d0da654f102f11bd7b21d8aeefa635b8c810b6f"
+      },
+      "model": "yolo11n",
+      "prediction_file": "edgefirst-v-e93-predictions.parquet",
+      "prediction_sha256": "0c620cc8d2c71272fc99651d067a5c33f073fc2256c80f7b388d551f3496ea9e",
+      "public_session_url": "https://edgefirst.studio/public/validation/v-e93/details?mode=charts",
+      "remaining": [
+        "Exact checkpoint bytes are not bound to the historical run. Public metadata provides the model artifact name; a documented GET for the YOLO11 model returned HTTP 401 Unauthorized. HEAD responses were frontend headers and did not establish checkpoint access. No authenticated retry was made.",
+        "Full actual preprocessing/decoding argument record is absent from available run artifacts. Model-card/default settings cannot prove historical overrides absent.",
+        "Prediction payload redistribution terms are not established. Studio terms URL returns a frontend shell; fetched payloads stay private."
+      ],
+      "session": "v-e93",
+      "table_rows": 722891,
+      "timing_count": 4995,
+      "timing_count_interpretation": "Not prediction coverage: all 5000 IDs are present; exact timing exclusion rule has not been established."
+    },
+    {
+      "admission": "incomplete",
+      "bytes": 11860096,
+      "explicit_null_annotation_samples": 2,
+      "image_membership": {
+        "count": 5000,
+        "dimension_mismatches": 0,
+        "extra": 0,
+        "missing": 0,
+        "reference_index_sha256": "e8c7f7908f1d7278341fae127d0da654f102f11bd7b21d8aeefa635b8c810b6f"
+      },
+      "model": "yolo26n",
+      "prediction_file": "edgefirst-v-e9c-predictions.parquet",
+      "prediction_sha256": "830c2bb93ef3b6d870de292a1347cbf17899f6cd47d0011ba3a6f46fde21d2f5",
+      "public_session_url": "https://edgefirst.studio/public/validation/v-e9c/details?mode=charts",
+      "remaining": [
+        "Exact checkpoint bytes are not bound to the historical run. Public metadata provides the model artifact name; a documented GET for the YOLO11 model returned HTTP 401 Unauthorized. HEAD responses were frontend headers and did not establish checkpoint access. No authenticated retry was made.",
+        "Full actual preprocessing/decoding argument record is absent from available run artifacts. Model-card/default settings cannot prove historical overrides absent.",
+        "Prediction payload redistribution terms are not established. Studio terms URL returns a frontend shell; fetched payloads stay private."
+      ],
+      "session": "v-e9c",
+      "table_rows": 595786,
+      "timing_count": 4995,
+      "timing_count_interpretation": "Not prediction coverage: all 5000 IDs are present; exact timing exclusion rule has not been established."
+    }
+  ],
+  "cached_fully_qualified_packets": 0,
+  "local_candidates": [
+    {
+      "admission": {
+        "allocated_images": 64,
+        "allocation_sha256": "b62fd4618d5b553ed6874108db19a5af806522c3b7d96317103cf61b0d8bff36",
+        "artifact_id": "reiyah.public-predictions.admission",
+        "blocked_images": [],
+        "complete_usable_export": true,
+        "configuration_sha256": "c189ccf4acca0bd087c79947cd5aa36bf0ba34ec163af522fe572c2b0c267975",
+        "detections": 487,
+        "packet_sha256": "9fadc0b3598ac15f08fc7106b93c892283d6b05ed3f64ad5d0944485f6f509af",
+        "scientific_acceptance": false,
+        "source_qualification": "separate_required_obligation",
+        "states": {
+          "empty": 2,
+          "processed": 62
+        },
+        "version": "0.1.0"
+      },
+      "allocation_images": 64,
+      "checkpoint": {
+        "access": "Public unauthenticated request; retained privately",
+        "accessed_utc": "2026-09-17T23:14:49.490731+00:00",
+        "bytes": 5613764,
+        "retained_private_name": "yolo11n.pt",
+        "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+        "terms": "Official Ultralytics release asset; retained AGPL-3.0 source/license; no weight redistribution here"
+      },
+      "checkpoint_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo11n.pt",
+      "configuration_sha256": "c189ccf4acca0bd087c79947cd5aa36bf0ba34ec163af522fe572c2b0c267975",
+      "decoding_comparison_maximum_pixel_error": 0.0,
+      "model": "yolo11n",
+      "packet_sha256": "9fadc0b3598ac15f08fc7106b93c892283d6b05ed3f64ad5d0944485f6f509af",
+      "preprocessing_comparison_maximum_error": 0.0
+    },
+    {
+      "admission": {
+        "allocated_images": 64,
+        "allocation_sha256": "b62fd4618d5b553ed6874108db19a5af806522c3b7d96317103cf61b0d8bff36",
+        "artifact_id": "reiyah.public-predictions.admission",
+        "blocked_images": [],
+        "complete_usable_export": true,
+        "configuration_sha256": "cc8bb56dd9cf52c97961c91ed6c462006e6fa04ade67e92a869f013f9f6f3206",
+        "detections": 353,
+        "packet_sha256": "c2a8deaf3b868d60986b1767a21518c7a8602f6d2c4fc2b3942238afe4d9be43",
+        "scientific_acceptance": false,
+        "source_qualification": "separate_required_obligation",
+        "states": {
+          "empty": 4,
+          "processed": 60
+        },
+        "version": "0.1.0"
+      },
+      "allocation_images": 64,
+      "checkpoint": {
+        "access": "Public unauthenticated request; retained privately",
+        "accessed_utc": "2026-09-17T23:14:54.803150+00:00",
+        "bytes": 5544453,
+        "retained_private_name": "yolo26n.pt",
+        "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+        "terms": "Official Ultralytics release asset; retained AGPL-3.0 source/license; no weight redistribution here"
+      },
+      "checkpoint_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n.pt",
+      "configuration_sha256": "cc8bb56dd9cf52c97961c91ed6c462006e6fa04ade67e92a869f013f9f6f3206",
+      "decoding_comparison_maximum_pixel_error": 0.0,
+      "model": "yolo26n",
+      "packet_sha256": "c2a8deaf3b868d60986b1767a21518c7a8602f6d2c4fc2b3942238afe4d9be43",
+      "preprocessing_comparison_maximum_error": 0.0
+    }
+  ],
+  "local_fully_qualified_packets": 2,
+  "primary_sources": [
+    {
+      "id": "edgefirst-client",
+      "role": "Documented public JSON-RPC routes and Parquet empty-row writer",
+      "terms": {
+        "access": "Public unauthenticated request; retained privately",
+        "accessed_utc": "2026-09-17T22:31:11.444148+00:00",
+        "bytes": 11350,
+        "retained_private_name": "edgefirst-client-license.txt",
+        "sha256": "acbbda305958ff27afe43eeef4a77d48ef9d99364e772ba319d1d38ae759ae43",
+        "terms": "Apache-2.0; source payload stays private"
+      },
+      "url": "https://github.com/EdgeFirstAI/client/tree/6c83e3bb48745a68092d1feea7729bf62445c962",
+      "version": "6c83e3bb48745a68092d1feea7729bf62445c962"
+    },
+    {
+      "id": "edgefirst-profiler-cli",
+      "role": "Public profiler documentation; cannot establish historical overrides absent",
+      "terms": {
+        "access": "Public unauthenticated request; retained privately",
+        "accessed_utc": "2026-09-17T22:49:18.624833+00:00",
+        "bytes": 3908,
+        "retained_private_name": "edgefirst-profiler-cli-LICENSE",
+        "sha256": "e1c7250d5cd5c918a9b40eae3d244bed195ad0b83ede515b54204c0e40b25981",
+        "terms": "Au-Zone evaluation/documentation license; redistribution prohibited; no payload distributed"
+      },
+      "url": "https://github.com/EdgeFirstAI/profiler-cli"
+    },
+    {
+      "annotation_member": {
+        "bytes": 19987840,
+        "private_name": "coco-instances_val2017.json",
+        "sha256": "e8c7f7908f1d7278341fae127d0da654f102f11bd7b21d8aeefa635b8c810b6f"
+      },
+      "id": "coco-val2017-index",
+      "role": "Complete image-ID/dimension index only; no COCO image acquired",
+      "terms": {
+        "access": "Public unauthenticated request; retained privately",
+        "accessed_utc": "2026-09-17T22:56:44.793126+00:00",
+        "bytes": 2370,
+        "retained_private_name": "coco-termsofuse.htm",
+        "sha256": "bd019f88ee44c29b2f19c5b99888cf5bc2e7c16f57b6e52af8ed3a60462e8bdd",
+        "terms": "COCO annotation CC BY 4.0; images retain individual Flickr terms; no annotation payload distributed"
+      },
+      "terms_source_commit": "5e1c4da72464b1c6f068df0c02c91e3000ea62c4",
+      "url": "https://cocodataset.org/#download"
+    },
+    {
+      "archive": {
+        "access": "Public unauthenticated request; retained privately",
+        "accessed_utc": "2026-09-17T23:09:19.072670+00:00",
+        "bytes": 3603681,
+        "retained_private_name": "ultralytics-6900c83b.zip",
+        "sha256": "cd740923c09d6df73370b3c11a39a4a84bf5b10d694440b276e5a3c2ddaf2db0",
+        "terms": "AGPL-3.0; no upstream package or checkpoint redistributed"
+      },
+      "commit": "6900c83b16eebee55c7b9de23b9ef447e6ff11e7",
+      "id": "ultralytics-export",
+      "license_sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+      "url": "https://github.com/ultralytics/ultralytics/tree/6900c83b16eebee55c7b9de23b9ef447e6ff11e7",
+      "version": "8.4.155"
+    },
+    {
+      "archive_bytes": 461678030,
+      "archive_sha256": "db48746b10e3544d5ef619eaa3d687e3960626fe1b4422ed856711da5aa7325b",
+      "distribution": "Derived research reports with attribution and stated terms only; raw imagery/annotations/projections private",
+      "id": "nuscenes-held-data",
+      "new_download_bytes": 0,
+      "publisher": "Motional AD Inc. and affiliates",
+      "raw_image_bytes": 9010296,
+      "raw_images": 64,
+      "role": "Previously exposed camera images and published 3D annotations for derived projection proxy",
+      "terms": {
+        "bytes": 25319,
+        "retained_private_name": "nuscenes-retained-data-LICENSE.txt",
+        "scope": "CC BY-NC-SA 4.0 plus Motional Dataset Terms, including derived tables/charts",
+        "sha256": "1a218286e733f6d6135fc5698d614cda2be94ea096f6eee280278458e570636a",
+        "url": "https://www.nuscenes.org/terms-of-use"
+      },
+      "terms_date": "2021-11-16",
+      "url": "https://www.nuscenes.org/nuscenes"
+    },
+    {
+      "id": "nuscenes-devkit",
+      "role": "Publisher get_2d_boxes projection; non-tight geometric boxes, all visibility bins",
+      "terms": "Apache-2.0 SDK license retained in the already held wheel; no SDK payload distributed",
+      "url": "https://github.com/nutonomy/nuscenes-devkit",
+      "version": "1.2.0",
+      "wheel_sha256": "76cee0e7f96ec96d6269ee3acb4ff69e8ac2f9413e974d9eb542233ea7479bf1"
+    },
+    {
+      "finding": "Official RT-DETR main unchanged at 29320b6fd828f8e0987a71426cf2d961b09dfed7; bounded publisher sources do not expose qualified predictions. EdgeFirst rtdetr model search returned zero. Two RT-DETR-named HF dataset trees share the same annotations.json hash; inspected prefix consists of train2017 image metadata, not a demonstrated checkpoint-bound prediction export. No universal absence is inferred.",
+      "id": "rtdetr-bounded-search",
+      "redistribution": "Metadata pointers and findings only; no payload distributed",
+      "role": "Separate family qualification; zero admitted output packets",
+      "url": "https://github.com/lyuwenyu/RT-DETR/tree/29320b6fd828f8e0987a71426cf2d961b09dfed7",
+      "version": "29320b6fd828f8e0987a71426cf2d961b09dfed7"
+    },
+    {
+      "id": "opencv-thread-contract",
+      "role": "GCD thread getter diagnosis; setNumThreads(0) forces sequential execution",
+      "terms": {
+        "access": "Public unauthenticated request; retained privately",
+        "accessed_utc": "2026-09-17T23:35:49.390131+00:00",
+        "bytes": 11358,
+        "retained_private_name": "opencv-4.13.0-LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "terms": "Apache-2.0; implementation payload private"
+      },
+      "url": "https://github.com/opencv/opencv/blob/4.13.0/modules/core/src/parallel.cpp",
+      "version": "4.13.0"
+    }
+  ],
+  "qualification_gaps": [
+    "Two local publisher generations belong to one family; not two families or three genuine team revisions.",
+    "Cached EdgeFirst historical checkpoint/configuration bindings remain unavailable.",
+    "No human review, independent replication, physical-truth validation or customer demand measured."
+  ],
+  "raw_payloads_distributed": false,
+  "retrieval_window_utc": [
+    "2026-09-17",
+    "2026-09-18"
+  ],
+  "status": "exploratory",
+  "version": "0.1.0"
+}

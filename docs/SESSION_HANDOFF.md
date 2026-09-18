@@ -1,3 +1,71 @@
+# Reiyah public-prediction continuation, 2026-09-18
+
+Continuation version: `0.1.31`. Status: `exploratory`.
+
+The operator explicitly authorized at least ten hours of useful bounded
+research, a local frozen-model fallback on already exposed images, and safe
+Git publication with Daniel Wahnich as sole author and committer. Original
+session start is 2026-09-17 22:28:16 UTC; the ten-hour point is 2026-09-18
+08:28:16 UTC. This is an intermediate completed experiment, not the end of that
+continuation or a claim that ten hours have elapsed.
+
+Read [the public-prediction experiment](../research/public-predictions/0.1.0/README.md).
+Three actual EdgeFirst cached exports exactly cover the 5,000-image COCO index,
+but historical checkpoint/configuration bindings remain incomplete. Zero
+cached packets qualify. The bounded local fallback qualifies two frozen
+YOLO11n/YOLO26n packets on the same 64 already-exposed nuScenes camera images:
+487/353 all-class detections, 2/4 explicit empty images, no failed or missing
+members. These are one family and two public generations, not three genuine
+team revisions or the larger acquisition target.
+
+All 876 assigned four-arm rows replay. A/B and C/D have identical ordered query
+histories and decisions for all 219 contract/case pairs. The candidate selector
+uses more queries in four cases and fewer in none. The conventional baseline
+attains the retrospectively proved minimum query count in every resolved
+case: 73 exact, 11 per-image-residual and 15 global-residual cases. Primary exact
+and global-one-edit decisions are supported at 46 and 47 queries respectively;
+per-image residual remains unresolved after all 60 relevant queries. Four
+identical-output images need no query. Cases overlap and are not independent
+customer decisions.
+
+All 120 full-answer unresolved rows have checked opposite-decision worlds.
+Primary nominal improvement is 37/64; the global-one-edit interval is
+[33/64,41/64], and per-image residual interval [-89/64,173/64]. Universal bounds
+are attained on all 64 images. Exactly 15 affected images can exclude improvement
+when each may contain at most one arbitrary eligible rectangle edit. These
+are conditional stress sets, not measured annotation error or physical truth.
+
+Fresh owned root: `~/.codex/reports/reiyah/value-10h-2026-09-18-c1y8k9yc/`.
+Read SESSION, PROGRESS, checkpoints, acquisition/export receipts,
+private/comparison-01's FREEZE and ANALYSIS_FREEZE, assay-02 and analysis-01.
+Raw imagery, weights, outputs, answers and proofs remain private. The public
+[distribution scope](../research/public-predictions/0.1.0/DISTRIBUTION.md) records
+nuScenes attribution and terms for derived reports. The canonical controller
+remains on its historical 74fbacc checkout; do not switch or reset it.
+
+All 83 targeted controls and the default research consistency check pass.
+Replay verifies 2,026 queries, 2,902 stopping points and 4,599 native proofs;
+full-answer verification checks 128 more proofs, 292 composed worlds and independent
+query-floor bounds. New downloads total 227,930,532 bytes and 146 staged prediction
+calls total 11.847570214 charged seconds, within the 2 GiB/60-minute fallback caps.
+Full preparation, failed attempts, computation and checking are retained in
+[the cost record](../research/public-predictions/0.1.0/COSTS.md), with unknown
+human and economic costs explicit. OS worker private-read/network denial
+is checked; this is not independent blinding or scientific replication.
+
+All 1,433 REC-D outcome-reserved images stay closed. Engine source remains
+38a50ec014cc83e86ea6f247df803ded2971b386, unchanged. Prior parity findings remain
+valid; savings and demand remain unproven, and platform expansion stays stopped.
+No training, paid compute, outreach or deployment occurred. Gate A remains
+operator-unaccepted. The existing workflow brief now identifies this concrete
+candidate and the human observation/cost questions, without inventing contact.
+
+Next continue a separately frozen localized reference-displacement sensitivity
+analysis on these same already-exposed 64 images. Preserve the broader adverse
+worlds; do not tune selectors or reopen the outcome reserve. Follow active
+private progress and publisher-readback receipts for current integration state.
+Historical handoffs below retain their original scope and restrictions.
+
 # Reiyah release-source continuation, 2026-09-17
 
 Continuation version: `0.1.30`. Status: `exploratory`.

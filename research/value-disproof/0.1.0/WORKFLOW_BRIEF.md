@@ -1,12 +1,48 @@
 # Workflow and case request brief
 
-Version 0.1.0, 17 September 2026. Prepared locally; no outreach sent.
+Version 0.1.1, 18 September 2026. Prepared locally; no outreach sent.
 
 Purpose: determine whether a recurring perception revision decision is expensive
 because of uncertain reference evidence, and whether resolving that uncertainty
 changes a decision the team actually makes. Target five detailed accounts and
 two concrete comparisons from independent teams. These are acquisition targets,
 not existing customer evidence.
+
+The concrete current candidate is a decision to replace a frozen YOLO11n
+checkpoint with a frozen YOLO26n checkpoint on a fixed 64-image exposed camera
+cohort, requiring strictly smaller mean car matching loss. The
+[executed development comparison](../../public-predictions/0.1.0/README.md)
+supplies complete checkpoint/configuration/image bindings and a runnable
+conventional baseline. Both resolved primary contracts already reach their
+minimum query counts, 46 with exact projected reference and 47 with one possible
+reference edit globally. Checked stopping makes the same decisions and queries.
+This does not identify a team that uses this particular proxy as a release gate.
+
+The specific missing workflow evidence is what inspecting an image establishes.
+The current answer is a replayed geometric projection of public 3D annotations,
+not a timed human correction. Allowing one arbitrary eligible box edit per
+image leaves the primary decision unresolved; an admissible 15-image world
+reverses it. That stress budget is not a measured annotation-error rate.
+The derived result portions retain the [nuScenes attribution and terms](../../public-predictions/0.1.0/DISTRIBUTION.md).
+
+A decision owner would need to provide genuine old/new revision provenance,
+the actual release criterion, complete image membership with failures retained,
+the best existing baseline, and an authorized observation/adjudication process.
+They would need to measure whether review resolves missing objects, class
+changes, occlusion, box displacement and correlated scene errors; record the
+precision and uncertainty that remain; and explain what action follows an
+unresolved comparison. A new study must freeze these obligations before
+accessing its reserved outcomes.
+
+For this candidate, separately measure cold preparation and integration,
+actual reviewer and adjudicator time, failed or repeated reviews, shared
+reference reuse across real revisions, native proof/checking overhead and
+agreed full cost. Instrument both competent workflows with the same information
+and correctness/resolution obligations. Machine timings and annotation lookup
+counts already exist; reviewer time, prices, demand and an owner-approved
+release decision remain unknown. The 3x-observation and 2x-full-cost investment
+targets remain unmet. Do not start outreach or treat this brief as a customer
+conversation.
 
 Ask about the most recent specific instance:
 

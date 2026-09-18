@@ -1,0 +1,1571 @@
+{
+  "accounting": [
+    "Do not add nested inference, matching, proof, checking or service durations to outer process time.",
+    "Union covers only recorded command/request intervals, not the session or complete work.",
+    "Duration-only records lack exact intervals and are reported separately.",
+    "Failed attempts and all physical download receipts are retained."
+  ],
+  "artifact_id": "reiyah.public-predictions.known-costs",
+  "downloads": {
+    "ledger_sha256": "d728b47ffd930eaa48af4408f61b9660ca9951d681ccac011bc4ad4bdcac0e7c",
+    "new_download_bytes": 227930532,
+    "physical_receipts": 112,
+    "request_seconds_sum": 408.27001262968406,
+    "unsuccessful_http_or_transport_receipts": 5
+  },
+  "duration_only_records_not_added_to_union": [
+    {
+      "interval": null,
+      "receipt": "NUSCENES_LICENSE_EXTRACTION.json",
+      "receipt_sha256": "d1910f4e9f04d510ca8cfeddaea1a3b5c9fca01a7f41570d8f8833ebd151ddbd",
+      "seconds": 2.1893761248793453
+    },
+    {
+      "interval": null,
+      "receipt": "FALLBACK_IMAGE_DECODE.json",
+      "receipt_sha256": "9dde3d559b77c4b00f3a2dce7b701ebfa54d035e8338629ef54d5dd7a452e138",
+      "seconds": 0.3287122920155525
+    },
+    {
+      "interval": null,
+      "receipt": "ULTRALYTICS_EXTRACTION_02.json",
+      "receipt_sha256": "b65891d487ba608dde4c4c5e94fac0372c32001782c9474e742555feb7df69b5",
+      "seconds": 0.06325091701000929
+    },
+    {
+      "interval": null,
+      "receipt": "ADMISSION_TEST_01.json",
+      "receipt_sha256": "ad6f960e11f92088148c8b782860a42bb4c01aee75ccae7c42d8ff90421f6f1d",
+      "seconds": 0.47829125
+    },
+    {
+      "interval": null,
+      "receipt": "CONTROLS_02.json:separate_decode_controls",
+      "scope": "Test runner reported duration; outer process unmeasured",
+      "seconds": 0.019
+    },
+    {
+      "interval": null,
+      "receipt": "CONTROLS_02.json:strict_packet_admission_controls",
+      "scope": "Test runner reported duration; outer process unmeasured",
+      "seconds": 0.004
+    }
+  ],
+  "full_economic_cost": null,
+  "human_seconds": null,
+  "nested_inference": {
+    "calls": 146,
+    "charged_prediction_seconds": 11.847570213954896,
+    "decode_check_seconds": 0.13553529069758952,
+    "forward_seconds": 9.674367586383596,
+    "included_in_export_process_intervals": true,
+    "ledger_sha256": "b3a533e3757fb447023f477ea2efd42efc61ce97772c6a56654917222a125c6e"
+  },
+  "not_a_total_work_measure": true,
+  "recorded_duration_sum_seconds": 841.7375828397926,
+  "recorded_interval_union_seconds": 765.6514170000002,
+  "recorded_intervals": [
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:31:07.121114+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:1",
+      "received_bytes": 695,
+      "seconds": 1.7256177091039717,
+      "started_utc": "2026-09-17T22:31:05.395326+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:31:08.275206+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:2",
+      "received_bytes": 695,
+      "seconds": 1.153748916927725,
+      "started_utc": "2026-09-17T22:31:07.121466+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:31:09.374493+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:3",
+      "received_bytes": 695,
+      "seconds": 1.09886341704987,
+      "started_utc": "2026-09-17T22:31:08.275638+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:31:10.269204+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:4",
+      "received_bytes": 4873,
+      "seconds": 0.8943712499458343,
+      "started_utc": "2026-09-17T22:31:09.374840+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:31:10.917499+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:5",
+      "received_bytes": 25451,
+      "seconds": 0.6477791659999639,
+      "started_utc": "2026-09-17T22:31:10.269729+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:31:11.444148+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:6",
+      "received_bytes": 11350,
+      "seconds": 0.526370583102107,
+      "started_utc": "2026-09-17T22:31:10.917787+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:31:12.080683+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:7",
+      "received_bytes": 33713,
+      "seconds": 0.6362702089827508,
+      "started_utc": "2026-09-17T22:31:11.444431+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:32:41.981623+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:8",
+      "received_bytes": 324187,
+      "seconds": 0.8693053340539336,
+      "started_utc": "2026-09-17T22:32:41.112186+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:32:42.469635+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:9",
+      "received_bytes": 36331,
+      "seconds": 0.48751033400185406,
+      "started_utc": "2026-09-17T22:32:41.982128+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:32:43.022678+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:10",
+      "received_bytes": 61224,
+      "seconds": 0.5527291670441628,
+      "started_utc": "2026-09-17T22:32:42.469964+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:32:43.754582+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:11",
+      "received_bytes": 63425,
+      "seconds": 0.7315163749735802,
+      "started_utc": "2026-09-17T22:32:43.023070+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:32:44.208616+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:12",
+      "received_bytes": 45666,
+      "seconds": 0.45371345803141594,
+      "started_utc": "2026-09-17T22:32:43.754911+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:32:44.630723+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:13",
+      "received_bytes": 44465,
+      "seconds": 0.4217370830010623,
+      "started_utc": "2026-09-17T22:32:44.208996+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:35:53.930981+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:14",
+      "received_bytes": 139178,
+      "seconds": 0.7354724172037095,
+      "started_utc": "2026-09-17T22:35:53.195333+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:37:08.469218+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:15",
+      "received_bytes": 33008,
+      "seconds": 1.2505248340312392,
+      "started_utc": "2026-09-17T22:37:07.218566+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:37:09.615067+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:16",
+      "received_bytes": 32983,
+      "seconds": 1.145383832976222,
+      "started_utc": "2026-09-17T22:37:08.469693+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:37:10.752072+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:17",
+      "received_bytes": 32959,
+      "seconds": 1.1364923750516027,
+      "started_utc": "2026-09-17T22:37:09.615589+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:37:10.950007+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:18",
+      "received_bytes": 4032,
+      "seconds": 0.19744966691359878,
+      "started_utc": "2026-09-17T22:37:10.752562+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:37:11.148501+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:19",
+      "received_bytes": 6729,
+      "seconds": 0.1981440840754658,
+      "started_utc": "2026-09-17T22:37:10.950364+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:37:11.797106+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:20",
+      "received_bytes": 6574,
+      "seconds": 0.6482689580880105,
+      "started_utc": "2026-09-17T22:37:11.148845+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:37:12.092225+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:21",
+      "received_bytes": 5253,
+      "seconds": 0.2944762078113854,
+      "started_utc": "2026-09-17T22:37:11.797756+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:42:25.770791+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:22",
+      "received_bytes": 437,
+      "seconds": 0.892735332949087,
+      "started_utc": "2026-09-17T22:42:24.877943+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:42:26.574475+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:23",
+      "received_bytes": 437,
+      "seconds": 0.803115707822144,
+      "started_utc": "2026-09-17T22:42:25.771365+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:42:27.434200+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:24",
+      "received_bytes": 437,
+      "seconds": 0.8591187919955701,
+      "started_utc": "2026-09-17T22:42:26.575089+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:43:11.124019+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:25",
+      "received_bytes": 745,
+      "seconds": 0.8097793748602271,
+      "started_utc": "2026-09-17T22:43:10.314109+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:43:11.941644+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:26",
+      "received_bytes": 666,
+      "seconds": 0.8172353329136968,
+      "started_utc": "2026-09-17T22:43:11.124416+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:43:12.744777+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:27",
+      "received_bytes": 746,
+      "seconds": 0.8025433330330998,
+      "started_utc": "2026-09-17T22:43:11.942242+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:43:13.568441+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:28",
+      "received_bytes": 667,
+      "seconds": 0.8232803328428417,
+      "started_utc": "2026-09-17T22:43:12.745173+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:43:14.426542+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:29",
+      "received_bytes": 746,
+      "seconds": 0.857405667193234,
+      "started_utc": "2026-09-17T22:43:13.569146+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:43:15.248415+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:30",
+      "received_bytes": 665,
+      "seconds": 0.8212955000344664,
+      "started_utc": "2026-09-17T22:43:14.427125+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:43:36.072132+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:31",
+      "received_bytes": 79504,
+      "seconds": 0.4481274578720331,
+      "started_utc": "2026-09-17T22:43:35.623894+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:43:36.471184+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:32",
+      "received_bytes": 80005,
+      "seconds": 0.39844545791856945,
+      "started_utc": "2026-09-17T22:43:36.072746+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": true,
+      "finished_utc": "2026-09-17T22:43:36.739553+00:00",
+      "http_status": 404,
+      "receipt": "downloads.jsonl:33",
+      "received_bytes": 118,
+      "seconds": 0.26781537500210106,
+      "started_utc": "2026-09-17T22:43:36.471744+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:43:38.300106+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:34",
+      "received_bytes": 1434635,
+      "seconds": 1.5601491250563413,
+      "started_utc": "2026-09-17T22:43:36.739970+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:43:40.194624+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:35",
+      "received_bytes": 1056943,
+      "seconds": 1.893944000126794,
+      "started_utc": "2026-09-17T22:43:38.300688+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:45:10.267915+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:36",
+      "received_bytes": 35885255,
+      "seconds": 37.08876808406785,
+      "started_utc": "2026-09-17T22:44:33.179024+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:45:48.242755+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:37",
+      "received_bytes": 14754709,
+      "seconds": 104.9256978330668,
+      "started_utc": "2026-09-17T22:44:03.320674+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:45:52.185304+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:38",
+      "received_bytes": 14293625,
+      "seconds": 41.911852250108495,
+      "started_utc": "2026-09-17T22:45:10.273458+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:46:22.965226+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:39",
+      "received_bytes": 11860096,
+      "seconds": 30.778700083028525,
+      "started_utc": "2026-09-17T22:45:52.186548+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:47:45.279170+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:40",
+      "received_bytes": 801,
+      "seconds": 0.8731610840186477,
+      "started_utc": "2026-09-17T22:47:44.405900+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:47:46.143999+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:41",
+      "received_bytes": 74,
+      "seconds": 0.8640836661215872,
+      "started_utc": "2026-09-17T22:47:45.279921+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:47:46.961450+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:42",
+      "received_bytes": 74,
+      "seconds": 0.8168885000050068,
+      "started_utc": "2026-09-17T22:47:46.144568+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:47:47.367347+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:43",
+      "received_bytes": 5907,
+      "seconds": 0.40534804202616215,
+      "started_utc": "2026-09-17T22:47:46.962007+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:47:47.568992+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:44",
+      "received_bytes": 2,
+      "seconds": 0.20104266703128815,
+      "started_utc": "2026-09-17T22:47:47.367958+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:49:18.230493+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:45",
+      "received_bytes": 13207,
+      "seconds": 0.48219366697594523,
+      "started_utc": "2026-09-17T22:49:17.748142+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:49:18.624833+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:46",
+      "received_bytes": 3908,
+      "seconds": 0.39365766616538167,
+      "started_utc": "2026-09-17T22:49:18.231182+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:49:19.243023+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:47",
+      "received_bytes": 107917,
+      "seconds": 0.617484041955322,
+      "started_utc": "2026-09-17T22:49:18.625546+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:49:19.645667+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:48",
+      "received_bytes": 56133,
+      "seconds": 0.4018614168744534,
+      "started_utc": "2026-09-17T22:49:19.243816+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:49:21.508714+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:49",
+      "received_bytes": 1871932,
+      "seconds": 1.8623518340755254,
+      "started_utc": "2026-09-17T22:49:19.646371+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:49:21.947061+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:50",
+      "received_bytes": 8594,
+      "seconds": 0.4375696249771863,
+      "started_utc": "2026-09-17T22:49:21.509499+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:50:23.627614+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:51",
+      "received_bytes": 9834,
+      "seconds": 0.22782941698096693,
+      "started_utc": "2026-09-17T22:50:23.399645+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:50:24.035309+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:52",
+      "received_bytes": 7935,
+      "seconds": 0.4068764999974519,
+      "started_utc": "2026-09-17T22:50:23.628442+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:50:25.076646+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:53",
+      "received_bytes": 865768,
+      "seconds": 1.0322382079903036,
+      "started_utc": "2026-09-17T22:50:24.044413+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:51:47.095347+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:54",
+      "received_bytes": 43331099,
+      "seconds": 38.84200520790182,
+      "started_utc": "2026-09-17T22:51:08.253250+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:51:48.747149+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:55",
+      "received_bytes": 695,
+      "seconds": 1.6303594999480993,
+      "started_utc": "2026-09-17T22:51:47.116774+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:51:49.115625+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:56",
+      "received_bytes": 97331,
+      "seconds": 0.36739012505859137,
+      "started_utc": "2026-09-17T22:51:48.748239+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:56:44.793126+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:57",
+      "received_bytes": 2370,
+      "seconds": 0.4447900829836726,
+      "started_utc": "2026-09-17T22:56:44.348196+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:56:45.168263+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:58",
+      "received_bytes": 13225,
+      "seconds": 0.37433741707354784,
+      "started_utc": "2026-09-17T22:56:44.793933+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": true,
+      "finished_utc": "2026-09-17T22:57:48.216687+00:00",
+      "http_status": 404,
+      "receipt": "downloads.jsonl:59",
+      "received_bytes": 0,
+      "seconds": 0.6038919170387089,
+      "started_utc": "2026-09-17T22:57:47.612667+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": true,
+      "finished_utc": "2026-09-17T22:57:48.802234+00:00",
+      "http_status": 404,
+      "receipt": "downloads.jsonl:60",
+      "received_bytes": 133,
+      "seconds": 0.5848004589788616,
+      "started_utc": "2026-09-17T22:57:48.217440+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": true,
+      "finished_utc": "2026-09-17T22:58:29.008595+00:00",
+      "http_status": null,
+      "receipt": "downloads.jsonl:61",
+      "received_bytes": 0,
+      "seconds": 0.46369479107670486,
+      "started_utc": "2026-09-17T22:58:28.544637+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:58:29.534173+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:62",
+      "received_bytes": 0,
+      "seconds": 0.5245508330408484,
+      "started_utc": "2026-09-17T22:58:29.009625+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:58:30.288334+00:00",
+      "http_status": 206,
+      "receipt": "downloads.jsonl:63",
+      "received_bytes": 65536,
+      "seconds": 0.7530201249755919,
+      "started_utc": "2026-09-17T22:58:29.535321+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:59:38.868067+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:64",
+      "received_bytes": 167165,
+      "seconds": 0.6538959168829024,
+      "started_utc": "2026-09-17T22:59:38.213834+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T22:59:39.320814+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:65",
+      "received_bytes": 49264,
+      "seconds": 0.45187900005839765,
+      "started_utc": "2026-09-17T22:59:38.868941+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:00:14.961192+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:66",
+      "received_bytes": 61221,
+      "seconds": 1.4403533751610667,
+      "started_utc": "2026-09-17T23:00:13.520548+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:00:16.288269+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:67",
+      "received_bytes": 46711,
+      "seconds": 1.3255772090051323,
+      "started_utc": "2026-09-17T23:00:14.962702+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:00:17.650870+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:68",
+      "received_bytes": 46053,
+      "seconds": 1.3614675828721374,
+      "started_utc": "2026-09-17T23:00:16.289410+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:00:24.140133+00:00",
+      "http_status": 206,
+      "receipt": "downloads.jsonl:69",
+      "received_bytes": 6530055,
+      "seconds": 6.487957666162401,
+      "started_utc": "2026-09-17T23:00:17.652186+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:02:31.645572+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:70",
+      "received_bytes": 5549,
+      "seconds": 0.3782878329511732,
+      "started_utc": "2026-09-17T23:02:31.267137+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:02:31.873962+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:71",
+      "received_bytes": 401,
+      "seconds": 0.22758533293381333,
+      "started_utc": "2026-09-17T23:02:31.646384+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:02:32.138416+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:72",
+      "received_bytes": 699,
+      "seconds": 0.2636936670169234,
+      "started_utc": "2026-09-17T23:02:31.874727+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:04:06.174068+00:00",
+      "http_status": 206,
+      "receipt": "downloads.jsonl:73",
+      "received_bytes": 65536,
+      "seconds": 1.2745785829611123,
+      "started_utc": "2026-09-17T23:04:04.899365+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:04:50.409164+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:74",
+      "received_bytes": 1876,
+      "seconds": 0.8751722502056509,
+      "started_utc": "2026-09-17T23:04:49.533821+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:04:51.237821+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:75",
+      "received_bytes": 1771,
+      "seconds": 0.8259893329814076,
+      "started_utc": "2026-09-17T23:04:50.411836+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:04:52.014810+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:76",
+      "received_bytes": 1771,
+      "seconds": 0.7760417088866234,
+      "started_utc": "2026-09-17T23:04:51.238773+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:05:40.596799+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:77",
+      "received_bytes": 0,
+      "seconds": 0.7772532091476023,
+      "started_utc": "2026-09-17T23:05:39.819417+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:05:41.360554+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:78",
+      "received_bytes": 0,
+      "seconds": 0.7627717079594731,
+      "started_utc": "2026-09-17T23:05:40.597785+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:05:42.164214+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:79",
+      "received_bytes": 0,
+      "seconds": 0.8025783749762923,
+      "started_utc": "2026-09-17T23:05:41.361645+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": true,
+      "finished_utc": "2026-09-17T23:06:45.282011+00:00",
+      "http_status": 401,
+      "receipt": "downloads.jsonl:80",
+      "received_bytes": 12,
+      "seconds": 0.8530144169926643,
+      "started_utc": "2026-09-17T23:06:44.428819+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:06:45.683496+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:81",
+      "received_bytes": 11608,
+      "seconds": 0.4005889999680221,
+      "started_utc": "2026-09-17T23:06:45.282940+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:06:46.051966+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:82",
+      "received_bytes": 1855,
+      "seconds": 0.36692291707731783,
+      "started_utc": "2026-09-17T23:06:45.685045+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:09:19.072670+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:83",
+      "received_bytes": 3603681,
+      "seconds": 3.5196539170574397,
+      "started_utc": "2026-09-17T23:09:15.552860+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:09:22.236769+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:84",
+      "received_bytes": 3260194,
+      "seconds": 3.162636833032593,
+      "started_utc": "2026-09-17T23:09:19.074144+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:09:23.284359+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:85",
+      "received_bytes": 850147,
+      "seconds": 1.0462426249869168,
+      "started_utc": "2026-09-17T23:09:22.238121+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:09:25.761585+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:86",
+      "received_bytes": 2499685,
+      "seconds": 2.4762850829865783,
+      "started_utc": "2026-09-17T23:09:23.285307+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:09:27.071896+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:87",
+      "received_bytes": 1211023,
+      "seconds": 1.30888562486507,
+      "started_utc": "2026-09-17T23:09:25.763014+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:09:27.389858+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:88",
+      "received_bytes": 30361,
+      "seconds": 0.31705220812000334,
+      "started_utc": "2026-09-17T23:09:27.072815+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:09:27.789592+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:89",
+      "received_bytes": 78845,
+      "seconds": 0.3988785839173943,
+      "started_utc": "2026-09-17T23:09:27.390722+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:09:28.101610+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:90",
+      "received_bytes": 73245,
+      "seconds": 0.3111050841398537,
+      "started_utc": "2026-09-17T23:09:27.790515+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:12:13.826386+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:91",
+      "received_bytes": 27703,
+      "seconds": 0.33916145795956254,
+      "started_utc": "2026-09-17T23:12:13.487098+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:12:15.081155+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:92",
+      "received_bytes": 1096241,
+      "seconds": 1.2538609590847045,
+      "started_utc": "2026-09-17T23:12:13.827306+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:12:15.315950+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:93",
+      "received_bytes": 14815,
+      "seconds": 0.23382125003263354,
+      "started_utc": "2026-09-17T23:12:15.082140+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:12:17.956464+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:94",
+      "received_bytes": 2686659,
+      "seconds": 2.639509000116959,
+      "started_utc": "2026-09-17T23:12:15.316966+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:12:19.307563+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:95",
+      "received_bytes": 1241909,
+      "seconds": 1.3485432078596205,
+      "started_utc": "2026-09-17T23:12:17.959031+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:12:19.759984+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:96",
+      "received_bytes": 245757,
+      "seconds": 0.4514170829206705,
+      "started_utc": "2026-09-17T23:12:19.308577+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:13:47.135279+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:97",
+      "received_bytes": 4780131,
+      "seconds": 4.497365457937121,
+      "started_utc": "2026-09-17T23:13:42.637791+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:14:28.462503+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:98",
+      "received_bytes": 46247192,
+      "seconds": 41.32373004197143,
+      "started_utc": "2026-09-17T23:13:47.138781+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:14:36.933382+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:99",
+      "received_bytes": 9307932,
+      "seconds": 8.466296500060707,
+      "started_utc": "2026-09-17T23:14:28.467086+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:14:37.308754+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:100",
+      "received_bytes": 129859,
+      "seconds": 0.3733968329615891,
+      "started_utc": "2026-09-17T23:14:36.935362+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:14:39.330753+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:101",
+      "received_bytes": 1896193,
+      "seconds": 2.0211220839992166,
+      "started_utc": "2026-09-17T23:14:37.309642+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:14:39.572958+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:102",
+      "received_bytes": 30479,
+      "seconds": 0.2409736670088023,
+      "started_utc": "2026-09-17T23:14:39.331991+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:14:39.803527+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:103",
+      "received_bytes": 22228,
+      "seconds": 0.22957525006495416,
+      "started_utc": "2026-09-17T23:14:39.573960+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:14:40.288457+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:104",
+      "received_bytes": 283729,
+      "seconds": 0.4836204999592155,
+      "started_utc": "2026-09-17T23:14:39.804841+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:14:40.503369+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:105",
+      "received_bytes": 8321,
+      "seconds": 0.21394379111006856,
+      "started_utc": "2026-09-17T23:14:40.289435+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:14:43.510308+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:106",
+      "received_bytes": 3098393,
+      "seconds": 3.0058491670060903,
+      "started_utc": "2026-09-17T23:14:40.504467+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:14:43.828269+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:107",
+      "received_bytes": 64720,
+      "seconds": 0.3166496669873595,
+      "started_utc": "2026-09-17T23:14:43.511627+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:14:44.168782+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:108",
+      "received_bytes": 122781,
+      "seconds": 0.3391730410512537,
+      "started_utc": "2026-09-17T23:14:43.829612+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:14:49.490731+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:109",
+      "received_bytes": 5613764,
+      "seconds": 5.321007542079315,
+      "started_utc": "2026-09-17T23:14:44.169735+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:14:54.803150+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:110",
+      "received_bytes": 5544453,
+      "seconds": 5.311079625040293,
+      "started_utc": "2026-09-17T23:14:49.492075+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:35:49.001501+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:111",
+      "received_bytes": 30790,
+      "seconds": 0.44891429180279374,
+      "started_utc": "2026-09-17T23:35:48.552413+00:00"
+    },
+    {
+      "category": "acquisition",
+      "failed": false,
+      "finished_utc": "2026-09-17T23:35:49.390131+00:00",
+      "http_status": 200,
+      "receipt": "downloads.jsonl:112",
+      "received_bytes": 11358,
+      "seconds": 0.3874719578307122,
+      "started_utc": "2026-09-17T23:35:49.002664+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-17T23:19:05.469648+00:00",
+      "receipt": "FALLBACK_IMPORT_01.json",
+      "receipt_sha256": "4d9e166560bdfcd3ec3deaac11221cbc1c5828c1a326b02f36223f7e9fde8eba",
+      "seconds": 22.64154558395967,
+      "started_utc": "2026-09-17T23:18:42.827995+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-17T23:16:23.213293+00:00",
+      "receipt": "FALLBACK_INSTALL.json",
+      "receipt_sha256": "c0d10814558fdc2a7e96ba2b61a504d165c4d07bbb1eefa3f652d6d44b9a3870",
+      "seconds": 1.4328107920009643,
+      "started_utc": "2026-09-17T23:16:21.780516+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-17T23:35:05.292865+00:00",
+      "receipt": "FALLBACK_THREAD_DIAGNOSTIC.json",
+      "receipt_sha256": "80e8e1e18f616ced5c448555a9a8aec03d57a61d1c6bfa96c71b97bd2191e366",
+      "seconds": 1.0144828751217574,
+      "started_utc": "2026-09-17T23:35:04.278458+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-17T23:35:50.715692+00:00",
+      "receipt": "FALLBACK_THREAD_DIAGNOSTIC_02.json",
+      "receipt_sha256": "f8bd585cbe9e5ecbe26fbd084f012f24734af6cc04c8ace2250a2ace8936e5bd",
+      "seconds": 1.019436291884631,
+      "started_utc": "2026-09-17T23:35:49.696307+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 1,
+      "failed": true,
+      "finished_utc": "2026-09-18T00:05:28.577933+00:00",
+      "receipt": "WORKER_BOUNDARY_01.json",
+      "receipt_sha256": "8eb1218788abb86ebd02f6a8b798d70ce32bbc428a252a8bae429fcea2a1b9fc",
+      "seconds": 0.015065292129293084,
+      "started_utc": "2026-09-18T00:05:28.562741+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:06:17.387807+00:00",
+      "receipt": "WORKER_BOUNDARY_02.json",
+      "receipt_sha256": "c52f6951002402da736c769113f31cba5d7c08dce8c4a2a679f9b8d0248c0f79",
+      "seconds": 0.12187083391472697,
+      "started_utc": "2026-09-18T00:06:17.265819+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:31:07.358597+00:00",
+      "receipt": "analysis-controls-01-COMPLETED.json",
+      "receipt_sha256": "439125ae8731779462c289f59d087ad14cf241272478c38e4431ac250697711e",
+      "seconds": 1.3148754590656608,
+      "started_utc": "2026-09-18T00:31:06.043095+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 1,
+      "failed": true,
+      "finished_utc": "2026-09-18T00:40:05.473622+00:00",
+      "receipt": "analysis-verifier-controls-01-COMPLETED.json",
+      "receipt_sha256": "d1643d07f7cfb5432495f17c317a7fcc59d09e21196d0c9deb433079d2c39302",
+      "seconds": 0.1959967918228358,
+      "started_utc": "2026-09-18T00:40:05.276813+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:41:13.509860+00:00",
+      "receipt": "analysis-verifier-controls-02-COMPLETED.json",
+      "receipt_sha256": "fe8ce84ce528ab96f35b433e81630102f9be348197e1f71c72e94b32e16c8d17",
+      "seconds": 0.19899566611275077,
+      "started_utc": "2026-09-18T00:41:13.310359+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 1,
+      "failed": true,
+      "finished_utc": "2026-09-18T00:07:49.743394+00:00",
+      "receipt": "comparison-assay-01-COMPLETED.json",
+      "receipt_sha256": "217f629c4198248c87c941f43edfdce25fa58cbfe5f073cce91671ad53dc57a0",
+      "seconds": 0.2023240840062499,
+      "started_utc": "2026-09-18T00:07:49.540555+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:09:14.215726+00:00",
+      "receipt": "comparison-assay-02-COMPLETED.json",
+      "receipt_sha256": "821285adb8f9c4d9827f3bb07c6c0f9cdcfb3d5ccf919e9b3ef1b35fb63d360c",
+      "seconds": 24.926901374943554,
+      "started_utc": "2026-09-18T00:08:49.288264+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:00:45.572035+00:00",
+      "receipt": "comparison-preparation-01-COMPLETED.json",
+      "receipt_sha256": "9db2d3021345c126f1af3815840596f0835f236e80d44b010e3341e2de252d1f",
+      "seconds": 0.8827297089155763,
+      "started_utc": "2026-09-18T00:00:44.688732+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:15:43.923591+00:00",
+      "receipt": "comparison-replay-01-COMPLETED.json",
+      "receipt_sha256": "10191a0c8d0e85b02bb93e56e65e0a9608ae61ce4e2e5468ec593bf10ff50722",
+      "seconds": 24.912711707875133,
+      "started_utc": "2026-09-18T00:15:19.010418+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:05:29.641725+00:00",
+      "receipt": "controls-03-COMPLETED.json",
+      "receipt_sha256": "c79e53f358cebfa6fb0669f72a320a9d2560efaaefb6f4e09f85ad31d73930a8",
+      "seconds": 0.5499982081819326,
+      "started_utc": "2026-09-18T00:05:29.091202+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 1,
+      "failed": true,
+      "finished_utc": "2026-09-17T23:34:25.893700+00:00",
+      "receipt": "export-01-one-LAUNCH_COMPLETED.json",
+      "receipt_sha256": "73a96396198abf5477852f67acbbae79f23e3c97d6f88ecf8c75ea2730b3bce9",
+      "seconds": 3.3776317921001464,
+      "started_utc": "2026-09-17T23:34:22.515945+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-17T23:36:33.296458+00:00",
+      "receipt": "export-02-one-LAUNCH_COMPLETED.json",
+      "receipt_sha256": "037c6ac54b01cf45cc7628c340b9feb74234e467aed98d1c8617aaa2e093c037",
+      "seconds": 2.624967999989167,
+      "started_utc": "2026-09-17T23:36:30.671370+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-17T23:37:17.152412+00:00",
+      "receipt": "export-03-eight-LAUNCH_COMPLETED.json",
+      "receipt_sha256": "061499ae1bdf2553fe4c8de84e115f43dfc5414a01c166b45a2bd752854d1714",
+      "seconds": 2.8944640839472413,
+      "started_utc": "2026-09-17T23:37:14.257815+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-17T23:38:08.517096+00:00",
+      "receipt": "export-04-one-LAUNCH_COMPLETED.json",
+      "receipt_sha256": "49e9b226d18455b004399b015c9fe0506d4218821228e7d7ae213c1454e20783",
+      "seconds": 3.142708082916215,
+      "started_utc": "2026-09-17T23:38:05.374277+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-17T23:40:33.955965+00:00",
+      "receipt": "export-05-eight-LAUNCH_COMPLETED.json",
+      "receipt_sha256": "d817c3f4518edfe44d2cd238164864418cce8078257276362e619145e989a17d",
+      "seconds": 3.7602216249797493,
+      "started_utc": "2026-09-17T23:40:30.195611+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-17T23:41:48.805294+00:00",
+      "receipt": "export-06-64-LAUNCH_COMPLETED.json",
+      "receipt_sha256": "210ffdbd649bef598109ddbb5e44b61f22142dbaea24a8a7fe487656f2386a7f",
+      "seconds": 7.942939708009362,
+      "started_utc": "2026-09-17T23:41:40.862239+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-17T23:42:37.410007+00:00",
+      "receipt": "export-07-64-LAUNCH_COMPLETED.json",
+      "receipt_sha256": "07bd6ed2e7cdfc9900ee901c0128593855695c758e8fa1633c1abfbe7583bbe5",
+      "seconds": 7.864732999820262,
+      "started_utc": "2026-09-17T23:42:29.545171+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:21:27.437057+00:00",
+      "receipt": "floor-controls-01-COMPLETED.json",
+      "receipt_sha256": "047e8dc8da3b60b5034ed53aa5dcb8749290ec3385491e2dbf237de00d80307a",
+      "seconds": 0.9485088749788702,
+      "started_utc": "2026-09-18T00:21:26.487688+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:32:21.865644+00:00",
+      "receipt": "full-answer-analysis-01-COMPLETED.json",
+      "receipt_sha256": "4f41e7abeabfd476a975013e70a1942781a29027aee809e65319f78c263a61b9",
+      "seconds": 29.101348500000313,
+      "started_utc": "2026-09-18T00:31:52.763671+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:41:44.750928+00:00",
+      "receipt": "full-answer-verification-01-COMPLETED.json",
+      "receipt_sha256": "3795906639276b2cfe887b86376024e2693a3f61ee2239e3c9800906b320aa7f",
+      "seconds": 0.8755505841691047,
+      "started_utc": "2026-09-18T00:41:43.874742+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:25:29.036459+00:00",
+      "receipt": "geometry-controls-01-COMPLETED.json",
+      "receipt_sha256": "4d8877e09b8461eee5e81bdf3f4f0c2cdbb65fba35cc5042fa605148d873e7a6",
+      "seconds": 0.47429100004956126,
+      "started_utc": "2026-09-18T00:25:28.561467+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:26:20.070694+00:00",
+      "receipt": "geometry-controls-02-COMPLETED.json",
+      "receipt_sha256": "3c4682778439d75b2100bafbc15414842b6a5cd872c6923567763e694df90272",
+      "seconds": 0.4646106248255819,
+      "started_utc": "2026-09-18T00:26:19.605482+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T01:02:34.582183+00:00",
+      "receipt": "integrated-controls-01-COMPLETED.json",
+      "receipt_sha256": "e38b30abb581212b1bf0f5f75c249a6be499893b1c9d1f44ce835a84185a4b84",
+      "seconds": 1.8758833329193294,
+      "started_utc": "2026-09-18T01:02:32.705383+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-17T22:54:38.857846+00:00",
+      "receipt": "polars-install.json",
+      "receipt_sha256": "428ed36513407a60b4c869d607b0feaf433f79ec3bf41420a67fb5c3855cb610",
+      "seconds": 0.7411539170425385,
+      "started_utc": "2026-09-17T22:54:38.116724+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-17T23:53:39.682229+00:00",
+      "receipt": "projection-01-LAUNCH_COMPLETED.json",
+      "receipt_sha256": "b5bcebb9b456fb223612aeeaf3628e0e9e509bb3786aa69fcd6f5b16f2212ff7",
+      "seconds": 278.2715129998978,
+      "started_utc": "2026-09-17T23:49:01.410005+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-17T22:46:20.470027+00:00",
+      "receipt": "reader-install.json",
+      "receipt_sha256": "2e3e7856f27bbd6b3bfc311631d916daa2c55b4c9bd308af7b761b34c6513acf",
+      "seconds": 1.0115116250235587,
+      "started_utc": "2026-09-17T22:46:19.458541+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 1,
+      "failed": true,
+      "finished_utc": "2026-09-18T00:14:00.074675+00:00",
+      "receipt": "replay-controls-01-COMPLETED.json",
+      "receipt_sha256": "0671e1e9a45a5b96b62e7d87591ae24405af88ba11b329f658a526594e4c73a6",
+      "seconds": 0.2036601658910513,
+      "started_utc": "2026-09-18T00:13:59.870525+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:14:55.632001+00:00",
+      "receipt": "replay-controls-02-COMPLETED.json",
+      "receipt_sha256": "43b8c2b51d10b99395a507a610d18925d3695d90cf9d12f4cc9daa79715220e3",
+      "seconds": 0.1895097498781979,
+      "started_utc": "2026-09-18T00:14:55.442010+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T00:55:48.481321+00:00",
+      "receipt": "report-controls-01-COMPLETED.json",
+      "receipt_sha256": "b145ac867a014404eb2bc74677990102ccdacdf7e411f2f6f1ce2f7226e4046c",
+      "seconds": 0.08790674991905689,
+      "started_utc": "2026-09-18T00:55:48.392830+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 1,
+      "failed": true,
+      "finished_utc": "2026-09-18T01:03:41.848535+00:00",
+      "receipt": "research-consistency-01-COMPLETED.json",
+      "receipt_sha256": "61f91900a9468c580c865bc572a3f87533ea85e65ba7f2c548c5a80b85935ffa",
+      "seconds": 1.8835050829220563,
+      "started_utc": "2026-09-18T01:03:39.964503+00:00"
+    },
+    {
+      "category": "recorded_process",
+      "exit_code": 0,
+      "failed": false,
+      "finished_utc": "2026-09-18T01:05:23.443799+00:00",
+      "receipt": "research-consistency-02-COMPLETED.json",
+      "receipt_sha256": "a628a81837be36d6a98f930ddcec720da514c0c9062fb5cb340a54ee8406d6df",
+      "seconds": 1.9042023329529911,
+      "started_utc": "2026-09-18T01:05:21.539100+00:00"
+    },
+    {
+      "category": "runtime_custody",
+      "finished_utc": "2026-09-17T23:33:48.394352+00:00",
+      "receipt": "FALLBACK_RUNTIME_BINDING.json",
+      "receipt_sha256": "90053bcb1caf0044d0634c4a3e64852f9eca4f41b50623ac4ba1672cf5518c25",
+      "seconds": 4.364154624985531,
+      "started_utc": "2026-09-17T23:33:44.030029+00:00"
+    },
+    {
+      "category": "image_custody",
+      "finished_utc": "2026-09-17T23:04:06.177302+00:00",
+      "receipt": "FALLBACK_ALLOCATION_FREEZE.json",
+      "receipt_sha256": "a565710df8c3253c2fd629776cef0fdd2d39c267575555c1bb40ca1aea0c5acd",
+      "seconds": 0.03284908295609057,
+      "started_utc": "2026-09-17T23:04:06.144305+00:00"
+    }
+  ],
+  "resource_limits": {
+    "cumulative_inference_seconds": 3600,
+    "maximum_development_images": 64,
+    "models": 2,
+    "new_download_bytes": 2147483648
+  },
+  "snapshot_utc": "2026-09-18T01:06:43.959225+00:00",
+  "status": "exploratory",
+  "unknown_costs": [
+    "Uninstrumented research, coding, source inspection and integration work",
+    "Early failed extraction and reader attempts without retained timing",
+    "Full historical cost of reused runtimes, imagery and annotation custody",
+    "Human preparation, inspection, adjudication and review",
+    "Local hardware depreciation, energy, billing and agreed cost rates"
+  ],
+  "version": "0.1.0"
+}
