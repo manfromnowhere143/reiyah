@@ -1,6 +1,6 @@
 # Workflow and case request brief
 
-Version 0.1.8, 18 September 2026. Prepared locally; no outreach sent.
+Version 0.1.9, 18 September 2026. Prepared locally; no outreach sent.
 
 Purpose: determine whether a recurring perception revision decision is expensive
 because of uncertain reference evidence, and whether resolving that uncertainty
@@ -78,6 +78,16 @@ All 515 common stricter-threshold cells with remaining detections still have
 opposing worlds under the one-edit-per-image contract. An owner must specify
 the acceptable false-positive/miss tradeoff and a prospective operating-policy
 validation procedure; equal numeric score thresholds alone do not establish it.
+
+The [joint penalty/policy envelope](../../policy-loss-envelope/0.1.0/README.md)
+closes the fixed-cost interpretation gap. Giving each detector its own
+retrospective minimum makes new lower only for a positive miss/FP penalty
+below 1/16; the boundary is a tie and old is lower above it. In the first
+positive interval both policies have zero false positives but miss 285 old
+and 284 new cars out of 305. This is a description of exposed curves, not a
+prospective operating-policy result. An owner must supply realistic penalties,
+minimum useful recall and an independent procedure for choosing and testing
+policies; a shared numeric cutoff does not substitute for those obligations.
 
 The [complete cached-packet audit](../../cached-packet-audit/0.1.0/README.md)
 adds a concrete input obligation: all three public files have complete image

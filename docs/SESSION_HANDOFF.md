@@ -1,3 +1,64 @@
+# Reiyah joint policy/penalty continuation, 2026-09-18
+
+Continuation version: `0.1.39`. Status: `exploratory`.
+
+Read [the joint envelope result](../research/policy-loss-envelope/0.1.0/README.md).
+The preceding full cached-row audit is published at
+`6cb0ea324b967aab3f63b4f63b99f26f239d1c5e`; PUSH-08 retains normal push and
+12 exact publisher readbacks. Preserve Daniel as sole author and committer.
+
+The same 64 exposed images and 305 projected references support a complete
+joint characterization of penalty and retained operating policy. All 299 old
+and 220 new threshold cells are retained. Each model receives its own
+retrospective minimum over those cells; no deployed policy is chosen.
+New has lower nominal loss only for 0 < miss/FP penalty < 1/16. Zero and
+1/16 are ties; old is lower above 1/16, including miss-only loss. The original
+shared-cutoff boundary of 58/21 describes a different fixed-policy comparison.
+At equal unit penalties, the independent minima remain 207 old and 210 new.
+
+For 0 < p < 1/18, both best-retained policies have zero false positives;
+old misses 285 and new 284 of 305 references. These are high-miss policies,
+not operating recommendations. The complete 51-cell rational partition has
+3 new-lower, 46 old-lower and 2 tie pieces, with all optimizer identities,
+point-only ties and never-minimal cells retained. These dependent pieces
+are not independent observations. Prior reference uncertainty and conventional
+query parity remain; uncertain-reference independent-threshold pairs are not
+newly evaluated. Savings, human work and customer demand remain unproven.
+
+The 106-binding freeze precedes new envelope calculations. All 13 controls
+pass, including exhaustive 729 three-line sets, 256 two-model allocations
+and a complete 519-cell synthetic pipeline. Separate slope-hull verification
+and 52,938 affine endpoint checks cover every source line and full domain.
+Analysis takes 0.293926958 process seconds; successful verification 0.567518750.
+A first verification launch failed with ENOSPC before the child started.
+Lossless archiving of completed synthetic output copies recovered space;
+every archive member was checked before removal of its unpacked copy.
+Actual packets and all frozen inputs were untouched. The storage failure,
+archive/restore manifest and fresh verification remain retained. Disk space
+is still low; do not treat the machine-wide storage issue as solved.
+
+Private active packet: `~/.codex/reports/reiyah/value-10h-2026-09-18-c1y8k9yc/`.
+Read private/policy-loss-envelope-01 and private/storage-recovery-01. Frozen
+scientific files must not change. No new images, inference or downloads;
+230,321,747 response-body bytes and 11.847570214 charged inference seconds
+remain inherited mission costs. All 1,433 reserved images stay closed.
+
+The mission remains active: original start 2026-09-17 22:28:16 UTC; excluded
+unverified gap 44,963.785396 seconds; earliest adjusted ten-hour point
+2026-09-18 20:57:39.785396 UTC, subject to useful work and further interruptions.
+This intermediate publication is not the mission closeout.
+
+Next finish complete machine-cost reconciliation, including failed requests,
+reader probes, the failed storage-bound launch, recovery, every science phase,
+packaging and publisher readbacks. Preserve five frozen mission-cost files;
+take the final source snapshot before adding public cost README/packaging.
+Separate nested and overlapping timers, tool-only durations and unknown
+human/full economics. Reconcile final claims and unresolved admission/value
+obligations against exact retained records, then leave the short current
+handoff and authorized safe push/readback. No new platform, outreach or
+reserved study. Controller remains historical 74fbacc; Engine source remains
+38a50ec014cc83e86ea6f247df803ded2971b386. Gate A remains operator-unaccepted.
+
 # Reiyah cached-packet continuation, 2026-09-18
 
 Continuation version: `0.1.38`. Status: `exploratory`.

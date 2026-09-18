@@ -1,0 +1,182 @@
+{
+  "all_rows_retained": true,
+  "allocated_images": 64,
+  "analysis_peak_resident_bytes_macos": 23035904,
+  "artifact_id": "reiyah.policy-loss-envelope.public-summary",
+  "breakpoints": [
+    "0",
+    "1/18",
+    "1/17",
+    "2/19",
+    "3/19",
+    "4/23",
+    "6/31",
+    "1/4",
+    "7/26",
+    "2/7",
+    "3/10",
+    "7/20",
+    "19/53",
+    "3/8",
+    "1/2",
+    "6/11",
+    "8/13",
+    "31/49",
+    "18/25",
+    "8/11",
+    "58/79",
+    "7/9",
+    "4/5",
+    "5/6",
+    "15/16",
+    "1"
+  ],
+  "controls": {
+    "exhaustive_three_line_sets": 729,
+    "exhaustive_two_model_allocations": 256,
+    "synthetic_full_pipeline_cells": 519,
+    "unit_tests": 13
+  },
+  "decisions_by_partition_kind": {
+    "open_interval": {
+      "new_lower": 2,
+      "old_lower": 23
+    },
+    "point": {
+      "new_lower": 1,
+      "old_lower": 23,
+      "tie": 2
+    }
+  },
+  "eligible_projected_references": 305,
+  "fixed_cutoff_comparison_changed_cells": 38,
+  "freeze_sha256": "9ea778803d1e0cf32a4c7da4abc7a2724e6be89e3f9a43c40dcf60658202df3b",
+  "frozen_bindings": 106,
+  "frozen_utc": "2026-09-18T19:25:48.411735+00:00",
+  "full_economic_cost": null,
+  "human_seconds": null,
+  "independent_scientific_replication": false,
+  "linear_constraints_checked": [
+    48655,
+    26496
+  ],
+  "models": [
+    "YOLO11n",
+    "YOLO26n"
+  ],
+  "new_downloads": 0,
+  "new_image_reads": 0,
+  "new_lower_region": {
+    "both_boundaries_open": true,
+    "miss_to_fp_ratio_left": "0",
+    "miss_to_fp_ratio_right": "1/16",
+    "penalty_share_left": "0",
+    "penalty_share_right": "1/17"
+  },
+  "new_model_calls": 0,
+  "old_lower_region": {
+    "left_closed": false,
+    "penalty_share_left": "1/17",
+    "penalty_share_right": "1",
+    "right_closed": true
+  },
+  "optimizer_states": [
+    {
+      "interval": 15,
+      "never_minimal": 262,
+      "point_only": 22
+    },
+    {
+      "interval": 10,
+      "never_minimal": 187,
+      "point_only": 23
+    }
+  ],
+  "partition_cells": 51,
+  "phase_cost_snapshot_before_publication": [
+    {
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-18T19:26:01.503954+00:00",
+      "seconds": 0.2939269579946995,
+      "stage": "envelope-analysis-01",
+      "started_utc": "2026-09-18T19:26:01.209538+00:00"
+    },
+    {
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-18T19:20:51.061527+00:00",
+      "seconds": 0.3230927500408143,
+      "stage": "envelope-controls-01",
+      "started_utc": "2026-09-18T19:20:50.737370+00:00"
+    },
+    {
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-18T19:24:37.289312+00:00",
+      "seconds": 0.4977862499654293,
+      "stage": "envelope-controls-02",
+      "started_utc": "2026-09-18T19:24:36.790701+00:00"
+    },
+    {
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-18T19:25:48.453892+00:00",
+      "seconds": 0.13208149978891015,
+      "stage": "envelope-freeze-01",
+      "started_utc": "2026-09-18T19:25:48.321194+00:00"
+    },
+    {
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-18T19:30:25.357021+00:00",
+      "seconds": 0.5675187499728054,
+      "stage": "envelope-verify-02",
+      "started_utc": "2026-09-18T19:30:24.773648+00:00"
+    }
+  ],
+  "reserved_images_closed": 1433,
+  "results_sha256": "e1d0cfac78fbcdb3339d1b5305f19f5e559865d1dc3e47c3319099055c94e59d",
+  "snapshot_utc": "2026-09-18T19:36:06.574492+00:00",
+  "source_curve_sha256": "65aa2b51cde447da172b82df0feb297794249212fa7129699e285da2a5f94f9a",
+  "source_threshold_cells": [
+    299,
+    220
+  ],
+  "startup_failure": {
+    "error": "ENOSPC before STARTED receipt creation",
+    "secondary_result_view_tool_wall_seconds": "0.246422958",
+    "stage": "envelope-verify-01",
+    "tool_times_added_to_phase_union": false,
+    "tool_wall_seconds": "0.414131541",
+    "verification_child_launched": false
+  },
+  "status": "exploratory",
+  "storage_recovery": {
+    "all_archived_bytes_read_back_before_removal": true,
+    "archive_bytes": 1158469,
+    "frozen_input_paths_in_scope": 0,
+    "original_file_bytes": 31945868,
+    "seconds": 0.8497782500926405
+  },
+  "storage_scope": "Completed synthetic cached-audit output copies only; exact lossless archive retained privately",
+  "thresholds_selected_for_deployment": false,
+  "tie_penalty_shares": [
+    "0",
+    "1/17"
+  ],
+  "uncertain_reference_pairs_evaluated": false,
+  "verification": {
+    "all_lines_verified": 519,
+    "all_optimizer_ties_retained": true,
+    "all_partition_cells_verified": 51,
+    "continuum_dominance_endpoint_checks": 52938,
+    "independent_lower_hull_segments": [
+      15,
+      10
+    ]
+  },
+  "verification_peak_resident_bytes_macos": 26165248,
+  "verification_sha256": "dae32f3692376d9a1f1cad43cc01f5e6d35e6bc1128626fa5c5f04ff626a693b",
+  "version": "0.1.0"
+}
