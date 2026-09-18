@@ -1,6 +1,6 @@
 # Workflow and case request brief
 
-Version 0.1.5, 18 September 2026. Prepared locally; no outreach sent.
+Version 0.1.6, 18 September 2026. Prepared locally; no outreach sent.
 
 Purpose: determine whether a recurring perception revision decision is expensive
 because of uncertain reference evidence, and whether resolving that uncertainty
@@ -61,8 +61,11 @@ population for that broader contract. Interpolation is not a human correction
 or evidence that publisher annotations are wrong. An owner needs to establish
 what time, visibility and object census the reference actually covers, how
 missing tracks are adjudicated, and which uncertainty survives that process.
-Seven development case rows still have loose bounds; tightening those is a
-separate mathematical question, not permission to erase unknown inputs.
+The subsequent [geometric witness refinement](../../reference-witness/0.1.0/README.md)
+finds checked opposing worlds for all seven previously unproved gaps. Every
+one of the 57 unresolved timing rows now has that evidence. This resolves the
+mathematical gap while preserving the missing-information obstacle: selecting
+more efficiently among the same admitted answers cannot settle those cases.
 
 A decision owner would need to provide genuine old/new revision provenance,
 the actual release criterion, complete image membership with failures retained,

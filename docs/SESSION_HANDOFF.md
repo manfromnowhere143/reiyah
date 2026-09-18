@@ -1,3 +1,57 @@
+# Reiyah reference-witness continuation, 2026-09-18
+
+Continuation version: `0.1.36`. Status: `exploratory`.
+
+Read [the geometric witness result](../research/reference-witness/0.1.0/README.md).
+The preceding timing study is published at
+`472a75a2b06846a88b5e7c8766fdc7f13201c951`; PUSH-05 in the active packet retains
+normal push and publisher readback. Daniel remains sole author and committer.
+The ten-hour mission remains active. Original start: 2026-09-17 22:28:16 UTC.
+Exclude the unverified September 18 gap from 02:37:47.214604 to 15:07:11 UTC.
+The earliest adjusted point remains 2026-09-18 20:57:39.785396 UTC, subject
+to actual useful work and further interruptions. This is an intermediate
+research checkpoint, not completion of the duration requirement.
+
+A separately frozen adaptive follow-up selects all seven timing bound gaps:
+14 image/contract pairs across 12 images. Four zero-unknown pairs remain exact
+inherited components. Eight finite geometric pools cover 348 bases, 10,574
+axis cells, 6,917 rectangles and 110 nonempty neighborhoods. Ten multiset
+searches attain both universal endpoints after 366 distinct flow measurements.
+No resource cap or actual search failure occurs. Every selected gap now has
+opposing worlds, including block-04 at -1/4 and 9/4. All 57 unresolved timing
+rows have constructive ambiguity; all 292 rows and previous decisions remain.
+
+The primary current-partial case still has universal bounds [-43/64,99/64],
+with stronger attained worlds -27/64 and 73/64. Previous worlds remain retained.
+No case becomes a supported replacement claim through witness refinement.
+Strict missing-motion and missing union-census cases remain blocked. The
+motion model is conditional and does not establish corrected annotations.
+
+All 21 controls, including 96 exhaustive tiny multiset comparisons, pass.
+The 176-binding freeze precedes new scores. Independent piecewise overlaps,
+exact geometry, augmenting paths and native checking verify all retained worlds
+and 132 native proofs, including inherited ones. Process analysis takes
+2.390407041 seconds and verification 2.771332125. Complete economics and human
+work remain unknown. No new images, inference, downloads or reserved access.
+
+Private active packet:
+`~/.codex/reports/reiyah/value-10h-2026-09-18-c1y8k9yc/`.
+Read private/reference-witness-01 FREEZE.json and runs/witness-01 results and
+verification. Frozen scientific files must not be edited. Public scalar
+reports retain nuScenes attribution and source conditions. Raw geometry,
+source metadata, private answers and proof payloads remain outside Git.
+
+Next audit the fixed confidence operating policy using existing retained
+prediction scores and export settings. If complete score retention supports
+it, freeze a bounded development sensitivity comparison before new scoring;
+otherwise retain the precise information limit. Do not infer missing
+below-floor detections, tune on reserved outcomes, claim calibration equality
+from a common numeric threshold, or optimize a selector to hide uncertainty.
+All 1,433 reserved images remain closed. Earlier parity and query floors stand.
+Controller remains historical 74fbacc; Engine remains
+38a50ec014cc83e86ea6f247df803ded2971b386. Gate A is operator-unaccepted.
+Continue useful work within the bounded mission; no outreach or platform work.
+
 # Reiyah reference-timing continuation, 2026-09-18
 
 Continuation version: `0.1.35`. Status: `exploratory`.
