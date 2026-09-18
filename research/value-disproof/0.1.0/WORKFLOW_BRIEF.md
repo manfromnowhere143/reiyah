@@ -1,6 +1,6 @@
 # Workflow and case request brief
 
-Version 0.1.2, 18 September 2026. Prepared locally; no outreach sent.
+Version 0.1.3, 18 September 2026. Prepared locally; no outreach sent.
 
 Purpose: determine whether a recurring perception revision decision is expensive
 because of uncertain reference evidence, and whether resolving that uncertainty
@@ -31,7 +31,14 @@ world at approximately 7.7109 pixels changes 19 images and reverses it. The
 exact critical infimum is about 7.6792 pixels and is not attained. This only
 allows one fixed-size reference translated along one axis per image. It
 identifies a concrete precision question for an owner; it does not measure
-how often a reviewer makes that error or certify simultaneous two-axis motion.
+how often a reviewer makes that error.
+
+The subsequent [simultaneous translation result](../../translation-2d/0.1.0/README.md)
+retains support through a 5-pixel coordinate radius and exhibits an excluding
+world at 5.03125 pixels. All evaluated extrema verify; the reported critical
+bracket is not an exact infimum or a measured reviewer tolerance. Allowing
+both coordinates to move widens the stress family. Equal false-positive and
+miss penalties are another explicit premise still needing owner justification.
 
 A decision owner would need to provide genuine old/new revision provenance,
 the actual release criterion, complete image membership with failures retained,

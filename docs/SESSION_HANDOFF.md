@@ -1,3 +1,48 @@
+# Reiyah two-coordinate continuation, 2026-09-18
+
+Continuation version: `0.1.33`. Status: `exploratory`.
+
+Read [the simultaneous-translation result](../research/translation-2d/0.1.0/README.md).
+The preceding axis result is published at
+`770bbb2c0200664b4c604e4ab3dd47ceb1da75f9`; PUSH-02 in the active owned packet
+retains the normal push and exact publisher readback. Daniel remains the sole
+author/committer. This is an intermediate checkpoint in the active ten-hour
+mission, started 2026-09-17 22:28:16 UTC, with target 2026-09-18 08:28:16 UTC.
+
+The separately frozen 2D family permits one existing fixed-size reference per
+image to move in both coordinates, wholly inside the image. It reuses the
+same 64 exposed images, 305 references, two prediction packets and 73 dependent
+cases. All 584 fixed-radius rows complete: 164 supported, 190 excluded and
+230 unresolved. Every unresolved row has both attained decisions. Separate
+verification checks 960 image/radius rows including seven new bisection radii,
+13,587 covering regions, 625 native proofs and 1,168 fixed-radius composed
+worlds. There are no remaining geometric bound gaps. All 33 controls pass.
+
+The primary case is universally supported at radius 5 pixels, with worst total
+delta 1. At radius 161/32 = 5.03125 pixels, an excluding world has total -1.
+The declared eight bisection steps stop at this bracket; no exact 2D infimum is
+claimed. Earlier axis-only and broader arbitrary-edit results remain valid
+for their own families. These stress sets do not measure real annotation error,
+reviewer precision or physical truth. Query parity and the lack of demonstrated
+savings remain unchanged.
+
+Private continuation: `~/.codex/reports/reiyah/value-10h-2026-09-18-c1y8k9yc/`.
+Read PROGRESS checkpoint09, private/translation-2d-01 FREEZE and its planar-01
+RESULTS/VERIFICATION. The freeze binds 244 files. Search and verification
+processes take 12.321791709 and 12.482041917 seconds, including their nested
+work. Raw geometry, region operands and native proofs remain private; public
+derived reports retain nuScenes attribution and terms. No new downloads or
+inference calls occurred. Human and full economic costs remain unknown.
+
+Next examine the equal false-positive/miss penalty premise from the frozen
+predictions and verified matching worlds. Freeze any new cost-ratio sensitivity
+contract before computing its outcomes. A different decision obligation does
+not erase the completed equal-penalty parity findings or authorize selector
+tuning, new images, more inference or reserved outcomes. Keep all 1,433 reserved
+images closed. The controller remains on historical 74fbacc and Engine source
+remains 38a50ec014cc83e86ea6f247df803ded2971b386. No platform expansion or outreach.
+Gate A remains operator-unaccepted. Historical handoffs retain their scopes.
+
 # Reiyah localized-reference continuation, 2026-09-18
 
 Continuation version: `0.1.32`. Status: `exploratory`.
