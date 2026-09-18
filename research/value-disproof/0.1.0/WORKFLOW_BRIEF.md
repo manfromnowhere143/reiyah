@@ -1,6 +1,6 @@
 # Workflow and case request brief
 
-Version 0.1.6, 18 September 2026. Prepared locally; no outreach sent.
+Version 0.1.7, 18 September 2026. Prepared locally; no outreach sent.
 
 Purpose: determine whether a recurring perception revision decision is expensive
 because of uncertain reference evidence, and whether resolving that uncertainty
@@ -66,6 +66,18 @@ finds checked opposing worlds for all seven previously unproved gaps. Every
 one of the 57 unresolved timing rows now has that evidence. This resolves the
 mathematical gap while preserving the missing-information obstacle: selecting
 more efficiently among the same admitted answers cannot settle those cases.
+
+The [retained-score operating study](../../operating-policy/0.1.0/README.md)
+shows why the operating criterion also matters. On this exposed cohort, the
+retrospective minimum nominal unit losses are 207 for YOLO11n and 210 for
+YOLO26n, despite the new checkpoint's lower loss at the shared 0.25 cutoff.
+At an allowed false-positive count of 69, the old checkpoint can attain 154
+misses versus the new checkpoint's 156. Neither frontier uniformly dominates.
+These observations choose no deployment threshold or calibrated score model.
+All 515 common stricter-threshold cells with remaining detections still have
+opposing worlds under the one-edit-per-image contract. An owner must specify
+the acceptable false-positive/miss tradeoff and a prospective operating-policy
+validation procedure; equal numeric score thresholds alone do not establish it.
 
 A decision owner would need to provide genuine old/new revision provenance,
 the actual release criterion, complete image membership with failures retained,

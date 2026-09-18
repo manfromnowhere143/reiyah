@@ -1,3 +1,62 @@
+# Reiyah operating-policy continuation, 2026-09-18
+
+Continuation version: `0.1.37`. Status: `exploratory`.
+
+Read [the operating-policy result](../research/operating-policy/0.1.0/README.md).
+The preceding witness refinement is published at
+`8e05d6d1c9eb7f5e2fcb3fc4662754d271b70346`; PUSH-06 retains normal push and
+publisher readback. Daniel remains sole author and committer. The ten-hour
+mission is active: original start 2026-09-17 22:28:16 UTC, excluded unverified
+gap 44,963.785396 seconds, earliest adjusted point 2026-09-18 20:57:39.785396 UTC,
+subject to useful work and further interruptions. Do not close merely at a push.
+
+Both complete prediction packets qualify for stricter post-export filtering
+on [0.25,1]. The same 64 images, car/height/matching policy and seven reference
+contracts are retained. A 343-binding freeze precedes new scores. All 517
+common threshold cells, 3,619 primary rows, 4,088 diagnostic anchor rows,
+579 distinct filtered states and 7,407 native world certificates verify.
+The 299/220 individual cells and all 65,780 nominal threshold pairs are retained.
+Source scores are not assumed calibrated and no below-floor output is inferred.
+
+At the original shared cutoff, nominal total losses remain 262 old and 225 new.
+The retrospective stricter-policy minimum is 207 old versus 210 new. At an
+allowed FP count of 69, old attains 154 misses and new 156; neither complete
+frontier uniformly dominates. These are exposed development descriptions, not
+selected deployment thresholds, policy training or held-out evidence.
+
+All 515 common threshold cells with any detections retain opposing worlds
+under one arbitrary reference edit per image. The final two cells have empty
+outputs and zero difference, excluding strict improvement. Temporal contracts
+retain their unknowns and input blocks. Some changed-threshold rows retain
+bound gaps because the world bank is fixed; all gaps are explicit. Earlier
+default-threshold opposing worlds, parity and query floors remain unchanged.
+
+All 31 controls pass, including 81 exhaustive tiny frontier comparisons.
+A complete synthetic pipeline verifies 4,130 rows and 1,440 native proofs.
+The initial macOS path-alias lookup failure remains retained; canonicalizing
+the root fixed it without weakening source byte checks. Actual analysis and
+verification take 56.621070416 and 55.775448542 process seconds, with no failure
+or cap reached. Frozen science remains unchanged. Public tables and a visually
+checked PNG/SVG retain nuScenes attribution; raw source joins/proofs stay private.
+No new model calls, image reads, training or downloads. All 1,433 reserved images
+remain closed. Savings, human time and customer demand remain unproven.
+
+Private active packet:
+`~/.codex/reports/reiyah/value-10h-2026-09-18-c1y8k9yc/`.
+Read PROGRESS checkpoint13, private/operating-policy-01 FREEZE.json and
+runs/operating-01 results/verification. Do not edit those frozen scientific files.
+
+Next reconcile the mission's retained machine-cost records: all source attempts,
+export stages, failed controls, analysis, verification, packaging and publisher
+readbacks. Separate overlapping/nested timers, physical download bytes, unique
+retained assets, cumulative inference charges and unmeasured work. Do not imply
+full economics from command time. Then inspect remaining concrete cached-export
+provenance routes within existing authority; preserve any exact missing binding.
+No selector tuning to hide missing information, platform expansion or outreach.
+Controller remains clean historical 74fbacc; Engine source remains
+38a50ec014cc83e86ea6f247df803ded2971b386. Gate A remains operator-unaccepted.
+Continue useful work toward the bounded mission.
+
 # Reiyah reference-witness continuation, 2026-09-18
 
 Continuation version: `0.1.36`. Status: `exploratory`.

@@ -1,0 +1,1230 @@
+{
+  "allocated_cases": 73,
+  "allocated_images": 64,
+  "anchor_rows": 4088,
+  "artifact_id": "reiyah.operating-policy.public-summary",
+  "budget_69": {
+    "comparison": "old_fewer_misses",
+    "false_positive_budget": 69,
+    "miss_difference_old_minus_new": -2,
+    "new_attained_cell_ids": "cell-0000",
+    "new_minimum_misses": 156,
+    "new_state": "available",
+    "old_attained_cell_ids": "cell-0077",
+    "old_minimum_misses": 154,
+    "old_state": "available"
+  },
+  "common_threshold_cells": 517,
+  "controls": {
+    "exhaustive_tiny_frontier_comparisons": 81,
+    "full_synthetic_images": 64,
+    "full_synthetic_native_proofs": 1440,
+    "full_synthetic_rows": 4130,
+    "unit_tests": 31
+  },
+  "cost_snapshot": {
+    "cutoff_latest_finished_utc": "2026-09-18T17:33:51.098348+00:00",
+    "phases": [
+      {
+        "error": null,
+        "exit_code": 0,
+        "finished_utc": "2026-09-18T17:32:24.980927+00:00",
+        "seconds": 56.621070416178554,
+        "stage": "operating-analysis-01",
+        "started_utc": "2026-09-18T17:31:28.359475+00:00"
+      },
+      {
+        "error": null,
+        "exit_code": 1,
+        "finished_utc": "2026-09-18T17:26:20.047063+00:00",
+        "seconds": 0.2603068749886006,
+        "stage": "operating-controls-01",
+        "started_utc": "2026-09-18T17:26:19.785921+00:00"
+      },
+      {
+        "error": null,
+        "exit_code": 0,
+        "finished_utc": "2026-09-18T17:27:06.853134+00:00",
+        "seconds": 0.2547308749053627,
+        "stage": "operating-controls-02",
+        "started_utc": "2026-09-18T17:27:06.597586+00:00"
+      },
+      {
+        "error": null,
+        "exit_code": 0,
+        "finished_utc": "2026-09-18T17:31:10.654835+00:00",
+        "seconds": 0.257534584030509,
+        "stage": "operating-freeze-01",
+        "started_utc": "2026-09-18T17:31:10.396886+00:00"
+      },
+      {
+        "error": null,
+        "exit_code": 0,
+        "finished_utc": "2026-09-18T17:29:57.652001+00:00",
+        "seconds": 0.20833320799283683,
+        "stage": "operating-score-qualification-01",
+        "started_utc": "2026-09-18T17:29:57.443062+00:00"
+      },
+      {
+        "error": null,
+        "exit_code": 0,
+        "finished_utc": "2026-09-18T17:29:15.552920+00:00",
+        "seconds": 5.687896375078708,
+        "stage": "operating-synthetic-01",
+        "started_utc": "2026-09-18T17:29:09.864555+00:00"
+      },
+      {
+        "error": null,
+        "exit_code": 0,
+        "finished_utc": "2026-09-18T17:33:51.098348+00:00",
+        "seconds": 55.77544854208827,
+        "stage": "operating-verification-01",
+        "started_utc": "2026-09-18T17:32:55.322356+00:00"
+      }
+    ],
+    "scope": "Completed named phases before publishing, including the first failed controls. Excludes this publisher, later figure/check/review/push and unmeasured interactive work. Internal timers and native costs are nested.",
+    "sum_recorded_process_seconds": 119.06532087526284,
+    "union_recorded_wall_seconds": 119.06938695907593
+  },
+  "counts": {
+    "diagnostic_anchors": {
+      "current_partial": {
+        "decisions": {
+          "excluded": 443,
+          "supported": 56,
+          "unresolved": 85
+        },
+        "evidence": {
+          "bound_gap": 32,
+          "opposite_worlds": 53,
+          "universal_bound": 499
+        }
+      },
+      "current_strict": {
+        "decisions": {
+          "excluded": 277,
+          "input_blocked": 264,
+          "supported": 43
+        },
+        "evidence": {
+          "universal_bound": 320
+        }
+      },
+      "exact_projection": {
+        "decisions": {
+          "excluded": 485,
+          "supported": 99
+        },
+        "evidence": {
+          "universal_bound": 584
+        }
+      },
+      "one_edit_global": {
+        "decisions": {
+          "excluded": 297,
+          "supported": 12,
+          "unresolved": 275
+        },
+        "evidence": {
+          "bound_gap": 51,
+          "opposite_worlds": 224,
+          "universal_bound": 309
+        }
+      },
+      "one_edit_per_image": {
+        "decisions": {
+          "excluded": 285,
+          "supported": 6,
+          "unresolved": 293
+        },
+        "evidence": {
+          "bound_gap": 49,
+          "opposite_worlds": 244,
+          "universal_bound": 291
+        }
+      },
+      "union_partial": {
+        "decisions": {
+          "excluded": 418,
+          "input_blocked": 24,
+          "supported": 48,
+          "unresolved": 94
+        },
+        "evidence": {
+          "bound_gap": 23,
+          "opposite_worlds": 71,
+          "universal_bound": 466
+        }
+      },
+      "union_strict": {
+        "decisions": {
+          "excluded": 190,
+          "input_blocked": 360,
+          "supported": 34
+        },
+        "evidence": {
+          "universal_bound": 224
+        }
+      }
+    },
+    "primary_continuum": {
+      "current_partial": {
+        "decisions": {
+          "excluded": 49,
+          "supported": 24,
+          "unresolved": 444
+        },
+        "evidence": {
+          "bound_gap": 224,
+          "opposite_worlds": 220,
+          "universal_bound": 73
+        }
+      },
+      "current_strict": {
+        "decisions": {
+          "input_blocked": 517
+        },
+        "evidence": {}
+      },
+      "exact_projection": {
+        "decisions": {
+          "excluded": 339,
+          "supported": 178
+        },
+        "evidence": {
+          "universal_bound": 517
+        }
+      },
+      "one_edit_global": {
+        "decisions": {
+          "excluded": 291,
+          "supported": 142,
+          "unresolved": 84
+        },
+        "evidence": {
+          "bound_gap": 10,
+          "opposite_worlds": 74,
+          "universal_bound": 433
+        }
+      },
+      "one_edit_per_image": {
+        "decisions": {
+          "excluded": 2,
+          "unresolved": 515
+        },
+        "evidence": {
+          "opposite_worlds": 515,
+          "universal_bound": 2
+        }
+      },
+      "union_partial": {
+        "decisions": {
+          "input_blocked": 517
+        },
+        "evidence": {}
+      },
+      "union_strict": {
+        "decisions": {
+          "input_blocked": 517
+        },
+        "evidence": {}
+      }
+    }
+  },
+  "curves_and_full_pair_grid_sha256": "0ab9bf82599f4ce4c6027e479dd8c044e05fb48021cb0ab3ff638c9021d46d40",
+  "distinct_filtered_image_states": 579,
+  "distinct_native_proofs": 7407,
+  "economic_cost": null,
+  "false_positive_budget_comparison_regions": [
+    {
+      "comparison": "new_fewer_misses",
+      "first_budget": 0,
+      "last_budget": 0
+    },
+    {
+      "comparison": "old_fewer_misses",
+      "first_budget": 1,
+      "last_budget": 2
+    },
+    {
+      "comparison": "equal_misses",
+      "first_budget": 3,
+      "last_budget": 3
+    },
+    {
+      "comparison": "old_fewer_misses",
+      "first_budget": 4,
+      "last_budget": 5
+    },
+    {
+      "comparison": "new_fewer_misses",
+      "first_budget": 6,
+      "last_budget": 6
+    },
+    {
+      "comparison": "old_fewer_misses",
+      "first_budget": 7,
+      "last_budget": 43
+    },
+    {
+      "comparison": "equal_misses",
+      "first_budget": 44,
+      "last_budget": 44
+    },
+    {
+      "comparison": "old_fewer_misses",
+      "first_budget": 45,
+      "last_budget": 46
+    },
+    {
+      "comparison": "equal_misses",
+      "first_budget": 47,
+      "last_budget": 50
+    },
+    {
+      "comparison": "new_fewer_misses",
+      "first_budget": 51,
+      "last_budget": 59
+    },
+    {
+      "comparison": "old_fewer_misses",
+      "first_budget": 60,
+      "last_budget": 297
+    }
+  ],
+  "first_control_failure": "Canonical resolved source binding was looked up through a macOS temporary-path alias; resolve root before lookup. No source hash check was weakened.",
+  "floor_regression_passed": true,
+  "freeze_sha256": "2e0cf3e991bd05cdda6aa119068960aaf4324d1fd946b6b8ae55d6838f673c14",
+  "frontier_points": [
+    54,
+    41
+  ],
+  "frozen_bindings": 343,
+  "frozen_utc": "2026-09-18T17:31:10.555346+00:00",
+  "human_seconds": null,
+  "independent_scientific_replication": false,
+  "individual_threshold_cells": [
+    299,
+    220
+  ],
+  "limitations": [
+    "Exposed development cohort and conditional projected references; no held-out policy validation.",
+    "Only stricter filtering of retained postprocessed outputs; no below-floor completeness claim or new model execution.",
+    "Finite inherited world banks may leave bound gaps at changed thresholds; no new geometric search.",
+    "Overlapping rows and threshold cells are not independent decisions, frequencies or probabilities.",
+    "Matched false-positive budgets and minimum losses use reference outcomes retrospectively; no deployment policy is selected."
+  ],
+  "model_inference_calls": 0,
+  "nested_native_seconds": {
+    "check_seconds": 0.43370366701856256,
+    "compile_seconds": 25.14078421704471,
+    "proposal_seconds": 0.4464337646495551
+  },
+  "nested_verifier_native_check_seconds": 0.46620377455838025,
+  "new_downloaded_asset_bytes": 0,
+  "new_image_reads": 0,
+  "nominal_pair_grid": {
+    "allocated_pairs": 65780,
+    "nonpositive_pairs": 35553,
+    "positive_pairs": 30227
+  },
+  "policy_sha256": "5cc17b0b74962d1ab97de91167d160643ce2871c91b8dc8fbef9c6991a5eadfa",
+  "primary_anchors": [
+    {
+      "allocated_images": 64,
+      "attained_lower": "37/64",
+      "attained_upper": "37/64",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "supported",
+      "evidence": "universal_bound",
+      "family": "exact_projection",
+      "group": "primary",
+      "mean_lower": "37/64",
+      "mean_upper": "37/64",
+      "threshold": "1/4"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-89/64",
+      "attained_upper": "173/64",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "unresolved",
+      "evidence": "opposite_worlds",
+      "family": "one_edit_per_image",
+      "group": "primary",
+      "mean_lower": "-89/64",
+      "mean_upper": "173/64",
+      "threshold": "1/4"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "33/64",
+      "attained_upper": "41/64",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "supported",
+      "evidence": "universal_bound",
+      "family": "one_edit_global",
+      "group": "primary",
+      "mean_lower": "33/64",
+      "mean_upper": "41/64",
+      "threshold": "1/4"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 25,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "current_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "1/4"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-27/64",
+      "attained_upper": "73/64",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "unresolved",
+      "evidence": "opposite_worlds",
+      "family": "current_partial",
+      "group": "primary",
+      "mean_lower": "-43/64",
+      "mean_upper": "99/64",
+      "threshold": "1/4"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 36,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "1/4"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 1,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_partial",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "1/4"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "5/32",
+      "attained_upper": "5/32",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "supported",
+      "evidence": "universal_bound",
+      "family": "exact_projection",
+      "group": "primary",
+      "mean_lower": "5/32",
+      "mean_upper": "5/32",
+      "threshold": "7/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-37/32",
+      "attained_upper": "55/32",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "unresolved",
+      "evidence": "opposite_worlds",
+      "family": "one_edit_per_image",
+      "group": "primary",
+      "mean_lower": "-7/4",
+      "mean_upper": "71/32",
+      "threshold": "7/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "3/32",
+      "attained_upper": "7/32",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "supported",
+      "evidence": "universal_bound",
+      "family": "one_edit_global",
+      "group": "primary",
+      "mean_lower": "3/32",
+      "mean_upper": "7/32",
+      "threshold": "7/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 25,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "current_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "7/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-1/4",
+      "attained_upper": "1/2",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "unresolved",
+      "evidence": "opposite_worlds",
+      "family": "current_partial",
+      "group": "primary",
+      "mean_lower": "-25/32",
+      "mean_upper": "15/16",
+      "threshold": "7/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 36,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "7/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 1,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_partial",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "7/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-7/32",
+      "attained_upper": "-7/32",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "exact_projection",
+      "group": "primary",
+      "mean_lower": "-7/32",
+      "mean_upper": "-7/32",
+      "threshold": "1/2"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-1",
+      "attained_upper": "15/16",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "unresolved",
+      "evidence": "opposite_worlds",
+      "family": "one_edit_per_image",
+      "group": "primary",
+      "mean_lower": "-61/32",
+      "mean_upper": "3/2",
+      "threshold": "1/2"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-1/4",
+      "attained_upper": "-3/16",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "one_edit_global",
+      "group": "primary",
+      "mean_lower": "-9/32",
+      "mean_upper": "-5/32",
+      "threshold": "1/2"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 25,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "current_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "1/2"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-1/4",
+      "attained_upper": "0",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "unresolved",
+      "evidence": "bound_gap",
+      "family": "current_partial",
+      "group": "primary",
+      "mean_lower": "-13/16",
+      "mean_upper": "5/16",
+      "threshold": "1/2"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 36,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "1/2"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 1,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_partial",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "1/2"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-7/32",
+      "attained_upper": "-7/32",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "exact_projection",
+      "group": "primary",
+      "mean_lower": "-7/32",
+      "mean_upper": "-7/32",
+      "threshold": "13/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-23/32",
+      "attained_upper": "11/16",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "unresolved",
+      "evidence": "opposite_worlds",
+      "family": "one_edit_per_image",
+      "group": "primary",
+      "mean_lower": "-13/8",
+      "mean_upper": "41/32",
+      "threshold": "13/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-1/4",
+      "attained_upper": "-3/16",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "one_edit_global",
+      "group": "primary",
+      "mean_lower": "-9/32",
+      "mean_upper": "-5/32",
+      "threshold": "13/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 25,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "current_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "13/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-7/32",
+      "attained_upper": "-5/32",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "unresolved",
+      "evidence": "bound_gap",
+      "family": "current_partial",
+      "group": "primary",
+      "mean_lower": "-17/32",
+      "mean_upper": "1/32",
+      "threshold": "13/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 36,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "13/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 1,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_partial",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "13/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-5/64",
+      "attained_upper": "-5/64",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "exact_projection",
+      "group": "primary",
+      "mean_lower": "-5/64",
+      "mean_upper": "-5/64",
+      "threshold": "4/5"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-19/64",
+      "attained_upper": "19/64",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "unresolved",
+      "evidence": "opposite_worlds",
+      "family": "one_edit_per_image",
+      "group": "primary",
+      "mean_lower": "-51/64",
+      "mean_upper": "45/64",
+      "threshold": "4/5"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-7/64",
+      "attained_upper": "-3/64",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "one_edit_global",
+      "group": "primary",
+      "mean_lower": "-7/64",
+      "mean_upper": "-1/64",
+      "threshold": "4/5"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 25,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "current_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "4/5"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-7/64",
+      "attained_upper": "-7/64",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "current_partial",
+      "group": "primary",
+      "mean_lower": "-11/64",
+      "mean_upper": "-1/64",
+      "threshold": "4/5"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 36,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "4/5"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 1,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_partial",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "4/5"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "1/64",
+      "attained_upper": "1/64",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "supported",
+      "evidence": "universal_bound",
+      "family": "exact_projection",
+      "group": "primary",
+      "mean_lower": "1/64",
+      "mean_upper": "1/64",
+      "threshold": "9/10"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-9/64",
+      "attained_upper": "11/64",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "unresolved",
+      "evidence": "opposite_worlds",
+      "family": "one_edit_per_image",
+      "group": "primary",
+      "mean_lower": "-21/64",
+      "mean_upper": "19/64",
+      "threshold": "9/10"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "-1/64",
+      "attained_upper": "3/64",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "unresolved",
+      "evidence": "opposite_worlds",
+      "family": "one_edit_global",
+      "group": "primary",
+      "mean_lower": "-1/64",
+      "mean_upper": "3/64",
+      "threshold": "9/10"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 25,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "current_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "9/10"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "1/64",
+      "attained_upper": "1/64",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "supported",
+      "evidence": "universal_bound",
+      "family": "current_partial",
+      "group": "primary",
+      "mean_lower": "1/64",
+      "mean_upper": "1/64",
+      "threshold": "9/10"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 36,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "9/10"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 1,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_partial",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "9/10"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "0",
+      "attained_upper": "0",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "exact_projection",
+      "group": "primary",
+      "mean_lower": "0",
+      "mean_upper": "0",
+      "threshold": "19/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "0",
+      "attained_upper": "0",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "one_edit_per_image",
+      "group": "primary",
+      "mean_lower": "0",
+      "mean_upper": "0",
+      "threshold": "19/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "0",
+      "attained_upper": "0",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "one_edit_global",
+      "group": "primary",
+      "mean_lower": "0",
+      "mean_upper": "0",
+      "threshold": "19/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 25,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "current_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "19/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "0",
+      "attained_upper": "0",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "current_partial",
+      "group": "primary",
+      "mean_lower": "0",
+      "mean_upper": "0",
+      "threshold": "19/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 36,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "19/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 1,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_partial",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "19/20"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "0",
+      "attained_upper": "0",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "exact_projection",
+      "group": "primary",
+      "mean_lower": "0",
+      "mean_upper": "0",
+      "threshold": "1"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "0",
+      "attained_upper": "0",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "one_edit_per_image",
+      "group": "primary",
+      "mean_lower": "0",
+      "mean_upper": "0",
+      "threshold": "1"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "0",
+      "attained_upper": "0",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "one_edit_global",
+      "group": "primary",
+      "mean_lower": "0",
+      "mean_upper": "0",
+      "threshold": "1"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 25,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "current_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "1"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": "0",
+      "attained_upper": "0",
+      "blocked_image_count": 0,
+      "case_id": "all-64",
+      "decision": "excluded",
+      "evidence": "universal_bound",
+      "family": "current_partial",
+      "group": "primary",
+      "mean_lower": "0",
+      "mean_upper": "0",
+      "threshold": "1"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 36,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_strict",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "1"
+    },
+    {
+      "allocated_images": 64,
+      "attained_lower": null,
+      "attained_upper": null,
+      "blocked_image_count": 1,
+      "case_id": "all-64",
+      "decision": "input_blocked",
+      "evidence": null,
+      "family": "union_partial",
+      "group": "primary",
+      "mean_lower": null,
+      "mean_upper": null,
+      "threshold": "1"
+    }
+  ],
+  "primary_rows": 3619,
+  "reserved_images_closed": 1433,
+  "reserved_outcomes_accessed": 0,
+  "results_sha256": "72e989ee601a6450fdcd604b42c36cb2c8cca3a6e5440db8960c61fb5f738512",
+  "retained_actual_failures": {},
+  "retrospective_minimum_unit_losses": [
+    {
+      "attained_cells": [
+        {
+          "cell_id": "cell-0123",
+          "false_positives": 38,
+          "left_closed": true,
+          "matching_rank": 136,
+          "misses": 169,
+          "predictions": 174,
+          "references": 305,
+          "right_closed": false,
+          "threshold_left": "4457928538322449/10000000000000000",
+          "threshold_right": "44907116889953613/100000000000000000"
+        },
+        {
+          "cell_id": "cell-0125",
+          "false_positives": 37,
+          "left_closed": true,
+          "matching_rank": 135,
+          "misses": 170,
+          "predictions": 172,
+          "references": 305,
+          "right_closed": false,
+          "threshold_left": "4578700661659241/10000000000000000",
+          "threshold_right": "45814433693885803/100000000000000000"
+        }
+      ],
+      "minimum_unit_loss": 207,
+      "model": "YOLO11n"
+    },
+    {
+      "attained_cells": [
+        {
+          "cell_id": "cell-0041",
+          "false_positives": 41,
+          "left_closed": true,
+          "matching_rank": 136,
+          "misses": 169,
+          "predictions": 177,
+          "references": 305,
+          "right_closed": false,
+          "threshold_left": "339977890253067/1000000000000000",
+          "threshold_right": "3404722213745117/10000000000000000"
+        }
+      ],
+      "minimum_unit_loss": 210,
+      "model": "YOLO26n"
+    }
+  ],
+  "scores_assumed_calibrated": false,
+  "source_qualification": {
+    "output_a": {
+      "all_class_detections": 487,
+      "confidence_floor": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "confidence_operator": "gt",
+      "distinct_eligible_scores": 297,
+      "eligible_floor_detections": 297,
+      "images": 64,
+      "maximum_eligible_score": {
+        "denominator": "2000000000000000",
+        "numerator": "1854994535446167"
+      },
+      "minimum_eligible_score": {
+        "denominator": "20000000000000000",
+        "numerator": "5101383924484253"
+      },
+      "postprocessing_method": "nms",
+      "source_states": {
+        "empty": 2,
+        "processed": 62
+      },
+      "stage": "export-06-64"
+    },
+    "output_b": {
+      "all_class_detections": 353,
+      "confidence_floor": {
+        "denominator": "4",
+        "numerator": "1"
+      },
+      "confidence_operator": "gt",
+      "distinct_eligible_scores": 218,
+      "eligible_floor_detections": 218,
+      "images": 64,
+      "maximum_eligible_score": {
+        "denominator": "5000000000000000",
+        "numerator": "4662482440471649"
+      },
+      "minimum_eligible_score": {
+        "denominator": "10000000000000000",
+        "numerator": "2529367506504059"
+      },
+      "postprocessing_method": "end_to_end",
+      "source_states": {
+        "empty": 4,
+        "processed": 60
+      },
+      "stage": "export-07-64"
+    }
+  },
+  "status": "exploratory",
+  "thresholds_selected_for_deployment": false,
+  "verification_sha256": "93e08ec444298c63eb986735429e97abc481aa944f1c02f544781c8ef7ea9707",
+  "version": "0.1.0"
+}
