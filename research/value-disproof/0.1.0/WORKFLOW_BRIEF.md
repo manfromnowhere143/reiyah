@@ -1,6 +1,6 @@
 # Workflow and case request brief
 
-Version 0.1.7, 18 September 2026. Prepared locally; no outreach sent.
+Version 0.1.8, 18 September 2026. Prepared locally; no outreach sent.
 
 Purpose: determine whether a recurring perception revision decision is expensive
 because of uncertain reference evidence, and whether resolving that uncertainty
@@ -78,6 +78,15 @@ All 515 common stricter-threshold cells with remaining detections still have
 opposing worlds under the one-edit-per-image contract. An owner must specify
 the acceptable false-positive/miss tradeoff and a prospective operating-policy
 validation procedure; equal numeric score thresholds alone do not establish it.
+
+The [complete cached-packet audit](../../cached-packet-audit/0.1.0/README.md)
+adds a concrete input obligation: all three public files have complete image
+membership, but retain zero-extent detections and lack historical weight/run
+settings bindings. A timing chart with 4,995 entries does not mean five missing
+prediction images. An owner must distinguish prediction membership, explicit
+empty outputs, invalid geometry and instrumentation coverage, and specify how
+invalid detections are handled before scoring. Publisher model names and
+release defaults are insufficient evidence of an actual revision's settings.
 
 A decision owner would need to provide genuine old/new revision provenance,
 the actual release criterion, complete image membership with failures retained,

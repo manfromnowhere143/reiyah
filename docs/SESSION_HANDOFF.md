@@ -1,3 +1,62 @@
+# Reiyah cached-packet continuation, 2026-09-18
+
+Continuation version: `0.1.38`. Status: `exploratory`.
+
+Read [the complete cached-packet audit](../research/cached-packet-audit/0.1.0/README.md).
+The preceding operating-policy study is published at
+`1672e33718043dbfd0955f834faadc3c33714fd7`; PUSH-07 retains normal push and
+publisher readback. Preserve Daniel as sole author and committer.
+
+All 2,063,562 rows across v-e89/v-e93/v-e9c agree between original-file Polars
+and separate PyArrow decoding of an exact footer-only derived view. Original
+data bytes, schema, row groups and surviving footer fields remain unchanged.
+The original 500-binding freeze precedes full diagnostics. All 34 controls
+and the complete synthetic pipeline pass; rejected reader/footer attempts
+remain retained. Every file has all 5,000 COCO val2017 members and dimensions.
+
+The positive-area content contract rejects 45/172/8 zero-extent rows across
+38/52/8 image records. These are present predictions, not missing or empty.
+Explicit empty placeholders remain 0/1/2. No rows are clipped, repaired or
+dropped. All scores/box components are finite and label/name pairs match the
+80-category dense convention. Raw predictions and image-level records stay
+private. No cached packet is admitted: historical checkpoint/settings and
+redistribution bindings remain absent, in addition to the content issue.
+
+A disclosed 529-binding follow-up verifies the timing relationship after the
+original separate-component test found no match. Every one of 4,995 chart
+vectors matches the original image order after five omissions when the
+preprocessing component includes capture/load and stage values use float32
+rounding. All 5,000 capture/load pairs agree. Seven follow-up controls and
+separate original-file checking pass. The publisher's reason for omission
+remains unknown. A documented task request returned Unauthorized; that route
+ended without probing other task IDs or bypassing access controls.
+
+Main analysis/verification take 88.878509000/89.589805208 process seconds;
+follow-up 3.033344833/5.089698000. The source follow-up adds 18 requests and
+2,391,215 response-body bytes; mission body bytes total 230,321,747. No new
+images, model calls or training. All 1,433 reserved images remain closed.
+Original local packets, conventional parity, query floors and conditional
+uncertainty results stand. Savings and human/full costs remain unproven.
+
+Private active packet: `~/.codex/reports/reiyah/value-10h-2026-09-18-c1y8k9yc/`.
+Read private/cached-packet-audit-01 and its followup directory. Frozen audit
+and prior scientific files must not change. The five mission-cost files also
+remain frozen; take a final cost snapshot before adding cost publication files.
+
+The mission remains active. Original start: 2026-09-17 22:28:16 UTC. Excluded
+unverified gap: 44,963.785396 seconds. Earliest adjusted ten-hour point:
+2026-09-18 20:57:39.785396 UTC, subject to useful work and further interruptions.
+Do not stop at this intermediate push or count the excluded gap.
+
+Next close a remaining interpretation gap in the qualified local comparison:
+characterize the joint penalty/operating-policy envelope using already retained
+complete nominal threshold curves. Freeze exact arithmetic, scope and controls
+before calculating new intervals. Treat both checkpoints symmetrically and
+keep every tie; choose no deployment threshold and consume no new outcomes.
+Then finish mission-wide cost reconciliation and short current closeout.
+Controller remains clean historical 74fbacc; Engine source remains
+38a50ec014cc83e86ea6f247df803ded2971b386. Gate A remains operator-unaccepted.
+
 # Reiyah operating-policy continuation, 2026-09-18
 
 Continuation version: `0.1.37`. Status: `exploratory`.
