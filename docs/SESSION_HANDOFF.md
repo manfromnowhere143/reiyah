@@ -1,3 +1,50 @@
+# Reiyah operating-witness continuation, 2026-09-18
+
+Continuation version: `0.1.40`. Status: `exploratory`.
+
+Read [the operating-policy witness refinement](../research/operating-witness/0.1.0/README.md).
+The preceding joint-envelope study is published at
+`cc59ec6ed9befe657712b7565ee175fb35cb066b`; PUSH-09 retains normal push and
+11 exact publisher readbacks. Preserve Daniel as sole author and committer.
+
+All 110 targeted one-edit bound gaps now have checked opposing worlds.
+The outcome-informed follow-up freezes 185 filtered states: 98 receive the
+existing finite search and 87 inherit already attained bounds. It retains
+196 new endpoint proofs and improves 146 component endpoints. Separate
+matching/native checks and case arithmetic verify all 7,707 original rows.
+Every universal decision, bound, membership and blocked input is unchanged.
+All 1,167 unresolved one-edit rows now have opposing worlds; 279 gaps remain
+in partial timing contracts. Do not describe a remaining bound gap as proof
+that both decisions are attainable. No cases are independent customer evidence.
+
+Eight controls include 56 synthetic case compositions. An 8,404-binding
+freeze precedes the new search. All 98 searches complete with no capped or
+failed state; actual search/verification take 23.721293708/5.598980667 outer
+process seconds. No new images, inference or downloads. All 1,433 reserved
+images remain closed. Conventional parity and the prior query floors stand;
+human costs, savings, customer revisions and demand remain unproven.
+
+Private active packet: `~/.codex/reports/reiyah/value-10h-2026-09-18-c1y8k9yc/`.
+Read private/operating-witness-01. Its frozen scientific implementation and
+all earlier scientific packets must not change. Supplemental cost verification
+also passes: 113 timer references and every archived synthetic member are
+checked. The public-row outcome inventory preserves original counts and gaps.
+
+Mission remains active: original start 2026-09-17 22:28:16 UTC; excluded
+unverified gap 44,963.785396 seconds; earliest adjusted ten-hour point
+2026-09-18 20:57:39.785396 UTC, subject to useful work and further interruptions.
+This publication is an intermediate checkpoint. Finish final machine-cost
+reconciliation and the complete outcome/claim closeout. Preserve the five
+frozen mission-cost files; take its final source snapshot before adding cost
+README/packaging. Include this follow-up's phases and nested timers explicitly.
+No routine reconfirmation, unchanged replays, selector tuning or reserve access.
+
+Controller remains clean historical 74fbacc; Engine source remains
+38a50ec014cc83e86ea6f247df803ded2971b386. Gate A remains operator-unaccepted.
+An earlier ENOSPC incident and exact lossless synthetic-output archive remain
+retained. A later filesystem observation showed 17 GiB available; its cause
+is unverified and is not attributed to this task's small archive operation.
+
 # Reiyah joint policy/penalty continuation, 2026-09-18
 
 Continuation version: `0.1.39`. Status: `exploratory`.

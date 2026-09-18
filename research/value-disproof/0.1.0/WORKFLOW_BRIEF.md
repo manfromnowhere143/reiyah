@@ -1,6 +1,6 @@
 # Workflow and case request brief
 
-Version 0.1.9, 18 September 2026. Prepared locally; no outreach sent.
+Version 0.1.10, 18 September 2026. Prepared locally; no outreach sent.
 
 Purpose: determine whether a recurring perception revision decision is expensive
 because of uncertain reference evidence, and whether resolving that uncertainty
@@ -78,6 +78,15 @@ All 515 common stricter-threshold cells with remaining detections still have
 opposing worlds under the one-edit-per-image contract. An owner must specify
 the acceptable false-positive/miss tradeoff and a prospective operating-policy
 validation procedure; equal numeric score thresholds alone do not establish it.
+
+The [operating-policy witness follow-up](../../operating-witness/0.1.0/README.md)
+finds opposing worlds for all 110 remaining one-edit gaps, so all 1,167
+unresolved one-edit rows now have that evidence. Universal decisions and
+observation counts do not change. An owner would need an observation contract
+that distinguishes the opposed worlds; selecting the same answers more
+efficiently cannot supply that missing information. The other 279 operating-
+policy gaps remain in partial timing contracts, where attainability is not
+yet established for both sides. Do not conflate those two obstacles.
 
 The [joint penalty/policy envelope](../../policy-loss-envelope/0.1.0/README.md)
 closes the fixed-cost interpretation gap. Giving each detector its own
