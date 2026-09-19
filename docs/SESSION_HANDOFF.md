@@ -1,3 +1,59 @@
+# Reiyah operating timing witness closeout, 2026-09-19
+
+Continuation version: `0.1.42`. Status: `exploratory`.
+
+Read [the checked follow-up](../research/operating-timing-witness/0.1.0/README.md)
+and [outcome reconciliation](../research/operating-timing-witness/0.1.0/OUTCOMES.md).
+All 279 selected timing gaps now have opposing worlds. The complete 7,707-row
+scope remains 642 supported, 3,076 excluded, 1,790 unresolved and 2,199 blocked.
+Every unresolved row is now witnessed; every decision, universal bound, cutoff,
+input membership and blocked state is unchanged. These are dependent development
+rows, not independent customer decisions or evidence of savings.
+
+The 356 filtered states supply 397 target partial-contract pairs. Of these,
+297 inherit exact endpoints and 100 receive search, with 89 distinct computations
+and 11 exact-context reuses on 80 pools. All 89 searches attain both verified
+universal endpoints. The checker retains 167 new proofs, 165 improved pair
+endpoints and every parent row. Attained intervals improve on 279 targets and
+282 nontarget rows sharing states. No search or scientific check fails or caps.
+All arbitrary rectangle geometry was not searched; exact extrema follow from
+attaining unchanged universal bounds for these particular operands.
+
+Scientific freeze: `89b2171ad856c355efdf53ee688d9662279a2a8871e8e81b48aa6c3eefa73083`.
+Search/check outer process times: 30.948145041 / 29.786253083 seconds. Later table
+checking, consistency, packaging and publication have separate retained costs.
+All 31 scientific and three supervisor controls pass; four accounting controls
+check interval union and invalid times. The nested-sandbox control failure and
+first private summary's clock clarification remain retained. No frozen source,
+original science or CSV byte is rewritten. Prior ENOSPC/archive recovery and
+published threshold encoding correction remain in the closed parent packet.
+
+The new mission-turn start is 2026-09-19 15:24:17.967 UTC; instrumentation begins
+15:26:58.989093 UTC. The old assignment is complete, with its original start
+2026-09-17 22:28:16 UTC and excluded 44,963.785396 seconds preserved. Process
+seconds, elapsed windows and useful effort differ; useful/human/full economic
+costs remain unknown. All 1,433 reserved images remain closed. There are no new
+images, metadata acquisitions, predictions, dependencies, training or downloads.
+
+Next decision: close the bounded witness study. Further value work needs genuine
+qualified revisions, an owner-defined observation/operating procedure and full
+measured costs for both competent workflows. Use the existing
+[workflow brief](../research/value-disproof/0.1.0/WORKFLOW_BRIEF.md); do not start
+another sensitivity study automatically. Conventional/native parity, all 99
+baseline query floors, negative selector results, admission failures, nominal
+207/210 loss minima and the 1/16 penalty boundary remain unchanged. Savings,
+demand, customer revision evidence and investment targets remain unproven.
+
+Owned packet: `~/.codex/reports/reiyah/operating-timing-2026-09-19-3r3g4m8z/`.
+Read its CLOSEOUT and publisher receipt for final commit and costs. The historical
+controller remains clean at 74fbacc; do not switch/reset/clean it or a closed
+candidate. Use a fresh owned same-repository candidate for later authorized work.
+Preserve Daniel Wahnich as author and committer, safe normal push and exact
+publisher readback. Publisher integrity is not independent transport or science.
+No outreach, reserved study, paid compute or platform expansion follows.
+Engine source stays 38a50ec014cc83e86ea6f247df803ded2971b386; Gate A remains
+operator-unaccepted. The earlier continuation sections below are historical.
+
 # Reiyah bounded experiment: costs and outcomes, 2026-09-18
 
 Continuation version: `0.1.41`. Status: `exploratory`.

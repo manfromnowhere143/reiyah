@@ -1,0 +1,230 @@
+{
+  "artifact_id": "reiyah.operating-timing-witness.costs",
+  "categories": {
+    "controls": {
+      "duration_sum_seconds": "2.01900696009397508",
+      "events": 6,
+      "utc_interval_union_seconds": "2.018810"
+    },
+    "packaging": {
+      "duration_sum_seconds": "1.4902628329582512",
+      "events": 2,
+      "utc_interval_union_seconds": "1.490196"
+    },
+    "preparation": {
+      "duration_sum_seconds": "13.797492375131696",
+      "events": 2,
+      "utc_interval_union_seconds": "13.797404"
+    },
+    "search": {
+      "duration_sum_seconds": "30.94814504100941",
+      "events": 1,
+      "utc_interval_union_seconds": "30.948095"
+    },
+    "setup": {
+      "duration_sum_seconds": "1.148707749787718",
+      "events": 1,
+      "utc_interval_union_seconds": "1.148863"
+    },
+    "verification": {
+      "duration_sum_seconds": "34.4908797082025563",
+      "events": 3,
+      "utc_interval_union_seconds": "34.490752"
+    }
+  },
+  "cumulative_actual_search_seconds": "30.94814504100941",
+  "cumulative_actual_verification_seconds": "34.4908797082025563",
+  "cutoff": "All completed supervised phases plus owned-candidate setup at this snapshot. Current accounting process and later actions are outside it.",
+  "duration_only_tool_reports": {
+    "count": 61,
+    "nonzero_exit_reports": 2,
+    "reported_seconds_sum_not_added_to_process_union": "26.626469958",
+    "retained_snapshot_sha256": "4bc6af01a2da86db05a835e1436c8f05f58d8b39b3793449c7ae9f0588e07c21",
+    "scope": "Tool-reported invocation/wait durations, including setup/reads and nested process launch/wait reports. No full execution intervals; no independent additive work total."
+  },
+  "free_bytes_at_snapshot": 29488922624,
+  "free_space_floor_bytes": 5368709120,
+  "full_economic_cost": null,
+  "human_seconds": null,
+  "initial_checkout_apparent_bytes": 25766976,
+  "instrumentation_start_utc": "2026-09-19T15:26:58.989093+00:00",
+  "model_service_cost": null,
+  "nested_timers": "Scientific internal timers, native checks and synthetic supervisor children are included in their enclosing phase, never added again.",
+  "new_download_bytes": 0,
+  "new_inference_calls": 0,
+  "new_research_apparent_bytes_at_snapshot": 121108581,
+  "old_ten_hour_assignment": "completed; no timers added to this new phase",
+  "original_assignment_start_utc": "2026-09-17T22:28:16+00:00",
+  "original_excluded_seconds": "44963.785396",
+  "outer_duration_sum_seconds": "83.89449466718360658",
+  "outer_events": 15,
+  "paid_compute": false,
+  "per_budget_ceiling_seconds": 1200,
+  "phase_events": [
+    {
+      "budget": null,
+      "category": "controls",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:54:05.712910+00:00",
+      "seconds": 0.13465408398769796,
+      "stage": "accounting-controls-01",
+      "started_utc": "2026-09-19T15:54:05.578284+00:00"
+    },
+    {
+      "budget": null,
+      "category": "preparation",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:35:59.865535+00:00",
+      "seconds": 3.599557917099446,
+      "stage": "allocation-01",
+      "started_utc": "2026-09-19T15:35:56.266013+00:00"
+    },
+    {
+      "budget": null,
+      "category": "controls",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:37:44.517516+00:00",
+      "seconds": 0.7115810841787606,
+      "stage": "controls-01",
+      "started_utc": "2026-09-19T15:37:43.805969+00:00"
+    },
+    {
+      "budget": null,
+      "category": "controls",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:40:43.014453+00:00",
+      "seconds": 0.721387583995238,
+      "stage": "controls-02",
+      "started_utc": "2026-09-19T15:40:42.293101+00:00"
+    },
+    {
+      "budget": null,
+      "category": "preparation",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:41:19.047247+00:00",
+      "seconds": 10.19793445803225,
+      "stage": "freeze-01",
+      "started_utc": "2026-09-19T15:41:08.849365+00:00"
+    },
+    {
+      "budget": "verification",
+      "category": "verification",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:48:02.693332+00:00",
+      "seconds": 2.7547690831124783,
+      "stage": "publication-check-01",
+      "started_utc": "2026-09-19T15:47:59.938605+00:00"
+    },
+    {
+      "budget": null,
+      "category": "packaging",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:45:02.842094+00:00",
+      "seconds": 0.7676899579819292,
+      "stage": "publish-tables-01",
+      "started_utc": "2026-09-19T15:45:02.074439+00:00"
+    },
+    {
+      "budget": null,
+      "category": "packaging",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:46:20.913016+00:00",
+      "seconds": 0.722572874976322,
+      "stage": "publish-tables-02",
+      "started_utc": "2026-09-19T15:46:20.190475+00:00"
+    },
+    {
+      "budget": "verification",
+      "category": "verification",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:54:31.724183+00:00",
+      "seconds": 1.949857542058453,
+      "stage": "research-consistency-01",
+      "started_utc": "2026-09-19T15:54:29.774359+00:00"
+    },
+    {
+      "budget": "search",
+      "category": "search",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:42:11.512143+00:00",
+      "seconds": 30.94814504100941,
+      "stage": "search-01",
+      "started_utc": "2026-09-19T15:41:40.564048+00:00"
+    },
+    {
+      "budget": null,
+      "category": "controls",
+      "error": null,
+      "exit_code": 1,
+      "finished_utc": "2026-09-19T15:39:32.749395+00:00",
+      "seconds": 0.18447383283637464,
+      "stage": "supervisor-controls-01",
+      "started_utc": "2026-09-19T15:39:32.564955+00:00"
+    },
+    {
+      "budget": null,
+      "category": "controls",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:39:45.496008+00:00",
+      "seconds": 0.13345529208891094,
+      "stage": "supervisor-controls-02",
+      "started_utc": "2026-09-19T15:39:45.362587+00:00"
+    },
+    {
+      "budget": null,
+      "category": "controls",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:40:41.810525+00:00",
+      "seconds": 0.13345508300699294,
+      "stage": "supervisor-controls-03",
+      "started_utc": "2026-09-19T15:40:41.677101+00:00"
+    },
+    {
+      "budget": "verification",
+      "category": "verification",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:43:31.392817+00:00",
+      "seconds": 29.786253083031625,
+      "stage": "verify-01",
+      "started_utc": "2026-09-19T15:43:01.606616+00:00"
+    },
+    {
+      "budget": null,
+      "category": "setup",
+      "error": null,
+      "exit_code": 0,
+      "finished_utc": "2026-09-19T15:27:00.137956+00:00",
+      "seconds": 1.148707749787718,
+      "stage": "owned-candidate-setup",
+      "started_utc": "2026-09-19T15:26:58.989093+00:00"
+    }
+  ],
+  "phase_start_utc": "2026-09-19T15:24:17.967Z",
+  "research_byte_ceiling": 1073741824,
+  "snapshot_utc": "2026-09-19T15:54:48.030290+00:00",
+  "statuses": {
+    "completed": 14,
+    "failed": 1
+  },
+  "total_useful_seconds": null,
+  "unclosed_events_outside_cutoff": [
+    "public-accounting-01"
+  ],
+  "utc_interval_duration_sum_seconds": "83.894120",
+  "utc_interval_union_seconds": "83.894120",
+  "utc_overlap_seconds": "0.000000",
+  "version": "0.1.0"
+}
