@@ -1,12 +1,12 @@
 # Reiyah: the next evidence that can change the decision
 
-Document ID: `reiyah.engine.roadmap`. Version: `0.2.1`.
+Document ID: `reiyah.engine.roadmap`. Version: `0.2.2`.
 Lifecycle status: `proposed`. Updated 19 September 2026.
 
 **Keep the small proof-checking Engine. Focus the next research on what can be
 observed, what guarantee a decision needs, and whether obtaining that guarantee
-costs less than competent alternatives.** Add modern sequential auditing to the
-comparison; require genuine revision histories before claiming reusable economic
+costs less than competent alternatives.** Retain the tested sequential audits as
+comparators; require genuine revision histories before claiming reusable economic
 value. This is the best-supported direction from the present evidence, not an
 established state-of-the-art advantage or an optimal strategy for every market.
 
@@ -65,11 +65,33 @@ by about 0.005415 in one aligned-proxy case and changes none of the other 27.
 That case still needs about 2.237505 queries on average, while a conventional
 weight-priority exact workflow needs two. Keep these negative comparisons.
 
-The next statistical investment decision needs a stronger published adaptive
-betting baseline and a separately frozen relevant population. The fixed-stake
-implementation does not reproduce or defeat ApproxKelly, ALPHA, PPAT or the
-entire sequential-inference frontier. Do not tune the 28 exposed fixtures into
-a favorable demonstration or equate statistical savings with an exact guarantee.
+The [stronger adaptive comparison](../research/adaptive-audit/0.1.0/README.md)
+is also complete. It freezes twelve populations and 11,712 paths for a fixed
+stake and two declared ALPHA configurations. Four small populations use exact
+permutation enumeration; eight larger populations use 128 frozen diagnostic
+orders each. Three of the latter use the already exposed 64-image perception
+operands under exact projection, radius-5 translation and one edit per image.
+ALPHA saves no queries over matched exact stopping on any of those conditions.
+Ordinary count-priority exact ordering needs 46 nominal queries versus a sampled
+uniform mean of 56.140625, and 59 translation queries versus 59.96875. The edit
+condition remains unresolved after all 60 informative queries; four zero-bound
+images remain listed without requiring a query.
+
+ALPHA improves the constant-margin authored examples from 15 to 14 queries,
+versus 43 for exact stopping. Performance varies on the binary-margin example.
+The larger exact-tie control retains four, two and four false statistical
+decisions for fixed, d=10 and d=100 over 128 paths respectively. These sampled
+counts do not establish coverage; the conditional-drift argument and declared
+risk allocation remain separate. All three full-reference unresolved populations
+and all false decisions stay in the report. No application advantage, full
+economic saving or frontier superiority follows.
+
+This closes the selected methods comparison. Keep the tested ALPHA settings
+as qualified comparators. Do not continue tuning these exposed populations to
+manufacture a favorable demonstration. Other weighting/betting families are not
+defeated by this result; a new technical comparison needs a distinct frozen
+question tied to a consequential observation process. The next product-value
+gate below is now the priority.
 
 Preserve two comparison obligations:
 

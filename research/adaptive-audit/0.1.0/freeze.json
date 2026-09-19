@@ -1,0 +1,61 @@
+{
+  "actual_stopping_outcomes_before_freeze": false,
+  "allocation": {
+    "alpha_per_direction": "1/40",
+    "alpha_per_population_chosen_arm": "1/20",
+    "exhaustive_orders_per_population": 720,
+    "exhaustive_populations": 4,
+    "expected_path_rows": 11712,
+    "populations": 12,
+    "sampled_orders_per_population": 128,
+    "sampled_populations": 8,
+    "statistical_arms": [
+      "fixed_half",
+      "alpha_d10",
+      "alpha_d100"
+    ]
+  },
+  "base_commit": "54705b70fea6dff0c83a19df19006bb3e26d302e",
+  "caps": {
+    "checking_process_seconds": 600,
+    "execution_process_seconds": 600,
+    "minimum_free_bytes": 5368709120,
+    "study_artifact_bytes": 134217728
+  },
+  "document_id": "reiyah.adaptive-audit.freeze",
+  "engine_source_unchanged": "38a50ec014cc83e86ea6f247df803ded2971b386",
+  "files": {
+    "MATHEMATICS.md": "fd4c8c16aba2df8020391f5035e45ef813a03384a60a31059436ce6303f6bffa",
+    "PLAN.md": "6d173ab9bc3c1e7bd9b0fb3411ceee965aa9d0e0ef90a0aee667fb199bd884bc",
+    "SOURCES.md": "4cade536f8df649e396293ddc2f8cb91cfc1988f53b2f193953ebe68cc2cf142",
+    "authored-inputs.json": "8e9e9b48198b90419f29b9d22badcad418d7bdcae9c963b8471b6af9ba4033aa",
+    "authored-orders.json": "cfae8b93866dff3404364629eeb6c00d96e212406d9d819d54939b73ce04eb84",
+    "build_inputs.py": "652cb04d99ea67190f576bb1b7c2ed0f65cf88156f80b1bd894410b055ee164f",
+    "check.py": "adb6da4f1c95cfeb9ab20c3390492c294fcb931dcb2584ae2de126428870501f",
+    "controls.json": "598c55336d9866e0abb0cf57bc543432f419365b7ec8e451638ce13f43f495a4",
+    "input-bindings.json": "1643f722d4063273ef5f68f9d2fd92b6c1c0106adf1b7b83632261ffc0f38ece",
+    "methods.py": "1fb352a68e986a938aafa7cc84a994ef41412bade78dc2029a549bdf5cce75f9",
+    "run.py": "8d743114263a220ea86868e03a6fee459c66f58304a33d3d9f7da0cfaea52b35",
+    "sources.json": "b74233b252ea007871adb599583bc315ed58bc1f663cd0d554cee4bd60e0bee1",
+    "supervisor-controls.json": "08a2674a46657938f7cb4f5964ce5130c91398a95e8d53eec34a228d1519ad5c",
+    "test_controls.py": "fec053aa7b63d1d9d30016b0bfe02b6a6dedebe682bc264eaaa20fa1f2282325"
+  },
+  "frozen_utc": "2026-09-19T19:15:59.773959+00:00",
+  "gate_a_operator_accepted": false,
+  "offline_policy": "sandbox-exec (version 1) (allow default) (deny network*) before outcome/check runtime",
+  "predecessor_endpoints_and_aggregate_signs_already_exposed": true,
+  "private_inputs": {
+    "inputs.json": "fb494790654ae882aa17f1d65269d946d300dea45461a7b9d9225ff582191050",
+    "orders.json": "69fff1f746ae152e410ac9ac89fd2fb054041a81d48cf9dc4d563a78a9899594",
+    "source-bindings.json": "6994819a448918c3420295c140c7fc842a439ab3ae970b39a6ec32c5d1e93681"
+  },
+  "reserved_outcomes_accessed": 0,
+  "runtime": {
+    "path": "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+    "sha256": "3b6b69c61fd3765ab911d701cd17293b4a9154a0cb4973b546f05847f9a164c6",
+    "version": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]"
+  },
+  "status": "exploratory",
+  "supervisor_sha256": "b2fb818fddca1ed788a076a1d76db8a57de1bbad697d3c688028093919995755",
+  "version": "0.1.0"
+}

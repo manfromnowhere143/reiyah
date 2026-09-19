@@ -1,3 +1,56 @@
+# Reiyah adaptive audit comparison closeout, 2026-09-19
+
+Continuation version: `0.1.46`. Status: `exploratory`.
+
+Read the [adaptive comparison](../research/adaptive-audit/0.1.0/README.md)
+and [roadmap](ENGINE_ROADMAP_2026-09-19.md), now proposed version 0.2.2.
+The selected stronger published comparator task is complete: fixed half stake
+and two declared ALPHA settings, twelve populations, 11,712 frozen paths.
+A checker importing no producer verifies all paths, summaries, 790,332 support
+cases, 341,952 null drifts and 384 bindings to retained source endpoints.
+Thirty-one scientific controls, four input-binding rejections and three
+supervisor controls pass. Four small populations use all permutations; eight
+larger populations use 128 frozen diagnostic orders each, not exact coverage
+enumeration. Risk is per fixed population and separately chosen arm, not across
+all 36 comparisons. This is same-session checking, not scientific replication.
+
+On the three already exposed perception conditions, no statistical arm stops
+earlier than matched exact stopping. Conventional count-priority exact ordering
+needs 46 queries for the nominal condition versus uniform mean 56.140625, and
+59 for radius-5 translation versus 59.96875. One edit per image remains unresolved
+after 60 informative queries. All 64 members remain listed; four have known
+zero contribution from zero predictions. The larger authored tie retains
+four/two/four false statistical decisions for fixed/ALPHA d10/d100 respectively
+over 128 diagnostic paths. Do not hide them or infer coverage from sampled rates.
+Full-population outcomes: five supported, four excluded, three unresolved.
+
+Freeze e3decd99972331e85ad1166abb63a4f45efc4edc6f118455b2cb1a5a078f0053.
+Execution/checking took 13.988490417 / 9.158979917 outer-process seconds, each
+below its cumulative 600-second limit. No actual outcome/check failed or capped.
+A source metadata HTTP 406 and malformed discovery URL remain retained. ALPHA's
+v9 source and two 2026 contextual full HTML methods were reviewed, with exact
+private source custody. Report and aggregate empirical portions retain nuScenes
+terms; individual empirical operands and traces remain private.
+
+Next product-value gate: qualify a consequential decision and an observation
+process able to distinguish the unresolved worlds; obtain genuine chronological
+revisions and complete measured costs against an equally equipped conventional
+workflow. Use the existing workflow brief. These inputs are absent, not fabricated.
+The current results do not justify more tuning on the exposed fixtures or a
+claimed product advantage. A distinct weighted/prediction-assisted follow-up
+requires its own relevance argument and freeze; no other method family is claimed
+defeated. No outreach, reserved outcome opening or paid work follows automatically.
+
+Owned packet: `~/.codex/reports/reiyah/adaptive-audit-2026-09-19-p_m2ps1p/`.
+Its CLOSEOUT, final costs and publisher receipt record final commit and exact
+readback after publication. Preserve the stable README opening and the editorial
+history below. The historical controller remains clean at 74fbacc; closed packets
+and perception Engine source 38a50ec014cc83e86ea6f247df803ded2971b386 are unchanged.
+All 1,433 reserved images remain closed. Gate A is operator-unaccepted.
+Use a fresh owned same-repository candidate for further work. Codex owns the
+mission without delegation; preserve Daniel as author and committer, normal
+safe push and exact publisher readback. Earlier sections remain historical.
+
 # Reiyah README editorial closeout, 2026-09-19
 
 Continuation version: `0.1.45`. Status: `exploratory`.

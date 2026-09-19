@@ -68,7 +68,7 @@ These are exposed development comparisons and authored mathematical studies.
 | Can a sufficient set of observations be checked? | On one forty-frame case, **372 hypothetical confirmed-present labels** attain the minimum needed to preserve the strict decision under the specified deletion model. | This is a conditional sufficiency result. Sequential query cost and human effort are different quantities. [Proof](docs/PERCEPTION_MONOTONE_AUDIT_2026-09-17.md) |
 | What remains undecidable under the available evidence? | All **1,790 unresolved rows** in the 7,707-row operating study have checked worlds supporting opposing decisions; **2,199 rows remain blocked**. | These are dependent development rows. Resolving them requires a distinguishing observation or a justified change of assumptions. [Outcomes](research/operating-timing-witness/0.1.0/OUTCOMES.md) |
 | Does the workflow save work against competent alternatives? | Conventional methods match retained stopping results and attain all **99 resolved query floors**. The bounded certificate-reuse assay is slower than full computation on its small workload. | Lower complete validation cost remains unestablished. [Comparison audit](research/roadmap-audit/0.1.0/README.md) · [Reuse assay](docs/PERCEPTION_REVISION_AUDIT_2026-09-16.md) |
-| Can statistical audits preserve residual reference uncertainty? | Four registered methods pass exact checks over **38,816 sampling orders on 28 authored populations**; five populations remain unresolved after full observation. | The control variate improves one case slightly, but a conventional weight-priority procedure is faster there. A stronger adaptive-betting comparison remains necessary. [Methods study](research/sequential-audit/0.1.0/README.md) |
+| Can adaptive statistical audits save observations? | ALPHA and fixed betting pass separate checks over **11,712 new paths**. None stops earlier than matched exact stopping on the three retained 64-image reference conditions. | Count-priority exact stopping is faster on the resolved perception conditions. Authored statistical errors and residual uncertainty remain explicit. [Adaptive comparison](research/adaptive-audit/0.1.0/README.md) · [Earlier methods](research/sequential-audit/0.1.0/README.md) |
 
 The exact conditional proofs and statistical error guarantees answer different
 questions. Neither establishes the physical correctness of a reference, a
@@ -109,19 +109,15 @@ launcher and immutable candidate procedure.
 
 ## What comes next
 
-The [current roadmap](docs/ENGINE_ROADMAP_2026-09-19.md) selects two distinct
-requirements for further progress:
+The stronger adaptive-betting comparison is complete. The
+[current roadmap](docs/ENGINE_ROADMAP_2026-09-19.md) now prioritizes a consequential,
+owner-defined decision and an observation process that can distinguish the
+unresolved reference worlds. Testing workflow value also requires genuine
+chronological revisions and complete costs for equally equipped conventional
+and Reiyah workflows.
 
-1. Compare the statistical method with a stronger published adaptive-betting
-   baseline on a separately frozen, relevant population. Preserve residual
-   reference uncertainty and keep exact and probabilistic guarantees distinct.
-2. Test workflow value on a consequential, owner-defined decision with a
-   qualified observation process, genuine chronological revisions and complete
-   costs for equally equipped conventional and Reiyah workflows.
-
-The existing negative comparisons remain part of that decision. The 28 exposed
-mathematical populations are a methods check; tuning them into a favorable
-example would not establish practical value. The
+The existing negative comparisons remain part of that decision. Further tuning
+of the exposed populations would not establish practical value. The
 [dated primary-method review](research/roadmap-audit/0.1.0/FRONTIER.md) records
 the relevant prior work and the comparisons still needed.
 

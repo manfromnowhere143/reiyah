@@ -1,0 +1,156 @@
+{
+  "version": "0.1.0",
+  "passed": true,
+  "checks": [
+    {
+      "id": "producer_unknown_property",
+      "passed": true,
+      "expected_rejection": "population_properties"
+    },
+    {
+      "id": "checker_unknown_property",
+      "passed": true,
+      "expected_rejection": "population_properties"
+    },
+    {
+      "id": "producer_duplicate_identity",
+      "passed": true,
+      "expected_rejection": "unit_identity"
+    },
+    {
+      "id": "checker_duplicate_identity",
+      "passed": true,
+      "expected_rejection": "unit_identity"
+    },
+    {
+      "id": "producer_float_endpoint",
+      "passed": true,
+      "expected_rejection": "rational_string"
+    },
+    {
+      "id": "checker_float_endpoint",
+      "passed": true,
+      "expected_rejection": "rational_string"
+    },
+    {
+      "id": "producer_noncanonical_endpoint",
+      "passed": true,
+      "expected_rejection": "rational_canonical"
+    },
+    {
+      "id": "checker_noncanonical_endpoint",
+      "passed": true,
+      "expected_rejection": "rational_canonical"
+    },
+    {
+      "id": "producer_negative_bound",
+      "passed": true,
+      "expected_rejection": "unit_range"
+    },
+    {
+      "id": "checker_negative_bound",
+      "passed": true,
+      "expected_rejection": "unit_range"
+    },
+    {
+      "id": "producer_reversed_interval",
+      "passed": true,
+      "expected_rejection": "unit_range"
+    },
+    {
+      "id": "checker_reversed_interval",
+      "passed": true,
+      "expected_rejection": "unit_range"
+    },
+    {
+      "id": "producer_unknown_status",
+      "passed": true,
+      "expected_rejection": "unit_status"
+    },
+    {
+      "id": "checker_unknown_status",
+      "passed": true,
+      "expected_rejection": "unit_status"
+    },
+    {
+      "id": "producer_missing_as_point",
+      "passed": true,
+      "expected_rejection": "unavailable_interval"
+    },
+    {
+      "id": "checker_missing_as_point",
+      "passed": true,
+      "expected_rejection": "unavailable_interval"
+    },
+    {
+      "id": "producer_observed_as_interval",
+      "passed": true,
+      "expected_rejection": "observed_interval"
+    },
+    {
+      "id": "checker_observed_as_interval",
+      "passed": true,
+      "expected_rejection": "observed_interval"
+    },
+    {
+      "id": "forged_queries",
+      "passed": true,
+      "expected_rejection": "path_queries"
+    },
+    {
+      "id": "forged_decision",
+      "passed": true,
+      "expected_rejection": "path_decision"
+    },
+    {
+      "id": "forged_wealth_at_stop",
+      "passed": true,
+      "expected_rejection": "path_wealth_at_stop"
+    },
+    {
+      "id": "forged_trace_sha256",
+      "passed": true,
+      "expected_rejection": "path_trace_sha256"
+    },
+    {
+      "id": "forged_exact_queries",
+      "passed": true,
+      "expected_rejection": "path_exact_queries"
+    },
+    {
+      "id": "forged_crossed",
+      "passed": true,
+      "expected_rejection": "path_crossed"
+    },
+    {
+      "id": "repeated_query",
+      "passed": true,
+      "expected_rejection": "order_membership"
+    },
+    {
+      "id": "unknown_arm",
+      "passed": true,
+      "expected_rejection": "unknown_arm"
+    },
+    {
+      "id": "all_control_orders_and_support_extremes",
+      "passed": true
+    },
+    {
+      "id": "singular_means_and_zero_wealth",
+      "passed": true
+    },
+    {
+      "id": "boundary_census_and_strict_tie",
+      "passed": true
+    },
+    {
+      "id": "nonresponse_retains_residual_uncertainty",
+      "passed": true
+    },
+    {
+      "id": "zero_bounds_keep_membership_no_query",
+      "passed": true
+    }
+  ]
+}
