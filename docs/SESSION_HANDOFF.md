@@ -1,3 +1,34 @@
+# Reiyah README editorial closeout, 2026-09-19
+
+Continuation version: `0.1.45`. Status: `exploratory`.
+
+The repository introduction now leads with the implemented perception decision
+problem, intended reader and evidence boundary. It gives one comparison diagram,
+a compact current-evidence table, a runnable example and the next research question.
+The two latest dated notices and detailed checkpoint narrative are preserved in
+[the linked historical snapshot](README_RESEARCH_HISTORY_2026-09-19.md), with
+relative links adjusted for that location. The archive identifies its exact source
+commit; original research records remain unchanged.
+
+Keep future checkpoint detail in its versioned report and this handoff. Update the
+README's relevant evidence row and navigation when warranted, while retaining a
+stable project description before dated results. This editorial change supplies
+no new experiment, improved result, acceptance or cost-saving claim.
+
+The scientific continuation remains the sequential-audit closeout immediately below:
+qualify a stronger adaptive-betting comparator and a separately frozen relevant
+population. Preserve all conventional/native parity, unresolved cases, prior failures
+and known costs. All 1,433 reserved images remain closed; the perception Engine source
+and frozen studies are unchanged, and Gate A remains operator-unaccepted.
+
+Owned editorial packet: `~/.codex/reports/reiyah/readme-2026-09-19-3v6qaj24/`.
+Its checks, commit and publisher readback are retained outside this candidate.
+The canonical controller stays on clean historical `74fbacc`; use fresh owned
+same-repository candidates for later work. Codex owns Reiyah without delegation.
+Preserve Daniel's configured author/committer identity, normal safe push and exact
+publisher readback. No social post, outreach, inference, training or deployment
+is requested by this documentation task. Earlier sections remain history.
+
 # Reiyah sequential audit methods closeout, 2026-09-19
 
 Continuation version: `0.1.44`. Status: `exploratory`.
