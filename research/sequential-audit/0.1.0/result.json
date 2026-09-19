@@ -1,0 +1,1692 @@
+{
+  "document_id": "reiyah.sequential-audit.result",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "freeze_sha256": "2676ebeba7ff3775e952b3cd10dece248e0257d618d3290c84136d48e6ed2c01",
+  "path_rows": 38816,
+  "paths_sha256": "51664182d96357f8fa7b4d2a7ceef2662a3491cb845d3787a236e197ba6db8fb",
+  "summaries": [
+    {
+      "population": "point_positive",
+      "arm": "uniform",
+      "orders": 720,
+      "full_interval": [
+        "1",
+        "1"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "4",
+      "expected_stat_queries": "4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "point_positive",
+      "arm": "weight",
+      "orders": 720,
+      "full_interval": [
+        "1",
+        "1"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "4",
+      "expected_stat_queries": "4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "point_positive",
+      "arm": "proxy",
+      "orders": 720,
+      "full_interval": [
+        "1",
+        "1"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "4",
+      "expected_stat_queries": "4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "point_positive",
+      "arm": "proxy_cv",
+      "orders": 720,
+      "full_interval": [
+        "1",
+        "1"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "4",
+      "expected_stat_queries": "4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "point_negative",
+      "arm": "uniform",
+      "orders": 720,
+      "full_interval": [
+        "-1",
+        "-1"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "3",
+      "expected_stat_queries": "3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "point_negative",
+      "arm": "weight",
+      "orders": 720,
+      "full_interval": [
+        "-1",
+        "-1"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "3",
+      "expected_stat_queries": "3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "point_negative",
+      "arm": "proxy",
+      "orders": 720,
+      "full_interval": [
+        "-1",
+        "-1"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "3",
+      "expected_stat_queries": "3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "point_negative",
+      "arm": "proxy_cv",
+      "orders": 720,
+      "full_interval": [
+        "-1",
+        "-1"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "3",
+      "expected_stat_queries": "3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "point_tie",
+      "arm": "uniform",
+      "orders": 720,
+      "full_interval": [
+        "0",
+        "0"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "point_tie",
+      "arm": "weight",
+      "orders": 720,
+      "full_interval": [
+        "0",
+        "0"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "point_tie",
+      "arm": "proxy",
+      "orders": 720,
+      "full_interval": [
+        "0",
+        "0"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "point_tie",
+      "arm": "proxy_cv",
+      "orders": 720,
+      "full_interval": [
+        "0",
+        "0"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "near_positive",
+      "arm": "uniform",
+      "orders": 720,
+      "full_interval": [
+        "1/100",
+        "1/100"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "near_positive",
+      "arm": "weight",
+      "orders": 720,
+      "full_interval": [
+        "1/100",
+        "1/100"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "near_positive",
+      "arm": "proxy",
+      "orders": 720,
+      "full_interval": [
+        "1/100",
+        "1/100"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "near_positive",
+      "arm": "proxy_cv",
+      "orders": 720,
+      "full_interval": [
+        "1/100",
+        "1/100"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "near_negative",
+      "arm": "uniform",
+      "orders": 720,
+      "full_interval": [
+        "-1/100",
+        "-1/100"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "near_negative",
+      "arm": "weight",
+      "orders": 720,
+      "full_interval": [
+        "-1/100",
+        "-1/100"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "near_negative",
+      "arm": "proxy",
+      "orders": 720,
+      "full_interval": [
+        "-1/100",
+        "-1/100"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "near_negative",
+      "arm": "proxy_cv",
+      "orders": 720,
+      "full_interval": [
+        "-1/100",
+        "-1/100"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "alternating_tie",
+      "arm": "uniform",
+      "orders": 720,
+      "full_interval": [
+        "0",
+        "0"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "21/4",
+      "expected_stat_queries": "21/4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "alternating_tie",
+      "arm": "weight",
+      "orders": 720,
+      "full_interval": [
+        "0",
+        "0"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "21/4",
+      "expected_stat_queries": "21/4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "alternating_tie",
+      "arm": "proxy",
+      "orders": 720,
+      "full_interval": [
+        "0",
+        "0"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "21/4",
+      "expected_stat_queries": "21/4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "alternating_tie",
+      "arm": "proxy_cv",
+      "orders": 720,
+      "full_interval": [
+        "0",
+        "0"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "21/4",
+      "expected_stat_queries": "21/4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "mixed_positive",
+      "arm": "uniform",
+      "orders": 720,
+      "full_interval": [
+        "2/3",
+        "2/3"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "14/3",
+      "expected_stat_queries": "14/3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "mixed_positive",
+      "arm": "weight",
+      "orders": 720,
+      "full_interval": [
+        "2/3",
+        "2/3"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "14/3",
+      "expected_stat_queries": "14/3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "mixed_positive",
+      "arm": "proxy",
+      "orders": 720,
+      "full_interval": [
+        "2/3",
+        "2/3"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "14/3",
+      "expected_stat_queries": "14/3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "mixed_positive",
+      "arm": "proxy_cv",
+      "orders": 720,
+      "full_interval": [
+        "2/3",
+        "2/3"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "14/3",
+      "expected_stat_queries": "14/3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "mixed_negative",
+      "arm": "uniform",
+      "orders": 720,
+      "full_interval": [
+        "-2/3",
+        "-2/3"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "7/2",
+      "expected_stat_queries": "7/2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "mixed_negative",
+      "arm": "weight",
+      "orders": 720,
+      "full_interval": [
+        "-2/3",
+        "-2/3"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "7/2",
+      "expected_stat_queries": "7/2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "mixed_negative",
+      "arm": "proxy",
+      "orders": 720,
+      "full_interval": [
+        "-2/3",
+        "-2/3"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "7/2",
+      "expected_stat_queries": "7/2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "mixed_negative",
+      "arm": "proxy_cv",
+      "orders": 720,
+      "full_interval": [
+        "-2/3",
+        "-2/3"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "7/2",
+      "expected_stat_queries": "7/2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "interval_positive",
+      "arm": "uniform",
+      "orders": 720,
+      "full_interval": [
+        "1/5",
+        "3/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "interval_positive",
+      "arm": "weight",
+      "orders": 720,
+      "full_interval": [
+        "1/5",
+        "3/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "interval_positive",
+      "arm": "proxy",
+      "orders": 720,
+      "full_interval": [
+        "1/5",
+        "3/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "interval_positive",
+      "arm": "proxy_cv",
+      "orders": 720,
+      "full_interval": [
+        "1/5",
+        "3/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "interval_negative",
+      "arm": "uniform",
+      "orders": 720,
+      "full_interval": [
+        "-3/5",
+        "-1/5"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "5",
+      "expected_stat_queries": "5",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "interval_negative",
+      "arm": "weight",
+      "orders": 720,
+      "full_interval": [
+        "-3/5",
+        "-1/5"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "5",
+      "expected_stat_queries": "5",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "interval_negative",
+      "arm": "proxy",
+      "orders": 720,
+      "full_interval": [
+        "-3/5",
+        "-1/5"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "5",
+      "expected_stat_queries": "5",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "interval_negative",
+      "arm": "proxy_cv",
+      "orders": 720,
+      "full_interval": [
+        "-3/5",
+        "-1/5"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "5",
+      "expected_stat_queries": "5",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "interval_straddling",
+      "arm": "uniform",
+      "orders": 720,
+      "full_interval": [
+        "-1/5",
+        "1/5"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "interval_straddling",
+      "arm": "weight",
+      "orders": 720,
+      "full_interval": [
+        "-1/5",
+        "1/5"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "interval_straddling",
+      "arm": "proxy",
+      "orders": 720,
+      "full_interval": [
+        "-1/5",
+        "1/5"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "interval_straddling",
+      "arm": "proxy_cv",
+      "orders": 720,
+      "full_interval": [
+        "-1/5",
+        "1/5"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "wide_reference",
+      "arm": "uniform",
+      "orders": 720,
+      "full_interval": [
+        "-1",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "wide_reference",
+      "arm": "weight",
+      "orders": 720,
+      "full_interval": [
+        "-1",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "wide_reference",
+      "arm": "proxy",
+      "orders": 720,
+      "full_interval": [
+        "-1",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "wide_reference",
+      "arm": "proxy_cv",
+      "orders": 720,
+      "full_interval": [
+        "-1",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "heavy_positive",
+      "arm": "uniform",
+      "orders": 24,
+      "full_interval": [
+        "2/5",
+        "2/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "5/2",
+      "expected_stat_queries": "5/2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "heavy_positive",
+      "arm": "weight",
+      "orders": 24,
+      "full_interval": [
+        "2/5",
+        "2/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "11/8",
+      "expected_stat_queries": "11/8",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "heavy_positive",
+      "arm": "proxy",
+      "orders": 24,
+      "full_interval": [
+        "2/5",
+        "2/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "11/8",
+      "expected_stat_queries": "11/8",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "heavy_positive",
+      "arm": "proxy_cv",
+      "orders": 24,
+      "full_interval": [
+        "2/5",
+        "2/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "11/8",
+      "expected_stat_queries": "11/8",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "heavy_negative",
+      "arm": "uniform",
+      "orders": 24,
+      "full_interval": [
+        "-2/5",
+        "-2/5"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "5/2",
+      "expected_stat_queries": "5/2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "heavy_negative",
+      "arm": "weight",
+      "orders": 24,
+      "full_interval": [
+        "-2/5",
+        "-2/5"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "11/8",
+      "expected_stat_queries": "11/8",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "heavy_negative",
+      "arm": "proxy",
+      "orders": 24,
+      "full_interval": [
+        "-2/5",
+        "-2/5"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "11/8",
+      "expected_stat_queries": "11/8",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "heavy_negative",
+      "arm": "proxy_cv",
+      "orders": 24,
+      "full_interval": [
+        "-2/5",
+        "-2/5"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "11/8",
+      "expected_stat_queries": "11/8",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "weighted_tie",
+      "arm": "uniform",
+      "orders": 6,
+      "full_interval": [
+        "0",
+        "0"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "2",
+      "expected_stat_queries": "2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "weighted_tie",
+      "arm": "weight",
+      "orders": 6,
+      "full_interval": [
+        "0",
+        "0"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "5/3",
+      "expected_stat_queries": "5/3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "weighted_tie",
+      "arm": "proxy",
+      "orders": 6,
+      "full_interval": [
+        "0",
+        "0"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "5/3",
+      "expected_stat_queries": "5/3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "weighted_tie",
+      "arm": "proxy_cv",
+      "orders": 6,
+      "full_interval": [
+        "0",
+        "0"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "5/3",
+      "expected_stat_queries": "5/3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "proxy_aligned",
+      "arm": "uniform",
+      "orders": 24,
+      "full_interval": [
+        "4/5",
+        "4/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "35/12",
+      "expected_stat_queries": "35/12",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "proxy_aligned",
+      "arm": "weight",
+      "orders": 24,
+      "full_interval": [
+        "4/5",
+        "4/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "779/315",
+      "expected_stat_queries": "779/315",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "proxy_aligned",
+      "arm": "proxy",
+      "orders": 24,
+      "full_interval": [
+        "4/5",
+        "4/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "4930237/2198133",
+      "expected_stat_queries": "4930237/2198133",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "proxy_aligned",
+      "arm": "proxy_cv",
+      "orders": 24,
+      "full_interval": [
+        "4/5",
+        "4/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "4930237/2198133",
+      "expected_stat_queries": "467906311/209119680",
+      "false_decision_probability": "0",
+      "early_stop_probability": "28917/5339840",
+      "statistical_decision_probability": "28917/5339840"
+    },
+    {
+      "population": "proxy_reversed",
+      "arm": "uniform",
+      "orders": 24,
+      "full_interval": [
+        "4/5",
+        "4/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "35/12",
+      "expected_stat_queries": "35/12",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "proxy_reversed",
+      "arm": "weight",
+      "orders": 24,
+      "full_interval": [
+        "4/5",
+        "4/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "779/315",
+      "expected_stat_queries": "779/315",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "proxy_reversed",
+      "arm": "proxy",
+      "orders": 24,
+      "full_interval": [
+        "4/5",
+        "4/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "2491/819",
+      "expected_stat_queries": "2491/819",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "proxy_reversed",
+      "arm": "proxy_cv",
+      "orders": 24,
+      "full_interval": [
+        "4/5",
+        "4/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "2491/819",
+      "expected_stat_queries": "2491/819",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "proxy_constant",
+      "arm": "uniform",
+      "orders": 24,
+      "full_interval": [
+        "4/5",
+        "4/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "35/12",
+      "expected_stat_queries": "35/12",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "proxy_constant",
+      "arm": "weight",
+      "orders": 24,
+      "full_interval": [
+        "4/5",
+        "4/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "779/315",
+      "expected_stat_queries": "779/315",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "proxy_constant",
+      "arm": "proxy",
+      "orders": 24,
+      "full_interval": [
+        "4/5",
+        "4/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "779/315",
+      "expected_stat_queries": "779/315",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "proxy_constant",
+      "arm": "proxy_cv",
+      "orders": 24,
+      "full_interval": [
+        "4/5",
+        "4/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "779/315",
+      "expected_stat_queries": "779/315",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "missing_heavy",
+      "arm": "uniform",
+      "orders": 24,
+      "full_interval": [
+        "-2/5",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "4",
+      "expected_stat_queries": "4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "missing_heavy",
+      "arm": "weight",
+      "orders": 24,
+      "full_interval": [
+        "-2/5",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "4",
+      "expected_stat_queries": "4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "missing_heavy",
+      "arm": "proxy",
+      "orders": 24,
+      "full_interval": [
+        "-2/5",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "4",
+      "expected_stat_queries": "4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "missing_heavy",
+      "arm": "proxy_cv",
+      "orders": 24,
+      "full_interval": [
+        "-2/5",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "4",
+      "expected_stat_queries": "4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "invalid_heavy",
+      "arm": "uniform",
+      "orders": 24,
+      "full_interval": [
+        "-2/5",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "4",
+      "expected_stat_queries": "4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "invalid_heavy",
+      "arm": "weight",
+      "orders": 24,
+      "full_interval": [
+        "-2/5",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "4",
+      "expected_stat_queries": "4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "invalid_heavy",
+      "arm": "proxy",
+      "orders": 24,
+      "full_interval": [
+        "-2/5",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "4",
+      "expected_stat_queries": "4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "invalid_heavy",
+      "arm": "proxy_cv",
+      "orders": 24,
+      "full_interval": [
+        "-2/5",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "4",
+      "expected_stat_queries": "4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "abstained_light",
+      "arm": "uniform",
+      "orders": 24,
+      "full_interval": [
+        "1/2",
+        "1"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "15/4",
+      "expected_stat_queries": "15/4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "abstained_light",
+      "arm": "weight",
+      "orders": 24,
+      "full_interval": [
+        "1/2",
+        "1"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "15/4",
+      "expected_stat_queries": "15/4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "abstained_light",
+      "arm": "proxy",
+      "orders": 24,
+      "full_interval": [
+        "1/2",
+        "1"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "15/4",
+      "expected_stat_queries": "15/4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "abstained_light",
+      "arm": "proxy_cv",
+      "orders": 24,
+      "full_interval": [
+        "1/2",
+        "1"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "15/4",
+      "expected_stat_queries": "15/4",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "zero_weight_members",
+      "arm": "uniform",
+      "orders": 2,
+      "full_interval": [
+        "1/2",
+        "1/2"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "2",
+      "expected_stat_queries": "2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "zero_weight_members",
+      "arm": "weight",
+      "orders": 2,
+      "full_interval": [
+        "1/2",
+        "1/2"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "2",
+      "expected_stat_queries": "2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "zero_weight_members",
+      "arm": "proxy",
+      "orders": 2,
+      "full_interval": [
+        "1/2",
+        "1/2"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "2",
+      "expected_stat_queries": "2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "zero_weight_members",
+      "arm": "proxy_cv",
+      "orders": 2,
+      "full_interval": [
+        "1/2",
+        "1/2"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "2",
+      "expected_stat_queries": "2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "upper_threshold_boundary",
+      "arm": "uniform",
+      "orders": 6,
+      "full_interval": [
+        "1",
+        "1"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "0",
+      "expected_stat_queries": "0",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "upper_threshold_boundary",
+      "arm": "weight",
+      "orders": 6,
+      "full_interval": [
+        "1",
+        "1"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "0",
+      "expected_stat_queries": "0",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "upper_threshold_boundary",
+      "arm": "proxy",
+      "orders": 6,
+      "full_interval": [
+        "1",
+        "1"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "0",
+      "expected_stat_queries": "0",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "upper_threshold_boundary",
+      "arm": "proxy_cv",
+      "orders": 6,
+      "full_interval": [
+        "1",
+        "1"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "0",
+      "expected_stat_queries": "0",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "lower_threshold_boundary",
+      "arm": "uniform",
+      "orders": 6,
+      "full_interval": [
+        "-1",
+        "-1"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "3",
+      "expected_stat_queries": "3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "lower_threshold_boundary",
+      "arm": "weight",
+      "orders": 6,
+      "full_interval": [
+        "-1",
+        "-1"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "3",
+      "expected_stat_queries": "3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "lower_threshold_boundary",
+      "arm": "proxy",
+      "orders": 6,
+      "full_interval": [
+        "-1",
+        "-1"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "3",
+      "expected_stat_queries": "3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "lower_threshold_boundary",
+      "arm": "proxy_cv",
+      "orders": 6,
+      "full_interval": [
+        "-1",
+        "-1"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "3",
+      "expected_stat_queries": "3",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "extreme_sampling_mass",
+      "arm": "uniform",
+      "orders": 6,
+      "full_interval": [
+        "-2499/2500",
+        "-2499/2500"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "2",
+      "expected_stat_queries": "2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "extreme_sampling_mass",
+      "arm": "weight",
+      "orders": 6,
+      "full_interval": [
+        "-2499/2500",
+        "-2499/2500"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "10001/9999",
+      "expected_stat_queries": "10001/9999",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "extreme_sampling_mass",
+      "arm": "proxy",
+      "orders": 6,
+      "full_interval": [
+        "-2499/2500",
+        "-2499/2500"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "10025/10007",
+      "expected_stat_queries": "10025/10007",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "extreme_sampling_mass",
+      "arm": "proxy_cv",
+      "orders": 6,
+      "full_interval": [
+        "-2499/2500",
+        "-2499/2500"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "10025/10007",
+      "expected_stat_queries": "10025/10007",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "clustered_members",
+      "arm": "uniform",
+      "orders": 720,
+      "full_interval": [
+        "1/10",
+        "1/10"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "clustered_members",
+      "arm": "weight",
+      "orders": 720,
+      "full_interval": [
+        "1/10",
+        "1/10"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "clustered_members",
+      "arm": "proxy",
+      "orders": 720,
+      "full_interval": [
+        "1/10",
+        "1/10"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "clustered_members",
+      "arm": "proxy_cv",
+      "orders": 720,
+      "full_interval": [
+        "1/10",
+        "1/10"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "6",
+      "expected_stat_queries": "6",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "all_unavailable_states",
+      "arm": "uniform",
+      "orders": 120,
+      "full_interval": [
+        "-1",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "5",
+      "expected_stat_queries": "5",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "all_unavailable_states",
+      "arm": "weight",
+      "orders": 120,
+      "full_interval": [
+        "-1",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "5",
+      "expected_stat_queries": "5",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "all_unavailable_states",
+      "arm": "proxy",
+      "orders": 120,
+      "full_interval": [
+        "-1",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "5",
+      "expected_stat_queries": "5",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "all_unavailable_states",
+      "arm": "proxy_cv",
+      "orders": 120,
+      "full_interval": [
+        "-1",
+        "1"
+      ],
+      "full_decision": "unresolved",
+      "expected_exact_queries": "5",
+      "expected_stat_queries": "5",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "rational_threshold_tie",
+      "arm": "uniform",
+      "orders": 6,
+      "full_interval": [
+        "2/3",
+        "2/3"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "2",
+      "expected_stat_queries": "2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "rational_threshold_tie",
+      "arm": "weight",
+      "orders": 6,
+      "full_interval": [
+        "2/3",
+        "2/3"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "2",
+      "expected_stat_queries": "2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "rational_threshold_tie",
+      "arm": "proxy",
+      "orders": 6,
+      "full_interval": [
+        "2/3",
+        "2/3"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "2",
+      "expected_stat_queries": "2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    },
+    {
+      "population": "rational_threshold_tie",
+      "arm": "proxy_cv",
+      "orders": 6,
+      "full_interval": [
+        "2/3",
+        "2/3"
+      ],
+      "full_decision": "excluded",
+      "expected_exact_queries": "2",
+      "expected_stat_queries": "2",
+      "false_decision_probability": "0",
+      "early_stop_probability": "0",
+      "statistical_decision_probability": "0"
+    }
+  ],
+  "all_allocated_populations_retained": true,
+  "empirical_or_customer_evidence": false
+}

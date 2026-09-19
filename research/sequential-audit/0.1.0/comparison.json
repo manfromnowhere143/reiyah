@@ -1,0 +1,498 @@
+{
+  "document_id": "reiyah.sequential-audit.comparison",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "full_reference_decisions": {
+    "supported": 11,
+    "unresolved": 5,
+    "excluded": 12
+  },
+  "comparisons": [
+    {
+      "arm": "weight",
+      "comparator": "uniform",
+      "counts": {
+        "fewer": 7,
+        "same": 21,
+        "more": 0
+      },
+      "population_results": [
+        {
+          "population": "abstained_light",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "all_unavailable_states",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "alternating_tie",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "clustered_members",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "extreme_sampling_mass",
+          "query_difference": "-9997/9999",
+          "result": "fewer"
+        },
+        {
+          "population": "heavy_negative",
+          "query_difference": "-9/8",
+          "result": "fewer"
+        },
+        {
+          "population": "heavy_positive",
+          "query_difference": "-9/8",
+          "result": "fewer"
+        },
+        {
+          "population": "interval_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "interval_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "interval_straddling",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "invalid_heavy",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "lower_threshold_boundary",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "missing_heavy",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "mixed_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "mixed_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "near_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "near_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "point_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "point_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "point_tie",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "proxy_aligned",
+          "query_difference": "-559/1260",
+          "result": "fewer"
+        },
+        {
+          "population": "proxy_constant",
+          "query_difference": "-559/1260",
+          "result": "fewer"
+        },
+        {
+          "population": "proxy_reversed",
+          "query_difference": "-559/1260",
+          "result": "fewer"
+        },
+        {
+          "population": "rational_threshold_tie",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "upper_threshold_boundary",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "weighted_tie",
+          "query_difference": "-1/3",
+          "result": "fewer"
+        },
+        {
+          "population": "wide_reference",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "zero_weight_members",
+          "query_difference": "0",
+          "result": "same"
+        }
+      ]
+    },
+    {
+      "arm": "proxy",
+      "comparator": "weight",
+      "counts": {
+        "fewer": 1,
+        "same": 25,
+        "more": 2
+      },
+      "population_results": [
+        {
+          "population": "abstained_light",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "all_unavailable_states",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "alternating_tie",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "clustered_members",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "extreme_sampling_mass",
+          "query_difference": "159968/100059993",
+          "result": "more"
+        },
+        {
+          "population": "heavy_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "heavy_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "interval_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "interval_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "interval_straddling",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "invalid_heavy",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "lower_threshold_boundary",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "missing_heavy",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "mixed_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "mixed_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "near_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "near_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "point_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "point_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "point_tie",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "proxy_aligned",
+          "query_difference": "-120424/523365",
+          "result": "fewer"
+        },
+        {
+          "population": "proxy_constant",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "proxy_reversed",
+          "query_difference": "776/1365",
+          "result": "more"
+        },
+        {
+          "population": "rational_threshold_tie",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "upper_threshold_boundary",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "weighted_tie",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "wide_reference",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "zero_weight_members",
+          "query_difference": "0",
+          "result": "same"
+        }
+      ]
+    },
+    {
+      "arm": "proxy_cv",
+      "comparator": "proxy",
+      "counts": {
+        "fewer": 1,
+        "same": 27,
+        "more": 0
+      },
+      "population_results": [
+        {
+          "population": "abstained_light",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "all_unavailable_states",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "alternating_tie",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "clustered_members",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "extreme_sampling_mass",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "heavy_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "heavy_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "interval_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "interval_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "interval_straddling",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "invalid_heavy",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "lower_threshold_boundary",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "missing_heavy",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "mixed_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "mixed_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "near_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "near_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "point_negative",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "point_positive",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "point_tie",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "proxy_aligned",
+          "query_difference": "-28917/5339840",
+          "result": "fewer"
+        },
+        {
+          "population": "proxy_constant",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "proxy_reversed",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "rational_threshold_tie",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "upper_threshold_boundary",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "weighted_tie",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "wide_reference",
+          "query_difference": "0",
+          "result": "same"
+        },
+        {
+          "population": "zero_weight_members",
+          "query_difference": "0",
+          "result": "same"
+        }
+      ]
+    }
+  ],
+  "early_statistical_stop_groups": [
+    {
+      "population": "proxy_aligned",
+      "arm": "proxy_cv",
+      "orders": 24,
+      "full_interval": [
+        "4/5",
+        "4/5"
+      ],
+      "full_decision": "supported",
+      "expected_exact_queries": "4930237/2198133",
+      "expected_stat_queries": "467906311/209119680",
+      "false_decision_probability": "0",
+      "early_stop_probability": "28917/5339840",
+      "statistical_decision_probability": "28917/5339840",
+      "false_lower_cross_probability": "0",
+      "false_upper_cross_probability": "0",
+      "either_false_endpoint_probability": "0",
+      "conventional_weight_priority_queries": 2,
+      "nonresponse_units": []
+    }
+  ],
+  "max_false_decision_probability": "0",
+  "max_false_endpoint_crossing_probability": "0",
+  "artifact_bindings": {
+    "freeze.json": "2676ebeba7ff3775e952b3cd10dece248e0257d618d3290c84136d48e6ed2c01",
+    "paths.csv": "51664182d96357f8fa7b4d2a7ceef2662a3491cb845d3787a236e197ba6db8fb",
+    "result.json": "002496677cf35b777c34c80fa03ee31c23d68e575ae20e9099cc1d805940137c",
+    "verification.json": "d9eafb08f0398f7902da67b4169e340e36eae765c6d43590048c9c3a16fbfa78",
+    "controls.json": "2abbd7303aed9595c46802ba9483c496c8f0ba5a150a9ed8218c00275b4c866d",
+    "binding-controls.json": "dea0cde82ea809605fe03d1d987b5716fa1a15bf2de527ba2974fde60e4baa1e"
+  },
+  "interpretation": "Authored fixture comparisons. Statistical and exact guarantees differ. No physical, workflow, economic, novelty or frontier-superiority conclusion."
+}

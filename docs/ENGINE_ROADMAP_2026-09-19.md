@@ -1,6 +1,6 @@
 # Reiyah: the next evidence that can change the decision
 
-Document ID: `reiyah.engine.roadmap`. Version: `0.2.0`.
+Document ID: `reiyah.engine.roadmap`. Version: `0.2.1`.
 Lifecycle status: `proposed`. Updated 19 September 2026.
 
 **Keep the small proof-checking Engine. Focus the next research on what can be
@@ -49,54 +49,44 @@ An exact certificate satisfies only its computational obligation. A confidence
 sequence does not establish reference correctness. A higher perception score does
 not establish recovery, readiness, causal policy value or deployed safety.
 
-## The next bounded technical task
+## Completed methods gate and the next comparison
 
-Prepare one **offline comparison of sequential audits with explicit residual
-reference uncertainty**, using authored finite populations first. The question is
-whether a statistical audit can save observations under an explicitly different
-error obligation while continuing to report what the observations cannot identify.
-This is a proposed methods check, not a substitute for workflow evidence.
+The proposed authored-population methods task is now
+[executed and separately checked](../research/sequential-audit/0.1.0/README.md).
+Its pre-outcome freeze allocated 28 populations, four arms and all 38,816
+complete sampling orders. The original ceilings remain respected. Five
+populations remain unresolved after full observation; all allocated per-arm
+error checks pass. This is a methods-correctness result, not application value.
 
-Start with established uniform sampling without replacement and the weighted audit
-construction of [Shekhar et al., UAI 2023](https://proceedings.mlr.press/v216/shekhar23a.html).
-Use the [2026 PPAT preprint](https://arxiv.org/abs/2607.08347v1) as a relevant
-adaptive estimation comparator with its asymptotic interval scope stated.
-Do not use those intervals as an unproved finite-sample stopping certificate.
-Prediction-powered e-processes are an additional candidate only after their
-factor, sampling and predictability requirements are satisfied. The reviewed
-methods and their limits are detailed in the frontier packet.
+Weight-proportional sampling improves expected query counts over uniform in
+seven populations. Proxy sampling improves one case versus weight sampling
+but worsens two. Adding the residual control variate reduces expected queries
+by about 0.005415 in one aligned-proxy case and changes none of the other 27.
+That case still needs about 2.237505 queries on average, while a conventional
+weight-priority exact workflow needs two. Keep these negative comparisons.
 
-Before execution, freeze the exact synthetic fixtures, algorithms, arithmetic,
-query interface, information access, estimands, error allocation and cost policy.
-The proposed ceiling is 32 authored populations with at most six units each,
-300 process seconds for execution, 300 for separate checking and 64 MiB of new
-artifacts. Enumerate all sampling permutations where that is the declared design.
-Caps and incomplete checks remain results. Use existing local runtimes; a new
-library, learned selector or solver framework is unnecessary for this first test.
+The next statistical investment decision needs a stronger published adaptive
+betting baseline and a separately frozen relevant population. The fixed-stake
+implementation does not reproduce or defeat ApproxKelly, ALPHA, PPAT or the
+entire sequential-inference frontier. Do not tune the 28 exposed fixtures into
+a favorable demonstration or equate statistical savings with an exact guarantee.
 
-Include clear margins, boundary ties, near-zero margins, misleading proxies,
-correlated scene members, unequal weights, invalid or absent observations and
-residual intervals admitting both decisions. Exercise every stopping prefix,
-sampling-probability boundary, incorrect reuse, changed loss and changed population.
-Never count a failed query as zero loss or treat copied answers as independent data.
+Preserve two comparison obligations:
 
-Compare methods only within the same guarantee:
+- **Exact conditional arm:** the native checker and an equally equipped
+  conventional matcher or bounds calculation exclude every allowed adverse
+  world. Their existing parity remains evidence.
+- **Statistical arm:** labels-only, weighted and prediction-assisted procedures
+  share the target, observation interface, randomization contract, error budget,
+  and first valid stopping rule. Fixed-time or asymptotic intervals require a
+  separate stated scope. Reference validity remains an additional obligation.
 
-- **Exact conditional arm:** current native checks and the equally equipped
-  conventional matcher/bounds, both required to exclude every allowed adverse
-  world. Preserve their existing parity result.
-- **Statistical arm:** a labels-only sequential baseline and a weighted or
-  prediction-assisted procedure with the same target, observations, randomization
-  contract, error budget and first valid stopping rule. A fixed-time or asymptotic
-  interval may be reported separately, never silently promoted to this guarantee.
+The source review and implemented mathematics are retained in the methods
+packet. Modern statistical methods remain serious comparators; their apparent
+sophistication supplies no automatic advantage. A consequential workflow and
+measured complete costs remain necessary for the next product-value test below.
 
-Report correctness or stated error coverage, decision/resolution fraction,
-observations, computation, source/preparation work and all failures. Fewer queries
-under a weaker guarantee are not a win over the exact arm. This methods task is
-worth retaining only if it establishes a correct, useful comparison or a concrete
-reason the proposed route fails. It authorizes no reserved-outcome study here.
-
-## A simple mathematical boundary for that task
+## The mathematical boundary preserved by the methods test
 
 For a fixed finite population, let `d_i(T)` be the paired loss difference in a
 common admissible reference world `T`, and let nonnegative weights `w_i` sum to one.
@@ -111,8 +101,10 @@ endpoints need not be jointly attainable; preserve stronger common-world checks
 where available. If a sampling design supplies simultaneous valid lower and upper
 confidence bounds for these two fixed endpoint totals, their outer interval covers
 every compatible `Delta(T)` on that simultaneous event. Split the error budget or
-prove a joint bound; do not give each of many tests the full budget. This is a proof
-obligation for the new task, not an implemented statistical feature or a novelty claim.
+prove a joint bound; do not give each of many tests the full budget. The authored
+methods test exercises a directional betting specialization of this
+boundary. It is an offline research implementation, not a production feature or a
+novelty claim.
 
 At complete observation, a witnessed identification interval crossing `tau` stays
 unresolved. More sampled copies of the same ambiguous answer cannot shrink that

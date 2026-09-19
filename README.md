@@ -1,6 +1,17 @@
 # Reiyah
 
-**Current research decision, 19 September 2026:** the
+**Latest checked increment, 19 September 2026:** the
+[sequential-audit methods study](research/sequential-audit/0.1.0/README.md)
+implements exact-arithmetic statistical audits with explicit residual reference
+uncertainty and a separate checker. All 38,816 orders on 28 authored populations
+pass the allocated error checks; five populations remain unresolved after full
+observation. The proxy control variate saves about 0.005 queries in one case,
+while a simple conventional weight-priority procedure is faster there. This
+establishes a checked methods capability, not a practical advantage or a
+state-of-the-art result. The [roadmap](docs/ENGINE_ROADMAP_2026-09-19.md) records
+what was completed and the stronger comparison still needed.
+
+**Earlier roadmap audit, 19 September 2026:** the
 [roadmap audit](research/roadmap-audit/0.1.0/README.md) finds that the planned
 comparisons ran, but a practical advantage remains unproved. Competent
 conventional methods match the checked stopping results; all 1,790 unresolved

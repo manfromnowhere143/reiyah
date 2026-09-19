@@ -1,3 +1,50 @@
+# Reiyah sequential audit methods closeout, 2026-09-19
+
+Continuation version: `0.1.44`. Status: `exploratory`.
+
+Read the [executed methods packet](../research/sequential-audit/0.1.0/README.md)
+and [current roadmap](ENGINE_ROADMAP_2026-09-19.md), now proposed version 0.2.1.
+The previously proposed finite-population task is complete: 28 authored
+populations, four registered arms, all 38,816 complete sampling orders.
+The separate checker imports no producer and verifies every order, stopping
+prefix, probability, summary and conventional box-vertex result. All allocated
+per-procedure error checks pass; false-decision probabilities are zero on these
+fixtures. Twenty critical controls and two changed-loss/membership binding
+attacks pass. This is not a simultaneous error claim across all 112 comparisons,
+an empirical benchmark or independent scientific replication.
+
+Full observation yields 11 supported, 12 excluded and five unresolved authored
+populations. Weight sampling improves seven cases versus uniform. Proxy sampling
+improves one versus weight sampling and worsens two. The control variate saves
+about 0.005415 expected queries in one aligned-proxy case, none in the other 27.
+Its roughly 2.237505 expected queries still lose to two queries for conventional
+weight-priority exact stopping on that case. No practical or frontier advantage
+is established, and reference uncertainty remains explicit.
+
+Freeze digest: 2676ebeba7ff3775e952b3cd10dece248e0257d618d3290c84136d48e6ed2c01.
+Outcome/check process elapsed: 1.470357750 / 2.139591000 seconds, each below 300.
+No actual outcome or check failed or capped. Retain the expected rejection
+transcripts, full authored path table, costs and five unresolved populations.
+No paper source body or third-party implementation is distributed. The packet
+uses established importance-weighted betting with a specified fixed stake;
+it is not a full ApproxKelly, ALPHA or PPAT comparison.
+
+Next: qualify a stronger published adaptive-betting comparator and a separately
+frozen relevant population before further statistical-efficiency claims. Avoid
+tuning these exposed cases. Product-value work still needs a genuine decision
+and observation process, chronological revisions and measured complete costs.
+The existing workflow brief remains useful with the historical timing-gap correction.
+
+Owned closed packet: ~/.codex/reports/reiyah/sequential-audit-2026-09-19-zq9vl0hw/.
+Read CLOSEOUT, FINAL_START_HERE, final costs and publisher receipt for its exact
+commit and readback. Historical controller, closed candidates and perception
+Engine source 38a50ec014cc83e86ea6f247df803ded2971b386 remain unchanged. All
+1,433 reserved images remain closed; Gate A remains operator-unaccepted. No
+outreach, model inference/training, paid work or deployment was performed.
+Use a fresh owned same-repository candidate for later work. Codex alone owns
+Reiyah for now; no delegation. Preserve Daniel as author and committer and use
+normal safe push with exact publisher readback. Earlier sections below are history.
+
 # Reiyah roadmap audit and next research decision, 2026-09-19
 
 Continuation version: `0.1.43`. Status: `exploratory`.

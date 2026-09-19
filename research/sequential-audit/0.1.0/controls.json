@@ -1,0 +1,106 @@
+{
+  "document_id": "reiyah.sequential-audit.controls",
+  "version": "0.1.0",
+  "passed": true,
+  "checks": [
+    {
+      "id": "unknown_population_field",
+      "passed": true,
+      "expected_rejection": "population_properties"
+    },
+    {
+      "id": "duplicate_identity",
+      "passed": true,
+      "expected_rejection": "population_membership"
+    },
+    {
+      "id": "negative_weight",
+      "passed": true,
+      "expected_rejection": "unit_range"
+    },
+    {
+      "id": "weight_mass",
+      "passed": true,
+      "expected_rejection": "weight_sum"
+    },
+    {
+      "id": "float_threshold",
+      "passed": true,
+      "expected_rejection": "rational_string_required"
+    },
+    {
+      "id": "noncanonical_fraction",
+      "passed": true,
+      "expected_rejection": "canonical_rational_required"
+    },
+    {
+      "id": "inverted_interval",
+      "passed": true,
+      "expected_rejection": "unit_range"
+    },
+    {
+      "id": "unknown_status",
+      "passed": true,
+      "expected_rejection": "unknown_observation_status"
+    },
+    {
+      "id": "missing_coerced_zero",
+      "passed": true,
+      "expected_rejection": "unavailable_must_retain_full_interval"
+    },
+    {
+      "id": "zero_sampling_support",
+      "passed": true,
+      "expected_rejection": "sampling_support_or_mass"
+    },
+    {
+      "id": "wrong_sampling_mass",
+      "passed": true,
+      "expected_rejection": "sampling_support_or_mass"
+    },
+    {
+      "id": "absent_sampling_member",
+      "passed": true,
+      "expected_rejection": "sampling_support_or_mass"
+    },
+    {
+      "id": "forged_probability",
+      "passed": true,
+      "expected_rejection": "path_probability"
+    },
+    {
+      "id": "forged_e_lower_at_stop",
+      "passed": true,
+      "expected_rejection": "path_e_lower_at_stop"
+    },
+    {
+      "id": "forged_stat_decision",
+      "passed": true,
+      "expected_rejection": "path_stat_decision"
+    },
+    {
+      "id": "forged_stat_stop",
+      "passed": true,
+      "expected_rejection": "path_stat_stop"
+    },
+    {
+      "id": "forged_lower_ever_crossed",
+      "passed": true,
+      "expected_rejection": "path_lower_ever_crossed"
+    },
+    {
+      "id": "repeated_query",
+      "passed": true,
+      "expected_rejection": "order_membership"
+    },
+    {
+      "id": "changed_threshold_reuse",
+      "passed": true,
+      "expected_rejection": "path_exact_stop"
+    },
+    {
+      "id": "support_extremes_and_strict_tie",
+      "passed": true
+    }
+  ]
+}

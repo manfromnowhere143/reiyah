@@ -1,0 +1,20 @@
+{
+  "document_id": "reiyah.sequential-audit.binding-controls",
+  "version": "0.1.0",
+  "passed": true,
+  "controls": [
+    {
+      "control": "changed_loss",
+      "returncode": 1,
+      "rejected_before_outcome_execution": true,
+      "expected_diagnostic": "freeze_digest_mismatch:fixtures.json"
+    },
+    {
+      "control": "changed_population",
+      "returncode": 1,
+      "rejected_before_outcome_execution": true,
+      "expected_diagnostic": "freeze_digest_mismatch:fixtures.json"
+    }
+  ],
+  "scope": "Tampered owned copies; frozen source and result files unchanged. Expected nonzero subprocess exits are successful rejection controls."
+}

@@ -1,0 +1,1441 @@
+{
+  "document_id": "reiyah.sequential-audit.fixtures",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "origin": "Authored deterministic methods fixtures, no empirical observations or prospective value evidence",
+  "alpha_per_procedure_population": "1/20",
+  "alpha_per_direction": "1/40",
+  "bet_fraction": "1/2",
+  "populations": [
+    {
+      "id": "point_positive",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        },
+        {
+          "id": "u4",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "4"
+        },
+        {
+          "id": "u5",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "5"
+        }
+      ],
+      "purpose": "point positive"
+    },
+    {
+      "id": "point_negative",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        },
+        {
+          "id": "u4",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "4"
+        },
+        {
+          "id": "u5",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "5"
+        }
+      ],
+      "purpose": "point negative"
+    },
+    {
+      "id": "point_tie",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/6",
+          "lower": "0",
+          "upper": "0",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/6",
+          "lower": "0",
+          "upper": "0",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/6",
+          "lower": "0",
+          "upper": "0",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/6",
+          "lower": "0",
+          "upper": "0",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        },
+        {
+          "id": "u4",
+          "weight": "1/6",
+          "lower": "0",
+          "upper": "0",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "4"
+        },
+        {
+          "id": "u5",
+          "weight": "1/6",
+          "lower": "0",
+          "upper": "0",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "5"
+        }
+      ],
+      "purpose": "point tie"
+    },
+    {
+      "id": "near_positive",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/6",
+          "lower": "1/100",
+          "upper": "1/100",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/6",
+          "lower": "1/100",
+          "upper": "1/100",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/6",
+          "lower": "1/100",
+          "upper": "1/100",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/6",
+          "lower": "1/100",
+          "upper": "1/100",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        },
+        {
+          "id": "u4",
+          "weight": "1/6",
+          "lower": "1/100",
+          "upper": "1/100",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "4"
+        },
+        {
+          "id": "u5",
+          "weight": "1/6",
+          "lower": "1/100",
+          "upper": "1/100",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "5"
+        }
+      ],
+      "purpose": "near positive"
+    },
+    {
+      "id": "near_negative",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/6",
+          "lower": "-1/100",
+          "upper": "-1/100",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/6",
+          "lower": "-1/100",
+          "upper": "-1/100",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/6",
+          "lower": "-1/100",
+          "upper": "-1/100",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/6",
+          "lower": "-1/100",
+          "upper": "-1/100",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        },
+        {
+          "id": "u4",
+          "weight": "1/6",
+          "lower": "-1/100",
+          "upper": "-1/100",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "4"
+        },
+        {
+          "id": "u5",
+          "weight": "1/6",
+          "lower": "-1/100",
+          "upper": "-1/100",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "5"
+        }
+      ],
+      "purpose": "near negative"
+    },
+    {
+      "id": "alternating_tie",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        },
+        {
+          "id": "u4",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "4"
+        },
+        {
+          "id": "u5",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "5"
+        }
+      ],
+      "purpose": "alternating tie"
+    },
+    {
+      "id": "mixed_positive",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        },
+        {
+          "id": "u4",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "4"
+        },
+        {
+          "id": "u5",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "5"
+        }
+      ],
+      "purpose": "mixed positive"
+    },
+    {
+      "id": "mixed_negative",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/6",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        },
+        {
+          "id": "u4",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "4"
+        },
+        {
+          "id": "u5",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "5"
+        }
+      ],
+      "purpose": "mixed negative"
+    },
+    {
+      "id": "interval_positive",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/6",
+          "lower": "1/5",
+          "upper": "3/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/6",
+          "lower": "1/5",
+          "upper": "3/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/6",
+          "lower": "1/5",
+          "upper": "3/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/6",
+          "lower": "1/5",
+          "upper": "3/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        },
+        {
+          "id": "u4",
+          "weight": "1/6",
+          "lower": "1/5",
+          "upper": "3/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "4"
+        },
+        {
+          "id": "u5",
+          "weight": "1/6",
+          "lower": "1/5",
+          "upper": "3/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "5"
+        }
+      ],
+      "purpose": "interval positive"
+    },
+    {
+      "id": "interval_negative",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/6",
+          "lower": "-3/5",
+          "upper": "-1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/6",
+          "lower": "-3/5",
+          "upper": "-1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/6",
+          "lower": "-3/5",
+          "upper": "-1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/6",
+          "lower": "-3/5",
+          "upper": "-1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        },
+        {
+          "id": "u4",
+          "weight": "1/6",
+          "lower": "-3/5",
+          "upper": "-1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "4"
+        },
+        {
+          "id": "u5",
+          "weight": "1/6",
+          "lower": "-3/5",
+          "upper": "-1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "5"
+        }
+      ],
+      "purpose": "interval negative"
+    },
+    {
+      "id": "interval_straddling",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/6",
+          "lower": "-1/5",
+          "upper": "1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/6",
+          "lower": "-1/5",
+          "upper": "1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/6",
+          "lower": "-1/5",
+          "upper": "1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/6",
+          "lower": "-1/5",
+          "upper": "1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        },
+        {
+          "id": "u4",
+          "weight": "1/6",
+          "lower": "-1/5",
+          "upper": "1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "4"
+        },
+        {
+          "id": "u5",
+          "weight": "1/6",
+          "lower": "-1/5",
+          "upper": "1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "5"
+        }
+      ],
+      "purpose": "interval straddling"
+    },
+    {
+      "id": "wide_reference",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        },
+        {
+          "id": "u4",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "4"
+        },
+        {
+          "id": "u5",
+          "weight": "1/6",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "5"
+        }
+      ],
+      "purpose": "wide reference"
+    },
+    {
+      "id": "heavy_positive",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "7/10",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/10",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/10",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/10",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        }
+      ],
+      "purpose": "heavy positive"
+    },
+    {
+      "id": "heavy_negative",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "7/10",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/10",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/10",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/10",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        }
+      ],
+      "purpose": "heavy negative"
+    },
+    {
+      "id": "weighted_tie",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/4",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/4",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/2",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        }
+      ],
+      "purpose": "weighted tie"
+    },
+    {
+      "id": "proxy_aligned",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "2/5",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "1",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "3/10",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "1",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/5",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "1",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/10",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "-1",
+          "status": "observed",
+          "cluster": "3"
+        }
+      ],
+      "purpose": "proxy aligned"
+    },
+    {
+      "id": "proxy_reversed",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "2/5",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "-1",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "3/10",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "-1",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/5",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "-1",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/10",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "1",
+          "status": "observed",
+          "cluster": "3"
+        }
+      ],
+      "purpose": "proxy reversed"
+    },
+    {
+      "id": "proxy_constant",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "2/5",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "3/10",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/5",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/10",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        }
+      ],
+      "purpose": "proxy constant"
+    },
+    {
+      "id": "missing_heavy",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "7/10",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "missing",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/10",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/10",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/10",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        }
+      ],
+      "purpose": "missing heavy"
+    },
+    {
+      "id": "invalid_heavy",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "7/10",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "sensor_invalid",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/10",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/10",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/10",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "3"
+        }
+      ],
+      "purpose": "invalid heavy"
+    },
+    {
+      "id": "abstained_light",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/4",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/4",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/4",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/4",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "abstained",
+          "cluster": "3"
+        }
+      ],
+      "purpose": "abstained light"
+    },
+    {
+      "id": "zero_weight_members",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/2",
+          "lower": "1/2",
+          "upper": "1/2",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/2",
+          "lower": "1/2",
+          "upper": "1/2",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "0",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "missing",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "0",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "abstained",
+          "cluster": "3"
+        }
+      ],
+      "purpose": "zero weight members"
+    },
+    {
+      "id": "upper_threshold_boundary",
+      "version": "0.1.0",
+      "threshold": "1",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/3",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/3",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/3",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        }
+      ],
+      "purpose": "upper threshold boundary"
+    },
+    {
+      "id": "lower_threshold_boundary",
+      "version": "0.1.0",
+      "threshold": "-1",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/3",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/3",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/3",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        }
+      ],
+      "purpose": "lower threshold boundary"
+    },
+    {
+      "id": "extreme_sampling_mass",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "4999/5000",
+          "lower": "-1",
+          "upper": "-1",
+          "proxy": "-1",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/10000",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "1",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/10000",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "1",
+          "status": "observed",
+          "cluster": "2"
+        }
+      ],
+      "purpose": "extreme sampling mass"
+    },
+    {
+      "id": "clustered_members",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/6",
+          "lower": "-1/5",
+          "upper": "-1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "scene_a"
+        },
+        {
+          "id": "u1",
+          "weight": "1/6",
+          "lower": "-1/5",
+          "upper": "-1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "scene_a"
+        },
+        {
+          "id": "u2",
+          "weight": "1/6",
+          "lower": "-1/5",
+          "upper": "-1/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "scene_a"
+        },
+        {
+          "id": "u3",
+          "weight": "1/6",
+          "lower": "2/5",
+          "upper": "2/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "scene_b"
+        },
+        {
+          "id": "u4",
+          "weight": "1/6",
+          "lower": "2/5",
+          "upper": "2/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "scene_b"
+        },
+        {
+          "id": "u5",
+          "weight": "1/6",
+          "lower": "2/5",
+          "upper": "2/5",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "scene_b"
+        }
+      ],
+      "purpose": "clustered members"
+    },
+    {
+      "id": "all_unavailable_states",
+      "version": "0.1.0",
+      "threshold": "0",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/5",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "missing",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/5",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "unmeasured",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/5",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "out_of_distribution",
+          "cluster": "2"
+        },
+        {
+          "id": "u3",
+          "weight": "1/5",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "sensor_invalid",
+          "cluster": "3"
+        },
+        {
+          "id": "u4",
+          "weight": "1/5",
+          "lower": "-1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "abstained",
+          "cluster": "4"
+        }
+      ],
+      "purpose": "all unavailable states"
+    },
+    {
+      "id": "rational_threshold_tie",
+      "version": "0.1.0",
+      "threshold": "2/3",
+      "units": [
+        {
+          "id": "u0",
+          "weight": "1/3",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "0"
+        },
+        {
+          "id": "u1",
+          "weight": "1/3",
+          "lower": "1",
+          "upper": "1",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "1"
+        },
+        {
+          "id": "u2",
+          "weight": "1/3",
+          "lower": "0",
+          "upper": "0",
+          "proxy": "0",
+          "status": "observed",
+          "cluster": "2"
+        }
+      ],
+      "purpose": "rational threshold tie"
+    }
+  ]
+}
