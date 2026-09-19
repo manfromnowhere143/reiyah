@@ -1,5 +1,17 @@
 # Reiyah
 
+**Current research decision, 19 September 2026:** the
+[roadmap audit](research/roadmap-audit/0.1.0/README.md) finds that the planned
+comparisons ran, but a practical advantage remains unproved. Competent
+conventional methods match the checked stopping results; all 1,790 unresolved
+operating rows now have opposing worlds. The
+[updated roadmap](docs/ENGINE_ROADMAP_2026-09-19.md) adds a bounded comparison
+with modern sequential audits, preserves reference uncertainty, and requires
+genuine revisions and full measured costs before claiming workflow value.
+The [primary-source review](research/roadmap-audit/0.1.0/FRONTIER.md) records the
+current comparators and their limits. Earlier dated checkpoints below remain
+historical evidence. Gate A remains operator-unaccepted.
+
 **Building decision assurance for changing autonomous systems under imperfect evidence.**
 
 Reiyah is being built to help a team justify a system change: what the evidence supports,
@@ -39,8 +51,9 @@ certifies delivered sets of 9 and 53 hypothetical confirmations on the first two
 and 530 on the forty-frame case, under their declared deletion families. That bounded method
 leaves the 373 set unresolved; the new endpoint proof below settles it. These are conditional
 reference results. The forty-frame direction is Mapillary camera base plus retained Megvii lidar
-additions. Read the [next mission and benchmark gates](docs/REIYAH_NEXT_MISSION_2026-09-17.md)
-for the Engine/research split and the evidence needed for a broader performance claim.
+additions. The [September 17 mission](docs/REIYAH_NEXT_MISSION_2026-09-17.md)
+records the earlier ownership split and benchmark gates; the
+[current roadmap](docs/ENGINE_ROADMAP_2026-09-19.md) reconciles their execution.
 
 The [reference-correction checkpoint](docs/PERCEPTION_REFERENCE_CORRECTIONS_2026-09-17.md)
 qualifies a separate REC✓D/KITTI development source. On two of 58 available images in a
@@ -198,7 +211,7 @@ measurement and reference-audit research motivates the current focus. Human beli
 under intervention and cross-domain product value require their own observations.
 
 [Engine architecture and mathematics](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) ·
-[Current state and roadmap](docs/ENGINE_ROADMAP_2026-09-13.md) ·
+[Current state and roadmap](docs/ENGINE_ROADMAP_2026-09-19.md) ·
 [Research findings](docs/GENERAL_SYNTHESIS.md) · [Proposed study](#current-engine-development) ·
 [Run the auditor](#run-the-offline-auditor)
 
@@ -444,7 +457,12 @@ part of the record: its future-count improvement under collection-log holdouts w
 with a descriptive interval including zero; spatial continuity slightly worsened the primary
 loss. Neither passed the declared usefulness screen.
 
-## The next decision, and who owns it
+## Historical research exchange
+
+This section records the earlier two-owner arrangement. Under the current
+operator instruction, Codex owns the complete mission with no delegation or
+second-model dependency. The [current roadmap](docs/ENGINE_ROADMAP_2026-09-19.md)
+selects the next research question; the exchange below remains historical context.
 
 Engine owns common inputs, admission, custody, viewing and main integration. Fable owns the
 independent research, comparator, association experiments and checkers on its separate research
@@ -552,9 +570,9 @@ identities.
 
 | Read for | Start here |
 |---|---|
-| Current Engine direction and implementation | [Dated roadmap](docs/ENGINE_ROADMAP_2026-09-13.md), [latest checkpoint](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md), [current continuation](docs/SESSION_HANDOFF.md), [decision interface](research/perception-decision/0.1.0/README.md) |
-| Independent research and its corrections | [Current sign/custody consumer review](docs/FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md), [earlier raw/overlap review](docs/FABLE_RAW_CONSUMER_REVIEW_2026-09-13.md); exact research commits and scope remain separate from main integration |
-| Present evidence, limits and comparison with prior work | [11 September review](docs/ENGINE_CREDIBILITY_REVIEW_2026-09-11.md), [reproducible decision examples](research/perception-decision-review/0.1.0/README.md) |
+| Current Engine direction and implementation | [Current roadmap](docs/ENGINE_ROADMAP_2026-09-19.md), [execution audit](research/roadmap-audit/0.1.0/README.md), [current continuation](docs/SESSION_HANDOFF.md), [revision interface](research/perception-revision/0.1.0/README.md) |
+| Earlier independent research and its corrections | [Dated sign/custody consumer review](docs/FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md), [earlier raw/overlap review](docs/FABLE_RAW_CONSUMER_REVIEW_2026-09-13.md); exact research commits and scope remain preserved |
+| Present evidence, limits and comparison with prior work | [19 September primary-method review](research/roadmap-audit/0.1.0/FRONTIER.md), [earlier credibility review](docs/ENGINE_CREDIBILITY_REVIEW_2026-09-11.md), [reproducible decision examples](research/perception-decision-review/0.1.0/README.md) |
 | Mission and scientific structure | [Scientific charter](docs/SCIENTIFIC_CHARTER.md), [architecture](docs/ARCHITECTURE.md), [mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) |
 | Current interpretation of sensor, human-proxy and LLM experiments | [Corrected synthesis](docs/GENERAL_SYNTHESIS.md), [current claim register](evidence/claim-status-register-2026-09-08T054835Z.json) |
 | Selected study and earlier investigations | [60-scene study design](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md#one-prospective-study), [research-board report](docs/RESEARCH_BOARD_2026-09-07.md), [earlier training design](docs/TRAINING_OVERLAP_NEXT_EXPERIMENT_2026-09-07.md) |

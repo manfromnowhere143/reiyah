@@ -1,0 +1,78 @@
+{
+  "document_id": "reiyah.roadmap-audit.verification",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "audit_passed": true,
+  "mechanical_assertions": 220,
+  "audit_check_sha256": "208f13d44220239e2999e5574fbdf4dd6ebd4928a5725ad44589a4d531fc1205",
+  "checker_source_sha256": "1fc7a662f3568f72e3d3646eb04303ae8b594d61d50fcde64367a66a34c8d639",
+  "audited_local_source_bindings": 22,
+  "selected_primary_works": 20,
+  "consistency": {
+    "state": "pass",
+    "command": "python -B tools/measure/gate_b_check.py",
+    "network_denied_before_python": true,
+    "report_sha256": "4c70d92c7020303ca28219fbce4b4373285532f20bb730aeefc0382838c3a85f",
+    "checks": [
+      {
+        "check": "MANIFEST  every retained transcript exists with its recorded SHA-256",
+        "detail": "52 transcripts",
+        "state": "pass"
+      },
+      {
+        "check": "REPLAY    every replayed process exits zero with the expected normalized transcript",
+        "detail": "0 replicated, 52 not replayed here",
+        "state": "pass"
+      },
+      {
+        "check": "REGISTER  newest register validates and reconciliation passes",
+        "detail": "RESULT: PASS - no live artifact asserts a forbidden figure",
+        "state": "pass"
+      },
+      {
+        "check": "CUSTODY   retained publisher records and committed payloads match their digests",
+        "detail": "4 sources",
+        "state": "pass"
+      },
+      {
+        "check": "STYLE     no em dash in live Markdown",
+        "detail": "326 files",
+        "state": "pass"
+      },
+      {
+        "check": "STYLE     every result document carries Document ID, Version, Lifecycle status",
+        "detail": "",
+        "state": "pass"
+      },
+      {
+        "check": "STYLE     every relative Markdown link resolves",
+        "detail": "",
+        "state": "pass"
+      },
+      {
+        "check": "REVIEW    every number in every result document is bound to retained bytes",
+        "detail": "RESULT: PASS  (0 document(s) with unbound numbers of 42)",
+        "state": "pass"
+      },
+      {
+        "check": "REVIEW    the register and the result documents describe the same program",
+        "detail": "RESULT: PASS  (0 finding(s))",
+        "state": "pass"
+      },
+      {
+        "check": "REVIEW    attack suite",
+        "detail": "pass --attacks to run",
+        "state": "not_run_here"
+      }
+    ],
+    "passed_checks": 9,
+    "optional_historical_attack_suite": "not_run_here",
+    "historical_transcripts_replayed_here": 0,
+    "historical_transcripts_retained_not_replayed": 52,
+    "additional_note": "One final repeat after current README navigation and cost-scope wording changed. Packaging initially mishandled the explicit optional skip; the checker itself passed and is unchanged."
+  },
+  "new_scientific_experiment_executed": false,
+  "historical_scientific_replay_executed": false,
+  "independent_scientific_replication": false,
+  "scope": "Fresh byte, metadata, population and public-aggregate reconciliation. Not source truth, correctness of external theorems, physical validity, economic value or frontier superiority."
+}

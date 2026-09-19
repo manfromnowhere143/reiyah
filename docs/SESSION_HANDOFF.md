@@ -1,3 +1,53 @@
+# Reiyah roadmap audit and next research decision, 2026-09-19
+
+Continuation version: `0.1.43`. Status: `exploratory`.
+
+Read the [current roadmap](ENGINE_ROADMAP_2026-09-19.md), the
+[execution audit](../research/roadmap-audit/0.1.0/README.md) and
+[primary-method comparison](../research/roadmap-audit/0.1.0/FRONTIER.md).
+The research followed the planned falsification sequence; a product advantage
+remains unestablished. Current navigation now reflects conventional/native
+parity, all 99 resolved retrospective query floors, zero alternative-selector
+wins and four losses, and complete opposing-world evidence for all 1,790
+unresolved operating rows. All 7,707 dependent rows, including 2,199 blocked,
+remain unchanged. The historical workflow brief's 279-gap paragraph is closed;
+reuse its owner questions with this correction.
+
+The dated review selects 20 primary works, with 13 full HTML section reviews
+and seven abstract-level records. It includes 2026 adaptive evaluation and
+prediction-assisted inference, established weighted sequential audits, rational
+proof systems, and downstream/measurement limitations. Thirty-two search
+queries and 40 retrieval attempts are retained; three HTTP failures and the
+gzip decoding correction remain explicit. This is internal source review and
+aggregate reconciliation, not replication or a frontier superiority claim.
+
+Next bounded technical question: compare established sequential audits on
+authored finite populations while preserving residual reference uncertainty.
+Freeze exact fixtures, implementation, guarantees, error allocation and costs
+before execution. Proposed limits: 32 populations of at most six units,
+300 process seconds execution, 300 checking, 64 MiB. This task is proposed and
+has NOT run. Keep exact all-world conclusions separate from statistical claims.
+A later value experiment requires an owner-defined decision/observation process,
+genuine chronological revisions, a qualified outcome boundary and full measured
+costs. No further sensitivity sweep or generic customer inventory is selected.
+
+The September 13 roadmap and September 17 mission are historical navigation.
+Current Codex owns the complete mission; there is no Fable/second-model dependency
+or delegation. Preserve frozen studies and their negative findings. No Engine
+algorithm changed: source remains 38a50ec014cc83e86ea6f247df803ded2971b386.
+All 1,433 reserved images remain closed. HARBOR's human belief, readiness,
+recovery, causal and transfer claims require distinct protocols; Gate A remains
+operator-unaccepted.
+
+Owned packet: `~/.codex/reports/reiyah/roadmap-audit-2026-09-19-tgwsxrpn/`.
+Its CLOSEOUT and publisher receipt retain final commit, checks, measured costs
+and exact artifact readback. Controller stays historical, clean at 74fbacc;
+closed candidates stay unchanged. Use a fresh owned same-repository candidate
+for later work. Preserve Daniel as author and committer, safe normal push and
+exact publisher readback. Publisher integrity is not independent verification.
+No outreach, paid compute, inference, reserved access, deployment or platform
+expansion follows. Earlier continuation sections below remain historical.
+
 # Reiyah operating timing witness closeout, 2026-09-19
 
 Continuation version: `0.1.42`. Status: `exploratory`.

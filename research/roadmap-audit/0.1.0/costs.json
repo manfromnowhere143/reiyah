@@ -1,0 +1,51 @@
+{
+  "document_id": "reiyah.roadmap-audit.costs",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "snapshot_utc": "2026-09-19T16:41:13.000648+00:00",
+  "instrumentation_first_utc": "2026-09-19T16:16:58Z",
+  "actual_turn_start_utc": null,
+  "timer_scope": "Retained setup Git subprocesses, web-search calls, HTTP retrievals and commands completed before this accounting call. Many reads, edits, reasoning and tool overhead are not instrumented here.",
+  "categories": {
+    "recorded_command": {
+      "events": 2,
+      "failed": 0,
+      "sum_elapsed_seconds": 0.5072365002706647
+    },
+    "setup_git": {
+      "events": 15,
+      "failed": 0,
+      "sum_elapsed_seconds": 2.7700242940000006
+    },
+    "source_retrieval": {
+      "events": 40,
+      "failed": 3,
+      "sum_elapsed_seconds": 68.2014664998278
+    },
+    "web_search": {
+      "events": 8,
+      "failed": 0,
+      "sum_elapsed_seconds": 25.243
+    }
+  },
+  "known_interval_union_seconds": 96.722478,
+  "known_duration_sum_seconds": 96.72172729409847,
+  "known_events": 65,
+  "failed_retained_events": 3,
+  "http_response_body_bytes_including_failures": 9940583,
+  "source_payload_bytes_public": 0,
+  "new_non_checkout_bytes_at_snapshot": 12446389,
+  "checkout_bytes_at_snapshot": 26982439,
+  "new_non_checkout_ceiling_bytes": 262144000,
+  "free_bytes": 29029707776,
+  "free_floor_bytes": 5368709120,
+  "new_model_calls": 0,
+  "new_images_read": 0,
+  "reserved_outcomes_read": 0,
+  "delegated_agents": 0,
+  "human_seconds": null,
+  "useful_engineering_seconds": null,
+  "monetary_cost": null,
+  "cost_claim": "No human or total economic saving is inferred. Whole-session billing and effort are not measured.",
+  "later_costs": "This accountant, final checks, integration and publication are outside this snapshot and retained in private receipts and closeout."
+}
