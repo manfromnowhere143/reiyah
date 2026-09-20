@@ -1,3 +1,61 @@
+# Reiyah physical source qualification closeout, 2026-09-20
+
+Continuation version: `0.1.52`. Status: `exploratory`.
+
+The [physical source packet](../research/physical-source/0.1.0/README.md) closes
+one bounded 7V-Scanario review. Paper, GitHub commit/tree, dataset revision and
+manufacturer context are retained: 14 primary bodies (1,150,463 bytes) plus
+three private derived texts (57,050 bytes). The host lists 37 files, including
+34 archives; every archive exceeds the current 8 MiB source and 128 MiB artifact
+ceilings. No trajectory, sensor, mesh or image archive was downloaded.
+
+Physical clearance remains unresolved; zero physical cases ran. The source
+documents useful geometry and navigation, but this review does not qualify the
+ego/target footprint errors, joint pose uncertainty, dataset clock residuals,
+intersample motion or whole-trajectory statistical coverage. Manufacturer CEP
+and one-sigma figures must not become guaranteed error limits. A generic timing
+statement is not a calibrated dataset clock. Paper/README sensor and timestamp
+differences remain. Uninspected archive contents and unavailable calibration
+records are not asserted absent everywhere.
+
+The [contract](../research/physical-source/0.1.0/CONTRACT.md) specifies the
+geometry-to-clearance error and rate obligations. The
+[minimum extract](../research/physical-source/0.1.0/minimum-extract.json) names
+the smallest useful two-actor numeric record and calibration evidence, without
+requiring Daniel to own private team files. No outreach was sent.
+
+Freeze: 18f4d2e15b3147ece40309d205bb872aec1aa8bb36346661b270e56503623210.
+The offline metadata/custody audit, eight rejection controls and two frozen-file
+controls pass. These are artifact checks; no comparator arm, independent
+calibration review, replication or physical performance estimate exists. The
+current consistency result is retained in the packet's validation.json. Historical
+transcript identity binding does not count as new replay or Gate A acceptance.
+One prematurely dispatched command was refused by the supervisor, the web
+renderer failed to open the dataset page, one guessed memory path was absent,
+and a read-only Git diff used the owner directory instead of the candidate.
+All are retained; corrected reads and sequential captures succeeded. No frozen file changed.
+
+Owner: `~/.codex/reports/reiyah/physical-source-2026-09-20-vgy6sjik/`.
+Its CLOSEOUT, FINAL_COSTS and PUBLISH_FINAL records bind final integration and
+publisher readback. They are integrity receipts, not independent transport
+verification. Proposed roadmap is 0.3.3. README substance and all six diagrams
+are preserved. Use a fresh owned candidate for subsequent work.
+
+Next useful action: seek a public compact numeric export and applicable physical
+uncertainty records, or qualify a distinct public source. Freeze an exact selector
+before new numeric outcomes. Stop this source's physical comparison until its
+contract qualifies. Do not broaden the monitor, reopen reserved data, rerun the
+closed eight NGSIM windows or repeat authored sweeps to replace missing evidence.
+More download budget alone would not resolve calibration. Daniel need not grant
+another general permission or supply private team records.
+
+All 1,433 reserved images stay closed. Perception source remains
+38a50ec014cc83e86ea6f247df803ded2971b386. Gate A remains operator-unaccepted.
+The historical controller stays clean at 74fbacc. Solo ownership, existing caps,
+Daniel's Git identity and normal guarded push/readback authorization continue.
+No inference, training, paid compute, delegation, outreach, deployment or physical
+control was added. Earlier sections remain history.
+
 # Reiyah continuous uncertainty closeout, 2026-09-20
 
 Continuation version: `0.1.51`. Status: `exploratory`.

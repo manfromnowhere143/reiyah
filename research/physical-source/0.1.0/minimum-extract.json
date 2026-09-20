@@ -1,0 +1,24 @@
+{
+  "document_id": "reiyah.physical-source.minimum-extract",
+  "version": "0.1.0",
+  "status": "proposed",
+  "request_sent": false,
+  "user_private_records_required": false,
+  "candidate_source_revision": "c131d445f3ea51c9db6ed3e63c64eac762f01d6e",
+  "candidate_recording": "recordings/multi-vehicle__06_overtaking__2024-12-05-12-39-43.bag.tar.xz",
+  "selection_scope": "First documented numbered following/overtaking scenario; suggestion only. No interval or actor pair selected and no payload outcomes inspected. Freeze exact selector before acquisition.",
+  "example": "For a two-second following interval, provide the identified ego front and lead rear geometry and motion on a documented clock, together with error and between-sample motion evidence. A centimetre-accuracy caption is insufficient.",
+  "fields": [
+    "Source archive digest, extraction procedure/version, original record offsets and hashes; no inferred successful selection.",
+    "Two stable actor IDs and timestamps, clock units/domain, position/orientation units and coordinate/reference-point conventions.",
+    "Numeric poses, kinematics and validity/solution flags; separate missing, sensor-invalid and out-of-scope values.",
+    "Measured body supports or compact footprint vertices, ego/target INS-to-body transforms, mounting configuration and geometry/registration uncertainty.",
+    "Pose uncertainty semantics and applicable calibration records; preserve temporal and cross-vehicle dependence.",
+    "Residual clock bias/drift/jitter and corrections for the exact exported messages; no assumption of synchronous object lists.",
+    "A justified intersample motion envelope over the selected horizon, including edges/dropouts, or a separately specified statistical whole-path model.",
+    "Terms for retaining and, if intended, distributing this exact form of extract; no image, raw sensor or personal-data payload required."
+  ],
+  "stop_rule": "Do not run or label a physical clearance benchmark until the exact intended deterministic or statistical contract is qualified. More download budget alone would not close the scientific gaps.",
+  "alternative_public_lead": "ViF-GTAD v2 (Zenodo 7808255) documents added vehicle dimensions but its listed archive is about 6.7 GB; discovery only here, not retained evidence or an admitted source.",
+  "next_work": "Seek an existing public compact numeric export plus calibration/clock records; otherwise qualify a separate public source. Do not widen the monitor or rerun closed cases to replace missing evidence."
+}

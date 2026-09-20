@@ -1,0 +1,61 @@
+{
+  "document_id": "reiyah.physical-source.controls",
+  "version": "0.1.0",
+  "freeze_sha256": "18f4d2e15b3147ece40309d205bb872aec1aa8bb36346661b270e56503623210",
+  "status": "pass",
+  "results": [
+    {
+      "id": "physical_promotion",
+      "expected_reason": "review_outcomes",
+      "status": "pass"
+    },
+    {
+      "id": "unknown_to_zero",
+      "expected_reason": "unknown_values",
+      "status": "pass"
+    },
+    {
+      "id": "clock_requirement_omitted",
+      "expected_reason": "requirements",
+      "status": "pass"
+    },
+    {
+      "id": "unknown_review_property",
+      "expected_reason": "review_fields",
+      "status": "pass"
+    },
+    {
+      "id": "source_absent",
+      "expected_reason": "source_missing",
+      "status": "pass"
+    },
+    {
+      "id": "source_changed",
+      "expected_reason": "source_digest",
+      "status": "pass"
+    },
+    {
+      "id": "source_receipt",
+      "expected_reason": "receipt_digest",
+      "status": "pass"
+    },
+    {
+      "id": "duplicate_json_property",
+      "expected_reason": "duplicate_json_key",
+      "status": "pass"
+    },
+    {
+      "id": "frozen_qualification.json",
+      "expected_reason": "frozen_file_digest",
+      "status": "pass"
+    },
+    {
+      "id": "frozen_audit.py",
+      "expected_reason": "frozen_file_digest",
+      "status": "pass"
+    }
+  ],
+  "rejection_controls": 8,
+  "frozen_file_controls": 2,
+  "scope": "Artifact integrity and claim-scope guard tests, not calibration or scientific replication"
+}

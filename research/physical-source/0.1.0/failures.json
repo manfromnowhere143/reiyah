@@ -1,0 +1,39 @@
+{
+  "document_id": "reiyah.physical-source.failures",
+  "version": "0.1.0",
+  "failures": [
+    {
+      "id": "source-dispatch-001",
+      "status": "failed",
+      "scope": "Pre-command supervisor guard",
+      "result": "A source command was dispatched while another was unfinished. The supervisor refused it before network access; the later sequential retry succeeded.",
+      "tool_wall_seconds": 0.279957375,
+      "receipt": "private/dispatch-failure-001.json"
+    },
+    {
+      "id": "web-render-001",
+      "status": "failed",
+      "scope": "Dataset landing-page web renderer",
+      "result": "The renderer could not open the Hugging Face landing page. Direct public pinned API and metadata capture succeeded; no private route was used."
+    },
+    {
+      "id": "read-path-001",
+      "status": "failed",
+      "scope": "Read-only memory discovery",
+      "result": "The guessed reiyah-latest.md memory path did not exist. The current pointer was located by file listing; no repository change occurred.",
+      "tool_chunk": "2083c3"
+    },
+    {
+      "id": "git-cwd-001",
+      "status": "failed",
+      "scope": "Read-only diff command",
+      "result": "Git diff was called in the owner report directory, which is not a Git worktree; it exited 129 before any change. Corrected candidate read succeeded.",
+      "tool_chunk": "838c09",
+      "retained_stderr_excerpt": "warning: Not a git repository. Use --no-index to compare two paths outside a working tree",
+      "tool_wall_seconds": 0.228961042
+    }
+  ],
+  "physical_result": "unresolved",
+  "physical_cases": 0,
+  "inspection_limit": "Calibration record absence is not established beyond inspected scope; archive contents uninspected."
+}

@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.2**. Status: exploratory.
+Proposed roadmap version: **0.3.3**. Status: exploratory.
 Research cutoff: 20 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -107,9 +107,25 @@ its correction remain. This completes a bounded calculation of what a supplied
 contract would imply; gate 1 still requires evidence that the contract applies.
 No closed NGSIM windows were rerun and no physical claim was promoted.
 
+The [physical source investigation](../research/physical-source/0.1.0/README.md)
+now pins 7V-Scanario's public geometry/motion documentation and dataset inventory.
+All 34 listed archives exceed current limits. The reviewed manufacturer precision
+statistics, clock description and interpolation do not establish the joint
+physical envelope. No archive payload or physical case ran. The source audit
+passes with eight rejection controls and two frozen-file controls; these verify
+custody and scope, not calibration. Documentation discrepancies remain visible.
+
+The [measurement bridge](../research/physical-source/0.1.0/CONTRACT.md) specifies
+how body geometry, pose and orientation errors, clocks and intersample motion
+would produce valid clearance inputs. A statistical whole-horizon route remains
+separate. The [minimum extract](../research/physical-source/0.1.0/minimum-extract.json)
+replaces a vague request for more data with exact source-bound fields. This
+closes one bounded source review; the physical comparison remains unadmitted.
+Another monitor extension or more download budget alone cannot close that gap.
+
 | Next investment | Concrete bounded work | Advance criterion and reason to stop |
 | --- | --- | --- |
-| 1. Qualify public relational evidence | Follow the pinned artifact's scene exports and public simulator data documentation for ego/lead identity, bumper geometry, shared clock and sufficient horizon. Determine whether an external motion-error contract is justified. No image inference or reserved study is implied. | Admit only a fully specified scope with appropriate rights and known residual uncertainty. Otherwise retain the specific missing fields and stop that corpus comparison. |
+| 1. Qualify public relational evidence | Seek an existing compact numeric export with ego/lead geometry, source identity, clock residuals and applicable uncertainty/motion records. 7V-Scanario is a pinned lead, not an admitted benchmark. A distinct public source can qualify under the same obligations. No image inference, archive expansion or reserved study is implied. | Admit only a fully specified scope with appropriate rights and known residual uncertainty. Otherwise retain the specific missing fields and stop that corpus comparison. |
 | 2. Test consequential relational obligations | Freeze one real observable requirement and its semantic adjudication. Compare conventional temporal monitoring and the relevant published monitor on identical usable evidence, population and unknown-answer rules. Retain false assurance, false rejection, abstention and coverage by scenario. | Demonstrate correctness first. Advance a value hypothesis only if useful resolution or total work improves without weaker obligations; parity is a valid negative. |
 | 3. Test simulation credibility for that decision | Use already qualified logged/replayed outputs to separate simulator error, policy error and event-timing error. Prespecify shared scenarios, intervention semantics, dependence and off-support exclusions. Audit action-conditioned consistency and ranking changes. | A favorable synthetic result must survive a separately justified reality-gap test. A simulator's own generated labels cannot certify its fidelity. Stop claims outside the qualified envelope. |
 | 4. Reconnect HARBOR recovery | Define object-level driver information, automation state, conflict opportunity, intervention and recovery outcome over a common clock. Specify recovery horizon and action feasibility before looking at outcome differences. | Admit measured constructs and an identification design. Gaze alone, model rationale or an attention label cannot establish belief, readiness or a causal benefit. |

@@ -1,0 +1,66 @@
+{
+  "document_id": "reiyah.physical-source.freeze",
+  "version": "0.1.0",
+  "status": "frozen_exposed_source_review",
+  "frozen_utc": "2026-09-20T18:16:06.490791+00:00",
+  "base_commit": "acd270ddaf5c62671a025d698631e58fa9e39eb8",
+  "files": {
+    "PLAN.md": {
+      "bytes": 2762,
+      "sha256": "4090a4145abaf147bf1cc012b191e3346a3b9d5aa19cf9016268263ebe3dc68d"
+    },
+    "CONTRACT.md": {
+      "bytes": 4128,
+      "sha256": "ded3c2db52a1d2c76c23e208f09992c37a3cced50edac59c209c07c51ccc1283"
+    },
+    "DISTRIBUTION.md": {
+      "bytes": 1670,
+      "sha256": "9013f2d414ac0fb17ac2836d220760cadfd3ba9995e9bb4898df1e059d6637d3"
+    },
+    "SOURCES.md": {
+      "bytes": 5338,
+      "sha256": "854b6454f82a8a3013e2ba76d8ca9229f7c7bcf06877c4c4174ab7d79b61e7f4"
+    },
+    "sources.json": {
+      "bytes": 12010,
+      "sha256": "3e6689892549c90655e8addfff235ec4c43bdb35dd7f14a215fb1532aa880049"
+    },
+    "qualification.json": {
+      "bytes": 5427,
+      "sha256": "f4548ef51feb0361747a3f594942f3b5998ade139f3721526aadea700c089e72"
+    },
+    "minimum-extract.json": {
+      "bytes": 2544,
+      "sha256": "9941aae45cd12fbd4eff3f8a80a8119423b3ef3a47b3e727de60509da8d6ac24"
+    },
+    "audit.py": {
+      "bytes": 11319,
+      "sha256": "64e2acef14f11ae7e13debe46979ef32acc620d498c0839e5790ace127a5922c"
+    },
+    "controls.py": {
+      "bytes": 4185,
+      "sha256": "53c431cf5928d084d79478f815c31d24c44651fda67854d1a7c63caf65ea5c32"
+    }
+  },
+  "runtime": {
+    "path": "/Users/danielwahnich/.codex/reports/reiyah/engine-discovery-custody-2026-09-13/private/runtime/bin/python",
+    "sha256": "3b6b69c61fd3765ab911d701cd17293b4a9154a0cb4973b546f05847f9a164c6"
+  },
+  "supervisor_sha256": "14204bc71d9081626babf7b0f382c0cc6dfc45cfc94aa38f45beb4c77a95d0ef",
+  "limits": {
+    "artifact_cap_bytes": 134217728,
+    "source_cap_bytes": 8388608,
+    "free_space_floor_bytes": 5368709120,
+    "execution_process_seconds": 600,
+    "checking_process_seconds": 600
+  },
+  "allocation": {
+    "physical_cases": 0,
+    "custody_inventory_audits": 1,
+    "rejection_controls": 8,
+    "frozen_file_controls": 2
+  },
+  "network_policy": "deny network before audit and checking child runtimes",
+  "reserved_images_closed": 1433,
+  "authority": "Review and audit identity only; not a preregistered physical experiment or operator acceptance"
+}

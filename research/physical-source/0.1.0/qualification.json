@@ -1,0 +1,124 @@
+{
+  "document_id": "reiyah.physical-source.qualification",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "inspection_scope": "Pinned public metadata, documentation and one visualization source file only; not the archive contents or external unpublished calibration records",
+  "facts": {
+    "hf_revision": "c131d445f3ea51c9db6ed3e63c64eac762f01d6e",
+    "github_revision": "86d57969d6443740fac4177de3af8e6637f26dfa",
+    "github_tree": "169b0f48832a6dec56dfef8630e6c6af17e87a79",
+    "hf_files": 37,
+    "archives": 34,
+    "archive_bytes": 985337261632,
+    "smallest_archive_path": "3D-models/dae.tar.xz",
+    "smallest_archive_bytes": 1070666248,
+    "ins_archive_bytes": 1490317000,
+    "github_tree_entries": 17,
+    "github_blobs": 10,
+    "archives_at_or_below_source_cap": 0,
+    "archive_payloads_captured": 0
+  },
+  "requirements": [
+    {
+      "code": "source_identity",
+      "assessment": "documented",
+      "evidence_ids": [
+        "paper.html",
+        "github-commit.json",
+        "hf-pinned.json"
+      ],
+      "finding": "Source versions pinned; the paper is a September 2026 arXiv posting of work attributed to SDF 2025.",
+      "needed_record": "No identity gap for the inspected metadata; actual payload content is uninspected."
+    },
+    {
+      "code": "two_actor_samples",
+      "assessment": "unmeasured",
+      "evidence_ids": [
+        "hf-pinned.json",
+        "github-README.md"
+      ],
+      "finding": "All listed trajectory/mesh/sensor archives exceed both local source and artifact caps.",
+      "needed_record": "A small provenance-bearing numeric extract for two identified actors; no media. No archive internals were inspected."
+    },
+    {
+      "code": "body_geometry",
+      "assessment": "unresolved",
+      "evidence_ids": [
+        "paper.html",
+        "github-README.md",
+        "github-node.cpp"
+      ],
+      "finding": "Target-aligned scans and directional dimensions are documented; visualization code is not a measured footprint certificate.",
+      "needed_record": "Both actual footprints or projected supports, INS output reference transforms, geometry/registration errors and ego geometry for the exact configuration."
+    },
+    {
+      "code": "pose_uncertainty",
+      "assessment": "unresolved",
+      "evidence_ids": [
+        "paper.html",
+        "oxts-v3.pdf"
+      ],
+      "finding": "The datasheet distinguishes CEP position accuracy and axis-specific one-sigma angles; this is not a deterministic envelope.",
+      "needed_record": "Unit/configuration/solution-mode bindings and calibrated joint pose errors or a justified simultaneous deterministic bound. The authors report a dedicated accuracy check, but its records were not obtained."
+    },
+    {
+      "code": "clock_residual",
+      "assessment": "unresolved",
+      "evidence_ids": [
+        "paper.html",
+        "github-README.md",
+        "oxts-timing.html"
+      ],
+      "finding": "Clock alignment is described; the manufacturer postprocessing timing statement is not bound to the dataset message chain.",
+      "needed_record": "Timestamp origin, latency corrections, per-unit bias/drift/jitter and validity intervals, with evidence reducing them to the solver common-offset model or a newly frozen model."
+    },
+    {
+      "code": "inter_sample_motion",
+      "assessment": "unresolved",
+      "evidence_ids": [
+        "paper.html"
+      ],
+      "finding": "High-rate reference and interpolation are described; no physical rate bound is qualified in this review.",
+      "needed_record": "A measured/justified bound covering translation and rotation between samples, dropout policy and horizon edges; sampled extrema alone are insufficient."
+    },
+    {
+      "code": "whole_trajectory_coverage",
+      "assessment": "unresolved",
+      "evidence_ids": [
+        "paper.html",
+        "oxts-v3.pdf"
+      ],
+      "finding": "Covariance fields and single-unit statistics do not establish a simultaneous two-actor whole-horizon coverage event.",
+      "needed_record": "For a probabilistic study, calibration residuals, population, horizon, dependence, selection rules and coverage estimation uncertainty under a separately frozen protocol."
+    },
+    {
+      "code": "distribution_scope",
+      "assessment": "unresolved",
+      "evidence_ids": [
+        "github-README.md",
+        "hf-LICENSE",
+        "hf-README.md"
+      ],
+      "finding": "The dataset host provides custom terms while GitHub says license on request; no transformed data is published.",
+      "needed_record": "A retained rights basis for the exact intended extract and any redistribution. This metadata-only review proceeds with source bodies private."
+    }
+  ],
+  "outcomes": {
+    "physical_clearance": "unresolved",
+    "physical_experiment": "blocked",
+    "physical_benchmark_admitted": false,
+    "sampled_proxy_executed": false,
+    "physical_case_count": 0,
+    "reserved_images_closed": 1433,
+    "independent_replication": false,
+    "gate_a_operator_accepted": false
+  },
+  "uncertainty_values": {
+    "physical_position_bound_m": null,
+    "physical_heading_bound_rad": null,
+    "dataset_clock_bound_seconds": null,
+    "global_clearance_rate_bound_mps": null,
+    "simultaneous_coverage_probability": null
+  },
+  "review_authority": "Same-session research interpretation; no operator acceptance, external calibration verification, legal compliance or independent scientific review"
+}
