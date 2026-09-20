@@ -1,3 +1,40 @@
+# Reiyah README depth and editorial correction, 2026-09-20
+
+Continuation version: `0.1.48`. Status: `exploratory`.
+
+Daniel clarified that the README must retain substantive research explanation
+and useful diagrams while fixing its order and voice. Read the
+[editorial and attribution rules](EDITORIAL_POLICY.md) before presentation work.
+An ordering or copy-edit request does not authorize a broad reduction or mission
+reframing. The prior 19 September reduction was overbroad for that request.
+
+The revised README restores the common-reference decision model, reference-error
+example, measurement workflow, joint-error interpretation and corrections,
+broader HARBOR questions and evidence architecture. Six scoped diagrams replace
+the single overview. The obsolete Engine/Fable workflow remains historical.
+Dated updates follow the stable introduction, methods, evidence and reproduction.
+All current 20 September findings, negative comparisons and outcome boundaries
+remain. No Engine source, frozen experiment or acceptance record changes.
+
+GitHub's commit-author API confirms that 13 historical August 29 commits carry
+Claude co-author trailers associated with the `claude` account, while their Git
+author and committer are Daniel. The ordinary contributor endpoint currently
+returns Daniel only; that does not clear the trailers or verify every UI surface.
+This task does not rewrite history or claim the old attribution is removed.
+Inspect full messages and both identity fields in every new push range.
+
+The owned packet at
+`~/.codex/reports/reiyah/readme-depth-2026-09-20-te1yqmwv/` retains the before/after
+inventory, source checks, rendering, validation, attribution audit and final
+publisher readback. The complete older README remains in its existing linked
+archive. The historical controller remains at 74fbacc and all 1,433 reserved
+images stay closed. Gate A remains operator-unaccepted.
+
+Scientific continuation remains the observation-contract closeout below and the
+current roadmap. Actual revision decisions and human/full-cost measurements
+remain absent; continued useful authorized technical work does not require a
+new general permission. Earlier editorial and scientific records remain history.
+
 # Reiyah observation-contract closeout, 2026-09-20
 
 Continuation version: `0.1.47`. Status: `exploratory`.
