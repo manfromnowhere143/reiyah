@@ -1,0 +1,191 @@
+{
+  "document_id": "reiyah.continuous-envelope.costs",
+  "version": "0.1.0",
+  "cutoff_utc": "2026-09-20T16:14:25.124675+00:00",
+  "scope": "Completed owned receipts plus separately timed setup Git commands. Excludes this write and later operations; their receipts remain at later cutoff.",
+  "categories": {
+    "online": {
+      "commands": 1,
+      "outer_seconds": 1.010570541024208,
+      "child_cpu_seconds": 0.89787
+    },
+    "checking": {
+      "commands": 4,
+      "outer_seconds": 3.9622536667156965,
+      "child_cpu_seconds": 3.73515
+    },
+    "execution": {
+      "commands": 2,
+      "outer_seconds": 0.24624358396977186,
+      "child_cpu_seconds": 0.110928
+    },
+    "packaging": {
+      "commands": 4,
+      "outer_seconds": 0.6113953739404678,
+      "child_cpu_seconds": 0.12303
+    },
+    "source": {
+      "commands": 5,
+      "outer_seconds": 6.3122200418729335,
+      "child_cpu_seconds": 0.340202
+    }
+  },
+  "completed_owned_commands": 16,
+  "recorded_duration_sum_seconds": 13.472761415410787,
+  "utc_supervised_envelope_union_seconds": 12.148515,
+  "setup_git_seconds": 1.3300782078877091,
+  "setup_has_no_observed_end_utc": true,
+  "unplaced_direct_tool_seconds": 8.532648748,
+  "unplaced_not_added_to_utc_union": true,
+  "owned_artifact_bytes_before_write": 3387085,
+  "owned_temporary_bytes_retained": 776892,
+  "owned_initial_projection_bytes": 85885,
+  "checkout_initial_bytes": 35945598,
+  "checkout_current_bytes": 36066454,
+  "free_disk_bytes": 24216498176,
+  "source_capture_bytes": 2187752,
+  "derived_text_bytes": 96827,
+  "limits": {
+    "artifact_cap_bytes": 134217728,
+    "source_cap_bytes": 8388608,
+    "free_space_floor_bytes": 5368709120,
+    "execution_process_seconds": 600,
+    "checking_process_seconds": 600
+  },
+  "sampling_limit": "Owned temporary paths counted; point samples do not bound unseen peaks. Checkout and shared Git objects separate.",
+  "shared_git_before": {
+    "loose_objects": 5991,
+    "loose_object_kib": 40844,
+    "pack_kib": 0,
+    "garbage_items": 1,
+    "garbage_kib": 0,
+    "attribution": "unattributed read-only metadata observation; no cleanup"
+  },
+  "unknown": [
+    "active engineering/reasoning effort",
+    "human review time",
+    "provider charges",
+    "energy",
+    "peak workflow memory",
+    "unrecorded tool/host/network overhead",
+    "complete workflow economics"
+  ],
+  "overlap_rule": "Nested source fetches, supervisor children, controls and Git publication/readback are details inside parent envelopes; never add twice. UTC envelopes are not active engineering effort.",
+  "original_mission_start_utc": "2026-09-17T22:28:16Z",
+  "previous_excluded_seconds": 44963.785396,
+  "previous_ten_hour_assignment": "complete; clock not restarted",
+  "commands": [
+    {
+      "id": "binding-controls-01",
+      "category": "online",
+      "returncode": 0,
+      "duration_seconds": 1.010570541024208,
+      "receipt_sha256": "c081acce251972e544177276138c7133149575ee3219eab23316a256f0c890cb"
+    },
+    {
+      "id": "checking-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.10411812481470406,
+      "receipt_sha256": "b605ab2f4025702ba8732eba1d8e1f7a18bf93a5c99d1268b03035aff92ef814"
+    },
+    {
+      "id": "checking-02",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.1060893340036273,
+      "receipt_sha256": "ba5e88e8f4b161924e4c8ae1ba0314f265a5f3992e89ac8e3dfd02db410dec35"
+    },
+    {
+      "id": "controls-01",
+      "category": "checking",
+      "returncode": 1,
+      "duration_seconds": 1.8800395829603076,
+      "receipt_sha256": "cf0d7a0994db7f47d673e5862e1243489ef5b3b9344711c12cb71dea48ca2235"
+    },
+    {
+      "id": "controls-02",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 1.8720066249370575,
+      "receipt_sha256": "69bded5f01db5b0f84b4357c4cda5360a29d62b32345212b5da336b2e532b2be"
+    },
+    {
+      "id": "execution-01",
+      "category": "execution",
+      "returncode": 0,
+      "duration_seconds": 0.12306754197925329,
+      "receipt_sha256": "4e3b7541effd787cd692a68578f9d2c68c92391e14b1b40e316238cc87f6491a"
+    },
+    {
+      "id": "execution-02",
+      "category": "execution",
+      "returncode": 0,
+      "duration_seconds": 0.12317604199051857,
+      "receipt_sha256": "3af087d9139714cdb994542e33bd1cc0be5ccf75b3e0b98558ee19cd19be3e3a"
+    },
+    {
+      "id": "format-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.3321906249038875,
+      "receipt_sha256": "17727c1c929cb20b18d0c9e44209da7f36f95c67c1637e7831f4eac51fd7eea5"
+    },
+    {
+      "id": "format-02",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.1044884161092341,
+      "receipt_sha256": "723efcf068edaa4afeed045630f92659e50555a9588a964e63bc3804076df005"
+    },
+    {
+      "id": "lint-01",
+      "category": "packaging",
+      "returncode": 1,
+      "duration_seconds": 0.0898119998164475,
+      "receipt_sha256": "06d1cd398ddac594e696f8a80b43c565074d60b19bf96a6584edb35fc2948401"
+    },
+    {
+      "id": "lint-02",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.08490433311089873,
+      "receipt_sha256": "c2e4d2e914eaeabf6ef4f7c1824e765274701e7139fd758f64f3fff8e8c105dd"
+    },
+    {
+      "id": "source-baird",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 0.896378958132118,
+      "receipt_sha256": "5ae33112b90e67578c948f91fec8451cfcab56e1e6cb72142f93d5441e9a859c"
+    },
+    {
+      "id": "source-baird-pdf",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 2.7568941249046475,
+      "receipt_sha256": "96faf2717d8177aeb0f3b2ccc88b05c55793a8409bf2e501c3a06be9a083eb1d"
+    },
+    {
+      "id": "source-besset",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 0.6691025418695062,
+      "receipt_sha256": "8b1037abd2880fdf70c74ba5afbfbcb61b9f77411a0c10b70629640a8bb0af64"
+    },
+    {
+      "id": "source-das",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 0.7061468751635402,
+      "receipt_sha256": "0833bb3339fac724ba82c1cf9fc31cd9191bd7a3e005816086827c1586072ced"
+    },
+    {
+      "id": "source-finkbeiner",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 1.2836975418031216,
+      "receipt_sha256": "c5ae310d4608b5982e93f3a68276547598f5ec6750864ed687a3e7f2979e4342"
+    }
+  ]
+}

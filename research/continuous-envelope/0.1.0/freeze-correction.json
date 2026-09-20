@@ -1,0 +1,30 @@
+{
+  "document_id": "reiyah.continuous-envelope.freeze-correction",
+  "version": "0.1.0",
+  "initial_freeze_sha256": "c376ad855e984bc5987b235b5c7568240afb4c81a2974a66b62857f46cef5206",
+  "corrected_freeze_sha256": "8ae40dbb2e974d964c021a8a5ff6d50d71cb22c467b048748550916806e20688",
+  "reason": "The wrong_query_precision test assigned 2, which was the valid original value. Assigning 3 creates an actual forgery. Expected rejection remains unchanged; no producer, reference, cases, method or protocol change.",
+  "first_failure": {
+    "command": "controls-01",
+    "returncode": 1,
+    "duration_seconds": 1.8800395829603076,
+    "stderr_sha256": "840c67bd555c1729a104dc84b87f0d2bdf8bc46ae7e49902f3b970f636d11bdc",
+    "retained_initial_control": "controls-initial.py"
+  },
+  "first_actual_results": "results-initial.json",
+  "first_actual_verification": "verification-initial.json",
+  "incomplete_controls_not_counted_as_pass": true,
+  "unchanged_files": [
+    "DISTRIBUTION.md",
+    "METHOD.md",
+    "PLAN.md",
+    "SOURCES.md",
+    "cases.json",
+    "check.py",
+    "common.py",
+    "producer.py",
+    "reference.py",
+    "run.py",
+    "sources.json"
+  ]
+}

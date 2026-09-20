@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.1**. Status: exploratory.
+Proposed roadmap version: **0.3.2**. Status: exploratory.
 Research cutoff: 20 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -89,6 +89,23 @@ recorded-sample scope useful while that external evidence remains unresolved.
 No broader physical study or another selector sweep follows automatically.
 
 ## Ordered research gates
+
+The [continuous uncertainty increment](../research/continuous-envelope/0.1.0/README.md)
+now computes tight clearance ranges under interval observations, a supplied
+global relative-rate bound and a common clock offset. Twenty authored cases
+retain five supported, two contradicted, six unresolved, five blocked and two
+inconsistent-premise results. A separate exact LP calculation agrees. Each
+unresolved case has opposing feasible scalar trajectories and a same-time
+observation that distinguishes that pair, without promising universal resolution.
+The additional interval-error allowance is conditional, not a sensor calibration.
+
+The [new primary-source review](../research/continuous-envelope/0.1.0/SOURCES.md)
+finds substantial existing work on temporal uncertainty and targeted tightening,
+including September 2026 constraint extraction. No general novelty or advantage
+over those methods is established. The failed precision-mutation control and
+its correction remain. This completes a bounded calculation of what a supplied
+contract would imply; gate 1 still requires evidence that the contract applies.
+No closed NGSIM windows were rerun and no physical claim was promoted.
 
 | Next investment | Concrete bounded work | Advance criterion and reason to stop |
 | --- | --- | --- |

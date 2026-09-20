@@ -1,0 +1,78 @@
+{
+  "document_id": "reiyah.continuous-envelope.binding-controls",
+  "version": "0.1.0",
+  "freeze_sha256": "8ae40dbb2e974d964c021a8a5ff6d50d71cb22c467b048748550916806e20688",
+  "integrity": [
+    {
+      "id": "producer",
+      "rejected": true
+    },
+    {
+      "id": "reference",
+      "rejected": true
+    },
+    {
+      "id": "common",
+      "rejected": true
+    },
+    {
+      "id": "cases",
+      "rejected": true
+    },
+    {
+      "id": "method",
+      "rejected": true
+    },
+    {
+      "id": "sources",
+      "rejected": true
+    },
+    {
+      "id": "freeze",
+      "rejected": true
+    },
+    {
+      "id": "wrong_argument",
+      "rejected": true
+    }
+  ],
+  "result_bindings": [
+    {
+      "id": "dropped_case",
+      "rejected": true
+    },
+    {
+      "id": "reordered_cases",
+      "rejected": true
+    },
+    {
+      "id": "wrong_result_freeze",
+      "rejected": true
+    },
+    {
+      "id": "wrong_result_version",
+      "rejected": true
+    }
+  ],
+  "supervisor": [
+    {
+      "id": "unfinished_receipt",
+      "passed": true
+    },
+    {
+      "id": "exhausted_budget",
+      "passed": true
+    },
+    {
+      "id": "network_denial",
+      "passed": true
+    },
+    {
+      "id": "artifact_cap",
+      "passed": true
+    }
+  ],
+  "all_pass": true,
+  "harness_sha256": "1881bb694a12da4ba159bc70bff2b15c968ef7edcee5a6e4b62be306cc536111",
+  "scope": "Same-session authored rejection tests. Harness outside sandbox so children can enter; no positive network request."
+}

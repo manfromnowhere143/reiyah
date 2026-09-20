@@ -210,6 +210,13 @@ a small checking capability; it is not a driving-performance or safety result.
 The [new roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) connects qualified perception,
 relational motion, simulation validity and human recovery through staged tests.
 
+The [continuous uncertainty extension](research/continuous-envelope/0.1.0/README.md)
+computes tight minimum-clearance ranges with interval observations, a supplied
+relative-motion bound and one shared clock offset. Its twenty authored cases
+retain five supported, two contradicted, six unresolved, five blocked and two
+inconsistent-premise results. Opposing witnesses make the unresolved cases
+inspectable; the supplied assumptions still need physical qualification.
+
 | Question | Retained result | Interpretation |
 | --- | --- | --- |
 | Can reference assumptions change a detector decision? | The two-anchor interval is **[-8, 8]** with open physical references and **[1, 1]** under benchmark labels. | Physical adjudication remains open. [Case](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md) |
@@ -351,6 +358,7 @@ historical descriptions where later studies have closed a gap.
 The project description and methods above are stable navigation. Dated records
 carry the evolving results and their exact scope.
 
+- **20 September 2026:** [Continuous clearance and distinguishing observations](research/continuous-envelope/0.1.0/README.md). Exact conditional ranges agree with a separate conventional calculation. Six authored ambiguities retain opposing trajectories; the failed control and corrected freeze remain available.
 - **20 September 2026:** [Public vehicle-pair qualification](research/public-motion/0.1.0/README.md). Eight fixed NGSIM windows support their sampled longitudinal-proxy statements; all eight physical continuous-clearance claims remain unresolved. The separate conventional calculation agrees.
 - **20 September 2026:** [Presence/count answers and timing uncertainty](research/observation-contract/0.1.0/README.md). Opposing decisions can share the same complete presence transcript under the retained optional-box model.
 - **19 September 2026:** [Adaptive audit comparison](research/adaptive-audit/0.1.0/README.md). Tested betting methods do not improve query counts on the selected perception conditions.

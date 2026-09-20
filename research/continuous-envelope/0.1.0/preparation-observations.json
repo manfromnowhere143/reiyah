@@ -1,0 +1,50 @@
+{
+  "document_id": "reiyah.continuous-envelope.preparation-observations",
+  "version": "0.1.0",
+  "items": [
+    {
+      "id": "wrong-editorial-path",
+      "tool_chunk": "ca3b8c",
+      "status": "failed",
+      "reason": "Read docs/EDITORIAL_POLICY.md from owner rather than candidate; corrected by candidate read 4fd1c2.",
+      "cost_tool_seconds": 0.227052375
+    },
+    {
+      "id": "wrong-git-cwd",
+      "tool_chunk": "614a4e",
+      "status": "failed",
+      "reason": "Read-only git count-objects run from non-repository owner; no mutation occurred.",
+      "cost_tool_seconds": 0.258945625
+    },
+    {
+      "id": "derived-output-rationals",
+      "status": "review_correction_before_freeze",
+      "reason": "Use separate bounded canonical result parser because derived rational denominators may exceed operand limit; authored boundary case allocated. No failed execution claimed."
+    },
+    {
+      "id": "web-render-limitations",
+      "status": "unresolved_adapter_scope",
+      "reason": "Three selected web opens returned internal error; direct unauthenticated captures retained actual selected bytes."
+    },
+    {
+      "id": "pre-freeze-lint",
+      "status": "failed_then_corrected",
+      "reason": "Five ambiguous l variable names were renamed before freezing; old source files and failed lint receipt retained.",
+      "command": "lint-01"
+    },
+    {
+      "id": "wrong-readme-path",
+      "status": "failed",
+      "tool_chunk": "f6c287",
+      "reason": "Read-only README search used owner rather than candidate; corrected in 577793.",
+      "cost_tool_seconds": 0.272189625
+    },
+    {
+      "id": "shared-git-metadata",
+      "status": "unattributed_observation",
+      "reason": "git count-objects reported one zero-byte garbage item at .git/worktrees/candidate62/refs; no cleanup or causal attribution.",
+      "loose_objects": 5991,
+      "loose_object_kib": 40844
+    }
+  ]
+}

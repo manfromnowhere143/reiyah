@@ -1,3 +1,68 @@
+# Reiyah continuous uncertainty closeout, 2026-09-20
+
+Continuation version: `0.1.51`. Status: `exploratory`.
+
+The [continuous envelope](../research/continuous-envelope/0.1.0/README.md)
+computes exact attainable minimum-clearance extremes under authored interval
+observations, a global relative-clearance rate bound and one common clock offset.
+The separate conventional reference uses piecewise LP vertices; it shares format
+and byte custody, not producer arithmetic. Twenty cases retain five supported,
+two contradicted, six unresolved, five blocked and two inconsistent-premise
+results. Six opposing witness pairs have a distinguishing same-time observation;
+that query need not resolve all remaining worlds. No physical calibration,
+independent replication, workflow saving or superiority is established.
+
+Current corrected freeze:
+8ae40dbb2e974d964c021a8a5ff6d50d71cb22c467b048748550916806e20688.
+Initial c376ad855e984bc5987b235b5c7568240afb4c81a2974a66b62857f46cef5206
+and its exact source/results/check remain retained. The first forged-precision
+test assigned the original valid value, so its expected rejection failed.
+Only that test assignment changed from two to three. Producer, reference,
+inputs, method and decision rules are unchanged; both actual case arrays match.
+The failed partial suite is not counted as passing. All 972 finite cases,
+2,484 interval expansions, twelve hand-derived expectations, 26 malformed
+families, fifteen forged outputs, four strict boundaries and a disabled-producer
+check now pass. Eight input/code bindings, four result bindings and four
+supervisor controls also pass. No allocated case failed or capped.
+
+Two actual executions cost 0.246243584 outer-process seconds combined; their
+separate actual checks cost 0.210207459 seconds combined. The failed and corrected
+control suites cost 1.880039583 and 1.872006625 seconds and are counted separately.
+Full costs and later publisher receipts are in the owner closeout. Three
+read-only path mistakes, a pre-freeze lint failure, web-render limitations and
+an article's version/date ambiguity remain visible. No frozen science code was
+silently repaired. All private article bodies and derived text remain private.
+
+New primary review includes Besset et al. September 2026 constraint extraction,
+Baird et al. interval tightening, Finkbeiner et al. shared measurement offsets
+and qualified context from Das et al. resilience. These works preclude a broad
+novelty claim for actionable uncertainty. No controller or published speedup was
+replicated. Proposed roadmap is 0.3.2; README opening, substance and six diagrams
+are preserved. Current consistency evidence is in the packet's validation.json;
+historical transcript identity checks are not new replay or acceptance.
+
+Owner: `~/.codex/reports/reiyah/continuous-envelope-2026-09-20-8ucgev77/`.
+Its CLOSEOUT, FINAL_COSTS and PUBLISH_FINAL records bind the final commit and
+publisher readback after publication. Use a fresh owned candidate for later work.
+
+Next useful step: qualify a public projected-bumper observation and residual
+motion/clock contract, or a separately frozen whole-trajectory statistical
+coverage model. For example, a ten-centimetre bound needs records explaining
+what measured geometry and clock it covers; an approximate-accuracy label cannot
+supply that guarantee. Daniel need not own private team records or grant general
+permission again. No wider monitor, new selector sweep or re-execution of closed
+authored/NGSIM cases is justified merely by absent calibration. The conditional
+primitive is ready for an actually qualified source when one is obtained.
+
+All 1,433 reserved images stay closed. The eight NGSIM windows remain physically
+unresolved and were not rerun. Perception source remains
+38a50ec014cc83e86ea6f247df803ded2971b386; Gate A remains operator-unaccepted.
+Historical controller stays clean at 74fbacc. Solo ownership continues, with no
+model dependency, inference, training, media, paid compute, outreach, deployment
+or physical control. Normal guarded push/readback is authorized; Daniel remains
+author and committer, with no model/session attribution. Earlier sections are
+retained history.
+
 # Reiyah public motion qualification closeout, 2026-09-20
 
 Continuation version: `0.1.50`. Status: `exploratory`.

@@ -1,0 +1,459 @@
+{
+  "cases": [
+    {
+      "distinguishing_observation": {
+        "absolute_error_strictly_below_m": "2",
+        "lower_world_m": "4",
+        "physical_time_s": "1",
+        "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+        "upper_world_m": "8"
+      },
+      "extra_error_allowance_m": {
+        "contradiction_strict": null,
+        "support_inclusive": null
+      },
+      "id": "safe-samples-hidden-dip",
+      "lower_witness": {
+        "envelope": "lower",
+        "minimum_m": "4",
+        "offset_s": "0",
+        "time_s": "1"
+      },
+      "minimum_range_m": [
+        "4",
+        "6"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "unresolved",
+      "upper_witness": {
+        "envelope": "upper",
+        "minimum_m": "6",
+        "offset_s": "0",
+        "time_s": "0"
+      }
+    },
+    {
+      "distinguishing_observation": null,
+      "extra_error_allowance_m": {
+        "contradiction_strict": null,
+        "support_inclusive": "0"
+      },
+      "id": "equality-supported",
+      "lower_witness": {
+        "envelope": "lower",
+        "minimum_m": "5",
+        "offset_s": "0",
+        "time_s": "1"
+      },
+      "minimum_range_m": [
+        "5",
+        "7"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "supported",
+      "upper_witness": {
+        "envelope": "upper",
+        "minimum_m": "7",
+        "offset_s": "0",
+        "time_s": "0"
+      }
+    },
+    {
+      "distinguishing_observation": null,
+      "extra_error_allowance_m": {
+        "contradiction_strict": "1",
+        "support_inclusive": null
+      },
+      "id": "observed-violation",
+      "lower_witness": {
+        "envelope": "lower",
+        "minimum_m": "2",
+        "offset_s": "0",
+        "time_s": "1"
+      },
+      "minimum_range_m": [
+        "2",
+        "4"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "contradicted",
+      "upper_witness": {
+        "envelope": "upper",
+        "minimum_m": "4",
+        "offset_s": "0",
+        "time_s": "0"
+      }
+    },
+    {
+      "distinguishing_observation": null,
+      "extra_error_allowance_m": {
+        "contradiction_strict": null,
+        "support_inclusive": "0"
+      },
+      "id": "bounded-interval-supported",
+      "lower_witness": {
+        "envelope": "lower",
+        "minimum_m": "5",
+        "offset_s": "0",
+        "time_s": "1"
+      },
+      "minimum_range_m": [
+        "5",
+        "7"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "supported",
+      "upper_witness": {
+        "envelope": "upper",
+        "minimum_m": "7",
+        "offset_s": "0",
+        "time_s": "0"
+      }
+    },
+    {
+      "distinguishing_observation": {
+        "absolute_error_strictly_below_m": "1",
+        "lower_world_m": "4",
+        "physical_time_s": "0",
+        "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+        "upper_world_m": "6"
+      },
+      "extra_error_allowance_m": {
+        "contradiction_strict": null,
+        "support_inclusive": null
+      },
+      "id": "constant-uncertain",
+      "lower_witness": {
+        "envelope": "lower",
+        "minimum_m": "4",
+        "offset_s": "0",
+        "time_s": "0"
+      },
+      "minimum_range_m": [
+        "4",
+        "6"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "unresolved",
+      "upper_witness": {
+        "envelope": "upper",
+        "minimum_m": "6",
+        "offset_s": "0",
+        "time_s": "0"
+      }
+    },
+    {
+      "distinguishing_observation": null,
+      "extra_error_allowance_m": {
+        "contradiction_strict": null,
+        "support_inclusive": "2"
+      },
+      "id": "constant-joint-binding",
+      "lower_witness": {
+        "envelope": "lower",
+        "minimum_m": "7",
+        "offset_s": "0",
+        "time_s": "0"
+      },
+      "minimum_range_m": [
+        "7",
+        "7"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "supported",
+      "upper_witness": {
+        "envelope": "upper",
+        "minimum_m": "7",
+        "offset_s": "0",
+        "time_s": "0"
+      }
+    },
+    {
+      "conflicting_observations": [
+        "observation-1",
+        "observation-0"
+      ],
+      "id": "motion-inconsistent",
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "inconsistent_premises"
+    },
+    {
+      "conflicting_observations": [
+        "observation-1",
+        "observation-0"
+      ],
+      "id": "constant-inconsistent",
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "inconsistent_premises"
+    },
+    {
+      "distinguishing_observation": {
+        "absolute_error_strictly_below_m": "2",
+        "lower_world_m": "2",
+        "physical_time_s": "0",
+        "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+        "upper_world_m": "6"
+      },
+      "extra_error_allowance_m": {
+        "contradiction_strict": null,
+        "support_inclusive": null
+      },
+      "id": "shared-clock-point",
+      "lower_witness": {
+        "envelope": "lower",
+        "minimum_m": "2",
+        "offset_s": "1",
+        "time_s": "0"
+      },
+      "minimum_range_m": [
+        "2",
+        "6"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "unresolved",
+      "upper_witness": {
+        "envelope": "upper",
+        "minimum_m": "6",
+        "offset_s": "1",
+        "time_s": "0"
+      }
+    },
+    {
+      "distinguishing_observation": {
+        "absolute_error_strictly_below_m": "4",
+        "lower_world_m": "2",
+        "physical_time_s": "0",
+        "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+        "upper_world_m": "10"
+      },
+      "extra_error_allowance_m": {
+        "contradiction_strict": null,
+        "support_inclusive": null
+      },
+      "id": "shared-clock-window",
+      "lower_witness": {
+        "envelope": "lower",
+        "minimum_m": "2",
+        "offset_s": "2",
+        "time_s": "0"
+      },
+      "minimum_range_m": [
+        "2",
+        "6"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "unresolved",
+      "upper_witness": {
+        "envelope": "upper",
+        "minimum_m": "6",
+        "offset_s": "2",
+        "time_s": "2"
+      }
+    },
+    {
+      "distinguishing_observation": {
+        "absolute_error_strictly_below_m": "3",
+        "lower_world_m": "3",
+        "physical_time_s": "3",
+        "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+        "upper_world_m": "9"
+      },
+      "extra_error_allowance_m": {
+        "contradiction_strict": null,
+        "support_inclusive": null
+      },
+      "id": "outside-sample-horizon",
+      "lower_witness": {
+        "envelope": "lower",
+        "minimum_m": "3",
+        "offset_s": "0",
+        "time_s": "3"
+      },
+      "minimum_range_m": [
+        "3",
+        "7"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "unresolved",
+      "upper_witness": {
+        "envelope": "upper",
+        "minimum_m": "7",
+        "offset_s": "0",
+        "time_s": "1"
+      }
+    },
+    {
+      "distinguishing_observation": null,
+      "extra_error_allowance_m": {
+        "contradiction_strict": null,
+        "support_inclusive": "0"
+      },
+      "id": "three-interval-dependency",
+      "lower_witness": {
+        "envelope": "lower",
+        "minimum_m": "5",
+        "offset_s": "0",
+        "time_s": "1"
+      },
+      "minimum_range_m": [
+        "5",
+        "6"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "supported",
+      "upper_witness": {
+        "envelope": "upper",
+        "minimum_m": "6",
+        "offset_s": "0",
+        "time_s": "1"
+      }
+    },
+    {
+      "distinguishing_observation": null,
+      "extra_error_allowance_m": {
+        "contradiction_strict": null,
+        "support_inclusive": "0"
+      },
+      "id": "rational-clock",
+      "lower_witness": {
+        "envelope": "lower",
+        "minimum_m": "5",
+        "offset_s": "-1/4",
+        "time_s": "1/4"
+      },
+      "minimum_range_m": [
+        "5",
+        "6"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "supported",
+      "upper_witness": {
+        "envelope": "upper",
+        "minimum_m": "6",
+        "offset_s": "-1/4",
+        "time_s": "1/4"
+      }
+    },
+    {
+      "distinguishing_observation": {
+        "absolute_error_strictly_below_m": "2999919/1999888001326",
+        "lower_world_m": "-18/999944000663",
+        "physical_time_s": "0",
+        "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+        "upper_world_m": "2999901/999944000663"
+      },
+      "extra_error_allowance_m": {
+        "contradiction_strict": null,
+        "support_inclusive": null
+      },
+      "id": "large-derived-denominator",
+      "lower_witness": {
+        "envelope": "lower",
+        "minimum_m": "-18/999944000663",
+        "offset_s": "1/999961",
+        "time_s": "0"
+      },
+      "minimum_range_m": [
+        "-18/999944000663",
+        "2999901/999944000663"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "unresolved",
+      "upper_witness": {
+        "envelope": "upper",
+        "minimum_m": "2999901/999944000663",
+        "offset_s": "-1/999961",
+        "time_s": "0"
+      }
+    },
+    {
+      "distinguishing_observation": null,
+      "extra_error_allowance_m": {
+        "contradiction_strict": "1",
+        "support_inclusive": null
+      },
+      "id": "signed-clearance",
+      "lower_witness": {
+        "envelope": "lower",
+        "minimum_m": "-5/2",
+        "offset_s": "0",
+        "time_s": "1/2"
+      },
+      "minimum_range_m": [
+        "-5/2",
+        "-1"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "contradicted",
+      "upper_witness": {
+        "envelope": "upper",
+        "minimum_m": "-1",
+        "offset_s": "0",
+        "time_s": "0"
+      }
+    },
+    {
+      "id": "missing-interval",
+      "missing": [
+        "observation_interval"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "blocked"
+    },
+    {
+      "id": "missing-motion",
+      "missing": [
+        "motion"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "blocked"
+    },
+    {
+      "id": "missing-clock",
+      "missing": [
+        "clock"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "blocked"
+    },
+    {
+      "id": "missing-geometry",
+      "missing": [
+        "quantity"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "blocked"
+    },
+    {
+      "id": "no-observations",
+      "missing": [
+        "observations"
+      ],
+      "physical_status": "unresolved",
+      "scope": "authored_conditional_model",
+      "status": "blocked"
+    }
+  ],
+  "document_id": "reiyah.continuous-envelope.results",
+  "freeze_sha256": "c376ad855e984bc5987b235b5c7568240afb4c81a2974a66b62857f46cef5206",
+  "version": "0.1.0"
+}
