@@ -202,6 +202,14 @@ records contain their complete assumptions, outcomes, failed attempts and costs.
 The rows below concern different, sometimes overlapping development studies;
 their counts must not be added as independent trials.
 
+The [September 20 research expansion](research/frontier-expansion/0.1.0/README.md)
+adds an offline authored clearance contract for ego and lead-vehicle motion.
+All 20 cases agree with a separate conventional calculation, retaining six
+unresolved, three blocked and one inconsistent-premise case. This establishes
+a small checking capability; it is not a driving-performance or safety result.
+The [new roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) connects qualified perception,
+relational motion, simulation validity and human recovery through staged tests.
+
 | Question | Retained result | Interpretation |
 | --- | --- | --- |
 | Can reference assumptions change a detector decision? | The two-anchor interval is **[-8, 8]** with open physical references and **[1, 1]** under benchmark labels. | Physical adjudication remains open. [Case](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md) |
@@ -318,10 +326,11 @@ launcher and immutable candidate procedure.
 
 ## Next research decision
 
-The [current roadmap](docs/ENGINE_ROADMAP_2026-09-19.md) prioritizes an
-observation that distinguishes consequential reference worlds, or an externally
-justified narrower geometry or motion model. Better ordering of the same
-indistinguishable answers cannot supply that information.
+The [current roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) prioritizes qualified
+relational motion evidence: which actor, geometry and clock support a declared
+behavioral obligation. It extends the requirement for observations that
+distinguish consequential reference worlds or legitimately narrow them.
+Better ordering of indistinguishable answers cannot supply that information.
 
 A subsequent value test needs a real revision decision: genuine old/new model
 artifacts, an owner-defined loss and operating criterion, a qualified review
@@ -357,7 +366,8 @@ changes the scope of an earlier result.
 | Read for | Start here |
 | --- | --- |
 | Engine model and mathematics | [Architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) · [Replacement interface](research/perception-revision/0.1.0/README.md) |
-| Current direction and evidence | [Roadmap](docs/ENGINE_ROADMAP_2026-09-19.md) · [Execution audit](research/roadmap-audit/0.1.0/README.md) · [Primary-method review](research/roadmap-audit/0.1.0/FRONTIER.md) |
+| Current direction and evidence | [Roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) · [Execution audit](research/roadmap-audit/0.1.0/README.md) · [Primary-method review](research/roadmap-audit/0.1.0/FRONTIER.md) |
+| Relational motion research | [Clearance contract](research/frontier-expansion/0.1.0/README.md) · [Current primary research](research/frontier-expansion/0.1.0/SOURCES.md) · [Public-source qualification](research/frontier-expansion/0.1.0/qualification.json) |
 | Wider scientific program | [Charter](docs/SCIENTIFIC_CHARTER.md) · [Mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) · [Corrected synthesis](docs/GENERAL_SYNTHESIS.md) |
 | Reference validity and review | [Population audit](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md) · [Adjudication study](docs/REFERENCE_ADJUDICATION_STUDY_2026-09-07.md) · [Threats to validity](docs/MEASUREMENT_THREATS_TO_VALIDITY.md) |
 | Corrections and prior results | [Claim register](evidence/claim-status-register-2026-09-08T054835Z.json) · [Sign correction](docs/FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md) · [Retained history](docs/README_RESEARCH_HISTORY_2026-09-19.md) |

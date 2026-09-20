@@ -1,0 +1,1466 @@
+{
+  "document_id": "reiyah.frontier-expansion.authored-allocation",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "cases": [
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "exact-boundary",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "2"
+                ],
+                [
+                  "2",
+                  "4"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "5"
+                ],
+                [
+                  "1",
+                  "7"
+                ],
+                [
+                  "2",
+                  "9"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "supported"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "decelerating-but-closing",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "6"
+                ],
+                [
+                  "2",
+                  "10"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "8"
+                ],
+                [
+                  "1",
+                  "10"
+                ],
+                [
+                  "2",
+                  "12"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "contradicted"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "accelerating-with-clearance",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "2"
+                ],
+                [
+                  "2",
+                  "8"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "8"
+                ],
+                [
+                  "1",
+                  "12"
+                ],
+                [
+                  "2",
+                  "20"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "supported"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "missing-lead",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "2"
+                ],
+                [
+                  "2",
+                  "4"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": null
+          }
+        ]
+      },
+      "expected": "blocked"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "unknown-actor",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": null,
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "2"
+                ],
+                [
+                  "2",
+                  "4"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": null
+          }
+        ]
+      },
+      "expected": "blocked"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "missing-ego",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": "lead-a",
+            "ego": null,
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "8"
+                ],
+                [
+                  "1",
+                  "10"
+                ],
+                [
+                  "2",
+                  "12"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "blocked"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "partial-positive",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "2"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "8"
+                ],
+                [
+                  "1",
+                  "10"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "unresolved"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "partial-violation",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "2"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "2"
+                ],
+                [
+                  "1",
+                  "4"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "contradicted"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "samples-do-not-certify-between",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "unspecified"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "2",
+                  "4"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "8"
+                ],
+                [
+                  "2",
+                  "12"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "unresolved"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "samples-can-refute",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "unspecified"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "2",
+                  "4"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "2"
+                ],
+                [
+                  "2",
+                  "6"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "contradicted"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "clock-alternatives",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "1"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "zero",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "10"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "-1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "10"
+                ],
+                [
+                  "1",
+                  "20"
+                ],
+                [
+                  "2",
+                  "30"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          },
+          {
+            "id": "plus-one",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "10"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "1",
+              "samples": [
+                [
+                  "-1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "10"
+                ],
+                [
+                  "1",
+                  "20"
+                ],
+                [
+                  "2",
+                  "30"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "unresolved"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "actor-alternatives",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "a",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "2"
+                ],
+                [
+                  "2",
+                  "4"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "8"
+                ],
+                [
+                  "1",
+                  "10"
+                ],
+                [
+                  "2",
+                  "12"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          },
+          {
+            "id": "b",
+            "actor_id": "lead-b",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "2"
+                ],
+                [
+                  "2",
+                  "4"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "2"
+                ],
+                [
+                  "1",
+                  "4"
+                ],
+                [
+                  "2",
+                  "6"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "unresolved"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "asynchronous-interior-violation",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "2",
+                  "4"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "8"
+                ],
+                [
+                  "1/2",
+                  "2"
+                ],
+                [
+                  "2",
+                  "12"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "contradicted"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "empty-world-family",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": []
+      },
+      "expected": "inconsistent_premises"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "no-overlap",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "2"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "3",
+                  "10"
+                ],
+                [
+                  "4",
+                  "12"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "unresolved"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "rational-below-boundary",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "0"
+                ],
+                [
+                  "2",
+                  "0"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "4999999999999999/1000000000000000"
+                ],
+                [
+                  "1",
+                  "4999999999999999/1000000000000000"
+                ],
+                [
+                  "2",
+                  "4999999999999999/1000000000000000"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "contradicted"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "common-world-correlation",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "low",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "2"
+                ],
+                [
+                  "2",
+                  "4"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "10"
+                ],
+                [
+                  "1",
+                  "12"
+                ],
+                [
+                  "2",
+                  "14"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          },
+          {
+            "id": "high",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "100"
+                ],
+                [
+                  "1",
+                  "102"
+                ],
+                [
+                  "2",
+                  "104"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "110"
+                ],
+                [
+                  "1",
+                  "112"
+                ],
+                [
+                  "2",
+                  "114"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "supported"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "violations-at-different-times",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "early",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "0"
+                ],
+                [
+                  "2",
+                  "0"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "2"
+                ],
+                [
+                  "1",
+                  "8"
+                ],
+                [
+                  "2",
+                  "8"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          },
+          {
+            "id": "late",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "0"
+                ],
+                [
+                  "2",
+                  "0"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "8"
+                ],
+                [
+                  "1",
+                  "8"
+                ],
+                [
+                  "2",
+                  "2"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "contradicted"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "singleton-refutation",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "w0",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "1",
+                  "0"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "1",
+                  "2"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          }
+        ]
+      },
+      "expected": "contradicted"
+    },
+    {
+      "case": {
+        "schema_version": "0.1.0",
+        "case_id": "one-blocked-alternative",
+        "claim": {
+          "id": "clearance",
+          "kind": "minimum_longitudinal_clearance",
+          "frame_id": "road-s",
+          "distance_unit": "m",
+          "time_unit": "s",
+          "window": [
+            "0",
+            "2"
+          ],
+          "minimum_gap": "5",
+          "interpretation": "authored_front_bumper_to_lead_rear",
+          "evidence_id": "authored-spec"
+        },
+        "model": {
+          "world_set": "authored_finite_exhaustive",
+          "interpolation": "piecewise_linear"
+        },
+        "worlds": [
+          {
+            "id": "known",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "2"
+                ],
+                [
+                  "2",
+                  "4"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": {
+              "frame_id": "road-s",
+              "point": "rear_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "8"
+                ],
+                [
+                  "1",
+                  "10"
+                ],
+                [
+                  "2",
+                  "12"
+                ]
+              ],
+              "evidence_id": "authored-lead"
+            }
+          },
+          {
+            "id": "missing",
+            "actor_id": "lead-a",
+            "ego": {
+              "frame_id": "road-s",
+              "point": "front_bumper",
+              "clock_shift": "0",
+              "samples": [
+                [
+                  "0",
+                  "0"
+                ],
+                [
+                  "1",
+                  "2"
+                ],
+                [
+                  "2",
+                  "4"
+                ]
+              ],
+              "evidence_id": "authored-ego"
+            },
+            "lead": null
+          }
+        ]
+      },
+      "expected": "unresolved"
+    }
+  ]
+}

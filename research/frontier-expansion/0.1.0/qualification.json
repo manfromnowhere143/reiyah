@@ -1,0 +1,69 @@
+{
+  "document_id": "reiyah.frontier-expansion.public-lead-qualification",
+  "version": "0.1.0",
+  "repository": "https://github.com/776styjsu/drive-the-thoughts",
+  "commit": "8e01a85b1cdfeb581f0eaafba54ddc1a85c11065",
+  "benchmark_index_records": 150,
+  "unique_clip_ids": 150,
+  "index_field_counts": {
+    "chain_of_thought": 150,
+    "checkpoint_path": 150,
+    "clip_id": 150,
+    "cot_action_consistency": 150,
+    "cot_reliability": 150,
+    "justification": 150,
+    "labels": 150,
+    "note": 150,
+    "planned_trajectory_safe": 150,
+    "planned_trajectory_safety_justification": 150,
+    "rollout_mp4": 150,
+    "scene_folder": 150,
+    "source_scene_file": 150
+  },
+  "taxonomy_source_labels": {
+    "heuristic_from_chain_of_thought": 150
+  },
+  "sidecar_scope": "First alphabetical scene only; metadata and additional_info JSON. No images/video. Not an exhaustive sidecar audit.",
+  "metadata_keys": [
+    "chain_of_thought",
+    "clip_id",
+    "labels",
+    "time_now_us",
+    "time_query_us",
+    "trajectory_poses",
+    "trajectory_xy_rig_frame"
+  ],
+  "additional_info_keys": [
+    "axis_descriptions",
+    "coordinate_frame",
+    "kind",
+    "meta_actions",
+    "metadata_file",
+    "schema_version",
+    "segments",
+    "summary",
+    "trajectory_source",
+    "units",
+    "waypoints"
+  ],
+  "ego_pose_count_in_inspected_scene": 65,
+  "explicit_lead_actor_trace_found_in_inspected_files": false,
+  "classification": "not_admitted_for_relational_clearance_experiment",
+  "remaining_requirements": [
+    "qualified lead rear/ego front trace in a common road frame",
+    "lead identity/association alternatives and common clock mapping",
+    "externally justified inter-sample motion/residual uncertainty contract",
+    "typed clearance obligation and complete horizon",
+    "underlying data terms and provenance suitable for intended use"
+  ],
+  "discrepancies": [
+    "Paper describes GPT-5.5 taxonomy tagging; retained index labels tag source heuristic_from_chain_of_thought. No silent reconciliation.",
+    "Repository commit dated 2026-07-03 predates paper v1 dated 2026-08-30; snapshot equivalence to paper is not assumed."
+  ],
+  "not_claimed": [
+    "all repository sidecars lack actors",
+    "reproduced paper metrics",
+    "tested model safety",
+    "real customer release history"
+  ]
+}

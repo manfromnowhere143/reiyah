@@ -3,6 +3,9 @@
 Document ID: `reiyah.engine.roadmap`. Version: `0.2.3`.
 Lifecycle status: `proposed`. Updated 20 September 2026.
 
+Scheduling is now continued by the [September 20 roadmap](ENGINE_ROADMAP_2026-09-20.md),
+proposed version 0.3.0. This document retains the prior findings and obligations.
+
 **Keep the small proof-checking Engine. Focus the next research on what can be
 observed, what guarantee a decision needs, and whether obtaining that guarantee
 costs less than competent alternatives.** Retain the tested sequential audits as

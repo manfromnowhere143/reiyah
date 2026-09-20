@@ -1,0 +1,419 @@
+{
+  "document_id": "reiyah.frontier-expansion.results",
+  "version": "0.1.0",
+  "freeze_sha256": "82ec4fef013178f1115381fd8a62135e58c601eca2774b248fcfae787b470e8c",
+  "allocation_sha256": "918452c0bc5ab8c0768d8a306a4b76279d6b60e82cdf1a0b1b85d1c2cabc2048",
+  "cases": [
+    {
+      "schema_version": "0.1.0",
+      "case_id": "exact-boundary",
+      "input_sha256": "22cc3d6481bc4d95f66160a3691fd2a646f7f3f902f5fa6598e7187dbb6487d4",
+      "scope": "authored_conditional_clearance_only",
+      "status": "supported",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "supported",
+          "reason": "complete_linear_horizon",
+          "minimum_observed_gap": "5",
+          "minimum_at": "0",
+          "full_horizon": true
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "decelerating-but-closing",
+      "input_sha256": "325e73065d09678746f05d751f582297622f078addbe7e27880deb0f8c4bd476",
+      "scope": "authored_conditional_clearance_only",
+      "status": "contradicted",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "contradicted",
+          "reason": "clearance_violation",
+          "minimum_observed_gap": "2",
+          "minimum_at": "2",
+          "full_horizon": true
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "accelerating-with-clearance",
+      "input_sha256": "a3d25164796d69accef9bf3d9ab640b641f0b8c1fa68614afc2e7785e365b2df",
+      "scope": "authored_conditional_clearance_only",
+      "status": "supported",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "supported",
+          "reason": "complete_linear_horizon",
+          "minimum_observed_gap": "8",
+          "minimum_at": "0",
+          "full_horizon": true
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "missing-lead",
+      "input_sha256": "b0127748f7de6464602940c86776cc3cfeb956b7535124ad994e0b8b96f89269",
+      "scope": "authored_conditional_clearance_only",
+      "status": "blocked",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "blocked",
+          "reason": "missing_bound_trace",
+          "minimum_observed_gap": null,
+          "minimum_at": null,
+          "full_horizon": false
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "unknown-actor",
+      "input_sha256": "d37357cc9bbccb9762119424a3b15ada58e7665544bc5e66de953d9e0c2681a5",
+      "scope": "authored_conditional_clearance_only",
+      "status": "blocked",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "blocked",
+          "reason": "missing_bound_trace",
+          "minimum_observed_gap": null,
+          "minimum_at": null,
+          "full_horizon": false
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "missing-ego",
+      "input_sha256": "5278860620d87ffcbd14264150bfebf99f9487cb101772cbcc20c535b8a658b1",
+      "scope": "authored_conditional_clearance_only",
+      "status": "blocked",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "blocked",
+          "reason": "missing_bound_trace",
+          "minimum_observed_gap": null,
+          "minimum_at": null,
+          "full_horizon": false
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "partial-positive",
+      "input_sha256": "1f72ff9f9c74343b552b75362ebd19f1621007425d2decb85a68994855dd319e",
+      "scope": "authored_conditional_clearance_only",
+      "status": "unresolved",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "unresolved",
+          "reason": "partial_horizon",
+          "minimum_observed_gap": "8",
+          "minimum_at": "0",
+          "full_horizon": false
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "partial-violation",
+      "input_sha256": "209864950208875fdfffc5f4732e86ea0b27ad20815a8ea3a96ce335f966def8",
+      "scope": "authored_conditional_clearance_only",
+      "status": "contradicted",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "contradicted",
+          "reason": "clearance_violation",
+          "minimum_observed_gap": "2",
+          "minimum_at": "0",
+          "full_horizon": false
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "samples-do-not-certify-between",
+      "input_sha256": "ef8f69855bd4e9558aea1eb85010a166b6d4ce97e208a322c9ea9b377e0db4ad",
+      "scope": "authored_conditional_clearance_only",
+      "status": "unresolved",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "unresolved",
+          "reason": "interpolation_unqualified",
+          "minimum_observed_gap": "8",
+          "minimum_at": "0",
+          "full_horizon": false
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "samples-can-refute",
+      "input_sha256": "dd1dfe4c2291098b228132991f6bb15ee6cfebf261099a81f8b10eb80e090f8a",
+      "scope": "authored_conditional_clearance_only",
+      "status": "contradicted",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "contradicted",
+          "reason": "clearance_violation",
+          "minimum_observed_gap": "2",
+          "minimum_at": "0",
+          "full_horizon": false
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "clock-alternatives",
+      "input_sha256": "7d7a9896539546531c7587f57688742ad4fc14975365a10407c2be6347c0579b",
+      "scope": "authored_conditional_clearance_only",
+      "status": "unresolved",
+      "worlds": [
+        {
+          "world_id": "zero",
+          "status": "supported",
+          "reason": "complete_linear_horizon",
+          "minimum_observed_gap": "10",
+          "minimum_at": "0",
+          "full_horizon": true
+        },
+        {
+          "world_id": "plus-one",
+          "status": "contradicted",
+          "reason": "clearance_violation",
+          "minimum_observed_gap": "0",
+          "minimum_at": "0",
+          "full_horizon": true
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "actor-alternatives",
+      "input_sha256": "603f13020cf33d847a46e02d4e0ed6f0575b41a1a7b0a98c966d36eab901c3a0",
+      "scope": "authored_conditional_clearance_only",
+      "status": "unresolved",
+      "worlds": [
+        {
+          "world_id": "a",
+          "status": "supported",
+          "reason": "complete_linear_horizon",
+          "minimum_observed_gap": "8",
+          "minimum_at": "0",
+          "full_horizon": true
+        },
+        {
+          "world_id": "b",
+          "status": "contradicted",
+          "reason": "clearance_violation",
+          "minimum_observed_gap": "2",
+          "minimum_at": "0",
+          "full_horizon": true
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "asynchronous-interior-violation",
+      "input_sha256": "e0b010aa86dca34df92814b89eb535ca79eaebafe63bcc49818ad20e9ac0e7db",
+      "scope": "authored_conditional_clearance_only",
+      "status": "contradicted",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "contradicted",
+          "reason": "clearance_violation",
+          "minimum_observed_gap": "1",
+          "minimum_at": "1/2",
+          "full_horizon": true
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "empty-world-family",
+      "input_sha256": "01507ad54e62cbb3d6202a2f9a7978ff371685856d159413faf6fff425069606",
+      "scope": "authored_conditional_clearance_only",
+      "status": "inconsistent_premises",
+      "worlds": [],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "no-overlap",
+      "input_sha256": "8b77b2de9da3b0b7de0e9f6d352da1f262cc9c487a0bcb34ef3a5a0e57a7da35",
+      "scope": "authored_conditional_clearance_only",
+      "status": "unresolved",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "unresolved",
+          "reason": "no_common_time",
+          "minimum_observed_gap": null,
+          "minimum_at": null,
+          "full_horizon": false
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "rational-below-boundary",
+      "input_sha256": "fcd160a6442b29f7e065c6d3d34b68178cf963ea5c20987d7b909492f377eea5",
+      "scope": "authored_conditional_clearance_only",
+      "status": "contradicted",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "contradicted",
+          "reason": "clearance_violation",
+          "minimum_observed_gap": "4999999999999999/1000000000000000",
+          "minimum_at": "0",
+          "full_horizon": true
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "common-world-correlation",
+      "input_sha256": "ea38931ef28b0e8d30e3096e5a953dc6495226336487ca30d9b2d6dfd74667fe",
+      "scope": "authored_conditional_clearance_only",
+      "status": "supported",
+      "worlds": [
+        {
+          "world_id": "low",
+          "status": "supported",
+          "reason": "complete_linear_horizon",
+          "minimum_observed_gap": "10",
+          "minimum_at": "0",
+          "full_horizon": true
+        },
+        {
+          "world_id": "high",
+          "status": "supported",
+          "reason": "complete_linear_horizon",
+          "minimum_observed_gap": "10",
+          "minimum_at": "0",
+          "full_horizon": true
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "violations-at-different-times",
+      "input_sha256": "9c266c3b5b43c42fa13b585d8e6d2108d1c5c6e45de1c0c28b22b638dd3bd90d",
+      "scope": "authored_conditional_clearance_only",
+      "status": "contradicted",
+      "worlds": [
+        {
+          "world_id": "early",
+          "status": "contradicted",
+          "reason": "clearance_violation",
+          "minimum_observed_gap": "2",
+          "minimum_at": "0",
+          "full_horizon": true
+        },
+        {
+          "world_id": "late",
+          "status": "contradicted",
+          "reason": "clearance_violation",
+          "minimum_observed_gap": "2",
+          "minimum_at": "2",
+          "full_horizon": true
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "singleton-refutation",
+      "input_sha256": "1e717591560cedc59f303c7d3436564478d106c36e3d300a8e4ef8c7da863ce7",
+      "scope": "authored_conditional_clearance_only",
+      "status": "contradicted",
+      "worlds": [
+        {
+          "world_id": "w0",
+          "status": "contradicted",
+          "reason": "clearance_violation",
+          "minimum_observed_gap": "2",
+          "minimum_at": "1",
+          "full_horizon": false
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    },
+    {
+      "schema_version": "0.1.0",
+      "case_id": "one-blocked-alternative",
+      "input_sha256": "28db0ba3cff8d3f0e4fa5b9f38020f1dea84a0d81228fb6e0da292dc9f08a74d",
+      "scope": "authored_conditional_clearance_only",
+      "status": "unresolved",
+      "worlds": [
+        {
+          "world_id": "known",
+          "status": "supported",
+          "reason": "complete_linear_horizon",
+          "minimum_observed_gap": "8",
+          "minimum_at": "0",
+          "full_horizon": true
+        },
+        {
+          "world_id": "missing",
+          "status": "blocked",
+          "reason": "missing_bound_trace",
+          "minimum_observed_gap": null,
+          "minimum_at": null,
+          "full_horizon": false
+        }
+      ],
+      "safety": "not_assessed",
+      "reasoning_grounding": "not_assessed"
+    }
+  ]
+}

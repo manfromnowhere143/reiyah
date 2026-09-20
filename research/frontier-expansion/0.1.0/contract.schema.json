@@ -1,0 +1,202 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "case_id",
+    "claim",
+    "model",
+    "worlds"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._-]{1,80}$"
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "frame_id",
+        "distance_unit",
+        "time_unit",
+        "window",
+        "minimum_gap",
+        "interpretation",
+        "evidence_id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]{1,80}$"
+        },
+        "kind": {
+          "const": "minimum_longitudinal_clearance"
+        },
+        "frame_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]{1,80}$"
+        },
+        "distance_unit": {
+          "const": "m"
+        },
+        "time_unit": {
+          "const": "s"
+        },
+        "window": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^-?(0|[1-9][0-9]*)(/[1-9][0-9]*)?$"
+          }
+        },
+        "minimum_gap": {
+          "type": "string",
+          "maxLength": 64,
+          "pattern": "^-?(0|[1-9][0-9]*)(/[1-9][0-9]*)?$"
+        },
+        "interpretation": {
+          "const": "authored_front_bumper_to_lead_rear"
+        },
+        "evidence_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]{1,80}$"
+        }
+      }
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "world_set",
+        "interpolation"
+      ],
+      "properties": {
+        "world_set": {
+          "const": "authored_finite_exhaustive"
+        },
+        "interpolation": {
+          "enum": [
+            "piecewise_linear",
+            "unspecified"
+          ]
+        }
+      }
+    },
+    "worlds": {
+      "type": "array",
+      "maxItems": 128,
+      "items": {
+        "$ref": "#/$defs/world"
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reiyah.org/research/frontier-expansion/0.1.0/contract.schema.json",
+  "title": "Reiyah authored relational clearance contract 0.1.0",
+  "$comment": "Offline structural schema. format.py additionally enforces canonical rationals, numeric ceilings, unique identifiers, ordering, frame and bumper bindings. No network resolution required.",
+  "$defs": {
+    "trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "frame_id",
+        "point",
+        "clock_shift",
+        "evidence_id",
+        "samples"
+      ],
+      "properties": {
+        "frame_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]{1,80}$"
+        },
+        "point": {
+          "enum": [
+            "front_bumper",
+            "rear_bumper"
+          ]
+        },
+        "clock_shift": {
+          "type": "string",
+          "maxLength": 64,
+          "pattern": "^-?(0|[1-9][0-9]*)(/[1-9][0-9]*)?$"
+        },
+        "evidence_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]{1,80}$"
+        },
+        "samples": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 256,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "string",
+              "maxLength": 64,
+              "pattern": "^-?(0|[1-9][0-9]*)(/[1-9][0-9]*)?$"
+            }
+          }
+        }
+      }
+    },
+    "world": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "actor_id",
+        "ego",
+        "lead"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]{1,80}$"
+        },
+        "actor_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._-]{1,80}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ego": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/trace"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lead": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/trace"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

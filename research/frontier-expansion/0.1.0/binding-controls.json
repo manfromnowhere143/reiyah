@@ -1,0 +1,63 @@
+{
+  "document_id": "reiyah.frontier-expansion.binding-controls",
+  "version": "0.1.0",
+  "schema_valid_cases": 20,
+  "frozen_file_and_result_controls": [
+    {
+      "mutation": "contract.py",
+      "rejected": true,
+      "diagnostic": "changed frozen artifact: contract.py"
+    },
+    {
+      "mutation": "allocation.json",
+      "rejected": true,
+      "diagnostic": "changed frozen artifact: allocation.json"
+    },
+    {
+      "mutation": "contract.schema.json",
+      "rejected": true,
+      "diagnostic": "changed frozen artifact: contract.schema.json"
+    },
+    {
+      "mutation": "PLAN.md",
+      "rejected": true,
+      "diagnostic": "changed frozen artifact: PLAN.md"
+    },
+    {
+      "mutation": "wrong-freeze",
+      "returncode": 1,
+      "rejected": true
+    },
+    {
+      "mutation": "omitted-case",
+      "returncode": 1,
+      "rejected": true
+    },
+    {
+      "mutation": "reordered-case",
+      "returncode": 1,
+      "rejected": true
+    }
+  ],
+  "supervisor_controls": [
+    {
+      "control": "unfinished-receipt",
+      "passed": true,
+      "returncode": 1
+    },
+    {
+      "control": "exhausted-checking",
+      "passed": true,
+      "returncode": 1
+    },
+    {
+      "control": "network-denied",
+      "passed": true,
+      "returncode": 0
+    }
+  ],
+  "all_pass": true,
+  "active_freeze_sha256": "82ec4fef013178f1115381fd8a62135e58c601eca2774b248fcfae787b470e8c",
+  "latest_receipt_sha256": "a0628d3338d25b28871c90fc0014ffe115e798b7ca08038c46c285869d366943",
+  "prior_attempts_retained": "nested-sandbox failure and successful first-freeze run remain private"
+}

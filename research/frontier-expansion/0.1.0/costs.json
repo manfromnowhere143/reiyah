@@ -1,0 +1,124 @@
+{
+  "document_id": "reiyah.frontier-expansion.costs",
+  "version": "0.1.0",
+  "snapshot_utc": "2026-09-20T12:57:46.397016+00:00",
+  "cutoff": "Completed measured setup, web envelopes and supervised commands before snapshot. Current cost command and later work excluded. Final closeout records later costs separately.",
+  "categories": {
+    "checking": {
+      "events": 1,
+      "duration_seconds": 0.06376500008627772,
+      "nonzero_outer_commands": 0,
+      "known_child_cpu_seconds": 0.052558999999999995
+    },
+    "controls": {
+      "events": 6,
+      "duration_seconds": 1.9155614159535617,
+      "nonzero_outer_commands": 1,
+      "known_child_cpu_seconds": 1.682737
+    },
+    "execution": {
+      "events": 1,
+      "duration_seconds": 0.06779670785181224,
+      "nonzero_outer_commands": 0,
+      "known_child_cpu_seconds": 0.054687999999999994
+    },
+    "online": {
+      "events": 1,
+      "duration_seconds": 0.5974563751369715,
+      "nonzero_outer_commands": 0,
+      "known_child_cpu_seconds": 0.516682
+    },
+    "packaging": {
+      "events": 1,
+      "duration_seconds": 0.04869216587394476,
+      "nonzero_outer_commands": 0,
+      "known_child_cpu_seconds": 0.038699
+    },
+    "setup": {
+      "events": 14,
+      "duration_seconds": 1.9637350009288639,
+      "nonzero_outer_commands": 0,
+      "known_child_cpu_seconds": 0
+    },
+    "source": {
+      "events": 9,
+      "duration_seconds": 15.227921248879284,
+      "nonzero_outer_commands": 1,
+      "known_child_cpu_seconds": 0.60161
+    },
+    "web_envelope": {
+      "events": 10,
+      "duration_seconds": 25.0,
+      "nonzero_outer_commands": 0,
+      "known_child_cpu_seconds": 0
+    }
+  },
+  "known_interval_events": 43,
+  "known_duration_sum_seconds": 44.884927914710715,
+  "known_interval_union_seconds": 42.762462,
+  "precision_note": "UTC envelope durations and monotonic process durations have distinct precision; do not interpret their difference as productive effort.",
+  "first_known_instrumentation_utc": "2026-09-20T12:26:53Z",
+  "actual_user_turn_start_utc": null,
+  "new_source_retrievals": 27,
+  "http_200_bodies": 23,
+  "failed_retrievals": [
+    {
+      "id": "guard-html-v1",
+      "status": 404,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "spacex-updates",
+      "status": null,
+      "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "id": "tesla-master-plan",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "tesla-safety",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "source_body_bytes": 3479463,
+  "private_bytes": 4322891,
+  "public_packet_bytes": 122723,
+  "combined_study_bytes": 4445614,
+  "artifact_ceiling_bytes": 134217728,
+  "free_bytes": 24108744704,
+  "checkout_bytes_separate": 35858996,
+  "nested_not_added": [
+    "per-source fetch timers",
+    "Git/readback timers within future supervised publication",
+    "control child processes",
+    "timed execution/checking inside enclosing tool envelopes"
+  ],
+  "online_category_note": "binding-controls-02 launches the supervisor test outside a parent sandbox; the tested child itself enters network denial. No source fetch occurs in that harness.",
+  "failures_retained": [
+    "source-02 wrong relative script path before retrieval",
+    "binding-controls nested sandbox_apply rejected (exit71 child, exit1 harness)",
+    "two Tesla403 responses",
+    "GUARD HTML404",
+    "obsolete SpaceX hostname DNS failure",
+    "exploratory rg candidate/tools/perception path absent"
+  ],
+  "unknown": [
+    "unplaced exploratory reads and edits",
+    "initial discovery timing",
+    "reasoning/authoring and active useful effort",
+    "human observation and full workflow costs",
+    "billing"
+  ],
+  "human_seconds": null,
+  "dollar_cost": null,
+  "savings": null,
+  "new_inference_or_training_calls": 0,
+  "reserved_images_opened": 0,
+  "delegates": 0,
+  "historical_original_start_utc": "2026-09-17T22:28:16Z",
+  "historical_excluded_seconds": 44963.785396,
+  "ten_hour_mission": "closed; not restarted"
+}

@@ -1,3 +1,63 @@
+# Reiyah frontier-direction and relational-contract closeout, 2026-09-20
+
+Continuation version: `0.1.49`. Status: `exploratory`.
+
+Daniel explicitly requested current primary research and justified expansion.
+The [new roadmap](ENGINE_ROADMAP_2026-09-20.md), proposed version 0.3.0,
+keeps the small perception proof kernel and selects relational behavior evidence,
+simulation validity and human–automation recovery as staged research questions.
+This broadens the research program without claiming that the perception economics
+succeeded. Preserve the restored README depth and six diagrams.
+
+The [new packet](../research/frontier-expansion/0.1.0/README.md) implements one
+offline authored clearance contract. Twenty cases and 24 common scene alternatives
+yield three supported, seven contradicted, six unresolved, three blocked and one
+inconsistent-premise result. Merged-knot and separate segment-pair arithmetic
+agree throughout. It shares a format gate, not an arithmetic routine.
+All 4,374 finite cross-checks, 18 malformed-input families, eight result mutations,
+two JSON rejections, seven frozen-file/CLI bindings and three supervisor controls
+pass. These are authored correctness tests and same-session checking,
+not empirical driving performance, independent replication or novel mathematics.
+
+Active corrected freeze: 82ec4fef013178f1115381fd8a62135e58c601eca2774b248fcfae787b470e8c.
+The first freeze remains retained. Staged whitespace review rejected an extra
+EOF blank line; removing it preserves the format gate's syntax tree. Both
+executions and separate checks have identical cases and outcomes, totaling
+0.140959375/0.125685875 outer-process seconds. Binding controls were repeated
+against the corrected freeze; failed staging and the old projection remain.
+No allocated case failed or capped. The first binding-control harness failed
+on nested macOS sandbox initialization; its code, outputs and cost remain.
+Rerunning the harness outside a parent sandbox allowed its child to enter the
+unchanged denial policy. Scientific execution/checking stayed under that policy.
+
+The source review retains NVIDIA 2026 reasoning/simulation material, Mobileye
+methodology and August article, SpaceX September 15 and historical failure reports,
+Drive the Thoughts v1 and established temporal-monitoring methods. Tesla raw
+article/safety requests returned 403; available search rendering remains limited
+context. GUARD HTML 404 and old SpaceX DNS failure remain. The public benchmark
+index has 150 entries; only the first alphabetical scene's two JSON sidecars
+were inspected. No images were opened. These files do not supply the needed
+lead-actor trace; corpus-wide absence is not claimed. Taxonomy-source and
+snapshot-date discrepancies remain, as do underlying data-rights questions.
+
+Next: qualify a public actor/ego trace with common clocks, bumper geometry,
+horizon and residual motion assumptions, then freeze one comparison if admitted.
+A plain example is whether one identified car remains five metres ahead for
+two seconds; ego waypoints and a “keep distance” sentence cannot answer it.
+No customer release records are asserted available or requested as a precondition
+for independent useful work. Real revision value and human/full costs remain
+unproven. Retain all previous negative findings.
+
+Owned packet:
+`~/.codex/reports/reiyah/frontier-direction-2026-09-20-hofjbo8r/`.
+Base 9ff2a547 preserves this morning's editorial correction. CLOSEOUT and
+publisher receipts identify the distributed commit and later cost cutoffs.
+All 1,433 reserved images stay closed. Perception Engine source remains
+38a50ec014cc83e86ea6f247df803ded2971b386; Gate A remains operator-unaccepted.
+Preserve the historical controller at 74fbacc and every closed candidate.
+Normal checked push/readback remains authorized; use Daniel as author and
+committer, no model trailers, no delegation. Earlier records below remain history.
+
 # Reiyah README depth and editorial correction, 2026-09-20
 
 Continuation version: `0.1.48`. Status: `exploratory`.
