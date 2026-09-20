@@ -1,0 +1,14 @@
+{
+  "document_id": "reiyah.public-motion.publication-precheck-failure",
+  "version": "0.1.0",
+  "failed_command": "review-commit-01",
+  "returncode": 1,
+  "receipt_sha256": "df0f526ca19fe20c120bbb183b55e2734bd970b9014c5b88cfccd0e89b6e4b0b",
+  "wrapper_sha256": "4ffd482bd034eec0b01598fb35d3d3332caa369f6223e0823c21794c535ea56e",
+  "failure": "Wrapper assumed nine report rows; report has nine passing checks plus one explicit optional not_run_here row.",
+  "underlying_research_consistency": "pass; unchanged",
+  "correction": "Require all nine named-position core rows to pass and the tenth row to equal the explicit optional attack-suite not_run_here record. No skipped row becomes a pass.",
+  "scientific_code_changed": false,
+  "scientific_results_changed": false,
+  "original_failure_retained": true
+}

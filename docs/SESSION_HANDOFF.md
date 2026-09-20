@@ -1,3 +1,54 @@
+# Reiyah public motion qualification closeout, 2026-09-20
+
+Continuation version: `0.1.50`. Status: `exploratory`.
+
+The mistaken Nisayon handoffs supplied methodological lessons only. No sibling
+code, data, conclusions, gates or authority were imported. Reiyah continues solo.
+
+The [public motion packet](../research/public-motion/0.1.0/README.md) captures one
+bounded official NGSIM US-101 source. Selection was frozen before trajectory
+retrieval: first eight distinct ego IDs in the first 200 preceding-positive
+chronological rows, with their named initial leads and two-second windows.
+There are 541 captured rows and 12 identities. All eight candidates retain 21
+paired instants; all support the sampled longitudinal proxy's authored
+five-metre requirement. Separate row selection/join/arithmetic agrees. The
+168 pair-time assignments are dependent, not independent encounters.
+
+All eight physical continuous-clearance fields remain unresolved. The source
+lacks qualified position/dimension/clock error bounds, projected bumper geometry
+and inter-sample motion. Its approximate accuracy cannot become a hard bound.
+Current CC BY-SA 3.0/4.0 fields and legacy RDE redistribution language conflict.
+All raw payloads and per-case numerical trajectories stay private. No physical
+benchmark, driving outcome, safety benefit or workflow advantage is established.
+
+Freeze: 830b3f32ec4843d29c0ea4dc0c5766ba792ada5c90adbe7f89d5d76e636bf210.
+All 37 authored controls, 27 scalar-grid cases, six integrity-rejection controls
+and four supervisor controls pass. Execution/checking command time is
+0.123960875/0.123304958 seconds, not a latency comparison. Earlier controls
+are not counted again as independent evidence. Two mistaken read paths and web
+rendering limitations are retained; direct source requests succeeded.
+
+Owned packet:
+`~/.codex/reports/reiyah/public-motion-2026-09-20-5iy9r7xd/`.
+Its CLOSEOUT, cost and publisher receipts identify completion and exact commit.
+Proposed roadmap is now 0.3.1. README substance and all six diagrams are preserved.
+
+Next: qualify a calibrated uncertainty model or a documented error envelope
+covering position, dimensions, common-clock error, road-projected bumper geometry
+and motion between samples before a physical comparison. A statistical claim
+requires separate coverage assumptions and a frozen protocol. Keep the new
+annotation adapter useful within its explicit scope; do not require Daniel to
+possess private team records or repeat general permission requests. Do not rerun
+this completed eight-window study to pad progress or tune a favorable outcome.
+
+All 1,433 reserved images stay closed. Perception Engine source remains
+38a50ec014cc83e86ea6f247df803ded2971b386; Gate A remains operator-unaccepted.
+Historical controller stays at 74fbacc and closed candidates remain untouched.
+No inference, training, media, paid compute, delegation, outreach, deployment or
+physical control. Normal guarded Reiyah push/readback remains authorized, with
+Daniel as author and committer and no model/session trailers. Earlier records
+below remain history.
+
 # Reiyah frontier-direction and relational-contract closeout, 2026-09-20
 
 Continuation version: `0.1.49`. Status: `exploratory`.

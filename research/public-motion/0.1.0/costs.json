@@ -1,0 +1,162 @@
+{
+  "document_id": "reiyah.public-motion.costs",
+  "version": "0.1.0",
+  "cutoff_utc": "2026-09-20T15:31:11.721111+00:00",
+  "scope": "Completed owned receipts and setup only; this write, subsequent checks and publication are retained later in the private closeout.",
+  "categories": {
+    "online": {
+      "commands": 1,
+      "outer_seconds": 0.6885042921639979,
+      "child_cpu_seconds": 0.544861
+    },
+    "checking": {
+      "commands": 1,
+      "outer_seconds": 0.12330495798960328,
+      "child_cpu_seconds": 0.071475
+    },
+    "controls": {
+      "commands": 3,
+      "outer_seconds": 3.049541332060471,
+      "child_cpu_seconds": 2.813815
+    },
+    "execution": {
+      "commands": 1,
+      "outer_seconds": 0.12396087497472763,
+      "child_cpu_seconds": 0.073993
+    },
+    "packaging": {
+      "commands": 2,
+      "outer_seconds": 0.17313824989832938,
+      "child_cpu_seconds": 0.06676699999999999
+    },
+    "source": {
+      "commands": 5,
+      "outer_seconds": 11.666766375070438,
+      "child_cpu_seconds": 0.372386
+    }
+  },
+  "completed_owned_commands": 13,
+  "recorded_duration_sum_seconds": 17.30318583222106,
+  "utc_envelope_union_seconds": 17.307362,
+  "unplaced_direct_tool_seconds": 6.755040915999999,
+  "unplaced_not_added_to_utc_union": true,
+  "owned_private_plus_new_public_bytes_before_cost_write": 6740027,
+  "owned_temporary_bytes_retained": 5656417,
+  "checkout_initial_bytes": 35870960,
+  "free_disk_bytes": 25432514560,
+  "artifact_cap_bytes": 134217728,
+  "source_download_bytes": 889855,
+  "source_cap_bytes": 8388608,
+  "free_space_floor_bytes": 5368709120,
+  "sampling_limit": "All temporary writes declared to the recorder use the owned root; point samples do not bound unseen peaks. Checkout and shared Git object maintenance are separate.",
+  "separate_shared_git_observation": {
+    "loose_objects_before_publication": 5958,
+    "loose_object_kib": 40644,
+    "pack_kib": 0,
+    "garbage_items": 1,
+    "garbage_kib": 0
+  },
+  "unknown": [
+    "active engineering/reasoning effort",
+    "human review time",
+    "provider charges",
+    "energy",
+    "peak process memory",
+    "unrecorded tool/host overhead",
+    "complete workflow economics"
+  ],
+  "overlap_rule": "Nested retrieval/child/control timings are retained but not added again to supervisor envelopes. Setup Git events are separate. No elapsed clock is called active effort.",
+  "commands": [
+    {
+      "id": "binding-controls-01",
+      "category": "online",
+      "returncode": 0,
+      "duration_seconds": 0.6885042921639979,
+      "receipt_sha256": "1af708e5499a15d757611a3c6295dddf059f95643a2f5198043f91db0aaed875"
+    },
+    {
+      "id": "checking-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.12330495798960328,
+      "receipt_sha256": "f79f0c04ed0ebb94078577560f290b99dea9253d16666e63617785657ce71ed3"
+    },
+    {
+      "id": "controls-01",
+      "category": "controls",
+      "returncode": 0,
+      "duration_seconds": 1.06194212497212,
+      "receipt_sha256": "eb844dff6f2185026479ed15dba4d689aea068d083b50340cca7a858949d8f08"
+    },
+    {
+      "id": "controls-02",
+      "category": "controls",
+      "returncode": 0,
+      "duration_seconds": 1.0007559161167592,
+      "receipt_sha256": "a5354939efb0d51ca2a377bca4833e0edceefdfef18505e1c5789ee31e136277"
+    },
+    {
+      "id": "controls-final",
+      "category": "controls",
+      "returncode": 0,
+      "duration_seconds": 0.9868432909715921,
+      "receipt_sha256": "842e08e78196442696f886b70bc2407b5682b55136c2cfd931207c3065f3c971"
+    },
+    {
+      "id": "execution-01",
+      "category": "execution",
+      "returncode": 0,
+      "duration_seconds": 0.12396087497472763,
+      "receipt_sha256": "3fb4bfbb111a2f250b293c6f7a96073f3aaaf8b08d3a2144d107cb7dc396222a"
+    },
+    {
+      "id": "freeze-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.08089429186657071,
+      "receipt_sha256": "ca0074a9a0de61e477b66694bbffaadb5828aef5e55fdf58ed9ff38846eb84e1"
+    },
+    {
+      "id": "package-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.09224395803175867,
+      "receipt_sha256": "db9e203301659e81cee91feaf1a4cbb25096517f922fe8550293813d4fd59a39"
+    },
+    {
+      "id": "source-catalog-01",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 0.657487666932866,
+      "receipt_sha256": "377b92976ff721f6d83cdb5e5f751e2d24c3867f8c5626a9442a21e4ed413e11"
+    },
+    {
+      "id": "source-meta-01",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 1.3688813750632107,
+      "receipt_sha256": "19c53091703618b337fd8725ea24a01a708c5f85e1b04004f8effc35c4fbc0e6"
+    },
+    {
+      "id": "source-pdf-01",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 2.152595499996096,
+      "receipt_sha256": "f894b2214c8e6728d9f9a2a421ac12ab245c430187f5e2d4a262ab16c5804fd6"
+    },
+    {
+      "id": "source-seeds-01",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 5.8872195419389755,
+      "receipt_sha256": "9258a9f3a432e6496e83771cee1ead71fb9bb34d809f936ae64cd480d94834fc"
+    },
+    {
+      "id": "source-traces-01",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 1.6005822911392897,
+      "receipt_sha256": "3b5b52921d8716b1234b03fec0e808914214eb8318cb52c8108adeaaad28bd06"
+    }
+  ]
+}

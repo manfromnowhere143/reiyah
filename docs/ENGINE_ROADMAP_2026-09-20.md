@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.0**. Status: exploratory.
+Proposed roadmap version: **0.3.1**. Status: exploratory.
 Research cutoff: 20 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -28,7 +28,7 @@ No foundation-model training, simulator deployment or vehicle control is added.
 
 | Evidence layer | Question Reiyah should answer | Present state |
 | --- | --- | --- |
-| Measurement | Which object, coordinate frame, reference point and time does an observation describe; what error remains? | Perception identity, geometry and position-observation machinery exists. Applicable motion/actor observations still need qualification. |
+| Measurement | Which object, coordinate frame, reference point and time does an observation describe; what error remains? | Perception identity, geometry and position-observation machinery exists. A bounded NGSIM adapter qualifies recorded actor pairs; physical error and motion bounds remain unqualified. |
 | Behavior | Does a proposed trajectory meet a named obligation in every admissible common scene, or is there a counterexample? | A new offline authored minimum-clearance slice is executed and checked. It is not a complete driving monitor. |
 | Simulation | Would the release decision change under a different justified simulator or residual reality gap? | Proposed. Visual plausibility and matching model rankings are insufficient on their own. |
 | Human–automation recovery | Does the joint state leave a measured recovery opportunity before a stated deadline? | HARBOR research scope. Gaze, attention, belief, intervention and successful recovery need separate observables and protocols. |
@@ -66,6 +66,28 @@ benchmark: the inspected JSON scope lacks the required lead trace, snapshot
 equivalence needs reconciliation, and underlying data terms remain to qualify.
 No private perception-team release records are asserted available.
 
+## Public motion qualification: a narrower result
+
+The [NGSIM source adapter](../research/public-motion/0.1.0/README.md) now binds
+541 public table rows and eight preselected ego/lead windows, with 12 vehicle
+identities. Every window supplies 21 expected paired samples. The recorded
+longitudinal proxy exceeds the authored five-metre threshold at all supplied
+instants, and the separately implemented conventional calculation agrees.
+These windows share vehicles and time; they are development evidence.
+
+The physical clearance benchmark remains unadmitted. The official documentation
+provides approximate accuracy, warns about gaps and lacks the calibrated
+position/dimension/clock bounds, projected bumper geometry and inter-sample
+motion assumptions that such a claim needs. Source-rights declarations also
+conflict, so raw payloads remain private. Arithmetic agreement is useful input
+qualification; it establishes no driving-safety or workflow-cost advantage.
+
+The next step is to qualify those residual uncertainties. A justified
+probabilistic calibration can support a separately specified statistical claim;
+it must not be presented as a deterministic envelope. Keep the new adapter's
+recorded-sample scope useful while that external evidence remains unresolved.
+No broader physical study or another selector sweep follows automatically.
+
 ## Ordered research gates
 
 | Next investment | Concrete bounded work | Advance criterion and reason to stop |
@@ -76,8 +98,9 @@ No private perception-team release records are asserted available.
 | 4. Reconnect HARBOR recovery | Define object-level driver information, automation state, conflict opportunity, intervention and recovery outcome over a common clock. Specify recovery horizon and action feasibility before looking at outcome differences. | Admit measured constructs and an identification design. Gaze alone, model rationale or an attention label cannot establish belief, readiness or a causal benefit. |
 | 5. Establish repeatable revision value | Run the existing workflow brief with actual consequential old/new decisions, qualified observations, at least three chronological revisions when testing reuse, and measured preparation/review/repair costs. | Meet the existing prospective correctness and investment criteria, then repeat on a distinct population with external scrutiny. Stop the proposed economic advantage if competent parity or overhead erases it. |
 
-The immediate next decision is gate 1, followed by one frozen comparison only if
-the corpus qualifies. A wider monitoring framework, generated scenario factory
+The immediate next decision remains gate 1 for physical residual uncertainty.
+The NGSIM investigation admits recorded-sample arithmetic only; one physical
+comparison follows only if its stronger evidence contract qualifies. A wider monitoring framework, generated scenario factory
 or learned world model should wait for that result. Public evidence qualification
 can proceed without customer records. Customer-value claims cannot.
 

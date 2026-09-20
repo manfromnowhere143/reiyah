@@ -1,0 +1,51 @@
+{
+  "document_id": "reiyah.public-motion.binding-controls",
+  "version": "0.1.0",
+  "freeze_sha256": "830b3f32ec4843d29c0ea4dc0c5766ba792ada5c90adbe7f89d5d76e636bf210",
+  "integrity_controls": [
+    {
+      "id": "changed_code",
+      "rejected": true
+    },
+    {
+      "id": "changed_seed",
+      "rejected": true
+    },
+    {
+      "id": "changed_trace",
+      "rejected": true
+    },
+    {
+      "id": "changed_metadata",
+      "rejected": true
+    },
+    {
+      "id": "changed_freeze",
+      "rejected": true
+    },
+    {
+      "id": "wrong_freeze_argument",
+      "rejected": true
+    }
+  ],
+  "supervisor_controls": [
+    {
+      "id": "unfinished_receipt",
+      "passed": true
+    },
+    {
+      "id": "exhausted_budget",
+      "passed": true
+    },
+    {
+      "id": "network_denial",
+      "passed": true
+    },
+    {
+      "id": "artifact_floor",
+      "passed": true
+    }
+  ],
+  "all_pass": true,
+  "note": "Harness runs outside a parent sandbox so the child supervisor can enter network denial before runtime; no positive network request."
+}

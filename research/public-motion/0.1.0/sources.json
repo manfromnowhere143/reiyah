@@ -1,0 +1,85 @@
+{
+  "document_id": "reiyah.public-motion.sources",
+  "version": "0.1.0",
+  "access_date": "2026-09-20",
+  "publisher": "U.S. Department of Transportation Federal Highway Administration",
+  "dataset_doi": "10.21949/1504477",
+  "retention": "All third-party bodies private; this ledger distributes metadata only.",
+  "sources": [
+    {
+      "id": "catalog.html",
+      "url": "https://catalog.data.gov/dataset/next-generation-simulation-ngsim-vehicle-trajectories-and-supporting-data",
+      "started_utc": "2026-09-20T15:05:43.291588+00:00",
+      "finished_utc": "2026-09-20T15:05:43.825216+00:00",
+      "http_status": 200,
+      "bytes": 139399,
+      "sha256": "ee154ab302f61992f600db5f7c6598629f447ddec9584d6f8c490c98157f018d",
+      "status": "captured"
+    },
+    {
+      "id": "ngsim-metadata.json",
+      "url": "https://data.transportation.gov/api/views/8ect-6jqj.json",
+      "started_utc": "2026-09-20T15:03:46.157251+00:00",
+      "finished_utc": "2026-09-20T15:03:47.410554+00:00",
+      "http_status": 200,
+      "bytes": 57440,
+      "sha256": "2c89e600f674257405f3d7bac5ef27449c81f9d930c81f135e5c89de2877d4e0",
+      "status": "captured"
+    },
+    {
+      "id": "seeds.json",
+      "url": "https://data.transportation.gov/resource/8ect-6jqj.json?%24select=location%2Cvehicle_id%2Cframe_id%2Cglobal_time%2Cpreceding%2Clane_id&%24where=location+%3D+%27us-101%27+AND+preceding+%3E+0&%24order=global_time%2C+vehicle_id%2C+frame_id&%24limit=200",
+      "started_utc": "2026-09-20T15:06:09.700488+00:00",
+      "finished_utc": "2026-09-20T15:06:15.430868+00:00",
+      "http_status": 200,
+      "bytes": 23459,
+      "sha256": "ec4170869aa96804390d5a7f8b8c7a116d679d73148e952c17459117193388c0",
+      "status": "captured"
+    },
+    {
+      "id": "traces.json",
+      "url": "https://data.transportation.gov/resource/8ect-6jqj.json?%24select=location%2Cvehicle_id%2Cframe_id%2Cglobal_time%2Clocal_y%2Cv_length%2Clane_id%2Cpreceding%2Cfollowing%2Cspace_headway%2Cv_class&%24where=location+%3D+%27us-101%27+AND+global_time+%3E%3D+1118846981100+AND+global_time+%3C%3D+1118846987200+AND+vehicle_id+in+%282%2C5%2C8%2C10%2C12%2C13%2C14%2C18%2C21%2C22%2C26%2C31%29&%24order=global_time%2Cvehicle_id%2Cframe_id&%24limit=5001",
+      "started_utc": "2026-09-20T15:12:15.077249+00:00",
+      "finished_utc": "2026-09-20T15:12:16.532632+00:00",
+      "http_status": 200,
+      "bytes": 111713,
+      "sha256": "49a12c1a5abf8d42c10dc20941a67457974b12d3d6a857f9cc48da65d8c7faba",
+      "status": "captured"
+    },
+    {
+      "id": "us101-metadata.pdf",
+      "url": "https://data.transportation.gov/api/views/8ect-6jqj/files/9bf3a3c7-0dd8-4add-99ce-f5d2cf94d85f?download=true",
+      "started_utc": "2026-09-20T15:04:27.865937+00:00",
+      "finished_utc": "2026-09-20T15:04:29.920730+00:00",
+      "http_status": 200,
+      "bytes": 557844,
+      "sha256": "3a3009e2fac9701784de9fd2768b726ab4d46f8f0faaed4310b58669419c12c8",
+      "status": "captured"
+    }
+  ],
+  "table_metadata": {
+    "id": "8ect-6jqj",
+    "createdAt": 1504279364,
+    "rowsUpdatedAt": 1535394233,
+    "viewLastModified": 1788386753,
+    "publicationDate": 1535383427,
+    "licenseId": "CC_30_BY_SA"
+  },
+  "pdf_edition": "Version 1; publication year 2016",
+  "license_declarations": {
+    "api_licenseId": "CC_30_BY_SA",
+    "api_custom_license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "catalog": "http://creativecommons.org/licenses/by-sa/3.0/legalcode",
+    "legacy_pdf": "RDE access and non-redistribution language; raw redistribution unresolved"
+  },
+  "source_bytes_captured": 889855,
+  "web_rendering_failures": [
+    "API metadata endpoint unavailable through web tool",
+    "PDF application/octet-stream not rendered"
+  ],
+  "failed_local_reads": [
+    "private/supervisor.py instead of private/supervise.py in prior packet",
+    "NOTICE.md instead of NOTICE"
+  ],
+  "failure_effect": "No source or result discarded; corrected read paths used."
+}
