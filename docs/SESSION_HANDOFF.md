@@ -1,3 +1,52 @@
+# Reiyah observation-contract closeout, 2026-09-20
+
+Continuation version: `0.1.47`. Status: `exploratory`.
+
+The [bounded observation study](../research/observation-contract/0.1.0/README.md)
+is executed and separately checked. All 623 unresolved partial-timing operating
+cases retain opposing decisions when both worlds have identical complete
+present/eligible answers and counts. The construction preserves all predictions,
+known references, censuses, case members, unit loss and universal bounds. It
+relies on positive width without a minimum; its narrow padding boxes are allowed
+model worlds, not asserted physically plausible cars. Not every possible presence
+transcript is claimed ambiguous. No selector can guarantee resolution of the
+exhibited transcript using presence/count answers alone.
+
+Allocation: 444 primary and 179 anchor rows; 529 current and 94 union partial
+rows; 542 filtered states, 689 state/family pairs, 803 completion jobs/native
+proofs. Checking separately recomputes 762 inherited matching endpoints,
+checks all 803 new native proofs and recomposes 623 case means. Fourteen lower
+means equal zero, correctly non-improvement. All 7,707 parent identities and
+decisions remain bound: 642 supported, 3,076 excluded, 1,790 unresolved and
+2,199 blocked. Other parent rows are inherited evidence, not new replay.
+
+Freeze: 2dad1b0e3fd88e81f4d3d1b344f58c96570bddd53855b9cf0da08a80dec9b1ac.
+Construction: 9.049285416 outer-process seconds. Actual verification:
+10.829932458; result-binding rejection controls: 3.287873791. Each cumulative
+category stays below 600 seconds. No actual case failed or capped. Twenty-two
+authored controls (including 58 finite worlds), four input-binding, two
+result-binding and three supervisor controls pass. This is internal same-session
+checking, not replication. A preparation path collision was corrected before
+the freeze with exact bytes retained; no private payload was staged.
+
+Roadmap proposed version 0.2.3 prioritizes a qualified distinguishing observation
+or externally justified narrower geometry/motion uncertainty contract. The new
+paper review does not establish frontier advantage. Keep prior parity, failed
+statistical decisions, overhead and other negatives. Actual team revisions,
+consequential operating criteria and human/full-cost measurements remain absent.
+Daniel explicitly authorizes continued useful technical/public-source work
+without repeated permission and does not assert possession of those records.
+All 1,433 reserved images remain closed. No outreach, paid compute or deployment.
+
+Owned packet: `~/.codex/reports/reiyah/observation-contract-2026-09-20-qki4_8kw/`.
+Its final CLOSEOUT, cost ledger and publisher readback record the exact committed
+revision and all later costs after the public snapshot. Preserve all closed
+candidates and the historical controller at 74fbacc. Engine source remains
+38a50ec014cc83e86ea6f247df803ded2971b386. Gate A is operator-unaccepted.
+Use a fresh owned same-repository candidate for future work; maintain Daniel's
+author and committer identity. No delegation or other-model dependency.
+Keep the stable README opening. Earlier sections below remain historical.
+
 # Reiyah adaptive audit comparison closeout, 2026-09-19
 
 Continuation version: `0.1.46`. Status: `exploratory`.

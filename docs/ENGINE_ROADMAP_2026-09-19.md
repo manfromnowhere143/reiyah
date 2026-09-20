@@ -1,7 +1,7 @@
 # Reiyah: the next evidence that can change the decision
 
-Document ID: `reiyah.engine.roadmap`. Version: `0.2.2`.
-Lifecycle status: `proposed`. Updated 19 September 2026.
+Document ID: `reiyah.engine.roadmap`. Version: `0.2.3`.
+Lifecycle status: `proposed`. Updated 20 September 2026.
 
 **Keep the small proof-checking Engine. Focus the next research on what can be
 observed, what guarantee a decision needs, and whether obtaining that guarantee
@@ -34,6 +34,24 @@ All rows, including failures and unresolved results, remain evidence. A universa
 conclusion cannot be obtained from a transcript that is identical in two allowed
 worlds with opposing decisions. A different observation, a justified narrower
 model, or a separately specified probabilistic claim is required.
+
+The [observation-contract study](../research/observation-contract/0.1.0/README.md)
+now makes that requirement concrete for timing. All 623 unresolved partial-timing
+cases retain opposite-decision worlds with identical complete object-presence
+answers and counts. Under the existing arbitrary eligible-rectangle model,
+absent instances can be made present using boxes with no matching edges.
+The 803 new certificates are separately checked; original decisions stay unchanged.
+This does not make every presence answer useless or certify physically plausible
+cars. It exposes the model's unrestricted positive-width assumption.
+
+Prioritize a qualified geometry/matching observation or externally justified
+residual shape/motion contract before a new query-selection experiment. The
+[source review](../research/observation-contract/0.1.0/SOURCES.md) connects this
+to decision-class identification and reviews a 2026 sensing-clock lead. A
+modern sensing schedule does not establish that its answers identify the decision.
+No private team revision records are asserted available. Continue concrete
+public-source and technical work that does not depend on them; keep product-value
+claims conditional on the missing actual workflow and full cost evidence.
 
 ## Keep five obligations distinct
 

@@ -58,7 +58,7 @@ reference coverage retain distinct meanings.
 
 ## Current evidence
 
-The following summarizes retained work through **19 September 2026**. The linked
+The following summarizes retained work through **20 September 2026**. The linked
 records contain the assumptions, complete outcomes, failures and measured costs.
 These are exposed development comparisons and authored mathematical studies.
 
@@ -67,6 +67,7 @@ These are exposed development comparisons and authored mathematical studies.
 | Can reference assumptions change a detector decision? | The two-anchor comparison remains **[-8, 8]** with open physical references, while retained benchmark labels give **[1, 1]**. | The narrower result is conditional on those labels. Physical reference adjudication remains open. [Case](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md) |
 | Can a sufficient set of observations be checked? | On one forty-frame case, **372 hypothetical confirmed-present labels** attain the minimum needed to preserve the strict decision under the specified deletion model. | This is a conditional sufficiency result. Sequential query cost and human effort are different quantities. [Proof](docs/PERCEPTION_MONOTONE_AUDIT_2026-09-17.md) |
 | What remains undecidable under the available evidence? | All **1,790 unresolved rows** in the 7,707-row operating study have checked worlds supporting opposing decisions; **2,199 rows remain blocked**. | These are dependent development rows. Resolving them requires a distinguishing observation or a justified change of assumptions. [Outcomes](research/operating-timing-witness/0.1.0/OUTCOMES.md) |
+| Would complete object-presence answers settle timing uncertainty? | All **623 unresolved partial-timing cases** retain opposing decisions with identical complete presence answers and counts. | This depends on the existing optional-box model, including unrestricted positive width. Geometry or another justified distinguishing observation is needed for a guaranteed decision. [Observation study](research/observation-contract/0.1.0/README.md) |
 | Does the workflow save work against competent alternatives? | Conventional methods match retained stopping results and attain all **99 resolved query floors**. The bounded certificate-reuse assay is slower than full computation on its small workload. | Lower complete validation cost remains unestablished. [Comparison audit](research/roadmap-audit/0.1.0/README.md) · [Reuse assay](docs/PERCEPTION_REVISION_AUDIT_2026-09-16.md) |
 | Can adaptive statistical audits save observations? | ALPHA and fixed betting pass separate checks over **11,712 new paths**. None stops earlier than matched exact stopping on the three retained 64-image reference conditions. | Count-priority exact stopping is faster on the resolved perception conditions. Authored statistical errors and residual uncertainty remain explicit. [Adaptive comparison](research/adaptive-audit/0.1.0/README.md) · [Earlier methods](research/sequential-audit/0.1.0/README.md) |
 

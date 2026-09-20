@@ -1,0 +1,99 @@
+{
+  "actual_user_turn_start_utc": null,
+  "candidate_checkout_bytes_separate": 35701328,
+  "categories": {
+    "checking": {
+      "cpu_measurement_available_events": 2,
+      "duration_seconds": 14.117806249065325,
+      "events": 2,
+      "failed_outer_commands": 0,
+      "known_child_cpu_seconds": 13.497605
+    },
+    "controls": {
+      "cpu_measurement_available_events": 4,
+      "duration_seconds": 2.4082230429630727,
+      "events": 4,
+      "failed_outer_commands": 0,
+      "known_child_cpu_seconds": 1.789612
+    },
+    "execution": {
+      "cpu_measurement_available_events": 1,
+      "duration_seconds": 9.049285416025668,
+      "events": 1,
+      "failed_outer_commands": 0,
+      "known_child_cpu_seconds": 8.583358
+    },
+    "packaging": {
+      "cpu_measurement_available_events": 4,
+      "duration_seconds": 4.057434457819909,
+      "events": 4,
+      "failed_outer_commands": 0,
+      "known_child_cpu_seconds": 3.334389
+    },
+    "setup": {
+      "cpu_measurement_available_events": 0,
+      "duration_seconds": 5.173924288945273,
+      "events": 15,
+      "failed_outer_commands": 0,
+      "known_child_cpu_seconds": 0
+    },
+    "source": {
+      "cpu_measurement_available_events": 1,
+      "duration_seconds": 1.7883737080264837,
+      "events": 1,
+      "failed_outer_commands": 0,
+      "known_child_cpu_seconds": 0.076831
+    },
+    "web_tool": {
+      "cpu_measurement_available_events": 0,
+      "duration_seconds": 16.0,
+      "events": 4,
+      "failed_outer_commands": 0,
+      "known_child_cpu_seconds": 0
+    }
+  },
+  "ceiling_bytes": 134217728,
+  "clock_precision_note": "UTC envelopes include timestamp/receipt overhead; monotonic process durations use separate readings. Millisecond-scale sum/union differences without overlap are not scientific work or savings.",
+  "combined_study_bytes": 35515122,
+  "cutoff": "Completed setup/web envelopes and supervised outer receipts before this cost snapshot; current cost command and later work excluded. Final closeout supplies the later completed receipts.",
+  "delegated_agents": 0,
+  "document_id": "reiyah.observation-contract.costs",
+  "first_known_instrumentation_utc": "2026-09-20T03:46:15Z",
+  "free_bytes": 29891178496,
+  "historical_excluded_seconds": 44963.785396,
+  "historical_original_start_utc": "2026-09-17T22:28:16Z",
+  "human_seconds": null,
+  "known_duration_sum_including_unplaced_seconds": 53.53108737184573,
+  "known_duration_sum_seconds": 52.59504716284573,
+  "known_interval_events": 31,
+  "known_interval_union_seconds": 52.598881999999996,
+  "known_unplaced_preparation_seconds": 0.936040209,
+  "monetary_cost": null,
+  "nested_timers_not_added": [
+    "individual source fetch timers within the supervised sources command",
+    "control subprocesses",
+    "Git publication and per-file readback within supervised commands"
+  ],
+  "new_inference_or_training_calls": 0,
+  "new_raw_source_body_bytes": 805510,
+  "preparation_correction": "PREPARATION_CORRECTION.json retains moved unfrozen private records; wildcard ROOT collision fixed before freeze and actual construction",
+  "private_bytes": 35255261,
+  "public_packet_bytes": 259861,
+  "raw_source_failure_statuses": [],
+  "raw_source_retrieval_attempts": 4,
+  "raw_source_successes": 4,
+  "reserved_outcomes_read": 0,
+  "snapshot_utc": "2026-09-20T04:11:45.097928+00:00",
+  "source_reuse": "previously measured inference, source geometry and proof work are inherited costs, not rerun or charged as new work",
+  "ten_hour_assignment": "closed; not restarted",
+  "unmeasured": [
+    "many file reads and untimed discovery tools",
+    "interpretation, authoring and reasoning",
+    "human observation and useful engineering effort",
+    "whole-session billing",
+    "full workflow economics"
+  ],
+  "unplaced_time_scope": "Three failed exploratory outer read commands have measured wall durations but no retained UTC interval; included separately, not in interval union. Other reads remain unmeasured.",
+  "version": "0.1.0",
+  "web_timing_is_coarse": true
+}
