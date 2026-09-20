@@ -1,0 +1,39 @@
+{
+  "document_id": "reiyah.compact-motion.decision-controls",
+  "version": "0.1.0",
+  "phase": "post",
+  "status": "pass",
+  "decision_freeze_sha256": "df366904343acf6157efe7971990310a686cc07663505bf252e081d8d940f190",
+  "results": [
+    {
+      "id": "false_acceptance",
+      "status": "pass",
+      "rejection": "decision_or_stop"
+    },
+    {
+      "id": "forged_upper_bound",
+      "status": "pass",
+      "rejection": "complete_prefix_bounds"
+    },
+    {
+      "id": "wrong_query_identity",
+      "status": "pass",
+      "rejection": "decision_query_identity"
+    },
+    {
+      "id": "negative_cost",
+      "status": "pass",
+      "rejection": "invalid_cost"
+    },
+    {
+      "id": "physical_promotion",
+      "status": "pass",
+      "rejection": "decision_scope"
+    },
+    {
+      "id": "wrong_freeze",
+      "status": "pass",
+      "rejection": "decision_result_freeze"
+    }
+  ]
+}

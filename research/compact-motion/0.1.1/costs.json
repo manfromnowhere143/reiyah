@@ -1,0 +1,559 @@
+{
+  "document_id": "reiyah.compact-motion.costs",
+  "version": "0.1.1",
+  "cutoff_utc": "2026-09-20T19:49:18.050889+00:00",
+  "scope": "Completed owned command receipts and separately timed setup. This accounting write and later operations have later private receipts.",
+  "categories": {
+    "execution": {
+      "commands": 3,
+      "outer_seconds": 1.5992147498764098,
+      "child_cpu_seconds": 1.137735
+    },
+    "checking": {
+      "commands": 5,
+      "outer_seconds": 3.5829816251061857,
+      "child_cpu_seconds": 2.940262
+    },
+    "packaging": {
+      "commands": 18,
+      "outer_seconds": 6.707125999266282,
+      "child_cpu_seconds": 1.032421
+    },
+    "source": {
+      "commands": 10,
+      "outer_seconds": 28.377185790799558,
+      "child_cpu_seconds": 0.7467029999999999
+    },
+    "controls": {
+      "commands": 6,
+      "outer_seconds": 2.3611314583104104,
+      "child_cpu_seconds": 1.4510450000000001
+    }
+  },
+  "completed_owned_commands": 42,
+  "recorded_duration_sum_seconds": 44.10122578847222,
+  "utc_recorded_envelope_union_seconds": 44.117401,
+  "setup_git_seconds": 1.4735861651133746,
+  "unplaced_direct_tool_seconds": 6.583056876,
+  "unplaced_tool_records": [
+    {
+      "chunk": "4c77bf",
+      "seconds": 3.75e-06
+    },
+    {
+      "chunk": "8898b1",
+      "seconds": 0.256093167
+    },
+    {
+      "chunk": "66c296",
+      "seconds": 1.875e-06
+    },
+    {
+      "chunk": "17b19d",
+      "seconds": 0.805139416
+    },
+    {
+      "chunk": "594b9e",
+      "seconds": 0.262889667
+    },
+    {
+      "chunk": "db1e33",
+      "seconds": 3.291e-06
+    },
+    {
+      "chunk": "23976b",
+      "seconds": 0.241361
+    },
+    {
+      "chunk": "3ad8ba",
+      "seconds": 3.375e-06
+    },
+    {
+      "chunk": "df3b8a",
+      "seconds": 0.28048875
+    },
+    {
+      "chunk": "58a8a9",
+      "seconds": 0.296823542
+    },
+    {
+      "chunk": "c23d93",
+      "seconds": 0.271192458
+    },
+    {
+      "chunk": "108119",
+      "seconds": 1.959e-06
+    },
+    {
+      "chunk": "e68f2a",
+      "seconds": 0.292747
+    },
+    {
+      "chunk": "8e288d",
+      "seconds": 6.208e-06
+    },
+    {
+      "chunk": "29c46b",
+      "seconds": 0.240068209
+    },
+    {
+      "chunk": "f369ae",
+      "seconds": 0.294756459,
+      "scope": "failed supervisor import; no inner receipt"
+    },
+    {
+      "chunk": "2af06f",
+      "seconds": 0.273466125,
+      "scope": "failed supervisor import; no inner receipt"
+    },
+    {
+      "chunk": "ea096d",
+      "seconds": 0.255865625
+    },
+    {
+      "chunk": "54810c",
+      "seconds": 0.320412417
+    },
+    {
+      "chunk": "28b712",
+      "seconds": 0.304424959
+    },
+    {
+      "chunk": "b0b7ac",
+      "seconds": 0.234799666
+    },
+    {
+      "chunk": "5062ff",
+      "seconds": 0.266766625
+    },
+    {
+      "chunk": "afa22d",
+      "seconds": 0.244124625
+    },
+    {
+      "chunk": "e16948",
+      "seconds": 0.297366708
+    },
+    {
+      "chunk": "9b7e0a",
+      "seconds": 0.235792166
+    },
+    {
+      "chunk": "1bb3a3",
+      "seconds": 0.37698625
+    },
+    {
+      "chunk": "247c8b",
+      "seconds": 0.280825667
+    },
+    {
+      "chunk": "eb03c8",
+      "seconds": 0.250645917
+    }
+  ],
+  "unplaced_not_added_to_union": true,
+  "elapsed_since_first_known_instrumentation_seconds": 2510.050889,
+  "actual_user_turn_start_utc": null,
+  "owned_artifact_bytes_before_write": 4915740,
+  "owned_temporary_bytes_retained": 0,
+  "both_packet_versions_counted": true,
+  "checkout_initial_bytes": 36154323,
+  "checkout_current_bytes": 36413493,
+  "free_disk_bytes": 24872701952,
+  "source_ledger_bytes": 4323197,
+  "extra_source_transcription_bytes": 58123,
+  "transcription_files": [
+    "private/schema-exposure.json",
+    "private/mat-schema.json",
+    "private/mat-header.json",
+    "private/mat-type-investigation.json",
+    "private/commands/companion-member-01/stdout",
+    "private/commands/csv-schema-01/stdout",
+    "private/commands/fetch-preview-html/stdout",
+    "private/commands/fetch-zenodo-json/stdout",
+    "private/commands/inspect-docs-01/stdout",
+    "private/commands/license-01/stdout",
+    "private/commands/mat-header-01/stdout",
+    "private/commands/mat-schema-01/stdout",
+    "private/commands/mat-type-investigation-01/stdout",
+    "private/commands/novatel-context-01/stdout",
+    "private/commands/numeric-members-02/stdout",
+    "private/commands/paper-head-01/stdout",
+    "private/commands/range-inventory-01/stdout",
+    "private/commands/usno-time-01/stdout",
+    "private/commands/vif-doc-members-01/stdout"
+  ],
+  "source_and_transcription_bytes": 4381320,
+  "publisher_readback_bytes_also_charged_conservatively": 0,
+  "source_ceiling_conservative_bytes": 4381320,
+  "compressed_ranges_counted_alongside_extracted_members": true,
+  "full_dataset_archive_downloaded": false,
+  "minimum_sampled_free_bytes": 24852008960,
+  "highest_sampled_artifact_bytes": 4912329,
+  "limits": {
+    "artifact_cap_bytes": 134217728,
+    "source_cap_bytes": 8388608,
+    "free_space_floor_bytes": 5368709120,
+    "execution_process_seconds": 600,
+    "checking_process_seconds": 600
+  },
+  "nested_decision_timers": {
+    "document_id": "reiyah.compact-motion.decision",
+    "version": "0.1.0",
+    "status": "exploratory",
+    "analysis_freeze_sha256": "2afdec93b04fec556d05c6815e8da8e6f1d8fff7d4ac5e6e7c20bde37c4cee5a",
+    "decision_freeze_sha256": "df366904343acf6157efe7971990310a686cc07663505bf252e081d8d940f190",
+    "population_records": 4437,
+    "allocated_decisions": 1,
+    "shared_binding_and_decode": {
+      "wall_seconds": 0.17842083307914436,
+      "process_cpu_seconds": 0.154328
+    },
+    "reiyah": {
+      "decision": "contradicted",
+      "queries": 1,
+      "trace": [
+        {
+          "queries": 0,
+          "lower_mismatches": 0,
+          "upper_mismatches": 4437,
+          "decision": "unresolved"
+        },
+        {
+          "queries": 1,
+          "lower_mismatches": 1,
+          "upper_mismatches": 4437,
+          "decision": "contradicted"
+        }
+      ],
+      "wall_seconds": 1.795799471437931e-05,
+      "process_cpu_seconds": 1.7999999999990246e-05,
+      "query_indices": [
+        0
+      ]
+    },
+    "conventional": {
+      "decision": "contradicted",
+      "queries": 1,
+      "wall_seconds": 5.332985892891884e-06,
+      "process_cpu_seconds": 6.0000000000060005e-06,
+      "query_indices": [
+        0
+      ]
+    },
+    "source_acquisition_charged_separately_once": true,
+    "logical_reveal_is_not_physical_acquisition": true,
+    "physical_clearance": "unresolved",
+    "independent_baseline_authorship": false
+  },
+  "sampling_limit": "Point samples cannot bound unseen peaks; checkout is separately counted. Correction-creation command used prior supervisor; subsequent commands count both packet versions. Shared Git storage growth is not attributed here.",
+  "unknown": [
+    "active engineering/reasoning effort",
+    "human acquisition/review time",
+    "provider charges",
+    "energy",
+    "peak workflow memory",
+    "unrecorded tool/host/network overhead",
+    "complete workflow economics"
+  ],
+  "overlap_rule": "Nested fetch, child CPU, per-method decision and publication timers are details inside supervised envelopes, never additive to their parents. Unplaced tool durations lack UTC placement and are not active effort.",
+  "original_mission_start_utc": "2026-09-17T22:28:16Z",
+  "previous_excluded_seconds": 44963.785396,
+  "previous_ten_hour_assignment": "complete; clock not restarted",
+  "commands": [
+    {
+      "id": "audit-01",
+      "category": "execution",
+      "returncode": 1,
+      "duration_seconds": 0.6996382498182356,
+      "receipt_sha256": "66cf3169aadfec58b53c4a9d35b44abdc0e2cea03e940db24500237ad0483d1e"
+    },
+    {
+      "id": "audit-02",
+      "category": "execution",
+      "returncode": 0,
+      "duration_seconds": 0.5458587920293212,
+      "receipt_sha256": "ab2556ef51e37627c1298b10e1d9ba5deaec8c317d226da766c156dfbd6057dc"
+    },
+    {
+      "id": "check-02",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.7080864158924669,
+      "receipt_sha256": "b2827cd44efa930e62bfe406ba60aef764e7176f3e2507273d59b0a8eafc390c"
+    },
+    {
+      "id": "code-format-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.10148641699925065,
+      "receipt_sha256": "f96e95a0fca374baf1ef998fe7585ad1c735b95634cb4ef8ed8c9281958fe81e"
+    },
+    {
+      "id": "code-style-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.3490541251376271,
+      "receipt_sha256": "9a8525d96677b0f500645a6eb5878b531a3fb2e00a120434d287e19d508b2798"
+    },
+    {
+      "id": "companion-choice-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.08890554099343717,
+      "receipt_sha256": "c720a2caf785c3d5c912cbca361c31b7490d04ee8144b6a99814978d6f3be81f"
+    },
+    {
+      "id": "companion-member-01",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 2.875619249884039,
+      "receipt_sha256": "f99859b9e8768fc11012eb8a18103a446f0d8d8f74be71a2c0fa33589fd9286e"
+    },
+    {
+      "id": "consistency-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 1.9883665000088513,
+      "receipt_sha256": "440cca01bd9c7038c173ee105bc9570ea33d7fc21e024f332c7a554f71843c5b"
+    },
+    {
+      "id": "controls-post-02",
+      "category": "controls",
+      "returncode": 0,
+      "duration_seconds": 0.763613749993965,
+      "receipt_sha256": "ae21fe95d396866ba2b70b1a21721107457603d0f9aa1a0639ba90cfe2056976"
+    },
+    {
+      "id": "controls-pre-01",
+      "category": "controls",
+      "returncode": 0,
+      "duration_seconds": 0.22011804208159447,
+      "receipt_sha256": "305b819669e54ebe0f8d8a72a3dfede05038c16c0c397bf3f111d85f7a3fe8d4"
+    },
+    {
+      "id": "controls-pre-02",
+      "category": "controls",
+      "returncode": 0,
+      "duration_seconds": 0.4305584169924259,
+      "receipt_sha256": "5550feb870206fede93d3cceaa2cf373a5d08ad3c134ffc5df69df3ed2cb95f0"
+    },
+    {
+      "id": "corrected-freezes-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.09468004084192216,
+      "receipt_sha256": "536228c64533c56a647c47d6b095ea93e0e3df6fe0040193dad014290ccd6ac2"
+    },
+    {
+      "id": "correction-format-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.09503129217773676,
+      "receipt_sha256": "9085ddcc4f7de8f94df6a8157ee13a84a6a6710ceebec7c7327f3e786714f9d5"
+    },
+    {
+      "id": "create-correction-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.10526429209858179,
+      "receipt_sha256": "d3a538b8ff14b7135637f512b9432f4ace3db1d85e7a82615cfc8c5aee99f035"
+    },
+    {
+      "id": "csv-schema-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.09148933296091855,
+      "receipt_sha256": "204a08423bc25ce2e0a0637a82c7cdbd0a54444ca567809289e3ebfa6efe180a"
+    },
+    {
+      "id": "decision-check-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.3651513340882957,
+      "receipt_sha256": "8db44abeb61cd1f29f30a3d1ce53e2e09d8a3d1aa4db07705f5f854d69f1027a"
+    },
+    {
+      "id": "decision-controls-post-01",
+      "category": "controls",
+      "returncode": 0,
+      "duration_seconds": 0.3475530000869185,
+      "receipt_sha256": "98c48b473851f59020ce93da195a5e4b019d1680d4af6a69139faea91b33d759"
+    },
+    {
+      "id": "decision-controls-pre-01",
+      "category": "controls",
+      "returncode": 0,
+      "duration_seconds": 0.35484145814552903,
+      "receipt_sha256": "f9da2ffa209b1f81eb8b3907286da06c7062920f39e636b250af8f3211e94ad6"
+    },
+    {
+      "id": "decision-controls-pre-02",
+      "category": "controls",
+      "returncode": 0,
+      "duration_seconds": 0.24444679100997746,
+      "receipt_sha256": "53c8dcf9db880a3ecd046af9a37304755af520a4c3a38bb0bf1bde729ef9c742"
+    },
+    {
+      "id": "decision-format-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.10111808311194181,
+      "receipt_sha256": "b647f9cd71ce5eb3896aa1e18a0b775cd62a60f6794dea3217106ac67535d056"
+    },
+    {
+      "id": "decision-freeze-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.0964429578743875,
+      "receipt_sha256": "d9f41398fc737d61f9b479b0ac0b54f2929cebe41eee03f97be02e8e7b2d1b4b"
+    },
+    {
+      "id": "decision-run-01",
+      "category": "execution",
+      "returncode": 0,
+      "duration_seconds": 0.35371770802885294,
+      "receipt_sha256": "3b669b5f85ea7388a085af7321ae9ebc246c3d17a9fb336ac9c1910af9d21bad"
+    },
+    {
+      "id": "decision-style-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.34588591707870364,
+      "receipt_sha256": "544fd6674a7840db3017410d76616b95095ada9d211571a603d19d24f6b5199d"
+    },
+    {
+      "id": "fetch-preview-html",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 0.6130497499834746,
+      "receipt_sha256": "bca6804cc16cb64a1d11cc5cfa7decea6faff4d48ff3d85de6631d345950fcc8"
+    },
+    {
+      "id": "fetch-zenodo-json",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 0.6149241668172181,
+      "receipt_sha256": "1a1f784b4c434ba6e19d7940424427e69c7841438ebd854cef475740ae2d7bd6"
+    },
+    {
+      "id": "final-format-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.10892737493850291,
+      "receipt_sha256": "850c7e6952fb113b0d2ca6c6d9c67d2877e7c2f176be4f718f248b6d5f89bd66"
+    },
+    {
+      "id": "final-lint-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.34747766703367233,
+      "receipt_sha256": "7eeaed39f392c8e4f0ff66651b8f84d3ac3a8439ea0b72564d7a93c2cb9fe390"
+    },
+    {
+      "id": "freeze-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.22133370791561902,
+      "receipt_sha256": "d6fa4574db2dd1fae75815afd772e9417400395363ef07abfecea7cfe2ba239e"
+    },
+    {
+      "id": "inspect-docs-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.09063637489452958,
+      "receipt_sha256": "a63aac9dcffd93ebfb86ba002e8dd662219da306649225a85b047dbadf590610"
+    },
+    {
+      "id": "license-01",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 0.41455504088662565,
+      "receipt_sha256": "c948dedd5d3d1a34469ca3cabda04dfb66ca74ba94f2397b4946739590723c88"
+    },
+    {
+      "id": "mat-header-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.32457120809704065,
+      "receipt_sha256": "2f3da4316e07db75bdb7572e271f11ddf93ba09f46b8255fca63bf542833cfde"
+    },
+    {
+      "id": "mat-schema-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 3.935979333007708,
+      "receipt_sha256": "69f5bdfc82007feca88ffdf4208ada36ef6c5b0e3be5189e98427e7d96634be1"
+    },
+    {
+      "id": "mat-type-investigation-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.40122733311727643,
+      "receipt_sha256": "784aee75bd446e6c59897794ebb03212422cbe50164ea4883084e0f72d31e9e2"
+    },
+    {
+      "id": "novatel-context-01",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 8.077138375025243,
+      "receipt_sha256": "c1d8d1265d73df187abe4c329be9d0023a069ec69e2c108cfc41b4e1739471f7"
+    },
+    {
+      "id": "numeric-members-02",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 4.49159458396025,
+      "receipt_sha256": "e455d1034492bd337b73350353ee53f02ddc54ca772ebbd4cf2ae27e6b8ed0f4"
+    },
+    {
+      "id": "paper-head-01",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 0.5310671250335872,
+      "receipt_sha256": "34bd601162cba0e807bb8bd414762160c40569b448a59e00dda45faaed17678f"
+    },
+    {
+      "id": "prepare-reports-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.10538387508131564,
+      "receipt_sha256": "f2134e199a42cb9f20b876c8416c71c8937ff9ac017b88c3a154583986ca00fa"
+    },
+    {
+      "id": "quickstart-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.12015004199929535,
+      "receipt_sha256": "a09c373d54531e0364a5bf2f055a41fd53dff38417cdbb1b95c11d2b1ded7220"
+    },
+    {
+      "id": "range-inventory-01",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 2.0528263750020415,
+      "receipt_sha256": "2be3a05545bf1bd869a0daa1d53f5a3e96642720ca1dbe053a4a30133af6f40a"
+    },
+    {
+      "id": "retain-patch-failure-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.10345845902338624,
+      "receipt_sha256": "f61ce4affdb636421a7d767a7eb3d10f0ab5f450f41f4ac498254cba91c51966"
+    },
+    {
+      "id": "usno-time-01",
+      "category": "source",
+      "returncode": 1,
+      "duration_seconds": 4.3968360831495374,
+      "receipt_sha256": "af904d984eb41819fd19132cb61267cce5c50f9aa380fb118c470ee7ffe5d2e7"
+    },
+    {
+      "id": "vif-doc-members-01",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 4.309575041057542,
+      "receipt_sha256": "5b96eb4ed975e9a8224933a6499b6bd1573286a6e5b0b3f2a47d15c16119a59d"
+    }
+  ]
+}

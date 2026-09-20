@@ -1,0 +1,60 @@
+{
+  "document_id": "reiyah.compact-motion.failures",
+  "version": "0.1.1",
+  "failures": [
+    {
+      "id": "selection-wrapper-import",
+      "tool_chunk": "f369ae",
+      "reported_tool_seconds": 0.294756459,
+      "error": "Helper named select.py shadowed Python standard-library select during supervisor import; selection.json was written before AttributeError. No supervisor START or receipt was created.",
+      "selection_sha256": "e42d40681eec815db58655a392422b5fb6c8a62a63c629b065dfb3910af5e588",
+      "resolution": "Keep the selection unchanged. Rename helper choose_sources.py. No numerical payload was fetched before selection. Timing is only tool-reported, not a successful supervised selection run."
+    },
+    {
+      "id": "numeric-wrapper-import",
+      "tool_chunk": "2af06f",
+      "reported_tool_seconds": 0.273466125,
+      "error": "A dependent fetch was dispatched despite the prior exit 1. Supervisor import hit selection's existing-output assertion. No source request ran and no START or receipt was created.",
+      "resolution": "Rename helper and dispatch only after checking completion and exit status. Preserve this failed attempt."
+    },
+    {
+      "id": "usno-public-capture-reset",
+      "status": "failed_retained",
+      "command": "usno-time-01",
+      "reason": "Connection reset by peer; zero body bytes. Web discovery is not retained evidence; no GPS-to-UTC conversion relies on it."
+    },
+    {
+      "id": "read-only-roadmap-path",
+      "status": "failed_retained",
+      "tool_chunk": "28b712",
+      "reason": "rg named nonexistent docs/ROADMAP.md; existing README identified docs/ENGINE_ROADMAP_2026-09-20.md, subsequently read. No repository edit occurred."
+    },
+    {
+      "id": "initial-mat-numeric-type",
+      "status": "corrected_with_new_release",
+      "command": "audit-01",
+      "reason": "mat_numeric_type: one heading cell decoded as uint8/int, not float",
+      "duration_seconds": 0.6996382498182356,
+      "original_result_serialized": false,
+      "correction": "CORRECTION.md"
+    },
+    {
+      "id": "read-absent-audit-result",
+      "status": "failed_retained",
+      "tool_chunk": "5062ff",
+      "reason": "A read attempted audit-01.json after the failed audit; file was not emitted. No evidence was fabricated or overwritten."
+    },
+    {
+      "id": "documentation-patch-context",
+      "status": "refused_no_change",
+      "reason": "Initial documentation patch named a nonexistent final context line; apply_patch refused atomically. Readback confirmed no docs changed. The smaller corrected patch succeeded."
+    }
+  ],
+  "limits_and_unresolved": [
+    "Full paper body would exceed remaining source cap; HEAD only retained",
+    "Whole archive publisher MD5 unverified",
+    "Physical clock/geometry/error/motion contract unresolved",
+    "Empty mirror searches do not establish absence",
+    "No comparative query or complete-cost advantage"
+  ]
+}

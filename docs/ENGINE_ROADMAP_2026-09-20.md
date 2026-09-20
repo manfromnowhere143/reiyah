@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.3**. Status: exploratory.
+Proposed roadmap version: **0.3.4**. Status: exploratory.
 Research cutoff: 20 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -28,7 +28,7 @@ No foundation-model training, simulator deployment or vehicle control is added.
 
 | Evidence layer | Question Reiyah should answer | Present state |
 | --- | --- | --- |
-| Measurement | Which object, coordinate frame, reference point and time does an observation describe; what error remains? | Perception identity, geometry and position-observation machinery exists. A bounded NGSIM adapter qualifies recorded actor pairs; physical error and motion bounds remain unqualified. |
+| Measurement | Which object, coordinate frame, reference point and time does an observation describe; what error remains? | Perception identity, geometry and position-observation machinery exists. NGSIM recorded actor pairs are qualified narrowly; a ViF-GTAD experiment rejects a lossy coordinate export. Physical error, clock and motion bounds remain unqualified. |
 | Behavior | Does a proposed trajectory meet a named obligation in every admissible common scene, or is there a counterexample? | A new offline authored minimum-clearance slice is executed and checked. It is not a complete driving monitor. |
 | Simulation | Would the release decision change under a different justified simulator or residual reality gap? | Proposed. Visual plausibility and matching model rankings are insufficient on their own. |
 | Human–automation recovery | Does the joint state leave a measured recovery opportunity before a stated deadline? | HARBOR research scope. Gaze, attention, belief, intervention and successful recovery need separate observables and protocols. |
@@ -123,9 +123,27 @@ replaces a vague request for more data with exact source-bound fields. This
 closes one bounded source review; the physical comparison remains unadmitted.
 Another monitor extension or more download budget alone cannot close that gap.
 
+The [compact ViF-GTAD experiment](../research/compact-motion/0.1.1/README.md)
+now tests one recorded input decision, frozen before its full comparison:
+whether the selected target CSV can replace its MATLAB coordinates losslessly.
+Supported range access obtained numeric records within the existing source cap.
+All 4,437 target coordinate pairs differ, by up to 6.631331 m under the stated
+spherical reporting convention. Both Reiyah's complete mismatch bounds and a
+conventional early-exit scan reject substitution after one logical record reveal.
+The full-file reference verifies the result; there is no query advantage, and
+the already incurred file acquisition/decoding work is charged separately.
+
+This is a useful source-admission correction, not frontier performance or a
+physical clearance result. A mixed MATLAB numeric type caused the initial audit
+failure; the original release and explicit decoder correction remain. The ego
+and target clocks still need physical interpretation, and geometry/uncertainty
+records remain insufficient for the stronger contract. Preserve the MAT numeric
+representation for subsequent work. Do not fit a clock offset or apply a
+convenient clearance threshold merely to obtain another result.
+
 | Next investment | Concrete bounded work | Advance criterion and reason to stop |
 | --- | --- | --- |
-| 1. Qualify public relational evidence | Seek an existing compact numeric export with ego/lead geometry, source identity, clock residuals and applicable uncertainty/motion records. 7V-Scanario is a pinned lead, not an admitted benchmark. A distinct public source can qualify under the same obligations. No image inference, archive expansion or reserved study is implied. | Admit only a fully specified scope with appropriate rights and known residual uncertainty. Otherwise retain the specific missing fields and stop that corpus comparison. |
+| 1. Qualify public relational evidence | Use the captured ViF-GTAD numeric representation with its source identity; reconcile output reference points and clock semantics, then seek applicable uncertainty/motion records. Its target CSV is rejected as a lossless MAT replacement. 7V-Scanario is a separate pinned lead. No image inference, archive expansion or reserved study is implied. | Freeze a consequential decision and supported scope before outcomes. Qualify physical residuals or explicitly narrow to recorded-data semantics; test complete decision resolution and equally informed conventional performance. Stop physical claims when required records remain missing. |
 | 2. Test consequential relational obligations | Freeze one real observable requirement and its semantic adjudication. Compare conventional temporal monitoring and the relevant published monitor on identical usable evidence, population and unknown-answer rules. Retain false assurance, false rejection, abstention and coverage by scenario. | Demonstrate correctness first. Advance a value hypothesis only if useful resolution or total work improves without weaker obligations; parity is a valid negative. |
 | 3. Test simulation credibility for that decision | Use already qualified logged/replayed outputs to separate simulator error, policy error and event-timing error. Prespecify shared scenarios, intervention semantics, dependence and off-support exclusions. Audit action-conditioned consistency and ranking changes. | A favorable synthetic result must survive a separately justified reality-gap test. A simulator's own generated labels cannot certify its fidelity. Stop claims outside the qualified envelope. |
 | 4. Reconnect HARBOR recovery | Define object-level driver information, automation state, conflict opportunity, intervention and recovery outcome over a common clock. Specify recovery horizon and action feasibility before looking at outcome differences. | Admit measured constructs and an identification design. Gaze alone, model rationale or an attention label cannot establish belief, readiness or a causal benefit. |

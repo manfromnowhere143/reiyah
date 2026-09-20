@@ -1,3 +1,74 @@
+# Reiyah recorded coordinate decision closeout, 2026-09-20
+
+Continuation version: `0.1.53`. Status: `exploratory`.
+
+The [compact motion packet](../research/compact-motion/0.1.1/README.md) completes
+one frozen recorded-data decision. Supported public HTTP Range access retrieved
+ViF-GTAD v2 numeric members without a full archive or sensor media. Metadata
+selected scenario 3's smallest ego CSV and first target, BME Honda. The exact
+MAT companion was selected after first-row CSV schema exposure; that development
+selection and both freezes remain explicit.
+
+The full audit covers 7,761 ego and 4,437 target records. Every target coordinate
+pair differs between CSV and MAT, with maximum nominal spherical displacement
+6.631330858 m and mean 3.747876099 m. This is representation disagreement, not
+measured physical position error. Target timestamp rows match exactly. The ego
+GPS/header arithmetic differs by about 80 seconds and written calendar/header
+by about 7,200 seconds; physical clock interpretation remains unresolved.
+
+The decision is whether this CSV is a lossless coordinate replacement. Reiyah's
+complete mismatch-count bounds move from [0,4437] to [1,4437] after one logical
+MAT record reveal, refuting the universal claim. The conventional early-exit
+scan independently reaches the same decision after the same one reveal. A full
+reference finds 4,437 mismatching records. Zero false acceptance/refusal on this
+one case, no query advantage, and no physical acquisition saving are established.
+The whole source was already acquired and decoded. Both methods are authored
+in this session; this is not external replication or frontier performance.
+
+The initial 0.1.0 audit failed on one legitimate uint8 heading scalar. Its code,
+freezes, failed receipt and pre-controls remain; no result JSON was emitted.
+The explicit 0.1.1 decoder correction admits exactly representable numeric
+integers while retaining text/unsafe-integer rejection. Arithmetic, population
+and decision code did not change. Current controls pass: 23 diagnostic pre,
+five diagnostic mutations, seven decision families and six decision mutations.
+The separate diagnostic calculation verifies 210 leaves; decision checking
+traverses all rows and the complete bound trace. Other workflow failures remain.
+
+Analysis freeze: 2afdec93b04fec556d05c6815e8da8e6f1d8fff7d4ac5e6e7c20bde37c4cee5a.
+Decision freeze: df366904343acf6157efe7971990310a686cc07663505bf252e081d8d940f190.
+The [validation](../research/compact-motion/0.1.1/validation.json),
+[costs](../research/compact-motion/0.1.1/costs.json) and owner closeout bind later
+repository checks, integration and publisher readback. Known source retention
+is 4,323,197 bytes plus charged source transcriptions/schema records. No raw data,
+archive ranges, HTML, credentials or media enter public Git. CC BY 4.0 source
+attribution is retained. Whole-archive MD5 verification remains unperformed.
+
+Owner: `~/.codex/reports/reiyah/compact-motion-2026-09-20-ee6goaua/`.
+Use CLOSEOUT, FINAL_COSTS, PUBLISH_FINAL and FINAL_CONFIRMATION for the exact final
+commit and readback. Publisher records are integrity checks, not independent
+transport or scientific verification. Roadmap is proposed 0.3.4. README opening,
+substance, headings and all six diagrams are preserved; two navigation lines added.
+
+Next: reject this CSV as an exact replacement and preserve the MAT numeric
+representation. Resolve its published clock/reference-point mapping and relevant
+residual uncertainty before a physical relational comparison. A concrete missing
+record must explain which physical instant the target timestamp names and how it
+aligns with ego GPS time. An observed offset or a standard deviation is not a
+calibrated bound. Freeze a consequential narrower recorded-data question if only
+that scope qualifies, and test full decision resolution against an equally
+informed conventional method. Do not build another monitor or count another
+inventory as value. Daniel need not own private team records or grant general
+permission again. No further experiment is needed to answer this closed export
+question; use a fresh owned candidate for the next increment.
+
+Physical clearance remains unresolved, with zero physical cases. All 1,433
+reserved images stay closed; prior NGSIM, authored and perception studies are
+unchanged. Perception source remains 38a50ec014cc83e86ea6f247df803ded2971b386.
+Gate A stays operator-unaccepted. Historical controller remains clean at 74fbacc.
+Solo ownership, existing bounds, Daniel's Git identity and normal guarded
+push/readback authorization continue. No inference, training, paid compute,
+delegation, outreach, deployment or physical control. Earlier sections are history.
+
 # Reiyah physical source qualification closeout, 2026-09-20
 
 Continuation version: `0.1.52`. Status: `exploratory`.

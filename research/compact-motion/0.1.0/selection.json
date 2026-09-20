@@ -1,0 +1,65 @@
+{
+  "document_id": "reiyah.compact-motion.selection",
+  "version": "0.1.0",
+  "frozen_utc": "2026-09-20T19:17:31.400843+00:00",
+  "status": "exploratory",
+  "selection_before_numeric_payload": true,
+  "rule": "Smallest uncompressed ego GPS CSV among five scenarios; lexicographically first target CSV within that scenario. Target identity documented as Honda CRZ, a rigid passenger car.",
+  "members": [
+    {
+      "name": "GTAD_Dataset_v2/Test_Scenario_3_Separability/Ego_Vehicle/Test_Scenario_3_Separability_Ego_GPS_ROS.csv",
+      "compressed_bytes": 504308,
+      "uncompressed_bytes": 3019024,
+      "header_offset": 2951070843,
+      "crc32": "d2694a45",
+      "method": 8,
+      "encrypted": false
+    },
+    {
+      "name": "GTAD_Dataset_v2/Test_Scenario_3_Separability/Target_Vehicles/Test_Scenario_3_Separability_Target_BME_Honda.csv",
+      "compressed_bytes": 19873,
+      "uncompressed_bytes": 268356,
+      "header_offset": 2951575373,
+      "crc32": "28dd9cbc",
+      "method": 8,
+      "encrypted": false
+    }
+  ],
+  "known_before_selection": [
+    "Zenodo metadata and archive inventory",
+    "README",
+    "geometry workbook cells",
+    "notebook source only",
+    "author paper web text, no selected numeric motion values"
+  ],
+  "population": "Both complete selected CSV streams; no outcome-dependent time window or row selection. Report malformed/nonfinite/duplicate/reordered records without silent repair.",
+  "planned_analysis": [
+    "Schema, finite-value and timestamp/uncertainty census",
+    "Nominal alignment under source-documented time semantics; retain unresolved clock convention or competing stated hypotheses",
+    "At most one conditional sampled geometry calculation across all eligible matched records, only after explicit assumptions and separate analysis freeze",
+    "No continuous physical acceptance without calibrated pose/geometry/clock and motion or whole-path coverage contract"
+  ],
+  "numeric_headers_not_yet_inspected": true,
+  "full_archive_md5_verified": false,
+  "source_bindings": {
+    "zenodo.json": "8564a23510f5ac4520f7d2d135682704bd92b127f3bef14ba290145df0407130",
+    "vif.inventory.json": "023a2ffc5ac985eca1929865dc027d6e9aeb3bcb874b2f95d8f20edf8dce3461",
+    "ReadMe.txt": "f0fc18cef3809fadb0b36100073272e92e998958cef2cf85ca938990c9fc1b27",
+    "LicensePlate_To_GPS_Offset.xlsx": "cabfd9e2cda67c58899b5d455b296b386c40bd93d9afa25c2be811a84ef265c3",
+    "example_usage.ipynb": "ccef147320f7d1b81a6834636d3b98af655ccc0ccffa25af29c8149c1f00e5e4"
+  },
+  "bounds": {
+    "source_bytes_including_compressed_ranges_and_derived": 8388608,
+    "artifact_bytes": 134217728,
+    "execution_seconds": 600,
+    "checking_seconds": 600,
+    "reserved_images_closed": 1433
+  },
+  "no_claims": [
+    "random representative sample",
+    "held-out model evaluation",
+    "physical ground-truth error bound",
+    "comparative value",
+    "state of the art"
+  ]
+}

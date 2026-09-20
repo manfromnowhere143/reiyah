@@ -1,0 +1,34 @@
+{
+  "document_id": "reiyah.compact-motion.controls",
+  "version": "0.1.0",
+  "phase": "post",
+  "status": "pass",
+  "freeze_sha256": "2afdec93b04fec556d05c6815e8da8e6f1d8fff7d4ac5e6e7c20bde37c4cee5a",
+  "results": [
+    {
+      "id": "record_count",
+      "status": "pass",
+      "rejection": "result_value:/ego_records"
+    },
+    {
+      "id": "clock_difference",
+      "status": "pass",
+      "rejection": "result_time:/clock_differences_seconds/gps_epoch_plus_week_minus_header/median"
+    },
+    {
+      "id": "distance",
+      "status": "pass",
+      "rejection": "result_arithmetic:/target_serialization/spherical_displacement_m/maximum"
+    },
+    {
+      "id": "physical_promotion",
+      "status": "pass",
+      "rejection": "result_value:/scope/calibrated_error_bound"
+    },
+    {
+      "id": "closed_reserve",
+      "status": "pass",
+      "rejection": "result_value:/scope/reserved_images_closed"
+    }
+  ]
+}

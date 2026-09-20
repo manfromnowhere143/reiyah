@@ -1,0 +1,21 @@
+{
+  "document_id": "reiyah.compact-motion.companion-selection",
+  "version": "0.1.0",
+  "frozen_utc": "2026-09-20T19:20:13.105516+00:00",
+  "status": "exploratory",
+  "parent_selection_sha256": "e42d40681eec815db58655a392422b5fb6c8a62a63c629b065dfb3910af5e588",
+  "member": {
+    "name": "GTAD_Dataset_v2/Test_Scenario_3_Separability/Target_Vehicles/Test_Scenario_3_Separability_Target_BME_Honda.mat",
+    "compressed_bytes": 89726,
+    "uncompressed_bytes": 108777,
+    "header_offset": 2951595386,
+    "crc32": "ff3d5693",
+    "method": 8,
+    "encrypted": false
+  },
+  "selection_before_mat_retrieval": true,
+  "reason": "First target CSV row, exposed for schema, has four fractional coordinate digits. README states MAT contains the same data. Inspect exact companion to test serialization agreement before treating decimal precision as measurement accuracy.",
+  "scope": "Same selected actor and scenario only. All records if a documented parseable array is present. If opaque/unparseable, retain unresolved. No other target, scene, media or inference.",
+  "known_exposure": "First data row of each selected CSV; headers, geometry, archive metadata, source documentation. No whole-file numeric calculation has run.",
+  "publication": "Raw numeric CSV/MAT and private receipts remain private; eligible derived diagnostics with CC BY 4.0 source attribution only."
+}
