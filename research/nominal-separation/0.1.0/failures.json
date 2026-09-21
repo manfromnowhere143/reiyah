@@ -1,0 +1,38 @@
+{
+  "document_id": "reiyah.nominal-separation.failures",
+  "version": "0.1.0",
+  "failures": [
+    {
+      "command": "isotonic-source-01",
+      "returncode": 1,
+      "duration_seconds": 0.6659460000228137,
+      "receipt_sha256": "e8854c8aa9c0855b10cc0082ededc9c0635e2a22151f303d20bc9882c8634b5b",
+      "stdout_sha256": "9dba89aeab6f24675c102ba543e09b646974feae20c7f7bf8e13c5a26fe8cd3a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reason": "University-host TLS certificate chain could not be verified; zero-byte attempt retained; arXiv v2 capture subsequently succeeded without disabling TLS verification."
+    },
+    {
+      "command": "lint-01-preflight",
+      "returncode": 1,
+      "tool_wall_seconds": 0.364266167,
+      "utc_envelope": null,
+      "child_cpu_seconds": null,
+      "private_record_sha256": "62f8e2e39d3d3082b51a91e0fd9d00597657aaffb67268e1bd5979010e676ece",
+      "supervisor_receipt_created": false,
+      "reason": "Direct ruff executable rejected by checking-lane runtime identity guard before any lint child launch. Corrected invocation uses the pinned Python wrapper and preserves the guard."
+    },
+    {
+      "command": "read-only-staged-diff-helper-path",
+      "returncode": 1,
+      "tool_wall_seconds": 0.351852916,
+      "utc_envelope": null,
+      "child_cpu_seconds": null,
+      "private_record_sha256": "814ad564e447e8ca7636d7f86d2d3e2f24822cc1d0bb3d95556870e9a8613515",
+      "supervisor_receipt_created": false,
+      "reason": "Staged diff inspection succeeded; its final read-only helper lookup used candidate/private/readback.py rather than owner/private/readback.py. No mutation occurred. Corrected explicit-owner read succeeded."
+    }
+  ],
+  "numerical_failures": 0,
+  "previous_failures": "Prior research failures and corrections preserved unchanged.",
+  "presentation_environment": "Matplotlib unavailable in pinned runtime; no package installed and no scientific plot claimed."
+}

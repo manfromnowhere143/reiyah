@@ -1,0 +1,20 @@
+{
+  "timings-producer-01.json": {
+    "arm": "union_knots",
+    "preparation_seconds": 0.7671630829572678,
+    "calculation_seconds": 0.3673804590944201,
+    "total_through_output_seconds": 1.2064646668732166,
+    "cpu_seconds": 0.8224480000000001,
+    "distinct_source_rows_loaded": 12198,
+    "note": "Nested process timer; not full acquisition/engineering economics."
+  },
+  "timings-reference-01.json": {
+    "arm": "conventional_segment_pairs",
+    "preparation_seconds": 0.4407395417802036,
+    "calculation_seconds": 0.4055989161133766,
+    "total_through_check_and_output_seconds": 0.9224204579368234,
+    "cpu_seconds": 0.806263,
+    "distinct_source_rows_loaded": 12198,
+    "note": "Includes producer-output checking beyond arm calculation; nested timer, not acquisition/engineering economics."
+  }
+}

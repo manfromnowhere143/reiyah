@@ -355,6 +355,8 @@ historical descriptions where later studies have closed a gap.
 
 ## Recent research
 
+[21 September: nominal separation](research/nominal-separation/0.1.0/README.md) retains a 2.7 cm reversal, full conventional parity and unresolved physical uncertainty.
+
 - **21 September 2026:** [Recorded clock-alignment decision](research/clock-alignment/0.1.1/README.md). No constant offset preserves all 2,504 supported target-to-ego associations; 1,933 earlier targets remain unsupported. Both methods reject after three logical reveals, with no query advantage or physical timing guarantee.
 
 The project description and methods above are stable navigation. Dated records

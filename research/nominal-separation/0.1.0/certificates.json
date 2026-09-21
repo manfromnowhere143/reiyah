@@ -1,0 +1,82 @@
+{
+  "document_id": "reiyah.nominal-separation.certificates",
+  "version": "0.1.0",
+  "freeze_sha256": "1df60c2fee5556667763a95d464228d762fe185abe253be2ab9803757a29a890",
+  "result_sha256": "96ed7b72b9c0934adfcb04a3d04c740429ebdcda4790e995345ce5f88f4dc78b",
+  "full_private_trace_sha256": "e8538d303449ec3aac47ff63fafe262e131d91118cd6515248805393a086f420",
+  "full_trace_canonical_sha256": "4543681e807113711ee8f0bb221309af547b50b58e8695614ef957d46dad34b4",
+  "first_counterexample": {
+    "interval": 4555,
+    "record": {
+      "start_ns": 1593075712569000000,
+      "end_ns": 1593075712570000000,
+      "ego_rows": [
+        2277,
+        2278
+      ],
+      "target_rows": [
+        4210,
+        4211
+      ],
+      "a": [
+        "125637806243/1073741824",
+        "124344771815/536870912",
+        "-88421991431/536870912"
+      ],
+      "v": [
+        "65861/21474836480",
+        "-143693/21474836480",
+        "-4611/5368709120"
+      ],
+      "q_start": "108905141742946633062993/1152921504606846976",
+      "q_end": "21781027864617246956391173/230584300921369395200",
+      "q_min": "21781027864617246956391173/230584300921369395200",
+      "minimum_time_ns": "1593075712570000000",
+      "state": "decreasing",
+      "prefix_peak_q": "108905141742946633062993/1152921504606846976",
+      "prefix_peak_time_ns": 1593075712569000000,
+      "drawdown_pm": [
+        3414570,
+        3414572
+      ]
+    }
+  },
+  "maximum_drawdown_witness": {
+    "interval": 5006,
+    "record": {
+      "start_ns": 1593075714820000000,
+      "end_ns": 1593075714829000000,
+      "ego_rows": [
+        2503,
+        2504
+      ],
+      "target_rows": [
+        4435,
+        4436
+      ],
+      "a": [
+        "78510811217/671088640",
+        "1989415545765/8589934592",
+        "-1768227002147/10737418240"
+      ],
+      "v": [
+        "-392607/10737418240",
+        "-827793/8589934592",
+        "622467/10737418240"
+      ],
+      "q_start": "174217911910923575852014913/1844674407370955161600",
+      "q_end": "217772223208359794117137/2305843009213693952",
+      "q_min": "217772223208359794117137/2305843009213693952",
+      "minimum_time_ns": "1593075714829000000",
+      "state": "decreasing",
+      "prefix_peak_q": "108905141742946633062993/1152921504606846976",
+      "prefix_peak_time_ns": 1593075712569000000,
+      "drawdown_pm": [
+        26853869291,
+        26853869293
+      ]
+    }
+  },
+  "arithmetic_scope": "Rational quantities and picometre-scale enclosures describe the explicit nominal model, not physical measurement accuracy.",
+  "attribution": "Derived from ViF-GTAD v2, Haas/Solmaz/Reckenzaun/Genser, Virtual Vehicle Research, DOI 10.5281/zenodo.7808255, CC BY 4.0. Projection/interpolation/analysis by Reiyah."
+}

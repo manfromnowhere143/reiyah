@@ -1,0 +1,261 @@
+{
+  "document_id": "reiyah.nominal-separation.costs",
+  "version": "0.1.0",
+  "cutoff_utc": "2026-09-21T06:01:57.826784+00:00",
+  "scope": "Completed owned command receipts plus separately timed setup. This write and later work have later receipts. Pre-supervisor preparation and tool overhead are not fully instrumented.",
+  "categories": {
+    "checking": {
+      "commands": 3,
+      "outer_seconds": 1.8123808747623116,
+      "child_cpu_seconds": 1.3969549999999997
+    },
+    "source": {
+      "commands": 3,
+      "outer_seconds": 6.021714875008911,
+      "child_cpu_seconds": 0.266472
+    },
+    "packaging": {
+      "commands": 5,
+      "outer_seconds": 1.1476385830901563,
+      "child_cpu_seconds": 0.299265
+    },
+    "execution": {
+      "commands": 1,
+      "outer_seconds": 1.3961937909480184,
+      "child_cpu_seconds": 0.909759
+    }
+  },
+  "completed_owned_commands": 12,
+  "recorded_duration_sum_seconds": 14.767721290932968,
+  "utc_recorded_envelope_union_seconds": 14.772832000000001,
+  "setup_git_seconds": 4.389793167123571,
+  "unplaced_direct_tool_seconds": 11.714308333,
+  "unplaced_tool_records": [
+    {
+      "chunk_id": "695bb1",
+      "seconds": 4.167e-06,
+      "scope": "identity preflight; no placed UTC envelope"
+    },
+    {
+      "chunk_id": "b9a2b3",
+      "seconds": 2.708e-06,
+      "scope": "read-only continuation and methodological records"
+    },
+    {
+      "chunk_id": "a7c293",
+      "seconds": 2.292e-06,
+      "scope": "read-only continuation and methodological records"
+    },
+    {
+      "chunk_id": "2ae26a",
+      "seconds": 0.311153208,
+      "scope": "read-only continuation and methodological records"
+    },
+    {
+      "chunk_id": "c5e6b3",
+      "seconds": 1.088140125,
+      "scope": "read-only helper/source review after compaction; unplaced tool duration"
+    },
+    {
+      "chunk_id": "857a57",
+      "seconds": 1.089337583,
+      "scope": "read-only helper/source review after compaction; unplaced tool duration"
+    },
+    {
+      "chunk_id": "72f006",
+      "seconds": 1.074154,
+      "scope": "read-only helper/source review after compaction; unplaced tool duration"
+    },
+    {
+      "chunk_id": "5cea6a",
+      "seconds": 1.122481416,
+      "scope": "read-only helper/source review after compaction; unplaced tool duration"
+    },
+    {
+      "chunk_id": "d49324",
+      "seconds": 1.359077208,
+      "scope": "read-only parser/integration review; unplaced tool duration"
+    },
+    {
+      "chunk_id": "594c49",
+      "seconds": 1.359351208,
+      "scope": "read-only parser/integration review; unplaced tool duration"
+    },
+    {
+      "chunk_id": "6169d7",
+      "seconds": 0.52112625,
+      "scope": "read retained isotonic paper; unplaced tool duration"
+    },
+    {
+      "chunk_id": "edcc10",
+      "seconds": 2.504305875,
+      "scope": "read-only disk and integration-doc review; unplaced tool duration"
+    },
+    {
+      "chunk_id": "f3f74b",
+      "seconds": 0.438795334,
+      "scope": "pre-freeze source-use summary edit; unplaced tool duration"
+    },
+    {
+      "chunk_id": "eb71ae",
+      "seconds": 0.347317667,
+      "scope": "read results and previous publication review; unplaced tool duration"
+    },
+    {
+      "chunk_id": "1f99a4",
+      "seconds": 0.246335709,
+      "scope": "read frozen source ledger and existing attribution; unplaced tool duration"
+    },
+    {
+      "chunk_id": "daf404",
+      "seconds": 0.252723583,
+      "scope": "read validation entry points and integration diff scope; unplaced tool duration"
+    }
+  ],
+  "unplaced_not_added_to_union": true,
+  "elapsed_since_first_known_instrumentation_seconds": 1756.826784,
+  "actual_user_turn_start_utc": null,
+  "owned_artifact_bytes_before_write": 4681992,
+  "owned_temporary_bytes_retained": 0,
+  "checkout_initial_bytes": 36616196,
+  "checkout_current_bytes": 36702000,
+  "free_disk_bytes": 26592092160,
+  "new_source_body_and_derived_bytes": 337736,
+  "retained_prior_source_bytes_not_downloaded_again": 8869686,
+  "extra_source_transcription_bytes": 3229,
+  "publisher_readback_bytes_also_charged_conservatively": 0,
+  "source_ceiling_conservative_bytes": 340965,
+  "compressed_ranges_counted_alongside_extracted_members": true,
+  "full_archive_downloaded": false,
+  "minimum_sampled_free_bytes": 10315165696,
+  "highest_sampled_artifact_bytes": 4672117,
+  "limits": {
+    "artifact_cap_bytes": 134217728,
+    "source_cap_bytes": 8388608,
+    "free_space_floor_bytes": 5368709120,
+    "execution_process_seconds": 600,
+    "checking_process_seconds": 600
+  },
+  "nested_arm_timers": {
+    "timings-producer-01.json": {
+      "arm": "union_knots",
+      "preparation_seconds": 0.7671630829572678,
+      "calculation_seconds": 0.3673804590944201,
+      "total_through_output_seconds": 1.2064646668732166,
+      "cpu_seconds": 0.8224480000000001,
+      "distinct_source_rows_loaded": 12198,
+      "note": "Nested process timer; not full acquisition/engineering economics."
+    },
+    "timings-reference-01.json": {
+      "arm": "conventional_segment_pairs",
+      "preparation_seconds": 0.4407395417802036,
+      "calculation_seconds": 0.4055989161133766,
+      "total_through_check_and_output_seconds": 0.9224204579368234,
+      "cpu_seconds": 0.806263,
+      "distinct_source_rows_loaded": 12198,
+      "note": "Includes producer-output checking beyond arm calculation; nested timer, not acquisition/engineering economics."
+    }
+  },
+  "overlap_rule": "Nested fetch, child CPU, source parsing, arm and Git timers are not added again to supervising parent durations. Unplaced tool times have no UTC placement.",
+  "unknown": [
+    "active engineering/reasoning effort",
+    "human acquisition/review effort",
+    "provider charges",
+    "energy",
+    "peak workflow memory",
+    "unrecorded tool/host/network overhead",
+    "some early read/write/patch durations",
+    "shared Git storage growth attribution",
+    "complete workflow economics"
+  ],
+  "sampling_limit": "Point samples do not bound unseen peaks. Checkout is separate. All cumulative timers, including source failure, are retained.",
+  "original_mission_start_utc": "2026-09-17T22:28:16Z",
+  "previous_excluded_seconds": 44963.785396,
+  "previous_ten_hour_assignment": "complete; clock not restarted",
+  "commands": [
+    {
+      "id": "controls-post-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.5305787499528378,
+      "receipt_sha256": "df705e0a4b481df03164a97398e9951862a008b9c8d042d06a649e6a073d7c55"
+    },
+    {
+      "id": "controls-pre-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.1647862079553306,
+      "receipt_sha256": "9756e9a819ff8b56f6d71839c909c528e9c9d22848c29a08a19e7e1004de6708"
+    },
+    {
+      "id": "isotonic-source-01",
+      "category": "source",
+      "returncode": 1,
+      "duration_seconds": 0.6659460000228137,
+      "receipt_sha256": "e8854c8aa9c0855b10cc0082ededc9c0635e2a22151f303d20bc9882c8634b5b"
+    },
+    {
+      "id": "isotonic-source-02",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 0.9343890419695526,
+      "receipt_sha256": "19b451d4d9e128cf072387129c7a4df86da31a535149040473a744155fda12b5"
+    },
+    {
+      "id": "isotonic-text-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.3683764999732375,
+      "receipt_sha256": "3026ca3491e20f1f07383ea2102c649ea5bee40254a7625f3067cccc42fa4e14"
+    },
+    {
+      "id": "package-results-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.12977966712787747,
+      "receipt_sha256": "4423720d5445f8bf59b590f281ddf613392b7e46520623844037497ec93941a7"
+    },
+    {
+      "id": "prepare-freeze-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.46168995811603963,
+      "receipt_sha256": "e162bd080d7cdf2d9e9d8a634e6cc3352eac10ef4192c39d3dc2f9d070e3943a"
+    },
+    {
+      "id": "presentation-environment-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.09032533294521272,
+      "receipt_sha256": "1987177d024a498a8142a85b8b31193b582be3640827bd7ea62771aadbf3718c"
+    },
+    {
+      "id": "reference-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 1.1170159168541431,
+      "receipt_sha256": "e6b94b55fbfc3c83252930c8bb778db355bf61a6767a57a6e723197d21ff25f4"
+    },
+    {
+      "id": "robust-source-01",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 4.421379833016545,
+      "receipt_sha256": "3aa3784c37aa02ac3ce242cd8bc56608a932407ecda099db8eaf45c6919f95ac"
+    },
+    {
+      "id": "separation-01",
+      "category": "execution",
+      "returncode": 0,
+      "duration_seconds": 1.3961937909480184,
+      "receipt_sha256": "e7bc98db5c4cbd9866b660067b0040389cc91355e6004ee022c3e85c433b4673"
+    },
+    {
+      "id": "update-docs-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.09746712492778897,
+      "receipt_sha256": "5e8e9683a04e123eddf7fd85f764a41b1ce23d575be1f80b1b67f06b316a2928"
+    }
+  ]
+}

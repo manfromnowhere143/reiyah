@@ -1,3 +1,69 @@
+# Reiyah nominal separation decision closeout, 2026-09-21
+
+Continuation version: `0.1.55`. Status: `exploratory`.
+
+The [nominal separation packet](../research/nominal-separation/0.1.0/README.md)
+answers one frozen recorded two-vehicle question. The explicit sphere/affine
+navigation-reference reconstruction is not nondecreasing: 355 of 5,007 intervals
+decrease, with maximum reversal 0.026853869291 to 0.026853869293 m. Overall
+distance increases from 151.730 m to 307.317 m across 25.039 seconds. Preserve
+both facts. This does not refute the physical scenario or establish unsafe motion.
+
+All 7,761 ego and 4,437 target records are loaded. The separate conventional
+segment-pair calculation verifies every interval, rational coefficient, source
+index and extremum, as well as all 2,504 prior clock constraints. Both arms need
+4,556 logical interval reveals to reject the premise and actually process all
+5,007 intervals. There is no query advantage, acquisition saving or independent
+baseline authorship. All data were previously exposed; this is development work.
+
+Source support remains explicit: 1,933 target timestamps precede overlap and
+5,257 ego timestamps follow it. Boundary interpolation uses one such row from
+each actor; 2,505 source rows per actor contribute without extrapolation. The
+minimum scalar uniform repair allowing a monotone distance trace is about
+1.34 cm. That standard isotonic-feasibility result is not calibrated sensor noise
+or a physically realizable trajectory repair. Physical uncertainty remains
+unresolved; zero physical cases or new physical measurements ran.
+
+Twenty-eight directed controls and eleven result mutations pass. There were no
+scientific execution failures or frozen corrections. A university-host TLS
+capture failure is retained; arXiv v2 succeeded without disabling verification.
+The lint wrapper also refused a direct non-Python invocation before launch;
+the corrected pinned-Python invocation passes, with the failed preflight retained.
+A read-only helper path error and its corrected lookup are also retained.
+Matplotlib was unavailable and left uninstalled. New retained/derived bodies are
+337,736 bytes; 8,869,686 bytes of prior source/context/clock records are reused.
+Freeze: 1df60c2fee5556667763a95d464228d762fe185abe253be2ab9803757a29a890.
+
+The [validation](../research/nominal-separation/0.1.0/validation.json),
+[costs](../research/nominal-separation/0.1.0/costs.json), result, check and
+certificate excerpts give exact scope. Tiny single-run calculation timers are
+not controlled speed benchmarks or full economics. Source preparation, commands,
+CPU, storage and publisher readback are separately charged; active effort,
+charges, energy and peak memory remain unknown. Elapsed time is not active work.
+
+Owner: `~/.codex/reports/reiyah/nominal-separation-2026-09-21-39yw1e1x/`.
+Read CLOSEOUT, FINAL_COSTS, PUBLISH_FINAL and FINAL_CONFIRMATION for the final
+commit, integration, readback and tail accounting. Publisher integrity is not
+independent verification or scientific acceptance. Roadmap is proposed 0.3.6.
+README opening, substantive text, headings and all six diagrams remain intact.
+
+Next: qualify applicable joint position/reference, clock and intersample evidence
+or a justified statistical contract, then test whether an obtainable additional
+observation resolves the full remaining decision family. For example, a
+source-bound calibration could report both navigation references at common
+surveyed times and their residual errors for this run. Daniel need not possess
+a private team's records or give general permission again. Do not repeat this
+closed nominal question or substitute another metadata-only inventory or wider
+monitor for a consequential uncertainty/measurement experiment.
+
+All 1,433 reserved images stay closed. Perception source remains
+38a50ec014cc83e86ea6f247df803ded2971b386; Gate A remains operator-unaccepted.
+Historical controller remains at 74fbacc. Solo ownership, existing resource/data
+bounds, Daniel's Git identity and normal guarded push/readback continue. No
+media, inference, training, paid compute, outreach, deployment or physical control.
+Use a fresh owned candidate from refreshed main for the next increment; preserve
+this closed area. Earlier sections are history.
+
 # Reiyah clock-association decision closeout, 2026-09-21
 
 Continuation version: `0.1.54`. Status: `exploratory`.

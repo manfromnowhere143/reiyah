@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.5**. Status: exploratory.
+Proposed roadmap version: **0.3.6**. Status: exploratory.
 Research cutoff: 21 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -149,14 +149,25 @@ Reiyah and the conventional scan; a separate calculation checks every constraint
 This is complete resolution over the declared constant family, with no query
 advantage or physical synchronization guarantee. Retain the recorded mapping.
 
-The next substantive experiment should test a declared nominal two-vehicle
-relation using preserved MAT coordinates and these recorded associations, with
-projection, vehicle reference points, interpolation and unknown rules frozen
-before new relational results. The scenario's increasing-separation description
-offers a concrete question without an arbitrary five-metre safety threshold.
-Keep that recorded-data scope separate from physical pose/clock/motion bounds;
-the latter still need applicable calibration. No new metadata-only inventory or
-repeat of this closed shortcut test is needed.
+The [nominal separation experiment](../research/nominal-separation/0.1.0/README.md)
+now checks that relation on the full 25.039-second common recorded support.
+The spherical affine reconstruction increases from 151.730 m to 307.317 m
+overall but contains 355 decreasing intervals, with a largest reversal of
+0.026854 m. The separate conventional calculation verifies all 5,007 intervals;
+both require the same 4,556 logical reveals to reject exact monotonicity. No
+query or acquisition advantage is established. The 2.7 cm nominal decrease
+does not refute the physical scenario description. Its minimum scalar monotone
+repair is about 1.34 cm, not an estimate of calibrated position error.
+
+This closes the nominal decision without smoothing or extrapolation. Preserve
+the small counterexample and its scale, rather than forcing an exact monotone
+premise. All 28 directed controls and 11 actual-result mutations pass. A source
+TLS failure remains; physical uncertainty stays unresolved. The next experiment
+must bring applicable uncertainty evidence or a separately justified statistical
+contract, then test an obtainable observation against the complete remaining
+decision family. Distinguishing two selected explanations alone is insufficient.
+Do not rerun this exposed encounter as independent validation or substitute a
+wider monitor for the missing measurement contract.
 
 | Next investment | Concrete bounded work | Advance criterion and reason to stop |
 | --- | --- | --- |

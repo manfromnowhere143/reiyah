@@ -1,0 +1,68 @@
+{
+  "document_id": "reiyah.nominal-separation.result",
+  "version": "0.1.0",
+  "decision": "contradicted",
+  "scope": "Complete declared nominal reconstruction only; physical maneuver and clearance unresolved.",
+  "support_ns": [
+    1593075689790000000,
+    1593075714829000000
+  ],
+  "interval_count": 5007,
+  "interval_states": {
+    "constant": 0,
+    "nondecreasing": 4652,
+    "decreasing": 355,
+    "decrease_then_increase": 0
+  },
+  "first_counterexample_interval": 4555,
+  "logical_interval_reveals": 4556,
+  "total_intervals_evaluated": 5007,
+  "maximum_drawdown_pm": [
+    26853869291,
+    26853869293
+  ],
+  "minimum_scalar_uniform_repair_pm": [
+    "26853869291/2",
+    "26853869293/2"
+  ],
+  "maximum_drawdown_witness_interval": 5006,
+  "start_separation_pm": [
+    151729529912066,
+    151729529912067
+  ],
+  "end_separation_pm": [
+    307316851154961,
+    307316851154962
+  ],
+  "source_rows": {
+    "ego": 7761,
+    "target": 4437
+  },
+  "timestamp_dispositions": {
+    "ego": {
+      "before": 0,
+      "within": 2504,
+      "after": 5257
+    },
+    "target": {
+      "before": 1933,
+      "within": 2504,
+      "after": 0
+    }
+  },
+  "used_source_rows": {
+    "ego": {
+      "count": 2505,
+      "first": 0,
+      "last": 2504
+    },
+    "target": {
+      "count": 2505,
+      "first": 1932,
+      "last": 4436
+    }
+  },
+  "trace_canonical_sha256": "4543681e807113711ee8f0bb221309af547b50b58e8695614ef957d46dad34b4",
+  "freeze_sha256": "1df60c2fee5556667763a95d464228d762fe185abe253be2ab9803757a29a890",
+  "previous_clock_constraints_verified": 2504
+}
