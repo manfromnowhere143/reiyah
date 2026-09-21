@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.12**. Status: exploratory.
+Proposed roadmap version: **0.3.13**. Status: exploratory.
 Research cutoff: 21 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -23,6 +23,26 @@ This roadmap supersedes the scheduling guidance in the
 obligations remain. The expanded question does not require another perception
 sensitivity sweep or claim that the unproven cost-reduction hypothesis succeeded.
 No foundation-model training, simulator deployment or vehicle control is added.
+
+## 21 September: reuse the implemented endpoint path
+
+The [compatibility study](../research/presence-endpoints/0.1.0/README.md) corrects
+the preceding proposed solver task: the newer revision-audit path already
+implements monotone matching endpoints. Its theorem and solver are not missing.
+Do not repeat that implementation.
+
+A guarded authored conversion makes independent positive presence inputs usable
+through the existing path.512small cases/1,728original worlds and six larger
+cases check. Three larger preferences resolve beyond the legacy fallback, but
+the competent conventional calculation ties every bound and has lower observed
+workflow cost. The unresolved comparison remains unresolved. No production
+promotion, new solver, frontier advantage or empirical value follows.
+
+The next investment must address a demonstrated current consumer deficiency or
+a separately qualified useful decision with complete costs. Another replay of
+the same graphs, exposed mapping or navigation cannot establish that value.
+Keep all1,433reserved images closed; preserve parity, disadvantage and physical
+unknowns without assuming private records Daniel possesses.
 
 ## 21 September: baseline qualification and a bounded scalability question
 

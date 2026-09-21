@@ -1,0 +1,50 @@
+{
+  "document_id": "reiyah.presence-endpoints.costs",
+  "version": "0.1.0",
+  "status": "observed_prefix",
+  "cutoff_utc": "2026-09-21T11:28:18.657117+00:00",
+  "commands": 26,
+  "categories": {
+    "packaging": {
+      "commands": 24,
+      "outer_process_seconds": 4.034055876545608,
+      "nested_child_cpu_seconds": 1.1844919999999999
+    },
+    "checking": {
+      "commands": 1,
+      "outer_process_seconds": 1.8461977080442011,
+      "nested_child_cpu_seconds": 1.64133
+    },
+    "execution": {
+      "commands": 1,
+      "outer_process_seconds": 2.995352042140439,
+      "nested_child_cpu_seconds": 2.732116
+    }
+  },
+  "setup_process_seconds": 1.0847298728767782,
+  "known_outer_process_seconds_with_setup": 9.960335499607027,
+  "internal_case_workflow_seconds": {
+    "conversion_production_checking": 1.4252304669935256,
+    "legacy_validation_production_checking": 0.3730973198544234,
+    "conventional_validation_assignment_certification": 0.3369949150364846
+  },
+  "scope": "Internal sums overlap whole execution and are not additive. Fixed order engine/legacy/conventional; different explicit preparation and checking scopes. No general speed benchmark.",
+  "new_third_party_source_bodies": 0,
+  "new_source_body_cap_bytes": 0,
+  "owned_artifact_cap_bytes": 134217728,
+  "artifact_bytes_outside_checkout": 7983865,
+  "temporary_bytes": 0,
+  "free_disk_bytes": 17686663168,
+  "free_floor_bytes": 5368709120,
+  "observed_command_failures": [],
+  "unmeasured": [
+    "active engineering effort",
+    "file-edit tool cost",
+    "full charges",
+    "energy",
+    "network overhead",
+    "peak process memory"
+  ],
+  "tail": "Packaging/validation/integration/publication/readback costs after this cutoff remain in private FINAL_COSTS and subsequent receipts.",
+  "original_ten_hour_assignment": "complete; never restarted or padded"
+}

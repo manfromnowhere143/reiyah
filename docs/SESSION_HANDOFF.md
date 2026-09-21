@@ -1,3 +1,62 @@
+# Reiyah existing-path compatibility checkpoint,21September2026
+
+Continuation version: 0.1.62. Status: exploratory. Continuing mission ACTIVE.
+
+[The compatibility study](../research/presence-endpoints/0.1.0/README.md) corrects
+the preceding proposed next step: tools/perception_revision/monotone_* already
+implements the matching monotonicity theorem, endpoint producer and checker.
+The legacy-only inspection did not establish a missing solver. Do not build
+that solver again or report its theorem as a new contribution.
+
+A guarded research-only conversion reuses the existing path for authored
+independent positive object-presence inputs.512small cases agree with complete
+independent enumeration of1,728original worlds. Six larger cases also agree
+with a conventional SciPy assignment calculation.10guard refusals and16saved-
+result mutations pass, with engine producers disabled in the checker.
+Questionf2953b170f1eb9a42f3983b20fff5b95c11990762f822caf6965bcf962b13e73;
+fullfreezeacd7b6aff078050d860e1cb90951c58b7775ecc9ab4a892fa5a3ed8907264e28.
+
+Larger exact bounds: guaranteed gain[1,1], unmatched addition[-1,-1],
+competition[-1,1], zero loss[0,0], weighted anchors[-1/3,-1/3],
+strict-tolerance boundary[1,1]. Three preferences resolve beyond the legacy
+fallback; the competition stays unresolved. Zero loss and strict tolerance
+already had resolved legacy decisions. Conventional exact bounds tie all cases.
+Audit insufficiency is not detector inferiority. Preserve that distinction.
+
+Observed summed internal work: conversion+existingengine+checking1.425230467s,
+legacy0.373097320s, conventional0.336994915s. Whole execution2.995352042s;
+separate checker1.846197708s. Nested scopes overlap, order is fixed and workflows
+differ, so no general speed benchmark follows. Retain the conversion's higher
+observed cost. No competitive advantage, new solver or empirical value established.
+
+No production change is justified. The adapter accepts authored synthetic
+cases only and binds mandatory premises as hypothetical, never as observed
+physical evidence. Shared variables, clauses, conditional/negative/conjunctive
+conditions and unavailable data are refused. Do not widen that guard silently.
+All results are public authored data; compact JSON is checked equivalent to the
+actual saved result. No new dataset/source body/inference/training was used.
+
+Owner: ~/.codex/reports/reiyah/presence-endpoints-2026-09-21-umhr3wnz/.
+Read CLOSEOUT, FINAL_COSTS, PUBLISH_FINAL and FINAL_CONFIRMATION after integration.
+No current numerical execution failure occurred. Same authorship and shared
+parser/runtime remain; no independent replication or transport observation.
+
+Next useful work must use the already delivered engine to test a separately
+qualified decision or a demonstrated consumer deficiency. The duplicate-solver
+route is closed. Do not replace the unresolved value question with another
+theorem replay, exposed graph sweep or source-custody catalog. No assumption
+that Daniel has private-team records, and no repeated general permission request.
+Keep the earlier mathematical counterexample, mapping/grid parity, navigation
+disadvantage and unresolved physical evidence visible.
+
+Proposed roadmap0.3.13. README and all six diagrams unchanged. Perception source
+38a50ec014cc83e86ea6f247df803ded2971b386 unchanged. Historical controller74fbacc
+preserved. All1,433reserved images closed. Gate A operator-unaccepted; no historical
+release replay. SOLO, human identity, guarded normal push/readback persist.
+No paid compute, dependencies, outreach, physical control or deployment. Original
+ten-hour assignment complete; active effort/full economics unknown.
+Earlier sections below remain history.
+
 # Reiyah comparison-design checkpoint, 21 September 2026
 
 Continuation version: 0.1.61. Status: exploratory. Continuing mission ACTIVE.
