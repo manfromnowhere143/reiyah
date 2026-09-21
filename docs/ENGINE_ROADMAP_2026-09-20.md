@@ -1,16 +1,21 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.14**. Status: exploratory.
+Proposed roadmap version: **0.3.15**. Status: exploratory.
 Research cutoff: 21 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
-**Build an evidence engine that can say what an autonomous system's proposed
-behavior establishes, what it contradicts, and which missing observation could
-change the decision.** Keep the small perception proof kernel. Extend through
-qualified relational motion evidence, then simulation validity and human
-recoverability. The commercial hypothesis is that development teams need
-defensible revision decisions and useful failure explanations across changing
-models. Demand, full-cost savings and willingness to pay remain unmeasured.
+**Current investment decision: STOP broad evidence-engine expansion.** Preserve
+the small conditional kernels, negative results and explicit unknown states, but
+do not extend into another solver, physical monitor, simulation layer or recovery
+module until a genuine owner-controlled revision workflow demonstrates decision
+value or lower complete cost against that owner's competent method.
+
+The earlier roadmap proposed an engine spanning qualified relational motion,
+simulation validity and human recoverability. That remains a research vision,
+not the current build sequence. The commercial hypothesis is still that
+development teams may need defensible revision decisions and useful failure
+explanations across changing models. Buyer need, full-cost savings, willingness
+to pay and defensibility remain unmeasured.
 
 The [primary-source review](../research/frontier-expansion/0.1.0/SOURCES.md)
 covers current NVIDIA, Mobileye and SpaceX material, a limited Tesla review,
@@ -23,6 +28,36 @@ This roadmap supersedes the scheduling guidance in the
 obligations remain. The expanded question does not require another perception
 sensitivity sweep or claim that the unproven cost-reduction hypothesis succeeded.
 No foundation-model training, simulator deployment or vehicle control is added.
+
+## 21 September: forensic value verdict stops broad expansion
+
+The [forensic review](../research/value-verdict/0.1.0/VERDICT.md) changes the
+specific investment verdict from MODIFY to **STOP**. Narrow conditional
+mathematics and reproducible negative results are supported. A frontier method,
+physical validity, complete-cost advantage and commercial demand are not.
+
+The decision follows repeated matched results, not the absence of one favorable
+case: conventional methods tie the endpoint, mapping, encoded-grid,
+measurement-response and missing-result studies; the first navigation result
+uses 89 conventional versus 90 Reiyah logical queries; the competent perception
+baseline reaches every recorded resolved query floor; the only retained
+certificate-reuse assay is slower than recomputation. The exact Hara variance
+counterexample is a useful narrow correction using classical mathematics, not a
+platform advantage.
+
+Only one product experiment remains warranted: the existing workflow brief's
+comparison on a genuine chronological system revision with an owner-defined
+release action, identical observations and guarantees, the owner's best current
+method, and complete preparation, review, adjudication, repair and integration
+costs. No retained record qualifies, and outreach or new private-data ingestion
+is outside the present authority. Its status is `blocked`; zero experiments were
+executed rather than substituting another authored or exposed case.
+
+Resume product investment only when that record and authority exist. If the
+competent workflow ties or wins on correctness, resolution and complete cost,
+archive the product hypothesis and retain Reiyah as research infrastructure.
+The longer technical sections below remain a record of completed work and
+earlier proposed gates; they are not authorization to bypass this current gate.
 
 ## 21 September: keep missing outcomes separate from scoring conventions
 

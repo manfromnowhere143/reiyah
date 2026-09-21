@@ -1,3 +1,84 @@
+# Reiyah forensic value verdict checkpoint, 21 September 2026
+
+Continuation version: 0.1.64. Status: exploratory. Continuing mission ACTIVE.
+
+The [forensic review](../research/value-verdict/0.1.0/VERDICT.md) issues **STOP**
+for one specific investment: continued broad autonomous expansion of Reiyah as
+a differentiated commercial evidence engine on the strength of the current
+repository evidence. Preserve the sound kernels, exact negative results and
+source custody. Do not add another solver, physical monitor, simulation layer or
+HARBOR domain until a genuine owner-controlled revision workflow demonstrates
+decision value or lower complete cost against the owner's competent method.
+
+The strongest supported claim is narrower. Reiyah is a reproducible offline
+research implementation that keeps declared joint reference alternatives,
+missing states and conditional premises explicit and emits proof payloads that a
+separate checker can challenge within small versioned mathematical families.
+This is useful research infrastructure, not a demonstrated frontier method,
+physical result, production system or commercial moat.
+
+The evidence changing MODIFY to STOP is cumulative: the best conventional
+perception arm ties every recorded resolved query floor while the alternative
+selector has zero wins and four losses; the retained reuse assay is slower than
+recomputation; endpoint, mapping, encoded-grid, measurement-response and
+missing-result studies are conventional parity; the first navigation result is
+90 versus 89 logical queries against Reiyah. The Hara counterexample is an exact
+narrow correction using classical variance calculus, not product superiority.
+No genuine customer revision, owner-defined release action, measured human
+workflow cost, demand, willingness to pay or independent replication is retained.
+
+At most three hypotheses were challenged in the
+[machine decision record](../research/value-verdict/0.1.0/decision.json).
+Query/certificate superiority and immediate platform expansion are stopped. A
+small audit utility is modified to one remaining resume gate: run the existing
+[workflow brief](../research/value-disproof/0.1.0/WORKFLOW_BRIEF.md) on a genuine
+chronological A-to-B revision, with an actual owner criterion/action, identical
+information and guarantees, the owner's best method and complete preparation,
+review, adjudication, repair and integration costs.
+
+No retained record qualifies. Public detector files are publisher generations,
+not a team's revision history; mapping and simulation records retain cohort or
+provenance gaps; authored replies are not measured reviewer work. Outreach and
+new private-data ingestion are outside this task. The warranted experiment is
+therefore `blocked` and **zero new experiments ran**. Do not replace it with
+another authored fixture, source inventory, exposed replay or arithmetic parity
+check. One plain missing example is a release owner's timestamped rule that B
+advances only if metric M exceeds threshold T on population P, plus actual A/B
+outputs, adjudication events, baseline scripts and timed work.
+
+Fresh network-denied verification in the owned phase passed 101 revision tests;
+rechecked the 218/215-record public decision; verified 20 comparison-design
+distributions and 16 controls; checked 512 small presence cases, 1,728 worlds
+and six larger cases; verified nine measurement cases, ten complete response
+partitions and 19 model/witness stages; and rechecked all 38,816 sequential
+paths across 112 groups. These are checks of stored claims, not new experiments
+or independent replication. Navigation, mapping, full value-disproof and
+reserved-outcome studies were not rerun.
+
+The documented research-consistency command passes nine checks, exact-binds 52
+historical transcripts and replays zero of them. The optional attack suite was
+not rerun. The [verification](../research/value-verdict/0.1.0/verification.json)
+and [cost record](../research/value-verdict/0.1.0/costs.json) retain this scope;
+passing bindings are not historical experiment replay or Gate A evidence.
+
+Roadmap 0.3.15 makes this STOP gate current while preserving the longer
+historical sections. The current main README and all six Mermaid diagrams remain
+byte-identical. Perception source remains byte-equivalent to
+38a50ec014cc83e86ea6f247df803ded2971b386. No third-party source body was added;
+the combined ledger remains 8,043,361 of 8,388,608 bytes used.
+
+Owner: `~/.codex/reports/reiyah/value-verdict-2026-09-21-uSGeSZNC/`.
+Its private receipts distinguish fresh checking from inherited results and will
+retain final validation, integration, push and exact readback. Publisher readback
+is integrity evidence by the publisher, not independent transport or science.
+
+All 1,433 reserved images remain CLOSED. Gate A remains operator-unaccepted.
+No inference, training, dependency download, paid compute, simulator, physical
+control, deployment, outreach or private-data ingestion ran. SOLO and human Git
+identity persist. The original ten-hour assignment remains complete. The wider
+mission is not marked complete; this product-investment hypothesis is stopped.
+Earlier checkpoints below remain history.
+
 # Reiyah missing-result decision checkpoint, 21 September 2026
 
 Continuation version: 0.1.63. Status: exploratory. Continuing mission ACTIVE.
