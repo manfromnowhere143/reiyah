@@ -1,0 +1,24 @@
+{
+  "document_id": "reiyah.clock-alignment.failures",
+  "version": "0.1.1",
+  "failures": [
+    {
+      "event": "read_only_missing_path",
+      "command_chunk": "051840",
+      "detail": "cat used source-ledger.json; actual historical ledger is sources.json. No files changed; corrected read succeeded."
+    },
+    {
+      "event": "repository_style_failure",
+      "receipt": "consistency-01",
+      "duration_seconds": 2.0865766250062734,
+      "detail": "One em dash in frozen SOURCES.md. Original packet archived byte-for-byte; successor documentation and explicit freeze preserve all code/mathematics/source bytes. Validator unchanged."
+    }
+  ],
+  "frozen_code_failures": [],
+  "unresolved": [
+    "Physical target time-scale/configuration and residual synchronization calibration remain unqualified.",
+    "Physical geometry/pose/error and between-sample motion bounds remain unqualified.",
+    "No separately authored baseline, acquisition saving or full economic advantage."
+  ],
+  "previous_failures": "All closed compact-motion/physical-source/perception failures and corrections remain unchanged."
+}

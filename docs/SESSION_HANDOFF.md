@@ -1,3 +1,66 @@
+# Reiyah clock-association decision closeout, 2026-09-21
+
+Continuation version: `0.1.54`. Status: `exploratory`.
+
+The [clock-alignment packet](../research/clock-alignment/0.1.1/README.md)
+answers one frozen adapter decision: no real constant offset preserves all
+2,504 recorded target-to-ego brackets in the selected ViF-GTAD streams. Keep
+the paired clock mapping. Of all 4,437 targets, 1,933 precede the 7,761-row ego
+stream and remain input-blocked for association. No row is extrapolated.
+
+Reiyah and the conventional extremum scan reject after three logical reveals,
+touching four distinct ego mapping rows. Target rows 1,933 and 1,935 (zero-based)
+provide disjoint offset intervals and exclude the entire constant family.
+A separate Fraction/monotone-merge reference verifies all 2,504 constraints and
+three prefixes. There are zero incorrect conclusions against this one recorded
+reference, no query advantage, no physical acquisition saving and no independent
+baseline authorship. All data were already exposed; this is development work.
+
+Twenty-six focused pre-controls and eleven actual-result mutations pass. A frozen source note
+failed the no-em-dash repository check. Its exact packet is retained in history;
+the 0.1.1 documentary correction preserves every code byte and numerical method.
+That failure and the read-only wrong-ledger-path failure are retained; previous compact-motion and other failures remain unchanged.
+Freeze: ee1d3c26d117efe9c81f24042032fa7e7c2d2fda16e182eb59f101833f84881f.
+Use [validation](../research/clock-alignment/0.1.1/validation.json),
+[costs](../research/clock-alignment/0.1.1/costs.json), result/check and source
+identities for exact scope. Public summaries omit raw source bodies and full
+per-row records. New captured/derived bodies total 5,209,042 bytes; prior sources
+are reused read-only. Full acquisition, preparation and checking are charged
+separately from tiny nested arm timers. Elapsed time is not active effort.
+
+The paper clarifies the ego rear-axle reference and describes calibration,
+but it does not supply the applicable residual clock/pose/motion bounds. The
+scenario PDF describes a slowly following ego; the paper's brief summary allows
+a stationary ego or converse. Preserve both descriptions. The dataset README
+supports our nominal GPS/written-ROS label convention, not calibrated physical
+synchronization. No UTC, leap-second, timezone or fitted physical correction ran.
+Physical clearance remains unresolved, with zero physical cases.
+
+Owner: `~/.codex/reports/reiyah/clock-alignment-2026-09-21-6a8ofcly/`.
+Read CLOSEOUT, FINAL_COSTS, PUBLISH_FINAL and FINAL_CONFIRMATION for final commit,
+resource cutoffs, integration and exact publisher readback. Publisher integrity
+is not independent transport verification or scientific acceptance. Roadmap is
+proposed 0.3.5. README opening, substantive text, headings and all six diagrams
+remain unchanged; one dated finding is added.
+
+Next: freeze one nominal two-vehicle relation, such as the scenario's stated
+increasing separation, using the preserved MAT coordinates and recorded clock
+associations. Specify projection, vehicle reference points, interpolation and
+unsupported-row rules before inspecting new relational outcomes. Qualify physical
+residuals before any stronger physical claim. A useful missing record would map
+a target timestamp to the ego's same physical instant and state the remaining
+error for this run. Daniel need not own private team records or give general
+permission again. Do not repeat this answered shortcut test or add another
+metadata inventory in place of the next decision experiment.
+
+All 1,433 reserved images stay closed. Perception source remains
+38a50ec014cc83e86ea6f247df803ded2971b386; Gate A stays operator-unaccepted.
+Historical controller remains at 74fbacc. Solo ownership, existing resource
+limits, human Git identity and normal guarded push/readback continue. No media,
+inference, training, paid compute, outreach, deployment or physical control.
+Use a fresh owned candidate from refreshed main next; preserve this closed area.
+Earlier sections are history.
+
 # Reiyah recorded coordinate decision closeout, 2026-09-20
 
 Continuation version: `0.1.53`. Status: `exploratory`.

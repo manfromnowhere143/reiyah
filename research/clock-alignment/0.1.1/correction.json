@@ -1,0 +1,98 @@
+{
+  "document_id": "reiyah.clock-alignment.document-correction",
+  "version": "0.1.1",
+  "created_utc": "2026-09-21T05:02:20.037194+00:00",
+  "previous_packet": "history/clock-alignment/0.1.0",
+  "previous_freeze_sha256": "2e22a6e6dce30a242f0b61a4574ff7aeec68a28840b8d8579482392ebf91a43d",
+  "previous_packet_identities": {
+    "sources.json": {
+      "bytes": 8747,
+      "sha256": "17196845ece19c20890279aa8e867123b2c9cda3a1305e9be6ed43e70c809a11"
+    },
+    "failures.json": {
+      "bytes": 776,
+      "sha256": "d8fd07ad2a9e4dc8b970b26e4ee7d468d55431ea31cf1986932f976bd8f5e10d"
+    },
+    "controls-pre.json": {
+      "bytes": 925,
+      "sha256": "fb5c46732947925b629944087cb8c26f371da1255200efa8f454b62c8ca7e147"
+    },
+    "controls.py": {
+      "bytes": 8164,
+      "sha256": "ec648ebe9872eafe49a876d69c7d263e4eef71127013640952ce70411d8a1a0e"
+    },
+    "METHOD.md": {
+      "bytes": 2718,
+      "sha256": "ae66589b67b14f53763a651efb36e3be967fca0ea98a95fd8aeca80798cc56ef"
+    },
+    "result.json": {
+      "bytes": 1291,
+      "sha256": "f302d731f457059260606b5ff1d23826e2e83b690db046404d6de7fd892b4478"
+    },
+    "SOURCES.md": {
+      "bytes": 2721,
+      "sha256": "cde2547d1f77d97a7b0a9649878fb9f441154b9e06be75d123cf8264bbb3cb3c"
+    },
+    "alignment.py": {
+      "bytes": 9556,
+      "sha256": "859873e72ef60149a09d20801d183383ccb57a913a37c06e68786d1944df0a5e"
+    },
+    "failed-consistency.json": {
+      "bytes": 12330,
+      "sha256": "4388d376ee908b6bb79ab75bc719c290a4c4a287f3ae863939bd7bea41378559"
+    },
+    "README.md": {
+      "bytes": 7358,
+      "sha256": "f502ca4cf47913b3fe15ebe8735854967b64a481fc0be81e1809d02eb4d59346"
+    },
+    "check.json": {
+      "bytes": 1218,
+      "sha256": "ddb58ceffd9813babbfeb60df814e56d50383e07837cd9bb115bb0eea701460c"
+    },
+    "controls-post.json": {
+      "bytes": 471,
+      "sha256": "7dab402e8d18450fa14793a3dc49b9e2bb9fdc3230f49226859c567ea936deb8"
+    },
+    "validation.json": {
+      "bytes": 543,
+      "sha256": "462b56fa697aa6d0d71351331553014e41f8a6d4181a7aaf15f3f1d813415832"
+    },
+    "reference.py": {
+      "bytes": 9185,
+      "sha256": "4b13761acdcccc17c73291f12275c02103f6c39eb3fa24a9c71d3457101544db"
+    },
+    "PLAN.md": {
+      "bytes": 4789,
+      "sha256": "10a4fea844458dcca24280aee2eee8c2ecedffc06bc3e0dae6155949ed599a46"
+    },
+    "DISTRIBUTION.md": {
+      "bytes": 1121,
+      "sha256": "73bf32df422497360c79250caeda421895202c044a0c79e5588a56ea6056cb71"
+    },
+    "freeze.json": {
+      "bytes": 5993,
+      "sha256": "2e22a6e6dce30a242f0b61a4574ff7aeec68a28840b8d8579482392ebf91a43d"
+    },
+    "custody.py": {
+      "bytes": 2542,
+      "sha256": "1dd7bb45291ca60bcf66544236daa4fd27c3457240af02fad1acfc93f0a34010"
+    },
+    "costs.json": {
+      "bytes": 10414,
+      "sha256": "575c473e922a1d5d22d5ca3343b9a34b031c80db4d8c3e6bc2767d522819075b"
+    }
+  },
+  "reason": "Repository style rejection of one em dash in frozen source note; no mathematical, source, selector or decision change.",
+  "source_note_previous_sha256": "cde2547d1f77d97a7b0a9649878fb9f441154b9e06be75d123cf8264bbb3cb3c",
+  "source_note_current_sha256": "24f21b08e820a7d79993ba20fdc1e9234a850fb0705f619391d3b3f5fde0e01b",
+  "code_files_unchanged": [
+    "alignment.py",
+    "reference.py",
+    "controls.py",
+    "custody.py"
+  ],
+  "old_supervisor_sha256": "41a9f840f030665de42ebd92eb6bbe14b88845462fbacdae37e5351bebbb741e",
+  "new_supervisor_sha256": "dfdca9c510b5d79d43d1d86f6d5737a5a84ebafc38a46b548b9690d8dcfb4d86",
+  "supervisor_change": "Count public history copy as well as current research; existing command durations remain cumulative.",
+  "result_claim": "Original numeric execution remains valid for its exact freeze; successor execution gets new freeze metadata and its own receipts."
+}

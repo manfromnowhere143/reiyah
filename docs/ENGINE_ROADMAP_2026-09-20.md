@@ -1,7 +1,7 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.4**. Status: exploratory.
-Research cutoff: 20 September 2026. This is a research choice under Daniel's
+Proposed roadmap version: **0.3.5**. Status: exploratory.
+Research cutoff: 21 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
 **Build an evidence engine that can say what an autonomous system's proposed
@@ -140,6 +140,23 @@ and target clocks still need physical interpretation, and geometry/uncertainty
 records remain insufficient for the stronger contract. Preserve the MAT numeric
 representation for subsequent work. Do not fit a clock offset or apply a
 convenient clearance threshold merely to obtain another result.
+
+The [recorded clock-alignment decision](../research/clock-alignment/0.1.1/README.md)
+now rejects every constant offset that would preserve all 2,504 supported
+target-to-ego brackets in the selected streams. Another 1,933 target records
+precede ego support and remain explicit. Three logical reveals suffice for both
+Reiyah and the conventional scan; a separate calculation checks every constraint.
+This is complete resolution over the declared constant family, with no query
+advantage or physical synchronization guarantee. Retain the recorded mapping.
+
+The next substantive experiment should test a declared nominal two-vehicle
+relation using preserved MAT coordinates and these recorded associations, with
+projection, vehicle reference points, interpolation and unknown rules frozen
+before new relational results. The scenario's increasing-separation description
+offers a concrete question without an arbitrary five-metre safety threshold.
+Keep that recorded-data scope separate from physical pose/clock/motion bounds;
+the latter still need applicable calibration. No new metadata-only inventory or
+repeat of this closed shortcut test is needed.
 
 | Next investment | Concrete bounded work | Advance criterion and reason to stop |
 | --- | --- | --- |
