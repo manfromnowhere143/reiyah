@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.11**. Status: exploratory.
+Proposed roadmap version: **0.3.12**. Status: exploratory.
 Research cutoff: 21 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -23,6 +23,28 @@ This roadmap supersedes the scheduling guidance in the
 obligations remain. The expanded question does not require another perception
 sensitivity sweep or claim that the unproven cost-reduction hypothesis succeeded.
 No foundation-model training, simulator deployment or vehicle control is added.
+
+## 21 September: baseline qualification and a bounded scalability question
+
+The [comparison-design audit](../research/comparison-design/0.1.0/README.md)
+finds an exact authored counterexample to one published multi-model variance
+optimum. It qualifies the comparator; it does not demonstrate Reiyah value.
+Two-model and non-improving controls remain, and no empirical paper result is
+refuted. Established uncertainty-certification research also prevents claiming
+novelty from adaptive measurement selection alone.
+
+Keep investment at MODIFY. Match statistical and universal finite-model
+guarantees before comparing query counts. Next test one concrete engine limit:
+can fixed-eligibility, positive object-presence cases use checked extremal
+matchings instead of enumerating every assignment? Prove and independently
+test the restriction before implementation; reject conditional edges and other
+unsupported dependencies. This is a potential engineering reduction using
+established structure, not yet a result or a novel algorithm.
+
+The wider value claim still needs an equal-information decision experiment with
+complete costs and obtainable observations. Preserve prior parity and adverse
+results. No further exposed mapping/navigation sweeps, new framework, reserved
+image access or inference is justified by this audit.
 
 ## 21 September: a complete-cohort decision and a parity result
 

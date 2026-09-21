@@ -1,3 +1,60 @@
+# Reiyah comparison-design checkpoint, 21 September 2026
+
+Continuation version: 0.1.61. Status: exploratory. Continuing mission ACTIVE.
+
+The [baseline audit](../research/comparison-design/0.1.0/README.md) reproduces a
+specific mathematical counterexample to Hara et al.2024 Theorem2 as written for
+its summed pairwise-variance objective. On two authored points and four models,
+the published ideal query gives variance3/4; the frozen rational challenger
+gives41/56, an exact1/56 improvement. Direct finite-outcome enumeration agrees.
+Twenty distributions and16controls pass, including non-improving challenger
+cases. Nine selected source-query function calls agree with rational references;
+JIT decorators were removed, Numba is absent, and no native or empirical model
+selection ran. Two-model theory and reported empirical results are not refuted.
+
+Question freezeea7ea887e2ece65c820b6a85b8d584d72070e7ab91a8b46db7cc5ab5cf7257fe;
+implementation freeze8003a2d1f49ca455abc69893432cc642d25fbeec8477031836d295e0ec11962c.
+Mental derivation was exposed before freezing. Separate calculations share an
+author and are not independent replication. Whole audit/check processes cost
+0.220885209s/0.108728041s. Internal timing overlaps these and is not additive.
+
+Investment remains MODIFY. Active model selection and minimum-cost uncertainty
+certificates are established research topics. Full Hara2024 and DiwanSTACS2026
+publisher HTML are retained privately. Diwan's fixed-matroid, uncertain-weight
+model is not automatically Reiyah's joint Boolean matching model. The general
+idea of asking the most useful measurement is not an established novelty.
+The correction is classical variance calculus, not Reiyah algorithmic superiority.
+
+Retain failed Hara PDF capture/render and failed Durr2024 PDF capture. Neither
+prefix is complete evidence; no cap-bypassing retry is authorized. Three-MiB
+new source/derived cap and128MiB artifacts apply. Source capture is now closed
+for this owner. Costs, uncertainty, failed outputs and precise source scope are
+in the packet and private owner comparison-design-2026-09-21-l8umtwg0.
+Read CLOSEOUT, FINAL_COSTS, PUBLISH_FINAL and FINAL_CONFIRMATION after integration.
+
+Continue autonomously: first test a bounded fixed-eligibility object-presence
+matching reduction before changing the engine. Current finite kernel limits
+are4096worlds/2million estimated work units. Prove or refute monotone incremental
+matching gain, test all small graphs independently, compare current kernel
+within its cap and check guarded endpoints beyond it. Negative literals,
+conditional edges, arbitrary clauses and missing/inconsistent inputs must not
+silently enter that path. Inspect current consumers and inherited source
+restrictions before any code integration. This is an engineering hypothesis,
+not a claim of novel mathematics or empirical value.
+
+Later decision-value comparison still needs a separately frozen useful question
+and a competent equal-information arm. Preserve previous parity, navigation
+disadvantage, missing map record and all unresolved physical claims. No source
+audit, new passing-check total or authored example substitutes for that value.
+
+Proposed roadmap0.3.12. README bytes and six diagrams unchanged. All1,433reserved
+images remain closed; perception source38a50ec014cc83e86ea6f247df803ded2971b386
+unchanged. Historical controller74fbacc is preserved. Gate A operator-unaccepted.
+SOLO, human Git identity, guarded normal push/readback. No inference, training,
+dependencies, paid compute, outreach, physical control or deployment. Original
+ten-hour assignment complete; active effort and full economics remain unknown.
+Earlier sections below are retained history.
+
 # Reiyah completed-map decision checkpoint, 2026-09-21
 
 Continuation version: 0.1.60. Status: exploratory. Continuing mission ACTIVE.

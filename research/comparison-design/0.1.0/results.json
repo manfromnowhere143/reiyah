@@ -1,0 +1,1240 @@
+{
+  "document_id": "reiyah.comparison-design.audit",
+  "version": "0.1.0",
+  "status": "exploratory_authored_mathematical_audit",
+  "hypothesis": "published general-K oracle rule minimizes sum of pairwise conditional variances",
+  "verdict": "contradicted_by_feasible_distribution",
+  "exact_improvement": "1/56",
+  "cases": [
+    {
+      "case": "theorem2_k4",
+      "authored_loss_rows": [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "absolute_pair_sums": [
+        "3",
+        "4"
+      ],
+      "squared_pair_sums": [
+        "3",
+        "4"
+      ],
+      "classical_optimum_q_decimal": [
+        "0.464101615137754587054892683011744733885610507620761256111614",
+        "0.535898384862245412945107316988255266114389492379238743888386"
+      ],
+      "distributions": [
+        {
+          "method": "published_oracle_l1",
+          "q": [
+            "3/7",
+            "4/7"
+          ],
+          "sum_pair_variances": "3/4",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "-1/2",
+              "variance": "3/16"
+            },
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "expectation": "-1",
+              "variance": "1/48"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "-1/2",
+              "variance": "3/16"
+            },
+            {
+              "pair": [
+                1,
+                3
+              ],
+              "expectation": "-1",
+              "variance": "1/48"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "expectation": "-1/2",
+              "variance": "1/3"
+            }
+          ]
+        },
+        {
+          "method": "rational_challenger",
+          "q": [
+            "7/15",
+            "8/15"
+          ],
+          "sum_pair_variances": "41/56",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "-1/2",
+              "variance": "7/32"
+            },
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "expectation": "-1",
+              "variance": "1/224"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "-1/2",
+              "variance": "7/32"
+            },
+            {
+              "pair": [
+                1,
+                3
+              ],
+              "expectation": "-1",
+              "variance": "1/224"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "expectation": "-1/2",
+              "variance": "2/7"
+            }
+          ]
+        },
+        {
+          "method": "uniform",
+          "q": [
+            "1/2",
+            "1/2"
+          ],
+          "sum_pair_variances": "3/4",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "expectation": "-1",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                1,
+                3
+              ],
+              "expectation": "-1",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            }
+          ]
+        },
+        {
+          "method": "published_default_eps_rational",
+          "q": [
+            "301/702",
+            "401/702"
+          ],
+          "sum_pair_variances": "362003/482804",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "-1/2",
+              "variance": "301/1604"
+            },
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "expectation": "-1",
+              "variance": "2500/120701"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "-1/2",
+              "variance": "301/1604"
+            },
+            {
+              "pair": [
+                1,
+                3
+              ],
+              "expectation": "-1",
+              "variance": "2500/120701"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "expectation": "-1/2",
+              "variance": "401/1204"
+            }
+          ]
+        }
+      ],
+      "source_mechanism": {
+        "source_sha256": "530a21147c4a6ff79d7a51e1f54049f42eafa99e4434e4ad6c1c88d1cdc0a360",
+        "selected_function_names": [
+          "q_by_loss_diff_sub",
+          "q_by_loss_diff"
+        ],
+        "transformed_ast_sha256": "30619597cc62f40bee15e3f906b1425f4dce0bf8720cc010f11817ad08a5f644",
+        "adaptation": "Remove JIT decorators; supply NumPy and serial numba.prange=range; original selected function bodies unchanged.",
+        "surrogate": "point mass at authored known label; oracle mechanism control",
+        "queries": {
+          "eps_0": {
+            "status": "matched",
+            "q_float": [
+              0.42857142857142855,
+              0.5714285714285714
+            ],
+            "q_rational_reference": [
+              "3/7",
+              "4/7"
+            ],
+            "actual_native_numba_execution": false
+          },
+          "eps_1/100": {
+            "status": "matched",
+            "q_float": [
+              0.4287749287749288,
+              0.5712250712250713
+            ],
+            "q_rational_reference": [
+              "301/702",
+              "401/702"
+            ],
+            "actual_native_numba_execution": false
+          }
+        }
+      }
+    },
+    {
+      "case": "k2_contrast",
+      "authored_loss_rows": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "absolute_pair_sums": [
+        "1",
+        "1"
+      ],
+      "squared_pair_sums": [
+        "1",
+        "1"
+      ],
+      "classical_optimum_q_decimal": [
+        "0.5",
+        "0.5"
+      ],
+      "distributions": [
+        {
+          "method": "published_oracle_l1",
+          "q": [
+            "1/2",
+            "1/2"
+          ],
+          "sum_pair_variances": "1",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "0",
+              "variance": "1"
+            }
+          ]
+        },
+        {
+          "method": "rational_challenger",
+          "q": [
+            "7/15",
+            "8/15"
+          ],
+          "sum_pair_variances": "225/224",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "0",
+              "variance": "225/224"
+            }
+          ]
+        },
+        {
+          "method": "uniform",
+          "q": [
+            "1/2",
+            "1/2"
+          ],
+          "sum_pair_variances": "1",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "0",
+              "variance": "1"
+            }
+          ]
+        },
+        {
+          "method": "published_default_eps_rational",
+          "q": [
+            "1/2",
+            "1/2"
+          ],
+          "sum_pair_variances": "1",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "0",
+              "variance": "1"
+            }
+          ]
+        }
+      ],
+      "source_mechanism": {
+        "source_sha256": "530a21147c4a6ff79d7a51e1f54049f42eafa99e4434e4ad6c1c88d1cdc0a360",
+        "selected_function_names": [
+          "q_by_loss_diff_sub",
+          "q_by_loss_diff"
+        ],
+        "transformed_ast_sha256": "30619597cc62f40bee15e3f906b1425f4dce0bf8720cc010f11817ad08a5f644",
+        "adaptation": "Remove JIT decorators; supply NumPy and serial numba.prange=range; original selected function bodies unchanged.",
+        "surrogate": "point mass at authored known label; oracle mechanism control",
+        "queries": {
+          "eps_0": {
+            "status": "matched",
+            "q_float": [
+              0.5,
+              0.5
+            ],
+            "q_rational_reference": [
+              "1/2",
+              "1/2"
+            ],
+            "actual_native_numba_execution": false
+          },
+          "eps_1/100": {
+            "status": "matched",
+            "q_float": [
+              0.5,
+              0.5
+            ],
+            "q_rational_reference": [
+              "1/2",
+              "1/2"
+            ],
+            "actual_native_numba_execution": false
+          }
+        }
+      }
+    },
+    {
+      "case": "k3_binary",
+      "authored_loss_rows": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "absolute_pair_sums": [
+        "2",
+        "2"
+      ],
+      "squared_pair_sums": [
+        "2",
+        "2"
+      ],
+      "classical_optimum_q_decimal": [
+        "0.5",
+        "0.5"
+      ],
+      "distributions": [
+        {
+          "method": "published_oracle_l1",
+          "q": [
+            "1/2",
+            "1/2"
+          ],
+          "sum_pair_variances": "1/2",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "-1",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            }
+          ]
+        },
+        {
+          "method": "rational_challenger",
+          "q": [
+            "7/15",
+            "8/15"
+          ],
+          "sum_pair_variances": "57/112",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "-1/2",
+              "variance": "7/32"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "-1",
+              "variance": "1/224"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "-1/2",
+              "variance": "2/7"
+            }
+          ]
+        },
+        {
+          "method": "uniform",
+          "q": [
+            "1/2",
+            "1/2"
+          ],
+          "sum_pair_variances": "1/2",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "-1",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            }
+          ]
+        },
+        {
+          "method": "published_default_eps_rational",
+          "q": [
+            "1/2",
+            "1/2"
+          ],
+          "sum_pair_variances": "1/2",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "-1",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            }
+          ]
+        }
+      ],
+      "source_mechanism": {
+        "source_sha256": "530a21147c4a6ff79d7a51e1f54049f42eafa99e4434e4ad6c1c88d1cdc0a360",
+        "selected_function_names": [
+          "q_by_loss_diff_sub",
+          "q_by_loss_diff"
+        ],
+        "transformed_ast_sha256": "30619597cc62f40bee15e3f906b1425f4dce0bf8720cc010f11817ad08a5f644",
+        "adaptation": "Remove JIT decorators; supply NumPy and serial numba.prange=range; original selected function bodies unchanged.",
+        "surrogate": "point mass at authored known label; oracle mechanism control",
+        "queries": {
+          "eps_0": {
+            "status": "matched",
+            "q_float": [
+              0.5,
+              0.5
+            ],
+            "q_rational_reference": [
+              "1/2",
+              "1/2"
+            ],
+            "actual_native_numba_execution": false
+          },
+          "eps_1/100": {
+            "status": "matched",
+            "q_float": [
+              0.5,
+              0.5
+            ],
+            "q_rational_reference": [
+              "1/2",
+              "1/2"
+            ],
+            "actual_native_numba_execution": false
+          }
+        }
+      }
+    },
+    {
+      "case": "k4_equal_spread",
+      "authored_loss_rows": [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "absolute_pair_sums": [
+        "3",
+        "3"
+      ],
+      "squared_pair_sums": [
+        "3",
+        "3"
+      ],
+      "classical_optimum_q_decimal": [
+        "0.5",
+        "0.5"
+      ],
+      "distributions": [
+        {
+          "method": "published_oracle_l1",
+          "q": [
+            "1/2",
+            "1/2"
+          ],
+          "sum_pair_variances": "2",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "expectation": "0",
+              "variance": "1"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                3
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            }
+          ]
+        },
+        {
+          "method": "rational_challenger",
+          "q": [
+            "7/15",
+            "8/15"
+          ],
+          "sum_pair_variances": "451/224",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "1/2",
+              "variance": "7/32"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "1/2",
+              "variance": "7/32"
+            },
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "expectation": "0",
+              "variance": "225/224"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                3
+              ],
+              "expectation": "-1/2",
+              "variance": "2/7"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "expectation": "-1/2",
+              "variance": "2/7"
+            }
+          ]
+        },
+        {
+          "method": "uniform",
+          "q": [
+            "1/2",
+            "1/2"
+          ],
+          "sum_pair_variances": "2",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "expectation": "0",
+              "variance": "1"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                3
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            }
+          ]
+        },
+        {
+          "method": "published_default_eps_rational",
+          "q": [
+            "1/2",
+            "1/2"
+          ],
+          "sum_pair_variances": "2",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "expectation": "0",
+              "variance": "1"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                3
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "expectation": "-1/2",
+              "variance": "1/4"
+            }
+          ]
+        }
+      ],
+      "source_mechanism": {
+        "source_sha256": "530a21147c4a6ff79d7a51e1f54049f42eafa99e4434e4ad6c1c88d1cdc0a360",
+        "selected_function_names": [
+          "q_by_loss_diff_sub",
+          "q_by_loss_diff"
+        ],
+        "transformed_ast_sha256": "30619597cc62f40bee15e3f906b1425f4dce0bf8720cc010f11817ad08a5f644",
+        "adaptation": "Remove JIT decorators; supply NumPy and serial numba.prange=range; original selected function bodies unchanged.",
+        "surrogate": "point mass at authored known label; oracle mechanism control",
+        "queries": {
+          "eps_0": {
+            "status": "matched",
+            "q_float": [
+              0.5,
+              0.5
+            ],
+            "q_rational_reference": [
+              "1/2",
+              "1/2"
+            ],
+            "actual_native_numba_execution": false
+          },
+          "eps_1/100": {
+            "status": "matched",
+            "q_float": [
+              0.5,
+              0.5
+            ],
+            "q_rational_reference": [
+              "1/2",
+              "1/2"
+            ],
+            "actual_native_numba_execution": false
+          }
+        }
+      }
+    },
+    {
+      "case": "all_equal",
+      "authored_loss_rows": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "absolute_pair_sums": [
+        "0",
+        "0"
+      ],
+      "squared_pair_sums": [
+        "0",
+        "0"
+      ],
+      "classical_optimum_q_decimal": [
+        "0.5",
+        "0.5"
+      ],
+      "distributions": [
+        {
+          "method": "published_oracle_l1",
+          "q": [
+            "1/2",
+            "1/2"
+          ],
+          "sum_pair_variances": "0",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                3
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "expectation": "0",
+              "variance": "0"
+            }
+          ]
+        },
+        {
+          "method": "rational_challenger",
+          "q": [
+            "7/15",
+            "8/15"
+          ],
+          "sum_pair_variances": "0",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                3
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "expectation": "0",
+              "variance": "0"
+            }
+          ]
+        },
+        {
+          "method": "uniform",
+          "q": [
+            "1/2",
+            "1/2"
+          ],
+          "sum_pair_variances": "0",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                3
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "expectation": "0",
+              "variance": "0"
+            }
+          ]
+        },
+        {
+          "method": "published_default_eps_rational",
+          "q": [
+            "1/2",
+            "1/2"
+          ],
+          "sum_pair_variances": "0",
+          "reference_pairs": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                0,
+                2
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                2
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                1,
+                3
+              ],
+              "expectation": "0",
+              "variance": "0"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "expectation": "0",
+              "variance": "0"
+            }
+          ]
+        }
+      ],
+      "source_mechanism": {
+        "source_sha256": "530a21147c4a6ff79d7a51e1f54049f42eafa99e4434e4ad6c1c88d1cdc0a360",
+        "selected_function_names": [
+          "q_by_loss_diff_sub",
+          "q_by_loss_diff"
+        ],
+        "transformed_ast_sha256": "30619597cc62f40bee15e3f906b1425f4dce0bf8720cc010f11817ad08a5f644",
+        "adaptation": "Remove JIT decorators; supply NumPy and serial numba.prange=range; original selected function bodies unchanged.",
+        "surrogate": "point mass at authored known label; oracle mechanism control",
+        "queries": {
+          "eps_0": {
+            "status": "not_executed_undefined_normalization",
+            "reason": "all acquisition weights zero"
+          },
+          "eps_1/100": {
+            "status": "matched",
+            "q_float": [
+              0.5,
+              0.5
+            ],
+            "q_rational_reference": [
+              "1/2",
+              "1/2"
+            ],
+            "actual_native_numba_execution": false
+          }
+        }
+      }
+    }
+  ],
+  "numba_available": false,
+  "native_numba_executed": false,
+  "empirical_model_selection_runs": 0,
+  "reiyah_comparative_advantage": "not_established",
+  "workflow_seconds": 0.0642246671486646
+}

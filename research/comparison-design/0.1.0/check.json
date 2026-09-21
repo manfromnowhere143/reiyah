@@ -1,0 +1,81 @@
+{
+  "document_id": "reiyah.comparison-design.check",
+  "version": "0.1.0",
+  "status": "passed",
+  "distributions_checked": 20,
+  "controls": [
+    {
+      "id": "model_permutation",
+      "passed": true
+    },
+    {
+      "id": "point_permutation",
+      "passed": true
+    },
+    {
+      "id": "invalid_probability_0_1",
+      "passed": true
+    },
+    {
+      "id": "invalid_probability_-1_2",
+      "passed": true
+    },
+    {
+      "id": "invalid_probability_1/3_1/3",
+      "passed": true
+    },
+    {
+      "id": "preserve_k2_contrast",
+      "passed": true
+    },
+    {
+      "id": "preserve_k3_binary",
+      "passed": true
+    },
+    {
+      "id": "preserve_k4_equal_spread",
+      "passed": true
+    },
+    {
+      "id": "preserve_all_equal",
+      "passed": true
+    },
+    {
+      "id": "missing_case",
+      "expected": "case_cohort",
+      "passed": true
+    },
+    {
+      "id": "loss_change",
+      "expected": "input_identity",
+      "passed": true
+    },
+    {
+      "id": "variance_change",
+      "expected": "variance",
+      "passed": true
+    },
+    {
+      "id": "false_decision",
+      "expected": "decision",
+      "passed": true
+    },
+    {
+      "id": "claim_empirical",
+      "expected": "claim_scope",
+      "passed": true
+    },
+    {
+      "id": "claim_jit",
+      "expected": "claim_scope",
+      "passed": true
+    },
+    {
+      "id": "claim_advantage",
+      "expected": "claim_scope",
+      "passed": true
+    }
+  ],
+  "independent_authorship": false,
+  "scope": "authored finite probability and explicit software-mechanism check; no empirical model selection"
+}

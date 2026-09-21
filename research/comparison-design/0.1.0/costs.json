@@ -1,0 +1,72 @@
+{
+  "document_id": "reiyah.comparison-design.costs",
+  "version": "0.1.0",
+  "status": "observed_prefix",
+  "cutoff_utc": "2026-09-21T10:57:02.699829+00:00",
+  "completed_commands": 30,
+  "categories": {
+    "packaging": {
+      "commands": 20,
+      "outer_process_seconds": 2.6177552917506546,
+      "child_user_cpu_seconds": 0.41065899999999994,
+      "child_system_cpu_seconds": 0.229395
+    },
+    "source": {
+      "commands": 8,
+      "outer_process_seconds": 46.205829665996134,
+      "child_user_cpu_seconds": 0.6319629999999999,
+      "child_system_cpu_seconds": 0.21073
+    },
+    "execution": {
+      "commands": 1,
+      "outer_process_seconds": 0.2208852090407163,
+      "child_user_cpu_seconds": 0.084163,
+      "child_system_cpu_seconds": 0.019497
+    },
+    "checking": {
+      "commands": 1,
+      "outer_process_seconds": 0.10872804117389023,
+      "child_user_cpu_seconds": 0.044141,
+      "child_system_cpu_seconds": 0.009438
+    }
+  },
+  "setup_process_seconds": 1.1628335840068758,
+  "known_outer_process_seconds_including_setup": 50.31603179196827,
+  "nested_timing_rule": "Do not add internal audit timing or child CPU to wall process sums",
+  "source_and_derived_bodies": 3115107,
+  "source_cap_bytes": 3145728,
+  "source_cost_scope": "Raw complete/failed bodies plus tool-rendered discovery and all command output existing at source cutoff; later own Git readback is distribution storage, not another third-party source capture.",
+  "artifact_bytes_at_cutoff_excluding_checkout": 3375704,
+  "artifact_cap_bytes": 134217728,
+  "temporary_bytes": 0,
+  "free_disk_bytes": 18821947392,
+  "free_floor_bytes": 5368709120,
+  "failures": [
+    {
+      "id": "baseline-code-read-render-01",
+      "returncode": 99,
+      "duration_seconds": 0.331311791902408
+    },
+    {
+      "id": "capture-durr-pdf-01",
+      "returncode": 1,
+      "duration_seconds": 10.860511833103374
+    },
+    {
+      "id": "capture-hara-pdf-01",
+      "returncode": 1,
+      "duration_seconds": 3.0884655420668423
+    }
+  ],
+  "unmeasured": [
+    "human/agent active engineering effort",
+    "tool research service CPU and charges",
+    "energy",
+    "network overhead",
+    "peak process memory",
+    "time for file edits through tools"
+  ],
+  "outside_supervisor": "Post-compaction pwd, git root/status and AGENTS/handoff read have tool timing only; not included as canonical process receipts.",
+  "tail": "Packaging/validation/integration/push/readback after this cutoff retained in private FINAL_COSTS; no whole-owner final total claimed here.",
+  "original_ten_hour_assignment": "already complete; no restarted or padded clock"
+}

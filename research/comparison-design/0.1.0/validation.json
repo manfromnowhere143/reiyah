@@ -1,0 +1,137 @@
+{
+  "document_id": "reiyah.comparison-design.validation",
+  "version": "0.1.0",
+  "status": "passed",
+  "records": [
+    {
+      "id": "mathematical-audit-01",
+      "category": "execution",
+      "started_utc": "2026-09-21T10:46:04.853265+00:00",
+      "finished_utc": "2026-09-21T10:46:05.074443+00:00",
+      "duration_seconds": 0.2208852090407163,
+      "returncode": 0,
+      "child_user_cpu_seconds": 0.084163,
+      "child_system_cpu_seconds": 0.019497,
+      "network_denied_before_child_runtime": true,
+      "stdout_bytes": 175,
+      "stdout_sha256": "d665c193e95f03a0e45f6b1fbd81e706bdab20e4b78ce0994cdaa78443a7e6cb",
+      "receipt_sha256": "7a730a40b22161a1504e416cc61e2fb9e0dd8ccb63f7bc73ecade5e89cb5663d"
+    },
+    {
+      "id": "mathematical-check-01",
+      "category": "checking",
+      "started_utc": "2026-09-21T10:46:12.948665+00:00",
+      "finished_utc": "2026-09-21T10:46:13.057733+00:00",
+      "duration_seconds": 0.10872804117389023,
+      "returncode": 0,
+      "child_user_cpu_seconds": 0.044141,
+      "child_system_cpu_seconds": 0.009438,
+      "network_denied_before_child_runtime": true,
+      "stdout_bytes": 1187,
+      "stdout_sha256": "5d8284f90073ceadec85144fb60caef684bb254618730f6e9319333d7072060a",
+      "receipt_sha256": "8c30f808ea01f73593a41931848dc279170bd4949468e949961f9cd4e5449a76"
+    },
+    {
+      "id": "research-consistency-01",
+      "category": "checking",
+      "started_utc": "2026-09-21T10:57:26.316554+00:00",
+      "finished_utc": "2026-09-21T10:57:28.322597+00:00",
+      "duration_seconds": 2.005747500108555,
+      "returncode": 0,
+      "child_user_cpu_seconds": 1.7492459999999999,
+      "child_system_cpu_seconds": 0.082199,
+      "network_denied_before_child_runtime": true,
+      "stdout_bytes": 1260,
+      "stdout_sha256": "e56eab3f410a22da046384196624eaf5a1c46d99fcc2eedfc43687578c344a26",
+      "receipt_sha256": "7ac2cee6ef6458dd699f6dcd42c54a515a932d4c99118c030e85afb6dcfff01e"
+    },
+    {
+      "id": "perception-quickstart-01",
+      "category": "checking",
+      "started_utc": "2026-09-21T10:57:57.987718+00:00",
+      "finished_utc": "2026-09-21T10:57:58.104383+00:00",
+      "duration_seconds": 0.11638629110530019,
+      "returncode": 0,
+      "child_user_cpu_seconds": 0.044912999999999995,
+      "child_system_cpu_seconds": 0.008025,
+      "network_denied_before_child_runtime": true,
+      "stdout_bytes": 1312,
+      "stdout_sha256": "62d159ba5255046fcb5d04b21abfbd64fe96550acda747e7be3aafce51a0594f",
+      "receipt_sha256": "3e6329f60932babb224a76013429a1ed6d437f6922616f5fcc5a41c948ead28b"
+    },
+    {
+      "id": "scoped-lint-02",
+      "category": "checking",
+      "started_utc": "2026-09-21T10:58:23.173100+00:00",
+      "finished_utc": "2026-09-21T10:58:23.301371+00:00",
+      "duration_seconds": 0.12797037488780916,
+      "returncode": 0,
+      "child_user_cpu_seconds": 0.025712,
+      "child_system_cpu_seconds": 0.019108999999999998,
+      "network_denied_before_child_runtime": true,
+      "stdout_bytes": 19,
+      "stdout_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "receipt_sha256": "11cea7bf1825f1ac3c6868d5edd44d672e5f4062e645bae5afc2927c261521c1"
+    },
+    {
+      "id": "scoped-format-02",
+      "category": "checking",
+      "started_utc": "2026-09-21T10:58:23.839164+00:00",
+      "finished_utc": "2026-09-21T10:58:23.951588+00:00",
+      "duration_seconds": 0.1121219580527395,
+      "returncode": 0,
+      "child_user_cpu_seconds": 0.025491999999999997,
+      "child_system_cpu_seconds": 0.012749,
+      "network_denied_before_child_runtime": true,
+      "stdout_bytes": 26,
+      "stdout_sha256": "eee76f865de5a9f2456950f710ae5d5f9b5bd0ea02aa54f614c5eed6642a0bfd",
+      "receipt_sha256": "5e0a5760793c7f4d77355272d1ce4e6afb22b7db62f2e5bc45dae319c6875f9c"
+    }
+  ],
+  "research_consistency": {
+    "passing_checks": 9,
+    "historical_transcripts_exact_bound": 52,
+    "historical_experiments_replayed": 0,
+    "optional_attack_suite_executed": false
+  },
+  "mathematics": {
+    "distributions": 20,
+    "controls": 16,
+    "query_function_calls": 9,
+    "independent_authorship": false
+  },
+  "lint": {
+    "files": 3,
+    "passed": true
+  },
+  "format": {
+    "files": 3,
+    "passed": true
+  },
+  "failed_launches": {
+    "document_id": "reiyah.comparison-design.failed-check-launches",
+    "version": "0.1.0",
+    "status": "retained",
+    "phase": "post-audit validation",
+    "cause": "The frozen checking wrapper requires its first child executable to be the pinned Python runtime. Direct Ruff launches were rejected before START/child execution.",
+    "attempts": [
+      {
+        "id": "scoped-lint-01",
+        "returncode": 1,
+        "tool_wall_seconds": 0.434737709,
+        "canonical_child_receipt": null
+      },
+      {
+        "id": "scoped-format-01",
+        "returncode": 1,
+        "tool_wall_seconds": 0.391701959,
+        "canonical_child_receipt": null
+      }
+    ],
+    "correction": "Invoke unchanged Ruff through the pinned Python child, still inside the original network-denied wrapper. Do not change supervisor/freeze.",
+    "child_cpu_seconds": null,
+    "trace": "AssertionError at supervise.py line29 comparing first executable digest with freeze.runtime.sha256"
+  },
+  "Gate_A_acceptance": "not_established",
+  "scope": "Current authored research and static consistency only; no empirical model performance or release validation"
+}
