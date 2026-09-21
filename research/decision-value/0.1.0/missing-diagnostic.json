@@ -1,0 +1,81 @@
+{
+  "document_id": "reiyah.decision-value.missing-diagnostic",
+  "version": "0.1.0",
+  "status": "exploratory_post_result",
+  "study_freeze_sha256": "250b5788836412d51add631ac9d696697465b59bb87c49bf14c601f4ac1bf790",
+  "diagnostics": [
+    {
+      "sequence": "stadtgarten_seq1",
+      "missing_checkpoint_id": "4300",
+      "nearest_available_offline_offset_seconds": 23.527827978134155,
+      "offline_trajectory_ends_seconds_before_visit": 23.527827978134155,
+      "observed_online_visits": 36,
+      "observed_offline_visits": 35,
+      "known_loss_difference_sum_m2": -0.7881582637367259,
+      "missing_squared_error_boundary_exact": [
+        "975692671973339537819294545",
+        "1237940039285380274899124224"
+      ],
+      "missing_error_boundary_m_approx": 0.887782779590101,
+      "complete_nominal_delta_formula": "(known_loss_difference_sum_m2 + missing_squared_error_m2) / 36",
+      "condition": "strictly smaller than boundary supports; equality ties; larger contradicts",
+      "physical_claim": "unresolved",
+      "counterfactual_completions": [
+        {
+          "authored_missing_error_m": 0.0,
+          "delta_m2": -0.02189328510379794,
+          "decision": "supported",
+          "observed": false
+        },
+        {
+          "authored_missing_error_m": 2.0,
+          "delta_m2": 0.08921782600731316,
+          "decision": "contradicted",
+          "observed": false
+        }
+      ],
+      "actual_full_cohort_status": "blocked",
+      "additional_record": "published offline base-center position at this frozen checkpoint time, with the same coordinate and association provenance"
+    }
+  ],
+  "partial_case_mutations": [
+    {
+      "id": "conventional:false_support",
+      "expected": "partial_cohort_decision",
+      "actual": "partial_cohort_decision",
+      "passed": true
+    },
+    {
+      "id": "conventional:numeric_imputation",
+      "expected": "partial_cohort_decision",
+      "actual": "partial_cohort_decision",
+      "passed": true
+    },
+    {
+      "id": "conventional:false_refusal",
+      "expected": "partial_cohort_decision",
+      "actual": "partial_cohort_decision",
+      "passed": true
+    },
+    {
+      "id": "reiyah:false_support",
+      "expected": "partial_cohort_decision",
+      "actual": "partial_cohort_decision",
+      "passed": true
+    },
+    {
+      "id": "reiyah:numeric_imputation",
+      "expected": "partial_cohort_decision",
+      "actual": "partial_cohort_decision",
+      "passed": true
+    },
+    {
+      "id": "reiyah:false_refusal",
+      "expected": "partial_cohort_decision",
+      "actual": "partial_cohort_decision",
+      "passed": true
+    }
+  ],
+  "new_observed_positions": 0,
+  "new_physical_evidence": false
+}

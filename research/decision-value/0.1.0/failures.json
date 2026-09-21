@@ -1,0 +1,52 @@
+{
+  "document_id": "reiyah.decision-value.failures",
+  "version": "0.1.0",
+  "failed_commands": [
+    {
+      "id": "conventional-c1-01",
+      "returncode": 1,
+      "category": "execution",
+      "duration_seconds": 0.24233441706746817,
+      "receipt_sha256": "f61f786f8cf71bfa70aada03259216fc06605b7e13011f9a915a5bfced86cca1",
+      "stderr_sha256": "0940b1899525377d9bb0b35d6beb7f8c7a5f6468f0d5b0b83bd9bb47d6a4e273",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "diagnostic-prepare-01",
+      "returncode": 1,
+      "category": "packaging",
+      "duration_seconds": 0.2429551670793444,
+      "receipt_sha256": "e53921b601f72423350f286adbffce49db3e7a85e74671d2208483bb8c2818d8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "0597bd3ced5592f56b209460a11366afa094dd9c01d6832d303925db78eee842"
+    }
+  ],
+  "before_command_record": {
+    "id": "mission-context-01",
+    "stage": "before START and before child",
+    "cause": "private/commands parent missing",
+    "retained_private_record": "private/failed-launches/mission-context-01.json",
+    "correction": "create owned parent; later command succeeded"
+  },
+  "corrections": [
+    {
+      "id": "conventional-c1-01",
+      "cause": "output parent missing after cases computed",
+      "retained": true,
+      "rerun": "conventional-c1-02",
+      "scientific_code_or_freeze_changed": false,
+      "unsaved_outputs": "unavailable"
+    },
+    {
+      "id": "diagnostic-prepare-01",
+      "cause": "two unused imports",
+      "old_bytes_retained": true,
+      "stage": "before diagnostic freeze or execution",
+      "correction": "remove unused imports; diagnostic-prepare-02 passed"
+    }
+  ],
+  "web_failure": "ISPRS primary-page open timed out; retained web discovery. Author/arXiv material accessed without disabling verification.",
+  "physical_bounds": "unqualified",
+  "case_not_resolved": "stadtgarten_seq1 full36-visit cohort",
+  "published_rounding_discrepancy": "Construction2 offline pinned artifact rounds0.374m; exposed paper0.373m; cause unresolved"
+}

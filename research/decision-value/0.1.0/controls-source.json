@@ -1,0 +1,22 @@
+{
+  "controls": [
+    {
+      "id": "origin_substitution",
+      "expected": "source_identity:trajectories/fast_lio_sam/construction_seq1/enu_origin.json",
+      "actual": "source_identity:trajectories/fast_lio_sam/construction_seq1/enu_origin.json",
+      "passed": true
+    },
+    {
+      "id": "checkpoint_substitution",
+      "expected": "source_identity:ground_truth/construction_seq1.csv",
+      "actual": "source_identity:ground_truth/construction_seq1.csv",
+      "passed": true
+    },
+    {
+      "id": "missing_trajectory",
+      "expected": "source_missing:trajectories/fast_lio_sam/construction_seq1/traj_online.txt",
+      "actual": "source_missing:trajectories/fast_lio_sam/construction_seq1/traj_online.txt",
+      "passed": true
+    }
+  ]
+}

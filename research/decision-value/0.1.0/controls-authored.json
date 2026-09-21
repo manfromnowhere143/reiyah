@@ -1,0 +1,96 @@
+{
+  "kind": "authored",
+  "controls": [
+    {
+      "id": "valid_rows",
+      "passed": true
+    },
+    {
+      "id": "nan",
+      "expected": "nonfinite",
+      "actual": "nonfinite",
+      "passed": true
+    },
+    {
+      "id": "infinity",
+      "expected": "nonfinite",
+      "actual": "nonfinite",
+      "passed": true
+    },
+    {
+      "id": "text",
+      "expected": "nonnumeric",
+      "actual": "nonnumeric",
+      "passed": true
+    },
+    {
+      "id": "millisecond_clock",
+      "expected": "timestamp_unit_or_epoch",
+      "actual": "timestamp_unit_or_epoch",
+      "passed": true
+    },
+    {
+      "id": "frame_swap",
+      "expected": "frame_contract",
+      "actual": "frame_contract",
+      "passed": true
+    },
+    {
+      "id": "missing_checkpoint",
+      "expected": "checkpoint_count",
+      "actual": "checkpoint_count",
+      "passed": true
+    },
+    {
+      "id": "duplicate_checkpoint",
+      "expected": "checkpoint_identity",
+      "actual": "checkpoint_identity",
+      "passed": true
+    },
+    {
+      "id": "repeated_timestamp",
+      "expected": "trajectory_time_order_or_duplicate",
+      "actual": "trajectory_time_order_or_duplicate",
+      "passed": true
+    },
+    {
+      "id": "short_row",
+      "expected": "trajectory_shape",
+      "actual": "trajectory_shape",
+      "passed": true
+    },
+    {
+      "id": "empty_trajectory",
+      "expected": "empty_trajectory",
+      "actual": "empty_trajectory",
+      "passed": true
+    },
+    {
+      "id": "source_order_tie",
+      "passed": true
+    },
+    {
+      "id": "unmatched_pose_retained_missing",
+      "passed": true
+    },
+    {
+      "id": "smaller",
+      "delta": -8,
+      "passed": true
+    },
+    {
+      "id": "larger",
+      "delta": 7,
+      "passed": true
+    },
+    {
+      "id": "equal",
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "id": "large_common_offset",
+      "passed": true
+    }
+  ]
+}

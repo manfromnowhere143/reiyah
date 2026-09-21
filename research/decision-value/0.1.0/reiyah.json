@@ -1,0 +1,122 @@
+{
+  "document_id": "reiyah.decision-value.result",
+  "version": "0.1.0",
+  "arm": "reiyah",
+  "question_sha256": "be684b107146c47833b0247c258fa0abb59fc625f3e83b6cb0e6819158b52eb7",
+  "source_revision": "f2921a58caf5a87c1f4f73b48c6f2a5e35f92924",
+  "scope": "nominal_recorded_reference_completed_map",
+  "frame": {
+    "pose": "base_center_ENU_m",
+    "reference": "publisher_ETRS89_UTM32N_m",
+    "clock": "unix_seconds",
+    "transform": "publisher_coords_py_minus_48.22m_ENU_up",
+    "physical_bound": "unqualified"
+  },
+  "physical_claim": "unresolved",
+  "cases": [
+    {
+      "sequence": "construction_seq1",
+      "expected_visits": 16,
+      "status": "supported",
+      "modes": {
+        "online": {
+          "matched": 16,
+          "missing_ids": [],
+          "max_dt_seconds": 0.0,
+          "available_cohort_mse": 0.0654623385771299,
+          "available_cohort_rmse": 0.25585608958383205
+        },
+        "offline": {
+          "matched": 16,
+          "missing_ids": [],
+          "max_dt_seconds": 0.5368139743804932,
+          "available_cohort_mse": 0.06129220483806326,
+          "available_cohort_rmse": 0.24757262538104502
+        }
+      },
+      "delta_m2": -0.004170133739066636,
+      "exact_delta_ratio": [
+        "-630172793550468888529",
+        "151115727451828646838272"
+      ]
+    },
+    {
+      "sequence": "construction_seq2",
+      "expected_visits": 16,
+      "status": "supported",
+      "modes": {
+        "online": {
+          "matched": 16,
+          "missing_ids": [],
+          "max_dt_seconds": 0.0,
+          "available_cohort_mse": 0.1926958544860137,
+          "available_cohort_rmse": 0.43897135952817434
+        },
+        "offline": {
+          "matched": 16,
+          "missing_ids": [],
+          "max_dt_seconds": 0.0,
+          "available_cohort_mse": 0.139771893588995,
+          "available_cohort_rmse": 0.3738607943994596
+        }
+      },
+      "delta_m2": -0.0529239608970187,
+      "exact_delta_ratio": [
+        "-1999410712646278818489",
+        "37778931862957161709568"
+      ]
+    },
+    {
+      "sequence": "stadtgarten_seq1",
+      "expected_visits": 36,
+      "status": "blocked",
+      "modes": {
+        "online": {
+          "matched": 36,
+          "missing_ids": [],
+          "max_dt_seconds": 0.0,
+          "available_cohort_mse": 0.026397561615578633,
+          "available_cohort_rmse": 0.16247326431009698
+        },
+        "offline": {
+          "matched": 35,
+          "missing_ids": [
+            "4300"
+          ],
+          "max_dt_seconds": 0.9206571578979492,
+          "available_cohort_mse": 0.0046329701264029985,
+          "available_cohort_rmse": 0.06806592485526806
+        }
+      },
+      "delta_m2": null,
+      "exact_delta_ratio": null
+    },
+    {
+      "sequence": "stadtgarten_seq2",
+      "expected_visits": 19,
+      "status": "supported",
+      "modes": {
+        "online": {
+          "matched": 19,
+          "missing_ids": [],
+          "max_dt_seconds": 0.0,
+          "available_cohort_mse": 0.022396831602925393,
+          "available_cohort_rmse": 0.14965571022492055
+        },
+        "offline": {
+          "matched": 19,
+          "missing_ids": [],
+          "max_dt_seconds": 0.8962180614471436,
+          "available_cohort_mse": 0.009834721100298961,
+          "available_cohort_rmse": 0.09917016234885855
+        }
+      },
+      "delta_m2": -0.012562110502626431,
+      "exact_delta_ratio": [
+        "-2254269804484896785161",
+        "179449926349046518120448"
+      ]
+    }
+  ],
+  "workflow_seconds": 0.08714116690680385
+}

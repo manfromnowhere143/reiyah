@@ -1,0 +1,43 @@
+{
+  "document_id": "reiyah.decision-value.protocol",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "question_sha256": "be684b107146c47833b0247c258fa0abb59fc625f3e83b6cb0e6819158b52eb7",
+  "case_order": [
+    "construction_seq1",
+    "construction_seq2",
+    "stadtgarten_seq1",
+    "stadtgarten_seq2"
+  ],
+  "expected_visits": [
+    16,
+    16,
+    36,
+    19
+  ],
+  "arm_order": [
+    "C0_original_publisher",
+    "conventional",
+    "reiyah"
+  ],
+  "decision": "strictly smaller full-cohort mean squared nominal global error for completed map",
+  "physical_claim": "unresolved",
+  "nearest_limit_seconds": 2.0,
+  "time_interval": "2025 UTC as published; coarse unit/epoch check only",
+  "coordinate_backend": "pinned original publisher coords.py shared and trusted by all paths",
+  "numeric_metric_rel_tol": 1e-10,
+  "numeric_metric_abs_tol": 1e-12,
+  "decision_sign_tolerance": 0,
+  "repetitions": 1,
+  "speed_benchmark": false,
+  "blinded": false,
+  "raw_payload_distribution": false,
+  "failure_policy": "retain first run and all incomplete/invalid results; no outcome-based tuning",
+  "resource_caps": {
+    "artifact_cap_bytes": 134217728,
+    "source_cap_bytes": 8388608,
+    "free_space_floor_bytes": 5368709120,
+    "execution_process_seconds": 600,
+    "checking_process_seconds": 600
+  }
+}

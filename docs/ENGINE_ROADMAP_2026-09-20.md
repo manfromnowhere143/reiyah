@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.10**. Status: exploratory.
+Proposed roadmap version: **0.3.11**. Status: exploratory.
 Research cutoff: 21 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -23,6 +23,31 @@ This roadmap supersedes the scheduling guidance in the
 obligations remain. The expanded question does not require another perception
 sensitivity sweep or claim that the unproven cost-reduction hypothesis succeeded.
 No foundation-model training, simulator deployment or vehicle control is added.
+
+## 21 September: a complete-cohort decision and a parity result
+
+The [mapping decision audit](../research/decision-value/0.1.0/README.md) executes
+all four selected public sequence pairs. Three support nominal offline
+replacement for a completed map. One stays blocked because the offline metric
+omits a checkpoint; its closest pose is23.53s away. The conventional complete-
+cohort method reaches the same decisions. The experiment establishes a useful
+decision boundary, not a competitive advantage or physical driving result.
+
+A post-result calculation identifies the missing nominal error needed to
+resolve the fourth question: below approximately0.888m supports replacement,
+above contradicts. Authored completions demonstrate both possibilities without
+inventing a measurement. All negative, unavailable and reproduction-discrepant
+results remain, including an unresolved0.001m printed discrepancy in another
+sequence. The shared48.22m height correction is not physically certified.
+
+**Investment gate: MODIFY.** Do not expand a new framework on this evidence.
+The next increment must test a concrete advantage over a competent method on
+a separately selected incident, with equally available inputs and measured
+acquisition, execution, checking and integration work. A new source audit or
+replay of this exposed case cannot establish that. Missing records are a
+specific evidence gap, not an assumption that Daniel has private-team material.
+Keep all1,433 reserved images closed and use qualified public leads without
+waiting for broad permission.
 
 ## 21 September: exact encoded-family development correction
 

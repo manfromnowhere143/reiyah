@@ -27,6 +27,8 @@ different evidence requirements.
 
 [21 September: exact native-grid fidelity](research/grid-fidelity/0.1.0/README.md) resolves the exposed replay with 69 logical reveals per method; equal-information comparison remains tied.
 
+[21 September: complete-cohort mapping decision](research/decision-value/0.1.0/README.md) supports three recorded replacements and leaves one blocked; the competent conventional method agrees.
+
 ## The decision model
 
 More detections do not necessarily make a better system. An addition can find

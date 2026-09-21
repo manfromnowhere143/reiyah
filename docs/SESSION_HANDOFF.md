@@ -1,3 +1,67 @@
+# Reiyah completed-map decision checkpoint, 2026-09-21
+
+Continuation version: 0.1.60. Status: exploratory. Continuing mission ACTIVE.
+
+The [complete-cohort decision audit](../research/decision-value/0.1.0/README.md)
+executes a meaningful nominal question on all four published RTK-SLAM
+FAST-LIO-SAM online/offline sequence pairs: should a completed map adopt the
+offline trajectory for strictly smaller mean squared global checkpoint error?
+Question/source selection froze before deliberate numeric inspection; published
+aggregate outcomes were already exposed. This is not a blind benchmark.
+
+Both Reiyah and a competent conventional wrapper support Construction1,
+Construction2 and Stadtgarten2. Both block Stadtgarten1: the online metric
+covers36 visits, offline35. The original publisher prints a lower offline RMSE
+without cohort counts. This is a useful completeness distinction, but C1 catches
+it equally. No comparative advantage, physical safety or driving result follows.
+
+The offline trajectory ends23.527828s before its missing checkpoint4300.
+A separately frozen post-result diagnostic gives a missing-error decision
+boundary of approximately0.887783m. Authored0m and2m completions produce
+opposite answers; neither is an observed or imputed position. The full-cohort
+result stays blocked. Needed record: the offline base-center position at that
+frozen visit with the same coordinate/clock provenance. Do not assume Daniel
+or a private team possesses it, raise the2s limit or substitute another method.
+
+The source conversion and its48.22m ENU height correction are shared/trusted,
+not independently physically validated. Nominal coordinates and exact rational
+loss arithmetic do not certify the physical transform. One rounded reproduction
+discrepancy remains: Construction2 offline0.374m here versus exposed paper0.373m.
+The cause is unresolved; no outcome-based correction was made.
+
+Checker reconstructs173 associations per arm.17 authored controls,3 custody
+controls,26 actual-result mutations and6 post-result partial-case mutations
+pass. Same author/shared coordinate backend preclude independent replication.
+Whole successful arm processes: C1 0.293534s, Reiyah0.240490s; one fixed-order
+execution each is not a speed benchmark. First C1 execution failed after case
+computation at output serialization, costing0.242334s; retained and rerun with
+an output parent, unchanged frozen code. Earlier wrapper missing-parent and
+diagnostic pre-freeze lint failures remain. All raw source and traces private.
+
+Study freeze250b5788836412d51add631ac9d696697465b59bb87c49bf14c601f4ac1bf790.
+Owner: ~/.codex/reports/reiyah/decision-value-2026-09-21-9xm9fu4f/.
+Read CLOSEOUT, FINAL_COSTS, PUBLISH_FINAL and FINAL_CONFIRMATION after integration.
+Publisher readback is not independent scientific/transport verification.
+
+Investment decision: MODIFY. Preserve decision auditing as a bounded research
+capability; no broader monitoring-framework expansion is justified by parity.
+Next useful work must establish a decision-relevant advantage over a competent
+equal-information baseline, or terminate that advantage hypothesis. Prefer a
+source-qualified public incident with an obtainable resolution observation and
+a concrete consequence. This exposed mapping case can be development regression
+only. Do not replace mission value with new sweeps, custody catalogs or test counts.
+No new inference, private-team records or unspecified permissions are needed
+for independent public research within existing bounds.
+
+Proposed roadmap0.3.11; README opening/substance/headings and all six diagrams
+preserved. All1,433reserved images remain closed; perception source unchanged
+at38a50ec014cc83e86ea6f247df803ded2971b386. Historical controller74fbacc clean;
+Gate A operator-unaccepted. SOLO ownership, human identity and guarded normal
+push/readback persist. No inference, training, new dependencies, paid compute,
+outreach, physical control or deployment. Original ten-hour assignment complete;
+do not restart or pad its clock. Active effort and full economics unknown.
+Earlier sections below remain history.
+
 # Reiyah encoding-aware fidelity checkpoint, 2026-09-21
 
 Continuation version: 0.1.59. Status: exploratory. Continuing mission ACTIVE.
