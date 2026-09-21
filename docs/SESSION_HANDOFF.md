@@ -1,3 +1,52 @@
+# Reiyah encoding-aware fidelity checkpoint, 2026-09-21
+
+Continuation version: 0.1.59. Status: exploratory. Continuing mission ACTIVE.
+
+[Native-grid fidelity](../research/grid-fidelity/0.1.0/README.md) preserves original
+rate constraints, native knots and legal integer encoding. Both implementations
+support all five exposed fixed-tail parts with 69 logical reveals each
+(16,11,16,15,11), versus historical 90/89 under different relaxed models.
+Preserve the old result. Equal information gives parity here, not an advantage.
+No new empirical or physical case has been added.
+
+13 authored cases per arm retain six supported, three contradicted, three
+inconsistent-premise and one unavailable/unresolved outcome. Main execution:
+36 case/arm runs, 190 bound/witness stages, 154 complete encoded reply partitions.
+165 small-domain contracts, 545 feasible world instances and 384 arm/query
+partitions are checked by direct enumeration; 24 refusals and 12 output mutations
+pass. The separate protocol checker does not invoke the workflow shell, but uses
+the conventional solver. Both solvers share one author and parser; this is not
+independent replication. The actual stored-data maximum error remains 0.0042 m/s.
+
+Whole arm processes each took about 0.407 s; internal equal-scope workflows
+0.2501/0.2447 s. No general speed or physical acquisition claim. All source was
+already loaded. Active effort and full economics remain unknown. Raw source,
+decoded rows, full replies/witnesses and paper renders stay private. The unfrozen
+continuous draft and corrected pre-freeze lint failure remain retained.
+No frozen numerical failure or correction occurred.
+
+Freeze: 988f0c04d662bb59a2753cf85a22cc0ff3295f8dab1ff8e972510954a5baf49d.
+Owner: ~/.codex/reports/reiyah/grid-fidelity-2026-09-21-fehmy8gy/.
+Read its CLOSEOUT, FINAL_COSTS, PUBLISH_FINAL and FINAL_CONFIRMATION after
+integration. Publisher readback is not independent scientific/transport evidence.
+
+Next: continue autonomously in a fresh owned candidate. This implementation
+deficiency is corrected; another replay of the exposed trace cannot establish
+product value. Freeze one useful decision and an equal-information conventional
+alternative on unexposed qualified public material. Justify the tolerance from
+that decision, or state clearly that it remains authored. Preserve negative and
+unavailable results; do not infer private-team records Daniel possesses.
+Prefer a consequential experiment to more architecture or passing-check counts.
+
+Proposed roadmap 0.3.10. README opening/substance/headings and six diagrams
+preserved. All 1,433 reserved images closed; perception source remains
+38a50ec014cc83e86ea6f247df803ded2971b386. Historical controller clean at 74fbacc;
+Gate A operator-unaccepted. Solo ownership, existing resource/data bounds,
+human identity and guarded normal push/readback persist. No inference, training,
+new dependencies, paid compute, outreach, physical control or deployment.
+The old ten-hour assignment is complete; do not restart or pad its clock.
+Earlier sections below are retained history.
+
 # Reiyah fixed-tail decision checkpoint, 2026-09-21
 
 Continuation version: `0.1.58`. Status: `exploratory`. Continuing mission ACTIVE.

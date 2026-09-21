@@ -1,0 +1,47 @@
+{
+  "design_supersession": {
+    "executed": false,
+    "freeze_existed": false,
+    "reason": "Known native encoding excludes arbitrary real-valued native replies.",
+    "review_identity": {
+      "bytes": 1469,
+      "sha256": "f7ea51544c3335bb724cf0243fe34b4178971d94b1cfdead94c1299808a68f32"
+    },
+    "status": "superseded_unfrozen_design"
+  },
+  "document_id": "reiyah.grid-fidelity.failures",
+  "failed_commands": [
+    {
+      "category": "packaging",
+      "duration_seconds": 0.10460208402946591,
+      "id": "lint-before-freeze-01",
+      "receipt_sha256": "15e4954ab408f9d013626d153811123576bc5ca27ebf00f62df48a90ab457ff2",
+      "returncode": 1,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f220dac5c866af5c80cb7b911195d63c07f12f9aa9e17656e3c8ef5fa0b89d8b"
+    }
+  ],
+  "frozen_code_corrections": [],
+  "scientific_execution_failures": [],
+  "tool_failures": [
+    {
+      "duration_seconds": null,
+      "kind": "apply_patch_rejected_before_modification",
+      "reason": "Delete and Add targeted one path within a single patch; split into separate operations."
+    },
+    {
+      "duration_seconds": null,
+      "kind": "exec_javascript_syntax_rejected_before_execution",
+      "occurrences": 2,
+      "reason": "Backticks ended JavaScript literals in unexecuted packaging and review helper drafts. No file was written by either rejected call."
+    }
+  ],
+  "unfrozen_corrections": [
+    {
+      "id": "lint-before-freeze-01",
+      "reason": "Three unused imports and four ambiguous variable names. No arithmetic change.",
+      "retained": "private/drafts/prelint-001/"
+    }
+  ],
+  "version": "0.1.0"
+}

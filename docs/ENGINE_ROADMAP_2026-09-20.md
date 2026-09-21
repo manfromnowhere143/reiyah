@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.9**. Status: exploratory.
+Proposed roadmap version: **0.3.10**. Status: exploratory.
 Research cutoff: 21 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -23,6 +23,22 @@ This roadmap supersedes the scheduling guidance in the
 obligations remain. The expanded question does not require another perception
 sensitivity sweep or claim that the unproven cost-reduction hypothesis succeeded.
 No foundation-model training, simulator deployment or vehicle control is added.
+
+## 21 September: exact encoded-family development correction
+
+The [native-grid packet](../research/grid-fidelity/0.1.0/README.md) closes a known
+over-relaxation: both methods now use original velocity constraints, the fixed
+interpolation grid and finite legal encoding. All five exposed parts resolve
+with 69 logical reveals per arm. This is an implementation improvement under
+equal new information, and comparison remains tied. The historical 90/89 result
+is preserved. No new empirical, physical or superiority evidence follows.
+
+The next milestone is a separately frozen decision whose tolerance changes a
+specific useful choice, with qualified unexposed public operands and a competent
+conventional arm. Further custody checks or development parity cannot establish
+that value. No private-team release records or general permission are assumed.
+Use obtainable measurements, recompute the complete family, retain abstentions,
+and account for preparation, checking, acquisition and integration effort.
 
 ## Recorded fidelity comparison, 21 September
 

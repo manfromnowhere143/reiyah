@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:reiyah:grid-fidelity:model:0.1.0",
+  "title": "Recorded scalar native-grid model 0.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "native_times_s",
+    "coarse_indices",
+    "observations",
+    "availability",
+    "rate_bound_mps2",
+    "tolerance_mps",
+    "value_domain"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,79}$"
+    },
+    "native_times_s": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 65,
+      "items": {
+        "type": "string",
+        "maxLength": 160,
+        "pattern": "^-?(0|[1-9][0-9]*)(/[1-9][0-9]*)?$"
+      }
+    },
+    "coarse_indices": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 64
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "index",
+          "value_mps"
+        ],
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 64
+          },
+          "value_mps": {
+            "type": "string",
+            "maxLength": 160,
+            "pattern": "^-?(0|[1-9][0-9]*)(/[1-9][0-9]*)?$"
+          }
+        }
+      }
+    },
+    "availability": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 65,
+      "items": {
+        "enum": [
+          "available",
+          "unavailable",
+          "unregistered"
+        ]
+      }
+    },
+    "rate_bound_mps2": {
+      "type": "string",
+      "maxLength": 160,
+      "pattern": "^-?(0|[1-9][0-9]*)(/[1-9][0-9]*)?$"
+    },
+    "tolerance_mps": {
+      "type": "string",
+      "maxLength": 160,
+      "pattern": "^-?(0|[1-9][0-9]*)(/[1-9][0-9]*)?$"
+    },
+    "value_domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "quantum_mps",
+        "minimum_integer",
+        "maximum_integer"
+      ],
+      "properties": {
+        "kind": {
+          "const": "uniform_integer_encoding"
+        },
+        "quantum_mps": {
+          "type": "string",
+          "maxLength": 160,
+          "pattern": "^-?(0|[1-9][0-9]*)(/[1-9][0-9]*)?$"
+        },
+        "minimum_integer": {
+          "type": "integer"
+        },
+        "maximum_integer": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "$comment": "common.parse additionally enforces canonical exact rationals, bit bounds, positivity, ordering, dimensions, anchor coverage, index membership, finite integer range and observation representability. This schema is a structural contract, not a solver or replacement for those semantic checks."
+}

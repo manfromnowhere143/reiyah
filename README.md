@@ -25,6 +25,8 @@ different evidence requirements.
 [Results](#current-evidence) · [Run the auditor](#run-the-offline-auditor) ·
 [Research program](#one-encounter-distinct-information-sets) · [Technical map](#research-map)
 
+[21 September: exact native-grid fidelity](research/grid-fidelity/0.1.0/README.md) resolves the exposed replay with 69 logical reveals per method; equal-information comparison remains tied.
+
 ## The decision model
 
 More detections do not necessarily make a better system. An addition can find
