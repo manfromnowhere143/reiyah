@@ -14,6 +14,11 @@ is to reach the same justified decision with less total work, including the cost
 of obtaining, reviewing and checking the evidence. **An advantage over competent
 conventional analysis remains unproven.**
 
+**Current decision: pause broad engine expansion.** Preserve the conditional
+research core and negative results. The [stopping point](docs/RESEARCH_STOP_POINT_2026-09-21.md)
+records the open scientific and engineering findings, the next bounded repairs,
+and the real revision-workflow evidence needed before product investment resumes.
+
 Perception is the current application within **HARBOR: Human-Automation Readiness,
 Belief & Operational Risk**, the proposed wider research program. Its questions
 concern what people and automated systems know about the same encounter, when
@@ -201,7 +206,7 @@ Those corrections remain part of the research record.
 
 ## Current evidence
 
-These results summarize retained work through **20 September 2026**. The linked
+These results summarize retained work through **21 September 2026**. The linked
 records contain their complete assumptions, outcomes, failed attempts and costs.
 The rows below concern different, sometimes overlapping development studies;
 their counts must not be added as independent trials.
@@ -211,8 +216,9 @@ adds an offline authored clearance contract for ego and lead-vehicle motion.
 All 20 cases agree with a separate conventional calculation, retaining six
 unresolved, three blocked and one inconsistent-premise case. This establishes
 a small checking capability; it is not a driving-performance or safety result.
-The [new roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) connects qualified perception,
-relational motion, simulation validity and human recovery through staged tests.
+The [roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) preserves the wider perception,
+relational-motion and recovery vision as historical research direction. Its
+current decision stops broad expansion pending evidence of workflow value.
 
 The [continuous uncertainty extension](research/continuous-envelope/0.1.0/README.md)
 computes tight minimum-clearance ranges with interval observations, a supplied
@@ -337,13 +343,13 @@ launcher and immutable candidate procedure.
 
 ## Next research decision
 
-The [current roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) prioritizes qualified
-relational motion evidence: which actor, geometry and clock support a declared
-behavioral obligation. It extends the requirement for observations that
-distinguish consequential reference worlds or legitimately narrow them.
-Better ordering of indistinguishable answers cannot supply that information.
+The [current roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) stops broad evidence-engine
+expansion. The [continuation record](docs/RESEARCH_STOP_POINT_2026-09-21.md)
+identifies the remaining claim corrections and historical extraction weakness.
+These bounded repairs preserve the existing results; they do not establish
+physical validity or comparative value.
 
-A subsequent value test needs a real revision decision: genuine old/new model
+The next product-value test needs a real revision decision: genuine old/new model
 artifacts, an owner-defined loss and operating criterion, a qualified review
 process and complete measured costs. Reiyah and the strongest applicable
 conventional workflow must receive the same evidence and satisfy the same
@@ -354,8 +360,9 @@ The investment targets remain **threefold fewer expensive observations and
 halved complete cost**. They have not been reached. Real team revision histories,
 human review costs and an owner-approved release criterion remain missing. The
 [workflow brief](research/value-disproof/0.1.0/WORKFLOW_BRIEF.md) identifies those
-inputs; it is not evidence of a customer engagement. The roadmap corrects its
-historical descriptions where later studies have closed a gap.
+inputs; it is not evidence of a customer engagement. No qualifying record is
+currently retained. Further authored examples or exposed parity sweeps cannot
+substitute for that missing workflow evidence.
 
 ## Recent research
 

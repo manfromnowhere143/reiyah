@@ -1,5 +1,13 @@
 # Human channel
 
+Current interpretation, 21 September 2026: read the
+[corrected synthesis](../docs/GENERAL_SYNTHESIS.md) and
+[stopping point](../docs/RESEARCH_STOP_POINT_2026-09-21.md) before the historical
+summaries below. Detector-selected gaze results do not establish human-machine
+independence or a population lower bound. The H5/H5b leaf documents and claim
+register still need the dated correction recorded in that queue. The original
+measurements and older descriptions are preserved for traceability.
+
 The camera-lidar workstream measured coupling between two automation channels. This thread
 begins the other side of the windshield: the human, and eventually the joint human-automation
 failure that is HARBOR's actual target, the moment two channels stop being independent.

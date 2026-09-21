@@ -1,3 +1,60 @@
+# Reiyah stopping point and correction queue, 21 September 2026
+
+Continuation version: 0.1.65. Status: proposed. Broad product expansion STOPPED.
+The wider mission remains unresolved; the bounded audit-correction queue is OPEN.
+
+Read [RESEARCH_STOP_POINT_2026-09-21.md](RESEARCH_STOP_POINT_2026-09-21.md) first.
+It is the current continuation guide for the mission, supported capability,
+open findings, next repairs and conditions for restarting a real value study.
+Earlier ACTIVE, MODIFY and NEXT instructions below remain historical.
+
+The prior session's STOP verdict was retained correctly. The root README still
+pointed toward relational-motion expansion, and the newer audit findings were
+only in a local report. This documentation increment aligns README, roadmap,
+handoff and the persistent continuation pointer. It preserves the six diagrams,
+engine source, frozen evidence, historical results and earlier checkpoints.
+
+The open work is specific: correct the false H5/H5b population lower-bound
+inference and claim-register entry; propagate the corrected human/LLM
+interpretation; repair historical extraction failure accounting before reuse;
+keep research-check coverage explicit; and resolve historical attribution only
+through a separately planned history operation. These findings are not closed
+by writing this checkpoint. The human/LLM navigation notices route readers to
+the current interpretation while preserving their historical text.
+
+The audit at f9e98ddd5e0cc210b4b7e0063b8d7fe16f8496f6 retained a successful
+542-test monitored run and a fresh exact small-graph calculation. It also
+retained its failed first monitor. Those are inherited audit records, not tests
+rerun for this documentation change, physical validation or independent review.
+Current validation is limited to research consistency, links, the exact
+correction arithmetic, changed-file scope and unchanged diagrams/engine bytes.
+No new scientific experiment is represented as performed.
+
+The next product-value experiment remains blocked on a genuine chronological
+revision with complete outputs, an accountable owner's criterion and action,
+qualified adjudication, a competent conventional comparator, equal guarantees
+and complete measured costs. No held record qualifies. Do not manufacture a
+revision or substitute another authored/exposed parity case. Public records can
+qualify if they carry the necessary evidence; Daniel is not assumed to possess
+private team data or supply technical judgments himself.
+
+Fresh work uses a new owned candidate from refreshed main; keep the historical
+controller at 74fbacc77a3c74d3a4962f488b589ee614a4c575 and closed owners unchanged.
+All 1,433 reserved images stay CLOSED. Gate A stays operator-unaccepted.
+Cumulative source use stays 8,043,361/8,388,608 bytes; this increment adds zero.
+No inference, training, paid compute, physical control, deployment, outreach or
+new private-data ingestion. SOLO, human Git identity, established voice and
+normal authorized push/readback persist. No unattended work is implied.
+
+Documentation owner:
+`~/.codex/reports/reiyah/stopping-point-2026-09-21-iabc9ahw/`.
+Read its VALIDATION.json, PUBLISH_READBACK.json and CLOSEOUT.json for the exact
+completed commit and scope; use refreshed refs rather than guessed state.
+The retained audit and its report digest are linked from the stopping-point
+record. The persistent entry is `~/.codex/memories/reiyah-latest-continuation.md`.
+
+Earlier checkpoints follow unchanged.
+
 # Reiyah forensic value verdict checkpoint, 21 September 2026
 
 Continuation version: 0.1.64. Status: exploratory. Continuing mission ACTIVE.

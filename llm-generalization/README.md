@@ -1,5 +1,13 @@
 # LLM generalization
 
+Current interpretation, 21 September 2026: read the
+[corrected synthesis](../docs/GENERAL_SYNTHESIS.md) and
+[stopping point](../docs/RESEARCH_STOP_POINT_2026-09-21.md) before the historical
+summaries below. These results do not establish a universal same-kind/cross-kind
+independence law or an identified count of independent models. The older broad
+interpretations are superseded; propagating the correction to every leaf record
+remains in the explicit audit queue. Original measurements remain preserved.
+
 The camera-lidar and human-channel work measured the independence assumption in driving. This
 thread shows the estimand is not about driving at all: it applies to any two channels a system
 calls independent. The largest unmeasured such assumption in AI is the LLM jury, self-consistency,

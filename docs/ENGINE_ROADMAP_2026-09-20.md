@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.15**. Status: exploratory.
+Proposed roadmap version: **0.3.16**. Status: exploratory.
 Research cutoff: 21 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -9,6 +9,11 @@ the small conditional kernels, negative results and explicit unknown states, but
 do not extend into another solver, physical monitor, simulation layer or recovery
 module until a genuine owner-controlled revision workflow demonstrates decision
 value or lower complete cost against that owner's competent method.
+
+The [current stopping point](RESEARCH_STOP_POINT_2026-09-21.md) reconciles this
+decision with the README and handoff. It records open audit findings and a
+bounded correction queue. Those repairs do not resume product expansion;
+earlier ACTIVE and MODIFY instructions below remain historical.
 
 The earlier roadmap proposed an engine spanning qualified relational motion,
 simulation validity and human recoverability. That remains a research vision,
