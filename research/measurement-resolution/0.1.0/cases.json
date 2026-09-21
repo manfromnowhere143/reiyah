@@ -1,0 +1,501 @@
+{
+  "document_id": "reiyah.measurement-resolution.experiments",
+  "version": "0.1.0",
+  "experiments": [
+    {
+      "id": "noiseless-point-equality",
+      "model": {
+        "id": "noiseless-point-equality",
+        "horizon_s": [
+          "0",
+          "0"
+        ],
+        "threshold_m": "5",
+        "quantity": {
+          "kind": "road_projected_signed_clearance",
+          "unit": "m",
+          "provenance": "authored"
+        },
+        "motion": {
+          "kind": "global_lipschitz",
+          "rate_mps": "1"
+        },
+        "clock": {
+          "kind": "common_offset",
+          "radius_s": "0"
+        },
+        "observations": [
+          {
+            "id": "prior-0",
+            "time_s": "0",
+            "interval_m": [
+              "4",
+              "6"
+            ]
+          }
+        ]
+      },
+      "queries": [
+        {
+          "id": "exact",
+          "time_s": "0",
+          "error_m": "0",
+          "available": true,
+          "clock_registration": "same_recording_axis"
+        }
+      ],
+      "oracle_id": "noiseless-point-equality-oracle",
+      "purpose": "A registered exact point observation at the threshold resolves equality."
+    },
+    {
+      "id": "noisy-point-abstention",
+      "model": {
+        "id": "noisy-point-abstention",
+        "horizon_s": [
+          "0",
+          "0"
+        ],
+        "threshold_m": "5",
+        "quantity": {
+          "kind": "road_projected_signed_clearance",
+          "unit": "m",
+          "provenance": "authored"
+        },
+        "motion": {
+          "kind": "global_lipschitz",
+          "rate_mps": "1"
+        },
+        "clock": {
+          "kind": "common_offset",
+          "radius_s": "0"
+        },
+        "observations": [
+          {
+            "id": "prior-0",
+            "time_s": "0",
+            "interval_m": [
+              "4",
+              "6"
+            ]
+          }
+        ]
+      },
+      "queries": [
+        {
+          "id": "noisy",
+          "time_s": "0",
+          "error_m": "1/4",
+          "available": true,
+          "clock_registration": "same_recording_axis"
+        }
+      ],
+      "oracle_id": "noisy-point-abstention-oracle",
+      "purpose": "A reported threshold value with nonzero error retains both decisions."
+    },
+    {
+      "id": "pair-query-then-complete-support",
+      "model": {
+        "id": "pair-query-then-complete-support",
+        "horizon_s": [
+          "0",
+          "2"
+        ],
+        "threshold_m": "5",
+        "quantity": {
+          "kind": "road_projected_signed_clearance",
+          "unit": "m",
+          "provenance": "authored"
+        },
+        "motion": {
+          "kind": "global_lipschitz",
+          "rate_mps": "2"
+        },
+        "clock": {
+          "kind": "common_offset",
+          "radius_s": "0"
+        },
+        "observations": [
+          {
+            "id": "prior-0",
+            "time_s": "0",
+            "interval_m": [
+              "6",
+              "6"
+            ]
+          },
+          {
+            "id": "prior-1",
+            "time_s": "2",
+            "interval_m": [
+              "6",
+              "6"
+            ]
+          }
+        ]
+      },
+      "queries": [
+        {
+          "id": "middle",
+          "time_s": "1",
+          "error_m": "0",
+          "available": true,
+          "clock_registration": "same_recording_axis"
+        },
+        {
+          "id": "left",
+          "time_s": "1/2",
+          "error_m": "0",
+          "available": true,
+          "clock_registration": "same_recording_axis"
+        },
+        {
+          "id": "right",
+          "time_s": "3/2",
+          "error_m": "0",
+          "available": true,
+          "clock_registration": "same_recording_axis"
+        }
+      ],
+      "oracle_id": "pair-query-then-complete-support-oracle",
+      "purpose": "The first midpoint reply distinguishes the old extrema yet leaves the whole decision unresolved; continue through the fixed sequence."
+    },
+    {
+      "id": "pair-query-observed-violation",
+      "model": {
+        "id": "pair-query-observed-violation",
+        "horizon_s": [
+          "0",
+          "2"
+        ],
+        "threshold_m": "5",
+        "quantity": {
+          "kind": "road_projected_signed_clearance",
+          "unit": "m",
+          "provenance": "authored"
+        },
+        "motion": {
+          "kind": "global_lipschitz",
+          "rate_mps": "2"
+        },
+        "clock": {
+          "kind": "common_offset",
+          "radius_s": "0"
+        },
+        "observations": [
+          {
+            "id": "prior-0",
+            "time_s": "0",
+            "interval_m": [
+              "6",
+              "6"
+            ]
+          },
+          {
+            "id": "prior-1",
+            "time_s": "2",
+            "interval_m": [
+              "6",
+              "6"
+            ]
+          }
+        ]
+      },
+      "queries": [
+        {
+          "id": "middle",
+          "time_s": "1",
+          "error_m": "0",
+          "available": true,
+          "clock_registration": "same_recording_axis"
+        },
+        {
+          "id": "left",
+          "time_s": "1/2",
+          "error_m": "0",
+          "available": true,
+          "clock_registration": "same_recording_axis"
+        },
+        {
+          "id": "right",
+          "time_s": "3/2",
+          "error_m": "0",
+          "available": true,
+          "clock_registration": "same_recording_axis"
+        }
+      ],
+      "oracle_id": "pair-query-observed-violation-oracle",
+      "purpose": "A violating midpoint reply stops acquisition after complete recomputation."
+    },
+    {
+      "id": "common-clock-needs-more-data",
+      "model": {
+        "id": "common-clock-needs-more-data",
+        "horizon_s": [
+          "0",
+          "0"
+        ],
+        "threshold_m": "5",
+        "quantity": {
+          "kind": "road_projected_signed_clearance",
+          "unit": "m",
+          "provenance": "authored"
+        },
+        "motion": {
+          "kind": "global_lipschitz",
+          "rate_mps": "1"
+        },
+        "clock": {
+          "kind": "common_offset",
+          "radius_s": "1"
+        },
+        "observations": [
+          {
+            "id": "prior-0",
+            "time_s": "0",
+            "interval_m": [
+              "11/2",
+              "11/2"
+            ]
+          }
+        ]
+      },
+      "queries": [
+        {
+          "id": "repeat",
+          "time_s": "0",
+          "error_m": "0",
+          "available": true,
+          "clock_registration": "same_recording_axis"
+        },
+        {
+          "id": "earlier",
+          "time_s": "-1",
+          "error_m": "0",
+          "available": true,
+          "clock_registration": "same_recording_axis"
+        },
+        {
+          "id": "later",
+          "time_s": "1",
+          "error_m": "0",
+          "available": true,
+          "clock_registration": "same_recording_axis"
+        }
+      ],
+      "oracle_id": "common-clock-needs-more-data-oracle",
+      "purpose": "An exact repeated recorded-time point leaves the unknown common physical offset; additional recorded-time observations cover the shifted horizon."
+    },
+    {
+      "id": "inconsistent-report",
+      "model": {
+        "id": "inconsistent-report",
+        "horizon_s": [
+          "0",
+          "2"
+        ],
+        "threshold_m": "5",
+        "quantity": {
+          "kind": "road_projected_signed_clearance",
+          "unit": "m",
+          "provenance": "authored"
+        },
+        "motion": {
+          "kind": "global_lipschitz",
+          "rate_mps": "2"
+        },
+        "clock": {
+          "kind": "common_offset",
+          "radius_s": "0"
+        },
+        "observations": [
+          {
+            "id": "prior-0",
+            "time_s": "0",
+            "interval_m": [
+              "6",
+              "6"
+            ]
+          },
+          {
+            "id": "prior-1",
+            "time_s": "2",
+            "interval_m": [
+              "6",
+              "6"
+            ]
+          }
+        ]
+      },
+      "queries": [
+        {
+          "id": "fault",
+          "time_s": "1",
+          "error_m": "0",
+          "available": true,
+          "clock_registration": "same_recording_axis"
+        }
+      ],
+      "oracle_id": "inconsistent-report-oracle",
+      "purpose": "Injected reporting error violates the declared channel and must remain inconsistent, not become a confident conclusion."
+    },
+    {
+      "id": "unavailable-query",
+      "model": {
+        "id": "unavailable-query",
+        "horizon_s": [
+          "0",
+          "2"
+        ],
+        "threshold_m": "5",
+        "quantity": {
+          "kind": "road_projected_signed_clearance",
+          "unit": "m",
+          "provenance": "authored"
+        },
+        "motion": {
+          "kind": "global_lipschitz",
+          "rate_mps": "2"
+        },
+        "clock": {
+          "kind": "common_offset",
+          "radius_s": "0"
+        },
+        "observations": [
+          {
+            "id": "prior-0",
+            "time_s": "0",
+            "interval_m": [
+              "6",
+              "6"
+            ]
+          },
+          {
+            "id": "prior-1",
+            "time_s": "2",
+            "interval_m": [
+              "6",
+              "6"
+            ]
+          }
+        ]
+      },
+      "queries": [
+        {
+          "id": "missing",
+          "time_s": "1",
+          "error_m": "0",
+          "available": false,
+          "clock_registration": "same_recording_axis"
+        }
+      ],
+      "oracle_id": "unavailable-query-oracle",
+      "purpose": "Unavailable observations cannot be acquired or encoded as zero."
+    },
+    {
+      "id": "unregistered-query",
+      "model": {
+        "id": "unregistered-query",
+        "horizon_s": [
+          "0",
+          "2"
+        ],
+        "threshold_m": "5",
+        "quantity": {
+          "kind": "road_projected_signed_clearance",
+          "unit": "m",
+          "provenance": "authored"
+        },
+        "motion": {
+          "kind": "global_lipschitz",
+          "rate_mps": "2"
+        },
+        "clock": {
+          "kind": "common_offset",
+          "radius_s": "0"
+        },
+        "observations": [
+          {
+            "id": "prior-0",
+            "time_s": "0",
+            "interval_m": [
+              "6",
+              "6"
+            ]
+          },
+          {
+            "id": "prior-1",
+            "time_s": "2",
+            "interval_m": [
+              "6",
+              "6"
+            ]
+          }
+        ]
+      },
+      "queries": [
+        {
+          "id": "unregistered",
+          "time_s": "1",
+          "error_m": "0",
+          "available": true,
+          "clock_registration": null
+        }
+      ],
+      "oracle_id": "unregistered-query-oracle",
+      "purpose": "An unregistered timestamp cannot be silently combined with the prior recording axis."
+    },
+    {
+      "id": "already-supported-no-acquisition",
+      "model": {
+        "id": "already-supported-no-acquisition",
+        "horizon_s": [
+          "0",
+          "2"
+        ],
+        "threshold_m": "5",
+        "quantity": {
+          "kind": "road_projected_signed_clearance",
+          "unit": "m",
+          "provenance": "authored"
+        },
+        "motion": {
+          "kind": "global_lipschitz",
+          "rate_mps": "2"
+        },
+        "clock": {
+          "kind": "common_offset",
+          "radius_s": "0"
+        },
+        "observations": [
+          {
+            "id": "prior-0",
+            "time_s": "0",
+            "interval_m": [
+              "7",
+              "7"
+            ]
+          },
+          {
+            "id": "prior-1",
+            "time_s": "2",
+            "interval_m": [
+              "7",
+              "7"
+            ]
+          }
+        ]
+      },
+      "queries": [
+        {
+          "id": "unnecessary",
+          "time_s": "1",
+          "error_m": "0",
+          "available": true,
+          "clock_registration": "same_recording_axis"
+        }
+      ],
+      "oracle_id": "already-supported-no-acquisition-oracle",
+      "purpose": "Do not acquire when existing complete bounds already settle the obligation."
+    }
+  ]
+}

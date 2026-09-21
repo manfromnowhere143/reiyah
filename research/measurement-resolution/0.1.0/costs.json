@@ -1,0 +1,364 @@
+{
+  "document_id": "reiyah.measurement-resolution.costs",
+  "version": "0.1.0",
+  "cutoff_utc": "2026-09-21T06:49:01.119401+00:00",
+  "scope": "Completed owned command receipts plus separately timed setup. This write and later work have later receipts. Pre-supervisor preparation and tool overhead are not fully instrumented.",
+  "categories": {
+    "execution": {
+      "commands": 1,
+      "outer_seconds": 0.1670525420922786,
+      "child_cpu_seconds": 0.076879
+    },
+    "source": {
+      "commands": 1,
+      "outer_seconds": 0.7186801661737263,
+      "child_cpu_seconds": 0.076379
+    },
+    "packaging": {
+      "commands": 8,
+      "outer_seconds": 1.4319160429295152,
+      "child_cpu_seconds": 0.372102
+    },
+    "checking": {
+      "commands": 5,
+      "outer_seconds": 1.0804556661751121,
+      "child_cpu_seconds": 0.40967400000000004
+    }
+  },
+  "completed_owned_commands": 15,
+  "recorded_duration_sum_seconds": 8.47958687855862,
+  "utc_recorded_envelope_union_seconds": 8.485668,
+  "setup_git_seconds": 5.0814824611879885,
+  "unplaced_direct_tool_seconds": 6.671100833,
+  "unplaced_tool_records": [
+    {
+      "chunk_id": "9b45ea",
+      "seconds": 2.334e-06,
+      "description": "Earlier direct command",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "8c50d6",
+      "seconds": 3.333e-06,
+      "description": "Earlier direct command",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "a918aa",
+      "seconds": 1.458e-06,
+      "description": "Earlier direct command",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "12fc86",
+      "seconds": 2.25e-06,
+      "description": "Earlier direct command",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "5e6ab7",
+      "seconds": 2.475e-05,
+      "description": "Earlier direct command",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "927f30",
+      "seconds": 0.609188458,
+      "description": "Earlier direct command",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "db9d96",
+      "seconds": 0.606058041,
+      "description": "Earlier direct command",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "30cd83",
+      "seconds": 0.552495,
+      "description": "Earlier direct command",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "4fe686",
+      "seconds": 1.219802125,
+      "description": "Earlier direct command",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "5e1402",
+      "seconds": 0.478858875,
+      "description": "Post-compaction read-only 0",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "3aef2c",
+      "seconds": 0.469548917,
+      "description": "Post-compaction read-only 1",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "bcc2c8",
+      "seconds": 0.47556,
+      "description": "Post-compaction read-only 2",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "d4d6d0",
+      "seconds": 0.409430958,
+      "description": "Packaging preparation read 0",
+      "returncode": 1,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "c399e6",
+      "seconds": 0.399354333,
+      "description": "Packaging preparation read 1",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "e3d5a6",
+      "seconds": 0.411306292,
+      "description": "Packaging preparation read 2",
+      "returncode": 1,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "08361d",
+      "seconds": 4.75e-06,
+      "description": "Post-compaction cwd",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "20af79",
+      "seconds": 3.209e-06,
+      "description": "Controller identity",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "5f7489",
+      "seconds": 0.327017958,
+      "description": "Correct owner/output read",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "e6db00",
+      "seconds": 0.31485875,
+      "description": "Correct notice and protocol read",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    },
+    {
+      "chunk_id": "bd1860",
+      "seconds": 0.397579042,
+      "description": "Roadmap and exact helper/result review",
+      "returncode": 0,
+      "utc_placement": null,
+      "overlap": "Unplaced tools may overlap; not added to recorded UTC union."
+    }
+  ],
+  "unplaced_not_added_to_union": true,
+  "elapsed_since_first_known_instrumentation_seconds": 2027.119401,
+  "actual_user_turn_start_utc": null,
+  "owned_artifact_bytes_before_write": 837354,
+  "owned_temporary_bytes_retained": 0,
+  "checkout_initial_bytes": 36714305,
+  "checkout_current_bytes": 36916946,
+  "free_disk_bytes": 23936999424,
+  "new_source_body_and_derived_bytes": 443407,
+  "retained_prior_source_bytes_not_downloaded_again": 0,
+  "extra_source_transcription_bytes": 1481,
+  "publisher_readback_bytes_also_charged_conservatively": 0,
+  "source_ceiling_conservative_bytes": 444888,
+  "compressed_ranges_counted_alongside_extracted_members": false,
+  "full_archive_downloaded": false,
+  "minimum_sampled_free_bytes": 22735728640,
+  "highest_sampled_artifact_bytes": 833889,
+  "limits": {
+    "artifact_cap_bytes": 134217728,
+    "source_cap_bytes": 8388608,
+    "free_space_floor_bytes": 5368709120,
+    "execution_process_seconds": 600,
+    "checking_process_seconds": 600
+  },
+  "nested_arm_timers": {
+    "timings-producer-01.json": {
+      "acquisition_scope": "Authored in-memory interpolation only; no physical or human acquisition saving.",
+      "all_oracle_records_loaded_for_preparation": 9,
+      "arm": "analytic_complete_response_sets",
+      "calculation_seconds": 0.008386957924813032,
+      "cpu_seconds": 0.014211999999999997,
+      "logical_oracle_calls": 10,
+      "preparation_seconds": 0.007864000042900443,
+      "process_through_output_seconds": 0.018543540965765715
+    },
+    "timings-reference-01.json": {
+      "all_oracle_records_loaded_for_preparation": 9,
+      "arm": "conventional_strict_polyhedron_projection",
+      "calculation_seconds": 0.015469999983906746,
+      "cpu_seconds": 0.027373,
+      "logical_oracle_calls": 10,
+      "preparation_seconds": 0.005321915959939361,
+      "process_through_check_and_output_seconds": 0.02939408295787871,
+      "scope": "Nested process, includes native witness checking after conventional calculation; no full acquisition/engineering savings claim."
+    }
+  },
+  "overlap_rule": "Nested fetch, child CPU, source parsing, arm and Git timers are not added again to supervising parent durations. Unplaced tool times have no UTC placement.",
+  "unknown": [
+    "active engineering/reasoning effort",
+    "human acquisition/review effort",
+    "provider charges",
+    "energy",
+    "peak workflow memory",
+    "unrecorded tool/host/network overhead",
+    "some early read/write/patch durations",
+    "shared Git storage growth attribution",
+    "complete workflow economics"
+  ],
+  "sampling_limit": "Point samples do not bound unseen peaks. Checkout is separate. All cumulative timers, including retained failures, are retained.",
+  "original_mission_start_utc": "2026-09-17T22:28:16Z",
+  "previous_excluded_seconds": 44963.785396,
+  "previous_ten_hour_assignment": "complete; clock not restarted",
+  "commands": [
+    {
+      "id": "acquisition-01",
+      "category": "execution",
+      "returncode": 0,
+      "duration_seconds": 0.1670525420922786,
+      "receipt_sha256": "eedfeb37a43b95381487a88b2bbdd37ac3a83547e5bd55969f41001552a45600"
+    },
+    {
+      "id": "active-sensing-source-01",
+      "category": "source",
+      "returncode": 0,
+      "duration_seconds": 0.7186801661737263,
+      "receipt_sha256": "8ee2be31d03e98eafeed513cd5de7b4eff0609da05396281b4825acc02bab9e5"
+    },
+    {
+      "id": "active-sensing-text-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.38030995801091194,
+      "receipt_sha256": "08fa9d63a942c8dd7bcef3c3743a422143c86cc765f219a58b919973cf56b6a3"
+    },
+    {
+      "id": "build-cases-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.09334133379161358,
+      "receipt_sha256": "210a6d25da7ba153f3536f17fdec440d6d2453a8ff03f7f9212cf5e5adfb5f13"
+    },
+    {
+      "id": "cli-review-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.09396445797756314,
+      "receipt_sha256": "35118af1d09487781c934a521bea41439f29158c9658511864dffce369ffbf4f"
+    },
+    {
+      "id": "controls-post-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.16535062505863607,
+      "receipt_sha256": "e372122676a6e2e7ff2ec6c2cbd7fd6fe38c0f9e0faff9cdcb7e0923bbe0ab34"
+    },
+    {
+      "id": "controls-pre-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.1793282909784466,
+      "receipt_sha256": "95a58ef5c9567a0dd097f953aef9ac9a7061e11c0cec67096cfb10702efaa99c"
+    },
+    {
+      "id": "copy-kernels-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.09697537496685982,
+      "receipt_sha256": "224aeb83073cd1e41e70162b9f47bfa412bff341cf79dd8f5021a64699119cc2"
+    },
+    {
+      "id": "docs-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.09342191717587411,
+      "receipt_sha256": "a4886bc7d7e9a7d8ee4ce588ff91057f4db82c5987bbdfd9addbdd9763120c5f"
+    },
+    {
+      "id": "lint-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.4438720000907779,
+      "receipt_sha256": "e86d4e123cd02d1233a93030b3f8e1d215fdcb492dd62e919835c4ef003a5a09"
+    },
+    {
+      "id": "package-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.0988907921127975,
+      "receipt_sha256": "e74d8e5ef307730dafc67c4827afbe41a98945ace9ddc82e4c22eeabe0148c2d"
+    },
+    {
+      "id": "prepare-freeze-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.4834697498008609,
+      "receipt_sha256": "dbc8a7d3e41843e2726b8e8e3ff7637fc9d165e869dad1bcdaf5493be55faa27"
+    },
+    {
+      "id": "quickstart-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.12232233304530382,
+      "receipt_sha256": "cedce58849501b91ecbcfaba063ee94662f79d23cfea2d90acd334ac49fb438c"
+    },
+    {
+      "id": "reference-01",
+      "category": "checking",
+      "returncode": 0,
+      "duration_seconds": 0.16958241700194776,
+      "receipt_sha256": "caca50b193a7c8416733cbe55212563958636328db449841943fa0513aadd91d"
+    },
+    {
+      "id": "result-summary-01",
+      "category": "packaging",
+      "returncode": 0,
+      "duration_seconds": 0.09154245909303427,
+      "receipt_sha256": "e203fe336cca299be3805bd7f4bb8477bb930e27691a4d4d9599dec56659e83e"
+    }
+  ]
+}

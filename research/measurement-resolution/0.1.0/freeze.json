@@ -1,0 +1,115 @@
+{
+  "document_id": "reiyah.measurement-resolution.freeze",
+  "version": "0.1.0",
+  "status": "frozen_authored_development_experiment",
+  "frozen_utc": "2026-09-21T06:38:31.612597+00:00",
+  "base_commit": "9df2ba1cbfac1fefcb576c4092cf47f5e0822c2f",
+  "files": {
+    "DISTRIBUTION.md": {
+      "bytes": 1125,
+      "sha256": "796a7fa73fb424e4c6dcb065ea23b7599aff57a26bf045ec9eca145ca2b002da"
+    },
+    "METHOD.md": {
+      "bytes": 6171,
+      "sha256": "502b8d0e1c2c8d2311a2519f5f147fbd270be7c88e9535bb87107dbfa229d0e9"
+    },
+    "PLAN.md": {
+      "bytes": 5664,
+      "sha256": "4f48c1b45fe838dee5fe5a3fffd887ea364a9eb70d9ec343d912dab31336bffe"
+    },
+    "SOURCES.md": {
+      "bytes": 2122,
+      "sha256": "3612e812f93ca652bfffac182473c56f66dcee0e58f286a0258d1c842431bb12"
+    },
+    "binding.py": {
+      "bytes": 2819,
+      "sha256": "59ae60d1ae3bab8c7e215461a00ae9f4dbfb3344561856de588d0695ec5208d0"
+    },
+    "cases.json": {
+      "bytes": 12180,
+      "sha256": "a4717288f8b7d2622015856b0d02bf2bb15d0636464a0c03982e6f94b1511aa1"
+    },
+    "check.py": {
+      "bytes": 9952,
+      "sha256": "936f336e2ba946d8067210ea0f47290e0bc520b9ad8a4ffec10d314f4a2b6e8b"
+    },
+    "common.py": {
+      "bytes": 4324,
+      "sha256": "a8fa85936f942479dd891f18b805ad27e6571730bdd89f13b4598885a67e2114"
+    },
+    "controls.py": {
+      "bytes": 10510,
+      "sha256": "7637af0b640b169de1c6e4de4c683e6130800c0c1bb6133defb95751b6ff0aef"
+    },
+    "envelope.py": {
+      "bytes": 3635,
+      "sha256": "a84dabda61c5611490acc6717636067768f8149c1798d7bfbacfaf6e10b95859"
+    },
+    "lineage.json": {
+      "bytes": 1262,
+      "sha256": "354ae3a55cc00498d2c0481b9e042a22d826dad5e8b8e32d2a877da23a74d495"
+    },
+    "linear_check.py": {
+      "bytes": 7108,
+      "sha256": "f057e48196a6bf18b73dd6fbdc7f9fd367b118e9c5d10b87b94c5b9bfa9a164d"
+    },
+    "oracles.json": {
+      "bytes": 2460,
+      "sha256": "199112ee8efceca7e861823f518184c5a302a1d2eb952d5916d853f854f3736b"
+    },
+    "response_check.py": {
+      "bytes": 6198,
+      "sha256": "73daeaafcd097f56df976f5d9dd5c253e2a542a6fe4c876510b42403e9c5ad53"
+    },
+    "responses.py": {
+      "bytes": 5219,
+      "sha256": "af9cc0d8cea9496408e9bffbec6c7391ee03a7712ce722bc3def63eb1aa2ab2e"
+    },
+    "run.py": {
+      "bytes": 2932,
+      "sha256": "60ac16f4526095c47f5e163a7df3470bfb9d6dee99373366f4f3903ed9f7407a"
+    },
+    "sources.json": {
+      "bytes": 1905,
+      "sha256": "fb620d227a013cce391a64e8a345de8c51808bc14a140a64f57ea9b32c81582b"
+    },
+    "workflow.py": {
+      "bytes": 6983,
+      "sha256": "99f0ae3121947818a70d28516bcec07727ceba8b7ea43ec03956b39f9c6e8963"
+    }
+  },
+  "sources": {
+    "active-sensing-v1.pdf": {
+      "bytes": 396262,
+      "sha256": "a7589fa4345642d6e59a50ce0b011cba82a3f587c12ecebc5ee3a797744b95d0"
+    },
+    "active-sensing-v1.txt": {
+      "bytes": 47145,
+      "sha256": "ac9321b02c9fe8cfe6c418b07d81abcdfa25e6cc61cc08c15c10981399c19bb7"
+    }
+  },
+  "runtime": {
+    "path": "/Users/danielwahnich/.codex/reports/reiyah/engine-discovery-custody-2026-09-13/private/runtime/bin/python",
+    "sha256": "3b6b69c61fd3765ab911d701cd17293b4a9154a0cb4973b546f05847f9a164c6"
+  },
+  "supervisor_sha256": "aa1b3c7b51459c0a682d0d96bac5299e08ce6b0c01b0c27cfb628ea3c365dbca",
+  "allocation": {
+    "experiments": 9,
+    "oracles": 9,
+    "planned_query_opportunities": 15,
+    "pre_controls": 25,
+    "post_controls": 10,
+    "physical_cases": 0
+  },
+  "limits": {
+    "artifact_cap_bytes": 134217728,
+    "source_cap_bytes": 8388608,
+    "free_space_floor_bytes": 5368709120,
+    "execution_process_seconds": 600,
+    "checking_process_seconds": 600
+  },
+  "reserved_images_closed": 1433,
+  "network_policy": "Deny network before execution/checking child runtime.",
+  "source_exposure": "Authored cases, oracle traces and intended outcomes are known. No blinded or held-out evidence.",
+  "continuing_mission": "This is a checkpoint only; do not declare the continuing mission complete at integration."
+}

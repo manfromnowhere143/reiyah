@@ -1,0 +1,1429 @@
+{
+  "cases": [
+    {
+      "id": "noiseless-point-equality",
+      "stages": [
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "0"
+            ],
+            "id": "noiseless-point-equality",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "1"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "4",
+                  "6"
+                ],
+                "time_s": "0"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": {
+              "absolute_error_strictly_below_m": "1",
+              "lower_world_m": "4",
+              "physical_time_s": "0",
+              "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+              "upper_world_m": "6"
+            },
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": null
+            },
+            "id": "noiseless-point-equality",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "4",
+              "offset_s": "0",
+              "time_s": "0"
+            },
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "unresolved",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "6",
+              "offset_s": "0",
+              "time_s": "0"
+            }
+          }
+        },
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "0"
+            ],
+            "id": "noiseless-point-equality",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "1"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "5",
+                  "5"
+                ],
+                "time_s": "0"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": null,
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": "0"
+            },
+            "id": "noiseless-point-equality",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "5",
+              "offset_s": "0",
+              "time_s": "0"
+            },
+            "minimum_range_m": [
+              "5",
+              "5"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "supported",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "5",
+              "offset_s": "0",
+              "time_s": "0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "noisy-point-abstention",
+      "stages": [
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "0"
+            ],
+            "id": "noisy-point-abstention",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "1"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "4",
+                  "6"
+                ],
+                "time_s": "0"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": {
+              "absolute_error_strictly_below_m": "1",
+              "lower_world_m": "4",
+              "physical_time_s": "0",
+              "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+              "upper_world_m": "6"
+            },
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": null
+            },
+            "id": "noisy-point-abstention",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "4",
+              "offset_s": "0",
+              "time_s": "0"
+            },
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "unresolved",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "6",
+              "offset_s": "0",
+              "time_s": "0"
+            }
+          }
+        },
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "0"
+            ],
+            "id": "noisy-point-abstention",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "1"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "19/4",
+                  "21/4"
+                ],
+                "time_s": "0"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": {
+              "absolute_error_strictly_below_m": "1/4",
+              "lower_world_m": "19/4",
+              "physical_time_s": "0",
+              "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+              "upper_world_m": "21/4"
+            },
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": null
+            },
+            "id": "noisy-point-abstention",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "19/4",
+              "offset_s": "0",
+              "time_s": "0"
+            },
+            "minimum_range_m": [
+              "19/4",
+              "21/4"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "unresolved",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "21/4",
+              "offset_s": "0",
+              "time_s": "0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "pair-query-then-complete-support",
+      "stages": [
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "2"
+            ],
+            "id": "pair-query-then-complete-support",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "2"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "0"
+              },
+              {
+                "id": "prior-1",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "2"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": {
+              "absolute_error_strictly_below_m": "2",
+              "lower_world_m": "4",
+              "physical_time_s": "1",
+              "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+              "upper_world_m": "8"
+            },
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": null
+            },
+            "id": "pair-query-then-complete-support",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "4",
+              "offset_s": "0",
+              "time_s": "1"
+            },
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "unresolved",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "6",
+              "offset_s": "0",
+              "time_s": "0"
+            }
+          }
+        },
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "2"
+            ],
+            "id": "pair-query-then-complete-support",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "2"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "0"
+              },
+              {
+                "id": "measurement-middle",
+                "interval_m": [
+                  "11/2",
+                  "11/2"
+                ],
+                "time_s": "1"
+              },
+              {
+                "id": "prior-1",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "2"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": {
+              "absolute_error_strictly_below_m": "3/4",
+              "lower_world_m": "19/4",
+              "physical_time_s": "5/8",
+              "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+              "upper_world_m": "25/4"
+            },
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": null
+            },
+            "id": "pair-query-then-complete-support",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "19/4",
+              "offset_s": "0",
+              "time_s": "5/8"
+            },
+            "minimum_range_m": [
+              "19/4",
+              "11/2"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "unresolved",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "11/2",
+              "offset_s": "0",
+              "time_s": "1"
+            }
+          }
+        },
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "2"
+            ],
+            "id": "pair-query-then-complete-support",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "2"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "0"
+              },
+              {
+                "id": "measurement-left",
+                "interval_m": [
+                  "23/4",
+                  "23/4"
+                ],
+                "time_s": "1/2"
+              },
+              {
+                "id": "measurement-middle",
+                "interval_m": [
+                  "11/2",
+                  "11/2"
+                ],
+                "time_s": "1"
+              },
+              {
+                "id": "prior-1",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "2"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": {
+              "absolute_error_strictly_below_m": "3/4",
+              "lower_world_m": "19/4",
+              "physical_time_s": "11/8",
+              "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+              "upper_world_m": "25/4"
+            },
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": null
+            },
+            "id": "pair-query-then-complete-support",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "19/4",
+              "offset_s": "0",
+              "time_s": "11/8"
+            },
+            "minimum_range_m": [
+              "19/4",
+              "11/2"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "unresolved",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "11/2",
+              "offset_s": "0",
+              "time_s": "1"
+            }
+          }
+        },
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "2"
+            ],
+            "id": "pair-query-then-complete-support",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "2"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "0"
+              },
+              {
+                "id": "measurement-left",
+                "interval_m": [
+                  "23/4",
+                  "23/4"
+                ],
+                "time_s": "1/2"
+              },
+              {
+                "id": "measurement-middle",
+                "interval_m": [
+                  "11/2",
+                  "11/2"
+                ],
+                "time_s": "1"
+              },
+              {
+                "id": "measurement-right",
+                "interval_m": [
+                  "23/4",
+                  "23/4"
+                ],
+                "time_s": "3/2"
+              },
+              {
+                "id": "prior-1",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "2"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": null,
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": "1/8"
+            },
+            "id": "pair-query-then-complete-support",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "41/8",
+              "offset_s": "0",
+              "time_s": "13/16"
+            },
+            "minimum_range_m": [
+              "41/8",
+              "11/2"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "supported",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "11/2",
+              "offset_s": "0",
+              "time_s": "1"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "pair-query-observed-violation",
+      "stages": [
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "2"
+            ],
+            "id": "pair-query-observed-violation",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "2"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "0"
+              },
+              {
+                "id": "prior-1",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "2"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": {
+              "absolute_error_strictly_below_m": "2",
+              "lower_world_m": "4",
+              "physical_time_s": "1",
+              "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+              "upper_world_m": "8"
+            },
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": null
+            },
+            "id": "pair-query-observed-violation",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "4",
+              "offset_s": "0",
+              "time_s": "1"
+            },
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "unresolved",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "6",
+              "offset_s": "0",
+              "time_s": "0"
+            }
+          }
+        },
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "2"
+            ],
+            "id": "pair-query-observed-violation",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "2"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "0"
+              },
+              {
+                "id": "measurement-middle",
+                "interval_m": [
+                  "4",
+                  "4"
+                ],
+                "time_s": "1"
+              },
+              {
+                "id": "prior-1",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "2"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": null,
+            "extra_error_allowance_m": {
+              "contradiction_strict": "1",
+              "support_inclusive": null
+            },
+            "id": "pair-query-observed-violation",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "4",
+              "offset_s": "0",
+              "time_s": "1"
+            },
+            "minimum_range_m": [
+              "4",
+              "4"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "contradicted",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "4",
+              "offset_s": "0",
+              "time_s": "1"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "common-clock-needs-more-data",
+      "stages": [
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "1"
+            },
+            "horizon_s": [
+              "0",
+              "0"
+            ],
+            "id": "common-clock-needs-more-data",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "1"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "11/2",
+                  "11/2"
+                ],
+                "time_s": "0"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": {
+              "absolute_error_strictly_below_m": "1",
+              "lower_world_m": "9/2",
+              "physical_time_s": "0",
+              "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+              "upper_world_m": "13/2"
+            },
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": null
+            },
+            "id": "common-clock-needs-more-data",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "9/2",
+              "offset_s": "1",
+              "time_s": "0"
+            },
+            "minimum_range_m": [
+              "9/2",
+              "13/2"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "unresolved",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "13/2",
+              "offset_s": "1",
+              "time_s": "0"
+            }
+          }
+        },
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "1"
+            },
+            "horizon_s": [
+              "0",
+              "0"
+            ],
+            "id": "common-clock-needs-more-data",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "1"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "11/2",
+                  "11/2"
+                ],
+                "time_s": "0"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": {
+              "absolute_error_strictly_below_m": "1",
+              "lower_world_m": "9/2",
+              "physical_time_s": "0",
+              "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+              "upper_world_m": "13/2"
+            },
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": null
+            },
+            "id": "common-clock-needs-more-data",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "9/2",
+              "offset_s": "1",
+              "time_s": "0"
+            },
+            "minimum_range_m": [
+              "9/2",
+              "13/2"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "unresolved",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "13/2",
+              "offset_s": "1",
+              "time_s": "0"
+            }
+          }
+        },
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "1"
+            },
+            "horizon_s": [
+              "0",
+              "0"
+            ],
+            "id": "common-clock-needs-more-data",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "1"
+            },
+            "observations": [
+              {
+                "id": "measurement-earlier",
+                "interval_m": [
+                  "11/2",
+                  "11/2"
+                ],
+                "time_s": "-1"
+              },
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "11/2",
+                  "11/2"
+                ],
+                "time_s": "0"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": {
+              "absolute_error_strictly_below_m": "1",
+              "lower_world_m": "9/2",
+              "physical_time_s": "0",
+              "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+              "upper_world_m": "13/2"
+            },
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": null
+            },
+            "id": "common-clock-needs-more-data",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "9/2",
+              "offset_s": "-1",
+              "time_s": "0"
+            },
+            "minimum_range_m": [
+              "9/2",
+              "13/2"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "unresolved",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "13/2",
+              "offset_s": "-1",
+              "time_s": "0"
+            }
+          }
+        },
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "1"
+            },
+            "horizon_s": [
+              "0",
+              "0"
+            ],
+            "id": "common-clock-needs-more-data",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "1"
+            },
+            "observations": [
+              {
+                "id": "measurement-earlier",
+                "interval_m": [
+                  "11/2",
+                  "11/2"
+                ],
+                "time_s": "-1"
+              },
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "11/2",
+                  "11/2"
+                ],
+                "time_s": "0"
+              },
+              {
+                "id": "measurement-later",
+                "interval_m": [
+                  "11/2",
+                  "11/2"
+                ],
+                "time_s": "1"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": null,
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": "0"
+            },
+            "id": "common-clock-needs-more-data",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "5",
+              "offset_s": "1/2",
+              "time_s": "0"
+            },
+            "minimum_range_m": [
+              "5",
+              "6"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "supported",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "6",
+              "offset_s": "1/2",
+              "time_s": "0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "inconsistent-report",
+      "stages": [
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "2"
+            ],
+            "id": "inconsistent-report",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "2"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "0"
+              },
+              {
+                "id": "prior-1",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "2"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": {
+              "absolute_error_strictly_below_m": "2",
+              "lower_world_m": "4",
+              "physical_time_s": "1",
+              "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+              "upper_world_m": "8"
+            },
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": null
+            },
+            "id": "inconsistent-report",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "4",
+              "offset_s": "0",
+              "time_s": "1"
+            },
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "unresolved",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "6",
+              "offset_s": "0",
+              "time_s": "0"
+            }
+          }
+        },
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "2"
+            ],
+            "id": "inconsistent-report",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "2"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "0"
+              },
+              {
+                "id": "measurement-fault",
+                "interval_m": [
+                  "9",
+                  "9"
+                ],
+                "time_s": "1"
+              },
+              {
+                "id": "prior-1",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "2"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "conflicting_observations": [
+              "measurement-fault",
+              "prior-0"
+            ],
+            "id": "inconsistent-report",
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "inconsistent_premises"
+          }
+        }
+      ]
+    },
+    {
+      "id": "unavailable-query",
+      "stages": [
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "2"
+            ],
+            "id": "unavailable-query",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "2"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "0"
+              },
+              {
+                "id": "prior-1",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "2"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": {
+              "absolute_error_strictly_below_m": "2",
+              "lower_world_m": "4",
+              "physical_time_s": "1",
+              "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+              "upper_world_m": "8"
+            },
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": null
+            },
+            "id": "unavailable-query",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "4",
+              "offset_s": "0",
+              "time_s": "1"
+            },
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "unresolved",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "6",
+              "offset_s": "0",
+              "time_s": "0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "unregistered-query",
+      "stages": [
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "2"
+            ],
+            "id": "unregistered-query",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "2"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "0"
+              },
+              {
+                "id": "prior-1",
+                "interval_m": [
+                  "6",
+                  "6"
+                ],
+                "time_s": "2"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": {
+              "absolute_error_strictly_below_m": "2",
+              "lower_world_m": "4",
+              "physical_time_s": "1",
+              "scope": "distinguishes_this_pair_only; requires_registered_measurement_clock",
+              "upper_world_m": "8"
+            },
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": null
+            },
+            "id": "unregistered-query",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "4",
+              "offset_s": "0",
+              "time_s": "1"
+            },
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "unresolved",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "6",
+              "offset_s": "0",
+              "time_s": "0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "already-supported-no-acquisition",
+      "stages": [
+        {
+          "model": {
+            "clock": {
+              "kind": "common_offset",
+              "radius_s": "0"
+            },
+            "horizon_s": [
+              "0",
+              "2"
+            ],
+            "id": "already-supported-no-acquisition",
+            "motion": {
+              "kind": "global_lipschitz",
+              "rate_mps": "2"
+            },
+            "observations": [
+              {
+                "id": "prior-0",
+                "interval_m": [
+                  "7",
+                  "7"
+                ],
+                "time_s": "0"
+              },
+              {
+                "id": "prior-1",
+                "interval_m": [
+                  "7",
+                  "7"
+                ],
+                "time_s": "2"
+              }
+            ],
+            "quantity": {
+              "kind": "road_projected_signed_clearance",
+              "provenance": "authored",
+              "unit": "m"
+            },
+            "threshold_m": "5"
+          },
+          "result": {
+            "distinguishing_observation": null,
+            "extra_error_allowance_m": {
+              "contradiction_strict": null,
+              "support_inclusive": "0"
+            },
+            "id": "already-supported-no-acquisition",
+            "lower_witness": {
+              "envelope": "lower",
+              "minimum_m": "5",
+              "offset_s": "0",
+              "time_s": "1"
+            },
+            "minimum_range_m": [
+              "5",
+              "7"
+            ],
+            "physical_status": "unresolved",
+            "scope": "authored_conditional_model",
+            "status": "supported",
+            "upper_witness": {
+              "envelope": "upper",
+              "minimum_m": "7",
+              "offset_s": "0",
+              "time_s": "0"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "document_id": "reiyah.measurement-resolution.proofs",
+  "freeze_sha256": "3715477e6a9d6b96542b2b58b32f6564ee664a81c62b6fded3d74430132fa97a",
+  "version": "0.1.0"
+}

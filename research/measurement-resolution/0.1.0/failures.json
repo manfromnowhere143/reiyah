@@ -1,0 +1,26 @@
+{
+  "scope": "Read-only packaging preparation mistakes; no scientific execution or frozen-byte change.",
+  "failures": [
+    {
+      "chunk_id": "d4d6d0",
+      "command": "cat private/OWNER.json",
+      "returncode": 1,
+      "stdout": "cat: private/OWNER.json: No such file or directory\n",
+      "tool_wall_seconds": 0.409430958,
+      "recovery": "Read OWNER.json from owner root; succeeded in 5f7489."
+    },
+    {
+      "chunk_id": "e3d5a6",
+      "command": "tail -n 65 NOTICE.md",
+      "returncode": 1,
+      "stdout": "tail: NOTICE.md: No such file or directory\n",
+      "tool_wall_seconds": 0.411306292,
+      "recovery": "Enumerated notice files and read NOTICE; succeeded in e6db00 and bd1860."
+    }
+  ],
+  "document_id": "reiyah.measurement-resolution.failures",
+  "version": "0.1.0",
+  "scientific_execution_failures": 0,
+  "frozen_corrections": 0,
+  "disclosed_reporting_fault_is_experimental_outcome": true
+}

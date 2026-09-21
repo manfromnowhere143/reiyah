@@ -1,0 +1,151 @@
+{
+  "document_id": "reiyah.measurement-resolution.oracles",
+  "version": "0.1.0",
+  "oracles": [
+    {
+      "id": "noiseless-point-equality-oracle",
+      "knots": [
+        [
+          "-1",
+          "5"
+        ],
+        [
+          "1",
+          "5"
+        ]
+      ],
+      "reporting_offsets": {},
+      "fault_injected": false
+    },
+    {
+      "id": "noisy-point-abstention-oracle",
+      "knots": [
+        [
+          "-1",
+          "5"
+        ],
+        [
+          "1",
+          "5"
+        ]
+      ],
+      "reporting_offsets": {},
+      "fault_injected": false
+    },
+    {
+      "id": "pair-query-then-complete-support-oracle",
+      "knots": [
+        [
+          "0",
+          "6"
+        ],
+        [
+          "1",
+          "11/2"
+        ],
+        [
+          "2",
+          "6"
+        ]
+      ],
+      "reporting_offsets": {},
+      "fault_injected": false
+    },
+    {
+      "id": "pair-query-observed-violation-oracle",
+      "knots": [
+        [
+          "0",
+          "6"
+        ],
+        [
+          "1",
+          "4"
+        ],
+        [
+          "2",
+          "6"
+        ]
+      ],
+      "reporting_offsets": {},
+      "fault_injected": false
+    },
+    {
+      "id": "common-clock-needs-more-data-oracle",
+      "knots": [
+        [
+          "-1",
+          "11/2"
+        ],
+        [
+          "1",
+          "11/2"
+        ]
+      ],
+      "reporting_offsets": {},
+      "fault_injected": false
+    },
+    {
+      "id": "inconsistent-report-oracle",
+      "knots": [
+        [
+          "0",
+          "6"
+        ],
+        [
+          "2",
+          "6"
+        ]
+      ],
+      "reporting_offsets": {
+        "fault": "3"
+      },
+      "fault_injected": true
+    },
+    {
+      "id": "unavailable-query-oracle",
+      "knots": [
+        [
+          "0",
+          "6"
+        ],
+        [
+          "2",
+          "6"
+        ]
+      ],
+      "reporting_offsets": {},
+      "fault_injected": false
+    },
+    {
+      "id": "unregistered-query-oracle",
+      "knots": [
+        [
+          "0",
+          "6"
+        ],
+        [
+          "2",
+          "6"
+        ]
+      ],
+      "reporting_offsets": {},
+      "fault_injected": false
+    },
+    {
+      "id": "already-supported-no-acquisition-oracle",
+      "knots": [
+        [
+          "0",
+          "7"
+        ],
+        [
+          "2",
+          "7"
+        ]
+      ],
+      "reporting_offsets": {},
+      "fault_injected": false
+    }
+  ]
+}

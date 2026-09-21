@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.6**. Status: exploratory.
+Proposed roadmap version: **0.3.7**. Status: exploratory.
 Research cutoff: 21 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -89,6 +89,19 @@ recorded-sample scope useful while that external evidence remains unresolved.
 No broader physical study or another selector sweep follows automatically.
 
 ## Ordered research gates
+
+The [complete measurement-response increment](../research/measurement-resolution/0.1.0/README.md)
+now checks every feasible query response and recomputes the whole uncertainty
+family after actual authored acquisition. Nine cases retain four supported,
+one contradicted, three unresolved and one inconsistent result. A separate
+strict-polyhedron calculation agrees on ten complete response partitions and
+19 model/witness stages. Both arms make ten oracle calls; no query advantage,
+physical calibration, external replication or complete economic value is established.
+This resolves the earlier pair-only limitation within its stated scalar contract.
+It does not complete the physical qualification gate below. The next substantive
+experiment must use obtainable qualified public evidence and a meaningful decision,
+not another authored-case expansion or a metadata inventory alone. Continue the
+mission across this checkpoint without another general permission request.
 
 The [continuous uncertainty increment](../research/continuous-envelope/0.1.0/README.md)
 now computes tight clearance ranges under interval observations, a supplied

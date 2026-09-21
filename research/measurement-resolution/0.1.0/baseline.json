@@ -1,0 +1,921 @@
+{
+  "cases": [
+    {
+      "evidence_kind": "authored_conditional_mechanism",
+      "final": {
+        "minimum_range_m": [
+          "5",
+          "5"
+        ],
+        "status": "supported"
+      },
+      "id": "noiseless-point-equality",
+      "initial": {
+        "minimum_range_m": [
+          "4",
+          "6"
+        ],
+        "status": "unresolved"
+      },
+      "oracle_calls": 1,
+      "physical_status": "unresolved",
+      "revealed_query_ids": [
+        "exact"
+      ],
+      "steps": [
+        {
+          "after": {
+            "minimum_range_m": [
+              "5",
+              "5"
+            ],
+            "status": "supported"
+          },
+          "before": {
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "status": "unresolved"
+          },
+          "merge": {
+            "existing_observation_id": "prior-0",
+            "merged_interval_m": [
+              "5",
+              "5"
+            ],
+            "previous_interval_m": [
+              "4",
+              "6"
+            ],
+            "query_id": "exact",
+            "reported_interval_m": [
+              "5",
+              "5"
+            ],
+            "time_s": "0"
+          },
+          "predicted": {
+            "feasible_responses": [
+              "4",
+              "6"
+            ],
+            "guaranteed_resolution": true,
+            "possible_statuses": [
+              "contradicted",
+              "supported"
+            ],
+            "response_partition": [
+              {
+                "lower": "4",
+                "lower_closed": true,
+                "status": "contradicted",
+                "upper": "5",
+                "upper_closed": false
+              },
+              {
+                "lower": "5",
+                "lower_closed": true,
+                "status": "supported",
+                "upper": "6",
+                "upper_closed": true
+              }
+            ],
+            "status": "response_set_computed"
+          },
+          "query_id": "exact",
+          "reported_value_m": "5"
+        }
+      ],
+      "unexecuted_query_ids": [],
+      "workflow_status": "resolved"
+    },
+    {
+      "evidence_kind": "authored_conditional_mechanism",
+      "final": {
+        "minimum_range_m": [
+          "19/4",
+          "21/4"
+        ],
+        "status": "unresolved"
+      },
+      "id": "noisy-point-abstention",
+      "initial": {
+        "minimum_range_m": [
+          "4",
+          "6"
+        ],
+        "status": "unresolved"
+      },
+      "oracle_calls": 1,
+      "physical_status": "unresolved",
+      "revealed_query_ids": [
+        "noisy"
+      ],
+      "steps": [
+        {
+          "after": {
+            "minimum_range_m": [
+              "19/4",
+              "21/4"
+            ],
+            "status": "unresolved"
+          },
+          "before": {
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "status": "unresolved"
+          },
+          "merge": {
+            "existing_observation_id": "prior-0",
+            "merged_interval_m": [
+              "19/4",
+              "21/4"
+            ],
+            "previous_interval_m": [
+              "4",
+              "6"
+            ],
+            "query_id": "noisy",
+            "reported_interval_m": [
+              "19/4",
+              "21/4"
+            ],
+            "time_s": "0"
+          },
+          "predicted": {
+            "feasible_responses": [
+              "15/4",
+              "25/4"
+            ],
+            "guaranteed_resolution": false,
+            "possible_statuses": [
+              "contradicted",
+              "supported",
+              "unresolved"
+            ],
+            "response_partition": [
+              {
+                "lower": "15/4",
+                "lower_closed": true,
+                "status": "contradicted",
+                "upper": "19/4",
+                "upper_closed": false
+              },
+              {
+                "lower": "19/4",
+                "lower_closed": true,
+                "status": "unresolved",
+                "upper": "21/4",
+                "upper_closed": false
+              },
+              {
+                "lower": "21/4",
+                "lower_closed": true,
+                "status": "supported",
+                "upper": "25/4",
+                "upper_closed": true
+              }
+            ],
+            "status": "response_set_computed"
+          },
+          "query_id": "noisy",
+          "reported_value_m": "5"
+        }
+      ],
+      "unexecuted_query_ids": [],
+      "workflow_status": "exhausted"
+    },
+    {
+      "evidence_kind": "authored_conditional_mechanism",
+      "final": {
+        "minimum_range_m": [
+          "41/8",
+          "11/2"
+        ],
+        "status": "supported"
+      },
+      "id": "pair-query-then-complete-support",
+      "initial": {
+        "minimum_range_m": [
+          "4",
+          "6"
+        ],
+        "status": "unresolved"
+      },
+      "oracle_calls": 3,
+      "physical_status": "unresolved",
+      "revealed_query_ids": [
+        "middle",
+        "left",
+        "right"
+      ],
+      "steps": [
+        {
+          "after": {
+            "minimum_range_m": [
+              "19/4",
+              "11/2"
+            ],
+            "status": "unresolved"
+          },
+          "before": {
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "status": "unresolved"
+          },
+          "merge": {
+            "existing_observation_id": null,
+            "merged_interval_m": [
+              "11/2",
+              "11/2"
+            ],
+            "previous_interval_m": null,
+            "query_id": "middle",
+            "reported_interval_m": [
+              "11/2",
+              "11/2"
+            ],
+            "time_s": "1"
+          },
+          "predicted": {
+            "feasible_responses": [
+              "4",
+              "8"
+            ],
+            "guaranteed_resolution": false,
+            "possible_statuses": [
+              "contradicted",
+              "supported",
+              "unresolved"
+            ],
+            "response_partition": [
+              {
+                "lower": "4",
+                "lower_closed": true,
+                "status": "contradicted",
+                "upper": "5",
+                "upper_closed": false
+              },
+              {
+                "lower": "5",
+                "lower_closed": true,
+                "status": "unresolved",
+                "upper": "6",
+                "upper_closed": false
+              },
+              {
+                "lower": "6",
+                "lower_closed": true,
+                "status": "supported",
+                "upper": "8",
+                "upper_closed": true
+              }
+            ],
+            "status": "response_set_computed"
+          },
+          "query_id": "middle",
+          "reported_value_m": "11/2"
+        },
+        {
+          "after": {
+            "minimum_range_m": [
+              "19/4",
+              "11/2"
+            ],
+            "status": "unresolved"
+          },
+          "before": {
+            "minimum_range_m": [
+              "19/4",
+              "11/2"
+            ],
+            "status": "unresolved"
+          },
+          "merge": {
+            "existing_observation_id": null,
+            "merged_interval_m": [
+              "23/4",
+              "23/4"
+            ],
+            "previous_interval_m": null,
+            "query_id": "left",
+            "reported_interval_m": [
+              "23/4",
+              "23/4"
+            ],
+            "time_s": "1/2"
+          },
+          "predicted": {
+            "feasible_responses": [
+              "5",
+              "13/2"
+            ],
+            "guaranteed_resolution": false,
+            "possible_statuses": [
+              "unresolved"
+            ],
+            "response_partition": [
+              {
+                "lower": "5",
+                "lower_closed": true,
+                "status": "unresolved",
+                "upper": "13/2",
+                "upper_closed": true
+              }
+            ],
+            "status": "response_set_computed"
+          },
+          "query_id": "left",
+          "reported_value_m": "23/4"
+        },
+        {
+          "after": {
+            "minimum_range_m": [
+              "41/8",
+              "11/2"
+            ],
+            "status": "supported"
+          },
+          "before": {
+            "minimum_range_m": [
+              "19/4",
+              "11/2"
+            ],
+            "status": "unresolved"
+          },
+          "merge": {
+            "existing_observation_id": null,
+            "merged_interval_m": [
+              "23/4",
+              "23/4"
+            ],
+            "previous_interval_m": null,
+            "query_id": "right",
+            "reported_interval_m": [
+              "23/4",
+              "23/4"
+            ],
+            "time_s": "3/2"
+          },
+          "predicted": {
+            "feasible_responses": [
+              "5",
+              "13/2"
+            ],
+            "guaranteed_resolution": false,
+            "possible_statuses": [
+              "supported",
+              "unresolved"
+            ],
+            "response_partition": [
+              {
+                "lower": "5",
+                "lower_closed": true,
+                "status": "unresolved",
+                "upper": "11/2",
+                "upper_closed": false
+              },
+              {
+                "lower": "11/2",
+                "lower_closed": true,
+                "status": "supported",
+                "upper": "13/2",
+                "upper_closed": true
+              }
+            ],
+            "status": "response_set_computed"
+          },
+          "query_id": "right",
+          "reported_value_m": "23/4"
+        }
+      ],
+      "unexecuted_query_ids": [],
+      "workflow_status": "resolved"
+    },
+    {
+      "evidence_kind": "authored_conditional_mechanism",
+      "final": {
+        "minimum_range_m": [
+          "4",
+          "4"
+        ],
+        "status": "contradicted"
+      },
+      "id": "pair-query-observed-violation",
+      "initial": {
+        "minimum_range_m": [
+          "4",
+          "6"
+        ],
+        "status": "unresolved"
+      },
+      "oracle_calls": 1,
+      "physical_status": "unresolved",
+      "revealed_query_ids": [
+        "middle"
+      ],
+      "steps": [
+        {
+          "after": {
+            "minimum_range_m": [
+              "4",
+              "4"
+            ],
+            "status": "contradicted"
+          },
+          "before": {
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "status": "unresolved"
+          },
+          "merge": {
+            "existing_observation_id": null,
+            "merged_interval_m": [
+              "4",
+              "4"
+            ],
+            "previous_interval_m": null,
+            "query_id": "middle",
+            "reported_interval_m": [
+              "4",
+              "4"
+            ],
+            "time_s": "1"
+          },
+          "predicted": {
+            "feasible_responses": [
+              "4",
+              "8"
+            ],
+            "guaranteed_resolution": false,
+            "possible_statuses": [
+              "contradicted",
+              "supported",
+              "unresolved"
+            ],
+            "response_partition": [
+              {
+                "lower": "4",
+                "lower_closed": true,
+                "status": "contradicted",
+                "upper": "5",
+                "upper_closed": false
+              },
+              {
+                "lower": "5",
+                "lower_closed": true,
+                "status": "unresolved",
+                "upper": "6",
+                "upper_closed": false
+              },
+              {
+                "lower": "6",
+                "lower_closed": true,
+                "status": "supported",
+                "upper": "8",
+                "upper_closed": true
+              }
+            ],
+            "status": "response_set_computed"
+          },
+          "query_id": "middle",
+          "reported_value_m": "4"
+        }
+      ],
+      "unexecuted_query_ids": [
+        "left",
+        "right"
+      ],
+      "workflow_status": "resolved"
+    },
+    {
+      "evidence_kind": "authored_conditional_mechanism",
+      "final": {
+        "minimum_range_m": [
+          "5",
+          "6"
+        ],
+        "status": "supported"
+      },
+      "id": "common-clock-needs-more-data",
+      "initial": {
+        "minimum_range_m": [
+          "9/2",
+          "13/2"
+        ],
+        "status": "unresolved"
+      },
+      "oracle_calls": 3,
+      "physical_status": "unresolved",
+      "revealed_query_ids": [
+        "repeat",
+        "earlier",
+        "later"
+      ],
+      "steps": [
+        {
+          "after": {
+            "minimum_range_m": [
+              "9/2",
+              "13/2"
+            ],
+            "status": "unresolved"
+          },
+          "before": {
+            "minimum_range_m": [
+              "9/2",
+              "13/2"
+            ],
+            "status": "unresolved"
+          },
+          "merge": {
+            "existing_observation_id": "prior-0",
+            "merged_interval_m": [
+              "11/2",
+              "11/2"
+            ],
+            "previous_interval_m": [
+              "11/2",
+              "11/2"
+            ],
+            "query_id": "repeat",
+            "reported_interval_m": [
+              "11/2",
+              "11/2"
+            ],
+            "time_s": "0"
+          },
+          "predicted": {
+            "feasible_responses": [
+              "11/2",
+              "11/2"
+            ],
+            "guaranteed_resolution": false,
+            "possible_statuses": [
+              "unresolved"
+            ],
+            "response_partition": [
+              {
+                "lower": "11/2",
+                "lower_closed": true,
+                "status": "unresolved",
+                "upper": "11/2",
+                "upper_closed": true
+              }
+            ],
+            "status": "response_set_computed"
+          },
+          "query_id": "repeat",
+          "reported_value_m": "11/2"
+        },
+        {
+          "after": {
+            "minimum_range_m": [
+              "9/2",
+              "13/2"
+            ],
+            "status": "unresolved"
+          },
+          "before": {
+            "minimum_range_m": [
+              "9/2",
+              "13/2"
+            ],
+            "status": "unresolved"
+          },
+          "merge": {
+            "existing_observation_id": null,
+            "merged_interval_m": [
+              "11/2",
+              "11/2"
+            ],
+            "previous_interval_m": null,
+            "query_id": "earlier",
+            "reported_interval_m": [
+              "11/2",
+              "11/2"
+            ],
+            "time_s": "-1"
+          },
+          "predicted": {
+            "feasible_responses": [
+              "9/2",
+              "13/2"
+            ],
+            "guaranteed_resolution": false,
+            "possible_statuses": [
+              "unresolved"
+            ],
+            "response_partition": [
+              {
+                "lower": "9/2",
+                "lower_closed": true,
+                "status": "unresolved",
+                "upper": "13/2",
+                "upper_closed": true
+              }
+            ],
+            "status": "response_set_computed"
+          },
+          "query_id": "earlier",
+          "reported_value_m": "11/2"
+        },
+        {
+          "after": {
+            "minimum_range_m": [
+              "5",
+              "6"
+            ],
+            "status": "supported"
+          },
+          "before": {
+            "minimum_range_m": [
+              "9/2",
+              "13/2"
+            ],
+            "status": "unresolved"
+          },
+          "merge": {
+            "existing_observation_id": null,
+            "merged_interval_m": [
+              "11/2",
+              "11/2"
+            ],
+            "previous_interval_m": null,
+            "query_id": "later",
+            "reported_interval_m": [
+              "11/2",
+              "11/2"
+            ],
+            "time_s": "1"
+          },
+          "predicted": {
+            "feasible_responses": [
+              "9/2",
+              "13/2"
+            ],
+            "guaranteed_resolution": false,
+            "possible_statuses": [
+              "supported",
+              "unresolved"
+            ],
+            "response_partition": [
+              {
+                "lower": "9/2",
+                "lower_closed": true,
+                "status": "unresolved",
+                "upper": "11/2",
+                "upper_closed": false
+              },
+              {
+                "lower": "11/2",
+                "lower_closed": true,
+                "status": "supported",
+                "upper": "13/2",
+                "upper_closed": true
+              }
+            ],
+            "status": "response_set_computed"
+          },
+          "query_id": "later",
+          "reported_value_m": "11/2"
+        }
+      ],
+      "unexecuted_query_ids": [],
+      "workflow_status": "resolved"
+    },
+    {
+      "evidence_kind": "authored_conditional_mechanism",
+      "final": {
+        "status": "inconsistent_premises"
+      },
+      "id": "inconsistent-report",
+      "initial": {
+        "minimum_range_m": [
+          "4",
+          "6"
+        ],
+        "status": "unresolved"
+      },
+      "oracle_calls": 1,
+      "physical_status": "unresolved",
+      "revealed_query_ids": [
+        "fault"
+      ],
+      "steps": [
+        {
+          "after": {
+            "status": "inconsistent_premises"
+          },
+          "before": {
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "status": "unresolved"
+          },
+          "merge": {
+            "existing_observation_id": null,
+            "merged_interval_m": [
+              "9",
+              "9"
+            ],
+            "previous_interval_m": null,
+            "query_id": "fault",
+            "reported_interval_m": [
+              "9",
+              "9"
+            ],
+            "time_s": "1"
+          },
+          "predicted": {
+            "feasible_responses": [
+              "4",
+              "8"
+            ],
+            "guaranteed_resolution": false,
+            "possible_statuses": [
+              "contradicted",
+              "supported",
+              "unresolved"
+            ],
+            "response_partition": [
+              {
+                "lower": "4",
+                "lower_closed": true,
+                "status": "contradicted",
+                "upper": "5",
+                "upper_closed": false
+              },
+              {
+                "lower": "5",
+                "lower_closed": true,
+                "status": "unresolved",
+                "upper": "6",
+                "upper_closed": false
+              },
+              {
+                "lower": "6",
+                "lower_closed": true,
+                "status": "supported",
+                "upper": "8",
+                "upper_closed": true
+              }
+            ],
+            "status": "response_set_computed"
+          },
+          "query_id": "fault",
+          "reported_value_m": "9"
+        }
+      ],
+      "unexecuted_query_ids": [],
+      "workflow_status": "inconsistent_premises"
+    },
+    {
+      "evidence_kind": "authored_conditional_mechanism",
+      "final": {
+        "minimum_range_m": [
+          "4",
+          "6"
+        ],
+        "status": "unresolved"
+      },
+      "id": "unavailable-query",
+      "initial": {
+        "minimum_range_m": [
+          "4",
+          "6"
+        ],
+        "status": "unresolved"
+      },
+      "oracle_calls": 0,
+      "physical_status": "unresolved",
+      "revealed_query_ids": [],
+      "steps": [
+        {
+          "after": null,
+          "before": {
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "status": "unresolved"
+          },
+          "merge": null,
+          "predicted": {
+            "guaranteed_resolution": null,
+            "reason": "unavailable",
+            "response_partition": null,
+            "status": "acquisition_blocked"
+          },
+          "query_id": "missing",
+          "reported_value_m": null
+        }
+      ],
+      "unexecuted_query_ids": [
+        "missing"
+      ],
+      "workflow_status": "acquisition_blocked"
+    },
+    {
+      "evidence_kind": "authored_conditional_mechanism",
+      "final": {
+        "minimum_range_m": [
+          "4",
+          "6"
+        ],
+        "status": "unresolved"
+      },
+      "id": "unregistered-query",
+      "initial": {
+        "minimum_range_m": [
+          "4",
+          "6"
+        ],
+        "status": "unresolved"
+      },
+      "oracle_calls": 0,
+      "physical_status": "unresolved",
+      "revealed_query_ids": [],
+      "steps": [
+        {
+          "after": null,
+          "before": {
+            "minimum_range_m": [
+              "4",
+              "6"
+            ],
+            "status": "unresolved"
+          },
+          "merge": null,
+          "predicted": {
+            "guaranteed_resolution": null,
+            "reason": "unregistered_clock",
+            "response_partition": null,
+            "status": "acquisition_blocked"
+          },
+          "query_id": "unregistered",
+          "reported_value_m": null
+        }
+      ],
+      "unexecuted_query_ids": [
+        "unregistered"
+      ],
+      "workflow_status": "acquisition_blocked"
+    },
+    {
+      "evidence_kind": "authored_conditional_mechanism",
+      "final": {
+        "minimum_range_m": [
+          "5",
+          "7"
+        ],
+        "status": "supported"
+      },
+      "id": "already-supported-no-acquisition",
+      "initial": {
+        "minimum_range_m": [
+          "5",
+          "7"
+        ],
+        "status": "supported"
+      },
+      "oracle_calls": 0,
+      "physical_status": "unresolved",
+      "revealed_query_ids": [],
+      "steps": [],
+      "unexecuted_query_ids": [
+        "unnecessary"
+      ],
+      "workflow_status": "resolved"
+    }
+  ],
+  "document_id": "reiyah.measurement-resolution.results",
+  "evidence_kind": "authored conditional mechanism experiments",
+  "experiments": 9,
+  "final_evidence_counts": {
+    "contradicted": 1,
+    "inconsistent_premises": 1,
+    "supported": 4,
+    "unresolved": 3
+  },
+  "freeze_sha256": "3715477e6a9d6b96542b2b58b32f6564ee664a81c62b6fded3d74430132fa97a",
+  "independent_replication": false,
+  "oracle_calls": 10,
+  "physical_cases": 0,
+  "physical_qualification": "unresolved",
+  "version": "0.1.0",
+  "workflow_counts": {
+    "acquisition_blocked": 2,
+    "exhausted": 1,
+    "inconsistent_premises": 1,
+    "resolved": 5
+  }
+}

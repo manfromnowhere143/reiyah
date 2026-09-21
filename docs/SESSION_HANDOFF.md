@@ -1,3 +1,67 @@
+# Reiyah complete measurement-resolution checkpoint, 2026-09-21
+
+Continuation version: `0.1.56`. Status: `exploratory`. Continuing mission ACTIVE.
+
+The [measurement-resolution packet](../research/measurement-resolution/0.1.0/README.md)
+implements complete response sets for an obtainable additional observation under
+the declared scalar Lipschitz/common-clock contract. It replaces a pair-only
+distinguishing suggestion with a universal response test, then actually reveals
+an authored numeric observation and recomputes the entire admissible family.
+
+Nine authored experiments retain four supported, one contradicted, three unresolved
+and one inconsistent-premise result. A midpoint reply of 5.5 leaves minimum range
+[4.75,5.5]; two further quarter-time replies give [5.125,5.5]. The actual sequence
+resolves, although each query's complete response set still includes uncertainty.
+Unavailable and unregistered channels remain blocked with zero oracle calls.
+The common clock stays shared; an inconsistent report is not an unsafe verdict.
+
+The separate conventional strict-polyhedron projection agrees on ten complete
+continuous response partitions, preserving open/closed endpoints, and checks 19
+native model/witness stages. Both arms acquire ten replies, share evidence and
+have one author. No independent replication, empirical error rate, query saving,
+physical acquisition benefit, optimal policy or frontier advantage is established.
+25 pre-controls and ten result mutations pass. Two read-only packaging path
+mistakes are retained; no scientific execution failure or frozen correction occurred.
+
+Freeze: 3715477e6a9d6b96542b2b58b32f6564ee664a81c62b6fded3d74430132fa97a.
+The [method](../research/measurement-resolution/0.1.0/METHOD.md), full authored
+result/proof/baseline, [validation](../research/measurement-resolution/0.1.0/validation.json),
+[costs](../research/measurement-resolution/0.1.0/costs.json) and source ledger give
+exact scope. One established active-sensing paper and derived text total 443,407
+new private source bytes; no raw body is distributed. Original cone/LP kernels
+are reused by byte identity, with no previous cases counted as new replay.
+
+Physical uncertainty remains unqualified, with zero physical cases. This useful
+mathematical refinement does not pass the physical qualification gate or rerun
+the closed ViF-GTAD nominal encounter. The proposed roadmap is 0.3.7. README
+opening, substantive text, headings and all six diagrams are preserved.
+
+Owner: `~/.codex/reports/reiyah/measurement-resolution-2026-09-21-atj4fn36/`.
+Read CLOSEOUT, FINAL_COSTS, PUBLISH_FINAL and FINAL_CONFIRMATION there for final
+integration/readback and tail receipts. Publisher integrity is not independent
+transport or scientific verification. Tiny nested timers do not measure complete
+workflow economics; active effort, charges, energy and peak memory remain unknown.
+The original ten-hour clock is not restarted or padded.
+
+Next: continue autonomously in a fresh owned candidate from refreshed main. Bind
+an obtainable public observation to a consequential recorded-data question or a
+qualified physical/statistical contract, then measure complete-family resolution
+and cost against a competent equal-information workflow. Investigate supported
+small member/range access when a relevant full archive exceeds the current cap;
+do not infer that every partial access route is unavailable. Do not substitute
+another source inventory, toy count or replay of an exposed closed question.
+For a physical claim, one useful missing record would give both navigation
+references at common surveyed times and run-applicable residual errors. Daniel
+need not possess private team records or repeat general permission.
+
+All 1,433 reserved images stay closed. Perception source remains
+38a50ec014cc83e86ea6f247df803ded2971b386. Gate A remains operator-unaccepted.
+Controller remains clean at 74fbacc. Solo ownership, existing resource/data
+limits, human Git identity and normal guarded integration/push/readback persist.
+No inference, training, new dependencies, paid compute, outreach, deployment or
+physical control. This is a study checkpoint, not completion of the mission.
+Preserve the closed owner after confirmation. Earlier sections are history.
+
 # Reiyah nominal separation decision closeout, 2026-09-21
 
 Continuation version: `0.1.55`. Status: `exploratory`.
