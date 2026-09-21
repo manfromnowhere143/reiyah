@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.8**. Status: exploratory.
+Proposed roadmap version: **0.3.9**. Status: exploratory.
 Research cutoff: 21 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -23,6 +23,22 @@ This roadmap supersedes the scheduling guidance in the
 obligations remain. The expanded question does not require another perception
 sensitivity sweep or claim that the unproven cost-reduction hypothesis succeeded.
 No foundation-model training, simulator deployment or vehicle control is added.
+
+## Recorded fidelity comparison, 21 September
+
+The [fixed-tail experiment](../research/navigation-measurement/0.2.0/README.md)
+supports the frozen stored-data fidelity decision in five dependent parts.
+Reiyah uses 90 logical queries, conventional 89; the complete reference's
+largest error is 0.0042 m/s against 0.05. Retain this disadvantage and the earlier
+blocked prefix. Neither physical uncertainty nor customer relevance is qualified.
+
+The next engineering change preserves original constraints and native grid
+interpolation. The current residual family loses baseline-shape information;
+both continuous families allow non-grid bends that the stored reconstruction
+excludes. Fix that model mismatch before expanding the framework. Reusing the
+tail is development regression, not new evidence. Follow with a separately
+frozen unexposed decision and an equally informed competent comparator; no
+parameter tuning or further window search on this source.
 
 ## Recorded navigation qualification, 21 September
 

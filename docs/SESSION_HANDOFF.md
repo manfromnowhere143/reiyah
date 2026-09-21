@@ -1,3 +1,52 @@
+# Reiyah fixed-tail decision checkpoint, 2026-09-21
+
+Continuation version: `0.1.58`. Status: `exploratory`. Continuing mission ACTIVE.
+
+The [fixed-tail navigation experiment](../research/navigation-measurement/0.2.0/README.md)
+executes one recorded one-second selection with five dependent parts. Both
+methods support the authored 0.05 m/s fidelity requirement and agree with the
+complete native reference; its maximum error is 0.0042 m/s. Reiyah requires
+90 extra logical samples, conventional 89. Preserve that small disadvantage.
+The earlier initialization-only prefix remains blocked, not replaced or pooled.
+
+The tail question froze before exact range capture. Of 1,000 mode-4 packets,
+999 qualify and one lacks preceding clock registration. The first eligible
+101-record run is selected with no window sweep. The original 5 m/s² recorded
+rate premise holds over all 100 native intervals. This is a stored-data
+interpolation result, not physical calibration, safety or a customer threshold.
+
+The separately authored vendor decoder agrees on all packet outputs and all
+eligible values. Separate geometry/LP checks cover 190 one-sided model/witness
+stages, 90 joint response partitions plus 180 one-sided components, and 94
+conventional bound stages. 25 pre-controls and eight result mutations pass.
+Both methods/wrappers/experiment share one author; no independent replication
+or frontier advantage. The full source was actually loaded; logical counts
+are not physical acquisition savings. Raw rows, full proofs and vendor output
+remain private. No new failure or frozen correction occurred in this owner.
+
+Freeze: b3a329ed5b8244271b7f0204527a8982f88e14a079f31b54c44393c392d200d0.
+Owner: `~/.codex/reports/reiyah/navigation-tail-2026-09-21-ft6wbl2q/`.
+Read CLOSEOUT, FINAL_COSTS, PUBLISH_FINAL and FINAL_CONFIRMATION for integration,
+publisher readback and tail costs. Publisher integrity is not independent
+transport/scientific verification. Active effort and full economics are unknown.
+The original ten-hour assignment is complete; do not restart or pad its clock.
+
+Next: continue autonomously in a fresh owned candidate. Retain original velocity
+constraints and the known native interpolation grid instead of over-relaxing
+both. A replay of this exposed trace is development regression only. Preserve
+the 90-versus-89 result without tuning its threshold/rate or fetching further
+slices. After implementation, freeze a separate decision on unexposed eligible
+material against a competent equal-information conventional method. No private
+team records or repeated general permission from Daniel are assumed.
+
+Proposed roadmap 0.3.9. README opening, substantive text, headings and six
+diagrams unchanged. All 1,433 reserved images closed; perception source stays
+38a50ec014cc83e86ea6f247df803ded2971b386. Gate A operator-unaccepted; historical
+controller clean at 74fbacc. Solo ownership, existing resource/data bounds,
+human identity and guarded normal push/readback persist. No inference, training,
+new dependencies, paid compute, outreach, deployment or control. Preserve this
+owner after confirmation. Earlier sections are history.
+
 # Reiyah navigation-measurement qualification checkpoint, 2026-09-21
 
 Continuation version: `0.1.57`. Status: `blocked` for this source case.

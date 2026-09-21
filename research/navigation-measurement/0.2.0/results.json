@@ -1,0 +1,133 @@
+{
+  "dependent_segments": [
+    {
+      "arm": "reiyah",
+      "final": {
+        "status": "supported",
+        "uniform_error_range_mps": [
+          "21/5000",
+          "589/20000"
+        ]
+      },
+      "id": "segment-0",
+      "initial": {
+        "status": "unresolved",
+        "uniform_error_range_mps": [
+          "0",
+          "1277/5000"
+        ]
+      },
+      "oracle_calls": 18,
+      "workflow_status": "supported"
+    },
+    {
+      "arm": "reiyah",
+      "final": {
+        "status": "supported",
+        "uniform_error_range_mps": [
+          "6/3125",
+          "5419/200000"
+        ]
+      },
+      "id": "segment-1",
+      "initial": {
+        "status": "unresolved",
+        "uniform_error_range_mps": [
+          "0",
+          "2549/10000"
+        ]
+      },
+      "oracle_calls": 18,
+      "workflow_status": "supported"
+    },
+    {
+      "arm": "reiyah",
+      "final": {
+        "status": "supported",
+        "uniform_error_range_mps": [
+          "9/2500",
+          "571/20000"
+        ]
+      },
+      "id": "segment-2",
+      "initial": {
+        "status": "unresolved",
+        "uniform_error_range_mps": [
+          "0",
+          "2519/10000"
+        ]
+      },
+      "oracle_calls": 18,
+      "workflow_status": "supported"
+    },
+    {
+      "arm": "reiyah",
+      "final": {
+        "status": "supported",
+        "uniform_error_range_mps": [
+          "47/12500",
+          "1447/50000"
+        ]
+      },
+      "id": "segment-3",
+      "initial": {
+        "status": "unresolved",
+        "uniform_error_range_mps": [
+          "0",
+          "5147/20000"
+        ]
+      },
+      "oracle_calls": 18,
+      "workflow_status": "supported"
+    },
+    {
+      "arm": "reiyah",
+      "final": {
+        "status": "supported",
+        "uniform_error_range_mps": [
+          "71/50000",
+          "531/20000"
+        ]
+      },
+      "id": "segment-4",
+      "initial": {
+        "status": "unresolved",
+        "uniform_error_range_mps": [
+          "0",
+          "1277/5000"
+        ]
+      },
+      "oracle_calls": 18,
+      "workflow_status": "supported"
+    }
+  ],
+  "development_scope": "Five dependent parts of one fixed exploratory recording selection; not independent trials or frontier evidence.",
+  "document_id": "reiyah.navigation-measurement.reiyah",
+  "family": "Conservative residual-rate relaxation; not the tight original-velocity family.",
+  "freeze_sha256": "b3a329ed5b8244271b7f0204527a8982f88e14a079f31b54c44393c392d200d0",
+  "physical_cases": 0,
+  "physical_qualification": "unresolved",
+  "source_population": {
+    "navigation_modes": {
+      "4": 1000
+    },
+    "selection_policy": "First 101 eligible consecutive 10 ms synchronous records; asynchronous/status-only rows excluded explicitly, unusable regular records and time gaps break the run.",
+    "states": {
+      "eligible": 999,
+      "unresolved": 1
+    },
+    "total_packets": 1000
+  },
+  "source_slice": {
+    "end_byte_inclusive": 8205839,
+    "first_original_packet_index": 112970,
+    "full_file_bytes": 8205840,
+    "index_scope": "slice_relative",
+    "original_packet_count": 113970,
+    "start_byte": 8133840
+  },
+  "source_trace_distributed": false,
+  "status": "calculated_binding_pending",
+  "total_oracle_calls": 90,
+  "version": "0.2.0"
+}

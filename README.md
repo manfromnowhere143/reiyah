@@ -355,6 +355,8 @@ historical descriptions where later studies have closed a gap.
 
 ## Recent research
 
+[21 September: recorded navigation fidelity](research/navigation-measurement/0.2.0/README.md) supports the fixed recorded requirement; the conventional method uses one fewer logical sample.
+
 [21 September: navigation measurement attempt](research/navigation-measurement/0.1.1/README.md) retains an initialization-only sample, zero eligible cases and the stronger conventional alternative.
 
 [21 September: complete measurement resolution](research/measurement-resolution/0.1.0/README.md) checks every feasible response, executes acquisition and retains uncertainty and conventional parity.
