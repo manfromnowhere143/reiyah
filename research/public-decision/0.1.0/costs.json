@@ -1,0 +1,67 @@
+{
+  "document_id": "reiyah.public-decision.cost-prefix",
+  "version": "0.1.0",
+  "cutoff_utc": "2026-09-21T12:07:19.660592+00:00",
+  "known_outer_process_seconds_including_setup": 21.564305249834433,
+  "known_nested_child_cpu_seconds": 2.2323429999999997,
+  "categories": {
+    "checking": {
+      "processes": 2,
+      "outer_seconds": 0.21769079193472862
+    },
+    "source": {
+      "processes": 15,
+      "outer_seconds": 16.83122529112734
+    },
+    "execution": {
+      "processes": 2,
+      "outer_seconds": 0.21436516707763076
+    },
+    "packaging": {
+      "processes": 5,
+      "outer_seconds": 0.8104059163015336
+    }
+  },
+  "arm_internal_seconds": {
+    "conventional": 0.011486124945804477,
+    "native": 0.015944083919748664
+  },
+  "source_conservative_bytes": 1378284,
+  "source_counting_scope": "All retained source bodies/receipts, source-command logs/receipts/starts, structural and numeric derivatives, public source/summary/verification metadata, plus one discarded probe byte. No raw payload duplicate written elsewhere.",
+  "source_owner_cap_bytes": 1572864,
+  "inherited_combined_cap_bytes": 8388608,
+  "prior_conservative_source_bytes": 6595202,
+  "combined_source_bytes_at_cutoff": 7973486,
+  "limits": {
+    "artifacts": 134217728,
+    "free_floor": 5368709120,
+    "execution_seconds": 600,
+    "checking_seconds": 600
+  },
+  "sampling": "Point samples, not an unseen peak bound",
+  "failures": [
+    {
+      "id": "capture-benchmark-head-01",
+      "returncode": 1
+    },
+    {
+      "id": "capture-zoo-license-01",
+      "returncode": 1
+    },
+    {
+      "id": "package-01",
+      "returncode": 1
+    }
+  ],
+  "tail": "Packaging, validation, integration and readback follow this cutoff. Final private cost record and later receipts complete the known process tail.",
+  "unknown": [
+    "active effort",
+    "unwrapped metadata-read/tool cost",
+    "full charges",
+    "network overhead",
+    "energy",
+    "peak memory"
+  ],
+  "order": "One conventional run followed by one native run; not a general speed benchmark",
+  "original_ten_hour_assignment": "complete; no restarted or padded clock"
+}

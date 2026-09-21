@@ -1,3 +1,61 @@
+# Reiyah missing-result decision checkpoint, 21 September 2026
+
+Continuation version: 0.1.63. Status: exploratory. Continuing mission ACTIVE.
+
+The [public simulation audit](../research/public-decision/0.1.0/README.md) finds
+218 Base and 215 Tiny records in the official old Bench2DriveZoo result files.
+The frozen complete-220-route, every-group comparison is BLOCKED; group outcomes
+were not evaluated. The common route labels agree where present, but the route
+manifest and model/runtime/simulator execution binding remain unresolved.
+
+A separately frozen diagnostic supports a narrower conditional aggregate:
+if both runs belong to the same intended220-route population and all missing
+scores are in[0,100], Base's mean is ahead by2.811919809 to5.993737991points
+for every completion. Reiyah's existing validated4-block interval and the
+conventional integer-scaled calculation agree exactly. No new solver or
+production/perception code was added. The publisher's missing-as-zero scoring
+convention remains distinct from an observed zero outcome.
+
+Question e26b5557c34181a7916e261077dbd3ea17192a07cc317a21559e336c4f9edb43.
+Diagnostic e7ffa20bca69b6bf023bf8ba3f6531e3b7830e2d5b2f1b30c7d32d7ffb1a31f7.
+Implementation fb41416ebfa9f14b225013b63a5272e149b20ca6ee3fe5879e1e79f94c00c7a6.
+21authored controls,433source records,2hypothetical extreme completions and
+23actual-result mutations checked. Both completions give positive differences;
+do not call them opposite decisions or measurements. Same-author verification
+and conventional parity establish no competitive advantage or replication.
+
+Whole processes: conventional0.103643917s,native0.110721250s,
+checker0.111119625s,controls0.106571167s. Internal timers overlap; fixed order
+and one run do not establish speed performance. Full economics/active effort
+unknown. Retain source header-cap and incomplete-API failures and the failed
+metadata JSON parse. No numerical execution failed.
+
+Owner: ~/.codex/reports/reiyah/public-decision-2026-09-21-sftzjbvb/.
+Read CLOSEOUT,FINAL_COSTS,PUBLISH_FINAL,FINAL_CONFIRMATION after integration.
+The provisional1MiBsource allocation was explicitly amended before result access
+to1.5MiB, inside the unchanged inherited8MiBcombined boundary. No further source
+sweep, second pair, XML capture or exposed-outcome retuning in this owner.
+All raw sources and route-level derivatives stay private under retained terms.
+
+Investment remains MODIFY. This supports a limited missing-data conclusion,
+not the complete-group screening rule, real-world safety or commercial value.
+The original group study needs a qualified intended-route manifest and terminal
+records for omitted runs. Example: Tiny lacks RouteScenario_11755_rep0, which
+appears in Base; an authentic same-protocol terminal result is needed. Two route
+identities are absent from both files. No private-team record from Daniel is
+assumed. The old manifest is a concrete693537-byte public lead, larger than
+the remaining source allowance when combined with the selected pair/prior sources.
+Do not evade the cap with a new owner or pretend public arithmetic supplies the
+missing execution provenance or measured human costs.
+
+Preserve earlier parity, navigation disadvantage, physical unknowns and the
+duplicate-solver correction. README and6diagrams unchanged; source38a50ec and
+historical controller74fbacc preserved. All1433reserved images CLOSED.
+Gate A operator-unaccepted; no historical release replay. SOLO,human identity,
+guarded normal push/readback; no outreach,inference,training,dependencies,
+paid compute,physical control or deployment. Original ten-hour assignment done.
+Earlier checkpoints below remain history.
+
 # Reiyah existing-path compatibility checkpoint,21September2026
 
 Continuation version: 0.1.62. Status: exploratory. Continuing mission ACTIVE.

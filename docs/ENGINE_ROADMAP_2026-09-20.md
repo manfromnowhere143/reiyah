@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.13**. Status: exploratory.
+Proposed roadmap version: **0.3.14**. Status: exploratory.
 Research cutoff: 21 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -23,6 +23,29 @@ This roadmap supersedes the scheduling guidance in the
 obligations remain. The expanded question does not require another perception
 sensitivity sweep or claim that the unproven cost-reduction hypothesis succeeded.
 No foundation-model training, simulator deployment or vehicle control is added.
+
+## 21 September: keep missing outcomes separate from scoring conventions
+
+The [published simulation-record audit](../research/public-decision/0.1.0/README.md)
+finds218/215records where the frozen group comparison required the same complete
+220-record population. That question remains blocked. A separately frozen,
+conditional completion calculation still supports an aggregate Base advantage
+of2.811919809 to5.993737991points, even with arbitrary missing scores in[0,100].
+The conventional arm agrees exactly. No new solver, physical result, comparative
+advantage or complete-group claim follows.
+
+This distinction is useful: the official scorer's declared zero contribution
+for missing routes is not an observed zero outcome. The missing records cannot
+reverse this conditional aggregate ordering, but they do not establish group
+non-regression, execution provenance or a customer release criterion.
+
+Keep investment at MODIFY. Do not expand the framework or tune another exposed
+sweep. The next substantive group experiment needs the intended route manifest
+and provenance-bearing missing terminal results; no private-team records are
+assumed. The public old XML is a concrete lead beyond the inherited remaining
+source allowance for this route. Retain the original blocked result, conventional
+parity, source failures and full cost limitations. Do not reset acquisition
+bounds by starting a new owner. All1,433reserved images remain closed.
 
 ## 21 September: reuse the implemented endpoint path
 
