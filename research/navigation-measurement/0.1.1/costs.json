@@ -1,0 +1,126 @@
+{
+  "actual_user_turn_start_utc": null,
+  "additional_private_source_derived_outputs_bytes": 332907,
+  "categories": {
+    "checking": {
+      "child_cpu_seconds": 0.26062399999999997,
+      "commands": 3,
+      "outer_seconds": 1.066431456943974
+    },
+    "execution": {
+      "child_cpu_seconds": 0.075138,
+      "commands": 1,
+      "outer_seconds": 0.18718945886939764
+    },
+    "packaging": {
+      "child_cpu_seconds": 2.4674289999999997,
+      "commands": 53,
+      "outer_seconds": 7.648820250527933
+    },
+    "source": {
+      "child_cpu_seconds": 1.0116599999999998,
+      "commands": 11,
+      "outer_seconds": 19.90304958447814
+    }
+  },
+  "checkout_current_bytes": 37188669,
+  "checkout_initial_bytes": 36931442,
+  "command_stdout_bytes_charged_conservatively_as_possible_transcriptions": 182699,
+  "comparative_speed_or_query_claim": false,
+  "completed_owned_commands": 68,
+  "compressed_ranges_and_extracted_prefix_both_counted": true,
+  "conservative_artifacts_including_missed_tamper_copy_bytes": 5625022,
+  "continuing_mission": true,
+  "cutoff_utc": "2026-09-21T07:50:54.881518+00:00",
+  "decision_cases": 0,
+  "directed_tamper_temporary_source_copy_upper_bytes": 2249582,
+  "document_id": "reiyah.navigation-measurement.costs",
+  "elapsed_is_active_effort": false,
+  "elapsed_since_first_known_instrumentation_seconds": 3374.944908,
+  "failed_commands": [
+    "controls-pre-01",
+    "package-01",
+    "qualification-context-01"
+  ],
+  "free_disk_bytes": 20009250816,
+  "full_archive_or_full_example_downloaded": false,
+  "highest_sampled_artifact_bytes": 3368386,
+  "known_unplaced_recovery_tool_seconds": 1.888612709,
+  "limits": {
+    "artifact_cap_bytes": 134217728,
+    "checking_process_seconds": 600,
+    "execution_process_seconds": 600,
+    "free_space_floor_bytes": 5368709120,
+    "source_cap_bytes": 8388608
+  },
+  "minimum_sampled_free_bytes": 20010659840,
+  "nested_arm_timers": {
+    "timings-producer-01.json": {
+      "acquisition_savings": "not measured; full fixed prefix acquired and parsed",
+      "arm": "reiyah_residual",
+      "calculation_seconds": 7.501803338527679e-07,
+      "cpu_seconds": 0.012572000000000002,
+      "logical_queries": 0,
+      "original_packets_decoded": 1000,
+      "preparation_seconds": 0.021679749945178628,
+      "process_through_output_seconds": 0.022211540956050158,
+      "source_bytes_loaded": 72000
+    },
+    "timings-reference-01.json": {
+      "arm": "strong_conventional_and_independent_check",
+      "calculation_seconds": 0.0006667920388281345,
+      "child_vendor_cpu_in_supervisor_only": true,
+      "cpu_seconds": 0.016386,
+      "logical_queries": 0,
+      "preparation_seconds": 0.5536571659613401,
+      "process_through_output_seconds": 0.554853375069797,
+      "source_bytes_loaded": 72000,
+      "vendor_seconds_nested": 0.5379880841355771
+    }
+  },
+  "new_source_body_and_derived_bytes": 2219349,
+  "original_ten_hour_assignment": "complete, not restarted or padded",
+  "overlap_rule": "Nested fetch/parse/compile/arm/Git/child-CPU timers are not added to enclosing command wall time. UTC envelope and measured durations are distinct. Unplaced direct tools stay separate.",
+  "owned_artifact_bytes_before_write": 3375440,
+  "owned_temporary_bytes_retained": 0,
+  "physical_cases": 0,
+  "publisher_readback_bytes_also_charged_conservatively": 0,
+  "recorded_duration_sum_seconds": 36.92629987350665,
+  "recovery_direct_tool_cost_gap": {
+    "cpu": null,
+    "known_tool_duration_seconds": [
+      1.5e-06,
+      2.458e-06,
+      1.584e-06,
+      0.379166167,
+      0.3941565,
+      0.382932625,
+      0.368970125,
+      0.36338175
+    ],
+    "other_three_durations": null,
+    "read_only_shell_calls": 11,
+    "scope": "Read-only identity, task context and completed control receipt recovery after compaction. Not scientific execution. Keep separate from supervised cost totals.",
+    "utc_intervals": null
+  },
+  "retained_prior_source_bytes_not_downloaded_again": 0,
+  "sampling_limit": "Point samples do not bound unseen peaks. Known tamper-copy allocation is separately bounded; process memory remains unknown.",
+  "scope": "Completed supervised commands and setup at this cutoff. This write, later validation, integration and readback have later receipts. Direct patch/tool overhead is incomplete.",
+  "setup_commands": 14,
+  "source_ceiling_conservative_bytes": 2734955,
+  "temporary_copy_limit": "Conservative bound from full private source directory, not a measured peak. One temporary source copy at a time; released by controls.",
+  "unknown": [
+    "active engineering/reasoning effort",
+    "human acquisition/review effort",
+    "provider charges",
+    "energy",
+    "peak workflow memory",
+    "unrecorded tool/host/network overhead",
+    "some read/write/patch durations",
+    "shared Git storage growth attribution",
+    "complete workflow economics"
+  ],
+  "unplaced_not_added_to_union": true,
+  "utc_recorded_envelope_union_seconds": 36.964311,
+  "version": "0.1.1"
+}

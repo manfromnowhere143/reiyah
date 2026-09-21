@@ -1,0 +1,34 @@
+{
+  "document_id": "reiyah.navigation-measurement.correction",
+  "version": "0.1.1",
+  "supersedes": "research/navigation-measurement/0.1.0",
+  "previous_freeze_sha256": "d27e114b155e35128c00d91d5307655de1bfa26d168d6ce9b347c001391f034e",
+  "failed_command": "controls-pre-01",
+  "failure": "Unit-field port renamed quoted keys but missed dict keyword output fields. Equality control raised KeyError minimum_range_mps.",
+  "correction": "Rename remaining unit-bearing dict keyword fields; preserve all arithmetic, original question, selection, rate, tolerance and expected controls. Version output metadata names the successor.",
+  "changes": [
+    {
+      "path": "controls.py",
+      "before_sha256": "7e9ab1b093844e017b50bcc68dd99ef95139c44706f0fecf77dbf0f7e8cecd8c",
+      "after_sha256": "14a89ba286ee213ce6e8aed3e0910c0f1fc6a628b7986204a35de7e4ee15ef1c"
+    },
+    {
+      "path": "run.py",
+      "before_sha256": "24eb044036a1ad19727fa3c105a8d9bb2ef391ecc6cd108e0d18b0f5d344d63b",
+      "after_sha256": "f46937305965f2fe8cf414abd90a09b7d354d43384111f09bd4c5c8fdc7368ab"
+    },
+    {
+      "path": "check.py",
+      "before_sha256": "cb215c06a31a2846942a05fd877399886338642cb9ff3cd383efcefd30d3fc94",
+      "after_sha256": "cad642ac0618a5973655fbbc113b38f92f149335c8d44e75967604e9dd7ed869"
+    },
+    {
+      "path": "envelope.py",
+      "before_sha256": "1d31bbba230b48cc7469ed26f51cc056ab741344aa5179ff7223328e2606081f",
+      "after_sha256": "141ce78a9493d42708944f46a9defcbe5b95a7d0d2576a901ffcc3f6b1e23d5e"
+    }
+  ],
+  "recorded_data_execution_before_correction": false,
+  "prior_controls_final_report_emitted": false,
+  "prior_packet_preserved": true
+}

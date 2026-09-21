@@ -1,6 +1,6 @@
 # Reiyah research direction, 20 September 2026
 
-Proposed roadmap version: **0.3.7**. Status: exploratory.
+Proposed roadmap version: **0.3.8**. Status: exploratory.
 Research cutoff: 21 September 2026. This is a research choice under Daniel's
 explicit expansion instruction, not an accepted safety or product release.
 
@@ -23,6 +23,22 @@ This roadmap supersedes the scheduling guidance in the
 obligations remain. The expanded question does not require another perception
 sensitivity sweep or claim that the unproven cost-reduction hypothesis succeeded.
 No foundation-model training, simulator deployment or vehicle control is added.
+
+## Recorded navigation qualification, 21 September
+
+The [first frozen navigation sample](../research/navigation-measurement/0.1.1/README.md)
+is blocked: all 1,000 packets report initialization, leaving zero eligible
+decision cases. Vendor input checking and 25 authored controls do not establish
+empirical resolution. Preserve the failed unit-key freeze and source-access
+limitations. The residual formulation loses information relative to an
+original-velocity constrained baseline; retain that stronger comparator.
+
+The next bounded step is a separately frozen, disjoint end-of-file sample,
+before looking at its values. Keep the original recorded-fidelity threshold
+and conditional rate. If it is also unusable, close this source route. This
+explicit exploratory follow-up must retain the initial failure, count complete
+acquisition and checking cost, and avoid a favorable-window sweep. Physical
+uncertainty, customer relevance and practical advantage remain unresolved.
 
 ## What to build around
 

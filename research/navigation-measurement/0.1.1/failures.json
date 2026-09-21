@@ -1,0 +1,44 @@
+{
+  "document_id": "reiyah.navigation-measurement.failures",
+  "failed_commands": [
+    {
+      "category": "checking",
+      "duration_seconds": 0.15086158295162022,
+      "finished_utc": "2026-09-21T07:33:56.519453+00:00",
+      "id": "controls-pre-01",
+      "receipt_sha256": "500e3eb727bc66a1031be5184f4bcebdb8012641eeac517d661163d5dcae7eff",
+      "returncode": 1,
+      "started_utc": "2026-09-21T07:33:56.368050+00:00",
+      "stderr_sha256": "ab8662afcff9326958ad48695fab6227a5a68ae5c4f3c15ac791f37d004de252",
+      "stop_reason": null
+    },
+    {
+      "category": "packaging",
+      "duration_seconds": 0.12259649997577071,
+      "finished_utc": "2026-09-21T07:45:34.921759+00:00",
+      "id": "package-01",
+      "receipt_sha256": "961ed49715c6401811c9ec0dbd80cc511b6b74ecc5455ea3a4997e1a624c2787",
+      "returncode": 1,
+      "started_utc": "2026-09-21T07:45:34.798555+00:00",
+      "stderr_sha256": "e656a770506bb103968a2c0c7120fdbb84fc531628422564295ebaca23336023",
+      "stop_reason": null
+    },
+    {
+      "category": "packaging",
+      "duration_seconds": 0.14134579105302691,
+      "finished_utc": "2026-09-21T06:55:19.328968+00:00",
+      "id": "qualification-context-01",
+      "receipt_sha256": "ead98442aab205f8b5135960108b307273cbfc77ac345e5722954b634a15a87b",
+      "returncode": 71,
+      "started_utc": "2026-09-21T06:55:19.187189+00:00",
+      "stderr_sha256": "913ba63910afbe1c2f9adc56916919ea275d5a7192dc4ca6d4ee997c52980697",
+      "stop_reason": null
+    }
+  ],
+  "interpretation": "The unavailable /usr/bin/rg lookup and a packaging-only dictionary/list mismatch are workflow failures. Initial frozen controls raised KeyError for a missed unit-bearing output key before any recorded-data execution. All original 0.1.0 bytes remain. 0.1.1 corrects fields, not arithmetic. The later blocked source selection is an unresolved qualification result, not a successful decision experiment.",
+  "post_result_mutations": {
+    "count": 0,
+    "status": "not_run_no_recorded_case"
+  },
+  "version": "0.1.1"
+}

@@ -1,3 +1,52 @@
+# Reiyah navigation-measurement qualification checkpoint, 2026-09-21
+
+Continuation version: `0.1.57`. Status: `blocked` for this source case.
+Continuing mission ACTIVE.
+
+The [navigation-measurement packet](../research/navigation-measurement/0.1.1/README.md)
+freezes a consequential recorded-fidelity question before numeric source capture,
+but its fixed 1,000-packet NCOM prefix contains only initialization mode 2.
+Zero samples qualify; no actual fidelity decision, added measurement, response
+partition or conventional comparison executes. A separately authored vendor
+decoder checks all 1,000 outputs and the empty eligible population. Empty
+false-decision lists have denominator zero and are not evidence of accuracy.
+
+Twenty-five authored pre-controls pass. Eight case-dependent post-mutations are
+not run. The 0.1.0 unit-key control failure is retained byte-for-byte; 0.1.1
+corrects output fields. A hardcoded tool-path failure and a packaging-only dictionary/list mistake
+also remain. The separate
+7V range-access attempt obtained bytes but no qualified decoded trajectory.
+Both negative outcomes remain, and physical qualification is still unresolved.
+
+The residual-rate formulation conservatively enlarges the original admissible
+family. A competent original-velocity baseline can be sharper; a directed
+control demonstrates that limitation. No query, empirical or frontier advantage
+is established. Private raw sources, decoded rows and decoder outputs remain
+private. Freeze: f61d578c7e9beddb7315c14fcd984ca7ea9527e308be316cfbc6df59d5a67abc.
+Read the packet's validation, costs, failures and distribution records.
+
+Owner: `~/.codex/reports/reiyah/navigation-measurement-2026-09-21-849c03yb/`.
+Final integration/readback and tail costs are in CLOSEOUT, FINAL_COSTS,
+PUBLISH_FINAL and FINAL_CONFIRMATION there. Publisher readback is not independent
+transport/scientific verification. Active effort and full economics are unknown.
+The original ten-hour clock is complete and is not restarted or padded.
+
+Next: continue autonomously in a fresh owned candidate. Freeze one disjoint
+end-of-file NCOM sample before inspecting its values, preserving this initial
+blocked sample. Keep the 0.05 m/s recorded-fidelity question, 5 m/s² premise
+and strong original-coordinate baseline. If that fixed sample is unusable too,
+close this source route without a window sweep. Label the follow-up exploratory
+after this qualification failure. Do not count more custody or authored tests
+as empirical decision validation, or infer private-team records Daniel owns.
+
+Proposed roadmap is 0.3.8. README opening, substantive text, headings and six
+diagrams remain unchanged. All 1,433 reserved images stay closed; perception
+source stays 38a50ec014cc83e86ea6f247df803ded2971b386. Gate A remains
+operator-unaccepted; historical controller stays clean at 74fbacc. Solo ownership,
+resource/data limits, human identity and guarded normal push/readback persist.
+No inference, training, dependency install, paid compute, outreach, deployment or
+physical control. Preserve this owner after confirmation; earlier text is history.
+
 # Reiyah complete measurement-resolution checkpoint, 2026-09-21
 
 Continuation version: `0.1.56`. Status: `exploratory`. Continuing mission ACTIVE.
