@@ -1,0 +1,72 @@
+{
+  "artifact_id": "reiyah.metric-aggregation-control.provenance",
+  "version": "0.1.0",
+  "base_commit": "7a3fe332369dc463c2322fbd4558854acb944155",
+  "protocol_and_fixture_freeze": {
+    "at": "2026-10-11T07:33:06.376046+00:00",
+    "sha256": {
+      "protocol.json": "714d92e8c329d3c05b6655d74d1df6c3aebba40133df6a221a1f580d301ba92d",
+      "fixtures.json": "5841f71c43a5dbdc805affd33fcaeb043095a06d67a5db2369ccaece9a1a45fe"
+    },
+    "outcomes_executed": false
+  },
+  "source": {
+    "upstream_repository": "JonathanKlees/Uncertainty-aware-Object-Detection",
+    "commit": "f793379ad7a9760f71c18ba57b7ed71fa76a5e6c",
+    "file": "regression_benchmark/evaluation/evaluate_soft.py",
+    "bytes": 23192,
+    "sha256": "d19fab4078ffc61c594e72ad1719bd2179108187de26099c6614eb39ddeeba20",
+    "url": "https://raw.githubusercontent.com/JonathanKlees/Uncertainty-aware-Object-Detection/f793379ad7a9760f71c18ba57b7ed71fa76a5e6c/regression_benchmark/evaluation/evaluate_soft.py",
+    "custody": "Exact previously retained private source reused; no upstream payload downloaded this increment",
+    "access": "Public GitHub without credentials at retained acquisition",
+    "terms": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+    "redistribution": "No blanket software license established. Upstream code payload remains private. Public files are authored fixtures, adapter, oracle and aggregate/control results; annotation licensing does not establish source-code rights."
+  },
+  "inheritance": "Both arms use the unchanged hash-bound empty-output adapter. Its earlier result and released artifacts are not overwritten. The new arm also collects every per-image auxiliary metric array before the unchanged native global mean.",
+  "validation": {
+    "configurations": 90,
+    "native_and_corrected_evaluations_per_run": 180,
+    "numeric_means_verified": 1656,
+    "undefined_mean_fields_verified": 504,
+    "AUSRC_equal_pairs": 90,
+    "alterations_rejected": 10,
+    "byte_identical_producer_runs": 2,
+    "scope": "Separate standard-library scalar oracle; fraction arithmetic for MAE/MSE/TVD, scalar logs/square roots for other metrics, absolute tolerance 5e-6. Not independent scientific review."
+  },
+  "failures_or_protocol_deviations": [],
+  "acquisition": {
+    "source_requests": 2,
+    "source_response_bytes": 11447,
+    "prior_shared_primary_source_bytes": 176741621,
+    "new_shared_primary_source_bytes": 176753068,
+    "known_previous_text_derivative_bytes": 65153,
+    "accounting_scope": "Immediately preceding shared source account, not all-history custody. Publication readback and Git transport separately accounted."
+  },
+  "existing_requests": [
+    {
+      "id": "rf-detr-comments",
+      "read_at": "2026-10-11T07:33:06.789257+00:00",
+      "comments": 3,
+      "last_comment": {
+        "author": "manfromnowhere143",
+        "time": "2026-10-10T11:20:18Z"
+      }
+    },
+    {
+      "id": "automotive-comments",
+      "read_at": "2026-10-11T07:33:06.725131+00:00",
+      "comments": 0,
+      "last_comment": null
+    }
+  ],
+  "new_outreach": false,
+  "private_owner": "metric-aggregation-2026-10-11-iqbaha6t",
+  "exposure": "Authored anticipated code-level diagnostic, not blinded or empirical. All eight fixtures and the question frozen before scoring.",
+  "claims_not_established": [
+    "Effect on any published empirical metric or ranking",
+    "Algorithmic novelty, SOTA, product value or complete-work savings",
+    "Full CLI or full evaluator correctness",
+    "Physical truth, safety or Gate A acceptance"
+  ],
+  "next_action": "End this planned local evaluator audit. Qualify a fresh consequential comparison, actual resolution action and complete costs. Use both conventional corrections where their contracts apply; do not start another exposed selector sweep or another speculative evaluator audit."
+}

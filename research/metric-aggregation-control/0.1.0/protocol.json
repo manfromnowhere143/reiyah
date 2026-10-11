@@ -1,0 +1,69 @@
+{
+  "artifact_id": "reiyah.metric-aggregation-control.protocol",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "question": "Do native auxiliary means depend on the last image of each chunk, and does collecting all per-image metric arrays restore detection-weighted means and partition/order invariance while preserving AUSRC?",
+  "upstream_source_sha256": "d19fab4078ffc61c594e72ad1719bd2179108187de26099c6614eb39ddeeba20",
+  "upstream_commit": "f793379ad7a9760f71c18ba57b7ed71fa76a5e6c",
+  "prior_control": "research/empty-output-score-control/0.1.0/reproduce.py",
+  "prior_control_sha256": "f535fec879322f11245c42ecb1e83f77e917cb707ad669bf9d9d4685ade60092",
+  "fixtures_sha256": "5841f71c43a5dbdc805affd33fcaeb043095a06d67a5db2369ccaece9a1a45fe",
+  "prior_exposure": "Inspected source suggests final-image arrays returned from process_chunk. Ranking reversal anticipated before this run. Authored deterministic controls, not empirical or blinded.",
+  "arms": [
+    "Prior empty-image adapter with otherwise native metric aggregation",
+    "Same empty-image adapter plus collection of every per-image auxiliary array before native global mean"
+  ],
+  "invariants": [
+    "Every per-detection metric uses unchanged native compute_metrics",
+    "All and matched populations remain distinct, weighted by retained detections rather than image/chunk count",
+    "AUSRC, total_gt and complete score/similarity/TP arrays preserved for each execution configuration",
+    "Empty populations produce explicit undefined status with count 0 and null value, not zero error",
+    "No fixture or outcome chosen by tuning an existing detector pair"
+  ],
+  "execution": {
+    "metrics": [
+      "MAE",
+      "MSE",
+      "KL",
+      "JSD",
+      "TVD",
+      "cosine_dist"
+    ],
+    "dataset": "coco",
+    "model": "authored-control",
+    "iou": 0.5,
+    "device": "cpu",
+    "area_default": [
+      0,
+      10000000000
+    ],
+    "chunk_sizes": [
+      1,
+      2,
+      64
+    ],
+    "worker_counts": [
+      1,
+      2
+    ],
+    "orders": "Every image-order permutation of each of eight fixtures; 90 configurations, two arms per configuration",
+    "meaning": "13 exact source function ASTs from inherited loader. No full CLI, model inference or upstream mutation."
+  },
+  "oracle": "Separate standard-library calculation over authored per-detection distributions and declared unambiguous exact/disjoint geometry. Fraction arithmetic for MAE/MSE/TVD; scalar logarithm/square-root expressions for KL/JSD/cosine distance with native eps 1e-8. Absolute float tolerance 5e-6. Counts and state types exact.",
+  "validation": [
+    "Two byte-identical final full replays",
+    "Check both native last-image-subset and corrected complete-population auxiliary metrics against oracle",
+    "Ablate correction, corrupt mean/count/status, substitute boolean, omit configuration and alter source/input bytes; require rejection"
+  ],
+  "limits": [
+    "No published result or ranking impact measured",
+    "No complete-work savings, new algorithm, SOTA or product-value claim",
+    "No inference or new data acquisition beyond two existing-thread reads",
+    "This is the final planned local audit increment of this evaluator; further work requires a concrete new need or real comparison packet"
+  ],
+  "resource_limits": {
+    "cpu_seconds": 300,
+    "local_owner_bytes": 134217728,
+    "session_minutes": 40
+  }
+}

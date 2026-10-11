@@ -1,0 +1,47 @@
+{
+  "artifact_id": "reiyah.metric-aggregation-control.negative-controls",
+  "version": "0.1.0",
+  "status": "pass",
+  "controls": {
+    "wrong_mean": {
+      "status": "rejected",
+      "reason": "mean differs from scalar oracle"
+    },
+    "wrong_count": {
+      "status": "rejected",
+      "reason": "metric population count"
+    },
+    "image_weighted_mean": {
+      "status": "rejected",
+      "reason": "mean differs from scalar oracle"
+    },
+    "zero_for_undefined": {
+      "status": "rejected",
+      "reason": "undefined mean must remain null"
+    },
+    "defined_for_empty": {
+      "status": "rejected",
+      "reason": "metric state"
+    },
+    "boolean_count": {
+      "status": "rejected",
+      "reason": "metric population count"
+    },
+    "missing_configuration": {
+      "status": "rejected",
+      "reason": "configuration membership"
+    },
+    "source_byte_change": {
+      "status": "rejected",
+      "reason": "source digest"
+    },
+    "fixture_byte_change": {
+      "status": "rejected",
+      "reason": "fixture digest"
+    },
+    "disabled_correction": {
+      "status": "rejected",
+      "reason": "metric population count"
+    }
+  }
+}

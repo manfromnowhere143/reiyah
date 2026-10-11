@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.3`
+Version: `0.1.4`
 
 Lifecycle status: `proposed`
 
@@ -107,6 +107,16 @@ No published-score impact, upstream-applied fix or product advantage is claimed.
 Future comparisons must preserve explicit successful empty opportunities before
 flattening outputs; missing or failed runs remain distinct. This correction also
 belongs in the competent conventional comparator.
+
+The [metric-aggregation control](../research/metric-aggregation-control/0.1.0/README.md)
+closes the auxiliary-mean gap left outside that first control. Native aggregation
+uses only each chunk's final-image metric arrays. A constructed mean-TV ranking
+therefore changes with chunk size; collecting all arrays restores correct
+detection-weighted means over 90 tested configurations. All 1,656 numeric means
+and 504 undefined fields agree with a separate oracle; AUSRC stays unchanged.
+No empirical published-score impact or product value is established. This ends
+the planned local audit of that evaluator. Resume it only for a concrete new
+comparison need or new evidence, rather than automatically adding more controls.
 
 The fixed release tag `research-2026-10-11` resolves to
 `5de377af25a4c6882096ebbc91808b19feafb628`. Its later metadata clarification is

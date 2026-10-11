@@ -1,0 +1,45 @@
+{
+  "artifact_id": "reiyah.metric-aggregation-control.verification",
+  "version": "0.1.0",
+  "status": "pass",
+  "result_sha256": "06c62d41f7797be527adb0789c68255573920a7743d88fe8d251bad2df1230b1",
+  "fixtures_sha256": "5841f71c43a5dbdc805affd33fcaeb043095a06d67a5db2369ccaece9a1a45fe",
+  "configurations": 90,
+  "native_and_corrected_evaluations": 180,
+  "numeric_means_checked": 1656,
+  "undefined_mean_fields_checked": 504,
+  "configurations_with_population_difference": 44,
+  "configurations_restored_from_empty_to_nonempty_all_population": 12,
+  "AUSRC_equal_pairs": 90,
+  "primary_TVD": {
+    "primary_A": {
+      "1": {
+        "native": 0.25,
+        "corrected": 0.25
+      },
+      "2": {
+        "native": 0.5,
+        "corrected": 0.25
+      },
+      "64": {
+        "native": 0.5,
+        "corrected": 0.25
+      }
+    },
+    "primary_B": {
+      "1": {
+        "native": 0.375,
+        "corrected": 0.375
+      },
+      "2": {
+        "native": 0.375,
+        "corrected": 0.375
+      },
+      "64": {
+        "native": 0.375,
+        "corrected": 0.375
+      }
+    }
+  },
+  "scope": "Authored geometry and distributions; separate exact linear/scalar nonlinear oracle, not independent scientific review or published-data impact."
+}

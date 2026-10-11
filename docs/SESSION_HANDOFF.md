@@ -1,3 +1,68 @@
+# Current entry: batch-invariant auxiliary means, 11 October 2026
+
+Continuation version: 0.1.77. Status: exploratory authored software control.
+Read [NEXT_SESSION.md](NEXT_SESSION.md) and the
+[metric-aggregation study](../research/metric-aggregation-control/0.1.0/README.md),
+protocol, fixtures, result, verification, negative controls and provenance.
+
+Daniel requested continued mission work. The new bounded task closes a specific
+omitted boundary in the prior evaluator control: auxiliary metric aggregation.
+The exact retained native chunk processor returns metric arrays from only the
+last image in each chunk. With otherwise fixed two-image inputs, mean TV error
+favors A at chunk size 1 (0.25 versus 0.375) but favors B at chunk size 2 or 64
+(A becomes 0.50). Reversing the order can instead make native A report zero.
+All of these examples are authored; no published empirical impact is known.
+
+Both arms use the unchanged prior empty-image adapter. The new conventional
+wrapper collects every image's auxiliary arrays before the native outer mean.
+It restores A to 0.25 across every tested partition/order; B remains 0.375.
+Six metrics and all/matched populations are kept separate. Unequal counts are
+weighted by detections; an image-weighted mean is rejected. Empty metric
+populations stay explicitly undefined with count zero and null means.
+
+Eight fixed fixtures cover 90 configurations, 180 native/corrected evaluations
+per run. A separate standard-library oracle verifies 1,656 numeric means and
+504 undefined fields. MAE, MSE and TVD use exact rational expectations; other
+metrics use scalar logs/square roots, all compared at absolute tolerance 5e-6.
+AUSRC and reference counts are unchanged in all 90 pairs. Metric populations
+differ in 44 configurations; twelve restore an all-detection population that
+native aggregation mistakenly presents as empty. These dependent authored
+counts are not real-world error rates. Ten alteration controls reject, and two
+complete producer runs produce identical result bytes. No execution failure
+or protocol deviation occurred in these scientific runs.
+
+No source payload is published. The existing exact 23,192-byte upstream file
+is reused at f793379 / SHA d19fab4078ffc61c594e72ad1719bd2179108187de26099c6614eb39ddeeba20.
+The old score-control release is unchanged. This is a function-path replay
+with real CPU tensors, not a full CLI or full evaluator correctness claim.
+No upstream fix has been applied. Both ordinary corrections belong in the
+competent conventional comparator, not only a Reiyah arm.
+
+This closes the planned local audit of the retained evaluator. Further work
+on it needs a concrete comparison requirement or new evidence. The next value
+task remains a fresh consequential decision, an actual reference-resolution
+action and complete measured costs; no product-value case is admitted. Preserve
+all previous negatives and keep both exposed detector/threshold pairs closed.
+
+Two existing-thread reads retained 11,447 bytes: RF-DETR still has three comments
+ending with Daniel's request; automotive has zero. No new message was sent.
+The immediately preceding shared primary custody account becomes 176,753,068
+bytes, plus its known 65,153-byte text derivative; this is not all-history custody.
+Historical active effort remains unknown and is not reset. Existing local CPU
+only, with a 40-minute/128-MiB owner allocation and 300-second calculation cap.
+
+Private owner: `~/.codex/reports/reiyah/metric-aggregation-2026-10-11-iqbaha6t/`.
+Candidate base: 7a3fe332369dc463c2322fbd4558854acb944155. Resolve final publication
+from live Git/readback. Nine repository consistency checks pass; the advertised small example matches
+its exact expected bytes. Current links and continuation bindings are checked
+before publication, followed by exact published-byte verification. The 52
+historical transcripts are bound, not replayed; optional attacks and locked
+Gate A release validation were not run. All README
+explanations and seven diagrams remain. Gate A is operator-unaccepted; broad
+product expansion remains stopped pending value; all 1,433 reserved images
+closed. No images, training, inference, paid compute, new outreach, background
+monitor or delegation. Earlier entries follow unchanged.
+
 # Current entry: empty-output scoring counterexample and correction, 11 October 2026
 
 Continuation version: 0.1.76. Status: exploratory authored software control.

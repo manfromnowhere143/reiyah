@@ -1,0 +1,389 @@
+{
+  "artifact_id": "reiyah.metric-aggregation-control.fixtures",
+  "version": "0.1.0",
+  "evidence_kind": "authored",
+  "cases": [
+    {
+      "id": "primary_A",
+      "images": [
+        {
+          "id": 1,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": [
+            {
+              "bbox": [
+                10,
+                10,
+                10,
+                10
+              ],
+              "probability": "1",
+              "expected_reference": 0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": [
+            {
+              "bbox": [
+                10,
+                10,
+                10,
+                10
+              ],
+              "probability": "1/2",
+              "expected_reference": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "primary_B",
+      "images": [
+        {
+          "id": 1,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": [
+            {
+              "bbox": [
+                10,
+                10,
+                10,
+                10
+              ],
+              "probability": "5/8",
+              "expected_reference": 0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": [
+            {
+              "bbox": [
+                10,
+                10,
+                10,
+                10
+              ],
+              "probability": "5/8",
+              "expected_reference": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unequal_detection_counts",
+      "images": [
+        {
+          "id": 1,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ],
+            [
+              40,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": [
+            {
+              "bbox": [
+                10,
+                10,
+                10,
+                10
+              ],
+              "probability": "1",
+              "expected_reference": 0
+            },
+            {
+              "bbox": [
+                40,
+                10,
+                10,
+                10
+              ],
+              "probability": "3/4",
+              "expected_reference": 1
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": [
+            {
+              "bbox": [
+                10,
+                10,
+                10,
+                10
+              ],
+              "probability": "1/2",
+              "expected_reference": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "matched_and_unmatched",
+      "images": [
+        {
+          "id": 1,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": [
+            {
+              "bbox": [
+                10,
+                10,
+                10,
+                10
+              ],
+              "probability": "3/4",
+              "expected_reference": 0
+            },
+            {
+              "bbox": [
+                70,
+                10,
+                10,
+                10
+              ],
+              "probability": "1/4",
+              "expected_reference": null
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": [
+            {
+              "bbox": [
+                10,
+                10,
+                10,
+                10
+              ],
+              "probability": "1/2",
+              "expected_reference": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trailing_empty",
+      "images": [
+        {
+          "id": 1,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": [
+            {
+              "bbox": [
+                10,
+                10,
+                10,
+                10
+              ],
+              "probability": "3/4",
+              "expected_reference": 0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": []
+        }
+      ]
+    },
+    {
+      "id": "all_empty",
+      "images": [
+        {
+          "id": 1,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": []
+        },
+        {
+          "id": 2,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": []
+        }
+      ]
+    },
+    {
+      "id": "no_matches",
+      "images": [
+        {
+          "id": 1,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": [
+            {
+              "bbox": [
+                70,
+                10,
+                10,
+                10
+              ],
+              "probability": "1/4",
+              "expected_reference": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "filtered_last_image",
+      "area": [
+        0,
+        1024
+      ],
+      "images": [
+        {
+          "id": 1,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              10,
+              10
+            ]
+          ],
+          "detections": [
+            {
+              "bbox": [
+                10,
+                10,
+                10,
+                10
+              ],
+              "probability": "3/4",
+              "expected_reference": 0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "reference_boxes": [
+            [
+              10,
+              10,
+              64,
+              64
+            ]
+          ],
+          "detections": [
+            {
+              "bbox": [
+                10,
+                10,
+                64,
+                64
+              ],
+              "probability": "1/2",
+              "expected_reference": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
