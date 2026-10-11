@@ -26,9 +26,28 @@ they miss the same object, and what evidence supports readiness or recovery.
 The implemented perception engine and those broader research questions have
 different evidence requirements.
 
-[Decision model](#the-decision-model) · [Reference example](#when-the-reference-changes-the-answer) ·
+[Implemented scope](#implemented-scope) · [Decision model](#the-decision-model) · [Reference example](#when-the-reference-changes-the-answer) ·
 [Results](#current-evidence) · [Run the auditor](#run-the-offline-auditor) ·
-[Research program](#one-encounter-distinct-information-sets) · [Technical map](#research-map)
+[Research program](#one-encounter-distinct-information-sets) · [Next decision](#next-research-decision) ·
+[Technical map](#research-map) · [Session handoff](docs/SESSION_HANDOFF.md)
+
+## Implemented scope
+
+The wider ambition is a system that helps autonomy teams make consequential
+changes on defensible evidence: what improved, where uncertainty remains, and
+what observation could change the decision. Each capability must earn its
+place through a fair comparison and a useful decision.
+
+| Component | Available today | Evidence boundary |
+| --- | --- | --- |
+| [Perception comparison](research/perception-revision/0.1.0/README.md) | Conditional loss bounds, witnesses, audit certificates and separate checking for declared reference alternatives. | Correctness depends on the input contract; complete-work savings remain unproven. |
+| [Measurement and reference analysis](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md) | Offline population, matching and joint-error analyses; [replay of saved predictions under two references](research/reference-revision/0.1.0/README.md). | Recorded annotations and scoring conventions do not establish physical truth. |
+| [Input accounting](research/extraction-accounting/0.1.0/README.md) | A helper checks expected membership, decoder failures and source/output identities. | Historical consumers have not integrated it; past cohorts and capture synchronization remain unqualified. |
+| [Relational motion](research/continuous-envelope/0.1.0/README.md) | Conditional clearance ranges and opposing witnesses under supplied motion, geometry and timing assumptions. | Authored and bounded recorded-data studies; no deployed monitor or physical safety guarantee. |
+| [Human belief, readiness and recovery](docs/SCIENTIFIC_CHARTER.md) | Proposed constructs and protocols; historical gaze and takeover-proxy measurements. | No validated belief inference, universal readiness score or demonstrated recovery benefit. |
+
+The engineering contribution is inspectable conditional reasoning. The product
+hypothesis is lower complete decision cost. Their evidence is kept separate.
 
 ## The decision model
 
@@ -61,7 +80,7 @@ unavailable preparations remain recorded separately.
 
 ```mermaid
 flowchart TB
-  A["Original detector outputs A and B<br/>Source identities and complete membership"] --> C["One comparison contract<br/>Population, loss, tolerance and matching"]
+  A["Recorded outputs A and B<br/>Source identities, declared membership and availability"] --> C["One comparison contract<br/>Population, loss, tolerance and matching"]
   R["Shared reference alternatives<br/>Explicit unknowns and dependencies"] --> C
   C --> E["Engine<br/>Paired loss bounds and witnesses"]
   C --> B["Conventional analysis<br/>Same evidence and mathematical methods"]
@@ -71,11 +90,14 @@ flowchart TB
   B --> V
 ```
 
-The implementation uses exact arithmetic, maximum one-to-one matching and
-separately checked certificates for the supported bound families. It retains
+The implementation uses exact arithmetic, maximum-cardinality one-to-one
+matching and separately checked certificates for the supported bound families. It retains
 original records, indices and clocks, with traces from a dependency or adverse
 interpretation back to its source. These checks establish a conclusion from
 specified operands; the quality of those operands remains a measurement question.
+These FP/FN loss bounds are not COCO AP bounds. Greedy confidence-ordered AP
+has different matching semantics, as the [matching control](research/matching-bound-control/0.1.0/README.md)
+demonstrates.
 
 The [replacement interface](research/perception-revision/0.1.0/README.md)
 accepts independently declared A/B outputs, checks conditional reference-audit
@@ -142,6 +164,11 @@ flowchart TB
   T --> R["Scoped findings and corrections"]
   A --> R
 ```
+
+This diagram describes the measurement sequence. The new
+[extraction-accounting helper](research/extraction-accounting/0.1.0/README.md)
+checks input consumption, but has not been integrated into all historical
+consumers. It does not retroactively validate their inputs or clocks.
 
 An observed empty output, a missing output, an invalid sensor record, an
 excluded reference and an unobserved physical object have different meanings.
@@ -226,6 +253,7 @@ inspectable; the supplied assumptions still need physical qualification.
 | Question | Retained result | Interpretation |
 | --- | --- | --- |
 | Does a released reference revision change a saved detector ranking? | COCO to COCO-ReM changes the R101-minus-R50 bbox AP gap from **2.327518 to 2.658695 points**; four of 80 category rankings reverse. | Overall ranking unchanged. Conventional evaluation produces the result; no Reiyah benefit was measured. [Replay](research/reference-revision/0.1.0/README.md) |
+| Do per-object overlap bounds automatically bound greedy AP? | In a constructed two-prediction case, nominal AP50 is **1** while the upper-overlap endpoint scores **51/101**. | A correctness control, not an empirical gain, new AP engine or demonstrated defect in another paper. [Control and reproduction](research/matching-bound-control/0.1.0/README.md) |
 | Does selected gaze coincidence bound population dependence? | Exact completions move the coefficient both above and below the selected value. | The general lower-bound inference and associated safety credit are withdrawn. [Correction](research/claim-correction/0.1.0/README.md) |
 | Can reference assumptions change a detector decision? | The two-anchor interval is **[-8, 8]** with open physical references and **[1, 1]** under benchmark labels. | Physical adjudication remains open. [Case](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md) |
 | Can an audit's sufficiency be checked? | **372 hypothetical confirmed-present labels** attain a checked minimum on one forty-frame case under its deletion model. | This is conditional sufficiency, not measured sequential query cost or reviewer time. [Proof](docs/PERCEPTION_MONOTONE_AUDIT_2026-09-17.md) |
@@ -257,8 +285,12 @@ flowchart TB
   C --> A["Automation information<br/>Available by index time"]
   H -. "measurement model required" .-> HB["Human belief and uncertainty"]
   A -. "measurement model required" .-> AB["Automation belief and uncertainty"]
-  HB --> J["Joint assessment<br/>Agreement, complementarity and silent miss"]
-  AB --> J
+  HB -. "proposed inference" .-> J["Joint assessment<br/>Agreement, complementarity and silent miss"]
+  AB -. "proposed inference" .-> J
+  J -. "decision model required" .-> D["Decision<br/>Readiness criterion, policy and horizon"]
+  D -. "declared policy" .-> I["Intervention<br/>Actor, action and time"]
+  I -. "causal identification required" .-> O["Outcome and recoverability<br/>Failures, censoring and unknowns"]
+  O -. "evaluation required" .-> V["Transfer and worst-group evidence<br/>Declared domains and support"]
   E["Reference observations<br/>Assumptions and provenance"] -. "bounded support" .-> J
 ```
 
@@ -298,10 +330,12 @@ flowchart TB
     D --> B["Conventional benchmark replay<br/>Same saved predictions, two references"]
     X --> T["Conditional bounds and witnesses"]
     B --> R["All scores and reference-sensitive rankings"]
+    A["Authored controls<br/>Selection, extraction and matching"] --> G["Reproducible checks<br/>Explicit failure cases and scope"]
   end
   I -. "requirements; integration incomplete" .-> C["Scoped findings, corrections and explicit gaps"]
   T --> C
   R --> C
+  G --> C
   C --> P["Research release<br/>Eligible source and reproducible measurements"]
 ```
 
@@ -330,6 +364,9 @@ exact correction controls, a small extraction-accounting check and a four-run
 [COCO reference replay](research/reference-revision/0.1.0/README.md). The latter
 requires externally obtained, byte-verified score and annotation files; these
 payloads are not distributed in the repository. No model inference is required.
+The separate [matching control](research/matching-bound-control/0.1.0/README.md)
+uses authored boxes and the pinned COCO evaluator, with no external dataset.
+It follows the October release and is not part of its immutable tag.
 
 The [engine guide](research/perception-decision/0.1.0/README.md) explains how
 to produce and separately verify a comparison packet; it also requires
@@ -358,11 +395,12 @@ historical cohorts have not been rerun, and consumer integration and physical
 synchronization remain open. The [September stopping point](docs/RESEARCH_STOP_POINT_2026-09-21.md)
 records why these corrections were required.
 
-Public data and local compute can support further scientific work. An external
-team is needed to substantiate claims about a real team's saved effort, not as a
-prerequisite to every proof or retrospective experiment. The exposed COCO pair
-is closed without selector tuning because conventional evaluation already
-answers its declared ranking question.
+Public data and local compute can support further scientific work. Claims about
+a real team's saved effort require actual workflow observations and an
+accountable decision owner. Proofs and public retrospective studies can proceed
+without an external team. The exposed COCO pair is closed without selector
+tuning because conventional evaluation already answers its declared ranking
+question.
 
 The next product-value test needs a real revision decision: genuine old/new model
 artifacts, an owner-defined loss and operating criterion, a qualified review
@@ -371,34 +409,53 @@ conventional workflow must receive the same evidence and satisfy the same
 correctness and resolution obligations. Preparation, reviewer time, retries,
 checking, integration and repair all belong in the comparison.
 
-The investment targets remain **threefold fewer expensive observations and
-halved complete cost**. They have not been reached. Real team revision histories,
-human review costs and an owner-approved release criterion remain missing. The
-[workflow brief](research/value-disproof/0.1.0/WORKFLOW_BRIEF.md) identifies those
+The primary investment hurdle is **at least halved complete active work**, with
+equal decision obligations and no observed false assurance. Threefold fewer
+expensive observations is secondary. Neither target has been reached; absence
+of observed errors would not establish a safety guarantee. Real revision
+histories, human review costs and an owner-approved release criterion remain
+missing. The [workflow brief](research/value-disproof/0.1.0/WORKFLOW_BRIEF.md) identifies those
 inputs; it is not evidence of a customer engagement. No qualifying record is
 currently retained. Further authored examples or exposed parity sweeps cannot
 substitute for that missing workflow evidence.
 
+Keep discovery to two engineering days within a fourteen-day window when work
+is active. An admitted first screen gets at most five engineering days on CPU.
+These are resource limits, not an unattended schedule. If no suitable case is
+found, or competent conventional evaluation reaches parity, stop this product
+investment and preserve the research.
+
+```mermaid
+flowchart TB
+  Q["Candidate revision or integration decision"] --> G{"Case qualifies?"}
+  G -- "no" --> D["Bounded discovery<br/>Record the missing evidence"]
+  D -- "budget exhausted" --> S["Stop product investment<br/>Preserve findings and source"]
+  D -- "qualifying evidence obtained" --> G
+  G -- "yes" --> P["Freeze endpoint, baseline, budget and stopping rule<br/>before diagnosing the case"]
+  P --> E["Equal-information CPU comparison<br/>Measure all preparation, review and repair work"]
+  E --> R{"Correctness and work<br/>targets met?"}
+  R -- "no or inconclusive within budget" --> S
+  R -- "yes" --> I["Independent challenge on a fresh case<br/>before broader product development"]
+```
+
+The [next-session brief](docs/NEXT_SESSION.md) states the mission, evidence
+standard, case-admission fields and first actions. Cloud infrastructure can
+support a justified workload; it cannot supply an unresolved decision or
+independent reference evidence. A scientifically useful result can be worth
+preserving even when it fails the product-value test.
+
 ## Recent research
 
+- **11 October 2026:** [Overlap bounds and greedy matching](research/matching-bound-control/0.1.0/README.md). An authored finite counterexample checks a tempting AP shortcut. Native and exact calculations agree; novelty, empirical impact and a Reiyah advantage remain unestablished.
+- **11 October 2026:** [Verification metadata clarification](research/releases/2026-10-11/verification-note-0.1.0.json). The retained launch status differs from the completed replay result; the original release tag and scientific results are unchanged.
 - **11 October 2026:** [Corrected research release](research/releases/2026-10-11/README.md). Claim corrections, extraction source, portable reference-revision replay, complete result disclosure and current investment limits.
-
-[21 September: exact native-grid fidelity](research/grid-fidelity/0.1.0/README.md) resolves the exposed replay with 69 logical reveals per method; equal-information comparison remains tied.
-
-[21 September: complete-cohort mapping decision](research/decision-value/0.1.0/README.md) supports three recorded replacements and leaves one blocked; the competent conventional method agrees.
-
-[21 September: recorded navigation fidelity](research/navigation-measurement/0.2.0/README.md) supports the fixed recorded requirement; the conventional method uses one fewer logical sample.
-
-[21 September: navigation measurement attempt](research/navigation-measurement/0.1.1/README.md) retains an initialization-only sample, zero eligible cases and the stronger conventional alternative.
-
-[21 September: complete measurement resolution](research/measurement-resolution/0.1.0/README.md) checks every feasible response, executes acquisition and retains uncertainty and conventional parity.
-
-[21 September: nominal separation](research/nominal-separation/0.1.0/README.md) retains a 2.7 cm reversal, full conventional parity and unresolved physical uncertainty.
-
+- [21 September: exact native-grid fidelity](research/grid-fidelity/0.1.0/README.md) resolves the exposed replay with 69 logical reveals per method; equal-information comparison remains tied.
+- [21 September: complete-cohort mapping decision](research/decision-value/0.1.0/README.md) supports three recorded replacements and leaves one blocked; the competent conventional method agrees.
+- [21 September: recorded navigation fidelity](research/navigation-measurement/0.2.0/README.md) supports the fixed recorded requirement; the conventional method uses one fewer logical sample.
+- [21 September: navigation measurement attempt](research/navigation-measurement/0.1.1/README.md) retains an initialization-only sample, zero eligible cases and the stronger conventional alternative.
+- [21 September: complete measurement resolution](research/measurement-resolution/0.1.0/README.md) checks every feasible response, executes acquisition and retains uncertainty and conventional parity.
+- [21 September: nominal separation](research/nominal-separation/0.1.0/README.md) retains a 2.7 cm reversal, full conventional parity and unresolved physical uncertainty.
 - **21 September 2026:** [Recorded clock-alignment decision](research/clock-alignment/0.1.1/README.md). No constant offset preserves all 2,504 supported target-to-ego associations; 1,933 earlier targets remain unsupported. Both methods reject after three logical reveals, with no query advantage or physical timing guarantee.
-
-The project description and methods above are stable navigation. Dated records
-carry the evolving results and their exact scope.
 
 - **20 September 2026:** [Recorded coordinate-export decision](research/compact-motion/0.1.1/README.md). All 4,437 selected ViF-GTAD target records differ between CSV and MAT, by up to 6.63 m under the declared spherical comparison. Both methods reject lossless substitution after one logical reveal; no query advantage or physical clearance claim follows.
 - **20 September 2026:** [Physical source qualification](research/physical-source/0.1.0/README.md). Pinned 7V-Scanario metadata supplies a concrete geometry/motion lead. No listed archive fits current limits; physical uncertainty remains unresolved. The retained contract specifies the smallest useful extract.
@@ -419,13 +476,13 @@ changes the scope of an earlier result.
 | Read for | Start here |
 | --- | --- |
 | Engine model and mathematics | [Architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) · [Replacement interface](research/perception-revision/0.1.0/README.md) |
-| Current direction and evidence | [Research release](research/releases/2026-10-11/README.md) · [Evidence inventory](research/releases/2026-10-11/evidence.json) · [Roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) · [Execution audit](research/roadmap-audit/0.1.0/README.md) · [Primary-method review](research/roadmap-audit/0.1.0/FRONTIER.md) |
+| Current direction and evidence | [Next-session brief](docs/NEXT_SESSION.md) · [Research release](research/releases/2026-10-11/README.md) · [Evidence inventory](research/releases/2026-10-11/evidence.json) · [Roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) · [Execution audit](research/roadmap-audit/0.1.0/README.md) · [Primary-method review](research/roadmap-audit/0.1.0/FRONTIER.md) |
 | Relational motion research | [Clearance contract](research/frontier-expansion/0.1.0/README.md) · [Current primary research](research/frontier-expansion/0.1.0/SOURCES.md) · [Earlier source scope](research/frontier-expansion/0.1.0/qualification.json) · [NGSIM source adapter](research/public-motion/0.1.0/README.md) |
 | Physical measurement contract | [Source qualification](research/physical-source/0.1.0/README.md) · [Geometry, motion and coverage](research/physical-source/0.1.0/CONTRACT.md) |
 | Recorded input-admission decision | [ViF-GTAD export comparison](research/compact-motion/0.1.1/README.md) · [Frozen question and baseline](research/compact-motion/0.1.1/DECISION_PLAN.md) |
 | Wider scientific program | [Charter](docs/SCIENTIFIC_CHARTER.md) · [Mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) · [Corrected synthesis](docs/GENERAL_SYNTHESIS.md) |
 | Reference validity and review | [Population audit](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md) · [Adjudication study](docs/REFERENCE_ADJUDICATION_STUDY_2026-09-07.md) · [Threats to validity](docs/MEASUREMENT_THREATS_TO_VALIDITY.md) |
-| Corrections and prior results | [Claim register](evidence/claim-status-register-2026-10-10.json) · [Sign correction](docs/FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md) · [Retained history](docs/README_RESEARCH_HISTORY_2026-09-19.md) |
+| Corrections and prior results | [Matching control](research/matching-bound-control/0.1.0/README.md) · [Claim register](evidence/claim-status-register-2026-10-10.json) · [Sign correction](docs/FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md) · [Retained history](docs/README_RESEARCH_HISTORY_2026-09-19.md) |
 | Contracts, sources and terms | [Gate A architecture](docs/ARCHITECTURE.md) · [Source policy](docs/SOURCE_POLICY.md) · [Public-data custody](docs/PUBLIC_DATA_CUSTODY_2026-09-06.md) · [Standards crosswalk](docs/STANDARDS_CROSSWALK.md) |
 | Product hypothesis and contribution | [Intended users and proof milestones](docs/PRODUCT_AND_FUNDING_THESIS_2026-09-14.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) |
 

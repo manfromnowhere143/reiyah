@@ -1,3 +1,51 @@
+# Current entry: mission, evidence and next decision, 11 October 2026
+
+Continuation version: 0.1.73. Status: research continuation and presentation.
+Read [NEXT_SESSION.md](NEXT_SESSION.md) before the historical checkpoints below.
+It is the current machine-to-machine brief: mission, ambition, evidence,
+case-admission fields, first actions, comparison obligations and stop criteria.
+[CONTINUATION.json](CONTINUATION.json) supplies inspectable evidence bindings.
+Neither document grants new authority or substitutes for live Git verification.
+
+The README now distinguishes the implemented conditional engine, measurement
+work and proposed HARBOR program. All six prior diagrams are preserved in
+purpose and reviewed; the mission diagram includes decision, intervention,
+outcome and transfer, and a seventh diagram explains the next investment gate.
+The existing authored greedy-AP control is published with its original plan,
+script and result. It demonstrates a limit of an evaluation shortcut, not
+novelty, empirical impact or a Reiyah advantage.
+
+Current decision: continue bounded discovery for one consequential revision
+case; keep broad product expansion stopped. Competent conventional comparisons
+retain parity or disadvantage. Complete work savings, physical validity,
+production readiness, commercial differentiation and valuation remain unproven.
+Keep the larger HARBOR ambition visible without treating it as implemented.
+
+The immutable research release is research-2026-10-11 at
+5de377af25a4c6882096ebbc91808b19feafb628. Its metadata clarification is
+40bd025e1c4704ada4ff411cddf76edbcc57fed8. The latter is this editorial candidate's
+base; resolve current main and publication state from Git and readback records.
+The root controller remains historical at 74fbacc77a3c74d3a4962f488b589ee614a4c575.
+Use a fresh owned same-repository candidate; do not update that controller.
+
+This increment adds documentation and publishes an existing authored control.
+Comparison algorithms, frozen experiments and restricted third-party inputs
+are unchanged. Gate A remains operator-unaccepted. No deployment, training,
+inference, paid resources, private-data ingestion or new outreach is authorized
+by this checkpoint. All 1,433 reserved images and the exposed COCO pair remain
+closed to tuning. The newest private continuation pointer retains audit owners.
+
+This session reproduced the small offline auditor and all non-timing fields of
+the authored three-matrix control. Nine research-consistency checks passed;
+the optional attack suite and historical experiments were not rerun. Eight
+continuation evidence bindings match. All seven README diagrams and two linked
+study diagrams rendered locally and were visually inspected. Link, scope and
+GitHub file readback records are retained by the editorial owner identified in
+the local continuation pointer. Publisher readback is not independent review.
+The historical Gate A locked release validation was not run for this change.
+
+Earlier checkpoints follow unchanged.
+
 # Verification metadata clarification, 11 October 2026
 
 Continuation version: 0.1.72. Status: additive research documentation correction.

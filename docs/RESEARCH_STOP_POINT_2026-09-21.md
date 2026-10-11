@@ -1,5 +1,12 @@
 # Reiyah research stopping point
 
+> **11 October 2026 navigation note:** This dated record preserves the earlier
+> investigation and decisions. The correction queue has since advanced through
+> the [research release](../research/releases/2026-10-11/README.md). Use the
+> [next-session brief](NEXT_SESSION.md) and newest [handoff](SESSION_HANDOFF.md)
+> for current evidence, authorized work and stop criteria. Earlier instructions
+> below do not supersede that continuation.
+
 Document ID: `reiyah.research-stopping-point`
 
 Version: `0.1.0`

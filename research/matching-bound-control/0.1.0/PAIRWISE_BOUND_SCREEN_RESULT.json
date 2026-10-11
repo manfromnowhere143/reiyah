@@ -1,0 +1,80 @@
+{
+  "artifact_id": "reiyah.pairwise-bound-screen.result",
+  "version": "0.1.0",
+  "status": "authored_counterexample_verified",
+  "plan_sha256": "fd5a6d693378153f3d444506f609bebe7e1d6ce4876971204a2a8122edddc79a",
+  "script_sha256": "0d5a8b79462a4752b10964688d2de7aa1b617dc611e6c8436380c81f5ea03bf3",
+  "evaluations": {
+    "nominal": {
+      "iou_matrix_rational": [
+        [
+          "829/1171",
+          "871/1229"
+        ],
+        [
+          "2/3",
+          "5/16"
+        ]
+      ],
+      "matched_reference_ids": [
+        2,
+        1
+      ],
+      "AP50_exact": "1",
+      "AP50_native_fraction": 1.0,
+      "maximum_cardinality_matches": 2
+    },
+    "pairwise_lower": {
+      "iou_matrix_rational": [
+        [
+          "7119/11710",
+          "16191/24580"
+        ],
+        [
+          "17/30",
+          "21/80"
+        ]
+      ],
+      "matched_reference_ids": [
+        2,
+        1
+      ],
+      "AP50_exact": "1",
+      "AP50_native_fraction": 1.0,
+      "maximum_cardinality_matches": 2
+    },
+    "pairwise_upper": {
+      "iou_matrix_rational": [
+        [
+          "9461/11710",
+          "18649/24580"
+        ],
+        [
+          "23/30",
+          "29/80"
+        ]
+      ],
+      "matched_reference_ids": [
+        1,
+        null
+      ],
+      "AP50_exact": "51/101",
+      "AP50_native_fraction": 0.5049504950495048,
+      "maximum_cardinality_matches": 2
+    }
+  },
+  "claim": "Elementwise overlap bounds alone do not yield valid AP bounds when fed to confidence-ordered greedy matching.",
+  "witness": "The nominal reference is itself an admissible zero-perturbation world, and its AP50 exceeds the value computed from the elementwise upper matrix.",
+  "not_established": [
+    "defect in the paper implementation or published results",
+    "empirical frequency",
+    "novelty",
+    "Reiyah advantage",
+    "real workflow savings"
+  ],
+  "method": "Authored exact rational geometry and AP plus unchanged pycocotools matching/accumulation; injected overlap matrices disclosed.",
+  "numpy": "2.2.6",
+  "pycocotools": "2.0.11",
+  "cocoeval_sha256": "988485f79624cd42ceed9335d284df4cdcdf7b3d583e052fcbed2dd6bccf0267",
+  "wall_seconds": 0.005597625015070662
+}
