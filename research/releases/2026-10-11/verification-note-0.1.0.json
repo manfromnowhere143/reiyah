@@ -1,0 +1,31 @@
+{
+  "artifact_id": "reiyah.research-release.verification-note",
+  "version": "0.1.0",
+  "date": "2026-10-11",
+  "status": "clarified_launch_provenance",
+  "release_tag": "research-2026-10-11",
+  "release_commit": "5de377af25a4c6882096ebbc91808b19feafb628",
+  "subject": {
+    "path": "research/releases/2026-10-11/verification.json",
+    "sha256": "75446f3729a5714d88eec28a25d920752e16cc0f10cb7a02c0f7381fa4210d5c",
+    "json_pointer": "/reference_replay_source_binding/status",
+    "retained_value": "running"
+  },
+  "interpretation": "This nested value was copied from the retained launch record, before execution finished. It is launch-time provenance, not the current execution status. The surrounding field did not make that timing explicit.",
+  "completed_result": {
+    "json_pointer": "/reference_replay",
+    "status": "matched_retained_numeric_results",
+    "evaluations": 4,
+    "public_result_path": "research/reference-revision/0.1.0/reproduction.json",
+    "public_result_sha256": "778f4458d7cf4926a77db5547188c0d5914c8b927063aad9d62cdc0f64de175f"
+  },
+  "checks": [
+    "Original verification bytes remain unchanged",
+    "All three launch-bound source digests match release files",
+    "Completed result exactly matches public reproduction.json",
+    "Original release commit and tag are unchanged"
+  ],
+  "scientific_result_changed": false,
+  "experiment_rerun_for_this_note": false,
+  "independent_verification": false
+}

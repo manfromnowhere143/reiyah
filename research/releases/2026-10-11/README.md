@@ -31,6 +31,11 @@ negative or incomplete screens. [verification.json](verification.json) records
 the checks actually performed for this publication. Neither is independent
 scientific replication. Source fingerprints identify bytes, not physical truth.
 
+[Verification metadata clarification](verification-note-0.1.0.json): the nested
+source-binding status `running` records launch time. The completed result is
+`matched_retained_numeric_results`, with all four evaluations recorded. The
+original verification bytes and release tag are preserved; no result changed.
+
 ## Corrections that matter
 
 Detector-selected gaze measurements do not identify awareness or give a general

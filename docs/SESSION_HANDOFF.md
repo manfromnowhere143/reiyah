@@ -1,3 +1,23 @@
+# Verification metadata clarification, 11 October 2026
+
+Continuation version: 0.1.72. Status: additive research documentation correction.
+Read the [verification note](../research/releases/2026-10-11/verification-note-0.1.0.json).
+The original release verification retained a nested source-binding status of
+`running` from launch time. Its completed replay result is
+`matched_retained_numeric_results`. The note makes that distinction explicit;
+original verification bytes, results and the research release tag are unchanged.
+
+This change checks the bound source digests and exact result identity. It does
+not rerun the experiment or alter algorithms, inputs, scientific claims, Gate A
+status or production readiness. The controller and previous owners are preserved.
+Use a fresh owned candidate from verified main for the next repository change.
+The immediate private follow-up is decision-case-discovery-2026-10-11-rvkfjsnq:
+three primary-method reviews and a deliberately constructed greedy-AP control.
+It is not a new empirical value result or permission to expand the product.
+The current bounded discovery and stop/go rules below remain in effect.
+
+Earlier checkpoint follows unchanged.
+
 # Reiyah corrected research release, 11 October 2026
 
 Continuation version: 0.1.71. Status: corrected research publication.
