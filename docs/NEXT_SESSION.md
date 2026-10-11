@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.5`
+Version: `0.1.6`
 
 Lifecycle status: `proposed`
 
@@ -130,6 +130,26 @@ only after input completeness, run states, reference and evaluator scope are
 qualified. Maintainer confirmation, an original packet and product value remain
 unestablished. The RF-DETR and automotive requests retain their earlier observed
 states; they were not re-polled for this contact.
+
+The [resolution-identifiability control](../research/resolution-identifiability/0.1.0/README.md)
+now checks a more fundamental prerequisite: whether the declared observations
+can guarantee an acceptable decision at all. It uses finite complete joint
+response supports and acceptable-decision sets, retaining correlation and
+unresolved answers. A separate adaptive-tree oracle agrees across 31,213 authored
+models; 28 rejection controls pass after repairing an initial checker input gap.
+These are conditional software controls, not a qualified physical observation
+channel, empirical failure rate or a new selection advantage. The earlier
+planner-consumption findings remain unchanged. This bounded control is complete.
+
+For a real case, justify which observations can distinguish decision-relevant
+worlds, including repeat-review dependence and responses that remain unresolved.
+A model obstruction does not establish physical impossibility without those
+premises; a feasible model does not establish real reviewer capability. Do not
+convert unknown response supports into deterministic answers or independent
+marginals. All three existing outreach threads still lack a response after
+Daniel's requests at this continuation's recorded read; no new message was sent.
+The next task remains obtaining and qualifying an actual channel and comparison,
+not another synthetic sweep or an automatic extension of either completed audit.
 
 The fixed release tag `research-2026-10-11` resolves to
 `5de377af25a4c6882096ebbc91808b19feafb628`. Its later metadata clarification is

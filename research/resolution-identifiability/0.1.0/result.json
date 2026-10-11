@@ -1,0 +1,279 @@
+{
+  "artifact_id": "reiyah.resolution-identifiability.result",
+  "cases": [
+    {
+      "case_id": "hidden_policy",
+      "cells": [
+        {
+          "acceptable_decisions": [],
+          "compatible_world_ids": [
+            "original",
+            "revised"
+          ],
+          "obstruction_world_ids": [
+            "original",
+            "revised"
+          ],
+          "outcomes": [
+            "same_image"
+          ]
+        }
+      ],
+      "initial_acceptable_decisions": [],
+      "state": "not_guaranteed_resolvable"
+    },
+    {
+      "case_id": "policy_record_available",
+      "cells": [
+        {
+          "acceptable_decisions": [
+            "A"
+          ],
+          "compatible_world_ids": [
+            "original"
+          ],
+          "obstruction_world_ids": [],
+          "outcomes": [
+            "same_image",
+            "original"
+          ]
+        },
+        {
+          "acceptable_decisions": [
+            "B"
+          ],
+          "compatible_world_ids": [
+            "revised"
+          ],
+          "obstruction_world_ids": [],
+          "outcomes": [
+            "same_image",
+            "revised"
+          ]
+        }
+      ],
+      "initial_acceptable_decisions": [],
+      "state": "resolvable_with_declared_observations"
+    },
+    {
+      "case_id": "joint_information",
+      "cells": [
+        {
+          "acceptable_decisions": [
+            "A"
+          ],
+          "compatible_world_ids": [
+            "even"
+          ],
+          "obstruction_world_ids": [],
+          "outcomes": [
+            "0",
+            "0"
+          ]
+        },
+        {
+          "acceptable_decisions": [
+            "B"
+          ],
+          "compatible_world_ids": [
+            "odd"
+          ],
+          "obstruction_world_ids": [],
+          "outcomes": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "acceptable_decisions": [
+            "B"
+          ],
+          "compatible_world_ids": [
+            "odd"
+          ],
+          "obstruction_world_ids": [],
+          "outcomes": [
+            "1",
+            "0"
+          ]
+        },
+        {
+          "acceptable_decisions": [
+            "A"
+          ],
+          "compatible_world_ids": [
+            "even"
+          ],
+          "obstruction_world_ids": [],
+          "outcomes": [
+            "1",
+            "1"
+          ]
+        }
+      ],
+      "initial_acceptable_decisions": [],
+      "state": "resolvable_with_declared_observations"
+    },
+    {
+      "case_id": "correlated_repeat",
+      "cells": [
+        {
+          "acceptable_decisions": [
+            "B"
+          ],
+          "compatible_world_ids": [
+            "b"
+          ],
+          "obstruction_world_ids": [],
+          "outcomes": [
+            "no",
+            "no"
+          ]
+        },
+        {
+          "acceptable_decisions": [],
+          "compatible_world_ids": [
+            "a",
+            "b"
+          ],
+          "obstruction_world_ids": [
+            "a",
+            "b"
+          ],
+          "outcomes": [
+            "unresolved",
+            "unresolved"
+          ]
+        },
+        {
+          "acceptable_decisions": [
+            "A"
+          ],
+          "compatible_world_ids": [
+            "a"
+          ],
+          "obstruction_world_ids": [],
+          "outcomes": [
+            "yes",
+            "yes"
+          ]
+        }
+      ],
+      "initial_acceptable_decisions": [],
+      "state": "not_guaranteed_resolvable"
+    },
+    {
+      "case_id": "harmless_ambiguity",
+      "cells": [
+        {
+          "acceptable_decisions": [
+            "A"
+          ],
+          "compatible_world_ids": [
+            "w1",
+            "w2"
+          ],
+          "obstruction_world_ids": [],
+          "outcomes": [
+            "same"
+          ]
+        }
+      ],
+      "initial_acceptable_decisions": [
+        "A"
+      ],
+      "state": "decision_already_justified"
+    },
+    {
+      "case_id": "overlapping_decisions",
+      "cells": [
+        {
+          "acceptable_decisions": [],
+          "compatible_world_ids": [
+            "w1",
+            "w2",
+            "w3"
+          ],
+          "obstruction_world_ids": [
+            "w1",
+            "w2",
+            "w3"
+          ],
+          "outcomes": [
+            "same"
+          ]
+        }
+      ],
+      "initial_acceptable_decisions": [],
+      "state": "not_guaranteed_resolvable"
+    },
+    {
+      "case_id": "sometimes_resolves",
+      "cells": [
+        {
+          "acceptable_decisions": [
+            "A"
+          ],
+          "compatible_world_ids": [
+            "w1"
+          ],
+          "obstruction_world_ids": [],
+          "outcomes": [
+            "a"
+          ]
+        },
+        {
+          "acceptable_decisions": [
+            "B"
+          ],
+          "compatible_world_ids": [
+            "w2"
+          ],
+          "obstruction_world_ids": [],
+          "outcomes": [
+            "b"
+          ]
+        },
+        {
+          "acceptable_decisions": [],
+          "compatible_world_ids": [
+            "w1",
+            "w2"
+          ],
+          "obstruction_world_ids": [
+            "w1",
+            "w2"
+          ],
+          "outcomes": [
+            "unresolved"
+          ]
+        }
+      ],
+      "initial_acceptable_decisions": [],
+      "state": "not_guaranteed_resolvable"
+    },
+    {
+      "case_id": "no_available_queries",
+      "cells": [
+        {
+          "acceptable_decisions": [],
+          "compatible_world_ids": [
+            "w1",
+            "w2"
+          ],
+          "obstruction_world_ids": [
+            "w1",
+            "w2"
+          ],
+          "outcomes": []
+        }
+      ],
+      "initial_acceptable_decisions": [],
+      "state": "not_guaranteed_resolvable"
+    }
+  ],
+  "input_sha256": "5fbcc7d37c24c728428557267db7fdc89ff32a9e4876883548ee2e2cc3e72cea",
+  "lifecycle_status": "exploratory",
+  "physical_channel_qualified": false,
+  "version": "0.1.0"
+}

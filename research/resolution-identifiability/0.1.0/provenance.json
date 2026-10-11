@@ -1,0 +1,181 @@
+{
+  "artifact_id": "reiyah.resolution-identifiability.provenance",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "base_commit": "afa9631d0bfd0c7ddc3a0a01a7bc3582ef2c0a63",
+  "private_owner": "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf",
+  "authorship": "Authored research scripts, controls and argument; no third-party source copied. Machine-assisted research and execution, not independent scientific review.",
+  "protocol_and_cases_frozen": {
+    "protocol.json": "8e3959940810370e72264f870f1ddf8bcf5ff5e77a7bc791ee9833d02d7c92f4",
+    "cases.json": "5fbcc7d37c24c728428557267db7fdc89ff32a9e4876883548ee2e2cc3e72cea"
+  },
+  "final_code_binding": {
+    "analyze.py": "ddfe0baf67227e8e14757b27bfb93206312871d6926f29181cca12d7e4f9efa7",
+    "challenge.py": "fdc459ab1c3172de5faf19b73383704f1ba412cc797c9c0f41f91e1d8a2ea5f6",
+    "verify.py": "4e0a65d316f8f3f7c4c1bca130d7b3d8f4e435c7b78dda33fd99081a02108c04"
+  },
+  "files": {
+    "README.md": "69d89a11df8c06e20affc0f4866ec351c0e85dd6d416c347ea527b4806855cd3",
+    "analyze.py": "ddfe0baf67227e8e14757b27bfb93206312871d6926f29181cca12d7e4f9efa7",
+    "cases.json": "5fbcc7d37c24c728428557267db7fdc89ff32a9e4876883548ee2e2cc3e72cea",
+    "challenge.json": "201e6f831d68cf51aa8371c5ff4b5105d33ee64718b4a940f54188d8735e3f92",
+    "challenge.py": "fdc459ab1c3172de5faf19b73383704f1ba412cc797c9c0f41f91e1d8a2ea5f6",
+    "environment.json": "7b3eb8f941ef2a736cd513e0759d5413ee3bca60999ebea0b71690183b27f89e",
+    "protocol.json": "8e3959940810370e72264f870f1ddf8bcf5ff5e77a7bc791ee9833d02d7c92f4",
+    "result.json": "60681d4b97e673b1caa7e5d8518f6aee397af3b6129f896da49893ef4688349b",
+    "sources.json": "a173bfbb5305103d7ee342d7e510d8b295a84788a3e3436965708966c5732123",
+    "verification.json": "ef067bce35d4d71809d74c956ee473839c2e73f544704f327af248c6eb44fed3",
+    "verify.py": "4e0a65d316f8f3f7c4c1bca130d7b3d8f4e435c7b78dda33fd99081a02108c04"
+  },
+  "execution": [
+    {
+      "label": "produce-1",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-p",
+        "(version 1) (allow default) (deny network*)",
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/analyze.py",
+        "--cases",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/cases.json",
+        "--output",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/result-1.json"
+      ],
+      "started_local_UTC": "2026-10-11T10:07:24.535675+00:00",
+      "wall_seconds": 0.05073762498795986,
+      "exit_code": 0
+    },
+    {
+      "label": "verify",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-p",
+        "(version 1) (allow default) (deny network*)",
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/verify.py",
+        "--cases",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/cases.json",
+        "--result",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/result-1.json",
+        "--output",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/verification.json"
+      ],
+      "started_local_UTC": "2026-10-11T10:07:24.586858+00:00",
+      "wall_seconds": 0.0487966249929741,
+      "exit_code": 0
+    },
+    {
+      "label": "challenge",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-p",
+        "(version 1) (allow default) (deny network*)",
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/challenge.py",
+        "--cases",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/cases.json",
+        "--result",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/result-1.json",
+        "--output",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/challenge.json"
+      ],
+      "started_local_UTC": "2026-10-11T10:07:24.635902+00:00",
+      "wall_seconds": 2.0986358749796636,
+      "exit_code": 0
+    },
+    {
+      "label": "produce-2",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-p",
+        "(version 1) (allow default) (deny network*)",
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/analyze.py",
+        "--cases",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/cases.json",
+        "--output",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/result-2.json"
+      ],
+      "started_local_UTC": "2026-10-11T10:07:26.734855+00:00",
+      "wall_seconds": 0.05068683298304677,
+      "exit_code": 0
+    },
+    {
+      "label": "final-produce",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-p",
+        "(version 1) (allow default) (deny network*)",
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/analyze.py",
+        "--cases",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/cases.json",
+        "--output",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/final-result.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.05550725001376122
+    },
+    {
+      "label": "final-verify",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-p",
+        "(version 1) (allow default) (deny network*)",
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/verify.py",
+        "--cases",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/cases.json",
+        "--result",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/final-result.json",
+        "--output",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/final-verification.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.04971399999340065
+    },
+    {
+      "label": "final-challenge",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-p",
+        "(version 1) (allow default) (deny network*)",
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/challenge.py",
+        "--cases",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/candidate/research/resolution-identifiability/0.1.0/cases.json",
+        "--result",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/final-result.json",
+        "--output",
+        "/Users/danielwahnich/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/final-challenge.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 2.8267112500034273
+    }
+  ],
+  "initial_checker_failure": "Accepted a vacuous zero-world forged result. Reproduced after initial controls, retained in checks/INITIAL_CHECKER_GAP.json with pre-repair scripts/results. Independent input contract and nine checker-side controls added; entire suite rerun. Initial successful check counts do not validate that earlier checker.",
+  "producer_outputs_identical": 3,
+  "protocol_deviation": "No scientific question or primary case changed. Rejection coverage extended during manual checker review.",
+  "source_accounting": {
+    "complete_retained_bytes": 462045,
+    "incomplete_retained_prefix_bytes": 1572865,
+    "unretained_first_response_read_upper_bound": 1572865,
+    "total_network_read_upper_bound": 3607775,
+    "previous_immediate_primary_custody_bytes": 176771182,
+    "new_immediate_complete_primary_custody_bytes": 177233227,
+    "all_history_total": false
+  },
+  "limitations": [
+    "Authored finite models; no actual observation channel qualified",
+    "No scientific novelty, new empirically established comparison, measured work saving or product value",
+    "No heavy experiment, paid service, new message, sibling integration or Gate A acceptance",
+    "Historical active effort remains unknown and is not reset by this owner"
+  ]
+}

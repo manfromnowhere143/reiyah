@@ -1,0 +1,91 @@
+{
+  "artifact_id": "reiyah.resolution-identifiability.sources",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "source_payloads_published": false,
+  "records": [
+    {
+      "name": "uod-comments",
+      "url": "https://api.github.com/repos/JonathanKlees/Uncertainty-aware-Object-Detection/issues/1/comments?per_page=100",
+      "observed_local_UTC": "2026-10-11T10:02:28.756877+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 10:03:41 GMT",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pagination": null,
+      "access": "Public GitHub API, unauthenticated",
+      "terms": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+      "redistribution": "Private raw response only"
+    },
+    {
+      "name": "rf-detr-comments",
+      "url": "https://api.github.com/repos/roboflow/rf-detr/issues/1516/comments?per_page=100",
+      "observed_local_UTC": "2026-10-11T10:02:28.716672+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 10:03:41 GMT",
+      "bytes": 11445,
+      "sha256": "3c8d608bc4d4c3a1704e204003a32de7e255bfe91f457165a4823f6e0f15b5d2",
+      "pagination": null,
+      "access": "Public GitHub API, unauthenticated",
+      "terms": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+      "redistribution": "Private raw response only"
+    },
+    {
+      "name": "automotive-comments",
+      "url": "https://api.github.com/repos/MalshaMahawatta/ICTSS2026-Systematic-Qualification-of-Vision-Language-Models-for-Automotive-Perception-Systems/issues/1/comments?per_page=100",
+      "observed_local_UTC": "2026-10-11T10:02:28.724373+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 10:03:41 GMT",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pagination": null,
+      "access": "Public GitHub API, unauthenticated",
+      "terms": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+      "redistribution": "Private raw response only"
+    },
+    {
+      "name": "golovin2010",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2010/file/1e6e0a04d20f50967c64dac2d639a577-Paper.pdf",
+      "title": "Near-Optimal Bayesian Active Learning with Noisy Observations",
+      "version_and_date": "NeurIPS 2010 proceedings paper, arXiv v1 2010-10-15",
+      "bytes": 432992,
+      "sha256": "83deda5dec1255ccc2a5f852edac8dd9fcb86baa59628e34a8f8f1821e302721",
+      "observed_local_UTC": "2026-10-11T10:04:23.468738+00:00",
+      "access": "Public publisher PDF, no authentication",
+      "terms_page": "https://proceedings.neurips.cc/",
+      "redistribution": "No payload redistribution authorized; private PDF/text only",
+      "text_derivative_bytes": 46000,
+      "text_derivative_sha256": "067cbdaf1ceaa3ba64d2088a6dd5945ad0d793f7b90e7ed24366aee10e66f15c"
+    },
+    {
+      "name": "javdani2014-response",
+      "url": "https://proceedings.mlr.press/v33/javdani14.pdf",
+      "final_url": "https://proceedings.mlr.press/v33/javdani14.pdf",
+      "status": 200,
+      "bytes": 1572865,
+      "sha256": "07a55fb0cff509a428cd159f7562085586e1c7095f9849d05fe1022658304e08",
+      "observed_local_UTC": "2026-10-11T10:04:24.257235+00:00",
+      "access": "Public publisher URL",
+      "terms_page": "https://proceedings.mlr.press/v33/javdani14.html",
+      "redistribution": "Private payload only",
+      "qualification": "Truncated PDF prefix at retrieval cap; evidence ineligible for full paper content"
+    },
+    {
+      "name": "javdani2014-publisher-page",
+      "url": "https://proceedings.mlr.press/v33/javdani14.html",
+      "title": "Near Optimal Bayesian Active Learning for Decision Making",
+      "version_and_date": "PMLR 33:430-438, AISTATS 2014, 22-25 April 2014",
+      "bytes": 17604,
+      "sha256": "e87686bd0d0e4c6bc07c0af70a393317cba003bee5fb10e0a96a13e176012b82",
+      "observed_local_UTC": "2026-10-11T10:05:10.833780+00:00",
+      "access": "Public publisher HTML",
+      "terms_page": "https://proceedings.mlr.press/v33/javdani14.html",
+      "redistribution": "Private HTML; authored summary and citation only",
+      "qualification": "Publisher abstract and bibliographic record; full PDF not retained complete or relied on"
+    }
+  ],
+  "retrieval_limit_failure": "Initial parallel fetch failed its PDF/size guard before preserving response; bytes unretained and exact size unknown, at most 1,572,865 bytes read. Successful Golovin payload preserved and now included.",
+  "retained_source_bytes": 2034910,
+  "unretained_first_response_read_bytes_upper_bound": 1572865,
+  "new_network_read_bytes_upper_bound": 3607775,
+  "complete_retained_response_bytes": 462045,
+  "retained_incomplete_PDF_prefix_bytes": 1572865,
+  "scientific_use": "Golovin complete publisher PDF for joint outcome formulation; Javdani publisher abstract/bibliography for overlapping decision regions. The incomplete PDF is evidence ineligible. No source code copied."
+}

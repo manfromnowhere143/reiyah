@@ -1,0 +1,177 @@
+{
+  "artifact_id": "reiyah.resolution-identifiability.challenge",
+  "correlation_control": {
+    "interpretation": "The larger product support is conservative, but cannot prove actual impossibility for the smaller joint model.",
+    "joint_support": "resolvable_with_declared_observations",
+    "product_of_marginals": "not_guaranteed_resolvable"
+  },
+  "exhaustive_families": [
+    {
+      "family": "three_worlds_two_binary_queries_deterministic",
+      "models_checked": 21952,
+      "states": {
+        "decision_already_justified": 10816,
+        "not_guaranteed_resolvable": 3720,
+        "resolvable_with_declared_observations": 7416
+      },
+      "transcript_sha256": "daade39542b36cab926b23efcf7de8a4a4912b7e539b82b4be6d554c004cf6d4"
+    },
+    {
+      "family": "three_worlds_one_binary_query_set_valued",
+      "models_checked": 9261,
+      "states": {
+        "decision_already_justified": 4563,
+        "not_guaranteed_resolvable": 3942,
+        "resolvable_with_declared_observations": 756
+      },
+      "transcript_sha256": "098685d4f2b691d31a16c8f7bd95f2e66f4eb835946d4456af9787d1c61b9cf9"
+    }
+  ],
+  "rejection_count": 28,
+  "rejections": [
+    {
+      "case": "no_worlds",
+      "reason": "WORLD_COUNT",
+      "state": "rejected"
+    },
+    {
+      "case": "empty_support",
+      "reason": "SUPPORT_COUNT",
+      "state": "rejected"
+    },
+    {
+      "case": "incomplete_vector",
+      "reason": "VECTOR_LENGTH",
+      "state": "rejected"
+    },
+    {
+      "case": "unknown_decision",
+      "reason": "DECISION_ID",
+      "state": "rejected"
+    },
+    {
+      "case": "unknown_property",
+      "reason": "PROPERTIES",
+      "state": "rejected"
+    },
+    {
+      "case": "duplicate_world",
+      "reason": "DUPLICATE_SYMBOL",
+      "state": "rejected"
+    },
+    {
+      "case": "unsupported_model",
+      "reason": "OBSERVATION_MODEL_UNSUPPORTED",
+      "state": "rejected"
+    },
+    {
+      "case": "null_coercion",
+      "reason": "OUTCOME_TYPE",
+      "state": "rejected"
+    },
+    {
+      "case": "empty_acceptable_decisions",
+      "reason": "MEMBERSHIP_SIZE",
+      "state": "rejected"
+    },
+    {
+      "case": "duplicate_property",
+      "reason": "DUPLICATE_PROPERTY",
+      "state": "rejected"
+    },
+    {
+      "case": "forged_state",
+      "reason": "TREE_STATE",
+      "state": "rejected"
+    },
+    {
+      "case": "invented_witness",
+      "reason": "WITNESS_MEMBERSHIP",
+      "state": "rejected"
+    },
+    {
+      "case": "deleted_compatible_world",
+      "reason": "WORLD_MEMBERSHIP",
+      "state": "rejected"
+    },
+    {
+      "case": "invented_safe_decision",
+      "reason": "CELL_DECISIONS",
+      "state": "rejected"
+    },
+    {
+      "case": "missing_cell",
+      "reason": "CELL_MEMBERSHIP",
+      "state": "rejected"
+    },
+    {
+      "case": "changed_input_digest",
+      "reason": "INPUT_DIGEST",
+      "state": "rejected"
+    },
+    {
+      "case": "fabricated_physical_qualification",
+      "reason": "PHYSICAL_QUALIFICATION",
+      "state": "rejected"
+    },
+    {
+      "case": "pair_in_place_of_triple_obstruction",
+      "reason": "WITNESS_INTERSECTION",
+      "state": "rejected"
+    },
+    {
+      "case": "redundant_obstruction",
+      "reason": "WITNESS_REDUNDANT",
+      "state": "rejected"
+    },
+    {
+      "case": "checker_no_worlds",
+      "reason": "INPUT_WORLDS",
+      "state": "rejected"
+    },
+    {
+      "case": "checker_empty_support",
+      "reason": "INPUT_SUPPORT",
+      "state": "rejected"
+    },
+    {
+      "case": "checker_incomplete_vector",
+      "reason": "INPUT_VECTOR",
+      "state": "rejected"
+    },
+    {
+      "case": "checker_unknown_decision",
+      "reason": "INPUT_DECISION",
+      "state": "rejected"
+    },
+    {
+      "case": "checker_duplicate_world",
+      "reason": "INPUT_DUPLICATE",
+      "state": "rejected"
+    },
+    {
+      "case": "checker_wrong_model",
+      "reason": "INPUT_OBSERVATION_MODEL",
+      "state": "rejected"
+    },
+    {
+      "case": "checker_null_response",
+      "reason": "INPUT_OUTCOME",
+      "state": "rejected"
+    },
+    {
+      "case": "checker_duplicate_property",
+      "reason": "DUPLICATE_PROPERTY",
+      "state": "rejected"
+    },
+    {
+      "case": "checker_raw_object_mismatch",
+      "reason": "PARSED_INPUT_MISMATCH",
+      "state": "rejected"
+    }
+  ],
+  "scope": "Dependent authored finite models, not empirical trials, error rates or measured savings",
+  "status": "pass",
+  "total_models_checked": 31213,
+  "version": "0.1.0"
+}

@@ -1,0 +1,319 @@
+{
+  "artifact_id": "reiyah.resolution-identifiability.cases",
+  "version": "0.1.0",
+  "observation_model": "declared_complete_finite_read_only_joint_outcomes",
+  "cases": [
+    {
+      "id": "hidden_policy",
+      "decision_ids": [
+        "A",
+        "B"
+      ],
+      "query_ids": [
+        "image_review"
+      ],
+      "worlds": [
+        {
+          "id": "original",
+          "acceptable_decisions": [
+            "A"
+          ],
+          "outcome_vectors": [
+            [
+              "same_image"
+            ]
+          ]
+        },
+        {
+          "id": "revised",
+          "acceptable_decisions": [
+            "B"
+          ],
+          "outcome_vectors": [
+            [
+              "same_image"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "policy_record_available",
+      "decision_ids": [
+        "A",
+        "B"
+      ],
+      "query_ids": [
+        "image_review",
+        "policy_record"
+      ],
+      "worlds": [
+        {
+          "id": "original",
+          "acceptable_decisions": [
+            "A"
+          ],
+          "outcome_vectors": [
+            [
+              "same_image",
+              "original"
+            ]
+          ]
+        },
+        {
+          "id": "revised",
+          "acceptable_decisions": [
+            "B"
+          ],
+          "outcome_vectors": [
+            [
+              "same_image",
+              "revised"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "joint_information",
+      "decision_ids": [
+        "A",
+        "B"
+      ],
+      "query_ids": [
+        "q1",
+        "q2"
+      ],
+      "worlds": [
+        {
+          "id": "even",
+          "acceptable_decisions": [
+            "A"
+          ],
+          "outcome_vectors": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "1",
+              "1"
+            ]
+          ]
+        },
+        {
+          "id": "odd",
+          "acceptable_decisions": [
+            "B"
+          ],
+          "outcome_vectors": [
+            [
+              "0",
+              "1"
+            ],
+            [
+              "1",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "correlated_repeat",
+      "decision_ids": [
+        "A",
+        "B"
+      ],
+      "query_ids": [
+        "review_1",
+        "review_2"
+      ],
+      "worlds": [
+        {
+          "id": "a",
+          "acceptable_decisions": [
+            "A"
+          ],
+          "outcome_vectors": [
+            [
+              "yes",
+              "yes"
+            ],
+            [
+              "unresolved",
+              "unresolved"
+            ]
+          ]
+        },
+        {
+          "id": "b",
+          "acceptable_decisions": [
+            "B"
+          ],
+          "outcome_vectors": [
+            [
+              "no",
+              "no"
+            ],
+            [
+              "unresolved",
+              "unresolved"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "harmless_ambiguity",
+      "decision_ids": [
+        "A",
+        "B"
+      ],
+      "query_ids": [
+        "review"
+      ],
+      "worlds": [
+        {
+          "id": "w1",
+          "acceptable_decisions": [
+            "A"
+          ],
+          "outcome_vectors": [
+            [
+              "same"
+            ]
+          ]
+        },
+        {
+          "id": "w2",
+          "acceptable_decisions": [
+            "A"
+          ],
+          "outcome_vectors": [
+            [
+              "same"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overlapping_decisions",
+      "decision_ids": [
+        "A",
+        "B",
+        "C"
+      ],
+      "query_ids": [
+        "review"
+      ],
+      "worlds": [
+        {
+          "id": "w1",
+          "acceptable_decisions": [
+            "A",
+            "B"
+          ],
+          "outcome_vectors": [
+            [
+              "same"
+            ]
+          ]
+        },
+        {
+          "id": "w2",
+          "acceptable_decisions": [
+            "B",
+            "C"
+          ],
+          "outcome_vectors": [
+            [
+              "same"
+            ]
+          ]
+        },
+        {
+          "id": "w3",
+          "acceptable_decisions": [
+            "A",
+            "C"
+          ],
+          "outcome_vectors": [
+            [
+              "same"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sometimes_resolves",
+      "decision_ids": [
+        "A",
+        "B"
+      ],
+      "query_ids": [
+        "review"
+      ],
+      "worlds": [
+        {
+          "id": "w1",
+          "acceptable_decisions": [
+            "A"
+          ],
+          "outcome_vectors": [
+            [
+              "a"
+            ],
+            [
+              "unresolved"
+            ]
+          ]
+        },
+        {
+          "id": "w2",
+          "acceptable_decisions": [
+            "B"
+          ],
+          "outcome_vectors": [
+            [
+              "b"
+            ],
+            [
+              "unresolved"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "no_available_queries",
+      "decision_ids": [
+        "A",
+        "B"
+      ],
+      "query_ids": [],
+      "worlds": [
+        {
+          "id": "w1",
+          "acceptable_decisions": [
+            "A"
+          ],
+          "outcome_vectors": [
+            []
+          ]
+        },
+        {
+          "id": "w2",
+          "acceptable_decisions": [
+            "B"
+          ],
+          "outcome_vectors": [
+            []
+          ]
+        }
+      ]
+    }
+  ]
+}

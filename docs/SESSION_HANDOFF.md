@@ -1,3 +1,77 @@
+# Current entry: qualify resolvability before choosing queries, 11 October 2026
+
+Continuation version: 0.1.79. Status: exploratory authored mathematical control.
+Read [NEXT_SESSION.md](NEXT_SESSION.md), the
+[study](../research/resolution-identifiability/0.1.0/README.md), frozen protocol,
+cases, result, verification, challenge and provenance.
+
+Daniel asked to continue and examine deeper fundamental questions. The selected
+bounded question concerns whether declared observations can guarantee an
+acceptable decision before optimizing their selection. Earlier studies use
+hypothetical disclosure and leave real resolution actions unqualified. This
+standalone research control adds no production integration or external planner
+repair, and does not reopen the completed upstream evaluator audit.
+
+For every complete joint response vector, intersect acceptable decisions across
+all compatible worlds. Under a finite, complete, static read-only query model,
+a guaranteed decision policy exists exactly when every intersection is nonempty.
+The producer preserves all terminal memberships and returns irredundant conflict
+witnesses. The separate checker enumerates adaptive trees and verifies membership,
+decisions and witnesses with independent input validation. Empty worlds/supports
+are invalid, never vacuous justification. Resource exhaustion is an error, not
+an impossibility conclusion. Physical support completeness remains a premise.
+
+Eight frozen authored cases and 16 terminal cells cover hidden policy, a supplied
+policy record, correlated responses, unresolved repeated review, harmless
+ambiguity, overlapping decisions, sometimes-decisive answers and no queries.
+Correlation can make two individually ambiguous observations jointly decisive.
+Three pairwise-overlapping acceptable-decision sets can still have an empty total
+intersection. The full challenge checks 31,213 finite models against an exhaustive
+adaptive-tree oracle; all agree. Twenty-eight malformed/forged controls reject.
+These dependent models are not empirical samples, failure rates or work savings.
+Three producer outputs are identical, including the final replay.
+
+Manual trust-boundary review found an initial checker gap: a forged empty-world
+input could pass because the checker trusted the supplied case shape. The producer
+already rejected it. The failure, initial scripts and results remain private;
+independent checker input validation and nine additional controls repaired it.
+The full challenge passed again. The frozen question and primary cases did not
+change. No upstream code or scientific result was changed.
+
+The mathematical foundation is established decision-region reasoning, with a
+retained complete Golovin/Krause/Ray NeurIPS 2010 paper and Javdani et al. AISTATS
+2014 publisher abstract/bibliography. No novelty or HEC/EC2 cost guarantee is
+claimed. The latter PDF exceeded its retrieval cap; the first bounded response
+was not preserved, and a second 1,572,865-byte prefix is retained as incomplete,
+evidence ineligible. Only the complete publisher page supports that citation.
+No third-party payload is published. Source failures and byte limits are retained.
+
+One read of each existing thread found no new reply after Daniel: evaluator zero
+comments, RF-DETR three ending with his request, automotive zero. No new message.
+Next: qualify an actual channel, its joint possible responses, complete paired
+outputs and decision obligations before an empirical calculation. Product value
+still requires complete measured work and an equally equipped conventional arm.
+This preflight control is complete; do not automatically extend synthetic tests,
+tune either exposed pair or reopen any of the 1,433 reserved images.
+
+Private owner: `~/.codex/reports/reiyah/resolution-identifiability-2026-10-11-0yfi_4jf/`.
+Base: afa9631d0bfd0c7ddc3a0a01a7bc3582ef2c0a63. New complete retained source responses
+sum to 462,045 bytes, bringing the immediately preceding complete primary custody
+account to 177,233,227 bytes. The incomplete retained prefix is separate; the lost
+first read is at most 1,572,865 bytes. New network reads total at most 3,607,775
+bytes, under the 4-MiB cap. Derivatives, publication readback and local owner sizes
+are separate in the private closeout. Historical active effort is unknown and
+not reset. Existing CPU only; 45-minute owner and 300-second calculation limits.
+
+Closeout checks cover the documented research consistency command, advertised
+small example, current links, all continuation bindings, script/result/protocol
+identities, source scope and exact publication readback. Historical transcripts
+are bound, not rerun; optional attacks and Gate A release validation are not run.
+README explanations and all seven diagrams remain, with one dated bullet added.
+Gate A is operator-unaccepted; broad product expansion stays stopped pending value.
+No images, training, inference, new message, paid service, monitor or delegation.
+Earlier entries follow unchanged.
+
 # Current entry: upstream evaluator report delivered, 11 October 2026
 
 Continuation version: 0.1.78. Status: exploratory research contact completed.

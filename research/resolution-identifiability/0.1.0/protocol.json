@@ -1,0 +1,51 @@
+{
+  "artifact_id": "reiyah.resolution-identifiability.protocol",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "frozen_at_local_UTC": "2026-10-11T10:05:10.834287+00:00",
+  "question": "Can any policy using the declared finite read-only observation channels guarantee an acceptable decision in every admitted world and joint outcome realization?",
+  "rationale": "Before optimizing hypothetical review queries, test decision resolvability under explicit correlated, ambiguous response support. Existing tools bind supplied observations; earlier imported planner review found witness-field holes. This study is authored standalone research, not a repair or integration of that external planner.",
+  "prior_exposure": "Constructed controls and mathematical outcomes anticipated before execution; historical evidence and source literature already read. Not blinded or preregistered. No new physical data.",
+  "theorem": "For every allowed complete outcome vector, intersect acceptable decision sets over all compatible worlds. A guaranteed policy exists iff every intersection is nonempty, provided all finitely many read-only queries can be obtained and the joint supports are complete.",
+  "assumptions": [
+    "Finite nonempty admitted worlds and decision sets",
+    "Every world has nonempty acceptable decisions and at least one full joint outcome vector",
+    "Queries available once, responses consistent with one static joint realization; order-independent read-only measurements",
+    "Allowed full joint vectors are supplied, not invented by multiplying marginals",
+    "Every modeled outcome including unresolved is retained",
+    "No universal abstention action smuggled into acceptable decisions"
+  ],
+  "implementation": "Group complete outcome vectors; retain exact compatible membership, common acceptable decisions and an irredundant empty-intersection witness for each obstruction. No selector, probability, physical-channel qualification or minimum human-cost result.",
+  "verification": "Separate implementation exhaustively searches adaptive observation trees on eight authored controls and compares all terminal cells/witnesses. Exhaustive families: all three-world/two-binary-query deterministic tables with three nonempty decision subsets (64*343); and all three-world/one-binary-query nonempty response-support sets with same decisions (27*343). Total 31213 models.",
+  "expected_named_states": {
+    "hidden_policy": "not_guaranteed_resolvable",
+    "policy_record_available": "resolvable_with_declared_observations",
+    "joint_information": "resolvable_with_declared_observations",
+    "correlated_repeat": "not_guaranteed_resolvable",
+    "harmless_ambiguity": "decision_already_justified",
+    "overlapping_decisions": "not_guaranteed_resolvable",
+    "sometimes_resolves": "not_guaranteed_resolvable",
+    "no_available_queries": "not_guaranteed_resolvable"
+  },
+  "rejection_requirements": [
+    "No worlds",
+    "Empty world support",
+    "Incomplete outcome vector",
+    "Unknown decision",
+    "Unknown property",
+    "Duplicate world ID",
+    "Unsupported observation model",
+    "Forged status",
+    "Invented witness world",
+    "Deleted compatible world",
+    "Invented allowed decision",
+    "Missing terminal cell",
+    "Changed input digest",
+    "Non-irredundant obstruction"
+  ],
+  "stop": "Complete this bounded preflight control and stop local expansion. Any real use requires a justified observation-channel model and actual comparison records. Do not retune closed pairs or extend upstream evaluator audit.",
+  "cost_limit_CPU_seconds": 300,
+  "physical_channel_qualified": false,
+  "product_value_case_admitted": false,
+  "novelty_claim": false
+}

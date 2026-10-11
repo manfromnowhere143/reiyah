@@ -1,0 +1,74 @@
+{
+  "artifact_id": "reiyah.resolution-identifiability.verification",
+  "cases": [
+    {
+      "case_id": "hidden_policy",
+      "cells_verified": 1,
+      "minimum_worst_case_action_count": null,
+      "obstruction_sizes": [
+        2
+      ],
+      "state": "not_guaranteed_resolvable"
+    },
+    {
+      "case_id": "policy_record_available",
+      "cells_verified": 2,
+      "minimum_worst_case_action_count": 1,
+      "obstruction_sizes": [],
+      "state": "resolvable_with_declared_observations"
+    },
+    {
+      "case_id": "joint_information",
+      "cells_verified": 4,
+      "minimum_worst_case_action_count": 2,
+      "obstruction_sizes": [],
+      "state": "resolvable_with_declared_observations"
+    },
+    {
+      "case_id": "correlated_repeat",
+      "cells_verified": 3,
+      "minimum_worst_case_action_count": null,
+      "obstruction_sizes": [
+        2
+      ],
+      "state": "not_guaranteed_resolvable"
+    },
+    {
+      "case_id": "harmless_ambiguity",
+      "cells_verified": 1,
+      "minimum_worst_case_action_count": 0,
+      "obstruction_sizes": [],
+      "state": "decision_already_justified"
+    },
+    {
+      "case_id": "overlapping_decisions",
+      "cells_verified": 1,
+      "minimum_worst_case_action_count": null,
+      "obstruction_sizes": [
+        3
+      ],
+      "state": "not_guaranteed_resolvable"
+    },
+    {
+      "case_id": "sometimes_resolves",
+      "cells_verified": 3,
+      "minimum_worst_case_action_count": null,
+      "obstruction_sizes": [
+        2
+      ],
+      "state": "not_guaranteed_resolvable"
+    },
+    {
+      "case_id": "no_available_queries",
+      "cells_verified": 1,
+      "minimum_worst_case_action_count": null,
+      "obstruction_sizes": [
+        2
+      ],
+      "state": "not_guaranteed_resolvable"
+    }
+  ],
+  "scope": "Finite authored models; independent code paths, not scientific review",
+  "status": "pass",
+  "version": "0.1.0"
+}
