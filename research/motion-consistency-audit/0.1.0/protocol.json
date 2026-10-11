@@ -1,0 +1,83 @@
+{
+  "artifact_id": "reiyah.motion-consistency-audit.protocol",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "frozen_at": "2026-10-11T18:10:14.915680+00:00",
+  "question": "In each of two fixed saved EgoDyn runs, how many fully parsed clips pass all triggered consistency rules yet disagree with the released oracle on at least one question used by those rules?",
+  "rationale": "Internal agreement is a different property from agreement with a declared reference. Quantify their relationship on fresh released motion records, with full opportunity accounting, before treating consistency as decision evidence. This is a scoped HARBOR research test, not the missing human-cost product-value comparison.",
+  "exposure": "Read source descriptions, native scorer/parser/rules and file identities/sizes. Paper abstract reports trajectory benefit; no selected prediction/roster payload or pair-specific metric inspected yet. Pair chosen because canonical Qwen3-VL-8B filenames form a small documented vision/trajectory pair, not by measured result.",
+  "upstream": {
+    "repository": "TUM-AVS/EgoDyn-Bench",
+    "commit": "a0c9c01a424cbeb5aa5471a6156354f21111436d",
+    "dataset": "fnc1901/EgoDyn-Bench",
+    "dataset_commit": "70032aa156d06c5bff24e0f1a4532973ca09ee0d",
+    "dataset_updated": "2026-07-08T15:16:33Z",
+    "files": [
+      {
+        "local_name": "vision.jsonl",
+        "type": "file",
+        "oid": "a7d4cce3672243308a5278b9e1cd23a3ad25e111",
+        "size": 2549381,
+        "path": "generated/qwen3vl_8b_answers.jsonl"
+      },
+      {
+        "local_name": "trajectory.jsonl",
+        "type": "file",
+        "oid": "d1aaab61b4b7c3be51e3879836960500324ea767",
+        "size": 2553493,
+        "path": "generated/qwen3vl_8b_w_traj_answers.jsonl"
+      },
+      {
+        "local_name": "selected_clips.json",
+        "type": "file",
+        "oid": "5992bccc30fc854f89d52db99bd505e2fa1eb719",
+        "size": 897752,
+        "path": "selected_clips.json"
+      }
+    ],
+    "code_files": {
+      "metrics.py": "a32e72c094a18936c49e99e4909755c83dc67616661dee68eaafa60acdfb00d5",
+      "parsers.py": "f62c929e1251486b21a13e5797fc77a74f4c5710e5855429d68c0cb6816fa9e2",
+      "questions.yaml": "0f0c5e6c75ec365058f0684ff5be1a32281633f896550abbe8d4f11dd918b384"
+    }
+  },
+  "admission": [
+    "Exactly 1000 unique clip IDs, 500 nuScenes/500 CARLA as declared; exactly 14 declared questions for every clip.",
+    "Each selected output has one record per clip-question, no duplicate/unknown/missing keys or malformed lines. Embedded oracle labels and categories must match the independent roster/config; differences block metric conclusions.",
+    "Review raw code before native execution; offline only, no inference imports. Unknown model settings remain unknown, never inferred from current defaults.",
+    "Keep unparsed answers separate from incorrect answers; do not silently drop them from opportunity accounting."
+  ],
+  "primary": {
+    "population": "Every fully parsed clip with at least one triggered rule and no rule violations",
+    "event": "At least one parsed prediction on a rule-involved question differs from the canonical oracle label",
+    "denominator": "All clips meeting that explicitly conditional population, report complete 1000-clip partition alongside it.",
+    "reference": "Released deterministic oracle labels, not independently verified physical truth.",
+    "hypothesis": "Zero such disagreements in each selected file; any observed disagreement refutes this finite-file implication, not the authors metric definition."
+  },
+  "secondary": [
+    "Native balanced accuracy, macro-F1, parsability and WPCR replay for each run; comparison to matching released result records if present.",
+    "Complete correct/incorrect/unparsed counts over all 14000 clip-question opportunities, overall, source and each question; no unparsed-to-wrong conversion.",
+    "Clip partitions: no applicable rule / at least one violation / zero violations; cross with full parsing and reference disagreement on all questions and rule-involved questions.",
+    "Paired correct-to-incorrect, incorrect-to-correct and unparsed transitions on same opportunity IDs.",
+    "Check released oracle answers against the same rules, report rather than assume absence of violations."
+  ],
+  "methods": {
+    "native": "Exact retained parser/metrics in isolated private module layout with existing PyYAML only. No upstream code published.",
+    "checker": "Separate canonical-label parser check and independent rule/count reconstruction, exact integers/fractions and strict paired membership. If free-text parser cannot be independently reproduced, bound claimed agreement to checked parsed labels and disclose limitation.",
+    "conventional": "The native benchmark is the baseline. No Reiyah-exclusive algorithm, speed or work advantage claimed."
+  },
+  "resources": {
+    "payload_cap_bytes": 16777216,
+    "CPU_seconds_per_run": 120,
+    "new_packages": false,
+    "spend": 0,
+    "model_runs": 0
+  },
+  "terms": "Code Apache-2.0. Dataset card declares CC BY-NC-SA 4.0 for nuScenes-derived portion and permissive CARLA portion without exact license in the card. Private research custody only; no payload/images/identifiers published; no commercial deployment permission inferred.",
+  "stop": [
+    "Membership/reference mismatch blocks paired conclusions and remains retained; no switch to another favorable pair.",
+    "No outcome-dependent metric, threshold or subset selection.",
+    "Stop after one paired audit and verification; no 49-model sweep, tuning or automatic source expansion.",
+    "No causal trajectory effect, model-weight identity, raw-sensor validity, driving safety, human belief/recovery or complete work-saving claim."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "artifact_id": "reiyah.motion-consistency-audit.provenance",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "repository_base": "8691d3543208a7325e7b37a2a8521fb9e6e59683",
+  "protocol_sha256": "5310a0d30a763d7cb2ee8de11befe0d993dd4a4773fc56da3051d28ed711d18e",
+  "freeze_time": "2026-10-11T18:10:14.915680+00:00",
+  "source_identity": "Pinned GitHub code and HF data; prior bounded custody search found no matching release references. No closed Reiyah input reopened.",
+  "exposure": "Descriptions, evaluator semantics, filenames/sizes and general paper abstract known before freeze; selected payloads and pair metrics fetched afterward. No blinded or preregistered claim.",
+  "admission": {
+    "at": "2026-10-11T18:10:57.067550+00:00",
+    "expected_opportunities": 14000,
+    "runs": {
+      "vision.jsonl": {
+        "rows": 14000,
+        "unique_pairs": 14000,
+        "unknown": 0,
+        "missing": 0,
+        "duplicate": 0,
+        "reference_or_category_mismatches": 0
+      },
+      "trajectory.jsonl": {
+        "rows": 14000,
+        "unique_pairs": 14000,
+        "unknown": 0,
+        "missing": 0,
+        "duplicate": 0,
+        "reference_or_category_mismatches": 0
+      }
+    },
+    "admitted": true
+  },
+  "investigator_review": "One investigator. Native replay plus separately implemented checks is not independent scientific review.",
+  "new_sources": {
+    "complete_responses": 23,
+    "metadata_bytes": 543472,
+    "selected_payload_bytes": 6000626,
+    "total_retained_bytes": 6544098,
+    "payloads_private": true,
+    "web_discovery_transfer_bytes": "Not measured by web tool; separate from locally captured body counts."
+  },
+  "resources": "Existing CPU and PyYAML 6.0.3, no new dependencies, images, model inference, training, paid resource or external messages. Owner cap45minutes,120seconds/calculation,2MiBmetadata,16MiBpaireddata,30responses,64MiBowner excluding candidate.",
+  "historical_effort": "Unknown, not reset; local process timings are not complete human work.",
+  "deviations": [],
+  "scope": "New finite saved-file motion audit only. No product-value case, causal information effect, reference-truth qualification, safety result or Gate A acceptance.",
+  "future_work": "This pair is exposed. Stop this fixed audit; do not auto-expand models, tune or treat metric disagreement as a proprietary advantage."
+}

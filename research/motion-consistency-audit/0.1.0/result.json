@@ -1,0 +1,693 @@
+{
+  "artifact_id": "reiyah.motion-consistency-audit.result",
+  "inputs_sha256": "094894fd47aed0ba47baf302b4d5e5c8479cf78e5857f77773f61434cf7643fe",
+  "lifecycle_status": "exploratory",
+  "oracle_consistency": {
+    "consistency_coverage": 0.966,
+    "mean_compliance": 1.0,
+    "mean_violations": 0.0,
+    "n_clips": 1000,
+    "n_consistent": 966,
+    "n_evaluable": 966,
+    "n_rules_total": 10,
+    "n_rules_triggered": 10,
+    "per_rule": {
+      "brake_then_turn_implies_braking": {
+        "compliance": 1.0,
+        "n_applicable": 344,
+        "n_violations": 0
+      },
+      "brake_then_turn_implies_turning": {
+        "compliance": 1.0,
+        "n_applicable": 344,
+        "n_violations": 0
+      },
+      "heading_change_implies_turning": {
+        "compliance": 1.0,
+        "n_applicable": 453,
+        "n_violations": 0
+      },
+      "highway_implies_not_low_speed": {
+        "compliance": 1.0,
+        "n_applicable": 183,
+        "n_violations": 0
+      },
+      "lateral_accel_implies_turning": {
+        "compliance": 1.0,
+        "n_applicable": 367,
+        "n_violations": 0
+      },
+      "stop_and_go_not_stopped": {
+        "compliance": 1.0,
+        "n_applicable": 320,
+        "n_violations": 0
+      },
+      "stopped_implies_low_speed": {
+        "compliance": 1.0,
+        "n_applicable": 204,
+        "n_violations": 0
+      },
+      "stopped_not_accelerating": {
+        "compliance": 1.0,
+        "n_applicable": 204,
+        "n_violations": 0
+      },
+      "straight_implies_no_heading_change": {
+        "compliance": 1.0,
+        "n_applicable": 344,
+        "n_violations": 0
+      },
+      "straight_implies_no_high_lateral_accel": {
+        "compliance": 1.0,
+        "n_applicable": 344,
+        "n_violations": 0
+      }
+    },
+    "rate": 1.0,
+    "rule_coverage": 1.0,
+    "wemcr": 1.0
+  },
+  "paired_answer_transitions": [
+    {
+      "opportunities": 6338,
+      "trajectory": "correct",
+      "vision": "correct"
+    },
+    {
+      "opportunities": 631,
+      "trajectory": "incorrect",
+      "vision": "correct"
+    },
+    {
+      "opportunities": 2567,
+      "trajectory": "correct",
+      "vision": "incorrect"
+    },
+    {
+      "opportunities": 4464,
+      "trajectory": "incorrect",
+      "vision": "incorrect"
+    }
+  ],
+  "protocol_sha256": "5310a0d30a763d7cb2ee8de11befe0d993dd4a4773fc56da3051d28ed711d18e",
+  "runs": {
+    "trajectory": {
+      "answers": {
+        "correct": 8905,
+        "incorrect": 5095,
+        "opportunities": 14000,
+        "reference_agreement_fraction_bounds": [
+          "1781/2800",
+          "1781/2800"
+        ],
+        "unparsed": 0
+      },
+      "by_question": {
+        "brake_then_turn": {
+          "correct": 651,
+          "incorrect": 349,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "651/1000",
+            "651/1000"
+          ],
+          "unparsed": 0
+        },
+        "braking_intensity": {
+          "correct": 404,
+          "incorrect": 596,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "101/250",
+            "101/250"
+          ],
+          "unparsed": 0
+        },
+        "contrastive_sequence": {
+          "correct": 386,
+          "incorrect": 614,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "193/500",
+            "193/500"
+          ],
+          "unparsed": 0
+        },
+        "dominant_motion_axis": {
+          "correct": 601,
+          "incorrect": 399,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "601/1000",
+            "601/1000"
+          ],
+          "unparsed": 0
+        },
+        "driving_smoothness": {
+          "correct": 731,
+          "incorrect": 269,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "731/1000",
+            "731/1000"
+          ],
+          "unparsed": 0
+        },
+        "extreme_maneuver": {
+          "correct": 877,
+          "incorrect": 123,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "877/1000",
+            "877/1000"
+          ],
+          "unparsed": 0
+        },
+        "high_lateral_accel": {
+          "correct": 953,
+          "incorrect": 47,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "953/1000",
+            "953/1000"
+          ],
+          "unparsed": 0
+        },
+        "mean_speed_low": {
+          "correct": 993,
+          "incorrect": 7,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "993/1000",
+            "993/1000"
+          ],
+          "unparsed": 0
+        },
+        "significant_heading_change": {
+          "correct": 690,
+          "incorrect": 310,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "69/100",
+            "69/100"
+          ],
+          "unparsed": 0
+        },
+        "speed_peak_half": {
+          "correct": 371,
+          "incorrect": 629,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "371/1000",
+            "371/1000"
+          ],
+          "unparsed": 0
+        },
+        "speed_regime": {
+          "correct": 638,
+          "incorrect": 362,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "319/500",
+            "319/500"
+          ],
+          "unparsed": 0
+        },
+        "speed_trend": {
+          "correct": 358,
+          "incorrect": 642,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "179/500",
+            "179/500"
+          ],
+          "unparsed": 0
+        },
+        "stop_and_go": {
+          "correct": 668,
+          "incorrect": 332,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "167/250",
+            "167/250"
+          ],
+          "unparsed": 0
+        },
+        "yaw_rate_turn_direction": {
+          "correct": 584,
+          "incorrect": 416,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "73/125",
+            "73/125"
+          ],
+          "unparsed": 0
+        }
+      },
+      "by_source": {
+        "carla": {
+          "answers": {
+            "correct": 4515,
+            "incorrect": 2485,
+            "opportunities": 7000,
+            "reference_agreement_fraction_bounds": [
+              "129/200",
+              "129/200"
+            ],
+            "unparsed": 0
+          },
+          "clips": {
+            "clips": 500,
+            "consistency_partition": {
+              "no_applicable_rule": 21,
+              "rule_violation": 80,
+              "zero_rule_violations": 399
+            },
+            "fully_parsed": 500,
+            "fully_parsed_all_reference_agree": 67,
+            "primary_denominator": 399,
+            "primary_disagree_on_any_question": 332,
+            "primary_disagree_on_rule_question": 299
+          }
+        },
+        "nuscenes": {
+          "answers": {
+            "correct": 4390,
+            "incorrect": 2610,
+            "opportunities": 7000,
+            "reference_agreement_fraction_bounds": [
+              "439/700",
+              "439/700"
+            ],
+            "unparsed": 0
+          },
+          "clips": {
+            "clips": 500,
+            "consistency_partition": {
+              "no_applicable_rule": 70,
+              "rule_violation": 14,
+              "zero_rule_violations": 416
+            },
+            "fully_parsed": 500,
+            "fully_parsed_all_reference_agree": 20,
+            "primary_denominator": 416,
+            "primary_disagree_on_any_question": 396,
+            "primary_disagree_on_rule_question": 387
+          }
+        }
+      },
+      "clips": {
+        "clips": 1000,
+        "consistency_partition": {
+          "no_applicable_rule": 91,
+          "rule_violation": 94,
+          "zero_rule_violations": 815
+        },
+        "fully_parsed": 1000,
+        "fully_parsed_all_reference_agree": 87,
+        "primary_denominator": 815,
+        "primary_disagree_on_any_question": 728,
+        "primary_disagree_on_rule_question": 686
+      },
+      "native": {
+        "consistency": {
+          "consistency_coverage": 0.909,
+          "mean_compliance": 0.9382,
+          "mean_violations": 0.2057,
+          "n_clips": 1000,
+          "n_consistent": 815,
+          "n_evaluable": 909,
+          "n_rules_total": 10,
+          "n_rules_triggered": 10,
+          "per_rule": {
+            "brake_then_turn_implies_braking": {
+              "compliance": 0.9091,
+              "n_applicable": 33,
+              "n_violations": 3
+            },
+            "brake_then_turn_implies_turning": {
+              "compliance": 0.8182,
+              "n_applicable": 33,
+              "n_violations": 6
+            },
+            "heading_change_implies_turning": {
+              "compliance": 0.9655,
+              "n_applicable": 145,
+              "n_violations": 5
+            },
+            "highway_implies_not_low_speed": {
+              "compliance": 1.0,
+              "n_applicable": 25,
+              "n_violations": 0
+            },
+            "lateral_accel_implies_turning": {
+              "compliance": 0.7802,
+              "n_applicable": 364,
+              "n_violations": 80
+            },
+            "stop_and_go_not_stopped": {
+              "compliance": 0.8462,
+              "n_applicable": 52,
+              "n_violations": 8
+            },
+            "stopped_implies_low_speed": {
+              "compliance": 1.0,
+              "n_applicable": 139,
+              "n_violations": 0
+            },
+            "stopped_not_accelerating": {
+              "compliance": 1.0,
+              "n_applicable": 139,
+              "n_violations": 0
+            },
+            "straight_implies_no_heading_change": {
+              "compliance": 0.9917,
+              "n_applicable": 605,
+              "n_violations": 5
+            },
+            "straight_implies_no_high_lateral_accel": {
+              "compliance": 0.8678,
+              "n_applicable": 605,
+              "n_violations": 80
+            }
+          },
+          "rate": 0.8966,
+          "rule_coverage": 1.0,
+          "wemcr": 0.8966
+        },
+        "global": {
+          "accuracy": 0.6361,
+          "balanced_acc": 0.5469,
+          "macro_f1": 0.527,
+          "n": 14000
+        },
+        "parsable_coverage": 1.0
+      },
+      "published_replay": {
+        "compared_fields": 234,
+        "differences": [],
+        "scope": "All recomputed native fields; stored extra inference timing fields not reproduced."
+      }
+    },
+    "vision": {
+      "answers": {
+        "correct": 6969,
+        "incorrect": 7031,
+        "opportunities": 14000,
+        "reference_agreement_fraction_bounds": [
+          "6969/14000",
+          "6969/14000"
+        ],
+        "unparsed": 0
+      },
+      "by_question": {
+        "brake_then_turn": {
+          "correct": 657,
+          "incorrect": 343,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "657/1000",
+            "657/1000"
+          ],
+          "unparsed": 0
+        },
+        "braking_intensity": {
+          "correct": 326,
+          "incorrect": 674,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "163/500",
+            "163/500"
+          ],
+          "unparsed": 0
+        },
+        "contrastive_sequence": {
+          "correct": 366,
+          "incorrect": 634,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "183/500",
+            "183/500"
+          ],
+          "unparsed": 0
+        },
+        "dominant_motion_axis": {
+          "correct": 512,
+          "incorrect": 488,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "64/125",
+            "64/125"
+          ],
+          "unparsed": 0
+        },
+        "driving_smoothness": {
+          "correct": 291,
+          "incorrect": 709,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "291/1000",
+            "291/1000"
+          ],
+          "unparsed": 0
+        },
+        "extreme_maneuver": {
+          "correct": 681,
+          "incorrect": 319,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "681/1000",
+            "681/1000"
+          ],
+          "unparsed": 0
+        },
+        "high_lateral_accel": {
+          "correct": 736,
+          "incorrect": 264,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "92/125",
+            "92/125"
+          ],
+          "unparsed": 0
+        },
+        "mean_speed_low": {
+          "correct": 570,
+          "incorrect": 430,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "57/100",
+            "57/100"
+          ],
+          "unparsed": 0
+        },
+        "significant_heading_change": {
+          "correct": 677,
+          "incorrect": 323,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "677/1000",
+            "677/1000"
+          ],
+          "unparsed": 0
+        },
+        "speed_peak_half": {
+          "correct": 345,
+          "incorrect": 655,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "69/200",
+            "69/200"
+          ],
+          "unparsed": 0
+        },
+        "speed_regime": {
+          "correct": 312,
+          "incorrect": 688,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "39/125",
+            "39/125"
+          ],
+          "unparsed": 0
+        },
+        "speed_trend": {
+          "correct": 306,
+          "incorrect": 694,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "153/500",
+            "153/500"
+          ],
+          "unparsed": 0
+        },
+        "stop_and_go": {
+          "correct": 651,
+          "incorrect": 349,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "651/1000",
+            "651/1000"
+          ],
+          "unparsed": 0
+        },
+        "yaw_rate_turn_direction": {
+          "correct": 539,
+          "incorrect": 461,
+          "opportunities": 1000,
+          "reference_agreement_fraction_bounds": [
+            "539/1000",
+            "539/1000"
+          ],
+          "unparsed": 0
+        }
+      },
+      "by_source": {
+        "carla": {
+          "answers": {
+            "correct": 3273,
+            "incorrect": 3727,
+            "opportunities": 7000,
+            "reference_agreement_fraction_bounds": [
+              "3273/7000",
+              "3273/7000"
+            ],
+            "unparsed": 0
+          },
+          "clips": {
+            "clips": 500,
+            "consistency_partition": {
+              "no_applicable_rule": 65,
+              "rule_violation": 13,
+              "zero_rule_violations": 422
+            },
+            "fully_parsed": 500,
+            "fully_parsed_all_reference_agree": 9,
+            "primary_denominator": 422,
+            "primary_disagree_on_any_question": 413,
+            "primary_disagree_on_rule_question": 388
+          }
+        },
+        "nuscenes": {
+          "answers": {
+            "correct": 3696,
+            "incorrect": 3304,
+            "opportunities": 7000,
+            "reference_agreement_fraction_bounds": [
+              "66/125",
+              "66/125"
+            ],
+            "unparsed": 0
+          },
+          "clips": {
+            "clips": 500,
+            "consistency_partition": {
+              "no_applicable_rule": 89,
+              "rule_violation": 5,
+              "zero_rule_violations": 406
+            },
+            "fully_parsed": 500,
+            "fully_parsed_all_reference_agree": 0,
+            "primary_denominator": 406,
+            "primary_disagree_on_any_question": 406,
+            "primary_disagree_on_rule_question": 403
+          }
+        }
+      },
+      "clips": {
+        "clips": 1000,
+        "consistency_partition": {
+          "no_applicable_rule": 154,
+          "rule_violation": 18,
+          "zero_rule_violations": 828
+        },
+        "fully_parsed": 1000,
+        "fully_parsed_all_reference_agree": 9,
+        "primary_denominator": 828,
+        "primary_disagree_on_any_question": 819,
+        "primary_disagree_on_rule_question": 791
+      },
+      "native": {
+        "consistency": {
+          "consistency_coverage": 0.846,
+          "mean_compliance": 0.9906,
+          "mean_violations": 0.026,
+          "n_clips": 1000,
+          "n_consistent": 828,
+          "n_evaluable": 846,
+          "n_rules_total": 10,
+          "n_rules_triggered": 10,
+          "per_rule": {
+            "brake_then_turn_implies_braking": {
+              "compliance": 0.2857,
+              "n_applicable": 7,
+              "n_violations": 5
+            },
+            "brake_then_turn_implies_turning": {
+              "compliance": 0.7143,
+              "n_applicable": 7,
+              "n_violations": 2
+            },
+            "heading_change_implies_turning": {
+              "compliance": 0.9888,
+              "n_applicable": 178,
+              "n_violations": 2
+            },
+            "highway_implies_not_low_speed": {
+              "compliance": 0.0,
+              "n_applicable": 6,
+              "n_violations": 6
+            },
+            "lateral_accel_implies_turning": {
+              "compliance": 0.9925,
+              "n_applicable": 133,
+              "n_violations": 1
+            },
+            "stop_and_go_not_stopped": {
+              "compliance": 0.9589,
+              "n_applicable": 73,
+              "n_violations": 3
+            },
+            "stopped_implies_low_speed": {
+              "compliance": 1.0,
+              "n_applicable": 81,
+              "n_violations": 0
+            },
+            "stopped_not_accelerating": {
+              "compliance": 1.0,
+              "n_applicable": 81,
+              "n_violations": 0
+            },
+            "straight_implies_no_heading_change": {
+              "compliance": 0.9969,
+              "n_applicable": 638,
+              "n_violations": 2
+            },
+            "straight_implies_no_high_lateral_accel": {
+              "compliance": 0.9984,
+              "n_applicable": 638,
+              "n_violations": 1
+            }
+          },
+          "rate": 0.9787,
+          "rule_coverage": 1.0,
+          "wemcr": 0.9787
+        },
+        "global": {
+          "accuracy": 0.4978,
+          "balanced_acc": 0.3886,
+          "macro_f1": 0.3301,
+          "n": 14000
+        },
+        "parsable_coverage": 1.0
+      },
+      "published_replay": {
+        "compared_fields": 234,
+        "differences": [],
+        "scope": "All recomputed native fields; stored extra inference timing fields not reproduced."
+      }
+    }
+  },
+  "scope": "Saved-file comparison against released oracle; no causal, physical-truth, model-provenance, safety or work-saving claim.",
+  "version": "0.1.0"
+}

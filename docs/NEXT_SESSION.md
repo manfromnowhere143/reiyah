@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.9`
+Version: `0.1.10`
 
 Lifecycle status: `proposed`
 
@@ -94,6 +94,19 @@ An observation contract must preserve procedure, displayed information,
 response population, identity policy, aggregation and unresolved states.
 This bounded study is complete; do not automatically expand it or treat the
 exposed sample as a new detector-value case. The original value hurdle stands.
+
+The [motion-consistency audit](../research/motion-consistency-audit/0.1.0/README.md)
+admits a separate fresh saved-file reproduction, not a product-value case.
+The fixed EgoDyn Qwen3-VL-8B vision/trajectory pair covers all 14,000 opportunities
+per file. Reference agreement rises from 49.78% to 63.61% while native WPCR falls
+from 97.87% to 89.66%; both published metric records reproduce exactly. Among
+rule-consistent clips, 791/828 and 686/815 respectively disagree with the released
+oracle on a rule-involved question. All 28,000 answers and per-clip traces verify.
+Keep internal consistency, reference agreement and actual driving outcomes
+separate. Oracle labels and historical model settings remain physically
+unqualified; this is no causal trajectory-effect or safety claim. The fixed
+pair is now exposed and the study complete. Do not automatically expand to all
+49 runs, tune on this pair or infer that the audit establishes product advantage.
 
 The [threshold/reference screen](../research/threshold-reference-screen/0.1.0/README.md)
 now supplies a complete retrospective configuration comparison from one fixed

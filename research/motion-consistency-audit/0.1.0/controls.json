@@ -1,0 +1,105 @@
+{
+  "artifact_id": "reiyah.motion-consistency-audit.controls",
+  "rejections": [
+    {
+      "control": "missing opportunity",
+      "diagnostic": "missing opportunities"
+    },
+    {
+      "control": "duplicated opportunity",
+      "diagnostic": "duplicate opportunity"
+    },
+    {
+      "control": "unknown clip",
+      "diagnostic": "unknown opportunity"
+    },
+    {
+      "control": "unknown question",
+      "diagnostic": "unknown opportunity"
+    },
+    {
+      "control": "embedded oracle changed",
+      "diagnostic": "embedded oracle mismatch"
+    },
+    {
+      "control": "category changed",
+      "diagnostic": "category mismatch"
+    },
+    {
+      "control": "missing output field",
+      "diagnostic": "changed prediction shape"
+    },
+    {
+      "control": "unknown output field",
+      "diagnostic": "changed prediction shape"
+    },
+    {
+      "control": "numeric response",
+      "diagnostic": "non-string prediction field"
+    },
+    {
+      "control": "domain membership changed",
+      "diagnostic": "domain roster"
+    },
+    {
+      "control": "omitted clip witness",
+      "diagnostic": "per-clip witness mismatch"
+    },
+    {
+      "control": "duplicate clip witness",
+      "diagnostic": "per-clip witness mismatch"
+    },
+    {
+      "control": "forged wrong-question witness",
+      "diagnostic": "per-clip witness mismatch"
+    },
+    {
+      "control": "unqualified consistency state",
+      "diagnostic": "per-clip witness mismatch"
+    },
+    {
+      "control": "unknown witness field",
+      "diagnostic": "per-clip witness mismatch"
+    },
+    {
+      "control": "erased primary disagreement",
+      "diagnostic": "aggregate result mismatch"
+    },
+    {
+      "control": "float opportunity count",
+      "diagnostic": "aggregate result mismatch"
+    },
+    {
+      "control": "boolean zero count",
+      "diagnostic": "aggregate result mismatch"
+    },
+    {
+      "control": "forged protocol binding",
+      "diagnostic": "aggregate result mismatch"
+    },
+    {
+      "control": "unknown result field",
+      "diagnostic": "aggregate result mismatch"
+    },
+    {
+      "control": "missing result run",
+      "diagnostic": "aggregate result mismatch"
+    },
+    {
+      "control": "forged native score",
+      "diagnostic": "native metric reconstruction mismatch"
+    },
+    {
+      "control": "duplicate JSON key",
+      "diagnostic": "duplicate JSON key"
+    },
+    {
+      "control": "nonfinite JSON",
+      "diagnostic": "invalid numeric constant: NaN"
+    }
+  ],
+  "result": "pass",
+  "scope": "Software verification only; not additional benchmark cases or independent review.",
+  "state_controls": 6,
+  "version": "0.1.0"
+}

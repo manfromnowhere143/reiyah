@@ -1,3 +1,71 @@
+# Current entry: motion consistency and reference agreement diverge, 11 October 2026
+
+Continuation version: 0.1.83. Status: exploratory saved-file audit completed.
+Read [NEXT_SESSION.md](NEXT_SESSION.md) and the
+[motion-consistency study](../research/motion-consistency-audit/0.1.0/README.md),
+its frozen protocol, input bindings, result, sources, verification and controls.
+
+Daniel asked to continue building and researching frontier work. His preceding
+Google-account message was explicitly withdrawn as intended for another session;
+no Google account action was taken. The current investigation reviewed primary
+EgoDyn-Bench and AlpaSim challenge sources. It selected one CPU-only saved-answer
+comparison from a new EgoDyn release; no simulator or model was run. Prior
+bounded custody searches found no matching release reference. Old closed inputs
+and completed studies remain untouched.
+
+The selected Qwen3-VL-8B vision and trajectory-labeled files each contain exactly
+14,000 unique clip-question pairs over 1,000 clips (500 nuScenes, 500 CARLA).
+Every embedded oracle/category agrees with the separate roster/config. Protocol
+and pair choice were frozen before acquiring outcome payloads. General paper
+claims were known; this is exploratory, not blinded. The GitHub code is pinned
+to a0c9c01a424cbeb5aa5471a6156354f21111436d, HF data to
+70032aa156d06c5bff24e0f1a4532973ca09ee0d. All payloads remain private.
+
+Reference agreement is 6969/14000 vision versus 8905/14000 trajectory (native
+49.78% versus 63.61%). WPCR favors the other run: 97.87% versus 89.66%.
+The frozen primary endpoint finds oracle disagreement on a rule-involved
+question for 791/828 and 686/815 rule-consistent clips respectively. No-rule
+clips (154/91) are not counted as passes. All answers parse; unknown states remain
+explicit in the code. The oracle violates no rules on its 966 evaluable clips;
+34 oracle clips have no applicable rule. All 14 question and both source strata
+are retained. Paired answers: 6338 both correct, 631 correct-to-incorrect, 2567
+incorrect-to-correct, 4464 both incorrect relative to the released reference.
+
+Native replay matches all 234 recomputed metric fields per file, including
+confusion matrices. Extra inference-timing fields are not reproduced. A separate
+implementation imports no upstream code or producer, reconstructs all 28,000
+canonical answers, 2,000 clip traces and complete native reports using implication
+truth tables and rational confusion metrics. Native free-text fallback parsing
+was unnecessary and is not independently qualified. 24 negative controls and 6
+state controls pass. Two executions match public result, private rows and native
+metric bytes. These remain checks by one investigator, not independent review.
+
+The source metric intentionally measures internal answer relations. The new
+result is no upstream-defect allegation, causal trajectory effect, model-weight
+identity, physical-truth validation, driving-safety result or proprietary
+advantage. Additional information differs between files; no equal-information
+Reiyah performance comparison is made. It concretely supports separate evidence
+obligations for coherence, reference agreement and downstream outcome.
+
+Private owner: `~/.codex/reports/reiyah/egodyn-qualification-2026-10-11-jdcizctn/`.
+Base: 8691d3543208a7325e7b37a2a8521fb9e6e59683. 23 complete local captures total
+6544098 bytes: 543472 metadata/code/context and 6000626 selected payload. Web-tool
+transfer is unmeasured separately. Existing CPU/PyYAML 6.0.3 only. Limits: 45 minutes,
+120 seconds/calculation, 2 MiB metadata, 16 MiB paired data, 30 responses, 64 MiB owner excluding
+candidate, zero spend. Historical active effort remains unknown, not reset.
+No images, weights, inference, training, paid resources, outreach or runtime.
+
+Closeout checks nine research consistency checks, the exact offline example, 52
+continuation bindings, study hashes/current links and exact GitHub readback.
+Historical transcripts are bound, not replayed. README adds one dated entry;
+all headings and seven diagrams remain. Gate A is operator-unaccepted.
+The fixed audit is complete and this pair exposed. Do not automatically sweep
+49 models or tune on it. Next value work still needs a consequential decision
+and qualified observation with complete work measurements. Any later motion
+question needs a distinct rationale/protocol and qualified source evidence;
+metric disagreement alone does not resume broad product expansion.
+Earlier entries follow unchanged.
+
 # Current entry: review procedure changes recorded majority decisions, 11 October 2026
 
 Continuation version: 0.1.82. Status: exploratory paired-record study completed.

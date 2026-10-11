@@ -1,6 +1,6 @@
 {
   "artifact_id": "reiyah.continuation",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "as_of": "2026-10-11",
   "lifecycle_status": "proposed",
   "authority": "Navigation and retained evidence bindings only; verify latest operator instruction, repository rules and live Git state",
@@ -250,6 +250,34 @@
     {
       "path": "research/review-procedure-sensitivity/0.1.0/provenance.json",
       "sha256": "055c78dd86583fb1cb17c272719169a4f1edcfd6d1cadffd421fbf121adcf369"
+    },
+    {
+      "path": "research/motion-consistency-audit/0.1.0/protocol.json",
+      "sha256": "5310a0d30a763d7cb2ee8de11befe0d993dd4a4773fc56da3051d28ed711d18e"
+    },
+    {
+      "path": "research/motion-consistency-audit/0.1.0/inputs.json",
+      "sha256": "094894fd47aed0ba47baf302b4d5e5c8479cf78e5857f77773f61434cf7643fe"
+    },
+    {
+      "path": "research/motion-consistency-audit/0.1.0/result.json",
+      "sha256": "a19db8f3988017121d01b433f65fac3892fee6f3d6fa5426c52b5f5ef4059fd1"
+    },
+    {
+      "path": "research/motion-consistency-audit/0.1.0/controls.json",
+      "sha256": "3b3cb8c552848d351762f73fe4b873bddffc28d94bbcbab1257f43ccb4d61dc6"
+    },
+    {
+      "path": "research/motion-consistency-audit/0.1.0/sources.json",
+      "sha256": "3ca5c0bd753b3e64eb6eba8860463313e46d889c8b68d46d40c6861cd174a112"
+    },
+    {
+      "path": "research/motion-consistency-audit/0.1.0/provenance.json",
+      "sha256": "3c9c307ba028007565d183aafc2cb66db3c59dc2937a1bbf6da226dcdd301b95"
+    },
+    {
+      "path": "research/motion-consistency-audit/0.1.0/verification.json",
+      "sha256": "35a3d3f900c1d5516aca65d91cfbfb5ef37eec35658fedbd5dd27826e4ed4a4f"
     }
   ],
   "presentation_verification": {
@@ -266,7 +294,7 @@
     "evidence_commit": "bde5796d6268d051a862db16e6ebda1e4413d61a",
     "scope": "Inherited diagram/control verification; current increment changes no Mermaid blocks. Do not count the inherited control as rerun."
   },
-  "continuation_base": "dc3085c1b129dd6e2c3e1bedb5ef9b24c0173c43",
+  "continuation_base": "8691d3543208a7325e7b37a2a8521fb9e6e59683",
   "observation_qualification": {
     "study": "research/reviewer-identity-sensitivity/0.1.0/README.md",
     "raw_majority_invariant": {
@@ -385,5 +413,31 @@
     "future_physical_channel_qualified": false,
     "causal_effect_identified": false,
     "product_value_case_admitted": false
+  },
+  "motion_consistency_audit": {
+    "study": "research/motion-consistency-audit/0.1.0/README.md",
+    "status": "completed_exploratory_saved_file_audit",
+    "benchmark": "EgoDyn-Bench",
+    "source_commit": "a0c9c01a424cbeb5aa5471a6156354f21111436d",
+    "dataset_commit": "70032aa156d06c5bff24e0f1a4532973ca09ee0d",
+    "clips": 1000,
+    "opportunities_per_file": 14000,
+    "native_accuracy": {
+      "vision": 0.4978,
+      "trajectory": 0.6361
+    },
+    "native_WPCR": {
+      "vision": 0.9787,
+      "trajectory": 0.8966
+    },
+    "primary_disagreements": {
+      "vision": "791/828",
+      "trajectory": "686/815"
+    },
+    "published_metric_fields_per_file_verified": 234,
+    "paired_packet_admitted_for_retrospective_audit": true,
+    "product_value_case_admitted": false,
+    "causal_or_physical_safety_claim": false,
+    "pair_exposed_and_study_closed": true
   }
 }
