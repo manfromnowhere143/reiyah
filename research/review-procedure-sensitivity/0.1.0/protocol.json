@@ -1,0 +1,72 @@
+{
+  "artifact_id": "reiyah.review-procedure-sensitivity.protocol",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "frozen_at": "2026-10-11T14:20:38.300253+00:00",
+  "question": "For the same 1000 recorded objects, do proposed-class and no-proposal review support the same strict-majority decision under every one-observed-response-per-recorded-ID choice?",
+  "rationale": "Qualify procedure dependence of a real recorded observation channel before treating repeated review as resolution. This complements the completed within-procedure identity study; it neither admits nor rescues a detector or work-saving comparison.",
+  "exposure": "Full file, structure and prior within-procedure outcome sensitivity exposed. Paper explicitly studies proposal-related distribution shifts. New paired decision endpoints not yet calculated. No blindness, preregistration, causal attribution or novelty claim.",
+  "source": {
+    "sha256": "1eb5506f328316f46fa5a036486b05689f4d504602895b80c87ee8bda0e0dd1d",
+    "bytes": 8568020,
+    "commit": "f793379ad7a9760f71c18ba57b7ed71fa76a5e6c",
+    "path": "our_datasets/unbiased_samples/Cityscapes_sample_with_unbiased_annotations.json",
+    "objects": 1000,
+    "images": 388,
+    "terms": "Created annotations CC BY-SA 4.0 per pinned README; images separate. Reuse private custody, publish no payload or identifiers."
+  },
+  "decision": {
+    "rule": "A category wins iff its count is strictly greater than half the entries or groups.",
+    "unresolved": [
+      "cantsolve",
+      "no_strict_majority"
+    ],
+    "ordinary_classes": [
+      "person",
+      "rider",
+      "car",
+      "truck",
+      "bus",
+      "train",
+      "motorcycle",
+      "bicycle"
+    ],
+    "raw": "Every entry has unit weight. Our comparator, not author postprocessed reference.",
+    "normalized": "Exactly one recorded class response per ID within each object and procedure; all choices allowed."
+  },
+  "joint_family": "For each object compare the Cartesian product of the two attainable outcome sets. This is a declared sensitivity envelope, not inferred behavioral independence. Disjointness forces disagreement under any nonempty coupling/subset of these supports. Intersections show only possible agreement in the envelope. Do not infer physically realizable whole-sample worlds or future responses.",
+  "endpoints": {
+    "primary": "Number of objects with disjoint normalized outcome sets; every allowed cross-procedure comparison differs.",
+    "secondary": [
+      "Guaranteed identical singleton outcome versus forced difference versus ambiguous agreement",
+      "Forced and possible different ordinary-class majorities",
+      "Forced ordinary-to-unresolved, unresolved-to-ordinary and distinct unresolved outcomes",
+      "Raw full outcome transition table and each procedure outcome counts",
+      "Raw different ordinary majorities each with at least 4/5 vote share, fixed threshold",
+      "Image groups containing forced disagreement",
+      "All eight proposed-class strata with denominators and forced disagreements",
+      "Recorded-ID overlap in each pair and among forced disagreements"
+    ]
+  },
+  "hypothesis": "Universal normalized procedure agreement is refuted if any object has disjoint outcome sets; absence of such an object does not establish physical equivalence.",
+  "methods": {
+    "producer": "Reuse hash-bound existing counting/capacitated matching characterization, then pair by exact image/object identity.",
+    "verifier": "Separate direct parser and enumeration of every observed one-response-per-ID world; independently rebuild paired rows and aggregates.",
+    "baseline": "Elementary majority counts and exhaustive enumeration; no exclusive algorithm or speed/work claim.",
+    "controls": "Small purposeful paired set cases plus reject corrupt source, omitted/reordered/duplicate rows, incorrect bounds/states, extra fields and numeric type coercions."
+  },
+  "limits": {
+    "CPU_seconds_per_reproduction": 120,
+    "maximum_worlds_per_object_procedure": 4096,
+    "new_primary_source_bytes": 0,
+    "new_packages": false,
+    "spend": 0,
+    "historical_effort": "unknown, not reset"
+  },
+  "stop": [
+    "Hash, roster, frequency or checker disagreement blocks conclusions until explained and repaired.",
+    "No filtering, threshold tuning, independent-sample p values, model outputs or inference, images or private ingestion.",
+    "No truth/causal/benchmark impact/cost saving/physical resolution claim.",
+    "Stop after this fixed real-record calculation; no automatic dataset expansion or new selector."
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "artifact_id": "reiyah.review-procedure-sensitivity.result",
+  "identity_engine_sha256": "720c0285e9789fa27374108378eaf8a77d02f5925846fc52491ae63f9731a503",
+  "lifecycle_status": "exploratory",
+  "protocol_sha256": "2b084dcf491bedafd79ee9133b27823b3cd0839d31416a4333c9ecd3c62dd895",
+  "scope": "Finite recorded-object decision sensitivity; not physical truth, causality, future-review reliability, detector performance or work saving.",
+  "source_sha256": "1eb5506f328316f46fa5a036486b05689f4d504602895b80c87ee8bda0e0dd1d",
+  "summary": {
+    "agreement": {
+      "ambiguous": 2,
+      "forced_difference": 133,
+      "guaranteed_same": 865
+    },
+    "by_proposed_class": {
+      "bicycle": {
+        "forced_difference": 26,
+        "forced_ordinary_switch": 1,
+        "objects": 155
+      },
+      "bus": {
+        "forced_difference": 3,
+        "forced_ordinary_switch": 0,
+        "objects": 12
+      },
+      "car": {
+        "forced_difference": 43,
+        "forced_ordinary_switch": 0,
+        "objects": 425
+      },
+      "motorcycle": {
+        "forced_difference": 3,
+        "forced_ordinary_switch": 0,
+        "objects": 12
+      },
+      "person": {
+        "forced_difference": 40,
+        "forced_ordinary_switch": 7,
+        "objects": 331
+      },
+      "rider": {
+        "forced_difference": 15,
+        "forced_ordinary_switch": 8,
+        "objects": 58
+      },
+      "train": {
+        "forced_difference": 2,
+        "forced_ordinary_switch": 1,
+        "objects": 3
+      },
+      "truck": {
+        "forced_difference": 1,
+        "forced_ordinary_switch": 0,
+        "objects": 4
+      }
+    },
+    "comparisons": {
+      "forced_distinct_unresolved": 6,
+      "forced_ordinary_switch": 17,
+      "forced_ordinary_to_unresolved": 83,
+      "forced_unresolved_to_ordinary": 27,
+      "possible_ordinary_switch": 17,
+      "raw_both_four_fifths_ordinary_switch": 2,
+      "raw_ordinary_switch": 18
+    },
+    "forced_difference_image_groups": 113,
+    "forced_difference_with_ID_overlap": 124,
+    "image_groups": 388,
+    "objects": 1000,
+    "objects_with_cross_procedure_ID_overlap": 658,
+    "procedures": {
+      "no_proposal": {
+        "ID_object_pairs": 10760,
+        "entries": 11000,
+        "raw_outcomes": {
+          "bicycle": 128,
+          "bus": 10,
+          "cantsolve": 77,
+          "car": 393,
+          "motorcycle": 9,
+          "no_strict_majority": 30,
+          "person": 299,
+          "rider": 49,
+          "train": 2,
+          "truck": 3
+        }
+      },
+      "proposed": {
+        "ID_object_pairs": 15821,
+        "entries": 15994,
+        "raw_outcomes": {
+          "bicycle": 153,
+          "bus": 12,
+          "cantsolve": 41,
+          "car": 381,
+          "motorcycle": 11,
+          "no_strict_majority": 11,
+          "person": 327,
+          "rider": 58,
+          "train": 3,
+          "truck": 3
+        }
+      }
+    },
+    "raw_equal": 868,
+    "raw_transitions": [
+      {
+        "no_proposal": "bicycle",
+        "objects": 128,
+        "proposed": "bicycle"
+      },
+      {
+        "no_proposal": "cantsolve",
+        "objects": 13,
+        "proposed": "bicycle"
+      },
+      {
+        "no_proposal": "no_strict_majority",
+        "objects": 11,
+        "proposed": "bicycle"
+      },
+      {
+        "no_proposal": "person",
+        "objects": 1,
+        "proposed": "bicycle"
+      },
+      {
+        "no_proposal": "bus",
+        "objects": 9,
+        "proposed": "bus"
+      },
+      {
+        "no_proposal": "cantsolve",
+        "objects": 1,
+        "proposed": "bus"
+      },
+      {
+        "no_proposal": "no_strict_majority",
+        "objects": 1,
+        "proposed": "bus"
+      },
+      {
+        "no_proposal": "train",
+        "objects": 1,
+        "proposed": "bus"
+      },
+      {
+        "no_proposal": "cantsolve",
+        "objects": 19,
+        "proposed": "cantsolve"
+      },
+      {
+        "no_proposal": "car",
+        "objects": 21,
+        "proposed": "cantsolve"
+      },
+      {
+        "no_proposal": "no_strict_majority",
+        "objects": 1,
+        "proposed": "cantsolve"
+      },
+      {
+        "no_proposal": "cantsolve",
+        "objects": 8,
+        "proposed": "car"
+      },
+      {
+        "no_proposal": "car",
+        "objects": 367,
+        "proposed": "car"
+      },
+      {
+        "no_proposal": "no_strict_majority",
+        "objects": 6,
+        "proposed": "car"
+      },
+      {
+        "no_proposal": "cantsolve",
+        "objects": 2,
+        "proposed": "motorcycle"
+      },
+      {
+        "no_proposal": "motorcycle",
+        "objects": 9,
+        "proposed": "motorcycle"
+      },
+      {
+        "no_proposal": "cantsolve",
+        "objects": 4,
+        "proposed": "no_strict_majority"
+      },
+      {
+        "no_proposal": "car",
+        "objects": 4,
+        "proposed": "no_strict_majority"
+      },
+      {
+        "no_proposal": "no_strict_majority",
+        "objects": 1,
+        "proposed": "no_strict_majority"
+      },
+      {
+        "no_proposal": "person",
+        "objects": 1,
+        "proposed": "no_strict_majority"
+      },
+      {
+        "no_proposal": "truck",
+        "objects": 1,
+        "proposed": "no_strict_majority"
+      },
+      {
+        "no_proposal": "cantsolve",
+        "objects": 27,
+        "proposed": "person"
+      },
+      {
+        "no_proposal": "car",
+        "objects": 1,
+        "proposed": "person"
+      },
+      {
+        "no_proposal": "no_strict_majority",
+        "objects": 4,
+        "proposed": "person"
+      },
+      {
+        "no_proposal": "person",
+        "objects": 289,
+        "proposed": "person"
+      },
+      {
+        "no_proposal": "rider",
+        "objects": 6,
+        "proposed": "person"
+      },
+      {
+        "no_proposal": "cantsolve",
+        "objects": 3,
+        "proposed": "rider"
+      },
+      {
+        "no_proposal": "no_strict_majority",
+        "objects": 4,
+        "proposed": "rider"
+      },
+      {
+        "no_proposal": "person",
+        "objects": 8,
+        "proposed": "rider"
+      },
+      {
+        "no_proposal": "rider",
+        "objects": 43,
+        "proposed": "rider"
+      },
+      {
+        "no_proposal": "bus",
+        "objects": 1,
+        "proposed": "train"
+      },
+      {
+        "no_proposal": "no_strict_majority",
+        "objects": 1,
+        "proposed": "train"
+      },
+      {
+        "no_proposal": "train",
+        "objects": 1,
+        "proposed": "train"
+      },
+      {
+        "no_proposal": "no_strict_majority",
+        "objects": 1,
+        "proposed": "truck"
+      },
+      {
+        "no_proposal": "truck",
+        "objects": 2,
+        "proposed": "truck"
+      }
+    ]
+  },
+  "version": "0.1.0"
+}

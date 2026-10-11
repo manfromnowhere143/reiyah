@@ -1,0 +1,97 @@
+{
+  "artifact_id": "reiyah.review-procedure-sensitivity.controls",
+  "paired_set_controls": 225,
+  "rejected": [
+    {
+      "control": "changed source bytes",
+      "diagnostic": "source identity mismatch"
+    },
+    {
+      "control": "producer changed source bytes",
+      "diagnostic": "frozen source mismatch"
+    },
+    {
+      "control": "omitted object",
+      "diagnostic": "paired rows mismatch"
+    },
+    {
+      "control": "duplicate object",
+      "diagnostic": "paired rows mismatch"
+    },
+    {
+      "control": "reordered objects",
+      "diagnostic": "paired rows mismatch"
+    },
+    {
+      "control": "changed object join",
+      "diagnostic": "paired rows mismatch"
+    },
+    {
+      "control": "forged outcome support",
+      "diagnostic": "paired rows mismatch"
+    },
+    {
+      "control": "empty outcome support",
+      "diagnostic": "paired rows mismatch"
+    },
+    {
+      "control": "forged agreement",
+      "diagnostic": "paired rows mismatch"
+    },
+    {
+      "control": "bool in integer field",
+      "diagnostic": "paired rows mismatch"
+    },
+    {
+      "control": "float in integer field",
+      "diagnostic": "paired rows mismatch"
+    },
+    {
+      "control": "unknown row field",
+      "diagnostic": "paired rows mismatch"
+    },
+    {
+      "control": "unresolved winner count zero",
+      "diagnostic": "paired rows mismatch"
+    },
+    {
+      "control": "changed aggregate",
+      "diagnostic": "aggregate result mismatch"
+    },
+    {
+      "control": "float aggregate count",
+      "diagnostic": "aggregate result mismatch"
+    },
+    {
+      "control": "unknown result field",
+      "diagnostic": "aggregate result mismatch"
+    },
+    {
+      "control": "source binding",
+      "diagnostic": "aggregate result mismatch"
+    },
+    {
+      "control": "protocol binding",
+      "diagnostic": "aggregate result mismatch"
+    },
+    {
+      "control": "empty pair support",
+      "diagnostic": "empty outcome support"
+    },
+    {
+      "control": "undeclared pair outcome",
+      "diagnostic": "undeclared outcome"
+    },
+    {
+      "control": "duplicate JSON property",
+      "diagnostic": "duplicate JSON key"
+    },
+    {
+      "control": "nonfinite JSON",
+      "diagnostic": "nonfinite JSON constant: NaN"
+    }
+  ],
+  "result": "pass",
+  "scope": "Software controls only, not additional empirical observations.",
+  "version": "0.1.0"
+}

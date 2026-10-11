@@ -1,3 +1,65 @@
+# Current entry: review procedure changes recorded majority decisions, 11 October 2026
+
+Continuation version: 0.1.82. Status: exploratory paired-record study completed.
+Read [NEXT_SESSION.md](NEXT_SESSION.md) and the
+[paired review-procedure study](../research/review-procedure-sensitivity/0.1.0/README.md),
+its frozen protocol, result, verification, controls and provenance.
+
+Daniel requested deeper scientific and engineering progress. This increment
+qualifies a real recorded observation ambiguity using the already retained
+Cityscapes sample. The earlier study tested repeated-ID sensitivity within
+each procedure; this one compares the procedures for the same object. The
+new question and endpoints were frozen before the paired calculation. Source
+records and earlier findings were exposed, and the authors already study
+proposal-related bias. No blinded evaluation or novelty claim is made.
+
+Across all 1,000 objects and 388 image groups, the proposed-class and no-proposal
+attainable majority sets are disjoint for 133 objects under the declared
+one-observed-response-per-recorded-ID family. Seventeen have different ordinary
+class majorities; 83 are ordinary versus unresolved, 27 the reverse, and six
+have different unresolved outcomes. Another 865 guarantee the same outcome
+within the family, and two have choice-dependent agreement. All eight proposed
+class strata are retained. Forced differences occur in 113 image groups.
+
+Two objects have conflicting raw ordinary-class majorities each supported by
+at least 80% of entries; both remain ordinary switches after every allowed ID
+choice. Vote share is not physical confidence. The normalized supports are
+observed-response sensitivity envelopes, not qualified future response models.
+There are unequal response counts, overlapping IDs and no established random
+assignment or chronology. Do not infer causality, truth, independent samples,
+full-image detector accuracy, physical resolution or saved work. This is not
+an evaluation of the authors' final postprocessed labels.
+
+Separate parsing and exhaustive enumeration verify every paired row and
+aggregate, visiting 2,091 procedure-object worlds. All 225 paired-set software
+controls agree and 22 negative controls reject. After first-run review, a
+zero placeholder for a nonexistent winning count was changed to null; the
+unresolved status and all public aggregate findings were unchanged. The first
+run is retained. Three public results match; the two final private row files
+match. All checks remain one-investigator verification.
+
+Private owner: `~/.codex/reports/reiyah/review-procedure-sensitivity-2026-10-11-9007e92a/`.
+Base: dc3085c1b129dd6e2c3e1bedb5ef9b24c0173c43. The owner limits this increment
+to 45 minutes, 120 CPU seconds per reproduction, 16 MiB of additions excluding
+candidate projection, zero new scientific-source bytes and zero spend. Source,
+license and postprocessing context reuse prior custody. The original paper
+was web-checked for context; no new complete local paper was retained. Historical
+active effort remains unknown, not reset. Process time is not human effort.
+
+Closeout runs the nine research consistency checks and exact offline example,
+checks all 45 continuation bindings and current links, and verifies publication
+bytes. Historical transcripts are bound, not replayed. README adds one dated
+research entry; all existing headings and seven diagrams are preserved. Gate A
+is operator-unaccepted. No images, inference, training, runtime integration,
+paid resource, new outreach, source payload or per-object identifiers are added.
+
+Next: qualify a consequential paired decision and its actual observation process
+with complete work records. A review contract must name the procedure, displayed
+information, response population, identity policy, aggregation and unresolved
+states. This study is complete; no automatic expansion, selector tuning or
+reopening of closed inputs. Broad product expansion remains stopped pending
+measured advantage. Earlier entries follow unchanged.
+
 # Current entry: a concrete public comparison proposal path, 11 October 2026
 
 Continuation version: 0.1.81. Status: static contributor workflow completed.

@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.8`
+Version: `0.1.9`
 
 Lifecycle status: `proposed`
 
@@ -82,6 +82,18 @@ This is a separate observation-qualification result, not a detector-value case,
 an independence guarantee or permission to score incomplete images. Preserve
 the unresolved `cantsolve` and no-majority states. Read its protocol and result
 before reusing that source or treating repeat counts alone as decisive.
+
+The [paired review-procedure study](../research/review-procedure-sensitivity/0.1.0/README.md)
+now compares the two procedures on those same exposed 1,000 objects. Their
+normalized outcome sets are disjoint for 133 objects, including 17 different
+ordinary class majorities. Another 865 guarantee the same outcome in the
+specified family; two have choice-dependent agreement. These finite-record
+findings are verified by separate enumeration. They do not qualify a future
+physical review channel, identify a causal proposal effect, or measure costs.
+An observation contract must preserve procedure, displayed information,
+response population, identity policy, aggregation and unresolved states.
+This bounded study is complete; do not automatically expand it or treat the
+exposed sample as a new detector-value case. The original value hurdle stands.
 
 The [threshold/reference screen](../research/threshold-reference-screen/0.1.0/README.md)
 now supplies a complete retrospective configuration comparison from one fixed

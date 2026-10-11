@@ -1,6 +1,6 @@
 {
   "artifact_id": "reiyah.continuation",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "as_of": "2026-10-11",
   "lifecycle_status": "proposed",
   "authority": "Navigation and retained evidence bindings only; verify latest operator instruction, repository rules and live Git state",
@@ -230,6 +230,26 @@
     {
       "path": ".github/ISSUE_TEMPLATE/comparison.yml",
       "sha256": "2a3f1089c86b9278d21bfbd484eaa89476195448fba6f6d8b859064608c266f7"
+    },
+    {
+      "path": "research/review-procedure-sensitivity/0.1.0/protocol.json",
+      "sha256": "2b084dcf491bedafd79ee9133b27823b3cd0839d31416a4333c9ecd3c62dd895"
+    },
+    {
+      "path": "research/review-procedure-sensitivity/0.1.0/result.json",
+      "sha256": "9a7981ba7b7b38fdc752debbaf088e030969f3d4bea95a52e6960d9c817bbb39"
+    },
+    {
+      "path": "research/review-procedure-sensitivity/0.1.0/controls.json",
+      "sha256": "834fa662bb30f4cea84a873f773a38cc9d06d54b73c071ffa2024e3e49f29c69"
+    },
+    {
+      "path": "research/review-procedure-sensitivity/0.1.0/verification.json",
+      "sha256": "c9d9b06a94258bc13504f0b9094eefbcede1d70fa2c06e3be9f2dfac2b75832f"
+    },
+    {
+      "path": "research/review-procedure-sensitivity/0.1.0/provenance.json",
+      "sha256": "055c78dd86583fb1cb17c272719169a4f1edcfd6d1cadffd421fbf121adcf369"
     }
   ],
   "presentation_verification": {
@@ -246,7 +266,7 @@
     "evidence_commit": "bde5796d6268d051a862db16e6ebda1e4413d61a",
     "scope": "Inherited diagram/control verification; current increment changes no Mermaid blocks. Do not count the inherited control as rerun."
   },
-  "continuation_base": "afa9631d0bfd0c7ddc3a0a01a7bc3582ef2c0a63",
+  "continuation_base": "dc3085c1b129dd6e2c3e1bedb5ef9b24c0173c43",
   "observation_qualification": {
     "study": "research/reviewer-identity-sensitivity/0.1.0/README.md",
     "raw_majority_invariant": {
@@ -352,5 +372,18 @@
     "automatic_ingestion": false,
     "partial_records_welcome": true,
     "submission_confers_evidence_authority": false
+  },
+  "review_procedure_sensitivity": {
+    "study": "research/review-procedure-sensitivity/0.1.0/README.md",
+    "status": "completed_exploratory_recorded_sample",
+    "objects": 1000,
+    "guaranteed_same": 865,
+    "forced_difference": 133,
+    "ambiguous": 2,
+    "forced_ordinary_class_switches": 17,
+    "source_previously_exposed": true,
+    "future_physical_channel_qualified": false,
+    "causal_effect_identified": false,
+    "product_value_case_admitted": false
   }
 }
