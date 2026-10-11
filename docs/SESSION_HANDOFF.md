@@ -1,3 +1,58 @@
+# Current entry: upstream evaluator report delivered, 11 October 2026
+
+Continuation version: 0.1.78. Status: exploratory research contact completed.
+Read [NEXT_SESSION.md](NEXT_SESSION.md), the
+[submitted report](maintainer-reports/evaluator-populations-2026-10-11.md) and
+[action receipt](../evidence/upstream-evaluator-report-2026-10-11.json).
+
+Daniel explicitly authorized posting the prepared combined report in direct
+reply to the specific permission request. One issue was created in
+JonathanKlees/Uncertainty-aware-Object-Detection as `manfromnowhere143`:
+[issue #1](https://github.com/JonathanKlees/Uncertainty-aware-Object-Detection/issues/1).
+The preflight all-state issue inventory was empty, without another page;
+repository issues were enabled and main remained f793379. The retained evaluator
+source hash matched the tested bytes. Public GET readback confirmed the exact
+title, body and author. GitHub creation time is 09:18:35 UTC; the readback server
+Date is 09:18:53 UTC. Host and GitHub clock readings remain separately labeled.
+The issue was open with zero comments at that read. This replaces UNSENT as the
+current state; preserve the old private draft and do not post it again.
+
+The report links the two completed controls, describes their constructed ranking
+reversals, and asks for intended metric populations, original run coverage and a
+small shareable original comparison packet. No original packet or maintainer
+confirmation has arrived at the recorded readback. No upstream patch, effect on
+published scores, independent review or product advantage is established.
+The report contains authored explanation and links, not upstream code payloads.
+No other contact was made. RF-DETR and automotive states remain at their prior
+observations; this increment did not poll those threads.
+
+Next: qualify any reply and supplied original records against complete paired
+outputs, expected opportunities, successful-empty/missing/failed distinctions,
+reference identities, metric configuration and source terms. Freeze an empirical
+impact question before execution. A product-value case additionally requires an
+actual consequential decision, resolution action and complete measured work.
+The local evaluator audit is complete; do not extend it without new evidence or
+a concrete comparison requirement. Do not repeat the report or start background
+polling. Both exposed comparison pairs and all 1,433 reserved images stay closed.
+
+Private owner: `~/.codex/reports/reiyah/upstream-report-2026-10-11-59qzpkpr/`.
+Candidate base: a810dc0f448c0bd3ed91dacf55f84df0aaa73e93. Scope is the contact,
+authored receipt and continuation records; scientific code/results are unchanged.
+Four public GETs retain 18,114 bytes, bringing the immediately preceding shared
+primary account to 176,771,182 bytes, plus its known 65,153-byte derivative. This
+is not all-history custody. The authenticated POST response is separately
+accounted. Historical active effort remains unknown and is not reset. This
+bounded contact has a 30-minute / 4-MiB source / 32-MiB owner-added allocation,
+excluding the unchanged Git projection; no paid resource is used.
+
+Repository consistency, current links, continuation bindings and the advertised
+small example are checked before publishing the documentation, with exact GitHub
+readback afterward. Recorded checks are in this owner's checks and publication
+receipt. Historical scientific runs are bound, not rerun; optional attacks and
+Gate A release validation are not run. README text and all diagrams are unchanged.
+Gate A remains operator-unaccepted and broad product expansion stopped pending
+value. Work stays solo. Earlier handoff bytes follow unchanged.
+
 # Current entry: batch-invariant auxiliary means, 11 October 2026
 
 Continuation version: 0.1.77. Status: exploratory authored software control.

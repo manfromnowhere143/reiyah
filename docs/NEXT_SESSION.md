@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.4`
+Version: `0.1.5`
 
 Lifecycle status: `proposed`
 
@@ -117,6 +117,19 @@ and 504 undefined fields agree with a separate oracle; AUSRC stays unchanged.
 No empirical published-score impact or product value is established. This ends
 the planned local audit of that evaluator. Resume it only for a concrete new
 comparison need or new evidence, rather than automatically adding more controls.
+
+The combined evaluator report is now
+[posted upstream](https://github.com/JonathanKlees/Uncertainty-aware-Object-Detection/issues/1)
+under Daniel's explicit reply authorizing that prepared message. Read the
+[submitted report and response-qualification steps](maintainer-reports/evaluator-populations-2026-10-11.md)
+and [action receipt](../evidence/upstream-evaluator-report-2026-10-11.json).
+Exact title, body and author were checked by public readback; there were zero
+comments at that observation. This supersedes the private draft's UNSENT status.
+Do not duplicate the report. New evidence can support an empirical impact check
+only after input completeness, run states, reference and evaluator scope are
+qualified. Maintainer confirmation, an original packet and product value remain
+unestablished. The RF-DETR and automotive requests retain their earlier observed
+states; they were not re-polled for this contact.
 
 The fixed release tag `research-2026-10-11` resolves to
 `5de377af25a4c6882096ebbc91808b19feafb628`. Its later metadata clarification is
@@ -258,7 +271,9 @@ cannot rescue the original claim.
 - Current authority covers scoped local research and the authorized public
   research documentation. It does not establish Gate A acceptance, production
   deployment, physical control, new private-data ingestion, paid cloud use,
-  new outreach or an inference/training campaign.
+  blanket outreach or an inference/training campaign. The specific evaluator
+  report above was separately authorized and sent; this document does not
+  authorize additional messages.
 - Publication under existing authorization uses eligible source only, normal
   reviewed Git pushes and exact readback. Keep Daniel's configured human Git
   identity; inspect every new commit's full metadata and message.
