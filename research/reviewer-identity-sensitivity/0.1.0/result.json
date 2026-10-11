@@ -1,0 +1,225 @@
+{
+  "artifact_id": "reiyah.reviewer-identity-sensitivity.result",
+  "image_groups": 388,
+  "lifecycle_status": "exploratory",
+  "object_records": 1000,
+  "procedure_object_rows": 2000,
+  "procedures": {
+    "no_proposal": {
+      "attainable_outcome_count_histogram": {
+        "1": 997,
+        "2": 3
+      },
+      "distinct_ID_object_pairs": 10760,
+      "multiple_normalized_outcomes": 3,
+      "no_majority_infeasible_with_Hall_obstruction": 958,
+      "normalized_no_majority_possible": 42,
+      "objects": 1000,
+      "objects_with_conflicting_responses_under_an_ID": 35,
+      "objects_with_repeated_ID": 240,
+      "pair_count_interpretation": "Possibilities overlap; these are not transition probabilities or jointly observed changes.",
+      "primary_fraction": "3/250",
+      "raw_cantsolve_can_change": 10,
+      "raw_no_majority_can_gain_ordinary_majority": 0,
+      "raw_ordinary_majority_can_become_cantsolve": 0,
+      "raw_ordinary_majority_can_lose_majority": 2,
+      "raw_ordinary_majority_can_switch_ordinary_class": 0,
+      "raw_outcome_counts": {
+        "bicycle": 128,
+        "bus": 10,
+        "cantsolve": 77,
+        "car": 393,
+        "motorcycle": 9,
+        "no_strict_majority": 30,
+        "person": 299,
+        "rider": 49,
+        "train": 2,
+        "truck": 3
+      },
+      "raw_outcome_invariant": 988,
+      "raw_outcome_not_attainable": 9,
+      "raw_outcome_not_invariant": 12,
+      "raw_response_entries": 11000,
+      "raw_to_attainable_pairs": [
+        {
+          "attainable": "bicycle",
+          "objects": 128,
+          "raw": "bicycle"
+        },
+        {
+          "attainable": "bus",
+          "objects": 10,
+          "raw": "bus"
+        },
+        {
+          "attainable": "cantsolve",
+          "objects": 69,
+          "raw": "cantsolve"
+        },
+        {
+          "attainable": "no_strict_majority",
+          "objects": 10,
+          "raw": "cantsolve"
+        },
+        {
+          "attainable": "car",
+          "objects": 393,
+          "raw": "car"
+        },
+        {
+          "attainable": "motorcycle",
+          "objects": 9,
+          "raw": "motorcycle"
+        },
+        {
+          "attainable": "no_strict_majority",
+          "objects": 30,
+          "raw": "no_strict_majority"
+        },
+        {
+          "attainable": "no_strict_majority",
+          "objects": 1,
+          "raw": "person"
+        },
+        {
+          "attainable": "person",
+          "objects": 299,
+          "raw": "person"
+        },
+        {
+          "attainable": "rider",
+          "objects": 49,
+          "raw": "rider"
+        },
+        {
+          "attainable": "no_strict_majority",
+          "objects": 1,
+          "raw": "train"
+        },
+        {
+          "attainable": "train",
+          "objects": 1,
+          "raw": "train"
+        },
+        {
+          "attainable": "truck",
+          "objects": 3,
+          "raw": "truck"
+        }
+      ],
+      "unique_normalized_outcome_different_from_raw": 9
+    },
+    "proposed": {
+      "attainable_outcome_count_histogram": {
+        "1": 998,
+        "2": 2
+      },
+      "distinct_ID_object_pairs": 15821,
+      "multiple_normalized_outcomes": 2,
+      "no_majority_infeasible_with_Hall_obstruction": 987,
+      "normalized_no_majority_possible": 13,
+      "objects": 1000,
+      "objects_with_conflicting_responses_under_an_ID": 38,
+      "objects_with_repeated_ID": 123,
+      "pair_count_interpretation": "Possibilities overlap; these are not transition probabilities or jointly observed changes.",
+      "primary_fraction": "1/250",
+      "raw_cantsolve_can_change": 1,
+      "raw_no_majority_can_gain_ordinary_majority": 1,
+      "raw_ordinary_majority_can_become_cantsolve": 0,
+      "raw_ordinary_majority_can_lose_majority": 2,
+      "raw_ordinary_majority_can_switch_ordinary_class": 0,
+      "raw_outcome_counts": {
+        "bicycle": 153,
+        "bus": 12,
+        "cantsolve": 41,
+        "car": 381,
+        "motorcycle": 11,
+        "no_strict_majority": 11,
+        "person": 327,
+        "rider": 58,
+        "train": 3,
+        "truck": 3
+      },
+      "raw_outcome_invariant": 996,
+      "raw_outcome_not_attainable": 2,
+      "raw_outcome_not_invariant": 4,
+      "raw_response_entries": 15994,
+      "raw_to_attainable_pairs": [
+        {
+          "attainable": "bicycle",
+          "objects": 153,
+          "raw": "bicycle"
+        },
+        {
+          "attainable": "bus",
+          "objects": 12,
+          "raw": "bus"
+        },
+        {
+          "attainable": "cantsolve",
+          "objects": 41,
+          "raw": "cantsolve"
+        },
+        {
+          "attainable": "no_strict_majority",
+          "objects": 1,
+          "raw": "cantsolve"
+        },
+        {
+          "attainable": "car",
+          "objects": 380,
+          "raw": "car"
+        },
+        {
+          "attainable": "no_strict_majority",
+          "objects": 2,
+          "raw": "car"
+        },
+        {
+          "attainable": "motorcycle",
+          "objects": 11,
+          "raw": "motorcycle"
+        },
+        {
+          "attainable": "car",
+          "objects": 1,
+          "raw": "no_strict_majority"
+        },
+        {
+          "attainable": "no_strict_majority",
+          "objects": 10,
+          "raw": "no_strict_majority"
+        },
+        {
+          "attainable": "person",
+          "objects": 327,
+          "raw": "person"
+        },
+        {
+          "attainable": "rider",
+          "objects": 58,
+          "raw": "rider"
+        },
+        {
+          "attainable": "train",
+          "objects": 3,
+          "raw": "train"
+        },
+        {
+          "attainable": "truck",
+          "objects": 3,
+          "raw": "truck"
+        }
+      ],
+      "unique_normalized_outcome_different_from_raw": 2
+    }
+  },
+  "protocol_sha256": "11aff798a1981553bd439884a0895dc09a3de1730f24276e2fff6d8aa17f0062",
+  "scope": "Exact recorded-ID policy sensitivity on a complete selected object file; not physical truth, detector evaluation, independent-voter inference or work saving.",
+  "source_sha256": "1eb5506f328316f46fa5a036486b05689f4d504602895b80c87ee8bda0e0dd1d",
+  "verification": {
+    "class_endpoint_witness_pairs_checked": 18000,
+    "matching_Hall_agreements": 2000
+  },
+  "version": "0.1.0"
+}

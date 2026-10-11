@@ -446,6 +446,7 @@ preserving even when it fails the product-value test.
 
 ## Recent research
 
+- **11 October 2026:** [Recorded reviewer identities and majority decisions](research/reviewer-identity-sensitivity/0.1.0/README.md). Counting one observed response per recorded ID preserves the raw majority outcome for 996/1,000 proposed-class and 988/1,000 no-proposal object records. No ordinary class majority can switch directly to another ordinary class. This qualifies a reference-policy sensitivity, not voter independence, physical truth or work savings.
 - **11 October 2026:** [Overlap bounds and greedy matching](research/matching-bound-control/0.1.0/README.md). An authored finite counterexample checks a tempting AP shortcut. Native and exact calculations agree; novelty, empirical impact and a Reiyah advantage remain unestablished.
 - **11 October 2026:** [Verification metadata clarification](research/releases/2026-10-11/verification-note-0.1.0.json). The retained launch status differs from the completed replay result; the original release tag and scientific results are unchanged.
 - **11 October 2026:** [Corrected research release](research/releases/2026-10-11/README.md). Claim corrections, extraction source, portable reference-revision replay, complete result disclosure and current investment limits.

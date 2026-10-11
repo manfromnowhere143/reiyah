@@ -1,6 +1,6 @@
 {
   "artifact_id": "reiyah.continuation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "as_of": "2026-10-11",
   "lifecycle_status": "proposed",
   "authority": "Navigation and retained evidence bindings only; verify latest operator instruction, repository rules and live Git state",
@@ -41,7 +41,7 @@
     "discovery_engineering_days_total": 2,
     "discovery_window_days_when_active": 14,
     "admitted_CPU_screen_engineering_days": 5,
-    "elapsed_engineering_effort": "not_reconstructed_by_this_document",
+    "elapsed_engineering_effort": "Partial timestamp reconstruction across eleven prior owners; active effort and remaining balance unknown, not reset",
     "reset_on_new_session": false
   },
   "proposed_hurdles": {
@@ -93,6 +93,22 @@
     {
       "path": "evidence/claim-status-register-2026-10-10.json",
       "sha256": "76a4a9237c40a8e679d5e88f3b0c1bbe20dc82c0874508997296bc20ffffb0bf"
+    },
+    {
+      "path": "research/reviewer-identity-sensitivity/0.1.0/protocol.json",
+      "sha256": "11aff798a1981553bd439884a0895dc09a3de1730f24276e2fff6d8aa17f0062"
+    },
+    {
+      "path": "research/reviewer-identity-sensitivity/0.1.0/result.json",
+      "sha256": "dc113e5791328042c6add11a8075987f04784e1490985dd63f72b86b8964a312"
+    },
+    {
+      "path": "research/reviewer-identity-sensitivity/0.1.0/verification.json",
+      "sha256": "e0b4a845fff04b79f9ab27206353df418ad2c2dca8dad0849f53567b21eea164"
+    },
+    {
+      "path": "research/reviewer-identity-sensitivity/0.1.0/provenance.json",
+      "sha256": "51ed507ec4ad003207a510ded8888216d32743687841ecc21215a1bc6e830322"
     }
   ],
   "presentation_verification": {
@@ -105,6 +121,20 @@
     "optional_attack_suite": "not_run",
     "small_auditor_matches": true,
     "authored_control_non_timing_result_matches": true,
-    "Gate_A_release_validation": "not_run"
+    "Gate_A_release_validation": "not_run",
+    "evidence_commit": "bde5796d6268d051a862db16e6ebda1e4413d61a",
+    "scope": "Inherited diagram/control verification; current increment changes no Mermaid blocks. Do not count the inherited control as rerun."
+  },
+  "continuation_base": "bde5796d6268d051a862db16e6ebda1e4413d61a",
+  "observation_qualification": {
+    "study": "research/reviewer-identity-sensitivity/0.1.0/README.md",
+    "raw_majority_invariant": {
+      "proposed": 996,
+      "no_proposal": 988
+    },
+    "objects_per_procedure": 1000,
+    "ordinary_class_switch_possible": 0,
+    "scope": "Conditional one-observed-response-per-recorded-ID sensitivity; not independent voters, physical truth or detector work-saving evidence",
+    "complete_detector_case_admitted": false
   }
 }

@@ -1,0 +1,71 @@
+{
+  "artifact_id": "reiyah.reviewer-identity-sensitivity.protocol",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "created_at": "2026-10-11T05:49:12.496280+00:00",
+  "question": "For every object and both response procedures in the pinned Cityscapes object sample, is the raw-entry strict-majority outcome invariant when each recorded reviewer ID contributes exactly one of its observed class responses?",
+  "rationale": "The prior source audit established repeated identifiers but did not measure their effect on a reference decision. Qualify this observation ambiguity before investing in a selector. This separate data-quality sensitivity question does not replace or rescue the unproven detector/work-saving hypothesis.",
+  "exposure": "Source structure, aggregate repeated-ID counts and previous qualification findings are exposed development evidence. This plan precedes the new majority-sensitivity calculation, not source exposure; no blinded or preregistered claim.",
+  "source": {
+    "repository": "JonathanKlees/Uncertainty-aware-Object-Detection",
+    "commit": "f793379ad7a9760f71c18ba57b7ed71fa76a5e6c",
+    "path": "our_datasets/unbiased_samples/Cityscapes_sample_with_unbiased_annotations.json",
+    "sha256": "1eb5506f328316f46fa5a036486b05689f4d504602895b80c87ee8bda0e0dd1d",
+    "bytes": 8568020,
+    "git_blob_sha1": "9c468b7d2b627c64a2604ec8a0d9e518cd593f10",
+    "terms": "Created annotations: CC BY-SA 4.0 per pinned author README; underlying image/original data rights separate. Input payload and identifiers remain outside public Git.",
+    "expected_objects": 1000,
+    "expected_image_groups": 388,
+    "procedures": [
+      "proposed",
+      "no_proposal"
+    ]
+  },
+  "decision_rule": {
+    "threshold": "strictly greater than 1/2",
+    "categories": "All nine declared classes; cantsolve retained as abstention outcome, never converted to a physical class or absent object",
+    "no_majority": "Separate outcome when no category has more than half the votes",
+    "raw_reference": "Every stored response entry has unit weight; an analysis comparator, not asserted author final postprocessed labels"
+  },
+  "world_family": {
+    "unit": "object and procedure",
+    "groups": "exact recorded reviewer identifier",
+    "choice": "retain exactly one observed class response per identifier",
+    "identity_assumption": "Identifiers are a grouping key, not authenticated humans. Grouping is conditional sensitivity only; repeated entries are not called data errors.",
+    "dependence": "No independence, chronology, exchangeability or causal assumption. Cross-object and cross-procedure coupling are not inferred. Do not combine per-object witnesses into a shared-person behavioral world."
+  },
+  "endpoints": {
+    "primary": "Count and fraction among all 1000 objects in each procedure whose raw strict-majority outcome is not invariant over the one-response-per-ID family",
+    "secondary": [
+      "Number with a unique normalized outcome different from raw",
+      "Number with multiple attainable normalized outcomes",
+      "Raw-majority outcomes excluded from all normalized worlds",
+      "Ordinary-class switch possible versus loss/gain of strict majority; keep cantsolve separate",
+      "All raw-to-attainable-outcome aggregate pairs",
+      "Sharp per-category count bounds and exact no-majority feasibility agreement"
+    ]
+  },
+  "methods": {
+    "class_bounds": "lower = singleton support count; upper = support-membership count",
+    "joint_no_majority": "Bipartite capacity matching assigning one class to each ID; class capacity floor(n/2)",
+    "independent_verifier": "Enumerate all subsets of the nine classes and check the generalized Hall inequalities; separately validate returned assignments and class-extreme witnesses",
+    "control": "Exhaustively enumerate support multisets for three classes and up to six groups; compare all possible assignments, bounds, outcomes, flow and Hall. Include malformed and tampered witness refusals.",
+    "conventional_baseline": "The same elementary counting and capacitated matching solve this qualification; no Reiyah-exclusive algorithm or performance comparison claimed"
+  },
+  "resources": {
+    "CPU_only": true,
+    "new_packages": false,
+    "max_CPU_seconds_per_reproduction": 120,
+    "new_primary_source_capture_cap_bytes": 1048576,
+    "shared_discovery_source_cap_bytes": 8388608,
+    "shared_discovery_bytes_previously_used": 2919996,
+    "cumulative_engineering_effort": "Unknown inherited balance; not reset. This is a bounded qualification increment, not a new campaign."
+  },
+  "stop_criteria": [
+    "Input hash/roster/frequency mismatch aborts and preserves failure",
+    "Any bound, witness or Hall disagreement blocks findings until corrected and documented",
+    "No cases or categories dropped; no threshold search",
+    "No detector score, full-image reference, causal effect, saved human work or physical accuracy claim",
+    "Stop after the fixed qualification and validation; no selector, model run or product expansion from it alone"
+  ]
+}

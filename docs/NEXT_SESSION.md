@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.0`
+Version: `0.1.1`
 
 Lifecycle status: `proposed`
 
@@ -74,6 +74,15 @@ commercial differentiation or acquisition readiness.
    scope, budget and evidence exposure before proceeding. Reading this brief
    does not start an unattended process or authorize spending.
 
+The [reviewer-identity sensitivity](../research/reviewer-identity-sensitivity/0.1.0/README.md)
+now quantifies one ambiguity in the already exposed Cityscapes object sample.
+Raw majority outcomes remain invariant for 996/1,000 proposed-class and
+988/1,000 no-proposal objects under its exact one-response-per-ID family.
+This is a separate observation-qualification result, not a detector-value case,
+an independence guarantee or permission to score incomplete images. Preserve
+the unresolved `cantsolve` and no-majority states. Read its protocol and result
+before reusing that source or treating repeat counts alone as decisive.
+
 The fixed release tag `research-2026-10-11` resolves to
 `5de377af25a4c6882096ebbc91808b19feafb628`. Its later metadata clarification is
 `40bd025e1c4704ada4ff411cddf76edbcc57fed8`. These identify completed milestones,
@@ -89,6 +98,7 @@ not a promise that either is still main. The tag is preserved.
 | Selected-population correction | Exact completions disprove the general population lower-bound inference. Associated safety credit and universal independence interpretations are withdrawn. | Unobserved physical populations are not recovered by the counterexample. |
 | Extraction accounting | A versioned helper checks complete declared membership and process failures; unit and generated-video controls passed. | Historical model consumers do not integrate it. Past cohorts and capture synchronization are not retrospectively qualified. |
 | Matching control | Native and rational calculations agree: elementwise upper overlaps can score below nominal AP50 under greedy matching. | Authored control only. No novelty, paper defect, AP solver, empirical frequency or Reiyah advantage established. |
+| Recorded reviewer identities | Sharp response-family analysis and separate exhaustive enumeration agree for all 2,000 procedure-object rows. Four proposed-class and twelve no-proposal raw outcomes are not invariant; no direct ordinary-class switch is possible. | Grouped IDs are not authenticated people; physical truth, full detector references and measured work savings remain unqualified. |
 | Relational motion and HARBOR | Conditional studies and proposed scientific contracts remain inspectable. | No driving safety, human-belief, readiness, recovery or causal deployment result. |
 
 The release's 145 unit tests and four bbox evaluations are retained verification

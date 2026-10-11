@@ -1,0 +1,140 @@
+{
+  "artifact_id": "reiyah.reviewer-identity-sensitivity.verification",
+  "date": "2026-10-11",
+  "exhaustively_enumerated_authored_support_problems": 1715,
+  "implementation_failure_and_repair": {
+    "cause": "Integer histogram keys in memory became strings after JSON readback",
+    "failure_retained": true,
+    "initial_expected_result_check": "failed on run-2 despite byte-identical result and rows",
+    "numeric_or_protocol_change": false,
+    "repair": "Create histogram keys as strings before output and comparison"
+  },
+  "lifecycle_status": "exploratory",
+  "rejections": {
+    "artifact_id": "reiyah.reviewer-identity-sensitivity.rejections",
+    "cases": [
+      {
+        "case": "source",
+        "reason": "source hash mismatch",
+        "rejected": true
+      },
+      {
+        "case": "missing_row",
+        "reason": "missing result row",
+        "rejected": true
+      },
+      {
+        "case": "duplicate_row",
+        "reason": "duplicate result row",
+        "rejected": true
+      },
+      {
+        "case": "raw_outcome",
+        "reason": "raw outcome mismatch",
+        "rejected": true
+      },
+      {
+        "case": "count_bound",
+        "reason": "sharp bound mismatch",
+        "rejected": true
+      },
+      {
+        "case": "witness",
+        "reason": "witness outside support",
+        "rejected": true
+      },
+      {
+        "case": "Hall_obstruction",
+        "reason": "invalid Hall obstruction",
+        "rejected": true
+      },
+      {
+        "case": "repeat_flag",
+        "reason": "repeat flag mismatch",
+        "rejected": true
+      },
+      {
+        "case": "aggregate_primary",
+        "reason": "aggregate mismatch: proposed/raw_outcome_not_invariant",
+        "rejected": true
+      },
+      {
+        "case": "boolean_count",
+        "reason": "sharp bound mismatch",
+        "rejected": true
+      },
+      {
+        "case": "floating_count",
+        "reason": "aggregate mismatch: proposed/raw_ordinary_majority_can_switch_ordinary_class",
+        "rejected": true
+      }
+    ],
+    "status": "pass",
+    "version": "0.1.0"
+  },
+  "reproduction": {
+    "commands": "reproduce.py --data INPUT --output FRESH --expected result.json; verify.py and check_rejections.py with INPUT, FRESH/private_rows.json and FRESH/result.json",
+    "network_denied_before_interpreter": true,
+    "private_witness_rows_identical": true,
+    "result_bytes_identical": true,
+    "result_sha256": "dc113e5791328042c6add11a8075987f04784e1490985dd63f72b86b8964a312",
+    "result_unchanged_from_first_numeric_run": true,
+    "runs": [
+      {
+        "platform": "macOS-14.4-arm64-arm-64bit-Mach-O",
+        "python": "3.14.2",
+        "run": 3,
+        "script_sha256": "720c0285e9789fa27374108378eaf8a77d02f5925846fc52491ae63f9731a503",
+        "timing_scope": "Inside main, including reading, analysis and output; excludes imports, acquisition, preparation and human work.",
+        "wall_seconds": 0.44695308301015757
+      },
+      {
+        "platform": "macOS-14.4-arm64-arm-64bit-Mach-O",
+        "python": "3.14.2",
+        "run": 4,
+        "script_sha256": "720c0285e9789fa27374108378eaf8a77d02f5925846fc52491ae63f9731a503",
+        "timing_scope": "Inside main, including reading, analysis and output; excludes imports, acquisition, preparation and human work.",
+        "wall_seconds": 0.45196716600912623
+      }
+    ],
+    "successful_final_runs": 2
+  },
+  "scope": "Two same-investigator implementations plus finite controls. No independent scientific review, human work measurement, detector scoring or Gate A release validation.",
+  "source_bindings": {
+    "check_rejections.py": "c650acb72b3dd36a83105ffbe55a6dbd8d99834f174b2b984e02dd10593a31e2",
+    "protocol.json": "11aff798a1981553bd439884a0895dc09a3de1730f24276e2fff6d8aa17f0062",
+    "provenance.json": "51ed507ec4ad003207a510ded8888216d32743687841ecc21215a1bc6e830322",
+    "reproduce.py": "720c0285e9789fa27374108378eaf8a77d02f5925846fc52491ae63f9731a503",
+    "result.json": "dc113e5791328042c6add11a8075987f04784e1490985dd63f72b86b8964a312",
+    "test_reproduce.py": "5e69aa88980f6e600db4db6a2584d6e9453a4fcf515b6fb02e7a2139053bc4c5",
+    "verify.py": "625500186aad4de7d5d8d8e835d77ff59987043f7584197b13d0ff564cd4578d"
+  },
+  "source_enumeration": {
+    "aggregate_result_sha256": "dc113e5791328042c6add11a8075987f04784e1490985dd63f72b86b8964a312",
+    "all_reported_aggregate_counts_verified": true,
+    "artifact_id": "reiyah.reviewer-identity-sensitivity.enumeration-verification",
+    "enumerated_object_procedure_worlds": 2091,
+    "maximum_worlds_in_one_row": 4,
+    "outcome_witnesses": 2005,
+    "rows": 2000,
+    "rows_sha256": "aad55cbb2314e7ae54bd44ea192abe2aa502c32ce91194178e743285b8c89251",
+    "scope": "Separate same-agent implementation; exhaustive for each observed row, not independent scientific replication or a cross-object joint world.",
+    "sharp_class_bound_pairs": 18000,
+    "source_sha256": "1eb5506f328316f46fa5a036486b05689f4d504602895b80c87ee8bda0e0dd1d",
+    "status": "pass",
+    "version": "0.1.0"
+  },
+  "status": "passed_scoped_checks",
+  "unit_tests_passed": 6,
+  "verifier_type_repair": {
+    "added_rejection_controls": [
+      "boolean_count",
+      "floating_count"
+    ],
+    "failed_original_control_retained": true,
+    "finding": "Prepublication checker accepted false as integer zero due to Python numeric equality",
+    "numeric_result_change": false,
+    "repair": "Type-exact JSON equality and explicit count/index/flag types; reject duplicate JSON keys"
+  },
+  "version": "0.1.0"
+}

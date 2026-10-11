@@ -1,3 +1,79 @@
+# Current entry: recorded reviewer identity sensitivity, 11 October 2026
+
+Continuation version: 0.1.74. Status: exploratory observation qualification.
+Read [NEXT_SESSION.md](NEXT_SESSION.md), the
+[study](../research/reviewer-identity-sensitivity/0.1.0/README.md), its frozen
+[protocol](../research/reviewer-identity-sensitivity/0.1.0/protocol.json),
+[result](../research/reviewer-identity-sensitivity/0.1.0/result.json) and
+[verification](../research/reviewer-identity-sensitivity/0.1.0/verification.json).
+
+The operator requested continued scientific work and initiative beyond the
+previous plan. This increment quantifies an existing source ambiguity before
+selector investment. It is a separate qualification question, not a replacement
+for the unresolved detector-value experiment or a changed success endpoint.
+
+For all 1,000 Cityscapes sample objects and both recorded annotation procedures,
+counting one of the observed responses per recorded reviewer ID leaves the raw
+strict-majority outcome invariant for 996 proposed-class and 988 no-proposal
+records. Four and twelve records, respectively, are not invariant. No ordinary
+class majority can switch directly to another ordinary class. Eleven of the
+sixteen affected procedure-object records change between a cantsolve majority
+and no strict majority; five affect whether an ordinary majority exists.
+These are conditional response-policy outcomes, not physical label errors.
+
+The authored producer uses sharp count bounds and capacitated matching; a
+separate subset-count check verifies joint no-majority feasibility. Direct
+source enumeration agrees on all 2,000 rows, 18,000 bound pairs, 2,005 outcome
+witnesses and every aggregate count. Six tests include 1,715 exhaustive authored
+problems; eleven source/proof/result/type alterations reject. Two final CPU replays
+are byte-identical. The initial expected-result comparison rejected identical
+bytes due to integer/string histogram keys; that serialization defect is fixed,
+its failure retained, and numeric results and the protocol remain unchanged.
+The verifier's prepublication audit also caught boolean false being accepted as
+an integer zero. Type-exact JSON comparisons and two additional rejection
+controls close that gap without changing any finding.
+
+Nine repository research-consistency checks pass, and the advertised offline
+auditor matches its expected bytes. The scoped file review resolves 249 relative
+links and all twelve continuation bindings. The 52 historical transcripts are
+bound, not replayed; the optional historical attack suite and locked Gate A
+release validation were not run. All seven README Mermaid sources are unchanged.
+
+The source sample remains incomplete for full-image detector scoring. IDs are
+not authenticated people, responses are not established independent, and raw
+majorities are not the authors' final postprocessed labels. No complete-work
+saving, causal effect, physical truth, novelty, commercial value or independent
+scientific review follows. Product expansion remains stopped pending value;
+Gate A remains operator-unaccepted. All 1,433 reserved images and the exposed
+COCO pair remain closed to tuning. No training, inference, paid resources,
+private-data ingestion or new outreach occurred.
+
+Repository base: bde5796d6268d051a862db16e6ebda1e4413d61a. Use live Git and
+publication readback to resolve the completed increment's commit. The historical
+controller stays at 74fbacc77a3c74d3a4962f488b589ee614a4c575. The fresh owner is
+`~/.codex/reports/reiyah/reviewer-identity-2026-10-11-s42gmmoq/`.
+Its source captures, freezes, failed and final runs, checks and closeout remain
+private. Only authored source, aggregate findings and documentation enter Git.
+All existing front-page scientific explanations and diagrams are preserved.
+
+The existing 8,568,020-byte sample was reused. A new arXiv HTML capture reached
+its 1,048,576-byte ceiling and is incomplete and evidence-ineligible; the paper
+is a context pointer, while the findings derive from the pinned complete sample.
+The shared discovery source count is now 3,968,572 of 8,388,608 bytes. Cumulative
+active engineering effort and the remaining two-day balance stay unknown; the
+budget is not reset. Process timings do not measure complete engineering work.
+
+Next action: qualify an existing complete paired detector comparison and a
+reference-resolution procedure under the unchanged equal-information and
+complete-cost requirements. Preserve this study's ambiguity where applicable;
+do not reject a source from repeat counts alone or promote stable raw voting
+into physical assurance. Stop at the inherited discovery limit or conventional
+parity. A further source search or new scientific question needs a concrete
+information benefit and scope, not another exposed selector sweep. Work stays
+solo unless the operator changes that instruction.
+
+Earlier checkpoints follow unchanged.
+
 # Current entry: mission, evidence and next decision, 11 October 2026
 
 Continuation version: 0.1.73. Status: research continuation and presentation.
