@@ -1,0 +1,51 @@
+{
+  "artifact_id": "reiyah.empty-output-score-control.provenance",
+  "version": "0.1.0",
+  "base_commit": "24ccd052b192d7e06c2ff9f6e0e01d28bfca8293",
+  "protocol_freeze": {
+    "frozen_at": "2026-10-11T06:52:54.881608+00:00",
+    "protocol_sha256": "bc54b787a9a2b437524ac7630ed6cb02ab61232e82d37ade63eb27a6a299a527",
+    "prior_result_exposure": "No full scoring outputs executed yet; prediction from inspected source explicitly declared"
+  },
+  "source": {
+    "repository": "JonathanKlees/Uncertainty-aware-Object-Detection",
+    "commit": "f793379ad7a9760f71c18ba57b7ed71fa76a5e6c",
+    "path": "regression_benchmark/evaluation/evaluate_soft.py",
+    "sha256": "d19fab4078ffc61c594e72ad1719bd2179108187de26099c6614eb39ddeeba20",
+    "bytes": 23192,
+    "url": "https://raw.githubusercontent.com/JonathanKlees/Uncertainty-aware-Object-Detection/f793379ad7a9760f71c18ba57b7ed71fa76a5e6c/regression_benchmark/evaluation/evaluate_soft.py",
+    "current_main_observed_at": "2026-10-11T06:51:49.588019+00:00",
+    "access": "Public GitHub without credentials",
+    "terms": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+    "redistribution": "No blanket source-code license established. Source payload retained privately and not redistributed; this packet contains authored control code and aggregate results only. Upstream annotation CC BY-SA statement does not establish software licensing."
+  },
+  "scope": "Constructed software control of AUSRC at IoU0.50 and TV similarity; not an empirical dataset, author-result replication or product-value comparison. Correction is authored research scaffolding, not an upstream applied fix.",
+  "execution_failure_history": [
+    "Initial harness failed to capture ValueError from torch.cat on empty input; no result emitted. Initial verifier was launched without a result and left an empty file. Both attempts and original scripts are retained privately.",
+    "Harness now records exact native exception. Verifier computes before writing output. Denominator tracing and strict metadata checks were added after initial successful controls; no fixture or scoring equation changed."
+  ],
+  "verification": "Two final producer result files byte-identical; separate rational oracle checks 51 numeric scores/denominators. Seven altered-result/source/disabled-adapter controls reject. Six input/undefined-metric rejection cases are part of producer result.",
+  "acquisition": {
+    "requests": 4,
+    "new_response_bytes": 41172,
+    "prior_shared_primary_source_custody_bytes": 176700449,
+    "new_shared_primary_source_custody_bytes": 176741621,
+    "known_existing_text_derivative_bytes": 65153,
+    "scope_note": "Carries forward the immediately preceding shared acquisition account; not an all-history custody total. Earlier source custodians remain accounted in their own ledgers. No source bytes downloaded for images, weights or model outputs."
+  },
+  "existing_requests": {
+    "rf_detr": {
+      "observed_at": "2026-10-11T06:51:48.779910+00:00",
+      "comments": 3,
+      "new_external_reply_after_Daniel": false
+    },
+    "automotive": {
+      "observed_at": "2026-10-11T06:51:49.111631+00:00",
+      "comments": 0
+    },
+    "sent_new_message": false
+  },
+  "private_owner": "empty-output-score-2026-10-11-h9pma9bj",
+  "historical_active_engineering_effort": "Unknown, not reset; process timestamps are not complete work.",
+  "gate_A_accepted": false
+}

@@ -1,0 +1,66 @@
+{
+  "artifact_id": "reiyah.empty-output-score-control.protocol",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "question": "Can omission of annotated images with successful empty detector outputs reverse an authored AUSRC comparison, and does an explicit empty-tensor adapter restore the complete reference denominator while preserving nonempty-image calculations?",
+  "source": {
+    "commit": "f793379ad7a9760f71c18ba57b7ed71fa76a5e6c",
+    "path": "regression_benchmark/evaluation/evaluate_soft.py",
+    "sha256": "d19fab4078ffc61c594e72ad1719bd2179108187de26099c6614eb39ddeeba20",
+    "bytes": 23192
+  },
+  "exposure": "Previously observed empty preparation map; scoring source inspected and analytic counterexample anticipated before this protocol. Authored controls, not blind empirical research.",
+  "execution": {
+    "device": "cpu",
+    "dataset": "coco",
+    "model": "authored-control",
+    "iou_thresholds": [
+      0.5
+    ],
+    "similarity_measures": [
+      "tv"
+    ],
+    "scores_to_sort": [
+      "maxprob"
+    ],
+    "metrics": [],
+    "area_ranges": {
+      "all": [
+        0,
+        10000000000
+      ]
+    },
+    "native_functions": "All upstream FunctionDef bodies compiled unchanged from exact retained bytes; real torch and numpy. A pass-through replaces progress display; optional plotting/table imports and CLI are not executed.",
+    "correction": "Wrap prepare_image_data to add absent annotated image IDs with empty prediction tensors and unchanged reference tensors. Leave original nonempty image tensors and scoring functions unchanged.",
+    "contract": "All expected image opportunities have explicit successful records; missing, failed, duplicate or extra records reject before native scoring. Supplied annotations are complete by fixture construction. No such assumption about real upstream inference."
+  },
+  "primary_fixture": {
+    "image_ids": [
+      1,
+      2
+    ],
+    "references": "One class-0 hard-label box per image, a valid endpoint of soft labels",
+    "A": "One perfect detection on image 1, explicit successful empty image 2",
+    "B": "One geometrically exact detection with class probability 0.8 and residual background 0.2 on each image",
+    "hypothesis": "Native A exceeds B, complete-reference correction reverses this ordering"
+  },
+  "controls": [
+    "All eight presence subsets of three one-object images with perfect retained detections",
+    "One-image nonempty parity",
+    "Absent annotation outside selected area does not change selected denominator",
+    "Prediction-only images retain original tensors",
+    "Image-order, chunk size 1/64 and worker count 1/2 invariance on primary arms",
+    "Empty complete output returns zero AUSRC after correction when positive eligible GT exists",
+    "Missing/failed/duplicate/extra output records and nonpositive reference denominator reject",
+    "Exact source-byte alteration rejects before execution"
+  ],
+  "oracle": "Independent rational 101-point recall-grid calculation for authored unit-similarity fixtures and constant 4/5 similarity B; floating outputs checked within 2e-7. No native matcher reimplementation claimed.",
+  "limits": [
+    "No real predictions, images or held-out records used",
+    "No measured frequency or published score impact",
+    "No full upstream CLI reproduction; auxiliary metric aggregation not audited",
+    "No global evaluator repair, SOTA, novelty, savings or safety claim",
+    "Observation-cost and actual decision-owner gaps remain; no product-value case admitted"
+  ],
+  "stop": "No new source acquisition after four metadata/source requests; at most 300 CPU seconds; no dependency installation."
+}

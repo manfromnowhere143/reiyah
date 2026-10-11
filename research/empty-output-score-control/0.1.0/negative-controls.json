@@ -1,0 +1,35 @@
+{
+  "artifact_id": "reiyah.empty-output-score-control.negative-controls",
+  "version": "0.1.0",
+  "status": "pass",
+  "controls": {
+    "wrong_score": {
+      "status": "rejected",
+      "reason": "AUSRC differs from exact oracle"
+    },
+    "wrong_denominator": {
+      "status": "rejected",
+      "reason": "reference denominator"
+    },
+    "boolean_score": {
+      "status": "rejected",
+      "reason": "AUSRC type"
+    },
+    "boolean_worker_count": {
+      "status": "rejected",
+      "reason": "variant metadata types"
+    },
+    "missing_subset": {
+      "status": "rejected",
+      "reason": "subset count"
+    },
+    "source_byte_change": {
+      "status": "rejected",
+      "reason": "source digest"
+    },
+    "disabled_adapter": {
+      "status": "rejected",
+      "reason": "AUSRC differs from exact oracle"
+    }
+  }
+}

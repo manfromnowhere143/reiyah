@@ -1,0 +1,15 @@
+{
+  "artifact_id": "reiyah.empty-output-score-control.environment",
+  "version": "0.1.0",
+  "python": "3.14.2",
+  "platform": "macOS-14.4-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "packages": {
+    "numpy": "2.4.2",
+    "torch": "2.10.0"
+  },
+  "torch_cpu_threads": 1,
+  "network": "Denied during scoring, checking and negative controls by macOS sandbox-exec before Python start",
+  "upstream_module_scope": "13 exact top-level function ASTs, unchanged. All functions on scoring path use real torch/numpy; tqdm display replaced by pass-through. No upstream CLI, pandas or matplotlib executed.",
+  "cross_platform_reproduction": "Not run"
+}

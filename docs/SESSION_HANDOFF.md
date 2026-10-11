@@ -1,3 +1,66 @@
+# Current entry: empty-output scoring counterexample and correction, 11 October 2026
+
+Continuation version: 0.1.76. Status: exploratory authored software control.
+Read [NEXT_SESSION.md](NEXT_SESSION.md) and the
+[study](../research/empty-output-score-control/0.1.0/README.md), protocol, result,
+verification, negative controls and provenance.
+
+Daniel renewed autonomous scientific and engineering continuation. The retained
+human response durations still exclude complete preparation, adjudication and
+integration. Both existing public requests remain unanswered at the recorded
+read. Four bounded public requests refreshed those threads and upstream source;
+no new message was sent. Main and evaluator bytes remain at upstream f793379.
+
+The chosen bounded task extends the known preparation omission through its
+native scoring path. In an authored two-image comparison, A detects one object
+perfectly and returns a successful empty second image; B detects both with
+class probability 0.8. Native AUSRC favors A, 1 versus 0.8, using only one
+reference for A. Restoring the second reference gives A 51/101 and B 0.8,
+reversing the ordering. This is not AP or the prior FP/FN threshold experiment.
+
+An authored research wrapper inserts correctly shaped empty prediction tensors
+for annotated image IDs absent from preparation. Native nonempty tensors and
+matching/probability/scoring functions are unchanged. Explicit successful
+opportunity records are required before flattening; failed and missing records
+reject. A complete empty population with positive reference count scores zero
+under the correction; native code raises a concatenation error. A zero eligible
+reference denominator is rejected as undefined, not scored zero.
+
+All eight three-image detection-presence subsets, primary order/chunk/worker
+variants, selected-area and single-image controls pass. Sixteen nonempty tensor
+equalities hold. A separate rational implementation verifies 51 scores and
+denominators; seven altered-result/source/disabled-adapter controls reject.
+Two final producer outputs are byte-identical. The initial harness captured the
+wrong native exception class, and a prematurely launched verifier lacked a
+result; original scripts, the empty receipt and failure record remain private.
+These fixes changed no native equation or fixture. Only the scoring function
+path runs, with real CPU tensors; no full upstream CLI or auxiliary mean-metric
+audit is claimed. No third-party code payload is published.
+
+The correction has not been applied upstream. Frequency, published-score or
+ranking impact, new algorithmic contribution, complete-work savings and product
+value remain unknown. Conventional comparison receives the same correction.
+The next value task still needs a fresh consequential decision, a qualified
+reference-resolution action and complete costs. Do not reopen the completed
+threshold/reference pair or old COCO pair for tuning.
+
+Private owner: `~/.codex/reports/reiyah/empty-output-score-2026-10-11-h9pma9bj/`.
+Candidate base: 24ccd052b192d7e06c2ff9f6e0e01d28bfca8293. Resolve final publication
+from live Git and readback. The four source responses total 41,172 bytes,
+carrying the immediately preceding shared primary custody account to
+176,741,621 bytes, plus its known 65,153-byte paper text derivative. Earlier
+custodians remain in their own ledgers; this is not all-history volume or work.
+Historical cumulative active effort remains unknown and is not reset.
+
+Closeout validation is recorded in this owner's checks and publication receipt.
+Nine repository consistency checks pass, and the advertised small example
+reproduces its exact expected bytes. The 52 historical transcripts are bound,
+not rerun; optional historical attacks and Gate A release validation were not run. All README explanations and seven
+diagrams are preserved. Gate A remains operator-unaccepted; product expansion
+stopped pending value; all 1,433 reserved images closed. No training, inference,
+paid compute, upstream modification, new outreach or background monitoring.
+Work stays solo. Earlier entries follow unchanged.
+
 # Current entry: a reference-sensitive threshold case and its savings ceiling, 11 October 2026
 
 Continuation version: 0.1.75. Status: exploratory retrospective configuration screen.

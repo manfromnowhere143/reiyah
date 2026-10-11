@@ -1,0 +1,20 @@
+{
+  "artifact_id": "reiyah.empty-output-score-control.verification",
+  "version": "0.1.0",
+  "status": "pass",
+  "result_sha256": "dcf42b0a5f33a4504a95c264717b4ff1d11a342969b8ed397184f94f1fe3e54e",
+  "numeric_scores_checked": 51,
+  "subset_cases": 8,
+  "primary_variants_per_arm": 8,
+  "exact_primary": {
+    "A": {
+      "native": "1",
+      "corrected": "51/101"
+    },
+    "B": {
+      "native": "4/5",
+      "corrected": "4/5"
+    }
+  },
+  "scope": "Separate rational arithmetic implementation; no producer import, no native tensor code; authored cases only, not independent scientific review."
+}

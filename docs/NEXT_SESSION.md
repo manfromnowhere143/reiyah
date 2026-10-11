@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.2`
+Version: `0.1.3`
 
 Lifecycle status: `proposed`
 
@@ -97,6 +97,16 @@ and no physical adjudication action has been qualified. Keep this exposed pair
 closed to selector tuning. The next value gap concerns a real resolution process
 and complete costs.
 The old R50/R101 outputs were not reused; their closure remains unchanged.
+
+The [empty-output scoring control](../research/empty-output-score-control/0.1.0/README.md)
+now shows a constructed AUSRC ranking reversal through the retained upstream
+scoring path. A reference omitted with an empty detection output changes the
+denominator; preserving it changes A from 1 to 51/101 while B stays at 0.8.
+An authored adapter corrects this tested boundary, with separate exact checks.
+No published-score impact, upstream-applied fix or product advantage is claimed.
+Future comparisons must preserve explicit successful empty opportunities before
+flattening outputs; missing or failed runs remain distinct. This correction also
+belongs in the competent conventional comparator.
 
 The fixed release tag `research-2026-10-11` resolves to
 `5de377af25a4c6882096ebbc91808b19feafb628`. Its later metadata clarification is
