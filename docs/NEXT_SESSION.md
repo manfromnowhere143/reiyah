@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.1`
+Version: `0.1.2`
 
 Lifecycle status: `proposed`
 
@@ -83,6 +83,21 @@ an independence guarantee or permission to score incomplete images. Preserve
 the unresolved `cantsolve` and no-majority states. Read its protocol and result
 before reusing that source or treating repeat counts alone as decisive.
 
+The [threshold/reference screen](../research/threshold-reference-screen/0.1.0/README.md)
+now supplies a complete retrospective configuration comparison from one fixed
+score file: confidence thresholds 0.25 and 0.50 over all 5,000 images. Equal
+FP/FN loss favors 0.50 under COCO (+148 for A minus B) and 0.25 under COCO-ReM
+(−288). The sharp interval across the declared per-image reference-policy family
+is [−572, +432]. These are conventional results, not a Reiyah arm.
+
+A fixed conventional disclosure order requires 204 simulated image-policy
+queries; the full-information minimum is 148. Thus even an ideal selector could
+improve this count by at most 51/37 (about 1.38×). Actual human work is unmeasured
+and no physical adjudication action has been qualified. Keep this exposed pair
+closed to selector tuning. The next value gap concerns a real resolution process
+and complete costs.
+The old R50/R101 outputs were not reused; their closure remains unchanged.
+
 The fixed release tag `research-2026-10-11` resolves to
 `5de377af25a4c6882096ebbc91808b19feafb628`. Its later metadata clarification is
 `40bd025e1c4704ada4ff411cddf76edbcc57fed8`. These identify completed milestones,
@@ -109,10 +124,13 @@ scientific review.
 
 ## The first authorized research task
 
-Continue the existing bounded search for one executable public revision or
-integration case. Reuse the retained source review before making new requests
-or downloading another corpus. Candidate discovery and a properly scoped
-retrospective study can proceed without an external engineering team.
+The completed threshold/reference screen is an executable retrospective case.
+It establishes reference sensitivity and limited count-saving headroom, not
+product value. Before further selector work, qualify an actual reference-resolution
+action and complete costs for a fresh consequential decision. Reuse retained
+sources; do not repeat the exposed pair or start another archive hunt without a
+concrete missing field and information benefit. Scoped retrospective science
+can proceed without an external engineering team, with its limits explicit.
 
 For each candidate, write an admission record before diagnosing the outcome:
 
@@ -141,12 +159,20 @@ ranking (arXiv 2601.07651v2). Their targets differ. Check the retained primary
 sources and versions before choosing a baseline; none is automatically a
 drop-in comparator for Reiyah's loss.
 
-For the WACV lead, the inspected five-file repository at
-`6b299e2ac9bd0f3473df35a3f570f428c92ac224` did not contain the adjusted evaluator
-or saved predictions. The external archive was not inspected. Method
-reproduction needs the evaluator, environment, fitted noise settings and full
-comparison records. Do not claim global unavailability or a defect in the
-paper. No new inquiry was sent during that investigation.
+For the WACV lead, the five-file repository at
+`6b299e2ac9bd0f3473df35a3f570f428c92ac224` was supplemented by an inspected
+20-entry ZIP directory and a complete saved prediction member. That member has
+1,500,000 rows, 300 per COCO image. The raw positive-extent gate rejects 466
+zero-size boxes; the rejection remains visible. Both fixed threshold outputs
+have positive extents. A separate unchanged-row native COCO diagnostic matches
+all thirteen printed Table 2 YOLOv10 X metrics within rounding. The exact
+checkpoint, inference logs and adjusted evaluator remain unqualified. No other
+archive member payload was newly acquired; no author inquiry was sent.
+
+The alternative author-linked Dataverse DOI `10.7910/DVN/L7QCUG`, version 1.0,
+has a public inventory of six annotation JSON files, not an identified saved
+prediction pair. Their payloads remain uninspected. The root-linked Q9N7G9 API
+returned guest access denied; no replacement relationship is assumed.
 
 ## Budget and decision rules
 

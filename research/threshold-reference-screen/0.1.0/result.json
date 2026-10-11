@@ -1,0 +1,66 @@
+{
+  "artifact_id": "reiyah.threshold-reference-screen.result",
+  "configurations": {
+    "A": {
+      "derived_empty_images": 54,
+      "raw_rows_above_cutoff": 31602,
+      "roster_images": 5000
+    },
+    "B": {
+      "derived_empty_images": 102,
+      "raw_rows_above_cutoff": 22208,
+      "roster_images": 5000
+    }
+  },
+  "delta_interval": {
+    "all_original_delta": 148,
+    "all_revised_delta": -288,
+    "lower": -572,
+    "oracle_unit_cost_reveals": {
+      "minimum_reveals": 148,
+      "reason": "Full-information largest endpoint gains; unit costs only."
+    },
+    "robust_choice": "unresolved",
+    "upper": 432
+  },
+  "image_count": 5000,
+  "images_with_reference_sensitive_delta": 434,
+  "lifecycle_status": "exploratory",
+  "protocol_sha256": "2bf078e1367db4783f09c809730047d05ea5f4e740418e7072b853d8be2ee472",
+  "scope": "Two fixed score-file configurations under a declared finite reference-policy family. Conventional bounds, no Reiyah arm or actual human-work saving.",
+  "totals": {
+    "original": {
+      "A": {
+        "FN": 12566,
+        "FP": 6545,
+        "TP": 23769,
+        "ignored_detections": 1288,
+        "submitted_after_cap": 31602
+      },
+      "B": {
+        "FN": 16740,
+        "FP": 2223,
+        "TP": 19595,
+        "ignored_detections": 390,
+        "submitted_after_cap": 22208
+      }
+    },
+    "revised": {
+      "A": {
+        "FN": 16005,
+        "FP": 6235,
+        "TP": 24244,
+        "ignored_detections": 1123,
+        "submitted_after_cap": 31602
+      },
+      "B": {
+        "FN": 20448,
+        "FP": 2080,
+        "TP": 19801,
+        "ignored_detections": 327,
+        "submitted_after_cap": 22208
+      }
+    }
+  },
+  "version": "0.1.0"
+}

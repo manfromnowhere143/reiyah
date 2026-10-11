@@ -446,6 +446,7 @@ preserving even when it fails the product-value test.
 
 ## Recent research
 
+- **11 October 2026:** [Reference policies can reverse a threshold choice](research/threshold-reference-screen/0.1.0/README.md). Two fixed confidence thresholds exchange preference between COCO and COCO-ReM under equal FP/FN loss. All 20,000 per-image count records verify. In a declared policy-disclosure simulation, a conventional order needs 204 disclosures and the hindsight minimum is 148, leaving at most 1.38× count savings. No complete-work advantage is established.
 - **11 October 2026:** [Recorded reviewer identities and majority decisions](research/reviewer-identity-sensitivity/0.1.0/README.md). Counting one observed response per recorded ID preserves the raw majority outcome for 996/1,000 proposed-class and 988/1,000 no-proposal object records. No ordinary class majority can switch directly to another ordinary class. This qualifies a reference-policy sensitivity, not voter independence, physical truth or work savings.
 - **11 October 2026:** [Overlap bounds and greedy matching](research/matching-bound-control/0.1.0/README.md). An authored finite counterexample checks a tempting AP shortcut. Native and exact calculations agree; novelty, empirical impact and a Reiyah advantage remain unestablished.
 - **11 October 2026:** [Verification metadata clarification](research/releases/2026-10-11/verification-note-0.1.0.json). The retained launch status differs from the completed replay result; the original release tag and scientific results are unchanged.

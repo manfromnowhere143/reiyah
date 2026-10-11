@@ -1,0 +1,21 @@
+{
+  "artifact_id": "reiyah.threshold-reference-screen.conventional-followup-protocol",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "frozen_at": "2026-10-11T06:36:13.455280+00:00",
+  "reason": "Main verified interval is unresolved. Compare the previously specified ordinary largest-potential-change strategy with the frozen hindsight lower bound before any Reiyah selector investment. This is a separate exploratory follow-up after primary outcomes, not a preregistered performance arm.",
+  "prior_knowledge": {
+    "interval": [
+      -572,
+      432
+    ],
+    "all_revised_delta": -288,
+    "sensitive_images": 434,
+    "oracle_reveals": 148
+  },
+  "policy": "Sort unresolved image-policy choices by decreasing interval width, tie by increasing integer image ID. Width is the maximum defensible possible change under unit reveal cost, computable without the realized choice. No use of all-revised outcomes in ordering.",
+  "world": "Each query reveals that image uses the complete revised reference, as already fixed for the main oracle calculation. These are simulated policy disclosures, not human annotations or physical truth.",
+  "stop": "Stop at the first strictly positive lower bound or strictly negative upper bound. Preserve unresolved ties. No threshold, ordering, weight or alternative-outcome sweep.",
+  "comparison": "Conventional policy reveal count divided by the exact full-information minimum148; upper limit on count savings for any valid strategy in this fixed world. Do not equate this with complete work.",
+  "scope": "Offline integer arithmetic on already verified per-image counts. No new detector evaluation or source acquisition."
+}

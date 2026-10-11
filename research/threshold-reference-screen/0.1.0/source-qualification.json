@@ -1,0 +1,27 @@
+{
+  "artifact_id": "reiyah.threshold-reference-screen.source-qualification",
+  "version": "0.1.0",
+  "status": "qualified_for_named_derived_score_file_comparison_only",
+  "raw_positive_extent_gate": "failed; preserved",
+  "raw_rows": 1500000,
+  "raw_roster_images": 5000,
+  "raw_rows_per_image": 300,
+  "reference_roster_IDs_and_categories_match": true,
+  "zero_extent_rows": 466,
+  "negative_extent_rows": 0,
+  "zero_extent_maximum_score": 0.00048,
+  "raw_boundary_counts_no_clipping": {
+    "y_end_above_height": 75,
+    "x_end_above_width": 124
+  },
+  "native_all_rows_bbox_AP_points": 54.433797609774224,
+  "native_zero_area_rows_retained": 466,
+  "native_paper_table_2_printed_metrics_matched": 13,
+  "native_rounding_tolerance_AP_points": 0.05,
+  "native_score_sha256": "c96508b54a8d1ac1cef676cc8b616f9cfb51cf40f406b3f7f984af681a13f2b5",
+  "native_control": "Separately frozen native-contract diagnostic after raw gate failure; not a repaired raw-input gate. All rows scored unchanged.",
+  "derived_configurations": "Score >= 0.25 and score >= 0.50 both have positive extents; every one of the 5,000 image opportunities is retained, including explicitly derived empty outputs.",
+  "inference_provenance": "Raw score-file identity fixed; exact model weights/configuration and execution logs unverified. File-name attribution does not authenticate a new model run.",
+  "prospective_value_case_admitted": false,
+  "physical_reference_validity": "Neither released annotation policy established as physical truth; reference-family and policy-disclosure assumptions remain conditional."
+}

@@ -1,0 +1,61 @@
+{
+  "artifact_id": "reiyah.threshold-reference-screen.protocol",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "frozen_at": "2026-10-11T06:32:17.289424+00:00",
+  "research_decision": "For this exact saved score file, choose confidence threshold 0.25 or 0.50 under equal false-positive and false-negative loss. Determine whether the choice requires resolving which of two released annotation policies applies per image. Retrospective research configuration choice; no customer deployment decision.",
+  "reason_for_new_scope": "User explicitly authorized initiative and continued autonomous research. A complete raw score file covers all5000images, so deterministic postprocessing gives two fully specified output configurations without a second inference campaign. This addresses paired score-file availability, not missing model-provenance or prospective work evidence.",
+  "prior_failed_gate": "The raw source has 466 zero-area boxes and retains its failed positive-extent gate. All have scores at most 0.00048. The two fixed thresholds define explicit output transformations; their geometry must pass. No raw source repair.",
+  "input_bindings": [
+    {
+      "name": "predictions_yolov10x.json",
+      "sha256": "7fdb7efa244038ae8897c9151487449d8a61198fea399db22fec59d4fa13692b",
+      "bytes": 151042381
+    },
+    {
+      "name": "instances_val2017.json",
+      "sha256": "e8c7f7908f1d7278341fae127d0da654f102f11bd7b21d8aeefa635b8c810b6f",
+      "bytes": 19987840
+    },
+    {
+      "name": "instances_valrem.json",
+      "sha256": "f1cc6fc13d5dd79221e999ea3804ec0969755690e937a4fb081d4b0610236416",
+      "bytes": 41507881
+    }
+  ],
+  "roster": "All 5,000 original COCO image IDs. Require equal image dimensions and category IDs/names in COCO-ReM. Keep every image after thresholding, including explicitly derived empty outputs. Historical inference execution remains unverified.",
+  "configurations": {
+    "A": {
+      "score_at_least": "0.25"
+    },
+    "B": {
+      "score_at_least": "0.50"
+    }
+  },
+  "metric": {
+    "loss": "FP + FN",
+    "difference": "Delta = L(A) - L(B); positive favors B",
+    "IoU": "0.50",
+    "matching": "Native pycocotools 2.0.11 COCO class-aware score-greedy matching with standard crowd/ignore semantics. This is not the Reiyah maximum-cardinality matching contract.",
+    "max_detections_per_image_category": 100,
+    "area_range": [
+      0,
+      10000000000
+    ],
+    "area_scope": "all",
+    "ties": "Native stable mergesort; retain source row order.",
+    "uncertainty": "For each image independently, reference may be its entire COCO2017annotation set or its entire COCO-ReMannotation set. This declared finite family includes hypothetical mixes of two released policies; it is not calibrated physical uncertainty."
+  },
+  "primary_endpoint": "Exact minimum and maximum total Delta over the declared 2^5000 reference choices. Per-image endpoint choices supply sharp witnesses. A strict sign resolves the choice. This FP/FN loss is not AP.",
+  "baseline": "Conventional per-image COCO matching and integer intervals. Shared-output cancellation is available to all methods. No Reiyah arm or new selector in this ceiling screen.",
+  "algorithm": "Evaluate the full saved file once per reference at IoU 0.5 and derive both threshold count tables from the scored prefixes. Verify all four tables with fresh native evaluations after prefiltering the input rows.",
+  "secondary_endpoint": "If the interval contains zero, compute the optimistic minimum number of unit-cost image-policy reveals needed to reach the completed all-COCO-ReM decision, using full-information endpoint reductions. This is an oracle simulation, not measured review work. If ordinary bounds already resolve the choice, the potential observation saving against that baseline is zero.",
+  "exposure": "The old R50/R101 study and both references are exposed. Those predictions are not reused or tuned. The new raw file and one-model native AP were observed before this freeze; the two threshold losses and paired reference effects were not. Exploratory, not blinded or preregistered.",
+  "work": "Report CPU stages separately. Complete human engineering/review costs and inherited active budget balance remain unknown. No claim of halved work, frontier performance, physical truth, novelty or commercial value.",
+  "stop": "Run only this fixed threshold pair. No outcome-driven threshold or weight sweep. If ordinary bounds settle the choice, stop selector investment for this case. No endpoint substitution to produce a favorable result.",
+  "resources": "Existing CPU and retained inputs; at most 10 CPU minutes per stage and the recorded 60-minute active-session allocation. No new models, images, outreach or paid compute.",
+  "presentation_revision": {
+    "prior_form_sha256": "1d91050593d4e3eb9ba9ceb61e570a199b401290fdc9edef909b0cfcaa1ab42e",
+    "reason": "Repair prose spacing before any threshold calculation. Endpoints, inputs, thresholds, loss and semantics unchanged. Prior form and freeze retained privately."
+  }
+}

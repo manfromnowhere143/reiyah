@@ -1,3 +1,79 @@
+# Current entry: a reference-sensitive threshold case and its savings ceiling, 11 October 2026
+
+Continuation version: 0.1.75. Status: exploratory retrospective configuration screen.
+Read [NEXT_SESSION.md](NEXT_SESSION.md), the
+[study](../research/threshold-reference-screen/0.1.0/README.md), its primary and
+follow-up protocols, result, verification and provenance.
+
+Daniel explicitly authorized continued autonomous research and the necessary
+public-record acquisition. A retained scope addendum expanded the concrete
+archive acquisition allowance; it did not grant scientific acceptance or reset
+unknown past effort. Using HTTP ranges, the previously uninspected WACV archive
+now has a complete 20-entry member inventory. Its one prediction file was
+retrieved, decompressed and checked against its declared size and CRC. It has
+1,500,000 rows, 300 for each of all 5,000 COCO image IDs and all 80 categories.
+The two existing public requests still have no external reply after Daniel's
+request; no new message was sent.
+
+The raw file fails our frozen positive-extent gate on 466 zero-size boxes,
+all at scores no greater than 0.00048. Keep that failed gate. A separately frozen
+native-contract diagnostic retains every row and matches all thirteen printed
+YOLOv10 X Table 2 metrics, with overall bbox AP 54.433798. This does not identify
+the exact checkpoint, verify original inference or reproduce adjusted AP.
+
+A new question was frozen before its outcomes: compare score thresholds 0.25
+and 0.50 under native COCO matching at IoU 0.50, standard crowd rules and equal
+FP/FN loss. All 5,000 image opportunities stay explicit; 54 and 102 derived empty
+outputs remain known postprocessing results. Both derived configurations have
+positive extents. The old R50/R101 pair is untouched.
+
+Losses favor 0.50 under COCO (19,111 versus 18,963), and 0.25 under COCO-ReM
+(22,240 versus 22,528). Across the declared family choosing a whole reference
+policy independently per image, Delta is sharply bounded by [−572, +432].
+Only 434 image differences depend on that choice. Four fresh evaluations after
+filtering the inputs agree with all 20,000 per-image count records and all
+5,000 endpoint/witness pairs from the two full-file prefix calculations.
+
+A separately frozen conventional follow-up uses largest interval width first,
+ties by image ID. In the explicitly simulated all-revised world, it needs 204
+policy disclosures. The exact hindsight minimum is 148: the best 147 reductions
+sum to 431, while 148 sum to 433 against a required strict reduction above 432.
+The possible count-saving factor against this competent baseline is at most
+51/37 (about 1.38×). This rules out twofold or threefold disclosure-count gains
+in that simulation, not every CPU or complete-work improvement. Actual review
+actions, physical truth, customer decisions and complete costs remain unqualified.
+Do not build or tune a selector on this exposed case, or replace its endpoint.
+
+Two final producer runs have identical aggregate, per-image count and witness
+bytes; the conventional replay also matches. Four numeric/type/membership
+controls and three downstream count/witness/result byte alterations reject.
+Nine repository consistency checks pass and the advertised auditor reproduces
+its exact expected bytes. The 52 historical transcripts are bound, not replayed;
+optional historical attacks and locked Gate A release validation were not run.
+
+This is authored research code and documentation. Source payloads and per-image
+outputs stay private. All seven README diagrams and prior explanations remain.
+The historical controller remains at 74fbacc; this owned candidate started at
+f9c68707087e926a66ac653e05b184703a53c999. Resolve the final publication from live
+Git/readback. Private owner:
+`~/.codex/reports/reiyah/packet-access-2026-10-11-i_oez750/`.
+Read its freezes, failed/raw/native runs, final study runs and closeout.
+
+New network response custody is 21,667,254 bytes, plus 151,042,381 decoded
+prediction bytes. Combined with prior discovery custody, the stated source
+components total 176,700,449 bytes. Generated records and a text derivative of
+an already retained paper are accounted separately in closeout. The operator
+addendum permits 64 MiB new captures, 512 MiB shared source custody and 1 GiB
+local disk, within a 60-minute active-session allocation. Historical active
+effort remains unknown; no claimed remaining two-day balance or work saving.
+
+Next: a fresh consequential decision with a qualified observation/review action
+and complete costs, under equal-information comparison. The current case is a
+completed scientific screen, not a prospective value packet. Product expansion
+remains stopped pending value; Gate A unaccepted; all 1,433 reserved images
+closed. No images, training, inference, paid compute or new outreach occurred.
+Work remains solo. Earlier checkpoints follow unchanged.
+
 # Current entry: recorded reviewer identity sensitivity, 11 October 2026
 
 Continuation version: 0.1.74. Status: exploratory observation qualification.
