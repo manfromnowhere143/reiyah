@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.general-synthesis`
 
-Version: `0.2.0`
+Version: `0.2.1`
 
 Lifecycle status: `corrected`
 
@@ -11,7 +11,7 @@ outputs can predict some of those errors. The program supports descriptive findi
 universal law of independence, a vehicle safety bound, or a validated human-belief estimator.
 The [research-board report](RESEARCH_BOARD_2026-09-07.md) reconstructs the implementation,
 compares relevant primary research through the review date, and defines the next experiments.
-The [claim register](../evidence/claim-status-register-2026-09-07.json) is the current reconciliation
+The [claim register](../evidence/claim-status-register-2026-10-10.json) is the current reconciliation
 point. Prior transcripts and the previous synthesis remain discoverable in Git history.
 
 ## Sensors
@@ -38,7 +38,9 @@ The human thread measures looking, responding, takeover latency and gaze allocat
 public datasets. These are different variables. They do not establish object-specific belief or
 recoverability. The BDD-A detector/gaze construction uses detector-selected opportunities and
 aggregate laboratory attention. Its near-one coefficient cannot certify complementary human and
-machine detection, particularly when one channel is nearly always labeled as missing.
+machine detection, particularly when one channel is nearly always labeled as missing. The
+[dated correction](../research/claim-correction/0.1.0/README.md) also falsifies
+the earlier population lower-bound inference and marks the affected leaf records.
 
 ## Language-model juries and monitors
 

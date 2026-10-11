@@ -2,9 +2,16 @@
 
 Document ID: `reiyah.human-channel.h5b-cross-agent-interval`
 
-Version: `0.1.0`
+Version: `0.2.0`
 
-Lifecycle status: `proposed`
+Lifecycle status: `corrected`
+
+## Interpretation correction, 2026-10-10
+
+The [dated correction](../research/claim-correction/0.1.0/README.md) governs this result. Original
+transcripts and numerical measurements are preserved. Detector-selected
+coefficients do not bound population dependence; gaze does not identify
+awareness. No universal independence law or safety-evidence credit follows.
 
 ## Why
 
@@ -31,11 +38,10 @@ BDD-A validation, 120 clips, 519 frames, 11,104 driving objects.
 
 ## What it says
 
-1. **The human-machine cell holds with a band that excludes fail-together.** The coefficient's
-   upper bound is 0.993, below 1; the human and the machine do not go blind to the same
-   detectable objects more than independence predicts, and the band sits pointedly below every
-   same-kind coefficient in the program (sensors 1.10 to 1.29 with bands of a hundredth, LLM pairs
-   1.3 to 2.3, the human's own channels 1.46 [1.04, 1.90]).
+1. **The selected proxy coefficient has a clip-bootstrap interval below one.**
+   Its historical upper endpoint is 0.993. This concerns low score and low gaze
+   under the fixed sample split. It supplies neither an independence certificate
+   nor a comparison of latent failures across sensors, people and language models.
 
 2. **This is a re-measurement, not an exact reproduction of H5.** H5's retained run covered 651
    frames and 13,904 objects; this run, with the arguments recorded (120 clips at 0.4 frames per
@@ -43,9 +49,11 @@ BDD-A validation, 120 clips, 519 frames, 11,104 driving objects.
    recorded, and the frame sampling evidently differed. The two coefficients, 0.972 and 0.962, and
    H6's 0.981 [0.962, 0.998], agree within the band.
 
-3. **Determinism on the accelerator was tested, not assumed.** A second full pass with identical
-   arguments on the same machine produced a byte-identical transcript, including every detector
-   output that feeds the 2x2 table. Whether a different machine reproduces it is not established.
+3. **The retained account reports matching transcripts on a second pass.**
+   This concerns printed summaries with identical arguments on the same machine.
+   Transcript equality alone does not establish equality of every unprinted
+   detector tensor. Neither pass was rerun for this correction; reproduction
+   on a different machine is not established.
 
 ## Adversarial reading, 2026-09-06
 
@@ -64,7 +72,8 @@ A context-free reader (model-assisted, advisory, same model family as the author
 
 Same measurement as H5 with a band; the median split is recomputed on this sample and held fixed
 inside the bootstrap. In-lab aggregate gaze from engaged observers; the object set is the
-detector's detections, so this is a floor on cross-agent dependence, not a certificate of
-independence. Research-use public data; terms not retained. Descriptive, not a causal claim, not a
-safety determination. Transcript `evidence/h5b_cross_agent_interval.txt`; raw rows
+detector's detections. No population lower bound or certificate of
+independence follows. Source access and terms limitations remain in the claim
+register and custody record. Descriptive, not a causal claim or safety
+determination. Transcript `evidence/h5b_cross_agent_interval.txt`; raw rows
 `evidence/h5b_raw.npz` (not committed, regenerable). No released `1.2` byte is involved.

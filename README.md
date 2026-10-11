@@ -15,9 +15,9 @@ of obtaining, reviewing and checking the evidence. **An advantage over competent
 conventional analysis remains unproven.**
 
 **Current decision: pause broad engine expansion.** Preserve the conditional
-research core and negative results. The [stopping point](docs/RESEARCH_STOP_POINT_2026-09-21.md)
-records the open scientific and engineering findings, the next bounded repairs,
-and the real revision-workflow evidence needed before product investment resumes.
+research core and negative results. The [current research release](research/releases/2026-10-11/README.md)
+contains the claim corrections, reproducible reference-revision results and the
+evidence required before product investment resumes.
 
 Perception is the current application within **HARBOR: Human-Automation Readiness,
 Belief & Operational Risk**, the proposed wider research program. Its questions
@@ -29,10 +29,6 @@ different evidence requirements.
 [Decision model](#the-decision-model) · [Reference example](#when-the-reference-changes-the-answer) ·
 [Results](#current-evidence) · [Run the auditor](#run-the-offline-auditor) ·
 [Research program](#one-encounter-distinct-information-sets) · [Technical map](#research-map)
-
-[21 September: exact native-grid fidelity](research/grid-fidelity/0.1.0/README.md) resolves the exposed replay with 69 logical reveals per method; equal-information comparison remains tied.
-
-[21 September: complete-cohort mapping decision](research/decision-value/0.1.0/README.md) supports three recorded replacements and leaves one blocked; the competent conventional method agrees.
 
 ## The decision model
 
@@ -206,7 +202,7 @@ Those corrections remain part of the research record.
 
 ## Current evidence
 
-These results summarize retained work through **21 September 2026**. The linked
+These results summarize retained work through **11 October 2026**. The linked
 records contain their complete assumptions, outcomes, failed attempts and costs.
 The rows below concern different, sometimes overlapping development studies;
 their counts must not be added as independent trials.
@@ -229,6 +225,8 @@ inspectable; the supplied assumptions still need physical qualification.
 
 | Question | Retained result | Interpretation |
 | --- | --- | --- |
+| Does a released reference revision change a saved detector ranking? | COCO to COCO-ReM changes the R101-minus-R50 bbox AP gap from **2.327518 to 2.658695 points**; four of 80 category rankings reverse. | Overall ranking unchanged. Conventional evaluation produces the result; no Reiyah benefit was measured. [Replay](research/reference-revision/0.1.0/README.md) |
+| Does selected gaze coincidence bound population dependence? | Exact completions move the coefficient both above and below the selected value. | The general lower-bound inference and associated safety credit are withdrawn. [Correction](research/claim-correction/0.1.0/README.md) |
 | Can reference assumptions change a detector decision? | The two-anchor interval is **[-8, 8]** with open physical references and **[1, 1]** under benchmark labels. | Physical adjudication remains open. [Case](docs/PERCEPTION_ANNOTATION_CASE_2026-09-14.md) |
 | Can an audit's sufficiency be checked? | **372 hypothetical confirmed-present labels** attain a checked minimum on one forty-frame case under its deletion model. | This is conditional sufficiency, not measured sequential query cost or reviewer time. [Proof](docs/PERCEPTION_MONOTONE_AUDIT_2026-09-17.md) |
 | Which decisions remain unresolved? | All **1,790 unresolved rows** in the 7,707-row operating study have checked opposing worlds; **2,199 rows remain blocked**. | A distinguishing observation or justified change of assumptions is required. [Outcomes](research/operating-timing-witness/0.1.0/OUTCOMES.md) |
@@ -277,7 +275,7 @@ measure error coincidence and monitor transfer on archived answer populations.
 Their populations and variables remain distinct from human and vehicle belief
 in a shared encounter. The [scientific charter](docs/SCIENTIFIC_CHARTER.md),
 [corrected synthesis](docs/GENERAL_SYNTHESIS.md) and
-[claim register](evidence/claim-status-register-2026-09-08T054835Z.json)
+[claim register](evidence/claim-status-register-2026-10-10.json)
 set out the scope and corrections.
 
 ## Evidence architecture and reproducibility
@@ -295,12 +293,16 @@ flowchart TB
     F --> L["Locked replay of an immutable candidate"]
     L --> I["Integrity and contract diagnostics"]
   end
-  subgraph RESEARCH["Offline research"]
-    D["Versioned sources<br/>Declared opportunities"] --> X["Experiments and comparison engine"]
-    X --> T["Outputs, failures and corrections"]
+  subgraph RESEARCH["Published offline research"]
+    D["External source inputs<br/>Terms, byte identities and declared opportunities"] --> X["Comparison engine and separate checkers"]
+    D --> B["Conventional benchmark replay<br/>Same saved predictions, two references"]
+    X --> T["Conditional bounds and witnesses"]
+    B --> R["All scores and reference-sensitive rankings"]
   end
-  I -. "requirements; integration incomplete" .-> C["Scoped findings and claim register"]
+  I -. "requirements; integration incomplete" .-> C["Scoped findings, corrections and explicit gaps"]
   T --> C
+  R --> C
+  C --> P["Research release<br/>Eligible source and reproducible measurements"]
 ```
 
 Source hashes bind conclusions to particular bytes. They do not establish that
@@ -323,6 +325,12 @@ no sensor dataset, model or API key. Its JSON should match the retained
 The examples exercise matching ambiguity, shared uncertainty and reference
 dependencies.
 
+The [current research release](research/releases/2026-10-11/README.md) also provides
+exact correction controls, a small extraction-accounting check and a four-run
+[COCO reference replay](research/reference-revision/0.1.0/README.md). The latter
+requires externally obtained, byte-verified score and annotation files; these
+payloads are not distributed in the repository. No model inference is required.
+
 The [engine guide](research/perception-decision/0.1.0/README.md) explains how
 to produce and separately verify a comparison packet; it also requires
 `jsonschema`. The [replacement guide](research/perception-revision/0.1.0/README.md)
@@ -343,11 +351,18 @@ launcher and immutable candidate procedure.
 
 ## Next research decision
 
-The [current roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) stops broad evidence-engine
-expansion. The [continuation record](docs/RESEARCH_STOP_POINT_2026-09-21.md)
-identifies the remaining claim corrections and historical extraction weakness.
-These bounded repairs preserve the existing results; they do not establish
-physical validity or comparative value.
+The [current release decision](research/releases/2026-10-11/README.md#next-scientific-investment)
+continues the stop on broad evidence-engine expansion. The claim corrections
+are now published. An extraction-accounting helper is implemented and checked;
+historical cohorts have not been rerun, and consumer integration and physical
+synchronization remain open. The [September stopping point](docs/RESEARCH_STOP_POINT_2026-09-21.md)
+records why these corrections were required.
+
+Public data and local compute can support further scientific work. An external
+team is needed to substantiate claims about a real team's saved effort, not as a
+prerequisite to every proof or retrospective experiment. The exposed COCO pair
+is closed without selector tuning because conventional evaluation already
+answers its declared ranking question.
 
 The next product-value test needs a real revision decision: genuine old/new model
 artifacts, an owner-defined loss and operating criterion, a qualified review
@@ -365,6 +380,12 @@ currently retained. Further authored examples or exposed parity sweeps cannot
 substitute for that missing workflow evidence.
 
 ## Recent research
+
+- **11 October 2026:** [Corrected research release](research/releases/2026-10-11/README.md). Claim corrections, extraction source, portable reference-revision replay, complete result disclosure and current investment limits.
+
+[21 September: exact native-grid fidelity](research/grid-fidelity/0.1.0/README.md) resolves the exposed replay with 69 logical reveals per method; equal-information comparison remains tied.
+
+[21 September: complete-cohort mapping decision](research/decision-value/0.1.0/README.md) supports three recorded replacements and leaves one blocked; the competent conventional method agrees.
 
 [21 September: recorded navigation fidelity](research/navigation-measurement/0.2.0/README.md) supports the fixed recorded requirement; the conventional method uses one fewer logical sample.
 
@@ -398,13 +419,13 @@ changes the scope of an earlier result.
 | Read for | Start here |
 | --- | --- |
 | Engine model and mathematics | [Architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) · [Replacement interface](research/perception-revision/0.1.0/README.md) |
-| Current direction and evidence | [Roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) · [Execution audit](research/roadmap-audit/0.1.0/README.md) · [Primary-method review](research/roadmap-audit/0.1.0/FRONTIER.md) |
+| Current direction and evidence | [Research release](research/releases/2026-10-11/README.md) · [Evidence inventory](research/releases/2026-10-11/evidence.json) · [Roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) · [Execution audit](research/roadmap-audit/0.1.0/README.md) · [Primary-method review](research/roadmap-audit/0.1.0/FRONTIER.md) |
 | Relational motion research | [Clearance contract](research/frontier-expansion/0.1.0/README.md) · [Current primary research](research/frontier-expansion/0.1.0/SOURCES.md) · [Earlier source scope](research/frontier-expansion/0.1.0/qualification.json) · [NGSIM source adapter](research/public-motion/0.1.0/README.md) |
 | Physical measurement contract | [Source qualification](research/physical-source/0.1.0/README.md) · [Geometry, motion and coverage](research/physical-source/0.1.0/CONTRACT.md) |
 | Recorded input-admission decision | [ViF-GTAD export comparison](research/compact-motion/0.1.1/README.md) · [Frozen question and baseline](research/compact-motion/0.1.1/DECISION_PLAN.md) |
 | Wider scientific program | [Charter](docs/SCIENTIFIC_CHARTER.md) · [Mathematical specification](docs/MATHEMATICAL_SPECIFICATION.md) · [Corrected synthesis](docs/GENERAL_SYNTHESIS.md) |
 | Reference validity and review | [Population audit](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md) · [Adjudication study](docs/REFERENCE_ADJUDICATION_STUDY_2026-09-07.md) · [Threats to validity](docs/MEASUREMENT_THREATS_TO_VALIDITY.md) |
-| Corrections and prior results | [Claim register](evidence/claim-status-register-2026-09-08T054835Z.json) · [Sign correction](docs/FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md) · [Retained history](docs/README_RESEARCH_HISTORY_2026-09-19.md) |
+| Corrections and prior results | [Claim register](evidence/claim-status-register-2026-10-10.json) · [Sign correction](docs/FABLE_SIGN_CONSUMER_REVIEW_2026-09-13.md) · [Retained history](docs/README_RESEARCH_HISTORY_2026-09-19.md) |
 | Contracts, sources and terms | [Gate A architecture](docs/ARCHITECTURE.md) · [Source policy](docs/SOURCE_POLICY.md) · [Public-data custody](docs/PUBLIC_DATA_CUSTODY_2026-09-06.md) · [Standards crosswalk](docs/STANDARDS_CROSSWALK.md) |
 | Product hypothesis and contribution | [Intended users and proof milestones](docs/PRODUCT_AND_FUNDING_THESIS_2026-09-14.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) |
 
@@ -414,4 +435,5 @@ Created and maintained by **Daniel Wahnich**.
 
 Reiyah-authored code and documentation are distributed under [Apache-2.0](LICENSE).
 Third-party materials retain their own terms; see [NOTICE](NOTICE).
-Use [CITATION.cff](CITATION.cff) and cite the exact result or artifact reviewed.
+Cite the exact result and commit reviewed. The [research release](research/releases/2026-10-11/README.md)
+gives its citation; [CITATION.cff](CITATION.cff) describes the historical Gate A architecture.

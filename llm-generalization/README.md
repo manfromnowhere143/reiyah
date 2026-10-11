@@ -1,17 +1,14 @@
 # LLM generalization
 
-Current interpretation, 21 September 2026: read the
-[corrected synthesis](../docs/GENERAL_SYNTHESIS.md) and
-[stopping point](../docs/RESEARCH_STOP_POINT_2026-09-21.md) before the historical
-summaries below. These results do not establish a universal same-kind/cross-kind
-independence law or an identified count of independent models. The older broad
-interpretations are superseded; propagating the correction to every leaf record
-remains in the explicit audit queue. Original measurements remain preserved.
+Current interpretation, 10 October 2026: the
+[dated correction](../research/claim-correction/0.1.0/README.md) and current
+register withdraw the universal independence law and evidence-cost bridge.
+Model-count summaries are homogeneous-equivalent arithmetic, not literal counts.
+The leaf documents now mark superseded interpretations and retain measurements.
 
-The camera-lidar and human-channel work measured the independence assumption in driving. This
-thread shows the estimand is not about driving at all: it applies to any two channels a system
-calls independent. The largest unmeasured such assumption in AI is the LLM jury, self-consistency,
-majority vote, and multi-model cross-checking, all of which assume the models err independently.
+This thread measures coincident errors and agreement accuracy in archived model
+outputs. It does not establish that every ensemble method requires independence
+or that architectural difference provides it.
 
 ## Source
 
@@ -26,14 +23,16 @@ the per-question parquet files from Hugging Face). Result X reads a second jury 
 files carry no gold answer; gold is recovered at join time from a 2023-format model on the same
 question and checked against every row's own correctness flag.
 
-## Result
+## Results
 
-- [`RESULT_T_LLM_INDEPENDENCE.md`](RESULT_T_LLM_INDEPENDENCE.md) - seven models, five families,
-  13,937 MMLU questions. LLM juries fail together (marginal c = 1.32, every pair above 1); the
-  same-kind-vs-cross-kind law replicates (same family 1.52 vs cross family 1.29); the coupling
-  survives difficulty conditioning (conditional c = 1.10); and a seven-model jury has the effective
-  diversity of 3.6 independent models. The independence assumption is a load-bearing fiction
-  wherever redundancy is claimed, in sensors, in the human, and in AI juries alike.
+The following older summaries are retained for navigation. References to a law,
+identified diversity or safety credit are superseded by the correction above;
+consult each leaf's current interpretation before using its measurements.
+
+- [`RESULT_T_LLM_INDEPENDENCE.md`](RESULT_T_LLM_INDEPENDENCE.md): selected MMLU
+  pairs have excess marginal error coincidence and a benchmark-specific lineage
+  contrast. The cross-domain universal law is withdrawn.
+
 - [`RESULT_U_AGREEMENT_RELIABILITY.md`](RESULT_U_AGREEMENT_RELIABILITY.md) - from measuring joint
   failure to predicting it from outputs alone. When two models agree, they are correct only 64.8% of
   the time (both wrong together 35% of the time), and when all seven agree they are still wrong 10.4%

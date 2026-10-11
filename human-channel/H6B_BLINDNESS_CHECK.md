@@ -2,9 +2,22 @@
 
 Document ID: `reiyah.human-channel.h6b-blindness-check`
 
-Version: `0.1.0`
+Version: `0.2.0`
 
-Lifecycle status: `proposed`
+Lifecycle status: `corrected`
+
+## Interpretation correction, 2026-10-10
+
+The [dated correction](../research/claim-correction/0.1.0/README.md) governs this result. Original
+transcripts and numerical measurements are preserved. Detector-selected
+coefficients do not bound population dependence; gaze does not identify
+awareness. No universal independence law or safety-evidence credit follows.
+
+## Historical interpretation below, superseded where it asserts a law or safety credit
+
+Numerical tables retain their original scope. Claims of a universal law,
+physical blindness, identified independent-model counts or evidence-cost
+multipliers in the historical text below are withdrawn for current use.
 
 ## Why
 

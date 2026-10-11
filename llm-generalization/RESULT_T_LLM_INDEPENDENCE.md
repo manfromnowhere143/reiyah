@@ -2,19 +2,23 @@
 
 Document ID: `reiyah.result-t-llm-independence`
 
-Version: `0.1.0`
+Version: `0.2.0`
 
-Lifecycle status: `proposed`
+Lifecycle status: `corrected`
 
-## The estimand is not about cars
+## Interpretation correction, 2026-10-10
 
-The whole program measured whether redundant channels fail independently, the assumption every
-safety and ensemble argument leans on. The coefficient of RSS Definition 32 is not specific to
-sensors; it applies to any two channels a system calls independent. The largest unmeasured such
-assumption in AI today is the LLM jury: self-consistency, majority vote, and multi-model
-cross-checking all assume the models err independently, so aggregating cuts the error. This tests
-that, with the identical method used for the sensors, public per-item predictions and the
-Definition 32 coefficient.
+The [dated correction](../research/claim-correction/0.1.0/README.md) governs this result. Original
+transcripts and numerical measurements are preserved. These results describe
+the selected models and benchmarks. A universal independence law, an identified
+count of independent models and a safety-evidence credit are not established.
+
+## Archived-output measurement
+
+This study computes coincident-wrong ratios from archived model answers.
+Independence is one comparison model, not a premise required by every voting
+or self-consistency method. Sharing a ratio with a sensor study does not
+identify the same latent event or transport a safety guarantee.
 
 Data: the public v1 Open LLM Leaderboard per-question results, MMLU 5-shot, per-question
 correctness. Seven models across five families, joined on 13,937 questions by a hash of the
@@ -34,34 +38,34 @@ example. `wrong_m(q)` is model `m` answering `q` incorrectly, and
 | 7-model jury, P(all wrong) observed | **8.31%** |
 | 7-model jury, P(all wrong) if independent | 0.59% |
 | inflation over independence | **14x** |
-| **effective number of independent models** | **3.60** (you convene 7, you get 3.6) |
+| **homogeneous-equivalent model-count summary** | **3.60** (not an identified count of independent models) |
 
 ## What it says
 
 1. **LLM juries fail together.** Every one of the 21 model pairs has `c > 1`; the models get the
-   same questions wrong more than independence predicts. A jury is not the sum of independent
-   opinions it is treated as.
+   same questions wrong more than independence predicts. This describes these selected
+   models and questions; it does not determine every ensemble method's assumptions.
 
-2. **The same-kind versus cross-kind law replicates.** (Narrowed on 2026-09-06 by Result AC: the
+2. **The selected same-family contrast is benchmark-specific.** (Narrowed on 2026-09-06 by Result AC: the
    same-family excess beyond shared difficulty is 0.058 [0.050, 0.066] on MMLU and includes zero on
-   ARC-Challenge and HellaSwag; the marginal excess holds on all three.) Models of one lineage (three
-   Llama sizes) fail together more than models of different lineages (1.522 versus 1.290), exactly as two
-   same-modality sensors fail together more than a camera and a lidar. Similar systems share their
-   blind spots; genuinely different systems are more independent. The same law, in a different
-   domain.
+   ARC-Challenge and HellaSwag; the marginal excess holds on all three.) The three
+   Llama size pairs have a larger marginal mean than the selected cross-family pairs
+   (1.522 versus 1.290). This is one lineage, not a causal intervention on lineage
+   or a general ordering across sensors, humans and language models.
 
 3. **The coupling survives conditioning.** Conditioned on question difficulty measured by the other
    models (leave the pair out), the coefficient falls but stays above 1 (1.097), just as the
-   camera-lidar coefficient stayed above 1 after conditioning on scene difficulty. Part of the raw
-   coupling is shared difficulty; part is not.
+   camera-lidar coefficient stayed above 1 after conditioning on scene difficulty. The residual is relative to a difficulty proxy;
+   unmeasured difficulty and other explanations remain possible.
 
-4. **A seven-model jury has the diversity of 3.6.** The observed rate at which all seven models
+4. **The homogeneous-equivalent summary is 3.6.** The observed rate at which all seven models
    miss the same question is 14 times what independence predicts, and the effective number of
-   independent models is 3.60. Half the votes you convened are, in effect, echoes.
+   independent models is 3.60. This is an arithmetic summary, not an identified number of independent votes.
 
 ## The unification
 
-Placed beside the rest of the program, one law now spans three domains:
+The older cross-domain table is retained for traceability. Different event
+definitions, marginals and populations prevent treating it as a universal law:
 
 | domain | same-kind pairing | cross-kind pairing |
 |---|---|---|
@@ -69,18 +73,15 @@ Placed beside the rest of the program, one law now spans three domains:
 | the human | eyes x hands, c = 1.46 | (n/a) |
 | LLM juries | same family, c = 1.52 | cross family, c = 1.29 |
 
-**Redundancy across genuinely different kinds buys independence; redundancy across similar kinds
-does not.** The independence assumption is a load-bearing fiction wherever redundancy is claimed,
-and it fails most for the systems that share the most. This is the general statement the driving
-measurements were a special case of.
+The former universal same-kind/cross-kind law is withdrawn. These descriptive
+contrasts do not establish independent failure from architectural difference.
 
 ## Consequence for practice
 
-Result S showed required validation evidence scales as `sqrt(c)` per credited independent channel.
-For an ensemble the analogue is the effective model count: a jury credited as `N` independent votes
-provides `n_eff` here, 3.6 of 7. Any argument that convenes multiple LLMs to cross-check a
-safety-relevant judgment, and credits their agreement as independent confirmation, is over-crediting
-by the same factor, and by more when the models share a lineage.
+Result S's applied evidence-cost interpretation was withdrawn. The jury
+coefficient and homogeneous-equivalent summary supply no safety-validation
+multiplier or redundancy credit. Evaluate actual ensemble decisions against
+calibrated baselines on the intended task and keep transfer failures visible.
 
 ## Adversarial reading, 2026-09-06
 

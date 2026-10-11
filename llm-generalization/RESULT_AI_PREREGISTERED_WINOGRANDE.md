@@ -2,9 +2,22 @@
 
 Document ID: `reiyah.result-ai-preregistered-winogrande`
 
-Version: `0.1.0`
+Version: `0.2.0`
 
-Lifecycle status: `proposed`; the predictions were `preregistered` before the run
+Lifecycle status: `corrected`; the predictions were `preregistered` before the run
+
+## Interpretation correction, 2026-10-10
+
+The [dated correction](../research/claim-correction/0.1.0/README.md) governs this result. Original
+transcripts and numerical measurements are preserved. These results describe
+the selected models and benchmarks. A universal independence law, an identified
+count of independent models and a safety-evidence credit are not established.
+
+## Historical interpretation below, superseded where it asserts a law or safety credit
+
+Numerical tables retain their original scope. Claims of a universal law,
+physical blindness, identified independent-model counts or evidence-cost
+multipliers in the historical text below are withdrawn for current use.
 
 ## What was predicted, and what the bytes say
 

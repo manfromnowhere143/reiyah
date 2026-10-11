@@ -1,0 +1,58 @@
+{
+  "artifact_id": "reiyah.reference-compatibility",
+  "version": "0.1.0",
+  "status": "compatible_for_conditional_bbox_score_file_replay",
+  "plan_sha256": "dca88b25e454f35fbeff2a93cfd24fdbbe74cc780936730bb5477bf6c6e44c42",
+  "script_sha256": "b298e658454eda55edf0638d5c2cf8ad8295f0b143d00f605d9a56b3a66e4a82",
+  "original_annotation_count": 36781,
+  "revised_annotation_count": 40713,
+  "images": 5000,
+  "categories": 80,
+  "all_image_dimensions_and_category_names_match": true,
+  "new_reference_source_counts": {
+    "coco": 33496,
+    "lvis": 6135,
+    "manual": 1082
+  },
+  "valid_unique_original_coco_source_links": 33496,
+  "original_annotations_without_retained_coco_source_link": 3285,
+  "matched_source_bbox_changed_count": 33462,
+  "matched_source_area_changed_count": 33439,
+  "matched_source_crowd_flag_changed_count": 83,
+  "images_with_changed_bbox_evaluation_reference": 4952,
+  "models": {
+    "r50": {
+      "prediction_rows": 161111,
+      "rows_filtered": 0,
+      "images_without_submitted_detection_rows": [
+        58636,
+        173183,
+        198915,
+        267946,
+        268996,
+        502910,
+        556498
+      ],
+      "zero_extent_rows_retained": 0
+    },
+    "r101": {
+      "prediction_rows": 152180,
+      "rows_filtered": 0,
+      "images_without_submitted_detection_rows": [
+        58636,
+        173183,
+        240767,
+        268996,
+        374727,
+        502910,
+        556498,
+        560371
+      ],
+      "zero_extent_rows_retained": 0
+    }
+  },
+  "interpretation": "Reference revision, not measured annotation error rate or independently verified physical truth",
+  "original_inference_completion": "unverified; absent rows mean no submitted detections only",
+  "full_work_trial_admitted": false,
+  "Reiyah_arm": "not_run"
+}

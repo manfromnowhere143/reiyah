@@ -1,0 +1,51 @@
+{
+  "artifact_id": "reiyah.reference-revision.inputs",
+  "version": "0.1.0",
+  "files": [
+    {
+      "name": "r50.json",
+      "url": "https://dl.fbaipublicfiles.com/detectron/35858933/12_2017_baselines/e2e_mask_rcnn_R-50-FPN_1x.yaml.01_48_14.DzEQe4wC/output/test/coco_2014_minival/generalized_rcnn/bbox_coco_2014_minival_results.json",
+      "bytes": 18570506,
+      "sha256": "9ce8b940a94deddce281e424c5b3e1251373e233eb833a76c4d0f5147a0189e4",
+      "accessed_at": "2026-10-10T13:55:14.218934+00:00",
+      "terms": "Publisher model zoo explicitly licenses models CC BY-SA3.0; result-specific redistribution scope not established; private research only."
+    },
+    {
+      "name": "r101.json",
+      "url": "https://dl.fbaipublicfiles.com/detectron/35861795/12_2017_baselines/e2e_mask_rcnn_R-101-FPN_1x.yaml.02_31_37.KqyEK4tT/output/test/coco_2014_minival/generalized_rcnn/bbox_coco_2014_minival_results.json",
+      "bytes": 17540097,
+      "sha256": "3192b4e50ff5fabba70ad5fcbc4c5acb062cf7ffb23de503b6c5743cefcec66d",
+      "accessed_at": "2026-10-10T13:55:17.916560+00:00",
+      "terms": "Publisher model zoo explicitly licenses models CC BY-SA3.0; result-specific redistribution scope not established; private research only."
+    },
+    {
+      "name": "instances_val2017.json",
+      "url": "https://s3.amazonaws.com/images.cocodataset.org/annotations/annotations_trainval2017.zip#annotations/instances_val2017.json",
+      "bytes": 19987840,
+      "sha256": "e8c7f7908f1d7278341fae127d0da654f102f11bd7b21d8aeefa635b8c810b6f",
+      "accessed_at": "2026-10-10T13:55:28.575466+00:00",
+      "terms": "COCO Consortium annotations CC BY4.0; no images acquired."
+    },
+    {
+      "name": "instances_valrem.json",
+      "url": "https://huggingface.co/datasets/kdexd/coco-rem/resolve/87e991af381412ae4b6fff5f017172d9fd206813/instances_valrem.json.zip#instances_valrem.json",
+      "bytes": 41507881,
+      "sha256": "f1cc6fc13d5dd79221e999ea3804ec0969755690e937a4fb081d4b0610236416",
+      "accessed_at": "2026-10-11",
+      "archive_sha256": "a8064d71f6f4a9eb365c4e10f11772743829eac1eb32031d8b4038e2ce5d8f26",
+      "terms": "Dataset card states CC BY 4.0. COCO-ReM authors and COCO/LVIS provenance must remain attributed. No payload redistributed here."
+    }
+  ],
+  "access": "Public source downloads; no images, weights or inference required. Recipient checks applicable terms. No downloader or payload bundled.",
+  "redistribution": "Only authored code, metadata and derived aggregate measurements are included. Source data are not relicensed by this repository.",
+  "dependencies": {
+    "numpy": "2.2.6",
+    "pycocotools": "2.0.11"
+  },
+  "pure_python_package_sha256": {
+    "coco.py": "4a234fc502c6e622f044747312d6a696652545f527e766c98bedf5aa4ca77f41",
+    "mask.py": "4d4788f995971c97c5548f0bd19941f6ec1faaf5d0d7fb6ec489256ff872c617",
+    "__init__.py": "d02e91fe125b82e6e5f0642b897f7439094506d06f32771b40d00170deb8eae1",
+    "cocoeval.py": "988485f79624cd42ceed9335d284df4cdcdf7b3d583e052fcbed2dd6bccf0267"
+  }
+}

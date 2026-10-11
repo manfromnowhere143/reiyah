@@ -1,0 +1,174 @@
+{
+  "artifact_id": "reiyah.research-release.verification",
+  "version": "0.1.0",
+  "date": "2026-10-11",
+  "status": "passed_scoped_research_checks",
+  "base_commit": "fddbc9374884d77e24a2644404a7684e293b00c2",
+  "test_groups": [
+    {
+      "name": "claim-correction",
+      "command": "python3 -B -m unittest discover -s research/claim-correction/0.1.0 -p 'test_*.py' -v",
+      "tests_passed": 11,
+      "stdout_or_stderr_sha256": "bc1163cd5b6024050ab4022d99bda18aaedbd709f60e497ee00e656e1c15e7c2"
+    },
+    {
+      "name": "extraction",
+      "command": "python3 -B -m unittest discover -s research/extraction-accounting/0.1.0 -p test_extract.py -v",
+      "tests_passed": 23,
+      "stdout_or_stderr_sha256": "99e585c8817d1a9f374dff49724870087487f9adab2cddf845cd830a5b906b37"
+    },
+    {
+      "name": "revision",
+      "command": "python3 -B -m unittest discover -s tests -p 'test_perception_revision*.py' -v",
+      "tests_passed": 101,
+      "stdout_or_stderr_sha256": "890ce964a3f660d3d29fbffcc5cd927b5be3cc483ff7c78d733d07447b965c34"
+    },
+    {
+      "name": "conventional",
+      "command": "python3 -B research/value-disproof/0.1.0/test_compare.py",
+      "tests_passed": 10,
+      "stdout_or_stderr_sha256": "61fb5b13fbf23f1c27be69fe2587cc4ae28aa7db2a52925a1eb4335b168a12d0"
+    }
+  ],
+  "unit_tests_passed": 145,
+  "quickstart": {
+    "command": "python3 -B research/perception-decision-review/0.1.0/reproduce.py",
+    "matches_expected_bytes": true
+  },
+  "correction_probe": {
+    "command": "python3 -B research/claim-correction/0.1.0/probe.py",
+    "status": "passed"
+  },
+  "actual_decode_smoke": {
+    "cases": [
+      {
+        "case": "complete",
+        "expected_reason": null,
+        "frame_pairs": 2,
+        "returncode": 0,
+        "status": "passed"
+      },
+      {
+        "case": "equally-short",
+        "expected_reason": "frame_membership_mismatch",
+        "frame_pairs": null,
+        "returncode": 3,
+        "status": "passed"
+      },
+      {
+        "case": "extra-frames",
+        "expected_reason": "frame_membership_mismatch",
+        "frame_pairs": null,
+        "returncode": 3,
+        "status": "passed"
+      },
+      {
+        "case": "corrupt-gaze",
+        "expected_reason": "extraction_process_failed",
+        "frame_pairs": null,
+        "returncode": 3,
+        "status": "passed"
+      },
+      {
+        "case": "missing-gaze",
+        "expected_reason": "source_missing",
+        "frame_pairs": null,
+        "returncode": 3,
+        "status": "passed"
+      }
+    ],
+    "binary_sha256": "cdce70d147fb23fc722c348dec0cba994ec1da386310ed7f67d4317e224c99c9",
+    "scope": "Generated tiny videos only; no historical cohort or synchronization claim"
+  },
+  "reference_replay": {
+    "artifact_id": "reiyah.reference-revision.reproduction",
+    "version": "0.1.0",
+    "status": "matched_retained_numeric_results",
+    "evaluations": 4,
+    "B_minus_A_AP_points": {
+      "original": 2.32751798409625,
+      "revised": 2.6586950688904434
+    },
+    "global_strict_order_reversal": false,
+    "descriptive_category_reversal_ids": [
+      34,
+      52,
+      53,
+      78
+    ],
+    "wall_seconds": 61.92600245898939,
+    "scope": "Fixed score files under two references; no independent scientific replication, Reiyah advantage or human work saving"
+  },
+  "reference_replay_source_binding": {
+    "script_sha256": "c8479a098c6457aec939d4b1c202e8de55a9a3cc4cd9239f8d3d9da06b17b77b",
+    "inputs_manifest_sha256": "80905d6faa3c858ea1f3c769676e3878dd2871be3e3dcfa866c0ea7e8cef9e6d",
+    "expected_sha256": "311ba1aff4b3dac987eac02e76fb1bb6cd63de685167cfb111aa0b6d054f3c55",
+    "status": "running"
+  },
+  "qualification_sha256": "c34c8bbaf62d02a828f34cafd6b20a13d0f03569e121842b6f386c3c24cbb9d4",
+  "replay_rejection_controls": {
+    "checks": [
+      {
+        "name": "numeric_mismatch",
+        "expected_rejection": true
+      },
+      {
+        "name": "nonfinite",
+        "expected_rejection": true
+      },
+      {
+        "name": "missing_metric",
+        "expected_rejection": true
+      },
+      {
+        "name": "bool_is_not_count",
+        "expected_rejection": true
+      },
+      {
+        "name": "changed_input",
+        "expected_rejection": true
+      }
+    ],
+    "script_sha256": "c8479a098c6457aec939d4b1c202e8de55a9a3cc4cd9239f8d3d9da06b17b77b"
+  },
+  "research_consistency": {
+    "passed_checks": 9,
+    "bound_historical_transcripts": 52,
+    "historical_experiments_replayed": 0,
+    "optional_attack_suite": "not_run",
+    "report_sha256": "05dbdd3931be9895c813a83794b602076342373b45838aee5d0ecb86f8c1468a"
+  },
+  "diagrams": {
+    "rendered": 8,
+    "root_preserved": 6,
+    "changed_or_new_visually_inspected": 3,
+    "renderer": "Mermaid CLI 11.4.2 using installed Chrome",
+    "scope": "Local render; no independent GitHub rendering certification"
+  },
+  "relative_links": {
+    "checked": 276,
+    "unresolved": 0,
+    "scope": "Changed and newly added Markdown, including the retained handoff; file/heading existence, not external URL uptime"
+  },
+  "source_sha256": {
+    "research/claim-correction/0.1.0/probe.py": "24d0998584892fe5ec449e3bb0f73fab73315dee3089e4a5dfc1e16c163f5c8e",
+    "research/claim-correction/0.1.0/test_probe.py": "4220d1150fae2a8c17355515d7cae74edcbfca65ae7ddd7971d5e8e58f89ed7f",
+    "research/extraction-accounting/0.1.0/extract.py": "faf2cef61e6b1cc22059dd88bd0a1297c6fdc2463c79ce7312986428a10b90b1",
+    "research/extraction-accounting/0.1.0/smoke.py": "2c513c95bb1b2a0a94128e74aeb6b9df80682ebe28160f0c092c4682656629c2",
+    "research/extraction-accounting/0.1.0/test_extract.py": "1986c43e079af1d9a685bdfe926b33ef39deae1f7df74526a6729f274acafa1f",
+    "research/reference-revision/0.1.0/reproduce.py": "c8479a098c6457aec939d4b1c202e8de55a9a3cc4cd9239f8d3d9da06b17b77b",
+    "research/reference-revision/0.1.0/qualify.py": "c34c8bbaf62d02a828f34cafd6b20a13d0f03569e121842b6f386c3c24cbb9d4",
+    "research/reference-revision/0.1.0/inputs.json": "80905d6faa3c858ea1f3c769676e3878dd2871be3e3dcfa866c0ea7e8cef9e6d",
+    "research/reference-revision/0.1.0/expected.json": "311ba1aff4b3dac987eac02e76fb1bb6cd63de685167cfb111aa0b6d054f3c55",
+    "research/reference-revision/0.1.0/reference-summary.json": "854d940bd8ffb3111739ec2ef0b21e07239ed610c8b499cf1369063522c676e6"
+  },
+  "not_performed": [
+    "full_historical_replay",
+    "Gate_A_release_validation",
+    "independent_scientific_replication",
+    "physical_ground_truth_adjudication",
+    "human_work_savings_trial",
+    "production_validation",
+    "comprehensive_security_or_dependency_audit"
+  ]
+}

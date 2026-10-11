@@ -2,9 +2,16 @@
 
 Document ID: `reiyah.result-ac-llm-intervals`
 
-Version: `0.1.0`
+Version: `0.2.0`
 
-Lifecycle status: `proposed`; one prior statement is `narrowed` by it
+Lifecycle status: `corrected`; descriptive measurements retained
+
+## Interpretation correction, 2026-10-10
+
+The [dated correction](../research/claim-correction/0.1.0/README.md) governs this result. Original
+transcripts and numerical measurements are preserved. These results describe
+the selected models and benchmarks. A universal independence law, an identified
+count of independent models and a safety-evidence credit are not established.
 
 ## Why
 
@@ -39,20 +46,20 @@ and U unchanged. The unit of resampling is the question, the unit of the join.
    ARC-Challenge, and -0.001 [-0.004, 0.002] on HellaSwag. Result T's statement that "models of one
    lineage fail together more than models of different lineages, beyond shared difficulty" is
    therefore narrowed: it is supported on MMLU and not established on the other two, where the
-   whole same-family excess is shared difficulty. The marginal version of the statement stands on
+   estimated interval does not establish a nonzero contrast after the stated adjustment. The marginal version of the statement stands on
    all three.
 
 3. **The conditional residual itself is above 1 on every benchmark, with tight bands.** 1.098,
-   1.057 and 1.028, none of whose intervals reach 1. Something beyond measured difficulty couples
-   the models on every benchmark; on HellaSwag it is small and it is not lineage.
+   1.057 and 1.028, none of whose intervals reach 1. These are residuals relative to a measured difficulty proxy,
+   not identification of a cause; unmeasured difficulty remains possible.
 
-## Consequence for the law
+## Bounded interpretation
 
-The LLM arm of the law is restated to its evidence: redundant LLM channels fail together far beyond
-independence and their agreement is over-trusted, on three benchmarks with intervals; same-lineage
-channels fail together more at the marginal level on all three; and the part of that excess that
-survives difficulty conditioning is a MMLU finding, not a general one. The register carries the
-narrowing.
+The selected models have excess marginal error coincidence on these benchmarks.
+The conditional same-family contrast is established under the stated resampling
+procedure on MMLU and not established on the other two. No universal law,
+lineage causality or physical-safety consequence follows. Agreement accuracy
+is descriptive; no independence null for agreement reliability was computed.
 
 ## Adversarial reading, 2026-09-06
 

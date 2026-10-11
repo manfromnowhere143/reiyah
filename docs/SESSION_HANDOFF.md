@@ -1,3 +1,71 @@
+# Reiyah corrected research release, 11 October 2026
+
+Continuation version: 0.1.71. Status: corrected research publication.
+Broad product expansion remains STOPPED; bounded scientific investigation can
+continue. This checkpoint supersedes the repair queue below without erasing
+its historical instructions or evidence.
+
+Read [the research release](../research/releases/2026-10-11/README.md), its
+[evidence inventory](../research/releases/2026-10-11/evidence.json) and
+[verification record](../research/releases/2026-10-11/verification.json).
+The release tag is `research-2026-10-11`; resolve its exact commit and current
+main from Git rather than treating this narrative as a transport receipt.
+
+The operator explicitly authorized publishing eligible source, findings,
+limitations and Mermaid diagrams as a reproducible research release. This is
+not production-deployment authority, Gate A acceptance or a historical rewrite.
+The owned candidate starts from verified main
+`fddbc9374884d77e24a2644404a7684e293b00c2`. The historical controller remains at
+`74fbacc77a3c74d3a4962f488b589ee614a4c575`; the separate dirty October 10 candidate
+and all other owners remain untouched.
+
+Completed source work: selected-population and universal-independence claim
+corrections, successor claim register, exact correction probe, versioned
+extraction-accounting helper and portable four-evaluation COCO reference replay.
+The comparison-engine algorithms, historical transcripts, frozen manifests and
+Gate A artifacts are unchanged. The README retains all six explanatory diagrams;
+one evidence-architecture diagram is updated and two study/release diagrams added.
+
+The new replay reproduces both saved prediction files under both references,
+including all twelve metrics and all 80 category AP values. Overall R101/R50
+ordering is unchanged; four descriptive category orderings reverse. The
+conventional evaluator produces this finding without a Reiyah arm. Absent score
+rows do not establish successful empty inference. No physical truth, total-work
+saving, contemporary detector superiority or independent replication is claimed.
+
+Verification includes the advertised exact auditor, correction and extraction
+controls, actual FFmpeg smoke cases, input/reference qualification, the saved-score
+replay and repository research-consistency checks. The public verification file
+records actual outcomes and boundaries. Research consistency binds historical
+transcripts; it does not rerun them. Gate A remains operator-unaccepted and no
+locked Gate A release validation is represented as performed.
+
+Remaining limitations: extraction is not integrated into historical model
+consumers, historical cohorts are not reprocessed, capture synchronization is
+unqualified, and a consequential real revision with complete-work measurements
+is still missing. Public retrospective science can proceed without an external
+team; claims about a team's saved work require actual workflow evidence. Keep
+the exposed COCO pair closed to selector tuning and all 1,433 reserved images
+closed. Follow the bounded discovery and stop/go criteria in the release decision.
+
+Raw third-party predictions, annotations, images, weights, paper bodies and
+upstream source captures are not published by this increment. Recipient input
+acquisition is separate and pinned by URLs, terms and digests. Source data are
+not relicensed under the repository license. Local original experiment and launch
+records remain in their existing custody. No paid compute, cloud deployment,
+new outreach, model training or model inference is authorized by this milestone.
+
+For the next repository task, use a fresh owned same-repository candidate from
+freshly verified main; preserve the historical controller and other owners.
+The private publication owner is
+`~/.codex/reports/reiyah/research-release-2026-10-11-6zz18bgf/`.
+Its OWNER, checks, diagram review and publication readback retain execution
+provenance. Readback by the publisher is not independent transport verification.
+Human Git identity and the editorial policy continue to apply. Root CITATION.cff
+remains the historical Gate A citation; the research release has a separate citation.
+
+Earlier checkpoints follow unchanged.
+
 # Reiyah stopping point and correction queue, 21 September 2026
 
 Continuation version: 0.1.65. Status: proposed. Broad product expansion STOPPED.

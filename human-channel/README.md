@@ -1,12 +1,11 @@
 # Human channel
 
-Current interpretation, 21 September 2026: read the
-[corrected synthesis](../docs/GENERAL_SYNTHESIS.md) and
-[stopping point](../docs/RESEARCH_STOP_POINT_2026-09-21.md) before the historical
-summaries below. Detector-selected gaze results do not establish human-machine
-independence or a population lower bound. The H5/H5b leaf documents and claim
-register still need the dated correction recorded in that queue. The original
-measurements and older descriptions are preserved for traceability.
+Current interpretation, 10 October 2026: the
+[dated correction](../research/claim-correction/0.1.0/README.md) and successor
+claim register withdraw the population-bound and general independence inferences.
+H5/H5b/H6 retain descriptive detector-selected gaze measurements. Their original
+transcripts are unchanged. A checked [extraction-accounting helper](../research/extraction-accounting/0.1.0/README.md)
+is available; historical cohort replay, consumer integration and timing qualification remain open.
 
 The camera-lidar workstream measured coupling between two automation channels. This thread
 begins the other side of the windshield: the human, and eventually the joint human-automation
@@ -51,23 +50,15 @@ The tools expect `eventEyeglance.txt`, `eventVideoReduced.txt`, `baselineEyeglan
   manual distraction (game, messaging, reading, eating) slows the automation-to-human takeover by
   +0.47 s (+24%) versus no task; cognitive-only load costs almost nothing. The kind of distraction
   is what matters, and the human-as-backup assumption is weakest for the tasks people do on a phone.
-- [`H5_CROSS_AGENT_JOINT.md`](H5_CROSS_AGENT_JOINT.md) - the cross-agent joint (BDD-A, research-use):
-  a validated detector on the frames (automation) against the driver gaze heatmap (human) over
-  13,904 objects. Cross-agent c = 0.97, approximately independent, in contrast to same-kind
-  redundancy (two sensors 1.15, one human's eyes-x-hands 1.46). Same-kind redundancy is a trap;
-  different-kind (human x machine) roughly holds - on detectable objects, with an engaged human.
-- [`H6_TOTAL_BOTH_MISS.md`](H6_TOTAL_BOTH_MISS.md) - the deepest version, with an interval. A strong
-  reference detector defines objects present, a realistic edge detector is the deployed automation
-  (totally blind to 84.5% of them), and the total joint miss with human neglect is c = 0.981,
-  clip-clustered 95% CI [0.962, 0.998]. Even at total blindness the human-machine pairing is not
-  worse than independent, in sharp contrast to same-kind redundancy.
-- [`H5B_CROSS_AGENT_INTERVAL.md`](H5B_CROSS_AGENT_INTERVAL.md) - H5 re-measured with the clip
-  id per object: c = 0.962, clip-clustered band [0.927, 0.993], upper bound below 1. The
-  human-machine cell now carries a band at both depths (H5b, H6).
-- [`H6B_BLINDNESS_CHECK.md`](H6B_BLINDNESS_CHECK.md) - the edge detector's 84 percent total-miss
-  rate in H6 is genuine and size-driven (100 percent on the smallest quarter of boxes, 42.6 on the
-  largest), not a matching or class-mapping defect; the marginals still cap H6's coefficient near
-  1.18, so the human-machine cell rests on H5 and H5b.
+- [`H5_CROSS_AGENT_JOINT.md`](H5_CROSS_AGENT_JOINT.md): low detector score and low
+  gaze on 13,904 selected boxes, c = 0.972. No population bound or awareness claim.
+- [`H5B_CROSS_AGENT_INTERVAL.md`](H5B_CROSS_AGENT_INTERVAL.md): a different sampled
+  cohort, c = 0.962 with historical clip-bootstrap interval [0.927, 0.993].
+- [`H6_TOTAL_BOTH_MISS.md`](H6_TOTAL_BOTH_MISS.md): reference-detector unmatched
+  boxes and low gaze, c = 0.981 [0.962, 0.998]; marginals constrain its range.
+- [`H6B_BLINDNESS_CHECK.md`](H6B_BLINDNESS_CHECK.md): size and matching diagnostics
+  on H6's reference-defined misses, without independent physical ground truth.
+
 - [`H7_INTERVALS.md`](H7_INTERVALS.md) - bands on every human-channel headline. The eyes x hands
   coefficient is 1.46 [1.04, 1.90] over all events (event-resampled, not driver-clustered) and does
   not exclude 1 in either severity subgroup; the visual-manual takeover delay is +0.47 s [+0.21,

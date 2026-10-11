@@ -2,27 +2,34 @@
 
 Document ID: `reiyah.human-channel.h6-total-both-miss`
 
-Version: `0.1.0`
+Version: `0.2.0`
 
-Lifecycle status: `proposed`
+Lifecycle status: `corrected`
 
-## The deepest question, and why H5 could not answer it
+## Interpretation correction, 2026-10-10
 
-H5 measured cross-agent coincidence on objects the detector at least weakly saw, and found
-independence there. The dangerous case is the total joint miss: an object that is really
+The [dated correction](../research/claim-correction/0.1.0/README.md) governs this result. Original
+transcripts and numerical measurements are preserved. Detector-selected
+coefficients do not bound population dependence; gaze does not identify
+awareness. No universal independence law or safety-evidence credit follows.
+
+## Reference-defined measurement
+
+H5 measured cross-agent coincidence on objects the detector at least weakly saw, and reported a
+near-one proxy coefficient there. The dangerous case is the total joint miss: an object that is really
 present, that the automation detects **not at all**, and that the human also does not attend. That
 needs a reference for "present" beyond the deployed detector. BDD-A carries no ground-truth boxes,
 and BDD100K's labels cannot be joined to it (the clips are renumbered with no mapping, confirmed
-from the data). So the correct construction, without an impossible join, uses a strong reference
-detector to define the objects present and a realistic deployed detector as the automation channel,
-whose total misses on the reference objects are genuine blindness.
+from the data). The implemented construction uses a stronger reference
+detector to define selected candidate objects and an edge detector as the automation channel.
+An unmatched reference box is a reference-defined miss, not independently established physical blindness.
 
-- reference (objects present): Faster R-CNN ResNet50-FPN v2, driving classes, score `>= 0.6`
-- deployed automation: SSDLite MobileNetV3, a real edge detector, score `>= 0.25`
-- automation miss on a reference object: no deployed box overlaps it at IoU `>= 0.5`, i.e. the
-  deployed detector gives it no detection at all
-- human miss: gaze-heatmap density on the reference box below the per-run median
-- `c = P(both miss) / [ P(auto miss) * P(human miss) ]`, the same estimand as everywhere else
+- reference candidates: Faster R-CNN ResNet50-FPN v2, driving classes, score `>= 0.6`
+- automation model under study: SSDLite MobileNetV3, score `>= 0.25`; run offline
+- reference-defined automation miss: no eligible automation box overlaps the
+  reference at IoU `>= 0.5`; this includes localization and matching effects
+- historical "human miss" proxy: gaze-heatmap density below the per-run median
+- `c = P(both miss) / [ P(auto miss) * P(human miss) ]`, a descriptive ratio for these operational variables
 
 ## The result
 
@@ -37,52 +44,43 @@ BDD-A validation, 100 clips, 533 frames, **7,735 reference objects**.
 | **coefficient c** | **0.981** |
 | clip-clustered bootstrap 95% CI (96 clips) | **[0.962, 0.998]** |
 
-The edge detector is totally blind to 84.5% of the objects a strong model confidently finds, which
-is the deployment reality for cheap perception. And even across those total misses, the human's
-neglect does not pile onto the machine's blindness. The interval sits just below 1.0.
+The edge detector fails to match 84.5% of the selected reference boxes under
+these thresholds. The low-gaze proxy and reference-defined automation miss have
+a recorded coefficient near one. The interval sits just below 1.0. This is an
+offline reference-defined result; physical blindness is not identified.
 
 ## What it says, stated to its tolerance
 
-Read against the rest of the program, with intervals where they exist:
+Historical summaries follow. Their events and populations differ, so these
+coefficients do not rank kinds of redundancy:
 
 | Redundancy pairing | coefficient | reading |
 |---|---|---|
 | Two sensors, camera x lidar | 1.15 [1.14, 1.16] | worse than independent, fails together |
 | One human, observation x response | 1.46 | worse than independent |
-| Human x automation, uncertain miss (H5) | 0.97 | approximately independent |
-| **Human x automation, total miss (H6)** | **0.98 [0.96, 0.998]** | **not worse than independent** |
+| Human x automation, uncertain miss (H5) | 0.97 | selected proxy coefficient |
+| **Human x automation, total miss (H6)** | **0.98 [0.96, 0.998]** | **selected proxy coefficient** |
 
-The load-bearing claim is the asymmetry: **same-kind redundancy is substantially above 1; the
-human-machine pairing is not**, with the qualification added on 2026-09-06 that this construction's
-marginals cap the coefficient at about 1.18, so the informative human-machine evidence is H5 and H5b. The H6 interval grazes 1.0 from below,
-so the most that can be said on the upper side is a small complementary tilt, where the machine is
-blind the human is slightly more likely to attend, and it is not oversold here: a two-percent effect
-with a confidence bound at 0.998 is reported as "approximately independent, and pointedly not the
-fail-together pattern of same-kind redundancy."
-
-The mechanism is the honest reason the field's independence assumption survives in exactly one
-place. Two sensors share a substrate and share their blind spots. A human's eyes and hands share one
-attention budget. But a human and a machine are built and fail differently, so their misses do not
-concentrate on the same objects. The redundancy worth building is the one across kinds.
+The interpretation of a general difference between kinds of redundancy is
+withdrawn. The observed marginals strongly constrain the normalized coefficient.
+No causal mechanism or preference for a kind of redundancy is identified here.
 
 ## The bounds, load-bearing
 
 1. The reference is a strong detector, not human ground truth, so this is the joint miss on the
-   strong-model-detectable set, still a lower bound, since the strongest model also misses the very
-   hardest objects.
-2. It holds for an engaged human; the gaze here is attentive-observer data, and Results H3 and H4
-   show a distracted human's own channels collapse, so the independence is conditional on attention.
+   strong-model-selected set. Neither the normalized coefficient nor its rate
+   is thereby a lower bound on the full physical population.
+2. The gaze comes from attentive laboratory observers. Results H3 and H4
+   concern separate populations and outcomes; they cannot establish conditional
+   human-machine independence in this construction.
 3. The gaze is an in-lab aggregate over observers, SSDLite is one edge detector and not any product,
    and this is descriptive, on one public research dataset.
 
-## Consequence for the corrected calculus
+## Safety interpretation withdrawn
 
-In Result S the corrected evidence requirement inflates by `sqrt(c)` per credited redundancy layer.
-Same-kind layers inflate it. The human-automation layer, on this evidence, contributes
-`sqrt(0.98) ~ 0.99`, essentially no inflation, and possibly a small credit, but only under the
-conditions measured here: an engaged human and objects a strong model can find. Credited as a
-blanket independence, it would be an overclaim; credited under those conditions, it is the one
-redundancy the data supports.
+The former Result S evidence multiplier and proposed human-machine safety
+credit are withdrawn. The required transfer to safety-critic errors, fusion
+rule, uniform dependence bound and statistical estimator is not established.
 
 ## Adversarial reading, 2026-09-06
 
@@ -93,19 +91,22 @@ A context-free reader (model-assisted, advisory, same model family as the author
    whatever the true dependence. "Not worse than independent" is therefore close to forced by the
    marginals, and this coefficient cannot be compared on the same scale as same-kind coefficients
    whose marginals permit values of 2 or 3. The register entry is narrowed to say so; the
-   human-machine cell of the law rests on H5 and H5b, whose ceiling is 2.0.
+   H5 and H5b coefficients also require their stated selection limits; their ceiling is 2.0.
 2. An 84.5 percent total-miss rate for a small edge detector at 0.25 on objects a strong detector
-   finds at 0.6 was not verified as genuine blindness. H6b verified it the same evening: the miss is
+   finds at 0.6 was initially described as genuine blindness. H6b examined the
+   reference-defined mismatch the same evening: the miss is
    size-driven (100 percent on the smallest quarter of boxes, 42.6 on the largest), loosening the
-   match recovers three points, and the category lists are identical. Genuine, and the ceiling caveat
-   in point 1 stands.
+   match recovers three points, and the category lists are identical. Those
+   diagnostics narrow pipeline explanations; they do not establish physical
+   blindness against independent truth. The ceiling caveat in point 1 stands.
 3. The band uses 96 of 100 clips; four lack gaze video or reference objects.
 
 ## Non-claims
 
 Research-use public data (Xia et al. 2018, BDD-A), retained as `proposed`. A strong detector as
-reference, not human ground truth; a lower bound on the true joint miss. The word silent is not
-claimed: no warning, indication, or fallback channel is observed here, and the register reserves
+reference, not human ground truth; no population lower bound on the joint-miss
+rate or coefficient. The word silent is not claimed: no warning, indication,
+or fallback channel is observed here, and the register reserves
 joint silent miss for an audited monitor adapter. Pretrained torchvision detectors are executed on
 the public frames to produce the automation channel; no model is trained. Descriptive, not a causal
 effect, not a safety determination, not a claim about any product. No released `1.2` byte is
