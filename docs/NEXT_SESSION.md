@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.6`
+Version: `0.1.7`
 
 Lifecycle status: `proposed`
 
@@ -150,6 +150,24 @@ marginals. All three existing outreach threads still lack a response after
 Daniel's requests at this continuation's recorded read; no new message was sent.
 The next task remains obtaining and qualifying an actual channel and comparison,
 not another synthetic sweep or an automatic extension of either completed audit.
+
+The [next-evidence investigation](research-decisions/next-evidence-2026-10-11.md)
+rechecked ReChecked at its unchanged December 2025 commit. It is the exact
+source used by the September reference-correction studies, not a fresh case.
+All 1,433 formerly reserved images remain closed. The retained archive contains
+boxes, scalar scores and ID mappings, without individual review or duration
+records. The newer paper reports measured mean microtask costs while excluding
+manual duplicate-removal effort from relevant totals; these do not supply
+complete engineering-work measurements. No new comparison was admitted.
+
+Before further acquisition, check commit and payload identity against prior
+custody. Nine responses in that investigation duplicated retained sources;
+do not repeat the same search as a new lead. The precise next dependency is
+newly qualified records for the actual observation process and paired decision,
+including unresolved responses and complete work. The posted evaluator request
+may first support a narrower empirical software-impact check; that is separate
+from a timed value comparison. The three threads still had no reply after
+Daniel at the recorded refresh. No new message or monitor was started.
 
 The fixed release tag `research-2026-10-11` resolves to
 `5de377af25a4c6882096ebbc91808b19feafb628`. Its later metadata clarification is

@@ -1,3 +1,61 @@
+# Current entry: qualify new evidence before another experiment, 11 October 2026
+
+Continuation version: 0.1.80. Status: exploratory source-admission investigation.
+Read [NEXT_SESSION.md](NEXT_SESSION.md), the
+[admission decision](research-decisions/next-evidence-2026-10-11.md) and its
+[evidence record](../evidence/next-evidence-admission-2026-10-11.json).
+
+Daniel requested autonomous progress grounded in investigation. No fresh
+comparison was admitted. ReChecked was initially identified as a promising lead,
+then traced to the exact December 2025 release already used by September's
+reference-correction studies. Nine newly fetched responses duplicate 472,465
+retained bytes; this was avoidable work, not independent evidence. The previously
+retained 5,386,683-byte prediction archive was reused instead of downloaded.
+Its SHA-256 and Git blob identity match current upstream; the existing inert
+primitive reader confirms four fields, 18 groups, no individual review/duration
+records. All 1,433 formerly reserved images remain closed.
+
+The annotation CSV contains 3,078 boxes over 761 of 1,497 roster images, with
+one aggregate probability and geometry. The remaining 736 images without CSV
+rows are not authenticated empty observations. The paper's v2, 30 January 2026,
+reports measured mean microtask durations but excludes manual duplicate-removal
+work from relevant totals. These records do not establish a real resolution
+channel or complete decision-work savings. No detector outcome was recalculated.
+2026 paired failure-discovery and active-ranking abstracts have distinct targets;
+no performance claim or comparator guarantee was imported.
+
+All three existing contact endpoints were read once, with complete pagination.
+Evaluator zero comments, RF-DETR three ending with Daniel's October 10 request,
+automotive zero, observed server Date 12:26:13 UTC on October 11. No new reply,
+message or background poll. The already posted evaluator report must not be
+resent. An original packet could support an empirical software-impact check;
+that does not by itself supply a timed product-value comparison.
+
+Next: qualify genuinely new decision/observation records, with complete paired
+opportunities, actual review responses, unresolved states, dependence and full
+work. Check source identity against retained custody before new acquisition.
+Do not fill the gap with another synthetic control, exposed selector or assumed
+cost. Both completed controls and prior negative value comparisons stand.
+
+Private owner: `~/.codex/reports/reiyah/next-evidence-investigation-2026-10-11-32k5hvrw/`.
+Base: 45d93a321a2962bbfb015b241f2f1ed360ea76ce. Nineteen source responses total
+1,119,782 bytes: 857,637 complete and 262,145 incomplete. Known duplicate bytes
+are included, not new unique custody. The incomplete KITTI page and its text
+are evidence-ineligible; retained prior terms were used without retry. No
+third-party payload is published. Previous immediate custody totals are not
+reset or silently increased as unique data. Active historical effort remains
+unknown. Owner cap: 40 minutes, 4-MiB source reads, 24 captures, 32-MiB additions
+excluding candidate projection, zero spend. Local wall time is not human effort.
+
+This is a documentation/admission update. Closeout checks the nine research
+consistency checks, exact offline example, continuation bindings, current links,
+unchanged README/diagrams, source digests and exact publication readback. Retained
+historical transcripts are bound, not replayed; no Gate A release run. The
+canonical controller and release tag remain fixed. Gate A is operator-unaccepted;
+broad product expansion stays stopped pending demonstrated value. No fresh
+scientific advantage, paid resource, image, training, inference or delegation.
+Earlier entries follow unchanged.
+
 # Current entry: qualify resolvability before choosing queries, 11 October 2026
 
 Continuation version: 0.1.79. Status: exploratory authored mathematical control.

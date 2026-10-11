@@ -1,0 +1,490 @@
+{
+  "artifact_id": "reiyah.next-evidence-admission",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "as_of": "2026-10-11",
+  "base_commit": "45d93a321a2962bbfb015b241f2f1ed360ea76ce",
+  "decision": "No fresh empirical comparison admitted; concrete records required before a new calculation",
+  "scope": "Source admission and current literature scope; no new detector results, cost curves, selector, inference or product integration",
+  "private_owner": "/Users/danielwahnich/.codex/reports/reiyah/next-evidence-investigation-2026-10-11-32k5hvrw",
+  "inspection": {
+    "artifact_id": "reiyah.next-evidence-admission.inspection",
+    "version": "0.1.0",
+    "scope": "Exposed source structure and admission only; no performance or correction outcomes recalculated",
+    "upstream_commit": "1321946698296416d0495999d000dec2deea5e4d",
+    "upstream_tree": "71ef214fcdcc9350138e18b63171d7b14a7bcebf",
+    "complete_tree_entries": 16,
+    "prior_packet": "/Users/danielwahnich/.codex/reports/reiyah/engine-reference-corrections-2026-09-17-n4s6r72u",
+    "reused_pickle": {
+      "bytes": 5386683,
+      "sha256": "d3a40e9eed6b235e2660fc190c0d4cffddcf73d19c2cf3582ae997fac3bbe6a9",
+      "git_blob": "1404b4976340e400baa316f8f56174c663e91166"
+    },
+    "primitive_reader": {
+      "path": "/Users/danielwahnich/.codex/reports/reiyah/engine-reference-corrections-2026-09-17-n4s6r72u/private/read_plain_pickle.py",
+      "sha256": "8e1dcefd90d26b0c1a84909e7e6d0d16e3e1f34b81eb2f20b4327792bbd8fb71"
+    },
+    "pickle_keys": [
+      "bboxes",
+      "mo_id_to_mid",
+      "mo_ids",
+      "scores"
+    ],
+    "pickle_groups": 18,
+    "pickle_values": "Four-float boxes, scalar float scores, string object IDs and string object-to-media mapping; no individual response or duration records",
+    "validated_csv": {
+      "columns": [
+        "",
+        "filename",
+        "probability",
+        "xmin",
+        "ymin",
+        "xmax",
+        "ymax",
+        "height"
+      ],
+      "rows": 3078,
+      "image_groups": 761,
+      "validation_roster": 1497,
+      "roster_images_without_csv_rows": 736,
+      "interpretation": "Absence of rows does not authenticate an empty observation or a failed run"
+    },
+    "source_records": 19,
+    "source_response_bytes": 1119782,
+    "complete_response_bytes": 857637,
+    "incomplete_response_bytes": 262145,
+    "duplicate_payloads_against_named_prior_packet": [
+      "rechecked-tree.json",
+      "rechecked-LICENSE",
+      "rechecked-README.md",
+      "rechecked-cost_analysis.py",
+      "rechecked-benchmark_evaluation.py",
+      "rechecked-compare_annotations.py",
+      "rechecked-process_kitti.py",
+      "rechecked-data-validated_gt.csv",
+      "rechecked-data-train_val_split.json"
+    ],
+    "duplicate_payload_bytes": 472465,
+    "contact_observations": [
+      {
+        "name": "uod-comments.json",
+        "comments": 0,
+        "last_author": null,
+        "last_created_at": null,
+        "observed_server_date": "Sun, 11 Oct 2026 12:26:13 GMT"
+      },
+      {
+        "name": "rfdetr-comments.json",
+        "comments": 3,
+        "last_author": "manfromnowhere143",
+        "last_created_at": "2026-10-10T11:20:18Z",
+        "observed_server_date": "Sun, 11 Oct 2026 12:26:13 GMT"
+      },
+      {
+        "name": "automotive-comments.json",
+        "comments": 0,
+        "last_author": null,
+        "last_created_at": null,
+        "observed_server_date": "Sun, 11 Oct 2026 12:26:13 GMT"
+      }
+    ],
+    "fresh_case_admitted": false,
+    "fresh_physical_resolution_channel_qualified": false,
+    "full_work_advantage_established": false
+  },
+  "verification_files": [
+    {
+      "path": "PLAN.json",
+      "sha256": "16326f6576bdf50977afd6c539f44753e668c57ad4e5e8279379df37750add0f",
+      "bytes": 1440
+    },
+    {
+      "path": "capture.py",
+      "sha256": "f210cf18dfb81d5be3049700a5cef80378c06714c4acb65d896bd4cee39c46c9",
+      "bytes": 1790
+    },
+    {
+      "path": "inspect_admission.py",
+      "sha256": "2e0f3e170d3a5baecb9bbaab1ca0fed7be952947e3b146f163bed79af720a0ff",
+      "bytes": 5488
+    },
+    {
+      "path": "checks/INSPECTION.json",
+      "sha256": "6f6bd6f4201dac3161a6c79c0cbb8db0c663da62c78094c5e5134f814b999ae0",
+      "bytes": 2870
+    },
+    {
+      "path": "SOURCES.json",
+      "sha256": "c45d842318172317e2f254b4a9544ca2d5833f16f11ec5b05dcb66fb38f7d0e8",
+      "bytes": 16916
+    }
+  ],
+  "inspection_command": "/usr/bin/sandbox-exec -p '(version 1) (allow default) (deny network*)' python3 -B inspect_admission.py",
+  "source_records": [
+    {
+      "name": "rechecked-ref.json",
+      "url": "https://api.github.com/repos/JonathanKlees/rechecked/git/ref/heads/main",
+      "resolved_url": "https://api.github.com/repos/JonathanKlees/rechecked/git/ref/heads/main",
+      "observed_local_UTC": "2026-10-11T12:21:36.734311+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:22:49 GMT",
+      "status": 200,
+      "bytes": 344,
+      "sha256": "87f6c6ceb6dc9f0c05bbaccd2a0901aa6e4ed7e69eb6ba413a7c50ab54461793",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Public metadata or primary-source page; private custody only; no payload republication inferred.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "rechecked-commit.json",
+      "url": "https://api.github.com/repos/JonathanKlees/rechecked/git/commits/1321946698296416d0495999d000dec2deea5e4d",
+      "resolved_url": "https://api.github.com/repos/JonathanKlees/rechecked/git/commits/1321946698296416d0495999d000dec2deea5e4d",
+      "observed_local_UTC": "2026-10-11T12:21:37.077901+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:22:50 GMT",
+      "status": 200,
+      "bytes": 878,
+      "sha256": "759d468440e763ce28d58fbfa8d2623ba9eff39d64420b025f5d9a1116c6bb26",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Public metadata or primary-source page; private custody only; no payload republication inferred.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "rechecked-tree.json",
+      "url": "https://api.github.com/repos/JonathanKlees/rechecked/git/trees/71ef214fcdcc9350138e18b63171d7b14a7bcebf?recursive=1",
+      "resolved_url": "https://api.github.com/repos/JonathanKlees/rechecked/git/trees/71ef214fcdcc9350138e18b63171d7b14a7bcebf?recursive=1",
+      "observed_local_UTC": "2026-10-11T12:21:37.388638+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:22:50 GMT",
+      "status": 200,
+      "bytes": 3906,
+      "sha256": "49cdfa339e071dd3d4449a2b79d8c91b6dbf95d546e4adebb2404781ce28e485",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Public metadata or primary-source page; private custody only; no payload republication inferred.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "rechecked-LICENSE",
+      "url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/LICENSE",
+      "resolved_url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/LICENSE",
+      "observed_local_UTC": "2026-10-11T12:23:20.758664+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:24:33 GMT",
+      "status": 200,
+      "bytes": 1071,
+      "sha256": "1967d24294e63bde592e0b1dd7b85546e32a309efdd61b4f3c6623115e1a1afa",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Repository MIT, copyright 2025 Jonathan Klees; source LICENSE retained and hash-bound. No source copied into public report.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "rechecked-README.md",
+      "url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/README.md",
+      "resolved_url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/README.md",
+      "observed_local_UTC": "2026-10-11T12:23:21.181688+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:24:34 GMT",
+      "status": 200,
+      "bytes": 3382,
+      "sha256": "23c07f091920ea8bc38e9f6243ae2ed6e47c8ca2265f22ed9f69e1d7eacbb7d7",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Repository MIT, copyright 2025 Jonathan Klees; source LICENSE retained and hash-bound. No source copied into public report.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "rechecked-cost_analysis.py",
+      "url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/cost_analysis.py",
+      "resolved_url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/cost_analysis.py",
+      "observed_local_UTC": "2026-10-11T12:23:21.642318+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:24:34 GMT",
+      "status": 200,
+      "bytes": 27790,
+      "sha256": "977c45fba318c9d539fe99c9ac353197b551cff8eb055ad3f403ddf759dc7a4c",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Repository MIT, copyright 2025 Jonathan Klees; source LICENSE retained and hash-bound. No source copied into public report.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "rechecked-benchmark_evaluation.py",
+      "url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/benchmark_evaluation.py",
+      "resolved_url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/benchmark_evaluation.py",
+      "observed_local_UTC": "2026-10-11T12:23:22.059836+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:24:35 GMT",
+      "status": 200,
+      "bytes": 18309,
+      "sha256": "2b425752e552e87b0c60c6eee52cca1163a136a8b22fc7551615c9bafb541dc5",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Repository MIT, copyright 2025 Jonathan Klees; source LICENSE retained and hash-bound. No source copied into public report.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "rechecked-compare_annotations.py",
+      "url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/compare_annotations.py",
+      "resolved_url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/compare_annotations.py",
+      "observed_local_UTC": "2026-10-11T12:23:22.464083+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:24:35 GMT",
+      "status": 200,
+      "bytes": 9518,
+      "sha256": "aa59919ccf4d47a8e996fbe5e88f0d826d4dacc54079e469fcc7659edd759a72",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Repository MIT, copyright 2025 Jonathan Klees; source LICENSE retained and hash-bound. No source copied into public report.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "rechecked-paper-v2.html",
+      "url": "https://arxiv.org/html/2508.06556v2",
+      "resolved_url": "https://arxiv.org/html/2508.06556v2",
+      "observed_local_UTC": "2026-10-11T12:23:46.693078+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:24:59 GMT",
+      "status": 200,
+      "bytes": 260762,
+      "sha256": "867fa9a9790003fc668fb8d98d8071e3dcdb525b6a9739af2cee80edd81b5459",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Paper HTML identifies CC BY 4.0; retained privately with authors and exact arXiv version.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "rechecked-project.html",
+      "url": "https://osvia.org/ReChecked/",
+      "resolved_url": "https://osvia.org/ReChecked/",
+      "observed_local_UTC": "2026-10-11T12:23:50.499275+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:25:03 GMT",
+      "status": 200,
+      "bytes": 25567,
+      "sha256": "a24843ec8366ae626786b41fe86df3f8584cd1026c45d1b09cecf3a2cc72c9bb",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Public metadata or primary-source page; private custody only; no payload republication inferred.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "kitti-object-page.html",
+      "url": "https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=2d",
+      "resolved_url": "https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=2d",
+      "observed_local_UTC": "2026-10-11T12:23:51.527728+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:25:04 GMT",
+      "status": 200,
+      "bytes": 262145,
+      "sha256": "6c946109e0cfb77439867cb7124feeed7615a5f15bfab9a980611c11e396cb5d",
+      "complete_within_cap": false,
+      "access": "Public unauthenticated GET",
+      "terms": "Public metadata or primary-source page; private custody only; no payload republication inferred.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "rechecked-process_kitti.py",
+      "url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/process_kitti.py",
+      "resolved_url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/process_kitti.py",
+      "observed_local_UTC": "2026-10-11T12:24:07.400011+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:25:20 GMT",
+      "status": 200,
+      "bytes": 4731,
+      "sha256": "25dac9968ac88d3d47d545c8ae35892472f275e2c3fef075b5f57dcb1229296c",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Repository MIT, copyright 2025 Jonathan Klees; source LICENSE retained and hash-bound. No source copied into public report.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "rechecked-data-validated_gt.csv",
+      "url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/data/validated_gt.csv",
+      "resolved_url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/data/validated_gt.csv",
+      "observed_local_UTC": "2026-10-11T12:24:08.079183+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:25:21 GMT",
+      "status": 200,
+      "bytes": 268924,
+      "sha256": "4a029e322ccacd281cf3158987f8cada9fb1e52fad9b605412f75681a3a8583f",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Repository MIT does not erase underlying KITTI CC BY-NC-SA 3.0 scope; prior KITTI terms retained separately. Private read-only analysis only.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "rechecked-data-train_val_split.json",
+      "url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/data/train_val_split.json",
+      "resolved_url": "https://raw.githubusercontent.com/JonathanKlees/rechecked/1321946698296416d0495999d000dec2deea5e4d/data/train_val_split.json",
+      "observed_local_UTC": "2026-10-11T12:24:09.005036+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:25:21 GMT",
+      "status": 200,
+      "bytes": 134834,
+      "sha256": "9bbb95193c9f4f7ce2aa35e455c40b223b70702667844598538cee2abe470dd7",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Repository MIT does not erase underlying KITTI CC BY-NC-SA 3.0 scope; prior KITTI terms retained separately. Private read-only analysis only.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "uod-comments.json",
+      "url": "https://api.github.com/repos/JonathanKlees/Uncertainty-aware-Object-Detection/issues/1/comments?per_page=100",
+      "resolved_url": "https://api.github.com/repos/JonathanKlees/Uncertainty-aware-Object-Detection/issues/1/comments?per_page=100",
+      "observed_local_UTC": "2026-10-11T12:25:00.043490+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:26:13 GMT",
+      "status": 200,
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Public GitHub issue API under GitHub terms; comment bodies private; only counts, author and timestamps summarized.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "rfdetr-comments.json",
+      "url": "https://api.github.com/repos/roboflow/rf-detr/issues/1516/comments?per_page=100",
+      "resolved_url": "https://api.github.com/repos/roboflow/rf-detr/issues/1516/comments?per_page=100",
+      "observed_local_UTC": "2026-10-11T12:25:00.347763+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:26:13 GMT",
+      "status": 200,
+      "bytes": 11445,
+      "sha256": "3c8d608bc4d4c3a1704e204003a32de7e255bfe91f457165a4823f6e0f15b5d2",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Public GitHub issue API under GitHub terms; comment bodies private; only counts, author and timestamps summarized.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "automotive-comments.json",
+      "url": "https://api.github.com/repos/MalshaMahawatta/ICTSS2026-Systematic-Qualification-of-Vision-Language-Models-for-Automotive-Perception-Systems/issues/1/comments?per_page=100",
+      "resolved_url": "https://api.github.com/repos/MalshaMahawatta/ICTSS2026-Systematic-Qualification-of-Vision-Language-Models-for-Automotive-Perception-Systems/issues/1/comments?per_page=100",
+      "observed_local_UTC": "2026-10-11T12:25:00.631293+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:26:13 GMT",
+      "status": 200,
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Public GitHub issue API under GitHub terms; comment bodies private; only counts, author and timestamps summarized.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "paired-failure-2608.13719v1.html",
+      "url": "https://arxiv.org/abs/2608.13719v1",
+      "resolved_url": "https://arxiv.org/abs/2608.13719v1",
+      "observed_local_UTC": "2026-10-11T12:26:22.239851+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:27:35 GMT",
+      "status": 200,
+      "bytes": 42708,
+      "sha256": "36bad92888d354f36ecfbcfc48288d64ffb1e3a8254283f56c7e8210484b7518",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Public metadata or primary-source page; private custody only; no payload republication inferred.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    },
+    {
+      "name": "active-ranking-2601.07651v2.html",
+      "url": "https://arxiv.org/abs/2601.07651v2",
+      "resolved_url": "https://arxiv.org/abs/2601.07651v2",
+      "observed_local_UTC": "2026-10-11T12:26:22.597685+00:00",
+      "response_server_date": "Sun, 11 Oct 2026 12:27:35 GMT",
+      "status": 200,
+      "bytes": 43464,
+      "sha256": "46454fa3905cccaef5e6c339df44f90b6baef0feb7f325157c8ffc93956e5215",
+      "complete_within_cap": true,
+      "access": "Public unauthenticated GET",
+      "terms": "Public metadata or primary-source page; private custody only; no payload republication inferred.",
+      "redistribution": "Private source custody only; no third-party payload publication authorized",
+      "pagination_link": null
+    }
+  ],
+  "reused_records": [
+    {
+      "prior_owner": "engine-reference-corrections-2026-09-17-n4s6r72u",
+      "path": "sources/all_predictions.pkl",
+      "sha256": "d3a40e9eed6b235e2660fc190c0d4cffddcf73d19c2cf3582ae997fac3bbe6a9",
+      "bytes": 5386683,
+      "access": "Previously retained public-source bytes or Reiyah-authored local reader; no new fetch",
+      "redistribution": "Private only"
+    },
+    {
+      "prior_owner": "engine-reference-corrections-2026-09-17-n4s6r72u",
+      "path": "private/read_plain_pickle.py",
+      "sha256": "8e1dcefd90d26b0c1a84909e7e6d0d16e3e1f34b81eb2f20b4327792bbd8fb71",
+      "bytes": 2723,
+      "access": "Previously retained public-source bytes or Reiyah-authored local reader; no new fetch",
+      "redistribution": "Private only"
+    },
+    {
+      "prior_owner": "engine-reference-corrections-2026-09-17-n4s6r72u",
+      "path": "sources/prior-KITTI_HOME.html",
+      "sha256": "828a0add3e07f8ae9156ec73bde2ebaa4db0a637ad36e000cf01670b717bcd2a",
+      "bytes": 19970,
+      "access": "Previously retained public-source bytes or Reiyah-authored local reader; no new fetch",
+      "redistribution": "Private only"
+    },
+    {
+      "prior_owner": "engine-reference-corrections-2026-09-17-n4s6r72u",
+      "path": "sources/LEDGER.json",
+      "sha256": "459ea902122d2f14023dc5d7a90944d41340b129085753eddb2d9ddd63f66af0",
+      "bytes": 9727,
+      "access": "Previously retained public-source bytes or Reiyah-authored local reader; no new fetch",
+      "redistribution": "Private only"
+    },
+    {
+      "prior_owner": "engine-reference-corrections-2026-09-17-n4s6r72u",
+      "path": "sources/LEDGER_02.json",
+      "sha256": "7d18dce29aec3a0826a6e49ccf1541a404d31845bbf195401732483bf886d3bf",
+      "bytes": 1729,
+      "access": "Previously retained public-source bytes or Reiyah-authored local reader; no new fetch",
+      "redistribution": "Private only"
+    }
+  ],
+  "cost_source": {
+    "paper": "arXiv:2508.06556v2, 2026-01-30, Tables I-II and Appendix B.3",
+    "authors_report": "Microtask durations measured, costs converted at 4.5 EUR per annotator hour; manual duplicate-removal effort excluded from relevant totals",
+    "locally_measured_human_work": null,
+    "whole_work_saving": null
+  },
+  "exposure_correction": "Exact release already used in September 2026; initial rediscovery corrected. Nine fetched payloads duplicate prior named custody. All 1433 formerly reserved images remain closed.",
+  "retained_failure": "KITTI page exceeded per-response cap; complete=false. Prefix and its derived text are ineligible as source evidence. Retained prior terms used without retry.",
+  "preliminary_inspection_failure": "Ad hoc metadata printing applied len() to integer split metadata and raised TypeError; fixed typed inspection completed. No scientific outcome depended on failed diagnostic.",
+  "limits": {
+    "wall_minutes": 40,
+    "new_source_response_bytes": 4194304,
+    "owner_added_bytes_excluding_projection": 33554432,
+    "code_or_metadata_responses": 24,
+    "paid_resources": 0
+  },
+  "accounting": {
+    "response_bytes": 1119782,
+    "complete_bytes": 857637,
+    "incomplete_bytes": 262145,
+    "known_duplicate_bytes": 472465,
+    "unique_new_cumulative_custody": "Not calculated; prior immediate account preserved without counting these repeated source responses as unique evidence",
+    "historical_active_effort": "Unknown, not reset"
+  },
+  "nonclaims": [
+    "Fresh holdout",
+    "Detector performance reproduction",
+    "Physical truth",
+    "Guaranteed physical resolution",
+    "Full work advantage",
+    "Independent replication",
+    "Scientific novelty",
+    "State-of-the-art performance",
+    "Product value"
+  ],
+  "gate_a_operator_accepted": false,
+  "new_message_sent": false,
+  "background_monitor": false
+}
