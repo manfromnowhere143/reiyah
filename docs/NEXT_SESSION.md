@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.7`
+Version: `0.1.8`
 
 Lifecycle status: `proposed`
 
@@ -192,6 +192,14 @@ results. Do not report them as rerun in a new session unless actually executed.
 Default research checks bind historical transcripts; they do not reproduce all
 experiments. A second implementation or publisher readback is not independent
 scientific review.
+
+The [comparison submission guide](SHARE_A_COMPARISON.md) and public issue form
+now make the evidence request concrete for contributors. Partial public records
+can support a narrow software-impact check without supplying a full workflow
+study. Treat every submission as an untrusted proposal; verify source identity,
+terms, completeness and exposure before acquisition or experiment admission.
+There is no automatic ingestion or new case admission. Do not repeat already
+posted requests merely because a form now exists.
 
 ## The first authorized research task
 

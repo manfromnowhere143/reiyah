@@ -1,3 +1,51 @@
+# Current entry: a concrete public comparison proposal path, 11 October 2026
+
+Continuation version: 0.1.81. Status: static contributor workflow completed.
+Read [NEXT_SESSION.md](NEXT_SESSION.md), the
+[submission guide](SHARE_A_COMPARISON.md) and
+[issue form](../.github/ISSUE_TEMPLATE/comparison.yml).
+
+Daniel asked to continue the mission. One bounded metadata refresh found no new
+replies in the three existing threads; the evaluator source is still f793379.
+Its public release list is empty. The Q9N7G9 Dataverse endpoint returned 401 guest
+access denied; the alternative L7QCUG version 1.0 still lists six annotation files,
+with no original prediction pair identified. No restriction was bypassed and no
+annotation payload was downloaded. This does not prove no other release exists.
+
+The concrete action is a short contributor guide and static GitHub issue form,
+linked from README and CONTRIBUTING. Contributors can describe a case and link
+existing public records. The form distinguishes scoring impact, paired revision
+comparison and recorded decision work. It requests population/run-state clarity,
+allows explicit unknowns and leaves detailed settings/work records optional.
+Work measurements remain necessary for a work-saving claim, not for proposing a
+narrow software-impact check. Full probability vectors cannot be replaced with
+scalar confidence for the reported soft-label scorer. No new run is requested.
+
+Only public shareable descriptions/pointers are solicited. No automatic download,
+execution, private-data service, evidence admission, operator acceptance or new
+outreach is created. Contributions keep their applicable terms; the ordinary
+manual source/exposure/rights gates still apply. Do not resend existing requests
+because this form now exists. No submitted case or measured benefit is claimed.
+
+Private owner: `~/.codex/reports/reiyah/evidence-acquisition-readiness-2026-10-11-8nztlp6h/`.
+Base: 9c1cccf252bc5924345cf816b2943a3f54143ceb. The owner plan caps this task at
+30 minutes, 2 MiB of primary metadata responses, 12 captures, 16 MiB of owner
+additions excluding candidate projection and zero spend. Historical active effort
+remains unknown, not reset. Private sources bind every refreshed response;
+GitHub syntax documentation is implementation guidance, not scientific evidence.
+
+Closeout parses and reviews the form against official GitHub syntax, checks links
+and all 40 continuation bindings, runs the nine research consistency checks and
+reproduces the offline example. Historical transcripts are bound, not rerun.
+The browser runtime reports no available browser; visual form verification is
+unavailable. Syntax checks and exact publication readback are recorded privately.
+README adds one paragraph; all headings and seven diagrams remain unchanged.
+Controller and release tag are preserved; configured human attribution remains.
+Gate A is operator-unaccepted. No source payload, engine code, training, inference,
+paid resource, external message, submitted issue or scientific result is added.
+Next: qualify a newly supplied case under its actual scope. All closed inputs
+and completed-audit stopping rules remain in force. Earlier entries follow unchanged.
+
 # Current entry: qualify new evidence before another experiment, 11 October 2026
 
 Continuation version: 0.1.80. Status: exploratory source-admission investigation.

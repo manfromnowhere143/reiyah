@@ -1,0 +1,62 @@
+# Artifact ID: reiyah.public-comparison-intake. Version: 0.1.0.
+# Static contribution form; submission does not admit evidence or start a run.
+name: Share a saved comparison
+description: Propose public records for a scoring check, model revision comparison, or measured workflow study.
+title: "[Comparison] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share an existing result or a public source we can inspect. Partial records are welcome; write **unknown** for unavailable information. No new model run is needed to propose a case.
+
+        **This issue is public.** Start with a description and links to material you are authorized to share publicly. Keep private data, personal information, credentials, raw images and model weights out of the issue.
+
+        Read the [short submission guide](https://github.com/manfromnowhere143/reiyah/blob/main/docs/SHARE_A_COMPARISON.md). A submission is a proposal for review; it does not establish a result, license permission or work saving.
+  - type: dropdown
+    id: question_kind
+    attributes:
+      label: What would these records help check?
+      options:
+        - Scoring behavior on existing saved outputs
+        - Compatibility or quality of two model or software revisions
+        - A real decision workflow with recorded work
+        - Unsure; help determine the useful question
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: The question or decision
+      description: What changed, what would count as a meaningful difference, and what action depends on the answer? A retrospective question is welcome. State unknowns explicitly.
+      placeholder: Describe the revision, evaluator behavior or decision in a few sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: public_records
+    attributes:
+      label: Existing records and sharing terms
+      description: Link the public source, relevant version or commit, and its license or access terms. Describe what is available and missing. Existing formats are fine; no upload or conversion is required to start.
+      placeholder: Public links, versions, available files, terms, and missing records. If nothing is public yet, a description is enough for this first review.
+    validations:
+      required: true
+  - type: textarea
+    id: population
+    attributes:
+      label: Population and run status
+      description: Is there a list of every assigned image or model-image pair? Can successful empty outputs be distinguished from missing or failed runs? Say unknown when the records cannot establish this.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Existing script, settings and reference
+      description: If available, link the comparison script and configuration, software versions, thresholds, matching rules and reference annotations. For soft-label scoring, note whether full class-probability vectors are saved. A scalar confidence score cannot replace them.
+    validations:
+      required: false
+  - type: textarea
+    id: review_and_work
+    attributes:
+      label: Review procedure and work records, if available
+      description: For a workflow study, describe who owns the decision, what review can resolve, how unresolved answers are handled, and which preparation, review, checking, retry and integration work was recorded. Keep identities pseudonymous. Do not reconstruct timings from memory; unknown is useful.
+    validations:
+      required: false

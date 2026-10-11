@@ -419,6 +419,11 @@ inputs; it is not evidence of a customer engagement. No qualifying record is
 currently retained. Further authored examples or exposed parity sweeps cannot
 substitute for that missing workflow evidence.
 
+Have an existing comparison or scoring result that could help? The
+[short submission guide](docs/SHARE_A_COMPARISON.md) explains which records
+support each question and links to a public proposal form. Partial records
+and explicit unknowns are welcome; no new model run is requested.
+
 Keep discovery to two engineering days within a fourteen-day window when work
 is active. An admitted first screen gets at most five engineering days on CPU.
 These are resource limits, not an unattended schedule. If no suitable case is

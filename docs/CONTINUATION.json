@@ -1,6 +1,6 @@
 {
   "artifact_id": "reiyah.continuation",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "as_of": "2026-10-11",
   "lifecycle_status": "proposed",
   "authority": "Navigation and retained evidence bindings only; verify latest operator instruction, repository rules and live Git state",
@@ -222,6 +222,14 @@
     {
       "path": "evidence/next-evidence-admission-2026-10-11.json",
       "sha256": "1da50b106cef37f73e83cbfdf5c11441f645acb523cfd556a619dfa17c3c8cc4"
+    },
+    {
+      "path": "docs/SHARE_A_COMPARISON.md",
+      "sha256": "6f26a0e214a948d6dcf69b35783ab2517699029f29b835de1135ddac3993baaa"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/comparison.yml",
+      "sha256": "2a3f1089c86b9278d21bfbd484eaa89476195448fba6f6d8b859064608c266f7"
     }
   ],
   "presentation_verification": {
@@ -336,5 +344,13 @@
     "initial_checker_gap_repaired": "Empty-world input could produce vacuous support; independent checker input validation added, complete suite rerun",
     "physical_channel_qualified": false,
     "product_value_case_admitted": false
+  },
+  "public_case_proposal": {
+    "guide": "docs/SHARE_A_COMPARISON.md",
+    "form": ".github/ISSUE_TEMPLATE/comparison.yml",
+    "url": "https://github.com/manfromnowhere143/reiyah/issues/new?template=comparison.yml",
+    "automatic_ingestion": false,
+    "partial_records_welcome": true,
+    "submission_confers_evidence_authority": false
   }
 }

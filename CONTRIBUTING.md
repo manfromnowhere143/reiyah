@@ -26,6 +26,16 @@ no payload. Do not submit personal, proprietary, credentialed, or sensitive data
 Standards mappings must remain mappings of relevance and evidence gaps. They must not claim legal
 applicability, conformity, certification, compliance, or safety.
 
+## Propose a saved comparison
+
+The [submission guide](docs/SHARE_A_COMPARISON.md) and
+[public comparison form](https://github.com/manfromnowhere143/reiyah/issues/new?template=comparison.yml)
+accept descriptions and public source pointers for review. Existing formats and
+partial records are welcome. The first review separates a software-impact check
+from a timed workflow study; complete work measurements are required for claims
+about saved effort. Source qualification and the evidence boundaries above still
+apply. Submission does not automatically download, execute or accept evidence.
+
 ## Schema and fixture contributions
 
 Normative JSON uses JSON Schema Draft 2020-12. New fields require explicit semantics, bounded
