@@ -1,3 +1,73 @@
+# Current entry: complete reference audit and retained launch failure, 12 October 2026
+
+Continuation version: 0.1.90. NEXT_SESSION/CONTINUATION version: 0.1.17.
+Read the [methods decision](research-decisions/owned-reference-trial-2026-10-12.md),
+[complete annotation audit](../research/multiorg-reference-admission/0.1.0/README.md),
+[failed pilot](../research/multiorg-reference-admission/0.2.0/README.md) and
+[supervisor correction](../research/multiorg-reference-admission/0.2.1/README.md).
+No detector ranking, reference-coupling result or superiority is established.
+
+Fresh owner `owned-trial-frontier-2026-10-12-pz2p4ld2` begins at
+4cd07ba974bc55286384f7698905664a30cd8d29. Candidate is under that owner's private
+reports directory; historical controller remains clean at 74fbacc. Existing
+parallel-agent authorization was used for methods, source, adapter and separate
+checker work, all within one assisted investigation. This is not independent
+scientific replication. All closed earlier studies and prior handoff bytes remain.
+
+Fresh primary-source review retains 40 document captures, 5,813,682 response bytes
+including two HTTP error bodies, and three reused exact-bound primary manuscripts.
+Ten web-tool calls; their underlying transport count is unknown. Statistical
+methods' actual guarantees are distinguished from exact reference-family agreement.
+No absolute-best method, commercial differentiation or work advantage is claimed.
+
+MultiOrg platform version 6, current-prefix test roster, supplies 55 images and 165
+reference files. Initial 120 successful annotation captures were followed by 45
+HTTP404s; the same failed path later succeeded. A prospective transport amendment
+allowed 44 further retries after 3 diagnostics. All 165 payloads now match source
+sizes and hashes:2,710,742 unique bytes, 17,208 boxes. Counts t0/t1_A/t1_B are
+7,523/4,729/4,956. All rectangles are finite/nondegenerate/axis-aligned; image bounds
+and physical truth are not established by that audit. Source-qualified unions
+range 135..630, so 0/55 fit the 128-object cap. Complete membership, geometry, counts,
+identity hashes and selection agree with a separately authored checker. Its first
+report-shape mismatch, correction and rerun are retained. No failing expectation
+was weakened.
+
+Version 0.1.0 therefore admitted no inference. A separate 0.2.0 protocol was frozen
+after structural counts but before image/model/prediction acquisition. 28 images
+fit each individual reference procedure; four were selected by the unchanged
+hash-order rule. It checks fixed native cases and composes exact min/sum results,
+without raising caps or claiming a monolithic native certificate. Source experts
+share pseudolabel initialization; t0 informed checkpoint selection. Neither
+physical truth, independent experts nor automotive transfer is implied.
+
+The exact Faster R-CNN/YOLOv3 model pair and first TIFF were acquired: 454,190,319
+bytes, published model MD5s and new SHA256s verified. 17 binary-wheel distributions
+are pinned; 108,209,279 download bytes, 59.1s installation/checks. 25 actual-runtime
+controls passed; the real 5720x6385 uint16 image qualified 156 complete tiles.
+The first outer launch at 16:58:40 UTC failed after 0.282s because its sandboxed
+parent could not execute /bin/ps. Cleanup terminated the spawned worker. No
+prediction output or completed model pair exists; the worker's internal execution
+point is unobserved. No matching or reference endpoint ran. The protocol's stop
+was honored. The numerical runner remains byte-identical. Version 0.2.1 addresses
+supervision using authored workers only; see its exact retained control results.
+
+Next: record a bounded retry under the corrected supervisor, rebind the retained
+bytes, and use the same first whole image, pair and frozen scientific settings.
+No new search, model choice, threshold tuning, easier-image substitution or
+unmeasured human-work claim. Only complete first-pair qualification can justify
+extension to the three remaining frozen images. Broad product expansion stays
+stopped; Gate A remains operator-unaccepted. No paid service, training, outreach,
+physical-control integration or UI change occurred. Historical effort is unknown,
+not reset. Source payloads stay private, with derived annotation counts under the
+recorded NC-SA terms and independently authored code under repository terms.
+
+Required repository research checks, source/protocol bindings, preserved README
+and handoff history, internal links, exact publication readback and human commit
+metadata are recorded in this owner's closeout. Historical transcript binding
+is not fresh replay; no Gate A release validation or acceptance is asserted.
+
+---
+
 # Current entry: next value-case dependency qualified, 12 October 2026
 
 Continuation version: 0.1.89. NEXT_SESSION/CONTINUATION version: 0.1.16.

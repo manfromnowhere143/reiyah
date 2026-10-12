@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.16`
+Version: `0.1.17`
 
 Lifecycle status: `proposed`
 
@@ -122,6 +122,29 @@ choice, or an authorized team can supply one. Name the alternatives, consequenti
 action, correctness obligations, reviewer and available records. Full work can
 be collected prospectively after the protocol freezes; do not require future
 trial outcomes to exist before preparation. No new case or superiority is established.
+
+The [owned reference study](../research/multiorg-reference-admission/0.1.0/README.md)
+now qualifies all 165 MultiOrg annotation files on 55 complete images. Its first
+source-qualified union representation exceeds the native object cap on every
+image; 28 fit when each recorded procedure is checked separately. A separately
+frozen [composition pilot](../research/multiorg-reference-admission/0.2.0/README.md)
+retains the same model, image, loss and reference semantics. Its first launch
+failed because the sandboxed parent could not run its RSS monitor. No predictions,
+paired endpoint, ranking or scientific null was produced. The first-attempt stop
+was honored; the [supervisor correction](../research/multiorg-reference-admission/0.2.1/README.md)
+is a separate authored-worker qualification, not an empirical retry.
+
+The next concrete step is a separately recorded bounded launch of the same
+first complete image with the corrected host supervisor and unchanged network-denied
+numerical worker. Reuse and rehash the retained model/image/runtime bytes; do not
+repeat acquisition or source discovery. Preserve all three protocols/attempts,
+original transport failures and the full 55-image roster. Only a complete checked
+first pair can qualify extension to the other three frozen images. This is an
+owned source-adapter study, not admission of a complete human-work value case.
+The 2026 [methods review](research-decisions/owned-reference-trial-2026-10-12.md)
+favors a full exact census here; statistical sampling does not repair an unknown
+reference contract. Closed older studies stay closed. Private outreach was declined,
+not pending; do not poll or resubmit it without new operator instruction.
 
 ## Start here
 

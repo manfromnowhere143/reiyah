@@ -1,0 +1,119 @@
+{
+  "artifact_id": "reiyah.multiorg.supervisor-correction",
+  "version": "0.2.1",
+  "status": "authored_controls_passed",
+  "at": "2026-10-12T17:06:29.034378+00:00",
+  "empirical_retry": false,
+  "controls_passed": 7,
+  "controls": [
+    {
+      "control": "test_hash_tamper_rejected_before_spawn",
+      "process_receipt_sha256": "ec569ca6e40c4593cf9384b138b2c334250a36c6f3c413e52cfd3a118fcb48af",
+      "status": "failed",
+      "returncode": null,
+      "termination_reason": "supervisor_error",
+      "peak_sampled_rss_bytes": 0,
+      "sampling_period_seconds": 0.025,
+      "wall_seconds": 3.470800584182143e-05,
+      "worker_pid_recorded": false
+    },
+    {
+      "control": "test_memory_threshold_kills_exact_worker",
+      "process_receipt_sha256": "98fd3c649617b18919467909211ef4cba456ee8df63dc0858e49b62b3c18ff72",
+      "status": "failed",
+      "returncode": -9,
+      "termination_reason": "memory_limit",
+      "peak_sampled_rss_bytes": 122699776,
+      "sampling_period_seconds": 0.025,
+      "wall_seconds": 0.06910666701151058,
+      "worker_pid_recorded": true
+    },
+    {
+      "control": "test_normal_completion_and_rss",
+      "process_receipt_sha256": "1499b96c54ad52797b46e7be71d1d0f7d6f7baf198fa6483edab9a91fad9a7c0",
+      "status": "complete",
+      "returncode": 0,
+      "termination_reason": null,
+      "peak_sampled_rss_bytes": 17776640,
+      "sampling_period_seconds": 0.025,
+      "wall_seconds": 0.16437008301727474,
+      "worker_pid_recorded": true
+    },
+    {
+      "control": "test_symlinked_environment_entrypoint_preserved",
+      "process_receipt_sha256": "89ff7b345386f631c5b27d0d5b1e3f4811a67be5098e560af125c6ad75adae29",
+      "status": "complete",
+      "returncode": 0,
+      "termination_reason": null,
+      "peak_sampled_rss_bytes": 17055744,
+      "sampling_period_seconds": 0.025,
+      "wall_seconds": 0.5397312080021948,
+      "worker_pid_recorded": true
+    },
+    {
+      "control": "test_wall_timeout_kills_exact_worker",
+      "process_receipt_sha256": "fb1aa58b53c1a0eaada25697eba5454f8e180e3f8b9d04188cfb6679f7a0efc4",
+      "status": "failed",
+      "returncode": -9,
+      "termination_reason": "wall_limit",
+      "peak_sampled_rss_bytes": 17874944,
+      "sampling_period_seconds": 0.025,
+      "wall_seconds": 0.2309048330062069,
+      "worker_pid_recorded": true
+    },
+    {
+      "control": "test_worker_exit_failure_retained",
+      "process_receipt_sha256": "afd7582dd3a922af37cfaba6f6e6bb83e13fc1fcbcda6f9fce6ef3912f73c29d",
+      "status": "failed",
+      "returncode": 7,
+      "termination_reason": "worker_exit",
+      "peak_sampled_rss_bytes": 16384000,
+      "sampling_period_seconds": 0.025,
+      "wall_seconds": 0.06513520795851946,
+      "worker_pid_recorded": true
+    },
+    {
+      "control": "test_worker_network_denied_host_observer_works",
+      "process_receipt_sha256": "c5263f8bb587e2996ec1ca94be093627a180fc7dc32825e0827b16a7e7c39dbf",
+      "status": "complete",
+      "returncode": 0,
+      "termination_reason": null,
+      "peak_sampled_rss_bytes": 18006016,
+      "sampling_period_seconds": 0.025,
+      "wall_seconds": 0.16397387499455363,
+      "worker_pid_recorded": true
+    }
+  ],
+  "source_files": {
+    "test_supervise.py": {
+      "sha256": "312f6e105736425f91e4e5e1a9c403c47211c6120688f26d8a7e2af44b8dfd17",
+      "bytes": 4767
+    },
+    "supervise.py": {
+      "sha256": "4628d61e316fc743b8ecaacc1be9b48cfafda4f3d786b8d0859228fcacb40146",
+      "bytes": 9007
+    }
+  },
+  "frozen_numeric_runner_sha256": "9a708bf6a22e9350980e0d08d0e90c2c56f7b9cc4a73b7fd55f22c9ef3f33e0c",
+  "source_correction": "Preserve virtualenv Python entrypoint spelling instead of resolving its symlink; worker source unchanged.",
+  "retained_control_correction": "Initial6 controls passed. Added venv control first rejected /var vs /private/var path spelling; corrected comparison resolves identity while asserting original executable path. Final7 controls pass. Earlier reports retained.",
+  "limits": "Sampled owned-worker RSS and wall; not hard instantaneous limits or descendant containment. CPU and file-size resource limits applied before numerical runtime.",
+  "private_bindings": {
+    "inference/supervisor-correction-controls/report.json": {
+      "sha256": "60cbdb502069a8cc015fe8cc94ca22201d1aa03000c23c13a38b86914320e687",
+      "bytes": 9835
+    },
+    "inference/supervisor-correction-controls-v2/report.json": {
+      "sha256": "af60a5231db5cc09367160df0a1dcbc48a8602f28598cfc15b71a17daa9b390a",
+      "bytes": 11313
+    },
+    "inference/supervisor-correction-controls-v3/report.json": {
+      "sha256": "b4d74f23756e140261320dcb6552ae297125169f716d5c25d0200dd5d5b706f5",
+      "bytes": 11315
+    },
+    "inference/PILOT_FAILURE.json": {
+      "sha256": "9125292a4748f048e5364446cb9edf178d50d2fbac1f3a80ea0fee82e1685d61",
+      "bytes": 1271
+    }
+  }
+}

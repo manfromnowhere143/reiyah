@@ -1,0 +1,175 @@
+{
+  "artifact_id": "reiyah.multiorg.annotation-provenance",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "repository_base": "4cd07ba974bc55286384f7698905664a30cd8d29",
+  "owner_started_at": "2026-10-12T16:06:34.346031+00:00",
+  "owner": "owned-trial-frontier-2026-10-12-pz2p4ld2",
+  "protocol_freeze": {
+    "frozen_at": "2026-10-12T16:31:48.583679+00:00",
+    "protocol_sha256": "c62b333937f168ec0a7ff4915c8eaf2f0cd49fa7ac88e11f78f39a371c49a670",
+    "resource_amendment_sha256": "7ccdf815cd3275515360ab85c3a08ef292f708315b88833ce5a5c8fcec8f2d32",
+    "before_payload_acquisition": true
+  },
+  "exposure": "Source paper/methods/metadata exposed before protocol; raw annotation outcomes acquired afterward. All structural counts exposed before separate0.2 protocol.",
+  "acquisition": {
+    "dataset": "christinabukas/mutliorg",
+    "platform_version": 6,
+    "prefix": "MultiOrg_v2/test/",
+    "HTTP_attempts": 212,
+    "initial_HTTP200": 120,
+    "initial_HTTP404": 45,
+    "diagnostic_HTTP200": 3,
+    "retry_HTTP200": 44,
+    "response_bytes_including_failures_and_duplicates": 2735316,
+    "unique_annotation_payload_bytes": 2710742,
+    "original_failure_bodies_preserved": true,
+    "initial_manifest_sha256": "ff2393ce493b3696137034895a5aaecc39852e3bd55024b318b5ca2b8c6d78f2",
+    "mixed_custody_complete_manifest_sha256": "df861be56c20b88449fe73a7cdf13352549697fd76002bfefac848a9e6240cfe",
+    "projection_manifest_sha256": "937b74145d113c9823a7c497dbedc018808b8f9cde7231c1765d053d9ec52cdb",
+    "projection_payloads_equal": 165,
+    "root_cause": "Same failed exact URL recovered later; transient transport supported, specific server cause unknown.",
+    "budget_change": "Document capture cap40 unchanged. Before raw acquisition, data cap expanded from256MiB to768MiB and owner1GiB to2GiB with fixed staged stops. After transient404 diagnosis, annotation attempt cap180 to220 prospectively before44retry requests. All amendments retained; no roster/metric changes.",
+    "HTTP_attempt_scope": "212 initiated logical captures. Automatic redirects and underlying connection counts were not separately instrumented."
+  },
+  "verification": {
+    "producer_controls": 14,
+    "separate_checker_controls": 12,
+    "complete_geometry_boxes": 17208,
+    "separate_checker_agreement": true,
+    "checker_correction": "First complete check rejected extended report-row fields absent from checker reconstruction. Original source and failed run retained; corrected checker reconstructs those fields independently and retains strict equality. No data, geometry parser, count or eligibility rule changed.",
+    "science_independence": false,
+    "native_runtime_case_executed_in_this_version": false
+  },
+  "research_review": {
+    "direct_document_captures": 40,
+    "direct_document_bytes": 5813682,
+    "failed_HTTP_bodies": 2,
+    "web_calls": 10,
+    "underlying_web_transport_bytes_and_requests": "Unknown; provider calls are not HTTP counts.",
+    "reused_primary_bodies": 3,
+    "reused_primary_bytes": 2723652
+  },
+  "private_bindings": {
+    "PLAN.json": {
+      "sha256": "0facb56d9d63e27b9463be7cabc44d2828f15a1ca05a336df735b0ac16e57e59",
+      "bytes": 1709
+    },
+    "RESOURCE_AMENDMENT_0.1.0.json": {
+      "sha256": "7ccdf815cd3275515360ab85c3a08ef292f708315b88833ce5a5c8fcec8f2d32",
+      "bytes": 1347
+    },
+    "RESOURCE_AMENDMENT_0.1.1.json": {
+      "sha256": "8897852313dea398764e1d3c7143d0d96dc24fb3146c8b5515d86becbd8880aa",
+      "bytes": 683
+    },
+    "PROTOCOL_FREEZE.json": {
+      "sha256": "6c5ff98e0b565e88f93b4323dcf8deac21a77e84174e112c4b5e92381dbd68f5",
+      "bytes": 280
+    },
+    "COMPOSITION_FREEZE.json": {
+      "sha256": "2f0bdd6225456f56897a7db93b3b7d5cd4c6c7410d210d728ae577f10f62d738",
+      "bytes": 450
+    },
+    "data/capture-summary.json": {
+      "sha256": "13aa549bfd489a1782a0ec32b74668afbe7edd85f4034c476bca343cd9e9ea7a",
+      "bytes": 3186
+    },
+    "data/retry-summary.json": {
+      "sha256": "bdb5ab80ad9c1867e462c28b756d672243a07e5eba073ed5567c6eb828a6bab7",
+      "bytes": 263
+    },
+    "data/transport-diagnostics.json": {
+      "sha256": "02e9baef63a1e5bc17f7e5fd0882f617dae5769c14744cc98e6198f378d98ff8",
+      "bytes": 924
+    },
+    "data/unchanged-retry.json": {
+      "sha256": "a11753a3f3fe9138d0f9dfe889f51758ffe2f8038f0717a591fc464afa6ddd8c",
+      "bytes": 1400
+    },
+    "checker/FREEZE.json": {
+      "sha256": "3453ed6f9afe2666a252a857c8ba359733594230a2c38ac36e802cf93fd238d8",
+      "bytes": 489
+    },
+    "checker/CORRECTION_FREEZE.json": {
+      "sha256": "4c2b13e637576135502327707ff741d27f9ad56abe310bf71634cf7e0bd2b05d",
+      "bytes": 1099
+    },
+    "checker/complete-run1.json": {
+      "sha256": "74a266135f96e972603074e12c1e2a5362c29f89972867b92427ab0ae6645e69",
+      "bytes": 104
+    },
+    "checker/complete-run2.json": {
+      "sha256": "bcd5ed5a593251cf48e8f71d15f96d7ca07f0764807585fcee55b21705b54c22",
+      "bytes": 94978
+    },
+    "checker/projection-equivalence.json": {
+      "sha256": "44bb37ab0cb41f6b5d8ef31953269a0838525fb707a3ce4eb544ae4fe19ed366",
+      "bytes": 33651
+    },
+    "checker/ANNOTATION_CLOSEOUT.json": {
+      "sha256": "c023fc38cbc0489bdff7689a8febe39bbd426e4ea69ea871842a56a4251574b0",
+      "bytes": 3300
+    },
+    "data/audit-incomplete.json": {
+      "sha256": "06875d8129423d23db3f74c2d12092f1be1cb75c036f134454e742210144c7dd",
+      "bytes": 58760
+    }
+  },
+  "resource_limits": {
+    "owner_wall_minutes": 70,
+    "owner_deadline_UTC": "2026-10-12T17:16:34Z",
+    "historical_total_effort": "Unknown, not reset",
+    "paid_services": 0,
+    "training": 0,
+    "new_runtime_in_this_version": false
+  },
+  "Gate_A_accepted": false,
+  "full_work_case_admitted": false,
+  "files": {
+    "NOTICE.md": {
+      "sha256": "d04fdbfa7d6aa9458be4a3faf396344169ec42d8ff1b63393ea40769eba2ca90",
+      "bytes": 2111
+    },
+    "README.md": {
+      "sha256": "fcd5f5dd6964542c2c8e52582f732190f466a9cc65e3c1252bc40fbb53a2a29e",
+      "bytes": 5592
+    },
+    "audit.py": {
+      "sha256": "5830fa0d56755a014c0a206f9bb5123bf148f3399cb51048d12b07875e0d892d",
+      "bytes": 13571
+    },
+    "check_annotations.py": {
+      "sha256": "306faec0de46d73aef9ae8aa7368780556c4263280f3e768a7aaf474b4ef3fc3",
+      "bytes": 11355
+    },
+    "methods-review.json": {
+      "sha256": "84ffc4cca05a99a0fd408435468e2b6c1d1ab99baaf7b56d90abc553b89d5650",
+      "bytes": 14606
+    },
+    "protocol.json": {
+      "sha256": "c62b333937f168ec0a7ff4915c8eaf2f0cd49fa7ac88e11f78f39a371c49a670",
+      "bytes": 6268
+    },
+    "result.json": {
+      "sha256": "5d78b6d927b9cdc14f48bc52c751b8de6ac88546b5ecdbb0fbcfd93684a44f31",
+      "bytes": 54022
+    },
+    "source-manifest.json": {
+      "sha256": "937b74145d113c9823a7c497dbedc018808b8f9cde7231c1765d053d9ec52cdb",
+      "bytes": 69330
+    },
+    "sources.json": {
+      "sha256": "c4887a7699299012df1a1a9565d61ac28459c0748fa6ac2d79afeefb43afa2f5",
+      "bytes": 29976
+    },
+    "tests.py": {
+      "sha256": "b9cf69c96047147e15ba067cca4e4dad1de1aefbe6c64575537a231505b6b1e1",
+      "bytes": 8701
+    },
+    "verification.json": {
+      "sha256": "bcd5ed5a593251cf48e8f71d15f96d7ca07f0764807585fcee55b21705b54c22",
+      "bytes": 94978
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "document_id": "reiyah.owned-trial-frontier.methods-review",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "completed_at": "2026-10-12T16:20:18.449188+00:00",
+  "scope": "Same-investigation source and implementation review. No scientific replication, experiments, inference, dataset outcomes or candidate edits. Selected exact paper versions are identified; not a claim that every preprint is its latest revision.",
+  "recommendation": {
+    "decision": "Admit a distinct, finite-cohort, reference-defined paired detector-upgrade question when the actual pair, roster, rights and operational reference process are fixed. Do not demand universal correctness across every unconstrained latent physical world before executing a useful benchmark engineering comparison; do not relabel the weaker target as that stronger guarantee.",
+    "question": "For frozen A/B predictions on the same declared images, does B reduce a prespecified bounded image-level detection loss by more than margin tau under the declared reference protocol? Report a separate sensitivity result over admissible annotation alternatives.",
+    "first_step": "Freeze pair/metric/unit/roster/reference procedure/margin and run the full provided-reference comparison if annotations are already available. This establishes a real engineering choice relative to that benchmark reference, not annotation savings. A subsequent prospective review-cost comparison requires actual incurred review work, a named decision owner and the same guarantees/information for both workflows.",
+    "strongest_baseline": "Conventional paired exact priority stopping plus compatible published finite-population betting with predictable control variates (Shekhar et al. UAI2023), and uniform without-replacement empirical-Bernstein CS. Give the conventional workflow the same shared references, full proxy values, matching rules and compute. PPAT is a strong fixed-budget risk-estimation comparator if that weaker asymptotic obligation is explicitly the chosen target.",
+    "falsifier": "On the fresh, frozen decision, Reiyah fails to justify the required direction/margin, changes the decision relative to full declared-reference resolution, leaves the annotation sensitivity interval unresolved, or consumes at least as much complete measured work as the equally equipped comparator. Preserve each as an informative unfavorable outcome; no tuning on exposed outcomes.",
+    "why_not_repeat": "Existing adaptive-audit d10/d100 arms did not beat conventional priority on the exposed 64-image cases; the 28-population sequential audit showed only a tiny one-case control-variate saving against uniform and still lost to exact priority. Those findings constrain expectations but do not establish a universal negative about stronger published adaptive betting. Do not rerun those populations."
+  },
+  "guarantee_matrix": [
+    {
+      "method": "Shared-world exact stopping",
+      "target": "Same decision for every label world retained by the observation history",
+      "requirements": "Frozen full reference-world model, coupled model predictions, exact compatible loss/matching, observed answers that actually eliminate worlds",
+      "cannot_supply": "Statistical sampling cannot identify indistinguishable worlds. Broad arbitrary label perturbations may make a universal direction unidentified even at full observation."
+    },
+    {
+      "method": "Paired PPI / PPSR, 2608.26638v1",
+      "target": "Expected human-score difference; fixed-time asymptotic normal intervals",
+      "requirements": "Representative labels, correct same-input pairing, valid variance estimation; oracle lambda or finite-sample tuning cost accounted for",
+      "cannot_supply": "No finite-budget always-better guarantee; PPSR is approximate label-count efficiency, not total engineering work. Permutation alternative requires symmetry/sign-flip assumptions not established for detector differences."
+    },
+    {
+      "method": "PPAT, 2607.08347v1",
+      "target": "Finite-pool average fixed loss; fixed-lambda unbiased estimator and asymptotic fixed-budget CIs",
+      "requirements": "Positive known adaptive sampling probabilities, uniform overlap, finite-pool moment control and stabilized predictable quadratic variation",
+      "cannot_supply": "No nonasymptotic optional-stopping certificate. Same-data estimated lambda can introduce finite-sample bias, expressly acknowledged by authors."
+    },
+    {
+      "method": "WoR confidence sequences / weighted betting",
+      "target": "Finite population average of bounded fixed values, simultaneously over sampled prefixes",
+      "requirements": "Uniform WoR for uniform CS; correct positive predictable q and valid bounded bets for weighted version. Target values fixed by the declared reference protocol; full known roster",
+      "cannot_supply": "Does not establish physical truth or an uncalibrated human channel. Reference error is a distinct uncertainty component."
+    }
+  ],
+  "computable_primitive": {
+    "status": "Proposed established-method specialization; not novel and not executed.",
+    "unit": "Whole image or prespecified clip, with shared reference annotations and deterministic within-unit matching. A global AP ranking cannot silently be replaced by an additive loss.",
+    "target": "d_i = L(B_i,r_i)-L(A_i,r_i), bounded a<=d_i<=b before opening outcomes; Delta = mean_i d_i. Normalize z_i=(d_i-a)/(b-a) when a<b.",
+    "simple_residual": "Freeze proxy s_i and coefficient lambda from separate development information. Let r_i=d_i-lambda*s_i. Under uniform WoR, lambda*mean_all(s)+mean_sample(r) is a design-unbiased fixed-size estimator. Apply a valid finite-population CS to bounded fixed r_i, then shift by known lambda*mean_all(s); intersect with deterministic remaining-item bounds. Residual range can be wider, so improvement is not guaranteed.",
+    "adaptive_variant": "Existing weighted betting framework: Z_t=pi(I_t)*z_I_t/q_t(I_t), m_t(m)=m-sum_previous pi(I_j)*z_I_j; U_t=S(I_t)-sum_remaining q_t(i)*S(i). Predictable beta_t yields conditional-mean-zero beta_t*U_t. Multiply 1+lambda_t*(Z_t+beta_t*U_t-m_t(m)) using lambda constrained from the actual support so factors stay nonnegative. Invert valid e-processes with explicitly allocated directional error and intersect logical bounds. Derive support carefully rather than copying a sign convention from prose.",
+    "decision": "Declare B better only when upper_Delta < -tau; opposite/no-upgrade rule and unresolved exhaustion frozen separately. Directional/multiple-endpoint error allocation specified in advance.",
+    "reference_channel": "For fixed published or finalized protocol labels, inference is conditional on those records. If answers are stochastic or unresolved, exact fixed-value CS assumptions require qualification; repeated answers are not automatically independent. A justified external bound on mean reference bias may widen the interval, but disagreement alone does not identify such a bound. Unknown annotations remain unknown.",
+    "cost": "Count preparation, proxy acquisition/inference, matching, annotation/review, disagreement resolution, computation, analyst time and failed attempts. Free existing reference lookups are not measured human annotation savings."
+  },
+  "sources": [
+    {
+      "id": "PPE",
+      "url": "https://arxiv.org/html/2608.26638v1",
+      "version_date": "v1, 2026-08-27",
+      "reading": "Sections3–5,6.3–6.4; Appendix algorithms3/6 and centering discussion; released intervals.py",
+      "summary": "Paired estimator uses human and automatic score differences. Oracle optimal lambda gives nonnegative variance reduction. Plug-in CLT intervals are asymptotic; paper explicitly warns about small samples. PPSR approximates squared correlation of differences when unlabeled count is large. Pairing advantage depends on covariance, not a universal theorem. Sign-flip method assumes symmetry. These methods do not supply missing detection matching or reference reliability.",
+      "implementation": "CHATS-lab/ppi-eval at 641f57c8dc1f78e89082858c6bb9656b006c09a6 (2026-08-27). src/ppi_mt_eval/intervals.py reads same labeled sample for covariance/lambda and inference; normal and permutation APIs present. Complete captured tree has no LICENSE. No execution."
+    },
+    {
+      "id": "NFL",
+      "url": "https://proceedings.mlr.press/v306/mani26b.html",
+      "version_date": "ICML2026, PMLR306 pp86296–86335, 2026-07-06–11",
+      "reading": "Published PDF §§1–4; definitions3.4/3.5, Theorem4.1, Corollary4.1, discussion4.3",
+      "summary": "Exact finite-sample mean-estimation analysis distinguishes oracle, same-sample and cross-fit tuning. Cross-fitting removes relevant bias but has variance costs; same-sample tuning may bias estimates and understate variance. Main general analysis takes effectively unlimited unlabeled data and bounded fourth moments. Gaussian correlation thresholds are special-case results, not detector admission thresholds. This defeats a generic no-worse finite-budget inference from optimal population lambda."
+    },
+    {
+      "id": "PPAT",
+      "url": "https://arxiv.org/html/2607.08347v1",
+      "version_date": "v1, 2026-07-09; exact retained prior body reused",
+      "reading": "§§2–4, §5, AppendixB resources and E.5.5",
+      "summary": "LURE on residualized fixed losses is unbiased for fixed lambda. Active proposal targets residual variance, not raw loss. Estimated lambda introduces finite-sample bias in authors experiments. CIs use a finite-pool triangular-array CLT, overlap, moments and variance stabilization; not finite-budget CSs. Classification experiment uses CLIP features, trained Bayesian surrogate and proxy CLIP; reported runs used H100 80GB. Those compute costs are not assumed available or free. Released implementation was not established in this bounded review."
+    },
+    {
+      "id": "WOR",
+      "url": "https://arxiv.org/html/2006.04347v4",
+      "version_date": "v4, 2021-01-08; NeurIPS2020; prior body reused",
+      "reading": "§1.1, §3 Theorems3.1/3.2 and predictable tuning; published repository core",
+      "summary": "Population values are fixed and may be dependent; only uniform WoR order is random. Hoeffding and empirical-Bernstein confidence sequences provide simultaneous finite-population coverage for bounded values. This matches bounded paired-image differences once the reference target is fixed. Optional stopping is covered; uncertain observation channels are not.",
+      "implementation": "WannabeSmith/confseq_wor at 6495f678b2e5a86f182236bff2057e36ede0b730, 2021-05-06. BSD-3-Clause LICENSE captured. cswor/cswor.py provides predmix_empbern_wor, predmix_hoeffding_wor, logical_cs; NumPy/SciPy/matplotlib dependencies. Code read, not installed/run or fully audited."
+    },
+    {
+      "id": "RLFA",
+      "url": "https://proceedings.mlr.press/v216/shekhar23a.html",
+      "version_date": "UAI2023; retained arXiv2305.06884v1, 2023-05-08",
+      "reading": "§§2–4, betting and sampling definitions, Theorems1/2 and predictable control variates",
+      "summary": "Weighted WoR betting handles known adaptive acquisition probabilities and incorporates imperfect side information through mean-zero control variates with predictable weights. This is a directly relevant strong established comparator for finite-population sequential evaluation. Its financial auditing motivation does not prove detector matching transfer; losses and support must first be qualified. No implementation downloaded or reproduced here."
+    },
+    {
+      "id": "BET",
+      "url": "https://arxiv.org/html/2605.28533v1",
+      "version_date": "v1, 2026-05-27",
+      "reading": "§§3–4 and model-comparison application §5",
+      "summary": "Prediction-based e-statistics are finite-sample anytime-valid under stipulated label/concept shift and access to the null joint distribution. Monte Carlo null datasets support exchangeability. When the null is estimated, Theorem3.4 adds product-distribution total-variation error; generally controlling that term remains open. This is not a turnkey paired detector-mean test from uncalibrated references. Code link elad-tolo/betting_on_predictions identified in article, not pinned or licensed in this review."
+    },
+    {
+      "id": "BAYES",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/01830c92c6558179fa6d7fb1edff692c-Paper-Conference.pdf",
+      "version_date": "Published NeurIPS2025",
+      "reading": "§§1–3, Theorems1–4; §6 evaluation design",
+      "summary": "Published method explicitly constructs asymptotic CSs. Theorem1 uses iid observations with a finite 2+delta moment and strong Gaussian coupling; exact Gaussian special case is distinct. Experiments start cumulative miscoverage evaluation at n=40 unless stated otherwise, an explicitly empirical choice. Thus the title is not evidence of nonasymptotic arbitrary-small-budget safety."
+    },
+    {
+      "id": "NOISY",
+      "url": "https://arxiv.org/html/2601.20913v1",
+      "version_date": "v1, 2026-01-28",
+      "reading": "§§3–5, Theorem5.1; §7 limitations, §8 impact",
+      "summary": "Gold correctness is assumed deterministic, with iid human calibration and noisy judge evaluation. Theorem5.1 bounds Type-I error by zeta plus sample-size remainder terms, despite stronger surrounding prose. Limitations acknowledge normal approximations, rare-event calibration problems and unresolved human disagreement. Calibration-label bias remains in the certification. This cannot establish physical correctness from imperfect human answers."
+    }
+  ],
+  "exposure_and_resources": {
+    "new_direct_capture_attempts": 14,
+    "new_body_bytes": 4710341,
+    "failed_capture_attempts": 0,
+    "web_calls": 3,
+    "web_result_transport_bytes": "unmeasured; result objects retained",
+    "reused_prior_body_count": 3,
+    "reused_prior_body_bytes": 2723652,
+    "historical_total_work": "unknown, not reset",
+    "no_execution": "Only document extraction/hash verification and static code reading; no implementation, model or empirical method run."
+  },
+  "private_artifacts": [
+    "sources.json",
+    "reused-sources.json",
+    "web-1.json",
+    "web-2.json",
+    "web-3.json"
+  ],
+  "unresolved": [
+    "Actual detector pair, cohort rights and exact bounded metric are source-agent/root responsibilities.",
+    "No new reference-noise calibration or human review responses were acquired.",
+    "No field validity, physical safety, full-work saving, novel algorithm or scientific independence claim follows."
+  ]
+}

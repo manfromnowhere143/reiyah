@@ -1,0 +1,91 @@
+{
+  "artifact_id": "reiyah.multiorg.reference-admission.protocol",
+  "version": "0.1.0",
+  "status": "preregistered",
+  "frozen_at": "2026-10-12T16:31:48.583679+00:00",
+  "authority": "Operator-authorized bounded research; not Gate A operator acceptance, product runtime or publication of third-party payloads.",
+  "decision": "Admit or refuse the complete repeated-reference source to the current conditional comparison interface; if structurally feasible, qualify a bounded complete-image paired inference pilot and test reference-procedure coupling.",
+  "exposure": "Primary papers, model and dataset metadata and inference source read; no raw annotations, images, weights or outputs opened before freeze.",
+  "source": {
+    "dataset": "christinabukas/mutliorg",
+    "dataset_id": 5097172,
+    "platform_version": 6,
+    "prefix": "MultiOrg_v2/test/",
+    "images": 55,
+    "annotation_files": 165,
+    "metadata_sha256": "3d32d83fb0e821eaaecf816679d6a6a26f3a4cfea1cfcada2217e1147f26ec07",
+    "dataset_terms": "CC BY-NC-SA4.0; noncommercial research; raw private. Christina Bukas et al., MultiOrg, DOI10.34740/kaggle/ds/5097172. Models CC BY4.0."
+  },
+  "phase_a": {
+    "complete_annotation_census": true,
+    "reject": "Missing/extra files, duplicate JSON keys, nonfinite coordinates, malformed/non-axis-aligned/degenerate rectangles; no repairs or dropping. Parser schema qualified against actual payload before declaring validity.",
+    "reference_semantics": "t0 is initial mixed expert A/B procedure; t1_A and t1_B repeated expert procedures. All started from algorithmic pseudolabels; neither independent raters nor physical truth. t0 used for checkpoint selection.",
+    "native_object_admission": "Conservative source-qualified union: sum of all3 box counts <=128 per whole image. Source-qualified identities are retained even for coincident geometry; this is the direct guarded-union representation, not proof that every equivalent representation is impossible. Other native caps remain mandatory.",
+    "selection": "Sort structurally valid eligible images ascending SHA256(UTF8(reiyah.multiorg.pilot.v1 + newline + exact TIFF path)), break ties by exact path; freeze first min(4,n), first is feasibility pilot. Preserve all55 rows; selected subset not population representative.",
+    "stop": "If any acquisition missing, census incomplete; no replacement. If zero eligible images, refuse direct guarded-union admission and stop model/image acquisition."
+  },
+  "phase_b": {
+    "status": "conditional_on_phase_a_and_preexecution_runner_qualification",
+    "models": {
+      "A": {
+        "name": "Faster R-CNN",
+        "zenodo": 18700540,
+        "file": "faster-rcnn_r50_fpn_organoid_best_coco_bbox_mAP_epoch_68.onnx",
+        "bytes": 165472306,
+        "md5": "e5c2768b8d7d06811b4bb5bf06660663"
+      },
+      "B": {
+        "name": "YOLOv3",
+        "zenodo": 18700540,
+        "file": "yolov3_416_organoid_best_coco_bbox_mAP_epoch_27.onnx",
+        "bytes": 246090044,
+        "md5": "1644a90c3c003cd754f6243feea6d1ae"
+      }
+    },
+    "method_source_tree": "f0866f254d48099e33b189f4196fcde3ac5408c1",
+    "window_original_pixels": 1024,
+    "downsample": 2,
+    "overlap": 0.5,
+    "nms_iou": 0.5,
+    "saved_score_floor_inclusive": 0.05,
+    "analysis_score_strictly_greater": 0.5,
+    "diameter_filter": null,
+    "coordinates": "Preserve source decoded floored coordinates including padded out-of-image boxes; no clipping; native incompatibility refuses admission. Qualify row/column inversion using asymmetric controls.",
+    "nms": "Independent float32 implementation; descending score with original-index tie break. Declare departure from unspecified upstream equal-score tie behavior; no bitwise parity claim.",
+    "coverage": "Every planned tile of every selected whole image. Missing/invalid/timeout never empty; no replacement by easier image. One paired image cannot establish cross-image coupling.",
+    "resource_policy": "Private RESOURCE_AMENDMENT_0.1.0; retain measured wall, bytes, runtime and all failures."
+  },
+  "endpoint": {
+    "loss": "FP+FN for all analysis boxes, unit cost, exact maximum-cardinality one-to-one IoU>=1/2 matching, no score-priority matching. No AP or paper-score reproduction claim.",
+    "d_ir": "L_A(i,r)-L_B(i,r) = D_A-D_B+2*(TP_B-TP_A); positive favors B.",
+    "global": "G=[min_r sum_i d_ir,max_r sum_i d_ir]/n, r in t0,t1_A,t1_B",
+    "imagewise": "P=[sum_i min_r d_ir,sum_i max_r d_ir]/n; declared unobserved hybrid stress family, not probabilistic independence.",
+    "decision": "Positive lower endpoint supports B under the declared finite reference family; negative upper supports A; otherwise unresolved. Margin0.",
+    "primary": "For a complete selected pilot with >=2 images, determine whether a resolved G becomes unresolved P. G subset P required. If G unresolved mechanism endpoint inconclusive; if same resolved no observed fragility.",
+    "secondary": [
+      "all matching counts and d_ir",
+      "exact interval widths",
+      "endpoint attaining reference witnesses",
+      "all source/structural/runtime refusal accounting"
+    ],
+    "baseline": "Ordinary complete matching census plus min/sum arithmetic; no 3^n brute-force straw comparator. Independently authored checker required.",
+    "nonclaims": [
+      "Physical truth",
+      "Independent experts",
+      "Human-work savings",
+      "Automotive transfer",
+      "Published empirical ranking defect",
+      "Scientific superiority",
+      "Novel FP/FN comparison",
+      "Original MultiOrg benchmark reproduction"
+    ]
+  },
+  "acceptance": [
+    "All55 roster entries and all165 annotation files accounted for with exact bytes/digests",
+    "Separately authored checker agrees on geometry counts and selection",
+    "Native capacity failures explicit without cap changes",
+    "Before inference, runtime/coordinate/NMS controls pass and actual models pinned",
+    "Any reported paired endpoint requires complete frozen selected cohort and independent matching/arithmetic agreement"
+  ],
+  "falsifier": "Malformed source, admission refusal, runtime failure or unresolved/unchanged reference interval is retained, never tuned away. A successful pilot establishes source-specific engineering feasibility only."
+}
