@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.17`
+Version: `0.1.18`
 
 Lifecycle status: `proposed`
 
@@ -134,17 +134,26 @@ paired endpoint, ranking or scientific null was produced. The first-attempt stop
 was honored; the [supervisor correction](../research/multiorg-reference-admission/0.2.1/README.md)
 is a separate authored-worker qualification, not an empirical retry.
 
-The next concrete step is a separately recorded bounded launch of the same
-first complete image with the corrected host supervisor and unchanged network-denied
-numerical worker. Reuse and rehash the retained model/image/runtime bytes; do not
-repeat acquisition or source discovery. Preserve all three protocols/attempts,
-original transport failures and the full 55-image roster. Only a complete checked
-first pair can qualify extension to the other three frozen images. This is an
-owned source-adapter study, not admission of a complete human-work value case.
-The 2026 [methods review](research-decisions/owned-reference-trial-2026-10-12.md)
-favors a full exact census here; statistical sampling does not repair an unknown
-reference contract. Closed older studies stay closed. Private outreach was declined,
-not pending; do not poll or resubmit it without new operator instruction.
+The [separate corrected-supervisor attempt](../research/multiorg-reference-admission/0.2.2/README.md)
+now reached numerical output validation and failed in 5.015 seconds. The unchanged
+worker rejected a float32-converted box retained at the 0.05 storage floor with
+nonpositive width or height, before spatial scaling, flooring or NMS. No saved
+prediction or complete pair exists. The offending row, tile, coordinates and
+score were not retained, so its relation to the later analysis threshold and any
+upstream defect remain unknown. The empirical stop was honored.
+
+The next concrete step is narrowly scoped diagnostic instrumentation that records
+that row and its tile context before the existing rejection, while preserving
+numerical operations, thresholds, coordinates, NMS and scientific settings.
+Qualify it on authored cases and freeze a separate diagnostic attempt before any
+future empirical execution. Reuse and rehash the retained bytes. Do not silently
+drop/repair boxes, replace the model/image, tune thresholds or acquire more cohort
+images before the first pair qualifies. This is an owned adapter investigation,
+not a complete human-work value case. The 2026
+[methods review](research-decisions/owned-reference-trial-2026-10-12.md) still
+favors a full exact census; unknown reference semantics are not repaired by
+statistical sampling. Closed older studies stay closed. Private outreach was
+declined, not pending; do not poll or resubmit it without new operator instruction.
 
 ## Start here
 

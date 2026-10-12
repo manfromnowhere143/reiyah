@@ -1,3 +1,50 @@
+# Current entry: corrected supervisor reached a numerical refusal, 12 October 2026
+
+Continuation version: 0.1.91. NEXT_SESSION/CONTINUATION version: 0.1.18.
+Read the [separate attempt](../research/multiorg-reference-admission/0.2.2/README.md)
+and its exact attempt/provenance records. The original two protocols, first failed
+launch and supervisor correction remain unchanged.
+
+Fresh owner `multiorg-supervisor-retry-2026-10-12-ttxhj2wp` started from verified
+2a0dd1b36e10e8987088ec822eb484e87e5c2992. The execution candidate is an exact
+2,615-file projection; publication uses a separate same-repository worktree under
+`publish`. The historical controller remains clean at 74fbacc. The new attempt
+record supersedes only the expired owner's execution window. It preserves the
+same first whole image, Faster/YOLO pair, byte-identical worker, scientific
+protocol and source bytes. The manifest changed only absolute paths. An initial
+6 GiB planning ceiling was corrected prospectively to the original 3 GiB before
+freeze; the worker wall budget stayed 600 seconds. No source download or numerical
+tuning occurred.
+
+One attempt at 17:24:45 UTC reached ONNX output validation and failed after 5.015
+seconds of outer wall time. The host monitor worked; sampled peak RSS was
+1,028,620,288 bytes. The worker exited 1 at the unchanged decoder's nonpositive
+box-extent guard after float32 conversion and storage-floor retention at 0.05,
+before coordinate scaling, flooring or NMS. Source order and the empty output
+directory place the failure during Faster processing, before YOLO began. The
+exact offending row, tile, coordinates, score and number of invalid rows were not
+saved. Their values and relevance to the later analysis threshold remain unknown.
+Do not infer a source-model bug or report an empty prediction as an observation.
+
+Before/after runtime audits agreed on 5,926 hashed RECORD entries across 17
+distributions, retained wheels and declared runtime pins. Seventeen RECORD
+self-entries lack hashes; system dynamic libraries are outside that audit. Source,
+worker, protocol and repository projection bindings were independently checked
+within the same assisted investigation, not independent scientific replication.
+The empirical stop was honored. Zero saved prediction files, complete model pairs,
+native comparisons, reference-coupling endpoints or work-advantage findings exist.
+
+Next: add narrowly scoped diagnostic instrumentation that retains offending
+output rows and tile context before the existing rejection. Preserve numerical
+operations, thresholds and scientific semantics; qualify the instrumentation on
+authored cases before freezing any separately recorded diagnostic run. Do not
+silently drop or repair boxes, replace the model/image, tune thresholds or extend
+the cohort. This owner's empirical execution is closed. Gate A remains
+operator-unaccepted, broad product expansion stopped and the full-work value case
+unadmitted. Exact publication and repository checks are separate closeout evidence.
+
+---
+
 # Current entry: complete reference audit and retained launch failure, 12 October 2026
 
 Continuation version: 0.1.90. NEXT_SESSION/CONTINUATION version: 0.1.17.

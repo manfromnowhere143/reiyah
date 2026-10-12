@@ -1,0 +1,99 @@
+{
+  "artifact_id": "reiyah.multiorg.corrected-supervisor.provenance",
+  "version": "0.2.2",
+  "status": "failed_attempt_retained",
+  "private_owner": "multiorg-supervisor-retry-2026-10-12-ttxhj2wp",
+  "repository_base": "2a0dd1b36e10e8987088ec822eb484e87e5c2992",
+  "private_bindings": {
+    "PLAN.json": {
+      "sha256": "d3dd23ffa1ba2efcda7e25609a0b465db2cfeebce2a489efcfbb96f4c8d804fb",
+      "bytes": 3237
+    },
+    "PLAN_AMENDMENT_001.json": {
+      "sha256": "688f86d5e84102f2258dd6ad1f2676446b3ad50517b629a0bcfe5cd2bdf1936c",
+      "bytes": 424
+    },
+    "EXECUTION_FREEZE.json": {
+      "sha256": "7a597769c1caeeb40fe2c255191004a2ec9969137075d32e58b0daccaf1ce2d0",
+      "bytes": 3157
+    },
+    "CLOSEOUT.json": {
+      "sha256": "810842f5dde3f9b069b14e50dbd2c85fd78b8a90427b66ffa29d88a10b4c7f17",
+      "bytes": 6157
+    },
+    "SUMMARY.txt": {
+      "sha256": "ba0d0be5079e6441f014d1200470e4ff2df74f8fe3c35f8e48ff68c55837a9ec",
+      "bytes": 2231
+    },
+    "runtime-audit/audit.py": {
+      "sha256": "a66d56bc2ced468324075ec78dcfc0b21ecd3273450fa6c8eceec8b40ba8fb93",
+      "bytes": 5248
+    },
+    "runtime-audit/before.json": {
+      "sha256": "393a9aa536d08ff5048b9e9ef0d100d90bbb504eb588b033fc83f83017e9fa15",
+      "bytes": 1367272
+    },
+    "runtime-audit/after.json": {
+      "sha256": "f42f2c7fa8d6b1344d5fedc7ed0b51888572567c37821999eed3dfedbb6bc515",
+      "bytes": 1367272
+    },
+    "candidate-byte-manifest.json": {
+      "sha256": "87adab38b17d62050041af3d7b16180a6a96ab282bcbaf340a5b1867092a73e1",
+      "bytes": 484648
+    },
+    "inference/LAUNCH.json": {
+      "sha256": "bf09674a667d49a34de6fb7b69edaa84d4939177c0b39d675a7033b9fec95c11",
+      "bytes": 1252
+    },
+    "inference/LAUNCH_RESULT.json": {
+      "sha256": "ce60c7dae787928269dd08082527dee7622fa567a1ef5823bdf1f66d4749a1b8",
+      "bytes": 1454
+    },
+    "inference/pilot-run.process.json": {
+      "sha256": "38dd038fc864bbdf508976cd863c5d7a9abd3bcba7b37afd9ec6f2439f58c463",
+      "bytes": 1358
+    },
+    "inference/pilot-run.log": {
+      "sha256": "1912d3517bfdd53d9f5f65a0ced80b1e610e055b2220c896c21668002e728c20",
+      "bytes": 982
+    },
+    "inference/pilot-run.sandbox.sb": {
+      "sha256": "5c358b8d847211333e7ba22df82d84f796b5f30a41a2682209a949d783adbd08",
+      "bytes": 44
+    },
+    "inference/outer.log": {
+      "sha256": "b166c189d19a3f40d211066c7f393a32482452dbe0367ae0eda9b059b5821e13",
+      "bytes": 1280
+    },
+    "inference/pilot-manifest.json": {
+      "sha256": "c63faa9144562506a280ee6e8dcdf8b1c6ff506de7876780b4ce225a63536fd0",
+      "bytes": 1244
+    },
+    "checker/compare_oracle.py": {
+      "sha256": "7b368b8e37067419c7647b6a02045bdf8074872fa9dfac7abf82907a4175a861",
+      "bytes": 13201
+    },
+    "checker/check_annotations.py": {
+      "sha256": "306faec0de46d73aef9ae8aa7368780556c4263280f3e768a7aaf474b4ef3fc3",
+      "bytes": 11355
+    }
+  },
+  "public_files": {
+    "README.md": {
+      "sha256": "1bd257ffed98b509e6257aa28a56a46c2f104dd15fc56f7078f2d30b1c643388",
+      "bytes": 4156
+    },
+    "attempt.json": {
+      "sha256": "6dcbb2b5978b076e684e5a0bba8d228b9fb2c52ff7edf8bbb3e4e7b0cf5b65e9",
+      "bytes": 7870
+    }
+  },
+  "review_scope": "Separately authored implementation and read-only peer review within the same assisted investigation; not independent scientific replication.",
+  "checker_status": "Frozen previous comparison oracle retained unchanged, not executed on empirical outputs.",
+  "runtime_audit_scope": "Installed RECORD checks plus exact retained wheel/runtime pins; not a reproducible rebuild or audit of every system dynamic library.",
+  "third_party_payloads_published": false,
+  "prior_protocols_and_failure_preserved": true,
+  "stop_honored": true,
+  "Gate_A_operator_acceptance": false,
+  "implementation_agent_repository_edits_or_push": false
+}

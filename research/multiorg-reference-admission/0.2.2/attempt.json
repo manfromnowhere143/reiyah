@@ -1,0 +1,170 @@
+{
+  "artifact_id": "reiyah.multiorg.corrected-supervisor.attempt",
+  "version": "0.2.2",
+  "status": "failed",
+  "scope": "One complete-image paired inference feasibility attempt; numerical-output contract refusal before saved model outputs. No scientific endpoint.",
+  "repository_base": "2a0dd1b36e10e8987088ec822eb484e87e5c2992",
+  "scientific_protocol": {
+    "path": "../0.2.0/protocol.json",
+    "sha256": "d27a73f692ab15ec7402ff052c8a7aa0a0ef3539d89dda0ec1c38b8588ce6f08",
+    "bytes": 4500
+  },
+  "unchanged_worker": {
+    "path": "../0.2.0/run_pair.py",
+    "sha256": "9a708bf6a22e9350980e0d08d0e90c2c56f7b9cc4a73b7fd55f22c9ef3f33e0c",
+    "bytes": 21404
+  },
+  "corrected_supervisor": {
+    "path": "../0.2.1/supervise.py",
+    "sha256": "4628d61e316fc743b8ecaacc1be9b48cfafda4f3d786b8d0859228fcacb40146",
+    "bytes": 9007
+  },
+  "supervisor_qualification": {
+    "path": "../0.2.1/correction.json",
+    "sha256": "951f3c5e5e19f65a9810ced6468a421b68d2dabda69d24e51d32798ef57b5065",
+    "bytes": 4857
+  },
+  "prior_attempt": {
+    "execution": {
+      "path": "../0.2.0/execution.json",
+      "sha256": "bef0385a6276f949edefcb77fcc5a6a09c98c337f4ea23737c83335f6d4e2621",
+      "bytes": 5577
+    },
+    "private_failure_sha256": "9125292a4748f048e5364446cb9edf178d50d2fbac1f3a80ea0fee82e1685d61",
+    "outer_wall_seconds": 0.28178641700651497,
+    "saved_prediction_outputs": 0,
+    "internal_worker_execution_point": "unknown"
+  },
+  "chronology": {
+    "plan_created_at": "2026-10-12T17:22:26.739469+00:00",
+    "prospective_resource_clarification_at": "2026-10-12T17:23:02.437068+00:00",
+    "freeze_at": "2026-10-12T17:24:28.127391+00:00",
+    "launch_at": "2026-10-12T17:24:45.642718+00:00",
+    "exit_at": "2026-10-12T17:24:50.658535+00:00",
+    "postrun_runtime_audit_at": "2026-10-12T17:25:26.100263+00:00",
+    "new_owner_deadline": "2026-10-12T17:52:26.739469+00:00"
+  },
+  "authorization_and_change_scope": "Separately authorized new owner and corrected supervisor; prior expired execution window is superseded for this attempt, prior failed attempt remains preserved. Initial planning mention of6GiB was prospectively corrected to original3GiB before freeze. Original pilot manifest changed only absolute paths; scientific settings and native caps unchanged.",
+  "exposure": "All165 annotations/counts, first image and authored input-preflight results already exposed. Prior attempt saved no detector predictions; its internal execution point was unknown. No claim of untouched cohort.",
+  "selection": {
+    "image_id": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+    "frozen_selected_position": 1,
+    "reference_procedures": [
+      "t0",
+      "t1_A",
+      "t1_B"
+    ],
+    "reference_counts": [
+      88,
+      61,
+      64
+    ],
+    "models": [
+      "faster",
+      "yolo"
+    ],
+    "replacement": false
+  },
+  "source_bindings": {
+    "first_image": {
+      "sha256": "8828e0a9f94d6c44ea03be2e62623e812830f339d9c905b7a368edcb7e821eb0",
+      "bytes": 42627969
+    },
+    "faster": {
+      "sha256": "fbf748e6d8b896bed9ee1eb15d5dd1409369de5e32c4746c4173aa4c10e7bebd",
+      "bytes": 165472306
+    },
+    "yolo": {
+      "sha256": "02ed40f0cbdcf9023390e9723a1c310d5dd3f4d18a3ad1c3774f71ff74969ee6",
+      "bytes": 246090044
+    },
+    "annotation_manifest": {
+      "sha256": "937b74145d113c9823a7c497dbedc018808b8f9cde7231c1765d053d9ec52cdb",
+      "annotation_files_reverified": 165
+    },
+    "runtime_qualification": {
+      "path": "../0.2.0/environment.json",
+      "sha256": "d1527fbcff12a2dabdc179caf508c0972cff8d2a99aa4e50bd7ffa6c2c724c6f",
+      "bytes": 4173
+    }
+  },
+  "limits": {
+    "owner_wall_seconds": 1800,
+    "worker_wall_budget_seconds": 600,
+    "sampled_worker_rss_bytes": 3221225472,
+    "sample_seconds": 0.2,
+    "max_tiles_per_image": 512,
+    "max_raw_boxes_per_image": 200000,
+    "owner_logical_bytes_cap": 2147483648,
+    "free_disk_floor_bytes": 4294967296,
+    "enforcement": "RSS/wall are sampled worker-PID observations, not instantaneous hard bounds; unchanged CPU/file-size limits also apply."
+  },
+  "execution": {
+    "attempts": 1,
+    "retry_count": 0,
+    "returncode": 1,
+    "termination_reason": "worker_exit",
+    "outer_wall_seconds": 5.015390084008686,
+    "supervisor_wall_seconds": 4.867537415993866,
+    "peak_sampled_rss_bytes": 1028620288,
+    "policy_sha256": "5c358b8d847211333e7ba22df82d84f796b5f30a41a2682209a949d783adbd08",
+    "policy_scope": "Numerical worker network denied before Python; host resource observer outside sandbox.",
+    "saved_prediction_files": 0,
+    "complete_model_pairs": 0,
+    "output_directory_empty": true
+  },
+  "failure": {
+    "class": "numerical_output_contract_refusal",
+    "message": "ValueError: degenerate retained detector box",
+    "location": "run_pair.py line191",
+    "condition": "After conversion to float32 and retention at score>=float32(0.05), at least one row has x2<=x1 or y2<=y1. This check precedes spatial scaling, flooring and NMS.",
+    "what_traceback_supports": "Execution returned from an ONNX session.run call and reached this decoder guard. It does not establish complete-model qualification.",
+    "offending_coordinates": null,
+    "offending_score": null,
+    "offending_tile_index": null,
+    "offending_row_index": null,
+    "offending_row_count": null,
+    "analysis_threshold_relevance": "unknown; the failing row may or may not meet score>0.5",
+    "upstream_model_bug_established": false,
+    "model_stage": "faster",
+    "model_stage_basis": "The frozen loop processes Faster before YOLO and saves each completed image/model file before advancing. The output directory is empty, so refusal occurred during Faster processing; YOLO was not started."
+  },
+  "verification": {
+    "source_and_frozen_file_hashes_unchanged": true,
+    "candidate_files_rechecked": 2615,
+    "runtime_RECORD_audits_before_after": "passed and equal on all inspected collections",
+    "installed_RECORDs": 17,
+    "hashed_RECORD_entries_per_audit": 5926,
+    "retained_wheels_per_audit": 17,
+    "excluded_unhashed_RECORD_self_entries_per_audit": 17,
+    "pyc_entries_or_unrecorded_files_reported": 0,
+    "runtime_scope": "Installed RECORD checks plus exact retained wheel/runtime pins; not a reproducible rebuild or audit of every system dynamic library.",
+    "native_comparison_executed": false,
+    "separate_matching_oracle_executed": false,
+    "reason_no_comparison": "No complete saved model pair; detector/native-cap eligibility unknown. Reference counts alone remain within the object cap."
+  },
+  "resources": {
+    "new_network_requests": 0,
+    "new_download_bytes": 0,
+    "paid_services": 0,
+    "owner_bytes_before_closeout_packet": 503155187,
+    "free_disk_bytes_at_closeout": 10260914176,
+    "historical_effort": "Retained, not reset.",
+    "human_work": "Not measured; machine intervals are not analyst work.",
+    "accounting_scope": "Source staging, numerical execution and verification for this attempt; excludes separately budgeted repository publication traffic."
+  },
+  "disposition": "Empirical execution stopped; no numerical edits, threshold changes, replacement, remaining-image acquisition or retry in this owner.",
+  "next_dependency": "Separately author diagnostic instrumentation that retains the offending output row and tile context before the existing rejection, without altering decoding, retention threshold, coordinates, NMS or scientific settings. Qualify it on authored cases and freeze it before any future separately recorded run. No empirical retry in this owner.",
+  "nonclaims": [
+    "Scientific null",
+    "Detector ranking",
+    "Reference-coupling effect",
+    "Complete-model qualification",
+    "Native detector-cap admission",
+    "Upstream model defect",
+    "Physical truth",
+    "Human-work advantage",
+    "Automotive transfer",
+    "Scientific superiority"
+  ]
+}
