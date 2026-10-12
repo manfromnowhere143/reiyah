@@ -1,0 +1,235 @@
+{
+  "artifact_id": "reiyah.exact-choice-baseline.protocol",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "question": "Qualify an exact finite-pool shared-label AUGRC comparator and distinguish hindsight certificates from feasible acquisition.",
+  "source": {
+    "paper": "https://arxiv.org/html/2609.18622v1",
+    "version": "v1",
+    "date": "2026-09-16",
+    "private_html_sha256": "43d83579ca554f581727cff903e1c4546355b1f1b85a4b4b9b1b417c95ef6125",
+    "license": "CC BY 4.0; authored implementation, no paper payload redistributed",
+    "scope": "Exact stopping and integer hindsight cover, not LP solver, asymptotic theorem or paper empirical tables"
+  },
+  "population": {
+    "grid": [
+      {
+        "n": 1,
+        "k": 2
+      },
+      {
+        "n": 2,
+        "k": 2
+      },
+      {
+        "n": 3,
+        "k": 2
+      },
+      {
+        "n": 1,
+        "k": 3
+      },
+      {
+        "n": 2,
+        "k": 3
+      }
+    ],
+    "predictions": "Every binary tuple in lexicographic order",
+    "ranks": "Every tuple in product(range(n),repeat=n) whose set is exactly range(max+1), lexicographic; smaller ranks accepted earlier, ties averaged over every within-tie permutation",
+    "candidates": "prediction outer then rank inner; every ordered k-tuple with replacement; ties in model choice favor lower candidate index",
+    "histories": "product((0,1,2),repeat=n), lexicographic; 0 unknown, 1 observed0, 2 observed1",
+    "full_labels": "product((0,1),repeat=n), lexicographic",
+    "fixed_orders": "Every permutation(range(n)), lexicographic",
+    "weights": "Trapezoidal risk-coverage integral; scaled by 2*n*n. No right-endpoint substitution.",
+    "worlds": "All binary labels; no constraints, noise or probability model"
+  },
+  "endpoints": [
+    "Every partial-history exact pair-difference endpoint and universal winner matches independent complete-completion curve integration",
+    "Integer covering certificate minimum matches exhaustive distinguishing-subset cardinality",
+    "All fixed-order acquisition costs and one coefficient-width order remain at least the hindsight minimum",
+    "Optimal worst-case adaptive decision-tree depth compared with maximum hindsight certificate size; finite enumeration only"
+  ],
+  "width_order": "descending max over candidate-pair absolute scaled label-coefficient difference, stable by row index; no hidden labels used",
+  "adaptive_policy": "At each unresolved history choose query minimizing worst-case remaining depth; row-index tie break; child labels are hypothetical possibilities, actual path consumes only observed responses",
+  "named_cases": [
+    {
+      "id": "paper-four-row",
+      "prediction": [
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "ranks": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          0,
+          3,
+          2
+        ]
+      ],
+      "labels": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "order": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "role": "Reproduce the already-read paper worked example; anticipated certificate3 versus path4, not blinded"
+    },
+    {
+      "id": "majority-three",
+      "prediction": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "ranks": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "labels": [
+        0,
+        1,
+        0
+      ],
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "role": "Authored exact-choice example: distinguish hindsight certificate from adaptive worst-case cost"
+    },
+    {
+      "id": "metric-convention",
+      "prediction": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "ranks": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "labels": [
+        0,
+        0,
+        0
+      ],
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "role": "Authored control: changing trapezoidal to right-endpoint integration may change tie-aware choice"
+    },
+    {
+      "id": "identical-candidates",
+      "prediction": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "ranks": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "labels": [
+        1,
+        0
+      ],
+      "order": [
+        0,
+        1
+      ],
+      "role": "Shared identical risks select candidate0 without labels; separate risk intervals are weaker"
+    }
+  ],
+  "verification": "Separate standard-library implementation enumerates all tie-compatible acceptance permutations, integrates cumulative loss curves using Fraction, enumerates full label worlds and distinguishing subsets. No import from producer or current engine. Canonical traces, summaries and named-case outputs independently reconstructed.",
+  "expected_failures": [
+    "unknown or extra protocol population/case",
+    "wrong tie/rank averaging",
+    "right-endpoint metric substitution",
+    "omitted/changed trace history or model",
+    "numeric/Boolean type substitution",
+    "corrupt bounds/winner/certificate/acquisition count",
+    "noncanonical or truncated trace",
+    "unavailable/missing label coerced to zero"
+  ],
+  "limits": {
+    "max_wall_seconds_per_execution": 150,
+    "owner_bytes_excluding_candidate": 67108864,
+    "new_source_bytes": 0,
+    "spend": 0
+  },
+  "failure_and_stop": "Any discrepancy invalidates that run; retain it and any repair before a final frozen rerun. Stop at declared population/resource bounds. No changes to fixtures/endpoint to rescue results.",
+  "nonclaims": [
+    "No actual reviewer, calibrated channel or work savings",
+    "No detector-matching adapter or general AP support",
+    "No paper author implementation reproduction",
+    "No independent scientific replication",
+    "No asymptotic/random-world empirical claim",
+    "No novelty or superiority",
+    "No reopening prior perception or motion pairs"
+  ]
+}

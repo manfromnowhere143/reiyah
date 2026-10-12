@@ -1,3 +1,79 @@
+# Current entry: exact-choice baseline qualified on a finite domain, 12 October 2026
+
+Continuation version: 0.1.85. Status: exploratory mathematical qualification
+completed; no full-work value case admitted. Read the
+[study](../research/exact-choice-baseline/0.1.0/README.md), frozen protocol,
+producer, separate checker, result, controls, execution receipts and provenance.
+NEXT_SESSION and CONTINUATION are now version 0.1.12.
+
+Daniel said to proceed to the next experiment. The completed frontier review
+identified a close shared-label AUGRC comparator. This bounded experiment
+qualifies its exact stopping and integer covering formulation before a compatible
+value comparison. It does not reopen the exposed perception/motion pairs, add
+product runtime, or substitute generated query counts for actual workflow work.
+The user's preceding explicit parallel-agent instruction supports a separately
+authored verifier, not independent scientific authority.
+
+Protocol froze at 2026-10-12T11:12:00.501524Z, before implementation/execution.
+Paper v1 and named worked examples were already read; anticipated outcomes are
+explicit. No blinded or preregistered claim. Source is Kuboyama,
+arXiv:2609.18622v1, 16 September 2026; retained primary hashes reused and checked.
+No third-party payload is newly downloaded or redistributed. An authored
+implementation reproduces the compatible finite mathematical definitions,
+not the author's software, LP solver, empirical tables or asymptotic theorem.
+
+Grid: all binary predictions, dense weak confidence rankings, ordered candidate
+tuples with replacement, complete binary worlds and ternary partial histories
+for (n,K)=(1,2),(2,2),(3,2),(1,3),(2,3). Lower index breaks choice ties;
+trapezoidal AUGRC and average within-confidence ties are fixed. Unknown labels
+are separate from observed zero. Producer uses integer coefficients/bounds and
+gain-cover subsets. Separate checker uses Fraction curve integration, all
+completions, distinguishing subsets and world-partition trees; no producer or
+engine imports. Both implementations and serialization froze before execution.
+
+All 12,700 tuples, 308,916 histories, 94,040 labelings and 534,168 fixed-order
+paths agree. Four named cases verify separately. In 4,640 grid tuples, minimax
+query depth exceeds the largest hindsight certificate by one; it equals it in
+8,060. These counts include ordered duplicates and unequal grid sizes, not
+empirical prevalence. Three-row majority has certificates of two for every
+labeling but minimax depth three. The paper's four-row declared path needs four
+queries versus a three-label certificate. Changing trapezoidal integration to
+right endpoints changes the named metric-convention winner. Identical candidates
+resolve without querying a label under the fixed tie rule.
+
+Two producer executions match exact result and compressed/decoded trace bytes.
+All 40 mixed acceptance/rejection/domain controls meet expected outcomes. No
+unexpected failed run or protocol repair. The minimax oracle optimizes worst-case
+depth only, not average or pointwise acquisition; it is an exponential finite
+benchmark. Width ordering uses known coefficients only. Neither knows an actual
+unqueried label. No real observation responses, timings, human costs or physical
+validity are established. Same-investigation cross-implementation agreement is
+not independent scientific replication. Gate A remains operator-unaccepted.
+
+Base: 4b8ddcd92e7d33fae878d49f91802fa1f59f35de. Fresh owned candidate:
+`~/.codex/reports/reiyah/exact-choice-baseline-2026-10-12-dai66fz4/candidate`.
+Controller stays clean on historical74fbacc. Offline calculations deny network
+before Python starts, use standard library, no new dependencies, inference,
+spend or outreach. Each execution is bounded at150seconds; owner wall cap50minutes,
+added bytes excluding candidate64MiB. Historical active effort remains unknown,
+not reset. Timings are local process wall times, not complete human work.
+
+Closeout runs nine documented research-consistency checks, verifies the unchanged
+small offline example, current links/anchors and all continuation/file bindings,
+and preserves prior handoff bytes, README sections and seven diagrams. Gate A
+release validation and historical experiments are not replayed. Publish authored
+code, results and descriptors under existing research publication authority;
+retain exact publication readback privately. No Console deployment belongs to
+this engine experiment.
+
+Next: a fresh consequential paired decision, qualified observation process and
+complete work records, with the strongest compatible baseline and equal initial
+information. This qualification is complete. Do not automatically enlarge the
+synthetic grid or present certificate savings as actual acquisition/work savings.
+Earlier closed inputs and budgets remain closed and binding.
+
+Earlier entries follow unchanged.
+
 # Current entry: frontier methods and next comparison contract, 12 October 2026
 
 Continuation version: 0.1.84. Status: targeted primary-source review completed;

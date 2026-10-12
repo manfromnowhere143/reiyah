@@ -1,0 +1,112 @@
+{
+  "artifact_id": "reiyah.exact-choice-baseline.execution",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "environment": {
+    "python": "3.14.2",
+    "platform": "macOS-14.4-arm64-arm-64bit-Mach-O",
+    "zlib_build": "1.2.12",
+    "zlib_runtime": "1.2.12"
+  },
+  "runs": [
+    {
+      "id": "run1",
+      "at": "2026-10-12T11:16:27.255864+00:00",
+      "exit": 0,
+      "wall_seconds": 3.901407167024445,
+      "network_denied_before_runtime": true,
+      "stderr": "",
+      "command": [
+        "sandbox-exec",
+        "-p",
+        "(version 1)(allow default)(deny network*)",
+        "python3",
+        "-B",
+        "research/exact-choice-baseline/0.1.0/reproduce.py",
+        "--output-dir",
+        "<owner>/run1"
+      ]
+    },
+    {
+      "id": "run2",
+      "at": "2026-10-12T11:17:59.543208+00:00",
+      "exit": 0,
+      "wall_seconds": 3.895392458012793,
+      "network_denied_before_runtime": true,
+      "stderr": "",
+      "command": [
+        "sandbox-exec",
+        "-p",
+        "(version 1)(allow default)(deny network*)",
+        "python3",
+        "-B",
+        "research/exact-choice-baseline/0.1.0/reproduce.py",
+        "--output-dir",
+        "<owner>/run2"
+      ]
+    },
+    {
+      "id": "verification1",
+      "at": "2026-10-12T11:20:33.652060+00:00",
+      "exit": 0,
+      "wall_seconds": 1.4458507079980336,
+      "network_denied_before_runtime": true,
+      "stderr": "",
+      "command": [
+        "sandbox-exec",
+        "-p",
+        "(version 1)(allow default)(deny network*)",
+        "python3",
+        "-B",
+        "research/exact-choice-baseline/0.1.0/verify.py",
+        "--trace",
+        "<owner>/run1/trace.jsonl.gz",
+        "--named",
+        "<owner>/run1/named.jsonl.gz",
+        "--result",
+        "<owner>/run1/result.json",
+        "--output",
+        "<owner>/verification1.json"
+      ]
+    },
+    {
+      "id": "controls1",
+      "at": "2026-10-12T11:21:06.310597+00:00",
+      "exit": 0,
+      "wall_seconds": 1.823805124964565,
+      "network_denied_before_runtime": true,
+      "stderr": "",
+      "command": [
+        "sandbox-exec",
+        "-p",
+        "(version 1)(allow default)(deny network*)",
+        "python3",
+        "-B",
+        "research/exact-choice-baseline/0.1.0/controls.py",
+        "--named",
+        "<owner>/run1/named.jsonl.gz",
+        "--output",
+        "<owner>/controls1.json",
+        "--workdir",
+        "<owner>/controls1"
+      ]
+    }
+  ],
+  "repeated_outputs": {
+    "result.json": {
+      "identical": true,
+      "sha256": "5fd7d350394706853068a81866981e4e2a4981e5f4b463f2fbeaac0e513c8df5"
+    },
+    "trace.jsonl.gz": {
+      "identical": true,
+      "sha256": "fd520f262be20449abedd6b8e1124b6d7efe049fab947603f5e4240322b65ce7"
+    },
+    "named.jsonl.gz": {
+      "identical": true,
+      "sha256": "05edd8ff3b913b55cd729a57f222699d9651f42a0986c4e8bca25f417521dcbe"
+    }
+  },
+  "unexpected_failed_runs": [],
+  "timing_scope": "Local command wall time including Python startup; not complete human work.",
+  "launch_scope": "Offline research replay, not Gate A release launcher evidence."
+}

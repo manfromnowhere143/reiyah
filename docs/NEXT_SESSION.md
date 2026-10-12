@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.11`
+Version: `0.1.12`
 
 Lifecycle status: `proposed`
 
@@ -59,6 +59,18 @@ Qualify observation responses on separate development records, then freeze the
 protocol before fresh comparison outcomes. No newly reviewed source yet supplies
 a complete value packet. WOD-E2E remains a metadata-only lead with access/terms
 and process evidence unresolved. Prior closed inputs remain closed.
+
+The [exact-choice baseline qualification](../research/exact-choice-baseline/0.1.0/README.md)
+is now complete. Separately authored implementations agree across 12,700 ordered
+candidate tuples, 308,916 partial histories and 534,168 fixed-order acquisition
+paths in the frozen small AUGRC domain. The majority control has a two-label
+certificate for every labeling but optimal worst-case acquisition depth three.
+Keep certificate size, feasible acquisition and complete work distinct. This
+qualifies a compatible mathematical comparator, not detector matching, a real
+observation process or product advantage. No LP solver, author code, empirical
+tables or asymptotic result was reproduced. Forty mixed validation controls pass;
+separate implementations are not independent scientific replication. Stop this
+finite qualification; do not enlarge it as a substitute for a fresh value case.
 
 ## Start here
 

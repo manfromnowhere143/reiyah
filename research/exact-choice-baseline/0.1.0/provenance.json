@@ -1,0 +1,65 @@
+{
+  "artifact_id": "reiyah.exact-choice-baseline.provenance",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "repository_base": "4b8ddcd92e7d33fae878d49f91802fa1f59f35de",
+  "owner_started_at": "2026-10-12T11:09:29.678437+00:00",
+  "freeze_records": {
+    "FREEZE.json": {
+      "at": "2026-10-12T11:12:00.501524+00:00",
+      "protocol_sha256": "e3e134d7423a721fd673ee021cd5404f6b32cee7d0cefad322179a33899afd0d",
+      "protocol_bytes": 6375,
+      "before_implementation_and_execution": true,
+      "anticipated_named_outcomes": true,
+      "source_read_before_freeze": true
+    },
+    "PRODUCER-FREEZE.json": {
+      "at": "2026-10-12T11:16:12.122308+00:00",
+      "before_execution": true,
+      "files": {
+        "protocol.json": "e3e134d7423a721fd673ee021cd5404f6b32cee7d0cefad322179a33899afd0d",
+        "trace-format.json": "33987a8caef0fec4c181ffecd37574a0700020549ae148893d6b907aeac0da21",
+        "reproduce.py": "9fb994f5cf7b99ea8172412ab3ef397cfb1ded3f70d1bcc888e5bf7d91b4eb82"
+      }
+    },
+    "VERIFIER-FREEZE.json": {
+      "at": "2026-10-12T11:20:33.651216+00:00",
+      "before_verifier_and_control_execution": true,
+      "files": {
+        "verify.py": "e76d55e2d9e856ef9de8c2b61ed5a6b553d061f3b6256fc7f3f483998c0b8ea4",
+        "controls.py": "f9c08ecd14f71bea68a4d6dcd8729c4f982f300f22a19a4138fc3ba03b90835b"
+      }
+    }
+  },
+  "scope": "Fixed finite mathematical qualification of a newly identified close baseline, not a new perception-value case or product runtime.",
+  "exposure": "Primary paper and worked cases read before protocol freeze. Named outcomes anticipated. Generated exhaustive domain, no newly acquired empirical outcomes.",
+  "independent_implementation": "Verifier authored separately without reading or importing producer, then parent runs exact reconstruction. After verifier freeze its author inspected producer and README. One assisted investigation, not independent scientific replication.",
+  "method": "Integer affine bounds and covering subsets compared with Fraction quadrature, complete worlds, distinguishing subsets and world-partition decision tree.",
+  "deviations": [],
+  "unexpected_failures": [],
+  "resources": {
+    "new_source_bytes": 0,
+    "spend": 0,
+    "model_runs": 0,
+    "new_dependencies": 0,
+    "max_wall_seconds_per_execution": 150,
+    "owner_wall_minutes_cap": 50,
+    "owner_bytes_cap_excluding_candidate": 67108864
+  },
+  "historical_effort": "Unknown, not reset; owner wall time and script timings do not measure active human effort.",
+  "full_work_case_admitted": false,
+  "Gate_A_accepted": false,
+  "next_action": "Use compatible qualified baseline in a fresh actual paired decision with separately qualified observation and full-work records; stop this finite grid.",
+  "files": {
+    "controls.json": "f6d930b60b4cfcc10d00255d207300fcec9b85bd6f410d4e26a410f4f9077c86",
+    "controls.py": "f9c08ecd14f71bea68a4d6dcd8729c4f982f300f22a19a4138fc3ba03b90835b",
+    "execution.json": "af8b621d5062fbfde12452274c9b63c70445fc8963781c7411c86a04e6fd94e4",
+    "protocol.json": "e3e134d7423a721fd673ee021cd5404f6b32cee7d0cefad322179a33899afd0d",
+    "reproduce.py": "9fb994f5cf7b99ea8172412ab3ef397cfb1ded3f70d1bcc888e5bf7d91b4eb82",
+    "result.json": "5fd7d350394706853068a81866981e4e2a4981e5f4b463f2fbeaac0e513c8df5",
+    "sources.json": "a215ea6e3049592a9c2104d3498e8ad214cd13bfc5d3c00387165758d36a1335",
+    "trace-format.json": "33987a8caef0fec4c181ffecd37574a0700020549ae148893d6b907aeac0da21",
+    "verification.json": "c7f8dc2cc8b49c819bdfc77327af4868608443924084bfa75ded64605b1e6edf",
+    "verify.py": "e76d55e2d9e856ef9de8c2b61ed5a6b553d061f3b6256fc7f3f483998c0b8ea4"
+  }
+}

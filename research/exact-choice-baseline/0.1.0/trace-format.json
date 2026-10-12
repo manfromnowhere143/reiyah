@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "encoding": "One JSON object per newline, sorted keys, compact separators, ASCII escaped. gzip mtime0 emptyfilename.",
+  "id": "[n,k,case_index within grid from0] or [n,k,named_id]",
+  "candidates": "ordered prediction/ranks integer arrays",
+  "risks": "scaled by2n\u00b2, full binary labels lex outer, candidate index inner",
+  "histories": "ternary histories lex, each has bounds:[[lo,hi] pair j<k lex],winner:int|null,depth:int,query:int|null",
+  "certificates": "minimum label count per full label lex",
+  "policy_queries": "optimal worst-case adaptive policy count per full label lex",
+  "fixed_queries": "count per full label lex then permutation lex",
+  "width_queries": "fixed width order count per full label lex",
+  "scope": "All declared grid and four named cases; every scalar checked using exact canonical bytes; summary derived from trace, runtime metadata outside deterministic result."
+}
