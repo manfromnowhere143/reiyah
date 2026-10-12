@@ -1,0 +1,75 @@
+{
+  "artifact_id": "reiyah.response-order-sensitivity.verification",
+  "version": "0.1.0",
+  "checked_at": "2026-10-12T14:38:54.220829+00:00",
+  "protocol_sha256": "98522dd1dc96c94621acc852ab7a90f6c753efa51fccdd7ea4a479710cd0d78b",
+  "result_sha256": "29d7ec48feede18f3e25a8b82d1ff473e949a655976795bf7488c7bf8b68f5a3",
+  "trace_sha256": "017aaba143f9956910bbd4e182fd0bfbb2d2be08c538b325db4bf8071a0fd69c",
+  "trace_bytes": 13820830,
+  "producer_executions": 2,
+  "exact_bytes_match": [
+    "result.json",
+    "trace.jsonl"
+  ],
+  "separate_raw_input_checker": {
+    "passed": true,
+    "cells": 28626,
+    "uniform_subsets_enumerated": 1001895,
+    "imports_producer": false,
+    "scope": "Independent authored loader and arithmetic within the same assisted investigation; per-cell trace, aggregates and explicit byte bindings checked; not independent science or blanket metadata/authority validation."
+  },
+  "authored_test_methods": 14,
+  "synthetic_differential_cases": 252,
+  "negative_controls": {
+    "controls": [
+      {
+        "name": "producer_changed_source",
+        "exit": 2,
+        "expected_exit": 2,
+        "expected_reason": "compressed source identity differs",
+        "stderr": "{\"reason\": \"compressed source identity differs\", \"status\": \"invalid\"}\n",
+        "seconds": 0.062012833019252867,
+        "passed": true
+      },
+      {
+        "name": "checker_changed_source",
+        "exit": 1,
+        "expected_exit": 1,
+        "expected_reason": "source hash mismatch",
+        "stderr": "{\"error\": \"source hash mismatch\", \"status\": \"rejected\"}\n",
+        "seconds": 0.05467099999077618,
+        "passed": true
+      },
+      {
+        "name": "checker_changed_result",
+        "exit": 1,
+        "expected_exit": 1,
+        "expected_reason": "aggregate metrics mismatch",
+        "stderr": "{\"error\": \"aggregate metrics mismatch\", \"status\": \"rejected\"}\n",
+        "seconds": 11.256153625028674,
+        "passed": true
+      }
+    ],
+    "all_passed": true
+  },
+  "code_frozen_before_empirical_execution": true,
+  "interpretation_note_before_execution": true,
+  "frozen_analysis_code_changed_after_execution": false,
+  "negative_control_runner_written_after_outcomes": true,
+  "network_denied_before_runtime": true,
+  "raw_or_trace_publicly_redistributed": false,
+  "limitations": [
+    "No source collector instrumentation audit or clock calibration",
+    "No physical truth, causal intervention, human population inference or automotive transfer",
+    "No online selection implementation or complete-work advantage",
+    "No Gate A acceptance or independent scientific replication"
+  ],
+  "repository_closeout": {
+    "research_consistency_checks_passed": 9,
+    "historical_transcripts_bound": 52,
+    "historical_transcripts_replayed": 0,
+    "gate_A_release_replayed": false,
+    "Gate_A_operator_accepted": false,
+    "offline_example_stdout_sha256": "62d159ba5255046fcb5d04b21abfbd64fe96550acda747e7be3aafce51a0594f"
+  }
+}

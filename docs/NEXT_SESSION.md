@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.14`
+Version: `0.1.15`
 
 Lifecycle status: `proposed`
 
@@ -98,6 +98,19 @@ scheduler, sibling adapter, external model campaign or paid service was started.
 The [utility comparison criteria](../research/decision-research/0.1.0/utility-pilot.json)
 remain proposed. Apply the records to a fresh admitted decision or a material
 change filling a named gap; do not enlarge this prototype without an actual use.
+
+The [response-order study](../research/response-order-sensitivity/0.1.0/README.md)
+now completes one new real-record qualification. Across all 28,626 MVT cells,
+selecting three lower recorded-time responses increases squared departure from
+the full valid-time answer distribution (0.113094 versus uniform expectation
+0.110682), while unique-modal agreement improves (59.886% versus 58.330%).
+Both endpoints were frozen before the contrast. Neither identifies better
+reviewers or work savings. One negative time is explicit; all cells remain in
+coverage, all strata and ties are retained. Exact per-cell/subset arithmetic
+checks, source identity and repeatability pass. Recorded-field ranks do not
+establish calibrated speed or an online acquisition policy. This finite study
+is closed. Preserve decision-specific evidence requirements; do not optimize a
+selector before a fresh owner-defined value case supplies them.
 
 ## Start here
 

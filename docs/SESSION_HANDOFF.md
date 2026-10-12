@@ -1,3 +1,88 @@
+# Current entry: response-order comparison completed, 12 October 2026
+
+Continuation version: 0.1.88. NEXT_SESSION/CONTINUATION version: 0.1.15.
+Read the [decision packet](research-decisions/observation-order-2026-10-12.md),
+[study](../research/response-order-sensitivity/0.1.0/README.md), frozen protocol,
+pre-execution clarification, result, independent checker, verification and
+[source ledger](../evidence/observation-feasibility-2026-10-12.json).
+
+Daniel asked to apply the quoted Nisayon-quality mission standard to Reiyah:
+research where it changes a decision, identify the bottleneck, then execute a
+substantive authorized step. The active repository remains Reiyah. Fresh owned
+candidate starts at b71b04ec564c3278d5864dec1a225b1ca390d828 under
+`~/.codex/reports/reiyah/observation-feasibility-2026-10-12-1hf29peb/candidate`.
+Controller remains clean at historical 74fbacc. No Console or sibling edits,
+new dependency, inference campaign, paid service, outreach or physical control.
+Parallel roles are within one assisted investigation, not independent science.
+
+The bottleneck remains a useful consequential paired decision, qualified actual
+observations and measured complete work. Reiyah already has human-response
+studies. This new bounded test qualifies a possible recorded-time selection
+premise; it does not fill the complete value packet or reopen older studies.
+CIFAR-10H and CIFAR-N raw ingestion was not pursued under noncommercial terms;
+CIFAR-N timing is assignment-level. New 2026 cognitive-labeling papers inform
+procedure limits but did not supply the present complete admission contract.
+MVT's released response_time field permits an ordinal finite-record comparison.
+
+Exact MVT annotation ZIP member 6,213,364 bytes acquired via conditional HTTP range;
+no images. Streamed CSV 142,812,572 bytes verifies SHA/CRC/length. Metadata audit
+before outcomes finds 200,382 rows, 4,771 images, 28,626 cells, seven distinct recorded
+IDs per cell, 2,647 recorded IDs total. One negative recorded time is retained as
+unknown timing; 200,381 positive records enter the identical timed pool in both
+arms. No cell is omitted. Exact clock events/units/cross-worker calibration remain
+unverified; no physical speed interpretation. Annotation notices say CC BY-SA,
+version unspecified. Raw rows/identifiers and all source payloads stay private.
+
+Protocol froze 14:28:05 UTC after source/method/structure exposure, before the new
+contrast. A pre-execution clarification narrows unavailable images to the analyzed
+cohort and states that greater distribution departure may coexist with better
+correctness. Original protocol bytes preserved. Producer and separate checker
+froze 14:33:08 UTC; no later analysis-code changes. Exploratory, not preregistered,
+blinded, independently collected or independently replicated.
+
+Selecting the three lowest positive recorded values, with row-position tie break,
+gives mean squared distribution departure 0.11309434694 versus uniform expected
+0.11068190708: Delta 25379/10520055=+0.00241243986. Both reference the full valid-time
+answer distribution, not physical truth. Five assigned-exposure aggregates are
+positive; 10,000ms is slightly negative. All source/exposure strata retained.
+Nine boundary timing ties give aggregate Delta range +0.00239580 to +0.00242353;
+this is tie-choice sensitivity, not confidence. The invalid-time reference shift
+is reported separately. No iid-worker/population inference is made.
+
+The secondary endpoint moves differently: unique-modal agreement 17,143/28,626
+(59.886%) versus uniform expected 58.330%; disagreement 351 versus expected 402.914;
+unresolved 11,132 versus expected 11,525.429. Report both endpoints. Neither sign
+identifies better reviewers, safety, retained useful information or saved work.
+Retrospective selection knows recorded completion values only after answers;
+it is not an online acquisition policy. Define the decision's required evidence
+before optimizing a selector.
+
+Two producer runs match exact result/trace bytes. Separate raw-input checker
+verifies 28,626 cells and 1,001,895 subsets; all exact uniform formulas agree.
+14 authored tests include 252 synthetic differential cases. Three post-execution
+controls reject mutated source bytes in both readers and a changed aggregate.
+All scientific runs deny network before Python starts; each is under 120 seconds.
+33 direct acquisition attempts retain 28,700,077 bytes of source/error/truncated
+bodies and one HEAD metadata record. 11 web calls; provider transport totals unknown.
+No all-network accounting claim. Owner cap 60 minutes/48 MiB sources/128 MiB private
+bytes excluding candidate; historical effort remains unknown, not reset.
+
+Closeout passes all nine documented research-consistency checks and the unchanged
+small offline example; 52 historical transcripts are bound, zero replayed. Gate A release
+validation is not run, operator acceptance remains absent. Preserve earlier
+handoff bytes, README substance and seven diagrams. Only a dated front-page
+bullet is added. Eligible publication and exact publisher readback remain
+previously authorized; readback is not independent transport verification.
+
+Next: this finite MVT study is COMPLETE. Do not tune k, change endpoint, enlarge
+it or repeat its source search for a favorable headline. A new value comparison
+still requires an owner-defined consequential paired decision, separately
+qualified observation records and frozen correctness/complete-work measurement.
+Broad product expansion remains stopped; scientific superiority, actual human
+work saving and automotive transfer are unestablished. No unattended work starts.
+
+Earlier entries follow unchanged.
+
 # Current entry: research-to-build review and offline intake prototype, 12 October 2026
 
 Continuation version: 0.1.87. NEXT_SESSION/CONTINUATION version: 0.1.14.

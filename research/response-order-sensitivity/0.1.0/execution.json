@@ -1,0 +1,123 @@
+{
+  "artifact_id": "reiyah.response-order-sensitivity.execution",
+  "version": "0.1.0",
+  "python": "3.14.2",
+  "platform": "macOS-14.4-arm64-arm-64bit-Mach-O",
+  "runs": [
+    {
+      "id": "synthetic-controls",
+      "started_at": "2026-10-12T14:33:08.150134+00:00",
+      "argv": [
+        "sandbox-exec",
+        "-p",
+        "(version 1)(allow default)(deny network*)",
+        "python3",
+        "-B",
+        "research/response-order-sensitivity/0.1.0/tests.py"
+      ],
+      "network_denied_before_runtime": true,
+      "exit": 0,
+      "seconds": 0.1877113749505952,
+      "stdout_bytes": 0,
+      "stderr_bytes": 113,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "a8af9e5ccdf1ecb2f0224b0603b1034c48aa5f97e8288dca1e02af15d42907c7"
+    },
+    {
+      "id": "run1",
+      "started_at": "2026-10-12T14:33:08.370077+00:00",
+      "argv": [
+        "sandbox-exec",
+        "-p",
+        "(version 1)(allow default)(deny network*)",
+        "python3",
+        "-B",
+        "research/response-order-sensitivity/0.1.0/reproduce.py",
+        "--source",
+        "<private-owner>/sources/human_responses.csv.zip-member",
+        "--output",
+        "<private-owner>/run1"
+      ],
+      "network_denied_before_runtime": true,
+      "exit": 0,
+      "seconds": 9.766152291966137,
+      "stdout_bytes": 136,
+      "stderr_bytes": 0,
+      "stdout_sha256": "5116caffbe1049bb79c58f6f67ef7a390c3392968ce9af9b47ff54be46172fee",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "checker1",
+      "started_at": "2026-10-12T14:33:30.217068+00:00",
+      "argv": [
+        "sandbox-exec",
+        "-p",
+        "(version 1)(allow default)(deny network*)",
+        "python3",
+        "-B",
+        "research/response-order-sensitivity/0.1.0/checker.py",
+        "--source",
+        "<private-owner>/sources/human_responses.csv.zip-member",
+        "--output",
+        "<private-owner>/run1"
+      ],
+      "network_denied_before_runtime": true,
+      "exit": 0,
+      "seconds": 11.457206833001692,
+      "stdout_bytes": 211,
+      "stderr_bytes": 0,
+      "stdout_sha256": "dd80b9a9f915ecbb75161b9054573ced8fd3c9dcf3f7b5be9d0549ab15e7da77",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "run2",
+      "started_at": "2026-10-12T14:33:41.714919+00:00",
+      "argv": [
+        "sandbox-exec",
+        "-p",
+        "(version 1)(allow default)(deny network*)",
+        "python3",
+        "-B",
+        "research/response-order-sensitivity/0.1.0/reproduce.py",
+        "--source",
+        "<private-owner>/sources/human_responses.csv.zip-member",
+        "--output",
+        "<private-owner>/run2"
+      ],
+      "network_denied_before_runtime": true,
+      "exit": 0,
+      "seconds": 9.75456066604238,
+      "stdout_bytes": 136,
+      "stderr_bytes": 0,
+      "stdout_sha256": "5116caffbe1049bb79c58f6f67ef7a390c3392968ce9af9b47ff54be46172fee",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "negative-controls",
+      "started_at": "2026-10-12T14:34:52.795368+00:00",
+      "argv": [
+        "sandbox-exec",
+        "-p",
+        "(version 1)(allow default)(deny network*)",
+        "python3",
+        "-B",
+        "research/response-order-sensitivity/0.1.0/negative_controls.py",
+        "--source",
+        "<private-owner>/sources/human_responses.csv.zip-member",
+        "--output",
+        "<private-owner>/run1",
+        "--controls",
+        "<private-owner>/negative-controls"
+      ],
+      "network_denied_before_runtime": true,
+      "exit": 0,
+      "seconds": 11.441669750027359,
+      "stdout_bytes": 857,
+      "stderr_bytes": 0,
+      "stdout_sha256": "452bd853acafd984c47c101306cad415a42ed6626ee3fcce9a0d0da3c983b145",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "timing_scope": "Local process wall durations only, not full human work. Negative-control children inherit network denial from parent.",
+  "unexpected_failed_runs": 0
+}

@@ -1,0 +1,100 @@
+{
+  "artifact_id": "reiyah.response-order-sensitivity.protocol",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "frozen_at": "2026-10-12T14:28:05.722440+00:00",
+  "question": "Within each released MVT image and assigned exposure cell, does selecting the three lowest positive recorded response_time values distort the recorded response distribution more than an equal-count uniform subset?",
+  "decision": "Qualify a possible future timing-aware observation adapter; do not implement an online acquisition policy or reopen a product-value case.",
+  "exposure": "Source methods and authors published speed/accuracy association read; archive acquired and metadata/timing audit executed before freeze. Header, counts, duration values, one negative time and absence of within-cell repeated IDs known. No category outcomes or timing/category association inspected. Exploratory, not blinded, preregistered or independent replication.",
+  "source": {
+    "url": "https://objectnet.dev/mvt/data_release/flash_data_release_2023.zip",
+    "archive_bytes": 212867430,
+    "etag": "\"cb01966-5fe3e1c2d233b\"",
+    "range": "bytes 206653537-212866900/212867430",
+    "member": {
+      "name": "data_release_2023/human_responses.csv",
+      "flags": 0,
+      "compression": 8,
+      "crc32": 469350372,
+      "compressed": 6213269,
+      "uncompressed": 142812572,
+      "local_offset": 206653537
+    },
+    "local_header_bytes": 95,
+    "member_bytes": 6213364,
+    "sha256": "c4da8a042a1325e573ed932f6db5a3fc2a24b11b51854dcc8b3d7a69e905554c",
+    "csv_sha256": "6dcf4d2f8a8e5ef76dd31c627a9303025175507e1af779503447c88a6f147898",
+    "header": [
+      "",
+      "image",
+      "image_duration",
+      "label",
+      "response",
+      "response_time",
+      "worker_id",
+      "objectnet",
+      "response_options"
+    ],
+    "terms": "MVT official download page and v1.0 datacard grant annotation CC BY-SA; version unspecified. Private analysis only. No raw annotations, identifiers, images or paper payload redistributed. Commercial deployment rights and version unresolved."
+  },
+  "population": {
+    "rows": 200382,
+    "images": 4771,
+    "cells": 28626,
+    "recorded_worker_ids": 2647,
+    "responses_per_cell": 7,
+    "assigned_exposure_values": [
+      17,
+      50,
+      100,
+      150,
+      250,
+      10000
+    ],
+    "group": [
+      "image",
+      "image_duration"
+    ],
+    "origin": "objectnet field; exact values inspected only during execution; require one origin per image/cell and two source categories, report actual strings without inferred coercion",
+    "membership": "Every CSV row preserved in accounting; physical zero-based data-row position is stable identity, not the unlabeled CSV index or authenticated human. Verify no within-cell repeated worker ID, seven rows each, all six durations per image. Any mismatch aborts."
+  },
+  "observation": {
+    "category": "Exact nonempty response string; label is not used as truth or primary endpoint. Preserve every response value as a categorical outcome. Missing/empty response aborts; do not impute. No external normalization.",
+    "timing": "Decimal finite strictly positive recorded response_time only. Missing, nonnumeric, nonfinite and nonpositive times are excluded from timed selection, counted by reason. Units, event implementation and cross-worker clock calibration unverified: ranking lower released values only, not physical speed.",
+    "unknowns": "Original excluded229images unavailable; source filtering, worker identity, repeated participation, options/motor effects, browser timing and generalization remain unqualified."
+  },
+  "analysis": {
+    "k": 3,
+    "timed_pool": "Same valid-time records in both arms; n>=3 required for each analyzed cell. Cells with fewer remain explicit excluded-cell ledger entries, no replacement. Expected one n6,28625n7 from metadata audit.",
+    "primary_reference": "p_R: categorical proportions over the valid-time pool. Observed cohort comparator, not physical truth.",
+    "selection": "Order valid records by Decimal response_time then physical data-row position; choose first3. No original label or answer used to break timing ties.",
+    "primary_metric": "Squared Euclidean distribution distance D=sum_c(q_c-p_R,c)^2; exact rational arithmetic.",
+    "uniform_baseline": "Enumerate every size3 subset from the same timed pool; independent formula (n-3)/(3*(n-1))*(1-sum_c p_R,c^2). For n=3 this is zero. Verify exact agreement.",
+    "contrast": "Delta = equal-cell mean(D_selected - E[D_uniform]); positive contradicts no-more-distorting assertion on this finite released cohort only. No practical threshold, population p-value, iid interval or multiplicity-adjusted discovery claimed.",
+    "timing_ties": "Count boundary ties; enumerate all selections consistent with the three-lowest rule at tied boundary. Report exact aggregate lower/upper Delta over these per-cell choices. Main row-order result remains primary.",
+    "missing_timing": "Separately report squared distance between full seven-response p_all and p_R, invalid-time rows/cells and coverage. Do not mix this with timing-order contrast.",
+    "modal_secondary": "Unique selected mode equals unique timed-pool mode => agree; both unique but different => disagree; either tied => unresolved. Uniform counterpart is exact expected count over all subsets; keep denominators all admitted cells.",
+    "strata": "All cells equal weight; report each of six assigned durations, each actual source-origin value and each duration\u00d7origin stratum; do not select favorable stratum.",
+    "trace": "Retain exact per-cell fractions and membership digest privately, no raw worker/image identifiers in public artifacts. Public aggregates, authored scripts and source descriptors only."
+  },
+  "acceptance": {
+    "structural": "Exact member SHA/CSV CRC/length/header/roster verified before result accepted; unknown source mismatch aborts.",
+    "arithmetic": "Separately authored checker streams original member with its own loader, enumerates all subsets and verifies per-cell metrics/modal/tie outputs and all aggregate fractions. No producer imports.",
+    "repeatability": "Two network-denied producer executions byte-identical. Both implementations frozen before empirical execution.",
+    "controls": "Authored unanimous, split, plurality-tie, tied-time, invalid-time cases; exact uniform formula agrees with enumeration; altered input bytes and altered output rejected. Failures retained; corrections disclosed.",
+    "falsifier": "Positive Delta disproves the narrow finite-record no-more-distorting premise. Zero or negative does not establish timing independence, scientific superiority, valid truth, causal deadline benefit or transfer."
+  },
+  "resources": {
+    "owner_wall_minutes": 60,
+    "owner_started_at": "2026-10-12T14:13:06.892588+00:00",
+    "CPU_wall_seconds_per_run": 120,
+    "network_during_analysis": false,
+    "new_dependencies": false,
+    "streaming_csv_bytes_bound": 142812572,
+    "write_full_csv": false,
+    "private_owner_bytes_excluding_candidate": 134217728,
+    "retained_sources_bytes_cap": 50331648,
+    "historical_effort": "unknown, not reset"
+  },
+  "stop": "Stop after one frozen finite-record comparison and validation, regardless of result. No tuning k, changing metric, fresh dataset hunt, selector build, model campaign or product expansion. Broad superiority remains unestablished."
+}
