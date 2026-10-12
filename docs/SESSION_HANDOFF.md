@@ -1,3 +1,68 @@
+# Current entry: frontier methods and next comparison contract, 12 October 2026
+
+Continuation version: 0.1.84. Status: targeted primary-source review completed;
+next experiment proposed, no new empirical case admitted.
+Read the [frontier review](research-decisions/frontier-2026-10-12.md),
+[proposed comparison](research-decisions/next-comparison-2026-10-12.json) and
+[source ledger](../evidence/frontier-review-2026-10-12.json).
+
+Daniel explicitly requested current-system documentation, relevant arXiv work,
+then an informed next engine step. He subsequently explicitly authorized parallel
+agents for science and independent Console corrections. This supersedes the old
+solo instruction for this task, not the scientific authority boundaries. Console
+mobile receipts and Harbor rendering changes belong to the Console repository;
+no UI file enters this engine candidate.
+
+The review covers pinned NVIDIA Alpamayo2/AlpaSim/AlpaGym documentation, official
+Waymo and Mobileye architecture, and relevant exact-choice, active-evaluation,
+selective-risk, evaluator, awareness and recovery papers. The closest new
+comparator is arXiv2609.18622v1 (16September2026): exact shared-label stopping for
+finite-pool AUGRC. Its full-label certificate LP is hindsight information, not a
+query policy; its near-all-label result depends on independent random ranks and
+iid errors. No executable companion was located in the inspected paper archive;
+no absence or novelty claim is inferred. No paper theorem or benchmark was
+independently reproduced.
+
+No reviewed release supplies a fresh complete-work packet. WOD-E2E supplies a
+schema for scored trajectory alternatives but not raw reviewer histories/timing,
+identified paired submissions or resolved dataset access/terms in this review.
+DriveJudge's author-linked release was not located. AlpaSim logs are prospective
+inputs, not a qualified paired workflow. ReD and PSAE inform the broader HARBOR
+mission while leaving physical human belief and recovery unqualified. The latter
+pauses/skips after takeover onset, which cannot measure the remaining recovery.
+
+The proposed next experiment strengthens the conventional baseline with shared
+bounds, identical initial information/access rights, corrected scoring, adaptive
+access and all costs. Separately identified development records qualify the
+resolution channel; freeze assignment/collection/stopping before fresh responses.
+Same-order and same-stopping comparisons isolate mechanisms. No selector tuning,
+new inference campaign, simulator or broad engine expansion is started. Previous
+exposed studies stay closed. Gate A remains operator-unaccepted; no work saving,
+physical validity or scientific independence is established.
+
+Base: 5be5c3dc5444ccfe98cd5a203a74d5d7d4834561. New owner:
+`~/.codex/reports/reiyah/frontier-decision-2026-10-12-rq072diw/`.
+Delegated source custody:
+`~/.codex/reports/reiyah/frontier-research-2026-10-12-Va3cRI/`.
+50 captured responses total9141017bytes, all private and hash-checked, including
+an explicitly classified sign-in response. This is response volume, not new
+unique historical custody. Web transfer is unmeasured; historical active effort
+remains unknown and is not reset. Zero spend, package installs, model runs,
+simulator runs, dataset outcomes or outreach. Parent and source reviewer form
+one assisted investigation, not independent scientific review.
+
+Closeout checks the nine documented research-consistency checks, exact small
+offline example, continuation/source bindings and current changed-document links.
+Historical experiments and Gate A release validation are not replayed. README
+adds one dated pointer; existing explanation, headings and seven diagrams remain.
+Publish authored documents and source descriptors only under existing research
+publication authority; record exact readback privately. Next: a new actual
+comparison and qualified observation/cost process, subject to the existing
+budget and stopping rules. Do not reopen exposed pairs or poll unchanged threads
+because this review is complete.
+
+Earlier entries follow unchanged.
+
 # Current entry: motion consistency and reference agreement diverge, 11 October 2026
 
 Continuation version: 0.1.83. Status: exploratory saved-file audit completed.

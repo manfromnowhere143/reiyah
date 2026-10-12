@@ -2,11 +2,11 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.10`
+Version: `0.1.11`
 
 Lifecycle status: `proposed`
 
-Updated: 11 October 2026. A continuation brief, not an accepted scientific
+Updated: 12 October 2026. A continuation brief, not an accepted scientific
 protocol, operator acceptance record or grant of new authority.
 Read with [AGENTS.md](../AGENTS.md), the newest
 [handoff](SESSION_HANDOFF.md) and [editorial policy](EDITORIAL_POLICY.md).
@@ -49,6 +49,16 @@ solver, impressive demonstration or exposed benchmark sweep would not answer
 the question. A negative result must remain visible. Current evidence does not
 establish state-of-the-art performance, production readiness, buyer demand,
 commercial differentiation or acquisition readiness.
+
+The [12 October frontier review](research-decisions/frontier-2026-10-12.md)
+adds a closer exact-choice comparator and a
+[proposed next comparison contract](research-decisions/next-comparison-2026-10-12.json).
+Shared-label stopping is available prior art; a hindsight certificate is not an
+acquisition strategy. Give both arms equal initial information and access rights.
+Qualify observation responses on separate development records, then freeze the
+protocol before fresh comparison outcomes. No newly reviewed source yet supplies
+a complete value packet. WOD-E2E remains a metadata-only lead with access/terms
+and process evidence unresolved. Prior closed inputs remain closed.
 
 ## Start here
 
@@ -348,8 +358,9 @@ cannot rescue the original claim.
 - Publication under existing authorization uses eligible source only, normal
   reviewed Git pushes and exact readback. Keep Daniel's configured human Git
   identity; inspect every new commit's full metadata and message.
-- Work remains solo unless Daniel changes the delegation instruction. Do not
-  inherit obsolete parallel-agent plans from the original audit request.
+- Daniel explicitly authorized parallel agents on 12 October for this frontier
+  review and separate Console work. Preserve source provenance and treat their
+  review as internal, not independent scientific replication.
 
 ## Session output and handoff
 
