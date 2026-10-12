@@ -1,0 +1,116 @@
+{
+  "artifact_id": "reiyah.rater-score-contract.protocol",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "frozen_at": "2026-10-12T12:44:01.841126+00:00",
+  "question": "In the pinned released WOD-E2E scoring function, does a maximum scalar score imply a true same-reference trust flag, and do equal evaluated endpoints constrain intermediate predicted waypoints?",
+  "rationale": "Source qualification revealed separate time-wise maximum and same-reference trust predicates. Run a bounded native-code semantics probe before using the metric in any later comparison. This does not admit the missing complete-work case or reopen prior synthetic baseline studies.",
+  "source_commit": "99a4cb3ff07e2fe06c2ce73da001f850f628e45a",
+  "source_path": "src/waymo_open_dataset/metrics/python/rater_feedback_utils.py",
+  "source_sha256": "fe994a096141957b8f936d613b08876bee60ec5b746749b1a79331217f4edee9",
+  "exposure": "Paper v3, source code, tutorial and upstream tests read before freeze; expected authored outcomes anticipated. Upstream tests contain selected sample trajectory and score outcomes, already exposed. No complete prediction pair, dataset split, or human work record acquired.",
+  "domain": {
+    "frequency_hz": 4,
+    "length_seconds": 5,
+    "initial_speed_mps": 10,
+    "prediction_count": 1,
+    "prediction_probability": 1,
+    "reference_count": 3,
+    "sample_times": "t=(i+1)/4, i=0..19",
+    "reference_x": "10*t for each reference",
+    "reference_y": [
+      "0",
+      "6*min(t/2.5,1)",
+      "-6*min(t/2.5,1)"
+    ],
+    "defaults": "Native scorer defaults, including outside-region floor4; no modification"
+  },
+  "cases": [
+    {
+      "id": "same_reference",
+      "prediction_y": "0",
+      "labels": [
+        10,
+        10,
+        2
+      ],
+      "expected_score": 10,
+      "expected_trust": true
+    },
+    {
+      "id": "reference_switch",
+      "prediction_y": "3*max(t-3,0)",
+      "labels": [
+        10,
+        10,
+        2
+      ],
+      "expected_score": 10,
+      "expected_trust": false
+    },
+    {
+      "id": "unequal_reference_switch",
+      "prediction_y": "3*max(t-3,0)",
+      "labels": [
+        10,
+        6,
+        2
+      ],
+      "expected_score": 8,
+      "expected_trust": false
+    },
+    {
+      "id": "intermediate_excursion",
+      "prediction_y": "6*max(1-abs(t-4),0)",
+      "labels": [
+        10,
+        10,
+        2
+      ],
+      "expected_score": 10,
+      "expected_trust": true
+    },
+    {
+      "id": "far_from_references",
+      "prediction_y": "100*min(t/2.5,1)",
+      "labels": [
+        10,
+        10,
+        2
+      ],
+      "expected_score": 4,
+      "expected_trust": false
+    },
+    {
+      "id": "lower_reference_switch",
+      "prediction_y": "3*max(t-3,0)",
+      "labels": [
+        8,
+        8,
+        2
+      ],
+      "expected_score": 8,
+      "expected_trust": false
+    }
+  ],
+  "checks": [
+    "All six native scores and flags match the declared exact expectations to abs1e-12.",
+    "Batch evaluation, singleton evaluation and reversed batch agree per case.",
+    "All six permutations of all three paired reference trajectories/scores agree per case.",
+    "Maximum deviation from reference0 at intermediate time differs for same_reference and intermediate_excursion while both reported metrics match.",
+    "Reject a changed native source hash before import."
+  ],
+  "failure_rule": "Any mismatch is retained; do not repair the source, alter cases or promote an unverified interpretation. Stop after these finite cases.",
+  "limits": {
+    "seconds_per_run": 30,
+    "new_source_requests": 0,
+    "spend": 0,
+    "model_runs": 0
+  },
+  "nonclaims": [
+    "Not physically qualified trajectories or safety evidence",
+    "Not a complete WOD evaluator or server reproduction",
+    "Not empirical ranking impact, novelty, upstream defect, independent scientific replication or complete-work advantage",
+    "Not a correction to the published intended metric"
+  ]
+}

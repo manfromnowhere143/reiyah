@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.12`
+Version: `0.1.13`
 
 Lifecycle status: `proposed`
 
@@ -57,8 +57,15 @@ Shared-label stopping is available prior art; a hindsight certificate is not an
 acquisition strategy. Give both arms equal initial information and access rights.
 Qualify observation responses on separate development records, then freeze the
 protocol before fresh comparison outcomes. No newly reviewed source yet supplies
-a complete value packet. WOD-E2E remains a metadata-only lead with access/terms
-and process evidence unresolved. Prior closed inputs remain closed.
+a complete value packet. The WOD-E2E lead now has a completed
+[source qualification](../research/rater-score-contract/0.1.0/README.md): its
+native helper returns 10/10 with a false same-reference trust flag on an authored
+case; an intermediate excursion can preserve both outputs. This matches its
+time-wise aggregation and sampling, not a demonstrated metric defect. Six
+authored cases pass, with a post-execution protocol wording clarification retained.
+No complete paired submission, qualified review process or full-work record was
+admitted. Close this lead pending concrete new records or source changes; do not
+repeat its acquisition or expand the probe. Prior closed inputs remain closed.
 
 The [exact-choice baseline qualification](../research/exact-choice-baseline/0.1.0/README.md)
 is now complete. Separately authored implementations agree across 12,700 ordered

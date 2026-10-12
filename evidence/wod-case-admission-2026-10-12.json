@@ -1,0 +1,253 @@
+{
+  "artifact_id": "reiyah.wod-case-admission",
+  "version": "0.1.0",
+  "as_of": "2026-10-12",
+  "lifecycle_status": "exploratory",
+  "base": "152b53a9b3bc3118128d474484ee8fea855cddde",
+  "decision": "Do not admit the inspected WOD-E2E lead as a complete-work comparison; close this bounded source qualification.",
+  "full_work_case_admitted": false,
+  "source_semantics_probe_completed": true,
+  "probe": "research/rater-score-contract/0.1.0/README.md",
+  "source_identity": {
+    "repository": "waymo-research/waymo-open-dataset",
+    "head_checked": "99a4cb3ff07e2fe06c2ce73da001f850f628e45a",
+    "head_commit_time": "2025-04-29T20:17:26Z",
+    "tree_entries": 457,
+    "tree_truncated": false,
+    "paper": "arXiv:2510.26125v3, 13 November 2025"
+  },
+  "admission_fields": [
+    {
+      "field": "decision and accountable owner",
+      "state": "not identified in inspected packet",
+      "needed": "Concrete unresolved choice and consequence; no customer intent invented."
+    },
+    {
+      "field": "complete paired outputs and expected opportunity roster",
+      "state": "not identified",
+      "needed": "Two pinned submissions, complete assigned frame roster, outcome statuses/configuration and selection history. Tutorial placeholder and selected upstream test samples do not qualify."
+    },
+    {
+      "field": "metric implementation",
+      "state": "available for local semantics qualification",
+      "needed": "Pinned native RFS source exists. Server identity/equivalence and preprocessing of actual submissions remain unqualified."
+    },
+    {
+      "field": "observation process",
+      "state": "partial method description, not qualified records",
+      "needed": "Separate development records with raw individual ratings, displayed evidence, procedure and reviewer/task identities, dependence, abstention, disagreement and unresolved cases."
+    },
+    {
+      "field": "complete work",
+      "state": "not supplied by inspected schemas/tutorial",
+      "needed": "Preparation, acquisition, review, retries, adjudication, checking, repair, integration and reuse; prospective collection frozen before held-out outcomes."
+    },
+    {
+      "field": "access and terms",
+      "state": "code terms identified; dataset access/agreement unresolved",
+      "needed": "Exact applicable dataset agreement and authorized reproducible route, without inferring dataset rights from Apache-2.0 source."
+    },
+    {
+      "field": "comparator",
+      "state": "RFS requires its own compatible comparison",
+      "needed": "Same nonlinear geometric max/decay/floor metric, opportunity accounting, shared reference contract and adaptive access in both arms. Fixed-rank AUGRC formula is not directly compatible."
+    }
+  ],
+  "exposure": {
+    "prior_paper_and_schema_read": true,
+    "new_code_and_tutorial_read": true,
+    "upstream_test_sample_outcomes_read": true,
+    "test_sample_scope": "Selected embedded examples named MODEL1/2/3 with ratings/expected scores; no complete submission or unexposed decision population identified.",
+    "dataset_split_acquired": false,
+    "human_work_records_acquired": false,
+    "native_test_samples_executed": false,
+    "authored_outcomes_anticipated_before_freeze": true
+  },
+  "inspection_boundary": "Pinned complete tree inventory plus named paper/schema/tutorial/scorer/test sources; no assertion that missing records do not exist elsewhere.",
+  "source_custody": {
+    "new_private_owner": "/Users/danielwahnich/.codex/reports/reiyah/wod-case-admission-2026-10-12-eruleqbm",
+    "reused_private_owner": "/Users/danielwahnich/.codex/reports/reiyah/frontier-research-2026-10-12-Va3cRI",
+    "new_sources": [
+      {
+        "id": "wod-head.json",
+        "url": "https://api.github.com/repos/waymo-research/waymo-open-dataset/commits/master",
+        "final_url": "https://api.github.com/repos/waymo-research/waymo-open-dataset/commits/master",
+        "status": 200,
+        "bytes": 18757,
+        "sha256": "1e2c9f773c7089f1f273e7d7a38a107fb6783cde44c69d2c912af253ad2ebe6e",
+        "acquired_utc": "2026-10-12T12:41:30.775183+00:00",
+        "content_type": "application/json; charset=utf-8",
+        "access": "Public unauthenticated HTTPS",
+        "terms": "Public GitHub metadata; private research custody, no payload redistribution",
+        "publication_eligibility": "Pointer and authored findings only"
+      },
+      {
+        "id": "wod-tree.json",
+        "url": "https://api.github.com/repos/waymo-research/waymo-open-dataset/git/trees/99a4cb3ff07e2fe06c2ce73da001f850f628e45a?recursive=1",
+        "final_url": "https://api.github.com/repos/waymo-research/waymo-open-dataset/git/trees/99a4cb3ff07e2fe06c2ce73da001f850f628e45a?recursive=1",
+        "status": 200,
+        "bytes": 126376,
+        "sha256": "e07125f592d787ac95b69484c100353f0e8448f04b9e35be63d5f6b7059f7ab4",
+        "acquired_utc": "2026-10-12T12:41:31.317288+00:00",
+        "content_type": "application/json; charset=utf-8",
+        "access": "Public unauthenticated HTTPS",
+        "terms": "Public GitHub metadata; private research custody, no payload redistribution",
+        "publication_eligibility": "Pointer and authored findings only"
+      },
+      {
+        "id": "wod-tutorial.ipynb",
+        "url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/tutorial/tutorial_vision_based_e2e_driving.ipynb",
+        "final_url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/tutorial/tutorial_vision_based_e2e_driving.ipynb",
+        "status": 200,
+        "bytes": 24211,
+        "sha256": "0d05c4def9bda8eb7b8d066562e983f5a9ac28f480e6e1bd23f73a5297c6ed29",
+        "acquired_utc": "2026-10-12T12:41:48.490263+00:00",
+        "content_type": "text/plain; charset=utf-8",
+        "access": "Public unauthenticated HTTPS",
+        "terms": "Apache-2.0 code with separately licensed dataset; private research custody",
+        "publication_eligibility": "No source payload redistribution in this task"
+      },
+      {
+        "id": "rater_feedback_utils.py",
+        "url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/src/waymo_open_dataset/metrics/python/rater_feedback_utils.py",
+        "final_url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/src/waymo_open_dataset/metrics/python/rater_feedback_utils.py",
+        "status": 200,
+        "bytes": 17222,
+        "sha256": "fe994a096141957b8f936d613b08876bee60ec5b746749b1a79331217f4edee9",
+        "acquired_utc": "2026-10-12T12:42:03.236330+00:00",
+        "content_type": "text/plain; charset=utf-8",
+        "access": "Public unauthenticated HTTPS",
+        "terms": "Apache-2.0 source; private research custody; dataset terms separate",
+        "publication_eligibility": "No third-party payload redistribution in this task"
+      },
+      {
+        "id": "rater_feedback_utils_test.py",
+        "url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/src/waymo_open_dataset/metrics/python/rater_feedback_utils_test.py",
+        "final_url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/src/waymo_open_dataset/metrics/python/rater_feedback_utils_test.py",
+        "status": 200,
+        "bytes": 24981,
+        "sha256": "bdbbe5d75877a4988c1edf580357287f415f3f347cc7c60688c85cc6bf00c505",
+        "acquired_utc": "2026-10-12T12:42:03.736996+00:00",
+        "content_type": "text/plain; charset=utf-8",
+        "access": "Public unauthenticated HTTPS",
+        "terms": "Apache-2.0 source; private research custody; dataset terms separate",
+        "publication_eligibility": "No third-party payload redistribution in this task"
+      }
+    ],
+    "reused_sources": [
+      {
+        "id": "wod-end_to_end_driving_data.proto",
+        "url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/src/waymo_open_dataset/protos/end_to_end_driving_data.proto",
+        "final_url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/src/waymo_open_dataset/protos/end_to_end_driving_data.proto",
+        "status": 200,
+        "content_type": "text/plain; charset=utf-8",
+        "bytes": 3382,
+        "sha256": "f792ef29b6dec53c6b743e4ccafcd9b54e50882c465fcbf512951eec6732f646",
+        "acquired_utc": "2026-10-12T10:49:41.582621+00:00",
+        "file": "wod-end_to_end_driving_data.proto",
+        "access": "Public unauthenticated HTTPS; no access restriction bypassed",
+        "terms": "Apache-2.0 code except wdl_limited; dataset terms separate; private research custody",
+        "publication_eligibility": "Not approved; private custody only",
+        "reuse": "Prior capture hash rechecked; no new download"
+      },
+      {
+        "id": "wod-end_to_end_driving_submission.proto",
+        "url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/src/waymo_open_dataset/protos/end_to_end_driving_submission.proto",
+        "final_url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/src/waymo_open_dataset/protos/end_to_end_driving_submission.proto",
+        "status": 200,
+        "content_type": "text/plain; charset=utf-8",
+        "bytes": 3523,
+        "sha256": "84b6280dd555600031be0d79874766fb585b7ca936758c77d659288e676a3293",
+        "acquired_utc": "2026-10-12T10:49:42.002882+00:00",
+        "file": "wod-end_to_end_driving_submission.proto",
+        "access": "Public unauthenticated HTTPS; no access restriction bypassed",
+        "terms": "Apache-2.0 code except wdl_limited; dataset terms separate; private research custody",
+        "publication_eligibility": "Not approved; private custody only",
+        "reuse": "Prior capture hash rechecked; no new download"
+      },
+      {
+        "id": "wod-end_to_end_driving_metrics.proto",
+        "url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/src/waymo_open_dataset/protos/end_to_end_driving_metrics.proto",
+        "final_url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/src/waymo_open_dataset/protos/end_to_end_driving_metrics.proto",
+        "status": 200,
+        "content_type": "text/plain; charset=utf-8",
+        "bytes": 1903,
+        "sha256": "240fe7ff2a0216250858c27d17c121c27542b46b0f4e52b5dfc4d0793dccb434",
+        "acquired_utc": "2026-10-12T10:49:42.435941+00:00",
+        "file": "wod-end_to_end_driving_metrics.proto",
+        "access": "Public unauthenticated HTTPS; no access restriction bypassed",
+        "terms": "Apache-2.0 code except wdl_limited; dataset terms separate; private research custody",
+        "publication_eligibility": "Not approved; private custody only",
+        "reuse": "Prior capture hash rechecked; no new download"
+      },
+      {
+        "id": "wod-README.md",
+        "url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/README.md",
+        "final_url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/README.md",
+        "status": 200,
+        "content_type": "text/plain; charset=utf-8",
+        "bytes": 6716,
+        "sha256": "24e2c4ae98b515d0d2a786336b97ad0aed22c280e932330f86e490a84cb6d869",
+        "acquired_utc": "2026-10-12T10:49:45.259194+00:00",
+        "file": "wod-README.md",
+        "access": "Public unauthenticated HTTPS; no access restriction bypassed",
+        "terms": "Apache-2.0 code except wdl_limited; dataset terms separate; private research custody",
+        "publication_eligibility": "Not approved; private custody only",
+        "reuse": "Prior capture hash rechecked; no new download"
+      },
+      {
+        "id": "wod-LICENSE",
+        "url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/LICENSE",
+        "final_url": "https://raw.githubusercontent.com/waymo-research/waymo-open-dataset/99a4cb3ff07e2fe06c2ce73da001f850f628e45a/LICENSE",
+        "status": 200,
+        "content_type": "text/plain; charset=utf-8",
+        "bytes": 16429,
+        "sha256": "f024344813ea5475193dc333b1cb74778eb1746ec01812ec2807909fb3fc91c2",
+        "acquired_utc": "2026-10-12T10:49:46.801863+00:00",
+        "file": "wod-LICENSE",
+        "access": "Public unauthenticated HTTPS; no access restriction bypassed",
+        "terms": "Apache-2.0 code except wdl_limited; dataset terms separate; private research custody",
+        "publication_eligibility": "Not approved; private custody only",
+        "reuse": "Prior capture hash rechecked; no new download"
+      },
+      {
+        "id": "2510.26125v3.html",
+        "url": "https://arxiv.org/html/2510.26125v3",
+        "final_url": "https://arxiv.org/html/2510.26125v3",
+        "status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 218283,
+        "sha256": "d3ff59abc969ad301d1cf2e81a4d14e737cc10be6e5ecc66a2875fd7b97de66b",
+        "acquired_utc": "2026-10-12T10:51:36.524926+00:00",
+        "file": "2510.26125v3.html",
+        "access": "Public unauthenticated HTTPS; no access restriction bypassed",
+        "terms": "arXiv CC-BY-4.0; private custody only",
+        "publication_eligibility": "Not approved; private custody only",
+        "reuse": "Prior capture hash rechecked; no new download"
+      }
+    ],
+    "new_response_count": 5,
+    "new_response_bytes": 211547,
+    "web_transport_bytes": "unmeasured; primary-page browsing used for current navigation, not included in retained response totals",
+    "historical_unique_custody_and_active_effort": "unknown, not reset",
+    "third_party_payloads_redistributed": false
+  },
+  "resource_scope": {
+    "spend": 0,
+    "inference_runs": 0,
+    "training_runs": 0,
+    "dataset_payload_downloads": 0,
+    "new_dependencies": 0,
+    "outreach_messages": 0,
+    "new_authentication_or_terms_acceptance": false
+  },
+  "next_action": "Closed lead unless concrete new records or a source change supply a missing admission field. No automatic WOD download, broader source hunt, synthetic expansion or unchanged issue polling. Qualify fresh decision/development observation records and freeze full-work collection before held-out outcomes.",
+  "nonclaims": [
+    "Empirical WOD ranking impact",
+    "Metric defect or correction",
+    "Physical validity or safety",
+    "Complete-work savings or superiority",
+    "Independent scientific replication",
+    "Gate A acceptance"
+  ]
+}

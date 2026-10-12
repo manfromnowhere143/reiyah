@@ -1,0 +1,16 @@
+{
+  "artifact_id": "reiyah.rater-score-contract.protocol-clarification",
+  "version": "0.1.0",
+  "recorded_at": "2026-10-12T12:48:49.610978+00:00",
+  "timing": "Post-execution clarification; does not amend the retained protocol bytes or precede the observed outcomes.",
+  "protocol_sha256": "72c86e1c8faa4a3fff3ede3433eb965923598cdb898448102c0dd0d15fa74f84",
+  "omission": "The frozen protocol explicitly defines reference x=10*t but omits a separate statement of prediction x.",
+  "clarification": "Every prediction uses x=10*t at the same twenty times. This was explicit in the separately frozen implementation before execution.",
+  "implementation_freeze": {
+    "at": "2026-10-12T12:45:19.447645+00:00",
+    "sha256": "ea92d7d7ddba8977fc8e2d3077cc021b4cbf067e57d69f3d14cac3226a0755a1",
+    "source_sha256": "fe994a096141957b8f936d613b08876bee60ec5b746749b1a79331217f4edee9"
+  },
+  "effect": "No code, input, result or expected value changed. Repeat execution solely for this wording would not restore pre-outcome protocol specification and is not claimed.",
+  "review": "Delegated source reviewer identified the omission after root executions; internal review, not independent scientific replication."
+}

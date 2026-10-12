@@ -1,0 +1,52 @@
+{
+  "artifact_id": "reiyah.rater-score-contract.execution",
+  "version": "0.1.0",
+  "python": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "numpy": "2.4.2",
+  "protocol_freeze": {
+    "frozen_at": "2026-10-12T12:44:01.841126+00:00",
+    "protocol_sha256": "72c86e1c8faa4a3fff3ede3433eb965923598cdb898448102c0dd0d15fa74f84",
+    "before_implementation_and_execution": true,
+    "owner_scope_amendment": "Bounded native-source semantic qualification; full-work case remains not admitted."
+  },
+  "implementation_freeze": {
+    "at": "2026-10-12T12:45:19.447645+00:00",
+    "sha256": "ea92d7d7ddba8977fc8e2d3077cc021b4cbf067e57d69f3d14cac3226a0755a1",
+    "source_sha256": "fe994a096141957b8f936d613b08876bee60ec5b746749b1a79331217f4edee9"
+  },
+  "network": "Denied before Python starts using macOS sandbox-exec",
+  "runs": [
+    {
+      "id": "run1",
+      "started_at": "2026-10-12T12:45:19.448297+00:00",
+      "wall_seconds": 0.15656641696114093,
+      "returncode": 0,
+      "expected_returncode": 0,
+      "network_denied_before_python": true
+    },
+    {
+      "id": "run2",
+      "started_at": "2026-10-12T12:45:19.604927+00:00",
+      "wall_seconds": 0.10612958302954212,
+      "returncode": 0,
+      "expected_returncode": 0,
+      "network_denied_before_python": true
+    },
+    {
+      "id": "changed-source",
+      "started_at": "2026-10-12T12:45:19.711479+00:00",
+      "wall_seconds": 0.08566729194717482,
+      "returncode": 1,
+      "expected_returncode": 1,
+      "network_denied_before_python": true
+    }
+  ],
+  "source_rejection_reason": "native source digest mismatch; output absent",
+  "repeat_result_bytes_equal": true,
+  "result_sha256": "c4da81ac062506f284807c884d3e179e17142705114d00b6bba02066349f5faa",
+  "timing_scope": "Local process wall time only; not active human work, annotation time or complete workflow cost",
+  "native_full_test_suite_run": false,
+  "upstream_embedded_samples_executed": false,
+  "independent_scientific_replication": false,
+  "protocol_omission": "Prediction x not explicitly stated in protocol; pre-execution frozen implementation sets x=10*t; post-execution clarification retained without rewriting original freeze."
+}

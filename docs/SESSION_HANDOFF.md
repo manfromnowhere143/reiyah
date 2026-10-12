@@ -1,3 +1,67 @@
+# Current entry: rater-score meaning checked; WOD value case not admitted, 12 October 2026
+
+Continuation version: 0.1.86. NEXT_SESSION/CONTINUATION version: 0.1.13.
+Read the [bounded source qualification](../research/rater-score-contract/0.1.0/README.md),
+protocol, post-execution clarification, native-source reproduction, results,
+execution/provenance and [admission record](../evidence/wod-case-admission-2026-10-12.json).
+
+Daniel requested immediate continuation of the engine mission after Console
+publication. Engine main was verified at152b53a; the historical controller stays
+clean at74fbacc. Fresh owned candidate is
+`~/.codex/reports/reiyah/wod-case-admission-2026-10-12-eruleqbm/candidate`.
+Console and sibling repositories are unchanged by this task. Earlier explicit
+parallel authorization supports one internal source reviewer, not scientific
+independence.
+
+A targeted review closes the named WOD-E2E partial lead. Current official head
+99a4cb3 is unchanged; the complete recursive tree has457 entries. Five public
+metadata/code responses total211547 bytes, retained privately; six prior source
+hashes were reused and checked. No dataset split, authentication, acceptance of
+terms, model inference, new dependency, paid resource or outreach. Selected
+upstream test trajectories and expected outcomes WERE read; they remain exposed
+development examples, not complete submissions or unobserved evidence.
+
+The local scorer is available. A maximum over references at each of3 and5seconds
+precedes their mean; its separate trust flag requires one reference covering
+both times. A bounded native-code probe froze six authored cases and expected
+outcomes before implementation/execution. All six match: (score,flag)=(10,true),
+(10,false),(8,false),(10,true),(4,false),(8,false). The fourth contains a6metre
+intermediate lateral excursion that does not change the two evaluated positions.
+Singletons, reversed batch and six reference permutations preserve outcomes:
+14nativecalls/54caseevaluations per execution. Two executions match exact bytes;
+changed source bytes fail before import. Network denied before Python starts.
+No physical plausibility or full upstream/server reproduction is claimed.
+
+Protocol clarification is POST-execution: the initial protocol did not explicitly
+state prediction x=10t; the separately frozen implementation did. Original bytes,
+freeze and results are preserved; no rerun is presented as restoring blinded or
+fully prespecified status. Review confirms per-time reference maximization is
+in the paper, so this is a metric-interpretation boundary, not a defect claim.
+
+The complete-work case is not admitted: exact complete paired runs/roster,
+qualified individual observation records, full-work collection and dataset
+access/agreement remain unresolved in inspected evidence. Fixed-rank AUGRC is
+not a drop-in comparator for the nonlinear geometric score. Do not claim missing
+records do not exist elsewhere. No work saving, safety, novelty, empirical ranking
+impact, product advantage or Gate A acceptance is established.
+
+Closeout runs the documented nine research-consistency checks, exact small
+offline example, source/artifact bindings and links. Historical transcripts are
+bound, not replayed; Gate A release validation is not run. Preserve all previous
+handoff bytes, README substance and seven diagrams. Normal publication and exact
+publisher readback remain authorized; they are not independent transport evidence.
+Owner cap35minutes,16source requests,8MiBnewsource/16MiBowner excluding candidate;
+historical active effort remains unknown, not reset. Timings are local process
+wall durations only.
+
+Next: this source qualification and finite probe are COMPLETE. Reopen only for a
+concrete new packet or source change filling an identified admission field.
+Qualify a fresh consequential decision and separate development observations;
+freeze comparison and full-work collection before held-out outcomes. No automatic
+archive hunt, larger synthetic probe, old-pair sweep or unchanged outreach polling.
+
+Earlier entries follow unchanged.
+
 # Current entry: exact-choice baseline qualified on a finite domain, 12 October 2026
 
 Continuation version: 0.1.85. Status: exploratory mathematical qualification

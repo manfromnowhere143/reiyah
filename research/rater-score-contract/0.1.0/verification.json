@@ -1,0 +1,36 @@
+{
+  "artifact_id": "reiyah.rater-score-contract.verification",
+  "version": "0.1.0",
+  "checked_at": "2026-10-12T12:49:54.856065+00:00",
+  "result_sha256": "c4da81ac062506f284807c884d3e179e17142705114d00b6bba02066349f5faa",
+  "native_numerical_checks": "Producer asserts all six expected score/flag pairs and listed batch/reference permutations.",
+  "intermediate_deviation_check": {
+    "method": "Separate post-execution result-field inspection with assertions; producer records these values but does not itself assert this relationship.",
+    "equal_sampled_y": [
+      0,
+      0
+    ],
+    "equal_score": 10,
+    "equal_same_reference_flag": true,
+    "baseline_max_y_deviation": 0,
+    "excursion_max_y_deviation": 6,
+    "passed": true,
+    "mutation_tested": false
+  },
+  "arithmetic_review": {
+    "method": "Internal source reviewer read paper, source and authored geometry without executing producer.",
+    "speed_scale_fraction": "91/96",
+    "lateral_threshold_3s_fraction": "91/96",
+    "lateral_threshold_5s_fraction": "273/160",
+    "six_metre_separation_exceeds_both": true,
+    "sampled_reference_headings_horizontal": true,
+    "native_expected_pairs_consistent": true,
+    "paper_defines_maximum_before_time_average": true
+  },
+  "limitations": [
+    "One assisted investigation, not independent scientific replication",
+    "Separate inspection is not a second native implementation",
+    "Post-execution protocol coordinate clarification retained",
+    "No physical, empirical ranking or full-work result"
+  ]
+}
