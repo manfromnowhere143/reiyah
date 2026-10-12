@@ -1,0 +1,75 @@
+{
+  "artifact_id": "research-intake.dossier",
+  "schema_version": "0.1.0",
+  "project": "reiyah",
+  "mission_id": "unchanged-closed-lead",
+  "mission_version": "0.1.0",
+  "mission_sha256": "aba832fe24dd7416c1cf45373de401025235fc8917ad2d01450be28f50ae44b1",
+  "proposal": {
+    "id": "unchanged-closed-lead-proposal",
+    "technique": "Reuse exact shared-label stopping only in its declared finite binary AUGRC domain.",
+    "comparator": "Direct conventional complete-data scoring with identical metric, tie rule and initial information.",
+    "decision_impact": "Review whether reinspection alone provides a basis to reopen the closed WOD lead.",
+    "falsifier": "Reject claimed applicability if the actual metric, observation process or decision obligation differs; never infer work savings from certificates.",
+    "cost": {
+      "engineering_minutes": 30,
+      "cpu_seconds": 30,
+      "source_bytes": 0
+    }
+  },
+  "retrieval": {
+    "state": "complete",
+    "scope": "Only the named previously exposed local records for this development control.",
+    "limitations": [
+      "No new empirical case, channel qualification, independent adjudication or efficacy test.",
+      "Assessments are supplied interpretations; exact spans do not establish entailment.",
+      "Cost object is a proposed next-test resource cap, not measured historical work."
+    ]
+  },
+  "sources": [
+    {
+      "id": "rater-score",
+      "work_id": "local:reiyah/research/rater-score-contract/0.1.0/readme.md",
+      "source_version": "0.1.0",
+      "sha256": "8a306968ac0d0605507d71d2ce17f0cad8b07f1786f3d5b12c76201c58d4e6ad",
+      "byte_size": 7609,
+      "path": "research/rater-score-contract/0.1.0/README.md",
+      "role": "full_text",
+      "captured_at": "2026-10-12T13:21:07.148653Z",
+      "access": "Existing authored Reiyah repository artifact at base eacf55e50453dd12eab3c4b95fab8ab1927355d1",
+      "terms": "Repository license; no third-party payload added",
+      "disposition": "included",
+      "reason": "Exposed historical development evidence; not a fresh outcome"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "rater-score-span",
+      "source_id": "rater-score",
+      "source_version": "0.1.0",
+      "source_sha256": "8a306968ac0d0605507d71d2ce17f0cad8b07f1786f3d5b12c76201c58d4e6ad",
+      "start_byte": 1742,
+      "end_byte": 1782,
+      "quote": "`S = [max_p a(p,3) + max_p a(p,5)] / 2`.",
+      "kind": "method"
+    }
+  ],
+  "assessments": [
+    {
+      "assumption_id": "applicability",
+      "state": "unknown",
+      "reason": "The source is unchanged and no newly qualified paired decision, observation process or work record is supplied.",
+      "evidence_ids": [
+        "rater-score-span"
+      ],
+      "observation_state": "not_required"
+    }
+  ],
+  "reopening": {
+    "state": "proposed",
+    "source_ids": [
+      "rater-score"
+    ],
+    "rationale": "Authored negative control: a later inspection date is the only alleged change."
+  }
+}

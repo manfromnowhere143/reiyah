@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.13`
+Version: `0.1.14`
 
 Lifecycle status: `proposed`
 
@@ -78,6 +78,26 @@ observation process or product advantage. No LP solver, author code, empirical
 tables or asymptotic result was reproduced. Forty mixed validation controls pass;
 separate implementations are not independent scientific replication. Stop this
 finite qualification; do not enlarge it as a substitute for a fresh value case.
+
+The [research-to-build review](research-decisions/research-to-build-2026-10-12.md)
+now compares current retrieval/synthesis systems and 2026 evaluation methods.
+The [offline intake prototype](../tools/research_intake/README.md) binds a proposal
+to a supplied mission and exact source passages. Four
+[development controls](../research/decision-research/0.1.0/README.md) preserve
+compatible, incompatible, missing-observation and closed-unchanged outcomes.
+Twenty-five unit tests pass. These are exposed controls, not a new value case.
+A correct citation is not semantic support; a self-consistent mission is not
+proof of current authority; new bytes are not necessarily material evidence.
+
+Use the existing assistant and primary-source tools for bounded research before
+a concrete engineering choice. Keep discovery, screening, full-method reading,
+assumption review and cost records separate. The helper checks record structure;
+it does not search, assess truth or authorize implementation. Current published
+Odeya is architecture-only, not a verified callable research runtime. No shared
+scheduler, sibling adapter, external model campaign or paid service was started.
+The [utility comparison criteria](../research/decision-research/0.1.0/utility-pilot.json)
+remain proposed. Apply the records to a fresh admitted decision or a material
+change filling a named gap; do not enlarge this prototype without an actual use.
 
 ## Start here
 

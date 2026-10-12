@@ -1,0 +1,73 @@
+{
+  "artifact_id": "research-intake.dossier",
+  "schema_version": "0.1.0",
+  "project": "reiyah",
+  "mission_id": "missing-observations",
+  "mission_version": "0.1.0",
+  "mission_sha256": "fbd8e5d642a4e39d00204f98f8762c5bd4e05bde7842f6b58f8c7476156959a1",
+  "proposal": {
+    "id": "missing-observations-proposal",
+    "technique": "Reuse exact shared-label stopping only in its declared finite binary AUGRC domain.",
+    "comparator": "Direct conventional complete-data scoring with identical metric, tie rule and initial information.",
+    "decision_impact": "Review whether a method qualification supplies a real observation process for the next complete-work comparison.",
+    "falsifier": "Reject claimed applicability if the actual metric, observation process or decision obligation differs; never infer work savings from certificates.",
+    "cost": {
+      "engineering_minutes": 30,
+      "cpu_seconds": 30,
+      "source_bytes": 0
+    }
+  },
+  "retrieval": {
+    "state": "complete",
+    "scope": "Only the named previously exposed local records for this development control.",
+    "limitations": [
+      "No new empirical case, channel qualification, independent adjudication or efficacy test.",
+      "Assessments are supplied interpretations; exact spans do not establish entailment.",
+      "Cost object is a proposed next-test resource cap, not measured historical work."
+    ]
+  },
+  "sources": [
+    {
+      "id": "observation-gap",
+      "work_id": "local:reiyah/research/exact-choice-baseline/0.1.0/readme.md",
+      "source_version": "0.1.0",
+      "sha256": "027337f58bc5cab513ff341c871aaea2582be21e00050015241549350139cf6b",
+      "byte_size": 8857,
+      "path": "research/exact-choice-baseline/0.1.0/README.md",
+      "role": "full_text",
+      "captured_at": "2026-10-12T13:21:07.148653Z",
+      "access": "Existing authored Reiyah repository artifact at base eacf55e50453dd12eab3c4b95fab8ab1927355d1",
+      "terms": "Repository license; no third-party payload added",
+      "disposition": "included",
+      "reason": "Exposed historical development evidence; not a fresh outcome"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "observation-gap-span",
+      "source_id": "observation-gap",
+      "source_version": "0.1.0",
+      "source_sha256": "027337f58bc5cab513ff341c871aaea2582be21e00050015241549350139cf6b",
+      "start_byte": 6298,
+      "end_byte": 6453,
+      "quote": "None of these counts includes human\nreview time, mistakes, unavailable responses, packet preparation, computation,\nchannel qualification or audit overhead.",
+      "kind": "limitation"
+    }
+  ],
+  "assessments": [
+    {
+      "assumption_id": "applicability",
+      "state": "unknown",
+      "reason": "No actual review records or channel qualification are supplied by the named mathematical study.",
+      "evidence_ids": [
+        "observation-gap-span"
+      ],
+      "observation_state": "missing"
+    }
+  ],
+  "reopening": {
+    "state": "not_requested",
+    "source_ids": [],
+    "rationale": "Retrospective development control only."
+  }
+}

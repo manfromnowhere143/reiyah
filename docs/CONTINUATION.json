@@ -1,10 +1,10 @@
 {
   "artifact_id": "reiyah.continuation",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "as_of": "2026-10-12",
   "lifecycle_status": "proposed",
   "authority": "Navigation and retained evidence bindings only; verify latest operator instruction, repository rules and live Git state",
-  "editorial_base": "40bd025e1c4704ada4ff411cddf76edbcc57fed8",
+  "editorial_base": "eacf55e50453dd12eab3c4b95fab8ab1927355d1",
   "release": {
     "tag": "research-2026-10-11",
     "commit": "5de377af25a4c6882096ebbc91808b19feafb628"
@@ -24,7 +24,7 @@
   "decision": "bounded_scientific_investigation_only",
   "product_expansion": "stopped_pending_demonstrated_value",
   "case_admitted": false,
-  "next_action": "Qualify a genuinely new consequential paired decision, development observation records and complete-work collection plan before held-out outcomes. WOD-E2E source qualification and six authored metric witnesses are complete; no full-work case admitted. Do not expand the probe or reacquire the unchanged lead. Reopen only for concrete new records/source changes filling named admission fields.",
+  "next_action": "Use the bounded research/intake workflow for a fresh consequential paired decision or a material source change filling a named admission field. Qualify metric, actual development observation records and complete-work collection before held-out outcomes. Research-loop utility remains untested; closed WOD, AUGRC and exposed studies remain closed.",
   "required_case_fields": [
     "decision",
     "metric",
@@ -374,6 +374,86 @@
     {
       "path": "research/rater-score-contract/0.1.0/verification.json",
       "sha256": "9065550a70f0cf9e41485c77da8f68273775b2019b49551dcccd77dd6ff04e72"
+    },
+    {
+      "path": "docs/research-decisions/research-to-build-2026-10-12.md",
+      "sha256": "116ede0d53957f2d50210dbf7d5170f98838807df3875c9d12a6b0c70b71e869"
+    },
+    {
+      "path": "evidence/research-loop-2026-10-12.json",
+      "sha256": "60a0ff1ec0740b61136f7c012d27db8bc06e50ae2d0d37c017830a9ef5f8130f"
+    },
+    {
+      "path": "tests/test_research_intake.py",
+      "sha256": "a4dad1fd780841a12100fa87624b380ef03e1e58c7e40ef24fc23361f0df08b1"
+    },
+    {
+      "path": "tools/research_intake/__init__.py",
+      "sha256": "5f6b1c6bb9239cac77fe09d30887e5234621c6526f2bf2b2a87e210c3b355350"
+    },
+    {
+      "path": "tools/research_intake/__main__.py",
+      "sha256": "db3efd6e2c1d0218348bbf64f593a03159eab12fd472fac4dff13ce8ede3d8c3"
+    },
+    {
+      "path": "tools/research_intake/README.md",
+      "sha256": "7f4d80e90d71181e8f805a21f9c6c5e60b5d63f161fe941ea7f104f20f638efe"
+    },
+    {
+      "path": "research/decision-research/0.1.0/README.md",
+      "sha256": "0b4a27645b9590d3bd43d350fda19c834576d21cc915eed86a9145393823d8b9"
+    },
+    {
+      "path": "research/decision-research/0.1.0/cases.json",
+      "sha256": "c5d33b50f8e523a2d3a50237da51dfee177dda9da2d803144c850e7e189da4cd"
+    },
+    {
+      "path": "research/decision-research/0.1.0/compatible-augrc.dossier.json",
+      "sha256": "4a6515a1935c17fe91edf12c7ec5171f1054d055fcaca27e54c564ce62e6b78a"
+    },
+    {
+      "path": "research/decision-research/0.1.0/compatible-augrc.mission.json",
+      "sha256": "79e4cd9a9b44bdea93e2a945dc0836402d9430b70ed39f32bbfd8ff64cc53d2d"
+    },
+    {
+      "path": "research/decision-research/0.1.0/incompatible-rater.dossier.json",
+      "sha256": "927b8d8c1a715aa6c4760c15b962ab023cdfcd97c00cb5fec155459bf92302bc"
+    },
+    {
+      "path": "research/decision-research/0.1.0/incompatible-rater.mission.json",
+      "sha256": "656c1918d07cffc423d6359101e560f4aa52ab225a77bda5b226c67aae77fcac"
+    },
+    {
+      "path": "research/decision-research/0.1.0/missing-observations.dossier.json",
+      "sha256": "2256432c938d13bea3d13907a81f020f928961df00737678df488cd919cae901"
+    },
+    {
+      "path": "research/decision-research/0.1.0/missing-observations.mission.json",
+      "sha256": "549b79e21b351c4a349832d25afe53928f3396ac44e5ee21fe4a71906bdedb0e"
+    },
+    {
+      "path": "research/decision-research/0.1.0/reproduce.py",
+      "sha256": "6876237fb738407150a0b8dc5ee0acf20424fe7e5fe1d5c6270219b705e7922c"
+    },
+    {
+      "path": "research/decision-research/0.1.0/result.json",
+      "sha256": "45cd71b81855e4de43c94198f038576162434c6407b908c7d79eb009c7108703"
+    },
+    {
+      "path": "research/decision-research/0.1.0/unchanged-closed-lead.dossier.json",
+      "sha256": "a36fa44ac0ba117cee987a78d4053cf471e47278c8d9e16e46fc7a51bc278ab4"
+    },
+    {
+      "path": "research/decision-research/0.1.0/unchanged-closed-lead.mission.json",
+      "sha256": "0a189dfa744907bf2d187cfc97f24b70e3bc89c4e6149a49d5d3ce99dad3e2e3"
+    },
+    {
+      "path": "research/decision-research/0.1.0/utility-pilot.json",
+      "sha256": "29b16dd3adefc7263f3edcecc6f78c666b6034bf3da253a65f23a143a9ae7224"
+    },
+    {
+      "path": "research/decision-research/0.1.0/verification.json",
+      "sha256": "51d0ee72f5d5f40c9cbace157cde693205ca4fa58b9eb0599a91f08a80aa5c81"
     }
   ],
   "presentation_verification": {
@@ -585,5 +665,19 @@
     "physical_validity_established": false,
     "independent_scientific_replication": false,
     "stop": "Complete; no expansion absent a materially new packet or source change."
+  },
+  "research_loop": {
+    "status": "prototype_development_validated_utility_unestablished",
+    "decision": "Existing agent and retrieval tools plus offline project-owned intake; no new platform",
+    "review": "docs/research-decisions/research-to-build-2026-10-12.md",
+    "interface": "tools/research_intake/README.md",
+    "pilot": "research/decision-research/0.1.0/README.md",
+    "unit_tests_passed": 25,
+    "development_cases": 4,
+    "fresh_efficacy_cases": 0,
+    "sibling_integrations": false,
+    "shared_coordinator_active": false,
+    "mission_currentness_verified_by_helper": false,
+    "semantic_entailment_verified_by_helper": false
   }
 }

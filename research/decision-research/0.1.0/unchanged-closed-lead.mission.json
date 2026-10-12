@@ -1,0 +1,26 @@
+{
+  "artifact_id": "research-intake.mission",
+  "schema_version": "0.1.0",
+  "project": "reiyah",
+  "mission_id": "unchanged-closed-lead",
+  "mission_version": "0.1.0",
+  "decision": "Review whether reinspection alone provides a basis to reopen the closed WOD lead.",
+  "assumptions": [
+    {
+      "id": "applicability",
+      "description": "New records change an identified admission field.",
+      "requires_observation": false
+    }
+  ],
+  "closure": {
+    "state": "closed",
+    "reason": "Prior WOD source qualification is complete; reinspection alone cannot reopen it.",
+    "prior_sources": [
+      {
+        "work_id": "local:reiyah/research/rater-score-contract/0.1.0/readme.md",
+        "source_version": "0.1.0",
+        "sha256": "8a306968ac0d0605507d71d2ce17f0cad8b07f1786f3d5b12c76201c58d4e6ad"
+      }
+    ]
+  }
+}

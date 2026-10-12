@@ -1,3 +1,71 @@
+# Current entry: research-to-build review and offline intake prototype, 12 October 2026
+
+Continuation version: 0.1.87. NEXT_SESSION/CONTINUATION version: 0.1.14.
+Read the [research decision](research-decisions/research-to-build-2026-10-12.md),
+[source ledger](../evidence/research-loop-2026-10-12.json),
+[intake interface](../tools/research_intake/README.md) and
+[development pilot](../research/decision-research/0.1.0/README.md).
+
+Daniel explicitly requested current research on a research-to-build function,
+Odeya reuse, eventual reuse across his projects and continued Reiyah work;
+parallel roles were expressly allowed. Fresh owned candidate starts at
+eacf55e50453dd12eab3c4b95fab8ab1927355d1 under
+`~/.codex/reports/reiyah/research-loop-2026-10-12-qqf7sc1j/candidate`.
+The historical controller remains clean at 74fbacc. No Console or sibling edits,
+shared coordinator activation, training/inference campaign, dependency, new paid
+service or outreach. Roles belong to one investigation, not independent science.
+
+The bounded primary review covers PaperQA v2026.08.12, OpenScholar, ScholarQA,
+Asta PaperFinder, the 2 October AstaBrief release, six selected 2026 evaluation
+papers and a seventh methodological cross-check. Exact versions and limitations
+are retained. Odeya's public 5311ff5 snapshot is architecture-only; no callable
+research engine was identified. This does not establish absence of unpublished
+work. Use existing discovery/reading tools; add a small portable record boundary,
+then measure usefulness before building a platform or recurring service.
+
+Source custody: 61 direct capture attempts, 60 retained bodies, 10,448,871 bytes.
+One ACL PDF exceeded its role's cap. Seven bodies lost final acquisition metadata;
+missing fields remain null. Two critical code bodies were recaptured completely
+with identical hashes. Public descriptors publish no third-party payload. Search
+and browser navigation transport/request totals are not fully retained; the
+75-request bound is verified only for direct capture attempts. Do not claim a
+complete all-network budget audit. Historical effort remains unknown, not reset.
+
+The standard-library helper checks bounded strict JSON, supplied mission binding,
+source identities, literal UTF-8 spans, declared screening and assumptions.
+Output is structural readiness only. It does not determine entailment, current
+mission authority, material novelty, observation validity or build permission.
+New bytes can be cosmetic; source role and qualified-observation labels remain
+reviewer assertions. Costs are proposed next-test caps, not measured work.
+25 unit tests pass. Four exposed historical controls give ready_for_review,
+incompatible, needs_evidence and closed_no_new_basis as declared. An internal
+review additionally exercises 814 type/value mutations and 17 filesystem/JSON
+controls on its bound snapshot; final changes add explicit false currentness/
+temporal flags, followed by the 25 tests. Details and limits are in verification.
+
+Development checks deny network before Python starts. The documented nine
+research-consistency checks and unchanged small offline example pass; 52 historical
+transcripts are bound, zero replayed. Gate A release validation is not run and
+operator acceptance remains absent. No science study or fresh value trial is
+reopened. Existing AUGRC and observation contracts remain the next packet's
+method/admission starting points, not a measured engine improvement here.
+
+Preserve all earlier handoff bytes, README substance and seven diagrams. Only a
+dated README addition is made. Normal eligible publication and exact publisher
+readback are authorized; they do not provide independent transport evidence.
+Owner cap: 60 minutes, 40 MiB of new retained sources, 96 MiB excluding candidate.
+Record actual closeout in private memory; the source-request accounting limitation
+above stays visible.
+
+Next: use the intake on a new consequential decision or a material source change
+filling a specific gap. Choose the metric-compatible conventional comparator,
+qualify actual observations on separate development records, freeze correctness
+and complete-work collection before held-out outcomes. The research-function
+utility pilot is proposed, not admitted or run. No automatic platform expansion,
+repeated old-source hunt, larger synthetic grid or unchanged outreach polling.
+
+Earlier entries follow unchanged.
+
 # Current entry: rater-score meaning checked; WOD value case not admitted, 12 October 2026
 
 Continuation version: 0.1.86. NEXT_SESSION/CONTINUATION version: 0.1.13.

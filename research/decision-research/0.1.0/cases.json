@@ -1,0 +1,36 @@
+{
+  "artifact_id": "reiyah.decision-research.development-cases",
+  "version": "0.1.0",
+  "status": "exposed_retrospective_controls_not_efficacy",
+  "base_commit": "eacf55e50453dd12eab3c4b95fab8ab1927355d1",
+  "cases": [
+    {
+      "id": "compatible-augrc",
+      "mission": "compatible-augrc.mission.json",
+      "dossier": "compatible-augrc.dossier.json",
+      "expected_status": "ready_for_review",
+      "purpose": "Review method compatibility for fixed binary predictions and confidence ranks scored by trapezoidal AUGRC."
+    },
+    {
+      "id": "incompatible-rater",
+      "mission": "incompatible-rater.mission.json",
+      "dossier": "incompatible-rater.dossier.json",
+      "expected_status": "incompatible",
+      "purpose": "Review whether fixed row-additive AUGRC is a drop-in method for the geometric WOD rater score."
+    },
+    {
+      "id": "missing-observations",
+      "mission": "missing-observations.mission.json",
+      "dossier": "missing-observations.dossier.json",
+      "expected_status": "needs_evidence",
+      "purpose": "Review whether a method qualification supplies a real observation process for the next complete-work comparison."
+    },
+    {
+      "id": "unchanged-closed-lead",
+      "mission": "unchanged-closed-lead.mission.json",
+      "dossier": "unchanged-closed-lead.dossier.json",
+      "expected_status": "closed_no_new_basis",
+      "purpose": "Review whether reinspection alone provides a basis to reopen the closed WOD lead."
+    }
+  ]
+}

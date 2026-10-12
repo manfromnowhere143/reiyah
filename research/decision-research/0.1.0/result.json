@@ -1,0 +1,55 @@
+{
+  "artifact_id": "reiyah.decision-research.development-result",
+  "cases": [
+    {
+      "case": "compatible-augrc",
+      "dossier_sha256": "92540eb4773770867f26fe9284ebac5125a154a90fb2606bb967a3b50df0cf58",
+      "incompatible_assumptions": [],
+      "missing": [],
+      "mission_sha256": "75ff0fd096158b81e3ab14efa5f6c6b4f4cdd527eff6b94520c551e48d057e5f",
+      "status": "ready_for_review"
+    },
+    {
+      "case": "incompatible-rater",
+      "dossier_sha256": "0893e84ceadbc4b21c11a2c0f02af171f4c6fc0da4d1492880dc9d546ce0c578",
+      "incompatible_assumptions": [
+        "applicability"
+      ],
+      "missing": [],
+      "mission_sha256": "b629656b888bb58fed580f3bc0d3c7fc5a4f40d2432a6041e783350e180a7e49",
+      "status": "incompatible"
+    },
+    {
+      "case": "missing-observations",
+      "dossier_sha256": "76c1a1ec235e6e04a508e1a448fb0c0e2026a795382a66f3bab652cd6a84afd7",
+      "incompatible_assumptions": [],
+      "missing": [
+        {
+          "assumption": "applicability",
+          "reason": "assessment_unknown"
+        },
+        {
+          "assumption": "applicability",
+          "reason": "qualified_observation_record_missing"
+        }
+      ],
+      "mission_sha256": "fbd8e5d642a4e39d00204f98f8762c5bd4e05bde7842f6b58f8c7476156959a1",
+      "status": "needs_evidence"
+    },
+    {
+      "case": "unchanged-closed-lead",
+      "dossier_sha256": "de1bddcf69311214dbed2457ea044beaaaf62e6a3879e75da6eb6ad97d838766",
+      "incompatible_assumptions": [],
+      "missing": [
+        {
+          "assumption": "applicability",
+          "reason": "assessment_unknown"
+        }
+      ],
+      "mission_sha256": "aba832fe24dd7416c1cf45373de401025235fc8917ad2d01450be28f50ae44b1",
+      "status": "closed_no_new_basis"
+    }
+  ],
+  "efficacy_test": false,
+  "version": "0.1.0"
+}

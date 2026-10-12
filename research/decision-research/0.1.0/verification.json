@@ -1,0 +1,159 @@
+{
+  "artifact_id": "reiyah.decision-research.verification",
+  "version": "0.1.0",
+  "status": "development_validation_passed",
+  "date": "2026-10-12",
+  "environment": {
+    "python": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "platform": "darwin",
+    "isolation": "macOS sandbox-exec deny network before Python starts; development checks, not Gate A release launcher"
+  },
+  "test_result": {
+    "unit_tests": 25,
+    "passed": 25,
+    "development_cases": 4,
+    "matched_expected_status": 4,
+    "fresh_efficacy_cases": 0,
+    "output_matches_retained_result_exactly": true
+  },
+  "executions": [
+    {
+      "name": "intake-tests",
+      "argv": [
+        "/usr/bin/sandbox-exec",
+        "-p",
+        "(version 1)(allow default)(deny network*)",
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_research_intake.py"
+      ],
+      "started_at": "2026-10-12T13:24:47.224372+00:00",
+      "wall_seconds": 0.2514380000066012,
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "530604cb1ac39b9dcf78dacc5d51e53d8422ecf9f0a59966ed3b07ecbc685947"
+    },
+    {
+      "name": "development-replay",
+      "argv": [
+        "/usr/bin/sandbox-exec",
+        "-p",
+        "(version 1)(allow default)(deny network*)",
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "research/decision-research/0.1.0/reproduce.py"
+      ],
+      "started_at": "2026-10-12T13:24:47.476101+00:00",
+      "wall_seconds": 0.050132583011873066,
+      "exit_code": 0,
+      "stdout_sha256": "45cd71b81855e4de43c94198f038576162434c6407b908c7d79eb009c7108703",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "existing-example",
+      "argv": [
+        "/usr/bin/sandbox-exec",
+        "-p",
+        "(version 1)(allow default)(deny network*)",
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "research/perception-decision-review/0.1.0/reproduce.py"
+      ],
+      "started_at": "2026-10-12T13:24:47.526505+00:00",
+      "wall_seconds": 0.05727320903679356,
+      "exit_code": 0,
+      "stdout_sha256": "62d159ba5255046fcb5d04b21abfbd64fe96550acda747e7be3aafce51a0594f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "bindings": [
+    {
+      "path": "tools/research_intake/__init__.py",
+      "sha256": "5f6b1c6bb9239cac77fe09d30887e5234621c6526f2bf2b2a87e210c3b355350"
+    },
+    {
+      "path": "tools/research_intake/__main__.py",
+      "sha256": "db3efd6e2c1d0218348bbf64f593a03159eab12fd472fac4dff13ce8ede3d8c3"
+    },
+    {
+      "path": "tests/test_research_intake.py",
+      "sha256": "a4dad1fd780841a12100fa87624b380ef03e1e58c7e40ef24fc23361f0df08b1"
+    },
+    {
+      "path": "research/decision-research/0.1.0/compatible-augrc.mission.json",
+      "sha256": "79e4cd9a9b44bdea93e2a945dc0836402d9430b70ed39f32bbfd8ff64cc53d2d"
+    },
+    {
+      "path": "research/decision-research/0.1.0/incompatible-rater.mission.json",
+      "sha256": "656c1918d07cffc423d6359101e560f4aa52ab225a77bda5b226c67aae77fcac"
+    },
+    {
+      "path": "research/decision-research/0.1.0/missing-observations.mission.json",
+      "sha256": "549b79e21b351c4a349832d25afe53928f3396ac44e5ee21fe4a71906bdedb0e"
+    },
+    {
+      "path": "research/decision-research/0.1.0/unchanged-closed-lead.mission.json",
+      "sha256": "0a189dfa744907bf2d187cfc97f24b70e3bc89c4e6149a49d5d3ce99dad3e2e3"
+    },
+    {
+      "path": "research/decision-research/0.1.0/compatible-augrc.dossier.json",
+      "sha256": "4a6515a1935c17fe91edf12c7ec5171f1054d055fcaca27e54c564ce62e6b78a"
+    },
+    {
+      "path": "research/decision-research/0.1.0/incompatible-rater.dossier.json",
+      "sha256": "927b8d8c1a715aa6c4760c15b962ab023cdfcd97c00cb5fec155459bf92302bc"
+    },
+    {
+      "path": "research/decision-research/0.1.0/missing-observations.dossier.json",
+      "sha256": "2256432c938d13bea3d13907a81f020f928961df00737678df488cd919cae901"
+    },
+    {
+      "path": "research/decision-research/0.1.0/unchanged-closed-lead.dossier.json",
+      "sha256": "a36fa44ac0ba117cee987a78d4053cf471e47278c8d9e16e46fc7a51bc278ab4"
+    },
+    {
+      "path": "research/decision-research/0.1.0/cases.json",
+      "sha256": "c5d33b50f8e523a2d3a50237da51dfee177dda9da2d803144c850e7e189da4cd"
+    },
+    {
+      "path": "research/decision-research/0.1.0/reproduce.py",
+      "sha256": "6876237fb738407150a0b8dc5ee0acf20424fe7e5fe1d5c6270219b705e7922c"
+    },
+    {
+      "path": "research/decision-research/0.1.0/result.json",
+      "sha256": "45cd71b81855e4de43c94198f038576162434c6407b908c7d79eb009c7108703"
+    },
+    {
+      "path": "research/decision-research/0.1.0/utility-pilot.json",
+      "sha256": "29b16dd3adefc7263f3edcecc6f78c666b6034bf3da253a65f23a143a9ae7224"
+    },
+    {
+      "path": "evidence/research-loop-2026-10-12.json",
+      "sha256": "60a0ff1ec0740b61136f7c012d27db8bc06e50ae2d0d37c017830a9ef5f8130f"
+    }
+  ],
+  "internal_review": {
+    "scope": "Separate role in same assisted investigation, not independent scientific validation",
+    "type_value_mutations": 814,
+    "unexpected_exceptions": 0,
+    "additional_filesystem_json_controls": 17,
+    "controls_passed": 17,
+    "probes": "Changed whitespace, self-consistent old mission, irrelevant exact quote, reviewer-declared observation, future capture date and unresolved assumption",
+    "limits": "Finite internal controls; semantic/currentness/temporal/material novelty are not established",
+    "snapshot_sha256": "25bbbdd4e9715314534dd6c85c97d7c706b9065bfd6309c6fce9c0fb62e21be3",
+    "report_sha256": "3622d680cbe811540dda868b90d426c401433a4b9a18c42e959085f6be09e1ed",
+    "post_review_change": "Added explicit false mission-currentness and temporal-eligibility flags and assertions; final25tests rerun with network denied. Earlier private mutation/path results bind the preceding reviewed implementation."
+  },
+  "claims": {
+    "scientific_efficacy": false,
+    "complete_work_saving": false,
+    "independent_replication": false,
+    "gate_a_acceptance": false
+  }
+}
