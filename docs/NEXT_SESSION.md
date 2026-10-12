@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.18`
+Version: `0.1.19`
 
 Lifecycle status: `proposed`
 
@@ -142,14 +142,25 @@ prediction or complete pair exists. The offending row, tile, coordinates and
 score were not retained, so its relation to the later analysis threshold and any
 upstream defect remain unknown. The empirical stop was honored.
 
-The next concrete step is narrowly scoped diagnostic instrumentation that records
-that row and its tile context before the existing rejection, while preserving
-numerical operations, thresholds, coordinates, NMS and scientific settings.
-Qualify it on authored cases and freeze a separate diagnostic attempt before any
-future empirical execution. Reuse and rehash the retained bytes. Do not silently
-drop/repair boxes, replace the model/image, tune thresholds or acquire more cohort
-images before the first pair qualifies. This is an owned adapter investigation,
-not a complete human-work value case. The 2026
+The [separate diagnostic](../research/multiorg-reference-admission/0.2.3/README.md)
+now captures a rejected first-tile raw float32 zero box scoring 0.3579423129558563.
+That observed row is below the unchanged analysis threshold; the exact row in
+0.2.2 remains unknown. A separately qualified
+[analysis-only projection](../research/multiorg-reference-admission/0.3.0/README.md)
+uses fixed-score descending NMS prefix invariance while retaining all raw rows.
+Its one frozen attempt passed 9 Faster tiles then refused tile 9: a raw zero box
+scored 0.5355819463729858, above 0.5. All 159 returned rows are retained; separate
+checks confirm the partial evidence. No model/pair, Reiyah whole-image NMS or
+reference comparison completed. Both execution owners are closed.
+
+The next step is the [source/export zero-box contract investigation](../research/multiorg-reference-admission/0.3.0/DECISION.md).
+Inspect retained model/implementation metadata and graph lineage, then qualify
+any validity/sentinel rule before a separately frozen probe. A future probe must
+bind the identified tile's reconstructed tensor to its retained hash. No silent
+box deletion/repair, threshold tuning, model/image replacement or cohort extension.
+Treating zero boxes as false positives also needs an explicit scoring/NMS contract.
+The original failed protocols remain unchanged. This is an owned adapter
+investigation, not a complete human-work value case. The 2026
 [methods review](research-decisions/owned-reference-trial-2026-10-12.md) still
 favors a full exact census; unknown reference semantics are not repaired by
 statistical sampling. Closed older studies stay closed. Private outreach was

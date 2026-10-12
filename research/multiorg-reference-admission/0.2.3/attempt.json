@@ -1,0 +1,149 @@
+{
+  "artifact_id": "reiyah.multiorg.output-diagnostic.attempt",
+  "version": "0.2.3",
+  "lifecycle_status": "exploratory",
+  "execution_status": "failed_original_decoder_contract",
+  "diagnostic_status": "captured_and_separately_checked",
+  "base_commit": "33eb4c2539b2582d54c5cb5f2abdd5dfeab51168",
+  "public_source_bindings": [
+    {
+      "path": "../0.2.0/protocol.json",
+      "sha256": "d27a73f692ab15ec7402ff052c8a7aa0a0ef3539d89dda0ec1c38b8588ce6f08",
+      "bytes": 4500
+    },
+    {
+      "path": "../0.2.0/run_pair.py",
+      "sha256": "9a708bf6a22e9350980e0d08d0e90c2c56f7b9cc4a73b7fd55f22c9ef3f33e0c",
+      "bytes": 21404
+    },
+    {
+      "path": "../0.2.1/supervise.py",
+      "sha256": "4628d61e316fc743b8ecaacc1be9b48cfafda4f3d786b8d0859228fcacb40146",
+      "bytes": 9007
+    },
+    {
+      "path": "../0.2.2/attempt.json",
+      "sha256": "6dcbb2b5978b076e684e5a0bba8d228b9fb2c52ff7edf8bbb3e4e7b0cf5b65e9",
+      "bytes": 7870
+    },
+    {
+      "path": "diagnose.py",
+      "sha256": "1276b98d1186161db87caa248b6a71c888d31564e9209824f57e968993c7a618",
+      "bytes": 13234
+    },
+    {
+      "path": "test_diagnose.py",
+      "sha256": "8c8d3db2e64b2e199d1d5dced8032c75a81753c03e53d02b80dbd8a214b6f37d",
+      "bytes": 13519
+    }
+  ],
+  "qualification": {
+    "authored_controls": 20,
+    "reported_seconds": 0.501,
+    "actual_model_executions": 0,
+    "scope": "Exact original execute context with mocked IO; separate peer code review within same assisted investigation"
+  },
+  "chronology": {
+    "started_at": "2026-10-12T18:10:51.970853+00:00",
+    "ended_at": "2026-10-12T18:10:57.605876+00:00",
+    "freeze_sha256": "a41e75bfaee49de649716a8709eedfa5ff491b708e1fa028be5ea1d7fe1796d0"
+  },
+  "execution": {
+    "attempts": 1,
+    "returncode": 1,
+    "termination_reason": "worker_exit",
+    "outer_wall_seconds": 5.6346217499813065,
+    "supervisor_wall_seconds": 5.55268258304568,
+    "peak_sampled_rss_bytes": 915193856,
+    "worker_wall_limit_seconds": 600,
+    "sampled_rss_limit_bytes": 3221225472,
+    "worker_policy_sha256": "5c358b8d847211333e7ba22df82d84f796b5f30a41a2682209a949d783adbd08",
+    "saved_complete_model_outputs": 0,
+    "complete_pairs": 0,
+    "comparisons": 0,
+    "empirical_retry": false
+  },
+  "failure": {
+    "exception": "ValueError: degenerate retained detector box",
+    "model": "faster",
+    "image_id": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+    "tile_ordinal": 0,
+    "tiles_expected": 156,
+    "tile_row": 0,
+    "tile_column": 0,
+    "raw_rows": 2,
+    "storage_retained_rows": 1,
+    "offending_rows": [
+      {
+        "row": 0,
+        "raw_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.3579423129558563
+        ],
+        "raw_dtype": "<f4",
+        "raw_x_relation": "=",
+        "raw_y_relation": "=",
+        "analysis_score_gt_half": false,
+        "raw_nonpositive": true
+      }
+    ],
+    "conversion_caused_degeneracy": false,
+    "analysis_threshold_relevance": "Offending row excluded by unchanged score>0.5 analysis definition",
+    "all_other_tiles_qualified": false,
+    "upstream_model_bug_established": false
+  },
+  "capture": {
+    "npy_files": 6,
+    "npy_total_bytes": 862,
+    "refusals": [],
+    "truncation": false,
+    "raw_payloads_public": false,
+    "scalar_checker_sha256": "b9d10ad270748973cf52d46f259ac87b5b7c2d566c70e1bf11762e5d3888d3af",
+    "diagnostic_sha256": "31c091b472a2ce3e61296c56caabb98a5164b09b5c5e6ccb7e7812cc50751643"
+  },
+  "integrity": {
+    "all_frozen_file_checks": {
+      "PLAN.json": true,
+      "STAGING.json": true,
+      "STAGING_READY.json": true,
+      "inference/diagnose.py": true,
+      "qualification/test_diagnose.py": true,
+      "qualification/report.json": true,
+      "qualification/FROZEN.json": true,
+      "inference/run_pair.py": true,
+      "inference/supervise.py": true,
+      "inference/pilot-manifest.json": true,
+      "runtime-audit/audit.py": true,
+      "runtime-audit/before.json": true,
+      "review/CODE_REVIEW.json": true,
+      "qualification/controls-v3.stdout": true,
+      "qualification/controls-v3.stderr": true,
+      "candidate/research/multiorg-reference-admission/0.2.0/protocol.json": true,
+      "pilot-data/faster.bin": true,
+      "pilot-data/yolo.bin": true,
+      "pilot-data/image.bin": true
+    },
+    "runtime_before_after_inspected_collections_equal": true,
+    "installed_RECORDs": 17,
+    "hashed_installed_entries": 5926,
+    "retained_wheels": 17,
+    "unhashed_RECORD_entries": 17,
+    "unrecorded_files": 0,
+    "runtime_scope": "RECORD digests verify declared installed files against retained installed metadata. Wheel hashes bind original archives; this is not a reproducible rebuild or proof of all system dynamic-library bytes. pyc and unhashed RECORD entries are listed separately. PYTHONDONTWRITEBYTECODE and -B prevent new bytecode writes; existing pyc execution is not separately authenticated by RECORD.",
+    "candidate_HEAD": "33eb4c2539b2582d54c5cb5f2abdd5dfeab51168",
+    "candidate_status_clean_at_closeout": true
+  },
+  "disposition": "Original empirical failure preserved; diagnostic owner closed after one attempt. New analysis-only contract requires separate qualification and separately frozen execution.",
+  "terms": "Source-derived numeric observations:CC BY-NC-SA4.0; see../0.1.0/NOTICE.md. Original code retains repository terms.",
+  "nonclaims": [
+    "scientific superiority",
+    "whole-image detector qualification",
+    "physical truth",
+    "upstream defect",
+    "human-work advantage",
+    "independent scientific replication"
+  ]
+}

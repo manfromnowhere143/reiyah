@@ -1,3 +1,75 @@
+# Current entry: raw detector refusals isolated, 12 October 2026
+
+Continuation version: 0.1.92. NEXT_SESSION/CONTINUATION version: 0.1.19.
+Read the [diagnostic](../research/multiorg-reference-admission/0.2.3/README.md),
+[separate analysis contract and failed attempt](../research/multiorg-reference-admission/0.3.0/README.md)
+and its [next decision](../research/multiorg-reference-admission/0.3.0/DECISION.md).
+Neither attempt produced a complete model output, pair or scientific endpoint.
+
+Verified public base was 33eb4c2539b2582d54c5cb5f2abdd5dfeab51168. Publication
+worktree is the fresh same-repository candidate in private owner
+`multiorg-output-diagnostic-2026-10-12-js8wuyoi`. A separate execution owner,
+`multiorg-analysis-projection-2026-10-12-rq7rrvp9`, is also empirically closed.
+The historical controller remains clean at 74fbacc; prior owners, original
+worker and failed protocols remain unchanged. Existing parallel authorization
+supported separate implementation and checking within this assisted investigation.
+
+The failure-only diagnostic passed 20 authored controls and exact-byte review.
+One separately frozen run called the unchanged worker, captured raw arrays and
+verified original-frame context, then preserved its exception. Faster tile 0
+returned an all-zero float32 box with score 0.3579423129558563. This row was
+already degenerate before conversion and below the unchanged analysis threshold.
+Six NPY files / 862 bytes and a separate scalar check retain the observation. The
+preceding uncaptured refusal's exact row remains unknown; do not equate them.
+
+A separately specified analysis-only endpoint followed a qualified descending
+fixed-score hard-NMS prefix proof. It retains every raw row, all-row limits,
+finite coordinates/scores and required labels while exempting excluded finite
+low rows from positive-extent validity. Original preprocessing, high coordinates,
+score>0.5, NMS/tie rules, model pair and first whole image remain fixed. Complete
+storage output is never asserted. Eighteen helper controls, ten mocked execution
+controls and three independent-checker controls passed. A fresh staged replay
+of all four suites passed 51 controls. These are authored software controls,
+not empirical model performance or scientific replication.
+
+The one new actual attempt failed after 19.116 seconds on high-score geometry.
+It retained 10 Faster tiles and 159 rows; first 9 tiles / 153 rows qualify. Tile 9, row 2
+contains a raw all-zero float32 box, label 0, score 0.5355819463729858. The separate
+checker verified all 20 NPY files / 7,012 bytes and the partial refusal. A standard-
+library NPY/struct recount confirms 48 high rows, 47 raw-positive and 1 raw-invalid.
+No Reiyah whole-image NMS, complete model, YOLO run, pair, native comparison or
+reference interval occurred. The conditional matching plan's prerequisite failed.
+No threshold change, deletion, repair, model/image replacement or retry followed.
+
+Both attempts reused retained bytes, original 600-second / 3 GiB limits and network-denied
+workers. Input and installed-runtime audits matched before/after; 17 distributions,
+5,926 hashed RECORD entries, 17 unhashed RECORD self-entries. System dynamic libraries
+remain outside that audit. Projection execution binds 38 files; raw arrays remain
+private. Source-derived summaries retain the recorded NC-SA terms. Public code
+and reproducible authored-control staging are supplied with explicit limits.
+
+Next: inspect the exact source/export output contract and graph lineage for
+nonzero-score zero boxes. Establish validity/sentinel semantics before any new
+probe or scoring extension. A future bounded probe should reconstruct the
+identified tile and verify its saved tensor hash before comparing a qualified
+reference path or coordinate-producing stage. Counting degenerate boxes as FP
+also requires explicit NMS and validity semantics; it is not authorized by the
+current positive-rectangle contract. Do not automatically rerun, tune thresholds,
+replace the pair/image or extend the cohort. Gate A remains operator-unaccepted,
+broad product expansion stopped and the complete-work value case unadmitted.
+
+In parallel, the screenshot-specific GitGuardian investigation found four public
+Kaggle pagination cursors introduced at 2a0dd1b. Retained preceding responses and
+anonymous replay verify their function. Exact GitGuardian occurrence locations
+remain unprovided, so no alert was dismissed or detector disabled. Private
+security receipts are discoverable through the continuation memory; no account
+credential value or third-party payload is published here.
+
+Required publication checks and exact readback are recorded separately. They
+are publisher-authored integrity observations, not independent transport evidence.
+
+---
+
 # Current entry: corrected supervisor reached a numerical refusal, 12 October 2026
 
 Continuation version: 0.1.91. NEXT_SESSION/CONTINUATION version: 0.1.18.

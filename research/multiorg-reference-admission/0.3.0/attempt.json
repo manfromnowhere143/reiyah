@@ -1,0 +1,204 @@
+{
+  "artifact_id": "reiyah.multiorg.analysis-projection.attempt",
+  "version": "0.3.0",
+  "lifecycle_status": "exploratory",
+  "execution_status": "failed_high_score_geometry",
+  "base_commit": "33eb4c2539b2582d54c5cb5f2abdd5dfeab51168",
+  "public_source_bindings": [
+    {
+      "path": "../0.2.0/protocol.json",
+      "sha256": "d27a73f692ab15ec7402ff052c8a7aa0a0ef3539d89dda0ec1c38b8588ce6f08",
+      "bytes": 4500
+    },
+    {
+      "path": "../0.2.0/run_pair.py",
+      "sha256": "9a708bf6a22e9350980e0d08d0e90c2c56f7b9cc4a73b7fd55f22c9ef3f33e0c",
+      "bytes": 21404
+    },
+    {
+      "path": "../0.2.1/supervise.py",
+      "sha256": "4628d61e316fc743b8ecaacc1be9b48cfafda4f3d786b8d0859228fcacb40146",
+      "bytes": 9007
+    },
+    {
+      "path": "../0.2.3/attempt.json",
+      "sha256": "bf10252edf1021a816c95137b0e4f838c0f4f7589e7f0b0a0dc58aeb650ab8ee",
+      "bytes": 5597
+    },
+    {
+      "path": "contract.json",
+      "sha256": "edf53f094e41a219027054c9f70fea1f14bd4081010fd2fafaabca4b4e265e26",
+      "bytes": 3749
+    },
+    {
+      "path": "analysis_pair.py",
+      "sha256": "3190a18710c392af1ac53c49cad52a414f7b92899ad29d9834472303b5aea466",
+      "bytes": 14972
+    },
+    {
+      "path": "projection.py",
+      "sha256": "7cf0103cd7876585004310f6a3457add033bab2bc91b8b5ca750b15982a47425",
+      "bytes": 6006
+    },
+    {
+      "path": "test_projection.py",
+      "sha256": "bbb6680c1ce4672b79d9a8d4f39759e454140f1d2016b16fff16fd6183291cfd",
+      "bytes": 10055
+    },
+    {
+      "path": "test_analysis_pair.py",
+      "sha256": "6395909cc85ab87bf6a1c3a89d340c981d724a024c9d8e568fe24c0af1a46100",
+      "bytes": 10734
+    },
+    {
+      "path": "check_analysis.py",
+      "sha256": "b4402e7a384a84cb7b7eb7da5d6b70b0ce83a2d267e0331685360bfd40399402",
+      "bytes": 24192
+    },
+    {
+      "path": "test_check_analysis.py",
+      "sha256": "2a40bd814cf1133cd7a38a8923648ea3e2d8705b1ae23a0cb72246d04e10037b",
+      "bytes": 8225
+    },
+    {
+      "path": "PROOF_AND_CONTRACT.md",
+      "sha256": "06072b1d1e1f67245a6eaf081264d358cc6f52757058c3b22221c42496558a88",
+      "bytes": 7785
+    }
+  ],
+  "contract_change": "Separate analysis-only endpoint; finite excluded low rows need not have positive extents. All-row finiteness, score/class/work limits, exact high-score transform and hard-NMS rules retained. No complete storage export.",
+  "qualification": {
+    "diagnostic_controls": 20,
+    "projection_controls": 18,
+    "authored_full_valid_NMS_comparisons": 500,
+    "authored_valid_low_coordinate_completions": 256,
+    "mocked_execution_controls": 10,
+    "checker_controls": 3,
+    "publication_staged_replay": "All four control files pass using authored placeholders and mocked sessions; no empirical inference."
+  },
+  "chronology": {
+    "started_at": "2026-10-12T18:28:04.037833+00:00",
+    "ended_at": "2026-10-12T18:28:23.154495+00:00"
+  },
+  "execution": {
+    "empirical_attempts": 1,
+    "outer_wall_seconds": 19.116289375000633,
+    "supervisor_wall_seconds": 19.07334191701375,
+    "peak_sampled_rss_bytes": 1102692352,
+    "returncode": 1,
+    "termination_reason": "worker_exit",
+    "terminal_exception": "ValueError: undefined high-score geometry",
+    "complete_model_outputs": 0,
+    "complete_pairs": 0,
+    "matching_executions": 0,
+    "remaining_images_acquired": 0,
+    "new_source_requests": 0,
+    "new_downloads": 0
+  },
+  "coverage": [
+    {
+      "model": "faster",
+      "qualified_tiles": 9,
+      "raw_rows_in_qualified_tiles": 153,
+      "raw_rows_in_retained_tiles": 159,
+      "refusals": [
+        {
+          "independently_observed_violation": "undefined high-score geometry",
+          "model": "faster",
+          "tile_ordinal": 9
+        }
+      ],
+      "retained_tiles": 10,
+      "status": "partial_or_unobserved"
+    },
+    {
+      "model": "yolo",
+      "qualified_tiles": 0,
+      "raw_rows_in_qualified_tiles": 0,
+      "raw_rows_in_retained_tiles": 0,
+      "refusals": [],
+      "retained_tiles": 0,
+      "status": "partial_or_unobserved"
+    }
+  ],
+  "raw_evidence": {
+    "files": 20,
+    "bytes": 7012,
+    "unbound_files": [],
+    "total_returned_rows": 159,
+    "tile_ledgers": 10,
+    "all_output_files": 30,
+    "all_output_bytes": 20217
+  },
+  "high_score_failure": {
+    "tile_ordinal": 9,
+    "tile_row": 0,
+    "tile_column": 2304,
+    "original_row_index": 2,
+    "raw_dtype": "<f4",
+    "xyxy": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "score": 0.5355819463729858,
+    "label": 0,
+    "raw_geometry_invalid_before_conversion": true,
+    "upstream_defect_established": false
+  },
+  "post_execution_descriptive_inventory": {
+    "raw_rows": 159,
+    "raw_nonpositive_extent_rows": 20,
+    "all_zero_xyxy_rows": 20,
+    "high_score_rows": 48,
+    "high_score_raw_positive_rows": 47,
+    "high_score_raw_nonpositive_rows": 1,
+    "scope": "Retained 10-tile prefix only; no full-image prevalence or valid empty observations inferred"
+  },
+  "verification": {
+    "frozen_bindings": 38,
+    "runtime": {
+      "frozen_files_rechecked": 38,
+      "all_frozen_files_unchanged": true,
+      "runtime_pre_post_equal_except_timestamp": true,
+      "hashed_runtime_entries_checked": 5926,
+      "runtime_records": 17,
+      "excluded_record_entries": 17,
+      "excluded_record_scope": "Unhashed RECORD self entries; exact exclusions and audit limitations retained.",
+      "unrecorded_runtime_files": 0,
+      "runtime_audit_failures": []
+    },
+    "output_checker_status": "failed_attempt_partial_ledger_checked",
+    "raw_array_files_checked": 20,
+    "raw_array_bytes_checked": 7012,
+    "empirical_Reiyah_whole_image_NMS_reached": false,
+    "no_statement_about_internal_ONNX_NMS": true,
+    "separate_stdlib_raw_recount": "NPY headers and struct float32 decoding, no producer/helper/numpy import; confirms retained raw inventory",
+    "limitations": [
+      "No inference or pixel preprocessing was rerun.",
+      "TIFF header shape and full input-file hashes are checked; tensor hashes are metadata only, not independently reconstructed content.",
+      "Scalar coordinate/NMS verification shares numpy float32 runtime semantics, not producer/helper code.",
+      "No reference matching, model superiority, physical truth or complete-work claim.",
+      "Unbound partial arrays, if any, are not counted as qualified observations."
+    ]
+  },
+  "limits": {
+    "worker_wall_seconds": 600,
+    "sampled_rss_bytes": 3221225472,
+    "max_tiles_per_image": 512,
+    "raw_rows_per_image_model": 200000
+  },
+  "disposition": "One empirical attempt; stopped. No retry, repairs, threshold changes, model/image replacement or matching. Old protocols and failures preserved.",
+  "next_dependency": "Qualify source/export zero-box and validity semantics before another inference attempt; see DECISION.md.",
+  "claims_not_established": [
+    "complete model qualification",
+    "paired detector comparison",
+    "reference-family interval",
+    "four-image primary endpoint",
+    "scientific superiority",
+    "physical truth",
+    "human-work advantage",
+    "Gate A operator acceptance"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "artifact_id": "reiyah.multiorg.analysis-projection.contract",
+  "version": "0.1.0",
+  "status": "authored_for_preexecution_qualification",
+  "at": "2026-10-12T18:20:01.834003+00:00",
+  "scientific_base_sha256": "d27a73f692ab15ec7402ff052c8a7aa0a0ef3539d89dda0ec1c38b8588ce6f08",
+  "original_worker_sha256": "9a708bf6a22e9350980e0d08d0e90c2c56f7b9cc4a73b7fd55f22c9ef3f33e0c",
+  "projection_sha256": "7cf0103cd7876585004310f6a3457add033bab2bc91b8b5ca750b15982a47425",
+  "helper_qualification_freeze_sha256": "44b5653b7ff6db376562f27653fe583a62617a5d710b28748f4461117d292f8d",
+  "image_id": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+  "models": [
+    "faster",
+    "yolo"
+  ],
+  "exposure": "Prior diagnostic on the first Faster tile exposed2rows, one original-storage-retained all-zero box with score0.3579423129558563. Remaining tiles and YOLO unobserved; no untouched-cohort claim.",
+  "scientific_change": "A separately specified analysis-only endpoint permits finite excluded low-score rows to have nonpositive extent or unassessed post-transform geometry. This is not the original complete-storage endpoint and does not rescue or relabel prior failures.",
+  "all_raw_obligations": [
+    "Floating detection arrays [1,N,5] and integer labels [1,N]",
+    "All raw scores finite and in[0,1]",
+    "All raw and float32-converted coordinates finite, including excluded low rows",
+    "Class0 on original float32 storage-score>=0.05 rows; original allowance for below-floor padded labels preserved",
+    "Count every raw row against200000 per image/model before projection",
+    "Retain every returned raw detection and label array privately with exact NPY/hash/shape/dtype, or refuse the whole analysis endpoint"
+  ],
+  "analysis_obligations": [
+    "Original float32 score strictly greater than0.5 determines membership",
+    "Selected high rows retain order and are passed to the exact-bound original decode_output for coordinates and floor guard",
+    "High geometry failures reject; helper raw-high guard may use a distinct ValueError while delegated original floor exception remains",
+    "Original stable fixed-score hard NMS IoU0.5 on the concatenated high rows in complete tile order",
+    "No repair, clipping, diameter filtering, score updating, threshold/model/image change or low-row imputation"
+  ],
+  "raw_retention": {
+    "per_array_file_bytes": 67108864,
+    "total_raw_array_file_bytes": 67108864,
+    "pickle": false,
+    "partial_files_on_failure": "retained as partial; no completion result"
+  },
+  "completion_scope": "all_declared_tiles_analysis_score_float32_strictly_gt_0.5_only",
+  "storage_output_status": "not_defined_or_exported_by_this_contract",
+  "all_tiles_required": true,
+  "expected_actual_first_image_tiles_per_model": 156,
+  "analysis_id_semantics": "original raw row ordinal across ordered tiles, accompanied by tile ordinal and within-tile original row index",
+  "low_anomaly_reporting": "Count raw and float32 finite extent anomalies both across all excluded low rows and original storage-eligible subset; ordinary below-floor padding must not be called a model defect. Excluded low post-transform validity is not assessed.",
+  "limits": {
+    "wall_seconds": 600,
+    "sampled_rss_bytes": 3221225472,
+    "max_tiles_per_image": 512,
+    "max_raw_boxes_per_image": 200000,
+    "empirical_attempts": 1
+  },
+  "comparator_claim_scope": "Qualified fixed-score descending hard-NMS high-prefix invariance on valid full-storage inputs; no assertion of equivalence to an undefined malformed full-storage computation. No benefit or superiority claim.",
+  "stop": "Any refusal stops execution; no automatic retry, replacement or repairs. Matching requires separate admission; no cohort extension."
+}
