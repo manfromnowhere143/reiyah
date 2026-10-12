@@ -1,3 +1,75 @@
+# Current entry: next value-case dependency qualified, 12 October 2026
+
+Continuation version: 0.1.89. NEXT_SESSION/CONTINUATION version: 0.1.16.
+Read the [case decision](research-decisions/value-case-admission-2026-10-12.md)
+and [admission/source record](../evidence/value-case-admission-2026-10-12.json).
+No experiment is admitted and no new scientific result is claimed.
+
+Daniel asked to move to the next dependency after the completed MVT study.
+Fresh owned candidate starts at f52139334414e4dc36cbb266ebcfc952c52fdce7 under
+`~/.codex/reports/reiyah/value-case-qualification-2026-10-12-c1c0bfl9/candidate`.
+Controller remains clean at historical 74fbacc; prior owners and all closed
+studies remain unchanged. Explicit parallel authorization supports one source
+qualification and one local interface review, within this same investigation.
+
+One targeted new lead is TIER IV METEOR, Git dc193a81, HF model 01a5f6d7 and demo
+bd5f94dc. Pinned docs describe promotion of sparse v157 over dense v151 device
+default; whether this remains unresolved internally is unconfirmed. The public
+model inventory has 18 files and one v157 checkpoint/export; the demo inventory
+has 7,978 files and no ground truth according to its card. Internal validation
+records are not public in the inspected release. A source-described choice is
+not a participating Reiyah decision owner or complete A/B evidence packet.
+
+No complete saved paired predictions/evaluation roster, actual review channel
+or full human-work comparison was supplied by these materials. Do not claim the
+upstream comparison invalid or the records nonexistent. The demo's separate
+LICENSE is CC BY4.0; its identical Git/HF card retains conflicting license,
+training-membership and anonymization text. Both declarations are preserved,
+without legal resolution or inferring actual pixel content. No images, weights,
+raw model outputs, sensor payloads, inference, training or external message.
+
+Eleven complete HTTP captures retain 1,508,032 bytes. Two web discovery calls;
+provider underlying transport counts unknown. All source bodies private, public
+descriptors only. Source hashes rechecked. Local review binds 11 existing interface
+files and identifies the actual remaining gap: a consequential decision/loss,
+actual evidence-review procedure, and participating workflow. Existing forms,
+matching/checking interfaces and cost arithmetic already exist. The historical
+64-image/73-case runner and receipt collector are case-specific, not a generic
+human service. Their null human-work fields must not become file-lookup times.
+No new timer, schema, synthetic trial or speculative metric adapter was added.
+
+A public planning/closed-loop metric cannot be coerced into native additive
+FP/FN matching. Any adapter must follow a real endpoint and complete episode/
+input contract. A fresh workflow can collect full work prospectively after
+freezing assignment, correctness and cost measurement. Historical timesheets
+and completed Reiyah-arm outcomes are not required to propose that trial.
+Unknown person time, machine duration, waiting, tokens and money stay distinct.
+
+Next: supply one real pending decision, either Daniel's own Reiyah decision or
+an authorized team's: two alternatives, consequential action, correctness and
+unresolved-outcome obligations, available reviewer, existing records and access
+scope. A description is enough to start; partial records remain welcome. An
+external customer is not intrinsically required. Do not invent the decision,
+reviewer capability, full work or acceptance. The optional owner-choice question
+is pending; absence of a reply does not establish an owner or access scope.
+
+This METEOR qualification is COMPLETE; reopen only for material new records
+filling named gaps. No further generic search, old-study expansion, outreach
+polling or new framework is authorized by this record. Broad scientific research
+still has the existing bounded scope; this value trial specifically needs its
+actual inputs. Product expansion and superiority claims remain unsupported.
+
+The nine research-consistency checks pass and the unchanged offline example
+reproduces exactly. Closeout verifies all new bindings and links. Historical transcripts are bound, not replayed;
+Gate A release validation is not run and operator acceptance remains absent.
+README and all seven diagrams remain byte-identical. Preserve historical handoff
+bytes. Existing eligible publication/readback authority applies. Owner cap 45 min,
+16 MiB sources, 64 MiB private bytes excluding candidate; research 24 direct captures/
+8 web calls and separate publication 24 HTTP calls. Historical effort unknown, not
+reset. No unattended work starts and no third-party outreach is sent.
+
+Earlier entries follow unchanged.
+
 # Current entry: response-order comparison completed, 12 October 2026
 
 Continuation version: 0.1.88. NEXT_SESSION/CONTINUATION version: 0.1.15.

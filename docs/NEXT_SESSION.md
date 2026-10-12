@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.15`
+Version: `0.1.16`
 
 Lifecycle status: `proposed`
 
@@ -111,6 +111,17 @@ checks, source identity and repeatability pass. Recorded-field ranks do not
 establish calibrated speed or an online acquisition policy. This finite study
 is closed. Preserve decision-specific evidence requirements; do not optimize a
 selector before a fresh owner-defined value case supplies them.
+
+The [next value-case qualification](research-decisions/value-case-admission-2026-10-12.md)
+checks one new concrete METEOR deployment lead. Its public release does not
+supply a saved candidate pair, evaluation reference population or actual review
+workflow. That source is now closed pending material new records. Existing
+intake and comparison tools are sufficient to begin from a real decision;
+another generic framework is not the dependency. Daniel can own a real Reiyah
+choice, or an authorized team can supply one. Name the alternatives, consequential
+action, correctness obligations, reviewer and available records. Full work can
+be collected prospectively after the protocol freezes; do not require future
+trial outcomes to exist before preparation. No new case or superiority is established.
 
 ## Start here
 
