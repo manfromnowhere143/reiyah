@@ -1,0 +1,153 @@
+{
+  "artifact_id": "reiyah.multiorg.validity-correction.result",
+  "version": "0.4.0",
+  "lifecycle_status": "exploratory",
+  "date": "2026-10-13",
+  "completion_scope": "one exposed tile; corrected observation export agrees with direct origin removal",
+  "image_id": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+  "tile_ordinal": 9,
+  "source_model_sha256": "fbf748e6d8b896bed9ee1eb15d5dd1409369de5e32c4746c4173aa4c10e7bebd",
+  "corrected_observation_sha256": "a26f494f548ed8410a809252b2acaae97e2efa189fcee963a5b8a09dd4c13b63",
+  "untapped_corrected_sha256": "c353edffac7feb81323a098579946986d4024fe37ed53dd9864577c52b581b4e",
+  "untapped_corrected_executed": false,
+  "tensor_c_order_sha256": "675a5f2aba2565e568feeb93fddc20aaed89a43a9bbeea393bf6336b84ae49d1",
+  "baseline_prior_taps_reproduced_bitwise": 31,
+  "unchanged_prefix_neural_decoded_taps": 15,
+  "raw_and_valid_scores_and_boxes_bitwise_preserved": true,
+  "rpn_pre_append_rows": 65,
+  "roi_rows": 66,
+  "excluded_origins": [
+    {
+      "decoded_box_xyxy": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "masked_foreground_score": 0.0,
+      "reason": "explicit appended RPN operand by index",
+      "roi_row": 65,
+      "rpn_concat_row": 65,
+      "unmasked_foreground_score": 0.5355819463729858
+    }
+  ],
+  "original_final_rows": 6,
+  "corrected_final_rows": 5,
+  "nonpadding_final_rows_preserved_bitwise": 4,
+  "final_padding_metadata_rows": 1,
+  "final_rows": [
+    {
+      "box_xyxy": [
+        0.0,
+        535.197265625,
+        55.93745803833008,
+        622.3070068359375
+      ],
+      "final_row": 0,
+      "origin": "pre_append_rpn_candidate",
+      "positive_raw_extent": true,
+      "roi_row": 3,
+      "rpn_concat_row": 3,
+      "score": 0.9177582859992981
+    },
+    {
+      "box_xyxy": [
+        147.88525390625,
+        577.9185791015625,
+        174.15719604492188,
+        600.4820556640625
+      ],
+      "final_row": 1,
+      "origin": "pre_append_rpn_candidate",
+      "positive_raw_extent": true,
+      "roi_row": 1,
+      "rpn_concat_row": 1,
+      "score": 0.5544297099113464
+    },
+    {
+      "box_xyxy": [
+        74.82862854003906,
+        483.67926025390625,
+        103.09419250488281,
+        511.38934326171875
+      ],
+      "final_row": 2,
+      "origin": "pre_append_rpn_candidate",
+      "positive_raw_extent": true,
+      "roi_row": 2,
+      "rpn_concat_row": 2,
+      "score": 0.502453625202179
+    },
+    {
+      "box_xyxy": [
+        274.05084228515625,
+        708.9259033203125,
+        295.13543701171875,
+        731.3751220703125
+      ],
+      "final_row": 3,
+      "origin": "pre_append_rpn_candidate",
+      "positive_raw_extent": true,
+      "roi_row": 6,
+      "rpn_concat_row": 6,
+      "score": 0.1301034390926361
+    },
+    {
+      "box_xyxy": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "final_row": 4,
+      "origin": "final_padding_metadata",
+      "positive_raw_extent": false,
+      "roi_row": null,
+      "rpn_concat_row": null,
+      "score": 0.0
+    }
+  ],
+  "direct_reference_selected_roi_indices": [
+    3,
+    1,
+    2,
+    6
+  ],
+  "direct_reference_final_outputs_bitwise_equal": true,
+  "forward_passes": 2,
+  "actual_attempts": 1,
+  "private_arrays": 64,
+  "private_array_bytes": 39362,
+  "outer_wall_seconds": 4.8459308330202475,
+  "supervisor_wall_seconds": 4.795897333009634,
+  "peak_sampled_rss_bytes": 764739584,
+  "authored_controls": {
+    "graph_mask": 20,
+    "capture_mocked_sessions": 20,
+    "separate_reference": 15
+  },
+  "frozen_bindings_unchanged": 125,
+  "runtime_inventory_unchanged_except_timestamp": true,
+  "hashed_RECORD_entries": 5926,
+  "distributions": 17,
+  "unhashed_RECORD_entries": 17,
+  "primary_capture_requests": 12,
+  "primary_capture_bytes": 1586880,
+  "duplicate_capture_requests": 2,
+  "model_image_dependency_downloads": 0,
+  "complete_models": 0,
+  "complete_pairs": 0,
+  "empirical_metric_comparisons": 0,
+  "empirical_owner_closed": true,
+  "limits": [
+    "Exact exposed graph/tensor and CPU runtime only; not independent science or accuracy evidence.",
+    "Scalar float32 operations follow retained ORT1.23.0 CPU source; not a universal compiled-kernel rounding proof.",
+    "Finite genuine internal malformed boxes remain in NMS; only final score>.5 positive extent is an admission obligation.",
+    "Final appended row is metadata. No geometry-only filtering, model training or threshold change.",
+    "The untapped corrected export is statically qualified only.",
+    "Origin-valid means pre-append RPN candidate, not physically real or free of earlier masking.",
+    "No prevalence, accuracy, published-ranking impact, automotive transfer, novelty or work advantage established.",
+    "One assisted investigation; separately authored checking is not independent scientific replication."
+  ],
+  "terms": "MultiOrg-derived observations CC BY-NC-SA 4.0; source model CC BY 4.0. Code has repository license plus stated third-party notices."
+}

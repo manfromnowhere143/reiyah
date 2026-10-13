@@ -1,3 +1,73 @@
+# Current entry: origin-preserving correction checked, 13 October 2026
+
+Continuation version: 0.1.94. NEXT_SESSION/CONTINUATION version: 0.1.21.
+Read the [correction result](../research/multiorg-reference-admission/0.4.0/README.md),
+[exact summary](../research/multiorg-reference-admission/0.4.0/result.json) and
+[complete-pair decision](../research/multiorg-reference-admission/0.4.0/DECISION.md).
+
+Fresh verified base was 6d2d61a71f78b1fcd452d84a82dfed76d7574873. Work belongs to
+`multiorg-validity-correction-2026-10-13-sm4witc3`, in a fresh same-repository
+candidate. Historical controller remains clean at 74fbacc; prior owners and
+failed protocols remain unchanged. Existing parallel authorization supported
+source review, correction/capture implementation and separate reference checking.
+
+The exact batch-one graph variant identifies explicit appended RPN origin by
+TopK6 index < pre-append row count, then masks only that origin's foreground
+selection score before final TopK/NMS/caps. All source weights and other fields
+restore exactly after removing seven nodes, one rename and the batch guard.
+Genuine malformed geometry remains available for explicit refusal. No blanket
+zero-box filter or threshold change was introduced.
+
+One separately frozen 60-second / 3 GiB attempt ran the prior instrumented graph
+and corrected observation graph on the same exposed tile9. All 31 baseline taps
+reproduce the previous observation bitwise. The 15 designated unchanged prefix,
+neural and decoded tensors plus original unmasked scores are preserved. Only
+appended ROI65 is masked; its original score was 0.5355819463729858. A separately
+authored physical-removal reference checks all selected identities and final
+bytes. Four non-padding detections remain bitwise unchanged, three above 0.5,
+plus one final zero-score metadata row. Six original final rows become five.
+The output cap 100 was inactive; no recovered slot or accuracy benefit observed.
+
+Twenty graph, 20 capture and 15 reference controls passed before execution. Five
+graph controls inspect/mutate the source graph statically. All 55 passed again
+from staged public code. The first staging wrapper reported expected 55 while
+omitting the optional five static controls; it actually ran 50. That receipt is
+retained. The wrapper now counts actual results, supports --source explicitly,
+and the corrected staged replay runs 55. This did not affect empirical execution.
+An earlier tiny-ONNX integer-Min fixture load failure is also retained; only
+the fixture cap operation changed before the successful qualification.
+
+Actual execution retained 64 arrays / 39,362 bytes, peak sampled RSS 764,739,584 bytes.
+All 125 frozen bindings match. Runtime before/after audit differs only by timestamp:
+17 distributions, 5,926 hashed RECORD entries, 17 unhashed RECORD self-entries;
+system libraries remain outside the audit. Worker network denied before Python.
+The tested observation graph SHA is a26f494f548ed8410a809252b2acaae97e2efa189fcee963a5b8a09dd4c13b63.
+Ordinary corrected graph c353edff has static checks only; do not claim empirical
+parity or use it silently instead. Empirical owner is closed.
+
+Fresh primary-source review retains 12 captures / 1,586,880 bytes including 2
+duplicates. Inspected current MMDeploy generic NMS/ROI paths are unchanged from
+the prior tag; related RTMDet-ins padding work prevents a novelty inference.
+ORT 1.23.0 threshold/tie/float32 semantics are checked against authored controls.
+The scalar suppression routine re-expresses the runtime helper and retains full
+MIT/Apache notices. Source payloads, models, image and tapped arrays stay private.
+
+Next: a separately qualified complete-first-image adapter for the exact tested
+observation variant and original YOLO candidate. Request all 33 outputs, map
+dets/labels by name, check origin/direct selection per tile and complete coverage.
+Do not construct original baselines from corrected arrays. Original-versus-
+corrected preservation is established only on the exposed tile with two actual
+runs. Preserve fixed image/cohort/preprocessing/analysis/reference semantics;
+freeze a separate 600-second / 3 GiB attempt and explicit array budget before any
+new inference. No automatic retry, tuning or substitution. A complete model pair,
+reference comparison and full-work advantage remain absent. Gate A remains
+operator-unaccepted; broad product expansion stopped. Security's exact GitGuardian
+occurrence mapping remains pending; no alert dismissed or detector disabled.
+
+Publication checks and exact readback are separate publisher observations.
+
+---
+
 # Current entry: scored zero box traced to RPN padding, 13 October 2026
 
 Continuation version: 0.1.93. NEXT_SESSION/CONTINUATION version: 0.1.20.

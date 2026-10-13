@@ -1,0 +1,125 @@
+{
+  "artifact_id": "reiyah.multiorg.validity-correction.controls",
+  "version": "0.4.0",
+  "status": "passed",
+  "scope": "Authored software controls, no empirical performance endpoint or independent replication",
+  "graph_mask": {
+    "controls": [
+      "different_source_graph_rejected",
+      "cap_two_recovers_both_genuine_slots",
+      "post_cap_deletion_counterexample_retained",
+      "empty_genuine_population_masks_only_placeholder",
+      "genuine_equal_zero_geometry_remains_origin_valid",
+      "genuine_high_invalid_box_remains_available_for_explicit_refusal",
+      "reordered_placeholder_is_identified_by_index_not_position",
+      "equal_genuine_scores_preserve_lower_ROI_index_order",
+      "low_genuine_zero_score_keeps_validity_without_forced_detection",
+      "positive_threshold_boundary_preserved",
+      "exact_existing_threshold_equality_remains_excluded_by_NMS",
+      "IoU_exactly_half_retains_both",
+      "IoU_above_half_after_one_float32_edge_step_suppresses",
+      "identical_tied_genuine_candidates_keep_lower_input_index",
+      "batch2_rejected_by_ONNX_runtime_input_contract",
+      "exact_source_static_correction_and_preservation_pass",
+      "undeclared_original_node_change_rejected",
+      "altered_batch_guard_rejected",
+      "missing_observation_rejected",
+      "duplicate_original_output_rejected"
+    ],
+    "count": 20,
+    "empirical_forward_passes": 0,
+    "runtime_command": [
+      "PRIVATE_REPORTS/owned-trial-frontier-2026-10-12-pz2p4ld2/runtime/venv/bin/python",
+      "-B",
+      "PRIVATE_OWNER/implementation/qualify_correction.py",
+      "--runtime-controls",
+      "--output",
+      "PRIVATE_OWNER/implementation/qualification-v5"
+    ],
+    "scripts": {
+      "build_correction.py": "8469accd0ee568e65c3e690cd428245faf7040374c9abe36df269e09b050857c",
+      "qualify_correction.py": "dedbfaa82822f6596a02ced84c320bcadf2bd625536bef64c92ffda625551ea2"
+    },
+    "static_source_sha256": "fbf748e6d8b896bed9ee1eb15d5dd1409369de5e32c4746c4173aa4c10e7bebd",
+    "status": "passed"
+  },
+  "capture": {
+    "controls": [
+      "two_pass_mock_capture_with_bool_mask",
+      "baseline_mismatch_stops_before_corrected",
+      "nonfinite_corrected_retains_arrays_without_completion",
+      "unexpected_output_roster_rejected",
+      "nonCPU_provider_rejected",
+      "unsupported_dynamic_corrected_batch_rejected",
+      "wrong_bool_mask_dtype_rejected",
+      "source_mutation_during_execution_rejected",
+      "runtime_failure_preserves_exception_and_partial_capture",
+      "source_bytes_mismatch_before_any_forward",
+      "path_traversal_rejected",
+      "duplicate_JSON_rejected",
+      "unexpected_manifest_property_rejected",
+      "empirical_tensor_contract_cannot_be_relaxed_by_manifest",
+      "noninteger_tensor_shape_rejected",
+      "duplicate_tap_rejected",
+      "prior_array_tamper_rejected",
+      "prior_array_traversal_rejected",
+      "support_ref_must_match_imported_file",
+      "logging_failure_preserves_original_runtime_exception"
+    ],
+    "count": 20,
+    "scope": "small authored arrays and mocked sessions; zero model forwards",
+    "scripts": {
+      "run_probe.py": "04de617d72f6e35b7caffa556d046531634b9a1df05f2f1ef8b00513c7f21004",
+      "test_run_probe.py": "a21af06c3fced4720bad7ece1cdf53a80df5872ec2f5904d7b6a199cdf7fd066",
+      "trace_support.py": "732264b47b54d68d5a5c8b89fedc2a4a1f8bacd42021e463424eb0e8390a12ff"
+    },
+    "status": "passed",
+    "test_overrides": "Only in-process unit tests replace numerical source/tensor pins with authored fixture identities."
+  },
+  "reference": {
+    "status": "authored_controls_passed_no_corrected_empirical_outputs_read",
+    "control_count": 15,
+    "test_wall_seconds": 0.111,
+    "scope": "One separately authored direct-removal reference; same assisted investigation, not independent scientific replication.",
+    "empirical_inference_by_reference": 0,
+    "contract_pending_parent_six_input_bindings": true,
+    "bindings": [
+      {
+        "path": "reference/check_correction.py",
+        "byte_size": 19065,
+        "sha256": "428579d22cfa49588c76172999c90beab3cb57e13a04540aa5bdc6ac413f1d7c"
+      },
+      {
+        "path": "reference/test_reference.py",
+        "byte_size": 11394,
+        "sha256": "6f085d84a1aa2013e8e927744dc305dada64d5645406f0b185f513dbb0a88dc9"
+      },
+      {
+        "path": "reference/PROOF_AND_SCOPE.md",
+        "byte_size": 6194,
+        "sha256": "ed80d9ffeecef9ddf61c49afc819d63f2f82eaef6e2306aa2a0d80c02c8b8923"
+      },
+      {
+        "path": "reference/THIRD_PARTY_NOTICES.md",
+        "byte_size": 14715,
+        "sha256": "5ed8be4b1a6e2fcc64bd99761f0d90473d04b77513dbb74d2e973c8997cbd8fb"
+      },
+      {
+        "path": "reference/controls.stdout",
+        "byte_size": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "reference/controls.stderr",
+        "byte_size": 1692,
+        "sha256": "2aa5c7a6ad34bae2fbe98db8dbd69e01c869c90d4e14762ef8e8a5210c25752b"
+      },
+      {
+        "path": "reference/QUALIFICATION-before-attribution.json",
+        "byte_size": 1208,
+        "sha256": "31b75ad6ed83f03674eedfb0311fa3c076ac94a6c4df436b4cb5510746f42b74"
+      }
+    ],
+    "qualification_change": "Checker docstring attribution only; mathematical and CLI behavior unchanged. Prior qualification retained beside this file."
+  }
+}

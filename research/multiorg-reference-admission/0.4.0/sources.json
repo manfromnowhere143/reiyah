@@ -1,0 +1,287 @@
+{
+  "artifact_id": "reiyah.multiorg.validity-correction.sources",
+  "version": "0.4.0",
+  "scope": "Source decision for a distinct batch-one graph variant and a direct-removal comparator. Not an empirical result or a novelty review.",
+  "capture_summary": {
+    "requests": 12,
+    "http_200": 12,
+    "response_bytes_including_duplicates": 1586880,
+    "unique_url_body_pairs": 10,
+    "unique_response_bytes": 1002082,
+    "duplicate_requests": 2,
+    "counting": "Every capture counts, including the two duplicated ONNX documentation requests. No request or response was excluded as redundant."
+  },
+  "captures": [
+    {
+      "id": "parent-onnx-nms",
+      "capture_role": "parent",
+      "url": "https://onnx.ai/onnx/operators/onnx__NonMaxSuppression.html",
+      "retrieved_at": "2026-10-13T19:01:37.910538+00:00",
+      "http_status": 200,
+      "response_bytes": 308787,
+      "sha256": "734b25659d439ad68f874311c0bf845d142eb61af9df2e5c4b4860df9cf039f1",
+      "access": "public anonymous",
+      "version_scope": "ONNX operator version 11 section in captured documentation",
+      "terms": {
+        "label": "official documentation; no payload redistribution",
+        "basis_and_limits": "Official ONNX NonMaxSuppression version 11 documentation. Existing installed ONNX Apache-2.0 license retained as context; this packet publishes a pointer and paraphrase, not documentation payload."
+      },
+      "publication": "Primary response body retained privately. Public packet contains integrity descriptors, citations and method synthesis only.",
+      "custody": "Complete body and retained metadata checked. Metadata records one retrieval timestamp; no separate request-start/response-completion times are asserted.",
+      "capture_number": 1
+    },
+    {
+      "id": "parent-onnx-topk",
+      "capture_role": "parent",
+      "url": "https://onnx.ai/onnx/operators/onnx__TopK.html",
+      "retrieved_at": "2026-10-13T19:01:38.912264+00:00",
+      "http_status": 200,
+      "response_bytes": 276011,
+      "sha256": "b858f39f2f74dadb1372c8fa5e1e167e606774b2438721ce846ad81a683c2d5a",
+      "access": "public anonymous",
+      "version_scope": "ONNX operator version 11 section in captured documentation",
+      "terms": {
+        "label": "official documentation; no payload redistribution",
+        "basis_and_limits": "Official ONNX TopK version 11 section. Existing installed ONNX Apache-2.0 license retained as context; this packet publishes a pointer and paraphrase, not documentation payload."
+      },
+      "publication": "Primary response body retained privately. Public packet contains integrity descriptors, citations and method synthesis only.",
+      "custody": "Complete body and retained metadata checked. Metadata records one retrieval timestamp; no separate request-start/response-completion times are asserted.",
+      "capture_number": 2
+    },
+    {
+      "id": "review-mmdeploy-main.json",
+      "capture_role": "source_review",
+      "url": "https://api.github.com/repos/open-mmlab/mmdeploy/commits/main",
+      "attempted_at": "2026-10-13T19:01:52.134851+00:00",
+      "completed_at": "2026-10-13T19:01:53.669127+00:00",
+      "http_status": 200,
+      "response_bytes": 6671,
+      "sha256": "8d19f3476384928b77ab268e1718163dfbc01fd43a3db56fe7bb6ea91cc038c0",
+      "access": "Public unauthenticated HTTP; no login or tokens supplied.",
+      "version_scope": "MMDeploy commit 3f8604bd72e8e15d06b2e0552fe2fdb8f8de33c4",
+      "terms": {
+        "label": "public_commit_metadata",
+        "basis_and_limits": "GitHub public commit metadata; code repository license is not a blanket license for API metadata. No third-party payload redistributed."
+      },
+      "publication": "Primary response body retained privately. Public packet contains integrity descriptors, citations and method synthesis only.",
+      "custody": "Complete response body and metadata retained.",
+      "capture_number": 3
+    },
+    {
+      "id": "review-ort-nms.cc",
+      "capture_role": "source_review",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.23.0/onnxruntime/core/providers/cpu/object_detection/non_max_suppression.cc",
+      "attempted_at": "2026-10-13T19:01:53.730247+00:00",
+      "completed_at": "2026-10-13T19:01:54.255530+00:00",
+      "http_status": 200,
+      "response_bytes": 7993,
+      "sha256": "9f28007045f4f733dbdc174d4afb288c110690fe249c1d008321071582c48bb7",
+      "access": "Public unauthenticated HTTP; no login or tokens supplied.",
+      "version_scope": "ORT v1.23.0 source tag; content hash pinned, tag commit not separately resolved",
+      "terms": {
+        "label": "Apache-2.0 source header",
+        "basis_and_limits": "Copyright 2015 The TensorFlow Authors. All Rights Reserved; modifications copyright Microsoft. Exact file header governs; not blanket MIT."
+      },
+      "publication": "Primary response body retained privately. Public packet contains integrity descriptors, citations and method synthesis only.",
+      "custody": "Complete response body and metadata retained.",
+      "capture_number": 4
+    },
+    {
+      "id": "review-ort-nms.h",
+      "capture_role": "source_review",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.23.0/onnxruntime/core/providers/cpu/object_detection/non_max_suppression.h",
+      "attempted_at": "2026-10-13T19:01:54.305705+00:00",
+      "completed_at": "2026-10-13T19:01:54.740906+00:00",
+      "http_status": 200,
+      "response_bytes": 1282,
+      "sha256": "7ef7470bc13f0b8d1580334f854a888a3b22ff82008919b72f43546bfeceb44d",
+      "access": "Public unauthenticated HTTP; no login or tokens supplied.",
+      "version_scope": "ORT v1.23.0 source tag; content hash pinned, tag commit not separately resolved",
+      "terms": {
+        "label": "MIT source header",
+        "basis_and_limits": "Copyright (c) Microsoft Corporation. All rights reserved. MIT notice retained from installed runtime."
+      },
+      "publication": "Primary response body retained privately. Public packet contains integrity descriptors, citations and method synthesis only.",
+      "custody": "Complete response body and metadata retained.",
+      "capture_number": 5
+    },
+    {
+      "id": "review-ort-nms-helper.h",
+      "capture_role": "source_review",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.23.0/onnxruntime/core/providers/cpu/object_detection/non_max_suppression_helper.h",
+      "attempted_at": "2026-10-13T19:02:19.876024+00:00",
+      "completed_at": "2026-10-13T19:02:20.932011+00:00",
+      "http_status": 200,
+      "response_bytes": 4566,
+      "sha256": "04d0f16ed4b69ac24c1756f71ed3aaf79ffba56f764fc4443b1102013c7ea96d",
+      "access": "Public unauthenticated HTTP; no login or tokens supplied.",
+      "version_scope": "ORT v1.23.0 source tag; content hash pinned, tag commit not separately resolved",
+      "terms": {
+        "label": "MIT source header",
+        "basis_and_limits": "Copyright (c) Microsoft Corporation. All rights reserved. MIT notice retained; scalar suppression routine is re-expressed with attribution, not described as wholly original."
+      },
+      "publication": "Primary response body retained privately. Public packet contains integrity descriptors, citations and method synthesis only.",
+      "custody": "Complete response body and metadata retained.",
+      "capture_number": 6
+    },
+    {
+      "id": "review-mmdeploy-current-nms.py",
+      "capture_role": "source_review",
+      "url": "https://raw.githubusercontent.com/open-mmlab/mmdeploy/3f8604bd72e8e15d06b2e0552fe2fdb8f8de33c4/mmdeploy/mmcv/ops/nms.py",
+      "attempted_at": "2026-10-13T19:02:20.981001+00:00",
+      "completed_at": "2026-10-13T19:02:21.584011+00:00",
+      "http_status": 200,
+      "response_bytes": 29694,
+      "sha256": "23e068fb278eccb52e2ea05fe780874f99ccdcbaf2eb1d3076456e92c47079d7",
+      "access": "Public unauthenticated HTTP; no login or tokens supplied.",
+      "version_scope": "MMDeploy commit 3f8604bd72e8e15d06b2e0552fe2fdb8f8de33c4",
+      "terms": {
+        "label": "Apache-2.0 repository source",
+        "basis_and_limits": "OpenMMLab copyright header; retained Apache-2.0 repository LICENSE from prior tag. Current file byte-identical to prior retained file. No source payload redistributed."
+      },
+      "publication": "Primary response body retained privately. Public packet contains integrity descriptors, citations and method synthesis only.",
+      "custody": "Complete response body and metadata retained.",
+      "capture_number": 7
+    },
+    {
+      "id": "review-onnx-nms.html",
+      "capture_role": "source_review",
+      "url": "https://onnx.ai/onnx/operators/onnx__NonMaxSuppression.html",
+      "attempted_at": "2026-10-13T19:02:21.631701+00:00",
+      "completed_at": "2026-10-13T19:02:24.024698+00:00",
+      "http_status": 200,
+      "response_bytes": 308787,
+      "sha256": "734b25659d439ad68f874311c0bf845d142eb61af9df2e5c4b4860df9cf039f1",
+      "access": "Public unauthenticated HTTP; no login or tokens supplied.",
+      "version_scope": "ONNX operator version 11 section in captured documentation",
+      "terms": {
+        "label": "official documentation; no payload redistribution",
+        "basis_and_limits": "Official ONNX NonMaxSuppression version 11 documentation. Existing installed ONNX Apache-2.0 license retained as context; this packet publishes a pointer and paraphrase, not documentation payload."
+      },
+      "publication": "Primary response body retained privately. Public packet contains integrity descriptors, citations and method synthesis only.",
+      "custody": "Complete response body and metadata retained.",
+      "capture_number": 8,
+      "duplicate_of_capture": 1
+    },
+    {
+      "id": "review-onnx-topk.html",
+      "capture_role": "source_review",
+      "url": "https://onnx.ai/onnx/operators/onnx__TopK.html",
+      "attempted_at": "2026-10-13T19:02:24.072875+00:00",
+      "completed_at": "2026-10-13T19:02:24.529906+00:00",
+      "http_status": 200,
+      "response_bytes": 276011,
+      "sha256": "b858f39f2f74dadb1372c8fa5e1e167e606774b2438721ce846ad81a683c2d5a",
+      "access": "Public unauthenticated HTTP; no login or tokens supplied.",
+      "version_scope": "ONNX operator version 11 section in captured documentation",
+      "terms": {
+        "label": "official documentation; no payload redistribution",
+        "basis_and_limits": "Official ONNX TopK version 11 section. Existing installed ONNX Apache-2.0 license retained as context; this packet publishes a pointer and paraphrase, not documentation payload."
+      },
+      "publication": "Primary response body retained privately. Public packet contains integrity descriptors, citations and method synthesis only.",
+      "custody": "Complete response body and metadata retained.",
+      "capture_number": 9,
+      "duplicate_of_capture": 2
+    },
+    {
+      "id": "review-ort-topk.cc",
+      "capture_role": "source_review",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.23.0/onnxruntime/core/providers/cpu/math/top_k.cc",
+      "attempted_at": "2026-10-13T19:02:39.563159+00:00",
+      "completed_at": "2026-10-13T19:02:43.020043+00:00",
+      "http_status": 200,
+      "response_bytes": 27416,
+      "sha256": "17b98785f4adcd03cf5a38e8b047c23180d311a7ad22b3e4cf3bc4aadf43e393",
+      "access": "Public unauthenticated HTTP; no login or tokens supplied.",
+      "version_scope": "ORT v1.23.0 source tag; content hash pinned, tag commit not separately resolved",
+      "terms": {
+        "label": "Apache-2.0 source header",
+        "basis_and_limits": "Copyright (c) 2016-present, Facebook, Inc. Exact file header governs; not blanket MIT."
+      },
+      "publication": "Primary response body retained privately. Public packet contains integrity descriptors, citations and method synthesis only.",
+      "custody": "Complete response body and metadata retained.",
+      "capture_number": 10
+    },
+    {
+      "id": "parent-current-roi-head",
+      "capture_role": "parent",
+      "url": "https://raw.githubusercontent.com/open-mmlab/mmdeploy/3f8604bd72e8e15d06b2e0552fe2fdb8f8de33c4/mmdeploy/codebase/mmdet/models/roi_heads/standard_roi_head.py",
+      "retrieved_at": "2026-10-13T19:03:29.674766+00:00",
+      "http_status": 200,
+      "response_bytes": 5120,
+      "sha256": "b3bdf6ca78747a8200c8b89fd8d59d0ba1d3a5a2b04a35766e002b5470504aee",
+      "access": "public anonymous",
+      "version_scope": "MMDeploy commit 3f8604bd72e8e15d06b2e0552fe2fdb8f8de33c4",
+      "terms": {
+        "label": "Apache-2.0 repository source",
+        "basis_and_limits": "OpenMMLab copyright header; retained prior-tag Apache-2.0 LICENSE. Current file byte-identical to prior retained file. No source payload redistributed."
+      },
+      "publication": "Primary response body retained privately. Public packet contains integrity descriptors, citations and method synthesis only.",
+      "custody": "Complete body and retained metadata checked. Metadata records one retrieval timestamp; no separate request-start/response-completion times are asserted.",
+      "capture_number": 11
+    },
+    {
+      "id": "parent-padding-issue-search",
+      "capture_role": "parent",
+      "url": "https://api.github.com/search/issues?q=repo%3Aopen-mmlab%2Fmmdeploy+padding+NMS&per_page=20",
+      "retrieved_at": "2026-10-13T19:03:31.246513+00:00",
+      "http_status": 200,
+      "response_bytes": 334542,
+      "sha256": "d87d926af6ac4852cee7251395e6dc5d81616abddf491ecb9452f5a4be46d72b",
+      "access": "public anonymous",
+      "version_scope": "One query, first 20 of 23 results, captured 2026-10-13; exact response hash",
+      "terms": {
+        "label": "public issue and pull-request metadata; author content",
+        "basis_and_limits": "Public API metadata and author-supplied issue/PR bodies. Repository source-code license does not establish a blanket license for discussion content. No bodies, comments or patches redistributed."
+      },
+      "publication": "Primary response body retained privately. Public packet contains integrity descriptors, citations and method synthesis only.",
+      "custody": "Complete body and retained metadata checked. Metadata records one retrieval timestamp; no separate request-start/response-completion times are asserted.",
+      "capture_number": 12
+    }
+  ],
+  "upstream_scope": {
+    "observed_main_commit": "3f8604bd72e8e15d06b2e0552fe2fdb8f8de33c4",
+    "commit_date": "2024-09-30T02:32:03Z",
+    "main_checked_at": "2026-10-13T19:01:52.134851+00:00",
+    "current_nms_and_roi_files_equal_prior_v1_3_1": true,
+    "original_model_exporter_commit": "unknown",
+    "related_PR": {
+      "number": 2584,
+      "url": "https://github.com/open-mmlab/mmdeploy/pull/2584",
+      "created_at": "2023-12-01T13:33:30Z",
+      "closed_at": "2023-12-06T09:29:48Z",
+      "state": "closed",
+      "merged_at_field": null,
+      "retained_scope": "Search-item body and metadata only; diff, comments and linked issue bodies were not acquired.",
+      "relevance": "Author describes RTMDet-ins box/mask count mismatch caused by padding before keep_top. This is related prior padding work, not an established fix for the traced RPN-to-ROI chain."
+    },
+    "search_limit": "One query, first 20 of 23 results. No claim of exhaustive prior art or absence of an upstream correction."
+  },
+  "reused_terms": {
+    "dataset_models_and_derived_observations": "../0.1.0/NOTICE.md",
+    "source_trace": "../0.3.1/sources.json",
+    "reference_source_notice": "THIRD_PARTY_NOTICES.md",
+    "payloads": "Images, weights, raw output arrays, primary documentation and upstream implementation bodies remain private. Derived MultiOrg observations retain the prior CC BY-NC-SA 4.0 notice; software attribution is separate."
+  },
+  "nonclaims": [
+    "No exact original exporter version or configuration identified.",
+    "No latest-release repair, novelty, model quality, safety, complete-pair or work-advantage conclusion.",
+    "Checksums and multiple authored implementations are integrity and checking evidence within one assisted investigation."
+  ],
+  "license_text_bindings": [
+    {
+      "license": "MIT",
+      "retained_origin": "installed ONNX Runtime 1.23.0 onnxruntime/LICENSE",
+      "bytes": 1073,
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+      "publication": "Full license and copyright notice included in THIRD_PARTY_NOTICES.md."
+    },
+    {
+      "license": "Apache-2.0",
+      "retained_origin": "https://raw.githubusercontent.com/open-mmlab/mmdeploy/bc75c9d6c8940aa03d0e1e5b5962bd930478ba77/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "publication": "Previously retained full license text included in THIRD_PARTY_NOTICES.md; no new request."
+    }
+  ]
+}

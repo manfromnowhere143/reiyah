@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.20`
+Version: `0.1.21`
 
 Lifecycle status: `proposed`
 
@@ -160,14 +160,27 @@ which the ROI head scores 0.5355819463729858. All 6 final rows are checked; the 
 is one exposed tile, not a completed model/pair or a prevalence claim. 34 software
 controls pass. The empirical owner is closed.
 
-Next follow the [separate correction decision](../research/multiorg-reference-admission/0.3.1/DECISION.md):
-qualify a graph-specific export variant that preserves proposal origin and
-excludes proven padding before final NMS/caps. A finite counterexample shows
-why post-cap removal can lose a genuine slot. Compare to a direct implementation,
-retain genuine invalid geometry, and test empty/tie/batch/cap cases. Then freeze
-a separate bounded corrected-tile check before a complete first-image pair trial.
-No coordinate-only deletion, threshold tuning, image/model replacement or cohort
-extension; earlier failed results remain failed.
+The [distinct origin-preserving correction](../research/multiorg-reference-admission/0.4.0/README.md)
+now passes its separately frozen check on that same exposed tile. All 31 baseline
+taps reproduce the prior observation; 65 pre-append proposal scores and decoded
+boxes remain unchanged. The correction excludes only appended ROI row 65 before
+selection. Four non-padding final detections are bitwise preserved, three above
+0.5; separate final zero-score metadata remains. A direct-removal reference
+matches selected identities and every final byte. This did not recover a capped
+slot or establish accuracy. Fifty-five software controls pass. The exact
+corrected observation graph was executed; the ordinary corrected graph has only
+static qualification. This new empirical owner is closed.
+
+Next follow the [complete-pair decision](../research/multiorg-reference-admission/0.4.0/DECISION.md).
+Qualify an adapter for the exact observed variant, all 33 outputs, named-output
+decoding, complete tile coverage and per-tile origin/direct-removal checks. The
+old two-output worker cannot accept this graph unchanged. Keep the original YOLO
+candidate, first image, preprocessing, analysis and reference semantics fixed.
+On new tiles, validate the corrected variant directly; do not fabricate an
+original-model baseline from its arrays. Then freeze a separate bounded whole-
+image attempt. Stop on unexplained origins, genuine high-score invalid geometry,
+incomplete coverage or resource limits. No automatic retry, coordinate-only
+deletion, threshold tuning, replacement image/model or cohort extension.
 The original failed protocols remain unchanged. This is an owned adapter
 investigation, not a complete human-work value case. The 2026
 [methods review](research-decisions/owned-reference-trial-2026-10-12.md) still
