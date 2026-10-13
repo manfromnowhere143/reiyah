@@ -1,3 +1,62 @@
+# Current entry: scored zero box traced to RPN padding, 13 October 2026
+
+Continuation version: 0.1.93. NEXT_SESSION/CONTINUATION version: 0.1.20.
+Read the [single-tile graph trace](../research/multiorg-reference-admission/0.3.1/README.md),
+[result](../research/multiorg-reference-admission/0.3.1/result.json) and
+[next correction decision](../research/multiorg-reference-admission/0.3.1/DECISION.md).
+
+Fresh main was 8485f03cc1925ebec12440b1bcde34fff7a926e1. Work belongs to
+`multiorg-export-contract-2026-10-13-ojvav2a_`, with a fresh same-repository candidate.
+The historical controller remains at 74fbacc; older owners and failed protocols
+remain unchanged. Existing parallel authorization supported source review,
+preprocessing/capture implementation and separate index checking.
+
+The exact Faster export has 1,751 nodes, ONNX opset 11 and PyTorch 2.3.1 producer
+metadata; export commit/configuration remain unknown. Pinned primary source
+and graph inspection identified the hypothesis: first-stage NMS appends a zero
+proposal which is passed through ROI classification. Exact reconstruction of
+tile 9 matches the prior input tensor SHA 675a5f2aba2565e568feeb93fddc20aaed89a43a9bbeea393bf6336b84ae49d1.
+Five preprocessing, 16 capture and 13 lineage controls passed before execution;
+the public staging replay subsequently passed all 34 plus the exact correction-
+order counterexample. Controls use authored inputs and exact static graph metadata.
+
+One separately frozen 60-second / 3 GiB diagnostic ran two forwards: original, then
+the same graph with 29 observation outputs appended. The original output equals
+its retained predecessor bitwise; instrumented original outputs equal it bitwise.
+All original graph fields are preserved when appended output declarations are
+removed. Execution took 4.864 seconds outer, peak sampled RSS 896,057,344 bytes;
+33 private arrays / 19,872 bytes retained. Worker network denied before Python.
+
+A separately authored checker verifies every final row by index composition.
+Final row 2 -> NMS tuple row 2 -> pre-NMS row 8 -> ROI row 65 -> RPN concat row 65,
+the exact appended row after 65 pre-append rows. Its original proposal score 0
+becomes foreground score 0.5355819463729858. Among 6 final rows, 4 descend from
+pre-append candidates, 1 from this RPN appended row, 1 from separate final padding.
+Pre-append does not mean physically real or free of earlier masking. The checker
+does not independently execute neural heads or ONNX NMS. This is one assisted
+investigation, not independent scientific replication or a prevalence estimate.
+
+All 36 frozen bindings matched. Before/after runtime audits differ only in their
+audit timestamp: 17 distributions, 5,926 hashed RECORD entries; 17 RECORD self-entries
+unhashed; system libraries outside audit. Empirical owner closed. No filtering,
+repair, correction variant, whole-image model, pair, matching or work-advantage
+endpoint completed. This does not identify exact upstream export tooling or
+establish published-ranking impact, novelty or superiority.
+
+Next: qualify a separate validity-preserving export variant and direct comparator.
+The authored cap-two counterexample shows why post-cap removal can lose a genuine
+slot; coordinates alone cannot identify padding. Preserve genuine invalid boxes,
+empty/tie/batch cases and every origin/exclusion record. A new bounded corrected-
+tile experiment needs its own prospective freeze, then complete pair coverage.
+No automatic retry, threshold change, model/image replacement or cohort extension.
+Gate A remains operator-unaccepted; broad product expansion stopped and complete-
+work value case absent. Security's exact GitGuardian occurrence mapping remains
+pending; four public pagination cursors were previously verified, no alert dismissed.
+
+Publication integrity checks and readback are separate publisher observations.
+
+---
+
 # Current entry: raw detector refusals isolated, 12 October 2026
 
 Continuation version: 0.1.92. NEXT_SESSION/CONTINUATION version: 0.1.19.

@@ -1,0 +1,78 @@
+{
+  "artifact_id": "reiyah.multiorg.correction-order.authored-counterexample",
+  "cap": 2,
+  "equal_zero_origin_control": {
+    "excluded": [
+      "padding"
+    ],
+    "geometry_only_filter_would_wrongly_hide_genuine_invalid_row": true,
+    "retained_for_explicit_geometry_refusal": [
+      "real_zero"
+    ]
+  },
+  "exclude_after_final_cap": [
+    "real_a"
+  ],
+  "exclude_before_final_nms_and_cap": [
+    "real_a",
+    "real_b"
+  ],
+  "excluded_after": [
+    "padding"
+  ],
+  "excluded_before": [
+    "padding"
+  ],
+  "inputs": [
+    {
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "id": "padding",
+      "origin": "authored_rpn_padding",
+      "score": "99/100"
+    },
+    {
+      "box": [
+        10,
+        10,
+        20,
+        20
+      ],
+      "id": "real_a",
+      "origin": "authored_genuine_proposal",
+      "score": "90/100"
+    },
+    {
+      "box": [
+        30,
+        30,
+        40,
+        40
+      ],
+      "id": "real_b",
+      "origin": "authored_genuine_proposal",
+      "score": "80/100"
+    }
+  ],
+  "limitations": [
+    "Establishes that correction placement can affect output membership under a cap.",
+    "Does not establish that an actual tile loses a detection slot or that accuracy, counts or any metric improve.",
+    "Origin labels are authored assumptions, not a production provenance detector.",
+    "Zero-union overlap refuses; this example evaluates only zero-versus-positive or positive-versus-positive unions.",
+    "Genuine invalid geometry remains a refusal, not an automatically excluded placeholder."
+  ],
+  "model_executions": 0,
+  "network_requests": 0,
+  "nms_cap_before_exclusion": [
+    "padding",
+    "real_a"
+  ],
+  "nms_rule": "suppress IoU > 1/2; continuous coordinates; score descending with stable ties",
+  "scope": "Possible-input counterexample; authored origins, scores and boxes. No empirical model outputs, image, data or source modules read.",
+  "status": "authored_counterexample_confirmed",
+  "version": "0.1.0"
+}

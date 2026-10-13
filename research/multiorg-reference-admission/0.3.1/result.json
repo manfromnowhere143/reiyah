@@ -1,0 +1,76 @@
+{
+  "artifact_id": "reiyah.multiorg.export-lineage.result",
+  "version": "0.3.1",
+  "lifecycle_status": "exploratory",
+  "date": "2026-10-13",
+  "completion_scope": "one exposed tile original-output reproduction, output-preserving diagnostic and index lineage",
+  "image_id": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+  "tile_ordinal": 9,
+  "model_sha256": "fbf748e6d8b896bed9ee1eb15d5dd1409369de5e32c4746c4173aa4c10e7bebd",
+  "tensor_c_order_sha256": "675a5f2aba2565e568feeb93fddc20aaed89a43a9bbeea393bf6336b84ae49d1",
+  "original_and_instrumented_outputs_bitwise_equal": true,
+  "original_matches_previous_observation_bitwise": true,
+  "offending_row": {
+    "box_xyxy": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "final_concat_row": 2,
+    "final_row": 2,
+    "foreground_score": 0.5355819463729858,
+    "label": 0,
+    "nms_selected_row": 2,
+    "origin": "rpn_appended_row_through_roi_head",
+    "pre_nms_row": 8,
+    "roi_row": 65,
+    "rpn_concat_row": 65,
+    "rpn_score": 0.0,
+    "score": 0.5355819463729858,
+    "zero_coordinates": true
+  },
+  "counts": {
+    "final_appended_padding": 1,
+    "pre_append_rpn_candidate": 4,
+    "rpn_appended_row_through_roi_head": 1
+  },
+  "rpn_pre_append_rows": 65,
+  "rois": 66,
+  "final_rows": 6,
+  "observed_nms_selected_rows": 5,
+  "forward_passes": 2,
+  "private_arrays": 33,
+  "private_array_bytes": 19872,
+  "outer_wall_seconds": 4.864201917022001,
+  "supervisor_wall_seconds": 4.797743875009473,
+  "peak_sampled_rss_bytes": 896057344,
+  "authored_controls": {
+    "preprocessing": 5,
+    "capture": 16,
+    "lineage": 13
+  },
+  "runtime_inventory_unchanged": true,
+  "frozen_bindings_unchanged": 36,
+  "source_requests": {
+    "frontier_capture_attempts": 10,
+    "frontier_successes": 9,
+    "frontier_bytes": 100714,
+    "onnx_doc_captures": 2
+  },
+  "model_and_image_downloads": 0,
+  "correction_executed": false,
+  "complete_models": 0,
+  "complete_pairs": 0,
+  "metric_comparisons": 0,
+  "limits": [
+    "Provenance uses exact graph indices and gather bytes, never geometry equality alone.",
+    "ROI neural features, classifier, box regression and ONNX NMS selection are observed taps, not independently reexecuted.",
+    "One exposed tile, one exact graph, batch1 and one foreground class only.",
+    "An appended origin does not itself authorize deleting a published detector output or altering a scoring contract.",
+    "The exact upstream export commit/configuration remains unknown.",
+    "No full-image prevalence, published ranking impact, automotive transfer, novelty or superiority established.",
+    "Appended output identity is not a retrospective change to the failed study contract."
+  ],
+  "terms": "Source-derived numerical observations CC BY-NC-SA 4.0; original code repository license; see ../0.1.0/NOTICE.md."
+}

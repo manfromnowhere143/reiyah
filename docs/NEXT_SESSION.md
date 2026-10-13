@@ -2,11 +2,11 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.19`
+Version: `0.1.20`
 
 Lifecycle status: `proposed`
 
-Updated: 12 October 2026. A continuation brief, not an accepted scientific
+Updated: 13 October 2026. A continuation brief, not an accepted scientific
 protocol, operator acceptance record or grant of new authority.
 Read with [AGENTS.md](../AGENTS.md), the newest
 [handoff](SESSION_HANDOFF.md) and [editorial policy](EDITORIAL_POLICY.md).
@@ -153,12 +153,21 @@ scored 0.5355819463729858, above 0.5. All 159 returned rows are retained; separa
 checks confirm the partial evidence. No model/pair, Reiyah whole-image NMS or
 reference comparison completed. Both execution owners are closed.
 
-The next step is the [source/export zero-box contract investigation](../research/multiorg-reference-admission/0.3.0/DECISION.md).
-Inspect retained model/implementation metadata and graph lineage, then qualify
-any validity/sentinel rule before a separately frozen probe. A future probe must
-bind the identified tile's reconstructed tensor to its retained hash. No silent
-box deletion/repair, threshold tuning, model/image replacement or cohort extension.
-Treating zero boxes as false positives also needs an explicit scoring/NMS contract.
+The [exact export investigation](../research/multiorg-reference-admission/0.3.1/README.md)
+now resolves that row's origin. Original and instrumented outputs match the
+saved observation bitwise. Recorded indices trace final row 2 to RPN appended row 65,
+which the ROI head scores 0.5355819463729858. All 6 final rows are checked; the result
+is one exposed tile, not a completed model/pair or a prevalence claim. 34 software
+controls pass. The empirical owner is closed.
+
+Next follow the [separate correction decision](../research/multiorg-reference-admission/0.3.1/DECISION.md):
+qualify a graph-specific export variant that preserves proposal origin and
+excludes proven padding before final NMS/caps. A finite counterexample shows
+why post-cap removal can lose a genuine slot. Compare to a direct implementation,
+retain genuine invalid geometry, and test empty/tie/batch/cap cases. Then freeze
+a separate bounded corrected-tile check before a complete first-image pair trial.
+No coordinate-only deletion, threshold tuning, image/model replacement or cohort
+extension; earlier failed results remain failed.
 The original failed protocols remain unchanged. This is an owned adapter
 investigation, not a complete human-work value case. The 2026
 [methods review](research-decisions/owned-reference-trial-2026-10-12.md) still
