@@ -1,3 +1,58 @@
+# Current entry: selected inputs qualified; storage stop preserved, 14 October 2026
+
+Continuation version: 0.1.96. NEXT_SESSION/CONTINUATION version: 0.1.23.
+Read the [selected-cohort packet](../research/multiorg-reference-admission/0.6.0/README.md),
+[exact result](../research/multiorg-reference-admission/0.6.0/result.json),
+[postmortem scope](../research/multiorg-reference-admission/0.6.0/POSTMORTEM.md) and
+[resource decision](../research/multiorg-reference-admission/0.6.0/DECISION.md).
+
+Fresh verified base 0ca9d1f0fce0605ce42f3d8a1d70d3e33a36ec81. Work belongs to
+`multiorg-selected-cohort-2026-10-14-iibqdjqi` and its same-repository candidate.
+Historical controller remains clean at 74fbacc. Earlier owners and frozen code
+remain unchanged. This owner's empirical inference is CLOSED; no retry.
+
+All three remaining selected version 6 TIFFs were acquired: 132,782,057 bytes,
+three requests/three redirects, no retries. No model/dependency downloads.
+Each image has 156 tiles per model. All 936 prospective tensors match a separate
+reconstruction. New 0.6 worker admits only exact three literal contracts;
+same corrected Faster observation graph a26f494f and unchanged YOLO 02ed40f0,
+same preprocessing, scores, coordinates, global NMS, origin checks and no-fallback.
+40 worker controls (22 authored + 18 actual static bindings) and 34 reference controls pass.
+New four-image matching passes 28 authored cases and separate replay; it remains
+QUALIFIED/UNEXECUTED because the full cohort is unavailable. Public replay: 56 + 28.
+
+First new pair Plate 23 / image 0 stopped after 109.432952541 supervisor seconds:
+disk_floor, SIGKILL (-9), peak sampled RSS 1,259,700,224 bytes below 3 GiB. Later two
+images were not started. Persisted 2,310 NPYs, 70 raw tile ledgers and 70 worker admissions,
+total 4,469,802 bytes. No worker result/failure terminal record survived the hard kill.
+Exact starts or any in-flight completion beyond saved records are unknown.
+The complete-pair checker properly refused; never manufacture its missing record.
+The separately qualified postmortem audit has a narrower retained-prefix scope;
+its status, actual counts, limits and replay are in POSTMORTEM.md/result.json.
+The actual audit verified all 70 captures and admissions, 2,310 arrays and 1,272
+raw rows, with no unqualified files. Seventeen authored controls include an actual
+SIGKILL of a fixture writer. This does not qualify crash durability.
+It cannot supply a whole-image output, complete pair or reference comparison.
+
+All 69 inference-freeze bindings unchanged. Runtime: 17 distributions / 5,926 hashed RECORD entries /
+17 unhashed entries unchanged except timestamp; system libraries / existing pyc remain outside
+full authentication. Initial tuple-unpacking preparation error and attempted
+coordinator read of an absent freeze occurred before any inference and are retained.
+Owned duplicate models were replaced by APFS clones with identical paths and bytes,
+recovering storage before freeze. No old evidence deleted. Shared free space later
+fell below 4 GiB; the stop does not identify its cause. No new rank or scientific null.
+
+Next establish storage headroom and stability for the full worst-case retention while
+preserving the 4 GiB floor, with actual allocated space and free-byte samples recorded.
+Do not lower the floor, delete evidence or restart this owner. Use fresh plan/freeze
+for same selected inputs only after resource qualification. Original four complete
+pairs/twelve cases still required. Prior first-image result and all historical cost
+remain; no complete-work advantage, superiority, automotive claim or Gate A acceptance.
+No generic agent expansion, paid service, outreach or production authority inferred.
+GitGuardian exact occurrence mapping remains pending; no alert dismissed/scanner disabled.
+
+---
+
 # Current entry: first complete pair and reference comparisons, 14 October 2026
 
 Continuation version: 0.1.95. NEXT_SESSION/CONTINUATION version: 0.1.22.

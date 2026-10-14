@@ -1,0 +1,27 @@
+# Selected-cohort execution and checking contract, 0.6.0
+
+The new worker admits only the three remaining exact image identities. Its literal table binds each TIFF digest and byte length, original/rescaled/padded shapes, all 156 tile positions, the prospective input-roster digest, array-budget derivation and limits. A deep copy supplies each invocation's context. The closed first-image contract remains in 0.5.0; arbitrary images and cross-image metadata substitutions are refused.
+
+The manifest retains four fields: `protocol`, `images`, `models` and `limits`. It describes exactly one image. The protocol declares version `0.6.0` and `selected_cohort_analysis_pair_v060`; it binds the same model variants, numerical configuration and source components as 0.5.0. Source modules, images and models must match their exact hashes within the owned execution directory. The corrected Faster graph is the tested observation variant `a26f494f…`, and YOLO is the unchanged retained `02ed40f0…` artifact.
+
+Before running, the worker reconstructs the full image and verifies every planned tile slice. Each actual input tensor must match its prospective descriptor before that tile's forward pass. The worker records every named raw output before numerical or origin admission; a refused tile retains its available raw evidence and terminates execution. Successful admission persists a separate receipt. Whole-image analysis is defined only after every tile completes, followed by the unchanged global NMS. A pair requires both complete models. No automatic fallback, retry, replacement tile, clipping or geometry repair is permitted.
+
+`check_pair.py` binds the exact prospective manifest, protocol and worker, independently reconstructs every input tensor, verifies all retained arrays and admission records, and recomputes coordinate transforms and whole-image NMS. It imports no numerical producer. Origin admission intentionally reuses the byte-bound separately authored `admit_tile.py` and `reference_core.py`; neural execution is observed, not independently recomputed. Its per-image invocation is:
+
+```sh
+python -B reference/check_pair.py --owner OWNER --manifest OWNER/execution/image-N/manifest.json --output OWNER/execution/image-N/actual-run --runner-sha256 RUNNER_SHA --manifest-sha256 MANIFEST_SHA --protocol-sha256 PROTOCOL_SHA --report OWNER/reference/IMAGE_N_CHECK.json
+```
+
+The command describes the owned private execution layout. The public authored replay needs no private image or model. The checker has a 300-second deadline and expects the exact supervisor receipt beside the run directory. It checks source and process bindings, named array order and types, NPY lengths and digests, tile/row membership, complete coverage, endpoint identity and resources. The additional top-level `image_id` and `image_contract_sha256` bind the selected literal image contract.
+
+Success is `complete_pair_verified` with one complete pair. A structured semantic failure can yield `failed_attempt_partial_ledger_checked` with zero complete pairs. Malformed, unbound, abruptly terminated or early failures lacking required population metadata remain unqualified refusals. Unbound partial arrays are not qualified observations. A complete empty analysis remains distinct from missing or failed evidence.
+
+The worker wall bound is 600 seconds and the sampled-RSS ceiling is 3 GiB. Supervisor preflight time is distinct from worker time. Sampling is not an instantaneous hard RSS guarantee. Parent verification separately binds the supervisor, materialized network-denial policy, frozen files and runtime custody. Every failure stops the remaining new cohort execution; a partial cohort cannot be promoted to the four-image endpoint.
+
+## Qualification and retained development records
+
+The worker qualified 22 authored cases and eighteen optional static cases across the three actual manifests. The separate reference suite qualified 34 authored cases. The default flattened public replay executes 56 cases, derived from the emitted worker list and actual unittest counts; it excludes the eighteen private-manifest cases. These checks are within one assisted investigation, not independent scientific replication.
+
+Two pre-inference development failures are retained. The first input-preparation adapter treated the original `model_input` return tuple as an array, raising an attribute error before a roster completed. The adapter was corrected to unpack `(tensor, side)`; the numerical function remained unchanged. Separately, the initial freeze preflight refused the planned disk reserve. A coordinator invocation then encountered the absent freeze file before any supervisor or worker started. Neither event was a detector inference attempt.
+
+The retained resource record reports free space of 4,552,945,664 bytes before recovery and 4,964,298,752 bytes afterward, with a 4,294,967,296-byte floor. Those values were measured during the later recovery operation, not at the failed preflight. The preflight required 4,697,620,480 bytes: the floor plus three prospective array ceilings. Its exact triggering free-byte sample was not retained. Only the new owner's duplicate model copies were replaced by APFS copy-on-write clones at the same paths, with the same lengths and SHA-256 digests. Old owners and source files remained unchanged. Record hashes appear in the [source ledger](sources.json); these are operational records, not scientific outcomes or independent transport verification.

@@ -1,0 +1,147 @@
+{
+  "artifact_id": "reiyah.multiorg.selected-cohort-matching-contract",
+  "version": "0.6.0",
+  "status": "prospective_conditional",
+  "profiles_status": "complete_prospective_bindings",
+  "scope": "Exact original selected four-image cohort, three recorded reference procedures per image. Preserve original G/P question, equal image weights and all native bounds.",
+  "images": [
+    "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+    "MultiOrg_v2/test/Macros/Plate_23/image_0/image_0.tiff",
+    "MultiOrg_v2/test/Normal/Plate_31/image_6/image_6.tiff",
+    "MultiOrg_v2/test/Macros/Plate_23/image_1/image_1.tiff"
+  ],
+  "profiles": [
+    {
+      "image_id": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+      "image_sha256": "8828e0a9f94d6c44ea03be2e62623e812830f339d9c905b7a368edcb7e821eb0",
+      "image_shape_hw": [
+        5720,
+        6385
+      ],
+      "rescaled_shape_hw": [
+        2860,
+        3192
+      ],
+      "tiles": 156,
+      "version": "0.5.0",
+      "worker_sha256": "2558a8d344bc2718724994be94d591c6f2c333d7f7ed8ceb16aeb6588bc7b82a",
+      "checker_sha256": "f980483d2a35dc2cf69b7fe2ab82f811a35796eb1f9af1a8060a2e4b48c36cf7",
+      "protocol_sha256": "8a726ed5d5e3c10a5de31bd02d6e523703b1016a91813d8c940202e790200798",
+      "manifest_sha256": "c54a8713bec16e3fcad2067e123136e352f47ed0a2b0e5f02fa3bad1ef25fc42",
+      "image_contract_sha256": null
+    },
+    {
+      "image_id": "MultiOrg_v2/test/Macros/Plate_23/image_0/image_0.tiff",
+      "image_sha256": "c597643323054fca5152530baf43260661f44c3bd8ef1b69d6c2fce1ca0540e0",
+      "image_shape_hw": [
+        5720,
+        6385
+      ],
+      "rescaled_shape_hw": [
+        2860,
+        3192
+      ],
+      "tiles": 156,
+      "version": "0.6.0",
+      "worker_sha256": "7b2991f6b68719d815afc8137e563fc6d12e868689132850c9b9a483d957de1e",
+      "checker_sha256": "2cefacc5c6fef3e6c61ae944b16d4d23542ea7cbe03d47773604f808e124a431",
+      "protocol_sha256": "d000b3b35703bf53ffda44bba2b215efb2e220854a9731fe3bd56555dcba2bc6",
+      "manifest_sha256": "e377e9670b1eaaa9d944dcde76e749e29e0fc7c8a1ef9473f5799ba232003518",
+      "image_contract_sha256": "db9c92d012ba13ff0c29a77df582e8fb066171e36e32b00152a785049b891f6e"
+    },
+    {
+      "image_id": "MultiOrg_v2/test/Normal/Plate_31/image_6/image_6.tiff",
+      "image_sha256": "2a690a65a48b6370076758dc2f1af845ea492df6ba3492ba52637362c4d34281",
+      "image_shape_hw": [
+        5720,
+        6385
+      ],
+      "rescaled_shape_hw": [
+        2860,
+        3192
+      ],
+      "tiles": 156,
+      "version": "0.6.0",
+      "worker_sha256": "7b2991f6b68719d815afc8137e563fc6d12e868689132850c9b9a483d957de1e",
+      "checker_sha256": "2cefacc5c6fef3e6c61ae944b16d4d23542ea7cbe03d47773604f808e124a431",
+      "protocol_sha256": "883ca56c5483615ed9fd3272685cb60646f379704639cdde80e9be7c094adb1d",
+      "manifest_sha256": "48db77b6a7084c9afc7ff4b76551d24e78f59efbb192390ab987850cd33a1d2a",
+      "image_contract_sha256": "48384ee297a93be46122de9eddf0d28b90455976908449abd38ce9aaa0f84196"
+    },
+    {
+      "image_id": "MultiOrg_v2/test/Macros/Plate_23/image_1/image_1.tiff",
+      "image_sha256": "951baa66c25581f312fe79f592a4b664a5a5d13cb62ffc4ffc5e47e9b1f2a47f",
+      "image_shape_hw": [
+        5720,
+        6385
+      ],
+      "rescaled_shape_hw": [
+        2860,
+        3192
+      ],
+      "tiles": 156,
+      "version": "0.6.0",
+      "worker_sha256": "7b2991f6b68719d815afc8137e563fc6d12e868689132850c9b9a483d957de1e",
+      "checker_sha256": "2cefacc5c6fef3e6c61ae944b16d4d23542ea7cbe03d47773604f808e124a431",
+      "protocol_sha256": "5a1cdcf03b1e77f2ee5f609d322637d2aba39c5a91e1a79e47ae06d4ee8d7c21",
+      "manifest_sha256": "cb86d795e3c178a276fb3d94bea679442f0485700a79f648435c2f141fbd6760",
+      "image_contract_sha256": "d2c0c1ee45ead8b5f8db490ef6e095d1fd84bd8382e9f2e8683ec05bca29b855"
+    }
+  ],
+  "procedures": [
+    "t0",
+    "t1_A",
+    "t1_B"
+  ],
+  "reference_counts": {
+    "MultiOrg_v2/test/Macros/Plate_23/image_0/image_0.tiff": {
+      "t0": 72,
+      "t1_A": 27,
+      "t1_B": 82
+    },
+    "MultiOrg_v2/test/Macros/Plate_23/image_1/image_1.tiff": {
+      "t0": 88,
+      "t1_A": 27,
+      "t1_B": 73
+    },
+    "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff": {
+      "t0": 88,
+      "t1_A": 61,
+      "t1_B": 64
+    },
+    "MultiOrg_v2/test/Normal/Plate_31/image_6/image_6.tiff": {
+      "t0": 76,
+      "t1_A": 33,
+      "t1_B": 69
+    }
+  },
+  "reference_manifest_sha256": "937b74145d113c9823a7c497dbedc018808b8f9cde7231c1765d053d9ec52cdb",
+  "native_dependency_map_sha256": "320daa7410b30828c6007e5019af4194cd875ba63375c0ed3fcc172d434f8600",
+  "independent_reference_sha256": "f5b5ad730bfcacaee6a303e161d035c4093c0b61cb796e65b9611ef0a6854e5a",
+  "analysis_scope": "all_declared_tiles_analysis_score_float32_strictly_gt_0.5_only",
+  "storage_output_status": "not_defined_or_exported_by_this_contract",
+  "geometry": "Continuous un-clipped source XYXY; exact IoU>=1/2 defines edges. Distinct source-qualified identities retain duplicate geometry.",
+  "loss": {
+    "false_positive": 1,
+    "false_negative": 1,
+    "tolerance": 0
+  },
+  "native_caps": {
+    "references_per_case": 128,
+    "detections_per_output": 1024,
+    "combined_edges": 2048,
+    "work_units": 2000000,
+    "input_bytes": 4194304,
+    "packet_bytes": 16777216,
+    "coordinate_magnitude": 10000000
+  },
+  "execution_caps": {
+    "producer_wall_seconds": 120,
+    "checker_wall_seconds": 120,
+    "sampled_rss_bytes": 3221225472
+  },
+  "composition": "For delta[i,p]=FP_A+FN_A-FP_B-FN_B: G=[min_p sum_i delta[i,p]/4, max_p sum_i delta[i,p]/4]; P=[sum_i min_p delta[i,p]/4, sum_i max_p delta[i,p]/4]. Require all4x3 cases. Negative upper prefersA, positive lower prefersB; either zero boundary is unresolved.",
+  "primary_status": "If global unresolved: inconclusive_global_unresolved. If global resolved and imagewise unresolved: coupling_fragility. Otherwise no_observed_fragility. An opposite resolved sign is forbidden by nesting.",
+  "exposure": "The first image pair and its three matching outcomes were published. Earlier reference counts/source structure were exposed. Remaining new model outcomes must not be inspected by this role before matching freeze.",
+  "stop": "Any missing/refused pair, reference, coverage, native bound, custody or arithmetic condition prevents the full-cohort endpoint. No replacement, truncation, tuning or cohort enlargement."
+}

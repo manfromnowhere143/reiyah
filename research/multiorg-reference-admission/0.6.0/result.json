@@ -1,0 +1,195 @@
+{
+  "artifact_id": "reiyah.multiorg.selected-cohort-result",
+  "version": "0.6.0",
+  "status": "inconclusive_incomplete_selected_cohort",
+  "execution_status": "failed_resource_boundary",
+  "scope": "Three remaining preselected image inputs qualified; one attempt stopped at the disk reserve. No new complete pair or matching result.",
+  "model_variants": {
+    "faster": "reiyah.multiorg.validity-preserving-export.observation/0.4.0",
+    "yolo": "MultiOrg-2026-released-YOLO-unchanged"
+  },
+  "new_images": [
+    {
+      "image_id": "MultiOrg_v2/test/Macros/Plate_23/image_0/image_0.tiff",
+      "source_sha256": "c597643323054fca5152530baf43260661f44c3bd8ef1b69d6c2fce1ca0540e0",
+      "source_bytes": 44321876,
+      "shapes": {
+        "original": [
+          5720,
+          6385
+        ],
+        "rescaled": [
+          2860,
+          3192
+        ],
+        "padded": [
+          3328,
+          3584
+        ]
+      },
+      "tiles_per_model": 156,
+      "input_roster_sha256": "efa3908afab616f71758433d138943248355b9ad0cd796d7f34c11d2e86971b4",
+      "array_budget_sha256": "361efd3ad50848ff33ea08b85a283fac9c5254b3af958533fe851872913735db",
+      "maximum_derived_NPY_bytes_per_pair": 66823136,
+      "execution_status": "stopped_disk_floor"
+    },
+    {
+      "image_id": "MultiOrg_v2/test/Normal/Plate_31/image_6/image_6.tiff",
+      "source_sha256": "2a690a65a48b6370076758dc2f1af845ea492df6ba3492ba52637362c4d34281",
+      "source_bytes": 44374655,
+      "shapes": {
+        "original": [
+          5720,
+          6385
+        ],
+        "rescaled": [
+          2860,
+          3192
+        ],
+        "padded": [
+          3328,
+          3584
+        ]
+      },
+      "tiles_per_model": 156,
+      "input_roster_sha256": "6a0cb26a7d367f835963aef22de1760f041bb3e018bf5044defb95993410ed0a",
+      "array_budget_sha256": "7f10643b61d1ca980614a3fb50c0cbb4fd55143db22d4221bf0306cb95df48d3",
+      "maximum_derived_NPY_bytes_per_pair": 66823136,
+      "execution_status": "not_started"
+    },
+    {
+      "image_id": "MultiOrg_v2/test/Macros/Plate_23/image_1/image_1.tiff",
+      "source_sha256": "951baa66c25581f312fe79f592a4b664a5a5d13cb62ffc4ffc5e47e9b1f2a47f",
+      "source_bytes": 44085526,
+      "shapes": {
+        "original": [
+          5720,
+          6385
+        ],
+        "rescaled": [
+          2860,
+          3192
+        ],
+        "padded": [
+          3328,
+          3584
+        ]
+      },
+      "tiles_per_model": 156,
+      "input_roster_sha256": "238c775a6f209899d17187f2e1e3fedd26b07d3de89af475d147109c80db3cad",
+      "array_budget_sha256": "7ed00fddf47995cc96040c33e7632484883ce8932094546db9e154f131a7275b",
+      "maximum_derived_NPY_bytes_per_pair": 66823136,
+      "execution_status": "not_started"
+    }
+  ],
+  "acquisition": {
+    "requests": 3,
+    "redirects": 3,
+    "bytes": 132782057,
+    "retries": 0,
+    "wall_seconds": 15.039752707991283,
+    "new_model_or_dependency_downloads": 0
+  },
+  "qualification": {
+    "worker_controls": 40,
+    "worker_authored_mock_controls": 22,
+    "worker_private_static_binding_controls": 18,
+    "reference_controls": 34,
+    "independently_reconstructed_input_tensors": 936,
+    "matching_authored_controls": 28,
+    "actual_matching_executions": 0
+  },
+  "attempt": {
+    "image_id": "MultiOrg_v2/test/Macros/Plate_23/image_0/image_0.tiff",
+    "attempts": 1,
+    "supervisor_wall_seconds": 109.43295254098484,
+    "termination_reason": "disk_floor",
+    "peak_sampled_rss_bytes": 1259700224,
+    "wall_limit_seconds": 600,
+    "sampled_rss_limit_bytes": 3221225472,
+    "free_disk_floor_bytes": 4294967296,
+    "worker_terminal_record_present": false,
+    "saved_raw_tensor_files": 2310,
+    "saved_raw_ledger_files": 70,
+    "saved_worker_admission_files": 70,
+    "saved_file_bytes_including_ledgers": 4469802,
+    "forward_starts_and_any_inflight_completion": "unknown beyond persisted records; no fabricated exact forward count",
+    "complete_pair_checker": "refused_missing_structured_worker_terminal_record",
+    "later_images_started": 0,
+    "retries": 0,
+    "worker_returncode": -9,
+    "supervisor_command_returncode": 1
+  },
+  "integrity": {
+    "frozen_bindings": 69,
+    "frozen_bindings_unchanged": true,
+    "runtime_distributions": 17,
+    "runtime_hashed_RECORD_entries": 5926,
+    "runtime_unhashed_RECORD_entries": 17,
+    "runtime_before_after_changed_fields": [
+      "at"
+    ],
+    "limitations": "System libraries and existing pyc execution not fully authenticated."
+  },
+  "complete_pairs_including_prior_owner": 1,
+  "required_complete_pairs": 4,
+  "prior_reference_cases": 3,
+  "required_reference_cases": 12,
+  "new_reference_cases_executed": 0,
+  "primary_result": "unanswered; no global-versus-imagewise cohort endpoint or scientific null produced",
+  "nonclaims": [
+    "model ranking on unfinished images",
+    "original Faster graph parity",
+    "untapped corrected export parity",
+    "independent scientific replication",
+    "physical truth",
+    "automotive transfer",
+    "work saving",
+    "scientific superiority"
+  ],
+  "postmortem": {
+    "status": "failed_attempt_saved_tiles_audited",
+    "models": [
+      {
+        "complete_model_endpoint": "not_evaluated_not_claimed",
+        "expected_tiles": 156,
+        "model": "faster",
+        "raw_rows_in_validated_capture_tiles": 1272,
+        "saved_raw_receipt_files": 70,
+        "validated_capture_tiles": 70,
+        "verified_persisted_admissions": 70
+      },
+      {
+        "complete_model_endpoint": "not_evaluated_not_claimed",
+        "expected_tiles": 156,
+        "model": "yolo",
+        "raw_rows_in_validated_capture_tiles": 0,
+        "saved_raw_receipt_files": 0,
+        "validated_capture_tiles": 0,
+        "verified_persisted_admissions": 0
+      }
+    ],
+    "forward_accounting": {
+      "inflight_forward_state": "unknown",
+      "returned_outputs_with_validated_tile_receipt_lower_bound": 70,
+      "total_forward_completions": null,
+      "total_forward_starts": null,
+      "unrecorded_work": "unknown_not_zero"
+    },
+    "complete_pairs": 0,
+    "complete_model_endpoints": 0,
+    "full_image_nms_performed": false,
+    "reference_matching_performed": false,
+    "inference_performed": false,
+    "frozen_files_verified_before_and_after": 69,
+    "wall_seconds": 6.121473833045457,
+    "authored_controls": 17,
+    "actual_sigkill_authored_control": true,
+    "crash_durability_qualified": false,
+    "unqualified_files": 0,
+    "rejected_receipts": 0,
+    "outer_wall_seconds": 6.24957954196725,
+    "report_sha256": "54ed1a141a6f6b7e2fe1db794b791286c9f3d401d2f21fbb8c4ccd29e4aa4399",
+    "audit_freeze_sha256": "8a0c68ab0c6e1ef0ed43983189b15d6b494d1d84d41046d75a2b9043e334d0ca"
+  }
+}

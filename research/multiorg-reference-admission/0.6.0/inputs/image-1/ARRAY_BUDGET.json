@@ -1,0 +1,27 @@
+{
+  "artifact_id": "reiyah.multiorg.complete-pair.array-budget",
+  "version": "0.6.0",
+  "image_id": "MultiOrg_v2/test/Macros/Plate_23/image_0/image_0.tiff",
+  "scope": "Complete admitted pair; bound from static output shape/row caps, not observed means.",
+  "faster": {
+    "tiles": 156,
+    "named_arrays_per_tile": 33,
+    "maximum_payload_bytes_per_tile": 249096,
+    "NPY_header_allowance_bytes_per_file": 4096,
+    "maximum_NPY_bytes_per_tile": 384264,
+    "maximum_all_tiles_bytes": 59945184
+  },
+  "yolo": {
+    "tiles": 156,
+    "named_arrays_per_tile": 2,
+    "maximum_all_raw_detection_rows_per_model": 200000,
+    "detection_bytes_per_row": 20,
+    "label_bytes_per_row": 8,
+    "maximum_payload_bytes": 5600000,
+    "maximum_NPY_header_bytes": 1277952,
+    "maximum_all_tiles_bytes": 6877952
+  },
+  "derived_maximum_bytes": 66823136,
+  "max_array_file_bytes": 67108864,
+  "max_array_total_bytes": 134217728
+}

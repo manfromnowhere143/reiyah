@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.22`
+Version: `0.1.23`
 
 Lifecycle status: `proposed`
 
@@ -183,17 +183,22 @@ objects; the loss preference does not imply higher recall or general superiority
 cannot establish cross-image coupling. Seventy-six qualification controls pass;
 public replay covers 70, with six private binding checks separately retained.
 
-Next follow the [remaining-cohort decision](../research/multiorg-reference-admission/0.5.0/DECISION.md).
-Qualify the other three previously selected images with explicit shapes, complete
-input rosters, separately reconstructed tensors and derived resource budgets.
-Use a fresh owner and separately versioned adapter; do not weaken this first-image
-contract or retry its closed execution. Keep the exact observed correction,
-original YOLO, all named outputs, origin checks, no-fallback policy, preprocessing,
-thresholds, loss, postprocessing and references. All four pairs and twelve fixed
-reference cases are needed before the primary global/imagewise comparison.
-Stop on refusal or incomplete coverage; no alternate image, threshold, model,
-cap increase or cohort enlargement to obtain a desired contrast. Preserve a
-null coupling result if found. Full-work advantage remains unestablished.
+The [remaining-cohort continuation](../research/multiorg-reference-admission/0.6.0/README.md)
+qualifies all three remaining exact images and 936 input tensors. The first new
+attempt stopped at the 4 GiB disk reserve after 70 raw tile ledgers persisted;
+no terminal worker record or complete pair exists. The complete-pair checker
+refused correctly. Later images were not started. Matching 0.6 passes authored
+controls but remains unexecuted on the cohort. The separate postmortem checks
+only the persisted partial evidence, without completing the missing observation.
+
+Next follow the [storage and execution decision](../research/multiorg-reference-admission/0.6.0/DECISION.md).
+Establish sufficient stable headroom above the unchanged disk floor and retain
+free-space observations. Preserve this closed owner, partial records and failure;
+no automatic retry, lowered floor, deleted evidence or stitched partial result.
+A later same-input attempt requires a new bounded plan/freeze. Keep the exact
+observed variant and all numerical/reference/native-cap semantics. All four
+complete pairs and twelve cases are required. Retain a null contrast without
+enlarging the cohort. Complete-work advantage remains unestablished.
 The original failed protocols remain unchanged. This is an owned adapter
 investigation, not a complete human-work value case. The 2026
 [methods review](research-decisions/owned-reference-trial-2026-10-12.md) still

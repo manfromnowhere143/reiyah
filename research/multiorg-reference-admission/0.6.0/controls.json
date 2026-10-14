@@ -1,0 +1,196 @@
+{
+  "artifact_id": "reiyah.multiorg.selected-cohort-controls",
+  "version": "0.6.0",
+  "worker": {
+    "controls": [
+      "complete_mock_pair_all_named_arrays_and_individual_admissions",
+      "complete_observed_empty_analysis_is_distinct_from_missing",
+      "runtime_failure_retains_prior_tile_without_inventing_remaining_tiles",
+      "one_complete_model_does_not_become_complete_pair",
+      "wrong_names_refused_with_explicit_capture_state",
+      "nonfinite_refused_with_explicit_capture_state",
+      "origin_failure_refused_with_explicit_capture_state",
+      "origin_unadmitted_refused_with_explicit_capture_state",
+      "high_invalid_refused_with_explicit_capture_state",
+      "wrong_yolo_dtype_refused_with_explicit_capture_state",
+      "source_mutation_refused_with_explicit_capture_state",
+      "tensor_identity_checked_before_forward",
+      "missing_expected_input_tensor_rejected_upfront",
+      "all_expected_tile_slices_verified_before_any_forward",
+      "raw_capture_cap_is_refusal_not_empty_output",
+      "unchanged_projection_rejects_missing_tile_population",
+      "installed_ORT_constructor_and_run_failure_have_no_hidden_retry",
+      "only_three_exact_selected_images_with_no_shared_mutable_context",
+      "absent_exact_contract_cannot_start_execution",
+      "another_selected_images_input_roster_cannot_be_substituted",
+      "input_roster_source_identity_cannot_be_substituted",
+      "one_explicit_image_per_invocation_schema",
+      "1:real_prospective_manifest_all_source_bindings_pass_without_inference",
+      "1:unknown_manifest_property_rejected",
+      "1:source_path_traversal_rejected",
+      "1:model_digest_replacement_rejected",
+      "1:boolean_tile_coordinate_cannot_impersonate_integer_zero",
+      "1:duplicate_JSON_key_rejected",
+      "2:real_prospective_manifest_all_source_bindings_pass_without_inference",
+      "2:unknown_manifest_property_rejected",
+      "2:source_path_traversal_rejected",
+      "2:model_digest_replacement_rejected",
+      "2:boolean_tile_coordinate_cannot_impersonate_integer_zero",
+      "2:duplicate_JSON_key_rejected",
+      "3:real_prospective_manifest_all_source_bindings_pass_without_inference",
+      "3:unknown_manifest_property_rejected",
+      "3:source_path_traversal_rejected",
+      "3:model_digest_replacement_rejected",
+      "3:boolean_tile_coordinate_cannot_impersonate_integer_zero",
+      "3:duplicate_JSON_key_rejected"
+    ],
+    "count": 40,
+    "empirical_forward_passes": 0,
+    "scope": "Authored small arrays and mocked model sessions; installed ORT Python retry policy tested without model construction/inference.",
+    "scripts": {
+      "complete_pair.py": "7b2991f6b68719d815afc8137e563fc6d12e868689132850c9b9a483d957de1e",
+      "projection.py": "7cf0103cd7876585004310f6a3457add033bab2bc91b8b5ca750b15982a47425",
+      "run_pair.py": "9a708bf6a22e9350980e0d08d0e90c2c56f7b9cc4a73b7fd55f22c9ef3f33e0c",
+      "test_complete_pair.py": "001f2739fdbee989213ab85a5df13353aac3baf648ba97e3fc7896cdb0588b3f"
+    },
+    "static_manifest_sha256": [
+      "e377e9670b1eaaa9d944dcde76e749e29e0fc7c8a1ef9473f5799ba232003518",
+      "48db77b6a7084c9afc7ff4b76551d24e78f59efbb192390ab987850cd33a1d2a",
+      "cb86d795e3c178a276fb3d94bea679442f0485700a79f648435c2f141fbd6760"
+    ],
+    "status": "passed",
+    "test_overrides": "Two-tile authored fixture replaces prospective bindings/preprocessing/session execution only inside unit tests."
+  },
+  "reference": {
+    "status": "qualified_pending_parent_freeze",
+    "version": "0.6.0",
+    "controls": 34,
+    "control_counts": {
+      "origin_admission": 8,
+      "saved_pair_scalar": 15,
+      "preprocessing": 3,
+      "selected_image_contracts": 8
+    },
+    "model_inference": false,
+    "actual_input_tensors_reconstructed_per_full_replay": 936,
+    "full_replays": 2,
+    "qualification_failures": [],
+    "sha256": {
+      "admit_tile.py": "7b665ff849c2ba5a383e414de7d62fede77273dbb9f19f08057756bddc04cb17",
+      "reference_core.py": "428579d22cfa49588c76172999c90beab3cb57e13a04540aa5bdc6ac413f1d7c",
+      "reconstruct_inputs.py": "e9320445c2261d417d6e4d30f60d1a63048fbbc7a1506702e6d9b76886564d9d",
+      "check_pair.py": "2cefacc5c6fef3e6c61ae944b16d4d23542ea7cbe03d47773604f808e124a431",
+      "test_admit_tile.py": "73db11b09cbeb5eb178eb3477071b42e6e6f65cfb361a016b0f5e213fba79472",
+      "test_check_pair.py": "c0c14c38c933beaf081e8ca055058a067ba57257d7765f5ec5c1bb56beb4fdc8",
+      "test_reconstruct_inputs.py": "8c76d99138a00ed15bf99e7776cc78996e5451efab4d0a6477b626a3e51bde37",
+      "test_selected_contracts.py": "f2536535b7be4a4cf4d3c48160aab6be6e81bd6bb9f685a052763c166b8fb142",
+      "THIRD_PARTY_NOTICES.md": "0f4c60285646aea198a541af2314882dea0732a27df805ab6aa50f38fe168d20",
+      "CONTRACT.md": "94bf9878c796d118fce6203d4bd4de81fa9706f2e8fc2f6e203b670cb5991e59",
+      "controls-v2.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "controls-v2.stderr": "3f8165948917df8e50cc66c17b4b35ad25c8ad3a76e0b482ab657d870b4ee776",
+      "HEADER_REVIEW.json": "6b85e7a20bb3df761a9e586603634143d039690972a33d9ff27ca00ac8e3fc41",
+      "INPUT_REPLAYS.json": "1033a2eb468abd3bdd10a6629a6ecbdeac42e2a8f3bf44eacda597eb172b2bba",
+      "BIND_REPLAYS.json": "9f9d97ee7ea3af3debf3141bb6957ab007fc8f0dd5eb5145858bed5a5dff162e",
+      "WORKER_REVIEW.json": "0daa58c007884e00a4e58e9f13232b45d0c2ea0bc0114d51badb556854314b39"
+    },
+    "scope": "Same-study offline qualification. No empirical outputs read for remaining images, no model inference, no independent science or work advantage."
+  },
+  "matching": {
+    "authored_case_count": 28,
+    "status": "passed",
+    "new_model_output_reads": 0,
+    "annotation_payload_reads": 0,
+    "inference_forwards": 0,
+    "receipt": "QUALIFICATION-format-v2.json",
+    "format_amendment": "EOF-only normalization; original receipts retained and AST equivalence checked before replay."
+  },
+  "scope": "Qualification before respective scientific execution; authored matching controls are not an actual cohort comparison.",
+  "postmortem": {
+    "actual_sigkill_control": {
+      "crash_durability_established": false,
+      "expected_returncode": -9,
+      "limits": "Child self-exits after five seconds; parent four-second readiness and two-second cleanup waits. Supervisor-shaped process metadata constructed; this is not the production supervisor or host/filesystem crash path.",
+      "no_worker_terminal_record": true,
+      "performed": true,
+      "retained_prefix_admitted_tiles": 1,
+      "target": "only own tiny authored writer PID after READY",
+      "total_forward_starts": null,
+      "worker_model_calls": 0
+    },
+    "artifact_id": "reiyah.multiorg.abrupt-termination.audit-qualification",
+    "authored_test_cases": 17,
+    "created_at": "2026-10-14T07:13:09.305799+00:00",
+    "development_attempts": [
+      {
+        "log": {
+          "bytes": 373,
+          "path": "postmortem/controls-v1.stderr",
+          "sha256": "a68c9f1de5653554d60061e3141fcdb49e9932837ccb3f42fcc3723bb999a185"
+        },
+        "reason": "Missing closing quote in authored fixture path f-string; no empirical access.",
+        "status": "syntax_error_before_tests"
+      },
+      {
+        "log": {
+          "bytes": 3257,
+          "path": "postmortem/controls-v2.stderr",
+          "sha256": "4cab347cc7ebdccb4c5f421f6202568b1a14e83e7187a53483e58aa65ae13c2c"
+        },
+        "reason": "Temporary /var path versus /private/var resolved alias in authored freeze fixture; owner normalization corrected. Actual SIGKILL control passed.",
+        "status": "16_passed_1_error"
+      },
+      {
+        "log": {
+          "bytes": 1809,
+          "path": "postmortem/controls-v3.stderr",
+          "sha256": "2a87d5f2a7f95e41dd6f3078c4d2892286f8d236a1e9ce37e4192266872fefbf"
+        },
+        "reason": "Before final unchanged-policy/inventory checks.",
+        "status": "17_passed"
+      },
+      {
+        "log": {
+          "bytes": 1809,
+          "path": "postmortem/controls-v4.stderr",
+          "sha256": "d54c9d52a7d4804b39bedc2a862b1ee948ceeb49b8f07cba177bd888f07db074"
+        },
+        "reason": "Before explicit portable --support option.",
+        "status": "17_passed"
+      },
+      {
+        "log": {
+          "bytes": 1809,
+          "path": "postmortem/controls-v5.stderr",
+          "sha256": "51873c2ff90a0fb6a853f79a01c464ff7ac22feaa9d1b724cda53db1701cf13f"
+        },
+        "reason": "Final source and explicit --support path.",
+        "status": "17_passed"
+      }
+    ],
+    "elapsed_test_seconds": 1.093,
+    "empirical_partial_records_read_semantically": false,
+    "final_log": {
+      "bytes": 1809,
+      "path": "postmortem/controls-v5.stderr",
+      "sha256": "51873c2ff90a0fb6a853f79a01c464ff7ac22feaa9d1b724cda53db1701cf13f"
+    },
+    "model_inference": false,
+    "network": "sandbox-exec deny network* before Python",
+    "scope": "Authored saved-record prefix, custody, truncation, orphan, false-completion, origin/geometry and process tests. Reuses frozen per-tile checker. No complete-pair or reference endpoint computed.",
+    "source": {
+      "bytes": 15214,
+      "path": "postmortem/audit_partial.py",
+      "sha256": "a2791c3d78ef0cc462d78d1b957ae893add24378b4d7007e226a2e29abfd4b3e"
+    },
+    "status": "authored_controls_passed_not_empirical_admission",
+    "tests": {
+      "bytes": 12949,
+      "path": "postmortem/test_audit_partial.py",
+      "sha256": "b4e492a57ecde04e136d219ff320dd2cfc824b47ba9d7f9aeda1cd46b37c9869"
+    },
+    "version": "0.1.0"
+  },
+  "total_cases_across_stages": 119,
+  "default_public_replay_cases": 101,
+  "private_static_binding_cases": 18
+}

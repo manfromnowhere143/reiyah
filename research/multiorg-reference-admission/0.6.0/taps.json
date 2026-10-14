@@ -1,0 +1,188 @@
+[
+  {
+    "name": "/Where_6_output_0",
+    "rank": 3,
+    "elem_type": 1,
+    "role": "RPN selected rows before appended placeholder"
+  },
+  {
+    "name": "/ConstantOfShape_11_output_0",
+    "rank": 3,
+    "elem_type": 1,
+    "role": "RPN appended placeholder"
+  },
+  {
+    "name": "/Concat_87_output_0",
+    "rank": 3,
+    "elem_type": 1,
+    "role": "RPN post-append population"
+  },
+  {
+    "name": "/TopK_6_output_0",
+    "rank": 2,
+    "elem_type": 1,
+    "role": "RPN sorted scores"
+  },
+  {
+    "name": "/Reshape_80_output_0",
+    "rank": 3,
+    "elem_type": 1,
+    "role": "RPN sorted proposals"
+  },
+  {
+    "name": "/Reshape_83_output_0",
+    "rank": 2,
+    "elem_type": 1,
+    "role": "ROI coordinates with batch index"
+  },
+  {
+    "name": "/bbox_head/fc_cls/Gemm_output_0",
+    "rank": 2,
+    "elem_type": 1,
+    "role": "ROI classifier logits"
+  },
+  {
+    "name": "/bbox_head/fc_reg/Gemm_output_0",
+    "rank": 2,
+    "elem_type": 1,
+    "role": "ROI regression outputs"
+  },
+  {
+    "name": "/Softmax_output_0",
+    "rank": 3,
+    "elem_type": 1,
+    "role": "ROI class probabilities"
+  },
+  {
+    "name": "/Add_37_output_0",
+    "rank": 4,
+    "elem_type": 1,
+    "role": "Normalized regression deltas"
+  },
+  {
+    "name": "/Sub_3_output_0",
+    "rank": 4,
+    "elem_type": 1,
+    "role": "Decoded upper left before clipping"
+  },
+  {
+    "name": "/Add_40_output_0",
+    "rank": 4,
+    "elem_type": 1,
+    "role": "Decoded lower right before clipping"
+  },
+  {
+    "name": "/Reshape_88_output_0",
+    "rank": 3,
+    "elem_type": 1,
+    "role": "Decoded boxes after clipping"
+  },
+  {
+    "name": "/Slice_14_output_0",
+    "rank": 3,
+    "elem_type": 1,
+    "role": "Foreground probabilities"
+  },
+  {
+    "name": "/Reshape_93_output_0",
+    "rank": 3,
+    "elem_type": 1,
+    "role": "Decoded selected-class boxes"
+  },
+  {
+    "name": "/TopK_7_output_0",
+    "rank": 2,
+    "elem_type": 1,
+    "role": "Final pre-NMS top scores"
+  },
+  {
+    "name": "/Reshape_97_output_0",
+    "rank": 3,
+    "elem_type": 1,
+    "role": "Final pre-NMS selected boxes"
+  },
+  {
+    "name": "/Transpose_12_output_0",
+    "rank": 3,
+    "elem_type": 1,
+    "role": "Final pre-NMS transposed class scores"
+  },
+  {
+    "name": "/Where_10_output_0",
+    "rank": 3,
+    "elem_type": 1,
+    "role": "Final NMS selected detections before pad"
+  },
+  {
+    "name": "/ConstantOfShape_15_output_0",
+    "rank": 3,
+    "elem_type": 1,
+    "role": "Final appended zero detection"
+  },
+  {
+    "name": "/Concat_114_output_0",
+    "rank": 3,
+    "elem_type": 1,
+    "role": "Final post-append detections"
+  },
+  {
+    "name": "/TopK_8_output_0",
+    "rank": 2,
+    "elem_type": 1,
+    "role": "Final sorted detection scores"
+  },
+  {
+    "name": "/TopK_6_output_1",
+    "rank": 2,
+    "elem_type": 7,
+    "role": "RPN sort indices into post-append population"
+  },
+  {
+    "name": "/TopK_7_output_1",
+    "rank": 2,
+    "elem_type": 7,
+    "role": "Final pre-NMS indices into decoded ROI population"
+  },
+  {
+    "name": "/NonMaxSuppression_1_output_0",
+    "rank": 2,
+    "elem_type": 7,
+    "role": "Final NMS batch,class,pre-NMS-index triples"
+  },
+  {
+    "name": "/Where_11_output_0",
+    "rank": 2,
+    "elem_type": 7,
+    "role": "Final NMS selected labels before pad"
+  },
+  {
+    "name": "/ConstantOfShape_16_output_0",
+    "rank": 2,
+    "elem_type": 7,
+    "role": "Final appended zero label"
+  },
+  {
+    "name": "/Concat_116_output_0",
+    "rank": 2,
+    "elem_type": 7,
+    "role": "Final post-append labels"
+  },
+  {
+    "name": "/TopK_8_output_1",
+    "rank": 2,
+    "elem_type": 7,
+    "role": "Final sort indices into post-append detections"
+  },
+  {
+    "name": "reiyah_validity_v040/unmasked_foreground",
+    "elem_type": 1,
+    "rank": 3,
+    "role": "Original foreground scores before validity mask"
+  },
+  {
+    "name": "reiyah_validity_v040/valid_rpn_origin",
+    "elem_type": 9,
+    "rank": 2,
+    "role": "True only for indices before the explicit RPN appended operand"
+  }
+]
