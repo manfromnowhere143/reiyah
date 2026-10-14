@@ -1,0 +1,37 @@
+{
+  "artifact_id": "reiyah.capacity-recovery.public-cleanup-summary",
+  "version": "0.7.0",
+  "status": "completed",
+  "operator_authorization": "Explicit safe Mac cleanup instruction on14October2026",
+  "completed_categories": [
+    "pip download cache",
+    "npm package content cache",
+    "temporary npx CLI installation cache",
+    "inactive Go compilation cache",
+    "duplicated generated packaging staging",
+    "superseded or redundant signed installer downloads",
+    "inactive historical Webpack pack cache",
+    "Corepack temporary package-manager download cache",
+    "unused Node development headers",
+    "inactive Turbopack generated cache"
+  ],
+  "known_pre_removal_allocated_bytes_subtotal": 5284786176,
+  "allocation_scope": "npx,Go,three staging trees,eight installers,Webpack; excludes pip rounded native report,npm and Corepack unreported exact counts. Not physical bytes freed. Adds Node headers and Turbopack.",
+  "pip_native_rounded_report": "114.7 MB",
+  "initial_observed_free_bytes": 2654609408,
+  "after_supplement_observed_free_bytes": 8685256704,
+  "free_change_attribution": "Not wholly attributable to cleanup; shared APFS, concurrent writes and swap remain unassigned.",
+  "preserved": {
+    "research_evidence_models_and_bound_environments": true,
+    "source_and_packaging_archives_manifests": true,
+    "installed_apps_runtimes": true,
+    "browser_profiles_sessions_cookies_cache_state": true,
+    "active_sparkle_installation_and_launcher": true,
+    "uv_active_cache_lock": true,
+    "docker_images_containers_volumes": true,
+    "personal_documents_photos_backups": true
+  },
+  "retained_private_summary_sha256": "6f9003910d7096ea6da4429fbc259797cb8c784b62a71447e35205159d701e9f",
+  "retained_private_supplement_sha256": "bac8a1e62681dd309401b5f2323029ca0d84f626a4aa5c6cc334b3d09b141dde",
+  "inference_admission": "Separate fresh sampled admission required; these snapshots reserve no capacity."
+}

@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.24`
+Version: `0.1.25`
 
 Lifecycle status: `proposed`
 
@@ -12,6 +12,23 @@ Read with [AGENTS.md](../AGENTS.md), the newest
 [handoff](SESSION_HANDOFF.md) and [editorial policy](EDITORIAL_POLICY.md).
 The [machine-readable state](CONTINUATION.json) is a navigation aid; verify its
 evidence bindings and resolve live Git state before acting.
+
+## Current execution dependency, 14 October 2026
+
+The [capacity-recovery continuation](../research/multiorg-reference-admission/0.7.0/README.md)
+supersedes the earlier pending cleanup question. Safe cleanup is complete and
+the new receipt consumer is qualified. One more selected image has a complete
+checked pair, bringing total coverage to two of four. The next image stopped
+at its remaining-capacity allowance; the final image was not started. This
+owner is closed, and its two-hour wall target was exceeded before closeout.
+Only required evidence verification and publication followed.
+
+Preserve both complete pairs and all failures. The next execution dependency
+is durable headroom for the two incomplete images, with exact reuse qualification
+and a new bounded freeze. The complete twelve-case comparison and full-work
+advantage remain unestablished. Do not repeat safe-cleanup questions already
+resolved by the operator or silently rerun a closed attempt. Historical entries
+below retain their original scope and do not supersede this current state.
 
 ## Mission and ambition
 

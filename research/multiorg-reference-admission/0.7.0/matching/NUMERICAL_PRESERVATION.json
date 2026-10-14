@@ -1,0 +1,58 @@
+{
+  "artifact_id": "reiyah.multiorg.matching-numerical-preservation",
+  "files": {
+    "DEPENDENCIES.json": {
+      "byte_identical": true,
+      "new": {
+        "bytes": 1522,
+        "sha256": "320daa7410b30828c6007e5019af4194cd875ba63375c0ed3fcc172d434f8600"
+      },
+      "old": {
+        "bytes": 1522,
+        "sha256": "320daa7410b30828c6007e5019af4194cd875ba63375c0ed3fcc172d434f8600"
+      }
+    },
+    "check_matching.py": {
+      "AST_equal_after_only_0_7_to_0_6_version_literal_normalization": true,
+      "new": {
+        "bytes": 8684,
+        "sha256": "f4d06226547d15df61a00f7c3e82f8e0d0366154a29db520e39a63b001f9929d"
+      },
+      "old": {
+        "bytes": 8684,
+        "sha256": "bb47a5f15a84836e2eb94fba4bf73208bdfe3c7778c51751bdf8b9a7de7f3d9f"
+      }
+    },
+    "match_analysis.py": {
+      "AST_equal_after_only_0_7_to_0_6_version_literal_normalization": true,
+      "new": {
+        "bytes": 3196,
+        "sha256": "69291431c32c9aa0fb7072944b8c78d996a0283f1354a384eb8876063ae5ba69"
+      },
+      "old": {
+        "bytes": 3196,
+        "sha256": "4c60a314bffca2cbe5e68b36865cb692ffd17d9b518064f39a33e1ee1b529bbe"
+      }
+    },
+    "maxflow_reference.py": {
+      "byte_identical": true,
+      "new": {
+        "bytes": 1735,
+        "sha256": "f5b5ad730bfcacaee6a303e161d035c4093c0b61cb796e65b9611ef0a6854e5a"
+      },
+      "old": {
+        "bytes": 1735,
+        "sha256": "f5b5ad730bfcacaee6a303e161d035c4093c0b61cb796e65b9611ef0a6854e5a"
+      }
+    }
+  },
+  "resource_gate": {
+    "byte_identical": true,
+    "bytes": 13161,
+    "sha256": "b2782d4234af6cb248e2899671cae6afdecb9c870f109e16b19323213b828638",
+    "source": "../consumer/resource_gate.py"
+  },
+  "scope": "Static source comparison only. Admission and context custody changed; numerical matching and composition did not. No empirical execution.",
+  "status": "passed",
+  "version": "0.7.0"
+}

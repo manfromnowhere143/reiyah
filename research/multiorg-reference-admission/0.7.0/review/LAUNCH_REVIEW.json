@@ -1,0 +1,107 @@
+{
+  "artifact_id": "reiyah.capacity-recovery.launch-review",
+  "version": "0.1.0",
+  "at": "2026-10-14T08:32:05.305010+00:00",
+  "status": "no_remaining_code_blocker_for_prospective_freeze",
+  "scope": "Read-only same-investigation source review plus harmless authored process controls. No cohort main or observe_window invocation, model inference, empirical predictions, annotation content, or repository edits by this reviewer. This is not independent science.",
+  "bindings": [
+    {
+      "path": "run_recovered_cohort.py",
+      "bytes": 8976,
+      "sha256": "4c2f2749f0e9cef9dba2388b9804798822e8dd2815dcf30d85cc45bdddad3a4b"
+    },
+    {
+      "path": "consumer-review/test_launch_capture.py",
+      "bytes": 7917,
+      "sha256": "3fc21d81f1e4927b4e9a7ea6ec101f8c20b181b3719a3009c9b6d17386ac383d"
+    },
+    {
+      "path": "consumer-review/LAUNCH_CONTROLS.json",
+      "bytes": 5159,
+      "sha256": "ddde21f500f644a2e62631fd790ad62fcee91e891a522fc11ec43afc7457cde1"
+    },
+    {
+      "path": "EMPIRICAL_PLAN.json",
+      "bytes": 3561,
+      "sha256": "0a76a46976b9c1ec010a56af4fe24b30e1337ba24f80ee13fe83885733bab799"
+    },
+    {
+      "path": "INPUT_QUALIFICATION.json",
+      "bytes": 4120,
+      "sha256": "15d6086690d9ea22baeaa2b351c9f53c62b92785a268797248e93cfa42c3bca1"
+    },
+    {
+      "path": "runtime-audit/before.json",
+      "bytes": 1367272,
+      "sha256": "8175be48e81fd0520ef59d4d24a5f1dd75ec3747d8ca0cb84c080367c358a5e9"
+    },
+    {
+      "path": "execution/shared/capacity-plan.json",
+      "bytes": 309,
+      "sha256": "b2e8636867b7708cc168a2b992741c0bddcabb4c3fa0923f0d7a176f58cb264e"
+    },
+    {
+      "path": "execution/image-1/consumer-contract.json",
+      "bytes": 2855,
+      "sha256": "646dcad3c056d5f2494931682798b4ffbc830fc62aba4f17a816d38c9b3090af"
+    },
+    {
+      "path": "execution/image-2/consumer-contract.json",
+      "bytes": 2855,
+      "sha256": "a8c56edbaa0ab8bfba5e007818c2b606b46735a71cd058de96ac3534d4416751"
+    },
+    {
+      "path": "execution/image-3/consumer-contract.json",
+      "bytes": 2855,
+      "sha256": "3e81ea03d8f1ce6b7f42a19d458ad0225c21b1a0f9062f053034093f25e5a568"
+    }
+  ],
+  "authored_controls": {
+    "passed": 8,
+    "total": 8,
+    "cases": [
+      "actual_positive_stdout_stderr",
+      "actual_nonzero_not_coerced",
+      "existing_output_never_overwritten_or_spawned",
+      "actual_timeout_stops_observed_separate_session_child_and_outer",
+      "child_discovery_timeout_still_stops_outer_and_records_uncertainty",
+      "child_discovery_malformed_still_stops_outer_and_records_uncertainty",
+      "child_discovery_nonzero_still_stops_outer_and_records_uncertainty",
+      "interruption_runs_cleanup_and_propagates"
+    ],
+    "process_scope": "Actual harmless subprocesses including an independent-session child. Deliberate child-discovery failures were cleaned up using fixture-owned PIDs by the test harness; no processes intentionally left running."
+  },
+  "resolved_finding": {
+    "issue": "An exception while discovering direct children could previously skip owned process-group termination.",
+    "resolution": "Finally path always attempts owned group kill/wait, retaining discovery uncertainty separately without changing successful outer receipt schema."
+  },
+  "resource_arithmetic": {
+    "fragment_bytes": 4096,
+    "floor": 4294967296,
+    "margin": 3221225472,
+    "logical_budget_per_pair": 268435456,
+    "allocation_rounding_per_pair": 40950000,
+    "metadata_allowance": 20971520,
+    "required_remaining_three": 8465320656,
+    "required_remaining_two": 8155935200,
+    "required_remaining_one": 7846549744,
+    "reviewer_single_sample_available": 8425406464,
+    "reviewer_single_sample_satisfies_three_pair_bound": false,
+    "interpretation": "A previous passing sample window cannot reserve shared APFS capacity. The launcher must use its fresh twenty-sample gate and the frozen supervisor must separately admit and monitor each actual invocation. No capacity approval is asserted here."
+  },
+  "launch_contract_checks": [
+    "Exact three fixed image order; one attempt each; no retry on outer, runtime audit, or consumer failure.",
+    "600-second numerical guard, 660-second outer watchdog, 120-second runtime audit, 300-second consumer watchdog; unchanged original 3 GiB RSS.",
+    "Outer receipt exact keys including immediate worker log digest/bytes agree with resource_gate.",
+    "CHECK_EXECUTION exact fields and sandbox-prefixed command agree with matching input_gate.admit_resource.",
+    "Manifest/protocol/worker/supervisor/consumer/gate/numerical identities remain prospective and distinct.",
+    "Parent INPUT_QUALIFICATION retains 936 reconstructed tensor identities across three exact images and zero model forwards; this review reads the receipt and does not rerun reconstruction.",
+    "Freeze must bind the launcher, plan, exact source inputs, all three contracts, controls, runtime before census, source reconstruction and qualified code before first empirical attempt."
+  ],
+  "remaining_limits": [
+    "Observed direct children only. If discovery fails, the independent-session child may survive outer group termination; the cleanup record explicitly does not establish complete descendant cleanup.",
+    "No guarantee against external SIGKILL, process creation races, hostile fully self-consistent observation fabrication, or shared-volume changes after sampling.",
+    "Twenty samples are successive observations with requested 0.5-second sleeps, not an exclusive filesystem reservation or hard real-time stability guarantee. The resource guard separately checks actual sample gaps.",
+    "No empirical result is admitted by a launcher zero exit alone; complete resource consumer admission and later matching constraints remain required."
+  ]
+}

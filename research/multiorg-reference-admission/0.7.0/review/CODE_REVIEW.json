@@ -1,0 +1,144 @@
+{
+  "artifact_id": "reiyah.capacity-recovery.resource-consumer-review",
+  "version": "0.1.0",
+  "at": "2026-10-14T08:17:16.928820+00:00",
+  "status": "no_blocking_defect_found_for_frozen_consumer_composition",
+  "review_role": "Separately authored review and adversarial controls within this same assisted investigation; not independent scientific replication.",
+  "scope": "Exact resource-receipt consumer before prospective same-input execution. No inference, new model or dataset acquisition, actual prediction or annotation reads, cleanup, old-owner edits or candidate changes by this role.",
+  "bindings": {
+    "resource_gate.py": {
+      "path": "consumer/resource_gate.py",
+      "sha256": "b2782d4234af6cb248e2899671cae6afdecb9c870f109e16b19323213b828638",
+      "bytes": 13161
+    },
+    "check_pair_resource.py": {
+      "path": "consumer/check_pair_resource.py",
+      "sha256": "420e2aeacebbb3fc2502084c5195aa6fb5eab4c773d95f37394960ce87376e96",
+      "bytes": 14501
+    },
+    "CONTRACT.md": {
+      "path": "consumer/CONTRACT.md",
+      "sha256": "11f861fc354a730b53d71f824bee67855b925bc34d60a5d4c993e0d27f6407b2",
+      "bytes": 6884
+    },
+    "test_resource_consumer.py": {
+      "path": "consumer/test_resource_consumer.py",
+      "sha256": "b4404c20e1b4f6b94f267c039e010fcd9b21c4308e848ff76617586061c997c5",
+      "bytes": 11075
+    },
+    "test_integration.py": {
+      "path": "consumer/test_integration.py",
+      "sha256": "05b6deb7210b45468d3a405b1ff287592e0a39a1bedcc8843611c617f6fb9225",
+      "bytes": 10331
+    },
+    "QUALIFICATION.json": {
+      "path": "consumer/QUALIFICATION.json",
+      "sha256": "7364a46059d9879ecfea473f7a3a056b215da0ee260de8f042cec5fdc21274d7",
+      "bytes": 4165
+    },
+    "READY.json": {
+      "path": "consumer/READY.json",
+      "sha256": "b9f65ab421bc09ed282d7990f3349342b7699970b7e062f538949a4abeb97f4b",
+      "bytes": 1926
+    }
+  },
+  "independent_control_bindings": {
+    "test_consumer_adversarial.py": {
+      "path": "consumer-review/test_consumer_adversarial.py",
+      "sha256": "ba79aeb23795d448f8f2363a62e04408cd0276f9d5829cf1e351278b44c859aa",
+      "bytes": 9766
+    },
+    "test_runtime_adversarial.py": {
+      "path": "consumer-review/test_runtime_adversarial.py",
+      "sha256": "d9fe34b24448cc93af09ce5a0b4d70e5e593c826a5fbcc57f2e4fd8b9e5f91fa",
+      "bytes": 7939
+    },
+    "GATE-v2.json": {
+      "path": "consumer-review/GATE-v2.json",
+      "sha256": "b38f6e2d87cc9ff0186c13b4ca3cdcde590cbc9f5d2a157fe60da943ec5007cc",
+      "bytes": 568
+    },
+    "RUNTIME-v2.json": {
+      "path": "consumer-review/RUNTIME-v2.json",
+      "sha256": "dd1c3b460054081af0b8a1c539f68fa4b10240900762b3643ce3c68364472da5",
+      "bytes": 689
+    },
+    "gate-v2-PROCESS.json": {
+      "path": "consumer-review/gate-v2-PROCESS.json",
+      "sha256": "2ff1d37c23d18571c6eb9b4c416e3490ec78ffa8abf664a998f85e1cf40c45e2",
+      "bytes": 1412
+    },
+    "runtime-v2-PROCESS.json": {
+      "path": "consumer-review/runtime-v2-PROCESS.json",
+      "sha256": "32d6c930d68a9b6a04d7bd78d0ee4e483b0d7afb114481432384b1a7e72ccfd2",
+      "bytes": 1574
+    },
+    "gate-v2.log": {
+      "path": "consumer-review/gate-v2.log",
+      "sha256": "5d17064d1825f851f2fa847e58225cd1839e6de213aa97d6e3101b834ed130c4",
+      "bytes": 3042
+    },
+    "runtime-v2.log": {
+      "path": "consumer-review/runtime-v2.log",
+      "sha256": "23984f7dab8bec9a37651f28f101c1e0b92ecc185573c6f3ef4b86c11fa1a670",
+      "bytes": 2148
+    }
+  },
+  "qualification": {
+    "separately_authored_cases": 46,
+    "receipt_and_journal_cases": 27,
+    "runtime_and_freeze_cases": 19,
+    "status": "passed",
+    "network_denied": true,
+    "source_bytes_unchanged_during_both_replays": true,
+    "author_final_cases": 21,
+    "author_integration_scope": "16 custody/gate controls and 5 integration controls. Integration invokes actual byte-identical numerical verify_output on an authored two-tile/two-model70-array packet; only bind_inputs is replaced by an explicit authored fixture context. It does not admit real source images or models.",
+    "author_initial_failure": "Initial integration had one missing input_reconstruction fixture field at report assembly; original failure log retained. Fixture corrected before final pass; production acceptance was not weakened.",
+    "earlier_review_sources_and_40_case_results_retained": true
+  },
+  "review_prompted_changes": [
+    {
+      "issue": "A worker clock could begin before prelaunch or finish after final observation while individual fields remained within limits.",
+      "resolution": "Consumer checks common clock origin against completed prelaunch sample and worker finish against final sample; final RSS state is exact."
+    },
+    {
+      "issue": "Audited worker-runtime files alone did not identify the actual consumer interpreter used by numerical reconstruction.",
+      "resolution": "Consumer process executable and sys.prefix must match the pinned interpreter and venv before numerical library import."
+    },
+    {
+      "issue": "Current log hashes could miss a same-size edit before checking.",
+      "resolution": "Outer launch record now binds worker_log_sha256 and worker_log_bytes immediately after supervisor exit; consumer checks both and rehashes observations after checking."
+    },
+    {
+      "issue": "The frozen before audit could be named as the after report.",
+      "resolution": "Destination paths cannot alias frozen inputs/contract; reports require distinct capture paths, aware timestamps in strict order enclosing resource sample wall timestamps."
+    }
+  ],
+  "checked_acceptance": [
+    "Exact qualified supervisor, worker, numerical checker, capacity and source identities; prospective contract and full required freeze checked before and after.",
+    "Outer zero exit/no timeout and command/output identities; returned/retained receipt equivalence; final publication with no pending receipt, no stop and system providers.",
+    "Complete sample phase/sequence/PID chronology, missing/error/unknown handling, exact headroom arithmetic, observed peak RSS, maximum gaps/durations and last worker-time semantics.",
+    "Current runtime declared-file/RECORD/interpreter hashes and matching before/after reports; exact executing interpreter identity.",
+    "Actual unchanged receipt reaches unchanged numerical bind_inputs and verify_output only after resource admission; nested numerical result and wrapper attribution remain distinct.",
+    "Exact numerical last raw/admission pointer checks and full tile/model population remain in unchanged checker; no synthetic legacy receipt or assumed empty output.",
+    "Observation hashes stable through checking and exact final logical-file inventory accounts for the final journal line and receipt; outer worker-log pin closes prior same-size-edit gap."
+  ],
+  "limits": [
+    "Integrity checks do not authenticate a wholly fabricated self-consistent execution history.",
+    "The wrapper does not independently run the neural models, perform reference matching or establish a complete-work advantage.",
+    "Current declared runtime files are rehashed, but entire unrecorded-file census, excluded bytecode and system libraries are not independently rederived.",
+    "Available bytes and allocated output remain sampled APFS observations; no reservation, continuous floor, process-tree containment or crash durability is established.",
+    "After-report and resource timestamps are consistency observations, not authenticated time.",
+    "This review does not establish current capacity, admit actual detector outputs or authorize reuse of a closed owner."
+  ],
+  "next_contract": [
+    "A separately frozen execution must preserve original selected images, models, thresholds, source bindings and600s/3GiB limits.",
+    "The outer launcher must emit the exact new schema including worker-log digest/length, freeze digest, stdout/stderr digests and exact command.",
+    "Downstream matching must explicitly admit this wrapper composition and its nested numerical result, not substitute the historical checker identity."
+  ],
+  "actual_model_forwards": 0,
+  "actual_prediction_reads": 0,
+  "candidate_edits": 0,
+  "third_party_requests": 0,
+  "files_stable": true
+}

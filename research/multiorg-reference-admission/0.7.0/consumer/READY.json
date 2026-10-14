@@ -1,0 +1,60 @@
+{
+  "artifact_id": "reiyah.multiorg.resource-consumer-ready",
+  "cli": [
+    "AUDITED_PYTHON",
+    "-B",
+    "consumer/check_pair_resource.py",
+    "--owner",
+    "OWNER",
+    "--contract",
+    "OWNED_CONTRACT",
+    "--contract-sha256",
+    "CONTRACT_SHA",
+    "--freeze-sha256",
+    "FREEZE_SHA",
+    "--report",
+    "NEW_REPORT"
+  ],
+  "contract": "consumer/CONTRACT.md",
+  "files": {
+    "CONTRACT.md": {
+      "bytes": 6884,
+      "path": "consumer/CONTRACT.md",
+      "sha256": "11f861fc354a730b53d71f824bee67855b925bc34d60a5d4c993e0d27f6407b2"
+    },
+    "check_pair_resource.py": {
+      "bytes": 14501,
+      "path": "consumer/check_pair_resource.py",
+      "sha256": "420e2aeacebbb3fc2502084c5195aa6fb5eab4c773d95f37394960ce87376e96"
+    },
+    "resource_gate.py": {
+      "bytes": 13161,
+      "path": "consumer/resource_gate.py",
+      "sha256": "b2782d4234af6cb248e2899671cae6afdecb9c870f109e16b19323213b828638"
+    },
+    "test_integration.py": {
+      "bytes": 10331,
+      "path": "consumer/test_integration.py",
+      "sha256": "05b6deb7210b45468d3a405b1ff287592e0a39a1bedcc8843611c617f6fb9225"
+    },
+    "test_resource_consumer.py": {
+      "bytes": 11075,
+      "path": "consumer/test_resource_consumer.py",
+      "sha256": "b4404c20e1b4f6b94f267c039e010fcd9b21c4308e848ff76617586061c997c5"
+    }
+  },
+  "fixed_sources": {
+    "numerical_checker": "2cefacc5c6fef3e6c61ae944b16d4d23542ea7cbe03d47773604f808e124a431",
+    "supervisor": "cc275f8ca48eb832001ca78be8d8614f7c74f2dfd228139551d8c94f449ec698",
+    "worker": "7b2991f6b68719d815afc8137e563fc6d12e868689132850c9b9a483d957de1e"
+  },
+  "new_empirical_execution": false,
+  "no_further_source_edits_planned": true,
+  "qualification": {
+    "bytes": 4165,
+    "path": "consumer/QUALIFICATION.json",
+    "sha256": "7364a46059d9879ecfea473f7a3a056b215da0ee260de8f042cec5fdc21274d7"
+  },
+  "status": "qualified_awaiting_parent_freeze",
+  "version": "0.1.0"
+}

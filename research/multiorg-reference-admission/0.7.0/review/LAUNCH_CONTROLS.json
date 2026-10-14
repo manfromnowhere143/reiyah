@@ -1,0 +1,162 @@
+{
+  "source_sha256": "4c2f2749f0e9cef9dba2388b9804798822e8dd2815dcf30d85cc45bdddad3a4b",
+  "test_sha256": "3fc21d81f1e4927b4e9a7ea6ec101f8c20b181b3719a3009c9b6d17386ac383d",
+  "scope": "Authored harmless processes only; no cohort main, capacity window, models, data, or inference.",
+  "passed": 8,
+  "total": 8,
+  "cases": [
+    {
+      "name": "actual_positive_stdout_stderr",
+      "status": "passed",
+      "detail": {
+        "returncode": 0,
+        "timed_out": false,
+        "wall_seconds": 0.039793375006411225
+      },
+      "seconds": 0.04074770800070837
+    },
+    {
+      "name": "actual_nonzero_not_coerced",
+      "status": "passed",
+      "detail": {
+        "returncode": 7,
+        "timed_out": false,
+        "wall_seconds": 0.020373582956381142
+      },
+      "seconds": 0.020869041967671365
+    },
+    {
+      "name": "existing_output_never_overwritten_or_spawned",
+      "status": "passed",
+      "detail": {
+        "spawned": false,
+        "original_bytes_preserved": true
+      },
+      "seconds": 0.0007031250279396772
+    },
+    {
+      "name": "actual_timeout_stops_observed_separate_session_child_and_outer",
+      "status": "passed",
+      "detail": {
+        "capture": {
+          "returncode": -9,
+          "timed_out": true,
+          "wall_seconds": 0.42780916596530005
+        },
+        "cleanup": {
+          "actions": [
+            {
+              "action": "kill_observed_direct_child",
+              "pid": 44864
+            },
+            {
+              "action": "kill_owned_outer_group",
+              "pid": 44863
+            }
+          ],
+          "outer_returncode": -9,
+          "limitation": "Observed direct children only; child discovery failure does not establish complete descendant cleanup."
+        },
+        "independent_child_survived_launcher": false,
+        "test_harness_cleanup": "known fixture child killed in finally when discovery failed"
+      },
+      "seconds": 0.4333853750140406
+    },
+    {
+      "name": "child_discovery_timeout_still_stops_outer_and_records_uncertainty",
+      "status": "passed",
+      "detail": {
+        "capture": {
+          "returncode": -9,
+          "timed_out": true,
+          "wall_seconds": 0.4031677090097219
+        },
+        "cleanup": {
+          "actions": [
+            {
+              "action": "child_discovery_or_stop_failed",
+              "error_type": "TimeoutExpired",
+              "descendant_cleanup_verified": false
+            },
+            {
+              "action": "kill_owned_outer_group",
+              "pid": 44868
+            }
+          ],
+          "outer_returncode": -9,
+          "limitation": "Observed direct children only; child discovery failure does not establish complete descendant cleanup."
+        },
+        "independent_child_survived_launcher": true,
+        "test_harness_cleanup": "known fixture child killed in finally when discovery failed"
+      },
+      "seconds": 0.411582125001587
+    },
+    {
+      "name": "child_discovery_malformed_still_stops_outer_and_records_uncertainty",
+      "status": "passed",
+      "detail": {
+        "capture": {
+          "returncode": -9,
+          "timed_out": true,
+          "wall_seconds": 0.40856783400522545
+        },
+        "cleanup": {
+          "actions": [
+            {
+              "action": "child_discovery_or_stop_failed",
+              "error_type": "ValueError",
+              "descendant_cleanup_verified": false
+            },
+            {
+              "action": "kill_owned_outer_group",
+              "pid": 44872
+            }
+          ],
+          "outer_returncode": -9,
+          "limitation": "Observed direct children only; child discovery failure does not establish complete descendant cleanup."
+        },
+        "independent_child_survived_launcher": true,
+        "test_harness_cleanup": "known fixture child killed in finally when discovery failed"
+      },
+      "seconds": 0.415004541981034
+    },
+    {
+      "name": "child_discovery_nonzero_still_stops_outer_and_records_uncertainty",
+      "status": "passed",
+      "detail": {
+        "capture": {
+          "returncode": -9,
+          "timed_out": true,
+          "wall_seconds": 0.40539362496929243
+        },
+        "cleanup": {
+          "actions": [
+            {
+              "action": "child_discovery_or_stop_failed",
+              "error_type": "RuntimeError",
+              "descendant_cleanup_verified": false
+            },
+            {
+              "action": "kill_owned_outer_group",
+              "pid": 44876
+            }
+          ],
+          "outer_returncode": -9,
+          "limitation": "Observed direct children only; child discovery failure does not establish complete descendant cleanup."
+        },
+        "independent_child_survived_launcher": true,
+        "test_harness_cleanup": "known fixture child killed in finally when discovery failed"
+      },
+      "seconds": 0.41285683296155185
+    },
+    {
+      "name": "interruption_runs_cleanup_and_propagates",
+      "status": "passed",
+      "detail": {
+        "interrupt_propagated": true,
+        "owned_outer_stopped": true
+      },
+      "seconds": 0.02722462499514222
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "artifact_id": "reiyah.multiorg.resource-consumer-qualification",
+  "at": "2026-10-14T08:16:15.158036+00:00",
+  "authored_gate_custody_controls": 16,
+  "authored_integration_controls": 5,
+  "consumer_report_identity": "reiyah.multiorg.resource-qualified-pair-check/0.1.0",
+  "development_history": [
+    {
+      "log": {
+        "bytes": 1985,
+        "path": "consumer/controls-v1.stderr",
+        "sha256": "fd6c5cf992ea1e452882b0424981edc432916a1c0029fc34241dd219a932ba7b"
+      },
+      "scope": "before outer log and runtime chronology refinements",
+      "status": "16_passed"
+    },
+    {
+      "log": {
+        "bytes": 2085,
+        "path": "consumer/integration-v1.stderr",
+        "sha256": "6495a2689512782cac132cbaa047810dadbde66d6772ac0c3f5df66fb99eed87"
+      },
+      "reason": "Authored context omitted input_reconstruction; positive numeric verification completed, final report assembly raised KeyError. Fixed fixture metadata only, no production check relaxed.",
+      "status": "4_passed_1_error"
+    },
+    {
+      "log": {
+        "bytes": 1985,
+        "path": "consumer/controls-v2.stderr",
+        "sha256": "28ad110361507f2a28e75a9180e039b9ebb16644b5b9c1166187a1ef0b504d24"
+      },
+      "scope": "final source",
+      "status": "16_passed"
+    },
+    {
+      "log": {
+        "bytes": 704,
+        "path": "consumer/integration-v2.stderr",
+        "sha256": "bbba474f3c08db608e10c2be57248a550ce38d01a3bf062e16c84af15d8464ee"
+      },
+      "scope": "final source",
+      "status": "5_passed"
+    }
+  ],
+  "files": {
+    "CONTRACT.md": {
+      "bytes": 6884,
+      "path": "consumer/CONTRACT.md",
+      "sha256": "11f861fc354a730b53d71f824bee67855b925bc34d60a5d4c993e0d27f6407b2"
+    },
+    "check_pair_resource.py": {
+      "bytes": 14501,
+      "path": "consumer/check_pair_resource.py",
+      "sha256": "420e2aeacebbb3fc2502084c5195aa6fb5eab4c773d95f37394960ce87376e96"
+    },
+    "resource_gate.py": {
+      "bytes": 13161,
+      "path": "consumer/resource_gate.py",
+      "sha256": "b2782d4234af6cb248e2899671cae6afdecb9c870f109e16b19323213b828638"
+    },
+    "test_integration.py": {
+      "bytes": 10331,
+      "path": "consumer/test_integration.py",
+      "sha256": "05b6deb7210b45468d3a405b1ff287592e0a39a1bedcc8843611c617f6fb9225"
+    },
+    "test_resource_consumer.py": {
+      "bytes": 11075,
+      "path": "consumer/test_resource_consumer.py",
+      "sha256": "b4404c20e1b4f6b94f267c039e010fcd9b21c4308e848ff76617586061c997c5"
+    }
+  },
+  "final_logs": [
+    {
+      "bytes": 1985,
+      "path": "consumer/controls-v2.stderr",
+      "sha256": "28ad110361507f2a28e75a9180e039b9ebb16644b5b9c1166187a1ef0b504d24"
+    },
+    {
+      "bytes": 704,
+      "path": "consumer/integration-v2.stderr",
+      "sha256": "bbba474f3c08db608e10c2be57248a550ce38d01a3bf062e16c84af15d8464ee"
+    }
+  ],
+  "final_test_seconds": {
+    "gate_custody": 0.014,
+    "integration": 0.289
+  },
+  "integration_scope": {
+    "actual_unchanged_numerical_checker_sha256": "2cefacc5c6fef3e6c61ae944b16d4d23542ea7cbe03d47773604f808e124a431",
+    "numerical_bind_inputs": "replaced only in authored test with explicit fixture context; no empirical image qualification claimed",
+    "packet": "authored two-model/two-tile saved outputs,70NPYs",
+    "real_numerical_verification": true,
+    "runtime_fixture": "reduced authored audit over existing declared interpreter/config/RECORD bytes; not the full empirical distribution census",
+    "scope": "Gate, wrapper custody, real per-tile origin/scalar transforms/globalNMS and saved record checks run; no producer function/model called."
+  },
+  "model_inference_calls": 0,
+  "network": "sandbox-exec deny network before Python for all replays",
+  "new_empirical_source_or_output_reads": false,
+  "next_gate": "Parent review, exact source/capacity/runtime freeze, separate empirical authorization and sufficient resource admission. Downstream matching must qualify this wrapper composition.",
+  "runtime_entrypoint": "/Users/danielwahnich/.codex/reports/reiyah/owned-trial-frontier-2026-10-12-pz2p4ld2/runtime/venv/bin/python",
+  "status": "authored_controls_passed_no_empirical_run",
+  "version": "0.1.0"
+}

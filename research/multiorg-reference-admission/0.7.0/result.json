@@ -1,0 +1,103 @@
+{
+  "artifact_id": "reiyah.multiorg.capacity-recovery.result",
+  "version": "0.7.0",
+  "lifecycle_status": "inconclusive",
+  "date": "2026-10-14",
+  "scope": "Safe capacity recovery, qualified receipt consumer, one new complete image pair and a later sampled capacity stop.",
+  "primary_status": "inconclusive_incomplete_selected_cohort",
+  "selected_cohort_images": 4,
+  "complete_pairs_including_prior": 2,
+  "new_complete_pairs": 1,
+  "completed_pair": {
+    "image_id": "MultiOrg_v2/test/Macros/Plate_23/image_0/image_0.tiff",
+    "input_tensor_count": 312,
+    "models": [
+      {
+        "analysis_count": 251,
+        "model": "faster",
+        "raw_rows": 2322,
+        "status": "complete_analysis_image_verified",
+        "tiles": 156
+      },
+      {
+        "analysis_count": 9,
+        "model": "yolo",
+        "raw_rows": 15600,
+        "status": "complete_analysis_image_verified",
+        "tiles": 156
+      }
+    ],
+    "raw_array_files_checked": 5460,
+    "raw_array_file_bytes_checked": 5839207,
+    "unbound_partial_array_files": [],
+    "worker_wall_seconds": 310.36191591701936,
+    "supervisor_wall_seconds": 320.46276395901805,
+    "peak_sampled_rss_bytes": 976125952,
+    "consumer_wall_seconds": 7.380865333019756,
+    "resource_samples": 588
+  },
+  "next_pair": {
+    "image_id": "MultiOrg_v2/test/Normal/Plate_31/image_6/image_6.tiff",
+    "status": "failed_resource_boundary",
+    "termination_reason": "remaining_capacity",
+    "returncode": -9,
+    "supervisor_wall_seconds": 86.94925687502837,
+    "worker_wall_seconds": 77.00466841598973,
+    "peak_sampled_rss_bytes": 855883776,
+    "trigger_available_bytes": 7577542656,
+    "trigger_required_available_bytes": 7817443568,
+    "floor_bytes": 4294967296,
+    "sampled_output_allocated_bytes": 8134656,
+    "sampled_output_logical_bytes": 3274541,
+    "worker_result_present": false,
+    "worker_pid_absent_at_closeout": true,
+    "numerical_partial_audit": "not_performed",
+    "consumer_run": false
+  },
+  "third_new_pair_started": false,
+  "new_matching_executed": false,
+  "complete_twelve_case_endpoint": false,
+  "qualification": {
+    "consumer_authored": 21,
+    "consumer_separate_review": 46,
+    "launcher_process_controls": 8,
+    "matching_authored": 64,
+    "public_projection_replayed": 85
+  },
+  "freeze": {
+    "sha256": "59c8cf9fbbb807578ae823e90d76deb1426f3d3a84776ccb722beb3ab5aab907",
+    "bindings": 112,
+    "unchanged": true
+  },
+  "runtime": {
+    "distributions": 17,
+    "hashed_entries": 5926,
+    "unhashed_entries": 17,
+    "before_after_complete_pair_equal": true,
+    "after_stop_equal": true
+  },
+  "accounting": {
+    "artifact_id": "reiyah.capacity-recovery.accounting",
+    "version": "0.1.0",
+    "owner_plan_wall_seconds": 7200,
+    "observed_wall_to_empirical_closeout_seconds": 7380.802928,
+    "wall_target_exceeded": true,
+    "scope_after_empirical_closeout": "Required evidence verification and publication only; no further experiment, matching or cleanup.",
+    "runtime_after_stop_equal_except_timestamp": true,
+    "runtime_records": 17,
+    "runtime_hashed_entries": 5926,
+    "completed_new_model_forwards": 312,
+    "additional_started_or_completed_forwards": "Unknown beyond interrupted retained files; not counted as a complete pair.",
+    "inference_attempts": 2,
+    "new_complete_pairs": 1,
+    "unstarted_selected_pairs": 1,
+    "all_prior_costs_retained": true
+  },
+  "limits": [
+    "Two of four complete pairs are available; no new reference comparison or cohort ranking is claimed.",
+    "The abrupt available-space decline is observed, not attributed to a particular process or swap.",
+    "No new partial-output arithmetic audit; interrupted files are retained without whole-image meaning.",
+    "No independent replication, scientific superiority, automotive transfer, complete-work saving or Gate A acceptance."
+  ],
+  "next_dependency": "More durable storage headroom for the two still-incomplete selected images, followed by a fresh plan, exact reuse qualification and freeze. Preserve the two complete pairs; do not rerun them merely to repair capacity. No partial stitching or tuning."
+}

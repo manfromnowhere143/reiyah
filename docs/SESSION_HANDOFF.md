@@ -1,3 +1,53 @@
+# Current entry: cleanup completed; second complete pair; capacity stop retained, 14 October 2026
+
+Continuation version: 0.1.98. NEXT_SESSION/CONTINUATION version: 0.1.25.
+Read the [capacity-recovery packet](../research/multiorg-reference-admission/0.7.0/README.md),
+[result](../research/multiorg-reference-admission/0.7.0/result.json),
+[methods](../research/multiorg-reference-admission/0.7.0/METHODS.md) and
+[consumer contract](../research/multiorg-reference-admission/0.7.0/consumer/CONTRACT.md).
+
+Verified base e25fdde8fcc609eb868681d0e8a439274e01ddc5; owner
+`multiorg-capacity-recovery-2026-10-14-ycbwa8ii`, same-repository candidate.
+Historical controller remains clean at74fbacc. Current explicit operator
+instruction authorized safe Mac cleanup and superseded the pending cleanup
+question. Native/exact qualified cache, installer and duplicate staging cleanup
+completed. Known selected allocation subtotal5,284,786,176B excludes unreported
+native removals; not exclusive physical freed bytes. Activeuv lock not forced;
+personal data, runtime, source, evidence, release archives and Docker data retained.
+
+New resource consumer uses the actual supervisor receipt and unchanged numerical
+checker, with separate wrapper identity.21 authored and46 separate consumer
+controls,8 launcher process controls,64 matching controls pass;85 public controls
+replayed.112 inference bindings frozen and unchanged.936 prospective inputs
+reconstructed; no model/data downloads or numerical-method change.
+
+First new pair Plate23/image0 completed312 forwards,5460arrays/5,839,207B;
+Faster251/YOLO9 detections. Resource and numerical checks pass. This is the
+second complete selected pair including0.5.0, not a new accuracy comparison.
+Second new pair NormalPlate31/image6 stoppedremaining_capacity:7,577,542,656B
+available versus7,817,443,568B required;86.949 supervisor seconds,77.005worker
+seconds,peak855,883,776B RSS. Prior available sample8,653,103,104B; cause unknown.
+No worker result, no complete pair, no new partial numerical audit. Worker absent
+at closeout; third selected pair unstarted. All partial files retained.
+
+Owner empirical execution CLOSED; no retry or stitching. Matching sources and
+12reference payloads qualified, but no matching input/freeze/run exists.
+All4pairs/12cases still required. Runtime afterstop remains equal excepttimestamp:
+17distributions,5926hashedentries,17explicitunhashedexclusions. System libraries
+and excludedbytecode remain outside authentication. Ownerwall target7200s was
+exceeded at empiricalcloseout7380.803s; only required closeout/publication followed.
+
+Next: obtain durable headroom for the two incomplete selected images; do not
+rerun the two complete pairs merely to repair capacity. Future reuse needs exact
+receipt/source bindings and a separately qualified matching composition. No
+floor reduction, data substitution, tuning, broad expansion or repeated closed
+owner invocation. Record actual process/storage attribution before claiming a
+cause. Fullwork advantage and scientific superiority remain unproved; GateA
+operator acceptance remains absent. GitGuardian exact occurrence mapping remains
+pending; no alert dismissal, scanner disable, credential rotation or history rewrite.
+
+---
+
 # Current entry: resource guard qualified; capacity still insufficient, 14 October 2026
 
 Continuation version: 0.1.97. NEXT_SESSION/CONTINUATION version: 0.1.24.
