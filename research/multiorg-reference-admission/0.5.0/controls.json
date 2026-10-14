@@ -1,0 +1,87 @@
+{
+  "artifact_id": "reiyah.multiorg.complete-pair.controls",
+  "version": "0.5.0",
+  "status": "passed",
+  "worker": {
+    "controls": [
+      "complete_mock_pair_all_named_arrays_and_individual_admissions",
+      "complete_observed_empty_analysis_is_distinct_from_missing",
+      "runtime_failure_retains_prior_tile_without_inventing_remaining_tiles",
+      "one_complete_model_does_not_become_complete_pair",
+      "wrong_names_refused_with_explicit_capture_state",
+      "nonfinite_refused_with_explicit_capture_state",
+      "origin_failure_refused_with_explicit_capture_state",
+      "origin_unadmitted_refused_with_explicit_capture_state",
+      "high_invalid_refused_with_explicit_capture_state",
+      "wrong_yolo_dtype_refused_with_explicit_capture_state",
+      "source_mutation_refused_with_explicit_capture_state",
+      "tensor_identity_checked_before_forward",
+      "missing_expected_input_tensor_rejected_upfront",
+      "all_expected_tile_slices_verified_before_any_forward",
+      "raw_capture_cap_is_refusal_not_empty_output",
+      "unchanged_projection_rejects_missing_tile_population",
+      "installed_ORT_constructor_and_run_failure_have_no_hidden_retry",
+      "real_prospective_manifest_all_source_bindings_pass_without_inference",
+      "unknown_manifest_property_rejected",
+      "source_path_traversal_rejected",
+      "model_digest_replacement_rejected",
+      "boolean_tile_coordinate_cannot_impersonate_integer_zero",
+      "duplicate_JSON_key_rejected"
+    ],
+    "count": 23,
+    "empirical_forward_passes": 0,
+    "scope": "Authored small arrays and mocked model sessions; installed ORT Python retry policy tested without model construction/inference.",
+    "scripts": {
+      "complete_pair.py": "2558a8d344bc2718724994be94d591c6f2c333d7f7ed8ceb16aeb6588bc7b82a",
+      "projection.py": "7cf0103cd7876585004310f6a3457add033bab2bc91b8b5ca750b15982a47425",
+      "run_pair.py": "9a708bf6a22e9350980e0d08d0e90c2c56f7b9cc4a73b7fd55f22c9ef3f33e0c",
+      "test_complete_pair.py": "27fd182bd1a2c4d1fc8cdd2034082427e5d64af4e6555040fe23aab1ca0eb25f"
+    },
+    "static_manifest_sha256": "c54a8713bec16e3fcad2067e123136e352f47ed0a2b0e5f02fa3bad1ef25fc42",
+    "status": "passed",
+    "test_overrides": "Two-tile authored fixture replaces prospective bindings/preprocessing/session execution only inside unit tests."
+  },
+  "reference": {
+    "status": "qualified_for_separate_prospective_freeze",
+    "controls": 26,
+    "counts": {
+      "origin_admission": 8,
+      "saved_pair_and_scalar": 15,
+      "preprocessing": 3
+    },
+    "new_model_inference": false,
+    "actual_input_tensors_reconstructed": 312,
+    "prior_exposed_corrected_tile_replay": true,
+    "sha256": {
+      "admit_tile.py": "7b665ff849c2ba5a383e414de7d62fede77273dbb9f19f08057756bddc04cb17",
+      "reference_core.py": "428579d22cfa49588c76172999c90beab3cb57e13a04540aa5bdc6ac413f1d7c",
+      "reconstruct_inputs.py": "113a0c18174367ee42db1130ab5d9ec9de92ec13fe10c32b2bafba0a00fcc3dc",
+      "check_pair.py": "f980483d2a35dc2cf69b7fe2ab82f811a35796eb1f9af1a8060a2e4b48c36cf7",
+      "test_admit_tile.py": "73db11b09cbeb5eb178eb3477071b42e6e6f65cfb361a016b0f5e213fba79472",
+      "test_check_pair.py": "bb5d5da4161aebfa592a50d9882fbfcf8cce6f30ea1faadf1180fba4ebfbe8d0",
+      "test_reconstruct_inputs.py": "8c76d99138a00ed15bf99e7776cc78996e5451efab4d0a6477b626a3e51bde37",
+      "THIRD_PARTY_NOTICES.md": "0f4c60285646aea198a541af2314882dea0732a27df805ab6aa50f38fe168d20",
+      "CONTRACT.md": "ee9ec7cc9eac4c62ec91c408206bb3725d834374d3b0fcedb6bd60945f297c23",
+      "controls-final.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "controls-final.stderr": "a5437e675e75baf931651444017432e3498277a0eac7c6d73c2c642ad8dfd73f",
+      "INPUT_REPLAY.json": "31b0b23b7c3c3366b7305ef854366e967d1e3a0353b7c2bb525a5ac6c1d733e3",
+      "BIND_REPLAY.json": "a40810463dd4862dfb00ac7b4062b83e7210c95cc3840833eed82732378f48d3",
+      "EXPOSED_TILE_REPLAY.json": "a91854da42873ccbef5a9442aa4c7aa6a608ea8c5bdf9e2c6a5e3fbd1eaa2908"
+    },
+    "retained_development_failures": [
+      {
+        "file": "input-replay.stderr",
+        "sha256": "84b57e07daa89552f598feefd32a05dfc4473cf044582ce5b83abf0a57060ad8",
+        "reason": "SyntaxError at conditional else416, before preprocessing execution; corrected replay succeeded."
+      },
+      {
+        "file": "pair-controls-v1.stderr",
+        "sha256": "32fe4eeb1de5295d6e51319419676c99eb24a02b8d66764335b25af9001fed7b",
+        "reason": "SyntaxError unterminated f-string in authored test fixture, before test execution; later26 controls passed."
+      }
+    ],
+    "scope": "Separately authored scalar and input reconstruction code; shared origin admission bound explicitly. Same-study checking, not independent science; no accuracy/work advantage."
+  },
+  "scope": "Authored controls plus six static real-input bindings. Default public replay excludes six private-manifest controls.",
+  "empirical_forwards_during_qualification": 0
+}

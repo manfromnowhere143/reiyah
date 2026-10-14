@@ -2,11 +2,11 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.21`
+Version: `0.1.22`
 
 Lifecycle status: `proposed`
 
-Updated: 13 October 2026. A continuation brief, not an accepted scientific
+Updated: 14 October 2026. A continuation brief, not an accepted scientific
 protocol, operator acceptance record or grant of new authority.
 Read with [AGENTS.md](../AGENTS.md), the newest
 [handoff](SESSION_HANDOFF.md) and [editorial policy](EDITORIAL_POLICY.md).
@@ -137,8 +137,8 @@ is a separate authored-worker qualification, not an empirical retry.
 The [separate corrected-supervisor attempt](../research/multiorg-reference-admission/0.2.2/README.md)
 now reached numerical output validation and failed in 5.015 seconds. The unchanged
 worker rejected a float32-converted box retained at the 0.05 storage floor with
-nonpositive width or height, before spatial scaling, flooring or NMS. No saved
-prediction or complete pair exists. The offending row, tile, coordinates and
+nonpositive width or height, before spatial scaling, flooring or NMS. That attempt saved no
+prediction or complete pair. The offending row, tile, coordinates and
 score were not retained, so its relation to the later analysis threshold and any
 upstream defect remain unknown. The empirical stop was honored.
 
@@ -171,16 +171,29 @@ slot or establish accuracy. Fifty-five software controls pass. The exact
 corrected observation graph was executed; the ordinary corrected graph has only
 static qualification. This new empirical owner is closed.
 
-Next follow the [complete-pair decision](../research/multiorg-reference-admission/0.4.0/DECISION.md).
-Qualify an adapter for the exact observed variant, all 33 outputs, named-output
-decoding, complete tile coverage and per-tile origin/direct-removal checks. The
-old two-output worker cannot accept this graph unchanged. Keep the original YOLO
-candidate, first image, preprocessing, analysis and reference semantics fixed.
-On new tiles, validate the corrected variant directly; do not fabricate an
-original-model baseline from its arrays. Then freeze a separate bounded whole-
-image attempt. Stop on unexplained origins, genuine high-score invalid geometry,
-incomplete coverage or resource limits. No automatic retry, coordinate-only
-deletion, threshold tuning, replacement image/model or cohort extension.
+The [complete first-image pair](../research/multiorg-reference-admission/0.5.0/README.md)
+now passes a separate complete-output checker. One attempt completed all 312
+forwards, retaining 5,460 arrays. All 312 inputs were independently reconstructed;
+all 156 corrected Faster origin/selection records passed direct-removal checks.
+Whole-image outputs contain 222 Faster and 14 YOLO detections. Three recorded
+reference cases agree between native, conventional and separate maximum-flow
+implementations: equal-cost FP + FN differences are +78, +138 and +120, supporting
+YOLO for this image under the declared loss. Faster matches many more reference
+objects; the loss preference does not imply higher recall or general superiority. One image
+cannot establish cross-image coupling. Seventy-six qualification controls pass;
+public replay covers 70, with six private binding checks separately retained.
+
+Next follow the [remaining-cohort decision](../research/multiorg-reference-admission/0.5.0/DECISION.md).
+Qualify the other three previously selected images with explicit shapes, complete
+input rosters, separately reconstructed tensors and derived resource budgets.
+Use a fresh owner and separately versioned adapter; do not weaken this first-image
+contract or retry its closed execution. Keep the exact observed correction,
+original YOLO, all named outputs, origin checks, no-fallback policy, preprocessing,
+thresholds, loss, postprocessing and references. All four pairs and twelve fixed
+reference cases are needed before the primary global/imagewise comparison.
+Stop on refusal or incomplete coverage; no alternate image, threshold, model,
+cap increase or cohort enlargement to obtain a desired contrast. Preserve a
+null coupling result if found. Full-work advantage remains unestablished.
 The original failed protocols remain unchanged. This is an owned adapter
 investigation, not a complete human-work value case. The 2026
 [methods review](research-decisions/owned-reference-trial-2026-10-12.md) still

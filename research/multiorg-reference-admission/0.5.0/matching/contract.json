@@ -1,0 +1,47 @@
+{
+  "artifact_id": "reiyah.multiorg.first-image-matching-contract",
+  "version": "0.5.0",
+  "status": "prospective_conditional",
+  "scope": "Three fixed recorded-reference graphs for one qualified complete corrected Faster observation/unchanged YOLO analysis pair. No physical-truth or complete-cohort claim.",
+  "image_id": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+  "procedures": [
+    "t0",
+    "t1_A",
+    "t1_B"
+  ],
+  "reference_counts": {
+    "t0": 88,
+    "t1_A": 61,
+    "t1_B": 64
+  },
+  "reference_manifest_sha256": "937b74145d113c9823a7c497dbedc018808b8f9cde7231c1765d053d9ec52cdb",
+  "native_dependency_map_sha256": "320daa7410b30828c6007e5019af4194cd875ba63375c0ed3fcc172d434f8600",
+  "independent_reference_sha256": "b727d1536b0b5e3165cde39261c7dced5363abc25baed0768820b2ca7c827445",
+  "analysis_scope": "all_declared_tiles_analysis_score_float32_strictly_gt_0.5_only",
+  "storage_output_status": "not_defined_or_exported_by_this_contract",
+  "geometry": "Continuous un-clipped integer source XYXY; exact IoU>=1/2 creates edge; preserve duplicate geometries as distinct source-qualified identities.",
+  "loss": {
+    "false_positive": 1,
+    "false_negative": 1,
+    "tolerance": 0
+  },
+  "native_caps": {
+    "references_per_case": 128,
+    "detections_per_output": 1024,
+    "combined_edges": 2048,
+    "work_units": 2000000,
+    "input_bytes": 4194304,
+    "packet_bytes": 16777216,
+    "coordinate_magnitude": 10000000
+  },
+  "execution_caps": {
+    "producer_wall_seconds": 120,
+    "checker_wall_seconds": 120,
+    "sampled_rss_bytes": 3221225472
+  },
+  "old_oracle_adapter_defect": "The historical derive() incorrectly limits prediction counts to128; unchanged generic max-flow arithmetic is reused without that adapter. This is recorded before complete-pair outcomes, with old bytes retained.",
+  "decision": "Negative upper supports A under these recorded references; positive lower supports B; either zero boundary remains unresolved. G=P for one image; full four-image endpoint remains incomplete.",
+  "stop": "No matching without admitted exact complete pair and passed checker. Refuse cap/hash/geometry/completeness mismatch without truncation or replacement.",
+  "qualified_pair_worker_sha256": "2558a8d344bc2718724994be94d591c6f2c333d7f7ed8ceb16aeb6588bc7b82a",
+  "qualified_pair_checker_sha256": "f980483d2a35dc2cf69b7fe2ab82f811a35796eb1f9af1a8060a2e4b48c36cf7"
+}

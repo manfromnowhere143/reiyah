@@ -1,3 +1,72 @@
+# Current entry: first complete pair and reference comparisons, 14 October 2026
+
+Continuation version: 0.1.95. NEXT_SESSION/CONTINUATION version: 0.1.22.
+Read the [complete-pair result](../research/multiorg-reference-admission/0.5.0/README.md),
+[exact summary](../research/multiorg-reference-admission/0.5.0/result.json) and
+[remaining-cohort decision](../research/multiorg-reference-admission/0.5.0/DECISION.md).
+
+Fresh verified base f4273074d0469ed45eba58fa8bd47a878f6126b0. Work belongs to
+`multiorg-complete-pair-2026-10-14-gfyxnffu` and its fresh same-repository candidate.
+Historical controller remains clean at 74fbacc; prior owners and failed attempts
+remain unchanged. This owner's empirical execution is closed.
+
+One frozen first-image attempt completed 156 tiles each for exact corrected
+Faster observation a26f494f and unchanged YOLO 02ed40f0: 312 forwards, no retry.
+Every actual input matches the independently reconstructed tensor roster.
+All 5,460 retained arrays / 5,343,183 bytes pass the separate saved-output checker,
+including per-tile origin/selection and whole-image coordinate/global NMS checks.
+Faster has 2,112 raw final rows, 651 high pre-NMS rows and 222 final detections;
+YOLO has 15,600 raw rows, 37 high pre-NMS rows and 14 final detections. Neither
+has outside-image analysis boxes. All 156 explicit appended origins are excluded;
+51 carry an unmasked foreground score above 0.5. This does not count original-
+graph output removals. Whole-image original/corrected preservation and untapped
+parity remain untested. Neural execution is observed, not independently rebuilt.
+
+Process wall 306.2067 seconds, peak sampled RSS 1,263,566,848 bytes; limits 600 s / 3 GiB.
+Separate pair checking takes 5.3976 seconds, below its 300-second ceiling.
+49 pair qualification controls pass (23 worker including 6 real binding checks,
+26 reference); public pair replay actually executes 43. Two development syntax
+failures before execution are retained. All 84 frozen bindings remain unchanged.
+Inference RECORD audit: 17 distributions, 5,926 hashed entries, 17 unhashed entries;
+before/after match apart from timestamp. System libraries remain outside audit.
+
+Fresh primary review: 7 requests / 470,462 bytes; no new image/model/dependency
+acquisition. ORT can retry failed session creation and execution; both fallback
+paths are explicitly disabled. No evidence earlier runs retried. Current SAHI
+defaults alter merging, edge windows or full-image predictions; do not adopt
+them as silent substitutions for the fixed method.
+
+A separately frozen matching adapter uses the existing native fixed-case
+engine, conventional matcher and unchanged generic Edmonds-Karp arithmetic.
+It preserves source identities, exact IoU>=1/2, FP+FN and every native bound.
+The old private oracle's 128-detection restriction was an adapter defect; native
+allows 1,024. Its historical bytes remain unchanged; the new gate was qualified
+before comparison outcomes. 27 authored controls and staged replay pass.
+All 49 matching bindings and its 5-distribution / 134-hashed-entry runtime inventory
+remain unchanged; 79 unhashed entries are explicitly outside that digest check.
+Matching producer/checker each finish below their 120 s / 3 GiB sampled bounds.
+
+Three reference cases are checked: t0 has 88 objects, Faster TP 77 / FP 145 / FN 11
+versus YOLO TP 12 / FP 2 / FN 76; t1_A has 61, Faster 47/175/14 versus 12/2/49;
+t1_B has 64, Faster 56/166/8 versus 12/2/52. Equal-cost loss differences A-B are
++78, +138, +120, giving [78, 138] and conditional preference for YOLO. Faster matches
+more reference objects. The preference is specific to this loss; it does not
+establish general superiority.
+For one image G=P by construction. Full 4-image primary status remains
+inconclusive_incomplete_selected_cohort. The conventional baseline agrees;
+no full-work advantage, physical truth, automotive transfer or novelty established.
+
+Next qualify the other 3 fixed selected images and a new explicit complete-roster
+adapter with prospective budgets. Preserve exact model/threshold/loss/reference
+semantics and all stop rules. All 4 pairs / 12 cases are needed for cross-image
+composition; a null contrast is retained, not rescued by an enlarged cohort.
+No new model inference belongs in this closed owner. Gate A remains operator-
+unaccepted; broad product expansion stopped. Full-work effort remains incomplete,
+not reset. GitGuardian exact occurrence mapping remains pending; no alert was
+dismissed or scanner disabled. Publication checks/readback are publisher observations.
+
+---
+
 # Current entry: origin-preserving correction checked, 13 October 2026
 
 Continuation version: 0.1.94. NEXT_SESSION/CONTINUATION version: 0.1.21.

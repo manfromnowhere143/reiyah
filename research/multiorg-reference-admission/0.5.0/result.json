@@ -1,0 +1,178 @@
+{
+  "artifact_id": "reiyah.multiorg.complete-pair.result",
+  "version": "0.5.0",
+  "lifecycle_status": "exploratory",
+  "date": "2026-10-14",
+  "scope": "One complete first-image corrected-observation/unchanged-YOLO pair, checked under three fixed recorded references.",
+  "image_id": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+  "image_sha256": "8828e0a9f94d6c44ea03be2e62623e812830f339d9c905b7a368edcb7e821eb0",
+  "image_previously_exposed": true,
+  "models": [
+    {
+      "model": "faster",
+      "variant": "reiyah.multiorg.validity-preserving-export.observation/0.4.0",
+      "model_sha256": "a26f494f548ed8410a809252b2acaae97e2efa189fcee963a5b8a09dd4c13b63",
+      "tiles": 156,
+      "raw_final_rows": 2112,
+      "high_rows_before_global_nms": 651,
+      "analysis_detections": 222,
+      "analysis_outside_image": 0,
+      "low_geometry_anomaly_counts": {
+        "conversion_nonfinite": 0,
+        "finite_conversion_nonpositive_extent": 0,
+        "raw_nonfinite": 0,
+        "raw_nonpositive_extent": 156
+      },
+      "explicit_appended_origins_excluded": 156,
+      "excluded_unmasked_scores_above_half": 51,
+      "counterfactual_original_graph_executed_on_all_tiles": false,
+      "direct_removal_selection_checks_passed": 156
+    },
+    {
+      "model": "yolo",
+      "variant": "MultiOrg-2026-released-YOLO-unchanged",
+      "model_sha256": "02ed40f0cbdcf9023390e9723a1c310d5dd3f4d18a3ad1c3774f71ff74969ee6",
+      "tiles": 156,
+      "raw_final_rows": 15600,
+      "high_rows_before_global_nms": 37,
+      "analysis_detections": 14,
+      "analysis_outside_image": 0,
+      "low_geometry_anomaly_counts": {
+        "conversion_nonfinite": 0,
+        "finite_conversion_nonpositive_extent": 0,
+        "raw_nonfinite": 0,
+        "raw_nonpositive_extent": 0
+      }
+    }
+  ],
+  "complete_pairs": 1,
+  "selected_cohort_images": 4,
+  "primary_status": "inconclusive_incomplete_selected_cohort",
+  "analysis_score_float32_strictly_gt": 0.5,
+  "matching_iou_gte": "1/2",
+  "loss_weights": {
+    "false_positive": 1,
+    "false_negative": 1
+  },
+  "conditional_comparison": [
+    {
+      "delta": "78/1",
+      "detections_a": 222,
+      "detections_b": 14,
+      "fn_a": 11,
+      "fn_b": 76,
+      "fp_a": 145,
+      "fp_b": 2,
+      "procedure": "t0",
+      "reference_count": 88,
+      "tiff_path": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+      "tp_a": 77,
+      "tp_b": 12,
+      "loss_a": 156,
+      "loss_b": 78
+    },
+    {
+      "delta": "138/1",
+      "detections_a": 222,
+      "detections_b": 14,
+      "fn_a": 14,
+      "fn_b": 49,
+      "fp_a": 175,
+      "fp_b": 2,
+      "procedure": "t1_A",
+      "reference_count": 61,
+      "tiff_path": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+      "tp_a": 47,
+      "tp_b": 12,
+      "loss_a": 189,
+      "loss_b": 51
+    },
+    {
+      "delta": "120/1",
+      "detections_a": 222,
+      "detections_b": 14,
+      "fn_a": 8,
+      "fn_b": 52,
+      "fp_a": 166,
+      "fp_b": 2,
+      "procedure": "t1_B",
+      "reference_count": 64,
+      "tiff_path": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+      "tp_a": 56,
+      "tp_b": 12,
+      "loss_a": 174,
+      "loss_b": 54
+    }
+  ],
+  "global": {
+    "decision": "prefer_b",
+    "lower": "78/1",
+    "lower_procedure": "t0",
+    "upper": "138/1",
+    "upper_procedure": "t1_A"
+  },
+  "imagewise": {
+    "decision": "prefer_b",
+    "lower": "78/1",
+    "lower_choices": [
+      {
+        "procedure": "t0",
+        "tiff_path": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff"
+      }
+    ],
+    "upper": "138/1",
+    "upper_choices": [
+      {
+        "procedure": "t1_A",
+        "tiff_path": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff"
+      }
+    ]
+  },
+  "native_and_separate_maxflow_agree": true,
+  "model_attempts": 1,
+  "empirical_forwards": 312,
+  "raw_array_files": 5460,
+  "raw_array_bytes": 5343183,
+  "worker_wall_seconds": 305.27272254100535,
+  "supervisor_wall_seconds": 306.2067057500244,
+  "peak_sampled_rss_bytes": 1263566848,
+  "separate_pair_check_seconds": 5.397595792019274,
+  "authored_and_static_controls": {
+    "worker": 23,
+    "reference": 26,
+    "matching": 27
+  },
+  "public_pair_replay_controls": 43,
+  "public_pair_replay_private_static_controls_omitted": 6,
+  "pair_frozen_bindings": 84,
+  "matching_frozen_bindings": 49,
+  "inference_runtime_RECORD_check": {
+    "distributions": 17,
+    "hashed_entries": 5926,
+    "unhashed_entries": 17,
+    "unchanged_except_timestamp": true
+  },
+  "matching_runtime_RECORD_check": {
+    "distributions": 5,
+    "hashed_entries": 134,
+    "unhashed_entries": 79,
+    "unchanged_except_timestamp": true
+  },
+  "source_review": {
+    "primary_requests": 7,
+    "response_bytes": 470462,
+    "new_model_image_dependency_downloads": 0
+  },
+  "limitations": [
+    "One exposed image, not the complete four-image endpoint or held-out generalization.",
+    "Corrected Faster observation is a distinct candidate; no whole-image original/corrected preservation or untapped-export parity established.",
+    "Neural execution is observed; arithmetic/identity checks are within one assisted investigation, not independent scientific replication.",
+    "Recorded reference procedures are neither physical truth nor a qualified future observation process.",
+    "The equal-cost loss favors YOLO despite substantially fewer reference matches; no YOLO recall advantage or general detector superiority follows.",
+    "Global and imagewise reference intervals coincide by construction for one image; no cross-image coupling conclusion.",
+    "The conventional maximum-matching baseline agrees; no advantage in full analyst work, automotive transfer, safety, production readiness or scientific novelty established.",
+    "Execution times exclude source investigation, implementation, qualification and integration; complete-work accounting remains incomplete.",
+    "Gate A remains operator-unaccepted; broad product expansion remains stopped."
+  ],
+  "terms": "MultiOrg-derived observations CC BY-NC-SA 4.0; source models CC BY 4.0. Third-party code notices retained."
+}
