@@ -1,0 +1,36 @@
+{
+  "artifact_id": "reiyah.multiorg.resource-admission-result",
+  "version": "0.6.1",
+  "status": "resource_dependency_unresolved",
+  "host_probe": {
+    "artifact_id": "reiyah.resource-admission.host-probe",
+    "version": "0.1.0",
+    "at": "2026-10-14T07:46:02.416818+00:00",
+    "status": "refused",
+    "returncode": 1,
+    "wall_seconds": 0.0731674589915201,
+    "termination_reason": "capacity_admission",
+    "worker_launched": false,
+    "model_forwards": 0,
+    "first_available_bytes": 2719948800,
+    "last_available_bytes": 2719944704,
+    "required_available_bytes": 7825578224,
+    "sample_count": 3,
+    "source_freeze_unchanged": true,
+    "receipt_sha256": "474fd2c6c6cf68f6946564a2bf6f57045536ae47ab0064852d8f75530e19fd38",
+    "journal_sha256": "8e6d6717afd82edb871693ca0ced4a89892ade484c4bf5fef7fe3a2375673c5f",
+    "scope": "Actual destination filesystem with a harmless fixture and prospective capacity allowance; no scientific execution or reservation."
+  },
+  "qualification": {
+    "producer_controls": 24,
+    "separate_review_controls": 20,
+    "total_cases": 44
+  },
+  "empirical_inference_calls": 0,
+  "new_complete_detector_pairs": 0,
+  "prior_complete_detector_pairs": 1,
+  "required_complete_detector_pairs": 4,
+  "new_reference_cases": 0,
+  "next_dependency": "Adequate capacity, then new observed headroom qualification, exact downstream supervisor-receipt qualification and a new bounded same-input execution freeze.",
+  "Gate_A_operator_accepted": false
+}

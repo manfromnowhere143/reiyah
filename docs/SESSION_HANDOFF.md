@@ -1,3 +1,53 @@
+# Current entry: resource guard qualified; capacity still insufficient, 14 October 2026
+
+Continuation version: 0.1.97. NEXT_SESSION/CONTINUATION version: 0.1.24.
+Read the [resource admission packet](../research/multiorg-reference-admission/0.6.1/README.md),
+[exact result](../research/multiorg-reference-admission/0.6.1/result.json),
+[supervisor contract](../research/multiorg-reference-admission/0.6.1/monitor/README.md)
+and [review](../research/multiorg-reference-admission/0.6.1/review/CODE_REVIEW.json).
+
+Fresh verified base 460e45ae443a6a0a962703a506dbf1c34d1cc5e2; owned candidate
+`multiorg-resource-admission-2026-10-14-l64qeiqn`. Historical controller remains
+clean at 74fbacc; previous owners and selected-cohort source contracts unchanged.
+This owner authorized resource diagnosis, authored qualification and one harmless
+system-provider probe only. No model inference, acquisition or reference matching.
+
+New supervisor records available disk bytes, output logical/allocated sizes,
+RSS, timestamps, sampling gaps and exact stop triggers. Prelaunch requires floor,
+full prospective allocation allowance and explicit margin; runtime preserves the
+bare floor and also guards remaining headroom. Strict unknown/error states refuse.
+An exit-zero race cannot erase a stop. Receipt writes are first file-synced under
+an exclusive pending name, then published without overwrite. Outer returncode0,
+complete receipt and matching journal are all required; cleanup failure can leave
+an apparently final file while outer execution correctly fails. No crash durability,
+exclusive APFS reservation, continuous resource or process-tree guarantee.
+
+Final authored controls 24 and separate review controls 20 pass. The earlier
+whole-host-sandbox harness failure and receipt-fsync finding remain retained.
+Actual host probe: one frozen invocation, seventeen bound files unchanged;
+first available 2,719,948,800B against required 7,825,578,224B. Status refused,
+capacity_admission, worker_launched false, three samples, zero model forwards.
+Host allowance: 4GiB floor +256MiB output +40,950,000B rounding +3GiB margin.
+Margin is engineering judgment equal to existing empirical RSS ceiling, not a
+proven bound on competing writers or swap. A failed first sample is not a stability
+window and supplies no successful admission for a later run.
+
+Read-only storage audit: protected Reiyah reports 46.07GB reported allocation;
+shared uv cache 6.24GB includes 9 cached environments and 2 open lock descriptors.
+Broad cache cleanup is unqualified; broader project coupling not inspected.
+Other enumerated caches 599,818,240B cannot close even the bare-floor deficit.
+No separate external writable mount observed. No deletion, cleanup or process stop.
+
+Next: adequate storage capacity, a fresh observed headroom window, and a qualified
+consumer for the new supervisor schema before a separately frozen same-input
+attempt. Never resume a closed owner, stitch partial outputs, lower the floor,
+change selected images/models/references or remove historical evidence. All four
+complete pairs and twelve reference cases remain required. The previously checked
+first pair and partial 70-tile audit retain their original limited interpretation.
+No complete-work advantage, scientific superiority or Gate A acceptance inferred.
+
+---
+
 # Current entry: selected inputs qualified; storage stop preserved, 14 October 2026
 
 Continuation version: 0.1.96. NEXT_SESSION/CONTINUATION version: 0.1.23.

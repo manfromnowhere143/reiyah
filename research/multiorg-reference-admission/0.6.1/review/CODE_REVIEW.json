@@ -1,0 +1,85 @@
+{
+  "artifact_id": "reiyah.resource-admission.code-review",
+  "version": "0.1.0",
+  "created_at": "2026-10-14T07:45:05.760912+00:00",
+  "status": "no_blocking_defect_found_for_scoped_resource_guard",
+  "role": "Separately authored review and controls within the same assisted investigation; not independent scientific replication.",
+  "scope": "Historical supervisor review and new admission/monitoring failure semantics. No model/image/empirical predictions inspected or executed; no scientific endpoint or performance assessment.",
+  "bindings": {
+    "supervisor": {
+      "path": "monitor/supervise.py",
+      "sha256": "cc275f8ca48eb832001ca78be8d8614f7c74f2dfd228139551d8c94f449ec698",
+      "bytes": 22148
+    },
+    "controls": {
+      "path": "review/adversarial_controls.py",
+      "sha256": "671df0823056d9b59cd2c23f4d9c283de5d50a69a040b063dfe2ee9fb7230e78",
+      "bytes": 14461
+    },
+    "qualification": {
+      "path": "review/CONTROLS-v3.json",
+      "sha256": "dbb36ea9489c8c83804938d21c5806e6b5f5ede524796ce3103658750cf4610c",
+      "bytes": 665
+    },
+    "qualification_process": {
+      "path": "review/CONTROLS-v3-PROCESS.json",
+      "sha256": "8c91a996ebe60be5c917aa250ff8ad436010deecf48f3ebd16cd472ad6f9fc1b",
+      "bytes": 1200
+    },
+    "qualification_log": {
+      "path": "review/controls-v3.log",
+      "sha256": "8a4360f16370c27126d5a638fa425b125f0ab476e4950b5e386290d2f4518359",
+      "bytes": 2636
+    },
+    "review_plan": {
+      "path": "review/PLAN.json",
+      "sha256": "eeb266d2fd389027b63a7aefaca1d65d118465629c6af0d123a8ed07a33d3029",
+      "bytes": 2462
+    },
+    "design_proposal": {
+      "path": "review/DESIGN_REVIEW.json",
+      "sha256": "e5d058addd09b1f78b071ab5018dd5c32ac03e4dde4312b53554d4a0b34e31b8",
+      "bytes": 2902
+    }
+  },
+  "qualification": {
+    "authored_cases": 20,
+    "status": "passed",
+    "process_wall_seconds": 3.4615220410050824,
+    "scope": "Strict numeric/duplicate/nonfinite schema, misleading reserved-capacity observation, missing/slow/malformed sampling, output/symlink/collision protection, journal/log/receipt write errors, worker poll/exit races, explicit unknown RSS, missing terminal, pending fsync failure and no-overwrite final publication. Actual tiny fixture workers are network denied; injected providers are marked authored_injected. No models or empirical data.",
+    "initial_17_case_and_intermediate_19_case_results_retained": true,
+    "old_control_sources": [
+      "review/adversarial_controls-v1.py",
+      "review/adversarial_controls-v2.py"
+    ],
+    "intermediate_receipt_fsync_finding": "The earlier guard could leave a complete-looking final receipt on fsync failure while CLI returned1. Final guard writes an exclusive pending receipt first and does not publish final on that failure. Prior authored evidence remains retained."
+  },
+  "accepted_semantics": [
+    "Prelaunch samples and immediately-before-launch sample require measured available bytes above preserved floor plus full declared logical output budget, stated allocation rounding allowance and margin. Missing/slow/invalid observations fail closed.",
+    "Running samples preserve the exact trigger and require floor plus margin plus remaining declared allocation estimate. Logical output, billed st_blocks allocation and available filesystem bytes remain distinct.",
+    "A stop reason cannot become complete because of an exit-zero polling race. Missing terminal, changed input or failed post-observation prevents complete.",
+    "Budget reserves two transient 64KiB receipt names and next 8KiB journal row. Receipt publication uses exclusive pending write/fsync and no-overwrite hard link; failure remains non-success.",
+    "No raw retention, processing threshold, model/image selection or scientific matching semantics changed by this guard."
+  ],
+  "required_consumer_contract": [
+    "Require observed outer supervisor returncode0; never accept a final receipt by itself. A cleanup failure after linking can leave a final file while CLI correctly returns1.",
+    "Require status complete, receipt_persisted true, termination_reason null, child returncode0, exact prospective source/capacity/runtime/worker bindings, and matching saved sample-journal/result digests.",
+    "Pending receipts and missing or inconsistent external receipts remain unaccepted. New receipt schema needs an explicitly qualified downstream adapter; historical complete-pair checker acceptance is not inherited."
+  ],
+  "limits": [
+    "The preflight sequence is an observed window, not a forecast or exclusive APFS reservation. Competing writes can cross a boundary between samples.",
+    "st_blocks sums and fragment-rounding allowance do not identify unique clone extents, volume metadata, purgeable reclamation or a guaranteed physical worst case; margin is explicit but not a proof.",
+    "Resource bounds are sampled except declared child kernel limits; process-tree containment, continuous RSS/floor enforcement, local-administrator race resistance and crash/directory-fsync durability are not established.",
+    "No real-system capacity admission probe was performed by this review role. Passing authored controls does not authorize model inference or establish current sufficient storage."
+  ],
+  "next_dependencies": [
+    "Parent may freeze a harmless exact-input-free system-provider admission probe, preserving refusal if capacity is inadequate.",
+    "Any later same-input detector attempt requires a separate prospective plan, observed sufficient headroom, unchanged scientific inputs and exact600s/3GiB numerical limits, and a qualified consumer for this supervisor receipt.",
+    "The incomplete four-image comparison remains incomplete; no use of partial prior predictions or altered cohort is supported."
+  ],
+  "model_forwards": 0,
+  "third_party_captures": 0,
+  "candidate_edits": 0,
+  "historical_owner_edits": 0,
+  "source_files_stable": true
+}

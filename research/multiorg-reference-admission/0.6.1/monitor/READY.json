@@ -1,0 +1,49 @@
+{
+  "artifact_id": "reiyah.resource-admission.supervisor-ready",
+  "at": "2026-10-14T07:45:30.493591+00:00",
+  "files": {
+    "README.md": {
+      "bytes": 6008,
+      "path": "monitor/README.md",
+      "sha256": "76bf2c45ddce72de82035a10a3421211fbf4ef8716ec0204c7d6fd7441e2e3dc"
+    },
+    "supervise.py": {
+      "bytes": 22148,
+      "path": "monitor/supervise.py",
+      "sha256": "cc275f8ca48eb832001ca78be8d8614f7c74f2dfd228139551d8c94f449ec698"
+    },
+    "test_supervise.py": {
+      "bytes": 13622,
+      "path": "monitor/test_supervise.py",
+      "sha256": "85b2b983887c5bdaf7e5aaa5cc2c7fb251622006ab53423860b98ec80de941b1"
+    },
+    "tiny_worker.py": {
+      "bytes": 795,
+      "path": "monitor/tiny_worker.py",
+      "sha256": "c8a90999fd036b823eeaa91875a40ef47646d09d838db6567339e5b62910fdfd"
+    }
+  },
+  "future_inference_requires_new_plan_and_checker_qualification": true,
+  "harmless_fixture": "monitor/tiny_worker.py",
+  "model_inference_authorized": false,
+  "no_further_source_edits_planned": true,
+  "production_entrypoint": "monitor/supervise.py",
+  "provider_injection_exposed_by_cli": false,
+  "qualification": {
+    "bytes": 4961,
+    "path": "monitor/QUALIFICATION.json",
+    "sha256": "f3ae43d4668501ba6c77c258c06a4b7d0e7cf2e2498e4aa40eda00b17a9ecc34"
+  },
+  "required_cli": [
+    "--owner",
+    "--manifest",
+    "--runner",
+    "--runner-sha256",
+    "--python",
+    "--output",
+    "--capacity-plan",
+    "--capacity-plan-sha256"
+  ],
+  "status": "qualified_awaiting_parent_review_and_separate_harmless_probe_freeze",
+  "version": "0.1.0"
+}

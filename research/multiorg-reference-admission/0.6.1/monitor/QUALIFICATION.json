@@ -1,0 +1,121 @@
+{
+  "actual_disk_filling": false,
+  "actual_system_capacity_admission_performed": false,
+  "artifact_id": "reiyah.resource-admission.supervisor-qualification",
+  "at": "2026-10-14T07:45:30.491038+00:00",
+  "bounded_test_scope": "Tiny fixtures use temporary directories and small writes. Production FSIZE64MiB/log8MiB controls are separately scaled down for authored mechanism checks; no disk filling. Final tests4.815s below300s allowance.",
+  "control_scope": [
+    "real tiny sandboxed worker success and actual blocked loopback socket attempt",
+    "standalone harmless probe worker",
+    "injected low preflight, prelaunch drop, running disk floor, remaining-capacity and RSS errors/limits",
+    "real owned-PID kill for resource and wall failures",
+    "missing result and changed input cannot complete",
+    "type/digest/symlink/exclusive-path refusal",
+    "allocation/logical arithmetic and transient receipt reserve",
+    "scaled log and kernel RLIMIT_FSIZE mechanism without large writes",
+    "journal failure, pending fsync failure, pending cleanup failure",
+    "preserved supplied Python entrypoint"
+  ],
+  "development_history": [
+    {
+      "errors": 2,
+      "failures": 7,
+      "log": {
+        "bytes": 17584,
+        "path": "monitor/controls-v1.stderr",
+        "sha256": "e3e4381e14e5860de4aad7586cbc1ff4445d7b6dcef30643934bb9f214595090"
+      },
+      "passed": 12,
+      "reason": "Qualification harness wrongly wrapped host observer in macOS deny-network sandbox; /bin/ps was prohibited, guard failed closed. Host/worker boundary corrected in later invocation, no resource-check weakening.",
+      "seconds": 1.773,
+      "tests": 21
+    },
+    {
+      "log": {
+        "bytes": 2395,
+        "path": "monitor/controls-v2.stderr",
+        "sha256": "cee50c2112477e5e304a91d26eca29c07991cd72cef2b0374de59eba6e6d7d41"
+      },
+      "passed": 22,
+      "reason": "Host observer outside sandbox, child-only network denial; before atomic receipt publication refinement.",
+      "seconds": 3.938,
+      "tests": 22
+    },
+    {
+      "log": {
+        "bytes": 2590,
+        "path": "monitor/controls-v3.stderr",
+        "sha256": "eead48650089bc673c178cd072fa5cf8cc7839a27fdd44e3651e650be538a35a"
+      },
+      "passed": 23,
+      "reason": "Pending-file fsync then exclusive publication; before final double-link reserve and failed-cleanup rule.",
+      "seconds": 4.372,
+      "tests": 23
+    },
+    {
+      "log": {
+        "bytes": 2775,
+        "path": "monitor/controls-v4.stderr",
+        "sha256": "31c9c19dfd968e750d1f299ab2d732ef7377dd0e4813881b37a407133d5c6fde"
+      },
+      "passed": 24,
+      "reason": "Final exact source, two-link reserve and cleanup failure controls.",
+      "seconds": 4.815,
+      "tests": 24
+    }
+  ],
+  "empirical_sources_or_outputs_read": false,
+  "files": {
+    "README.md": {
+      "bytes": 6008,
+      "path": "monitor/README.md",
+      "sha256": "76bf2c45ddce72de82035a10a3421211fbf4ef8716ec0204c7d6fd7441e2e3dc"
+    },
+    "supervise.py": {
+      "bytes": 22148,
+      "path": "monitor/supervise.py",
+      "sha256": "cc275f8ca48eb832001ca78be8d8614f7c74f2dfd228139551d8c94f449ec698"
+    },
+    "test_supervise.py": {
+      "bytes": 13622,
+      "path": "monitor/test_supervise.py",
+      "sha256": "85b2b983887c5bdaf7e5aaa5cc2c7fb251622006ab53423860b98ec80de941b1"
+    },
+    "tiny_worker.py": {
+      "bytes": 795,
+      "path": "monitor/tiny_worker.py",
+      "sha256": "c8a90999fd036b823eeaa91875a40ef47646d09d838db6567339e5b62910fdfd"
+    }
+  },
+  "final_control_count": 24,
+  "final_stderr": {
+    "bytes": 2775,
+    "path": "monitor/controls-v4.stderr",
+    "sha256": "31c9c19dfd968e750d1f299ab2d732ef7377dd0e4813881b37a407133d5c6fde"
+  },
+  "final_stdout": {
+    "bytes": 0,
+    "path": "monitor/controls-v4.stdout",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "final_test_seconds": 4.815,
+  "isolation": "Host observer outside child sandbox; every actual fixture worker enters exact deny-network policy before Python. No provider injection exposed by CLI.",
+  "not_established": [
+    "exclusive APFS physical occupancy or reservation",
+    "continuous disk-floor or instantaneous RSS guarantee",
+    "whole-process-tree containment",
+    "crash/power-loss/directory-sync durability",
+    "compatibility with historical complete-pair checkers",
+    "scientific validity or permission for empirical retry"
+  ],
+  "numerical_model_inference_calls": 0,
+  "own_retained_monitor_logical_bytes_at_qualification": 67917,
+  "predecessor_preserved": {
+    "bytes": 9007,
+    "path": "/Users/danielwahnich/.codex/reports/reiyah/multiorg-selected-cohort-2026-10-14-iibqdjqi/execution/shared/supervise.py",
+    "sha256": "4628d61e316fc743b8ecaacc1be9b48cfafda4f3d786b8d0859228fcacb40146"
+  },
+  "runtime_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "status": "authored_controls_passed_no_empirical_admission",
+  "version": "0.1.0"
+}

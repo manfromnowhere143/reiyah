@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.23`
+Version: `0.1.24`
 
 Lifecycle status: `proposed`
 
@@ -191,14 +191,21 @@ refused correctly. Later images were not started. Matching 0.6 passes authored
 controls but remains unexecuted on the cohort. The separate postmortem checks
 only the persisted partial evidence, without completing the missing observation.
 
-Next follow the [storage and execution decision](../research/multiorg-reference-admission/0.6.0/DECISION.md).
-Establish sufficient stable headroom above the unchanged disk floor and retain
-free-space observations. Preserve this closed owner, partial records and failure;
-no automatic retry, lowered floor, deleted evidence or stitched partial result.
-A later same-input attempt requires a new bounded plan/freeze. Keep the exact
-observed variant and all numerical/reference/native-cap semantics. All four
-complete pairs and twelve cases are required. Retain a null contrast without
-enlarging the cohort. Complete-work advantage remains unestablished.
+The [resource-admission continuation](../research/multiorg-reference-admission/0.6.1/README.md)
+now qualifies a separate supervisor with exact free-byte samples, stricter
+headroom admission, preserved stop causes and exclusive receipt publication.
+Forty-four authored controls pass. One harmless system probe refused before
+worker launch: 2.53 GiB available against its 7.29 GiB admission threshold.
+No model inference or new reference case occurred. Cache inventory found active
+shared environments; no broad cleanup or unrelated process shutdown occurred.
+
+Next obtain adequate capacity and qualify a new observed headroom window. Before
+empirical use, qualify the downstream pair checker for this new receipt schema;
+its compatibility is not inherited. Freeze a separate bounded same-input plan.
+Preserve the 4 GiB floor, full retention allowance, explicit margin, prior failures,
+exact models and numerical/reference/native-cap semantics. No stitched partial
+result, replacement image or cohort enlargement. All four complete pairs and
+twelve cases remain required. Complete-work advantage is unestablished.
 The original failed protocols remain unchanged. This is an owned adapter
 investigation, not a complete human-work value case. The 2026
 [methods review](research-decisions/owned-reference-trial-2026-10-12.md) still
