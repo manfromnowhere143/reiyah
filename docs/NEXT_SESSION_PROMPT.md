@@ -1,6 +1,6 @@
 # Reiyah: next-session instructions
 
-Document ID: `reiyah.next-session-prompt`. Version: `0.1.5`.
+Document ID: `reiyah.next-session-prompt`. Version: `0.1.6`.
 15 October 2026. Operator-directed continuation instructions. The linked packet
 records results; this prompt adds no acceptance or external-action authority.
 
@@ -15,6 +15,10 @@ docs/EDITORIAL_POLICY.md from current main or a fresh owned same-repository
 candidate. Read ~/.codex/memories/reiyah-latest-continuation.md for private
 evidence locations. The canonical controller is intentionally historical at
 74fbacc; preserve it and all closed owners. Do not pull, reset or switch it.
+The refreshed README shows the completed research progression and current timing
+dependency. Its nine diagrams are explanatory, not new scientific evidence.
+The latest handoff is the presentation closeout; continue from the manD decision
+below, not a superseded incomplete-cohort or product-value instruction.
 
 The ambition is scientific and engineering leadership: build a useful,
 defensible system that improves consequential decisions for people working on

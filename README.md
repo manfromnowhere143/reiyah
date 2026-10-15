@@ -17,17 +17,21 @@ conventional analysis remains unproven.**
 **Current decision: pause broad engine expansion.** Preserve the conditional
 research core and negative results. The [current research release](research/releases/2026-10-11/README.md)
 contains the claim corrections, reproducible reference-revision results and the
-evidence required before product investment resumes.
+evidence required before product investment resumes. Subsequent studies complete
+a selected perception comparison and audit takeover source coverage and recorded
+timelines. The next scientific dependency is a qualified outcome measurement,
+before recovery labels or readiness modeling.
 
-Perception is the current application within **HARBOR: Human-Automation Readiness,
-Belief & Operational Risk**, the proposed wider research program. Its questions
-concern what people and automated systems know about the same encounter, when
+Perception is the most developed application within **HARBOR: Human-Automation
+Readiness, Belief & Operational Risk**, the proposed wider research program.
+Takeover research now tests whether released observations can support a future
+recovery endpoint. HARBOR asks what people and automated systems know about the same encounter, when
 they miss the same object, and what evidence supports readiness or recovery.
 The implemented perception engine and those broader research questions have
 different evidence requirements.
 
 [Implemented scope](#implemented-scope) · [Decision model](#the-decision-model) · [Reference example](#when-the-reference-changes-the-answer) ·
-[Results](#current-evidence) · [Run the auditor](#run-the-offline-auditor) ·
+[Results](#current-evidence) · [Progress](#research-progression) · [Outcome timing](#takeover-coverage-and-outcome-timing) · [Run the auditor](#run-the-offline-auditor) ·
 [Research program](#one-encounter-distinct-information-sets) · [Next decision](#next-research-decision) ·
 [Technical map](#research-map) · [Session handoff](docs/SESSION_HANDOFF.md)
 
@@ -44,7 +48,8 @@ place through a fair comparison and a useful decision.
 | [Measurement and reference analysis](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md) | Offline population, matching and joint-error analyses; [replay of saved predictions under two references](research/reference-revision/0.1.0/README.md). | Recorded annotations and scoring conventions do not establish physical truth. |
 | [Input accounting](research/extraction-accounting/0.1.0/README.md) | A helper checks expected membership, decoder failures and source/output identities. | Historical consumers have not integrated it; past cohorts and capture synchronization remain unqualified. |
 | [Relational motion](research/continuous-envelope/0.1.0/README.md) | Conditional clearance ranges and opposing witnesses under supplied motion, geometry and timing assumptions. | Authored and bounded recorded-data studies; no deployed monitor or physical safety guarantee. |
-| [Human belief, readiness and recovery](docs/SCIENTIFIC_CHARTER.md) | Proposed constructs and protocols; historical gaze and takeover-proxy measurements. | No validated belief inference, universal readiness score or demonstrated recovery benefit. |
+| [Takeover source and time audits](research/mand-timing/0.1.0/README.md) | Complete 500-summary TD2D census, public simulator-history inventory and one prospectively selected manD vehicle/environment timeline. | Stored-time alignment is checked; physical clock, failure timing, monitoring and censoring remain unqualified. |
+| [Human belief, readiness and recovery](docs/SCIENTIFIC_CHARTER.md) | Proposed constructs and protocols; historical gaze and the current takeover observation audits. | No validated belief inference, readiness model or demonstrated recovery benefit; recovery labels are not admitted. |
 
 The engineering contribution is inspectable conditional reasoning. The product
 hypothesis is lower complete decision cost. Their evidence is kept separate.
@@ -168,7 +173,10 @@ flowchart TB
 This diagram describes the measurement sequence. The new
 [extraction-accounting helper](research/extraction-accounting/0.1.0/README.md)
 checks input consumption, but has not been integrated into all historical
-consumers. It does not retroactively validate their inputs or clocks.
+consumers. The later [microscopy work](research/multiorg-reference-admission/0.8.0/README.md)
+qualifies its own input, output, resource and matching consumers. Neither result
+retroactively validates other historical inputs or clocks. This diagram describes
+perception measurement; takeover timing has its own qualification below.
 
 An observed empty output, a missing output, an invalid sensor record, an
 excluded reference and an unobserved physical object have different meanings.
@@ -229,10 +237,128 @@ Those corrections remain part of the research record.
 
 ## Current evidence
 
-These results summarize retained work through **11 October 2026**. The linked
+These results summarize retained work through **15 October 2026**. The linked
 records contain their complete assumptions, outcomes, failed attempts and costs.
 The rows below concern different, sometimes overlapping development studies;
 their counts must not be added as independent trials.
+
+### Research progression
+
+The work has moved from conditional mathematics and reference audits to testing
+what the observations can actually settle. The diagram follows that research
+sequence; an arrow does not transfer validity from one dataset or task to another.
+
+```mermaid
+flowchart TB
+  A["Static contracts and source-bound measurement<br/>Gate A remains unaccepted"] --> B["Conditional perception engine<br/>Loss bounds, witnesses and separate checking"]
+  B --> C["Conventional comparisons and evaluator audits<br/>Corrections retained; complete-work advantage unproven"]
+  C --> D["Reference and review qualification<br/>Procedure, identity, matching and observation limits"]
+  D --> E["Selected microscopy cohort completed<br/>4 image pairs, 12 reference cases; no observed fragility"]
+  E -- "next measurement question" --> F["TD2D census and source-history route closed<br/>500 summaries; outcome timing unqualified"]
+  F --> G["manD recorded-axis qualification completed<br/>1 selected scenario; 134,373 aligned row pairs"]
+  G --> H["Current dependency<br/>Physical clock, accident rule and monitored follow-up"]
+  H -. "requires new qualifying evidence" .-> I["Future recovery endpoint and readiness research<br/>Not admitted by the current evidence"]
+```
+
+| Research phase | What is retained | What it changes or leaves open |
+| --- | --- | --- |
+| Architecture and object-level measurement | Separate observation, belief, action, outcome and evidence; reference-population and joint-miss audits. | Explicit opportunity populations and unknowns; Gate A acceptance and physical interpretation remain separate. |
+| Conditional decision engine and motion | Exact loss/clearance bounds, opposing witnesses and separately checked certificates. | Conclusions follow declared assumptions; conventional methods reach parity in the retained decision studies. |
+| Claim and evaluator corrections | Gaze-selection/sign corrections; greedy-AP matching, successful-empty output and aggregation controls. | Incorrect inferences are withdrawn; source-level controls do not establish published empirical impact. |
+| Observation and frontier-method qualification | Recorded reviewer/procedure sensitivity, finite identifiability and exact-choice baselines; motion-consistency and rater-score audits. | Agreement, consistency, physical correctness and acquisition cost are distinct obligations. The [method review](docs/research-decisions/frontier-2026-10-12.md) is dated, not a superiority claim. |
+| Microscopy reference comparison | Four selected pairs and twelve fixed reference cases complete; earlier padding, storage and capacity failures retained. | The frozen reference-composition contrast finds no observed fragility. The cohort is closed; full-work savings remain unestablished. |
+| Takeover coverage and temporal qualification | Complete TD2D summary census and inspected history; manD metadata coverage and one checked recorded timeline. | Coverage and arithmetic now have explicit scope. Recovery labels still lack qualified clocks, accident semantics and monitored follow-up. |
+
+The following recent endpoints extend the earlier evidence table; they do not
+replace its negative results or the detailed dated record below.
+
+### Completed microscopy comparison
+
+The [MultiOrg 0.8.0 packet](research/multiorg-reference-admission/0.8.0/README.md)
+completes **four selected image pairs and twelve reference cases**. Two earlier
+pairs were checked and reused; two incomplete images completed **624 new forwards**.
+All previous invalid exports, interrupted attempts and resource costs remain in
+the linked history. This closes the comparison previously reported as incomplete.
+
+Under equal image weights and equal FP/FN penalties, the mean loss difference
+`Faster − YOLO` is **G = [126, 201]** when one recorded reference procedure is
+shared across images and **P = [119.5, 201]** when procedures may vary by image.
+Both intervals favor the exact YOLO variant under that loss. The primary result
+is **`no_observed_fragility`**; native, conventional and separate calculations
+agree. This is not better recall, physical truth, general superiority or measured
+complete-work savings. The exposed cohort is closed to reruns, tuning and expansion.
+
+### Takeover coverage and outcome timing
+
+The [TD2D v2 census](research/takeover-outcome/0.2.0/README.md) now contains
+**all 500 original summaries**. Its five required fields admit all 500; the
+original full-header contract retains one workload-suffix anomaly and admits 499.
+Both contracts produce **242 within-driver/event success–failure pairs**:
+**19 faster failures across 11 drivers**, **223 faster successes**, no ties.
+All ten published task success counts and reaction-time means reproduce exactly
+under the field projection. Reaction time and recorded outcome cannot be
+interchanged; these comparisons establish neither a causal effect nor population
+risk, physical recovery or road transfer.
+
+Event-to-end differences range from **2,717 to 23,404 ms**; first-action-to-end
+from **1,735 to 22,015 ms**. Positive differences do not identify failure-event
+time, continuous monitoring, a shared recovery horizon or censoring. The
+[history audit](research/takeover-source-lineage/0.1.0/README.md) checks both
+advertised simulator branches, **47 commits** and **160 historical Python blob
+variants**; it finds no additional Python variants beyond current main. The
+required examples-controller path does not appear. That inspected route is closed. It does not
+establish the original capture runtime or show that the released labels are wrong.
+
+The next source, [manD 1.0 / Dataverse 2.0](research/mand-timing/0.1.0/README.md),
+marks both required channels available in **235 of 300 metadata slots**, including
+50 familiarization slots. Availability is not verified trial completeness.
+P1's first eligible driven scenario, anger, was selected before opening records;
+the condition name is not an inferred emotion. Only its vehicle/environment
+state files were extracted for analysis.
+
+Each file has **134,373 rows**, with identical time tokens and exact **1/256**
+spacing from **0 to 524.890625 source-time units**. Native acquisition is documented
+at **20 Hz**, delivery at **256 Hz**. This supports stored-axis alignment, without
+qualifying physical units, origin, native latency or error bounds. Upsampling
+does not establish finer native precision.
+
+| manD recorded observation | First episode | Second episode |
+| --- | ---: | ---: |
+| Takeover request onset, source coordinate | 253.375 | 465.5234375 |
+| First following non-request record | 254.42578125 | 467.5234375 |
+| First subsequent manual-mode record | 254.4765625 | 468.625 |
+| Request-to-manual difference, source units | 1.1015625 | 3.1015625 |
+
+These are message/state differences, not first-action latency or recovery time.
+The end-of-ride message begins at **495.57421875**, with another **29.31640625**
+source units recorded afterward. Its last segment has no observed next boundary.
+The first **33 sensor/automation rows are missing**, not manual mode or zero.
+Neither environment accident code 6 nor vehicle accident-message code 13 appears;
+absence is not a successful-recovery label or a check of accident detection.
+
+```mermaid
+flowchart TB
+  T["TD2D: complete summary census<br/>Reaction time and binary outcome recorded"] --> U["Failure time and common monitored horizon<br/>Not established by the summaries or inspected history"]
+  M["manD: selected vehicle and environment files<br/>Stored time axis and request/state transitions checked"] --> V["Physical clock and accident timing<br/>Not qualified; no positive accident episode"]
+  U --> N["Next evidence dependency<br/>Release-linked clock and accident rule<br/>Positive control, termination and censoring"]
+  V --> N
+  N -. "qualification not yet met" .-> O["Recovery labels withheld<br/>Readiness modeling not admitted"]
+```
+
+Separate calculations check all TD2D source mappings and 193 strata, and all
+268,746 selected manD source rows, 53 categorical runs and 600 coverage cells.
+The packets retain 39 TD2D controls and 25 manD controls. These are bounded
+calculation checks within this investigation, not independent scientific
+replication or outcome validation.
+
+TD2D-derived results credit Jiwoo Hwang, Woohyeok Choi, Jungmin Lee, Woojoo Kim,
+Jungwook Rhim and Auk Kim; manD-derived results credit Khazar Dargahi Nobari and
+Torsten Bertram. Both sources use CC BY 4.0. The linked packets retain versioned
+sources, terms, adaptations and custody. Raw participant streams remain outside
+public Git. Retained acquisition and failed-attempt costs remain part of the
+record; an unmeasured cost is not zero.
+
+### Earlier evidence and retained limits
 
 The [September 20 research expansion](research/frontier-expansion/0.1.0/README.md)
 adds an offline authored clearance contract for ego and lead-vehicle motion.
@@ -327,6 +453,7 @@ flowchart TB
   end
   subgraph RESEARCH["Published offline research"]
     D["External source inputs<br/>Terms, byte identities and declared opportunities"] --> X["Comparison engine and separate checkers"]
+    D --> Q["Source and timeline audits<br/>Coverage, field states, clocks and event semantics"]
     D --> B["Conventional benchmark replay<br/>Same saved predictions, two references"]
     X --> T["Conditional bounds and witnesses"]
     B --> R["All scores and reference-sensitive rankings"]
@@ -336,7 +463,8 @@ flowchart TB
   T --> C
   R --> C
   G --> C
-  C --> P["Research release<br/>Eligible source and reproducible measurements"]
+  Q --> C
+  C --> P["Published research packets<br/>Eligible evidence; explicit limits on each conclusion"]
 ```
 
 Source hashes bind conclusions to particular bytes. They do not establish that
@@ -388,6 +516,22 @@ launcher and immutable candidate procedure.
 
 ## Next research decision
 
+**Qualify outcome measurement before modeling readiness.** The next bounded step
+is to find release-linked evidence for the manD physical clock, the rule generating
+`EnvironmentalEvent=6`, and monitor termination/censoring. First inspect eligible
+public or provided source/metadata for a positive accident control. Any additional
+record needs a new frozen selection rule and resource budget before it is opened.
+Selecting a positive control cannot estimate population performance.
+
+If those semantics cannot be qualified, preserve the recorded request/state
+observations and withhold recovery benchmarking. Do not repeat P1/anger, the TD2D
+census/history or the exposed microscopy comparison. No readiness model, unrelated
+stream expansion or outreach follows from this documentation. Gate A remains
+operator-unaccepted. The [current decision](research/mand-timing/0.1.0/DECISION.md)
+and [continuation brief](docs/NEXT_SESSION.md) specify the dependency and stop rule.
+
+### Product-value hurdle remains open
+
 The [current release decision](research/releases/2026-10-11/README.md#next-scientific-investment)
 continues the stop on broad evidence-engine expansion. The claim corrections
 are now published. An extraction-accounting helper is implemented and checked;
@@ -402,7 +546,7 @@ without an external team. The exposed COCO pair is closed without selector
 tuning because conventional evaluation already answers its declared ranking
 question.
 
-The next product-value test needs a real revision decision: genuine old/new model
+A future product-value test needs a real revision decision: genuine old/new model
 artifacts, an owner-defined loss and operating criterion, a qualified review
 process and complete measured costs. Reiyah and the strongest applicable
 conventional workflow must receive the same evidence and satisfy the same
@@ -430,6 +574,9 @@ These are resource limits, not an unattended schedule. If no suitable case is
 found, or competent conventional evaluation reaches parity, stop this product
 investment and preserve the research.
 
+This separate product-investment path remains conditional on an admitted case;
+it is not the immediate outcome-qualification task.
+
 ```mermaid
 flowchart TB
   Q["Candidate revision or integration decision"] --> G{"Case qualifies?"}
@@ -451,6 +598,15 @@ preserving even when it fails the product-value test.
 
 ## Recent research
 
+Entries describe the result and next dependency **at that checkpoint**. The
+current direction above supersedes historical execution instructions; earlier
+failures and incomplete states remain part of the record.
+
+- **15 October 2026:** [manD recorded timelines](research/mand-timing/0.1.0/README.md). Metadata selection precedes inspection; 134,373 vehicle/environment row pairs share an exact stored axis. Two request episodes, missing sensor rows and message/file-end differences remain explicit. Physical clocks, accident timing and monitored recovery are unqualified; 25 controls pass.
+- **15 October 2026:** [TD2D source-history closure](research/takeover-source-lineage/0.1.0/README.md). Both advertised branches and 47 commits add no missing Python capture path. The inspected repair route closes; a separately bounded manD documentation screen supplies the next source lead, not a qualified outcome.
+- **15 October 2026:** [Complete TD2D census](research/takeover-outcome/0.2.0/README.md). All 500 summaries captured; both admission contracts yield 19 faster failures and 223 faster successes in 242 pairs. All ten source task summaries reproduce. Outcome timing and a common monitored horizon remain unqualified.
+- **15 October 2026:** [Initial TD2D audit](research/takeover-outcome/0.1.0/README.md). The partial 161-capture attempt, decimal-parser correction, DNS failure and rate limit are retained. Its five faster failures among 70 pairs are historical; the complete census supersedes that coverage state.
+- **15 October 2026:** [Selected microscopy cohort complete](research/multiorg-reference-admission/0.8.0/README.md). Four pairs and twelve reference cases give G=[126, 201], P=[119.5, 201] and `no_observed_fragility`. Two prior pairs reused, 624 new forwards; conventional calculation agrees. Earlier resource failures remain visible, and the exposed cohort is closed without a work-advantage claim.
 - **14 October 2026:** [Capacity recovery and the selected cohort](research/multiorg-reference-admission/0.7.0/README.md). Safe cleanup enabled another complete, checked detector pair, bringing coverage to two of four selected images. The next pair stopped at its remaining-capacity boundary; no new reference comparison or cohort endpoint. The resource consumer and matching composition pass 85 public replay controls.
 - **14 October 2026:** [Resource admission before another attempt](research/multiorg-reference-admission/0.6.1/README.md). A new supervisor records exact capacity stops and protects receipt publication; 44 authored controls pass. The actual host check refused before worker launch. Storage remains insufficient; the selected detector comparison remains incomplete.
 - **14 October 2026:** [Remaining inputs qualified; storage stop retained](research/multiorg-reference-admission/0.6.0/README.md). All three selected images and 936 prospective model inputs are qualified. The next pair stopped at its disk reserve with 70 raw tile ledgers saved; no new complete pair or comparison. The four-image matching adapter is qualified on authored controls. Stable storage headroom is the next execution dependency.
@@ -499,7 +655,9 @@ changes the scope of an earlier result.
 | Read for | Start here |
 | --- | --- |
 | Engine model and mathematics | [Architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) · [Replacement interface](research/perception-revision/0.1.0/README.md) |
-| Current direction and evidence | [Next-session brief](docs/NEXT_SESSION.md) · [Research release](research/releases/2026-10-11/README.md) · [Evidence inventory](research/releases/2026-10-11/evidence.json) · [Roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) · [Execution audit](research/roadmap-audit/0.1.0/README.md) · [Primary-method review](research/roadmap-audit/0.1.0/FRONTIER.md) |
+| Current direction and evidence | [Progress map](#research-progression) · [Next-session brief](docs/NEXT_SESSION.md) · [Research release](research/releases/2026-10-11/README.md) · [Evidence inventory](research/releases/2026-10-11/evidence.json) · [Roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) · [Execution audit](research/roadmap-audit/0.1.0/README.md) · [Primary-method review](research/roadmap-audit/0.1.0/FRONTIER.md) |
+| Takeover coverage and outcome timing | [Complete TD2D census](research/takeover-outcome/0.2.0/README.md) · [Source-history closure](research/takeover-source-lineage/0.1.0/README.md) · [manD timeline and current decision](research/mand-timing/0.1.0/README.md) |
+| Selected reference cohort | [Complete four-image result](research/multiorg-reference-admission/0.8.0/README.md) · [Preserved resource failures](research/multiorg-reference-admission/0.7.0/README.md) |
 | Relational motion research | [Clearance contract](research/frontier-expansion/0.1.0/README.md) · [Current primary research](research/frontier-expansion/0.1.0/SOURCES.md) · [Earlier source scope](research/frontier-expansion/0.1.0/qualification.json) · [NGSIM source adapter](research/public-motion/0.1.0/README.md) |
 | Physical measurement contract | [Source qualification](research/physical-source/0.1.0/README.md) · [Geometry, motion and coverage](research/physical-source/0.1.0/CONTRACT.md) |
 | Recorded input-admission decision | [ViF-GTAD export comparison](research/compact-motion/0.1.1/README.md) · [Frozen question and baseline](research/compact-motion/0.1.1/DECISION_PLAN.md) |

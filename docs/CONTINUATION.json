@@ -1,10 +1,10 @@
 {
   "artifact_id": "reiyah.continuation",
-  "version": "0.1.31",
+  "version": "0.1.32",
   "as_of": "2026-10-15",
   "lifecycle_status": "proposed",
   "authority": "Navigation and retained evidence bindings only; verify latest operator instruction, repository rules and live Git state",
-  "editorial_base": "b325608ea16dfdefa45909e8b0eaa89e495f438f",
+  "editorial_base": "2567a0a98dea16eab6b761002b49cfb4d83455bd",
   "release": {
     "tag": "research-2026-10-11",
     "commit": "5de377af25a4c6882096ebbc91808b19feafb628"
@@ -1387,7 +1387,7 @@
     },
     {
       "path": "docs/NEXT_SESSION_PROMPT.md",
-      "sha256": "895e64531fb644ef3769db58e75603dec6b076b4611fd32a4e6ad58406a2255d"
+      "sha256": "b081834f82aa0c729b93f54e1d353712ddcfdac4723bceb1bd73c05a2db152a5"
     },
     {
       "path": "research/multiorg-reference-admission/0.8.0/DECISION.md",
@@ -1795,18 +1795,38 @@
     }
   ],
   "presentation_verification": {
-    "root_diagrams": 7,
-    "related_study_diagrams": 2,
+    "root_diagrams": 9,
+    "prior_root_diagrams": 7,
+    "unchanged_diagrams": 6,
+    "revised_diagrams": 1,
+    "added_diagrams": 2,
+    "local_renderer": "Mermaid CLI 11.4.2, existing local Chrome",
     "local_render_and_visual_review": true,
-    "live_GitHub_visual_render": "not_independently_verified",
+    "live_GitHub_visual_render": "not_verified; local rendered diagrams reviewed and exact publication readback separately required",
     "consistency_checks_passed": 9,
+    "historical_transcripts_digest_bound": 52,
     "historical_experiments_replayed": 0,
     "optional_attack_suite": "not_run",
     "small_auditor_matches": true,
-    "authored_control_non_timing_result_matches": true,
-    "Gate_A_release_validation": "not_run",
-    "evidence_commit": "bde5796d6268d051a862db16e6ebda1e4413d61a",
-    "scope": "Inherited diagram/control verification; current increment changes no Mermaid blocks. Do not count the inherited control as rerun."
+    "small_auditor_bytes": 1312,
+    "Gate_A_release_validation": "not_run; editorial scope only",
+    "scientific_packets_changed": false,
+    "readme_sha256": "4ee58dd6a779f9ad9796bd5d0ada3dfc0b3da53b5e06170bcfc84136781b760b",
+    "scope": "Current README and continuation presentation only. Current scientific result remains manD recorded-axis support with outcome timing unqualified.",
+    "inherited_verification": {
+      "root_diagrams": 7,
+      "related_study_diagrams": 2,
+      "local_render_and_visual_review": true,
+      "live_GitHub_visual_render": "not_independently_verified",
+      "consistency_checks_passed": 9,
+      "historical_experiments_replayed": 0,
+      "optional_attack_suite": "not_run",
+      "small_auditor_matches": true,
+      "authored_control_non_timing_result_matches": true,
+      "Gate_A_release_validation": "not_run",
+      "evidence_commit": "bde5796d6268d051a862db16e6ebda1e4413d61a",
+      "scope": "Inherited diagram/control verification; current increment changes no Mermaid blocks. Do not count the inherited control as rerun."
+    }
   },
   "continuation_base": "152b53a9b3bc3118128d474484ee8fea855cddde",
   "observation_qualification": {

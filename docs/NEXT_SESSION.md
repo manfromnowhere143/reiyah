@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.31`
+Version: `0.1.32`
 
 Lifecycle status: `proposed`
 
@@ -14,6 +14,16 @@ The [machine-readable state](CONTINUATION.json) is a navigation aid; verify its
 evidence bindings and resolve live Git state before acting.
 The [ready-to-use continuation prompt](NEXT_SESSION_PROMPT.md) carries Daniel's
 15 October direction into the next session.
+
+## Presentation checkpoint, 15 October 2026
+
+The [README](../README.md) now carries the full research progression, completed
+microscopy result, complete TD2D census/history and current manD timing result.
+Nine diagrams preserve the existing explanation and add progress and outcome
+qualification views. This editorial update does not alter any frozen scientific
+packet, reopen a closed owner or qualify a recovery endpoint. The current
+scientific action remains the manD dependency immediately below; the product-value
+hurdle and earlier execution instructions are retained in their historical scope.
 
 ## Current manD timing qualification, 15 October 2026
 
@@ -243,7 +253,11 @@ Test counts, visual polish and persistence alone cannot establish superiority.
 **Continue bounded scientific investigation. Keep broad product expansion
 stopped until a useful decision advantage is demonstrated.**
 
-The next question is: can Reiyah reach the same justified perception-revision
+The immediate scientific question is whether release-linked clock, accident and
+monitoring evidence can qualify a recovery endpoint. The completed packets above
+determine that next step.
+
+The open product-value question is: can Reiyah reach the same justified perception-revision
 decision with materially less complete work than a competent conventional
 process, under the same information and correctness obligations?
 
@@ -430,7 +444,12 @@ declined, not pending; do not poll or resubmit it without new operator instructi
 2. Read the newest handoff, this brief and the editorial policy from current
    main or a fresh owned same-repository candidate. Earlier ACTIVE, MODIFY and
    NEXT instructions are historical when superseded here.
-3. Read the [October research release](../research/releases/2026-10-11/README.md),
+3. For the current timing task, read the [manD packet](../research/mand-timing/0.1.0/README.md),
+   its [decision](../research/mand-timing/0.1.0/DECISION.md) and the completed
+   [TD2D census](../research/takeover-outcome/0.2.0/README.md) and
+   [history closure](../research/takeover-source-lineage/0.1.0/README.md).
+   The [completed microscopy comparison](../research/multiorg-reference-admission/0.8.0/README.md)
+   is closed. Read the [October research release](../research/releases/2026-10-11/README.md),
    [evidence inventory](../research/releases/2026-10-11/evidence.json),
    [verification](../research/releases/2026-10-11/verification.json) and
    [launch-status clarification](../research/releases/2026-10-11/verification-note-0.1.0.json).

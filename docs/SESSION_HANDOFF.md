@@ -1,3 +1,100 @@
+# Current entry: research presentation and continuation refreshed, 15 October 2026
+
+Continuation version: 0.1.105. NEXT_SESSION/CONTINUATION version: 0.1.32.
+NEXT_SESSION_PROMPT version: 0.1.6. This is an editorial closeout; the scientific
+checkpoint remains [manD timing 0.1.0](../research/mand-timing/0.1.0/README.md).
+The [README](../README.md) now exposes the full progression and current boundary.
+
+## Repository, scope and publication
+
+Base: `2567a0a98dea16eab6b761002b49cfb4d83455bd`. Fresh owned candidate:
+`readme-progress-2026-10-15-d5g3r0bu/candidate`, under the private Reiyah reports
+root. Preserve the canonical historical controller at `74fbacc` and all closed
+owners. The initial shared checkout exceeded Git's alternate nesting depth;
+flattening this new clone's object-store pointers resolved it without changing
+prior repositories. The failed attempt and original pointer remain retained.
+
+Changed scope is exactly README.md and the four continuation documents:
+SESSION_HANDOFF.md, NEXT_SESSION.md, NEXT_SESSION_PROMPT.md and CONTINUATION.json.
+No scientific packet, released manifest, source payload, result or code changes.
+All previous handoff bytes remain below this entry. Read the newest entry first;
+older entries retain the instructions and limits applicable at their checkpoint.
+
+The commit containing this entry is the publication unit. Normal reviewed push,
+full human author/committer/message checks and exact file/parent/tree/main readback
+are required before reporting publication complete. The private owner retains
+publication-index.json, publication-readback/PUBLICATION_READBACK.json and
+CLOSEOUT.json; the latest local continuation memory records the resulting commit.
+Publisher readback is not independent transport or scientific verification.
+
+## What the README and diagrams now show
+
+The stable introduction, decision mathematics, reference examples, joint-miss
+analysis, broader HARBOR mission, conventional comparisons, negative results and
+reproduction instructions remain on the front page. All existing main sections
+and dated entries are preserved. Current evidence now runs through 15 October.
+A progress table connects the research phases, and current results are explained
+with their assumptions rather than reduced to unqualified headlines.
+
+There are nine Mermaid diagrams: six previous diagrams are unchanged; the
+architecture view adds source/timeline auditing; two new views show research
+progress and the outcome-qualification dependency. Each original diagram was
+reviewed for scope. The product-value diagram is explicitly a separate conditional
+path, while the immediate scientific task appears first. All nine diagrams were
+locally rendered and visually inspected. Live GitHub visual rendering is not
+verified by that local review.
+
+| Completed checkpoint | Retained conclusion | Boundary that remains |
+| --- | --- | --- |
+| [Microscopy 0.8.0](../research/multiorg-reference-admission/0.8.0/README.md) | Four pairs, twelve references; G=[126, 201], P=[119.5, 201]; `no_observed_fragility`. | Fixed cohort closed. No complete-work advantage or physical-truth claim. |
+| [TD2D 0.2.0](../research/takeover-outcome/0.2.0/README.md) | All 500 summaries captured; required-field and strict-header contracts preserve their 500/499 admission distinction and agree on 19 faster failures, 223 faster successes, no ties in 242 pairs. | Failure time, common monitored horizon and release-bound capture remain unqualified. |
+| [TD2D history 0.1.0](../research/takeover-source-lineage/0.1.0/README.md) | Both advertised branches and 47 commits checked; no additional historical Python variants or required examples controller found. | Inspected history route closed; this does not establish original capture behavior or invalidate dataset labels. |
+| [manD timing 0.1.0](../research/mand-timing/0.1.0/README.md) | 235 available metadata slots; selected P1/anger supplies 134,373 aligned rows per file on an exact stored axis, with two request episodes. | Availability is not completeness. Physical clock, accident semantics and monitored recovery remain unqualified; absent accident codes are not success. |
+
+## Verification and limitations
+
+The documented research-consistency command passes all nine checks. It binds
+52 historical transcript digests and replays zero historical experiments;
+35 remain `not_replayed_here` and 17 `argv_unrecorded_historical`. The optional
+attack suite and Gate A locked release replay were not run for this editorial
+change. The advertised standard-library example matches its retained 1,312-byte
+result exactly. Displayed current figures were reconciled to their retained
+packets; no empirical result was recomputed or promoted to a stronger claim.
+
+The private editorial audit records before/after headings and diagram sources,
+local render receipts and visual inspection, current Markdown links/anchors,
+all continuation evidence bindings, complete diff and publication checks.
+Scientific state and next_action remain unchanged in CONTINUATION.json; only
+its presentation metadata, version/base and updated prompt binding change.
+No new source acquisition, inference, training, media inspection, paid service,
+outreach, cleanup campaign or background worker was initiated. Historical costs
+remain recorded; editorial wall time is not active work or a reset research budget.
+
+## Next authorized scientific action
+
+1. Resolve current main and read this entry, NEXT_SESSION.md, CONTINUATION.json,
+   NEXT_SESSION_PROMPT.md, EDITORIAL_POLICY.md and the latest private continuation
+   pointer. Use a fresh owned candidate and preserve all closed owners.
+2. Read the [manD decision](../research/mand-timing/0.1.0/DECISION.md) and exact
+   source custody. Seek release-linked physical clock interpretation/latency,
+   the rule generating `EnvironmentalEvent=6`, and monitor termination/censoring.
+   First determine whether eligible public or provided source/metadata identifies
+   a positive accident control. Record source versions, terms, gaps and costs.
+3. If a useful additional record is justified, freeze selection, exposure,
+   resource bounds, falsification and stop criteria under a new bounded protocol
+   before opening it. A selected positive control cannot estimate population
+   performance. Do not repeat P1/anger, the closed TD2D census/history or the
+   exposed microscopy cohort, or expand unrelated streams.
+4. If the semantics remain insufficient, keep the recorded request/state-transition
+   result and withhold recovery benchmarking. No readiness model, causal effect,
+   physical-recovery claim or outreach follows from this checkpoint.
+
+Broad product expansion remains stopped pending demonstrated value. **Gate A
+remains operator-unaccepted.** This documentation update neither accepts Gate A
+nor claims that its unresolved evidence requirements have been completed.
+
+---
+
 # Current entry: manD recorded time alignment checked, recovery outcome withheld, 15 October 2026
 
 Continuation version: 0.1.104. NEXT_SESSION/CONTINUATION version: 0.1.31.
