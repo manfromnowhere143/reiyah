@@ -1,0 +1,63 @@
+{
+  "artifact_id": "reiyah.multiorg.cohort-completion.verification",
+  "version": "0.8.0",
+  "status": "passed",
+  "at": "2026-10-15T11:04:37.519290+00:00",
+  "inference_frozen_bindings": 73,
+  "matching_frozen_bindings": 30765,
+  "all_frozen_bindings_unchanged": true,
+  "runtime": {
+    "inference": {
+      "before_after_equal_except_timestamp": true,
+      "distributions": 17,
+      "hashed_entries": 5926,
+      "explicit_unhashed_exclusions": 17
+    },
+    "matching": {
+      "before_after_equal_except_timestamp": true,
+      "distributions": 5,
+      "hashed_entries": 134,
+      "explicit_unhashed_exclusions": 79
+    }
+  },
+  "resources": [
+    {
+      "image": 2,
+      "minimum_available_bytes": 8588337152,
+      "minimum_headroom_bytes": 794019600,
+      "samples": 605,
+      "budget_admission": {
+        "at": "2026-10-15T10:51:18.419832+00:00",
+        "elapsed_owner_seconds": 279.18228862498654,
+        "remaining_seconds": 6920.8177113750135,
+        "required_seconds": 4000,
+        "passed": true,
+        "historical_active_effort": "unknown, not reset",
+        "remaining_pairs": 2
+      },
+      "process_sha256": "fb705b3d2767f911fdf39038b54ee90e689131511f7a9aa45c236a220f191367"
+    },
+    {
+      "image": 3,
+      "minimum_available_bytes": 8567173120,
+      "minimum_headroom_bytes": 743339792,
+      "samples": 628,
+      "budget_admission": {
+        "at": "2026-10-15T10:57:10.845117+00:00",
+        "elapsed_owner_seconds": 631.6075642500073,
+        "remaining_seconds": 6568.392435749993,
+        "required_seconds": 2900,
+        "passed": true,
+        "historical_active_effort": "unknown, not reset",
+        "remaining_pairs": 1
+      },
+      "process_sha256": "9a22d69e54d2712407880572b077bd45c8c318dfe3f48be142fcd40481f9f7f7"
+    }
+  ],
+  "all_four_pairs_complete": true,
+  "complete_reference_cases": 12,
+  "native_conventional_and_separate_arithmetic": "agree",
+  "new_model_forwards": 624,
+  "historical_pair_inference_reexecuted": 0,
+  "scope": "Same-assisted-investigation exact-byte and numeric verification, not independent replication or physical ground truth."
+}

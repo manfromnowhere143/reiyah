@@ -1,0 +1,400 @@
+{
+  "artifact_id": "reiyah.multiorg.cohort-completion.result",
+  "version": "0.8.0",
+  "lifecycle_status": "exploratory",
+  "date": "2026-10-15",
+  "base": "f29e65ebeb8bbf556ad2f2c6bf46d0427620078b",
+  "primary_status": "no_observed_fragility",
+  "selected_images": 4,
+  "recorded_reference_cases": 12,
+  "complete_pairs": 4,
+  "reused_complete_pairs": 2,
+  "new_complete_pairs": 2,
+  "new_model_forwards": 624,
+  "historical_model_forwards_reexecuted": 0,
+  "new_raw_arrays_checked": 10920,
+  "historical_raw_arrays_rechecked": 10920,
+  "pairs": [
+    {
+      "index": 2,
+      "image_id": "MultiOrg_v2/test/Normal/Plate_31/image_6/image_6.tiff",
+      "status": "complete_pair_verified",
+      "input_tensor_count": 312,
+      "raw_arrays_checked": 5460,
+      "raw_array_bytes": 5342637,
+      "models": [
+        {
+          "analysis_count": 272,
+          "model": "faster",
+          "raw_rows": 2554,
+          "status": "complete_analysis_image_verified",
+          "tiles": 156
+        },
+        {
+          "analysis_count": 15,
+          "model": "yolo",
+          "raw_rows": 15600,
+          "status": "complete_analysis_image_verified",
+          "tiles": 156
+        }
+      ],
+      "worker_wall_seconds": 319.76351162500214,
+      "supervisor_wall_seconds": 329.86474645801354,
+      "peak_sampled_rss_bytes": 1176109056,
+      "resource_samples": 605,
+      "consumer_wall_seconds": 9.157110334024765,
+      "budget_admission": {
+        "at": "2026-10-15T10:51:18.419832+00:00",
+        "elapsed_owner_seconds": 279.18228862498654,
+        "remaining_seconds": 6920.8177113750135,
+        "required_seconds": 4000,
+        "passed": true,
+        "historical_active_effort": "unknown, not reset",
+        "remaining_pairs": 2
+      }
+    },
+    {
+      "index": 3,
+      "image_id": "MultiOrg_v2/test/Macros/Plate_23/image_1/image_1.tiff",
+      "status": "complete_pair_verified",
+      "input_tensor_count": 312,
+      "raw_arrays_checked": 5460,
+      "raw_array_bytes": 5520684,
+      "models": [
+        {
+          "analysis_count": 283,
+          "model": "faster",
+          "raw_rows": 2429,
+          "status": "complete_analysis_image_verified",
+          "tiles": 156
+        },
+        {
+          "analysis_count": 12,
+          "model": "yolo",
+          "raw_rows": 15600,
+          "status": "complete_analysis_image_verified",
+          "tiles": 156
+        }
+      ],
+      "worker_wall_seconds": 330.96556495904224,
+      "supervisor_wall_seconds": 341.07894837501226,
+      "peak_sampled_rss_bytes": 1068515328,
+      "resource_samples": 628,
+      "consumer_wall_seconds": 7.805133874993771,
+      "budget_admission": {
+        "at": "2026-10-15T10:57:10.845117+00:00",
+        "elapsed_owner_seconds": 631.6075642500073,
+        "remaining_seconds": 6568.392435749993,
+        "required_seconds": 2900,
+        "passed": true,
+        "historical_active_effort": "unknown, not reset",
+        "remaining_pairs": 1
+      }
+    }
+  ],
+  "global": {
+    "decision": "prefer_b",
+    "lower": "126/1",
+    "lower_procedure": "t0",
+    "upper": "201/1",
+    "upper_procedure": "t1_A"
+  },
+  "imagewise": {
+    "decision": "prefer_b",
+    "lower": "239/2",
+    "lower_choices": [
+      {
+        "procedure": "t0",
+        "tiff_path": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff"
+      },
+      {
+        "procedure": "t1_B",
+        "tiff_path": "MultiOrg_v2/test/Macros/Plate_23/image_0/image_0.tiff"
+      },
+      {
+        "procedure": "t1_B",
+        "tiff_path": "MultiOrg_v2/test/Normal/Plate_31/image_6/image_6.tiff"
+      },
+      {
+        "procedure": "t0",
+        "tiff_path": "MultiOrg_v2/test/Macros/Plate_23/image_1/image_1.tiff"
+      }
+    ],
+    "upper": "201/1",
+    "upper_choices": [
+      {
+        "procedure": "t1_A",
+        "tiff_path": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff"
+      },
+      {
+        "procedure": "t1_A",
+        "tiff_path": "MultiOrg_v2/test/Macros/Plate_23/image_0/image_0.tiff"
+      },
+      {
+        "procedure": "t1_A",
+        "tiff_path": "MultiOrg_v2/test/Normal/Plate_31/image_6/image_6.tiff"
+      },
+      {
+        "procedure": "t1_A",
+        "tiff_path": "MultiOrg_v2/test/Macros/Plate_23/image_1/image_1.tiff"
+      }
+    ]
+  },
+  "cells": [
+    {
+      "delta": "78/1",
+      "detections_a": 222,
+      "detections_b": 14,
+      "fn_a": 11,
+      "fn_b": 76,
+      "fp_a": 145,
+      "fp_b": 2,
+      "native_input_sha256": "b476ceb5a4d722a8b924a6cbbd49a4bb66c13dc2815846e5a197dbc1dce4fac6",
+      "native_proof_sha256": "9c72452b1305fc50827a157782a6f031a48702790487940ba4a80ea4b15612c3",
+      "native_work_units": 77513,
+      "procedure": "t0",
+      "reference_count": 88,
+      "tiff_path": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+      "tp_a": 77,
+      "tp_b": 12
+    },
+    {
+      "delta": "138/1",
+      "detections_a": 222,
+      "detections_b": 14,
+      "fn_a": 14,
+      "fn_b": 49,
+      "fp_a": 175,
+      "fp_b": 2,
+      "native_input_sha256": "5109e1bca2546e58331c259f077e6bf68749d59560a4a533e7c8ad5c41220034",
+      "native_proof_sha256": "143f2e6f454b20e466dc176d71ce936ead532f95672856785e12c52f52bcc591",
+      "native_work_units": 51281,
+      "procedure": "t1_A",
+      "reference_count": 61,
+      "tiff_path": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+      "tp_a": 47,
+      "tp_b": 12
+    },
+    {
+      "delta": "120/1",
+      "detections_a": 222,
+      "detections_b": 14,
+      "fn_a": 8,
+      "fn_b": 52,
+      "fp_a": 166,
+      "fp_b": 2,
+      "native_input_sha256": "0718a3e9ae40196ac8d4f75a88bfeb5ef65dceadc0917a6bd4c578a6f630c6e3",
+      "native_proof_sha256": "84d3328434d09066f2ecff17ff5ce68e568cdd40c3838712c4523ef60d4f684c",
+      "native_work_units": 56723,
+      "procedure": "t1_B",
+      "reference_count": 64,
+      "tiff_path": "MultiOrg_v2/test/Macros/Plate_4/image_7/image_7.tiff",
+      "tp_a": 56,
+      "tp_b": 12
+    },
+    {
+      "delta": "134/1",
+      "detections_a": 251,
+      "detections_b": 9,
+      "fn_a": 12,
+      "fn_b": 66,
+      "fp_a": 191,
+      "fp_b": 3,
+      "native_input_sha256": "c79b80d80622bb740df739b91c10ea9816babfac19feab085e36be429f30c346",
+      "native_proof_sha256": "7a210bec751e3add2318e344bc8ebfd0ee625c74533265d30976a94f51ccb48d",
+      "native_work_units": 68613,
+      "procedure": "t0",
+      "reference_count": 72,
+      "tiff_path": "MultiOrg_v2/test/Macros/Plate_23/image_0/image_0.tiff",
+      "tp_a": 60,
+      "tp_b": 6
+    },
+    {
+      "delta": "206/1",
+      "detections_a": 251,
+      "detections_b": 9,
+      "fn_a": 5,
+      "fn_b": 23,
+      "fp_a": 229,
+      "fp_b": 5,
+      "native_input_sha256": "1098527a35fd6a7709d95fe0cdc8462ab27266f0938699044462daed8a36b63a",
+      "native_proof_sha256": "d3c3b3aca19a20c6a5f22559c37e4426b97b4a0feecc5e393249a4cb9b34b3b6",
+      "native_work_units": 25841,
+      "procedure": "t1_A",
+      "reference_count": 27,
+      "tiff_path": "MultiOrg_v2/test/Macros/Plate_23/image_0/image_0.tiff",
+      "tp_a": 22,
+      "tp_b": 4
+    },
+    {
+      "delta": "110/1",
+      "detections_a": 251,
+      "detections_b": 9,
+      "fn_a": 11,
+      "fn_b": 77,
+      "fp_a": 180,
+      "fp_b": 4,
+      "native_input_sha256": "87745495d1cee318ff5125998934a0f8d6e4b3ae99b3026b5a85e7f789433a7b",
+      "native_proof_sha256": "e9ef1579099719b07be5ab10570db934c56787a867bbadedc8ec5c1207d296d3",
+      "native_work_units": 79377,
+      "procedure": "t1_B",
+      "reference_count": 82,
+      "tiff_path": "MultiOrg_v2/test/Macros/Plate_23/image_0/image_0.tiff",
+      "tp_a": 71,
+      "tp_b": 5
+    },
+    {
+      "delta": "143/1",
+      "detections_a": 272,
+      "detections_b": 15,
+      "fn_a": 8,
+      "fn_b": 65,
+      "fp_a": 204,
+      "fp_b": 4,
+      "native_input_sha256": "709e68942b28df9e5bcb70c0f834be3d55f8b90a70fa7610781e17580604f44c",
+      "native_proof_sha256": "09153b983c1d40cce23f2960984be80b0cae3a7287f32ea05107278a6c875cc9",
+      "native_work_units": 81987,
+      "procedure": "t0",
+      "reference_count": 76,
+      "tiff_path": "MultiOrg_v2/test/Normal/Plate_31/image_6/image_6.tiff",
+      "tp_a": 68,
+      "tp_b": 11
+    },
+    {
+      "delta": "215/1",
+      "detections_a": 272,
+      "detections_b": 15,
+      "fn_a": 1,
+      "fn_b": 22,
+      "fp_a": 240,
+      "fp_b": 4,
+      "native_input_sha256": "f150d33e99b1a47614c0ae45691a167f6c326664e243660ee4118f365b0d398e",
+      "native_proof_sha256": "f074e85956dc8a58047b59f8daa8406f244d12cb0717c080c9e8c0aa2225cc4e",
+      "native_work_units": 37509,
+      "procedure": "t1_A",
+      "reference_count": 33,
+      "tiff_path": "MultiOrg_v2/test/Normal/Plate_31/image_6/image_6.tiff",
+      "tp_a": 32,
+      "tp_b": 11
+    },
+    {
+      "delta": "141/1",
+      "detections_a": 272,
+      "detections_b": 15,
+      "fn_a": 2,
+      "fn_b": 60,
+      "fp_a": 205,
+      "fp_b": 6,
+      "native_input_sha256": "01c1293b164dbd55d1edcf157a5a542756a12362233a70014b76848233e748b3",
+      "native_proof_sha256": "3e14a683e562e4e81dd44797bb79fe0251792592201e11681c0043d5648b41b9",
+      "native_work_units": 77331,
+      "procedure": "t1_B",
+      "reference_count": 69,
+      "tiff_path": "MultiOrg_v2/test/Normal/Plate_31/image_6/image_6.tiff",
+      "tp_a": 67,
+      "tp_b": 9
+    },
+    {
+      "delta": "149/1",
+      "detections_a": 283,
+      "detections_b": 12,
+      "fn_a": 18,
+      "fn_b": 79,
+      "fp_a": 213,
+      "fp_b": 3,
+      "native_input_sha256": "d3977a2f0fc7f1e0cd2ccf1b4d30f65ab1ca07f2bdc1ae9b854edc8eb56a34fd",
+      "native_proof_sha256": "979b71a549b75a32106292f82e72d34d24827ca65250a72ae9ad6b4456446105",
+      "native_work_units": 92861,
+      "procedure": "t0",
+      "reference_count": 88,
+      "tiff_path": "MultiOrg_v2/test/Macros/Plate_23/image_1/image_1.tiff",
+      "tp_a": 70,
+      "tp_b": 9
+    },
+    {
+      "delta": "245/1",
+      "detections_a": 283,
+      "detections_b": 12,
+      "fn_a": 5,
+      "fn_b": 18,
+      "fp_a": 261,
+      "fp_b": 3,
+      "native_input_sha256": "b8ee33325bba71c9fe906864ac0ec6232deae2c96435fc25a287e4e77c1b654a",
+      "native_proof_sha256": "9bd544cf9bb30fc21c21316f8d895628f34ea8e3b5e98740d2e206a3dbd16e4f",
+      "native_work_units": 29363,
+      "procedure": "t1_A",
+      "reference_count": 27,
+      "tiff_path": "MultiOrg_v2/test/Macros/Plate_23/image_1/image_1.tiff",
+      "tp_a": 22,
+      "tp_b": 9
+    },
+    {
+      "delta": "155/1",
+      "detections_a": 283,
+      "detections_b": 12,
+      "fn_a": 5,
+      "fn_b": 63,
+      "fp_a": 215,
+      "fp_b": 2,
+      "native_input_sha256": "d8c233b4fa68edf9b68a854ba00e6c7f510178030fdd8bf9c26d6952c93c1932",
+      "native_proof_sha256": "16005f6bcbc3080be0033757f53dfd0327172214a46a5c9602290b0c62540b9a",
+      "native_work_units": 83409,
+      "procedure": "t1_B",
+      "reference_count": 73,
+      "tiff_path": "MultiOrg_v2/test/Macros/Plate_23/image_1/image_1.tiff",
+      "tp_a": 68,
+      "tp_b": 10
+    }
+  ],
+  "native_conventional_separate_maxflow_agree": true,
+  "inference_freeze": {
+    "sha256": "b218f4e77ca3f5f3c7a1a3d95faa7ea46841b091c5efd218858759e73c372a21",
+    "bindings": 73,
+    "unchanged": true
+  },
+  "matching_freeze": {
+    "sha256": "35291f8c3dbd15661073c178b84317b172f6041fccc80e325a30fa05d6ff42ce",
+    "bindings": 30765,
+    "unchanged": true
+  },
+  "runtime": {
+    "inference": {
+      "before_after_equal_except_timestamp": true,
+      "distributions": 17,
+      "hashed_entries": 5926,
+      "explicit_unhashed_exclusions": 17
+    },
+    "matching": {
+      "before_after_equal_except_timestamp": true,
+      "distributions": 5,
+      "hashed_entries": 134,
+      "explicit_unhashed_exclusions": 79
+    }
+  },
+  "qualification": {
+    "matching_controls": 64,
+    "launch_controls": 8,
+    "budget_boundary_controls": 4
+  },
+  "accounting": {
+    "artifact_id": "reiyah.multiorg.cohort-completion.accounting",
+    "version": "0.8.0",
+    "at": "2026-10-15T11:04:37.576840+00:00",
+    "instrumented_owner_elapsed_seconds_through_result": 1078.339438583993,
+    "owner_wall_budget_seconds": 7200,
+    "current_inference_supervisor_seconds": 670.9436948330258,
+    "current_inference_worker_seconds": 650.7290765840444,
+    "current_pair_consumer_seconds": 16.962244209018536,
+    "historical_pair_recheck_seconds": 16.570994917012285,
+    "matching_producer_outer_seconds": 5.766120167041663,
+    "matching_checker_outer_seconds": 6.314000416954514,
+    "historical_effort": "All prior owners and failures retained, including0.7 owner7380.803s overrun. No reset. Complete cumulative active/human/billing work remains unknown.",
+    "limitations": "Current process intervals overlap owner wall. Do not add those as disjoint work or treat process time as human effort. Current-session reading before PLAN instrumentation and final publication after this snapshot are separate."
+  },
+  "scope": "Fixed selected microscopy images and recorded reference procedures, unit FP+FN and exact IoU>=1/2. Conditional empirical comparison; no independent scientific replication.",
+  "closed": true,
+  "scientific_superiority_established": false,
+  "complete_work_advantage_established": false,
+  "Gate_A_operator_accepted": false,
+  "next_action": "Close this fixed cohort without tuning or expansion. A further value test needs a fresh consequential decision, qualified distinguishing observations and complete costs against the equally equipped conventional comparator. Preserve full HARBOR mission and previous negative results."
+}

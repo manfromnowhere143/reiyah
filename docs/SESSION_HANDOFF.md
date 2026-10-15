@@ -1,3 +1,45 @@
+# Current entry: complete four-image reference comparison, 15 October 2026
+
+Continuation version: 0.1.100. NEXT_SESSION/CONTINUATION version: 0.1.27.
+Read the [complete comparison](../research/multiorg-reference-admission/0.8.0/README.md),
+[exact result](../research/multiorg-reference-admission/0.8.0/result.json),
+[decision](../research/multiorg-reference-admission/0.8.0/DECISION.md) and
+[verification](../research/multiorg-reference-admission/0.8.0/verification.json).
+
+Base f29e65ebeb8bbf556ad2f2c6bf46d0427620078b. Fresh owner
+`multiorg-cohort-completion-2026-10-15-7rw_ilf2`; historical controller remains
+clean at 74fbacc. All earlier owners and failed attempts remain closed and intact.
+The two complete historical pairs were numerically rechecked (10,920 arrays)
+and reused without inference. Both remaining original images now completed
+624 new forwards and 10,920 checked arrays. No new cleanup, data/model download,
+threshold change, retry or partial stitch. Frozen time admission reserved all
+remaining runs/checks plus 1800 seconds for closeout before each launch.
+
+All four pairs and twelve fixed reference cases are complete. Native,
+conventional and separate maximum-flow results agree. The original primary
+status is `no_observed_fragility`: global G=[126, 201], imagewise P=[119.5, 201]; decisions are
+`prefer_b` and `prefer_b`. A is the corrected
+Faster observation variant and B is released YOLO; delta is unit FP+FN_A minus
+FP+FN_B. Positive means lower declared loss for B, not higher recall or general
+superiority. Recorded procedures and imagewise mixtures are not physical truth.
+
+Exact runtime, source and receipt checks pass. Qualification covers 64 matching,
+8 harmless-launch and 4 budget-boundary controls; no independent replication claim.
+The original comparison is CLOSED. Preserve this result without threshold tuning,
+new images or another repeated exposed control. Complete-work advantage remains
+unestablished; this census gives the conventional comparator the same information
+and corrections. Current and historical effort remain recorded, not reset.
+
+Next authorized useful work must begin with a distinct, consequential decision
+and the observations that could settle it; qualify that channel and complete costs
+before a new value experiment. A justified new hypothesis needs a separate bounded
+protocol and exposure record. Preserve the full HARBOR mission, exact negative
+findings, public-source custody and ordinary reviewed publication boundaries.
+No automatic inference, platform growth, outreach, paid compute or old-owner
+restart. Gate A remains operator-unaccepted; no production or safety claim.
+
+---
+
 # Current entry: research and engineering continuation mandate, 15 October 2026
 
 Continuation version: 0.1.99. NEXT_SESSION/CONTINUATION version: 0.1.26.

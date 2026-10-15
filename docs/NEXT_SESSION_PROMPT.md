@@ -1,8 +1,8 @@
 # Reiyah: next-session instructions
 
-Document ID: `reiyah.next-session-prompt`. Version: `0.1.0`.
-15 October 2026. Operator-directed continuation instructions; no new scientific
-result, protocol acceptance or expansion of external-action authority.
+Document ID: `reiyah.next-session-prompt`. Version: `0.1.1`.
+15 October 2026. Operator-directed continuation instructions. The linked packet
+records results; this prompt adds no acceptance or external-action authority.
 
 Copy the following into the next session:
 
@@ -43,14 +43,17 @@ premises, and simplify or replace an approach when justified. Preserve frozen
 comparisons and report abandoned or failed questions honestly; do not tune
 endpoints, omit costs or relabel results to manufacture success.
 
-At the last verified scientific checkpoint, d9b3539 / packet0.7.0, two of four
-selected image pairs are complete. The next pair stopped at the remaining-capacity
-boundary; the final image was not started. Safe Mac cleanup and receipt-consumer
-qualification are complete. The full twelve-case endpoint and complete-work
-advantage remain unestablished. Verify live state before acting. Preserve and
-reuse complete evidence through exact checks; do not rerun completed pairs,
-stitch partial outputs or restart a closed owner. Do not ask Daniel to repeat
-the already authorized cleanup or perform routine engineering work for you.
+At the latest retained scientific checkpoint, packet 0.8.0, all four selected
+image pairs and twelve reference cases are complete. Two earlier pairs were
+rechecked and reused; the two incomplete images completed 624 new forwards. The
+original primary result is no_observed_fragility: G=[126, 201], P=[119.5, 201]. Native,
+conventional and separate calculations agree. Complete-work advantage, general
+superiority and physical truth remain unestablished. This exposed cohort is
+closed: no automatic inference, threshold tuning, added images or repeated
+controls. Preserve every prior failure and cost. Choose a distinct meaningful
+next decision and qualify observations that can settle it before another value
+experiment. Safe cleanup is already authorized, but no additional cleanup was
+needed for 0.8.0. Verify live state and retained evidence before acting.
 
 Identify the most consequential bottleneck. Produce a concise decision packet:
 evidence and unknowns, strongest applicable conventional comparator, alternatives,

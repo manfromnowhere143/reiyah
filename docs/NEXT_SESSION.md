@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.26`
+Version: `0.1.27`
 
 Lifecycle status: `proposed`
 
@@ -15,7 +15,21 @@ evidence bindings and resolve live Git state before acting.
 The [ready-to-use continuation prompt](NEXT_SESSION_PROMPT.md) carries Daniel's
 15 October direction into the next session.
 
-## Current execution dependency, 14 October 2026
+## Current completed endpoint, 15 October 2026
+
+The [0.8.0 comparison](../research/multiorg-reference-admission/0.8.0/README.md)
+completes all four selected image pairs and twelve reference cases. The two
+historical pairs were rechecked and reused; only the two incomplete images ran.
+The primary result is `no_observed_fragility`, with global G=[126, 201] and imagewise P=[119.5, 201].
+Native, conventional and separate arithmetic agree. This completes the frozen
+question; it does not establish complete-work savings, physical truth or superiority.
+The old storage dependency and inference instructions below are historical.
+Do not rerun, tune or expand this exposed cohort. The next step needs a distinct
+consequential decision, justified distinguishing observations and full costs;
+apply the existing evidence-led adaptation rule without manufacturing a win.
+All failed attempts, earlier costs and the full HARBOR mission remain preserved.
+
+## Historical execution dependency, 14 October 2026
 
 The [capacity-recovery continuation](../research/multiorg-reference-admission/0.7.0/README.md)
 supersedes the earlier pending cleanup question. Safe cleanup is complete and
@@ -464,7 +478,7 @@ The fixed release tag `research-2026-10-11` resolves to
 `40bd025e1c4704ada4ff411cddf76edbcc57fed8`. These identify completed milestones,
 not a promise that either is still main. The tag is preserved.
 
-## First engineering decision after taking over
+## Historical engineering dependency before the 0.8.0 completion
 
 Verify the live scientific checkpoint before using these instructions. At the
 last checked main, `d9b3539`, the operational dependency is storage headroom.

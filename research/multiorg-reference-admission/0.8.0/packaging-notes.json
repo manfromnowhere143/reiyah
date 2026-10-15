@@ -1,0 +1,22 @@
+{
+  "artifact_id": "reiyah.multiorg.cohort-completion.packaging-notes",
+  "version": "0.8.0",
+  "events": [
+    {
+      "stage": "public-candidate-verification",
+      "outcome": "initial_verifier_failed",
+      "reason": "Exact-source-copy loop incorrectly included a newly authored public README with no private source counterpart.",
+      "correction": "Restrict exact byte-copy assertion to executable and JSON source files; README remains subject to link/content review. No numerical check or fixture expectation changed.",
+      "scientific_execution_repeated": false
+    },
+    {
+      "stage": "post-execution-plan-prose-review",
+      "outcome": "inherited_prose_clarified_without_editing_frozen_plan",
+      "subject": "EMPIRICAL_PLAN.json#/decision",
+      "retained_value": "Complete unchanged remaining three selected image pairs and, if all qualify, unchanged four-image/twelve-case reference composition.",
+      "clarification": "Exactly two incomplete image pairs were planned and executed. Before execution, the same plan fixed order=[2,3], max_new_pairs=2, max_model_forwards=624 and1200worker seconds; PLAN.json, DECISION.md and the frozen launcher likewise required two. The descriptive decision string retained the preceding owner's word three.",
+      "timing": "Clarification after matching; original plan and every frozen byte remain unchanged.",
+      "scientific_endpoint_or_execution_changed": false
+    }
+  ]
+}
