@@ -1,3 +1,52 @@
+# Current entry: research and engineering continuation mandate, 15 October 2026
+
+Continuation version: 0.1.99. NEXT_SESSION/CONTINUATION version: 0.1.26.
+Start with the [next-session prompt](NEXT_SESSION_PROMPT.md) and
+[full research brief](NEXT_SESSION.md). This is an instruction and navigation
+update. No new experiment, cleanup, model execution or scientific result.
+
+Daniel explicitly asks the next session to pursue the full ambition of Reiyah,
+apply the strongest justified method to each use case, research instead of
+assuming, and act on a clearly better direction when evidence supports it.
+The roadmap is a working hypothesis, not a ceiling. Use primary documentation,
+technical reports, released implementations and arXiv; read methods, limitations,
+versions and comparison conditions. Relevant frontier companies and academic
+teams are sources to examine, not authority or evidence of Reiyah superiority.
+A credible alternative may justify a bounded falsifying test before adoption.
+Preserve completed evidence and the disposition of frozen or failed questions.
+
+The brief now supplies a use-case standards table, an evidence-based adaptation
+rule, a decision-packet template and an explicit first engineering decision.
+It corrects the stale instruction to build the receipt consumer: that consumer
+is already qualified. Verify and reuse it; do not repeat completed work as if
+it were missing. Check remaining execution budget before each launch and reserve
+verification/closeout time, addressing the previous owner's wall-target overrun.
+
+Verified scientific base: d9b3539c0712bcbdd9094d34ffae01721edc985d.
+Two of four selected image pairs are complete, including one new pair with
+312 forwards and 5,460 checked arrays in the
+[0.7.0 packet](../research/multiorg-reference-admission/0.7.0/README.md).
+The next pair stopped at remaining capacity; the final image was not started.
+Safe cleanup is complete and its authorization persists without a repeated
+permission question. Additional cleanup needs fresh checks of actual use.
+The storage decline's cause remains unknown. All four pairs and twelve reference
+cases are still required; no new cohort comparison or complete-work advantage.
+
+Next session: verify live repository and retained evidence, identify the highest-
+value bottleneck, refresh decision-relevant primary research and choose the next
+bounded authorized action. The current dependency is durable capacity for the
+two incomplete images, exact reuse of both complete pairs, and qualified matching
+composition. A better justified path can supersede this priority while keeping
+this incomplete endpoint honestly recorded. No automatic retry or partial stitch.
+
+Historical controller remains clean at74fbacc; preserve it and all closed owners.
+Use a fresh owned same-repository candidate for new work and the local continuation
+memory for private artifact locations. Keep Daniel's Git identity. Existing
+resource, publication, outreach and repository boundaries remain; this update
+does not accept Gate A or establish scientific superiority or production readiness.
+
+---
+
 # Current entry: cleanup completed; second complete pair; capacity stop retained, 14 October 2026
 
 Continuation version: 0.1.98. NEXT_SESSION/CONTINUATION version: 0.1.25.

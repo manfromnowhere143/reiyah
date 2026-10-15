@@ -1,10 +1,10 @@
 {
   "artifact_id": "reiyah.continuation",
-  "version": "0.1.25",
-  "as_of": "2026-10-14",
+  "version": "0.1.26",
+  "as_of": "2026-10-15",
   "lifecycle_status": "proposed",
   "authority": "Navigation and retained evidence bindings only; verify latest operator instruction, repository rules and live Git state",
-  "editorial_base": "e25fdde8fcc609eb868681d0e8a439274e01ddc5",
+  "editorial_base": "d9b3539c0712bcbdd9094d34ffae01721edc985d",
   "release": {
     "tag": "research-2026-10-11",
     "commit": "5de377af25a4c6882096ebbc91808b19feafb628"
@@ -19,12 +19,14 @@
     "AGENTS.md",
     "docs/SESSION_HANDOFF.md",
     "docs/NEXT_SESSION.md",
+    "docs/NEXT_SESSION_PROMPT.md",
+    "docs/CONTINUATION.json",
     "docs/EDITORIAL_POLICY.md"
   ],
   "decision": "bounded_scientific_investigation_only",
   "product_expansion": "stopped_pending_demonstrated_value",
   "case_admitted": false,
-  "next_action": "More durable storage headroom for the two still-incomplete selected images, followed by a fresh plan, exact reuse qualification and freeze. Preserve the two complete pairs; do not rerun them merely to repair capacity. No partial stitching or tuning.",
+  "next_action": "Verify live state and retained evidence. Current dependency is durable headroom for the two incomplete selected images, exact reuse of both complete pairs and qualified matching composition. Refresh primary research where it can change the choice; follow a clearly better evidenced route within existing authorization, recording the old endpoint as incomplete and any new hypothesis separately. Produce a concise decision packet, then complete the highest-value bounded action. No closed-owner retry, partial stitching, endpoint tuning or repeated permission for already authorized cleanup.",
   "required_case_fields": [
     "decision",
     "metric",
@@ -1382,6 +1384,10 @@
     {
       "path": "research/multiorg-reference-admission/0.7.0/run_recovered_cohort.py",
       "sha256": "4c2f2749f0e9cef9dba2388b9804798822e8dd2815dcf30d85cc45bdddad3a4b"
+    },
+    {
+      "path": "docs/NEXT_SESSION_PROMPT.md",
+      "sha256": "bfa451efbbbd625d102bbafd274b29ff935501767b6258ae2af4237d7328f04c"
     }
   ],
   "presentation_verification": {
@@ -1852,5 +1858,19 @@
       },
       "study": "research/multiorg-reference-admission/0.7.0/README.md"
     }
+  },
+  "operator_direction": {
+    "recorded_on": "2026-10-15",
+    "kind": "operator_requested_continuation_instructions",
+    "prompt": "docs/NEXT_SESSION_PROMPT.md",
+    "brief": "docs/NEXT_SESSION.md",
+    "ambition": "Scientific and engineering leadership across the full HARBOR mission; substantial human benefit and a major independent technology business. Goals are not achieved claims.",
+    "autonomy": "The roadmap is revisable. Within existing authorization, pursue a clearly better evidence-supported direction; a promising hypothesis can justify a bounded falsifying test.",
+    "research": "Current primary documentation, technical reports, released implementations and arXiv, with full methods, assumptions, limitations, versions, terms and eligible retained evidence.",
+    "source_selection": "Decision-relevant frontier companies and academic groups; prestige, recency or complexity does not establish suitability or superiority.",
+    "comparison": "Strongest applicable competent baseline; equal information, corrections and guarantees; complete work and explicit null/unknown states.",
+    "execution": "Identify bottleneck, compare alternatives, state milestone/falsification/resources/acceptance/stops, then act; preserve prior evidence and frozen questions.",
+    "budget_correction": "Check cumulative and remaining time before launch, reserving worst-case execution, verification and closeout; a fresh owner never resets effort.",
+    "authority": "Records current direction without accepting Gate A, changing a frozen protocol or expanding external-action authority."
   }
 }

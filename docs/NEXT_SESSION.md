@@ -2,16 +2,18 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.25`
+Version: `0.1.26`
 
 Lifecycle status: `proposed`
 
-Updated: 14 October 2026. A continuation brief, not an accepted scientific
+Updated: 15 October 2026. A continuation brief, not an accepted scientific
 protocol, operator acceptance record or grant of new authority.
 Read with [AGENTS.md](../AGENTS.md), the newest
 [handoff](SESSION_HANDOFF.md) and [editorial policy](EDITORIAL_POLICY.md).
 The [machine-readable state](CONTINUATION.json) is a navigation aid; verify its
 evidence bindings and resolve live Git state before acting.
+The [ready-to-use continuation prompt](NEXT_SESSION_PROMPT.md) carries Daniel's
+15 October direction into the next session.
 
 ## Current execution dependency, 14 October 2026
 
@@ -51,6 +53,84 @@ problems, and clear writing in his voice. Confidence should come from exact
 claims and inspectable evidence. Dignity and honesty take precedence over a
 favorable result. Preserve useful work; challenge the product hypothesis as
 carefully as the algorithms.
+
+## Operator direction: ambition, research and independent judgment
+
+Daniel's 15 October instruction is to pursue scientific and engineering leadership
+with the rigor expected of the strongest research and engineering teams. The
+purpose is useful capability that benefits people, with the ambition to build a
+major independent technology company. Commercial scale and superiority must be
+earned through demonstrated value. Preserve the full HARBOR mission; a narrow
+experiment, resource failure or maintainer decline does not define its ceiling.
+
+The roadmap is a working hypothesis. Within existing authorization, investigate
+and act on a clearly better route when evidence supports it. Record the current
+bottleneck, alternative, expected benefit, tradeoffs, evidence and falsification
+criterion before changing direction. A credible new hypothesis can justify a
+bounded test without first proving the eventual advantage. Adoption requires
+results appropriate to the claim. Routine engineering choices do not require
+repeated permission. A new direction must preserve the disposition of prior
+questions and the distinction between operational authority and scientific
+acceptance.
+
+Reframe a question when its premises fail; distinguish implementation failure,
+missing evidence and a negative scientific result. Preserve an incomplete or
+failed comparison as such. A replacement scientific question needs its own
+protocol and exposure record. Never change a frozen endpoint, cohort, comparator
+or loss after seeing the outcome and present it as the original experiment.
+The best next action can be a smaller decisive experiment, a stronger baseline,
+a repaired measurement process or justified simplification.
+
+### Research before consequential choices
+
+Use current primary sources when uncertainty could change the method, resource
+plan or interpretation. Begin with the retained
+[frontier review](research-decisions/frontier-2026-10-12.md) and
+[research-to-build decision](research-decisions/research-to-build-2026-10-12.md);
+check what has materially changed. An October review is not proof that every
+relevant system has been evaluated or remains unchanged.
+
+Read official documentation, technical reports, released code and evaluation
+protocols from relevant teams, then the original research literature and arXiv.
+NVIDIA, Tesla, Mobileye, Waymo, Google DeepMind, OpenAI and Anthropic are
+search starting points when their published work bears on the decision. Academic
+and less prominent teams may supply the strongest method or comparator. SpaceX
+and other adjacent engineering work require an explicit transfer argument.
+A company name is neither a benchmark nor evidence of a method's suitability.
+
+Read methods, mathematical assumptions and proofs where applicable, supplements,
+limitations, failure cases and implementation details. Verify paper versions,
+publication/update dates, release commits, access and redistribution terms.
+Distinguish preprints from peer review, advertised results from reproduced
+results, source agreement from independent replication, and benchmark success
+from this task's operating conditions. Retain eligible source bytes and metadata
+before treating them as evidence. Mark unavailable artifacts and uncertain
+support explicitly; never infer a proprietary capability from an announcement.
+
+For each serious alternative, record the actual task and information available,
+quality or decision guarantee, compute/memory/storage and integration costs,
+reproducibility, failure modes and the experiment that could reject it. Stop
+searching when additional sources are unlikely to change the bounded decision.
+Do not repeat closed source acquisition or build another research agent merely
+because retrieval is possible. Surpassing prior work means a checked advantage
+over the strongest applicable comparison under equal obligations.
+
+### Standards by use case
+
+| Use case | Required engineering and scientific standard |
+| --- | --- |
+| Mathematical decision engine | Explicit estimands and assumptions; exact arithmetic where justified; witnesses, counterexamples and a separately checked reference; distinguish hindsight sufficiency from an executable acquisition strategy. |
+| Perception and benchmark evaluation | Complete opportunity coverage, explicit failed/empty/unknown outputs, qualified matching/reference semantics, preserved exposure and subgroup coverage; compare the same task and guarantees. |
+| Observation, human review and causal claims | Qualified observation process, dependence and unresolved responses; distinguish recorded agreement, latent belief and physical truth; identify what a causal claim needs before making it. |
+| Execution and data custody | Frozen inputs, bounded resources, error-aware monitoring, deterministic replay where appropriate, retained failures and exact runtime/source identity; demonstrate the actual consumer path rather than infer integration from tests. |
+| Research assistance and system expansion | Evidence of decision benefit and source support; build only the capability the admitted problem needs. An agent, new model or elaborate architecture must justify its cost against the existing tools. |
+| Product value and presentation | Equal-information competent comparator and complete work accounting; show clear visual explanations of real capability. Console work follows its own repository and design instructions, with appropriate device, accessibility and interaction checks. |
+
+"State of the art" is specific to a task, date, constraints and comparison. Use
+these standards for every consequential use case; do not force one fashionable
+technique across all of them. Difficult problems call for better hypotheses,
+measurements and discriminating experiments, together with deeper technical work.
+Test counts, visual polish and persistence alone cannot establish superiority.
 
 ## Current decision
 
@@ -216,9 +296,14 @@ worker launch: 2.53 GiB available against its 7.29 GiB admission threshold.
 No model inference or new reference case occurred. Cache inventory found active
 shared environments; no broad cleanup or unrelated process shutdown occurred.
 
-Next obtain adequate capacity and qualify a new observed headroom window. Before
-empirical use, qualify the downstream pair checker for this new receipt schema;
-its compatibility is not inherited. Freeze a separate bounded same-input plan.
+That historical supervisor-only stage was superseded by the
+[0.7.0 continuation](../research/multiorg-reference-admission/0.7.0/README.md):
+safe cleanup and the receipt consumer are complete, a second image pair is
+verified, and the next attempt stopped at remaining capacity. Do not rebuild
+or requalify the unchanged consumer as if it were missing. Verify its existing
+source and execution bindings when reusing it. Current next action: obtain
+adequate durable capacity for the two incomplete selected images, qualify a
+fresh observed headroom window and freeze a separate bounded same-input plan.
 Preserve the 4 GiB floor, full retention allowance, explicit margin, prior failures,
 exact models and numerical/reference/native-cap semantics. No stitched partial
 result, replacement image or cohort enlargement. All four complete pairs and
@@ -379,6 +464,42 @@ The fixed release tag `research-2026-10-11` resolves to
 `40bd025e1c4704ada4ff411cddf76edbcc57fed8`. These identify completed milestones,
 not a promise that either is still main. The tag is preserved.
 
+## First engineering decision after taking over
+
+Verify the live scientific checkpoint before using these instructions. At the
+last checked main, `d9b3539`, the operational dependency is storage headroom.
+Start from the retained cleanup, free-space journals, runtime checks and complete
+pair receipts; inspect current storage read-only before deciding whether any
+additional cleanup is both safe and useful. Cleanup authorization persists, but
+an old disposable-file inventory is not proof that a file is inactive today.
+Do not attribute the observed space drop to swap or another process without
+measurements that distinguish those explanations.
+
+The completed pairs are Plate 4 / image 7 from 0.5.0 and Plate 23 / image 0 from
+0.7.0. The incomplete images are Normal Plate 31 / image 6 and Plate 23 / image 1.
+Reuse the two complete pairs only after exact custody/source checks. The 0.7
+matching profiles bind its original execution paths; future successful pairs
+need an explicitly qualified composition, not silent substitution of receipts.
+Full cohort acceptance still requires all four complete pairs, all twelve fixed
+reference cases and agreement with conventional and separate checking.
+
+Before another model run, record an execution budget covering the full remaining
+retention and checking work, observe fresh headroom, verify the runtime and freeze
+the exact inputs. Preserve the 4 GiB floor and the scientific definitions. The
+last owner exceeded its wall target; check remaining time before each launch and
+reserve enough for worst-case execution, verification and closeout. Do not start
+a run that cannot fit. Never reopen closed empirical owners or reset cumulative
+effort by creating another directory.
+
+If this is no longer the highest-value path, apply the adaptation rule above:
+record why an alternative better advances the mission, preserve this incomplete
+endpoint and complete a bounded authorized step. Do not turn resource recovery
+into an indefinite infrastructure project or repeatedly expand exposed controls.
+A concise decision packet must identify evidence and unknowns, alternatives,
+the strongest applicable comparator, the recommended milestone, a falsifying
+experiment, resource needs, acceptance criteria and stop conditions. Follow it
+with substantive work rather than another round of planning.
+
 ## Evidence the next session must understand
 
 | Finding | What is established | What remains open |
@@ -406,7 +527,7 @@ terms, completeness and exposure before acquisition or experiment admission.
 There is no automatic ingestion or new case admission. Do not repeat already
 posted requests merely because a form now exists.
 
-## The first authorized research task
+## Admission standard for a new value case
 
 The completed threshold/reference screen is an executable retrospective case.
 It establishes reference sensitivity and limited count-saving headroom, not
@@ -437,7 +558,7 @@ If the case is public and retrospective, state that scope and measure only
 what the records support. To claim saved team effort, obtain actual workflow
 observations and an accountable owner. Do not invent customer intent.
 
-The latest targeted source review covered WACV 2025 annotation-aware evaluation,
+An earlier targeted source review covered WACV 2025 annotation-aware evaluation,
 paired-system active failure discovery (arXiv 2608.13719v1), and active agent
 ranking (arXiv 2601.07651v2). Their targets differ. Check the retained primary
 sources and versions before choosing a baseline; none is automatically a
