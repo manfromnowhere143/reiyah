@@ -1,6 +1,6 @@
 # Reiyah: next-session instructions
 
-Document ID: `reiyah.next-session-prompt`. Version: `0.1.4`.
+Document ID: `reiyah.next-session-prompt`. Version: `0.1.5`.
 15 October 2026. Operator-directed continuation instructions. The linked packet
 records results; this prompt adds no acceptance or external-action authority.
 
@@ -43,7 +43,7 @@ premises, and simplify or replace an approach when justified. Preserve frozen
 comparisons and report abandoned or failed questions honestly; do not tune
 endpoints, omit costs or relabel results to manufacture success.
 
-The latest measurement checkpoint is research/takeover-outcome/0.2.0. All 500
+The completed TD2D checkpoint is research/takeover-outcome/0.2.0. All 500
 original summaries are captured and byte-checked. The five uniquely named required
 fields admit all 500; a malformed workload suffix remains explicit and the old
 strict-header result admits 499. Both yield 19 faster failures, 223 faster successes
@@ -61,23 +61,31 @@ commits across both public branches: no additional Python variants or missing
 examples controller. Reopen TD2D only for a materially new release-linked artifact;
 do not reacquire summaries, replay these trees or rerun the exposed contrast.
 
-The next concrete source candidate is manD 1.0, Dataverse release 2.0. Read the
-new packet's next-source.json and decision. The retained dictionary documents
-vehicle/environment channels acquired at 20 Hz and supplied at 256 Hz, with
-separate takeover, accident and end messages. Time-unit cells are empty; actual
-clock alignment, collision meaning and monitored follow-up remain unqualified.
-No participant records were acquired. Metadata and message names are not outcome
-validation, and upsampling is not finer native timing.
+The latest source qualification is research/mand-timing/0.1.0, using manD 1.0,
+Dataverse release 2.0. The coverage workbook identifies 235 metadata slots with
+both vehicle/environment channels, including 50 familiarization slots; availability
+does not prove complete trials. P1's first driven eligible scenario, anger, was
+frozen before opening records. One advertised-checksum-verified archive supplied
+only the selected vehicle/environment files for analysis. Acquisition is closed.
 
-Under a new bounded protocol, inspect the small coverage workbook and extraction
-source first. Establish archive feasibility and select eligible vehicle/environment
-records from metadata before opening outcomes. Freeze acquisition/decompression
-limits and clock/event/missingness checks. The smallest participant archive is
-59,858,301 bytes and exceeds the closed owner's 2 MiB response cap. Stop without
-recovery labels if time units, alignment, outcome meaning or censoring cannot be
-qualified. Keep reaction time, outcome and pre-event readiness separate. No model,
-unrelated sensor expansion, outreach, causal or physical-recovery claim. Gate A
-remains operator-unaccepted.
+Both files have 134,373 rows with identical time tokens and exact 1/256 spacing.
+Recorded-axis alignment is supported. Physical clock units, origin and native
+latency/error bounds remain unqualified. The two request markers end before the
+subsequent manual-mode records. The end-of-ride message precedes recording end by
+29.31640625 source-time units. The first 33 sensor rows remain missing. No accident
+episode is present; absence is not success or validation of failure-event timing.
+Separate Fraction/SQL checks agree on all rows and 53 categorical runs; 25 controls
+pass. Read the packet's decision and retain its failures, exposure and full costs.
+
+Next seek release-linked physical clock, EnvironmentalEvent=6 detection/annotation
+and monitor-termination/censoring evidence. First inspect whether eligible public
+or provided source/metadata identifies a positive accident control; freeze any
+additional record and resource bounds under a new protocol before opening it.
+Such a positive control cannot estimate population performance. Stop without
+recovery labels if semantics cannot be qualified. Preserve the recorded request/
+state-transition result without substituting it for recovery or pre-event readiness.
+Do not rerun P1/anger, reopen TD2D, expand unrelated streams or begin a readiness
+model. No outreach, causal or physical-recovery claim. Gate A remains unaccepted.
 
 At the prior completed perception checkpoint, packet 0.8.0, all four selected
 image pairs and twelve reference cases are complete. Two earlier pairs were

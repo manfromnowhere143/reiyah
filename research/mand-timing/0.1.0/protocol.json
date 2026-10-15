@@ -1,0 +1,52 @@
+{
+  "artifact_id": "reiyah.mand-timing.protocol",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "frozen_utc": "2026-10-15T12:52:10.091075+00:00",
+  "question": "Do the selected vehicle/environment records provide a usable common time axis and distinguish scenario events, system messages and actual monitored outcomes?",
+  "exposure": "Prior TD2D results, manD descriptor, dictionary and coverage metadata exposed; no manD trial bytes parsed or viewed at this freeze. This is source qualification, not blinded model evaluation.",
+  "selection": {
+    "participant": 1,
+    "order": 1,
+    "scenario": "anger"
+  },
+  "selection_rule": "Lowest participant ID, then first ordered non-familiarization scenario marked driven with both required channels available; no outcome, demographic or smallest-archive selection",
+  "coverage_caution": "Available and driven metadata do not prove recording completeness or an uncensored recovery outcome. Owner question requests a complete run; verification may reject that premise.",
+  "source": {
+    "dataset": "manD 1.0",
+    "doi": "10.7910/DVN/SG9TMD",
+    "dataverse_version": "2.0",
+    "license": "CC-BY-4.0",
+    "archive": "P1.7z",
+    "file_id": 7512605,
+    "bytes": 681745151,
+    "MD5": "ef17bbd0371fb9ddcb3c361aab75a080",
+    "terms": "Public unrestricted released file under retained CC BY 4.0 metadata; keep original compressed payload and trial streams private. Only attributed derived observations published."
+  },
+  "archive_plan": "Capture at most P1.7z; verify advertised complete length/MD5. Inspect bsdtar listing with no network, no arbitrary file writes. Extract only the first anger scenario archive if uniquely identified; then only EnvironmentState.txt and VehicleState.txt. Stream exact selected members to bounded outputs with a 512 MiB combined extraction cap, 300-second extraction operation deadline and 2 GiB disk reserve. Do not unpack DriverState or run upstream code. Stop if absent, ambiguous, path-unsafe, oversized or unsupported.",
+  "source_code_review": "DataExtraction.py recursively extracts all archives and deletes originals; it also contains sensor feature calculations. Read only, not executed or imported. It does not define vehicle/environment capture timestamps.",
+  "observations": [
+    "Unique headers, exact source bytes and counts; preserve nonnumeric/missing/sentinel states.",
+    "Stored time value units/origin, strict monotonicity, exact adjacent differences and cross-file equality/offset. Do not infer seconds merely from 256 Hz documentation.",
+    "Enumerate observed integer EnvironmentalEvent, InteractionSignal and AutomationMode values, contiguous runs and their boundaries. Do not round fractional codes.",
+    "Check beginning/end of monitoring around TOR, accident and end-message codes; distinguish no observation from negative outcome.",
+    "Retain dataset-described native20Hz vs delivered256Hz; neither delivered spacing nor concordance establishes collision latency, common recovery horizon or physical success."
+  ],
+  "conventional_reference": "Separate standard-library decimal/rational calculations and read-only SQL over identical selected fields; full-row/source digest checks, no model comparison.",
+  "acceptance": "Qualify only the observation semantics supported by records and release-linked documentation. Readiness labels require known outcome event meaning and monitored horizon/censoring; abstain if missing.",
+  "stops": "No replacement participant/scenario if selected source fails; no broader cohort, recovery labels, feature/model work or endpoint repair in this owner.",
+  "resources": {
+    "owner_wall_cap_seconds": 7200,
+    "closeout_reserve_seconds": 1800,
+    "acquisition_phase_cap_seconds": 2700,
+    "max_direct_requests": 32,
+    "max_document_response_bytes": 2097152,
+    "max_archive_response_bytes": 838860800,
+    "max_total_retained_response_bytes": 1073741824,
+    "max_extracted_bytes": 536870912,
+    "minimum_free_disk_bytes": 2147483648,
+    "max_participant_archives": 1,
+    "max_web_calls": 3
+  },
+  "Gate_A_operator_accepted": false
+}

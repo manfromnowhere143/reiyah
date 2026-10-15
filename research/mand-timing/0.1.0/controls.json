@@ -1,0 +1,79 @@
+{
+  "artifact_id": "reiyah.mand-timing.controls",
+  "version": "0.1.0",
+  "passed": 18,
+  "checks": [
+    {
+      "control": "blank_is_missing",
+      "passed": true
+    },
+    {
+      "control": "zero_is_observed_zero",
+      "passed": true
+    },
+    {
+      "control": "NaN_is_nonfinite",
+      "passed": true
+    },
+    {
+      "control": "text_is_invalid",
+      "passed": true
+    },
+    {
+      "control": "fractional_code_not_rounded",
+      "passed": true
+    },
+    {
+      "control": "out_of_range_code_not_admitted",
+      "passed": true
+    },
+    {
+      "control": "duplicate_header",
+      "rejected_for": "headers"
+    },
+    {
+      "control": "extra_field",
+      "rejected_for": "row_width"
+    },
+    {
+      "control": "missing_time",
+      "rejected_for": "time_not_finite"
+    },
+    {
+      "control": "nonfinite_time",
+      "rejected_for": "time_not_finite"
+    },
+    {
+      "control": "no_records",
+      "rejected_for": "empty_records"
+    },
+    {
+      "control": "duplicate_time_detected",
+      "passed": true
+    },
+    {
+      "control": "decreasing_time_detected",
+      "passed": true
+    },
+    {
+      "control": "missing_automation_not_manual",
+      "passed": true
+    },
+    {
+      "control": "unobserved_manual_action_not_zero_latency",
+      "passed": true
+    },
+    {
+      "control": "final_segment_has_no_invented_endpoint",
+      "passed": true
+    },
+    {
+      "control": "no_collision_code_does_not_imply_success",
+      "passed": true
+    },
+    {
+      "control": "misaligned_clocks_not_qualified",
+      "passed": true
+    }
+  ]
+}

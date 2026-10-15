@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.30`
+Version: `0.1.31`
 
 Lifecycle status: `proposed`
 
@@ -15,7 +15,31 @@ evidence bindings and resolve live Git state before acting.
 The [ready-to-use continuation prompt](NEXT_SESSION_PROMPT.md) carries Daniel's
 15 October direction into the next session.
 
-## Current source-history decision and next timing candidate, 15 October 2026
+## Current manD timing qualification, 15 October 2026
+
+The [manD packet](../research/mand-timing/0.1.0/README.md) checks one scenario
+selected from coverage metadata before outcomes: P1/anger. Both files contain
+134,373 identical time coordinates, with exact 1/256 spacing. This supports the
+recorded-axis alignment. Physical time units/origin, native latency and an error
+bound remain unqualified; native 20 Hz acquisition is supplied at 256 Hz.
+
+Two request episodes align, but their ends, manual-mode entries and recording end
+are distinct. The end-of-ride message precedes the last record by 29.31640625
+source-time units. The first 33 sensor rows are missing. No accident episode
+appears, so neither failure timing nor recovery success is established.
+All rows, 53 categorical runs and 600 coverage cells are separately checked;
+18 timing and seven coverage controls pass. The coverage census has 235 available
+vehicle/environment metadata slots, including familiarization, not 235 complete trials.
+
+Next seek release-linked clock, accident-code and monitor-termination evidence,
+and determine whether eligible source/metadata identifies a positive accident
+control. Freeze any additional record under a new bounded protocol. A selected
+positive control cannot estimate population performance. If semantics remain
+unqualified, keep the recorded request/state observation and withhold recovery
+labels and readiness modeling. P1/anger, TD2D and the microscopy contrasts remain
+closed. Gate A remains unaccepted; no outreach or unrelated stream expansion.
+
+## Completed source-history decision and documentation screen, 15 October 2026
 
 The [history packet](../research/takeover-source-lineage/0.1.0/README.md) closes the
 inspected TD2D simulator history route: 47 commits across two advertised branches,
@@ -31,13 +55,11 @@ acquired at 20 Hz and supplied at 256 Hz; the dictionary's time-unit cells are
 empty. Scripted events, messages and actual collisions remain distinct. No trial
 record, qualified outcome clock or common monitored horizon is established here.
 
-Next inspect the small coverage workbook and extraction source, then freeze a
-bounded vehicle/environment record qualification if extraction is feasible.
-Select from metadata before outcomes; define request/storage/decompression limits,
-clock alignment, native resolution, missingness and censoring checks. Participant
-archives start at 59,858,301 bytes, beyond this owner's 2 MiB response limit.
-Stop if required temporal evidence cannot be established. No readiness model,
-new inference, unrelated participant streams or outreach. Gate A remains unaccepted.
+The subsequent bounded coverage and record qualification is complete above.
+The closed documentation owner's 2 MiB response cap was preserved. The distinct
+record protocol prospectively allowed one archive within new explicit resource
+bounds, preserving all cumulative costs. Neither increment admits readiness
+modeling, new inference, unrelated participant streams or outreach.
 
 ## Completed TD2D source census, 15 October 2026
 

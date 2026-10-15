@@ -1,3 +1,70 @@
+# Current entry: manD recorded time alignment checked, recovery outcome withheld, 15 October 2026
+
+Continuation version: 0.1.104. NEXT_SESSION/CONTINUATION version: 0.1.31.
+Read the [manD timing packet](../research/mand-timing/0.1.0/README.md),
+[decision](../research/mand-timing/0.1.0/DECISION.md),
+[result](../research/mand-timing/0.1.0/result.json) and
+[verification](../research/mand-timing/0.1.0/verification.json).
+
+Base b325608ea16dfdefa45909e8b0eaa89e495f438f. Fresh owner
+`mand-timing-2026-10-15-al4wen3g`; historical controller remains at 74fbacc.
+Daniel requested autonomous continuation toward the mission. Prior owners, the
+complete TD2D census/history and all exposed comparisons remain closed.
+
+The released coverage workbook was read without changes, including its color-coded
+scenario order. Both required channels are marked available in 235 of 300 metadata
+slots: 50 familiarization and 185 other scenario slots. This does not prove 235
+complete trials. A protocol selected P1's first driven scenario with both channels,
+anger, before trial contents were inspected. No outcome or archive-size selection.
+
+The 681,745,151-byte P1 archive matched its advertised MD5. Only the selected inner
+archive and two vehicle/environment text files were written out. The actual release
+filenames differ from the descriptor; an explicit mapping preserves that discrepancy.
+No driver media, physiological or activity stream was extracted to a file or analyzed.
+Internal decompression of unselected solid blocks is not instrumented. A full
+listing stopped at its 2 MiB output cap; that partial listing and a failed literal
+filename lookup remain retained. Restricted directory inspection resolved the
+actual names without increasing limits or replacing the selected scenario.
+
+Each selected file has 134,373 rows. Every time token and numeric coordinate agrees;
+all adjacent differences are 1/256, from 0 to 524.890625. This qualifies the supplied
+recorded-axis alignment, not physical clock units, origin, latency or native error.
+Both documented native channels are 20 Hz, supplied at 256 Hz. The two request
+onsets are 253.375 and 465.5234375. First subsequent manual-mode records are at
+254.4765625 and 468.625; these source-coordinate differences are not first-action
+latency or recovery. The end-of-ride message begins at 495.57421875, before another
+29.31640625 units of recording. Its last segment has no observed next-record bound.
+The first 33 sensor/automation rows are missing and remain distinct from zero.
+No environment accident code 6 or accident-message code 13 occurs in this scenario.
+Their absence does not qualify success, detector sensitivity or failure-event timing.
+
+Separate Fraction/SQLite calculations agree on 268,746 source rows, all 57 field
+summaries, 53 categorical runs, two request onsets and 600 availability cells.
+Eighteen timing and seven coverage controls pass. Network-denied replay with
+write-denied inputs reproduces three scientific outputs and two control reports;
+11 input files remain unchanged. Appropriate repository checks bind historical
+transcripts, without new historical or Gate A release replay. Publisher readback
+and full human commit metadata are separate private closeout evidence.
+
+Acquisition is closed: three direct capture calls, 681,776,662 retained response
+bytes; 282,847,649 bytes of extraction output including failed listing output.
+Provider redirects, internal decoder bytes, active human effort, billing and
+web/Git overhead remain incompletely measured. Earlier 593 direct calls and
+11,991,135 retained bytes are preserved. Original archives and raw streams stay
+private; the attributed derived projection and summaries retain CC BY 4.0.
+
+Next: qualify a release-linked rule for EnvironmentalEvent=6, physical clock
+interpretation/latency, and monitor termination/censoring. An eligible positive
+accident control is needed before recovery labels; first inspect whether public
+or provided source/metadata identifies one, then freeze any added record under a
+new bounded protocol. No population-performance estimate follows from selecting
+a positive control. If evidence remains insufficient, retain only the recorded
+request/state-transition observation and withhold recovery benchmarking. Do not
+rerun P1/anger, reopen TD2D, expand unrelated streams or begin readiness modeling.
+No outreach is authorized. Gate A remains operator-unaccepted.
+
+---
+
 # Current entry: source-history closure and next timing candidate, 15 October 2026
 
 Continuation version: 0.1.103. NEXT_SESSION/CONTINUATION version: 0.1.30.

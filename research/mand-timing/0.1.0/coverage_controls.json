@@ -1,0 +1,35 @@
+{
+  "artifact_id": "reiyah.mand-timing.coverage-controls",
+  "version": "0.1.0",
+  "passed": 7,
+  "checks": [
+    {
+      "control": "wrong_environment_header",
+      "rejected_for": "coverage_headers"
+    },
+    {
+      "control": "duplicate_participant",
+      "rejected_for": "participant_identity"
+    },
+    {
+      "control": "order_participant_mismatch",
+      "rejected_for": "order_identity"
+    },
+    {
+      "control": "invalid_availability_value",
+      "rejected_for": "availability_code"
+    },
+    {
+      "control": "indistinguishable_order_legend",
+      "rejected_for": "ambiguous_color_legend"
+    },
+    {
+      "control": "unknown_order_font_color",
+      "rejected_for": "unknown_order_color"
+    },
+    {
+      "control": "incorrect_cached_total",
+      "rejected_for": "cached_coverage_total_mismatch"
+    }
+  ]
+}

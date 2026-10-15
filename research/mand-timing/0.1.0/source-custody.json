@@ -1,0 +1,309 @@
+{
+  "artifact_id": "reiyah.mand-timing.custody",
+  "version": "0.1.0",
+  "dataset": "manD 1.0",
+  "dataverse_release": "2.0",
+  "doi": "10.7910/DVN/SG9TMD",
+  "source_authors": [
+    "Khazar Dargahi Nobari",
+    "Torsten Bertram"
+  ],
+  "source_license": "CC-BY-4.0",
+  "source_release_time": "2024-01-24T19:07:46Z",
+  "direct_capture_calls": 3,
+  "retained_response_bytes": 681776662,
+  "minimum_request_start_spacing_seconds": 2.505208969116211,
+  "redirected_captures": 3,
+  "transport_limit": "Direct calls counted consistently with prior owners; provider redirect request counts/bodies, HTTP/TLS and web overhead are not completely measured. Temporary signed redirect URLs stay private.",
+  "prior_direct_source_calls": 593,
+  "prior_retained_source_body_bytes": 11991135,
+  "cumulative_direct_source_calls": 596,
+  "cumulative_retained_source_body_bytes": 693767797,
+  "captures": [
+    {
+      "private_path": "sources/000-AvailableData.xlsx",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/7512595",
+      "captured_utc": "2026-10-15T12:49:42.125993+00:00",
+      "status": 200,
+      "bytes": 22938,
+      "sha256": "e72dd8cc533f4ca5a596d7fe7f143e49c56a3650845b06e6c8ba70a9456ee8a3",
+      "md5": "f9928b824eda24530a7d00d0a639aeab",
+      "advertised_size_and_md5_match": true,
+      "complete": true,
+      "redirected": true,
+      "final_host": "dvn-cloud-iqss.s3.amazonaws.com",
+      "access_terms": "Public unrestricted file in retained manD 1.0 / Dataverse 2.0 release metadata",
+      "redistribution_terms": "CC BY 4.0. Original body private; attributed derived projection/summaries only in public packet."
+    },
+    {
+      "private_path": "sources/001-DataExtraction.py",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/7521567",
+      "captured_utc": "2026-10-15T12:49:44.631202+00:00",
+      "status": 200,
+      "bytes": 8573,
+      "sha256": "570a11f2ec95f2f4c14c55e2e85042ba5a6c91a0bbcf4b8e7a6e3bccdc95d3fe",
+      "md5": "d933566bd46e9c53c76063bce6f0e898",
+      "advertised_size_and_md5_match": true,
+      "complete": true,
+      "redirected": true,
+      "final_host": "dvn-cloud-iqss.s3.amazonaws.com",
+      "access_terms": "Public unrestricted file in retained manD 1.0 / Dataverse 2.0 release metadata",
+      "redistribution_terms": "CC BY 4.0. Original body private; attributed derived projection/summaries only in public packet."
+    },
+    {
+      "private_path": "sources/002-P1.7z",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/7512605",
+      "captured_utc": "2026-10-15T12:52:30.205857+00:00",
+      "status": 200,
+      "bytes": 681745151,
+      "sha256": "98cf3fbd495ef36d2e22168a13d1417344f66465c5610b98c5b28bb943fe3e93",
+      "md5": "ef17bbd0371fb9ddcb3c361aab75a080",
+      "advertised_size_and_md5_match": true,
+      "complete": true,
+      "redirected": true,
+      "final_host": "dvn-cloud-iqss.s3.amazonaws.com",
+      "access_terms": "Public unrestricted file in retained manD 1.0 / Dataverse 2.0 release metadata",
+      "redistribution_terms": "CC BY 4.0. Original body private; attributed derived projection/summaries only in public packet."
+    }
+  ],
+  "reused_sources": [
+    {
+      "prior_owner": "/Users/danielwahnich/.codex/reports/reiyah/takeover-lineage-2026-10-15-finmqd0g",
+      "private_path": "sources/056-mand-structure.html",
+      "sha256": "3a88d33b74481ac0898da51a47411b677dd6a04e1085483ad735dc8e9c83b1e6",
+      "bytes": 199464,
+      "bound_by": "research/takeover-source-lineage/0.1.0/source-custody.json"
+    },
+    {
+      "prior_owner": "/Users/danielwahnich/.codex/reports/reiyah/takeover-lineage-2026-10-15-finmqd0g",
+      "private_path": "sources/057-mand-metadata.json",
+      "sha256": "26fb797fda2f53218e7e5045b5295555b9d5a59473bf8d7b9dcb54e2b4949fb6",
+      "bytes": 40747,
+      "bound_by": "research/takeover-source-lineage/0.1.0/source-custody.json"
+    },
+    {
+      "prior_owner": "/Users/danielwahnich/.codex/reports/reiyah/takeover-lineage-2026-10-15-finmqd0g",
+      "private_path": "sources/058-mand-article.html",
+      "sha256": "db872621d309a4766e35959ce73e30d7eb40cc3bdc0f80d04f1aad9268c7ccfd",
+      "bytes": 434351,
+      "bound_by": "research/takeover-source-lineage/0.1.0/source-custody.json"
+    },
+    {
+      "prior_owner": "/Users/danielwahnich/.codex/reports/reiyah/takeover-lineage-2026-10-15-finmqd0g",
+      "private_path": "sources/059-mand-DataInfoSheet.xlsx",
+      "sha256": "1723e92bf35bf82131447ec57dda4501c77f34c184213add364c505fc4168e4f",
+      "bytes": 211728,
+      "bound_by": "research/takeover-source-lineage/0.1.0/source-custody.json"
+    }
+  ],
+  "extraction": {
+    "aggregate_output_bytes": 282847649,
+    "cap_bytes": 536870912,
+    "operations": [
+      {
+        "sequence": 0,
+        "utc": "2026-10-15T12:58:01.643149+00:00",
+        "archive": "sources/002-P1.7z",
+        "member": null,
+        "limit": 2097152,
+        "status": "complete",
+        "exit_code": 0,
+        "bytes": 366,
+        "sha256": "9e06b6485c02f1a0ec6f7dd4500c6008af08b1c02982e3417f03a7de0e91a661",
+        "seconds": 0.018550499982666224
+      },
+      {
+        "sequence": 1,
+        "utc": "2026-10-15T12:58:20.500981+00:00",
+        "archive": "sources/002-P1.7z",
+        "member": "P1/Anger.7z",
+        "limit": 224555378,
+        "status": "complete",
+        "exit_code": 0,
+        "bytes": 224555377,
+        "sha256": "0ea29269882bdc64719ce2651da95ff4b4c1934797fed65c9f6a2719952980b4",
+        "seconds": 1.2763843329739757
+      },
+      {
+        "sequence": 2,
+        "utc": "2026-10-15T12:58:21.816758+00:00",
+        "archive": "/Users/danielwahnich/.codex/reports/reiyah/mand-timing-2026-10-15-al4wen3g/extracted/Anger.7z",
+        "member": null,
+        "limit": 2097152,
+        "status": "failed",
+        "error": "extraction_byte_cap",
+        "bytes": 2097152,
+        "sha256": "fe6d079669fa2df1d427a17c53645cf0c0fc3acc12e11a14c0e1060368f4a59c",
+        "seconds": 0.08333262498490512
+      },
+      {
+        "sequence": 3,
+        "utc": "2026-10-15T12:59:26.534820+00:00",
+        "archive": "extracted/Anger.7z",
+        "member": null,
+        "listed_members": [
+          "Anger/EnvironmentState/EnvironmentState.txt",
+          "Anger/VehicleState/VehicleState.txt"
+        ],
+        "limit": 2097152,
+        "status": "failed",
+        "exit_code": 1,
+        "error": "bsdtar_nonzero",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "seconds": 0.057500583003275096
+      },
+      {
+        "sequence": 4,
+        "utc": "2026-10-15T12:59:53.813951+00:00",
+        "archive": "extracted/Anger.7z",
+        "member": null,
+        "listed_members": [
+          "Anger/EnvironmentState/*",
+          "Anger/VehicleState/*"
+        ],
+        "limit": 2097152,
+        "status": "complete",
+        "exit_code": 0,
+        "bytes": 306,
+        "sha256": "7ce9a1efea8f737573cd0f438996d00295a85e975e784a05a28f86c770115be5",
+        "seconds": 0.05761712498497218
+      },
+      {
+        "sequence": 5,
+        "utc": "2026-10-15T13:00:15.125652+00:00",
+        "archive": "extracted/Anger.7z",
+        "member": "Anger/EnvironmentState/Environment.txt",
+        "listed_members": null,
+        "limit": 40024789,
+        "status": "complete",
+        "exit_code": 0,
+        "bytes": 40024788,
+        "sha256": "510dfd55d12b9679745ec699c116731a25f95d8820429f04ab949f6425938761",
+        "seconds": 0.5473141249967739
+      },
+      {
+        "sequence": 6,
+        "utc": "2026-10-15T13:00:15.673908+00:00",
+        "archive": "extracted/Anger.7z",
+        "member": "Anger/VehicleState/Vehicle.txt",
+        "listed_members": null,
+        "limit": 16169661,
+        "status": "complete",
+        "exit_code": 0,
+        "bytes": 16169660,
+        "sha256": "beb03368af2dc27d0f8af66582fd96af2f24ff2f6a8d63674569cf9a5ccebb9d",
+        "seconds": 0.46316604199819267
+      }
+    ],
+    "outputs": [
+      {
+        "private_path": "extracted/Anger.7z",
+        "bytes": 224555377,
+        "sha256": "0ea29269882bdc64719ce2651da95ff4b4c1934797fed65c9f6a2719952980b4"
+      },
+      {
+        "private_path": "extracted/Environment.txt",
+        "bytes": 40024788,
+        "sha256": "510dfd55d12b9679745ec699c116731a25f95d8820429f04ab949f6425938761"
+      },
+      {
+        "private_path": "extracted/Vehicle.txt",
+        "bytes": 16169660,
+        "sha256": "beb03368af2dc27d0f8af66582fd96af2f24ff2f6a8d63674569cf9a5ccebb9d"
+      },
+      {
+        "private_path": "extracted/channel-listing.txt",
+        "bytes": 306,
+        "sha256": "7ce9a1efea8f737573cd0f438996d00295a85e975e784a05a28f86c770115be5"
+      },
+      {
+        "private_path": "extracted/inner-listing.txt",
+        "bytes": 2097152,
+        "sha256": "fe6d079669fa2df1d427a17c53645cf0c0fc3acc12e11a14c0e1060368f4a59c"
+      },
+      {
+        "private_path": "extracted/outer-listing.txt",
+        "bytes": 366,
+        "sha256": "9e06b6485c02f1a0ec6f7dd4500c6008af08b1c02982e3417f03a7de0e91a661"
+      },
+      {
+        "private_path": "extracted/selected-listing.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "complete_inner_inventory_claimed": false,
+    "nonselected_streams_written_or_analyzed": false,
+    "internal_decompression_bytes": "Unmeasured; bsdtar may traverse unselected solid blocks. The extraction cap bounds output materialized by the parent, not internal decoder work.",
+    "upstream_code_executed": false,
+    "scope": "One outer participant archive retained, one selected scenario archive extracted, metadata listings and only two vehicle/environment text files. Other participant streams are retained only inside the original compressed containers and are not analyzed."
+  },
+  "failures": [
+    "Full inner archive listing reached its 2 MiB output cap. Partial output retained; it cannot prove absence or complete coverage.",
+    "Literal descriptor filenames were absent. Restricted directory listing established actual release names before extraction. No replacement scenario, cap increase or reacquisition."
+  ],
+  "acquisition_closed": true,
+  "private_evidence": [
+    {
+      "path": "PLAN.json",
+      "sha256": "52b784fac375d9bd0a4b1f309c1959f1a2c8e028dc1bbf9913fdd805ee2d146b"
+    },
+    {
+      "path": "PROTOCOL_FREEZE.json",
+      "sha256": "26cee44755e4ea8bad39844115260b288cf41409cf13ff674a0c5742c506875c"
+    },
+    {
+      "path": "ANALYSIS_FREEZE.json",
+      "sha256": "1aff08f765756cb3c60f0f19fcca29f243dbcde4f6380ea7e64e13afac738345"
+    },
+    {
+      "path": "FIRST_HEADER_EXPOSURE.json",
+      "sha256": "33d6f8596deb4b0c45baf1f1cf553a86394566e26726359c9f37b4f8775eb09a"
+    },
+    {
+      "path": "REUSED_SOURCES.json",
+      "sha256": "517a55174c6a6b802e96a3d31b7852f1563acad0a87fe297fb6d6106ad94c70e"
+    },
+    {
+      "path": "COVERAGE_WORKBOOK_EXTRACT.json",
+      "sha256": "b83a46474fcaed8c2e5bd4df79071bcb892f50df28199b43c5af35401441761f"
+    },
+    {
+      "path": "ARCHIVE_MEMBER_MAPPING.json",
+      "sha256": "c4aaa684175e212e6145719d60df128c5859f6716b553b04f037c40d1fe4a64c"
+    },
+    {
+      "path": "EXTRACTION_SCOPE_REFINEMENT.json",
+      "sha256": "627231c6a7c06ed595e111cdcc242a4d7f14633d2c1e99c2754086e4a328e873"
+    },
+    {
+      "path": "VALIDATION_FREEZE.json",
+      "sha256": "d3f13fb300f20fad50a37cbbdf938cf4a7374ae12dd396ec7ab0ab4fde002ffe"
+    },
+    {
+      "path": "VALIDATION.json",
+      "sha256": "db861a686fd8c681f5ac9608e826b873d3f9528d47dbae900a0cea72248bd841"
+    },
+    {
+      "path": "capture.py",
+      "sha256": "3b1be925f58c3ec84ad0454eb324cb209ffb7a38ac19cd7e2f91e2fa5f37fe77"
+    },
+    {
+      "path": "extract-initial.py",
+      "sha256": "8747beebafee26fa44a87518a1f8f1b41d53fed303f3a9a5b6528e7b71981dd7"
+    },
+    {
+      "path": "extract.py",
+      "sha256": "e3e82a6b06db8708ebf384557c2e2b1d5f9ff9f21d17778e95405032ebfde195"
+    },
+    {
+      "path": "validate.py",
+      "sha256": "0d5af871222fc0d1af84808d3faf968f66ad8ffba3a8281bf768fde258432e77"
+    },
+    {
+      "path": "build_custody.py",
+      "sha256": "5da8a89ddf872bff5173e3f91c07ba8580723f654a9573a9ab759220da21a055"
+    }
+  ]
+}

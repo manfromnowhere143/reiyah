@@ -1,0 +1,4326 @@
+{
+  "artifact_id": "reiyah.mand-timing.coverage",
+  "version": "0.1.0",
+  "source_sha256": "e72dd8cc533f4ca5a596d7fe7f143e49c56a3650845b06e6c8ba70a9456ee8a3",
+  "source_sheet": "AvailableSensorData",
+  "participant_rows": 50,
+  "scenario_slots_including_familiarization": 300,
+  "both_channels_available_by_scenario": {
+    "familiarization": 50,
+    "noemotion": 29,
+    "anger": 41,
+    "surprise": 39,
+    "sadness": 38,
+    "fear": 38
+  },
+  "both_channels_available": 235,
+  "availability_means_complete_followup": false,
+  "selection_rule": "Lowest participant ID, then first ordered non-familiarization scenario marked driven with both required channels available; no outcome, demographic or smallest-archive selection",
+  "selected": {
+    "participant": 1,
+    "order": 1,
+    "scenario": "anger"
+  },
+  "participants": [
+    {
+      "participant": 1,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C4",
+            "D4"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J4",
+            "K4"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q4",
+            "R4"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X4",
+            "Y4"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE4",
+            "AF4"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL4",
+            "AM4"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "anger",
+          "source_cell": "C4",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "D4",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "E4",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "F4",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G4",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 2,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C5",
+            "D5"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J5",
+            "K5"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q5",
+            "R5"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X5",
+            "Y5"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE5",
+            "AF5"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL5",
+            "AM5"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        }
+      ],
+      "order": [
+        {
+          "scenario": "anger",
+          "source_cell": "C5",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "D5",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "E5",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F5",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G5",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 3,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C6",
+            "D6"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J6",
+            "K6"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q6",
+            "R6"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X6",
+            "Y6"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE6",
+            "AF6"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL6",
+            "AM6"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "fear",
+          "source_cell": "C6",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "D6",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "E6",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F6",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G6",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 4,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C7",
+            "D7"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J7",
+            "K7"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q7",
+            "R7"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X7",
+            "Y7"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE7",
+            "AF7"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL7",
+            "AM7"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "sadness",
+          "source_cell": "C7",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D7",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "E7",
+          "driven": false
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "F7",
+          "driven": false
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G7",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 5,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C8",
+            "D8"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J8",
+            "K8"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q8",
+            "R8"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X8",
+            "Y8"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE8",
+            "AF8"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL8",
+            "AM8"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "surprise",
+          "source_cell": "C8",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "D8",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "E8",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "F8",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G8",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 6,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C9",
+            "D9"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J9",
+            "K9"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q9",
+            "R9"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X9",
+            "Y9"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE9",
+            "AF9"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL9",
+            "AM9"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "surprise",
+          "source_cell": "C9",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "D9",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E9",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "F9",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G9",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 7,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C10",
+            "D10"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J10",
+            "K10"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q10",
+            "R10"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X10",
+            "Y10"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE10",
+            "AF10"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL10",
+            "AM10"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "fear",
+          "source_cell": "C10",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "D10",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "E10",
+          "driven": false
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F10",
+          "driven": false
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G10",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 8,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C11",
+            "D11"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J11",
+            "K11"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q11",
+            "R11"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X11",
+            "Y11"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE11",
+            "AF11"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL11",
+            "AM11"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        }
+      ],
+      "order": [
+        {
+          "scenario": "sadness",
+          "source_cell": "C11",
+          "driven": false
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D11",
+          "driven": false
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E11",
+          "driven": false
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F11",
+          "driven": false
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G11",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 9,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C12",
+            "D12"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J12",
+            "K12"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q12",
+            "R12"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X12",
+            "Y12"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE12",
+            "AF12"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL12",
+            "AM12"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "sadness",
+          "source_cell": "C12",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D12",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E12",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F12",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G12",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 10,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C13",
+            "D13"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J13",
+            "K13"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q13",
+            "R13"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X13",
+            "Y13"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE13",
+            "AF13"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL13",
+            "AM13"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C13",
+          "driven": false
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "D13",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "E13",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "F13",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G13",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 11,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C14",
+            "D14"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J14",
+            "K14"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q14",
+            "R14"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X14",
+            "Y14"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE14",
+            "AF14"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL14",
+            "AM14"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C14",
+          "driven": false
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D14",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "E14",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F14",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "G14",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 12,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C15",
+            "D15"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J15",
+            "K15"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q15",
+            "R15"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X15",
+            "Y15"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE15",
+            "AF15"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL15",
+            "AM15"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C15",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "D15",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "E15",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F15",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G15",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 13,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C16",
+            "D16"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J16",
+            "K16"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q16",
+            "R16"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X16",
+            "Y16"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE16",
+            "AF16"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL16",
+            "AM16"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C16",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "D16",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "E16",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F16",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G16",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 14,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C17",
+            "D17"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J17",
+            "K17"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q17",
+            "R17"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X17",
+            "Y17"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE17",
+            "AF17"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL17",
+            "AM17"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "surprise",
+          "source_cell": "C17",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D17",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E17",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "F17",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "G17",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 15,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C18",
+            "D18"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J18",
+            "K18"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q18",
+            "R18"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X18",
+            "Y18"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE18",
+            "AF18"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL18",
+            "AM18"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C18",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "D18",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "E18",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F18",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "G18",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 16,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C19",
+            "D19"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J19",
+            "K19"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q19",
+            "R19"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X19",
+            "Y19"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE19",
+            "AF19"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL19",
+            "AM19"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C19",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "D19",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "E19",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "F19",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "G19",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 17,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C20",
+            "D20"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J20",
+            "K20"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q20",
+            "R20"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X20",
+            "Y20"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE20",
+            "AF20"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL20",
+            "AM20"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "surprise",
+          "source_cell": "C20",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "D20",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E20",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "F20",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "G20",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 18,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C21",
+            "D21"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J21",
+            "K21"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q21",
+            "R21"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X21",
+            "Y21"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE21",
+            "AF21"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL21",
+            "AM21"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        }
+      ],
+      "order": [
+        {
+          "scenario": "surprise",
+          "source_cell": "C21",
+          "driven": false
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "D21",
+          "driven": false
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E21",
+          "driven": false
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "F21",
+          "driven": false
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "G21",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 19,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C22",
+            "D22"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J22",
+            "K22"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q22",
+            "R22"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X22",
+            "Y22"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE22",
+            "AF22"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL22",
+            "AM22"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "anger",
+          "source_cell": "C22",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "D22",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E22",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F22",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G22",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 20,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C23",
+            "D23"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J23",
+            "K23"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q23",
+            "R23"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X23",
+            "Y23"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE23",
+            "AF23"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL23",
+            "AM23"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C23",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "D23",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E23",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F23",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G23",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 21,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C24",
+            "D24"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J24",
+            "K24"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q24",
+            "R24"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X24",
+            "Y24"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE24",
+            "AF24"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL24",
+            "AM24"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C24",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D24",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E24",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F24",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "G24",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 22,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C25",
+            "D25"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J25",
+            "K25"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q25",
+            "R25"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X25",
+            "Y25"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE25",
+            "AF25"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL25",
+            "AM25"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "anger",
+          "source_cell": "C25",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "D25",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E25",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F25",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G25",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 23,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C26",
+            "D26"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J26",
+            "K26"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q26",
+            "R26"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X26",
+            "Y26"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE26",
+            "AF26"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL26",
+            "AM26"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "anger",
+          "source_cell": "C26",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D26",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E26",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F26",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "G26",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 24,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C27",
+            "D27"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J27",
+            "K27"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q27",
+            "R27"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X27",
+            "Y27"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE27",
+            "AF27"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL27",
+            "AM27"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "anger",
+          "source_cell": "C27",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "D27",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E27",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F27",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G27",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 25,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C28",
+            "D28"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J28",
+            "K28"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q28",
+            "R28"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X28",
+            "Y28"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE28",
+            "AF28"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL28",
+            "AM28"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C28",
+          "driven": false
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "D28",
+          "driven": false
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "E28",
+          "driven": false
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F28",
+          "driven": false
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G28",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 26,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C29",
+            "D29"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J29",
+            "K29"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q29",
+            "R29"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X29",
+            "Y29"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE29",
+            "AF29"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL29",
+            "AM29"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C29",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "D29",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "E29",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F29",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G29",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 27,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C30",
+            "D30"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J30",
+            "K30"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q30",
+            "R30"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X30",
+            "Y30"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE30",
+            "AF30"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL30",
+            "AM30"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C30",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "D30",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E30",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F30",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G30",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 28,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C31",
+            "D31"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J31",
+            "K31"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q31",
+            "R31"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X31",
+            "Y31"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE31",
+            "AF31"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL31",
+            "AM31"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C31",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "D31",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E31",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F31",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G31",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 29,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C32",
+            "D32"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J32",
+            "K32"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q32",
+            "R32"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X32",
+            "Y32"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE32",
+            "AF32"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL32",
+            "AM32"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C32",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "D32",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "E32",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F32",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G32",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 30,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C33",
+            "D33"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J33",
+            "K33"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q33",
+            "R33"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X33",
+            "Y33"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE33",
+            "AF33"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL33",
+            "AM33"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C33",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "D33",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E33",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F33",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G33",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 31,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C34",
+            "D34"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J34",
+            "K34"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q34",
+            "R34"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X34",
+            "Y34"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE34",
+            "AF34"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL34",
+            "AM34"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C34",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D34",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E34",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F34",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "G34",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 32,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C35",
+            "D35"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J35",
+            "K35"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q35",
+            "R35"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X35",
+            "Y35"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE35",
+            "AF35"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL35",
+            "AM35"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "sadness",
+          "source_cell": "C35",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D35",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E35",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "F35",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "G35",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 33,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C36",
+            "D36"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J36",
+            "K36"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q36",
+            "R36"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X36",
+            "Y36"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE36",
+            "AF36"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL36",
+            "AM36"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "sadness",
+          "source_cell": "C36",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "D36",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E36",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "F36",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "G36",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 34,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C37",
+            "D37"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J37",
+            "K37"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q37",
+            "R37"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X37",
+            "Y37"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE37",
+            "AF37"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL37",
+            "AM37"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        }
+      ],
+      "order": [
+        {
+          "scenario": "Surprise",
+          "source_cell": "C37",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D37",
+          "driven": false
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E37",
+          "driven": false
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "F37",
+          "driven": false
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "G37",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 35,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C38",
+            "D38"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J38",
+            "K38"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q38",
+            "R38"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X38",
+            "Y38"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE38",
+            "AF38"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL38",
+            "AM38"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "sadness",
+          "source_cell": "C38",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "D38",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E38",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "F38",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G38",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 36,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C39",
+            "D39"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J39",
+            "K39"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q39",
+            "R39"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X39",
+            "Y39"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE39",
+            "AF39"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL39",
+            "AM39"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        }
+      ],
+      "order": [
+        {
+          "scenario": "anger",
+          "source_cell": "C39",
+          "driven": false
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "D39",
+          "driven": false
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "E39",
+          "driven": false
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F39",
+          "driven": false
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G39",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 37,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C40",
+            "D40"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J40",
+            "K40"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q40",
+            "R40"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X40",
+            "Y40"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE40",
+            "AF40"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL40",
+            "AM40"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C40",
+          "driven": false
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "D40",
+          "driven": false
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E40",
+          "driven": false
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F40",
+          "driven": false
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G40",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 38,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C41",
+            "D41"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J41",
+            "K41"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q41",
+            "R41"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X41",
+            "Y41"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE41",
+            "AF41"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL41",
+            "AM41"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C41",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "D41",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E41",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F41",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G41",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 39,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C42",
+            "D42"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J42",
+            "K42"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q42",
+            "R42"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X42",
+            "Y42"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE42",
+            "AF42"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL42",
+            "AM42"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "anger",
+          "source_cell": "C42",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D42",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E42",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F42",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "G42",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 40,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C43",
+            "D43"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J43",
+            "K43"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q43",
+            "R43"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X43",
+            "Y43"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE43",
+            "AF43"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL43",
+            "AM43"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        }
+      ],
+      "order": [
+        {
+          "scenario": "anger",
+          "source_cell": "C43",
+          "driven": false
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "D43",
+          "driven": false
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E43",
+          "driven": false
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F43",
+          "driven": false
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G43",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 41,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C44",
+            "D44"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J44",
+            "K44"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q44",
+            "R44"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X44",
+            "Y44"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE44",
+            "AF44"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL44",
+            "AM44"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "surprise",
+          "source_cell": "C44",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D44",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E44",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F44",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "G44",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 42,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C45",
+            "D45"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J45",
+            "K45"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q45",
+            "R45"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X45",
+            "Y45"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE45",
+            "AF45"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL45",
+            "AM45"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "anger",
+          "source_cell": "C45",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D45",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E45",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F45",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "G45",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 43,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C46",
+            "D46"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J46",
+            "K46"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q46",
+            "R46"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X46",
+            "Y46"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE46",
+            "AF46"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL46",
+            "AM46"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "noemotion",
+          "source_cell": "C46",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D46",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "E46",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F46",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "G46",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 44,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C47",
+            "D47"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J47",
+            "K47"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q47",
+            "R47"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X47",
+            "Y47"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE47",
+            "AF47"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL47",
+            "AM47"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        }
+      ],
+      "order": [
+        {
+          "scenario": "anger",
+          "source_cell": "C47",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "D47",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E47",
+          "driven": false
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F47",
+          "driven": false
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "G47",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 45,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C48",
+            "D48"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J48",
+            "K48"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q48",
+            "R48"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X48",
+            "Y48"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE48",
+            "AF48"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL48",
+            "AM48"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        }
+      ],
+      "order": [
+        {
+          "scenario": "anger",
+          "source_cell": "C48",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "D48",
+          "driven": false
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "E48",
+          "driven": false
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F48",
+          "driven": false
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G48",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 46,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C49",
+            "D49"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J49",
+            "K49"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q49",
+            "R49"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X49",
+            "Y49"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE49",
+            "AF49"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL49",
+            "AM49"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "anger",
+          "source_cell": "C49",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "D49",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "E49",
+          "driven": true
+        },
+        {
+          "scenario": "sadness",
+          "source_cell": "F49",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G49",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 47,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C50",
+            "D50"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J50",
+            "K50"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q50",
+            "R50"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X50",
+            "Y50"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE50",
+            "AF50"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL50",
+            "AM50"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "sadness",
+          "source_cell": "C50",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "D50",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "E50",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "F50",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "G50",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 48,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C51",
+            "D51"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J51",
+            "K51"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q51",
+            "R51"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X51",
+            "Y51"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE51",
+            "AF51"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL51",
+            "AM51"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "sadness",
+          "source_cell": "C51",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "D51",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "E51",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "F51",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "G51",
+          "driven": true
+        }
+      ]
+    },
+    {
+      "participant": 49,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C52",
+            "D52"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J52",
+            "K52"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q52",
+            "R52"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X52",
+            "Y52"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE52",
+            "AF52"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL52",
+            "AM52"
+          ],
+          "environment": 0,
+          "vehicle": 0
+        }
+      ],
+      "order": [
+        {
+          "scenario": "sadness",
+          "source_cell": "C52",
+          "driven": false
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "D52",
+          "driven": false
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "E52",
+          "driven": false
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F52",
+          "driven": false
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G52",
+          "driven": false
+        }
+      ]
+    },
+    {
+      "participant": 50,
+      "availability": [
+        {
+          "scenario": "familiarization",
+          "source_cells": [
+            "C53",
+            "D53"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "noemotion",
+          "source_cells": [
+            "J53",
+            "K53"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "anger",
+          "source_cells": [
+            "Q53",
+            "R53"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "surprise",
+          "source_cells": [
+            "X53",
+            "Y53"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "sadness",
+          "source_cells": [
+            "AE53",
+            "AF53"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        },
+        {
+          "scenario": "fear",
+          "source_cells": [
+            "AL53",
+            "AM53"
+          ],
+          "environment": 1,
+          "vehicle": 1
+        }
+      ],
+      "order": [
+        {
+          "scenario": "sadness",
+          "source_cell": "C53",
+          "driven": true
+        },
+        {
+          "scenario": "anger",
+          "source_cell": "D53",
+          "driven": true
+        },
+        {
+          "scenario": "fear",
+          "source_cell": "E53",
+          "driven": true
+        },
+        {
+          "scenario": "surprise",
+          "source_cell": "F53",
+          "driven": true
+        },
+        {
+          "scenario": "noemotion",
+          "source_cell": "G53",
+          "driven": true
+        }
+      ]
+    }
+  ]
+}

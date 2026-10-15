@@ -1,0 +1,140 @@
+{
+  "artifact_id": "reiyah.mand-timing.provenance",
+  "version": "0.1.0",
+  "owner": "mand-timing-2026-10-15-al4wen3g",
+  "base": "b325608ea16dfdefa45909e8b0eaa89e495f438f",
+  "started_utc": "2026-10-15T12:48:36.646702+00:00",
+  "verified_utc": "2026-10-15T13:10:27.159469+00:00",
+  "owner_elapsed_seconds_at_verification": 1310.512767,
+  "owner_wall_cap_seconds": 7200,
+  "closeout_reserved_seconds": 1800,
+  "scope": "One fixed public vehicle/environment source qualification. No readiness inference/training, private-data collection, outreach, Gate A release edits or historical empirical replay.",
+  "runtime": {
+    "python": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "python_executable": "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+    "python_executable_sha256": "3b6b69c61fd3765ab911d701cd17293b4a9154a0cb4973b546f05847f9a164c6",
+    "sqlite_version": "3.51.2",
+    "bsdtar": "bsdtar 3.5.3 - libarchive 3.5.3 zlib/1.2.12 liblzma/5.4.3 bz2lib/1.0.8",
+    "platform": "macOS-14.4-arm64-arm-64bit-Mach-O",
+    "identity_limit": "No complete OS/library attestation or native acquisition/runtime authentication"
+  },
+  "validation": {
+    "passed": true,
+    "network_denied_before_runtime": true,
+    "input_projection_write_denied": true,
+    "input_files_unchanged": 11,
+    "replayed_byte_equal_scientific_outputs": 3,
+    "controls_output_equal_development": 2,
+    "timing_controls": 18,
+    "coverage_controls": 7,
+    "commands": [
+      {
+        "script": "coverage.py",
+        "seconds": 0.12033275002613664,
+        "exit_code": 0
+      },
+      {
+        "script": "audit.py",
+        "seconds": 6.065134665986989,
+        "exit_code": 0
+      },
+      {
+        "script": "verify.py",
+        "seconds": 22.532375375041738,
+        "exit_code": 0
+      },
+      {
+        "script": "coverage_controls.py",
+        "seconds": 0.11060374998487532,
+        "exit_code": 0
+      },
+      {
+        "script": "controls.py",
+        "seconds": 0.051773416984360665,
+        "exit_code": 0
+      }
+    ]
+  },
+  "source_costs": {
+    "direct_calls": 3,
+    "retained_bytes": 681776662,
+    "extraction_output_bytes": 282847649,
+    "prior_direct_calls": 593,
+    "prior_retained_bytes": 11991135,
+    "web_calls": 1,
+    "web_transport_overhead": "Unmeasured"
+  },
+  "effort": {
+    "prior_three_owner_elapsed_seconds": 4222.887515,
+    "current_preowner_reading": "Unmeasured",
+    "historical_active_effort": "Unknown; not reset",
+    "human_active_seconds": null,
+    "billing": null,
+    "git_transport_overhead": "Unmeasured",
+    "peak_memory": "Not instrumented"
+  },
+  "workflow": "OpenAI Codex assisted source review, read-only workbook/XML inspection and authored offline calculations. No subagents; checks are internal, not independent scientific replication.",
+  "private_evidence": [
+    {
+      "path": "PLAN.json",
+      "sha256": "52b784fac375d9bd0a4b1f309c1959f1a2c8e028dc1bbf9913fdd805ee2d146b"
+    },
+    {
+      "path": "PROTOCOL_FREEZE.json",
+      "sha256": "26cee44755e4ea8bad39844115260b288cf41409cf13ff674a0c5742c506875c"
+    },
+    {
+      "path": "ANALYSIS_FREEZE.json",
+      "sha256": "1aff08f765756cb3c60f0f19fcca29f243dbcde4f6380ea7e64e13afac738345"
+    },
+    {
+      "path": "FIRST_HEADER_EXPOSURE.json",
+      "sha256": "33d6f8596deb4b0c45baf1f1cf553a86394566e26726359c9f37b4f8775eb09a"
+    },
+    {
+      "path": "REUSED_SOURCES.json",
+      "sha256": "517a55174c6a6b802e96a3d31b7852f1563acad0a87fe297fb6d6106ad94c70e"
+    },
+    {
+      "path": "COVERAGE_WORKBOOK_EXTRACT.json",
+      "sha256": "b83a46474fcaed8c2e5bd4df79071bcb892f50df28199b43c5af35401441761f"
+    },
+    {
+      "path": "ARCHIVE_MEMBER_MAPPING.json",
+      "sha256": "c4aaa684175e212e6145719d60df128c5859f6716b553b04f037c40d1fe4a64c"
+    },
+    {
+      "path": "EXTRACTION_SCOPE_REFINEMENT.json",
+      "sha256": "627231c6a7c06ed595e111cdcc242a4d7f14633d2c1e99c2754086e4a328e873"
+    },
+    {
+      "path": "VALIDATION_FREEZE.json",
+      "sha256": "d3f13fb300f20fad50a37cbbdf938cf4a7374ae12dd396ec7ab0ab4fde002ffe"
+    },
+    {
+      "path": "VALIDATION.json",
+      "sha256": "db861a686fd8c681f5ac9608e826b873d3f9528d47dbae900a0cea72248bd841"
+    },
+    {
+      "path": "capture.py",
+      "sha256": "3b1be925f58c3ec84ad0454eb324cb209ffb7a38ac19cd7e2f91e2fa5f37fe77"
+    },
+    {
+      "path": "extract-initial.py",
+      "sha256": "8747beebafee26fa44a87518a1f8f1b41d53fed303f3a9a5b6528e7b71981dd7"
+    },
+    {
+      "path": "extract.py",
+      "sha256": "e3e82a6b06db8708ebf384557c2e2b1d5f9ff9f21d17778e95405032ebfde195"
+    },
+    {
+      "path": "validate.py",
+      "sha256": "0d5af871222fc0d1af84808d3faf968f66ad8ffba3a8281bf768fde258432e77"
+    },
+    {
+      "path": "build_custody.py",
+      "sha256": "5da8a89ddf872bff5173e3f91c07ba8580723f654a9573a9ab759220da21a055"
+    }
+  ],
+  "Gate_A_operator_accepted": false
+}

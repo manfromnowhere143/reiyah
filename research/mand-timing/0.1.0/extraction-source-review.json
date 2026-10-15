@@ -1,0 +1,52 @@
+{
+  "artifact_id": "reiyah.mand-timing.extraction-source-review",
+  "version": "0.1.0",
+  "sha256": "570a11f2ec95f2f4c14c55e2e85042ba5a6c91a0bbcf4b8e7a6e3bccdc95d3fe",
+  "source_file_id": 7521567,
+  "source_published_bytes": 8573,
+  "mode": "AST/static read only; not imported or executed",
+  "functions": [
+    {
+      "name": "extract_hr_ecg",
+      "line": 52,
+      "end_line": 68
+    },
+    {
+      "name": "extract_hr_ppg",
+      "line": 71,
+      "end_line": 87
+    },
+    {
+      "name": "create_heatmap_images",
+      "line": 90,
+      "end_line": 135
+    },
+    {
+      "name": "create_heatmap_videos",
+      "line": 138,
+      "end_line": 165
+    },
+    {
+      "name": "extract_7z_files",
+      "line": 168,
+      "end_line": 179
+    },
+    {
+      "name": "find_and_extract_7z_files",
+      "line": 182,
+      "end_line": 193
+    }
+  ],
+  "finding": "Archive helper extracts all members recursively and deletes original archives, including after caught extraction errors. Other functions derive sensor features. This is not an eligible bounded extractor and supplies no vehicle/environment capture-clock implementation.",
+  "calls_in_archive_helper": [
+    "os.walk",
+    "file.endswith",
+    "os.path.join",
+    "print",
+    "os.remove",
+    "py7zr.SevenZipFile",
+    "z.extractall",
+    "print"
+  ],
+  "selected_alternative": "System bsdtar, sandboxed, exact members streamed to bounded private output; preserve original archive."
+}
