@@ -1,0 +1,81 @@
+{
+  "artifact_id": "reiyah.takeover-outcome.protocol",
+  "version": "0.1.0",
+  "status": "exploratory",
+  "frozen_utc": "2026-10-15T11:30:14.428013+00:00",
+  "question": "Does faster recorded takeover initiation monotonically order recorded takeover success within the same driver and critical-event type?",
+  "decision": "Use reaction time only as an initiation measure; determine whether these records falsify its substitution for recorded outcome before any model integration.",
+  "source": {
+    "doi": "10.5281/zenodo.14185964",
+    "version": "v2",
+    "updated": "2025-04-02T04:46:43.013040+00:00",
+    "archive_bytes": 16740790935,
+    "declared_archive_md5": "26d341bc7d160e9f94f475bbf4da8cc5",
+    "whole_archive_digest_verified": false,
+    "member_roster_sha256": "603ee710056044d649eb9e17553b504bb01bfa14060906d337a5a4bd2a51cced"
+  },
+  "population": {
+    "drivers": 50,
+    "conditions_per_driver": 10,
+    "expected_trials": 500,
+    "events": [
+      "F",
+      "L",
+      "R"
+    ],
+    "conditions": [
+      "0-back",
+      "1-back",
+      "2-back",
+      "audiobook listening",
+      "baseline",
+      "e-book reading",
+      "gaming",
+      "texting",
+      "voice gaming",
+      "voice texting"
+    ]
+  },
+  "primary": {
+    "pairs": "All unordered pairs of valid trials with same driver ID and criticalEventType, one Success and one Failure.",
+    "discordant": "reactionTime(Failure) < reactionTime(Success)",
+    "concordant": "reactionTime(Success) < reactionTime(Failure)",
+    "ties": "equal recorded reactionTime; keep separate",
+    "falsifier": "At least one discordant pair falsifies deterministic monotone outcome substitution on these records. No discordant pair means not falsified here, never safety proof.",
+    "report": [
+      "all eligible pairs",
+      "discordant/concordant/tied pairs",
+      "drivers with eligible/discordant pairs",
+      "all driver-event strata including zero eligible",
+      "exact witness identities"
+    ]
+  },
+  "secondary": [
+    "Outcome and reaction-time summaries for all task and event strata; all 30 task-event cells including empty ones.",
+    "Scenario end minus event onset minus reactionTime as recorded post-initiation follow-up; report nonpositive duration and never infer sustained recovery.",
+    "Reconcile all ten task counts, success ratios and reaction means against descriptor Table4 as a source-integrity check, not a new endpoint."
+  ],
+  "missingness": "Keep every expected trial in coverage. Missing/invalid required fields give explicit issues, never zero or success. Primary classification incomplete if any required trial fails; valid-subset descriptive counts remain labeled.",
+  "validation": "Duplicate identifiers, unexpected fields/values, nonfinite/noninteger time, negative time, inconsistent temporal order and extra data rows refuse that record. No silent coercion. Preserve exact source bytes.",
+  "comparator": "Ordinary complete census and separately authored SQL self-join/count/aggregation supplied the same records. No speed or novelty claim.",
+  "exposure": "Paper methods and Table4 aggregate outcomes seen before freeze. Archive member names and first30-byte local header inspected. No trial outcome payload acquired. Supplement notebook captured but code/output not read. This is exploratory retrospective analysis, not blind or preregistered.",
+  "limits": {
+    "acquisition_seconds": 1200,
+    "analysis_seconds": 120,
+    "analysis_rss_bytes": 1073741824,
+    "no_threshold_fit": true,
+    "no_predictive_training": true,
+    "no_population_p_values": true
+  },
+  "claims_excluded": [
+    "causal policy effects",
+    "physical recovery",
+    "qualified sustained recovery horizon",
+    "measured latent belief",
+    "road transfer",
+    "population risk",
+    "state-of-the-art superiority",
+    "work savings",
+    "Gate A acceptance"
+  ]
+}

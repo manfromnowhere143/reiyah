@@ -1,0 +1,1765 @@
+{
+  "artifact_id": "reiyah.takeover-outcome.custody",
+  "version": "0.1.0",
+  "source": "Hwang, Choi, Lee, Kim, Rhim and Kim, TD2D, Zenodo14185964 v2, DOI10.5281/zenodo.14185964",
+  "access": "Open public download",
+  "dataset_license": "CC-BY-4.0 as recorded in retained Zenodo API metadata",
+  "redistribution": "Only an attributed derived essential-field projection is public; original CSVs, archive ranges, article and upstream code remain private. No raw images, videos or physiological/ocular streams acquired.",
+  "archive_member_inventory": 10192,
+  "selected_members": 500,
+  "verified_captured_members": 161,
+  "successful_member_range_requests": 162,
+  "source_row_payload_bytes": 63252,
+  "archive_md5_verified": false,
+  "archive_digest_scope": "Only local/central metadata, exact HTTP Content-Range, uncompressed size, CRC32 and locally computed per-member SHA256 checked. Entire16.7GB archive not acquired.",
+  "requests": 179,
+  "retained_response_bytes": 4552481,
+  "failed_requests": [
+    {
+      "name": "member-2cd35925a755bfd4.bin",
+      "url": "https://zenodo.org/api/records/14185964/files/TD2D.zip/content",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "name": "member-43f857578f3c1139.bin",
+      "url": "https://zenodo.org/api/records/14185964/files/TD2D.zip/content",
+      "error": "HTTP Error 429: TOO MANY REQUESTS"
+    }
+  ],
+  "error_response_body_bytes": "Not retained/count unknown for HTTP429; DNS failure had no response. HTTP counts exclude web-tool underlying transport, which is unknown.",
+  "captures": [
+    {
+      "name": "zenodo-record.json",
+      "url": "https://zenodo.org/api/records/14185964",
+      "bytes": 5200,
+      "sha256": "98c95535eed05da5b95e0d4fe126130e6232b3ceac2b3d844faef00bf22bbbb5",
+      "complete": true,
+      "eligible_for_claim_support": true
+    },
+    {
+      "name": "td2d-paper.pdf",
+      "url": "https://hai.kangwon.ac.kr/paper/A_Dataset_on_Takeover_during_Distracted_L2_Automated_Driving.pdf",
+      "bytes": 1937522,
+      "sha256": "9668654a9a0d83a18cb068e7c82c2f04447b1ce48e8d579dd170935ee4d8ddc7",
+      "complete": true,
+      "eligible_for_claim_support": true
+    },
+    {
+      "name": "zip-tail.bin",
+      "url": "https://zenodo.org/api/records/14185964/files/TD2D.zip/content",
+      "bytes": 1048576,
+      "sha256": "228c81314ac61aea5da459eb9018fcad07b40f2c47c25110947b317d814fc937",
+      "complete": true,
+      "eligible_for_claim_support": true
+    },
+    {
+      "name": "supplement-tree.json",
+      "url": "https://api.github.com/repos/HAI-lab-KNU/TD2D_SupplementaryCodes/git/trees/HEAD?recursive=1",
+      "bytes": 932,
+      "sha256": "c9a1edbb07e70b2d64767205fc6dac278cd054f91c8ad3da6c796d27d0a24cf2",
+      "complete": true,
+      "eligible_for_claim_support": true
+    },
+    {
+      "name": "simulator-tree.json",
+      "url": "https://api.github.com/repos/HAI-lab-KNU/L2-vehicle-simulator/git/trees/HEAD?recursive=1",
+      "bytes": 135700,
+      "sha256": "8b3daa2651eb7df00b0f2874483e27dafc482f971e77e22136cd51b4e5cf6061",
+      "complete": true,
+      "eligible_for_claim_support": true
+    },
+    {
+      "name": "zip-directory.bin",
+      "url": "https://zenodo.org/api/records/14185964/files/TD2D.zip/content",
+      "bytes": 1243235,
+      "sha256": "aa3a064dad80b820bafc15fe227f3a3926d2ccdf6af24fc8fb94a70bb63b140e",
+      "complete": true,
+      "eligible_for_claim_support": true
+    },
+    {
+      "name": "supplement-0.txt",
+      "url": "https://raw.githubusercontent.com/HAI-lab-KNU/TD2D_SupplementaryCodes/221070726063334915f521de90b6263a10abe22c/README.md",
+      "bytes": 853,
+      "sha256": "55609241ee988ed1076f6e2129a4fccf5b03bba40de07788b1bfd4765c056195",
+      "complete": true,
+      "eligible_for_claim_support": true
+    },
+    {
+      "name": "supplement-1.ipynb",
+      "url": "https://raw.githubusercontent.com/HAI-lab-KNU/TD2D_SupplementaryCodes/221070726063334915f521de90b6263a10abe22c/technical_validation.ipynb",
+      "bytes": 35069,
+      "sha256": "ffdb5c12d47dc2b6cf45d0a110fd800acd208d5a2c300d8d91326de2c70a966c",
+      "complete": true,
+      "eligible_for_claim_support": true
+    },
+    {
+      "name": "simulator-0.txt",
+      "url": "https://raw.githubusercontent.com/HAI-lab-KNU/L2-vehicle-simulator/115320f093f40650218f4312381680966ef27528/README.md",
+      "bytes": 295,
+      "sha256": "e69f27e8620c7a0e593ef5fcc7c2d5327cd29740d427f65b34d5b9b8d959d10f",
+      "complete": true,
+      "eligible_for_claim_support": true
+    },
+    {
+      "name": "simulator-1.txt",
+      "url": "https://raw.githubusercontent.com/HAI-lab-KNU/L2-vehicle-simulator/115320f093f40650218f4312381680966ef27528/scenario_runner-0.9.10/srunner/scenarios/freeride.py",
+      "bytes": 2043,
+      "sha256": "66ab461696953634787c62c9d24dcc1361b72e49a709d211bdcf35168a297bc4",
+      "complete": true,
+      "eligible_for_claim_support": true
+    },
+    {
+      "name": "first-summary-header.bin",
+      "url": "https://zenodo.org/api/records/14185964/files/TD2D.zip/content",
+      "bytes": 30,
+      "sha256": "6fd78b4464d321ff52c8f45e0ebe8c48b55281fb674b3250ea3d93f78c8ee9e4",
+      "complete": true,
+      "eligible_for_claim_support": true
+    },
+    {
+      "name": "simulator-control.py",
+      "url": "https://raw.githubusercontent.com/HAI-lab-KNU/L2-vehicle-simulator/115320f093f40650218f4312381680966ef27528/carla/PythonAPI/examples/manual_control_steeringwheel.py",
+      "bytes": 36027,
+      "sha256": "ffcbb4e57f293370bbe2ff4693ea31219ce1d78ac7d6b1886a14dc9ffccac6d1",
+      "complete": true,
+      "eligible_for_claim_support": true
+    },
+    {
+      "name": "paper-pmc.html",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11958828/",
+      "bytes": 21312,
+      "sha256": "a4c412163de30c455518fed5320ef6ef4494fb7ebbfb495073d8b3396f0f7221",
+      "complete": true,
+      "eligible_for_claim_support": false,
+      "reason": "HTTP200 recaptcha challenge, not article; excluded"
+    },
+    {
+      "name": "simulator-t500.py",
+      "url": "https://raw.githubusercontent.com/HAI-lab-KNU/L2-vehicle-simulator/115320f093f40650218f4312381680966ef27528/scenario_runner-0.9.10/manual_control_T500RS.py",
+      "bytes": 7759,
+      "sha256": "7595a535d45c08bd7790c147e421475fa1655728524263d0a5b15d5217dde8a5",
+      "complete": true,
+      "eligible_for_claim_support": true
+    },
+    {
+      "name": "simulator-runner.py",
+      "url": "https://raw.githubusercontent.com/HAI-lab-KNU/L2-vehicle-simulator/115320f093f40650218f4312381680966ef27528/scenario_runner-0.9.10/scenario_runner.py",
+      "bytes": 23907,
+      "sha256": "efc1611da5f96cb9be462e14e8d3315454e9d6b0173916ead9a650fc3fd136dd",
+      "complete": true,
+      "eligible_for_claim_support": true
+    }
+  ],
+  "members": [
+    {
+      "name": "TD2D/D01/0back/takeoverScenarioInformations.csv",
+      "header_offset": 7558618924,
+      "compressed_size": 213,
+      "size": 391,
+      "crc": 3242183604,
+      "method": 8,
+      "flags": 8,
+      "sha256": "67587618543ef6bb979cd9505b523296c5ae5d657a7ac3049795438949c60fde"
+    },
+    {
+      "name": "TD2D/D01/1back/takeoverScenarioInformations.csv",
+      "header_offset": 7529106524,
+      "compressed_size": 216,
+      "size": 384,
+      "crc": 157533314,
+      "method": 8,
+      "flags": 8,
+      "sha256": "9621e0df9f3381eed717dca6c05f1782c54152b0248732f88fff83f6da34a9b6"
+    },
+    {
+      "name": "TD2D/D01/2back/takeoverScenarioInformations.csv",
+      "header_offset": 7587739077,
+      "compressed_size": 229,
+      "size": 421,
+      "crc": 3651396060,
+      "method": 8,
+      "flags": 8,
+      "sha256": "7e9a3a6baf285597ee584bbdc36022bfa34c04674b3b9a3b21c2d8578dabc35b"
+    },
+    {
+      "name": "TD2D/D01/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 7632899129,
+      "compressed_size": 207,
+      "size": 382,
+      "crc": 582864432,
+      "method": 8,
+      "flags": 8,
+      "sha256": "118161e2558ee42b682754bfb564f96413c67804f3b85173ed183e2139d796ce"
+    },
+    {
+      "name": "TD2D/D01/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 7397352424,
+      "compressed_size": 208,
+      "size": 380,
+      "crc": 3436874357,
+      "method": 8,
+      "flags": 8,
+      "sha256": "9fd168ddf4ee6e11c9f9ac072aad8185cd70b889e8883918b58a113e195ac66a"
+    },
+    {
+      "name": "TD2D/D01/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 7431330030,
+      "compressed_size": 208,
+      "size": 382,
+      "crc": 3033740063,
+      "method": 8,
+      "flags": 8,
+      "sha256": "a71c50da8caf7af8658ca3183fcf1fc48f6bb7cf9eb432d5ccdb10300ca798ab"
+    },
+    {
+      "name": "TD2D/D01/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 7497544320,
+      "compressed_size": 212,
+      "size": 395,
+      "crc": 4209014247,
+      "method": 8,
+      "flags": 8,
+      "sha256": "80ad4742838cb3cb2a947552de44f7cdc1d06c8309d89b6ffdc38c8b68c3e5e4"
+    },
+    {
+      "name": "TD2D/D01/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 7609024236,
+      "compressed_size": 215,
+      "size": 394,
+      "crc": 4042382245,
+      "method": 8,
+      "flags": 8,
+      "sha256": "59b3ce00c3d2af6533271e8894c210a1085797fe13bf9d82032ba04e1d252a1a"
+    },
+    {
+      "name": "TD2D/D01/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 7374668186,
+      "compressed_size": 207,
+      "size": 380,
+      "crc": 2869200090,
+      "method": 8,
+      "flags": 8,
+      "sha256": "ffe0015b14e51d3d869c74be540aa0ab44a3ebd79916f0285ec937b66ae82d97"
+    },
+    {
+      "name": "TD2D/D01/texting/takeoverScenarioInformations.csv",
+      "header_offset": 7466132748,
+      "compressed_size": 213,
+      "size": 384,
+      "crc": 638996721,
+      "method": 8,
+      "flags": 8,
+      "sha256": "5d3601059be4f8e89c0332ec24c2931f9fc5d707b9f0f08bd06664828dc7b06c"
+    },
+    {
+      "name": "TD2D/D02/0back/takeoverScenarioInformations.csv",
+      "header_offset": 15688387980,
+      "compressed_size": 205,
+      "size": 373,
+      "crc": 3589171458,
+      "method": 8,
+      "flags": 8,
+      "sha256": "9d9b1e8918f086c438346ed6ae5ea8499ff49fe63c0ed3eaed9c149c0169480c"
+    },
+    {
+      "name": "TD2D/D02/1back/takeoverScenarioInformations.csv",
+      "header_offset": 15663951726,
+      "compressed_size": 216,
+      "size": 390,
+      "crc": 2148413335,
+      "method": 8,
+      "flags": 8,
+      "sha256": "831de57f7c9769f5c99399539b7949a4acb82c1a7d7ed0800a7d9b366b3ce4b0"
+    },
+    {
+      "name": "TD2D/D02/2back/takeoverScenarioInformations.csv",
+      "header_offset": 15709085494,
+      "compressed_size": 218,
+      "size": 405,
+      "crc": 2012251380,
+      "method": 8,
+      "flags": 8,
+      "sha256": "83117fdb25776b44d2e94c14365da44f36e334d2172efe58f100bf92a0c25970"
+    },
+    {
+      "name": "TD2D/D02/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 15752879004,
+      "compressed_size": 206,
+      "size": 374,
+      "crc": 1346978371,
+      "method": 8,
+      "flags": 8,
+      "sha256": "5fc72981cc047b3fe6c440abda334ebf9342a83560ae924b3a20afcfa012c4f0"
+    },
+    {
+      "name": "TD2D/D02/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 15548245793,
+      "compressed_size": 215,
+      "size": 395,
+      "crc": 1575655071,
+      "method": 8,
+      "flags": 8,
+      "sha256": "bcc5c8de9228ce6eeb09e057a5423805c6935b6214e8d4817847cebcfe1249fb"
+    },
+    {
+      "name": "TD2D/D02/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 15578569194,
+      "compressed_size": 225,
+      "size": 401,
+      "crc": 2352994122,
+      "method": 8,
+      "flags": 8,
+      "sha256": "08511520e06a0b46f86ff62eb9736da3b6e3ebe190fa703bba468bfdda0e99b0"
+    },
+    {
+      "name": "TD2D/D02/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 15633592776,
+      "compressed_size": 205,
+      "size": 373,
+      "crc": 2078555048,
+      "method": 8,
+      "flags": 8,
+      "sha256": "128f3795b99bb60e2fe34e89accad83d98763c6a8ce30b83eb676492e75f7ddc"
+    },
+    {
+      "name": "TD2D/D02/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 15725546475,
+      "compressed_size": 224,
+      "size": 401,
+      "crc": 1650591587,
+      "method": 8,
+      "flags": 8,
+      "sha256": "a19778d0d86579ca1e6f024d69fddf7916525eda40ebe57b6b3783341e7e5c79"
+    },
+    {
+      "name": "TD2D/D02/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 15514895100,
+      "compressed_size": 221,
+      "size": 393,
+      "crc": 1879426037,
+      "method": 8,
+      "flags": 8,
+      "sha256": "b590172c5086a4e70ba0e0a08e2235888dd733ca8cc90f5ff21cceba190529b0"
+    },
+    {
+      "name": "TD2D/D02/texting/takeoverScenarioInformations.csv",
+      "header_offset": 15605307694,
+      "compressed_size": 221,
+      "size": 401,
+      "crc": 274936305,
+      "method": 8,
+      "flags": 8,
+      "sha256": "0d31f8040d1d621a90bb1714db81a8f275838e1a3f1c186008683e2b8d094ca1"
+    },
+    {
+      "name": "TD2D/D03/0back/takeoverScenarioInformations.csv",
+      "header_offset": 15144802172,
+      "compressed_size": 217,
+      "size": 391,
+      "crc": 1622676481,
+      "method": 8,
+      "flags": 8,
+      "sha256": "3268d2da33deff0638bfd8f7b6d5978b70529ed66e10c5be66bdc1e1246d5901"
+    },
+    {
+      "name": "TD2D/D03/1back/takeoverScenarioInformations.csv",
+      "header_offset": 15121127328,
+      "compressed_size": 219,
+      "size": 393,
+      "crc": 1080794335,
+      "method": 8,
+      "flags": 8,
+      "sha256": "4ef115184fb5f3478278048bb59e365b3dc7e5492ee3aefcbef49eb774ba755b"
+    },
+    {
+      "name": "TD2D/D03/2back/takeoverScenarioInformations.csv",
+      "header_offset": 15168728923,
+      "compressed_size": 223,
+      "size": 391,
+      "crc": 55938331,
+      "method": 8,
+      "flags": 8,
+      "sha256": "b83a61ebe4fbac8fe335c63f64c8305f28b3dc1d02faf52412c1abcd3527de29"
+    },
+    {
+      "name": "TD2D/D03/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 15213234689,
+      "compressed_size": 226,
+      "size": 399,
+      "crc": 3219061173,
+      "method": 8,
+      "flags": 8,
+      "sha256": "ed08de92178a5624089fa828d484b8719ad57cd2d352a09370d0d224bbe6dbf4"
+    },
+    {
+      "name": "TD2D/D03/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 15023589356,
+      "compressed_size": 223,
+      "size": 398,
+      "crc": 3651759772,
+      "method": 8,
+      "flags": 8,
+      "sha256": "11ac1f729bbe613dd245d617c4e6f3d23d3bc43a618782424fba430b74a4aff4"
+    },
+    {
+      "name": "TD2D/D03/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 15051299803,
+      "compressed_size": 221,
+      "size": 400,
+      "crc": 2723074546,
+      "method": 8,
+      "flags": 8,
+      "sha256": "d1f42ae4468d384c3d79df0f426caccf914b353fb6d57a542a1690224e7b67d5"
+    },
+    {
+      "name": "TD2D/D03/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 15093183074,
+      "compressed_size": 220,
+      "size": 399,
+      "crc": 3400393942,
+      "method": 8,
+      "flags": 8,
+      "sha256": "9ce7824610cdb9ae9e80a467d58fede00aaade3889eb62a34426bc5c13613a07"
+    },
+    {
+      "name": "TD2D/D03/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 15192125349,
+      "compressed_size": 224,
+      "size": 398,
+      "crc": 4156102391,
+      "method": 8,
+      "flags": 8,
+      "sha256": "522139544ed696f9eeb76b683b730ddfb04dc7383530e9284bee1dac001e0192"
+    },
+    {
+      "name": "TD2D/D03/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 15008527216,
+      "compressed_size": 219,
+      "size": 389,
+      "crc": 3177055855,
+      "method": 8,
+      "flags": 8,
+      "sha256": "6cdb5e7c03b5c9513b870c25470a9641af8434385cc91ba3bbbbab392b1f22cf"
+    },
+    {
+      "name": "TD2D/D03/texting/takeoverScenarioInformations.csv",
+      "header_offset": 15076799475,
+      "compressed_size": 222,
+      "size": 401,
+      "crc": 380738469,
+      "method": 8,
+      "flags": 8,
+      "sha256": "624e5c6a9785d391dc7bcb7fb6e963a47645607a4e389aeeab74935919f7cf5a"
+    },
+    {
+      "name": "TD2D/D04/0back/takeoverScenarioInformations.csv",
+      "header_offset": 14889644534,
+      "compressed_size": 220,
+      "size": 388,
+      "crc": 859499905,
+      "method": 8,
+      "flags": 8,
+      "sha256": "73012d134da7fa214aacdf1b1211dfc5b217c8f01045cf0df0747d806d466870"
+    },
+    {
+      "name": "TD2D/D04/1back/takeoverScenarioInformations.csv",
+      "header_offset": 14861574466,
+      "compressed_size": 222,
+      "size": 392,
+      "crc": 331985435,
+      "method": 8,
+      "flags": 8,
+      "sha256": "13bd4f16c769c6255bb32d64cb74be3a40980cbd922b79fb4576c10bba64d304"
+    },
+    {
+      "name": "TD2D/D04/2back/takeoverScenarioInformations.csv",
+      "header_offset": 14922361869,
+      "compressed_size": 225,
+      "size": 399,
+      "crc": 2217139925,
+      "method": 8,
+      "flags": 8,
+      "sha256": "a12f1fbbe50cf594ae99793806d11d7a82a90b0fcf4a4cbf6c527c7d349f2959"
+    },
+    {
+      "name": "TD2D/D04/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 14982570995,
+      "compressed_size": 219,
+      "size": 391,
+      "crc": 1726434661,
+      "method": 8,
+      "flags": 8,
+      "sha256": "f4f612e60ad0f7376926c0a3e299ad8d2d0c7ab3f888680b76fe2e430047372a"
+    },
+    {
+      "name": "TD2D/D04/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 14745502321,
+      "compressed_size": 222,
+      "size": 391,
+      "crc": 1980351869,
+      "method": 8,
+      "flags": 8,
+      "sha256": "5657e7aeee17a1e79f06273766ffab13b418efee112b87de0ef6aaa2c8c5571d"
+    },
+    {
+      "name": "TD2D/D04/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 14773645682,
+      "compressed_size": 222,
+      "size": 390,
+      "crc": 390335489,
+      "method": 8,
+      "flags": 8,
+      "sha256": "9d8f5766bf2d1b7e4dcba489cf7f10f14c4a320854d75f78e226ba3a41cde705"
+    },
+    {
+      "name": "TD2D/D04/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 14826388948,
+      "compressed_size": 219,
+      "size": 396,
+      "crc": 1785384345,
+      "method": 8,
+      "flags": 8,
+      "sha256": "8181736930e6302662925df3d3fb83249e771ffb2afb4c6152cffaa00ea59d4c"
+    },
+    {
+      "name": "TD2D/D04/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 14948829476,
+      "compressed_size": 221,
+      "size": 391,
+      "crc": 3924539935,
+      "method": 8,
+      "flags": 8,
+      "sha256": "0998ad15bc98bc500eec49f67d413fb7bcccee8a6034cb9b5710de87a1d464f2"
+    },
+    {
+      "name": "TD2D/D04/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 14707745117,
+      "compressed_size": 222,
+      "size": 392,
+      "crc": 3449199245,
+      "method": 8,
+      "flags": 8,
+      "sha256": "ee77614a7c77cd53754e710f7c471dacb8a86b083c59b570756700a0718f526d"
+    },
+    {
+      "name": "TD2D/D04/texting/takeoverScenarioInformations.csv",
+      "header_offset": 14808041379,
+      "compressed_size": 221,
+      "size": 396,
+      "crc": 2136015492,
+      "method": 8,
+      "flags": 8,
+      "sha256": "5e0ce4af941bdb61dba03961837d0095bb8f4d8f858f4a3eb316c2c3a3726d0f"
+    },
+    {
+      "name": "TD2D/D05/0back/takeoverScenarioInformations.csv",
+      "header_offset": 15975797759,
+      "compressed_size": 217,
+      "size": 382,
+      "crc": 1233750719,
+      "method": 8,
+      "flags": 8,
+      "sha256": "95c67ddd126aa18609fe59c097c8383648da47c6c33049f42f03d90d6684db0a"
+    },
+    {
+      "name": "TD2D/D05/1back/takeoverScenarioInformations.csv",
+      "header_offset": 15937874060,
+      "compressed_size": 221,
+      "size": 394,
+      "crc": 1973405191,
+      "method": 8,
+      "flags": 8,
+      "sha256": "1d896cd558d37359d60ad3567027eb6fafa2bc6dd9da8cd523a6040b96e5b903"
+    },
+    {
+      "name": "TD2D/D05/2back/takeoverScenarioInformations.csv",
+      "header_offset": 16006464618,
+      "compressed_size": 222,
+      "size": 390,
+      "crc": 3166257321,
+      "method": 8,
+      "flags": 8,
+      "sha256": "d2f726e1dd96c3b8317d381557447a76b21badfefd1f7da46e9e233b98a9acb6"
+    },
+    {
+      "name": "TD2D/D05/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 16080785110,
+      "compressed_size": 218,
+      "size": 384,
+      "crc": 248779758,
+      "method": 8,
+      "flags": 8,
+      "sha256": "a350b04810eac33cb518c836cb5ce2b3a8195a4f216d5b4c95a65cafa9adfacf"
+    },
+    {
+      "name": "TD2D/D05/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 15817457285,
+      "compressed_size": 224,
+      "size": 394,
+      "crc": 3326979918,
+      "method": 8,
+      "flags": 8,
+      "sha256": "cc66917a8787a72997a2e4a705e1015518e91b7dfa780c9b62e800f856752ddb"
+    },
+    {
+      "name": "TD2D/D05/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 15844171264,
+      "compressed_size": 223,
+      "size": 393,
+      "crc": 2699596271,
+      "method": 8,
+      "flags": 8,
+      "sha256": "d00e55288c861508308deecdd885907bf1902a93b3af34fd22207ddeb46530d7"
+    },
+    {
+      "name": "TD2D/D05/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 15910438040,
+      "compressed_size": 222,
+      "size": 398,
+      "crc": 647112687,
+      "method": 8,
+      "flags": 8,
+      "sha256": "d1c2da3f6bb49ea3737f456ae03ead9bb5a10fc79dd2cbda083ae9fbea2a03af"
+    },
+    {
+      "name": "TD2D/D05/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 16039320308,
+      "compressed_size": 222,
+      "size": 393,
+      "crc": 134036396,
+      "method": 8,
+      "flags": 8,
+      "sha256": "3c675716c5ec9306cbf09d36b883a0a715fe83410c4ec0ab08c6b43360b7f894"
+    },
+    {
+      "name": "TD2D/D05/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 15777028440,
+      "compressed_size": 223,
+      "size": 391,
+      "crc": 2049924465,
+      "method": 8,
+      "flags": 8,
+      "sha256": "6e8aafcfb654f2bf2eaf428082d04e743d4a29c4d28471337f8c81d462de9f95"
+    },
+    {
+      "name": "TD2D/D05/texting/takeoverScenarioInformations.csv",
+      "header_offset": 15885082773,
+      "compressed_size": 221,
+      "size": 393,
+      "crc": 4044697755,
+      "method": 8,
+      "flags": 8,
+      "sha256": "83b387b0881d4ac62cf64ea8c7553163f7930e0c160058bda4453d33a530cf94"
+    },
+    {
+      "name": "TD2D/D06/0back/takeoverScenarioInformations.csv",
+      "header_offset": 6933388881,
+      "compressed_size": 221,
+      "size": 390,
+      "crc": 3323675826,
+      "method": 8,
+      "flags": 8,
+      "sha256": "1f6c4741435ad6daffaa32b3a15efd6a66d2f98c3c3ccf0b03872940f0f9628c"
+    },
+    {
+      "name": "TD2D/D06/1back/takeoverScenarioInformations.csv",
+      "header_offset": 6903011523,
+      "compressed_size": 225,
+      "size": 398,
+      "crc": 523649787,
+      "method": 8,
+      "flags": 8,
+      "sha256": "b72793ef3172d5ec0be065b3e2a5acbdb272870ee878e2b8748af224d2d982f3"
+    },
+    {
+      "name": "TD2D/D06/2back/takeoverScenarioInformations.csv",
+      "header_offset": 6967622708,
+      "compressed_size": 218,
+      "size": 401,
+      "crc": 938245224,
+      "method": 8,
+      "flags": 8,
+      "sha256": "c45740951a7b2deae898235738027d1010756406c639339cc30675310ef881ef"
+    },
+    {
+      "name": "TD2D/D06/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 7022186329,
+      "compressed_size": 226,
+      "size": 402,
+      "crc": 2805090389,
+      "method": 8,
+      "flags": 8,
+      "sha256": "a2278009ae008973bcefc523c8602bb0542d4e32e990c71f2e022be09c2e7c4b"
+    },
+    {
+      "name": "TD2D/D06/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 6763443590,
+      "compressed_size": 227,
+      "size": 400,
+      "crc": 1463598865,
+      "method": 8,
+      "flags": 8,
+      "sha256": "1befad59f29f62979eb9d980b6ff78a5da23a1bdd4d88f8d59210c152b244ec6"
+    },
+    {
+      "name": "TD2D/D06/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 6806071448,
+      "compressed_size": 221,
+      "size": 393,
+      "crc": 1723638366,
+      "method": 8,
+      "flags": 8,
+      "sha256": "44a24281ff22d9189f7d31a06076e002e19a81555feb63139fb0036e9a810761"
+    },
+    {
+      "name": "TD2D/D06/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 6881326251,
+      "compressed_size": 205,
+      "size": 375,
+      "crc": 2381676140,
+      "method": 8,
+      "flags": 8,
+      "sha256": "c04f6585cfcc3790e4071213c2f29866f300216b8488d52f79858bc8affd7995"
+    },
+    {
+      "name": "TD2D/D06/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 6987428247,
+      "compressed_size": 221,
+      "size": 400,
+      "crc": 321350432,
+      "method": 8,
+      "flags": 8,
+      "sha256": "2b852f37f8ba6679e6b986af0949c7c3878f35595de8e598105c4f979e400503"
+    },
+    {
+      "name": "TD2D/D06/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 6730762840,
+      "compressed_size": 224,
+      "size": 403,
+      "crc": 2276350570,
+      "method": 8,
+      "flags": 8,
+      "sha256": "200167cf690a9c1272d258b2f75cfc91c6d6351cadeb56ba6ea820059acdf3c4"
+    },
+    {
+      "name": "TD2D/D06/texting/takeoverScenarioInformations.csv",
+      "header_offset": 6841971025,
+      "compressed_size": 220,
+      "size": 395,
+      "crc": 137730644,
+      "method": 8,
+      "flags": 8,
+      "sha256": "b993337698ff83846c2b540c776331c57add8e050bc91fed39c9c654ba48fd3a"
+    },
+    {
+      "name": "TD2D/D07/0back/takeoverScenarioInformations.csv",
+      "header_offset": 6237164259,
+      "compressed_size": 218,
+      "size": 394,
+      "crc": 251629271,
+      "method": 8,
+      "flags": 8,
+      "sha256": "baab65516ed7dc26ecd3902395ab859dffea5a556a8276e6a4602f63d479d3e2"
+    },
+    {
+      "name": "TD2D/D07/1back/takeoverScenarioInformations.csv",
+      "header_offset": 6205686606,
+      "compressed_size": 219,
+      "size": 389,
+      "crc": 4290959559,
+      "method": 8,
+      "flags": 8,
+      "sha256": "2047a054bedcae9ca78d9d27e99d52a2f8a07f6dfed24dbd606e617e0a8b81f6"
+    },
+    {
+      "name": "TD2D/D07/2back/takeoverScenarioInformations.csv",
+      "header_offset": 6267674240,
+      "compressed_size": 224,
+      "size": 398,
+      "crc": 3936047579,
+      "method": 8,
+      "flags": 8,
+      "sha256": "ba4f6bf028a6065f781a51c7a3cb9f245ef69e307d335a3ee9a3fb0d9b80bfd8"
+    },
+    {
+      "name": "TD2D/D07/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 6349487943,
+      "compressed_size": 217,
+      "size": 388,
+      "crc": 3119949413,
+      "method": 8,
+      "flags": 8,
+      "sha256": "644b17d0067e0dde2af34a6a75ba20f26babd94b21c9012c4592474d78b6a806"
+    },
+    {
+      "name": "TD2D/D07/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 6059406875,
+      "compressed_size": 214,
+      "size": 386,
+      "crc": 2795551818,
+      "method": 8,
+      "flags": 8,
+      "sha256": "80c8e475812ecf971823ef48b2498ee41652055551a02ce4c0a0c3ab6bba4497"
+    },
+    {
+      "name": "TD2D/D07/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 6090035998,
+      "compressed_size": 219,
+      "size": 389,
+      "crc": 2297772571,
+      "method": 8,
+      "flags": 8,
+      "sha256": "fe896aee9bb86dbdfbd3ce9e554748b1d011fe0a87a04fb1f33a42283c483a75"
+    },
+    {
+      "name": "TD2D/D07/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 6160606044,
+      "compressed_size": 207,
+      "size": 376,
+      "crc": 3205993636,
+      "method": 8,
+      "flags": 8,
+      "sha256": "ffd2245a6af4094fce4a3c18a526b06450bfa919a8b0338cab6a41ecf4bc9570"
+    },
+    {
+      "name": "TD2D/D07/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 6310824122,
+      "compressed_size": 222,
+      "size": 389,
+      "crc": 637215252,
+      "method": 8,
+      "flags": 8,
+      "sha256": "19cc9ff0f3f22a8ab8cda38260c8221b3db2eb8dc43cce900a5491b598c480dd"
+    },
+    {
+      "name": "TD2D/D07/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 6030294706,
+      "compressed_size": 219,
+      "size": 400,
+      "crc": 2704668149,
+      "method": 8,
+      "flags": 8,
+      "sha256": "49366d7164c637a0249475b900ac5f3648c9ae5ed20715a4966b89043b62af0f"
+    },
+    {
+      "name": "TD2D/D07/texting/takeoverScenarioInformations.csv",
+      "header_offset": 6113478677,
+      "compressed_size": 218,
+      "size": 385,
+      "crc": 1612020268,
+      "method": 8,
+      "flags": 8,
+      "sha256": "1d19dbc15f2b2f28781d25c325dced4b54c8df9546131da293ace1ab42a89624"
+    },
+    {
+      "name": "TD2D/D08/0back/takeoverScenarioInformations.csv",
+      "header_offset": 8241117143,
+      "compressed_size": 223,
+      "size": 398,
+      "crc": 869090050,
+      "method": 8,
+      "flags": 8,
+      "sha256": "eef22dcf1c7b0e0d9ce387160e97beb25a3f20dc6ab0c15740d2fb7e4059db7b"
+    },
+    {
+      "name": "TD2D/D08/1back/takeoverScenarioInformations.csv",
+      "header_offset": 8199832476,
+      "compressed_size": 222,
+      "size": 393,
+      "crc": 623668445,
+      "method": 8,
+      "flags": 8,
+      "sha256": "f1f3d1694354ac033009ec441ebb23064a2c088340ad59505235126f153f4cf8"
+    },
+    {
+      "name": "TD2D/D08/2back/takeoverScenarioInformations.csv",
+      "header_offset": 8274855736,
+      "compressed_size": 223,
+      "size": 390,
+      "crc": 1789221344,
+      "method": 8,
+      "flags": 8,
+      "sha256": "0aff06330c2251bd54462d9506df5e44fb10a0a52302c96f931c70473bcd169e"
+    },
+    {
+      "name": "TD2D/D08/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 8354427971,
+      "compressed_size": 224,
+      "size": 399,
+      "crc": 2651468084,
+      "method": 8,
+      "flags": 8,
+      "sha256": "034b27ec3a41b6fedb62f2909ef012b2f3f9235829789bf8aaf9a01136a720ef"
+    },
+    {
+      "name": "TD2D/D08/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 8036014584,
+      "compressed_size": 220,
+      "size": 390,
+      "crc": 764800780,
+      "method": 8,
+      "flags": 8,
+      "sha256": "18db9260c4d4d34bcb7830cd847d96cb2ac37fc6132edd8b0984416120a852a9"
+    },
+    {
+      "name": "TD2D/D08/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 8085126417,
+      "compressed_size": 224,
+      "size": 401,
+      "crc": 785206432,
+      "method": 8,
+      "flags": 8,
+      "sha256": "958b9ebe7491ea6b8534960657232d31e42430323ced653962268eff26422f37"
+    },
+    {
+      "name": "TD2D/D08/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 8152720130,
+      "compressed_size": 219,
+      "size": 394,
+      "crc": 1539343563,
+      "method": 8,
+      "flags": 8,
+      "sha256": "f5a71caee1d86e2954ff5b6d5d6a9a6f8f899535cd7eb4df09c41375863387d5"
+    },
+    {
+      "name": "TD2D/D08/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 8319537894,
+      "compressed_size": 219,
+      "size": 392,
+      "crc": 4089838692,
+      "method": 8,
+      "flags": 8,
+      "sha256": "d3e609e32f9f5cc1d705e7f5a46f677dc3d92b7394b0981689c9df18a2a29a92"
+    },
+    {
+      "name": "TD2D/D08/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 7997832199,
+      "compressed_size": 222,
+      "size": 401,
+      "crc": 373758903,
+      "method": 8,
+      "flags": 8,
+      "sha256": "ef396492ff9e5bdc6e90a56aca2aec0a4c466bcb7e19e7c6c6ac85216b7457c4"
+    },
+    {
+      "name": "TD2D/D08/texting/takeoverScenarioInformations.csv",
+      "header_offset": 8113616154,
+      "compressed_size": 222,
+      "size": 393,
+      "crc": 563975978,
+      "method": 8,
+      "flags": 8,
+      "sha256": "6bca6cd200facdcce115bf342d634cb5dfe4563ea77ea6bf0653daf52e942db8"
+    },
+    {
+      "name": "TD2D/D09/0back/takeoverScenarioInformations.csv",
+      "header_offset": 5914427959,
+      "compressed_size": 222,
+      "size": 400,
+      "crc": 4195546570,
+      "method": 8,
+      "flags": 8,
+      "sha256": "53574b8e7c47b0eaa74d47f93549f273b1dfe766cd0b811a2a2e3a8c75f971f3"
+    },
+    {
+      "name": "TD2D/D09/1back/takeoverScenarioInformations.csv",
+      "header_offset": 5888108754,
+      "compressed_size": 218,
+      "size": 384,
+      "crc": 3591726317,
+      "method": 8,
+      "flags": 8,
+      "sha256": "02341a2b99f778e4820f091100d2df0b10e21fa3f0881a76172c7fd4ea160e22"
+    },
+    {
+      "name": "TD2D/D09/2back/takeoverScenarioInformations.csv",
+      "header_offset": 5949752706,
+      "compressed_size": 216,
+      "size": 385,
+      "crc": 1671882030,
+      "method": 8,
+      "flags": 8,
+      "sha256": "944119e0f2138541e7b2fd6a7ceb49b3ec917e9290dd5c619a51dc54132537b0"
+    },
+    {
+      "name": "TD2D/D09/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 5999276336,
+      "compressed_size": 224,
+      "size": 399,
+      "crc": 3925787122,
+      "method": 8,
+      "flags": 8,
+      "sha256": "087770132f39444ea6a827e3e6fe6bcb3712f9dfc90f1517cbe6eb264e8fa01d"
+    },
+    {
+      "name": "TD2D/D09/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 5787286999,
+      "compressed_size": 221,
+      "size": 393,
+      "crc": 4116545617,
+      "method": 8,
+      "flags": 8,
+      "sha256": "eebabec0581cde1954a14704e118ab30a2b61a0c301acfc054091a12ca6c0281"
+    },
+    {
+      "name": "TD2D/D09/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 5809083987,
+      "compressed_size": 222,
+      "size": 398,
+      "crc": 1198412712,
+      "method": 8,
+      "flags": 8,
+      "sha256": "93b758a766b8b2aa757dc338f03c706eed81fd072a6ae4900e354103ffa27570"
+    },
+    {
+      "name": "TD2D/D09/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 5863173211,
+      "compressed_size": 214,
+      "size": 386,
+      "crc": 416678825,
+      "method": 8,
+      "flags": 8,
+      "sha256": "a26e9e6ba761ce2528f3ed426f817a074b316f73d73a05251a69d97871ebf9b0"
+    },
+    {
+      "name": "TD2D/D09/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 5978589512,
+      "compressed_size": 221,
+      "size": 400,
+      "crc": 1825146238,
+      "method": 8,
+      "flags": 8,
+      "sha256": "829ba95a186d6b34522a4c1dd92282462ad327e484108a5a65d2531de29345b9"
+    },
+    {
+      "name": "TD2D/D09/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 5757562279,
+      "compressed_size": 222,
+      "size": 391,
+      "crc": 4091634350,
+      "method": 8,
+      "flags": 8,
+      "sha256": "0905ee18197d2197cdd0a5a34d41d809651d50f2baadcc24efd94713dcb9e052"
+    },
+    {
+      "name": "TD2D/D09/texting/takeoverScenarioInformations.csv",
+      "header_offset": 5829900851,
+      "compressed_size": 222,
+      "size": 398,
+      "crc": 188465797,
+      "method": 8,
+      "flags": 8,
+      "sha256": "48ceb33da31c76c01c0c77c3c5e9b59fbed214d4eb9968c4fb4df6e9539d1f4d"
+    },
+    {
+      "name": "TD2D/D10/0back/takeoverScenarioInformations.csv",
+      "header_offset": 13305589360,
+      "compressed_size": 219,
+      "size": 394,
+      "crc": 3942988621,
+      "method": 8,
+      "flags": 8,
+      "sha256": "686fda7fb7ced4068a581348251815df6beb7b4fcc92bdd7af001f39a41f60bd"
+    },
+    {
+      "name": "TD2D/D10/1back/takeoverScenarioInformations.csv",
+      "header_offset": 13274585856,
+      "compressed_size": 222,
+      "size": 395,
+      "crc": 1011334882,
+      "method": 8,
+      "flags": 8,
+      "sha256": "53f6bc5dc3bbd551b5497ac994bb3fdab71f2267b5fa33b32240af26de64f4c1"
+    },
+    {
+      "name": "TD2D/D10/2back/takeoverScenarioInformations.csv",
+      "header_offset": 13345985883,
+      "compressed_size": 222,
+      "size": 400,
+      "crc": 3355599822,
+      "method": 8,
+      "flags": 8,
+      "sha256": "ff099c9b299671d0a4a8b23b58deb999a91d725f3a5821f07a1ebf4c89a96df5"
+    },
+    {
+      "name": "TD2D/D10/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 13419820366,
+      "compressed_size": 224,
+      "size": 398,
+      "crc": 2740077244,
+      "method": 8,
+      "flags": 8,
+      "sha256": "f3106126b27dd3a1736cf016c4ae234c2f9fc20e04937c21ac76f5610e33c1ef"
+    },
+    {
+      "name": "TD2D/D10/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 13104110939,
+      "compressed_size": 221,
+      "size": 392,
+      "crc": 271991132,
+      "method": 8,
+      "flags": 8,
+      "sha256": "dabaddd9eea349cc9dc93f7ffb80a3695fe68dbea250f022cb2bf09942aebcdf"
+    },
+    {
+      "name": "TD2D/D10/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 13146472982,
+      "compressed_size": 214,
+      "size": 382,
+      "crc": 3602166207,
+      "method": 8,
+      "flags": 8,
+      "sha256": "17f311963b2d873c6d962d2497665502fd49faa1668d2c7af08998597dcd4013"
+    },
+    {
+      "name": "TD2D/D10/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 13222862840,
+      "compressed_size": 218,
+      "size": 396,
+      "crc": 3495439926,
+      "method": 8,
+      "flags": 8,
+      "sha256": "8162d62c24e0af83afc17620bb05d574eee83f3aa71d2ed3c94c4f423f916f98"
+    },
+    {
+      "name": "TD2D/D10/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 13390160797,
+      "compressed_size": 226,
+      "size": 400,
+      "crc": 3571445548,
+      "method": 8,
+      "flags": 8,
+      "sha256": "587deab61e3045947e710d946e2bf855a0510317ee2bf9bc93f823c1409813da"
+    },
+    {
+      "name": "TD2D/D10/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 13059188034,
+      "compressed_size": 220,
+      "size": 389,
+      "crc": 3508384517,
+      "method": 8,
+      "flags": 8,
+      "sha256": "bd080eb31e3dae2f887576ae681e0b68220e24f8f08cba02ebc0a2e3eb518eba"
+    },
+    {
+      "name": "TD2D/D10/texting/takeoverScenarioInformations.csv",
+      "header_offset": 13179970063,
+      "compressed_size": 221,
+      "size": 400,
+      "crc": 2844903641,
+      "method": 8,
+      "flags": 8,
+      "sha256": "33c5e41610adf05d062613fa1f7634a4dae2ff28503f1cc8a77bcfa47c4105ab"
+    },
+    {
+      "name": "TD2D/D11/0back/takeoverScenarioInformations.csv",
+      "header_offset": 10193512142,
+      "compressed_size": 216,
+      "size": 396,
+      "crc": 3266008389,
+      "method": 8,
+      "flags": 8,
+      "sha256": "cbf70c578cda6ae4c2c819886ac87fdfe4be8303307cb20c6345a4207cfb20e1"
+    },
+    {
+      "name": "TD2D/D11/1back/takeoverScenarioInformations.csv",
+      "header_offset": 10170750460,
+      "compressed_size": 212,
+      "size": 382,
+      "crc": 2210778502,
+      "method": 8,
+      "flags": 8,
+      "sha256": "3ee3a64214bbfb96073e814759832b5cc8b9c0ed7e710d47858cbca93d6943ed"
+    },
+    {
+      "name": "TD2D/D11/2back/takeoverScenarioInformations.csv",
+      "header_offset": 10222529554,
+      "compressed_size": 219,
+      "size": 387,
+      "crc": 1719241005,
+      "method": 8,
+      "flags": 8,
+      "sha256": "a6ec28f4eabec97e0ecb5840ab2089d76e6c78416dd43294d96b97a1d38dc4da"
+    },
+    {
+      "name": "TD2D/D11/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 10280596371,
+      "compressed_size": 218,
+      "size": 392,
+      "crc": 3541441086,
+      "method": 8,
+      "flags": 8,
+      "sha256": "fe0c97f49b88a2903da96234f67a44f3098fec39c791a6f2f6dd62e45cf9966a"
+    },
+    {
+      "name": "TD2D/D11/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 10051439873,
+      "compressed_size": 219,
+      "size": 395,
+      "crc": 1251718236,
+      "method": 8,
+      "flags": 8,
+      "sha256": "cf9d8b6dc64fbb0bf1ecf6d58ff03890e1fc02513ca452da0833ff0caa034eb8"
+    },
+    {
+      "name": "TD2D/D11/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 10081159742,
+      "compressed_size": 222,
+      "size": 397,
+      "crc": 131046037,
+      "method": 8,
+      "flags": 8,
+      "sha256": "90bae9ab69b37d9162eb72a6090e8ed2a484dee9a7c91c632989e33c8122b679"
+    },
+    {
+      "name": "TD2D/D11/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 10144160730,
+      "compressed_size": 217,
+      "size": 399,
+      "crc": 1498742481,
+      "method": 8,
+      "flags": 8,
+      "sha256": "2ecbdf05414afed79b81eb9ff1f49e5ab111165d481c23fe229a89db6f7846be"
+    },
+    {
+      "name": "TD2D/D11/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 10254674685,
+      "compressed_size": 220,
+      "size": 406,
+      "crc": 2580101360,
+      "method": 8,
+      "flags": 8,
+      "sha256": "cc88c816cfc554afcfa9c444090dbd2f7a587bab914d1aeca07ac107899a8175"
+    },
+    {
+      "name": "TD2D/D11/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 10020123821,
+      "compressed_size": 216,
+      "size": 395,
+      "crc": 4202748225,
+      "method": 8,
+      "flags": 8,
+      "sha256": "20f21ed276d61debb9be5c931ecabf17c5e548253654ea351bed05b5cd3eec94"
+    },
+    {
+      "name": "TD2D/D11/texting/takeoverScenarioInformations.csv",
+      "header_offset": 10102498675,
+      "compressed_size": 221,
+      "size": 390,
+      "crc": 3870569340,
+      "method": 8,
+      "flags": 8,
+      "sha256": "86423bea838e48b60c4e95b62ed8d79ccc05f75e692d93625c48a6a82d43f7e1"
+    },
+    {
+      "name": "TD2D/D12/0back/takeoverScenarioInformations.csv",
+      "header_offset": 234289929,
+      "compressed_size": 222,
+      "size": 398,
+      "crc": 2291680333,
+      "method": 8,
+      "flags": 8,
+      "sha256": "499f11f376d2679c156e0410e162e8692fe5f54cffeb390285c27d7969c09420"
+    },
+    {
+      "name": "TD2D/D12/1back/takeoverScenarioInformations.csv",
+      "header_offset": 199924805,
+      "compressed_size": 218,
+      "size": 397,
+      "crc": 3542694739,
+      "method": 8,
+      "flags": 8,
+      "sha256": "e1ec41b396a7aea2d88be069df7b4757ba09ab7fbc22937c3d5771dfb8f45b21"
+    },
+    {
+      "name": "TD2D/D12/2back/takeoverScenarioInformations.csv",
+      "header_offset": 278235192,
+      "compressed_size": 222,
+      "size": 392,
+      "crc": 4079386385,
+      "method": 8,
+      "flags": 8,
+      "sha256": "2ae8b1617dbd0990672542ac43f3ac623cdd8f95da5c1bd73830d61aff20d580"
+    },
+    {
+      "name": "TD2D/D12/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 347138799,
+      "compressed_size": 220,
+      "size": 395,
+      "crc": 3166090615,
+      "method": 8,
+      "flags": 8,
+      "sha256": "140f0b79e50034c40a88c1e63f7b712f3f9412e82eaa278bc32b4585092c202e"
+    },
+    {
+      "name": "TD2D/D12/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 76549235,
+      "compressed_size": 224,
+      "size": 397,
+      "crc": 3092529147,
+      "method": 8,
+      "flags": 8,
+      "sha256": "066ff4b120f0c12b535423ae6db09bd5ce06df9ce9ad240ef8ff401296c64866"
+    },
+    {
+      "name": "TD2D/D12/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 111652597,
+      "compressed_size": 220,
+      "size": 389,
+      "crc": 2607293117,
+      "method": 8,
+      "flags": 8,
+      "sha256": "0f601dbb7bb917e3803f553012f6b406f94edf9db81aa91710afae5637f5e26e"
+    },
+    {
+      "name": "TD2D/D12/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 170390299,
+      "compressed_size": 218,
+      "size": 384,
+      "crc": 3687370877,
+      "method": 8,
+      "flags": 8,
+      "sha256": "e8a84794fdd962d56daf01ba6440c2568354ecaccbeb27564c0575591e7adda3"
+    },
+    {
+      "name": "TD2D/D12/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 318980901,
+      "compressed_size": 223,
+      "size": 403,
+      "crc": 928085251,
+      "method": 8,
+      "flags": 8,
+      "sha256": "81c002233d8c656b01aa60019690c4f4ad567d49b9a56f849149b63031242cdd"
+    },
+    {
+      "name": "TD2D/D12/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 37847216,
+      "compressed_size": 221,
+      "size": 391,
+      "crc": 2424285899,
+      "method": 8,
+      "flags": 8,
+      "sha256": "5f99241ab9ab1ee0e730d04fbabeb72b6327e8c89d6d828bddcf342687c116bb"
+    },
+    {
+      "name": "TD2D/D12/texting/takeoverScenarioInformations.csv",
+      "header_offset": 148372652,
+      "compressed_size": 222,
+      "size": 390,
+      "crc": 61320832,
+      "method": 8,
+      "flags": 8,
+      "sha256": "32d3398c29e4982e4cac8daf872e298a6bab7d5490ab9a458aea6377781210f5"
+    },
+    {
+      "name": "TD2D/D13/0back/takeoverScenarioInformations.csv",
+      "header_offset": 3750423542,
+      "compressed_size": 221,
+      "size": 390,
+      "crc": 1448333920,
+      "method": 8,
+      "flags": 8,
+      "sha256": "e0d6cec5facf7b59771f359c376936ddbe44cff1d7138c6eab7ab13e2b38ef5c"
+    },
+    {
+      "name": "TD2D/D13/1back/takeoverScenarioInformations.csv",
+      "header_offset": 3728052844,
+      "compressed_size": 218,
+      "size": 394,
+      "crc": 2140848007,
+      "method": 8,
+      "flags": 8,
+      "sha256": "c1428e665263984dc6d82472a0bf001f2992db34e9623aec6e4af6e85145f9bf"
+    },
+    {
+      "name": "TD2D/D13/2back/takeoverScenarioInformations.csv",
+      "header_offset": 3785204207,
+      "compressed_size": 221,
+      "size": 400,
+      "crc": 3826448632,
+      "method": 8,
+      "flags": 8,
+      "sha256": "f646a6486e83d816ca1e9f9854dbb74d36c67b9392ccb0d1914434e3a9eda86c"
+    },
+    {
+      "name": "TD2D/D13/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 3849088150,
+      "compressed_size": 225,
+      "size": 397,
+      "crc": 3402829129,
+      "method": 8,
+      "flags": 8,
+      "sha256": "56272d1fbb2ad132b8ae304034a13fe98d72e0ca5049322c5f8f7feafb89bd27"
+    },
+    {
+      "name": "TD2D/D13/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 3570481171,
+      "compressed_size": 222,
+      "size": 393,
+      "crc": 2594690124,
+      "method": 8,
+      "flags": 8,
+      "sha256": "ad693dbb703a51dfda462a5d7a6f4c5f298c296c3f2dce0b477767430e6740f3"
+    },
+    {
+      "name": "TD2D/D13/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 3609227981,
+      "compressed_size": 219,
+      "size": 400,
+      "crc": 3574613702,
+      "method": 8,
+      "flags": 8,
+      "sha256": "6fc6a1e7f3f4c3ffbcc4ae0950ef3d839e3fc929b0fe969135ac68e841b013c2"
+    },
+    {
+      "name": "TD2D/D13/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 3690254847,
+      "compressed_size": 218,
+      "size": 381,
+      "crc": 2443007365,
+      "method": 8,
+      "flags": 8,
+      "sha256": "6142fc1c329ff053d0f71cc9d8899d6d5bc726d0247ce8f4a4c3f83052886561"
+    },
+    {
+      "name": "TD2D/D13/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 3826125260,
+      "compressed_size": 221,
+      "size": 395,
+      "crc": 3759135456,
+      "method": 8,
+      "flags": 8,
+      "sha256": "cc0df6c4dedcc238e093c5e854bcabf80b61f14979d025413feab2da32772d9d"
+    },
+    {
+      "name": "TD2D/D13/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 3530042974,
+      "compressed_size": 222,
+      "size": 402,
+      "crc": 3312915683,
+      "method": 8,
+      "flags": 8,
+      "sha256": "2e899a4dab2e88f9258ef47179544661e32c082d812f329c710c27f295296a14"
+    },
+    {
+      "name": "TD2D/D13/texting/takeoverScenarioInformations.csv",
+      "header_offset": 3661217313,
+      "compressed_size": 224,
+      "size": 400,
+      "crc": 1300369584,
+      "method": 8,
+      "flags": 8,
+      "sha256": "6388035c0f8bd831263a1d44bf5dd41ba461472cbc76faaa3485d733ddebe6c4"
+    },
+    {
+      "name": "TD2D/D14/0back/takeoverScenarioInformations.csv",
+      "header_offset": 3409036515,
+      "compressed_size": 222,
+      "size": 389,
+      "crc": 2840956505,
+      "method": 8,
+      "flags": 8,
+      "sha256": "71f385f306514356f851f46576a6bd05222b4aacf7029b5348f9ba13e9d4bfcd"
+    },
+    {
+      "name": "TD2D/D14/1back/takeoverScenarioInformations.csv",
+      "header_offset": 3386338398,
+      "compressed_size": 223,
+      "size": 402,
+      "crc": 1109036111,
+      "method": 8,
+      "flags": 8,
+      "sha256": "798a66597109cdb26800d7929889b5fe71d2dd37c047451e404a26b744e59f5e"
+    },
+    {
+      "name": "TD2D/D14/2back/takeoverScenarioInformations.csv",
+      "header_offset": 3443385637,
+      "compressed_size": 224,
+      "size": 392,
+      "crc": 1628513195,
+      "method": 8,
+      "flags": 8,
+      "sha256": "822beaeb32fba4088025e965c8555a537d3902c81715d1474596fb7c3672765a"
+    },
+    {
+      "name": "TD2D/D14/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 3495369993,
+      "compressed_size": 226,
+      "size": 399,
+      "crc": 1215719498,
+      "method": 8,
+      "flags": 8,
+      "sha256": "13c15b46a8751eddf4c3ecf7b401fd338b67e87947d5476c9a0a7ce1c1e755f6"
+    },
+    {
+      "name": "TD2D/D14/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 3251869352,
+      "compressed_size": 219,
+      "size": 391,
+      "crc": 565703322,
+      "method": 8,
+      "flags": 8,
+      "sha256": "516cc5f06189c0e0c13b036bec4666cd969c53f8cbfbcee3e6a3f75fa674ed8f"
+    },
+    {
+      "name": "TD2D/D14/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 3283207594,
+      "compressed_size": 221,
+      "size": 391,
+      "crc": 1902481726,
+      "method": 8,
+      "flags": 8,
+      "sha256": "d6c675ee048fe4cb5a235f475ceb1fca7439a2316e75a32546ef20f5b69ecafa"
+    },
+    {
+      "name": "TD2D/D14/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 3350324786,
+      "compressed_size": 222,
+      "size": 390,
+      "crc": 2399214860,
+      "method": 8,
+      "flags": 8,
+      "sha256": "e7ecac7b4b910596c04428ed291729b17134eb800081ff2e26f3aa21df62acee"
+    },
+    {
+      "name": "TD2D/D14/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 3473881851,
+      "compressed_size": 217,
+      "size": 382,
+      "crc": 2425657963,
+      "method": 8,
+      "flags": 8,
+      "sha256": "0427ad3ba0cd6070bfbd9f6b1d516fb93c76778e708888eecba530f49a5ff0b3"
+    },
+    {
+      "name": "TD2D/D14/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 3226505665,
+      "compressed_size": 214,
+      "size": 383,
+      "crc": 477942800,
+      "method": 8,
+      "flags": 8,
+      "sha256": "752cb412f8033989e33ed29465dec6179091a66f27e2d72af9df80d5200f74a1"
+    },
+    {
+      "name": "TD2D/D14/texting/takeoverScenarioInformations.csv",
+      "header_offset": 3316191642,
+      "compressed_size": 224,
+      "size": 402,
+      "crc": 34112679,
+      "method": 8,
+      "flags": 8,
+      "sha256": "76f8ba7f3e0ee554927c0a7e1be97302302f80fe13149222896271781cf3d4cb"
+    },
+    {
+      "name": "TD2D/D15/0back/takeoverScenarioInformations.csv",
+      "header_offset": 558355708,
+      "compressed_size": 220,
+      "size": 393,
+      "crc": 1795990852,
+      "method": 8,
+      "flags": 8,
+      "sha256": "e826b0c25ded10db3123ad292a30d4b5dd427b3bfa407bb9e8042bc3bd5fa0c5"
+    },
+    {
+      "name": "TD2D/D15/1back/takeoverScenarioInformations.csv",
+      "header_offset": 520595024,
+      "compressed_size": 218,
+      "size": 390,
+      "crc": 3549684837,
+      "method": 8,
+      "flags": 8,
+      "sha256": "34f0e85a5ff298a7fcd1bda8e75e6a9299a332774cf126a83b2b5d35027aefba"
+    },
+    {
+      "name": "TD2D/D15/2back/takeoverScenarioInformations.csv",
+      "header_offset": 586008217,
+      "compressed_size": 217,
+      "size": 383,
+      "crc": 65860716,
+      "method": 8,
+      "flags": 8,
+      "sha256": "2333f4491d892a8acfea64e7d3bcb76917be6ab20dd165d92bfb64c49329985b"
+    },
+    {
+      "name": "TD2D/D15/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 666758713,
+      "compressed_size": 220,
+      "size": 391,
+      "crc": 4244866760,
+      "method": 8,
+      "flags": 8,
+      "sha256": "c78eda0c04d6ef30d8acb610302d1c18f312523df3e57bb4b595d954ab998ae0"
+    },
+    {
+      "name": "TD2D/D15/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 399398671,
+      "compressed_size": 215,
+      "size": 390,
+      "crc": 4127108273,
+      "method": 8,
+      "flags": 8,
+      "sha256": "3133929ae56fe3759dde9c54dd46ed4da8da8659bd6d242220bad5b3b24a6487"
+    },
+    {
+      "name": "TD2D/D15/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 435705914,
+      "compressed_size": 222,
+      "size": 399,
+      "crc": 3496539815,
+      "method": 8,
+      "flags": 8,
+      "sha256": "51063a7d49c99d82d8db3c36c7f4ac93fd34dfeb541d9eddc7bb8dec0a07cdf6"
+    },
+    {
+      "name": "TD2D/D15/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 493109043,
+      "compressed_size": 218,
+      "size": 397,
+      "crc": 161881622,
+      "method": 8,
+      "flags": 8,
+      "sha256": "a6ae845f8fc7bb461b963c1c23dd263fd4f78dddf2b8c347c97b2b1f418ff39f"
+    },
+    {
+      "name": "TD2D/D15/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 627713394,
+      "compressed_size": 214,
+      "size": 384,
+      "crc": 3946866025,
+      "method": 8,
+      "flags": 8,
+      "sha256": "c51b27935e05d674e5abcc23c13009b91b7f39086ed9a7935bf12866f7e2794b"
+    },
+    {
+      "name": "TD2D/D15/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 373720158,
+      "compressed_size": 221,
+      "size": 390,
+      "crc": 1776900180,
+      "method": 8,
+      "flags": 8,
+      "sha256": "30b6604123500775981287dff44d261dec36f7084883934f3fe3cd849d349b96"
+    },
+    {
+      "name": "TD2D/D15/texting/takeoverScenarioInformations.csv",
+      "header_offset": 471947322,
+      "compressed_size": 222,
+      "size": 394,
+      "crc": 2776343268,
+      "method": 8,
+      "flags": 8,
+      "sha256": "cd8a7c6aba93cbf15361d1f10768673bfb6b80768b8d3f7a7bf63797bbd89122"
+    },
+    {
+      "name": "TD2D/D16/0back/takeoverScenarioInformations.csv",
+      "header_offset": 9878266329,
+      "compressed_size": 220,
+      "size": 392,
+      "crc": 2898315886,
+      "method": 8,
+      "flags": 8,
+      "sha256": "a055fea93b5633d7585387492f3dab1c23d08732c6155a902612f565c86318c5"
+    },
+    {
+      "name": "TD2D/D16/1back/takeoverScenarioInformations.csv",
+      "header_offset": 9833918155,
+      "compressed_size": 216,
+      "size": 382,
+      "crc": 3297697450,
+      "method": 8,
+      "flags": 8,
+      "sha256": "fa0b034f646aee07c8f5f8c9bf2049529d1be92fd5746fccdfd7040359f24d13"
+    },
+    {
+      "name": "TD2D/D16/2back/takeoverScenarioInformations.csv",
+      "header_offset": 9913248252,
+      "compressed_size": 222,
+      "size": 401,
+      "crc": 3043519769,
+      "method": 8,
+      "flags": 8,
+      "sha256": "7f0e0f0e03b67a7ac0ae804dff37dbb97c19c4c57b5f5bbd87e4264513733766"
+    },
+    {
+      "name": "TD2D/D16/audiobook listening/takeoverScenarioInformations.csv",
+      "header_offset": 9992592808,
+      "compressed_size": 224,
+      "size": 398,
+      "crc": 3547319479,
+      "method": 8,
+      "flags": 8,
+      "sha256": "74b352e196d8650b9afb9022eafd4693b124bb7286dbcd5e3702c614c0e8c21b"
+    },
+    {
+      "name": "TD2D/D16/auditory gaming/takeoverScenarioInformations.csv",
+      "header_offset": 9688416676,
+      "compressed_size": 218,
+      "size": 391,
+      "crc": 300551764,
+      "method": 8,
+      "flags": 8,
+      "sha256": "6e5155e1027df8008eef8ba73fab3294e26beeda162ab1378251ef6093c8d54a"
+    },
+    {
+      "name": "TD2D/D16/auditory texting/takeoverScenarioInformations.csv",
+      "header_offset": 9723671057,
+      "compressed_size": 220,
+      "size": 390,
+      "crc": 354115271,
+      "method": 8,
+      "flags": 8,
+      "sha256": "e9fb953d2e0b913736975eea88067f8d26bbb0436c61e48a6e86989236a7ec24"
+    },
+    {
+      "name": "TD2D/D16/baseline/takeoverScenarioInformations.csv",
+      "header_offset": 9789979031,
+      "compressed_size": 215,
+      "size": 389,
+      "crc": 2539783631,
+      "method": 8,
+      "flags": 8,
+      "sha256": "d403e71d86bc69092702840cf594f91715047c0f81b89a51917d9c11bbf01226"
+    },
+    {
+      "name": "TD2D/D16/ebook reading/takeoverScenarioInformations.csv",
+      "header_offset": 9961236505,
+      "compressed_size": 222,
+      "size": 393,
+      "crc": 448496086,
+      "method": 8,
+      "flags": 8,
+      "sha256": "aaf84255d8f7734d57c689f3d18f77e8711253c097d06d42490d8906dd547df8"
+    },
+    {
+      "name": "TD2D/D16/gaming/takeoverScenarioInformations.csv",
+      "header_offset": 9654955079,
+      "compressed_size": 223,
+      "size": 391,
+      "crc": 228252301,
+      "method": 8,
+      "flags": 8,
+      "sha256": "c03ee43a5ca5eae9563f2c49f7b4c03a11715f4b07c7096f0abf5496b6d223c4"
+    },
+    {
+      "name": "TD2D/D16/texting/takeoverScenarioInformations.csv",
+      "header_offset": 9762919383,
+      "compressed_size": 221,
+      "size": 398,
+      "crc": 515195273,
+      "method": 8,
+      "flags": 8,
+      "sha256": "b0930c7663e458f2828a535eee8b06c17241b4fb36da3e6db45083c688b067a2"
+    },
+    {
+      "name": "TD2D/D17/0back/takeoverScenarioInformations.csv",
+      "header_offset": 13937734599,
+      "compressed_size": 218,
+      "size": 390,
+      "crc": 2528668510,
+      "method": 8,
+      "flags": 8,
+      "sha256": "518565a8aac2f39b34b0b0e6c202887b88dfb1c41479a5e76bdc6428b5cc1ff3"
+    }
+  ]
+}

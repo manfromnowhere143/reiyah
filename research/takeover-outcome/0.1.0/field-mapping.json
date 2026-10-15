@@ -1,0 +1,11 @@
+{
+  "artifact_id": "reiyah.takeover-outcome.field-mapping",
+  "version": "0.1.0",
+  "timing": "After protocol freeze and first raw row inspection; before calculation of any pair contrast",
+  "reason": "Descriptor uses display names different from released files. Preserve original protocol and raw bytes; bind release spellings explicitly without changing population, estimand or stopping rule.",
+  "outcome": {"paper": "takeoverSuccess", "release": "takeoverResult", "values": ["Success", "Failure"]},
+  "events": {"front_vehicle": "F", "left_pedestrian": "L", "right_pedestrian": "R"},
+  "conditions": {"0back": "0-back", "1back": "1-back", "2back": "2-back", "ebook reading": "e-book reading", "auditory texting": "voice texting", "auditory gaming": "voice gaming"},
+  "evidence": "Release headers and directory, descriptor meanings, author supplementary notebook cells7/9. Event mapping is semantic interpretation of explicit source names; raw simulator-version linkage remains unqualified.",
+  "first_exposed_record": "D01/0back: right_pedestrian, Success, 600ms; no pair calculation used to choose aliases."
+}

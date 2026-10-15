@@ -1,3 +1,53 @@
+# Current entry: takeover initiation and recorded outcome, 15 October 2026
+
+Continuation version: 0.1.101. NEXT_SESSION/CONTINUATION version: 0.1.28.
+Read the [takeover audit](../research/takeover-outcome/0.1.0/README.md),
+[decision](../research/takeover-outcome/0.1.0/DECISION.md),
+[result](../research/takeover-outcome/0.1.0/result.json) and
+[verification](../research/takeover-outcome/0.1.0/verification.json).
+
+Base fbd0fb7a4f8b7937d1c632763e5f9d37bef0650e. Fresh owner
+`takeover-outcome-2026-10-15-iuqaa0px`; historical controller remains at 74fbacc.
+The prior four-image microscopy comparison and all earlier owners stay closed.
+This distinct HARBOR measurement question asks whether recorded initiation
+latency can replace recorded outcome before any readiness model is admitted.
+
+The complete 500-trial endpoint is INCOMPLETE: 161 source summaries captured,
+160 usable, 1 malformed header, 339 unacquired after DNS failure and one bounded
+continuation ending in HTTP429. No further acquisition, replacement or rate-limit
+workaround. Among 70 comparable success/failure pairs within driver/event type,
+5 have a faster failure and slower success; 65 have a faster success, 0 tie.
+Three drivers supply the 5 counterexamples. These conditional records reject
+monotone latency substitution; they do not establish causal harm from fast
+response, a population rate, physical recovery or road transfer.
+
+A separately authored SQL census agrees with the rational producer on all
+193 strata and 5 witnesses. 161 original source digests/mappings checked; 28 boundary
+and forgery controls pass. An initial integer-only parser rejected two finite
+decimal timestamps; original code/result/protocol remain retained. The explicit
+exact-decimal correction changes 158 usable to 160 and 63 concordant to 65, leaving
+all 5 discordant pairs unchanged. An extra populated unnamed column remains
+rejected. Source field aliases are documented after one row exposure.
+
+The packet publishes an attributed CC-BY-4.0 essential-field projection and
+Reiyah-authored code/results. Raw source payload stays private. 179 direct requests,
+4,552,481 retained response bytes; failed response-body overhead, web transport,
+human active work and billing remain unknown. The archive's full MD5 and the
+original simulator runtime were not verified. A CAPTCHA capture is ineligible.
+No training, model inference, outreach, platform or Gate A release change.
+
+Next: keep initiation and outcome separate. A future bounded continuation may
+reuse exact captured bytes and acquire the 339 missing summaries at a server-
+respecting rate; resolve the malformed row from source evidence. Do not restart
+this closed acquisition or claim a complete census. Before a recovery benchmark,
+qualify outcome provenance, temporal coverage and a shared recovery horizon.
+Predictive/causal model integration and broad product expansion remain unadmitted;
+no superiority or complete-work benefit is established. Gate A remains
+operator-unaccepted. Standard research checks bind historical evidence rather
+than silently replaying it. Exact publisher readback is separate closeout evidence.
+
+---
+
 # Current entry: complete four-image reference comparison, 15 October 2026
 
 Continuation version: 0.1.100. NEXT_SESSION/CONTINUATION version: 0.1.27.

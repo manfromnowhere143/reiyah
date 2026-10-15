@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.27`
+Version: `0.1.28`
 
 Lifecycle status: `proposed`
 
@@ -15,7 +15,28 @@ evidence bindings and resolve live Git state before acting.
 The [ready-to-use continuation prompt](NEXT_SESSION_PROMPT.md) carries Daniel's
 15 October direction into the next session.
 
-## Current completed endpoint, 15 October 2026
+## Current measurement endpoint, 15 October 2026
+
+The [takeover-outcome audit](../research/takeover-outcome/0.1.0/README.md) adds a
+real-record HARBOR measurement check. The intended 500-trial census is incomplete:
+161 summaries captured, 160 usable, 1 malformed, 339 missing. Acquisition is closed
+after a DNS failure and one continuation ending in HTTP429. Five of 70 comparable
+within-driver/event success/failure pairs show faster failure than success, across
+three drivers; 65 show the reverse and none tie. Exact rational and separate SQL
+calculations agree. Keep reaction time and recorded outcome separate. These are
+conditional counterexamples, not causal effects, population rates or physical
+recovery evidence. The initial parser correction, source-name mapping, missing
+records and all failures remain explicit; 28 qualification controls pass.
+
+A future bounded continuation can reuse verified source bytes and fill the
+missing 339 summaries while respecting server limits, but this owner is closed.
+Resolve the malformed record from source evidence. A complete descriptive census
+would still need outcome provenance and a qualified follow-up horizon before a
+recovery benchmark. Do not train a readiness model on a silently substituted
+target, infer road transfer, restart old owners or claim work savings. This
+measurement step preserves the closed microscopy null result and the full mission.
+
+## Historical completed endpoint, 15 October 2026
 
 The [0.8.0 comparison](../research/multiorg-reference-admission/0.8.0/README.md)
 completes all four selected image pairs and twelve reference cases. The two

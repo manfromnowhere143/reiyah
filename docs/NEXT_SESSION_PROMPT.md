@@ -1,6 +1,6 @@
 # Reiyah: next-session instructions
 
-Document ID: `reiyah.next-session-prompt`. Version: `0.1.1`.
+Document ID: `reiyah.next-session-prompt`. Version: `0.1.2`.
 15 October 2026. Operator-directed continuation instructions. The linked packet
 records results; this prompt adds no acceptance or external-action authority.
 
@@ -43,7 +43,19 @@ premises, and simplify or replace an approach when justified. Preserve frozen
 comparisons and report abandoned or failed questions honestly; do not tune
 endpoints, omit costs or relabel results to manufacture success.
 
-At the latest retained scientific checkpoint, packet 0.8.0, all four selected
+The latest measurement checkpoint is research/takeover-outcome/0.1.0. Its
+500-trial endpoint is incomplete: 161 captured summaries, 160 usable, 1 malformed,
+339 unacquired after DNS failure and one bounded continuation ending in HTTP429.
+Five same-driver/event pairs show a faster failed trial than a successful trial;
+65 show the reverse, 0 tie. Separate rational and SQL calculations agree. Keep
+reaction time separate from recorded outcome. No causal effect, physical recovery
+or population rate is established. Preserve the exact-decimal parser correction
+and initial result. This acquisition owner is closed. A future bounded plan may
+reuse exact captured bytes and fill missing summaries at a server-respecting rate;
+source qualification of the malformed record and outcome horizon remain needed.
+Do not jump from this partial audit to training, causal or safety claims.
+
+At the prior completed perception checkpoint, packet 0.8.0, all four selected
 image pairs and twelve reference cases are complete. Two earlier pairs were
 rechecked and reused; the two incomplete images completed 624 new forwards. The
 original primary result is no_observed_fragility: G=[126, 201], P=[119.5, 201]. Native,

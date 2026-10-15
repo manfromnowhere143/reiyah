@@ -1,0 +1,172 @@
+{
+  "artifact_id": "reiyah.takeover-outcome.provenance",
+  "version": "0.1.0",
+  "base": "fbd0fb7a4f8b7937d1c632763e5f9d37bef0650e",
+  "owner": "takeover-outcome-2026-10-15-iuqaa0px",
+  "scope": "Exploratory public-source measurement audit; not Gate A release evidence or independent scientific replication",
+  "clock": {
+    "owner_started_utc": "2026-10-15T11:26:40.698293+00:00",
+    "verification_utc": "2026-10-15T11:41:20.451248+00:00",
+    "owner_elapsed_seconds_at_verification": 879.752973,
+    "wall_allowance_seconds": 7200,
+    "closeout_reserve_seconds": 1800,
+    "pre_owner_current_reading": "Uninstrumented; not included in owner interval",
+    "historical_active_work": "Unknown, not reset",
+    "provider_charges": null,
+    "human_active_seconds": null
+  },
+  "runtime": {
+    "python": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "real_executable": "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+    "executable_sha256": "3b6b69c61fd3765ab911d701cd17293b4a9154a0cb4973b546f05847f9a164c6",
+    "platform": "macOS-14.4-arm64-arm-64bit-Mach-O",
+    "sqlite": "3.51.2",
+    "stdlib_identity": "Interpreter and source/input hashes recorded; not a complete system-library attestation"
+  },
+  "execution": {
+    "network": "macOS sandbox deny network before interpreter startup",
+    "timeout_seconds_per_process": 120,
+    "largest_child_rss_bytes": 24657920,
+    "rss_admission_bytes": 1073741824,
+    "rss_limit_scope": "Observed peak checked after these small executions; not an enforced whole-process address-space cap",
+    "commands": [
+      {
+        "args": [
+          "prepare_records.py",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-outcome-2026-10-15-iuqaa0px/raw/TD2D",
+          "rebuilt-records.json"
+        ],
+        "seconds": 0.04765304201282561,
+        "exit_code": 0
+      },
+      {
+        "args": [
+          "analyze.py",
+          "--records",
+          "records.json",
+          "--output",
+          "result.json"
+        ],
+        "seconds": 0.06215370801510289,
+        "exit_code": 0
+      },
+      {
+        "args": [
+          "verify.py",
+          "--records",
+          "records.json",
+          "--result",
+          "result.json",
+          "--raw-root",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-outcome-2026-10-15-iuqaa0px/raw/TD2D",
+          "--output",
+          "verification.json"
+        ],
+        "seconds": 0.08802112500416115,
+        "exit_code": 0
+      },
+      {
+        "args": [
+          "controls.py"
+        ],
+        "seconds": 0.15103095798986033,
+        "exit_code": 0
+      }
+    ],
+    "input_hashes_unchanged": 166,
+    "projection_and_result_byte_equal": true,
+    "current_controls": 28
+  },
+  "acquisition": {
+    "closed": true,
+    "original_request_cap": 28,
+    "amended_before_outcome_acquisition": 540,
+    "bytes_cap": 67108864,
+    "first_attempt": {
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "completed": 28,
+      "seconds": 7.7631156670395285
+    },
+    "one_continuation": {
+      "error": "HTTP Error 429: TOO MANY REQUESTS",
+      "completed": 161,
+      "seconds": 29.461840667005163
+    },
+    "reason_for_stop": "HTTP429 after one DNS recovery; no further requests to dataset",
+    "prior_reused_summaries": 28,
+    "duplicate_successful_member_fetches": 1,
+    "direct_requests": 179,
+    "retained_response_bytes": 4552481,
+    "web_discovery": "Three web-tool calls before owner and three after owner in this continuation; underlying transport counts, response bytes, earlier-conversation totals and billing unknown",
+    "payload": "161 public summary CSVs, 63252 uncompressed bytes; original payload stays private"
+  },
+  "corrections": {
+    "field_mapping": "Paper names differ from release. Exact mapping retained after one row exposure before pairwise calculation.",
+    "numeric_contract": "Integer-only assumption rejected two finite decimal timestamps. Original protocol, code, projection and result retained; exact-rational correction made after initial result.",
+    "initial": {
+      "valid": 158,
+      "invalid": 3,
+      "missing": 339,
+      "discordant": 5,
+      "concordant": 63,
+      "tied": 0
+    },
+    "corrected": {
+      "valid": 160,
+      "invalid": 1,
+      "missing": 339,
+      "discordant": 5,
+      "concordant": 65,
+      "tied": 0
+    }
+  },
+  "sources": {
+    "author_hosted_pdf": "17-page DOI-bearing descriptor manuscript, accepted7March2025; final-publication date placeholder; exact publisher PDF identity unknown",
+    "dataset_license": "CC-BY-4.0",
+    "article_license": "CC-BY-NC-ND-4.0; paper payload not redistributed",
+    "supplement_tree": "221070726063334915f521de90b6263a10abe22c",
+    "simulator_tree": "115320f093f40650218f4312381680966ef27528",
+    "code_license": "No root license established in inspected supplemental tree; private inspection only, no upstream code execution or redistribution",
+    "pmc_capture": "CAPTCHA, ineligible"
+  },
+  "private_evidence": [
+    {
+      "path": "PLAN.json",
+      "sha256": "dba0a4e36704cc46ca0150dd0194920f3195df8878349f4c3e576077cf72d20c"
+    },
+    {
+      "path": "PLAN-v0.1.1.json",
+      "sha256": "0795e132c0b35affbefb90bed7be2deaa5c8b748ff845a1fe6dd1476700012b1"
+    },
+    {
+      "path": "TRANSPORT_CONTINUATION.json",
+      "sha256": "47b72edaf2f2207568228cb41a3592a79055d5a45b8e6c356f9860b8c07c43a6"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "ff2098f0e8ab734e54a97f3dc1e1230498697a244a70136fa252f55b691ea14e"
+    },
+    {
+      "path": "ANALYSIS_FREEZE.json",
+      "sha256": "82997d28bbef2128badb608e16090fa0d28d7360cfe3fefb163d5a77a9204992"
+    },
+    {
+      "path": "FINAL_EXECUTION_FREEZE.json",
+      "sha256": "853bc0a267f528f8baf1629bfa4b657eda053321aeb5678b800cdbc982568849"
+    },
+    {
+      "path": "acquisition.jsonl",
+      "sha256": "a58358b968ab3e997259d35d0c1277af18dd7e46f75a3da3f33d642c9a72adb7"
+    },
+    {
+      "path": "selected-members.json",
+      "sha256": "603ee710056044d649eb9e17553b504bb01bfa14060906d337a5a4bd2a51cced"
+    },
+    {
+      "path": "archive-members.json",
+      "sha256": "53985e77a2e653e3aeaf271d93d491762f8647f74d9514dbfd8fe5de3c02d689"
+    }
+  ],
+  "workflow": "OpenAI Codex assisted source review and authored analysis/checker; local shell, Python and web tools. No subagents, external inference, upstream code execution or paid service. This is one investigation."
+}
