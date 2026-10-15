@@ -1,10 +1,10 @@
 {
   "artifact_id": "reiyah.continuation",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "as_of": "2026-10-15",
   "lifecycle_status": "proposed",
   "authority": "Navigation and retained evidence bindings only; verify latest operator instruction, repository rules and live Git state",
-  "editorial_base": "d7f8b7b366059c9887c3993bb68e85fd735714d7",
+  "editorial_base": "eab40c1aed608c1dca0ad1150fc19ede4f51e1ea",
   "release": {
     "tag": "research-2026-10-11",
     "commit": "5de377af25a4c6882096ebbc91808b19feafb628"
@@ -26,7 +26,7 @@
   "decision": "bounded_scientific_investigation_only",
   "product_expansion": "stopped_pending_demonstrated_value",
   "case_admitted": false,
-  "next_action": "Source census complete and closed. Check for a materially new public or provided capture/export and outcome-monitoring packet resolving release binding, clock semantics, first-maneuver rule, event time, monitoring interval and censoring. Qualify it before recovery labels or readiness modeling; stop if insufficient. No repeated summary acquisition, exposed contrast rerun, unrelated stream expansion or outreach. Gate A remains unaccepted.",
+  "next_action": "TD2D census and inspected simulator history are closed. Qualify the manD 1.0 / Dataverse 2.0 documentation lead under a new bounded protocol: inspect coverage workbook and extraction source, establish vehicle/environment archive feasibility, freeze metadata-based selection and resource bounds before opening outcomes. Verify actual time units, cross-channel alignment, native resolution, event meaning, missingness, monitoring and censoring before recovery labels or readiness modeling. Stop if insufficient; no repeated exposed contrasts, unrelated sensor expansion or outreach. Gate A remains unaccepted.",
   "required_case_fields": [
     "decision",
     "metric",
@@ -1387,7 +1387,7 @@
     },
     {
       "path": "docs/NEXT_SESSION_PROMPT.md",
-      "sha256": "8950854a5afc040e3d86f5f3b0243ff4e26c1a89cde001ac8da5de9137cd6b72"
+      "sha256": "bfe257bfd8f39c86d9e867b22ccdffa3aa00648262aaa2484fe62b26ec8150e3"
     },
     {
       "path": "research/multiorg-reference-admission/0.8.0/DECISION.md",
@@ -1668,6 +1668,58 @@
     {
       "path": "research/takeover-outcome/0.2.0/verify.py",
       "sha256": "9df096bcc5e957c3b87933e7c2e6862081daf79c9e7168c2d52ba25b831aa971"
+    },
+    {
+      "path": "research/takeover-source-lineage/0.1.0/DECISION.md",
+      "sha256": "2c91267828cf0e18783d7431e5dafdfc249f10c42f75bf5b8a73de2675d57871"
+    },
+    {
+      "path": "research/takeover-source-lineage/0.1.0/README.md",
+      "sha256": "5652fea0312e273ecf6183f3cc494f6280fdbb620d11a1c43ff3b087831ddeb9"
+    },
+    {
+      "path": "research/takeover-source-lineage/0.1.0/audit.py",
+      "sha256": "25cacb71d43ea174cab979413c5c48a7ad1d747818645b0cf7bdc6c9c5f60b38"
+    },
+    {
+      "path": "research/takeover-source-lineage/0.1.0/controls.json",
+      "sha256": "055025844defe44ffc6f013446a69b8729c82603691f252f435d5bc90dad5856"
+    },
+    {
+      "path": "research/takeover-source-lineage/0.1.0/controls.py",
+      "sha256": "75a14d27e16bb7c9e6f656eecedb3bdd209925f7925260e9f037cf68d08136be"
+    },
+    {
+      "path": "research/takeover-source-lineage/0.1.0/git-verification.json",
+      "sha256": "98a6cf7dc7725c946d363270c9b414c7a548c3cf0d2e92a1690a076396e115bb"
+    },
+    {
+      "path": "research/takeover-source-lineage/0.1.0/git_check.py",
+      "sha256": "dc9a835f7d2a4c3a87e9a1e1a77deeb7c953a0187a115cd96a3f291e71e6e7af"
+    },
+    {
+      "path": "research/takeover-source-lineage/0.1.0/inventory.json",
+      "sha256": "b67290013fad389d6d7b7acfab3e9552982935a07f26b704c8e9598f06f8f395"
+    },
+    {
+      "path": "research/takeover-source-lineage/0.1.0/next-source.json",
+      "sha256": "976ae6e207482450a8afcf63df696ba5b23b052c5503f78e1e05cc5327ea1ea0"
+    },
+    {
+      "path": "research/takeover-source-lineage/0.1.0/protocol.json",
+      "sha256": "86d14a9f5481b4455d78255bbadb823894fd4024e5cb7dc7aef67c27959d4315"
+    },
+    {
+      "path": "research/takeover-source-lineage/0.1.0/provenance.json",
+      "sha256": "5c686a5f47c72764c90f862cd86dff50c8d6eddb78e3af6818ef8ae6c28eecd1"
+    },
+    {
+      "path": "research/takeover-source-lineage/0.1.0/result.json",
+      "sha256": "819a5296c5d516e2532d3c4b20105801a217127e9ce415927fb2e1b3bad255aa"
+    },
+    {
+      "path": "research/takeover-source-lineage/0.1.0/source-custody.json",
+      "sha256": "1ef580d1998a9729cc27cf4ce20c67c80dbc5c65edfabcac6a51a85f5580acca"
     }
   ],
   "presentation_verification": {
@@ -2246,5 +2298,39 @@
     "timing_report": "research/takeover-outcome/0.2.0/timing.json",
     "source_qualification": "research/takeover-outcome/0.2.0/timing-evidence.json",
     "source_census_closed": true
+  },
+  "takeover_source_lineage": {
+    "packet": "research/takeover-source-lineage/0.1.0",
+    "status": "history_route_closed_next_source_documentation_only",
+    "public_branches": 2,
+    "commits": 47,
+    "root_trees": 45,
+    "git_tree_objects": 175,
+    "git_recursive_entries_checked": 11781,
+    "historical_python_blob_variants": 160,
+    "additional_python_variants": 0,
+    "missing_examples_controller_found": false,
+    "exact_reason_controls": 8,
+    "TD2D_timing_qualified": false,
+    "next_source": {
+      "name": "manD 1.0",
+      "doi": "10.7910/DVN/SG9TMD",
+      "dataverse_release": "2.0",
+      "published": "2024-01-24",
+      "candidate_only": true,
+      "dictionary_native_hz": 20,
+      "dictionary_delivered_hz": 256,
+      "time_unit_cells": "empty",
+      "participant_records_acquired": 0,
+      "outcome_timing_qualified": false,
+      "qualification": "research/takeover-source-lineage/0.1.0/next-source.json"
+    },
+    "acquisition_closed": true,
+    "source_requests": 60,
+    "retained_source_bytes": 6661888,
+    "prior_source_requests": 533,
+    "prior_retained_source_bytes": 5329247,
+    "readiness_model_admitted": false,
+    "Gate_A_accepted": false
   }
 }

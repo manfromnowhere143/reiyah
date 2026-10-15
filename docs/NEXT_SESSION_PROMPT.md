@@ -1,6 +1,6 @@
 # Reiyah: next-session instructions
 
-Document ID: `reiyah.next-session-prompt`. Version: `0.1.3`.
+Document ID: `reiyah.next-session-prompt`. Version: `0.1.4`.
 15 October 2026. Operator-directed continuation instructions. The linked packet
 records results; this prompt adds no acceptance or external-action authority.
 
@@ -55,12 +55,29 @@ Outcome timing remains NOT QUALIFIED for readiness modeling. Positive recorded
 differences do not establish failure-event time, continuously monitored follow-up,
 censoring or a common recovery horizon. The inspected code lacks a release-bound
 capture/export configuration and complete first-maneuver path. Read the 0.2.0
-decision and source findings. This source census is closed; do not reacquire the
-same summaries or rerun the exposed comparison. Check for materially new public
-or provided capture/export and outcome-monitoring evidence that could resolve
-these exact gaps. Qualify it before labels or modeling; stop if it cannot. Keep
-reaction time separate from outcome and pre-event readiness. No outreach, causal,
-physical recovery or population claim. Gate A remains operator-unaccepted.
+decision and source findings. The source census and subsequent simulator-history
+route are closed. The new research/takeover-source-lineage/0.1.0 packet checks 47
+commits across both public branches: no additional Python variants or missing
+examples controller. Reopen TD2D only for a materially new release-linked artifact;
+do not reacquire summaries, replay these trees or rerun the exposed contrast.
+
+The next concrete source candidate is manD 1.0, Dataverse release 2.0. Read the
+new packet's next-source.json and decision. The retained dictionary documents
+vehicle/environment channels acquired at 20 Hz and supplied at 256 Hz, with
+separate takeover, accident and end messages. Time-unit cells are empty; actual
+clock alignment, collision meaning and monitored follow-up remain unqualified.
+No participant records were acquired. Metadata and message names are not outcome
+validation, and upsampling is not finer native timing.
+
+Under a new bounded protocol, inspect the small coverage workbook and extraction
+source first. Establish archive feasibility and select eligible vehicle/environment
+records from metadata before opening outcomes. Freeze acquisition/decompression
+limits and clock/event/missingness checks. The smallest participant archive is
+59,858,301 bytes and exceeds the closed owner's 2 MiB response cap. Stop without
+recovery labels if time units, alignment, outcome meaning or censoring cannot be
+qualified. Keep reaction time, outcome and pre-event readiness separate. No model,
+unrelated sensor expansion, outreach, causal or physical-recovery claim. Gate A
+remains operator-unaccepted.
 
 At the prior completed perception checkpoint, packet 0.8.0, all four selected
 image pairs and twelve reference cases are complete. Two earlier pairs were

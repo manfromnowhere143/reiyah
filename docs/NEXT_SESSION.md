@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.29`
+Version: `0.1.30`
 
 Lifecycle status: `proposed`
 
@@ -15,7 +15,31 @@ evidence bindings and resolve live Git state before acting.
 The [ready-to-use continuation prompt](NEXT_SESSION_PROMPT.md) carries Daniel's
 15 October direction into the next session.
 
-## Current source and timing endpoint, 15 October 2026
+## Current source-history decision and next timing candidate, 15 October 2026
+
+The [history packet](../research/takeover-source-lineage/0.1.0/README.md) closes the
+inspected TD2D simulator history route: 47 commits across two advertised branches,
+45 root trees and 175 checked objects contain no additional Python variants or
+missing examples controller. Standard Git agrees on 11,781 recursive entries;
+eight exact-reason controls pass. This scope does not establish the original
+capture runtime. Reopen only for a materially new release-linked artifact.
+
+A separately bounded [manD documentation screen](../research/takeover-source-lineage/0.1.0/next-source.json)
+provides a concrete next lead: manD 1.0, Dataverse release 2.0, with documented
+vehicle/environment streams and separate event/message codes. Both channels were
+acquired at 20 Hz and supplied at 256 Hz; the dictionary's time-unit cells are
+empty. Scripted events, messages and actual collisions remain distinct. No trial
+record, qualified outcome clock or common monitored horizon is established here.
+
+Next inspect the small coverage workbook and extraction source, then freeze a
+bounded vehicle/environment record qualification if extraction is feasible.
+Select from metadata before outcomes; define request/storage/decompression limits,
+clock alignment, native resolution, missingness and censoring checks. Participant
+archives start at 59,858,301 bytes, beyond this owner's 2 MiB response limit.
+Stop if required temporal evidence cannot be established. No readiness model,
+new inference, unrelated participant streams or outreach. Gate A remains unaccepted.
+
+## Completed TD2D source census, 15 October 2026
 
 The [0.2.0 takeover census](../research/takeover-outcome/0.2.0/README.md) completes
 all 500 original summaries: 161 exact reuses and 339 new captures. All five required
@@ -34,12 +58,11 @@ post-event information. The [decision](../research/takeover-outcome/0.2.0/DECISI
 specifies the missing clock, event-monitor and censoring evidence. No readiness
 model, physical recovery claim, causal claim or Gate A acceptance follows.
 
-This source census is closed. The next useful step is checking whether a materially
-new public or provided capture/export and outcome-monitoring artifact can settle
-those specific gaps. Qualify its release binding and temporal semantics before
-labels or models. Stop if it cannot. Do not reacquire the same summaries, reopen
-old comparisons or add unrelated streams to compensate. No outreach authority is
-created. Preserve all previous failure and cost records and the full HARBOR mission.
+This source census is closed, as is the subsequently checked simulator history.
+Only materially new release-linked capture/export or monitoring evidence can reopen
+TD2D timing. The current bounded next-source direction is above. Do not reacquire
+the same summaries, reopen old contrasts or add unrelated streams to compensate.
+Preserve all previous failure and cost records and the full HARBOR mission.
 
 ## Historical partial measurement endpoint, 15 October 2026
 

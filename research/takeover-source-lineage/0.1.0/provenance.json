@@ -1,0 +1,174 @@
+{
+  "artifact_id": "reiyah.takeover-source-lineage.provenance",
+  "version": "0.1.0",
+  "owner": "takeover-lineage-2026-10-15-finmqd0g",
+  "base": "eab40c1aed608c1dca0ad1150fc19ede4f51e1ea",
+  "started_utc": "2026-10-15T12:13:25.973425+00:00",
+  "verification_utc": "2026-10-15T12:36:57.544621+00:00",
+  "owner_elapsed_seconds_at_verification": 1411.571196,
+  "owner_wall_cap_seconds": 5400,
+  "closeout_reserved_seconds": 1800,
+  "scope": "Static public-source qualification and separately bounded next-source documentation screen. No new empirical outcomes, modeling or Gate A release validation.",
+  "runtime": {
+    "python": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "python_executable": "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+    "python_executable_sha256": "3b6b69c61fd3765ab911d701cd17293b4a9154a0cb4973b546f05847f9a164c6",
+    "git_version": "git version 2.48.1",
+    "platform": "macOS-14.4-arm64-arm-64bit-Mach-O",
+    "identity_limit": "No complete operating-system or library attestation"
+  },
+  "validation": {
+    "passed": true,
+    "inputs_unchanged": 6,
+    "network_denied_before_runtime": true,
+    "input_projection_write_denied": true,
+    "commands": [
+      {
+        "script": "audit.py",
+        "seconds": 0.062445374962408096,
+        "exit_code": 0
+      },
+      {
+        "script": "git_check.py",
+        "seconds": 1.3154698750004172,
+        "exit_code": 0
+      },
+      {
+        "script": "controls.py",
+        "seconds": 0.07590412499848753,
+        "exit_code": 0
+      }
+    ],
+    "producer_replay_byte_equal": true
+  },
+  "controls_review": {
+    "utc": "2026-10-15T12:36:05.641360+00:00",
+    "passed": 8,
+    "inputs": {
+      "controls.py": "75a14d27e16bb7c9e6f656eecedb3bdd209925f7925260e9f037cf68d08136be",
+      "audit.py": "25cacb71d43ea174cab979413c5c48a7ad1d747818645b0cf7bdc6c9c5f60b38",
+      "inventory.json": "b67290013fad389d6d7b7acfab3e9552982935a07f26b704c8e9598f06f8f395"
+    },
+    "change": "Code review found first controls omitted a head rather than an internal parent and changed ordering rather than checking a valid-format corrupted object ID. Retained initial seven-control projection/output; corrected parent omission and added exact Git hash corruption. No scientific result or source change.",
+    "original": "replay-input/controls.py and replay-output/controls.json",
+    "exit_code": 0,
+    "reason_enforcement": "Final review found the runner recorded reasons but only required some ValueError. Added explicit expected-reason assertions for all eight; exact output unchanged. Intermediate runner and receipt retained separately.",
+    "intermediate": "controls-intermediate.py, controls-intermediate.json, CONTROLS_INTERMEDIATE.json",
+    "network_denied_before_runtime": true,
+    "input_projection_write_denied": true
+  },
+  "source_acquisition": {
+    "requests": 60,
+    "retained_bytes": 6661888,
+    "provider_spacing_min_seconds": 2.50083589553833,
+    "prior_requests": 533,
+    "prior_bytes": 5329247,
+    "web_calls": 4,
+    "web_transport_bytes_requests": "Unknown",
+    "source_cap_sentinel_bytes_over_single_body_cap": 1
+  },
+  "effort": {
+    "prior_two_owner_seconds": 2527.19268,
+    "historical_active_effort": "Unknown, not reset",
+    "current_preowner_reading": "Unmeasured",
+    "human_active_seconds": null,
+    "billing": null,
+    "git_transport_overhead": "Unmeasured"
+  },
+  "workflow": "OpenAI Codex assisted public-source review, Python/Git metadata reconstruction and authored checks. No subagents or independent scientific replication. No upstream code execution, participant-data acquisition, external-model campaign, outreach or paid compute.",
+  "private_evidence": [
+    {
+      "path": "PLAN.json",
+      "sha256": "d8865c008c7e8010d6543bd169ee15a2b76245ac9a98ebd24273e8560505914a"
+    },
+    {
+      "path": "NEXT_SOURCE_PLAN.json",
+      "sha256": "f419eda350fa92631e3b73c4a55204545ef8dd545aa36d66a4a095389c23706d"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "a81d93bdeea13866ed2bdee31e81c31f6ad09ade7c7624580d2903cccd2bdf33"
+    },
+    {
+      "path": "VALIDATION_FREEZE.json",
+      "sha256": "6280993f4a8f3dba6078e6ce9e8bc174d80ef6a86921b12fab44cd039cc165cb"
+    },
+    {
+      "path": "VALIDATION.json",
+      "sha256": "f40461503ce45ee1aad2347ea120c18e10f24bdd701590c52a20a0b31352e80e"
+    },
+    {
+      "path": "CONTROLS_FINAL.json",
+      "sha256": "2436f3bcab40c6c4786087077629b3d1a6bf0377ab85a7babce3e95537916fe3"
+    },
+    {
+      "path": "HISTORY_COMPLETE.json",
+      "sha256": "e2b1b810b4faf296802c7700f293fd30e0ff9e8558da1ad8bd49471726cf5d90"
+    },
+    {
+      "path": "history-tree-index.json",
+      "sha256": "c27ee25b949a0d08c0f84f6ca2d40276384d30300becb90ba83f17a040630f64"
+    },
+    {
+      "path": "capture.py",
+      "sha256": "6d53f284d40c28f21ec7bb78a640a7561351f2bb66bb4e1c513be8be15c4c8fa"
+    },
+    {
+      "path": "history.py",
+      "sha256": "74eb242ac3065f36032105962155af095657b74f445a3639d929ff0a365f1599"
+    },
+    {
+      "path": "extract_trees.py",
+      "sha256": "a40fba823d06489ad2e2c236f324e5be478fa8e4e97a037b1dcc824a9d0d5285"
+    },
+    {
+      "path": "validate.py",
+      "sha256": "301ff020c64624491311b5731deffcaca1b9c40518016761f1480a54810e0801"
+    },
+    {
+      "path": "build_custody.py",
+      "sha256": "a695015e7eb6c2271ea57b815cdc0c89d8d195fbf61cd57904d9b71a8e4d1b14"
+    },
+    {
+      "path": "next_source.py",
+      "sha256": "e83cb7e6087c816aa1ea9c7973b2a3c713675487732c8acacaa72cf53f7bc767"
+    },
+    {
+      "path": "finish_source_screen.py",
+      "sha256": "9462020351f3bf86c739d80f6aa7dbd1b129a44b0839669df6341e25583cd25c"
+    },
+    {
+      "path": "MAND_DICTIONARY_CAPTURE.json",
+      "sha256": "a109422b7f94521e205b979518f283b754d1103d91dc2dbad1e2f2512681a6d4"
+    },
+    {
+      "path": "MAND_DICTIONARY_EXTRACT.json",
+      "sha256": "6e1041c6c5bf949b69af11f604bbcd770ec34de0def02c52546852e2fe27c586"
+    },
+    {
+      "path": "CONTROLS_INTERMEDIATE.json",
+      "sha256": "ab0f5e36f9be1a599cfa3cd2cd9bcc9a586969273a85a361f8c70a3c53a36adc"
+    },
+    {
+      "path": "controls-intermediate.py",
+      "sha256": "47d8b39f3b438975041a52e928130be72224245b4e8ac6affa2b624c5f2090a2"
+    },
+    {
+      "path": "controls-intermediate.json",
+      "sha256": "055025844defe44ffc6f013446a69b8729c82603691f252f435d5bc90dad5856"
+    },
+    {
+      "path": "check_final_controls.py",
+      "sha256": "1544097fa4f429df159502bdbd844773d7c43391ea38f4a36b0761879773d4fa"
+    },
+    {
+      "path": "verify_dictionary.py",
+      "sha256": "4c11c477d8761251fb867d4130bfe1330a6bea75064d92c5253bf09adf206afe"
+    },
+    {
+      "path": "MAND_DICTIONARY_VERIFICATION.json",
+      "sha256": "2c158977e14d66453671e46eeac70379c5e65dd07ec69a72f1178018d6521595"
+    }
+  ],
+  "Gate_A_operator_accepted": false
+}

@@ -1,3 +1,66 @@
+# Current entry: source-history closure and next timing candidate, 15 October 2026
+
+Continuation version: 0.1.103. NEXT_SESSION/CONTINUATION version: 0.1.30.
+Read the [source-history packet](../research/takeover-source-lineage/0.1.0/README.md),
+[decision](../research/takeover-source-lineage/0.1.0/DECISION.md),
+[result](../research/takeover-source-lineage/0.1.0/result.json) and
+[next-source qualification](../research/takeover-source-lineage/0.1.0/next-source.json).
+
+Base eab40c1aed608c1dca0ad1150fc19ede4f51e1ea. Fresh owner
+`takeover-lineage-2026-10-15-finmqd0g`; historical controller remains clean at
+74fbacc. Daniel requested continuing the mission, retaining complete source
+coverage and qualified outcome timing before readiness modeling. The completed
+TD2D census, all prior results and closed owners remain unchanged.
+
+The two advertised simulator branches contain 47 commits, 45 root trees and
+175 unique Git tree objects. All 160 historical Python blob variants are present
+in current main; the missing examples controller path never appears. Standard
+Git agrees on every object and 11,781 recursive entries. No new capture/export
+implementation was found in this scope. Close this history route at the retained
+refs. This is an inventory result, not proof of the original experiment's runtime
+or evidence that its labels are wrong. TD2D outcome timing remains unqualified.
+
+A separately frozen metadata screen identifies manD 1.0, Dataverse release 2.0
+(24 January 2024, CC BY 4.0), as a candidate for bounded record qualification.
+Four primary captures include official structure, metadata, descriptor and the
+released data dictionary. Dictionary bytes match the advertised MD5; 181 stored
+cells in the two relevant sheets are checked without changing the workbook.
+Vehicle and environment acquisition is documented at 20 Hz, supplied at 256 Hz.
+Their time-unit cells are empty. Environment scenario codes and vehicle messages
+separately identify takeover, accident and end-of-ride events; they do not yet
+qualify measured collision times, monitoring or censoring. No participant records
+were acquired. Upsampling is not finer native timing, and code 13's accident
+message must not be silently treated as an ego-vehicle collision timestamp.
+
+Eight controls pass for exact declared rejection reasons. The initial seven-control
+projection and intermediate eight-control runner remain retained; review corrected
+an omitted-head control, added valid-format hash corruption and enforced exact
+reasons. The original scientific result is unchanged. Network-denied replay with
+write-denied inputs reproduces the inventory result and Git check. Appropriate
+repository research checks bind historical transcripts, without replaying them or
+running Gate A release validation. Publication and exact publisher readback remain
+separate private closeout evidence, not independent transport verification.
+
+Source capture stopped at the original 60-request cap: 6,661,888 retained bytes,
+sequential pacing of at least 2.5 seconds. Two failures remain explicit: an
+inapplicable organization endpoint returned 404; an oversized related-study PDF
+was stopped at 2 MiB plus a one-byte overflow sentinel. Its prefix is incomplete
+and ineligible; the extra byte is a recorded cap deviation, counted in costs.
+Provider backoff was honored. Earlier 533 source requests and 5,329,247 retained
+bytes remain counted. Human active effort, billing and web/Git overhead are unknown.
+
+Next: inspect manD's small AvailableData coverage workbook and DataExtraction
+source under a new bounded protocol, then assess vehicle/environment-only archive
+extraction. The smallest participant archive is 59,858,301 bytes and exceeds this
+owner's response cap. Freeze metadata-based selection, acquisition/decompression
+bounds and clock/event/missingness tests before opening outcomes. Qualify actual
+time units, alignment, native resolution, event meaning and monitored follow-up;
+stop without labels if evidence is insufficient. No readiness modeling, unrelated
+sensor expansion or outreach. Do not repeat the TD2D census/history or exposed
+microscopy contrasts. Gate A remains operator-unaccepted.
+
+---
+
 # Current entry: complete takeover coverage and temporal qualification, 15 October 2026
 
 Continuation version: 0.1.102. NEXT_SESSION/CONTINUATION version: 0.1.29.

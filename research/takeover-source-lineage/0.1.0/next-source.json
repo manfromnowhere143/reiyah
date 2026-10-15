@@ -1,0 +1,218 @@
+{
+  "artifact_id": "reiyah.takeover-source-lineage.next-source",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "question": "Does a different public source offer explicit time-series channels suitable for a bounded temporal qualification?",
+  "status": "candidate_for_bounded_record_qualification_only",
+  "selection": "TD2D descriptor identified manD as a takeover dataset with vehicle-state records. Selected for measurement availability; not a broad ranking or superiority claim. Separate screen frozen before these direct captures.",
+  "dataset": {
+    "title": "manD 1.0",
+    "doi": "10.7910/DVN/SG9TMD",
+    "repository": "Harvard Dataverse",
+    "authors": [
+      "Khazar Dargahi Nobari",
+      "Torsten Bertram"
+    ],
+    "dataset_release_version": "2.0",
+    "version_id": 369906,
+    "published_utc": "2024-01-24T19:07:46Z",
+    "initial_publication_date": "2023-11-02",
+    "license": {
+      "name": "CC BY 4.0",
+      "uri": "http://creativecommons.org/licenses/by/4.0",
+      "iconUri": "https://licensebuttons.net/l/by/4.0/88x31.png"
+    },
+    "files": 56,
+    "restricted_files": 0,
+    "total_advertised_file_bytes": 47767225456,
+    "participant_archives": 50,
+    "smallest_participant_archive_bytes": 59858301,
+    "largest_participant_archive_bytes": 1612101312,
+    "interpretation": "Dataset title 1.0 and Dataverse release 2.0 are distinct identifiers. Unrestricted is the retained metadata state, not a promise of future availability."
+  },
+  "primary_documentation": {
+    "article_doi": "10.1038/s41597-024-03137-y",
+    "article_published": "2024-03-30",
+    "article": "https://www.nature.com/articles/s41597-024-03137-y",
+    "official_structure": "https://rst.etit.tu-dortmund.de/forschung/datensaetze/mand-10/data-structure/",
+    "scope": "Documents time-series file structure and scripted takeover scenarios; neither documentation nor a descriptive event label proves actual outcome timing."
+  },
+  "documentation_files": [
+    {
+      "name": "AvailableData.xlsx",
+      "id": 7512595,
+      "bytes": 22938,
+      "source_checksum": {
+        "type": "MD5",
+        "value": "f9928b824eda24530a7d00d0a639aeab"
+      },
+      "acquired": false,
+      "executed": false
+    },
+    {
+      "name": "DataExtraction.py",
+      "id": 7521567,
+      "bytes": 8573,
+      "source_checksum": {
+        "type": "MD5",
+        "value": "d933566bd46e9c53c76063bce6f0e898"
+      },
+      "acquired": false,
+      "executed": false
+    },
+    {
+      "name": "DataInfoSheet.xlsx",
+      "id": 7512593,
+      "bytes": 211728,
+      "source_checksum": {
+        "type": "MD5",
+        "value": "6f1bd5d03ef86b43e1008bc16090dd7e"
+      },
+      "acquired": true,
+      "executed": false
+    }
+  ],
+  "dictionary": {
+    "file_id": 7512593,
+    "name": "DataInfoSheet.xlsx",
+    "sha256": "1723e92bf35bf82131447ec57dda4501c77f34c184213add364c505fc4168e4f",
+    "md5": "6f1bd5d03ef86b43e1008bc16090dd7e",
+    "advertised_md5_matches": true,
+    "inspection": "Read-only ZIP/XML stored values and cell coordinates, no edits, recalculation, spreadsheet export or upstream code execution. Source bytes unchanged.",
+    "native_and_delivered_rates": [
+      {
+        "sheet": "Environment",
+        "range": "A1",
+        "native_hz": 20,
+        "delivered_hz": 256
+      },
+      {
+        "sheet": "Vehicle",
+        "range": "A1",
+        "native_hz": 20,
+        "delivered_hz": 256
+      }
+    ],
+    "time_fields": [
+      {
+        "sheet": "Environment",
+        "range": "B3:D3",
+        "field": "time",
+        "unit_cell": "C3",
+        "unit_value": null
+      },
+      {
+        "sheet": "Vehicle",
+        "range": "B4:D4",
+        "field": "time",
+        "unit_cell": "C4",
+        "unit_value": null
+      }
+    ],
+    "time_limit": "Time descriptions mention rate 256; the inspected unit cells have no stored value. Origin, numeric unit, interpolation and actual cross-file alignment remain unresolved. A delivered 256 Hz grid must not be treated as native event precision; nominal native spacing is 50 ms, not a proved error bound.",
+    "event_codes": [
+      {
+        "sheet": "Environment",
+        "field": "EnvironmentalEvent",
+        "field_cell": "B55",
+        "range": "D62:E62",
+        "code": 5,
+        "meaning": "takeover situation"
+      },
+      {
+        "sheet": "Environment",
+        "field": "EnvironmentalEvent",
+        "field_cell": "B55",
+        "range": "D63:E63",
+        "code": 6,
+        "meaning": "accident"
+      },
+      {
+        "sheet": "Vehicle",
+        "field": "InteractionSignal",
+        "field_cell": "B15",
+        "range": "D20:F20",
+        "code": 3,
+        "meaning": "takeover request message"
+      },
+      {
+        "sheet": "Vehicle",
+        "field": "InteractionSignal",
+        "field_cell": "B15",
+        "range": "D29:F29",
+        "code": 12,
+        "meaning": "end-of-ride parking message"
+      },
+      {
+        "sheet": "Vehicle",
+        "field": "InteractionSignal",
+        "field_cell": "B15",
+        "range": "D30:F30",
+        "code": 13,
+        "meaning": "accident-detected message; prompt to continue driving"
+      }
+    ],
+    "automation_state": {
+      "sheet": "Vehicle",
+      "range": "B13:E13",
+      "field": "AutomationMode",
+      "codes": {
+        "0": "manual",
+        "1": "adaptive cruise control",
+        "-1": "lane keeping",
+        "2": "automated level 2",
+        "3": "automated level 3"
+      }
+    },
+    "missing_sentinel": {
+      "sheet": "Environment",
+      "range": "B20:D20",
+      "field_family": "distance to surrounding vehicle",
+      "value": 99000,
+      "meaning": "distance unavailable, not a measured large safe distance"
+    },
+    "event_limit": "Environmental scenario code, system message, driver action, automation transition, measured collision and recovery are different observations. Event onset/offset persistence, message latency and relation to ego-vehicle failure are not qualified by these names."
+  },
+  "acquisition": {
+    "direct_requests": 4,
+    "retained_bytes": 886290,
+    "captures": [
+      {
+        "url": "https://rst.etit.tu-dortmund.de/forschung/datensaetze/mand-10/data-structure/",
+        "sha256": "3a88d33b74481ac0898da51a47411b677dd6a04e1085483ad735dc8e9c83b1e6",
+        "bytes": 199464,
+        "started_utc": "2026-10-15T12:29:16.002572+00:00"
+      },
+      {
+        "url": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/SG9TMD",
+        "sha256": "26fb797fda2f53218e7e5045b5295555b9d5a59473bf8d7b9dcb54e2b4949fb6",
+        "bytes": 40747,
+        "started_utc": "2026-10-15T12:29:18.504452+00:00"
+      },
+      {
+        "url": "https://www.nature.com/articles/s41597-024-03137-y",
+        "sha256": "db872621d309a4766e35959ce73e30d7eb40cc3bdc0f80d04f1aad9268c7ccfd",
+        "bytes": 434351,
+        "started_utc": "2026-10-15T12:29:21.014497+00:00"
+      },
+      {
+        "url": "https://dataverse.harvard.edu/api/access/datafile/7512593",
+        "sha256": "1723e92bf35bf82131447ec57dda4501c77f34c184213add364c505fc4168e4f",
+        "bytes": 211728,
+        "started_utc": "2026-10-15T12:29:46.580131+00:00"
+      }
+    ],
+    "participant_record_files_acquired": 0,
+    "source_scope": "Official structure page, repository metadata, primary article and released dictionary only. Original payloads remain private."
+  },
+  "next_executable_step": [
+    "Under a new bounded protocol, retain the small AvailableData coverage workbook and read DataExtraction.py as source; do not execute it. Establish which public runs contain the required vehicle/environment channels and how nested archives can be inspected safely.",
+    "Freeze metadata-based sample selection, request/storage/decompression/time bounds, eligible streams and event/clock checks before opening trial outcomes. The smallest participant archive is already 59,858,301 bytes; none fits this owner's 2 MiB response cap. Do not select the shortest archive as if it were a complete representative run.",
+    "Admit only permitted vehicle/environment records for a bounded observation check. Verify actual time units, origin, monotonicity, cross-channel alignment, native resolution, code onset/offset and recording termination. Keep missing/sentinel values distinct from zero or successful recovery.",
+    "Stop without constructing recovery labels if capture timing, collision meaning or monitored follow-up/censoring cannot be qualified. A documentation lead alone cannot admit readiness modeling."
+  ],
+  "outcome_timing_qualified": false,
+  "recovery_endpoint_admitted": false,
+  "readiness_model_admitted": false,
+  "Gate_A_operator_accepted": false
+}

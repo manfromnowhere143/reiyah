@@ -1,0 +1,39 @@
+{
+  "artifact_id": "reiyah.takeover-source-lineage.controls",
+  "version": "0.1.0",
+  "passed": 8,
+  "checks": [
+    {
+      "control": "alter_tree_entry_name",
+      "rejected_for": "tree_order"
+    },
+    {
+      "control": "corrupt_blob_identity",
+      "rejected_for": "git_tree_hash"
+    },
+    {
+      "control": "omit_referenced_tree",
+      "rejected_for": "commit_shape"
+    },
+    {
+      "control": "omit_parent_commit",
+      "rejected_for": "missing_parent"
+    },
+    {
+      "control": "forge_complete_entry_count",
+      "rejected_for": "truncated_tree_inventory"
+    },
+    {
+      "control": "omit_root_source",
+      "rejected_for": "root_source_coverage"
+    },
+    {
+      "control": "invent_parent_cycle",
+      "rejected_for": "parent_cycle"
+    },
+    {
+      "control": "duplicate_json_key",
+      "rejected_for": "duplicate_json_key"
+    }
+  ]
+}
