@@ -1,3 +1,58 @@
+# Current entry: complete takeover coverage and temporal qualification, 15 October 2026
+
+Continuation version: 0.1.102. NEXT_SESSION/CONTINUATION version: 0.1.29.
+Read the [complete census](../research/takeover-outcome/0.2.0/README.md),
+[decision](../research/takeover-outcome/0.2.0/DECISION.md),
+[result](../research/takeover-outcome/0.2.0/result.json),
+[timing qualification](../research/takeover-outcome/0.2.0/timing.json) and
+[source findings](../research/takeover-outcome/0.2.0/timing-evidence.json).
+
+Base d7f8b7b366059c9887c3993bb68e85fd735714d7. Fresh owner
+`takeover-coverage-2026-10-15-r_uqhgpz`; historical controller remains clean at
+74fbacc. The operator requested complete source coverage and outcome timing
+qualification before readiness modeling, explicitly retaining unaccepted Gate A.
+All earlier packets, owners, failures and the closed microscopy result remain intact.
+
+Coverage is COMPLETE: all 500 frozen trial summaries captured and byte-checked,
+161 reused and 339 new. The five uniquely named required fields admit all 500;
+D11/gaming retains its malformed workload suffix. The original full-header
+contract admits 499 and rejects that one row. Both give 242 within-driver/event
+cross-outcome pairs: 19 faster failures across 11 drivers, 223 faster successes,
+0 ties. All ten task success counts and means exactly reproduce descriptor
+Table 4 with the field projection. The strict comparison retains the gaming gap.
+No causal effect, population risk, physical recovery or road transfer is established.
+
+Outcome timing is NOT QUALIFIED for readiness modeling. Event-to-end differences
+range 2,717–23,404 ms (median 5,798); derived first-action-to-end differences range
+1,735–22,015 ms (median 4,788). They are positive on all 500 records. These are
+recorded arithmetic, not proof of continuous monitoring or a common recovery
+horizon. Missing evidence includes release-bound capture/export configuration,
+clock conversion, first-maneuver rule, failure event times and censoring. Inspected
+simulation clocks and optional collision recording do not resolve that binding.
+A required controller import has no matching path in the inspected pinned tree;
+this is an evidence gap, not proof the original experiment was broken.
+
+Separate SQL/Fraction calculations check every pair, all 193 strata and all source
+mappings. Decimal reconstruction agrees on 500 timelines. All 39 controls pass;
+network-denied replay with write-denied inputs reproduces nine outputs and retains
+523 unchanged input files. Source capture used 354 requests and 776,766 retained
+bytes, at least 2.5 seconds between starts; one incorrect code-path 404 is retained.
+Prior requests, failures and costs remain counted; billing and active human work
+are unknown. Raw payload stays private; attributed derived data uses CC BY 4.0.
+
+Next: this source census is closed. Check for a materially new public or provided
+capture/export and outcome-monitoring packet that resolves the exact gaps in the
+decision. Bind it to the existing release and qualify clock, event, monitoring and
+censoring semantics before labels or models. Stop if the evidence is insufficient;
+do not download the same summaries again, rerun exposed contrasts, add physiology
+or eye-video features to compensate, or send outreach without specific authority.
+Readiness modeling and product expansion remain unadmitted. Gate A remains
+operator-unaccepted. Appropriate research checks bind historical transcripts;
+no Gate A release or historical empirical replay is part of this increment.
+Publication and exact publisher readback are separate private closeout evidence.
+
+---
+
 # Current entry: takeover initiation and recorded outcome, 15 October 2026
 
 Continuation version: 0.1.101. NEXT_SESSION/CONTINUATION version: 0.1.28.

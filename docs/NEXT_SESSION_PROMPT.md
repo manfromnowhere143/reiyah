@@ -1,6 +1,6 @@
 # Reiyah: next-session instructions
 
-Document ID: `reiyah.next-session-prompt`. Version: `0.1.2`.
+Document ID: `reiyah.next-session-prompt`. Version: `0.1.3`.
 15 October 2026. Operator-directed continuation instructions. The linked packet
 records results; this prompt adds no acceptance or external-action authority.
 
@@ -43,17 +43,24 @@ premises, and simplify or replace an approach when justified. Preserve frozen
 comparisons and report abandoned or failed questions honestly; do not tune
 endpoints, omit costs or relabel results to manufacture success.
 
-The latest measurement checkpoint is research/takeover-outcome/0.1.0. Its
-500-trial endpoint is incomplete: 161 captured summaries, 160 usable, 1 malformed,
-339 unacquired after DNS failure and one bounded continuation ending in HTTP429.
-Five same-driver/event pairs show a faster failed trial than a successful trial;
-65 show the reverse, 0 tie. Separate rational and SQL calculations agree. Keep
-reaction time separate from recorded outcome. No causal effect, physical recovery
-or population rate is established. Preserve the exact-decimal parser correction
-and initial result. This acquisition owner is closed. A future bounded plan may
-reuse exact captured bytes and fill missing summaries at a server-respecting rate;
-source qualification of the malformed record and outcome horizon remain needed.
-Do not jump from this partial audit to training, causal or safety claims.
+The latest measurement checkpoint is research/takeover-outcome/0.2.0. All 500
+original summaries are captured and byte-checked. The five uniquely named required
+fields admit all 500; a malformed workload suffix remains explicit and the old
+strict-header result admits 499. Both yield 19 faster failures, 223 faster successes
+and 0 ties in 242 within-driver/event pairs, with discordant witnesses from 11 drivers.
+All 10 published task success counts and mean reaction times match exactly under the
+field projection. All 193 strata, 500 source mappings and 39 controls are checked.
+
+Outcome timing remains NOT QUALIFIED for readiness modeling. Positive recorded
+differences do not establish failure-event time, continuously monitored follow-up,
+censoring or a common recovery horizon. The inspected code lacks a release-bound
+capture/export configuration and complete first-maneuver path. Read the 0.2.0
+decision and source findings. This source census is closed; do not reacquire the
+same summaries or rerun the exposed comparison. Check for materially new public
+or provided capture/export and outcome-monitoring evidence that could resolve
+these exact gaps. Qualify it before labels or modeling; stop if it cannot. Keep
+reaction time separate from outcome and pre-event readiness. No outreach, causal,
+physical recovery or population claim. Gate A remains operator-unaccepted.
 
 At the prior completed perception checkpoint, packet 0.8.0, all four selected
 image pairs and twelve reference cases are complete. Two earlier pairs were

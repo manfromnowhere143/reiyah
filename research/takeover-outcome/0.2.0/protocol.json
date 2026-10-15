@@ -1,0 +1,47 @@
+{
+  "artifact_id": "reiyah.takeover-outcome.continuation-protocol",
+  "version": "0.2.0",
+  "lifecycle_status": "exploratory",
+  "frozen_utc": "2026-10-15T11:49:51.935224+00:00",
+  "base": "d7f8b7b366059c9887c3993bb68e85fd735714d7",
+  "inherited_protocol": {
+    "path": "../0.1.0/protocol.json",
+    "sha256": "c0093bcc02b3e04141f83f04af89d7101fbd9dc00be4b0b17fd71cbeb2885114"
+  },
+  "exposure": "161 prior summaries/160 previously admitted outcomes and5 discordant pairs exposed. Missing339 being captured to disk but not parsed or viewed. No selection or threshold fit.",
+  "population": "Exactly same50 drivers x10 tasks =500 trial summaries from Zenodo14185964v2.",
+  "primary": "Unchanged within-driver and event-type cross-outcome latency pair counts, including ties and all strata. Separately report legacy full-header admission and essential-field admission.",
+  "field_projection": {
+    "required_order": [
+      "criticalEventType",
+      "criticalEventOccurrenceTime",
+      "scenarioEndTime",
+      "takeoverResult",
+      "reactionTime"
+    ],
+    "admit": "Exactly two CSV records; first5 headers match required_order, each required header appears exactly once across the header, row has same width as header and >=5; first5 values independently validate. Non-required suffix fields are not consumed. Preserve full-header anomaly and source bytes.",
+    "reason": "The author notebook explicitly selects takeoverResult and reactionTime by column name. A malformed unrelated workload suffix does not alter unique named first5 cells; it remains an anomaly, not a repaired workload record. Both strict full-record and task-specific projections will be shown.",
+    "numeric": "Finite nonnegative decimal strings, exact rational arithmetic; no binary float, rounding or imputation. Event+reaction <= scenarioEnd is required for duration summaries.",
+    "unknowns": "Unknown outcomes/events, missing/duplicate required headers, unequal row width, absent values or temporal contradictions remain rejected; do not convert to success/zero."
+  },
+  "timing_qualification": {
+    "derived": [
+      "event_to_end = end-event",
+      "first_action_timestamp = event+reaction",
+      "post_action_to_end = end-event-reaction"
+    ],
+    "report": "All rows and strata, invalid order, exact ranges and medians, outcomes separate; no fitted cutoff or population inference.",
+    "positive_qualification_requires": [
+      "explicit meaning and units for each required timestamp",
+      "capture implementation bound to dataset release",
+      "actual outcome event time or documented monitored interval",
+      "censoring and collision/sidewalk detection semantics",
+      "common follow-up definition adequate for target"
+    ],
+    "otherwise": "Recorded arithmetic may be supported while outcome temporal validity remains not_qualified. No readiness modeling.",
+    "controls": "Reject forged common horizon and outcome time from scenarioEnd alone; first maneuver is post-event information, not a pre-event readiness covariate."
+  },
+  "source_reconciliation": "Reproduce all10 task success counts and mean reaction times from descriptor Table4 using both admission contracts; disagreement must remain explicit.",
+  "resource_plan": "PLAN.json:7200s owner,1800s closeout reserve,420 directrequests/16MiB; sequential2.5s pacing and bounded provider-aware backoff.",
+  "Gate_A_operator_accepted": false
+}

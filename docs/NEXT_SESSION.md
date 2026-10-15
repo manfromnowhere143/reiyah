@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.28`
+Version: `0.1.29`
 
 Lifecycle status: `proposed`
 
@@ -15,7 +15,33 @@ evidence bindings and resolve live Git state before acting.
 The [ready-to-use continuation prompt](NEXT_SESSION_PROMPT.md) carries Daniel's
 15 October direction into the next session.
 
-## Current measurement endpoint, 15 October 2026
+## Current source and timing endpoint, 15 October 2026
+
+The [0.2.0 takeover census](../research/takeover-outcome/0.2.0/README.md) completes
+all 500 original summaries: 161 exact reuses and 339 new captures. All five required
+fields are admitted; the malformed workload suffix remains explicit and the
+original strict contract remains available with 499 usable rows. Both yield
+19 faster failures, 223 faster successes and no ties among 242 within-driver/event
+cross-outcome pairs. Eleven drivers supply the discordant witnesses. The full
+field projection exactly reproduces all ten published task success counts and
+mean reaction times. All source mappings, 193 strata and 39 controls are checked.
+
+Outcome temporal qualification is **not established**. Recorded differences are
+positive but variable: event-to-end 2,717–23,404 ms; first-action-to-end
+1,735–22,015 ms. No per-trial failure timestamp, common monitored horizon or
+release-bound capture/export configuration is established. First action is
+post-event information. The [decision](../research/takeover-outcome/0.2.0/DECISION.md)
+specifies the missing clock, event-monitor and censoring evidence. No readiness
+model, physical recovery claim, causal claim or Gate A acceptance follows.
+
+This source census is closed. The next useful step is checking whether a materially
+new public or provided capture/export and outcome-monitoring artifact can settle
+those specific gaps. Qualify its release binding and temporal semantics before
+labels or models. Stop if it cannot. Do not reacquire the same summaries, reopen
+old comparisons or add unrelated streams to compensate. No outreach authority is
+created. Preserve all previous failure and cost records and the full HARBOR mission.
+
+## Historical partial measurement endpoint, 15 October 2026
 
 The [takeover-outcome audit](../research/takeover-outcome/0.1.0/README.md) adds a
 real-record HARBOR measurement check. The intended 500-trial census is incomplete:

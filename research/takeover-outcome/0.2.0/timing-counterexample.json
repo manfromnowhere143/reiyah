@@ -1,0 +1,11 @@
+{
+  "artifact_id":"reiyah.takeover-outcome.timing-counterexample",
+  "version":"0.2.0",
+  "scope":"Authored information-sufficiency control, not an observed trial or physical simulation",
+  "shared_summary":{"event_ms":0,"reaction_ms":1000,"end_ms":6000,"outcome":"Failure"},
+  "unobserved_completions":[
+    {"failure_event_ms":500,"failure_after_first_action":false},
+    {"failure_event_ms":1500,"failure_after_first_action":true}
+  ],
+  "conclusion":"The same summary permits different temporal orderings of failure versus first action. Its fields alone do not identify that ordering or justify substituting scenario end for outcome event time."
+}

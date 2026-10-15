@@ -1,0 +1,22 @@
+{
+  "artifact_id":"reiyah.takeover-outcome.timing-evidence",
+  "version":"0.2.0",
+  "status":"exploratory_source_qualification",
+  "supported":[
+    {"claim":"Descriptor defines event onset, scenario end and first-maneuver latency in milliseconds.","source":"Retained author-hosted descriptor pages7/9; exact byte identity inherited from0.1.0"},
+    {"claim":"Binary outcome is distinct from latency; CSV first5 fields do not contain actual failure event time.","source":"Descriptor pages7/9 and all acquired headers"},
+    {"claim":"Selected pinned source maintains both system and simulation elapsed time.","source":"scenario_manager.py lines119-144; timer.py lines34-44/55-73"},
+    {"claim":"Collision callback saves current GameTime as collision_time; JSON recording is optional.","source":"atomic_criteria.py lines428-433; scenario_runner.py lines272-302/404-420"},
+    {"claim":"The T500RS wrapper imports a controller module whose matching path is absent from the inspected complete repository tree.","source":"manual_control_T500RS.py import from examples.manual_control_T500RS; pinned tree inventory"}
+  ],
+  "not_established":[
+    "Dataset-release binding to a full executable capture configuration and exporter",
+    "Conversion between logging wall clock, simulation clock and released millisecond values",
+    "Which first-maneuver threshold and input device path produced reactionTime",
+    "Per-trial collision or sidewalk-event time and monitor termination/censoring reason",
+    "A common sustained-recovery horizon or pre-event readiness target"
+  ],
+  "interpretation":"These are sufficiency limits of the inspected evidence. They do not establish incorrect labels, broken experiment execution or unavailable private author records.",
+  "decision":"Recorded-time arithmetic is reproducible; outcome temporal qualification is not established. Readiness modeling remains unadmitted.",
+  "Gate_A_operator_accepted":false
+}

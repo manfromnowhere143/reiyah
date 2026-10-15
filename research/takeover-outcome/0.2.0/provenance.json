@@ -1,0 +1,260 @@
+{
+  "artifact_id": "reiyah.takeover-outcome.provenance",
+  "version": "0.2.0",
+  "base": "d7f8b7b366059c9887c3993bb68e85fd735714d7",
+  "owner": "takeover-coverage-2026-10-15-r_uqhgpz",
+  "scope": "Exploratory source census and temporal sufficiency audit, not Gate A release evidence or independent scientific replication",
+  "clock": {
+    "started_utc": "2026-10-15T11:47:22.801080+00:00",
+    "verified_utc": "2026-10-15T12:04:17.259742+00:00",
+    "owner_elapsed_seconds_at_verification": 1014.458662,
+    "owner_cap_seconds": 7200,
+    "closeout_reserve_seconds": 1800,
+    "historical_owner_seconds": 1176.207585,
+    "historical_active_effort": "Unknown, not reset",
+    "preowner_reading": "Unmeasured",
+    "human_active_seconds": null,
+    "billing": null
+  },
+  "runtime": {
+    "python": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "executable": "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+    "executable_sha256": "3b6b69c61fd3765ab911d701cd17293b4a9154a0cb4973b546f05847f9a164c6",
+    "platform": "macOS-14.4-arm64-arm-64bit-Mach-O",
+    "sqlite": "3.51.2",
+    "scope": "Interpreter and input/code identities retained, not full system-library attestation"
+  },
+  "execution": {
+    "passed": true,
+    "network_denied_before_python_start": true,
+    "input_projection_and_raw_sources_write_denied": true,
+    "input_files_unchanged": 523,
+    "byte_equal_outputs": [
+      "admission.json",
+      "controls.json",
+      "legacy-result.json",
+      "legacy-verification.json",
+      "records.json",
+      "result.json",
+      "timing-verification.json",
+      "timing.json",
+      "verification.json"
+    ],
+    "commands": [
+      {
+        "script": "prepare_records.py",
+        "seconds": 0.059056749974843115,
+        "exit_code": 0
+      },
+      {
+        "script": "analyze.py",
+        "seconds": 0.07200816698605195,
+        "exit_code": 0
+      },
+      {
+        "script": "verify.py",
+        "seconds": 0.12193491699872538,
+        "exit_code": 0
+      },
+      {
+        "script": "analyze.py",
+        "seconds": 0.07370562496362254,
+        "exit_code": 0
+      },
+      {
+        "script": "verify.py",
+        "seconds": 0.11959695798577741,
+        "exit_code": 0
+      },
+      {
+        "script": "timing.py",
+        "seconds": 0.09309470799053088,
+        "exit_code": 0
+      },
+      {
+        "script": "controls.py",
+        "seconds": 0.308454415993765,
+        "exit_code": 0
+      }
+    ],
+    "peak_child_rss_bytes": 27262976
+  },
+  "current_initial_execution": {
+    "runs": [
+      {
+        "args": [
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/prepare_records.py",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/raw/TD2D",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/records.json",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/admission.json"
+        ],
+        "seconds": 0.08941770804813132,
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "args": [
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.1.0/prepare_records.py",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/raw/TD2D",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/legacy-records-original.json"
+        ],
+        "seconds": 0.09538587502902374,
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "args": [
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/analyze.py",
+          "--records",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/records.json",
+          "--output",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/result.json"
+        ],
+        "seconds": 0.12776212499011308,
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "args": [
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/verify.py",
+          "--records",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/records.json",
+          "--result",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/result.json",
+          "--raw-root",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/raw/TD2D",
+          "--output",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/verification.json"
+        ],
+        "seconds": 0.19063020800240338,
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "args": [
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/analyze.py",
+          "--records",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/legacy-records.json",
+          "--output",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/legacy-result.json"
+        ],
+        "seconds": 0.10559437505435199,
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "args": [
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/verify.py",
+          "--records",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/legacy-records.json",
+          "--result",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/legacy-result.json",
+          "--raw-root",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/raw/TD2D",
+          "--output",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/legacy-verification.json"
+        ],
+        "seconds": 0.1876578750088811,
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "args": [
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/timing.py",
+          "--records",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/records.json",
+          "--output",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/timing.json",
+          "--verification",
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/timing-verification.json"
+        ],
+        "seconds": 0.15824366704327986,
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "args": [
+          "/Users/danielwahnich/.codex/reports/reiyah/takeover-coverage-2026-10-15-r_uqhgpz/candidate/research/takeover-outcome/0.2.0/controls.py"
+        ],
+        "seconds": 0.4340922919800505,
+        "exit_code": 0,
+        "stdout_sha256": "f32ffd516a7a85050e128e1d609fb6bb0013ffcdc5781185ce1dc15814330477"
+      }
+    ],
+    "frozen_inputs_unchanged": 509,
+    "utc": "2026-10-15T12:04:03.473120+00:00"
+  },
+  "acquisition": {
+    "new_summaries": 339,
+    "total_summaries": 500,
+    "requests": 354,
+    "retained_response_bytes": 776766,
+    "request_start_interval_seconds_min": 2.500014066696167,
+    "request_concurrency": 1,
+    "request_cap": 420,
+    "body_byte_cap": 16777216,
+    "provider_policy": "Retained official developer documentation; >=2.5-second pacing and bounded header-aware backoff",
+    "failed_requests": [
+      {
+        "sequence": 60,
+        "url": "https://raw.githubusercontent.com/HAI-lab-KNU/L2-vehicle-simulator/115320f093f40650218f4312381680966ef27528/scenario_runner-0.9.10/srunner/actorcontrols/simple_vehicle_control.py",
+        "status": 404,
+        "bytes": 14,
+        "sha256": "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+      }
+    ],
+    "all_response_headers_and_bodies_retained": true,
+    "uncompressed_summary_bytes": 196361
+  },
+  "web_discovery": "One current web-tool call for official provider policy and source discovery; its underlying transport counts/bytes and historical web costs are unknown. Source bodies used as evidence were separately captured.",
+  "protocol": "Frozen before parsing the 339 new summaries; prior 161 summaries and five discordant pairs already exposed. Field-projection change is explicit, not a fresh preregistered study.",
+  "scientific_corrections": "Original integer-only result and exact-decimal correction retained in 0.1.0. Current prefix extraction preserves the full-header defect and separately reports strict full-header admission.",
+  "workflow": "OpenAI Codex assisted source review and authored analysis/checker; local shell, Python and web tools. No subagents, model training/inference, upstream code execution, private participant ingestion, outreach or paid compute. One investigation.",
+  "private_evidence": [
+    {
+      "path": "PLAN.json",
+      "sha256": "a0000030a64ddf42c2f991b645bbef3a496de09be47d12cb6f317edf2603efbf"
+    },
+    {
+      "path": "PROTOCOL_FREEZE.json",
+      "sha256": "e6f8b3df813f60765d8e7b722a2b44132aa9ef384d13399b124af91b7b8f92a2"
+    },
+    {
+      "path": "ANALYSIS_FREEZE.json",
+      "sha256": "8b147b6bce90e676ecb306150f8ef6b8aee1f5bab8f0e54fc32812b67e737a8f"
+    },
+    {
+      "path": "ACQUISITION_COMPLETE.json",
+      "sha256": "37c21da2c00471ffc5e3b1722cab77864707c756700ee4c4a4f53109978eb988"
+    },
+    {
+      "path": "EXECUTION.json",
+      "sha256": "08ad577228713039ff8ee00dffa9ebc66093ef18731d0c116ef52415620fd49d"
+    },
+    {
+      "path": "REPLAY.json",
+      "sha256": "de492c6416da441f934c7f3aa4915e49bb46a237c187359f5940b2de6ed55138"
+    },
+    {
+      "path": "net.py",
+      "sha256": "fa4c26f72bbaf718b0e751fb4d9225f13432d5955984fbde2ad683b1ea2d92cf"
+    },
+    {
+      "path": "acquire_remaining.py",
+      "sha256": "f6c9d73f78486bce2d35ee6b18fb83f45c60fea3a4c1e31dbac7b4665f252c36"
+    },
+    {
+      "path": "build_custody.py",
+      "sha256": "019d0898816c94038f16a29ad76084f1d71128abf0b33e36d8627d5ceeafe9aa"
+    },
+    {
+      "path": "run_complete.py",
+      "sha256": "1d1cac98ee896bd530c65bec307dc7dea65b411c09666f3c60b0b8c1b60ae650"
+    },
+    {
+      "path": "replay_and_provenance.py",
+      "sha256": "dbe9940cd988b8e8b9e653b042afaf17e05cd12e358ff392a1eb1558867c1f34"
+    }
+  ],
+  "Gate_A_operator_accepted": false
+}
