@@ -1,0 +1,98 @@
+{
+  "artifact_id": "reiyah.mand-semantics.findings",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "notes": [
+    {
+      "id": "thesis-deadline",
+      "source": "thesis.txt",
+      "source_sha256": "6fe38a5325036d6d0386fb874c48031d9eb8d862ff96f50eeb68a30db542a42b",
+      "locator": {
+        "section": "5.3, printed p.48",
+        "byte_start": 151499,
+        "byte_end_exclusive": 152234,
+        "span_sha256": "73ef6fc469af4ac31931c18f8f0074547dd9f0c98a4729ba86c64a680ebc6d10"
+      },
+      "finding": "The author describes a maximum ten-second takeover budget; nonresponse leads to a simulated accident and scenario termination.",
+      "limit": "A designed timeout is not an independently timed ego-collision detector or a common successful-recovery observation window."
+    },
+    {
+      "id": "thesis-availability",
+      "source": "thesis.txt",
+      "source_sha256": "6fe38a5325036d6d0386fb874c48031d9eb8d862ff96f50eeb68a30db542a42b",
+      "locator": {
+        "section": "5.4, printed p.52",
+        "byte_start": 166754,
+        "byte_end_exclusive": 167429,
+        "span_sha256": "1f4590bf92ae4cb329eb2b397e319c3a50e55e94dce33f1facfec516fd0a3465"
+      },
+      "finding": "The author lists time constraints, sensor/software problems and behavior-dependent event occurrence as reasons intended takeover coverage was incomplete.",
+      "limit": "Availability, exposure and follow-up must remain separate; no missing-at-random assumption is supported."
+    },
+    {
+      "id": "thesis-reaction",
+      "source": "thesis.txt",
+      "source_sha256": "6fe38a5325036d6d0386fb874c48031d9eb8d862ff96f50eeb68a30db542a42b",
+      "locator": {
+        "section": "8.1 evaluation metrics",
+        "byte_start": 231175,
+        "byte_end_exclusive": 231433,
+        "span_sha256": "06d65bdb99cdf4a7a3ecf2faf2bd47e55ba9face82fbdc6cca767f43a4457e4e"
+      },
+      "finding": "The dissertation endpoint is TOR-to-automation-deactivation; steering, pedals or buttons may deactivate it.",
+      "limit": "This is a post-request mode-transition definition, not verified physical recovery or pre-request readiness. It does not relabel P1/anger first-manual differences."
+    },
+    {
+      "id": "thesis-resampling",
+      "source": "thesis.txt",
+      "source_sha256": "6fe38a5325036d6d0386fb874c48031d9eb8d862ff96f50eeb68a30db542a42b",
+      "locator": {
+        "section": "Appendix D.1, printed p.108",
+        "byte_start": 299001,
+        "byte_end_exclusive": 299362,
+        "span_sha256": "898d9d2b96705c49dadd8a217ffcea7cbd6ca7bf7de8e10fe0bbcd01b98cbc16"
+      },
+      "finding": "The dissertation describes a 20 Hz simulator stream resampled to 256 Hz during collection, then downsampled to 16 Hz for its modeling.",
+      "limit": "The later modeling rate is not the native acquisition rate. No release-specific clock-error or annotation-latency bound follows."
+    },
+    {
+      "id": "article-deadline",
+      "source": "article.html",
+      "source_sha256": "db872621d309a4766e35959ce73e30d7eb40cc3bdc0f80d04f1aad9268c7ccfd",
+      "locator": {
+        "section": "Driving scenarios",
+        "byte_start": 170875,
+        "byte_end_exclusive": 171045,
+        "span_sha256": "fe8a045a6d4cb0a2cd0c0bd190e24995bf036c756827ee451414ad5942150a21"
+      },
+      "finding": "The descriptor also specifies a ten-second TOR budget and an accident/end path after nonresponse.",
+      "limit": "Agreement between descriptions by the same research group is not an independent measurement of the event generator."
+    },
+    {
+      "id": "article-code",
+      "source": "article.html",
+      "source_sha256": "db872621d309a4766e35959ce73e30d7eb40cc3bdc0f80d04f1aad9268c7ccfd",
+      "locator": {
+        "section": "Code availability",
+        "byte_start": 242598,
+        "byte_end_exclusive": 243454,
+        "span_sha256": "de6f217e277792681c57212a98ac7ff58afe674034197dcb339e16a4f6524098"
+      },
+      "finding": "The descriptor points to DataExtraction.py for heart-rate processing, pressure visualizations and archive extraction.",
+      "limit": "The named code is not described as a released clock exporter or collision monitor. The exact file is separately inventoried."
+    }
+  ],
+  "decision": {
+    "status": "inspected_documentation_route_closed_recovery_unqualified",
+    "documented_nominal_time_convention": "second-based rates and time budgets described; released vehicle/environment physical clock not independently bound",
+    "release_event_generator_qualified": false,
+    "positive_ego_accident_control_identified": false,
+    "positive_control_population_count": null,
+    "monitoring_and_censoring_qualified": false,
+    "recovery_labels_admitted": false,
+    "readiness_model_admitted": false,
+    "Gate_A_accepted": false
+  },
+  "absence_scope": "No named participant/scenario positive ego-accident control or executable event/termination rule was identified in the inspected public release metadata, designated code, descriptor, official structure/home and author dissertation text. Not an exhaustive web, archive-interior, private-code or all-record absence claim.",
+  "dissertation_limit": "Retained repository-generated text derivative, not a byte-verified copy or visual review of the original PDF. No table/figure numbers are inferred from its damaged layout. It discusses manD but does not provide a new exact release-to-capture configuration binding."
+}

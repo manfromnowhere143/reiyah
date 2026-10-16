@@ -1,0 +1,89 @@
+{
+  "artifact_id": "reiyah.mand-semantics.audit",
+  "version": "0.1.0",
+  "passed": true,
+  "input_files_checked": 11,
+  "input_bytes_checked": 1065664,
+  "release_version": "2.0",
+  "release_files": 56,
+  "restricted_files": 0,
+  "participant_archives": 50,
+  "other_archives": [
+    "EEG-BIDS.7z"
+  ],
+  "nonarchive_files": [
+    "AvailableData.xlsx",
+    "DataExtraction.py",
+    "DataInfoSheet.xlsx",
+    "DESResults.xlsx",
+    "ParticipantsCharacteristics.xlsx"
+  ],
+  "code_functions": [
+    {
+      "name": "extract_hr_ecg",
+      "first_line": 52,
+      "last_line": 68
+    },
+    {
+      "name": "extract_hr_ppg",
+      "first_line": 71,
+      "last_line": 87
+    },
+    {
+      "name": "create_heatmap_images",
+      "first_line": 90,
+      "last_line": 135
+    },
+    {
+      "name": "create_heatmap_videos",
+      "first_line": 138,
+      "last_line": 165
+    },
+    {
+      "name": "extract_7z_files",
+      "first_line": 168,
+      "last_line": 179
+    },
+    {
+      "name": "find_and_extract_7z_files",
+      "first_line": 182,
+      "last_line": 193
+    }
+  ],
+  "source_term_mentions": {
+    "EnvironmentalEvent": 0,
+    "InteractionSignal": 0,
+    "accident": 0,
+    "collision": 0,
+    "SCANeR": 0
+  },
+  "parse_warning_count": 2,
+  "code_executed": false,
+  "derivatives": [
+    {
+      "name": "thesis.txt",
+      "bytes": 355949,
+      "advertised_size_and_md5_match": true,
+      "id": "ff044465-8702-4e58-b443-fc8cea672fbe"
+    },
+    {
+      "name": "thesis-license.txt",
+      "bytes": 4931,
+      "advertised_size_and_md5_match": true,
+      "id": "b11bfbe7-2ba2-4a0e-be84-f328665d81bf"
+    }
+  ],
+  "original_pdf_acquired": false,
+  "reviewed_spans_bound": [
+    "thesis-deadline",
+    "thesis-availability",
+    "thesis-reaction",
+    "thesis-resampling",
+    "article-deadline",
+    "article-code"
+  ],
+  "semantic_interpretation_automatically_proved": false,
+  "new_participant_records": 0,
+  "recovery_labels_admitted": false,
+  "Gate_A_accepted": false
+}

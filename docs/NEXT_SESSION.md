@@ -2,11 +2,11 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.32`
+Version: `0.1.33`
 
 Lifecycle status: `proposed`
 
-Updated: 15 October 2026. A continuation brief, not an accepted scientific
+Updated: 16 October 2026. A continuation brief, not an accepted scientific
 protocol, operator acceptance record or grant of new authority.
 Read with [AGENTS.md](../AGENTS.md), the newest
 [handoff](SESSION_HANDOFF.md) and [editorial policy](EDITORIAL_POLICY.md).
@@ -14,6 +14,33 @@ The [machine-readable state](CONTINUATION.json) is a navigation aid; verify its
 evidence bindings and resolve live Git state before acting.
 The [ready-to-use continuation prompt](NEXT_SESSION_PROMPT.md) carries Daniel's
 15 October direction into the next session.
+
+## Current outcome-source decision, 16 October 2026
+
+The [manD source-semantics audit](../research/mand-semantics/0.1.0/README.md)
+closes the inspected documentation route. It reconciles the current 56-file
+release inventory and six functions in the designated script with the descriptor
+and author dissertation. The described request budget and mode-deactivation
+endpoint do not establish an independently timed ego-accident or recovery horizon.
+No positive ego-accident control is identified in that documentation scope.
+
+Read the [decision](../research/mand-semantics/0.1.0/DECISION.md),
+[findings](../research/mand-semantics/0.1.0/findings.json) and
+[source custody](../research/mand-semantics/0.1.0/source-custody.json).
+All eleven source inputs and six passage spans are checked, and nine custody
+controls reject for exact reasons. This is a source audit, not new trial analysis
+or independent scientific replication. Original dissertation PDF/figures were not
+acquired; the checked repository text derivative remains private.
+
+Next qualify a different public outcome source at the code/protocol level before
+acquiring trials. Require an explicit event/annotation rule, clock meaning and
+uncertainty, termination causes, coverage and censoring. Stop without recovery
+labels if those are unavailable. Reopen manD only for materially new release-linked
+capture/event evidence and a named positive ego-accident control. More unselected
+archives cannot repair missing monitor semantics. Any future record needs a new
+bounded protocol. No readiness modeling, exposed-cohort reruns, unrelated streams
+or outreach; Gate A remains unaccepted. Earlier next-action text below is historical
+where superseded by this decision.
 
 ## Presentation checkpoint, 15 October 2026
 
@@ -25,7 +52,7 @@ packet, reopen a closed owner or qualify a recovery endpoint. The current
 scientific action remains the manD dependency immediately below; the product-value
 hurdle and earlier execution instructions are retained in their historical scope.
 
-## Current manD timing qualification, 15 October 2026
+## Completed manD recorded-axis qualification, 15 October 2026
 
 The [manD packet](../research/mand-timing/0.1.0/README.md) checks one scenario
 selected from coverage metadata before outcomes: P1/anger. Both files contain
@@ -253,9 +280,9 @@ Test counts, visual polish and persistence alone cannot establish superiority.
 **Continue bounded scientific investigation. Keep broad product expansion
 stopped until a useful decision advantage is demonstrated.**
 
-The immediate scientific question is whether release-linked clock, accident and
-monitoring evidence can qualify a recovery endpoint. The completed packets above
-determine that next step.
+The immediate scientific task is source admission for a qualified recovery
+endpoint. The closed TD2D/manD routes above determine the remaining requirements;
+inspect a new source’s code/protocol before paying for more trial data.
 
 The open product-value question is: can Reiyah reach the same justified perception-revision
 decision with materially less complete work than a competent conventional
@@ -444,7 +471,9 @@ declined, not pending; do not poll or resubmit it without new operator instructi
 2. Read the newest handoff, this brief and the editorial policy from current
    main or a fresh owned same-repository candidate. Earlier ACTIVE, MODIFY and
    NEXT instructions are historical when superseded here.
-3. For the current timing task, read the [manD packet](../research/mand-timing/0.1.0/README.md),
+3. For the current task, read the [source-semantics decision](../research/mand-semantics/0.1.0/DECISION.md)
+   and its [source ledger](../research/mand-semantics/0.1.0/source-custody.json).
+   Preserve the preceding [manD packet](../research/mand-timing/0.1.0/README.md),
    its [decision](../research/mand-timing/0.1.0/DECISION.md) and the completed
    [TD2D census](../research/takeover-outcome/0.2.0/README.md) and
    [history closure](../research/takeover-source-lineage/0.1.0/README.md).

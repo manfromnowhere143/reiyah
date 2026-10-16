@@ -1,3 +1,100 @@
+# Current entry: manD source-semantics route closed, 16 October 2026
+
+Continuation version: 0.1.106. NEXT_SESSION/CONTINUATION version: 0.1.33.
+NEXT_SESSION_PROMPT version: 0.1.7. Read the
+[source-semantics packet](../research/mand-semantics/0.1.0/README.md),
+[decision](../research/mand-semantics/0.1.0/DECISION.md),
+[findings](../research/mand-semantics/0.1.0/findings.json) and
+[source custody](../research/mand-semantics/0.1.0/source-custody.json).
+
+Base `8a9a30a1732651133378f68272f7bfbcbbdea2a1`. Fresh owner
+`mand-semantics-2026-10-16-0k1vmi1j`; the canonical controller remains at
+historical `74fbacc`. Prior owners and exposed TD2D, P1/anger and microscopy
+comparisons remain closed. This owner used the prior shared-clone object-store
+flattening procedure without changing any prior clone or its object stores.
+
+## Decision and evidence
+
+Close the inspected manD documentation route without recovery labels or readiness
+modeling. The planned request budget and documented deactivation endpoint do not
+supply the missing release-bound event generator, physical clock uncertainty or
+outcome-monitor termination/censoring contract. No named positive ego-accident
+control was identified in the inspected sources. This is not a claim that no
+accidents exist, that every archive interior was inspected or that labels are wrong.
+
+Current metadata is byte-identical to the retained Dataverse 2.0 response. Its
+56 files include 50 participant archives, one EEG-BIDS archive, four workbooks
+and one Python file. The designated code matches its advertised size and MD5;
+its six functions process heart rate/pressure visualization or extract archives.
+They do not implement a vehicle/event capture monitor. Source inspection included
+function bodies, not only absence of field-name strings. No upstream code ran.
+
+The descriptor and author dissertation clarify the experimental design and
+endpoint. Six exact passage spans bind those interpretations. The dissertation
+was retained as the institution's 355,949-byte text derivative, with advertised
+size and MD5 checked through its public item/bundle/bitstream metadata. The original
+11,787,683-byte PDF exceeded the document cap and was not requested. No original
+PDF byte equivalence, figure review or table-layout completeness is claimed.
+The source documents do not bind a new capture configuration to the released
+trial files. Original third-party text/HTML/code stay private, with terms recorded.
+
+## Execution, checks and costs
+
+Eleven source inputs and five code/manifest inputs stayed unchanged during
+network-denied, input-write-denied execution. The source audit, separate finite
+inventory check and nine exact-reason custody controls pass. They verify source
+identities and report integrity; they do not automatically prove the interpretations
+or constitute independent scientific replication. No new participant record,
+archive, physiological/media stream, model or empirical comparison was opened.
+
+The documented repository research checks pass all nine checks. All 52 retained
+historical transcripts match their hashes; zero are replayed. The actual states
+remain 35 `not_replayed_here` and 17 `argv_unrecorded_historical`. The optional
+attack suite and Gate A release replay were not run for this bounded source audit.
+The advertised offline example matches its retained 1,312-byte output. Current
+links, source spans, referenced identities and continuation hashes are checked
+before publication; exact publisher readback is retained separately in the owner.
+
+Acquisition closed after ten direct requests and 1,136,413 retained response
+bytes, within the 24-call / 16 MiB aggregate / 2 MiB response / 30-minute source
+bounds. Prior 596 calls and 693,767,797 bytes remain counted, giving 606 direct
+calls and 694,904,210 retained bytes across that recorded source chain. Three web
+calls support discovery; their transport bytes are unmeasured. One page fetch
+timed out. A missing optional HTML parser was replaced by the standard parser
+without installation. Original source AST warnings remain counted; code was not
+changed. Active effort, full-history remaining budget, billing and Git/provider
+transport overhead remain unknown and are not reset by this owner.
+
+The README keeps its substantive explanations and nine diagrams. Only the progress
+map changes, to show source-route closure and the next admission requirement; it
+was locally rendered and inspected. Eight diagrams remain byte-identical. Current
+navigation supersedes older source-search instructions without removing their
+history. Full human commit metadata and exact published-file readback must pass
+before reporting publication complete. See the private owner CLOSEOUT.json and
+publication-readback/PUBLICATION_READBACK.json, and latest continuation memory for
+the resulting commit. Publisher readback is not independent transport verification.
+
+## Next authorized mission step
+
+Qualify a different public outcome source at the code/protocol level before
+acquiring trials. Begin with a consequential outcome question and inspect a
+released event monitor or explicit annotation rule, clock meaning/uncertainty,
+termination causes and coverage/censoring. Compare against ordinary direct
+analysis under equal information. Freeze any later record selection and resources
+before opening data; stop if the endpoint remains inseparable from a proxy.
+A simulator outcome can be studied as such, without implying physical recovery.
+
+Reopen manD recovery only for materially new eligible release-linked event/capture
+evidence and an identified positive ego-accident control. More unselected archives
+cannot repair absent monitor semantics. A selected positive control cannot estimate
+population performance. Do not repeat the closed TD2D, P1/anger or microscopy
+analyses, expand unrelated streams, begin readiness modeling or send outreach.
+Preserve the full HARBOR mission and all previous failures, costs and null results.
+Broad product expansion remains stopped pending value. **Gate A remains
+operator-unaccepted.**
+
+---
+
 # Current entry: research presentation and continuation refreshed, 15 October 2026
 
 Continuation version: 0.1.105. NEXT_SESSION/CONTINUATION version: 0.1.32.

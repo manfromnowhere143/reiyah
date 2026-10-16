@@ -1,0 +1,114 @@
+{
+  "artifact_id": "reiyah.mand-semantics.provenance",
+  "version": "0.1.0",
+  "base": "8a9a30a1732651133378f68272f7bfbcbbdea2a1",
+  "private_owner": "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j",
+  "execution": {
+    "status": "passed",
+    "jobs": [
+      {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-f",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/offline.sb",
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "-B",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-code/audit.py",
+          "--sources",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-input",
+          "--inputs",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-code/inputs.json",
+          "--findings",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-code/findings.json",
+          "--output",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-output/audit.json"
+        ],
+        "exit_code": 0,
+        "seconds": 0.06001016701338813
+      },
+      {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-f",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/offline.sb",
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "-B",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-code/verify.py",
+          "--sources",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-input",
+          "--inputs",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-code/inputs.json",
+          "--findings",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-code/findings.json",
+          "--result",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-output/audit.json",
+          "--output",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-output/verification.json"
+        ],
+        "exit_code": 0,
+        "seconds": 0.051838334009516984
+      },
+      {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-f",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/offline.sb",
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "-B",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-code/controls.py",
+          "--sources",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-input",
+          "--inputs",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-code/inputs.json",
+          "--findings",
+          "/Users/danielwahnich/.codex/reports/reiyah/mand-semantics-2026-10-16-0k1vmi1j/replay-code/findings.json"
+        ],
+        "exit_code": 0,
+        "seconds": 0.11599554197164252
+      }
+    ],
+    "inputs_unchanged": 16,
+    "network_denied_before_python": true,
+    "source_and_code_writes_denied": true,
+    "scope": "Current source audit and controls only. No historical experiment or Gate A release validation."
+  },
+  "python": "3.14.2",
+  "historical_empirical_replays": 0,
+  "Gate_A_release_validation": "not_run; research documentation/source audit",
+  "upstream_code_executed": false,
+  "scientific_limits": "Source inventory and byte-bound interpretation only; no new participant observation or model. Integrity checks do not prove semantic claims.",
+  "private_evidence": [
+    {
+      "path": "PLAN.json",
+      "sha256": "d13725a1c0190f983ca2b8550e58b4e17fd108dffa4ddf0a2aad599166e772a8"
+    },
+    {
+      "path": "SOURCE_CLOSE.json",
+      "sha256": "716962f3d68a4a12fc7c832714a1d90800814a789937569510906499f41e7d4e"
+    },
+    {
+      "path": "INTERPRETATION_FREEZE.json",
+      "sha256": "9aff53778845f1ff0e31dc8c83b4a54468212cd5e85b298b804d5ddab0ebe504"
+    },
+    {
+      "path": "VALIDATION_FREEZE.json",
+      "sha256": "260484e1b68921fda216a558f26f0b459375db3e3788e9c4d76bd221809951ff"
+    },
+    {
+      "path": "VALIDATION_FINAL_FREEZE.json",
+      "sha256": "409989e6a9e73db3a7ced3c904d23ece44a492eaa8ec884aac91720a6b32d4ea"
+    },
+    {
+      "path": "VALIDATION.json",
+      "sha256": "e6c93e888767061e36f859efc68b212a3872e0b7b00663e4c62b531e0ddf4951"
+    },
+    {
+      "path": "validate.py",
+      "sha256": "323ef8863bbaf2920d0683242c8680a8b688fa9a3e3e63172f3e41d7838a3230"
+    },
+    {
+      "path": "offline.sb",
+      "sha256": "ed9f39cbe2d15d7f32d0880f15209e0dfd423a2aa50d372bad9a300edd2d2c45"
+    }
+  ]
+}

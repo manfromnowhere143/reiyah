@@ -1,0 +1,43 @@
+{
+  "artifact_id": "reiyah.mand-semantics.controls",
+  "version": "0.1.0",
+  "passed": 9,
+  "checks": [
+    {
+      "case": "substitute_source",
+      "rejected_for": "source_identity"
+    },
+    {
+      "case": "missing_source",
+      "rejected_for": "source_missing"
+    },
+    {
+      "case": "duplicate_source",
+      "rejected_for": "duplicate_source"
+    },
+    {
+      "case": "traversal",
+      "rejected_for": "source_path"
+    },
+    {
+      "case": "bad_span",
+      "rejected_for": "span_identity"
+    },
+    {
+      "case": "bad_range",
+      "rejected_for": "span_range"
+    },
+    {
+      "case": "claim_recovery",
+      "rejected_for": "unsupported_qualification"
+    },
+    {
+      "case": "unknown_as_zero",
+      "rejected_for": "unmeasured_population"
+    },
+    {
+      "case": "broken_release_binding",
+      "rejected_for": "released_code_binding"
+    }
+  ]
+}

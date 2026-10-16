@@ -237,7 +237,7 @@ Those corrections remain part of the research record.
 
 ## Current evidence
 
-These results summarize retained work through **15 October 2026**. The linked
+These results summarize retained work through **16 October 2026**. The linked
 records contain their complete assumptions, outcomes, failed attempts and costs.
 The rows below concern different, sometimes overlapping development studies;
 their counts must not be added as independent trials.
@@ -255,8 +255,8 @@ flowchart TB
   C --> D["Reference and review qualification<br/>Procedure, identity, matching and observation limits"]
   D --> E["Selected microscopy cohort completed<br/>4 image pairs, 12 reference cases; no observed fragility"]
   E -- "next measurement question" --> F["TD2D census and source-history route closed<br/>500 summaries; outcome timing unqualified"]
-  F --> G["manD recorded-axis qualification completed<br/>1 selected scenario; 134,373 aligned row pairs"]
-  G --> H["Current dependency<br/>Physical clock, accident rule and monitored follow-up"]
+  F --> G["manD timeline and documentation route closed<br/>Recorded alignment supported; recovery unqualified"]
+  G --> H["Next source admission<br/>Event rule, physical clock and monitored follow-up"]
   H -. "requires new qualifying evidence" .-> I["Future recovery endpoint and readiness research<br/>Not admitted by the current evidence"]
 ```
 
@@ -350,6 +350,13 @@ Separate calculations check all TD2D source mappings and 193 strata, and all
 The packets retain 39 TD2D controls and 25 manD controls. These are bounded
 calculation checks within this investigation, not independent scientific
 replication or outcome validation.
+
+The [source-semantics follow-up](research/mand-semantics/0.1.0/README.md) now closes
+the inspected manD documentation route. The described ten-second request budget
+is not a qualified recovery horizon. The designated released script has six
+processing/extraction functions and supplies no event monitor. No named positive
+ego-accident control was identified in the inspected documents. New source-level
+evidence is required before another trial can address that gap.
 
 TD2D-derived results credit Jiwoo Hwang, Woohyeok Choi, Jungmin Lee, Woojoo Kim,
 Jungwook Rhim and Auk Kim; manD-derived results credit Khazar Dargahi Nobari and
@@ -516,19 +523,21 @@ launcher and immutable candidate procedure.
 
 ## Next research decision
 
-**Qualify outcome measurement before modeling readiness.** The next bounded step
-is to find release-linked evidence for the manD physical clock, the rule generating
-`EnvironmentalEvent=6`, and monitor termination/censoring. First inspect eligible
-public or provided source/metadata for a positive accident control. Any additional
-record needs a new frozen selection rule and resource budget before it is opened.
-Selecting a positive control cannot estimate population performance.
+**Qualify an outcome source before acquiring more trials or modeling readiness.**
+The inspected TD2D and manD routes are closed at their demonstrated evidence
+boundaries. The next bounded step is to assess a different public source for a
+released event monitor or explicit annotation rule, clock meaning, termination
+causes and coverage/censoring semantics. Start with code and protocol evidence;
+freeze selection and resource bounds before opening any additional records.
 
-If those semantics cannot be qualified, preserve the recorded request/state
-observations and withhold recovery benchmarking. Do not repeat P1/anger, the TD2D
-census/history or the exposed microscopy comparison. No readiness model, unrelated
-stream expansion or outreach follows from this documentation. Gate A remains
-operator-unaccepted. The [current decision](research/mand-timing/0.1.0/DECISION.md)
-and [continuation brief](docs/NEXT_SESSION.md) specify the dependency and stop rule.
+Reopen manD recovery only for materially new release-linked evidence addressing
+those requirements and identifying a positive ego-accident control. A marker in
+another archive would not itself explain the missing monitor. Selecting a positive
+control cannot estimate population performance. If the endpoint remains unqualified,
+withhold recovery benchmarking. Preserve the recorded request/state observations
+and closed comparisons. No readiness model, unrelated stream expansion or outreach
+follows. Gate A remains operator-unaccepted. The [current decision](research/mand-semantics/0.1.0/DECISION.md)
+and [continuation brief](docs/NEXT_SESSION.md) give the admission and stop rules.
 
 ### Product-value hurdle remains open
 
@@ -602,6 +611,7 @@ Entries describe the result and next dependency **at that checkpoint**. The
 current direction above supersedes historical execution instructions; earlier
 failures and incomplete states remain part of the record.
 
+- **16 October 2026:** [manD source semantics and route closure](research/mand-semantics/0.1.0/README.md). The release listing and designated code are checked against retained bytes; the author’s dissertation clarifies the endpoint and design. No release-bound accident monitor or named positive control is identified in this scope. Recovery remains unqualified; nine custody controls pass.
 - **15 October 2026:** [manD recorded timelines](research/mand-timing/0.1.0/README.md). Metadata selection precedes inspection; 134,373 vehicle/environment row pairs share an exact stored axis. Two request episodes, missing sensor rows and message/file-end differences remain explicit. Physical clocks, accident timing and monitored recovery are unqualified; 25 controls pass.
 - **15 October 2026:** [TD2D source-history closure](research/takeover-source-lineage/0.1.0/README.md). Both advertised branches and 47 commits add no missing Python capture path. The inspected repair route closes; a separately bounded manD documentation screen supplies the next source lead, not a qualified outcome.
 - **15 October 2026:** [Complete TD2D census](research/takeover-outcome/0.2.0/README.md). All 500 summaries captured; both admission contracts yield 19 faster failures and 223 faster successes in 242 pairs. All ten source task summaries reproduce. Outcome timing and a common monitored horizon remain unqualified.
@@ -656,7 +666,7 @@ changes the scope of an earlier result.
 | --- | --- |
 | Engine model and mathematics | [Architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) · [Replacement interface](research/perception-revision/0.1.0/README.md) |
 | Current direction and evidence | [Progress map](#research-progression) · [Next-session brief](docs/NEXT_SESSION.md) · [Research release](research/releases/2026-10-11/README.md) · [Evidence inventory](research/releases/2026-10-11/evidence.json) · [Roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) · [Execution audit](research/roadmap-audit/0.1.0/README.md) · [Primary-method review](research/roadmap-audit/0.1.0/FRONTIER.md) |
-| Takeover coverage and outcome timing | [Complete TD2D census](research/takeover-outcome/0.2.0/README.md) · [Source-history closure](research/takeover-source-lineage/0.1.0/README.md) · [manD timeline and current decision](research/mand-timing/0.1.0/README.md) |
+| Takeover coverage and outcome timing | [Complete TD2D census](research/takeover-outcome/0.2.0/README.md) · [Source-history closure](research/takeover-source-lineage/0.1.0/README.md) · [manD timeline](research/mand-timing/0.1.0/README.md) · [Current source decision](research/mand-semantics/0.1.0/DECISION.md) |
 | Selected reference cohort | [Complete four-image result](research/multiorg-reference-admission/0.8.0/README.md) · [Preserved resource failures](research/multiorg-reference-admission/0.7.0/README.md) |
 | Relational motion research | [Clearance contract](research/frontier-expansion/0.1.0/README.md) · [Current primary research](research/frontier-expansion/0.1.0/SOURCES.md) · [Earlier source scope](research/frontier-expansion/0.1.0/qualification.json) · [NGSIM source adapter](research/public-motion/0.1.0/README.md) |
 | Physical measurement contract | [Source qualification](research/physical-source/0.1.0/README.md) · [Geometry, motion and coverage](research/physical-source/0.1.0/CONTRACT.md) |

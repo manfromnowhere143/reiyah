@@ -1,7 +1,7 @@
 # Reiyah: next-session instructions
 
-Document ID: `reiyah.next-session-prompt`. Version: `0.1.6`.
-15 October 2026. Operator-directed continuation instructions. The linked packet
+Document ID: `reiyah.next-session-prompt`. Version: `0.1.7`.
+16 October 2026. Operator-directed continuation instructions. The linked packet
 records results; this prompt adds no acceptance or external-action authority.
 
 Copy the following into the next session:
@@ -17,8 +17,10 @@ evidence locations. The canonical controller is intentionally historical at
 74fbacc; preserve it and all closed owners. Do not pull, reset or switch it.
 The refreshed README shows the completed research progression and current timing
 dependency. Its nine diagrams are explanatory, not new scientific evidence.
-The latest handoff is the presentation closeout; continue from the manD decision
-below, not a superseded incomplete-cohort or product-value instruction.
+The latest handoff is the source-semantics closeout. Read
+research/mand-semantics/0.1.0/README.md and DECISION.md before choosing the next
+source. Earlier partial-cohort, presentation and source-search instructions are
+historical when superseded.
 
 The ambition is scientific and engineering leadership: build a useful,
 defensible system that improves consequential decisions for people working on
@@ -65,7 +67,7 @@ commits across both public branches: no additional Python variants or missing
 examples controller. Reopen TD2D only for a materially new release-linked artifact;
 do not reacquire summaries, replay these trees or rerun the exposed contrast.
 
-The latest source qualification is research/mand-timing/0.1.0, using manD 1.0,
+The preceding timeline qualification is research/mand-timing/0.1.0, using manD 1.0,
 Dataverse release 2.0. The coverage workbook identifies 235 metadata slots with
 both vehicle/environment channels, including 50 familiarization slots; availability
 does not prove complete trials. P1's first driven eligible scenario, anger, was
@@ -81,15 +83,23 @@ episode is present; absence is not success or validation of failure-event timing
 Separate Fraction/SQL checks agree on all rows and 53 categorical runs; 25 controls
 pass. Read the packet's decision and retain its failures, exposure and full costs.
 
-Next seek release-linked physical clock, EnvironmentalEvent=6 detection/annotation
-and monitor-termination/censoring evidence. First inspect whether eligible public
-or provided source/metadata identifies a positive accident control; freeze any
-additional record and resource bounds under a new protocol before opening it.
-Such a positive control cannot estimate population performance. Stop without
-recovery labels if semantics cannot be qualified. Preserve the recorded request/
-state-transition result without substituting it for recovery or pre-event readiness.
-Do not rerun P1/anger, reopen TD2D, expand unrelated streams or begin a readiness
-model. No outreach, causal or physical-recovery claim. Gate A remains unaccepted.
+The new research/mand-semantics/0.1.0 audit closes the inspected manD documentation
+route. Current metadata matches the retained 56-file release; its designated Python
+file has six processing/extraction functions and supplies no event monitor. The
+source descriptions clarify a request deadline and automation-deactivation endpoint,
+without qualifying physical recovery. No named positive ego-accident control was
+identified in this scope. The author dissertation's repository text derivative was
+checked; the original PDF/figures were not acquired. Nine custody controls pass.
+
+Next qualify a different public outcome source from its code/protocol before
+acquiring trials. Require a released event monitor or explicit annotation rule,
+clock meaning/uncertainty, termination causes, coverage and censoring. Reopen manD
+only for materially new release-linked capture/event evidence and an identified
+positive ego-accident control. Freeze any additional record and budget in a new
+protocol; selected positive controls cannot estimate population performance.
+If semantics remain insufficient, preserve recorded request/state observations
+and withhold recovery labels/readiness modeling. No repeated P1/anger, TD2D or
+microscopy comparisons, unrelated streams or outreach. Gate A remains unaccepted.
 
 At the prior completed perception checkpoint, packet 0.8.0, all four selected
 image pairs and twelve reference cases are complete. Two earlier pairs were
