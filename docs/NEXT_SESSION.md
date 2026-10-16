@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.34`
+Version: `0.1.35`
 
 Lifecycle status: `proposed`
 
@@ -14,6 +14,23 @@ The [machine-readable state](CONTINUATION.json) is a navigation aid; verify its
 evidence bindings and resolve live Git state before acting.
 The [ready-to-use continuation prompt](NEXT_SESSION_PROMPT.md) carries Daniel's
 15 October direction into the next session.
+
+## Technical review checkpoint, 16 October 2026
+
+The operator requested a complete presentation and synchronization pass for
+technical inspection. Read the [review guide](TECHNICAL_REVIEW.md) and
+[verification record](reviews/technical-review-2026-10-16.json). The README retains
+all sections and dated research history, refreshes its outcome-source summary,
+and links implementation boundaries to code. All nine diagrams were rendered and
+inspected; the progress and outcome-dependency views were revised.
+
+All 462 perception tests pass with Python 3.14.2, jsonschema 4.26.0 and Pillow
+12.3.0. The first run's missing-Pillow errors remain retained. The exact 1,312-byte
+example and nine repository checks pass. No code, scientific packet or protocol
+changed; this is not an exhaustive security review or independent replication.
+Gate A remains unaccepted. The nuPlan native-control dependency below is unchanged.
+The current owned main and public main must match after reviewed publication;
+preserve the historical controller and closed candidates.
 
 ## Current nuPlan source qualification, 16 October 2026
 
@@ -82,8 +99,9 @@ microscopy result, complete TD2D census/history and current manD timing result.
 Nine diagrams preserve the existing explanation and add progress and outcome
 qualification views. This editorial update does not alter any frozen scientific
 packet, reopen a closed owner or qualify a recovery endpoint. The current
-scientific action remains the manD dependency immediately below; the product-value
-hurdle and earlier execution instructions are retained in their historical scope.
+scientific action at that checkpoint was the manD dependency immediately below;
+the later source qualifications above supersede it. The product-value hurdle and
+earlier execution instructions are retained in their historical scope.
 
 ## Completed manD recorded-axis qualification, 15 October 2026
 

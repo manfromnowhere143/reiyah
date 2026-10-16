@@ -1,6 +1,6 @@
 # Reiyah: next-session instructions
 
-Document ID: `reiyah.next-session-prompt`. Version: `0.1.8`.
+Document ID: `reiyah.next-session-prompt`. Version: `0.1.9`.
 16 October 2026. Operator-directed continuation instructions. The linked packet
 records results; this prompt adds no acceptance or external-action authority.
 
@@ -17,7 +17,8 @@ evidence locations. The canonical controller is intentionally historical at
 74fbacc; preserve it and all closed owners. Do not pull, reset or switch it.
 The refreshed README shows the completed research progression and current timing
 dependency. Its nine diagrams are explanatory, not new scientific evidence.
-The latest handoff is the nuPlan source-qualification closeout. Read
+The latest handoff is the technical review and publication checkpoint. Read
+docs/TECHNICAL_REVIEW.md for the current code and reproduction map, then
 research/nuplan-outcome-source/0.1.0/README.md, DECISION.md and CONTRACT.md before
 choosing the next action. Earlier partial-cohort and source-search instructions
 are historical when superseded. Preserve the completed manD source closure.

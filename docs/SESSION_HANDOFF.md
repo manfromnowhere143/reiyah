@@ -1,3 +1,74 @@
+# Current entry: technical review and main synchronization, 16 October 2026
+
+Continuation version: 0.1.108. NEXT_SESSION/CONTINUATION version: 0.1.35.
+NEXT_SESSION_PROMPT version: 0.1.9. Read the [technical review guide](TECHNICAL_REVIEW.md),
+[verification record](reviews/technical-review-2026-10-16.json), current
+[README](../README.md) and [nuPlan decision](../research/nuplan-outcome-source/0.1.0/DECISION.md).
+
+## Scope and result
+
+Daniel requested a professional technical inspection pass and synchronization
+of main after source qualification. Base `36d4cfc9e55272e440ad4723dd8fb243ef069fee`;
+fresh owner `technical-review-2026-10-16-3cnrnik4`. The candidate's main tracks
+origin/main. The canonical controller remains clean at historical `74fbacc`;
+closed candidates and their shared object stores remain intact.
+
+The README retains every prior section, research result and dated entry. Its
+capability table and progression now include manD documentation closure and the
+nuPlan static sampled-outcome contract. The architecture section links directly
+to parser, producer, proof checker, CLI and source-audit code and identifies shared
+trusted components. A technical review guide provides reading order, reproduction
+commands, dependencies and explicit evidence boundaries. No code, test assertion,
+frozen scientific packet or Gate A artifact changed.
+
+All nine Mermaid diagrams were rendered and visually inspected. Diagram five
+preserves every milestone in two readable research phases. Diagram six now shows
+static source qualification, native controls, future simulator trial coverage and
+the separate physical recovery gap. Seven diagrams are byte-identical. Local
+labels and arrows are complete; live GitHub visual rendering was not inspected.
+
+## Verification and retained failure
+
+The first perception test run found 186 missing-Pillow errors among 462 tests.
+Every reported error was ModuleNotFoundError for PIL; the full attempt is retained.
+A private isolated venv reuses the installed Pillow distribution alongside the
+base interpreter's packages. No packages were downloaded or shared environment
+changed. With Python 3.14.2, jsonschema 4.26.0 and Pillow 12.3.0, all 462 tests pass.
+Network access and candidate writes were denied before Python started; all 262
+frozen code/test/contract files remained unchanged. This checks the perception
+test pattern, not every executable in the repository or production readiness.
+
+The advertised offline example matches its retained 1,312 bytes. All nine
+repository consistency checks pass; 52 historical transcript hashes match with
+zero experiment replay (35 not_replayed_here, 17 argv_unrecorded_historical).
+Optional attacks and Gate A release replay were not run for this presentation
+scope. Current links, continuation bindings, diagram identities, exact publication
+scope and human commit metadata are checked before normal publication.
+
+The previous 348,741 handoff bytes remain verbatim below. Private PLAN.json,
+CORE_TESTS.json, core-attempt-1, DEPENDENCY_OVERLAY.json, VISUAL_REVIEW.json,
+candidate-check.json and publication-readback/PUBLICATION_READBACK.json retain
+execution, the first failure, checks and publication evidence. The containing
+commit is the publication unit. Normal push and exact file/parent/tree/main plus
+full author/committer/message readback must pass before synchronization is reported
+complete. Publisher readback is not independent transport verification. The final
+commit, costs and clean states are recorded in private CLOSEOUT.json and memory.
+
+## Next authorized scientific action
+
+Unchanged: freeze and execute bounded authored native controls for nuPlan v1.2's
+sampled collision, clocks and termination paths. Bind exact dependencies, cases,
+expected outcomes and resources; compare with a separate conventional calculation
+under equal information. No trials or upstream nuPlan code were executed in this
+presentation pass. Trial coverage, physical timing, recovery and human readiness
+remain unqualified. Preserve closed TD2D, manD and microscopy cohorts.
+
+The full HARBOR mission remains intact. Product expansion remains stopped pending
+value. The review establishes neither frontier superiority nor external scientific
+replication. **Gate A remains operator-unaccepted.**
+
+---
+
 # Current entry: nuPlan source contract qualified, 16 October 2026
 
 Continuation version: 0.1.107. NEXT_SESSION/CONTINUATION version: 0.1.34.

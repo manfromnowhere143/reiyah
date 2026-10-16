@@ -30,7 +30,7 @@ they miss the same object, and what evidence supports readiness or recovery.
 The implemented perception engine and those broader research questions have
 different evidence requirements.
 
-[Implemented scope](#implemented-scope) · [Decision model](#the-decision-model) · [Reference example](#when-the-reference-changes-the-answer) ·
+[Technical review](docs/TECHNICAL_REVIEW.md) · [Implemented scope](#implemented-scope) · [Decision model](#the-decision-model) · [Reference example](#when-the-reference-changes-the-answer) ·
 [Results](#current-evidence) · [Progress](#research-progression) · [Outcome timing](#takeover-coverage-and-outcome-timing) · [Run the auditor](#run-the-offline-auditor) ·
 [Research program](#one-encounter-distinct-information-sets) · [Next decision](#next-research-decision) ·
 [Technical map](#research-map) · [Session handoff](docs/SESSION_HANDOFF.md)
@@ -48,7 +48,7 @@ place through a fair comparison and a useful decision.
 | [Measurement and reference analysis](docs/RESULT_AO_REFERENCE_POPULATION_AUDIT.md) | Offline population, matching and joint-error analyses; [replay of saved predictions under two references](research/reference-revision/0.1.0/README.md). | Recorded annotations and scoring conventions do not establish physical truth. |
 | [Input accounting](research/extraction-accounting/0.1.0/README.md) | A helper checks expected membership, decoder failures and source/output identities. | Historical consumers have not integrated it; past cohorts and capture synchronization remain unqualified. |
 | [Relational motion](research/continuous-envelope/0.1.0/README.md) | Conditional clearance ranges and opposing witnesses under supplied motion, geometry and timing assumptions. | Authored and bounded recorded-data studies; no deployed monitor or physical safety guarantee. |
-| [Takeover source and time audits](research/mand-timing/0.1.0/README.md) | Complete 500-summary TD2D census, public simulator-history inventory and one prospectively selected manD vehicle/environment timeline. | Stored-time alignment is checked; physical clock, failure timing, monitoring and censoring remain unqualified. |
+| [Outcome source and time audits](research/nuplan-outcome-source/0.1.0/README.md) | Complete TD2D census and source-history audit; manD timeline and documentation audit; pinned nuPlan sampled collision, clock and termination contract. | nuPlan qualification is static source inspection. Native behavior and actual trial coverage remain unverified; physical recovery and readiness remain unqualified. |
 | [Human belief, readiness and recovery](docs/SCIENTIFIC_CHARTER.md) | Proposed constructs and protocols; historical gaze and the current takeover observation audits. | No validated belief inference, readiness model or demonstrated recovery benefit; recovery labels are not admitted. |
 
 The engineering contribution is inspectable conditional reasoning. The product
@@ -249,16 +249,22 @@ what the observations can actually settle. The diagram follows that research
 sequence; an arrow does not transfer validity from one dataset or task to another.
 
 ```mermaid
-flowchart TB
-  A["Static contracts and source-bound measurement<br/>Gate A remains unaccepted"] --> B["Conditional perception engine<br/>Loss bounds, witnesses and separate checking"]
-  B --> C["Conventional comparisons and evaluator audits<br/>Corrections retained; complete-work advantage unproven"]
-  C --> D["Reference and review qualification<br/>Procedure, identity, matching and observation limits"]
-  D --> E["Selected microscopy cohort completed<br/>4 image pairs, 12 reference cases; no observed fragility"]
-  E -- "next measurement question" --> F["TD2D census and source-history route closed<br/>500 summaries; outcome timing unqualified"]
-  F --> G["manD timeline and documentation route closed<br/>Recorded alignment supported; recovery unqualified"]
-  G --> H["nuPlan source contract qualified<br/>Sampled event rule, software clock and termination"]
-  H --> J["Next: authored native controls<br/>No trials or model runs admitted here"]
-  J -. "further evidence required" .-> I["Future recovery endpoint and readiness research<br/>Not admitted by the current evidence"]
+flowchart LR
+  subgraph P["Contracts and perception"]
+    direction TB
+    A["Static contracts and source-bound measurement<br/>Gate A remains unaccepted"] --> B["Conditional perception engine<br/>Loss bounds, witnesses and separate checking"]
+    B --> C["Conventional comparisons and evaluator audits<br/>Corrections retained; work advantage unproven"]
+    C --> D["Reference and review qualification<br/>Procedure, identity, matching and observation limits"]
+    D --> E["Selected microscopy cohort completed<br/>4 image pairs, 12 reference cases<br/>No observed fragility"]
+  end
+  subgraph Q["Outcome measurement"]
+    direction TB
+    F["TD2D census and source history closed<br/>500 summaries; outcome timing unqualified"] --> G["manD timeline and documentation closed<br/>Recorded alignment supported<br/>Recovery unqualified"]
+    G --> H["nuPlan v1.2 static source contract<br/>Sampled event rule, software clock and termination"]
+    H --> J["Next: authored native controls<br/>Before trials or model runs"]
+    J -. "further evidence required" .-> I["Future recovery and readiness research<br/>Not admitted by current evidence"]
+  end
+  P -- "next measurement question" --> Q
 ```
 
 | Research phase | What is retained | What it changes or leaves open |
@@ -268,7 +274,8 @@ flowchart TB
 | Claim and evaluator corrections | Gaze-selection/sign corrections; greedy-AP matching, successful-empty output and aggregation controls. | Incorrect inferences are withdrawn; source-level controls do not establish published empirical impact. |
 | Observation and frontier-method qualification | Recorded reviewer/procedure sensitivity, finite identifiability and exact-choice baselines; motion-consistency and rater-score audits. | Agreement, consistency, physical correctness and acquisition cost are distinct obligations. The [method review](docs/research-decisions/frontier-2026-10-12.md) is dated, not a superiority claim. |
 | Microscopy reference comparison | Four selected pairs and twelve fixed reference cases complete; earlier padding, storage and capacity failures retained. | The frozen reference-composition contrast finds no observed fragility. The cohort is closed; full-work savings remain unestablished. |
-| Takeover coverage and temporal qualification | Complete TD2D summary census and inspected history; manD metadata coverage and one checked recorded timeline. | Coverage and arithmetic now have explicit scope. Recovery labels still lack qualified clocks, accident semantics and monitored follow-up. |
+| Takeover coverage and temporal qualification | Complete TD2D summary census and inspected history; manD coverage, recorded timeline and documentation closure. | Recorded alignment does not qualify physical clocks, accident timing or monitored recovery. Both inspected source routes are closed pending materially new evidence. |
+| Sampled simulator outcome qualification | Pinned nuPlan v1.2 collision rules, software clocks and normal/error termination paths. | A static contract is available. Native controls and actual common-window coverage are still required before trial outcomes can be interpreted. |
 
 The following recent endpoints extend the earlier evidence table; they do not
 replace its negative results or the detailed dated record below.
@@ -339,11 +346,12 @@ absence is not a successful-recovery label or a check of accident detection.
 
 ```mermaid
 flowchart TB
-  T["TD2D: complete summary census<br/>Reaction time and binary outcome recorded"] --> U["Failure time and common monitored horizon<br/>Not established by the summaries or inspected history"]
-  M["manD: selected vehicle and environment files<br/>Stored time axis and request/state transitions checked"] --> V["Physical clock and accident timing<br/>Not qualified; no positive accident episode"]
-  U --> N["Next evidence dependency<br/>Release-linked clock and accident rule<br/>Positive control, termination and censoring"]
-  V --> N
-  N -. "qualification not yet met" .-> O["Recovery labels withheld<br/>Readiness modeling not admitted"]
+  T["TD2D: summary census and history checked<br/>Failure timing and monitored horizon unqualified"] --> G["Human recovery evidence gap<br/>No qualified common outcome horizon"]
+  M["manD: recorded axis and documentation checked<br/>Physical clock and accident timing unqualified"] --> G
+  N["nuPlan v1.2: static simulator contract<br/>Sampled contact, software clock and termination"] --> C["Next: authored native controls<br/>Contact, repeated tracks, endpoints and failures"]
+  C -. "only after qualification" .-> W["Future simulator trial protocol<br/>Complete population and actual common window"]
+  W -. "separate physical evidence required" .-> G
+  G --> O["Recovery labels withheld<br/>Readiness modeling not admitted"]
 ```
 
 Separate calculations check all TD2D source mappings and 193 strata, and all
@@ -361,12 +369,18 @@ evidence is required before another trial can address that gap.
 
 The [nuPlan source audit](research/nuplan-outcome-source/0.1.0/README.md) supplies
 an explicit, narrower candidate for sampled simulator outcomes. Its pinned v1.2
-code defines first-contact rules, microsecond software timestamps and normal/error
-termination paths. Run success and no-at-fault collision are separate observations;
-the history endpoint must be checked rather than inferred from a requested duration.
+code counts the first sampled contact per track; at-fault collisions form a
+separate subset. Microsecond scenario timestamps and host execution timings have
+different roles. In the selected normal path, N scenario timestamps produce
+history indices 0 through N−2 for N≥2; a requested duration does not establish
+the observed endpoint. Successful execution does not establish collision freedom,
+and a positive collision score need not mean zero contacts.
+
 Native behavior and trial coverage remain unverified. No trial data was acquired,
-and no upstream simulator code was executed; eleven source-custody controls pass. Motional's code
-attribution and Apache-2.0 terms are retained in the packet.
+and no upstream simulator code was executed; eleven source-custody controls pass.
+The packet retains Motional's code attribution and Apache-2.0 terms. Neither this
+source qualification nor future simulator controls would, by themselves, establish
+physical recovery or human readiness.
 
 TD2D-derived results credit Jiwoo Hwang, Woohyeok Choi, Jungmin Lee, Woojoo Kim,
 Jungwook Rhim and Auk Kim; manD-derived results credit Khazar Dargahi Nobari and
@@ -459,7 +473,8 @@ The repository contains static scientific contracts, offline research tools and
 retained experiments. Gate A defines versioned contracts, schemas,
 counterexamples and locked validation. The research implementation prepares
 comparisons, checks certificates and records scoped findings. Their integration
-remains incomplete.
+remains incomplete. The [technical review guide](docs/TECHNICAL_REVIEW.md) maps the
+implemented paths, shared trusted code, reproduction commands and open obligations.
 
 ```mermaid
 flowchart TB
@@ -489,6 +504,20 @@ an annotation is true, a population is complete or a conclusion has been
 independently reviewed. Passing a checker is evidence about the implemented
 contract. **Gate A remains operator-unaccepted**; the repository does not claim
 standards compliance or deployment authority.
+
+The code follows explicit preparation, proof and checking boundaries:
+
+| Boundary | Implementation | What a reviewer should establish |
+| --- | --- | --- |
+| Input and uncertainty model | [Comparison contract](tools/perception_revision/contract.py) and [closed schema](research/perception-revision/0.1.0/input.schema.json) | Byte identity at the CLI boundary, shared reference worlds, rational weights, unavailable states and resource limits. |
+| Proof production | [Replacement kernel](tools/perception_revision/kernel.py) | Paired loss bounds and feasible matching/cover witnesses under the supplied model. |
+| Proof checking | [Comparison checker](tools/perception_revision/checker.py) and [cardinality verifier](tools/perception_decision/checker.py) | Complete admitted worlds, valid witnesses and the decision implied by the bounds. The checker does not call the producer's matcher; parsing and some mathematical helpers are shared. |
+| Output custody | [Research CLI](tools/perception_revision/cli.py) and [atomic writer](tools/perception_decision/cli.py) | Input/output hashes and complete, non-overwriting publication of a checked packet. This CLI is not the Gate A locked release launcher. |
+| Outcome-source qualification | [nuPlan source audit](research/nuplan-outcome-source/0.1.0/audit.py), [separate verification](research/nuplan-outcome-source/0.1.0/verify.py) and [controls](research/nuplan-outcome-source/0.1.0/controls.py) | Retained source identities and bounded static deductions. Native execution and trial qualification remain separate. |
+
+A separate checker reduces specific producer failure modes. Shared parsing,
+reference-model assumptions and source preparation remain part of the trusted
+surface; two calculations do not create independent scientific replication.
 
 ### Run the offline auditor
 
@@ -525,7 +554,16 @@ For repository research-consistency checks, use an environment with `numpy`,
 python3 -B tools/measure/gate_b_check.py --json /tmp/reiyah-gate-b-check.json
 ```
 
-The default check verifies retained transcript identities and consistency. It
+With `jsonschema` and `Pillow` available, exercise the perception implementation
+and its rejection paths without acquiring data or running a model:
+
+```sh
+python3 -B -m unittest discover -s tests -p 'test_perception*.py' -v
+```
+
+The [technical review record](docs/reviews/technical-review-2026-10-16.json) retains
+the environment, commands, results and limits of the current review. The default
+repository check verifies retained transcript identities and consistency. It
 does not rerun the historical experiments. The
 [replay manifest](validation/gate-b-replay-manifest.json) records their input
 and environment requirements. Gate A release validation uses its own locked
@@ -617,6 +655,8 @@ preserving even when it fails the product-value test.
 
 ## Recent research
 
+- **16 October 2026:** [Technical review and reproduction](docs/TECHNICAL_REVIEW.md). The current architecture now links directly to its contracts, producer, checker and shared trusted code. All 462 perception tests and the small offline example pass in the recorded environment. All nine diagrams were rendered and inspected; the progress and outcome views are refreshed. This review leaves scientific results and Gate A acceptance unchanged.
+
 Entries describe the result and next dependency **at that checkpoint**. The
 current direction above supersedes historical execution instructions; earlier
 failures and incomplete states remain part of the record.
@@ -675,6 +715,7 @@ changes the scope of an earlier result.
 
 | Read for | Start here |
 | --- | --- |
+| Current technical inspection | [Review guide](docs/TECHNICAL_REVIEW.md) · [Dated verification record](docs/reviews/technical-review-2026-10-16.json) |
 | Engine model and mathematics | [Architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) · [Replacement interface](research/perception-revision/0.1.0/README.md) |
 | Current direction and evidence | [Progress map](#research-progression) · [Next-session brief](docs/NEXT_SESSION.md) · [Research release](research/releases/2026-10-11/README.md) · [Evidence inventory](research/releases/2026-10-11/evidence.json) · [Roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) · [Execution audit](research/roadmap-audit/0.1.0/README.md) · [Primary-method review](research/roadmap-audit/0.1.0/FRONTIER.md) |
 | Takeover coverage and outcome timing | [Complete TD2D census](research/takeover-outcome/0.2.0/README.md) · [Source-history closure](research/takeover-source-lineage/0.1.0/README.md) · [manD timeline](research/mand-timing/0.1.0/README.md) · [manD source closure](research/mand-semantics/0.1.0/DECISION.md) · [Current nuPlan source contract](research/nuplan-outcome-source/0.1.0/README.md) |

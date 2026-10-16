@@ -1,10 +1,10 @@
 {
   "artifact_id": "reiyah.continuation",
-  "version": "0.1.34",
+  "version": "0.1.35",
   "as_of": "2026-10-16",
   "lifecycle_status": "proposed",
   "authority": "Navigation and retained evidence bindings only; verify latest operator instruction, repository rules and live Git state",
-  "editorial_base": "46d61aae105422657eb233a90cd857fa2c63aab6",
+  "editorial_base": "36d4cfc9e55272e440ad4723dd8fb243ef069fee",
   "release": {
     "tag": "research-2026-10-11",
     "commit": "5de377af25a4c6882096ebbc91808b19feafb628"
@@ -1387,7 +1387,7 @@
     },
     {
       "path": "docs/NEXT_SESSION_PROMPT.md",
-      "sha256": "2687f1b3798cc20883edee2938f9a28f183dae6f282e45bd43aba69d980b003e"
+      "sha256": "b191d9b1c182a5abcafb8da14dbab339956573144e9ced526170eb649dd1092a"
     },
     {
       "path": "research/multiorg-reference-admission/0.8.0/DECISION.md",
@@ -1912,25 +1912,39 @@
     {
       "path": "research/nuplan-outcome-source/0.1.0/verify.py",
       "sha256": "6ac04cc3b87fd40e3b5d3bbf7f36c32a7325810df5782b1cba6976edc7d3b2fc"
+    },
+    {
+      "path": "docs/TECHNICAL_REVIEW.md",
+      "sha256": "03d637d484368203c12aa92c5070ad6c7c76bdd6dc8864ac579c802b9b7f9d31"
+    },
+    {
+      "path": "docs/reviews/technical-review-2026-10-16.json",
+      "sha256": "7778fadca824dfcbab515f8747725bf7dab262087b5bd4362cdf3bda96d27a57"
     }
   ],
   "presentation_verification": {
     "root_diagrams": 9,
     "changed_diagrams": [
-      5
+      5,
+      6
     ],
-    "unchanged_diagrams": 8,
+    "unchanged_diagrams": 7,
     "current_local_render_and_visual_review": true,
-    "current_visual_scope": "Progress map rendered with Mermaid CLI 11.4.2 and existing Chrome; complete labels and arrows reviewed. Eight other diagrams unchanged.",
+    "current_visual_scope": "All nine README diagrams locally rendered and inspected; two revised, seven unchanged.",
     "live_GitHub_visual_render": "not_verified",
     "consistency_checks_passed": 9,
+    "perception_tests_passed": 462,
+    "initial_perception_test_errors": 186,
+    "initial_failure": "Pillow unavailable in first environment; retained, corrected with existing isolated dependency",
     "historical_transcripts_digest_bound": 52,
     "historical_experiments_replayed": 0,
     "optional_attack_suite": "not_run",
     "small_auditor_matches": true,
     "small_auditor_bytes": 1312,
-    "Gate_A_release_validation": "not_run; bounded public-source research audit",
-    "readme_sha256": "4d30edf600508429d285497d037470b0c6fcc739debb79762b1fac2dadf83a50",
+    "Gate_A_release_validation": "not_run; technical presentation and research-code review",
+    "scientific_packets_changed": false,
+    "code_changed": false,
+    "readme_sha256": "2e3545f3455b5a8794bbfa2510b4762d4b4fed6ad0888c6a50db48542c8c5fb6",
     "inherited_verification": {
       "root_diagrams": 9,
       "changed_diagrams": [
@@ -1938,7 +1952,7 @@
       ],
       "unchanged_diagrams": 8,
       "current_local_render_and_visual_review": true,
-      "current_visual_scope": "Progress map rendered with existing Mermaid CLI 11.4.2/Chrome, inspected for readable labels and complete bounds. Other eight diagrams unchanged from prior local review.",
+      "current_visual_scope": "Progress map rendered with Mermaid CLI 11.4.2 and existing Chrome; complete labels and arrows reviewed. Eight other diagrams unchanged.",
       "live_GitHub_visual_render": "not_verified",
       "consistency_checks_passed": 9,
       "historical_transcripts_digest_bound": 52,
@@ -1947,39 +1961,57 @@
       "small_auditor_matches": true,
       "small_auditor_bytes": 1312,
       "Gate_A_release_validation": "not_run; bounded public-source research audit",
-      "readme_sha256": "9bbbbdc950415318b72572006138ff86c1bc8d006d84e9c4d14f754e40edc69f",
+      "readme_sha256": "4d30edf600508429d285497d037470b0c6fcc739debb79762b1fac2dadf83a50",
       "inherited_verification": {
         "root_diagrams": 9,
-        "prior_root_diagrams": 7,
-        "unchanged_diagrams": 6,
-        "revised_diagrams": 1,
-        "added_diagrams": 2,
-        "local_renderer": "Mermaid CLI 11.4.2, existing local Chrome",
-        "local_render_and_visual_review": true,
-        "live_GitHub_visual_render": "not_verified; local rendered diagrams reviewed and exact publication readback separately required",
+        "changed_diagrams": [
+          5
+        ],
+        "unchanged_diagrams": 8,
+        "current_local_render_and_visual_review": true,
+        "current_visual_scope": "Progress map rendered with existing Mermaid CLI 11.4.2/Chrome, inspected for readable labels and complete bounds. Other eight diagrams unchanged from prior local review.",
+        "live_GitHub_visual_render": "not_verified",
         "consistency_checks_passed": 9,
         "historical_transcripts_digest_bound": 52,
         "historical_experiments_replayed": 0,
         "optional_attack_suite": "not_run",
         "small_auditor_matches": true,
         "small_auditor_bytes": 1312,
-        "Gate_A_release_validation": "not_run; editorial scope only",
-        "scientific_packets_changed": false,
-        "readme_sha256": "4ee58dd6a779f9ad9796bd5d0ada3dfc0b3da53b5e06170bcfc84136781b760b",
-        "scope": "Current README and continuation presentation only. Current scientific result remains manD recorded-axis support with outcome timing unqualified.",
+        "Gate_A_release_validation": "not_run; bounded public-source research audit",
+        "readme_sha256": "9bbbbdc950415318b72572006138ff86c1bc8d006d84e9c4d14f754e40edc69f",
         "inherited_verification": {
-          "root_diagrams": 7,
-          "related_study_diagrams": 2,
+          "root_diagrams": 9,
+          "prior_root_diagrams": 7,
+          "unchanged_diagrams": 6,
+          "revised_diagrams": 1,
+          "added_diagrams": 2,
+          "local_renderer": "Mermaid CLI 11.4.2, existing local Chrome",
           "local_render_and_visual_review": true,
-          "live_GitHub_visual_render": "not_independently_verified",
+          "live_GitHub_visual_render": "not_verified; local rendered diagrams reviewed and exact publication readback separately required",
           "consistency_checks_passed": 9,
+          "historical_transcripts_digest_bound": 52,
           "historical_experiments_replayed": 0,
           "optional_attack_suite": "not_run",
           "small_auditor_matches": true,
-          "authored_control_non_timing_result_matches": true,
-          "Gate_A_release_validation": "not_run",
-          "evidence_commit": "bde5796d6268d051a862db16e6ebda1e4413d61a",
-          "scope": "Inherited diagram/control verification; current increment changes no Mermaid blocks. Do not count the inherited control as rerun."
+          "small_auditor_bytes": 1312,
+          "Gate_A_release_validation": "not_run; editorial scope only",
+          "scientific_packets_changed": false,
+          "readme_sha256": "4ee58dd6a779f9ad9796bd5d0ada3dfc0b3da53b5e06170bcfc84136781b760b",
+          "scope": "Current README and continuation presentation only. Current scientific result remains manD recorded-axis support with outcome timing unqualified.",
+          "inherited_verification": {
+            "root_diagrams": 7,
+            "related_study_diagrams": 2,
+            "local_render_and_visual_review": true,
+            "live_GitHub_visual_render": "not_independently_verified",
+            "consistency_checks_passed": 9,
+            "historical_experiments_replayed": 0,
+            "optional_attack_suite": "not_run",
+            "small_auditor_matches": true,
+            "authored_control_non_timing_result_matches": true,
+            "Gate_A_release_validation": "not_run",
+            "evidence_commit": "bde5796d6268d051a862db16e6ebda1e4413d61a",
+            "scope": "Inherited diagram/control verification; current increment changes no Mermaid blocks. Do not count the inherited control as rerun."
+          }
         }
       }
     }
@@ -2660,6 +2692,14 @@
     "direct_source_requests": 41,
     "retained_response_body_bytes": 806830,
     "acquisition_closed": true,
+    "Gate_A_accepted": false
+  },
+  "technical_review": {
+    "guide": "docs/TECHNICAL_REVIEW.md",
+    "record": "docs/reviews/technical-review-2026-10-16.json",
+    "base_commit": "36d4cfc9e55272e440ad4723dd8fb243ef069fee",
+    "scientific_next_action_changed": false,
+    "state_of_the_art_established": false,
     "Gate_A_accepted": false
   }
 }

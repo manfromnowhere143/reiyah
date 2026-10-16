@@ -1,0 +1,243 @@
+{
+  "artifact_id": "reiyah.technical-review",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "as_of": "2026-10-16",
+  "base_commit": "36d4cfc9e55272e440ad4723dd8fb243ef069fee",
+  "scope": "Current README, technical architecture navigation, perception test surface and continuation integrity. No exhaustive repository/security audit or scientific re-evaluation.",
+  "review_provenance": "Maintainer-session automated checks and model-assisted source/visual review; no independent external review.",
+  "changes": [
+    "Refresh outcome-source capability table and progression with completed manD closure and nuPlan static qualification.",
+    "Arrange existing progress milestones in two readable phases; correct the outcome-dependency diagram.",
+    "Add code-level review path, shared trusted-code boundaries and explicit test dependencies.",
+    "Preserve all prior scientific artifacts, README sections, dated research entries and handoff history."
+  ],
+  "code_changes": false,
+  "scientific_packets_changed": false,
+  "environment": {
+    "python": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "packages": {
+      "jsonschema": "4.26.0",
+      "Pillow": "12.3.0",
+      "numpy": "2.4.2",
+      "scipy": "1.17.1"
+    }
+  },
+  "environment_preparation": "Isolated venv with system packages; borrowed existing Pillow 12.3.0 via two local distribution symlinks. No install/download or shared environment mutation. Not a portable lock.",
+  "perception_tests": {
+    "command": "python3 -B -m unittest discover -s tests -p 'test_perception*.py' -v",
+    "status": "passed",
+    "tests": 462,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "seconds": 80.87108033301774,
+    "modules": {
+      "test_perception_admission": 24,
+      "test_perception_annotation_trace": 11,
+      "test_perception_annotations": 12,
+      "test_perception_assistance": 14,
+      "test_perception_binding": 21,
+      "test_perception_decision": 14,
+      "test_perception_discovery": 29,
+      "test_perception_geometry": 21,
+      "test_perception_inputs": 24,
+      "test_perception_nuscenes": 12,
+      "test_perception_observation": 29,
+      "test_perception_operands": 12,
+      "test_perception_output_separation": 5,
+      "test_perception_predictions": 14,
+      "test_perception_reference": 15,
+      "test_perception_reference_sharing": 22,
+      "test_perception_rehearsal": 12,
+      "test_perception_reviewed_operands": 17,
+      "test_perception_revision": 19,
+      "test_perception_revision_boxes": 10,
+      "test_perception_revision_components": 13,
+      "test_perception_revision_linear_bounds": 9,
+      "test_perception_revision_localization": 11,
+      "test_perception_revision_margin": 6,
+      "test_perception_revision_monotone": 9,
+      "test_perception_revision_nuscenes": 3,
+      "test_perception_revision_position_audit": 13,
+      "test_perception_revision_split_margin": 8,
+      "test_perception_selection_evidence": 1,
+      "test_perception_varying_match": 3,
+      "test_perception_viewer": 20,
+      "test_perception_viewer_preparation": 10,
+      "test_perception_windows": 19
+    },
+    "frozen_source_files": 262,
+    "frozen_sources_unchanged": true,
+    "source_freeze_sha256": "1f979571601c4c617d3d000181179cda8a5bafcfbd5fe47395f17b7e64131489",
+    "network_denied_before_python": true,
+    "candidate_writes_denied_before_python": true,
+    "stdout_sha256": "9aca8981e615dc93028da28f120da524c2f3b4ec4a72473460918c4cc413da4d",
+    "stderr_sha256": "292c435c8217966d0c06e43997b20e9ad38fea16402c18918e392a26a0a8356d"
+  },
+  "first_test_attempt": {
+    "status": "failed",
+    "tests": 462,
+    "errors": 186,
+    "cause": "ModuleNotFoundError: No module named 'PIL'",
+    "seconds": 25.347601292014588,
+    "source_unchanged": true,
+    "stderr_sha256": "3da79da7e8dbe5d0701c5d136335aa118b60e5c12d95520f5107d0cf9b1ee98f",
+    "correction": "Provide the existing Pillow package in an isolated environment; no assertion or expected result changed."
+  },
+  "small_example": {
+    "argv": [
+      "python3",
+      "-B",
+      "research/perception-decision-review/0.1.0/reproduce.py"
+    ],
+    "exit_code": 0,
+    "bytes": 1312,
+    "exact_expected_match": true,
+    "sha256": "62d159ba5255046fcb5d04b21abfbd64fe96550acda747e7be3aafce51a0594f"
+  },
+  "repository_checks": {
+    "command": "python3 -B tools/measure/gate_b_check.py --json REPORT_PATH",
+    "status": "passed",
+    "passed": 9,
+    "checks": [
+      {
+        "check": "MANIFEST  every retained transcript exists with its recorded SHA-256",
+        "detail": "52 transcripts",
+        "state": "pass"
+      },
+      {
+        "check": "REPLAY    every replayed process exits zero with the expected normalized transcript",
+        "detail": "0 replicated, 52 not replayed here",
+        "state": "pass"
+      },
+      {
+        "check": "REGISTER  newest register validates and reconciliation passes",
+        "detail": "RESULT: PASS - no live artifact asserts a forbidden figure",
+        "state": "pass"
+      },
+      {
+        "check": "CUSTODY   retained publisher records and committed payloads match their digests",
+        "detail": "4 sources",
+        "state": "pass"
+      },
+      {
+        "check": "STYLE     no em dash in live Markdown",
+        "detail": "521 files",
+        "state": "pass"
+      },
+      {
+        "check": "STYLE     every result document carries Document ID, Version, Lifecycle status",
+        "detail": "",
+        "state": "pass"
+      },
+      {
+        "check": "STYLE     every relative Markdown link resolves",
+        "detail": "",
+        "state": "pass"
+      },
+      {
+        "check": "REVIEW    every number in every result document is bound to retained bytes",
+        "detail": "RESULT: PASS  (0 document(s) with unbound numbers of 42)",
+        "state": "pass"
+      },
+      {
+        "check": "REVIEW    the register and the result documents describe the same program",
+        "detail": "RESULT: PASS  (0 finding(s))",
+        "state": "pass"
+      },
+      {
+        "check": "REVIEW    attack suite",
+        "detail": "pass --attacks to run",
+        "state": "not_run_here"
+      }
+    ],
+    "historical_transcripts_digest_bound": 52,
+    "historical_replay_states": {
+      "not_replayed_here": 35,
+      "argv_unrecorded_historical": 17
+    },
+    "historical_experiments_replayed": 0,
+    "optional_attack_suite": "not_run",
+    "Gate_A_release_replay": "not_run; presentation and research-code review, no Gate A artifacts changed"
+  },
+  "diagrams": {
+    "before": 9,
+    "after": 9,
+    "changed": [
+      5,
+      6
+    ],
+    "unchanged": 7,
+    "all_locally_rendered_and_visually_inspected": true,
+    "renderer": "Mermaid CLI 11.4.2 with existing Chrome",
+    "live_GitHub_visual_render": "not_verified",
+    "sources": [
+      {
+        "number": 1,
+        "topic": "Shared-world comparison and competent baseline",
+        "sha256": "cb5362ca0696d1f2bb90243a4fa6decec85f6e3c49cf8918a4857dd2d2b65942"
+      },
+      {
+        "number": 2,
+        "topic": "Reference-selection versus physical interpretation",
+        "sha256": "f2f7fa27c448577df84bb85a36832a819d01b43ae49804aab8c70438d5fcf537"
+      },
+      {
+        "number": 3,
+        "topic": "Measurement eligibility and failure handling",
+        "sha256": "3ede5f561070490ed902c95764291f7552283e1a4ce28178cb3b2a3c9e8595ed"
+      },
+      {
+        "number": 4,
+        "topic": "Joint-miss ratio and denominator support",
+        "sha256": "a42ca0f15adb52e60c4e1d25916d8b28962a7e37d89a1ea5bee2a9ad6b5c16c3"
+      },
+      {
+        "number": 5,
+        "topic": "Research progression in two phases",
+        "sha256": "90bb0b8f1b56ffe120aebfa1aab0e5807056fb946118a3ffb6e2899839a01308"
+      },
+      {
+        "number": 6,
+        "topic": "Source, native, trial and physical qualification",
+        "sha256": "90c6f71dbe88201736e10259525330059244a4779e2979e6ff44d4a982ffd125"
+      },
+      {
+        "number": 7,
+        "topic": "HARBOR constructs and evidence dependencies",
+        "sha256": "ef0529ea3a66c4ca10bf0b4261f1a4e533509fb61083d9aab4d9255955047904"
+      },
+      {
+        "number": 8,
+        "topic": "Static contracts and offline research responsibilities",
+        "sha256": "54cab41ff522aa1be603dd7a3cce624c4625083f62fa9b0f2c9f36f79c8eeadd"
+      },
+      {
+        "number": 9,
+        "topic": "Conditional product-value comparison",
+        "sha256": "6de8d76957eb91dad3dcac04ff1c54422e260b31f46c291d4d5a14c4959bd1b9"
+      }
+    ]
+  },
+  "trusted_code_obligations": [
+    "Strict parser and rational representation are shared.",
+    "Comparison checker reconstructs worlds and checks matching/cover certificates without the producer matcher.",
+    "Conditional-audit producer uses the audit checker conclusion function.",
+    "Internal helper APIs require their documented validated inputs.",
+    "Source identity, complete measurement coverage and physical reference validity are separate obligations."
+  ],
+  "unestablished": [
+    "Independent scientific replication",
+    "Physical recovery labels or human readiness",
+    "Complete-work advantage",
+    "Task-specific state-of-the-art performance",
+    "Production readiness or whole-repository security"
+  ],
+  "Gate_A_accepted": false,
+  "trials_acquired": 0,
+  "upstream_nuplan_executions": 0,
+  "model_forwards": 0,
+  "next_scientific_action": "Unchanged: freeze and execute bounded authored nuPlan native controls before any trial acquisition.",
+  "private_evidence_location": "Continuation memory identifies technical-review-2026-10-16-3cnrnik4; logs, dependency identities, freezes and publisher readback are retained there."
+}
