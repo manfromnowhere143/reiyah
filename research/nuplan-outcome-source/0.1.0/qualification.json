@@ -1,0 +1,49 @@
+{
+  "artifact_id": "reiyah.nuplan-outcome-source.qualification",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "decision": "qualified_static_sampled_simulator_contract_only",
+  "source_release": {
+    "repository": "https://github.com/motional/nuplan-devkit",
+    "tag": "nuplan-devkit-v1.2",
+    "commit": "ce3c323af01c0d7ec5672f7832ef53f9c679aab0",
+    "tree": "66f1bc1a80b4a8c21a2b387875f94698c6e8a19c",
+    "published_at": "2023-04-27T07:29:02Z",
+    "observed_at": "2026-10-16",
+    "scope": "Pinned official release, not a newest-code or current competition-server assertion."
+  },
+  "qualified": {
+    "event_rule": "First sampled radius-and-polygon overlap per track token, with a separate explicit at-fault heuristic.",
+    "clock": "Declared database/ego TimePoint microseconds; source-linked iteration propagation, separate from perf_counter runtime.",
+    "normal_termination": "Selected local step-controller path stops at N-1, with history indices 0..N-2 for N>=2.",
+    "abnormal_termination": "Synchronous exceptions and observed asynchronous metric/log failures are reported separately from outcomes."
+  },
+  "unqualified": {
+    "physical_clock_error_bound_us": null,
+    "continuous_collision_onset_error_bound_us": null,
+    "actual_trial_population_count": null,
+    "actual_trace_coverage": null,
+    "sensor_or_map_truth": null,
+    "remote_timeout_enforcement": null,
+    "physical_recovery": null,
+    "human_readiness": null
+  },
+  "native_execution_verified": false,
+  "upstream_positive_control_fixtures_identified": true,
+  "upstream_tests_executed": false,
+  "new_trials_acquired": 0,
+  "empirical_outcome_admitted": false,
+  "readiness_model_admitted": false,
+  "Gate_A_accepted": false,
+  "requirements_before_any_trial": [
+    "Freeze a simulator-only decision, population, endpoint, horizons, comparator and resources before acquiring records.",
+    "Verify native behavior on bounded authored positive/negative and termination controls in an isolated source fixture harness; no model or full simulator run follows automatically.",
+    "Bind exact resolved code/configuration and enabled metric/required dependency identities.",
+    "Require a complete expected-run roster, unique scenario/planner/log keys, final execution reports and metric/log callback completion.",
+    "Reconcile planned and actual timestamp vectors, monotonicity, gaps, expected N-1 history membership and finite common comparison window.",
+    "Retain any-collision events, at-fault subset, first-track de-duplication, event timestamps and history separately from aggregate score.",
+    "Preserve missing/failed/shortened/excluded outcomes explicitly; state selection/censoring assumptions, never silently label absence success.",
+    "Qualify source and artifact access terms separately; code licensing is not a grant to acquire or redistribute dataset trials."
+  ],
+  "next_action": "Freeze and execute a bounded authored native-control protocol for the pinned collision/clock/termination paths before any dataset trials. Compare with ordinary direct analysis under equal information. Stop if native behavior or required receipts contradict the proposed sampled contract."
+}

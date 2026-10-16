@@ -1,0 +1,75 @@
+{
+  "artifact_id": "reiyah.nuplan-outcome-source.audit",
+  "version": "0.1.0",
+  "passed": true,
+  "input_files_checked": 37,
+  "upstream_files_checked": 33,
+  "input_bytes_checked": 699584,
+  "source_spans_checked": 21,
+  "tree_entries": 1576,
+  "tree_objects_reconstructed": 253,
+  "static_ast_checks": [
+    "end_rule",
+    "increment_rule",
+    "history_order",
+    "score_rule"
+  ],
+  "authored_boundary_examples": [
+    {
+      "case": "two",
+      "scenario_points": 2,
+      "history_samples": 1,
+      "last_history_index": 0,
+      "history_span_us": 0,
+      "last_scenario_time_us": 100000,
+      "last_scenario_point_in_history": false
+    },
+    {
+      "case": "three",
+      "scenario_points": 3,
+      "history_samples": 2,
+      "last_history_index": 1,
+      "history_span_us": 100000,
+      "last_scenario_time_us": 200000,
+      "last_scenario_point_in_history": false
+    },
+    {
+      "case": "irregular",
+      "scenario_points": 4,
+      "history_samples": 3,
+      "last_history_index": 2,
+      "history_span_us": 250000,
+      "last_scenario_time_us": 450000,
+      "last_scenario_point_in_history": false
+    },
+    {
+      "case": "fifteen_second_requested_grid",
+      "scenario_points": 151,
+      "history_samples": 150,
+      "last_history_index": 149,
+      "history_span_us": 14900000,
+      "last_scenario_time_us": 15000000,
+      "last_scenario_point_in_history": false
+    }
+  ],
+  "default_score_thresholds": {
+    "vru": 0,
+    "vehicle": 0,
+    "object": 1
+  },
+  "one_at_fault_object_score_fraction": "1/2",
+  "upstream_test_functions_identified": [
+    "test_active_front_collision",
+    "test_active_lateral_collision",
+    "test_active_rear_collision",
+    "test_multiple_collisions",
+    "test_no_collision",
+    "test_stopped_ego_collision",
+    "test_stopped_track_collision"
+  ],
+  "upstream_code_executed": false,
+  "native_behavior_verified": false,
+  "interpretation_automatically_proved": false,
+  "trials_acquired": 0,
+  "Gate_A_accepted": false
+}

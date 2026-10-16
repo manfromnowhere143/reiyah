@@ -1,6 +1,6 @@
 # Reiyah: next-session instructions
 
-Document ID: `reiyah.next-session-prompt`. Version: `0.1.7`.
+Document ID: `reiyah.next-session-prompt`. Version: `0.1.8`.
 16 October 2026. Operator-directed continuation instructions. The linked packet
 records results; this prompt adds no acceptance or external-action authority.
 
@@ -17,10 +17,10 @@ evidence locations. The canonical controller is intentionally historical at
 74fbacc; preserve it and all closed owners. Do not pull, reset or switch it.
 The refreshed README shows the completed research progression and current timing
 dependency. Its nine diagrams are explanatory, not new scientific evidence.
-The latest handoff is the source-semantics closeout. Read
-research/mand-semantics/0.1.0/README.md and DECISION.md before choosing the next
-source. Earlier partial-cohort, presentation and source-search instructions are
-historical when superseded.
+The latest handoff is the nuPlan source-qualification closeout. Read
+research/nuplan-outcome-source/0.1.0/README.md, DECISION.md and CONTRACT.md before
+choosing the next action. Earlier partial-cohort and source-search instructions
+are historical when superseded. Preserve the completed manD source closure.
 
 The ambition is scientific and engineering leadership: build a useful,
 defensible system that improves consequential decisions for people working on
@@ -91,15 +91,26 @@ without qualifying physical recovery. No named positive ego-accident control was
 identified in this scope. The author dissertation's repository text derivative was
 checked; the original PDF/figures were not acquired. Nine custody controls pass.
 
-Next qualify a different public outcome source from its code/protocol before
-acquiring trials. Require a released event monitor or explicit annotation rule,
-clock meaning/uncertainty, termination causes, coverage and censoring. Reopen manD
-only for materially new release-linked capture/event evidence and an identified
-positive ego-accident control. Freeze any additional record and budget in a new
-protocol; selected positive controls cannot estimate population performance.
-If semantics remain insufficient, preserve recorded request/state observations
-and withhold recovery labels/readiness modeling. No repeated P1/anger, TD2D or
-microscopy comparisons, unrelated streams or outreach. Gate A remains unaccepted.
+The new research/nuplan-outcome-source/0.1.0 packet qualifies a static sampled
+simulator contract from official nuplan-devkit v1.2, pinned commit ce3c323.
+It defines first sampled collision per track, a separate at-fault subset,
+microsecond software clocks and normal/error termination. Execution success is
+not driving success. With N scenario timestamps and N>=2, the selected normal
+history covers 0..N-2. Actual common-window coverage still needs record evidence.
+Thirty-three source files, 21 passages, 253 tree objects, four authored endpoint
+examples and eleven custody controls check. No upstream native execution or
+trial acquisition occurred; physical clock accuracy and continuous onset remain
+unqualified. Seven upstream collision test functions are named but were not run.
+
+Next freeze and execute a bounded authored native-control protocol before trials.
+Cover positive/negative collisions, repeated track contact, the terminal history
+point, disabled metrics and execution/callback failures. Use a separate conventional
+calculation with equal information. No model campaign or full simulator rollout.
+Only afterward may a new protocol consider a simulator-only trial population,
+common observed window and complete run/metric/history receipts. Preserve all
+closed TD2D, manD and microscopy comparisons. Reopen them only for materially
+new eligible evidence. No readiness modeling, unrelated streams or outreach.
+Gate A remains unaccepted.
 
 At the prior completed perception checkpoint, packet 0.8.0, all four selected
 image pairs and twelve reference cases are complete. Two earlier pairs were

@@ -1,0 +1,156 @@
+{
+  "artifact_id": "reiyah.nuplan-outcome-source.provenance",
+  "version": "0.1.0",
+  "base": "46d61aae105422657eb233a90cd857fa2c63aab6",
+  "private_owner": "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_",
+  "execution": {
+    "status": "passed",
+    "at": "2026-10-16T08:13:26.960214+00:00",
+    "jobs": [
+      {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-f",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/offline-3.sb",
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "-B",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-code-3/audit.py",
+          "--sources",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-input",
+          "--inputs",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-code-3/inputs.json",
+          "--findings",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-code-3/findings.json",
+          "--qualification",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-code-3/qualification.json",
+          "--output",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-output-3/audit.json"
+        ],
+        "exit_code": 0,
+        "seconds": 0.07468183402670547
+      },
+      {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-f",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/offline-3.sb",
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "-B",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-code-3/verify.py",
+          "--sources",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-input",
+          "--inputs",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-code-3/inputs.json",
+          "--findings",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-code-3/findings.json",
+          "--result",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-output-3/audit.json",
+          "--output",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-output-3/verification.json"
+        ],
+        "exit_code": 0,
+        "seconds": 1.3433812080183998
+      },
+      {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-f",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/offline-3.sb",
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "-B",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-code-3/controls.py",
+          "--sources",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-input",
+          "--inputs",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-code-3/inputs.json",
+          "--findings",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-code-3/findings.json",
+          "--qualification",
+          "/Users/danielwahnich/.codex/reports/reiyah/outcome-source-2026-10-16-jq0kho3_/replay-code-3/qualification.json"
+        ],
+        "exit_code": 0,
+        "seconds": 0.3156645410344936
+      }
+    ],
+    "unchanged_source_code_inputs": 43,
+    "network_denied_before_python": true,
+    "source_and_code_writes_denied": true,
+    "upstream_code_executed": false,
+    "scope": "Source custody, structural checks and four authored arithmetic examples; not native simulator validation or Gate A release replay."
+  },
+  "failed_attempt": {
+    "at": "2026-10-16T08:12:41.709053+00:00",
+    "attempt": 1,
+    "status": "failed",
+    "stage": "source_audit",
+    "reason": "release_binding",
+    "cause": "GitHub recursive tree response requested by commit echoes the commit SHA in its outer sha field. Initial checker incorrectly equated that field with the root tree object.",
+    "correction": "Require the observed commit envelope; reconstruct every tree object from entries and verify the root against commit metadata. A separate check uses Git tree hashing. No source or interpretation changed.",
+    "stderr_sha256": "78a75249b5fddf699f14bdade6d51e5856f3a5e40db039df4f4fbe4ea5767328",
+    "initial_code_freeze": "VALIDATION_FREEZE.json",
+    "initial_code": "replay-code",
+    "initial_output": "replay-output"
+  },
+  "intermediate_pass": "VALIDATION_2.json passed; one additional tree-substitution rejection control added before final run. All earlier code/output bytes retained.",
+  "runtime": {
+    "python": "3.14.2",
+    "git_version": "git version 2.48.1"
+  },
+  "scientific_scope": "Static source interpretation and integrity plus authored arithmetic only. No native upstream import/execution, dataset acquisition, simulator/model run or independent scientific replication.",
+  "historical_experiments_replayed": 0,
+  "Gate_A_release_validation": "not_run; bounded public-source research audit",
+  "private_evidence": [
+    {
+      "path": "PLAN.json",
+      "sha256": "ffb9c1a27ce6968a9d82aa436311a4964a0ae56ee1e70b594a1525fbaf6b16e9"
+    },
+    {
+      "path": "SOURCE_CHOICE.json",
+      "sha256": "6198d807f743163f2df91edf6e59359e634eedb1800d274603613fb57a5cba5f"
+    },
+    {
+      "path": "SOURCE_CLOSE.json",
+      "sha256": "dba1127bd9bd75f441779c8060b010de98720cd48864b42601d8112f5c3cfcc7"
+    },
+    {
+      "path": "INTERPRETATION_FREEZE.json",
+      "sha256": "cc70a61fc22f4397e80e315bad2af17775624636313eba9780cee7958f95aeab"
+    },
+    {
+      "path": "VALIDATION_ATTEMPT_1.json",
+      "sha256": "fdd981eb055a5f10e434743bb75d136c9b93291de028005fe170376f0eac4456"
+    },
+    {
+      "path": "VALIDATION_FREEZE.json",
+      "sha256": "01f9319cc07d4bd11a6cec10dac7862b8c59afae614ccc2bf281dff2057369e3"
+    },
+    {
+      "path": "VALIDATION_2.json",
+      "sha256": "f63dda97bcd24a2b0ea4bce9c46a383851afa8451a5735b87eac8472811f3c2a"
+    },
+    {
+      "path": "VALIDATION_FREEZE_2.json",
+      "sha256": "8c64d249cf8e8f4d366dcfee455c544bcb5005db5777a9df900ca907f1e14728"
+    },
+    {
+      "path": "VALIDATION.json",
+      "sha256": "53b2ce3d0035cc189980448a875d4ef986ee1b1e9853919ce310b557217f73d7"
+    },
+    {
+      "path": "VALIDATION_FREEZE_3.json",
+      "sha256": "0cf7f4c7bd6498d77dd1956105c23cfab12afbcf02c1994654614f21e932e494"
+    },
+    {
+      "path": "validate.py",
+      "sha256": "f55e204c3954110819ff6beaf356d34474a7c6c2698236c9f28e5d279637f24c"
+    },
+    {
+      "path": "offline-3.sb",
+      "sha256": "b4c54ed6ee007a7be4e45d03a07ec6f363cc030bbcbc5f8232df3b1b576e50f3"
+    },
+    {
+      "path": "CAPTURE_RECONCILIATION.json",
+      "sha256": "983ad51cdf8150650f1bc84c4662c67438289260c1ebb555f5f694a54ac4fdde"
+    }
+  ]
+}

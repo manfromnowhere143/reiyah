@@ -1,3 +1,118 @@
+# Current entry: nuPlan source contract qualified, 16 October 2026
+
+Continuation version: 0.1.107. NEXT_SESSION/CONTINUATION version: 0.1.34.
+NEXT_SESSION_PROMPT version: 0.1.8. Start with the
+[nuPlan source packet](../research/nuplan-outcome-source/0.1.0/README.md),
+[decision](../research/nuplan-outcome-source/0.1.0/DECISION.md),
+[proposed record contract](../research/nuplan-outcome-source/0.1.0/CONTRACT.md),
+[qualification](../research/nuplan-outcome-source/0.1.0/qualification.json) and
+[source custody](../research/nuplan-outcome-source/0.1.0/source-custody.json).
+
+Base `46d61aae105422657eb233a90cd857fa2c63aab6`. Fresh owner
+`outcome-source-2026-10-16-jq0kho3_`; prior owners remain closed. The historical
+controller stays clean at `74fbacc`. This candidate shares preserved object stores
+with explicit flattened alternate pointers; no prior checkout or history changed.
+
+## Outcome and scope
+
+Daniel explicitly requested another public source's outcome, clock and termination
+qualification before trials, with Gate A unaccepted. The selected source is
+Motional's official nuplan-devkit v1.2 release, published 27 April 2023, commit
+`ce3c323af01c0d7ec5672f7832ef53f9c679aab0`. This is a pinned reference contract,
+not a claim about current master, newer methods or the competition server.
+
+The source qualifies a static sampled-simulator contract. A strict radius precheck
+and 2D polygon intersection define contacts on saved history; each track is counted
+only on first detection. At-fault classification is an explicit subset, distinct
+from any contact. The default object score is one half for one at-fault object
+collision. First-event timestamps use ego TimePoint microseconds. The selected
+controller propagates scenario timestamp differences; host perf_counter report
+times remain separate. No physical calibration or continuous onset bound follows.
+
+The selected normal path appends history before incrementing the step controller,
+which ends at index N−1. For N≥2, history covers 0 through N−2. Four authored
+endpoint calculations check this deduction, including 151 regular scenario points
+from 0 to 15 seconds yielding 150 history samples ending at 14.9 seconds. This is
+not an observed trial result or a universal assertion about nuPlan configurations.
+Available-row extraction and nominal sampling do not establish complete follow-up.
+
+Run success is execution status, not driving success. Synchronous errors and
+observed metric/log callback failures are reported separately. Metrics may be
+disabled; missing reports, short windows, killed processes and unverified delivery
+remain unknown. Competition prose's one-second budget is not established as a
+local-runner watchdog. Nonreactive agents replay logs and do not measure causal
+responses to simulated ego behavior.
+
+No trial, log, fixture payload or model was acquired. Upstream source was read
+and parsed, never imported or executed. Seven upstream test functions name positive/negative collision cases,
+but none ran. Actual trial population/coverage, physical timing uncertainty,
+continuous collision onset, recovery and readiness remain unqualified. Source-level
+qualification does not grant empirical admission or independent replication.
+
+## Verification, failures and cost
+
+The offline audit checks 37 inputs: 33 source files and four metadata responses.
+It reconstructs 253 Git tree objects from 1,576 entries, checks every selected
+source blob and binds 21 reviewed passages. A separate checker uses Git's own
+blob/tree hashing and verifies the authored endpoint arithmetic. Eleven exact-
+reason custody controls pass. Forty-three source/code files remained unchanged
+under execution with network and input/code writes denied before Python starts.
+
+The first validation attempt failed because the API tree envelope echoed the
+requested commit ID, not the root tree ID. The correction reconstructs tree objects
+and checks the root against commit metadata. Initial code, stderr and freeze remain
+retained. An intermediate successful run had ten controls; an added tree-substitution
+control produced the final eleven-control pass. No source interpretation changed.
+
+All nine documented repository research checks pass. The 52 historical transcript
+hashes match; none were replayed (35 not_replayed_here, 17 argv_unrecorded_historical).
+The advertised offline example matches its retained 1,312 bytes. Optional attacks
+and Gate A release replay were not run for this bounded source audit. Current
+links, hashes, code/config identities and publication scope are checked before push.
+
+Source acquisition closed after 41 requests, 37 complete responses and 806,830
+retained response bytes. Four requests failed or timed out. A shell-rejected URL
+and an absent guessed filename made no requests. One early pending request
+concurrently overwrote aggregate accounting after other captures had completed;
+all per-attempt records were intact, and exact reconciliation plus an exclusive
+capture lock corrected it before further acquisition. No source body was replaced
+and no cap was exceeded. The decoded 257,910 bytes are derived copies, not added
+again to network cost. One web call supplied discovery only. Recorded source-chain
+cost is now 647 requests and 695,711,040 retained response bytes. Active effort,
+full-history remaining budget, billing and transport overhead remain unknown.
+
+Original code, documentation and API responses stay private. Motional attribution
+and the pinned Apache-2.0 notice are retained. No dataset terms were accepted or
+third-party payload published. README sections/history and all prior handoff bytes
+remain intact. Its nine diagrams remain; only progress map five changed and was
+locally rendered and inspected. GitHub visual rendering was not checked.
+
+The commit containing this entry is the publication unit. Full human metadata,
+normal push and exact published-file/parent/tree/main readback must pass before
+publication is reported complete. The resulting commit and final cost snapshot
+are in private CLOSEOUT.json, FINAL_STATE.json and
+publication-readback/PUBLICATION_READBACK.json, with the continuation memory pointer.
+Publisher readback is not independent transport verification.
+
+## Next authorized step
+
+Freeze and run a bounded authored native-control protocol for the pinned collision,
+clock and termination paths before trials. Include positive/negative contacts,
+first-track de-duplication, final history point, disabled metrics and execution/
+callback failures. Bind exact code/dependencies, expected outcomes and budget first.
+Compare with a separate ordinary calculation under equal information. No model
+campaign or full simulator rollout. Stop on contradictions rather than relabeling
+outcomes or weakening expectations.
+
+Only after native qualification may a new protocol consider simulator-only trial
+selection, a common observed window and complete run/metric/history receipts.
+Physical timing, continuous contact and human readiness require separate evidence.
+Preserve closed TD2D, manD and microscopy work. No unrelated stream expansion or
+outreach. The full HARBOR mission remains intact; broad product expansion remains
+stopped pending value. **Gate A remains operator-unaccepted.**
+
+---
+
 # Current entry: manD source-semantics route closed, 16 October 2026
 
 Continuation version: 0.1.106. NEXT_SESSION/CONTINUATION version: 0.1.33.

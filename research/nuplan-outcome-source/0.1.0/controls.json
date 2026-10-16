@@ -1,0 +1,52 @@
+{
+  "artifact_id": "reiyah.nuplan-outcome-source.controls",
+  "version": "0.1.0",
+  "passed": 11,
+  "checks": [
+    {
+      "case": "omit_source",
+      "rejected_for": "missing_source"
+    },
+    {
+      "case": "substitute_source",
+      "rejected_for": "source_identity"
+    },
+    {
+      "case": "rebound_source",
+      "rejected_for": "git_blob_binding"
+    },
+    {
+      "case": "duplicate",
+      "rejected_for": "duplicate_source"
+    },
+    {
+      "case": "traversal",
+      "rejected_for": "unsafe_path"
+    },
+    {
+      "case": "wrong_tag",
+      "rejected_for": "release_binding"
+    },
+    {
+      "case": "wrong_tree",
+      "rejected_for": "tree_object_binding"
+    },
+    {
+      "case": "wrong_span",
+      "rejected_for": "span_identity"
+    },
+    {
+      "case": "bad_range",
+      "rejected_for": "span_range"
+    },
+    {
+      "case": "claim_acceptance",
+      "rejected_for": "unsupported_qualification"
+    },
+    {
+      "case": "unknown_as_zero",
+      "rejected_for": "unknown_as_zero"
+    }
+  ],
+  "native_controls_executed": false
+}

@@ -2,7 +2,7 @@
 
 Document ID: `reiyah.next-session`
 
-Version: `0.1.33`
+Version: `0.1.34`
 
 Lifecycle status: `proposed`
 
@@ -15,7 +15,40 @@ evidence bindings and resolve live Git state before acting.
 The [ready-to-use continuation prompt](NEXT_SESSION_PROMPT.md) carries Daniel's
 15 October direction into the next session.
 
-## Current outcome-source decision, 16 October 2026
+## Current nuPlan source qualification, 16 October 2026
+
+The [nuPlan source packet](../research/nuplan-outcome-source/0.1.0/README.md) qualifies
+a static sampled-simulator contract from official devkit v1.2, commit
+`ce3c323af01c0d7ec5672f7832ef53f9c679aab0`. Read its
+[decision](../research/nuplan-outcome-source/0.1.0/DECISION.md),
+[record obligations](../research/nuplan-outcome-source/0.1.0/CONTRACT.md),
+[qualification](../research/nuplan-outcome-source/0.1.0/qualification.json) and
+[custody](../research/nuplan-outcome-source/0.1.0/source-custody.json).
+
+The source defines first sampled overlap per track, a separate at-fault subset,
+microsecond software timestamps and explicit local normal/error termination paths.
+Run success is not driving success. For the selected normal controller path with
+N scenario timestamps, history covers indices 0 through N−2 when N≥2. Actual
+coverage, missing runs and enabled metrics must be reconciled before interpreting
+an outcome. Host execution timing and competition timeout prose are separate.
+
+All 33 source files, 253 reconstructed tree objects and 21 passages check. Four
+authored endpoint examples and eleven custody controls pass. No upstream code
+was executed; no fixture payload, trial or model was acquired. Physical clock error,
+continuous collision onset and trial coverage remain unqualified. The first audit
+failed on an API envelope/tree-ID assumption; its stronger tree reconstruction
+correction and the failed attempt are retained.
+
+Next freeze and run a bounded authored native-control protocol for these source
+paths before trials, with a separate conventional calculation and equal information.
+Cover positive/negative contact, repeated tracks, the last history point, disabled
+metrics and execution/callback failures. Do not start a simulator/model campaign.
+Only after that qualification should a new protocol consider a simulator-only
+trial population and complete common-window receipts. Preserve the closed TD2D,
+manD and microscopy work. No readiness model, unrelated streams or outreach;
+Gate A remains unaccepted. Older next actions below are historical when superseded.
+
+## Completed manD outcome-source decision, 16 October 2026
 
 The [manD source-semantics audit](../research/mand-semantics/0.1.0/README.md)
 closes the inspected documentation route. It reconciles the current 56-file
@@ -280,9 +313,9 @@ Test counts, visual polish and persistence alone cannot establish superiority.
 **Continue bounded scientific investigation. Keep broad product expansion
 stopped until a useful decision advantage is demonstrated.**
 
-The immediate scientific task is source admission for a qualified recovery
-endpoint. The closed TD2D/manD routes above determine the remaining requirements;
-inspect a new source’s code/protocol before paying for more trial data.
+The immediate scientific task is native qualification of the pinned nuPlan
+sampled-simulator contract before any trial acquisition. Physical recovery and
+human readiness remain separate unresolved requirements.
 
 The open product-value question is: can Reiyah reach the same justified perception-revision
 decision with materially less complete work than a competent conventional
@@ -471,7 +504,9 @@ declined, not pending; do not poll or resubmit it without new operator instructi
 2. Read the newest handoff, this brief and the editorial policy from current
    main or a fresh owned same-repository candidate. Earlier ACTIVE, MODIFY and
    NEXT instructions are historical when superseded here.
-3. For the current task, read the [source-semantics decision](../research/mand-semantics/0.1.0/DECISION.md)
+3. For the current task, read the [nuPlan source decision](../research/nuplan-outcome-source/0.1.0/DECISION.md)
+   and [proposed record contract](../research/nuplan-outcome-source/0.1.0/CONTRACT.md).
+   Preserve the [manD source closure](../research/mand-semantics/0.1.0/DECISION.md)
    and its [source ledger](../research/mand-semantics/0.1.0/source-custody.json).
    Preserve the preceding [manD packet](../research/mand-timing/0.1.0/README.md),
    its [decision](../research/mand-timing/0.1.0/DECISION.md) and the completed

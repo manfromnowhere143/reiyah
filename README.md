@@ -256,8 +256,9 @@ flowchart TB
   D --> E["Selected microscopy cohort completed<br/>4 image pairs, 12 reference cases; no observed fragility"]
   E -- "next measurement question" --> F["TD2D census and source-history route closed<br/>500 summaries; outcome timing unqualified"]
   F --> G["manD timeline and documentation route closed<br/>Recorded alignment supported; recovery unqualified"]
-  G --> H["Next source admission<br/>Event rule, physical clock and monitored follow-up"]
-  H -. "requires new qualifying evidence" .-> I["Future recovery endpoint and readiness research<br/>Not admitted by the current evidence"]
+  G --> H["nuPlan source contract qualified<br/>Sampled event rule, software clock and termination"]
+  H --> J["Next: authored native controls<br/>No trials or model runs admitted here"]
+  J -. "further evidence required" .-> I["Future recovery endpoint and readiness research<br/>Not admitted by the current evidence"]
 ```
 
 | Research phase | What is retained | What it changes or leaves open |
@@ -357,6 +358,15 @@ is not a qualified recovery horizon. The designated released script has six
 processing/extraction functions and supplies no event monitor. No named positive
 ego-accident control was identified in the inspected documents. New source-level
 evidence is required before another trial can address that gap.
+
+The [nuPlan source audit](research/nuplan-outcome-source/0.1.0/README.md) supplies
+an explicit, narrower candidate for sampled simulator outcomes. Its pinned v1.2
+code defines first-contact rules, microsecond software timestamps and normal/error
+termination paths. Run success and no-at-fault collision are separate observations;
+the history endpoint must be checked rather than inferred from a requested duration.
+Native behavior and trial coverage remain unverified. No trial data was acquired,
+and no upstream simulator code was executed; eleven source-custody controls pass. Motional's code
+attribution and Apache-2.0 terms are retained in the packet.
 
 TD2D-derived results credit Jiwoo Hwang, Woohyeok Choi, Jungmin Lee, Woojoo Kim,
 Jungwook Rhim and Auk Kim; manD-derived results credit Khazar Dargahi Nobari and
@@ -523,21 +533,21 @@ launcher and immutable candidate procedure.
 
 ## Next research decision
 
-**Qualify an outcome source before acquiring more trials or modeling readiness.**
-The inspected TD2D and manD routes are closed at their demonstrated evidence
-boundaries. The next bounded step is to assess a different public source for a
-released event monitor or explicit annotation rule, clock meaning, termination
-causes and coverage/censoring semantics. Start with code and protocol evidence;
-freeze selection and resource bounds before opening any additional records.
+**Verify the qualified source contract before acquiring trials.** The nuPlan v1.2
+audit supplies explicit sampled event rules, software clocks and normal/error
+termination semantics. The next bounded step is an authored native-control check
+of positive/negative collisions, track de-duplication, the final history endpoint,
+disabled metrics and execution failures. Freeze the cases and budget first; compare
+against ordinary direct calculation under equal information. No full simulator
+rollout or model campaign is needed for this source-fixture stage.
 
-Reopen manD recovery only for materially new release-linked evidence addressing
-those requirements and identifying a positive ego-accident control. A marker in
-another archive would not itself explain the missing monitor. Selecting a positive
-control cannot estimate population performance. If the endpoint remains unqualified,
-withhold recovery benchmarking. Preserve the recorded request/state observations
-and closed comparisons. No readiness model, unrelated stream expansion or outreach
-follows. Gate A remains operator-unaccepted. The [current decision](research/mand-semantics/0.1.0/DECISION.md)
-and [continuation brief](docs/NEXT_SESSION.md) give the admission and stop rules.
+A later trial protocol must bind a simulator-only endpoint, population, actual
+common window and complete run/metric/history receipts. Source inspection does
+not establish native behavior, physical clock accuracy, continuous contact,
+physical recovery or readiness. The [current decision](research/nuplan-outcome-source/0.1.0/DECISION.md)
+and [record obligations](research/nuplan-outcome-source/0.1.0/CONTRACT.md) preserve
+those requirements. TD2D, manD and exposed microscopy comparisons remain closed;
+no unrelated stream expansion or outreach follows. Gate A remains operator-unaccepted.
 
 ### Product-value hurdle remains open
 
@@ -611,6 +621,7 @@ Entries describe the result and next dependency **at that checkpoint**. The
 current direction above supersedes historical execution instructions; earlier
 failures and incomplete states remain part of the record.
 
+- **16 October 2026:** [nuPlan outcome-source qualification](research/nuplan-outcome-source/0.1.0/README.md). Pinned event rules, software clock and termination paths support a sampled simulator contract; native behavior and trial coverage remain pending. Thirty-three source files and 21 passages are bound; eleven custody controls pass. No trials acquired.
 - **16 October 2026:** [manD source semantics and route closure](research/mand-semantics/0.1.0/README.md). The release listing and designated code are checked against retained bytes; the author’s dissertation clarifies the endpoint and design. No release-bound accident monitor or named positive control is identified in this scope. Recovery remains unqualified; nine custody controls pass.
 - **15 October 2026:** [manD recorded timelines](research/mand-timing/0.1.0/README.md). Metadata selection precedes inspection; 134,373 vehicle/environment row pairs share an exact stored axis. Two request episodes, missing sensor rows and message/file-end differences remain explicit. Physical clocks, accident timing and monitored recovery are unqualified; 25 controls pass.
 - **15 October 2026:** [TD2D source-history closure](research/takeover-source-lineage/0.1.0/README.md). Both advertised branches and 47 commits add no missing Python capture path. The inspected repair route closes; a separately bounded manD documentation screen supplies the next source lead, not a qualified outcome.
@@ -666,7 +677,7 @@ changes the scope of an earlier result.
 | --- | --- |
 | Engine model and mathematics | [Architecture](docs/PERCEPTION_DECISION_ARCHITECTURE_2026-09-09.md) · [Replacement interface](research/perception-revision/0.1.0/README.md) |
 | Current direction and evidence | [Progress map](#research-progression) · [Next-session brief](docs/NEXT_SESSION.md) · [Research release](research/releases/2026-10-11/README.md) · [Evidence inventory](research/releases/2026-10-11/evidence.json) · [Roadmap](docs/ENGINE_ROADMAP_2026-09-20.md) · [Execution audit](research/roadmap-audit/0.1.0/README.md) · [Primary-method review](research/roadmap-audit/0.1.0/FRONTIER.md) |
-| Takeover coverage and outcome timing | [Complete TD2D census](research/takeover-outcome/0.2.0/README.md) · [Source-history closure](research/takeover-source-lineage/0.1.0/README.md) · [manD timeline](research/mand-timing/0.1.0/README.md) · [Current source decision](research/mand-semantics/0.1.0/DECISION.md) |
+| Takeover coverage and outcome timing | [Complete TD2D census](research/takeover-outcome/0.2.0/README.md) · [Source-history closure](research/takeover-source-lineage/0.1.0/README.md) · [manD timeline](research/mand-timing/0.1.0/README.md) · [manD source closure](research/mand-semantics/0.1.0/DECISION.md) · [Current nuPlan source contract](research/nuplan-outcome-source/0.1.0/README.md) |
 | Selected reference cohort | [Complete four-image result](research/multiorg-reference-admission/0.8.0/README.md) · [Preserved resource failures](research/multiorg-reference-admission/0.7.0/README.md) |
 | Relational motion research | [Clearance contract](research/frontier-expansion/0.1.0/README.md) · [Current primary research](research/frontier-expansion/0.1.0/SOURCES.md) · [Earlier source scope](research/frontier-expansion/0.1.0/qualification.json) · [NGSIM source adapter](research/public-motion/0.1.0/README.md) |
 | Physical measurement contract | [Source qualification](research/physical-source/0.1.0/README.md) · [Geometry, motion and coverage](research/physical-source/0.1.0/CONTRACT.md) |

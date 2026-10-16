@@ -1,0 +1,35 @@
+{
+  "artifact_id": "reiyah.nuplan-outcome-source.protocol",
+  "version": "0.1.0",
+  "lifecycle_status": "exploratory",
+  "date": "2026-10-16",
+  "base": "46d61aae105422657eb233a90cd857fa2c63aab6",
+  "question": "Can an explicit public closed-loop driving evaluation distinguish a completed collision-free sampled rollout from truncation or failed execution, with source-defined clock and termination semantics?",
+  "alternatives": [
+    "Screen nuPlan devkit: source-level collision metrics and simulation runner may allow a bounded sampled simulator outcome contract.",
+    "Screen CARLA Leaderboard/ScenarioRunner if nuPlan lacks an inspectable release binding; event callbacks and watchdog termination require explicit qualification.",
+    "Another human takeover archive without event-monitor semantics is rejected; closed TD2D/manD work is preserved."
+  ],
+  "comparator": "Ordinary source/protocol review of the same exact files; no method or work-saving experiment.",
+  "scope": [
+    "Public code, licenses, version metadata and evaluation documentation only",
+    "Author a bounded source admission packet and continuation update",
+    "No trials, logs, models, simulator execution, new observations, outreach or readiness modeling"
+  ],
+  "limits": {
+    "owner_wall_seconds": 5400,
+    "source_phase_seconds": 1800,
+    "closeout_reserve_seconds": 1800,
+    "direct_calls": 48,
+    "per_response_bytes": 2097152,
+    "aggregate_response_bytes": 33554432,
+    "minimum_spacing_seconds": 2.5,
+    "web_calls": 6
+  },
+  "plan_sha256": "ffb9c1a27ce6968a9d82aa436311a4964a0ae56ee1e70b594a1525fbaf6b16e9",
+  "source_choice_sha256": "6198d807f743163f2df91edf6e59359e634eedb1800d274603613fb57a5cba5f",
+  "acceptance": "Qualify only the exact source-level measured event, sampled clock and normal/abnormal termination branches supported by retained code. Preserve continuous-time, physical validity and empirical execution as separate unknowns. No trial acquisition in this owner.",
+  "stop": "Stop source discovery at deadline/caps or unrepairable dependency. Admit a scoped simulator source contract only if evidence supports it, otherwise record the unresolved requirement without acquiring trials.",
+  "exposure": "Search excerpts and source behavior were exposed before authoring the public packet; not a blind empirical experiment. No trial data or upstream source was executed.",
+  "Gate_A_accepted": false
+}
